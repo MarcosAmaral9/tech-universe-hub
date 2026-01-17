@@ -1,9 +1,8 @@
 import FeaturedCarousel from "@/components/FeaturedCarousel";
 import PostCard from "@/components/PostCard";
+import SocialSection from "@/components/SocialSection";
 import { blogPosts } from "@/data/posts";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const categories = [
@@ -54,23 +53,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="container py-16">
-        <div className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 p-8 md:p-12 text-center">
-          <div className="absolute inset-0 bg-card/50 backdrop-blur-sm" />
-          <div className="relative z-10">
-            <h2 className="font-display text-2xl md:text-4xl font-bold mb-4">
-              Não perca nenhuma novidade!
-            </h2>
-            <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
-              Acompanhe as últimas tendências em tecnologia, investimentos e cultura pop.
-            </p>
-            <Button size="lg" className="gap-2 glow-effect">
-              Explorar Conteúdo
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-          </div>
-        </div>
+      {/* Social Section with QR Codes */}
+      <section className="container py-8">
+        <SocialSection />
       </section>
     </>
   );

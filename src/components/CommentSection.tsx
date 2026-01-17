@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MessageCircle, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,24 +15,81 @@ interface CommentSectionProps {
   postId: string;
 }
 
-const CommentSection = ({ postId }: CommentSectionProps) => {
-  const [comments, setComments] = useState<Comment[]>([
+// Initial comments for each post
+const initialCommentsByPost: Record<string, Comment[]> = {
+  "diferenca-mangas-manhuas-manhwas": [
     {
       id: "1",
       author: "OtakuMaster",
-      content: "Excelente artigo! Solo Leveling é realmente incrível, mas tem muitos outros manhwas que merecem destaque também.",
+      content: "Excelente artigo! Finalmente entendi a diferença entre os três!",
       date: "2026-01-17",
     },
+  ],
+  "como-diferenciar-manhuas-manhwas": [
     {
-      id: "2",
+      id: "1",
       author: "MangaFan2026",
       content: "Finalmente alguém explicando a diferença! Sempre confundi manhwa com manhua.",
       date: "2026-01-16",
     },
-  ]);
+  ],
+  "10-melhores-manhwas-sistema-2026": [
+    {
+      id: "1",
+      author: "SoloLevelingFan",
+      content: "Solo Leveling é incrível! Mas tem muitos outros manhwas que merecem destaque também.",
+      date: "2026-01-15",
+    },
+    {
+      id: "2",
+      author: "WebtoonReader",
+      content: "TBATE merecia estar em primeiro! A história é muito mais profunda.",
+      date: "2026-01-15",
+    },
+  ],
+  "ia-transformando-dublagem-animes": [
+    {
+      id: "1",
+      author: "AnimeLover99",
+      content: "Será que um dia vamos ver dublagens em tempo real? Isso seria incrível!",
+      date: "2026-01-18",
+    },
+  ],
+  "investir-em-tecnologia-2026": [
+    {
+      id: "1",
+      author: "InvestidorTech",
+      content: "Ótimo artigo para quem está começando a investir em tecnologia!",
+      date: "2026-01-18",
+    },
+  ],
+};
 
+const CommentSection = ({ postId }: CommentSectionProps) => {
+  const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState("");
   const [authorName, setAuthorName] = useState("");
+
+  // Load comments for this specific post
+  useEffect(() => {
+    const storageKey = `viciocode-comments-${postId}`;
+    const savedComments = localStorage.getItem(storageKey);
+    
+    if (savedComments) {
+      setComments(JSON.parse(savedComments));
+    } else {
+      // Use initial comments if no saved comments exist
+      setComments(initialCommentsByPost[postId] || []);
+    }
+  }, [postId]);
+
+  // Save comments to localStorage whenever they change
+  useEffect(() => {
+    if (comments.length > 0) {
+      const storageKey = `viciocode-comments-${postId}`;
+      localStorage.setItem(storageKey, JSON.stringify(comments));
+    }
+  }, [comments, postId]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -103,6 +160,12 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
           </div>
         ))}
       </div>
+
+      {comments.length === 0 && (
+        <p className="text-center text-muted-foreground py-8">
+          Seja o primeiro a comentar!
+        </p>
+      )}
     </section>
   );
 };

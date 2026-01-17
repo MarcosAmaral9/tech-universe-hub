@@ -3,8 +3,8 @@ import { BlogPost } from "@/types/blog";
 import mangaManhwaManhuaImg from "@/assets/manga-manhwa-manhua.jpg";
 import manhwaVsManuaImg from "@/assets/manhwa-vs-manhua.jpg";
 import systemManhwaImg from "@/assets/system-manhwa-hero.jpg";
-import aiTechImg from "@/assets/ai-tech.jpg";
-import cryptoInvestImg from "@/assets/crypto-invest.jpg";
+import aiAnimeDubbingImg from "@/assets/ai-anime-dubbing.jpg";
+import techInvesting2026Img from "@/assets/tech-investing-2026.jpg";
 
 export const blogPosts: BlogPost[] = [
   {
@@ -15,7 +15,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "otaku",
     image: mangaManhwaManhuaImg,
-    author: "MVTECH",
+    author: "VICIO<CODE>",
     date: "2026-01-17",
     readTime: "5 min"
   },
@@ -27,7 +27,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "otaku",
     image: manhwaVsManuaImg,
-    author: "MVTECH",
+    author: "VICIO<CODE>",
     date: "2026-01-16",
     readTime: "4 min"
   },
@@ -39,33 +39,33 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "otaku",
     image: systemManhwaImg,
-    author: "MVTECH",
+    author: "VICIO<CODE>",
     date: "2026-01-15",
     readTime: "8 min"
   },
   {
     id: "4",
-    slug: "chatgpt-5-o-que-esperar",
-    title: "ChatGPT-5: O que esperar da próxima revolução da OpenAI",
-    excerpt: "Rumores e especulações sobre a próxima versão do modelo de linguagem mais famoso do mundo.",
+    slug: "ia-transformando-dublagem-animes",
+    title: "Como as IAs estão transformando a dublagem de animes: O fim das barreiras de idioma?",
+    excerpt: "Descubra como a clonagem de voz e tradução em tempo real estão revolucionando o mercado de animes.",
     content: "",
     category: "ia",
-    image: aiTechImg,
-    author: "MVTECH",
-    date: "2026-01-14",
-    readTime: "6 min"
+    image: aiAnimeDubbingImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-18",
+    readTime: "7 min"
   },
   {
     id: "5",
-    slug: "investir-em-cripto-2026",
-    title: "Vale a pena investir em criptomoedas em 2026?",
-    excerpt: "Análise completa do mercado cripto e as melhores estratégias para o novo ano.",
+    slug: "investir-em-tecnologia-2026",
+    title: "Investir em Tecnologia em 2026: Como montar uma carteira focada no Futuro",
+    excerpt: "Semicondutores, Data Centers, IA e Cibersegurança: os setores mais promissores para investir.",
     content: "",
     category: "invest",
-    image: cryptoInvestImg,
-    author: "MVTECH",
-    date: "2026-01-13",
-    readTime: "7 min"
+    image: techInvesting2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-01-18",
+    readTime: "8 min"
   }
 ];
 

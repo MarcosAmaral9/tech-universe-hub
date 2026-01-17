@@ -29,7 +29,7 @@ const DiferencaMangasManhuas = () => {
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-1">
             <User className="h-4 w-4" />
-            MVTECH
+            VICIO&lt;CODE&gt;
           </span>
           <span className="flex items-center gap-1">
             <Calendar className="h-4 w-4" />

@@ -12,7 +12,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("mvtech-theme") as Theme;
+      const saved = localStorage.getItem("viciocode-theme") as Theme;
       return saved || "dark";
     }
     return "dark";
@@ -22,7 +22,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const root = document.documentElement;
     root.classList.remove("light", "dark");
     root.classList.add(theme);
-    localStorage.setItem("mvtech-theme", theme);
+    localStorage.setItem("viciocode-theme", theme);
   }, [theme]);
 
   const toggleTheme = () => {

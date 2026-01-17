@@ -25,9 +25,10 @@ const Header = () => {
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
         <div className="container flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <span className="font-display text-2xl font-bold text-gradient">
-              MVTECH
+          <Link to="/" className="flex items-center group">
+            <span className="font-display text-2xl font-bold">
+              <span className="logo-vicio">VICIO</span>
+              <span className="logo-code">&lt;CODE&gt;</span>
             </span>
           </Link>
 
