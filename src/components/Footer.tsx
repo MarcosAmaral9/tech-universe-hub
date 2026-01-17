@@ -1,15 +1,31 @@
 import { Link } from "react-router-dom";
-import { Github, Twitter, Instagram } from "lucide-react";
+import { Instagram } from "lucide-react";
+
+const TikTokIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+  >
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+  </svg>
+);
 
 const Footer = () => {
+  const instagramUrl = "https://www.instagram.com/viciocode?igsh=ZmJ5YmhyMm1odzE=";
+  const tiktokUrl = "https://www.tiktok.com/@viciocode?_r=1&_t=ZS-939Mau0jxR6";
+
   return (
     <footer className="border-t border-border bg-card mt-16">
       <div className="container py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="md:col-span-2">
-            <Link to="/" className="font-display text-2xl font-bold text-gradient">
-              MVTECH
+            <Link to="/" className="font-display text-2xl font-bold inline-block">
+              <span className="logo-vicio">VICIO</span>
+              <span className="logo-code">&lt;CODE&gt;</span>
             </Link>
             <p className="mt-4 text-muted-foreground max-w-md">
               Seu portal definitivo para IAs, investimentos, cultura geek e o mundo otaku. 
@@ -49,29 +65,27 @@ const Footer = () => {
             <h4 className="font-display font-semibold mb-4 text-foreground">Redes Sociais</h4>
             <div className="flex gap-4">
               <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
+                href={instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href={tiktokUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
               >
-                <Github className="h-5 w-5" />
+                <TikTokIcon />
               </a>
             </div>
           </div>
         </div>
 
         <div className="mt-10 pt-6 border-t border-border text-center text-sm text-muted-foreground">
-          <p>© 2026 MVTECH. Todos os direitos reservados.</p>
+          <p>© 2026 VICIO&lt;CODE&gt;. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
