@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Clock } from "lucide-react";
-import { getLatestPosts } from "@/data/posts";
+import { getLatestPostsByCategory } from "@/data/posts";
 import CategoryBadge from "./CategoryBadge";
 import { Button } from "@/components/ui/button";
 
 const FeaturedCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const posts = getLatestPosts(5);
+  const posts = getLatestPostsByCategory();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -26,6 +26,8 @@ const FeaturedCarousel = () => {
   };
 
   const currentPost = posts[currentIndex];
+
+  if (!currentPost) return null;
 
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-br from-secondary via-background to-secondary">

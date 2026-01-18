@@ -4,6 +4,7 @@ import { Moon, Sun, Search, Menu, X } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Button } from "@/components/ui/button";
 import SearchModal from "./SearchModal";
+import logoImg from "@/assets/logo-viciocode.png";
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
@@ -26,10 +27,11 @@ const Header = () => {
         <div className="container flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
-            <span className="font-display text-2xl font-bold">
-              <span className="logo-vicio">VICIO</span>
-              <span className="logo-code">&lt;CODE&gt;</span>
-            </span>
+            <img 
+              src={logoImg} 
+              alt="VICIO<CODE>" 
+              className="h-10 md:h-12 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
