@@ -1,5 +1,7 @@
 export type Category = 'ia' | 'invest' | 'geek' | 'otaku';
 
+export type Subtopic = 'avatar' | 'vikings' | 'games' | 'manhwa' | 'manga' | 'manhua' | 'anime' | 'dublagem' | 'semicondutores' | 'datacenter' | 'ciberseguranca' | 'streaming' | null;
+
 export interface BlogPost {
   id: string;
   slug: string;
@@ -7,6 +9,7 @@ export interface BlogPost {
   excerpt: string;
   content: string;
   category: Category;
+  subtopic?: Subtopic;
   image: string;
   author: string;
   date: string;
