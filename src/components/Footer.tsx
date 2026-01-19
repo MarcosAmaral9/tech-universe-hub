@@ -60,10 +60,20 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Social */}
+          {/* Social - Links only on mobile */}
           <div>
             <h4 className="font-display font-semibold mb-4 text-foreground">Redes Sociais</h4>
-            <div className="flex gap-4">
+            {/* Desktop: Icons only, no links */}
+            <div className="hidden md:flex gap-4">
+              <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
+                <Instagram className="h-5 w-5" />
+              </div>
+              <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
+                <TikTokIcon />
+              </div>
+            </div>
+            {/* Mobile: Clickable links */}
+            <div className="flex md:hidden gap-4">
               <a
                 href={instagramUrl}
                 target="_blank"

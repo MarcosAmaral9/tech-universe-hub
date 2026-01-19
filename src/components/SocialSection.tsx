@@ -24,7 +24,7 @@ const SocialSection = () => {
           🔔 Não perca nenhuma novidade!
         </h2>
         
-        {/* Desktop: QR Codes only */}
+        {/* Desktop: QR Codes only (no clickable links) */}
         <div className="hidden md:flex justify-center gap-12">
           <div className="flex flex-col items-center gap-4">
             <div className="bg-white p-4 rounded-xl shadow-md">
@@ -57,7 +57,7 @@ const SocialSection = () => {
           </div>
         </div>
 
-        {/* Mobile: Links only */}
+        {/* Mobile: Links only (no QR codes) */}
         <div className="flex md:hidden flex-col gap-4 max-w-sm mx-auto">
           <a
             href={instagramUrl}

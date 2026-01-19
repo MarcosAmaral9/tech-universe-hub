@@ -38,7 +38,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Latest Posts */}
+      {/* Latest Posts - Show 12 latest posts sorted chronologically */}
       <section className="container py-12">
         <div className="flex items-center justify-between mb-8">
           <h2 className="font-display text-2xl md:text-3xl font-bold">
@@ -46,10 +46,13 @@ const Index = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogPosts.slice(0, 6).map((post) => (
-            <PostCard key={post.id} post={post} />
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {[...blogPosts]
+            .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+            .slice(0, 12)
+            .map((post) => (
+              <PostCard key={post.id} post={post} />
+            ))}
         </div>
       </section>
 
