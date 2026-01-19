@@ -4,55 +4,25 @@ import mangaManhwaManhuaImg from "@/assets/manga-manhwa-manhua.jpg";
 import manhwaVsManuaImg from "@/assets/manhwa-vs-manhua.jpg";
 import systemManhwaImg from "@/assets/system-manhwa-hero.jpg";
 import aiAnimeDubbingImg from "@/assets/ai-anime-dubbing.jpg";
+import aiRemasteringImg from "@/assets/ai-remastering.jpg";
 import techInvesting2026Img from "@/assets/tech-investing-2026.jpg";
 import vikingsRagnarImg from "@/assets/vikings-ragnar.jpg";
 import hellLetLooseImg from "@/assets/hell-let-loose.jpg";
 import avatarPandoraImg from "@/assets/avatar-pandora.jpg";
-import avatarWaterImg from "@/assets/avatar-water.jpg";
+import avatarWaterImg from "@/assets/avatar-water-swimming.jpg";
 import avatarFireImg from "@/assets/avatar-fire.jpg";
-import avatarGameImg from "@/assets/avatar-game.jpg";
+import avatarGameImg from "@/assets/avatar-game-female.jpg";
+import acValhallaImg from "@/assets/ac-valhalla.jpg";
+import acShadowsImg from "@/assets/ac-shadows.jpg";
+import acOdysseyImg from "@/assets/ac-odyssey.jpg";
+import acBlackFlagImg from "@/assets/ac-black-flag.jpg";
+import acOriginsImg from "@/assets/ac-origins.jpg";
+import acMirageImg from "@/assets/ac-mirage.jpg";
+import ac3Img from "@/assets/ac-3.jpg";
+import acSyndicateImg from "@/assets/ac-syndicate.jpg";
+import acUnityImg from "@/assets/ac-unity.jpg";
 
 export const blogPosts: BlogPost[] = [
-  // OTAKU Posts
-  {
-    id: "1",
-    slug: "diferenca-mangas-manhuas-manhwas",
-    title: "Sabe a diferença entre Mangas, Manhuas e Manhwas?",
-    excerpt: "Descubra as principais diferenças entre os três gêneros de quadrinhos asiáticos e encontre seu favorito!",
-    content: "",
-    category: "otaku",
-    subtopic: "manga",
-    image: mangaManhwaManhuaImg,
-    author: "VICIO<CODE>",
-    date: "2026-01-17",
-    readTime: "5 min"
-  },
-  {
-    id: "2",
-    slug: "como-diferenciar-manhuas-manhwas",
-    title: "Saiba como diferenciar Manhuas e Manhwas",
-    excerpt: "Aprenda a identificar de qual país vem suas histórias favoritas e descubra novas obras incríveis!",
-    content: "",
-    category: "otaku",
-    subtopic: "manhwa",
-    image: manhwaVsManuaImg,
-    author: "VICIO<CODE>",
-    date: "2026-01-16",
-    readTime: "4 min"
-  },
-  {
-    id: "3",
-    slug: "10-melhores-manhwas-sistema-2026",
-    title: "Os 10 melhores Manhwas de 'Sistema' para ler em 2026",
-    excerpt: "Depois do sucesso de Solo Leveling, confira as melhores obras do gênero que você precisa conhecer!",
-    content: "",
-    category: "otaku",
-    subtopic: "manhwa",
-    image: systemManhwaImg,
-    author: "VICIO<CODE>",
-    date: "2026-01-15",
-    readTime: "8 min"
-  },
   // IA Posts
   {
     id: "4",
@@ -66,6 +36,19 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-01-18",
     readTime: "7 min"
+  },
+  {
+    id: "20",
+    slug: "ia-remasterizacao-jogos-classicos",
+    title: "IA e Remasterização: Como a Inteligência Artificial está dando vida nova aos jogos clássicos",
+    excerpt: "Entenda como a IA de Upscaling e o Deep Learning estão salvando a história dos games.",
+    content: "",
+    category: "ia",
+    subtopic: "games",
+    image: aiRemasteringImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-17",
+    readTime: "6 min"
   },
   // INVEST Posts
   {
@@ -113,7 +96,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "8",
     slug: "avatar-2009-filme-revolucionou-tecnologia",
-    title: "Avatar (2009): O Filme que Revolucionou a Tecnologia no Cinema",
+    title: "Avatar 1 de (2009): O Filme que Revolucionou a Tecnologia no cinema",
     excerpt: "Relembre como James Cameron esperou mais de uma década para que a tecnologia de captura de movimento fosse capaz de criar Pandora.",
     content: "",
     category: "geek",
@@ -126,7 +109,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "9",
     slug: "avatar-caminho-da-agua-fisica-fluidos",
-    title: "Avatar: O Caminho da Água – A Física dos Fluidos Levada ao Limite",
+    title: "Avatar 2: O Caminho da Água – A Física dos Fluidos Levada ao Limite",
     excerpt: "Treze anos depois, a sequência focou na família de Jake Sully e na impressionante captura de performance subaquática.",
     content: "",
     category: "geek",
@@ -161,7 +144,165 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-01-13",
     readTime: "8 min"
-  }
+  },
+  // GEEK Posts - Assassin's Creed
+  {
+    id: "12",
+    slug: "ac-valhalla-jornada-epica-eivor",
+    title: "Assassin's Creed Valhalla: A Jornada Épica de Eivor no Coração da Inglaterra",
+    excerpt: "Se você é fã de Vikings e adora explorar mundos abertos massivos, Valhalla é o ápice da fórmula moderna da Ubisoft.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acValhallaImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-19",
+    readTime: "8 min"
+  },
+  {
+    id: "13",
+    slug: "ac-shadows-japao-feudal",
+    title: "Assassin's Creed Shadows: O Japão Feudal que os Fãs Sempre Sonharam",
+    excerpt: "Após anos de espera, a Ubisoft finalmente nos leva ao Japão do século XVI com Naoe e Yasuke.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acShadowsImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-19",
+    readTime: "7 min"
+  },
+  {
+    id: "14",
+    slug: "ac-odyssey-odisseia-grecia",
+    title: "Assassin's Creed Odyssey: Uma Odisseia Épica pela Grécia de Sócrates e Leônidas",
+    excerpt: "Se existe um jogo que define a grandeza dos RPGs de mundo aberto modernos, esse jogo é Odyssey.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acOdysseyImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-18",
+    readTime: "9 min"
+  },
+  {
+    id: "15",
+    slug: "ac-black-flag-melhor-jogo-piratas",
+    title: "Assassin's Creed IV: Black Flag – Por que ele ainda é o melhor jogo de piratas já feito?",
+    excerpt: "Descubra por que Black Flag continua sendo a experiência definitiva de pirataria nos games.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acBlackFlagImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-17",
+    readTime: "7 min"
+  },
+  {
+    id: "16",
+    slug: "ac-origins-renascimento-franquia-egito",
+    title: "Assassin's Creed Origins: O Renascimento da Franquia no Egito dos Faraós",
+    excerpt: "Conheça a origem da irmandade em uma das recriações mais impressionantes do Egito Antigo.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acOriginsImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-16",
+    readTime: "8 min"
+  },
+  {
+    id: "17",
+    slug: "ac-mirage-retorno-raizes-bagda",
+    title: "Assassin's Creed Mirage: O Retorno às Raízes e a Arte da Furtividade em Bagdá",
+    excerpt: "Uma carta de amor ao primeiro jogo da franquia, focando na furtividade e parkour.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acMirageImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-15",
+    readTime: "6 min"
+  },
+  {
+    id: "18",
+    slug: "ac-3-remastered-revolucao-americana",
+    title: "Assassin's Creed III Remastered: A Revolução Americana em 4K e a Dualidade de Connor Kenway",
+    excerpt: "Vale a pena jogar a versão remasterizada? Analisamos as melhorias gráficas e a história de Connor.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: ac3Img,
+    author: "VICIO<CODE>",
+    date: "2026-01-14",
+    readTime: "7 min"
+  },
+  {
+    id: "19",
+    slug: "ac-syndicate-revolucao-industrial-londres",
+    title: "Assassin's Creed Syndicate: A Revolução Industrial e o Charme Vitoriano de Londres",
+    excerpt: "Explore a Londres do século XIX com os irmãos Frye em uma das cidades mais vivas da franquia.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acSyndicateImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-13",
+    readTime: "7 min"
+  },
+  {
+    id: "21",
+    slug: "ac-unity-jogo-frente-tempo-paris",
+    title: "Assassin's Creed Unity: O Jogo que Estava à Frente do seu Tempo (e da Tecnologia)",
+    excerpt: "Descubra por que Unity é considerado a obra-prima técnica da Ubisoft e como ele impressiona até hoje.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acUnityImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-12",
+    readTime: "8 min"
+  },
+  // OTAKU Posts
+  {
+    id: "1",
+    slug: "diferenca-mangas-manhuas-manhwas",
+    title: "Sabe a diferença entre Mangas, Manhuas e Manhwas?",
+    excerpt: "Descubra as principais diferenças entre os três gêneros de quadrinhos asiáticos e encontre seu favorito!",
+    content: "",
+    category: "otaku",
+    subtopic: "manga",
+    image: mangaManhwaManhuaImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-17",
+    readTime: "5 min"
+  },
+  {
+    id: "2",
+    slug: "como-diferenciar-manhuas-manhwas",
+    title: "Saiba como diferenciar Manhuas e Manhwas",
+    excerpt: "Aprenda a identificar de qual país vem suas histórias favoritas e descubra novas obras incríveis!",
+    content: "",
+    category: "otaku",
+    subtopic: "manhwa",
+    image: manhwaVsManuaImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-16",
+    readTime: "4 min"
+  },
+  {
+    id: "3",
+    slug: "10-melhores-manhwas-sistema-2026",
+    title: "Os 10 melhores Manhwas de 'Sistema' para ler em 2026",
+    excerpt: "Depois do sucesso de Solo Leveling, confira as melhores obras do gênero que você precisa conhecer!",
+    content: "",
+    category: "otaku",
+    subtopic: "manhwa",
+    image: systemManhwaImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-15",
+    readTime: "8 min"
+  },
 ];
 
 export const getPostBySlug = (slug: string): BlogPost | undefined => {
