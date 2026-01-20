@@ -151,6 +151,15 @@ const VikingsLegadoRagnar = () => {
           de entreter enquanto educa, deixando um legado que transcende o entretenimento.
         </p>
 
+        <div className="my-8 p-6 bg-secondary/50 rounded-xl border border-border">
+          <p className="text-muted-foreground mb-0">
+            💡 <strong>Dica:</strong> Confira também nosso post sobre{" "}
+            <Link to="/post/ac-valhalla-jornada-epica-eivor" className="text-primary hover:underline">
+              Assassin's Creed Valhalla: A Jornada Épica de Eivor no Coração da Inglaterra
+            </Link>.
+          </p>
+        </div>
+
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
           <h3 className="text-xl font-bold mb-2">
             Qual foi sua cena favorita de Vikings?

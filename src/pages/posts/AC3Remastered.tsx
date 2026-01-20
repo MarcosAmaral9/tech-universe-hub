@@ -157,7 +157,7 @@ const AC3Remastered = () => {
 
         <div className="my-8 p-6 bg-secondary/50 rounded-xl border border-border">
           <p className="text-muted-foreground mb-0">
-            💡 Entenda como a história da família Kenway começou antes de Edward em nosso post sobre{" "}
+            💡 Entenda como a história da família Kenway começou antes de Connor em nosso post sobre{" "}
             <Link to="/post/ac-black-flag-melhor-jogo-piratas" className="text-primary hover:underline">
               Black Flag
             </Link>.

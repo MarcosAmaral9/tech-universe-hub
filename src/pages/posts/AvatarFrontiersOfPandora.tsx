@@ -158,45 +158,89 @@ const AvatarFrontiersOfPandora = () => {
           </li>
         </ul>
 
-        <h2 className="text-2xl font-bold mt-10 mb-6">Requisitos Técnicos</h2>
+        <h2 className="text-2xl font-bold mt-10 mb-6">Requisitos do Sistema</h2>
 
-        <p>
-          Aviso: <strong>este jogo é pesado</strong>. A Ubisoft não brincou com os gráficos, 
-          e isso significa que você vai precisar de hardware potente.
-        </p>
-
-        <div className="overflow-x-auto my-8">
+        <h3 className="text-xl font-bold mt-6 mb-4">Mínimos</h3>
+        <div className="overflow-x-auto my-4">
           <table className="w-full border-collapse">
-            <thead>
-              <tr className="border-b border-border">
-                <th className="text-left py-3 px-4 font-bold">Especificação</th>
-                <th className="text-left py-3 px-4 font-bold">Mínimo</th>
-                <th className="text-left py-3 px-4 font-bold">Recomendado</th>
-              </tr>
-            </thead>
             <tbody>
               <tr className="border-b border-border">
-                <td className="py-3 px-4 font-medium">CPU</td>
-                <td className="py-3 px-4 text-muted-foreground">Ryzen 5 3600</td>
-                <td className="py-3 px-4 text-muted-foreground">Ryzen 7 5800X</td>
+                <td className="py-3 px-4 font-medium">Sistema Operacional</td>
+                <td className="py-3 px-4 text-muted-foreground">Windows 10/11 (versões de 64 bits)</td>
               </tr>
               <tr className="border-b border-border">
-                <td className="py-3 px-4 font-medium">GPU</td>
-                <td className="py-3 px-4 text-muted-foreground">RTX 3060</td>
-                <td className="py-3 px-4 text-muted-foreground">RTX 4070</td>
+                <td className="py-3 px-4 font-medium">Processador</td>
+                <td className="py-3 px-4 text-muted-foreground">AMD Ryzen 5 3600 @ 3.6 GHz, Intel Core i7-8700K @ 3.70 GHz</td>
               </tr>
               <tr className="border-b border-border">
                 <td className="py-3 px-4 font-medium">RAM</td>
                 <td className="py-3 px-4 text-muted-foreground">16 GB</td>
-                <td className="py-3 px-4 text-muted-foreground">32 GB</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">Placa de Vídeo</td>
+                <td className="py-3 px-4 text-muted-foreground">AMD RX 5700 (8 GB), Intel Arc A750 (8 GB, com ReBAR), NVIDIA GeForce GTX 1070 (8 GB)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">DirectX</td>
+                <td className="py-3 px-4 text-muted-foreground">Versão 12</td>
               </tr>
               <tr>
                 <td className="py-3 px-4 font-medium">Armazenamento</td>
-                <td className="py-3 px-4 text-muted-foreground">90 GB SSD</td>
-                <td className="py-3 px-4 text-muted-foreground">90 GB NVMe SSD</td>
+                <td className="py-3 px-4 text-muted-foreground">90 GB (SSD Obrigatório)</td>
               </tr>
             </tbody>
           </table>
+        </div>
+        <p className="text-sm text-muted-foreground italic">
+          Notas: SSD Obrigatório. Especificações testadas em configuração Baixa com FSR2 quality.
+        </p>
+
+        <h3 className="text-xl font-bold mt-6 mb-4">Recomendados</h3>
+        <div className="overflow-x-auto my-4">
+          <table className="w-full border-collapse">
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">Sistema Operacional</td>
+                <td className="py-3 px-4 text-muted-foreground">Windows 10/11 (versões de 64 bits)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">Processador</td>
+                <td className="py-3 px-4 text-muted-foreground">AMD Ryzen 5 5600X @ 3.7 GHz, Intel Core i5-11600K @ 3.9 GHz</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">RAM</td>
+                <td className="py-3 px-4 text-muted-foreground">16 GB</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">Placa de Vídeo</td>
+                <td className="py-3 px-4 text-muted-foreground">AMD Radeon RX 6700 XT (12 GB), NVIDIA GeForce RTX 3060 Ti (8 GB)</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">DirectX</td>
+                <td className="py-3 px-4 text-muted-foreground">Versão 12</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">Armazenamento</td>
+                <td className="py-3 px-4 text-muted-foreground">90 GB (SSD Obrigatório)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-sm text-muted-foreground italic">
+          Notas: SSD Obrigatório. Especificações testadas em configuração Alta com FSR2 quality.
+        </p>
+
+        {/* Where to Play */}
+        <div className="my-8 p-6 bg-gradient-to-br from-green-500/20 to-background rounded-xl border border-green-500/30">
+          <h3 className="text-xl font-bold mb-4">🎮 Onde Jogar?</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li>✓ <strong>PC:</strong> Steam, Epic Games Store, Ubisoft Connect</li>
+            <li>✓ <strong>PlayStation 5</strong></li>
+            <li>✓ <strong>Xbox Series X|S</strong></li>
+          </ul>
+          <p className="mt-4 text-sm text-muted-foreground">
+            Preço médio: R$ 150
+          </p>
         </div>
 
         <h2 className="text-2xl font-bold mt-10 mb-6">Veredito Final</h2>

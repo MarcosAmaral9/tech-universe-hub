@@ -21,6 +21,7 @@ import acMirageImg from "@/assets/ac-mirage.jpg";
 import ac3Img from "@/assets/ac-3.jpg";
 import acSyndicateImg from "@/assets/ac-syndicate.jpg";
 import acUnityImg from "@/assets/ac-unity.jpg";
+import acRogueImg from "@/assets/ac-rogue.jpg";
 
 export const blogPosts: BlogPost[] = [
   // IA Posts
@@ -262,6 +263,32 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-01-12",
     readTime: "8 min"
+  },
+  {
+    id: "22",
+    slug: "ac-rogue-heroi-vilao-templario",
+    title: "Assassin's Creed Rogue: E se o Herói se Tornasse o Vilão?",
+    excerpt: "Descubra a história de Shay Cormac, o Assassino que se tornou Templário, e as inovações navais no Ártico.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acRogueImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-11",
+    readTime: "7 min"
+  },
+  {
+    id: "23",
+    slug: "ranking-melhor-assassins-creed-2026",
+    title: "Ranking: Qual o Melhor Assassin's Creed para Jogar em 2026?",
+    excerpt: "Analisamos todos os jogos da franquia e criamos o ranking definitivo para 2026.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acUnityImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-20",
+    readTime: "10 min"
   },
   // OTAKU Posts
   {
