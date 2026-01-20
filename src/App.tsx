@@ -35,6 +35,8 @@ import ACMirage from "./pages/posts/ACMirage";
 import AC3Remastered from "./pages/posts/AC3Remastered";
 import ACSyndicate from "./pages/posts/ACSyndicate";
 import ACUnity from "./pages/posts/ACUnity";
+import ACRogue from "./pages/posts/ACRogue";
+import ACRanking2026 from "./pages/posts/ACRanking2026";
 
 const queryClient = new QueryClient();
 
@@ -79,6 +81,8 @@ const App = () => (
               <Route path="/post/ac-3-remastered-revolucao-americana" element={<AC3Remastered />} />
               <Route path="/post/ac-syndicate-revolucao-industrial-londres" element={<ACSyndicate />} />
               <Route path="/post/ac-unity-jogo-frente-tempo-paris" element={<ACUnity />} />
+              <Route path="/post/ac-rogue-assassino-templario" element={<ACRogue />} />
+              <Route path="/post/ranking-melhor-assassins-creed-2026" element={<ACRanking2026 />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
