@@ -183,6 +183,80 @@ const HellLetLooseSimulador = () => {
           </table>
         </div>
 
+        <h2 className="text-2xl font-bold mt-10 mb-6">Requisitos do Sistema</h2>
+
+        <h3 className="text-xl font-bold mt-6 mb-4">Mínimos</h3>
+        <div className="overflow-x-auto my-4">
+          <table className="w-full border-collapse">
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">Sistema Operacional</td>
+                <td className="py-3 px-4 text-muted-foreground">Windows 10 64bit</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">Processador</td>
+                <td className="py-3 px-4 text-muted-foreground">Intel Core i5-6600 / AMD Ryzen 3 1300X</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">RAM</td>
+                <td className="py-3 px-4 text-muted-foreground">12 GB</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">Placa de Vídeo</td>
+                <td className="py-3 px-4 text-muted-foreground">NVIDIA GeForce GTX 960 4GB / AMD Radeon R9 380 4GB</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">DirectX</td>
+                <td className="py-3 px-4 text-muted-foreground">Versão 11</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">Rede</td>
+                <td className="py-3 px-4 text-muted-foreground">Conexão de internet banda larga</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">Armazenamento</td>
+                <td className="py-3 px-4 text-muted-foreground">60 GB de espaço disponível</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 className="text-xl font-bold mt-6 mb-4">Recomendados</h3>
+        <div className="overflow-x-auto my-4">
+          <table className="w-full border-collapse">
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">Sistema Operacional</td>
+                <td className="py-3 px-4 text-muted-foreground">Windows 10 64bit</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">Processador</td>
+                <td className="py-3 px-4 text-muted-foreground">Intel Core i5-8400 / AMD Ryzen 5 2600X</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">RAM</td>
+                <td className="py-3 px-4 text-muted-foreground">16 GB</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">Placa de Vídeo</td>
+                <td className="py-3 px-4 text-muted-foreground">NVIDIA GeForce GTX 1060 6GB / AMD Radeon RX 590 8GB</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">DirectX</td>
+                <td className="py-3 px-4 text-muted-foreground">Versão 11</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">Rede</td>
+                <td className="py-3 px-4 text-muted-foreground">Conexão de internet banda larga</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">Armazenamento</td>
+                <td className="py-3 px-4 text-muted-foreground">60 GB de espaço disponível</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         <h2 className="text-2xl font-bold mt-10 mb-6">Conclusão</h2>
 
         <p>
@@ -193,7 +267,7 @@ const HellLetLooseSimulador = () => {
         </p>
 
         <div className="my-8 p-6 bg-gradient-to-br from-geek/20 to-background rounded-xl border border-geek/30">
-          <h3 className="text-xl font-bold mb-4">🎮 Onde jogar?</h3>
+          <h3 className="text-xl font-bold mb-4">🎮 Onde Jogar?</h3>
           <ul className="space-y-2 text-muted-foreground">
             <li>✓ <strong>PC:</strong> Steam (versão mais popular)</li>
             <li>✓ <strong>PlayStation 5</strong></li>
@@ -202,6 +276,11 @@ const HellLetLooseSimulador = () => {
           <p className="mt-4 text-sm text-muted-foreground">
             Preço médio: R$ 120 (frequentemente em promoção nas Steam Sales)
           </p>
+          <div className="mt-4 pt-4 border-t border-border">
+            <div className="text-sm text-muted-foreground">
+              <strong>Desenvolvedora:</strong> Black Matter | <strong>Lançamento:</strong> 27/07/2021
+            </div>
+          </div>
         </div>
 
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
