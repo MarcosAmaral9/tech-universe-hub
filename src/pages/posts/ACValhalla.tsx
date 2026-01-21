@@ -19,7 +19,7 @@ const ACValhalla = () => {
 
 
       {/* Teste botão voltar ao ranking */}
-       <article className="container py-8 max-w-4xl mx-auto">
+       <article className="container py-8 max-w-4xl mx-*">
       {/* Back Button */}
       <Link
         to="/post/ranking-melhor-assassins-creed-2026"
