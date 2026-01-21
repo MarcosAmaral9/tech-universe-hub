@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, User, Calendar, Gamepad2, TreePine, Crosshair, Star }
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import avatarGameImg from "@/assets/avatar-game-female.jpg";
+import avatarGameImg from "@/assets/avatar-game.jpg";
 
 const AvatarFrontiersOfPandora = () => {
   return (
