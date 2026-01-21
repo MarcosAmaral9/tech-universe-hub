@@ -5,6 +5,21 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import acPortalImg from "@/assets/assassins-creed-portal.jpg";
 
+import { useNavigate } from 'react-router-dom';
+
+function BotaoVoltar() {
+  const navigate = useNavigate();
+
+  return (
+    // O valor -1 diz ao navegador para voltar uma página
+    <button onClick={() => navigate(-1)}>
+      &lt; Voltar
+    </button>
+  );
+}
+
+export default BotaoVoltar;
+
 const ACRanking2026 = () => {
   const ranking = [
     {
