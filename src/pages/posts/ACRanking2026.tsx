@@ -5,8 +5,6 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import acPortalImg from "@/assets/assassins-creed-portal.jpg";
 
-export default BotaoVoltar;
-
 const ACRanking2026 = () => {
   const ranking = [
     {
