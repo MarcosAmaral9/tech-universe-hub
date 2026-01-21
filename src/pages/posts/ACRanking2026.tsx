@@ -5,14 +5,30 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import acPortalImg from "@/assets/assassins-creed-portal.jpg";
 
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import acPortalImg from "@/assets/assassins-creed-portal.jpg";
+import acShadowsImg from "@/assets/ac-shadows.jpg";
+import acMirageImg from "@/assets/ac-mirage.jpg";
+import acValhallaImg from "@/assets/ac-valhalla.jpg";
+import acOdysseyImg from "@/assets/ac-odyssey.jpg";
+import acOriginsImg from "@/assets/ac-origins.jpg";
+import acSyndicateImg from "@/assets/ac-syndicate.jpg";
+import acUnityImg from "@/assets/ac-unity.jpg";
+import acRogueImg from "@/assets/ac-rogue.jpg";
+import acBlackFlagImg from "@/assets/ac-black-flag.jpg";
+import ac3Img from "@/assets/ac-3.jpg";
+
+
 const ACRanking2026 = () => {
   const ranking = [
     {
-         position: 1,
+      position: 1,
       title: "Assassin's Creed Valhalla",
       slug: "ac-valhalla-jornada-epica-eivor",
       reason: "Épico viking com mais de 100 horas. Perfeito para fãs da série Vikings.",
       year: "2020"
+      image: acValhallaImg
     },
     {
       position: 2,
@@ -20,6 +36,7 @@ const ACRanking2026 = () => {
       slug: "ac-shadows-japao-feudal",
       reason: "O Japão Feudal que sonhamos. Naoe e Yasuke trazem a dualidade perfeita de gameplay.",
       year: "2025",
+      image: acShadowsImg
     },
     {
       position: 3,
@@ -27,6 +44,7 @@ const ACRanking2026 = () => {
       slug: "ac-odyssey-odisseia-grecia",
       reason: "O maior mundo aberto da série. Kassandra, mitologia grega e batalhas navais épicas.",
       year: "2018"
+     image: acOdysseyImg
     },
     {
       position: 4,
@@ -34,6 +52,7 @@ const ACRanking2026 = () => {
       slug: "ac-black-flag-melhor-jogo-piratas",
       reason: "A combinação perfeita de pirataria e assassinato. Combate naval imbatível até hoje.",
       year: "2013"
+      image: acBlackFlagImg
     },
     {
       position: 5,
@@ -41,6 +60,7 @@ const ACRanking2026 = () => {
       slug: "ac-3-remastered-revolucao-americana",
       reason: "A Revolução Americana em 4K. Connor e a introdução das batalhas navais.",
       year: "2012/2019"
+      image: ac3Img
     },
     {
       position: 6,
@@ -48,6 +68,7 @@ const ACRanking2026 = () => {
       slug: "ac-rogue-heroi-vilao-templario",
       reason: "Jogar como Templário é refrescante. Navegação no Ártico e a história de Shay.",
       year: "2014"
+     image: acRogueImg
     },
     {
       position: 7,
@@ -55,6 +76,7 @@ const ACRanking2026 = () => {
       slug: "ac-mirage-retorno-raizes-bagda",
       reason: "Retorno às raízes. Furtividade clássica em Bagdá do século IX.",
       year: "2023"
+      image: acMirageImg
     },
     {
       position: 8,
@@ -62,6 +84,7 @@ const ACRanking2026 = () => {
       slug: "ac-syndicate-revolucao-industrial-londres",
       reason: "Londres vitoriana e os irmãos Frye. Carruagens e o gancho de corda são divertidos.",
       year: "2015"
+      image: acSyndicateImg
     },
     {
       position: 9,
@@ -69,6 +92,7 @@ const ACRanking2026 = () => {
       slug: "ac-origins-renascimento-franquia-egito",
       reason: "O renascimento da franquia. Bayek é um dos melhores protagonistas e o Egito é deslumbrante.",
       year: "2017"
+      image: acOriginsImg
     },
     {
       position: 10,
@@ -76,6 +100,7 @@ const ACRanking2026 = () => {
       slug: "ac-unity-jogo-frente-tempo-paris",
       reason: "A obra-prima técnica. Paris é a cidade mais detalhada e o parkour é o melhor da saga.",
       year: "2014"
+      image: acUnityImg
     }
   ];
 
