@@ -18,7 +18,7 @@ const ACValhalla = () => {
       </Link>
 
       {/* Ranking Button */}
-      <article className="container w-full flex justify-center pt-8 pb-6">
+      <article className=" w-full flex justify-center pt-8 pb-6">
       <Link
     to="/geek/ranking-melhor-assassins-creed-2026"
     className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
