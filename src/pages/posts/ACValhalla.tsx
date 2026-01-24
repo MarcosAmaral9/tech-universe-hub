@@ -17,16 +17,6 @@ const ACValhalla = () => {
         Voltar para Portal Assassin's Creed
       </Link>
 
-      {/* Ranking Button */}
-      <article className=" w-full flex justify-center pt-8 pb-6">
-      <Link
-    to="/geek/ranking-melhor-assassins-creed-2026"
-    className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-      >
-    <ArrowLeft className="h-4 w-4" />
-    Voltar para o Ranking
-  </Link>
-      
       {/* Header */}
       <header className="mb-8">
         <div className="flex items-center gap-2 mb-4">
