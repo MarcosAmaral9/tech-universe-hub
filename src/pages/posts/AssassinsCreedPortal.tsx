@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import acPortalImg from "@/assets/assassins-creed-portal1.jpg";
+import acPortalImg from "@/assets/assassins-creed-portal.jpg";
 import acShadowsImg from "@/assets/ac-shadows.jpg";
 import acMirageImg from "@/assets/ac-mirage.jpg";
 import acValhallaImg from "@/assets/ac-valhalla.jpg";
