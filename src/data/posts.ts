@@ -285,7 +285,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "geek",
     subtopic: "assassins-creed",
-    image: acUnityImg,
+    image: acPortalImg,
     author: "VICIO<CODE>",
     date: "2026-01-20",
     readTime: "10 min"
