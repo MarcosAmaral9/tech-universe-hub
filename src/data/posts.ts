@@ -22,6 +22,7 @@ import ac3Img from "@/assets/ac-3.jpg";
 import acSyndicateImg from "@/assets/ac-syndicate.jpg";
 import acUnityImg from "@/assets/ac-unity.jpg";
 import acRogueImg from "@/assets/ac-rogue.jpg";
+import acPortalImg from "@/assets/assassins-creed-portal.jpg";
 
 export const blogPosts: BlogPost[] = [
   // IA Posts
