@@ -255,10 +255,10 @@ const ACRogue = () => {
       </div>
 
       {/* Related Posts */}
-      <RelatedPosts currentSlug="ac-rogue-heroi-vilao-templario" />
+      <RelatedPosts currentSlug="ac-rogue-assassino-templario" />
 
       {/* Comments */}
-      <CommentSection postId="ac-rogue-heroi-vilao-templario" />
+      <CommentSection postId="ac-rogue-assassino-templario" />
     </article>
   );
 };

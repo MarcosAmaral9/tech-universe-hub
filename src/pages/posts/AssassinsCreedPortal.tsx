@@ -21,7 +21,7 @@ const AssassinsCreedPortal = () => {
     { slug: "ac-origins-renascimento-franquia-egito", title: "AC Origins", subtitle: "Egito Antigo (2017)", desc: "A origem da irmandade com Bayek.", image: acOriginsImg },
     { slug: "ac-syndicate-revolucao-industrial-londres", title: "AC Syndicate", subtitle: "Londres Vitoriana (2015)", desc: "Os irmãos Frye na Revolução Industrial.", image: acSyndicateImg },
     { slug: "ac-unity-jogo-frente-tempo-paris", title: "AC Unity", subtitle: "Revolução Francesa (2014)", desc: "A obra-prima técnica em Paris.", image: acUnityImg },
-    { slug: "ac-rogue-heroi-vilao-templario", title: "AC Rogue", subtitle: "Atlântico Norte (2014)", desc: "Jogue como Templário pela primeira vez.", image: acRogueImg },
+    { slug: "ac-rogue-assassino-templario", title: "AC Rogue", subtitle: "Atlântico Norte (2014)", desc: "Jogue como Templário pela primeira vez.", image: acRogueImg },
     { slug: "ac-black-flag-melhor-jogo-piratas", title: "AC IV: Black Flag", subtitle: "Era dos Piratas (2013)", desc: "O melhor jogo de piratas já feito.", image: acBlackFlagImg },
     { slug: "ac-3-remastered-revolucao-americana", title: "AC III Remastered", subtitle: "Revolução Americana (2012)", desc: "Connor Kenway entre dois mundos.", image: ac3Img },
   ];
