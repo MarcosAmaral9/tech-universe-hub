@@ -73,7 +73,7 @@ const Footer = () => {
               </div>
             </div>
             {/* Mobile: Clickable links */}
-            <div className="flex md:hidden gap-4">
+          <div className="flex md:hidden gap-4">
               <a
                 href={instagramUrl}
                 target="_blank"
@@ -90,6 +90,18 @@ const Footer = () => {
               >
                 <TikTokIcon />
               </a>
+            </div>
+            {/* Legal Links */}
+            <div className="flex flex-wrap gap-4 mt-4 md:mt-0">
+              <Link to="/sobre" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Sobre
+              </Link>
+              <Link to="/privacidade" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Privacidade
+              </Link>
+              <Link to="/termos" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Termos
+              </Link>
             </div>
           </div>
         </div>
