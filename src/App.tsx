@@ -81,7 +81,7 @@ const App = () => (
               <Route path="/post/ac-3-remastered-revolucao-americana" element={<AC3Remastered />} />
               <Route path="/post/ac-syndicate-revolucao-industrial-londres" element={<ACSyndicate />} />
               <Route path="/post/ac-unity-jogo-frente-tempo-paris" element={<ACUnity />} />
-              <Route path="/post/ac-rogue-heroi-vilao-templario" element={<ACRogue />} />
+              <Route path="/post/ac-rogue-assassino-templario" element={<ACRogue />} />
               <Route path="/post/ranking-melhor-assassins-creed-2026" element={<ACRanking2026 />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
