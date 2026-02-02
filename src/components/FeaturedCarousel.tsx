@@ -7,22 +7,44 @@ import { Button } from "@/components/ui/button";
 
 const FeaturedCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const posts = getLatestPostsByCategory();
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % posts.length);
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % posts.length);
+        setIsTransitioning(false);
+      }, 300);
     }, 5000);
 
     return () => clearInterval(timer);
   }, [posts.length]);
 
   const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev - 1 + posts.length) % posts.length);
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev - 1 + posts.length) % posts.length);
+      setIsTransitioning(false);
+    }, 300);
   };
 
   const goToNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % posts.length);
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev + 1) % posts.length);
+      setIsTransitioning(false);
+    }, 300);
+  };
+
+  const goToSlide = (index: number) => {
+    if (index === currentIndex) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex(index);
+      setIsTransitioning(false);
+    }, 300);
   };
 
   const currentPost = posts[currentIndex];
@@ -34,13 +56,13 @@ const FeaturedCarousel = () => {
       <div className="container py-8">
         <div className="relative rounded-2xl overflow-hidden bg-card border border-border shadow-lg">
           {/* Main Content */}
-          <div className="flex flex-col md:flex-row min-h-[400px]">
+          <div className={`flex flex-col md:flex-row min-h-[400px] transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
             {/* Image */}
             <div className="relative w-full md:w-1/2 h-64 md:h-auto overflow-hidden">
               <img
                 src={currentPost.image}
                 alt={currentPost.title}
-                className="w-full h-full object-cover transition-transform duration-500"
+                className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent md:bg-gradient-to-r" />
             </div>
@@ -88,7 +110,7 @@ const FeaturedCarousel = () => {
               {posts.map((_, index) => (
                 <button
                   key={index}
-                  onClick={() => setCurrentIndex(index)}
+                  onClick={() => goToSlide(index)}
                   className={`w-2 h-2 rounded-full transition-all ${
                     index === currentIndex
                       ? "bg-primary w-6"
