@@ -40,6 +40,7 @@ import ACRanking2026 from "./pages/posts/ACRanking2026";
 import AboutPage from "./pages/AboutPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsPage from "./pages/TermsPage";
+import ContentPolicyPage from "./pages/ContentPolicyPage";
 import CookieConsent from "./components/CookieConsent";
 
 const queryClient = new QueryClient();
@@ -92,6 +93,7 @@ const App = () => (
               <Route path="/sobre" element={<AboutPage />} />
               <Route path="/privacidade" element={<PrivacyPolicyPage />} />
               <Route path="/termos" element={<TermsPage />} />
+              <Route path="/politica-conteudo" element={<ContentPolicyPage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
