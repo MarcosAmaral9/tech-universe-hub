@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, Clock, User, Calendar, Sword, Moon, Sun, Leaf, Gamepad2 } from "lucide-react";
+import { ArrowLeft, Clock, User, Calendar, Sword, Moon, Sun, Leaf, Cpu, DollarSign, Target, Laptop, Gamepad2, HelpCircle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
@@ -8,6 +8,8 @@ import acShadowsImg from "@/assets/ac-shadows.jpg";
 const ACShadows = () => {
   return (
     <article className="container py-8 max-w-4xl mx-auto">
+      {/* SEO-optimized meta description: Assassin's Creed Shadows no Japão Feudal vale a pena em 2026? Review completa com Naoe e Yasuke, estações dinâmicas, requisitos de PC gamer pesados e análise de custo-benefício. */}
+      
       {/* Back Button */}
       <Link
         to="/geek/assassins-creed"
@@ -26,7 +28,7 @@ const ACShadows = () => {
           </span>
         </div>
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-          Assassin's Creed Shadows: O Japão Feudal que os Fãs Sempre Sonharam
+          Assassin's Creed Shadows em 2026 Vale a Pena? Review Completa, Japão Feudal, PC Ideal e Custo-Benefício
         </h1>
         
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
@@ -36,11 +38,11 @@ const ACShadows = () => {
           </span>
           <span className="flex items-center gap-2">
             <Calendar className="h-4 w-4" />
-            19 de Janeiro, 2026
+            02 de Fevereiro, 2026
           </span>
           <span className="flex items-center gap-2">
             <Clock className="h-4 w-4" />
-            7 min de leitura
+            12 min de leitura
           </span>
         </div>
       </header>
@@ -49,7 +51,7 @@ const ACShadows = () => {
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img
           src={acShadowsImg}
-          alt="Assassin's Creed Shadows"
+          alt="Assassin's Creed Shadows - Review 2026 Japão Feudal PC gamer"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
@@ -58,16 +60,24 @@ const ACShadows = () => {
       {/* Content */}
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          Após anos de espera e muitos pedidos da comunidade, a Ubisoft finalmente nos leva ao <strong>Japão do 
-          século XVI</strong>. <strong>Assassin's Creed Shadows</strong> não é apenas mais um jogo da franquia; 
-          é uma evolução técnica que promete redefinir como interagimos com o mundo aberto.
+          Após anos de espera e muitos pedidos da comunidade, a Ubisoft finalmente nos leva ao <strong>Japão 
+          do século XVI</strong>. <strong>Assassin's Creed Shadows</strong> não é apenas mais um jogo da 
+          franquia; é uma <strong>evolução técnica</strong> que redefine como interagimos com o mundo aberto, 
+          exigindo <strong>PC gamer</strong> ou <strong>notebook gamer</strong> de alta performance.
         </p>
 
-        {/* Game Info Box */}
+        <p className="text-lg">Neste guia completo você encontra:</p>
+        <ul className="text-lg">
+          <li>👉 <strong>O Japão Feudal que os fãs sonharam chegou?</strong></li>
+          <li>👉 Naoe ou Yasuke: qual protagonista escolher?</li>
+          <li>👉 Requisitos de PC pesados e custo-benefício</li>
+        </ul>
+
+        {/* Quick Info Box */}
         <div className="my-8 p-6 bg-gradient-to-br from-purple-500/10 to-background rounded-xl border border-purple-500/30">
-          <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-            🎮 Informações do Jogo
-          </h3>
+          <h2 className="text-xl font-bold mb-4 flex items-center gap-2 mt-0">
+            🎮 Informações Rápidas para Decisão de Compra
+          </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div>
               <div className="text-sm text-muted-foreground">Desenvolvedora</div>
@@ -78,65 +88,78 @@ const ACShadows = () => {
               <div className="font-bold">20/03/2025</div>
             </div>
             <div>
-              <div className="text-sm text-muted-foreground">Preço Médio</div>
-              <div className="font-bold">R$ 300</div>
+              <div className="text-sm text-muted-foreground">Preço Médio 2026</div>
+              <div className="font-bold">R$ 250 a R$ 350</div>
             </div>
             <div>
-              <div className="text-sm text-muted-foreground">Gênero</div>
-              <div className="font-bold">RPG de Ação</div>
+              <div className="text-sm text-muted-foreground">Duração Média</div>
+              <div className="font-bold">60 a 100 horas</div>
             </div>
           </div>
+          <p className="mt-4 text-muted-foreground mb-0">
+            👉 <strong>O mais tecnologicamente avançado</strong> da franquia até hoje.
+          </p>
         </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Sword className="h-7 w-7 text-purple-400" />
-          1. Dois Protagonistas, Dois Estilos de Jogo
+          <Target className="h-7 w-7 text-purple-400" />
+          Review Geral: Shadows é o Melhor AC Já Feito?
         </h2>
 
         <p>
-          A grande inovação de Shadows está na escolha entre dois personagens com mecânicas completamente distintas:
+          <strong>Para muitos fãs, sim.</strong> O Japão Feudal era o cenário mais pedido há décadas, e a 
+          Ubisoft entregou uma experiência visualmente deslumbrante com mecânicas inovadoras.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Sword className="h-7 w-7 text-purple-400" />
+          Dois Protagonistas, Dois Estilos de Jogo
+        </h2>
+
+        <p>
+          A grande inovação está na escolha entre dois personagens com mecânicas completamente distintas:
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 my-8">
           <div className="p-5 bg-card rounded-xl border border-border">
             <Moon className="h-8 w-8 text-purple-400 mb-3" />
             <h4 className="font-bold mb-2">Naoe (Shinobi)</h4>
-            <p className="text-sm text-muted-foreground">
-              Uma ninja focada em <strong>furtividade clássica</strong>, parkour ágil e uso de sombras. É a escolha 
-              perfeita para quem sente falta das raízes de Assassin's Creed.
+            <p className="text-sm text-muted-foreground mb-0">
+              Ninja focada em <strong>furtividade clássica</strong>, parkour ágil e uso de sombras. Escolha 
+              perfeita para quem sente falta das raízes de AC.
             </p>
           </div>
           <div className="p-5 bg-card rounded-xl border border-border">
             <Sword className="h-8 w-8 text-purple-400 mb-3" />
             <h4 className="font-bold mb-2">Yasuke (Samurai)</h4>
-            <p className="text-sm text-muted-foreground">
-              Baseado no <strong>lendário samurai africano real</strong>, ele traz um combate pesado, direto e 
-              focado em força bruta e armaduras.
+            <p className="text-sm text-muted-foreground mb-0">
+              Baseado no <strong>lendário samurai africano real</strong>. Combate pesado, direto e focado 
+              em força bruta e armaduras.
             </p>
           </div>
         </div>
 
         <p>
-          Essa dualidade permite que o jogador escolha como abordar cada missão: nas sombras ou no confronto direto.
+          Essa dualidade permite escolher como abordar cada missão: nas sombras ou no confronto direto.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Leaf className="h-7 w-7 text-purple-400" />
-          2. Tecnologia de Estações Dinâmicas
+          Tecnologia de Estações Dinâmicas
         </h2>
 
         <p>
-          Um dos pontos altos para o nosso blog de tecnologia é o novo sistema de <strong>estações do ano dinâmicas</strong>.
+          O novo sistema de <strong>estações do ano dinâmicas</strong> impacta diretamente a jogabilidade:
         </p>
 
         <ul className="space-y-3 my-6">
           <li className="flex items-start gap-3">
             <span className="text-purple-500 font-bold">❄️</span>
-            <span><strong>Inverno:</strong> A neve abafa seus passos, mas os inimigos podem ver suas pegadas.</span>
+            <span><strong>Inverno:</strong> Neve abafa passos, mas inimigos veem suas pegadas.</span>
           </li>
           <li className="flex items-start gap-3">
             <span className="text-purple-500 font-bold">🌿</span>
-            <span><strong>Verão:</strong> A vegetação alta oferece esconderijos que desaparecem no outono.</span>
+            <span><strong>Verão:</strong> Vegetação alta oferece esconderijos que desaparecem no outono.</span>
           </li>
           <li className="flex items-start gap-3">
             <span className="text-purple-500 font-bold">🍂</span>
@@ -150,81 +173,147 @@ const ACShadows = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Sun className="h-7 w-7 text-purple-400" />
-          3. A Arte da Furtividade e a Iluminação
+          Sistema de Iluminação Global
         </h2>
 
         <p>
-          Diferente dos jogos anteriores onde você estava "escondido ou visível", Shadows introduz um sistema de 
-          <strong> iluminação global</strong> onde você pode criar suas próprias sombras. Apagar tochas e destruir 
-          fontes de luz agora são mecânicas essenciais para Naoe se manter invisível.
+          Shadows introduz um sistema onde você pode <strong>criar suas próprias sombras</strong>. Apagar 
+          tochas e destruir fontes de luz são mecânicas essenciais para Naoe se manter invisível.
         </p>
 
-        <h2 className="text-2xl font-bold mt-10 mb-6">Por que este é o jogo mais "Otaku" da franquia?</h2>
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Gamepad2 className="h-7 w-7 text-purple-400" />
+          O Jogo Mais "Otaku" da Franquia
+        </h2>
 
         <p>
           Para quem consome animes como <strong>Rurouni Kenshin (Samurai X)</strong> ou <strong>Basilisk</strong>, 
-          o jogo é um prato cheio. A fidelidade histórica das vilas, os castelos imponentes e a filosofia das 
-          katanas e kunais trazem toda a estética que amamos nos mangás diretamente para o controle.
+          o jogo é um prato cheio. A fidelidade histórica das vilas, os castelos imponentes e a filosofia 
+          das katanas trazem toda a estética que amamos nos mangás.
         </p>
 
         <div className="my-8 p-6 bg-secondary/50 rounded-xl border border-border">
           <p className="text-muted-foreground mb-0">
-            💡 Se você gosta da temática de guerreiros históricos, não deixe de ler nosso artigo completo sobre a{" "}
+            💡 Gosta de guerreiros históricos? Não deixe de ler nosso artigo sobre a{" "}
             <Link to="/post/vikings-legado-ragnar-lothbrok" className="text-primary hover:underline">
               série Vikings
             </Link>.
           </p>
         </div>
 
-        <h2 className="text-2xl font-bold mt-10 mb-6">Requisitos do Sistema</h2>
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Cpu className="h-7 w-7 text-purple-400" />
+          Requisitos de PC: Shadows é Muito Pesado?
+        </h2>
 
-        <h3 className="text-xl font-bold mt-6 mb-4">Mínimos (1080p a 30 FPS, Configuração Baixa)</h3>
+        <p className="text-destructive font-bold">
+          ⚠️ Sim! Este é o AC mais exigente já lançado. Prepare seu hardware.
+        </p>
+
+        <h3 className="text-xl font-bold mt-6 mb-4">🔻 Configuração Mínima (1080p – 30 FPS, Baixo)</h3>
         <div className="overflow-x-auto my-4">
           <table className="w-full border-collapse">
             <tbody>
               <tr className="border-b border-border">
                 <td className="py-3 px-4 font-medium">Sistema Operacional</td>
-                <td className="py-3 px-4 text-muted-foreground">Windows 10/11 (versões de 64 bits)</td>
+                <td className="py-3 px-4 text-muted-foreground">Windows 10/11 (64 bits)</td>
               </tr>
               <tr className="border-b border-border">
                 <td className="py-3 px-4 font-medium">Processador</td>
-                <td className="py-3 px-4 text-muted-foreground">AMD Ryzen 5 3600 @ 3.6 GHz, Intel Core i7-8700k @ 3.7 GHz</td>
+                <td className="py-3 px-4 text-muted-foreground">Ryzen 5 3600 ou Intel Core i7-8700k</td>
               </tr>
               <tr className="border-b border-border">
-                <td className="py-3 px-4 font-medium">RAM</td>
-                <td className="py-3 px-4 text-muted-foreground">16 GB (modo dual-channel)</td>
+                <td className="py-3 px-4 font-medium">Memória RAM</td>
+                <td className="py-3 px-4 text-muted-foreground">16 GB (dual channel)</td>
               </tr>
               <tr className="border-b border-border">
                 <td className="py-3 px-4 font-medium">Placa de Vídeo</td>
-                <td className="py-3 px-4 text-muted-foreground">AMD Radeon RX 5700 (8 GB), Intel Arc A580 (8 GB), NVIDIA GeForce GTX 1070 (8 GB)</td>
+                <td className="py-3 px-4 text-muted-foreground">RTX 3070 (8 GB) ou RX 5700 (8 GB)</td>
               </tr>
               <tr>
                 <td className="py-3 px-4 font-medium">Armazenamento</td>
-                <td className="py-3 px-4 text-muted-foreground">SSD necessário</td>
+                <td className="py-3 px-4 text-muted-foreground">SSD (obrigatório)</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <h3 className="text-xl font-bold mt-6 mb-4">Recomendados 4K (2160p a 60 FPS, Configuração Alta)</h3>
+        <h3 className="text-xl font-bold mt-6 mb-4">🔺 Configuração Recomendada (4K – 60 FPS, Alto)</h3>
         <div className="overflow-x-auto my-4">
           <table className="w-full border-collapse">
             <tbody>
               <tr className="border-b border-border">
                 <td className="py-3 px-4 font-medium">Processador</td>
-                <td className="py-3 px-4 text-muted-foreground">AMD Ryzen 7 5800x3D @ 3.4 GHz, Intel Core i7-12700k @ 3.6 GHz</td>
+                <td className="py-3 px-4 text-muted-foreground">Ryzen 7 5800X3D ou Intel Core i7-12700k</td>
               </tr>
               <tr className="border-b border-border">
-                <td className="py-3 px-4 font-medium">Placa de Vídeo</td>
-                <td className="py-3 px-4 text-muted-foreground">AMD Radeon RX 7900 XT (20 GB), NVIDIA GeForce RTX 4070 Ti Super (16 GB)</td>
+                <td className="py-3 px-4 font-medium">Memória RAM</td>
+                <td className="py-3 px-4 text-muted-foreground">32 GB (dual channel)</td>
               </tr>
               <tr>
-                <td className="py-3 px-4 font-medium">Armazenamento</td>
-                <td className="py-3 px-4 text-muted-foreground">SSD necessário</td>
+                <td className="py-3 px-4 font-medium">Placa de Vídeo</td>
+                <td className="py-3 px-4 text-muted-foreground">RTX 4070 Ti Super (16 GB) ou RX 7900 XT (20 GB)</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <p className="text-muted-foreground">
+          👉 <strong>PC gamer de alta performance</strong> é obrigatório para aproveitar o jogo.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Laptop className="h-7 w-7 text-purple-400" />
+          Notebook Gamer Roda Shadows?
+        </h2>
+
+        <p><strong>Com dificuldade.</strong> Apenas <strong>notebooks gamer</strong> de ponta:</p>
+        <ul>
+          <li>RTX 4060 / 4070 ou superior</li>
+          <li>Intel Core i7-12700H ou Ryzen 9</li>
+          <li>32 GB de RAM</li>
+          <li>SSD NVMe obrigatório</li>
+        </ul>
+
+        <p className="text-destructive">
+          ⚠️ <strong>Notebooks de entrada não rodarão Shadows adequadamente.</strong>
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <HelpCircle className="h-7 w-7 text-purple-400" />
+          PC ou Console: Qual Vale Mais a Pena?
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-6 my-8">
+          <div className="p-5 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-3">💻 PC Gamer</h4>
+            <ul className="text-sm text-muted-foreground space-y-1 mb-0">
+              <li>✔ Melhores gráficos possíveis</li>
+              <li>✔ Ray Tracing completo</li>
+              <li>✔ Requer investimento alto</li>
+            </ul>
+          </div>
+          <div className="p-5 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-3">🎮 Console</h4>
+            <ul className="text-sm text-muted-foreground space-y-1 mb-0">
+              <li>✔ Apenas PS5 e Xbox Series X|S</li>
+              <li>✔ Otimização garantida</li>
+              <li>✔ Custo-benefício melhor</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <DollarSign className="h-7 w-7 text-purple-400" />
+          Vale a Pena Comprar Shadows em 2026?
+        </h2>
+
+        <p><strong>Vale a pena</strong> se você:</p>
+        <ul>
+          <li>Sempre quis um AC no Japão</li>
+          <li>Tem hardware capaz de rodar o jogo</li>
+          <li>Gosta de sistemas de furtividade elaborados</li>
+          <li>Aprecia cultura e estética japonesa</li>
+        </ul>
 
         {/* Where to Play */}
         <div className="my-8 p-6 bg-gradient-to-br from-purple-500/20 to-background rounded-xl border border-purple-500/30">
@@ -235,7 +324,7 @@ const ACShadows = () => {
             <li>✓ <strong>Xbox Series X|S</strong></li>
           </ul>
           <p className="mt-4 text-sm text-muted-foreground">
-            Preço médio: R$ 300
+            Preço médio: R$ 250 a R$ 350
           </p>
         </div>
 
