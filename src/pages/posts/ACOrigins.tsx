@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, Clock, User, Calendar, Pyramid, Bird, Sword, BookOpen, Gamepad2 } from "lucide-react";
+import { ArrowLeft, Clock, User, Calendar, Pyramid, Bird, Sword, Cpu, DollarSign, Target, Laptop, Gamepad2, HelpCircle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
@@ -8,6 +8,8 @@ import acOriginsImg from "@/assets/ac-origins.jpg";
 const ACOrigins = () => {
   return (
     <article className="container py-8 max-w-4xl mx-auto">
+      {/* SEO-optimized meta description: Assassin's Creed Origins vale a pena em 2026? Review completa do renascimento da franquia no Egito Antigo com Bayek, Discovery Tour, requisitos de PC gamer e custo-benefício. */}
+      
       {/* Back Button */}
       <Link
         to="/geek/assassins-creed"
@@ -26,7 +28,7 @@ const ACOrigins = () => {
           </span>
         </div>
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-          Assassin's Creed Origins: O Renascimento da Franquia no Egito dos Faraós
+          Assassin's Creed Origins em 2026 Vale a Pena? Review Completa, Egito Antigo, PC Ideal e Custo-Benefício
         </h1>
         
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
@@ -36,11 +38,11 @@ const ACOrigins = () => {
           </span>
           <span className="flex items-center gap-2">
             <Calendar className="h-4 w-4" />
-            16 de Janeiro, 2026
+            02 de Fevereiro, 2026
           </span>
           <span className="flex items-center gap-2">
             <Clock className="h-4 w-4" />
-            8 min de leitura
+            12 min de leitura
           </span>
         </div>
       </header>
@@ -49,7 +51,7 @@ const ACOrigins = () => {
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img
           src={acOriginsImg}
-          alt="Assassin's Creed Origins"
+          alt="Assassin's Creed Origins - Review 2026 Egito Antigo PC gamer"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
@@ -58,16 +60,24 @@ const ACOrigins = () => {
       {/* Content */}
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          Após um hiato necessário, a Ubisoft lançou em 2017 aquele que seria o alicerce para o futuro da saga: 
+          Após um hiato necessário, a Ubisoft lançou em 2017 o alicerce para o futuro da saga: 
           <strong> Assassin's Creed Origins</strong>. Mais do que um novo jogo, foi uma <strong>reinvenção 
-          completa</strong> que nos levou de volta ao início de tudo, revelando a fundação da irmandade dos "Ocultos".
+          completa</strong> que nos levou de volta ao início de tudo no <strong>Egito dos Faraós</strong>, 
+          revelando a fundação da irmandade dos "Ocultos".
         </p>
 
-        {/* Game Info Box */}
+        <p className="text-lg">Neste guia completo você encontra:</p>
+        <ul className="text-lg">
+          <li>👉 <strong>O renascimento da franquia ainda vale a pena?</strong></li>
+          <li>👉 Por que Bayek é um dos melhores protagonistas</li>
+          <li>👉 Requisitos de PC e custo-benefício em 2026</li>
+        </ul>
+
+        {/* Quick Info Box */}
         <div className="my-8 p-6 bg-gradient-to-br from-yellow-500/10 to-background rounded-xl border border-yellow-500/30">
-          <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-            🎮 Informações do Jogo
-          </h3>
+          <h2 className="text-xl font-bold mb-4 flex items-center gap-2 mt-0">
+            🎮 Informações Rápidas para Decisão de Compra
+          </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div>
               <div className="text-sm text-muted-foreground">Desenvolvedora</div>
@@ -78,79 +88,88 @@ const ACOrigins = () => {
               <div className="font-bold">27/10/2017</div>
             </div>
             <div>
-              <div className="text-sm text-muted-foreground">Preço Médio</div>
-              <div className="font-bold">R$ 130</div>
+              <div className="text-sm text-muted-foreground">Preço Médio 2026</div>
+              <div className="font-bold">R$ 80 a R$ 130</div>
             </div>
             <div>
-              <div className="text-sm text-muted-foreground">Gênero</div>
-              <div className="font-bold">RPG de Ação</div>
+              <div className="text-sm text-muted-foreground">Duração Média</div>
+              <div className="font-bold">50 a 80 horas</div>
             </div>
           </div>
+          <p className="mt-4 text-muted-foreground mb-0">
+            👉 <strong>Excelente custo-benefício</strong> com Discovery Tour educativo incluso.
+          </p>
         </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Sword className="h-7 w-7 text-yellow-400" />
-          1. Bayek de Siwa: Um Protagonista Memorável
+          <Target className="h-7 w-7 text-yellow-400" />
+          Review Geral: Origins é o Melhor Ponto de Entrada da Franquia?
         </h2>
 
         <p>
-          Em Origins, controlamos <strong>Bayek</strong>, um Medjay (protetor do faraó) cuja jornada de vingança 
-          pessoal se entrelaça com o destino do Egito. Acompanhado por sua esposa, <strong>Aya</strong>, Bayek é 
-          um dos personagens mais humanos e bem construídos da série.
+          <strong>Sim</strong> — Origins funciona perfeitamente como <strong>primeiro AC</strong> para novos 
+          jogadores. A história é autocontida, o sistema de combate foi completamente reformulado, e o Egito 
+          é um dos cenários mais impressionantes da série.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Sword className="h-7 w-7 text-yellow-400" />
+          Bayek de Siwa: Um Protagonista Memorável
+        </h2>
+
+        <p>
+          Controlamos <strong>Bayek</strong>, um Medjay (protetor do faraó) cuja jornada de vingança pessoal 
+          se entrelaça com o destino do Egito. Acompanhado por sua esposa <strong>Aya</strong>, Bayek é um 
+          dos personagens mais humanos e bem construídos da série.
         </p>
 
         <p>
-          O jogo mostra o peso emocional de suas perdas enquanto luta contra a corrupção da <strong>Ordem dos 
-          Anciões</strong>.
+          O jogo mostra o peso emocional de suas perdas enquanto luta contra a corrupção da <strong>Ordem 
+          dos Anciões</strong>.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Pyramid className="h-7 w-7 text-yellow-400" />
-          2. A Tecnologia da Reconstrução Histórica
+          Tecnologia da Reconstrução Histórica
         </h2>
 
         <p>
-          O que torna este post perfeito para o nosso blog de tecnologia é o nível de detalhe na recriação do 
-          Egito sob o reinado de <strong>Cleópatra</strong>.
+          O nível de detalhe na recriação do Egito sob o reinado de <strong>Cleópatra</strong> é impressionante:
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 my-8">
           <div className="p-5 bg-card rounded-xl border border-border">
-            <BookOpen className="h-8 w-8 text-yellow-400 mb-3" />
+            <Pyramid className="h-8 w-8 text-yellow-400 mb-3" />
             <h4 className="font-bold mb-2">Discovery Tour</h4>
-            <p className="text-sm text-muted-foreground">
-              A tecnologia de reconstrução foi tão precisa que a Ubisoft lançou um modo educativo, usado até hoje 
-              por escolas para ensinar sobre as pirâmides de Gizé e a Biblioteca de Alexandria.
+            <p className="text-sm text-muted-foreground mb-0">
+              Modo educativo usado por escolas para ensinar sobre as pirâmides de Gizé e a Biblioteca de 
+              Alexandria. Tecnologia de reconstrução usada em pesquisas.
             </p>
           </div>
           <div className="p-5 bg-card rounded-xl border border-border">
             <Bird className="h-8 w-8 text-yellow-400 mb-3" />
             <h4 className="font-bold mb-2">Ecossistema Vivo</h4>
-            <p className="text-sm text-muted-foreground">
-              A IA dos animais é impressionante. Hipopótamos atacam barcos, crocodilos caçam nas margens e os 
-              habitantes têm rotinas completas de sono, trabalho e lazer.
+            <p className="text-sm text-muted-foreground mb-0">
+              IA avançada: hipopótamos atacam barcos, crocodilos caçam nas margens, habitantes têm rotinas 
+              completas de sono, trabalho e lazer.
             </p>
           </div>
         </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Gamepad2 className="h-7 w-7 text-yellow-400" />
-          3. O Salto para o RPG
+          O Salto para o RPG
         </h2>
 
         <p>
-          Origins abandonou o sistema de combate rítmico antigo e introduziu o combate baseado em <strong>hitbox 
-          e níveis de equipamentos</strong>. A introdução de <strong>Senu</strong>, a águia que serve como um 
-          drone orgânico, mudou a forma como fazemos o reconhecimento tático do terreno — uma mecânica que se 
-          tornou padrão nos jogos seguintes.
+          Origins abandonou o combate rítmico antigo e introduziu <strong>combate baseado em hitbox</strong> 
+          e níveis de equipamentos. A introdução de <strong>Senu</strong>, a águia que serve como drone 
+          orgânico, mudou a forma como fazemos reconhecimento — mecânica que se tornou padrão nos jogos seguintes.
         </p>
-
-        <h2 className="text-2xl font-bold mt-10 mb-6">4. Visual Deslumbrante em 4K</h2>
 
         <p>
           Mesmo anos após o lançamento, Origins recebeu atualizações para rodar a <strong>60 FPS</strong> nos 
-          consoles modernos. A renderização das areias do deserto, os reflexos do Rio Nilo e a iluminação dourada 
-          do sol egípcio continuam sendo um <strong>benchmark de qualidade visual</strong>.
+          consoles modernos.
         </p>
 
         <div className="my-8 p-6 bg-secondary/50 rounded-xl border border-border">
@@ -162,55 +181,110 @@ const ACOrigins = () => {
           </p>
         </div>
 
-        <h2 className="text-2xl font-bold mt-10 mb-6">Requisitos do Sistema</h2>
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Cpu className="h-7 w-7 text-yellow-400" />
+          Requisitos de PC: Qual Configuração Roda Origins?
+        </h2>
 
-        <h3 className="text-xl font-bold mt-6 mb-4">Mínimos (1080p a 30 FPS)</h3>
+        <h3 className="text-xl font-bold mt-6 mb-4">🔻 Configuração Mínima (1080p – 30 FPS)</h3>
         <div className="overflow-x-auto my-4">
           <table className="w-full border-collapse">
             <tbody>
               <tr className="border-b border-border">
                 <td className="py-3 px-4 font-medium">Sistema Operacional</td>
-                <td className="py-3 px-4 text-muted-foreground">Windows 10 (versões 64 bits)</td>
+                <td className="py-3 px-4 text-muted-foreground">Windows 10 (64 bits)</td>
               </tr>
               <tr className="border-b border-border">
                 <td className="py-3 px-4 font-medium">Processador</td>
-                <td className="py-3 px-4 text-muted-foreground">AMD FX 6350 – 3,9 GHz, Intel Core i5 2400S – 2,5 GHz</td>
+                <td className="py-3 px-4 text-muted-foreground">AMD FX 6350 ou Intel Core i5 2400S</td>
               </tr>
               <tr className="border-b border-border">
-                <td className="py-3 px-4 font-medium">RAM</td>
+                <td className="py-3 px-4 font-medium">Memória RAM</td>
                 <td className="py-3 px-4 text-muted-foreground">6 GB</td>
               </tr>
               <tr className="border-b border-border">
                 <td className="py-3 px-4 font-medium">Placa de Vídeo</td>
-                <td className="py-3 px-4 text-muted-foreground">AMD Radeon R9 270 (2 GB), NVIDIA GeForce GTX 660 (2 GB)</td>
+                <td className="py-3 px-4 text-muted-foreground">GTX 660 (2 GB) ou Radeon R9 270</td>
               </tr>
               <tr>
                 <td className="py-3 px-4 font-medium">Armazenamento</td>
-                <td className="py-3 px-4 text-muted-foreground">75 GB de espaço disponível</td>
+                <td className="py-3 px-4 text-muted-foreground">75 GB</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <h3 className="text-xl font-bold mt-6 mb-4">Recomendados (1080p a 60 FPS)</h3>
+        <h3 className="text-xl font-bold mt-6 mb-4">🔺 Configuração Recomendada (1080p – 60 FPS)</h3>
         <div className="overflow-x-auto my-4">
           <table className="w-full border-collapse">
             <tbody>
               <tr className="border-b border-border">
                 <td className="py-3 px-4 font-medium">Processador</td>
-                <td className="py-3 px-4 text-muted-foreground">AMD FX-8350 – 4,0 GHz, Intel Core i7-3770 – 3,5 GHz</td>
+                <td className="py-3 px-4 text-muted-foreground">AMD FX-8350 ou Intel Core i7-3770</td>
               </tr>
               <tr className="border-b border-border">
-                <td className="py-3 px-4 font-medium">RAM</td>
+                <td className="py-3 px-4 font-medium">Memória RAM</td>
                 <td className="py-3 px-4 text-muted-foreground">8 GB</td>
               </tr>
               <tr>
                 <td className="py-3 px-4 font-medium">Placa de Vídeo</td>
-                <td className="py-3 px-4 text-muted-foreground">AMD Radeon R9 280X (3 GB), NVIDIA GeForce GTX 760 (4 GB)</td>
+                <td className="py-3 px-4 text-muted-foreground">GTX 760 (4 GB) ou Radeon R9 280X</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <p className="text-muted-foreground">
+          👉 <strong>Requisitos moderados</strong> para um jogo visualmente impressionante.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Laptop className="h-7 w-7 text-yellow-400" />
+          Notebook Gamer Roda Origins?
+        </h2>
+
+        <p><strong>Sim</strong>, desde que seja um <strong>notebook gamer</strong> com:</p>
+        <ul>
+          <li>GTX 1650 / RTX 3050 ou superior</li>
+          <li>Intel Core i5 ou Ryzen 5</li>
+          <li>8 GB de RAM (16 GB ideal)</li>
+        </ul>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <HelpCircle className="h-7 w-7 text-yellow-400" />
+          PC ou Console: Qual Vale Mais a Pena?
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-6 my-8">
+          <div className="p-5 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-3">💻 PC Gamer</h4>
+            <ul className="text-sm text-muted-foreground space-y-1 mb-0">
+              <li>✔ Melhores gráficos</li>
+              <li>✔ Promoções frequentes</li>
+              <li>✔ Mods disponíveis</li>
+            </ul>
+          </div>
+          <div className="p-5 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-3">🎮 Console</h4>
+            <ul className="text-sm text-muted-foreground space-y-1 mb-0">
+              <li>✔ PS4, PS5, Xbox One, Xbox Series</li>
+              <li>✔ 60 FPS no PS5/Series X</li>
+              <li>✔ Otimização garantida</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <DollarSign className="h-7 w-7 text-yellow-400" />
+          Vale a Pena Comprar Origins em 2026?
+        </h2>
+
+        <p><strong>Vale muito a pena</strong> se você:</p>
+        <ul>
+          <li>Quer começar a franquia pelo renascimento</li>
+          <li>Se interessa pelo Egito Antigo</li>
+          <li>Valoriza protagonistas bem desenvolvidos</li>
+          <li>Quer usar o Discovery Tour educativo</li>
+        </ul>
 
         {/* Where to Play */}
         <div className="my-8 p-6 bg-gradient-to-br from-yellow-500/20 to-background rounded-xl border border-yellow-500/30">
@@ -221,7 +295,7 @@ const ACOrigins = () => {
             <li>✓ <strong>Xbox One e Xbox Series X|S</strong></li>
           </ul>
           <p className="mt-4 text-sm text-muted-foreground">
-            Preço médio: R$ 130 (frequentemente em promoção)
+            Preço médio: R$ 80 a R$ 130 (frequentemente em promoção)
           </p>
         </div>
 
