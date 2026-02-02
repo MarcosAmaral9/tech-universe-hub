@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Moon, Sun, Search, Menu, X } from "lucide-react";
+import { Moon, Sun, Search, Menu, X, FileText, ChevronDown } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import SearchModal from "./SearchModal";
 
 const Header = () => {
@@ -18,7 +24,15 @@ const Header = () => {
     { name: "Otaku", path: "/otaku", color: "text-otaku" },
   ];
 
+  const legalLinks = [
+    { name: "Sobre", path: "/sobre" },
+    { name: "Privacidade", path: "/privacidade" },
+    { name: "Termos", path: "/termos" },
+    { name: "Política de Conteúdo", path: "/politica-conteudo" },
+  ];
+
   const isActive = (path: string) => location.pathname === path;
+  const isLegalActive = legalLinks.some(link => location.pathname === link.path);
 
   return (
     <>
@@ -59,6 +73,35 @@ const Header = () => {
             >
               <Search className="h-5 w-5" />
             </Button>
+
+            {/* Legal Pages Dropdown - Desktop */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className={`hidden md:flex items-center gap-1 hover:bg-secondary ${
+                    isLegalActive ? "bg-secondary text-foreground" : "text-muted-foreground"
+                  }`}
+                >
+                  <FileText className="h-4 w-4" />
+                  <span className="hidden lg:inline">Legal</span>
+                  <ChevronDown className="h-3 w-3" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                {legalLinks.map((link) => (
+                  <DropdownMenuItem key={link.path} asChild>
+                    <Link
+                      to={link.path}
+                      className={`w-full ${isActive(link.path) ? "bg-secondary" : ""}`}
+                    >
+                      {link.name}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
             
             <Button
               variant="ghost"
@@ -97,6 +140,28 @@ const Header = () => {
                   className={`px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
                     isActive(link.path)
                       ? `${link.color} bg-secondary`
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              
+              {/* Divider */}
+              <div className="my-2 border-t border-border" />
+              
+              {/* Legal Links in Mobile */}
+              <div className="px-4 py-2 text-xs text-muted-foreground uppercase tracking-wider">
+                Páginas Legais
+              </div>
+              {legalLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
+                    isActive(link.path)
+                      ? "text-primary bg-secondary"
                       : "text-muted-foreground hover:text-foreground hover:bg-secondary"
                   }`}
                 >
