@@ -42,7 +42,7 @@ const ACOrigins = () => {
           </span>
           <span className="flex items-center gap-2">
             <Clock className="h-4 w-4" />
-            12 min de leitura
+            17 min de leitura
           </span>
         </div>
       </header>
@@ -92,8 +92,24 @@ const ACOrigins = () => {
               <div className="font-bold">R$ 80 a R$ 130</div>
             </div>
             <div>
-              <div className="text-sm text-muted-foreground">Duração Média</div>
-              <div className="font-bold">50 a 80 horas</div>
+              <div className="text-sm text-muted-foreground">Plataformas</div>
+              <div className="font-bold">PC, PS4, PS5, Xbox One, Xbox Series</div>
+            </div>
+            <div>
+              <div className="text-sm text-muted-foreground">Tempo p/ Zerar (História)</div>
+              <div className="font-bold">30-35 horas</div>
+            </div>
+            <div>
+              <div className="text-sm text-muted-foreground">100% Completo</div>
+              <div className="font-bold">70-80 horas</div>
+            </div>
+            <div>
+              <div className="text-sm text-muted-foreground">DLCs</div>
+              <div className="font-bold">The Hidden Ones + Curse of the Pharaohs</div>
+            </div>
+            <div>
+              <div className="text-sm text-muted-foreground">Gênero</div>
+              <div className="font-bold">RPG de Ação / Mundo Aberto</div>
             </div>
           </div>
           <p className="mt-4 text-muted-foreground mb-0">
@@ -112,25 +128,122 @@ const ACOrigins = () => {
           é um dos cenários mais impressionantes da série.
         </p>
 
+        <h2 className="text-2xl font-bold mt-10 mb-6">🗺️ Contexto Histórico: O Egito Ptolemaico (49-43 a.C.)</h2>
+
+        <p>
+          Origins se passa durante um dos períodos mais turbulentos da história egípcia: o <strong>fim da 
+          dinastia Ptolemaica</strong>. O jogo acontece entre <strong>49 a.C. e 43 a.C.</strong>, nos anos 
+          finais do Egito como reino independente, antes da conquista romana.
+        </p>
+
+        <h3 className="text-xl font-bold mt-8 mb-4">👥 Figuras Históricas no Jogo</h3>
+
+        <p>Origins apresenta encontros memoráveis com personagens históricos reais:</p>
+
+        <div className="grid md:grid-cols-2 gap-4 my-6">
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-2 text-yellow-400">Cleópatra VII</h4>
+            <p className="text-sm text-muted-foreground mb-0">
+              A última faraó do Egito, retratada como aliada estratégica de Bayek. A série mostra 
+              sua inteligência política e fluência em nove idiomas.
+            </p>
+          </div>
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-2 text-yellow-400">Júlio César</h4>
+            <p className="text-sm text-muted-foreground mb-0">
+              O ditador romano aparece em sua campanha no Egito. O jogo mostra sua relação 
+              com Cleópatra e os eventos que levaram ao seu assassinato.
+            </p>
+          </div>
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-2 text-yellow-400">Ptolemeu XIII</h4>
+            <p className="text-sm text-muted-foreground mb-0">
+              Irmão e rival de Cleópatra pelo trono. Manipulado por seus conselheiros, 
+              representa a decadência da dinastia ptolemaica.
+            </p>
+          </div>
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-2 text-yellow-400">Pompeu</h4>
+            <p className="text-sm text-muted-foreground mb-0">
+              General romano assassinado no Egito — evento histórico real dramatizado 
+              no início do jogo.
+            </p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-bold mt-8 mb-4">🌍 A Geografia do Egito Antigo</h3>
+
+        <p>
+          O mapa de Origins é uma recriação impressionante do Egito antigo, cobrindo uma área 
+          de aproximadamente <strong>80 km²</strong>:
+        </p>
+
+        <ul>
+          <li><strong>Alexandria:</strong> Capital cosmopolita, sede da famosa Biblioteca e do Farol</li>
+          <li><strong>Mênfis:</strong> Antiga capital do Baixo Egito, com templos monumentais</li>
+          <li><strong>Gizé:</strong> As Grandes Pirâmides e a Esfinge em seu estado "original"</li>
+          <li><strong>Siwa:</strong> Oásis natal de Bayek, com o Oráculo de Amun</li>
+          <li><strong>Tebas (DLC):</strong> A grande necrópole com o Vale dos Reis</li>
+        </ul>
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Sword className="h-7 w-7 text-yellow-400" />
           Bayek de Siwa: Um Protagonista Memorável
         </h2>
 
         <p>
-          Controlamos <strong>Bayek</strong>, um Medjay (protetor do faraó) cuja jornada de vingança pessoal 
-          se entrelaça com o destino do Egito. Acompanhado por sua esposa <strong>Aya</strong>, Bayek é um 
-          dos personagens mais humanos e bem construídos da série.
+          Controlamos <strong>Bayek</strong>, um <strong>Medjay</strong> — guardião tradicional do faraó 
+          e protetor do povo. Após a morte trágica de seu filho Khemu, Bayek embarca em uma jornada 
+          de vingança que o levará a fundar a <strong>Irmandade dos Ocultos</strong>, precursora dos Assassinos.
         </p>
 
         <p>
-          O jogo mostra o peso emocional de suas perdas enquanto luta contra a corrupção da <strong>Ordem 
-          dos Anciões</strong>.
+          Acompanhado por sua esposa <strong>Aya</strong> (que depois adota o nome Amunet), Bayek é um 
+          dos personagens mais humanos e bem construídos da série, mostrando o peso emocional de suas 
+          escolhas enquanto luta contra a <strong>Ordem dos Anciões</strong> (futuros Templários).
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Gamepad2 className="h-7 w-7 text-yellow-400" />
+          O Sistema de Combate Revolucionário
+        </h2>
+
+        <p>
+          Origins abandonou completamente o combate rítmico dos jogos anteriores e introduziu um 
+          sistema que se tornaria padrão para a franquia:
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-4 my-6">
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-2">⚔️ Combate Baseado em Hitbox</h4>
+            <p className="text-sm text-muted-foreground mb-0">
+              Cada golpe precisa acertar fisicamente o inimigo. Esquivas, parries e posicionamento 
+              são essenciais para sobreviver.
+            </p>
+          </div>
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-2">🛡️ Sistema de Equipamentos</h4>
+            <p className="text-sm text-muted-foreground mb-0">
+              Armas e armaduras com níveis, raridades e atributos. Cada tipo de arma tem moveset único.
+            </p>
+          </div>
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-2">🦅 Senu, a Águia</h4>
+            <p className="text-sm text-muted-foreground mb-0">
+              Companheira de Bayek que serve como "drone orgânico" para marcar inimigos e objetivos.
+            </p>
+          </div>
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-2">🏹 Variedade de Builds</h4>
+            <p className="text-sm text-muted-foreground mb-0">
+              Especialize-se em combate corpo a corpo, arqueiro ou furtividade através da árvore de habilidades.
+            </p>
+          </div>
+        </div>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Pyramid className="h-7 w-7 text-yellow-400" />
-          Tecnologia da Reconstrução Histórica
+          Discovery Tour: Aprendizado Interativo
         </h2>
 
         <p>
@@ -140,10 +253,10 @@ const ACOrigins = () => {
         <div className="grid md:grid-cols-2 gap-6 my-8">
           <div className="p-5 bg-card rounded-xl border border-border">
             <Pyramid className="h-8 w-8 text-yellow-400 mb-3" />
-            <h4 className="font-bold mb-2">Discovery Tour</h4>
+            <h4 className="font-bold mb-2">Modo Educativo</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              Modo educativo usado por escolas para ensinar sobre as pirâmides de Gizé e a Biblioteca de 
-              Alexandria. Tecnologia de reconstrução usada em pesquisas.
+              O <strong>Discovery Tour</strong> é usado por escolas para ensinar sobre as pirâmides de Gizé, 
+              a Biblioteca de Alexandria e a vida cotidiana no Egito antigo. Tecnologia reconhecida por historiadores.
             </p>
           </div>
           <div className="p-5 bg-card rounded-xl border border-border">
@@ -156,21 +269,34 @@ const ACOrigins = () => {
           </div>
         </div>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Gamepad2 className="h-7 w-7 text-yellow-400" />
-          O Salto para o RPG
-        </h2>
+        <h2 className="text-2xl font-bold mt-10 mb-6">📦 DLCs: Conteúdo Adicional</h2>
 
-        <p>
-          Origins abandonou o combate rítmico antigo e introduziu <strong>combate baseado em hitbox</strong> 
-          e níveis de equipamentos. A introdução de <strong>Senu</strong>, a águia que serve como drone 
-          orgânico, mudou a forma como fazemos reconhecimento — mecânica que se tornou padrão nos jogos seguintes.
-        </p>
-
-        <p>
-          Mesmo anos após o lançamento, Origins recebeu atualizações para rodar a <strong>60 FPS</strong> nos 
-          consoles modernos.
-        </p>
+        <div className="overflow-x-auto my-6">
+          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden">
+            <thead>
+              <tr className="border-b border-border bg-secondary">
+                <th className="text-left py-3 px-4 font-bold">DLC</th>
+                <th className="text-left py-3 px-4 font-bold">Localização</th>
+                <th className="text-left py-3 px-4 font-bold">Tempo</th>
+                <th className="text-left py-3 px-4 font-bold">Destaque</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">The Hidden Ones</td>
+                <td className="py-3 px-4 text-muted-foreground">Sinai</td>
+                <td className="py-3 px-4 text-muted-foreground">8-10 horas</td>
+                <td className="py-3 px-4 text-muted-foreground">Expansão da Irmandade</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">Curse of the Pharaohs</td>
+                <td className="py-3 px-4 text-muted-foreground">Tebas</td>
+                <td className="py-3 px-4 text-muted-foreground">15-20 horas</td>
+                <td className="py-3 px-4 text-muted-foreground">Mitologia egípcia, faraós mortos-vivos</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <div className="my-8 p-6 bg-secondary/50 rounded-xl border border-border">
           <p className="text-muted-foreground mb-0">

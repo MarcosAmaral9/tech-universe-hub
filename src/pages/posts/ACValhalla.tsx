@@ -42,7 +42,7 @@ const ACValhalla = () => {
           </span>
           <span className="flex items-center gap-2">
             <Clock className="h-4 w-4" />
-            15 min de leitura
+            18 min de leitura
           </span>
         </div>
       </header>
@@ -85,12 +85,12 @@ const ACValhalla = () => {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div>
-              <div className="text-sm text-muted-foreground">Gênero</div>
-              <div className="font-bold">RPG de Ação / Mundo Aberto</div>
+              <div className="text-sm text-muted-foreground">Desenvolvedora</div>
+              <div className="font-bold">Ubisoft Montreal</div>
             </div>
             <div>
-              <div className="text-sm text-muted-foreground">Duração Média</div>
-              <div className="font-bold">100 a 140 horas</div>
+              <div className="text-sm text-muted-foreground">Lançamento</div>
+              <div className="font-bold">10/11/2020</div>
             </div>
             <div>
               <div className="text-sm text-muted-foreground">Preço Médio 2026</div>
@@ -98,7 +98,23 @@ const ACValhalla = () => {
             </div>
             <div>
               <div className="text-sm text-muted-foreground">Plataformas</div>
-              <div className="font-bold">PC, PS4, PS5, Xbox</div>
+              <div className="font-bold">PC, PS4, PS5, Xbox One, Xbox Series X|S</div>
+            </div>
+            <div>
+              <div className="text-sm text-muted-foreground">Tempo p/ Zerar (História)</div>
+              <div className="font-bold">50-60 horas</div>
+            </div>
+            <div>
+              <div className="text-sm text-muted-foreground">100% Completo</div>
+              <div className="font-bold">130-150 horas</div>
+            </div>
+            <div>
+              <div className="text-sm text-muted-foreground">Gênero</div>
+              <div className="font-bold">RPG de Ação / Mundo Aberto</div>
+            </div>
+            <div>
+              <div className="text-sm text-muted-foreground">DLCs Disponíveis</div>
+              <div className="font-bold">3 expansões principais</div>
             </div>
           </div>
           <p className="mt-4 text-muted-foreground mb-0">
@@ -124,32 +140,68 @@ const ACValhalla = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Sword className="h-7 w-7 text-purple-400" />
-          Contexto Histórico: Quando e Onde Assassin's Creed Valhalla se Passa?
+          Contexto Histórico: A Era Viking na Inglaterra (793-1066 d.C.)
         </h2>
 
         <p>
-          A história se passa no final do <strong>século IX, por volta de 873 d.C.</strong>, durante a <strong>Era Viking</strong>. 
-          Esse foi um período marcado por invasões nórdicas à Inglaterra, disputas territoriais e conflitos entre reinos saxões.
+          A história se passa no final do <strong>século IX, por volta de 873 d.C.</strong>, durante o auge da <strong>Era Viking</strong>. 
+          Este período, conhecido como a "Era dos Reis Dinamarqueses", foi marcado pela fragmentação da Inglaterra em múltiplos 
+          reinos saxões que lutavam tanto entre si quanto contra os invasores nórdicos.
         </p>
 
         <p>
-          O jogador controla <strong>Eivor</strong>, um guerreiro (ou guerreira) viking que lidera seu clã após eventos traumáticos 
-          na infância. A jornada começa na Noruega, mas rapidamente se desloca para a Inglaterra, em busca de novas terras 
-          para prosperar.
+          O contexto político era extremamente volátil. O <strong>Grande Exército Pagão</strong> (micel heathen here) havia 
+          invadido a Inglaterra em 865 d.C., conquistando vastos territórios e estabelecendo o <strong>Danelaw</strong> — 
+          uma região sob domínio dinamarquês que abrangia quase metade da Inglaterra.
         </p>
 
-        <p>O mapa inclui regiões historicamente importantes como:</p>
+        <h3 className="text-xl font-bold mt-8 mb-4">🗺️ A Inglaterra Fragmentada</h3>
+
+        <p>O mapa do jogo recria com precisão histórica os principais reinos da época:</p>
+
+        <div className="grid md:grid-cols-2 gap-4 my-6">
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-2 text-purple-400">Wessex</h4>
+            <p className="text-sm text-muted-foreground mb-0">
+              Último reino saxão independente, governado pelo lendário <strong>Rei Alfredo, o Grande</strong>. 
+              Foi o único reino a resistir às invasões vikings e eventualmente unificaria a Inglaterra.
+            </p>
+          </div>
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-2 text-purple-400">Mércia</h4>
+            <p className="text-sm text-muted-foreground mb-0">
+              Outrora o reino mais poderoso da Inglaterra, foi dividido entre domínio viking (leste) e 
+              influência saxã (oeste). Capital histórica em Tamworth.
+            </p>
+          </div>
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-2 text-purple-400">Ânglia Oriental</h4>
+            <p className="text-sm text-muted-foreground mb-0">
+              Primeiro reino a cair para o Grande Exército Pagão. O jogo retrata as tensões entre 
+              a população saxã conquistada e os novos senhores nórdicos.
+            </p>
+          </div>
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-2 text-purple-400">Nortúmbria</h4>
+            <p className="text-sm text-muted-foreground mb-0">
+              Reino dividido entre Bernicia e Deira, com a importante cidade de Jorvik (York) sob 
+              domínio viking. Cenário de conflitos políticos intensos.
+            </p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-bold mt-8 mb-4">🌍 A Geografia de Valhalla</h3>
+
+        <p>
+          O mapa de Valhalla é impressionante em escala e diversidade. Além da Inglaterra, o jogador explora:
+        </p>
+
         <ul>
-          <li><strong>Wessex</strong></li>
-          <li><strong>Mércia</strong></li>
-          <li><strong>Ânglia Oriental</strong></li>
-          <li><strong>Nortúmbria</strong></li>
+          <li><strong>Noruega:</strong> A terra natal de Eivor, com fiordes gelados e vilarejos pesqueiros</li>
+          <li><strong>Vinlândia:</strong> A América do Norte, representando as expedições vikings ao "Novo Mundo"</li>
+          <li><strong>Irlanda:</strong> Através da DLC "Wrath of the Druids", com druidas e conflitos celtas</li>
+          <li><strong>Paris:</strong> Via DLC "The Siege of Paris", recriando o cerco histórico de 885-886 d.C.</li>
         </ul>
-
-        <p>
-          Cada território possui conflitos próprios, líderes históricos e alianças políticas, reforçando o tom mais 
-          estratégico do jogo.
-        </p>
 
         <div className="my-8 p-6 bg-secondary/50 rounded-xl border border-border">
           <p className="text-muted-foreground mb-0">
@@ -202,47 +254,77 @@ const ACValhalla = () => {
           um assassino furtivo, mas um líder viking, responsável por decisões estratégicas, exploração e progressão de longo prazo.
         </p>
 
-        <p><strong>Os três pilares principais são:</strong></p>
+        <h3 className="text-xl font-bold mt-8 mb-4">⚔️ Sistema de Combate: Brutal e Visceral</h3>
+
+        <p>
+          O combate em Valhalla é o mais brutal da franquia. Inspirado na violência das sagas nórdicas, o sistema oferece:
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-4 my-6">
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-2">⚔️ Dual Wielding</h4>
+            <p className="text-sm text-muted-foreground mb-0">
+              Empunhe <strong>duas armas simultaneamente</strong> — combine machados, espadas, escudos ou até dois 
+              escudos para builds defensivos únicos.
+            </p>
+          </div>
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-2">🎯 Stun Attacks</h4>
+            <p className="text-sm text-muted-foreground mb-0">
+              Quebre a defesa inimiga com ataques pesados e execute <strong>finishers cinematográficos</strong> 
+              com desmembramentos gráficos.
+            </p>
+          </div>
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-2">🔥 Habilidades Especiais</h4>
+            <p className="text-sm text-muted-foreground mb-0">
+              Desbloqueie mais de <strong>30 habilidades ativas</strong> como arremesso de machados, 
+              investidas e ataques em área devastadores.
+            </p>
+          </div>
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-2">🛡️ Builds Customizáveis</h4>
+            <p className="text-sm text-muted-foreground mb-0">
+              A árvore de habilidades em forma de <strong>constelação</strong> permite criar builds de 
+              força bruta, furtividade ou equilíbrio.
+            </p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-bold mt-8 mb-4">🏰 Ravensthorpe: Seu Assentamento Viking</h3>
+
+        <p>
+          O sistema de <strong>construção de assentamento</strong> é um dos diferenciais de Valhalla. Ravensthorpe 
+          começa como uma vila abandonada e evolui conforme você progride:
+        </p>
+
         <ul>
-          <li>Exploração de mundo aberto</li>
-          <li>Combate corpo a corpo visceral</li>
-          <li>Progressão de personagem e assentamento</li>
+          <li><strong>Ferreiro:</strong> Melhore armas e armaduras usando materiais de invasões</li>
+          <li><strong>Estábulo:</strong> Customize montarias e lobos de estimação</li>
+          <li><strong>Casa do Cartógrafo:</strong> Desbloqueie novos mapas e missões secretas</li>
+          <li><strong>Barraca de Tatuagem:</strong> Personalize a aparência de Eivor</li>
+          <li><strong>Cervejaria:</strong> Crie festas que aumentam a moral do clã</li>
+          <li><strong>Quartel de Jomsvikings:</strong> Recrute guerreiros para suas invasões</li>
         </ul>
 
-        <p>O jogo recompensa curiosidade e paciência, incentivando o jogador a explorar no próprio ritmo.</p>
+        <p>
+          Cada estrutura construída desbloqueia <strong>novas mecânicas, missões e sistemas</strong>, criando uma 
+          sensação de progresso tangível que vai além do level up tradicional.
+        </p>
 
-        <h3 className="text-xl font-bold mt-8 mb-4">⚔️ Combate: Brutal, Pesado e Personalizável</h3>
+        <h3 className="text-xl font-bold mt-8 mb-4">⚓ Raids e Invasões: A Essência Viking</h3>
 
         <p>
-          O combate é mais impactante do que em jogos anteriores. Cada golpe tem peso, e o sistema permite:
+          As <strong>invasões a monastérios e fortalezas</strong> são o ponto alto da jogabilidade. Você lidera 
+          seu longship pelo Rio Tâmisa ou outros rios ingleses, ancora próximo ao alvo e inicia o ataque:
         </p>
+
         <ul>
-          <li>Uso de <strong>duas armas simultaneamente</strong></li>
-          <li>Diferentes tipos de builds (força, furtividade ou equilíbrio)</li>
-          <li>Grande variedade de armas e estilos</li>
+          <li>Comande seu bando viking gritando ordens de ataque</li>
+          <li>Arrombe portões usando aríetes com seus companheiros</li>
+          <li>Saqueie baús de recursos para melhorar Ravensthorpe</li>
+          <li>Enfrente líderes inimigos em combates épicos</li>
         </ul>
-
-        <p>
-          A progressão ocorre por meio de uma <strong>constelação de habilidades</strong>, permitindo adaptar Eivor ao seu 
-          estilo de jogo — algo essencial em um RPG de mais de 100 horas.
-        </p>
-
-        <h3 className="text-xl font-bold mt-8 mb-4">🏰 Assentamento e Progressão: Ravensthorpe</h3>
-
-        <p>
-          O assentamento de <strong>Ravensthorpe</strong> funciona como o coração do jogo. Ao realizar invasões, formar 
-          alianças e coletar recursos, você evolui a vila e desbloqueia:
-        </p>
-        <ul>
-          <li>Melhorias de equipamentos</li>
-          <li>Novas missões</li>
-          <li>Sistemas de personalização</li>
-        </ul>
-
-        <p>
-          Esse sistema cria uma forte sensação de <strong>progresso contínuo</strong> e aumenta significativamente o tempo 
-          de engajamento do jogador.
-        </p>
 
         <h3 className="text-xl font-bold mt-8 mb-4">🧠 Mitologia, Animus e Ficção Científica</h3>
 
@@ -251,14 +333,13 @@ const ACValhalla = () => {
           Através do <strong>Animus</strong>, o jogo apresenta sequências em locais como:
         </p>
         <ul>
-          <li><strong>Asgard</strong></li>
-          <li><strong>Jotunheim</strong></li>
+          <li><strong>Asgard:</strong> O reino dos deuses, com Odin, Thor e Freyja</li>
+          <li><strong>Jotunheim:</strong> Terra dos gigantes de gelo</li>
         </ul>
 
         <p>
-          Esses momentos representam <strong>memórias interpretadas</strong>, não fantasia pura, reforçando o conceito 
-          central da série.
-        </p>
+          Esses momentos representam <strong>memórias ancestrais de Eivor</strong>, conectando a mitologia nórdica 
+          à trama maior dos Isu (Primeira Civilização) da franquia.</p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Monitor className="h-7 w-7 text-purple-400" />
@@ -393,14 +474,52 @@ const ACValhalla = () => {
 
         <p><strong>Vale muito a pena</strong> se você:</p>
         <ul>
-          <li>Gosta de <strong>RPGs longos</strong></li>
-          <li>Valoriza <strong>ambientação histórica</strong></li>
+          <li>Gosta de <strong>RPGs longos</strong> com +50 horas de história principal</li>
+          <li>Valoriza <strong>ambientação histórica</strong> e mitologia</li>
           <li>Busca um jogo com <strong>ótimo custo-benefício</strong></li>
           <li>Está montando ou atualizando um <strong>PC gamer</strong></li>
         </ul>
 
+        <h2 className="text-2xl font-bold mt-10 mb-6">📦 DLCs e Expansões: Conteúdo Adicional</h2>
+
+        <p>Valhalla recebeu suporte extensivo pós-lançamento com três grandes expansões:</p>
+
+        <div className="overflow-x-auto my-6">
+          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden">
+            <thead>
+              <tr className="border-b border-border bg-secondary">
+                <th className="text-left py-3 px-4 font-bold">DLC</th>
+                <th className="text-left py-3 px-4 font-bold">Localização</th>
+                <th className="text-left py-3 px-4 font-bold">Tempo Adicional</th>
+                <th className="text-left py-3 px-4 font-bold">Destaque</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">Wrath of the Druids</td>
+                <td className="py-3 px-4 text-muted-foreground">Irlanda</td>
+                <td className="py-3 px-4 text-muted-foreground">15-20 horas</td>
+                <td className="py-3 px-4 text-muted-foreground">Druidas, folclore celta</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">The Siege of Paris</td>
+                <td className="py-3 px-4 text-muted-foreground">Francia (Paris)</td>
+                <td className="py-3 px-4 text-muted-foreground">10-15 horas</td>
+                <td className="py-3 px-4 text-muted-foreground">Cerco histórico de 885 d.C.</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">Dawn of Ragnarök</td>
+                <td className="py-3 px-4 text-muted-foreground">Svartalfheim</td>
+                <td className="py-3 px-4 text-muted-foreground">35-40 horas</td>
+                <td className="py-3 px-4 text-muted-foreground">Mitologia nórdica, poderes divinos</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         <p>
-          Com todas as expansões lançadas, Valhalla oferece uma <strong>experiência completa</strong>.
+          Considerando o jogo base e todas as DLCs, Valhalla oferece facilmente <strong>mais de 150 horas 
+          de conteúdo</strong> para completistas.
         </p>
 
         {/* Where to Play */}
@@ -412,7 +531,7 @@ const ACValhalla = () => {
             <li>✓ <strong>Xbox One e Xbox Series X|S</strong></li>
           </ul>
           <p className="mt-4 text-sm text-muted-foreground mb-0">
-            Preço médio: R$ 150 a R$ 200 (promoções frequentes)
+            Preço médio: R$ 150 a R$ 200 (promoções frequentes). Edição completa com DLCs: R$ 250-350.
           </p>
         </div>
 
@@ -420,17 +539,9 @@ const ACValhalla = () => {
 
         <p>
           <strong>Assassin's Creed Valhalla</strong> é mais do que um jogo de ação: é uma experiência histórica, 
-          mitológica e estratégica. Ele entrega:
-        </p>
-        <ul>
-          <li>Mais de <strong>100 horas de conteúdo</strong></li>
-          <li><strong>Gráficos ainda atuais</strong></li>
-          <li>Excelente parâmetro para <strong>avaliar hardware</strong></li>
-        </ul>
-
-        <p>
-          👉 Seja para jogar, investir em um <strong>PC gamer</strong> ou comparar <strong>PC e console</strong>, 
-          Valhalla continua sendo uma <strong>escolha inteligente em 2026</strong>.
+          mitológica e estratégica. Com <strong>50-60 horas de história principal</strong>, sistema de 
+          assentamento profundo, raids emocionantes e três DLCs substanciais, é um dos melhores investimentos 
+          da geração para fãs de RPG.
         </p>
 
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center">

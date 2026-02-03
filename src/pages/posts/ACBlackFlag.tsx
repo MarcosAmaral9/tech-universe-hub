@@ -42,7 +42,7 @@ const ACBlackFlag = () => {
           </span>
           <span className="flex items-center gap-2">
             <Clock className="h-4 w-4" />
-            12 min de leitura
+            16 min de leitura
           </span>
         </div>
       </header>
@@ -92,8 +92,24 @@ const ACBlackFlag = () => {
               <div className="font-bold">R$ 40 a R$ 80</div>
             </div>
             <div>
-              <div className="text-sm text-muted-foreground">Duração Média</div>
-              <div className="font-bold">40 a 60 horas</div>
+              <div className="text-sm text-muted-foreground">Plataformas</div>
+              <div className="font-bold">PC, PS3, PS4, Xbox 360, Xbox One, Switch</div>
+            </div>
+            <div>
+              <div className="text-sm text-muted-foreground">Tempo p/ Zerar (História)</div>
+              <div className="font-bold">20-25 horas</div>
+            </div>
+            <div>
+              <div className="text-sm text-muted-foreground">100% Completo</div>
+              <div className="font-bold">50-60 horas</div>
+            </div>
+            <div>
+              <div className="text-sm text-muted-foreground">DLCs</div>
+              <div className="font-bold">Freedom Cry (standalone)</div>
+            </div>
+            <div>
+              <div className="text-sm text-muted-foreground">Gênero</div>
+              <div className="font-bold">Ação/Aventura, Pirataria</div>
             </div>
           </div>
           <p className="mt-4 text-muted-foreground mb-0">
@@ -118,33 +134,108 @@ const ACBlackFlag = () => {
           superior, não conseguiu superar Black Flag.
         </p>
 
+        <h2 className="text-2xl font-bold mt-10 mb-6">🗺️ Contexto Histórico: A Era de Ouro da Pirataria (1715-1726)</h2>
+
+        <p>
+          Black Flag se passa durante a <strong>Era de Ouro da Pirataria</strong>, um período de aproximadamente 
+          11 anos que definiu a imagem romântica dos piratas que conhecemos hoje. O jogo começa em <strong>1715</strong>, 
+          logo após o fim da Guerra de Sucessão Espanhola, quando milhares de marinheiros foram dispensados e 
+          encontraram na pirataria uma forma de sobrevivência.
+        </p>
+
+        <h3 className="text-xl font-bold mt-8 mb-4">🌍 A Geografia do Caribe Colonial</h3>
+
+        <p>O mapa de Black Flag recria com precisão histórica várias localizações icônicas:</p>
+
+        <div className="grid md:grid-cols-2 gap-4 my-6">
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-2 text-amber-400">Havana (Cuba)</h4>
+            <p className="text-sm text-muted-foreground mb-0">
+              Capital do domínio espanhol no Caribe, <strong>cidade fortificada</strong> e centro do 
+              comércio de açúcar, rum e escravos. Base das frotas do tesouro espanhol.
+            </p>
+          </div>
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-2 text-amber-400">Nassau (Bahamas)</h4>
+            <p className="text-sm text-muted-foreground mb-0">
+              A <strong>República dos Piratas</strong> — cidade governada democraticamente por piratas 
+              entre 1706-1718. Centro da resistência contra impérios europeus.
+            </p>
+          </div>
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-2 text-amber-400">Kingston (Jamaica)</h4>
+            <p className="text-sm text-muted-foreground mb-0">
+              Base do <strong>Império Britânico</strong> no Caribe. Port Royal, próxima a Kingston, 
+              foi chamada de "cidade mais perversa do mundo" antes de afundar em 1692.
+            </p>
+          </div>
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-2 text-amber-400">Tulum (México)</h4>
+            <p className="text-sm text-muted-foreground mb-0">
+              Ruínas maias que servem como <strong>base secreta dos Assassinos</strong> no jogo. 
+              Mistura de história pré-colombiana com a era colonial.
+            </p>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-bold mt-8 mb-4">👥 Piratas Históricos no Jogo</h3>
+
+        <p>
+          Black Flag apresenta encontros com piratas reais que existiram durante este período:
+        </p>
+
+        <ul>
+          <li><strong>Edward "Barba Negra" Thatch:</strong> O mais famoso pirata da história, mentor de Edward Kenway</li>
+          <li><strong>Charles Vane:</strong> Pirata brutal e impiedoso, rival frequente do protagonista</li>
+          <li><strong>Anne Bonny:</strong> Uma das poucas mulheres piratas conhecidas, personagem jogável em algumas missões</li>
+          <li><strong>Mary Read:</strong> Pirata disfarçada de homem, amiga próxima de Edward</li>
+          <li><strong>Benjamin Hornigold:</strong> Fundador da República dos Piratas em Nassau</li>
+          <li><strong>Calico Jack Rackham:</strong> Capitão de Anne Bonny e Mary Read</li>
+        </ul>
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Ship className="h-7 w-7 text-amber-400" />
-          Tecnologia Naval que Envelheceu Como Vinho
+          O Jackdaw: Seu Navio, Sua Fortaleza
         </h2>
 
         <p>
-          Para um jogo lançado em 2013, a <strong>física naval de Black Flag ainda impressiona</strong>:
+          O <strong>Jackdaw</strong> é muito mais que um meio de transporte — é uma extensão do jogador. 
+          O sistema de customização naval de Black Flag era revolucionário para 2013:
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 my-8">
           <div className="p-5 bg-card rounded-xl border border-border">
             <Ship className="h-8 w-8 text-amber-400 mb-3" />
-            <h4 className="font-bold mb-2">O Mar como Protagonista</h4>
+            <h4 className="font-bold mb-2">Sistema de Upgrade</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              Simulação de ondas e clima dinâmico revolucionária. O navio range durante tempestades enquanto 
-              você alinha os canhões — imersão total.
+              Melhore o <strong>casco, canhões, morteiros, aríete</strong> e mais. Cada upgrade é 
+              visível no modelo 3D do navio, criando progressão tangível.
             </p>
           </div>
           <div className="p-5 bg-card rounded-xl border border-border">
             <Anchor className="h-8 w-8 text-amber-400 mb-3" />
-            <h4 className="font-bold mb-2">Exploração Sem Barreiras</h4>
+            <h4 className="font-bold mb-2">Tripulação Recrutável</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              Transição fluida entre navegar no oceano e desembarcar em ilhas tropicais sem telas de 
-              carregamento — um feito técnico para a época.
+              Recrute marinheiros de navios capturados ou resgate prisioneiros. A tripulação afeta 
+              a velocidade de reparo e eficácia em abordagens.
             </p>
           </div>
         </div>
+
+        <h3 className="text-xl font-bold mt-8 mb-4">⚓ Combate Naval: Ainda Referência em 2026</h3>
+
+        <p>
+          O combate naval de Black Flag continua sendo a referência do gênero, superando até jogos 
+          dedicados como Skull and Bones:
+        </p>
+
+        <ul>
+          <li><strong>Canhões Laterais:</strong> Rajadas devastadoras contra o casco inimigo</li>
+          <li><strong>Balas Encadeadas:</strong> Destroem velas e reduzem velocidade do alvo</li>
+          <li><strong>Morteiros:</strong> Bombardeio de longo alcance para iniciar confrontos</li>
+          <li><strong>Barris Explosivos:</strong> Solte atrás do navio para perseguidores</li>
+          <li><strong>Aríete:</strong> Golpe frontal devastador para finalizar navios</li>
+        </ul>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Gamepad2 className="h-7 w-7 text-amber-400" />
@@ -156,12 +247,14 @@ const ACBlackFlag = () => {
           tavernas em Nassau aos mergulhos em naufrágios repletos de tubarões.
         </p>
 
-        <p><strong>Destaques da jogabilidade:</strong></p>
+        <p><strong>Atividades disponíveis:</strong></p>
         <ul>
-          <li>Combate naval com canhões, morteiros e abordagens</li>
-          <li>Caça a baleias e tubarões</li>
-          <li>Exploração de ruínas maias subaquáticas</li>
-          <li>Sistema de upgrade do Jackdaw</li>
+          <li>Combate naval com canhões, morteiros e abordagens épicas</li>
+          <li>Caça a baleias e tubarões com arpões</li>
+          <li>Exploração de ruínas maias subaquáticas com equipamento de mergulho</li>
+          <li>Captura de fortes para dominar regiões do mapa</li>
+          <li>Assassinatos de Templários em terra firme</li>
+          <li>Coleta de Sea Shanties espalhadas pelo mundo</li>
         </ul>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -175,6 +268,14 @@ const ACBlackFlag = () => {
           em uma <strong>memória inesquecível</strong>.
         </p>
 
+        <p>São mais de <strong>35 shanties colecionáveis</strong>, incluindo clássicos como:</p>
+        <ul>
+          <li><strong>"Lowlands Away"</strong> — melancólica e emotiva</li>
+          <li><strong>"Drunken Sailor"</strong> — animada e contagiante</li>
+          <li><strong>"Leave Her Johnny"</strong> — perfeita para longos trechos de navegação</li>
+          <li><strong>"Randy Dandy Oh"</strong> — ritmo de trabalho pesado</li>
+        </ul>
+
         <div className="my-8 p-6 bg-secondary/50 rounded-xl border border-border">
           <p className="text-muted-foreground mb-0">
             💡 Entenda como a história da família Kenway continuou depois de Edward em nosso post sobre{" "}
@@ -182,6 +283,23 @@ const ACBlackFlag = () => {
               Assassin's Creed III Remastered
             </Link>.
           </p>
+        </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">📦 DLC: Freedom Cry</h2>
+
+        <p>
+          A expansão <strong>Freedom Cry</strong> (também vendida como standalone) conta a história de 
+          <strong> Adéwalé</strong>, ex-escravo e imediato de Edward, 15 anos após os eventos do jogo principal.
+        </p>
+
+        <div className="my-6 p-5 bg-card rounded-xl border border-border">
+          <h4 className="font-bold mb-3">📍 Sobre Freedom Cry</h4>
+          <ul className="text-sm text-muted-foreground space-y-1 mb-0">
+            <li>• <strong>Duração:</strong> 4-6 horas de conteúdo</li>
+            <li>• <strong>Localização:</strong> Saint-Domingue (atual Haiti)</li>
+            <li>• <strong>Tema:</strong> Libertação de escravos, abolicionismo</li>
+            <li>• <strong>Disponível:</strong> Como DLC ou jogo standalone</li>
+          </ul>
         </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -268,8 +386,8 @@ const ACBlackFlag = () => {
             <h4 className="font-bold mb-3">🎮 Console</h4>
             <ul className="text-sm text-muted-foreground space-y-1 mb-0">
               <li>✔ PS3, PS4, Xbox 360, Xbox One</li>
-              <li>✔ Praticidade</li>
               <li>✔ Disponível no Game Pass</li>
+              <li>✔ Nintendo Switch (portátil)</li>
             </ul>
           </div>
         </div>
@@ -282,9 +400,10 @@ const ACBlackFlag = () => {
         <p><strong>Absolutamente sim.</strong> É o jogo com melhor custo-benefício da franquia:</p>
         <ul>
           <li>Preço frequentemente abaixo de R$ 40 em promoções</li>
-          <li>Dezenas de horas de conteúdo de qualidade</li>
+          <li>20-25 horas de história principal</li>
           <li>O melhor combate naval já feito em games</li>
           <li>História envolvente de Edward Kenway</li>
+          <li>DLC Freedom Cry com mais 4-6 horas</li>
         </ul>
 
         {/* Where to Play */}
@@ -293,7 +412,8 @@ const ACBlackFlag = () => {
           <ul className="space-y-2 text-muted-foreground">
             <li>✓ <strong>PC:</strong> Steam, Epic Games Store, Ubisoft Connect</li>
             <li>✓ <strong>PlayStation 3, PlayStation 4</strong></li>
-            <li>✓ <strong>Xbox 360, Xbox One e Xbox Series X|S</strong></li>
+            <li>✓ <strong>Xbox 360, Xbox One e Xbox Series X|S</strong> (Game Pass)</li>
+            <li>✓ <strong>Nintendo Switch</strong></li>
           </ul>
           <p className="mt-4 text-sm text-muted-foreground">
             Preço médio: R$ 40 a R$ 80 (frequentemente em promoção por menos de R$ 30)
