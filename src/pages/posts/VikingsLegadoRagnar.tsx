@@ -369,7 +369,7 @@ const VikingsLegadoRagnar = () => {
             Qual foi sua cena favorita de Vikings?
           </h3>
           <p className="text-muted-foreground">
-            O ataque a Lindisfarne? A morte de Ragnar? A batalha de Kattegat? 
+            O ataque a Lindisfarne? A batalha de Kattegat? O ataque a Paris?
             Conta pra gente nos comentários! 👇
           </p>
         </div>
