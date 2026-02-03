@@ -272,7 +272,7 @@ const ACValhalla = () => {
             <h4 className="font-bold mb-2">🎯 Stun Attacks</h4>
             <p className="text-sm text-muted-foreground mb-0">
               Quebre a defesa inimiga com ataques pesados e execute <strong>finishers cinematográficos</strong> 
-              com desmembramentos gráficos.
+               com desmembramentos gráficos.
             </p>
           </div>
           <div className="p-4 bg-card rounded-xl border border-border">
