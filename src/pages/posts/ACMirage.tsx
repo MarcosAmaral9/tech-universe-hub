@@ -221,7 +221,7 @@ const ACMirage = () => {
               </tr>
               <tr>
                 <td className="py-3 px-4 font-medium">Armazenamento</td>
-                <td className="py-3 px-4 text-muted-foreground">40 GB SSD (obrigatório)</td>
+                <td className="py-3 px-4 text-muted-foreground">40 GB SSD (extremamente recomendado)</td>
               </tr>
             </tbody>
           </table>
@@ -260,11 +260,11 @@ const ACMirage = () => {
           <li>RTX 3050 / 3060 / 4050 ou superior</li>
           <li>Intel Core i7 ou Ryzen 7</li>
           <li>16 GB de RAM</li>
-          <li>SSD obrigatório</li>
+          <li>SSD extremamente recomendado</li>
         </ul>
 
-        <p className="text-destructive">
-          ⚠️ <strong>O jogo exige SSD — não roda em HD mecânico.</strong>
+        <p className="text-muted-foreground">
+          👉 <strong>SSD extremamente recomendado</strong> para garantir a performance do jogo.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">

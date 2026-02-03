@@ -267,7 +267,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: "22",
-    slug: "ac-rogue-heroi-vilao-templario",
+    slug: "ac-rogue-assassino-templario",
     title: "Assassin's Creed Rogue: E se o Herói se Tornasse o Vilão?",
     excerpt: "Descubra a história de Shay Cormac, o Assassino que se tornou Templário, e as inovações navais no Ártico.",
     content: "",
