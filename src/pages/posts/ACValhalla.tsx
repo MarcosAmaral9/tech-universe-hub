@@ -333,7 +333,7 @@ const ACValhalla = () => {
               </tr>
               <tr>
                 <td className="py-3 px-4 font-medium">Armazenamento</td>
-                <td className="py-3 px-4 text-muted-foreground">SSD (obrigatório)</td>
+                <td className="py-3 px-4 text-muted-foreground">SSD (extremamente recomendado)</td>
               </tr>
             </tbody>
           </table>

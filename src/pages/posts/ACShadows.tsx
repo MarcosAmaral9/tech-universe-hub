@@ -232,7 +232,7 @@ const ACShadows = () => {
               </tr>
               <tr>
                 <td className="py-3 px-4 font-medium">Armazenamento</td>
-                <td className="py-3 px-4 text-muted-foreground">SSD (obrigatório)</td>
+                <td className="py-3 px-4 text-muted-foreground">SSD (extremamente recomendado)</td>
               </tr>
             </tbody>
           </table>
@@ -271,7 +271,7 @@ const ACShadows = () => {
           <li>RTX 4060 / 4070 ou superior</li>
           <li>Intel Core i7-12700H ou Ryzen 9</li>
           <li>32 GB de RAM</li>
-          <li>SSD NVMe obrigatório</li>
+          <li>SSD NVMe extremamente recomendado</li>
         </ul>
 
         <p className="text-destructive">

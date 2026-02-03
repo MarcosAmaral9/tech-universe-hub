@@ -216,7 +216,7 @@ const AvatarFrontiersOfPandora = () => {
               </tr>
               <tr>
                 <td className="py-3 px-4 font-medium">Armazenamento</td>
-                <td className="py-3 px-4 text-muted-foreground">90 GB SSD (obrigatório)</td>
+                <td className="py-3 px-4 text-muted-foreground">90 GB SSD (extremamente recomendado)</td>
               </tr>
             </tbody>
           </table>
@@ -242,7 +242,7 @@ const AvatarFrontiersOfPandora = () => {
           </table>
         </div>
         <p className="text-muted-foreground">
-          👉 <strong>SSD é obrigatório</strong> — não roda em HD mecânico.
+          👉 <strong>SSD extremamente recomendado</strong> para garantir a performance do jogo.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -255,7 +255,7 @@ const AvatarFrontiersOfPandora = () => {
           <li>RTX 4060 / 4070 ou superior</li>
           <li>Intel Core i7-12700H ou Ryzen 9</li>
           <li>16 GB de RAM (32 GB ideal)</li>
-          <li>SSD NVMe obrigatório</li>
+          <li>SSD NVMe extremamente recomendado</li>
         </ul>
 
         <p className="text-destructive">
