@@ -37,7 +37,7 @@ export const blogPosts: BlogPost[] = [
     image: aiAnimeDubbingImg,
     author: "VICIO<CODE>",
     date: "2026-01-18",
-    readTime: "7 min"
+    readTime: "10 min"
   },
   {
     id: "20",
@@ -64,7 +64,7 @@ export const blogPosts: BlogPost[] = [
     image: techInvesting2026Img,
     author: "VICIO<CODE>",
     date: "2026-01-18",
-    readTime: "8 min"
+    readTime: "12 min"
   },
   // GEEK Posts - Vikings
   {
@@ -78,7 +78,7 @@ export const blogPosts: BlogPost[] = [
     image: vikingsRagnarImg,
     author: "VICIO<CODE>",
     date: "2026-01-18",
-    readTime: "6 min"
+    readTime: "18 min"
   },
   // GEEK Posts - Hell Let Loose
   {
@@ -92,7 +92,7 @@ export const blogPosts: BlogPost[] = [
     image: hellLetLooseImg,
     author: "VICIO<CODE>",
     date: "2026-01-17",
-    readTime: "7 min"
+    readTime: "10 min"
   },
   // GEEK Posts - Avatar Series
   {
@@ -106,7 +106,7 @@ export const blogPosts: BlogPost[] = [
     image: avatarPandoraImg,
     author: "VICIO<CODE>",
     date: "2026-01-16",
-    readTime: "6 min"
+    readTime: "12 min"
   },
   {
     id: "9",
@@ -119,7 +119,7 @@ export const blogPosts: BlogPost[] = [
     image: avatarWaterImg,
     author: "VICIO<CODE>",
     date: "2026-01-15",
-    readTime: "7 min"
+    readTime: "14 min"
   },
   {
     id: "10",
@@ -132,7 +132,7 @@ export const blogPosts: BlogPost[] = [
     image: avatarFireImg,
     author: "VICIO<CODE>",
     date: "2026-01-14",
-    readTime: "5 min"
+    readTime: "10 min"
   },
   {
     id: "11",
@@ -145,7 +145,7 @@ export const blogPosts: BlogPost[] = [
     image: avatarGameImg,
     author: "VICIO<CODE>",
     date: "2026-01-13",
-    readTime: "8 min"
+    readTime: "15 min"
   },
   // GEEK Posts - Assassin's Creed
   {
@@ -159,7 +159,7 @@ export const blogPosts: BlogPost[] = [
     image: acValhallaImg,
     author: "VICIO<CODE>",
     date: "2026-01-19",
-    readTime: "8 min"
+    readTime: "18 min"
   },
   {
     id: "13",
@@ -172,7 +172,7 @@ export const blogPosts: BlogPost[] = [
     image: acShadowsImg,
     author: "VICIO<CODE>",
     date: "2026-01-19",
-    readTime: "7 min"
+    readTime: "16 min"
   },
   {
     id: "14",
@@ -185,7 +185,7 @@ export const blogPosts: BlogPost[] = [
     image: acOdysseyImg,
     author: "VICIO<CODE>",
     date: "2026-01-18",
-    readTime: "9 min"
+    readTime: "18 min"
   },
   {
     id: "15",
@@ -198,7 +198,7 @@ export const blogPosts: BlogPost[] = [
     image: acBlackFlagImg,
     author: "VICIO<CODE>",
     date: "2026-01-17",
-    readTime: "7 min"
+    readTime: "18 min"
   },
   {
     id: "16",
@@ -211,7 +211,7 @@ export const blogPosts: BlogPost[] = [
     image: acOriginsImg,
     author: "VICIO<CODE>",
     date: "2026-01-16",
-    readTime: "8 min"
+    readTime: "18 min"
   },
   {
     id: "17",
@@ -224,7 +224,7 @@ export const blogPosts: BlogPost[] = [
     image: acMirageImg,
     author: "VICIO<CODE>",
     date: "2026-01-15",
-    readTime: "6 min"
+    readTime: "15 min"
   },
   {
     id: "18",
@@ -237,7 +237,7 @@ export const blogPosts: BlogPost[] = [
     image: ac3Img,
     author: "VICIO<CODE>",
     date: "2026-01-14",
-    readTime: "7 min"
+    readTime: "15 min"
   },
   {
     id: "19",
@@ -250,7 +250,7 @@ export const blogPosts: BlogPost[] = [
     image: acSyndicateImg,
     author: "VICIO<CODE>",
     date: "2026-01-13",
-    readTime: "7 min"
+    readTime: "15 min"
   },
   {
     id: "21",
@@ -263,7 +263,7 @@ export const blogPosts: BlogPost[] = [
     image: acUnityImg,
     author: "VICIO<CODE>",
     date: "2026-01-12",
-    readTime: "8 min"
+    readTime: "16 min"
   },
   {
     id: "22",
@@ -276,7 +276,7 @@ export const blogPosts: BlogPost[] = [
     image: acRogueImg,
     author: "VICIO<CODE>",
     date: "2026-01-11",
-    readTime: "7 min"
+    readTime: "14 min"
   },
   {
     id: "23",
