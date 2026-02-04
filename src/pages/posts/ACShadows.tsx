@@ -42,7 +42,7 @@ const ACShadows = () => {
           </span>
           <span className="flex items-center gap-2">
             <Clock className="h-4 w-4" />
-            12 min de leitura
+            16 min de leitura
           </span>
         </div>
       </header>

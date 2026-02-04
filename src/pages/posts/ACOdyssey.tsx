@@ -42,7 +42,7 @@ const ACOdyssey = () => {
           </span>
           <span className="flex items-center gap-2">
             <Clock className="h-4 w-4" />
-            14 min de leitura
+            18 min de leitura
           </span>
         </div>
       </header>
@@ -127,13 +127,77 @@ const ACOdyssey = () => {
           Você não é apenas um assassino; você é um <strong>descendente direto do Rei Leônidas de Esparta</strong>.
         </p>
 
+        {/* Contexto Histórico e Geográfico */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Ship className="h-7 w-7 text-blue-400" />
-          Um Mundo Vivo e Tecnológico
+          <Sword className="h-7 w-7 text-blue-400" />
+          Contexto Histórico: A Guerra do Peloponeso (431-404 a.C.)
         </h2>
 
         <p>
-          O mapa de Odyssey é um dos maiores já criados pela Ubisoft:
+          O jogo se passa durante a <strong>Guerra do Peloponeso</strong>, o maior conflito da Grécia Antiga 
+          entre <strong>Atenas</strong> e <strong>Esparta</strong>. Este período (431-404 a.C.) foi marcado por:
+        </p>
+
+        <ul className="space-y-2 my-6">
+          <li><strong>Péricles:</strong> Líder de Atenas, patrono das artes e da filosofia</li>
+          <li><strong>Leônidas:</strong> O lendário rei espartano das 300, ancestral do protagonista</li>
+          <li><strong>Sócrates:</strong> Filósofo que questiona suas decisões morais no jogo</li>
+          <li><strong>Hipócrates:</strong> O pai da medicina, que aparece em missões secundárias</li>
+        </ul>
+
+        <p>
+          A <strong>geografia</strong> do jogo abrange toda a Grécia continental, ilhas do Egeu, Creta e 
+          partes da Ásia Menor. São mais de <strong>28 regiões exploráveis</strong>, cada uma com 
+          arquitetura, flora e fauna únicas da época.
+        </p>
+
+        {/* Facções */}
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          ⚔️ Facções e Forças em Conflito
+        </h2>
+
+        <div className="overflow-x-auto my-8">
+          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden">
+            <thead>
+              <tr className="border-b border-border bg-secondary">
+                <th className="text-left py-3 px-4 font-bold">Facção</th>
+                <th className="text-left py-3 px-4 font-bold">Líder/Base</th>
+                <th className="text-left py-3 px-4 font-bold">Filosofia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">Liga de Delos (Atenas)</td>
+                <td className="py-3 px-4 text-muted-foreground">Péricles / Atenas</td>
+                <td className="py-3 px-4 text-muted-foreground">Democracia, artes, filosofia</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">Liga do Peloponeso (Esparta)</td>
+                <td className="py-3 px-4 text-muted-foreground">Rei Pausânias / Esparta</td>
+                <td className="py-3 px-4 text-muted-foreground">Disciplina militar, força</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">Culto de Kosmos</td>
+                <td className="py-3 px-4 text-muted-foreground">Deimos / Secreto</td>
+                <td className="py-3 px-4 text-muted-foreground">Controle através do caos (proto-Templários)</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">Mercenários</td>
+                <td className="py-3 px-4 text-muted-foreground">Sem lealdade fixa</td>
+                <td className="py-3 px-4 text-muted-foreground">Dracmas e sobrevivência</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Ship className="h-7 w-7 text-blue-400" />
+          Mundo Aberto e Navegação Naval
+        </h2>
+
+        <p>
+          O mapa de Odyssey é um dos maiores já criados pela Ubisoft, cobrindo aproximadamente 
+          <strong>256 km²</strong> de terreno explorável:
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 my-8">
@@ -141,8 +205,8 @@ const ACOdyssey = () => {
             <Ship className="h-8 w-8 text-blue-400 mb-3" />
             <h4 className="font-bold mb-2">Batalhas Navais</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              Retorno triunfal das batalhas marítimas. Física da água e IA dos navios criam confrontos 
-              dinâmicos no Mar Egeu.
+              O navio Adrestia pode ser personalizado e melhorado. Recrute tenentes com habilidades 
+              especiais e domine o Mar Egeu em confrontos épicos.
             </p>
           </div>
           <div className="p-5 bg-card rounded-xl border border-border">
@@ -150,19 +214,43 @@ const ACOdyssey = () => {
             <h4 className="font-bold mb-2">Sistema de Mercenários</h4>
             <p className="text-sm text-muted-foreground mb-0">
               IA inspirada no sistema "Nemesis" de Shadow of Mordor — caçadores de recompensa perseguem 
-              você em tempo real.
+              você em tempo real baseados em suas ações.
             </p>
           </div>
         </div>
 
+        {/* Sistema de Combate */}
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          🗡️ Sistema de Combate e Habilidades
+        </h2>
+
         <p>
-          A reconstrução de <strong>Atenas</strong>, com o Partenon em cores vibrantes, é uma aula de 
-          arquitetura e computação gráfica.
+          O combate de Odyssey é <strong>totalmente baseado em RPG</strong>, com três árvores de habilidade:
+        </p>
+
+        <ul className="space-y-3 my-6">
+          <li className="flex items-start gap-3">
+            <span className="text-blue-500 font-bold">⚔️</span>
+            <span><strong>Guerreiro:</strong> Combate corpo a corpo, golpes devastadores como o Chute Espartano</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-blue-500 font-bold">🏹</span>
+            <span><strong>Caçador:</strong> Arco e flecha, tiros guiados, chuva de flechas</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-blue-500 font-bold">🗡️</span>
+            <span><strong>Assassino:</strong> Furtividade, assassinatos críticos, desaparecimento</span>
+          </li>
+        </ul>
+
+        <p>
+          O equipamento possui <strong>níveis e raridades</strong> (comum, raro, épico, lendário) e pode 
+          ser gravado com bônus permanentes no ferreiro.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Sparkles className="h-7 w-7 text-blue-400" />
-          Entre a História e o Mito
+          Criaturas Mitológicas e Chefes
         </h2>
 
         <p>
@@ -173,17 +261,85 @@ const ACOdyssey = () => {
         <ul className="space-y-3 my-6">
           <li className="flex items-start gap-3">
             <span className="text-blue-500 font-bold">🐍</span>
-            <span><strong>Medusa:</strong> A górgona com olhar petrificante.</span>
+            <span><strong>Medusa:</strong> A górgona com olhar petrificante em seu templo antigo.</span>
           </li>
           <li className="flex items-start gap-3">
             <span className="text-blue-500 font-bold">🐂</span>
-            <span><strong>Minotauro:</strong> O monstro do labirinto de Creta.</span>
+            <span><strong>Minotauro:</strong> O monstro do labirinto de Creta, desafio brutal.</span>
           </li>
           <li className="flex items-start gap-3">
             <span className="text-blue-500 font-bold">🦁</span>
-            <span><strong>Esfinge:</strong> O guardião enigmático com seus desafios.</span>
+            <span><strong>Esfinge:</strong> O guardião enigmático com seus enigmas mortais.</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-blue-500 font-bold">🐗</span>
+            <span><strong>Ciclope:</strong> Gigantes de um olho só espalhados pelas ilhas.</span>
           </li>
         </ul>
+
+        {/* Tempo de Jogo */}
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          ⏱️ Tempo de Jogo: Quanto Tempo Leva para Zerar?
+        </h2>
+
+        <div className="overflow-x-auto my-8">
+          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden">
+            <thead>
+              <tr className="border-b border-border bg-secondary">
+                <th className="text-left py-3 px-4 font-bold">Estilo de Jogo</th>
+                <th className="text-left py-3 px-4 font-bold">Tempo Estimado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">História Principal</td>
+                <td className="py-3 px-4 text-muted-foreground">40-50 horas</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">História + Secundárias</td>
+                <td className="py-3 px-4 text-muted-foreground">80-100 horas</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">100% (Completionist)</td>
+                <td className="py-3 px-4 text-muted-foreground">150-200 horas</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {/* DLCs */}
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          📦 DLCs e Expansões
+        </h2>
+
+        <div className="overflow-x-auto my-8">
+          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden">
+            <thead>
+              <tr className="border-b border-border bg-secondary">
+                <th className="text-left py-3 px-4 font-bold">DLC</th>
+                <th className="text-left py-3 px-4 font-bold">Conteúdo</th>
+                <th className="text-left py-3 px-4 font-bold">Duração</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">Legacy of the First Blade</td>
+                <td className="py-3 px-4 text-muted-foreground">Origem da Lâmina Oculta, encontro com Darius</td>
+                <td className="py-3 px-4 text-muted-foreground">~15 horas</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-3 px-4 font-medium">The Fate of Atlantis</td>
+                <td className="py-3 px-4 text-muted-foreground">Visite Elísio, Hades e a própria Atlântida</td>
+                <td className="py-3 px-4 text-muted-foreground">~25 horas</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-medium">Discovery Tour</td>
+                <td className="py-3 px-4 text-muted-foreground">Modo educacional sem combate</td>
+                <td className="py-3 px-4 text-muted-foreground">~5 horas</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Gamepad2 className="h-7 w-7 text-blue-400" />
@@ -192,7 +348,8 @@ const ACOdyssey = () => {
 
         <p>
           Em Odyssey, suas decisões importam. O final da sua família, o destino de cidades inteiras e quem 
-          vive ou morre depende dos diálogos — isso dá ao jogo um <strong>fator replay altíssimo</strong>.
+          vive ou morre depende dos diálogos — isso dá ao jogo um <strong>fator replay altíssimo</strong>. 
+          São <strong>9 finais diferentes</strong> dependendo de suas escolhas ao longo da jornada.
         </p>
 
         <div className="my-8 p-6 bg-secondary/50 rounded-xl border border-border">
