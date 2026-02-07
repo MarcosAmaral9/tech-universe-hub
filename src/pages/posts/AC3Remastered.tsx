@@ -338,13 +338,6 @@ const AC3Remastered = () => {
           </table>
         </div>
 
-        <div className="my-6 p-5 bg-secondary/50 rounded-xl border border-border">
-          <p className="text-muted-foreground mb-0">
-            ⚠️ <strong>Spoiler leve:</strong> O prólogo de AC III é jogado como <strong>Haytham Kenway</strong> — o pai de Connor 
-            e um Templário. É uma das maiores reviravoltas da franquia, pois o jogador só descobre que Haytham é Templário após 
-            várias horas de jogo. Isso torna a relação pai-filho uma das mais complexas da série.
-          </p>
-        </div>
 
         {/* ==================== SAGA KENWAY ==================== */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
