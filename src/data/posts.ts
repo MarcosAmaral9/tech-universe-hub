@@ -224,7 +224,7 @@ export const blogPosts: BlogPost[] = [
     image: acMirageImg,
     author: "VICIO<CODE>",
     date: "2026-01-15",
-    readTime: "15 min"
+    readTime: "18 min"
   },
   {
     id: "18",
