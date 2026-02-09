@@ -145,7 +145,7 @@ export const blogPosts: BlogPost[] = [
     image: avatarGameImg,
     author: "VICIO<CODE>",
     date: "2026-01-13",
-    readTime: "15 min"
+    readTime: "18 min"
   },
   // GEEK Posts - Assassin's Creed
   {
