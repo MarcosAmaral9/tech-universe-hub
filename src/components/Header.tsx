@@ -26,6 +26,7 @@ const Header = () => {
 
   const legalLinks = [
     { name: "Sobre", path: "/sobre" },
+    { name: "Contato", path: "/contato" },
     { name: "Privacidade", path: "/privacidade" },
     { name: "Termos", path: "/termos" },
     { name: "Política de Conteúdo", path: "/politica-conteudo" },
