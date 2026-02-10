@@ -39,7 +39,7 @@ const ACMirage = () => {
           </span>
           <span className="flex items-center gap-2">
             <Calendar className="h-4 w-4" />
-            02 de Fevereiro, 2026
+            25 de Janeiro, 2026
           </span>
           <span className="flex items-center gap-2">
             <Clock className="h-4 w-4" />

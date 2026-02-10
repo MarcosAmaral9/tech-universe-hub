@@ -34,7 +34,7 @@ const Avatar3FogoECinzas = () => {
           </span>
           <span className="flex items-center gap-2">
             <Calendar className="h-4 w-4" />
-            14 de Janeiro, 2026
+            24 de Janeiro, 2026
           </span>
           <span className="flex items-center gap-2">
             <Clock className="h-4 w-4" />

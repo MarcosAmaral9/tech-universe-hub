@@ -30,7 +30,7 @@ const DiferenciarManhuasManhwas = () => {
           </span>
           <span className="flex items-center gap-2">
             <Calendar className="h-4 w-4" />
-            16 de Janeiro, 2026
+            30 de Janeiro, 2026
           </span>
           <span className="flex items-center gap-2">
             <Clock className="h-4 w-4" />
