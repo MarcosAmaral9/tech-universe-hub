@@ -41,6 +41,7 @@ import AboutPage from "./pages/AboutPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsPage from "./pages/TermsPage";
 import ContentPolicyPage from "./pages/ContentPolicyPage";
+import ContactPage from "./pages/ContactPage";
 import CookieConsent from "./components/CookieConsent";
 
 const queryClient = new QueryClient();
@@ -91,6 +92,7 @@ const App = () => (
               <Route path="/post/ranking-melhor-assassins-creed-2026" element={<ACRanking2026 />} />
               {/* Legal Pages */}
               <Route path="/sobre" element={<AboutPage />} />
+              <Route path="/contato" element={<ContactPage />} />
               <Route path="/privacidade" element={<PrivacyPolicyPage />} />
               <Route path="/termos" element={<TermsPage />} />
               <Route path="/politica-conteudo" element={<ContentPolicyPage />} />
