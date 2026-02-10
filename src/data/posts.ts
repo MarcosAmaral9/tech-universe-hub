@@ -36,7 +36,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "dublagem",
     image: aiAnimeDubbingImg,
     author: "VICIO<CODE>",
-    date: "2026-01-18",
+    date: "2026-02-05",
     readTime: "10 min"
   },
   {
@@ -49,7 +49,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "games",
     image: aiRemasteringImg,
     author: "VICIO<CODE>",
-    date: "2026-01-17",
+    date: "2026-02-01",
     readTime: "6 min"
   },
   // INVEST Posts
@@ -63,7 +63,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "semicondutores",
     image: techInvesting2026Img,
     author: "VICIO<CODE>",
-    date: "2026-01-18",
+    date: "2026-02-06",
     readTime: "12 min"
   },
   // GEEK Posts - Vikings
@@ -77,7 +77,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "vikings",
     image: vikingsRagnarImg,
     author: "VICIO<CODE>",
-    date: "2026-01-18",
+    date: "2026-02-07",
     readTime: "18 min"
   },
   // GEEK Posts - Hell Let Loose
@@ -91,7 +91,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "games",
     image: hellLetLooseImg,
     author: "VICIO<CODE>",
-    date: "2026-01-17",
+    date: "2026-02-03",
     readTime: "10 min"
   },
   // GEEK Posts - Avatar Series
@@ -105,7 +105,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "avatar",
     image: avatarPandoraImg,
     author: "VICIO<CODE>",
-    date: "2026-01-16",
+    date: "2026-01-29",
     readTime: "12 min"
   },
   {
@@ -118,7 +118,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "avatar",
     image: avatarWaterImg,
     author: "VICIO<CODE>",
-    date: "2026-01-15",
+    date: "2026-01-26",
     readTime: "14 min"
   },
   {
@@ -131,7 +131,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "avatar",
     image: avatarFireImg,
     author: "VICIO<CODE>",
-    date: "2026-01-14",
+    date: "2026-01-24",
     readTime: "10 min"
   },
   {
@@ -144,7 +144,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "avatar",
     image: avatarGameImg,
     author: "VICIO<CODE>",
-    date: "2026-01-13",
+    date: "2026-01-22",
     readTime: "18 min"
   },
   // GEEK Posts - Assassin's Creed
@@ -158,7 +158,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "assassins-creed",
     image: acValhallaImg,
     author: "VICIO<CODE>",
-    date: "2026-01-19",
+    date: "2026-02-08",
     readTime: "18 min"
   },
   {
@@ -171,7 +171,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "assassins-creed",
     image: acShadowsImg,
     author: "VICIO<CODE>",
-    date: "2026-01-19",
+    date: "2026-02-09",
     readTime: "18 min"
   },
   {
@@ -184,7 +184,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "assassins-creed",
     image: acOdysseyImg,
     author: "VICIO<CODE>",
-    date: "2026-01-18",
+    date: "2026-02-04",
     readTime: "18 min"
   },
   {
@@ -197,7 +197,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "assassins-creed",
     image: acBlackFlagImg,
     author: "VICIO<CODE>",
-    date: "2026-01-17",
+    date: "2026-01-31",
     readTime: "18 min"
   },
   {
@@ -210,7 +210,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "assassins-creed",
     image: acOriginsImg,
     author: "VICIO<CODE>",
-    date: "2026-01-16",
+    date: "2026-01-28",
     readTime: "18 min"
   },
   {
@@ -223,7 +223,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "assassins-creed",
     image: acMirageImg,
     author: "VICIO<CODE>",
-    date: "2026-01-15",
+    date: "2026-01-25",
     readTime: "18 min"
   },
   {
@@ -236,7 +236,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "assassins-creed",
     image: ac3Img,
     author: "VICIO<CODE>",
-    date: "2026-01-14",
+    date: "2026-01-23",
     readTime: "18 min"
   },
   {
@@ -249,7 +249,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "assassins-creed",
     image: acSyndicateImg,
     author: "VICIO<CODE>",
-    date: "2026-01-13",
+    date: "2026-01-21",
     readTime: "18 min"
   },
   {
@@ -262,7 +262,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "assassins-creed",
     image: acUnityImg,
     author: "VICIO<CODE>",
-    date: "2026-01-12",
+    date: "2026-01-20",
     readTime: "18 min"
   },
   {
@@ -275,7 +275,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "assassins-creed",
     image: acRogueImg,
     author: "VICIO<CODE>",
-    date: "2026-01-11",
+    date: "2026-01-19",
     readTime: "18 min"
   },
   {
@@ -288,7 +288,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "assassins-creed",
     image: acPortalImg,
     author: "VICIO<CODE>",
-    date: "2026-01-20",
+    date: "2026-02-10",
     readTime: "10 min"
   },
   // OTAKU Posts
@@ -302,7 +302,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "manga",
     image: mangaManhwaManhuaImg,
     author: "VICIO<CODE>",
-    date: "2026-01-17",
+    date: "2026-02-02",
     readTime: "5 min"
   },
   {
@@ -315,7 +315,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "manhwa",
     image: manhwaVsManuaImg,
     author: "VICIO<CODE>",
-    date: "2026-01-16",
+    date: "2026-01-30",
     readTime: "4 min"
   },
   {
@@ -328,7 +328,7 @@ export const blogPosts: BlogPost[] = [
     subtopic: "manhwa",
     image: systemManhwaImg,
     author: "VICIO<CODE>",
-    date: "2026-01-15",
+    date: "2026-01-27",
     readTime: "8 min"
   },
 ];

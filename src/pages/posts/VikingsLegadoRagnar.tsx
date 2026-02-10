@@ -29,7 +29,7 @@ const VikingsLegadoRagnar = () => {
           </span>
           <span className="flex items-center gap-2">
             <Calendar className="h-4 w-4" />
-            18 de Janeiro, 2026
+            07 de Fevereiro, 2026
           </span>
           <span className="flex items-center gap-2">
             <Clock className="h-4 w-4" />

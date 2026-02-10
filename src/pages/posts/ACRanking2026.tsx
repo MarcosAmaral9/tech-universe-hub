@@ -109,7 +109,7 @@ const ACRanking2026 = () => {
           </span>
           <span className="flex items-center gap-2">
             <Calendar className="h-4 w-4" />
-            20 de Janeiro, 2026
+            10 de Fevereiro, 2026
           </span>
           <span className="flex items-center gap-2">
             <Clock className="h-4 w-4" />
