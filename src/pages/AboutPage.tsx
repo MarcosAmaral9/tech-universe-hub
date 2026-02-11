@@ -27,7 +27,7 @@ const AboutPage = () => {
             </div>
             <p className="text-muted-foreground">
               O VICIO&lt;CODE&gt; nasceu com o propósito de agregar conhecimento aos leitores. 
-              Aqui você encontra conteúdos sobre Inteligência Artificial, Investimentos, 
+              Aqui você encontra conteúdos sobre Inteligência Artificial, Finanças, 
               Cultura Geek e Mundo Otaku, sempre com uma abordagem acessível e informativa.
             </p>
           </CardContent>

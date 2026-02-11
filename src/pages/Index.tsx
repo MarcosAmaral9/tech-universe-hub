@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Index = () => {
   const categories = [
     { id: "ia", name: "Inteligência Artificial", color: "text-ia", bgColor: "bg-ia/10", borderColor: "border-ia" },
-    { id: "invest", name: "Investimentos", color: "text-invest", bgColor: "bg-invest/10", borderColor: "border-invest" },
+    { id: "invest", name: "Finanças", color: "text-invest", bgColor: "bg-invest/10", borderColor: "border-invest" },
     { id: "geek", name: "Mundo Geek", color: "text-geek", bgColor: "bg-geek/10", borderColor: "border-geek" },
     { id: "otaku", name: "Mundo Otaku", color: "text-otaku", bgColor: "bg-otaku/10", borderColor: "border-otaku" },
   ];
@@ -27,7 +27,7 @@ const Index = () => {
           {categories.map((cat) => (
             <Link
               key={cat.id}
-              to={`/${cat.id === "ia" ? "ia" : cat.id === "invest" ? "investimentos" : cat.id}`}
+              to={`/${cat.id === "ia" ? "ia" : cat.id === "invest" ? "financas" : cat.id}`}
               className={`p-6 rounded-xl border-2 ${cat.borderColor} ${cat.bgColor} hover:scale-105 transition-all duration-300 text-center card-hover`}
             >
               <span className={`font-display font-bold text-lg ${cat.color}`}>

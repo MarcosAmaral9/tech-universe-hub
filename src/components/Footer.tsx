@@ -28,7 +28,7 @@ const Footer = () => {
               <span className="logo-code">&lt;CODE&gt;</span>
             </Link>
             <p className="mt-4 text-muted-foreground max-w-md">
-              Seu portal definitivo para IAs, investimentos, cultura geek e o mundo otaku. 
+              Seu portal definitivo para IAs, finanças, cultura geek e o mundo otaku. 
               Conteúdo de qualidade para mentes curiosas.
             </p>
           </div>
@@ -43,8 +43,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/investimentos" className="text-muted-foreground hover:text-invest transition-colors">
-                  Investimentos
+                <Link to="/financas" className="text-muted-foreground hover:text-invest transition-colors">
+                  Finanças
                 </Link>
               </li>
               <li>

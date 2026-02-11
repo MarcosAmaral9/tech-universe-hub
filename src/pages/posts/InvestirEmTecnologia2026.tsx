@@ -9,11 +9,11 @@ const InvestirEmTecnologia2026 = () => {
   return (
     <article className="container py-8 max-w-4xl mx-auto">
       <Link
-        to="/investimentos"
+        to="/financas"
         className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors"
       >
         <ArrowLeft className="h-4 w-4" />
-        Voltar para Investimentos
+        Voltar para Finanças
       </Link>
 
       <header className="mb-8">
