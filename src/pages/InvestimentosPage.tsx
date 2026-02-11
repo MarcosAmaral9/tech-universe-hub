@@ -21,12 +21,12 @@ const InvestimentosPage = () => {
         <div className="flex items-center gap-4 mb-4">
           <div className="w-2 h-12 bg-invest rounded-full"></div>
           <h1 className="font-display text-3xl md:text-5xl font-bold">
-            <span className="text-invest">Investimentos</span>
+            <span className="text-invest">Finanças</span>
           </h1>
         </div>
         
         <p className="text-muted-foreground text-lg max-w-2xl">
-          Dicas de investimentos, análises de mercado, criptomoedas e 
+          Dicas de finanças, análises de mercado, criptomoedas e 
           educação financeira para construir seu futuro.
         </p>
       </div>

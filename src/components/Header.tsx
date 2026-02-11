@@ -19,7 +19,7 @@ const Header = () => {
 
   const navLinks = [
     { name: "IAs", path: "/ia", color: "text-ia" },
-    { name: "Investimentos", path: "/investimentos", color: "text-invest" },
+    { name: "Finanças", path: "/financas", color: "text-invest" },
     { name: "Geek", path: "/geek", color: "text-geek" },
     { name: "Otaku", path: "/otaku", color: "text-otaku" },
   ];

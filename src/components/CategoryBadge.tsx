@@ -7,7 +7,7 @@ interface CategoryBadgeProps {
 
 const categoryConfig: Record<Category, { label: string; className: string }> = {
   ia: { label: "IA", className: "category-ia" },
-  invest: { label: "Investimentos", className: "category-invest" },
+  invest: { label: "Finanças", className: "category-invest" },
   geek: { label: "Geek", className: "category-geek" },
   otaku: { label: "Otaku", className: "category-otaku" },
 };

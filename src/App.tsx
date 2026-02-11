@@ -60,7 +60,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/otaku" element={<OtakuPage />} />
               <Route path="/ia" element={<IAPage />} />
-              <Route path="/investimentos" element={<InvestimentosPage />} />
+              <Route path="/financas" element={<InvestimentosPage />} />
               <Route path="/geek" element={<GeekPage />} />
               {/* Portals */}
               <Route path="/geek/avatar" element={<AvatarPortal />} />
