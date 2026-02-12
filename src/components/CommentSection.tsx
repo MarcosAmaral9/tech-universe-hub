@@ -273,7 +273,7 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
               <div>
                 <span className="font-semibold text-foreground">{comment.author}</span>
                 <span className="block text-xs text-muted-foreground">
-                  {new Date(comment.date).toLocaleDateString("pt-BR")}
+                  {new Date(comment.date + "T12:00:00").toLocaleDateString("pt-BR")}
                 </span>
               </div>
             </div>

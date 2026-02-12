@@ -34,7 +34,7 @@ const PostCard = ({ post }: PostCardProps) => {
           </p>
 
           <div className="flex items-center justify-between text-xs text-muted-foreground">
-            <span>{new Date(post.date).toLocaleDateString("pt-BR")}</span>
+            <span>{new Date(post.date + "T12:00:00").toLocaleDateString("pt-BR")}</span>
             <span className="flex items-center gap-1">
               <Clock className="h-3 w-3" />
               {post.readTime}

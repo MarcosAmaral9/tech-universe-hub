@@ -84,7 +84,7 @@ const FeaturedCarousel = () => {
               <div className="flex items-center gap-4 text-sm text-muted-foreground">
                 <span>{currentPost.author}</span>
                 <span>•</span>
-                <span>{new Date(currentPost.date).toLocaleDateString("pt-BR")}</span>
+                <span>{new Date(currentPost.date + "T12:00:00").toLocaleDateString("pt-BR")}</span>
                 <span>•</span>
                 <span className="flex items-center gap-1">
                   <Clock className="h-4 w-4" />
