@@ -2,13 +2,7 @@ import { Link } from "react-router-dom";
 import { Instagram } from "lucide-react";
 
 const TikTokIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
     <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
   </svg>
 );
@@ -60,54 +54,66 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Social - Links only on mobile */}
+          {/* Legal */}
           <div>
-            <h4 className="font-display font-semibold mb-4 text-foreground">Redes Sociais</h4>
-            {/* Desktop: Icons only, no links */}
-            <div className="hidden md:flex gap-4">
-              <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
-                <Instagram className="h-5 w-5" />
+            <h4 className="font-display font-semibold mb-4 text-foreground">Legal</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/sobre" className="text-muted-foreground hover:text-primary transition-colors">
+                  Sobre
+                </Link>
+              </li>
+              <li>
+                <Link to="/contato" className="text-muted-foreground hover:text-primary transition-colors">
+                  Contato
+                </Link>
+              </li>
+              <li>
+                <Link to="/privacidade" className="text-muted-foreground hover:text-primary transition-colors">
+                  Privacidade
+                </Link>
+              </li>
+              <li>
+                <Link to="/termos" className="text-muted-foreground hover:text-primary transition-colors">
+                  Termos e Condições
+                </Link>
+              </li>
+              <li>
+                <Link to="/politica-conteudo" className="text-muted-foreground hover:text-primary transition-colors">
+                  Política de Conteúdo
+                </Link>
+              </li>
+            </ul>
+            {/* Social icons */}
+            <div className="flex gap-4 mt-6">
+              {/* Desktop: Icons only */}
+              <div className="hidden md:flex gap-4">
+                <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
+                  <Instagram className="h-5 w-5" />
+                </div>
+                <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
+                  <TikTokIcon />
+                </div>
               </div>
-              <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
-                <TikTokIcon />
+              {/* Mobile: Clickable links */}
+              <div className="flex md:hidden gap-4">
+                <a
+                  href={instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
+                  <Instagram className="h-5 w-5" />
+                </a>
+                <a
+                  href={tiktokUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
+                  <TikTokIcon />
+                </a>
               </div>
-            </div>
-            {/* Mobile: Clickable links */}
-          <div className="flex md:hidden gap-4">
-              <a
-                href={instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href={tiktokUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                <TikTokIcon />
-              </a>
-            </div>
-            {/* Legal Links */}
-            <div className="flex flex-wrap gap-4 mt-4 md:mt-0">
-              <Link to="/sobre" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Sobre
-              </Link>
-              <Link to="/contato" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Contato
-              </Link>
-              <Link to="/privacidade" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Privacidade
-              </Link>
-              <Link to="/termos" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Termos
-              </Link>
-              <Link to="/politica-conteudo" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Política de Conteúdo
-              </Link>
             </div>
           </div>
         </div>
