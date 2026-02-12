@@ -25,7 +25,7 @@ const ContactPage = () => {
         {/* Telefone */}
         <a
           href="tel:+5531971533902"
-          className="flex items-start gap-4 p-6 rounded-xl border border-border bg-card hover:bg-secondary/50 transition-colors"
+          className="flex md:hidden items-start gap-4 p-6 rounded-xl border border-border bg-card hover:bg-secondary/50 transition-colors"
         >
           <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
             <Phone className="h-5 w-5 text-primary" />
