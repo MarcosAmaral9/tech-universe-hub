@@ -18,6 +18,9 @@ import MelhoresManhwasSistema from "./pages/posts/MelhoresManhwasSistema";
 import IATransformandoDublagem from "./pages/posts/IATransformandoDublagem";
 import IARemasterizacaoJogos from "./pages/posts/IARemasterizacaoJogos";
 import InvestirEmTecnologia2026 from "./pages/posts/InvestirEmTecnologia2026";
+import TesouroDireto2026 from "./pages/posts/TesouroDireto2026";
+import RendaPassiva2026 from "./pages/posts/RendaPassiva2026";
+import CarteiraIniciantes2026 from "./pages/posts/CarteiraIniciantes2026";
 import VikingsLegadoRagnar from "./pages/posts/VikingsLegadoRagnar";
 import HellLetLooseSimulador from "./pages/posts/HellLetLooseSimulador";
 import Avatar2009Tecnologia from "./pages/posts/Avatar2009Tecnologia";
@@ -72,6 +75,9 @@ const App = () => (
               <Route path="/post/ia-transformando-dublagem-animes" element={<IATransformandoDublagem />} />
               <Route path="/post/ia-remasterizacao-jogos-classicos" element={<IARemasterizacaoJogos />} />
               <Route path="/post/investir-em-tecnologia-2026" element={<InvestirEmTecnologia2026 />} />
+              <Route path="/post/tesouro-direto-2026-guia-completo" element={<TesouroDireto2026 />} />
+              <Route path="/post/renda-passiva-2026-formas-comprovadas" element={<RendaPassiva2026 />} />
+              <Route path="/post/carteira-investimentos-iniciantes-2026" element={<CarteiraIniciantes2026 />} />
               <Route path="/post/vikings-legado-ragnar-lothbrok" element={<VikingsLegadoRagnar />} />
               <Route path="/post/hell-let-loose-simulador-guerra" element={<HellLetLooseSimulador />} />
               <Route path="/post/avatar-2009-filme-revolucionou-tecnologia" element={<Avatar2009Tecnologia />} />
