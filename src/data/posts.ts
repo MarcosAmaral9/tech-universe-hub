@@ -23,6 +23,9 @@ import acSyndicateImg from "@/assets/ac-syndicate.jpg";
 import acUnityImg from "@/assets/ac-unity.jpg";
 import acRogueImg from "@/assets/ac-rogue.jpg";
 import acPortalImg from "@/assets/assassins-creed-portal.jpg";
+import tesouroDiretoImg from "@/assets/tesouro-direto-2026.jpg";
+import rendaPassivaImg from "@/assets/renda-passiva-2026.jpg";
+import carteiraInvestimentosImg from "@/assets/carteira-investimentos-2026.jpg";
 
 export const blogPosts: BlogPost[] = [
   // IA Posts
@@ -51,6 +54,46 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-02-01",
     readTime: "6 min"
+  },
+  // INVEST Posts - Finance Series
+  {
+    id: "24",
+    slug: "tesouro-direto-2026-guia-completo",
+    title: "Tesouro Direto em 2026: Ainda Vale a Pena? O Guia Completo Atualizado",
+    excerpt: "Descubra se o Tesouro Direto ainda é o melhor investimento para iniciantes em 2026. Comparamos taxas, rendimentos e estratégias.",
+    content: "",
+    category: "invest",
+    subtopic: "renda-fixa",
+    image: tesouroDiretoImg,
+    author: "VICIO<CODE>",
+    date: "2026-02-15",
+    readTime: "12 min"
+  },
+  {
+    id: "25",
+    slug: "renda-passiva-2026-formas-comprovadas",
+    title: "Renda Passiva Real em 2026: 7 Formas Comprovadas de Ganhar Dinheiro Dormindo",
+    excerpt: "Renda passiva não é mito. Conheça 7 estratégias validadas para 2026 que geram dinheiro enquanto você dorme.",
+    content: "",
+    category: "invest",
+    subtopic: "renda-passiva",
+    image: rendaPassivaImg,
+    author: "VICIO<CODE>",
+    date: "2026-02-16",
+    readTime: "15 min"
+  },
+  {
+    id: "26",
+    slug: "carteira-investimentos-iniciantes-2026",
+    title: "Carteira de Investimentos para Iniciantes 2026: Monte a Sua do Zero em 5 Passos",
+    excerpt: "Não sabe por onde começar a investir? Este guia passo a passo mostra como montar uma carteira do zero em 2026.",
+    content: "",
+    category: "invest",
+    subtopic: "carteira",
+    image: carteiraInvestimentosImg,
+    author: "VICIO<CODE>",
+    date: "2026-02-17",
+    readTime: "13 min"
   },
   // INVEST Posts
   {
