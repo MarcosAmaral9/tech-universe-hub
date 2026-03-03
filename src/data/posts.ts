@@ -26,6 +26,9 @@ import acPortalImg from "@/assets/assassins-creed-portal.jpg";
 import tesouroDiretoImg from "@/assets/tesouro-direto-2026.jpg";
 import rendaPassivaImg from "@/assets/renda-passiva-2026.jpg";
 import carteiraInvestimentosImg from "@/assets/carteira-investimentos-2026.jpg";
+import cryptoInvest2026Img from "@/assets/crypto-invest-2026.jpg";
+import irpf2026Img from "@/assets/irpf-2026.jpg";
+import iaFinancas2026Img from "@/assets/ia-financas-2026.jpg";
 
 export const blogPosts: BlogPost[] = [
   // IA Posts
@@ -94,6 +97,49 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-02-17",
     readTime: "13 min"
+  },
+  // INVEST Posts - Crypto
+  {
+    id: "27",
+    slug: "bitcoin-criptomoedas-2026-investir",
+    title: "Bitcoin e Criptomoedas em 2026: Ainda Dá Para Lucrar ou Já Passou da Hora?",
+    excerpt: "O mercado cripto mudou muito. Entenda o cenário das criptomoedas em 2026, quais ainda têm potencial e como investir sem perder o que você tem.",
+    content: "",
+    category: "invest",
+    subtopic: "cripto",
+    image: cryptoInvest2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-02-18",
+    readTime: "14 min"
+  },
+  // INVEST Posts - IRPF
+  {
+    id: "28",
+    slug: "irpf-2026-guia-declarar-pagar-menos",
+    title: "IRPF 2026: Guia Completo Para Declarar e Pagar Menos Imposto Legalmente",
+    excerpt: "Tudo que você precisa saber para declarar o Imposto de Renda 2026 corretamente, evitar a malha fina e usar deduções legais para pagar menos IR.",
+    content: "",
+    category: "invest",
+    subtopic: "impostos",
+    image: irpf2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-02-19",
+    readTime: "16 min"
+  },
+  // INVEST + IA Posts - IA no Mercado Financeiro
+  {
+    id: "29",
+    slug: "ia-mercado-financeiro-2026-investimentos",
+    title: "Inteligência Artificial no Mercado Financeiro 2026: Como a IA Está Transformando Seus Investimentos",
+    excerpt: "A IA já está gerenciando bilhões em investimentos. Descubra como a inteligência artificial está mudando as finanças em 2026.",
+    content: "",
+    category: "invest",
+    secondaryCategory: "ia",
+    subtopic: "ia-financas",
+    image: iaFinancas2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-02-20",
+    readTime: "12 min"
   },
   // INVEST Posts
   {
@@ -381,7 +427,7 @@ export const getPostBySlug = (slug: string): BlogPost | undefined => {
 };
 
 export const getPostsByCategory = (category: string): BlogPost[] => {
-  return blogPosts.filter(post => post.category === category);
+  return blogPosts.filter(post => post.category === category || post.secondaryCategory === category);
 };
 
 export const getPostsBySubtopic = (subtopic: string): BlogPost[] => {
