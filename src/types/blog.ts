@@ -9,6 +9,7 @@ export interface BlogPost {
   excerpt: string;
   content: string;
   category: Category;
+  secondaryCategory?: Category;
   subtopic?: Subtopic;
   image: string;
   author: string;
