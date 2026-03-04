@@ -24,6 +24,10 @@ import CarteiraIniciantes2026 from "./pages/posts/CarteiraIniciantes2026";
 import BitcoinCripto2026 from "./pages/posts/BitcoinCripto2026";
 import IRPF2026 from "./pages/posts/IRPF2026";
 import IAMercadoFinanceiro2026 from "./pages/posts/IAMercadoFinanceiro2026";
+import EducacaoFinanceira3Baldes from "./pages/posts/EducacaoFinanceira3Baldes";
+import FIIs2026 from "./pages/posts/FIIs2026";
+import SairDasDividas2026 from "./pages/posts/SairDasDividas2026";
+import PlanejamentoFinanceiro2026 from "./pages/posts/PlanejamentoFinanceiro2026";
 import VikingsLegadoRagnar from "./pages/posts/VikingsLegadoRagnar";
 import HellLetLooseSimulador from "./pages/posts/HellLetLooseSimulador";
 import Avatar2009Tecnologia from "./pages/posts/Avatar2009Tecnologia";
@@ -84,6 +88,10 @@ const App = () => (
               <Route path="/post/bitcoin-criptomoedas-2026-investir" element={<BitcoinCripto2026 />} />
               <Route path="/post/irpf-2026-guia-declarar-pagar-menos" element={<IRPF2026 />} />
               <Route path="/post/ia-mercado-financeiro-2026-investimentos" element={<IAMercadoFinanceiro2026 />} />
+              <Route path="/post/educacao-financeira-metodo-3-baldes" element={<EducacaoFinanceira3Baldes />} />
+              <Route path="/post/fiis-2026-melhores-fundos-imobiliarios" element={<FIIs2026 />} />
+              <Route path="/post/sair-das-dividas-2026-plano-acao" element={<SairDasDividas2026 />} />
+              <Route path="/post/planejamento-financeiro-2026-metas" element={<PlanejamentoFinanceiro2026 />} />
               <Route path="/post/vikings-legado-ragnar-lothbrok" element={<VikingsLegadoRagnar />} />
               <Route path="/post/hell-let-loose-simulador-guerra" element={<HellLetLooseSimulador />} />
               <Route path="/post/avatar-2009-filme-revolucionou-tecnologia" element={<Avatar2009Tecnologia />} />

@@ -29,6 +29,10 @@ import carteiraInvestimentosImg from "@/assets/carteira-investimentos-2026.jpg";
 import cryptoInvest2026Img from "@/assets/crypto-invest-2026.jpg";
 import irpf2026Img from "@/assets/irpf-2026.jpg";
 import iaFinancas2026Img from "@/assets/ia-financas-2026.jpg";
+import metodo3BaldesImg from "@/assets/metodo-3-baldes.jpg";
+import fiis2026Img from "@/assets/fiis-2026.jpg";
+import sairDividas2026Img from "@/assets/sair-dividas-2026.jpg";
+import planejamentoFinanceiro2026Img from "@/assets/planejamento-financeiro-2026.jpg";
 
 export const blogPosts: BlogPost[] = [
   // IA Posts
@@ -140,6 +144,59 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-02-20",
     readTime: "12 min"
+  },
+  // INVEST Posts - Education & FIIs & Debt & Planning
+  {
+    id: "30",
+    slug: "educacao-financeira-metodo-3-baldes",
+    title: "Educação Financeira Para Quem Sempre Gastou Tudo: O Método dos 3 Baldes",
+    excerpt: "Se você chega no fim do mês sem dinheiro, este artigo é para você. O Método dos 3 Baldes é simples e funciona para qualquer salário.",
+    content: "",
+    category: "invest",
+    subtopic: "educacao-financeira",
+    image: metodo3BaldesImg,
+    author: "VICIO<CODE>",
+    date: "2026-02-21",
+    readTime: "11 min"
+  },
+  {
+    id: "31",
+    slug: "fiis-2026-melhores-fundos-imobiliarios",
+    title: "Fundos Imobiliários (FIIs) em 2026: Os Melhores, Como Analisar e Erros Que Te Custam Dinheiro",
+    excerpt: "Guia completo de FIIs para 2026. Saiba como escolher os melhores fundos imobiliários e construir uma carteira que paga dividendos mensais.",
+    content: "",
+    category: "invest",
+    subtopic: "fiis",
+    image: fiis2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-02-22",
+    readTime: "14 min"
+  },
+  {
+    id: "32",
+    slug: "sair-das-dividas-2026-plano-acao",
+    title: "Sair das Dívidas em 2026: O Plano de Ação Que Realmente Funciona",
+    excerpt: "Endividado e sem ver saída? Este plano passo a passo foi criado para a realidade brasileira de 2026, com estratégias para quitar dívidas.",
+    content: "",
+    category: "invest",
+    subtopic: "dividas",
+    image: sairDividas2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-02-23",
+    readTime: "13 min"
+  },
+  {
+    id: "33",
+    slug: "planejamento-financeiro-2026-metas",
+    title: "Planejamento Financeiro Para 2026: Como Definir Metas e Realmente Alcançá-las",
+    excerpt: "Aprenda o método científico para definir e alcançar objetivos financeiros em 2026. Chega de metas que não saem do papel.",
+    content: "",
+    category: "invest",
+    subtopic: "planejamento",
+    image: planejamentoFinanceiro2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-02-24",
+    readTime: "11 min"
   },
   // INVEST Posts
   {
