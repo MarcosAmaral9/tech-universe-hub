@@ -35,7 +35,8 @@ const FALLBACK_STOCKS: StockQuote[] = [
 ];
 
 const CACHE_KEY = "b3_stock_cache";
-const CACHE_DURATION = 1000 * 60 * 30; // 30 min cache
+// 1000 chamadas/mês ÷ 31 dias ≈ 32 chamadas/dia → atualizar a cada 45 minutos
+const CACHE_DURATION = 1000 * 60 * 45; // 45 min cache
 
 const B3StockTicker = () => {
   const [stocks, setStocks] = useState<StockQuote[]>([]);
@@ -224,7 +225,7 @@ const B3StockTicker = () => {
       </div>
 
       <p className="text-[10px] text-muted-foreground mt-3 text-center">
-        Dados de ações da B3 (Bolsa de Valores Brasileira) • Apenas ativos listados na B3
+        Dados de ações da B3 (Bolsa de Valores Brasileira) • Cotações atualizadas a cada 45 minutos • Apenas ativos listados na B3
       </p>
     </div>
   );
