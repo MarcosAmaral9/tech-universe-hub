@@ -3,6 +3,7 @@ import PostCard from "@/components/PostCard";
 import { getPostsByCategory } from "@/data/posts";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import B3StockTicker from "@/components/B3StockTicker";
 
 const InvestimentosPage = () => {
   const posts = getPostsByCategory("invest");
@@ -30,6 +31,9 @@ const InvestimentosPage = () => {
           educação financeira para construir seu futuro.
         </p>
       </div>
+
+      {/* B3 Stock Ticker */}
+      <B3StockTicker />
 
       {/* Posts Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
