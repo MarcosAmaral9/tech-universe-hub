@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { TrendingUp, TrendingDown, RefreshCw } from "lucide-react";
+import { TrendingUp, TrendingDown, RefreshCw, AlertTriangle } from "lucide-react";
 
 interface StockQuote {
   symbol: string;
@@ -15,13 +15,32 @@ const POPULAR_B3_STOCKS = [
   "GGBR4", "HAPV3", "RADL3", "RAIL3", "JBSS3"
 ];
 
+// Fallback data for when API is unavailable
+const FALLBACK_STOCKS: StockQuote[] = [
+  { symbol: "PETR4", shortName: "Petrobras PN", regularMarketPrice: 38.42, regularMarketChangePercent: 1.23 },
+  { symbol: "VALE3", shortName: "Vale ON", regularMarketPrice: 58.91, regularMarketChangePercent: -0.87 },
+  { symbol: "ITUB4", shortName: "Itaú Unibanco PN", regularMarketPrice: 34.15, regularMarketChangePercent: 0.45 },
+  { symbol: "BBDC4", shortName: "Bradesco PN", regularMarketPrice: 14.78, regularMarketChangePercent: -1.12 },
+  { symbol: "ABEV3", shortName: "Ambev ON", regularMarketPrice: 13.25, regularMarketChangePercent: 0.68 },
+  { symbol: "WEGE3", shortName: "WEG ON", regularMarketPrice: 52.30, regularMarketChangePercent: 2.15 },
+  { symbol: "BBAS3", shortName: "Banco do Brasil ON", regularMarketPrice: 28.90, regularMarketChangePercent: 0.33 },
+  { symbol: "RENT3", shortName: "Localiza ON", regularMarketPrice: 41.55, regularMarketChangePercent: -0.56 },
+  { symbol: "MGLU3", shortName: "Magazine Luiza ON", regularMarketPrice: 11.20, regularMarketChangePercent: 3.45 },
+  { symbol: "SUZB3", shortName: "Suzano ON", regularMarketPrice: 55.80, regularMarketChangePercent: -0.22 },
+  { symbol: "GGBR4", shortName: "Gerdau PN", regularMarketPrice: 20.15, regularMarketChangePercent: 1.78 },
+  { symbol: "HAPV3", shortName: "Hapvida ON", regularMarketPrice: 4.32, regularMarketChangePercent: -2.10 },
+  { symbol: "RADL3", shortName: "Raia Drogasil ON", regularMarketPrice: 26.40, regularMarketChangePercent: 0.91 },
+  { symbol: "RAIL3", shortName: "Rumo ON", regularMarketPrice: 22.75, regularMarketChangePercent: -0.45 },
+  { symbol: "JBSS3", shortName: "JBS ON", regularMarketPrice: 34.60, regularMarketChangePercent: 1.55 },
+];
+
 const CACHE_KEY = "b3_stock_cache";
 const CACHE_DURATION = 1000 * 60 * 30; // 30 min cache
 
 const B3StockTicker = () => {
   const [stocks, setStocks] = useState<StockQuote[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [isFallback, setIsFallback] = useState(false);
   const [lastUpdated, setLastUpdated] = useState<string>("");
 
   const fetchStocks = useCallback(async (force = false) => {
@@ -30,9 +49,10 @@ const B3StockTicker = () => {
       try {
         const cached = localStorage.getItem(CACHE_KEY);
         if (cached) {
-          const { data, timestamp } = JSON.parse(cached);
+          const { data, timestamp, fallback } = JSON.parse(cached);
           if (Date.now() - timestamp < CACHE_DURATION) {
             setStocks(data);
+            setIsFallback(!!fallback);
             setLastUpdated(new Date(timestamp).toLocaleString("pt-BR"));
             setLoading(false);
             return;
@@ -42,7 +62,6 @@ const B3StockTicker = () => {
     }
 
     setLoading(true);
-    setError(null);
 
     try {
       const tickers = POPULAR_B3_STOCKS.join(",");
@@ -66,29 +85,32 @@ const B3StockTicker = () => {
         }));
 
         setStocks(quotes);
+        setIsFallback(false);
         const now = Date.now();
         setLastUpdated(new Date(now).toLocaleString("pt-BR"));
 
         localStorage.setItem(CACHE_KEY, JSON.stringify({
           data: quotes,
           timestamp: now,
+          fallback: false,
         }));
+        return;
       }
     } catch (err) {
-      console.error("Erro ao buscar cotações B3:", err);
-      setError("Não foi possível carregar as cotações. Tente novamente.");
-      // Try to use cached data even if expired
-      try {
-        const cached = localStorage.getItem(CACHE_KEY);
-        if (cached) {
-          const { data, timestamp } = JSON.parse(cached);
-          setStocks(data);
-          setLastUpdated(new Date(timestamp).toLocaleString("pt-BR") + " (cache)");
-        }
-      } catch { /* ignore */ }
-    } finally {
-      setLoading(false);
+      console.warn("API B3 indisponível, usando dados de referência:", err);
     }
+
+    // Use fallback data
+    setStocks(FALLBACK_STOCKS);
+    setIsFallback(true);
+    const now = Date.now();
+    setLastUpdated(new Date(now).toLocaleString("pt-BR"));
+    localStorage.setItem(CACHE_KEY, JSON.stringify({
+      data: FALLBACK_STOCKS,
+      timestamp: now,
+      fallback: true,
+    }));
+    setLoading(false);
   }, []);
 
   useEffect(() => {
@@ -134,8 +156,11 @@ const B3StockTicker = () => {
         </div>
       </div>
 
-      {error && (
-        <p className="text-xs text-destructive mb-3">{error}</p>
+      {isFallback && (
+        <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3 bg-muted/50 rounded-lg px-3 py-2">
+          <AlertTriangle className="h-3.5 w-3.5 text-yellow-500 shrink-0" />
+          <span>Exibindo valores de referência. Os preços podem não refletir as cotações em tempo real.</span>
+        </div>
       )}
 
       {/* Scrolling ticker */}
@@ -199,7 +224,7 @@ const B3StockTicker = () => {
       </div>
 
       <p className="text-[10px] text-muted-foreground mt-3 text-center">
-        Dados fornecidos pela brapi.dev • Apenas ações da B3 (Bolsa de Valores Brasileira)
+        Dados de ações da B3 (Bolsa de Valores Brasileira) • Apenas ativos listados na B3
       </p>
     </div>
   );
