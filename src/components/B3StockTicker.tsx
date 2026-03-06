@@ -67,11 +67,7 @@ const B3StockTicker = () => {
 
       if (error) throw new Error(error.message);
 
-      if (data.results && data.results.length > 0) {
-
-      const data = await response.json();
-
-      if (data.results && data.results.length > 0) {
+      if (data?.results && data.results.length > 0) {
         const quotes: StockQuote[] = data.results.map((r: any) => ({
           symbol: r.symbol,
           shortName: r.shortName || r.longName || r.symbol,
