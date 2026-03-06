@@ -109,8 +109,8 @@ const BitcoinCripto2026 = () => {
 
         <img src={cryptoImg} alt="Bitcoin e Criptomoedas em 2026" className="w-full rounded-2xl mb-8 aspect-video object-cover" loading="lazy" />
 
-        {/* Crypto Ticker */}
-        <CryptoTicker />
+        {/* Crypto Widget com dados reais */}
+        <CryptoWidget compact />
 
         {/* Intro */}
         <div className="prose prose-lg max-w-none mb-8">
