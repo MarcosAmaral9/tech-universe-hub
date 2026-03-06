@@ -59,11 +59,15 @@ const B3StockTicker = () => {
 
     try {
       const tickers = POPULAR_B3_STOCKS.join(",");
-      const response = await fetch(
-        `https://brapi.dev/api/quote/${tickers}?fundamental=false&token=p5M5UoDvZfs7dHccMxNxz6`
-      );
+      const { data, error } = await supabase.functions.invoke('b3-quotes', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+        body: null,
+      });
 
-      if (!response.ok) throw new Error(`API status ${response.status}`);
+      if (error) throw new Error(error.message);
+
+      if (data.results && data.results.length > 0) {
 
       const data = await response.json();
 
