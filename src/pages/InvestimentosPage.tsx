@@ -4,6 +4,8 @@ import { getPostsByCategory } from "@/data/posts";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import B3StockTicker from "@/components/B3StockTicker";
+import CurrencyWidget from "@/components/CurrencyWidget";
+import CryptoWidget from "@/components/CryptoWidget";
 
 const InvestimentosPage = () => {
   const posts = getPostsByCategory("invest");
@@ -34,6 +36,12 @@ const InvestimentosPage = () => {
 
       {/* B3 Stock Ticker */}
       <B3StockTicker />
+
+      {/* Currency Widget */}
+      <CurrencyWidget />
+
+      {/* Crypto Widget */}
+      <CryptoWidget />
 
       {/* Posts Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

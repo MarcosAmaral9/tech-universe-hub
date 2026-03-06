@@ -38,29 +38,7 @@ const CryptoCard = ({ name, symbol, description, riskLevel, riskColor, potential
   </div>
 );
 
-// Fake ticker component
-const CryptoTicker = () => {
-  const tickers = [
-    { symbol: "BTC", price: "R$ 587.420", change: "+2.3%", up: true },
-    { symbol: "ETH", price: "R$ 19.850", change: "+1.8%", up: true },
-    { symbol: "SOL", price: "R$ 1.245", change: "-0.5%", up: false },
-    { symbol: "LINK", price: "R$ 142", change: "+4.1%", up: true },
-    { symbol: "BNB", price: "R$ 3.890", change: "+0.9%", up: true },
-  ];
-  return (
-    <div className="overflow-hidden bg-card/50 border border-border rounded-lg mb-8">
-      <div className="flex animate-[scroll_20s_linear_infinite] gap-8 py-3 px-4 whitespace-nowrap">
-        {[...tickers, ...tickers].map((t, i) => (
-          <div key={i} className="flex items-center gap-2 text-sm">
-            <span className="font-bold">{t.symbol}</span>
-            <span className="text-muted-foreground">{t.price}</span>
-            <span className={t.up ? "text-green-500" : "text-red-500"}>{t.change}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+import CryptoWidget from "@/components/CryptoWidget";
 
 const BitcoinCripto2026 = () => {
   const [readingProgress, setReadingProgress] = useState(0);
