@@ -1,1 +1,4 @@
 project_id = "iocopqawhvffnerdeaqk"
+
+[functions.b3-quotes]
+verify_jwt = false
