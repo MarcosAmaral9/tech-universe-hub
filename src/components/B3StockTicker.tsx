@@ -141,20 +141,11 @@ const B3StockTicker = () => {
           <TrendingUp className="h-5 w-5 text-invest" />
           <h3 className="font-bold">Bolsa de Valores B3 — Cotações</h3>
         </div>
-        <div className="flex items-center gap-3">
-          {lastUpdated && (
-            <span className="text-xs text-muted-foreground hidden sm:inline">
-              Atualizado: {lastUpdated}
-            </span>
-          )}
-          <button
-            onClick={() => fetchStocks(true)}
-            className="p-1.5 rounded-lg hover:bg-muted transition-colors"
-            title="Atualizar cotações"
-          >
-            <RefreshCw className={`h-4 w-4 text-muted-foreground ${loading ? "animate-spin" : ""}`} />
-          </button>
-        </div>
+        {lastUpdated && (
+          <span className="text-xs text-muted-foreground hidden sm:inline">
+            Atualizado: {lastUpdated}
+          </span>
+        )}
       </div>
 
       {isFallback && (
