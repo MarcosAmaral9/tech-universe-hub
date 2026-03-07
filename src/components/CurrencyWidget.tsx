@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import { DollarSign, TrendingUp, TrendingDown, AlertTriangle } from "lucide-react";
 
 interface CurrencyRate {
@@ -43,9 +44,12 @@ const CurrencyWidget = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL");
-      if (!res.ok) throw new Error(`Status ${res.status}`);
-      const data = await res.json();
+      const { data, error } = await supabase.functions.invoke('exchange-rates', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+        body: null,
+      });
+      if (error) throw new Error(error.message);
 
       const parsed: CurrencyRate[] = [
         {
