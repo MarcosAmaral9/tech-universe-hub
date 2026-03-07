@@ -5,6 +5,8 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version',
 };
 
+const DEFAULT_TICKERS = 'PETR4,VALE3,ITUB4,BBDC4,ABEV3,WEGE3,BBAS3,RENT3,MGLU3,SUZB3';
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -20,22 +22,37 @@ serve(async (req) => {
     }
 
     const { searchParams } = new URL(req.url);
-    const tickers = searchParams.get('tickers') || 'PETR4,VALE3,ITUB4,BBDC4,ABEV3,WEGE3,BBAS3,RENT3,MGLU3,SUZB3';
+    const tickers = (searchParams.get('tickers') || DEFAULT_TICKERS).split(',');
 
-    const response = await fetch(
-      `https://brapi.dev/api/quote/${tickers}?fundamental=false&token=${token}`
-    );
+    const results = [];
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      return new Response(JSON.stringify({ error: `brapi retornou ${response.status}`, details: errorText }), {
-        status: response.status,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      });
+    for (const ticker of tickers) {
+      try {
+        const response = await fetch(
+          `https://brapi.dev/api/quote/${ticker.trim()}?fundamental=false&token=${token}`
+        );
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          console.error(`Erro ao buscar ${ticker}: ${response.status}`, errorText);
+          continue;
+        }
+
+        const data = await response.json();
+        if (data.results?.length > 0) {
+          results.push(...data.results);
+        }
+
+        // Delay entre requisições para evitar rate limit
+        if (tickers.indexOf(ticker) < tickers.length - 1) {
+          await new Promise(resolve => setTimeout(resolve, 300));
+        }
+      } catch (err) {
+        console.error(`Erro ao buscar ${ticker}:`, err);
+      }
     }
 
-    const data = await response.json();
-    return new Response(JSON.stringify(data), {
+    return new Response(JSON.stringify({ results }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   } catch (err) {
