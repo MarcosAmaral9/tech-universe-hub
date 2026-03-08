@@ -34,18 +34,16 @@ const FeaturedCarousel = () => {
   };
 
   const autoAdvance = () => {
-    setCurrentIndex((prev) => {
-      const next = (prev + 1) % 4; // 4 categories
-      setDirection("right");
-      setProgressKey((k) => k + 1);
-      setIsAnimating(true);
-      isAnimatingRef.current = true;
-      setTimeout(() => {
-        isAnimatingRef.current = false;
-        setIsAnimating(false);
-      }, 500);
-      return next;
-    });
+    if (isAnimatingRef.current) return;
+    isAnimatingRef.current = true;
+    setDirection("right");
+    setIsAnimating(true);
+    setCurrentIndex((prev) => (prev + 1) % posts.length);
+    setProgressKey((k) => k + 1);
+    setTimeout(() => {
+      isAnimatingRef.current = false;
+      setIsAnimating(false);
+    }, 500);
   };
 
   useEffect(() => {
