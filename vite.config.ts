@@ -15,8 +15,8 @@ function htaccessPlugin(): Plugin {
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Prerender.io token (replace YOUR_TOKEN with your actual token)
-  RequestHeader set X-Prerender-Token "YOUR_TOKEN"
+  # Prerender.io token
+  RequestHeader set X-Prerender-Token "Ig0m7uRnxCqA2HPyD0RX"
 
   # Detect crawlers / bots
   RewriteCond %{HTTP_USER_AGENT} googlebot|bingbot|yandex|baiduspider|facebookexternalhit|facebot|twitterbot|rogerbot|linkedinbot|embedly|quora\\ link\\ preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|whatsapp|Discordbot|TelegramBot [NC,OR]
