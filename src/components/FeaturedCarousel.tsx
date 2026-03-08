@@ -11,12 +11,14 @@ const FeaturedCarousel = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const posts = getLatestPostsByCategory();
   const timerRef = useRef<ReturnType<typeof setInterval>>();
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const startTimer = () => {
     clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
       goToNext();
-    }, 5000);
+    }, 7000);
   };
 
   useEffect(() => {
@@ -68,7 +70,17 @@ const FeaturedCarousel = () => {
         }
       `}</style>
       <div className="container py-8">
-        <div className="relative rounded-2xl overflow-hidden bg-card border border-border shadow-lg">
+        <div
+          className="relative rounded-2xl overflow-hidden bg-card border border-border shadow-lg touch-pan-y"
+          onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX; }}
+          onTouchMove={(e) => { touchEndX.current = e.touches[0].clientX; }}
+          onTouchEnd={() => {
+            const diff = touchStartX.current - touchEndX.current;
+            if (Math.abs(diff) > 50) {
+              diff > 0 ? goToNext() : goToPrevious();
+            }
+          }}
+        >
           {/* Main Content */}
           <div className={`flex flex-col md:flex-row h-[480px] md:h-[400px] ${slideClass}`}>
             {/* Image */}
