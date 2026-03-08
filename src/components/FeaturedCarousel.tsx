@@ -166,6 +166,15 @@ const FeaturedCarousel = () => {
               <ChevronRight className="h-5 w-5" />
             </Button>
           </div>
+
+          {/* Progress Bar */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-muted/30">
+            <div
+              key={progressKey}
+              className="h-full bg-primary"
+              style={{ animation: `progress-fill ${AUTOPLAY_MS}ms linear` }}
+            />
+          </div>
         </div>
       </div>
     </section>
