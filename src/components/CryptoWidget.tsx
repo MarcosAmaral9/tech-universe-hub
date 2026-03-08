@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, forwardRef } from "react";
 import { Bitcoin, TrendingUp, TrendingDown, AlertTriangle } from "lucide-react";
 
 interface CryptoData {
