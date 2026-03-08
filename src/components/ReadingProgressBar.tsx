@@ -38,7 +38,7 @@ const ReadingProgressBar = () => {
   const colorClass = categoryColorMap[post.category] || "bg-primary";
 
   return (
-    <div className="fixed top-0 left-0 right-0 h-1.5 bg-muted z-50">
+    <div className="fixed top-16 left-0 right-0 h-1.5 bg-muted z-50">
       <div
         className={`h-full transition-[width] duration-150 ease-out ${colorClass}`}
         style={{ width: `${progress}%` }}
