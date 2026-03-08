@@ -11,12 +11,14 @@ const FeaturedCarousel = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const posts = getLatestPostsByCategory();
   const timerRef = useRef<ReturnType<typeof setInterval>>();
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const startTimer = () => {
     clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
       goToNext();
-    }, 5000);
+    }, 7000);
   };
 
   useEffect(() => {
