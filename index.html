@@ -7,7 +7,17 @@
     <meta name="description" content="Seu portal definitivo para IAs, investimentos, cultura geek e o mundo otaku. Conteúdo de qualidade para mentes curiosas." />
     <meta name="author" content="VICIO<CODE>" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    
+
+    <!-- Preconnect to font origin for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Load fonts with display=swap to prevent render blocking -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" />
+    </noscript>
+
     <meta property="og:title" content="VICIO<CODE> - IA, Investimentos, Geek & Otaku" />
     <meta property="og:description" content="Seu portal definitivo para IAs, investimentos, cultura geek e o mundo otaku." />
     <meta property="og:type" content="website" />
@@ -21,6 +31,10 @@
     <meta name="geo.placename" content="Contagem, Minas Gerais" />
     <meta name="geo.position" content="-19.9320;-44.0538" />
     <meta name="ICBM" content="-19.9320, -44.0538" />
+
+    <!-- DNS prefetch for APIs used by widgets -->
+    <link rel="dns-prefetch" href="https://api.coingecko.com" />
+    <link rel="dns-prefetch" href="https://brapi.dev" />
   </head>
 
   <body>
