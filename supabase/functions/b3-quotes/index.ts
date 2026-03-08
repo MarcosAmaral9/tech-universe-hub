@@ -21,8 +21,21 @@ serve(async (req) => {
       });
     }
 
+    // Validate and sanitize ticker input to prevent injection
+    const VALID_TICKER = /^[A-Z0-9]{4,6}\d{1,2}$/;
     const { searchParams } = new URL(req.url);
-    const tickers = (searchParams.get('tickers') || DEFAULT_TICKERS).split(',');
+    const rawTickers = (searchParams.get('tickers') || DEFAULT_TICKERS).split(',');
+    const tickers = rawTickers
+      .map(t => t.trim().toUpperCase())
+      .filter(t => VALID_TICKER.test(t))
+      .slice(0, 15); // Max 15 tickers to prevent abuse
+
+    if (tickers.length === 0) {
+      return new Response(JSON.stringify({ error: 'Nenhum ticker válido fornecido' }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
 
     const results = [];
 

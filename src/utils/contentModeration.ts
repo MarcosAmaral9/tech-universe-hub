@@ -21,11 +21,13 @@ const blockedWords = [
 ];
 
 // Regex patterns for detecting links, images, and files
-const linkPattern = /https?:\/\/[^\s]+|www\.[^\s]+|[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+[^\s]*/gi;
-const emailPattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/gi;
-const fileExtensionPattern = /\.(exe|bat|cmd|msi|dll|zip|rar|7z|tar|gz|pdf|doc|docx|xls|xlsx|ppt|pptx|mp3|mp4|avi|mkv|jpg|jpeg|png|gif|bmp|svg|webp)\b/gi;
-const htmlTagPattern = /<[^>]*>/gi;
-const imageEmbedPattern = /!\[.*?\]\(.*?\)|<img[^>]*>/gi;
+// NOTE: These patterns must NOT use the global flag (g) to avoid stateful lastIndex bugs
+// when called multiple times. We create fresh regex in each function call instead.
+const createLinkPattern = () => /https?:\/\/[^\s]+|www\.[^\s]+|[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+[^\s]*/i;
+const createEmailPattern = () => /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/i;
+const createFileExtensionPattern = () => /\.(exe|bat|cmd|msi|dll|zip|rar|7z|tar|gz|pdf|doc|docx|xls|xlsx|ppt|pptx|mp3|mp4|avi|mkv|jpg|jpeg|png|gif|bmp|svg|webp)\b/i;
+const createHtmlTagPattern = () => /<[^>]*>/i;
+const createImageEmbedPattern = () => /!\[.*?\]\(.*?\)|<img[^>]*>/i;
 
 export interface ModerationResult {
   isValid: boolean;
@@ -57,21 +59,21 @@ export const containsBlockedWords = (text: string): boolean => {
  * Check if text contains links
  */
 export const containsLinks = (text: string): boolean => {
-  return linkPattern.test(text) || emailPattern.test(text);
+  return createLinkPattern().test(text) || createEmailPattern().test(text);
 };
 
 /**
  * Check if text contains file references
  */
 export const containsFiles = (text: string): boolean => {
-  return fileExtensionPattern.test(text);
+  return createFileExtensionPattern().test(text);
 };
 
 /**
  * Check if text contains HTML tags or image embeds
  */
 export const containsHtmlOrImages = (text: string): boolean => {
-  return htmlTagPattern.test(text) || imageEmbedPattern.test(text);
+  return createHtmlTagPattern().test(text) || createImageEmbedPattern().test(text);
 };
 
 /**

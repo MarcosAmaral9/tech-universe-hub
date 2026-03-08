@@ -83,11 +83,20 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
   // Load comments for this specific post
   useEffect(() => {
     const storageKey = `viciocode-comments-${postId}`;
-    const savedComments = localStorage.getItem(storageKey);
-    
-    if (savedComments) {
-      setComments(JSON.parse(savedComments));
-    } else {
+    try {
+      const savedComments = localStorage.getItem(storageKey);
+      if (savedComments) {
+        const parsed = JSON.parse(savedComments);
+        if (Array.isArray(parsed)) {
+          setComments(parsed);
+          return;
+        }
+      }
+    } catch {
+      // Corrupted data — clear it
+      localStorage.removeItem(`viciocode-comments-${postId}`);
+    }
+    {
       // Use initial comments if no saved comments exist
       setComments(initialCommentsByPost[postId] || []);
     }
