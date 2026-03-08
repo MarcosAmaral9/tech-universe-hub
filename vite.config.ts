@@ -11,9 +11,22 @@ function htaccessPlugin(): Plugin {
     name: "generate-htaccess",
     apply: "build",
     closeBundle() {
-      const htaccess = `<IfModule mod_rewrite.c>
+      const htaccess = `# Prerender.io — serve cached HTML to social media crawlers & bots
+<IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /
+
+  # Prerender.io token (replace YOUR_TOKEN with your actual token)
+  RequestHeader set X-Prerender-Token "YOUR_TOKEN"
+
+  # Detect crawlers / bots
+  RewriteCond %{HTTP_USER_AGENT} googlebot|bingbot|yandex|baiduspider|facebookexternalhit|facebot|twitterbot|rogerbot|linkedinbot|embedly|quora\\ link\\ preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|whatsapp|Discordbot|TelegramBot [NC,OR]
+  RewriteCond %{QUERY_STRING} _escaped_fragment_
+  # Don't prerender static files
+  RewriteCond %{REQUEST_URI} !\\.(js|css|xml|less|png|jpg|jpeg|webp|gif|pdf|doc|txt|ico|rss|zip|mp3|rar|exe|wmv|doc|avi|ppt|mpg|mpeg|tif|wav|mov|psd|ai|xls|mp4|m4a|swf|dat|dmg|iso|flv|m4v|torrent|ttf|woff|woff2|svg|eot)$ [NC]
+  # Proxy matching requests to prerender.io
+  RewriteRule ^(.*) https://service.prerender.io/https://viciocode.com.br/$1 [P,L]
+
+  # SPA fallback
   RewriteRule ^index\\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
