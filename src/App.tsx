@@ -21,6 +21,7 @@ const PrivacyPolicyPage = lazy(() => import("./pages/PrivacyPolicyPage"));
 const TermsPage = lazy(() => import("./pages/TermsPage"));
 const ContentPolicyPage = lazy(() => import("./pages/ContentPolicyPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
+const InstallPage = lazy(() => import("./pages/InstallPage"));
 
 // Lazy-loaded posts
 const DiferencaMangasManhuas = lazy(() => import("./pages/posts/DiferencaMangasManhuas"));
