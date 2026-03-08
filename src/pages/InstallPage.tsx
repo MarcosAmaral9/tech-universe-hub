@@ -58,7 +58,7 @@ const InstallPage = () => {
 
         {/* Status */}
         {isInstalled && (
-          <div className="flex items-center gap-3 p-4 rounded-xl bg-green-500/10 border border-green-500/20 text-green-400">
+          <div className="flex items-center gap-3 p-4 rounded-xl bg-primary/10 border border-primary/20 text-primary">
             <CheckCircle2 className="w-6 h-6 shrink-0" />
             <p className="font-medium">App já instalado! Abra pela tela inicial do seu dispositivo.</p>
           </div>
