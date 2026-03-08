@@ -134,16 +134,6 @@ const GoalChecklist = () => {
 };
 
 const PlanejamentoFinanceiro2026 = () => {
-  const [readingProgress, setReadingProgress] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setReadingProgress(Math.min((window.scrollY / scrollHeight) * 100, 100));
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const yearlyRoadmap = [
     { month: "Jan", action: "Levantamento completo: quanto ganho, gasto, devo", icon: "📊" },
