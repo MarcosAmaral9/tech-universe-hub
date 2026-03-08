@@ -46,18 +46,8 @@ const RendaCard = ({ icon, emoji, title, summary, details, example }: RendaCardP
 };
 
 const RendaPassiva2026 = () => {
-  const [readingProgress, setReadingProgress] = useState(0);
   const [aporteMensal, setAporteMensal] = useState(800);
   const [metaRenda, setMetaRenda] = useState(1000);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setReadingProgress(Math.min((window.scrollY / scrollHeight) * 100, 100));
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Simula quanto tempo leva para atingir renda passiva mensal
   const calcularTempo = () => {
