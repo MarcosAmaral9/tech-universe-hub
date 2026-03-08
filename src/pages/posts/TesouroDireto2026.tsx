@@ -16,15 +16,6 @@ const TesouroDireto2026 = () => {
   const [prazoAnos, setPrazoAnos] = useState(2);
   const [taxaSelic, setTaxaSelic] = useState(13.25);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (window.scrollY / scrollHeight) * 100;
-      setReadingProgress(Math.min(progress, 100));
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const calcularRendimento = () => {
     const taxaMensal = taxaSelic / 100 / 12;
