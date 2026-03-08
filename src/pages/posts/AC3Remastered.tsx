@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, User, Calendar, Sword, Cpu, Monitor, DollarSign, Targ
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import ac3Img from "@/assets/ac-3.jpg";
+import ac3Img from "@/assets/ac-3.webp";
 
 const AC3Remastered = () => {
   return (

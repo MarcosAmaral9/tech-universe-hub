@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, Calendar, User, AlertTriangle, TrendingUp, Cpu, Serve
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import techInvesting2026Img from "@/assets/tech-investing-2026.jpg";
+import techInvesting2026Img from "@/assets/tech-investing-2026.webp";
 
 const InvestirEmTecnologia2026 = () => {
   return (

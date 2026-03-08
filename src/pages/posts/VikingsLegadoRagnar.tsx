@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, User, Calendar, Sword, Ship, Crown, Shield, Axe, Targ
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import vikingsImg from "@/assets/vikings-ragnar.jpg";
+import vikingsImg from "@/assets/vikings-ragnar.webp";
 
 const VikingsLegadoRagnar = () => {
   return (

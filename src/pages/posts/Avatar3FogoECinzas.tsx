@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, User, Calendar, Flame, Skull, Mountain, Swords, Targe
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import avatarFireImg from "@/assets/avatar-fire.jpg";
+import avatarFireImg from "@/assets/avatar-fire.webp";
 
 const Avatar3FogoECinzas = () => {
   return (

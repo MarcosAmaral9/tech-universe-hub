@@ -5,7 +5,7 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import irpfImg from "@/assets/irpf-2026.jpg";
+import irpfImg from "@/assets/irpf-2026.webp";
 
 const IRPF2026 = () => {
   const [readingProgress, setReadingProgress] = useState(0);

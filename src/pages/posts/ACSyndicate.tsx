@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, User, Calendar, Factory, Train, Swords, Cog, Cpu, Dol
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import acSyndicateImg from "@/assets/ac-syndicate.jpg";
+import acSyndicateImg from "@/assets/ac-syndicate.webp";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const ACSyndicate = () => {

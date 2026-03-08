@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, User, Calendar, Sword, Moon, Sun, Leaf, Cpu, DollarSi
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import acShadowsImg from "@/assets/ac-shadows.jpg";
+import acShadowsImg from "@/assets/ac-shadows.webp";
 
 const ACShadows = () => {
   return (

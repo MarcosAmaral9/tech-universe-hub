@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, User, Calendar, Waves, Clapperboard, Wind, Timer, Fil
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import avatarWaterImg from "@/assets/avatar-water-swimming.jpg";
+import avatarWaterImg from "@/assets/avatar-water-swimming.webp";
 
 const AvatarCaminhoDaAgua = () => {
   return (

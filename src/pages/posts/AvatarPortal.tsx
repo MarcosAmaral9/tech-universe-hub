@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import avatarPortalBannerImg from "@/assets/avatar-portal-banner.jpg";
-import avatarPandoraImg from "@/assets/avatar-pandora.jpg";
-import avatarWaterImg from "@/assets/avatar-water-swimming.jpg";
-import avatarFireImg from "@/assets/avatar-fire.jpg";
-import avatarGameImg from "@/assets/avatar-game-female.jpg";
+import avatarPortalBannerImg from "@/assets/avatar-portal-banner.webp";
+import avatarPandoraImg from "@/assets/avatar-pandora.webp";
+import avatarWaterImg from "@/assets/avatar-water-swimming.webp";
+import avatarFireImg from "@/assets/avatar-fire.webp";
+import avatarGameImg from "@/assets/avatar-game-female.webp";
 
 const AvatarPortal = () => {
   const trilogyCards = [

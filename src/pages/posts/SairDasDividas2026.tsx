@@ -4,7 +4,7 @@ import { ArrowLeft, Clock, Calendar, User, ChevronRight, Zap, AlertTriangle, Che
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import sairDividasImg from "@/assets/sair-dividas-2026.jpg";
+import sairDividasImg from "@/assets/sair-dividas-2026.webp";
 
 interface Debt {
   id: number;

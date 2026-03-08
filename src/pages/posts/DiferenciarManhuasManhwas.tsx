@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, Calendar, User, BookOpen, Target, Sword, Sparkles } f
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import manhwaVsManuaImg from "@/assets/manhwa-vs-manhua.jpg";
+import manhwaVsManuaImg from "@/assets/manhwa-vs-manhua.webp";
 
 const DiferenciarManhuasManhwas = () => {
   return (

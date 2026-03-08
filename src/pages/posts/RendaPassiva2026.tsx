@@ -6,7 +6,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import { Slider } from "@/components/ui/slider";
 import { Progress } from "@/components/ui/progress";
-import rendaPassivaImg from "@/assets/renda-passiva-2026.jpg";
+import rendaPassivaImg from "@/assets/renda-passiva-2026.webp";
 
 interface RendaCardProps {
   icon: React.ReactNode;

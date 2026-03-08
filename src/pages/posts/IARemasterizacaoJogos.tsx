@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, User, Calendar, Cpu, Zap, Gamepad2, MonitorPlay } fro
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import aiRemasteringImg from "@/assets/ai-remastering.jpg";
+import aiRemasteringImg from "@/assets/ai-remastering.webp";
 
 const IARemasterizacaoJogos = () => {
   return (

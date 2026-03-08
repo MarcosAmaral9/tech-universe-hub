@@ -4,7 +4,7 @@ import { ArrowLeft, Clock, Calendar, User, ChevronRight, Target, CheckCircle2, C
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import planejamentoImg from "@/assets/planejamento-financeiro-2026.jpg";
+import planejamentoImg from "@/assets/planejamento-financeiro-2026.webp";
 
 // SMART Goal Builder
 const SmartGoalBuilder = () => {

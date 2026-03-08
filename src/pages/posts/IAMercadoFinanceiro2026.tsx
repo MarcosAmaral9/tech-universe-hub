@@ -4,7 +4,7 @@ import { ArrowLeft, Clock, Calendar, User, ChevronRight, Zap, Bot, Brain, Shield
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import iaFinancasImg from "@/assets/ia-financas-2026.jpg";
+import iaFinancasImg from "@/assets/ia-financas-2026.webp";
 
 // Matrix rain effect component
 const MatrixRain = () => {

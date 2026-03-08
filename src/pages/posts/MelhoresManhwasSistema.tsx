@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, Calendar, User, Target, Trophy, Gamepad2, Star } from
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import systemManhwaImg from "@/assets/system-manhwa-hero.jpg";
+import systemManhwaImg from "@/assets/system-manhwa-hero.webp";
 
 const MelhoresManhwasSistema = () => {
   const manhwas = [

@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, User, Calendar, Snowflake, Ship, Target, Cpu, DollarS
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import acRogueImg from "@/assets/ac-rogue.jpg";
+import acRogueImg from "@/assets/ac-rogue.webp";
 
 const ACRogue = () => {
   return (
