@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram } from "lucide-react";
+import { Instagram, Download } from "lucide-react";
 
 const TikTokIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -83,17 +83,33 @@ const Footer = () => {
                   Política de Conteúdo
                 </Link>
               </li>
+              <li>
+                <Link to="/instalar" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
+                  <Download className="h-3 w-3" />
+                  Instalar App
+                </Link>
+              </li>
             </ul>
             {/* Social icons */}
             <div className="flex gap-4 mt-6">
-              {/* Desktop: Icons only */}
+              {/* Desktop: Clickable icons */}
               <div className="hidden md:flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
+                <a
+                  href={instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
                   <Instagram className="h-5 w-5" />
-                </div>
-                <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
+                </a>
+                <a
+                  href={tiktokUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
                   <TikTokIcon />
-                </div>
+                </a>
               </div>
               {/* Mobile: Clickable links */}
               <div className="flex md:hidden gap-4">

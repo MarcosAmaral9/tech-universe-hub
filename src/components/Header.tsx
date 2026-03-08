@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Moon, Sun, Search, Menu, X, FileText, ChevronDown } from "lucide-react";
+import { Moon, Sun, Search, Menu, X, FileText, ChevronDown, Download } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Button } from "@/components/ui/button";
 import {
@@ -22,6 +22,7 @@ const Header = () => {
     { name: "Finanças", path: "/financas", color: "text-invest" },
     { name: "Geek", path: "/geek", color: "text-geek" },
     { name: "Otaku", path: "/otaku", color: "text-otaku" },
+    { name: "Instalar App", path: "/instalar", color: "text-primary" },
   ];
 
   const legalLinks = [
