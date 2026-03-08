@@ -62,10 +62,6 @@ const BitcoinCripto2026 = () => {
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full h-1 z-50 bg-muted">
-        <div className="h-full bg-[hsl(var(--invest-color))] transition-all duration-150" style={{ width: `${readingProgress}%` }} />
-      </div>
-
       <style>{`
         @keyframes scroll { 
           0% { transform: translateX(0); } 
