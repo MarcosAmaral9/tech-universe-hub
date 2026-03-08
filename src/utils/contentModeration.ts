@@ -21,11 +21,13 @@ const blockedWords = [
 ];
 
 // Regex patterns for detecting links, images, and files
-const linkPattern = /https?:\/\/[^\s]+|www\.[^\s]+|[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+[^\s]*/gi;
-const emailPattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/gi;
-const fileExtensionPattern = /\.(exe|bat|cmd|msi|dll|zip|rar|7z|tar|gz|pdf|doc|docx|xls|xlsx|ppt|pptx|mp3|mp4|avi|mkv|jpg|jpeg|png|gif|bmp|svg|webp)\b/gi;
-const htmlTagPattern = /<[^>]*>/gi;
-const imageEmbedPattern = /!\[.*?\]\(.*?\)|<img[^>]*>/gi;
+// NOTE: These patterns must NOT use the global flag (g) to avoid stateful lastIndex bugs
+// when called multiple times. We create fresh regex in each function call instead.
+const createLinkPattern = () => /https?:\/\/[^\s]+|www\.[^\s]+|[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+[^\s]*/i;
+const createEmailPattern = () => /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/i;
+const createFileExtensionPattern = () => /\.(exe|bat|cmd|msi|dll|zip|rar|7z|tar|gz|pdf|doc|docx|xls|xlsx|ppt|pptx|mp3|mp4|avi|mkv|jpg|jpeg|png|gif|bmp|svg|webp)\b/i;
+const createHtmlTagPattern = () => /<[^>]*>/i;
+const createImageEmbedPattern = () => /!\[.*?\]\(.*?\)|<img[^>]*>/i;
 
 export interface ModerationResult {
   isValid: boolean;
