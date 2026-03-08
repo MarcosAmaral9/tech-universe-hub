@@ -59,7 +59,7 @@ export const containsBlockedWords = (text: string): boolean => {
  * Check if text contains links
  */
 export const containsLinks = (text: string): boolean => {
-  return linkPattern.test(text) || emailPattern.test(text);
+  return createLinkPattern().test(text) || createEmailPattern().test(text);
 };
 
 /**
