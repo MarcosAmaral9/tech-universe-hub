@@ -44,14 +44,6 @@ const TesouroDireto2026 = () => {
 
   return (
     <>
-      {/* Reading Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-1 z-50 bg-muted">
-        <div
-          className="h-full bg-[hsl(var(--invest-color))] transition-all duration-150"
-          style={{ width: `${readingProgress}%` }}
-        />
-      </div>
-
       <article className="container py-8 max-w-4xl mx-auto">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
