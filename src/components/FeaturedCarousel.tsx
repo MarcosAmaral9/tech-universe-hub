@@ -81,6 +81,8 @@ const FeaturedCarousel = () => {
             }
           }}
         >
+          {/* Main Content */}
+          <div className={`flex flex-col md:flex-row h-[480px] md:h-[400px] ${slideClass}`}>
             {/* Image */}
             <div className="relative w-full md:w-1/2 h-64 md:h-auto overflow-hidden">
               <img
