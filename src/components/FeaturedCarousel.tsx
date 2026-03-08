@@ -62,6 +62,9 @@ const FeaturedCarousel = () => {
               <img
                 src={currentPost.image}
                 alt={currentPost.title}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent md:bg-gradient-to-r" />
