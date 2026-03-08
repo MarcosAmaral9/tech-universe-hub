@@ -66,7 +66,7 @@ export const containsLinks = (text: string): boolean => {
  * Check if text contains file references
  */
 export const containsFiles = (text: string): boolean => {
-  return fileExtensionPattern.test(text);
+  return createFileExtensionPattern().test(text);
 };
 
 /**
