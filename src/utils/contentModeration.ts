@@ -73,7 +73,7 @@ export const containsFiles = (text: string): boolean => {
  * Check if text contains HTML tags or image embeds
  */
 export const containsHtmlOrImages = (text: string): boolean => {
-  return htmlTagPattern.test(text) || imageEmbedPattern.test(text);
+  return createHtmlTagPattern().test(text) || createImageEmbedPattern().test(text);
 };
 
 /**
