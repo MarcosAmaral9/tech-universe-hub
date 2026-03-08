@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { TrendingUp, TrendingDown, AlertTriangle, Gem } from "lucide-react";
 import { useExchangeRates } from "@/hooks/useExchangeRates";
 
@@ -17,7 +18,7 @@ const FALLBACK: MetalRate[] = [
   { code: "XAG", name: "Prata", bidPerGram: 6.20, pctChange: "-0.30", highPerGram: 6.35, lowPerGram: 6.10 },
 ];
 
-const PreciousMetalsWidget = () => {
+const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
   const { data, loading, isFallback, lastUpdated } = useExchangeRates();
 
   const metals: MetalRate[] = [];
@@ -63,7 +64,7 @@ const PreciousMetalsWidget = () => {
   }
 
   return (
-    <div className="bg-card border border-border rounded-2xl p-6 mb-8">
+    <div ref={ref} className="bg-card border border-border rounded-2xl p-6 mb-8">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <Gem className="h-5 w-5 text-invest" />
@@ -125,6 +126,8 @@ const PreciousMetalsWidget = () => {
       </p>
     </div>
   );
-};
+});
+
+PreciousMetalsWidget.displayName = "PreciousMetalsWidget";
 
 export default PreciousMetalsWidget;

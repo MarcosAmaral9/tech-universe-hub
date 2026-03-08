@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, forwardRef } from "react";
 import { Bitcoin, TrendingUp, TrendingDown, AlertTriangle } from "lucide-react";
 
 interface CryptoData {
@@ -44,7 +44,7 @@ interface CryptoWidgetProps {
   compact?: boolean;
 }
 
-const CryptoWidget = ({ compact = false }: CryptoWidgetProps) => {
+const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = false }, ref) => {
   const [cryptos, setCryptos] = useState<CryptoData[]>([]);
   const [loading, setLoading] = useState(true);
   const [isFallback, setIsFallback] = useState(false);
@@ -116,7 +116,7 @@ const CryptoWidget = ({ compact = false }: CryptoWidgetProps) => {
   }
 
   return (
-    <div className="bg-card border border-border rounded-2xl p-6 mb-8">
+    <div ref={ref} className="bg-card border border-border rounded-2xl p-6 mb-8">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <Bitcoin className="h-5 w-5 text-invest" />
@@ -205,6 +205,8 @@ const CryptoWidget = ({ compact = false }: CryptoWidgetProps) => {
       </p>
     </div>
   );
-};
+});
+
+CryptoWidget.displayName = "CryptoWidget";
 
 export default CryptoWidget;
