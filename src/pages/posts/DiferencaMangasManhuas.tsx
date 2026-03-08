@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, Calendar, User, BookOpen, Target, Globe } from "lucid
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import mangaManhwaManhuaImg from "@/assets/manga-manhwa-manhua.jpg";
+import mangaManhwaManhuaImg from "@/assets/manga-manhwa-manhua.webp";
 
 const DiferencaMangasManhuas = () => {
   return (
