@@ -125,6 +125,7 @@ export default defineConfig(({ mode }) => ({
         ],
       },
     }),
+    htaccessPlugin(),
   ].filter(Boolean),
   resolve: {
     alias: {
