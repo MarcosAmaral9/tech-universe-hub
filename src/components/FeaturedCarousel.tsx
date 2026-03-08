@@ -171,7 +171,12 @@ const FeaturedCarousel = () => {
           <div className="absolute top-0 left-0 right-0 h-1 bg-muted/30">
             <div
               key={progressKey}
-              className="h-full bg-primary"
+              className={`h-full ${
+                currentPost.category === "ia" ? "bg-ia" :
+                currentPost.category === "invest" ? "bg-invest" :
+                currentPost.category === "geek" ? "bg-geek" :
+                "bg-otaku"
+              }`}
               style={{ animation: `progress-fill ${AUTOPLAY_MS}ms linear` }}
             />
           </div>
