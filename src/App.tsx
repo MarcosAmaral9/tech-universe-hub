@@ -28,6 +28,7 @@ import EducacaoFinanceira3Baldes from "./pages/posts/EducacaoFinanceira3Baldes";
 import FIIs2026 from "./pages/posts/FIIs2026";
 import SairDasDividas2026 from "./pages/posts/SairDasDividas2026";
 import PlanejamentoFinanceiro2026 from "./pages/posts/PlanejamentoFinanceiro2026";
+import CalculadorasFinanceiras from "./pages/posts/CalculadorasFinanceiras";
 import VikingsLegadoRagnar from "./pages/posts/VikingsLegadoRagnar";
 import HellLetLooseSimulador from "./pages/posts/HellLetLooseSimulador";
 import Avatar2009Tecnologia from "./pages/posts/Avatar2009Tecnologia";
