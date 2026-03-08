@@ -83,6 +83,12 @@ const Footer = () => {
                   Política de Conteúdo
                 </Link>
               </li>
+              <li>
+                <Link to="/instalar" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
+                  <Download className="h-3 w-3" />
+                  Instalar App
+                </Link>
+              </li>
             </ul>
             {/* Social icons */}
             <div className="flex gap-4 mt-6">
