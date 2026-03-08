@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Clock } from "lucide-react";
 import { getLatestPostsByCategory } from "@/data/posts";
@@ -7,56 +7,70 @@ import { Button } from "@/components/ui/button";
 
 const FeaturedCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [direction, setDirection] = useState<"left" | "right">("right");
+  const [isAnimating, setIsAnimating] = useState(false);
   const posts = getLatestPostsByCategory();
+  const timerRef = useRef<ReturnType<typeof setInterval>>();
+
+  const startTimer = () => {
+    clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      goToNext();
+    }, 5000);
+  };
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % posts.length);
-        setIsTransitioning(false);
-      }, 300);
-    }, 5000);
+    startTimer();
+    return () => clearInterval(timerRef.current);
+  }, []);
 
-    return () => clearInterval(timer);
-  }, [posts.length]);
+  const slide = (newIndex: number, dir: "left" | "right") => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setDirection(dir);
+    setCurrentIndex(newIndex);
+    startTimer();
+    setTimeout(() => setIsAnimating(false), 500);
+  };
 
   const goToPrevious = () => {
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentIndex((prev) => (prev - 1 + posts.length) % posts.length);
-      setIsTransitioning(false);
-    }, 300);
+    slide((currentIndex - 1 + posts.length) % posts.length, "left");
   };
 
   const goToNext = () => {
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentIndex((prev) => (prev + 1) % posts.length);
-      setIsTransitioning(false);
-    }, 300);
+    slide((currentIndex + 1) % posts.length, "right");
   };
 
   const goToSlide = (index: number) => {
     if (index === currentIndex) return;
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentIndex(index);
-      setIsTransitioning(false);
-    }, 300);
+    slide(index, index > currentIndex ? "right" : "left");
   };
 
   const currentPost = posts[currentIndex];
-
   if (!currentPost) return null;
+
+  const slideClass = isAnimating
+    ? direction === "right"
+      ? "animate-[slide-in-from-right_0.5s_ease-out]"
+      : "animate-[slide-in-from-left_0.5s_ease-out]"
+    : "";
 
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-br from-secondary via-background to-secondary">
+      <style>{`
+        @keyframes slide-in-from-right {
+          from { transform: translateX(100%); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slide-in-from-left {
+          from { transform: translateX(-100%); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+      `}</style>
       <div className="container py-8">
         <div className="relative rounded-2xl overflow-hidden bg-card border border-border shadow-lg">
           {/* Main Content */}
-          <div className={`flex flex-col md:flex-row h-[480px] md:h-[400px] transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+          <div className={`flex flex-col md:flex-row h-[480px] md:h-[400px] ${slideClass}`}>
             {/* Image */}
             <div className="relative w-full md:w-1/2 h-64 md:h-auto overflow-hidden">
               <img
@@ -71,7 +85,7 @@ const FeaturedCarousel = () => {
             </div>
 
             {/* Content */}
-            <div className="flex-1 p-6 md:p-10 flex flex-col justify-center">
+            <div className="flex-1 p-6 md:p-10 flex flex-col justify-center overflow-hidden">
               <CategoryBadge category={currentPost.category} size="md" />
               
               <Link to={`/post/${currentPost.slug}`}>
