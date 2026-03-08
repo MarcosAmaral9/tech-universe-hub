@@ -18,8 +18,8 @@ export default defineConfig(({ mode }) => ({
     VitePWA({
       registerType: "autoUpdate",
       workbox: {
-        // Cache JS/CSS bundles (hashed filenames = safe to cache long-term)
         globPatterns: ["**/*.{js,css,html,ico,png,svg,webp,woff2}"],
+        navigateFallbackDenylist: [/^\/~oauth/],
         // Runtime caching strategies
         runtimeCaching: [
           {
