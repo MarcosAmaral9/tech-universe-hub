@@ -63,39 +63,52 @@ const CalculadorasFinanceiras = () => {
       }
     } catch {}
 
-    // Currency
+    // Currency & Metals — both come from exchange_rates_cache
     try {
-      const cached = localStorage.getItem("currency_cache");
+      const cached = localStorage.getItem("exchange_rates_cache");
       if (cached) {
         const { data } = JSON.parse(cached);
-        data?.forEach((r: any) => {
+        if (data?.USDBRL) {
           allAssets.push({
-            id: `currency-${r.code}`,
-            name: r.name,
-            symbol: r.code,
-            price: parseFloat(r.bid),
+            id: "currency-USD",
+            name: "Dólar Americano",
+            symbol: "USD",
+            price: parseFloat(data.USDBRL.bid),
             category: "currency",
             icon: "💵",
           });
-        });
-      }
-    } catch {}
-
-    // Metals
-    try {
-      const cached = localStorage.getItem("metals_cache");
-      if (cached) {
-        const { data } = JSON.parse(cached);
-        data?.forEach((m: any) => {
+        }
+        if (data?.EURBRL) {
           allAssets.push({
-            id: `metal-${m.code}`,
-            name: `${m.name} (grama)`,
-            symbol: m.code,
-            price: m.bidPerGram,
-            category: "metal",
-            icon: m.code === "XAU" ? "🥇" : "🥈",
+            id: "currency-EUR",
+            name: "Euro",
+            symbol: "EUR",
+            price: parseFloat(data.EURBRL.bid),
+            category: "currency",
+            icon: "💶",
           });
-        });
+        }
+        const TROY_OZ_TO_GRAMS = 31.1035;
+        if (data?.XAUBRL) {
+          allAssets.push({
+            id: "metal-XAU",
+            name: "Ouro (grama)",
+            symbol: "XAU",
+            price: parseFloat(data.XAUBRL.bid) / TROY_OZ_TO_GRAMS,
+            category: "metal",
+            icon: "🥇",
+          });
+        }
+        if (data?.XAGBRL) {
+          allAssets.push({
+            id: "metal-XAG",
+            name: "Prata (grama)",
+            symbol: "XAG",
+            price: parseFloat(data.XAGBRL.bid) / TROY_OZ_TO_GRAMS,
+            category: "metal",
+            icon: "🥈",
+          });
+        }
       }
     } catch {}
 
