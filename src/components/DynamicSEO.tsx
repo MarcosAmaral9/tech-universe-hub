@@ -94,11 +94,30 @@ const DynamicSEO = () => {
       document.head.appendChild(scriptEl);
     }
 
-    if (pathname.startsWith("/post/")) {
+    // BreadcrumbList JSON-LD
+    let breadcrumbEl = document.querySelector('script[data-jsonld="breadcrumb"]') as HTMLScriptElement | null;
+    if (!breadcrumbEl) {
+      breadcrumbEl = document.createElement("script");
+      breadcrumbEl.setAttribute("type", "application/ld+json");
+      breadcrumbEl.setAttribute("data-jsonld", "breadcrumb");
+      document.head.appendChild(breadcrumbEl);
+    }
+
+    const categoryPages: Record<string, string> = {
+      "/ia": "Inteligência Artificial",
+      "/financas": "Finanças",
+      "/geek": "Geek",
+      "/otaku": "Otaku",
+    };
+
+    const isCategory = pathname in categoryPages;
+    const isPost = pathname.startsWith("/post/");
+
+    if (isPost) {
       const slug = pathname.replace("/post/", "");
       const post = blogPosts.find((p) => p.slug === slug);
       if (post) {
-        const jsonLd = {
+        const articleJsonLd = {
           "@context": "https://schema.org",
           "@type": "Article",
           headline: post.title,
@@ -106,27 +125,56 @@ const DynamicSEO = () => {
           image: image,
           url: url,
           datePublished: post.date,
-          author: {
-            "@type": "Person",
-            name: post.author,
-          },
+          author: { "@type": "Person", name: post.author },
           publisher: {
             "@type": "Organization",
             name: "VICIO<CODE>",
-            logo: {
-              "@type": "ImageObject",
-              url: `${BASE_URL}/icon-512x512.png`,
-            },
+            logo: { "@type": "ImageObject", url: `${BASE_URL}/icon-512x512.png` },
           },
-          mainEntityOfPage: {
-            "@type": "WebPage",
-            "@id": url,
-          },
+          mainEntityOfPage: { "@type": "WebPage", "@id": url },
         };
-        scriptEl.textContent = JSON.stringify(jsonLd);
+        scriptEl.textContent = JSON.stringify(articleJsonLd);
+
+        // Breadcrumb: Home > Categoria > Artigo
+        const categoryMap: Record<string, { path: string; name: string }> = {
+          ia: { path: "/ia", name: "Inteligência Artificial" },
+          invest: { path: "/financas", name: "Finanças" },
+          geek: { path: "/geek", name: "Geek" },
+          otaku: { path: "/otaku", name: "Otaku" },
+        };
+        const cat = categoryMap[post.category] || { path: "/", name: "Home" };
+        const breadcrumb = {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+            { "@type": "ListItem", position: 2, name: cat.name, item: `${BASE_URL}${cat.path}` },
+            { "@type": "ListItem", position: 3, name: post.title, item: url },
+          ],
+        };
+        breadcrumbEl.textContent = JSON.stringify(breadcrumb);
       }
+    } else if (isCategory) {
+      const catName = categoryPages[pathname];
+      scriptEl.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: catName,
+        description: description,
+        url: url,
+        isPartOf: { "@type": "WebSite", name: "VICIO<CODE>", url: BASE_URL },
+      });
+
+      breadcrumbEl.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+          { "@type": "ListItem", position: 2, name: catName, item: url },
+        ],
+      });
     } else {
-      const jsonLd = {
+      scriptEl.textContent = JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebSite",
         name: "VICIO<CODE>",
@@ -135,13 +183,10 @@ const DynamicSEO = () => {
         publisher: {
           "@type": "Organization",
           name: "VICIO<CODE>",
-          logo: {
-            "@type": "ImageObject",
-            url: `${BASE_URL}/icon-512x512.png`,
-          },
+          logo: { "@type": "ImageObject", url: `${BASE_URL}/icon-512x512.png` },
         },
-      };
-      scriptEl.textContent = JSON.stringify(jsonLd);
+      });
+      breadcrumbEl.textContent = "";
     }
   }, [pathname]);
 
