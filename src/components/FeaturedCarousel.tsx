@@ -16,35 +16,57 @@ const FeaturedCarousel = () => {
   const timerRef = useRef<ReturnType<typeof setInterval>>();
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
+  const isAnimatingRef = useRef(false);
 
-  const startTimer = () => {
-    clearInterval(timerRef.current);
-    setProgressKey((k) => k + 1);
-    timerRef.current = setInterval(() => {
-      goToNext();
-    }, AUTOPLAY_MS);
-  };
-
-  useEffect(() => {
-    startTimer();
-    return () => clearInterval(timerRef.current);
-  }, []);
-
-  const slide = (newIndex: number, dir: "left" | "right") => {
-    if (isAnimating) return;
+  const slideToIndex = (newIndex: number, dir: "left" | "right") => {
+    if (isAnimatingRef.current) return;
+    isAnimatingRef.current = true;
     setIsAnimating(true);
     setDirection(dir);
     setCurrentIndex(newIndex);
-    startTimer();
-    setTimeout(() => setIsAnimating(false), 500);
+    setProgressKey((k) => k + 1);
+    clearInterval(timerRef.current);
+    timerRef.current = setInterval(autoAdvance, AUTOPLAY_MS);
+    setTimeout(() => {
+      isAnimatingRef.current = false;
+      setIsAnimating(false);
+    }, 500);
   };
 
+  const autoAdvance = () => {
+    setCurrentIndex((prev) => {
+      const next = (prev + 1) % 4; // 4 categories
+      setDirection("right");
+      setProgressKey((k) => k + 1);
+      setIsAnimating(true);
+      isAnimatingRef.current = true;
+      setTimeout(() => {
+        isAnimatingRef.current = false;
+        setIsAnimating(false);
+      }, 500);
+      return next;
+    });
+  };
+
+  useEffect(() => {
+    timerRef.current = setInterval(autoAdvance, AUTOPLAY_MS);
+    return () => clearInterval(timerRef.current);
+  }, []);
+
   const goToPrevious = () => {
-    slide((currentIndex - 1 + posts.length) % posts.length, "left");
+    setCurrentIndex((prev) => {
+      const next = (prev - 1 + posts.length) % posts.length;
+      slideToIndex(next, "left");
+      return prev; // slideToIndex handles setting
+    });
   };
 
   const goToNext = () => {
-    slide((currentIndex + 1) % posts.length, "right");
+    setCurrentIndex((prev) => {
+      const next = (prev + 1) % posts.length;
+      slideToIndex(next, "right");
+      return prev;
+    });
   };
 
   const goToSlide = (index: number) => {
