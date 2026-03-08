@@ -44,7 +44,7 @@ interface CryptoWidgetProps {
   compact?: boolean;
 }
 
-const CryptoWidget = ({ compact = false }: CryptoWidgetProps) => {
+const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = false }, ref) => {
   const [cryptos, setCryptos] = useState<CryptoData[]>([]);
   const [loading, setLoading] = useState(true);
   const [isFallback, setIsFallback] = useState(false);
