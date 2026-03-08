@@ -54,19 +54,13 @@ const FeaturedCarousel = () => {
   }, []);
 
   const goToPrevious = () => {
-    setCurrentIndex((prev) => {
-      const next = (prev - 1 + posts.length) % posts.length;
-      slideToIndex(next, "left");
-      return prev; // slideToIndex handles setting
-    });
+    const next = (currentIndex - 1 + posts.length) % posts.length;
+    slideToIndex(next, "left");
   };
 
   const goToNext = () => {
-    setCurrentIndex((prev) => {
-      const next = (prev + 1) % posts.length;
-      slideToIndex(next, "right");
-      return prev;
-    });
+    const next = (currentIndex + 1) % posts.length;
+    slideToIndex(next, "right");
   };
 
   const goToSlide = (index: number) => {
