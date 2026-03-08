@@ -8,8 +8,7 @@ import { Slider } from "@/components/ui/slider";
 import tesouroDiretoImg from "@/assets/tesouro-direto-2026.webp";
 
 const TesouroDireto2026 = () => {
-  // Reading progress bar
-  const [readingProgress, setReadingProgress] = useState(0);
+  // Calculator state
   
   // Calculator state
   const [valorInicial, setValorInicial] = useState(1000);
@@ -17,15 +16,6 @@ const TesouroDireto2026 = () => {
   const [prazoAnos, setPrazoAnos] = useState(2);
   const [taxaSelic, setTaxaSelic] = useState(13.25);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (window.scrollY / scrollHeight) * 100;
-      setReadingProgress(Math.min(progress, 100));
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const calcularRendimento = () => {
     const taxaMensal = taxaSelic / 100 / 12;
@@ -54,14 +44,6 @@ const TesouroDireto2026 = () => {
 
   return (
     <>
-      {/* Reading Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-1 z-50 bg-muted">
-        <div
-          className="h-full bg-[hsl(var(--invest-color))] transition-all duration-150"
-          style={{ width: `${readingProgress}%` }}
-        />
-      </div>
-
       <article className="container py-8 max-w-4xl mx-auto">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">

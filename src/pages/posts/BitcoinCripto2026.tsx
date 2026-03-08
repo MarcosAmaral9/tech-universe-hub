@@ -41,18 +41,8 @@ const CryptoCard = ({ name, symbol, description, riskLevel, riskColor, potential
 import CryptoWidget from "@/components/CryptoWidget";
 
 const BitcoinCripto2026 = () => {
-  const [readingProgress, setReadingProgress] = useState(0);
   const [dcaValor, setDcaValor] = useState(100);
   const [dcaMeses, setDcaMeses] = useState(36);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setReadingProgress(Math.min((window.scrollY / scrollHeight) * 100, 100));
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Simulate DCA result (simplified historical average ~80% return over 3 years)
   const calcularDCA = () => {
@@ -72,10 +62,6 @@ const BitcoinCripto2026 = () => {
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full h-1 z-50 bg-muted">
-        <div className="h-full bg-[hsl(var(--invest-color))] transition-all duration-150" style={{ width: `${readingProgress}%` }} />
-      </div>
-
       <style>{`
         @keyframes scroll { 
           0% { transform: translateX(0); } 

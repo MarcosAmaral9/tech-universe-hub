@@ -46,18 +46,8 @@ const RendaCard = ({ icon, emoji, title, summary, details, example }: RendaCardP
 };
 
 const RendaPassiva2026 = () => {
-  const [readingProgress, setReadingProgress] = useState(0);
   const [aporteMensal, setAporteMensal] = useState(800);
   const [metaRenda, setMetaRenda] = useState(1000);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setReadingProgress(Math.min((window.scrollY / scrollHeight) * 100, 100));
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Simula quanto tempo leva para atingir renda passiva mensal
   const calcularTempo = () => {
@@ -81,10 +71,6 @@ const RendaPassiva2026 = () => {
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full h-1 z-50 bg-muted">
-        <div className="h-full bg-[hsl(var(--invest-color))] transition-all duration-150" style={{ width: `${readingProgress}%` }} />
-      </div>
-
       <article className="container py-8 max-w-4xl mx-auto">
         <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
           <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
