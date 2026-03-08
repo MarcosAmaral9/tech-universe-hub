@@ -71,7 +71,7 @@ const FeaturedCarousel = () => {
 
   const goToSlide = (index: number) => {
     if (index === currentIndex) return;
-    slide(index, index > currentIndex ? "right" : "left");
+    slideToIndex(index, index > currentIndex ? "right" : "left");
   };
 
   const currentPost = posts[currentIndex];
