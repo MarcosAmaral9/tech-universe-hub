@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, User, Calendar, Sword, Cpu, Shield, Gamepad2, Monitor
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import acValhallaImg from "@/assets/ac-valhalla.jpg";
+import acValhallaImg from "@/assets/ac-valhalla.webp";
 
 const ACValhalla = () => {
   return (

@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, User, Calendar, Anchor, Ship, Cpu, DollarSign, Target
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import acBlackFlagImg from "@/assets/ac-black-flag.jpg";
+import acBlackFlagImg from "@/assets/ac-black-flag.webp";
 
 const ACBlackFlag = () => {
   return (

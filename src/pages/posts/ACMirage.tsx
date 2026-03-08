@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, User, Calendar, Moon, Target, Cpu, DollarSign, Laptop
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import acMirageImg from "@/assets/ac-mirage.jpg";
+import acMirageImg from "@/assets/ac-mirage.webp";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const ACMirage = () => {

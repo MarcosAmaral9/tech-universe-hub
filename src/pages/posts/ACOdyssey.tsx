@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, User, Calendar, Sword, Ship, Cpu, DollarSign, Target,
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import acOdysseyImg from "@/assets/ac-odyssey.jpg";
+import acOdysseyImg from "@/assets/ac-odyssey.webp";
 
 const ACOdyssey = () => {
   return (

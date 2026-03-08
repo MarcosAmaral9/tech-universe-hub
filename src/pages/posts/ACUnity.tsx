@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, User, Calendar, Landmark, Users, Wind, Heart, Cpu, Do
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import acUnityImg from "@/assets/ac-unity.jpg";
+import acUnityImg from "@/assets/ac-unity.webp";
 
 const ACUnity = () => {
   return (

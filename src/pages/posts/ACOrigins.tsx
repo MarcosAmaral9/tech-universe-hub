@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, User, Calendar, Pyramid, Bird, Sword, Cpu, DollarSign
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import acOriginsImg from "@/assets/ac-origins.jpg";
+import acOriginsImg from "@/assets/ac-origins.webp";
 
 const ACOrigins = () => {
   return (
