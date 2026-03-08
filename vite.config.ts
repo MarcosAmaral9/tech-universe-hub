@@ -1,6 +1,7 @@
 import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
+import fs from "fs";
 import { componentTagger } from "lovable-tagger";
 import { VitePWA } from "vite-plugin-pwa";
 
@@ -10,7 +11,6 @@ function htaccessPlugin(): Plugin {
     name: "generate-htaccess",
     apply: "build",
     closeBundle() {
-      const fs = require("fs");
       const htaccess = `<IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
@@ -37,7 +37,10 @@ function htaccessPlugin(): Plugin {
   AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
 </IfModule>
 `;
-      fs.writeFileSync(path.resolve(__dirname, "dist/.htaccess"), htaccess);
+      const distPath = path.resolve(__dirname, "dist/.htaccess");
+      if (fs.existsSync(path.resolve(__dirname, "dist"))) {
+        fs.writeFileSync(distPath, htaccess);
+      }
     },
   };
 }
