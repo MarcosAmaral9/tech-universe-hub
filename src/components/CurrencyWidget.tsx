@@ -1,6 +1,5 @@
-import { useState, useEffect, useCallback } from "react";
-import { supabase } from "@/integrations/supabase/client";
 import { DollarSign, TrendingUp, TrendingDown, AlertTriangle } from "lucide-react";
+import { useExchangeRates } from "@/hooks/useExchangeRates";
 
 interface CurrencyRate {
   code: string;
@@ -11,89 +10,37 @@ interface CurrencyRate {
   low: string;
 }
 
-const CACHE_KEY = "currency_cache";
-const CACHE_DURATION = 1000 * 60 * 15; // 15 min
-const UPDATE_INTERVAL_LABEL = "15 minutos";
-
 const FALLBACK: CurrencyRate[] = [
   { code: "USD", name: "Dólar Americano", bid: "5.85", pctChange: "0.32", high: "5.90", low: "5.80" },
   { code: "EUR", name: "Euro", bid: "6.35", pctChange: "-0.15", high: "6.40", low: "6.30" },
 ];
 
 const CurrencyWidget = () => {
-  const [rates, setRates] = useState<CurrencyRate[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [isFallback, setIsFallback] = useState(false);
-  const [lastUpdated, setLastUpdated] = useState("");
+  const { data, loading, isFallback, lastUpdated } = useExchangeRates();
 
-  const fetchRates = useCallback(async () => {
-    try {
-      const cached = localStorage.getItem(CACHE_KEY);
-      if (cached) {
-        const { data, timestamp, fallback } = JSON.parse(cached);
-        if (Date.now() - timestamp < CACHE_DURATION) {
-          setRates(data);
-          setIsFallback(!!fallback);
-          setLastUpdated(new Date(timestamp).toLocaleString("pt-BR"));
-          setLoading(false);
-          return;
-        }
-      }
-    } catch { /* ignore */ }
+  const rates: CurrencyRate[] = [];
+  if (data?.USDBRL) {
+    rates.push({
+      code: "USD", name: "Dólar Americano",
+      bid: parseFloat(data.USDBRL.bid).toFixed(2),
+      pctChange: data.USDBRL.pctChange,
+      high: parseFloat(data.USDBRL.high).toFixed(2),
+      low: parseFloat(data.USDBRL.low).toFixed(2),
+    });
+  }
+  if (data?.EURBRL) {
+    rates.push({
+      code: "EUR", name: "Euro",
+      bid: parseFloat(data.EURBRL.bid).toFixed(2),
+      pctChange: data.EURBRL.pctChange,
+      high: parseFloat(data.EURBRL.high).toFixed(2),
+      low: parseFloat(data.EURBRL.low).toFixed(2),
+    });
+  }
 
-    setLoading(true);
+  const displayRates = rates.length > 0 ? rates : (isFallback ? FALLBACK : []);
 
-    try {
-      const { data, error } = await supabase.functions.invoke('exchange-rates', {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-        body: null,
-      });
-      if (error) throw new Error(error.message);
-
-      const parsed: CurrencyRate[] = [
-        {
-          code: "USD",
-          name: "Dólar Americano",
-          bid: parseFloat(data.USDBRL.bid).toFixed(2),
-          pctChange: data.USDBRL.pctChange,
-          high: parseFloat(data.USDBRL.high).toFixed(2),
-          low: parseFloat(data.USDBRL.low).toFixed(2),
-        },
-        {
-          code: "EUR",
-          name: "Euro",
-          bid: parseFloat(data.EURBRL.bid).toFixed(2),
-          pctChange: data.EURBRL.pctChange,
-          high: parseFloat(data.EURBRL.high).toFixed(2),
-          low: parseFloat(data.EURBRL.low).toFixed(2),
-        },
-      ];
-
-      setRates(parsed);
-      setIsFallback(false);
-      const now = Date.now();
-      setLastUpdated(new Date(now).toLocaleString("pt-BR"));
-      localStorage.setItem(CACHE_KEY, JSON.stringify({ data: parsed, timestamp: now, fallback: false }));
-      setLoading(false);
-      return;
-    } catch (err) {
-      console.warn("API câmbio indisponível:", err);
-    }
-
-    setRates(FALLBACK);
-    setIsFallback(true);
-    const now = Date.now();
-    setLastUpdated(new Date(now).toLocaleString("pt-BR"));
-    localStorage.setItem(CACHE_KEY, JSON.stringify({ data: FALLBACK, timestamp: now, fallback: true }));
-    setLoading(false);
-  }, []);
-
-  useEffect(() => {
-    fetchRates();
-  }, [fetchRates]);
-
-  if (loading && rates.length === 0) {
+  if (loading && displayRates.length === 0) {
     return (
       <div className="bg-card border border-border rounded-2xl p-6 mb-8">
         <div className="flex items-center gap-2 mb-4">
@@ -121,7 +68,7 @@ const CurrencyWidget = () => {
         )}
       </div>
 
-      {isFallback && (
+      {isFallback && displayRates === FALLBACK && (
         <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3 bg-muted/50 rounded-lg px-3 py-2">
           <AlertTriangle className="h-3.5 w-3.5 text-yellow-500 shrink-0" />
           <span>Exibindo valores de referência.</span>
@@ -129,7 +76,7 @@ const CurrencyWidget = () => {
       )}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {rates.map((rate) => {
+        {displayRates.map((rate) => {
           const change = parseFloat(rate.pctChange);
           const isUp = change >= 0;
           return (
@@ -162,7 +109,7 @@ const CurrencyWidget = () => {
       </div>
 
       <p className="text-[10px] text-muted-foreground mt-3 text-center">
-        Cotações do dólar e euro em relação ao real • Atualizado automaticamente a cada {UPDATE_INTERVAL_LABEL} • Fonte: AwesomeAPI
+        Cotações do dólar e euro em relação ao real • Atualizado a cada 30 minutos • Fonte: AwesomeAPI
       </p>
     </div>
   );
