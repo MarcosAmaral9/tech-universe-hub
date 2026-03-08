@@ -72,6 +72,10 @@ const FeaturedCarousel = () => {
           from { transform: translateX(-100%); opacity: 0; }
           to { transform: translateX(0); opacity: 1; }
         }
+        @keyframes progress-fill {
+          from { width: 0%; }
+          to { width: 100%; }
+        }
       `}</style>
       <div className="container py-8">
         <div
