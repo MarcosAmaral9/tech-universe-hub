@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig(({ mode }) => ({
   server: {
@@ -11,35 +12,98 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [
+    react(),
+    mode === "development" && componentTagger(),
+    VitePWA({
+      registerType: "autoUpdate",
+      workbox: {
+        // Cache JS/CSS bundles (hashed filenames = safe to cache long-term)
+        globPatterns: ["**/*.{js,css,html,ico,png,svg,webp,woff2}"],
+        // Runtime caching strategies
+        runtimeCaching: [
+          {
+            // Google Fonts stylesheets
+            urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
+            handler: "StaleWhileRevalidate",
+            options: {
+              cacheName: "google-fonts-stylesheets",
+              expiration: { maxEntries: 10, maxAgeSeconds: 60 * 60 * 24 * 365 },
+            },
+          },
+          {
+            // Google Fonts webfont files
+            urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
+            handler: "CacheFirst",
+            options: {
+              cacheName: "google-fonts-webfonts",
+              expiration: { maxEntries: 30, maxAgeSeconds: 60 * 60 * 24 * 365 },
+            },
+          },
+          {
+            // Edge functions (exchange rates, b3 quotes) — network first, fallback to cache
+            urlPattern: /\/functions\/v1\/(exchange-rates|b3-quotes)/i,
+            handler: "NetworkFirst",
+            options: {
+              cacheName: "api-data",
+              expiration: { maxEntries: 20, maxAgeSeconds: 60 * 60 },
+              networkTimeoutSeconds: 5,
+            },
+          },
+          {
+            // External API calls (CoinGecko etc.)
+            urlPattern: /^https:\/\/api\.coingecko\.com\/.*/i,
+            handler: "NetworkFirst",
+            options: {
+              cacheName: "crypto-api",
+              expiration: { maxEntries: 10, maxAgeSeconds: 60 * 15 },
+              networkTimeoutSeconds: 5,
+            },
+          },
+          {
+            // Navigation requests — cache visited pages
+            urlPattern: ({ request }) => request.mode === "navigate",
+            handler: "NetworkFirst",
+            options: {
+              cacheName: "pages",
+              expiration: { maxEntries: 50, maxAgeSeconds: 60 * 60 * 24 * 7 },
+            },
+          },
+        ],
+      },
+      manifest: {
+        name: "VICIO<CODE> - IA, Investimentos, Geek & Otaku",
+        short_name: "VICIO<CODE>",
+        description: "Seu portal definitivo para IAs, investimentos, cultura geek e o mundo otaku.",
+        theme_color: "#0a0a0a",
+        background_color: "#0a0a0a",
+        display: "standalone",
+        start_url: "/",
+        icons: [
+          { src: "/favicon.ico", sizes: "64x64", type: "image/x-icon" },
+        ],
+      },
+    }),
+  ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
   build: {
-    // Code splitting for better caching & smaller initial load
     rollupOptions: {
       output: {
         manualChunks: {
-          // Core React libs — cached long-term
           "vendor-react": ["react", "react-dom", "react-router-dom"],
-          // UI framework
           "vendor-ui": ["@radix-ui/react-dialog", "@radix-ui/react-dropdown-menu", "@radix-ui/react-tooltip", "@radix-ui/react-popover", "@radix-ui/react-tabs"],
-          // Data fetching
           "vendor-query": ["@tanstack/react-query", "@supabase/supabase-js"],
-          // Charts (heavy, rarely needed on initial load)
           "vendor-charts": ["recharts"],
         },
       },
     },
-    // Target modern browsers for smaller output
     target: "es2020",
-    // Increase chunk size warning to avoid noise
     chunkSizeWarningLimit: 600,
-    // Better minification
     minify: "esbuild",
-    // CSS code splitting
     cssCodeSplit: true,
   },
 }));
