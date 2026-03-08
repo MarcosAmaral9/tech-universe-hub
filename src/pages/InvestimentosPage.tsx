@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import B3StockTicker from "@/components/B3StockTicker";
 import CurrencyWidget from "@/components/CurrencyWidget";
 import CryptoWidget from "@/components/CryptoWidget";
+import PreciousMetalsWidget from "@/components/PreciousMetalsWidget";
 
 const InvestimentosPage = () => {
   const posts = getPostsByCategory("invest");
@@ -39,6 +40,9 @@ const InvestimentosPage = () => {
 
       {/* Currency Widget */}
       <CurrencyWidget />
+
+      {/* Precious Metals Widget */}
+      <PreciousMetalsWidget />
 
       {/* Crypto Widget */}
       <CryptoWidget />

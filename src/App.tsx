@@ -28,6 +28,7 @@ import EducacaoFinanceira3Baldes from "./pages/posts/EducacaoFinanceira3Baldes";
 import FIIs2026 from "./pages/posts/FIIs2026";
 import SairDasDividas2026 from "./pages/posts/SairDasDividas2026";
 import PlanejamentoFinanceiro2026 from "./pages/posts/PlanejamentoFinanceiro2026";
+import CalculadorasFinanceiras from "./pages/posts/CalculadorasFinanceiras";
 import VikingsLegadoRagnar from "./pages/posts/VikingsLegadoRagnar";
 import HellLetLooseSimulador from "./pages/posts/HellLetLooseSimulador";
 import Avatar2009Tecnologia from "./pages/posts/Avatar2009Tecnologia";
@@ -92,6 +93,7 @@ const App = () => (
               <Route path="/post/fiis-2026-melhores-fundos-imobiliarios" element={<FIIs2026 />} />
               <Route path="/post/sair-das-dividas-2026-plano-acao" element={<SairDasDividas2026 />} />
               <Route path="/post/planejamento-financeiro-2026-metas" element={<PlanejamentoFinanceiro2026 />} />
+              <Route path="/post/calculadoras-financeiras-ativos" element={<CalculadorasFinanceiras />} />
               <Route path="/post/vikings-legado-ragnar-lothbrok" element={<VikingsLegadoRagnar />} />
               <Route path="/post/hell-let-loose-simulador-guerra" element={<HellLetLooseSimulador />} />
               <Route path="/post/avatar-2009-filme-revolucionou-tecnologia" element={<Avatar2009Tecnologia />} />

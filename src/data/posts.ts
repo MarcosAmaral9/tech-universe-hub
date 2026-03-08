@@ -33,6 +33,7 @@ import metodo3BaldesImg from "@/assets/metodo-3-baldes.jpg";
 import fiis2026Img from "@/assets/fiis-2026.jpg";
 import sairDividas2026Img from "@/assets/sair-dividas-2026.jpg";
 import planejamentoFinanceiro2026Img from "@/assets/planejamento-financeiro-2026.jpg";
+import calculadorasFinanceirasImg from "@/assets/calculadoras-financeiras.jpg";
 
 export const blogPosts: BlogPost[] = [
   // IA Posts
@@ -197,6 +198,20 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-02-24",
     readTime: "11 min"
+  },
+  // INVEST Posts - Calculadoras
+  {
+    id: "34",
+    slug: "calculadoras-financeiras-ativos",
+    title: "Calculadoras Financeiras: Simule Quanto Custa Comprar Ações, Cripto, Ouro, Dólar e Mais",
+    excerpt: "Use nossas calculadoras com cotações em tempo real para simular quanto custaria comprar diferentes ativos financeiros.",
+    content: "",
+    category: "invest",
+    subtopic: "calculadoras",
+    image: calculadorasFinanceirasImg,
+    author: "VICIO<CODE>",
+    date: "2026-02-25",
+    readTime: "5 min"
   },
   // INVEST Posts
   {
