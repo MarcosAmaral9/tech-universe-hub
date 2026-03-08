@@ -8,8 +8,7 @@ import { Slider } from "@/components/ui/slider";
 import tesouroDiretoImg from "@/assets/tesouro-direto-2026.webp";
 
 const TesouroDireto2026 = () => {
-  // Reading progress bar
-  const [readingProgress, setReadingProgress] = useState(0);
+  // Calculator state
   
   // Calculator state
   const [valorInicial, setValorInicial] = useState(1000);
