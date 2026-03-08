@@ -33,6 +33,7 @@ import metodo3BaldesImg from "@/assets/metodo-3-baldes.jpg";
 import fiis2026Img from "@/assets/fiis-2026.jpg";
 import sairDividas2026Img from "@/assets/sair-dividas-2026.jpg";
 import planejamentoFinanceiro2026Img from "@/assets/planejamento-financeiro-2026.jpg";
+import calculadorasFinanceirasImg from "@/assets/calculadoras-financeiras.jpg";
 
 export const blogPosts: BlogPost[] = [
   // IA Posts
