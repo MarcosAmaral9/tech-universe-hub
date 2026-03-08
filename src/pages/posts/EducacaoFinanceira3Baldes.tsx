@@ -88,16 +88,6 @@ const BehaviorQuiz = () => {
 };
 
 const EducacaoFinanceira3Baldes = () => {
-  const [readingProgress, setReadingProgress] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setReadingProgress(Math.min((window.scrollY / scrollHeight) * 100, 100));
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const timelineSteps = [
     { period: "Mês 1-3", title: "Mapeamento", desc: "Ajuste inicial. Vai ser desconfortável." },
