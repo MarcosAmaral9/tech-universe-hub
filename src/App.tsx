@@ -93,6 +93,7 @@ const App = () => (
               <Route path="/post/fiis-2026-melhores-fundos-imobiliarios" element={<FIIs2026 />} />
               <Route path="/post/sair-das-dividas-2026-plano-acao" element={<SairDasDividas2026 />} />
               <Route path="/post/planejamento-financeiro-2026-metas" element={<PlanejamentoFinanceiro2026 />} />
+              <Route path="/post/calculadoras-financeiras-ativos" element={<CalculadorasFinanceiras />} />
               <Route path="/post/vikings-legado-ragnar-lothbrok" element={<VikingsLegadoRagnar />} />
               <Route path="/post/hell-let-loose-simulador-guerra" element={<HellLetLooseSimulador />} />
               <Route path="/post/avatar-2009-filme-revolucionou-tecnologia" element={<Avatar2009Tecnologia />} />
