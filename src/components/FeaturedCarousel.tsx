@@ -56,7 +56,7 @@ const FeaturedCarousel = () => {
       <div className="container py-8">
         <div className="relative rounded-2xl overflow-hidden bg-card border border-border shadow-lg">
           {/* Main Content */}
-          <div className={`flex flex-col md:flex-row min-h-[400px] transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+          <div className={`flex flex-col md:flex-row h-[480px] md:h-[400px] transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
             {/* Image */}
             <div className="relative w-full md:w-1/2 h-64 md:h-auto overflow-hidden">
               <img
