@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, User, Calendar, Camera, Cpu, Monitor, Sparkles, Film,
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import avatarPandoraImg from "@/assets/avatar-pandora.jpg";
+import avatarPandoraImg from "@/assets/avatar-pandora.webp";
 
 const Avatar2009Tecnologia = () => {
   return (

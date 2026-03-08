@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import acPortalImg from "@/assets/assassins-creed-portal.jpg";
-import acShadowsImg from "@/assets/ac-shadows.jpg";
-import acMirageImg from "@/assets/ac-mirage.jpg";
-import acValhallaImg from "@/assets/ac-valhalla.jpg";
-import acOdysseyImg from "@/assets/ac-odyssey.jpg";
-import acOriginsImg from "@/assets/ac-origins.jpg";
-import acSyndicateImg from "@/assets/ac-syndicate.jpg";
-import acUnityImg from "@/assets/ac-unity.jpg";
-import acRogueImg from "@/assets/ac-rogue.jpg";
-import acBlackFlagImg from "@/assets/ac-black-flag.jpg";
-import ac3Img from "@/assets/ac-3.jpg";
+import acPortalImg from "@/assets/assassins-creed-portal.webp";
+import acShadowsImg from "@/assets/ac-shadows.webp";
+import acMirageImg from "@/assets/ac-mirage.webp";
+import acValhallaImg from "@/assets/ac-valhalla.webp";
+import acOdysseyImg from "@/assets/ac-odyssey.webp";
+import acOriginsImg from "@/assets/ac-origins.webp";
+import acSyndicateImg from "@/assets/ac-syndicate.webp";
+import acUnityImg from "@/assets/ac-unity.webp";
+import acRogueImg from "@/assets/ac-rogue.webp";
+import acBlackFlagImg from "@/assets/ac-black-flag.webp";
+import ac3Img from "@/assets/ac-3.webp";
 
 const AssassinsCreedPortal = () => {
   const games = [

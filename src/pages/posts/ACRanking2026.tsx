@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, User, Calendar, Trophy, Star, Gamepad2 } from "lucide
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import acPortalImg from "@/assets/assassins-creed-portal.jpg";
+import acPortalImg from "@/assets/assassins-creed-portal.webp";
 
 const ACRanking2026 = () => {
   const ranking = [

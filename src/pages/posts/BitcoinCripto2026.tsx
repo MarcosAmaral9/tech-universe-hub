@@ -6,7 +6,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import { Slider } from "@/components/ui/slider";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import cryptoImg from "@/assets/crypto-invest-2026.jpg";
+import cryptoImg from "@/assets/crypto-invest-2026.webp";
 
 interface CryptoCardProps {
   name: string;
