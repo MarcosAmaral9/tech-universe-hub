@@ -188,55 +188,6 @@ const DynamicSEO = () => {
       });
       breadcrumbEl.textContent = "";
     }
-    if (pathname.startsWith("/post/")) {
-      const slug = pathname.replace("/post/", "");
-      const post = blogPosts.find((p) => p.slug === slug);
-      if (post) {
-        const jsonLd = {
-          "@context": "https://schema.org",
-          "@type": "Article",
-          headline: post.title,
-          description: post.excerpt,
-          image: image,
-          url: url,
-          datePublished: post.date,
-          author: {
-            "@type": "Person",
-            name: post.author,
-          },
-          publisher: {
-            "@type": "Organization",
-            name: "VICIO<CODE>",
-            logo: {
-              "@type": "ImageObject",
-              url: `${BASE_URL}/icon-512x512.png`,
-            },
-          },
-          mainEntityOfPage: {
-            "@type": "WebPage",
-            "@id": url,
-          },
-        };
-        scriptEl.textContent = JSON.stringify(jsonLd);
-      }
-    } else {
-      const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        name: "VICIO<CODE>",
-        url: BASE_URL,
-        description: description,
-        publisher: {
-          "@type": "Organization",
-          name: "VICIO<CODE>",
-          logo: {
-            "@type": "ImageObject",
-            url: `${BASE_URL}/icon-512x512.png`,
-          },
-        },
-      };
-      scriptEl.textContent = JSON.stringify(jsonLd);
-    }
   }, [pathname]);
 
   return null;
