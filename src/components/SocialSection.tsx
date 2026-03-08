@@ -24,10 +24,10 @@ const SocialSection = () => {
           🔔 Não perca nenhuma novidade!
         </h2>
         
-        {/* Desktop: QR Codes only (no clickable links) */}
+        {/* Desktop: QR Codes + clickable links */}
         <div className="hidden md:flex justify-center gap-12">
-          <div className="flex flex-col items-center gap-4">
-            <div className="bg-white p-4 rounded-xl shadow-md">
+          <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-4 group">
+            <div className="bg-white p-4 rounded-xl shadow-md group-hover:shadow-lg transition-shadow">
               <QRCodeSVG 
                 value={instagramUrl} 
                 size={150}
@@ -35,14 +35,14 @@ const SocialSection = () => {
                 includeMargin={true}
               />
             </div>
-            <div className="flex items-center gap-2 text-foreground font-medium">
+            <div className="flex items-center gap-2 text-foreground font-medium group-hover:text-primary transition-colors">
               <Instagram className="h-5 w-5 text-pink-500" />
               <span>Instagram</span>
             </div>
-          </div>
+          </a>
           
-          <div className="flex flex-col items-center gap-4">
-            <div className="bg-white p-4 rounded-xl shadow-md">
+          <a href={tiktokUrl} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-4 group">
+            <div className="bg-white p-4 rounded-xl shadow-md group-hover:shadow-lg transition-shadow">
               <QRCodeSVG 
                 value={tiktokUrl} 
                 size={150}
@@ -50,11 +50,11 @@ const SocialSection = () => {
                 includeMargin={true}
               />
             </div>
-            <div className="flex items-center gap-2 text-foreground font-medium">
+            <div className="flex items-center gap-2 text-foreground font-medium group-hover:text-primary transition-colors">
               <TikTokIcon />
               <span>TikTok</span>
             </div>
-          </div>
+          </a>
         </div>
 
         {/* Mobile: Links only (no QR codes) */}
