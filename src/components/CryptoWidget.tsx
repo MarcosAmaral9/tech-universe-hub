@@ -206,5 +206,8 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
     </div>
   );
 };
+});
+
+CryptoWidget.displayName = "CryptoWidget";
 
 export default CryptoWidget;

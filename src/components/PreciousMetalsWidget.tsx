@@ -127,5 +127,8 @@ const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
     </div>
   );
 };
+});
+
+PreciousMetalsWidget.displayName = "PreciousMetalsWidget";
 
 export default PreciousMetalsWidget;

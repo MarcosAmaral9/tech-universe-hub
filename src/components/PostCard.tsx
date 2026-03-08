@@ -47,6 +47,8 @@ const PostCard = forwardRef<HTMLElement, PostCardProps>(({ post }, ref) => {
       </Link>
     </article>
   );
-};
+});
+
+PostCard.displayName = "PostCard";
 
 export default PostCard;
