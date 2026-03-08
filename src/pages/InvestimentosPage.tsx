@@ -40,6 +40,9 @@ const InvestimentosPage = () => {
       {/* Currency Widget */}
       <CurrencyWidget />
 
+      {/* Precious Metals Widget */}
+      <PreciousMetalsWidget />
+
       {/* Crypto Widget */}
       <CryptoWidget />
 
