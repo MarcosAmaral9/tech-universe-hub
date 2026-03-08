@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Calculator, DollarSign, TrendingUp, Bitcoin, Gem } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import RelatedPosts from "@/components/RelatedPosts";
-import RelatedPosts from "@/components/RelatedPosts";
 import CommentSection from "@/components/CommentSection";
 import calculadorasImg from "@/assets/calculadoras-financeiras.webp";
 
