@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import { Clock } from "lucide-react";
 import { BlogPost } from "@/types/blog";
@@ -7,7 +8,7 @@ interface PostCardProps {
   post: BlogPost;
 }
 
-const PostCard = ({ post }: PostCardProps) => {
+const PostCard = forwardRef<HTMLElement, PostCardProps>(({ post }, ref) => {
   return (
     <article className="group bg-card rounded-xl overflow-hidden border border-border card-hover">
       <Link to={`/post/${post.slug}`} className="block">
