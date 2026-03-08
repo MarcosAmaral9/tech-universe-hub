@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { TrendingUp, TrendingDown, AlertTriangle, Gem } from "lucide-react";
 import { useExchangeRates } from "@/hooks/useExchangeRates";
 
