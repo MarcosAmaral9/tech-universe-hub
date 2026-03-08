@@ -5,10 +5,13 @@ import { getLatestPostsByCategory } from "@/data/posts";
 import CategoryBadge from "./CategoryBadge";
 import { Button } from "@/components/ui/button";
 
+const AUTOPLAY_MS = 7000;
+
 const FeaturedCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState<"left" | "right">("right");
   const [isAnimating, setIsAnimating] = useState(false);
+  const [progressKey, setProgressKey] = useState(0);
   const posts = getLatestPostsByCategory();
   const timerRef = useRef<ReturnType<typeof setInterval>>();
   const touchStartX = useRef(0);
@@ -16,9 +19,10 @@ const FeaturedCarousel = () => {
 
   const startTimer = () => {
     clearInterval(timerRef.current);
+    setProgressKey((k) => k + 1);
     timerRef.current = setInterval(() => {
       goToNext();
-    }, 7000);
+    }, AUTOPLAY_MS);
   };
 
   useEffect(() => {
