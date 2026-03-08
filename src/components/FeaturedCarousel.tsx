@@ -104,9 +104,9 @@ const FeaturedCarousel = () => {
           }}
         >
           {/* Main Content */}
-          <div className={`flex flex-col md:flex-row h-[480px] md:h-[400px] ${slideClass}`}>
+          <div className={`flex flex-col md:flex-row h-auto md:h-[400px] ${slideClass}`}>
             {/* Image */}
-            <div className="relative w-full md:w-1/2 h-64 md:h-auto overflow-hidden">
+            <div className="relative w-full md:w-1/2 h-48 sm:h-64 md:h-auto overflow-hidden">
               <img
                 src={currentPost.image}
                 alt={currentPost.title}
@@ -119,26 +119,26 @@ const FeaturedCarousel = () => {
             </div>
 
             {/* Content */}
-            <div className="flex-1 p-6 md:p-10 flex flex-col justify-center overflow-hidden">
+            <div className="flex-1 px-4 py-3 sm:p-6 md:p-10 flex flex-col justify-center overflow-hidden">
               <CategoryBadge category={currentPost.category} size="md" />
               
               <Link to={`/post/${currentPost.slug}`}>
-                <h2 className="font-display text-2xl md:text-4xl font-bold mt-4 mb-4 hover:text-primary transition-colors line-clamp-2">
+                <h2 className="font-display text-lg sm:text-2xl md:text-4xl font-bold mt-2 sm:mt-4 mb-2 sm:mb-4 hover:text-primary transition-colors line-clamp-2">
                   {currentPost.title}
                 </h2>
               </Link>
               
-              <p className="text-muted-foreground text-lg mb-6 line-clamp-3">
+              <p className="text-muted-foreground text-sm sm:text-lg mb-3 sm:mb-6 line-clamp-2 sm:line-clamp-3">
                 {currentPost.excerpt}
               </p>
 
-              <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                <span>{currentPost.author}</span>
-                <span>•</span>
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1 sm:gap-4 text-xs sm:text-sm text-muted-foreground">
+                <span className="font-medium text-foreground/80">{currentPost.author}</span>
+                <span className="hidden sm:inline">•</span>
                 <span>{new Date(currentPost.date + "T12:00:00").toLocaleDateString("pt-BR")}</span>
                 <span>•</span>
                 <span className="flex items-center gap-1">
-                  <Clock className="h-4 w-4" />
+                  <Clock className="h-3 w-3 sm:h-4 sm:w-4" />
                   {currentPost.readTime}
                 </span>
               </div>
