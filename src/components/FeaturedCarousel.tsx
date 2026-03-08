@@ -5,10 +5,13 @@ import { getLatestPostsByCategory } from "@/data/posts";
 import CategoryBadge from "./CategoryBadge";
 import { Button } from "@/components/ui/button";
 
+const AUTOPLAY_MS = 7000;
+
 const FeaturedCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState<"left" | "right">("right");
   const [isAnimating, setIsAnimating] = useState(false);
+  const [progressKey, setProgressKey] = useState(0);
   const posts = getLatestPostsByCategory();
   const timerRef = useRef<ReturnType<typeof setInterval>>();
   const touchStartX = useRef(0);
@@ -16,9 +19,10 @@ const FeaturedCarousel = () => {
 
   const startTimer = () => {
     clearInterval(timerRef.current);
+    setProgressKey((k) => k + 1);
     timerRef.current = setInterval(() => {
       goToNext();
-    }, 7000);
+    }, AUTOPLAY_MS);
   };
 
   useEffect(() => {
@@ -67,6 +71,10 @@ const FeaturedCarousel = () => {
         @keyframes slide-in-from-left {
           from { transform: translateX(-100%); opacity: 0; }
           to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes progress-fill {
+          from { width: 0%; }
+          to { width: 100%; }
         }
       `}</style>
       <div className="container py-8">
@@ -157,6 +165,15 @@ const FeaturedCarousel = () => {
             >
               <ChevronRight className="h-5 w-5" />
             </Button>
+          </div>
+
+          {/* Progress Bar */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-muted/30">
+            <div
+              key={progressKey}
+              className="h-full bg-primary"
+              style={{ animation: `progress-fill ${AUTOPLAY_MS}ms linear` }}
+            />
           </div>
         </div>
       </div>
