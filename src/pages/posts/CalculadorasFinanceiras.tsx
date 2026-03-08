@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import RelatedPosts from "@/components/RelatedPosts";
 import CommentSection from "@/components/CommentSection";
-import calculadorasImg from "@/assets/calculadoras-financeiras.jpg";
+import calculadorasImg from "@/assets/calculadoras-financeiras.webp";
 
 interface AssetOption {
   id: string;

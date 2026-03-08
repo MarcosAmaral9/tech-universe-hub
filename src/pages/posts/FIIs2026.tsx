@@ -5,7 +5,7 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import { Slider } from "@/components/ui/slider";
-import fiisImg from "@/assets/fiis-2026.jpg";
+import fiisImg from "@/assets/fiis-2026.webp";
 
 // FII Simulator
 const FIISimulator = () => {

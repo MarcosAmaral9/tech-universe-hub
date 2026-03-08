@@ -4,7 +4,7 @@ import { Clock, Calendar, User, AlertTriangle, ChevronRight, Zap, CheckCircle2, 
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import carteiraImg from "@/assets/carteira-investimentos-2026.jpg";
+import carteiraImg from "@/assets/carteira-investimentos-2026.webp";
 
 // Simple donut chart component
 const DonutChart = ({ segments, label }: { segments: { name: string; pct: number; color: string }[]; label: string }) => {

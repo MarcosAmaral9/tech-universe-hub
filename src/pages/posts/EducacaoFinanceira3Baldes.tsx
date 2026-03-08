@@ -5,7 +5,7 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import { Slider } from "@/components/ui/slider";
-import metodo3BaldesImg from "@/assets/metodo-3-baldes.jpg";
+import metodo3BaldesImg from "@/assets/metodo-3-baldes.webp";
 
 // Bucket Calculator
 const BucketCalculator = () => {

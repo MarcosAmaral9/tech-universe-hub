@@ -5,7 +5,7 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import { Slider } from "@/components/ui/slider";
-import tesouroDiretoImg from "@/assets/tesouro-direto-2026.jpg";
+import tesouroDiretoImg from "@/assets/tesouro-direto-2026.webp";
 
 const TesouroDireto2026 = () => {
   // Reading progress bar
