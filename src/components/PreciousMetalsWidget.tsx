@@ -18,7 +18,7 @@ const FALLBACK: MetalRate[] = [
   { code: "XAG", name: "Prata", bidPerGram: 6.20, pctChange: "-0.30", highPerGram: 6.35, lowPerGram: 6.10 },
 ];
 
-const PreciousMetalsWidget = () => {
+const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
   const { data, loading, isFallback, lastUpdated } = useExchangeRates();
 
   const metals: MetalRate[] = [];
