@@ -8,7 +8,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import irpfImg from "@/assets/irpf-2026.webp";
 
 const IRPF2026 = () => {
-  const [readingProgress, setReadingProgress] = useState(0);
   const [checkedDocs, setCheckedDocs] = useState<Record<string, boolean>>({});
   
   // Calculator: simplified vs complete
@@ -17,15 +16,6 @@ const IRPF2026 = () => {
   const [despesasEducacao, setDespesasEducacao] = useState(3500);
   const [dependentes, setDependentes] = useState(1);
   const [pgbl, setPgbl] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setReadingProgress(Math.min((window.scrollY / scrollHeight) * 100, 100));
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Countdown to May 31, 2026
   const getCountdown = () => {
