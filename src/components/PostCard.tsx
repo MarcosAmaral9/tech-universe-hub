@@ -10,7 +10,7 @@ interface PostCardProps {
 
 const PostCard = forwardRef<HTMLElement, PostCardProps>(({ post }, ref) => {
   return (
-    <article className="group bg-card rounded-xl overflow-hidden border border-border card-hover">
+    <article ref={ref} className="group bg-card rounded-xl overflow-hidden border border-border card-hover">
       <Link to={`/post/${post.slug}`} className="block">
         {/* Image */}
         <div className="relative aspect-video overflow-hidden">
