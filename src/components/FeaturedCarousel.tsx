@@ -70,9 +70,17 @@ const FeaturedCarousel = () => {
         }
       `}</style>
       <div className="container py-8">
-        <div className="relative rounded-2xl overflow-hidden bg-card border border-border shadow-lg">
-          {/* Main Content */}
-          <div className={`flex flex-col md:flex-row h-[480px] md:h-[400px] ${slideClass}`}>
+        <div
+          className="relative rounded-2xl overflow-hidden bg-card border border-border shadow-lg touch-pan-y"
+          onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX; }}
+          onTouchMove={(e) => { touchEndX.current = e.touches[0].clientX; }}
+          onTouchEnd={() => {
+            const diff = touchStartX.current - touchEndX.current;
+            if (Math.abs(diff) > 50) {
+              diff > 0 ? goToNext() : goToPrevious();
+            }
+          }}
+        >
             {/* Image */}
             <div className="relative w-full md:w-1/2 h-64 md:h-auto overflow-hidden">
               <img
