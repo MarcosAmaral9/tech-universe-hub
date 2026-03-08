@@ -89,19 +89,9 @@ const AnimatedCounter = ({ target, duration = 2000 }: { target: number; duration
 };
 
 const CarteiraIniciantes2026 = () => {
-  const [readingProgress, setReadingProgress] = useState(0);
   const [quizStep, setQuizStep] = useState(0);
   const [quizAnswers, setQuizAnswers] = useState<string[]>([]);
   const [quizResult, setQuizResult] = useState<string | null>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setReadingProgress(Math.min((window.scrollY / scrollHeight) * 100, 100));
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const quizQuestions = [
     {
