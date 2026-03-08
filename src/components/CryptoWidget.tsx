@@ -116,7 +116,7 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
   }
 
   return (
-    <div className="bg-card border border-border rounded-2xl p-6 mb-8">
+    <div ref={ref} className="bg-card border border-border rounded-2xl p-6 mb-8">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <Bitcoin className="h-5 w-5 text-invest" />
