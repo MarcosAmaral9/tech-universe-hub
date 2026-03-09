@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 import { getRelatedPosts } from "@/data/posts";
 import CategoryBadge from "./CategoryBadge";
