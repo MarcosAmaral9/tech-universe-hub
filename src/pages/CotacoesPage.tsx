@@ -6,7 +6,6 @@ import B3StockTicker from "@/components/B3StockTicker";
 import CurrencyWidget from "@/components/CurrencyWidget";
 import CryptoWidget from "@/components/CryptoWidget";
 import PreciousMetalsWidget from "@/components/PreciousMetalsWidget";
-import DynamicSEO from "@/components/DynamicSEO";
 
 type Section = "all" | "b3" | "currency" | "metals" | "crypto";
 
