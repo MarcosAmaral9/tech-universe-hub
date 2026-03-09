@@ -8,39 +8,10 @@ interface BeforeInstallPromptEvent extends Event {
   userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
 }
 
-const NOTIFICATION_SOUND_KEY = "pwa_update_sound_enabled";
-const FONT_SIZE_KEY = "viciocode_font_size";
-const ACCENT_COLOR_KEY = "viciocode_accent_color";
-
-type FontSize = "small" | "normal" | "large";
-type AccentColor = "cyan" | "purple" | "green" | "orange" | "pink" | "blue";
-
-const accentColors: { id: AccentColor; label: string; hsl: string; preview: string }[] = [
-  { id: "cyan", label: "Ciano", hsl: "187 85% 43%", preview: "bg-[hsl(187,85%,43%)]" },
-  { id: "purple", label: "Roxo", hsl: "270 70% 55%", preview: "bg-[hsl(270,70%,55%)]" },
-  { id: "green", label: "Verde", hsl: "142 70% 45%", preview: "bg-[hsl(142,70%,45%)]" },
-  { id: "orange", label: "Laranja", hsl: "25 95% 55%", preview: "bg-[hsl(25,95%,55%)]" },
-  { id: "pink", label: "Rosa", hsl: "330 80% 60%", preview: "bg-[hsl(330,80%,60%)]" },
-  { id: "blue", label: "Azul", hsl: "220 90% 55%", preview: "bg-[hsl(220,90%,55%)]" },
-];
-
 const InstallPage = () => {
-  const { theme, toggleTheme } = useTheme();
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [isInstalled, setIsInstalled] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
-  const [soundEnabled, setSoundEnabled] = useState(() => {
-    const stored = localStorage.getItem(NOTIFICATION_SOUND_KEY);
-    return stored === null ? true : stored === "true";
-  });
-  const [fontSize, setFontSize] = useState<FontSize>(() => {
-    const stored = localStorage.getItem(FONT_SIZE_KEY) as FontSize;
-    return stored || "normal";
-  });
-  const [accentColor, setAccentColor] = useState<AccentColor>(() => {
-    const stored = localStorage.getItem(ACCENT_COLOR_KEY) as AccentColor;
-    return stored || "cyan";
-  });
 
   useEffect(() => {
     const ua = navigator.userAgent;
