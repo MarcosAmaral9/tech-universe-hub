@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, Shield, AlertTriangle, Check, X, MessageSquare, Users } from "lucide-react";
+import { ArrowLeft, Shield, AlertTriangle, Check, X, MessageSquare, Users, LogIn } from "lucide-react";
 
 const ContentPolicyPage = () => {
   return (
@@ -24,7 +24,7 @@ const ContentPolicyPage = () => {
           Regras para manter nossa comunidade segura e respeitosa
         </p>
         <p className="text-sm text-muted-foreground mt-2">
-          Última atualização: 02 de Fevereiro, 2026
+          Última atualização: 09 de Março, 2026
         </p>
       </header>
 
@@ -38,7 +38,22 @@ const ContentPolicyPage = () => {
               <p className="text-muted-foreground mb-0">
                 O VICIO&lt;CODE&gt; é um espaço para compartilhar conhecimento e opiniões sobre tecnologia, 
                 games, investimentos e cultura pop. Para manter um ambiente saudável, estabelecemos regras 
-                claras sobre o que é permitido e proibido em nossa plataforma.
+                claras sobre o que é permitido e proibido em nossa plataforma — tanto no site quanto no app.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Login required */}
+        <section className="p-6 bg-primary/10 rounded-xl border border-primary/30">
+          <div className="flex items-start gap-3">
+            <LogIn className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+            <div>
+              <h2 className="text-xl font-bold mb-2 mt-0">Autenticação Obrigatória</h2>
+              <p className="text-muted-foreground mb-0">
+                Para comentar em qualquer artigo, é necessário estar logado com uma conta válida. 
+                Seu apelido (nickname) escolhido durante o cadastro será exibido automaticamente nos comentários. 
+                Isso garante responsabilidade e transparência nas interações.
               </p>
             </div>
           </div>
@@ -88,7 +103,7 @@ const ContentPolicyPage = () => {
                 <li>Propaganda não autorizada</li>
                 <li>Tentativas de golpe ou fraude</li>
                 <li>Uso de bots ou automação</li>
-                <li>Falsificação de identidade</li>
+                <li>Falsificação de identidade ou criação de contas falsas</li>
               </ul>
             </div>
 
@@ -147,27 +162,31 @@ const ContentPolicyPage = () => {
         <section>
           <div className="flex items-center gap-3 mb-4">
             <Users className="h-7 w-7 text-primary" />
-            <h2 className="text-2xl font-bold mt-0 mb-0">Nomes de Usuário</h2>
+            <h2 className="text-2xl font-bold mt-0 mb-0">Perfil e Nome de Exibição</h2>
           </div>
           
           <p className="text-muted-foreground">
-            Ao comentar, você deve escolher um nome que:
+            Ao criar sua conta, você escolhe um apelido (nickname) que será usado automaticamente em todos os seus comentários. 
+            Seu apelido deve:
           </p>
           <ul className="text-muted-foreground list-disc list-inside">
-            <li>Tenha entre 2 e 50 caracteres</li>
-            <li>Não contenha palavrões ou termos ofensivos</li>
-            <li>Não inclua links ou endereços de e-mail</li>
-            <li>Use apenas letras, números, espaços e caracteres básicos (. _ -)</li>
+            <li>Ter entre 2 e 50 caracteres</li>
+            <li>Não conter palavrões ou termos ofensivos</li>
+            <li>Não incluir links ou endereços de e-mail</li>
+            <li>Usar apenas letras, números, espaços e caracteres básicos (. _ -)</li>
           </ul>
+          <p className="text-muted-foreground mt-3">
+            Você pode alterar seu apelido e avatar a qualquer momento nas <Link to="/configuracoes" className="text-primary hover:underline">configurações da conta</Link>.
+          </p>
         </section>
 
-        {/* Captcha */}
+        {/* Moderation */}
         <section className="p-6 bg-primary/10 rounded-xl border border-primary/30">
-          <h2 className="text-xl font-bold mb-3 mt-0">Verificação Anti-Bot</h2>
+          <h2 className="text-xl font-bold mb-3 mt-0">Moderação Automática</h2>
           <p className="text-muted-foreground mb-0">
-            Para garantir que comentários sejam feitos por pessoas reais, utilizamos um sistema de 
-            verificação matemática simples (captcha). Você precisará resolver uma conta básica antes 
-            de enviar seu comentário.
+            Todos os comentários passam por um sistema de moderação automática que verifica 
+            linguagem ofensiva, links, imagens e outros conteúdos proibidos antes da publicação. 
+            Comentários que não cumpram as regras são bloqueados automaticamente.
           </p>
         </section>
 
@@ -176,8 +195,8 @@ const ContentPolicyPage = () => {
           <h2 className="text-2xl font-bold">Consequências</h2>
           <p className="text-muted-foreground">
             Comentários que violem estas regras serão automaticamente bloqueados pelo nosso sistema 
-            de moderação. Em casos graves ou repetidos, podemos tomar medidas adicionais para 
-            proteger nossa comunidade.
+            de moderação. Em casos graves ou repetidos, podemos tomar medidas adicionais, incluindo 
+            a suspensão da conta, para proteger nossa comunidade.
           </p>
         </section>
 
@@ -186,7 +205,8 @@ const ContentPolicyPage = () => {
           <h2 className="text-xl font-bold mb-3 mt-0">Dúvidas ou Sugestões?</h2>
           <p className="text-muted-foreground mb-0">
             Se você encontrar conteúdo que viole estas regras ou tiver sugestões para melhorar 
-            nossa política, entre em contato através das nossas redes sociais.
+            nossa política, entre em contato através da nossa <Link to="/contato" className="text-primary hover:underline">página de contato</Link> ou 
+            das nossas redes sociais.
           </p>
         </section>
 
