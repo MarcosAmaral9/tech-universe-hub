@@ -29,14 +29,25 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
   const [isLoading, setIsLoading] = useState(true);
 
   // Load comments from database
+  const isOffline = !navigator.onLine;
+  const isMobilePWA = /Mobi|Android/i.test(navigator.userAgent) && window.matchMedia("(display-mode: standalone)").matches;
+  const limitOffline = isOffline && isMobilePWA;
+
   useEffect(() => {
     const fetchComments = async () => {
       setIsLoading(true);
-      const { data, error } = await supabase
+      let query = supabase
         .from("comments")
         .select("*")
         .eq("post_id", postId)
         .order("created_at", { ascending: false });
+
+      // In PWA offline mode on mobile, only fetch last 3 comments
+      if (limitOffline) {
+        query = query.limit(3);
+      }
+
+      const { data, error } = await query;
 
       if (!error && data) {
         setComments(data as Comment[]);
