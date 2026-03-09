@@ -1,10 +1,11 @@
 import { useRegisterSW } from "virtual:pwa-register/react";
 import { Button } from "@/components/ui/button";
 import { RefreshCw, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const PWAUpdatePrompt = () => {
   const [dismissed, setDismissed] = useState(false);
+  const hasNotified = useRef(false);
 
   const {
     needRefresh: [needRefresh],
@@ -22,6 +23,38 @@ const PWAUpdatePrompt = () => {
       console.error("SW registration error:", error);
     },
   });
+
+  // Notify user with vibration when update is available
+  useEffect(() => {
+    if (needRefresh && !hasNotified.current) {
+      hasNotified.current = true;
+      
+      // Vibrate if supported (mobile devices)
+      if ("vibrate" in navigator) {
+        navigator.vibrate([100, 50, 100, 50, 100]);
+      }
+      
+      // Play notification sound
+      try {
+        const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.frequency.value = 800;
+        oscillator.type = "sine";
+        gainNode.gain.value = 0.1;
+        
+        oscillator.start();
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+        oscillator.stop(audioContext.currentTime + 0.3);
+      } catch (e) {
+        // Audio not supported or blocked
+      }
+    }
+  }, [needRefresh]);
 
   if (!needRefresh || dismissed) return null;
 
