@@ -47,6 +47,7 @@ const ContentPolicyPage = lazy(() => import("./pages/ContentPolicyPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const InstallPage = lazy(() => import("./pages/InstallPage"));
 const SettingsPage = lazy(() => import("./pages/SettingsPage"));
+const CotacoesPage = lazy(() => import("./pages/CotacoesPage"));
 
 // Lazy-loaded posts
 const DiferencaMangasManhuas = lazy(() => import("./pages/posts/DiferencaMangasManhuas"));
