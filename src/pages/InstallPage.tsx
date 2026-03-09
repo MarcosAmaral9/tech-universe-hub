@@ -90,6 +90,27 @@ const InstallPage = () => {
     }
   }, []);
 
+  const changeAccentColor = (color: AccentColor) => {
+    setAccentColor(color);
+    localStorage.setItem(ACCENT_COLOR_KEY, color);
+    const colorData = accentColors.find(c => c.id === color);
+    if (colorData) {
+      document.documentElement.style.setProperty("--primary", colorData.hsl);
+      document.documentElement.style.setProperty("--ring", colorData.hsl);
+    }
+  };
+
+  useEffect(() => {
+    const savedColor = localStorage.getItem(ACCENT_COLOR_KEY) as AccentColor;
+    if (savedColor) {
+      const colorData = accentColors.find(c => c.id === savedColor);
+      if (colorData) {
+        document.documentElement.style.setProperty("--primary", colorData.hsl);
+        document.documentElement.style.setProperty("--ring", colorData.hsl);
+      }
+    }
+  }, []);
+
   return (
     <div className="min-h-[70vh] py-12 px-4">
       <div className="max-w-2xl mx-auto space-y-10">
