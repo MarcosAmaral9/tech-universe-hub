@@ -87,6 +87,8 @@ const B3StockTicker = () => {
         setIsFallback(false);
         const now = Date.now();
         setLastUpdated(new Date(now).toLocaleString("pt-BR"));
+        setCacheExpiresAt(now + CACHE_DURATION);
+        setSource("live");
         localStorage.setItem(CACHE_KEY, JSON.stringify({ data: quotes, timestamp: now, fallback: false }));
         setLoading(false);
         return;
