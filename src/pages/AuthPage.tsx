@@ -11,7 +11,7 @@ import { Eye, EyeOff, LogIn, UserPlus, Mail, Lock, User, AtSign } from "lucide-r
 import { z } from "zod";
 import DynamicSEO from "@/components/DynamicSEO";
 
-const TURNSTILE_SITE_KEY = "0x4AAAAAABfPnPo0P0Z0cZYz"; // Replace with your Cloudflare Turnstile site key
+const TURNSTILE_SITE_KEY = "0x4AAAAAACoJGOSSf4mIgNUY";
 
 const signupSchema = z.object({
   name: z.string().trim().min(2, "Nome deve ter pelo menos 2 caracteres").max(100),
