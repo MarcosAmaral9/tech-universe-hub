@@ -132,6 +132,9 @@ const Header = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48">
                   <DropdownMenuItem asChild>
+                    <Link to={`/perfil/${user.id}`} className="w-full">👤 Meu Perfil</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
                     <Link to="/configuracoes" className="w-full">⚙️ Configurações</Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
