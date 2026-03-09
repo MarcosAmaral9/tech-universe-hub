@@ -352,10 +352,11 @@ async function fetchAllRates(): Promise<ExchangePayload> {
   result.ARSBRL = southAmericanData.ARSBRL || STATIC_FALLBACK.ARSBRL;
   result.PYGBRL = southAmericanData.PYGBRL || STATIC_FALLBACK.PYGBRL;
   
-  // Add sparklines if available
-  if (frankfurterData.sparklines && Object.keys(frankfurterData.sparklines).length > 0) {
-    result.sparklines = frankfurterData.sparklines;
-  }
+  // Merge sparklines from all sources
+  result.sparklines = {
+    ...frankfurterData.sparklines,
+    ...southAmericanData.sparklines,
+  };
   
   // Refetch metals with actual USD rate if available
   const actualUsdBrl = frankfurterData.usdBrl;
