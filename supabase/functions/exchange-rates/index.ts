@@ -19,6 +19,8 @@ type ExchangePayload = {
   sparklines?: {
     USDBRL?: SparklineData;
     EURBRL?: SparklineData;
+    ARSBRL?: SparklineData;
+    PYGBRL?: SparklineData;
   };
   _meta?: {
     fallback: boolean;
@@ -255,24 +257,34 @@ async function fetchFromFrankfurter(): Promise<{ USDBRL?: RateQuote; EURBRL?: Ra
 }
 
 // Fetch ARS and PYG from AwesomeAPI (good for South American currencies)
-async function fetchSouthAmericanCurrencies(): Promise<{ ARSBRL?: RateQuote; PYGBRL?: RateQuote }> {
-  const result: { ARSBRL?: RateQuote; PYGBRL?: RateQuote } = {};
+async function fetchSouthAmericanCurrencies(): Promise<{ ARSBRL?: RateQuote; PYGBRL?: RateQuote; sparklines: { ARSBRL?: SparklineData; PYGBRL?: SparklineData } }> {
+  const result: { ARSBRL?: RateQuote; PYGBRL?: RateQuote; sparklines: { ARSBRL?: SparklineData; PYGBRL?: SparklineData } } = { sparklines: {} };
   
   try {
-    const response = await fetch(AWESOME_API_URL);
+    // Fetch current rates and 7-day history in parallel
+    const [currentRes, arsHistRes, pygHistRes] = await Promise.all([
+      fetch(AWESOME_API_URL),
+      fetch("https://economia.awesomeapi.com.br/json/daily/ARS-BRL/7"),
+      fetch("https://economia.awesomeapi.com.br/json/daily/PYG-BRL/7"),
+    ]);
     
-    if (response.status === 429) {
+    if (currentRes.status === 429) {
       cooldownUntil = Date.now() + RATE_LIMIT_COOLDOWN_MS;
       console.warn("AwesomeAPI rate limited");
+      // Consume other responses
+      if (arsHistRes.ok) await arsHistRes.text();
+      if (pygHistRes.ok) await pygHistRes.text();
       return result;
     }
     
-    if (!response.ok) {
-      console.warn("AwesomeAPI error:", response.status);
+    if (!currentRes.ok) {
+      console.warn("AwesomeAPI error:", currentRes.status);
+      if (arsHistRes.ok) await arsHistRes.text();
+      if (pygHistRes.ok) await pygHistRes.text();
       return result;
     }
     
-    const data = await response.json();
+    const data = await currentRes.json();
     
     if (data.ARSBRL) {
       result.ARSBRL = {
@@ -290,6 +302,31 @@ async function fetchSouthAmericanCurrencies(): Promise<{ ARSBRL?: RateQuote; PYG
         high: parseFloat(data.PYGBRL.high).toFixed(5),
         low: parseFloat(data.PYGBRL.low).toFixed(5),
       };
+    }
+    
+    // Parse ARS sparkline
+    if (arsHistRes.ok) {
+      try {
+        const arsHist = await arsHistRes.json();
+        if (Array.isArray(arsHist) && arsHist.length > 0) {
+          // AwesomeAPI returns newest first, reverse for chronological order
+          result.sparklines.ARSBRL = arsHist
+            .map((d: any) => parseFloat(parseFloat(d.bid).toFixed(4)))
+            .reverse();
+        }
+      } catch { /* ignore */ }
+    }
+    
+    // Parse PYG sparkline
+    if (pygHistRes.ok) {
+      try {
+        const pygHist = await pygHistRes.json();
+        if (Array.isArray(pygHist) && pygHist.length > 0) {
+          result.sparklines.PYGBRL = pygHist
+            .map((d: any) => parseFloat(parseFloat(d.bid).toFixed(5)))
+            .reverse();
+        }
+      } catch { /* ignore */ }
     }
   } catch (err) {
     console.error("AwesomeAPI fetch error:", err);
@@ -315,10 +352,11 @@ async function fetchAllRates(): Promise<ExchangePayload> {
   result.ARSBRL = southAmericanData.ARSBRL || STATIC_FALLBACK.ARSBRL;
   result.PYGBRL = southAmericanData.PYGBRL || STATIC_FALLBACK.PYGBRL;
   
-  // Add sparklines if available
-  if (frankfurterData.sparklines && Object.keys(frankfurterData.sparklines).length > 0) {
-    result.sparklines = frankfurterData.sparklines;
-  }
+  // Merge sparklines from all sources
+  result.sparklines = {
+    ...frankfurterData.sparklines,
+    ...southAmericanData.sparklines,
+  };
   
   // Refetch metals with actual USD rate if available
   const actualUsdBrl = frankfurterData.usdBrl;
