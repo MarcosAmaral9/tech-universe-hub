@@ -1,144 +1,86 @@
-import { useState, useEffect, useCallback } from "react";
-import { MessageCircle, Send, RefreshCw, AlertCircle, Shield } from "lucide-react";
+import { useState, useEffect } from "react";
+import { MessageCircle, Send, Trash2, Shield, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
-import { 
-  validateName, 
-  validateComment, 
-  generateCaptcha 
-} from "@/utils/contentModeration";
+import { supabase } from "@/integrations/supabase/client";
+import { useAuthContext } from "@/contexts/AuthContext";
+import { validateComment } from "@/utils/contentModeration";
 
 interface Comment {
   id: string;
-  author: string;
+  post_id: string;
+  user_id: string;
+  author_name: string;
   content: string;
-  date: string;
+  created_at: string;
 }
 
 interface CommentSectionProps {
   postId: string;
 }
 
-// Initial comments for each post
-const initialCommentsByPost: Record<string, Comment[]> = {
-  "diferenca-mangas-manhuas-manhwas": [
-    {
-      id: "1",
-      author: "OtakuMaster",
-      content: "Excelente artigo! Finalmente entendi a diferença entre os três!",
-      date: "2026-01-17",
-    },
-  ],
-  "como-diferenciar-manhuas-manhwas": [
-    {
-      id: "1",
-      author: "MangaFan2026",
-      content: "Finalmente alguém explicando a diferença! Sempre confundi manhwa com manhua.",
-      date: "2026-01-16",
-    },
-  ],
-  "10-melhores-manhwas-sistema-2026": [
-    {
-      id: "1",
-      author: "SoloLevelingFan",
-      content: "Solo Leveling é incrível! Mas tem muitos outros manhwas que merecem destaque também.",
-      date: "2026-01-15",
-    },
-    {
-      id: "2",
-      author: "WebtoonReader",
-      content: "TBATE merecia estar em primeiro! A história é muito mais profunda.",
-      date: "2026-01-15",
-    },
-  ],
-  "ia-transformando-dublagem-animes": [
-    {
-      id: "1",
-      author: "AnimeLover99",
-      content: "Será que um dia vamos ver dublagens em tempo real? Isso seria incrível!",
-      date: "2026-01-18",
-    },
-  ],
-  "investir-em-tecnologia-2026": [
-    {
-      id: "1",
-      author: "InvestidorTech",
-      content: "Ótimo artigo para quem está começando a investir em tecnologia!",
-      date: "2026-01-18",
-    },
-  ],
-};
-
 const CommentSection = ({ postId }: CommentSectionProps) => {
+  const { user, profile } = useAuthContext();
   const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState("");
-  const [authorName, setAuthorName] = useState("");
-  const [captcha, setCaptcha] = useState(generateCaptcha());
-  const [captchaAnswer, setCaptchaAnswer] = useState("");
   const [errors, setErrors] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Load comments for this specific post
+  // Load comments from database
   useEffect(() => {
-    const storageKey = `viciocode-comments-${postId}`;
-    try {
-      const savedComments = localStorage.getItem(storageKey);
-      if (savedComments) {
-        const parsed = JSON.parse(savedComments);
-        if (Array.isArray(parsed)) {
-          setComments(parsed);
-          return;
-        }
+    const fetchComments = async () => {
+      setIsLoading(true);
+      const { data, error } = await supabase
+        .from("comments")
+        .select("*")
+        .eq("post_id", postId)
+        .order("created_at", { ascending: false });
+
+      if (!error && data) {
+        setComments(data as Comment[]);
       }
-    } catch {
-      // Corrupted data — clear it
-      localStorage.removeItem(`viciocode-comments-${postId}`);
-    }
-    {
-      // Use initial comments if no saved comments exist
-      setComments(initialCommentsByPost[postId] || []);
-    }
+      setIsLoading(false);
+    };
+
+    fetchComments();
+
+    // Subscribe to realtime changes
+    const channel = supabase
+      .channel(`comments-${postId}`)
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "comments",
+          filter: `post_id=eq.${postId}`,
+        },
+        () => {
+          fetchComments();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, [postId]);
 
-  // Save comments to localStorage whenever they change
-  useEffect(() => {
-    if (comments.length > 0) {
-      const storageKey = `viciocode-comments-${postId}`;
-      localStorage.setItem(storageKey, JSON.stringify(comments));
-    }
-  }, [comments, postId]);
+  const displayName = profile?.nickname || profile?.name || user?.email?.split("@")[0] || "Usuário";
 
-  const refreshCaptcha = useCallback(() => {
-    setCaptcha(generateCaptcha());
-    setCaptchaAnswer("");
-  }, []);
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!user) return;
+
     setErrors([]);
     setIsSubmitting(true);
 
     const validationErrors: string[] = [];
-
-    // Validate name
-    const nameValidation = validateName(authorName);
-    if (!nameValidation.isValid) {
-      validationErrors.push(...nameValidation.errors);
-    }
-
-    // Validate comment
     const commentValidation = validateComment(newComment);
     if (!commentValidation.isValid) {
       validationErrors.push(...commentValidation.errors);
-    }
-
-    // Validate captcha
-    const userAnswer = parseInt(captchaAnswer, 10);
-    if (isNaN(userAnswer) || userAnswer !== captcha.answer) {
-      validationErrors.push("Resposta do captcha incorreta. Tente novamente.");
-      refreshCaptcha();
     }
 
     if (validationErrors.length > 0) {
@@ -147,18 +89,24 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
       return;
     }
 
-    const comment: Comment = {
-      id: Date.now().toString(),
-      author: authorName.trim(),
+    const { error } = await supabase.from("comments").insert({
+      post_id: postId,
+      user_id: user.id,
+      author_name: displayName,
       content: newComment.trim(),
-      date: new Date().toISOString().split("T")[0],
-    };
+    });
 
-    setComments([comment, ...comments]);
-    setNewComment("");
-    setCaptchaAnswer("");
-    refreshCaptcha();
+    if (error) {
+      setErrors(["Erro ao enviar comentário. Tente novamente."]);
+    } else {
+      setNewComment("");
+    }
+
     setIsSubmitting(false);
+  };
+
+  const handleDelete = async (commentId: string) => {
+    await supabase.from("comments").delete().eq("id", commentId);
   };
 
   return (
@@ -182,10 +130,6 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
       {/* Error Messages */}
       {errors.length > 0 && (
         <div className="mb-6 p-4 bg-destructive/10 rounded-lg border border-destructive/30">
-          <div className="flex items-center gap-2 text-destructive mb-2">
-            <AlertCircle className="h-5 w-5" />
-            <span className="font-semibold">Erro ao enviar comentário</span>
-          </div>
           <ul className="list-disc list-inside text-sm text-destructive/90 space-y-1">
             {errors.map((error, index) => (
               <li key={index}>{error}</li>
@@ -194,104 +138,102 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
         </div>
       )}
 
-      {/* Comment Form */}
-      <form onSubmit={handleSubmit} className="mb-8 p-6 bg-secondary rounded-xl">
-        <div className="mb-4">
-          <label htmlFor="author-name" className="block text-sm font-medium mb-2">
-            Seu nome
-          </label>
-          <Input
-            id="author-name"
-            placeholder="Digite seu nome"
-            value={authorName}
-            onChange={(e) => setAuthorName(e.target.value)}
-            className="bg-background"
-            maxLength={50}
-          />
-          <p className="text-xs text-muted-foreground mt-1">
-            {authorName.length}/50 caracteres
-          </p>
-        </div>
-        
-        <div className="mb-4">
-          <label htmlFor="comment-content" className="block text-sm font-medium mb-2">
-            Seu comentário
-          </label>
-          <Textarea
-            id="comment-content"
-            placeholder="Deixe seu comentário..."
-            value={newComment}
-            onChange={(e) => setNewComment(e.target.value)}
-            rows={4}
-            className="bg-background resize-none"
-            maxLength={1000}
-          />
-          <p className="text-xs text-muted-foreground mt-1">
-            {newComment.length}/1000 caracteres
-          </p>
-        </div>
-
-        {/* Captcha */}
-        <div className="mb-4 p-4 bg-background rounded-lg border border-border">
-          <label className="block text-sm font-medium mb-3">
-            Verificação Anti-Bot
-          </label>
-          <div className="flex items-center gap-4 flex-wrap">
-            <div className="flex items-center gap-2">
-              <span className="text-lg font-mono bg-muted px-3 py-2 rounded">
-                {captcha.question}
-              </span>
-              <Button
-                type="button"
-                variant="ghost"
-                size="icon"
-                onClick={refreshCaptcha}
-                className="h-8 w-8"
-                title="Gerar nova pergunta"
-              >
-                <RefreshCw className="h-4 w-4" />
-              </Button>
+      {/* Comment Form or Login Prompt */}
+      {user ? (
+        <form onSubmit={handleSubmit} className="mb-8 p-6 bg-secondary rounded-xl">
+          <div className="mb-4 flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold overflow-hidden">
+              {profile?.avatar_url ? (
+                <img src={profile.avatar_url} alt="" className="w-full h-full object-cover" />
+              ) : (
+                displayName[0].toUpperCase()
+              )}
             </div>
-            <Input
-              type="number"
-              placeholder="Resposta"
-              value={captchaAnswer}
-              onChange={(e) => setCaptchaAnswer(e.target.value)}
-              className="w-24 bg-background"
-            />
+            <div>
+              <p className="font-semibold text-foreground">{displayName}</p>
+              <p className="text-xs text-muted-foreground">Comentando como</p>
+            </div>
           </div>
-        </div>
 
-        <Button type="submit" className="gap-2" disabled={isSubmitting}>
-          <Send className="h-4 w-4" />
-          {isSubmitting ? "Enviando..." : "Comentar"}
-        </Button>
-      </form>
+          <div className="mb-4">
+            <Textarea
+              placeholder="Deixe seu comentário..."
+              value={newComment}
+              onChange={(e) => setNewComment(e.target.value)}
+              rows={4}
+              className="bg-background resize-none"
+              maxLength={1000}
+            />
+            <p className="text-xs text-muted-foreground mt-1">
+              {newComment.length}/1000 caracteres
+            </p>
+          </div>
+
+          <Button type="submit" className="gap-2" disabled={isSubmitting || !newComment.trim()}>
+            <Send className="h-4 w-4" />
+            {isSubmitting ? "Enviando..." : "Comentar"}
+          </Button>
+        </form>
+      ) : (
+        <div className="mb-8 p-6 bg-secondary rounded-xl text-center">
+          <p className="text-muted-foreground mb-4">
+            Faça login para deixar seu comentário.
+          </p>
+          <Button asChild className="gap-2">
+            <Link to="/entrar">
+              <LogIn className="h-4 w-4" />
+              Entrar / Criar Conta
+            </Link>
+          </Button>
+        </div>
+      )}
+
+      {/* Loading */}
+      {isLoading && (
+        <div className="flex items-center justify-center py-8">
+          <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+        </div>
+      )}
 
       {/* Comments List */}
-      <div className="space-y-6">
-        {comments.map((comment) => (
-          <div
-            key={comment.id}
-            className="p-5 bg-card rounded-xl border border-border animate-fade-in"
-          >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold">
-                {comment.author[0].toUpperCase()}
+      {!isLoading && (
+        <div className="space-y-6">
+          {comments.map((comment) => (
+            <div
+              key={comment.id}
+              className="p-5 bg-card rounded-xl border border-border animate-fade-in"
+            >
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold">
+                    {comment.author_name[0]?.toUpperCase() || "?"}
+                  </div>
+                  <div>
+                    <span className="font-semibold text-foreground">{comment.author_name}</span>
+                    <span className="block text-xs text-muted-foreground">
+                      {new Date(comment.created_at).toLocaleDateString("pt-BR")}
+                    </span>
+                  </div>
+                </div>
+                {user?.id === comment.user_id && (
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => handleDelete(comment.id)}
+                    className="h-8 w-8 text-muted-foreground hover:text-destructive"
+                    title="Excluir comentário"
+                  >
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
+                )}
               </div>
-              <div>
-                <span className="font-semibold text-foreground">{comment.author}</span>
-                <span className="block text-xs text-muted-foreground">
-                  {new Date(comment.date + "T12:00:00").toLocaleDateString("pt-BR")}
-                </span>
-              </div>
+              <p className="text-foreground/90 leading-relaxed">{comment.content}</p>
             </div>
-            <p className="text-foreground/90 leading-relaxed">{comment.content}</p>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
 
-      {comments.length === 0 && (
+      {!isLoading && comments.length === 0 && (
         <p className="text-center text-muted-foreground py-8">
           Seja o primeiro a comentar!
         </p>
