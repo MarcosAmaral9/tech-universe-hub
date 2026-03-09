@@ -37,6 +37,12 @@ const InvestimentosPage = () => {
           Dicas de finanças, análises de mercado, criptomoedas e 
           educação financeira para construir seu futuro.
         </p>
+        <Link to="/cotacoes" className="inline-block mt-3">
+          <Button variant="outline" className="gap-2 border-invest/30 text-invest hover:bg-invest/10">
+            <BarChart3 className="h-4 w-4" />
+            Ver Cotações Consolidadas
+          </Button>
+        </Link>
       </div>
 
       {/* Pinned Featured Post */}
