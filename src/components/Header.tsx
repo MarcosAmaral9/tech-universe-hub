@@ -192,6 +192,13 @@ const Header = () => {
               {user ? (
                 <>
                   <Link
+                    to={`/perfil/${user.id}`}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="px-4 py-3 rounded-lg font-medium text-muted-foreground hover:text-foreground hover:bg-secondary"
+                  >
+                    👤 Meu Perfil
+                  </Link>
+                  <Link
                     to="/configuracoes"
                     onClick={() => setIsMenuOpen(false)}
                     className="px-4 py-3 rounded-lg font-medium text-muted-foreground hover:text-foreground hover:bg-secondary"
