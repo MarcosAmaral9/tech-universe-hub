@@ -101,6 +101,18 @@ const AgentesIA2026 = lazy(() => import("./pages/posts/AgentesIA2026"));
 const IASaude2026 = lazy(() => import("./pages/posts/IASaude2026"));
 const RegulamentacaoIA2026 = lazy(() => import("./pages/posts/RegulamentacaoIA2026"));
 
+// New OTAKU posts (DOCX 2026)
+const AnimesMaisAguardados2026 = lazy(() => import("./pages/posts/AnimesMaisAguardados2026"));
+const ComecarCosplay2026 = lazy(() => import("./pages/posts/ComecarCosplay2026"));
+const MangaVsAnimeAdaptacao = lazy(() => import("./pages/posts/MangaVsAnimeAdaptacao"));
+const CulturaOtakuBrasil2026 = lazy(() => import("./pages/posts/CulturaOtakuBrasil2026"));
+const MelhoresJogosAnime2026 = lazy(() => import("./pages/posts/MelhoresJogosAnime2026"));
+const AprenderJaponesAnime2026 = lazy(() => import("./pages/posts/AprenderJaponesAnime2026"));
+const Isekai2026 = lazy(() => import("./pages/posts/Isekai2026"));
+const MerchandisingOtaku = lazy(() => import("./pages/posts/MerchandisingOtaku"));
+const MelhoresMangas2026 = lazy(() => import("./pages/posts/MelhoresMangas2026"));
+const SaudeMentalCulturaOtaku = lazy(() => import("./pages/posts/SaudeMentalCulturaOtaku"));
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
