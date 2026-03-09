@@ -306,6 +306,34 @@ const InstallPage = () => {
             </div>
           </div>
 
+          {/* Accent Color */}
+          <div className="flex items-center justify-between py-3 border-b border-border">
+            <div className="flex items-center gap-3">
+              <Palette className="w-5 h-5 text-primary" />
+              <div>
+                <p className="font-medium text-foreground">Cor de destaque</p>
+                <p className="text-sm text-muted-foreground">
+                  Personalize a cor principal
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-1.5">
+              {accentColors.map((color) => (
+                <button
+                  key={color.id}
+                  onClick={() => changeAccentColor(color.id)}
+                  className={`w-7 h-7 rounded-full ${color.preview} transition-all ${
+                    accentColor === color.id 
+                      ? "ring-2 ring-offset-2 ring-offset-background ring-foreground scale-110" 
+                      : "hover:scale-105"
+                  }`}
+                  aria-label={color.label}
+                  title={color.label}
+                />
+              ))}
+            </div>
+          </div>
+
           {/* Sound Toggle */}
           <div className="flex items-center justify-between py-3">
             <div className="flex items-center gap-3">
