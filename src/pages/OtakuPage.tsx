@@ -6,7 +6,7 @@ import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { Subtopic } from "@/types/blog";
 
-const POSTS_PER_PAGE = 6;
+const POSTS_PER_PAGE = 12;
 
 const SUBTOPIC_LABELS: Record<string, string> = {
   anime: "Animes",
