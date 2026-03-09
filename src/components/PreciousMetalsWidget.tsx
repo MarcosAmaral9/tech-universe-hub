@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import { TrendingUp, TrendingDown, AlertTriangle, Gem } from "lucide-react";
 import { useExchangeRates } from "@/hooks/useExchangeRates";
 import CacheStatusBar from "@/components/CacheStatusBar";
-import MetalAlertConfig from "@/components/MetalAlertConfig";
+import PriceAlertConfig from "@/components/PriceAlertConfig";
 
 const TROY_OZ_TO_GRAMS = 31.1035;
 const GOLD_18K_PURITY = 0.75;
