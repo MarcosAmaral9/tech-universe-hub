@@ -21,6 +21,11 @@ const InvestimentosPage = () => {
   const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
   const paged = posts.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
 
+  const changePage = (newPage: number | ((p: number) => number)) => {
+    setPage(newPage);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="container py-8">
       {/* Header */}
