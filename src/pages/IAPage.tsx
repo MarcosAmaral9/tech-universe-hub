@@ -34,6 +34,7 @@ const IAPage = () => {
           <div className="w-2 h-12 bg-ia rounded-full"></div>
           <h1 className="font-display text-3xl md:text-5xl font-bold">
             Inteligência <span className="text-ia">Artificial</span>
+            <span className="ml-3 text-base font-normal text-muted-foreground align-middle">({posts.length} artigos)</span>
           </h1>
         </div>
         
