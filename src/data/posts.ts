@@ -45,6 +45,17 @@ import iaEducacaoImg from "@/assets/ia-educacao-2026.webp";
 import agentesIaImg from "@/assets/agentes-ia-2026.webp";
 import iaSaudeImg from "@/assets/ia-saude-2026.webp";
 import regulamentacaoIaImg from "@/assets/regulamentacao-ia-2026.webp";
+// New Otaku articles images
+import animesAguardadosImg from "@/assets/animes-aguardados-2026.webp";
+import guiaCosplayImg from "@/assets/guia-cosplay-2026.webp";
+import mangaVsAnimeImg from "@/assets/manga-vs-anime-2026.webp";
+import culturaOtakuBrasilImg from "@/assets/cultura-otaku-brasil-2026.webp";
+import jogosAnimeImg from "@/assets/jogos-anime-2026.webp";
+import aprenderJaponesImg from "@/assets/aprender-japones-anime-2026.webp";
+import isekaiImg from "@/assets/isekai-2026.webp";
+import merchandisingOtakuImg from "@/assets/merchandising-otaku-2026.webp";
+import melhoresMangasImg from "@/assets/melhores-mangas-2026.webp";
+import saudeMentalOtakuImg from "@/assets/saude-mental-otaku-2026.webp";
 
 export const blogPosts: BlogPost[] = [
   // IA Posts
