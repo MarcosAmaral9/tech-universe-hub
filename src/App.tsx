@@ -87,6 +87,7 @@ const App = () => (
         <BrowserRouter>
           <ScrollToTop />
           <CookieConsent />
+          <PWAUpdatePrompt />
           <Layout>
             <Suspense fallback={<PageLoader />}>
               <Routes>
