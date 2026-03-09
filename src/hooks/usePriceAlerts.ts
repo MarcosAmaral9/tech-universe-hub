@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import { toast } from "@/hooks/use-toast";
 
 const NOTIFIED_PREFIX = "price_alerts_notified_";
+const HISTORY_KEY = "price_alerts_history";
 
 export interface PriceAlert {
   id: string;
@@ -10,6 +11,16 @@ export interface PriceAlert {
   direction: "above" | "below";
   threshold: number;
   enabled: boolean;
+}
+
+export interface AlertHistoryEntry {
+  id: string;
+  alertId: string;
+  assetLabel: string;
+  direction: "above" | "below";
+  threshold: number;
+  actualPrice: number;
+  triggeredAt: number;
 }
 
 function loadAlerts(storageKey: string): PriceAlert[] {
@@ -38,8 +49,23 @@ function saveNotifiedSet(storageKey: string, set: Set<string>) {
   localStorage.setItem(NOTIFIED_PREFIX + storageKey, JSON.stringify([...set]));
 }
 
+function loadHistory(): AlertHistoryEntry[] {
+  try {
+    const saved = localStorage.getItem(HISTORY_KEY);
+    return saved ? JSON.parse(saved) : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveHistory(history: AlertHistoryEntry[]) {
+  // Keep last 50 entries
+  localStorage.setItem(HISTORY_KEY, JSON.stringify(history.slice(-50)));
+}
+
 export function usePriceAlerts(storageKey: string) {
   const [alerts, setAlerts] = useState<PriceAlert[]>(() => loadAlerts(storageKey));
+  const [history, setHistory] = useState<AlertHistoryEntry[]>(() => loadHistory());
 
   const addAlert = useCallback((alert: Omit<PriceAlert, "id">) => {
     const newAlert: PriceAlert = { ...alert, id: crypto.randomUUID() };
@@ -66,9 +92,15 @@ export function usePriceAlerts(storageKey: string) {
     });
   }, [storageKey]);
 
+  const clearHistory = useCallback(() => {
+    setHistory([]);
+    localStorage.removeItem(HISTORY_KEY);
+  }, []);
+
   const checkAlerts = useCallback((prices: Record<string, number>) => {
     const notified = getNotifiedSet(storageKey);
     const enabledAlerts = alerts.filter(a => a.enabled);
+    let historyUpdated = false;
 
     for (const alert of enabledAlerts) {
       const price = prices[alert.assetKey];
@@ -81,6 +113,23 @@ export function usePriceAlerts(storageKey: string) {
       if (triggered && !notified.has(alert.id)) {
         notified.add(alert.id);
         const dirLabel = alert.direction === "above" ? "acima de" : "abaixo de";
+
+        // Save to history
+        const entry: AlertHistoryEntry = {
+          id: crypto.randomUUID(),
+          alertId: alert.id,
+          assetLabel: alert.assetLabel,
+          direction: alert.direction,
+          threshold: alert.threshold,
+          actualPrice: price,
+          triggeredAt: Date.now(),
+        };
+        const currentHistory = loadHistory();
+        currentHistory.push(entry);
+        saveHistory(currentHistory);
+        setHistory([...currentHistory].slice(-50));
+        historyUpdated = true;
+
         toast({
           title: `🔔 Alerta: ${alert.assetLabel}`,
           description: `${alert.assetLabel} está ${dirLabel} R$ ${alert.threshold.toFixed(2)} — Atual: R$ ${price.toFixed(2)}`,
@@ -105,5 +154,5 @@ export function usePriceAlerts(storageKey: string) {
     }
   }, []);
 
-  return { alerts, addAlert, removeAlert, toggleAlert, checkAlerts, requestNotificationPermission };
+  return { alerts, history, addAlert, removeAlert, toggleAlert, checkAlerts, clearHistory, requestNotificationPermission };
 }
