@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Download, Smartphone, Monitor, Share, MoreVertical, PlusSquare, CheckCircle2, Bell, BellOff, Settings, Sun, Moon, Type } from "lucide-react";
+import { Download, Smartphone, Monitor, Share, MoreVertical, PlusSquare, CheckCircle2, Bell, BellOff, Settings, Sun, Moon, Type, Palette } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { useTheme } from "@/contexts/ThemeContext";
@@ -11,8 +11,19 @@ interface BeforeInstallPromptEvent extends Event {
 
 const NOTIFICATION_SOUND_KEY = "pwa_update_sound_enabled";
 const FONT_SIZE_KEY = "viciocode_font_size";
+const ACCENT_COLOR_KEY = "viciocode_accent_color";
 
 type FontSize = "small" | "normal" | "large";
+type AccentColor = "cyan" | "purple" | "green" | "orange" | "pink" | "blue";
+
+const accentColors: { id: AccentColor; label: string; hsl: string; preview: string }[] = [
+  { id: "cyan", label: "Ciano", hsl: "187 85% 43%", preview: "bg-[hsl(187,85%,43%)]" },
+  { id: "purple", label: "Roxo", hsl: "270 70% 55%", preview: "bg-[hsl(270,70%,55%)]" },
+  { id: "green", label: "Verde", hsl: "142 70% 45%", preview: "bg-[hsl(142,70%,45%)]" },
+  { id: "orange", label: "Laranja", hsl: "25 95% 55%", preview: "bg-[hsl(25,95%,55%)]" },
+  { id: "pink", label: "Rosa", hsl: "330 80% 60%", preview: "bg-[hsl(330,80%,60%)]" },
+  { id: "blue", label: "Azul", hsl: "220 90% 55%", preview: "bg-[hsl(220,90%,55%)]" },
+];
 
 const InstallPage = () => {
   const { theme, toggleTheme } = useTheme();
@@ -26,6 +37,10 @@ const InstallPage = () => {
   const [fontSize, setFontSize] = useState<FontSize>(() => {
     const stored = localStorage.getItem(FONT_SIZE_KEY) as FontSize;
     return stored || "normal";
+  });
+  const [accentColor, setAccentColor] = useState<AccentColor>(() => {
+    const stored = localStorage.getItem(ACCENT_COLOR_KEY) as AccentColor;
+    return stored || "cyan";
   });
 
   useEffect(() => {
@@ -72,6 +87,27 @@ const InstallPage = () => {
     const savedSize = localStorage.getItem(FONT_SIZE_KEY) as FontSize;
     if (savedSize) {
       document.documentElement.classList.add(`font-${savedSize}`);
+    }
+  }, []);
+
+  const changeAccentColor = (color: AccentColor) => {
+    setAccentColor(color);
+    localStorage.setItem(ACCENT_COLOR_KEY, color);
+    const colorData = accentColors.find(c => c.id === color);
+    if (colorData) {
+      document.documentElement.style.setProperty("--primary", colorData.hsl);
+      document.documentElement.style.setProperty("--ring", colorData.hsl);
+    }
+  };
+
+  useEffect(() => {
+    const savedColor = localStorage.getItem(ACCENT_COLOR_KEY) as AccentColor;
+    if (savedColor) {
+      const colorData = accentColors.find(c => c.id === savedColor);
+      if (colorData) {
+        document.documentElement.style.setProperty("--primary", colorData.hsl);
+        document.documentElement.style.setProperty("--ring", colorData.hsl);
+      }
     }
   }, []);
 
@@ -267,6 +303,34 @@ const InstallPage = () => {
               >
                 A
               </Button>
+            </div>
+          </div>
+
+          {/* Accent Color */}
+          <div className="flex items-center justify-between py-3 border-b border-border">
+            <div className="flex items-center gap-3">
+              <Palette className="w-5 h-5 text-primary" />
+              <div>
+                <p className="font-medium text-foreground">Cor de destaque</p>
+                <p className="text-sm text-muted-foreground">
+                  Personalize a cor principal
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-1.5">
+              {accentColors.map((color) => (
+                <button
+                  key={color.id}
+                  onClick={() => changeAccentColor(color.id)}
+                  className={`w-7 h-7 rounded-full ${color.preview} transition-all ${
+                    accentColor === color.id 
+                      ? "ring-2 ring-offset-2 ring-offset-background ring-foreground scale-110" 
+                      : "hover:scale-105"
+                  }`}
+                  aria-label={color.label}
+                  title={color.label}
+                />
+              ))}
             </div>
           </div>
 
