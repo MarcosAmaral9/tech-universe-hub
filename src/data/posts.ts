@@ -645,8 +645,139 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-27",
     readTime: "8 min"
   },
-];
 
+  // OTAKU Posts (Novos — a partir das primeiras datas livres após 01/02/2026)
+  {
+    id: "45",
+    slug: "animes-mais-aguardados-2026",
+    title: "Os 10 Animes Mais Aguardados de 2026: O Que Vai Dominar as Telas Este Ano",
+    excerpt: "Do retorno de clássicos às novas apostas dos grandes estúdios — guia completo para não perder nenhum lançamento em 2026.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: otakuAnimes2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-03-04",
+    readTime: "10 min"
+  },
+  {
+    id: "46",
+    slug: "comecar-cosplay-2026",
+    title: "Guia Definitivo para Começar no Cosplay em 2026: Do Zero à Convenção",
+    excerpt: "Materiais, técnicas, orçamentos e um plano realista para criar seu primeiro cosplay e curtir sua primeira convenção.",
+    content: "",
+    category: "otaku",
+    subtopic: "cosplay",
+    image: otakuCosplay2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-03-05",
+    readTime: "12 min"
+  },
+  {
+    id: "47",
+    slug: "manga-vs-anime-adaptacao",
+    title: "Mangá vs. Anime: Quando a Adaptação Supera o Original (e Quando Decepciona)",
+    excerpt: "O que separa uma adaptação lendária de uma decepção coletiva — com critérios claros e exemplos marcantes.",
+    content: "",
+    category: "otaku",
+    subtopic: "comparativos",
+    image: otakuMangaVsAnimeImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-06",
+    readTime: "11 min"
+  },
+  {
+    id: "48",
+    slug: "cultura-otaku-brasil-2026",
+    title: "Cultura Otaku no Brasil 2026: Como Virou uma das Maiores Comunidades do Mundo",
+    excerpt: "Da TV aberta ao streaming: a linha do tempo, os números e os desafios de uma comunidade gigante — e em evolução.",
+    content: "",
+    category: "otaku",
+    subtopic: "cultura",
+    image: otakuCulturaBrasil2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-03-07",
+    readTime: "12 min"
+  },
+  {
+    id: "49",
+    slug: "melhores-jogos-anime-2026",
+    title: "Os Melhores Jogos de Anime de 2026: Do RPG ao Fighting Game",
+    excerpt: "Do cel-shading ao competitivo: os lançamentos mais fortes e como escolher o tipo de jogo perfeito pro seu estilo.",
+    content: "",
+    category: "otaku",
+    subtopic: "games",
+    image: otakuJogosAnime2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-03-08",
+    readTime: "10 min"
+  },
+  {
+    id: "50",
+    slug: "aprender-japones-assistindo-anime-2026",
+    title: "Como Aprender Japonês Assistindo Anime: O Método que Funciona em 2026",
+    excerpt: "Técnicas comprovadas, rotina semanal e ferramentas para transformar seu hobby em japonês real (sem ilusões).",
+    content: "",
+    category: "otaku",
+    subtopic: "idiomas",
+    image: otakuAprenderJaponesImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-09",
+    readTime: "13 min"
+  },
+  {
+    id: "51",
+    slug: "isekai-2026-por-que-domina",
+    title: "Isekai em 2026: Por Que o Gênero Mais Criticado do Anime Continua Dominando",
+    excerpt: "Entenda os clichês, as obras que transcendem o gênero e por que o público ainda volta para outro mundo.",
+    content: "",
+    category: "otaku",
+    subtopic: "generos",
+    image: otakuIsekai2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-03-10",
+    readTime: "12 min"
+  },
+  {
+    id: "52",
+    slug: "merchandising-otaku-colecionar-inteligencia",
+    title: "Merchandising Otaku: Como Colecionar com Inteligência e Sem Quebrar o Orçamento",
+    excerpt: "Onde comprar, como evitar falsificações, o que valoriza e como montar uma coleção bonita (e sustentável).",
+    content: "",
+    category: "otaku",
+    subtopic: "colecionismo",
+    image: otakuMerchandisingImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-11",
+    readTime: "12 min"
+  },
+  {
+    id: "53",
+    slug: "melhores-mangas-para-ler-2026",
+    title: "Os Melhores Mangás Para Ler em 2026: Guia por Gênero e Nível de Experiência",
+    excerpt: "Curadoria do iniciante ao veterano: por onde começar, o que ler depois e os títulos que você não pode ignorar.",
+    content: "",
+    category: "otaku",
+    subtopic: "manga",
+    image: otakuMelhoresMangas2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-03-12",
+    readTime: "14 min"
+  },
+  {
+    id: "54",
+    slug: "saude-mental-cultura-otaku",
+    title: "Saúde Mental e Cultura Otaku: Quando o Anime Ajuda e Quando Ele Isola",
+    excerpt: "Uma conversa honesta sobre escapismo saudável, sinais de alerta e como manter a cultura otaku como apoio — não fuga.",
+    content: "",
+    category: "otaku",
+    subtopic: "saude-mental",
+    image: otakuSaudeMentalImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-13",
+    readTime: "12 min"
+  },
+];
 export const getPostBySlug = (slug: string): BlogPost | undefined => {
   return blogPosts.find(post => post.slug === slug);
 };
