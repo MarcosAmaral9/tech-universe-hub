@@ -136,7 +136,7 @@ const InvestimentosPage = () => {
               key={n}
               variant={n === page ? "default" : "outline"}
               size="sm"
-              onClick={() => setPage(n)}
+              onClick={() => changePage(n)}
               className={n === page ? "bg-invest hover:bg-invest/90 text-white" : ""}
             >
               {n}
