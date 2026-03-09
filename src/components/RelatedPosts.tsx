@@ -1,14 +1,52 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
 import { getRelatedPosts } from "@/data/posts";
 import CategoryBadge from "./CategoryBadge";
+import { useAuthContext } from "@/contexts/AuthContext";
 
 interface RelatedPostsProps {
   currentSlug: string;
 }
 
+const MAX_VIEWED = 300;
+
+const getViewedKey = (userId: string) => `viciocode_viewed_posts:${userId}`;
+
+const safeParseViewed = (raw: string | null): string[] => {
+  if (!raw) return [];
+  try {
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed)) return parsed.filter((x) => typeof x === "string");
+    return [];
+  } catch {
+    return [];
+  }
+};
+
 const RelatedPosts = ({ currentSlug }: RelatedPostsProps) => {
-  const relatedPosts = getRelatedPosts(currentSlug, 3);
+  const { user } = useAuthContext();
+  const [viewedSlugs, setViewedSlugs] = useState<string[]>([]);
+  const [relatedPosts, setRelatedPosts] = useState(() => getRelatedPosts(currentSlug, 3));
+
+  // Track viewed posts (per-user) so we can suggest unseen related posts when logged in.
+  useEffect(() => {
+    if (!user) {
+      setViewedSlugs([]);
+      setRelatedPosts(getRelatedPosts(currentSlug, 3));
+      return;
+    }
+
+    const key = getViewedKey(user.id);
+    const existing = safeParseViewed(localStorage.getItem(key));
+
+    // Add current slug to the viewed list
+    const next = [currentSlug, ...existing.filter((s) => s !== currentSlug)].slice(0, MAX_VIEWED);
+    localStorage.setItem(key, JSON.stringify(next));
+    setViewedSlugs(next);
+
+    setRelatedPosts(getRelatedPosts(currentSlug, 3, { viewedSlugs: next }));
+  }, [user?.id, currentSlug]);
 
   if (relatedPosts.length === 0) return null;
 
@@ -18,7 +56,7 @@ const RelatedPosts = ({ currentSlug }: RelatedPostsProps) => {
         <ArrowRight className="h-6 w-6 text-primary" />
         Posts Relacionados
       </h3>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {relatedPosts.map((post) => (
           <Link
@@ -36,16 +74,14 @@ const RelatedPosts = ({ currentSlug }: RelatedPostsProps) => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
             </div>
-            
+
             <CategoryBadge category={post.category} size="sm" />
-            
+
             <h4 className="font-semibold text-sm mt-2 line-clamp-2 group-hover:text-primary transition-colors">
               {post.title}
             </h4>
-            
-            <p className="text-xs text-muted-foreground mt-1">
-              {post.readTime} de leitura
-            </p>
+
+            <p className="text-xs text-muted-foreground mt-1">{post.readTime} de leitura</p>
           </Link>
         ))}
       </div>
@@ -54,3 +90,4 @@ const RelatedPosts = ({ currentSlug }: RelatedPostsProps) => {
 };
 
 export default RelatedPosts;
+
