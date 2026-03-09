@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { MessageCircle, Send, Trash2, Shield, LogIn } from "lucide-react";
+import { useState, useEffect, useMemo } from "react";
+import { MessageCircle, Send, Trash2, Shield, LogIn, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "react-router-dom";
@@ -29,14 +29,25 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
   const [isLoading, setIsLoading] = useState(true);
 
   // Load comments from database
+  const isOffline = !navigator.onLine;
+  const isMobilePWA = /Mobi|Android/i.test(navigator.userAgent) && window.matchMedia("(display-mode: standalone)").matches;
+  const limitOffline = isOffline && isMobilePWA;
+
   useEffect(() => {
     const fetchComments = async () => {
       setIsLoading(true);
-      const { data, error } = await supabase
+      let query = supabase
         .from("comments")
         .select("*")
         .eq("post_id", postId)
         .order("created_at", { ascending: false });
+
+      // In PWA offline mode on mobile, only fetch last 3 comments
+      if (limitOffline) {
+        query = query.limit(3);
+      }
+
+      const { data, error } = await query;
 
       if (!error && data) {
         setComments(data as Comment[]);
@@ -197,40 +208,7 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
 
       {/* Comments List */}
       {!isLoading && (
-        <div className="space-y-6">
-          {comments.map((comment) => (
-            <div
-              key={comment.id}
-              className="p-5 bg-card rounded-xl border border-border animate-fade-in"
-            >
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold">
-                    {comment.author_name[0]?.toUpperCase() || "?"}
-                  </div>
-                  <div>
-                    <span className="font-semibold text-foreground">{comment.author_name}</span>
-                    <span className="block text-xs text-muted-foreground">
-                      {new Date(comment.created_at).toLocaleDateString("pt-BR")}
-                    </span>
-                  </div>
-                </div>
-                {user?.id === comment.user_id && (
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={() => handleDelete(comment.id)}
-                    className="h-8 w-8 text-muted-foreground hover:text-destructive"
-                    title="Excluir comentário"
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </Button>
-                )}
-              </div>
-              <p className="text-foreground/90 leading-relaxed">{comment.content}</p>
-            </div>
-          ))}
-        </div>
+        <CommentsListView comments={comments} user={user} onDelete={handleDelete} />
       )}
 
       {!isLoading && comments.length === 0 && (
@@ -239,6 +217,75 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
         </p>
       )}
     </section>
+  );
+};
+
+/** Sub-component: shows 3 comments for guests, all for logged-in users */
+const CommentsListView = ({
+  comments,
+  user,
+  onDelete,
+}: {
+  comments: Comment[];
+  user: any;
+  onDelete: (id: string) => void;
+}) => {
+  const [showAll, setShowAll] = useState(false);
+  const isLoggedIn = !!user;
+  const visibleComments = isLoggedIn || showAll ? comments : comments.slice(0, 3);
+  const hasMore = !isLoggedIn && !showAll && comments.length > 3;
+
+  if (comments.length === 0) return null;
+
+  return (
+    <div className="space-y-6">
+      {visibleComments.map((comment) => (
+        <div
+          key={comment.id}
+          className="p-5 bg-card rounded-xl border border-border animate-fade-in"
+        >
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold">
+                {comment.author_name[0]?.toUpperCase() || "?"}
+              </div>
+              <div>
+                <span className="font-semibold text-foreground">{comment.author_name}</span>
+                <span className="block text-xs text-muted-foreground">
+                  {new Date(comment.created_at).toLocaleDateString("pt-BR")}
+                </span>
+              </div>
+            </div>
+            {user?.id === comment.user_id && (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => onDelete(comment.id)}
+                className="h-8 w-8 text-muted-foreground hover:text-destructive"
+                title="Excluir comentário"
+              >
+                <Trash2 className="h-4 w-4" />
+              </Button>
+            )}
+          </div>
+          <p className="text-foreground/90 leading-relaxed">{comment.content}</p>
+        </div>
+      ))}
+
+      {hasMore && (
+        <div className="text-center">
+          <p className="text-sm text-muted-foreground mb-3">
+            Faça login para ver todos os {comments.length} comentários
+          </p>
+          <Button asChild variant="outline" className="gap-2">
+            <Link to="/entrar">
+              <LogIn className="h-4 w-4" />
+              Entrar para ver mais
+            </Link>
+          </Button>
+        </div>
+      )}
+    </div>
   );
 };
 

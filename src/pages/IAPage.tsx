@@ -14,6 +14,11 @@ const IAPage = () => {
   const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
   const paged = posts.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
 
+  const changePage = (newPage: number | ((p: number) => number)) => {
+    setPage(newPage);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="container py-8">
       {/* Header */}
@@ -29,6 +34,7 @@ const IAPage = () => {
           <div className="w-2 h-12 bg-ia rounded-full"></div>
           <h1 className="font-display text-3xl md:text-5xl font-bold">
             Inteligência <span className="text-ia">Artificial</span>
+            <span className="ml-3 text-base font-normal text-muted-foreground align-middle">({posts.length} artigos)</span>
           </h1>
         </div>
         
@@ -60,7 +66,7 @@ const IAPage = () => {
             variant="outline"
             size="icon"
             disabled={page === 1}
-            onClick={() => setPage((p) => p - 1)}
+            onClick={() => changePage((p) => p - 1)}
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
@@ -70,7 +76,7 @@ const IAPage = () => {
               key={n}
               variant={n === page ? "default" : "outline"}
               size="sm"
-              onClick={() => setPage(n)}
+              onClick={() => changePage(n)}
               className={n === page ? "bg-ia hover:bg-ia/90 text-white" : ""}
             >
               {n}
@@ -81,7 +87,7 @@ const IAPage = () => {
             variant="outline"
             size="icon"
             disabled={page === totalPages}
-            onClick={() => setPage((p) => p + 1)}
+            onClick={() => changePage((p) => p + 1)}
           >
             <ChevronRight className="h-4 w-4" />
           </Button>

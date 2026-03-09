@@ -1,10 +1,17 @@
 import FeaturedCarousel from "@/components/FeaturedCarousel";
 import PostCard from "@/components/PostCard";
 import SocialSection from "@/components/SocialSection";
-import { blogPosts } from "@/data/posts";
+import { blogPosts, getPostsByCategory } from "@/data/posts";
 import { Link } from "react-router-dom";
 
 const Index = () => {
+  const categoryCounts = {
+    ia: getPostsByCategory("ia").length,
+    invest: getPostsByCategory("invest").length,
+    geek: getPostsByCategory("geek").length,
+    otaku: getPostsByCategory("otaku").length,
+  };
+
   const categories = [
     { id: "ia", name: "Inteligência Artificial", color: "text-ia", bgColor: "bg-ia/10", borderColor: "border-ia" },
     { id: "invest", name: "Finanças", color: "text-invest", bgColor: "bg-invest/10", borderColor: "border-invest" },
@@ -32,6 +39,9 @@ const Index = () => {
             >
               <span className={`font-display font-bold text-lg ${cat.color}`}>
                 {cat.name}
+              </span>
+              <span className="block text-sm text-muted-foreground mt-1">
+                {categoryCounts[cat.id as keyof typeof categoryCounts]} artigos
               </span>
             </Link>
           ))}

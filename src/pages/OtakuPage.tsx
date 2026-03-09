@@ -28,6 +28,11 @@ const OtakuPage = () => {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [page, setPage] = useState(1);
 
+  const changePage = (newPage: number | ((p: number) => number)) => {
+    setPage(newPage);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   // Extract available subtopics from posts
   const subtopics = useMemo(() => {
     const set = new Set<string>();
@@ -69,6 +74,7 @@ const OtakuPage = () => {
           <div className="w-2 h-12 bg-otaku rounded-full"></div>
           <h1 className="font-display text-3xl md:text-5xl font-bold">
             Mundo <span className="text-otaku">Otaku</span>
+            <span className="ml-3 text-base font-normal text-muted-foreground align-middle">({allPosts.length} artigos)</span>
           </h1>
         </div>
 
@@ -127,7 +133,7 @@ const OtakuPage = () => {
             variant="outline"
             size="icon"
             disabled={page === 1}
-            onClick={() => setPage((p) => p - 1)}
+            onClick={() => changePage((p) => p - 1)}
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
@@ -137,7 +143,7 @@ const OtakuPage = () => {
               key={n}
               variant={n === page ? "default" : "outline"}
               size="sm"
-              onClick={() => setPage(n)}
+              onClick={() => changePage(n)}
               className={n === page ? "bg-otaku hover:bg-otaku/90 text-white" : ""}
             >
               {n}
@@ -148,7 +154,7 @@ const OtakuPage = () => {
             variant="outline"
             size="icon"
             disabled={page === totalPages}
-            onClick={() => setPage((p) => p + 1)}
+            onClick={() => changePage((p) => p + 1)}
           >
             <ChevronRight className="h-4 w-4" />
           </Button>

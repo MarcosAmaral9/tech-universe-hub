@@ -106,6 +106,16 @@ export default defineConfig(({ mode }) => ({
             },
           },
           {
+            // Supabase REST API (comments, profiles) — network first, cache for offline
+            urlPattern: /\/rest\/v1\//i,
+            handler: "NetworkFirst",
+            options: {
+              cacheName: "supabase-rest",
+              expiration: { maxEntries: 50, maxAgeSeconds: 60 * 60 * 24 },
+              networkTimeoutSeconds: 5,
+            },
+          },
+          {
             // External API calls (CoinGecko etc.)
             urlPattern: /^https:\/\/api\.coingecko\.com\/.*/i,
             handler: "NetworkFirst",
