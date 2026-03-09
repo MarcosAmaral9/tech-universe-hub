@@ -143,7 +143,7 @@ const OtakuPage = () => {
               key={n}
               variant={n === page ? "default" : "outline"}
               size="sm"
-              onClick={() => setPage(n)}
+              onClick={() => changePage(n)}
               className={n === page ? "bg-otaku hover:bg-otaku/90 text-white" : ""}
             >
               {n}
