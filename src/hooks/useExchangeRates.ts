@@ -19,11 +19,13 @@ const CACHE_KEY = "exchange_rates_cache";
 const CACHE_DURATION_SUCCESS = 1000 * 60 * 30; // 30 min
 const CACHE_DURATION_FALLBACK = 1000 * 60 * 60; // 60 min
 
+// Updated fallback values (March 2026): Gold 18k ~R$655/g, Silver 925 ~R$7/g
+// Per troy oz (31.1035g): XAU at 100% ~R$27,177 | XAG at 100% ~R$235
 const LOCAL_FALLBACK: ExchangeData = {
   USDBRL: { bid: "5.85", pctChange: "0.32", high: "5.90", low: "5.80" },
   EURBRL: { bid: "6.35", pctChange: "-0.15", high: "6.40", low: "6.30" },
-  XAUBRL: { bid: "16173.82", pctChange: "0.45", high: "16329.34", low: "16111.61" },
-  XAGBRL: { bid: "192.84", pctChange: "-0.30", high: "197.52", low: "189.74" },
+  XAUBRL: { bid: "27177.00", pctChange: "0.45", high: "27450.00", low: "26900.00" },
+  XAGBRL: { bid: "235.41", pctChange: "-0.30", high: "240.00", low: "230.00" },
   _meta: { fallback: true, source: "local-static", ttlMs: CACHE_DURATION_FALLBACK },
 };
 
