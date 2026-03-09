@@ -89,6 +89,11 @@ const Footer = () => {
                   Instalar App
                 </Link>
               </li>
+              <li>
+                <Link to="/configuracoes" className="text-muted-foreground hover:text-primary transition-colors">
+                  Configurações
+                </Link>
+              </li>
             </ul>
             {/* Social icons */}
             <div className="flex gap-4 mt-6">
