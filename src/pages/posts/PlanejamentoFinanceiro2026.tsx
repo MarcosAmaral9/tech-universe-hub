@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
+import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, Calendar, User, ChevronRight, Target, CheckCircle2, CalendarDays } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -168,6 +169,7 @@ const PlanejamentoFinanceiro2026 = () => {
             <span className="flex items-center gap-1"><Calendar className="h-4 w-4" /> 24 Fev 2026</span>
             <span className="flex items-center gap-1"><Clock className="h-4 w-4" /> 11 min de leitura</span>
           </div>
+          <ShareWhatsApp />
         </header>
 
         <div className="rounded-2xl overflow-hidden mb-8">

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Landmark, Users, Wind, Heart, Cpu, DollarSign, Target, Laptop, Gamepad2, HelpCircle, Shield, Swords, Map, BookOpen } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -45,6 +46,7 @@ const ACUnity = () => {
             18 min de leitura
           </span>
         </div>
+        <ShareWhatsApp />
       </header>
 
       {/* Featured Image */}

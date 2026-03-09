@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, Calendar, User, AlertTriangle, ChevronRight, Zap, CheckCircle2, Target, PieChart } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -190,6 +191,7 @@ const CarteiraIniciantes2026 = () => {
             <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />17 de Fevereiro, 2026</span>
             <span className="flex items-center gap-2"><Clock className="h-4 w-4" />13 min de leitura</span>
           </div>
+          <ShareWhatsApp />
         </header>
 
         <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">

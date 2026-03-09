@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, Calendar, User, ChevronRight, ChevronDown, ChevronUp, Zap, AlertTriangle, Shield, TrendingUp, TrendingDown, Bitcoin } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -91,6 +92,7 @@ const BitcoinCripto2026 = () => {
             <span className="flex items-center gap-1"><Calendar className="h-4 w-4" /> 18 Fev 2026</span>
             <span className="flex items-center gap-1"><Clock className="h-4 w-4" /> 14 min de leitura</span>
           </div>
+          <ShareWhatsApp />
         </header>
 
         <img src={cryptoImg} alt="Bitcoin e Criptomoedas em 2026" className="w-full rounded-2xl mb-8 aspect-video object-cover" loading="lazy" />
