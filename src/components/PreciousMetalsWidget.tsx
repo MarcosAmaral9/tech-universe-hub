@@ -18,9 +18,10 @@ interface MetalRate {
   lowPerGram: number;
 }
 
+// Updated fallback values (March 2026): Gold 18k ~R$655/g, Silver 925 ~R$7/g
 const FALLBACK: MetalRate[] = [
-  { code: "XAU", name: "Ouro", purity: "18k", bidPerGram: 390.00, pctChange: "0.45", highPerGram: 393.75, lowPerGram: 388.50 },
-  { code: "XAG", name: "Prata", purity: "925", bidPerGram: 5.73, pctChange: "-0.30", highPerGram: 5.87, lowPerGram: 5.64 },
+  { code: "XAU", name: "Ouro", purity: "18k", bidPerGram: 655.00, pctChange: "0.45", highPerGram: 662.00, lowPerGram: 648.00 },
+  { code: "XAG", name: "Prata", purity: "925", bidPerGram: 7.00, pctChange: "-0.30", highPerGram: 7.15, lowPerGram: 6.85 },
 ];
 
 const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
