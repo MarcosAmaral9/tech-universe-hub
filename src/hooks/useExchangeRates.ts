@@ -4,6 +4,8 @@ import { supabase } from "@/integrations/supabase/client";
 interface ExchangeData {
   USDBRL?: { bid: string; pctChange: string; high: string; low: string };
   EURBRL?: { bid: string; pctChange: string; high: string; low: string };
+  ARSBRL?: { bid: string; pctChange: string; high: string; low: string };
+  PYGBRL?: { bid: string; pctChange: string; high: string; low: string };
   XAUBRL?: { bid: string; pctChange: string; high: string; low: string };
   XAGBRL?: { bid: string; pctChange: string; high: string; low: string };
   _meta?: {
