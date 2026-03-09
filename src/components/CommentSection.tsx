@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { MessageCircle, Send, Trash2, Shield, LogIn } from "lucide-react";
+import { useState, useEffect, useMemo } from "react";
+import { MessageCircle, Send, Trash2, Shield, LogIn, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "react-router-dom";
