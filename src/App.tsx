@@ -90,6 +90,16 @@ const ACSyndicate = lazy(() => import("./pages/posts/ACSyndicate"));
 const ACUnity = lazy(() => import("./pages/posts/ACUnity"));
 const ACRogue = lazy(() => import("./pages/posts/ACRogue"));
 const ACRanking2026 = lazy(() => import("./pages/posts/ACRanking2026"));
+const ChatGPTvsGeminiClaude2026 = lazy(() => import("./pages/posts/ChatGPTvsGeminiClaude2026"));
+const IAGanharDinheiro2026 = lazy(() => import("./pages/posts/IAGanharDinheiro2026"));
+const IATrabalho2026 = lazy(() => import("./pages/posts/IATrabalho2026"));
+const AppsIAProdutividade2026 = lazy(() => import("./pages/posts/AppsIAProdutividade2026"));
+const IAGenerativaIniciantes2026 = lazy(() => import("./pages/posts/IAGenerativaIniciantes2026"));
+const DeepfakesIA2026 = lazy(() => import("./pages/posts/DeepfakesIA2026"));
+const IAEducacao2026 = lazy(() => import("./pages/posts/IAEducacao2026"));
+const AgentesIA2026 = lazy(() => import("./pages/posts/AgentesIA2026"));
+const IASaude2026 = lazy(() => import("./pages/posts/IASaude2026"));
+const RegulamentacaoIA2026 = lazy(() => import("./pages/posts/RegulamentacaoIA2026"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
