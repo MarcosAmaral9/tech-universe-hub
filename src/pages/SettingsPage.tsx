@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
-import { Settings, Sun, Moon, Type, Palette, Bell, BellOff, RotateCcw } from "lucide-react";
+import { Settings, Sun, Moon, Type, Palette, Bell, BellOff, RotateCcw, Smartphone, Globe, User, AtSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useAuthContext } from "@/contexts/AuthContext";
 import { toast } from "@/hooks/use-toast";
 
 const NOTIFICATION_SOUND_KEY = "pwa_update_sound_enabled";
@@ -25,6 +28,7 @@ const DEFAULT_PRIMARY_HSL = "187 85% 43%";
 
 const SettingsPage = () => {
   const { theme, toggleTheme } = useTheme();
+  const { user, profile, updateProfile, signOut } = useAuthContext();
   const [soundEnabled, setSoundEnabled] = useState(() => {
     const stored = localStorage.getItem(NOTIFICATION_SOUND_KEY);
     return stored === null ? true : stored === "true";
@@ -35,6 +39,18 @@ const SettingsPage = () => {
   const [accentColor, setAccentColor] = useState<AccentColor>(() => {
     return (localStorage.getItem(ACCENT_COLOR_KEY) as AccentColor) || "cyan";
   });
+
+  // Profile editing
+  const [editName, setEditName] = useState("");
+  const [editNickname, setEditNickname] = useState("");
+  const [savingProfile, setSavingProfile] = useState(false);
+
+  useEffect(() => {
+    if (profile) {
+      setEditName(profile.name);
+      setEditNickname(profile.nickname);
+    }
+  }, [profile]);
 
   const toggleSound = () => {
     const newValue = !soundEnabled;
@@ -59,22 +75,46 @@ const SettingsPage = () => {
     }
   };
 
+  const handleSaveProfile = async () => {
+    if (!user) return;
+    setSavingProfile(true);
+    const error = await updateProfile({ name: editName.trim(), nickname: editNickname.trim() });
+    if (error) {
+      toast({ title: "Erro", description: "Não foi possível salvar.", variant: "destructive" });
+    } else {
+      toast({ title: "Perfil atualizado! ✅" });
+    }
+    setSavingProfile(false);
+  };
+
+  const handleToggleNotification = async (key: "notifications_site" | "notifications_app", value: boolean) => {
+    if (!user) return;
+
+    // If enabling app notifications, request browser permission
+    if (key === "notifications_app" && value && "Notification" in window) {
+      const permission = await Notification.requestPermission();
+      if (permission !== "granted") {
+        toast({ title: "Permissão negada", description: "Ative as notificações no navegador para receber alertas.", variant: "destructive" });
+        return;
+      }
+    }
+
+    const error = await updateProfile({ [key]: value });
+    if (error) {
+      toast({ title: "Erro", description: "Não foi possível atualizar.", variant: "destructive" });
+    } else {
+      toast({ title: value ? "Notificações ativadas ✅" : "Notificações desativadas" });
+    }
+  };
+
   const resetAll = () => {
-    // Theme → dark
     if (theme !== "dark") toggleTheme();
-
-    // Font → normal
     changeFontSize("normal");
-
-    // Accent → cyan (default)
     changeAccentColor("cyan");
     document.documentElement.style.setProperty("--primary", DEFAULT_PRIMARY_HSL);
     document.documentElement.style.setProperty("--ring", DEFAULT_PRIMARY_HSL);
-
-    // Sound → on
     setSoundEnabled(true);
     localStorage.setItem(NOTIFICATION_SOUND_KEY, "true");
-
     toast({ title: "Configurações restauradas", description: "Todas as preferências voltaram ao padrão." });
   };
 
@@ -93,6 +133,68 @@ const SettingsPage = () => {
             Personalize sua experiência no VICIO&lt;CODE&gt;
           </p>
         </div>
+
+        {/* User Profile Section */}
+        {user && profile && (
+          <section className="rounded-2xl border border-border bg-card p-6 space-y-4">
+            <h2 className="text-lg font-semibold text-foreground flex items-center gap-2">
+              <User className="w-5 h-5 text-primary" /> Meu Perfil
+            </h2>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="space-y-2">
+                <Label htmlFor="profile-name" className="flex items-center gap-1"><User className="w-3.5 h-3.5" /> Nome</Label>
+                <Input id="profile-name" value={editName} onChange={(e) => setEditName(e.target.value)} />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="profile-nickname" className="flex items-center gap-1"><AtSign className="w-3.5 h-3.5" /> Apelido</Label>
+                <Input id="profile-nickname" value={editNickname} onChange={(e) => setEditNickname(e.target.value)} />
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between text-sm text-muted-foreground">
+              <span>📧 {user.email}</span>
+              <Button size="sm" onClick={handleSaveProfile} disabled={savingProfile}>
+                {savingProfile ? "Salvando..." : "Salvar perfil"}
+              </Button>
+            </div>
+
+            {/* Notification Preferences */}
+            <div className="border-t border-border pt-4 space-y-3">
+              <h3 className="text-sm font-semibold text-foreground">Notificações</h3>
+
+              <div className="flex items-center justify-between py-2">
+                <div className="flex items-center gap-3">
+                  <Globe className="w-5 h-5 text-primary" />
+                  <div>
+                    <p className="font-medium text-foreground text-sm">Notificações do site</p>
+                    <p className="text-xs text-muted-foreground">Alertas e atualizações no navegador</p>
+                  </div>
+                </div>
+                <Switch
+                  checked={profile.notifications_site}
+                  onCheckedChange={(v) => handleToggleNotification("notifications_site", v)}
+                  aria-label="Notificações do site"
+                />
+              </div>
+
+              <div className="flex items-center justify-between py-2">
+                <div className="flex items-center gap-3">
+                  <Smartphone className="w-5 h-5 text-primary" />
+                  <div>
+                    <p className="font-medium text-foreground text-sm">Notificações do app</p>
+                    <p className="text-xs text-muted-foreground">Push notifications no dispositivo</p>
+                  </div>
+                </div>
+                <Switch
+                  checked={profile.notifications_app}
+                  onCheckedChange={(v) => handleToggleNotification("notifications_app", v)}
+                  aria-label="Notificações do app"
+                />
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Settings Card */}
         <section className="rounded-2xl border border-border bg-card p-6 space-y-4">
@@ -171,12 +273,19 @@ const SettingsPage = () => {
           </div>
         </section>
 
-        {/* Reset Button */}
-        <div className="text-center">
+        {/* Reset & Logout */}
+        <div className="text-center space-y-3">
           <Button variant="outline" onClick={resetAll} className="gap-2">
             <RotateCcw className="w-4 h-4" />
             Restaurar padrão
           </Button>
+          {user && (
+            <div>
+              <Button variant="ghost" onClick={signOut} className="gap-2 text-destructive hover:text-destructive">
+                Sair da conta
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </div>
