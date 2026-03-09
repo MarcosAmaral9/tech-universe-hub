@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Moon, Sun, Search, Menu, X, FileText, ChevronDown } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Moon, Sun, Search, Menu, X, FileText, ChevronDown, LogIn, LogOut, User } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useAuthContext } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import SearchModal from "./SearchModal";
@@ -14,9 +16,11 @@ import SettingsDrawer from "./SettingsDrawer";
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
+  const { user, profile, signOut } = useAuthContext();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navLinks = [
     { name: "IAs", path: "/ia", color: "text-ia" },
@@ -36,6 +40,13 @@ const Header = () => {
 
   const isActive = (path: string) => location.pathname === path;
   const isLegalActive = legalLinks.some(link => location.pathname === link.path);
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate("/");
+  };
+
+  const displayName = profile?.nickname || profile?.name || user?.email?.split("@")[0] || "Usuário";
 
   return (
     <>
@@ -105,6 +116,38 @@ const Header = () => {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
+
+            {/* User Menu / Login Button */}
+            {user ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="sm" className="gap-2 hover:bg-secondary">
+                    {profile?.avatar_url ? (
+                      <img src={profile.avatar_url} alt="" className="w-6 h-6 rounded-full object-cover" />
+                    ) : (
+                      <User className="h-4 w-4" />
+                    )}
+                    <span className="hidden lg:inline max-w-[100px] truncate">{displayName}</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48">
+                  <DropdownMenuItem asChild>
+                    <Link to="/configuracoes" className="w-full">⚙️ Configurações</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={handleSignOut} className="text-destructive">
+                    <LogOut className="w-4 h-4 mr-2" /> Sair
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Button variant="ghost" size="sm" asChild className="gap-2 hover:bg-secondary text-muted-foreground">
+                <Link to="/entrar">
+                  <LogIn className="h-4 w-4" />
+                  <span className="hidden lg:inline">Entrar</span>
+                </Link>
+              </Button>
+            )}
             
             <SettingsDrawer />
 
@@ -139,6 +182,36 @@ const Header = () => {
                 </Link>
               ))}
               
+              {/* Divider */}
+              <div className="my-2 border-t border-border" />
+
+              {/* Auth link in mobile */}
+              {user ? (
+                <>
+                  <Link
+                    to="/configuracoes"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="px-4 py-3 rounded-lg font-medium text-muted-foreground hover:text-foreground hover:bg-secondary"
+                  >
+                    ⚙️ Configurações
+                  </Link>
+                  <button
+                    onClick={() => { handleSignOut(); setIsMenuOpen(false); }}
+                    className="px-4 py-3 rounded-lg font-medium text-destructive hover:bg-secondary text-left"
+                  >
+                    Sair
+                  </button>
+                </>
+              ) : (
+                <Link
+                  to="/entrar"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="px-4 py-3 rounded-lg font-medium text-primary hover:bg-secondary flex items-center gap-2"
+                >
+                  <LogIn className="w-4 h-4" /> Entrar / Criar Conta
+                </Link>
+              )}
+
               {/* Divider */}
               <div className="my-2 border-t border-border" />
               

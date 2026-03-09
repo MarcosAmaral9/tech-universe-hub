@@ -179,8 +179,9 @@ const App = () => (
             </Suspense>
           </Layout>
         </BrowserRouter>
-      </TooltipProvider>
-    </ThemeProvider>
+          </TooltipProvider>
+        </AuthProvider>
+      </ThemeProvider>
   </QueryClientProvider>
 );
 
