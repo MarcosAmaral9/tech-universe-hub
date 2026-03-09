@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback, forwardRef } from "react";
 import { Bitcoin, TrendingUp, TrendingDown, AlertTriangle } from "lucide-react";
+import CacheStatusBar from "@/components/CacheStatusBar";
+import PriceAlertConfig from "@/components/PriceAlertConfig";
 
 interface CryptoData {
   id: string;
