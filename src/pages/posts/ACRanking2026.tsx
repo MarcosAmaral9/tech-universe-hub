@@ -117,6 +117,7 @@ const ACRanking2026 = () => {
             10 min de leitura
           </span>
         </div>
+        <ShareWhatsApp />
       </header>
 
       {/* Featured Image */}

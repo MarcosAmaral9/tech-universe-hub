@@ -24,6 +24,7 @@ const IARemasterizacaoJogos = () => {
           <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />01 de Fevereiro, 2026</span>
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />6 min de leitura</span>
         </div>
+        <ShareWhatsApp />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">

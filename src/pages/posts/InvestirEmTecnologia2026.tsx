@@ -38,6 +38,7 @@ const InvestirEmTecnologia2026 = () => {
             12 min de leitura
           </span>
         </div>
+        <ShareWhatsApp />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
