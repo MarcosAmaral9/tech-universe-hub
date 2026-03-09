@@ -1,47 +1,17 @@
 import { useState, useEffect } from "react";
-import { Download, Smartphone, Monitor, Share, MoreVertical, PlusSquare, CheckCircle2, Bell, BellOff, Settings, Sun, Moon, Type, Palette } from "lucide-react";
+import { Download, Smartphone, Monitor, Share, MoreVertical, PlusSquare, CheckCircle2, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
-import { useTheme } from "@/contexts/ThemeContext";
+import { Link } from "react-router-dom";
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
   userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
 }
 
-const NOTIFICATION_SOUND_KEY = "pwa_update_sound_enabled";
-const FONT_SIZE_KEY = "viciocode_font_size";
-const ACCENT_COLOR_KEY = "viciocode_accent_color";
-
-type FontSize = "small" | "normal" | "large";
-type AccentColor = "cyan" | "purple" | "green" | "orange" | "pink" | "blue";
-
-const accentColors: { id: AccentColor; label: string; hsl: string; preview: string }[] = [
-  { id: "cyan", label: "Ciano", hsl: "187 85% 43%", preview: "bg-[hsl(187,85%,43%)]" },
-  { id: "purple", label: "Roxo", hsl: "270 70% 55%", preview: "bg-[hsl(270,70%,55%)]" },
-  { id: "green", label: "Verde", hsl: "142 70% 45%", preview: "bg-[hsl(142,70%,45%)]" },
-  { id: "orange", label: "Laranja", hsl: "25 95% 55%", preview: "bg-[hsl(25,95%,55%)]" },
-  { id: "pink", label: "Rosa", hsl: "330 80% 60%", preview: "bg-[hsl(330,80%,60%)]" },
-  { id: "blue", label: "Azul", hsl: "220 90% 55%", preview: "bg-[hsl(220,90%,55%)]" },
-];
-
 const InstallPage = () => {
-  const { theme, toggleTheme } = useTheme();
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [isInstalled, setIsInstalled] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
-  const [soundEnabled, setSoundEnabled] = useState(() => {
-    const stored = localStorage.getItem(NOTIFICATION_SOUND_KEY);
-    return stored === null ? true : stored === "true";
-  });
-  const [fontSize, setFontSize] = useState<FontSize>(() => {
-    const stored = localStorage.getItem(FONT_SIZE_KEY) as FontSize;
-    return stored || "normal";
-  });
-  const [accentColor, setAccentColor] = useState<AccentColor>(() => {
-    const stored = localStorage.getItem(ACCENT_COLOR_KEY) as AccentColor;
-    return stored || "cyan";
-  });
 
   useEffect(() => {
     const ua = navigator.userAgent;
@@ -69,47 +39,6 @@ const InstallPage = () => {
     if (outcome === "accepted") setIsInstalled(true);
     setDeferredPrompt(null);
   };
-
-  const toggleSound = () => {
-    const newValue = !soundEnabled;
-    setSoundEnabled(newValue);
-    localStorage.setItem(NOTIFICATION_SOUND_KEY, String(newValue));
-  };
-
-  const changeFontSize = (size: FontSize) => {
-    setFontSize(size);
-    localStorage.setItem(FONT_SIZE_KEY, size);
-    document.documentElement.classList.remove("font-small", "font-normal", "font-large");
-    document.documentElement.classList.add(`font-${size}`);
-  };
-
-  useEffect(() => {
-    const savedSize = localStorage.getItem(FONT_SIZE_KEY) as FontSize;
-    if (savedSize) {
-      document.documentElement.classList.add(`font-${savedSize}`);
-    }
-  }, []);
-
-  const changeAccentColor = (color: AccentColor) => {
-    setAccentColor(color);
-    localStorage.setItem(ACCENT_COLOR_KEY, color);
-    const colorData = accentColors.find(c => c.id === color);
-    if (colorData) {
-      document.documentElement.style.setProperty("--primary", colorData.hsl);
-      document.documentElement.style.setProperty("--ring", colorData.hsl);
-    }
-  };
-
-  useEffect(() => {
-    const savedColor = localStorage.getItem(ACCENT_COLOR_KEY) as AccentColor;
-    if (savedColor) {
-      const colorData = accentColors.find(c => c.id === savedColor);
-      if (colorData) {
-        document.documentElement.style.setProperty("--primary", colorData.hsl);
-        document.documentElement.style.setProperty("--ring", colorData.hsl);
-      }
-    }
-  }, []);
 
   return (
     <div className="min-h-[70vh] py-12 px-4">
@@ -238,124 +167,15 @@ const InstallPage = () => {
           </section>
         </div>
 
-        {/* Settings */}
-        <section className="rounded-2xl border border-border bg-card p-6 space-y-4">
-          <div className="flex items-center gap-3">
-            <Settings className="w-6 h-6 text-primary" />
-            <h2 className="text-xl font-bold text-foreground">Configurações do App</h2>
-          </div>
-          
-          {/* Theme Toggle */}
-          <div className="flex items-center justify-between py-3 border-b border-border">
-            <div className="flex items-center gap-3">
-              {theme === "dark" ? (
-                <Moon className="w-5 h-5 text-primary" />
-              ) : (
-                <Sun className="w-5 h-5 text-primary" />
-              )}
-              <div>
-                <p className="font-medium text-foreground">Tema</p>
-                <p className="text-sm text-muted-foreground">
-                  {theme === "dark" ? "Modo escuro ativado" : "Modo claro ativado"}
-                </p>
-              </div>
-            </div>
-            <Switch
-              checked={theme === "dark"}
-              onCheckedChange={toggleTheme}
-              aria-label="Alternar tema"
-            />
-          </div>
-
-          {/* Font Size */}
-          <div className="flex items-center justify-between py-3 border-b border-border">
-            <div className="flex items-center gap-3">
-              <Type className="w-5 h-5 text-primary" />
-              <div>
-                <p className="font-medium text-foreground">Tamanho da fonte</p>
-                <p className="text-sm text-muted-foreground">
-                  Ajuste o tamanho do texto
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-1">
-              <Button
-                variant={fontSize === "small" ? "default" : "outline"}
-                size="sm"
-                onClick={() => changeFontSize("small")}
-                className="text-xs px-2"
-              >
-                A
-              </Button>
-              <Button
-                variant={fontSize === "normal" ? "default" : "outline"}
-                size="sm"
-                onClick={() => changeFontSize("normal")}
-                className="text-sm px-2"
-              >
-                A
-              </Button>
-              <Button
-                variant={fontSize === "large" ? "default" : "outline"}
-                size="sm"
-                onClick={() => changeFontSize("large")}
-                className="text-base px-2"
-              >
-                A
-              </Button>
-            </div>
-          </div>
-
-          {/* Accent Color */}
-          <div className="flex items-center justify-between py-3 border-b border-border">
-            <div className="flex items-center gap-3">
-              <Palette className="w-5 h-5 text-primary" />
-              <div>
-                <p className="font-medium text-foreground">Cor de destaque</p>
-                <p className="text-sm text-muted-foreground">
-                  Personalize a cor principal
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-1.5">
-              {accentColors.map((color) => (
-                <button
-                  key={color.id}
-                  onClick={() => changeAccentColor(color.id)}
-                  className={`w-7 h-7 rounded-full ${color.preview} transition-all ${
-                    accentColor === color.id 
-                      ? "ring-2 ring-offset-2 ring-offset-background ring-foreground scale-110" 
-                      : "hover:scale-105"
-                  }`}
-                  aria-label={color.label}
-                  title={color.label}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Sound Toggle */}
-          <div className="flex items-center justify-between py-3">
-            <div className="flex items-center gap-3">
-              {soundEnabled ? (
-                <Bell className="w-5 h-5 text-primary" />
-              ) : (
-                <BellOff className="w-5 h-5 text-muted-foreground" />
-              )}
-              <div>
-                <p className="font-medium text-foreground">Som e vibração</p>
-                <p className="text-sm text-muted-foreground">
-                  Notificar quando uma nova versão estiver disponível
-                </p>
-              </div>
-            </div>
-            <Switch
-              checked={soundEnabled}
-              onCheckedChange={toggleSound}
-              aria-label="Ativar som e vibração"
-            />
-          </div>
-        </section>
+        {/* Link to Settings */}
+        <div className="text-center">
+          <Link to="/configuracoes">
+            <Button variant="outline" className="gap-2">
+              <Settings className="w-4 h-4" />
+              Acessar Configurações
+            </Button>
+          </Link>
+        </div>
 
         {/* Benefits */}
         <div className="text-center space-y-3 pt-4">

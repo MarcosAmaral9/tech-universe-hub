@@ -23,6 +23,7 @@ const Header = () => {
     { name: "Geek", path: "/geek", color: "text-geek" },
     { name: "Otaku", path: "/otaku", color: "text-otaku" },
     { name: "Instalar App", path: "/instalar", color: "text-primary" },
+    { name: "Configurações", path: "/configuracoes", color: "text-primary" },
   ];
 
   const legalLinks = [
