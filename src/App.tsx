@@ -8,6 +8,7 @@ import Layout from "@/components/Layout";
 import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import CookieConsent from "./components/CookieConsent";
+import PWAUpdatePrompt from "./components/PWAUpdatePrompt";
 import { lazy, Suspense } from "react";
 
 // Lazy-loaded pages — only downloaded when user navigates to them
@@ -86,6 +87,7 @@ const App = () => (
         <BrowserRouter>
           <ScrollToTop />
           <CookieConsent />
+          <PWAUpdatePrompt />
           <Layout>
             <Suspense fallback={<PageLoader />}>
               <Routes>
