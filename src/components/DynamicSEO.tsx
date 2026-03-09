@@ -13,6 +13,7 @@ const PAGE_META: Record<string, { title: string; description: string }> = {
   "/geek": { title: "Geek", description: "Games, séries, filmes e cultura geek." },
   "/cotacoes": { title: "Cotações em Tempo Real", description: "Acompanhe cotações de ações da B3, câmbio, metais preciosos e criptomoedas em tempo real." },
   "/entrar": { title: "Entrar", description: "Acesse sua conta no VICIO<CODE> para personalizar sua experiência." },
+  "/redefinir-senha": { title: "Redefinir Senha", description: "Defina uma nova senha para sua conta no VICIO<CODE>." },
 };
 
 function setMetaTag(attrName: string, attrValue: string, content: string) {

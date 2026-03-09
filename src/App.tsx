@@ -50,6 +50,8 @@ const InstallPage = lazy(() => import("./pages/InstallPage"));
 const SettingsPage = lazy(() => import("./pages/SettingsPage"));
 const CotacoesPage = lazy(() => import("./pages/CotacoesPage"));
 const AuthPage = lazy(() => import("./pages/AuthPage"));
+const PublicProfilePage = lazy(() => import("./pages/PublicProfilePage"));
+const ResetPasswordPage = lazy(() => import("./pages/ResetPasswordPage"));
 
 // Lazy-loaded posts
 const DiferencaMangasManhuas = lazy(() => import("./pages/posts/DiferencaMangasManhuas"));
@@ -125,6 +127,8 @@ const App = () => (
                 <Route path="/financas" element={<InvestimentosPage />} />
                 <Route path="/cotacoes" element={<CotacoesPage />} />
                 <Route path="/entrar" element={<AuthPage />} />
+                <Route path="/perfil/:id" element={<PublicProfilePage />} />
+                <Route path="/redefinir-senha" element={<ResetPasswordPage />} />
                 <Route path="/geek" element={<GeekPage />} />
                 {/* Portals */}
                 <Route path="/geek/avatar" element={<AvatarPortal />} />
