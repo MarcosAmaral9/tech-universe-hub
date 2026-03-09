@@ -18,6 +18,7 @@ interface AuthContextType {
   loading: boolean;
   signOut: () => Promise<void>;
   updateProfile: (updates: Partial<Pick<Profile, "name" | "nickname" | "notifications_site" | "notifications_app">>) => Promise<any>;
+  fetchProfile: (userId: string) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
