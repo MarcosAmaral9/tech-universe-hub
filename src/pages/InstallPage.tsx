@@ -208,7 +208,70 @@ const InstallPage = () => {
             <Settings className="w-6 h-6 text-primary" />
             <h2 className="text-xl font-bold text-foreground">Configurações do App</h2>
           </div>
+          
+          {/* Theme Toggle */}
           <div className="flex items-center justify-between py-3 border-b border-border">
+            <div className="flex items-center gap-3">
+              {theme === "dark" ? (
+                <Moon className="w-5 h-5 text-primary" />
+              ) : (
+                <Sun className="w-5 h-5 text-primary" />
+              )}
+              <div>
+                <p className="font-medium text-foreground">Tema</p>
+                <p className="text-sm text-muted-foreground">
+                  {theme === "dark" ? "Modo escuro ativado" : "Modo claro ativado"}
+                </p>
+              </div>
+            </div>
+            <Switch
+              checked={theme === "dark"}
+              onCheckedChange={toggleTheme}
+              aria-label="Alternar tema"
+            />
+          </div>
+
+          {/* Font Size */}
+          <div className="flex items-center justify-between py-3 border-b border-border">
+            <div className="flex items-center gap-3">
+              <Type className="w-5 h-5 text-primary" />
+              <div>
+                <p className="font-medium text-foreground">Tamanho da fonte</p>
+                <p className="text-sm text-muted-foreground">
+                  Ajuste o tamanho do texto
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-1">
+              <Button
+                variant={fontSize === "small" ? "default" : "outline"}
+                size="sm"
+                onClick={() => changeFontSize("small")}
+                className="text-xs px-2"
+              >
+                A
+              </Button>
+              <Button
+                variant={fontSize === "normal" ? "default" : "outline"}
+                size="sm"
+                onClick={() => changeFontSize("normal")}
+                className="text-sm px-2"
+              >
+                A
+              </Button>
+              <Button
+                variant={fontSize === "large" ? "default" : "outline"}
+                size="sm"
+                onClick={() => changeFontSize("large")}
+                className="text-base px-2"
+              >
+                A
+              </Button>
+            </div>
+          </div>
+
+          {/* Sound Toggle */}
+          <div className="flex items-center justify-between py-3">
             <div className="flex items-center gap-3">
               {soundEnabled ? (
                 <Bell className="w-5 h-5 text-primary" />
