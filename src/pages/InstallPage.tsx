@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { Download, Smartphone, Monitor, Share, MoreVertical, PlusSquare, CheckCircle2, Bell, BellOff, Settings } from "lucide-react";
+import { Download, Smartphone, Monitor, Share, MoreVertical, PlusSquare, CheckCircle2, Bell, BellOff, Settings, Sun, Moon, Type } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
+import { useTheme } from "@/contexts/ThemeContext";
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
@@ -9,14 +10,22 @@ interface BeforeInstallPromptEvent extends Event {
 }
 
 const NOTIFICATION_SOUND_KEY = "pwa_update_sound_enabled";
+const FONT_SIZE_KEY = "viciocode_font_size";
+
+type FontSize = "small" | "normal" | "large";
 
 const InstallPage = () => {
+  const { theme, toggleTheme } = useTheme();
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [isInstalled, setIsInstalled] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(() => {
     const stored = localStorage.getItem(NOTIFICATION_SOUND_KEY);
     return stored === null ? true : stored === "true";
+  });
+  const [fontSize, setFontSize] = useState<FontSize>(() => {
+    const stored = localStorage.getItem(FONT_SIZE_KEY) as FontSize;
+    return stored || "normal";
   });
 
   useEffect(() => {
