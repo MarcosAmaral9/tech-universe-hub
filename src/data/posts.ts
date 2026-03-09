@@ -34,6 +34,17 @@ import fiis2026Img from "@/assets/fiis-2026.webp";
 import sairDividas2026Img from "@/assets/sair-dividas-2026.webp";
 import planejamentoFinanceiro2026Img from "@/assets/planejamento-financeiro-2026.webp";
 import calculadorasFinanceirasImg from "@/assets/calculadoras-financeiras.webp";
+// New IA articles images
+import chatgptVsGeminiImg from "@/assets/chatgpt-vs-gemini-vs-claude-2026.webp";
+import iaGanharDinheiroImg from "@/assets/ia-ganhar-dinheiro-2026.webp";
+import iaTrabalhoImg from "@/assets/ia-trabalho-2026.webp";
+import appsIaProdutividadeImg from "@/assets/apps-ia-produtividade-2026.webp";
+import iaGenerativaIniciantesImg from "@/assets/ia-generativa-iniciantes-2026.webp";
+import deepfakesIaImg from "@/assets/deepfakes-ia-2026.webp";
+import iaEducacaoImg from "@/assets/ia-educacao-2026.webp";
+import agentesIaImg from "@/assets/agentes-ia-2026.webp";
+import iaSaudeImg from "@/assets/ia-saude-2026.webp";
+import regulamentacaoIaImg from "@/assets/regulamentacao-ia-2026.webp";
 
 export const blogPosts: BlogPost[] = [
   // IA Posts
