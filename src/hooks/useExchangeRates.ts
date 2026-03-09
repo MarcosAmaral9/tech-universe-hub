@@ -92,7 +92,7 @@ export function useExchangeRates() {
     const result = await sharedPromise;
     const now = Date.now();
 
-    if (result && (result.USDBRL || result.EURBRL || result.XAUBRL || result.XAGBRL)) {
+    if (result && (result.USDBRL || result.EURBRL || result.ARSBRL || result.PYGBRL || result.XAUBRL || result.XAGBRL)) {
       const serverFallback = !!result._meta?.fallback;
       const ttl = serverFallback ? CACHE_DURATION_FALLBACK : CACHE_DURATION_SUCCESS;
 
