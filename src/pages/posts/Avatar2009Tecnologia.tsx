@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Camera, Cpu, Monitor, Sparkles, Film, Award, Target } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
