@@ -46,6 +46,12 @@ const InstallPage = () => {
     setDeferredPrompt(null);
   };
 
+  const toggleSound = () => {
+    const newValue = !soundEnabled;
+    setSoundEnabled(newValue);
+    localStorage.setItem(NOTIFICATION_SOUND_KEY, String(newValue));
+  };
+
   return (
     <div className="min-h-[70vh] py-12 px-4">
       <div className="max-w-2xl mx-auto space-y-10">
