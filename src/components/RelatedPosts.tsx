@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { getRelatedPosts } from "@/data/posts";
 import CategoryBadge from "./CategoryBadge";
 import { useAuthContext } from "@/contexts/AuthContext";
