@@ -188,6 +188,41 @@ const SettingsPage = () => {
               <User className="w-5 h-5 text-primary" /> Meu Perfil
             </h2>
 
+            {/* Avatar Upload */}
+            <div className="flex items-center gap-4">
+              <div className="relative group">
+                <div className="w-20 h-20 rounded-full overflow-hidden bg-muted flex items-center justify-center ring-2 ring-primary/20">
+                  {profile.avatar_url ? (
+                    <img src={profile.avatar_url} alt="Avatar" className="w-full h-full object-cover" />
+                  ) : (
+                    <User className="w-8 h-8 text-muted-foreground" />
+                  )}
+                </div>
+                <button
+                  onClick={() => fileInputRef.current?.click()}
+                  disabled={uploadingAvatar}
+                  className="absolute inset-0 rounded-full bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+                >
+                  {uploadingAvatar ? (
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  ) : (
+                    <Camera className="w-5 h-5 text-white" />
+                  )}
+                </button>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/*"
+                  className="hidden"
+                  onChange={handleAvatarUpload}
+                />
+              </div>
+              <div>
+                <p className="font-medium text-foreground text-sm">{profile.nickname || profile.name || "Usuário"}</p>
+                <p className="text-xs text-muted-foreground">Clique na foto para alterar (máx. 2MB)</p>
+              </div>
+            </div>
+
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-2">
                 <Label htmlFor="profile-name" className="flex items-center gap-1"><User className="w-3.5 h-3.5" /> Nome</Label>
