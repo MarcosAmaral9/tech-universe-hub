@@ -76,7 +76,7 @@ const IAPage = () => {
               key={n}
               variant={n === page ? "default" : "outline"}
               size="sm"
-              onClick={() => setPage(n)}
+              onClick={() => changePage(n)}
               className={n === page ? "bg-ia hover:bg-ia/90 text-white" : ""}
             >
               {n}
