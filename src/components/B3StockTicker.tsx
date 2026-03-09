@@ -39,6 +39,8 @@ const B3StockTicker = () => {
   const [loading, setLoading] = useState(true);
   const [isFallback, setIsFallback] = useState(false);
   const [lastUpdated, setLastUpdated] = useState<string>("");
+  const [cacheExpiresAt, setCacheExpiresAt] = useState<number>(0);
+  const [source, setSource] = useState<string>("");
 
   const fetchStocks = useCallback(async () => {
     try {
