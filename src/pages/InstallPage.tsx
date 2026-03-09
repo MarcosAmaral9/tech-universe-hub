@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { Download, Smartphone, Monitor, Share, MoreVertical, PlusSquare, CheckCircle2, Bell, BellOff, Settings, Sun, Moon, Type, Palette } from "lucide-react";
+import { Download, Smartphone, Monitor, Share, MoreVertical, PlusSquare, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
-import { useTheme } from "@/contexts/ThemeContext";
+import { Link } from "react-router-dom";
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
