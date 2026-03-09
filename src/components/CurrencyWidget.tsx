@@ -73,7 +73,7 @@ const CurrencyWidget = () => {
         pctChange: d.pctChange,
         high: d.high,
         low: d.low,
-        sparkline: data?.sparklines?.[c.key as "USDBRL" | "EURBRL"],
+        sparkline: data?.sparklines?.[c.key as keyof NonNullable<typeof data.sparklines>],
       });
     }
   }

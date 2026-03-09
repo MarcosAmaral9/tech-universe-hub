@@ -11,6 +11,8 @@ interface ExchangeData {
   sparklines?: {
     USDBRL?: number[];
     EURBRL?: number[];
+    ARSBRL?: number[];
+    PYGBRL?: number[];
   };
   _meta?: {
     fallback?: boolean;
