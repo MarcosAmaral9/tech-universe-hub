@@ -46,6 +46,7 @@ const ACBlackFlag = () => {
             16 min de leitura
           </span>
         </div>
+        <ShareWhatsApp />
       </header>
 
       {/* Featured Image */}

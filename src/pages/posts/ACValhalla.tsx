@@ -46,6 +46,7 @@ const ACValhalla = () => {
             18 min de leitura
           </span>
         </div>
+        <ShareWhatsApp />
       </header>
 
       {/* Featured Image */}

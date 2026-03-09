@@ -46,6 +46,7 @@ const ACOrigins = () => {
             17 min de leitura
           </span>
         </div>
+        <ShareWhatsApp />
       </header>
 
       {/* Featured Image */}
