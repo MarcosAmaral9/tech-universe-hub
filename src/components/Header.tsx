@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Moon, Sun, Search, Menu, X, FileText, ChevronDown, Download } from "lucide-react";
+import { Moon, Sun, Search, Menu, X, FileText, ChevronDown } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import SearchModal from "./SearchModal";
+import SettingsDrawer from "./SettingsDrawer";
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
@@ -23,7 +24,6 @@ const Header = () => {
     { name: "Geek", path: "/geek", color: "text-geek" },
     { name: "Otaku", path: "/otaku", color: "text-otaku" },
     { name: "Instalar App", path: "/instalar", color: "text-primary" },
-    { name: "Configurações", path: "/configuracoes", color: "text-primary" },
   ];
 
   const legalLinks = [
@@ -106,18 +106,7 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
             
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-              className="hover:bg-secondary"
-            >
-              {theme === "dark" ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
-            </Button>
+            <SettingsDrawer />
 
             {/* Mobile Menu Toggle */}
             <Button
