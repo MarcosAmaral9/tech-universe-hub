@@ -26,6 +26,8 @@ const CACHE_DURATION_FALLBACK = 1000 * 60 * 60; // 60 min
 const LOCAL_FALLBACK: ExchangeData = {
   USDBRL: { bid: "5.85", pctChange: "0.32", high: "5.90", low: "5.80" },
   EURBRL: { bid: "6.35", pctChange: "-0.15", high: "6.40", low: "6.30" },
+  ARSBRL: { bid: "0.0048", pctChange: "0.10", high: "0.0049", low: "0.0047" },
+  PYGBRL: { bid: "0.00076", pctChange: "-0.05", high: "0.00078", low: "0.00074" },
   XAUBRL: { bid: "27177.00", pctChange: "0.45", high: "27450.00", low: "26900.00" },
   XAGBRL: { bid: "235.41", pctChange: "-0.30", high: "240.00", low: "230.00" },
   _meta: { fallback: true, source: "local-static", ttlMs: CACHE_DURATION_FALLBACK },
