@@ -106,18 +106,7 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
             
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-              className="hover:bg-secondary"
-            >
-              {theme === "dark" ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
-            </Button>
+            <SettingsDrawer />
 
             {/* Mobile Menu Toggle */}
             <Button
