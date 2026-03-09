@@ -1,12 +1,12 @@
 import { forwardRef } from "react";
 import { TrendingUp, TrendingDown, AlertTriangle, Gem } from "lucide-react";
 import { useExchangeRates } from "@/hooks/useExchangeRates";
+import CacheStatusBar from "@/components/CacheStatusBar";
+import MetalAlertConfig from "@/components/MetalAlertConfig";
 
 const TROY_OZ_TO_GRAMS = 31.1035;
-
-// Purity factors for common jewelry standards
-const GOLD_18K_PURITY = 0.75; // 18k = 75% pure gold
-const SILVER_925_PURITY = 0.925; // 925 = 92.5% pure silver
+const GOLD_18K_PURITY = 0.75;
+const SILVER_925_PURITY = 0.925;
 
 interface MetalRate {
   code: string;
@@ -18,25 +18,21 @@ interface MetalRate {
   lowPerGram: number;
 }
 
-// Updated fallback values (March 2026): Gold 18k ~R$655/g, Silver 925 ~R$7/g
 const FALLBACK: MetalRate[] = [
   { code: "XAU", name: "Ouro", purity: "18k", bidPerGram: 655.00, pctChange: "0.45", highPerGram: 662.00, lowPerGram: 648.00 },
   { code: "XAG", name: "Prata", purity: "925", bidPerGram: 7.00, pctChange: "-0.30", highPerGram: 7.15, lowPerGram: 6.85 },
 ];
 
 const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
-  const { data, loading, isFallback, lastUpdated } = useExchangeRates();
+  const { data, loading, isFallback, lastUpdated, cacheExpiresAt, source } = useExchangeRates();
 
   const metals: MetalRate[] = [];
   if (data?.XAUBRL) {
     const bid = parseFloat(data.XAUBRL.bid);
     const high = parseFloat(data.XAUBRL.high);
     const low = parseFloat(data.XAUBRL.low);
-    // Apply 18k gold purity factor
     metals.push({
-      code: "XAU", 
-      name: "Ouro",
-      purity: "18k",
+      code: "XAU", name: "Ouro", purity: "18k",
       bidPerGram: (bid / TROY_OZ_TO_GRAMS) * GOLD_18K_PURITY,
       pctChange: data.XAUBRL.pctChange,
       highPerGram: (high / TROY_OZ_TO_GRAMS) * GOLD_18K_PURITY,
@@ -47,11 +43,8 @@ const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
     const bid = parseFloat(data.XAGBRL.bid);
     const high = parseFloat(data.XAGBRL.high);
     const low = parseFloat(data.XAGBRL.low);
-    // Apply 925 silver purity factor
     metals.push({
-      code: "XAG", 
-      name: "Prata",
-      purity: "925",
+      code: "XAG", name: "Prata", purity: "925",
       bidPerGram: (bid / TROY_OZ_TO_GRAMS) * SILVER_925_PURITY,
       pctChange: data.XAGBRL.pctChange,
       highPerGram: (high / TROY_OZ_TO_GRAMS) * SILVER_925_PURITY,
@@ -60,6 +53,8 @@ const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
   }
 
   const displayMetals = metals.length > 0 ? metals : (isFallback ? FALLBACK : []);
+  const goldPrice = displayMetals.find(m => m.code === "XAU")?.bidPerGram || 0;
+  const silverPrice = displayMetals.find(m => m.code === "XAG")?.bidPerGram || 0;
 
   if (loading && displayMetals.length === 0) {
     return (
@@ -134,8 +129,12 @@ const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
       </div>
 
       <p className="text-[10px] text-muted-foreground mt-3 text-center">
-        Ouro 18k (75% pureza) • Prata 925 (92.5% pureza) • Atualizado a cada 30 min • Fonte: AwesomeAPI
+        Ouro 18k (75% pureza) • Prata 925 (92.5% pureza) • Fonte: Stooq
       </p>
+      <CacheStatusBar source={source} isFallback={isFallback} cacheExpiresAt={cacheExpiresAt} />
+
+      {/* Metal Price Alerts */}
+      <MetalAlertConfig goldPrice={goldPrice} silverPrice={silverPrice} />
     </div>
   );
 });
