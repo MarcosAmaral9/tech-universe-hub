@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, BarChart3, TrendingUp, DollarSign, Bitcoin, Gem, Filter, SlidersHorizontal } from "lucide-react";
+import { ArrowLeft, BarChart3, TrendingUp, DollarSign, Bitcoin, Gem, SlidersHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import B3StockTicker from "@/components/B3StockTicker";
 import CurrencyWidget from "@/components/CurrencyWidget";
