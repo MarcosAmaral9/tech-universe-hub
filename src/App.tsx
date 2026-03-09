@@ -100,6 +100,16 @@ const IAEducacao2026 = lazy(() => import("./pages/posts/IAEducacao2026"));
 const AgentesIA2026 = lazy(() => import("./pages/posts/AgentesIA2026"));
 const IASaude2026 = lazy(() => import("./pages/posts/IASaude2026"));
 const RegulamentacaoIA2026 = lazy(() => import("./pages/posts/RegulamentacaoIA2026"));
+const AnimesAguardados2026 = lazy(() => import("./pages/posts/AnimesAguardados2026"));
+const GuiaCosplay2026 = lazy(() => import("./pages/posts/GuiaCosplay2026"));
+const MangaVsAnime2026 = lazy(() => import("./pages/posts/MangaVsAnime2026"));
+const CulturaOtakuBrasil2026 = lazy(() => import("./pages/posts/CulturaOtakuBrasil2026"));
+const JogosAnime2026 = lazy(() => import("./pages/posts/JogosAnime2026"));
+const AprenderJaponesAnime2026 = lazy(() => import("./pages/posts/AprenderJaponesAnime2026"));
+const Isekai2026 = lazy(() => import("./pages/posts/Isekai2026"));
+const MerchandisingOtaku2026 = lazy(() => import("./pages/posts/MerchandisingOtaku2026"));
+const MelhoresMangas2026 = lazy(() => import("./pages/posts/MelhoresMangas2026"));
+const SaudeMentalOtaku2026 = lazy(() => import("./pages/posts/SaudeMentalOtaku2026"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
