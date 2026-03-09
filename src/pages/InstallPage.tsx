@@ -61,6 +61,20 @@ const InstallPage = () => {
     localStorage.setItem(NOTIFICATION_SOUND_KEY, String(newValue));
   };
 
+  const changeFontSize = (size: FontSize) => {
+    setFontSize(size);
+    localStorage.setItem(FONT_SIZE_KEY, size);
+    document.documentElement.classList.remove("font-small", "font-normal", "font-large");
+    document.documentElement.classList.add(`font-${size}`);
+  };
+
+  useEffect(() => {
+    const savedSize = localStorage.getItem(FONT_SIZE_KEY) as FontSize;
+    if (savedSize) {
+      document.documentElement.classList.add(`font-${savedSize}`);
+    }
+  }, []);
+
   return (
     <div className="min-h-[70vh] py-12 px-4">
       <div className="max-w-2xl mx-auto space-y-10">
