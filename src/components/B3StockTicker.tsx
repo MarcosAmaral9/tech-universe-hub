@@ -211,6 +211,17 @@ const B3StockTicker = () => {
       <p className="text-[10px] text-muted-foreground mt-3 text-center">
         Dados de ações da B3 (Bolsa de Valores Brasileira) • Cotações atualizadas automaticamente a cada {UPDATE_INTERVAL_LABEL} • Apenas ativos listados na B3
       </p>
+      <CacheStatusBar source={source} isFallback={isFallback} cacheExpiresAt={cacheExpiresAt} />
+      <PriceAlertConfig
+        storageKey="b3_price_alerts"
+        assets={stocks.slice(0, 10).map(s => ({
+          key: s.symbol,
+          label: s.shortName || s.symbol,
+          icon: "",
+          currentPrice: s.regularMarketPrice,
+          unit: "R$",
+        }))}
+      />
     </div>
   );
 };
