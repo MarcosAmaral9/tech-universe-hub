@@ -63,6 +63,8 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
           setCryptos(data);
           setIsFallback(!!fallback);
           setLastUpdated(new Date(timestamp).toLocaleString("pt-BR"));
+          setCacheExpiresAt(timestamp + CACHE_DURATION);
+          setSource(fallback ? "referência" : "cache");
           setLoading(false);
           return;
         }
