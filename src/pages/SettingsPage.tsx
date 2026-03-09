@@ -29,7 +29,7 @@ const DEFAULT_PRIMARY_HSL = "187 85% 43%";
 
 const SettingsPage = () => {
   const { theme, toggleTheme } = useTheme();
-  const { user, profile, updateProfile, signOut } = useAuthContext();
+  const { user, profile, updateProfile, signOut, fetchProfile } = useAuthContext();
   const [soundEnabled, setSoundEnabled] = useState(() => {
     const stored = localStorage.getItem(NOTIFICATION_SOUND_KEY);
     return stored === null ? true : stored === "true";
