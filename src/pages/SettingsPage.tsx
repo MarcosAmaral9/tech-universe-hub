@@ -90,6 +90,50 @@ const SettingsPage = () => {
     setSavingProfile(false);
   };
 
+  const handleAvatarUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file || !user) return;
+
+    if (!file.type.startsWith("image/")) {
+      toast({ title: "Erro", description: "Selecione uma imagem válida.", variant: "destructive" });
+      return;
+    }
+    if (file.size > 2 * 1024 * 1024) {
+      toast({ title: "Erro", description: "A imagem deve ter no máximo 2MB.", variant: "destructive" });
+      return;
+    }
+
+    setUploadingAvatar(true);
+    const ext = file.name.split(".").pop();
+    const filePath = `${user.id}/avatar.${ext}`;
+
+    const { error: uploadError } = await supabase.storage
+      .from("avatars")
+      .upload(filePath, file, { upsert: true });
+
+    if (uploadError) {
+      toast({ title: "Erro no upload", description: uploadError.message, variant: "destructive" });
+      setUploadingAvatar(false);
+      return;
+    }
+
+    const { data: { publicUrl } } = supabase.storage.from("avatars").getPublicUrl(filePath);
+    const avatarUrl = `${publicUrl}?t=${Date.now()}`;
+
+    const { error: updateError } = await supabase
+      .from("profiles")
+      .update({ avatar_url: avatarUrl, updated_at: new Date().toISOString() })
+      .eq("id", user.id);
+
+    if (updateError) {
+      toast({ title: "Erro", description: "Upload feito mas não foi possível salvar no perfil.", variant: "destructive" });
+    } else {
+      await fetchProfile(user.id);
+      toast({ title: "Avatar atualizado! 📸" });
+    }
+    setUploadingAvatar(false);
+  };
+
   const handleToggleNotification = async (key: "notifications_site" | "notifications_app", value: boolean) => {
     if (!user) return;
 
