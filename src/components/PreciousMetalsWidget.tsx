@@ -4,9 +4,14 @@ import { useExchangeRates } from "@/hooks/useExchangeRates";
 
 const TROY_OZ_TO_GRAMS = 31.1035;
 
+// Purity factors for common jewelry standards
+const GOLD_18K_PURITY = 0.75; // 18k = 75% pure gold
+const SILVER_925_PURITY = 0.925; // 925 = 92.5% pure silver
+
 interface MetalRate {
   code: string;
   name: string;
+  purity: string;
   bidPerGram: number;
   pctChange: string;
   highPerGram: number;
@@ -14,8 +19,8 @@ interface MetalRate {
 }
 
 const FALLBACK: MetalRate[] = [
-  { code: "XAU", name: "Ouro", bidPerGram: 520.00, pctChange: "0.45", highPerGram: 525.00, lowPerGram: 518.00 },
-  { code: "XAG", name: "Prata", bidPerGram: 6.20, pctChange: "-0.30", highPerGram: 6.35, lowPerGram: 6.10 },
+  { code: "XAU", name: "Ouro", purity: "18k", bidPerGram: 390.00, pctChange: "0.45", highPerGram: 393.75, lowPerGram: 388.50 },
+  { code: "XAG", name: "Prata", purity: "925", bidPerGram: 5.73, pctChange: "-0.30", highPerGram: 5.87, lowPerGram: 5.64 },
 ];
 
 const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
@@ -26,24 +31,30 @@ const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
     const bid = parseFloat(data.XAUBRL.bid);
     const high = parseFloat(data.XAUBRL.high);
     const low = parseFloat(data.XAUBRL.low);
+    // Apply 18k gold purity factor
     metals.push({
-      code: "XAU", name: "Ouro",
-      bidPerGram: bid / TROY_OZ_TO_GRAMS,
+      code: "XAU", 
+      name: "Ouro",
+      purity: "18k",
+      bidPerGram: (bid / TROY_OZ_TO_GRAMS) * GOLD_18K_PURITY,
       pctChange: data.XAUBRL.pctChange,
-      highPerGram: high / TROY_OZ_TO_GRAMS,
-      lowPerGram: low / TROY_OZ_TO_GRAMS,
+      highPerGram: (high / TROY_OZ_TO_GRAMS) * GOLD_18K_PURITY,
+      lowPerGram: (low / TROY_OZ_TO_GRAMS) * GOLD_18K_PURITY,
     });
   }
   if (data?.XAGBRL) {
     const bid = parseFloat(data.XAGBRL.bid);
     const high = parseFloat(data.XAGBRL.high);
     const low = parseFloat(data.XAGBRL.low);
+    // Apply 925 silver purity factor
     metals.push({
-      code: "XAG", name: "Prata",
-      bidPerGram: bid / TROY_OZ_TO_GRAMS,
+      code: "XAG", 
+      name: "Prata",
+      purity: "925",
+      bidPerGram: (bid / TROY_OZ_TO_GRAMS) * SILVER_925_PURITY,
       pctChange: data.XAGBRL.pctChange,
-      highPerGram: high / TROY_OZ_TO_GRAMS,
-      lowPerGram: low / TROY_OZ_TO_GRAMS,
+      highPerGram: (high / TROY_OZ_TO_GRAMS) * SILVER_925_PURITY,
+      lowPerGram: (low / TROY_OZ_TO_GRAMS) * SILVER_925_PURITY,
     });
   }
 
@@ -98,7 +109,7 @@ const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
             >
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm font-bold text-foreground">
-                  {icon} {metal.name} (grama)
+                  {icon} {metal.name} {metal.purity}
                 </span>
                 {isUp ? (
                   <TrendingUp className="h-4 w-4 text-green-500" />
@@ -122,7 +133,7 @@ const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
       </div>
 
       <p className="text-[10px] text-muted-foreground mt-3 text-center">
-        Cotações convertidas de onça troy para grama (1 oz = 31.1035g) • Atualizado a cada 30 minutos • Fonte: AwesomeAPI
+        Ouro 18k (75% pureza) • Prata 925 (92.5% pureza) • Atualizado a cada 30 min • Fonte: AwesomeAPI
       </p>
     </div>
   );
