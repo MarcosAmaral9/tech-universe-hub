@@ -501,7 +501,7 @@ export const getPostBySlug = (slug: string): BlogPost | undefined => {
 export const getPostsByCategory = (category: string): BlogPost[] => {
   return blogPosts
     .filter(post => post.category === category || post.secondaryCategory === category)
-    .sort((a, b) => new Date(a.date + "T12:00:00").getTime() - new Date(b.date + "T12:00:00").getTime());
+    .sort((a, b) => new Date(b.date + "T12:00:00").getTime() - new Date(a.date + "T12:00:00").getTime());
 };
 
 export const getPostsBySubtopic = (subtopic: string): BlogPost[] => {
