@@ -4,6 +4,8 @@ import { supabase } from "@/integrations/supabase/client";
 interface ExchangeData {
   USDBRL?: { bid: string; pctChange: string; high: string; low: string };
   EURBRL?: { bid: string; pctChange: string; high: string; low: string };
+  ARSBRL?: { bid: string; pctChange: string; high: string; low: string };
+  PYGBRL?: { bid: string; pctChange: string; high: string; low: string };
   XAUBRL?: { bid: string; pctChange: string; high: string; low: string };
   XAGBRL?: { bid: string; pctChange: string; high: string; low: string };
   _meta?: {
@@ -24,6 +26,8 @@ const CACHE_DURATION_FALLBACK = 1000 * 60 * 60; // 60 min
 const LOCAL_FALLBACK: ExchangeData = {
   USDBRL: { bid: "5.85", pctChange: "0.32", high: "5.90", low: "5.80" },
   EURBRL: { bid: "6.35", pctChange: "-0.15", high: "6.40", low: "6.30" },
+  ARSBRL: { bid: "0.0048", pctChange: "0.10", high: "0.0049", low: "0.0047" },
+  PYGBRL: { bid: "0.00076", pctChange: "-0.05", high: "0.00078", low: "0.00074" },
   XAUBRL: { bid: "27177.00", pctChange: "0.45", high: "27450.00", low: "26900.00" },
   XAGBRL: { bid: "235.41", pctChange: "-0.30", high: "240.00", low: "230.00" },
   _meta: { fallback: true, source: "local-static", ttlMs: CACHE_DURATION_FALLBACK },
@@ -88,7 +92,7 @@ export function useExchangeRates() {
     const result = await sharedPromise;
     const now = Date.now();
 
-    if (result && (result.USDBRL || result.EURBRL || result.XAUBRL || result.XAGBRL)) {
+    if (result && (result.USDBRL || result.EURBRL || result.ARSBRL || result.PYGBRL || result.XAUBRL || result.XAGBRL)) {
       const serverFallback = !!result._meta?.fallback;
       const ttl = serverFallback ? CACHE_DURATION_FALLBACK : CACHE_DURATION_SUCCESS;
 

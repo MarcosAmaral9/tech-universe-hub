@@ -4,6 +4,7 @@ import { useExchangeRates } from "@/hooks/useExchangeRates";
 interface CurrencyRate {
   code: string;
   name: string;
+  flag: string;
   bid: string;
   pctChange: string;
   high: string;
@@ -11,31 +12,37 @@ interface CurrencyRate {
 }
 
 const FALLBACK: CurrencyRate[] = [
-  { code: "USD", name: "Dólar Americano", bid: "5.85", pctChange: "0.32", high: "5.90", low: "5.80" },
-  { code: "EUR", name: "Euro", bid: "6.35", pctChange: "-0.15", high: "6.40", low: "6.30" },
+  { code: "USD", name: "Dólar Americano", flag: "🇺🇸", bid: "5.85", pctChange: "0.32", high: "5.90", low: "5.80" },
+  { code: "EUR", name: "Euro", flag: "🇪🇺", bid: "6.35", pctChange: "-0.15", high: "6.40", low: "6.30" },
+  { code: "ARS", name: "Peso Argentino", flag: "🇦🇷", bid: "0.0048", pctChange: "0.10", high: "0.0049", low: "0.0047" },
+  { code: "PYG", name: "Guarani Paraguaio", flag: "🇵🇾", bid: "0.00076", pctChange: "-0.05", high: "0.00078", low: "0.00074" },
 ];
 
 const CurrencyWidget = () => {
   const { data, loading, isFallback, lastUpdated } = useExchangeRates();
 
   const rates: CurrencyRate[] = [];
-  if (data?.USDBRL) {
-    rates.push({
-      code: "USD", name: "Dólar Americano",
-      bid: parseFloat(data.USDBRL.bid).toFixed(2),
-      pctChange: data.USDBRL.pctChange,
-      high: parseFloat(data.USDBRL.high).toFixed(2),
-      low: parseFloat(data.USDBRL.low).toFixed(2),
-    });
-  }
-  if (data?.EURBRL) {
-    rates.push({
-      code: "EUR", name: "Euro",
-      bid: parseFloat(data.EURBRL.bid).toFixed(2),
-      pctChange: data.EURBRL.pctChange,
-      high: parseFloat(data.EURBRL.high).toFixed(2),
-      low: parseFloat(data.EURBRL.low).toFixed(2),
-    });
+  
+  const currencyMap = [
+    { key: "USDBRL" as const, code: "USD", name: "Dólar Americano", flag: "🇺🇸" },
+    { key: "EURBRL" as const, code: "EUR", name: "Euro", flag: "🇪🇺" },
+    { key: "ARSBRL" as const, code: "ARS", name: "Peso Argentino", flag: "🇦🇷" },
+    { key: "PYGBRL" as const, code: "PYG", name: "Guarani Paraguaio", flag: "🇵🇾" },
+  ];
+
+  for (const c of currencyMap) {
+    const d = data?.[c.key];
+    if (d) {
+      rates.push({
+        code: c.code,
+        name: c.name,
+        flag: c.flag,
+        bid: d.bid,
+        pctChange: d.pctChange,
+        high: d.high,
+        low: d.low,
+      });
+    }
   }
 
   const displayRates = rates.length > 0 ? rates : (isFallback ? FALLBACK : []);
@@ -47,8 +54,8 @@ const CurrencyWidget = () => {
           <DollarSign className="h-5 w-5 text-invest" />
           <h3 className="font-bold">Câmbio</h3>
         </div>
-        <div className="grid grid-cols-2 gap-3">
-          {[0, 1].map(i => <div key={i} className="animate-pulse bg-muted rounded-xl h-24" />)}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          {[0, 1, 2, 3].map(i => <div key={i} className="animate-pulse bg-muted rounded-xl h-24" />)}
         </div>
       </div>
     );
@@ -59,7 +66,7 @@ const CurrencyWidget = () => {
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <DollarSign className="h-5 w-5 text-invest" />
-          <h3 className="font-bold">Câmbio — Dólar e Euro</h3>
+          <h3 className="font-bold">Câmbio — Moedas em Real</h3>
         </div>
         {lastUpdated && (
           <span className="text-xs text-muted-foreground hidden sm:inline">
@@ -75,10 +82,15 @@ const CurrencyWidget = () => {
         </div>
       )}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {displayRates.map((rate) => {
           const change = parseFloat(rate.pctChange);
           const isUp = change >= 0;
+          const bidNum = parseFloat(rate.bid);
+          const formattedBid = bidNum >= 1 ? `R$ ${bidNum.toFixed(2)}` : `R$ ${rate.bid}`;
+          const formattedHigh = parseFloat(rate.high) >= 1 ? `R$ ${parseFloat(rate.high).toFixed(2)}` : `R$ ${rate.high}`;
+          const formattedLow = parseFloat(rate.low) >= 1 ? `R$ ${parseFloat(rate.low).toFixed(2)}` : `R$ ${rate.low}`;
+          
           return (
             <div
               key={rate.code}
@@ -87,20 +99,23 @@ const CurrencyWidget = () => {
               }`}
             >
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-bold text-foreground">{rate.code}/BRL</span>
+                <span className="text-sm font-bold text-foreground flex items-center gap-1.5">
+                  <span className="text-base">{rate.flag}</span>
+                  {rate.code}/BRL
+                </span>
                 {isUp ? (
                   <TrendingUp className="h-4 w-4 text-green-500" />
                 ) : (
                   <TrendingDown className="h-4 w-4 text-red-500" />
                 )}
               </div>
-              <div className="text-2xl font-bold text-foreground mb-1">R$ {rate.bid}</div>
+              <div className="text-xl sm:text-2xl font-bold text-foreground mb-1">{formattedBid}</div>
               <div className={`text-sm font-medium ${isUp ? "text-green-500" : "text-red-500"}`}>
                 {isUp ? "+" : ""}{rate.pctChange}%
               </div>
               <div className="flex justify-between text-[10px] text-muted-foreground mt-2">
-                <span>Mín: R$ {rate.low}</span>
-                <span>Máx: R$ {rate.high}</span>
+                <span>Mín: {formattedLow}</span>
+                <span>Máx: {formattedHigh}</span>
               </div>
               <div className="text-[10px] text-muted-foreground mt-1">{rate.name}</div>
             </div>
@@ -109,7 +124,7 @@ const CurrencyWidget = () => {
       </div>
 
       <p className="text-[10px] text-muted-foreground mt-3 text-center">
-        Cotações do dólar e euro em relação ao real • Atualizado a cada 30 minutos • Fonte: AwesomeAPI
+        Cotações em relação ao real • Atualizado a cada 30 min • Fontes: Frankfurter (ECB) &amp; AwesomeAPI
       </p>
     </div>
   );
