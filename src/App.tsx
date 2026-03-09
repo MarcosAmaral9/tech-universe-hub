@@ -100,6 +100,16 @@ const IAEducacao2026 = lazy(() => import("./pages/posts/IAEducacao2026"));
 const AgentesIA2026 = lazy(() => import("./pages/posts/AgentesIA2026"));
 const IASaude2026 = lazy(() => import("./pages/posts/IASaude2026"));
 const RegulamentacaoIA2026 = lazy(() => import("./pages/posts/RegulamentacaoIA2026"));
+const AnimesAguardados2026 = lazy(() => import("./pages/posts/AnimesAguardados2026"));
+const GuiaCosplay2026 = lazy(() => import("./pages/posts/GuiaCosplay2026"));
+const MangaVsAnime2026 = lazy(() => import("./pages/posts/MangaVsAnime2026"));
+const CulturaOtakuBrasil2026 = lazy(() => import("./pages/posts/CulturaOtakuBrasil2026"));
+const JogosAnime2026 = lazy(() => import("./pages/posts/JogosAnime2026"));
+const AprenderJaponesAnime2026 = lazy(() => import("./pages/posts/AprenderJaponesAnime2026"));
+const Isekai2026 = lazy(() => import("./pages/posts/Isekai2026"));
+const MerchandisingOtaku2026 = lazy(() => import("./pages/posts/MerchandisingOtaku2026"));
+const MelhoresMangas2026 = lazy(() => import("./pages/posts/MelhoresMangas2026"));
+const SaudeMentalOtaku2026 = lazy(() => import("./pages/posts/SaudeMentalOtaku2026"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -189,6 +199,17 @@ const App = () => (
                 <Route path="/post/agentes-ia-2026-como-funcionam" element={<AgentesIA2026 />} />
                 <Route path="/post/ia-saude-2026-diagnosticos-futuro" element={<IASaude2026 />} />
                 <Route path="/post/regulamentacao-ia-brasil-mundo-2026" element={<RegulamentacaoIA2026 />} />
+                {/* New Otaku Posts */}
+                <Route path="/post/animes-mais-aguardados-2026" element={<AnimesAguardados2026 />} />
+                <Route path="/post/guia-cosplay-2026-iniciantes" element={<GuiaCosplay2026 />} />
+                <Route path="/post/manga-vs-anime-adaptacao-2026" element={<MangaVsAnime2026 />} />
+                <Route path="/post/cultura-otaku-brasil-2026" element={<CulturaOtakuBrasil2026 />} />
+                <Route path="/post/melhores-jogos-anime-2026" element={<JogosAnime2026 />} />
+                <Route path="/post/aprender-japones-anime-2026" element={<AprenderJaponesAnime2026 />} />
+                <Route path="/post/isekai-2026-genero-domina" element={<Isekai2026 />} />
+                <Route path="/post/merchandising-otaku-colecionar-2026" element={<MerchandisingOtaku2026 />} />
+                <Route path="/post/melhores-mangas-ler-2026" element={<MelhoresMangas2026 />} />
+                <Route path="/post/saude-mental-cultura-otaku-2026" element={<SaudeMentalOtaku2026 />} />
                 {/* Legal Pages */}
                 <Route path="/sobre" element={<AboutPage />} />
                 <Route path="/contato" element={<ContactPage />} />
