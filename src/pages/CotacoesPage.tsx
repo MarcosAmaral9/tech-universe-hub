@@ -44,13 +44,6 @@ const CotacoesPage = () => {
 
   return (
     <div className="container py-8">
-      <DynamicSEO
-        title="Cotações em Tempo Real — B3, Câmbio, Metais e Cripto | VícioCODE"
-        description="Acompanhe cotações de ações da B3, câmbio (dólar, euro, peso, guarani), metais preciosos e criptomoedas em tempo real."
-      />
-
-      {/* Header */}
-      <div className="mb-8">
         <Link to="/financas">
           <Button variant="ghost" className="mb-4 gap-2">
             <ArrowLeft className="h-4 w-4" />
