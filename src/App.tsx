@@ -90,6 +90,16 @@ const ACSyndicate = lazy(() => import("./pages/posts/ACSyndicate"));
 const ACUnity = lazy(() => import("./pages/posts/ACUnity"));
 const ACRogue = lazy(() => import("./pages/posts/ACRogue"));
 const ACRanking2026 = lazy(() => import("./pages/posts/ACRanking2026"));
+const ChatGPTvsGeminiClaude2026 = lazy(() => import("./pages/posts/ChatGPTvsGeminiClaude2026"));
+const IAGanharDinheiro2026 = lazy(() => import("./pages/posts/IAGanharDinheiro2026"));
+const IATrabalho2026 = lazy(() => import("./pages/posts/IATrabalho2026"));
+const AppsIAProdutividade2026 = lazy(() => import("./pages/posts/AppsIAProdutividade2026"));
+const IAGenerativaIniciantes2026 = lazy(() => import("./pages/posts/IAGenerativaIniciantes2026"));
+const DeepfakesIA2026 = lazy(() => import("./pages/posts/DeepfakesIA2026"));
+const IAEducacao2026 = lazy(() => import("./pages/posts/IAEducacao2026"));
+const AgentesIA2026 = lazy(() => import("./pages/posts/AgentesIA2026"));
+const IASaude2026 = lazy(() => import("./pages/posts/IASaude2026"));
+const RegulamentacaoIA2026 = lazy(() => import("./pages/posts/RegulamentacaoIA2026"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -169,6 +179,16 @@ const App = () => (
                 <Route path="/post/ac-unity-jogo-frente-tempo-paris" element={<ACUnity />} />
                 <Route path="/post/ac-rogue-assassino-templario" element={<ACRogue />} />
                 <Route path="/post/ranking-melhor-assassins-creed-2026" element={<ACRanking2026 />} />
+                <Route path="/post/chatgpt-vs-gemini-vs-claude-2026" element={<ChatGPTvsGeminiClaude2026 />} />
+                <Route path="/post/como-usar-ia-ganhar-dinheiro-2026" element={<IAGanharDinheiro2026 />} />
+                <Route path="/post/ia-no-trabalho-2026-profissoes" element={<IATrabalho2026 />} />
+                <Route path="/post/melhores-apps-ia-produtividade-2026" element={<AppsIAProdutividade2026 />} />
+                <Route path="/post/ia-generativa-iniciantes-2026-guia" element={<IAGenerativaIniciantes2026 />} />
+                <Route path="/post/deepfakes-ia-2026-como-identificar" element={<DeepfakesIA2026 />} />
+                <Route path="/post/ia-educacao-2026-estudar-inteligente" element={<IAEducacao2026 />} />
+                <Route path="/post/agentes-ia-2026-como-funcionam" element={<AgentesIA2026 />} />
+                <Route path="/post/ia-saude-2026-diagnosticos-futuro" element={<IASaude2026 />} />
+                <Route path="/post/regulamentacao-ia-brasil-mundo-2026" element={<RegulamentacaoIA2026 />} />
                 {/* Legal Pages */}
                 <Route path="/sobre" element={<AboutPage />} />
                 <Route path="/contato" element={<ContactPage />} />
