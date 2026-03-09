@@ -40,6 +40,9 @@ const Index = () => {
               <span className={`font-display font-bold text-lg ${cat.color}`}>
                 {cat.name}
               </span>
+              <span className="block text-sm text-muted-foreground mt-1">
+                {categoryCounts[cat.id as keyof typeof categoryCounts]} artigos
+              </span>
             </Link>
           ))}
         </div>

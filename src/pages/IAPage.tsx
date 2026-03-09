@@ -87,7 +87,7 @@ const IAPage = () => {
             variant="outline"
             size="icon"
             disabled={page === totalPages}
-            onClick={() => setPage((p) => p + 1)}
+            onClick={() => changePage((p) => p + 1)}
           >
             <ChevronRight className="h-4 w-4" />
           </Button>
