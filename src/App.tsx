@@ -159,6 +159,19 @@ const App = () => (
                 <Route path="/post/diferenca-mangas-manhuas-manhwas" element={<DiferencaMangasManhuas />} />
                 <Route path="/post/como-diferenciar-manhuas-manhwas" element={<DiferenciarManhuasManhwas />} />
                 <Route path="/post/10-melhores-manhwas-sistema-2026" element={<MelhoresManhwasSistema />} />
+
+                {/* Mundo Otaku (Novos) */}
+                <Route path="/post/animes-mais-aguardados-2026" element={<AnimesMaisAguardados2026 />} />
+                <Route path="/post/comecar-cosplay-2026" element={<ComecarCosplay2026 />} />
+                <Route path="/post/manga-vs-anime-adaptacao" element={<MangaVsAnimeAdaptacao />} />
+                <Route path="/post/cultura-otaku-brasil-2026" element={<CulturaOtakuBrasil2026 />} />
+                <Route path="/post/melhores-jogos-anime-2026" element={<MelhoresJogosAnime2026 />} />
+                <Route path="/post/aprender-japones-assistindo-anime-2026" element={<AprenderJaponesAnime2026 />} />
+                <Route path="/post/isekai-2026-por-que-domina" element={<Isekai2026 />} />
+                <Route path="/post/merchandising-otaku-colecionar-inteligencia" element={<MerchandisingOtaku />} />
+                <Route path="/post/melhores-mangas-para-ler-2026" element={<MelhoresMangas2026 />} />
+                <Route path="/post/saude-mental-cultura-otaku" element={<SaudeMentalCulturaOtaku />} />
+
                 <Route path="/post/ia-transformando-dublagem-animes" element={<IATransformandoDublagem />} />
                 <Route path="/post/ia-remasterizacao-jogos-classicos" element={<IARemasterizacaoJogos />} />
                 <Route path="/post/investir-em-tecnologia-2026" element={<InvestirEmTecnologia2026 />} />
