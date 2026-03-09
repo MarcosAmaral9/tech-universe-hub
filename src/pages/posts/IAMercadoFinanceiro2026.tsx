@@ -95,6 +95,7 @@ const IAMercadoFinanceiro2026 = () => {
             <span className="flex items-center gap-1"><Calendar className="h-4 w-4" /> 20 Fev 2026</span>
             <span className="flex items-center gap-1"><Clock className="h-4 w-4" /> 12 min de leitura</span>
           </div>
+          <ShareWhatsApp />
         </header>
 
         {/* Hero with Matrix effect */}
