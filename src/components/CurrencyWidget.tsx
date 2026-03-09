@@ -1,6 +1,7 @@
 import { DollarSign, TrendingUp, TrendingDown, AlertTriangle } from "lucide-react";
 import { useExchangeRates } from "@/hooks/useExchangeRates";
 import CacheStatusBar from "@/components/CacheStatusBar";
+import PriceAlertConfig from "@/components/PriceAlertConfig";
 
 interface CurrencyRate {
   code: string;
