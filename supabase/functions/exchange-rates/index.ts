@@ -29,7 +29,8 @@ const corsHeaders = {
 };
 
 // Frankfurter API - free, stable, no rate limits, ECB data
-const FRANKFURTER_URL = "https://api.frankfurter.dev/v1/latest?base=BRL&symbols=USD,EUR";
+const FRANKFURTER_LATEST_URL = "https://api.frankfurter.dev/v1/latest?base=BRL&symbols=USD,EUR";
+// We'll build the timeseries URL dynamically with yesterday's date
 // AwesomeAPI for ARS and PYG (South American currencies)
 const AWESOME_API_URL = "https://economia.awesomeapi.com.br/last/ARS-BRL,PYG-BRL";
 // Stooq for metals
