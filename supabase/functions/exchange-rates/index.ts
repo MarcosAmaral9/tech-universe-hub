@@ -29,7 +29,8 @@ const corsHeaders = {
 };
 
 // Frankfurter API - free, stable, no rate limits, ECB data
-const FRANKFURTER_URL = "https://api.frankfurter.dev/v1/latest?base=BRL&symbols=USD,EUR";
+const FRANKFURTER_LATEST_URL = "https://api.frankfurter.dev/v1/latest?base=BRL&symbols=USD,EUR";
+// We'll build the timeseries URL dynamically with yesterday's date
 // AwesomeAPI for ARS and PYG (South American currencies)
 const AWESOME_API_URL = "https://economia.awesomeapi.com.br/last/ARS-BRL,PYG-BRL";
 // Stooq for metals
@@ -143,42 +144,86 @@ async function fetchMetalFromStooq(metalUrl: string, usdBrl: number): Promise<Ra
   }
 }
 
-// Fetch USD and EUR from Frankfurter (more stable, ECB data)
+// Get date string N days ago in YYYY-MM-DD format
+function getDateStr(daysAgo: number): string {
+  const d = new Date();
+  d.setDate(d.getDate() - daysAgo);
+  return d.toISOString().split("T")[0];
+}
+
+// Fetch USD and EUR from Frankfurter with real daily % change
 async function fetchFromFrankfurter(): Promise<{ USDBRL?: RateQuote; EURBRL?: RateQuote; usdBrl: number }> {
   const result: { USDBRL?: RateQuote; EURBRL?: RateQuote; usdBrl: number } = { usdBrl: 5.85 };
   
   try {
-    const response = await fetch(FRANKFURTER_URL, {
-      headers: { "Accept": "application/json" },
-    });
+    // Fetch latest and previous day in parallel for % change calculation
+    // Use 3 days back to account for weekends (ECB doesn't publish on weekends)
+    const startDate = getDateStr(4);
+    const endDate = getDateStr(0);
+    const timeseriesUrl = `https://api.frankfurter.dev/v1/${startDate}..${endDate}?base=BRL&symbols=USD,EUR`;
     
-    if (!response.ok) {
-      console.warn("Frankfurter API error:", response.status);
+    const [latestRes, timeseriesRes] = await Promise.all([
+      fetch(FRANKFURTER_LATEST_URL, { headers: { "Accept": "application/json" } }),
+      fetch(timeseriesUrl, { headers: { "Accept": "application/json" } }),
+    ]);
+    
+    if (!latestRes.ok) {
+      console.warn("Frankfurter latest API error:", latestRes.status);
       return result;
     }
     
-    const data = await response.json();
+    const latestData = await latestRes.json();
     
-    // Frankfurter returns rates with BRL as base, so we need to invert
-    // e.g., BRL -> USD = 0.17 means 1 BRL = 0.17 USD, so 1 USD = 1/0.17 = 5.88 BRL
-    if (data.rates?.USD) {
-      const usdRate = 1 / data.rates.USD;
+    // Parse timeseries to get previous day's rate
+    let prevUsdRate: number | null = null;
+    let prevEurRate: number | null = null;
+    
+    if (timeseriesRes.ok) {
+      const tsData = await timeseriesRes.json();
+      if (tsData.rates) {
+        // Get sorted dates, pick second-to-last as "previous"
+        const dates = Object.keys(tsData.rates).sort();
+        if (dates.length >= 2) {
+          const prevDate = dates[dates.length - 2];
+          const prevRates = tsData.rates[prevDate];
+          if (prevRates?.USD) prevUsdRate = 1 / prevRates.USD;
+          if (prevRates?.EUR) prevEurRate = 1 / prevRates.EUR;
+        }
+      }
+    } else {
+      // Consume body to avoid resource leak
+      await timeseriesRes.text();
+    }
+    
+    // Build quotes with real % change
+    if (latestData.rates?.USD) {
+      const usdRate = 1 / latestData.rates.USD;
       result.usdBrl = usdRate;
+      
+      const pctChange = prevUsdRate 
+        ? (((usdRate - prevUsdRate) / prevUsdRate) * 100).toFixed(2) 
+        : "0.00";
+      
       result.USDBRL = {
         bid: usdRate.toFixed(4),
-        pctChange: "0.00", // Frankfurter doesn't provide change %
-        high: (usdRate * 1.005).toFixed(4),
-        low: (usdRate * 0.995).toFixed(4),
+        pctChange,
+        high: (usdRate * 1.003).toFixed(4),
+        low: (usdRate * 0.997).toFixed(4),
       };
     }
     
-    if (data.rates?.EUR) {
-      const eurRate = 1 / data.rates.EUR;
+    if (latestData.rates?.EUR) {
+      const eurRate = 1 / latestData.rates.EUR;
+      
+      const pctChange = prevEurRate 
+        ? (((eurRate - prevEurRate) / prevEurRate) * 100).toFixed(2) 
+        : "0.00";
+      
       result.EURBRL = {
         bid: eurRate.toFixed(4),
-        pctChange: "0.00",
-        high: (eurRate * 1.005).toFixed(4),
-        low: (eurRate * 0.995).toFixed(4),
+        pctChange,
+        high: (eurRate * 1.003).toFixed(4),
+        low: (eurRate * 0.997).toFixed(4),
       };
     }
   } catch (err) {
