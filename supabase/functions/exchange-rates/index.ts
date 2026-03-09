@@ -19,6 +19,8 @@ type ExchangePayload = {
   sparklines?: {
     USDBRL?: SparklineData;
     EURBRL?: SparklineData;
+    ARSBRL?: SparklineData;
+    PYGBRL?: SparklineData;
   };
   _meta?: {
     fallback: boolean;
