@@ -7,6 +7,8 @@ type RateQuote = {
   low: string;
 };
 
+type SparklineData = number[];
+
 type ExchangePayload = {
   USDBRL?: RateQuote;
   EURBRL?: RateQuote;
@@ -14,6 +16,10 @@ type ExchangePayload = {
   PYGBRL?: RateQuote;
   XAUBRL?: RateQuote;
   XAGBRL?: RateQuote;
+  sparklines?: {
+    USDBRL?: SparklineData;
+    EURBRL?: SparklineData;
+  };
   _meta?: {
     fallback: boolean;
     source: string;
