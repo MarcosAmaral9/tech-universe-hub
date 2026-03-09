@@ -76,7 +76,7 @@ const GeekPage = () => {
               key={n}
               variant={n === page ? "default" : "outline"}
               size="sm"
-              onClick={() => setPage(n)}
+              onClick={() => changePage(n)}
               className={n === page ? "bg-geek hover:bg-geek/90 text-white" : ""}
             >
               {n}
