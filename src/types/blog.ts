@@ -1,6 +1,6 @@
 export type Category = 'ia' | 'invest' | 'geek' | 'otaku';
 
-export type Subtopic = 'avatar' | 'vikings' | 'games' | 'manhwa' | 'manga' | 'manhua' | 'anime' | 'dublagem' | 'semicondutores' | 'datacenter' | 'ciberseguranca' | 'streaming' | 'assassins-creed' | 'renda-fixa' | 'renda-passiva' | 'carteira' | 'cripto' | 'impostos' | 'ia-financas' | 'educacao-financeira' | 'fiis' | 'dividas' | 'planejamento' | 'calculadoras' | null;
+export type Subtopic = 'avatar' | 'vikings' | 'games' | 'manhwa' | 'manga' | 'manhua' | 'anime' | 'dublagem' | 'semicondutores' | 'datacenter' | 'ciberseguranca' | 'streaming' | 'assassins-creed' | 'renda-fixa' | 'renda-passiva' | 'carteira' | 'cripto' | 'impostos' | 'ia-financas' | 'educacao-financeira' | 'fiis' | 'dividas' | 'planejamento' | 'calculadoras' | 'comparativos' | 'renda' | 'trabalho' | 'apps' | 'tutorial' | 'seguranca' | 'educacao' | 'agentes' | 'saude' | 'regulacao' | null;
 
 export interface BlogPost {
   id: string;
