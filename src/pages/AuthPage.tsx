@@ -168,11 +168,7 @@ const AuthPage = () => {
 
   return (
     <>
-      <DynamicSEO
-        title={isLogin ? "Entrar | VICIO<CODE>" : "Criar Conta | VICIO<CODE>"}
-        description="Acesse sua conta no VICIO<CODE> para personalizar sua experiência."
-        url={`https://viciocode.com.br/${isLogin ? "entrar" : "cadastro"}`}
-      />
+      <DynamicSEO />
       <div className="min-h-[70vh] flex items-center justify-center py-12 px-4">
         <div className="w-full max-w-md space-y-8">
           {/* Header */}
