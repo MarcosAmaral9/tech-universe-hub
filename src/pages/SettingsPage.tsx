@@ -45,6 +45,8 @@ const SettingsPage = () => {
   const [editName, setEditName] = useState("");
   const [editNickname, setEditNickname] = useState("");
   const [savingProfile, setSavingProfile] = useState(false);
+  const [uploadingAvatar, setUploadingAvatar] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (profile) {
