@@ -27,11 +27,13 @@ const safeParseViewed = (raw: string | null): string[] => {
 const RelatedPosts = ({ currentSlug }: RelatedPostsProps) => {
   const { user } = useAuthContext();
   const [viewedSlugs, setViewedSlugs] = useState<string[]>([]);
+  const [relatedPosts, setRelatedPosts] = useState(() => getRelatedPosts(currentSlug, 3));
 
   // Track viewed posts (per-user) so we can suggest unseen related posts when logged in.
   useEffect(() => {
     if (!user) {
       setViewedSlugs([]);
+      setRelatedPosts(getRelatedPosts(currentSlug, 3));
       return;
     }
 
@@ -42,11 +44,9 @@ const RelatedPosts = ({ currentSlug }: RelatedPostsProps) => {
     const next = [currentSlug, ...existing.filter((s) => s !== currentSlug)].slice(0, MAX_VIEWED);
     localStorage.setItem(key, JSON.stringify(next));
     setViewedSlugs(next);
-  }, [user?.id, currentSlug]);
 
-  const relatedPosts = useMemo(() => {
-    return getRelatedPosts(currentSlug, 3, user ? { viewedSlugs } : undefined);
-  }, [currentSlug, user?.id, viewedSlugs]);
+    setRelatedPosts(getRelatedPosts(currentSlug, 3, { viewedSlugs: next }));
+  }, [user?.id, currentSlug]);
 
   if (relatedPosts.length === 0) return null;
 
