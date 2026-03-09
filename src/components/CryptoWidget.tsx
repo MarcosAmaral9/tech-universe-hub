@@ -51,6 +51,8 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
   const [loading, setLoading] = useState(true);
   const [isFallback, setIsFallback] = useState(false);
   const [lastUpdated, setLastUpdated] = useState("");
+  const [cacheExpiresAt, setCacheExpiresAt] = useState<number>(0);
+  const [source, setSource] = useState<string>("");
 
   const fetchCryptos = useCallback(async () => {
     try {
