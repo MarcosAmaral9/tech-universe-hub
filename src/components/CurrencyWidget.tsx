@@ -169,6 +169,15 @@ const CurrencyWidget = () => {
         Cotações em relação ao real • Fontes: Frankfurter (ECB) &amp; AwesomeAPI
       </p>
       <CacheStatusBar source={source} isFallback={isFallback} cacheExpiresAt={cacheExpiresAt} />
+      <PriceAlertConfig
+        storageKey="currency_price_alerts"
+        assets={displayRates.map(r => ({
+          key: r.code,
+          label: `${r.flag} ${r.code}/BRL`,
+          currentPrice: parseFloat(r.bid),
+          unit: "R$",
+        }))}
+      />
     </div>
   );
 };

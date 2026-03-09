@@ -132,9 +132,15 @@ const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
         Ouro 18k (75% pureza) • Prata 925 (92.5% pureza) • Fonte: Stooq
       </p>
       <CacheStatusBar source={source} isFallback={isFallback} cacheExpiresAt={cacheExpiresAt} />
-
-      {/* Metal Price Alerts */}
-      <MetalAlertConfig goldPrice={goldPrice} silverPrice={silverPrice} />
+      <PriceAlertConfig
+        storageKey="metal_price_alerts"
+        assets={displayMetals.map(m => ({
+          key: m.code,
+          label: `${m.code === "XAU" ? "🥇" : "🥈"} ${m.name} ${m.purity}`,
+          currentPrice: m.bidPerGram,
+          unit: "R$/g",
+        }))}
+      />
     </div>
   );
 });
