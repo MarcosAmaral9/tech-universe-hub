@@ -68,7 +68,7 @@ const ResetPasswordPage = () => {
 
   return (
     <>
-      <DynamicSEO title="Redefinir Senha — VICIO<CODE>" description="Defina sua nova senha." />
+      <DynamicSEO />
       <div className="min-h-[60vh] flex items-center justify-center py-12 px-4">
         <div className="w-full max-w-md space-y-8">
           <div className="text-center space-y-3">

@@ -69,10 +69,7 @@ const PublicProfilePage = () => {
 
   return (
     <>
-      <DynamicSEO
-        title={`${displayName} — Perfil | VICIO<CODE>`}
-        description={`Perfil público de ${displayName} no VICIO<CODE>.`}
-      />
+      <DynamicSEO />
       <div className="min-h-[60vh] flex items-center justify-center py-12 px-4">
         <div className="w-full max-w-md text-center space-y-6">
           <Avatar className="w-28 h-28 mx-auto ring-4 ring-primary/20">
