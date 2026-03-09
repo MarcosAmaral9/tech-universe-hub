@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { Download, Smartphone, Monitor, Share, MoreVertical, PlusSquare, CheckCircle2, Bell, BellOff, Settings } from "lucide-react";
+import { Download, Smartphone, Monitor, Share, MoreVertical, PlusSquare, CheckCircle2, Bell, BellOff, Settings, Sun, Moon, Type } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
+import { useTheme } from "@/contexts/ThemeContext";
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
@@ -9,14 +10,22 @@ interface BeforeInstallPromptEvent extends Event {
 }
 
 const NOTIFICATION_SOUND_KEY = "pwa_update_sound_enabled";
+const FONT_SIZE_KEY = "viciocode_font_size";
+
+type FontSize = "small" | "normal" | "large";
 
 const InstallPage = () => {
+  const { theme, toggleTheme } = useTheme();
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [isInstalled, setIsInstalled] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(() => {
     const stored = localStorage.getItem(NOTIFICATION_SOUND_KEY);
     return stored === null ? true : stored === "true";
+  });
+  const [fontSize, setFontSize] = useState<FontSize>(() => {
+    const stored = localStorage.getItem(FONT_SIZE_KEY) as FontSize;
+    return stored || "normal";
   });
 
   useEffect(() => {
@@ -51,6 +60,20 @@ const InstallPage = () => {
     setSoundEnabled(newValue);
     localStorage.setItem(NOTIFICATION_SOUND_KEY, String(newValue));
   };
+
+  const changeFontSize = (size: FontSize) => {
+    setFontSize(size);
+    localStorage.setItem(FONT_SIZE_KEY, size);
+    document.documentElement.classList.remove("font-small", "font-normal", "font-large");
+    document.documentElement.classList.add(`font-${size}`);
+  };
+
+  useEffect(() => {
+    const savedSize = localStorage.getItem(FONT_SIZE_KEY) as FontSize;
+    if (savedSize) {
+      document.documentElement.classList.add(`font-${savedSize}`);
+    }
+  }, []);
 
   return (
     <div className="min-h-[70vh] py-12 px-4">
@@ -185,7 +208,70 @@ const InstallPage = () => {
             <Settings className="w-6 h-6 text-primary" />
             <h2 className="text-xl font-bold text-foreground">Configurações do App</h2>
           </div>
+          
+          {/* Theme Toggle */}
           <div className="flex items-center justify-between py-3 border-b border-border">
+            <div className="flex items-center gap-3">
+              {theme === "dark" ? (
+                <Moon className="w-5 h-5 text-primary" />
+              ) : (
+                <Sun className="w-5 h-5 text-primary" />
+              )}
+              <div>
+                <p className="font-medium text-foreground">Tema</p>
+                <p className="text-sm text-muted-foreground">
+                  {theme === "dark" ? "Modo escuro ativado" : "Modo claro ativado"}
+                </p>
+              </div>
+            </div>
+            <Switch
+              checked={theme === "dark"}
+              onCheckedChange={toggleTheme}
+              aria-label="Alternar tema"
+            />
+          </div>
+
+          {/* Font Size */}
+          <div className="flex items-center justify-between py-3 border-b border-border">
+            <div className="flex items-center gap-3">
+              <Type className="w-5 h-5 text-primary" />
+              <div>
+                <p className="font-medium text-foreground">Tamanho da fonte</p>
+                <p className="text-sm text-muted-foreground">
+                  Ajuste o tamanho do texto
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-1">
+              <Button
+                variant={fontSize === "small" ? "default" : "outline"}
+                size="sm"
+                onClick={() => changeFontSize("small")}
+                className="text-xs px-2"
+              >
+                A
+              </Button>
+              <Button
+                variant={fontSize === "normal" ? "default" : "outline"}
+                size="sm"
+                onClick={() => changeFontSize("normal")}
+                className="text-sm px-2"
+              >
+                A
+              </Button>
+              <Button
+                variant={fontSize === "large" ? "default" : "outline"}
+                size="sm"
+                onClick={() => changeFontSize("large")}
+                className="text-base px-2"
+              >
+                A
+              </Button>
+            </div>
+          </div>
+
+          {/* Sound Toggle */}
+          <div className="flex items-center justify-between py-3">
             <div className="flex items-center gap-3">
               {soundEnabled ? (
                 <Bell className="w-5 h-5 text-primary" />

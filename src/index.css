@@ -198,3 +198,14 @@
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+/* Font size preferences */
+html.font-small {
+  font-size: 14px;
+}
+html.font-normal {
+  font-size: 16px;
+}
+html.font-large {
+  font-size: 18px;
+}

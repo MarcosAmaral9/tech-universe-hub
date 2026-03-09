@@ -9,7 +9,14 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import CookieConsent from "./components/CookieConsent";
 import PWAUpdatePrompt from "./components/PWAUpdatePrompt";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
+
+// Apply saved font size on app load
+const FONT_SIZE_KEY = "viciocode_font_size";
+const savedFontSize = localStorage.getItem(FONT_SIZE_KEY);
+if (savedFontSize) {
+  document.documentElement.classList.add(`font-${savedFontSize}`);
+}
 
 // Lazy-loaded pages — only downloaded when user navigates to them
 const NotFound = lazy(() => import("./pages/NotFound"));
