@@ -49,10 +49,13 @@ const B3StockTicker = () => {
       const cached = localStorage.getItem(CACHE_KEY);
       if (cached) {
         const { data, timestamp, fallback } = JSON.parse(cached);
-        if (Date.now() - timestamp < CACHE_DURATION) {
+        const expiresAt = timestamp + CACHE_DURATION;
+        if (Date.now() < expiresAt) {
           setStocks(data);
           setIsFallback(!!fallback);
           setLastUpdated(new Date(timestamp).toLocaleString("pt-BR"));
+          setCacheExpiresAt(expiresAt);
+          setSource(fallback ? "referência" : "cache");
           setLoading(false);
           return;
         }
