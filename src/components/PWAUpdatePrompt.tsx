@@ -29,6 +29,11 @@ const PWAUpdatePrompt = () => {
     if (needRefresh && !hasNotified.current) {
       hasNotified.current = true;
       
+      // Check if sound/vibration is enabled
+      const soundEnabled = localStorage.getItem("pwa_update_sound_enabled") !== "false";
+      
+      if (!soundEnabled) return;
+      
       // Vibrate if supported (mobile devices)
       if ("vibrate" in navigator) {
         navigator.vibrate([100, 50, 100, 50, 100]);
