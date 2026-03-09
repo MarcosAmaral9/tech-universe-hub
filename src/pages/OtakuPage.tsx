@@ -28,6 +28,11 @@ const OtakuPage = () => {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [page, setPage] = useState(1);
 
+  const changePage = (newPage: number | ((p: number) => number)) => {
+    setPage(newPage);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   // Extract available subtopics from posts
   const subtopics = useMemo(() => {
     const set = new Set<string>();
