@@ -11,6 +11,7 @@ const PAGE_META: Record<string, { title: string; description: string }> = {
   "/ia": { title: "Inteligência Artificial", description: "As últimas novidades e análises sobre Inteligência Artificial." },
   "/financas": { title: "Investimentos & Finanças", description: "Guias completos sobre investimentos, finanças pessoais e educação financeira." },
   "/geek": { title: "Geek", description: "Games, séries, filmes e cultura geek." },
+  "/cotacoes": { title: "Cotações em Tempo Real", description: "Acompanhe cotações de ações da B3, câmbio, metais preciosos e criptomoedas em tempo real." },
 };
 
 function setMetaTag(attrName: string, attrValue: string, content: string) {
