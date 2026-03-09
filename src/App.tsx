@@ -49,6 +49,7 @@ const ContactPage = lazy(() => import("./pages/ContactPage"));
 const InstallPage = lazy(() => import("./pages/InstallPage"));
 const SettingsPage = lazy(() => import("./pages/SettingsPage"));
 const CotacoesPage = lazy(() => import("./pages/CotacoesPage"));
+const AuthPage = lazy(() => import("./pages/AuthPage"));
 
 // Lazy-loaded posts
 const DiferencaMangasManhuas = lazy(() => import("./pages/posts/DiferencaMangasManhuas"));
