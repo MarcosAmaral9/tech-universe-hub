@@ -75,7 +75,7 @@ const CalculadorasFinanceiras = () => {
             symbol: "USD",
             price: parseFloat(data.USDBRL.bid),
             category: "currency",
-            icon: "💵",
+            icon: "🇺🇸",
           });
         }
         if (data?.EURBRL) {
@@ -85,7 +85,27 @@ const CalculadorasFinanceiras = () => {
             symbol: "EUR",
             price: parseFloat(data.EURBRL.bid),
             category: "currency",
-            icon: "💶",
+            icon: "🇪🇺",
+          });
+        }
+        if (data?.ARSBRL) {
+          allAssets.push({
+            id: "currency-ARS",
+            name: "Peso Argentino",
+            symbol: "ARS",
+            price: parseFloat(data.ARSBRL.bid),
+            category: "currency",
+            icon: "🇦🇷",
+          });
+        }
+        if (data?.PYGBRL) {
+          allAssets.push({
+            id: "currency-PYG",
+            name: "Guarani Paraguaio",
+            symbol: "PYG",
+            price: parseFloat(data.PYGBRL.bid),
+            category: "currency",
+            icon: "🇵🇾",
           });
         }
         const TROY_OZ_TO_GRAMS = 31.1035;

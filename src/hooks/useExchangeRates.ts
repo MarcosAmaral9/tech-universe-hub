@@ -8,6 +8,10 @@ interface ExchangeData {
   PYGBRL?: { bid: string; pctChange: string; high: string; low: string };
   XAUBRL?: { bid: string; pctChange: string; high: string; low: string };
   XAGBRL?: { bid: string; pctChange: string; high: string; low: string };
+  sparklines?: {
+    USDBRL?: number[];
+    EURBRL?: number[];
+  };
   _meta?: {
     fallback?: boolean;
     source?: string;
