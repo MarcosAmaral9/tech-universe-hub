@@ -1,16 +1,23 @@
 import { useState, useEffect } from "react";
-import { Download, Smartphone, Monitor, Share, MoreVertical, PlusSquare, CheckCircle2 } from "lucide-react";
+import { Download, Smartphone, Monitor, Share, MoreVertical, PlusSquare, CheckCircle2, Bell, BellOff, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
   userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
 }
 
+const NOTIFICATION_SOUND_KEY = "pwa_update_sound_enabled";
+
 const InstallPage = () => {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [isInstalled, setIsInstalled] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
+  const [soundEnabled, setSoundEnabled] = useState(() => {
+    const stored = localStorage.getItem(NOTIFICATION_SOUND_KEY);
+    return stored === null ? true : stored === "true";
+  });
 
   useEffect(() => {
     const ua = navigator.userAgent;
@@ -37,6 +44,12 @@ const InstallPage = () => {
     const { outcome } = await deferredPrompt.userChoice;
     if (outcome === "accepted") setIsInstalled(true);
     setDeferredPrompt(null);
+  };
+
+  const toggleSound = () => {
+    const newValue = !soundEnabled;
+    setSoundEnabled(newValue);
+    localStorage.setItem(NOTIFICATION_SOUND_KEY, String(newValue));
   };
 
   return (
@@ -165,6 +178,34 @@ const InstallPage = () => {
             </ol>
           </section>
         </div>
+
+        {/* Settings */}
+        <section className="rounded-2xl border border-border bg-card p-6 space-y-4">
+          <div className="flex items-center gap-3">
+            <Settings className="w-6 h-6 text-primary" />
+            <h2 className="text-xl font-bold text-foreground">Configurações do App</h2>
+          </div>
+          <div className="flex items-center justify-between py-3 border-b border-border">
+            <div className="flex items-center gap-3">
+              {soundEnabled ? (
+                <Bell className="w-5 h-5 text-primary" />
+              ) : (
+                <BellOff className="w-5 h-5 text-muted-foreground" />
+              )}
+              <div>
+                <p className="font-medium text-foreground">Som e vibração</p>
+                <p className="text-sm text-muted-foreground">
+                  Notificar quando uma nova versão estiver disponível
+                </p>
+              </div>
+            </div>
+            <Switch
+              checked={soundEnabled}
+              onCheckedChange={toggleSound}
+              aria-label="Ativar som e vibração"
+            />
+          </div>
+        </section>
 
         {/* Benefits */}
         <div className="text-center space-y-3 pt-4">
