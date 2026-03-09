@@ -127,6 +127,8 @@ const App = () => (
                 <Route path="/financas" element={<InvestimentosPage />} />
                 <Route path="/cotacoes" element={<CotacoesPage />} />
                 <Route path="/entrar" element={<AuthPage />} />
+                <Route path="/perfil/:id" element={<PublicProfilePage />} />
+                <Route path="/redefinir-senha" element={<ResetPasswordPage />} />
                 <Route path="/geek" element={<GeekPage />} />
                 {/* Portals */}
                 <Route path="/geek/avatar" element={<AvatarPortal />} />

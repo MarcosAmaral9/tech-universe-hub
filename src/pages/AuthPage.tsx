@@ -239,7 +239,28 @@ const AuthPage = () => {
                 </button>
               </div>
               {errors.password && <p className="text-sm text-destructive">{errors.password}</p>}
-            </div>
+              {isLogin && (
+                <button
+                  type="button"
+                  onClick={async () => {
+                    if (!email.trim()) {
+                      toast({ title: "Informe seu email", description: "Digite seu email acima para receber o link de recuperação.", variant: "destructive" });
+                      return;
+                    }
+                    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+                      redirectTo: `${window.location.origin}/redefinir-senha`,
+                    });
+                    if (error) {
+                      toast({ title: "Erro", description: error.message, variant: "destructive" });
+                    } else {
+                      toast({ title: "Email enviado! 📧", description: "Verifique sua caixa de entrada para redefinir sua senha." });
+                    }
+                  }}
+                  className="text-sm text-primary hover:underline"
+                >
+                  Esqueci minha senha
+                </button>
+              )}
 
             {/* Turnstile captcha for signup */}
             {!isLogin && (
