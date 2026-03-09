@@ -261,6 +261,7 @@ const AuthPage = () => {
                   Esqueci minha senha
                 </button>
               )}
+            </div>
 
             {/* Turnstile captcha for signup */}
             {!isLogin && (
