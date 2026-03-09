@@ -53,8 +53,6 @@ const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
   }
 
   const displayMetals = metals.length > 0 ? metals : (isFallback ? FALLBACK : []);
-  const goldPrice = displayMetals.find(m => m.code === "XAU")?.bidPerGram || 0;
-  const silverPrice = displayMetals.find(m => m.code === "XAG")?.bidPerGram || 0;
 
   if (loading && displayMetals.length === 0) {
     return (
