@@ -213,6 +213,17 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
       <p className="text-[10px] text-muted-foreground mt-3 text-center">
         Cotações de criptomoedas em reais (BRL) • Atualizado automaticamente a cada {UPDATE_INTERVAL_LABEL} • Fonte: CoinGecko
       </p>
+      <CacheStatusBar source={source} isFallback={isFallback} cacheExpiresAt={cacheExpiresAt} />
+      <PriceAlertConfig
+        storageKey="crypto_price_alerts"
+        assets={displayCryptos.map(c => ({
+          key: c.symbol,
+          label: c.name,
+          icon: "",
+          currentPrice: c.current_price,
+          unit: "R$",
+        }))}
+      />
     </div>
   );
 });
