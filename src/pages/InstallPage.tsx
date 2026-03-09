@@ -1,16 +1,23 @@
 import { useState, useEffect } from "react";
-import { Download, Smartphone, Monitor, Share, MoreVertical, PlusSquare, CheckCircle2 } from "lucide-react";
+import { Download, Smartphone, Monitor, Share, MoreVertical, PlusSquare, CheckCircle2, Bell, BellOff, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
   userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
 }
 
+const NOTIFICATION_SOUND_KEY = "pwa_update_sound_enabled";
+
 const InstallPage = () => {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [isInstalled, setIsInstalled] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
+  const [soundEnabled, setSoundEnabled] = useState(() => {
+    const stored = localStorage.getItem(NOTIFICATION_SOUND_KEY);
+    return stored === null ? true : stored === "true";
+  });
 
   useEffect(() => {
     const ua = navigator.userAgent;
