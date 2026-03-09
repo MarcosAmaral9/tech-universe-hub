@@ -179,6 +179,16 @@ const App = () => (
                 <Route path="/post/ac-unity-jogo-frente-tempo-paris" element={<ACUnity />} />
                 <Route path="/post/ac-rogue-assassino-templario" element={<ACRogue />} />
                 <Route path="/post/ranking-melhor-assassins-creed-2026" element={<ACRanking2026 />} />
+                <Route path="/post/chatgpt-vs-gemini-vs-claude-2026" element={<ChatGPTvsGeminiClaude2026 />} />
+                <Route path="/post/como-usar-ia-ganhar-dinheiro-2026" element={<IAGanharDinheiro2026 />} />
+                <Route path="/post/ia-no-trabalho-2026-profissoes" element={<IATrabalho2026 />} />
+                <Route path="/post/melhores-apps-ia-produtividade-2026" element={<AppsIAProdutividade2026 />} />
+                <Route path="/post/ia-generativa-iniciantes-2026-guia" element={<IAGenerativaIniciantes2026 />} />
+                <Route path="/post/deepfakes-ia-2026-como-identificar" element={<DeepfakesIA2026 />} />
+                <Route path="/post/ia-educacao-2026-estudar-inteligente" element={<IAEducacao2026 />} />
+                <Route path="/post/agentes-ia-2026-como-funcionam" element={<AgentesIA2026 />} />
+                <Route path="/post/ia-saude-2026-diagnosticos-futuro" element={<IASaude2026 />} />
+                <Route path="/post/regulamentacao-ia-brasil-mundo-2026" element={<RegulamentacaoIA2026 />} />
                 {/* Legal Pages */}
                 <Route path="/sobre" element={<AboutPage />} />
                 <Route path="/contato" element={<ContactPage />} />
