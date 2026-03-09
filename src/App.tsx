@@ -107,8 +107,9 @@ const PageLoader = () => (
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider>
-      <TooltipProvider>
+      <ThemeProvider>
+        <AuthProvider>
+          <TooltipProvider>
         <Toaster />
         <Sonner />
         <BrowserRouter>
