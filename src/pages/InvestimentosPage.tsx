@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PostCard from "@/components/PostCard";
 import { getPostsByCategory, getPostBySlug } from "@/data/posts";
-import { ArrowLeft, Calculator } from "lucide-react";
+import { ArrowLeft, Calculator, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import B3StockTicker from "@/components/B3StockTicker";
 import CurrencyWidget from "@/components/CurrencyWidget";
