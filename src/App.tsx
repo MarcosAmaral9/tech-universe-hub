@@ -199,6 +199,17 @@ const App = () => (
                 <Route path="/post/agentes-ia-2026-como-funcionam" element={<AgentesIA2026 />} />
                 <Route path="/post/ia-saude-2026-diagnosticos-futuro" element={<IASaude2026 />} />
                 <Route path="/post/regulamentacao-ia-brasil-mundo-2026" element={<RegulamentacaoIA2026 />} />
+                {/* New Otaku Posts */}
+                <Route path="/post/animes-mais-aguardados-2026" element={<AnimesAguardados2026 />} />
+                <Route path="/post/guia-cosplay-2026-iniciantes" element={<GuiaCosplay2026 />} />
+                <Route path="/post/manga-vs-anime-adaptacao-2026" element={<MangaVsAnime2026 />} />
+                <Route path="/post/cultura-otaku-brasil-2026" element={<CulturaOtakuBrasil2026 />} />
+                <Route path="/post/melhores-jogos-anime-2026" element={<JogosAnime2026 />} />
+                <Route path="/post/aprender-japones-anime-2026" element={<AprenderJaponesAnime2026 />} />
+                <Route path="/post/isekai-2026-genero-domina" element={<Isekai2026 />} />
+                <Route path="/post/merchandising-otaku-colecionar-2026" element={<MerchandisingOtaku2026 />} />
+                <Route path="/post/melhores-mangas-ler-2026" element={<MelhoresMangas2026 />} />
+                <Route path="/post/saude-mental-cultura-otaku-2026" element={<SaudeMentalOtaku2026 />} />
                 {/* Legal Pages */}
                 <Route path="/sobre" element={<AboutPage />} />
                 <Route path="/contato" element={<ContactPage />} />
