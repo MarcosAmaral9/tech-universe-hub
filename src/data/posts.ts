@@ -814,30 +814,44 @@ export const getLatestPostsByCategory = (): BlogPost[] => {
   return latestByCategory;
 };
 
-// Get related posts based on category and subtopic, excluding current post
-export const getRelatedPosts = (currentSlug: string, count: number = 3): BlogPost[] => {
+// Get related posts: random from same category, excluding current post.
+// If viewedSlugs is provided, prioritize posts the user hasn't seen yet.
+const shuffleArray = <T,>(arr: T[]): T[] => {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+};
+
+export const getRelatedPosts = (
+  currentSlug: string,
+  count: number = 3,
+  options?: { viewedSlugs?: string[] }
+): BlogPost[] => {
   const currentPost = getPostBySlug(currentSlug);
   if (!currentPost) return getLatestPosts(count);
-  
-  const otherPosts = blogPosts.filter(post => post.slug !== currentSlug);
-  
-  // First, try to find posts with the same subtopic
-  if (currentPost.subtopic) {
-    const sameSubtopic = otherPosts.filter(post => post.subtopic === currentPost.subtopic);
-    if (sameSubtopic.length >= count) {
-      return sameSubtopic.slice(0, count);
-    }
+
+  const viewed = new Set(options?.viewedSlugs ?? []);
+  const otherPosts = blogPosts.filter((post) => post.slug !== currentSlug);
+
+  const sameCategoryPool = otherPosts.filter(
+    (post) => post.category === currentPost.category || post.secondaryCategory === currentPost.category
+  );
+
+  const pool = sameCategoryPool.length > 0 ? sameCategoryPool : otherPosts;
+
+  // Prioritize unseen when we have the signal (typically for logged-in users)
+  if (options?.viewedSlugs) {
+    const unseen = pool.filter((p) => !viewed.has(p.slug));
+    const seen = pool.filter((p) => viewed.has(p.slug));
+
+    const result = [...shuffleArray(unseen), ...shuffleArray(seen)];
+    return result.slice(0, count);
   }
-  
-  // Then, try posts from the same category
-  const sameCategory = otherPosts.filter(post => post.category === currentPost.category);
-  if (sameCategory.length >= count) {
-    return sameCategory.slice(0, count);
-  }
-  
-  // Finally, return latest posts if not enough related posts
-  const combined = [...sameCategory, ...otherPosts.filter(post => post.category !== currentPost.category)];
-  return combined.slice(0, count);
+
+  return shuffleArray(pool).slice(0, count);
 };
 
 // Get all subtopics for a category
