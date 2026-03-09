@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback, forwardRef } from "react";
 import { Bitcoin, TrendingUp, TrendingDown, AlertTriangle } from "lucide-react";
+import CacheStatusBar from "@/components/CacheStatusBar";
+import PriceAlertConfig from "@/components/PriceAlertConfig";
 
 interface CryptoData {
   id: string;
@@ -49,6 +51,8 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
   const [loading, setLoading] = useState(true);
   const [isFallback, setIsFallback] = useState(false);
   const [lastUpdated, setLastUpdated] = useState("");
+  const [cacheExpiresAt, setCacheExpiresAt] = useState<number>(0);
+  const [source, setSource] = useState<string>("");
 
   const fetchCryptos = useCallback(async () => {
     try {
@@ -59,6 +63,8 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
           setCryptos(data);
           setIsFallback(!!fallback);
           setLastUpdated(new Date(timestamp).toLocaleString("pt-BR"));
+          setCacheExpiresAt(timestamp + CACHE_DURATION);
+          setSource(fallback ? "referência" : "cache");
           setLoading(false);
           return;
         }
@@ -78,6 +84,8 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
       setIsFallback(false);
       const now = Date.now();
       setLastUpdated(new Date(now).toLocaleString("pt-BR"));
+      setCacheExpiresAt(now + CACHE_DURATION);
+      setSource("live");
       localStorage.setItem(CACHE_KEY, JSON.stringify({ data, timestamp: now, fallback: false }));
       setLoading(false);
       return;
@@ -89,6 +97,8 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
     setIsFallback(true);
     const now = Date.now();
     setLastUpdated(new Date(now).toLocaleString("pt-BR"));
+    setCacheExpiresAt(now + CACHE_DURATION);
+    setSource("local-static");
     localStorage.setItem(CACHE_KEY, JSON.stringify({ data: FALLBACK, timestamp: now, fallback: true }));
     setLoading(false);
   }, []);
@@ -203,6 +213,17 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
       <p className="text-[10px] text-muted-foreground mt-3 text-center">
         Cotações de criptomoedas em reais (BRL) • Atualizado automaticamente a cada {UPDATE_INTERVAL_LABEL} • Fonte: CoinGecko
       </p>
+      <CacheStatusBar source={source} isFallback={isFallback} cacheExpiresAt={cacheExpiresAt} />
+      <PriceAlertConfig
+        storageKey="crypto_price_alerts"
+        assets={displayCryptos.map(c => ({
+          key: c.symbol,
+          label: c.name,
+          icon: "",
+          currentPrice: c.current_price,
+          unit: "R$",
+        }))}
+      />
     </div>
   );
 });

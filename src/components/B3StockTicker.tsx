@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { TrendingUp, TrendingDown, AlertTriangle } from "lucide-react";
+import CacheStatusBar from "@/components/CacheStatusBar";
+import PriceAlertConfig, { AlertAssetOption } from "@/components/PriceAlertConfig";
 
 interface StockQuote {
   symbol: string;
@@ -39,16 +41,21 @@ const B3StockTicker = () => {
   const [loading, setLoading] = useState(true);
   const [isFallback, setIsFallback] = useState(false);
   const [lastUpdated, setLastUpdated] = useState<string>("");
+  const [cacheExpiresAt, setCacheExpiresAt] = useState<number>(0);
+  const [source, setSource] = useState<string>("");
 
   const fetchStocks = useCallback(async () => {
     try {
       const cached = localStorage.getItem(CACHE_KEY);
       if (cached) {
         const { data, timestamp, fallback } = JSON.parse(cached);
-        if (Date.now() - timestamp < CACHE_DURATION) {
+        const expiresAt = timestamp + CACHE_DURATION;
+        if (Date.now() < expiresAt) {
           setStocks(data);
           setIsFallback(!!fallback);
           setLastUpdated(new Date(timestamp).toLocaleString("pt-BR"));
+          setCacheExpiresAt(expiresAt);
+          setSource(fallback ? "referência" : "cache");
           setLoading(false);
           return;
         }
@@ -80,6 +87,8 @@ const B3StockTicker = () => {
         setIsFallback(false);
         const now = Date.now();
         setLastUpdated(new Date(now).toLocaleString("pt-BR"));
+        setCacheExpiresAt(now + CACHE_DURATION);
+        setSource("live");
         localStorage.setItem(CACHE_KEY, JSON.stringify({ data: quotes, timestamp: now, fallback: false }));
         setLoading(false);
         return;
@@ -92,6 +101,8 @@ const B3StockTicker = () => {
     setIsFallback(true);
     const now = Date.now();
     setLastUpdated(new Date(now).toLocaleString("pt-BR"));
+    setCacheExpiresAt(now + CACHE_DURATION);
+    setSource("local-static");
     localStorage.setItem(CACHE_KEY, JSON.stringify({ data: FALLBACK_STOCKS, timestamp: now, fallback: true }));
     setLoading(false);
   }, []);
@@ -200,6 +211,17 @@ const B3StockTicker = () => {
       <p className="text-[10px] text-muted-foreground mt-3 text-center">
         Dados de ações da B3 (Bolsa de Valores Brasileira) • Cotações atualizadas automaticamente a cada {UPDATE_INTERVAL_LABEL} • Apenas ativos listados na B3
       </p>
+      <CacheStatusBar source={source} isFallback={isFallback} cacheExpiresAt={cacheExpiresAt} />
+      <PriceAlertConfig
+        storageKey="b3_price_alerts"
+        assets={stocks.slice(0, 10).map(s => ({
+          key: s.symbol,
+          label: s.shortName || s.symbol,
+          icon: "",
+          currentPrice: s.regularMarketPrice,
+          unit: "R$",
+        }))}
+      />
     </div>
   );
 };

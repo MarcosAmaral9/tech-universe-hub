@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import { TrendingUp, TrendingDown, AlertTriangle, Gem } from "lucide-react";
 import { useExchangeRates } from "@/hooks/useExchangeRates";
 import CacheStatusBar from "@/components/CacheStatusBar";
-import MetalAlertConfig from "@/components/MetalAlertConfig";
+import PriceAlertConfig from "@/components/PriceAlertConfig";
 
 const TROY_OZ_TO_GRAMS = 31.1035;
 const GOLD_18K_PURITY = 0.75;
@@ -53,8 +53,6 @@ const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
   }
 
   const displayMetals = metals.length > 0 ? metals : (isFallback ? FALLBACK : []);
-  const goldPrice = displayMetals.find(m => m.code === "XAU")?.bidPerGram || 0;
-  const silverPrice = displayMetals.find(m => m.code === "XAG")?.bidPerGram || 0;
 
   if (loading && displayMetals.length === 0) {
     return (
@@ -132,9 +130,15 @@ const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
         Ouro 18k (75% pureza) • Prata 925 (92.5% pureza) • Fonte: Stooq
       </p>
       <CacheStatusBar source={source} isFallback={isFallback} cacheExpiresAt={cacheExpiresAt} />
-
-      {/* Metal Price Alerts */}
-      <MetalAlertConfig goldPrice={goldPrice} silverPrice={silverPrice} />
+      <PriceAlertConfig
+        storageKey="metal_price_alerts"
+        assets={displayMetals.map(m => ({
+          key: m.code,
+          label: `${m.code === "XAU" ? "🥇" : "🥈"} ${m.name} ${m.purity}`,
+          currentPrice: m.bidPerGram,
+          unit: "R$/g",
+        }))}
+      />
     </div>
   );
 });
