@@ -15,8 +15,12 @@ interface AssetOption {
   icon: string;
 }
 
-const formatBRL = (value: number) =>
-  value.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const formatBRL = (value: number) => {
+  if (value === 0) return "0,00";
+  if (value < 0.01) return value.toLocaleString("pt-BR", { minimumFractionDigits: 4, maximumFractionDigits: 5 });
+  if (value < 1) return value.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 4 });
+  return value.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+};
 
 const CalculadorasFinanceiras = () => {
   const [assets, setAssets] = useState<AssetOption[]>([]);
