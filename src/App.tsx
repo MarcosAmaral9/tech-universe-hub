@@ -18,6 +18,22 @@ if (savedFontSize) {
   document.documentElement.classList.add(`font-${savedFontSize}`);
 }
 
+// Apply saved accent color on app load
+const ACCENT_COLOR_KEY = "viciocode_accent_color";
+const accentColorMap: Record<string, string> = {
+  cyan: "187 85% 43%",
+  purple: "270 70% 55%",
+  green: "142 70% 45%",
+  orange: "25 95% 55%",
+  pink: "330 80% 60%",
+  blue: "220 90% 55%",
+};
+const savedAccent = localStorage.getItem(ACCENT_COLOR_KEY);
+if (savedAccent && accentColorMap[savedAccent]) {
+  document.documentElement.style.setProperty("--primary", accentColorMap[savedAccent]);
+  document.documentElement.style.setProperty("--ring", accentColorMap[savedAccent]);
+}
+
 // Lazy-loaded pages — only downloaded when user navigates to them
 const NotFound = lazy(() => import("./pages/NotFound"));
 const OtakuPage = lazy(() => import("./pages/OtakuPage"));
