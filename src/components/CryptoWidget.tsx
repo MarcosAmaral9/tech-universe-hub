@@ -97,6 +97,8 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
     setIsFallback(true);
     const now = Date.now();
     setLastUpdated(new Date(now).toLocaleString("pt-BR"));
+    setCacheExpiresAt(now + CACHE_DURATION);
+    setSource("local-static");
     localStorage.setItem(CACHE_KEY, JSON.stringify({ data: FALLBACK, timestamp: now, fallback: true }));
     setLoading(false);
   }, []);
