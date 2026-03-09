@@ -75,7 +75,7 @@ const CalculadorasFinanceiras = () => {
             symbol: "USD",
             price: parseFloat(data.USDBRL.bid),
             category: "currency",
-            icon: "💵",
+            icon: "🇺🇸",
           });
         }
         if (data?.EURBRL) {
@@ -85,7 +85,27 @@ const CalculadorasFinanceiras = () => {
             symbol: "EUR",
             price: parseFloat(data.EURBRL.bid),
             category: "currency",
-            icon: "💶",
+            icon: "🇪🇺",
+          });
+        }
+        if (data?.ARSBRL) {
+          allAssets.push({
+            id: "currency-ARS",
+            name: "Peso Argentino",
+            symbol: "ARS",
+            price: parseFloat(data.ARSBRL.bid),
+            category: "currency",
+            icon: "🇦🇷",
+          });
+        }
+        if (data?.PYGBRL) {
+          allAssets.push({
+            id: "currency-PYG",
+            name: "Guarani Paraguaio",
+            symbol: "PYG",
+            price: parseFloat(data.PYGBRL.bid),
+            category: "currency",
+            icon: "🇵🇾",
           });
         }
         const TROY_OZ_TO_GRAMS = 31.1035;
@@ -284,10 +304,11 @@ const CalculadorasFinanceiras = () => {
           compradas em frações. A calculadora mostra exatamente quanto de cada criptomoeda você receberia.
         </p>
 
-        <h3>💵 Câmbio (Dólar e Euro)</h3>
+        <h3>💵 Câmbio (Dólar, Euro, Peso e Guarani)</h3>
         <p>
-          Quer saber quantos dólares ou euros conseguiria com seus reais? A calculadora usa a cotação comercial
-          atualizada para mostrar o valor convertido.
+          Quer saber quantos dólares, euros, pesos argentinos ou guaranis paraguaios conseguiria com seus reais? 
+          A calculadora usa as cotações comerciais atualizadas para mostrar o valor convertido — ideal para quem 
+          viaja para países vizinhos ou faz compras internacionais.
         </p>
 
         <h3>🥇 Ouro e Prata</h3>

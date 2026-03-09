@@ -9,6 +9,7 @@ interface CurrencyRate {
   pctChange: string;
   high: string;
   low: string;
+  sparkline?: number[];
 }
 
 const FALLBACK: CurrencyRate[] = [
@@ -17,6 +18,37 @@ const FALLBACK: CurrencyRate[] = [
   { code: "ARS", name: "Peso Argentino", flag: "🇦🇷", bid: "0.0048", pctChange: "0.10", high: "0.0049", low: "0.0047" },
   { code: "PYG", name: "Guarani Paraguaio", flag: "🇵🇾", bid: "0.00076", pctChange: "-0.05", high: "0.00078", low: "0.00074" },
 ];
+
+// Simple SVG sparkline component
+const Sparkline = ({ data, isUp }: { data: number[]; isUp: boolean }) => {
+  if (data.length < 2) return null;
+  
+  const min = Math.min(...data);
+  const max = Math.max(...data);
+  const range = max - min || 1;
+  const height = 24;
+  const width = 60;
+  const padding = 2;
+  
+  const points = data.map((v, i) => {
+    const x = padding + (i / (data.length - 1)) * (width - padding * 2);
+    const y = height - padding - ((v - min) / range) * (height - padding * 2);
+    return `${x},${y}`;
+  }).join(" ");
+  
+  return (
+    <svg width={width} height={height} className="shrink-0">
+      <polyline
+        points={points}
+        fill="none"
+        stroke={isUp ? "rgb(34, 197, 94)" : "rgb(239, 68, 68)"}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
 
 const CurrencyWidget = () => {
   const { data, loading, isFallback, lastUpdated } = useExchangeRates();
@@ -41,6 +73,7 @@ const CurrencyWidget = () => {
         pctChange: d.pctChange,
         high: d.high,
         low: d.low,
+        sparkline: data?.sparklines?.[c.key as "USDBRL" | "EURBRL"],
       });
     }
   }
@@ -55,7 +88,7 @@ const CurrencyWidget = () => {
           <h3 className="font-bold">Câmbio</h3>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-          {[0, 1, 2, 3].map(i => <div key={i} className="animate-pulse bg-muted rounded-xl h-24" />)}
+          {[0, 1, 2, 3].map(i => <div key={i} className="animate-pulse bg-muted rounded-xl h-28" />)}
         </div>
       </div>
     );
@@ -109,7 +142,14 @@ const CurrencyWidget = () => {
                   <TrendingDown className="h-4 w-4 text-red-500" />
                 )}
               </div>
-              <div className="text-xl sm:text-2xl font-bold text-foreground mb-1">{formattedBid}</div>
+              
+              <div className="flex items-center justify-between gap-2 mb-1">
+                <div className="text-xl sm:text-2xl font-bold text-foreground">{formattedBid}</div>
+                {rate.sparkline && rate.sparkline.length >= 2 && (
+                  <Sparkline data={rate.sparkline} isUp={isUp} />
+                )}
+              </div>
+              
               <div className={`text-sm font-medium ${isUp ? "text-green-500" : "text-red-500"}`}>
                 {isUp ? "+" : ""}{rate.pctChange}%
               </div>
