@@ -27,8 +27,6 @@ const CACHE_KEY = "exchange_rates_cache";
 const CACHE_DURATION_SUCCESS = 1000 * 60 * 30; // 30 min
 const CACHE_DURATION_FALLBACK = 1000 * 60 * 60; // 60 min
 
-// Updated fallback values (March 2026): Gold 18k ~R$655/g, Silver 925 ~R$7/g
-// Per troy oz (31.1035g): XAU at 100% ~R$27,177 | XAG at 100% ~R$235
 const LOCAL_FALLBACK: ExchangeData = {
   USDBRL: { bid: "5.85", pctChange: "0.32", high: "5.90", low: "5.80" },
   EURBRL: { bid: "6.35", pctChange: "-0.15", high: "6.40", low: "6.30" },
@@ -46,6 +44,8 @@ export function useExchangeRates() {
   const [loading, setLoading] = useState(true);
   const [isFallback, setIsFallback] = useState(false);
   const [lastUpdated, setLastUpdated] = useState("");
+  const [cacheExpiresAt, setCacheExpiresAt] = useState<number>(0);
+  const [source, setSource] = useState<string>("");
 
   const fetchRates = useCallback(async () => {
     try {
@@ -63,6 +63,8 @@ export function useExchangeRates() {
           setData(parsed.data);
           setIsFallback(!!parsed.fallback);
           setLastUpdated(new Date(parsed.timestamp).toLocaleString("pt-BR"));
+          setCacheExpiresAt(parsed.expiresAt || parsed.timestamp + CACHE_DURATION_SUCCESS);
+          setSource(parsed.data._meta?.source || (parsed.fallback ? "referência" : "cache"));
           setLoading(false);
           return;
         }
@@ -101,10 +103,13 @@ export function useExchangeRates() {
     if (result && (result.USDBRL || result.EURBRL || result.ARSBRL || result.PYGBRL || result.XAUBRL || result.XAGBRL)) {
       const serverFallback = !!result._meta?.fallback;
       const ttl = serverFallback ? CACHE_DURATION_FALLBACK : CACHE_DURATION_SUCCESS;
+      const expiresAt = now + ttl;
 
       setData(result);
       setIsFallback(serverFallback);
       setLastUpdated(new Date(now).toLocaleString("pt-BR"));
+      setCacheExpiresAt(expiresAt);
+      setSource(result._meta?.source || "live");
 
       localStorage.setItem(
         CACHE_KEY,
@@ -112,13 +117,16 @@ export function useExchangeRates() {
           data: result,
           timestamp: now,
           fallback: serverFallback,
-          expiresAt: now + ttl,
+          expiresAt,
         }),
       );
     } else {
       setData(LOCAL_FALLBACK);
       setIsFallback(true);
       setLastUpdated(new Date(now).toLocaleString("pt-BR"));
+      const expiresAt = now + CACHE_DURATION_FALLBACK;
+      setCacheExpiresAt(expiresAt);
+      setSource("local-static");
 
       localStorage.setItem(
         CACHE_KEY,
@@ -126,7 +134,7 @@ export function useExchangeRates() {
           data: LOCAL_FALLBACK,
           timestamp: now,
           fallback: true,
-          expiresAt: now + CACHE_DURATION_FALLBACK,
+          expiresAt,
         }),
       );
     }
@@ -138,5 +146,5 @@ export function useExchangeRates() {
     fetchRates();
   }, [fetchRates]);
 
-  return { data, loading, isFallback, lastUpdated };
+  return { data, loading, isFallback, lastUpdated, cacheExpiresAt, source };
 }

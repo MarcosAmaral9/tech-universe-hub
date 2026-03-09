@@ -1,5 +1,6 @@
 import { DollarSign, TrendingUp, TrendingDown, AlertTriangle } from "lucide-react";
 import { useExchangeRates } from "@/hooks/useExchangeRates";
+import CacheStatusBar from "@/components/CacheStatusBar";
 
 interface CurrencyRate {
   code: string;
@@ -51,7 +52,7 @@ const Sparkline = ({ data, isUp }: { data: number[]; isUp: boolean }) => {
 };
 
 const CurrencyWidget = () => {
-  const { data, loading, isFallback, lastUpdated } = useExchangeRates();
+  const { data, loading, isFallback, lastUpdated, cacheExpiresAt, source } = useExchangeRates();
 
   const rates: CurrencyRate[] = [];
   
@@ -164,8 +165,9 @@ const CurrencyWidget = () => {
       </div>
 
       <p className="text-[10px] text-muted-foreground mt-3 text-center">
-        Cotações em relação ao real • Atualizado a cada 30 min • Fontes: Frankfurter (ECB) &amp; AwesomeAPI
+        Cotações em relação ao real • Fontes: Frankfurter (ECB) &amp; AwesomeAPI
       </p>
+      <CacheStatusBar source={source} isFallback={isFallback} cacheExpiresAt={cacheExpiresAt} />
     </div>
   );
 };
