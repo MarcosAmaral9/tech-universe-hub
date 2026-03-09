@@ -157,14 +157,16 @@ function getDateStr(daysAgo: number): string {
   return d.toISOString().split("T")[0];
 }
 
-// Fetch USD and EUR from Frankfurter with real daily % change
-async function fetchFromFrankfurter(): Promise<{ USDBRL?: RateQuote; EURBRL?: RateQuote; usdBrl: number }> {
-  const result: { USDBRL?: RateQuote; EURBRL?: RateQuote; usdBrl: number } = { usdBrl: 5.85 };
+// Fetch USD and EUR from Frankfurter with real daily % change + 7-day sparkline
+async function fetchFromFrankfurter(): Promise<{ USDBRL?: RateQuote; EURBRL?: RateQuote; usdBrl: number; sparklines: { USDBRL?: SparklineData; EURBRL?: SparklineData } }> {
+  const result: { USDBRL?: RateQuote; EURBRL?: RateQuote; usdBrl: number; sparklines: { USDBRL?: SparklineData; EURBRL?: SparklineData } } = { 
+    usdBrl: 5.85, 
+    sparklines: {} 
+  };
   
   try {
-    // Fetch latest and previous day in parallel for % change calculation
-    // Use 3 days back to account for weekends (ECB doesn't publish on weekends)
-    const startDate = getDateStr(4);
+    // Use 12-day window to guarantee at least 7 business days of data
+    const startDate = getDateStr(12);
     const endDate = getDateStr(0);
     const timeseriesUrl = `https://api.frankfurter.dev/v1/${startDate}..${endDate}?base=BRL&symbols=USD,EUR`;
     
@@ -180,15 +182,25 @@ async function fetchFromFrankfurter(): Promise<{ USDBRL?: RateQuote; EURBRL?: Ra
     
     const latestData = await latestRes.json();
     
-    // Parse timeseries to get previous day's rate
+    // Parse timeseries for % change and sparkline
     let prevUsdRate: number | null = null;
     let prevEurRate: number | null = null;
+    const usdSparkline: number[] = [];
+    const eurSparkline: number[] = [];
     
     if (timeseriesRes.ok) {
       const tsData = await timeseriesRes.json();
       if (tsData.rates) {
-        // Get sorted dates, pick second-to-last as "previous"
         const dates = Object.keys(tsData.rates).sort();
+        
+        // Build sparkline arrays (inverted since base is BRL)
+        for (const date of dates) {
+          const r = tsData.rates[date];
+          if (r?.USD) usdSparkline.push(parseFloat((1 / r.USD).toFixed(4)));
+          if (r?.EUR) eurSparkline.push(parseFloat((1 / r.EUR).toFixed(4)));
+        }
+        
+        // Previous day for % change
         if (dates.length >= 2) {
           const prevDate = dates[dates.length - 2];
           const prevRates = tsData.rates[prevDate];
@@ -197,9 +209,12 @@ async function fetchFromFrankfurter(): Promise<{ USDBRL?: RateQuote; EURBRL?: Ra
         }
       }
     } else {
-      // Consume body to avoid resource leak
       await timeseriesRes.text();
     }
+    
+    // Store sparklines (last 7 data points)
+    if (usdSparkline.length > 0) result.sparklines.USDBRL = usdSparkline.slice(-7);
+    if (eurSparkline.length > 0) result.sparklines.EURBRL = eurSparkline.slice(-7);
     
     // Build quotes with real % change
     if (latestData.rates?.USD) {
