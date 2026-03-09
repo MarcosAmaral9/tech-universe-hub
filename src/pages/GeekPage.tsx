@@ -12,7 +12,7 @@ const GeekPage = () => {
       {/* Header */}
       <div className="mb-8">
         <Link to="/">
-          <Button variant="ghost" className="mb-4 gap-2">
+          <Button variant="ghost" className="mb-4 gap-2 text-geek hover:text-geek">
             <ArrowLeft className="h-4 w-4" />
             Voltar ao início
           </Button>

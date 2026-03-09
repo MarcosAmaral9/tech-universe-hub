@@ -12,7 +12,7 @@ const IAPage = () => {
       {/* Header */}
       <div className="mb-8">
         <Link to="/">
-          <Button variant="ghost" className="mb-4 gap-2">
+          <Button variant="ghost" className="mb-4 gap-2 text-ia hover:text-ia">
             <ArrowLeft className="h-4 w-4" />
             Voltar ao início
           </Button>
