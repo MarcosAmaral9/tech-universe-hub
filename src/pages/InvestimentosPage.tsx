@@ -41,6 +41,7 @@ const InvestimentosPage = () => {
           <div className="w-2 h-12 bg-invest rounded-full"></div>
           <h1 className="font-display text-3xl md:text-5xl font-bold">
             <span className="text-invest">Finanças</span>
+            <span className="ml-3 text-base font-normal text-muted-foreground align-middle">({allPosts.length} artigos)</span>
           </h1>
         </div>
         
