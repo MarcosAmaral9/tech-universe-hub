@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Moon, Sun, Search, Menu, X, FileText, ChevronDown, Download } from "lucide-react";
+import { Moon, Sun, Search, Menu, X, FileText, ChevronDown } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import SearchModal from "./SearchModal";
+import SettingsDrawer from "./SettingsDrawer";
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
