@@ -110,6 +110,7 @@ const Isekai2026 = lazy(() => import("./pages/posts/Isekai2026"));
 const MerchandisingOtaku2026 = lazy(() => import("./pages/posts/MerchandisingOtaku2026"));
 const MelhoresMangas2026 = lazy(() => import("./pages/posts/MelhoresMangas2026"));
 const SaudeMentalOtaku2026 = lazy(() => import("./pages/posts/SaudeMentalOtaku2026"));
+const SocialPanelPage = lazy(() => import("./pages/SocialPanelPage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
