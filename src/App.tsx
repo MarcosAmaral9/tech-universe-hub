@@ -219,6 +219,7 @@ const App = () => (
                 <Route path="/politica-conteudo" element={<ContentPolicyPage />} />
                 <Route path="/instalar" element={<InstallPage />} />
                 <Route path="/configuracoes" element={<SettingsPage />} />
+                <Route path="/painel-social" element={<SocialPanelPage />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>

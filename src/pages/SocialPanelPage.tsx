@@ -151,7 +151,7 @@ const SocialPanelPage = () => {
 
   return (
     <div className="min-h-screen py-8 px-4 max-w-5xl mx-auto">
-      <DynamicSEO title="Painel Social Media | VÍCIO<CODE>" description="Gere conteúdo para redes sociais com IA" />
+      <DynamicSEO />
 
       <div className="flex items-center gap-3 mb-8">
         <Sparkles className="w-8 h-8 text-primary" />

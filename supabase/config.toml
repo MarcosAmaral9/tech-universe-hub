@@ -5,3 +5,9 @@ verify_jwt = false
 
 [functions.exchange-rates]
 verify_jwt = false
+
+[functions.generate-social-content]
+verify_jwt = false
+
+[functions.buffer-publish]
+verify_jwt = false
