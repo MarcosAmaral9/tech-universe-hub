@@ -110,6 +110,7 @@ const Isekai2026 = lazy(() => import("./pages/posts/Isekai2026"));
 const MerchandisingOtaku2026 = lazy(() => import("./pages/posts/MerchandisingOtaku2026"));
 const MelhoresMangas2026 = lazy(() => import("./pages/posts/MelhoresMangas2026"));
 const SaudeMentalOtaku2026 = lazy(() => import("./pages/posts/SaudeMentalOtaku2026"));
+const SocialPanelPage = lazy(() => import("./pages/SocialPanelPage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -218,6 +219,7 @@ const App = () => (
                 <Route path="/politica-conteudo" element={<ContentPolicyPage />} />
                 <Route path="/instalar" element={<InstallPage />} />
                 <Route path="/configuracoes" element={<SettingsPage />} />
+                <Route path="/painel-social" element={<SocialPanelPage />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
