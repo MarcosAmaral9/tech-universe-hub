@@ -87,29 +87,36 @@ const SocialPanelPage = () => {
   };
 
   const handlePublish = async () => {
-    if (selectedProfiles.length === 0) {
-      toast({ title: "Selecione pelo menos um perfil do Buffer", variant: "destructive" });
+    if (!webhookUrl) {
+      toast({ title: "Configure o webhook do Zapier primeiro", variant: "destructive" });
       return;
     }
 
     const fullText = `${editedHookLine}\n\n${editedCaption}\n\n${editedCta}\n\n${editedHashtags}`;
+    const post = blogPosts.find((p) => p.id === selectedPost);
 
     setPublishing(true);
     try {
-      const { data, error } = await supabase.functions.invoke("buffer-publish", {
-        body: {
-          action: "create",
-          text: fullText,
-          profileIds: selectedProfiles,
-          mediaUrl: content?.image || undefined,
-        },
+      await fetch(webhookUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        mode: "no-cors",
+        body: JSON.stringify({
+          caption: fullText,
+          hookLine: editedHookLine,
+          cta: editedCta,
+          hashtags: editedHashtags,
+          platform,
+          postTitle: post?.title || "",
+          postCategory: post?.category || "",
+          imageBase64: content?.image || null,
+          timestamp: new Date().toISOString(),
+        }),
       });
-      if (error) throw error;
-      if (data.error) throw new Error(data.error);
 
-      toast({ title: "✅ Post enviado ao Buffer!", description: "O post foi adicionado à fila de publicação." });
+      toast({ title: "✅ Enviado ao Zapier!", description: "Verifique o histórico do seu Zap para confirmar." });
     } catch (e: any) {
-      toast({ title: "Erro ao publicar", description: e.message, variant: "destructive" });
+      toast({ title: "Erro ao enviar", description: e.message, variant: "destructive" });
     } finally {
       setPublishing(false);
     }
@@ -119,10 +126,6 @@ const SocialPanelPage = () => {
     const fullText = `${editedHookLine}\n\n${editedCaption}\n\n${editedCta}\n\n${editedHashtags}`;
     navigator.clipboard.writeText(fullText);
     toast({ title: "Copiado!", description: "Texto copiado para a área de transferência." });
-  };
-
-  const toggleProfile = (id: string) => {
-    setSelectedProfiles((prev) => (prev.includes(id) ? prev.filter((p) => p !== id) : [...prev, id]));
   };
 
   if (authLoading) return null;
