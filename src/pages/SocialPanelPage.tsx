@@ -10,8 +10,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Sparkles, Send, Instagram, Music2, Loader2, Image as ImageIcon, Copy, RefreshCw, Link2 } from "lucide-react";
+import { Sparkles, Send, Instagram, Music2, Loader2, Image as ImageIcon, Copy, RefreshCw } from "lucide-react";
+
+interface BufferProfile {
+  id: string;
+  service: string;
+  formatted_username: string;
+  avatar: string;
+}
 
 interface GeneratedContent {
   caption: string;
@@ -22,7 +28,6 @@ interface GeneratedContent {
 }
 
 const ADMIN_USER_ID = "c866a1ef-c4f7-4f7d-b39d-3761fd2567da";
-const WEBHOOK_STORAGE_KEY = "viciocode_zapier_webhook";
 
 const SocialPanelPage = () => {
   const { user, loading: authLoading } = useAuthContext();
@@ -39,7 +44,9 @@ const SocialPanelPage = () => {
   const [editedHashtags, setEditedHashtags] = useState("");
   const [editedCta, setEditedCta] = useState("");
   const [editedHookLine, setEditedHookLine] = useState("");
-  const [webhookUrl, setWebhookUrl] = useState(() => localStorage.getItem(WEBHOOK_STORAGE_KEY) || "");
+  const [bufferProfiles, setBufferProfiles] = useState<BufferProfile[]>([]);
+  const [selectedProfiles, setSelectedProfiles] = useState<string[]>([]);
+  const [loadingProfiles, setLoadingProfiles] = useState(false);
 
   useEffect(() => {
     if (!authLoading && (!user || user.id !== ADMIN_USER_ID)) {
@@ -47,9 +54,24 @@ const SocialPanelPage = () => {
     }
   }, [user, authLoading, navigate]);
 
-  const saveWebhookUrl = (url: string) => {
-    setWebhookUrl(url);
-    localStorage.setItem(WEBHOOK_STORAGE_KEY, url);
+  useEffect(() => {
+    if (user) fetchBufferProfiles();
+  }, [user]);
+
+  const fetchBufferProfiles = async () => {
+    setLoadingProfiles(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("buffer-publish", {
+        body: { action: "profiles" },
+      });
+      if (error) throw error;
+      setBufferProfiles(data.profiles || []);
+    } catch (e) {
+      console.error("Error fetching Buffer profiles:", e);
+      toast({ title: "Erro", description: "Não foi possível carregar perfis do Buffer.", variant: "destructive" });
+    } finally {
+      setLoadingProfiles(false);
+    }
   };
 
   const handleGenerate = async () => {
@@ -87,36 +109,29 @@ const SocialPanelPage = () => {
   };
 
   const handlePublish = async () => {
-    if (!webhookUrl) {
-      toast({ title: "Configure o webhook do Zapier primeiro", variant: "destructive" });
+    if (selectedProfiles.length === 0) {
+      toast({ title: "Selecione pelo menos um perfil do Buffer", variant: "destructive" });
       return;
     }
 
     const fullText = `${editedHookLine}\n\n${editedCaption}\n\n${editedCta}\n\n${editedHashtags}`;
-    const post = blogPosts.find((p) => p.id === selectedPost);
 
     setPublishing(true);
     try {
-      await fetch(webhookUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        mode: "no-cors",
-        body: JSON.stringify({
-          caption: fullText,
-          hookLine: editedHookLine,
-          cta: editedCta,
-          hashtags: editedHashtags,
-          platform,
-          postTitle: post?.title || "",
-          postCategory: post?.category || "",
-          imageBase64: content?.image || null,
-          timestamp: new Date().toISOString(),
-        }),
+      const { data, error } = await supabase.functions.invoke("buffer-publish", {
+        body: {
+          action: "create",
+          text: fullText,
+          profileIds: selectedProfiles,
+          mediaUrl: content?.image || undefined,
+        },
       });
+      if (error) throw error;
+      if (data.error) throw new Error(data.error);
 
-      toast({ title: "✅ Enviado ao Zapier!", description: "Verifique o histórico do seu Zap para confirmar." });
+      toast({ title: "✅ Post enviado ao Buffer!", description: "O post foi adicionado à fila de publicação." });
     } catch (e: any) {
-      toast({ title: "Erro ao enviar", description: e.message, variant: "destructive" });
+      toast({ title: "Erro ao publicar", description: e.message, variant: "destructive" });
     } finally {
       setPublishing(false);
     }
@@ -126,6 +141,10 @@ const SocialPanelPage = () => {
     const fullText = `${editedHookLine}\n\n${editedCaption}\n\n${editedCta}\n\n${editedHashtags}`;
     navigator.clipboard.writeText(fullText);
     toast({ title: "Copiado!", description: "Texto copiado para a área de transferência." });
+  };
+
+  const toggleProfile = (id: string) => {
+    setSelectedProfiles((prev) => (prev.includes(id) ? prev.filter((p) => p !== id) : [...prev, id]));
   };
 
   if (authLoading) return null;
@@ -253,33 +272,49 @@ const SocialPanelPage = () => {
         </Card>
       )}
 
-      {/* Step 3: Publish via Zapier */}
+      {/* Step 3: Publish via Buffer */}
       {content && (
         <Card className="mb-6 border-primary/20">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
-              <Badge variant="secondary">3</Badge> Enviar via Zapier
+              <Badge variant="secondary">3</Badge> Enviar ao Buffer
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div>
-              <label className="text-sm font-medium text-muted-foreground mb-1 block">
-                <Link2 className="w-4 h-4 inline mr-1" /> Webhook URL do Zapier
-              </label>
-              <Input
-                type="url"
-                placeholder="https://hooks.zapier.com/hooks/catch/..."
-                value={webhookUrl}
-                onChange={(e) => saveWebhookUrl(e.target.value)}
-              />
-              <p className="text-xs text-muted-foreground mt-1">
-                Crie um Zap com trigger "Webhooks by Zapier" → "Catch Hook" e cole a URL aqui.
+            {loadingProfiles ? (
+              <div className="flex items-center gap-2 text-muted-foreground">
+                <Loader2 className="w-4 h-4 animate-spin" /> Carregando perfis...
+              </div>
+            ) : bufferProfiles.length === 0 ? (
+              <p className="text-muted-foreground text-sm">
+                Nenhum perfil encontrado no Buffer. Verifique seu token de acesso.
               </p>
-            </div>
+            ) : (
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-muted-foreground">Selecione os perfis:</label>
+                <div className="flex flex-wrap gap-2">
+                  {bufferProfiles.map((profile) => (
+                    <Button
+                      key={profile.id}
+                      variant={selectedProfiles.includes(profile.id) ? "default" : "outline"}
+                      size="sm"
+                      onClick={() => toggleProfile(profile.id)}
+                      className="flex items-center gap-2"
+                    >
+                      {profile.avatar && (
+                        <img src={profile.avatar} alt="" className="w-5 h-5 rounded-full" />
+                      )}
+                      <span className="capitalize">{profile.service}</span>
+                      <span className="text-xs opacity-70">@{profile.formatted_username}</span>
+                    </Button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <Button
               onClick={handlePublish}
-              disabled={publishing || !webhookUrl}
+              disabled={publishing || selectedProfiles.length === 0}
               className="w-full"
               variant="default"
             >
@@ -289,7 +324,7 @@ const SocialPanelPage = () => {
                 </>
               ) : (
                 <>
-                  <Send className="w-4 h-4 mr-2" /> Enviar para Zapier
+                  <Send className="w-4 h-4 mr-2" /> Enviar para Buffer
                 </>
               )}
             </Button>
