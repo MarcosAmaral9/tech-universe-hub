@@ -14,9 +14,26 @@ serve(async (req) => {
 
     const { action, text, profileIds, mediaUrl, scheduledAt } = await req.json();
 
-    // Get Buffer profiles (channels)
+    const authHeaders = {
+      "Authorization": `Bearer ${BUFFER_ACCESS_TOKEN}`,
+      "Content-Type": "application/json",
+    };
+
+    // Get Buffer profiles (channels) - try v1 with query param first, fallback to header auth
     if (action === "profiles") {
-      const res = await fetch("https://api.bufferapp.com/1/profiles.json?access_token=" + BUFFER_ACCESS_TOKEN);
+      // Try with Bearer header (newer tokens)
+      let res = await fetch("https://api.bufferapp.com/1/profiles.json", {
+        headers: { "Authorization": `Bearer ${BUFFER_ACCESS_TOKEN}` },
+      });
+
+      // If that fails, try query param approach (legacy tokens)
+      if (!res.ok) {
+        const errText1 = await res.text();
+        console.log("Bearer auth failed, trying query param:", res.status, errText1);
+        
+        res = await fetch(`https://api.bufferapp.com/1/profiles.json?access_token=${BUFFER_ACCESS_TOKEN}`);
+      }
+
       if (!res.ok) {
         const errText = await res.text();
         throw new Error(`Buffer API profiles error [${res.status}]: ${errText}`);
