@@ -148,6 +148,7 @@ const SocialPanelPage = () => {
   };
 
   if (authLoading) return null;
+  if (!user || user.id !== ADMIN_USER_ID) return null;
 
   const sortedPosts = [...blogPosts].sort((a, b) => b.date.localeCompare(a.date));
 
