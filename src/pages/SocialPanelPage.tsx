@@ -27,6 +27,8 @@ interface GeneratedContent {
   image: string | null;
 }
 
+const ADMIN_USER_ID = "c866a1ef-c4f7-4f7d-b39d-3761fd2567da";
+
 const SocialPanelPage = () => {
   const { user, loading: authLoading } = useAuthContext();
   const navigate = useNavigate();
@@ -47,8 +49,8 @@ const SocialPanelPage = () => {
   const [loadingProfiles, setLoadingProfiles] = useState(false);
 
   useEffect(() => {
-    if (!authLoading && !user) {
-      navigate("/entrar");
+    if (!authLoading && (!user || user.id !== ADMIN_USER_ID)) {
+      navigate("/");
     }
   }, [user, authLoading, navigate]);
 
@@ -146,6 +148,7 @@ const SocialPanelPage = () => {
   };
 
   if (authLoading) return null;
+  if (!user || user.id !== ADMIN_USER_ID) return null;
 
   const sortedPosts = [...blogPosts].sort((a, b) => b.date.localeCompare(a.date));
 
