@@ -39,9 +39,7 @@ const SocialPanelPage = () => {
   const [editedHashtags, setEditedHashtags] = useState("");
   const [editedCta, setEditedCta] = useState("");
   const [editedHookLine, setEditedHookLine] = useState("");
-  const [bufferProfiles, setBufferProfiles] = useState<BufferProfile[]>([]);
-  const [selectedProfiles, setSelectedProfiles] = useState<string[]>([]);
-  const [loadingProfiles, setLoadingProfiles] = useState(false);
+  const [webhookUrl, setWebhookUrl] = useState(() => localStorage.getItem(WEBHOOK_STORAGE_KEY) || "");
 
   useEffect(() => {
     if (!authLoading && (!user || user.id !== ADMIN_USER_ID)) {
@@ -49,24 +47,9 @@ const SocialPanelPage = () => {
     }
   }, [user, authLoading, navigate]);
 
-  useEffect(() => {
-    if (user) fetchBufferProfiles();
-  }, [user]);
-
-  const fetchBufferProfiles = async () => {
-    setLoadingProfiles(true);
-    try {
-      const { data, error } = await supabase.functions.invoke("buffer-publish", {
-        body: { action: "profiles" },
-      });
-      if (error) throw error;
-      setBufferProfiles(data.profiles || []);
-    } catch (e) {
-      console.error("Error fetching Buffer profiles:", e);
-      toast({ title: "Erro", description: "Não foi possível carregar perfis do Buffer.", variant: "destructive" });
-    } finally {
-      setLoadingProfiles(false);
-    }
+  const saveWebhookUrl = (url: string) => {
+    setWebhookUrl(url);
+    localStorage.setItem(WEBHOOK_STORAGE_KEY, url);
   };
 
   const handleGenerate = async () => {
