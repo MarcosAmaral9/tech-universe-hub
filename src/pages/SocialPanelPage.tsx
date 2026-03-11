@@ -10,14 +10,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, Send, Instagram, Music2, Loader2, Image as ImageIcon, Copy, RefreshCw } from "lucide-react";
-
-interface BufferProfile {
-  id: string;
-  service: string;
-  formatted_username: string;
-  avatar: string;
-}
+import { Input } from "@/components/ui/input";
+import { Sparkles, Send, Instagram, Music2, Loader2, Image as ImageIcon, Copy, RefreshCw, Link2 } from "lucide-react";
 
 interface GeneratedContent {
   caption: string;
@@ -28,6 +22,7 @@ interface GeneratedContent {
 }
 
 const ADMIN_USER_ID = "c866a1ef-c4f7-4f7d-b39d-3761fd2567da";
+const WEBHOOK_STORAGE_KEY = "viciocode_zapier_webhook";
 
 const SocialPanelPage = () => {
   const { user, loading: authLoading } = useAuthContext();
