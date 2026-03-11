@@ -253,49 +253,33 @@ const SocialPanelPage = () => {
         </Card>
       )}
 
-      {/* Step 3: Publish via Buffer */}
+      {/* Step 3: Publish via Zapier */}
       {content && (
         <Card className="mb-6 border-primary/20">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
-              <Badge variant="secondary">3</Badge> Enviar ao Buffer
+              <Badge variant="secondary">3</Badge> Enviar via Zapier
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            {loadingProfiles ? (
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <Loader2 className="w-4 h-4 animate-spin" /> Carregando perfis...
-              </div>
-            ) : bufferProfiles.length === 0 ? (
-              <p className="text-muted-foreground text-sm">
-                Nenhum perfil encontrado no Buffer. Verifique seu token de acesso.
+            <div>
+              <label className="text-sm font-medium text-muted-foreground mb-1 block">
+                <Link2 className="w-4 h-4 inline mr-1" /> Webhook URL do Zapier
+              </label>
+              <Input
+                type="url"
+                placeholder="https://hooks.zapier.com/hooks/catch/..."
+                value={webhookUrl}
+                onChange={(e) => saveWebhookUrl(e.target.value)}
+              />
+              <p className="text-xs text-muted-foreground mt-1">
+                Crie um Zap com trigger "Webhooks by Zapier" → "Catch Hook" e cole a URL aqui.
               </p>
-            ) : (
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-muted-foreground">Selecione os perfis:</label>
-                <div className="flex flex-wrap gap-2">
-                  {bufferProfiles.map((profile) => (
-                    <Button
-                      key={profile.id}
-                      variant={selectedProfiles.includes(profile.id) ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => toggleProfile(profile.id)}
-                      className="flex items-center gap-2"
-                    >
-                      {profile.avatar && (
-                        <img src={profile.avatar} alt="" className="w-5 h-5 rounded-full" />
-                      )}
-                      <span className="capitalize">{profile.service}</span>
-                      <span className="text-xs opacity-70">@{profile.formatted_username}</span>
-                    </Button>
-                  ))}
-                </div>
-              </div>
-            )}
+            </div>
 
             <Button
               onClick={handlePublish}
-              disabled={publishing || selectedProfiles.length === 0}
+              disabled={publishing || !webhookUrl}
               className="w-full"
               variant="default"
             >
@@ -305,7 +289,7 @@ const SocialPanelPage = () => {
                 </>
               ) : (
                 <>
-                  <Send className="w-4 h-4 mr-2" /> Enviar para Buffer
+                  <Send className="w-4 h-4 mr-2" /> Enviar para Zapier
                 </>
               )}
             </Button>
