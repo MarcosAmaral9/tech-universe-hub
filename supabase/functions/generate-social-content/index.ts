@@ -108,17 +108,18 @@ Responda SEMPRE em JSON válido com esta estrutura:
     if (toolCall) {
       content = JSON.parse(toolCall.function.arguments);
     } else {
-      // Fallback: try parsing from message content
       const raw = aiData.choices?.[0]?.message?.content || "{}";
       content = JSON.parse(raw);
     }
 
-    // Generate image if requested
+    // Generate image if requested — always in PT-BR with platform-optimized dimensions
     let imageBase64 = null;
     if (generateImage) {
+      // Instagram: 1080x1080 (1:1) — best for feed posts
+      // TikTok: 1080x1920 (9:16) — best for vertical content
       const imagePrompt = platform === "tiktok"
-        ? `Create a vibrant, eye-catching TikTok thumbnail for: "${title}". Modern, bold text overlay style, neon colors, dark background. Category: ${categoryMap[category] || category}. No text in image.`
-        : `Create a professional Instagram post image for: "${title}". Clean, modern design with gradient background. Category: ${categoryMap[category] || category}. No text in image.`;
+        ? `Crie uma imagem vertical vibrante e chamativa para TikTok sobre: "${title}". Estilo moderno, cores neon, fundo escuro. Categoria: ${categoryMap[category] || category}. Toda escrita e texto na imagem devem estar em português brasileiro. Proporção 9:16 vertical.`
+        : `Crie uma imagem quadrada profissional para Instagram sobre: "${title}". Design limpo e moderno com fundo gradiente. Categoria: ${categoryMap[category] || category}. Toda escrita e texto na imagem devem estar em português brasileiro. Proporção 1:1 quadrada.`;
 
       const imgResponse = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
         method: "POST",
