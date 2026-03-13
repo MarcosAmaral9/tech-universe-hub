@@ -61,7 +61,7 @@ const SocialPanelPage = () => {
   const [content, setContent] = useState<PlatformContent>({});
   const [editedIG, setEditedIG] = useState({ caption: "", hashtags: "", cta: "", hookLine: "", musicSuggestion: "" });
   const [editedTT, setEditedTT] = useState({ caption: "", hashtags: "", cta: "", hookLine: "", musicSuggestion: "" });
-  const [historyKey, setHistoryKey] = useState(0);
+  const [todayCount, setTodayCount] = useState(getTodayCount);
 
   useEffect(() => {
     if (!authLoading && (!user || user.id !== ADMIN_USER_ID)) {
