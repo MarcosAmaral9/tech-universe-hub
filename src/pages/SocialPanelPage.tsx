@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Sparkles, Instagram, Music2, Loader2, Image as ImageIcon, Copy, RefreshCw, Music, Save } from "lucide-react";
+import { Sparkles, Instagram, Music2, Loader2, Image as ImageIcon, Copy, RefreshCw, Music, Save, Download } from "lucide-react";
 import SocialHistoryPanel, { saveToHistory } from "@/components/social/SocialHistoryPanel";
 
 interface GeneratedContent {
