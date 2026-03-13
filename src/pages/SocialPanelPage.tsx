@@ -325,6 +325,19 @@ const ContentEditor = ({ label, icon, edited, setEdited, image, onRegenerate, on
         <div>
           <label className="text-sm font-medium text-muted-foreground mb-1 block">🖼️ Imagem Gerada</label>
           <img src={image} alt="Imagem gerada" className="rounded-lg max-h-64 object-cover border border-border" />
+          <Button
+            variant="outline"
+            size="sm"
+            className="mt-2"
+            onClick={() => {
+              const link = document.createElement("a");
+              link.href = image;
+              link.download = `social-${label.toLowerCase()}-${Date.now()}.png`;
+              link.click();
+            }}
+          >
+            <Download className="w-4 h-4 mr-1" /> Baixar Imagem
+          </Button>
         </div>
       )}
     </CardContent>
