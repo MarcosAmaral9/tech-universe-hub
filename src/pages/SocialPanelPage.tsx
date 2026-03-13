@@ -215,9 +215,16 @@ const SocialPanelPage = () => {
     <div className="min-h-screen py-8 px-4 max-w-5xl mx-auto">
       <DynamicSEO />
 
-      <div className="flex items-center gap-3 mb-8">
-        <Sparkles className="w-8 h-8 text-primary" />
-        <h1 className="text-3xl font-bold text-foreground">Painel Social Media</h1>
+      <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center gap-3">
+          <Sparkles className="w-8 h-8 text-primary" />
+          <h1 className="text-3xl font-bold text-foreground">Painel Social Media</h1>
+        </div>
+        <Badge variant="outline" className="flex items-center gap-1.5 px-3 py-1.5 text-sm">
+          <Zap className="w-4 h-4 text-primary" />
+          <span className="font-semibold text-foreground">{todayCount}</span>
+          <span className="text-muted-foreground">geração{todayCount !== 1 ? "ões" : ""} hoje</span>
+        </Badge>
       </div>
 
       {/* Step 1: Select Article & Platforms */}
