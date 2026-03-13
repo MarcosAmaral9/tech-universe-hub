@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { History, Trash2, Copy, ChevronDown, ChevronUp, Instagram, Music2 } from "lucide-react";
+import { History, Trash2, Copy, ChevronDown, ChevronUp, Instagram, Music2, Download } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export interface HistoryEntry {
