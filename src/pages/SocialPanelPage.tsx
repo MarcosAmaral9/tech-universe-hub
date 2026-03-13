@@ -11,8 +11,25 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Sparkles, Instagram, Music2, Loader2, Image as ImageIcon, Copy, RefreshCw, Music, Save, Download } from "lucide-react";
-import SocialHistoryPanel, { saveToHistory } from "@/components/social/SocialHistoryPanel";
+import { Sparkles, Instagram, Music2, Loader2, Image as ImageIcon, Copy, RefreshCw, Music, Save, Download, Zap } from "lucide-react";
+import SocialHistoryPanel, { saveToHistory, loadHistory } from "@/components/social/SocialHistoryPanel";
+
+const COUNTER_KEY = "viciocode_social_gen_count";
+
+const getTodayCount = (): number => {
+  try {
+    const stored = JSON.parse(localStorage.getItem(COUNTER_KEY) || "{}");
+    const today = new Date().toISOString().slice(0, 10);
+    return stored.date === today ? stored.count : 0;
+  } catch { return 0; }
+};
+
+const incrementTodayCount = (): number => {
+  const today = new Date().toISOString().slice(0, 10);
+  const count = getTodayCount() + 1;
+  localStorage.setItem(COUNTER_KEY, JSON.stringify({ date: today, count }));
+  return count;
+};
 
 interface GeneratedContent {
   caption: string;
