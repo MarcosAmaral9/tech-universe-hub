@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Sparkles, Instagram, Music2, Loader2, Image as ImageIcon, Copy, RefreshCw, Music, Save } from "lucide-react";
+import { Sparkles, Instagram, Music2, Loader2, Image as ImageIcon, Copy, RefreshCw, Music, Save, Download } from "lucide-react";
 import SocialHistoryPanel, { saveToHistory } from "@/components/social/SocialHistoryPanel";
 
 interface GeneratedContent {
@@ -325,6 +325,19 @@ const ContentEditor = ({ label, icon, edited, setEdited, image, onRegenerate, on
         <div>
           <label className="text-sm font-medium text-muted-foreground mb-1 block">🖼️ Imagem Gerada</label>
           <img src={image} alt="Imagem gerada" className="rounded-lg max-h-64 object-cover border border-border" />
+          <Button
+            variant="outline"
+            size="sm"
+            className="mt-2"
+            onClick={() => {
+              const link = document.createElement("a");
+              link.href = image;
+              link.download = `social-${label.toLowerCase()}-${Date.now()}.png`;
+              link.click();
+            }}
+          >
+            <Download className="w-4 h-4 mr-1" /> Baixar Imagem
+          </Button>
         </div>
       )}
     </CardContent>

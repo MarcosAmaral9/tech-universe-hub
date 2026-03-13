@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { History, Trash2, Copy, ChevronDown, ChevronUp, Instagram, Music2 } from "lucide-react";
+import { History, Trash2, Copy, ChevronDown, ChevronUp, Instagram, Music2, Download } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export interface HistoryEntry {
@@ -52,7 +52,20 @@ const SocialHistoryPanel = () => {
     toast({ title: "Copiado!" });
   };
 
-  if (history.length === 0) return null;
+  if (history.length === 0) {
+    return (
+      <Card className="border-primary/20">
+        <CardHeader>
+          <CardTitle className="text-lg flex items-center gap-2">
+            <History className="w-5 h-5" /> Histórico
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground">Nenhum conteúdo salvo ainda. Gere e salve conteúdo para ver aqui.</p>
+        </CardContent>
+      </Card>
+    );
+  }
 
   const platformIcon = (p: string) =>
     p === "instagram" ? <Instagram className="w-3 h-3" /> : <Music2 className="w-3 h-3" />;
@@ -101,7 +114,22 @@ const SocialHistoryPanel = () => {
                   <p><strong>🎵 Música:</strong> {entry.musicSuggestion}</p>
                 )}
                 {entry.image && (
-                  <img src={entry.image} alt="Imagem gerada" className="rounded-lg max-h-40 object-cover mt-2" />
+                  <>
+                    <img src={entry.image} alt="Imagem gerada" className="rounded-lg max-h-40 object-cover mt-2" />
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="mt-1"
+                      onClick={() => {
+                        const link = document.createElement("a");
+                        link.href = entry.image!;
+                        link.download = `social-${entry.platform}-${Date.now()}.png`;
+                        link.click();
+                      }}
+                    >
+                      <Download className="w-3 h-3 mr-1" /> Baixar
+                    </Button>
+                  </>
                 )}
               </div>
             )}
