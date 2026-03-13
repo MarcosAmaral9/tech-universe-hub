@@ -12,7 +12,7 @@ serve(async (req) => {
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     if (!LOVABLE_API_KEY) throw new Error("LOVABLE_API_KEY is not configured");
 
-    const { title, excerpt, category, platform, generateImage } = await req.json();
+    const { title, excerpt, category, platform, generateImage, suggestMusic } = await req.json();
 
     if (!title || !excerpt) {
       return new Response(JSON.stringify({ error: "title and excerpt are required" }), {
@@ -32,28 +32,43 @@ serve(async (req) => {
       otaku: "Anime, Manga e Cultura Otaku",
     };
 
+    const musicInstruction = suggestMusic
+      ? `\nSugira uma música trending que combine com o conteúdo para usar como áudio de fundo no ${platform === "tiktok" ? "TikTok" : "Instagram Reels"}. Considere a categoria "${categoryMap[category] || category}" e o tom do artigo. Forneça artista e nome da música.`
+      : "";
+
     const systemPrompt = `Você é um social media manager especialista em criar conteúdo viral para ${platform === "tiktok" ? "TikTok" : "Instagram"}.
 O blog VÍCIO<CODE> cobre: IA, Finanças, Geek e Otaku.
 Categoria deste artigo: ${categoryMap[category] || category}.
 
-${platformInstructions}
+${platformInstructions}${musicInstruction}
 
 Responda SEMPRE em JSON válido com esta estrutura:
 {
   "caption": "legenda principal com emojis",
   "hashtags": ["hashtag1", "hashtag2", ...],
   "cta": "resumo curto do artigo com call-to-action para o site (máx 100 chars)",
-  "hookLine": "frase de impacto para abrir o post (gancho)"
+  "hookLine": "frase de impacto para abrir o post (gancho)"${suggestMusic ? ',\n  "musicSuggestion": "Artista - Nome da Música"' : ""}
 }`;
 
-    const messages = [
-      { role: "system", content: systemPrompt },
-      { role: "user", content: `Crie um post para o artigo:\nTítulo: ${title}\nResumo: ${excerpt}` },
-    ];
+    const toolProperties: Record<string, unknown> = {
+      caption: { type: "string", description: "Legenda principal do post com emojis" },
+      hashtags: { type: "array", items: { type: "string" }, description: "Lista de hashtags" },
+      cta: { type: "string", description: "Resumo curto com call-to-action" },
+      hookLine: { type: "string", description: "Frase de impacto / gancho" },
+    };
+    const requiredFields = ["caption", "hashtags", "cta", "hookLine"];
+
+    if (suggestMusic) {
+      toolProperties.musicSuggestion = { type: "string", description: "Sugestão de música trending (Artista - Nome)" };
+      requiredFields.push("musicSuggestion");
+    }
 
     const body: Record<string, unknown> = {
       model: "google/gemini-3-flash-preview",
-      messages,
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: `Crie um post para o artigo:\nTítulo: ${title}\nResumo: ${excerpt}` },
+      ],
       tools: [
         {
           type: "function",
@@ -62,13 +77,8 @@ Responda SEMPRE em JSON válido com esta estrutura:
             description: "Cria um post para rede social baseado em artigo do blog",
             parameters: {
               type: "object",
-              properties: {
-                caption: { type: "string", description: "Legenda principal do post com emojis" },
-                hashtags: { type: "array", items: { type: "string" }, description: "Lista de hashtags" },
-                cta: { type: "string", description: "Resumo curto com call-to-action" },
-                hookLine: { type: "string", description: "Frase de impacto / gancho" },
-              },
-              required: ["caption", "hashtags", "cta", "hookLine"],
+              properties: toolProperties,
+              required: requiredFields,
               additionalProperties: false,
             },
           },
@@ -112,11 +122,9 @@ Responda SEMPRE em JSON válido com esta estrutura:
       content = JSON.parse(raw);
     }
 
-    // Generate image if requested — always in PT-BR with platform-optimized dimensions
+    // Generate image if requested
     let imageBase64 = null;
     if (generateImage) {
-      // Instagram: 1080x1080 (1:1) — best for feed posts
-      // TikTok: 1080x1920 (9:16) — best for vertical content
       const imagePrompt = platform === "tiktok"
         ? `Crie uma imagem vertical vibrante e chamativa para TikTok sobre: "${title}". Estilo moderno, cores neon, fundo escuro. Categoria: ${categoryMap[category] || category}. Toda escrita e texto na imagem devem estar em português brasileiro. Proporção 9:16 vertical.`
         : `Crie uma imagem quadrada profissional para Instagram sobre: "${title}". Design limpo e moderno com fundo gradiente. Categoria: ${categoryMap[category] || category}. Toda escrita e texto na imagem devem estar em português brasileiro. Proporção 1:1 quadrada.`;

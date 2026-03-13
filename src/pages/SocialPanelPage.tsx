@@ -10,9 +10,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Sparkles, Send, Instagram, Music2, Loader2, Image as ImageIcon, Copy, RefreshCw, Link2 } from "lucide-react";
+import { Sparkles, Instagram, Music2, Loader2, Image as ImageIcon, Copy, RefreshCw, Music, Save } from "lucide-react";
 import SocialHistoryPanel, { saveToHistory } from "@/components/social/SocialHistoryPanel";
 
 interface GeneratedContent {
@@ -21,6 +20,7 @@ interface GeneratedContent {
   cta: string;
   hookLine: string;
   image: string | null;
+  musicSuggestion?: string;
 }
 
 interface PlatformContent {
@@ -29,8 +29,6 @@ interface PlatformContent {
 }
 
 const ADMIN_USER_ID = "c866a1ef-c4f7-4f7d-b39d-3761fd2567da";
-const WEBHOOK_IG_KEY = "viciocode_zapier_webhook_instagram";
-const WEBHOOK_TT_KEY = "viciocode_zapier_webhook_tiktok";
 
 const SocialPanelPage = () => {
   const { user, loading: authLoading } = useAuthContext();
@@ -41,13 +39,11 @@ const SocialPanelPage = () => {
   const [platformIG, setPlatformIG] = useState(true);
   const [platformTT, setPlatformTT] = useState(false);
   const [generateImage, setGenerateImage] = useState(false);
+  const [suggestMusic, setSuggestMusic] = useState(false);
   const [generating, setGenerating] = useState(false);
-  const [publishing, setPublishing] = useState(false);
   const [content, setContent] = useState<PlatformContent>({});
-  const [editedIG, setEditedIG] = useState({ caption: "", hashtags: "", cta: "", hookLine: "" });
-  const [editedTT, setEditedTT] = useState({ caption: "", hashtags: "", cta: "", hookLine: "" });
-  const [webhookIG, setWebhookIG] = useState(() => localStorage.getItem(WEBHOOK_IG_KEY) || "");
-  const [webhookTT, setWebhookTT] = useState(() => localStorage.getItem(WEBHOOK_TT_KEY) || "");
+  const [editedIG, setEditedIG] = useState({ caption: "", hashtags: "", cta: "", hookLine: "", musicSuggestion: "" });
+  const [editedTT, setEditedTT] = useState({ caption: "", hashtags: "", cta: "", hookLine: "", musicSuggestion: "" });
   const [historyKey, setHistoryKey] = useState(0);
 
   useEffect(() => {
@@ -56,19 +52,9 @@ const SocialPanelPage = () => {
     }
   }, [user, authLoading, navigate]);
 
-  const saveWebhook = (platform: "instagram" | "tiktok", url: string) => {
-    if (platform === "instagram") {
-      setWebhookIG(url);
-      localStorage.setItem(WEBHOOK_IG_KEY, url);
-    } else {
-      setWebhookTT(url);
-      localStorage.setItem(WEBHOOK_TT_KEY, url);
-    }
-  };
-
   const generateForPlatform = async (post: any, platform: "instagram" | "tiktok"): Promise<GeneratedContent> => {
     const { data, error } = await supabase.functions.invoke("generate-social-content", {
-      body: { title: post.title, excerpt: post.excerpt, category: post.category, platform, generateImage },
+      body: { title: post.title, excerpt: post.excerpt, category: post.category, platform, generateImage, suggestMusic },
     });
     if (error) throw error;
     if (data.error) throw new Error(data.error);
@@ -103,6 +89,7 @@ const SocialPanelPage = () => {
           hashtags: (d.hashtags || []).map((h: string) => (h.startsWith("#") ? h : `#${h}`)).join(" "),
           cta: d.cta || "",
           hookLine: d.hookLine || "",
+          musicSuggestion: d.musicSuggestion || "",
         });
       }
       if (results.tiktok) {
@@ -112,6 +99,7 @@ const SocialPanelPage = () => {
           hashtags: (d.hashtags || []).map((h: string) => (h.startsWith("#") ? h : `#${h}`)).join(" "),
           cta: d.cta || "",
           hookLine: d.hookLine || "",
+          musicSuggestion: d.musicSuggestion || "",
         });
       }
     } catch (e: any) {
@@ -121,68 +109,46 @@ const SocialPanelPage = () => {
     }
   };
 
-  const handlePublish = async () => {
+  const handleSaveToHistory = () => {
     const post = blogPosts.find((p) => p.id === selectedPost);
-    setPublishing(true);
-    const errors: string[] = [];
 
-    try {
-      const sendTo = async (platform: "instagram" | "tiktok", webhook: string, edited: typeof editedIG, image: string | null) => {
-        const fullText = `${edited.hookLine}\n\n${edited.caption}\n\n${edited.cta}\n\n${edited.hashtags}`;
-        await fetch(webhook, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          mode: "no-cors",
-          body: JSON.stringify({
-            caption: fullText, hookLine: edited.hookLine, cta: edited.cta,
-            hashtags: edited.hashtags, platform, postTitle: post?.title || "",
-            postCategory: post?.category || "", imageBase64: image,
-            timestamp: new Date().toISOString(),
-          }),
-        });
-
-        // Save to local history
-        saveToHistory({
-          id: `${Date.now()}-${platform}`,
-          postTitle: post?.title || "",
-          platforms: [platform],
-          caption: edited.caption,
-          hookLine: edited.hookLine,
-          cta: edited.cta,
-          hashtags: edited.hashtags,
-          image,
-          createdAt: new Date().toISOString(),
-        });
-      };
-
-      if (content.instagram && webhookIG) {
-        await sendTo("instagram", webhookIG, editedIG, content.instagram.image);
-      } else if (content.instagram && !webhookIG) {
-        errors.push("Webhook do Instagram não configurado");
-      }
-
-      if (content.tiktok && webhookTT) {
-        await sendTo("tiktok", webhookTT, editedTT, content.tiktok.image);
-      } else if (content.tiktok && !webhookTT) {
-        errors.push("Webhook do TikTok não configurado");
-      }
-
-      setHistoryKey((k) => k + 1);
-
-      if (errors.length) {
-        toast({ title: "Enviado com avisos", description: errors.join(". "), variant: "destructive" });
-      } else {
-        toast({ title: "✅ Enviado ao Zapier!", description: "Verifique o histórico dos seus Zaps." });
-      }
-    } catch (e: any) {
-      toast({ title: "Erro ao enviar", description: e.message, variant: "destructive" });
-    } finally {
-      setPublishing(false);
+    if (content.instagram) {
+      saveToHistory({
+        id: `${Date.now()}-instagram`,
+        postTitle: post?.title || "",
+        platform: "instagram",
+        caption: editedIG.caption,
+        hookLine: editedIG.hookLine,
+        cta: editedIG.cta,
+        hashtags: editedIG.hashtags,
+        musicSuggestion: editedIG.musicSuggestion || undefined,
+        image: content.instagram.image,
+        createdAt: new Date().toISOString(),
+      });
     }
+
+    if (content.tiktok) {
+      saveToHistory({
+        id: `${Date.now()}-tiktok`,
+        postTitle: post?.title || "",
+        platform: "tiktok",
+        caption: editedTT.caption,
+        hookLine: editedTT.hookLine,
+        cta: editedTT.cta,
+        hashtags: editedTT.hashtags,
+        musicSuggestion: editedTT.musicSuggestion || undefined,
+        image: content.tiktok.image,
+        createdAt: new Date().toISOString(),
+      });
+    }
+
+    setHistoryKey((k) => k + 1);
+    toast({ title: "✅ Salvo no histórico!" });
   };
 
   const copyAll = (edited: typeof editedIG) => {
-    const fullText = `${edited.hookLine}\n\n${edited.caption}\n\n${edited.cta}\n\n${edited.hashtags}`;
+    let fullText = `${edited.hookLine}\n\n${edited.caption}\n\n${edited.cta}\n\n${edited.hashtags}`;
+    if (edited.musicSuggestion) fullText += `\n\n🎵 ${edited.musicSuggestion}`;
     navigator.clipboard.writeText(fullText);
     toast({ title: "Copiado!" });
   };
@@ -242,6 +208,13 @@ const SocialPanelPage = () => {
             >
               <ImageIcon className="w-4 h-4 mr-1" /> {generateImage ? "Imagem IA ✓" : "Gerar Imagem IA"}
             </Button>
+            <Button
+              variant={suggestMusic ? "default" : "outline"}
+              size="sm"
+              onClick={() => setSuggestMusic(!suggestMusic)}
+            >
+              <Music className="w-4 h-4 mr-1" /> {suggestMusic ? "Música ✓" : "Sugerir Música"}
+            </Button>
           </div>
 
           <Button onClick={handleGenerate} disabled={!selectedPost || generating || (!platformIG && !platformTT)} className="w-full">
@@ -281,54 +254,12 @@ const SocialPanelPage = () => {
               generating={generating}
             />
           )}
+
+          {/* Save to History */}
+          <Button onClick={handleSaveToHistory} className="w-full" size="lg">
+            <Save className="w-4 h-4 mr-2" /> Salvar no Histórico
+          </Button>
         </div>
-      )}
-
-      {/* Step 3: Webhooks & Publish */}
-      {hasContent && (
-        <Card className="mb-6 border-primary/20">
-          <CardHeader>
-            <CardTitle className="text-lg flex items-center gap-2">
-              <Badge variant="secondary">3</Badge> Enviar via Zapier
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {content.instagram && (
-              <div>
-                <label className="text-sm font-medium text-muted-foreground mb-1 flex items-center gap-1">
-                  <Instagram className="w-4 h-4" /> Webhook Instagram
-                </label>
-                <Input
-                  type="url"
-                  placeholder="https://hooks.zapier.com/hooks/catch/... (Instagram)"
-                  value={webhookIG}
-                  onChange={(e) => saveWebhook("instagram", e.target.value)}
-                />
-              </div>
-            )}
-            {content.tiktok && (
-              <div>
-                <label className="text-sm font-medium text-muted-foreground mb-1 flex items-center gap-1">
-                  <Music2 className="w-4 h-4" /> Webhook TikTok
-                </label>
-                <Input
-                  type="url"
-                  placeholder="https://hooks.zapier.com/hooks/catch/... (TikTok)"
-                  value={webhookTT}
-                  onChange={(e) => saveWebhook("tiktok", e.target.value)}
-                />
-              </div>
-            )}
-
-            <Button onClick={handlePublish} disabled={publishing} className="w-full" variant="default">
-              {publishing ? (
-                <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Enviando...</>
-              ) : (
-                <><Send className="w-4 h-4 mr-2" /> Enviar para Zapier</>
-              )}
-            </Button>
-          </CardContent>
-        </Card>
       )}
 
       {/* History */}
@@ -342,8 +273,8 @@ const SocialPanelPage = () => {
 interface ContentEditorProps {
   label: string;
   icon: React.ReactNode;
-  edited: { caption: string; hashtags: string; cta: string; hookLine: string };
-  setEdited: React.Dispatch<React.SetStateAction<{ caption: string; hashtags: string; cta: string; hookLine: string }>>;
+  edited: { caption: string; hashtags: string; cta: string; hookLine: string; musicSuggestion: string };
+  setEdited: React.Dispatch<React.SetStateAction<{ caption: string; hashtags: string; cta: string; hookLine: string; musicSuggestion: string }>>;
   image: string | null;
   onRegenerate: () => void;
   onCopy: () => void;
@@ -384,6 +315,12 @@ const ContentEditor = ({ label, icon, edited, setEdited, image, onRegenerate, on
         <label className="text-sm font-medium text-muted-foreground mb-1 block"># Hashtags</label>
         <Textarea value={edited.hashtags} onChange={(e) => setEdited((p) => ({ ...p, hashtags: e.target.value }))} rows={2} />
       </div>
+      {edited.musicSuggestion && (
+        <div>
+          <label className="text-sm font-medium text-muted-foreground mb-1 block">🎵 Sugestão de Música</label>
+          <Textarea value={edited.musicSuggestion} onChange={(e) => setEdited((p) => ({ ...p, musicSuggestion: e.target.value }))} rows={2} />
+        </div>
+      )}
       {image && (
         <div>
           <label className="text-sm font-medium text-muted-foreground mb-1 block">🖼️ Imagem Gerada</label>
