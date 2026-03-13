@@ -11,8 +11,25 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Sparkles, Instagram, Music2, Loader2, Image as ImageIcon, Copy, RefreshCw, Music, Save, Download } from "lucide-react";
-import SocialHistoryPanel, { saveToHistory } from "@/components/social/SocialHistoryPanel";
+import { Sparkles, Instagram, Music2, Loader2, Image as ImageIcon, Copy, RefreshCw, Music, Save, Download, Zap } from "lucide-react";
+import SocialHistoryPanel, { saveToHistory, loadHistory } from "@/components/social/SocialHistoryPanel";
+
+const COUNTER_KEY = "viciocode_social_gen_count";
+
+const getTodayCount = (): number => {
+  try {
+    const stored = JSON.parse(localStorage.getItem(COUNTER_KEY) || "{}");
+    const today = new Date().toISOString().slice(0, 10);
+    return stored.date === today ? stored.count : 0;
+  } catch { return 0; }
+};
+
+const incrementTodayCount = (): number => {
+  const today = new Date().toISOString().slice(0, 10);
+  const count = getTodayCount() + 1;
+  localStorage.setItem(COUNTER_KEY, JSON.stringify({ date: today, count }));
+  return count;
+};
 
 interface GeneratedContent {
   caption: string;
@@ -44,6 +61,7 @@ const SocialPanelPage = () => {
   const [content, setContent] = useState<PlatformContent>({});
   const [editedIG, setEditedIG] = useState({ caption: "", hashtags: "", cta: "", hookLine: "", musicSuggestion: "" });
   const [editedTT, setEditedTT] = useState({ caption: "", hashtags: "", cta: "", hookLine: "", musicSuggestion: "" });
+  const [todayCount, setTodayCount] = useState(getTodayCount);
   const [historyKey, setHistoryKey] = useState(0);
 
   useEffect(() => {
@@ -82,26 +100,60 @@ const SocialPanelPage = () => {
       await Promise.all(promises);
       setContent(results);
 
-      if (results.instagram) {
-        const d = results.instagram;
-        setEditedIG({
-          caption: d.caption || "",
-          hashtags: (d.hashtags || []).map((h: string) => (h.startsWith("#") ? h : `#${h}`)).join(" "),
-          cta: d.cta || "",
-          hookLine: d.hookLine || "",
-          musicSuggestion: d.musicSuggestion || "",
+      // Build edited values
+      const igEdited = results.instagram ? {
+        caption: results.instagram.caption || "",
+        hashtags: (results.instagram.hashtags || []).map((h: string) => (h.startsWith("#") ? h : `#${h}`)).join(" "),
+        cta: results.instagram.cta || "",
+        hookLine: results.instagram.hookLine || "",
+        musicSuggestion: results.instagram.musicSuggestion || "",
+      } : null;
+
+      const ttEdited = results.tiktok ? {
+        caption: results.tiktok.caption || "",
+        hashtags: (results.tiktok.hashtags || []).map((h: string) => (h.startsWith("#") ? h : `#${h}`)).join(" "),
+        cta: results.tiktok.cta || "",
+        hookLine: results.tiktok.hookLine || "",
+        musicSuggestion: results.tiktok.musicSuggestion || "",
+      } : null;
+
+      if (igEdited) setEditedIG(igEdited);
+      if (ttEdited) setEditedTT(ttEdited);
+
+      // Auto-save to history
+      if (results.instagram && igEdited) {
+        saveToHistory({
+          id: `${Date.now()}-instagram`,
+          postTitle: post.title,
+          platform: "instagram",
+          caption: igEdited.caption,
+          hookLine: igEdited.hookLine,
+          cta: igEdited.cta,
+          hashtags: igEdited.hashtags,
+          musicSuggestion: igEdited.musicSuggestion || undefined,
+          image: results.instagram.image,
+          createdAt: new Date().toISOString(),
         });
       }
-      if (results.tiktok) {
-        const d = results.tiktok;
-        setEditedTT({
-          caption: d.caption || "",
-          hashtags: (d.hashtags || []).map((h: string) => (h.startsWith("#") ? h : `#${h}`)).join(" "),
-          cta: d.cta || "",
-          hookLine: d.hookLine || "",
-          musicSuggestion: d.musicSuggestion || "",
+      if (results.tiktok && ttEdited) {
+        saveToHistory({
+          id: `${Date.now()}-tiktok`,
+          postTitle: post.title,
+          platform: "tiktok",
+          caption: ttEdited.caption,
+          hookLine: ttEdited.hookLine,
+          cta: ttEdited.cta,
+          hashtags: ttEdited.hashtags,
+          musicSuggestion: ttEdited.musicSuggestion || undefined,
+          image: results.tiktok.image,
+          createdAt: new Date().toISOString(),
         });
       }
+
+      setHistoryKey((k) => k + 1);
+      const newCount = incrementTodayCount();
+      setTodayCount(newCount);
+      toast({ title: "✅ Conteúdo gerado e salvo no histórico!" });
     } catch (e: any) {
       toast({ title: "Erro ao gerar conteúdo", description: e.message, variant: "destructive" });
     } finally {
@@ -163,9 +215,16 @@ const SocialPanelPage = () => {
     <div className="min-h-screen py-8 px-4 max-w-5xl mx-auto">
       <DynamicSEO />
 
-      <div className="flex items-center gap-3 mb-8">
-        <Sparkles className="w-8 h-8 text-primary" />
-        <h1 className="text-3xl font-bold text-foreground">Painel Social Media</h1>
+      <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center gap-3">
+          <Sparkles className="w-8 h-8 text-primary" />
+          <h1 className="text-3xl font-bold text-foreground">Painel Social Media</h1>
+        </div>
+        <Badge variant="outline" className="flex items-center gap-1.5 px-3 py-1.5 text-sm">
+          <Zap className="w-4 h-4 text-primary" />
+          <span className="font-semibold text-foreground">{todayCount}</span>
+          <span className="text-muted-foreground">geração{todayCount !== 1 ? "ões" : ""} hoje</span>
+        </Badge>
       </div>
 
       {/* Step 1: Select Article & Platforms */}
