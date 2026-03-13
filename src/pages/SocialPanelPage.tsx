@@ -100,26 +100,60 @@ const SocialPanelPage = () => {
       await Promise.all(promises);
       setContent(results);
 
-      if (results.instagram) {
-        const d = results.instagram;
-        setEditedIG({
-          caption: d.caption || "",
-          hashtags: (d.hashtags || []).map((h: string) => (h.startsWith("#") ? h : `#${h}`)).join(" "),
-          cta: d.cta || "",
-          hookLine: d.hookLine || "",
-          musicSuggestion: d.musicSuggestion || "",
+      // Build edited values
+      const igEdited = results.instagram ? {
+        caption: results.instagram.caption || "",
+        hashtags: (results.instagram.hashtags || []).map((h: string) => (h.startsWith("#") ? h : `#${h}`)).join(" "),
+        cta: results.instagram.cta || "",
+        hookLine: results.instagram.hookLine || "",
+        musicSuggestion: results.instagram.musicSuggestion || "",
+      } : null;
+
+      const ttEdited = results.tiktok ? {
+        caption: results.tiktok.caption || "",
+        hashtags: (results.tiktok.hashtags || []).map((h: string) => (h.startsWith("#") ? h : `#${h}`)).join(" "),
+        cta: results.tiktok.cta || "",
+        hookLine: results.tiktok.hookLine || "",
+        musicSuggestion: results.tiktok.musicSuggestion || "",
+      } : null;
+
+      if (igEdited) setEditedIG(igEdited);
+      if (ttEdited) setEditedTT(ttEdited);
+
+      // Auto-save to history
+      if (results.instagram && igEdited) {
+        saveToHistory({
+          id: `${Date.now()}-instagram`,
+          postTitle: post.title,
+          platform: "instagram",
+          caption: igEdited.caption,
+          hookLine: igEdited.hookLine,
+          cta: igEdited.cta,
+          hashtags: igEdited.hashtags,
+          musicSuggestion: igEdited.musicSuggestion || undefined,
+          image: results.instagram.image,
+          createdAt: new Date().toISOString(),
         });
       }
-      if (results.tiktok) {
-        const d = results.tiktok;
-        setEditedTT({
-          caption: d.caption || "",
-          hashtags: (d.hashtags || []).map((h: string) => (h.startsWith("#") ? h : `#${h}`)).join(" "),
-          cta: d.cta || "",
-          hookLine: d.hookLine || "",
-          musicSuggestion: d.musicSuggestion || "",
+      if (results.tiktok && ttEdited) {
+        saveToHistory({
+          id: `${Date.now()}-tiktok`,
+          postTitle: post.title,
+          platform: "tiktok",
+          caption: ttEdited.caption,
+          hookLine: ttEdited.hookLine,
+          cta: ttEdited.cta,
+          hashtags: ttEdited.hashtags,
+          musicSuggestion: ttEdited.musicSuggestion || undefined,
+          image: results.tiktok.image,
+          createdAt: new Date().toISOString(),
         });
       }
+
+      setHistoryKey((k) => k + 1);
+      const newCount = incrementTodayCount();
+      setTodayCount(newCount);
+      toast({ title: "✅ Conteúdo gerado e salvo no histórico!" });
     } catch (e: any) {
       toast({ title: "Erro ao gerar conteúdo", description: e.message, variant: "destructive" });
     } finally {
