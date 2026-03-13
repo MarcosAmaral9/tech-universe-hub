@@ -2,17 +2,18 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { History, Trash2, Copy, ChevronDown, ChevronUp } from "lucide-react";
+import { History, Trash2, Copy, ChevronDown, ChevronUp, Instagram, Music2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export interface HistoryEntry {
   id: string;
   postTitle: string;
-  platforms: string[];
+  platform: string;
   caption: string;
   hookLine: string;
   cta: string;
   hashtags: string;
+  musicSuggestion?: string;
   image: string | null;
   createdAt: string;
 }
@@ -30,7 +31,6 @@ export const loadHistory = (): HistoryEntry[] => {
 export const saveToHistory = (entry: HistoryEntry) => {
   const history = loadHistory();
   history.unshift(entry);
-  // Keep last 50 entries
   localStorage.setItem(HISTORY_KEY, JSON.stringify(history.slice(0, 50)));
 };
 
@@ -46,12 +46,16 @@ const SocialHistoryPanel = () => {
   };
 
   const copyEntry = (entry: HistoryEntry) => {
-    const text = `${entry.hookLine}\n\n${entry.caption}\n\n${entry.cta}\n\n${entry.hashtags}`;
+    let text = `${entry.hookLine}\n\n${entry.caption}\n\n${entry.cta}\n\n${entry.hashtags}`;
+    if (entry.musicSuggestion) text += `\n\n🎵 ${entry.musicSuggestion}`;
     navigator.clipboard.writeText(text);
     toast({ title: "Copiado!" });
   };
 
   if (history.length === 0) return null;
+
+  const platformIcon = (p: string) =>
+    p === "instagram" ? <Instagram className="w-3 h-3" /> : <Music2 className="w-3 h-3" />;
 
   return (
     <Card className="border-primary/20">
@@ -71,9 +75,9 @@ const SocialHistoryPanel = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 flex-wrap">
                 <span className="text-sm font-medium truncate max-w-[200px]">{entry.postTitle}</span>
-                {entry.platforms.map((p) => (
-                  <Badge key={p} variant="outline" className="text-xs">{p}</Badge>
-                ))}
+                <Badge variant="outline" className="text-xs flex items-center gap-1">
+                  {platformIcon(entry.platform)} {entry.platform}
+                </Badge>
               </div>
               <div className="flex items-center gap-1">
                 <span className="text-xs text-muted-foreground">
@@ -93,6 +97,9 @@ const SocialHistoryPanel = () => {
                 <p><strong>Legenda:</strong> {entry.caption}</p>
                 <p><strong>CTA:</strong> {entry.cta}</p>
                 <p><strong>Hashtags:</strong> {entry.hashtags}</p>
+                {entry.musicSuggestion && (
+                  <p><strong>🎵 Música:</strong> {entry.musicSuggestion}</p>
+                )}
                 {entry.image && (
                   <img src={entry.image} alt="Imagem gerada" className="rounded-lg max-h-40 object-cover mt-2" />
                 )}
@@ -106,4 +113,3 @@ const SocialHistoryPanel = () => {
 };
 
 export default SocialHistoryPanel;
-
