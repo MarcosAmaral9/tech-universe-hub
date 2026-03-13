@@ -52,7 +52,20 @@ const SocialHistoryPanel = () => {
     toast({ title: "Copiado!" });
   };
 
-  if (history.length === 0) return null;
+  if (history.length === 0) {
+    return (
+      <Card className="border-primary/20">
+        <CardHeader>
+          <CardTitle className="text-lg flex items-center gap-2">
+            <History className="w-5 h-5" /> Histórico
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground">Nenhum conteúdo salvo ainda. Gere e salve conteúdo para ver aqui.</p>
+        </CardContent>
+      </Card>
+    );
+  }
 
   const platformIcon = (p: string) =>
     p === "instagram" ? <Instagram className="w-3 h-3" /> : <Music2 className="w-3 h-3" />;
