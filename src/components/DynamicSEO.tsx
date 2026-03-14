@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { blogPosts } from "@/data/posts";
 
 const SITE_NAME = "VICIO<CODE>";
-const BASE_URL = "https://viciocode.com.br";
+const BASE_URL = "https://viciocode.com";
 
 // Pages where AdSense should NOT load
 const NO_ADS_PAGES = ["/sobre", "/contato", "/privacidade", "/termos", "/politica-conteudo", "/painel-social", "/instalar"];
