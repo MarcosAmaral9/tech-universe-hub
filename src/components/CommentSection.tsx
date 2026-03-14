@@ -1,11 +1,12 @@
-import { useState, useEffect, useMemo } from "react";
-import { MessageCircle, Send, Trash2, Shield, LogIn, ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react";
+import { MessageCircle, Send, Trash2, Shield, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { validateComment } from "@/utils/contentModeration";
+
+const API_BASE = "/api.php";
 
 interface Comment {
   id: string;
@@ -28,55 +29,22 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Load comments from database
-  const isOffline = !navigator.onLine;
-  const isMobilePWA = /Mobi|Android/i.test(navigator.userAgent) && window.matchMedia("(display-mode: standalone)").matches;
-  const limitOffline = isOffline && isMobilePWA;
-
-  useEffect(() => {
-    const fetchComments = async () => {
-      setIsLoading(true);
-      let query = supabase
-        .from("comments")
-        .select("*")
-        .eq("post_id", postId)
-        .order("created_at", { ascending: false });
-
-      // In PWA offline mode on mobile, only fetch last 3 comments
-      if (limitOffline) {
-        query = query.limit(3);
-      }
-
-      const { data, error } = await query;
-
-      if (!error && data) {
+  const fetchComments = async () => {
+    setIsLoading(true);
+    try {
+      const res = await fetch(`${API_BASE}?action=comments&post_id=${encodeURIComponent(postId)}`);
+      if (res.ok) {
+        const data = await res.json();
         setComments(data as Comment[]);
       }
-      setIsLoading(false);
-    };
+    } catch {
+      // offline or API unavailable
+    }
+    setIsLoading(false);
+  };
 
+  useEffect(() => {
     fetchComments();
-
-    // Subscribe to realtime changes
-    const channel = supabase
-      .channel(`comments-${postId}`)
-      .on(
-        "postgres_changes",
-        {
-          event: "*",
-          schema: "public",
-          table: "comments",
-          filter: `post_id=eq.${postId}`,
-        },
-        () => {
-          fetchComments();
-        }
-      )
-      .subscribe();
-
-    return () => {
-      supabase.removeChannel(channel);
-    };
   }, [postId]);
 
   const displayName = profile?.nickname || profile?.name || user?.email?.split("@")[0] || "Usuário";
@@ -100,24 +68,41 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
       return;
     }
 
-    const { error } = await supabase.from("comments").insert({
-      post_id: postId,
-      user_id: user.id,
-      author_name: displayName,
-      content: newComment.trim(),
-    });
+    try {
+      const res = await fetch(`${API_BASE}?action=comments`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          post_id: postId,
+          user_id: user.id,
+          author_name: displayName,
+          content: newComment.trim(),
+        }),
+      });
 
-    if (error) {
-      setErrors(["Erro ao enviar comentário. Tente novamente."]);
-    } else {
-      setNewComment("");
+      if (!res.ok) {
+        setErrors(["Erro ao enviar comentário. Tente novamente."]);
+      } else {
+        setNewComment("");
+        await fetchComments();
+      }
+    } catch {
+      setErrors(["Erro ao enviar comentário. Verifique sua conexão."]);
     }
 
     setIsSubmitting(false);
   };
 
   const handleDelete = async (commentId: string) => {
-    await supabase.from("comments").delete().eq("id", commentId);
+    if (!user) return;
+    try {
+      await fetch(`${API_BASE}?action=comments&id=${commentId}&user_id=${user.id}`, {
+        method: "DELETE",
+      });
+      await fetchComments();
+    } catch {
+      // ignore
+    }
   };
 
   return (
@@ -127,7 +112,6 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
         Comentários ({comments.length})
       </h3>
 
-      {/* Content Policy Notice */}
       <div className="mb-6 p-4 bg-secondary/50 rounded-lg border border-border flex items-start gap-3">
         <Shield className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
         <div className="text-sm text-muted-foreground">
@@ -138,7 +122,6 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
         </div>
       </div>
 
-      {/* Error Messages */}
       {errors.length > 0 && (
         <div className="mb-6 p-4 bg-destructive/10 rounded-lg border border-destructive/30">
           <ul className="list-disc list-inside text-sm text-destructive/90 space-y-1">
@@ -149,7 +132,6 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
         </div>
       )}
 
-      {/* Comment Form or Login Prompt */}
       {user ? (
         <form onSubmit={handleSubmit} className="mb-8 p-6 bg-secondary rounded-xl">
           <div className="mb-4 flex items-center gap-3">
@@ -199,14 +181,12 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
         </div>
       )}
 
-      {/* Loading */}
       {isLoading && (
         <div className="flex items-center justify-center py-8">
           <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin" />
         </div>
       )}
 
-      {/* Comments List */}
       {!isLoading && (
         <CommentsListView comments={comments} user={user} onDelete={handleDelete} />
       )}
@@ -220,7 +200,6 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
   );
 };
 
-/** Sub-component: shows 3 comments for guests, all for logged-in users */
 const CommentsListView = ({
   comments,
   user,
@@ -240,10 +219,7 @@ const CommentsListView = ({
   return (
     <div className="space-y-6">
       {visibleComments.map((comment) => (
-        <div
-          key={comment.id}
-          className="p-5 bg-card rounded-xl border border-border animate-fade-in"
-        >
+        <div key={comment.id} className="p-5 bg-card rounded-xl border border-border animate-fade-in">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold">

@@ -2,7 +2,7 @@ import { Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
 
-const BASE_URL = "https://viciocode.com.br";
+const BASE_URL = "https://viciocode.com";
 
 const ShareWhatsApp = () => {
   const handleShare = () => {
