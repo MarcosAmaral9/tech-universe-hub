@@ -25,9 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 // ========== DATABASE CREDENTIALS ==========
 // Update these with your Hostinger MySQL credentials
 $DB_HOST = 'localhost';
-$DB_NAME = 'u123456789_viciocode';  // Change this
-$DB_USER = 'u123456789_viciouser';  // Change this
-$DB_PASS = 'SuaSenhaAqui';          // Change this
+$DB_NAME = 'Viciocode';  // Change this
+$DB_USER = 'viciocode';  // Change this
+$DB_PASS = 'eN1^xPT@yLDz';   // Change this
 // ==========================================
 
 try {
