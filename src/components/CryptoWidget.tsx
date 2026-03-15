@@ -14,8 +14,8 @@ interface CryptoData {
 }
 
 const CACHE_KEY = "crypto_cache";
-const CACHE_DURATION = 1000 * 60 * 60; // 60 min — proxy PHP faz 1 req/hora no servidor (720/mês)
-const UPDATE_INTERVAL_LABEL = "60 minutos";
+const CACHE_DURATION = 1000 * 60 * 5; // 5 min — proxy PHP usa 86% do limite gratuito do CoinGecko (8.640/10.000 req/mês)
+const UPDATE_INTERVAL_LABEL = "5 minutos";
 
 const FALLBACK: CryptoData[] = [
   { id: "bitcoin", symbol: "btc", name: "Bitcoin", current_price: 587420, price_change_percentage_24h: 2.3, market_cap: 11500000000000, image: "" },

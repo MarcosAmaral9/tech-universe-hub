@@ -256,7 +256,7 @@ if ($method === 'POST' && $action === 'upload_avatar') {
 // ─── GET: proxy de câmbio + metais (server-side, evita CORS) ─────────────────
 if ($method === 'GET' && $action === 'rates') {
     $CACHE_FILE = sys_get_temp_dir() . '/viciocode_rates.json';
-    $CACHE_TTL  = 3600; // 60 min — 720 req/mês no servidor, independente de usuários
+    $CACHE_TTL  = 300; // 5 min — awesomeapi sem limite, 8.640 req/mês no servidor
 
     if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $CACHE_TTL) {
         $cached = file_get_contents($CACHE_FILE);
@@ -301,7 +301,7 @@ if ($method === 'GET' && $action === 'rates') {
 // CoinGecko free: ~10.000 req/mês. Cache servidor 60min = 720 req/mês total.
 if ($method === 'GET' && $action === 'crypto') {
     $CACHE_FILE = sys_get_temp_dir() . '/viciocode_crypto.json';
-    $CACHE_TTL  = 3600; // 60 min — 720 req/mês no servidor, independente de usuários
+    $CACHE_TTL  = 300; // 5 min — CoinGecko free: 10.000 req/mês, 8.640 req/mês = 86% do limite
 
     if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $CACHE_TTL) {
         $cached = file_get_contents($CACHE_FILE);
@@ -337,7 +337,7 @@ if ($method === 'GET' && $action === 'crypto') {
 // brapi.dev free: 15.000 req/mês. Cache servidor 60min = 720 req/mês total.
 if ($method === 'GET' && $action === 'b3') {
     $CACHE_FILE = sys_get_temp_dir() . '/viciocode_b3.json';
-    $CACHE_TTL  = 3600; // 60 min — 720 req/mês no servidor, independente de usuários
+    $CACHE_TTL  = 180; // 3 min — brapi.dev free: 15.000 req/mês, 14.400 req/mês = 96% do limite
 
     if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $CACHE_TTL) {
         $cached = file_get_contents($CACHE_FILE);

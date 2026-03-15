@@ -24,9 +24,9 @@ interface ExchangeData {
 
 const CACHE_KEY = "exchange_rates_cache";
 // awesomeapi via proxy PHP: sem limite documentado.
-// Cache servidor 60min = 720 req/mês total, independente de usuários.
-const CACHE_DURATION_SUCCESS = 1000 * 60 * 60; // 60 min
-const CACHE_DURATION_FALLBACK = 1000 * 60 * 120; // 2 h no fallback
+// Cache servidor 5min = 8.640 req/mês no servidor, independente de usuários.
+const CACHE_DURATION_SUCCESS = 1000 * 60 * 5;  // 5 min
+const CACHE_DURATION_FALLBACK = 1000 * 60 * 30; // 30 min no fallback
 
 const LOCAL_FALLBACK: ExchangeData = {
   USDBRL: { bid: "5.85", pctChange: "0.32", high: "5.90", low: "5.80" },

@@ -26,9 +26,9 @@ const FALLBACK_STOCKS: StockQuote[] = [
 ];
 
 const CACHE_KEY = "b3_stock_cache";
-// brapi.dev free: 15.000 req/mês. Proxy PHP cacheia 60min = 720 req/mês no servidor total.
-const CACHE_DURATION = 1000 * 60 * 60; // 60 min
-const UPDATE_INTERVAL_LABEL = "60 minutos";
+// brapi.dev free: 15.000 req/mês. Proxy PHP cacheia 3min = 14.400 req/mês (96% do limite).
+const CACHE_DURATION = 1000 * 60 * 3; // 3 min
+const UPDATE_INTERVAL_LABEL = "3 minutos";
 
 const B3StockTicker = () => {
   const [stocks, setStocks] = useState<StockQuote[]>([]);
