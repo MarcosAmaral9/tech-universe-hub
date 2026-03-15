@@ -56,6 +56,10 @@ import isekaiImg from "@/assets/isekai-2026.webp";
 import merchandisingOtakuImg from "@/assets/merchandising-otaku-2026.webp";
 import melhoresMangasImg from "@/assets/melhores-mangas-2026.webp";
 import saudeMentalOtakuImg from "@/assets/saude-mental-otaku-2026.webp";
+import iaCriatividadeImg from "@/assets/ia-criatividade-2026.webp";
+import iaPrivacidadeImg from "@/assets/ia-privacidade-dados-2026.webp";
+import etfs2026Img from "@/assets/etfs-2026.webp";
+import economiaDomesticaImg from "@/assets/economia-domestica-2026.webp";
 
 export const blogPosts: BlogPost[] = [
   // IA Posts
