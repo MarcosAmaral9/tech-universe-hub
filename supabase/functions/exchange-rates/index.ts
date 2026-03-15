@@ -105,6 +105,7 @@ function getFallbackPayload(reason: string): ExchangePayload {
     source: "static",
     reason,
     ttlMs: RATE_LIMIT_COOLDOWN_MS,
+    updatedAt: new Date().toISOString(),
   });
 }
 
