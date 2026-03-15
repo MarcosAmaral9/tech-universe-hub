@@ -85,6 +85,7 @@ function getCachedPayload(): ExchangePayload | null {
     fallback: false,
     source: "cache",
     ttlMs: SERVER_CACHE_TTL_MS,
+    updatedAt: new Date().toISOString(),
   });
 }
 
