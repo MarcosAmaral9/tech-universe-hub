@@ -26,9 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 // ========== CREDENCIAIS DO BANCO ==========
 $DB_HOST = 'localhost';
-$DB_NAME = 'Viciocode';   // Altere
-$DB_USER = 'viciocode';   // Altere
-$DB_PASS = 'eN1^xPT@yLDz'; // Altere
+$DB_NAME = 'u980153444_Viciocode';
+$DB_USER = 'u980153444_viciocode';
+$DB_PASS = 'b^0xFECWjX';
 // ==========================================
 
 // ========== ANTHROPIC API (Painel Social) ==========
