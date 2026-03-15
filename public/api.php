@@ -60,14 +60,129 @@ $action = $_GET['action'] ?? '';
 // ─── GET: diagnóstico — não precisa de banco ──────────────────────────────────
 if ($method === 'GET' && $action === 'ping') {
     echo json_encode([
-        'status'     => 'ok',
-        'php'        => PHP_VERSION,
-        'time'       => date('Y-m-d H:i:s'),
-        'pdo_mysql'  => extension_loaded('pdo_mysql') ? 'disponível' : 'AUSENTE',
-        'env_file'   => file_exists(__DIR__ . '/.env.php') ? 'encontrado' : 'NÃO encontrado',
-        'google_key' => !empty($GOOGLE_CLIENT_ID) ? 'configurado' : 'NÃO configurado',
-        'anthropic'  => !empty($ANTHROPIC_KEY) ? 'configurado' : 'NÃO configurado',
+        'status'          => 'ok',
+        'php'             => PHP_VERSION,
+        'time'            => date('Y-m-d H:i:s'),
+        'pdo_mysql'       => extension_loaded('pdo_mysql') ? 'disponível' : 'AUSENTE',
+        'allow_url_fopen' => ini_get('allow_url_fopen') ? 'ativado' : 'DESATIVADO (widgets não funcionarão)',
+        'env_file'        => file_exists(__DIR__ . '/.env.php') ? 'encontrado' : 'NÃO encontrado',
+        'google_key'      => !empty($GOOGLE_CLIENT_ID) ? 'configurado' : 'NÃO configurado',
+        'anthropic'       => !empty($ANTHROPIC_KEY) ? 'configurado' : 'NÃO configurado',
     ]);
+    exit;
+}
+
+// ─── GET: proxy de câmbio + metais (não precisa de banco) ────────────────────
+if ($method === 'GET' && $action === 'rates') {
+    $CACHE_FILE = sys_get_temp_dir() . '/viciocode_rates.json';
+    $CACHE_TTL  = 300; // 5 min
+
+    if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $CACHE_TTL) {
+        $cached = file_get_contents($CACHE_FILE);
+        if ($cached) { echo $cached; exit; }
+    }
+
+    $result = [];
+    $pairs  = 'USD-BRL,EUR-BRL,ARS-BRL,PYG-BRL,XAU-BRL,XAG-BRL';
+    $ctx    = stream_context_create(['http' => ['timeout' => 8, 'ignore_errors' => true]]);
+    $raw    = @file_get_contents("https://economia.awesomeapi.com.br/json/last/{$pairs}", false, $ctx);
+
+    if ($raw) {
+        $data = json_decode($raw, true);
+        if ($data) {
+            foreach (['USDBRL','EURBRL','ARSBRL','PYGBRL','XAUBRL','XAGBRL'] as $key) {
+                if (!empty($data[$key])) {
+                    $result[$key] = [
+                        'bid'       => $data[$key]['bid'],
+                        'pctChange' => $data[$key]['pctChange'],
+                        'high'      => $data[$key]['high'],
+                        'low'       => $data[$key]['low'],
+                    ];
+                }
+            }
+        }
+    }
+
+    if (empty($result)) {
+        http_response_code(503);
+        echo json_encode(['error' => 'Dados de câmbio indisponíveis temporariamente']);
+        exit;
+    }
+
+    $result['_meta'] = ['source' => 'awesomeapi-proxy', 'fallback' => false, 'updatedAt' => date('c')];
+    $json = json_encode($result);
+    @file_put_contents($CACHE_FILE, $json);
+    echo $json;
+    exit;
+}
+
+// ─── GET: proxy criptomoedas — CoinGecko (não precisa de banco) ──────────────
+if ($method === 'GET' && $action === 'crypto') {
+    $CACHE_FILE = sys_get_temp_dir() . '/viciocode_crypto.json';
+    $CACHE_TTL  = 300; // 5 min
+
+    if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $CACHE_TTL) {
+        $cached = file_get_contents($CACHE_FILE);
+        if ($cached) { echo $cached; exit; }
+    }
+
+    $url = 'https://api.coingecko.com/api/v3/coins/markets'
+         . '?vs_currency=brl&order=market_cap_desc&per_page=8&page=1&sparkline=false';
+    $ctx = stream_context_create(['http' => [
+        'timeout'       => 10,
+        'ignore_errors' => true,
+        'header'        => "Accept: application/json\r\n",
+    ]]);
+    $raw = @file_get_contents($url, false, $ctx);
+
+    if ($raw) {
+        $data = json_decode($raw, true);
+        if (is_array($data) && count($data) > 0) {
+            $result = ['coins' => $data, '_meta' => ['source' => 'coingecko-proxy', 'updatedAt' => date('c')]];
+            $json   = json_encode($result);
+            @file_put_contents($CACHE_FILE, $json);
+            echo $json;
+            exit;
+        }
+    }
+
+    http_response_code(503);
+    echo json_encode(['error' => 'Dados de cripto indisponíveis temporariamente']);
+    exit;
+}
+
+// ─── GET: proxy B3 / brapi.dev (não precisa de banco) ────────────────────────
+if ($method === 'GET' && $action === 'b3') {
+    $CACHE_FILE = sys_get_temp_dir() . '/viciocode_b3.json';
+    $CACHE_TTL  = 180; // 3 min
+
+    if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $CACHE_TTL) {
+        $cached = file_get_contents($CACHE_FILE);
+        if ($cached) { echo $cached; exit; }
+    }
+
+    $tickers = 'PETR4,VALE3,ITUB4,BBDC4,ABEV3,WEGE3,BBAS3,RENT3,MGLU3,SUZB3';
+    $url     = "https://brapi.dev/api/quote/{$tickers}?fundamental=false";
+    $ctx     = stream_context_create(['http' => [
+        'timeout'       => 10,
+        'ignore_errors' => true,
+        'header'        => "Accept: application/json\r\n",
+    ]]);
+    $raw = @file_get_contents($url, false, $ctx);
+
+    if ($raw) {
+        $data = json_decode($raw, true);
+        if (!empty($data['results']) && count($data['results']) > 0) {
+            $result = ['results' => $data['results'], '_meta' => ['source' => 'brapi-proxy', 'updatedAt' => date('c')]];
+            $json   = json_encode($result);
+            @file_put_contents($CACHE_FILE, $json);
+            echo $json;
+            exit;
+        }
+    }
+
+    http_response_code(503);
+    echo json_encode(['error' => 'Dados B3 indisponíveis temporariamente']);
     exit;
 }
 
@@ -290,123 +405,6 @@ if ($method === 'POST' && $action === 'upload_avatar') {
     echo json_encode(['success' => true, 'avatar_url' => $avatarUrl]);
     exit;
 }
-
-// ─── GET: proxy de câmbio + metais (server-side, evita CORS) ─────────────────
-if ($method === 'GET' && $action === 'rates') {
-    $CACHE_FILE = sys_get_temp_dir() . '/viciocode_rates.json';
-    $CACHE_TTL  = 300; // 5 min — awesomeapi sem limite, 8.640 req/mês no servidor
-
-    if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $CACHE_TTL) {
-        $cached = file_get_contents($CACHE_FILE);
-        if ($cached) { echo $cached; exit; }
-    }
-
-    $result = [];
-    $pairs  = 'USD-BRL,EUR-BRL,ARS-BRL,PYG-BRL,XAU-BRL,XAG-BRL';
-    $ctx    = stream_context_create(['http' => ['timeout' => 8, 'ignore_errors' => true]]);
-    $raw    = @file_get_contents("https://economia.awesomeapi.com.br/json/last/{$pairs}", false, $ctx);
-
-    if ($raw) {
-        $data = json_decode($raw, true);
-        if ($data) {
-            foreach (['USDBRL','EURBRL','ARSBRL','PYGBRL','XAUBRL','XAGBRL'] as $key) {
-                if (!empty($data[$key])) {
-                    $result[$key] = [
-                        'bid'       => $data[$key]['bid'],
-                        'pctChange' => $data[$key]['pctChange'],
-                        'high'      => $data[$key]['high'],
-                        'low'       => $data[$key]['low'],
-                    ];
-                }
-            }
-        }
-    }
-
-    if (empty($result)) {
-        http_response_code(503);
-        echo json_encode(['error' => 'Dados indisponíveis temporariamente']);
-        exit;
-    }
-
-    $result['_meta'] = ['source' => 'awesomeapi-proxy', 'fallback' => false, 'updatedAt' => date('c')];
-    $json = json_encode($result);
-    @file_put_contents($CACHE_FILE, $json);
-    echo $json;
-    exit;
-}
-
-// ─── GET: proxy criptomoedas (CoinGecko) ─────────────────────────────────────
-// CoinGecko free: ~10.000 req/mês. Cache servidor 60min = 720 req/mês total.
-if ($method === 'GET' && $action === 'crypto') {
-    $CACHE_FILE = sys_get_temp_dir() . '/viciocode_crypto.json';
-    $CACHE_TTL  = 300; // 5 min — CoinGecko free: 10.000 req/mês, 8.640 req/mês = 86% do limite
-
-    if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $CACHE_TTL) {
-        $cached = file_get_contents($CACHE_FILE);
-        if ($cached) { echo $cached; exit; }
-    }
-
-    $url = 'https://api.coingecko.com/api/v3/coins/markets'
-         . '?vs_currency=brl&order=market_cap_desc&per_page=8&page=1&sparkline=false';
-    $ctx = stream_context_create(['http' => [
-        'timeout'       => 10,
-        'ignore_errors' => true,
-        'header'        => "Accept: application/json\r\n",
-    ]]);
-    $raw = @file_get_contents($url, false, $ctx);
-
-    if ($raw) {
-        $data = json_decode($raw, true);
-        if (is_array($data) && count($data) > 0) {
-            $result = ['coins' => $data, '_meta' => ['source' => 'coingecko-proxy', 'updatedAt' => date('c'), 'ttlMin' => 60]];
-            $json   = json_encode($result);
-            @file_put_contents($CACHE_FILE, $json);
-            echo $json;
-            exit;
-        }
-    }
-
-    http_response_code(503);
-    echo json_encode(['error' => 'Dados de cripto indisponíveis temporariamente']);
-    exit;
-}
-
-// ─── GET: proxy B3 / brapi.dev ────────────────────────────────────────────────
-// brapi.dev free: 15.000 req/mês. Cache servidor 60min = 720 req/mês total.
-if ($method === 'GET' && $action === 'b3') {
-    $CACHE_FILE = sys_get_temp_dir() . '/viciocode_b3.json';
-    $CACHE_TTL  = 180; // 3 min — brapi.dev free: 15.000 req/mês, 14.400 req/mês = 96% do limite
-
-    if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $CACHE_TTL) {
-        $cached = file_get_contents($CACHE_FILE);
-        if ($cached) { echo $cached; exit; }
-    }
-
-    $tickers = 'PETR4,VALE3,ITUB4,BBDC4,ABEV3,WEGE3,BBAS3,RENT3,MGLU3,SUZB3';
-    $url     = "https://brapi.dev/api/quote/{$tickers}?fundamental=false";
-    $ctx     = stream_context_create(['http' => [
-        'timeout'       => 10,
-        'ignore_errors' => true,
-        'header'        => "Accept: application/json\r\n",
-    ]]);
-    $raw = @file_get_contents($url, false, $ctx);
-
-    if ($raw) {
-        $data = json_decode($raw, true);
-        if (!empty($data['results']) && count($data['results']) > 0) {
-            $result = ['results' => $data['results'], '_meta' => ['source' => 'brapi-proxy', 'updatedAt' => date('c'), 'ttlMin' => 60]];
-            $json   = json_encode($result);
-            @file_put_contents($CACHE_FILE, $json);
-            echo $json;
-            exit;
-        }
-    }
-
-    http_response_code(503);
-    echo json_encode(['error' => 'Dados B3 indisponíveis temporariamente']);
-    exit;
-}
-
 // ─── POST: proxy Anthropic API (Painel Social Media) ─────────────────────────
 // Chamado apenas pelo admin — não expõe a chave ao browser
 if ($method === 'POST' && $action === 'generate_social') {
