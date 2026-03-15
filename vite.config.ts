@@ -74,9 +74,23 @@ export default defineConfig(({ mode }) => ({
       jpeg: { quality: 82 },
       // WebP: qualidade 82% — formato moderno, ~30% menor que JPEG
       webp: { quality: 82 },
-      // PNG: compressão sem perda
+      // PNG: só comprime assets grandes, não os ícones PWA (já são pequenos e ficariam maiores)
       png: { quality: 90 },
-      // Não redimensiona — só comprime
+      // SVG: usa svgo para limpar SVGs
+      svg: {
+        plugins: [
+          { name: "removeComments" },
+          { name: "removeEmptyAttrs" },
+          { name: "removeUselessDefs" },
+        ],
+      },
+      // Exclui arquivos que ficam maiores após otimização ou que não devem ser alterados
+      exclude: [
+        /icon-192x192\.png/,
+        /icon-512x512\.png/,
+        /favicon\.ico/,
+        /og-image\.jpg/,
+      ],
       includePublic: true,
     }),
     VitePWA({
