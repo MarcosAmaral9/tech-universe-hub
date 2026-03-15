@@ -44,7 +44,7 @@ interface PlatformContent {
   tiktok?: GeneratedContent;
 }
 
-const ADMIN_EMAIL = "marcosamaral.dev@gmail.com"; // troque pelo seu email de admin
+const ADMIN_EMAIL = "viciocode01@gmail.com";
 
 const SocialPanelPage = () => {
   const { user, loading: authLoading } = useAuthContext();
