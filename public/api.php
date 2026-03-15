@@ -10,6 +10,10 @@
  * 4. Execute o SQL ao final deste arquivo no phpMyAdmin
  */
 
+// Suprime erros PHP para não quebrar o JSON output
+ini_set('display_errors', '0');
+error_reporting(0);
+
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
@@ -50,6 +54,24 @@ define('SITE_URL', 'https://viciocode.com');
 define('AVATAR_DIR', __DIR__ . '/avatars/');
 define('AVATAR_URL', '/avatars/');
 
+$method = $_SERVER['REQUEST_METHOD'];
+$action = $_GET['action'] ?? '';
+
+// ─── GET: diagnóstico — não precisa de banco ──────────────────────────────────
+if ($method === 'GET' && $action === 'ping') {
+    echo json_encode([
+        'status'     => 'ok',
+        'php'        => PHP_VERSION,
+        'time'       => date('Y-m-d H:i:s'),
+        'pdo_mysql'  => extension_loaded('pdo_mysql') ? 'disponível' : 'AUSENTE',
+        'env_file'   => file_exists(__DIR__ . '/.env.php') ? 'encontrado' : 'NÃO encontrado',
+        'google_key' => !empty($GOOGLE_CLIENT_ID) ? 'configurado' : 'NÃO configurado',
+        'anthropic'  => !empty($ANTHROPIC_KEY) ? 'configurado' : 'NÃO configurado',
+    ]);
+    exit;
+}
+
+// Para os demais endpoints, conecta ao banco (lazy)
 try {
     $pdo = new PDO(
         "mysql:host=$DB_HOST;dbname=$DB_NAME;charset=utf8mb4",
@@ -59,12 +81,9 @@ try {
     );
 } catch (PDOException $e) {
     http_response_code(500);
-    echo json_encode(['error' => 'Falha na conexão com o banco de dados']);
+    echo json_encode(['error' => 'Falha na conexão com o banco de dados. Verifique DB_NAME, DB_USER e DB_PASS no api.php.']);
     exit;
 }
-
-$method = $_SERVER['REQUEST_METHOD'];
-$action = $_GET['action'] ?? '';
 
 // ─── GET: buscar comentários ─────────────────────────────────────────────────
 if ($method === 'GET' && $action === 'comments') {

@@ -33,6 +33,25 @@ const GoogleIcon = () => (
   </svg>
 );
 
+// Faz fetch e garante que a resposta é JSON — nunca explode silenciosamente
+async function apiFetch(url: string, options?: RequestInit): Promise<{ ok: boolean; data: any }> {
+  try {
+    const res = await fetch(url, options);
+    const text = await res.text();
+    let data: any = {};
+    try {
+      data = JSON.parse(text);
+    } catch {
+      // PHP retornou HTML (erro fatal, credenciais erradas etc.)
+      data = { error: `Erro no servidor (${res.status}). Verifique as configurações do api.php.` };
+    }
+    return { ok: res.ok, data };
+  } catch (e: any) {
+    // Erro de rede (sem conexão, timeout etc.)
+    return { ok: false, data: { error: "Sem conexão com o servidor. Verifique se o api.php está publicado na Hostinger." } };
+  }
+}
+
 const AuthPage = () => {
   const { user, loading } = useAuthContext();
   const navigate = useNavigate();
@@ -48,12 +67,11 @@ const AuthPage = () => {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  // Redirect if already logged in
   useEffect(() => {
     if (!loading && user) navigate("/configuracoes", { replace: true });
   }, [user, loading, navigate]);
 
-  // Handle Google OAuth callback — reads ?google_session=... or ?google_error=...
+  // Handle Google OAuth callback
   useEffect(() => {
     const googleSession = searchParams.get("google_session");
     const googleError   = searchParams.get("google_error");
@@ -74,10 +92,10 @@ const AuthPage = () => {
     if (googleError) {
       const msgs: Record<string, string> = {
         cancelled:       "Login com Google cancelado.",
-        token_failed:    "Falha ao obter token do Google.",
+        token_failed:    "Falha ao obter token do Google. Verifique as credenciais no .env.php.",
         userinfo_failed: "Não foi possível obter dados do Google.",
-        db_error:        "Erro ao salvar conta. Tente novamente.",
-        not_configured:  "Login com Google não está configurado ainda.",
+        db_error:        "Erro ao salvar conta. Verifique as credenciais do banco de dados no api.php.",
+        not_configured:  "Login com Google não configurado. Adicione GOOGLE_CLIENT_ID e GOOGLE_SECRET no .env.php.",
       };
       toast({ title: msgs[googleError] || "Erro no login com Google.", variant: "destructive" });
     }
@@ -85,17 +103,11 @@ const AuthPage = () => {
 
   const handleGoogleLogin = async () => {
     setGoogleLoading(true);
-    try {
-      const res  = await fetch(`${API_BASE}?action=google_auth_url`);
-      const data = await res.json();
-      if (data.url) {
-        window.location.href = data.url;
-      } else {
-        toast({ title: "Erro", description: data.error || "Não foi possível iniciar login com Google.", variant: "destructive" });
-        setGoogleLoading(false);
-      }
-    } catch {
-      toast({ title: "Erro de conexão.", variant: "destructive" });
+    const { ok, data } = await apiFetch(`${API_BASE}?action=google_auth_url`);
+    if (ok && data.url) {
+      window.location.href = data.url;
+    } else {
+      toast({ title: "Erro", description: data.error || "Não foi possível iniciar login com Google.", variant: "destructive" });
       setGoogleLoading(false);
     }
   };
@@ -108,13 +120,12 @@ const AuthPage = () => {
     try {
       if (isLogin) {
         const parsed = loginSchema.parse({ email, password });
-        const res  = await fetch(`${API_BASE}?action=login`, {
+        const { ok, data } = await apiFetch(`${API_BASE}?action=login`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email: parsed.email, password: parsed.password }),
         });
-        const data = await res.json();
-        if (!res.ok || data.error) {
+        if (!ok || data.error) {
           toast({ title: "Erro no login", description: data.error || "Email ou senha incorretos.", variant: "destructive" });
         } else {
           localStorage.setItem(SESSION_KEY, JSON.stringify({ user: data.user, profile: data.profile }));
@@ -122,13 +133,12 @@ const AuthPage = () => {
         }
       } else {
         const parsed = signupSchema.parse({ name, nickname, email, password });
-        const res  = await fetch(`${API_BASE}?action=register`, {
+        const { ok, data } = await apiFetch(`${API_BASE}?action=register`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ name: parsed.name, nickname: parsed.nickname, email: parsed.email, password: parsed.password }),
         });
-        const data = await res.json();
-        if (!res.ok || data.error) {
+        if (!ok || data.error) {
           toast({ title: "Erro no cadastro", description: data.error || "Não foi possível criar a conta.", variant: "destructive" });
         } else {
           localStorage.setItem(SESSION_KEY, JSON.stringify({ user: data.user, profile: data.profile }));
@@ -141,6 +151,8 @@ const AuthPage = () => {
         const fieldErrors: Record<string, string> = {};
         err.errors.forEach((e) => { if (e.path[0]) fieldErrors[String(e.path[0])] = e.message; });
         setErrors(fieldErrors);
+      } else {
+        toast({ title: "Erro inesperado", description: "Tente novamente.", variant: "destructive" });
       }
     } finally {
       setSubmitting(false);
