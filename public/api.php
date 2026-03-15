@@ -31,21 +31,20 @@ $DB_USER = 'u980153444_viciocode';
 $DB_PASS = 'b^0xFECWjX';
 // ==========================================
 
-// ========== ANTHROPIC API (Painel Social) ==========
-// A chave fica no arquivo .env.php fora do repositório git.
-// Crie o arquivo /public_html/.env.php na Hostinger com o conteúdo:
+// ========== CHAVES DE API (Painel Social + Google OAuth) ==========
+// Crie/edite o arquivo /public_html/.env.php na Hostinger com o conteúdo:
 //   <?php
-//   $ANTHROPIC_KEY    = 'sk-ant-api03-...';
+//   $GEMINI_KEY       = 'AIza...';  // aistudio.google.com — gratuito, sem cartão
 //   $GOOGLE_CLIENT_ID = 'XXXXXXX.apps.googleusercontent.com';
 //   $GOOGLE_SECRET    = 'GOCSPX-...';
-$ANTHROPIC_KEY    = '';
+$GEMINI_KEY       = '';
 $GOOGLE_CLIENT_ID = '';
 $GOOGLE_SECRET    = '';
 $_env_file = __DIR__ . '/.env.php';
 if (file_exists($_env_file)) {
-    include $_env_file; // define $ANTHROPIC_KEY, $GOOGLE_CLIENT_ID, $GOOGLE_SECRET
+    include $_env_file; // define $GEMINI_KEY, $GOOGLE_CLIENT_ID, $GOOGLE_SECRET
 }
-// =================================================
+// =================================================================
 
 // URL base do site (usada no redirect_uri do OAuth)
 define('SITE_URL', 'https://viciocode.com');
@@ -139,7 +138,7 @@ if ($method === 'GET' && $action === 'ping') {
         'env_file'        => file_exists(__DIR__ . '/.env.php') ? 'encontrado' : 'NÃO encontrado',
         'env_file_path'   => __DIR__ . '/.env.php',
         'google_key'      => !empty($GOOGLE_CLIENT_ID) ? 'configurado' : 'NÃO configurado',
-        'anthropic'       => !empty($ANTHROPIC_KEY) ? 'configurado' : 'NÃO configurado',
+        'gemini'          => !empty($GEMINI_KEY) ? 'configurado' : 'NÃO configurado',
         'database'        => $dbStatus,
         'tables'          => $tables,
     ]);
@@ -469,10 +468,11 @@ if ($method === 'POST' && $action === 'upload_avatar') {
 // Chamado apenas pelo admin — não expõe a chave ao browser
 if ($method === 'POST' && $action === 'generate_social') {
 
-    // Verificar se a chave foi configurada
-    if (!$ANTHROPIC_KEY || $ANTHROPIC_KEY === 'SUA_CHAVE_ANTHROPIC_AQUI') {
+    // Gemini API (Google AI Studio) — gratuito, sem cartão de crédito
+    // Obtenha sua chave em: aistudio.google.com
+    if (!$GEMINI_KEY) {
         http_response_code(503);
-        echo json_encode(['error' => 'Chave da API Anthropic não configurada. Adicione sua chave em api.php.']);
+        echo json_encode(['error' => 'Chave do Gemini não configurada. Adicione $GEMINI_KEY no .env.php. Obtenha grátis em aistudio.google.com']);
         exit;
     }
 
@@ -490,37 +490,51 @@ if ($method === 'POST' && $action === 'generate_social') {
         exit;
     }
 
-    $imageField  = $genImage ? '"image":"prompt de imagem"' : '"image":null';
-    $musicField  = $genMusic ? ',"musicSuggestion":"artista - música"' : '';
+    $imageField  = $genImage ? '"image":"prompt de imagem para criar com IA"' : '"image":null';
+    $musicField  = $genMusic ? ',"musicSuggestion":"artista - música sugerida"' : '';
     $imagePrompt = $genImage ? "\nSugira também um prompt de imagem para criar com IA." : '';
     $musicPrompt = $genMusic ? "\nSugira uma música de fundo adequada." : '';
 
-    $userMessage = "Crie conteúdo para {$platform} sobre o artigo \"{$title}\" da categoria {$category}.\n"
-                 . "Resumo: {$excerpt}{$imagePrompt}{$musicPrompt}\n"
-                 . "Responda APENAS com JSON válido neste formato (sem markdown, sem texto extra):\n"
-                 . "{{\"caption\":\"texto\",\"hashtags\":[\"tag1\",\"tag2\"],\"cta\":\"chamada\",\"hookLine\":\"gancho\",{$imageField}{$musicField}}}";
+    $prompt = "Crie conteúdo para {$platform} sobre o artigo \"{$title}\" da categoria {$category}.\n"
+            . "Resumo: {$excerpt}{$imagePrompt}{$musicPrompt}\n"
+            . "Responda APENAS com JSON válido neste formato exato (sem markdown, sem texto extra):\n"
+            . "{\"caption\":\"texto da legenda\",\"hashtags\":[\"tag1\",\"tag2\"],\"cta\":\"chamada para ação\",\"hookLine\":\"frase de gancho\",{$imageField}{$musicField}}";
 
     $payload = json_encode([
-        'model'      => 'claude-sonnet-4-20250514',
-        'max_tokens' => 1000,
-        'messages'   => [['role' => 'user', 'content' => $userMessage]],
+        'contents' => [['parts' => [['text' => $prompt]]]],
+        'generationConfig' => ['maxOutputTokens' => 1000, 'temperature' => 0.7],
     ]);
 
-    $ctx = stream_context_create(['http' => [
-        'method'        => 'POST',
-        'header'        => "Content-Type: application/json\r\n"
-                         . "x-api-key: {$ANTHROPIC_KEY}\r\n"
-                         . "anthropic-version: 2023-06-01\r\n",
-        'content'       => $payload,
-        'timeout'       => 30,
-        'ignore_errors' => true,
-    ]]);
+    // Usa gemini-2.5-flash — rápido, gratuito, excelente para geração de texto
+    $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={$GEMINI_KEY}";
+    $raw = null;
 
-    $raw = @file_get_contents('https://api.anthropic.com/v1/messages', false, $ctx);
+    if (function_exists('curl_init')) {
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => $payload,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT        => 30,
+            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
+        ]);
+        $raw = curl_exec($ch);
+        curl_close($ch);
+    } elseif (ini_get('allow_url_fopen')) {
+        $ctx = stream_context_create(['http' => [
+            'method'        => 'POST',
+            'header'        => "Content-Type: application/json\r\n",
+            'content'       => $payload,
+            'timeout'       => 30,
+            'ignore_errors' => true,
+        ]]);
+        $raw = @file_get_contents($url, false, $ctx);
+    }
 
     if (!$raw) {
         http_response_code(503);
-        echo json_encode(['error' => 'Falha ao conectar com a API Anthropic']);
+        echo json_encode(['error' => 'Falha ao conectar com a API Gemini']);
         exit;
     }
 
@@ -528,12 +542,11 @@ if ($method === 'POST' && $action === 'generate_social') {
 
     if (!empty($resp['error'])) {
         http_response_code(502);
-        echo json_encode(['error' => $resp['error']['message'] ?? 'Erro na API Anthropic']);
+        echo json_encode(['error' => $resp['error']['message'] ?? 'Erro na API Gemini']);
         exit;
     }
 
-    $text = $resp['content'][0]['text'] ?? '';
-    // Strip markdown code fences if model wrapped the JSON
+    $text = $resp['candidates'][0]['content']['parts'][0]['text'] ?? '';
     $text = preg_replace('/^```(?:json)?\s*/m', '', $text);
     $text = preg_replace('/\s*```$/m', '', $text);
     $text = trim($text);
@@ -541,7 +554,7 @@ if ($method === 'POST' && $action === 'generate_social') {
     $parsed = json_decode($text, true);
     if (!$parsed) {
         http_response_code(502);
-        echo json_encode(['error' => 'Resposta inválida da IA', 'raw' => $text]);
+        echo json_encode(['error' => 'Resposta inválida do Gemini', 'raw' => $text]);
         exit;
     }
 
