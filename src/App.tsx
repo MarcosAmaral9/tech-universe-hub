@@ -215,6 +215,11 @@ const App = () => (
                 <Route path="/post/merchandising-otaku-colecionar-2026" element={<MerchandisingOtaku2026 />} />
                 <Route path="/post/melhores-mangas-ler-2026" element={<MelhoresMangas2026 />} />
                 <Route path="/post/saude-mental-cultura-otaku-2026" element={<SaudeMentalOtaku2026 />} />
+                {/* New IA + Finance Posts */}
+                <Route path="/post/ia-criatividade-arte-musica-2026" element={<IACriatividade2026 />} />
+                <Route path="/post/ia-privacidade-dados-2026" element={<IAPrivacidadeDados2026 />} />
+                <Route path="/post/etfs-2026-guia-completo-investir" element={<ETFs2026 />} />
+                <Route path="/post/economia-domestica-2026-cortar-gastos" element={<EconomiaDomestica2026 />} />
                 {/* Legal Pages */}
                 <Route path="/sobre" element={<AboutPage />} />
                 <Route path="/contato" element={<ContactPage />} />

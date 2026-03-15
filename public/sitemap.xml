@@ -394,6 +394,34 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Novos Posts IA - Março 2026 -->
+  <url>
+    <loc>https://viciocode.com/post/ia-criatividade-arte-musica-2026</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/ia-privacidade-dados-2026</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Novos Posts Finanças - Março 2026 -->
+  <url>
+    <loc>https://viciocode.com/post/etfs-2026-guia-completo-investir</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/economia-domestica-2026-cortar-gastos</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Páginas Institucionais -->
   <url>
     <loc>https://viciocode.com/sobre</loc>
