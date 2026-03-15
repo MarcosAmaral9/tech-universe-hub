@@ -29,6 +29,8 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  const displayName = profile?.nickname || profile?.name || user?.email?.split("@")[0] || "Usuário";
+
   const fetchComments = async () => {
     setIsLoading(true);
     try {
@@ -47,16 +49,13 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
     fetchComments();
   }, [postId]);
 
-  const displayName = profile?.nickname || profile?.name || user?.email?.split("@")[0] || "Usuário";
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!user) return;
 
     setErrors([]);
-    setIsSubmitting(true);
-
     const validationErrors: string[] = [];
+
     const commentValidation = validateComment(newComment);
     if (!commentValidation.isValid) {
       validationErrors.push(...commentValidation.errors);
@@ -64,10 +63,10 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
 
     if (validationErrors.length > 0) {
       setErrors(validationErrors);
-      setIsSubmitting(false);
       return;
     }
 
+    setIsSubmitting(true);
     try {
       const res = await fetch(`${API_BASE}?action=comments`, {
         method: "POST",
@@ -93,8 +92,8 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
     setIsSubmitting(false);
   };
 
-  const handleDelete = async (commentId: string) => {
-    if (!user) return;
+  const handleDelete = async (commentId: string, commentUserId: string) => {
+    if (!user || user.id !== commentUserId) return;
     try {
       await fetch(`${API_BASE}?action=comments&id=${commentId}&user_id=${user.id}`, {
         method: "DELETE",
@@ -112,6 +111,7 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
         Comentários ({comments.length})
       </h3>
 
+      {/* Moderation notice */}
       <div className="mb-6 p-4 bg-secondary/50 rounded-lg border border-border flex items-start gap-3">
         <Shield className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
         <div className="text-sm text-muted-foreground">
@@ -122,20 +122,12 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
         </div>
       </div>
 
-      {errors.length > 0 && (
-        <div className="mb-6 p-4 bg-destructive/10 rounded-lg border border-destructive/30">
-          <ul className="list-disc list-inside text-sm text-destructive/90 space-y-1">
-            {errors.map((error, index) => (
-              <li key={index}>{error}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-
+      {/* Comment form — only for logged-in users */}
       {user ? (
         <form onSubmit={handleSubmit} className="mb-8 p-6 bg-secondary rounded-xl">
+          {/* Author identity */}
           <div className="mb-4 flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold overflow-hidden">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold overflow-hidden shrink-0">
               {profile?.avatar_url ? (
                 <img src={profile.avatar_url} alt="" className="w-full h-full object-cover" />
               ) : (
@@ -147,6 +139,15 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
               <p className="text-xs text-muted-foreground">Comentando como</p>
             </div>
           </div>
+
+          {/* Errors */}
+          {errors.length > 0 && (
+            <div className="mb-4 p-3 bg-destructive/10 rounded-lg border border-destructive/30">
+              <ul className="list-disc list-inside text-sm text-destructive/90 space-y-1">
+                {errors.map((error, i) => <li key={i}>{error}</li>)}
+              </ul>
+            </div>
+          )}
 
           <div className="mb-4">
             <Textarea
@@ -162,106 +163,80 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
             </p>
           </div>
 
-          <Button type="submit" className="gap-2" disabled={isSubmitting || !newComment.trim()}>
+          <Button
+            type="submit"
+            className="gap-2"
+            disabled={isSubmitting || !newComment.trim()}
+          >
             <Send className="h-4 w-4" />
             {isSubmitting ? "Enviando..." : "Comentar"}
           </Button>
         </form>
       ) : (
-        <div className="mb-8 p-6 bg-secondary rounded-xl text-center">
-          <p className="text-muted-foreground mb-4">
-            Faça login para deixar seu comentário.
+        /* CTA para login */
+        <div className="mb-8 p-6 bg-secondary rounded-xl text-center space-y-3">
+          <MessageCircle className="h-8 w-8 text-primary mx-auto opacity-60" />
+          <p className="font-medium text-foreground">Quer participar da conversa?</p>
+          <p className="text-sm text-muted-foreground">
+            Faça login ou crie uma conta gratuitamente para deixar seu comentário.
           </p>
           <Button asChild className="gap-2">
             <Link to="/entrar">
               <LogIn className="h-4 w-4" />
-              Entrar / Criar Conta
+              Entrar / Criar conta
             </Link>
           </Button>
         </div>
       )}
 
-      {isLoading && (
+      {/* Comments list — visible to everyone */}
+      {isLoading ? (
         <div className="flex items-center justify-center py-8">
           <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin" />
         </div>
-      )}
-
-      {!isLoading && (
-        <CommentsListView comments={comments} user={user} onDelete={handleDelete} />
-      )}
-
-      {!isLoading && comments.length === 0 && (
+      ) : comments.length === 0 ? (
         <p className="text-center text-muted-foreground py-8">
-          Seja o primeiro a comentar!
+          {user
+            ? "Seja o primeiro a comentar!"
+            : "Nenhum comentário ainda. Faça login para ser o primeiro!"}
         </p>
+      ) : (
+        <div className="space-y-6">
+          {comments.map((comment) => (
+            <div
+              key={comment.id}
+              className="p-5 bg-card rounded-xl border border-border animate-fade-in"
+            >
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold">
+                    {comment.author_name[0]?.toUpperCase() || "?"}
+                  </div>
+                  <div>
+                    <span className="font-semibold text-foreground">{comment.author_name}</span>
+                    <span className="block text-xs text-muted-foreground">
+                      {new Date(comment.created_at).toLocaleDateString("pt-BR")}
+                    </span>
+                  </div>
+                </div>
+                {user?.id === comment.user_id && (
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => handleDelete(comment.id, comment.user_id)}
+                    className="h-8 w-8 text-muted-foreground hover:text-destructive"
+                    title="Excluir comentário"
+                  >
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
+                )}
+              </div>
+              <p className="text-foreground/90 leading-relaxed">{comment.content}</p>
+            </div>
+          ))}
+        </div>
       )}
     </section>
-  );
-};
-
-const CommentsListView = ({
-  comments,
-  user,
-  onDelete,
-}: {
-  comments: Comment[];
-  user: any;
-  onDelete: (id: string) => void;
-}) => {
-  const [showAll, setShowAll] = useState(false);
-  const isLoggedIn = !!user;
-  const visibleComments = isLoggedIn || showAll ? comments : comments.slice(0, 3);
-  const hasMore = !isLoggedIn && !showAll && comments.length > 3;
-
-  if (comments.length === 0) return null;
-
-  return (
-    <div className="space-y-6">
-      {visibleComments.map((comment) => (
-        <div key={comment.id} className="p-5 bg-card rounded-xl border border-border animate-fade-in">
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold">
-                {comment.author_name[0]?.toUpperCase() || "?"}
-              </div>
-              <div>
-                <span className="font-semibold text-foreground">{comment.author_name}</span>
-                <span className="block text-xs text-muted-foreground">
-                  {new Date(comment.created_at).toLocaleDateString("pt-BR")}
-                </span>
-              </div>
-            </div>
-            {user?.id === comment.user_id && (
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => onDelete(comment.id)}
-                className="h-8 w-8 text-muted-foreground hover:text-destructive"
-                title="Excluir comentário"
-              >
-                <Trash2 className="h-4 w-4" />
-              </Button>
-            )}
-          </div>
-          <p className="text-foreground/90 leading-relaxed">{comment.content}</p>
-        </div>
-      ))}
-
-      {hasMore && (
-        <div className="text-center">
-          <p className="text-sm text-muted-foreground mb-3">
-            Faça login para ver todos os {comments.length} comentários
-          </p>
-          <Button asChild variant="outline" className="gap-2">
-            <Link to="/entrar">
-              <LogIn className="h-4 w-4" />
-              Entrar para ver mais
-            </Link>
-          </Button>
-        </div>
-      )}
-    </div>
   );
 };
 

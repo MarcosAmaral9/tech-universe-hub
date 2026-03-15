@@ -13,8 +13,13 @@ function htaccessPlugin(): Plugin {
     closeBundle() {
       const htaccess = `<IfModule mod_rewrite.c>
   RewriteEngine On
+  RewriteBase /
 
-  # SPA fallback — must come first
+  # Serve index.html file directly (avoid 403 on Hostinger when folder exists)
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+
+  # SPA fallback — redirect all non-file/non-dir requests to index.html
   RewriteRule ^index\\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

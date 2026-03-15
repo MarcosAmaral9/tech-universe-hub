@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { blogPosts } from "@/data/posts";
-import { supabase } from "@/integrations/supabase/client";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
@@ -45,7 +44,7 @@ interface PlatformContent {
   tiktok?: GeneratedContent;
 }
 
-const ADMIN_USER_ID = "c866a1ef-c4f7-4f7d-b39d-3761fd2567da";
+const ADMIN_EMAIL = "marcosamaral.dev@gmail.com"; // troque pelo seu email de admin
 
 const SocialPanelPage = () => {
   const { user, loading: authLoading } = useAuthContext();
@@ -65,18 +64,37 @@ const SocialPanelPage = () => {
   const [historyKey, setHistoryKey] = useState(0);
 
   useEffect(() => {
-    if (!authLoading && (!user || user.id !== ADMIN_USER_ID)) {
+    if (!authLoading && (!user || user.email !== ADMIN_EMAIL)) {
       navigate("/");
     }
   }, [user, authLoading, navigate]);
 
   const generateForPlatform = async (post: any, platform: "instagram" | "tiktok"): Promise<GeneratedContent> => {
-    const { data, error } = await supabase.functions.invoke("generate-social-content", {
-      body: { title: post.title, excerpt: post.excerpt, category: post.category, platform, generateImage, suggestMusic },
+    const res = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-20250514",
+        max_tokens: 1000,
+        messages: [{
+          role: "user",
+          content: `Crie conteúdo para ${platform} sobre o artigo "${post.title}" da categoria ${post.category}.
+Resumo: ${post.excerpt}
+${generateImage ? "Sugira também um prompt de imagem." : ""}
+${suggestMusic ? "Sugira uma música de fundo." : ""}
+Responda APENAS com JSON válido neste formato exato (sem markdown):
+{"caption":"texto","hashtags":["tag1","tag2"],"cta":"chamada","hookLine":"gancho"${generateImage ? ',"image":"prompt da imagem"' : ',"image":null'}${suggestMusic ? ',"musicSuggestion":"artista - música"' : ""}}`,
+        }],
+      }),
     });
-    if (error) throw error;
-    if (data.error) throw new Error(data.error);
-    return data;
+    if (!res.ok) throw new Error("Erro na API");
+    const data = await res.json();
+    const text = data.content?.[0]?.text || "";
+    try {
+      return JSON.parse(text.replace(/```json|```/g, "").trim());
+    } catch {
+      throw new Error("Resposta inválida da IA");
+    }
   };
 
   const handleGenerate = async () => {
@@ -206,7 +224,7 @@ const SocialPanelPage = () => {
   };
 
   if (authLoading) return null;
-  if (!user || user.id !== ADMIN_USER_ID) return null;
+  if (!user || user.email !== ADMIN_EMAIL) return null;
 
   const sortedPosts = [...blogPosts].sort((a, b) => b.date.localeCompare(a.date));
   const hasContent = content.instagram || content.tiktok;

@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import { supabase } from "@/integrations/supabase/client";
 import { TrendingUp, TrendingDown, AlertTriangle } from "lucide-react";
 import CacheStatusBar from "@/components/CacheStatusBar";
 import PriceAlertConfig, { AlertAssetOption } from "@/components/PriceAlertConfig";
@@ -66,13 +65,12 @@ const B3StockTicker = () => {
 
     try {
       const tickers = POPULAR_B3_STOCKS.join(",");
-      const { data, error } = await supabase.functions.invoke('b3-quotes', {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-        body: null,
-      });
-
-      if (error) throw new Error(error.message);
+      const res = await fetch(
+        `https://brapi.dev/api/quote/${tickers}?fundamental=false`,
+        { signal: AbortSignal.timeout(8000) }
+      );
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json();
 
       if (data?.results && data.results.length > 0) {
         const quotes: StockQuote[] = data.results.map((r: any) => ({

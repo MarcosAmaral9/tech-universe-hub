@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import { supabase } from "@/integrations/supabase/client";
 
 interface ExchangeData {
   USDBRL?: { bid: string; pctChange: string; high: string; low: string };
@@ -48,6 +47,7 @@ export function useExchangeRates() {
   const [source, setSource] = useState<string>("");
 
   const fetchRates = useCallback(async () => {
+    // Check localStorage cache first
     try {
       const cached = localStorage.getItem(CACHE_KEY);
       if (cached) {
@@ -57,8 +57,9 @@ export function useExchangeRates() {
           fallback: boolean;
           expiresAt?: number;
         };
-
-        const isValid = parsed.expiresAt ? Date.now() < parsed.expiresAt : Date.now() - parsed.timestamp < CACHE_DURATION_SUCCESS;
+        const isValid = parsed.expiresAt
+          ? Date.now() < parsed.expiresAt
+          : Date.now() - parsed.timestamp < CACHE_DURATION_SUCCESS;
         if (isValid && parsed.data) {
           setData(parsed.data);
           setIsFallback(!!parsed.fallback);
@@ -70,29 +71,27 @@ export function useExchangeRates() {
         }
       }
     } catch {
-      // ignore cache parsing issues
+      // ignore cache errors
     }
 
     setLoading(true);
 
     if (!sharedPromise) {
-      sharedPromise = (async () => {
+      sharedPromise = (async (): Promise<ExchangeData | null> => {
         try {
-          const { data, error } = await supabase.functions.invoke("exchange-rates", {
-            method: "GET",
-            headers: { "Content-Type": "application/json" },
-            body: null,
+          // Use PHP proxy — fetches câmbio + metais server-side (sem CORS, com cache de 30min)
+          const res = await fetch("/api.php?action=rates", {
+            signal: AbortSignal.timeout(10000),
           });
-
-          if (error) throw new Error(error.message);
-          return data as ExchangeData;
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          const result = await res.json() as ExchangeData;
+          if (result.error) throw new Error(String((result as any).error));
+          return result;
         } catch (err) {
-          console.warn("API câmbio indisponível:", err);
+          console.warn("Proxy de câmbio indisponível:", err);
           return null;
         } finally {
-          setTimeout(() => {
-            sharedPromise = null;
-          }, 100);
+          setTimeout(() => { sharedPromise = null; }, 100);
         }
       })();
     }
@@ -100,25 +99,16 @@ export function useExchangeRates() {
     const result = await sharedPromise;
     const now = Date.now();
 
-    if (result && (result.USDBRL || result.EURBRL || result.ARSBRL || result.PYGBRL || result.XAUBRL || result.XAGBRL)) {
-      const serverFallback = !!result._meta?.fallback;
-      const ttl = serverFallback ? CACHE_DURATION_FALLBACK : CACHE_DURATION_SUCCESS;
-      const expiresAt = now + ttl;
-
+    if (result && (result.USDBRL || result.EURBRL)) {
+      const expiresAt = now + CACHE_DURATION_SUCCESS;
       setData(result);
-      setIsFallback(serverFallback);
+      setIsFallback(false);
       setLastUpdated(new Date(now).toLocaleString("pt-BR"));
       setCacheExpiresAt(expiresAt);
       setSource(result._meta?.source || "live");
-
       localStorage.setItem(
         CACHE_KEY,
-        JSON.stringify({
-          data: result,
-          timestamp: now,
-          fallback: serverFallback,
-          expiresAt,
-        }),
+        JSON.stringify({ data: result, timestamp: now, fallback: false, expiresAt })
       );
     } else {
       setData(LOCAL_FALLBACK);
@@ -127,15 +117,9 @@ export function useExchangeRates() {
       const expiresAt = now + CACHE_DURATION_FALLBACK;
       setCacheExpiresAt(expiresAt);
       setSource("local-static");
-
       localStorage.setItem(
         CACHE_KEY,
-        JSON.stringify({
-          data: LOCAL_FALLBACK,
-          timestamp: now,
-          fallback: true,
-          expiresAt,
-        }),
+        JSON.stringify({ data: LOCAL_FALLBACK, timestamp: now, fallback: true, expiresAt })
       );
     }
 

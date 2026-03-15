@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { Settings, Sun, Moon, Type, Palette, Bell, BellOff, RotateCcw, Smartphone, Globe, User, AtSign, Camera } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Input } from "@/components/ui/input";
@@ -104,32 +103,25 @@ const SettingsPage = () => {
     }
 
     setUploadingAvatar(true);
-    const ext = file.name.split(".").pop();
-    const filePath = `${user.id}/avatar.${ext}`;
+    try {
+      const formData = new FormData();
+      formData.append("avatar", file);
+      formData.append("user_id", user.id);
 
-    const { error: uploadError } = await supabase.storage
-      .from("avatars")
-      .upload(filePath, file, { upsert: true });
+      const res = await fetch(`/api.php?action=upload_avatar`, {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
 
-    if (uploadError) {
-      toast({ title: "Erro no upload", description: uploadError.message, variant: "destructive" });
-      setUploadingAvatar(false);
-      return;
-    }
-
-    const { data: { publicUrl } } = supabase.storage.from("avatars").getPublicUrl(filePath);
-    const avatarUrl = `${publicUrl}?t=${Date.now()}`;
-
-    const { error: updateError } = await supabase
-      .from("profiles")
-      .update({ avatar_url: avatarUrl, updated_at: new Date().toISOString() })
-      .eq("id", user.id);
-
-    if (updateError) {
-      toast({ title: "Erro", description: "Upload feito mas não foi possível salvar no perfil.", variant: "destructive" });
-    } else {
-      await fetchProfile(user.id);
-      toast({ title: "Avatar atualizado! 📸" });
+      if (!res.ok || data.error) {
+        toast({ title: "Erro no upload", description: data.error || "Não foi possível enviar a imagem.", variant: "destructive" });
+      } else {
+        await fetchProfile(user.id);
+        toast({ title: "Avatar atualizado! 📸" });
+      }
+    } catch {
+      toast({ title: "Erro", description: "Falha ao enviar imagem.", variant: "destructive" });
     }
     setUploadingAvatar(false);
   };

@@ -1,19 +1,9 @@
 import { createContext, useContext, type ReactNode } from "react";
-import { useAuth } from "@/hooks/useAuth";
-import type { User, Session } from "@supabase/supabase-js";
-
-interface Profile {
-  id: string;
-  name: string;
-  nickname: string;
-  avatar_url: string | null;
-  notifications_site: boolean;
-  notifications_app: boolean;
-}
+import { useAuth, type LocalUser, type Profile } from "@/hooks/useAuth";
 
 interface AuthContextType {
-  user: User | null;
-  session: Session | null;
+  user: LocalUser | null;
+  session: { user: LocalUser } | null;
   profile: Profile | null;
   loading: boolean;
   signOut: () => Promise<void>;

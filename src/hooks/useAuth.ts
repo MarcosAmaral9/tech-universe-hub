@@ -1,8 +1,9 @@
 import { useState, useEffect, useCallback } from "react";
-import { supabase } from "@/integrations/supabase/client";
-import type { User, Session } from "@supabase/supabase-js";
 
-interface Profile {
+const API_BASE = "/api.php";
+const SESSION_KEY = "viciocode_session";
+
+export interface Profile {
   id: string;
   name: string;
   nickname: string;
@@ -11,61 +12,90 @@ interface Profile {
   notifications_app: boolean;
 }
 
+export interface LocalUser {
+  id: string;
+  email: string;
+}
+
+function loadSession(): { user: LocalUser; profile: Profile } | null {
+  try {
+    const raw = localStorage.getItem(SESSION_KEY);
+    if (!raw) return null;
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
+
+function saveSession(user: LocalUser, profile: Profile) {
+  localStorage.setItem(SESSION_KEY, JSON.stringify({ user, profile }));
+}
+
+function clearSession() {
+  localStorage.removeItem(SESSION_KEY);
+}
+
 export const useAuth = () => {
-  const [user, setUser] = useState<User | null>(null);
-  const [session, setSession] = useState<Session | null>(null);
+  const [user, setUser] = useState<LocalUser | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchProfile = useCallback(async (userId: string) => {
-    const { data } = await supabase
-      .from("profiles")
-      .select("*")
-      .eq("id", userId)
-      .single();
-    if (data) setProfile(data as Profile);
+  useEffect(() => {
+    const session = loadSession();
+    if (session) {
+      setUser(session.user);
+      setProfile(session.profile);
+    }
+    setLoading(false);
   }, []);
 
-  useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (_event, session) => {
-        setSession(session);
-        setUser(session?.user ?? null);
-        if (session?.user) {
-          setTimeout(() => fetchProfile(session.user.id), 0);
-        } else {
-          setProfile(null);
+  const fetchProfile = useCallback(async (userId: string) => {
+    try {
+      const res = await fetch(`${API_BASE}?action=profile&user_id=${encodeURIComponent(userId)}`);
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.id) {
+          setProfile(data as Profile);
+          const currentSession = loadSession();
+          if (currentSession) {
+            saveSession(currentSession.user, data as Profile);
+          }
         }
-        setLoading(false);
       }
-    );
-
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      setUser(session?.user ?? null);
-      if (session?.user) fetchProfile(session.user.id);
-      setLoading(false);
-    });
-
-    return () => subscription.unsubscribe();
-  }, [fetchProfile]);
+    } catch {
+      // offline – keep cached profile
+    }
+  }, []);
 
   const signOut = async () => {
-    await supabase.auth.signOut();
+    clearSession();
     setUser(null);
-    setSession(null);
     setProfile(null);
   };
 
-  const updateProfile = async (updates: Partial<Pick<Profile, "name" | "nickname" | "notifications_site" | "notifications_app">>) => {
+  const updateProfile = async (
+    updates: Partial<Pick<Profile, "name" | "nickname" | "notifications_site" | "notifications_app">>
+  ) => {
     if (!user) return;
-    const { error } = await supabase
-      .from("profiles")
-      .update({ ...updates, updated_at: new Date().toISOString() })
-      .eq("id", user.id);
-    if (!error) await fetchProfile(user.id);
-    return error;
+    try {
+      const res = await fetch(`${API_BASE}?action=profile`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ user_id: user.id, ...updates }),
+      });
+      if (res.ok) {
+        const updated = { ...profile!, ...updates };
+        setProfile(updated);
+        saveSession(user, updated);
+      }
+      return res.ok ? null : new Error("Falha ao atualizar perfil");
+    } catch (e) {
+      return e;
+    }
   };
+
+  // session is kept for API compatibility (components that use it)
+  const session = user ? { user } : null;
 
   return { user, session, profile, loading, signOut, updateProfile, fetchProfile };
 };

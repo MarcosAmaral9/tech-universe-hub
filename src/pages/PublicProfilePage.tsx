@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { User, Calendar, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DynamicSEO from "@/components/DynamicSEO";
+
+const API_BASE = "/api.php";
 
 interface PublicProfile {
   id: string;
@@ -23,16 +24,16 @@ const PublicProfilePage = () => {
   useEffect(() => {
     if (!id) return;
     const fetchProfile = async () => {
-      const { data, error } = await supabase
-        .from("profiles")
-        .select("id, name, nickname, avatar_url, created_at")
-        .eq("id", id)
-        .single();
-
-      if (error || !data) {
+      try {
+        const res = await fetch(`${API_BASE}?action=profile&user_id=${encodeURIComponent(id)}`);
+        const data = await res.json();
+        if (!res.ok || !data || data.error) {
+          setNotFound(true);
+        } else {
+          setProfile(data as PublicProfile);
+        }
+      } catch {
         setNotFound(true);
-      } else {
-        setProfile(data);
       }
       setLoading(false);
     };
