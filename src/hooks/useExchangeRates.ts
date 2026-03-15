@@ -59,9 +59,10 @@ export function useExchangeRates() {
           fallback: boolean;
           expiresAt?: number;
         };
-        const isValid = parsed.expiresAt
+        // Nunca serve fallback cacheado — sempre tenta buscar dados reais
+        const isValid = !parsed.fallback && (parsed.expiresAt
           ? Date.now() < parsed.expiresAt
-          : Date.now() - parsed.timestamp < CACHE_DURATION_SUCCESS;
+          : Date.now() - parsed.timestamp < CACHE_DURATION_SUCCESS);
         if (isValid && parsed.data) {
           setData(parsed.data);
           setIsFallback(!!parsed.fallback);
@@ -119,10 +120,8 @@ export function useExchangeRates() {
       const expiresAt = now + CACHE_DURATION_FALLBACK;
       setCacheExpiresAt(expiresAt);
       setSource("local-static");
-      localStorage.setItem(
-        CACHE_KEY,
-        JSON.stringify({ data: LOCAL_FALLBACK, timestamp: now, fallback: true, expiresAt })
-      );
+      // Não cacheia fallback no localStorage — próxima visita sempre tentará a API
+      // localStorage.setItem(CACHE_KEY, ...);
     }
 
     setLoading(false);

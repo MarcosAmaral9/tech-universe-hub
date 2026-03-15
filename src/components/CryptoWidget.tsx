@@ -59,7 +59,8 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
       const cached = localStorage.getItem(CACHE_KEY);
       if (cached) {
         const { data, timestamp, fallback } = JSON.parse(cached);
-        if (Date.now() - timestamp < CACHE_DURATION) {
+        // Nunca serve fallback cacheado
+        if (!fallback && Date.now() - timestamp < CACHE_DURATION) {
           setCryptos(data);
           setIsFallback(!!fallback);
           setLastUpdated(new Date(timestamp).toLocaleString("pt-BR"));
@@ -102,7 +103,7 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
     setLastUpdated(new Date(now).toLocaleString("pt-BR"));
     setCacheExpiresAt(now + CACHE_DURATION);
     setSource("local-static");
-    localStorage.setItem(CACHE_KEY, JSON.stringify({ data: FALLBACK, timestamp: now, fallback: true }));
+    // Não cacheia fallback — próxima visita sempre tentará a API
     setLoading(false);
   }, []);
 

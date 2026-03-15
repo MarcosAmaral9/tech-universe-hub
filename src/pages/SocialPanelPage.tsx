@@ -232,7 +232,7 @@ const SocialPanelPage = () => {
         <Badge variant="outline" className="flex items-center gap-1.5 px-3 py-1.5 text-sm">
           <Zap className="w-4 h-4 text-primary" />
           <span className="font-semibold text-foreground">{todayCount}</span>
-          <span className="text-muted-foreground">geração{todayCount !== 1 ? "ões" : ""} hoje</span>
+          <span className="text-muted-foreground">{todayCount === 1 ? "geração" : "gerações"} hoje</span>
         </Badge>
       </div>
 

@@ -130,10 +130,18 @@ const SettingsPage = () => {
     if (!user) return;
 
     // If enabling app notifications, request browser permission
-    if (key === "notifications_app" && value && "Notification" in window) {
+    if (key === "notifications_app" && value) {
+      if (!("Notification" in window)) {
+        toast({ title: "Não suportado", description: "Seu navegador não suporta notificações push.", variant: "destructive" });
+        return;
+      }
+      if (Notification.permission === "denied") {
+        toast({ title: "Permissão bloqueada", description: "As notificações estão bloqueadas. Clique no cadeado na barra de endereços do navegador e altere para 'Permitir'.", variant: "destructive" });
+        return;
+      }
       const permission = await Notification.requestPermission();
       if (permission !== "granted") {
-        toast({ title: "Permissão negada", description: "Ative as notificações no navegador para receber alertas.", variant: "destructive" });
+        toast({ title: "Permissão negada", description: "Para ativar, clique no cadeado (🔒) na barra de endereços e permita notificações para viciocode.com.", variant: "destructive" });
         return;
       }
     }
