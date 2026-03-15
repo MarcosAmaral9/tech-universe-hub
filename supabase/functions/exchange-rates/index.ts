@@ -96,6 +96,7 @@ function getFallbackPayload(reason: string): ExchangePayload {
       source: "cache",
       reason,
       ttlMs: SERVER_CACHE_TTL_MS,
+      updatedAt: new Date().toISOString(),
     });
   }
 
