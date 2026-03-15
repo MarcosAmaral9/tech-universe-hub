@@ -4,6 +4,7 @@ import path from "path";
 import fs from "fs";
 import { componentTagger } from "lovable-tagger";
 import { VitePWA } from "vite-plugin-pwa";
+import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
 // Plugin to generate .htaccess in dist folder for Apache (Hostinger)
 function htaccessPlugin(): Plugin {
@@ -67,6 +68,17 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === "development" && componentTagger(),
+    ViteImageOptimizer({
+      // JPEG: qualidade 82% — bom balanço visual/tamanho
+      jpg: { quality: 82 },
+      jpeg: { quality: 82 },
+      // WebP: qualidade 82% — formato moderno, ~30% menor que JPEG
+      webp: { quality: 82 },
+      // PNG: compressão sem perda
+      png: { quality: 90 },
+      // Não redimensiona — só comprime
+      includePublic: true,
+    }),
     VitePWA({
       registerType: "prompt",
       workbox: {
