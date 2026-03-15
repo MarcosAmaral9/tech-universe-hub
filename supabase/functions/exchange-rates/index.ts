@@ -393,6 +393,7 @@ async function fetchAllRates(): Promise<ExchangePayload> {
     fallback: !hasLiveCurrency && !hasLiveMetals,
     source,
     ttlMs: SERVER_CACHE_TTL_MS,
+    updatedAt: new Date().toISOString(),
   });
 }
 
