@@ -2,7 +2,6 @@ import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import fs from "fs";
-import { componentTagger } from "lovable-tagger";
 import { VitePWA } from "vite-plugin-pwa";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
@@ -57,7 +56,7 @@ function htaccessPlugin(): Plugin {
   };
 }
 
-export default defineConfig(({ mode }) => ({
+export default defineConfig(() => ({
   server: {
     host: "::",
     port: 8080,
@@ -67,7 +66,6 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === "development" && componentTagger(),
     ViteImageOptimizer({
       // JPEG: qualidade 82% — bom balanço visual/tamanho
       jpg: { quality: 82 },
@@ -178,17 +176,19 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          "vendor-react": ["react", "react-dom", "react-router-dom"],
-          "vendor-ui": ["@radix-ui/react-dialog", "@radix-ui/react-dropdown-menu", "@radix-ui/react-tooltip", "@radix-ui/react-popover", "@radix-ui/react-tabs"],
-          "vendor-query": ["@tanstack/react-query"],
-          "vendor-charts": ["recharts"],
+        manualChunks: (id) => {
+          if (id.includes("node_modules")) {
+            if (id.includes("react") || id.includes("react-dom") || id.includes("react-router")) return "vendor-react";
+            if (id.includes("@radix-ui")) return "vendor-ui";
+            if (id.includes("@tanstack")) return "vendor-query";
+            if (id.includes("recharts")) return "vendor-charts";
+          }
         },
       },
     },
     target: "es2020",
     chunkSizeWarningLimit: 600,
-    minify: "esbuild",
+    minify: "oxc",
     cssCodeSplit: true,
   },
 }));
