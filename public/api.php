@@ -30,13 +30,21 @@ $DB_PASS = 'eN1^xPT@yLDz'; // Altere
 // ========== ANTHROPIC API (Painel Social) ==========
 // A chave fica no arquivo .env.php fora do repositório git.
 // Crie o arquivo /public_html/.env.php na Hostinger com o conteúdo:
-//   <?php $ANTHROPIC_KEY = 'sk-ant-api03-...sua_chave...'; ?>
-$ANTHROPIC_KEY = '';
+//   <?php
+//   $ANTHROPIC_KEY    = 'sk-ant-api03-...';
+//   $GOOGLE_CLIENT_ID = 'XXXXXXX.apps.googleusercontent.com';
+//   $GOOGLE_SECRET    = 'GOCSPX-...';
+$ANTHROPIC_KEY    = '';
+$GOOGLE_CLIENT_ID = '';
+$GOOGLE_SECRET    = '';
 $_env_file = __DIR__ . '/.env.php';
 if (file_exists($_env_file)) {
-    include $_env_file; // define $ANTHROPIC_KEY
+    include $_env_file; // define $ANTHROPIC_KEY, $GOOGLE_CLIENT_ID, $GOOGLE_SECRET
 }
 // =================================================
+
+// URL base do site (usada no redirect_uri do OAuth)
+define('SITE_URL', 'https://viciocode.com');
 
 // Diretório para avatars (relativo à raiz pública)
 define('AVATAR_DIR', __DIR__ . '/avatars/');
@@ -464,6 +472,135 @@ if ($method === 'POST' && $action === 'generate_social') {
     exit;
 }
 
+// ─── GET: retorna URL de autorização do Google ────────────────────────────────
+if ($method === 'GET' && $action === 'google_auth_url') {
+    if (!$GOOGLE_CLIENT_ID) {
+        http_response_code(503);
+        echo json_encode(['error' => 'Google OAuth não configurado. Adicione GOOGLE_CLIENT_ID e GOOGLE_SECRET no .env.php.']);
+        exit;
+    }
+    $redirect_uri = SITE_URL . '/api.php?action=google_callback';
+    $params = http_build_query([
+        'client_id'     => $GOOGLE_CLIENT_ID,
+        'redirect_uri'  => $redirect_uri,
+        'response_type' => 'code',
+        'scope'         => 'openid email profile',
+        'access_type'   => 'online',
+        'prompt'        => 'select_account',
+    ]);
+    echo json_encode(['url' => 'https://accounts.google.com/o/oauth2/v2/auth?' . $params]);
+    exit;
+}
+
+// ─── GET: callback do Google (troca code por token, cria/loga usuário) ─────────
+if ($method === 'GET' && $action === 'google_callback') {
+    $code  = $_GET['code']  ?? '';
+    $error = $_GET['error'] ?? '';
+
+    if ($error || !$code) {
+        header('Location: ' . SITE_URL . '/entrar?google_error=cancelled');
+        exit;
+    }
+
+    if (!$GOOGLE_CLIENT_ID || !$GOOGLE_SECRET) {
+        header('Location: ' . SITE_URL . '/entrar?google_error=not_configured');
+        exit;
+    }
+
+    // 1. Trocar code por access_token
+    $redirect_uri = SITE_URL . '/api.php?action=google_callback';
+    $ctx = stream_context_create(['http' => [
+        'method'        => 'POST',
+        'header'        => "Content-Type: application/x-www-form-urlencoded\r\n",
+        'content'       => http_build_query([
+            'code'          => $code,
+            'client_id'     => $GOOGLE_CLIENT_ID,
+            'client_secret' => $GOOGLE_SECRET,
+            'redirect_uri'  => $redirect_uri,
+            'grant_type'    => 'authorization_code',
+        ]),
+        'timeout'       => 10,
+        'ignore_errors' => true,
+    ]]);
+    $tokenRaw = @file_get_contents('https://oauth2.googleapis.com/token', false, $ctx);
+    $tokenData = $tokenRaw ? json_decode($tokenRaw, true) : null;
+
+    if (!$tokenData || empty($tokenData['access_token'])) {
+        header('Location: ' . SITE_URL . '/entrar?google_error=token_failed');
+        exit;
+    }
+
+    // 2. Buscar informações do usuário
+    $ctx2 = stream_context_create(['http' => [
+        'header'        => 'Authorization: Bearer ' . $tokenData['access_token'] . "\r\n",
+        'timeout'       => 10,
+        'ignore_errors' => true,
+    ]]);
+    $userInfoRaw = @file_get_contents('https://www.googleapis.com/oauth2/v3/userinfo', false, $ctx2);
+    $googleUser  = $userInfoRaw ? json_decode($userInfoRaw, true) : null;
+
+    if (!$googleUser || empty($googleUser['email'])) {
+        header('Location: ' . SITE_URL . '/entrar?google_error=userinfo_failed');
+        exit;
+    }
+
+    $googleId  = $googleUser['sub'];
+    $email     = $googleUser['email'];
+    $name      = $googleUser['name'] ?? explode('@', $email)[0];
+    $avatarUrl = $googleUser['picture'] ?? null;
+
+    // 3. Criar ou encontrar o usuário no banco
+    try {
+        $pdo = new PDO(
+            "mysql:host=$DB_HOST;dbname=$DB_NAME;charset=utf8mb4",
+            $DB_USER, $DB_PASS,
+            [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+        );
+
+        // Busca por google_id primeiro, depois por email
+        $stmt = $pdo->prepare('SELECT id, email FROM users WHERE google_id = :gid OR email = :email LIMIT 1');
+        $stmt->execute([':gid' => $googleId, ':email' => $email]);
+        $existing = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($existing) {
+            $userId = $existing['id'];
+            // Atualiza google_id se ainda não estava associado
+            $pdo->prepare('UPDATE users SET google_id = :gid WHERE id = :id AND google_id IS NULL')
+                ->execute([':gid' => $googleId, ':id' => $userId]);
+        } else {
+            // Cria novo usuário (sem senha — apenas OAuth)
+            $userId = bin2hex(random_bytes(16));
+            $pdo->prepare('INSERT INTO users (id, email, password_hash, google_id) VALUES (:id, :email, :hash, :gid)')
+                ->execute([':id' => $userId, ':email' => $email, ':hash' => '', ':gid' => $googleId]);
+
+            // Cria perfil
+            $nickname = strtolower(preg_replace('/[^a-zA-Z0-9]/', '', explode(' ', $name)[0]));
+            $nickname = $nickname ?: 'usuario' . substr($userId, 0, 6);
+            $pdo->prepare('INSERT INTO profiles (id, name, nickname, avatar_url) VALUES (:id, :name, :nick, :avatar)')
+                ->execute([':id' => $userId, ':name' => $name, ':nick' => $nickname, ':avatar' => $avatarUrl]);
+        }
+
+        // 4. Busca o perfil atualizado
+        $profileStmt = $pdo->prepare('SELECT * FROM profiles WHERE id = :id');
+        $profileStmt->execute([':id' => $userId]);
+        $profile = $profileStmt->fetch(PDO::FETCH_ASSOC);
+        $profile['notifications_site'] = (bool)($profile['notifications_site'] ?? false);
+        $profile['notifications_app']  = (bool)($profile['notifications_app']  ?? false);
+
+        // 5. Monta sessão e redireciona para o frontend
+        $sessionData = base64_encode(json_encode([
+            'user'    => ['id' => $userId, 'email' => $email],
+            'profile' => $profile,
+        ]));
+        header('Location: ' . SITE_URL . '/entrar?google_session=' . urlencode($sessionData));
+        exit;
+
+    } catch (PDOException $e) {
+        header('Location: ' . SITE_URL . '/entrar?google_error=db_error');
+        exit;
+    }
+}
+
 http_response_code(404);
 echo json_encode(['error' => 'Endpoint não encontrado']);
 
@@ -475,10 +612,17 @@ SQL para executar no phpMyAdmin (criar todas as tabelas):
 CREATE TABLE IF NOT EXISTS users (
     id VARCHAR(36) PRIMARY KEY,
     email VARCHAR(255) NOT NULL UNIQUE,
-    password_hash VARCHAR(255) NOT NULL,
+    password_hash VARCHAR(255) NOT NULL DEFAULT '',
+    google_id VARCHAR(64) DEFAULT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    INDEX idx_email (email)
+    INDEX idx_email (email),
+    INDEX idx_google_id (google_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Se a tabela já existe, adicione a coluna google_id:
+-- ALTER TABLE users ADD COLUMN IF NOT EXISTS google_id VARCHAR(64) DEFAULT NULL;
+-- ALTER TABLE users ADD INDEX IF NOT EXISTS idx_google_id (google_id);
+-- ALTER TABLE users MODIFY COLUMN password_hash VARCHAR(255) NOT NULL DEFAULT '';
 
 CREATE TABLE IF NOT EXISTS profiles (
     id VARCHAR(36) PRIMARY KEY,
