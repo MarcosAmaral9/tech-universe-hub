@@ -27,6 +27,11 @@ $DB_USER = 'viciocode';   // Altere
 $DB_PASS = 'eN1^xPT@yLDz'; // Altere
 // ==========================================
 
+// ========== ANTHROPIC API (Painel Social) ==========
+// Gere sua chave em: https://console.anthropic.com/settings/keys
+$ANTHROPIC_KEY = 'SUA_CHAVE_ANTHROPIC_AQUI'; // Altere
+// =================================================
+
 // Diretório para avatars (relativo à raiz pública)
 define('AVATAR_DIR', __DIR__ . '/avatars/');
 define('AVATAR_URL', '/avatars/');
@@ -366,6 +371,90 @@ if ($method === 'GET' && $action === 'b3') {
 
     http_response_code(503);
     echo json_encode(['error' => 'Dados B3 indisponíveis temporariamente']);
+    exit;
+}
+
+// ─── POST: proxy Anthropic API (Painel Social Media) ─────────────────────────
+// Chamado apenas pelo admin — não expõe a chave ao browser
+if ($method === 'POST' && $action === 'generate_social') {
+
+    // Verificar se a chave foi configurada
+    if (!$ANTHROPIC_KEY || $ANTHROPIC_KEY === 'SUA_CHAVE_ANTHROPIC_AQUI') {
+        http_response_code(503);
+        echo json_encode(['error' => 'Chave da API Anthropic não configurada. Adicione sua chave em api.php.']);
+        exit;
+    }
+
+    $body     = json_decode(file_get_contents('php://input'), true);
+    $title    = trim($body['title']    ?? '');
+    $excerpt  = trim($body['excerpt']  ?? '');
+    $category = trim($body['category'] ?? '');
+    $platform = trim($body['platform'] ?? 'instagram');
+    $genImage = !empty($body['generateImage']);
+    $genMusic = !empty($body['suggestMusic']);
+
+    if (!$title || !$excerpt) {
+        http_response_code(400);
+        echo json_encode(['error' => 'title e excerpt são obrigatórios']);
+        exit;
+    }
+
+    $imageField  = $genImage ? '"image":"prompt de imagem"' : '"image":null';
+    $musicField  = $genMusic ? ',"musicSuggestion":"artista - música"' : '';
+    $imagePrompt = $genImage ? "\nSugira também um prompt de imagem para criar com IA." : '';
+    $musicPrompt = $genMusic ? "\nSugira uma música de fundo adequada." : '';
+
+    $userMessage = "Crie conteúdo para {$platform} sobre o artigo \"{$title}\" da categoria {$category}.\n"
+                 . "Resumo: {$excerpt}{$imagePrompt}{$musicPrompt}\n"
+                 . "Responda APENAS com JSON válido neste formato (sem markdown, sem texto extra):\n"
+                 . "{{\"caption\":\"texto\",\"hashtags\":[\"tag1\",\"tag2\"],\"cta\":\"chamada\",\"hookLine\":\"gancho\",{$imageField}{$musicField}}}";
+
+    $payload = json_encode([
+        'model'      => 'claude-sonnet-4-20250514',
+        'max_tokens' => 1000,
+        'messages'   => [['role' => 'user', 'content' => $userMessage]],
+    ]);
+
+    $ctx = stream_context_create(['http' => [
+        'method'        => 'POST',
+        'header'        => "Content-Type: application/json\r\n"
+                         . "x-api-key: {$ANTHROPIC_KEY}\r\n"
+                         . "anthropic-version: 2023-06-01\r\n",
+        'content'       => $payload,
+        'timeout'       => 30,
+        'ignore_errors' => true,
+    ]]);
+
+    $raw = @file_get_contents('https://api.anthropic.com/v1/messages', false, $ctx);
+
+    if (!$raw) {
+        http_response_code(503);
+        echo json_encode(['error' => 'Falha ao conectar com a API Anthropic']);
+        exit;
+    }
+
+    $resp = json_decode($raw, true);
+
+    if (!empty($resp['error'])) {
+        http_response_code(502);
+        echo json_encode(['error' => $resp['error']['message'] ?? 'Erro na API Anthropic']);
+        exit;
+    }
+
+    $text = $resp['content'][0]['text'] ?? '';
+    // Strip markdown code fences if model wrapped the JSON
+    $text = preg_replace('/^```(?:json)?\s*/m', '', $text);
+    $text = preg_replace('/\s*```$/m', '', $text);
+    $text = trim($text);
+
+    $parsed = json_decode($text, true);
+    if (!$parsed) {
+        http_response_code(502);
+        echo json_encode(['error' => 'Resposta inválida da IA', 'raw' => $text]);
+        exit;
+    }
+
+    echo json_encode($parsed);
     exit;
 }
 

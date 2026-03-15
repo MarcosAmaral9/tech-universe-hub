@@ -70,31 +70,22 @@ const SocialPanelPage = () => {
   }, [user, authLoading, navigate]);
 
   const generateForPlatform = async (post: any, platform: "instagram" | "tiktok"): Promise<GeneratedContent> => {
-    const res = await fetch("https://api.anthropic.com/v1/messages", {
+    // Chamada via proxy PHP — a chave da API fica segura no servidor
+    const res = await fetch("/api.php?action=generate_social", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
-        max_tokens: 1000,
-        messages: [{
-          role: "user",
-          content: `Crie conteúdo para ${platform} sobre o artigo "${post.title}" da categoria ${post.category}.
-Resumo: ${post.excerpt}
-${generateImage ? "Sugira também um prompt de imagem." : ""}
-${suggestMusic ? "Sugira uma música de fundo." : ""}
-Responda APENAS com JSON válido neste formato exato (sem markdown):
-{"caption":"texto","hashtags":["tag1","tag2"],"cta":"chamada","hookLine":"gancho"${generateImage ? ',"image":"prompt da imagem"' : ',"image":null'}${suggestMusic ? ',"musicSuggestion":"artista - música"' : ""}}`,
-        }],
+        title: post.title,
+        excerpt: post.excerpt,
+        category: post.category,
+        platform,
+        generateImage,
+        suggestMusic,
       }),
     });
-    if (!res.ok) throw new Error("Erro na API");
     const data = await res.json();
-    const text = data.content?.[0]?.text || "";
-    try {
-      return JSON.parse(text.replace(/```json|```/g, "").trim());
-    } catch {
-      throw new Error("Resposta inválida da IA");
-    }
+    if (!res.ok || data.error) throw new Error(data.error || "Erro ao gerar conteúdo");
+    return data;
   };
 
   const handleGenerate = async () => {

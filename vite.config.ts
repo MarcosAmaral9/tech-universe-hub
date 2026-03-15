@@ -94,22 +94,12 @@ export default defineConfig(({ mode }) => ({
             },
           },
           {
-            // Edge functions (exchange rates, b3 quotes) — network first, fallback to cache
-            urlPattern: /\/functions\/v1\/(exchange-rates|b3-quotes)/i,
+            // API endpoints locais (comments, auth, cotações) — network first, cache para offline
+            urlPattern: /\/api\.php/i,
             handler: "NetworkFirst",
             options: {
-              cacheName: "api-data",
-              expiration: { maxEntries: 20, maxAgeSeconds: 60 * 60 },
-              networkTimeoutSeconds: 5,
-            },
-          },
-          {
-            // Supabase REST API (comments, profiles) — network first, cache for offline
-            urlPattern: /\/rest\/v1\//i,
-            handler: "NetworkFirst",
-            options: {
-              cacheName: "supabase-rest",
-              expiration: { maxEntries: 50, maxAgeSeconds: 60 * 60 * 24 },
+              cacheName: "api-local",
+              expiration: { maxEntries: 30, maxAgeSeconds: 60 * 60 },
               networkTimeoutSeconds: 5,
             },
           },
@@ -142,10 +132,12 @@ export default defineConfig(({ mode }) => ({
         background_color: "#0a0a0a",
         display: "standalone",
         start_url: "/",
+        lang: "pt-BR",
         icons: [
-          { src: "/favicon.ico", sizes: "64x64", type: "image/x-icon" },
-          { src: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
-          { src: "/icon-512x512.png", sizes: "512x512", type: "image/png", purpose: "any maskable" },
+          { src: "/favicon.ico",      sizes: "64x64",      type: "image/x-icon" },
+          { src: "/icon-192x192.png", sizes: "192x192",    type: "image/png",   purpose: "any" },
+          { src: "/icon-512x512.png", sizes: "512x512",    type: "image/png",   purpose: "any" },
+          { src: "/icon-512x512.png", sizes: "512x512",    type: "image/png",   purpose: "maskable" },
         ],
       },
     }),
@@ -163,7 +155,7 @@ export default defineConfig(({ mode }) => ({
         manualChunks: {
           "vendor-react": ["react", "react-dom", "react-router-dom"],
           "vendor-ui": ["@radix-ui/react-dialog", "@radix-ui/react-dropdown-menu", "@radix-ui/react-tooltip", "@radix-ui/react-popover", "@radix-ui/react-tabs"],
-          "vendor-query": ["@tanstack/react-query", "@supabase/supabase-js"],
+          "vendor-query": ["@tanstack/react-query"],
           "vendor-charts": ["recharts"],
         },
       },
