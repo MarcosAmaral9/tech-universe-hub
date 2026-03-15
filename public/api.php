@@ -104,6 +104,30 @@ function cacheDir(): string {
 if ($method === 'GET' && $action === 'ping') {
     $cacheDir = __DIR__ . '/cache';
     @mkdir($cacheDir, 0755, true);
+
+    // Testa conexão com banco
+    $dbStatus = 'NÃO testado';
+    try {
+        $testPdo = new PDO(
+            "mysql:host=$DB_HOST;dbname=$DB_NAME;charset=utf8mb4",
+            $DB_USER, $DB_PASS,
+            [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+        );
+        $testPdo->query('SELECT 1');
+        $dbStatus = 'conectado ✓';
+    } catch (PDOException $e) {
+        $dbStatus = 'ERRO: ' . $e->getMessage();
+    }
+
+    // Testa tabelas existentes
+    $tables = [];
+    try {
+        if (isset($testPdo)) {
+            $rows = $testPdo->query("SHOW TABLES")->fetchAll(PDO::FETCH_COLUMN);
+            $tables = $rows;
+        }
+    } catch (Exception $e) {}
+
     echo json_encode([
         'status'          => 'ok',
         'php'             => PHP_VERSION,
@@ -111,10 +135,12 @@ if ($method === 'GET' && $action === 'ping') {
         'pdo_mysql'       => extension_loaded('pdo_mysql') ? 'disponível' : 'AUSENTE',
         'curl'            => function_exists('curl_init') ? 'disponível' : 'AUSENTE',
         'allow_url_fopen' => ini_get('allow_url_fopen') ? 'ativado' : 'desativado',
-        'cache_dir'       => is_writable(cacheDir()) ? 'gravável (' . cacheDir() . ')' : 'SEM PERMISSÃO',
+        'cache_dir'       => is_writable(cacheDir()) ? 'gravável' : 'SEM PERMISSÃO',
         'env_file'        => file_exists(__DIR__ . '/.env.php') ? 'encontrado' : 'NÃO encontrado',
         'google_key'      => !empty($GOOGLE_CLIENT_ID) ? 'configurado' : 'NÃO configurado',
         'anthropic'       => !empty($ANTHROPIC_KEY) ? 'configurado' : 'NÃO configurado',
+        'database'        => $dbStatus,
+        'tables'          => $tables,
     ]);
     exit;
 }
@@ -328,7 +354,14 @@ if ($method === 'POST' && $action === 'login') {
     $stmt->execute([':email' => $email]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if (!$user || !password_verify($password, $user['password_hash'])) {
+    if (!$user) {
+        http_response_code(401); echo json_encode(['error' => 'Email ou senha incorretos']); exit;
+    }
+    // Conta criada via Google (sem senha) — orientar a usar o Google
+    if (empty($user['password_hash'])) {
+        http_response_code(401); echo json_encode(['error' => 'Esta conta foi criada com o Google. Use o botão "Continuar com Google" para entrar.']); exit;
+    }
+    if (!password_verify($password, $user['password_hash'])) {
         http_response_code(401); echo json_encode(['error' => 'Email ou senha incorretos']); exit;
     }
 
@@ -550,38 +583,68 @@ if ($method === 'GET' && $action === 'google_callback') {
         exit;
     }
 
-    // 1. Trocar code por access_token
-    $redirect_uri = SITE_URL . '/api.php?action=google_callback';
-    $ctx = stream_context_create(['http' => [
-        'method'        => 'POST',
-        'header'        => "Content-Type: application/x-www-form-urlencoded\r\n",
-        'content'       => http_build_query([
-            'code'          => $code,
-            'client_id'     => $GOOGLE_CLIENT_ID,
-            'client_secret' => $GOOGLE_SECRET,
-            'redirect_uri'  => $redirect_uri,
-            'grant_type'    => 'authorization_code',
-        ]),
-        'timeout'       => 10,
-        'ignore_errors' => true,
-    ]]);
-    $tokenRaw = @file_get_contents('https://oauth2.googleapis.com/token', false, $ctx);
-    $tokenData = $tokenRaw ? json_decode($tokenRaw, true) : null;
+    // 1. Trocar code por access_token (usa curl — mais confiável que file_get_contents para POST)
+    $redirect_uri  = SITE_URL . '/api.php?action=google_callback';
+    $tokenPostData = http_build_query([
+        'code'          => $code,
+        'client_id'     => $GOOGLE_CLIENT_ID,
+        'client_secret' => $GOOGLE_SECRET,
+        'redirect_uri'  => $redirect_uri,
+        'grant_type'    => 'authorization_code',
+    ]);
 
+    $tokenRaw = null;
+    if (function_exists('curl_init')) {
+        $ch = curl_init('https://oauth2.googleapis.com/token');
+        curl_setopt_array($ch, [
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => $tokenPostData,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT        => 10,
+            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_HTTPHEADER     => ['Content-Type: application/x-www-form-urlencoded'],
+        ]);
+        $tokenRaw = curl_exec($ch);
+        curl_close($ch);
+    } elseif (ini_get('allow_url_fopen')) {
+        $ctx = stream_context_create(['http' => [
+            'method'  => 'POST',
+            'header'  => "Content-Type: application/x-www-form-urlencoded\r\n",
+            'content' => $tokenPostData,
+            'timeout' => 10,
+            'ignore_errors' => true,
+        ]]);
+        $tokenRaw = @file_get_contents('https://oauth2.googleapis.com/token', false, $ctx);
+    }
+
+    $tokenData = $tokenRaw ? json_decode($tokenRaw, true) : null;
     if (!$tokenData || empty($tokenData['access_token'])) {
         header('Location: ' . SITE_URL . '/entrar?google_error=token_failed');
         exit;
     }
 
-    // 2. Buscar informações do usuário
-    $ctx2 = stream_context_create(['http' => [
-        'header'        => 'Authorization: Bearer ' . $tokenData['access_token'] . "\r\n",
-        'timeout'       => 10,
-        'ignore_errors' => true,
-    ]]);
-    $userInfoRaw = @file_get_contents('https://www.googleapis.com/oauth2/v3/userinfo', false, $ctx2);
-    $googleUser  = $userInfoRaw ? json_decode($userInfoRaw, true) : null;
+    // 2. Buscar informações do usuário (usa curl)
+    $userInfoRaw = null;
+    if (function_exists('curl_init')) {
+        $ch = curl_init('https://www.googleapis.com/oauth2/v3/userinfo');
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT        => 10,
+            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_HTTPHEADER     => ['Authorization: Bearer ' . $tokenData['access_token']],
+        ]);
+        $userInfoRaw = curl_exec($ch);
+        curl_close($ch);
+    } elseif (ini_get('allow_url_fopen')) {
+        $ctx2 = stream_context_create(['http' => [
+            'header'  => 'Authorization: Bearer ' . $tokenData['access_token'] . "\r\n",
+            'timeout' => 10,
+            'ignore_errors' => true,
+        ]]);
+        $userInfoRaw = @file_get_contents('https://www.googleapis.com/oauth2/v3/userinfo', false, $ctx2);
+    }
 
+    $googleUser = $userInfoRaw ? json_decode($userInfoRaw, true) : null;
     if (!$googleUser || empty($googleUser['email'])) {
         header('Location: ' . SITE_URL . '/entrar?google_error=userinfo_failed');
         exit;
