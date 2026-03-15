@@ -11,10 +11,6 @@ interface StockQuote {
   logourl?: string;
 }
 
-const POPULAR_B3_STOCKS = [
-  "PETR4", "VALE3", "ITUB4", "BBDC4", "ABEV3",
-  "WEGE3", "BBAS3", "RENT3", "MGLU3", "SUZB3",
-];
 
 const FALLBACK_STOCKS: StockQuote[] = [
   { symbol: "PETR4", shortName: "Petrobras PN", regularMarketPrice: 38.42, regularMarketChangePercent: 1.23 },
@@ -30,10 +26,9 @@ const FALLBACK_STOCKS: StockQuote[] = [
 ];
 
 const CACHE_KEY = "b3_stock_cache";
-// 15.000 req/mês ÷ 10 ações por chamada = 1.500 atualizações/mês
-// 1.500 ÷ 31 dias ≈ 48 atualizações/dia → 1440 min ÷ 48 ≈ 30 min
-const CACHE_DURATION = 1000 * 60 * 30; // 30 min cache
-const UPDATE_INTERVAL_LABEL = "30 minutos";
+// brapi.dev free: 15.000 req/mês. Proxy PHP cacheia 60min = 720 req/mês no servidor total.
+const CACHE_DURATION = 1000 * 60 * 60; // 60 min
+const UPDATE_INTERVAL_LABEL = "60 minutos";
 
 const B3StockTicker = () => {
   const [stocks, setStocks] = useState<StockQuote[]>([]);
@@ -64,11 +59,9 @@ const B3StockTicker = () => {
     setLoading(true);
 
     try {
-      const tickers = POPULAR_B3_STOCKS.join(",");
-      const res = await fetch(
-        `https://brapi.dev/api/quote/${tickers}?fundamental=false`,
-        { signal: AbortSignal.timeout(8000) }
-      );
+      const res = await fetch("/api.php?action=b3", {
+        signal: AbortSignal.timeout(10000),
+      });
       if (!res.ok) throw new Error("HTTP " + res.status);
       const data = await res.json();
 

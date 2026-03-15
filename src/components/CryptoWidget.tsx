@@ -14,8 +14,8 @@ interface CryptoData {
 }
 
 const CACHE_KEY = "crypto_cache";
-const CACHE_DURATION = 1000 * 60 * 10; // 10 min
-const UPDATE_INTERVAL_LABEL = "10 minutos";
+const CACHE_DURATION = 1000 * 60 * 60; // 60 min — proxy PHP faz 1 req/hora no servidor (720/mês)
+const UPDATE_INTERVAL_LABEL = "60 minutos";
 
 const FALLBACK: CryptoData[] = [
   { id: "bitcoin", symbol: "btc", name: "Bitcoin", current_price: 587420, price_change_percentage_24h: 2.3, market_cap: 11500000000000, image: "" },
@@ -74,11 +74,12 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
     setLoading(true);
 
     try {
-      const res = await fetch(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=8&page=1&sparkline=false"
-      );
+      const res = await fetch("/api.php?action=crypto", {
+        signal: AbortSignal.timeout(10000),
+      });
       if (!res.ok) throw new Error(`Status ${res.status}`);
-      const data: CryptoData[] = await res.json();
+      const json = await res.json();
+      const data: CryptoData[] = json.coins ?? json;
 
       setCryptos(data);
       setIsFallback(false);
