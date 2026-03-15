@@ -28,8 +28,14 @@ $DB_PASS = 'eN1^xPT@yLDz'; // Altere
 // ==========================================
 
 // ========== ANTHROPIC API (Painel Social) ==========
-// Gere sua chave em: https://console.anthropic.com/settings/keys
-$ANTHROPIC_KEY = 'SUA_CHAVE_ANTHROPIC_AQUI'; // Altere
+// A chave fica no arquivo .env.php fora do repositório git.
+// Crie o arquivo /public_html/.env.php na Hostinger com o conteúdo:
+//   <?php $ANTHROPIC_KEY = 'sk-ant-api03-...sua_chave...'; ?>
+$ANTHROPIC_KEY = '';
+$_env_file = __DIR__ . '/.env.php';
+if (file_exists($_env_file)) {
+    include $_env_file; // define $ANTHROPIC_KEY
+}
 // =================================================
 
 // Diretório para avatars (relativo à raiz pública)
