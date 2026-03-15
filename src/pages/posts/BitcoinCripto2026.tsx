@@ -95,7 +95,7 @@ const BitcoinCripto2026 = () => {
           <ShareWhatsApp />
         </header>
 
-        <img src={cryptoImg} alt="Bitcoin e Criptomoedas em 2026" className="w-full rounded-2xl mb-8 aspect-video object-cover" loading="lazy" />
+        <img fetchpriority="high" src={cryptoImg} alt="Bitcoin e Criptomoedas em 2026" className="w-full rounded-2xl mb-8 aspect-video object-cover" loading="eager" />
 
         {/* Crypto Widget com dados reais */}
         <CryptoWidget compact />

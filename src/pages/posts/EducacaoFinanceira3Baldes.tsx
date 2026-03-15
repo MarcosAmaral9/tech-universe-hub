@@ -126,7 +126,7 @@ const EducacaoFinanceira3Baldes = () => {
         </header>
 
         <div className="rounded-2xl overflow-hidden mb-8">
-          <img src={metodo3BaldesImg} alt="Método dos 3 Baldes - Educação Financeira" className="w-full aspect-video object-cover" loading="lazy" />
+          <img fetchpriority="high" src={metodo3BaldesImg} alt="Método dos 3 Baldes - Educação Financeira" className="w-full aspect-video object-cover" loading="eager" />
         </div>
 
         {/* Intro */}

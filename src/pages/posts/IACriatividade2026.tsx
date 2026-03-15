@@ -28,7 +28,7 @@ const IACriatividade2026 = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img src={heroImg} alt="IA e Criatividade 2026 - Arte, Música e Vídeo gerados por inteligência artificial" className="w-full h-full object-cover" />
+        <img fetchpriority="high" src={heroImg} alt="IA e Criatividade 2026 - Arte, Música e Vídeo gerados por inteligência artificial" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">

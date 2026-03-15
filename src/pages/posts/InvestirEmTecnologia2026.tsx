@@ -42,7 +42,7 @@ const InvestirEmTecnologia2026 = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img
+        <img fetchpriority="high"
           src={techInvesting2026Img}
           alt="Investir em tecnologia 2026 - Semicondutores, IA e Data Centers"
           className="w-full h-full object-cover"

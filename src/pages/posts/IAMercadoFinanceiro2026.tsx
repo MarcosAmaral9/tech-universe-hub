@@ -100,7 +100,7 @@ const IAMercadoFinanceiro2026 = () => {
 
         {/* Hero with Matrix effect */}
         <div className="relative rounded-2xl overflow-hidden mb-8">
-          <img src={iaFinancasImg} alt="IA no Mercado Financeiro 2026" className="w-full aspect-video object-cover" loading="lazy" />
+          <img fetchpriority="high" src={iaFinancasImg} alt="IA no Mercado Financeiro 2026" className="w-full aspect-video object-cover" loading="eager" />
           <MatrixRain />
         </div>
 

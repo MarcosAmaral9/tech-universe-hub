@@ -108,7 +108,7 @@ const IRPF2026 = () => {
           <ShareWhatsApp />
         </header>
 
-        <img src={irpfImg} alt="IRPF 2026 Imposto de Renda" className="w-full rounded-2xl mb-8 aspect-video object-cover" loading="lazy" />
+        <img fetchpriority="high" src={irpfImg} alt="IRPF 2026 Imposto de Renda" className="w-full rounded-2xl mb-8 aspect-video object-cover" loading="eager" />
 
         {/* Countdown */}
         <div className="bg-destructive/10 border border-destructive/30 rounded-2xl p-6 mb-8 text-center">

@@ -140,7 +140,7 @@ const MelhoresManhwasSistema = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img
+        <img fetchpriority="high"
           src={systemManhwaImg}
           alt="Melhores Manhwas de Sistema 2026 - Solo Leveling e mais"
           className="w-full h-full object-cover"

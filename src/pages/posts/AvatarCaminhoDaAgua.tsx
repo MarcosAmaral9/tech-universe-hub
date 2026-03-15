@@ -46,7 +46,7 @@ const AvatarCaminhoDaAgua = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img
+        <img fetchpriority="high"
           src={avatarWaterImg}
           alt="Avatar O Caminho da Água - Simulação de fluidos revolucionária"
           className="w-full h-full object-cover"

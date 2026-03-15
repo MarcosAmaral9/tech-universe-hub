@@ -52,7 +52,7 @@ const ACSyndicate = () => {
 
       {/* Featured Image */}
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img
+        <img fetchpriority="high"
           src={acSyndicateImg}
           alt="Assassin's Creed Syndicate - Review 2026 Londres Vitoriana PC gamer"
           className="w-full h-full object-cover"

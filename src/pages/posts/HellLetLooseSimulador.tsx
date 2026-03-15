@@ -51,7 +51,7 @@ const HellLetLooseSimulador = () => {
 
       {/* Featured Image */}
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img
+        <img fetchpriority="high"
           src={hellLetLooseImg}
           alt="Hell Let Loose - Review 2026 simulador Segunda Guerra PC gamer"
           className="w-full h-full object-cover"

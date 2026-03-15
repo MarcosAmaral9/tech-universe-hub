@@ -4,9 +4,12 @@ import { blogPosts } from "@/data/posts";
 
 const SITE_NAME = "VICIO<CODE>";
 const BASE_URL = "https://viciocode.com";
-
-// Pages where AdSense should NOT load
-const NO_ADS_PAGES = ["/sobre", "/contato", "/privacidade", "/termos", "/politica-conteudo", "/painel-social", "/instalar"];
+const SITE_LOGO = `${BASE_URL}/icon-512x512.png`;
+const SITE_SOCIAL = [
+  "https://instagram.com/viciocode",
+  "https://tiktok.com/@viciocode",
+  "https://www.youtube.com/@viciocode",
+];
 
 const PAGE_META: Record<string, { title: string; description: string; keywords: string }> = {
   "/": {
@@ -96,7 +99,6 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
   },
 };
 
-// Keywords by category for blog posts
 const CATEGORY_KEYWORDS: Record<string, string[]> = {
   otaku: ["otaku", "anime", "mangá", "manhwa", "cultura japonesa", "cosplay", "japão", "light novel", "série anime", "comunidade otaku"],
   ia: ["inteligência artificial", "IA", "machine learning", "ChatGPT", "Gemini", "automação", "tecnologia", "deep learning", "IA generativa", "futuro da IA"],
@@ -114,18 +116,20 @@ function setMetaTag(attrName: string, attrValue: string, content: string) {
   el.setAttribute("content", content);
 }
 
-function loadAdSense() {
-  if (document.querySelector('script[src*="adsbygoogle"]')) return;
-  const script = document.createElement("script");
-  script.async = true;
-  script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4907992121422514";
-  script.crossOrigin = "anonymous";
-  document.head.appendChild(script);
+function setOrCreateScript(dataAttr: string): HTMLScriptElement {
+  let el = document.querySelector(`script[data-jsonld="${dataAttr}"]`) as HTMLScriptElement | null;
+  if (!el) {
+    el = document.createElement("script");
+    el.setAttribute("type", "application/ld+json");
+    el.setAttribute("data-jsonld", dataAttr);
+    document.head.appendChild(el);
+  }
+  return el;
 }
 
-function removeAdSense() {
-  const script = document.querySelector('script[src*="adsbygoogle"]');
-  if (script) script.remove();
+function clearScript(dataAttr: string) {
+  const el = document.querySelector(`script[data-jsonld="${dataAttr}"]`);
+  if (el) el.textContent = "";
 }
 
 const DynamicSEO = () => {
@@ -134,23 +138,23 @@ const DynamicSEO = () => {
   useEffect(() => {
     let title = SITE_NAME;
     let description = "Seu portal definitivo para IAs, investimentos, cultura geek e o mundo otaku.";
+    // og:image MUST be absolute URL for WhatsApp/Facebook/Discord to render correctly
     let image = `${BASE_URL}/og-image.jpg`;
     let keywords = "VICIO CODE, tecnologia, IA, investimentos, geek, otaku, animes, mangás, finanças, games";
     const url = `${BASE_URL}${pathname}`;
+    const isPost = pathname.startsWith("/post/");
 
-    // Check if it's a post page
-    if (pathname.startsWith("/post/")) {
-      const slug = pathname.replace("/post/", "");
-      const post = blogPosts.find((p) => p.slug === slug);
-      if (post) {
-        title = post.title;
-        description = post.excerpt;
-        image = post.image.startsWith("http") ? post.image : `${BASE_URL}${post.image}`;
-        // Build keywords from post title words + category keywords
-        const categoryKws = CATEGORY_KEYWORDS[post.category] || [];
-        const titleWords = post.title.toLowerCase().replace(/[^a-záàâãéèêíïóôõúç\s]/g, "").split(/\s+/).filter(w => w.length > 3);
-        keywords = [...new Set([...categoryKws, ...titleWords.slice(0, 5)])].join(", ");
-      }
+    let post = isPost ? blogPosts.find((p) => p.slug === pathname.replace("/post/", "")) : undefined;
+
+    if (post) {
+      title = post.title;
+      description = post.excerpt;
+      // Ensure absolute URL — imported assets resolve to relative paths like /assets/xyz.webp
+      const rawImage = String(post.image);
+      image = rawImage.startsWith("http") ? rawImage : `${BASE_URL}${rawImage}`;
+      const categoryKws = CATEGORY_KEYWORDS[post.category] || [];
+      const titleWords = post.title.toLowerCase().replace(/[^a-záàâãéèêíïóôõúç\s]/g, "").split(/\s+/).filter(w => w.length > 3);
+      keywords = [...new Set([...categoryKws, ...titleWords.slice(0, 5)])].join(", ");
     } else {
       const pageMeta = PAGE_META[pathname];
       if (pageMeta) {
@@ -163,30 +167,30 @@ const DynamicSEO = () => {
     const fullTitle = pathname === "/" ? `${SITE_NAME} - IA, Investimentos, Geek & Otaku` : `${title} | ${SITE_NAME}`;
     document.title = fullTitle;
 
-    // Standard meta
+    // ── Standard meta ────────────────────────────────────────────────────────
     setMetaTag("name", "description", description);
     setMetaTag("name", "keywords", keywords);
 
-    // Open Graph
+    // ── Open Graph ───────────────────────────────────────────────────────────
     setMetaTag("property", "og:title", title);
     setMetaTag("property", "og:description", description);
-    setMetaTag("property", "og:image", image);
+    setMetaTag("property", "og:image", image);          // absolute URL
     setMetaTag("property", "og:image:width", "1200");
     setMetaTag("property", "og:image:height", "630");
     setMetaTag("property", "og:image:alt", title);
     setMetaTag("property", "og:url", url);
-    setMetaTag("property", "og:type", pathname.startsWith("/post/") ? "article" : "website");
+    setMetaTag("property", "og:type", isPost ? "article" : "website");
     setMetaTag("property", "og:site_name", SITE_NAME);
     setMetaTag("property", "og:locale", "pt_BR");
 
-    // Twitter Card
+    // ── Twitter Card ─────────────────────────────────────────────────────────
     setMetaTag("name", "twitter:card", "summary_large_image");
     setMetaTag("name", "twitter:title", title);
     setMetaTag("name", "twitter:description", description);
-    setMetaTag("name", "twitter:image", image);
+    setMetaTag("name", "twitter:image", image);         // absolute URL
     setMetaTag("name", "twitter:image:alt", title);
 
-    // Canonical
+    // ── Canonical ────────────────────────────────────────────────────────────
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!link) {
       link = document.createElement("link");
@@ -195,31 +199,10 @@ const DynamicSEO = () => {
     }
     link.setAttribute("href", url);
 
-    // AdSense - conditional loading
-    const shouldShowAds = !NO_ADS_PAGES.some(p => pathname === p || pathname.startsWith(p + "/"));
-    if (shouldShowAds) {
-      loadAdSense();
-    } else {
-      removeAdSense();
-    }
-
-    // JSON-LD Structured Data
-    let scriptEl = document.querySelector('script[data-jsonld="dynamic"]') as HTMLScriptElement | null;
-    if (!scriptEl) {
-      scriptEl = document.createElement("script");
-      scriptEl.setAttribute("type", "application/ld+json");
-      scriptEl.setAttribute("data-jsonld", "dynamic");
-      document.head.appendChild(scriptEl);
-    }
-
-    // BreadcrumbList JSON-LD
-    let breadcrumbEl = document.querySelector('script[data-jsonld="breadcrumb"]') as HTMLScriptElement | null;
-    if (!breadcrumbEl) {
-      breadcrumbEl = document.createElement("script");
-      breadcrumbEl.setAttribute("type", "application/ld+json");
-      breadcrumbEl.setAttribute("data-jsonld", "breadcrumb");
-      document.head.appendChild(breadcrumbEl);
-    }
+    // ── JSON-LD: main entity ─────────────────────────────────────────────────
+    const mainEl = setOrCreateScript("dynamic");
+    const breadcrumbEl = setOrCreateScript("breadcrumb");
+    const faqEl = setOrCreateScript("faq");
 
     const categoryPages: Record<string, string> = {
       "/ia": "Inteligência Artificial",
@@ -227,62 +210,84 @@ const DynamicSEO = () => {
       "/geek": "Geek",
       "/otaku": "Otaku",
     };
-
     const isCategory = pathname in categoryPages;
-    const isPost = pathname.startsWith("/post/");
 
-    if (isPost) {
-      const slug = pathname.replace("/post/", "");
-      const post = blogPosts.find((p) => p.slug === slug);
-      if (post) {
-        const articleJsonLd = {
-          "@context": "https://schema.org",
-          "@type": "Article",
-          headline: post.title,
-          description: post.excerpt,
-          image: image,
-          url: url,
-          datePublished: post.date,
-          author: { "@type": "Person", name: post.author },
-          publisher: {
-            "@type": "Organization",
-            name: "VICIO<CODE>",
-            logo: { "@type": "ImageObject", url: `${BASE_URL}/icon-512x512.png` },
-          },
-          mainEntityOfPage: { "@type": "WebPage", "@id": url },
-          keywords: keywords,
-        };
-        scriptEl.textContent = JSON.stringify(articleJsonLd);
+    // Shared publisher / organization block (E-E-A-T)
+    const organization = {
+      "@type": "Organization",
+      name: "VICIO<CODE>",
+      url: `${BASE_URL}/sobre`,
+      logo: { "@type": "ImageObject", url: SITE_LOGO },
+      sameAs: SITE_SOCIAL,
+    };
 
-        const categoryMap: Record<string, { path: string; name: string }> = {
-          ia: { path: "/ia", name: "Inteligência Artificial" },
-          invest: { path: "/financas", name: "Finanças" },
-          geek: { path: "/geek", name: "Geek" },
-          otaku: { path: "/otaku", name: "Otaku" },
-        };
-        const cat = categoryMap[post.category] || { path: "/", name: "Home" };
-        const breadcrumb = {
+    if (post) {
+      // ── Article schema ──────────────────────────────────────────────────
+      const articleJsonLd: Record<string, unknown> = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: post.title,
+        description: post.excerpt,
+        image: image,
+        url: url,
+        datePublished: post.date,
+        // dateModified signals freshness to Google — fall back to datePublished if not set
+        dateModified: post.updatedAt ?? post.date,
+        author: {
+          ...organization,
+          // Treat VICIO<CODE> as the author organization for E-E-A-T
+        },
+        publisher: organization,
+        mainEntityOfPage: { "@type": "WebPage", "@id": url },
+        keywords: keywords,
+        inLanguage: "pt-BR",
+      };
+      mainEl.textContent = JSON.stringify(articleJsonLd);
+
+      // ── Breadcrumb ──────────────────────────────────────────────────────
+      const categoryMap: Record<string, { path: string; name: string }> = {
+        ia: { path: "/ia", name: "Inteligência Artificial" },
+        invest: { path: "/financas", name: "Finanças" },
+        geek: { path: "/geek", name: "Geek" },
+        otaku: { path: "/otaku", name: "Otaku" },
+      };
+      const cat = categoryMap[post.category] || { path: "/", name: "Home" };
+      breadcrumbEl.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+          { "@type": "ListItem", position: 2, name: cat.name, item: `${BASE_URL}${cat.path}` },
+          { "@type": "ListItem", position: 3, name: post.title, item: url },
+        ],
+      });
+
+      // ── FAQPage schema — only when post has faq data ────────────────────
+      if (post.faq && post.faq.length > 0) {
+        faqEl.textContent = JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
-            { "@type": "ListItem", position: 2, name: cat.name, item: `${BASE_URL}${cat.path}` },
-            { "@type": "ListItem", position: 3, name: post.title, item: url },
-          ],
-        };
-        breadcrumbEl.textContent = JSON.stringify(breadcrumb);
+          "@type": "FAQPage",
+          mainEntity: post.faq.map(({ q, a }) => ({
+            "@type": "Question",
+            name: q,
+            acceptedAnswer: { "@type": "Answer", text: a },
+          })),
+        });
+      } else {
+        clearScript("faq");
       }
     } else if (isCategory) {
       const catName = categoryPages[pathname];
-      scriptEl.textContent = JSON.stringify({
+      mainEl.textContent = JSON.stringify({
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         name: catName,
         description: description,
         url: url,
-        isPartOf: { "@type": "WebSite", name: "VICIO<CODE>", url: BASE_URL },
+        publisher: organization,
+        isPartOf: { "@type": "WebSite", name: SITE_NAME, url: BASE_URL },
+        inLanguage: "pt-BR",
       });
-
       breadcrumbEl.textContent = JSON.stringify({
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -291,20 +296,24 @@ const DynamicSEO = () => {
           { "@type": "ListItem", position: 2, name: catName, item: url },
         ],
       });
+      clearScript("faq");
     } else {
-      scriptEl.textContent = JSON.stringify({
+      mainEl.textContent = JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebSite",
-        name: "VICIO<CODE>",
+        name: SITE_NAME,
         url: BASE_URL,
         description: description,
-        publisher: {
-          "@type": "Organization",
-          name: "VICIO<CODE>",
-          logo: { "@type": "ImageObject", url: `${BASE_URL}/icon-512x512.png` },
+        publisher: organization,
+        potentialAction: {
+          "@type": "SearchAction",
+          target: { "@type": "EntryPoint", urlTemplate: `${BASE_URL}/?q={search_term_string}` },
+          "query-input": "required name=search_term_string",
         },
+        inLanguage: "pt-BR",
       });
-      breadcrumbEl.textContent = "";
+      clearScript("breadcrumb");
+      clearScript("faq");
     }
   }, [pathname]);
 

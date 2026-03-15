@@ -42,7 +42,7 @@ const DiferencaMangasManhuas = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img
+        <img fetchpriority="high"
           src={mangaManhwaManhuaImg}
           alt="Diferença entre Manga Manhwa e Manhua - Guia completo"
           className="w-full h-full object-cover"

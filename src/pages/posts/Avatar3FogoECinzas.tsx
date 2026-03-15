@@ -46,7 +46,7 @@ const Avatar3FogoECinzas = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img
+        <img fetchpriority="high"
           src={avatarFireImg}
           alt="Avatar 3 Fire and Ash - Povo das Cinzas de Pandora"
           className="w-full h-full object-cover"

@@ -173,7 +173,7 @@ const PlanejamentoFinanceiro2026 = () => {
         </header>
 
         <div className="rounded-2xl overflow-hidden mb-8">
-          <img src={planejamentoImg} alt="Planejamento Financeiro 2026" className="w-full aspect-video object-cover" loading="lazy" />
+          <img fetchpriority="high" src={planejamentoImg} alt="Planejamento Financeiro 2026" className="w-full aspect-video object-cover" loading="eager" />
         </div>
 
         {/* Day Counter */}

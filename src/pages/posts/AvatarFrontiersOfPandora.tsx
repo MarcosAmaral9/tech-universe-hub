@@ -51,7 +51,7 @@ const AvatarFrontiersOfPandora = () => {
 
       {/* Featured Image */}
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img
+        <img fetchpriority="high"
           src={avatarGameImg}
           alt="Avatar Frontiers of Pandora - Review 2026 PC gamer gráficos"
           className="w-full h-full object-cover"

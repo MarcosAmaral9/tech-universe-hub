@@ -51,7 +51,7 @@ const ACValhalla = () => {
 
       {/* Featured Image */}
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img
+        <img fetchpriority="high"
           src={acValhallaImg}
           alt="Assassin's Creed Valhalla - Review completa 2026 gameplay PC gamer"
           className="w-full h-full object-cover"

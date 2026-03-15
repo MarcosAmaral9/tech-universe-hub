@@ -171,7 +171,7 @@ const CalculadorasFinanceiras = () => {
 
       {/* Hero */}
       <div className="relative rounded-2xl overflow-hidden mb-8">
-        <img src={calculadorasImg} alt="Calculadoras Financeiras" className="w-full h-64 md:h-80 object-cover" />
+        <img fetchpriority="high" src={calculadorasImg} alt="Calculadoras Financeiras" className="w-full h-64 md:h-80 object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6 md:p-8">
           <div>
             <span className="text-invest font-bold text-sm uppercase tracking-wider">Finanças • Ferramentas</span>

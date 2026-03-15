@@ -35,7 +35,7 @@ const AssassinsCreedPortal = () => {
 
       {/* Hero Banner */}
       <div className="relative rounded-2xl overflow-hidden mb-12 aspect-[21/9]">
-        <img src={acPortalImg} alt="Assassin's Creed Portal" className="w-full h-full object-cover" />
+        <img fetchpriority="high" src={acPortalImg} alt="Assassin's Creed Portal" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-8">
           <h1 className="font-display text-4xl md:text-6xl font-bold mb-4">Portal Assassin's Creed</h1>

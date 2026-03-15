@@ -41,7 +41,7 @@ const VikingsLegadoRagnar = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img
+        <img fetchpriority="high"
           src={vikingsImg}
           alt="Vikings série - Ragnar Lothbrok e mitologia nórdica"
           className="w-full h-full object-cover"

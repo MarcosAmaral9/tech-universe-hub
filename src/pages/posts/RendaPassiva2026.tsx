@@ -98,7 +98,7 @@ const RendaPassiva2026 = () => {
         </header>
 
         <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-          <img src={rendaPassivaImg} alt="Renda Passiva 2026" className="w-full h-full object-cover" />
+          <img fetchpriority="high" src={rendaPassivaImg} alt="Renda Passiva 2026" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
         </div>
 

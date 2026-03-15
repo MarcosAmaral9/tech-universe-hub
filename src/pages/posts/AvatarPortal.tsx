@@ -21,7 +21,7 @@ const AvatarPortal = () => {
 
       {/* Hero Banner */}
       <section className="relative h-[60vh] min-h-[400px] overflow-hidden">
-        <img src={avatarPortalBannerImg} alt="Pandora" className="absolute inset-0 w-full h-full object-cover" />
+        <img fetchpriority="high" src={avatarPortalBannerImg} alt="Pandora" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
         <div className="container relative h-full flex flex-col justify-end pb-12">
           <h1 className="font-display text-4xl md:text-6xl font-bold text-white mb-4">Portal Pandora</h1>

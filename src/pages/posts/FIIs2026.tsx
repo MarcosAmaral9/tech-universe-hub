@@ -123,7 +123,7 @@ const FIIs2026 = () => {
         </header>
 
         <div className="rounded-2xl overflow-hidden mb-8">
-          <img src={fiisImg} alt="Fundos Imobiliários FIIs 2026" className="w-full aspect-video object-cover" loading="lazy" />
+          <img fetchpriority="high" src={fiisImg} alt="Fundos Imobiliários FIIs 2026" className="w-full aspect-video object-cover" loading="eager" />
         </div>
 
         {/* Intro */}

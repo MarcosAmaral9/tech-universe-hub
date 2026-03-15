@@ -51,7 +51,7 @@ const ACUnity = () => {
 
       {/* Featured Image */}
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img
+        <img fetchpriority="high"
           src={acUnityImg}
           alt="Assassin's Creed Unity - Review 2026 Paris Revolução Francesa PC gamer"
           className="w-full h-full object-cover"

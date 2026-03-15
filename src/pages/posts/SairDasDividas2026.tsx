@@ -171,7 +171,7 @@ const SairDasDividas2026 = () => {
         </header>
 
         <div className="rounded-2xl overflow-hidden mb-8">
-          <img src={sairDividasImg} alt="Sair das Dívidas 2026" className="w-full aspect-video object-cover" loading="lazy" />
+          <img fetchpriority="high" src={sairDividasImg} alt="Sair das Dívidas 2026" className="w-full aspect-video object-cover" loading="eager" />
         </div>
 
         {/* Intro */}

@@ -14,7 +14,9 @@ export interface BlogPost {
   image: string;
   author: string;
   date: string;
+  updatedAt?: string; // data da última atualização significativa
   readTime: string;
+  faq?: Array<{ q: string; a: string }>; // FAQPage schema
 }
 
 export interface Comment {
