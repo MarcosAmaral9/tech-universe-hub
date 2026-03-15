@@ -137,6 +137,7 @@ if ($method === 'GET' && $action === 'ping') {
         'allow_url_fopen' => ini_get('allow_url_fopen') ? 'ativado' : 'desativado',
         'cache_dir'       => is_writable(cacheDir()) ? 'gravável' : 'SEM PERMISSÃO',
         'env_file'        => file_exists(__DIR__ . '/.env.php') ? 'encontrado' : 'NÃO encontrado',
+        'env_file_path'   => __DIR__ . '/.env.php',
         'google_key'      => !empty($GOOGLE_CLIENT_ID) ? 'configurado' : 'NÃO configurado',
         'anthropic'       => !empty($ANTHROPIC_KEY) ? 'configurado' : 'NÃO configurado',
         'database'        => $dbStatus,
