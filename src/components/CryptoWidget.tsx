@@ -81,6 +81,8 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
       const json = await res.json();
       const data: CryptoData[] = json.coins ?? json;
 
+      if (!Array.isArray(data) || data.length === 0) throw new Error("Dados vazios");
+
       setCryptos(data);
       setIsFallback(false);
       const now = Date.now();
