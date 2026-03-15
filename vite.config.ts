@@ -15,6 +15,9 @@ function htaccessPlugin(): Plugin {
   RewriteEngine On
   RewriteBase /
 
+  # Excluir api.php do SPA fallback — deixar o PHP processar diretamente
+  RewriteRule ^api\\.php - [L]
+
   # Serve index.html file directly (avoid 403 on Hostinger when folder exists)
   RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^(.+?)/?$ $1.html [L]
@@ -26,10 +29,10 @@ function htaccessPlugin(): Plugin {
   RewriteRule . /index.html [L]
 </IfModule>
 
-# Allow PHP API endpoints
-<FilesMatch "^api\\.php$">
+# Garantir que api.php é processado pelo PHP (compatibilidade Hostinger)
+<Files "api.php">
   SetHandler application/x-httpd-php
-</FilesMatch>
+</Files>
 
 # Cache static assets
 <IfModule mod_expires.c>
