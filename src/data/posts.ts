@@ -56,6 +56,10 @@ import isekaiImg from "@/assets/isekai-2026.webp";
 import merchandisingOtakuImg from "@/assets/merchandising-otaku-2026.webp";
 import melhoresMangasImg from "@/assets/melhores-mangas-2026.webp";
 import saudeMentalOtakuImg from "@/assets/saude-mental-otaku-2026.webp";
+import iaCriatividadeImg from "@/assets/ia-criatividade-2026.webp";
+import iaPrivacidadeImg from "@/assets/ia-privacidade-dados-2026.webp";
+import etfs2026Img from "@/assets/etfs-2026.webp";
+import economiaDomesticaImg from "@/assets/economia-domestica-2026.webp";
 
 export const blogPosts: BlogPost[] = [
   // IA Posts
@@ -773,6 +777,60 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-13",
     readTime: "13 min"
+  },
+  // New IA articles - March 2026
+  {
+    id: "55",
+    slug: "ia-criatividade-arte-musica-2026",
+    title: "IA e Criatividade em 2026: Como a Inteligência Artificial Está Revolucionando Arte, Música e Vídeo",
+    excerpt: "Da geração de imagens com Midjourney à criação musical com Suno AI. Descubra como a IA está transformando as artes criativas.",
+    content: "",
+    category: "ia",
+    subtopic: "criatividade",
+    image: iaCriatividadeImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-14",
+    readTime: "14 min"
+  },
+  {
+    id: "56",
+    slug: "ia-privacidade-dados-2026",
+    title: "IA e Privacidade de Dados em 2026: Seus Dados Estão Seguros na Era da Inteligência Artificial?",
+    excerpt: "Seus dados pessoais alimentam modelos de IA todos os dias. Entenda os riscos reais e como se proteger em 2026.",
+    content: "",
+    category: "ia",
+    subtopic: "privacidade",
+    image: iaPrivacidadeImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-15",
+    readTime: "13 min"
+  },
+  // New Finance articles - March 2026
+  {
+    id: "57",
+    slug: "etfs-2026-guia-completo-investir",
+    title: "ETFs em 2026: O Guia Completo Para Investir com Diversificação e Baixo Custo",
+    excerpt: "Tudo sobre ETFs no Brasil: os melhores fundos, estratégias de investimento e erros que você deve evitar.",
+    content: "",
+    category: "invest",
+    subtopic: "etfs",
+    image: etfs2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-03-16",
+    readTime: "15 min"
+  },
+  {
+    id: "58",
+    slug: "economia-domestica-2026-cortar-gastos",
+    title: "Economia Doméstica em 2026: 30 Dicas Práticas Para Cortar Gastos Sem Perder Qualidade de Vida",
+    excerpt: "Energia, supermercado, assinaturas e transporte: corte até R$ 1.500/mês do seu orçamento com estas estratégias.",
+    content: "",
+    category: "invest",
+    subtopic: "economia-domestica",
+    image: economiaDomesticaImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-17",
+    readTime: "14 min"
   },
 ];
 

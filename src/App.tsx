@@ -110,6 +110,10 @@ const Isekai2026 = lazy(() => import("./pages/posts/Isekai2026"));
 const MerchandisingOtaku2026 = lazy(() => import("./pages/posts/MerchandisingOtaku2026"));
 const MelhoresMangas2026 = lazy(() => import("./pages/posts/MelhoresMangas2026"));
 const SaudeMentalOtaku2026 = lazy(() => import("./pages/posts/SaudeMentalOtaku2026"));
+const IACriatividade2026 = lazy(() => import("./pages/posts/IACriatividade2026"));
+const IAPrivacidadeDados2026 = lazy(() => import("./pages/posts/IAPrivacidadeDados2026"));
+const ETFs2026 = lazy(() => import("./pages/posts/ETFs2026"));
+const EconomiaDomestica2026 = lazy(() => import("./pages/posts/EconomiaDomestica2026"));
 const SocialPanelPage = lazy(() => import("./pages/SocialPanelPage"));
 
 const queryClient = new QueryClient({
@@ -211,6 +215,11 @@ const App = () => (
                 <Route path="/post/merchandising-otaku-colecionar-2026" element={<MerchandisingOtaku2026 />} />
                 <Route path="/post/melhores-mangas-ler-2026" element={<MelhoresMangas2026 />} />
                 <Route path="/post/saude-mental-cultura-otaku-2026" element={<SaudeMentalOtaku2026 />} />
+                {/* New IA + Finance Posts */}
+                <Route path="/post/ia-criatividade-arte-musica-2026" element={<IACriatividade2026 />} />
+                <Route path="/post/ia-privacidade-dados-2026" element={<IAPrivacidadeDados2026 />} />
+                <Route path="/post/etfs-2026-guia-completo-investir" element={<ETFs2026 />} />
+                <Route path="/post/economia-domestica-2026-cortar-gastos" element={<EconomiaDomestica2026 />} />
                 {/* Legal Pages */}
                 <Route path="/sobre" element={<AboutPage />} />
                 <Route path="/contato" element={<ContactPage />} />
