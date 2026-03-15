@@ -57,14 +57,61 @@ define('AVATAR_URL', '/avatars/');
 $method = $_SERVER['REQUEST_METHOD'];
 $action = $_GET['action'] ?? '';
 
+
+// ─── Helper: fetch HTTP com curl (preferido) ou file_get_contents ─────────────
+function httpGet(string $url, int $timeout = 10): ?string {
+    // Tenta curl primeiro (mais confiável no Hostinger)
+    if (function_exists('curl_init')) {
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT        => $timeout,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_USERAGENT      => 'VicioCode/1.0',
+            CURLOPT_HTTPHEADER     => ['Accept: application/json'],
+        ]);
+        $result = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        if ($result !== false && $httpCode >= 200 && $httpCode < 300) {
+            return $result;
+        }
+    }
+    // Fallback para file_get_contents
+    if (ini_get('allow_url_fopen')) {
+        $ctx = stream_context_create(['http' => [
+            'timeout'       => $timeout,
+            'ignore_errors' => true,
+            'header'        => "Accept: application/json\r\nUser-Agent: VicioCode/1.0\r\n",
+        ]]);
+        $result = @file_get_contents($url, false, $ctx);
+        return $result !== false ? $result : null;
+    }
+    return null;
+}
+
+// ─── Helper: diretório de cache (usa __DIR__ para maior compatibilidade) ───────
+function cacheDir(): string {
+    $dir = __DIR__ . '/cache';
+    if (!is_dir($dir)) {
+        @mkdir($dir, 0755, true);
+    }
+    return is_writable($dir) ? $dir : sys_get_temp_dir();
+}
+
 // ─── GET: diagnóstico — não precisa de banco ──────────────────────────────────
 if ($method === 'GET' && $action === 'ping') {
+    $cacheDir = __DIR__ . '/cache';
+    @mkdir($cacheDir, 0755, true);
     echo json_encode([
         'status'          => 'ok',
         'php'             => PHP_VERSION,
         'time'            => date('Y-m-d H:i:s'),
         'pdo_mysql'       => extension_loaded('pdo_mysql') ? 'disponível' : 'AUSENTE',
-        'allow_url_fopen' => ini_get('allow_url_fopen') ? 'ativado' : 'DESATIVADO (widgets não funcionarão)',
+        'curl'            => function_exists('curl_init') ? 'disponível' : 'AUSENTE',
+        'allow_url_fopen' => ini_get('allow_url_fopen') ? 'ativado' : 'desativado',
+        'cache_dir'       => is_writable(cacheDir()) ? 'gravável (' . cacheDir() . ')' : 'SEM PERMISSÃO',
         'env_file'        => file_exists(__DIR__ . '/.env.php') ? 'encontrado' : 'NÃO encontrado',
         'google_key'      => !empty($GOOGLE_CLIENT_ID) ? 'configurado' : 'NÃO configurado',
         'anthropic'       => !empty($ANTHROPIC_KEY) ? 'configurado' : 'NÃO configurado',
@@ -72,9 +119,9 @@ if ($method === 'GET' && $action === 'ping') {
     exit;
 }
 
-// ─── GET: proxy de câmbio + metais (não precisa de banco) ────────────────────
+// ─── GET: proxy de câmbio + metais ───────────────────────────────────────────
 if ($method === 'GET' && $action === 'rates') {
-    $CACHE_FILE = sys_get_temp_dir() . '/viciocode_rates.json';
+    $CACHE_FILE = cacheDir() . '/viciocode_rates.json';
     $CACHE_TTL  = 300; // 5 min
 
     if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $CACHE_TTL) {
@@ -82,11 +129,8 @@ if ($method === 'GET' && $action === 'rates') {
         if ($cached) { echo $cached; exit; }
     }
 
+    $raw    = httpGet('https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,ARS-BRL,PYG-BRL,XAU-BRL,XAG-BRL');
     $result = [];
-    $pairs  = 'USD-BRL,EUR-BRL,ARS-BRL,PYG-BRL,XAU-BRL,XAG-BRL';
-    $ctx    = stream_context_create(['http' => ['timeout' => 8, 'ignore_errors' => true]]);
-    $raw    = @file_get_contents("https://economia.awesomeapi.com.br/json/last/{$pairs}", false, $ctx);
-
     if ($raw) {
         $data = json_decode($raw, true);
         if ($data) {
@@ -105,7 +149,7 @@ if ($method === 'GET' && $action === 'rates') {
 
     if (empty($result)) {
         http_response_code(503);
-        echo json_encode(['error' => 'Dados de câmbio indisponíveis temporariamente']);
+        echo json_encode(['error' => 'Dados de câmbio indisponíveis', 'curl' => function_exists('curl_init'), 'allow_url_fopen' => (bool)ini_get('allow_url_fopen')]);
         exit;
     }
 
@@ -116,9 +160,9 @@ if ($method === 'GET' && $action === 'rates') {
     exit;
 }
 
-// ─── GET: proxy criptomoedas — CoinGecko (não precisa de banco) ──────────────
+// ─── GET: proxy criptomoedas — CoinGecko ─────────────────────────────────────
 if ($method === 'GET' && $action === 'crypto') {
-    $CACHE_FILE = sys_get_temp_dir() . '/viciocode_crypto.json';
+    $CACHE_FILE = cacheDir() . '/viciocode_crypto.json';
     $CACHE_TTL  = 300; // 5 min
 
     if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $CACHE_TTL) {
@@ -126,34 +170,25 @@ if ($method === 'GET' && $action === 'crypto') {
         if ($cached) { echo $cached; exit; }
     }
 
-    $url = 'https://api.coingecko.com/api/v3/coins/markets'
-         . '?vs_currency=brl&order=market_cap_desc&per_page=8&page=1&sparkline=false';
-    $ctx = stream_context_create(['http' => [
-        'timeout'       => 10,
-        'ignore_errors' => true,
-        'header'        => "Accept: application/json\r\n",
-    ]]);
-    $raw = @file_get_contents($url, false, $ctx);
+    $raw  = httpGet('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=8&page=1&sparkline=false');
+    $data = $raw ? json_decode($raw, true) : null;
 
-    if ($raw) {
-        $data = json_decode($raw, true);
-        if (is_array($data) && count($data) > 0) {
-            $result = ['coins' => $data, '_meta' => ['source' => 'coingecko-proxy', 'updatedAt' => date('c')]];
-            $json   = json_encode($result);
-            @file_put_contents($CACHE_FILE, $json);
-            echo $json;
-            exit;
-        }
+    if (is_array($data) && count($data) > 0) {
+        $result = ['coins' => $data, '_meta' => ['source' => 'coingecko-proxy', 'updatedAt' => date('c')]];
+        $json   = json_encode($result);
+        @file_put_contents($CACHE_FILE, $json);
+        echo $json;
+        exit;
     }
 
     http_response_code(503);
-    echo json_encode(['error' => 'Dados de cripto indisponíveis temporariamente']);
+    echo json_encode(['error' => 'Dados de cripto indisponíveis', 'curl' => function_exists('curl_init'), 'allow_url_fopen' => (bool)ini_get('allow_url_fopen')]);
     exit;
 }
 
-// ─── GET: proxy B3 / brapi.dev (não precisa de banco) ────────────────────────
+// ─── GET: proxy B3 / brapi.dev ────────────────────────────────────────────────
 if ($method === 'GET' && $action === 'b3') {
-    $CACHE_FILE = sys_get_temp_dir() . '/viciocode_b3.json';
+    $CACHE_FILE = cacheDir() . '/viciocode_b3.json';
     $CACHE_TTL  = 180; // 3 min
 
     if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $CACHE_TTL) {
@@ -161,28 +196,19 @@ if ($method === 'GET' && $action === 'b3') {
         if ($cached) { echo $cached; exit; }
     }
 
-    $tickers = 'PETR4,VALE3,ITUB4,BBDC4,ABEV3,WEGE3,BBAS3,RENT3,MGLU3,SUZB3';
-    $url     = "https://brapi.dev/api/quote/{$tickers}?fundamental=false";
-    $ctx     = stream_context_create(['http' => [
-        'timeout'       => 10,
-        'ignore_errors' => true,
-        'header'        => "Accept: application/json\r\n",
-    ]]);
-    $raw = @file_get_contents($url, false, $ctx);
+    $raw  = httpGet('https://brapi.dev/api/quote/PETR4,VALE3,ITUB4,BBDC4,ABEV3,WEGE3,BBAS3,RENT3,MGLU3,SUZB3?fundamental=false');
+    $data = $raw ? json_decode($raw, true) : null;
 
-    if ($raw) {
-        $data = json_decode($raw, true);
-        if (!empty($data['results']) && count($data['results']) > 0) {
-            $result = ['results' => $data['results'], '_meta' => ['source' => 'brapi-proxy', 'updatedAt' => date('c')]];
-            $json   = json_encode($result);
-            @file_put_contents($CACHE_FILE, $json);
-            echo $json;
-            exit;
-        }
+    if (!empty($data['results']) && count($data['results']) > 0) {
+        $result = ['results' => $data['results'], '_meta' => ['source' => 'brapi-proxy', 'updatedAt' => date('c')]];
+        $json   = json_encode($result);
+        @file_put_contents($CACHE_FILE, $json);
+        echo $json;
+        exit;
     }
 
     http_response_code(503);
-    echo json_encode(['error' => 'Dados B3 indisponíveis temporariamente']);
+    echo json_encode(['error' => 'Dados B3 indisponíveis', 'curl' => function_exists('curl_init'), 'allow_url_fopen' => (bool)ini_get('allow_url_fopen')]);
     exit;
 }
 

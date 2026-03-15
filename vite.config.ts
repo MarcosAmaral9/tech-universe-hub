@@ -18,6 +18,9 @@ function htaccessPlugin(): Plugin {
   # Excluir api.php do SPA fallback — deixar o PHP processar diretamente
   RewriteRule ^api\\.php - [L]
 
+  # Bloquear acesso direto ao diretório de cache do PHP
+  RewriteRule ^cache/ - [F,L]
+
   # Serve index.html file directly (avoid 403 on Hostinger when folder exists)
   RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^(.+?)/?$ $1.html [L]
@@ -118,16 +121,6 @@ export default defineConfig(() => ({
             options: {
               cacheName: "google-fonts-webfonts",
               expiration: { maxEntries: 30, maxAgeSeconds: 60 * 60 * 24 * 365 },
-            },
-          },
-          {
-            // API endpoints locais (comments, auth, cotações) — network first, cache para offline
-            urlPattern: /\/api\.php/i,
-            handler: "NetworkFirst",
-            options: {
-              cacheName: "api-local",
-              expiration: { maxEntries: 30, maxAgeSeconds: 60 * 60 },
-              networkTimeoutSeconds: 5,
             },
           },
           {
