@@ -8,7 +8,6 @@ const SITE_LOGO = `${BASE_URL}/icon-512x512.png`;
 const SITE_SOCIAL = [
   "https://instagram.com/viciocode",
   "https://tiktok.com/@viciocode",
-  "https://www.youtube.com/@viciocode",
 ];
 
 const PAGE_META: Record<string, { title: string; description: string; keywords: string }> = {
