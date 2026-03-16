@@ -18,6 +18,22 @@ if (savedFontSize) {
   document.documentElement.classList.add(`font-${savedFontSize}`);
 }
 
+// ── Limpeza de caches obsoletos ──────────────────────────────────────────────
+// Quando a versão muda, remove automaticamente dados antigos do localStorage
+// evitando que widgets mostrem valores incorretos de versões anteriores
+const CACHE_VERSION = "v3";
+const CACHE_VERSION_KEY = "viciocode_cache_version";
+if (localStorage.getItem(CACHE_VERSION_KEY) !== CACHE_VERSION) {
+  const staleKeys = [
+    "b3_stock_cache", "b3_stock_cache_v2",
+    "crypto_cache", "crypto_cache_v2",
+    "exchange_rates_cache", "exchange_rates_cache_v2",
+  ];
+  staleKeys.forEach((k) => localStorage.removeItem(k));
+  localStorage.setItem(CACHE_VERSION_KEY, CACHE_VERSION);
+}
+// ────────────────────────────────────────────────────────────────────────────
+
 // Apply saved accent color on app load
 const ACCENT_COLOR_KEY = "viciocode_accent_color";
 const accentColorMap: Record<string, string> = {

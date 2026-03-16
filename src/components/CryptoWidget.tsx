@@ -13,7 +13,7 @@ interface CryptoData {
   image: string;
 }
 
-const CACHE_KEY = "crypto_cache";
+const CACHE_KEY = "crypto_cache_v3";
 const CACHE_DURATION = 1000 * 60 * 5; // 5 min — proxy PHP usa 86% do limite gratuito do CoinGecko (8.640/10.000 req/mês)
 const UPDATE_INTERVAL_LABEL = "5 minutos";
 

@@ -22,7 +22,7 @@ interface ExchangeData {
   };
 }
 
-const CACHE_KEY = "exchange_rates_cache";
+const CACHE_KEY = "exchange_rates_cache_v3";
 // awesomeapi via proxy PHP: sem limite documentado.
 // Cache servidor 5min = 8.640 req/mês no servidor, independente de usuários.
 const CACHE_DURATION_SUCCESS = 1000 * 60 * 5;  // 5 min

@@ -25,7 +25,7 @@ const FALLBACK_STOCKS: StockQuote[] = [
   { symbol: "SUZB3", shortName: "Suzano ON",           regularMarketPrice: 55.80, regularMarketChangePercent: -0.22 },
 ];
 
-const CACHE_KEY = "b3_stock_cache";
+const CACHE_KEY = "b3_stock_cache_v3";
 // brapi.dev free: 15.000 req/mês. Proxy PHP cacheia 3min = 14.400 req/mês (96% do limite).
 const CACHE_DURATION = 1000 * 60 * 3; // 3 min
 const UPDATE_INTERVAL_LABEL = "3 minutos";
