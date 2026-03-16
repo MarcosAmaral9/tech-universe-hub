@@ -238,6 +238,128 @@ if ($method === 'GET' && $action === 'b3') {
     exit;
 }
 
+
+if ($method === 'POST' && $action === 'generate_social') {
+
+    if (!$GEMINI_KEY) {
+        http_response_code(503);
+        echo json_encode(['error' => 'Chave do Gemini não configurada. Adicione $GEMINI_KEY no .env.php.']);
+        exit;
+    }
+
+    $body     = json_decode(file_get_contents('php://input'), true);
+    $title    = trim($body['title']    ?? '');
+    $excerpt  = trim($body['excerpt']  ?? '');
+    $category = trim($body['category'] ?? '');
+    $platform = trim($body['platform'] ?? 'instagram');
+    $suggestMusic = true; // sempre ativo
+
+    if (!$title || !$excerpt) {
+        http_response_code(400);
+        echo json_encode(['error' => 'title e excerpt são obrigatórios']);
+        exit;
+    }
+
+    $musicField  = $suggestMusic
+        ? ',"musicSuggestion":"nome do artista - nome da música (gênero)"'
+        : '';
+    $musicPrompt = $suggestMusic
+        ? "\nSugira também 1 música de fundo popular e adequada ao conteúdo (campo musicSuggestion)."
+        : '';
+
+    $platformRules = $platform === 'instagram'
+        ? "Instagram: legenda entre 150-300 caracteres, tom inspirador e visual, emojis moderados, até 15 hashtags."
+        : "TikTok: legenda curta entre 80-150 caracteres, tom jovem e direto, emojis expressivos, até 10 hashtags.";
+
+    $prompt = "Você é um especialista em marketing digital e redes sociais brasileiro.\n"
+            . "Crie conteúdo para {$platform} sobre o artigo \"{$title}\" (categoria: {$category}).\n"
+            . "Resumo: {$excerpt}\n"
+            . "Regras de plataforma: {$platformRules}\n"
+            . "Gere também um prompt detalhado em português para criar uma imagem no Midjourney/DALL-E/Stable Diffusion que ilustre este post.\n"
+            . "O prompt de imagem deve descrever: estilo visual, cores, composição, elementos, sem texto na imagem.{$musicPrompt}\n"
+            . "\nRETORNE APENAS O JSON ABAIXO SEM MARKDOWN:\n"
+            . "{\"caption\":\"legenda\",\"hashtags\":[\"hashtag1\",\"hashtag2\"],\"cta\":\"chamada para ação\",\"hookLine\":\"frase de gancho\",\"imagePrompt\":\"prompt detalhado para geração de imagem\"{$musicField}}";
+
+    $payload = json_encode([
+        'contents'         => [['parts' => [['text' => $prompt]]]],
+        'generationConfig' => [
+            'maxOutputTokens'  => 2000,
+            'temperature'      => 0.8,
+            'responseMimeType' => 'application/json',
+        ],
+    ]);
+
+    $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={$GEMINI_KEY}";
+    $raw = null;
+
+    if (function_exists('curl_init')) {
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => $payload,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT        => 30,
+            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
+        ]);
+        $raw = curl_exec($ch);
+        $curlError = curl_error($ch);
+        curl_close($ch);
+    } elseif (ini_get('allow_url_fopen')) {
+        $ctx = stream_context_create(['http' => [
+            'method'        => 'POST',
+            'header'        => "Content-Type: application/json\r\n",
+            'content'       => $payload,
+            'timeout'       => 30,
+            'ignore_errors' => true,
+        ]]);
+        $raw = @file_get_contents($url, false, $ctx);
+    }
+
+    if (!$raw) {
+        http_response_code(503);
+        echo json_encode(['error' => 'Falha ao conectar com o Gemini.', 'detail' => $curlError ?? '']);
+        exit;
+    }
+
+    $resp = json_decode($raw, true);
+
+    if (!empty($resp['error'])) {
+        $errMsg    = $resp['error']['message'] ?? 'Erro na API Gemini';
+        $errStatus = $resp['error']['status']  ?? '';
+        if ($errStatus === 'RESOURCE_EXHAUSTED' || str_contains($errMsg, 'Quota exceeded') || str_contains($errMsg, 'quota')) {
+            preg_match('/retry in ([\d.]+)s/i', $errMsg, $m);
+            $waitSec = isset($m[1]) ? (int)ceil((float)$m[1]) : 60;
+            http_response_code(429);
+            echo json_encode(['error' => "Limite atingido. Aguarde {$waitSec}s e tente novamente.", 'retryIn' => $waitSec]);
+            exit;
+        }
+        http_response_code(502);
+        echo json_encode(['error' => $errMsg]);
+        exit;
+    }
+
+    $text = $resp['candidates'][0]['content']['parts'][0]['text'] ?? '';
+    $text = preg_replace('/^```(?:json)?\s*/m', '', $text);
+    $text = preg_replace('/\s*```\s*$/m', '', $text);
+    $text = trim($text);
+    if (!str_starts_with($text, '{')) {
+        preg_match('/\{.*\}/s', $text, $matches);
+        $text = $matches[0] ?? $text;
+    }
+
+    $parsed = json_decode($text, true);
+    if (!$parsed) {
+        http_response_code(502);
+        echo json_encode(['error' => 'O Gemini não retornou JSON válido. Tente novamente.']);
+        exit;
+    }
+
+    echo json_encode($parsed);
+    exit;
+}
+
+
 // Para os demais endpoints, conecta ao banco (lazy)
 try {
     $pdo = new PDO(
@@ -466,6 +588,7 @@ if ($method === 'POST' && $action === 'upload_avatar') {
 }
 // ─── POST: proxy Anthropic API (Painel Social Media) ─────────────────────────
 // Chamado apenas pelo admin — não expõe a chave ao browser
+
 // ─── POST: troca code Google por sessão (chamado pelo React após redirect) ──────
 if ($method === 'POST' && $action === 'google_exchange') {
     if (!$GOOGLE_CLIENT_ID || !$GOOGLE_SECRET) {
@@ -570,126 +693,6 @@ if ($method === 'POST' && $action === 'google_exchange') {
         'user'    => ['id' => $userId, 'email' => $email],
         'profile' => $profile,
     ]);
-    exit;
-}
-
-if ($method === 'POST' && $action === 'generate_social') {
-
-    if (!$GEMINI_KEY) {
-        http_response_code(503);
-        echo json_encode(['error' => 'Chave do Gemini não configurada. Adicione $GEMINI_KEY no .env.php.']);
-        exit;
-    }
-
-    $body     = json_decode(file_get_contents('php://input'), true);
-    $title    = trim($body['title']    ?? '');
-    $excerpt  = trim($body['excerpt']  ?? '');
-    $category = trim($body['category'] ?? '');
-    $platform = trim($body['platform'] ?? 'instagram');
-    $suggestMusic = true; // sempre ativo
-
-    if (!$title || !$excerpt) {
-        http_response_code(400);
-        echo json_encode(['error' => 'title e excerpt são obrigatórios']);
-        exit;
-    }
-
-    $musicField  = $suggestMusic
-        ? ',"musicSuggestion":"nome do artista - nome da música (gênero)"'
-        : '';
-    $musicPrompt = $suggestMusic
-        ? "\nSugira também 1 música de fundo popular e adequada ao conteúdo (campo musicSuggestion)."
-        : '';
-
-    $platformRules = $platform === 'instagram'
-        ? "Instagram: legenda entre 150-300 caracteres, tom inspirador e visual, emojis moderados, até 15 hashtags."
-        : "TikTok: legenda curta entre 80-150 caracteres, tom jovem e direto, emojis expressivos, até 10 hashtags.";
-
-    $prompt = "Você é um especialista em marketing digital e redes sociais brasileiro.\n"
-            . "Crie conteúdo para {$platform} sobre o artigo \"{$title}\" (categoria: {$category}).\n"
-            . "Resumo: {$excerpt}\n"
-            . "Regras de plataforma: {$platformRules}\n"
-            . "Gere também um prompt detalhado em português para criar uma imagem no Midjourney/DALL-E/Stable Diffusion que ilustre este post.\n"
-            . "O prompt de imagem deve descrever: estilo visual, cores, composição, elementos, sem texto na imagem.{$musicPrompt}\n"
-            . "\nRETORNE APENAS O JSON ABAIXO SEM MARKDOWN:\n"
-            . "{\"caption\":\"legenda\",\"hashtags\":[\"hashtag1\",\"hashtag2\"],\"cta\":\"chamada para ação\",\"hookLine\":\"frase de gancho\",\"imagePrompt\":\"prompt detalhado para geração de imagem\"{$musicField}}";
-
-    $payload = json_encode([
-        'contents'         => [['parts' => [['text' => $prompt]]]],
-        'generationConfig' => [
-            'maxOutputTokens'  => 2000,
-            'temperature'      => 0.8,
-            'responseMimeType' => 'application/json',
-        ],
-    ]);
-
-    $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={$GEMINI_KEY}";
-    $raw = null;
-
-    if (function_exists('curl_init')) {
-        $ch = curl_init($url);
-        curl_setopt_array($ch, [
-            CURLOPT_POST           => true,
-            CURLOPT_POSTFIELDS     => $payload,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_TIMEOUT        => 30,
-            CURLOPT_SSL_VERIFYPEER => true,
-            CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
-        ]);
-        $raw = curl_exec($ch);
-        $curlError = curl_error($ch);
-        curl_close($ch);
-    } elseif (ini_get('allow_url_fopen')) {
-        $ctx = stream_context_create(['http' => [
-            'method'        => 'POST',
-            'header'        => "Content-Type: application/json\r\n",
-            'content'       => $payload,
-            'timeout'       => 30,
-            'ignore_errors' => true,
-        ]]);
-        $raw = @file_get_contents($url, false, $ctx);
-    }
-
-    if (!$raw) {
-        http_response_code(503);
-        echo json_encode(['error' => 'Falha ao conectar com o Gemini.', 'detail' => $curlError ?? '']);
-        exit;
-    }
-
-    $resp = json_decode($raw, true);
-
-    if (!empty($resp['error'])) {
-        $errMsg    = $resp['error']['message'] ?? 'Erro na API Gemini';
-        $errStatus = $resp['error']['status']  ?? '';
-        if ($errStatus === 'RESOURCE_EXHAUSTED' || str_contains($errMsg, 'Quota exceeded') || str_contains($errMsg, 'quota')) {
-            preg_match('/retry in ([\d.]+)s/i', $errMsg, $m);
-            $waitSec = isset($m[1]) ? (int)ceil((float)$m[1]) : 60;
-            http_response_code(429);
-            echo json_encode(['error' => "Limite atingido. Aguarde {$waitSec}s e tente novamente.", 'retryIn' => $waitSec]);
-            exit;
-        }
-        http_response_code(502);
-        echo json_encode(['error' => $errMsg]);
-        exit;
-    }
-
-    $text = $resp['candidates'][0]['content']['parts'][0]['text'] ?? '';
-    $text = preg_replace('/^```(?:json)?\s*/m', '', $text);
-    $text = preg_replace('/\s*```\s*$/m', '', $text);
-    $text = trim($text);
-    if (!str_starts_with($text, '{')) {
-        preg_match('/\{.*\}/s', $text, $matches);
-        $text = $matches[0] ?? $text;
-    }
-
-    $parsed = json_decode($text, true);
-    if (!$parsed) {
-        http_response_code(502);
-        echo json_encode(['error' => 'O Gemini não retornou JSON válido. Tente novamente.']);
-        exit;
-    }
-
-    echo json_encode($parsed);
     exit;
 }
 
