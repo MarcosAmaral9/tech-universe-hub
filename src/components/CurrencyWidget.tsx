@@ -75,7 +75,7 @@ const CurrencyWidget = () => {
         pctChange: d.pctChange,
         high: d.high,
         low: d.low,
-        sparkline: data?.sparklines?.[c.key as keyof NonNullable<typeof data.sparklines>],
+        sparkline: (data as any)?.sparklines?.[(c as any).key],
       });
     }
   }

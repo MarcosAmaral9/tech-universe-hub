@@ -171,6 +171,7 @@ const App = () => (
                 {/* Portals */}
                 <Route path="/geek/avatar" element={<AvatarPortal />} />
                 <Route path="/geek/assassins-creed" element={<AssassinsCreedPortal />} />
+                <Route path="/geek/crimson-desert" element={<CrimsonDesertPanel />} />
                 {/* Post Routes */}
                 <Route path="/post/diferenca-mangas-manhuas-manhwas" element={<DiferencaMangasManhuas />} />
                 <Route path="/post/como-diferenciar-manhuas-manhwas" element={<DiferenciarManhuasManhwas />} />
