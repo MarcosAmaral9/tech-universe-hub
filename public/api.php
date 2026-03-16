@@ -152,19 +152,21 @@ if ($method === 'GET' && $action === 'ping') {
 if ($method === 'GET' && $action === 'test_widgets') {
     $results = [];
 
-    // Test rates (awesomeapi)
-    $raw = httpGet('https://economia.awesomeapi.com.br/json/last/USD-BRL,XAU-BRL,XAG-BRL', 8);
-    if ($raw) {
-        $data = json_decode($raw, true);
-        $results['rates'] = [
-            'status'    => 'ok',
-            'USDBRL_bid'=> $data['USDBRL']['bid'] ?? null,
-            'XAUBRL_bid'=> $data['XAUBRL']['bid'] ?? 'NOT RETURNED',
-            'XAGBRL_bid'=> $data['XAGBRL']['bid'] ?? 'NOT RETURNED',
-            'keys'      => array_keys($data ?? []),
+    // Test multiple currency APIs
+    $apisToTest = [
+        'awesomeapi_usd'  => 'https://economia.awesomeapi.com.br/json/last/USD-BRL',
+        'exchangerate_usd'=> 'https://open.er-api.com/v6/latest/USD',
+        'frankfurter_usd' => 'https://api.frankfurter.app/latest?from=USD&to=BRL',
+        'fawazahmed_brl'  => 'https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/brl.min.json',
+        'goldprice_brl'   => 'https://data-asg.goldprice.org/dbXRates/BRL',
+        'metalpriceapi'   => 'https://api.metalpriceapi.com/v1/latest?api_key=free&base=BRL&currencies=XAU,XAG',
+    ];
+    foreach ($apisToTest as $name => $url) {
+        $raw = httpGet($url, 6);
+        $results['rates_test'][$name] = [
+            'reached' => $raw !== null,
+            'preview' => $raw ? substr($raw, 0, 150) : null,
         ];
-    } else {
-        $results['rates'] = ['status' => 'FALHOU - sem resposta', 'curl' => function_exists('curl_init'), 'allow_url_fopen' => (bool)ini_get('allow_url_fopen')];
     }
 
     // Test crypto (CoinGecko)
