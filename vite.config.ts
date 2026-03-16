@@ -91,10 +91,10 @@ export default defineConfig(() => ({
       },
       // Exclui arquivos que ficam maiores após otimização ou que não devem ser alterados
       exclude: [
-        /icon-192x192\.png/,
-        /icon-512x512\.png/,
-        /favicon\.ico/,
-        /og-image\.jpg/,
+        "icon-192x192.png",
+        "icon-512x512.png",
+        "favicon.ico",
+        "og-image.jpg",
       ],
       includePublic: true,
     }),
