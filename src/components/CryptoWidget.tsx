@@ -88,7 +88,7 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
     setIsFallback(true);
     const now = Date.now();
     setLastUpdated(new Date(now).toLocaleString("pt-BR"));
-    setCacheExpiresAt(now + CACHE_DURATION);
+    setCacheExpiresAt(now + REFRESH_MS);
     setSource("local-static");
     // Não cacheia fallback — próxima visita sempre tentará a API
     setLoading(false);

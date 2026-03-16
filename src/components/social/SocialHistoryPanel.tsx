@@ -113,16 +113,16 @@ const SocialHistoryPanel = () => {
                 {entry.musicSuggestion && (
                   <p><strong>🎵 Música:</strong> {entry.musicSuggestion}</p>
                 )}
-                {entry.image && (
+                {(entry as any).image && (
                   <>
-                    <img src={entry.image} alt="Imagem gerada" className="rounded-lg max-h-40 object-cover mt-2" />
+                    <img src={(entry as any).image} alt="Imagem gerada" className="rounded-lg max-h-40 object-cover mt-2" />
                     <Button
                       variant="outline"
                       size="sm"
                       className="mt-1"
                       onClick={() => {
                         const link = document.createElement("a");
-                        link.href = entry.image!;
+                        link.href = (entry as any).image!;
                         link.download = `social-${entry.platform}-${Date.now()}.png`;
                         link.click();
                       }}

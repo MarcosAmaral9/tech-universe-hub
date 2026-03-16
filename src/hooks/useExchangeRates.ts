@@ -7,7 +7,7 @@ interface ExchangeData {
   PYGBRL?: { bid: string; pctChange: string; high: string; low: string };
   XAUBRL?: { bid: string; pctChange: string; high: string; low: string };
   XAGBRL?: { bid: string; pctChange: string; high: string; low: string };
-  _meta?: { fallback?: boolean; source?: string; from_cache?: boolean; updatedAt?: string };
+  _meta?: { fallback?: boolean; source?: string; from_cache?: boolean; updatedAt?: string; expiresAt?: string };
 }
 
 // Cache centralizado no servidor MySQL — sem localStorage
