@@ -575,11 +575,9 @@ if ($method === 'POST' && $action === 'google_exchange') {
 
 if ($method === 'POST' && $action === 'generate_social') {
 
-    // Gemini API (Google AI Studio) — gratuito, sem cartão de crédito
-    // Obtenha sua chave em: aistudio.google.com
     if (!$GEMINI_KEY) {
         http_response_code(503);
-        echo json_encode(['error' => 'Chave do Gemini não configurada. Adicione $GEMINI_KEY no .env.php. Obtenha grátis em aistudio.google.com']);
+        echo json_encode(['error' => 'Chave do Gemini não configurada. Adicione $GEMINI_KEY no .env.php.']);
         exit;
     }
 
@@ -588,8 +586,7 @@ if ($method === 'POST' && $action === 'generate_social') {
     $excerpt  = trim($body['excerpt']  ?? '');
     $category = trim($body['category'] ?? '');
     $platform = trim($body['platform'] ?? 'instagram');
-    $genImage = !empty($body['generateImage']);
-    $genMusic = !empty($body['suggestMusic']);
+    $suggestMusic = !empty($body['suggestMusic']);
 
     if (!$title || !$excerpt) {
         http_response_code(400);
@@ -597,26 +594,35 @@ if ($method === 'POST' && $action === 'generate_social') {
         exit;
     }
 
-    $musicField  = $genMusic ? ',"musicSuggestion":"artista - música sugerida"' : '';
-    $musicPrompt = $genMusic ? "\nSugira uma música de fundo adequada." : '';
+    $musicField  = $suggestMusic
+        ? ',"musicSuggestion":"nome do artista - nome da música (gênero)"'
+        : '';
+    $musicPrompt = $suggestMusic
+        ? "\nSugira também 1 música de fundo popular e adequada ao conteúdo (campo musicSuggestion)."
+        : '';
+
+    $platformRules = $platform === 'instagram'
+        ? "Instagram: legenda entre 150-300 caracteres, tom inspirador e visual, emojis moderados, até 15 hashtags."
+        : "TikTok: legenda curta entre 80-150 caracteres, tom jovem e direto, emojis expressivos, até 10 hashtags.";
 
     $prompt = "Você é um especialista em marketing digital e redes sociais brasileiro.\n"
             . "Crie conteúdo para {$platform} sobre o artigo \"{$title}\" (categoria: {$category}).\n"
-            . "Resumo do artigo: {$excerpt}\n"
-            . ($musicPrompt ? $musicPrompt . "\n" : "")
-            . "\nRETORNE APENAS O JSON ABAIXO, SEM NENHUM TEXTO ANTES OU DEPOIS, SEM MARKDOWN:\n"
-            . "{\"caption\":\"legenda engajante em português\",\"hashtags\":[\"hashtag1\",\"hashtag2\",\"hashtag3\"],\"cta\":\"chamada para ação\",\"hookLine\":\"frase de gancho para capturar atenção\"{$musicField}}";
+            . "Resumo: {$excerpt}\n"
+            . "Regras de plataforma: {$platformRules}\n"
+            . "Gere também um prompt detalhado em português para criar uma imagem no Midjourney/DALL-E/Stable Diffusion que ilustre este post.\n"
+            . "O prompt de imagem deve descrever: estilo visual, cores, composição, elementos, sem texto na imagem.{$musicPrompt}\n"
+            . "\nRETORNE APENAS O JSON ABAIXO SEM MARKDOWN:\n"
+            . "{\"caption\":\"legenda\",\"hashtags\":[\"hashtag1\",\"hashtag2\"],\"cta\":\"chamada para ação\",\"hookLine\":\"frase de gancho\",\"imagePrompt\":\"prompt detalhado para geração de imagem\"{$musicField}}";
 
     $payload = json_encode([
         'contents'         => [['parts' => [['text' => $prompt]]]],
         'generationConfig' => [
-            'maxOutputTokens'  => 1000,
+            'maxOutputTokens'  => 1500,
             'temperature'      => 0.8,
-            'responseMimeType' => 'application/json',  // força JSON puro, sem markdown
+            'responseMimeType' => 'application/json',
         ],
     ]);
 
-    // gemini-2.0-flash via v1beta — suporta responseMimeType para JSON puro garantido
     $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={$GEMINI_KEY}";
     $raw = null;
 
@@ -646,7 +652,7 @@ if ($method === 'POST' && $action === 'generate_social') {
 
     if (!$raw) {
         http_response_code(503);
-        echo json_encode(['error' => 'Falha ao conectar com o Gemini. Verifique se a chave está correta no .env.php.', 'curl_error' => $curlError ?? '']);
+        echo json_encode(['error' => 'Falha ao conectar com o Gemini.', 'detail' => $curlError ?? '']);
         exit;
     }
 
@@ -655,15 +661,11 @@ if ($method === 'POST' && $action === 'generate_social') {
     if (!empty($resp['error'])) {
         $errMsg    = $resp['error']['message'] ?? 'Erro na API Gemini';
         $errStatus = $resp['error']['status']  ?? '';
-        // Quota exceeded — extrai tempo de espera e retorna mensagem amigável
         if ($errStatus === 'RESOURCE_EXHAUSTED' || str_contains($errMsg, 'Quota exceeded') || str_contains($errMsg, 'quota')) {
             preg_match('/retry in ([\d.]+)s/i', $errMsg, $m);
             $waitSec = isset($m[1]) ? (int)ceil((float)$m[1]) : 60;
             http_response_code(429);
-            echo json_encode([
-                'error'   => "Limite de requisições atingido. Aguarde {$waitSec} segundos e tente novamente.",
-                'retryIn' => $waitSec,
-            ]);
+            echo json_encode(['error' => "Limite atingido. Aguarde {$waitSec}s e tente novamente.", 'retryIn' => $waitSec]);
             exit;
         }
         http_response_code(502);
@@ -672,13 +674,9 @@ if ($method === 'POST' && $action === 'generate_social') {
     }
 
     $text = $resp['candidates'][0]['content']['parts'][0]['text'] ?? '';
-
-    // Extrai JSON da resposta — remove markdown e texto extra ao redor
     $text = preg_replace('/^```(?:json)?\s*/m', '', $text);
     $text = preg_replace('/\s*```\s*$/m', '', $text);
     $text = trim($text);
-
-    // Tenta encontrar o bloco JSON mesmo que haja texto antes/depois
     if (!str_starts_with($text, '{')) {
         preg_match('/\{.*\}/s', $text, $matches);
         $text = $matches[0] ?? $text;
@@ -686,54 +684,9 @@ if ($method === 'POST' && $action === 'generate_social') {
 
     $parsed = json_decode($text, true);
     if (!$parsed) {
-        // Tenta novamente com resposta mais simples
         http_response_code(502);
         echo json_encode(['error' => 'O Gemini não retornou JSON válido. Tente novamente.']);
         exit;
-    }
-
-    // ── Geração de imagem com Gemini (gemini-2.0-flash-exp-image-generation) ───
-    if ($genImage) {
-        $imagePromptText = "Crie uma imagem para post de {$platform} sobre: {$title}. "
-                         . "Estilo fotográfico moderno, cores vibrantes, sem texto na imagem, formato quadrado, alta qualidade.";
-
-        $imagePayload = json_encode([
-            'contents'         => [['parts' => [['text' => $imagePromptText]]]],
-            'generationConfig' => ['responseModalities' => ['TEXT', 'IMAGE']],
-        ]);
-
-        $imageApiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp-image-generation:generateContent?key={$GEMINI_KEY}";
-        $imageRaw    = null;
-
-        if (function_exists('curl_init')) {
-            $ch = curl_init($imageApiUrl);
-            curl_setopt_array($ch, [
-                CURLOPT_POST           => true,
-                CURLOPT_POSTFIELDS     => $imagePayload,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_TIMEOUT        => 45,
-                CURLOPT_SSL_VERIFYPEER => true,
-                CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
-            ]);
-            $imageRaw = curl_exec($ch);
-            curl_close($ch);
-        }
-
-        if ($imageRaw) {
-            $imageResp = json_decode($imageRaw, true);
-            $parts     = $imageResp['candidates'][0]['content']['parts'] ?? [];
-            foreach ($parts as $part) {
-                if (!empty($part['inlineData']['data'])) {
-                    $mime = $part['inlineData']['mimeType'] ?? 'image/png';
-                    $parsed['image'] = "data:{$mime};base64," . $part['inlineData']['data'];
-                    break;
-                }
-            }
-        }
-        // Se falhou silenciosamente, não inclui o campo — frontend lida com ausência
-        if (empty($parsed['image'])) {
-            unset($parsed['image']);
-        }
     }
 
     echo json_encode($parsed);

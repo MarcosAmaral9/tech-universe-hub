@@ -14,7 +14,7 @@ export interface HistoryEntry {
   cta: string;
   hashtags: string;
   musicSuggestion?: string;
-  image: string | null;
+  imagePrompt?: string;
   createdAt: string;
 }
 

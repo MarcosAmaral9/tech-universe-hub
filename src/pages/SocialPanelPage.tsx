@@ -10,10 +10,14 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Sparkles, Instagram, Music2, Loader2, Image as ImageIcon, Copy, RefreshCw, Music, Save, Download, Zap } from "lucide-react";
-import SocialHistoryPanel, { saveToHistory, loadHistory } from "@/components/social/SocialHistoryPanel";
+import {
+  Sparkles, Instagram, Music2, Loader2, Copy, RefreshCw,
+  Music, Save, Zap, Image as ImageIcon, ClipboardCopy,
+} from "lucide-react";
+import SocialHistoryPanel, { saveToHistory } from "@/components/social/SocialHistoryPanel";
 
 const COUNTER_KEY = "viciocode_social_gen_count";
+const ADMIN_EMAIL = "viciocode01@gmail.com";
 
 const getTodayCount = (): number => {
   try {
@@ -35,8 +39,17 @@ interface GeneratedContent {
   hashtags: string[];
   cta: string;
   hookLine: string;
-  image: string | null;
+  imagePrompt: string;
   musicSuggestion?: string;
+}
+
+interface EditedContent {
+  caption: string;
+  hashtags: string;
+  cta: string;
+  hookLine: string;
+  imagePrompt: string;
+  musicSuggestion: string;
 }
 
 interface PlatformContent {
@@ -44,7 +57,9 @@ interface PlatformContent {
   tiktok?: GeneratedContent;
 }
 
-const ADMIN_EMAIL = "viciocode01@gmail.com";
+const emptyEdited = (): EditedContent => ({
+  caption: "", hashtags: "", cta: "", hookLine: "", imagePrompt: "", musicSuggestion: "",
+});
 
 const SocialPanelPage = () => {
   const { user, loading: authLoading } = useAuthContext();
@@ -54,25 +69,22 @@ const SocialPanelPage = () => {
   const [selectedPost, setSelectedPost] = useState("");
   const [platformIG, setPlatformIG] = useState(true);
   const [platformTT, setPlatformTT] = useState(false);
-  const [generateImage, setGenerateImage] = useState(false);
-  const [suggestMusic, setSuggestMusic] = useState(false);
+  const [suggestMusic, setSuggestMusic] = useState(true);
   const [generating, setGenerating] = useState(false);
   const [retryIn, setRetryIn] = useState(0);
   const [content, setContent] = useState<PlatformContent>({});
-  const [editedIG, setEditedIG] = useState({ caption: "", hashtags: "", cta: "", hookLine: "", musicSuggestion: "" });
-  const [editedTT, setEditedTT] = useState({ caption: "", hashtags: "", cta: "", hookLine: "", musicSuggestion: "" });
+  const [editedIG, setEditedIG] = useState<EditedContent>(emptyEdited());
+  const [editedTT, setEditedTT] = useState<EditedContent>(emptyEdited());
   const [todayCount, setTodayCount] = useState(getTodayCount);
   const [historyKey, setHistoryKey] = useState(0);
 
   useEffect(() => {
-    if (!authLoading && (!user || user.email !== ADMIN_EMAIL)) {
-      navigate("/");
-    }
+    if (!authLoading && (!user || user.email !== ADMIN_EMAIL)) navigate("/");
   }, [user, authLoading, navigate]);
 
   const generateForPlatform = async (post: any, platform: "instagram" | "tiktok"): Promise<GeneratedContent> => {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 60000); // 60s timeout
+    const timeout = setTimeout(() => controller.abort(), 60000);
     try {
       const res = await fetch("/api.php?action=generate_social", {
         method: "POST",
@@ -83,7 +95,6 @@ const SocialPanelPage = () => {
           excerpt: post.excerpt,
           category: post.category,
           platform,
-          generateImage,
           suggestMusic,
         }),
       });
@@ -100,6 +111,15 @@ const SocialPanelPage = () => {
     }
   };
 
+  const toEdited = (d: GeneratedContent): EditedContent => ({
+    caption: d.caption || "",
+    hashtags: (d.hashtags || []).map((h) => (h.startsWith("#") ? h : `#${h}`)).join(" "),
+    cta: d.cta || "",
+    hookLine: d.hookLine || "",
+    imagePrompt: d.imagePrompt || "",
+    musicSuggestion: d.musicSuggestion || "",
+  });
+
   const handleGenerate = async () => {
     const post = blogPosts.find((p) => p.id === selectedPost);
     if (!post) { toast({ title: "Selecione um artigo", variant: "destructive" }); return; }
@@ -109,150 +129,52 @@ const SocialPanelPage = () => {
     setContent({});
     try {
       const results: PlatformContent = {};
+      const settled = await Promise.allSettled([
+        platformIG ? generateForPlatform(post, "instagram") : Promise.resolve(null),
+        platformTT ? generateForPlatform(post, "tiktok")    : Promise.resolve(null),
+      ]);
 
-      // Sequencial quando imagem está ativada (evita quota burst no Gemini)
-      // Paralelo quando só texto (mais rápido, sem risco de quota)
-      if (generateImage) {
-        if (platformIG) {
-          try { results.instagram = await generateForPlatform(post, "instagram"); }
-          catch (e: any) { toast({ title: "Erro no Instagram", description: e.message, variant: "destructive" }); }
-        }
-        if (platformTT) {
-          try { results.tiktok = await generateForPlatform(post, "tiktok"); }
-          catch (e: any) { toast({ title: "Erro no TikTok", description: e.message, variant: "destructive" }); }
-        }
-      } else {
-        // Paralelo para texto — mais rápido
-        const settled = await Promise.allSettled([
-          platformIG ? generateForPlatform(post, "instagram") : Promise.resolve(null),
-          platformTT ? generateForPlatform(post, "tiktok")    : Promise.resolve(null),
-        ]);
-        if (platformIG && settled[0].status === "fulfilled" && settled[0].value) results.instagram = settled[0].value;
-        if (platformIG && settled[0].status === "rejected") toast({ title: "Erro no Instagram", description: settled[0].reason?.message, variant: "destructive" });
-        if (platformTT && settled[1].status === "fulfilled" && settled[1].value) results.tiktok = settled[1].value;
-        if (platformTT && settled[1].status === "rejected") toast({ title: "Erro no TikTok", description: settled[1].reason?.message, variant: "destructive" });
-      }
+      if (platformIG && settled[0].status === "fulfilled" && settled[0].value) results.instagram = settled[0].value;
+      if (platformIG && settled[0].status === "rejected") toast({ title: "Erro no Instagram", description: (settled[0] as any).reason?.message, variant: "destructive" });
+      if (platformTT && settled[1].status === "fulfilled" && settled[1].value) results.tiktok = settled[1].value;
+      if (platformTT && settled[1].status === "rejected") toast({ title: "Erro no TikTok", description: (settled[1] as any).reason?.message, variant: "destructive" });
 
       if (!results.instagram && !results.tiktok) throw new Error("Nenhum conteúdo foi gerado.");
       setContent(results);
+      if (results.instagram) setEditedIG(toEdited(results.instagram));
+      if (results.tiktok)    setEditedTT(toEdited(results.tiktok));
 
-      // Build edited values
-      const igEdited = results.instagram ? {
-        caption: results.instagram.caption || "",
-        hashtags: (results.instagram.hashtags || []).map((h: string) => (h.startsWith("#") ? h : `#${h}`)).join(" "),
-        cta: results.instagram.cta || "",
-        hookLine: results.instagram.hookLine || "",
-        musicSuggestion: results.instagram.musicSuggestion || "",
-      } : null;
-
-      const ttEdited = results.tiktok ? {
-        caption: results.tiktok.caption || "",
-        hashtags: (results.tiktok.hashtags || []).map((h: string) => (h.startsWith("#") ? h : `#${h}`)).join(" "),
-        cta: results.tiktok.cta || "",
-        hookLine: results.tiktok.hookLine || "",
-        musicSuggestion: results.tiktok.musicSuggestion || "",
-      } : null;
-
-      if (igEdited) setEditedIG(igEdited);
-      if (ttEdited) setEditedTT(ttEdited);
-
-      // Auto-save to history
-      if (results.instagram && igEdited) {
-        saveToHistory({
-          id: `${Date.now()}-instagram`,
-          postTitle: post.title,
-          platform: "instagram",
-          caption: igEdited.caption,
-          hookLine: igEdited.hookLine,
-          cta: igEdited.cta,
-          hashtags: igEdited.hashtags,
-          musicSuggestion: igEdited.musicSuggestion || undefined,
-          image: results.instagram.image,
-          createdAt: new Date().toISOString(),
-        });
-      }
-      if (results.tiktok && ttEdited) {
-        saveToHistory({
-          id: `${Date.now()}-tiktok`,
-          postTitle: post.title,
-          platform: "tiktok",
-          caption: ttEdited.caption,
-          hookLine: ttEdited.hookLine,
-          cta: ttEdited.cta,
-          hashtags: ttEdited.hashtags,
-          musicSuggestion: ttEdited.musicSuggestion || undefined,
-          image: results.tiktok.image,
-          createdAt: new Date().toISOString(),
-        });
-      }
+      // Auto-save
+      if (results.instagram) saveToHistory({ id: `${Date.now()}-ig`, postTitle: post.title, platform: "instagram", ...toEdited(results.instagram), createdAt: new Date().toISOString() });
+      if (results.tiktok)    saveToHistory({ id: `${Date.now()}-tt`, postTitle: post.title, platform: "tiktok",    ...toEdited(results.tiktok),    createdAt: new Date().toISOString() });
 
       setHistoryKey((k) => k + 1);
-      const newCount = incrementTodayCount();
-      setTodayCount(newCount);
-      toast({ title: "✅ Conteúdo gerado e salvo no histórico!" });
+      setTodayCount(incrementTodayCount());
+      toast({ title: "✅ Conteúdo gerado!" });
     } catch (e: any) {
-      const wait = e?.retryIn || 0;
       toast({ title: "Erro ao gerar conteúdo", description: e.message, variant: "destructive" });
-      if (wait > 0) {
-        setRetryIn(wait);
-        const interval = setInterval(() => {
-          setRetryIn((s) => {
-            if (s <= 1) { clearInterval(interval); return 0; }
-            return s - 1;
-          });
-        }, 1000);
+      if (e?.retryIn) {
+        setRetryIn(e.retryIn);
+        const iv = setInterval(() => setRetryIn((s) => { if (s <= 1) { clearInterval(iv); return 0; } return s - 1; }), 1000);
       }
     } finally {
       setGenerating(false);
     }
   };
 
-  const handleSaveToHistory = () => {
-    const post = blogPosts.find((p) => p.id === selectedPost);
-
-    if (content.instagram) {
-      saveToHistory({
-        id: `${Date.now()}-instagram`,
-        postTitle: post?.title || "",
-        platform: "instagram",
-        caption: editedIG.caption,
-        hookLine: editedIG.hookLine,
-        cta: editedIG.cta,
-        hashtags: editedIG.hashtags,
-        musicSuggestion: editedIG.musicSuggestion || undefined,
-        image: content.instagram.image,
-        createdAt: new Date().toISOString(),
-      });
-    }
-
-    if (content.tiktok) {
-      saveToHistory({
-        id: `${Date.now()}-tiktok`,
-        postTitle: post?.title || "",
-        platform: "tiktok",
-        caption: editedTT.caption,
-        hookLine: editedTT.hookLine,
-        cta: editedTT.cta,
-        hashtags: editedTT.hashtags,
-        musicSuggestion: editedTT.musicSuggestion || undefined,
-        image: content.tiktok.image,
-        createdAt: new Date().toISOString(),
-      });
-    }
-
-    setHistoryKey((k) => k + 1);
-    toast({ title: "✅ Salvo no histórico!" });
+  const copyAll = (ed: EditedContent, label: string) => {
+    let txt = `${ed.hookLine}\n\n${ed.caption}\n\n${ed.cta}\n\n${ed.hashtags}`;
+    if (ed.musicSuggestion) txt += `\n\n🎵 Música: ${ed.musicSuggestion}`;
+    navigator.clipboard.writeText(txt);
+    toast({ title: `${label} copiado!` });
   };
 
-  const copyAll = (edited: typeof editedIG) => {
-    let fullText = `${edited.hookLine}\n\n${edited.caption}\n\n${edited.cta}\n\n${edited.hashtags}`;
-    if (edited.musicSuggestion) fullText += `\n\n🎵 ${edited.musicSuggestion}`;
-    navigator.clipboard.writeText(fullText);
-    toast({ title: "Copiado!" });
+  const copyImagePrompt = (prompt: string) => {
+    navigator.clipboard.writeText(prompt);
+    toast({ title: "Prompt de imagem copiado!" });
   };
 
-  if (authLoading) return null;
-  if (!user || user.email !== ADMIN_EMAIL) return null;
+  if (authLoading || !user || user.email !== ADMIN_EMAIL) return null;
 
   const sortedPosts = [...blogPosts].sort((a, b) => b.date.localeCompare(a.date));
   const hasContent = content.instagram || content.tiktok;
@@ -261,10 +183,11 @@ const SocialPanelPage = () => {
     <div className="min-h-screen py-8 px-4 max-w-5xl mx-auto">
       <DynamicSEO />
 
+      {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <div className="flex items-center gap-3">
           <Sparkles className="w-8 h-8 text-primary" />
-          <h1 className="text-3xl font-bold text-foreground">Painel Social Media</h1>
+          <h1 className="text-3xl font-bold font-orbitron text-foreground">Painel Social Media</h1>
         </div>
         <Badge variant="outline" className="flex items-center gap-1.5 px-3 py-1.5 text-sm">
           <Zap className="w-4 h-4 text-primary" />
@@ -273,11 +196,11 @@ const SocialPanelPage = () => {
         </Badge>
       </div>
 
-      {/* Step 1: Select Article & Platforms */}
+      {/* Step 1 */}
       <Card className="mb-6 border-primary/20">
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <Badge variant="secondary">1</Badge> Selecionar Artigo e Plataformas
+            <Badge variant="secondary">1</Badge> Selecionar Artigo e Opções
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -290,41 +213,46 @@ const SocialPanelPage = () => {
                 <SelectItem key={post.id} value={post.id}>
                   <span className="flex items-center gap-2">
                     <Badge variant="outline" className="text-xs uppercase">{post.category}</Badge>
-                    {post.title.length > 60 ? post.title.slice(0, 60) + "..." : post.title}
+                    {post.title.length > 55 ? post.title.slice(0, 55) + "…" : post.title}
                   </span>
                 </SelectItem>
               ))}
             </SelectContent>
           </Select>
 
-          <div className="flex flex-wrap gap-4 items-center">
-            <label className="flex items-center gap-2 cursor-pointer">
+          {/* Platforms */}
+          <div className="flex flex-wrap gap-6">
+            <label className="flex items-center gap-2 cursor-pointer select-none">
               <Checkbox checked={platformIG} onCheckedChange={(v) => setPlatformIG(!!v)} />
-              <Instagram className="w-4 h-4" /> Instagram
+              <Instagram className="w-4 h-4 text-pink-500" />
+              <span className="text-sm font-medium">Instagram</span>
             </label>
-            <label className="flex items-center gap-2 cursor-pointer">
+            <label className="flex items-center gap-2 cursor-pointer select-none">
               <Checkbox checked={platformTT} onCheckedChange={(v) => setPlatformTT(!!v)} />
-              <Music2 className="w-4 h-4" /> TikTok
+              <Music2 className="w-4 h-4 text-cyan-400" />
+              <span className="text-sm font-medium">TikTok</span>
             </label>
-            <Button
-              variant={generateImage ? "default" : "outline"}
-              size="sm"
-              onClick={() => setGenerateImage(!generateImage)}
-            >
-              <ImageIcon className="w-4 h-4 mr-1" /> {generateImage ? "Imagem IA ✓" : "Gerar Imagem IA"}
-            </Button>
-            <Button
-              variant={suggestMusic ? "default" : "outline"}
-              size="sm"
-              onClick={() => setSuggestMusic(!suggestMusic)}
-            >
-              <Music className="w-4 h-4 mr-1" /> {suggestMusic ? "Música ✓" : "Sugerir Música"}
-            </Button>
+            <label className="flex items-center gap-2 cursor-pointer select-none">
+              <Checkbox checked={suggestMusic} onCheckedChange={(v) => setSuggestMusic(!!v)} />
+              <Music className="w-4 h-4 text-purple-400" />
+              <span className="text-sm font-medium">Sugerir música</span>
+            </label>
           </div>
 
-          <Button onClick={handleGenerate} disabled={!selectedPost || generating || (!platformIG && !platformTT)} className="w-full">
+          <div className="rounded-lg border border-primary/20 bg-primary/5 p-3 flex items-start gap-2 text-sm text-muted-foreground">
+            <ImageIcon className="w-4 h-4 mt-0.5 text-primary shrink-0" />
+            <span>O Gemini irá gerar um <strong className="text-foreground">prompt de imagem</strong> pronto para usar no Midjourney, DALL-E, Stable Diffusion ou Leonardo.ai.</span>
+          </div>
+
+          <Button
+            onClick={handleGenerate}
+            disabled={!selectedPost || generating || (!platformIG && !platformTT) || retryIn > 0}
+            className="w-full h-11 text-base font-semibold"
+          >
             {generating ? (
               <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Gerando com IA...</>
+            ) : retryIn > 0 ? (
+              <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Aguarde {retryIn}s...</>
             ) : (
               <><Sparkles className="w-4 h-4 mr-2" /> Gerar Conteúdo</>
             )}
@@ -332,38 +260,33 @@ const SocialPanelPage = () => {
         </CardContent>
       </Card>
 
-      {/* Step 2: Review & Edit per platform */}
+      {/* Step 2: Results */}
       {hasContent && (
         <div className="space-y-6 mb-6">
           {content.instagram && (
             <ContentEditor
               label="Instagram"
-              icon={<Instagram className="w-4 h-4" />}
+              icon={<Instagram className="w-4 h-4 text-pink-500" />}
               edited={editedIG}
               setEdited={setEditedIG}
-              image={content.instagram.image}
               onRegenerate={handleGenerate}
-              onCopy={() => copyAll(editedIG)}
+              onCopy={() => copyAll(editedIG, "Instagram")}
+              onCopyImagePrompt={() => copyImagePrompt(editedIG.imagePrompt)}
               generating={generating}
             />
           )}
           {content.tiktok && (
             <ContentEditor
               label="TikTok"
-              icon={<Music2 className="w-4 h-4" />}
+              icon={<Music2 className="w-4 h-4 text-cyan-400" />}
               edited={editedTT}
               setEdited={setEditedTT}
-              image={content.tiktok.image}
               onRegenerate={handleGenerate}
-              onCopy={() => copyAll(editedTT)}
+              onCopy={() => copyAll(editedTT, "TikTok")}
+              onCopyImagePrompt={() => copyImagePrompt(editedTT.imagePrompt)}
               generating={generating}
             />
           )}
-
-          {/* Save to History */}
-          <Button onClick={handleSaveToHistory} className="w-full" size="lg">
-            <Save className="w-4 h-4 mr-2" /> Salvar no Histórico
-          </Button>
         </div>
       )}
 
@@ -373,22 +296,22 @@ const SocialPanelPage = () => {
   );
 };
 
-/* ---------- Sub-component ---------- */
+/* ─── ContentEditor ─────────────────────────────────────────────────────────── */
 
 interface ContentEditorProps {
   label: string;
   icon: React.ReactNode;
-  edited: { caption: string; hashtags: string; cta: string; hookLine: string; musicSuggestion: string };
-  setEdited: React.Dispatch<React.SetStateAction<{ caption: string; hashtags: string; cta: string; hookLine: string; musicSuggestion: string }>>;
-  image: string | null;
+  edited: EditedContent;
+  setEdited: React.Dispatch<React.SetStateAction<EditedContent>>;
   onRegenerate: () => void;
   onCopy: () => void;
+  onCopyImagePrompt: () => void;
   generating: boolean;
 }
 
-const ContentEditor = ({ label, icon, edited, setEdited, image, onRegenerate, onCopy, generating }: ContentEditorProps) => (
+const ContentEditor = ({ label, icon, edited, setEdited, onRegenerate, onCopy, onCopyImagePrompt, generating }: ContentEditorProps) => (
   <Card className="border-primary/20">
-    <CardHeader>
+    <CardHeader className="pb-3">
       <CardTitle className="text-lg flex items-center justify-between">
         <span className="flex items-center gap-2">
           <Badge variant="secondary">2</Badge> {icon} {label}
@@ -398,55 +321,79 @@ const ContentEditor = ({ label, icon, edited, setEdited, image, onRegenerate, on
             <RefreshCw className="w-4 h-4 mr-1" /> Regerar
           </Button>
           <Button variant="outline" size="sm" onClick={onCopy}>
-            <Copy className="w-4 h-4 mr-1" /> Copiar
+            <Copy className="w-4 h-4 mr-1" /> Copiar tudo
           </Button>
         </div>
       </CardTitle>
     </CardHeader>
     <CardContent className="space-y-4">
-      <div>
-        <label className="text-sm font-medium text-muted-foreground mb-1 block">🎣 Gancho</label>
-        <Textarea value={edited.hookLine} onChange={(e) => setEdited((p) => ({ ...p, hookLine: e.target.value }))} rows={2} />
-      </div>
-      <div>
-        <label className="text-sm font-medium text-muted-foreground mb-1 block">📝 Legenda</label>
-        <Textarea value={edited.caption} onChange={(e) => setEdited((p) => ({ ...p, caption: e.target.value }))} rows={4} />
-      </div>
-      <div>
-        <label className="text-sm font-medium text-muted-foreground mb-1 block">📢 CTA</label>
-        <Textarea value={edited.cta} onChange={(e) => setEdited((p) => ({ ...p, cta: e.target.value }))} rows={2} />
-      </div>
-      <div>
-        <label className="text-sm font-medium text-muted-foreground mb-1 block"># Hashtags</label>
-        <Textarea value={edited.hashtags} onChange={(e) => setEdited((p) => ({ ...p, hashtags: e.target.value }))} rows={2} />
-      </div>
+
+      <Field label="🎣 Gancho" value={edited.hookLine} rows={2}
+        onChange={(v) => setEdited((p) => ({ ...p, hookLine: v }))} />
+
+      <Field label="📝 Legenda" value={edited.caption} rows={4}
+        onChange={(v) => setEdited((p) => ({ ...p, caption: v }))} />
+
+      <Field label="📢 CTA" value={edited.cta} rows={2}
+        onChange={(v) => setEdited((p) => ({ ...p, cta: v }))} />
+
+      <Field label="# Hashtags" value={edited.hashtags} rows={2}
+        onChange={(v) => setEdited((p) => ({ ...p, hashtags: v }))} />
+
       {edited.musicSuggestion && (
-        <div>
-          <label className="text-sm font-medium text-muted-foreground mb-1 block">🎵 Sugestão de Música</label>
-          <Textarea value={edited.musicSuggestion} onChange={(e) => setEdited((p) => ({ ...p, musicSuggestion: e.target.value }))} rows={2} />
+        <Field label="🎵 Sugestão de Música" value={edited.musicSuggestion} rows={1}
+          onChange={(v) => setEdited((p) => ({ ...p, musicSuggestion: v }))} />
+      )}
+
+      {/* Image Prompt */}
+      {edited.imagePrompt && (
+        <div className="rounded-lg border border-dashed border-primary/40 bg-primary/5 p-4 space-y-2">
+          <div className="flex items-center justify-between">
+            <label className="text-sm font-semibold text-primary flex items-center gap-1.5">
+              <ImageIcon className="w-4 h-4" /> Prompt de Imagem
+            </label>
+            <Button variant="secondary" size="sm" onClick={onCopyImagePrompt}>
+              <ClipboardCopy className="w-3.5 h-3.5 mr-1" /> Copiar Prompt
+            </Button>
+          </div>
+          <p className="text-xs text-muted-foreground mb-1">Use esse prompt no Midjourney, DALL-E, Stable Diffusion ou Leonardo.ai:</p>
+          <Textarea
+            value={edited.imagePrompt}
+            onChange={(e) => setEdited((p) => ({ ...p, imagePrompt: e.target.value }))}
+            rows={4}
+            className="text-sm font-mono bg-background/50"
+          />
+          <div className="flex flex-wrap gap-2 pt-1">
+            {["Midjourney", "DALL-E", "Stable Diffusion", "Leonardo.ai", "Ideogram"].map((tool) => (
+              <a
+                key={tool}
+                href={
+                  tool === "Midjourney"        ? "https://www.midjourney.com" :
+                  tool === "DALL-E"            ? "https://labs.openai.com" :
+                  tool === "Stable Diffusion"  ? "https://stability.ai" :
+                  tool === "Leonardo.ai"       ? "https://app.leonardo.ai" :
+                                                 "https://ideogram.ai"
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs px-2 py-1 rounded-full border border-border hover:border-primary hover:text-primary transition-colors"
+              >
+                {tool}
+              </a>
+            ))}
+          </div>
         </div>
       )}
-      {image && (
-        <div>
-          <label className="text-sm font-medium text-muted-foreground mb-1 block">🖼️ Imagem Gerada</label>
-          <img src={image} alt="Imagem gerada" className="rounded-lg max-h-64 object-cover border border-border" />
-          <Button
-            variant="outline"
-            size="sm"
-            className="mt-2"
-            onClick={() => {
-              const link = document.createElement("a");
-              link.href = image;
-              link.download = `social-${label.toLowerCase()}-${Date.now()}.png`;
-              link.click();
-            }}
-          >
-            <Download className="w-4 h-4 mr-1" /> Baixar Imagem
-          </Button>
-        </div>
-      )}
+
     </CardContent>
   </Card>
+);
+
+const Field = ({ label, value, rows, onChange }: { label: string; value: string; rows: number; onChange: (v: string) => void }) => (
+  <div>
+    <label className="text-sm font-medium text-muted-foreground mb-1 block">{label}</label>
+    <Textarea value={value} onChange={(e) => onChange(e.target.value)} rows={rows} />
+  </div>
 );
 
 export default SocialPanelPage;
