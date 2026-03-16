@@ -146,6 +146,8 @@ if ($method === 'GET' && $action === 'ping') {
 }
 
 // ─── GET: proxy de câmbio + metais ───────────────────────────────────────────
+// Câmbio: awesomeapi (USD, EUR, ARS, PYG vs BRL) — sem token, gratuito
+// Metais: gold-api.com (XAU, XAG em BRL) — gratuito, sem token
 if ($method === 'GET' && $action === 'rates') {
     $CACHE_FILE = cacheDir() . '/viciocode_rates.json';
     $CACHE_TTL  = 300; // 5 min
@@ -155,20 +157,79 @@ if ($method === 'GET' && $action === 'rates') {
         if ($cached) { echo $cached; exit; }
     }
 
-    $raw    = httpGet('https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,ARS-BRL,PYG-BRL,XAU-BRL,XAG-BRL');
     $result = [];
-    if ($raw) {
-        $data = json_decode($raw, true);
-        if ($data) {
-            foreach (['USDBRL','EURBRL','ARSBRL','PYGBRL','XAUBRL','XAGBRL'] as $key) {
-                if (!empty($data[$key])) {
+
+    // ── 1. Câmbio: awesomeapi (USD, EUR, ARS, PYG) ──────────────────────────
+    $rawFx = httpGet('https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,ARS-BRL,PYG-BRL');
+    if ($rawFx) {
+        $dataFx = json_decode($rawFx, true);
+        if ($dataFx) {
+            foreach (['USDBRL','EURBRL','ARSBRL','PYGBRL'] as $key) {
+                if (!empty($dataFx[$key])) {
                     $result[$key] = [
-                        'bid'       => $data[$key]['bid'],
-                        'pctChange' => $data[$key]['pctChange'],
-                        'high'      => $data[$key]['high'],
-                        'low'       => $data[$key]['low'],
+                        'bid'       => $dataFx[$key]['bid'],
+                        'pctChange' => $dataFx[$key]['pctChange'],
+                        'high'      => $dataFx[$key]['high'],
+                        'low'       => $dataFx[$key]['low'],
                     ];
                 }
+            }
+        }
+    }
+
+    // ── 2. Metais: gold-api.com (XAU, XAG em BRL) ───────────────────────────
+    // gold-api.com retorna preço por troy oz em BRL
+    $rawGold = httpGet('https://data-asg.goldprice.org/dbXRates/BRL');
+    if ($rawGold) {
+        $dataGold = json_decode($rawGold, true);
+        if (!empty($dataGold['items'][0])) {
+            $item    = $dataGold['items'][0];
+            $xauBrl  = $item['xauPrice'] ?? null; // price per troy oz
+            $xagBrl  = $item['xagPrice'] ?? null;
+            // Calculate pct change from open if available
+            $xauOpen = $item['xauOpen'] ?? null;
+            $xagOpen = $item['xagOpen'] ?? null;
+            if ($xauBrl && $xauBrl > 0) {
+                $pctXau = $xauOpen && $xauOpen > 0 ? round((($xauBrl - $xauOpen) / $xauOpen) * 100, 2) : 0;
+                $result['XAUBRL'] = [
+                    'bid'       => (string)$xauBrl,
+                    'pctChange' => (string)$pctXau,
+                    'high'      => (string)($item['xauHigh'] ?? $xauBrl),
+                    'low'       => (string)($item['xauLow']  ?? $xauBrl),
+                ];
+            }
+            if ($xagBrl && $xagBrl > 0) {
+                $pctXag = $xagOpen && $xagOpen > 0 ? round((($xagBrl - $xagOpen) / $xagOpen) * 100, 2) : 0;
+                $result['XAGBRL'] = [
+                    'bid'       => (string)$xagBrl,
+                    'pctChange' => (string)$pctXag,
+                    'high'      => (string)($item['xagHigh'] ?? $xagBrl),
+                    'low'       => (string)($item['xagLow']  ?? $xagBrl),
+                ];
+            }
+        }
+    }
+
+    // Fallback para metais: awesomeapi (pode ou não suportar XAU/XAG)
+    if (empty($result['XAUBRL']) || empty($result['XAGBRL'])) {
+        $rawMetal = httpGet('https://economia.awesomeapi.com.br/json/last/XAU-BRL,XAG-BRL');
+        if ($rawMetal) {
+            $dataMetal = json_decode($rawMetal, true);
+            if (!empty($dataMetal['XAUBRL']) && empty($result['XAUBRL'])) {
+                $result['XAUBRL'] = [
+                    'bid'       => $dataMetal['XAUBRL']['bid'],
+                    'pctChange' => $dataMetal['XAUBRL']['pctChange'],
+                    'high'      => $dataMetal['XAUBRL']['high'],
+                    'low'       => $dataMetal['XAUBRL']['low'],
+                ];
+            }
+            if (!empty($dataMetal['XAGBRL']) && empty($result['XAGBRL'])) {
+                $result['XAGBRL'] = [
+                    'bid'       => $dataMetal['XAGBRL']['bid'],
+                    'pctChange' => $dataMetal['XAGBRL']['pctChange'],
+                    'high'      => $dataMetal['XAGBRL']['high'],
+                    'low'       => $dataMetal['XAGBRL']['low'],
+                ];
             }
         }
     }
@@ -179,7 +240,7 @@ if ($method === 'GET' && $action === 'rates') {
         exit;
     }
 
-    $result['_meta'] = ['source' => 'awesomeapi-proxy', 'fallback' => false, 'updatedAt' => date('c')];
+    $result['_meta'] = ['source' => 'awesomeapi+goldprice-proxy', 'fallback' => false, 'updatedAt' => date('c')];
     $json = json_encode($result);
     @file_put_contents($CACHE_FILE, $json);
     echo $json;
@@ -222,7 +283,7 @@ if ($method === 'GET' && $action === 'b3') {
         if ($cached) { echo $cached; exit; }
     }
 
-    $raw  = httpGet('https://brapi.dev/api/quote/PETR4,VALE3,ITUB4,BBDC4,ABEV3,WEGE3,BBAS3,RENT3,MGLU3,SUZB3?fundamental=false');
+    $raw  = httpGet('https://brapi.dev/api/quote/PETR4,VALE3,ITUB4,MGLU3?fundamental=false');
     $data = $raw ? json_decode($raw, true) : null;
 
     if (!empty($data['results']) && count($data['results']) > 0) {
