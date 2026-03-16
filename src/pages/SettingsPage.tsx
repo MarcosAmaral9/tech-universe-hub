@@ -28,7 +28,12 @@ const DEFAULT_PRIMARY_HSL = "187 85% 43%";
 
 const SettingsPage = () => {
   const { theme, toggleTheme } = useTheme();
-  const { user, profile, updateProfile, signOut, fetchProfile } = useAuthContext();
+  const { user, profile, updateProfile, signOut, fetchProfile, loading } = useAuthContext();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!loading && !user) navigate("/entrar", { replace: true });
+  }, [user, loading, navigate]);
   const [soundEnabled, setSoundEnabled] = useState(() => {
     const stored = localStorage.getItem(NOTIFICATION_SOUND_KEY);
     return stored === null ? true : stored === "true";
