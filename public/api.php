@@ -482,8 +482,7 @@ if ($method === 'POST' && $action === 'generate_social') {
     $title    = trim($body['title']    ?? '');
     $excerpt  = trim($body['excerpt']  ?? '');
     $category = trim($body['category'] ?? '');
-    $platform = trim($body['platform'] ?? 'instagram');
-    $suggestMusic = true; // sempre ativo
+    $platform = trim($body['platform'] ?? 'both'); // 'instagram', 'tiktok' ou 'both'
 
     if (!$title || !$excerpt) {
         http_response_code(400);
@@ -491,30 +490,43 @@ if ($method === 'POST' && $action === 'generate_social') {
         exit;
     }
 
-    $musicField  = $suggestMusic
-        ? ',"musicSuggestion":"nome do artista - nome da música (gênero)"'
-        : '';
-    $musicPrompt = $suggestMusic
-        ? "\nSugira também 1 música de fundo popular e adequada ao conteúdo (campo musicSuggestion)."
-        : '';
+    // Gera IG + TikTok em UMA única chamada para economizar quota
+    if ($platform === 'both') {
+        $prompt = "Você é especialista em marketing digital brasileiro. Escreva tudo em português do Brasil.\n\n"
+                . "Artigo: \"{$title}\" (categoria: {$category})\n"
+                . "Resumo: {$excerpt}\n\n"
+                . "Gere conteúdo para DUAS plataformas em um único JSON:\n\n"
+                . "INSTAGRAM: legenda 150-300 chars, tom inspirador, emojis moderados, até 15 hashtags, formato 1:1 ou 4:5\n"
+                . "TIKTOK: legenda 80-150 chars, tom jovem e direto, emojis expressivos, até 10 hashtags, formato 9:16\n\n"
+                . "Campos obrigatórios para CADA plataforma:\n"
+                . "- hookLine: gancho impactante (máx 120 chars)\n"
+                . "- caption: legenda seguindo regras da plataforma\n"
+                . "- cta: chamada para ação direta\n"
+                . "- hashtags: array das melhores hashtags\n"
+                . "- musicSuggestion: 1 música popular adequada, formato \"Artista - Título (gênero)\"\n"
+                . "- imagePrompt: prompt detalhado em INGLÊS para IA de imagem (Midjourney/DALL-E/Flux), mín 50 palavras, sem texto na imagem\n\n"
+                . "RETORNE APENAS O JSON SEM MARKDOWN:\n"
+                . "{\"instagram\":{\"hookLine\":\"...\",\"caption\":\"...\",\"cta\":\"...\",\"hashtags\":[],\"musicSuggestion\":\"...\",\"imagePrompt\":\"...\"},"
+                . "\"tiktok\":{\"hookLine\":\"...\",\"caption\":\"...\",\"cta\":\"...\",\"hashtags\":[],\"musicSuggestion\":\"...\",\"imagePrompt\":\"...\"}}";
+    } else {
+        // Chamada individual (compatibilidade)
+        $platformRules = $platform === 'instagram'
+            ? "Instagram: legenda 150-300 chars, tom inspirador e visual, emojis moderados, até 15 hashtags, formato quadrado 1:1."
+            : "TikTok: legenda 80-150 chars, tom jovem e direto, emojis expressivos, até 10 hashtags, formato vertical 9:16.";
 
-    $platformRules = $platform === 'instagram'
-        ? "Instagram: legenda entre 150-300 caracteres, tom inspirador e visual, emojis moderados, até 15 hashtags."
-        : "TikTok: legenda curta entre 80-150 caracteres, tom jovem e direto, emojis expressivos, até 10 hashtags.";
-
-    $prompt = "Você é um especialista em marketing digital e redes sociais brasileiro.\n"
-            . "Crie conteúdo para {$platform} sobre o artigo \"{$title}\" (categoria: {$category}).\n"
-            . "Resumo: {$excerpt}\n"
-            . "Regras de plataforma: {$platformRules}\n"
-            . "Gere também um prompt detalhado em português para criar uma imagem no Midjourney/DALL-E/Stable Diffusion que ilustre este post.\n"
-            . "O prompt de imagem deve descrever: estilo visual, cores, composição, elementos, sem texto na imagem.{$musicPrompt}\n"
-            . "\nRETORNE APENAS O JSON ABAIXO SEM MARKDOWN:\n"
-            . "{\"caption\":\"legenda\",\"hashtags\":[\"hashtag1\",\"hashtag2\"],\"cta\":\"chamada para ação\",\"hookLine\":\"frase de gancho\",\"imagePrompt\":\"prompt detalhado para geração de imagem\"{$musicField}}";
+        $prompt = "Você é especialista em marketing digital brasileiro. Escreva em português do Brasil.\n\n"
+                . "Plataforma: {$platform}\n"
+                . "Artigo: \"{$title}\" (categoria: {$category})\n"
+                . "Resumo: {$excerpt}\n"
+                . "Regras: {$platformRules}\n\n"
+                . "RETORNE APENAS O JSON SEM MARKDOWN:\n"
+                . "{\"hookLine\":\"...\",\"caption\":\"...\",\"cta\":\"...\",\"hashtags\":[],\"musicSuggestion\":\"Artista - Título (gênero)\",\"imagePrompt\":\"prompt em inglês mín 50 palavras\"}";
+    }
 
     $payload = json_encode([
         'contents'         => [['parts' => [['text' => $prompt]]]],
         'generationConfig' => [
-            'maxOutputTokens'  => 2000,
+            'maxOutputTokens'  => 2500,
             'temperature'      => 0.8,
             'responseMimeType' => 'application/json',
         ],
@@ -529,7 +541,7 @@ if ($method === 'POST' && $action === 'generate_social') {
             CURLOPT_POST           => true,
             CURLOPT_POSTFIELDS     => $payload,
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_TIMEOUT        => 30,
+            CURLOPT_TIMEOUT        => 45,
             CURLOPT_SSL_VERIFYPEER => true,
             CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
         ]);
@@ -538,10 +550,10 @@ if ($method === 'POST' && $action === 'generate_social') {
         curl_close($ch);
     } elseif (ini_get('allow_url_fopen')) {
         $ctx = stream_context_create(['http' => [
-            'method'        => 'POST',
-            'header'        => "Content-Type: application/json\r\n",
-            'content'       => $payload,
-            'timeout'       => 30,
+            'method'  => 'POST',
+            'header'  => "Content-Type: application/json\r\n",
+            'content' => $payload,
+            'timeout' => 45,
             'ignore_errors' => true,
         ]]);
         $raw = @file_get_contents($url, false, $ctx);
@@ -554,7 +566,6 @@ if ($method === 'POST' && $action === 'generate_social') {
             'detail'     => $curlError ?? '',
             'curl_avail' => function_exists('curl_init'),
             'fopen_avail'=> (bool)ini_get('allow_url_fopen'),
-            'url_tried'  => $url,
         ]);
         exit;
     }
@@ -564,7 +575,7 @@ if ($method === 'POST' && $action === 'generate_social') {
     if (!empty($resp['error'])) {
         $errMsg    = $resp['error']['message'] ?? 'Erro na API Gemini';
         $errStatus = $resp['error']['status']  ?? '';
-        if ($errStatus === 'RESOURCE_EXHAUSTED' || str_contains($errMsg, 'Quota exceeded') || str_contains($errMsg, 'quota')) {
+        if ($errStatus === 'RESOURCE_EXHAUSTED' || str_contains($errMsg, 'quota') || str_contains($errMsg, 'Quota')) {
             preg_match('/retry in ([\d.]+)s/i', $errMsg, $m);
             $waitSec = isset($m[1]) ? (int)ceil((float)$m[1]) : 60;
             http_response_code(429);
@@ -576,11 +587,10 @@ if ($method === 'POST' && $action === 'generate_social') {
         exit;
     }
 
-    // Gemini retornou resposta mas sem candidates (model bloqueou, safety filter, etc)
     if (empty($resp['candidates'])) {
-        $finishReason = $resp['promptFeedback']['blockReason'] ?? 'desconhecido';
+        $blockReason = $resp['promptFeedback']['blockReason'] ?? 'desconhecido';
         http_response_code(502);
-        echo json_encode(['error' => "Gemini bloqueou a resposta. Motivo: {$finishReason}", 'raw_preview' => substr($raw, 0, 300)]);
+        echo json_encode(['error' => "Gemini bloqueou a resposta. Motivo: {$blockReason}", 'raw_preview' => substr($raw, 0, 300)]);
         exit;
     }
 
@@ -589,20 +599,21 @@ if ($method === 'POST' && $action === 'generate_social') {
     $text = preg_replace('/\s*```\s*$/m', '', $text);
     $text = trim($text);
     if (!str_starts_with($text, '{')) {
-        preg_match('/\{.*\}/s', $text, $matches);
+        preg_match('/{.*}/s', $text, $matches);
         $text = $matches[0] ?? $text;
     }
 
     $parsed = json_decode($text, true);
     if (!$parsed) {
         http_response_code(502);
-        echo json_encode(['error' => 'O Gemini não retornou JSON válido. Tente novamente.']);
+        echo json_encode(['error' => 'O Gemini não retornou JSON válido. Tente novamente.', 'raw' => substr($text, 0, 200)]);
         exit;
     }
 
     echo json_encode($parsed);
     exit;
 }
+
 
 
 // Para os demais endpoints, conecta ao banco (lazy)

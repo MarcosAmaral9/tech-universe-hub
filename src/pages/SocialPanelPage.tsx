@@ -91,11 +91,8 @@ const SocialPanelPage = () => {
     if (!authLoading && (!user || user.email !== ADMIN_EMAIL)) navigate("/");
   }, [user, authLoading, navigate]);
 
-  /* ── Geração ── */
-  const generateForPlatform = async (
-    post: any,
-    platform: "instagram" | "tiktok",
-  ): Promise<GeneratedContent> => {
+  /* ── Geração — UMA única chamada Gemini para IG+TT (economiza quota) ── */
+  const generateBothPlatforms = async (post: any): Promise<{ instagram: GeneratedContent; tiktok: GeneratedContent }> => {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 60000);
     try {
@@ -107,8 +104,7 @@ const SocialPanelPage = () => {
           title: post.title,
           excerpt: post.excerpt,
           category: post.category,
-          platform,
-          suggestMusic: true, // sempre ligado
+          platform: "both",
         }),
       });
       const data = await res.json();
@@ -118,6 +114,8 @@ const SocialPanelPage = () => {
         throw err;
       }
       if (!res.ok || data.error) throw new Error(data.error || "Erro ao gerar conteúdo");
+      // Response: { instagram: {...}, tiktok: {...} }
+      if (!data.instagram || !data.tiktok) throw new Error("Resposta incompleta do Gemini. Tente novamente.");
       return data;
     } finally {
       clearTimeout(timeout);
@@ -143,36 +141,18 @@ const SocialPanelPage = () => {
     setEditedTT(emptyEdited());
 
     try {
-      // Gera Instagram e TikTok em paralelo — sempre ambos
-      const [igResult, ttResult] = await Promise.allSettled([
-        generateForPlatform(post, "instagram"),
-        generateForPlatform(post, "tiktok"),
-      ]);
+      // Uma única chamada Gemini gera IG + TikTok simultaneamente
+      const both = await generateBothPlatforms(post);
 
-      const results: PlatformContent = {};
+      const results: PlatformContent = {
+        instagram: both.instagram,
+        tiktok: both.tiktok,
+      };
 
-      if (igResult.status === "fulfilled") {
-        results.instagram = igResult.value;
-        setEditedIG(toEdited(igResult.value));
-        saveToHistory({ id: `${Date.now()}-ig`, postTitle: post.title, platform: "instagram", ...toEdited(igResult.value), createdAt: new Date().toISOString() });
-      } else {
-        const igErr = (igResult as any).reason?.message || "Erro desconhecido";
-        toast({ title: "Erro no Instagram", description: igErr, variant: "destructive" });
-      }
-
-      if (ttResult.status === "fulfilled") {
-        results.tiktok = ttResult.value;
-        setEditedTT(toEdited(ttResult.value));
-        saveToHistory({ id: `${Date.now()}-tt`, postTitle: post.title, platform: "tiktok", ...toEdited(ttResult.value), createdAt: new Date().toISOString() });
-      } else {
-        const ttErr = (ttResult as any).reason?.message || "Erro desconhecido";
-        toast({ title: "Erro no TikTok", description: ttErr, variant: "destructive" });
-      }
-
-      if (!results.instagram && !results.tiktok) {
-        const firstErr = (igResult as any).reason?.message || (ttResult as any).reason?.message || "Verifique se a chave Gemini está configurada no .env.php";
-        throw new Error(firstErr);
-      }
+      setEditedIG(toEdited(both.instagram));
+      setEditedTT(toEdited(both.tiktok));
+      saveToHistory({ id: `${Date.now()}-ig`, postTitle: post.title, platform: "instagram", ...toEdited(both.instagram), createdAt: new Date().toISOString() });
+      saveToHistory({ id: `${Date.now()}-tt`, postTitle: post.title, platform: "tiktok",    ...toEdited(both.tiktok),    createdAt: new Date().toISOString() });
 
       setContent(results);
       setHistoryKey((k) => k + 1);
