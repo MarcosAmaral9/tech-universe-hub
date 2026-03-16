@@ -66,8 +66,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "4",
     slug: "ia-transformando-dublagem-animes",
-    title: "Como as IAs estão transformando a dublagem de animes: O fim das barreiras de idioma?",
-    excerpt: "Descubra como a clonagem de voz e tradução em tempo real estão revolucionando o mercado de animes.",
+    title: "IA está Transformando a Dublagem de Animes em 2026",
+    excerpt: "Descubra como a clonagem de voz e tradução em tempo real estão revolucionando o mercado de animes e quebrando barreiras de idioma ao redor do mundo.",
     content: "",
     category: "ia",
     subtopic: "dublagem",
@@ -79,8 +79,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "20",
     slug: "ia-remasterizacao-jogos-classicos",
-    title: "IA e Remasterização: Como a Inteligência Artificial está dando vida nova aos jogos clássicos",
-    excerpt: "Entenda como a IA de Upscaling e o Deep Learning estão salvando a história dos games.",
+    title: "IA Remaster: Como a Tech Está Salvando Jogos Clássicos",
+    excerpt: "Entenda como a IA de Upscaling e o Deep Learning estão restaurando e salvando a história dos games, dando nova vida a títulos que definiram gerações.",
     content: "",
     category: "ia",
     subtopic: "games",
@@ -92,7 +92,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "35",
     slug: "chatgpt-vs-gemini-vs-claude-2026",
-    title: "ChatGPT vs. Gemini vs. Claude em 2026: Qual IA Realmente Vale a Pena Assinar?",
+    title: "ChatGPT vs Gemini vs Claude 2026: Qual Vale Assinar?",
     excerpt: "Comparamos ChatGPT, Gemini e Claude em 20 cenários do dia a dia. Descubra qual IA realmente entrega o que promete em 2026.",
     content: "",
     category: "ia",
@@ -105,7 +105,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "36",
     slug: "como-usar-ia-ganhar-dinheiro-2026",
-    title: "Como Usar IA para Ganhar Dinheiro em 2026: 15 Formas Reais e Comprovadas",
+    title: "Como Usar IA para Ganhar Dinheiro em 2026: 15 Formas",
     excerpt: "A IA não substitui o esforço, ela multiplica. Conheça 15 formas reais de monetizar com inteligência artificial em 2026.",
     content: "",
     category: "ia",
@@ -118,7 +118,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "37",
     slug: "ia-no-trabalho-2026-profissoes",
-    title: "Inteligência Artificial no Trabalho em 2026: Sua Profissão Vai Acabar ou Evoluir?",
+    title: "IA no Trabalho 2026: Sua Profissão Vai Desaparecer?",
     excerpt: "Analisamos 30 profissões e dizemos claramente: risco alto, médio ou oportunidade. Descubra onde você se encaixa.",
     content: "",
     category: "ia",
@@ -131,8 +131,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "38",
     slug: "melhores-apps-ia-produtividade-2026",
-    title: "Os 10 Melhores Aplicativos de IA para Produtividade em 2026 (Testados e Aprovados)",
-    excerpt: "Testamos mais de 80 ferramentas e separamos as 10 que sobreviveram ao teste do uso real.",
+    title: "10 Melhores Apps de IA para Produtividade em 2026",
+    excerpt: "Selecionamos os 10 aplicativos de inteligência artificial mais úteis para aumentar sua produtividade no trabalho, nos estudos e na vida pessoal em 2026.",
     content: "",
     category: "ia",
     subtopic: "apps",
@@ -144,7 +144,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "39",
     slug: "ia-generativa-iniciantes-2026-guia",
-    title: "IA Generativa para Iniciantes em 2026: O Guia Completo do Zero ao Avançado",
+    title: "IA Generativa para Iniciantes 2026: Guia Completo",
     excerpt: "Sem jargão técnico, sem promessas irrealistas. Um caminho claro do zero ao uso avançado de IA generativa.",
     content: "",
     category: "ia",
@@ -157,7 +157,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "40",
     slug: "deepfakes-ia-2026-como-identificar",
-    title: "Deepfakes e IA em 2026: Como Identificar Conteúdo Falso e Proteger Sua Imagem",
+    title: "Deepfakes e IA 2026: Como Identificar Conteúdo Falso",
     excerpt: "Deepfakes deixaram de ser ficção científica. Aprenda a identificar conteúdo falso e proteger sua imagem online.",
     content: "",
     category: "ia",
@@ -170,7 +170,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "41",
     slug: "ia-educacao-2026-estudar-inteligente",
-    title: "IA na Educação em 2026: Como Estudar de Forma mais Inteligente (Sem Fazer Batota)",
+    title: "IA na Educação 2026: Como Estudar de Forma Inteligente",
     excerpt: "Explore o lado produtivo da IA na educação: como aprender mais rápido e reter melhor sem terceirizar o pensamento.",
     content: "",
     category: "ia",
@@ -183,7 +183,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "42",
     slug: "agentes-ia-2026-como-funcionam",
-    title: "Agentes de IA em 2026: O Que São, Como Funcionam e Por Que Mudam Tudo",
+    title: "Agentes de IA 2026: O Que São e Como Funcionam",
     excerpt: "Da era do chatbot à era dos agentes autônomos. Entenda a diferença e como isso muda absolutamente tudo.",
     content: "",
     category: "ia",
@@ -196,7 +196,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "43",
     slug: "ia-saude-2026-diagnosticos-futuro",
-    title: "IA para Saúde em 2026: Diagnósticos, Monitoramento e o Futuro da Medicina",
+    title: "IA para Saúde 2026: Diagnósticos e o Futuro da Medicina",
     excerpt: "A IA está transformando a medicina em velocidade que poucos percebem. Dos diagnósticos por imagem à saúde mental.",
     content: "",
     category: "ia",
@@ -209,7 +209,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "44",
     slug: "regulamentacao-ia-brasil-mundo-2026",
-    title: "Regulamentação de IA no Brasil e no Mundo em 2026: O Que Muda Para Você",
+    title: "Regulamentação de IA no Brasil e no Mundo em 2026",
     excerpt: "O AI Act europeu, o marco brasileiro de IA e as novas regras globais. O que muda na prática para você e para as empresas.",
     content: "",
     category: "ia",
@@ -223,7 +223,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "24",
     slug: "tesouro-direto-2026-guia-completo",
-    title: "Tesouro Direto em 2026: Ainda Vale a Pena? O Guia Completo Atualizado",
+    title: "Tesouro Direto 2026: Ainda Vale a Pena? Guia Completo",
     excerpt: "Descubra se o Tesouro Direto ainda é o melhor investimento para iniciantes em 2026. Comparamos taxas, rendimentos e estratégias.",
     content: "",
     category: "invest",
@@ -244,7 +244,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "25",
     slug: "renda-passiva-2026-formas-comprovadas",
-    title: "Renda Passiva Real em 2026: 7 Formas Comprovadas de Ganhar Dinheiro Dormindo",
+    title: "Renda Passiva Real 2026: 7 Formas Comprovadas",
     excerpt: "Renda passiva não é mito. Conheça 7 estratégias validadas para 2026 que geram dinheiro enquanto você dorme.",
     content: "",
     category: "invest",
@@ -257,7 +257,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "26",
     slug: "carteira-investimentos-iniciantes-2026",
-    title: "Carteira de Investimentos para Iniciantes 2026: Monte a Sua do Zero em 5 Passos",
+    title: "Carteira de Investimentos para Iniciantes 2026",
     excerpt: "Não sabe por onde começar a investir? Este guia passo a passo mostra como montar uma carteira do zero em 2026.",
     content: "",
     category: "invest",
@@ -271,7 +271,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "27",
     slug: "bitcoin-criptomoedas-2026-investir",
-    title: "Bitcoin e Criptomoedas em 2026: Ainda Dá Para Lucrar ou Já Passou da Hora?",
+    title: "Bitcoin e Criptomoedas 2026: Ainda Dá Para Lucrar?",
     excerpt: "O mercado cripto mudou muito. Entenda o cenário das criptomoedas em 2026, quais ainda têm potencial e como investir sem perder o que você tem.",
     content: "",
     category: "invest",
@@ -295,7 +295,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "28",
     slug: "irpf-2026-guia-declarar-pagar-menos",
-    title: "IRPF 2026: Guia Completo Para Declarar e Pagar Menos Imposto Legalmente",
+    title: "IRPF 2026: Guia Para Declarar e Pagar Menos Imposto",
     excerpt: "Tudo que você precisa saber para declarar o Imposto de Renda 2026 corretamente, evitar a malha fina e usar deduções legais para pagar menos IR.",
     content: "",
     category: "invest",
@@ -322,7 +322,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "29",
     slug: "ia-mercado-financeiro-2026-investimentos",
-    title: "Inteligência Artificial no Mercado Financeiro 2026: Como a IA Está Transformando Seus Investimentos",
+    title: "IA no Mercado Financeiro 2026: Guia para Investidores",
     excerpt: "A IA já está gerenciando bilhões em investimentos. Descubra como a inteligência artificial está mudando as finanças em 2026.",
     content: "",
     category: "invest",
@@ -337,7 +337,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "30",
     slug: "educacao-financeira-metodo-3-baldes",
-    title: "Educação Financeira Para Quem Sempre Gastou Tudo: O Método dos 3 Baldes",
+    title: "Método 3 Baldes: Educação Financeira Para Iniciantes",
     excerpt: "Se você chega no fim do mês sem dinheiro, este artigo é para você. O Método dos 3 Baldes é simples e funciona para qualquer salário.",
     content: "",
     category: "invest",
@@ -350,7 +350,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "31",
     slug: "fiis-2026-melhores-fundos-imobiliarios",
-    title: "Fundos Imobiliários (FIIs) em 2026: Os Melhores, Como Analisar e Erros Que Te Custam Dinheiro",
+    title: "FIIs 2026: Os Melhores Fundos Imobiliários para Invest.",
     excerpt: "Guia completo de FIIs para 2026. Saiba como escolher os melhores fundos imobiliários e construir uma carteira que paga dividendos mensais.",
     content: "",
     category: "invest",
@@ -384,7 +384,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "33",
     slug: "planejamento-financeiro-2026-metas",
-    title: "Planejamento Financeiro Para 2026: Como Definir Metas e Realmente Alcançá-las",
+    title: "Planejamento Financeiro 2026: Como Definir suas Metas",
     excerpt: "Aprenda o método científico para definir e alcançar objetivos financeiros em 2026. Chega de metas que não saem do papel.",
     content: "",
     category: "invest",
@@ -398,7 +398,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "34",
     slug: "calculadoras-financeiras-ativos",
-    title: "Calculadoras Financeiras: Simule Quanto Custa Comprar Ações, Cripto, Ouro, Dólar e Mais",
+    title: "Calculadoras Financeiras: Simule seus Investimentos",
     excerpt: "Use nossas calculadoras com cotações em tempo real para simular quanto custaria comprar diferentes ativos financeiros.",
     content: "",
     category: "invest",
@@ -412,8 +412,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "5",
     slug: "investir-em-tecnologia-2026",
-    title: "Investir em Tecnologia em 2026: Como montar uma carteira focada no Futuro",
-    excerpt: "Semicondutores, Data Centers, IA e Cibersegurança: os setores mais promissores para investir.",
+    title: "Investir em Tecnologia 2026: Como Montar sua Carteira",
+    excerpt: "Descubra como investir em empresas de tecnologia em 2026, quais setores têm mais potencial de crescimento e como montar uma carteira tech diversificada.",
     content: "",
     category: "invest",
     subtopic: "semicondutores",
@@ -426,8 +426,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "6",
     slug: "vikings-legado-ragnar-lothbrok",
-    title: "Vikings: O Legado de Ragnar Lothbrok e o Fascínio pela Mitologia Nórdica",
-    excerpt: "A saga épica que capturou a brutalidade e a espiritualidade da Era Viking como nenhuma outra série.",
+    title: "Vikings: O Legado de Ragnar Lothbrok e Cultura Nórdica",
+    excerpt: "Explore o fascinante legado de Ragnar Lothbrok, a cultura viking e como a série Vikings retratou com precisão os guerreiros nórdicos que moldaram a Europa.",
     content: "",
     category: "geek",
     subtopic: "vikings",
@@ -440,7 +440,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "7",
     slug: "hell-let-loose-simulador-guerra",
-    title: "Hell Let Loose: Por que este é o simulador de guerra mais realista (e difícil) da atualidade?",
+    title: "Hell Let Loose: O Melhor Simulador de Guerra da Atual.",
     excerpt: "Este FPS tático de Segunda Guerra Mundial coloca 100 jogadores em um mapa imenso onde um único tiro pode ser fatal.",
     content: "",
     category: "geek",
@@ -454,7 +454,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "8",
     slug: "avatar-2009-filme-revolucionou-tecnologia",
-    title: "Avatar 1 de (2009): O Filme que Revolucionou a Tecnologia no cinema",
+    title: "Avatar (2009): O Filme que Revolucionou a Tecnologia",
     excerpt: "Relembre como James Cameron esperou mais de uma década para que a tecnologia de captura de movimento fosse capaz de criar Pandora.",
     content: "",
     category: "geek",
@@ -467,7 +467,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "9",
     slug: "avatar-caminho-da-agua-fisica-fluidos",
-    title: "Avatar 2: O Caminho da Água – A Física dos Fluidos Levada ao Limite",
+    title: "Avatar 2: A Física dos Fluidos e a Revolução do CGI",
     excerpt: "Treze anos depois, a sequência focou na família de Jake Sully e na impressionante captura de performance subaquática.",
     content: "",
     category: "geek",
@@ -493,7 +493,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "11",
     slug: "avatar-frontiers-pandora-ubisoft-review",
-    title: "Avatar: Frontiers of Pandora – Vale a pena jogar o 'Far Cry' de Luxo da Ubisoft?",
+    title: "Avatar: Frontiers of Pandora – Vale a Pena Jogar?",
     excerpt: "Analise o jogo que coloca o jogador na pele de um Na'vi com uma das florestas mais bonitas já vistas em videogames.",
     content: "",
     category: "geek",
@@ -507,7 +507,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "12",
     slug: "ac-valhalla-jornada-epica-eivor",
-    title: "Assassin's Creed Valhalla: A Jornada Épica de Eivor no Coração da Inglaterra",
+    title: "AC Valhalla: A Jornada Épica de Eivor pelos Vikings",
     excerpt: "Se você é fã de Vikings e adora explorar mundos abertos massivos, Valhalla é o ápice da fórmula moderna da Ubisoft.",
     content: "",
     category: "geek",
@@ -520,8 +520,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "13",
     slug: "ac-shadows-japao-feudal",
-    title: "Assassin's Creed Shadows: O Japão Feudal que os Fãs Sempre Sonharam",
-    excerpt: "Após anos de espera, a Ubisoft finalmente nos leva ao Japão do século XVI com Naoe e Yasuke.",
+    title: "AC Shadows: O Japão Feudal que os Fãs Esperavam",
+    excerpt: "Assassin's Creed Shadows finalmente leva a franquia ao Japão Feudal. Conheça a história, mecânicas, personagens e por que esse é um dos jogos mais aguardados.",
     content: "",
     category: "geek",
     subtopic: "assassins-creed",
@@ -533,8 +533,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "14",
     slug: "ac-odyssey-odisseia-grecia",
-    title: "Assassin's Creed Odyssey: Uma Odisseia Épica pela Grécia de Sócrates e Leônidas",
-    excerpt: "Se existe um jogo que define a grandeza dos RPGs de mundo aberto modernos, esse jogo é Odyssey.",
+    title: "AC Odyssey: Uma Odisseia Épica pela Grécia Antiga",
+    excerpt: "Explore a Grécia Antiga em Assassin's Creed Odyssey — batalhas épicas, escolhas morais, o misterioso Culto de Kosmos e um dos maiores mapas da franquia.",
     content: "",
     category: "geek",
     subtopic: "assassins-creed",
@@ -546,8 +546,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "15",
     slug: "ac-black-flag-melhor-jogo-piratas",
-    title: "Assassin's Creed IV: Black Flag – Por que ele ainda é o melhor jogo de piratas já feito?",
-    excerpt: "Descubra por que Black Flag continua sendo a experiência definitiva de pirataria nos games.",
+    title: "AC Black Flag: Por que Ainda É o Melhor Jogo de Piratas",
+    excerpt: "Assassin's Creed Black Flag combina pirataria, exploração naval e a história fascinante de Edward Kenway num dos jogos mais amados da franquia da Ubisoft.",
     content: "",
     category: "geek",
     subtopic: "assassins-creed",
@@ -559,8 +559,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "16",
     slug: "ac-origins-renascimento-franquia-egito",
-    title: "Assassin's Creed Origins: O Renascimento da Franquia no Egito dos Faraós",
-    excerpt: "Conheça a origem da irmandade em uma das recriações mais impressionantes do Egito Antigo.",
+    title: "AC Origins: O Renascimento da Franquia no Egito Antigo",
+    excerpt: "Assassin's Creed Origins redefiniu a franquia ao trazer combate renovado, o Egito Antigo esplêndido e a origem da Irmandade dos Assassinos com Bayek de Siwa.",
     content: "",
     category: "geek",
     subtopic: "assassins-creed",
@@ -572,8 +572,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "17",
     slug: "ac-mirage-retorno-raizes-bagda",
-    title: "Assassin's Creed Mirage: O Retorno às Raízes e a Arte da Furtividade em Bagdá",
-    excerpt: "Uma carta de amor ao primeiro jogo da franquia, focando na furtividade e parkour.",
+    title: "AC Mirage: O Retorno às Raízes da Franquia em Bagdá",
+    excerpt: "Assassin's Creed Mirage leva Basim a Bagdá do século IX, apostando em parkour, stealth e sigilo para resgatar a essência clássica da série da Ubisoft.",
     content: "",
     category: "geek",
     subtopic: "assassins-creed",
@@ -585,8 +585,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "18",
     slug: "ac-3-remastered-revolucao-americana",
-    title: "Assassin's Creed III Remastered: A Revolução Americana em 4K e a Dualidade de Connor Kenway",
-    excerpt: "Vale a pena jogar a versão remasterizada? Analisamos as melhorias gráficas e a história de Connor.",
+    title: "AC III Remastered: A Revolução Americana Revisitada",
+    excerpt: "Assassin's Creed 3 Remastered revisita a Revolução Americana com gráficos atualizados. Conheça a história de Connor, os melhoramentos e o que mudou na versão remasterizada.",
     content: "",
     category: "geek",
     subtopic: "assassins-creed",
@@ -598,8 +598,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "19",
     slug: "ac-syndicate-revolucao-industrial-londres",
-    title: "Assassin's Creed Syndicate: A Revolução Industrial e o Charme Vitoriano de Londres",
-    excerpt: "Explore a Londres do século XIX com os irmãos Frye em uma das cidades mais vivas da franquia.",
+    title: "AC Syndicate: A Revolução Industrial no Coração de Londres",
+    excerpt: "Assassin's Creed Syndicate mergulha no Londres vitoriano da Revolução Industrial com os gêmeos Frye. Conheça mecânicas, história e por que ele merece mais reconhecimento.",
     content: "",
     category: "geek",
     subtopic: "assassins-creed",
@@ -611,7 +611,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "21",
     slug: "ac-unity-jogo-frente-tempo-paris",
-    title: "Assassin's Creed Unity: O Jogo que Estava à Frente do seu Tempo (e da Tecnologia)",
+    title: "AC Unity: O Jogo que Estava à Frente do Seu Tempo",
     excerpt: "Descubra por que Unity é considerado a obra-prima técnica da Ubisoft e como ele impressiona até hoje.",
     content: "",
     category: "geek",
@@ -638,7 +638,7 @@ export const blogPosts: BlogPost[] = [
     id: "23",
     slug: "ranking-melhor-assassins-creed-2026",
     title: "Ranking: Qual o Melhor Assassin's Creed para Jogar em 2026?",
-    excerpt: "Analisamos todos os jogos da franquia e criamos o ranking definitivo para 2026.",
+    excerpt: "Ranking completo de todos os jogos Assassin's Creed em 2026 — do melhor ao pior. Análise de gameplay, história, inovação e impacto de cada título na franquia da Ubisoft.",
     content: "",
     category: "geek",
     subtopic: "assassins-creed",
@@ -665,7 +665,7 @@ export const blogPosts: BlogPost[] = [
     id: "2",
     slug: "como-diferenciar-manhuas-manhwas",
     title: "Saiba como diferenciar Manhuas e Manhwas",
-    excerpt: "Aprenda a identificar de qual país vem suas histórias favoritas e descubra novas obras incríveis!",
+    excerpt: "Aprenda a diferenciar Manhuas (chineses) de Manhwas (coreanos) de vez. Guia completo com características visuais, temas, sentido de leitura e exemplos populares de cada tipo.",
     content: "",
     category: "otaku",
     subtopic: "manhwa",
@@ -678,7 +678,7 @@ export const blogPosts: BlogPost[] = [
     id: "3",
     slug: "10-melhores-manhwas-sistema-2026",
     title: "Os 10 melhores Manhwas de 'Sistema' para ler em 2026",
-    excerpt: "Depois do sucesso de Solo Leveling, confira as melhores obras do gênero que você precisa conhecer!",
+    excerpt: "Os 10 melhores manhwas com sistema de 2026 — aqueles que você não consegue parar de ler. Seleção com sinopse, número de capítulos e onde ler online gratuitamente.",
     content: "",
     category: "otaku",
     subtopic: "manhwa",
@@ -690,7 +690,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "45",
     slug: "animes-mais-aguardados-2026",
-    title: "Os 10 Animes Mais Aguardados de 2026: O Que Vai Dominar as Telas Este Ano",
+    title: "Os 10 Animes Mais Aguardados de 2026",
     excerpt: "Do retorno de clássicos às novas apostas dos grandes estúdios — guia completo para não perder nenhum lançamento.",
     content: "",
     category: "otaku",
@@ -703,7 +703,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "46",
     slug: "guia-cosplay-2026-iniciantes",
-    title: "Guia Definitivo para Começar no Cosplay em 2026: Do Zero à Convenção",
+    title: "Guia Definitivo para Começar no Cosplay em 2026",
     excerpt: "Materiais, técnicas, orçamentos e tudo o que você precisa saber para criar seu primeiro cosplay profissional.",
     content: "",
     category: "otaku",
@@ -716,7 +716,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "47",
     slug: "manga-vs-anime-adaptacao-2026",
-    title: "Mangá vs. Anime: Quando a Adaptação Supera o Original (e Quando Decepciona)",
+    title: "Mangá vs. Anime: Quando a Adaptação Supera o Original",
     excerpt: "Uma análise honesta das maiores adaptações da história e o que faz um anime ser fiel à sua obra de origem.",
     content: "",
     category: "otaku",
@@ -729,7 +729,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "48",
     slug: "cultura-otaku-brasil-2026",
-    title: "Cultura Otaku no Brasil 2026: Como Virou uma das Maiores Comunidades do Mundo",
+    title: "Cultura Otaku no Brasil 2026: Uma das Maiores do Mundo",
     excerpt: "Da década de 90 até hoje — a trajetória do otakuismo brasileiro e seu impacto cultural, econômico e social.",
     content: "",
     category: "otaku",
@@ -743,7 +743,7 @@ export const blogPosts: BlogPost[] = [
     id: "49",
     slug: "melhores-jogos-anime-2026",
     title: "Os Melhores Jogos de Anime de 2026: Do RPG ao Fighting Game",
-    excerpt: "Análise completa dos lançamentos mais esperados e como a indústria de games otaku evoluiu.",
+    excerpt: "Os melhores jogos baseados em animes para jogar em 2026 — Dragon Ball, Naruto, One Piece e muito mais. Ranking com plataformas, preços e qual vale mais a pena comprar.",
     content: "",
     category: "otaku",
     subtopic: "games",
@@ -755,8 +755,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "50",
     slug: "aprender-japones-anime-2026",
-    title: "Como Aprender Japonês Assistindo Anime: O Método que Funciona em 2026",
-    excerpt: "Técnicas comprovadas, aplicativos e recursos para transformar seu hobby em fluência real.",
+    title: "Como Aprender Japonês Assistindo Anime em 2026",
+    excerpt: "O método definitivo para aprender japonês assistindo anime em 2026. Dicas práticas, aplicativos, técnicas de shadowing e como evoluir do zero ao conversacional.",
     content: "",
     category: "otaku",
     subtopic: "idiomas",
@@ -768,7 +768,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "51",
     slug: "isekai-2026-genero-domina",
-    title: "Isekai em 2026: Por Que o Gênero Mais Criticado do Anime Continua Dominando",
+    title: "Isekai 2026: Por Que o Gênero Mais Criticado Domina",
     excerpt: "Uma análise profunda do fenômeno isekai, seus clichês, suas obras-primas e por que você provavelmente já está assistindo um.",
     content: "",
     category: "otaku",
@@ -781,7 +781,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "52",
     slug: "merchandising-otaku-colecionar-2026",
-    title: "Merchandising Otaku: Como Colecionar com Inteligência e Sem Quebrar o Orçamento",
+    title: "Merchandising Otaku: Como Colecionar com Inteligência",
     excerpt: "Guia completo de action figures, mangás, cards e itens exclusivos — onde comprar, o que valoriza e como organizar.",
     content: "",
     category: "otaku",
@@ -794,8 +794,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "53",
     slug: "melhores-mangas-ler-2026",
-    title: "Os Melhores Mangás Para Ler em 2026: Guia por Gênero e Nível de Experiência",
-    excerpt: "De iniciantes a veteranos — curadoria completa dos títulos essenciais e lançamentos do ano.",
+    title: "Os Melhores Mangás Para Ler em 2026: Guia por Gênero",
+    excerpt: "Seleção dos melhores mangás para ler em 2026 organizados por gênero — ação, romance, suspense, slice of life. Recomendações para iniciantes e veteranos do mundo otaku.",
     content: "",
     category: "otaku",
     subtopic: "manga",
@@ -807,8 +807,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "54",
     slug: "saude-mental-cultura-otaku-2026",
-    title: "Saúde Mental e Cultura Otaku: Quando o Anime Ajuda e Quando Ele Isola",
-    excerpt: "Uma análise honesta e cuidadosa sobre a relação entre o consumo de anime e o bem-estar emocional.",
+    title: "Saúde Mental e Cultura Otaku: Quando Anime Ajuda",
+    excerpt: "Como a cultura otaku e os animes podem impactar positivamente a saúde mental — empatia, escape saudável, comunidade e quando buscar apoio profissional além das telas.",
     content: "",
     category: "otaku",
     subtopic: "saude-mental",
@@ -821,7 +821,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "55",
     slug: "ia-criatividade-arte-musica-2026",
-    title: "IA e Criatividade em 2026: Como a Inteligência Artificial Está Revolucionando Arte, Música e Vídeo",
+    title: "IA e Criatividade 2026: Arte e Música Feitas por IA",
     excerpt: "Da geração de imagens com Midjourney à criação musical com Suno AI. Descubra como a IA está transformando as artes criativas.",
     content: "",
     category: "ia",
@@ -834,7 +834,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "56",
     slug: "ia-privacidade-dados-2026",
-    title: "IA e Privacidade de Dados em 2026: Seus Dados Estão Seguros na Era da Inteligência Artificial?",
+    title: "IA e Privacidade de Dados 2026: Seus Dados Estão Seguros?",
     excerpt: "Seus dados pessoais alimentam modelos de IA todos os dias. Entenda os riscos reais e como se proteger em 2026.",
     content: "",
     category: "ia",
@@ -848,7 +848,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "57",
     slug: "etfs-2026-guia-completo-investir",
-    title: "ETFs em 2026: O Guia Completo Para Investir com Diversificação e Baixo Custo",
+    title: "ETFs 2026: Guia Completo Para Investir com Diversificação",
     excerpt: "Tudo sobre ETFs no Brasil: os melhores fundos, estratégias de investimento e erros que você deve evitar.",
     content: "",
     category: "invest",
@@ -861,7 +861,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "58",
     slug: "economia-domestica-2026-cortar-gastos",
-    title: "Economia Doméstica em 2026: 30 Dicas Práticas Para Cortar Gastos Sem Perder Qualidade de Vida",
+    title: "Economia Doméstica 2026: 30 Dicas Para Cortar Gastos",
     excerpt: "Energia, supermercado, assinaturas e transporte: corte até R$ 1.500/mês do seu orçamento com estas estratégias.",
     content: "",
     category: "invest",
