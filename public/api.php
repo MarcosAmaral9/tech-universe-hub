@@ -297,7 +297,7 @@ if ($method === 'GET' && $action === 'test_widgets') {
 // Os valores são: 1 BRL = X da moeda alvo → invertemos para obter preço em BRL
 // Fallback: exchangerate-api.com (sem token, suporta USD/EUR/ARS/PYG, sem metais)
 if ($method === 'GET' && $action === 'rates') {
-    $TTL_RATES  = 10; // 10 min — fawazahmed atualiza 1x/dia, frankfurter 1x/dia (ECB)
+    $TTL_RATES  = 3; // 3 min — fawazahmed sem limite, frankfurter sem limite
     $CACHE_FILE = cacheDir() . '/viciocode_rates_v2.json';
 
     // Banco primeiro (cache compartilhado — 1 fetch serve todos os usuários)
@@ -413,7 +413,7 @@ if ($method === 'GET' && $action === 'rates') {
 
 // ─── GET: proxy criptomoedas — CoinGecko ─────────────────────────────────────
 if ($method === 'GET' && $action === 'crypto') {
-    $TTL_CRYPTO = 10; // 10 min — CoinGecko free: ~10.000 req/mês, com 10min = 144/dia = 4.320/mês (<50%)
+    $TTL_CRYPTO = 5; // 5 min → 8.640 req/mês = 86% do limite CoinGecko (10.000)
     $CACHE_FILE = cacheDir() . '/viciocode_crypto.json';
 
     // Banco primeiro (cache compartilhado)
@@ -448,7 +448,7 @@ if ($method === 'GET' && $action === 'crypto') {
 // TTL: 15 min (B3 atualiza a cada 15min no plano free com token)
 // Limite free: 15.000 req/mês → com TTL 15min = máx 48 req/dia = ~1.440/mês — usa <10%
 if ($method === 'GET' && $action === 'b3') {
-    $TTL_MINUTES = 15; // Respeita frequência de atualização do plano free (15min)
+    $TTL_MINUTES = 4; // 4 min → 10.800 req/mês = 72% do limite brapi.dev (15.000)
 
     // 1. Tenta banco primeiro (cache compartilhado entre todos os usuários)
     if ($db = getPdo()) {

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 interface ExchangeData {
   USDBRL?: { bid: string; pctChange: string; high: string; low: string };
@@ -7,129 +7,98 @@ interface ExchangeData {
   PYGBRL?: { bid: string; pctChange: string; high: string; low: string };
   XAUBRL?: { bid: string; pctChange: string; high: string; low: string };
   XAGBRL?: { bid: string; pctChange: string; high: string; low: string };
-  sparklines?: {
-    USDBRL?: number[];
-    EURBRL?: number[];
-    ARSBRL?: number[];
-    PYGBRL?: number[];
-  };
-  _meta?: {
-    fallback?: boolean;
-    source?: string;
-    reason?: string;
-    ttlMs?: number;
-    updatedAt?: string;
-  };
+  _meta?: { fallback?: boolean; source?: string; from_cache?: boolean; updatedAt?: string };
 }
 
-const CACHE_KEY = "exchange_rates_cache_v3";
-// awesomeapi via proxy PHP: sem limite documentado.
-// Cache servidor 5min = 8.640 req/mês no servidor, independente de usuários.
-const CACHE_DURATION_SUCCESS = 1000 * 60 * 5;  // 5 min
-const CACHE_DURATION_FALLBACK = 1000 * 60 * 30; // 30 min no fallback
+// Cache centralizado no servidor MySQL — sem localStorage
+// O servidor faz 1 req/3min e todos os usuários recebem os mesmos dados
+const REFRESH_MS = 1000 * 60 * 3; // 3 min (igual ao TTL do servidor)
 
 const LOCAL_FALLBACK: ExchangeData = {
-  USDBRL: { bid: "5.27",     pctChange: "0.00", high: "5.30",     low: "5.24" },
-  EURBRL: { bid: "6.05",     pctChange: "0.00", high: "6.08",     low: "6.02" },
-  ARSBRL: { bid: "0.0038",   pctChange: "0.00", high: "0.0039",   low: "0.0037" },
+  USDBRL: { bid: "5.27",     pctChange: "0.00", high: "5.30",     low: "5.24"    },
+  EURBRL: { bid: "6.05",     pctChange: "0.00", high: "6.08",     low: "6.02"    },
+  ARSBRL: { bid: "0.0038",   pctChange: "0.00", high: "0.0039",   low: "0.0037"  },
   PYGBRL: { bid: "0.00072",  pctChange: "0.00", high: "0.00073",  low: "0.00071" },
-  XAUBRL: { bid: "26655.00", pctChange: "0.00", high: "26900.00", low: "26400.00" },
-  XAGBRL: { bid: "422.39",   pctChange: "0.00", high: "426.00",   low: "418.00" },
-  _meta: { fallback: true, source: "local-static", ttlMs: CACHE_DURATION_FALLBACK },
+  XAUBRL: { bid: "26655.00", pctChange: "0.00", high: "26900.00", low: "26400.00"},
+  XAGBRL: { bid: "422.39",   pctChange: "0.00", high: "426.00",   low: "418.00"  },
+  _meta: { fallback: true, source: "local-static" },
 };
 
 let sharedPromise: Promise<ExchangeData | null> | null = null;
 
 export function useExchangeRates() {
-  const [data, setData] = useState<ExchangeData | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [data, setData]             = useState<ExchangeData | null>(null);
+  const [loading, setLoading]       = useState(true);
   const [isFallback, setIsFallback] = useState(false);
   const [lastUpdated, setLastUpdated] = useState("");
-  const [cacheExpiresAt, setCacheExpiresAt] = useState<number>(0);
-  const [source, setSource] = useState<string>("");
+  const [updatedAt, setUpdatedAt]   = useState("");
+  const [source, setSource]         = useState("");
+  const fetchingRef                 = useRef(false);
 
-  const fetchRates = useCallback(async () => {
-    // Check localStorage cache first
-    try {
-      const cached = localStorage.getItem(CACHE_KEY);
-      if (cached) {
-        const parsed = JSON.parse(cached) as {
-          data: ExchangeData;
-          timestamp: number;
-          fallback: boolean;
-          expiresAt?: number;
-        };
-        // Nunca serve fallback cacheado — sempre tenta buscar dados reais
-        const isValid = !parsed.fallback && (parsed.expiresAt
-          ? Date.now() < parsed.expiresAt
-          : Date.now() - parsed.timestamp < CACHE_DURATION_SUCCESS);
-        if (isValid && parsed.data) {
-          setData(parsed.data);
-          setIsFallback(!!parsed.fallback);
-          setLastUpdated(new Date(parsed.timestamp).toLocaleString("pt-BR"));
-          setCacheExpiresAt(parsed.expiresAt || parsed.timestamp + CACHE_DURATION_SUCCESS);
-          setSource(parsed.data._meta?.source || (parsed.fallback ? "referência" : "cache"));
-          setLoading(false);
-          return;
-        }
-      }
-    } catch {
-      // ignore cache errors
-    }
-
-    setLoading(true);
+  const fetchRates = useCallback(async (silent = false) => {
+    if (fetchingRef.current) return;
+    fetchingRef.current = true;
 
     if (!sharedPromise) {
       sharedPromise = (async (): Promise<ExchangeData | null> => {
         try {
-          // Use PHP proxy — fetches câmbio + metais server-side (sem CORS, com cache de 30min)
           const res = await fetch("/api.php?action=rates", {
+            headers: { "Cache-Control": "no-store" },
             signal: AbortSignal.timeout(10000),
           });
           if (!res.ok) throw new Error("HTTP " + res.status);
           const result = await res.json() as ExchangeData;
-          if (result.error) throw new Error(String((result as any).error));
+          if ((result as any).error) throw new Error(String((result as any).error));
           return result;
-        } catch (err) {
-          console.warn("Proxy de câmbio indisponível:", err);
+        } catch {
           return null;
         } finally {
-          setTimeout(() => { sharedPromise = null; }, 100);
+          setTimeout(() => { sharedPromise = null; }, 200);
         }
       })();
     }
 
     const result = await sharedPromise;
-    const now = Date.now();
+    fetchingRef.current = false;
 
     if (result && (result.USDBRL || result.EURBRL)) {
-      const expiresAt = now + CACHE_DURATION_SUCCESS;
       setData(result);
       setIsFallback(false);
-      setLastUpdated(new Date(now).toLocaleString("pt-BR"));
-      setCacheExpiresAt(expiresAt);
-      setSource(result._meta?.source || "live");
-      localStorage.setItem(
-        CACHE_KEY,
-        JSON.stringify({ data: result, timestamp: now, fallback: false, expiresAt })
-      );
-    } else {
+      const serverTime = result._meta?.updatedAt
+        ? new Date(result._meta.updatedAt).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })
+        : new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+      setLastUpdated(serverTime);
+      setUpdatedAt(result._meta?.updatedAt || new Date().toISOString());
+      setSource(result._meta?.from_cache ? "cache" : (result._meta?.source || "live"));
+    } else if (!silent || !data) {
       setData(LOCAL_FALLBACK);
       setIsFallback(true);
-      setLastUpdated(new Date(now).toLocaleString("pt-BR"));
-      const expiresAt = now + CACHE_DURATION_FALLBACK;
-      setCacheExpiresAt(expiresAt);
       setSource("local-static");
-      // Não cacheia fallback no localStorage — próxima visita sempre tentará a API
-      // localStorage.setItem(CACHE_KEY, ...);
     }
 
     setLoading(false);
-  }, []);
+  }, [data]);
 
+  // Carga inicial
   useEffect(() => {
-    fetchRates();
+    fetchRates(false);
+  }, []); // eslint-disable-line
+
+  // Re-busca a cada 3 min + ao voltar à aba
+  useEffect(() => {
+    const iv = setInterval(() => {
+      if (!document.hidden) { fetchingRef.current = false; fetchRates(true); }
+    }, REFRESH_MS);
+    const onVisible = () => {
+      if (!document.hidden) { fetchingRef.current = false; fetchRates(true); }
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => { clearInterval(iv); document.removeEventListener("visibilitychange", onVisible); };
   }, [fetchRates]);
 
-  return { data, loading, isFallback, lastUpdated, cacheExpiresAt, source };
+  const expiresAt = updatedAt
+    ? new Date(updatedAt).getTime() + REFRESH_MS
+    : Date.now() + REFRESH_MS;
+
+  return { data, loading, isFallback, lastUpdated, cacheExpiresAt: expiresAt, source };
 }

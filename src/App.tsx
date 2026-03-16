@@ -18,20 +18,16 @@ if (savedFontSize) {
   document.documentElement.classList.add(`font-${savedFontSize}`);
 }
 
-// ── Limpeza de caches obsoletos ──────────────────────────────────────────────
-// Quando a versão muda, remove automaticamente dados antigos do localStorage
-// evitando que widgets mostrem valores incorretos de versões anteriores
-const CACHE_VERSION = "v3";
-const CACHE_VERSION_KEY = "viciocode_cache_version";
-if (localStorage.getItem(CACHE_VERSION_KEY) !== CACHE_VERSION) {
-  const staleKeys = [
-    "b3_stock_cache", "b3_stock_cache_v2",
-    "crypto_cache", "crypto_cache_v2",
-    "exchange_rates_cache", "exchange_rates_cache_v2",
-  ];
-  staleKeys.forEach((k) => localStorage.removeItem(k));
-  localStorage.setItem(CACHE_VERSION_KEY, CACHE_VERSION);
-}
+// ── Limpeza de caches de widget obsoletos (migração para cache de servidor) ──
+// Remove todas as versões antigas de cache de widget do localStorage
+// O cache agora é centralizado no MySQL do servidor
+const _oldWidgetKeys = [
+  "b3_stock_cache", "b3_stock_cache_v2", "b3_stock_cache_v3",
+  "crypto_cache", "crypto_cache_v2", "crypto_cache_v3",
+  "exchange_rates_cache", "exchange_rates_cache_v2", "exchange_rates_cache_v3",
+  "viciocode_cache_version",
+];
+_oldWidgetKeys.forEach((k) => localStorage.removeItem(k));
 // ────────────────────────────────────────────────────────────────────────────
 
 // Apply saved accent color on app load

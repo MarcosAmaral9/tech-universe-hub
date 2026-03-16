@@ -13,8 +13,7 @@ interface CryptoData {
   image: string;
 }
 
-const CACHE_KEY = "crypto_cache_v3";
-const CACHE_DURATION = 1000 * 60 * 5; // 5 min — proxy PHP usa 86% do limite gratuito do CoinGecko (8.640/10.000 req/mês)
+const REFRESH_MS = 1000 * 60 * 5; // 5 min (igual ao TTL do servidor) — proxy PHP usa 86% do limite gratuito do CoinGecko (8.640/10.000 req/mês)
 const UPDATE_INTERVAL_LABEL = "5 minutos";
 
 const FALLBACK: CryptoData[] = [
@@ -54,28 +53,11 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
   const [cacheExpiresAt, setCacheExpiresAt] = useState<number>(0);
   const [source, setSource] = useState<string>("");
 
-  const fetchCryptos = useCallback(async () => {
+  const fetchCryptos = useCallback(async (silent = false) => {
     try {
-      const cached = localStorage.getItem(CACHE_KEY);
-      if (cached) {
-        const { data, timestamp, fallback } = JSON.parse(cached);
-        // Nunca serve fallback cacheado
-        if (!fallback && Date.now() - timestamp < CACHE_DURATION) {
-          setCryptos(data);
-          setIsFallback(!!fallback);
-          setLastUpdated(new Date(timestamp).toLocaleString("pt-BR"));
-          setCacheExpiresAt(timestamp + CACHE_DURATION);
-          setSource(fallback ? "referência" : "cache");
-          setLoading(false);
-          return;
-        }
-      }
-    } catch { /* ignore */ }
-
-    setLoading(true);
-
-    try {
+      setLoading(true);
       const res = await fetch("/api.php?action=crypto", {
+        headers: { "Cache-Control": "no-store" },
         signal: AbortSignal.timeout(10000),
       });
       if (!res.ok) throw new Error(`Status ${res.status}`);
@@ -86,11 +68,15 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
 
       setCryptos(data);
       setIsFallback(false);
-      const now = Date.now();
-      setLastUpdated(new Date(now).toLocaleString("pt-BR"));
-      setCacheExpiresAt(now + CACHE_DURATION);
-      setSource("live");
-      localStorage.setItem(CACHE_KEY, JSON.stringify({ data, timestamp: now, fallback: false }));
+      const serverTime = json._meta?.updatedAt
+        ? new Date(json._meta.updatedAt).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })
+        : new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+      setLastUpdated(serverTime);
+      const expiresAt = json._meta?.updatedAt
+        ? new Date(json._meta.updatedAt).getTime() + REFRESH_MS
+        : Date.now() + REFRESH_MS;
+      setCacheExpiresAt(expiresAt);
+      setSource(json._meta?.from_cache ? "cache" : "live");
       setLoading(false);
       return;
     } catch (err) {
@@ -108,7 +94,15 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
   }, []);
 
   useEffect(() => {
-    fetchCryptos();
+    fetchCryptos(false);
+
+    const REFRESH_MS_INNER = REFRESH_MS;
+    const iv = setInterval(() => {
+      if (!document.hidden) fetchCryptos(true);
+    }, REFRESH_MS_INNER);
+    const onVisible = () => { if (!document.hidden) fetchCryptos(true); };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => { clearInterval(iv); document.removeEventListener("visibilitychange", onVisible); };
   }, [fetchCryptos]);
 
   const displayCryptos = compact ? cryptos.slice(0, 5) : cryptos;
