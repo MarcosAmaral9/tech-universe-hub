@@ -586,7 +586,7 @@ if ($method === 'POST' && $action === 'generate_social') {
     $excerpt  = trim($body['excerpt']  ?? '');
     $category = trim($body['category'] ?? '');
     $platform = trim($body['platform'] ?? 'instagram');
-    $suggestMusic = !empty($body['suggestMusic']);
+    $suggestMusic = true; // sempre ativo
 
     if (!$title || !$excerpt) {
         http_response_code(400);
@@ -617,7 +617,7 @@ if ($method === 'POST' && $action === 'generate_social') {
     $payload = json_encode([
         'contents'         => [['parts' => [['text' => $prompt]]]],
         'generationConfig' => [
-            'maxOutputTokens'  => 1500,
+            'maxOutputTokens'  => 2000,
             'temperature'      => 0.8,
             'responseMimeType' => 'application/json',
         ],
