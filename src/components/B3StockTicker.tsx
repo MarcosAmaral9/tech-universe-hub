@@ -72,20 +72,21 @@ const B3StockTicker = () => {
       }
     } catch { /* continua para fallback */ }
 
-    // Só usa fallback se ainda não tiver dados
-    if (stocks.length === 0) {
+    // Só usa fallback na carga inicial sem dados
+    if (!silent && stocks.length === 0) {
       setStocks(FALLBACK_STOCKS);
       setIsFallback(true);
       setLastUpdated("—");
     }
+    if (!silent) setLoading(false);
   }, [stocks.length]);
 
-  // Carga inicial
+  // Carga inicial — mantém skeleton até ter dados ou confirmação de erro
   useEffect(() => {
     fetchStocks(false).finally(() => {
       fetchingRef.current = false;
-      setLoading(false);
       setRefreshing(false);
+      // setLoading(false) já é chamado dentro de fetchStocks
     });
   }, []); // eslint-disable-line
 

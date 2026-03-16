@@ -463,8 +463,12 @@ if ($method === 'GET' && $action === 'b3') {
     // 2. Cache de arquivo como fallback se DB não disponível
     $CACHE_FILE = cacheDir() . '/viciocode_b3_v2.json';
     if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $TTL_MINUTES * 60) {
-        $cached = file_get_contents($CACHE_FILE);
-        if ($cached) { echo $cached; exit; }
+        $fileData = file_get_contents($CACHE_FILE);
+        if ($fileData) {
+            $decoded = json_decode($fileData, true);
+            // Só serve se tiver dados reais (não serve erros cacheados)
+            if (!empty($decoded['results'])) { echo $fileData; exit; }
+        }
     }
 
     // 3. Busca dados frescos na brapi.dev
@@ -518,16 +522,21 @@ if ($method === 'GET' && $action === 'b3') {
         exit;
     }
 
-    // Serve cache de arquivo antigo se tiver (melhor do que nada)
+    // Serve cache de arquivo antigo se tiver dados válidos (melhor do que fallback)
     if (file_exists($CACHE_FILE)) {
         $old = file_get_contents($CACHE_FILE);
-        if ($old) { echo $old; exit; }
+        if ($old) {
+            $oldDecoded = json_decode($old, true);
+            if (!empty($oldDecoded['results'])) { echo $old; exit; }
+        }
     }
 
     http_response_code(503);
     echo json_encode([
-        'error'    => 'Dados B3 indisponíveis',
-        'hasToken' => !empty($BRAPI_TOKEN),
+        'error'       => 'Dados B3 indisponíveis',
+        'hasToken'    => !empty($BRAPI_TOKEN),
+        'raw_preview' => $raw ? substr($raw, 0, 300) : null,
+        'curl_ok'     => function_exists('curl_init'),
     ]);
     exit;
 }
