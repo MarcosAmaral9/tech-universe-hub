@@ -60,6 +60,8 @@ import iaCriatividadeImg from "@/assets/ia-criatividade-2026.webp";
 import iaPrivacidadeImg from "@/assets/ia-privacidade-dados-2026.webp";
 import etfs2026Img from "@/assets/etfs-2026.webp";
 import economiaDomesticaImg from "@/assets/economia-domestica-2026.webp";
+import crimsonDesertGuiaImg from "@/assets/crimson-desert-guia.webp";
+import crimsonDesertCombateImg from "@/assets/crimson-desert-combate.webp";
 
 export const blogPosts: BlogPost[] = [
   // IA Posts
