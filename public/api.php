@@ -620,7 +620,8 @@ if ($method === 'POST' && $action === 'generate_social') {
     ]);
 
     // gemini-2.0-flash — modelo estável e gratuito (1.500 req/dia)
-    $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={$GEMINI_KEY}";
+    // gemini-1.5-flash: 15 req/min, 1.500 req/dia — limite maior que 2.0-flash no free tier
+    $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={$GEMINI_KEY}";
     $raw = null;
 
     if (function_exists('curl_init')) {
