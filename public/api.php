@@ -141,11 +141,73 @@ if ($method === 'GET' && $action === 'ping') {
         'env_file_path'   => __DIR__ . '/.env.php',
         'google_key'      => !empty($GOOGLE_CLIENT_ID) ? 'configurado' : 'NÃO configurado',
         'gemini'          => !empty($GEMINI_KEY) ? 'configurado' : 'NÃO configurado',
+        'brapi_token'     => !empty($BRAPI_TOKEN) ? 'configurado' : 'NÃO configurado',
         'database'        => $dbStatus,
         'tables'          => $tables,
     ]);
     exit;
 }
+
+// ─── GET: testa conectividade de cada widget em tempo real ───────────────────
+if ($method === 'GET' && $action === 'test_widgets') {
+    $results = [];
+
+    // Test rates (awesomeapi)
+    $raw = httpGet('https://economia.awesomeapi.com.br/json/last/USD-BRL,XAU-BRL,XAG-BRL', 8);
+    if ($raw) {
+        $data = json_decode($raw, true);
+        $results['rates'] = [
+            'status'    => 'ok',
+            'USDBRL_bid'=> $data['USDBRL']['bid'] ?? null,
+            'XAUBRL_bid'=> $data['XAUBRL']['bid'] ?? 'NOT RETURNED',
+            'XAGBRL_bid'=> $data['XAGBRL']['bid'] ?? 'NOT RETURNED',
+            'keys'      => array_keys($data ?? []),
+        ];
+    } else {
+        $results['rates'] = ['status' => 'FALHOU - sem resposta', 'curl' => function_exists('curl_init'), 'allow_url_fopen' => (bool)ini_get('allow_url_fopen')];
+    }
+
+    // Test crypto (CoinGecko)
+    $raw = httpGet('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=brl', 8);
+    if ($raw) {
+        $data = json_decode($raw, true);
+        $results['crypto'] = [
+            'status'   => isset($data['bitcoin']) ? 'ok' : 'resposta inesperada',
+            'btc_brl'  => $data['bitcoin']['brl'] ?? null,
+            'raw'      => substr($raw, 0, 100),
+        ];
+    } else {
+        $results['crypto'] = ['status' => 'FALHOU'];
+    }
+
+    // Test B3 (brapi.dev)
+    $token = $BRAPI_TOKEN ?? '';
+    $headers = $token ? ["Authorization: Bearer {$token}", 'Accept: application/json'] : ['Accept: application/json'];
+    $raw = null;
+    if (function_exists('curl_init')) {
+        $ch = curl_init('https://brapi.dev/api/quote/PETR4?fundamental=false');
+        curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 8, CURLOPT_HTTPHEADER => $headers, CURLOPT_SSL_VERIFYPEER => true]);
+        $raw = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+    }
+    if ($raw) {
+        $data = json_decode($raw, true);
+        $results['b3'] = [
+            'status'     => !empty($data['results']) ? 'ok' : 'erro',
+            'http_code'  => $httpCode ?? null,
+            'has_token'  => !empty($token),
+            'PETR4_price'=> $data['results'][0]['regularMarketPrice'] ?? null,
+            'error_msg'  => $data['error'] ?? $data['message'] ?? null,
+        ];
+    } else {
+        $results['b3'] = ['status' => 'FALHOU', 'has_token' => !empty($token)];
+    }
+
+    echo json_encode($results, JSON_PRETTY_PRINT);
+    exit;
+}
+
 
 // ─── GET: proxy de câmbio + metais ───────────────────────────────────────────
 // Fonte única: awesomeapi.com.br suporta XAU-BRL e XAG-BRL além das moedas
