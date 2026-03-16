@@ -92,10 +92,11 @@ const AuthPage = () => {
     if (googleError) {
       const msgs: Record<string, string> = {
         cancelled:       "Login com Google cancelado.",
-        token_failed:    "Falha ao obter token do Google. Verifique as credenciais no .env.php.",
+        token_failed:    "Falha ao obter token do Google.",
         userinfo_failed: "Não foi possível obter dados do Google.",
         db_error:        "Erro ao salvar conta. Verifique as credenciais do banco de dados no api.php.",
         not_configured:  "Login com Google não configurado. Adicione GOOGLE_CLIENT_ID e GOOGLE_SECRET no .env.php.",
+        exchange_failed: searchParams.get("msg") ? decodeURIComponent(searchParams.get("msg")!) : "Falha na autenticação com Google.",
       };
       toast({ title: msgs[googleError] || "Erro no login com Google.", variant: "destructive" });
     }

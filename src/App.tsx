@@ -51,6 +51,7 @@ const CotacoesPage = lazy(() => import("./pages/CotacoesPage"));
 const AuthPage = lazy(() => import("./pages/AuthPage"));
 const PublicProfilePage = lazy(() => import("./pages/PublicProfilePage"));
 const ResetPasswordPage = lazy(() => import("./pages/ResetPasswordPage"));
+const GoogleAuthCallback = lazy(() => import("./pages/GoogleAuthCallback"));
 
 // Lazy-loaded posts
 const DiferencaMangasManhuas = lazy(() => import("./pages/posts/DiferencaMangasManhuas"));
@@ -150,6 +151,7 @@ const App = () => (
                 <Route path="/financas" element={<InvestimentosPage />} />
                 <Route path="/cotacoes" element={<CotacoesPage />} />
                 <Route path="/entrar" element={<AuthPage />} />
+                <Route path="/auth/google" element={<GoogleAuthCallback />} />
                 <Route path="/perfil/:id" element={<PublicProfilePage />} />
                 <Route path="/redefinir-senha" element={<ResetPasswordPage />} />
                 <Route path="/geek" element={<GeekPage />} />

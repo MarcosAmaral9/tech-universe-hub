@@ -466,6 +466,113 @@ if ($method === 'POST' && $action === 'upload_avatar') {
 }
 // ─── POST: proxy Anthropic API (Painel Social Media) ─────────────────────────
 // Chamado apenas pelo admin — não expõe a chave ao browser
+// ─── POST: troca code Google por sessão (chamado pelo React após redirect) ──────
+if ($method === 'POST' && $action === 'google_exchange') {
+    if (!$GOOGLE_CLIENT_ID || !$GOOGLE_SECRET) {
+        http_response_code(503);
+        echo json_encode(['error' => 'Google OAuth não configurado.']);
+        exit;
+    }
+
+    $body         = json_decode(file_get_contents('php://input'), true);
+    $code         = trim($body['code'] ?? '');
+    $redirect_uri = trim($body['redirect_uri'] ?? SITE_URL . '/auth/google');
+
+    if (!$code) {
+        http_response_code(400);
+        echo json_encode(['error' => 'code obrigatório']);
+        exit;
+    }
+
+    // 1. Trocar code por access_token
+    $tokenPostData = http_build_query([
+        'code'          => $code,
+        'client_id'     => $GOOGLE_CLIENT_ID,
+        'client_secret' => $GOOGLE_SECRET,
+        'redirect_uri'  => $redirect_uri,
+        'grant_type'    => 'authorization_code',
+    ]);
+
+    $tokenRaw = null;
+    if (function_exists('curl_init')) {
+        $ch = curl_init('https://oauth2.googleapis.com/token');
+        curl_setopt_array($ch, [
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => $tokenPostData,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT        => 15,
+            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_HTTPHEADER     => ['Content-Type: application/x-www-form-urlencoded'],
+        ]);
+        $tokenRaw = curl_exec($ch);
+        curl_close($ch);
+    }
+
+    $tokenData = $tokenRaw ? json_decode($tokenRaw, true) : null;
+    if (!$tokenData || empty($tokenData['access_token'])) {
+        http_response_code(502);
+        echo json_encode(['error' => 'Falha ao obter token do Google. Tente novamente.']);
+        exit;
+    }
+
+    // 2. Buscar informações do usuário
+    $userInfoRaw = null;
+    if (function_exists('curl_init')) {
+        $ch = curl_init('https://www.googleapis.com/oauth2/v3/userinfo');
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT        => 10,
+            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_HTTPHEADER     => ['Authorization: Bearer ' . $tokenData['access_token']],
+        ]);
+        $userInfoRaw = curl_exec($ch);
+        curl_close($ch);
+    }
+
+    $googleUser = $userInfoRaw ? json_decode($userInfoRaw, true) : null;
+    if (!$googleUser || empty($googleUser['email'])) {
+        http_response_code(502);
+        echo json_encode(['error' => 'Não foi possível obter dados do Google.']);
+        exit;
+    }
+
+    $googleId  = $googleUser['sub'];
+    $email     = $googleUser['email'];
+    $name      = $googleUser['name'] ?? explode('@', $email)[0];
+    $avatarUrl = $googleUser['picture'] ?? null;
+
+    // 3. Criar ou encontrar usuário no banco
+    $stmt = $pdo->prepare('SELECT id, email FROM users WHERE google_id = :gid OR email = :email LIMIT 1');
+    $stmt->execute([':gid' => $googleId, ':email' => $email]);
+    $existing = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($existing) {
+        $userId = $existing['id'];
+        $pdo->prepare('UPDATE users SET google_id = :gid WHERE id = :id AND google_id IS NULL')
+            ->execute([':gid' => $googleId, ':id' => $userId]);
+    } else {
+        $userId   = bin2hex(random_bytes(16));
+        $nickname = strtolower(preg_replace('/[^a-zA-Z0-9]/', '', explode(' ', $name)[0]));
+        $nickname = $nickname ?: 'usuario' . substr($userId, 0, 6);
+        $pdo->prepare('INSERT INTO users (id, email, password_hash, google_id) VALUES (:id, :email, :hash, :gid)')
+            ->execute([':id' => $userId, ':email' => $email, ':hash' => '', ':gid' => $googleId]);
+        $pdo->prepare('INSERT INTO profiles (id, name, nickname, avatar_url) VALUES (:id, :name, :nick, :avatar)')
+            ->execute([':id' => $userId, ':name' => $name, ':nick' => $nickname, ':avatar' => $avatarUrl]);
+    }
+
+    $profileStmt = $pdo->prepare('SELECT * FROM profiles WHERE id = :id');
+    $profileStmt->execute([':id' => $userId]);
+    $profile = $profileStmt->fetch(PDO::FETCH_ASSOC);
+    $profile['notifications_site'] = (bool)($profile['notifications_site'] ?? false);
+    $profile['notifications_app']  = (bool)($profile['notifications_app']  ?? false);
+
+    echo json_encode([
+        'user'    => ['id' => $userId, 'email' => $email],
+        'profile' => $profile,
+    ]);
+    exit;
+}
+
 if ($method === 'POST' && $action === 'generate_social') {
 
     // Gemini API (Google AI Studio) — gratuito, sem cartão de crédito
@@ -569,7 +676,7 @@ if ($method === 'GET' && $action === 'google_auth_url') {
         echo json_encode(['error' => 'Google OAuth não configurado. Adicione GOOGLE_CLIENT_ID e GOOGLE_SECRET no .env.php.']);
         exit;
     }
-    $redirect_uri = SITE_URL . '/google-auth.php';
+    $redirect_uri = SITE_URL . '/auth/google';
     $params = http_build_query([
         'client_id'     => $GOOGLE_CLIENT_ID,
         'redirect_uri'  => $redirect_uri,
@@ -598,7 +705,7 @@ if ($method === 'GET' && $action === 'google_callback') {
     }
 
     // 1. Trocar code por access_token (usa curl — mais confiável que file_get_contents para POST)
-    $redirect_uri  = SITE_URL . '/google-auth.php';
+    $redirect_uri  = SITE_URL . '/auth/google';
     $tokenPostData = http_build_query([
         'code'          => $code,
         'client_id'     => $GOOGLE_CLIENT_ID,
