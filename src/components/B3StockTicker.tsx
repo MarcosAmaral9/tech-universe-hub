@@ -1,7 +1,7 @@
-import { useState, useEffect, useCallback } from "react";
-import { TrendingUp, TrendingDown, AlertTriangle } from "lucide-react";
+import { useState, useEffect, useCallback, useRef } from "react";
+import { TrendingUp, TrendingDown, AlertTriangle, RefreshCw } from "lucide-react";
 import CacheStatusBar from "@/components/CacheStatusBar";
-import PriceAlertConfig, { AlertAssetOption } from "@/components/PriceAlertConfig";
+import PriceAlertConfig from "@/components/PriceAlertConfig";
 
 interface StockQuote {
   symbol: string;
@@ -11,98 +11,138 @@ interface StockQuote {
   logourl?: string;
 }
 
-
 const FALLBACK_STOCKS: StockQuote[] = [
-  { symbol: "PETR4", shortName: "Petrobras PN",        regularMarketPrice: 45.74, regularMarketChangePercent: 0.50 },
+  { symbol: "PETR4", shortName: "Petrobras PN",       regularMarketPrice: 45.74, regularMarketChangePercent: 0.50  },
   { symbol: "VALE3", shortName: "Vale ON",             regularMarketPrice: 56.20, regularMarketChangePercent: -0.30 },
-  { symbol: "ITUB4", shortName: "Itaú Unibanco PN",   regularMarketPrice: 38.50, regularMarketChangePercent: 0.25 },
+  { symbol: "ITUB4", shortName: "Itaú Unibanco PN",   regularMarketPrice: 38.50, regularMarketChangePercent: 0.25  },
   { symbol: "BBDC4", shortName: "Bradesco PN",         regularMarketPrice: 16.90, regularMarketChangePercent: -0.60 },
-  { symbol: "ABEV3", shortName: "Ambev ON",            regularMarketPrice: 11.80, regularMarketChangePercent: 0.17 },
-  { symbol: "WEGE3", shortName: "WEG ON",              regularMarketPrice: 48.10, regularMarketChangePercent: 0.85 },
+  { symbol: "ABEV3", shortName: "Ambev ON",            regularMarketPrice: 11.80, regularMarketChangePercent: 0.17  },
+  { symbol: "WEGE3", shortName: "WEG ON",              regularMarketPrice: 48.10, regularMarketChangePercent: 0.85  },
   { symbol: "BBAS3", shortName: "Banco do Brasil ON",  regularMarketPrice: 27.40, regularMarketChangePercent: -0.14 },
   { symbol: "RENT3", shortName: "Localiza ON",         regularMarketPrice: 35.60, regularMarketChangePercent: -0.55 },
-  { symbol: "MGLU3", shortName: "Magazine Luiza ON",   regularMarketPrice: 9.85,  regularMarketChangePercent: 1.23 },
+  { symbol: "MGLU3", shortName: "Magazine Luiza ON",   regularMarketPrice: 9.85,  regularMarketChangePercent: 1.23  },
   { symbol: "SUZB3", shortName: "Suzano ON",           regularMarketPrice: 48.30, regularMarketChangePercent: -0.41 },
 ];
 
-const CACHE_KEY = "b3_stock_cache_v3";
-// brapi.dev free: 15.000 req/mês. Proxy PHP cacheia 3min = 14.400 req/mês (96% do limite).
-const CACHE_DURATION = 1000 * 60 * 3; // 3 min
-const UPDATE_INTERVAL_LABEL = "3 minutos";
+const CACHE_KEY       = "b3_stock_cache_v3";
+const CACHE_DURATION  = 1000 * 60 * 3;   // 3 min — TTL do cache PHP no servidor
+const REFRESH_INTERVAL = 1000 * 60 * 3;  // re-busca a cada 3 min enquanto na página
 
 const B3StockTicker = () => {
-  const [stocks, setStocks] = useState<StockQuote[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [isFallback, setIsFallback] = useState(false);
-  const [lastUpdated, setLastUpdated] = useState<string>("");
-  const [cacheExpiresAt, setCacheExpiresAt] = useState<number>(0);
-  const [source, setSource] = useState<string>("");
+  const [stocks, setStocks]           = useState<StockQuote[]>([]);
+  const [loading, setLoading]         = useState(true);
+  const [refreshing, setRefreshing]   = useState(false); // atualização silenciosa
+  const [isFallback, setIsFallback]   = useState(false);
+  const [lastUpdated, setLastUpdated] = useState("");
+  const [cacheExpiresAt, setCacheExpiresAt] = useState(0);
+  const [source, setSource]           = useState("");
+  const fetchingRef                   = useRef(false);
 
-  const fetchStocks = useCallback(async () => {
+  // Busca dados da API — sempre vai à rede, sem early-return por cache
+  const fetchFromAPI = useCallback(async (): Promise<StockQuote[] | null> => {
     try {
-      const cached = localStorage.getItem(CACHE_KEY);
-      if (cached) {
-        const { data, timestamp, fallback } = JSON.parse(cached);
-        const expiresAt = timestamp + CACHE_DURATION;
-        // Nunca serve fallback cacheado
-        if (!fallback && Date.now() < expiresAt) {
+      const res = await fetch("/api.php?action=b3", {
+        signal: AbortSignal.timeout(10000),
+        // Cache-Control: no-store garante que o browser não serve resposta cacheada
+        headers: { "Cache-Control": "no-store" },
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json();
+      if (!data?.results?.length) throw new Error("sem dados");
+
+      return data.results.map((r: any) => ({
+        symbol:                    r.symbol,
+        shortName:                 r.shortName || r.longName || r.symbol,
+        regularMarketPrice:        r.regularMarketPrice,
+        regularMarketChangePercent: r.regularMarketChangePercent,
+        logourl:                   r.logourl,
+      }));
+    } catch {
+      return null;
+    }
+  }, []);
+
+  // Aplica os dados frescos na UI e salva no cache
+  const applyFresh = useCallback((quotes: StockQuote[]) => {
+    const now      = Date.now();
+    const expiresAt = now + CACHE_DURATION;
+    setStocks(quotes);
+    setIsFallback(false);
+    setLastUpdated(new Date(now).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }));
+    setCacheExpiresAt(expiresAt);
+    setSource("live");
+    localStorage.setItem(CACHE_KEY, JSON.stringify({ data: quotes, timestamp: now, fallback: false, expiresAt }));
+  }, []);
+
+  // Carregamento inicial: mostra cache imediatamente + busca em background sempre
+  const initialLoad = useCallback(async () => {
+    // 1. Tenta carregar cache para exibição imediata (evita tela em branco)
+    try {
+      const raw = localStorage.getItem(CACHE_KEY);
+      if (raw) {
+        const { data, timestamp, fallback, expiresAt } = JSON.parse(raw);
+        if (!fallback && data?.length) {
           setStocks(data);
-          setIsFallback(!!fallback);
-          setLastUpdated(new Date(timestamp).toLocaleString("pt-BR"));
-          setCacheExpiresAt(expiresAt);
-          setSource(fallback ? "referência" : "cache");
+          setIsFallback(false);
+          setLastUpdated(new Date(timestamp).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }));
+          setCacheExpiresAt(expiresAt || timestamp + CACHE_DURATION);
+          setSource("cache");
           setLoading(false);
-          return;
+          // Não retorna aqui — continua para buscar dados frescos em background
         }
       }
     } catch { /* ignore */ }
 
-    setLoading(true);
+    // 2. Busca dados frescos SEMPRE — independente do cache
+    if (fetchingRef.current) return;
+    fetchingRef.current = true;
+    setRefreshing(true);
 
-    try {
-      const res = await fetch("/api.php?action=b3", {
-        signal: AbortSignal.timeout(10000),
-      });
-      if (!res.ok) throw new Error("HTTP " + res.status);
-      const data = await res.json();
+    const quotes = await fetchFromAPI();
+    fetchingRef.current = false;
+    setRefreshing(false);
 
-      if (data?.results && data.results.length > 0) {
-        const quotes: StockQuote[] = data.results.map((r: any) => ({
-          symbol: r.symbol,
-          shortName: r.shortName || r.longName || r.symbol,
-          regularMarketPrice: r.regularMarketPrice,
-          regularMarketChangePercent: r.regularMarketChangePercent,
-          logourl: r.logourl,
-        }));
-
-        setStocks(quotes);
-        setIsFallback(false);
-        const now = Date.now();
-        setLastUpdated(new Date(now).toLocaleString("pt-BR"));
-        setCacheExpiresAt(now + CACHE_DURATION);
-        setSource("live");
-        localStorage.setItem(CACHE_KEY, JSON.stringify({ data: quotes, timestamp: now, fallback: false }));
-        setLoading(false);
-        return;
-      }
-    } catch (err) {
-      console.warn("API B3 indisponível, usando dados de referência:", err);
+    if (quotes) {
+      applyFresh(quotes);
+    } else if (stocks.length === 0) {
+      // Só usa fallback se não tiver nenhum dado para mostrar
+      setStocks(FALLBACK_STOCKS);
+      setIsFallback(true);
+      setLastUpdated("—");
+      setCacheExpiresAt(Date.now() + CACHE_DURATION);
+      setSource("local-static");
     }
 
-    setStocks(FALLBACK_STOCKS);
-    setIsFallback(true);
-    const now = Date.now();
-    setLastUpdated(new Date(now).toLocaleString("pt-BR"));
-    setCacheExpiresAt(now + CACHE_DURATION);
-    setSource("local-static");
-    // Não cacheia fallback — próxima visita sempre tentará a API
     setLoading(false);
-  }, []);
+  }, [fetchFromAPI, applyFresh, stocks.length]);
+
+  // Atualização periódica enquanto o usuário está na página
+  const silentRefresh = useCallback(async () => {
+    if (fetchingRef.current) return;
+    fetchingRef.current = true;
+    setRefreshing(true);
+    const quotes = await fetchFromAPI();
+    fetchingRef.current = false;
+    setRefreshing(false);
+    if (quotes) applyFresh(quotes);
+  }, [fetchFromAPI, applyFresh]);
 
   useEffect(() => {
-    fetchStocks();
-  }, [fetchStocks]);
+    initialLoad();
+  }, []);// eslint-disable-line
 
+  // Re-busca a cada 3 minutos enquanto a aba está ativa
+  useEffect(() => {
+    const iv = setInterval(() => {
+      if (!document.hidden) silentRefresh();
+    }, REFRESH_INTERVAL);
+    // Também re-busca quando o usuário volta para a aba
+    const onVisible = () => { if (!document.hidden) silentRefresh(); };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => { clearInterval(iv); document.removeEventListener("visibilitychange", onVisible); };
+  }, [silentRefresh]);
+
+  // ── Skeleton enquanto não tem dados ainda ──────────────────────────────────
   if (loading && stocks.length === 0) {
     return (
       <div className="bg-card border border-border rounded-2xl p-6 mb-8">
@@ -126,17 +166,22 @@ const B3StockTicker = () => {
           <TrendingUp className="h-5 w-5 text-invest" />
           <h3 className="font-bold">Bolsa de Valores B3 — Cotações</h3>
         </div>
-        {lastUpdated && (
-          <span className="text-xs text-muted-foreground hidden sm:inline">
-            Atualizado: {lastUpdated}
-          </span>
-        )}
+        <div className="flex items-center gap-3">
+          {refreshing && (
+            <RefreshCw className="h-3.5 w-3.5 text-muted-foreground animate-spin" />
+          )}
+          {lastUpdated && lastUpdated !== "—" && (
+            <span className="text-xs text-muted-foreground hidden sm:inline">
+              Atualizado: {lastUpdated}
+            </span>
+          )}
+        </div>
       </div>
 
       {isFallback && (
         <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3 bg-muted/50 rounded-lg px-3 py-2">
           <AlertTriangle className="h-3.5 w-3.5 text-yellow-500 shrink-0" />
-          <span>Exibindo valores de referência. Os preços podem não refletir as cotações em tempo real.</span>
+          <span>Exibindo valores de referência. Tentando reconectar...</span>
         </div>
       )}
 
@@ -152,11 +197,9 @@ const B3StockTicker = () => {
               <span className={`flex items-center gap-0.5 ${
                 stock.regularMarketChangePercent >= 0 ? "text-green-500" : "text-red-500"
               }`}>
-                {stock.regularMarketChangePercent >= 0 ? (
-                  <TrendingUp className="h-3 w-3" />
-                ) : (
-                  <TrendingDown className="h-3 w-3" />
-                )}
+                {stock.regularMarketChangePercent >= 0
+                  ? <TrendingUp className="h-3 w-3" />
+                  : <TrendingDown className="h-3 w-3" />}
                 {stock.regularMarketChangePercent >= 0 ? "+" : ""}
                 {stock.regularMarketChangePercent?.toFixed(2)}%
               </span>
@@ -178,11 +221,9 @@ const B3StockTicker = () => {
           >
             <div className="flex items-center justify-between mb-1">
               <span className="text-xs font-bold text-foreground">{stock.symbol}</span>
-              {stock.regularMarketChangePercent >= 0 ? (
-                <TrendingUp className="h-3 w-3 text-green-500" />
-              ) : (
-                <TrendingDown className="h-3 w-3 text-red-500" />
-              )}
+              {stock.regularMarketChangePercent >= 0
+                ? <TrendingUp className="h-3 w-3 text-green-500" />
+                : <TrendingDown className="h-3 w-3 text-red-500" />}
             </div>
             <div className="text-sm font-bold text-foreground">
               R$ {stock.regularMarketPrice?.toFixed(2)}
@@ -201,7 +242,7 @@ const B3StockTicker = () => {
       </div>
 
       <p className="text-[10px] text-muted-foreground mt-3 text-center">
-        Cotações B3 em tempo real (PETR4, VALE3, ITUB4, BBDC4, ABEV3, WEG, BBAS3, RENT3, MGLU3, SUZB3) • Atualizado a cada {UPDATE_INTERVAL_LABEL} • Fonte: brapi.dev
+        PETR4 • VALE3 • ITUB4 • BBDC4 • ABEV3 • WEGE3 • BBAS3 • RENT3 • MGLU3 • SUZB3 — atualiza a cada 3 min • Fonte: brapi.dev
       </p>
       <CacheStatusBar source={source} isFallback={isFallback} cacheExpiresAt={cacheExpiresAt} />
       <PriceAlertConfig
