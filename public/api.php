@@ -223,7 +223,7 @@ if ($method === 'GET' && $action === 'test_widgets') {
 // Os valores são: 1 BRL = X da moeda alvo → invertemos para obter preço em BRL
 // Fallback: exchangerate-api.com (sem token, suporta USD/EUR/ARS/PYG, sem metais)
 if ($method === 'GET' && $action === 'rates') {
-    $CACHE_FILE = cacheDir() . '/viciocode_rates.json';
+    $CACHE_FILE = cacheDir() . '/viciocode_rates_v2.json';
     $CACHE_TTL  = 300; // 5 min
 
     if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $CACHE_TTL) {
@@ -357,7 +357,7 @@ if ($method === 'GET' && $action === 'crypto') {
 
 // ─── GET: proxy B3 / brapi.dev ────────────────────────────────────────────────
 if ($method === 'GET' && $action === 'b3') {
-    $CACHE_FILE = cacheDir() . '/viciocode_b3.json';
+    $CACHE_FILE = cacheDir() . '/viciocode_b3_v2.json';
     $CACHE_TTL  = 180; // 3 min
 
     if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $CACHE_TTL) {
