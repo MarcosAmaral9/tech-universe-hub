@@ -610,9 +610,8 @@ if ($method === 'POST' && $action === 'generate_social') {
     $payload = json_encode([
         'contents' => [['parts' => [['text' => $prompt]]]],
         'generationConfig' => [
-            'maxOutputTokens'  => 1000,
-            'temperature'      => 0.8,
-            'responseMimeType' => 'application/json',
+            'maxOutputTokens' => 1000,
+            'temperature'     => 0.8,
         ],
     ]);
 
