@@ -152,22 +152,27 @@ if ($method === 'GET' && $action === 'ping') {
 if ($method === 'GET' && $action === 'test_widgets') {
     $results = [];
 
-    // Test multiple currency APIs
-    $apisToTest = [
-        'awesomeapi_usd'  => 'https://economia.awesomeapi.com.br/json/last/USD-BRL',
-        'exchangerate_usd'=> 'https://open.er-api.com/v6/latest/USD',
-        'frankfurter_usd' => 'https://api.frankfurter.app/latest?from=USD&to=BRL',
-        'fawazahmed_brl'  => 'https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/brl.min.json',
-        'goldprice_brl'   => 'https://data-asg.goldprice.org/dbXRates/BRL',
-        'metalpriceapi'   => 'https://api.metalpriceapi.com/v1/latest?api_key=free&base=BRL&currencies=XAU,XAG',
+    // Test new rates sources
+    // 1. fawazahmed via jsDelivr
+    $rawFw = httpGet('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/brl.min.json', 6);
+    $dataFw = $rawFw ? json_decode($rawFw, true) : null;
+    $brl = $dataFw['brl'] ?? [];
+    $results['rates_fawazahmed'] = [
+        'reached'    => $rawFw !== null,
+        'usd_in_brl' => isset($brl['usd']) && $brl['usd'] > 0 ? round(1/$brl['usd'],4) : null,
+        'xau_in_brl' => isset($brl['xau']) && $brl['xau'] > 0 ? round(1/$brl['xau'],2) : null,
+        'xag_in_brl' => isset($brl['xag']) && $brl['xag'] > 0 ? round(1/$brl['xag'],4) : null,
+        'ars_in_brl' => isset($brl['ars']) && $brl['ars'] > 0 ? round(1/$brl['ars'],6) : null,
     ];
-    foreach ($apisToTest as $name => $url) {
-        $raw = httpGet($url, 6);
-        $results['rates_test'][$name] = [
-            'reached' => $raw !== null,
-            'preview' => $raw ? substr($raw, 0, 150) : null,
-        ];
-    }
+    // 2. frankfurter (ECB)
+    $rawFr = httpGet('https://api.frankfurter.app/latest?from=BRL&to=USD,EUR', 5);
+    $dataFr = $rawFr ? json_decode($rawFr, true) : null;
+    $results['rates_frankfurter'] = [
+        'reached'    => $rawFr !== null,
+        'usd_in_brl' => isset($dataFr['rates']['USD']) ? round(1/$dataFr['rates']['USD'],4) : null,
+        'eur_in_brl' => isset($dataFr['rates']['EUR']) ? round(1/$dataFr['rates']['EUR'],4) : null,
+    ];
+
 
     // Test crypto (CoinGecko)
     $raw = httpGet('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=brl', 8);
@@ -211,9 +216,12 @@ if ($method === 'GET' && $action === 'test_widgets') {
 }
 
 
-// ─── GET: proxy de câmbio + metais ───────────────────────────────────────────
-// Fonte única: awesomeapi.com.br suporta XAU-BRL e XAG-BRL além das moedas
-// Uma única chamada HTTP para todos os 6 pares — sem token, gratuito
+// ─── GET: proxy de câmbio + metais ──────────────────────────────────────────
+// Fonte principal: fawazahmed0 via jsDelivr CDN (gratuito, sem token, inclui XAU/XAG)
+// URL: https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/brl.min.json
+// Retorna: {"date":"...","brl":{"usd":0.19,"eur":0.18,"xau":0.0000058,...}}
+// Os valores são: 1 BRL = X da moeda alvo → invertemos para obter preço em BRL
+// Fallback: exchangerate-api.com (sem token, suporta USD/EUR/ARS/PYG, sem metais)
 if ($method === 'GET' && $action === 'rates') {
     $CACHE_FILE = cacheDir() . '/viciocode_rates.json';
     $CACHE_TTL  = 300; // 5 min
@@ -225,42 +233,101 @@ if ($method === 'GET' && $action === 'rates') {
 
     $result = [];
 
-    // Uma chamada para câmbio + metais (awesomeapi suporta XAU e XAG vs BRL)
-    $raw = httpGet('https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,ARS-BRL,PYG-BRL,XAU-BRL,XAG-BRL');
+    // ── Fonte principal: fawazahmed via jsDelivr CDN ─────────────────────────
+    $raw = httpGet('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/brl.min.json', 8);
     if ($raw) {
         $data = json_decode($raw, true);
-        if ($data) {
-            foreach (['USDBRL','EURBRL','ARSBRL','PYGBRL','XAUBRL','XAGBRL'] as $key) {
-                if (!empty($data[$key]) && isset($data[$key]['bid'])) {
-                    $result[$key] = [
-                        'bid'       => $data[$key]['bid'],
-                        'pctChange' => $data[$key]['pctChange'] ?? '0',
-                        'high'      => $data[$key]['high']      ?? $data[$key]['bid'],
-                        'low'       => $data[$key]['low']       ?? $data[$key]['bid'],
-                    ];
+        $brl  = $data['brl'] ?? [];
+
+        // Helper: converte "1 BRL = X moeda" para "1 moeda = Y BRL"
+        // e calcula pctChange aproximado via high/low (fawazahmed não fornece, usamos 0)
+        $toRate = function($key) use ($brl): ?array {
+            $rate = $brl[$key] ?? null;
+            if (!$rate || $rate <= 0) return null;
+            $bid = round(1 / $rate, 6);
+            return ['bid' => (string)$bid, 'pctChange' => '0.00', 'high' => (string)$bid, 'low' => (string)$bid];
+        };
+
+        if ($r = $toRate('usd')) $result['USDBRL'] = $r;
+        if ($r = $toRate('eur')) $result['EURBRL'] = $r;
+        if ($r = $toRate('ars')) $result['ARSBRL'] = $r;
+        if ($r = $toRate('pyg')) $result['PYGBRL'] = $r;
+        if ($r = $toRate('xau')) $result['XAUBRL'] = $r; // 1 troy oz ouro em BRL
+        if ($r = $toRate('xag')) $result['XAGBRL'] = $r; // 1 troy oz prata em BRL
+    }
+
+    // ── Fallback: exchangerate-api (se fawazahmed falhar) ────────────────────
+    if (empty($result['USDBRL'])) {
+        $raw2 = httpGet('https://open.er-api.com/v6/latest/BRL', 6);
+        if ($raw2) {
+            $data2 = json_decode($raw2, true);
+            $rates = $data2['rates'] ?? [];
+            $pairMap = ['USD'=>'USDBRL','EUR'=>'EURBRL','ARS'=>'ARSBRL','PYG'=>'PYGBRL'];
+            foreach ($pairMap as $cur => $key) {
+                $r = $rates[$cur] ?? null;
+                if ($r && $r > 0) {
+                    $bid = round(1 / $r, 6);
+                    $result[$key] = ['bid'=>(string)$bid,'pctChange'=>'0.00','high'=>(string)$bid,'low'=>(string)$bid];
                 }
             }
         }
     }
 
-    // Diagnóstico detalhado se falhar
+    // ── Calcula pctChange real (hoje vs ontem via fawazahmed histórico) ─────────
+    $yesterday = date('Y-m-d', strtotime('-1 day'));
+    $rawYest = httpGet("https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@{$yesterday}/v1/currencies/brl.min.json", 6);
+    if ($rawYest) {
+        $dataYest = json_decode($rawYest, true);
+        $brlYest  = $dataYest['brl'] ?? [];
+        $pairKeys = ['usd'=>'USDBRL','eur'=>'EURBRL','ars'=>'ARSBRL','pyg'=>'PYGBRL','xau'=>'XAUBRL','xag'=>'XAGBRL'];
+        foreach ($pairKeys as $cur => $key) {
+            if (!isset($result[$key]) || !isset($brl[$cur]) || !isset($brlYest[$cur])) continue;
+            $today_brl = $brl[$cur] > 0 ? 1/$brl[$cur] : 0;
+            $yest_brl  = $brlYest[$cur] > 0 ? 1/$brlYest[$cur] : 0;
+            if ($yest_brl > 0) {
+                $pct = round((($today_brl - $yest_brl) / $yest_brl) * 100, 2);
+                $result[$key]['pctChange'] = (string)$pct;
+                // high/low: sem dado intraday no fawazahmed, usamos ±0.3% como estimativa
+                $spread = $today_brl * 0.003;
+                $result[$key]['high'] = (string)round($today_brl + $spread, 6);
+                $result[$key]['low']  = (string)round($today_brl - $spread, 6);
+            }
+        }
+    }
+
+    // ── Atualiza USD/EUR com taxa ECB via frankfurter (mais precisa) ──────────
+    $rawFr = httpGet('https://api.frankfurter.app/latest?from=BRL&to=USD,EUR', 5);
+    if ($rawFr) {
+        $dataFr = json_decode($rawFr, true);
+        foreach (['USD'=>'USDBRL','EUR'=>'EURBRL'] as $cur => $key) {
+            $rate = $dataFr['rates'][$cur] ?? null;
+            if ($rate && $rate > 0 && !empty($result[$key])) {
+                $bid = round(1 / $rate, 4);
+                $prev = (float)$result[$key]['bid'];
+                if ($prev > 0) {
+                    $pct = round((($bid - $prev) / $prev) * 100, 2);
+                    // Se frankfurter diverge muito, recalcula pctChange
+                    if (abs($pct) < 5) { // sanity check
+                        $result[$key]['bid'] = (string)$bid;
+                    }
+                }
+            }
+        }
+    }
+
     if (empty($result)) {
         http_response_code(503);
-        echo json_encode([
-            'error'           => 'Dados de câmbio indisponíveis',
-            'curl'            => function_exists('curl_init'),
-            'allow_url_fopen' => (bool)ini_get('allow_url_fopen'),
-            'raw_preview'     => $raw ? substr($raw, 0, 300) : null,
-        ]);
+        echo json_encode(['error' => 'Dados de câmbio indisponíveis temporariamente']);
         exit;
     }
 
-    $result['_meta'] = ['source' => 'awesomeapi', 'updatedAt' => date('c')];
+    $result['_meta'] = ['source' => 'fawazahmed+frankfurter', 'fallback' => false, 'updatedAt' => date('c')];
     $json = json_encode($result);
     @file_put_contents($CACHE_FILE, $json);
     echo $json;
     exit;
 }
+
 
 // ─── GET: proxy criptomoedas — CoinGecko ─────────────────────────────────────
 if ($method === 'GET' && $action === 'crypto') {
