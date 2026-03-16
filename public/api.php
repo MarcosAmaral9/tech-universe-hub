@@ -597,18 +597,15 @@ if ($method === 'POST' && $action === 'generate_social') {
         exit;
     }
 
-    $imageField  = $genImage ? '"image":"prompt de imagem para criar com IA"' : '"image":null';
     $musicField  = $genMusic ? ',"musicSuggestion":"artista - música sugerida"' : '';
-    $imagePrompt = $genImage ? "\nSugira também um prompt de imagem para criar com IA." : '';
     $musicPrompt = $genMusic ? "\nSugira uma música de fundo adequada." : '';
 
     $prompt = "Você é um especialista em marketing digital e redes sociais brasileiro.\n"
             . "Crie conteúdo para {$platform} sobre o artigo \"{$title}\" (categoria: {$category}).\n"
             . "Resumo do artigo: {$excerpt}\n"
-            . ($imagePrompt ? $imagePrompt . "\n" : "")
             . ($musicPrompt ? $musicPrompt . "\n" : "")
             . "\nRETORNE APENAS O JSON ABAIXO, SEM NENHUM TEXTO ANTES OU DEPOIS, SEM MARKDOWN:\n"
-            . "{\"caption\":\"legenda engajante em português\",\"hashtags\":[\"hashtag1\",\"hashtag2\",\"hashtag3\"],\"cta\":\"chamada para ação\",\"hookLine\":\"frase de gancho para capturar atenção\",{$imageField}{$musicField}}";
+            . "{\"caption\":\"legenda engajante em português\",\"hashtags\":[\"hashtag1\",\"hashtag2\",\"hashtag3\"],\"cta\":\"chamada para ação\",\"hookLine\":\"frase de gancho para capturar atenção\"{$musicField}}";
 
     $payload = json_encode([
         'contents' => [['parts' => [['text' => $prompt]]]],
@@ -681,6 +678,52 @@ if ($method === 'POST' && $action === 'generate_social') {
         http_response_code(502);
         echo json_encode(['error' => 'O Gemini não retornou JSON válido. Tente novamente.', 'raw' => substr($text, 0, 300)]);
         exit;
+    }
+
+    // ── Geração de imagem real com Gemini Flash Image (500/dia grátis) ─────────
+    if ($genImage) {
+        $imagePromptText = "Crie uma imagem para post de {$platform} sobre: {$title}. "
+                         . "Estilo: fotográfico moderno, vibrante, adequado para redes sociais brasileiras. "
+                         . "Sem texto na imagem. Alta qualidade, proporção quadrada.";
+
+        $imagePayload = json_encode([
+            'contents' => [['parts' => [['text' => $imagePromptText]]]],
+            'generationConfig' => ['responseModalities' => ['TEXT', 'IMAGE']],
+        ]);
+
+        $imageUrl  = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp-image-generation:generateContent?key={$GEMINI_KEY}";
+        $imageRaw  = null;
+
+        if (function_exists('curl_init')) {
+            $ch = curl_init($imageUrl);
+            curl_setopt_array($ch, [
+                CURLOPT_POST           => true,
+                CURLOPT_POSTFIELDS     => $imagePayload,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_TIMEOUT        => 45,
+                CURLOPT_SSL_VERIFYPEER => true,
+                CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
+            ]);
+            $imageRaw = curl_exec($ch);
+            curl_close($ch);
+        }
+
+        if ($imageRaw) {
+            $imageResp = json_decode($imageRaw, true);
+            $parts     = $imageResp['candidates'][0]['content']['parts'] ?? [];
+            foreach ($parts as $part) {
+                if (!empty($part['inlineData']['data'])) {
+                    $mime = $part['inlineData']['mimeType'] ?? 'image/png';
+                    $parsed['image'] = "data:{$mime};base64," . $part['inlineData']['data'];
+                    break;
+                }
+            }
+        }
+
+        // Se não conseguiu gerar imagem, remove o campo para não retornar null
+        if (empty($parsed['image'])) {
+            unset($parsed['image']);
+        }
     }
 
     echo json_encode($parsed);
