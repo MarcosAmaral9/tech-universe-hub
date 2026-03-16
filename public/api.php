@@ -31,20 +31,22 @@ $DB_USER = 'u980153444_viciocode';
 $DB_PASS = 'b^0xFECWjX';
 // ==========================================
 
-// ========== CHAVES DE API (Painel Social + Google OAuth) ==========
+// ========== CHAVES DE API (Painel Social + Google OAuth + B3) ==========
 // Crie/edite o arquivo /public_html/.env.php na Hostinger com o conteúdo:
 //   <?php
 //   $GEMINI_KEY       = 'AIza...';  // aistudio.google.com — gratuito, sem cartão
 //   $GOOGLE_CLIENT_ID = 'XXXXXXX.apps.googleusercontent.com';
 //   $GOOGLE_SECRET    = 'GOCSPX-...';
+//   $BRAPI_TOKEN      = 'p5M5UoDvZfs7dHccMxNxz6'; // brapi.dev dashboard
 $GEMINI_KEY       = '';
 $GOOGLE_CLIENT_ID = '';
 $GOOGLE_SECRET    = '';
+$BRAPI_TOKEN      = '';
 $_env_file = __DIR__ . '/.env.php';
 if (file_exists($_env_file)) {
-    include $_env_file; // define $GEMINI_KEY, $GOOGLE_CLIENT_ID, $GOOGLE_SECRET
+    include $_env_file; // define $GEMINI_KEY, $GOOGLE_CLIENT_ID, $GOOGLE_SECRET, $BRAPI_TOKEN
 }
-// =================================================================
+// ======================================================================
 
 // URL base do site (usada no redirect_uri do OAuth)
 define('SITE_URL', 'https://viciocode.com');
@@ -283,19 +285,65 @@ if ($method === 'GET' && $action === 'b3') {
         if ($cached) { echo $cached; exit; }
     }
 
-    $raw  = httpGet('https://brapi.dev/api/quote/PETR4,VALE3,ITUB4,MGLU3?fundamental=false');
+    // Com token: acessa todas as ações. Sem token: apenas as 4 gratuitas.
+    $tickers = $BRAPI_TOKEN
+        ? 'PETR4,VALE3,ITUB4,BBDC4,ABEV3,WEGE3,BBAS3,RENT3,MGLU3,SUZB3'
+        : 'PETR4,VALE3,ITUB4,MGLU3';
+
+    $url = "https://brapi.dev/api/quote/{$tickers}?fundamental=false";
+
+    // Passa token no header Authorization (mais seguro que query string)
+    $headers = $BRAPI_TOKEN
+        ? ["Authorization: Bearer {$BRAPI_TOKEN}", 'Accept: application/json']
+        : ['Accept: application/json'];
+
+    $raw = null;
+    if (function_exists('curl_init')) {
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT        => 10,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_USERAGENT      => 'VicioCode/1.0',
+            CURLOPT_HTTPHEADER     => $headers,
+        ]);
+        $raw = curl_exec($ch);
+        curl_close($ch);
+    } elseif (ini_get('allow_url_fopen')) {
+        $ctx = stream_context_create(['http' => [
+            'timeout'       => 10,
+            'ignore_errors' => true,
+            'header'        => implode("\r\n", $headers) . "\r\n",
+        ]]);
+        $raw = @file_get_contents($url, false, $ctx);
+    }
+
     $data = $raw ? json_decode($raw, true) : null;
 
     if (!empty($data['results']) && count($data['results']) > 0) {
-        $result = ['results' => $data['results'], '_meta' => ['source' => 'brapi-proxy', 'updatedAt' => date('c')]];
-        $json   = json_encode($result);
+        $result = [
+            'results' => $data['results'],
+            '_meta'   => [
+                'source'    => 'brapi-proxy',
+                'withToken' => !empty($BRAPI_TOKEN),
+                'updatedAt' => date('c'),
+            ],
+        ];
+        $json = json_encode($result);
         @file_put_contents($CACHE_FILE, $json);
         echo $json;
         exit;
     }
 
     http_response_code(503);
-    echo json_encode(['error' => 'Dados B3 indisponíveis', 'curl' => function_exists('curl_init'), 'allow_url_fopen' => (bool)ini_get('allow_url_fopen')]);
+    echo json_encode([
+        'error'          => 'Dados B3 indisponíveis',
+        'curl'           => function_exists('curl_init'),
+        'allow_url_fopen'=> (bool)ini_get('allow_url_fopen'),
+        'hasToken'       => !empty($BRAPI_TOKEN),
+        'raw_preview'    => $raw ? substr($raw, 0, 200) : null,
+    ]);
     exit;
 }
 

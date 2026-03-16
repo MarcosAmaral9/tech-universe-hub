@@ -13,10 +13,16 @@ interface StockQuote {
 
 
 const FALLBACK_STOCKS: StockQuote[] = [
-  { symbol: "PETR4", shortName: "Petrobras PN",       regularMarketPrice: 38.42, regularMarketChangePercent: 1.23 },
-  { symbol: "VALE3", shortName: "Vale ON",            regularMarketPrice: 58.91, regularMarketChangePercent: -0.87 },
-  { symbol: "ITUB4", shortName: "Itaú Unibanco PN",  regularMarketPrice: 34.15, regularMarketChangePercent: 0.45 },
-  { symbol: "MGLU3", shortName: "Magazine Luiza ON",  regularMarketPrice: 11.20, regularMarketChangePercent: 3.45 },
+  { symbol: "PETR4", shortName: "Petrobras PN",        regularMarketPrice: 38.42, regularMarketChangePercent: 1.23 },
+  { symbol: "VALE3", shortName: "Vale ON",             regularMarketPrice: 58.91, regularMarketChangePercent: -0.87 },
+  { symbol: "ITUB4", shortName: "Itaú Unibanco PN",   regularMarketPrice: 34.15, regularMarketChangePercent: 0.45 },
+  { symbol: "BBDC4", shortName: "Bradesco PN",         regularMarketPrice: 14.78, regularMarketChangePercent: -1.12 },
+  { symbol: "ABEV3", shortName: "Ambev ON",            regularMarketPrice: 13.25, regularMarketChangePercent: 0.68 },
+  { symbol: "WEGE3", shortName: "WEG ON",              regularMarketPrice: 52.30, regularMarketChangePercent: 2.15 },
+  { symbol: "BBAS3", shortName: "Banco do Brasil ON",  regularMarketPrice: 28.90, regularMarketChangePercent: 0.33 },
+  { symbol: "RENT3", shortName: "Localiza ON",         regularMarketPrice: 41.55, regularMarketChangePercent: -0.56 },
+  { symbol: "MGLU3", shortName: "Magazine Luiza ON",   regularMarketPrice: 11.20, regularMarketChangePercent: 3.45 },
+  { symbol: "SUZB3", shortName: "Suzano ON",           regularMarketPrice: 55.80, regularMarketChangePercent: -0.22 },
 ];
 
 const CACHE_KEY = "b3_stock_cache";
@@ -104,8 +110,8 @@ const B3StockTicker = () => {
           <TrendingUp className="h-5 w-5 text-invest" />
           <h3 className="font-bold">Bolsa de Valores B3</h3>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          {Array.from({ length: 4 }).map((_, i) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+          {Array.from({ length: 10 }).map((_, i) => (
             <div key={i} className="animate-pulse bg-muted rounded-xl h-20" />
           ))}
         </div>
@@ -160,8 +166,8 @@ const B3StockTicker = () => {
       </div>
 
       {/* Grid cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        {stocks.map((stock) => (
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+        {stocks.slice(0, 10).map((stock) => (
           <div
             key={stock.symbol}
             className={`rounded-xl border p-3 transition-all hover:scale-[1.02] ${
@@ -195,7 +201,7 @@ const B3StockTicker = () => {
       </div>
 
       <p className="text-[10px] text-muted-foreground mt-3 text-center">
-        Cotações B3 em tempo real (PETR4, VALE3, ITUB4, MGLU3) • Atualizado a cada {UPDATE_INTERVAL_LABEL} • Fonte: brapi.dev
+        Cotações B3 em tempo real (PETR4, VALE3, ITUB4, BBDC4, ABEV3, WEG, BBAS3, RENT3, MGLU3, SUZB3) • Atualizado a cada {UPDATE_INTERVAL_LABEL} • Fonte: brapi.dev
       </p>
       <CacheStatusBar source={source} isFallback={isFallback} cacheExpiresAt={cacheExpiresAt} />
       <PriceAlertConfig
