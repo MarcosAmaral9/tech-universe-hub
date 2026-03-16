@@ -4,6 +4,7 @@ import PostCard from "@/components/PostCard";
 import { getPostsByCategory } from "@/data/posts";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import DynamicSEO from "@/components/DynamicSEO";
 
 const POSTS_PER_PAGE = 12;
 
@@ -20,7 +21,9 @@ const IAPage = () => {
   };
 
   return (
-    <div className="container py-8">
+    <>
+      <DynamicSEO />
+      <div className="container py-8">
       {/* Header */}
       <div className="mb-8">
         <Link to="/">
@@ -94,6 +97,7 @@ const IAPage = () => {
         </div>
       )}
     </div>
+  </>  
   );
 };
 

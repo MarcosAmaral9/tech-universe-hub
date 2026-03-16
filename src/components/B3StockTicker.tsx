@@ -13,16 +13,16 @@ interface StockQuote {
 
 
 const FALLBACK_STOCKS: StockQuote[] = [
-  { symbol: "PETR4", shortName: "Petrobras PN",        regularMarketPrice: 38.42, regularMarketChangePercent: 1.23 },
-  { symbol: "VALE3", shortName: "Vale ON",             regularMarketPrice: 58.91, regularMarketChangePercent: -0.87 },
-  { symbol: "ITUB4", shortName: "Itaú Unibanco PN",   regularMarketPrice: 34.15, regularMarketChangePercent: 0.45 },
-  { symbol: "BBDC4", shortName: "Bradesco PN",         regularMarketPrice: 14.78, regularMarketChangePercent: -1.12 },
-  { symbol: "ABEV3", shortName: "Ambev ON",            regularMarketPrice: 13.25, regularMarketChangePercent: 0.68 },
-  { symbol: "WEGE3", shortName: "WEG ON",              regularMarketPrice: 52.30, regularMarketChangePercent: 2.15 },
-  { symbol: "BBAS3", shortName: "Banco do Brasil ON",  regularMarketPrice: 28.90, regularMarketChangePercent: 0.33 },
-  { symbol: "RENT3", shortName: "Localiza ON",         regularMarketPrice: 41.55, regularMarketChangePercent: -0.56 },
-  { symbol: "MGLU3", shortName: "Magazine Luiza ON",   regularMarketPrice: 11.20, regularMarketChangePercent: 3.45 },
-  { symbol: "SUZB3", shortName: "Suzano ON",           regularMarketPrice: 55.80, regularMarketChangePercent: -0.22 },
+  { symbol: "PETR4", shortName: "Petrobras PN",        regularMarketPrice: 45.74, regularMarketChangePercent: 0.50 },
+  { symbol: "VALE3", shortName: "Vale ON",             regularMarketPrice: 56.20, regularMarketChangePercent: -0.30 },
+  { symbol: "ITUB4", shortName: "Itaú Unibanco PN",   regularMarketPrice: 38.50, regularMarketChangePercent: 0.25 },
+  { symbol: "BBDC4", shortName: "Bradesco PN",         regularMarketPrice: 16.90, regularMarketChangePercent: -0.60 },
+  { symbol: "ABEV3", shortName: "Ambev ON",            regularMarketPrice: 11.80, regularMarketChangePercent: 0.17 },
+  { symbol: "WEGE3", shortName: "WEG ON",              regularMarketPrice: 48.10, regularMarketChangePercent: 0.85 },
+  { symbol: "BBAS3", shortName: "Banco do Brasil ON",  regularMarketPrice: 27.40, regularMarketChangePercent: -0.14 },
+  { symbol: "RENT3", shortName: "Localiza ON",         regularMarketPrice: 35.60, regularMarketChangePercent: -0.55 },
+  { symbol: "MGLU3", shortName: "Magazine Luiza ON",   regularMarketPrice: 9.85,  regularMarketChangePercent: 1.23 },
+  { symbol: "SUZB3", shortName: "Suzano ON",           regularMarketPrice: 48.30, regularMarketChangePercent: -0.41 },
 ];
 
 const CACHE_KEY = "b3_stock_cache_v3";

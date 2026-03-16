@@ -6,6 +6,7 @@ import B3StockTicker from "@/components/B3StockTicker";
 import CurrencyWidget from "@/components/CurrencyWidget";
 import CryptoWidget from "@/components/CryptoWidget";
 import PreciousMetalsWidget from "@/components/PreciousMetalsWidget";
+import DynamicSEO from "@/components/DynamicSEO";
 
 type Section = "all" | "b3" | "currency" | "metals" | "crypto";
 
@@ -43,7 +44,9 @@ const CotacoesPage = () => {
   const show = (s: Section) => activeSection === "all" || activeSection === s;
 
   return (
-    <div className="container py-8">
+    <>
+      <DynamicSEO />
+      <div className="container py-8">
       {/* Header */}
       <div className="mb-8">
         <Link to="/financas">
@@ -135,6 +138,7 @@ const CotacoesPage = () => {
         </div>
       </div>
     </div>
+  </>  
   );
 };
 

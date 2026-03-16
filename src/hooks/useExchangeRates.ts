@@ -29,12 +29,12 @@ const CACHE_DURATION_SUCCESS = 1000 * 60 * 5;  // 5 min
 const CACHE_DURATION_FALLBACK = 1000 * 60 * 30; // 30 min no fallback
 
 const LOCAL_FALLBACK: ExchangeData = {
-  USDBRL: { bid: "5.85", pctChange: "0.32", high: "5.90", low: "5.80" },
-  EURBRL: { bid: "6.35", pctChange: "-0.15", high: "6.40", low: "6.30" },
-  ARSBRL: { bid: "0.0048", pctChange: "0.10", high: "0.0049", low: "0.0047" },
-  PYGBRL: { bid: "0.00076", pctChange: "-0.05", high: "0.00078", low: "0.00074" },
-  XAUBRL: { bid: "27177.00", pctChange: "0.45", high: "27450.00", low: "26900.00" },
-  XAGBRL: { bid: "235.41", pctChange: "-0.30", high: "240.00", low: "230.00" },
+  USDBRL: { bid: "5.27",     pctChange: "0.00", high: "5.30",     low: "5.24" },
+  EURBRL: { bid: "6.05",     pctChange: "0.00", high: "6.08",     low: "6.02" },
+  ARSBRL: { bid: "0.0038",   pctChange: "0.00", high: "0.0039",   low: "0.0037" },
+  PYGBRL: { bid: "0.00072",  pctChange: "0.00", high: "0.00073",  low: "0.00071" },
+  XAUBRL: { bid: "26655.00", pctChange: "0.00", high: "26900.00", low: "26400.00" },
+  XAGBRL: { bid: "422.39",   pctChange: "0.00", high: "426.00",   low: "418.00" },
   _meta: { fallback: true, source: "local-static", ttlMs: CACHE_DURATION_FALLBACK },
 };
 

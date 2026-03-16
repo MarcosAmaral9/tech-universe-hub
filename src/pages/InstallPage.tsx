@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Download, Smartphone, Monitor, Share, MoreVertical, PlusSquare, CheckCircle2, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import DynamicSEO from "@/components/DynamicSEO";
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
@@ -41,7 +42,9 @@ const InstallPage = () => {
   };
 
   return (
-    <div className="min-h-[70vh] py-12 px-4">
+    <>
+      <DynamicSEO />
+      <div className="min-h-[70vh] py-12 px-4">
       <div className="max-w-2xl mx-auto space-y-10">
         {/* Hero */}
         <div className="text-center space-y-4">
@@ -189,6 +192,7 @@ const InstallPage = () => {
         </div>
       </div>
     </div>
+  </>  
   );
 };
 

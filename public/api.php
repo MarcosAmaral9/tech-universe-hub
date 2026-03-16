@@ -231,6 +231,7 @@ if ($method === 'GET' && $action === 'rates') {
     }
 
     $result = [];
+    $brl    = []; // inicializado aqui para ser acessível no bloco pctChange
 
     // ── Fonte principal: fawazahmed via jsDelivr CDN ─────────────────────────
     $raw = httpGet('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/brl.min.json', 8);
@@ -841,9 +842,6 @@ if ($method === 'POST' && $action === 'upload_avatar') {
     echo json_encode(['success' => true, 'avatar_url' => $avatarUrl]);
     exit;
 }
-// ─── POST: proxy Anthropic API (Painel Social Media) ─────────────────────────
-// Chamado apenas pelo admin — não expõe a chave ao browser
-
 // ─── POST: troca code Google por sessão (chamado pelo React após redirect) ──────
 if ($method === 'POST' && $action === 'google_exchange') {
     if (!$GOOGLE_CLIENT_ID || !$GOOGLE_SECRET) {

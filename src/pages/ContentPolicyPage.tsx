@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft, Shield, AlertTriangle, Check, X, MessageSquare, Users, LogIn } from "lucide-react";
+import DynamicSEO from "@/components/DynamicSEO";
 
 const ContentPolicyPage = () => {
   return (
-    <div className="container py-8 max-w-4xl mx-auto">
+    <>
+      <DynamicSEO />
+      <div className="container py-8 max-w-4xl mx-auto">
       {/* Back Button */}
       <Link
         to="/"
@@ -233,6 +236,7 @@ const ContentPolicyPage = () => {
         </section>
       </div>
     </div>
+  </>  
   );
 };
 

@@ -19,8 +19,8 @@ interface MetalRate {
 }
 
 const FALLBACK: MetalRate[] = [
-  { code: "XAU", name: "Ouro", purity: "18k", bidPerGram: 655.00, pctChange: "0.45", highPerGram: 662.00, lowPerGram: 648.00 },
-  { code: "XAG", name: "Prata", purity: "925", bidPerGram: 7.00, pctChange: "-0.30", highPerGram: 7.15, lowPerGram: 6.85 },
+  { code: "XAU", name: "Ouro",  purity: "18k", bidPerGram: 642.75, pctChange: "0.00", highPerGram: 646.00, lowPerGram: 639.00 },
+  { code: "XAG", name: "Prata", purity: "925", bidPerGram: 12.56,  pctChange: "0.00", highPerGram: 12.70,  lowPerGram: 12.42 },
 ];
 
 const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {

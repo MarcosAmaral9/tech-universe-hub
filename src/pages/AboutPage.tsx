@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Target, Lightbulb, Code } from "lucide-react";
+import DynamicSEO from "@/components/DynamicSEO";
 
 const AboutPage = () => {
   return (
-    <div className="container py-12">
+    <>
+      <DynamicSEO />
+      <div className="container py-12">
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="font-display text-3xl md:text-4xl font-bold mb-4">
@@ -107,6 +110,7 @@ const AboutPage = () => {
         </div>
       </div>
     </div>
+  </>  
   );
 };
 

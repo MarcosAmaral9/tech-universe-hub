@@ -18,14 +18,14 @@ const CACHE_DURATION = 1000 * 60 * 5; // 5 min — proxy PHP usa 86% do limite g
 const UPDATE_INTERVAL_LABEL = "5 minutos";
 
 const FALLBACK: CryptoData[] = [
-  { id: "bitcoin", symbol: "btc", name: "Bitcoin", current_price: 587420, price_change_percentage_24h: 2.3, market_cap: 11500000000000, image: "" },
-  { id: "ethereum", symbol: "eth", name: "Ethereum", current_price: 19850, price_change_percentage_24h: 1.8, market_cap: 2400000000000, image: "" },
-  { id: "solana", symbol: "sol", name: "Solana", current_price: 1245, price_change_percentage_24h: -0.5, market_cap: 540000000000, image: "" },
-  { id: "binancecoin", symbol: "bnb", name: "BNB", current_price: 3890, price_change_percentage_24h: 0.9, market_cap: 580000000000, image: "" },
-  { id: "cardano", symbol: "ada", name: "Cardano", current_price: 5.42, price_change_percentage_24h: -1.2, market_cap: 190000000000, image: "" },
-  { id: "ripple", symbol: "xrp", name: "XRP", current_price: 14.80, price_change_percentage_24h: 3.1, market_cap: 780000000000, image: "" },
-  { id: "chainlink", symbol: "link", name: "Chainlink", current_price: 142, price_change_percentage_24h: 4.1, market_cap: 85000000000, image: "" },
-  { id: "polkadot", symbol: "dot", name: "Polkadot", current_price: 48.50, price_change_percentage_24h: -0.8, market_cap: 68000000000, image: "" },
+  { id: "bitcoin",      symbol: "btc",  name: "Bitcoin",    current_price: 387818, price_change_percentage_24h:  0.0, market_cap: 7700000000000, image: "" },
+  { id: "ethereum",     symbol: "eth",  name: "Ethereum",   current_price: 14200,  price_change_percentage_24h:  0.0, market_cap: 1700000000000, image: "" },
+  { id: "solana",       symbol: "sol",  name: "Solana",     current_price: 780,    price_change_percentage_24h:  0.0, market_cap: 380000000000, image: "" },
+  { id: "binancecoin",  symbol: "bnb",  name: "BNB",        current_price: 2980,   price_change_percentage_24h:  0.0, market_cap: 440000000000, image: "" },
+  { id: "cardano",      symbol: "ada",  name: "Cardano",    current_price: 3.90,   price_change_percentage_24h:  0.0, market_cap: 138000000000, image: "" },
+  { id: "ripple",       symbol: "xrp",  name: "XRP",        current_price: 14.20,  price_change_percentage_24h:  0.0, market_cap: 820000000000, image: "" },
+  { id: "chainlink",    symbol: "link", name: "Chainlink",  current_price: 90,     price_change_percentage_24h:  0.0, market_cap: 54000000000, image: "" },
+  { id: "polkadot",     symbol: "dot",  name: "Polkadot",   current_price: 30.50,  price_change_percentage_24h:  0.0, market_cap: 46000000000, image: "" },
 ];
 
 const formatBRL = (value: number) => {

@@ -5,6 +5,7 @@ import { getPostsByCategory } from "@/data/posts";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { Subtopic } from "@/types/blog";
+import DynamicSEO from "@/components/DynamicSEO";
 
 const POSTS_PER_PAGE = 12;
 
@@ -60,7 +61,9 @@ const OtakuPage = () => {
   };
 
   return (
-    <div className="container py-8">
+    <>
+      <DynamicSEO />
+      <div className="container py-8">
       {/* Header */}
       <div className="mb-8">
         <Link to="/">
@@ -161,6 +164,7 @@ const OtakuPage = () => {
         </div>
       )}
     </div>
+  </>  
   );
 };
 

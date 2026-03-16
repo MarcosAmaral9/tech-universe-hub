@@ -3,6 +3,7 @@ import PostCard from "@/components/PostCard";
 import SocialSection from "@/components/SocialSection";
 import { blogPosts, getPostsByCategory } from "@/data/posts";
 import { Link } from "react-router-dom";
+import DynamicSEO from "@/components/DynamicSEO";
 
 const Index = () => {
   const categoryCounts = {
@@ -21,6 +22,8 @@ const Index = () => {
 
   return (
     <>
+      <DynamicSEO />
+      <>
       {/* Hero Carousel */}
       <FeaturedCarousel />
 
@@ -71,6 +74,7 @@ const Index = () => {
         <SocialSection />
       </section>
     </>
+  </>  
   );
 };
 

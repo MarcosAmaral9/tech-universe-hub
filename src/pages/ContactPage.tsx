@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import { Instagram } from "lucide-react";
+import DynamicSEO from "@/components/DynamicSEO";
 
 const TikTokIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -15,7 +16,9 @@ const WhatsAppIcon = () => (
 
 const ContactPage = () => {
   return (
-    <div className="container py-12 max-w-4xl">
+    <>
+      <DynamicSEO />
+      <div className="container py-12 max-w-4xl">
       <h1 className="font-display text-3xl md:text-4xl font-bold mb-2">Contato</h1>
       <p className="text-muted-foreground mb-10">
         Entre em contato conosco por qualquer um dos canais abaixo.
@@ -119,6 +122,7 @@ const ContactPage = () => {
         </a>
       </div>
     </div>
+  </>  
   );
 };
 
