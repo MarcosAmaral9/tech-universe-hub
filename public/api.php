@@ -681,8 +681,8 @@ if ($method === 'POST' && $action === 'generate_social') {
 
     // ── Geração de imagem com Gemini (gemini-2.0-flash-exp-image-generation) ───
     if ($genImage) {
-        $imagePromptText = "Social media image for {$platform} post about: {$title}. "
-                         . "Modern photographic style, vibrant colors, no text overlay, square format, high quality.";
+        $imagePromptText = "Crie uma imagem para post de {$platform} sobre: {$title}. "
+                         . "Estilo fotográfico moderno, cores vibrantes, sem texto na imagem, formato quadrado, alta qualidade.";
 
         $imagePayload = json_encode([
             'contents'         => [['parts' => [['text' => $imagePromptText]]]],
