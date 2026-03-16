@@ -57,6 +57,7 @@ const SocialPanelPage = () => {
   const [generateImage, setGenerateImage] = useState(false);
   const [suggestMusic, setSuggestMusic] = useState(false);
   const [generating, setGenerating] = useState(false);
+  const [retryIn, setRetryIn] = useState(0);
   const [content, setContent] = useState<PlatformContent>({});
   const [editedIG, setEditedIG] = useState({ caption: "", hashtags: "", cta: "", hookLine: "", musicSuggestion: "" });
   const [editedTT, setEditedTT] = useState({ caption: "", hashtags: "", cta: "", hookLine: "", musicSuggestion: "" });
@@ -87,6 +88,11 @@ const SocialPanelPage = () => {
         }),
       });
       const data = await res.json();
+      if (res.status === 429 && data.retryIn) {
+        const err: any = new Error(data.error || "Limite atingido");
+        err.retryIn = data.retryIn;
+        throw err;
+      }
       if (!res.ok || data.error) throw new Error(data.error || "Erro ao gerar conteúdo");
       return data;
     } finally {
@@ -185,7 +191,17 @@ const SocialPanelPage = () => {
       setTodayCount(newCount);
       toast({ title: "✅ Conteúdo gerado e salvo no histórico!" });
     } catch (e: any) {
+      const wait = e?.retryIn || 0;
       toast({ title: "Erro ao gerar conteúdo", description: e.message, variant: "destructive" });
+      if (wait > 0) {
+        setRetryIn(wait);
+        const interval = setInterval(() => {
+          setRetryIn((s) => {
+            if (s <= 1) { clearInterval(interval); return 0; }
+            return s - 1;
+          });
+        }, 1000);
+      }
     } finally {
       setGenerating(false);
     }

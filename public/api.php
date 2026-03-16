@@ -653,8 +653,21 @@ if ($method === 'POST' && $action === 'generate_social') {
     $resp = json_decode($raw, true);
 
     if (!empty($resp['error'])) {
+        $errMsg    = $resp['error']['message'] ?? 'Erro na API Gemini';
+        $errStatus = $resp['error']['status']  ?? '';
+        // Quota exceeded — extrai tempo de espera e retorna mensagem amigável
+        if ($errStatus === 'RESOURCE_EXHAUSTED' || str_contains($errMsg, 'Quota exceeded') || str_contains($errMsg, 'quota')) {
+            preg_match('/retry in ([\d.]+)s/i', $errMsg, $m);
+            $waitSec = isset($m[1]) ? (int)ceil((float)$m[1]) : 60;
+            http_response_code(429);
+            echo json_encode([
+                'error'   => "Limite de requisições atingido. Aguarde {$waitSec} segundos e tente novamente.",
+                'retryIn' => $waitSec,
+            ]);
+            exit;
+        }
         http_response_code(502);
-        echo json_encode(['error' => $resp['error']['message'] ?? 'Erro na API Gemini', 'status' => $resp['error']['status'] ?? '']);
+        echo json_encode(['error' => $errMsg]);
         exit;
     }
 
