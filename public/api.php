@@ -569,7 +569,7 @@ if ($method === 'GET' && $action === 'google_auth_url') {
         echo json_encode(['error' => 'Google OAuth não configurado. Adicione GOOGLE_CLIENT_ID e GOOGLE_SECRET no .env.php.']);
         exit;
     }
-    $redirect_uri = SITE_URL . '/api.php?action=google_callback';
+    $redirect_uri = SITE_URL . '/google-auth.php';
     $params = http_build_query([
         'client_id'     => $GOOGLE_CLIENT_ID,
         'redirect_uri'  => $redirect_uri,
@@ -598,7 +598,7 @@ if ($method === 'GET' && $action === 'google_callback') {
     }
 
     // 1. Trocar code por access_token (usa curl — mais confiável que file_get_contents para POST)
-    $redirect_uri  = SITE_URL . '/api.php?action=google_callback';
+    $redirect_uri  = SITE_URL . '/google-auth.php';
     $tokenPostData = http_build_query([
         'code'          => $code,
         'client_id'     => $GOOGLE_CLIENT_ID,

@@ -11,17 +11,18 @@ function htaccessPlugin(): Plugin {
     name: "generate-htaccess",
     apply: "build",
     closeBundle() {
-      const htaccess = `# Processar api.php como PHP antes de qualquer reescrita
-<Files "api.php">
+      const htaccess = `# Processar arquivos PHP antes de qualquer reescrita
+<FilesMatch "^(api|google-auth)\\.php$">
   SetHandler application/x-httpd-php
-</Files>
+</FilesMatch>
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # Excluir api.php do SPA fallback (com ou sem query string)
+  # Excluir arquivos PHP do SPA fallback (com ou sem query string)
   RewriteRule ^api\\.php$ - [L,QSA]
+  RewriteRule ^google-auth\\.php$ - [L,QSA]
 
   # Bloquear acesso direto ao diretório de cache do PHP
   RewriteRule ^cache/ - [F,L]
