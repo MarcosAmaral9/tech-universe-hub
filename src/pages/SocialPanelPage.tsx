@@ -70,22 +70,28 @@ const SocialPanelPage = () => {
   }, [user, authLoading, navigate]);
 
   const generateForPlatform = async (post: any, platform: "instagram" | "tiktok"): Promise<GeneratedContent> => {
-    // Chamada via proxy PHP — a chave da API fica segura no servidor
-    const res = await fetch("/api.php?action=generate_social", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        title: post.title,
-        excerpt: post.excerpt,
-        category: post.category,
-        platform,
-        generateImage,
-        suggestMusic,
-      }),
-    });
-    const data = await res.json();
-    if (!res.ok || data.error) throw new Error(data.error || "Erro ao gerar conteúdo");
-    return data;
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 60000); // 60s timeout
+    try {
+      const res = await fetch("/api.php?action=generate_social", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        signal: controller.signal,
+        body: JSON.stringify({
+          title: post.title,
+          excerpt: post.excerpt,
+          category: post.category,
+          platform,
+          generateImage,
+          suggestMusic,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || data.error) throw new Error(data.error || "Erro ao gerar conteúdo");
+      return data;
+    } finally {
+      clearTimeout(timeout);
+    }
   };
 
   const handleGenerate = async () => {
@@ -97,16 +103,31 @@ const SocialPanelPage = () => {
     setContent({});
     try {
       const results: PlatformContent = {};
-      const promises: Promise<void>[] = [];
 
-      if (platformIG) {
-        promises.push(generateForPlatform(post, "instagram").then((d) => { results.instagram = d; }));
-      }
-      if (platformTT) {
-        promises.push(generateForPlatform(post, "tiktok").then((d) => { results.tiktok = d; }));
+      // Sequencial quando imagem está ativada (evita quota burst no Gemini)
+      // Paralelo quando só texto (mais rápido, sem risco de quota)
+      if (generateImage) {
+        if (platformIG) {
+          try { results.instagram = await generateForPlatform(post, "instagram"); }
+          catch (e: any) { toast({ title: "Erro no Instagram", description: e.message, variant: "destructive" }); }
+        }
+        if (platformTT) {
+          try { results.tiktok = await generateForPlatform(post, "tiktok"); }
+          catch (e: any) { toast({ title: "Erro no TikTok", description: e.message, variant: "destructive" }); }
+        }
+      } else {
+        // Paralelo para texto — mais rápido
+        const settled = await Promise.allSettled([
+          platformIG ? generateForPlatform(post, "instagram") : Promise.resolve(null),
+          platformTT ? generateForPlatform(post, "tiktok")    : Promise.resolve(null),
+        ]);
+        if (platformIG && settled[0].status === "fulfilled" && settled[0].value) results.instagram = settled[0].value;
+        if (platformIG && settled[0].status === "rejected") toast({ title: "Erro no Instagram", description: settled[0].reason?.message, variant: "destructive" });
+        if (platformTT && settled[1].status === "fulfilled" && settled[1].value) results.tiktok = settled[1].value;
+        if (platformTT && settled[1].status === "rejected") toast({ title: "Erro no TikTok", description: settled[1].reason?.message, variant: "destructive" });
       }
 
-      await Promise.all(promises);
+      if (!results.instagram && !results.tiktok) throw new Error("Nenhum conteúdo foi gerado.");
       setContent(results);
 
       // Build edited values

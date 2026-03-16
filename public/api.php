@@ -675,26 +675,25 @@ if ($method === 'POST' && $action === 'generate_social') {
     if (!$parsed) {
         // Tenta novamente com resposta mais simples
         http_response_code(502);
-        echo json_encode(['error' => 'O Gemini não retornou JSON válido. Tente novamente.', 'raw' => substr($text, 0, 300)]);
+        echo json_encode(['error' => 'O Gemini não retornou JSON válido. Tente novamente.']);
         exit;
     }
 
-    // ── Geração de imagem real com Gemini Flash Image (500/dia grátis) ─────────
+    // ── Geração de imagem com Gemini (gemini-2.0-flash-exp-image-generation) ───
     if ($genImage) {
-        $imagePromptText = "Crie uma imagem para post de {$platform} sobre: {$title}. "
-                         . "Estilo: fotográfico moderno, vibrante, adequado para redes sociais brasileiras. "
-                         . "Sem texto na imagem. Alta qualidade, proporção quadrada.";
+        $imagePromptText = "Social media image for {$platform} post about: {$title}. "
+                         . "Modern photographic style, vibrant colors, no text overlay, square format, high quality.";
 
         $imagePayload = json_encode([
-            'contents' => [['parts' => [['text' => $imagePromptText]]]],
+            'contents'         => [['parts' => [['text' => $imagePromptText]]]],
             'generationConfig' => ['responseModalities' => ['TEXT', 'IMAGE']],
         ]);
 
-        $imageUrl  = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp-image-generation:generateContent?key={$GEMINI_KEY}";
-        $imageRaw  = null;
+        $imageApiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp-image-generation:generateContent?key={$GEMINI_KEY}";
+        $imageRaw    = null;
 
         if (function_exists('curl_init')) {
-            $ch = curl_init($imageUrl);
+            $ch = curl_init($imageApiUrl);
             curl_setopt_array($ch, [
                 CURLOPT_POST           => true,
                 CURLOPT_POSTFIELDS     => $imagePayload,
@@ -718,8 +717,7 @@ if ($method === 'POST' && $action === 'generate_social') {
                 }
             }
         }
-
-        // Se não conseguiu gerar imagem, remove o campo para não retornar null
+        // Se falhou silenciosamente, não inclui o campo — frontend lida com ausência
         if (empty($parsed['image'])) {
             unset($parsed['image']);
         }
