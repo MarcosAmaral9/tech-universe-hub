@@ -25,3 +25,6 @@ dist-ssr
 
 # Variáveis de ambiente com segredos (nunca commitar)
 public/.env.php
+
+# Arquivos PHP com credenciais hardcoded (gerado automaticamente, não rastrear)
+public/google-auth.php
