@@ -72,10 +72,11 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
         ? new Date(json._meta.updatedAt).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })
         : new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
       setLastUpdated(serverTime);
-      const expiresAt = json._meta?.updatedAt
-        ? new Date(json._meta.updatedAt).getTime() + REFRESH_MS
+      // expiresAt do servidor — igual para todos os usuários
+      const expTs = json._meta?.expiresAt
+        ? new Date(json._meta.expiresAt).getTime()
         : Date.now() + REFRESH_MS;
-      setCacheExpiresAt(expiresAt);
+      setCacheExpiresAt(expTs);
       setSource(json._meta?.from_cache ? "cache" : "live");
       setLoading(false);
       return;

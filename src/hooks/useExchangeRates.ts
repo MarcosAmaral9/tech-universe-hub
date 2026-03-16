@@ -32,6 +32,7 @@ export function useExchangeRates() {
   const [isFallback, setIsFallback] = useState(false);
   const [lastUpdated, setLastUpdated] = useState("");
   const [updatedAt, setUpdatedAt]   = useState("");
+  const [expiresAt, setExpiresAt]   = useState<number>(0);
   const [source, setSource]         = useState("");
   const fetchingRef                 = useRef(false);
 
@@ -69,6 +70,11 @@ export function useExchangeRates() {
         : new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
       setLastUpdated(serverTime);
       setUpdatedAt(result._meta?.updatedAt || new Date().toISOString());
+      if (result._meta?.expiresAt) {
+        setExpiresAt(new Date(result._meta.expiresAt).getTime());
+      } else {
+        setExpiresAt(Date.now() + REFRESH_MS);
+      }
       setSource(result._meta?.from_cache ? "cache" : (result._meta?.source || "live"));
     } else if (!silent || !data) {
       setData(LOCAL_FALLBACK);
@@ -96,9 +102,5 @@ export function useExchangeRates() {
     return () => { clearInterval(iv); document.removeEventListener("visibilitychange", onVisible); };
   }, [fetchRates]);
 
-  const expiresAt = updatedAt
-    ? new Date(updatedAt).getTime() + REFRESH_MS
-    : Date.now() + REFRESH_MS;
-
-  return { data, loading, isFallback, lastUpdated, cacheExpiresAt: expiresAt, source };
+  return { data, loading, isFallback, lastUpdated, cacheExpiresAt: expiresAt || Date.now() + REFRESH_MS, source };
 }

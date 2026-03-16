@@ -35,6 +35,7 @@ const B3StockTicker = () => {
   const [isFallback, setIsFallback]   = useState(false);
   const [lastUpdated, setLastUpdated] = useState("");
   const [updatedAt, setUpdatedAt]     = useState<string>("");
+  const [expiresAt, setExpiresAt]     = useState<number>(0);
   const fetchingRef                   = useRef(false);
 
   const fetchStocks = useCallback(async (silent = false) => {
@@ -68,6 +69,12 @@ const B3StockTicker = () => {
           : new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
         setLastUpdated(serverTime);
         setUpdatedAt(data._meta?.updatedAt || new Date().toISOString());
+        // expiresAt do servidor — mesmo valor para todos os usuários
+        if (data._meta?.expiresAt) {
+          setExpiresAt(new Date(data._meta.expiresAt).getTime());
+        } else {
+          setExpiresAt(Date.now() + REFRESH_MS);
+        }
         return;
       }
     } catch { /* continua para fallback */ }
@@ -132,10 +139,7 @@ const B3StockTicker = () => {
     );
   }
 
-  // Para o CacheStatusBar: calcula expiresAt a partir do updatedAt + 15 min
-  const expiresAt = updatedAt
-    ? new Date(updatedAt).getTime() + REFRESH_MS
-    : Date.now() + REFRESH_MS;
+  // expiresAt vem do servidor — igual para todos os usuários
 
   return (
     <div className="bg-card border border-border rounded-2xl p-6 mb-8">
@@ -223,7 +227,7 @@ const B3StockTicker = () => {
       <CacheStatusBar
         source={isFallback ? "local-static" : "live"}
         isFallback={isFallback}
-        cacheExpiresAt={expiresAt}
+        cacheExpiresAt={expiresAt || Date.now() + REFRESH_MS}
       />
       <PriceAlertConfig
         storageKey="b3_price_alerts"

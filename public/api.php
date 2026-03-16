@@ -112,12 +112,21 @@ function dbCacheGet(PDO $pdo, string $widget, int $ttlMinutes): ?array {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         if (!$row) return null;
 
-        $today    = date('Y-m-d');
-        $ageMin   = (time() - strtotime($row['fetched_at'])) / 60;
+        $today      = date('Y-m-d');
+        $fetchedTs  = strtotime($row['fetched_at']);
+        $ageMin     = (time() - $fetchedTs) / 60;
 
         // Válido se: mesmo dia E dentro do TTL
         if ($row['fetch_date'] === $today && $ageMin < $ttlMinutes) {
-            return json_decode($row['data'], true);
+            $decoded = json_decode($row['data'], true);
+            if ($decoded && isset($decoded['_meta'])) {
+                // Sobrescreve updatedAt e expiresAt com os valores reais do banco
+                // Isso garante que TODOS os usuários vejam o mesmo timestamp e countdown
+                $decoded['_meta']['updatedAt'] = date('c', $fetchedTs);
+                $decoded['_meta']['expiresAt']  = date('c', $fetchedTs + $ttlMinutes * 60);
+                $decoded['_meta']['from_cache'] = true;
+            }
+            return $decoded;
         }
         return null; // expirado
     } catch (Exception $e) {
@@ -402,7 +411,8 @@ if ($method === 'GET' && $action === 'rates') {
         exit;
     }
 
-    $result['_meta'] = ['source' => 'fawazahmed+frankfurter', 'fallback' => false, 'from_cache' => false, 'updatedAt' => date('c')];
+    $fetchedAt = date('c');
+    $result['_meta'] = ['source' => 'fawazahmed+frankfurter', 'fallback' => false, 'from_cache' => false, 'updatedAt' => $fetchedAt, 'expiresAt' => date('c', time() + $TTL_RATES * 60)];
     // Salva no banco e no arquivo
     if ($db = getPdo()) dbCacheSave($db, 'rates', $result);
     @file_put_contents($CACHE_FILE, json_encode($result));
@@ -431,7 +441,7 @@ if ($method === 'GET' && $action === 'crypto') {
     $data = $raw ? json_decode($raw, true) : null;
 
     if (is_array($data) && count($data) > 0) {
-        $result = ['coins' => $data, '_meta' => ['source' => 'coingecko-proxy', 'updatedAt' => date('c')]];
+        $result = ['coins' => $data, '_meta' => ['source' => 'coingecko-live', 'from_cache' => false, 'updatedAt' => date('c'), 'expiresAt' => date('c', time() + $TTL_CRYPTO * 60)]];
         $json   = json_encode($result);
         @file_put_contents($CACHE_FILE, $json);
         echo $json;
@@ -513,6 +523,7 @@ if ($method === 'GET' && $action === 'b3') {
                 'withToken'  => !empty($BRAPI_TOKEN),
                 'from_cache' => false,
                 'updatedAt'  => date('c'),
+                'expiresAt'  => date('c', time() + $TTL_MINUTES * 60),
             ],
         ];
         // Salva no banco (compartilhado) e no arquivo (fallback)
