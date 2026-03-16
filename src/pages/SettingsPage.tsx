@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { Settings, Sun, Moon, Type, Palette, Bell, BellOff, RotateCcw, Smartphone, Globe, User, AtSign, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
@@ -368,7 +369,11 @@ const SettingsPage = () => {
           </Button>
           {user && (
             <div>
-              <Button variant="ghost" onClick={signOut} className="gap-2 text-destructive hover:text-destructive">
+              <Button
+                variant="ghost"
+                onClick={async () => { await signOut(); navigate("/", { replace: true }); }}
+                className="gap-2 text-destructive hover:text-destructive"
+              >
                 Sair da conta
               </Button>
             </div>
