@@ -428,6 +428,48 @@ if ($method === 'GET' && $action === 'b3') {
 }
 
 
+
+// ─── GET: testa conexão com Gemini ───────────────────────────────────────────
+if ($method === 'GET' && $action === 'test_gemini') {
+    if (!$GEMINI_KEY) {
+        echo json_encode(['error' => 'GEMINI_KEY não configurada']);
+        exit;
+    }
+
+    $payload = json_encode([
+        'contents' => [['parts' => [['text' => 'Responda apenas com o JSON: {"ok":true,"msg":"funcionando"}']]]],
+        'generationConfig' => ['maxOutputTokens' => 50, 'responseMimeType' => 'application/json'],
+    ]);
+
+    $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={$GEMINI_KEY}";
+    $raw = null; $curlErr = '';
+
+    if (function_exists('curl_init')) {
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_POST => true, CURLOPT_POSTFIELDS => $payload,
+            CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 15,
+            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
+        ]);
+        $raw = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $curlErr = curl_error($ch);
+        curl_close($ch);
+    }
+
+    $resp = $raw ? json_decode($raw, true) : null;
+    echo json_encode([
+        'key_set'     => !empty($GEMINI_KEY),
+        'http_code'   => $httpCode ?? null,
+        'curl_error'  => $curlErr ?: null,
+        'api_error'   => $resp['error'] ?? null,
+        'text'        => $resp['candidates'][0]['content']['parts'][0]['text'] ?? null,
+        'raw_preview' => $raw ? substr($raw, 0, 300) : null,
+    ]);
+    exit;
+}
+
 if ($method === 'POST' && $action === 'generate_social') {
 
     if (!$GEMINI_KEY) {
