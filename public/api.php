@@ -101,10 +101,85 @@ function cacheDir(): string {
     return is_writable($dir) ? $dir : sys_get_temp_dir();
 }
 
+// ─── Helpers: cache centralizado no banco MySQL ───────────────────────────────
+// Lê do banco se o cache for válido (mesmo dia + dentro do TTL em minutos)
+function dbCacheGet(PDO $pdo, string $widget, int $ttlMinutes): ?array {
+    try {
+        $stmt = $pdo->prepare(
+            'SELECT data, fetched_at, fetch_date FROM widget_cache WHERE widget = :w LIMIT 1'
+        );
+        $stmt->execute([':w' => $widget]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if (!$row) return null;
+
+        $today    = date('Y-m-d');
+        $ageMin   = (time() - strtotime($row['fetched_at'])) / 60;
+
+        // Válido se: mesmo dia E dentro do TTL
+        if ($row['fetch_date'] === $today && $ageMin < $ttlMinutes) {
+            return json_decode($row['data'], true);
+        }
+        return null; // expirado
+    } catch (Exception $e) {
+        return null;
+    }
+}
+
+// Salva no banco e incrementa o contador de requisições do dia
+function dbCacheSave(PDO $pdo, string $widget, array $data): void {
+    try {
+        $today = date('Y-m-d');
+        $json  = json_encode($data);
+        $pdo->prepare(
+            'INSERT INTO widget_cache (widget, data, fetch_date, req_count)
+             VALUES (:w, :d, :date, 1)
+             ON DUPLICATE KEY UPDATE
+               data       = VALUES(data),
+               fetched_at = NOW(),
+               fetch_date = VALUES(fetch_date),
+               req_count  = IF(fetch_date = VALUES(fetch_date), req_count + 1, 1)'
+        )->execute([':w' => $widget, ':d' => $json, ':date' => $today]);
+    } catch (Exception $e) {
+        // falha silenciosa — continua sem cache de banco
+    }
+}
+
+// ─── Helper: conexão ao banco lazy (reusada por proxies de widget) ───────────
+$_pdoInstance = null;
+function getPdo(): ?PDO {
+    global $_pdoInstance, $DB_HOST, $DB_NAME, $DB_USER, $DB_PASS;
+    if ($_pdoInstance) return $_pdoInstance;
+    try {
+        $_pdoInstance = new PDO(
+            "mysql:host=$DB_HOST;dbname=$DB_NAME;charset=utf8mb4",
+            $DB_USER, $DB_PASS,
+            [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_TIMEOUT => 3]
+        );
+        return $_pdoInstance;
+    } catch (Exception $e) {
+        return null; // DB indisponível — usa cache de arquivo
+    }
+}
+
 // ─── GET: diagnóstico — não precisa de banco ──────────────────────────────────
 if ($method === 'GET' && $action === 'ping') {
     $cacheDir = __DIR__ . '/cache';
     @mkdir($cacheDir, 0755, true);
+
+    // Cria tabela widget_cache se não existir (idempotente)
+    try {
+        $tmpPdo = new PDO(
+            "mysql:host=$DB_HOST;dbname=$DB_NAME;charset=utf8mb4",
+            $DB_USER, $DB_PASS, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+        );
+        $tmpPdo->exec("CREATE TABLE IF NOT EXISTS widget_cache (
+            widget      VARCHAR(20) PRIMARY KEY,
+            data        LONGTEXT NOT NULL,
+            fetched_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+            fetch_date  DATE NOT NULL,
+            req_count   INT DEFAULT 0
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
+    } catch (Exception $e) {}
 
     // Testa conexão com banco
     $dbStatus = 'NÃO testado';
@@ -222,10 +297,16 @@ if ($method === 'GET' && $action === 'test_widgets') {
 // Os valores são: 1 BRL = X da moeda alvo → invertemos para obter preço em BRL
 // Fallback: exchangerate-api.com (sem token, suporta USD/EUR/ARS/PYG, sem metais)
 if ($method === 'GET' && $action === 'rates') {
+    $TTL_RATES  = 10; // 10 min — fawazahmed atualiza 1x/dia, frankfurter 1x/dia (ECB)
     $CACHE_FILE = cacheDir() . '/viciocode_rates_v2.json';
-    $CACHE_TTL  = 300; // 5 min
 
-    if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $CACHE_TTL) {
+    // Banco primeiro (cache compartilhado — 1 fetch serve todos os usuários)
+    if ($db = getPdo()) {
+        $cached = dbCacheGet($db, 'rates', $TTL_RATES);
+        if ($cached) { $cached['_meta']['from_cache'] = true; echo json_encode($cached); exit; }
+    }
+    // Arquivo como fallback
+    if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $TTL_RATES * 60) {
         $cached = file_get_contents($CACHE_FILE);
         if ($cached) { echo $cached; exit; }
     }
@@ -321,20 +402,27 @@ if ($method === 'GET' && $action === 'rates') {
         exit;
     }
 
-    $result['_meta'] = ['source' => 'fawazahmed+frankfurter', 'fallback' => false, 'updatedAt' => date('c')];
-    $json = json_encode($result);
-    @file_put_contents($CACHE_FILE, $json);
-    echo $json;
+    $result['_meta'] = ['source' => 'fawazahmed+frankfurter', 'fallback' => false, 'from_cache' => false, 'updatedAt' => date('c')];
+    // Salva no banco e no arquivo
+    if ($db = getPdo()) dbCacheSave($db, 'rates', $result);
+    @file_put_contents($CACHE_FILE, json_encode($result));
+    echo json_encode($result);
     exit;
 }
 
 
 // ─── GET: proxy criptomoedas — CoinGecko ─────────────────────────────────────
 if ($method === 'GET' && $action === 'crypto') {
+    $TTL_CRYPTO = 10; // 10 min — CoinGecko free: ~10.000 req/mês, com 10min = 144/dia = 4.320/mês (<50%)
     $CACHE_FILE = cacheDir() . '/viciocode_crypto.json';
-    $CACHE_TTL  = 300; // 5 min
 
-    if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $CACHE_TTL) {
+    // Banco primeiro (cache compartilhado)
+    if ($db = getPdo()) {
+        $cached = dbCacheGet($db, 'crypto', $TTL_CRYPTO);
+        if ($cached) { $cached['_meta']['from_cache'] = true; echo json_encode($cached); exit; }
+    }
+    // Arquivo como fallback
+    if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $TTL_CRYPTO * 60) {
         $cached = file_get_contents($CACHE_FILE);
         if ($cached) { echo $cached; exit; }
     }
@@ -356,23 +444,35 @@ if ($method === 'GET' && $action === 'crypto') {
 }
 
 // ─── GET: proxy B3 / brapi.dev ────────────────────────────────────────────────
+// Cache centralizado no MySQL — 1 requisição serve todos os usuários
+// TTL: 15 min (B3 atualiza a cada 15min no plano free com token)
+// Limite free: 15.000 req/mês → com TTL 15min = máx 48 req/dia = ~1.440/mês — usa <10%
 if ($method === 'GET' && $action === 'b3') {
-    $CACHE_FILE = cacheDir() . '/viciocode_b3_v2.json';
-    $CACHE_TTL  = 180; // 3 min
+    $TTL_MINUTES = 15; // Respeita frequência de atualização do plano free (15min)
 
-    if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $CACHE_TTL) {
+    // 1. Tenta banco primeiro (cache compartilhado entre todos os usuários)
+    if ($db = getPdo()) {
+        $cached = dbCacheGet($db, 'b3', $TTL_MINUTES);
+        if ($cached) {
+            $cached['_meta']['from_cache'] = true;
+            echo json_encode($cached);
+            exit;
+        }
+    }
+
+    // 2. Cache de arquivo como fallback se DB não disponível
+    $CACHE_FILE = cacheDir() . '/viciocode_b3_v2.json';
+    if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $TTL_MINUTES * 60) {
         $cached = file_get_contents($CACHE_FILE);
         if ($cached) { echo $cached; exit; }
     }
 
-    // Com token: acessa todas as ações. Sem token: apenas as 4 gratuitas.
+    // 3. Busca dados frescos na brapi.dev
     $tickers = $BRAPI_TOKEN
         ? 'PETR4,VALE3,ITUB4,BBDC4,ABEV3,WEGE3,BBAS3,RENT3,MGLU3,SUZB3'
         : 'PETR4,VALE3,ITUB4,MGLU3';
 
-    $url = "https://brapi.dev/api/quote/{$tickers}?fundamental=false";
-
-    // Passa token no header Authorization (mais seguro que query string)
+    $url     = "https://brapi.dev/api/quote/{$tickers}?fundamental=false";
     $headers = $BRAPI_TOKEN
         ? ["Authorization: Bearer {$BRAPI_TOKEN}", 'Accept: application/json']
         : ['Accept: application/json'];
@@ -405,24 +505,29 @@ if ($method === 'GET' && $action === 'b3') {
         $result = [
             'results' => $data['results'],
             '_meta'   => [
-                'source'    => 'brapi-proxy',
-                'withToken' => !empty($BRAPI_TOKEN),
-                'updatedAt' => date('c'),
+                'source'     => 'brapi-live',
+                'withToken'  => !empty($BRAPI_TOKEN),
+                'from_cache' => false,
+                'updatedAt'  => date('c'),
             ],
         ];
-        $json = json_encode($result);
-        @file_put_contents($CACHE_FILE, $json);
-        echo $json;
+        // Salva no banco (compartilhado) e no arquivo (fallback)
+        if ($db = getPdo()) dbCacheSave($db, 'b3', $result);
+        @file_put_contents($CACHE_FILE, json_encode($result));
+        echo json_encode($result);
         exit;
+    }
+
+    // Serve cache de arquivo antigo se tiver (melhor do que nada)
+    if (file_exists($CACHE_FILE)) {
+        $old = file_get_contents($CACHE_FILE);
+        if ($old) { echo $old; exit; }
     }
 
     http_response_code(503);
     echo json_encode([
-        'error'          => 'Dados B3 indisponíveis',
-        'curl'           => function_exists('curl_init'),
-        'allow_url_fopen'=> (bool)ini_get('allow_url_fopen'),
-        'hasToken'       => !empty($BRAPI_TOKEN),
-        'raw_preview'    => $raw ? substr($raw, 0, 200) : null,
+        'error'    => 'Dados B3 indisponíveis',
+        'hasToken' => !empty($BRAPI_TOKEN),
     ]);
     exit;
 }
@@ -1002,6 +1107,14 @@ CREATE TABLE IF NOT EXISTS profiles (
     notifications_app TINYINT(1) DEFAULT 0,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS widget_cache (
+    widget      VARCHAR(20) PRIMARY KEY,   -- 'b3', 'rates', 'crypto'
+    data        LONGTEXT NOT NULL,         -- JSON payload
+    fetched_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    fetch_date  DATE NOT NULL,             -- data da última busca real
+    req_count   INT DEFAULT 0             -- total de requisições feitas hoje
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS comments (

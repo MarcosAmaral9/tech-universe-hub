@@ -24,125 +24,97 @@ const FALLBACK_STOCKS: StockQuote[] = [
   { symbol: "SUZB3", shortName: "Suzano ON",           regularMarketPrice: 48.30, regularMarketChangePercent: -0.41 },
 ];
 
-const CACHE_KEY       = "b3_stock_cache_v3";
-const CACHE_DURATION  = 1000 * 60 * 3;   // 3 min — TTL do cache PHP no servidor
-const REFRESH_INTERVAL = 1000 * 60 * 3;  // re-busca a cada 3 min enquanto na página
+// Sem localStorage — o banco MySQL é a única fonte de verdade
+// O PHP gerencia o TTL e serve os mesmos dados para todos os usuários
+const REFRESH_MS = 1000 * 60 * 15; // re-busca a cada 15 min (igual ao TTL do servidor)
 
 const B3StockTicker = () => {
   const [stocks, setStocks]           = useState<StockQuote[]>([]);
   const [loading, setLoading]         = useState(true);
-  const [refreshing, setRefreshing]   = useState(false); // atualização silenciosa
+  const [refreshing, setRefreshing]   = useState(false);
   const [isFallback, setIsFallback]   = useState(false);
   const [lastUpdated, setLastUpdated] = useState("");
-  const [cacheExpiresAt, setCacheExpiresAt] = useState(0);
-  const [source, setSource]           = useState("");
+  const [updatedAt, setUpdatedAt]     = useState<string>("");
   const fetchingRef                   = useRef(false);
 
-  // Busca dados da API — sempre vai à rede, sem early-return por cache
-  const fetchFromAPI = useCallback(async (): Promise<StockQuote[] | null> => {
+  const fetchStocks = useCallback(async (silent = false) => {
+    if (fetchingRef.current) return;
+    fetchingRef.current = true;
+    if (silent) setRefreshing(true);
+
     try {
       const res = await fetch("/api.php?action=b3", {
-        signal: AbortSignal.timeout(10000),
-        // Cache-Control: no-store garante que o browser não serve resposta cacheada
         headers: { "Cache-Control": "no-store" },
+        signal: AbortSignal.timeout(12000),
       });
       if (!res.ok) throw new Error("HTTP " + res.status);
       const data = await res.json();
-      if (!data?.results?.length) throw new Error("sem dados");
 
-      return data.results.map((r: any) => ({
-        symbol:                    r.symbol,
-        shortName:                 r.shortName || r.longName || r.symbol,
-        regularMarketPrice:        r.regularMarketPrice,
-        regularMarketChangePercent: r.regularMarketChangePercent,
-        logourl:                   r.logourl,
-      }));
-    } catch {
-      return null;
-    }
-  }, []);
+      if (data?.results?.length > 0) {
+        const quotes: StockQuote[] = data.results.map((r: any) => ({
+          symbol:                    r.symbol,
+          shortName:                 r.shortName || r.longName || r.symbol,
+          regularMarketPrice:        r.regularMarketPrice,
+          regularMarketChangePercent: r.regularMarketChangePercent,
+          logourl:                   r.logourl,
+        }));
 
-  // Aplica os dados frescos na UI e salva no cache
-  const applyFresh = useCallback((quotes: StockQuote[]) => {
-    const now      = Date.now();
-    const expiresAt = now + CACHE_DURATION;
-    setStocks(quotes);
-    setIsFallback(false);
-    setLastUpdated(new Date(now).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }));
-    setCacheExpiresAt(expiresAt);
-    setSource("live");
-    localStorage.setItem(CACHE_KEY, JSON.stringify({ data: quotes, timestamp: now, fallback: false, expiresAt }));
-  }, []);
+        setStocks(quotes);
+        setIsFallback(false);
 
-  // Carregamento inicial: mostra cache imediatamente + busca em background sempre
-  const initialLoad = useCallback(async () => {
-    // 1. Tenta carregar cache para exibição imediata (evita tela em branco)
-    try {
-      const raw = localStorage.getItem(CACHE_KEY);
-      if (raw) {
-        const { data, timestamp, fallback, expiresAt } = JSON.parse(raw);
-        if (!fallback && data?.length) {
-          setStocks(data);
-          setIsFallback(false);
-          setLastUpdated(new Date(timestamp).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }));
-          setCacheExpiresAt(expiresAt || timestamp + CACHE_DURATION);
-          setSource("cache");
-          setLoading(false);
-          // Não retorna aqui — continua para buscar dados frescos em background
-        }
+        // Mostra o horário em que o servidor buscou os dados (não o horário local)
+        const serverTime = data._meta?.updatedAt
+          ? new Date(data._meta.updatedAt).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })
+          : new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+        setLastUpdated(serverTime);
+        setUpdatedAt(data._meta?.updatedAt || new Date().toISOString());
+        return;
       }
-    } catch { /* ignore */ }
+    } catch { /* continua para fallback */ }
 
-    // 2. Busca dados frescos SEMPRE — independente do cache
-    if (fetchingRef.current) return;
-    fetchingRef.current = true;
-    setRefreshing(true);
-
-    const quotes = await fetchFromAPI();
-    fetchingRef.current = false;
-    setRefreshing(false);
-
-    if (quotes) {
-      applyFresh(quotes);
-    } else if (stocks.length === 0) {
-      // Só usa fallback se não tiver nenhum dado para mostrar
+    // Só usa fallback se ainda não tiver dados
+    if (stocks.length === 0) {
       setStocks(FALLBACK_STOCKS);
       setIsFallback(true);
       setLastUpdated("—");
-      setCacheExpiresAt(Date.now() + CACHE_DURATION);
-      setSource("local-static");
     }
+  }, [stocks.length]);
 
-    setLoading(false);
-  }, [fetchFromAPI, applyFresh, stocks.length]);
-
-  // Atualização periódica enquanto o usuário está na página
-  const silentRefresh = useCallback(async () => {
-    if (fetchingRef.current) return;
-    fetchingRef.current = true;
-    setRefreshing(true);
-    const quotes = await fetchFromAPI();
-    fetchingRef.current = false;
-    setRefreshing(false);
-    if (quotes) applyFresh(quotes);
-  }, [fetchFromAPI, applyFresh]);
-
+  // Carga inicial
   useEffect(() => {
-    initialLoad();
-  }, []);// eslint-disable-line
+    fetchStocks(false).finally(() => {
+      fetchingRef.current = false;
+      setLoading(false);
+      setRefreshing(false);
+    });
+  }, []); // eslint-disable-line
 
-  // Re-busca a cada 3 minutos enquanto a aba está ativa
+  // Re-busca automática a cada 15 min + ao voltar à aba
   useEffect(() => {
     const iv = setInterval(() => {
-      if (!document.hidden) silentRefresh();
-    }, REFRESH_INTERVAL);
-    // Também re-busca quando o usuário volta para a aba
-    const onVisible = () => { if (!document.hidden) silentRefresh(); };
+      if (!document.hidden) {
+        fetchingRef.current = false;
+        fetchStocks(true).finally(() => {
+          fetchingRef.current = false;
+          setRefreshing(false);
+        });
+      }
+    }, REFRESH_MS);
+
+    const onVisible = () => {
+      if (!document.hidden) {
+        fetchingRef.current = false;
+        fetchStocks(true).finally(() => {
+          fetchingRef.current = false;
+          setRefreshing(false);
+        });
+      }
+    };
     document.addEventListener("visibilitychange", onVisible);
     return () => { clearInterval(iv); document.removeEventListener("visibilitychange", onVisible); };
-  }, [silentRefresh]);
+  }, [fetchStocks]);
 
-  // ── Skeleton enquanto não tem dados ainda ──────────────────────────────────
+  // Skeleton
   if (loading && stocks.length === 0) {
     return (
       <div className="bg-card border border-border rounded-2xl p-6 mb-8">
@@ -159,6 +131,11 @@ const B3StockTicker = () => {
     );
   }
 
+  // Para o CacheStatusBar: calcula expiresAt a partir do updatedAt + 15 min
+  const expiresAt = updatedAt
+    ? new Date(updatedAt).getTime() + REFRESH_MS
+    : Date.now() + REFRESH_MS;
+
   return (
     <div className="bg-card border border-border rounded-2xl p-6 mb-8">
       <div className="flex items-center justify-between mb-4">
@@ -167,12 +144,10 @@ const B3StockTicker = () => {
           <h3 className="font-bold">Bolsa de Valores B3 — Cotações</h3>
         </div>
         <div className="flex items-center gap-3">
-          {refreshing && (
-            <RefreshCw className="h-3.5 w-3.5 text-muted-foreground animate-spin" />
-          )}
+          {refreshing && <RefreshCw className="h-3.5 w-3.5 text-muted-foreground animate-spin" />}
           {lastUpdated && lastUpdated !== "—" && (
             <span className="text-xs text-muted-foreground hidden sm:inline">
-              Atualizado: {lastUpdated}
+              Dados de: {lastUpdated}
             </span>
           )}
         </div>
@@ -208,7 +183,7 @@ const B3StockTicker = () => {
         </div>
       </div>
 
-      {/* Grid cards */}
+      {/* Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
         {stocks.slice(0, 10).map((stock) => (
           <div
@@ -242,9 +217,13 @@ const B3StockTicker = () => {
       </div>
 
       <p className="text-[10px] text-muted-foreground mt-3 text-center">
-        PETR4 • VALE3 • ITUB4 • BBDC4 • ABEV3 • WEGE3 • BBAS3 • RENT3 • MGLU3 • SUZB3 — atualiza a cada 3 min • Fonte: brapi.dev
+        PETR4 • VALE3 • ITUB4 • BBDC4 • ABEV3 • WEGE3 • BBAS3 • RENT3 • MGLU3 • SUZB3 — atualiza a cada 15 min • Fonte: brapi.dev
       </p>
-      <CacheStatusBar source={source} isFallback={isFallback} cacheExpiresAt={cacheExpiresAt} />
+      <CacheStatusBar
+        source={isFallback ? "local-static" : "live"}
+        isFallback={isFallback}
+        cacheExpiresAt={expiresAt}
+      />
       <PriceAlertConfig
         storageKey="b3_price_alerts"
         assets={stocks.slice(0, 10).map(s => ({
