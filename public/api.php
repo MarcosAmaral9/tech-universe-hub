@@ -608,16 +608,16 @@ if ($method === 'POST' && $action === 'generate_social') {
             . "{\"caption\":\"legenda engajante em português\",\"hashtags\":[\"hashtag1\",\"hashtag2\",\"hashtag3\"],\"cta\":\"chamada para ação\",\"hookLine\":\"frase de gancho para capturar atenção\"{$musicField}}";
 
     $payload = json_encode([
-        'contents' => [['parts' => [['text' => $prompt]]]],
+        'contents'         => [['parts' => [['text' => $prompt]]]],
         'generationConfig' => [
-            'maxOutputTokens' => 1000,
-            'temperature'     => 0.8,
+            'maxOutputTokens'  => 1000,
+            'temperature'      => 0.8,
+            'responseMimeType' => 'application/json',  // força JSON puro, sem markdown
         ],
     ]);
 
-    // gemini-2.0-flash — modelo estável e gratuito (1.500 req/dia)
-    // gemini-2.5-flash via v1 (estável) — modelo atual gratuito
-    $url = "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key={$GEMINI_KEY}";
+    // gemini-2.0-flash via v1beta — suporta responseMimeType para JSON puro garantido
+    $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={$GEMINI_KEY}";
     $raw = null;
 
     if (function_exists('curl_init')) {
