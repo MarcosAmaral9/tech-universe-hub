@@ -649,6 +649,33 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-10",
     readTime: "10 min"
   },
+  // CRIMSON DESERT Posts
+  {
+    id: "70",
+    slug: "crimson-desert-guia-completo",
+    title: "Crimson Desert: Guia Completo do RPG Mais Esperado de 2026",
+    excerpt: "Tudo sobre história, gameplay, mundo aberto e sistema de combate do novo épico da Pearl Abyss. Descubra o continente de Pywel e a jornada de Kliff.",
+    content: "",
+    category: "geek",
+    subtopic: "crimson-desert",
+    image: crimsonDesertGuiaImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-16",
+    readTime: "12 min"
+  },
+  {
+    id: "71",
+    slug: "crimson-desert-combate-blackspace-engine",
+    title: "Crimson Desert: Como o Sistema de Combate e a BlackSpace Engine Mudam Tudo",
+    excerpt: "Análise aprofundada das mecânicas de combate, chefes épicos, montarias e a tecnologia por trás do visual impressionante do RPG da Pearl Abyss.",
+    content: "",
+    category: "geek",
+    subtopic: "crimson-desert",
+    image: crimsonDesertCombateImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-16",
+    readTime: "9 min"
+  },
   // OTAKU Posts
   {
     id: "1",
