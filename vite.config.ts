@@ -11,12 +11,17 @@ function htaccessPlugin(): Plugin {
     name: "generate-htaccess",
     apply: "build",
     closeBundle() {
-      const htaccess = `<IfModule mod_rewrite.c>
+      const htaccess = `# Processar api.php como PHP antes de qualquer reescrita
+<Files "api.php">
+  SetHandler application/x-httpd-php
+</Files>
+
+<IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # Excluir api.php do SPA fallback — deixar o PHP processar diretamente
-  RewriteRule ^api\\.php - [L]
+  # Excluir api.php do SPA fallback (com ou sem query string)
+  RewriteRule ^api\\.php$ - [L,QSA]
 
   # Bloquear acesso direto ao diretório de cache do PHP
   RewriteRule ^cache/ - [F,L]
@@ -31,11 +36,6 @@ function htaccessPlugin(): Plugin {
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
 </IfModule>
-
-# Garantir que api.php é processado pelo PHP (compatibilidade Hostinger)
-<Files "api.php">
-  SetHandler application/x-httpd-php
-</Files>
 
 # Cache static assets
 <IfModule mod_expires.c>
