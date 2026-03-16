@@ -549,7 +549,13 @@ if ($method === 'POST' && $action === 'generate_social') {
 
     if (!$raw) {
         http_response_code(503);
-        echo json_encode(['error' => 'Falha ao conectar com o Gemini.', 'detail' => $curlError ?? '']);
+        echo json_encode([
+            'error'      => 'Falha ao conectar com o Gemini.',
+            'detail'     => $curlError ?? '',
+            'curl_avail' => function_exists('curl_init'),
+            'fopen_avail'=> (bool)ini_get('allow_url_fopen'),
+            'url_tried'  => $url,
+        ]);
         exit;
     }
 
@@ -562,11 +568,19 @@ if ($method === 'POST' && $action === 'generate_social') {
             preg_match('/retry in ([\d.]+)s/i', $errMsg, $m);
             $waitSec = isset($m[1]) ? (int)ceil((float)$m[1]) : 60;
             http_response_code(429);
-            echo json_encode(['error' => "Limite atingido. Aguarde {$waitSec}s e tente novamente.", 'retryIn' => $waitSec]);
+            echo json_encode(['error' => "Limite de quota atingido. Aguarde {$waitSec}s.", 'retryIn' => $waitSec]);
             exit;
         }
         http_response_code(502);
-        echo json_encode(['error' => $errMsg]);
+        echo json_encode(['error' => $errMsg, 'status' => $errStatus, 'raw_preview' => substr($raw, 0, 300)]);
+        exit;
+    }
+
+    // Gemini retornou resposta mas sem candidates (model bloqueou, safety filter, etc)
+    if (empty($resp['candidates'])) {
+        $finishReason = $resp['promptFeedback']['blockReason'] ?? 'desconhecido';
+        http_response_code(502);
+        echo json_encode(['error' => "Gemini bloqueou a resposta. Motivo: {$finishReason}", 'raw_preview' => substr($raw, 0, 300)]);
         exit;
     }
 

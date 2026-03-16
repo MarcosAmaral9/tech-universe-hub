@@ -156,7 +156,8 @@ const SocialPanelPage = () => {
         setEditedIG(toEdited(igResult.value));
         saveToHistory({ id: `${Date.now()}-ig`, postTitle: post.title, platform: "instagram", ...toEdited(igResult.value), createdAt: new Date().toISOString() });
       } else {
-        toast({ title: "Erro no Instagram", description: (igResult as any).reason?.message, variant: "destructive" });
+        const igErr = (igResult as any).reason?.message || "Erro desconhecido";
+        toast({ title: "Erro no Instagram", description: igErr, variant: "destructive" });
       }
 
       if (ttResult.status === "fulfilled") {
@@ -164,10 +165,14 @@ const SocialPanelPage = () => {
         setEditedTT(toEdited(ttResult.value));
         saveToHistory({ id: `${Date.now()}-tt`, postTitle: post.title, platform: "tiktok", ...toEdited(ttResult.value), createdAt: new Date().toISOString() });
       } else {
-        toast({ title: "Erro no TikTok", description: (ttResult as any).reason?.message, variant: "destructive" });
+        const ttErr = (ttResult as any).reason?.message || "Erro desconhecido";
+        toast({ title: "Erro no TikTok", description: ttErr, variant: "destructive" });
       }
 
-      if (!results.instagram && !results.tiktok) throw new Error("Nenhum conteúdo foi gerado.");
+      if (!results.instagram && !results.tiktok) {
+        const firstErr = (igResult as any).reason?.message || (ttResult as any).reason?.message || "Verifique se a chave Gemini está configurada no .env.php";
+        throw new Error(firstErr);
+      }
 
       setContent(results);
       setHistoryKey((k) => k + 1);
