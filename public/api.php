@@ -602,18 +602,25 @@ if ($method === 'POST' && $action === 'generate_social') {
     $imagePrompt = $genImage ? "\nSugira também um prompt de imagem para criar com IA." : '';
     $musicPrompt = $genMusic ? "\nSugira uma música de fundo adequada." : '';
 
-    $prompt = "Crie conteúdo para {$platform} sobre o artigo \"{$title}\" da categoria {$category}.\n"
-            . "Resumo: {$excerpt}{$imagePrompt}{$musicPrompt}\n"
-            . "Responda APENAS com JSON válido neste formato exato (sem markdown, sem texto extra):\n"
-            . "{\"caption\":\"texto da legenda\",\"hashtags\":[\"tag1\",\"tag2\"],\"cta\":\"chamada para ação\",\"hookLine\":\"frase de gancho\",{$imageField}{$musicField}}";
+    $prompt = "Você é um especialista em marketing digital e redes sociais brasileiro.\n"
+            . "Crie conteúdo para {$platform} sobre o artigo \"{$title}\" (categoria: {$category}).\n"
+            . "Resumo do artigo: {$excerpt}\n"
+            . ($imagePrompt ? $imagePrompt . "\n" : "")
+            . ($musicPrompt ? $musicPrompt . "\n" : "")
+            . "\nRETORNE APENAS O JSON ABAIXO, SEM NENHUM TEXTO ANTES OU DEPOIS, SEM MARKDOWN:\n"
+            . "{\"caption\":\"legenda engajante em português\",\"hashtags\":[\"hashtag1\",\"hashtag2\",\"hashtag3\"],\"cta\":\"chamada para ação\",\"hookLine\":\"frase de gancho para capturar atenção\",{$imageField}{$musicField}}";
 
     $payload = json_encode([
         'contents' => [['parts' => [['text' => $prompt]]]],
-        'generationConfig' => ['maxOutputTokens' => 1000, 'temperature' => 0.7],
+        'generationConfig' => [
+            'maxOutputTokens'  => 1000,
+            'temperature'      => 0.8,
+            'responseMimeType' => 'application/json',
+        ],
     ]);
 
-    // Usa gemini-2.5-flash — rápido, gratuito, excelente para geração de texto
-    $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={$GEMINI_KEY}";
+    // gemini-2.0-flash — modelo estável e gratuito (1.500 req/dia)
+    $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={$GEMINI_KEY}";
     $raw = null;
 
     if (function_exists('curl_init')) {
@@ -627,6 +634,7 @@ if ($method === 'POST' && $action === 'generate_social') {
             CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
         ]);
         $raw = curl_exec($ch);
+        $curlError = curl_error($ch);
         curl_close($ch);
     } elseif (ini_get('allow_url_fopen')) {
         $ctx = stream_context_create(['http' => [
@@ -641,7 +649,7 @@ if ($method === 'POST' && $action === 'generate_social') {
 
     if (!$raw) {
         http_response_code(503);
-        echo json_encode(['error' => 'Falha ao conectar com a API Gemini']);
+        echo json_encode(['error' => 'Falha ao conectar com o Gemini. Verifique se a chave está correta no .env.php.', 'curl_error' => $curlError ?? '']);
         exit;
     }
 
@@ -649,19 +657,28 @@ if ($method === 'POST' && $action === 'generate_social') {
 
     if (!empty($resp['error'])) {
         http_response_code(502);
-        echo json_encode(['error' => $resp['error']['message'] ?? 'Erro na API Gemini']);
+        echo json_encode(['error' => $resp['error']['message'] ?? 'Erro na API Gemini', 'status' => $resp['error']['status'] ?? '']);
         exit;
     }
 
     $text = $resp['candidates'][0]['content']['parts'][0]['text'] ?? '';
+
+    // Extrai JSON da resposta — remove markdown e texto extra ao redor
     $text = preg_replace('/^```(?:json)?\s*/m', '', $text);
-    $text = preg_replace('/\s*```$/m', '', $text);
+    $text = preg_replace('/\s*```\s*$/m', '', $text);
     $text = trim($text);
+
+    // Tenta encontrar o bloco JSON mesmo que haja texto antes/depois
+    if (!str_starts_with($text, '{')) {
+        preg_match('/\{.*\}/s', $text, $matches);
+        $text = $matches[0] ?? $text;
+    }
 
     $parsed = json_decode($text, true);
     if (!$parsed) {
+        // Tenta novamente com resposta mais simples
         http_response_code(502);
-        echo json_encode(['error' => 'Resposta inválida do Gemini', 'raw' => $text]);
+        echo json_encode(['error' => 'O Gemini não retornou JSON válido. Tente novamente.', 'raw' => substr($text, 0, 300)]);
         exit;
     }
 
