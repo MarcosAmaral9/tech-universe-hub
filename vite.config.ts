@@ -98,8 +98,10 @@ export default defineConfig(() => ({
       includePublic: true,
     }),
     VitePWA({
-      registerType: "prompt",
+      registerType: "autoUpdate",
       workbox: {
+        skipWaiting: true,
+        clientsClaim: true,
         globPatterns: ["**/*.{js,css,html,ico,png,svg,webp,woff2,jpg}"],
         navigateFallback: "/index.html",
         navigateFallbackDenylist: [/^\/~oauth/],

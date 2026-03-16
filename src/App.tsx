@@ -9,7 +9,6 @@ import Layout from "@/components/Layout";
 import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import CookieConsent from "./components/CookieConsent";
-import PWAUpdatePrompt from "./components/PWAUpdatePrompt";
 import { lazy, Suspense, useEffect } from "react";
 
 // Apply saved font size on app load
@@ -142,7 +141,6 @@ const App = () => (
         <BrowserRouter>
           <ScrollToTop />
           <CookieConsent />
-          <PWAUpdatePrompt />
           <Layout>
             <Suspense fallback={<PageLoader />}>
               <Routes>
