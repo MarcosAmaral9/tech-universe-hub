@@ -5,8 +5,51 @@ import { getPostsByCategory } from "@/data/posts";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DynamicSEO from "@/components/DynamicSEO";
+import crimsonDesertHeroImg from "@/assets/crimson-desert-hero.webp";
+import avatarPortalBannerImg from "@/assets/avatar-portal-banner.webp";
+import acPortalImg from "@/assets/assassins-creed-portal.webp";
 
 const POSTS_PER_PAGE = 12;
+
+interface SpecialPortalCardProps {
+  to: string;
+  image: string;
+  title: string;
+  description: string;
+  badge: string;
+  badgeColor: string;
+}
+
+const SpecialPortalCard = ({ to, image, title, description, badge, badgeColor }: SpecialPortalCardProps) => (
+  <Link
+    to={to}
+    className="group relative rounded-2xl overflow-hidden border border-border hover:border-geek/50 transition-all duration-300 hover:shadow-lg hover:shadow-geek/10"
+  >
+    <div className="relative h-44 overflow-hidden">
+      <img
+        src={image}
+        alt={title}
+        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        loading="lazy"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+      <div className="absolute top-3 left-3">
+        <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${badgeColor}`}>
+          {badge}
+        </span>
+      </div>
+    </div>
+    <div className="p-4">
+      <h3 className="font-bold text-foreground group-hover:text-geek transition-colors text-lg">
+        {title}
+      </h3>
+      <p className="text-muted-foreground text-sm mt-1 line-clamp-2">{description}</p>
+      <span className="text-geek text-xs font-semibold mt-3 inline-block group-hover:translate-x-1 transition-transform">
+        Ver painel completo →
+      </span>
+    </div>
+  </Link>
+);
 
 const GeekPage = () => {
   const posts = getPostsByCategory("geek");
@@ -45,6 +88,39 @@ const GeekPage = () => {
           Games, tecnologia, cultura pop, filmes, séries e tudo que 
           um verdadeiro geek ama!
         </p>
+      </div>
+
+      {/* Special Portals */}
+      <div className="mb-10">
+        <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">
+          🎮 Painéis Especiais
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <SpecialPortalCard
+            to="/geek/crimson-desert"
+            image={crimsonDesertHeroImg}
+            title="Crimson Desert"
+            description="RPG de mundo aberto da Pearl Abyss — guias, análises de combate e tudo sobre Pywel."
+            badge="🗡️ Novo"
+            badgeColor="bg-red-900/80 text-red-300 border border-red-700/50"
+          />
+          <SpecialPortalCard
+            to="/geek/assassins-creed"
+            image={acPortalImg}
+            title="Assassin's Creed"
+            description="Portal completo da franquia — reviews, rankings e análises de todos os jogos."
+            badge="⚔️ Especial"
+            badgeColor="bg-amber-900/80 text-amber-300 border border-amber-700/50"
+          />
+          <SpecialPortalCard
+            to="/geek/avatar"
+            image={avatarPortalBannerImg}
+            title="Universo Avatar"
+            description="Filmes, tecnologia e o jogo Frontiers of Pandora — tudo sobre o universo de Pandora."
+            badge="🌿 Especial"
+            badgeColor="bg-cyan-900/80 text-cyan-300 border border-cyan-700/50"
+          />
+        </div>
       </div>
 
       {/* Posts Grid */}
