@@ -91,6 +91,11 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Tudo sobre a franquia Avatar de James Cameron: filmes, jogos e tecnologia.",
     keywords: "Avatar, James Cameron, Pandora, Avatar 2, Avatar 3, Frontiers of Pandora, Na'vi, filme Avatar, tecnologia CGI, cinema 3D, franquia Avatar, Ubisoft",
   },
+  "/geek/crimson-desert": {
+    title: "Portal Crimson Desert",
+    description: "Tudo sobre Crimson Desert da Pearl Abyss: guia completo, combate, BlackSpace Engine e edições com preços em reais.",
+    keywords: "Crimson Desert, Pearl Abyss, Kliff, Pywel, BlackSpace Engine, RPG ação mundo aberto, lançamento 2026, PC PS5 Xbox",
+  },
   "/geek/assassins-creed": {
     title: "Portal Assassin's Creed",
     description: "Guias, análises e ranking completo de todos os jogos Assassin's Creed.",

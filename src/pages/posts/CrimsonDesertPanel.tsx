@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import DynamicSEO from "@/components/DynamicSEO";
 import { ArrowLeft } from "lucide-react";
 import crimsonHeroImg from "@/assets/crimson-desert-hero.webp";
 import crimsonGuiaImg from "@/assets/crimson-desert-guia.webp";
@@ -26,17 +27,17 @@ const CrimsonDesertPanel = () => {
     },
     {
       slug: "crimson-desert-review-2026",
-      title: "Review Pós-Lançamento",
-      subtitle: "Nota 9.2 — Excepcional",
-      desc: "Análise completa após 60+ horas: gameplay, narrativa, performance técnica e veredito final.",
+      title: "Primeiras Impressões",
+      subtitle: "O que os Previews Dizem",
+      desc: "O que veículos como IGN e GameSpot publicaram após sessões de preview — sem notas inventadas.",
       image: crimsonReviewImg,
       btn: "Ver Review",
     },
     {
       slug: "crimson-desert-builds-guia-2026",
-      title: "Guia de Builds",
-      subtitle: "As Melhores Combinações",
-      desc: "Descubra as builds mais poderosas, árvores de habilidades e combinações elementais para dominar Pywel.",
+      title: "Sistema de Progressão",
+      subtitle: "O Que Foi Confirmado",
+      desc: "Tudo sobre a progressão de Kliff baseado em informações confirmadas pela Pearl Abyss e trailers oficiais.",
       image: crimsonBuildsImg,
       btn: "Ver Builds",
     },
@@ -44,6 +45,7 @@ const CrimsonDesertPanel = () => {
 
   return (
     <div className="min-h-screen">
+      <DynamicSEO />
       <Link to="/geek" className="container inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mt-6 transition-colors">
         <ArrowLeft className="h-4 w-4" /> Voltar para Geek
       </Link>
@@ -125,11 +127,11 @@ const CrimsonDesertPanel = () => {
               </tr>
               <tr className="border-t border-border">
                 <td className="py-4 px-6 font-medium">Mapa</td>
-                <td className="py-4 px-6 text-muted-foreground">82 km² — 5 regiões distintas</td>
+                <td className="py-4 px-6 text-muted-foreground">Múltiplos biomas — tamanho exato não divulgado</td>
               </tr>
               <tr className="border-t border-border">
                 <td className="py-4 px-6 font-medium">Preço</td>
-                <td className="py-4 px-6 text-muted-foreground">R$ 249,90 (PC) / R$ 299,90 (Console)</td>
+                <td className="py-4 px-6 text-muted-foreground">~R$ 349 (Standard) · ~R$ 399 (Deluxe)</td>
               </tr>
             </tbody>
           </table>

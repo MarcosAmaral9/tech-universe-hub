@@ -75,10 +75,10 @@ const CrimsonDesertGuiaCompleto = () => {
             <div><strong>Gênero:</strong> RPG de Ação / Mundo Aberto</div>
             <div><strong>Plataformas:</strong> PC, PS5, Xbox Series X|S, macOS</div>
             <div><strong>Lançamento:</strong> 19 de março de 2026</div>
-            <div><strong>Mapa:</strong> 82 km² — 5 regiões distintas</div>
+            <div><strong>Mapa:</strong> Múltiplos biomas (tamanho oficial não divulgado)</div>
             <div><strong>Modo:</strong> Single-player exclusivo</div>
             <div><strong>Tempo para Zerar:</strong> ~35h (história)</div>
-            <div><strong>Preço:</strong> R$ 249,90 (PC)</div>
+            <div><strong>Preço:</strong> ~R$ 349 (Standard) · ~R$ 399 (Deluxe)</div>
           </div>
         </div>
 
@@ -142,7 +142,7 @@ const CrimsonDesertGuiaCompleto = () => {
         </h2>
 
         <p>
-          Pywel é um continente aberto com um mapa de <strong>82 quilômetros quadrados</strong> — número que coloca o jogo entre os maiores do gênero. O mundo é dividido em cinco regiões distintas, cada uma com sua própria geografia, cultura, fauna e desafios únicos.
+          Pywel é um continente de mundo aberto de grande escala. A Pearl Abyss não divulgou o tamanho exato do mapa em números. O mundo apresenta múltiplos biomas distintos — florestas, desertos, montanhas e costas — cada um com sua própria geografia, fauna e desafios.
         </p>
 
         <div className="grid md:grid-cols-2 gap-4 my-6">
@@ -237,7 +237,7 @@ const CrimsonDesertGuiaCompleto = () => {
         <div className="bg-card border border-border rounded-xl p-6 mt-8">
           <h3 className="text-xl font-bold mb-3">Conclusão</h3>
           <p className="text-muted-foreground">
-            Crimson Desert representa a aposta mais ambiciosa da Pearl Abyss até hoje. Com um mundo vivo de 82km², uma narrativa cinematográfica protagonizada por Kliff e os Greymanes, um sistema de combate visceral e uma engine tecnicamente impressionante, o jogo tem tudo para se tornar um marco do RPG na geração atual. Já está com o HD preparado para explorar Pywel?
+            Crimson Desert representa a aposta mais ambiciosa da Pearl Abyss até hoje. Com seu mundo aberto de grande escala, uma narrativa cinematográfica protagonizada por Kliff e os Greymanes, um sistema de combate visceral e uma engine tecnicamente impressionante, o jogo tem tudo para se tornar um marco do RPG na geração atual. Já está com o HD preparado para explorar Pywel?
           </p>
         </div>
       </div>

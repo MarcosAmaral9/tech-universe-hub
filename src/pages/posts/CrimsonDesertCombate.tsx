@@ -94,7 +94,7 @@ const CrimsonDesertCombate = () => {
           O combate de Crimson Desert foi construído para exigir habilidade real. Diferente de RPGs que permitem apertar botões repetidamente com sucesso garantido, aqui cada encontro exige que o jogador leia os padrões inimigos, identifique janelas de ataque e tome decisões táticas em frações de segundo.
         </p>
         <p>
-          Kliff possui acesso a um sistema de combos extenso que combina ataques rápidos, ataques pesados, defesas ativas e contra-ataques. As sequências podem ser adaptadas dependendo da arma equipada, e a progressão de personagem permite especializar o estilo de luta — seja um guerreiro brutal corpo a corpo, um lutador ágil com movimentos evasivos, ou um híbrido que mistura magia elemental com força física.
+          Kliff possui acesso a um sistema de combos extenso que combina ataques rápidos, ataques pesados, defesas ativas e contra-ataques. As sequências podem ser adaptadas dependendo da arma equipada, e a progressão de personagem permite especializar o estilo de luta — seja um guerreiro brutal corpo a corpo, ou um lutador ágil com movimentos evasivos. A Pearl Abyss confirmou habilidades especiais ligadas ao Abismo, mas detalhes completos serão revelados no jogo.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
