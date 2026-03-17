@@ -1,4 +1,5 @@
 import { defineConfig, type Plugin } from "vite";
+import { componentTagger } from "lovable-tagger";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import fs from "fs";
@@ -63,7 +64,7 @@ function htaccessPlugin(): Plugin {
   };
 }
 
-export default defineConfig(() => ({
+export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
@@ -165,6 +166,7 @@ export default defineConfig(() => ({
       },
     }),
     htaccessPlugin(),
+    mode === "development" && componentTagger(),
   ].filter(Boolean),
   resolve: {
     alias: {
@@ -187,7 +189,7 @@ export default defineConfig(() => ({
     },
     target: "es2020",
     chunkSizeWarningLimit: 600,
-    minify: "oxc",
+    minify: "esbuild",
     cssCodeSplit: true,
   },
 }));
