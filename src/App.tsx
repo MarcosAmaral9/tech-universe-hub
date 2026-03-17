@@ -129,6 +129,8 @@ const EconomiaDomestica2026 = lazy(() => import("./pages/posts/EconomiaDomestica
 const CrimsonDesertPanel = lazy(() => import("./pages/posts/CrimsonDesertPanel"));
 const CrimsonDesertGuiaCompleto = lazy(() => import("./pages/posts/CrimsonDesertGuiaCompleto"));
 const CrimsonDesertCombate = lazy(() => import("./pages/posts/CrimsonDesertCombate"));
+const CrimsonDesertReview = lazy(() => import("./pages/posts/CrimsonDesertReview"));
+const CrimsonDesertBuilds = lazy(() => import("./pages/posts/CrimsonDesertBuilds"));
 const SocialPanelPage = lazy(() => import("./pages/SocialPanelPage"));
 
 const queryClient = new QueryClient({
