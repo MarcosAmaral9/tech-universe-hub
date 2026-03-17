@@ -178,6 +178,8 @@ const App = () => (
                 <Route path="/geek/crimson-desert" element={<CrimsonDesertPanel />} />
                 <Route path="/post/crimson-desert-guia-completo" element={<CrimsonDesertGuiaCompleto />} />
                 <Route path="/post/crimson-desert-combate-blackspace-engine" element={<CrimsonDesertCombate />} />
+                <Route path="/post/crimson-desert-review-2026" element={<CrimsonDesertReview />} />
+                <Route path="/post/crimson-desert-builds-guia-2026" element={<CrimsonDesertBuilds />} />
                 {/* Post Routes */}
                 <Route path="/post/diferenca-mangas-manhuas-manhwas" element={<DiferencaMangasManhuas />} />
                 <Route path="/post/como-diferenciar-manhuas-manhwas" element={<DiferenciarManhuasManhwas />} />

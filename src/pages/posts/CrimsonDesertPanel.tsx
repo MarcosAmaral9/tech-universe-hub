@@ -3,6 +3,8 @@ import { ArrowLeft } from "lucide-react";
 import crimsonHeroImg from "@/assets/crimson-desert-hero.webp";
 import crimsonGuiaImg from "@/assets/crimson-desert-guia.webp";
 import crimsonCombateImg from "@/assets/crimson-desert-combate.webp";
+import crimsonReviewImg from "@/assets/crimson-desert-review.webp";
+import crimsonBuildsImg from "@/assets/crimson-desert-builds.webp";
 
 const CrimsonDesertPanel = () => {
   const articles = [
@@ -21,6 +23,22 @@ const CrimsonDesertPanel = () => {
       desc: "Análise aprofundada das mecânicas de combate, chefes épicos, montarias e tecnologia.",
       image: crimsonCombateImg,
       btn: "Ver Análise",
+    },
+    {
+      slug: "crimson-desert-review-2026",
+      title: "Review Pós-Lançamento",
+      subtitle: "Nota 9.2 — Excepcional",
+      desc: "Análise completa após 60+ horas: gameplay, narrativa, performance técnica e veredito final.",
+      image: crimsonReviewImg,
+      btn: "Ver Review",
+    },
+    {
+      slug: "crimson-desert-builds-guia-2026",
+      title: "Guia de Builds",
+      subtitle: "As Melhores Combinações",
+      desc: "Descubra as builds mais poderosas, árvores de habilidades e combinações elementais para dominar Pywel.",
+      image: crimsonBuildsImg,
+      btn: "Ver Builds",
     },
   ];
 
@@ -108,6 +126,10 @@ const CrimsonDesertPanel = () => {
               <tr className="border-t border-border">
                 <td className="py-4 px-6 font-medium">Mapa</td>
                 <td className="py-4 px-6 text-muted-foreground">82 km² — 5 regiões distintas</td>
+              </tr>
+              <tr className="border-t border-border">
+                <td className="py-4 px-6 font-medium">Preço</td>
+                <td className="py-4 px-6 text-muted-foreground">R$ 249,90 (PC) / R$ 299,90 (Console)</td>
               </tr>
             </tbody>
           </table>
