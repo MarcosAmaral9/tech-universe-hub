@@ -139,7 +139,7 @@ const CrimsonDesertGuiaCompleto = () => {
       </div>
 
       {/* Related Posts & Comments */}
-      <RelatedPosts currentPostId="70" />
+      <RelatedPosts currentSlug="crimson-desert-guia-completo" />
       <CommentSection postId="crimson-desert-guia-completo" />
     </article>
   );

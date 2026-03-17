@@ -126,7 +126,7 @@ const CrimsonDesertCombate = () => {
       </div>
 
       {/* Related Posts & Comments */}
-      <RelatedPosts currentPostId="71" />
+      <RelatedPosts currentSlug="crimson-desert-combate-blackspace-engine" />
       <CommentSection postId="crimson-desert-combate-blackspace-engine" />
     </article>
   );
