@@ -129,6 +129,8 @@ const EconomiaDomestica2026 = lazy(() => import("./pages/posts/EconomiaDomestica
 const CrimsonDesertPanel = lazy(() => import("./pages/posts/CrimsonDesertPanel"));
 const CrimsonDesertGuiaCompleto = lazy(() => import("./pages/posts/CrimsonDesertGuiaCompleto"));
 const CrimsonDesertCombate = lazy(() => import("./pages/posts/CrimsonDesertCombate"));
+const CrimsonDesertReview = lazy(() => import("./pages/posts/CrimsonDesertReview"));
+const CrimsonDesertBuilds = lazy(() => import("./pages/posts/CrimsonDesertBuilds"));
 const SocialPanelPage = lazy(() => import("./pages/SocialPanelPage"));
 
 const queryClient = new QueryClient({
@@ -176,6 +178,8 @@ const App = () => (
                 <Route path="/geek/crimson-desert" element={<CrimsonDesertPanel />} />
                 <Route path="/post/crimson-desert-guia-completo" element={<CrimsonDesertGuiaCompleto />} />
                 <Route path="/post/crimson-desert-combate-blackspace-engine" element={<CrimsonDesertCombate />} />
+                <Route path="/post/crimson-desert-review-2026" element={<CrimsonDesertReview />} />
+                <Route path="/post/crimson-desert-builds-guia-2026" element={<CrimsonDesertBuilds />} />
                 {/* Post Routes */}
                 <Route path="/post/diferenca-mangas-manhuas-manhwas" element={<DiferencaMangasManhuas />} />
                 <Route path="/post/como-diferenciar-manhuas-manhwas" element={<DiferenciarManhuasManhwas />} />
