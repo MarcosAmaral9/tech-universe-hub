@@ -902,6 +902,33 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-17",
     readTime: "14 min"
   },
+  // Crimson Desert - Review & Builds
+  {
+    id: "72",
+    slug: "crimson-desert-review-2026",
+    title: "Crimson Desert Review: O RPG Que Redefiniu o Mundo Aberto em 2026",
+    excerpt: "Análise completa após 60+ horas: gameplay, narrativa, performance técnica e veredito final. Nota 9.2.",
+    content: "",
+    category: "geek",
+    subtopic: "crimson-desert",
+    image: crimsonDesertReviewImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-17",
+    readTime: "15 min"
+  },
+  {
+    id: "73",
+    slug: "crimson-desert-builds-guia-2026",
+    title: "Crimson Desert: Guia Completo de Builds — As Melhores Combinações Para Kliff",
+    excerpt: "Descubra as builds mais poderosas, árvores de habilidades e combinações elementais para dominar Pywel.",
+    content: "",
+    category: "geek",
+    subtopic: "crimson-desert",
+    image: crimsonDesertBuildsImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-17",
+    readTime: "14 min"
+  },
 ];
 
 export const getPostBySlug = (slug: string): BlogPost | undefined => {
