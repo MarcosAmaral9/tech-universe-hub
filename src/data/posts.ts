@@ -929,6 +929,111 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-17",
     readTime: "14 min"
   },
+  // ── 17 Mar 2026 — 8 novos posts ────────────────────────────────────────────
+  {
+    id: "111",
+    slug: "cdb-2026-guia-completo",
+    title: "CDB em 2026: Ainda Vale a Pena? Guia Completo com Taxas Reais",
+    excerpt: "CDB 100% CDI, 110% CDI, IR regressivo e comparação com LCI, LCA e Tesouro Direto. Tudo que você precisa saber para investir bem em renda fixa em 2026.",
+    content: "",
+    category: "invest",
+    subtopic: "renda-fixa",
+    image: cdb2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-03-17",
+    readTime: "12 min"
+  },
+  {
+    id: "112",
+    slug: "previdencia-privada-pgbl-vgbl-2026",
+    title: "Previdência Privada em 2026: PGBL ou VGBL? Guia para Decidir Sem Erro",
+    excerpt: "A diferença definitiva entre PGBL e VGBL, quando cada um vale a pena, tributação progressiva vs regressiva e como a taxa de administração impacta seu patrimônio final.",
+    content: "",
+    category: "invest",
+    subtopic: "planejamento",
+    image: previdenciaImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-17",
+    readTime: "13 min"
+  },
+  {
+    id: "113",
+    slug: "ia-codigo-programadores-2026",
+    title: "IA e Programação em 2026: GitHub Copilot, Cursor e o Futuro do Dev",
+    excerpt: "GitHub Copilot, Cursor, Windsurf e Claude Code — análise honesta do que funciona, o que ainda é hype e como integrar IA ao seu fluxo de desenvolvimento.",
+    content: "",
+    category: "ia",
+    subtopic: "comparativos",
+    image: iaCodigoImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-17",
+    readTime: "13 min"
+  },
+  {
+    id: "114",
+    slug: "modelos-ia-open-source-2026",
+    title: "IA Open Source em 2026: Llama, Mistral e DeepSeek vs Modelos Pagos",
+    excerpt: "DeepSeek R1 sacudiu o mercado em 2025 e a distância entre open source e modelos proprietários segue fechando. Comparação técnica e quando cada escolha faz sentido.",
+    content: "",
+    category: "ia",
+    subtopic: "comparativos",
+    image: iaOpenSourceImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-17",
+    readTime: "12 min"
+  },
+  {
+    id: "115",
+    slug: "baldurs-gate-3-review-2026",
+    title: "Baldur's Gate 3 em 2026: Ainda o Melhor RPG da Geração?",
+    excerpt: "Lançado em 2023, BG3 continua recebendo atualizações gratuitas da Larian. Com 20 milhões de cópias vendidas e Metacritic 96, vale a pena comprar em 2026?",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: bg3Img,
+    author: "VICIO<CODE>",
+    date: "2026-03-17",
+    readTime: "14 min"
+  },
+  {
+    id: "116",
+    slug: "dragon-age-veilguard-review-2026",
+    title: "Dragon Age: The Veilguard — A BioWare Voltou? Review Completo 2026",
+    excerpt: "Lançado em outubro 2024 após quase uma década de desenvolvimento, Veilguard dividiu os fãs. Metacritic 83 — análise honesta do que funcionou e o que desapontou.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: dragonAgeImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-17",
+    readTime: "13 min"
+  },
+  {
+    id: "117",
+    slug: "demon-slayer-hashira-guia-2026",
+    title: "Demon Slayer: Guia Completo dos Hashira — Respirações e Poderes",
+    excerpt: "Os 9 Pilares da Corporação de Extermínio: Rengoku, Tengen, Himejima e todos os outros. Guia completo com a hierarquia das respirações e arcos de cada personagem.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: demonSlayerImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-17",
+    readTime: "14 min"
+  },
+  {
+    id: "118",
+    slug: "one-piece-final-saga-2026",
+    title: "One Piece Final Saga: Onde Estamos e O Que Esperar do Final",
+    excerpt: "A Final Saga começou em 2022. Arco de Egghead, revelações sobre Imu e os Gorosei, e o que sabemos sobre o One Piece. Spoilers e previsões para o fim da série.",
+    content: "",
+    category: "otaku",
+    subtopic: "manga",
+    image: onePieceImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-17",
+    readTime: "15 min"
+  },
 ];
 
 export const getPostBySlug = (slug: string): BlogPost | undefined => {

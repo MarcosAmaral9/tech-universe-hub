@@ -126,6 +126,15 @@ const IACriatividade2026 = lazy(() => import("./pages/posts/IACriatividade2026")
 const IAPrivacidadeDados2026 = lazy(() => import("./pages/posts/IAPrivacidadeDados2026"));
 const ETFs2026 = lazy(() => import("./pages/posts/ETFs2026"));
 const EconomiaDomestica2026 = lazy(() => import("./pages/posts/EconomiaDomestica2026"));
+// ── 17 Mar 2026 ──────────────────────────────────────────────────────────────
+const CDB2026Guia            = lazy(() => import("./pages/posts/CDB2026Guia"));
+const PrevidenciaPrivada2026 = lazy(() => import("./pages/posts/PrevidenciaPrivada2026"));
+const IACodigo2026           = lazy(() => import("./pages/posts/IACodigo2026"));
+const ModelosIAOpenSource2026= lazy(() => import("./pages/posts/ModelosIAOpenSource2026"));
+const BaldursGate3Review2026 = lazy(() => import("./pages/posts/BaldursGate3Review2026"));
+const DragonAgeVeilguard2026 = lazy(() => import("./pages/posts/DragonAgeVeilguard2026"));
+const DemonSlayerHashira2026 = lazy(() => import("./pages/posts/DemonSlayerHashira2026"));
+const OnePieceFinalSaga2026  = lazy(() => import("./pages/posts/OnePieceFinalSaga2026"));
 const CrimsonDesertPanel = lazy(() => import("./pages/posts/CrimsonDesertPanel"));
 const CrimsonDesertGuiaCompleto = lazy(() => import("./pages/posts/CrimsonDesertGuiaCompleto"));
 const CrimsonDesertCombate = lazy(() => import("./pages/posts/CrimsonDesertCombate"));
@@ -242,6 +251,15 @@ const App = () => (
                 <Route path="/post/ia-privacidade-dados-2026" element={<IAPrivacidadeDados2026 />} />
                 <Route path="/post/etfs-2026-guia-completo-investir" element={<ETFs2026 />} />
                 <Route path="/post/economia-domestica-2026-cortar-gastos" element={<EconomiaDomestica2026 />} />
+                {/* 17 Mar 2026 — 8 new posts */}
+                <Route path="/post/cdb-2026-guia-completo" element={<CDB2026Guia />} />
+                <Route path="/post/previdencia-privada-pgbl-vgbl-2026" element={<PrevidenciaPrivada2026 />} />
+                <Route path="/post/ia-codigo-programadores-2026" element={<IACodigo2026 />} />
+                <Route path="/post/modelos-ia-open-source-2026" element={<ModelosIAOpenSource2026 />} />
+                <Route path="/post/baldurs-gate-3-review-2026" element={<BaldursGate3Review2026 />} />
+                <Route path="/post/dragon-age-veilguard-review-2026" element={<DragonAgeVeilguard2026 />} />
+                <Route path="/post/demon-slayer-hashira-guia-2026" element={<DemonSlayerHashira2026 />} />
+                <Route path="/post/one-piece-final-saga-2026" element={<OnePieceFinalSaga2026 />} />
                 {/* Legal Pages */}
                 <Route path="/sobre" element={<AboutPage />} />
                 <Route path="/contato" element={<ContactPage />} />
