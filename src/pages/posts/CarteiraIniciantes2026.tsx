@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, Calendar, User, AlertTriangle, ChevronRight, Zap, CheckCircle2, Target, PieChart } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";

@@ -194,6 +194,10 @@ const DynamicSEO = () => {
     setMetaTag("name", "twitter:image", image);         // absolute URL
     setMetaTag("name", "twitter:image:alt", title);
 
+    // ── Robots — ensure all pages are indexable ─────────────────────────────
+    setMetaTag("name", "robots", "index, follow, max-snippet:-1, max-image-preview:large");
+    setMetaTag("name", "googlebot", "index, follow");
+
     // ── Canonical ────────────────────────────────────────────────────────────
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!link) {

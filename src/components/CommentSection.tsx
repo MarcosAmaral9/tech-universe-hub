@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { trackCommentPosted } from "@/hooks/useReadingHistory";
 import { MessageCircle, Send, Trash2, Shield, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -19,9 +20,10 @@ interface Comment {
 
 interface CommentSectionProps {
   postId: string;
+  postTitle?: string;
 }
 
-const CommentSection = ({ postId }: CommentSectionProps) => {
+const CommentSection = ({ postId, postTitle = "Artigo" }: CommentSectionProps) => {
   const { user, profile } = useAuthContext();
   const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState("");
@@ -82,6 +84,7 @@ const CommentSection = ({ postId }: CommentSectionProps) => {
       if (!res.ok) {
         setErrors(["Erro ao enviar comentário. Tente novamente."]);
       } else {
+        trackCommentPosted(postId, postTitle, newComment.trim());
         setNewComment("");
         await fetchComments();
       }

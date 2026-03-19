@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, Calendar, User, ChevronRight, Zap, Building2, TrendingUp, AlertTriangle, CheckCircle2 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -14,6 +16,11 @@ const FIISimulator = () => {
   const [dy, setDy] = useState(9);
   const needed = (targetIncome * 12) / (dy / 100);
 
+
+  useEffect(() => {
+    trackArticleRead("fiis-2026-melhores-fundos-imobiliarios", "FIIs em 2026: Os Melhores Fundos Imobiliários e Como Analisar", "invest");
+  }, []);
+  const goBack = useSmartBack("/financas");
   return (
     <div className="bg-card border border-border rounded-2xl p-6 mb-8">
       <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
@@ -237,9 +244,9 @@ const FIIs2026 = () => {
           ))}
         </div>
 
-        <Link to="/financas" className="inline-flex items-center gap-2 text-[hsl(var(--invest-color))] hover:underline mb-8">
-          <ArrowLeft className="h-4 w-4" /> Voltar para Finanças
-        </Link>
+        <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para Finanças
+      </button>
 
         <RelatedPosts currentSlug="fiis-2026-melhores-fundos-imobiliarios" />
         <CommentSection postId="31" />

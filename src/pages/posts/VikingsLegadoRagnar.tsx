@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Sword, Ship, Crown, Shield, Axe, Target, Tv, Star } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -7,15 +10,16 @@ import RelatedPosts from "@/components/RelatedPosts";
 import vikingsImg from "@/assets/vikings-ragnar.webp";
 
 const VikingsLegadoRagnar = () => {
+
+  useEffect(() => {
+    trackArticleRead("vikings-legado-ragnar-lothbrok", "Vikings: Vale a Pena Assistir em 2026? Review Completa da Série", "geek");
+  }, []);
+  const goBack = useSmartBack("/geek");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <Link
-        to="/geek"
-        className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Voltar para Geek
-      </Link>
+      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para Geek
+      </button>
 
       <header className="mb-8">
         <CategoryBadge category="geek" size="lg" />

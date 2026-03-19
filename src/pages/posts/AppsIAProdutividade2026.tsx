@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Smartphone, Star, Lightbulb } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -20,12 +23,16 @@ const AppsIAProdutividade2026 = () => {
     { name: "Claude.ai", desc: "Análise de documentos longos e escrita avançada", cost: "Gratuito / US$ 20 Pro", nota: "9.2/10" },
   ];
 
+
+  useEffect(() => {
+    trackArticleRead("melhores-apps-ia-produtividade-2026", "Os 10 Melhores Apps de IA para Produtividade em 2026", "ia");
+  }, []);
+  const goBack = useSmartBack("/ia");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <Link to="/ia" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" />
-        Voltar para IA
-      </Link>
+      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para IA
+      </button>
 
       <header className="mb-8">
         <CategoryBadge category="ia" size="lg" />

@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import { ArrowLeft, Calculator, DollarSign, TrendingUp, Bitcoin, Gem } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import RelatedPosts from "@/components/RelatedPosts";

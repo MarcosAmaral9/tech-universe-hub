@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Anchor, Ship, Cpu, DollarSign, Target, Laptop, Gamepad2, HelpCircle, Music } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -7,18 +10,19 @@ import RelatedPosts from "@/components/RelatedPosts";
 import acBlackFlagImg from "@/assets/ac-black-flag.webp";
 
 const ACBlackFlag = () => {
+
+  useEffect(() => {
+    trackArticleRead("ac-black-flag-melhor-jogo-piratas", "AC Black Flag em 2026: Ainda o Melhor Jogo de Piratas de Todos os Tempos?", "geek");
+  }, []);
+  const goBack = useSmartBack("/geek/assassins-creed");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
       {/* SEO-optimized meta description: Assassin's Creed IV Black Flag ainda é o melhor jogo de piratas em 2026? Review completa com análise de combate naval, história de Edward Kenway, requisitos de PC gamer e custo-benefício. */}
       
       {/* Back Button */}
-      <Link
-        to="/geek/assassins-creed"
-        className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Voltar para Portal Assassin's Creed
-      </Link>
+      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para Portal Assassin's Creed
+      </button>
 
       {/* Header */}
       <header className="mb-8">

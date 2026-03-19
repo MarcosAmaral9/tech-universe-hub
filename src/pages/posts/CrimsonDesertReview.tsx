@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Star, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -8,9 +11,12 @@ import crimsonReviewImg from "@/assets/crimson-desert-review.webp";
 
 const CrimsonDesertReview = () => (
   <article className="container py-8 max-w-4xl mx-auto">
-    <Link to="/geek/crimson-desert" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-      <ArrowLeft className="h-4 w-4" /> Voltar para Portal Crimson Desert
-    </Link>
+    <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para Portal Crimson Desert
+      </button>
+      <Link to="/geek/crimson-desert" className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-primary mb-6 ml-4 transition-colors">
+        ⬡ Ir ao portal
+      </Link>
 
     <header className="mb-8">
       <div className="flex items-center gap-2 mb-4">
@@ -142,8 +148,7 @@ const CrimsonDesertReview = () => (
         o tempo e a experiência completa estará disponível desde o dia 1.
       </p>
       <p>
-        Veja nosso artigo sobre <Link to="/post/crimson-desert-edicoes-precos-vale-pena" className="text-primary hover:underline">Edições e Preços</Link> para
-        decidir qual versão comprar.
+        Para informações sobre preços e edições do jogo, consulte a seção de ficha técnica acima — Standard ~R$ 349, Deluxe ~R$ 399 e Collector's Edition ~R$ 1.399.
       </p>
     </div>
 

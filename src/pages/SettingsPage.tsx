@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { Settings, Sun, Moon, Type, Palette, Bell, BellOff, RotateCcw, Smartphone, Globe, User, AtSign, Camera } from "lucide-react";
+import { Settings, Sun, Moon, Type, Palette, Bell, BellOff, RotateCcw, Smartphone, Globe, User, AtSign, Camera, BookOpen, MessageSquare, Clock, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
+import { getReadHistory, getCommentHistory } from "@/hooks/useReadingHistory";
+import type { HistoryArticle, HistoryComment } from "@/hooks/useReadingHistory";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Input } from "@/components/ui/input";
@@ -51,6 +54,9 @@ const SettingsPage = () => {
   const [editNickname, setEditNickname] = useState("");
   const [savingProfile, setSavingProfile] = useState(false);
   const [uploadingAvatar, setUploadingAvatar] = useState(false);
+  const [activeTab, setActiveTab] = useState<"settings" | "history">("settings");
+  const [readHistory, setReadHistory] = useState<HistoryArticle[]>([]);
+  const [commentHistory, setCommentHistory] = useState<HistoryComment[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -59,6 +65,11 @@ const SettingsPage = () => {
       setEditNickname(profile.nickname);
     }
   }, [profile]);
+
+  useEffect(() => {
+    setReadHistory(getReadHistory());
+    setCommentHistory(getCommentHistory());
+  }, [activeTab]);
 
   const toggleSound = () => {
     const newValue = !soundEnabled;
@@ -186,6 +197,97 @@ const SettingsPage = () => {
             Personalize sua experiência no VICIO&lt;CODE&gt;
           </p>
         </div>
+
+        {/* Tab Switcher */}
+        {user && (
+          <div className="flex rounded-xl border border-border overflow-hidden bg-card">
+            {([
+              { id: "settings", label: "Configurações", icon: <Settings className="h-4 w-4" /> },
+              { id: "history",  label: "Histórico",      icon: <Clock className="h-4 w-4" /> },
+            ] as const).map(tab => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex-1 flex items-center justify-center gap-2 py-3 text-sm font-medium transition-colors ${
+                  activeTab === tab.id
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                }`}
+              >
+                {tab.icon}{tab.label}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* History Tab */}
+        {activeTab === "history" && user && (
+          <div className="space-y-6">
+            {/* Last read articles */}
+            <section className="rounded-2xl border border-border bg-card p-6">
+              <h2 className="text-lg font-semibold flex items-center gap-2 mb-4">
+                <BookOpen className="w-5 h-5 text-primary" /> Últimos artigos lidos
+              </h2>
+              {readHistory.length === 0 ? (
+                <p className="text-muted-foreground text-sm text-center py-4">
+                  Nenhum artigo lido ainda. Comece a explorar o site!
+                </p>
+              ) : (
+                <div className="space-y-3">
+                  {readHistory.map((a, i) => (
+                    <Link
+                      key={i}
+                      to={`/post/${a.slug}`}
+                      className="flex items-start justify-between gap-3 p-3 rounded-xl border border-border hover:border-primary/40 hover:bg-primary/5 transition-all group"
+                    >
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors line-clamp-1">{a.title}</p>
+                        <p className="text-xs text-muted-foreground mt-0.5">
+                          {new Date(a.readAt).toLocaleDateString("pt-BR", { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" })}
+                        </p>
+                      </div>
+                      <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary shrink-0 mt-0.5" />
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </section>
+
+            {/* Last comments */}
+            <section className="rounded-2xl border border-border bg-card p-6">
+              <h2 className="text-lg font-semibold flex items-center gap-2 mb-4">
+                <MessageSquare className="w-5 h-5 text-primary" /> Últimos comentários
+              </h2>
+              {commentHistory.length === 0 ? (
+                <p className="text-muted-foreground text-sm text-center py-4">
+                  Você ainda não comentou em nenhum artigo.
+                </p>
+              ) : (
+                <div className="space-y-3">
+                  {commentHistory.map((cm, i) => (
+                    <Link
+                      key={i}
+                      to={`/post/${cm.postId}`}
+                      className="block p-3 rounded-xl border border-border hover:border-primary/40 hover:bg-primary/5 transition-all group"
+                    >
+                      <p className="text-xs text-primary font-medium mb-1 line-clamp-1 group-hover:underline">
+                        {cm.postTitle}
+                      </p>
+                      <p className="text-sm text-muted-foreground line-clamp-2">"{cm.text}{cm.text.length >= 100 ? "…" : ""}"</p>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        {new Date(cm.commentedAt).toLocaleDateString("pt-BR", { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" })}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </section>
+          </div>
+        )}
+
+        {/* Wrap all settings sections in a conditional div */}
+        {activeTab === "settings" && (
+        <div className="space-y-10 pb-1">
 
         {/* User Profile Section */}
         {user && profile && (
@@ -379,6 +481,7 @@ const SettingsPage = () => {
             </div>
           )}
         </div>
+        </div>)}{/* end activeTab === settings */}
       </div>
     </div>
   );

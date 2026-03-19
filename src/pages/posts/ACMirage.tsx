@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Moon, Target, Cpu, DollarSign, Laptop, Gamepad2, HelpCircle, Wind, Bomb, BookOpen, MapPin, Shield, Swords, Users, Zap, Crown } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -8,18 +11,19 @@ import acMirageImg from "@/assets/ac-mirage.webp";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const ACMirage = () => {
+
+  useEffect(() => {
+    trackArticleRead("ac-mirage-retorno-raizes-bagda", "AC Mirage em 2026 Vale a Pena? Review Completa — Furtividade Clássica", "geek");
+  }, []);
+  const goBack = useSmartBack("/geek/assassins-creed");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
       {/* SEO-optimized meta description: Assassin's Creed Mirage vale a pena em 2026? Review completa do retorno às raízes em Bagdá do século IX, com furtividade clássica, facções, contexto histórico, parkour, ferramentas do assassino, DLCs, requisitos de PC gamer e custo-benefício. */}
       
       {/* Back Button */}
-      <Link
-        to="/geek/assassins-creed"
-        className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Voltar para Portal Assassin's Creed
-      </Link>
+      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para Portal Assassin's Creed
+      </button>
 
       {/* Header */}
       <header className="mb-8">

@@ -1,16 +1,20 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Code, Globe, DollarSign, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
+import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/modelos-ia-open-source-2026.webp";
 
 const ModelosIAOpenSource2026 = () => (
   <article className="container py-8 max-w-4xl mx-auto">
-    <Link to="/ia" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-      <ArrowLeft className="h-4 w-4" /> Voltar para IA
-    </Link>
+    <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para IA
+      </button>
     <header className="mb-8">
       <CategoryBadge category="ia" size="lg" />
       <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
@@ -122,7 +126,16 @@ const ModelosIAOpenSource2026 = () => (
         <p className="text-muted-foreground">Compartilhe nos comentários! 👇</p>
       </div>
     </div>
-    <RelatedPosts currentSlug="modelos-ia-open-source-2026" category="ia" />
+    
+      <RelatedTopics
+        title="Leia também"
+        links={[
+          { label: "IA e Programação 2026", href: "/post/ia-codigo-programadores-2026", desc: "Copilot, Cursor e Windsurf na prática" },
+          { label: "ChatGPT vs Gemini vs Claude", href: "/post/chatgpt-vs-gemini-vs-claude-2026", desc: "Compare os principais modelos pagos" },
+          { label: "IA e Privacidade de Dados", href: "/post/ia-privacidade-dados-2026", desc: "Por que privacidade é o principal argumento open source" },
+        ]}
+      />
+      <RelatedPosts currentSlug="modelos-ia-open-source-2026" category="ia" />
     <CommentSection postId="modelos-ia-open-source-2026" postTitle="IA Open Source 2026" />
   </article>
 );

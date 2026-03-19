@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Home, ShoppingCart, Lightbulb, Calculator, Sparkles } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -7,12 +10,16 @@ import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/economia-domestica-2026.webp";
 
 const EconomiaDomestica2026 = () => {
+
+  useEffect(() => {
+    trackArticleRead("economia-domestica-2026-cortar-gastos", "Economia Doméstica 2026: 30 Dicas Para Cortar Gastos Sem Perder Qualidade", "invest");
+  }, []);
+  const goBack = useSmartBack("/financas");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <Link to="/financas" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" />
-        Voltar para Finanças
-      </Link>
+      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para Finanças
+      </button>
 
       <header className="mb-8">
         <CategoryBadge category="invest" size="lg" />
@@ -98,6 +105,12 @@ const EconomiaDomestica2026 = () => {
           <li><strong>Bicicleta elétrica</strong> — Custo de R$ 0,05/km vs R$ 0,80/km do carro</li>
           <li><strong>Manutenção preventiva</strong> — Evita gastos de emergência 3x maiores</li>
           <li><strong>Compare combustíveis</strong> — Etanol vale a pena quando custa até 70% da gasolina</li>
+              <li><strong>Cancele assinaturas esquecidas:</strong> Revise seu extrato bancário e cancele qualquer assinatura que você não usou nos últimos 3 meses — média de economia: R$ 80–150/mês.</li>
+              <li><strong>Compare preços antes de comprar:</strong> Use Buscapé, Zoom ou Google Shopping em qualquer compra acima de R$ 100. A diferença pode chegar a 40% pelo mesmo produto.</li>
+              <li><strong>Técnica do carrinho abandonado:</strong> Espere 48 horas antes de finalizar compras online. Além de evitar compras por impulso, muitas lojas enviam cupom de desconto para reconquistar o cliente.</li>
+              <li><strong>Manutenção preventiva em casa:</strong> Limpe filtros de ar-condicionado mensalmente, desentupa ralos antes de entupir e revise o encanamento a cada 6 meses. Prevenir custa 10x menos do que corrigir.</li>
+              <li><strong>Marmita pelo menos 3 vezes por semana:</strong> Uma refeição fora de casa em São Paulo custa em média R$ 35–50. Três marmitas semanais economizam cerca de R$ 280–400 por mês.</li>
+              <li><strong>Renegocie seu plano de celular todo ano:</strong> As operadoras sempre têm ofertas melhores para clientes que ameaçam cancelar. Ligue, diga que vai trocar de operadora e peça desconto — funciona em mais de 70% dos casos.</li>
         </ul>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">

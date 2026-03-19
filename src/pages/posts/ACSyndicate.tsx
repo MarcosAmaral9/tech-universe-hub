@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Factory, Train, Swords, Cog, Cpu, DollarSign, Target, Laptop, Gamepad2, HelpCircle, MapPin, Crown, Users, Zap, Shield, BookOpen } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -8,18 +11,19 @@ import acSyndicateImg from "@/assets/ac-syndicate.webp";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const ACSyndicate = () => {
+
+  useEffect(() => {
+    trackArticleRead("ac-syndicate-revolucao-industrial-londres", "AC Syndicate em 2026 Vale a Pena? Review — Londres Vitoriana", "geek");
+  }, []);
+  const goBack = useSmartBack("/geek/assassins-creed");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
       {/* SEO-optimized meta description: Assassin's Creed Syndicate vale a pena em 2026? Review completa na Londres Vitoriana com os irmãos Frye, sistema de gangues, requisitos de PC gamer e custo-benefício. */}
       
       {/* Back Button */}
-      <Link
-        to="/geek/assassins-creed"
-        className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Voltar para Portal Assassin's Creed
-      </Link>
+      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para Portal Assassin's Creed
+      </button>
 
       {/* Header */}
       <header className="mb-8">

@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Sword, Shield, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -8,9 +11,12 @@ import crimsonBuildsImg from "@/assets/crimson-desert-builds.webp";
 
 const CrimsonDesertBuilds = () => (
   <article className="container py-8 max-w-4xl mx-auto">
-    <Link to="/geek/crimson-desert" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-      <ArrowLeft className="h-4 w-4" /> Voltar para Portal Crimson Desert
-    </Link>
+    <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para Portal Crimson Desert
+      </button>
+      <Link to="/geek/crimson-desert" className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-primary mb-6 ml-4 transition-colors">
+        ⬡ Ir ao portal
+      </Link>
 
     <header className="mb-8">
       <div className="flex items-center gap-2 mb-4">

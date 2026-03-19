@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Gamepad2, TreePine, Crosshair, Cpu, DollarSign, Target, Laptop, HelpCircle, Star, Shield, MapPin, Palette } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -7,18 +10,19 @@ import RelatedPosts from "@/components/RelatedPosts";
 import avatarGameImg from "@/assets/avatar-game-female.webp";
 
 const AvatarFrontiersOfPandora = () => {
+
+  useEffect(() => {
+    trackArticleRead("avatar-frontiers-pandora-ubisoft-review", "Avatar: Frontiers of Pandora em 2026 Vale a Pena? Review Completa", "geek");
+  }, []);
+  const goBack = useSmartBack("/geek/avatar");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
       {/* SEO-optimized meta description: Avatar Frontiers of Pandora vale a pena em 2026? Review completa do jogo mais bonito da geração, gameplay como Na'vi, requisitos pesados de PC gamer e análise de custo-benefício. */}
       
       {/* Back Button */}
-      <Link
-        to="/geek/avatar"
-        className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Voltar para Portal Avatar
-      </Link>
+      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para Portal Avatar
+      </button>
 
       {/* Header */}
       <header className="mb-8">
@@ -420,11 +424,11 @@ const AvatarFrontiersOfPandora = () => {
         <div className="my-8 p-6 bg-secondary/50 rounded-xl border border-border">
           <p className="text-muted-foreground mb-0">
             💡 Quer entender a tecnologia por trás dos filmes? Confira nosso artigo sobre{" "}
-            <Link to="/post/avatar-2009-revolucao-tecnologica" className="text-primary hover:underline">
+            <Link to="/post/avatar-2009-filme-revolucionou-tecnologia" className="text-primary hover:underline">
               Avatar 2009 e a revolução tecnológica
             </Link>{" "}
             e a análise de{" "}
-            <Link to="/post/avatar-caminho-da-agua-analise" className="text-primary hover:underline">
+            <Link to="/post/avatar-caminho-da-agua-fisica-fluidos" className="text-primary hover:underline">
               Avatar: O Caminho da Água
             </Link>.
           </p>

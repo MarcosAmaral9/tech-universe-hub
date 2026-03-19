@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, Calendar, User, AlertTriangle, TrendingUp, Shield, Landmark, ChevronRight, Zap, Lock, BarChart3 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -43,6 +45,11 @@ const TesouroDireto2026 = () => {
   const formatCurrency = (value: number) =>
     new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(value);
 
+
+  useEffect(() => {
+    trackArticleRead("tesouro-direto-2026-guia-completo", "Tesouro Direto em 2026: Ainda Vale a Pena? Guia Completo Atualizado", "invest");
+  }, []);
+  const goBack = useSmartBack("/financas");
   return (
     <>
       <article className="container py-8 max-w-4xl mx-auto">

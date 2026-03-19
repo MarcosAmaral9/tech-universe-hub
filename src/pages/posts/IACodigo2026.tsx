@@ -1,16 +1,20 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Code, Bot, Cpu, TrendingUp, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
+import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/ia-codigo-programadores-2026.webp";
 
 const IACodigo2026 = () => (
   <article className="container py-8 max-w-4xl mx-auto">
-    <Link to="/ia" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-      <ArrowLeft className="h-4 w-4" /> Voltar para IA
-    </Link>
+    <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para IA
+      </button>
     <header className="mb-8">
       <CategoryBadge category="ia" size="lg" />
       <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
@@ -96,7 +100,16 @@ const IACodigo2026 = () => (
         <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
       </div>
     </div>
-    <RelatedPosts currentSlug="ia-codigo-programadores-2026" category="ia" />
+    
+      <RelatedTopics
+        title="Leia também"
+        links={[
+          { label: "IA Open Source 2026: Llama, Mistral e DeepSeek", href: "/post/modelos-ia-open-source-2026", desc: "Compare as alternativas gratuitas às ferramentas pagas" },
+          { label: "ChatGPT vs Gemini vs Claude 2026", href: "/post/chatgpt-vs-gemini-vs-claude-2026", desc: "Qual modelo de IA é melhor para o seu uso?" },
+          { label: "Agentes de IA 2026", href: "/post/agentes-ia-2026-como-funcionam", desc: "O próximo passo depois das ferramentas de código" },
+        ]}
+      />
+      <RelatedPosts currentSlug="ia-codigo-programadores-2026" category="ia" />
     <CommentSection postId="ia-codigo-programadores-2026" postTitle="IA e Programação em 2026" />
   </article>
 );

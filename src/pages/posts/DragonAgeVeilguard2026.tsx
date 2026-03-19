@@ -1,16 +1,20 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Gamepad2, Star, Cpu } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
+import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/dragon-age-veilguard-review-2026.webp";
 
 const DragonAgeVeilguard2026 = () => (
   <article className="container py-8 max-w-4xl mx-auto">
-    <Link to="/geek" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-      <ArrowLeft className="h-4 w-4" /> Voltar para Geek
-    </Link>
+    <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para Geek
+      </button>
     <header className="mb-8">
       <div className="flex items-center gap-2 mb-4">
         <CategoryBadge category="geek" size="lg" />
@@ -100,7 +104,15 @@ const DragonAgeVeilguard2026 = () => (
         <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
       </div>
     </div>
-    <RelatedPosts currentSlug="dragon-age-veilguard-review-2026" category="geek" />
+    
+      <RelatedTopics
+        title="Leia também"
+        links={[
+          { label: "Baldur's Gate 3", href: "/post/baldurs-gate-3-review-2026", desc: "O RPG que definiu a geração — compare com Veilguard" },
+          { label: "Ranking dos melhores RPGs de ação", href: "/post/ranking-melhor-assassins-creed-2026" },
+        ]}
+      />
+      <RelatedPosts currentSlug="dragon-age-veilguard-review-2026" category="geek" />
     <CommentSection postId="dragon-age-veilguard-review-2026" postTitle="Dragon Age: The Veilguard — Review 2026" />
   </article>
 );

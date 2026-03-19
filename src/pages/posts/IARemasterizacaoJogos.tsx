@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Cpu, Zap, Gamepad2, MonitorPlay } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -7,12 +10,16 @@ import RelatedPosts from "@/components/RelatedPosts";
 import aiRemasteringImg from "@/assets/ai-remastering.webp";
 
 const IARemasterizacaoJogos = () => {
+
+  useEffect(() => {
+    trackArticleRead("ia-remasterizacao-jogos-classicos", "IA e Remasterização: Como a IA Está Dando Nova Vida aos Jogos Clássicos", "ia");
+  }, []);
+  const goBack = useSmartBack("/ia");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <Link to="/ia" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" />
-        Voltar para IA
-      </Link>
+      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para IA
+      </button>
 
       <header className="mb-8">
         <CategoryBadge category="ia" size="lg" />

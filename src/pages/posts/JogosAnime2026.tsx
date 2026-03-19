@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Gamepad2, Swords, Sparkles, BookOpen } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -7,12 +10,16 @@ import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/jogos-anime-2026.webp";
 
 const JogosAnime2026 = () => {
+
+  useEffect(() => {
+    trackArticleRead("melhores-jogos-anime-2026", "Os Melhores Jogos de Anime de 2026: Do RPG ao Fighting Game", "otaku");
+  }, []);
+  const goBack = useSmartBack("/otaku");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <Link to="/otaku" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" />
-        Voltar para Otaku
-      </Link>
+      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para Otaku
+      </button>
 
       <header className="mb-8">
         <CategoryBadge category="otaku" size="lg" />

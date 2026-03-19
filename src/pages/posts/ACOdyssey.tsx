@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Sword, Ship, Cpu, DollarSign, Target, Laptop, Gamepad2, HelpCircle, Sparkles, Users } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -7,18 +10,19 @@ import RelatedPosts from "@/components/RelatedPosts";
 import acOdysseyImg from "@/assets/ac-odyssey.webp";
 
 const ACOdyssey = () => {
+
+  useEffect(() => {
+    trackArticleRead("ac-odyssey-odisseia-grecia", "AC Odyssey em 2026 Vale a Pena? Review Completa — Grécia Antiga", "geek");
+  }, []);
+  const goBack = useSmartBack("/geek/assassins-creed");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
       {/* SEO-optimized meta description: Assassin's Creed Odyssey vale a pena em 2026? Review completa do RPG épico na Grécia Antiga com Kassandra, mitologia, requisitos de PC gamer e análise de custo-benefício. */}
       
       {/* Back Button */}
-      <Link
-        to="/geek/assassins-creed"
-        className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Voltar para Portal Assassin's Creed
-      </Link>
+      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para Portal Assassin's Creed
+      </button>
 
       {/* Header */}
       <header className="mb-8">

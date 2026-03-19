@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, Calendar, User, AlertTriangle, ChevronRight, ChevronDown, ChevronUp, Zap, Building2, TrendingUp, CreditCard, Laptop, Home, Handshake, Music } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -20,6 +22,11 @@ interface RendaCardProps {
 
 const RendaCard = ({ icon, emoji, title, summary, details, example }: RendaCardProps) => {
   const [expanded, setExpanded] = useState(false);
+
+  useEffect(() => {
+    trackArticleRead("renda-passiva-2026-formas-comprovadas", "Renda Passiva Real em 2026: 7 Formas Comprovadas de Ganhar Dinheiro", "invest");
+  }, []);
+  const goBack = useSmartBack("/financas");
   return (
     <div className="bg-card rounded-xl border border-border overflow-hidden transition-all duration-300 hover:border-[hsl(var(--invest-color))]/50">
       <button onClick={() => setExpanded(!expanded)} className="w-full p-5 text-left flex items-start gap-4">

@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Camera, Cpu, Monitor, Sparkles, Film, Award, Target } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -7,15 +10,16 @@ import RelatedPosts from "@/components/RelatedPosts";
 import avatarPandoraImg from "@/assets/avatar-pandora.webp";
 
 const Avatar2009Tecnologia = () => {
+
+  useEffect(() => {
+    trackArticleRead("avatar-2009-filme-revolucionou-tecnologia", "Avatar (2009): O Filme que Revolucionou o Cinema 3D e a Tecnologia CGI", "geek");
+  }, []);
+  const goBack = useSmartBack("/geek/avatar");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <Link
-        to="/geek/avatar"
-        className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Voltar para Portal Avatar
-      </Link>
+      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para Portal Avatar
+      </button>
 
       <header className="mb-8">
         <div className="flex items-center gap-2 mb-4">

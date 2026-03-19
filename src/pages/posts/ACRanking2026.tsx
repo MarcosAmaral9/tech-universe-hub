@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Trophy, Star, Gamepad2 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -80,16 +83,17 @@ const ACRanking2026 = () => {
     }
   ];
 
+
+  useEffect(() => {
+    trackArticleRead("ranking-melhor-assassins-creed-2026", "Ranking: Qual o Melhor Assassin\'s Creed para Jogar em 2026?", "geek");
+  }, []);
+  const goBack = useSmartBack("/geek/assassins-creed");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
       {/* Back Button */}
-      <Link
-        to="/geek/assassins-creed"
-        className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Voltar para Portal Assassin's Creed
-      </Link>
+      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para Portal Assassin's Creed
+      </button>
 
       {/* Header */}
       <header className="mb-8">

@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, DollarSign, TrendingUp, Briefcase, Rocket } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -7,12 +10,16 @@ import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-ganhar-dinheiro-2026.webp";
 
 const IAGanharDinheiro2026 = () => {
+
+  useEffect(() => {
+    trackArticleRead("como-usar-ia-ganhar-dinheiro-2026", "Como Usar IA para Ganhar Dinheiro em 2026: 15 Formas", "ia");
+  }, []);
+  const goBack = useSmartBack("/ia");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <Link to="/ia" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" />
-        Voltar para IA
-      </Link>
+      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para IA
+      </button>
 
       <header className="mb-8">
         <CategoryBadge category="ia" size="lg" />
@@ -84,6 +91,10 @@ const IAGanharDinheiro2026 = () => {
           <li><strong>Avatares para Influenciadores</strong></li>
           <li><strong>Assistente Virtual com IA</strong> personalizado</li>
           <li><strong>GPTs Customizados</strong> para nichos específicos</li>
+          <li><strong>Tradução e Localização com IA:</strong> Adapte conteúdo de inglês para português com ferramentas como DeepL + revisão humana — R$ 0,08–0,15 por palavra.</li>
+          <li><strong>Transcrição e Legendagem:</strong> Use Whisper (OpenAI) ou AssemblyAI para gerar legendas automáticas e ofereça o serviço para produtores de conteúdo — R$ 150–400 por hora de vídeo.</li>
+          <li><strong>Chatbots para Empresas Locais:</strong> Configure e venda chatbots WhatsApp com IA para restaurantes, clínicas e salões de beleza — R$ 500–2.000 de setup + R$ 200/mês de manutenção.</li>
+          <li><strong>Geração de UGC (User Generated Content):</strong> Crie anúncios em estilo de vídeo orgânico usando avatares de IA para marcas de e-commerce — R$ 800–3.000 por pacote.</li>
         </ul>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">

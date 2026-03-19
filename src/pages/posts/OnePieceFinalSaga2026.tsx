@@ -1,16 +1,20 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Anchor, Map, Star, BookOpen } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
+import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/one-piece-final-saga-2026.webp";
 
 const OnePieceFinalSaga2026 = () => (
   <article className="container py-8 max-w-4xl mx-auto">
-    <Link to="/otaku" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-      <ArrowLeft className="h-4 w-4" /> Voltar para Otaku
-    </Link>
+    <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para Otaku
+      </button>
     <header className="mb-8">
       <div className="flex items-center gap-2 mb-4">
         <CategoryBadge category="otaku" size="lg" />
@@ -101,7 +105,16 @@ const OnePieceFinalSaga2026 = () => (
         <p className="text-muted-foreground">Compartilhe nos comentários! 👇</p>
       </div>
     </div>
-    <RelatedPosts currentSlug="one-piece-final-saga-2026" category="otaku" />
+    
+      <RelatedTopics
+        title="Leia também"
+        links={[
+          { label: "Demon Slayer: Guia dos Hashira", href: "/post/demon-slayer-hashira-guia-2026", desc: "Outro anime de uma geração" },
+          { label: "Os Melhores Mangás para Ler em 2026", href: "/post/melhores-mangas-ler-2026", desc: "Próximas leituras após One Piece" },
+          { label: "Mangá vs Anime", href: "/post/manga-vs-anime-adaptacao-2026", desc: "Qual versão de One Piece vale mais a pena?" },
+        ]}
+      />
+      <RelatedPosts currentSlug="one-piece-final-saga-2026" category="otaku" />
     <CommentSection postId="one-piece-final-saga-2026" postTitle="One Piece Final Saga 2026" />
   </article>
 );

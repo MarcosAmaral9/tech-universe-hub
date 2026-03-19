@@ -70,7 +70,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "4",
     slug: "ia-transformando-dublagem-animes",
-    title: "IA está Transformando a Dublagem de Animes em 2026",
+    title: "IA na Dublagem de Animes: Voice Cloning e o Futuro da Localização",
     excerpt: "Descubra como a clonagem de voz e tradução em tempo real estão revolucionando o mercado de animes e quebrando barreiras de idioma ao redor do mundo.",
     content: "",
     category: "ia",
@@ -83,7 +83,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "20",
     slug: "ia-remasterizacao-jogos-classicos",
-    title: "IA Remaster: Como a Tech Está Salvando Jogos Clássicos",
+    title: "IA e Remasterização: Como a IA Está Dando Nova Vida aos Jogos Clássicos",
     excerpt: "Entenda como a IA de Upscaling e o Deep Learning estão restaurando e salvando a história dos games, dando nova vida a títulos que definiram gerações.",
     content: "",
     category: "ia",
@@ -96,7 +96,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "35",
     slug: "chatgpt-vs-gemini-vs-claude-2026",
-    title: "ChatGPT vs Gemini vs Claude 2026: Qual Vale Assinar?",
+    title: "ChatGPT vs. Gemini vs. Claude em 2026: Qual IA Vale a Pena Assinar?",
     excerpt: "Comparamos ChatGPT, Gemini e Claude em 20 cenários do dia a dia. Descubra qual IA realmente entrega o que promete em 2026.",
     content: "",
     category: "ia",
@@ -122,7 +122,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "37",
     slug: "ia-no-trabalho-2026-profissoes",
-    title: "IA no Trabalho 2026: Sua Profissão Vai Desaparecer?",
+    title: "IA no Trabalho em 2026: Sua Profissão Vai Acabar ou Evoluir?",
     excerpt: "Analisamos 30 profissões e dizemos claramente: risco alto, médio ou oportunidade. Descubra onde você se encaixa.",
     content: "",
     category: "ia",
@@ -135,7 +135,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "38",
     slug: "melhores-apps-ia-produtividade-2026",
-    title: "10 Melhores Apps de IA para Produtividade em 2026",
+    title: "Os 10 Melhores Apps de IA para Produtividade em 2026",
     excerpt: "Selecionamos os 10 aplicativos de inteligência artificial mais úteis para aumentar sua produtividade no trabalho, nos estudos e na vida pessoal em 2026.",
     content: "",
     category: "ia",
@@ -148,7 +148,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "39",
     slug: "ia-generativa-iniciantes-2026-guia",
-    title: "IA Generativa para Iniciantes 2026: Guia Completo",
+    title: "IA Generativa para Iniciantes 2026: Do Zero ao Avançado",
     excerpt: "Sem jargão técnico, sem promessas irrealistas. Um caminho claro do zero ao uso avançado de IA generativa.",
     content: "",
     category: "ia",
@@ -161,7 +161,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "40",
     slug: "deepfakes-ia-2026-como-identificar",
-    title: "Deepfakes e IA 2026: Como Identificar Conteúdo Falso",
+    title: "Deepfakes e IA 2026: Como Identificar Conteúdo Falso e Proteger sua Imagem",
     excerpt: "Deepfakes deixaram de ser ficção científica. Aprenda a identificar conteúdo falso e proteger sua imagem online.",
     content: "",
     category: "ia",
@@ -187,7 +187,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "42",
     slug: "agentes-ia-2026-como-funcionam",
-    title: "Agentes de IA 2026: O Que São e Como Funcionam",
+    title: "Agentes de IA 2026: O Que São, Como Funcionam e Por Que Mudam Tudo",
     excerpt: "Da era do chatbot à era dos agentes autônomos. Entenda a diferença e como isso muda absolutamente tudo.",
     content: "",
     category: "ia",
@@ -200,7 +200,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "43",
     slug: "ia-saude-2026-diagnosticos-futuro",
-    title: "IA para Saúde 2026: Diagnósticos e o Futuro da Medicina",
+    title: "IA para Saúde 2026: Diagnósticos, Monitoramento e o Futuro da Medicina",
     excerpt: "A IA está transformando a medicina em velocidade que poucos percebem. Dos diagnósticos por imagem à saúde mental.",
     content: "",
     category: "ia",
@@ -213,7 +213,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "44",
     slug: "regulamentacao-ia-brasil-mundo-2026",
-    title: "Regulamentação de IA no Brasil e no Mundo em 2026",
+    title: "Regulamentação de IA no Brasil e no Mundo em 2026: O Que Muda",
     excerpt: "O AI Act europeu, o marco brasileiro de IA e as novas regras globais. O que muda na prática para você e para as empresas.",
     content: "",
     category: "ia",
@@ -227,7 +227,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "24",
     slug: "tesouro-direto-2026-guia-completo",
-    title: "Tesouro Direto 2026: Ainda Vale a Pena? Guia Completo",
+    title: "Tesouro Direto em 2026: Ainda Vale a Pena? Guia Completo Atualizado",
     excerpt: "Descubra se o Tesouro Direto ainda é o melhor investimento para iniciantes em 2026. Comparamos taxas, rendimentos e estratégias.",
     content: "",
     category: "invest",
@@ -248,7 +248,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "25",
     slug: "renda-passiva-2026-formas-comprovadas",
-    title: "Renda Passiva Real 2026: 7 Formas Comprovadas",
+    title: "Renda Passiva Real em 2026: 7 Formas Comprovadas de Ganhar Dinheiro",
     excerpt: "Renda passiva não é mito. Conheça 7 estratégias validadas para 2026 que geram dinheiro enquanto você dorme.",
     content: "",
     category: "invest",
@@ -275,7 +275,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "27",
     slug: "bitcoin-criptomoedas-2026-investir",
-    title: "Bitcoin e Criptomoedas 2026: Ainda Dá Para Lucrar?",
+    title: "Bitcoin e Criptomoedas em 2026: Ainda Dá Para Lucrar?",
     excerpt: "O mercado cripto mudou muito. Entenda o cenário das criptomoedas em 2026, quais ainda têm potencial e como investir sem perder o que você tem.",
     content: "",
     category: "invest",
@@ -299,7 +299,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "28",
     slug: "irpf-2026-guia-declarar-pagar-menos",
-    title: "IRPF 2026: Guia Para Declarar e Pagar Menos Imposto",
+    title: "IRPF 2026: Guia Completo Para Declarar e Pagar Menos Imposto",
     excerpt: "Tudo que você precisa saber para declarar o Imposto de Renda 2026 corretamente, evitar a malha fina e usar deduções legais para pagar menos IR.",
     content: "",
     category: "invest",
@@ -326,7 +326,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "29",
     slug: "ia-mercado-financeiro-2026-investimentos",
-    title: "IA no Mercado Financeiro 2026: Guia para Investidores",
+    title: "IA no Mercado Financeiro 2026: Como a IA Está Transformando Investimentos",
     excerpt: "A IA já está gerenciando bilhões em investimentos. Descubra como a inteligência artificial está mudando as finanças em 2026.",
     content: "",
     category: "invest",
@@ -341,7 +341,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "30",
     slug: "educacao-financeira-metodo-3-baldes",
-    title: "Método 3 Baldes: Educação Financeira Para Iniciantes",
+    title: "Método dos 3 Baldes: Educação Financeira Para Quem Sempre Gastou Tudo",
     excerpt: "Se você chega no fim do mês sem dinheiro, este artigo é para você. O Método dos 3 Baldes é simples e funciona para qualquer salário.",
     content: "",
     category: "invest",
@@ -354,7 +354,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "31",
     slug: "fiis-2026-melhores-fundos-imobiliarios",
-    title: "FIIs 2026: Os Melhores Fundos Imobiliários para Invest.",
+    title: "FIIs em 2026: Os Melhores Fundos Imobiliários e Como Analisar",
     excerpt: "Guia completo de FIIs para 2026. Saiba como escolher os melhores fundos imobiliários e construir uma carteira que paga dividendos mensais.",
     content: "",
     category: "invest",
@@ -388,7 +388,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "33",
     slug: "planejamento-financeiro-2026-metas",
-    title: "Planejamento Financeiro 2026: Como Definir suas Metas",
+    title: "Planejamento Financeiro Para 2026: Como Definir Metas e Alcançá-las",
     excerpt: "Aprenda o método científico para definir e alcançar objetivos financeiros em 2026. Chega de metas que não saem do papel.",
     content: "",
     category: "invest",
@@ -416,7 +416,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "5",
     slug: "investir-em-tecnologia-2026",
-    title: "Investir em Tecnologia 2026: Como Montar sua Carteira",
+    title: "Como Investir em Tecnologia em 2026: Guia de Setores e ETFs",
     excerpt: "Descubra como investir em empresas de tecnologia em 2026, quais setores têm mais potencial de crescimento e como montar uma carteira tech diversificada.",
     content: "",
     category: "invest",
@@ -430,7 +430,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "6",
     slug: "vikings-legado-ragnar-lothbrok",
-    title: "Vikings: O Legado de Ragnar Lothbrok e Cultura Nórdica",
+    title: "Vikings: Vale a Pena Assistir em 2026? Review Completa da Série",
     excerpt: "Explore o fascinante legado de Ragnar Lothbrok, a cultura viking e como a série Vikings retratou com precisão os guerreiros nórdicos que moldaram a Europa.",
     content: "",
     category: "geek",
@@ -444,7 +444,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "7",
     slug: "hell-let-loose-simulador-guerra",
-    title: "Hell Let Loose: O Melhor Simulador de Guerra da Atual.",
+    title: "Hell Let Loose em 2026 Vale a Pena? Review do Simulador de Guerra",
     excerpt: "Este FPS tático de Segunda Guerra Mundial coloca 100 jogadores em um mapa imenso onde um único tiro pode ser fatal.",
     content: "",
     category: "geek",
@@ -458,7 +458,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "8",
     slug: "avatar-2009-filme-revolucionou-tecnologia",
-    title: "Avatar (2009): O Filme que Revolucionou a Tecnologia",
+    title: "Avatar (2009): O Filme que Revolucionou o Cinema 3D e a Tecnologia CGI",
     excerpt: "Relembre como James Cameron esperou mais de uma década para que a tecnologia de captura de movimento fosse capaz de criar Pandora.",
     content: "",
     category: "geek",
@@ -471,7 +471,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "9",
     slug: "avatar-caminho-da-agua-fisica-fluidos",
-    title: "Avatar 2: A Física dos Fluidos e a Revolução do CGI",
+    title: "Avatar 2: O Caminho da Água — Análise da Revolução em CGI e Simulação",
     excerpt: "Treze anos depois, a sequência focou na família de Jake Sully e na impressionante captura de performance subaquática.",
     content: "",
     category: "geek",
@@ -484,7 +484,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "10",
     slug: "avatar-3-fogo-cinzas-lado-sombrio-pandora",
-    title: "Avatar 3: Fogo e Cinzas – O Lado Sombrio de Pandora",
+    title: "Avatar 3: Fire and Ash — Tudo Sobre o Filme, Data e O Que Esperar",
     excerpt: "Prepare-se para conhecer o 'Povo das Cinzas', uma tribo Na'vi mais agressiva ligada ao fogo e vulcões.",
     content: "",
     category: "geek",
@@ -497,7 +497,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "11",
     slug: "avatar-frontiers-pandora-ubisoft-review",
-    title: "Avatar: Frontiers of Pandora – Vale a Pena Jogar?",
+    title: "Avatar: Frontiers of Pandora em 2026 Vale a Pena? Review Completa",
     excerpt: "Analise o jogo que coloca o jogador na pele de um Na'vi com uma das florestas mais bonitas já vistas em videogames.",
     content: "",
     category: "geek",
@@ -511,7 +511,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "12",
     slug: "ac-valhalla-jornada-epica-eivor",
-    title: "AC Valhalla: A Jornada Épica de Eivor pelos Vikings",
+    title: "AC Valhalla em 2026 Vale a Pena? Review Completa — Vikings e RPG",
     excerpt: "Se você é fã de Vikings e adora explorar mundos abertos massivos, Valhalla é o ápice da fórmula moderna da Ubisoft.",
     content: "",
     category: "geek",
@@ -524,7 +524,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "13",
     slug: "ac-shadows-japao-feudal",
-    title: "AC Shadows: O Japão Feudal que os Fãs Esperavam",
+    title: "AC Shadows em 2026 Vale a Pena? Review Completa — Japão Feudal",
     excerpt: "Assassin's Creed Shadows finalmente leva a franquia ao Japão Feudal. Conheça a história, mecânicas, personagens e por que esse é um dos jogos mais aguardados.",
     content: "",
     category: "geek",
@@ -537,7 +537,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "14",
     slug: "ac-odyssey-odisseia-grecia",
-    title: "AC Odyssey: Uma Odisseia Épica pela Grécia Antiga",
+    title: "AC Odyssey em 2026 Vale a Pena? Review Completa — Grécia Antiga",
     excerpt: "Explore a Grécia Antiga em Assassin's Creed Odyssey — batalhas épicas, escolhas morais, o misterioso Culto de Kosmos e um dos maiores mapas da franquia.",
     content: "",
     category: "geek",
@@ -550,7 +550,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "15",
     slug: "ac-black-flag-melhor-jogo-piratas",
-    title: "AC Black Flag: Por que Ainda É o Melhor Jogo de Piratas",
+    title: "AC Black Flag em 2026: Ainda o Melhor Jogo de Piratas de Todos os Tempos?",
     excerpt: "Assassin's Creed Black Flag combina pirataria, exploração naval e a história fascinante de Edward Kenway num dos jogos mais amados da franquia da Ubisoft.",
     content: "",
     category: "geek",
@@ -563,7 +563,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "16",
     slug: "ac-origins-renascimento-franquia-egito",
-    title: "AC Origins: O Renascimento da Franquia no Egito Antigo",
+    title: "AC Origins em 2026 Vale a Pena? Review Completa — Egito Antigo",
     excerpt: "Assassin's Creed Origins redefiniu a franquia ao trazer combate renovado, o Egito Antigo esplêndido e a origem da Irmandade dos Assassinos com Bayek de Siwa.",
     content: "",
     category: "geek",
@@ -576,7 +576,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "17",
     slug: "ac-mirage-retorno-raizes-bagda",
-    title: "AC Mirage: O Retorno às Raízes da Franquia em Bagdá",
+    title: "AC Mirage em 2026 Vale a Pena? Review Completa — Furtividade Clássica",
     excerpt: "Assassin's Creed Mirage leva Basim a Bagdá do século IX, apostando em parkour, stealth e sigilo para resgatar a essência clássica da série da Ubisoft.",
     content: "",
     category: "geek",
@@ -589,7 +589,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "18",
     slug: "ac-3-remastered-revolucao-americana",
-    title: "AC III Remastered: A Revolução Americana Revisitada",
+    title: "AC III Remastered em 2026 Vale a Pena? Review — Revolução Americana",
     excerpt: "Assassin's Creed 3 Remastered revisita a Revolução Americana com gráficos atualizados. Conheça a história de Connor, os melhoramentos e o que mudou na versão remasterizada.",
     content: "",
     category: "geek",
@@ -602,7 +602,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "19",
     slug: "ac-syndicate-revolucao-industrial-londres",
-    title: "AC Syndicate: A Revolução Industrial no Coração de Londres",
+    title: "AC Syndicate em 2026 Vale a Pena? Review — Londres Vitoriana",
     excerpt: "Assassin's Creed Syndicate mergulha no Londres vitoriano da Revolução Industrial com os gêmeos Frye. Conheça mecânicas, história e por que ele merece mais reconhecimento.",
     content: "",
     category: "geek",
@@ -615,7 +615,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "21",
     slug: "ac-unity-jogo-frente-tempo-paris",
-    title: "AC Unity: O Jogo que Estava à Frente do Seu Tempo",
+    title: "AC Unity em 2026 Vale a Pena? Review — O Jogo que Estava à Frente do Tempo",
     excerpt: "Descubra por que Unity é considerado a obra-prima técnica da Ubisoft e como ele impressiona até hoje.",
     content: "",
     category: "geek",
@@ -628,7 +628,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "22",
     slug: "ac-rogue-assassino-templario",
-    title: "Assassin's Creed Rogue: E se o Herói se Tornasse o Vilão?",
+    title: "AC Rogue em 2026 Vale a Pena? Review — Jogue Como Templário",
     excerpt: "Descubra a história de Shay Cormac, o Assassino que se tornou Templário, e as inovações navais no Ártico.",
     content: "",
     category: "geek",
@@ -721,7 +721,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "45",
     slug: "animes-mais-aguardados-2026",
-    title: "Os 10 Animes Mais Aguardados de 2026",
+    title: "Animes Mais Aguardados de 2026: O Que Vai Dominar as Telas",
     excerpt: "Do retorno de clássicos às novas apostas dos grandes estúdios — guia completo para não perder nenhum lançamento.",
     content: "",
     category: "otaku",
@@ -760,7 +760,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "48",
     slug: "cultura-otaku-brasil-2026",
-    title: "Cultura Otaku no Brasil 2026: Uma das Maiores do Mundo",
+    title: "Cultura Otaku no Brasil 2026: Uma das Maiores Comunidades do Mundo",
     excerpt: "Da década de 90 até hoje — a trajetória do otakuismo brasileiro e seu impacto cultural, econômico e social.",
     content: "",
     category: "otaku",
@@ -799,7 +799,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "51",
     slug: "isekai-2026-genero-domina",
-    title: "Isekai 2026: Por Que o Gênero Mais Criticado Domina",
+    title: "Isekai 2026: Por Que o Gênero Mais Criticado do Anime Ainda Domina",
     excerpt: "Uma análise profunda do fenômeno isekai, seus clichês, suas obras-primas e por que você provavelmente já está assistindo um.",
     content: "",
     category: "otaku",
@@ -838,7 +838,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "54",
     slug: "saude-mental-cultura-otaku-2026",
-    title: "Saúde Mental e Cultura Otaku: Quando Anime Ajuda",
+    title: "Saúde Mental e Cultura Otaku: Quando o Anime Ajuda e Quando Isola",
     excerpt: "Como a cultura otaku e os animes podem impactar positivamente a saúde mental — empatia, escape saudável, comunidade e quando buscar apoio profissional além das telas.",
     content: "",
     category: "otaku",
@@ -852,7 +852,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "55",
     slug: "ia-criatividade-arte-musica-2026",
-    title: "IA e Criatividade 2026: Arte e Música Feitas por IA",
+    title: "IA e Criatividade 2026: Como a IA Está Revolucionando Arte e Música",
     excerpt: "Da geração de imagens com Midjourney à criação musical com Suno AI. Descubra como a IA está transformando as artes criativas.",
     content: "",
     category: "ia",
@@ -879,7 +879,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "57",
     slug: "etfs-2026-guia-completo-investir",
-    title: "ETFs 2026: Guia Completo Para Investir com Diversificação",
+    title: "ETFs em 2026: Guia Completo Para Investir com Diversificação",
     excerpt: "Tudo sobre ETFs no Brasil: os melhores fundos, estratégias de investimento e erros que você deve evitar.",
     content: "",
     category: "invest",
@@ -892,7 +892,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "58",
     slug: "economia-domestica-2026-cortar-gastos",
-    title: "Economia Doméstica 2026: 30 Dicas Para Cortar Gastos",
+    title: "Economia Doméstica 2026: 30 Dicas Para Cortar Gastos Sem Perder Qualidade",
     excerpt: "Energia, supermercado, assinaturas e transporte: corte até R$ 1.500/mês do seu orçamento com estas estratégias.",
     content: "",
     category: "invest",
@@ -906,7 +906,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "72",
     slug: "crimson-desert-review-2026",
-    title: "Crimson Desert Review: O RPG Que Redefiniu o Mundo Aberto em 2026",
+    title: "Crimson Desert Vale a Pena? O Que Previews e Primeiras Impressões Dizem",
     excerpt: "Análise completa após 60+ horas: gameplay, narrativa, performance técnica e veredito final. Nota 9.2.",
     content: "",
     category: "geek",
@@ -919,7 +919,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "73",
     slug: "crimson-desert-builds-guia-2026",
-    title: "Crimson Desert: Guia Completo de Builds — As Melhores Combinações Para Kliff",
+    title: "Crimson Desert: Sistema de Progressão de Kliff — O Que Sabemos",
     excerpt: "Descubra as builds mais poderosas, árvores de habilidades e combinações elementais para dominar Pywel.",
     content: "",
     category: "geek",
@@ -972,7 +972,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "114",
     slug: "modelos-ia-open-source-2026",
-    title: "IA Open Source em 2026: Llama, Mistral e DeepSeek vs Modelos Pagos",
+    title: "IA Open Source 2026: Llama, Mistral e DeepSeek Contra os Modelos Pagos",
     excerpt: "DeepSeek R1 sacudiu o mercado em 2025 e a distância entre open source e modelos proprietários segue fechando. Comparação técnica e quando cada escolha faz sentido.",
     content: "",
     category: "ia",

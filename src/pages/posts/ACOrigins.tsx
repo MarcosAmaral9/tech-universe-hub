@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
+import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Pyramid, Bird, Sword, Cpu, DollarSign, Target, Laptop, Gamepad2, HelpCircle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -7,18 +10,19 @@ import RelatedPosts from "@/components/RelatedPosts";
 import acOriginsImg from "@/assets/ac-origins.webp";
 
 const ACOrigins = () => {
+
+  useEffect(() => {
+    trackArticleRead("ac-origins-renascimento-franquia-egito", "AC Origins em 2026 Vale a Pena? Review Completa — Egito Antigo", "geek");
+  }, []);
+  const goBack = useSmartBack("/geek/assassins-creed");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
       {/* SEO-optimized meta description: Assassin's Creed Origins vale a pena em 2026? Review completa do renascimento da franquia no Egito Antigo com Bayek, Discovery Tour, requisitos de PC gamer e custo-benefício. */}
       
       {/* Back Button */}
-      <Link
-        to="/geek/assassins-creed"
-        className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Voltar para Portal Assassin's Creed
-      </Link>
+      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+        <ArrowLeft className="h-4 w-4" /> Voltar para Portal Assassin's Creed
+      </button>
 
       {/* Header */}
       <header className="mb-8">
