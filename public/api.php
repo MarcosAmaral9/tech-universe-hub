@@ -213,6 +213,52 @@ if ($method === 'GET' && $action === 'ping') {
         }
     } catch (Exception $e) {}
 
+    // Status do cache de widgets no banco
+    $widgetCacheStatus = [];
+    try {
+        if (isset($testPdo)) {
+            $rows = $testPdo->query(
+                "SELECT widget, fetch_date, fetched_at, req_count, LENGTH(data) as data_bytes FROM widget_cache"
+            )->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($rows as $row) {
+                $widgetCacheStatus[$row['widget']] = [
+                    'fetch_date'  => $row['fetch_date'],
+                    'fetched_at'  => $row['fetched_at'],
+                    'req_count'   => $row['req_count'],
+                    'data_kb'     => round($row['data_bytes'] / 1024, 1),
+                    'age_minutes' => round((time() - strtotime($row['fetched_at'])) / 60, 1),
+                ];
+            }
+        }
+    } catch (Exception $e) {
+        $widgetCacheStatus = ['error' => $e->getMessage()];
+    }
+
+    // Testa alcançabilidade das APIs externas
+    $apiReach = [];
+    $testUrls = [
+        'fawazahmed' => 'https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/brl.min.json',
+        'frankfurter'=> 'https://api.frankfurter.app/latest?from=BRL&to=USD',
+        'coingecko'  => 'https://api.coingecko.com/api/v3/ping',
+        'brapi'      => 'https://brapi.dev/api/quote/PETR4?fundamental=false',
+    ];
+    foreach ($testUrls as $name => $url) {
+        if (function_exists('curl_init')) {
+            $ch = curl_init($url);
+            curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER=>true, CURLOPT_TIMEOUT=>5, CURLOPT_NOBODY=>false, CURLOPT_USERAGENT=>'VicioCode/1.0']);
+            if ($name === 'brapi' && !empty($BRAPI_TOKEN)) {
+                curl_setopt($ch, CURLOPT_HTTPHEADER, ["Authorization: Bearer {$BRAPI_TOKEN}"]);
+            }
+            $res  = curl_exec($ch);
+            $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            $err  = curl_error($ch);
+            curl_close($ch);
+            $apiReach[$name] = $err ? "ERRO: $err" : "HTTP $code";
+        } else {
+            $apiReach[$name] = 'curl indisponível';
+        }
+    }
+
     echo json_encode([
         'status'          => 'ok',
         'php'             => PHP_VERSION,
@@ -227,7 +273,39 @@ if ($method === 'GET' && $action === 'ping') {
         'brapi_token'     => !empty($BRAPI_TOKEN) ? 'configurado' : 'NÃO configurado',
         'database'        => $dbStatus,
         'tables'          => $tables,
+        'widget_cache'    => $widgetCacheStatus,
+        'api_reach'       => $apiReach,
     ]);
+    exit;
+}
+
+// ─── POST: limpa cache de widgets (admin only) ───────────────────────────────
+if ($method === 'POST' && $action === 'clear_widget_cache') {
+    // Simple admin check via token in header
+    $adminToken = getenv('ADMIN_TOKEN') ?: 'viciocode_clear_2026';
+    $sentToken  = $_SERVER['HTTP_X_ADMIN_TOKEN'] ?? ($_POST['token'] ?? '');
+    if ($sentToken !== $adminToken) {
+        http_response_code(403);
+        echo json_encode(['error' => 'Unauthorized']);
+        exit;
+    }
+    $widget = $_POST['widget'] ?? null; // null = clear all
+    $cleared = [];
+    if ($db = getPdo()) {
+        if ($widget) {
+            $db->prepare("DELETE FROM widget_cache WHERE widget = :w")->execute([':w' => $widget]);
+            $cleared[] = $widget;
+        } else {
+            $db->exec("DELETE FROM widget_cache");
+            $cleared = ['b3', 'rates', 'crypto'];
+        }
+    }
+    // Also clear file caches
+    foreach (['viciocode_b3_v2.json', 'viciocode_rates_v2.json', 'viciocode_crypto.json'] as $f) {
+        $fp = cacheDir() . '/' . $f;
+        if (file_exists($fp)) { @unlink($fp); $cleared[] = "$f deleted"; }
+    }
+    echo json_encode(['cleared' => $cleared, 'time' => date('c')]);
     exit;
 }
 
@@ -346,15 +424,32 @@ if ($method === 'GET' && $action === 'rates') {
         if ($r = $toRate('xag')) $result['XAGBRL'] = $r; // 1 troy oz prata em BRL
     }
 
-    // ── Fallback: exchangerate-api (se fawazahmed falhar) ────────────────────
+    // ── Fallback 1: open.er-api.com (gratuito, sem token) ────────────────────
     if (empty($result['USDBRL'])) {
         $raw2 = httpGet('https://open.er-api.com/v6/latest/BRL', 6);
         if ($raw2) {
             $data2 = json_decode($raw2, true);
-            $rates = $data2['rates'] ?? [];
+            $rates2 = $data2['rates'] ?? [];
             $pairMap = ['USD'=>'USDBRL','EUR'=>'EURBRL','ARS'=>'ARSBRL','PYG'=>'PYGBRL'];
             foreach ($pairMap as $cur => $key) {
-                $r = $rates[$cur] ?? null;
+                $r = $rates2[$cur] ?? null;
+                if ($r && $r > 0) {
+                    $bid = round(1 / $r, 6);
+                    $result[$key] = ['bid'=>(string)$bid,'pctChange'=>'0.00','high'=>(string)$bid,'low'=>(string)$bid];
+                }
+            }
+        }
+    }
+
+    // ── Fallback 2: frankfurter.app (BCE, sem token) se ainda sem dados ───────
+    if (empty($result['USDBRL'])) {
+        $rawFr = httpGet('https://api.frankfurter.app/latest?from=BRL&to=USD,EUR', 5);
+        if ($rawFr) {
+            $dataFr = json_decode($rawFr, true);
+            $ratesFr = $dataFr['rates'] ?? [];
+            $mapFr = ['USD'=>'USDBRL','EUR'=>'EURBRL'];
+            foreach ($mapFr as $cur => $key) {
+                $r = $ratesFr[$cur] ?? null;
                 if ($r && $r > 0) {
                     $bid = round(1 / $r, 6);
                     $result[$key] = ['bid'=>(string)$bid,'pctChange'=>'0.00','high'=>(string)$bid,'low'=>(string)$bid];
@@ -437,7 +532,12 @@ if ($method === 'GET' && $action === 'crypto') {
         if ($cached) { echo $cached; exit; }
     }
 
+    // Primary: CoinGecko public API
     $raw  = httpGet('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=8&page=1&sparkline=false');
+    // Fallback: CoinGecko via alternate domain
+    if (!$raw) {
+        $raw = httpGet('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,binancecoin,cardano,ripple,chainlink,polkadot&vs_currencies=brl&include_market_cap=true&include_24hr_change=true', 8);
+    }
     $data = $raw ? json_decode($raw, true) : null;
 
     if (is_array($data) && count($data) > 0) {
