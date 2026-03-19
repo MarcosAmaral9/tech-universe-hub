@@ -10,7 +10,12 @@ import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/cdb-2026-guia.webp";
 
-const CDB2026Guia = () => (
+const CDB2026Guia = () => {
+  useEffect(() => {
+    trackArticleRead("cdb-2026-guia-completo", "CDB em 2026: Ainda Vale a Pena? Guia Completo com Taxas Reais", "invest");
+  }, []);
+  const goBack = useSmartBack("/financas");
+  return (
   <article className="container py-8 max-w-4xl mx-auto">
     <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
         <ArrowLeft className="h-4 w-4" /> Voltar para Finanças
@@ -166,4 +171,6 @@ const CDB2026Guia = () => (
     <CommentSection postId="cdb-2026-guia-completo" postTitle="CDB em 2026: Guia Completo" />
   </article>
 );
+};
+
 export default CDB2026Guia;

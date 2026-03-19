@@ -22,7 +22,12 @@ const hashiras = [
   { nome: "Muichiro Tokito", respiracao: "Névoa", posicao: "Pilar da Névoa", status: "Ativo" },
 ];
 
-const DemonSlayerHashira2026 = () => (
+const DemonSlayerHashira2026 = () => {
+  useEffect(() => {
+    trackArticleRead("demon-slayer-hashira-guia-2026", "Demon Slayer: Guia Completo dos Hashira — Respirações e Poderes", "otaku");
+  }, []);
+  const goBack = useSmartBack("/otaku");
+  return (
   <article className="container py-8 max-w-4xl mx-auto">
     <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
         <ArrowLeft className="h-4 w-4" /> Voltar para Otaku
@@ -128,4 +133,6 @@ const DemonSlayerHashira2026 = () => (
     <CommentSection postId="demon-slayer-hashira-2026" postTitle="Demon Slayer: Guia dos Hashira" />
   </article>
 );
+};
+
 export default DemonSlayerHashira2026;

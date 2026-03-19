@@ -392,10 +392,17 @@ if ($method === 'GET' && $action === 'rates') {
         $cached = dbCacheGet($db, 'rates', $TTL_RATES);
         if ($cached) { $cached['_meta']['from_cache'] = true; echo json_encode($cached); exit; }
     }
-    // Arquivo como fallback
+    // Arquivo como fallback — valida que os dados são de hoje
     if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $TTL_RATES * 60) {
-        $cached = file_get_contents($CACHE_FILE);
-        if ($cached) { echo $cached; exit; }
+        $fileRaw = file_get_contents($CACHE_FILE);
+        if ($fileRaw) {
+            $fileDec = json_decode($fileRaw, true);
+            // Só serve se os dados forem de hoje (evita cache de dias anteriores)
+            $fileDate = isset($fileDec['_meta']['updatedAt'])
+                ? date('Y-m-d', strtotime($fileDec['_meta']['updatedAt']))
+                : null;
+            if ($fileDate === date('Y-m-d')) { echo $fileRaw; exit; }
+        }
     }
 
     $result = [];
@@ -526,10 +533,18 @@ if ($method === 'GET' && $action === 'crypto') {
         $cached = dbCacheGet($db, 'crypto', $TTL_CRYPTO);
         if ($cached) { $cached['_meta']['from_cache'] = true; echo json_encode($cached); exit; }
     }
-    // Arquivo como fallback
+    // Arquivo como fallback — valida que os dados são de hoje
     if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $TTL_CRYPTO * 60) {
-        $cached = file_get_contents($CACHE_FILE);
-        if ($cached) { echo $cached; exit; }
+        $fileRaw = file_get_contents($CACHE_FILE);
+        if ($fileRaw) {
+            $fileDec = json_decode($fileRaw, true);
+            $fileDate = isset($fileDec['_meta']['updatedAt'])
+                ? date('Y-m-d', strtotime($fileDec['_meta']['updatedAt']))
+                : null;
+            if ($fileDate === date('Y-m-d') && !empty($fileDec['coins'])) {
+                echo $fileRaw; exit;
+            }
+        }
     }
 
     // Primary: CoinGecko public API
@@ -576,8 +591,13 @@ if ($method === 'GET' && $action === 'b3') {
         $fileData = file_get_contents($CACHE_FILE);
         if ($fileData) {
             $decoded = json_decode($fileData, true);
-            // Só serve se tiver dados reais (não serve erros cacheados)
-            if (!empty($decoded['results'])) { echo $fileData; exit; }
+            // Só serve se tiver dados reais E forem de hoje
+            $fileDate = isset($decoded['_meta']['updatedAt'])
+                ? date('Y-m-d', strtotime($decoded['_meta']['updatedAt']))
+                : null;
+            if (!empty($decoded['results']) && $fileDate === date('Y-m-d')) {
+                echo $fileData; exit;
+            }
         }
     }
 

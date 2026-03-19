@@ -10,7 +10,12 @@ import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/dragon-age-veilguard-review-2026.webp";
 
-const DragonAgeVeilguard2026 = () => (
+const DragonAgeVeilguard2026 = () => {
+  useEffect(() => {
+    trackArticleRead("dragon-age-veilguard-review-2026", "Dragon Age: The Veilguard — A BioWare Voltou? Review Completo 2026", "geek");
+  }, []);
+  const goBack = useSmartBack("/geek");
+  return (
   <article className="container py-8 max-w-4xl mx-auto">
     <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
         <ArrowLeft className="h-4 w-4" /> Voltar para Geek
@@ -116,4 +121,6 @@ const DragonAgeVeilguard2026 = () => (
     <CommentSection postId="dragon-age-veilguard-review-2026" postTitle="Dragon Age: The Veilguard — Review 2026" />
   </article>
 );
+};
+
 export default DragonAgeVeilguard2026;

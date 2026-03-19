@@ -10,7 +10,12 @@ import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/ia-codigo-programadores-2026.webp";
 
-const IACodigo2026 = () => (
+const IACodigo2026 = () => {
+  useEffect(() => {
+    trackArticleRead("ia-codigo-programadores-2026", "IA e Programação em 2026: GitHub Copilot, Cursor e o Futuro do Dev", "ia");
+  }, []);
+  const goBack = useSmartBack("/ia");
+  return (
   <article className="container py-8 max-w-4xl mx-auto">
     <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
         <ArrowLeft className="h-4 w-4" /> Voltar para IA
@@ -113,4 +118,6 @@ const IACodigo2026 = () => (
     <CommentSection postId="ia-codigo-programadores-2026" postTitle="IA e Programação em 2026" />
   </article>
 );
+};
+
 export default IACodigo2026;

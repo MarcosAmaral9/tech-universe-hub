@@ -10,7 +10,12 @@ import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/modelos-ia-open-source-2026.webp";
 
-const ModelosIAOpenSource2026 = () => (
+const ModelosIAOpenSource2026 = () => {
+  useEffect(() => {
+    trackArticleRead("modelos-ia-open-source-2026", "IA Open Source 2026: Llama, Mistral e DeepSeek Contra os Modelos Pagos", "ia");
+  }, []);
+  const goBack = useSmartBack("/ia");
+  return (
   <article className="container py-8 max-w-4xl mx-auto">
     <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
         <ArrowLeft className="h-4 w-4" /> Voltar para IA
@@ -139,4 +144,6 @@ const ModelosIAOpenSource2026 = () => (
     <CommentSection postId="modelos-ia-open-source-2026" postTitle="IA Open Source 2026" />
   </article>
 );
+};
+
 export default ModelosIAOpenSource2026;

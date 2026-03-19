@@ -10,7 +10,12 @@ import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/previdencia-privada-2026.webp";
 
-const PrevidenciaPrivada2026 = () => (
+const PrevidenciaPrivada2026 = () => {
+  useEffect(() => {
+    trackArticleRead("previdencia-privada-pgbl-vgbl-2026", "Previdência Privada em 2026: PGBL ou VGBL? Guia para Decidir Sem Erro", "invest");
+  }, []);
+  const goBack = useSmartBack("/financas");
+  return (
   <article className="container py-8 max-w-4xl mx-auto">
     <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
         <ArrowLeft className="h-4 w-4" /> Voltar para Finanças
@@ -154,4 +159,6 @@ const PrevidenciaPrivada2026 = () => (
     <CommentSection postId="previdencia-privada-2026" postTitle="Previdência Privada 2026: PGBL ou VGBL?" />
   </article>
 );
+};
+
 export default PrevidenciaPrivada2026;

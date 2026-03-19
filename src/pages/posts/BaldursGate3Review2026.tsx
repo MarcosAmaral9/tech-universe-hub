@@ -10,7 +10,12 @@ import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/baldurs-gate-3-review-2026.webp";
 
-const BaldursGate3Review2026 = () => (
+const BaldursGate3Review2026 = () => {
+  useEffect(() => {
+    trackArticleRead("baldurs-gate-3-review-2026", "Baldur\'s Gate 3 em 2026: Ainda o Melhor RPG da Geração?", "geek");
+  }, []);
+  const goBack = useSmartBack("/geek");
+  return (
   <article className="container py-8 max-w-4xl mx-auto">
     <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
         <ArrowLeft className="h-4 w-4" /> Voltar para Geek
@@ -118,4 +123,6 @@ const BaldursGate3Review2026 = () => (
     <CommentSection postId="baldurs-gate-3-review-2026" postTitle="Baldur's Gate 3 em 2026" />
   </article>
 );
+};
+
 export default BaldursGate3Review2026;

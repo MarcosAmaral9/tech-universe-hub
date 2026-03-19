@@ -9,7 +9,12 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import crimsonBuildsImg from "@/assets/crimson-desert-builds.webp";
 
-const CrimsonDesertBuilds = () => (
+const CrimsonDesertBuilds = () => {
+  useEffect(() => {
+    trackArticleRead("crimson-desert-builds-guia-2026", "Crimson Desert: Sistema de Progressão de Kliff — O Que Sabemos", "geek");
+  }, []);
+  const goBack = useSmartBack("/geek/crimson-desert");
+  return (
   <article className="container py-8 max-w-4xl mx-auto">
     <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
         <ArrowLeft className="h-4 w-4" /> Voltar para Portal Crimson Desert
@@ -142,5 +147,6 @@ const CrimsonDesertBuilds = () => (
     <CommentSection postId="crimson-desert-builds-guia-2026" postTitle="Crimson Desert — Sistema de Progressão" />
   </article>
 );
+};
 
 export default CrimsonDesertBuilds;
