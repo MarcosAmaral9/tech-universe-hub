@@ -54,7 +54,7 @@ for (const post of posts) {
   const ogImg = img ? `${BASE_URL}/assets/${img}` : `${BASE_URL}/og-image.jpg`;
 
   const inject = `
-    <title>${e(post.title)} | ${SITE}</title>
+    <title>${e(post.title)} | VICIO&lt;CODE&gt;</title>
     <meta name="description" content="${e(post.excerpt)}" />
     <link rel="canonical" href="${url}" />
     <meta property="og:title" content="${e(post.title)}" />
@@ -69,7 +69,26 @@ for (const post of posts) {
     <meta name="twitter:title" content="${e(post.title)}" />
     <meta name="twitter:description" content="${e(post.excerpt)}" />
     <meta name="twitter:image" content="${ogImg}" />
-    <meta property="article:published_time" content="${post.date}T00:00:00Z" />`;
+    <meta property="article:published_time" content="${post.date}T00:00:00Z" />
+    <script type="application/ld+json">${JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "url": url,
+      "datePublished": post.date + "T00:00:00Z",
+      "dateModified": post.date + "T00:00:00Z",
+      "image": { "@type": "ImageObject", "url": ogImg, "width": 1200, "height": 630 },
+      "author": { "@type": "Organization", "name": "VICIO<CODE>", "url": "https://viciocode.com" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "VICIO<CODE>",
+        "url": "https://viciocode.com",
+        "logo": { "@type": "ImageObject", "url": "https://viciocode.com/icon-192x192.png" }
+      },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": url },
+      "inLanguage": "pt-BR"
+    }, null, 0)}</script>`;
 
   const html = stripped.replace("</head>", `${inject}\n  </head>`);
   fs.writeFileSync(path.join(dir, `${post.slug}.html`), html, "utf8");

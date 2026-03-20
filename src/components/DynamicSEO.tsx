@@ -195,7 +195,14 @@ const DynamicSEO = () => {
     setMetaTag("name", "twitter:image:alt", title);
 
     // ── Robots — ensure all pages are indexable ─────────────────────────────
-    setMetaTag("name", "robots", "index, follow, max-snippet:-1, max-image-preview:large");
+    // Private pages should not be indexed
+    const privatePaths = ["/configuracoes", "/entrar", "/redefinir-senha", "/painel-social", "/instalar"];
+    const isPrivate = privatePaths.some(p => path.startsWith(p)) || path.startsWith("/perfil/") || path.startsWith("/auth/");
+    const robotsContent = isPrivate
+      ? "noindex, nofollow"
+      : "index, follow, max-snippet:-1, max-image-preview:large, max-image-preview:large";
+    setMetaTag("name", "robots", robotsContent);
+    setMetaTag("name", "googlebot", isPrivate ? "noindex, nofollow" : "index, follow");
     setMetaTag("name", "googlebot", "index, follow");
 
     // ── Canonical ────────────────────────────────────────────────────────────

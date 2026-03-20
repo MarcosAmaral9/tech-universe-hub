@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import DynamicSEO from "@/components/DynamicSEO";
 import { Settings, Sun, Moon, Type, Palette, Bell, BellOff, RotateCcw, Smartphone, Globe, User, AtSign, Camera, BookOpen, MessageSquare, Clock, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { getReadHistory, getCommentHistory } from "@/hooks/useReadingHistory";
@@ -184,6 +185,7 @@ const SettingsPage = () => {
 
   return (
     <div className="min-h-[70vh] py-12 px-4">
+      <DynamicSEO path="/configuracoes" />
       <div className="max-w-2xl mx-auto space-y-10">
         {/* Hero */}
         <div className="text-center space-y-4">
