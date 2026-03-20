@@ -159,7 +159,7 @@ const CrimsonDesertMapa = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img src={crimsonMapaImg} alt="Mapa de Pywel — Crimson Desert regiões" className="w-full h-full object-cover" />
+        <img src={crimsonMapaImg} alt="Mapa de Pywel — Crimson Desert regiões" fetchpriority="high" loading="eager" decoding="async" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-6">
           <p className="text-sm text-muted-foreground italic">
             O continente de Pywel é estimado em 80–110 km² — mais que o dobro do mapa de Skyrim. Atravessá-lo a cavalo

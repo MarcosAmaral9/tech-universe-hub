@@ -47,7 +47,7 @@ const CrimsonDesertReview = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img src={crimsonReviewImg} alt="Crimson Desert review 2026" className="w-full h-full object-cover" />
+        <img src={crimsonReviewImg} alt="Crimson Desert review 2026" fetchpriority="high" loading="eager" decoding="async" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">

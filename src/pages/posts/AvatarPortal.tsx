@@ -35,7 +35,7 @@ const AvatarPortal = () => {
           {trilogyCards.map((card) => (
             <div key={card.slug} className="bg-card rounded-xl border border-border overflow-hidden group">
               <div className="aspect-video overflow-hidden">
-                <img src={card.image} alt={card.subtitle} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                <img src={card.image} alt={card.subtitle} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               </div>
               <div className="p-5">
                 <span className="text-sm text-primary font-medium">{card.title}</span>
@@ -55,7 +55,7 @@ const AvatarPortal = () => {
         <div className="bg-gradient-to-br from-green-500/10 to-background rounded-2xl border border-green-500/30 overflow-hidden">
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/2 aspect-video md:aspect-auto">
-              <img src={avatarGameImg} alt="Avatar Frontiers of Pandora" className="w-full h-full object-cover" />
+              <img src={avatarGameImg} alt="Avatar Frontiers of Pandora" loading="lazy" decoding="async" className="w-full h-full object-cover" />
             </div>
             <div className="md:w-1/2 p-8 flex flex-col justify-center">
               <h2 className="font-display text-3xl font-bold mb-4">Viva sua própria jornada em Pandora</h2>

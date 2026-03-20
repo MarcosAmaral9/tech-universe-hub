@@ -1,112 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-      <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XDJ1D1LJMK"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XDJ1D1LJMK');
-      </script>
-      <!-- End Google tag (gtag.js) -->
-        
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5TZ9XL9F');</script>
-    <!-- End Google Tag Manager -->
-    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VICIO<CODE> - IA, Investimentos, Geek & Otaku</title>
+    <title>VICIO&lt;CODE&gt; - IA, Investimentos, Geek &amp; Otaku</title>
     <meta name="description" content="Seu portal definitivo para IAs, investimentos, cultura geek e o mundo otaku. Conteúdo de qualidade para mentes curiosas." />
-    <meta name="author" content="VICIO<CODE>" />
+    <meta name="author" content="VICIO&lt;CODE&gt;" />
     <meta name="google-adsense-account" content="ca-pub-4907992121422514" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-    <!-- Preconnect to font origin for faster font loading -->
+    <!-- ① DNS/connection hints — zero blocking, happen in parallel -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Load fonts with display=swap to prevent render blocking -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://api.coingecko.com" />
+    <link rel="dns-prefetch" href="https://brapi.dev" />
+
+    <!-- ② Google Fonts — non-blocking (media=print swap trick) -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
     <noscript>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" />
     </noscript>
 
-    <meta property="og:title" content="VICIO<CODE> - IA, Investimentos, Geek & Otaku" />
+    <!-- ③ GA4 — async, non-blocking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XDJ1D1LJMK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XDJ1D1LJMK', { send_page_view: false });
+    </script>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="VICIO&lt;CODE&gt; - IA, Investimentos, Geek &amp; Otaku" />
     <meta property="og:description" content="Seu portal definitivo para IAs, investimentos, cultura geek e o mundo otaku. Conteúdo de qualidade para mentes curiosas." />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="VICIO<CODE>" />
+    <meta property="og:site_name" content="VICIO&lt;CODE&gt;" />
     <meta property="og:image" content="https://viciocode.com/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="VICIO<CODE> - Portal de IA, Investimentos, Geek e Otaku" />
+    <meta property="og:image:alt" content="VICIO&lt;CODE&gt; - Portal de IA, Investimentos, Geek e Otaku" />
     <meta property="og:locale" content="pt_BR" />
 
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@viciocode" />
-    <meta name="twitter:title" content="VICIO<CODE> - IA, Investimentos, Geek & Otaku" />
+    <meta name="twitter:title" content="VICIO&lt;CODE&gt; - IA, Investimentos, Geek &amp; Otaku" />
     <meta name="twitter:description" content="Seu portal definitivo para IAs, investimentos, cultura geek e o mundo otaku." />
     <meta name="twitter:image" content="https://viciocode.com/og-image.jpg" />
-    <meta name="twitter:image:alt" content="VICIO<CODE> - Portal de IA, Investimentos, Geek e Otaku" />
+    <meta name="twitter:image:alt" content="VICIO&lt;CODE&gt; - Portal de IA, Investimentos, Geek e Otaku" />
 
-    <!-- Geo Tags -->
+    <!-- Geo -->
     <meta name="geo.region" content="BR-MG" />
     <meta name="geo.placename" content="Contagem, Minas Gerais" />
     <meta name="geo.position" content="-19.9320;-44.0538" />
     <meta name="ICBM" content="-19.9320, -44.0538" />
 
-    <!-- DNS prefetch for APIs used by widgets -->
-    <link rel="dns-prefetch" href="https://api.coingecko.com" />
-    <link rel="dns-prefetch" href="https://brapi.dev" />
-
-    <!-- Indexação e compatibilidade entre navegadores -->
+    <!-- Robots / indexing -->
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
     <meta name="bingbot" content="index, follow" />
     <meta name="format-detection" content="telephone=no" />
 
-    <!-- PWA / Mobile cross-browser -->
+    <!-- PWA / Mobile -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="VICIO&lt;CODE&gt;" />
     <link rel="apple-touch-icon" href="/icon-192x192.png" />
-
-    <!-- Windows / Edge -->
     <meta name="msapplication-TileColor" content="#0a0a0a" />
     <meta name="msapplication-TileImage" content="/icon-192x192.png" />
     <meta name="theme-color" content="#0a0a0a" />
 
-    <!-- Language and region -->
+    <!-- Hreflang -->
     <link rel="alternate" hreflang="pt-BR" href="https://viciocode.com/" />
-    </head>
+  </head>
 
   <body>
-    <!-- Force unregister ALL service workers to fix stale cache white screen -->
+    <!-- SW cleanup: unregister stale service workers (fixes stale-cache white screen) -->
     <script>
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistrations().then(function(registrations) {
-          for (var r of registrations) { r.unregister(); }
+        navigator.serviceWorker.getRegistrations().then(function(r) {
+          for (var sw of r) sw.unregister();
         });
-        // Also clear all SW-related caches
         if ('caches' in window) {
-          caches.keys().then(function(names) {
-            for (var name of names) { caches.delete(name); }
-          });
+          caches.keys().then(function(n) { for (var c of n) caches.delete(c); });
         }
       }
     </script>
-    <!-- Google Tag Manager (noscript) -->
+
+    <!-- GTM noscript (required by Google) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5TZ9XL9F"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- GTM script deferred — loads after main content, no render blocking -->
+    <script>
+      window.addEventListener('load', function() {
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-5TZ9XL9F';
+        s.async = true;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+      });
+    </script>
   </body>
 </html>

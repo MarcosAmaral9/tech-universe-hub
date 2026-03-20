@@ -53,21 +53,43 @@ function htaccessPlugin(): Plugin {
   RewriteRule . /index.html [L]
 </IfModule>
 
-# Cache static assets
+# ── Cache: hashed assets (JS/CSS/fonts/images) → 1 year immutable
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/jpeg "access plus 1 year"
   ExpiresByType image/png "access plus 1 year"
   ExpiresByType image/webp "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
-  ExpiresByType text/css "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
   ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  # HTML — short cache so new deploys propagate fast
+  ExpiresByType text/html "access plus 0 seconds"
 </IfModule>
 
-# Gzip compression
+# Cache-Control: immutable for hashed Vite assets (never revalidate)
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|woff2|woff)$">
+    Header append Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(webp|jpg|jpeg|png|svg|ico)$">
+    Header append Cache-Control "public, max-age=31536000"
+  </FilesMatch>
+  # HTML must revalidate on every request
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# Brotli compression (preferred, ~20% better than gzip)
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/css application/javascript application/json image/svg+xml font/woff2
+</IfModule>
+
+# Gzip compression (fallback when Brotli unavailable)
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml font/woff2
 </IfModule>
 `;
       const distPath = path.resolve(__dirname, "dist/.htaccess");
@@ -154,5 +176,6 @@ export default defineConfig(({ mode }) => ({
     chunkSizeWarningLimit: 1000,
     minify: "esbuild",
     cssCodeSplit: true,
+
   },
 }));

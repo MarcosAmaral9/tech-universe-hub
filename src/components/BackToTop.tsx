@@ -6,12 +6,19 @@ const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    let rafId: number;
     const toggleVisibility = () => {
-      setIsVisible(window.scrollY > 300);
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        setIsVisible(window.scrollY > 300);
+      });
     };
 
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   const scrollToTop = () => {

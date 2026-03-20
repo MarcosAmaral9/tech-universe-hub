@@ -1,6 +1,7 @@
 import FeaturedCarousel from "@/components/FeaturedCarousel";
 import PostCard from "@/components/PostCard";
-import SocialSection from "@/components/SocialSection";
+import { lazy, Suspense } from "react";
+const SocialSection = lazy(() => import("@/components/SocialSection"));
 import { blogPosts, getPostsByCategory } from "@/data/posts";
 import { Link } from "react-router-dom";
 import DynamicSEO from "@/components/DynamicSEO";
@@ -71,7 +72,7 @@ const Index = () => {
 
       {/* Social Section with QR Codes */}
       <section className="container py-8">
-        <SocialSection />
+        <Suspense fallback={null}><SocialSection /></Suspense>
       </section>
     </>
   </>  

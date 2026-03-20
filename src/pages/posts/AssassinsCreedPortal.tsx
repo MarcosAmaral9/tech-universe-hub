@@ -59,7 +59,7 @@ const AssassinsCreedPortal = () => {
           {games.map((game) => (
             <Link key={game.slug} to={`/post/${game.slug}`} className="group bg-card rounded-xl border border-border overflow-hidden hover:border-purple-500/50 transition-all">
               <div className="aspect-video overflow-hidden">
-                <img src={game.image} alt={game.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                <img src={game.image} alt={game.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               </div>
               <div className="p-4">
                 <h3 className="font-bold text-lg group-hover:text-purple-400 transition-colors">{game.title}</h3>

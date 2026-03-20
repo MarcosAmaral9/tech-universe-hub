@@ -86,7 +86,7 @@ const CrimsonDesertPanel = () => {
           {articles.map((article) => (
             <div key={article.slug} className="bg-card rounded-xl border border-border overflow-hidden group">
               <div className="aspect-video overflow-hidden">
-                <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                <img src={article.image} alt={article.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               </div>
               <div className="p-5">
                 <span className="text-sm text-red-400 font-medium">{article.title}</span>
