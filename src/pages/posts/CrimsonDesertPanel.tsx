@@ -6,7 +6,7 @@ import crimsonHeroImg from "@/assets/crimson-desert-hero.webp";
 import crimsonGuiaImg from "@/assets/crimson-desert-guia.webp";
 import crimsonCombateImg from "@/assets/crimson-desert-combate.webp";
 import crimsonReviewImg from "@/assets/crimson-desert-review.webp";
-import crimsonMapaImg    from "@/assets/crimson-desert-mapa.webp";
+import crimsonMapaImg    from "@/assets/crimson-desert-mapa-pywel.webp";
 import crimsonBuildsImg from "@/assets/crimson-desert-builds.webp";
 
 const CrimsonDesertPanel = () => {
@@ -48,6 +48,7 @@ const CrimsonDesertPanel = () => {
       title: "Mapa de Pywel",
       subtitle: "Todas as Regiões Explicadas",
       desc: "Pywel tem 5 regiões + The Abyss — tamanho, biomas, bosses e como se locomover.",
+      image: crimsonMapaImg,
       btn: "Ver Mapa",
     },
   ];
