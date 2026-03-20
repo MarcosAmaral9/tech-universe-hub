@@ -185,7 +185,7 @@ const SettingsPage = () => {
 
   return (
     <div className="min-h-[70vh] py-12 px-4">
-      <DynamicSEO path="/configuracoes" />
+      <DynamicSEO />
       <div className="max-w-2xl mx-auto space-y-10">
         {/* Hero */}
         <div className="text-center space-y-4">

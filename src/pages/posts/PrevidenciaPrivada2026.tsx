@@ -152,7 +152,7 @@ const PrevidenciaPrivada2026 = () => {
           { label: "IRPF 2026", href: "/post/irpf-2026-guia-declarar-pagar-menos", desc: "Como declarar PGBL e VGBL no imposto de renda" },
         ]}
       />
-      <RelatedPosts currentSlug="previdencia-privada-2026" category="invest" />
+      <RelatedPosts currentSlug="previdencia-privada-2026" />
     <CommentSection postId="previdencia-privada-2026" postTitle="Previdência Privada 2026: PGBL ou VGBL?" />
   </article>
 );

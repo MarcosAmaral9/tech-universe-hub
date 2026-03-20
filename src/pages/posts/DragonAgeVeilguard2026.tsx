@@ -114,7 +114,7 @@ const DragonAgeVeilguard2026 = () => {
           { label: "Ranking dos melhores RPGs de ação", href: "/post/ranking-melhor-assassins-creed-2026" },
         ]}
       />
-      <RelatedPosts currentSlug="dragon-age-veilguard-review-2026" category="geek" />
+      <RelatedPosts currentSlug="dragon-age-veilguard-review-2026" />
     <CommentSection postId="dragon-age-veilguard-review-2026" postTitle="Dragon Age: The Veilguard — Review 2026" />
   </article>
 );
