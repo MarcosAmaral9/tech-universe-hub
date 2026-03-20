@@ -70,7 +70,7 @@ const OnePieceFinalSaga2026 = () => {
               <h3 className="font-bold">{a.arco}</h3>
               <span className={`text-xs px-2 py-0.5 rounded-full ${a.status === "Recente" ? "bg-emerald-500/20 text-emerald-400" : a.status === "Próximo arco" ? "bg-yellow-500/20 text-yellow-400" : "bg-pink-500/20 text-pink-400"}`}>{a.status}</span>
             </div>
-            <p className="text-xs text-muted-foreground">{caps} {a.caps}</p>
+            <p className="text-xs text-muted-foreground">Capítulos: {a.caps}</p>
             <p className="text-sm text-muted-foreground mt-1">{a.desc}</p>
           </div>
         ))}
