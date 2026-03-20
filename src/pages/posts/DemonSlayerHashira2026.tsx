@@ -126,7 +126,7 @@ const DemonSlayerHashira2026 = () => {
           { label: "Todos os artigos Otaku", href: "/otaku" },
         ]}
       />
-      <RelatedPosts currentSlug="demon-slayer-hashira-2026" category="otaku" />
+      <RelatedPosts currentSlug="demon-slayer-hashira-2026" />
     <CommentSection postId="demon-slayer-hashira-2026" postTitle="Demon Slayer: Guia dos Hashira" />
   </article>
 );

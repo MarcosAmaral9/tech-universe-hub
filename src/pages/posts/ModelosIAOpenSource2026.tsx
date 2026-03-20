@@ -137,7 +137,7 @@ const ModelosIAOpenSource2026 = () => {
           { label: "IA e Privacidade de Dados", href: "/post/ia-privacidade-dados-2026", desc: "Por que privacidade é o principal argumento open source" },
         ]}
       />
-      <RelatedPosts currentSlug="modelos-ia-open-source-2026" category="ia" />
+      <RelatedPosts currentSlug="modelos-ia-open-source-2026" />
     <CommentSection postId="modelos-ia-open-source-2026" postTitle="IA Open Source 2026" />
   </article>
 );

@@ -116,7 +116,7 @@ const BaldursGate3Review2026 = () => {
           { label: "Todos os artigos Geek", href: "/geek" },
         ]}
       />
-      <RelatedPosts currentSlug="baldurs-gate-3-review-2026" category="geek" />
+      <RelatedPosts currentSlug="baldurs-gate-3-review-2026" />
     <CommentSection postId="baldurs-gate-3-review-2026" postTitle="Baldur's Gate 3 em 2026" />
   </article>
 );

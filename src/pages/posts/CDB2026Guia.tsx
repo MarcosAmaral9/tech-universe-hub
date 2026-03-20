@@ -164,7 +164,7 @@ const CDB2026Guia = () => {
           { label: "Cotações ao Vivo", href: "/cotacoes", desc: "Acompanhe CDI e Selic em tempo real" },
         ]}
       />
-      <RelatedPosts currentSlug="cdb-2026-guia-completo" category="invest" />
+      <RelatedPosts currentSlug="cdb-2026-guia-completo" />
     <CommentSection postId="cdb-2026-guia-completo" postTitle="CDB em 2026: Guia Completo" />
   </article>
 );

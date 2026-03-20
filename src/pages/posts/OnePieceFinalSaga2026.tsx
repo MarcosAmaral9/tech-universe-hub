@@ -116,7 +116,7 @@ const OnePieceFinalSaga2026 = () => {
           { label: "Mangá vs Anime", href: "/post/manga-vs-anime-adaptacao-2026", desc: "Qual versão de One Piece vale mais a pena?" },
         ]}
       />
-      <RelatedPosts currentSlug="one-piece-final-saga-2026" category="otaku" />
+      <RelatedPosts currentSlug="one-piece-final-saga-2026" />
     <CommentSection postId="one-piece-final-saga-2026" postTitle="One Piece Final Saga 2026" />
   </article>
 );

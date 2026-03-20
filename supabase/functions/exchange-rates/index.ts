@@ -23,8 +23,8 @@ type ExchangePayload = {
     PYGBRL?: SparklineData;
   };
   _meta?: {
-    fallback: boolean;
-    source: string;
+    fallback?: boolean;
+    source?: string;
     reason?: string;
     ttlMs: number;
     updatedAt: string;

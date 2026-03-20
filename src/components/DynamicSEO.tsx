@@ -197,7 +197,7 @@ const DynamicSEO = () => {
     // ── Robots — ensure all pages are indexable ─────────────────────────────
     // Private pages should not be indexed
     const privatePaths = ["/configuracoes", "/entrar", "/redefinir-senha", "/painel-social", "/instalar"];
-    const isPrivate = privatePaths.some(p => path.startsWith(p)) || path.startsWith("/perfil/") || path.startsWith("/auth/");
+    const isPrivate = privatePaths.some(p => pathname.startsWith(p)) || pathname.startsWith("/perfil/") || pathname.startsWith("/auth/");
     const robotsContent = isPrivate
       ? "noindex, nofollow"
       : "index, follow, max-snippet:-1, max-image-preview:large, max-image-preview:large";
