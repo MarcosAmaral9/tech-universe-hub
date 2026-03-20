@@ -21,16 +21,31 @@ const ReadingProgressBar = () => {
   useEffect(() => {
     if (!isPostPage) return;
 
+    // Cache docHeight to avoid reading scrollHeight on every scroll event (forced reflow)
+    let docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    let rafId: number;
+
+    const updateDocHeight = () => {
+      docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    };
+
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      setProgress(Math.min(scrollPercent, 100));
+      // rAF prevents forced reflow and throttles to 60fps
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        const scrollPercent = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+        setProgress(Math.min(scrollPercent, 100));
+      });
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", updateDocHeight, { passive: true });
     handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", updateDocHeight);
+      cancelAnimationFrame(rafId);
+    };
   }, [isPostPage, location.pathname]);
 
   if (!isPostPage || !post) return null;

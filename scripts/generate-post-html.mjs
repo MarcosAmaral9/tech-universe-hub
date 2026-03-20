@@ -43,6 +43,31 @@ const stripped = indexHtml
 
 const e = (s) => s.replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
+// Cache critical CSS extraction
+let _criticalCSS = null;
+function extractCriticalCSS(cssHref) {
+  if (_criticalCSS !== null) return _criticalCSS;
+  try {
+    const cssPath = path.join(DIST, cssHref);
+    const fullCSS = fs.readFileSync(cssPath, "utf8");
+    const parts = [];
+    const reset = fullCSS.match(/\*,:before,:after\{[^}]+\}/);
+    if (reset) parts.push(reset[0]);
+    const root = fullCSS.match(/:root\{[^}]+\}/);
+    if (root) parts.push(root[0]);
+    for (const dm of fullCSS.matchAll(/\.dark\{[^}]+\}/g)) parts.push(dm[0]);
+    const htmlBase = fullCSS.match(/(?:^|[\s,])html\{([^}]+)\}/);
+    if (htmlBase) parts.push("html{" + htmlBase[1] + "}");
+    const bodyBase = fullCSS.match(/(?:^|[\s,])body\{([^}]+)\}/);
+    if (bodyBase) parts.push("body{" + bodyBase[1] + "}");
+    parts.push("html{background-color:hsl(0 0% 98%)}html.dark{background-color:hsl(220 25% 6%)}");
+    _criticalCSS = parts.join("").replace(/\s{2,}/g, " ").trim();
+  } catch(e) {
+    _criticalCSS = "";
+  }
+  return _criticalCSS;
+}
+
 for (const post of posts) {
   const dir  = path.join(DIST, "post");
   fs.mkdirSync(dir, { recursive: true });
@@ -70,6 +95,7 @@ for (const post of posts) {
     <meta name="twitter:description" content="${e(post.excerpt)}" />
     <meta name="twitter:image" content="${ogImg}" />
     <meta property="article:published_time" content="${post.date}T00:00:00Z" />
+    <link rel="preload" as="image" href="${ogImg}" fetchpriority="high" />
     <script type="application/ld+json">${JSON.stringify({
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -90,7 +116,22 @@ for (const post of posts) {
       "inLanguage": "pt-BR"
     }, null, 0)}</script>`;
 
-  const html = stripped.replace("</head>", `${inject}\n  </head>`);
+  // Apply critical CSS: make full CSS non-blocking, inline critical styles
+  let html = stripped.replace("</head>", `${inject}\n  </head>`);
+  
+  // Find the blocking CSS link Vite generated and make it non-blocking
+  html = html.replace(
+    /<link rel="stylesheet" crossorigin href="(\/assets\/index-[^"]+\.css)">/,
+    (_, cssHref) => {
+      const critical = extractCriticalCSS(cssHref);
+      return [
+        critical ? `<style id="critical-css">${critical}</style>` : "",
+        `<link rel="preload" href="${cssHref}" as="style" onload="this.onload=null;this.rel='stylesheet'">`,
+        `<noscript><link rel="stylesheet" href="${cssHref}"></noscript>`,
+      ].filter(Boolean).join("\n    ");
+    }
+  );
+  
   fs.writeFileSync(path.join(dir, `${post.slug}.html`), html, "utf8");
 }
 

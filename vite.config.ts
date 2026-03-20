@@ -6,6 +6,63 @@ import fs from "fs";
 import { VitePWA } from "vite-plugin-pwa";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
+
+// Plugin: inline critical CSS + make full CSS non-blocking
+function criticalCSSPlugin(): Plugin {
+  return {
+    name: "critical-css",
+    apply: "build",
+    closeBundle() {
+      const distPath = path.resolve(__dirname, "dist");
+      if (!fs.existsSync(distPath)) return;
+
+      const indexPath = path.join(distPath, "index.html");
+      if (!fs.existsSync(indexPath)) return;
+
+      // Read the generated CSS
+      const assetsDir = path.join(distPath, "assets");
+      const cssFile = fs.readdirSync(assetsDir).find(f => f.match(/^index-.*\.css$/));
+      if (!cssFile) return;
+
+      const fullCSS = fs.readFileSync(path.join(assetsDir, cssFile), "utf8");
+
+      // Extract critical above-fold CSS
+      const criticalParts: string[] = [];
+      // Tailwind reset
+      const reset = fullCSS.match(/\*,:before,:after\{[^}]+\}/);
+      if (reset) criticalParts.push(reset[0]);
+      // :root variables
+      const root = fullCSS.match(/:root\{[^}]+\}/);
+      if (root) criticalParts.push(root[0]);
+      // .dark overrides
+      const darkMatches = fullCSS.matchAll(/\.dark\{[^}]+\}/g);
+      for (const dm of darkMatches) criticalParts.push(dm[0]);
+      // html/body base
+      const html = fullCSS.match(/(?:^|[\s,])html\{([^}]+)\}/);
+      if (html) criticalParts.push("html{" + html[1] + "}");
+      const body = fullCSS.match(/(?:^|[\s,])body\{([^}]+)\}/);
+      if (body) criticalParts.push("body{" + body[1] + "}");
+      // Anti-FOUC backgrounds
+      criticalParts.push("html{background-color:hsl(0 0% 98%)}html.dark{background-color:hsl(220 25% 6%)}");
+
+      const criticalCSS = criticalParts.join("").replace(/\s{2,}/g, " ").trim();
+
+      // Transform index.html: inline critical + make full CSS non-blocking
+      let html_content = fs.readFileSync(indexPath, "utf8");
+      const cssLink = `<link rel="stylesheet" crossorigin href="/assets/${cssFile}">`;
+      const nonBlockingCSS = [
+        `<style id="critical-css">${criticalCSS}</style>`,
+        `<link rel="preload" href="/assets/${cssFile}" as="style" onload="this.onload=null;this.rel='stylesheet'">`,
+        `<noscript><link rel="stylesheet" href="/assets/${cssFile}"></noscript>`,
+      ].join("\n    ");
+
+      html_content = html_content.replace(cssLink, nonBlockingCSS);
+      fs.writeFileSync(indexPath, html_content);
+      console.log("✅ Critical CSS inlined, full CSS non-blocking");
+    },
+  };
+}
+
 // Plugin to generate .htaccess in dist folder for Apache (Hostinger)
 function htaccessPlugin(): Plugin {
   return {
@@ -162,6 +219,7 @@ export default defineConfig(({ mode }) => ({
         ],
       },
     }),
+    criticalCSSPlugin(),
     htaccessPlugin(),
     mode === "development" && componentTagger(),
   ].filter(Boolean),
