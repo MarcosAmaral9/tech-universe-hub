@@ -13,14 +13,13 @@ const SUBTOPIC_LABELS: Record<string, string> = {
   anime: "Animes",
   manga: "Mangás",
   manhwa: "Manhwas",
-  manhua: "Manhuas",
+
   cosplay: "Cosplay",
   cultura: "Cultura",
   idiomas: "Idiomas",
   generos: "Gêneros",
   games: "Games",
   collectibles: "Colecionáveis",
-  dublagem: "Dublagem",
   "saude-mental": "Saúde Mental",
 };
 
