@@ -19,7 +19,7 @@ const HellLetLooseSimulador = () => {
       {/* SEO-optimized meta description: Hell Let Loose vale a pena em 2026? Review completa do simulador tático de Segunda Guerra Mundial com 100 jogadores, batalhas históricas reais, requisitos de PC gamer e análise de custo-benefício. */}
       
       {/* Back Button */}
-      <BackNavigation categoryPath="/geek" categoryLabel="Geek" />
+      <BackNavigation category="geek" />
 
       {/* Header */}
       <header className="mb-8">

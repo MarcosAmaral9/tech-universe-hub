@@ -20,7 +20,7 @@ const ACMirage = () => {
       {/* SEO-optimized meta description: Assassin's Creed Mirage vale a pena em 2026? Review completa do retorno às raízes em Bagdá do século IX, com furtividade clássica, facções, contexto histórico, parkour, ferramentas do assassino, DLCs, requisitos de PC gamer e custo-benefício. */}
       
       {/* Back Button */}
-      <BackNavigation categoryPath="/geek" categoryLabel="Geek" portalPath="/geek/assassins-creed" portalLabel="Portal Assassin's Creed" />
+      <BackNavigation category="geek" portalPath="/geek/assassins-creed" portalLabel="Painel Assassin's Creed" />
 
       {/* Header */}
       <header className="mb-8">

@@ -16,7 +16,7 @@ const JogosAnime2026 = () => {
   }, []);
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <BackNavigation categoryPath="/otaku" categoryLabel="Otaku" />
+      <BackNavigation category="otaku" />
 
       <header className="mb-8">
         <CategoryBadge category="otaku" size="lg" />

@@ -41,7 +41,7 @@ const SmartGoalBuilder = () => {
           <input value={specific} onChange={e => setSpecific(e.target.value)} placeholder="Ex: Reserva de emergência"
             className="w-full bg-background border border-border rounded-lg px-3 py-2 text-sm mt-1" />
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <label className="text-sm text-muted-foreground">Valor em R$ (Mensurável)</label>
             <input type="number" value={value} onChange={e => setValue(e.target.value)} placeholder="15000"
@@ -290,7 +290,7 @@ const PlanejamentoFinanceiro2026 = () => {
           ))}
         </div>
 
-        <BackNavigation categoryPath="/financas" categoryLabel="Finanças" />
+        <BackNavigation category="invest" />
 
         <RelatedPosts currentSlug="planejamento-financeiro-2026-metas" />
         <CommentSection postId="33" postTitle="Planejamento Financeiro Para 2026: Como Definir Metas e Alcançá-las" />

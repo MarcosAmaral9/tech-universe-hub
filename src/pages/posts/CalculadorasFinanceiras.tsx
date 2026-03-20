@@ -164,6 +164,7 @@ const CalculadorasFinanceiras = () => {
 
   return (
     <div className="container py-8 max-w-5xl">
+      <BackNavigation category="invest" />
       <Link to="/financas">
         <Button variant="ghost" className="mb-4 gap-2">
           <ArrowLeft className="h-4 w-4" />

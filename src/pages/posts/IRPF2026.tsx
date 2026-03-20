@@ -385,7 +385,7 @@ const IRPF2026 = () => {
           ))}
         </div>
 
-        <BackNavigation categoryPath="/financas" categoryLabel="Finanças" />
+        <BackNavigation category="invest" />
 
         <RelatedPosts currentSlug="irpf-2026-guia-declarar-pagar-menos" />
         <CommentSection postId="28" postTitle="IRPF 2026: Guia Completo Para Declarar e Pagar Menos Imposto" />

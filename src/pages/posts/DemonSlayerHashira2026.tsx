@@ -28,7 +28,7 @@ const DemonSlayerHashira2026 = () => {
   }, []);
   return (
   <article className="container py-8 max-w-4xl mx-auto">
-    <BackNavigation categoryPath="/otaku" categoryLabel="Otaku" />
+    <BackNavigation category="otaku" />
     <header className="mb-8">
       <div className="flex items-center gap-2 mb-4">
         <CategoryBadge category="otaku" size="lg" />

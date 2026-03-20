@@ -241,7 +241,7 @@ const BitcoinCripto2026 = () => {
                 <Slider value={[dcaMeses]} onValueChange={v => setDcaMeses(v[0])} min={6} max={60} step={6} />
               </div>
             </div>
-            <div className="grid grid-cols-3 gap-4 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
               <div className="bg-muted/50 rounded-xl p-4">
                 <p className="text-xs text-muted-foreground mb-1">Total Investido</p>
                 <p className="text-lg font-bold">{formatCurrency(dcaResult.totalInvestido)}</p>
@@ -328,7 +328,7 @@ const BitcoinCripto2026 = () => {
           ))}
         </div>
 
-        <BackNavigation categoryPath="/financas" categoryLabel="Finanças" />
+        <BackNavigation category="invest" />
 
         <RelatedPosts currentSlug="bitcoin-criptomoedas-2026-investir" />
         <CommentSection postId="27" postTitle="Bitcoin e Criptomoedas em 2026: Ainda Dá Para Lucrar?" />

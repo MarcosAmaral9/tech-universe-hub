@@ -180,6 +180,8 @@ const CarteiraIniciantes2026 = () => {
           <span className="text-foreground">Carteira para Iniciantes</span>
         </nav>
 
+        <BackNavigation category="invest" />
+
         <header className="mb-8">
           <CategoryBadge category="invest" size="lg" />
           <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">

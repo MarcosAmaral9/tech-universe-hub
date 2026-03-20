@@ -90,7 +90,7 @@ const ACRanking2026 = () => {
   return (
     <article className="container py-8 max-w-4xl mx-auto">
       {/* Back Button */}
-      <BackNavigation categoryPath="/geek" categoryLabel="Geek" portalPath="/geek/assassins-creed" portalLabel="Portal Assassin's Creed" />
+      <BackNavigation category="geek" />
 
       {/* Header */}
       <header className="mb-8">

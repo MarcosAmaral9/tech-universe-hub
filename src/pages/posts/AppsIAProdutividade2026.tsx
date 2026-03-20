@@ -29,7 +29,7 @@ const AppsIAProdutividade2026 = () => {
   }, []);
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <BackNavigation categoryPath="/ia" categoryLabel="Inteligência Artificial" />
+      <BackNavigation category="ia" />
 
       <header className="mb-8">
         <CategoryBadge category="ia" size="lg" />

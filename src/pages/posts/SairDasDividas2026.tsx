@@ -133,7 +133,7 @@ const NegotiationCalc = () => {
           <input type="range" min={10} max={95} step={5} value={discount} onChange={e => setDiscount(Number(e.target.value))} className="w-full mt-2" />
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="bg-[hsl(var(--invest-color))]/10 rounded-xl p-4 text-center">
           <p className="text-xs text-muted-foreground">Você economiza</p>
           <p className="text-2xl font-bold text-[hsl(var(--invest-color))]">R$ {savings.toLocaleString("pt-BR")}</p>
@@ -314,7 +314,7 @@ const SairDasDividas2026 = () => {
           ))}
         </div>
 
-        <BackNavigation categoryPath="/financas" categoryLabel="Finanças" />
+        <BackNavigation category="invest" />
 
         <RelatedPosts currentSlug="sair-das-dividas-2026-plano-acao" />
         <CommentSection postId="32" postTitle="Sair das Dívidas em 2026: O Plano de Ação Que Realmente Funciona" />

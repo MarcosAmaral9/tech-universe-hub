@@ -16,7 +16,7 @@ const PrevidenciaPrivada2026 = () => {
   }, []);
   return (
   <article className="container py-8 max-w-4xl mx-auto">
-    <BackNavigation categoryPath="/financas" categoryLabel="Finanças" />
+    <BackNavigation category="invest" />
     <header className="mb-8">
       <CategoryBadge category="invest" size="lg" />
       <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">

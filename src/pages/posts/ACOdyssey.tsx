@@ -19,7 +19,7 @@ const ACOdyssey = () => {
       {/* SEO-optimized meta description: Assassin's Creed Odyssey vale a pena em 2026? Review completa do RPG épico na Grécia Antiga com Kassandra, mitologia, requisitos de PC gamer e análise de custo-benefício. */}
       
       {/* Back Button */}
-      <BackNavigation categoryPath="/geek" categoryLabel="Geek" portalPath="/geek/assassins-creed" portalLabel="Portal Assassin's Creed" />
+      <BackNavigation category="geek" portalPath="/geek/assassins-creed" portalLabel="Painel Assassin's Creed" />
 
       {/* Header */}
       <header className="mb-8">

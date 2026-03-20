@@ -19,7 +19,7 @@ const ACOrigins = () => {
       {/* SEO-optimized meta description: Assassin's Creed Origins vale a pena em 2026? Review completa do renascimento da franquia no Egito Antigo com Bayek, Discovery Tour, requisitos de PC gamer e custo-benefício. */}
       
       {/* Back Button */}
-      <BackNavigation categoryPath="/geek" categoryLabel="Geek" portalPath="/geek/assassins-creed" portalLabel="Portal Assassin's Creed" />
+      <BackNavigation category="geek" portalPath="/geek/assassins-creed" portalLabel="Painel Assassin's Creed" />
 
       {/* Header */}
       <header className="mb-8">

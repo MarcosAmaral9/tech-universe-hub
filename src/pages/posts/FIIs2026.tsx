@@ -243,7 +243,7 @@ const FIIs2026 = () => {
           ))}
         </div>
 
-        <BackNavigation categoryPath="/financas" categoryLabel="Finanças" />
+        <BackNavigation category="invest" />
 
         <RelatedPosts currentSlug="fiis-2026-melhores-fundos-imobiliarios" />
         <CommentSection postId="31" postTitle="FIIs em 2026: Os Melhores Fundos Imobiliários e Como Analisar" />

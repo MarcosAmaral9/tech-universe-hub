@@ -6,6 +6,7 @@ import crimsonHeroImg from "@/assets/crimson-desert-hero.webp";
 import crimsonGuiaImg from "@/assets/crimson-desert-guia.webp";
 import crimsonCombateImg from "@/assets/crimson-desert-combate.webp";
 import crimsonReviewImg from "@/assets/crimson-desert-review.webp";
+import crimsonMapaImg    from "@/assets/crimson-desert-mapa.webp";
 import crimsonBuildsImg from "@/assets/crimson-desert-builds.webp";
 
 const CrimsonDesertPanel = () => {
@@ -37,10 +38,17 @@ const CrimsonDesertPanel = () => {
     {
       slug: "crimson-desert-builds-guia-2026",
       title: "Sistema de Progressão",
-      subtitle: "O Que Foi Confirmado",
+      subtitle: "Kliff e Estilos de Jogo",
       desc: "Tudo sobre a progressão de Kliff baseado em informações confirmadas pela Pearl Abyss e trailers oficiais.",
       image: crimsonBuildsImg,
       btn: "Ver Builds",
+    },
+    {
+      slug: "crimson-desert-mapa-regioes-pywel",
+      title: "Mapa de Pywel",
+      subtitle: "Todas as Regiões Explicadas",
+      desc: "Pywel tem 5 regiões + The Abyss — tamanho, biomas, bosses e como se locomover.",
+      btn: "Ver Mapa",
     },
   ];
 
@@ -50,7 +58,7 @@ const CrimsonDesertPanel = () => {
       <BackNavigation categoryPath="/geek" categoryLabel="Geek" />
 
       {/* Hero Banner */}
-      <section className="relative h-[60vh] min-h-[400px] overflow-hidden">
+      <section className="relative h-[60vh] min-aspect-video md:h-[400px] overflow-hidden">
         <img fetchpriority="high" src={crimsonHeroImg} alt="Crimson Desert" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
         <div className="container relative h-full flex flex-col justify-end pb-12">

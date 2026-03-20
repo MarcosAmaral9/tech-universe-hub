@@ -16,7 +16,7 @@ const Avatar2009Tecnologia = () => {
   }, []);
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <BackNavigation categoryPath="/geek" categoryLabel="Geek" portalPath="/geek/avatar" portalLabel="Portal Avatar" />
+      <BackNavigation category="geek" portalPath="/geek/avatar" portalLabel="Painel Avatar" />
 
       <header className="mb-8">
         <div className="flex items-center gap-2 mb-4">

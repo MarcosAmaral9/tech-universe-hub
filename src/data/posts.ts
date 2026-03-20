@@ -1034,6 +1034,19 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-17",
     readTime: "15 min"
   },
+  {
+    id: "119",
+    slug: "crimson-desert-mapa-regioes-pywel",
+    title: "Crimson Desert: Mapa e Regiões de Pywel — Guia das 5 Áreas do Jogo",
+    excerpt: "Pywel tem ~90 km², o dobro do mapa de Skyrim. Guia completo das 5 regiões: Hernand, Pailune, Demeniss, Delesyia e Crimson Desert — biomas, bosses, fast travel e lore.",
+    content: "",
+    category: "geek",
+    subtopic: "crimson-desert",
+    image: crimsonMapaImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-19",
+    readTime: "13 min"
+  },
 ];
 
 export const getPostBySlug = (slug: string): BlogPost | undefined => {

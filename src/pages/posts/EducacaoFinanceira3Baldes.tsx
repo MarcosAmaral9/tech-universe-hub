@@ -290,7 +290,7 @@ const EducacaoFinanceira3Baldes = () => {
           ))}
         </div>
 
-        <BackNavigation categoryPath="/financas" categoryLabel="Finanças" />
+        <BackNavigation category="invest" />
 
         <RelatedPosts currentSlug="educacao-financeira-metodo-3-baldes" />
         <CommentSection postId="30" postTitle="Método dos 3 Baldes: Educação Financeira Para Quem Sempre Gastou Tudo" />

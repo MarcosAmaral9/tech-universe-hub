@@ -61,7 +61,7 @@ const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
           <Gem className="h-5 w-5 text-invest" />
           <h3 className="font-bold">Metais Preciosos</h3>
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {[0, 1].map(i => <div key={i} className="animate-pulse bg-muted rounded-xl h-24" />)}
         </div>
       </div>

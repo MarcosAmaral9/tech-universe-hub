@@ -19,12 +19,7 @@ const CrimsonDesertCombate = () => {
 
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <BackNavigation
-        categoryPath="/geek"
-        categoryLabel="Geek"
-        portalPath="/geek/crimson-desert"
-        portalLabel="Portal Crimson Desert"
-      />
+      <BackNavigation category="geek" portalPath="/geek/crimson-desert" portalLabel="Painel Crimson Desert" />
       <header className="mb-8">
         <div className="flex items-center gap-2 mb-4">
           <CategoryBadge category="geek" size="lg" />

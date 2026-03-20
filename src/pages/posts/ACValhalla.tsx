@@ -19,7 +19,7 @@ const ACValhalla = () => {
       {/* SEO-optimized meta description would be: Assassin's Creed Valhalla vale a pena em 2026? Review completa com análise de história, jogabilidade, requisitos de PC gamer e custo-benefício. Descubra se é o melhor RPG viking! */}
       
       {/* Back Button */}
-      <BackNavigation categoryPath="/geek" categoryLabel="Geek" portalPath="/geek/assassins-creed" portalLabel="Portal Assassin's Creed" />
+      <BackNavigation category="geek" portalPath="/geek/assassins-creed" portalLabel="Painel Assassin's Creed" />
 
       {/* Header */}
       <header className="mb-8">

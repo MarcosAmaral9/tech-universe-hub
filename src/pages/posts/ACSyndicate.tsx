@@ -20,7 +20,7 @@ const ACSyndicate = () => {
       {/* SEO-optimized meta description: Assassin's Creed Syndicate vale a pena em 2026? Review completa na Londres Vitoriana com os irmãos Frye, sistema de gangues, requisitos de PC gamer e custo-benefício. */}
       
       {/* Back Button */}
-      <BackNavigation categoryPath="/geek" categoryLabel="Geek" portalPath="/geek/assassins-creed" portalLabel="Portal Assassin's Creed" />
+      <BackNavigation category="geek" portalPath="/geek/assassins-creed" portalLabel="Painel Assassin's Creed" />
 
       {/* Header */}
       <header className="mb-8">

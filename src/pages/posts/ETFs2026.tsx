@@ -16,7 +16,7 @@ const ETFs2026 = () => {
   }, []);
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <BackNavigation categoryPath="/financas" categoryLabel="Finanças" />
+      <BackNavigation category="invest" />
 
       <header className="mb-8">
         <CategoryBadge category="invest" size="lg" />

@@ -19,7 +19,7 @@ const AC3Remastered = () => {
       {/* SEO-optimized meta description: Assassin's Creed III Remastered vale a pena em 2026? Review completa com história de Connor, Revolução Americana, requisitos de PC gamer, facções, DLCs e análise de custo-benefício. */}
       
       {/* Back Button */}
-      <BackNavigation categoryPath="/geek" categoryLabel="Geek" portalPath="/geek/assassins-creed" portalLabel="Portal Assassin's Creed" />
+      <BackNavigation category="geek" portalPath="/geek/assassins-creed" portalLabel="Painel Assassin's Creed" />
 
       {/* Header */}
       <header className="mb-8">

@@ -320,8 +320,8 @@ const IAMercadoFinanceiro2026 = () => {
         </div>
 
         <div className="flex gap-4 mb-8">
-          <BackNavigation categoryPath="/financas" categoryLabel="Finanças" />
-          <BackNavigation categoryPath="/financas" categoryLabel="Finanças" />
+          <BackNavigation category="invest" />
+          <BackNavigation category="invest" />
         </div>
 
         <RelatedPosts currentSlug="ia-mercado-financeiro-2026-investimentos" />

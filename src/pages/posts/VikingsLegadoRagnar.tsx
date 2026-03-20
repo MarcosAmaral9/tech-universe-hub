@@ -16,7 +16,7 @@ const VikingsLegadoRagnar = () => {
   }, []);
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <BackNavigation categoryPath="/geek" categoryLabel="Geek" />
+      <BackNavigation category="geek" />
 
       <header className="mb-8">
         <CategoryBadge category="geek" size="lg" />

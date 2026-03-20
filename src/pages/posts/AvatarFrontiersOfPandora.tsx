@@ -19,7 +19,7 @@ const AvatarFrontiersOfPandora = () => {
       {/* SEO-optimized meta description: Avatar Frontiers of Pandora vale a pena em 2026? Review completa do jogo mais bonito da geração, gameplay como Na'vi, requisitos pesados de PC gamer e análise de custo-benefício. */}
       
       {/* Back Button */}
-      <BackNavigation categoryPath="/geek" categoryLabel="Geek" portalPath="/geek/avatar" portalLabel="Portal Avatar" />
+      <BackNavigation category="geek" portalPath="/geek/avatar" portalLabel="Painel Avatar" />
 
       {/* Header */}
       <header className="mb-8">

@@ -19,7 +19,7 @@ const AvatarPortal = () => {
       <BackNavigation categoryPath="/geek" categoryLabel="Geek" />
 
       {/* Hero Banner */}
-      <section className="relative h-[60vh] min-h-[400px] overflow-hidden">
+      <section className="relative h-[60vh] min-aspect-video md:h-[400px] overflow-hidden">
         <img fetchpriority="high" src={avatarPortalBannerImg} alt="Pandora" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
         <div className="container relative h-full flex flex-col justify-end pb-12">

@@ -140,6 +140,7 @@ const CrimsonDesertGuiaCompleto = lazy(() => import("./pages/posts/CrimsonDesert
 const CrimsonDesertCombate = lazy(() => import("./pages/posts/CrimsonDesertCombate"));
 const CrimsonDesertReview = lazy(() => import("./pages/posts/CrimsonDesertReview"));
 const CrimsonDesertBuilds = lazy(() => import("./pages/posts/CrimsonDesertBuilds"));
+const CrimsonDesertMapa     = lazy(() => import("./pages/posts/CrimsonDesertMapa"));
 const SocialPanelPage = lazy(() => import("./pages/SocialPanelPage"));
 
 const queryClient = new QueryClient({
@@ -189,6 +190,8 @@ const App = () => (
                 <Route path="/post/crimson-desert-combate-blackspace-engine" element={<CrimsonDesertCombate />} />
                 <Route path="/post/crimson-desert-review-2026" element={<CrimsonDesertReview />} />
                 <Route path="/post/crimson-desert-builds-guia-2026" element={<CrimsonDesertBuilds />} />
+                <Route path="/post/crimson-desert-mapa-regioes-pywel" element={<CrimsonDesertMapa />} />
+                <Route path="/post/crimson-desert-mapa-regioes-pywel" element={<CrimsonDesertMapa />} />
                 {/* Post Routes */}
                 <Route path="/post/diferenca-mangas-manhuas-manhwas" element={<DiferencaMangasManhuas />} />
                 <Route path="/post/como-diferenciar-manhuas-manhwas" element={<DiferenciarManhuasManhwas />} />

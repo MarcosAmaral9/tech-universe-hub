@@ -19,7 +19,7 @@ const ACBlackFlag = () => {
       {/* SEO-optimized meta description: Assassin's Creed IV Black Flag ainda é o melhor jogo de piratas em 2026? Review completa com análise de combate naval, história de Edward Kenway, requisitos de PC gamer e custo-benefício. */}
       
       {/* Back Button */}
-      <BackNavigation categoryPath="/geek" categoryLabel="Geek" portalPath="/geek/assassins-creed" portalLabel="Portal Assassin's Creed" />
+      <BackNavigation category="geek" portalPath="/geek/assassins-creed" portalLabel="Painel Assassin's Creed" />
 
       {/* Header */}
       <header className="mb-8">
