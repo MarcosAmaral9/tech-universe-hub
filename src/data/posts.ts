@@ -64,6 +64,15 @@ import crimsonDesertGuiaImg from "@/assets/crimson-desert-guia.webp";
 import crimsonDesertCombateImg from "@/assets/crimson-desert-combate.webp";
 import crimsonDesertReviewImg from "@/assets/crimson-desert-review.webp";
 import crimsonDesertBuildsImg from "@/assets/crimson-desert-builds.webp";
+import cdb2026Img from "@/assets/cdb-2026-guia.webp";
+import previdenciaImg from "@/assets/previdencia-privada-2026.webp";
+import iaCodigoImg from "@/assets/ia-codigo-programadores-2026.webp";
+import iaOpenSourceImg from "@/assets/modelos-ia-open-source-2026.webp";
+import bg3Img from "@/assets/baldurs-gate-3-review-2026.webp";
+import dragonAgeImg from "@/assets/dragon-age-veilguard-review-2026.webp";
+import demonSlayerImg from "@/assets/demon-slayer-hashira-2026.webp";
+import onePieceImg from "@/assets/one-piece-final-saga-2026.webp";
+import crimsonMapaImg from "@/assets/crimson-desert-mapa-pywel.webp";
 
 export const blogPosts: BlogPost[] = [
   // IA Posts
