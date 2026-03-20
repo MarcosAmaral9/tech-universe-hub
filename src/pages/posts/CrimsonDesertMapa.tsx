@@ -8,10 +8,24 @@ import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import crimsonMapaImg from "@/assets/crimson-desert-mapa-pywel.webp";
 
-const regions = [
+interface Region {
+  name: string;
+  iconKey: string;
+  color: string;
+  badge: string;
+  label: string;
+  biome: string;
+  position: string;
+  desc: string;
+  bosses: string[];
+  towns: string[];
+  notes: string;
+}
+
+const regionsData: Region[] = [
   {
     name: "Hernand",
-    icon: <Compass className="h-5 w-5 text-green-400" />,
+    iconKey: "compass",
     color: "border-green-500/30 bg-green-500/5",
     badge: "bg-green-500/20 text-green-400",
     label: "Área Inicial",
@@ -24,7 +38,7 @@ const regions = [
   },
   {
     name: "Pailune",
-    icon: <Snowflake className="h-5 w-5 text-blue-300" />,
+    iconKey: "snowflake",
     color: "border-blue-400/30 bg-blue-400/5",
     badge: "bg-blue-400/20 text-blue-300",
     label: "Norte Gelado",
@@ -37,44 +51,55 @@ const regions = [
   },
   {
     name: "Demeniss",
-    icon: <Building2 className="h-5 w-5 text-yellow-400" />,
+    iconKey: "building",
     color: "border-yellow-500/30 bg-yellow-500/5",
     badge: "bg-yellow-500/20 text-yellow-400",
     label: "Capital Política",
     biome: "Cidades fortificadas, planícies militarizadas",
     position: "Centro do continente",
-    desc: "Demeniss é a capital de Pywel e o centro de poder político e militar do continente. A região tem lore profundo relacionado à storyline principal, com facções como House Thorel e House Byron travando disputas políticas. Apresenta as batalhas de cerco em maior escala do jogo — algumas das cenas mais épicas da campanha acontecem aqui.",
-    bosses: ["Cassius Morten (o Traidor de Calphade — membro dos Black Bears, procurado pelo Marquis Stefan Lanford)", "Walter Lanford (usa espingarda, ataques de projéteis)"],
+    desc: "Demeniss é a capital de Pywel e o centro de poder político e militar do continente. A região tem lore profundo relacionado à storyline principal, com facções como House Thorel e House Byron travando disputas políticas. Apresenta as batalhas de cerco em maior escala do jogo.",
+    bosses: ["Cassius Morten (o Traidor de Calphade — membro dos Black Bears)", "Walter Lanford (usa espingarda, ataques de projéteis)"],
     towns: ["Capital principal de Pywel", "Cidades com feiras e pontos de comércio confirmados"],
-    notes: "O GameSpot destaca as batalhas de cerco em Demeniss como um dos momentos mais memoráveis da campanha. A região também tem os puzzles de Abyss mais complexos próximos ao Spire of Stars.",
+    notes: "O GameSpot destaca as batalhas de cerco em Demeniss como um dos momentos mais memoráveis da campanha.",
   },
   {
     name: "Delesyia",
-    icon: <Cpu className="h-5 w-5 text-purple-400" />,
+    iconKey: "cpu",
     color: "border-purple-500/30 bg-purple-500/5",
     badge: "bg-purple-500/20 text-purple-400",
     label: "Região Tecnológica",
     biome: "Instalações mecânicas, paisagens científicas, ruínas avançadas",
     position: "Leste do continente",
-    desc: "Delesyia é a região mais singular de Pywel — um contraste radical com o medievalismo das outras áreas. É o centro científico e tecnológico do continente, com criaturas mecânicas, robôs e infraestrutura que destoa completamente do restante do mundo. Tem também Urdavah, com seu instituto de pesquisa, e acesso a torres de fast travel que exigem planeio para alcançar. A Library of Providence também fica aqui.",
+    desc: "Delesyia é a região mais singular de Pywel — um contraste radical com o medievalismo das outras áreas. É o centro científico e tecnológico do continente, com criaturas mecânicas, robôs e infraestrutura que destoa completamente do restante do mundo. Tem a Library of Providence e acesso a torres de fast travel que exigem planeio para alcançar.",
     bosses: ["Golden Star (dragão mecânico voador — lutado montando um Wyvern)"],
     towns: ["Urdavah (instituto de pesquisa)", "Varnia (cidade no limite nordeste do mapa)"],
-    notes: "O Golden Star é frequentemente citado como um dos bosses mais espetaculares do jogo. A batalha acontece no ar, com Kliff montado em um Wyvern. A Library of Providence e a boss Hexe Marie também ficam nessa região.",
+    notes: "O Golden Star é frequentemente citado como um dos bosses mais espetaculares do jogo — a batalha acontece no ar, com Kliff montado em um Wyvern.",
   },
   {
     name: "Crimson Desert",
-    icon: <Skull className="h-5 w-5 text-red-400" />,
+    iconKey: "skull",
     color: "border-red-500/30 bg-red-500/5",
     badge: "bg-red-500/20 text-red-400",
     label: "Deserto Sem Lei",
     biome: "Deserto de areia carmesim, descampados áridos",
     position: "Sul / Sudeste do continente",
-    desc: "A região homônima do jogo é uma vasta extensão de deserto sem lei, com areia de tonalidade carmesim. É o território mais perigoso e imprevisível de Pywel — dominado por bandidos, mercenários e criaturas das mais hostis. Não há governo ou estrutura de poder organizada: a lei aqui é a força. É a região mais adequada para jogadores experientes que já dominam os sistemas do jogo.",
+    desc: "A região homônima do jogo é uma vasta extensão de deserto sem lei, com areia de tonalidade carmesim. É o território mais perigoso e imprevisível de Pywel — dominado por bandidos, mercenários e criaturas das mais hostis. Não há governo ou estrutura de poder organizada.",
     bosses: ["Crookrock Walker (world boss próximo à cidade de Tommaso)", "Encontros variados com bandidos e chefes de facções"],
-    towns: ["Tommaso (maior cidade da região, com 3 fast travel points ao redor)", "Serpent Shrine of Aeserion (sul da região)"],
-    notes: "Segundo o GameSpot (guia de fast travel), Tommaso tem 3 teleporters ao redor e é o ponto central de exploração da região. Cuidado: um dos teleporters perto do Spire of the Sun spawna o world boss Crookrock Walker.",
+    towns: ["Tommaso (maior cidade da região, com 3 fast travel points)", "Serpent Shrine of Aeserion (sul da região)"],
+    notes: "Cuidado: um dos teleporters perto do Spire of the Sun spawna o world boss Crookrock Walker (fonte: GameSpot guia de fast travel).",
   },
 ];
+
+const RegionIcon = ({ iconKey }: { iconKey: string }) => {
+  switch (iconKey) {
+    case "compass":   return <Compass  className="h-5 w-5 text-green-400" />;
+    case "snowflake": return <Snowflake className="h-5 w-5 text-blue-300" />;
+    case "building":  return <Building2 className="h-5 w-5 text-yellow-400" />;
+    case "cpu":       return <Cpu      className="h-5 w-5 text-purple-400" />;
+    case "skull":     return <Skull    className="h-5 w-5 text-red-400" />;
+    default:          return <Compass  className="h-5 w-5 text-muted-foreground" />;
+  }
+};
 
 const CrimsonDesertMapa = () => {
   useEffect(() => {
@@ -93,6 +118,7 @@ const CrimsonDesertMapa = () => {
         portalPath="/geek/crimson-desert"
         portalLabel="Portal Crimson Desert"
       />
+
       <header className="mb-8">
         <div className="flex items-center gap-2 mb-4">
           <CategoryBadge category="geek" size="lg" />
@@ -123,53 +149,44 @@ const CrimsonDesertMapa = () => {
         </div>
       </div>
 
-      {/* Mapa visual SVG das regiões */}
+      {/* SVG Map */}
       <div className="not-prose my-8 p-6 bg-card border border-border rounded-2xl">
         <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
           <Map className="h-5 w-5 text-primary" /> Pywel — Disposição das Regiões
         </h2>
         <div className="relative w-full aspect-[16/9] bg-gradient-to-b from-blue-950/40 via-green-950/30 to-red-950/40 rounded-xl overflow-hidden border border-border">
-          {/* SVG map layout */}
           <svg viewBox="0 0 800 450" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            {/* Pailune — Norte (blue/snow) */}
             <ellipse cx="400" cy="80" rx="220" ry="70" fill="rgba(96,165,250,0.15)" stroke="rgba(96,165,250,0.4)" strokeWidth="1.5" />
             <text x="400" y="72" textAnchor="middle" fill="rgb(147,197,253)" fontSize="14" fontWeight="bold">PAILUNE</text>
             <text x="400" y="88" textAnchor="middle" fill="rgb(148,163,184)" fontSize="10">Norte Gelado • Origem dos Greymanes</text>
 
-            {/* Hernand — Centro-oeste (green) */}
             <ellipse cx="240" cy="220" rx="170" ry="90" fill="rgba(74,222,128,0.12)" stroke="rgba(74,222,128,0.4)" strokeWidth="1.5" />
             <text x="240" y="212" textAnchor="middle" fill="rgb(134,239,172)" fontSize="14" fontWeight="bold">HERNAND</text>
             <text x="240" y="228" textAnchor="middle" fill="rgb(148,163,184)" fontSize="10">Área Inicial • Acampamento Greymane</text>
 
-            {/* Demeniss — Centro (golden) */}
             <ellipse cx="520" cy="220" rx="160" ry="90" fill="rgba(234,179,8,0.12)" stroke="rgba(234,179,8,0.35)" strokeWidth="1.5" />
             <text x="520" y="212" textAnchor="middle" fill="rgb(253,224,71)" fontSize="14" fontWeight="bold">DEMENISS</text>
             <text x="520" y="228" textAnchor="middle" fill="rgb(148,163,184)" fontSize="10">Capital Política • Centro de Poder</text>
 
-            {/* Delesyia — Leste (purple/tech) */}
             <ellipse cx="690" cy="300" rx="110" ry="80" fill="rgba(168,85,247,0.12)" stroke="rgba(168,85,247,0.35)" strokeWidth="1.5" />
             <text x="690" y="293" textAnchor="middle" fill="rgb(216,180,254)" fontSize="13" fontWeight="bold">DELESYIA</text>
             <text x="690" y="308" textAnchor="middle" fill="rgb(148,163,184)" fontSize="9">Tecnologia • Dragão Mecânico</text>
 
-            {/* Crimson Desert — Sul (red) */}
             <ellipse cx="380" cy="380" rx="220" ry="60" fill="rgba(239,68,68,0.15)" stroke="rgba(239,68,68,0.4)" strokeWidth="1.5" />
             <text x="380" y="373" textAnchor="middle" fill="rgb(252,165,165)" fontSize="14" fontWeight="bold">CRIMSON DESERT</text>
-            <text x="380" y="389" textAnchor="middle" fill="rgb(148,163,184)" fontSize="10">Deserto Sem Lei • Bandidos e Sobrevivência</text>
+            <text x="380" y="389" textAnchor="middle" fill="rgb(148,163,184)" fontSize="10">Deserto Sem Lei • Bandidos</text>
 
-            {/* The Abyss — floating (white/ethereal) */}
             <ellipse cx="160" cy="370" rx="100" ry="45" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.25)" strokeWidth="1" strokeDasharray="5,3" />
             <text x="160" y="364" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="12" fontWeight="bold">THE ABYSS</text>
-            <text x="160" y="378" textAnchor="middle" fill="rgb(148,163,184)" fontSize="9">Dimensão Paralela • Ilhas Flutuantes</text>
+            <text x="160" y="378" textAnchor="middle" fill="rgb(148,163,184)" fontSize="9">Dimensão Paralela</text>
 
-            {/* Connection lines */}
             <line x1="400" y1="148" x2="300" y2="132" stroke="rgba(148,163,184,0.2)" strokeWidth="1" />
             <line x1="400" y1="148" x2="460" y2="133" stroke="rgba(148,163,184,0.2)" strokeWidth="1" />
             <line x1="400" y1="310" x2="400" y2="322" stroke="rgba(239,68,68,0.3)" strokeWidth="1" />
           </svg>
         </div>
         <p className="text-xs text-muted-foreground mt-3 text-center">
-          Representação aproximada da disposição geográfica — baseada em fontes como Beebom, FandomWire e Fandom Wiki (Crimson Desert).
-          O mapa oficial da Pearl Abyss tem formato diferente; esta visualização é editorial.
+          Representação aproximada da disposição geográfica — baseada em Beebom, FandomWire e Fandom Wiki. O mapa oficial da Pearl Abyss tem formato diferente; esta visualização é editorial.
         </p>
       </div>
 
@@ -182,12 +199,7 @@ const CrimsonDesertMapa = () => {
           no mundo físico mais <strong>The Abyss</strong> — uma dimensão paralela de ilhas flutuantes.
         </p>
 
-        <h2>Tamanho e Comparação com Outros Jogos</h2>
-        <p>
-          A Pearl Abyss confirmou em entrevistas que o mapa de Crimson Desert é "pelo menos duas vezes maior
-          que a área jogável de Skyrim". Estimativas independentes (Method.gg, Beebom, FandomWire) chegam
-          a 80–110 km² para a área explorável total. Para comparação:
-        </p>
+        <h2>Tamanho e Comparação</h2>
         <div className="not-prose my-4 overflow-x-auto">
           <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead><tr className="bg-secondary">
@@ -196,10 +208,10 @@ const CrimsonDesertMapa = () => {
             </tr></thead>
             <tbody>
               {[
-                ["Crimson Desert (Pywel)",         "80–110 km²"],
-                ["Red Dead Redemption 2",           "75 km²"],
-                ["The Witcher 3 (com DLCs)",        "136 km² (com mar) / ~48 km² terreno jogável"],
-                ["The Elder Scrolls V: Skyrim",     "~37 km²"],
+                ["Crimson Desert (Pywel)", "80–110 km²"],
+                ["Red Dead Redemption 2",  "75 km²"],
+                ["The Witcher 3 (terreno jogável)", "~48 km²"],
+                ["The Elder Scrolls V: Skyrim", "~37 km²"],
               ].map(([g, s]) => (
                 <tr key={g} className="border-t border-border">
                   <td className="py-3 px-4 font-medium">{g}</td>
@@ -208,19 +220,18 @@ const CrimsonDesertMapa = () => {
               ))}
             </tbody>
           </table>
-          <p className="text-xs text-muted-foreground mt-2">
-            Dados compilados de Method.gg, Beebom e entrevista de Will Powers (Pearl Abyss). Comparações de tamanho de mapa são sempre aproximadas.
-          </p>
+          <p className="text-xs text-muted-foreground mt-2">Fonte: Method.gg, Beebom e entrevista de Will Powers (Pearl Abyss).</p>
         </div>
       </div>
 
       {/* Region cards */}
       <div className="not-prose my-8 space-y-5">
         <h2 className="text-2xl font-bold">As 5 Regiões de Pywel + The Abyss</h2>
-        {regions.map((r) => (
+
+        {regionsData.map((r) => (
           <div key={r.name} className={`rounded-2xl border p-5 md:p-6 ${r.color}`}>
             <div className="flex flex-wrap items-center gap-3 mb-3">
-              {r.icon}
+              <RegionIcon iconKey={r.iconKey} />
               <h3 className="text-xl font-bold">{r.name}</h3>
               <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${r.badge}`}>{r.label}</span>
             </div>
@@ -259,7 +270,7 @@ const CrimsonDesertMapa = () => {
           </div>
         ))}
 
-        {/* Abyss separate card */}
+        {/* Abyss card */}
         <div className="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6">
           <div className="flex flex-wrap items-center gap-3 mb-3">
             <Zap className="h-5 w-5 text-white/70" />
@@ -277,70 +288,49 @@ const CrimsonDesertMapa = () => {
             <div>
               <p className="text-xs font-bold text-foreground uppercase tracking-wide mb-1.5">Bosses confirmados</p>
               <ul className="space-y-1">
-                <li className="text-xs text-muted-foreground flex items-start gap-1.5"><span className="text-red-400 mt-0.5">⚔</span>Hexe Marie (bruxa que invoca criaturas; boss de lore importante)</li>
+                <li className="text-xs text-muted-foreground flex items-start gap-1.5">
+                  <span className="text-red-400 mt-0.5">⚔</span>
+                  Hexe Marie (bruxa que invoca criaturas; boss de lore importante)
+                </li>
               </ul>
             </div>
             <div>
               <p className="text-xs font-bold text-foreground uppercase tracking-wide mb-1.5">Pontos chave</p>
               <ul className="space-y-1">
-                <li className="text-xs text-muted-foreground flex items-start gap-1.5"><span className="text-primary mt-0.5">◆</span>Library of Providence</li>
-                <li className="text-xs text-muted-foreground flex items-start gap-1.5"><span className="text-primary mt-0.5">◆</span>Abyss Cressets (fast travel + Abyss Artifact)</li>
-                <li className="text-xs text-muted-foreground flex items-start gap-1.5"><span className="text-primary mt-0.5">◆</span>Abyss Nexus (teleporters especiais)</li>
+                {["Library of Providence", "Abyss Cressets (fast travel + Abyss Artifact)", "Abyss Nexus (teleporters especiais)"].map(t => (
+                  <li key={t} className="text-xs text-muted-foreground flex items-start gap-1.5">
+                    <span className="text-primary mt-0.5">◆</span>{t}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
           <p className="mt-3 text-xs text-muted-foreground italic border-t border-border/50 pt-3">
-            💡 Fonte: GameSpot (guia de fast travel, 19/03/2026) e Beebom (guia de Abyss Artifacts). O Abyss também
-            tem ilhas posicionadas acima das regiões físicas — é possível skydive para regiões como Delesyia
-            direto do Abyss para chegar mais rápido a certos locais.
+            💡 Fonte: GameSpot (guia de fast travel, 19/03/2026) e Beebom (guia de Abyss Artifacts).
           </p>
         </div>
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <h2>Como se Locomover em Pywel</h2>
-        <p>
-          Com um mapa desse tamanho, Crimson Desert oferece múltiplos sistemas de locomoção — e você vai precisar de todos:
-        </p>
         <ul>
-          <li>
-            <strong>Montarias (29 variedades):</strong> cavalos são a principal forma de locomoção terrestre.
-            Mas Crimson Desert vai além: é possível montar ursos, lagartos, raptores e até dragões. Cada montura
-            tem atributos de velocidade e combate diferentes.
-          </li>
-          <li>
-            <strong>Teleporters (Abyss Nexus e Abyss Cressets):</strong> pontos de fast travel que precisam ser
-            desbloqueados manualmente ao explorar. Muitos exigem solução de puzzles antes de ficar disponíveis.
-            O jogo não entrega fast travel facilmente — há regiões inteiras sem um único teleporter próximo.
-          </li>
-          <li>
-            <strong>Planeio:</strong> Kliff aprende a planar cedo no jogo, o que permite traversal vertical e
-            acesso a locais elevados de forma elegante.
-          </li>
-          <li>
-            <strong>Voo (habilidade avançada):</strong> ao avançar no jogo e desbloquear a habilidade Flight,
-            é possível voar montado em dragões — a forma mais rápida de traversal de longa distância.
-          </li>
-          <li>
-            <strong>Escalada:</strong> Kliff pode escalar praticamente qualquer superfície, similar a Zelda:
-            Breath of the Wild. Não há superfícies "intransponíveis" por design.
-          </li>
+          <li><strong>Montarias (29 variedades):</strong> cavalos, ursos, lagartos, raptores e dragões. Cada montura tem atributos de velocidade e combate diferentes.</li>
+          <li><strong>Teleporters (Abyss Nexus e Abyss Cressets):</strong> pontos de fast travel desbloqueados manualmente ao explorar. Muitos exigem solução de puzzles antes de ficarem disponíveis.</li>
+          <li><strong>Planeio:</strong> Kliff aprende a planar cedo no jogo, permitindo traversal vertical e acesso a locais elevados.</li>
+          <li><strong>Voo (habilidade avançada):</strong> ao desbloquear a habilidade Flight, é possível voar montado em dragões — a forma mais rápida de traversal de longa distância.</li>
+          <li><strong>Escalada:</strong> Kliff pode escalar praticamente qualquer superfície, similar a Zelda: Breath of the Wild.</li>
         </ul>
 
-        <h2>Conteúdo e Quests</h2>
+        <h2>Volume de Conteúdo</h2>
         <p>
           Crimson Desert tem <strong>430 missões no total</strong> (fonte: Beebom) e <strong>76 bosses</strong>
-          (fonte: GameSpot, que completou a campanha em ~150 horas). Isso inclui bosses de missões principais,
-          bosses de missões secundárias e world bosses que aparecem livremente no mapa. Além disso, há sistemas
-          de crafting, culinária, fazenda, gestão do acampamento Greymane, missões de fação e rumores que
-          levam a conteúdo escondido.
+          (fonte: GameSpot). Além da campanha principal, há sistemas de crafting, culinária, fazenda,
+          gestão do acampamento Greymane, missões de fação e rumores que levam a conteúdo escondido.
+          Críticos que completaram o jogo reportaram entre 110 e 150 horas de jogo.
         </p>
 
-        <h2>Fontes</h2>
         <p className="text-sm text-muted-foreground">
-          Este artigo usa exclusivamente dados verificados de: Beebom, FandomWire, Method.gg, Game8.co, GameSpot
-          (guias publicados em 19/03/2026), PC Gamer, Fandom Wiki (Crimson Desert), GURUgamer e Wikipedia.
-          Dados de tamanho de mapa são estimativas baseadas em entrevistas com Will Powers (Pearl Abyss).
+          <strong>Fontes:</strong> Beebom, FandomWire, Method.gg, Game8.co, GameSpot (guias 19/03/2026), PC Gamer, Fandom Wiki (Crimson Desert), GURUgamer, Wikipedia.
         </p>
       </div>
 
