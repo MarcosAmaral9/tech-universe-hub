@@ -12,7 +12,21 @@ function htaccessPlugin(): Plugin {
     name: "generate-htaccess",
     apply: "build",
     closeBundle() {
-      const htaccess = `# Processar arquivos PHP antes de qualquer reescrita
+      const htaccess = `# Force correct MIME types (required for ES modules on Hostinger)
+<IfModule mod_mime.c>
+  AddType application/javascript .js .mjs
+  AddType text/css .css
+  AddType image/webp .webp
+  AddType font/woff2 .woff2
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+# Processar arquivos PHP antes de qualquer reescrita
 <FilesMatch "^(api|google-auth)\\.php$">
   SetHandler application/x-httpd-php
 </FilesMatch>
@@ -104,6 +118,7 @@ export default defineConfig(({ mode }) => ({
       workbox: {
         skipWaiting: true,
         clientsClaim: true,
+        cleanupOutdatedCaches: true,
         // Only precache HTML and critical static assets — NOT hashed JS/CSS bundles
         // Hashed bundles change every build; precaching them causes stale SW white screen on Hostinger
         globPatterns: ["**/*.{ico,png,svg,webp,woff2}"],

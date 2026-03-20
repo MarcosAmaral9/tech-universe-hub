@@ -87,6 +87,17 @@
     </head>
 
   <body>
+    <!-- Unregister stale service workers on every deploy -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for (var r of registrations) {
+            // Only unregister if the SW is outdated (controlled by this page but stale)
+            if (r.waiting || r.installing) { r.unregister(); }
+          }
+        });
+      }
+    </script>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5TZ9XL9F"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
