@@ -115,55 +115,13 @@ export default defineConfig(({ mode }) => ({
     }),
     VitePWA({
       registerType: "autoUpdate",
+      // Empty globPatterns = no JS/CSS precaching = no stale bundle white screen
       workbox: {
+        globPatterns: [],
+        cleanupOutdatedCaches: true,
         skipWaiting: true,
         clientsClaim: true,
-        cleanupOutdatedCaches: true,
-        // Only precache HTML and critical static assets — NOT hashed JS/CSS bundles
-        // Hashed bundles change every build; precaching them causes stale SW white screen on Hostinger
-        globPatterns: ["**/*.{ico,png,svg,webp,woff2}"],
-        navigateFallback: "/index.html",
-        navigateFallbackDenylist: [/^\/~oauth/],
-        // Runtime caching strategies
-        runtimeCaching: [
-          {
-            // Google Fonts stylesheets
-            urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
-            handler: "StaleWhileRevalidate",
-            options: {
-              cacheName: "google-fonts-stylesheets",
-              expiration: { maxEntries: 10, maxAgeSeconds: 60 * 60 * 24 * 365 },
-            },
-          },
-          {
-            // Google Fonts webfont files
-            urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
-            handler: "CacheFirst",
-            options: {
-              cacheName: "google-fonts-webfonts",
-              expiration: { maxEntries: 30, maxAgeSeconds: 60 * 60 * 24 * 365 },
-            },
-          },
-          {
-            // External API calls (CoinGecko etc.)
-            urlPattern: /^https:\/\/api\.coingecko\.com\/.*/i,
-            handler: "NetworkFirst",
-            options: {
-              cacheName: "crypto-api",
-              expiration: { maxEntries: 10, maxAgeSeconds: 60 * 15 },
-              networkTimeoutSeconds: 5,
-            },
-          },
-          {
-            // Navigation requests — cache visited pages
-            urlPattern: ({ request }) => request.mode === "navigate",
-            handler: "NetworkFirst",
-            options: {
-              cacheName: "pages",
-              expiration: { maxEntries: 50, maxAgeSeconds: 60 * 60 * 24 * 7 },
-            },
-          },
-        ],
+        // Do NOT use navigateFallback — it intercepts all navigation and can serve stale HTML
       },
       manifest: {
         name: "VICIO<CODE> - IA, Investimentos, Geek & Otaku",

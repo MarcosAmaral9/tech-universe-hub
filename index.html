@@ -87,15 +87,18 @@
     </head>
 
   <body>
-    <!-- Unregister stale service workers on every deploy -->
+    <!-- Force unregister ALL service workers to fix stale cache white screen -->
     <script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.getRegistrations().then(function(registrations) {
-          for (var r of registrations) {
-            // Only unregister if the SW is outdated (controlled by this page but stale)
-            if (r.waiting || r.installing) { r.unregister(); }
-          }
+          for (var r of registrations) { r.unregister(); }
         });
+        // Also clear all SW-related caches
+        if ('caches' in window) {
+          caches.keys().then(function(names) {
+            for (var name of names) { caches.delete(name); }
+          });
+        }
       }
     </script>
     <!-- Google Tag Manager (noscript) -->

@@ -481,7 +481,8 @@ const SettingsPage = () => {
             </div>
           )}
         </div>
-        </div>)}{/* end activeTab === settings */}
+        </div>
+        )}{/* end activeTab === settings */}
       </div>
     </div>
   );
