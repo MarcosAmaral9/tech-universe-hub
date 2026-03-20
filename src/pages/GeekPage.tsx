@@ -11,6 +11,14 @@ import acPortalImg from "@/assets/assassins-creed-portal.webp";
 
 const POSTS_PER_PAGE = 12;
 
+const SUBTOPIC_LABELS: Record<string, string> = {
+  "assassins-creed": "Assassin's Creed",
+  avatar: "Avatar",
+  "crimson-desert": "Crimson Desert",
+  games: "Games",
+  vikings: "Vikings",
+};
+
 interface SpecialPortalCardProps {
   to: string;
   image: string;
@@ -52,15 +60,36 @@ const SpecialPortalCard = ({ to, image, title, description, badge, badgeColor }:
 );
 
 const GeekPage = () => {
-  const posts = getPostsByCategory("geek");
+  const allPosts = getPostsByCategory("geek");
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [page, setPage] = useState(1);
-
-  const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
-  const paged = posts.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
 
   const changePage = (newPage: number | ((p: number) => number)) => {
     setPage(newPage);
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const subtopics = useMemo(() => {
+    const set = new Set<string>();
+    allPosts.forEach((p) => {
+      if (p.subtopic) set.add(p.subtopic);
+    });
+    return Array.from(set).sort((a, b) =>
+      (SUBTOPIC_LABELS[a] || a).localeCompare(SUBTOPIC_LABELS[b] || b)
+    );
+  }, [allPosts]);
+
+  const filtered = useMemo(
+    () => (activeFilter ? allPosts.filter((p) => p.subtopic === activeFilter) : allPosts),
+    [allPosts, activeFilter]
+  );
+
+  const totalPages = Math.ceil(filtered.length / POSTS_PER_PAGE);
+  const paged = filtered.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
+
+  const handleFilter = (sub: string | null) => {
+    setActiveFilter(sub);
+    setPage(1);
   };
 
   return (
@@ -80,7 +109,7 @@ const GeekPage = () => {
           <div className="w-2 h-12 bg-geek rounded-full"></div>
           <h1 className="font-display text-3xl md:text-5xl font-bold">
             Mundo <span className="text-geek">Geek</span>
-            <span className="ml-3 text-base font-normal text-muted-foreground align-middle">({posts.length} artigos)</span>
+            <span className="ml-3 text-base font-normal text-muted-foreground align-middle">({allPosts.length} artigos)</span>
           </h1>
         </div>
         
@@ -90,37 +119,65 @@ const GeekPage = () => {
         </p>
       </div>
 
-      {/* Special Portals */}
-      <div className="mb-10">
-        <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">
-          🎮 Painéis Especiais
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <SpecialPortalCard
-            to="/geek/crimson-desert"
-            image={crimsonDesertHeroImg}
-            title="Crimson Desert"
-            description="RPG de mundo aberto da Pearl Abyss — guias, análises de combate e tudo sobre Pywel."
-            badge="🗡️ Novo"
-            badgeColor="bg-red-900/80 text-red-300 border border-red-700/50"
-          />
-          <SpecialPortalCard
-            to="/geek/assassins-creed"
-            image={acPortalImg}
-            title="Assassin's Creed"
-            description="Portal completo da franquia — reviews, rankings e análises de todos os jogos."
-            badge="⚔️ Especial"
-            badgeColor="bg-amber-900/80 text-amber-300 border border-amber-700/50"
-          />
-          <SpecialPortalCard
-            to="/geek/avatar"
-            image={avatarPortalBannerImg}
-            title="Universo Avatar"
-            description="Filmes, tecnologia e o jogo Frontiers of Pandora — tudo sobre o universo de Pandora."
-            badge="🌿 Especial"
-            badgeColor="bg-cyan-900/80 text-cyan-300 border border-cyan-700/50"
-          />
+      {/* Special Portals - only show when no filter */}
+      {!activeFilter && (
+        <div className="mb-10">
+          <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">
+            🎮 Painéis Especiais
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <SpecialPortalCard
+              to="/geek/crimson-desert"
+              image={crimsonDesertHeroImg}
+              title="Crimson Desert"
+              description="RPG de mundo aberto da Pearl Abyss — guias, análises de combate e tudo sobre Pywel."
+              badge="🗡️ Novo"
+              badgeColor="bg-red-900/80 text-red-300 border border-red-700/50"
+            />
+            <SpecialPortalCard
+              to="/geek/assassins-creed"
+              image={acPortalImg}
+              title="Assassin's Creed"
+              description="Portal completo da franquia — reviews, rankings e análises de todos os jogos."
+              badge="⚔️ Especial"
+              badgeColor="bg-amber-900/80 text-amber-300 border border-amber-700/50"
+            />
+            <SpecialPortalCard
+              to="/geek/avatar"
+              image={avatarPortalBannerImg}
+              title="Universo Avatar"
+              description="Filmes, tecnologia e o jogo Frontiers of Pandora — tudo sobre o universo de Pandora."
+              badge="🌿 Especial"
+              badgeColor="bg-cyan-900/80 text-cyan-300 border border-cyan-700/50"
+            />
+          </div>
         </div>
+      )}
+
+      {/* Subtopic Filters */}
+      <div className="flex flex-wrap gap-2 mb-8">
+        <Button
+          variant={activeFilter === null ? "default" : "outline"}
+          size="sm"
+          onClick={() => handleFilter(null)}
+          className={activeFilter === null ? "bg-geek hover:bg-geek/90 text-white" : ""}
+        >
+          Todos ({allPosts.length})
+        </Button>
+        {subtopics.map((sub) => {
+          const count = allPosts.filter((p) => p.subtopic === sub).length;
+          return (
+            <Button
+              key={sub}
+              variant={activeFilter === sub ? "default" : "outline"}
+              size="sm"
+              onClick={() => handleFilter(sub)}
+              className={activeFilter === sub ? "bg-geek hover:bg-geek/90 text-white" : ""}
+            >
+              {SUBTOPIC_LABELS[sub] || sub} ({count})
+            </Button>
+          );
+        })}
       </div>
 
       {/* Posts Grid */}
@@ -130,7 +187,7 @@ const GeekPage = () => {
         ))}
       </div>
 
-      {posts.length === 0 && (
+      {filtered.length === 0 && (
         <div className="text-center py-16">
           <p className="text-muted-foreground text-lg">
             Nenhum artigo encontrado nesta categoria ainda.

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import PostCard from "@/components/PostCard";
 import { getPostsByCategory, getPostBySlug } from "@/data/posts";
@@ -13,18 +13,56 @@ import DynamicSEO from "@/components/DynamicSEO";
 const PINNED_SLUG = "calculadoras-financeiras-ativos";
 const POSTS_PER_PAGE = 12;
 
+const SUBTOPIC_LABELS: Record<string, string> = {
+  calculadoras: "Calculadoras",
+  carteira: "Carteira",
+  cripto: "Criptomoedas",
+  dividas: "Dívidas",
+  "economia-domestica": "Economia Doméstica",
+  "educacao-financeira": "Educação Financeira",
+  etfs: "ETFs",
+  fiis: "FIIs",
+  "ia-financas": "IA & Finanças",
+  impostos: "Impostos",
+  planejamento: "Planejamento",
+  "renda-fixa": "Renda Fixa",
+  "renda-passiva": "Renda Passiva",
+  semicondutores: "Semicondutores",
+};
+
 const InvestimentosPage = () => {
   const allPosts = getPostsByCategory("invest");
   const pinnedPost = getPostBySlug(PINNED_SLUG);
-  const posts = allPosts.filter((p) => p.slug !== PINNED_SLUG);
+  const postsWithoutPinned = allPosts.filter((p) => p.slug !== PINNED_SLUG);
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [page, setPage] = useState(1);
-
-  const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
-  const paged = posts.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
 
   const changePage = (newPage: number | ((p: number) => number)) => {
     setPage(newPage);
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const subtopics = useMemo(() => {
+    const set = new Set<string>();
+    postsWithoutPinned.forEach((p) => {
+      if (p.subtopic) set.add(p.subtopic);
+    });
+    return Array.from(set).sort((a, b) =>
+      (SUBTOPIC_LABELS[a] || a).localeCompare(SUBTOPIC_LABELS[b] || b)
+    );
+  }, [postsWithoutPinned]);
+
+  const filtered = useMemo(
+    () => (activeFilter ? postsWithoutPinned.filter((p) => p.subtopic === activeFilter) : postsWithoutPinned),
+    [postsWithoutPinned, activeFilter]
+  );
+
+  const totalPages = Math.ceil(filtered.length / POSTS_PER_PAGE);
+  const paged = filtered.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
+
+  const handleFilter = (sub: string | null) => {
+    setActiveFilter(sub);
+    setPage(1);
   };
 
   return (
@@ -61,7 +99,7 @@ const InvestimentosPage = () => {
       </div>
 
       {/* Pinned Featured Post */}
-      {pinnedPost && (
+      {pinnedPost && !activeFilter && (
         <Link to={`/post/${pinnedPost.slug}`} className="block mb-8 group">
           <div className="relative rounded-2xl overflow-hidden bg-card border-2 border-invest/30 hover:border-invest/60 transition-all shadow-lg hover:shadow-xl">
             <div className="flex flex-col md:flex-row">
@@ -95,17 +133,41 @@ const InvestimentosPage = () => {
         </Link>
       )}
 
-      {/* B3 Stock Ticker */}
-      <B3StockTicker />
+      {/* Widgets - only show when no filter active */}
+      {!activeFilter && (
+        <>
+          <B3StockTicker />
+          <CurrencyWidget />
+          <PreciousMetalsWidget />
+          <CryptoWidget />
+        </>
+      )}
 
-      {/* Currency Widget */}
-      <CurrencyWidget />
-
-      {/* Precious Metals Widget */}
-      <PreciousMetalsWidget />
-
-      {/* Crypto Widget */}
-      <CryptoWidget />
+      {/* Subtopic Filters */}
+      <div className="flex flex-wrap gap-2 mb-8">
+        <Button
+          variant={activeFilter === null ? "default" : "outline"}
+          size="sm"
+          onClick={() => handleFilter(null)}
+          className={activeFilter === null ? "bg-invest hover:bg-invest/90 text-white" : ""}
+        >
+          Todos ({postsWithoutPinned.length})
+        </Button>
+        {subtopics.map((sub) => {
+          const count = postsWithoutPinned.filter((p) => p.subtopic === sub).length;
+          return (
+            <Button
+              key={sub}
+              variant={activeFilter === sub ? "default" : "outline"}
+              size="sm"
+              onClick={() => handleFilter(sub)}
+              className={activeFilter === sub ? "bg-invest hover:bg-invest/90 text-white" : ""}
+            >
+              {SUBTOPIC_LABELS[sub] || sub} ({count})
+            </Button>
+          );
+        })}
+      </div>
 
       {/* Posts Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -114,7 +176,7 @@ const InvestimentosPage = () => {
         ))}
       </div>
 
-      {posts.length === 0 && (
+      {filtered.length === 0 && (
         <div className="text-center py-16">
           <p className="text-muted-foreground text-lg">
             Nenhum artigo encontrado nesta categoria ainda.
