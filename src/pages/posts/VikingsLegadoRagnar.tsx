@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Sword, Ship, Crown, Shield, Axe, Target, Tv, Star } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -14,12 +14,9 @@ const VikingsLegadoRagnar = () => {
   useEffect(() => {
     trackArticleRead("vikings-legado-ragnar-lothbrok", "Vikings: Vale a Pena Assistir em 2026? Review Completa da Série", "geek");
   }, []);
-  const goBack = useSmartBack("/geek");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para Geek
-      </button>
+      <BackNavigation categoryPath="/geek" categoryLabel="Geek" />
 
       <header className="mb-8">
         <CategoryBadge category="geek" size="lg" />
@@ -382,7 +379,7 @@ const VikingsLegadoRagnar = () => {
       </div>
 
       <RelatedPosts currentSlug="vikings-legado-ragnar-lothbrok" />
-      <CommentSection postId="vikings-legado-ragnar-lothbrok" />
+      <CommentSection postId="vikings-legado-ragnar-lothbrok" postTitle="Vikings: Vale a Pena Assistir em 2026? Review Completa da Série" />
     </article>
   );
 };

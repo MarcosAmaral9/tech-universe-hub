@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, Calendar, User, ChevronRight, ChevronDown, ChevronUp, Zap, AlertTriangle, Shield, TrendingUp, TrendingDown, Bitcoin } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -67,7 +67,6 @@ const BitcoinCripto2026 = () => {
   useEffect(() => {
     trackArticleRead("bitcoin-criptomoedas-2026-investir", "Bitcoin e Criptomoedas em 2026: Ainda Dá Para Lucrar?", "invest");
   }, []);
-  const goBack = useSmartBack("/financas");
   return (
     <>
       <style>{`
@@ -329,12 +328,10 @@ const BitcoinCripto2026 = () => {
           ))}
         </div>
 
-        <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para Finanças
-      </button>
+        <BackNavigation categoryPath="/financas" categoryLabel="Finanças" />
 
         <RelatedPosts currentSlug="bitcoin-criptomoedas-2026-investir" />
-        <CommentSection postId="27" />
+        <CommentSection postId="27" postTitle="Bitcoin e Criptomoedas em 2026: Ainda Dá Para Lucrar?" />
       </article>
     </>
   );

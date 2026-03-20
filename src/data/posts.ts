@@ -655,7 +655,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "70",
     slug: "crimson-desert-guia-completo",
-    title: "Crimson Desert: Guia Completo do RPG Mais Esperado de 2026",
+    title: "Crimson Desert: Guia Completo — Lançamento, Notas e Tudo Que Você Precisa Saber",
     excerpt: "Tudo sobre história, gameplay, mundo aberto e sistema de combate do novo épico da Pearl Abyss. Descubra o continente de Pywel e a jornada de Kliff.",
     content: "",
     category: "geek",
@@ -668,7 +668,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "71",
     slug: "crimson-desert-combate-blackspace-engine",
-    title: "Crimson Desert: Como o Sistema de Combate e a BlackSpace Engine Mudam Tudo",
+    title: "Crimson Desert: Sistema de Combate e BlackSpace Engine — Como Funciona na Prática",
     excerpt: "Análise aprofundada das mecânicas de combate, chefes épicos, montarias e a tecnologia por trás do visual impressionante do RPG da Pearl Abyss.",
     content: "",
     category: "geek",
@@ -906,7 +906,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "72",
     slug: "crimson-desert-review-2026",
-    title: "Crimson Desert Vale a Pena? O Que Previews e Primeiras Impressões Dizem",
+    title: "Crimson Desert: O Que os Críticos Disseram — Notas, Pontos Fortes e Fracos",
     excerpt: "Análise completa após 60+ horas: gameplay, narrativa, performance técnica e veredito final. Nota 9.2.",
     content: "",
     category: "geek",
@@ -919,7 +919,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "73",
     slug: "crimson-desert-builds-guia-2026",
-    title: "Crimson Desert: Sistema de Progressão de Kliff — O Que Sabemos",
+    title: "Crimson Desert: Sistema de Progressão de Kliff e Estilos de Jogo",
     excerpt: "Descubra as builds mais poderosas, árvores de habilidades e combinações elementais para dominar Pywel.",
     content: "",
     category: "geek",

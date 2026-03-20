@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Camera, Cpu, Monitor, Sparkles, Film, Award, Target } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -14,12 +14,9 @@ const Avatar2009Tecnologia = () => {
   useEffect(() => {
     trackArticleRead("avatar-2009-filme-revolucionou-tecnologia", "Avatar (2009): O Filme que Revolucionou o Cinema 3D e a Tecnologia CGI", "geek");
   }, []);
-  const goBack = useSmartBack("/geek/avatar");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para Portal Avatar
-      </button>
+      <BackNavigation categoryPath="/geek" categoryLabel="Geek" portalPath="/geek/avatar" portalLabel="Portal Avatar" />
 
       <header className="mb-8">
         <div className="flex items-center gap-2 mb-4">
@@ -274,7 +271,7 @@ const Avatar2009Tecnologia = () => {
       </div>
 
       <RelatedPosts currentSlug="avatar-2009-filme-revolucionou-tecnologia" />
-      <CommentSection postId="avatar-2009-filme-revolucionou-tecnologia" />
+      <CommentSection postId="avatar-2009-filme-revolucionou-tecnologia" postTitle="Avatar (2009): O Filme que Revolucionou o Cinema 3D e a Tecnologia CGI" />
     </article>
   );
 };

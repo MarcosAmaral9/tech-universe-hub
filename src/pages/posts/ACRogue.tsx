@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Snowflake, Ship, Target, Cpu, DollarSign, Laptop, Gamepad2, HelpCircle, Crosshair, MapPin, Swords, Shield, Timer, Package } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -14,15 +14,12 @@ const ACRogue = () => {
   useEffect(() => {
     trackArticleRead("ac-rogue-assassino-templario", "AC Rogue em 2026 Vale a Pena? Review — Jogue Como Templário", "geek");
   }, []);
-  const goBack = useSmartBack("/geek/assassins-creed");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
       {/* SEO-optimized meta description: Assassin's Creed Rogue vale a pena em 2026? Review completa jogando como Templário, navegação no Ártico, requisitos de PC gamer leves e análise de custo-benefício. */}
       
       {/* Back Button */}
-      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para Portal Assassin's Creed
-      </button>
+      <BackNavigation categoryPath="/geek" categoryLabel="Geek" portalPath="/geek/assassins-creed" portalLabel="Portal Assassin's Creed" />
 
       {/* Header */}
       <header className="mb-8">
@@ -646,7 +643,7 @@ const ACRogue = () => {
       <RelatedPosts currentSlug="ac-rogue-assassino-templario" />
 
       {/* Comments */}
-      <CommentSection postId="ac-rogue-assassino-templario" />
+      <CommentSection postId="ac-rogue-assassino-templario" postTitle="AC Rogue em 2026 Vale a Pena? Review — Jogue Como Templário" />
     </article>
   );
 };

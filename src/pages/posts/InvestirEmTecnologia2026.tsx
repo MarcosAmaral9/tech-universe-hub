@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, Calendar, User, AlertTriangle, TrendingUp, Cpu, Server, Shield, Tv, Target, BookOpen } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -14,12 +14,9 @@ const InvestirEmTecnologia2026 = () => {
   useEffect(() => {
     trackArticleRead("investir-em-tecnologia-2026", "Como Investir em Tecnologia em 2026: Guia de Setores e ETFs", "invest");
   }, []);
-  const goBack = useSmartBack("/financas");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para Finanças
-      </button>
+      <BackNavigation categoryPath="/financas" categoryLabel="Finanças" />
 
       <header className="mb-8">
         <CategoryBadge category="invest" size="lg" />
@@ -264,7 +261,7 @@ const InvestirEmTecnologia2026 = () => {
       </div>
 
       <RelatedPosts currentSlug="investir-em-tecnologia-2026" />
-      <CommentSection postId="investir-em-tecnologia-2026" />
+      <CommentSection postId="investir-em-tecnologia-2026" postTitle="Como Investir em Tecnologia em 2026: Guia de Setores e ETFs" />
     </article>
   );
 };

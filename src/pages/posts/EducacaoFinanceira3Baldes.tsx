@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, Calendar, User, ChevronRight, Zap, Brain, Smartphone, CheckCircle2 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -21,7 +21,6 @@ const BucketCalculator = () => {
   useEffect(() => {
     trackArticleRead("educacao-financeira-metodo-3-baldes", "Método dos 3 Baldes: Educação Financeira Para Quem Sempre Gastou Tudo", "invest");
   }, []);
-  const goBack = useSmartBack("/financas");
   return (
     <div className="bg-card border border-border rounded-2xl p-6 mb-8">
       <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
@@ -291,12 +290,10 @@ const EducacaoFinanceira3Baldes = () => {
           ))}
         </div>
 
-        <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para Finanças
-      </button>
+        <BackNavigation categoryPath="/financas" categoryLabel="Finanças" />
 
         <RelatedPosts currentSlug="educacao-financeira-metodo-3-baldes" />
-        <CommentSection postId="30" />
+        <CommentSection postId="30" postTitle="Método dos 3 Baldes: Educação Financeira Para Quem Sempre Gastou Tudo" />
       </article>
     </>
   );

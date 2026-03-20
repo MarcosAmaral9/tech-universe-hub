@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, Calendar, User, ChevronRight, Zap, AlertTriangle, FileText, CheckCircle, Timer } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -87,7 +87,6 @@ const IRPF2026 = () => {
   useEffect(() => {
     trackArticleRead("irpf-2026-guia-declarar-pagar-menos", "IRPF 2026: Guia Completo Para Declarar e Pagar Menos Imposto", "invest");
   }, []);
-  const goBack = useSmartBack("/financas");
   return (
     <>
       <article className="container py-8 max-w-4xl mx-auto">
@@ -386,12 +385,10 @@ const IRPF2026 = () => {
           ))}
         </div>
 
-        <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para Finanças
-      </button>
+        <BackNavigation categoryPath="/financas" categoryLabel="Finanças" />
 
         <RelatedPosts currentSlug="irpf-2026-guia-declarar-pagar-menos" />
-        <CommentSection postId="28" />
+        <CommentSection postId="28" postTitle="IRPF 2026: Guia Completo Para Declarar e Pagar Menos Imposto" />
       </article>
     </>
   );

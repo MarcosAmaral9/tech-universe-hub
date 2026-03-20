@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import BackNavigation from "@/components/BackNavigation";
 import { ArrowLeft } from "lucide-react";
 import acPortalImg from "@/assets/assassins-creed-portal.webp";
 import acShadowsImg from "@/assets/ac-shadows.webp";
@@ -28,10 +29,7 @@ const AssassinsCreedPortal = () => {
 
   return (
     <div className="container py-8 max-w-6xl mx-auto">
-      <Link to="/geek" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" />
-        Voltar para Geek
-      </Link>
+      <BackNavigation categoryPath="/geek" categoryLabel="Geek" />
 
       {/* Hero Banner */}
       <div className="relative rounded-2xl overflow-hidden mb-12 aspect-[21/9]">

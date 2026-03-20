@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, BookOpen, Tv, ThumbsUp, ThumbsDown } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -14,12 +14,9 @@ const MangaVsAnime2026 = () => {
   useEffect(() => {
     trackArticleRead("manga-vs-anime-adaptacao-2026", "Mangá vs. Anime: Quando a Adaptação Supera o Original", "otaku");
   }, []);
-  const goBack = useSmartBack("/otaku");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para Otaku
-      </button>
+      <BackNavigation categoryPath="/otaku" categoryLabel="Otaku" />
 
       <header className="mb-8">
         <CategoryBadge category="otaku" size="lg" />
@@ -94,7 +91,7 @@ const MangaVsAnime2026 = () => {
       </div>
 
       <RelatedPosts currentSlug="manga-vs-anime-adaptacao-2026" />
-      <CommentSection postId="manga-vs-anime-adaptacao-2026" />
+      <CommentSection postId="manga-vs-anime-adaptacao-2026" postTitle="Mangá vs. Anime: Quando a Adaptação Supera o Original" />
     </article>
   );
 };

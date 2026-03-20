@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Landmark, Users, Wind, Heart, Cpu, DollarSign, Target, Laptop, Gamepad2, HelpCircle, Shield, Swords, Map, BookOpen } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -14,15 +14,12 @@ const ACUnity = () => {
   useEffect(() => {
     trackArticleRead("ac-unity-jogo-frente-tempo-paris", "AC Unity em 2026 Vale a Pena? Review — O Jogo que Estava à Frente do Tempo", "geek");
   }, []);
-  const goBack = useSmartBack("/geek/assassins-creed");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
       {/* SEO-optimized meta description: Assassin's Creed Unity vale a pena em 2026? Review completa com Revolução Francesa, facções, combate, parkour, co-op, DLCs Dead Kings, requisitos de PC gamer e custo-benefício. */}
       
       {/* Back Button */}
-      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para Portal Assassin's Creed
-      </button>
+      <BackNavigation categoryPath="/geek" categoryLabel="Geek" portalPath="/geek/assassins-creed" portalLabel="Portal Assassin's Creed" />
 
       {/* Header */}
       <header className="mb-8">
@@ -745,7 +742,7 @@ const ACUnity = () => {
       <RelatedPosts currentSlug="ac-unity-jogo-frente-tempo-paris" />
 
       {/* Comments */}
-      <CommentSection postId="ac-unity-jogo-frente-tempo-paris" />
+      <CommentSection postId="ac-unity-jogo-frente-tempo-paris" postTitle="AC Unity em 2026 Vale a Pena? Review — O Jogo que Estava à Frente do Tempo" />
     </article>
   );
 };

@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, Calendar, User, ChevronRight, Zap, AlertTriangle, CheckCircle2, ExternalLink, Trash2, Plus } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -43,7 +43,6 @@ const DebtPlanner = () => {
   useEffect(() => {
     trackArticleRead("sair-das-dividas-2026-plano-acao", "Sair das Dívidas em 2026: O Plano de Ação Que Realmente Funciona", "invest");
   }, []);
-  const goBack = useSmartBack("/financas");
   return (
     <div className="bg-card border border-border rounded-2xl p-6 mb-8">
       <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
@@ -315,12 +314,10 @@ const SairDasDividas2026 = () => {
           ))}
         </div>
 
-        <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para Finanças
-      </button>
+        <BackNavigation categoryPath="/financas" categoryLabel="Finanças" />
 
         <RelatedPosts currentSlug="sair-das-dividas-2026-plano-acao" />
-        <CommentSection postId="32" />
+        <CommentSection postId="32" postTitle="Sair das Dívidas em 2026: O Plano de Ação Que Realmente Funciona" />
       </article>
     </>
   );

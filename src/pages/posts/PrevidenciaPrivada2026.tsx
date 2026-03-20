@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, TrendingUp, DollarSign, Shield, BookOpen } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -14,12 +14,9 @@ const PrevidenciaPrivada2026 = () => {
   useEffect(() => {
     trackArticleRead("previdencia-privada-pgbl-vgbl-2026", "Previdência Privada em 2026: PGBL ou VGBL? Guia para Decidir Sem Erro", "invest");
   }, []);
-  const goBack = useSmartBack("/financas");
   return (
   <article className="container py-8 max-w-4xl mx-auto">
-    <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para Finanças
-      </button>
+    <BackNavigation categoryPath="/financas" categoryLabel="Finanças" />
     <header className="mb-8">
       <CategoryBadge category="invest" size="lg" />
       <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">

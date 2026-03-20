@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Sword, Cpu, Monitor, DollarSign, Target, Laptop, Gamepad2, HelpCircle, Shield, MapPin, Users, BookOpen, Flame, TreePine } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -14,15 +14,12 @@ const AC3Remastered = () => {
   useEffect(() => {
     trackArticleRead("ac-3-remastered-revolucao-americana", "AC III Remastered em 2026 Vale a Pena? Review — Revolução Americana", "geek");
   }, []);
-  const goBack = useSmartBack("/geek/assassins-creed");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
       {/* SEO-optimized meta description: Assassin's Creed III Remastered vale a pena em 2026? Review completa com história de Connor, Revolução Americana, requisitos de PC gamer, facções, DLCs e análise de custo-benefício. */}
       
       {/* Back Button */}
-      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para Portal Assassin's Creed
-      </button>
+      <BackNavigation categoryPath="/geek" categoryLabel="Geek" portalPath="/geek/assassins-creed" portalLabel="Portal Assassin's Creed" />
 
       {/* Header */}
       <header className="mb-8">
@@ -778,7 +775,7 @@ const AC3Remastered = () => {
       <RelatedPosts currentSlug="ac-3-remastered-revolucao-americana" />
 
       {/* Comments */}
-      <CommentSection postId="ac-3-remastered-revolucao-americana" />
+      <CommentSection postId="ac-3-remastered-revolucao-americana" postTitle="AC III Remastered em 2026 Vale a Pena? Review — Revolução Americana" />
     </article>
   );
 };

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, Calendar, User, Target, Trophy, Gamepad2, Star } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -107,12 +107,9 @@ const MelhoresManhwasSistema = () => {
   useEffect(() => {
     trackArticleRead("10-melhores-manhwas-sistema-2026", "Os 10 melhores Manhwas de \'Sistema\' para ler em 2026", "otaku");
   }, []);
-  const goBack = useSmartBack("/otaku");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para Otaku
-      </button>
+      <BackNavigation categoryPath="/otaku" categoryLabel="Otaku" />
 
       <header className="mb-8">
         <div className="flex items-center gap-2 mb-4">
@@ -284,7 +281,7 @@ const MelhoresManhwasSistema = () => {
       </div>
 
       <RelatedPosts currentSlug="10-melhores-manhwas-sistema-2026" />
-      <CommentSection postId="10-melhores-manhwas-sistema-2026" />
+      <CommentSection postId="10-melhores-manhwas-sistema-2026" postTitle="Os 10 melhores Manhwas de \'Sistema\' para ler em 2026" />
     </article>
   );
 };

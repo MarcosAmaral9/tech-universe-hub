@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import DynamicSEO from "@/components/DynamicSEO";
+import BackNavigation from "@/components/BackNavigation";
 import { ArrowLeft } from "lucide-react";
 import crimsonHeroImg from "@/assets/crimson-desert-hero.webp";
 import crimsonGuiaImg from "@/assets/crimson-desert-guia.webp";
@@ -46,9 +47,7 @@ const CrimsonDesertPanel = () => {
   return (
     <div className="min-h-screen">
       <DynamicSEO />
-      <Link to="/geek" className="container inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mt-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para Geek
-      </Link>
+      <BackNavigation categoryPath="/geek" categoryLabel="Geek" />
 
       {/* Hero Banner */}
       <section className="relative h-[60vh] min-h-[400px] overflow-hidden">

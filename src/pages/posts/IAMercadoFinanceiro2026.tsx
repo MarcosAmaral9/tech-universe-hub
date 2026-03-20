@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, Calendar, User, ChevronRight, Zap, Bot, Brain, Shield, TrendingUp, AlertTriangle, ExternalLink, Star } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -22,7 +22,6 @@ const MatrixRain = () => {
   useEffect(() => {
     trackArticleRead("ia-mercado-financeiro-2026-investimentos", "IA no Mercado Financeiro 2026: Como a IA Está Transformando Investimentos", "invest");
   }, []);
-  const goBack = useSmartBack("/financas");
   return (
     <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
       <style>{`
@@ -321,16 +320,12 @@ const IAMercadoFinanceiro2026 = () => {
         </div>
 
         <div className="flex gap-4 mb-8">
-          <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Finanças
-      </button>
-          <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Inteligência Artificial
-      </button>
+          <BackNavigation categoryPath="/financas" categoryLabel="Finanças" />
+          <BackNavigation categoryPath="/financas" categoryLabel="Finanças" />
         </div>
 
         <RelatedPosts currentSlug="ia-mercado-financeiro-2026-investimentos" />
-        <CommentSection postId="29" />
+        <CommentSection postId="29" postTitle="IA no Mercado Financeiro 2026: Como a IA Está Transformando Investimentos" />
       </article>
     </>
   );

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, Calendar, User, Mic, Globe, Zap, AlertTriangle, Target, Cpu, Users } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -14,12 +14,9 @@ const IATransformandoDublagem = () => {
   useEffect(() => {
     trackArticleRead("ia-transformando-dublagem-animes", "IA na Dublagem de Animes: Voice Cloning e o Futuro da Localização", "ia");
   }, []);
-  const goBack = useSmartBack("/ia");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para IA
-      </button>
+      <BackNavigation categoryPath="/ia" categoryLabel="Inteligência Artificial" />
 
       <header className="mb-8">
         <CategoryBadge category="ia" size="lg" />
@@ -259,7 +256,7 @@ const IATransformandoDublagem = () => {
       </div>
 
       <RelatedPosts currentSlug="ia-transformando-dublagem-animes" />
-      <CommentSection postId="ia-transformando-dublagem-animes" />
+      <CommentSection postId="ia-transformando-dublagem-animes" postTitle="IA na Dublagem de Animes: Voice Cloning e o Futuro da Localização" />
     </article>
   );
 };

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import BackNavigation from "@/components/BackNavigation";
 import { ArrowLeft } from "lucide-react";
 import avatarPortalBannerImg from "@/assets/avatar-portal-banner.webp";
 import avatarPandoraImg from "@/assets/avatar-pandora.webp";
@@ -15,9 +16,7 @@ const AvatarPortal = () => {
 
   return (
     <div className="min-h-screen">
-      <Link to="/geek" className="container inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mt-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para Geek
-      </Link>
+      <BackNavigation categoryPath="/geek" categoryLabel="Geek" />
 
       {/* Hero Banner */}
       <section className="relative h-[60vh] min-h-[400px] overflow-hidden">

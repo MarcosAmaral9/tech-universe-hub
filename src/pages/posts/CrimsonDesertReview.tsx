@@ -1,166 +1,166 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
-import { ArrowLeft, Clock, User, Calendar, Star, AlertTriangle } from "lucide-react";
+import { Clock, User, Calendar, Star, ThumbsUp, ThumbsDown, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
+import BackNavigation from "@/components/BackNavigation";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
 import crimsonReviewImg from "@/assets/crimson-desert-review.webp";
 
 const CrimsonDesertReview = () => {
   useEffect(() => {
-    trackArticleRead("crimson-desert-review-2026", "Crimson Desert Vale a Pena? O Que Previews e Primeiras Impressões Dizem", "geek");
+    trackArticleRead("crimson-desert-review-2026", "Crimson Desert Review 2026", "geek");
   }, []);
-  const goBack = useSmartBack("/geek/crimson-desert");
+
+  const scores = [
+    { outlet: "Forbes",       score: "9.5/10", color: "text-green-400" },
+    { outlet: "DualShockers", score: "9.5/10", color: "text-green-400" },
+    { outlet: "TechRadar",    score: "8/10",   color: "text-green-400" },
+    { outlet: "GamesRadar+",  score: "4/5",    color: "text-green-400" },
+    { outlet: "PC Gamer",     score: "8/10",   color: "text-green-400" },
+    { outlet: "Game Rant",    score: "8/10",   color: "text-green-400" },
+    { outlet: "GameSpot",     score: "7/10",   color: "text-yellow-400" },
+    { outlet: "TheGamer",     score: "4/5",    color: "text-yellow-400" },
+    { outlet: "Screen Rant",  score: "7/10",   color: "text-yellow-400" },
+    { outlet: "IGN",          score: "6/10 *", color: "text-yellow-400" },
+  ];
+
   return (
-  <article className="container py-8 max-w-4xl mx-auto">
-    <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para Portal Crimson Desert
-      </button>
-      <Link to="/geek/crimson-desert" className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-primary mb-6 ml-4 transition-colors">
-        ⬡ Ir ao portal
-      </Link>
+    <article className="container py-8 max-w-4xl mx-auto">
+      <BackNavigation
+        categoryPath="/geek"
+        categoryLabel="Geek"
+        portalPath="/geek/crimson-desert"
+        portalLabel="Portal Crimson Desert"
+      />
+      <header className="mb-8">
+        <div className="flex items-center gap-2 mb-4">
+          <CategoryBadge category="geek" size="lg" />
+          <span className="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-sm font-medium">Review</span>
+        </div>
+        <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
+          Crimson Desert: O Que os Críticos Disseram — Notas, Pontos Fortes e Fracos
+        </h1>
+        <div className="flex flex-wrap items-center gap-4 text-muted-foreground text-sm">
+          <span className="flex items-center gap-1.5"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
+          <span className="flex items-center gap-1.5"><Calendar className="h-4 w-4" />19 de Março, 2026</span>
+          <span className="flex items-center gap-1.5"><Clock className="h-4 w-4" />12 min de leitura</span>
+        </div>
+        <ShareWhatsApp />
+      </header>
 
-    <header className="mb-8">
-      <div className="flex items-center gap-2 mb-4">
-        <CategoryBadge category="geek" size="lg" />
-        <span className="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-sm font-medium">Crimson Desert</span>
+      <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
+        <img src={crimsonReviewImg} alt="Crimson Desert review 2026" className="w-full h-full object-cover" />
       </div>
-      <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-        Crimson Desert Vale a Pena? O Que Previews e Primeiras Impressões Dizem
-      </h1>
-      <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
-        <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
-        <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />17 de Março, 2026</span>
-        <span className="flex items-center gap-2"><Clock className="h-4 w-4" />11 min de leitura</span>
-      </div>
-      <ShareWhatsApp />
-    </header>
 
-    <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-      <img fetchpriority="high" src={crimsonReviewImg} alt="Crimson Desert — primeiras impressões 2026" className="w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-    </div>
+      <div className="prose prose-lg dark:prose-invert max-w-none">
+        <p className="lead text-xl text-muted-foreground">
+          Crimson Desert foi lançado em <strong>19 de março de 2026</strong> e o embargo de reviews foi levantado
+          no mesmo dia. O resultado: um jogo amplamente elogiado por ambição, escala e combate — mas dividido
+          pela fraqueza da narrativa, inventário confuso e excesso de sistemas. <strong>Metacritic PC: 78</strong>.
+          <strong> OpenCritic: 80</strong> ("Strong", 81% dos críticos recomendam).
+        </p>
 
-    <div className="prose prose-lg dark:prose-invert max-w-none">
+        {/* Score table */}
+        <div className="not-prose my-8">
+          <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
+            <Star className="h-5 w-5 text-yellow-400" /> Notas da Crítica Especializada
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {scores.map(({ outlet, score, color }) => (
+              <div key={outlet} className="bg-card border border-border rounded-xl p-4 flex flex-col gap-1">
+                <span className="text-xs text-muted-foreground">{outlet}</span>
+                <span className={`text-2xl font-bold ${color}`}>{score}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-muted-foreground mt-3">
+            * IGN publicou nota provisória de 6/10 após 110 horas com o jogo inacabado. Nota final pendente.
+            Metacritic PC: 78 (85–91 críticas). OpenCritic: 80, 81% de recomendação.
+          </p>
+        </div>
 
-      <div className="not-prose mb-8 p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-xl flex items-start gap-3">
-        <AlertTriangle className="h-5 w-5 text-yellow-400 shrink-0 mt-0.5" />
-        <p className="text-sm text-muted-foreground">
-          <strong className="text-foreground">Nota de transparência:</strong> Crimson Desert foi lançado em 19/03/2026.
-          Este artigo é baseado em previews pré-lançamento publicados por veículos internacionais (IGN, GameSpot,
-          Digital Foundry, TheGamer) e no conhecimento público sobre o jogo. Não inclui notas ou avaliações
-          pós-lançamento — essas serão adicionadas assim que disponíveis.
+        <h2>O Que os Críticos Elogiaram</h2>
+        <p>
+          O consenso positivo converge em torno de três pontos: o <strong>mundo aberto de Pywel</strong>,
+          o <strong>sistema de combate</strong> e a <strong>escala do conteúdo</strong>. A GamesRadar+ descreveu
+          Crimson Desert como "confuso, mas à medida que você desvenda sua mecânica e compensa suas falhas,
+          elementos de genialidade e maravilha tornam a experiência válida." A PC Gamer chamou de "um dos
+          jogos mais interessantes" que a crítica Mollie Taylor já jogou, apesar de parar aquém de obra-prima.
+          Forbes e DualShockers foram os mais entusiastas, com 9.5/10 cada, elogiando a sensação de
+          exploração genuína num mundo aberto que "realmente cumpre o que promete."
+        </p>
+        <div className="not-prose my-6 p-5 bg-green-500/10 rounded-xl border border-green-500/20">
+          <h3 className="font-bold text-green-400 mb-3 flex items-center gap-2">
+            <ThumbsUp className="h-4 w-4" /> Pontos Fortes (consenso da crítica)
+          </h3>
+          <ul className="space-y-2 text-sm text-muted-foreground">
+            <li>• <strong className="text-foreground">Mundo aberto vasto e vivo</strong> — Pywel tem múltiplas regiões com climas, facções e ecossistemas distintos</li>
+            <li>• <strong className="text-foreground">Combate profundo e satisfatório</strong> — bosses épicos comparados a Shadow of the Colossus por vários críticos</li>
+            <li>• <strong className="text-foreground">Tecnologia visual de ponta</strong> — BlackSpace Engine entrega física de fluidos, iluminação e destruição impressionantes</li>
+            <li>• <strong className="text-foreground">Volume de conteúdo enorme</strong> — a TheGamer jogou 150 horas e ainda não havia esgotado o jogo</li>
+            <li>• <strong className="text-foreground">Exploração recompensadora</strong> — segredos, masmorras e encontros fora do caminho principal frequentemente surpreendem</li>
+          </ul>
+        </div>
+
+        <h2>O Que os Críticos Criticaram</h2>
+        <p>
+          O GameSpot resumiu bem o campo contrário: "Grande parte do impulso narrativo fica limitado a
+          descrições curtas no menu de pausa" e "o design de missões frequentemente parece apenas seguir
+          uma lista de tarefas." A Screen Rant foi mais dura, descrevendo Crimson Desert como "vítima
+          de sua própria ambição", onde as mecânicas nunca se integram num todo coeso. A IGN apontou
+          especificamente a dificuldade de inventário: o protagonista Kliff tem poucos slots de mochila e
+          absolutamente tudo ocupa espaço, o que força pausas frequentes no combate para gerenciar itens.
+        </p>
+        <div className="not-prose my-6 p-5 bg-red-500/10 rounded-xl border border-red-500/20">
+          <h3 className="font-bold text-red-400 mb-3 flex items-center gap-2">
+            <ThumbsDown className="h-4 w-4" /> Pontos Fracos (consenso da crítica)
+          </h3>
+          <ul className="space-y-2 text-sm text-muted-foreground">
+            <li>• <strong className="text-foreground">Narrativa fraca</strong> — história e personagens pouco desenvolvidos; motivações de Kliff superficiais</li>
+            <li>• <strong className="text-foreground">Inventário frustrante</strong> — poucos slots, tudo ocupa espaço, interface pouco intuitiva</li>
+            <li>• <strong className="text-foreground">Design de missões repetitivo</strong> — muitas fetch quests e objetivos que parecem "marcar uma lista"</li>
+            <li>• <strong className="text-foreground">Excesso de sistemas sobrepostos</strong> — curva de aprendizagem elevada com pouca tutorização adequada</li>
+            <li>• <strong className="text-foreground">Problemas técnicos no lançamento</strong> — bugs pontuais relatados em console</li>
+          </ul>
+        </div>
+
+        <div className="not-prose my-6 p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-xl flex gap-3">
+          <AlertTriangle className="h-5 w-5 text-yellow-400 shrink-0 mt-0.5" />
+          <div className="text-sm text-muted-foreground">
+            <strong className="text-foreground">Impacto financeiro:</strong> as ações da Pearl Abyss
+            caíram <strong>28,96%</strong> na bolsa sul-coreana no dia 19/03/2026, após as notas ficarem
+            abaixo das expectativas internas da empresa (que esperava médias de meados a altos 80s).
+            O custo de desenvolvimento foi estimado em <strong>200 bilhões de KRW</strong> ao longo de
+            aproximadamente 7 anos.
+          </div>
+        </div>
+
+        <h2>Vale a Pena Comprar?</h2>
+        <p>
+          Crimson Desert é claramente um jogo para um perfil específico de jogador. Se você valoriza
+          exploração de mundo aberto, combate desafiador contra bosses imensos e centenas de horas de
+          conteúdo, o jogo entrega. Se você prioriza narrativa cinematográfica coesa ou sistemas
+          apresentados de forma clara e intuitiva, pode se frustrar com as escolhas de design.
+        </p>
+        <p>
+          A recomendação mais equilibrada da crítica veio da GamesRadar+: "Dedique tempo para sair
+          do caminho principal e descubra quais de suas muitas facetas te atraem, e você encontrará
+          um jogo muito melhor como sandbox do que como história."
+        </p>
+        <p>
+          Por US$ 69,99 no lançamento (sem regional pricing implementado no Steam no Brasil),
+          é um jogo que justifica o preço para fãs do gênero. Para os demais, aguardar uma promoção
+          pode ser a escolha mais prudente.
         </p>
       </div>
 
-      <p className="lead text-xl text-muted-foreground">
-        Antes do lançamento, Crimson Desert passou por diversas sessões de preview com jornalistas de veículos
-        internacionais. O consenso foi positivo em quase todos os aspectos testados, com ressalvas sobre
-        a quantidade de sistemas e a curva de aprendizado. Reunimos aqui o que foi publicado.
-      </p>
-
-      <h2>O Que os Previews Disseram</h2>
-      <p>
-        As sessões de preview tinham entre 3 e 6 horas de duração, focando em áreas específicas do jogo.
-        Os jornalistas não tiveram acesso à campanha completa, portanto as impressões refletem seções
-        escolhidas pela Pearl Abyss para demonstração.
-      </p>
-
-      <h3>Combate — Unanimemente Positivo</h3>
-      <p>
-        O aspecto mais elogiado em todos os previews foi o sistema de combate. O IGN descreveu como
-        "uma das sensações de combate mais satisfatórias em um RPG de mundo aberto em anos", destacando
-        especialmente o peso físico de cada golpe causado pela engine de hit reactions.
-      </p>
-      <p>
-        O GameSpot ressaltou os bosses: "cada boss é um evento, não apenas um inimigo maior — exigem
-        leitura de padrões, movimentação e uso criativo do ambiente". A escala de algumas criaturas
-        foi comparada a Shadow of the Colossus, mas com um sistema de ação muito mais rápido.
-      </p>
-
-      <h3>Mundo Aberto — Impressionante mas Denso</h3>
-      <p>
-        A WorldGamers e a TheGamer destacaram a densidade de conteúdo de Pywel como ponto forte e
-        potencial ponto de atenção: o mundo é "recheado de sistemas" que podem intimidar jogadores
-        que preferem experiências mais focadas.
-      </p>
-      <p>
-        A diversidade visual dos biomas foi mencionada em praticamente todos os previews — florestas,
-        desertos, montanhas e o contraste com a dimensão do Abismo foram elogiados pela coerência
-        estética mesmo sendo ambientes muito diferentes entre si.
-      </p>
-
-      <h3>Narrativa — Promissora, Não Testada</h3>
-      <p>
-        Os previews tiveram acesso limitado à história. As cenas mostradas foram bem recebidas pelo
-        tom sério e pela caracterização de Kliff — descrito como "protagonista com presença, não apenas
-        um avatar mudo". Porém, com poucas horas de acesso, é impossível avaliar a narrativa completa
-        antes do lançamento.
-      </p>
-
-      <h3>Performance Técnica — Destaque Positivo</h3>
-      <p>
-        A Digital Foundry publicou um preview técnico detalhado, concluindo que a BlackSpace Engine
-        "supera a maioria das engines do mercado em mundo aberto contínuo", com draw distance
-        excepcional e ausência de pop-in notável. O artigo completo está disponível no site da
-        Digital Foundry.
-      </p>
-
-      <div className="not-prose my-8">
-        <h3 className="font-bold text-xl mb-4">Resumo dos Pontos de Destaque</h3>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="bg-green-500/10 rounded-xl border border-green-500/20 p-5">
-            <h4 className="font-bold text-green-400 mb-3">✅ Elogios nos Previews</h4>
-            <ul className="text-sm text-muted-foreground space-y-1.5">
-              <li>• Combate com peso físico real por golpe</li>
-              <li>• Bosses de grande escala com design inventivo</li>
-              <li>• BlackSpace Engine sem pop-in notável</li>
-              <li>• Física de água descrita como "inédita em games"</li>
-              <li>• Biomas visualmente distintos e coerentes</li>
-              <li>• Performance acessível para o nível gráfico</li>
-            </ul>
-          </div>
-          <div className="bg-yellow-500/10 rounded-xl border border-yellow-500/20 p-5">
-            <h4 className="font-bold text-yellow-400 mb-3">⚠️ Pontos de Atenção</h4>
-            <ul className="text-sm text-muted-foreground space-y-1.5">
-              <li>• Quantidade de sistemas pode ser excessiva</li>
-              <li>• Curva de aprendizado elevada no início</li>
-              <li>• Narrativa não testada na íntegra pelos jornalistas</li>
-              <li>• Sessões limitadas — sem visão do jogo completo</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <h2>Avaliações Pós-Lançamento</h2>
-      <p>
-        As avaliações da mídia especializada serão publicadas após o embargo de review, que expira
-        junto com o lançamento do jogo em 19/03/2026. Acompanhe as notas no Metacritic e OpenCritic.
-      </p>
-
-      <h2>Vale a Pena Comprar?</h2>
-      <p>
-        Com base nos previews disponíveis, Crimson Desert demonstrou consistência técnica e criatividade
-        no design de combate e mundo. Para quem aprecia RPGs de ação com profundidade mecânica e
-        exploração de mundo aberto, os sinais são positivos.
-      </p>
-      <p>
-        Para quem prefere esperar avaliações completas antes de decidir, o jogo não tem desconto
-        previsto de lançamento — mas também não é um live service, então o preço não aumenta com
-        o tempo e a experiência completa estará disponível desde o dia 1.
-      </p>
-      <p>
-        Para informações sobre preços e edições do jogo, consulte a seção de ficha técnica acima — Standard ~R$ 349, Deluxe ~R$ 399 e Collector's Edition ~R$ 1.399.
-      </p>
-    </div>
-
-    <RelatedPosts currentSlug="crimson-desert-review-2026" category="geek" />
-    <CommentSection postId="crimson-desert-review-2026" postTitle="Crimson Desert — Primeiras Impressões" />
-  </article>
-);
+      <RelatedPosts currentSlug="crimson-desert-review-2026" />
+      <CommentSection postId="crimson-desert-review-2026" postTitle="Crimson Desert: Review 2026" />
+    </article>
+  );
 };
 
 export default CrimsonDesertReview;

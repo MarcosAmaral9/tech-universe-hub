@@ -1,152 +1,163 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
-import { ArrowLeft, Clock, User, Calendar, Sword, Shield, AlertTriangle } from "lucide-react";
+import { Clock, User, Calendar, Sword, Wand2, Shield, Zap, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
+import BackNavigation from "@/components/BackNavigation";
+import { trackArticleRead } from "@/hooks/useReadingHistory";
 import crimsonBuildsImg from "@/assets/crimson-desert-builds.webp";
 
 const CrimsonDesertBuilds = () => {
   useEffect(() => {
-    trackArticleRead("crimson-desert-builds-guia-2026", "Crimson Desert: Sistema de Progressão de Kliff — O Que Sabemos", "geek");
+    trackArticleRead(
+      "crimson-desert-builds-guia-2026",
+      "Crimson Desert: Progressão de Kliff e Estilos de Jogo",
+      "geek"
+    );
   }, []);
-  const goBack = useSmartBack("/geek/crimson-desert");
+
   return (
-  <article className="container py-8 max-w-4xl mx-auto">
-    <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para Portal Crimson Desert
-      </button>
-      <Link to="/geek/crimson-desert" className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-primary mb-6 ml-4 transition-colors">
-        ⬡ Ir ao portal
-      </Link>
+    <article className="container py-8 max-w-4xl mx-auto">
+      <BackNavigation
+        categoryPath="/geek"
+        categoryLabel="Geek"
+        portalPath="/geek/crimson-desert"
+        portalLabel="Portal Crimson Desert"
+      />
+      <header className="mb-8">
+        <div className="flex items-center gap-2 mb-4">
+          <CategoryBadge category="geek" size="lg" />
+          <span className="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-sm font-medium">Crimson Desert</span>
+        </div>
+        <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
+          Crimson Desert: Sistema de Progressão de Kliff e Estilos de Jogo
+        </h1>
+        <div className="flex flex-wrap items-center gap-4 text-muted-foreground text-sm">
+          <span className="flex items-center gap-1.5"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
+          <span className="flex items-center gap-1.5"><Calendar className="h-4 w-4" />19 de Março, 2026</span>
+          <span className="flex items-center gap-1.5"><Clock className="h-4 w-4" />10 min de leitura</span>
+        </div>
+        <ShareWhatsApp />
+      </header>
 
-    <header className="mb-8">
-      <div className="flex items-center gap-2 mb-4">
-        <CategoryBadge category="geek" size="lg" />
-        <span className="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-sm font-medium">Crimson Desert</span>
+      <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
+        <img src={crimsonBuildsImg} alt="Crimson Desert builds progressão" className="w-full h-full object-cover" />
       </div>
-      <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-        Crimson Desert: Sistema de Progressão de Kliff — O Que Sabemos Antes do Lançamento
-      </h1>
-      <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
-        <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
-        <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />17 de Março, 2026</span>
-        <span className="flex items-center gap-2"><Clock className="h-4 w-4" />10 min de leitura</span>
-      </div>
-      <ShareWhatsApp />
-    </header>
 
-    <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-      <img fetchpriority="high" src={crimsonBuildsImg} alt="Crimson Desert — sistema de progressão de Kliff" className="w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-    </div>
+      <div className="prose prose-lg dark:prose-invert max-w-none">
 
-    <div className="prose prose-lg dark:prose-invert max-w-none">
+        <div className="not-prose my-6 p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-xl flex gap-3">
+          <AlertTriangle className="h-5 w-5 text-yellow-400 shrink-0 mt-0.5" />
+          <p className="text-sm text-muted-foreground">
+            <strong className="text-foreground">Nota de atualização (19/03/2026):</strong> Crimson Desert
+            acabou de ser lançado. As informações sobre progressão e estilos de jogo disponíveis aqui são
+            baseadas em previews oficiais, análises de críticos profissionais que jogaram a versão completa
+            e notas de patch do lançamento. Guias detalhados de builds serão atualizados conforme a
+            comunidade explora o jogo.
+          </p>
+        </div>
 
-      <div className="not-prose mb-8 p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-xl flex items-start gap-3">
-        <AlertTriangle className="h-5 w-5 text-yellow-400 shrink-0 mt-0.5" />
-        <p className="text-sm text-muted-foreground">
-          <strong className="text-foreground">Nota de transparência:</strong> As informações deste artigo são baseadas
-          em trailers oficiais da Pearl Abyss, previews publicados por IGN e GameSpot, e nas descrições
-          da própria Pearl Abyss em entrevistas. Detalhes completos do sistema de progressão serão conhecidos
-          apenas com o lançamento.
+        <p className="lead text-xl text-muted-foreground">
+          Em Crimson Desert, você controla <strong>Kliff</strong>, líder dos Greymanes — um grupo de
+          mercenários. Ao contrário de RPGs com classes rígidas, Kliff pode usar e desenvolver múltiplos
+          tipos de armas, mas o sistema de habilidades recompensa especialização ao longo do jogo.
         </p>
-      </div>
 
-      <p className="lead text-xl text-muted-foreground">
-        Crimson Desert tem Kliff como protagonista fixo, mas isso não significa progressão linear.
-        A Pearl Abyss confirmou em entrevistas e em previews que o jogador tem liberdade para
-        moldar o estilo de combate de Kliff ao longo da campanha. Veja o que foi oficialmente confirmado.
-      </p>
+        <h2>Como Funciona a Progressão</h2>
+        <p>
+          Com base nas análises de críticos que completaram dezenas a centenas de horas, o sistema de
+          progressão de Kliff funciona assim:
+        </p>
+        <ul>
+          <li>
+            <strong>Armas e estilos:</strong> Kliff tem acesso a diferentes categorias de armas (espadas de
+            uma mão, armas de duas mãos, cajados, entre outras). Cada categoria tem um conjunto de
+            habilidades desbloqueáveis independente.
+          </li>
+          <li>
+            <strong>Habilidades ativas e passivas:</strong> ao usar uma arma repetidamente e completar
+            determinados desafios ou missões, Kliff desbloqueia habilidades que alteram fundamentalmente
+            como aquele tipo de arma funciona.
+          </li>
+          <li>
+            <strong>Equipamentos:</strong> armaduras e acessórios adicionam bônus e podem direcionar Kliff
+            para estilos mais agressivos, defensivos ou híbridos.
+          </li>
+          <li>
+            <strong>Inventário limitado:</strong> um dos pontos mais criticados — Kliff começa com poucos
+            slots de mochila. Ampliar o inventário requer completar missões secundárias específicas ou
+            comprar extensões em mercadores.
+          </li>
+        </ul>
 
-      <h2>O Que a Pearl Abyss Confirmou</h2>
-      <p>
-        Em entrevistas antes do lançamento, os desenvolvedores confirmaram que Crimson Desert tem
-        um sistema de progressão sem classes fixas. Kliff não é um guerreiro, mago ou arqueiro —
-        o jogador escolhe como evoluir o personagem de acordo com seu estilo de jogo.
-      </p>
-      <p>
-        A Pearl Abyss descreveu o sistema como "evolução orgânica baseada em uso", similar ao
-        que outros RPGs de mundo aberto adotaram, mas integrado às mecânicas físicas da BlackSpace Engine.
-        Por exemplo, quanto mais você usa combate a cavalo, mais habilidades nessa área ficam disponíveis.
-      </p>
+        <h2>Estilos de Jogo Identificados pelos Críticos</h2>
+        <p>
+          Com base nas análises de lançamento, três abordagens principais emergem naturalmente do sistema:
+        </p>
 
-      <h2>Armas Confirmadas em Trailers</h2>
-      <p>
-        Com base nos trailers oficiais publicados pela Pearl Abyss no YouTube e nas sessões de preview,
-        as seguintes armas foram mostradas em uso por Kliff:
-      </p>
-
-      <div className="not-prose my-6 grid md:grid-cols-2 gap-4">
-        {[
-          { icon: <Sword className="h-5 w-5 text-red-400"/>, name: "Espada e Escudo", desc: "Arma principal mostrada na maioria dos trailers. Combate equilibrado entre ataque e defesa.", confirmed: true },
-          { icon: <Sword className="h-5 w-5 text-orange-400"/>, name: "Espada de Duas Mãos", desc: "Mostrada em combates contra inimigos maiores. Golpes mais lentos e mais poderosos.", confirmed: true },
-          { icon: <Shield className="h-5 w-5 text-blue-400"/>, name: "Combate a Cavalo", desc: "Ataques montado confirmados por previews. Inclui golpes laterais e descendentes.", confirmed: true },
-          { icon: <Sword className="h-5 w-5 text-purple-400"/>, name: "Outros Estilos", desc: "Trailers mostram outros movimentos não categorizados. Detalhes completos após lançamento.", confirmed: false },
-        ].map((w) => (
-          <div key={w.name} className={`bg-card rounded-xl border p-4 ${w.confirmed ? "border-border" : "border-dashed border-muted"}`}>
-            <div className="flex items-center gap-2 mb-2">
-              {w.icon}
-              <span className="font-bold text-sm">{w.name}</span>
-              {w.confirmed
-                ? <span className="ml-auto text-xs text-green-400 bg-green-500/10 px-2 py-0.5 rounded-full">Confirmado</span>
-                : <span className="ml-auto text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded-full">A confirmar</span>}
+        <div className="not-prose my-8 grid md:grid-cols-3 gap-5">
+          {[
+            {
+              icon: <Sword className="h-7 w-7 text-red-400" />,
+              title: "Agressivo / DPS",
+              color: "border-red-500/30 bg-red-500/5",
+              desc: "Foco em armas pesadas de duas mãos e habilidades de alto dano. Alta recompensa contra bosses, mas exige domínio da esquiva para compensar a baixa defesa. Preferido por quem vem de Elden Ring ou Black Myth: Wukong.",
+              suitable: "Para: fãs de combate técnico e arriscado",
+            },
+            {
+              icon: <Shield className="h-7 w-7 text-blue-400" />,
+              title: "Defensivo / Counter",
+              color: "border-blue-500/30 bg-blue-500/5",
+              desc: "Combinação de escudo e arma de uma mão com foco em parry e contraataques. Curva de aprendizagem mais suave. Permite errar mais sem ser punido tão duramente. Recomendado para quem está iniciando.",
+              suitable: "Para: iniciantes no gênero ou quem prefere ritmo mais pausado",
+            },
+            {
+              icon: <Wand2 className="h-7 w-7 text-purple-400" />,
+              title: "Híbrido / Utilidade",
+              color: "border-purple-500/30 bg-purple-500/5",
+              desc: "Mistura armas corpo a corpo com habilidades de elemento ou utilitárias. Versátil para diferentes tipos de encontros mas exige maior domínio do inventário e do sistema de habilidades para ser eficaz.",
+              suitable: "Para: jogadores experientes que querem versatilidade",
+            },
+          ].map(({ icon, title, color, desc, suitable }) => (
+            <div key={title} className={`rounded-xl border p-5 ${color}`}>
+              <div className="mb-3">{icon}</div>
+              <h3 className="font-bold text-base mb-2">{title}</h3>
+              <p className="text-sm text-muted-foreground mb-3">{desc}</p>
+              <p className="text-xs text-primary font-medium">{suitable}</p>
             </div>
-            <p className="text-xs text-muted-foreground">{w.desc}</p>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      <h2>O Abismo e Habilidades Especiais</h2>
-      <p>
-        A dimensão do Abismo, confirmada pela Pearl Abyss, desbloqueia habilidades especiais para Kliff
-        que não estão disponíveis no mundo principal. Em entrevistas, os desenvolvedores descreveram
-        essas habilidades como "poderes ligados à natureza do Abismo" que complementam o combate físico
-        do mundo de Pywel.
-      </p>
-      <p>
-        Os trailers mostraram Kliff usando habilidades que parecem envolver manipulação de energia —
-        mas a Pearl Abyss manteve os detalhes específicos em segredo antes do lançamento para preservar
-        a surpresa da descoberta pelo jogador.
-      </p>
-
-      <h2>Equipamentos e Progressão de Nível</h2>
-      <p>
-        Previews confirmaram que Crimson Desert tem um sistema de equipamentos com diferentes raridades,
-        e que os bosses dropam equipamentos únicos. O GameSpot mencionou que completar a primeira
-        área do jogo já proporcionava upgrades visíveis no personagem.
-      </p>
-      <p>
-        A Pearl Abyss confirmou que não há compras de itens de gameplay — todos os upgrades são
-        conquistados jogando, sem pay-to-win ou microtransações de poder. Cosméticos adicionais
-        podem ser comercializados separadamente, mas apenas itens visuais.
-      </p>
-
-      <h2>Recomendações para Dificuldade</h2>
-      <p>
-        Com base nas descrições dos previews, o jogo oferece múltiplos níveis de dificuldade.
-        Para jogadores que querem explorar os sistemas de progressão com liberdade, a dificuldade
-        padrão é a recomendada. Para quem quer um desafio maior nos bosses, a dificuldade elevada
-        foi descrita como "punitiva mas justa" por previews do IGN.
-      </p>
-
-      <div className="not-prose my-8 p-5 bg-red-500/10 rounded-xl border border-red-500/20">
-        <h3 className="font-bold text-lg mb-2">📋 Este Artigo Será Atualizado</h3>
-        <p className="text-muted-foreground text-sm">
-          Após o lançamento em 19/03/2026, este artigo será atualizado com informações completas e
-          verificadas sobre o sistema de progressão, builds otimizadas e estratégias de combate
-          baseadas na experiência real com o jogo.
+        <h2>A Questão da Dificuldade</h2>
+        <p>
+          Múltiplos críticos mencionaram a dificuldade como ponto de divisão. A TheGamer jogou 150 horas
+          descrevendo o jogo como "não feito para o jogador casual" e com uma "curva de grind enorme
+          porém insaciável." A IGN mencionou "picos de dificuldade severos" e a necessidade de gerenciar
+          as habilidades de Kliff ativamente para progredir.
         </p>
-      </div>
-    </div>
+        <p>
+          Há opções de acessibilidade que reduzem a dificuldade de combate, mas o jogo não tem um modo
+          "fácil" tradicional — o foco é em combate exigente como parte central da experiência.
+        </p>
 
-    <RelatedPosts currentSlug="crimson-desert-builds-guia-2026" category="geek" />
-    <CommentSection postId="crimson-desert-builds-guia-2026" postTitle="Crimson Desert — Sistema de Progressão" />
-  </article>
-);
+        <h2>Dicas de Progressão Verificadas</h2>
+        <ul>
+          <li><strong>Expanda o inventário cedo:</strong> priorize as missões secundárias que desbloqueiam slots de mochila — o inventário limitado é o maior fator de frustração relatado.</li>
+          <li><strong>Use controle:</strong> a PC Gamer e outros críticos recomendam explicitamente jogar com controle em vez de teclado e mouse no PC.</li>
+          <li><strong>Explore fora da missão principal:</strong> a GamesRadar+ e a TheGamer concordam que os melhores momentos do jogo acontecem fora do caminho principal.</li>
+          <li><strong>Invista numa especialização:</strong> o sistema recompensa quem aprofunda um estilo de jogo em vez de tentar usar todas as armas igualmente.</li>
+        </ul>
+
+      </div>
+
+      <RelatedPosts currentSlug="crimson-desert-builds-guia-2026" />
+      <CommentSection
+        postId="crimson-desert-builds-guia-2026"
+        postTitle="Crimson Desert: Progressão de Kliff e Estilos de Jogo"
+      />
+    </article>
+  );
 };
 
 export default CrimsonDesertBuilds;

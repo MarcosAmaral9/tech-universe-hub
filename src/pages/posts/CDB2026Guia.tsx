@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, TrendingUp, DollarSign, Shield, AlertTriangle, CheckCircle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -14,12 +14,9 @@ const CDB2026Guia = () => {
   useEffect(() => {
     trackArticleRead("cdb-2026-guia-completo", "CDB em 2026: Ainda Vale a Pena? Guia Completo com Taxas Reais", "invest");
   }, []);
-  const goBack = useSmartBack("/financas");
   return (
   <article className="container py-8 max-w-4xl mx-auto">
-    <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para Finanças
-      </button>
+    <BackNavigation categoryPath="/financas" categoryLabel="Finanças" />
     <header className="mb-8">
       <CategoryBadge category="invest" size="lg" />
       <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Gamepad2, TreePine, Crosshair, Cpu, DollarSign, Target, Laptop, HelpCircle, Star, Shield, MapPin, Palette } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -14,15 +14,12 @@ const AvatarFrontiersOfPandora = () => {
   useEffect(() => {
     trackArticleRead("avatar-frontiers-pandora-ubisoft-review", "Avatar: Frontiers of Pandora em 2026 Vale a Pena? Review Completa", "geek");
   }, []);
-  const goBack = useSmartBack("/geek/avatar");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
       {/* SEO-optimized meta description: Avatar Frontiers of Pandora vale a pena em 2026? Review completa do jogo mais bonito da geração, gameplay como Na'vi, requisitos pesados de PC gamer e análise de custo-benefício. */}
       
       {/* Back Button */}
-      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para Portal Avatar
-      </button>
+      <BackNavigation categoryPath="/geek" categoryLabel="Geek" portalPath="/geek/avatar" portalLabel="Portal Avatar" />
 
       {/* Header */}
       <header className="mb-8">
@@ -693,7 +690,7 @@ const AvatarFrontiersOfPandora = () => {
       <RelatedPosts currentSlug="avatar-frontiers-pandora-ubisoft-review" />
 
       {/* Comments */}
-      <CommentSection postId="avatar-frontiers-pandora-ubisoft-review" />
+      <CommentSection postId="avatar-frontiers-pandora-ubisoft-review" postTitle="Avatar: Frontiers of Pandora em 2026 Vale a Pena? Review Completa" />
     </article>
   );
 };

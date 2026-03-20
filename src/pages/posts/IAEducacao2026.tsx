@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, GraduationCap, Brain, BookOpen, Heart } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -14,12 +14,9 @@ const IAEducacao2026 = () => {
   useEffect(() => {
     trackArticleRead("ia-educacao-2026-estudar-inteligente", "IA na Educação 2026: Como Estudar de Forma Inteligente", "ia");
   }, []);
-  const goBack = useSmartBack("/ia");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para IA
-      </button>
+      <BackNavigation categoryPath="/ia" categoryLabel="Inteligência Artificial" />
 
       <header className="mb-8">
         <CategoryBadge category="ia" size="lg" />
@@ -111,7 +108,7 @@ const IAEducacao2026 = () => {
       </div>
 
       <RelatedPosts currentSlug="ia-educacao-2026-estudar-inteligente" />
-      <CommentSection postId="ia-educacao-2026-estudar-inteligente" />
+      <CommentSection postId="ia-educacao-2026-estudar-inteligente" postTitle="IA na Educação 2026: Como Estudar de Forma Inteligente" />
     </article>
   );
 };

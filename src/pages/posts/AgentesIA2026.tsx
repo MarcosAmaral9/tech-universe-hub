@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Bot, Cpu, Briefcase, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -14,12 +14,9 @@ const AgentesIA2026 = () => {
   useEffect(() => {
     trackArticleRead("agentes-ia-2026-como-funcionam", "Agentes de IA 2026: O Que São, Como Funcionam e Por Que Mudam Tudo", "ia");
   }, []);
-  const goBack = useSmartBack("/ia");
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para IA
-      </button>
+      <BackNavigation categoryPath="/ia" categoryLabel="Inteligência Artificial" />
 
       <header className="mb-8">
         <CategoryBadge category="ia" size="lg" />
@@ -109,7 +106,7 @@ const AgentesIA2026 = () => {
       </div>
 
       <RelatedPosts currentSlug="agentes-ia-2026-como-funcionam" />
-      <CommentSection postId="agentes-ia-2026-como-funcionam" />
+      <CommentSection postId="agentes-ia-2026-como-funcionam" postTitle="Agentes de IA 2026: O Que São, Como Funcionam e Por Que Mudam Tudo" />
     </article>
   );
 };

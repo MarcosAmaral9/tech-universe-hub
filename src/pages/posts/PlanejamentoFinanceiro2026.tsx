@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import { useSmartBack } from "@/hooks/useSmartBack";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, Calendar, User, ChevronRight, Target, CheckCircle2, CalendarDays } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -29,7 +29,6 @@ const SmartGoalBuilder = () => {
   useEffect(() => {
     trackArticleRead("planejamento-financeiro-2026-metas", "Planejamento Financeiro Para 2026: Como Definir Metas e Alcançá-las", "invest");
   }, []);
-  const goBack = useSmartBack("/financas");
   return (
     <div className="bg-card border border-border rounded-2xl p-6 mb-8">
       <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
@@ -291,12 +290,10 @@ const PlanejamentoFinanceiro2026 = () => {
           ))}
         </div>
 
-        <button onClick={goBack} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" /> Voltar para Finanças
-      </button>
+        <BackNavigation categoryPath="/financas" categoryLabel="Finanças" />
 
         <RelatedPosts currentSlug="planejamento-financeiro-2026-metas" />
-        <CommentSection postId="33" />
+        <CommentSection postId="33" postTitle="Planejamento Financeiro Para 2026: Como Definir Metas e Alcançá-las" />
       </article>
     </>
   );
