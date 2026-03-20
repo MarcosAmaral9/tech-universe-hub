@@ -8,16 +8,54 @@ import DynamicSEO from "@/components/DynamicSEO";
 
 const POSTS_PER_PAGE = 12;
 
-const IAPage = () => {
-  const posts = getPostsByCategory("ia");
-  const [page, setPage] = useState(1);
+const SUBTOPIC_LABELS: Record<string, string> = {
+  agentes: "Agentes",
+  apps: "Apps",
+  comparativos: "Comparativos",
+  criatividade: "Criatividade",
+  dublagem: "Dublagem",
+  educacao: "Educação",
+  games: "Games",
+  privacidade: "Privacidade",
+  regulacao: "Regulação",
+  renda: "Renda",
+  saude: "Saúde",
+  seguranca: "Segurança",
+  trabalho: "Trabalho",
+  tutorial: "Tutorial",
+};
 
-  const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
-  const paged = posts.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
+const IAPage = () => {
+  const allPosts = getPostsByCategory("ia");
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
+  const [page, setPage] = useState(1);
 
   const changePage = (newPage: number | ((p: number) => number)) => {
     setPage(newPage);
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const subtopics = useMemo(() => {
+    const set = new Set<string>();
+    allPosts.forEach((p) => {
+      if (p.subtopic) set.add(p.subtopic);
+    });
+    return Array.from(set).sort((a, b) =>
+      (SUBTOPIC_LABELS[a] || a).localeCompare(SUBTOPIC_LABELS[b] || b)
+    );
+  }, [allPosts]);
+
+  const filtered = useMemo(
+    () => (activeFilter ? allPosts.filter((p) => p.subtopic === activeFilter) : allPosts),
+    [allPosts, activeFilter]
+  );
+
+  const totalPages = Math.ceil(filtered.length / POSTS_PER_PAGE);
+  const paged = filtered.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
+
+  const handleFilter = (sub: string | null) => {
+    setActiveFilter(sub);
+    setPage(1);
   };
 
   return (
@@ -37,7 +75,7 @@ const IAPage = () => {
           <div className="w-2 h-12 bg-ia rounded-full"></div>
           <h1 className="font-display text-3xl md:text-5xl font-bold">
             Inteligência <span className="text-ia">Artificial</span>
-            <span className="ml-3 text-base font-normal text-muted-foreground align-middle">({posts.length} artigos)</span>
+            <span className="ml-3 text-base font-normal text-muted-foreground align-middle">({allPosts.length} artigos)</span>
           </h1>
         </div>
         
@@ -47,6 +85,32 @@ const IAPage = () => {
         </p>
       </div>
 
+      {/* Subtopic Filters */}
+      <div className="flex flex-wrap gap-2 mb-8">
+        <Button
+          variant={activeFilter === null ? "default" : "outline"}
+          size="sm"
+          onClick={() => handleFilter(null)}
+          className={activeFilter === null ? "bg-ia hover:bg-ia/90 text-white" : ""}
+        >
+          Todos ({allPosts.length})
+        </Button>
+        {subtopics.map((sub) => {
+          const count = allPosts.filter((p) => p.subtopic === sub).length;
+          return (
+            <Button
+              key={sub}
+              variant={activeFilter === sub ? "default" : "outline"}
+              size="sm"
+              onClick={() => handleFilter(sub)}
+              className={activeFilter === sub ? "bg-ia hover:bg-ia/90 text-white" : ""}
+            >
+              {SUBTOPIC_LABELS[sub] || sub} ({count})
+            </Button>
+          );
+        })}
+      </div>
+
       {/* Posts Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {paged.map((post) => (
@@ -54,7 +118,7 @@ const IAPage = () => {
         ))}
       </div>
 
-      {posts.length === 0 && (
+      {filtered.length === 0 && (
         <div className="text-center py-16">
           <p className="text-muted-foreground text-lg">
             Nenhum artigo encontrado nesta categoria ainda.
