@@ -29,7 +29,7 @@ const AssassinsCreedPortal = () => {
 
   return (
     <div className="container py-8 max-w-6xl mx-auto">
-      <BackNavigation categoryPath="/geek" categoryLabel="Geek" />
+      <BackNavigation category="geek" />
 
       {/* Hero Banner */}
       <div className="relative rounded-2xl overflow-hidden mb-12 aspect-[21/9]">

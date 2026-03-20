@@ -113,10 +113,9 @@ const CrimsonDesertMapa = () => {
   return (
     <article className="container py-8 max-w-4xl mx-auto">
       <BackNavigation
-        categoryPath="/geek"
-        categoryLabel="Geek"
+        category="geek"
         portalPath="/geek/crimson-desert"
-        portalLabel="Portal Crimson Desert"
+        portalLabel="Painel Crimson Desert"
       />
 
       <header className="mb-8">

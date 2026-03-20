@@ -16,7 +16,7 @@ const AvatarPortal = () => {
 
   return (
     <div className="min-h-screen">
-      <BackNavigation categoryPath="/geek" categoryLabel="Geek" />
+      <BackNavigation category="geek" />
 
       {/* Hero Banner */}
       <section className="relative h-[60vh] min-aspect-video md:h-[400px] overflow-hidden">
