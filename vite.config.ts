@@ -104,7 +104,9 @@ export default defineConfig(({ mode }) => ({
       workbox: {
         skipWaiting: true,
         clientsClaim: true,
-        globPatterns: ["**/*.{js,css,html,ico,png,svg,webp,woff2,jpg}"],
+        // Only precache HTML and critical static assets — NOT hashed JS/CSS bundles
+        // Hashed bundles change every build; precaching them causes stale SW white screen on Hostinger
+        globPatterns: ["**/*.{ico,png,svg,webp,woff2}"],
         navigateFallback: "/index.html",
         navigateFallbackDenylist: [/^\/~oauth/],
         // Runtime caching strategies
