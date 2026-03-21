@@ -2,6 +2,8 @@ import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import PostCard from "@/components/PostCard";
 import { getPostsByCategory } from "@/data/posts";
+import tensuraPortalImg from "@/assets/tensura-portal-banner.webp";
+import overlordPortalImg from "@/assets/overlord-portal-banner.webp";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { Subtopic } from "@/types/blog";
@@ -21,6 +23,8 @@ const SUBTOPIC_LABELS: Record<string, string> = {
   games: "Games",
   collectibles: "Colecionáveis",
   "saude-mental": "Saúde Mental",
+  tensura: "TenSura",
+  overlord: "Overlord",
 };
 
 const OtakuPage = () => {
@@ -85,6 +89,35 @@ const OtakuPage = () => {
           Recomendações, reviews e novidades do mundo dos quadrinhos asiáticos!
         </p>
       </div>
+
+      {/* Special Portals - only when no filter active */}
+      {!activeFilter && (
+        <div className="mb-10">
+          <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">
+            📺 Painéis Especiais
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <Link to="/otaku/tensura" className="group relative rounded-xl overflow-hidden aspect-video border border-border block">
+              <img src={tensuraPortalImg} alt="TenSura" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <span className="text-xs bg-blue-500/20 text-blue-400 border border-blue-500/30 px-2 py-1 rounded-full font-bold mb-2 inline-block">🟦 Isekai</span>
+                <h3 className="font-display text-xl font-bold text-white">TenSura</h3>
+                <p className="text-white/70 text-sm">Rimuru Tempest e a Federação Jura-Tempest — T4 em abril 2026.</p>
+              </div>
+            </Link>
+            <Link to="/otaku/overlord" className="group relative rounded-xl overflow-hidden aspect-video border border-border block">
+              <img src={overlordPortalImg} alt="Overlord" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <span className="text-xs bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 px-2 py-1 rounded-full font-bold mb-2 inline-block">💀 Isekai</span>
+                <h3 className="font-display text-xl font-bold text-white">Overlord</h3>
+                <p className="text-white/70 text-sm">Ainz Ooal Gown e Nazarick — filme Sacred Kingdom (2024).</p>
+              </div>
+            </Link>
+          </div>
+        </div>
+      )}
 
       {/* Subtopic Filters */}
       <div className="flex flex-wrap gap-2 mb-8">

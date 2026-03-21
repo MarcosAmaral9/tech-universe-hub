@@ -141,6 +141,12 @@ const CrimsonDesertCombate = lazy(() => import("./pages/posts/CrimsonDesertComba
 const CrimsonDesertReview = lazy(() => import("./pages/posts/CrimsonDesertReview"));
 const CrimsonDesertBuilds = lazy(() => import("./pages/posts/CrimsonDesertBuilds"));
 const CrimsonDesertMapa     = lazy(() => import("./pages/posts/CrimsonDesertMapa"));
+const TensuraGuiaCompleto   = lazy(() => import("./pages/posts/TensuraGuiaCompleto"));
+const TensuraPersonagens    = lazy(() => import("./pages/posts/TensuraPersonagens"));
+const TensuraPortal         = lazy(() => import("./pages/posts/TensuraPortal"));
+const OverlordGuiaCompleto  = lazy(() => import("./pages/posts/OverlordGuiaCompleto"));
+const OverlordPersonagens   = lazy(() => import("./pages/posts/OverlordPersonagens"));
+const OverlordPortal        = lazy(() => import("./pages/posts/OverlordPortal"));
 const SocialPanelPage = lazy(() => import("./pages/SocialPanelPage"));
 
 const queryClient = new QueryClient({
@@ -184,6 +190,8 @@ const App = () => (
                 <Route path="/geek" element={<GeekPage />} />
                 {/* Portals */}
                 <Route path="/geek/avatar" element={<AvatarPortal />} />
+                <Route path="/otaku/tensura" element={<TensuraPortal />} />
+                <Route path="/otaku/overlord" element={<OverlordPortal />} />
                 <Route path="/geek/assassins-creed" element={<AssassinsCreedPortal />} />
                 <Route path="/geek/crimson-desert" element={<CrimsonDesertPanel />} />
                 <Route path="/post/crimson-desert-guia-completo" element={<CrimsonDesertGuiaCompleto />} />
@@ -191,6 +199,10 @@ const App = () => (
                 <Route path="/post/crimson-desert-review-2026" element={<CrimsonDesertReview />} />
                 <Route path="/post/crimson-desert-builds-guia-2026" element={<CrimsonDesertBuilds />} />
                 <Route path="/post/crimson-desert-mapa-regioes-pywel" element={<CrimsonDesertMapa />} />
+                <Route path="/post/tensura-guia-completo-temporadas-filmes" element={<TensuraGuiaCompleto />} />
+                <Route path="/post/tensura-personagens-rimuru-demon-lords" element={<TensuraPersonagens />} />
+                <Route path="/post/overlord-guia-completo-temporadas-ainz" element={<OverlordGuiaCompleto />} />
+                <Route path="/post/overlord-ainz-guardians-personagens" element={<OverlordPersonagens />} />
                 {/* Post Routes */}
                 <Route path="/post/diferenca-mangas-manhuas-manhwas" element={<DiferencaMangasManhuas />} />
                 <Route path="/post/como-diferenciar-manhuas-manhwas" element={<DiferenciarManhuasManhwas />} />

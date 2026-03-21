@@ -73,6 +73,10 @@ import dragonAgeImg from "@/assets/dragon-age-veilguard-review-2026.webp";
 import demonSlayerImg from "@/assets/demon-slayer-hashira-2026.webp";
 import onePieceImg from "@/assets/one-piece-final-saga-2026.webp";
 import crimsonMapaImg from "@/assets/crimson-desert-mapa-pywel.webp";
+import tensuraGuiaImg from "@/assets/tensura-guia-completo.webp";
+import tensuraCharsImg from "@/assets/tensura-personagens.webp";
+import overlordGuiaImg from "@/assets/overlord-guia-completo.webp";
+import overlordCharsImg from "@/assets/overlord-personagens.webp";
 
 export const blogPosts: BlogPost[] = [
   // IA Posts
@@ -1055,6 +1059,60 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-19",
     readTime: "13 min"
+  },
+  // ── TenSura Posts ──────────────────────────────────────────────────────────
+  {
+    id: "76",
+    slug: "tensura-guia-completo-temporadas-filmes",
+    title: "TenSura: Guia Completo de Temporadas e Filmes",
+    excerpt: "That Time I Got Reincarnated as a Slime tem 3 temporadas (+ T4 em abril/2026), 2 filmes e décadas de conteúdo. Tudo sobre a saga de Rimuru Tempest.",
+    content: "",
+    category: "otaku",
+    subtopic: "tensura",
+    image: tensuraGuiaImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-20",
+    readTime: "12 min",
+  },
+  {
+    id: "77",
+    slug: "tensura-personagens-rimuru-demon-lords",
+    title: "TenSura: Rimuru Tempest e os Personagens Principais",
+    excerpt: "De Rimuru Tempest aos Dez Grandes Demon Lords — conheça Milim, Shion, Benimaru, Diablo e todos os habitantes do universo de Tensura.",
+    content: "",
+    category: "otaku",
+    subtopic: "tensura",
+    image: tensuraCharsImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-21",
+    readTime: "10 min",
+  },
+  // ── Overlord Posts ──────────────────────────────────────────────────────────
+  {
+    id: "78",
+    slug: "overlord-guia-completo-temporadas-ainz",
+    title: "Overlord: Guia Completo de Temporadas e Filme Sacred Kingdom",
+    excerpt: "As 4 temporadas de Overlord (2015–2022) e o filme The Sacred Kingdom (setembro/2024) — tudo sobre a saga de Ainz Ooal Gown e Nazarick.",
+    content: "",
+    category: "otaku",
+    subtopic: "overlord",
+    image: overlordGuiaImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-20",
+    readTime: "13 min",
+  },
+  {
+    id: "79",
+    slug: "overlord-ainz-guardians-personagens",
+    title: "Overlord: Ainz Ooal Gown e os Floor Guardians de Nazarick",
+    excerpt: "Momonga/Ainz, Albedo, Demiurge, Shalltear, Cocytus e todos os guardiões — seus poderes e por que Ainz finge que planeja tudo.",
+    content: "",
+    category: "otaku",
+    subtopic: "overlord",
+    image: overlordCharsImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-21",
+    readTime: "11 min",
   },
 ];
 

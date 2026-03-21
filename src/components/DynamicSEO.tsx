@@ -86,6 +86,16 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Personalize sua experiência no VICIO<CODE>.",
     keywords: "configurações, preferências, tema, personalizar, conta, perfil",
   },
+  "/otaku/tensura": {
+    title: "TenSura — Portal Completo",
+    description: "Tudo sobre That Time I Got Reincarnated as a Slime: temporadas, filmes, personagens e o universo de Rimuru Tempest.",
+    keywords: "tensura, tensei shitara slime, rimuru tempest, milim nava, temporadas, filme scarlet bond, isekai, anime 2026",
+  },
+  "/otaku/overlord": {
+    title: "Overlord — Portal Completo",
+    description: "Tudo sobre Overlord: as 4 temporadas, o filme Sacred Kingdom (2024), Ainz Ooal Gown, os Floor Guardians e o universo de Nazarick.",
+    keywords: "overlord, ainz ooal gown, momonga, nazarick, floor guardians, temporadas overlord, sacred kingdom, isekai",
+  },
   "/geek/avatar": {
     title: "Portal Avatar",
     description: "Tudo sobre a franquia Avatar de James Cameron: filmes, jogos e tecnologia.",
