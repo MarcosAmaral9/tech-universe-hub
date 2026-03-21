@@ -68,7 +68,7 @@ const InvestimentosPage = () => {
   return (
     <>
       <DynamicSEO />
-      <div className="container py-8">
+      <div className="container py-8 md:py-10">
       {/* Header */}
       <div className="mb-8">
         <Link to="/">

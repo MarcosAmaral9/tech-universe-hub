@@ -62,6 +62,7 @@ const B3StockTicker = () => {
 
         setStocks(quotes);
         setIsFallback(false);
+        setLoading(false);
 
         // Mostra o horário em que o servidor buscou os dados (não o horário local)
         const serverTime = data._meta?.updatedAt
@@ -125,12 +126,12 @@ const B3StockTicker = () => {
   // Skeleton
   if (loading && stocks.length === 0) {
     return (
-      <div className="bg-card border border-border rounded-2xl p-6 mb-8">
+      <div className="bg-card border border-border rounded-2xl p-4 sm:p-6 mb-8">
         <div className="flex items-center gap-2 mb-4">
           <TrendingUp className="h-5 w-5 text-invest" />
           <h3 className="font-bold">Bolsa de Valores B3</h3>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-3">
           {Array.from({ length: 10 }).map((_, i) => (
             <div key={i} className="animate-pulse bg-muted rounded-xl h-20" />
           ))}
@@ -142,7 +143,7 @@ const B3StockTicker = () => {
   // expiresAt vem do servidor — igual para todos os usuários
 
   return (
-    <div className="bg-card border border-border rounded-2xl p-6 mb-8">
+    <div className="bg-card border border-border rounded-2xl p-4 sm:p-6 mb-8">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <TrendingUp className="h-5 w-5 text-invest" />
@@ -189,7 +190,7 @@ const B3StockTicker = () => {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-3">
         {stocks.slice(0, 10).map((stock) => (
           <div
             key={stock.symbol}

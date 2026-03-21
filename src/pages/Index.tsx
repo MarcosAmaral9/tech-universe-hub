@@ -34,7 +34,7 @@ const Index = () => {
           Explore por <span className="text-gradient">Categoria</span>
         </h2>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
           {categories.map((cat) => (
             <Link
               key={cat.id}
@@ -53,8 +53,8 @@ const Index = () => {
       </section>
 
       {/* Latest Posts - Show 12 latest posts sorted chronologically */}
-      <section className="container py-12">
-        <div className="flex items-center justify-between mb-8">
+      <section className="container py-8 md:py-12">
+        <div className="flex items-center justify-between mb-6 md:mb-8">
           <h2 className="font-display text-2xl md:text-3xl font-bold">
             Últimos <span className="text-gradient">Artigos</span>
           </h2>

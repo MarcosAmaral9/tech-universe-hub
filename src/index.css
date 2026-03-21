@@ -227,3 +227,59 @@ html.font-normal {
 html.font-large {
   font-size: 18px;
 }
+
+/* ── Spacing & Typography Improvements ─────────────────────────── */
+
+/* Article images: breathing room on all screen sizes */
+.prose img {
+  @apply rounded-xl my-6 mx-auto;
+}
+
+/* Article blockquotes: visual separation */
+.prose blockquote {
+  @apply border-l-4 border-primary/40 pl-4 my-6 italic text-muted-foreground;
+}
+
+/* Better figure caption spacing */
+.prose figcaption {
+  @apply text-center text-sm text-muted-foreground mt-2 mb-6;
+}
+
+/* Section rhythm in prose content */
+.prose h2 + p,
+.prose h3 + p {
+  margin-top: 0.5rem;
+}
+
+/* Card hover smoothness */
+.card-hover {
+  @apply transition-all duration-200 hover:shadow-md hover:-translate-y-0.5;
+}
+
+/* Ticker animation — smooth infinite scroll */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Mobile: ensure images never overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile: table horizontal scroll */
+.prose table {
+  @apply w-full overflow-x-auto block;
+}
+
+/* Focus visible: accessibility ring */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar        { @apply w-1.5 h-1.5; }
+::-webkit-scrollbar-track  { @apply bg-transparent; }
+::-webkit-scrollbar-thumb  { @apply bg-border rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-muted-foreground/50; }

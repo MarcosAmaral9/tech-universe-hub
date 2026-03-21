@@ -10,17 +10,15 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
     <!-- ① DNS/connection hints — zero blocking, happen in parallel -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://api.coingecko.com" />
     <link rel="dns-prefetch" href="https://brapi.dev" />
 
-    <!-- ② Google Fonts — non-blocking (media=print swap trick) -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" />
-    </noscript>
+    <!-- ② Fonts — self-hosted CSS with local() fallback + font-display:swap
+         Eliminates: Google Fonts DNS lookup, TCP handshake, redirect chain (~200ms) -->
+    <link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="/fonts/fonts.css" /></noscript>
 
     <!-- ③ GA4 — async, non-blocking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XDJ1D1LJMK"></script>

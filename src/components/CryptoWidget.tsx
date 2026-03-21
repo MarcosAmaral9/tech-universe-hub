@@ -110,12 +110,12 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
 
   if (loading && cryptos.length === 0) {
     return (
-      <div className="bg-card border border-border rounded-2xl p-6 mb-8">
+      <div className="bg-card border border-border rounded-2xl p-4 sm:p-6 mb-8">
         <div className="flex items-center gap-2 mb-4">
           <Bitcoin className="h-5 w-5 text-invest" />
           <h3 className="font-bold">Criptomoedas</h3>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-4 gap-3">
           {Array.from({ length: compact ? 5 : 8 }).map((_, i) => (
             <div key={i} className="animate-pulse bg-muted rounded-xl h-24" />
           ))}
@@ -125,7 +125,7 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
   }
 
   return (
-    <div ref={ref} className="bg-card border border-border rounded-2xl p-6 mb-8">
+    <div ref={ref} className="bg-card border border-border rounded-2xl p-4 sm:p-6 mb-8">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <Bitcoin className="h-5 w-5 text-invest" />
@@ -151,7 +151,7 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
           {[...displayCryptos, ...displayCryptos].map((crypto, i) => (
             <div key={i} className="flex items-center gap-2 text-sm">
               {crypto.image && (
-                <img src={crypto.image} alt={crypto.name} className="w-4 h-4 rounded-full" />
+                <img src={crypto.image} width="24" height="24" alt={crypto.name} className="w-5 h-5 rounded-full flex-shrink-0" />
               )}
               <span className="font-bold text-foreground uppercase">{crypto.symbol}</span>
               <span className="text-muted-foreground">R$ {formatBRL(crypto.current_price)}</span>
@@ -172,7 +172,7 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
       </div>
 
       {/* Grid cards */}
-      <div className={`grid grid-cols-2 ${compact ? "sm:grid-cols-3 md:grid-cols-5" : "sm:grid-cols-3 md:grid-cols-4"} gap-3`}>
+      <div className={`grid grid-cols-2 ${compact ? "sm:grid-cols-3 md:grid-cols-5" : "sm:grid-cols-2 md:grid-cols-4"} gap-3`}>
         {displayCryptos.map((crypto) => {
           const isUp = crypto.price_change_percentage_24h >= 0;
           return (
@@ -185,7 +185,7 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
               <div className="flex items-center justify-between mb-1">
                 <div className="flex items-center gap-1.5">
                   {crypto.image && (
-                    <img src={crypto.image} alt={crypto.name} className="w-4 h-4 rounded-full" />
+                    <img src={crypto.image} width="24" height="24" alt={crypto.name} className="w-5 h-5 rounded-full flex-shrink-0" />
                   )}
                   <span className="text-xs font-bold text-foreground uppercase">{crypto.symbol}</span>
                 </div>

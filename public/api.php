@@ -604,7 +604,7 @@ if ($method === 'GET' && $action === 'b3') {
     // 3. Busca dados frescos na brapi.dev
     $tickers = $BRAPI_TOKEN
         ? 'PETR4,VALE3,ITUB4,BBDC4,ABEV3,WEGE3,BBAS3,RENT3,MGLU3,SUZB3'
-        : 'PETR4,VALE3,ITUB4,MGLU3';
+        : 'PETR4,VALE3,ITUB4,BBDC4,ABEV3,WEGE3,BBAS3,MGLU3';
 
     $url     = "https://brapi.dev/api/quote/{$tickers}?fundamental=false";
     $headers = $BRAPI_TOKEN

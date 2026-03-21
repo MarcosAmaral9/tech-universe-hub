@@ -92,7 +92,7 @@ const CotacoesPage = () => {
       </div>
 
       {/* Widgets */}
-      <div className="space-y-2">
+      <div className="space-y-6">
         {show("b3") && (
           <div ref={b3Ref}>
             <B3StockTicker />

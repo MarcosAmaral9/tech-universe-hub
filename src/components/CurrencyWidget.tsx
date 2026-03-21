@@ -84,7 +84,7 @@ const CurrencyWidget = () => {
 
   if (loading && displayRates.length === 0) {
     return (
-      <div className="bg-card border border-border rounded-2xl p-6 mb-8">
+      <div className="bg-card border border-border rounded-2xl p-4 sm:p-6 mb-8">
         <div className="flex items-center gap-2 mb-4">
           <DollarSign className="h-5 w-5 text-invest" />
           <h3 className="font-bold">Câmbio</h3>
@@ -97,7 +97,7 @@ const CurrencyWidget = () => {
   }
 
   return (
-    <div className="bg-card border border-border rounded-2xl p-6 mb-8">
+    <div className="bg-card border border-border rounded-2xl p-4 sm:p-6 mb-8">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <DollarSign className="h-5 w-5 text-invest" />

@@ -3,37 +3,37 @@
   <!-- Páginas Principais -->
   <url>
     <loc>https://viciocode.com/</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://viciocode.com/otaku</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://viciocode.com/ia</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://viciocode.com/financas</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://viciocode.com/geek</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://viciocode.com/cotacoes</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
@@ -47,13 +47,13 @@
   <!-- Portais -->
   <url>
     <loc>https://viciocode.com/geek/avatar</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://viciocode.com/geek/assassins-creed</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -456,7 +456,7 @@
   <!-- Crimson Desert Portal e Artigos -->
   <url>
     <loc>https://viciocode.com/geek/crimson-desert</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
