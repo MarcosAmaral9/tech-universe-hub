@@ -1072,7 +1072,7 @@ export const blogPosts: BlogPost[] = [
     image: tensuraGuiaImg,
     author: "VICIO<CODE>",
     date: "2026-03-20",
-    readTime: "12 min",
+    readTime: "18 min",
   },
   {
     id: "77",
@@ -1099,7 +1099,7 @@ export const blogPosts: BlogPost[] = [
     image: overlordGuiaImg,
     author: "VICIO<CODE>",
     date: "2026-03-20",
-    readTime: "13 min",
+    readTime: "18 min",
   },
   {
     id: "79",
@@ -1112,7 +1112,7 @@ export const blogPosts: BlogPost[] = [
     image: overlordCharsImg,
     author: "VICIO<CODE>",
     date: "2026-03-21",
-    readTime: "11 min",
+    readTime: "15 min",
   },
 ];
 
