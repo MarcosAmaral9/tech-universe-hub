@@ -97,7 +97,11 @@ const ACOdyssey = lazy(() => import("./pages/posts/ACOdyssey"));
 const ACBlackFlag = lazy(() => import("./pages/posts/ACBlackFlag"));
 const ACOrigins = lazy(() => import("./pages/posts/ACOrigins"));
 const ACMirage = lazy(() => import("./pages/posts/ACMirage"));
-const AC3Remastered = lazy(() => import("./pages/posts/AC3Remastered"));
+const AC3Remastered  = lazy(() => import("./pages/posts/AC3Remastered"));
+const AC1Altair      = lazy(() => import("./pages/posts/AC1Altair"));
+const AC2Ezio        = lazy(() => import("./pages/posts/AC2Ezio"));
+const ACBrotherhood  = lazy(() => import("./pages/posts/ACBrotherhood"));
+const ACRevelations  = lazy(() => import("./pages/posts/ACRevelations"));
 const ACSyndicate = lazy(() => import("./pages/posts/ACSyndicate"));
 const ACUnity = lazy(() => import("./pages/posts/ACUnity"));
 const ACRogue = lazy(() => import("./pages/posts/ACRogue"));
@@ -235,6 +239,10 @@ const App = () => (
                 <Route path="/post/ac-origins-renascimento-franquia-egito" element={<ACOrigins />} />
                 <Route path="/post/ac-mirage-retorno-raizes-bagda" element={<ACMirage />} />
                 <Route path="/post/ac-3-remastered-revolucao-americana" element={<AC3Remastered />} />
+                <Route path="/post/ac-1-altair-terra-santa-1191" element={<AC1Altair />} />
+                <Route path="/post/ac-2-ezio-italia-renascentista" element={<AC2Ezio />} />
+                <Route path="/post/ac-brotherhood-ezio-roma-borgia" element={<ACBrotherhood />} />
+                <Route path="/post/ac-revelations-ezio-constantinopla" element={<ACRevelations />} />
                 <Route path="/post/ac-syndicate-revolucao-industrial-londres" element={<ACSyndicate />} />
                 <Route path="/post/ac-unity-jogo-frente-tempo-paris" element={<ACUnity />} />
                 <Route path="/post/ac-rogue-assassino-templario" element={<ACRogue />} />

@@ -3,6 +3,10 @@ import DynamicSEO from "@/components/DynamicSEO";
 import BackNavigation from "@/components/BackNavigation";
 import { Sword, Trophy, Star, ChevronRight, Skull, Anchor, Globe, Zap } from "lucide-react";
 
+import ac1AltairImg  from "@/assets/ac-1-altair.webp";
+import ac2EzioImg    from "@/assets/ac-2-ezio.webp";
+import acBrotherImg  from "@/assets/ac-brotherhood.webp";
+import acRevImg      from "@/assets/ac-revelations.webp";
 import acPortalImg  from "@/assets/assassins-creed-portal.webp";
 import acShadowsImg from "@/assets/ac-shadows.webp";
 import acMirageImg  from "@/assets/ac-mirage.webp";
@@ -116,6 +120,46 @@ const games = [
     image: ac3Img,
     icon: <Globe className="h-4 w-4" />,
   },
+  {
+    slug: "ac-1-altair-terra-santa-1191",
+    title: "Assassin's Creed",
+    subtitle: "Terra Santa · Cruzadas · 2007",
+    badge: "🏛️ O Original",
+    badgeColor: "bg-amber-500/20 text-amber-400 border border-amber-500/30",
+    desc: "Altaïr Ibn-La'Ahad nas Cruzadas de 1191. O jogo que fundou tudo — Animus, Credo, Maçã do Éden.",
+    image: ac1AltairImg,
+    icon: null,
+  },
+  {
+    slug: "ac-2-ezio-italia-renascentista",
+    title: "AC II",
+    subtitle: "Itália Renascentista · 2009",
+    badge: "👑 Favorito dos Fãs",
+    badgeColor: "bg-violet-500/20 text-violet-400 border border-violet-500/30",
+    desc: "Ezio Auditore em Florença e Veneza. Leonardo da Vinci, os Médici, os Bórgias — o melhor da trilogia.",
+    image: ac2EzioImg,
+    icon: null,
+  },
+  {
+    slug: "ac-brotherhood-ezio-roma-borgia",
+    title: "AC Brotherhood",
+    subtitle: "Roma · 2010",
+    badge: "⚔️ Recrutamento",
+    badgeColor: "bg-red-700/20 text-red-400 border border-red-700/30",
+    desc: "Ezio reconstrói a Irmandade em Roma. Cesare Borgia, as máquinas de Leonardo e o primeiro multiplayer.",
+    image: acBrotherImg,
+    icon: null,
+  },
+  {
+    slug: "ac-revelations-ezio-constantinopla",
+    title: "AC Revelations",
+    subtitle: "Constantinopla · 2011",
+    badge: "🕌 Adeus Ezio",
+    badgeColor: "bg-blue-700/20 text-blue-400 border border-blue-700/30",
+    desc: "O fim da trilogia Ezio — Constantinopla otomana, os selos de Altaïr e um adeus inesquecível.",
+    image: acRevImg,
+    icon: null,
+  },
 ];
 
 const eras = [
@@ -155,7 +199,7 @@ const AssassinsCreedPortal = () => (
             Das ruas de Damasco ao Japão Feudal — 18 anos de assassinos, templários e história. Guias, análises e rankings completos de toda a franquia.
           </p>
           <div className="flex flex-wrap gap-2 mt-5">
-            <span className="text-xs bg-purple-500/20 text-purple-300 border border-purple-500/30 px-3 py-1.5 rounded-full font-medium">🗡️ 10 Jogos</span>
+            <span className="text-xs bg-purple-500/20 text-purple-300 border border-purple-500/30 px-3 py-1.5 rounded-full font-medium">🗡️ 14 Jogos</span>
             <span className="text-xs bg-white/10 text-white/70 px-3 py-1.5 rounded-full">Desde 2007</span>
             <span className="text-xs bg-white/10 text-white/70 px-3 py-1.5 rounded-full">Ubisoft</span>
           </div>
@@ -247,7 +291,7 @@ const AssassinsCreedPortal = () => (
         <div className="flex items-center gap-2 mb-6">
           <span className="w-1 h-6 bg-purple-500 rounded-full" />
           <h2 className="font-display text-2xl font-bold">Todos os Jogos</h2>
-          <span className="ml-auto text-sm text-muted-foreground">{games.length - 1} análises</span>
+          <span className="ml-auto text-sm text-muted-foreground">{games.length} jogos no portal</span>
         </div>
 
         {/* 2-col on mobile, 3-col on md, 4-col on xl — max use of screen */}

@@ -16,6 +16,10 @@ import acValhallaImg from "@/assets/ac-valhalla.webp";
 import acShadowsImg from "@/assets/ac-shadows.webp";
 import acOdysseyImg from "@/assets/ac-odyssey.webp";
 import acBlackFlagImg from "@/assets/ac-black-flag.webp";
+import ac1AltairImg    from "@/assets/ac-1-altair.webp";
+import ac2EzioImg      from "@/assets/ac-2-ezio.webp";
+import acBrotherImg    from "@/assets/ac-brotherhood.webp";
+import acRevImg        from "@/assets/ac-revelations.webp";
 import acOriginsImg from "@/assets/ac-origins.webp";
 import acMirageImg from "@/assets/ac-mirage.webp";
 import ac3Img from "@/assets/ac-3.webp";
@@ -521,6 +525,59 @@ export const blogPosts: BlogPost[] = [
     readTime: "18 min"
   },
   // GEEK Posts - Assassin's Creed
+  // ── AC Classic Era ──────────────────────────────────────────────────────────
+  {
+    id: "80",
+    slug: "ac-1-altair-terra-santa-1191",
+    title: "Assassin's Creed (2007): O Início da Lenda — Altaïr e a Terra Santa",
+    excerpt: "O jogo que fundou tudo: Altaïr Ibn-La'Ahad nas Cruzadas de 1191, a Maçã do Éden, o Animus e o Credo dos Assassinos. Por que AC1 ainda importa em 2026.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: ac1AltairImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-21",
+    readTime: "18 min",
+  },
+  {
+    id: "81",
+    slug: "ac-2-ezio-italia-renascentista",
+    title: "Assassin's Creed II: Ezio Auditore e a Itália Renascentista",
+    excerpt: "O melhor AC na opinião de muitos fãs: Ezio Auditore em Florença, Veneza e Roma Renascentistas. Leonardo da Vinci, os Médici, os Bórgias e a Maçã do Éden — guia completo.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: ac2EzioImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-21",
+    readTime: "20 min",
+  },
+  {
+    id: "82",
+    slug: "ac-brotherhood-ezio-roma-borgia",
+    title: "Assassin's Creed Brotherhood: Ezio Reconstrói a Irmandade em Roma",
+    excerpt: "Ezio com 40 anos enfrenta Cesare Borgia em Roma — review completa do sistema de recrutamento de Assassinos, as máquinas de Leonardo, o multijogador online e o final chocante.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acBrotherImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-21",
+    readTime: "17 min",
+  },
+  {
+    id: "83",
+    slug: "ac-revelations-ezio-constantinopla",
+    title: "Assassin's Creed Revelations: Ezio em Constantinopla e o Legado de Altaïr",
+    excerpt: "O encerramento da trilogia Ezio: Constantinopla otomana de 1511, os selos de Altaïr, Sofia Sartor, o gancho-lâmina e o adeus emocionante dos dois Assassinos mais icônicos.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acRevImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-21",
+    readTime: "16 min",
+  },
   {
     id: "12",
     slug: "ac-valhalla-jornada-epica-eivor",
