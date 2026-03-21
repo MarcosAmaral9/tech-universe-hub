@@ -60,17 +60,18 @@ $action = $_GET['action'] ?? '';
 
 
 // ─── Helper: fetch HTTP com curl (preferido) ou file_get_contents ─────────────
-function httpGet(string $url, int $timeout = 10): ?string {
+function httpGet(string $url, int $timeout = 10, array $extraHeaders = []): ?string {
     // Tenta curl primeiro (mais confiável no Hostinger)
     if (function_exists('curl_init')) {
         $ch = curl_init($url);
+        $headers = array_merge(['Accept: application/json'], $extraHeaders);
         curl_setopt_array($ch, [
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_TIMEOUT        => $timeout,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_SSL_VERIFYPEER => true,
-            CURLOPT_USERAGENT      => 'VicioCode/1.0',
-            CURLOPT_HTTPHEADER     => ['Accept: application/json'],
+            CURLOPT_USERAGENT      => 'Mozilla/5.0 (compatible; VicioCode/1.0)',
+            CURLOPT_HTTPHEADER     => $headers,
         ]);
         $result = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -81,10 +82,12 @@ function httpGet(string $url, int $timeout = 10): ?string {
     }
     // Fallback para file_get_contents
     if (ini_get('allow_url_fopen')) {
+        $headerStr = "Accept: application/json\r\nUser-Agent: Mozilla/5.0 (compatible; VicioCode/1.0)\r\n";
+        foreach ($extraHeaders as $h) { $headerStr .= $h . "\r\n"; }
         $ctx = stream_context_create(['http' => [
             'timeout'       => $timeout,
             'ignore_errors' => true,
-            'header'        => "Accept: application/json\r\nUser-Agent: VicioCode/1.0\r\n",
+            'header'        => $headerStr,
         ]]);
         $result = @file_get_contents($url, false, $ctx);
         return $result !== false ? $result : null;
@@ -651,6 +654,48 @@ if ($method === 'GET' && $action === 'b3') {
         @file_put_contents($CACHE_FILE, json_encode($result));
         echo json_encode($result);
         exit;
+    }
+
+    // ── Fallback: Yahoo Finance (sem token, gratuito) ───────────────────────
+    if (empty($data['results'])) {
+        $yfTickers = ['PETR4.SA','VALE3.SA','ITUB4.SA','BBDC4.SA','ABEV3.SA','WEGE3.SA','BBAS3.SA','MGLU3.SA'];
+        $yfResults = [];
+        foreach (array_slice($yfTickers, 0, 8) as $ticker) {
+            $yfUrl = "https://query1.finance.yahoo.com/v8/finance/chart/{$ticker}?interval=1d&range=1d";
+            $yfRaw = httpGet($yfUrl, 6, ["User-Agent: Mozilla/5.0 (compatible; VicioCode/1.0)"]);
+            if ($yfRaw) {
+                $yfData = json_decode($yfRaw, true);
+                $meta   = $yfData['chart']['result'][0]['meta'] ?? null;
+                if ($meta && isset($meta['regularMarketPrice'])) {
+                    $prev  = $meta['chartPreviousClose'] ?? $meta['previousClose'] ?? $meta['regularMarketPrice'];
+                    $price = $meta['regularMarketPrice'];
+                    $pct   = $prev > 0 ? round((($price - $prev) / $prev) * 100, 2) : 0;
+                    $symbol = str_replace('.SA', '', $ticker);
+                    $yfResults[] = [
+                        'symbol'                    => $symbol,
+                        'shortName'                 => $meta['shortName'] ?? $symbol,
+                        'regularMarketPrice'        => $price,
+                        'regularMarketChangePercent'=> $pct,
+                    ];
+                }
+            }
+        }
+        if (!empty($yfResults)) {
+            $result = [
+                'results' => $yfResults,
+                '_meta'   => [
+                    'source'     => 'yahoo-finance',
+                    'withToken'  => false,
+                    'from_cache' => false,
+                    'updatedAt'  => date('c'),
+                    'expiresAt'  => date('c', time() + $TTL_MINUTES * 60),
+                ],
+            ];
+            if ($db = getPdo()) dbCacheSave($db, 'b3', $result);
+            @file_put_contents($CACHE_FILE, json_encode($result));
+            echo json_encode($result);
+            exit;
+        }
     }
 
     // Serve cache de arquivo antigo se tiver dados válidos (melhor do que fallback)

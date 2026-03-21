@@ -26,7 +26,7 @@ const FALLBACK_STOCKS: StockQuote[] = [
 
 // Sem localStorage — o banco MySQL é a única fonte de verdade
 // O PHP gerencia o TTL e serve os mesmos dados para todos os usuários
-const REFRESH_MS = 1000 * 60 * 15; // re-busca a cada 15 min (igual ao TTL do servidor)
+const REFRESH_MS = 1000 * 60 * 5;  // re-busca a cada 5 min (server TTL é 4 min)
 
 const B3StockTicker = () => {
   const [stocks, setStocks]           = useState<StockQuote[]>([]);
@@ -162,7 +162,7 @@ const B3StockTicker = () => {
       {isFallback && (
         <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3 bg-muted/50 rounded-lg px-3 py-2">
           <AlertTriangle className="h-3.5 w-3.5 text-yellow-500 shrink-0" />
-          <span>Exibindo valores de referência. Tentando reconectar...</span>
+          <span>API indisponível — exibindo última cotação conhecida ou valor de referência.</span>
         </div>
       )}
 
@@ -223,7 +223,7 @@ const B3StockTicker = () => {
       </div>
 
       <p className="text-[10px] text-muted-foreground mt-3 text-center">
-        PETR4 • VALE3 • ITUB4 • BBDC4 • ABEV3 • WEGE3 • BBAS3 • RENT3 • MGLU3 • SUZB3 — atualiza a cada 15 min • Fonte: brapi.dev
+        PETR4 • VALE3 • ITUB4 • BBDC4 • ABEV3 • WEGE3 — atualiza automaticamente • Fonte: brapi.dev / Yahoo Finance
       </p>
       <CacheStatusBar
         source={isFallback ? "local-static" : "live"}
