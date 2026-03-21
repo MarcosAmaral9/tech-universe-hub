@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
-import { Clock, User, Calendar, Tv, Film, Skull } from "lucide-react";
+import { Clock, User, Calendar, Tv, Film, BookOpen, Skull, Globe } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
@@ -10,144 +10,209 @@ import heroImg from "@/assets/overlord-guia-completo.webp";
 
 const OverlordGuiaCompleto = () => {
   useEffect(() => {
-    trackArticleRead("overlord-guia-completo-temporadas-ainz", "Overlord: Guia Completo de Todas as Temporadas e o Filme Sacred Kingdom", "otaku");
+    trackArticleRead("overlord-guia-completo-temporadas-ainz", "Overlord: Guia Completo de Temporadas, Filme e o Futuro da Série", "otaku");
   }, []);
 
   return (
     <article className="container py-8 max-w-4xl mx-auto">
       <BackNavigation category="otaku" portalPath="/otaku/overlord" portalLabel="Painel Overlord" />
-
       <header className="mb-8">
         <CategoryBadge category="otaku" size="lg" />
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-          Overlord: Guia Completo de Todas as Temporadas, Filmes e o Universo de Ainz Ooal Gown
+          Overlord: Guia Completo de Todas as Temporadas, Filme Sacred Kingdom e o Futuro da Série
         </h1>
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
           <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />20 de Março, 2026</span>
-          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />13 min de leitura</span>
+          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />16 min de leitura</span>
         </div>
         <ShareWhatsApp />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high" src={heroImg} alt="Overlord — Ainz Ooal Gown" loading="eager" decoding="async" className="w-full h-full object-cover" />
+        <img fetchpriority="high" src={heroImg} alt="Overlord — Nazarick, a Grande Tumba" loading="eager" decoding="async" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          <strong>Overlord</strong> é um dos pilares do isekai moderno: um anime onde o protagonista já é o ser mais poderoso do mundo, e a questão não é "como sobreviver", mas "como conquistar tudo" — e descobrir o que isso significa para a humanidade que ainda existe dentro dele.
+          <strong>Overlord</strong> é um dos pilares do isekai moderno — um anime em que o protagonista já é o ser mais poderoso do mundo desde o início, e a tensão não vem de sobreviver, mas de conquistar. Com 4 temporadas, 2 filmes de compilação, um filme canônico lançado em 2024 e uma 5ª temporada aguardada para 2026–2027, a saga de <strong>Ainz Ooal Gown</strong> está longe de terminar.
         </p>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
+          <BookOpen className="h-7 w-7 text-otaku" />
+          Origem: Web Novel e Light Novel
+        </h2>
+        <p>
+          <strong>Overlord</strong> foi criado por <strong>Kugane Maruyama</strong>, com ilustrações de <strong>so-bin</strong>. A história começou como web novel na plataforma <em>Arcadia</em> em 2010, antes de ser relançada no <em>Shōsetsuka ni Narō</em> em 2012. A editora <strong>Enterbrain</strong> (depois absorvida pela Kadokawa) publicou o primeiro volume da light novel em <strong>30 de julho de 2012</strong>. Atualmente existem <strong>16 volumes publicados</strong> (até julho de 2022) com os volumes 17 e 18 ainda pendentes — Maruyama confirmou no afterword do vol. 16 que a série encerrará no <strong>volume 18</strong>. A <strong>Yen Press</strong> licenciou a série para o inglês desde outubro de 2015, com o vol. 1 em inglês lançado em maio de 2016.
+        </p>
+        <p>
+          O mangá principal, adaptado por <strong>Satoshi Ōshio</strong> com arte de <strong>Hugin Miyama</strong>, foi serializado na <strong>Comp Ace</strong> (Kadokawa) de novembro de 2014 a maio de 2023. Uma série de mangá sequência, <strong>Overlord: New World</strong>, com arte de <em>Matsuki</em>, iniciou na mesma revista em <strong>26 de abril de 2024</strong>. Ambos são publicados em inglês pela <strong>Yen Press</strong>.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
           <Skull className="h-7 w-7 text-otaku" />
           A Premissa: Preso no Jogo
         </h2>
         <p>
-          Em 2138, o MMORPG de realidade virtual <strong>YGGDRASIL</strong> está encerrando seus servidores após doze anos. O jogador <strong>Suzuki Satoru</strong> decide permanecer logado até o último momento no corpo de seu avatar: um poderoso feiticeiro esqueleto chamado <strong>Momonga</strong>, guildmaster da grande guilda <em>Ainz Ooal Gown</em>. Quando os servidores deveriam desligar, Momonga percebe que ainda está lá — mas algo mudou radicalmente. Os NPCs da Grande Tumba de Nazarick, incluindo os poderosos Floor Guardians, ganharam vida própria e passaram a tratar Momonga como seu supremo soberano. O próprio Momonga descobre que não consegue mais fazer logout.
+          Em 2138, o MMORPG de realidade virtual <strong>YGGDRASIL</strong> encerra seus servidores após 12 anos. O jogador <strong>Suzuki Satoru</strong> decide permanecer até o último segundo no corpo de seu avatar — o poderoso feiticeiro esqueleto <strong>Momonga</strong>, guildmaster da lendária guilda <em>Ainz Ooal Gown</em>. Quando os servidores deveriam desligar, Momonga constata que ainda está lá — e os 41 NPCs da Grande Tumba de Nazarick ganharam consciência própria, tratando-o como seu soberano supremo. Sem conseguir fazer logout, ele adota o nome da guilda como identidade: <strong>Ainz Ooal Gown</strong>, Sorcerer King (Rei do Feiticeiro).
         </p>
         <p>
-          Decidindo explorar o novo mundo enquanto finge ser o todo-poderoso Soberano da Morte, ele adota o nome da guilda — <strong>Ainz Ooal Gown</strong> — como sua nova identidade. A série explora uma questão fascinante: quanto da humanidade de Suzuki Satoru sobrevive dentro de Ainz, e o que acontece quando essa humanidade vai sendo apagada pelas mecânicas do jogo?
+          A série explora uma questão filosófica perturbadora: quanto da humanidade de Suzuki Satoru sobrevive dentro de Ainz? O sistema do jogo suprime automaticamente emoções negativas extremas — o que significa que Ainz <em>não consegue</em> sentir remorso ou hesitar quando as emoções chegam a certo nível. Ao longo das quatro temporadas, essa linha se torna cada vez mais tênue.
         </p>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
           <Tv className="h-7 w-7 text-otaku" />
           Temporada 1 — Julho a Setembro de 2015
         </h2>
-        <div className="bg-card border border-border rounded-xl p-5 my-4">
+        <div className="not-prose bg-card border border-border rounded-xl p-4 my-4">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
-            <div><span className="text-muted-foreground block">Estreia</span><strong>7 de jul, 2015</strong></div>
-            <div><span className="text-muted-foreground block">Episódios</span><strong>13</strong></div>
-            <div><span className="text-muted-foreground block">Estúdio</span><strong>Madhouse</strong></div>
-            <div><span className="text-muted-foreground block">Volumes</span><strong>1–4 LN</strong></div>
+            {[
+              ["Estreia","7 jul 2015"],["Término","29 set 2015"],
+              ["Episódios","13"],["Estúdio","Madhouse"],
+              ["Diretor","Naoyuki Itō"],["Rede","AT-X / Tokyo MX"],
+              ["OP","\"Clattanoia\" — OxT"],["ED","\"L.L.L.\" — MYTH&ROID"],
+            ].map(([k,v]) => (
+              <div key={k}><span className="text-muted-foreground block text-xs">{k}</span><strong className="text-sm">{v}</strong></div>
+            ))}
           </div>
         </div>
         <p>
-          A primeira temporada apresenta Nazarick, seus Floor Guardians e a dinâmica central da série. Ainz explora o mundo ao redor, cria o alter-ego de aventureiro <strong>Momon</strong>, salva a aldeia de Carne Village da Escritura da Luz Solar, e começa a entender as políticas do Novo Mundo. Os arcos incluem o assalto à mansão Shalltear e a batalha contra a Order of Eighty Swords. A abertura <em>"Clattanoia"</em> do OxT é lendária.
+          A primeira temporada adapta os <strong>volumes 1 a 3</strong> da light novel e apresenta Nazarick, seus guardiões e a dinâmica central da série. Ainz cria o alter-ego aventureiro <strong>Momon</strong> (armadura negra) para explorar o Novo Mundo sem revelar sua identidade. O arco culmina com a batalha contra <strong>Shalltear Bloodfallen</strong>, controlada por um artefato inimigo — Ainz é forçado a enfrentá-la pessoalmente em um duelo que demonstra o abismo de poder entre ele e qualquer outro ser do mundo. A abertura <em>"Clattanoia"</em> do OxT é considerada uma das melhores de 2015.
         </p>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
           <Tv className="h-7 w-7 text-otaku" />
           Temporada 2 — Janeiro a Abril de 2018
         </h2>
-        <div className="bg-card border border-border rounded-xl p-5 my-4">
+        <div className="not-prose bg-card border border-border rounded-xl p-4 my-4">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
-            <div><span className="text-muted-foreground block">Estreia</span><strong>9 de jan, 2018</strong></div>
-            <div><span className="text-muted-foreground block">Episódios</span><strong>13</strong></div>
-            <div><span className="text-muted-foreground block">Foco</span><strong>Lizardmen / Re-Estize</strong></div>
-            <div><span className="text-muted-foreground block">Volumes</span><strong>5–6 LN</strong></div>
+            {[
+              ["Estreia","9 jan 2018"],["Término","3 abr 2018"],
+              ["Episódios","13"],["Volumes LN","5 e 6"],
+              ["OP","\"Go Cry Go\" — OxT"],["ED","\"Hydra\" — MYTH&ROID"],
+              ["Arcos","Lizardmen / Re-Estize"],["Streaming","Crunchyroll / Hulu"],
+            ].map(([k,v]) => (
+              <div key={k}><span className="text-muted-foreground block text-xs">{k}</span><strong className="text-sm">{v}</strong></div>
+            ))}
           </div>
         </div>
         <p>
-          A segunda temporada expande o mundo com dois arcos principais. No <strong>Arco dos Lizardmen</strong>, Ainz ordena um ataque à tribo como teste de poder — e testemunha a resistência heroica de Zaryusu Shasha. No <strong>Arco do Reino de Re-Estize</strong>, Sebas trabalha encoberto na capital e se envolve com os Oito Dedos, a organização criminosa que controla o submundo. A moral ambígua de Ainz se aprofunda: ele admira a coragem dos Lizardmen enquanto os subjuga sem remorso.
+          A segunda temporada expande o mundo com dois arcos principais. No <strong>Arco dos Lizardmen</strong> (eps. 1–5), Ainz ordena um ataque como demonstração de poder — e observa com admiração a resistência heroica de <strong>Zaryusu Shasha</strong>, que mesmo derrotado inspira sua tribo. Ainz ressuscita Zaryusu e sua amada como recompensa pela bravura. No <strong>Arco do Submundo de Re-Estize</strong> (eps. 6–13), <strong>Sebas Tian</strong> opera encoberto na capital e salva a escrava humana <strong>Tsuare</strong> dos Oito Dedos — criando uma das maiores tensões morais da série.
         </p>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
           <Tv className="h-7 w-7 text-otaku" />
           Temporada 3 — Julho a Outubro de 2018
         </h2>
-        <div className="bg-card border border-border rounded-xl p-5 my-4">
+        <div className="not-prose bg-card border border-border rounded-xl p-4 my-4">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
-            <div><span className="text-muted-foreground block">Estreia</span><strong>10 de jul, 2018</strong></div>
-            <div><span className="text-muted-foreground block">Episódios</span><strong>13</strong></div>
-            <div><span className="text-muted-foreground block">Foco</span><strong>Sorcerer Kingdom</strong></div>
-            <div><span className="text-muted-foreground block">Volumes</span><strong>7–9 LN</strong></div>
+            {[
+              ["Estreia","10 jul 2018"],["Término","2 out 2018"],
+              ["Episódios","13"],["Volumes LN","7, 8 e 9"],
+              ["OP","\"Voracity\" — MYTH&ROID"],["ED","\"Silent Solitude\" — OxT"],
+              ["Arcos","Baharuth / Sorcerer Kingdom"],["Destaque","Batalha de E-Naüru"],
+            ].map(([k,v]) => (
+              <div key={k}><span className="text-muted-foreground block text-xs">{k}</span><strong className="text-sm">{v}</strong></div>
+            ))}
           </div>
         </div>
         <p>
-          A terceira temporada é onde Ainz se consolida como força geopolítica. O <strong>Arco do Império de Baharuth</strong> apresenta Jircniv Rune Farlord El-Nix tentando usar o Guerreiro King para testar Ainz — e sendo completamente humilhado. Ainz proclama formalmente o <strong>Sorcerer Kingdom</strong> (Reino do Feiticeiro), com E-Rantel como capital. O arco culmina com a Batalha de E-Naüru, onde Ainz sozinho destroça um exército inteiro para demonstrar poder. É o momento em que a série deixa claro que não estamos lidando com um herói.
+          A T3 é onde Ainz se consolida como força geopolítica. O <strong>Imperador de Baharuth</strong>, Jircniv Rune Farlord El-Nix, tenta usar o <em>Warrior King</em> para testar Ainz — e é completamente humilhado. Ainz proclama formalmente o <strong>Sorcerer Kingdom</strong> com E-Rantel como capital. O clímax é a <strong>Batalha de E-Naüru</strong>: Ainz, sozinho, destrói um exército inteiro com a magia <em>Ia Shub-Niggurath</em> em minutos, para demonstrar ao mundo o que significa desafiar Nazarick. É o ponto em que a série abandona qualquer pretensão de anti-herói simpático.
         </p>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
           <Tv className="h-7 w-7 text-otaku" />
           Temporada 4 — Julho a Setembro de 2022
         </h2>
-        <div className="bg-card border border-border rounded-xl p-5 my-4">
+        <div className="not-prose bg-card border border-border rounded-xl p-4 my-4">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
-            <div><span className="text-muted-foreground block">Estreia</span><strong>5 de jul, 2022</strong></div>
-            <div><span className="text-muted-foreground block">Episódios</span><strong>13</strong></div>
-            <div><span className="text-muted-foreground block">Foco</span><strong>Anões / Re-Estize</strong></div>
-            <div><span className="text-muted-foreground block">Volumes</span><strong>10, 11, 14 LN</strong></div>
+            {[
+              ["Estreia","5 jul 2022"],["Término","27 set 2022"],
+              ["Episódios","13"],["Volumes LN","10, 11 e 14"],
+              ["OP","\"hollow shadow\" — OxT"],["ED","\"No Man's Land\" — MYTH&ROID"],
+              ["Arcos","Anões / Re-Estize / Alianças"],["Destaque","Destruição do Reino de Re-Estize"],
+            ].map(([k,v]) => (
+              <div key={k}><span className="text-muted-foreground block text-xs">{k}</span><strong className="text-sm">{v}</strong></div>
+            ))}
           </div>
         </div>
         <p>
-          A quarta temporada inclui o <strong>Arco dos Anões</strong> (Ainz visita o Reino Anão para estabelecer relações comerciais), o <strong>Arco das Alianças Humanas</strong>, e culmina com a destruição absoluta do <strong>Reino de Re-Estize</strong>. Ainz ordena o massacre de toda a nação — com exceção de Carne Village — como mensagem para o mundo. É o arco mais sombrio e perturbador da série, forçando o espectador a confrontar o fato de que Ainz não é um anti-herói simpático: é um conquista dor que usa o genocídio como ferramenta política.
+          A quarta temporada inclui o <strong>Arco do Reino dos Anões</strong> (vol. 11 — Ainz visita para acordos comerciais de runescrita) e culmina com a <strong>destruição total do Reino de Re-Estize</strong> (vol. 14). Ainz ordena o massacres de toda a nação — com única exceção de Carne Village — como mensagem para o mundo. A cena final do episódio 13 mostra <strong>Renner</strong> revelando sua verdadeira natureza demoníaca, com o texto <em>"The End Begins"</em>. Nota: os volumes 12 e 13 (Arco do Reino Sagrado) foram pulados para serem adaptados no filme de 2024.
         </p>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
           <Film className="h-7 w-7 text-otaku" />
-          Filmes de Compilação — 2017
+          Filmes de Compilação — Fevereiro e Março de 2017
         </h2>
         <p>
-          Em <strong>fevereiro e março de 2017</strong>, foram lançados dois filmes de compilação no Japão resumindo os eventos da Temporada 1 com cenas adicionais. São opcionais para quem já assistiu à série, mas úteis como recapitulação.
+          Dois filmes de compilação da T1 foram lançados nos cinemas japoneses: <strong>Overlord: The Undead King</strong> (25 de fevereiro de 2017) e <strong>Overlord: The Dark Warrior</strong> (11 de março de 2017). Resumem os 13 episódios da primeira temporada com cenas adicionais. São opcionais para quem já assistiu à série.
         </p>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
           <Film className="h-7 w-7 text-otaku" />
-          Filme: The Sacred Kingdom — Setembro de 2024
+          Filme Canônico: The Sacred Kingdom — Setembro de 2024
         </h2>
         <p>
-          <strong>Overlord: The Sacred Kingdom</strong> estreou no Japão em <strong>20 de setembro de 2024</strong>, com sessões IMAX começando em 13 de setembro. O filme de 135 minutos adapta os volumes 12 e 13 da light novel — o <em>Arco do Reino Sagrado</em>. O <strong>Imperador Demoníaco Jaldabaoth</strong> invade o Reino Sagrado com um exército de demi-humanos. Desesperado, o Reino Sagrado é forçado a pedir ajuda ao inimigo Sorcerer Kingdom — ou seja, ao próprio Ainz.
-        </p>
-        <p>
-          O filme estreou nos EUA em novembro de 2024 via Sony Pictures com distribuição IMAX, arrecadando <strong>US$ 1,16 milhão</strong> em seu fim de semana de estreia norte-americano. Chegou ao Crunchyroll globalmente em <strong>abril de 2025</strong>. Narrativamente, os eventos do filme ocorrem <strong>entre os episódios 7 e 8 da Temporada 4</strong>.
+          <strong>Overlord: The Sacred Kingdom</strong> estreou no Japão em <strong>20 de setembro de 2024</strong> (sessões IMAX a partir de 13 de setembro). O filme de <strong>135 minutos</strong> adapta os volumes 12 e 13 da light novel — os que a T4 havia pulado. A trama: o <strong>Imperador Demoníaco Jaldabaoth</strong> (na verdade Demiurge disfarçado, a mando de Ainz) invade o Reino Sagrado com um exército de demi-humanos. Desesperado, o reino recorre ao próprio Sorcerer Kingdom por ajuda — ou seja, a Ainz, que fingirá salvar o reino que ele mesmo orquestrou o ataque. O filme arrecadou <strong>US$ 1,16 milhão</strong> em seu fim de semana de abertura norte-americano via Sony Pictures em novembro de 2024 (lançamento IMAX limitado). Chegou ao <strong>Crunchyroll</strong> globalmente em <strong>abril de 2025</strong>. Os eventos do filme ocorrem entre os episódios 7 e 8 da T4.
         </p>
 
-        <div className="bg-card border border-border rounded-xl p-5 my-6">
-          <p className="font-bold mb-3">📅 Linha do Tempo de Overlord</p>
-          <div className="space-y-2 text-sm">
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
+          <Globe className="h-7 w-7 text-otaku" />
+          Temporada 5 — O Que Sabemos
+        </h2>
+        <p>
+          A <strong>5ª temporada</strong> não foi oficialmente anunciada pela Madhouse ou Kadokawa até março de 2026, mas há fortes indícios de que está em desenvolvimento. Em setembro de 2024, o leaker SugoiLite relatou que a T5 havia recebido luz verde internamente. Em <strong>fevereiro de 2025</strong>, o produtor Kazufumi Kikushima disse à Anime News Network que "a equipe ainda quer levar a história de Ainz adiante". O site oficial exibe um banner <em>"To Be Continued"</em>, e a Crunchyroll listou Overlord em seu lineup de "em breve".
+        </p>
+        <p>
+          O principal obstáculo é o <strong>material-fonte</strong>: os volumes 17 e 18 da light novel ainda não foram publicados. Maruyama confirmou no afterword do vol. 16 (julho de 2022) que a série encerrará no vol. 18, e prometeu lançar os dois volumes finais em intervalos próximos. A T5 adaptará os <strong>volumes 15 e 16</strong> (Arco Half-Elf God-kin — Ainz visita o Reino Élfico com Aura e Mare). A estimativa mais realista para estreia é <strong>final de 2026 a 2027</strong>.
+        </p>
+        <div className="not-prose bg-card border border-border rounded-xl p-4 my-4">
+          <p className="font-bold mb-2 text-sm">🎙️ Elenco Confirmado para T5</p>
+          <div className="grid sm:grid-cols-2 gap-2 text-sm">
             {[
-              ["Jul 2015", "Temporada 1 (Madhouse, 13 eps)"],
-              ["Fev/Mar 2017", "Filmes de compilação T1"],
-              ["Jan 2018", "Temporada 2 (13 eps)"],
-              ["Jul 2018", "Temporada 3 (13 eps)"],
-              ["Jul 2022", "Temporada 4 (13 eps)"],
-              ["Set 2024", "Filme: The Sacred Kingdom (vols 12-13)"],
-              ["2026-2027?", "Temporada 5 (não confirmada oficialmente)"],
-            ].map(([date, event]) => (
-              <div key={date} className="flex gap-3">
-                <span className="text-otaku font-bold w-28 shrink-0">{date}</span>
-                <span className="text-muted-foreground">{event}</span>
+              ["Satoshi Hino","Ainz Ooal Gown (JP)"],
+              ["Yumi Hara","Albedo (JP)"],
+              ["Kenta Miyake","Cocytus (confirmado em fan meet 2025)"],
+              ["Masayuki Kato","Demiurge (teased em programa de rádio 2025)"],
+              ["Chris Guerrero","Ainz (EN dub — confirmado SDCC 2025)"],
+              ["Elizabeth Maxwell","Albedo (EN dub — confirmado SDCC 2025)"],
+            ].map(([n,r]) => (
+              <div key={n} className="bg-muted/50 rounded-lg p-2">
+                <span className="font-bold">{n}</span>
+                <span className="text-muted-foreground"> — {r}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
+          <Globe className="h-7 w-7 text-otaku" />
+          Linha do Tempo Completa
+        </h2>
+        <div className="not-prose bg-card border border-border rounded-xl p-5 my-4">
+          <div className="space-y-2.5 text-sm">
+            {[
+              ["2010","Web novel em Arcadia (depois no Shōsetsuka ni Narō, 2012)"],
+              ["Jul 2012","LN vol. 1 — Enterbrain/Kadokawa (il. so-bin)"],
+              ["Nov 2014","Mangá em Comp Ace — Satoshi Ōshio / Hugin Miyama"],
+              ["Mai 2016","Yen Press — vol. 1 em inglês"],
+              ["Jul 2015","Anime T1 estreia (Madhouse, 13 eps) — OP: \"Clattanoia\""],
+              ["Fev/Mar 2017","Filmes de compilação T1 (The Undead King + The Dark Warrior)"],
+              ["Jan 2018","Anime T2 — 13 eps — OP: \"Go Cry Go\""],
+              ["Jul 2018","Anime T3 — 13 eps — OP: \"Voracity\""],
+              ["Jul 2022","Anime T4 — 13 eps — OP: \"hollow shadow\""],
+              ["Jul 2022","LN vol. 16 — último vol. publicado; T18 confirmado como final"],
+              ["Mai 2023","Mangá principal encerrado em Comp Ace"],
+              ["Set 2024","Filme: The Sacred Kingdom — estreia Japão (IMAX, 135 min)"],
+              ["Nov 2024","Filme: The Sacred Kingdom — EUA (IMAX limitado, Sony Pictures)"],
+              ["Nov 2025","10º Aniversário da franquia — evento teatral no Japão"],
+              ["Abr 2025","Filme: The Sacred Kingdom — Crunchyroll (streaming global)"],
+              ["Abr 2024","Overlord: New World mangá inicia em Comp Ace"],
+              ["2026–2027","Anime T5 (estimativa — aguardando LN vols. 17 e 18)"],
+            ].map(([d,e]) => (
+              <div key={d} className="flex gap-3">
+                <span className="text-otaku font-bold w-24 shrink-0">{d}</span>
+                <span className="text-muted-foreground">{e}</span>
               </div>
             ))}
           </div>

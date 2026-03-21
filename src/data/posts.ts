@@ -1064,8 +1064,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "76",
     slug: "tensura-guia-completo-temporadas-filmes",
-    title: "TenSura: Guia Completo de Temporadas e Filmes",
-    excerpt: "That Time I Got Reincarnated as a Slime tem 3 temporadas (+ T4 em abril/2026), 2 filmes e décadas de conteúdo. Tudo sobre a saga de Rimuru Tempest.",
+    title: "TenSura: Guia Completo — Todas as Temporadas, Filmes e Novidades 2026",
+    excerpt: "Guia completo de Tensei Shitara Slime Datta Ken (TenSura): T1 (2018), T2 (2021), T3 (2024), T4 (abril/2026 — 5 cursos), Filme Scarlet Bond, Tears of the Azure Sea, 56 milhões de cópias vendidas e muito mais.",
     content: "",
     category: "otaku",
     subtopic: "tensura",
@@ -1077,8 +1077,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "77",
     slug: "tensura-personagens-rimuru-demon-lords",
-    title: "TenSura: Rimuru Tempest e os Personagens Principais",
-    excerpt: "De Rimuru Tempest aos Dez Grandes Demon Lords — conheça Milim, Shion, Benimaru, Diablo e todos os habitantes do universo de Tensura.",
+    title: "TenSura: Rimuru Tempest, os Demon Lords e o Sistema de Poderes",
+    excerpt: "Rimuru Tempest, Milim Nava, Shion, Benimaru, Veldora, Diablo e os 10 Grandes Demon Lords — ficha completa de cada personagem, seus poderes, habilidades únicas e o sistema de nomes e evolução de TenSura.",
     content: "",
     category: "otaku",
     subtopic: "tensura",
@@ -1091,8 +1091,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "78",
     slug: "overlord-guia-completo-temporadas-ainz",
-    title: "Overlord: Guia Completo de Temporadas e Filme Sacred Kingdom",
-    excerpt: "As 4 temporadas de Overlord (2015–2022) e o filme The Sacred Kingdom (setembro/2024) — tudo sobre a saga de Ainz Ooal Gown e Nazarick.",
+    title: "Overlord: Guia Completo — 4 Temporadas, Filme Sacred Kingdom e T5",
+    excerpt: "Overlord completo: T1 (2015), T2 (2018), T3 (2018), T4 (2022), filmes de compilação (2017) e The Sacred Kingdom (setembro/2024). OPs de OxT e MYTH&ROID, vozes de Satoshi Hino, e tudo sobre a esperada T5.",
     content: "",
     category: "otaku",
     subtopic: "overlord",
@@ -1104,8 +1104,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "79",
     slug: "overlord-ainz-guardians-personagens",
-    title: "Overlord: Ainz Ooal Gown e os Floor Guardians de Nazarick",
-    excerpt: "Momonga/Ainz, Albedo, Demiurge, Shalltear, Cocytus e todos os guardiões — seus poderes e por que Ainz finge que planeja tudo.",
+    title: "Overlord: Ainz Ooal Gown, Floor Guardians e os Personagens do Novo Mundo",
+    excerpt: "Ainz Ooal Gown, Albedo, Demiurge, Shalltear Bloodfallen, Cocytus, Sebas Tian, Aura, Mare e Pandora's Actor — fichas completas dos Floor Guardians e dos personagens do Novo Mundo como Gazef Stronoff e Renner.",
     content: "",
     category: "otaku",
     subtopic: "overlord",

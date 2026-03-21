@@ -87,14 +87,14 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     keywords: "configurações, preferências, tema, personalizar, conta, perfil",
   },
   "/otaku/tensura": {
-    title: "TenSura — Portal Completo",
-    description: "Tudo sobre That Time I Got Reincarnated as a Slime: temporadas, filmes, personagens e o universo de Rimuru Tempest.",
-    keywords: "tensura, tensei shitara slime, rimuru tempest, milim nava, temporadas, filme scarlet bond, isekai, anime 2026",
+    title: "TenSura: Guia Completo — Temporadas, Filmes e Personagens",
+    description: "Guia completo de That Time I Got Reincarnated as a Slime (TenSura): 3 temporadas + T4 em abril 2026, Filme Scarlet Bond, Tears of the Azure Sea, Rimuru Tempest, Milim, Veldora e os Demon Lords.",
+    keywords: "tensura, tensei shitara slime datta ken, rimuru tempest, milim nava, veldora, demon lords, temporada 4, filme scarlet bond, tears azure sea, slime diaries, isekai anime 2026, benimaru, shion, diablo, nazarick",
   },
   "/otaku/overlord": {
-    title: "Overlord — Portal Completo",
-    description: "Tudo sobre Overlord: as 4 temporadas, o filme Sacred Kingdom (2024), Ainz Ooal Gown, os Floor Guardians e o universo de Nazarick.",
-    keywords: "overlord, ainz ooal gown, momonga, nazarick, floor guardians, temporadas overlord, sacred kingdom, isekai",
+    title: "Overlord: Guia Completo — Ainz Ooal Gown, Temporadas e Nazarick",
+    description: "Guia completo de Overlord: 4 temporadas (2015–2022), filme The Sacred Kingdom (2024), Ainz Ooal Gown, Albedo, Demiurge, Shalltear e os Floor Guardians da Grande Tumba de Nazarick. Tudo sobre a T5.",
+    keywords: "overlord anime, ainz ooal gown, momonga, nazarick, floor guardians, albedo overlord, demiurge, shalltear, sacred kingdom 2024, overlord temporada 5, isekai dark fantasy, madhouse anime, kugane maruyama",
   },
   "/geek/avatar": {
     title: "Portal Avatar",
