@@ -27,8 +27,8 @@ const PostCard = forwardRef<HTMLElement, PostCardProps>(({ post }, ref) => {
         </div>
 
         {/* Content */}
-        <div className="p-4 sm:p-5">
-          <h3 className="font-display font-semibold text-lg mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+        <div className="p-3 sm:p-4 xl:p-3.5">
+          <h3 className="font-display font-semibold text-base xl:text-[0.95rem] mb-2 line-clamp-2 group-hover:text-primary transition-colors leading-snug">
             {post.title}
           </h3>
           

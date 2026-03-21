@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import DynamicSEO from "@/components/DynamicSEO";
 import BackNavigation from "@/components/BackNavigation";
 import { ArrowLeft } from "lucide-react";
 import avatarPortalBannerImg from "@/assets/avatar-portal-banner.webp";
@@ -16,6 +17,7 @@ const AvatarPortal = () => {
 
   return (
     <div className="min-h-screen">
+      <DynamicSEO path="/geek/avatar" />
       <BackNavigation category="geek" />
 
       {/* Hero Banner */}
