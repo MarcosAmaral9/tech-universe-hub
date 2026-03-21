@@ -75,7 +75,23 @@ for (const post of posts) {
   const url  = `${BASE_URL}/post/${post.slug}`;
   // Find matching image asset
   const slug = post.slug.replace(/-2026$/, "");
-  const img  = assetFiles.find(f => f.startsWith(slug) && /\.(webp|jpg|png)$/.test(f));
+  // Match Vite-hashed asset to slug by trying progressively shorter base names.
+  // e.g. "ac-1-altair-BDCJ-Fck.webp" → tries "ac-1-altair-BDCJ-Fck", "ac-1-altair-BDCJ",
+  //      "ac-1-altair" → slug "ac-1-altair-terra-santa-1191".startsWith("ac-1-altair") = true ✓
+  const img  = assetFiles.find(f => {
+    if (!/\.(webp|jpg|png)$/.test(f)) return false;
+    if (f.startsWith(slug)) return true;
+    const parts = f.replace(/\.(webp|jpg|png)$/, "").split("-");
+    for (let i = parts.length; i >= 1; i--) {
+      const base = parts.slice(0, i).join("-");
+      // Require base is at least 4 chars AND ends with a non-alpha segment (number or known suffix)
+      // OR is at least 8 chars. This handles "ac-3" (4 chars) without matching bare "ac"
+      const endsWithNumber = /\d$/.test(base);
+      const minLen = endsWithNumber ? 4 : 8;
+      if (base.length >= minLen && slug.startsWith(base)) return true;
+    }
+    return false;
+  });
   const ogImg = img ? `${BASE_URL}/assets/${img}` : `${BASE_URL}/og-image.jpg`;
 
   const inject = `
