@@ -24,7 +24,7 @@ const TensuraGuiaCompleto = () => {
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
           <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />20 de Março, 2026</span>
-          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />16 min de leitura</span>
+          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />18 min de leitura</span>
         </div>
         <ShareWhatsApp />
       </header>

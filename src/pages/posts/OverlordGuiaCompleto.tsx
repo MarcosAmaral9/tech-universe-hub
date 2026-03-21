@@ -24,7 +24,7 @@ const OverlordGuiaCompleto = () => {
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
           <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />20 de Março, 2026</span>
-          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />16 min de leitura</span>
+          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />18 min de leitura</span>
         </div>
         <ShareWhatsApp />
       </header>
@@ -168,7 +168,7 @@ const OverlordGuiaCompleto = () => {
         </p>
         <div className="not-prose bg-card border border-border rounded-xl p-4 my-4">
           <p className="font-bold mb-2 text-sm">🎙️ Elenco Confirmado para T5</p>
-          <div className="grid sm:grid-cols-2 gap-2 text-sm">
+          <div className="not-prose grid sm:grid-cols-2 gap-2 text-sm">
             {[
               ["Satoshi Hino","Ainz Ooal Gown (JP)"],
               ["Yumi Hara","Albedo (JP)"],
