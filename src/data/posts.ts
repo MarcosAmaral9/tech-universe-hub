@@ -83,20 +83,187 @@ import overlordGuiaImg from "@/assets/overlord-guia-completo.webp";
 import overlordCharsImg from "@/assets/overlord-personagens.webp";
 
 export const blogPosts: BlogPost[] = [
-  // IA Posts
+
+  // ── Geek Posts ───────────────────────────────────────────
   {
-    id: "4",
-    slug: "ia-transformando-dublagem-animes",
-    title: "IA na Dublagem de Animes: Voice Cloning e o Futuro da Localização",
-    excerpt: "Descubra como a clonagem de voz e tradução em tempo real estão revolucionando o mercado de animes e quebrando barreiras de idioma ao redor do mundo.",
+    id: "22",
+    slug: "ac-rogue-assassino-templario",
+    title: "AC Rogue em 2026 Vale a Pena? Review — Jogue Como Templário",
+    excerpt: "Em AC Rogue você joga como um Templário caçando Assassinos. Shay Patrick Cormac tem uma das melhores histórias da franquia — conheça por que esse jogo subestimado merece sua atenção em 2026.",
     content: "",
-    category: "ia",
-    subtopic: "dublagem",
-    image: aiAnimeDubbingImg,
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acRogueImg,
     author: "VICIO<CODE>",
-    date: "2026-02-05",
+    date: "2026-01-19",
+    readTime: "18 min"
+  },
+  {
+    id: "21",
+    slug: "ac-unity-jogo-frente-tempo-paris",
+    title: "AC Unity: O Jogo À Frente do Seu Tempo",
+    excerpt: "Assassin's Creed Unity foi lançado com bugs graves em 2014, mas esconde um dos melhores designs de parkour e ambientações da franquia. Paris nunca foi tão detalhada num jogo da Ubisoft.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acUnityImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-20",
+    readTime: "18 min"
+  },
+  {
+    id: "19",
+    slug: "ac-syndicate-revolucao-industrial-londres",
+    title: "AC Syndicate em 2026 Vale a Pena? Review — Londres Vitoriana",
+    excerpt: "Assassin's Creed Syndicate mergulha no Londres vitoriano da Revolução Industrial com os gêmeos Frye. Conheça mecânicas, história e por que ele merece mais reconhecimento.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acSyndicateImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-21",
+    readTime: "18 min"
+  },
+  {
+    id: "11",
+    slug: "avatar-frontiers-pandora-ubisoft-review",
+    title: "Avatar: Frontiers of Pandora em 2026 Vale a Pena? Review Completa",
+    excerpt: "Analise o jogo que coloca o jogador na pele de um Na'vi com uma das florestas mais bonitas já vistas em videogames.",
+    content: "",
+    category: "geek",
+    subtopic: "avatar",
+    image: avatarGameImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-22",
+    readTime: "18 min"
+  },
+  {
+    id: "18",
+    slug: "ac-3-remastered-revolucao-americana",
+    title: "AC III Remastered: Revolução Americana",
+    excerpt: "Assassin's Creed 3 Remastered revisita a Revolução Americana com gráficos atualizados. Conheça a história de Connor, os melhoramentos e o que mudou na versão remasterizada.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: ac3Img,
+    author: "VICIO<CODE>",
+    date: "2026-01-23",
+    readTime: "18 min"
+  },
+  {
+    id: "10",
+    slug: "avatar-3-fogo-cinzas-lado-sombrio-pandora",
+    title: "Avatar 3: Fire and Ash — Tudo Sobre o Filme, Data e O Que Esperar",
+    excerpt: "Avatar 3: Fire and Ash chega em dezembro de 2025 explorando o lado sombrio de Pandora. Saiba tudo sobre a data de lançamento, enredo, personagens e o que esperar do próximo capítulo da saga.",
+    content: "",
+    category: "geek",
+    subtopic: "avatar",
+    image: avatarFireImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-24",
     readTime: "10 min"
   },
+  {
+    id: "17",
+    slug: "ac-mirage-retorno-raizes-bagda",
+    title: "AC Mirage: O Retorno às Raízes em Bagdá",
+    excerpt: "Assassin's Creed Mirage leva Basim a Bagdá do século IX, apostando em parkour, stealth e sigilo para resgatar a essência clássica da série da Ubisoft.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acMirageImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-25",
+    readTime: "18 min"
+  },
+  {
+    id: "9",
+    slug: "avatar-caminho-da-agua-fisica-fluidos",
+    title: "Avatar 2: A Física dos Fluidos e o CGI",
+    excerpt: "Treze anos depois, a sequência focou na família de Jake Sully e na impressionante captura de performance subaquática.",
+    content: "",
+    category: "geek",
+    subtopic: "avatar",
+    image: avatarWaterImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-26",
+    readTime: "14 min"
+  },
+
+  // ── Otaku Posts ──────────────────────────────────────────
+  {
+    id: "3",
+    slug: "10-melhores-manhwas-sistema-2026",
+    title: "Os 10 melhores Manhwas de 'Sistema' para ler em 2026",
+    excerpt: "Os 10 melhores manhwas com sistema de 2026 — aqueles que você não consegue parar de ler. Seleção com sinopse, número de capítulos e onde ler online gratuitamente.",
+    content: "",
+    category: "otaku",
+    subtopic: "manhwa",
+    image: systemManhwaImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-27",
+    readTime: "8 min"
+  },
+
+  // ── Geek Posts ───────────────────────────────────────────
+  {
+    id: "16",
+    slug: "ac-origins-renascimento-franquia-egito",
+    title: "AC Origins em 2026 Vale a Pena? Review Completa — Egito Antigo",
+    excerpt: "Assassin's Creed Origins redefiniu a franquia ao trazer combate renovado, o Egito Antigo esplêndido e a origem da Irmandade dos Assassinos com Bayek de Siwa.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acOriginsImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-28",
+    readTime: "18 min"
+  },
+  {
+    id: "8",
+    slug: "avatar-2009-filme-revolucionou-tecnologia",
+    title: "Avatar (2009): O Filme que Revolucionou o CGI",
+    excerpt: "Relembre como James Cameron esperou mais de uma década para que a tecnologia de captura de movimento fosse capaz de criar Pandora.",
+    content: "",
+    category: "geek",
+    subtopic: "avatar",
+    image: avatarPandoraImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-29",
+    readTime: "12 min"
+  },
+
+  // ── Otaku Posts ──────────────────────────────────────────
+  {
+    id: "2",
+    slug: "como-diferenciar-manhuas-manhwas",
+    title: "Saiba como diferenciar Manhuas e Manhwas",
+    excerpt: "Aprenda a diferenciar Manhuas (chineses) de Manhwas (coreanos) de vez. Guia completo com características visuais, temas, sentido de leitura e exemplos populares de cada tipo.",
+    content: "",
+    category: "otaku",
+    subtopic: "manhwa",
+    image: manhwaVsManuaImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-30",
+    readTime: "4 min"
+  },
+
+  // ── Geek Posts ───────────────────────────────────────────
+  {
+    id: "15",
+    slug: "ac-black-flag-melhor-jogo-piratas",
+    title: "AC Black Flag: O Melhor Jogo de Piratas Já Feito",
+    excerpt: "Assassin's Creed Black Flag combina pirataria, exploração naval e a história fascinante de Edward Kenway num dos jogos mais amados da franquia da Ubisoft.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acBlackFlagImg,
+    author: "VICIO<CODE>",
+    date: "2026-01-31",
+    readTime: "18 min"
+  },
+
+  // ── IA Posts ─────────────────────────────────────────────
   {
     id: "20",
     slug: "ia-remasterizacao-jogos-classicos",
@@ -110,6 +277,135 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-01",
     readTime: "6 min"
   },
+
+  // ── Otaku Posts ──────────────────────────────────────────
+  {
+    id: "1",
+    slug: "diferenca-mangas-manhuas-manhwas",
+    title: "Sabe a diferença entre Mangas, Manhuas e Manhwas?",
+    excerpt: "Aprenda de uma vez a diferença entre Mangás japoneses, Manhwas coreanos e Manhuas chineses: sentido de leitura, arte, temas e os títulos mais populares de cada origem para você começar a explorar.",
+    content: "",
+    category: "otaku",
+    subtopic: "manga",
+    image: mangaManhwaManhuaImg,
+    author: "VICIO<CODE>",
+    date: "2026-02-02",
+    readTime: "5 min"
+  },
+
+  // ── Geek Posts ───────────────────────────────────────────
+  {
+    id: "7",
+    slug: "hell-let-loose-simulador-guerra",
+    title: "Hell Let Loose em 2026 Vale a Pena? Review do Simulador de Guerra",
+    excerpt: "Este FPS tático de Segunda Guerra Mundial coloca 100 jogadores em um mapa imenso onde um único tiro pode ser fatal.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: hellLetLooseImg,
+    author: "VICIO<CODE>",
+    date: "2026-02-03",
+    readTime: "18 min"
+  },
+  {
+    id: "14",
+    slug: "ac-odyssey-odisseia-grecia",
+    title: "AC Odyssey em 2026 Vale a Pena? Review Completa — Grécia Antiga",
+    excerpt: "Explore a Grécia Antiga em Assassin's Creed Odyssey — batalhas épicas, escolhas morais, o misterioso Culto de Kosmos e um dos maiores mapas da franquia.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acOdysseyImg,
+    author: "VICIO<CODE>",
+    date: "2026-02-04",
+    readTime: "18 min"
+  },
+
+  // ── IA Posts ─────────────────────────────────────────────
+  {
+    id: "4",
+    slug: "ia-transformando-dublagem-animes",
+    title: "IA na Dublagem de Animes: Voice Cloning e o Futuro da Localização",
+    excerpt: "Descubra como a clonagem de voz e tradução em tempo real estão revolucionando o mercado de animes e quebrando barreiras de idioma ao redor do mundo.",
+    content: "",
+    category: "ia",
+    subtopic: "dublagem",
+    image: aiAnimeDubbingImg,
+    author: "VICIO<CODE>",
+    date: "2026-02-05",
+    readTime: "10 min"
+  },
+
+  // ── Investimentos Posts ───────────────────────────────────
+  {
+    id: "5",
+    slug: "investir-em-tecnologia-2026",
+    title: "Como Investir em Tecnologia em 2026: Guia de Setores e ETFs",
+    excerpt: "Descubra como investir em empresas de tecnologia em 2026, quais setores têm mais potencial de crescimento e como montar uma carteira tech diversificada.",
+    content: "",
+    category: "invest",
+    subtopic: "semicondutores",
+    image: techInvesting2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-02-06",
+    readTime: "12 min"
+  },
+
+  // ── Geek Posts ───────────────────────────────────────────
+  {
+    id: "6",
+    slug: "vikings-legado-ragnar-lothbrok",
+    title: "Vikings: Vale a Pena Assistir em 2026? Review Completa da Série",
+    excerpt: "Explore o fascinante legado de Ragnar Lothbrok, a cultura viking e como a série Vikings retratou com precisão os guerreiros nórdicos que moldaram a Europa.",
+    content: "",
+    category: "geek",
+    subtopic: "vikings",
+    image: vikingsRagnarImg,
+    author: "VICIO<CODE>",
+    date: "2026-02-07",
+    readTime: "18 min"
+  },
+  {
+    id: "12",
+    slug: "ac-valhalla-jornada-epica-eivor",
+    title: "AC Valhalla em 2026 Vale a Pena? Review Completa — Vikings e RPG",
+    excerpt: "Se você é fã de Vikings e adora explorar mundos abertos massivos, Valhalla é o ápice da fórmula moderna da Ubisoft.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acValhallaImg,
+    author: "VICIO<CODE>",
+    date: "2026-02-08",
+    readTime: "18 min"
+  },
+  {
+    id: "13",
+    slug: "ac-shadows-japao-feudal",
+    title: "AC Shadows em 2026 Vale a Pena? Review Completa — Japão Feudal",
+    excerpt: "Assassin's Creed Shadows finalmente leva a franquia ao Japão Feudal. Conheça a história, mecânicas, personagens e por que esse é um dos jogos mais aguardados.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acShadowsImg,
+    author: "VICIO<CODE>",
+    date: "2026-02-09",
+    readTime: "18 min"
+  },
+  {
+    id: "23",
+    slug: "ranking-melhor-assassins-creed-2026",
+    title: "Ranking: Qual o Melhor Assassin's Creed para Jogar em 2026?",
+    excerpt: "Ranking completo de todos os jogos Assassin's Creed em 2026 — do melhor ao pior. Análise de gameplay, história, inovação e impacto de cada título na franquia da Ubisoft.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acPortalImg,
+    author: "VICIO<CODE>",
+    date: "2026-02-10",
+    readTime: "10 min"
+  },
+
+  // ── IA Posts ─────────────────────────────────────────────
   {
     id: "35",
     slug: "chatgpt-vs-gemini-vs-claude-2026",
@@ -162,6 +458,193 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-14",
     readTime: "11 min"
   },
+
+  // ── Investimentos Posts ───────────────────────────────────
+  {
+    id: "24",
+    slug: "tesouro-direto-2026-guia-completo",
+    title: "Tesouro Direto 2026: Ainda Vale a Pena?",
+    excerpt: "Descubra se o Tesouro Direto ainda é o melhor investimento para iniciantes em 2026. Comparamos taxas, rendimentos e estratégias.",
+    content: "",
+    category: "invest",
+    subtopic: "renda-fixa",
+    image: tesouroDiretoImg,
+    author: "VICIO<CODE>",
+    date: "2026-02-15",
+    updatedAt: "2026-03-15",
+    readTime: "12 min",
+    faq: [
+      { q: "É seguro vender o Tesouro Direto antes do vencimento?", a: "Sim, mas há risco de perda no Prefixado e IPCA+ por conta da marcação a mercado. O Tesouro Selic é o único que não sofre esse efeito e pode ser resgatado a qualquer momento sem perdas." },
+      { q: "Posso usar o Tesouro Direto como reserva de emergência?", a: "Apenas o Tesouro Selic. Nunca coloque reserva de emergência em Prefixado ou IPCA+, pois você pode perder dinheiro se precisar resgatar antes do vencimento." },
+      { q: "Qual é a taxa de custódia do Tesouro Direto?", a: "A B3 cobra 0,20% ao ano sobre o valor investido. É cobrada semestralmente em janeiro e julho. Para o Tesouro Selic, investidores com menos de R$ 10.000 são isentos." },
+      { q: "Os juros semestrais do IPCA+ são automáticos?", a: "Os juros são pagos automaticamente na sua conta, mas você precisa reinvesti-los manualmente se quiser manter os juros compostos. Caso contrário, o dinheiro fica parado na conta sem render." },
+      { q: "Qual a diferença entre Tesouro Selic, IPCA+ e Prefixado?", a: "Tesouro Selic acompanha a taxa básica de juros (ideal para reserva de emergência). IPCA+ garante rentabilidade acima da inflação (ideal para longo prazo). Prefixado tem taxa travada na compra (bom quando a Selic está alta e vai cair)." },
+    ],
+  },
+  {
+    id: "25",
+    slug: "renda-passiva-2026-formas-comprovadas",
+    title: "Renda Passiva 2026: 7 Formas Comprovadas",
+    excerpt: "7 formas reais de renda passiva em 2026: FIIs, dividendos, CDB, conteúdo digital e mais. Com exemplos de valores, rendimentos esperados e quanto capital você precisa para começar.",
+    content: "",
+    category: "invest",
+    subtopic: "renda-passiva",
+    image: rendaPassivaImg,
+    author: "VICIO<CODE>",
+    date: "2026-02-16",
+    readTime: "15 min"
+  },
+  {
+    id: "26",
+    slug: "carteira-investimentos-iniciantes-2026",
+    title: "Carteira de Investimentos para Iniciantes 2026",
+    excerpt: "Não sabe por onde começar a investir? Este guia passo a passo mostra como montar uma carteira do zero em 2026.",
+    content: "",
+    category: "invest",
+    subtopic: "carteira",
+    image: carteiraInvestimentosImg,
+    author: "VICIO<CODE>",
+    date: "2026-02-17",
+    readTime: "13 min"
+  },
+  {
+    id: "27",
+    slug: "bitcoin-criptomoedas-2026-investir",
+    title: "Bitcoin e Criptomoedas em 2026: Ainda Dá Para Lucrar?",
+    excerpt: "O mercado cripto mudou muito. Entenda o cenário das criptomoedas em 2026, quais ainda têm potencial e como investir sem perder o que você tem.",
+    content: "",
+    category: "invest",
+    subtopic: "cripto",
+    image: cryptoInvest2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-02-18",
+    updatedAt: "2026-03-15",
+    readTime: "14 min",
+    faq: [
+      { q: "O que é DeFi (Finanças Descentralizadas)?", a: "Ecossistema de serviços financeiros construídos sobre blockchain, sem intermediários como bancos. Inclui empréstimos, exchanges e seguros descentralizados." },
+      { q: "O que é NFT (Token Não-Fungível)?", a: "Um ativo digital único registrado em blockchain. Usado para arte, colecionáveis, ingressos e propriedade intelectual." },
+      { q: "O que é Halving do Bitcoin?", a: "Evento que reduz pela metade a recompensa dos mineradores de Bitcoin a cada aproximadamente 4 anos. Historicamente associado a ciclos de alta no preço." },
+      { q: "O que é Seed Phrase?", a: "Conjunto de 12 a 24 palavras que serve como backup da sua carteira de criptomoedas. Nunca compartilhe com ninguém — quem tem a seed phrase controla os fundos." },
+      { q: "O que é Staking de criptomoedas?", a: "Processo de travar suas criptomoedas na rede para validar transações e receber recompensas, similar a juros. Disponível em redes como Ethereum, Solana e Cardano." },
+      { q: "O que é Cold Wallet?", a: "Carteira offline (hardware) para armazenar criptomoedas com máxima segurança, desconectada da internet. Exemplos: Ledger e Trezor." },
+      { q: "O que é ETF de Criptomoedas?", a: "Fundo negociado em bolsa que acompanha o preço de criptomoedas, permitindo investir sem precisar comprar ou custodiar os ativos diretamente." },
+    ],
+  },
+  {
+    id: "28",
+    slug: "irpf-2026-guia-declarar-pagar-menos",
+    title: "IRPF 2026: Guia Completo Para Declarar e Pagar Menos Imposto",
+    excerpt: "Tudo que você precisa saber para declarar o Imposto de Renda 2026 corretamente, evitar a malha fina e usar deduções legais para pagar menos IR.",
+    content: "",
+    category: "invest",
+    subtopic: "impostos",
+    image: irpf2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-02-19",
+    updatedAt: "2026-03-15",
+    readTime: "16 min",
+    faq: [
+      { q: "Posso declarar despesas com saúde do meu dependente?", a: "Sim, desde que o dependente esteja incluído na sua declaração. As despesas médicas são totalmente dedutíveis, sem limite de valor." },
+      { q: "Preciso declarar minha conta de criptomoedas?", a: "Sim. Mesmo que não tenha vendido, criptomoedas devem ser declaradas na ficha 'Bens e Direitos' pelo valor de aquisição." },
+      { q: "O que acontece se atrasar a declaração?", a: "Multa mínima de R$ 165,74, podendo chegar a 20% do imposto devido. Além disso, seu CPF pode ficar irregular." },
+      { q: "Gastos com cursinho e inglês são dedutíveis?", a: "Não. Apenas ensino fundamental, médio, técnico, graduação e pós-graduação são dedutíveis em educação." },
+      { q: "Vendi ações com lucro abaixo de R$ 20.000/mês. Preciso pagar IR?", a: "Não. Vendas de ações (operações comuns) até R$ 20.000/mês são isentas. Mas day trade não tem essa isenção." },
+      { q: "MEI precisa declarar como pessoa física?", a: "Sim, se você se enquadrar nos critérios de obrigatoriedade. O rendimento do MEI deve ser declarado." },
+      { q: "Posso incluir meus pais como dependentes?", a: "Sim, desde que eles sejam economicamente dependentes de você e tenham rendimentos dentro do limite permitido." },
+      { q: "FIIs pagam IR sobre dividendos?", a: "Não. Dividendos de FIIs são isentos de IR para pessoa física. Porém, o ganho de capital na venda das cotas é tributado em 20%." },
+      { q: "Como declarar aluguel recebido?", a: "Aluguel recebido é rendimento tributável. Deve ser informado mês a mês e, se acima da faixa de isenção, gera carnê-leão." },
+      { q: "Qual a diferença entre PGBL e VGBL no IR?", a: "PGBL permite deduzir até 12% da renda bruta no IR. VGBL não tem dedução, mas o IR incide apenas sobre os rendimentos no resgate." }
+    ]
+  },
+  {
+    id: "29",
+    slug: "ia-mercado-financeiro-2026-investimentos",
+    title: "IA no Mercado Financeiro 2026: Guia Prático",
+    excerpt: "A IA já está gerenciando bilhões em investimentos. Descubra como a inteligência artificial está mudando as finanças em 2026.",
+    content: "",
+    category: "invest",
+    secondaryCategory: "ia",
+    subtopic: "ia-financas",
+    image: iaFinancas2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-02-20",
+    readTime: "12 min"
+  },
+  {
+    id: "30",
+    slug: "educacao-financeira-metodo-3-baldes",
+    title: "Método 3 Baldes: Finanças para Iniciantes",
+    excerpt: "Se você chega no fim do mês sem dinheiro, este artigo é para você. O Método dos 3 Baldes é simples e funciona para qualquer salário.",
+    content: "",
+    category: "invest",
+    subtopic: "educacao-financeira",
+    image: metodo3BaldesImg,
+    author: "VICIO<CODE>",
+    date: "2026-02-21",
+    readTime: "11 min"
+  },
+  {
+    id: "31",
+    slug: "fiis-2026-melhores-fundos-imobiliarios",
+    title: "FIIs em 2026: Os Melhores Fundos Imobiliários e Como Analisar",
+    excerpt: "Guia completo de FIIs para 2026. Saiba como escolher os melhores fundos imobiliários e construir uma carteira que paga dividendos mensais.",
+    content: "",
+    category: "invest",
+    subtopic: "fiis",
+    image: fiis2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-02-22",
+    updatedAt: "2026-03-15",
+    readTime: "14 min",
+    faq: [
+      { q: "Devo escolher FIIs só pelo Dividend Yield (DY)?", a: "Não. Um DY de 15% pode significar que a cota despencou, não que o fundo paga mais. Analise sempre o histórico de distribuições, qualidade dos imóveis e contratos antes de investir." },
+      { q: "A qualidade dos imóveis dentro do FII importa?", a: "Sim, é um dos critérios mais importantes. Galpões logísticos de primeira linha têm vacância menor e contratos mais longos do que imóveis de terceira categoria." },
+      { q: "Contratos típicos ou atípicos são melhores nos FIIs?", a: "Atípicos geralmente são mais seguros pois possuem multas pesadas em caso de rescisão antecipada, oferecendo previsibilidade maior de renda para o FII." },
+      { q: "O que fazer quando a cota do FII cai bastante?", a: "Não venda por pânico. Se os fundamentos continuam bons (imóveis ocupados, contratos sólidos, gestão competente), a queda pode ser oportunidade de compra com yield ainda maior." },
+      { q: "FIIs pagam Imposto de Renda sobre os dividendos?", a: "Não. Dividendos de FIIs são isentos de IR para pessoa física, desde que o fundo tenha mais de 50 cotistas e suas cotas sejam negociadas em bolsa. O ganho de capital na venda das cotas é tributado a 20%." },
+    ],
+  },
+  {
+    id: "32",
+    slug: "sair-das-dividas-2026-plano-acao",
+    title: "Sair das Dívidas em 2026: O Plano de Ação Que Realmente Funciona",
+    excerpt: "Endividado e sem ver saída? Este plano passo a passo foi criado para a realidade brasileira de 2026, com estratégias para quitar dívidas.",
+    content: "",
+    category: "invest",
+    subtopic: "dividas",
+    image: sairDividas2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-02-23",
+    readTime: "13 min"
+  },
+  {
+    id: "33",
+    slug: "planejamento-financeiro-2026-metas",
+    title: "Planejamento Financeiro 2026: Defina suas Metas",
+    excerpt: "Aprenda o método científico para definir e alcançar objetivos financeiros em 2026. Chega de metas que não saem do papel.",
+    content: "",
+    category: "invest",
+    subtopic: "planejamento",
+    image: planejamentoFinanceiro2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-02-24",
+    readTime: "11 min"
+  },
+  {
+    id: "34",
+    slug: "calculadoras-financeiras-ativos",
+    title: "Calculadoras Financeiras: Simule seus Investimentos",
+    excerpt: "Use nossas calculadoras com cotações em tempo real para simular quanto custaria comprar diferentes ativos financeiros.",
+    content: "",
+    category: "invest",
+    subtopic: "calculadoras",
+    image: calculadorasFinanceirasImg,
+    author: "VICIO<CODE>",
+    date: "2026-02-25",
+    readTime: "5 min"
+  },
+
+  // ── IA Posts ─────────────────────────────────────────────
   {
     id: "39",
     slug: "ia-generativa-iniciantes-2026-guia",
@@ -240,554 +723,8 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-03",
     readTime: "12 min"
   },
-  // INVEST Posts - Finance Series
-  {
-    id: "24",
-    slug: "tesouro-direto-2026-guia-completo",
-    title: "Tesouro Direto 2026: Ainda Vale a Pena?",
-    excerpt: "Descubra se o Tesouro Direto ainda é o melhor investimento para iniciantes em 2026. Comparamos taxas, rendimentos e estratégias.",
-    content: "",
-    category: "invest",
-    subtopic: "renda-fixa",
-    image: tesouroDiretoImg,
-    author: "VICIO<CODE>",
-    date: "2026-02-15",
-    updatedAt: "2026-03-15",
-    readTime: "12 min",
-    faq: [
-      { q: "É seguro vender o Tesouro Direto antes do vencimento?", a: "Sim, mas há risco de perda no Prefixado e IPCA+ por conta da marcação a mercado. O Tesouro Selic é o único que não sofre esse efeito e pode ser resgatado a qualquer momento sem perdas." },
-      { q: "Posso usar o Tesouro Direto como reserva de emergência?", a: "Apenas o Tesouro Selic. Nunca coloque reserva de emergência em Prefixado ou IPCA+, pois você pode perder dinheiro se precisar resgatar antes do vencimento." },
-      { q: "Qual é a taxa de custódia do Tesouro Direto?", a: "A B3 cobra 0,20% ao ano sobre o valor investido. É cobrada semestralmente em janeiro e julho. Para o Tesouro Selic, investidores com menos de R$ 10.000 são isentos." },
-      { q: "Os juros semestrais do IPCA+ são automáticos?", a: "Os juros são pagos automaticamente na sua conta, mas você precisa reinvesti-los manualmente se quiser manter os juros compostos. Caso contrário, o dinheiro fica parado na conta sem render." },
-      { q: "Qual a diferença entre Tesouro Selic, IPCA+ e Prefixado?", a: "Tesouro Selic acompanha a taxa básica de juros (ideal para reserva de emergência). IPCA+ garante rentabilidade acima da inflação (ideal para longo prazo). Prefixado tem taxa travada na compra (bom quando a Selic está alta e vai cair)." },
-    ],
-  },
-  {
-    id: "25",
-    slug: "renda-passiva-2026-formas-comprovadas",
-    title: "Renda Passiva 2026: 7 Formas Comprovadas",
-    excerpt: "7 formas reais de renda passiva em 2026: FIIs, dividendos, CDB, conteúdo digital e mais. Com exemplos de valores, rendimentos esperados e quanto capital você precisa para começar.",
-    content: "",
-    category: "invest",
-    subtopic: "renda-passiva",
-    image: rendaPassivaImg,
-    author: "VICIO<CODE>",
-    date: "2026-02-16",
-    readTime: "15 min"
-  },
-  {
-    id: "26",
-    slug: "carteira-investimentos-iniciantes-2026",
-    title: "Carteira de Investimentos para Iniciantes 2026",
-    excerpt: "Não sabe por onde começar a investir? Este guia passo a passo mostra como montar uma carteira do zero em 2026.",
-    content: "",
-    category: "invest",
-    subtopic: "carteira",
-    image: carteiraInvestimentosImg,
-    author: "VICIO<CODE>",
-    date: "2026-02-17",
-    readTime: "13 min"
-  },
-  // INVEST Posts - Crypto
-  {
-    id: "27",
-    slug: "bitcoin-criptomoedas-2026-investir",
-    title: "Bitcoin e Criptomoedas em 2026: Ainda Dá Para Lucrar?",
-    excerpt: "O mercado cripto mudou muito. Entenda o cenário das criptomoedas em 2026, quais ainda têm potencial e como investir sem perder o que você tem.",
-    content: "",
-    category: "invest",
-    subtopic: "cripto",
-    image: cryptoInvest2026Img,
-    author: "VICIO<CODE>",
-    date: "2026-02-18",
-    updatedAt: "2026-03-15",
-    readTime: "14 min",
-    faq: [
-      { q: "O que é DeFi (Finanças Descentralizadas)?", a: "Ecossistema de serviços financeiros construídos sobre blockchain, sem intermediários como bancos. Inclui empréstimos, exchanges e seguros descentralizados." },
-      { q: "O que é NFT (Token Não-Fungível)?", a: "Um ativo digital único registrado em blockchain. Usado para arte, colecionáveis, ingressos e propriedade intelectual." },
-      { q: "O que é Halving do Bitcoin?", a: "Evento que reduz pela metade a recompensa dos mineradores de Bitcoin a cada aproximadamente 4 anos. Historicamente associado a ciclos de alta no preço." },
-      { q: "O que é Seed Phrase?", a: "Conjunto de 12 a 24 palavras que serve como backup da sua carteira de criptomoedas. Nunca compartilhe com ninguém — quem tem a seed phrase controla os fundos." },
-      { q: "O que é Staking de criptomoedas?", a: "Processo de travar suas criptomoedas na rede para validar transações e receber recompensas, similar a juros. Disponível em redes como Ethereum, Solana e Cardano." },
-      { q: "O que é Cold Wallet?", a: "Carteira offline (hardware) para armazenar criptomoedas com máxima segurança, desconectada da internet. Exemplos: Ledger e Trezor." },
-      { q: "O que é ETF de Criptomoedas?", a: "Fundo negociado em bolsa que acompanha o preço de criptomoedas, permitindo investir sem precisar comprar ou custodiar os ativos diretamente." },
-    ],
-  },
-  // INVEST Posts - IRPF
-  {
-    id: "28",
-    slug: "irpf-2026-guia-declarar-pagar-menos",
-    title: "IRPF 2026: Guia Completo Para Declarar e Pagar Menos Imposto",
-    excerpt: "Tudo que você precisa saber para declarar o Imposto de Renda 2026 corretamente, evitar a malha fina e usar deduções legais para pagar menos IR.",
-    content: "",
-    category: "invest",
-    subtopic: "impostos",
-    image: irpf2026Img,
-    author: "VICIO<CODE>",
-    date: "2026-02-19",
-    updatedAt: "2026-03-15",
-    readTime: "16 min",
-    faq: [
-      { q: "Posso declarar despesas com saúde do meu dependente?", a: "Sim, desde que o dependente esteja incluído na sua declaração. As despesas médicas são totalmente dedutíveis, sem limite de valor." },
-      { q: "Preciso declarar minha conta de criptomoedas?", a: "Sim. Mesmo que não tenha vendido, criptomoedas devem ser declaradas na ficha 'Bens e Direitos' pelo valor de aquisição." },
-      { q: "O que acontece se atrasar a declaração?", a: "Multa mínima de R$ 165,74, podendo chegar a 20% do imposto devido. Além disso, seu CPF pode ficar irregular." },
-      { q: "Gastos com cursinho e inglês são dedutíveis?", a: "Não. Apenas ensino fundamental, médio, técnico, graduação e pós-graduação são dedutíveis em educação." },
-      { q: "Vendi ações com lucro abaixo de R$ 20.000/mês. Preciso pagar IR?", a: "Não. Vendas de ações (operações comuns) até R$ 20.000/mês são isentas. Mas day trade não tem essa isenção." },
-      { q: "MEI precisa declarar como pessoa física?", a: "Sim, se você se enquadrar nos critérios de obrigatoriedade. O rendimento do MEI deve ser declarado." },
-      { q: "Posso incluir meus pais como dependentes?", a: "Sim, desde que eles sejam economicamente dependentes de você e tenham rendimentos dentro do limite permitido." },
-      { q: "FIIs pagam IR sobre dividendos?", a: "Não. Dividendos de FIIs são isentos de IR para pessoa física. Porém, o ganho de capital na venda das cotas é tributado em 20%." },
-      { q: "Como declarar aluguel recebido?", a: "Aluguel recebido é rendimento tributável. Deve ser informado mês a mês e, se acima da faixa de isenção, gera carnê-leão." },
-      { q: "Qual a diferença entre PGBL e VGBL no IR?", a: "PGBL permite deduzir até 12% da renda bruta no IR. VGBL não tem dedução, mas o IR incide apenas sobre os rendimentos no resgate." }
-    ]
-  },
-  // INVEST + IA Posts - IA no Mercado Financeiro
-  {
-    id: "29",
-    slug: "ia-mercado-financeiro-2026-investimentos",
-    title: "IA no Mercado Financeiro 2026: Guia Prático",
-    excerpt: "A IA já está gerenciando bilhões em investimentos. Descubra como a inteligência artificial está mudando as finanças em 2026.",
-    content: "",
-    category: "invest",
-    secondaryCategory: "ia",
-    subtopic: "ia-financas",
-    image: iaFinancas2026Img,
-    author: "VICIO<CODE>",
-    date: "2026-02-20",
-    readTime: "12 min"
-  },
-  // INVEST Posts - Education & FIIs & Debt & Planning
-  {
-    id: "30",
-    slug: "educacao-financeira-metodo-3-baldes",
-    title: "Método 3 Baldes: Finanças para Iniciantes",
-    excerpt: "Se você chega no fim do mês sem dinheiro, este artigo é para você. O Método dos 3 Baldes é simples e funciona para qualquer salário.",
-    content: "",
-    category: "invest",
-    subtopic: "educacao-financeira",
-    image: metodo3BaldesImg,
-    author: "VICIO<CODE>",
-    date: "2026-02-21",
-    readTime: "11 min"
-  },
-  {
-    id: "31",
-    slug: "fiis-2026-melhores-fundos-imobiliarios",
-    title: "FIIs em 2026: Os Melhores Fundos Imobiliários e Como Analisar",
-    excerpt: "Guia completo de FIIs para 2026. Saiba como escolher os melhores fundos imobiliários e construir uma carteira que paga dividendos mensais.",
-    content: "",
-    category: "invest",
-    subtopic: "fiis",
-    image: fiis2026Img,
-    author: "VICIO<CODE>",
-    date: "2026-02-22",
-    updatedAt: "2026-03-15",
-    readTime: "14 min",
-    faq: [
-      { q: "Devo escolher FIIs só pelo Dividend Yield (DY)?", a: "Não. Um DY de 15% pode significar que a cota despencou, não que o fundo paga mais. Analise sempre o histórico de distribuições, qualidade dos imóveis e contratos antes de investir." },
-      { q: "A qualidade dos imóveis dentro do FII importa?", a: "Sim, é um dos critérios mais importantes. Galpões logísticos de primeira linha têm vacância menor e contratos mais longos do que imóveis de terceira categoria." },
-      { q: "Contratos típicos ou atípicos são melhores nos FIIs?", a: "Atípicos geralmente são mais seguros pois possuem multas pesadas em caso de rescisão antecipada, oferecendo previsibilidade maior de renda para o FII." },
-      { q: "O que fazer quando a cota do FII cai bastante?", a: "Não venda por pânico. Se os fundamentos continuam bons (imóveis ocupados, contratos sólidos, gestão competente), a queda pode ser oportunidade de compra com yield ainda maior." },
-      { q: "FIIs pagam Imposto de Renda sobre os dividendos?", a: "Não. Dividendos de FIIs são isentos de IR para pessoa física, desde que o fundo tenha mais de 50 cotistas e suas cotas sejam negociadas em bolsa. O ganho de capital na venda das cotas é tributado a 20%." },
-    ],
-  },
-  {
-    id: "32",
-    slug: "sair-das-dividas-2026-plano-acao",
-    title: "Sair das Dívidas em 2026: O Plano de Ação Que Realmente Funciona",
-    excerpt: "Endividado e sem ver saída? Este plano passo a passo foi criado para a realidade brasileira de 2026, com estratégias para quitar dívidas.",
-    content: "",
-    category: "invest",
-    subtopic: "dividas",
-    image: sairDividas2026Img,
-    author: "VICIO<CODE>",
-    date: "2026-02-23",
-    readTime: "13 min"
-  },
-  {
-    id: "33",
-    slug: "planejamento-financeiro-2026-metas",
-    title: "Planejamento Financeiro 2026: Defina suas Metas",
-    excerpt: "Aprenda o método científico para definir e alcançar objetivos financeiros em 2026. Chega de metas que não saem do papel.",
-    content: "",
-    category: "invest",
-    subtopic: "planejamento",
-    image: planejamentoFinanceiro2026Img,
-    author: "VICIO<CODE>",
-    date: "2026-02-24",
-    readTime: "11 min"
-  },
-  // INVEST Posts - Calculadoras
-  {
-    id: "34",
-    slug: "calculadoras-financeiras-ativos",
-    title: "Calculadoras Financeiras: Simule seus Investimentos",
-    excerpt: "Use nossas calculadoras com cotações em tempo real para simular quanto custaria comprar diferentes ativos financeiros.",
-    content: "",
-    category: "invest",
-    subtopic: "calculadoras",
-    image: calculadorasFinanceirasImg,
-    author: "VICIO<CODE>",
-    date: "2026-02-25",
-    readTime: "5 min"
-  },
-  // INVEST Posts
-  {
-    id: "5",
-    slug: "investir-em-tecnologia-2026",
-    title: "Como Investir em Tecnologia em 2026: Guia de Setores e ETFs",
-    excerpt: "Descubra como investir em empresas de tecnologia em 2026, quais setores têm mais potencial de crescimento e como montar uma carteira tech diversificada.",
-    content: "",
-    category: "invest",
-    subtopic: "semicondutores",
-    image: techInvesting2026Img,
-    author: "VICIO<CODE>",
-    date: "2026-02-06",
-    readTime: "12 min"
-  },
-  // GEEK Posts - Vikings
-  {
-    id: "6",
-    slug: "vikings-legado-ragnar-lothbrok",
-    title: "Vikings: Vale a Pena Assistir em 2026? Review Completa da Série",
-    excerpt: "Explore o fascinante legado de Ragnar Lothbrok, a cultura viking e como a série Vikings retratou com precisão os guerreiros nórdicos que moldaram a Europa.",
-    content: "",
-    category: "geek",
-    subtopic: "vikings",
-    image: vikingsRagnarImg,
-    author: "VICIO<CODE>",
-    date: "2026-02-07",
-    readTime: "18 min"
-  },
-  // GEEK Posts - Hell Let Loose
-  {
-    id: "7",
-    slug: "hell-let-loose-simulador-guerra",
-    title: "Hell Let Loose em 2026 Vale a Pena? Review do Simulador de Guerra",
-    excerpt: "Este FPS tático de Segunda Guerra Mundial coloca 100 jogadores em um mapa imenso onde um único tiro pode ser fatal.",
-    content: "",
-    category: "geek",
-    subtopic: "games",
-    image: hellLetLooseImg,
-    author: "VICIO<CODE>",
-    date: "2026-02-03",
-    readTime: "18 min"
-  },
-  // GEEK Posts - Avatar Series
-  {
-    id: "8",
-    slug: "avatar-2009-filme-revolucionou-tecnologia",
-    title: "Avatar (2009): O Filme que Revolucionou o CGI",
-    excerpt: "Relembre como James Cameron esperou mais de uma década para que a tecnologia de captura de movimento fosse capaz de criar Pandora.",
-    content: "",
-    category: "geek",
-    subtopic: "avatar",
-    image: avatarPandoraImg,
-    author: "VICIO<CODE>",
-    date: "2026-01-29",
-    readTime: "12 min"
-  },
-  {
-    id: "9",
-    slug: "avatar-caminho-da-agua-fisica-fluidos",
-    title: "Avatar 2: A Física dos Fluidos e o CGI",
-    excerpt: "Treze anos depois, a sequência focou na família de Jake Sully e na impressionante captura de performance subaquática.",
-    content: "",
-    category: "geek",
-    subtopic: "avatar",
-    image: avatarWaterImg,
-    author: "VICIO<CODE>",
-    date: "2026-01-26",
-    readTime: "14 min"
-  },
-  {
-    id: "10",
-    slug: "avatar-3-fogo-cinzas-lado-sombrio-pandora",
-    title: "Avatar 3: Fire and Ash — Tudo Sobre o Filme, Data e O Que Esperar",
-    excerpt: "Avatar 3: Fire and Ash chega em dezembro de 2025 explorando o lado sombrio de Pandora. Saiba tudo sobre a data de lançamento, enredo, personagens e o que esperar do próximo capítulo da saga.",
-    content: "",
-    category: "geek",
-    subtopic: "avatar",
-    image: avatarFireImg,
-    author: "VICIO<CODE>",
-    date: "2026-01-24",
-    readTime: "10 min"
-  },
-  {
-    id: "11",
-    slug: "avatar-frontiers-pandora-ubisoft-review",
-    title: "Avatar: Frontiers of Pandora em 2026 Vale a Pena? Review Completa",
-    excerpt: "Analise o jogo que coloca o jogador na pele de um Na'vi com uma das florestas mais bonitas já vistas em videogames.",
-    content: "",
-    category: "geek",
-    subtopic: "avatar",
-    image: avatarGameImg,
-    author: "VICIO<CODE>",
-    date: "2026-01-22",
-    readTime: "18 min"
-  },
-  // GEEK Posts - Assassin's Creed
-  // ── AC Classic Era ──────────────────────────────────────────────────────────
-  {
-    id: "80",
-    slug: "ac-1-altair-terra-santa-1191",
-    title: "Assassin's Creed (2007): O Início da Lenda — Altaïr e a Terra Santa",
-    excerpt: "O jogo que fundou tudo: Altaïr Ibn-La'Ahad nas Cruzadas de 1191, a Maçã do Éden, o Animus e o Credo dos Assassinos. Por que AC1 ainda importa em 2026.",
-    content: "",
-    category: "geek",
-    subtopic: "assassins-creed",
-    image: ac1AltairImg,
-    author: "VICIO<CODE>",
-    date: "2026-03-21",
-    readTime: "18 min",
-  },
-  {
-    id: "81",
-    slug: "ac-2-ezio-italia-renascentista",
-    title: "Assassin's Creed II: Ezio Auditore e a Itália Renascentista",
-    excerpt: "O melhor AC na opinião de muitos fãs: Ezio Auditore em Florença, Veneza e Roma Renascentistas. Leonardo da Vinci, os Médici, os Bórgias e a Maçã do Éden — guia completo.",
-    content: "",
-    category: "geek",
-    subtopic: "assassins-creed",
-    image: ac2EzioImg,
-    author: "VICIO<CODE>",
-    date: "2026-03-21",
-    readTime: "20 min",
-  },
-  {
-    id: "82",
-    slug: "ac-brotherhood-ezio-roma-borgia",
-    title: "Assassin's Creed Brotherhood: Ezio Reconstrói a Irmandade em Roma",
-    excerpt: "Ezio com 40 anos enfrenta Cesare Borgia em Roma — review completa do sistema de recrutamento de Assassinos, as máquinas de Leonardo, o multijogador online e o final chocante.",
-    content: "",
-    category: "geek",
-    subtopic: "assassins-creed",
-    image: acBrotherImg,
-    author: "VICIO<CODE>",
-    date: "2026-03-21",
-    readTime: "17 min",
-  },
-  {
-    id: "83",
-    slug: "ac-revelations-ezio-constantinopla",
-    title: "Assassin's Creed Revelations: Ezio em Constantinopla e o Legado de Altaïr",
-    excerpt: "O encerramento da trilogia Ezio: Constantinopla otomana de 1511, os selos de Altaïr, Sofia Sartor, o gancho-lâmina e o adeus emocionante dos dois Assassinos mais icônicos.",
-    content: "",
-    category: "geek",
-    subtopic: "assassins-creed",
-    image: acRevImg,
-    author: "VICIO<CODE>",
-    date: "2026-03-21",
-    readTime: "16 min",
-  },
-  {
-    id: "12",
-    slug: "ac-valhalla-jornada-epica-eivor",
-    title: "AC Valhalla em 2026 Vale a Pena? Review Completa — Vikings e RPG",
-    excerpt: "Se você é fã de Vikings e adora explorar mundos abertos massivos, Valhalla é o ápice da fórmula moderna da Ubisoft.",
-    content: "",
-    category: "geek",
-    subtopic: "assassins-creed",
-    image: acValhallaImg,
-    author: "VICIO<CODE>",
-    date: "2026-02-08",
-    readTime: "18 min"
-  },
-  {
-    id: "13",
-    slug: "ac-shadows-japao-feudal",
-    title: "AC Shadows em 2026 Vale a Pena? Review Completa — Japão Feudal",
-    excerpt: "Assassin's Creed Shadows finalmente leva a franquia ao Japão Feudal. Conheça a história, mecânicas, personagens e por que esse é um dos jogos mais aguardados.",
-    content: "",
-    category: "geek",
-    subtopic: "assassins-creed",
-    image: acShadowsImg,
-    author: "VICIO<CODE>",
-    date: "2026-02-09",
-    readTime: "18 min"
-  },
-  {
-    id: "14",
-    slug: "ac-odyssey-odisseia-grecia",
-    title: "AC Odyssey em 2026 Vale a Pena? Review Completa — Grécia Antiga",
-    excerpt: "Explore a Grécia Antiga em Assassin's Creed Odyssey — batalhas épicas, escolhas morais, o misterioso Culto de Kosmos e um dos maiores mapas da franquia.",
-    content: "",
-    category: "geek",
-    subtopic: "assassins-creed",
-    image: acOdysseyImg,
-    author: "VICIO<CODE>",
-    date: "2026-02-04",
-    readTime: "18 min"
-  },
-  {
-    id: "15",
-    slug: "ac-black-flag-melhor-jogo-piratas",
-    title: "AC Black Flag: O Melhor Jogo de Piratas Já Feito",
-    excerpt: "Assassin's Creed Black Flag combina pirataria, exploração naval e a história fascinante de Edward Kenway num dos jogos mais amados da franquia da Ubisoft.",
-    content: "",
-    category: "geek",
-    subtopic: "assassins-creed",
-    image: acBlackFlagImg,
-    author: "VICIO<CODE>",
-    date: "2026-01-31",
-    readTime: "18 min"
-  },
-  {
-    id: "16",
-    slug: "ac-origins-renascimento-franquia-egito",
-    title: "AC Origins em 2026 Vale a Pena? Review Completa — Egito Antigo",
-    excerpt: "Assassin's Creed Origins redefiniu a franquia ao trazer combate renovado, o Egito Antigo esplêndido e a origem da Irmandade dos Assassinos com Bayek de Siwa.",
-    content: "",
-    category: "geek",
-    subtopic: "assassins-creed",
-    image: acOriginsImg,
-    author: "VICIO<CODE>",
-    date: "2026-01-28",
-    readTime: "18 min"
-  },
-  {
-    id: "17",
-    slug: "ac-mirage-retorno-raizes-bagda",
-    title: "AC Mirage: O Retorno às Raízes em Bagdá",
-    excerpt: "Assassin's Creed Mirage leva Basim a Bagdá do século IX, apostando em parkour, stealth e sigilo para resgatar a essência clássica da série da Ubisoft.",
-    content: "",
-    category: "geek",
-    subtopic: "assassins-creed",
-    image: acMirageImg,
-    author: "VICIO<CODE>",
-    date: "2026-01-25",
-    readTime: "18 min"
-  },
-  {
-    id: "18",
-    slug: "ac-3-remastered-revolucao-americana",
-    title: "AC III Remastered: Revolução Americana",
-    excerpt: "Assassin's Creed 3 Remastered revisita a Revolução Americana com gráficos atualizados. Conheça a história de Connor, os melhoramentos e o que mudou na versão remasterizada.",
-    content: "",
-    category: "geek",
-    subtopic: "assassins-creed",
-    image: ac3Img,
-    author: "VICIO<CODE>",
-    date: "2026-01-23",
-    readTime: "18 min"
-  },
-  {
-    id: "19",
-    slug: "ac-syndicate-revolucao-industrial-londres",
-    title: "AC Syndicate em 2026 Vale a Pena? Review — Londres Vitoriana",
-    excerpt: "Assassin's Creed Syndicate mergulha no Londres vitoriano da Revolução Industrial com os gêmeos Frye. Conheça mecânicas, história e por que ele merece mais reconhecimento.",
-    content: "",
-    category: "geek",
-    subtopic: "assassins-creed",
-    image: acSyndicateImg,
-    author: "VICIO<CODE>",
-    date: "2026-01-21",
-    readTime: "18 min"
-  },
-  {
-    id: "21",
-    slug: "ac-unity-jogo-frente-tempo-paris",
-    title: "AC Unity: O Jogo À Frente do Seu Tempo",
-    excerpt: "Assassin's Creed Unity foi lançado com bugs graves em 2014, mas esconde um dos melhores designs de parkour e ambientações da franquia. Paris nunca foi tão detalhada num jogo da Ubisoft.",
-    content: "",
-    category: "geek",
-    subtopic: "assassins-creed",
-    image: acUnityImg,
-    author: "VICIO<CODE>",
-    date: "2026-01-20",
-    readTime: "18 min"
-  },
-  {
-    id: "22",
-    slug: "ac-rogue-assassino-templario",
-    title: "AC Rogue em 2026 Vale a Pena? Review — Jogue Como Templário",
-    excerpt: "Em AC Rogue você joga como um Templário caçando Assassinos. Shay Patrick Cormac tem uma das melhores histórias da franquia — conheça por que esse jogo subestimado merece sua atenção em 2026.",
-    content: "",
-    category: "geek",
-    subtopic: "assassins-creed",
-    image: acRogueImg,
-    author: "VICIO<CODE>",
-    date: "2026-01-19",
-    readTime: "18 min"
-  },
-  {
-    id: "23",
-    slug: "ranking-melhor-assassins-creed-2026",
-    title: "Ranking: Qual o Melhor Assassin's Creed para Jogar em 2026?",
-    excerpt: "Ranking completo de todos os jogos Assassin's Creed em 2026 — do melhor ao pior. Análise de gameplay, história, inovação e impacto de cada título na franquia da Ubisoft.",
-    content: "",
-    category: "geek",
-    subtopic: "assassins-creed",
-    image: acPortalImg,
-    author: "VICIO<CODE>",
-    date: "2026-02-10",
-    readTime: "10 min"
-  },
-  // CRIMSON DESERT Posts
-  {
-    id: "70",
-    slug: "crimson-desert-guia-completo",
-    title: "Crimson Desert 2026: Guia Completo do Lançamento",
-    excerpt: "Tudo sobre história, gameplay, mundo aberto e sistema de combate do novo épico da Pearl Abyss. Descubra o continente de Pywel e a jornada de Kliff.",
-    content: "",
-    category: "geek",
-    subtopic: "crimson-desert",
-    image: crimsonDesertGuiaImg,
-    author: "VICIO<CODE>",
-    date: "2026-03-16",
-    readTime: "12 min"
-  },
-  {
-    id: "71",
-    slug: "crimson-desert-combate-blackspace-engine",
-    title: "Crimson Desert: Combate e BlackSpace Engine",
-    excerpt: "Análise aprofundada das mecânicas de combate, chefes épicos, montarias e a tecnologia por trás do visual impressionante do RPG da Pearl Abyss.",
-    content: "",
-    category: "geek",
-    subtopic: "crimson-desert",
-    image: crimsonDesertCombateImg,
-    author: "VICIO<CODE>",
-    date: "2026-03-16",
-    readTime: "9 min"
-  },
-  // OTAKU Posts
-  {
-    id: "1",
-    slug: "diferenca-mangas-manhuas-manhwas",
-    title: "Sabe a diferença entre Mangas, Manhuas e Manhwas?",
-    excerpt: "Aprenda de uma vez a diferença entre Mangás japoneses, Manhwas coreanos e Manhuas chineses: sentido de leitura, arte, temas e os títulos mais populares de cada origem para você começar a explorar.",
-    content: "",
-    category: "otaku",
-    subtopic: "manga",
-    image: mangaManhwaManhuaImg,
-    author: "VICIO<CODE>",
-    date: "2026-02-02",
-    readTime: "5 min"
-  },
-  {
-    id: "2",
-    slug: "como-diferenciar-manhuas-manhwas",
-    title: "Saiba como diferenciar Manhuas e Manhwas",
-    excerpt: "Aprenda a diferenciar Manhuas (chineses) de Manhwas (coreanos) de vez. Guia completo com características visuais, temas, sentido de leitura e exemplos populares de cada tipo.",
-    content: "",
-    category: "otaku",
-    subtopic: "manhwa",
-    image: manhwaVsManuaImg,
-    author: "VICIO<CODE>",
-    date: "2026-01-30",
-    readTime: "4 min"
-  },
-  {
-    id: "3",
-    slug: "10-melhores-manhwas-sistema-2026",
-    title: "Os 10 melhores Manhwas de 'Sistema' para ler em 2026",
-    excerpt: "Os 10 melhores manhwas com sistema de 2026 — aqueles que você não consegue parar de ler. Seleção com sinopse, número de capítulos e onde ler online gratuitamente.",
-    content: "",
-    category: "otaku",
-    subtopic: "manhwa",
-    image: systemManhwaImg,
-    author: "VICIO<CODE>",
-    date: "2026-01-27",
-    readTime: "8 min"
-  },
+
+  // ── Otaku Posts ──────────────────────────────────────────
   {
     id: "45",
     slug: "animes-mais-aguardados-2026",
@@ -918,7 +855,8 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-13",
     readTime: "13 min"
   },
-  // New IA articles - March 2026
+
+  // ── IA Posts ─────────────────────────────────────────────
   {
     id: "55",
     slug: "ia-criatividade-arte-musica-2026",
@@ -945,7 +883,8 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-15",
     readTime: "13 min"
   },
-  // New Finance articles - March 2026
+
+  // ── Investimentos Posts ───────────────────────────────────
   {
     id: "57",
     slug: "etfs-2026-guia-completo-investir",
@@ -959,6 +898,36 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-16",
     readTime: "15 min"
   },
+
+  // ── Geek Posts ───────────────────────────────────────────
+  {
+    id: "70",
+    slug: "crimson-desert-guia-completo",
+    title: "Crimson Desert 2026: Guia Completo do Lançamento",
+    excerpt: "Tudo sobre história, gameplay, mundo aberto e sistema de combate do novo épico da Pearl Abyss. Descubra o continente de Pywel e a jornada de Kliff.",
+    content: "",
+    category: "geek",
+    subtopic: "crimson-desert",
+    image: crimsonDesertGuiaImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-16",
+    readTime: "12 min"
+  },
+  {
+    id: "71",
+    slug: "crimson-desert-combate-blackspace-engine",
+    title: "Crimson Desert: Combate e BlackSpace Engine",
+    excerpt: "Análise aprofundada das mecânicas de combate, chefes épicos, montarias e a tecnologia por trás do visual impressionante do RPG da Pearl Abyss.",
+    content: "",
+    category: "geek",
+    subtopic: "crimson-desert",
+    image: crimsonDesertCombateImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-16",
+    readTime: "9 min"
+  },
+
+  // ── Investimentos Posts ───────────────────────────────────
   {
     id: "58",
     slug: "economia-domestica-2026-cortar-gastos",
@@ -972,7 +941,8 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-17",
     readTime: "14 min"
   },
-  // Crimson Desert - Review & Builds
+
+  // ── Geek Posts ───────────────────────────────────────────
   {
     id: "72",
     slug: "crimson-desert-review-2026",
@@ -999,7 +969,8 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-17",
     readTime: "14 min"
   },
-  // ── 17 Mar 2026 — 8 novos posts ────────────────────────────────────────────
+
+  // ── Investimentos Posts ───────────────────────────────────
   {
     id: "111",
     slug: "cdb-2026-guia-completo",
@@ -1026,6 +997,8 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-17",
     readTime: "13 min"
   },
+
+  // ── IA Posts ─────────────────────────────────────────────
   {
     id: "113",
     slug: "ia-codigo-programadores-2026",
@@ -1052,6 +1025,8 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-17",
     readTime: "12 min"
   },
+
+  // ── Geek Posts ───────────────────────────────────────────
   {
     id: "115",
     slug: "baldurs-gate-3-review-2026",
@@ -1078,6 +1053,8 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-17",
     readTime: "13 min"
   },
+
+  // ── Otaku Posts ──────────────────────────────────────────
   {
     id: "117",
     slug: "demon-slayer-hashira-guia-2026",
@@ -1104,6 +1081,8 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-17",
     readTime: "15 min"
   },
+
+  // ── Geek Posts ───────────────────────────────────────────
   {
     id: "119",
     slug: "crimson-desert-mapa-regioes-pywel",
@@ -1117,7 +1096,8 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-19",
     readTime: "13 min"
   },
-  // ── TenSura Posts ──────────────────────────────────────────────────────────
+
+  // ── Otaku Posts ──────────────────────────────────────────
   {
     id: "76",
     slug: "tensura-guia-completo-temporadas-filmes",
@@ -1127,6 +1107,19 @@ export const blogPosts: BlogPost[] = [
     category: "otaku",
     subtopic: "tensura",
     image: tensuraGuiaImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-20",
+    readTime: "18 min",
+  },
+  {
+    id: "78",
+    slug: "overlord-guia-completo-temporadas-ainz",
+    title: "Overlord: Guia Completo — 4 Temporadas, Filme Sacred Kingdom e T5",
+    excerpt: "Overlord completo: T1 (2015), T2 (2018), T3 (2018), T4 (2022), filmes de compilação (2017) e The Sacred Kingdom (setembro/2024). OPs de OxT e MYTH&ROID, vozes de Satoshi Hino, e tudo sobre a esperada T5.",
+    content: "",
+    category: "otaku",
+    subtopic: "overlord",
+    image: overlordGuiaImg,
     author: "VICIO<CODE>",
     date: "2026-03-20",
     readTime: "18 min",
@@ -1144,20 +1137,6 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-21",
     readTime: "10 min",
   },
-  // ── Overlord Posts ──────────────────────────────────────────────────────────
-  {
-    id: "78",
-    slug: "overlord-guia-completo-temporadas-ainz",
-    title: "Overlord: Guia Completo — 4 Temporadas, Filme Sacred Kingdom e T5",
-    excerpt: "Overlord completo: T1 (2015), T2 (2018), T3 (2018), T4 (2022), filmes de compilação (2017) e The Sacred Kingdom (setembro/2024). OPs de OxT e MYTH&ROID, vozes de Satoshi Hino, e tudo sobre a esperada T5.",
-    content: "",
-    category: "otaku",
-    subtopic: "overlord",
-    image: overlordGuiaImg,
-    author: "VICIO<CODE>",
-    date: "2026-03-20",
-    readTime: "18 min",
-  },
   {
     id: "79",
     slug: "overlord-ainz-guardians-personagens",
@@ -1171,7 +1150,62 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-21",
     readTime: "15 min",
   },
+
+  // ── Geek Posts ───────────────────────────────────────────
+  {
+    id: "80",
+    slug: "ac-1-altair-terra-santa-1191",
+    title: "Assassin's Creed (2007): O Início da Lenda — Altaïr e a Terra Santa",
+    excerpt: "O jogo que fundou tudo: Altaïr Ibn-La'Ahad nas Cruzadas de 1191, a Maçã do Éden, o Animus e o Credo dos Assassinos. Por que AC1 ainda importa em 2026.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: ac1AltairImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-21",
+    readTime: "18 min",
+  },
+  {
+    id: "81",
+    slug: "ac-2-ezio-italia-renascentista",
+    title: "Assassin's Creed II: Ezio Auditore e a Itália Renascentista",
+    excerpt: "O melhor AC na opinião de muitos fãs: Ezio Auditore em Florença, Veneza e Roma Renascentistas. Leonardo da Vinci, os Médici, os Bórgias e a Maçã do Éden — guia completo.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: ac2EzioImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-21",
+    readTime: "20 min",
+  },
+  {
+    id: "82",
+    slug: "ac-brotherhood-ezio-roma-borgia",
+    title: "Assassin's Creed Brotherhood: Ezio Reconstrói a Irmandade em Roma",
+    excerpt: "Ezio com 40 anos enfrenta Cesare Borgia em Roma — review completa do sistema de recrutamento de Assassinos, as máquinas de Leonardo, o multijogador online e o final chocante.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acBrotherImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-21",
+    readTime: "17 min",
+  },
+  {
+    id: "83",
+    slug: "ac-revelations-ezio-constantinopla",
+    title: "Assassin's Creed Revelations: Ezio em Constantinopla e o Legado de Altaïr",
+    excerpt: "O encerramento da trilogia Ezio: Constantinopla otomana de 1511, os selos de Altaïr, Sofia Sartor, o gancho-lâmina e o adeus emocionante dos dois Assassinos mais icônicos.",
+    content: "",
+    category: "geek",
+    subtopic: "assassins-creed",
+    image: acRevImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-21",
+    readTime: "16 min",
+  },
 ];
+
 
 export const getPostBySlug = (slug: string): BlogPost | undefined => {
   return blogPosts.find(post => post.slug === slug);
