@@ -555,4 +555,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- 22 Mar 2026 — Finanças -->
+  <url><loc>https://viciocode.com/post/selic-comeca-cair-2026</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://viciocode.com/post/bitcoin-2026-vale-comprar</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://viciocode.com/post/ia-para-financas-pessoais-2026</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://viciocode.com/post/fiis-2026-ainda-vale-investir</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
