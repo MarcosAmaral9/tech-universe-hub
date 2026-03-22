@@ -152,6 +152,11 @@ const OverlordGuiaCompleto  = lazy(() => import("./pages/posts/OverlordGuiaCompl
 const OverlordPersonagens   = lazy(() => import("./pages/posts/OverlordPersonagens"));
 const OverlordPortal        = lazy(() => import("./pages/posts/OverlordPortal"));
 const SocialPanelPage = lazy(() => import("./pages/SocialPanelPage"));
+// 22 Mar 2026 — Finanças
+const SelicComecaCair2026    = lazy(() => import("./pages/posts/SelicComecaCair2026"));
+const Bitcoin2026ValeComprar = lazy(() => import("./pages/posts/Bitcoin2026ValeComprar"));
+const IAFinancasPessoais2026 = lazy(() => import("./pages/posts/IAFinancasPessoais2026"));
+const FIIs2026AindaVale      = lazy(() => import("./pages/posts/FIIs2026AindaVale"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -291,6 +296,11 @@ const App = () => (
                 <Route path="/instalar" element={<InstallPage />} />
                 <Route path="/configuracoes" element={<SettingsPage />} />
                 <Route path="/painel-social" element={<SocialPanelPage />} />
+                {/* 22 Mar 2026 — Finanças */}
+                <Route path="/post/selic-comeca-cair-2026" element={<SelicComecaCair2026 />} />
+                <Route path="/post/bitcoin-2026-vale-comprar" element={<Bitcoin2026ValeComprar />} />
+                <Route path="/post/ia-para-financas-pessoais-2026" element={<IAFinancasPessoais2026 />} />
+                <Route path="/post/fiis-2026-ainda-vale-investir" element={<FIIs2026AindaVale />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
