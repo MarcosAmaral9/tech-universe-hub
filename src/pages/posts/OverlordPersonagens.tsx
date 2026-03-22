@@ -201,7 +201,7 @@ const OverlordPersonagens = () => {
       </div>
 
       <RelatedPosts currentSlug="overlord-ainz-guardians-personagens" />
-      <CommentSection postSlug="overlord-ainz-guardians-personagens" />
+      <CommentSection postId="overlord-ainz-guardians-personagens" />
     </article>
   );
 };

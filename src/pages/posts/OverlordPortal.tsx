@@ -26,7 +26,7 @@ const articles = [
 
 const OverlordPortal = () => (
   <div className="min-h-screen">
-    <DynamicSEO path="/otaku/overlord" />
+    <DynamicSEO />
     <BackNavigation category="otaku" />
 
     {/* Hero */}

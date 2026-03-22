@@ -303,7 +303,7 @@ const TensuraPersonagens = () => {
       </div>
 
       <RelatedPosts currentSlug="tensura-personagens-rimuru-demon-lords" />
-      <CommentSection postSlug="tensura-personagens-rimuru-demon-lords" />
+      <CommentSection postId="tensura-personagens-rimuru-demon-lords" />
     </article>
   );
 };
