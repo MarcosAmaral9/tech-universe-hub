@@ -170,7 +170,7 @@ const eras = [
 
 const AssassinsCreedPortal = () => (
   <div className="min-h-screen">
-    <DynamicSEO path="/geek/assassins-creed" />
+    <DynamicSEO />
 
     {/* ── HERO FULL-BLEED ───────────────────────────────────── */}
     <section className="relative h-[60vh] md:h-[480px] w-full overflow-hidden">

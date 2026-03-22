@@ -254,7 +254,7 @@ const TensuraGuiaCompleto = () => {
       </div>
 
       <RelatedPosts currentSlug="tensura-guia-completo-temporadas-filmes" />
-      <CommentSection postSlug="tensura-guia-completo-temporadas-filmes" />
+      <CommentSection postId="tensura-guia-completo-temporadas-filmes" />
     </article>
   );
 };

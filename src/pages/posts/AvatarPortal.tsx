@@ -17,7 +17,7 @@ const AvatarPortal = () => {
 
   return (
     <div className="min-h-screen">
-      <DynamicSEO path="/geek/avatar" />
+      <DynamicSEO />
       <BackNavigation category="geek" />
 
       {/* Hero Banner */}

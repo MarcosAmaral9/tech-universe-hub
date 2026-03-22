@@ -220,7 +220,7 @@ const OverlordGuiaCompleto = () => {
       </div>
 
       <RelatedPosts currentSlug="overlord-guia-completo-temporadas-ainz" />
-      <CommentSection postSlug="overlord-guia-completo-temporadas-ainz" />
+      <CommentSection postId="overlord-guia-completo-temporadas-ainz" />
     </article>
   );
 };

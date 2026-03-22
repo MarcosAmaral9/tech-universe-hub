@@ -26,7 +26,7 @@ const articles = [
 
 const TensuraPortal = () => (
   <div className="min-h-screen">
-    <DynamicSEO path="/otaku/tensura" />
+    <DynamicSEO />
     <BackNavigation category="otaku" />
 
     {/* Hero */}

@@ -81,8 +81,67 @@ import tensuraGuiaImg from "@/assets/tensura-guia-completo.webp";
 import tensuraCharsImg from "@/assets/tensura-personagens.webp";
 import overlordGuiaImg from "@/assets/overlord-guia-completo.webp";
 import overlordCharsImg from "@/assets/overlord-personagens.webp";
+import selicCairImg from "@/assets/selic-cair-2026.webp";
+import bitcoin2026ValeImg from "@/assets/bitcoin-2026-vale-comprar.webp";
+import iaFinancasPessoaisImg from "@/assets/ia-financas-pessoais-2026.webp";
+import fiis2026AindaValeImg from "@/assets/fiis-2026-ainda-vale.webp";
 
 export const blogPosts: BlogPost[] = [
+
+  // ── 22 Mar 2026 — Finanças ────────────────────────────────
+  {
+    id: "75",
+    slug: "selic-comeca-cair-2026",
+    title: "Selic começa a cair: o que muda nos seus investimentos agora?",
+    excerpt: "O Copom confirmou o início do ciclo de cortes da Selic para março de 2026. Saiba como se reposicionar entre renda fixa, FIIs e renda variável.",
+    content: "",
+    category: "invest",
+    subtopic: "renda-fixa",
+    image: selicCairImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-22",
+    readTime: "5 min",
+  },
+  {
+    id: "76",
+    slug: "bitcoin-2026-vale-comprar",
+    title: "Bitcoin em 2026: vale comprar agora ou esperar?",
+    excerpt: "O Bitcoin corrigiu forte após o recorde de US$ 125 mil em 2025 e agora ronda os US$ 70-73 mil. Entenda o cenário e se faz sentido investir agora.",
+    content: "",
+    category: "invest",
+    subtopic: "cripto",
+    image: bitcoin2026ValeImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-22",
+    readTime: "5 min",
+  },
+  {
+    id: "77",
+    slug: "ia-para-financas-pessoais-2026",
+    title: "Como usar IA para organizar suas finanças em 2026",
+    excerpt: "Ferramentas de IA já categorizam gastos, simulam investimentos e respondem dúvidas financeiras personalizadas. Veja como começar.",
+    content: "",
+    category: "invest",
+    secondaryCategory: "ia",
+    subtopic: "ia-financas",
+    image: iaFinancasPessoaisImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-22",
+    readTime: "4 min",
+  },
+  {
+    id: "78",
+    slug: "fiis-2026-ainda-vale-investir",
+    title: "FIIs em 2026: ainda vale a pena investir com a Selic caindo?",
+    excerpt: "Com o início do ciclo de queda dos juros, os Fundos Imobiliários voltam ao radar. Entenda o cenário, setores promissores e cuidados antes de investir.",
+    content: "",
+    category: "invest",
+    subtopic: "fiis",
+    image: fiis2026AindaValeImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-22",
+    readTime: "5 min",
+  },
 
   // ── Geek Posts ───────────────────────────────────────────
   {

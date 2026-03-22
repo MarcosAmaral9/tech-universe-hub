@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 const NotFound = () => {
   return (
     <>
-    <DynamicSEO path="/404" />
+    <DynamicSEO />
     <div className="flex min-h-[70vh] items-center justify-center px-4">
       <div className="text-center space-y-6">
         <div className="text-6xl sm:text-8xl font-bold text-primary/20 font-orbitron">404</div>
