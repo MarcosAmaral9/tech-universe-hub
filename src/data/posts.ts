@@ -101,6 +101,13 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-22",
     readTime: "8 min",
+    faq: [
+      { q: "Qual é a taxa Selic em março de 2026?", a: "A Selic está em 14,50% ao ano após o primeiro corte de 0,50 ponto percentual realizado pelo Copom em março de 2026, iniciando o ciclo de queda após ter ficado em 15% por cinco reuniões consecutivas." },
+      { q: "Até quanto a Selic pode cair em 2026?", a: "O mercado financeiro projeta que a Selic chegue a cerca de 12,25% ao final de 2026, com cortes graduais de 0,50 ponto percentual a cada reunião do Copom." },
+      { q: "O que é marcação a mercado no Tesouro Direto?", a: "Marcação a mercado é a atualização diária do preço dos títulos públicos. Quando os juros caem, títulos prefixados comprados antes da queda se valorizam, permitindo vendê-los antes do vencimento com lucro." },
+      { q: "Vale a pena investir em renda fixa prefixada com a Selic caindo?", a: "Sim. Ao travar uma taxa prefixada enquanto os juros ainda estão altos, você garante um bom retorno mesmo quando a Selic cair mais. Títulos prefixados de longo prazo tiveram retorno de 20,07% em 2025 segundo a Anbima." },
+      { q: "Quais investimentos se beneficiam da queda da Selic?", a: "Títulos prefixados, Tesouro IPCA+, Fundos Imobiliários (FIIs) e ações de setores sensíveis ao crédito como construção civil, varejo e educação tendem a se beneficiar com a queda dos juros." },
+    ],
   },
   {
     id: "76",
@@ -114,6 +121,13 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-22",
     readTime: "8 min",
+    faq: [
+      { q: "Qual o preço do Bitcoin em março de 2026?", a: "O Bitcoin está cotado entre US$ 70 mil e US$ 73 mil em março de 2026, após ter atingido o recorde histórico de US$ 125 mil em 2025 e corrigido cerca de 44%." },
+      { q: "Preciso comprar um Bitcoin inteiro?", a: "Não. Você pode comprar frações de Bitcoin a partir de poucos reais, tanto em exchanges (Mercado Bitcoin, Binance) quanto via ETFs na B3 (BITH11, HASH11, QBTC11)." },
+      { q: "Qual a forma mais segura de investir em Bitcoin no Brasil?", a: "Para iniciantes, os ETFs de Bitcoin na B3 são a opção mais prática e segura: BITH11, HASH11 e QBTC11. Funcionam como qualquer ação, sem necessidade de wallet ou exchange." },
+      { q: "Bitcoin é um bom investimento em 2026?", a: "Depende do perfil e tamanho da posição. Especialistas recomendam uma alocação entre 1% e 5% da carteira para quem ainda não tem exposição a cripto. O mercado institucional segue comprando via ETFs." },
+      { q: "Qual a diferença entre Bitcoin e altcoins para investimento?", a: "O Bitcoin tem maior histórico, liquidez e menor risco regulatório, sendo o único com ETFs aprovados nos EUA. Altcoins como Ethereum e Solana são mais voláteis e devem ser complementares, não a base da carteira." },
+    ],
   },
   {
     id: "77",
@@ -128,6 +142,12 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-22",
     readTime: "7 min",
+    faq: [
+      { q: "Como a IA pode ajudar nas finanças pessoais?", a: "A IA pode categorizar gastos automaticamente, identificar padrões de consumo, simular cenários de investimento e responder dúvidas financeiras personalizadas, tudo de forma gratuita usando assistentes como ChatGPT ou Gemini." },
+      { q: "É seguro colar meu extrato bancário no ChatGPT?", a: "Você deve evitar inserir dados sensíveis como número de conta, agência, senhas ou documentos. Copie apenas valores e categorias. Use ferramentas com política clara de não treinamento com seus dados, como ChatGPT Plus ou Gemini Advanced." },
+      { q: "Quais apps de finanças pessoais usam IA em 2026?", a: "Organizze, Mobills e bancos digitais como Cora e Neon já incorporam funcionalidades de IA para categorização automática e insights de gastos. O Google Sheets com Gemini integrado também é uma opção gratuita." },
+      { q: "A IA substitui um planejador financeiro?", a: "Não. A IA é uma ferramenta de apoio para organização e análises básicas. Para decisões complexas como planejamento de aposentadoria, herança ou escolha de produtos específicos de investimento, ainda é recomendado buscar um profissional certificado." },
+    ],
   },
   {
     id: "78",
@@ -141,6 +161,13 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-22",
     readTime: "8 min",
+    faq: [
+      { q: "O que são Fundos Imobiliários (FIIs)?", a: "FIIs são fundos que investem em imóveis ou títulos do setor imobiliário. São obrigados por lei a distribuir pelo menos 95% do lucro aos cotistas mensalmente, gerando renda passiva isenta de Imposto de Renda para pessoa física." },
+      { q: "Por que FIIs ficam mais atrativos com a Selic caindo?", a: "Com juros menores, a renda fixa paga menos, tornando os dividendos dos FIIs relativamente mais atrativos. Além disso, as cotas tendem a se valorizar em ciclos de queda de juros — no último ciclo (2023-2024), o IFIX subiu cerca de 15% em 12 meses." },
+      { q: "Qual a diferença entre FII de papel e FII de tijolo?", a: "FIIs de papel investem em títulos de dívida imobiliária (CRI, LCI) e se beneficiam de juros altos. FIIs de tijolo investem em imóveis físicos (shoppings, galpões, escritórios) e tendem a valorizar mais em ciclos de queda de juros." },
+      { q: "Quanto preciso para começar a investir em FIIs?", a: "É possível começar com valores a partir de R$ 10 por cota. Abra conta em uma corretora (XP, Rico, Clear, NuInvest), estude 3 a 5 FIIs de setores diferentes e comece com aportes pequenos." },
+      { q: "Dividendos de FIIs pagam Imposto de Renda?", a: "Os dividendos mensais são isentos de IR para pessoa física. Porém, o ganho de capital na venda de cotas com lucro é tributado em 20%. FIIs também não têm garantia do FGC como CDBs e LCIs." },
+    ],
   },
 
   // ── Geek Posts ───────────────────────────────────────────
