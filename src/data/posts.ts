@@ -140,7 +140,7 @@ export const blogPosts: BlogPost[] = [
     image: fiis2026AindaValeImg,
     author: "VICIO<CODE>",
     date: "2026-03-22",
-    readTime: "5 min",
+    readTime: "8 min",
   },
 
   // ── Geek Posts ───────────────────────────────────────────
