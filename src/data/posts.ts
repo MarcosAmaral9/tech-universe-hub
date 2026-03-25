@@ -434,7 +434,13 @@ export const blogPosts: BlogPost[] = [
     image: techInvesting2026Img,
     author: "VICIO<CODE>",
     date: "2026-02-06",
-    readTime: "12 min"
+    readTime: "12 min",
+    faq: [
+      { q: "O que são ETFs de tecnologia?", a: "São fundos negociados em bolsa que investem em empresas de tecnologia. Na B3, o NASD11 replica o Nasdaq 100 e o USTK11 é focado em tech americana, permitindo exposição ao setor sem comprar ações individuais." },
+      { q: "Quais setores de tecnologia têm mais potencial em 2026?", a: "Inteligência artificial, semicondutores, computação em nuvem, cibersegurança e data centers lideram o crescimento. Empresas como NVIDIA, TSMC, Microsoft e AMD estão entre as mais promissoras." },
+      { q: "Posso investir em tecnologia americana pela B3?", a: "Sim. Através de BDRs (recibos de ações estrangeiras) ou ETFs como NASD11, IVVB11 e USTK11 você investe em empresas americanas sem abrir conta no exterior." },
+      { q: "Investir em tecnologia é arriscado?", a: "Ações de tecnologia tendem a ser mais voláteis que setores defensivos. A recomendação é limitar tech a 20-30% da carteira e diversificar entre subsetores para reduzir o risco." },
+    ],
   },
 
   // ── Geek Posts ───────────────────────────────────────────
@@ -578,7 +584,13 @@ export const blogPosts: BlogPost[] = [
     image: rendaPassivaImg,
     author: "VICIO<CODE>",
     date: "2026-02-16",
-    readTime: "15 min"
+    readTime: "15 min",
+    faq: [
+      { q: "O que é renda passiva?", a: "É o dinheiro que você recebe sem precisar trabalhar ativamente por ele. Exemplos incluem dividendos de ações e FIIs, rendimentos de CDBs, aluguéis e royalties de conteúdo digital." },
+      { q: "Quanto preciso investir para viver de renda passiva?", a: "Depende do seu custo de vida. Para receber R$ 5.000/mês com FIIs rendendo 0,8% ao mês, você precisaria de aproximadamente R$ 625.000 investidos." },
+      { q: "Qual a melhor forma de renda passiva para iniciantes?", a: "CDBs com liquidez diária e FIIs são os mais acessíveis. CDBs começam com R$ 1, FIIs a partir de R$ 10 por cota, e ambos geram rendimentos regulares sem necessidade de gestão ativa." },
+      { q: "Dividendos de FIIs pagam Imposto de Renda?", a: "Não. Dividendos de FIIs são isentos de IR para pessoa física. Já dividendos de ações e rendimentos de CDBs são tributados conforme as regras vigentes." },
+    ],
   },
   {
     id: "26",
@@ -591,7 +603,13 @@ export const blogPosts: BlogPost[] = [
     image: carteiraInvestimentosImg,
     author: "VICIO<CODE>",
     date: "2026-02-17",
-    readTime: "13 min"
+    readTime: "13 min",
+    faq: [
+      { q: "Qual o primeiro passo para montar uma carteira de investimentos?", a: "Montar uma reserva de emergência de 3 a 6 meses de despesas em Tesouro Selic ou CDB 100% CDI com liquidez diária. Só depois comece a diversificar em outros ativos." },
+      { q: "Quanto dinheiro preciso para começar a investir?", a: "Você pode começar com R$ 30 no Tesouro Direto, R$ 1 em CDBs e R$ 10 em FIIs. Não existe valor mínimo alto — o importante é começar." },
+      { q: "O que é perfil de investidor?", a: "É a classificação do seu nível de tolerância a risco: conservador (prioriza segurança), moderado (aceita oscilações moderadas) ou arrojado (busca maior retorno aceitando mais risco)." },
+      { q: "Devo investir em renda fixa ou variável?", a: "Para iniciantes, o ideal é começar com renda fixa (Tesouro Selic, CDB) e ir adicionando renda variável (FIIs, ETFs) gradualmente conforme ganha experiência e confiança." },
+    ],
   },
   {
     id: "27",
@@ -654,7 +672,13 @@ export const blogPosts: BlogPost[] = [
     image: iaFinancas2026Img,
     author: "VICIO<CODE>",
     date: "2026-02-20",
-    readTime: "12 min"
+    readTime: "12 min",
+    faq: [
+      { q: "Como a IA é usada no mercado financeiro?", a: "A IA é usada em trading algorítmico, análise de risco de crédito, detecção de fraudes, robo-advisors (gestão automatizada de carteira) e análise de sentimento de mercado em tempo real." },
+      { q: "O que são robo-advisors?", a: "São plataformas de investimento que usam algoritmos de IA para criar e gerenciar carteiras automaticamente. No Brasil, exemplos incluem Warren, Magnetis e o advisor do BTG Pactual." },
+      { q: "A IA pode prever o mercado de ações?", a: "A IA não prevê com certeza, mas identifica padrões e probabilidades. Modelos de machine learning analisam milhares de variáveis simultaneamente, mas o mercado continua imprevisível em eventos extremos." },
+      { q: "Investidores iniciantes devem usar IA para investir?", a: "Sim, como ferramenta de apoio. Robo-advisors são bons para iniciantes por diversificarem automaticamente. Mas nunca invista baseado apenas em previsões de IA sem entender os fundamentos." },
+    ],
   },
   {
     id: "30",
@@ -667,7 +691,13 @@ export const blogPosts: BlogPost[] = [
     image: metodo3BaldesImg,
     author: "VICIO<CODE>",
     date: "2026-02-21",
-    readTime: "11 min"
+    readTime: "11 min",
+    faq: [
+      { q: "O que é o Método dos 3 Baldes?", a: "É uma estratégia simples de organização financeira que divide sua renda em três partes: Essencial (50-60%), Objetivos (20-30%) e Liberdade (10-20%), facilitando o controle sem planilhas complexas." },
+      { q: "O Método dos 3 Baldes funciona para qualquer salário?", a: "Sim. Os percentuais são ajustáveis. Se você ganha pouco, pode começar com 70% essencial, 20% objetivos e 10% liberdade. O importante é criar o hábito de separar." },
+      { q: "Qual a diferença entre o Método 3 Baldes e o 50-30-20?", a: "São muito parecidos. O 3 Baldes é mais flexível nos percentuais e usa nomes mais intuitivos. O conceito central é o mesmo: separar gastos essenciais, metas e lazer." },
+      { q: "Por onde começar a organizar minhas finanças?", a: "Anote todos os seus gastos por 30 dias (use apps como Organizze ou Mobills). Depois, classifique em essenciais e não-essenciais. Isso mostra onde está vazando dinheiro antes de aplicar qualquer método." },
+    ],
   },
   {
     id: "31",
@@ -701,7 +731,13 @@ export const blogPosts: BlogPost[] = [
     image: sairDividas2026Img,
     author: "VICIO<CODE>",
     date: "2026-02-23",
-    readTime: "13 min"
+    readTime: "13 min",
+    faq: [
+      { q: "Qual a primeira dívida que devo pagar?", a: "A com maior taxa de juros — geralmente cartão de crédito (até 400% ao ano) e cheque especial (até 150% ao ano). Quitar essas primeiro evita que a dívida cresça como bola de neve." },
+      { q: "Vale a pena fazer portabilidade de dívida?", a: "Sim, quando você consegue uma taxa menor. Bancos digitais e fintechs frequentemente oferecem taxas de 2-4% ao mês para portabilidade de dívidas de cartão que cobram 15-20% ao mês." },
+      { q: "Devo usar a reserva de emergência para quitar dívidas?", a: "Depende. Se a dívida tem juros acima de 5% ao mês, pode valer usar parte da reserva. Mas nunca zere a reserva — mantenha pelo menos 1 mês de despesas como colchão mínimo." },
+      { q: "É melhor o método avalanche ou bola de neve para quitar dívidas?", a: "Avalanche (pagar primeiro a de maior juros) é matematicamente melhor. Bola de neve (pagar primeiro a menor) dá mais motivação. Escolha o que funcionar para você manter a disciplina." },
+    ],
   },
   {
     id: "33",
@@ -714,7 +750,13 @@ export const blogPosts: BlogPost[] = [
     image: planejamentoFinanceiro2026Img,
     author: "VICIO<CODE>",
     date: "2026-02-24",
-    readTime: "11 min"
+    readTime: "11 min",
+    faq: [
+      { q: "Como definir metas financeiras realistas?", a: "Use o método SMART: Específica, Mensurável, Alcançável, Relevante e com Prazo. Em vez de 'quero economizar', diga 'quero juntar R$ 10.000 em 12 meses guardando R$ 834/mês'." },
+      { q: "Qual a diferença entre planejamento financeiro de curto e longo prazo?", a: "Curto prazo (até 1 ano): reserva de emergência, quitar dívidas, viagens. Longo prazo (5+ anos): aposentadoria, compra de imóvel, independência financeira. Os investimentos mudam conforme o prazo." },
+      { q: "Preciso de um planejador financeiro profissional?", a: "Para quem tem patrimônio acima de R$ 100.000 ou situação complexa (herança, empresa, previdência), um CFP certificado pode valer. Para iniciantes, apps e conteúdo educativo são suficientes." },
+      { q: "Como manter a disciplina no planejamento financeiro?", a: "Automatize: configure transferências automáticas no dia do pagamento. O que não passa pela sua conta corrente, você não gasta. Revise suas metas a cada 3 meses para manter o foco." },
+    ],
   },
   {
     id: "34",
@@ -727,7 +769,11 @@ export const blogPosts: BlogPost[] = [
     image: calculadorasFinanceirasImg,
     author: "VICIO<CODE>",
     date: "2026-02-25",
-    readTime: "5 min"
+    readTime: "5 min",
+    faq: [
+      { q: "Como funciona a calculadora de investimentos?", a: "Você insere o valor de aporte, prazo e taxa de rendimento. A calculadora mostra quanto seu dinheiro renderá com juros compostos, considerando aportes mensais e inflação." },
+      { q: "As cotações das calculadoras são em tempo real?", a: "As cotações são atualizadas em intervalos regulares durante o pregão da B3. Podem ter delay de até 15 minutos em relação ao preço real de mercado." },
+    ],
   },
 
   // ── IA Posts ─────────────────────────────────────────────
@@ -982,7 +1028,13 @@ export const blogPosts: BlogPost[] = [
     image: etfs2026Img,
     author: "VICIO<CODE>",
     date: "2026-03-16",
-    readTime: "15 min"
+    readTime: "15 min",
+    faq: [
+      { q: "O que são ETFs?", a: "ETFs (Exchange Traded Funds) são fundos de investimento negociados em bolsa que replicam índices, setores ou classes de ativos. Uma única cota dá exposição a dezenas ou centenas de ativos simultaneamente." },
+      { q: "Qual o melhor ETF para iniciantes no Brasil?", a: "BOVA11 (Ibovespa) e IVVB11 (S&P 500) são os mais indicados por terem alta liquidez, taxas baixas e diversificação ampla. O BOVV11 tem a menor taxa do mercado (0,04%)." },
+      { q: "ETFs pagam dividendos?", a: "A maioria dos ETFs brasileiros reinveste os dividendos automaticamente no fundo, aumentando o valor da cota. Poucos ETFs distribuem dividendos diretamente aos cotistas." },
+      { q: "Qual a tributação de ETFs no Brasil?", a: "ETFs de renda variável pagam 15% de IR sobre o lucro na venda, sem isenção para vendas abaixo de R$ 20.000/mês (diferente de ações). ETFs de renda fixa seguem a tabela regressiva de IR." },
+    ],
   },
 
   // ── Geek Posts ───────────────────────────────────────────
@@ -1025,7 +1077,13 @@ export const blogPosts: BlogPost[] = [
     image: economiaDomesticaImg,
     author: "VICIO<CODE>",
     date: "2026-03-17",
-    readTime: "14 min"
+    readTime: "14 min",
+    faq: [
+      { q: "Quanto é possível economizar por mês com economia doméstica?", a: "Com as 30 dicas deste guia, famílias brasileiras conseguem cortar entre R$ 500 e R$ 1.500 por mês do orçamento, dependendo da renda e dos hábitos atuais de consumo." },
+      { q: "Vale a pena trocar de bandeira tarifária de energia?", a: "Sim. Mudar para tarifa branca e concentrar uso de eletrodomésticos pesados no horário fora de ponta pode reduzir a conta de luz em até 20%." },
+      { q: "Quais assinaturas devo cortar primeiro?", a: "Comece pelas que você menos usa. Dados mostram que brasileiros gastam em média R$ 180/mês em assinaturas digitais (streaming, apps, jogos). Mantenha no máximo 2-3 e reveze entre elas." },
+      { q: "Comprar em atacado realmente economiza?", a: "Sim, para itens não perecíveis e de alto consumo. Produtos de limpeza, higiene e alimentos secos podem ser 30-50% mais baratos no atacado. Mas evite comprar perecíveis em excesso." },
+    ],
   },
 
   // ── Geek Posts ───────────────────────────────────────────
@@ -1068,7 +1126,13 @@ export const blogPosts: BlogPost[] = [
     image: cdb2026Img,
     author: "VICIO<CODE>",
     date: "2026-03-17",
-    readTime: "12 min"
+    readTime: "12 min",
+    faq: [
+      { q: "O que é CDB?", a: "CDB (Certificado de Depósito Bancário) é um título de renda fixa emitido por bancos. Você empresta dinheiro ao banco e recebe juros em troca. É protegido pelo FGC até R$ 250 mil por CPF/instituição." },
+      { q: "Qual a diferença entre CDB, LCI e LCA?", a: "CDB paga IR sobre os rendimentos (alíquota regressiva de 22,5% a 15%). LCI e LCA são isentas de IR para pessoa física, mas geralmente pagam taxas menores (85-90% CDI vs 100-120% CDI dos CDBs)." },
+      { q: "O que significa CDB 100% CDI?", a: "Significa que o CDB rende exatamente a taxa CDI, que acompanha de perto a Selic. Com a Selic a 14,50%, um CDB 100% CDI rende aproximadamente 14,40% ao ano bruto, antes do desconto de IR." },
+      { q: "CDB tem garantia do FGC?", a: "Sim. O Fundo Garantidor de Créditos (FGC) protege até R$ 250 mil por CPF por instituição financeira, cobrindo capital + rendimentos. É a mesma garantia da poupança." },
+    ],
   },
   {
     id: "112",
@@ -1081,7 +1145,13 @@ export const blogPosts: BlogPost[] = [
     image: previdenciaImg,
     author: "VICIO<CODE>",
     date: "2026-03-17",
-    readTime: "13 min"
+    readTime: "13 min",
+    faq: [
+      { q: "Qual a diferença entre PGBL e VGBL?", a: "PGBL permite deduzir até 12% da renda bruta no IR (ideal para quem faz declaração completa). VGBL não tem dedução, mas o IR incide apenas sobre os rendimentos no resgate (ideal para declaração simplificada)." },
+      { q: "Vale a pena fazer previdência privada em 2026?", a: "Depende. Para quem faz declaração completa do IR e quer deduzir até 12% da renda, o PGBL é vantajoso. Mas compare a taxa de administração — acima de 1% ao ano, outros investimentos costumam render mais." },
+      { q: "O que é tabela regressiva na previdência?", a: "É o regime de tributação onde o IR diminui com o tempo: começa em 35% (até 2 anos) e cai até 10% (acima de 10 anos). Ideal para quem pretende resgatar no longo prazo." },
+      { q: "Posso resgatar a previdência privada antes da aposentadoria?", a: "Sim, mas haverá cobrança de IR conforme a tabela escolhida (progressiva ou regressiva). Resgates no curto prazo podem ter tributação de até 35%, tornando o investimento pouco vantajoso." },
+    ],
   },
 
   // ── IA Posts ─────────────────────────────────────────────
