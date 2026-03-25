@@ -210,7 +210,11 @@ export default defineConfig(({ mode }) => ({
         background_color: "#0a0a0a",
         display: "standalone",
         start_url: "/",
+        scope: "/",
         lang: "pt-BR",
+        launch_handler: {
+          client_mode: "navigate-new",
+        },
         icons: [
           { src: "/favicon.ico",      sizes: "64x64",      type: "image/x-icon" },
           { src: "/icon-192x192.png", sizes: "192x192",    type: "image/png",   purpose: "any" },
