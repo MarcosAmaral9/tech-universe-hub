@@ -5,6 +5,7 @@ import { getPostsByCategory } from "@/data/posts";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DynamicSEO from "@/components/DynamicSEO";
+import { AdInArticle } from "@/components/AdSense";
 import crimsonDesertHeroImg from "@/assets/crimson-desert-hero.webp";
 import avatarPortalBannerImg from "@/assets/avatar-portal-banner.webp";
 import acPortalImg from "@/assets/assassins-creed-portal.webp";
@@ -194,6 +195,8 @@ const GeekPage = () => {
           </p>
         </div>
       )}
+
+      <AdInArticle className="my-8" />
 
       {/* Pagination */}
       {totalPages > 1 && (

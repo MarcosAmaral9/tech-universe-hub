@@ -5,6 +5,7 @@ import { getPostsByCategory } from "@/data/posts";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DynamicSEO from "@/components/DynamicSEO";
+import { AdInArticle } from "@/components/AdSense";
 
 const POSTS_PER_PAGE = 12;
 
@@ -125,6 +126,8 @@ const IAPage = () => {
           </p>
         </div>
       )}
+
+      <AdInArticle className="my-8" />
 
       {/* Pagination */}
       {totalPages > 1 && (
