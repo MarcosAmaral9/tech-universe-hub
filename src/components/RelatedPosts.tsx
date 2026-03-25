@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getRelatedPosts } from "@/data/posts";
 import CategoryBadge from "./CategoryBadge";
 import { useAuthContext } from "@/contexts/AuthContext";
+import { AdInArticle } from "./AdSense";
 
 interface RelatedPostsProps {
   currentSlug: string;
@@ -52,6 +53,7 @@ const RelatedPosts = ({ currentSlug }: RelatedPostsProps) => {
 
   return (
     <section className="mt-12 pt-8 border-t border-border">
+      <AdInArticle className="mb-8" />
       <h3 className="font-display text-2xl font-bold mb-6 flex items-center gap-2">
         <ArrowRight className="h-6 w-6 text-primary" />
         Posts Relacionados

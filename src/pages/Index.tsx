@@ -5,6 +5,7 @@ const SocialSection = lazy(() => import("@/components/SocialSection"));
 import { blogPosts, getPostsByCategory } from "@/data/posts";
 import { Link } from "react-router-dom";
 import DynamicSEO from "@/components/DynamicSEO";
+import { AdInArticle } from "@/components/AdSense";
 
 const Index = () => {
   const categoryCounts = {
@@ -68,6 +69,8 @@ const Index = () => {
               <PostCard key={post.id} post={post} />
             ))}
         </div>
+
+        <AdInArticle className="mt-8" />
       </section>
 
       {/* Social Section with QR Codes */}

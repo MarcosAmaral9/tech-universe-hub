@@ -9,6 +9,7 @@ import CurrencyWidget from "@/components/CurrencyWidget";
 import CryptoWidget from "@/components/CryptoWidget";
 import PreciousMetalsWidget from "@/components/PreciousMetalsWidget";
 import DynamicSEO from "@/components/DynamicSEO";
+import { AdInArticle } from "@/components/AdSense";
 
 const PINNED_SLUG = "calculadoras-financeiras-ativos";
 const POSTS_PER_PAGE = 12;
@@ -183,6 +184,8 @@ const InvestimentosPage = () => {
           </p>
         </div>
       )}
+
+      <AdInArticle className="my-8" />
 
       {/* Pagination */}
       {totalPages > 1 && (

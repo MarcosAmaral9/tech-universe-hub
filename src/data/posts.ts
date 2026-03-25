@@ -182,7 +182,12 @@ export const blogPosts: BlogPost[] = [
     image: acRogueImg,
     author: "VICIO<CODE>",
     date: "2026-01-19",
-    readTime: "18 min"
+    readTime: "18 min",
+    faq: [
+      { q: "AC Rogue vale a pena em 2026?", a: "Sim. É um dos ACs mais subestimados, com uma história única onde você joga como Templário. Gráficos remasterizados e gameplay sólido de ~15 horas." },
+      { q: "Em AC Rogue você é um Templário?", a: "Sim. Shay Patrick Cormac é um ex-Assassino que muda de lado após uma missão catastrófica, tornando-se caçador de Assassinos a serviço dos Templários." },
+      { q: "AC Rogue é sequência de qual jogo?", a: "Rogue se passa entre AC Black Flag e AC Unity, conectando as duas histórias. É a ponte narrativa entre a era colonial e a Revolução Francesa." },
+    ]
   },
   {
     id: "21",
@@ -195,7 +200,12 @@ export const blogPosts: BlogPost[] = [
     image: acUnityImg,
     author: "VICIO<CODE>",
     date: "2026-01-20",
-    readTime: "18 min"
+    readTime: "18 min",
+    faq: [
+      { q: "AC Unity ainda tem bugs em 2026?", a: "Não. A Ubisoft corrigiu todos os bugs graves ao longo dos anos. Em 2026, o jogo roda perfeitamente e é considerado um dos mais bonitos da franquia." },
+      { q: "AC Unity tem multiplayer?", a: "Sim. Unity foi o primeiro AC com co-op para até 4 jogadores em missões especiais. Os servidores continuam ativos em 2026." },
+      { q: "Por que AC Unity é considerado à frente do seu tempo?", a: "O sistema de parkour, a densidade de NPCs, a ambientação de Paris e o design de interiores eram revolucionários em 2014. Muitos recursos só foram igualados anos depois." },
+    ]
   },
   {
     id: "19",
@@ -208,7 +218,12 @@ export const blogPosts: BlogPost[] = [
     image: acSyndicateImg,
     author: "VICIO<CODE>",
     date: "2026-01-21",
-    readTime: "18 min"
+    readTime: "18 min",
+    faq: [
+      { q: "AC Syndicate vale a pena em 2026?", a: "Sim. A ambientação londrina é incrível, os gêmeos Frye são carismáticos e o combate com lâminas ocultas é satisfatório. Um dos ACs mais divertidos de jogar." },
+      { q: "Quem são os protagonistas de AC Syndicate?", a: "Jacob e Evie Frye, gêmeos assassinos que lutam contra os Templários na Londres Vitoriana de 1868 durante a Revolução Industrial." },
+      { q: "AC Syndicate tem mundo aberto?", a: "Sim. Londres é totalmente explorável com carruagens, trens, o Tâmisa e marcos históricos como o Palácio de Buckingham e a Torre de Londres." },
+    ]
   },
   {
     id: "11",
@@ -221,7 +236,12 @@ export const blogPosts: BlogPost[] = [
     image: avatarGameImg,
     author: "VICIO<CODE>",
     date: "2026-01-22",
-    readTime: "18 min"
+    readTime: "18 min",
+    faq: [
+      { q: "Avatar Frontiers of Pandora vale a pena em 2026?", a: "Sim para fãs de Avatar e jogos de mundo aberto. A flora e fauna de Pandora são deslumbrantes. O gameplay é competente, embora siga a fórmula Ubisoft." },
+      { q: "Precisa ter assistido Avatar para jogar?", a: "Não. O jogo conta uma história independente com um protagonista Na'vi original. Conhecer os filmes enriquece a experiência, mas não é obrigatório." },
+      { q: "Avatar Frontiers of Pandora roda em quais plataformas?", a: "PC, PS5 e Xbox Series X|S. O jogo foi desenvolvido exclusivamente para a geração atual, sem versões para PS4 ou Xbox One." },
+    ]
   },
   {
     id: "18",
@@ -234,7 +254,12 @@ export const blogPosts: BlogPost[] = [
     image: ac3Img,
     author: "VICIO<CODE>",
     date: "2026-01-23",
-    readTime: "18 min"
+    readTime: "18 min",
+    faq: [
+      { q: "AC 3 Remastered vale a pena em 2026?", a: "Sim. Os gráficos melhorados e a história de Connor durante a Revolução Americana são envolventes. Inclui AC Liberation e todos os DLCs." },
+      { q: "Quem é Connor em AC 3?", a: "Ratonhnhaké:ton (Connor) é um Assassino meio-nativo americano, meio-inglês que luta durante a Guerra de Independência dos EUA entre 1753 e 1783." },
+      { q: "O que mudou no Remastered?", a: "Texturas em alta resolução, iluminação melhorada, novos modelos de personagens e melhorias de gameplay. Inclui AC Liberation Remastered e todos os DLCs originais." },
+    ]
   },
   {
     id: "10",
@@ -247,7 +272,12 @@ export const blogPosts: BlogPost[] = [
     image: avatarFireImg,
     author: "VICIO<CODE>",
     date: "2026-01-24",
-    readTime: "10 min"
+    readTime: "10 min",
+    faq: [
+      { q: "Quando estreia Avatar 3?", a: "Avatar 3: Fire and Ash estreou em dezembro de 2025, explorando o 'lado sombrio de Pandora' com novos biomas vulcânicos e tribos Na'vi desconhecidas." },
+      { q: "Avatar 3 é o último filme?", a: "Não. James Cameron planeja pelo menos 5 filmes Avatar. O quarto está previsto para 2029 e o quinto para 2031." },
+      { q: "Preciso assistir Avatar 2 antes?", a: "Sim. Avatar 3 continua diretamente a história da família Sully iniciada em The Way of Water, com novos conflitos e revelações sobre Pandora." },
+    ]
   },
   {
     id: "17",
@@ -260,7 +290,12 @@ export const blogPosts: BlogPost[] = [
     image: acMirageImg,
     author: "VICIO<CODE>",
     date: "2026-01-25",
-    readTime: "18 min"
+    readTime: "18 min",
+    faq: [
+      { q: "AC Mirage é um jogo curto?", a: "Sim, comparado aos RPGs recentes. A campanha principal tem ~20 horas, voltando às raízes clássicas da franquia com foco em stealth e parkour." },
+      { q: "AC Mirage tem sistema de níveis e RPG?", a: "Mirage tem um sistema de progressão simplificado comparado a Origins/Odyssey/Valhalla. O foco é em stealth, sigilo e assassinatos, não em builds de RPG." },
+      { q: "Quem é Basim em AC Mirage?", a: "Basim Ibn Ishaq é o protagonista, um ladrão de rua em Bagdá do século IX que se torna um Assassino. Ele também aparece em AC Valhalla." },
+    ]
   },
   {
     id: "9",
@@ -273,7 +308,12 @@ export const blogPosts: BlogPost[] = [
     image: avatarWaterImg,
     author: "VICIO<CODE>",
     date: "2026-01-26",
-    readTime: "14 min"
+    readTime: "14 min",
+    faq: [
+      { q: "Como foi feita a captura subaquática de Avatar 2?", a: "James Cameron desenvolveu um sistema inédito de captura de performance subaquática. Os atores fizeram cenas em tanques gigantes com câmeras especiais que capturam movimentos debaixo d'água." },
+      { q: "Avatar 2 bateu recordes de bilheteria?", a: "Sim. Arrecadou mais de US$ 2,3 bilhões mundialmente, tornando-se o terceiro filme de maior bilheteria da história, atrás apenas de Avatar (2009) e Avengers: Endgame." },
+      { q: "O CGI de Avatar 2 é melhor que o primeiro?", a: "Sim. A Wētā FX desenvolveu novos sistemas de simulação de água, cabelo molhado e bioluminescência subaquática que superaram significativamente o primeiro filme." },
+    ]
   },
 
   // ── Otaku Posts ──────────────────────────────────────────
@@ -288,7 +328,12 @@ export const blogPosts: BlogPost[] = [
     image: systemManhwaImg,
     author: "VICIO<CODE>",
     date: "2026-01-27",
-    readTime: "8 min"
+    readTime: "8 min",
+    faq: [
+      { q: "O que é um manhwa de sistema?", a: "É um quadrinho coreano (manhwa) onde o protagonista recebe um 'sistema de jogo' com níveis, quests, status e habilidades, similar a um RPG dentro da história." },
+      { q: "Solo Leveling é o melhor manhwa de sistema?", a: "Solo Leveling é o mais popular e pioneiro do gênero, mas títulos como Omniscient Reader's Viewpoint e The Beginning After The End são considerados tão bons ou melhores por muitos leitores." },
+      { q: "Onde ler manhwas de sistema online?", a: "Plataformas oficiais como Webtoon, Tappytoon e Tapas oferecem manhwas traduzidos. No Brasil, a editora Panini está publicando edições físicas de títulos populares." },
+    ]
   },
 
   // ── Geek Posts ───────────────────────────────────────────
@@ -303,7 +348,12 @@ export const blogPosts: BlogPost[] = [
     image: acOriginsImg,
     author: "VICIO<CODE>",
     date: "2026-01-28",
-    readTime: "18 min"
+    readTime: "18 min",
+    faq: [
+      { q: "AC Origins revolucionou a franquia?", a: "Sim. Origins redesenhou completamente o combate, introduziu sistema de níveis RPG, loot e um mundo aberto imenso no Egito Antigo, redefinindo a fórmula da série." },
+      { q: "Quem é Bayek de Siwa?", a: "Bayek é um Medjay (protetor) egípcio e o fundador da Irmandade dos Assassinos. Sua história de vingança se passa no Egito de Ptolomeu XIII e Cleópatra." },
+      { q: "AC Origins tem modo educativo?", a: "Sim. O Discovery Tour do Egito Antigo permite explorar o mundo sem combate, com guias narrados sobre história, arquitetura e cultura do Egito ptolemaico." },
+    ]
   },
   {
     id: "8",
@@ -316,7 +366,12 @@ export const blogPosts: BlogPost[] = [
     image: avatarPandoraImg,
     author: "VICIO<CODE>",
     date: "2026-01-29",
-    readTime: "12 min"
+    readTime: "12 min",
+    faq: [
+      { q: "Por que Avatar (2009) revolucionou o cinema?", a: "Avatar introduziu captura de performance em tempo real, câmeras virtuais e CGI fotorrealista em escala inédita. O filme popularizou o cinema 3D e arrecadou US$ 2,9 bilhões." },
+      { q: "James Cameron esperou quanto tempo para fazer Avatar?", a: "Cameron concebeu a ideia nos anos 1990, mas esperou mais de uma década até que a tecnologia de CGI e captura de movimento fosse capaz de criar Pandora de forma convincente." },
+      { q: "Avatar (2009) ainda é o filme de maior bilheteria?", a: "Sim. Com US$ 2,923 bilhões mundiais (incluindo relançamentos), Avatar continua sendo o filme de maior bilheteria da história do cinema." },
+    ]
   },
 
   // ── Otaku Posts ──────────────────────────────────────────
@@ -331,7 +386,12 @@ export const blogPosts: BlogPost[] = [
     image: manhwaVsManuaImg,
     author: "VICIO<CODE>",
     date: "2026-01-30",
-    readTime: "4 min"
+    readTime: "4 min",
+    faq: [
+      { q: "Qual a diferença entre manhua e manhwa?", a: "Manhuas são quadrinhos chineses (lidos da esquerda para direita) e manhwas são quadrinhos coreanos (também esquerda para direita). Diferem em estilos artísticos, temas culturais e plataformas de publicação." },
+      { q: "Manhuas são coloridos?", a: "Sim. Tanto manhuas quanto manhwas modernos são publicados em formato webtoon colorido e vertical, diferente dos mangás japoneses que são em preto e branco." },
+      { q: "Quais são os manhuas mais populares?", a: "Tales of Demons and Gods, Soul Land, Battle Through the Heavens e The Beginning After The End estão entre os manhuas mais populares mundialmente." },
+    ]
   },
 
   // ── Geek Posts ───────────────────────────────────────────
@@ -346,7 +406,12 @@ export const blogPosts: BlogPost[] = [
     image: acBlackFlagImg,
     author: "VICIO<CODE>",
     date: "2026-01-31",
-    readTime: "18 min"
+    readTime: "18 min",
+    faq: [
+      { q: "AC Black Flag é o melhor jogo de piratas?", a: "Para muitos jogadores e críticos, sim. A exploração naval, a história de Edward Kenway e o Caribe aberto fazem dele um dos melhores jogos de piratas já feitos." },
+      { q: "AC Black Flag tem batalhas navais?", a: "Sim. O sistema naval é um dos pilares do jogo. Você comanda o Jackdaw em batalhas contra navios mercantes, fragatas e fortes, podendo abordá-los e saquear cargas." },
+      { q: "AC Black Flag vale a pena em 2026?", a: "Absolutamente. Mesmo após 13 anos, o gameplay naval, a história envolvente e o mundo aberto caribenho continuam divertidos. A Ubisoft anunciou um remake para a geração atual." },
+    ]
   },
 
   // ── IA Posts ─────────────────────────────────────────────
@@ -361,7 +426,12 @@ export const blogPosts: BlogPost[] = [
     image: aiRemasteringImg,
     author: "VICIO<CODE>",
     date: "2026-02-01",
-    readTime: "6 min"
+    readTime: "6 min",
+    faq: [
+      { q: "Como a IA remasteriza jogos clássicos?", a: "Técnicas de IA como upscaling neural (ESRGAN, DLSS), restauração de texturas com redes generativas e recriação de modelos 3D permitem melhorar gráficos de jogos antigos sem acesso ao código-fonte original." },
+      { q: "Qual a diferença entre remaster e remake com IA?", a: "Remaster com IA melhora texturas e resolução sobre o jogo original. Remake reconstrói o jogo do zero. A IA acelera ambos os processos, mas é mais impactante em remasters." },
+      { q: "Jogadores podem usar IA para melhorar gráficos?", a: "Sim. Mods de IA como HD Texture Packs gerados por ESRGAN já existem para jogos clássicos como Morrowind, Resident Evil e Final Fantasy, disponíveis gratuitamente em comunidades de modding." },
+    ]
   },
 
   // ── Otaku Posts ──────────────────────────────────────────
@@ -376,7 +446,12 @@ export const blogPosts: BlogPost[] = [
     image: mangaManhwaManhuaImg,
     author: "VICIO<CODE>",
     date: "2026-02-02",
-    readTime: "5 min"
+    readTime: "5 min",
+    faq: [
+      { q: "O que é mangá?", a: "Mangá é a forma japonesa de quadrinhos, geralmente em preto e branco, lido da direita para esquerda. É publicado em revistas semanais/mensais e depois compilado em volumes (tankōbon)." },
+      { q: "Qual a diferença entre mangá, manhwa e manhua?", a: "Mangá é japonês (P&B, direita→esquerda). Manhwa é coreano (colorido, esquerda→direita). Manhua é chinês (colorido, esquerda→direita). Cada um tem estilos e temas culturais distintos." },
+      { q: "Por onde começar a ler mangás?", a: "Para iniciantes, recomendamos títulos clássicos como Naruto, One Piece, Death Note ou Fullmetal Alchemist. Plataformas como MangaPlus (Shueisha) e Crunchyroll oferecem capítulos gratuitos." },
+    ]
   },
 
   // ── Geek Posts ───────────────────────────────────────────
@@ -391,7 +466,12 @@ export const blogPosts: BlogPost[] = [
     image: hellLetLooseImg,
     author: "VICIO<CODE>",
     date: "2026-02-03",
-    readTime: "18 min"
+    readTime: "18 min",
+    faq: [
+      { q: "Hell Let Loose vale a pena em 2026?", a: "Sim. Com atualizações constantes e uma comunidade ativa, HLL continua sendo o melhor simulador tático de WWII para quem busca realismo sem a curva de aprendizado extrema de outros milsims." },
+      { q: "Hell Let Loose é realista?", a: "Sim. Balas são letais (1-2 tiros matam), não há minimapa com inimigos, comunicação por voz é essencial e partidas com 100 jogadores exigem coordenação real entre esquadrões." },
+      { q: "Hell Let Loose roda em console?", a: "Sim. O jogo está disponível para PC, PS5 e Xbox Series X|S. As versões de console recebem atualizações regulares, embora com um leve delay em relação ao PC." },
+    ]
   },
   {
     id: "14",
@@ -404,7 +484,12 @@ export const blogPosts: BlogPost[] = [
     image: acOdysseyImg,
     author: "VICIO<CODE>",
     date: "2026-02-04",
-    readTime: "18 min"
+    readTime: "18 min",
+    faq: [
+      { q: "AC Odyssey é o maior mapa da franquia?", a: "É um dos maiores. A Grécia Antiga de Odyssey inclui dezenas de ilhas, cidades e regiões exploráveis, com mais de 100 horas de conteúdo entre história principal e secundária." },
+      { q: "Posso jogar como Kassandra ou Alexios?", a: "Sim. Você escolhe entre os dois irmãos no início. A Ubisoft confirmou que Kassandra é a protagonista canônica da história." },
+      { q: "AC Odyssey tem escolhas que afetam a história?", a: "Sim. É o primeiro AC com sistema de diálogos e escolhas que afetam o enredo, incluindo múltiplos finais e romance com NPCs." },
+    ]
   },
 
   // ── IA Posts ─────────────────────────────────────────────
@@ -419,7 +504,12 @@ export const blogPosts: BlogPost[] = [
     image: aiAnimeDubbingImg,
     author: "VICIO<CODE>",
     date: "2026-02-05",
-    readTime: "10 min"
+    readTime: "10 min",
+    faq: [
+      { q: "A IA pode dublar animes automaticamente?", a: "Sim. Tecnologias de voice cloning e tradução em tempo real já permitem gerar dublagens em múltiplos idiomas. Empresas como ElevenLabs e Dubverse oferecem soluções comerciais." },
+      { q: "A dublagem por IA substitui dubladores humanos?", a: "Ainda não totalmente. A IA é usada para acelerar o processo e criar versões preliminares, mas dubladores profissionais ainda são essenciais para emoção, timing e qualidade final." },
+      { q: "Quais estúdios de anime já usam IA na dublagem?", a: "Crunchyroll e Funimation testam IA para legendas em tempo real. Estúdios japoneses como Toei Animation exploram voice cloning para preservar vozes de seiyuus veteranos." },
+    ]
   },
 
   // ── Investimentos Posts ───────────────────────────────────
@@ -455,7 +545,12 @@ export const blogPosts: BlogPost[] = [
     image: vikingsRagnarImg,
     author: "VICIO<CODE>",
     date: "2026-02-07",
-    readTime: "18 min"
+    readTime: "18 min",
+    faq: [
+      { q: "A série Vikings é historicamente precisa?", a: "Parcialmente. A série mistura fatos históricos com ficção. Ragnar Lothbrok é uma figura semi-lendária, mas eventos como o ataque a Lindisfarne (793) e a Grande Armada Viking são reais." },
+      { q: "Vikings vale a pena assistir em 2026?", a: "Sim. As 6 temporadas contam uma saga épica de expansão nórdica. A série é elogiada por batalhas, personagens complexos e uma representação fascinante da cultura viking." },
+      { q: "Qual a ordem para assistir Vikings?", a: "Vikings (6 temporadas, 2013-2020) → Vikings: Valhalla (3 temporadas, 2022-2024). Valhalla se passa 100 anos depois, com novos personagens como Leif Eriksson e Harald Sigurdsson." },
+    ]
   },
   {
     id: "12",
@@ -468,7 +563,12 @@ export const blogPosts: BlogPost[] = [
     image: acValhallaImg,
     author: "VICIO<CODE>",
     date: "2026-02-08",
-    readTime: "18 min"
+    readTime: "18 min",
+    faq: [
+      { q: "AC Valhalla vale a pena em 2026?", a: "Sim, especialmente com todos os DLCs inclusos. A história de Eivor na Inglaterra anglo-saxã é envolvente, com mais de 100 horas de conteúdo entre campanha e expansões." },
+      { q: "AC Valhalla é um jogo de Vikings?", a: "Sim. Você joga como Eivor, um líder viking que sai da Noruega para conquistar territórios na Inglaterra do século IX, construindo um assentamento e formando alianças." },
+      { q: "Qual o tamanho do mapa de AC Valhalla?", a: "É o maior mapa da franquia, incluindo Inglaterra, Noruega, Vinland (América do Norte), Irlanda e Paris (via DLCs). A exploração completa pode levar mais de 150 horas." },
+    ]
   },
   {
     id: "13",
@@ -481,7 +581,12 @@ export const blogPosts: BlogPost[] = [
     image: acShadowsImg,
     author: "VICIO<CODE>",
     date: "2026-02-09",
-    readTime: "18 min"
+    readTime: "18 min",
+    faq: [
+      { q: "AC Shadows se passa no Japão?", a: "Sim. É o primeiro AC ambientado no Japão Feudal do século XVI, com dois protagonistas jogáveis: Naoe (shinobi) e Yasuke (samurai histórico)." },
+      { q: "Quem é Yasuke em AC Shadows?", a: "Yasuke foi um samurai real de origem africana que serviu Oda Nobunaga no Japão do século XVI. É uma figura histórica documentada que se tornou um dos protagonistas de Shadows." },
+      { q: "AC Shadows tem dois protagonistas?", a: "Sim. Naoe oferece gameplay de stealth clássico (shinobi) e Yasuke oferece combate direto de samurai. Você alterna entre ambos ao longo da história." },
+    ]
   },
   {
     id: "23",
@@ -494,7 +599,12 @@ export const blogPosts: BlogPost[] = [
     image: acPortalImg,
     author: "VICIO<CODE>",
     date: "2026-02-10",
-    readTime: "10 min"
+    readTime: "10 min",
+    faq: [
+      { q: "Qual o melhor Assassin's Creed para jogar em 2026?", a: "Depende do gosto. Para história: AC 2/Brotherhood. Para mundo aberto: Origins/Odyssey. Para stealth clássico: Mirage. Para conteúdo: Valhalla. Black Flag para pirataria." },
+      { q: "Quantos jogos Assassin's Creed existem?", a: "A série principal tem 13 jogos (AC1 a Shadows), além de spin-offs como Chronicles, Freedom Cry e mobile games. No total, mais de 20 títulos foram lançados desde 2007." },
+      { q: "Preciso jogar os ACs em ordem?", a: "Não é obrigatório. Cada jogo conta uma história independente. Mas jogar em ordem cronológica de lançamento enriquece a compreensão da trama moderna (Desmond/Layla)." },
+    ]
   },
 
   // ── IA Posts ─────────────────────────────────────────────
@@ -509,7 +619,12 @@ export const blogPosts: BlogPost[] = [
     image: chatgptVsGeminiImg,
     author: "VICIO<CODE>",
     date: "2026-02-11",
-    readTime: "12 min"
+    readTime: "12 min",
+    faq: [
+      { q: "Qual a melhor IA em 2026: ChatGPT, Gemini ou Claude?", a: "Depende do uso. ChatGPT (GPT-5) lidera em versatilidade. Gemini 2.5 se destaca em pesquisa e multimodal. Claude 4 é superior em textos longos e análise de documentos." },
+      { q: "Qual IA é gratuita em 2026?", a: "Todas oferecem versões gratuitas: ChatGPT Free, Gemini (integrado ao Google), e Claude Free. As versões pagas (Plus/Pro/Advanced) desbloqueiam modelos mais potentes e limites maiores." },
+      { q: "ChatGPT ou Gemini para programação?", a: "ChatGPT com GPT-5 e Claude com Opus são os mais indicados para código. Gemini 2.5 Pro também é competente, especialmente para projetos que envolvem dados do ecossistema Google." },
+    ]
   },
   {
     id: "36",
@@ -522,7 +637,12 @@ export const blogPosts: BlogPost[] = [
     image: iaGanharDinheiroImg,
     author: "VICIO<CODE>",
     date: "2026-02-12",
-    readTime: "15 min"
+    readTime: "15 min",
+    faq: [
+      { q: "É possível ganhar dinheiro com IA em 2026?", a: "Sim. As 15 formas incluem freelancing com IA (redação, design, código), criação de conteúdo, automação de processos, consultoria e desenvolvimento de produtos baseados em IA." },
+      { q: "Preciso saber programar para ganhar dinheiro com IA?", a: "Não necessariamente. Muitas formas de monetização usam ferramentas no-code como ChatGPT, Midjourney e plataformas de automação. Saber programar amplia as possibilidades, mas não é requisito." },
+      { q: "Quanto é possível ganhar com IA?", a: "Varia muito. Freelancers de conteúdo com IA ganham R$ 2.000-8.000/mês. Desenvolvedores de automações, R$ 5.000-20.000/mês. Consultores especializados podem cobrar R$ 200-500/hora." },
+    ]
   },
   {
     id: "37",
@@ -535,7 +655,12 @@ export const blogPosts: BlogPost[] = [
     image: iaTrabalhoImg,
     author: "VICIO<CODE>",
     date: "2026-02-13",
-    readTime: "13 min"
+    readTime: "13 min",
+    faq: [
+      { q: "Quais profissões a IA vai substituir?", a: "Profissões com tarefas repetitivas e previsíveis têm risco alto: digitação, atendimento básico, tradução simples e entrada de dados. Profissões criativas e de relacionamento têm risco baixo." },
+      { q: "A IA vai acabar com empregos em 2026?", a: "A IA está transformando empregos, não eliminando-os em massa. O World Economic Forum estima que a IA criará 97 milhões de novos empregos até 2030, enquanto 85 milhões serão transformados." },
+      { q: "Como se preparar para a IA no trabalho?", a: "Desenvolva habilidades complementares à IA: pensamento crítico, criatividade, comunicação, liderança e capacidade de usar ferramentas de IA como multiplicador da sua produtividade." },
+    ]
   },
   {
     id: "38",
@@ -548,7 +673,12 @@ export const blogPosts: BlogPost[] = [
     image: appsIaProdutividadeImg,
     author: "VICIO<CODE>",
     date: "2026-02-14",
-    readTime: "11 min"
+    readTime: "11 min",
+    faq: [
+      { q: "Quais os melhores apps de IA para produtividade?", a: "Os 10 melhores incluem ChatGPT, Notion AI, Otter.ai (transcrição), Gamma (apresentações), Perplexity (pesquisa), Copy.ai (textos), Grammarly, Canva AI, Descript e Zapier AI." },
+      { q: "Apps de IA para produtividade são gratuitos?", a: "A maioria oferece plano gratuito limitado. ChatGPT, Perplexity, Canva AI e Grammarly têm versões free úteis. Planos pagos variam de R$ 30 a R$ 150/mês." },
+      { q: "Qual app de IA substitui o PowerPoint?", a: "Gamma e Tome criam apresentações profissionais a partir de texto simples usando IA. Beautiful.ai e Slidesgo AI também são alternativas populares ao PowerPoint tradicional." },
+    ]
   },
 
   // ── Investimentos Posts ───────────────────────────────────
@@ -788,7 +918,12 @@ export const blogPosts: BlogPost[] = [
     image: iaGenerativaIniciantesImg,
     author: "VICIO<CODE>",
     date: "2026-02-26",
-    readTime: "16 min"
+    readTime: "16 min",
+    faq: [
+      { q: "O que é IA generativa?", a: "IA generativa são sistemas que criam conteúdo novo (texto, imagens, vídeo, código, música) a partir de instruções. Exemplos: ChatGPT (texto), Midjourney (imagens), Suno (música), Sora (vídeo)." },
+      { q: "Preciso saber programar para usar IA generativa?", a: "Não. A maioria das ferramentas de IA generativa funciona com linguagem natural. Você digita o que quer em português e a IA gera o resultado. Saber programar é opcional." },
+      { q: "IA generativa é segura para usar?", a: "Sim, com cuidados. Não insira dados pessoais sensíveis, verifique informações factuais geradas e respeite direitos autorais. Use ferramentas com políticas claras de privacidade." },
+    ]
   },
   {
     id: "40",
@@ -801,7 +936,12 @@ export const blogPosts: BlogPost[] = [
     image: deepfakesIaImg,
     author: "VICIO<CODE>",
     date: "2026-02-27",
-    readTime: "12 min"
+    readTime: "12 min",
+    faq: [
+      { q: "O que é deepfake?", a: "Deepfake é conteúdo (vídeo, áudio ou imagem) gerado ou manipulado por IA para parecer real. Pode trocar rostos, clonar vozes ou criar pessoas que não existem." },
+      { q: "Como identificar um deepfake?", a: "Sinais incluem: movimentos labiais dessincronizados, bordas irregulares no rosto, piscadas anormais, iluminação inconsistente e texturas estranhas na pele. Ferramentas como Microsoft Video Authenticator ajudam na detecção." },
+      { q: "Deepfake é crime no Brasil?", a: "Criar deepfakes para difamação, fraude ou pornografia não consensual é crime. O marco legal brasileiro (Lei 14.811/2024) criminaliza deepfakes envolvendo crianças e adolescentes." },
+    ]
   },
   {
     id: "41",
@@ -814,7 +954,12 @@ export const blogPosts: BlogPost[] = [
     image: iaEducacaoImg,
     author: "VICIO<CODE>",
     date: "2026-02-28",
-    readTime: "13 min"
+    readTime: "13 min",
+    faq: [
+      { q: "Como usar IA para estudar melhor?", a: "Use IA para criar resumos personalizados, gerar flashcards, simular provas, explicar conceitos complexos de formas diferentes e criar cronogramas de estudo adaptados ao seu ritmo." },
+      { q: "Usar IA para estudar é trapacear?", a: "Depende de como você usa. Usar IA como tutor para entender conceitos é legítimo. Copiar respostas prontas sem aprender é antipedagógico. O importante é usar IA para aprofundar, não para atalhar." },
+      { q: "Quais ferramentas de IA são melhores para estudantes?", a: "ChatGPT (explicações e resumos), Anki com IA (flashcards), Notion AI (organização), Quillbot (paráfrases), Perplexity (pesquisa acadêmica) e Khan Academy com Khanmigo (tutoria personalizada)." },
+    ]
   },
   {
     id: "42",
@@ -827,7 +972,12 @@ export const blogPosts: BlogPost[] = [
     image: agentesIaImg,
     author: "VICIO<CODE>",
     date: "2026-03-01",
-    readTime: "14 min"
+    readTime: "14 min",
+    faq: [
+      { q: "O que são agentes de IA?", a: "Agentes de IA são sistemas autônomos que podem planejar, executar tarefas e tomar decisões sem supervisão constante. Diferente de chatbots, eles agem proativamente para atingir objetivos." },
+      { q: "Quais empresas já usam agentes de IA?", a: "Google (Gemini Agents), OpenAI (GPT Agents), Microsoft (Copilot Agents), Salesforce (Einstein GPT) e startups como Cognition (Devin) e Adept já implementam agentes em produção." },
+      { q: "Agentes de IA são perigosos?", a: "O risco existe se não houver supervisão adequada. Por isso, a maioria dos agentes atuais opera em 'sandbox' com limites definidos. A regulamentação está avançando para garantir segurança." },
+    ]
   },
   {
     id: "43",
@@ -840,7 +990,12 @@ export const blogPosts: BlogPost[] = [
     image: iaSaudeImg,
     author: "VICIO<CODE>",
     date: "2026-03-02",
-    readTime: "14 min"
+    readTime: "14 min",
+    faq: [
+      { q: "A IA pode fazer diagnósticos médicos?", a: "Sim, com limitações. IA já detecta câncer de pele, retinopatia diabética e pneumonia em exames de imagem com precisão comparável ou superior a especialistas humanos. Mas sempre sob supervisão médica." },
+      { q: "Quais hospitais usam IA no Brasil?", a: "Hospital Albert Einstein, Sírio-Libanês, Dasa e Rede D'Or já utilizam IA para triagem, análise de exames de imagem, predição de deterioração clínica e gestão hospitalar." },
+      { q: "A IA vai substituir médicos?", a: "Não. A IA é uma ferramenta de apoio. Diagnósticos finais, decisões clínicas e a relação médico-paciente continuam exigindo profissionais humanos. A IA ajuda a ser mais preciso e rápido." },
+    ]
   },
   {
     id: "44",
@@ -853,7 +1008,12 @@ export const blogPosts: BlogPost[] = [
     image: regulamentacaoIaImg,
     author: "VICIO<CODE>",
     date: "2026-03-03",
-    readTime: "12 min"
+    readTime: "12 min",
+    faq: [
+      { q: "O Brasil tem lei de IA?", a: "Sim. O Marco Legal da IA (PL 2338/2023) foi aprovado e estabelece princípios, direitos e obrigações para desenvolvimento e uso de IA no Brasil, incluindo classificação de risco." },
+      { q: "O que é o AI Act europeu?", a: "É a primeira legislação abrangente do mundo sobre IA, aprovada pela União Europeia em 2024. Classifica sistemas de IA por nível de risco e proíbe práticas como vigilância biométrica em massa." },
+      { q: "A regulamentação vai frear a inovação em IA?", a: "Há debate. Regulamentação cria custos de compliance, mas também gera confiança e mercados mais previsíveis. Empresas que se adaptam cedo tendem a ganhar vantagem competitiva." },
+    ]
   },
 
   // ── Otaku Posts ──────────────────────────────────────────
@@ -868,7 +1028,12 @@ export const blogPosts: BlogPost[] = [
     image: animesAguardadosImg,
     author: "VICIO<CODE>",
     date: "2026-03-04",
-    readTime: "12 min"
+    readTime: "12 min",
+    faq: [
+      { q: "Quais animes estreiam em 2026?", a: "Destaques incluem TenSura T4, Chainsaw Man Parte 2, Solo Leveling T2, Oshi no Ko T3, Vinland Saga T3 e Blue Lock T2. A temporada de abril/2026 é uma das mais aguardadas da década." },
+      { q: "Onde assistir animes novos em 2026?", a: "Crunchyroll é a principal plataforma com simulcast. Netflix, Amazon Prime Video e Disney+ também licenciam títulos exclusivos. Funimation foi integrada ao Crunchyroll." },
+      { q: "Qual o anime mais aguardado de 2026?", a: "Solo Leveling Temporada 2 e Chainsaw Man Parte 2 disputam o topo. TenSura T4 e Demon Slayer Infinity Castle (trilogia de filmes) também geram grande expectativa." },
+    ]
   },
   {
     id: "46",
@@ -881,7 +1046,12 @@ export const blogPosts: BlogPost[] = [
     image: guiaCosplayImg,
     author: "VICIO<CODE>",
     date: "2026-03-05",
-    readTime: "14 min"
+    readTime: "14 min",
+    faq: [
+      { q: "Quanto custa fazer cosplay?", a: "Varia muito. Cosplays simples custam R$ 100-300. Intermediários, R$ 500-1.500. Elaborados com armaduras e LEDs podem passar de R$ 3.000. Reaproveitar materiais e DIY reduzem custos." },
+      { q: "Qual personagem escolher para o primeiro cosplay?", a: "Escolha um personagem que você ama e que tenha um visual relativamente simples. Protagonistas de uniformes escolares (Demon Slayer, MHA) ou roupas casuais são boas opções para iniciantes." },
+      { q: "Preciso costurar para fazer cosplay?", a: "Não necessariamente. Muitos cosplayers iniciantes compram bases prontas e personalizam. Mas aprender costura básica e uso de EVA/Worbla abre muitas possibilidades." },
+    ]
   },
   {
     id: "47",
@@ -894,7 +1064,12 @@ export const blogPosts: BlogPost[] = [
     image: mangaVsAnimeImg,
     author: "VICIO<CODE>",
     date: "2026-03-06",
-    readTime: "13 min"
+    readTime: "13 min",
+    faq: [
+      { q: "Mangá ou anime: qual é melhor?", a: "Depende do título. Animes com boa animação (Demon Slayer, JJK) podem superar o mangá. Mangás com arte detalhada (Berserk, Vagabond) são superiores. Ambos se complementam." },
+      { q: "Por que adaptações de anime cortam conteúdo?", a: "Por limitações de tempo. Uma temporada de 12 episódios cobre ~50 capítulos de mangá. Material extra, arcos secundários e detalhes narrativos são frequentemente omitidos ou condensados." },
+      { q: "Quais adaptações de anime superaram o mangá?", a: "Demon Slayer (animação da Ufotable), Mob Psycho 100 (Bones), Attack on Titan (MAPPA/WIT) e Jujutsu Kaisen são exemplos onde a adaptação animada é considerada superior ao mangá original." },
+    ]
   },
   {
     id: "48",
@@ -907,7 +1082,12 @@ export const blogPosts: BlogPost[] = [
     image: culturaOtakuBrasilImg,
     author: "VICIO<CODE>",
     date: "2026-03-07",
-    readTime: "14 min"
+    readTime: "14 min",
+    faq: [
+      { q: "O Brasil é a maior comunidade otaku fora da Ásia?", a: "Sim. O Brasil tem a maior comunidade otaku fora da Ásia, com eventos como CCXP atraindo mais de 300 mil visitantes e o mercado de mangás crescendo 40% ao ano." },
+      { q: "O que significa 'otaku' no Brasil?", a: "No Brasil, otaku é usado de forma positiva para descrever fãs de anime, mangá e cultura japonesa. No Japão, o termo pode ter conotação negativa de obsessão, mas no Brasil é motivo de orgulho." },
+      { q: "Quais os maiores eventos otaku do Brasil?", a: "CCXP (São Paulo), Anime Friends, Sana (Fortaleza), AnimaRecife e Anime Extreme são alguns dos maiores. A CCXP é o maior evento de cultura pop da América Latina." },
+    ]
   },
   {
     id: "49",
@@ -920,7 +1100,12 @@ export const blogPosts: BlogPost[] = [
     image: jogosAnimeImg,
     author: "VICIO<CODE>",
     date: "2026-03-08",
-    readTime: "13 min"
+    readTime: "13 min",
+    faq: [
+      { q: "Quais os melhores jogos de anime em 2026?", a: "Dragon Ball Sparking! Zero, Naruto x Boruto Ultimate Storm, One Piece Odyssey, Jujutsu Kaisen Cursed Clash e Demon Slayer: Hinokami Chronicles estão entre os destaques." },
+      { q: "Jogos de anime valem a pena?", a: "Os melhores sim. Títulos como Dragon Ball FighterZ e Naruto Storm 4 são excelentes mesmo para não-fãs do anime. Outros são mais voltados para fãs e podem ser medianos como jogos." },
+      { q: "Onde comprar jogos de anime mais baratos?", a: "Steam (PC) tem as melhores promoções. PS Store e Xbox Store fazem sales frequentes. Sites como Nuuvem e Green Man Gaming oferecem jogos de anime com desconto para PC." },
+    ]
   },
   {
     id: "50",
@@ -933,7 +1118,12 @@ export const blogPosts: BlogPost[] = [
     image: aprenderJaponesImg,
     author: "VICIO<CODE>",
     date: "2026-03-09",
-    readTime: "15 min"
+    readTime: "15 min",
+    faq: [
+      { q: "É possível aprender japonês só assistindo anime?", a: "Parcialmente. Anime ajuda com vocabulário, pronúncia e compreensão auditiva, mas não ensina escrita (kanji/hiragana/katakana) nem gramática formal. Use como complemento a estudos estruturados." },
+      { q: "Quais animes são melhores para aprender japonês?", a: "Animes com linguagem cotidiana como Shirokuma Café, Yotsuba&!, K-On! e slice of life em geral. Evite shounen de batalha (linguagem muito informal/inventada) no início." },
+      { q: "Quanto tempo leva para aprender japonês com anime?", a: "Com estudo dedicado de 1-2 horas/dia usando anime como complemento, você pode atingir nível conversacional básico (JLPT N4) em 12-18 meses." },
+    ]
   },
   {
     id: "51",
@@ -946,7 +1136,12 @@ export const blogPosts: BlogPost[] = [
     image: isekaiImg,
     author: "VICIO<CODE>",
     date: "2026-03-10",
-    readTime: "14 min"
+    readTime: "14 min",
+    faq: [
+      { q: "O que é isekai?", a: "Isekai ('outro mundo') é um gênero de anime/mangá onde o protagonista é transportado ou reencarnado em um mundo diferente, geralmente de fantasia com sistema de RPG." },
+      { q: "Por que isekai é tão popular?", a: "O gênero oferece escapismo, fantasia de poder e familiaridade com mecânicas de jogos. A premissa simples permite histórias variadas — de comédia a dark fantasy — atraindo público amplo." },
+      { q: "Quais os melhores isekais de 2026?", a: "TenSura T4, Mushoku Tensei, Re:Zero T3, Overlord (filme), Shield Hero T4 e The Beginning After The End estão entre os mais aguardados e bem avaliados." },
+    ]
   },
   {
     id: "52",
@@ -959,7 +1154,12 @@ export const blogPosts: BlogPost[] = [
     image: merchandisingOtakuImg,
     author: "VICIO<CODE>",
     date: "2026-03-11",
-    readTime: "14 min"
+    readTime: "14 min",
+    faq: [
+      { q: "Onde comprar action figures de anime no Brasil?", a: "Lojas especializadas como Hakkan Store, Ankan, Loja Kan e sites como Mercado Livre e Amazon Brasil. Para importação, AmiAmi, HobbyLink Japan e Solaris Japan são referências mundiais." },
+      { q: "Action figures de anime valorizam?", a: "Sim, especialmente edições limitadas, figuras de fabricantes premium (Good Smile, Kotobukiya, Bandai) e itens descontinuados. Manter na caixa original e em bom estado é essencial para valorização." },
+      { q: "Como começar a colecionar mangás?", a: "Comece por uma série que você ama. Editoras como Panini, JBC e NewPOP publicam mangás no Brasil. Compre volumes usados em sebos ou grupos de Facebook para economizar." },
+    ]
   },
   {
     id: "53",
@@ -972,7 +1172,12 @@ export const blogPosts: BlogPost[] = [
     image: melhoresMangasImg,
     author: "VICIO<CODE>",
     date: "2026-03-12",
-    readTime: "15 min"
+    readTime: "15 min",
+    faq: [
+      { q: "Quais os melhores mangás para iniciantes?", a: "Death Note (suspense), Fullmetal Alchemist (aventura), One Punch Man (comédia/ação), Spy x Family (comédia/família) e Chainsaw Man (ação) são ótimos pontos de entrada." },
+      { q: "Onde ler mangás online de graça?", a: "MangaPlus (app oficial da Shueisha) oferece capítulos gratuitos de One Piece, Naruto, Dragon Ball e mais. Crunchyroll Manga também tem títulos selecionados." },
+      { q: "Qual o mangá mais vendido de todos os tempos?", a: "One Piece, com mais de 530 milhões de cópias vendidas mundialmente. Em segundo lugar está Dragon Ball (~300 milhões) e Naruto (~260 milhões)." },
+    ]
   },
   {
     id: "54",
@@ -985,7 +1190,12 @@ export const blogPosts: BlogPost[] = [
     image: saudeMentalOtakuImg,
     author: "VICIO<CODE>",
     date: "2026-03-13",
-    readTime: "13 min"
+    readTime: "13 min",
+    faq: [
+      { q: "Assistir anime faz bem para saúde mental?", a: "Pode sim. Animes oferecem escape saudável, representação de emoções complexas, senso de comunidade e personagens que inspiram resiliência. O problema é quando substitui relacionamentos reais." },
+      { q: "Quando a cultura otaku pode ser prejudicial?", a: "Quando leva ao isolamento social extremo, quando substitui tratamento profissional de saúde mental, quando causa dependência de escape ou quando interfere significativamente no trabalho/estudos." },
+      { q: "Quais animes abordam saúde mental?", a: "A Silent Voice (bullying/depressão), March Comes In Like a Lion (solidão), Fruits Basket (trauma), Evangelion (identidade), Blue Period (autoexpressão) e Bocchi the Rock (ansiedade social)." },
+    ]
   },
 
   // ── IA Posts ─────────────────────────────────────────────
@@ -1000,7 +1210,12 @@ export const blogPosts: BlogPost[] = [
     image: iaCriatividadeImg,
     author: "VICIO<CODE>",
     date: "2026-03-14",
-    readTime: "14 min"
+    readTime: "14 min",
+    faq: [
+      { q: "IA pode criar arte original?", a: "IA gera imagens, música e textos que são tecnicamente 'novos', mas baseados em padrões aprendidos de obras existentes. O debate sobre originalidade e autoria continua intenso." },
+      { q: "Quais as melhores ferramentas de IA para arte?", a: "Midjourney (imagens estilizadas), DALL-E 3 (integrado ao ChatGPT), Stable Diffusion (open source), Suno AI (música), Runway (vídeo) e Adobe Firefly (edição profissional)." },
+      { q: "Arte feita por IA tem direitos autorais?", a: "Na maioria dos países, incluindo EUA e Brasil, obras geradas exclusivamente por IA não recebem proteção de direitos autorais. Obras com intervenção humana significativa podem ser protegidas." },
+    ]
   },
   {
     id: "56",
@@ -1013,7 +1228,12 @@ export const blogPosts: BlogPost[] = [
     image: iaPrivacidadeImg,
     author: "VICIO<CODE>",
     date: "2026-03-15",
-    readTime: "13 min"
+    readTime: "13 min",
+    faq: [
+      { q: "As IAs usam meus dados para treinar?", a: "Depende da ferramenta e do plano. ChatGPT Free pode usar conversas para treino (desativável). Planos pagos e empresariais geralmente não usam. Gemini usa dados conforme política do Google." },
+      { q: "Como proteger meus dados ao usar IA?", a: "Não insira dados sensíveis (CPF, senhas, informações médicas). Use planos empresariais com políticas de não-treino. Desative histórico de conversas quando possível. Leia os termos de uso." },
+      { q: "A LGPD protege contra uso indevido por IA?", a: "Sim. A LGPD garante direitos como acesso, correção e exclusão de dados pessoais, incluindo os usados por sistemas de IA. Empresas devem ter base legal para processar seus dados." },
+    ]
   },
 
   // ── Investimentos Posts ───────────────────────────────────
@@ -1049,7 +1269,12 @@ export const blogPosts: BlogPost[] = [
     image: crimsonDesertGuiaImg,
     author: "VICIO<CODE>",
     date: "2026-03-16",
-    readTime: "12 min"
+    readTime: "12 min",
+    faq: [
+      { q: "Crimson Desert é do mesmo estúdio de Black Desert?", a: "Sim. Pearl Abyss desenvolve ambos. Crimson Desert usa a nova BlackSpace Engine e é focado em narrativa single-player com história linear, diferente do MMO Black Desert Online." },
+      { q: "Crimson Desert é MMO?", a: "Não. Crimson Desert é um RPG de ação single-player com mundo aberto. Originalmente planejado como MMO, foi redesenhado para focar em uma história cinematográfica de ~40 horas." },
+      { q: "Quando Crimson Desert lança?", a: "Crimson Desert foi lançado em 2026 para PC, PS5 e Xbox Series X|S. O jogo passou anos em desenvolvimento após ser anunciado em 2020." },
+    ]
   },
   {
     id: "71",
@@ -1062,7 +1287,12 @@ export const blogPosts: BlogPost[] = [
     image: crimsonDesertCombateImg,
     author: "VICIO<CODE>",
     date: "2026-03-16",
-    readTime: "9 min"
+    readTime: "9 min",
+    faq: [
+      { q: "O que é a BlackSpace Engine?", a: "É o motor gráfico proprietário da Pearl Abyss, evolução do motor de Black Desert. Oferece renderização de cenários massivos, física avançada e animações de combate cinematográficas." },
+      { q: "O combate de Crimson Desert é difícil?", a: "O combate é desafiador e recompensador, similar a jogos como Devil May Cry e Dark Souls. Chefes têm padrões únicos e exigem aprendizado. Há opções de dificuldade para diferentes perfis." },
+      { q: "Crimson Desert tem montarias?", a: "Sim. O jogo inclui cavalos e outras montarias que podem ser usadas em combate e exploração. O sistema de montarias é herança do excelente sistema equestre de Black Desert." },
+    ]
   },
 
   // ── Investimentos Posts ───────────────────────────────────
@@ -1098,7 +1328,12 @@ export const blogPosts: BlogPost[] = [
     image: crimsonDesertReviewImg,
     author: "VICIO<CODE>",
     date: "2026-03-17",
-    readTime: "15 min"
+    readTime: "15 min",
+    faq: [
+      { q: "Qual a nota de Crimson Desert?", a: "O jogo recebeu Metacritic 78 e OpenCritic 80, com elogios ao combate e mundo aberto, e críticas à história e bugs de lançamento." },
+      { q: "Crimson Desert vale a pena comprar?", a: "Sim para fãs de RPGs de ação com mundo aberto. O combate é excelente, o mundo é lindo e há muito conteúdo. Mas se você prioriza narrativa, pode se decepcionar com a história." },
+      { q: "Quanto tempo dura Crimson Desert?", a: "A história principal leva ~35-40 horas. Com side quests e exploração completa, pode passar de 80 horas. O mundo aberto de Pywel tem bastante conteúdo opcional." },
+    ]
   },
   {
     id: "73",
@@ -1111,7 +1346,12 @@ export const blogPosts: BlogPost[] = [
     image: crimsonDesertBuildsImg,
     author: "VICIO<CODE>",
     date: "2026-03-17",
-    readTime: "14 min"
+    readTime: "14 min",
+    faq: [
+      { q: "Crimson Desert tem classes?", a: "Não há classes tradicionais. Kliff pode usar diferentes estilos de combate (agressivo, defensivo, híbrido) que funcionam como 'builds' personalizáveis ao longo do jogo." },
+      { q: "Qual o melhor estilo de jogo em Crimson Desert?", a: "O estilo agressivo é mais divertido e rápido. Defensivo é mais seguro contra chefes. Híbrido oferece versatilidade. A maioria dos jogadores recomenda começar com agressivo e adaptar conforme o desafio." },
+      { q: "Como expandir o inventário em Crimson Desert?", a: "Compre bolsas de viagem em mercadores de cidades principais, complete quests de caçadores e explore acampamentos inimigos. Expandir o inventário cedo é essencial para gerenciar loot." },
+    ]
   },
 
   // ── Investimentos Posts ───────────────────────────────────
@@ -1166,7 +1406,12 @@ export const blogPosts: BlogPost[] = [
     image: iaCodigoImg,
     author: "VICIO<CODE>",
     date: "2026-03-17",
-    readTime: "13 min"
+    readTime: "13 min",
+    faq: [
+      { q: "GitHub Copilot vale a pena em 2026?", a: "Sim para a maioria dos desenvolvedores. Copilot com GPT-5 completa código, escreve testes e explica legacy code. O ganho de produtividade é de 30-55% segundo estudos da GitHub." },
+      { q: "Cursor IDE é melhor que VS Code com Copilot?", a: "Para desenvolvimento assistido por IA, Cursor oferece uma experiência mais integrada com chat, edição inline e entendimento de codebase inteiro. VS Code + Copilot é mais estabelecido e estável." },
+      { q: "IA vai substituir programadores?", a: "Não no curto/médio prazo. IA é excelente em tarefas repetitivas e boilerplate, mas arquitetura de sistemas, debugging complexo e decisões de produto ainda requerem humanos experientes." },
+    ]
   },
   {
     id: "114",
@@ -1179,7 +1424,12 @@ export const blogPosts: BlogPost[] = [
     image: iaOpenSourceImg,
     author: "VICIO<CODE>",
     date: "2026-03-17",
-    readTime: "12 min"
+    readTime: "12 min",
+    faq: [
+      { q: "O que são modelos de IA open source?", a: "São modelos com pesos e código disponíveis publicamente. Llama (Meta), Mistral e DeepSeek permitem que qualquer pessoa execute, modifique e treine IA localmente sem depender de APIs pagas." },
+      { q: "DeepSeek R1 é melhor que GPT-5?", a: "Em alguns benchmarks de raciocínio, DeepSeek R1 se aproxima do GPT-5 a uma fração do custo. Mas GPT-5 é mais versátil, multimodal e tem melhor suporte. Depende do caso de uso." },
+      { q: "Posso rodar IA open source no meu PC?", a: "Sim. Modelos menores (7B-13B parâmetros) rodam em GPUs com 8-16GB VRAM. Ferramentas como Ollama e LM Studio facilitam a instalação. Modelos maiores (70B+) exigem hardware profissional." },
+    ]
   },
 
   // ── Geek Posts ───────────────────────────────────────────
@@ -1194,7 +1444,12 @@ export const blogPosts: BlogPost[] = [
     image: bg3Img,
     author: "VICIO<CODE>",
     date: "2026-03-17",
-    readTime: "14 min"
+    readTime: "14 min",
+    faq: [
+      { q: "Baldur's Gate 3 ainda vale a pena em 2026?", a: "Absolutamente. Com Metacritic 96, mais de 20 milhões de cópias vendidas e atualizações gratuitas da Larian, BG3 continua sendo referência em RPGs. O mod support ampliou muito a longevidade." },
+      { q: "Baldur's Gate 3 é difícil?", a: "Tem curva de aprendizado por ser baseado em D&D 5e, mas oferece múltiplos níveis de dificuldade. O modo Explorer é acessível para novatos. Tactician e Honour Mode são para veteranos." },
+      { q: "Preciso jogar BG1 e BG2 antes de BG3?", a: "Não. BG3 conta uma história independente. Conhecer os jogos anteriores enriquece referências, mas não é necessário para entender ou aproveitar a história." },
+    ]
   },
   {
     id: "116",
@@ -1207,7 +1462,12 @@ export const blogPosts: BlogPost[] = [
     image: dragonAgeImg,
     author: "VICIO<CODE>",
     date: "2026-03-17",
-    readTime: "13 min"
+    readTime: "13 min",
+    faq: [
+      { q: "Dragon Age Veilguard vale a pena?", a: "Para fãs da série, sim. A história conclui arcos importantes e o combate é fluido. Para novatos, o jogo é acessível mas pode não ter o mesmo impacto emocional sem contexto das 3 entradas anteriores." },
+      { q: "Preciso jogar os Dragon Ages anteriores?", a: "Recomendado mas não obrigatório. Veilguard tem resumos da história. Porém, personagens como Solas, Varric e Harding têm muito mais impacto se você jogou Inquisition." },
+      { q: "Dragon Age Veilguard é mundo aberto?", a: "Semi-aberto. O jogo usa hubs exploráveis grandes em vez de um mapa contínuo. Cada região tem conteúdo substancial, similar à estrutura de Dragon Age: Inquisition." },
+    ]
   },
 
   // ── Otaku Posts ──────────────────────────────────────────
@@ -1222,7 +1482,12 @@ export const blogPosts: BlogPost[] = [
     image: demonSlayerImg,
     author: "VICIO<CODE>",
     date: "2026-03-17",
-    readTime: "14 min"
+    readTime: "14 min",
+    faq: [
+      { q: "Quantos Hashira existem em Demon Slayer?", a: "São 9 Hashira (Pilares): Gyomei (Pedra), Tengen (Som), Rengoku (Chamas), Shinobu (Inseto), Mitsuri (Amor), Obanai (Serpente), Muichiro (Névoa), Sanemi (Vento) e Giyu (Água)." },
+      { q: "Qual o Hashira mais forte?", a: "Gyomei Himejima (Pilar da Pedra) é considerado o mais forte entre os Hashira ativos. Entre todos os espadachins da história, Yoriichi Tsugikuni (criador da Respiração Solar) é imbatível." },
+      { q: "Demon Slayer já acabou?", a: "O mangá terminou em 2020 com 205 capítulos. A adaptação em anime está em fase final com a trilogia de filmes Infinity Castle, cobrindo o arco final da série." },
+    ]
   },
   {
     id: "118",
@@ -1235,7 +1500,12 @@ export const blogPosts: BlogPost[] = [
     image: onePieceImg,
     author: "VICIO<CODE>",
     date: "2026-03-17",
-    readTime: "15 min"
+    readTime: "15 min",
+    faq: [
+      { q: "One Piece está acabando?", a: "Sim. Eiichiro Oda iniciou a Final Saga em 2022. Estimativas apontam que o mangá termine entre 2027-2028, após mais de 25 anos de publicação e 1100+ capítulos." },
+      { q: "O que é o One Piece (tesouro)?", a: "Ainda é um mistério. Oda revelou que o One Piece é algo físico, tangível, e que Luffy vai encontrá-lo na ilha de Laugh Tale. A revelação é o clímax mais aguardado da história dos mangás." },
+      { q: "Onde estamos na Final Saga?", a: "Em 2026, o mangá está no Arco de Elbaf após o Arco de Egghead. Revelações sobre Imu, os Gorosei, o Século Vazio e Joy Boy estão acelerando rumo ao confronto final." },
+    ]
   },
 
   // ── Geek Posts ───────────────────────────────────────────
@@ -1250,7 +1520,12 @@ export const blogPosts: BlogPost[] = [
     image: crimsonMapaImg,
     author: "VICIO<CODE>",
     date: "2026-03-19",
-    readTime: "13 min"
+    readTime: "13 min",
+    faq: [
+      { q: "Qual o tamanho do mapa de Crimson Desert?", a: "O continente de Pywel tem aproximadamente 90 km², o dobro do mapa de Skyrim. São 5 regiões distintas com biomas variados, de desertos a florestas geladas." },
+      { q: "Crimson Desert tem fast travel?", a: "Sim, mas limitado. Você desbloqueia pontos de viagem rápida ao descobrir acampamentos e cidades. A exploração a cavalo é incentivada pelo design do mundo aberto." },
+      { q: "Quais são as regiões de Pywel?", a: "Hernand (planícies centrais), Pailune (litoral e portos), Demeniss (montanhas geladas), Delesyia (florestas densas) e Crimson Desert (deserto vermelho que dá nome ao jogo)." },
+    ]
   },
 
   // ── Otaku Posts ──────────────────────────────────────────
@@ -1266,6 +1541,11 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-20",
     readTime: "18 min",
+    faq: [
+      { q: "Quantas temporadas TenSura tem?", a: "4 temporadas: T1 (2018), T2 Part 1 e 2 (2021), T3 (2024) e T4 (abril 2026). Além de Slime Diaries (spin-off), filme Scarlet Bond (2022) e filme Tears of the Azure Sea." },
+      { q: "TenSura T4 já lançou?", a: "A Temporada 4 estreia em abril de 2026 com 5 cours planejados, sendo a maior temporada da série. A produção segue com 8-Bit Studio." },
+      { q: "Qual a ordem para assistir TenSura?", a: "T1 → T2 Part 1 → T2 Part 2 → Filme Scarlet Bond → T3 → T4. Slime Diaries é spin-off opcional (entre T1 e T2). O filme pode ser visto após T2." },
+    ],
   },
   {
     id: "78",
@@ -1279,6 +1559,11 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-20",
     readTime: "18 min",
+    faq: [
+      { q: "Quantas temporadas Overlord tem?", a: "4 temporadas (T1: 2015, T2: 2018, T3: 2018, T4: 2022) e o filme The Sacred Kingdom (setembro 2024). A Temporada 5 ainda não foi confirmada oficialmente." },
+      { q: "Overlord terá Temporada 5?", a: "Não foi confirmada oficialmente. O filme Sacred Kingdom adaptou os volumes 12-13 da light novel. Os volumes 14-18 ainda não foram adaptados, deixando material para uma possível T5." },
+      { q: "Qual a ordem para assistir Overlord?", a: "T1 → T2 → T3 → T4 → Filme The Sacred Kingdom. Os filmes de compilação (2017) são resumos das temporadas 1-2 e podem ser pulados." },
+    ],
   },
   {
     id: "77",
@@ -1292,6 +1577,11 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-21",
     readTime: "10 min",
+    faq: [
+      { q: "Rimuru Tempest é o protagonista mais forte dos isekais?", a: "Rimuru está entre os mais fortes. Como True Demon Lord e posteriormente True Dragon, seus poderes incluem análise, absorção de habilidades e controle sobre espaço-tempo. Poucos protagonistas isekai o superam." },
+      { q: "Quantos Demon Lords existem em TenSura?", a: "São 10 Grandes Demon Lords (Octagram após reorganização): Guy Crimson, Milim Nava, Ramiris, Dagruel, Dino, Luminous Valentine, Leon Cromwell, Rimuru Tempest e dois assentos variáveis." },
+      { q: "Qual a relação entre Rimuru e Veldora?", a: "Rimuru absorveu Veldora (o Storm Dragon) na Caverna Selada e deu a ele o sobrenome Tempest. São 'amigos juramentados' — Veldora é a fonte de poder e proteção de Rimuru nos primeiros arcos." },
+    ],
   },
   {
     id: "79",
@@ -1305,6 +1595,11 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-21",
     readTime: "15 min",
+    faq: [
+      { q: "Quem é Ainz Ooal Gown?", a: "Ainz (nome real: Momonga) é um jogador de YGGDRASIL que ficou preso no jogo quando ele fechou. Ele é um Elder Lich supremo, líder da Grande Tumba de Nazarick e o Sorcerer King." },
+      { q: "Quantos Floor Guardians Nazarick tem?", a: "7 Floor Guardians: Shalltear (1-3), Cocytus (5), Aura e Mare (6 — são gêmeos), Demiurge (7), Victim (8) e Albedo (Overseer). Gargantua (4) é um golem sem personalidade." },
+      { q: "Albedo ama Ainz?", a: "Sim. Momonga editou as configurações de Albedo antes do servidor fechar, adicionando que ela o amaria profundamente. Isso criou uma devoção obsessiva que é tema recorrente na série." },
+    ],
   },
 
   // ── Geek Posts ───────────────────────────────────────────
@@ -1320,6 +1615,11 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-21",
     readTime: "18 min",
+    faq: [
+      { q: "AC 1 vale a pena jogar em 2026?", a: "Historicamente importante, mas o gameplay é repetitivo pelos padrões atuais. Vale para fãs que querem entender as origens de Altaïr, o Credo e a rivalidade Assassinos vs Templários." },
+      { q: "Quem é Altaïr?", a: "Altaïr Ibn-La'Ahad é um Assassino sírio-árabe que atua durante a Terceira Cruzada em 1191. Ele redescobre o Credo após uma missão fracassada e se torna o maior Mentor da Irmandade." },
+      { q: "AC 1 tem Animus?", a: "Sim. AC 1 introduziu o Animus — máquina que permite reviver memórias de ancestrais. Desmond Miles usa o Animus na Abstergo Industries para acessar as memórias de Altaïr." },
+    ],
   },
   {
     id: "81",
@@ -1333,6 +1633,11 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-21",
     readTime: "20 min",
+    faq: [
+      { q: "AC 2 é considerado o melhor da franquia?", a: "Por muitos fãs e críticos, sim. A história de Ezio, a Itália Renascentista, o salto de qualidade em relação ao AC 1 e a parceria com Leonardo da Vinci fazem dele um dos jogos mais memoráveis." },
+      { q: "Quem é Ezio Auditore?", a: "Ezio Auditore da Firenze é um nobre florentino que se torna Assassino após a execução de sua família pelos Templários. Protagoniza AC 2, Brotherhood e Revelations (1459-1524)." },
+      { q: "Leonardo da Vinci aparece em AC 2?", a: "Sim. Leonardo é aliado de Ezio e cria gadgets como a lâmina oculta dupla, a pistola oculta e a máquina voadora. Sua oficina serve como ponto de upgrade ao longo do jogo." },
+    ],
   },
   {
     id: "82",
@@ -1346,6 +1651,11 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-21",
     readTime: "17 min",
+    faq: [
+      { q: "AC Brotherhood vale a pena em 2026?", a: "Sim. Brotherhood refinou tudo de AC 2, adicionou o sistema de recrutamento de Assassinos e um multiplayer inovador. Roma é um dos melhores mapas da franquia." },
+      { q: "O que é o sistema de Assassinos em Brotherhood?", a: "Você recruta cidadãos de Roma como Assassinos aprendizes, treina-os em missões e pode convocá-los em combate. É um dos sistemas mais queridos da franquia e influenciou jogos posteriores." },
+      { q: "Brotherhood tem multiplayer?", a: "Sim. Foi o primeiro AC com multiplayer, um modo onde jogadores se disfarçam de NPCs e caçam uns aos outros. Foi inovador e elogiado, embora os servidores tenham sido desativados." },
+    ],
   },
   {
     id: "83",
@@ -1359,6 +1669,11 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-21",
     readTime: "16 min",
+    faq: [
+      { q: "AC Revelations encerra a história de Ezio?", a: "Sim. Revelations é o último jogo com Ezio como protagonista. A história se passa em Constantinopla (1511) e conecta as histórias de Ezio, Altaïr e Desmond Miles." },
+      { q: "Altaïr aparece em AC Revelations?", a: "Sim. Através dos Selos de Masyaf, Ezio revive memórias de Altaïr em diferentes fases da vida, revelando o que aconteceu após AC 1 e o destino final do lendário Assassino." },
+      { q: "O que é o gancho-lâmina de Revelations?", a: "O Hookblade é uma adição à lâmina oculta que permite escalar mais rápido, usar tirolesas pela cidade e novos movimentos de combate. É exclusivo de Revelations e temática otomana." },
+    ],
   },
 ];
 
