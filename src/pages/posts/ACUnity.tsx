@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import acUnityImg from "@/assets/ac-unity.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const ACUnity = () => {
 
   useEffect(() => {
@@ -106,6 +107,8 @@ const ACUnity = () => {
         </div>
 
         {/* Contexto Histórico */}
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-blue-400" />
           Contexto Histórico: A Revolução Francesa (1789-1799)
@@ -209,6 +212,8 @@ const ACUnity = () => {
         </div>
 
         {/* Review Geral */}
+        <AdRectangle className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Target className="h-7 w-7 text-blue-400" />
           Review Geral: Unity é o AC Mais Bonito?

@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/animes-aguardados-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const AnimesAguardados2026 = () => {
 
   useEffect(() => {
@@ -51,6 +52,8 @@ const AnimesAguardados2026 = () => {
           Outro fator importante é a tecnologia: ferramentas de animação assistidas por IA têm ajudado estúdios menores a entregarem qualidade visual antes reservada a grandes players como Mappa, Ufotable e WIT Studio. O resultado é uma temporada recheada de surpresas vindas de nomes nem sempre famosos.
         </p>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Star className="h-7 w-7 text-otaku" />
           Os Títulos que Você Não Pode Perder
@@ -75,6 +78,8 @@ const AnimesAguardados2026 = () => {
         <p>
           Para quem usa streaming, <strong>Crunchyroll</strong> e <strong>Netflix</strong> continuam brigando pelos direitos de simulcast. A dica é assinar os dois durante os picos de temporada (janeiro e julho) e cancelar nos meses mais fracos — estratégia que economiza dinheiro sem sacrificar conteúdo.
         </p>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Sparkles className="h-7 w-7 text-otaku" />

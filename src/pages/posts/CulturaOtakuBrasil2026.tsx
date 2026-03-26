@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/cultura-otaku-brasil-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const CulturaOtakuBrasil2026 = () => {
 
   useEffect(() => {
@@ -51,6 +52,8 @@ const CulturaOtakuBrasil2026 = () => {
           Nas bancas de jornal, a Editora Conrad e depois a JBC começaram a publicar mangás traduzidos, criando um mercado onde antes havia apenas importações caríssimas.
         </p>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Users className="h-7 w-7 text-otaku" />
           A Virada dos Anos 2000: Comunidade e Internet
@@ -83,6 +86,8 @@ const CulturaOtakuBrasil2026 = () => {
         <p>
           A <strong>Panini Comics</strong>, JBC, Newpop e outras editoras publicam centenas de títulos simultâneos com o Japão. O modelo de simulpublication chegou ao mangá brasileiro, reduzindo drasticamente a pirataria.
         </p>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Mic className="h-7 w-7 text-otaku" />

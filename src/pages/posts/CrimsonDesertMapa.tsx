@@ -8,6 +8,7 @@ import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import crimsonMapaImg from "@/assets/crimson-desert-mapa-pywel.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 interface Region {
   name: string;
   iconKey: string;
@@ -323,6 +324,10 @@ const CrimsonDesertMapa = () => {
 
       {/* Region cards */}
       <div className="not-prose my-8 space-y-5">
+        <AdRectangle className="my-8" />
+
+        <AdLeaderboard className="my-8" />
+
         <h2 className="text-2xl font-bold">As 5 Regiões de Pywel + The Abyss</h2>
 
         {regionsData.map((r) => (

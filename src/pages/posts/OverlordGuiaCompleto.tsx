@@ -8,6 +8,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/overlord-guia-completo.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const OverlordGuiaCompleto = () => {
   useEffect(() => {
     trackArticleRead("overlord-guia-completo-temporadas-ainz", "Overlord: Guia Completo de Temporadas, Filme e o Futuro da Série", "otaku");
@@ -49,6 +50,8 @@ const OverlordGuiaCompleto = () => {
           O mangá principal, adaptado por <strong>Satoshi Ōshio</strong> com arte de <strong>Hugin Miyama</strong>, foi serializado na <strong>Comp Ace</strong> (Kadokawa) de novembro de 2014 a maio de 2023. Uma série de mangá sequência, <strong>Overlord: New World</strong>, com arte de <em>Matsuki</em>, iniciou na mesma revista em <strong>26 de abril de 2024</strong>. Ambos são publicados em inglês pela <strong>Yen Press</strong>.
         </p>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
           <Skull className="h-7 w-7 text-otaku" />
           A Premissa: Preso no Jogo
@@ -79,6 +82,8 @@ const OverlordGuiaCompleto = () => {
         <p>
           A primeira temporada adapta os <strong>volumes 1 a 3</strong> da light novel e apresenta Nazarick, seus guardiões e a dinâmica central da série. Ainz cria o alter-ego aventureiro <strong>Momon</strong> (armadura negra) para explorar o Novo Mundo sem revelar sua identidade. O arco culmina com a batalha contra <strong>Shalltear Bloodfallen</strong>, controlada por um artefato inimigo — Ainz é forçado a enfrentá-la pessoalmente em um duelo que demonstra o abismo de poder entre ele e qualquer outro ser do mundo. A abertura <em>"Clattanoia"</em> do OxT é considerada uma das melhores de 2015.
         </p>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
           <Tv className="h-7 w-7 text-otaku" />

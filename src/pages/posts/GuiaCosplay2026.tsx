@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/guia-cosplay-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const GuiaCosplay2026 = () => {
 
   useEffect(() => {
@@ -51,6 +52,8 @@ const GuiaCosplay2026 = () => {
           Personagens com roupas simples mas icônicas são perfeitos para começar: Naruto (calça laranja + bandana da folha), Luffy de One Piece (chapéu de palha + camisa vermelha) ou personagens de slice-of-life que usam uniformes escolares.
         </p>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Scissors className="h-7 w-7 text-otaku" />
           Materiais Essenciais e Onde Comprar no Brasil
@@ -89,6 +92,8 @@ const GuiaCosplay2026 = () => {
         <p className="text-sm italic text-muted-foreground">
           💡 Dica: o custo real de um cosplay é sempre 30% maior que a estimativa inicial. Crie um fundo reserva!
         </p>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Users className="h-7 w-7 text-otaku" />

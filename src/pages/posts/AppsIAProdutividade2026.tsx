@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/apps-ia-produtividade-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const AppsIAProdutividade2026 = () => {
   const apps = [
     { name: "Notion AI", desc: "Segundo cérebro com IA integrada", cost: "US$ 8/mês adicional", nota: "9.4/10" },
@@ -73,6 +74,10 @@ const AppsIAProdutividade2026 = () => {
             </div>
           ))}
         </div>
+
+        <AdRectangle className="my-8" />
+
+        <AdLeaderboard className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Lightbulb className="h-7 w-7 text-ia" />

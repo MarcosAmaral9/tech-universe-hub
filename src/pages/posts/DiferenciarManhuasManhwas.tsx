@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import manhwaVsManuaImg from "@/assets/manhwa-vs-manhua.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const DiferenciarManhuasManhwas = () => {
 
   useEffect(() => {
@@ -107,6 +108,8 @@ const DiferenciarManhuasManhwas = () => {
           </div>
         </div>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Sparkles className="h-7 w-7 text-primary" />
           Recomendação de Manhwa: The Beginning After The End
@@ -172,6 +175,8 @@ const DiferenciarManhuasManhwas = () => {
             </div>
           </div>
         </div>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="text-2xl font-bold mt-10 mb-6">Tabela Comparativa Completa</h2>
 

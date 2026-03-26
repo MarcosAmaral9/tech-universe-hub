@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import iaFinancasImg from "@/assets/ia-financas-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 // Matrix rain effect component
 const MatrixRain = () => {
   const columns = Array.from({ length: 20 }, (_, i) => ({
@@ -141,6 +142,8 @@ const IAMercadoFinanceiro2026 = () => {
 
         {/* Robo-Advisors */}
         <section className="mb-10">
+          <AdLeaderboard className="my-8" />
+
           <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--ia-color))] pl-4">Robo-Advisors: O Consultor Financeiro de R$ 0</h2>
           <p className="text-muted-foreground mb-6">Plataformas como Warren, Magnetis e Vérios usam IA para analisar seu perfil, montar carteira diversificada automaticamente, rebalancear periodicamente e minimizar custos.</p>
           
@@ -208,6 +211,8 @@ const IAMercadoFinanceiro2026 = () => {
 
         {/* Infográfico: Como IA analisa o mercado */}
         <section className="mb-10">
+          <AdRectangle className="my-8" />
+
           <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--ia-color))] pl-4">Como a IA Analisa o Mercado</h2>
           <div className="bg-card border border-border rounded-2xl p-6">
             <div className="flex flex-col md:flex-row items-center gap-4">

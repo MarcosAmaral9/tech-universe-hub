@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/aprender-japones-anime-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const AprenderJaponesAnime2026 = () => {
 
   useEffect(() => {
@@ -51,6 +52,8 @@ const AprenderJaponesAnime2026 = () => {
           O que o anime <strong>não ensina bem</strong>: keigo (linguagem formal), escrita (kanji, hiragana, katakana) e gramática estrutural. Use o anime como suplemento poderoso, não como substituto para estudo sistemático.
         </p>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Headphones className="h-7 w-7 text-otaku" />
           O Método AJATT e Imersão Total
@@ -85,6 +88,8 @@ const AprenderJaponesAnime2026 = () => {
             <p className="text-sm text-muted-foreground">Monogatari Series — o santo graal dos aprendizes</p>
           </div>
         </div>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <ListChecks className="h-7 w-7 text-otaku" />

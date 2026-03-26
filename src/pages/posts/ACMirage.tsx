@@ -10,6 +10,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import acMirageImg from "@/assets/ac-mirage.webp";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const ACMirage = () => {
 
   useEffect(() => {
@@ -110,6 +111,8 @@ const ACMirage = () => {
         </div>
 
         {/* ==================== CONTEXTO HISTÓRICO ==================== */}
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-amber-400" />
           Contexto Histórico: A Era de Ouro do Islã (Século VIII-XIII)
@@ -247,6 +250,8 @@ const ACMirage = () => {
         </ul>
 
         {/* ==================== REVIEW ==================== */}
+        <AdRectangle className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Target className="h-7 w-7 text-amber-400" />
           Review Geral: Mirage Entrega o Prometido?

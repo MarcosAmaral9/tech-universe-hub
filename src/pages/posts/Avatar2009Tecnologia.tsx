@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import avatarPandoraImg from "@/assets/avatar-pandora.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const Avatar2009Tecnologia = () => {
 
   useEffect(() => {
@@ -102,6 +103,8 @@ const Avatar2009Tecnologia = () => {
           </p>
         </div>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Camera className="h-7 w-7 text-blue-400" />
           A Câmera Virtual: Inovação Que Mudou a Indústria
@@ -150,6 +153,8 @@ const Avatar2009Tecnologia = () => {
             </p>
           </div>
         </div>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Film className="h-7 w-7 text-blue-400" />

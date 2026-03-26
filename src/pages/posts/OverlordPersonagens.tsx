@@ -8,6 +8,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/overlord-personagens.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const OverlordPersonagens = () => {
   useEffect(() => {
     trackArticleRead("overlord-ainz-guardians-personagens", "Overlord: Ainz Ooal Gown, os Floor Guardians e os Personagens Mais Importantes", "otaku");
@@ -48,6 +49,8 @@ const OverlordPersonagens = () => {
         <p>
           Sua voz japonesa é do ator <strong>Satoshi Hino</strong>, e em inglês é dublado por <strong>Chris Guerrero</strong> (confirmados para a T5). Uma das fontes de humor e tensão da série é o <strong>equívoco perpétuo</strong>: os Floor Guardians interpretam as ações aleatórias de Ainz como movimentos estratégicos geniais. Demiurge, em particular, elabora teorias sofisticadas sobre intenções que Ainz nunca teve — e quando Ainz percebe isso, finge que era exatamente o que planejava.
         </p>
+
+        <AdLeaderboard className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
           <Shield className="h-7 w-7 text-otaku" />
@@ -156,6 +159,8 @@ const OverlordPersonagens = () => {
             </div>
           ))}
         </div>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
           <Zap className="h-7 w-7 text-otaku" />

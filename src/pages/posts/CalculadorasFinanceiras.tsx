@@ -8,6 +8,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import CommentSection from "@/components/CommentSection";
 import calculadorasImg from "@/assets/calculadoras-financeiras.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 interface AssetOption {
   id: string;
   name: string;
@@ -192,6 +193,8 @@ const CalculadorasFinanceiras = () => {
       <div className="bg-card border border-border rounded-2xl p-6 md:p-8 mb-8">
         <div className="flex items-center gap-3 mb-6">
           <Calculator className="h-6 w-6 text-invest" />
+          <AdLeaderboard className="my-8" />
+
           <h2 className="font-display text-xl md:text-2xl font-bold">Simulador de Compra de Ativos</h2>
         </div>
 

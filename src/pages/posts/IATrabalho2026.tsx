@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-trabalho-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const IATrabalho2026 = () => {
 
   useEffect(() => {
@@ -52,6 +53,8 @@ const IATrabalho2026 = () => {
           <li><strong>Editores de foto básicos:</strong> Adobe Firefly automatizou edições simples.</li>
         </ul>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <TrendingUp className="h-7 w-7 text-ia" />
           Profissões que Estão Explodindo em Demanda
@@ -83,6 +86,8 @@ const IATrabalho2026 = () => {
             <p className="text-sm text-muted-foreground mb-0">Adicione habilidades adjacentes à IA à sua formação.</p>
           </div>
         </div>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Users className="h-7 w-7 text-ia" />

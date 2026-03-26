@@ -10,6 +10,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/demon-slayer-hashira-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const hashiras = [
   { nome: "Giyu Tomioka", respiracao: "Água", posicao: "Pilar da Água", status: "Ativo" },
   { nome: "Shinobu Kocho", respiracao: "Inseto", posicao: "Pilar dos Insetos", status: "Ativo" },
@@ -62,6 +63,8 @@ const DemonSlayerHashira2026 = () => {
       </ul>
       <p>Existem apenas 9 Hashiras em qualquer momento na história — cada um especializado em uma Respiração (estilo de respiração que amplifica as capacidades físicas humanas a níveis sobre-humanos).</p>
 
+      <AdLeaderboard className="my-8" />
+
       <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
         <Flame className="h-7 w-7 text-pink-400" />Os 9 Hashiras
       </h2>
@@ -98,6 +101,8 @@ const DemonSlayerHashira2026 = () => {
 
       <h3>Gyomei Himejima — Pilar da Pedra</h3>
       <p>Universalmente considerado o Hashira mais forte em combate direto pela maioria dos personagens da própria história, Himejima usa uma corrente com uma machado e um rosário de contas como armas — e é o único Hashira cego. Sua Respiração da Pedra tem apenas 6 formas (a maioria tem mais), mas cada uma é devastadoramente poderosa.</p>
+
+      <AdRectangle className="my-8" />
 
       <h2 className="text-2xl font-bold mt-10 mb-4">A Hierarquia das Respirações</h2>
       <p>No universo de Demon Slayer, todas as Respirações derivam de uma única origem: a <strong>Respiração do Sol</strong> (Hinokami Kagura), a mais antiga e poderosa. Tanjiro aprende essa respiração ao longo da história através da tradição familiar Kamado.</p>

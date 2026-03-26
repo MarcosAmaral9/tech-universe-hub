@@ -10,6 +10,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import { Slider } from "@/components/ui/slider";
 import metodo3BaldesImg from "@/assets/metodo-3-baldes.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 // Bucket Calculator
 const BucketCalculator = () => {
   const [salary, setSalary] = useState(3000);
@@ -165,6 +166,8 @@ const EducacaoFinanceira3Baldes = () => {
 
         {/* O Método */}
         <section className="mb-10">
+          <AdLeaderboard className="my-8" />
+
           <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">O Método dos 3 Baldes</h2>
           <div className="space-y-4 mb-6">
             {[
@@ -221,6 +224,8 @@ const EducacaoFinanceira3Baldes = () => {
 
         {/* Apps */}
         <section className="mb-10">
+          <AdRectangle className="my-8" />
+
           <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">Ferramentas de Controle Financeiro 2026</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {[

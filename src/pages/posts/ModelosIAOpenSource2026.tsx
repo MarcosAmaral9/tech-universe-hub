@@ -10,6 +10,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/modelos-ia-open-source-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const ModelosIAOpenSource2026 = () => {
   useEffect(() => {
     trackArticleRead("modelos-ia-open-source-2026", "IA Open Source 2026: Llama, Mistral e DeepSeek Contra os Modelos Pagos", "ia");
@@ -67,6 +68,8 @@ const ModelosIAOpenSource2026 = () => {
         </table>
       </div>
 
+      <AdLeaderboard className="my-8" />
+
       <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
         <Zap className="h-7 w-7 text-violet-400" />DeepSeek: O Momento que Mudou Tudo
       </h2>
@@ -98,6 +101,8 @@ const ModelosIAOpenSource2026 = () => {
           </ul>
         </div>
       </div>
+
+      <AdRectangle className="my-8" />
 
       <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
         <Code className="h-7 w-7 text-violet-400" />Como Rodar Modelos Open Source Localmente

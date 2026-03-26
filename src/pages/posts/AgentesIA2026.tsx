@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/agentes-ia-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const AgentesIA2026 = () => {
 
   useEffect(() => {
@@ -55,6 +56,8 @@ const AgentesIA2026 = () => {
           </div>
         </div>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Cpu className="h-7 w-7 text-ia" />
           Como os Agentes Funcionam
@@ -81,6 +84,8 @@ const AgentesIA2026 = () => {
           <li><strong>Financeiro:</strong> monitoramento de portfólio e execução de ordens dentro de parâmetros.</li>
           <li><strong>RH:</strong> triagem de currículos, agendamento e entrevistas iniciais padronizadas.</li>
         </ul>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="text-2xl font-bold mt-10 mb-6">Principais Agentes Disponíveis</h2>
         <ul className="space-y-2 my-6">

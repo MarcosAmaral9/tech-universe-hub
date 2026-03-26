@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/regulamentacao-ia-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const RegulamentacaoIA2026 = () => {
 
   useEffect(() => {
@@ -58,6 +59,8 @@ const RegulamentacaoIA2026 = () => {
           </div>
         </div>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Scale className="h-7 w-7 text-ia" />
           O Marco Regulatório de IA no Brasil
@@ -79,6 +82,8 @@ const RegulamentacaoIA2026 = () => {
           <li><strong>Fintechs:</strong> decisões de crédito automatizadas precisam ser explicáveis</li>
           <li><strong>Tech:</strong> avaliações de impacto obrigatórias para desenvolvimento de IA</li>
         </ul>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Users className="h-7 w-7 text-ia" />

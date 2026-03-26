@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-criatividade-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const IACriatividade2026 = () => {
 
   useEffect(() => {
@@ -51,6 +52,8 @@ const IACriatividade2026 = () => {
           O mercado de NFTs artísticos baseados em IA movimentou US$ 2.3 bilhões em 2025. Artistas como <strong>Refik Anadol</strong> e <strong>Holly Herndon</strong> usam IA como ferramenta expressiva, criando obras que seriam impossíveis manualmente. A questão não é mais "IA pode criar arte?", mas "como artistas podem usar IA para ir além?".
         </p>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Music className="h-7 w-7 text-ia" />
           Música Gerada por IA: O Novo Paradigma
@@ -72,6 +75,8 @@ const IACriatividade2026 = () => {
         <p>
           O impacto na indústria publicitária é enorme: agências estão cortando custos de produção em até 70% usando IA para criar storyboards, animatics e até comerciais finais. YouTubers e criadores de conteúdo usam ferramentas como <strong>HeyGen</strong> e <strong>Synthesia</strong> para criar avatares digitais que falam em dezenas de idiomas.
         </p>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Sparkles className="h-7 w-7 text-ia" />

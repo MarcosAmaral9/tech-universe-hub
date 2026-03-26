@@ -8,6 +8,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/tensura-personagens.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const TensuraPersonagens = () => {
   useEffect(() => {
     trackArticleRead(
@@ -169,6 +170,8 @@ const TensuraPersonagens = () => {
           ))}
         </div>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Zap className="h-7 w-7 text-otaku" />
           O Sistema de Poderes: Nomes, Habilidades Únicas e Evolução
@@ -233,6 +236,8 @@ const TensuraPersonagens = () => {
             ))}
           </div>
         </div>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Star className="h-7 w-7 text-otaku" />

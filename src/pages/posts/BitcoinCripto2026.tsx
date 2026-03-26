@@ -43,6 +43,7 @@ const CryptoCard = ({ name, symbol, description, riskLevel, riskColor, potential
 
 import CryptoWidget from "@/components/CryptoWidget";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const BitcoinCripto2026 = () => {
   const [dcaValor, setDcaValor] = useState(100);
   const [dcaMeses, setDcaMeses] = useState(36);
@@ -133,6 +134,8 @@ const BitcoinCripto2026 = () => {
 
         {/* Bitcoin como reserva */}
         <section className="mb-10">
+          <AdLeaderboard className="my-8" />
+
           <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">Bitcoin em 2026: Reserva de Valor ou Especulação?</h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
             A narrativa mudou. Bitcoin em 2026 é cada vez mais tratado como <strong>"ouro digital"</strong>: empresas como MicroStrategy e Tesla mantêm BTC em reserva, El Salvador adotou como moeda oficial, e bancos centrais estudam exposição.
@@ -189,6 +192,8 @@ const BitcoinCripto2026 = () => {
 
         {/* Segurança */}
         <section className="mb-10">
+          <AdRectangle className="my-8" />
+
           <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">Como Comprar Cripto com Segurança no Brasil</h2>
           <h3 className="text-lg font-bold mb-3 text-[hsl(45,100%,50%)]">Exchanges confiáveis em 2026:</h3>
           <div className="grid md:grid-cols-3 gap-4 mb-6">

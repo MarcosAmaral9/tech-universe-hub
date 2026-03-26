@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import hellLetLooseImg from "@/assets/hell-let-loose.jpg";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const HellLetLooseSimulador = () => {
 
   useEffect(() => {
@@ -134,6 +135,8 @@ const HellLetLooseSimulador = () => {
             costuma ser receptiva com novatos que usam microfone e demonstram vontade de aprender.
           </p>
         </div>
+
+        <AdLeaderboard className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Target className="h-7 w-7 text-red-400" />
@@ -305,6 +308,8 @@ const HellLetLooseSimulador = () => {
           bombardeadas e campos de cultivo refletem as fotografias reais das batalhas. Jogar em 
           Omaha Beach é uma experiência visceral que evoca o impacto do Dia D como poucos jogos conseguem.
         </p>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Radio className="h-7 w-7 text-red-400" />

@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/economia-domestica-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const EconomiaDomestica2026 = () => {
 
   useEffect(() => {
@@ -56,6 +57,8 @@ const EconomiaDomestica2026 = () => {
           <li><strong>Considere energia solar</strong> — Em 2026, painéis solares se pagam em 3-4 anos</li>
         </ol>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <ShoppingCart className="h-7 w-7 text-invest" />
           Supermercado: Como Gastar 30% Menos
@@ -88,6 +91,8 @@ const EconomiaDomestica2026 = () => {
           <li><strong>Negocie internet e celular</strong> — Ligue para cancelar e receba ofertas melhores</li>
           <li><strong>Use apps gratuitos</strong> — Muitos apps pagos têm alternativas grátis equivalentes</li>
         </ul>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Calculator className="h-7 w-7 text-invest" />

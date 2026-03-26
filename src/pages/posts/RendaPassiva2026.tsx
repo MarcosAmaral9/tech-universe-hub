@@ -11,6 +11,7 @@ import { Slider } from "@/components/ui/slider";
 import { Progress } from "@/components/ui/progress";
 import rendaPassivaImg from "@/assets/renda-passiva-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 interface RendaCardProps {
   icon: React.ReactNode;
   emoji: string;
@@ -204,6 +205,8 @@ const RendaPassiva2026 = () => {
           </div>
 
           {/* Simulador */}
+          <AdLeaderboard className="my-8" />
+
           <h2 className="text-2xl font-bold mt-10 mb-6 border-l-4 border-[hsl(var(--invest-color))] pl-4">
             🧮 Simulador: Em Quanto Tempo Você Terá Renda Passiva?
           </h2>
@@ -238,6 +241,8 @@ const RendaPassiva2026 = () => {
           </div>
 
           {/* Fases */}
+          <AdRectangle className="my-8" />
+
           <h2 className="text-2xl font-bold mt-10 mb-6 border-l-4 border-[hsl(var(--invest-color))] pl-4">
             Como Montar Sua Estratégia em 3 Fases
           </h2>

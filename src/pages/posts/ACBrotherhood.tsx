@@ -10,6 +10,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import acBrotherImg from "@/assets/ac-brotherhood.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const ACBrotherhood = () => {
   useEffect(() => {
     trackArticleRead("ac-brotherhood-ezio-roma-borgia", "Assassin's Creed Brotherhood: Ezio Reconstrói a Irmandade em Roma", "geek");
@@ -60,6 +61,8 @@ const ACBrotherhood = () => {
           </p>
         </div>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-amber-400" />
           Contexto Histórico: Roma dos Bórgias (1499–1507)
@@ -91,6 +94,8 @@ const ACBrotherhood = () => {
         <p>
           A narrativa começa logo após o final de AC2: Cesare Borgia ataca a Villa Auditore em Monteriggioni, mata o tio Mario de Ezio e rouba a Maçã do Éden. Ezio, ferido, foge para Roma — e lá inicia a lenta e sistemática desestruturação do poder dos Bórgias.
         </p>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Users className="h-7 w-7 text-amber-400" />

@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/jogos-anime-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const JogosAnime2026 = () => {
 
   useEffect(() => {
@@ -51,6 +52,8 @@ const JogosAnime2026 = () => {
           O modelo gacha também moldou o mercado: jogos como <strong>Genshin Impact</strong>, <strong>Blue Archive</strong> e <strong>Honkai: Star Rail</strong> provam que títulos com estética anime podem faturar bilhões mensalmente.
         </p>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Swords className="h-7 w-7 text-otaku" />
           Fighting Games: A Cena Competitiva Otaku
@@ -66,6 +69,8 @@ const JogosAnime2026 = () => {
         <p>
           <strong>Sword Art Online: Fractured Daydream</strong> introduziu mecânicas de battle royale com resultados surpreendentemente positivos. <strong>Tales of Graces f Remastered</strong> chegou com gráficos aprimorados. No mobile, <strong>Path to Nowhere</strong> e <strong>Reverse: 1999</strong> oferecem narrativas maduras que desafiam o preconceito sobre jogos gacha.
         </p>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-otaku" />

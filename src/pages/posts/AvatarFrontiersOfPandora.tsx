@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import avatarGameImg from "@/assets/avatar-game-female.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const AvatarFrontiersOfPandora = () => {
 
   useEffect(() => {
@@ -129,6 +130,8 @@ const AvatarFrontiersOfPandora = () => {
           </div>
         </div>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Target className="h-7 w-7 text-green-400" />
           Review Geral: O Jogo Mais Bonito da Geração?
@@ -174,6 +177,8 @@ const AvatarFrontiersOfPandora = () => {
         </p>
 
         {/* Geografia e Biomas */}
+        <AdRectangle className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <MapPin className="h-7 w-7 text-green-400" />
           O Continente Ocidental: Três Biomas Únicos

@@ -10,6 +10,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/one-piece-final-saga-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const OnePieceFinalSaga2026 = () => {
   useEffect(() => {
     trackArticleRead("one-piece-final-saga-2026", "One Piece Final Saga: Onde Estamos e O Que Esperar do Final", "otaku");
@@ -54,6 +55,8 @@ const OnePieceFinalSaga2026 = () => {
         </div>
       </div>
 
+      <AdLeaderboard className="my-8" />
+
       <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
         <Map className="h-7 w-7 text-pink-400" />A Final Saga: Estrutura dos Arcos
       </h2>
@@ -87,6 +90,8 @@ const OnePieceFinalSaga2026 = () => {
         <li><strong>O "Incident de Egghead"</strong> foi descrito como um evento que mudaria a história do mundo — comparado pelos personagens ao Incidente de God Valley</li>
         <li><strong>Shanks revelou que tem conexão com os Gorosei</strong> desde a infância — seu papel no final ainda é misterioso</li>
       </ul>
+
+      <AdRectangle className="my-8" />
 
       <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
         <Anchor className="h-7 w-7 text-pink-400" />O One Piece: O Que Sabemos

@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import avatarFireImg from "@/assets/avatar-fire.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const Avatar3FogoECinzas = () => {
 
   useEffect(() => {
@@ -102,6 +103,8 @@ const Avatar3FogoECinzas = () => {
           </p>
         </div>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Skull className="h-7 w-7 text-orange-400" />
           Nem Todo Na'vi é "Bonzinho": A Grande Virada
@@ -152,6 +155,8 @@ const Avatar3FogoECinzas = () => {
             </p>
           </div>
         </div>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Film className="h-7 w-7 text-orange-400" />

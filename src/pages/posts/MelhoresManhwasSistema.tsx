@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import systemManhwaImg from "@/assets/system-manhwa-hero.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const MelhoresManhwasSistema = () => {
   const manhwas = [
     {
@@ -242,6 +243,10 @@ const MelhoresManhwasSistema = () => {
             </div>
           ))}
         </div>
+
+        <AdRectangle className="my-8" />
+
+        <AdLeaderboard className="my-8" />
 
         <h2 className="text-2xl font-bold mt-10 mb-6">Por Onde Começar?</h2>
 

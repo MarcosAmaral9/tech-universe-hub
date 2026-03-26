@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import avatarWaterImg from "@/assets/avatar-water-swimming.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const AvatarCaminhoDaAgua = () => {
 
   useEffect(() => {
@@ -103,6 +104,8 @@ const AvatarCaminhoDaAgua = () => {
           </p>
         </div>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Waves className="h-7 w-7 text-cyan-400" />
           O Maior Desafio Técnico do Cinema: Renderizar Água
@@ -151,6 +154,8 @@ const AvatarCaminhoDaAgua = () => {
           Ela quebrou o recorde de Tom Cruise em Missão Impossível."
           <footer className="mt-2 not-italic font-semibold">— James Cameron</footer>
         </blockquote>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Timer className="h-7 w-7 text-cyan-400" />

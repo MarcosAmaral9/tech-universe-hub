@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import acValhallaImg from "@/assets/ac-valhalla.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const ACValhalla = () => {
 
   useEffect(() => {
@@ -125,6 +126,8 @@ const ACValhalla = () => {
           </p>
         </div>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Target className="h-7 w-7 text-purple-400" />
           Review Geral: Assassin's Creed Valhalla é Bom Mesmo?
@@ -214,6 +217,8 @@ const ACValhalla = () => {
             </Link>.
           </p>
         </div>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-purple-400" />

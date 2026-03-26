@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import planejamentoImg from "@/assets/planejamento-financeiro-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 // SMART Goal Builder
 const SmartGoalBuilder = () => {
   const [specific, setSpecific] = useState("");
@@ -212,6 +213,8 @@ const PlanejamentoFinanceiro2026 = () => {
 
         {/* SMART Goal Builder */}
         <section className="mb-10">
+          <AdLeaderboard className="my-8" />
+
           <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">Crie Sua Meta SMART</h2>
           <SmartGoalBuilder />
         </section>
@@ -241,6 +244,8 @@ const PlanejamentoFinanceiro2026 = () => {
 
         {/* Mindset */}
         <section className="mb-10">
+          <AdRectangle className="my-8" />
+
           <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">A Mentalidade Que Funciona</h2>
           <div className="space-y-3">
             {[

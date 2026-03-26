@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/melhores-mangas-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const MelhoresMangas2026 = () => {
 
   useEffect(() => {
@@ -48,6 +49,8 @@ const MelhoresMangas2026 = () => {
           <strong>Shonen</strong> (少年) é o mais popular. <strong>Shojo</strong> (少女) inclui obras como Fruits Basket e Nana. <strong>Seinen</strong> (青年) e <strong>Josei</strong> (女性) oferecem narrativas mais maduras: Berserk, Vagabond, Dungeon Meshi. Conhecer essas categorias ajuda a encontrar o conteúdo certo.
         </p>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <GraduationCap className="h-7 w-7 text-otaku" />
           Para Iniciantes: Por Onde Começar
@@ -63,6 +66,8 @@ const MelhoresMangas2026 = () => {
         <p>
           <strong>Vagabond</strong> (Takehiko Inoue) é uma obra de arte — reimaginação de Miyamoto Musashi com arte absolutamente estonteante. <strong>Berserk</strong> de Kentaro Miura é a obra mais densa do dark fantasy. <strong>Vinland Saga</strong> combina história viking com reflexões sobre guerra e redenção. <strong>Chainsaw Man</strong> e <strong>Jujutsu Kaisen</strong> representam o melhor do shonen moderno.
         </p>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Sparkles className="h-7 w-7 text-otaku" />

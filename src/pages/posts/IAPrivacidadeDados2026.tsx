@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-privacidade-dados-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const IAPrivacidadeDados2026 = () => {
 
   useEffect(() => {
@@ -51,6 +52,8 @@ const IAPrivacidadeDados2026 = () => {
           Aplicativos de edição de foto por IA como <strong>Lensa</strong> e <strong>FaceApp</strong> coletam dados biométricos faciais. Assistentes de voz processam áudio constantemente. Câmeras de segurança com reconhecimento facial analisam milhões de rostos por dia. O volume de dados pessoais sendo processados por IA em 2026 é sem precedentes.
         </p>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <AlertTriangle className="h-7 w-7 text-ia" />
           Os 5 Maiores Riscos de Privacidade da IA
@@ -79,6 +82,8 @@ const IAPrivacidadeDados2026 = () => {
         <p>
           Nos EUA, a <strong>Executive Order on AI</strong> de Biden estabeleceu padrões de segurança para modelos de IA, e estados como Califórnia e Colorado aprovaram leis específicas de transparência algorítmica.
         </p>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Lock className="h-7 w-7 text-ia" />

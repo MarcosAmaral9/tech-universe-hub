@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import vikingsImg from "@/assets/vikings-ragnar.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const VikingsLegadoRagnar = () => {
 
   useEffect(() => {
@@ -125,6 +126,8 @@ const VikingsLegadoRagnar = () => {
           </p>
         </div>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Crown className="h-7 w-7 text-purple-400" />
           Contexto Histórico: A Era Viking (793-1066 d.C.)
@@ -220,6 +223,8 @@ const VikingsLegadoRagnar = () => {
           fazem suas próprias escolhas."
           <footer className="mt-2 not-italic font-semibold">— Ragnar Lothbrok</footer>
         </blockquote>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Star className="h-7 w-7 text-purple-400" />

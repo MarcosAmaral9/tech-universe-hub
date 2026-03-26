@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import acPortalImg from "@/assets/assassins-creed-portal.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const ACRanking2026 = () => {
   const ranking = [
     {
@@ -198,6 +199,8 @@ const ACRanking2026 = () => {
           ))}
         </div>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="text-2xl font-bold mt-10 mb-6">Por Onde Começar?</h2>
 
         <div className="grid md:grid-cols-2 gap-6 my-8">
@@ -240,6 +243,8 @@ const ACRanking2026 = () => {
             Ler análise completa de Black Flag →
           </Link>
         </div>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="text-2xl font-bold mt-10 mb-6">Qual é o Seu Favorito?</h2>
 

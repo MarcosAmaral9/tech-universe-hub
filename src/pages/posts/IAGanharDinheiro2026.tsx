@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-ganhar-dinheiro-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const IAGanharDinheiro2026 = () => {
 
   useEffect(() => {
@@ -47,6 +48,8 @@ const IAGanharDinheiro2026 = () => {
         <p>
           O mercado de serviços baseados em IA no Brasil cresceu <strong>312%</strong> entre 2023 e 2025. Ainda assim, a grande maioria das pessoas não sabe como usar as ferramentas de forma estratégica. Existe uma janela de oportunidade real.
         </p>
+
+        <AdLeaderboard className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <DollarSign className="h-7 w-7 text-ia" />
@@ -93,6 +96,8 @@ const IAGanharDinheiro2026 = () => {
           <li><strong>Chatbots para Empresas Locais:</strong> Configure e venda chatbots WhatsApp com IA para restaurantes, clínicas e salões de beleza — R$ 500–2.000 de setup + R$ 200/mês de manutenção.</li>
           <li><strong>Geração de UGC (User Generated Content):</strong> Crie anúncios em estilo de vídeo orgânico usando avatares de IA para marcas de e-commerce — R$ 800–3.000 por pacote.</li>
         </ul>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Rocket className="h-7 w-7 text-ia" />
