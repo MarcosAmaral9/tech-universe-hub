@@ -7,6 +7,7 @@ import { Clock, Calendar, User, ChevronRight, TrendingDown, CheckCircle2, AlertT
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import heroImg from "@/assets/selic-cair-2026.webp";
 
 const TIMELINE_DATA = [
@@ -68,6 +69,9 @@ const SelicComecaCair2026 = () => {
         <p className="text-muted-foreground leading-relaxed">
           O mercado financeiro projeta que a Selic chegue a cerca de <strong>12,25% ao final de 2026</strong>, com cortes graduais de 0,50 ponto percentual a cada reunião. Isso muda bastante o jogo para quem tem dinheiro investido — ou quer começar a investir agora.
         </p>
+
+        {/* Ad after 2nd paragraph */}
+        <AdLeaderboard />
 
         {/* Timeline visual */}
         <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">Linha do tempo da Selic recente</h2>
@@ -132,6 +136,8 @@ const SelicComecaCair2026 = () => {
           </p>
         </div>
 
+        <AdRectangle />
+
         <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">O que ainda vale a pena na renda fixa?</h2>
         <p className="text-muted-foreground leading-relaxed">
           Enquanto os juros ainda estão em níveis elevados, títulos prefixados e indexados ao IPCA seguem sendo ótimas escolhas. Dados da Anbima mostram que os títulos públicos prefixados de longo prazo foram o investimento de maior rentabilidade da renda fixa em 2025, com o índice IRF-M 1+ avançando <strong>20,07% no ano</strong> — o melhor resultado entre todos os indicadores da entidade naquele período.
@@ -168,6 +174,8 @@ const SelicComecaCair2026 = () => {
         <p className="text-muted-foreground leading-relaxed">
           O cenário atual é parecido: com a Selic iniciando um novo ciclo de queda, títulos longos prefixados comprados agora podem se valorizar significativamente nos próximos 12 a 18 meses.
         </p>
+
+        <AdRectangle />
 
         <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">E a renda variável?</h2>
         <p className="text-muted-foreground leading-relaxed">
