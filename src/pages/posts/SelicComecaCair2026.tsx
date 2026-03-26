@@ -7,6 +7,7 @@ import { Clock, Calendar, User, ChevronRight, TrendingDown, CheckCircle2, AlertT
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import heroImg from "@/assets/selic-cair-2026.webp";
 
 const TIMELINE_DATA = [
