@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/saude-mental-otaku-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const SaudeMentalOtaku2026 = () => {
 
   useEffect(() => {
@@ -54,6 +55,8 @@ const SaudeMentalOtaku2026 = () => {
           Os laços formados em torno de interesses compartilhados são socialmente genuínos. Amizades feitas em convenções e comunidades online são reais — e para pessoas com dificuldades de socialização, podem ser a principal fonte de conexão humana.
         </p>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <AlertTriangle className="h-7 w-7 text-yellow-500" />
           Sinais de Alerta: Quando o Escape Vira Fuga
@@ -81,6 +84,8 @@ const SaudeMentalOtaku2026 = () => {
           </ul>
           <p className="mt-3 text-sm italic">Buscar ajuda é um ato de coragem, não fraqueza. Alguns dos personagens de anime mais amados são justamente os que reconhecem que não podem carregar tudo sozinhos.</p>
         </div>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Smile className="h-7 w-7 text-otaku" />

@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/merchandising-otaku-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const MerchandisingOtaku2026 = () => {
 
   useEffect(() => {
@@ -48,6 +49,8 @@ const MerchandisingOtaku2026 = () => {
           O mercado global movimentou <strong>US$ 12 bilhões</strong> em 2025. Os principais tipos: <strong>Figmas</strong> (articuladas, Max Factory), <strong>Nendoroids</strong> (chibi articuladas, Good Smile Company), <strong>Prize Figures</strong> (não articuladas, mais baratas), <strong>PVC Scale Figures</strong> (estátuas de escala) e itens premium como <strong>Resin Statues</strong>.
         </p>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <ShoppingBag className="h-7 w-7 text-otaku" />
           Onde Comprar: Brasil vs. Importação
@@ -69,6 +72,8 @@ const MerchandisingOtaku2026 = () => {
         <p className="font-bold italic">
           Se parece bom demais para ser verdade, provavelmente é falso. Compre sempre de vendedores com histórico verificável.
         </p>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <TrendingUp className="h-7 w-7 text-otaku" />

@@ -10,6 +10,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import { Slider } from "@/components/ui/slider";
 import fiisImg from "@/assets/fiis-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 // FII Simulator
 const FIISimulator = () => {
   const [targetIncome, setTargetIncome] = useState(500);
@@ -161,6 +162,8 @@ const FIIs2026 = () => {
 
         {/* Glossary */}
         <section className="mb-10">
+          <AdLeaderboard className="my-8" />
+
           <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">Indicadores Essenciais</h2>
           <div className="grid md:grid-cols-2 gap-3">
             <GlossaryItem term="Dividend Yield (DY)" definition="Quanto o fundo pagou de dividendos nos últimos 12 meses em relação ao preço da cota. DY acima de 9-10% é competitivo em 2026." />
@@ -181,6 +184,8 @@ const FIIs2026 = () => {
 
         {/* Portfolio Tips */}
         <section className="mb-10">
+          <AdRectangle className="my-8" />
+
           <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">Como Montar Sua Carteira de FIIs</h2>
           <div className="space-y-3">
             {[

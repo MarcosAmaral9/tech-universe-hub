@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import acBlackFlagImg from "@/assets/ac-black-flag.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const ACBlackFlag = () => {
 
   useEffect(() => {
@@ -120,6 +121,8 @@ const ACBlackFlag = () => {
           </p>
         </div>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Target className="h-7 w-7 text-amber-400" />
           Review Geral: Black Flag Ainda é o Melhor Jogo de Piratas?
@@ -195,6 +198,8 @@ const ACBlackFlag = () => {
           <li><strong>Benjamin Hornigold:</strong> Fundador da República dos Piratas em Nassau</li>
           <li><strong>Calico Jack Rackham:</strong> Capitão de Anne Bonny e Mary Read</li>
         </ul>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Ship className="h-7 w-7 text-amber-400" />

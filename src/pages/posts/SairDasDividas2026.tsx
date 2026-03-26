@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import sairDividasImg from "@/assets/sair-dividas-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 interface Debt {
   id: number;
   name: string;
@@ -195,6 +196,8 @@ const SairDasDividas2026 = () => {
 
         {/* Step 2: Classify */}
         <section className="mb-10">
+          <AdLeaderboard className="my-8" />
+
           <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">Passo 2: Classifique Por Urgência</h2>
           <div className="space-y-3">
             {[
@@ -218,6 +221,8 @@ const SairDasDividas2026 = () => {
 
         {/* Step 4: Negotiate */}
         <section className="mb-10">
+          <AdRectangle className="my-8" />
+
           <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">Passo 4: Negocie</h2>
           <p className="text-muted-foreground mb-4 text-sm">Bancos preferem receber algo do que perder tudo. Nunca aceite a primeira proposta.</p>
           <div className="grid md:grid-cols-2 gap-4 mb-6">

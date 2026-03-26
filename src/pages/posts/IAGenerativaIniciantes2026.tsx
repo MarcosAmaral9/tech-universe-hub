@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-generativa-iniciantes-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const IAGenerativaIniciantes2026 = () => {
 
   useEffect(() => {
@@ -48,6 +49,8 @@ const IAGenerativaIniciantes2026 = () => {
           IA generativa é qualquer sistema capaz de <strong>criar conteúdo novo</strong>: textos, imagens, músicas, vídeos, códigos. Ao contrário das IAs antigas que apenas classificavam, as IAs generativas <em>produzem</em> — criam algo que não existia antes.
         </p>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Target className="h-7 w-7 text-ia" />
           Etapa 1 — Experimentação sem Medo
@@ -65,6 +68,8 @@ const IAGenerativaIniciantes2026 = () => {
             <li><strong>Itere:</strong> A primeira resposta raramente é a final.</li>
           </ul>
         </div>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Wrench className="h-7 w-7 text-ia" />

@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-saude-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const IASaude2026 = () => {
 
   useEffect(() => {
@@ -51,6 +52,8 @@ const IASaude2026 = () => {
           <li><strong>Predição de sepse:</strong> IA detecta sepse 6 horas antes dos protocolos tradicionais.</li>
         </ul>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Heart className="h-7 w-7 text-ia" />
           Ferramentas de IA para o Paciente Comum
@@ -77,6 +80,8 @@ const IASaude2026 = () => {
         <p>
           Plataformas como Woebot e Wysa atendem milhões de pessoas sem acesso à terapia tradicional. Estudos mostram reduções significativas em sintomas de <strong>ansiedade e depressão leve a moderada</strong>. No Brasil, onde o acesso à saúde mental é limitado, o potencial é enorme.
         </p>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Pill className="h-7 w-7 text-ia" />

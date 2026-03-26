@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/etfs-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const ETFs2026 = () => {
 
   useEffect(() => {
@@ -55,6 +56,8 @@ const ETFs2026 = () => {
           <li><strong>Acessibilidade</strong> — Cotas a partir de R$ 10 em alguns ETFs</li>
         </ul>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BarChart3 className="h-7 w-7 text-invest" />
           Os Melhores ETFs do Brasil em 2026
@@ -97,6 +100,8 @@ const ETFs2026 = () => {
 
         <h3 className="text-xl font-bold mt-6">Arrojado (Risco Alto)</h3>
         <p>10% IMAB11 + 25% BOVA11 + 25% SMAL11 + 25% IVVB11 + 15% NASD11</p>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <AlertTriangle className="h-7 w-7 text-invest" />

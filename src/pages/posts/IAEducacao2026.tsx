@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-educacao-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const IAEducacao2026 = () => {
 
   useEffect(() => {
@@ -47,6 +48,8 @@ const IAEducacao2026 = () => {
         <p>
           Ao invés de pedir "Escreva sobre X", peça <strong>"Explique X de forma que eu possa escrever sobre o assunto com minhas próprias palavras"</strong>. Essa abordagem usa a IA para construir seu mapa mental — o conteúdo permanece sendo elaborado por você.
         </p>
+
+        <AdLeaderboard className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Brain className="h-7 w-7 text-ia" />
@@ -89,6 +92,8 @@ const IAEducacao2026 = () => {
             <p className="text-sm text-muted-foreground mb-0">Resolva exercícios de matemática passo a passo e entenda por que cada passo existe.</p>
           </div>
         </div>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Heart className="h-7 w-7 text-ia" />

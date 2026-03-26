@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import acOdysseyImg from "@/assets/ac-odyssey.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const ACOdyssey = () => {
 
   useEffect(() => {
@@ -104,6 +105,8 @@ const ACOdyssey = () => {
           </p>
         </div>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Target className="h-7 w-7 text-blue-400" />
           Review Geral: Odyssey é o Melhor AC para Exploração?
@@ -131,6 +134,8 @@ const ACOdyssey = () => {
         </p>
 
         {/* Contexto Histórico e Geográfico */}
+        <AdRectangle className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Sword className="h-7 w-7 text-blue-400" />
           Contexto Histórico: A Guerra do Peloponeso (431-404 a.C.)

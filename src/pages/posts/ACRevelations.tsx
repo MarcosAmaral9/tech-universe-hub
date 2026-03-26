@@ -10,6 +10,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import acRevImg from "@/assets/ac-revelations.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const ACRevelations = () => {
   useEffect(() => {
     trackArticleRead("ac-revelations-ezio-constantinopla", "Assassin's Creed Revelations: Ezio em Constantinopla e o Legado de Altaïr", "geek");
@@ -60,6 +61,8 @@ const ACRevelations = () => {
           </p>
         </div>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-amber-400" />
           Contexto Histórico: Constantinopla (1511–1512)
@@ -104,6 +107,8 @@ const ACRevelations = () => {
         <p>
           O último flashback — Altaïr com 92 anos, o último da Biblioteca, a Maçã nas mãos, a porta fechando — é um dos momentos mais emotivos de toda a franquia.
         </p>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <MapPin className="h-7 w-7 text-amber-400" />

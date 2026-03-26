@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/manga-vs-anime-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const MangaVsAnime2026 = () => {
 
   useEffect(() => {
@@ -51,6 +52,8 @@ const MangaVsAnime2026 = () => {
           <strong>Fullmetal Alchemist Brotherhood</strong> é frequentemente citado como a adaptação perfeita porque o diretor Yasuhiro Irie entendeu o tom emocional de cada capítulo e soube usar música, timing e voice acting para amplificá-lo. Já a infame adaptação de <strong>Tokyo Ghoul</strong> a partir da segunda temporada mostrou o que acontece quando essas decisões são delegadas ao segundo plano.
         </p>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <ThumbsUp className="h-7 w-7 text-otaku" />
           Casos em que o Anime Supera o Mangá
@@ -69,6 +72,8 @@ const MangaVsAnime2026 = () => {
         <p>
           <strong>Berserk 2016/2017</strong> merece menção honrosa pelo uso controverso de CGI em uma obra celebrada justamente pela qualidade artística do mangá de Kentaro Miura.
         </p>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Tv className="h-7 w-7 text-otaku" />

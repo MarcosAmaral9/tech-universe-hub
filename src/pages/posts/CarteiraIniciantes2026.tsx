@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import carteiraImg from "@/assets/carteira-investimentos-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 // Simple donut chart component
 const DonutChart = ({ segments, label }: { segments: { name: string; pct: number; color: string }[]; label: string }) => {
   const total = segments.reduce((sum, s) => sum + s.pct, 0);
@@ -251,6 +252,8 @@ const CarteiraIniciantes2026 = () => {
           </div>
 
           {/* Reserva de Emergência */}
+          <AdLeaderboard className="my-8" />
+
           <h2 className="text-2xl font-bold mt-10 mb-6 border-l-4 border-[hsl(var(--invest-color))] pl-4">
             <Target className="inline h-6 w-6 mr-2" />
             Passo 2: Monte Sua Reserva de Emergência PRIMEIRO
@@ -311,6 +314,8 @@ const CarteiraIniciantes2026 = () => {
           </div>
 
           {/* Passo 4: Classes de ativos */}
+          <AdRectangle className="my-8" />
+
           <h2 className="text-2xl font-bold mt-10 mb-6 border-l-4 border-[hsl(var(--invest-color))] pl-4">
             Passo 4: Entenda as Classes de Ativos
           </h2>

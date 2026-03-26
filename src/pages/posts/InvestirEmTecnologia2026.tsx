@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import techInvesting2026Img from "@/assets/tech-investing-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const InvestirEmTecnologia2026 = () => {
 
   useEffect(() => {
@@ -98,6 +99,8 @@ const InvestirEmTecnologia2026 = () => {
           </ul>
         </div>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Server className="h-7 w-7 text-ia" />
           2. Data Centers: A Infraestrutura da Inteligência Artificial
@@ -155,6 +158,8 @@ const InvestirEmTecnologia2026 = () => {
             incluem CIBR, HACK e BUG – cada um com composição ligeiramente diferente.
           </p>
         </div>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Tv className="h-7 w-7 text-otaku" />

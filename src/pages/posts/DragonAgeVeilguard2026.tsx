@@ -10,6 +10,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/dragon-age-veilguard-review-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const DragonAgeVeilguard2026 = () => {
   useEffect(() => {
     trackArticleRead("dragon-age-veilguard-review-2026", "Dragon Age: The Veilguard — A BioWare Voltou? Review Completo 2026", "geek");
@@ -56,6 +57,8 @@ const DragonAgeVeilguard2026 = () => {
         </div>
       </div>
 
+      <AdLeaderboard className="my-8" />
+
       <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
         <Star className="h-7 w-7 text-purple-400" />O Que Funcionou
       </h2>
@@ -71,6 +74,8 @@ const DragonAgeVeilguard2026 = () => {
         <li><strong>Tom inconsistente:</strong> alguns críticos notaram que o jogo oscilava entre drama sério e leveza casual de forma que quebrava a imersão em momentos-chave.</li>
         <li><strong>Loghain e a ausência de peso narrativo:</strong> fãs de Origins sentiram que o jogo não honrou adequadamente a herança narrativa da franquia.</li>
       </ul>
+
+      <AdRectangle className="my-8" />
 
       <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
         <Cpu className="h-7 w-7 text-purple-400" />Performance e PC

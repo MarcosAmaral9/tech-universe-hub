@@ -8,6 +8,7 @@ import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import crimsonCombateImg from "@/assets/crimson-desert-combate.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const CrimsonDesertCombate = () => {
   useEffect(() => {
     trackArticleRead(
@@ -54,6 +55,8 @@ const CrimsonDesertCombate = () => {
           Kliff pode usar múltiplas armas — espadas, alabardas, cajados — e alternar entre elas durante o combate.
           Cada arma tem um conjunto próprio de ataques, habilidades especiais e sinergias com o terreno e os inimigos.
         </p>
+
+        <AdLeaderboard className="my-8" />
         <p>
           O aspecto mais citado pelos críticos é a <strong>batalha contra bosses</strong>. Vários veículos
           compararam encontros específicos a Shadow of the Colossus pelo senso de escala e a Elden Ring pela

@@ -8,6 +8,7 @@ import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import crimsonGuiaImg from "@/assets/crimson-desert-guia.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const CrimsonDesertGuiaCompleto = () => {
   useEffect(() => {
     trackArticleRead(
@@ -50,6 +51,8 @@ const CrimsonDesertGuiaCompleto = () => {
         </p>
 
         <div className="not-prose my-8 p-6 bg-gradient-to-br from-red-500/10 to-background rounded-xl border border-red-500/30">
+          <AdLeaderboard className="my-8" />
+
           <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
             <Gamepad2 className="h-5 w-5 text-red-400" /> Ficha Técnica
           </h2>

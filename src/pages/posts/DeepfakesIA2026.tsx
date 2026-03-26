@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/deepfakes-ia-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const DeepfakesIA2026 = () => {
 
   useEffect(() => {
@@ -59,6 +60,8 @@ const DeepfakesIA2026 = () => {
           </div>
         </div>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Eye className="h-7 w-7 text-ia" />
           Como Identificar um Deepfake de Vídeo
@@ -84,6 +87,8 @@ const DeepfakesIA2026 = () => {
         <div className="my-6 p-6 bg-secondary/50 rounded-xl border border-border">
           <p className="mb-0">💡 <strong>Dica prática:</strong> Crie com sua família uma "palavra-código de segurança" que deve ser dita em qualquer pedido urgente de dinheiro ou informação sensível.</p>
         </div>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="text-2xl font-bold mt-10 mb-6">Ferramentas para Detectar Conteúdo Falso</h2>
         <ul className="space-y-2 my-6">

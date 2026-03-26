@@ -10,6 +10,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/cdb-2026-guia.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const CDB2026Guia = () => {
   useEffect(() => {
     trackArticleRead("cdb-2026-guia-completo", "CDB em 2026: Ainda Vale a Pena? Guia Completo com Taxas Reais", "invest");
@@ -45,6 +46,8 @@ const CDB2026Guia = () => {
           Um CDB é essencialmente um empréstimo que você faz ao banco. Em troca, o banco paga juros sobre o valor investido. Diferente da poupança, o CDB tem rentabilidade atrelada geralmente ao <strong>CDI (Certificado de Depósito Interbancário)</strong>, que acompanha de perto a taxa Selic. É protegido pelo <strong>FGC (Fundo Garantidor de Créditos)</strong> até R$ 250.000 por CPF por instituição.
         </p>
       </div>
+
+      <AdLeaderboard className="my-8" />
 
       <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
         <TrendingUp className="h-7 w-7 text-emerald-400" />Como Funciona a Rentabilidade
@@ -96,6 +99,8 @@ const CDB2026Guia = () => {
         ))}
       </div>
       <p>Isso significa que <strong>nunca vale resgatar um CDB com menos de 6 meses</strong> — você paga a maior alíquota e ainda perde tempo de juros compostos.</p>
+
+      <AdRectangle className="my-8" />
 
       <h2 className="text-2xl font-bold mt-10 mb-6">CDB vs Outras Rendas Fixas</h2>
       <div className="not-prose my-6 overflow-x-auto">

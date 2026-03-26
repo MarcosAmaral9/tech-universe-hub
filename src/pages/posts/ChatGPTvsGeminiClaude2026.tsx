@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/chatgpt-vs-gemini-vs-claude-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const ChatGPTvsGeminiClaude2026 = () => {
 
   useEffect(() => {
@@ -48,6 +49,8 @@ const ChatGPTvsGeminiClaude2026 = () => {
           Em 2024 e 2025, a maioria das pessoas experimentou gratuitamente. Em 2026, as versões premium são significativamente superiores às gratuitas — e estamos falando de uma diferença de desempenho de até <strong>40%</strong> em tarefas complexas. As assinaturas variam entre R$ 90 e R$ 220 por mês no Brasil, tornando a decisão financeiramente relevante.
         </p>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Cpu className="h-7 w-7 text-ia" />
           ChatGPT (OpenAI) — O Pioneiro Ainda Lidera?
@@ -71,6 +74,8 @@ const ChatGPTvsGeminiClaude2026 = () => {
           <li><strong>Pontos fortes:</strong> Integração nativa Google, multimodalidade avançada, melhor processamento de vídeo e áudio.</li>
           <li><strong>Ponto fraco:</strong> Privacidade ainda é uma preocupação legítima.</li>
         </ul>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Cpu className="h-7 w-7 text-ia" />

@@ -10,6 +10,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import ac1Img from "@/assets/ac-1-altair.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const AC1Altair = () => {
   useEffect(() => {
     trackArticleRead("ac-1-altair-terra-santa-1191", "Assassin's Creed 1: O Início da Lenda — Altaïr e a Terra Santa em 1191", "geek");
@@ -62,6 +63,8 @@ const AC1Altair = () => {
           </p>
         </div>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-amber-400" />
           Contexto Histórico: As Cruzadas e a Terra Santa em 1191
@@ -97,6 +100,8 @@ const AC1Altair = () => {
           <p className="font-bold text-amber-400 mb-1 text-sm">🎭 Dublagem original</p>
           <p className="text-sm text-muted-foreground mb-0">Altaïr é dublado por <strong>Philip Shahbaz</strong> em inglês — uma voz marcante que definiu o personagem. Curiosamente, Desmond Miles (o protagonista moderno) é dublado por <strong>Nolan North</strong>, que se tornaria um dos atores de voz mais prolíficos dos games.</p>
         </div>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <MapPin className="h-7 w-7 text-amber-400" />

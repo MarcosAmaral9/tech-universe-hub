@@ -10,6 +10,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import irpfImg from "@/assets/irpf-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const IRPF2026 = () => {
   const [checkedDocs, setCheckedDocs] = useState<Record<string, boolean>>({});
   
@@ -167,6 +168,8 @@ const IRPF2026 = () => {
 
         {/* Deduções */}
         <section className="mb-10">
+          <AdLeaderboard className="my-8" />
+
           <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">As Deduções Que Mais Gente Esquece</h2>
           <div className="grid md:grid-cols-2 gap-4 mb-6">
             {[
@@ -208,6 +211,8 @@ const IRPF2026 = () => {
 
         {/* Calculadora Simplificado vs Completo */}
         <section className="mb-10">
+          <AdRectangle className="my-8" />
+
           <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">Calculadora: Simplificado ou Completo?</h2>
           <div className="bg-card border border-border rounded-2xl p-6">
             <div className="grid md:grid-cols-2 gap-4 mb-6">

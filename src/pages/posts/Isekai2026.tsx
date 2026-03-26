@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/isekai-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const Isekai2026 = () => {
 
   useEffect(() => {
@@ -48,6 +49,8 @@ const Isekai2026 = () => {
           Isekai (異世界, literalmente "mundo diferente") é o gênero onde o protagonista é transportado para outro mundo. O gênero tem raízes antigas: <strong>Alice no País das Maravilhas</strong> e <strong>O Mágico de Oz</strong> são isekais avant la lettre. A explosão aconteceu com <strong>Sword Art Online</strong> em 2012 e se consolidou com Re:Zero, KonoSuba e That Time I Got Reincarnated as a Slime.
         </p>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <AlertTriangle className="h-7 w-7 text-otaku" />
           A Crítica Justa: Problemas Reais do Gênero
@@ -66,6 +69,8 @@ const Isekai2026 = () => {
         <p>
           <strong>Mushoku Tensei</strong> divide opiniões, mas é inegavelmente uma das construções de mundo mais ricas do gênero. <strong>Frieren: Beyond Journey's End</strong> é o isekai invertido: uma elfa que reflete sobre o significado de 1000 anos de vida. Ganhou o Grand Prize no Manga Taisho de 2021.
         </p>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <TrendingUp className="h-7 w-7 text-otaku" />

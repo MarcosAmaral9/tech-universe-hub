@@ -10,6 +10,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import acSyndicateImg from "@/assets/ac-syndicate.webp";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const ACSyndicate = () => {
 
   useEffect(() => {
@@ -110,6 +111,8 @@ const ACSyndicate = () => {
             👉 <strong>Ótimo custo-benefício</strong> para fãs de ambientação vitoriana e steampunk. Frequentemente gratuito em promoções.
           </p>
         </div>
+
+        <AdLeaderboard className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-gray-400" />
@@ -262,6 +265,8 @@ const ACSyndicate = () => {
           <li><strong>Museu Britânico:</strong> Com suas coleções de artefatos de todo o Império.</li>
           <li><strong>Ponte da Torre:</strong> Curiosamente, a ponte ainda estava em construção em 1868 (inaugurada em 1894).</li>
         </ul>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Target className="h-7 w-7 text-gray-400" />

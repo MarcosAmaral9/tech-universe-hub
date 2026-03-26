@@ -10,6 +10,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import { Slider } from "@/components/ui/slider";
 import tesouroDiretoImg from "@/assets/tesouro-direto-2026.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const TesouroDireto2026 = () => {
   // Calculator state
   
@@ -135,6 +136,8 @@ const TesouroDireto2026 = () => {
           </div>
 
           {/* 3 Tipos */}
+          <AdLeaderboard className="my-8" />
+
           <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6 border-l-4 border-[hsl(var(--invest-color))] pl-4">
             Os 3 Tipos Principais e Qual Escolher em 2026
           </h2>
@@ -234,6 +237,8 @@ const TesouroDireto2026 = () => {
           </div>
 
           {/* Comparativo */}
+          <AdRectangle className="my-8" />
+
           <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6 border-l-4 border-[hsl(var(--invest-color))] pl-4">
             Comparativo Real: Tesouro vs Concorrentes em 2026
           </h2>

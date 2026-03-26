@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import ac3Img from "@/assets/ac-3.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const AC3Remastered = () => {
 
   useEffect(() => {
@@ -125,6 +126,8 @@ const AC3Remastered = () => {
         </div>
 
         {/* ==================== REVIEW GERAL ==================== */}
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Target className="h-7 w-7 text-red-400" />
           Review Geral: AC III Remastered é Bom em 2026?
@@ -211,6 +214,8 @@ const AC3Remastered = () => {
         </p>
 
         {/* ==================== GEOGRAFIA ==================== */}
+        <AdRectangle className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <MapPin className="h-7 w-7 text-red-400" />
           Mapa e Regiões: A América Colonial

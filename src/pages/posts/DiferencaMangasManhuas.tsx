@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import mangaManhwaManhuaImg from "@/assets/manga-manhwa-manhua.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const DiferencaMangasManhuas = () => {
 
   useEffect(() => {
@@ -119,6 +120,8 @@ const DiferencaMangasManhuas = () => {
           </div>
         </div>
 
+        <AdLeaderboard className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Globe className="h-7 w-7 text-accent" />
           Manhwa: O Estilo Coreano
@@ -194,6 +197,8 @@ const DiferencaMangasManhuas = () => {
             </div>
           </div>
         </div>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="text-2xl font-bold mt-10 mb-6">Comparação Detalhada</h2>
 

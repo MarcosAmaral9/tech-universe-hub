@@ -8,6 +8,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/tensura-guia-completo.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const TensuraGuiaCompleto = () => {
   useEffect(() => {
     trackArticleRead("tensura-guia-completo-temporadas-filmes", "TenSura: Guia Completo de Temporadas e Filmes", "otaku");
@@ -63,6 +64,8 @@ const TensuraGuiaCompleto = () => {
             </div>
           ))}
         </div>
+
+        <AdLeaderboard className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
           <Tv className="h-7 w-7 text-otaku" />
@@ -124,6 +127,8 @@ const TensuraGuiaCompleto = () => {
             <li>• Milim revela sua verdadeira forma: Dragon Nova herdeira de Veldanava</li>
           </ul>
         </div>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
           <Tv className="h-7 w-7 text-otaku" />

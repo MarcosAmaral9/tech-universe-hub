@@ -10,6 +10,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import ac2Img from "@/assets/ac-2-ezio.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const AC2Ezio = () => {
   useEffect(() => {
     trackArticleRead("ac-2-ezio-italia-renascentista", "Assassin's Creed II: Ezio Auditore e a Itália Renascentista", "geek");
@@ -59,6 +60,8 @@ const AC2Ezio = () => {
             👉 Vendeu <strong>9 milhões de cópias</strong> no lançamento. Nota <strong>91/100 no Metacritic</strong> (PS3). Considerado o melhor da franquia por uma parcela significativa dos fãs.
           </p>
         </div>
+
+        <AdLeaderboard className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-amber-400" />
@@ -110,6 +113,8 @@ const AC2Ezio = () => {
             ))}
           </div>
         </div>
+
+        <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <MapPin className="h-7 w-7 text-amber-400" />

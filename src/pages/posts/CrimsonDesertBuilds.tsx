@@ -8,6 +8,7 @@ import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import crimsonBuildsImg from "@/assets/crimson-desert-builds.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const CrimsonDesertBuilds = () => {
   useEffect(() => {
     trackArticleRead(
@@ -58,6 +59,8 @@ const CrimsonDesertBuilds = () => {
           mercenários. Ao contrário de RPGs com classes rígidas, Kliff pode usar e desenvolver múltiplos
           tipos de armas, mas o sistema de habilidades recompensa especialização ao longo do jogo.
         </p>
+
+        <AdLeaderboard className="my-8" />
 
         <h2>Como Funciona a Progressão</h2>
         <p>

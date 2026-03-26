@@ -9,6 +9,7 @@ import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import crimsonReviewImg from "@/assets/crimson-desert-review.webp";
 
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const CrimsonDesertReview = () => {
   useEffect(() => {
     trackArticleRead("crimson-desert-review-2026", "Crimson Desert Review 2026", "geek");
@@ -60,6 +61,8 @@ const CrimsonDesertReview = () => {
 
         {/* Score table */}
         <div className="not-prose my-8">
+          <AdLeaderboard className="my-8" />
+
           <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
             <Star className="h-5 w-5 text-yellow-400" /> Notas da Crítica Especializada
           </h2>
