@@ -7,6 +7,7 @@ import { Clock, Calendar, User, ChevronRight, Brain, CheckCircle2, AlertTriangle
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import heroImg from "@/assets/ia-financas-pessoais-2026.webp";
 
 const FERRAMENTAS = [
@@ -62,6 +63,8 @@ const IAFinancasPessoais2026 = () => {
         <p className="text-muted-foreground leading-relaxed">
           Segundo pesquisa da Febraban, <strong>67% dos brasileiros</strong> consideram que não têm controle adequado sobre seus gastos mensais. A IA pode ser a ferramenta que faltava para mudar esse cenário — sem planilhas complicadas e sem precisar virar contador.
         </p>
+
+        <AdLeaderboard />
 
         <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">O que a IA pode fazer pelas suas finanças</h2>
         <p className="text-muted-foreground leading-relaxed">Ferramentas de IA já conseguem hoje:</p>

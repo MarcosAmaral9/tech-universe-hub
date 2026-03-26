@@ -7,6 +7,7 @@ import { Clock, Calendar, User, ChevronRight, TrendingUp, AlertTriangle, CheckCi
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import heroImg from "@/assets/bitcoin-2026-vale-comprar.webp";
 
 const CICLOS_BTC = [
@@ -65,6 +66,8 @@ const Bitcoin2026ValeComprar = () => {
         <p className="text-muted-foreground leading-relaxed">
           Se você acompanha o mercado cripto, já sabe que 2026 não está sendo aquele rali explosivo que alguns analistas prometiam. Mas também está longe de ser um "inverno cripto". O Bitcoin está hoje cotado em torno de <strong>US$ 70 mil a 73 mil</strong>, após ter batido o recorde histórico de US$ 125 mil em 2025 — e depois corrigido forte.
         </p>
+
+        <AdLeaderboard />
 
         <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">O que rolou com o Bitcoin em 2025 e 2026</h2>
         <p className="text-muted-foreground leading-relaxed">

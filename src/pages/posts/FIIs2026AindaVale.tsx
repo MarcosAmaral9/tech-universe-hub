@@ -7,6 +7,7 @@ import { Clock, Calendar, User, ChevronRight, Building2, CheckCircle2, AlertTria
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import heroImg from "@/assets/fiis-2026-ainda-vale.webp";
 
 const SETORES_FII = [
@@ -66,6 +67,8 @@ const FIIs2026AindaVale = () => {
         <p className="text-muted-foreground leading-relaxed">
           No último ciclo de cortes (2023-2024), o IFIX — índice que reúne os principais FIIs da B3 — valorizou cerca de <strong>15% em 12 meses</strong>, além dos dividendos distribuídos no período. O cenário atual tem potencial semelhante.
         </p>
+
+        <AdLeaderboard />
 
         <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">O que são FIIs e por que ficam mais atrativos com juros menores</h2>
         <p className="text-muted-foreground leading-relaxed">
