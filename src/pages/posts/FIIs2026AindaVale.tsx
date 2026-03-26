@@ -117,6 +117,8 @@ const FIIs2026AindaVale = () => {
           </div>
         </div>
 
+        <AdRectangle />
+
         {/* Tabela de setores */}
         <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">Panorama dos setores em 2026</h2>
         <div className="overflow-x-auto">

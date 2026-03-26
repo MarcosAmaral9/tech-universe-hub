@@ -123,6 +123,9 @@ const Bitcoin2026ValeComprar = () => {
             <h3 className="font-bold mb-1">Adoção Global</h3>
             <p className="text-xs text-muted-foreground">El Salvador, Brasil, Emirados e outros países avançam em regulamentação favorável a cripto</p>
           </div>
+        </div>
+
+        <AdRectangle />
           <div className="bg-card border border-border rounded-xl p-5 text-center">
             <Zap className="h-8 w-8 text-[hsl(var(--invest-color))] mx-auto mb-3" />
             <h3 className="font-bold mb-1">Lightning Network</h3>

@@ -114,6 +114,8 @@ const IAFinancasPessoais2026 = () => {
           Não é magia — é <strong>análise de dados aplicada ao seu dia a dia</strong>. E funciona.
         </p>
 
+        <AdRectangle />
+
         {/* Exemplo prático com prompt */}
         <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">Exemplo: prompt para analisar seus gastos</h2>
         <div className="bg-card border border-border rounded-2xl p-6">
