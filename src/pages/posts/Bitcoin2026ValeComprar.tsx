@@ -123,15 +123,14 @@ const Bitcoin2026ValeComprar = () => {
             <h3 className="font-bold mb-1">Adoção Global</h3>
             <p className="text-xs text-muted-foreground">El Salvador, Brasil, Emirados e outros países avançam em regulamentação favorável a cripto</p>
           </div>
-        </div>
-
-        <AdRectangle />
           <div className="bg-card border border-border rounded-xl p-5 text-center">
             <Zap className="h-8 w-8 text-[hsl(var(--invest-color))] mx-auto mb-3" />
             <h3 className="font-bold mb-1">Lightning Network</h3>
             <p className="text-xs text-muted-foreground">Pagamentos instantâneos via Bitcoin crescem 300% em volume desde 2024</p>
           </div>
         </div>
+
+        <AdRectangle />
         <p className="text-muted-foreground leading-relaxed">
           Isso reduz (mas não elimina) a volatilidade extrema que marcou os ciclos anteriores. Analistas da área comparam os movimentos atuais com ciclos passados: em 2018, o Bitcoin caiu 80%. Uma queda de 30-44% hoje, como a que aconteceu, <em>"não pode nem ser considerada o início de um movimento acentuado"</em>, como resumiu Alexandre Vasarhelyi, fundador da B2V Crypto.
         </p>
