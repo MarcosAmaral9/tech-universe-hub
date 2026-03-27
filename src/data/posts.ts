@@ -92,9 +92,53 @@ import overlordCharsImg from "@/assets/overlord-personagens.webp";
 import selicCairImg from "@/assets/selic-cair-2026.webp";
 import bitcoin2026ValeImg from "@/assets/bitcoin-2026-vale-comprar.webp";
 import iaFinancasPessoaisImg from "@/assets/ia-financas-pessoais-2026.webp";
-import fiis2026AindaValeImg from "@/assets/fiis-2026-ainda-vale.webp";
+import poupancaVsCdbTesouroImg from "@/assets/poupanca-vs-cdb-tesouro-2026.webp";
+import reservaEmergenciaImg from "@/assets/reserva-emergencia-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+
+  // ── 27 Mar 2026 — Finanças ────────────────────────────────
+  {
+    id: "135",
+    slug: "poupanca-vs-cdb-tesouro-2026",
+    title: "Poupança vs CDB vs Tesouro Direto em 2026: Qual Rende Mais?",
+    excerpt: "Comparativo completo entre Poupança, CDB e Tesouro Direto em 2026. Simulações reais com Selic a 13,25%, tabelas de rendimento líquido e recomendações por objetivo.",
+    content: "",
+    category: "invest",
+    subtopic: "renda-fixa",
+    image: poupancaVsCdbTesouroImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-27",
+    readTime: "12 min",
+    faq: [
+      { q: "Poupança ainda vale a pena em 2026?", a: "A poupança rende 70% da Selic + TR quando a Selic está acima de 8,5%. Em março de 2026, com a Selic a 13,25%, a poupança rende cerca de 9,28% ao ano — menos que CDBs e Tesouro Direto, que oferecem 100% do CDI ou mais." },
+      { q: "Qual a diferença entre CDB e Tesouro Direto?", a: "CDBs são títulos emitidos por bancos, cobertos pelo FGC até R$ 250 mil. O Tesouro Direto são títulos do governo federal, considerados os mais seguros do país. CDBs costumam pagar mais, mas o Tesouro tem menor risco de crédito." },
+      { q: "CDB tem garantia do FGC?", a: "Sim. O Fundo Garantidor de Créditos (FGC) protege investimentos em CDBs até R$ 250 mil por CPF por instituição financeira, com limite global de R$ 1 milhão a cada 4 anos." },
+      { q: "Quanto rende R$ 10.000 na poupança, CDB e Tesouro em 2026?", a: "Com a Selic a 13,25% ao ano: Poupança rende ~R$ 928/ano; CDB 100% CDI rende ~R$ 1.325/ano (bruto); Tesouro Selic rende ~R$ 1.325/ano (bruto). Após IR, CDB e Tesouro ainda superam a poupança." },
+      { q: "Qual o melhor investimento para reserva de emergência?", a: "Para reserva de emergência, o Tesouro Selic é a opção mais indicada por ter liquidez D+1, risco soberano e não ter IOF após 30 dias. CDBs com liquidez diária de bancos sólidos também são uma boa alternativa." },
+    ],
+  },
+  {
+    id: "136",
+    slug: "reserva-emergencia-2026-como-montar",
+    title: "Como Montar Sua Reserva de Emergência em 2026: Guia Definitivo",
+    excerpt: "Guia completo para montar sua reserva de emergência em 2026. Quanto guardar, onde investir, quanto tempo leva e os erros mais comuns. Com simulações práticas por faixa de renda.",
+    content: "",
+    category: "invest",
+    subtopic: "planejamento",
+    image: reservaEmergenciaImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-27",
+    readTime: "11 min",
+    faq: [
+      { q: "Quanto devo ter de reserva de emergência?", a: "A recomendação padrão é entre 3 e 12 meses de gastos mensais fixos. CLT com estabilidade: 3-6 meses. Autônomos e MEIs: 6-12 meses. Famílias com dependentes: pelo menos 6 meses." },
+      { q: "Onde guardar a reserva de emergência em 2026?", a: "O Tesouro Selic é a opção mais indicada: liquidez D+1, risco soberano e rendimento de 13,25% ao ano bruto. CDBs com liquidez diária de grandes bancos também servem." },
+      { q: "Posso usar a reserva de emergência para investir?", a: "Não. A reserva de emergência NÃO é investimento — é proteção. Ela deve estar em produtos com liquidez imediata e baixíssimo risco." },
+      { q: "Quanto tempo leva para montar uma reserva de emergência?", a: "Depende do seu percentual de poupança. Guardando 20% da renda, uma reserva de 6 meses leva cerca de 2,5 anos. Com 30%, cerca de 1,7 anos." },
+      { q: "Reserva de emergência precisa render muito?", a: "Não. O objetivo da reserva é preservação de capital e liquidez, não rendimento máximo. Em 2026, o Tesouro Selic cumpre esse papel com folga." },
+    ],
+  },
+
 
   // ── 22 Mar 2026 — Finanças ────────────────────────────────
   {

@@ -165,6 +165,9 @@ const SelicComecaCair2026    = lazy(() => import("./pages/posts/SelicComecaCair2
 const Bitcoin2026ValeComprar = lazy(() => import("./pages/posts/Bitcoin2026ValeComprar"));
 const IAFinancasPessoais2026 = lazy(() => import("./pages/posts/IAFinancasPessoais2026"));
 const FIIs2026AindaVale      = lazy(() => import("./pages/posts/FIIs2026AindaVale"));
+// 27 Mar 2026 — Finanças
+const PoupancaVsCDBTesouro2026 = lazy(() => import("./pages/posts/PoupancaVsCDBTesouro2026"));
+const ReservaEmergencia2026    = lazy(() => import("./pages/posts/ReservaEmergencia2026"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -317,6 +320,9 @@ const App = () => (
                 <Route path="/post/bitcoin-2026-vale-comprar" element={<Bitcoin2026ValeComprar />} />
                 <Route path="/post/ia-para-financas-pessoais-2026" element={<IAFinancasPessoais2026 />} />
                 <Route path="/post/fiis-2026-ainda-vale-investir" element={<FIIs2026AindaVale />} />
+                {/* 27 Mar 2026 — Finanças */}
+                <Route path="/post/poupanca-vs-cdb-tesouro-2026" element={<PoupancaVsCDBTesouro2026 />} />
+                <Route path="/post/reserva-emergencia-2026-como-montar" element={<ReservaEmergencia2026 />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
