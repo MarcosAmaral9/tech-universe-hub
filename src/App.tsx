@@ -216,9 +216,6 @@ const App = () => (
                 <Route path="/post/crimson-desert-review-2026" element={<CrimsonDesertReview />} />
                 <Route path="/post/crimson-desert-builds-guia-2026" element={<CrimsonDesertBuilds />} />
                 <Route path="/post/crimson-desert-mapa-regioes-pywel" element={<CrimsonDesertMapa />} />
-                <Route path="/post/crimson-desert-bosses-guia-chefes" element={<CrimsonDesertBosses />} />
-                <Route path="/post/crimson-desert-guia-iniciantes-dicas" element={<CrimsonDesertIniciantes />} />
-                <Route path="/post/crimson-desert-melhores-equipamentos-inicio" element={<CrimsonDesertEquipamentos />} />
                 <Route path="/post/tensura-guia-completo-temporadas-filmes" element={<TensuraGuiaCompleto />} />
                 <Route path="/post/tensura-personagens-rimuru-demon-lords" element={<TensuraPersonagens />} />
                 <Route path="/post/overlord-guia-completo-temporadas-ainz" element={<OverlordGuiaCompleto />} />
