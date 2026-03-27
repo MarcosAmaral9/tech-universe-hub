@@ -24,6 +24,7 @@ const SUBTOPIC_LABELS: Record<string, string> = {
   games: "Games",
   collectibles: "Colecionáveis",
   "saude-mental": "Saúde Mental",
+  isekai: "Isekai",
   tensura: "TenSura",
   overlord: "Overlord",
 };

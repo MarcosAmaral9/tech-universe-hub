@@ -102,6 +102,14 @@ const AC1Altair      = lazy(() => import("./pages/posts/AC1Altair"));
 const AC2Ezio        = lazy(() => import("./pages/posts/AC2Ezio"));
 const ACBrotherhood  = lazy(() => import("./pages/posts/ACBrotherhood"));
 const ACRevelations  = lazy(() => import("./pages/posts/ACRevelations"));
+const SoloLeveling      = lazy(() => import("./pages/posts/SoloLeveling"));
+const Tsukimichi        = lazy(() => import("./pages/posts/Tsukimichi"));
+const MugenGacha        = lazy(() => import("./pages/posts/MugenGacha"));
+const KizokuTensei      = lazy(() => import("./pages/posts/KizokuTensei"));
+const HellMode          = lazy(() => import("./pages/posts/HellMode"));
+const IsekaiNonbiriNouka = lazy(() => import("./pages/posts/IsekaiNonbiriNouka"));
+const MaousamaRetry     = lazy(() => import("./pages/posts/MaousamaRetry"));
+const OkirakuRyoushu    = lazy(() => import("./pages/posts/OkirakuRyoushu"));
 const ACSyndicate = lazy(() => import("./pages/posts/ACSyndicate"));
 const ACUnity = lazy(() => import("./pages/posts/ACUnity"));
 const ACRogue = lazy(() => import("./pages/posts/ACRogue"));
@@ -248,6 +256,14 @@ const App = () => (
                 <Route path="/post/ac-2-ezio-italia-renascentista" element={<AC2Ezio />} />
                 <Route path="/post/ac-brotherhood-ezio-roma-borgia" element={<ACBrotherhood />} />
                 <Route path="/post/ac-revelations-ezio-constantinopla" element={<ACRevelations />} />
+                <Route path="/post/solo-leveling-guia-completo-temporadas" element={<SoloLeveling />} />
+                <Route path="/post/tsukimichi-moonlit-fantasy-guia-completo" element={<Tsukimichi />} />
+                <Route path="/post/mugen-gacha-level-9999-traicao-dungeon" element={<MugenGacha />} />
+                <Route path="/post/kizoku-tensei-noble-reincarnation-guia" element={<KizokuTensei />} />
+                <Route path="/post/hell-mode-gamer-isekai-guia-completo" element={<HellMode />} />
+                <Route path="/post/isekai-nonbiri-nouka-farming-life-guia" element={<IsekaiNonbiriNouka />} />
+                <Route path="/post/maousama-retry-demon-lord-guia-completo" element={<MaousamaRetry />} />
+                <Route path="/post/okiraku-ryoushu-territory-defense-guia" element={<OkirakuRyoushu />} />
                 <Route path="/post/ac-syndicate-revolucao-industrial-londres" element={<ACSyndicate />} />
                 <Route path="/post/ac-unity-jogo-frente-tempo-paris" element={<ACUnity />} />
                 <Route path="/post/ac-rogue-assassino-templario" element={<ACRogue />} />

@@ -20,6 +20,14 @@ import ac1AltairImg    from "@/assets/ac-1-altair.webp";
 import ac2EzioImg      from "@/assets/ac-2-ezio.webp";
 import acBrotherImg    from "@/assets/ac-brotherhood.webp";
 import acRevImg        from "@/assets/ac-revelations.webp";
+import soloLevelingImg  from "@/assets/solo-leveling.webp";
+import tsukimichiImg    from "@/assets/tsukimichi.webp";
+import mugenGachaImg    from "@/assets/mugen-gacha.webp";
+import kizokuTenseiImg  from "@/assets/kizoku-tensei.webp";
+import hellModeImg      from "@/assets/hell-mode.webp";
+import nonbiriNoukaImg  from "@/assets/isekai-nonbiri-nouka.webp";
+import maousamaImg      from "@/assets/maousama-retry.webp";
+import okirakuImg       from "@/assets/okiraku-ryoushu.webp";
 import acOriginsImg from "@/assets/ac-origins.webp";
 import acMirageImg from "@/assets/ac-mirage.webp";
 import ac3Img from "@/assets/ac-3.webp";
@@ -110,7 +118,7 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    id: "76",
+    id: "128",
     slug: "bitcoin-2026-vale-comprar",
     title: "Bitcoin em 2026: vale comprar agora ou esperar?",
     excerpt: "O Bitcoin corrigiu forte após o recorde de US$ 125 mil em 2025 e agora ronda os US$ 70-73 mil. Entenda o cenário e se faz sentido investir agora.",
@@ -130,7 +138,7 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    id: "77",
+    id: "129",
     slug: "ia-para-financas-pessoais-2026",
     title: "Como usar IA para organizar suas finanças em 2026",
     excerpt: "Ferramentas de IA já categorizam gastos, simulam investimentos e respondem dúvidas financeiras personalizadas. Veja como começar.",
@@ -150,7 +158,7 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    id: "78",
+    id: "130",
     slug: "fiis-2026-ainda-vale-investir",
     title: "FIIs em 2026: ainda vale a pena investir com a Selic caindo?",
     excerpt: "Com o início do ciclo de queda dos juros, os Fundos Imobiliários voltam ao radar. Entenda o cenário, setores promissores e cuidados antes de investir.",
@@ -1674,6 +1682,112 @@ export const blogPosts: BlogPost[] = [
       { q: "Altaïr aparece em AC Revelations?", a: "Sim. Através dos Selos de Masyaf, Ezio revive memórias de Altaïr em diferentes fases da vida, revelando o que aconteceu após AC 1 e o destino final do lendário Assassino." },
       { q: "O que é o gancho-lâmina de Revelations?", a: "O Hookblade é uma adição à lâmina oculta que permite escalar mais rápido, usar tirolesas pela cidade e novos movimentos de combate. É exclusivo de Revelations e temática otomana." },
     ],
+  },
+
+  // ── Otaku Novos (Mar 2026) ─────────────────────────────────────────────
+  {
+    id: "120",
+    slug: "solo-leveling-guia-completo-temporadas",
+    title: "Solo Leveling: Guia Completo — Temporadas, Filme e o Monarca das Sombras",
+    excerpt: "Tudo sobre Solo Leveling: T1 (jan-mar 2024, 12 eps, A-1 Pictures), T2 Arise from the Shadow (jan-mar 2025, 13 eps), filme ReAwakening (nov 2024). Sung Jinwoo, Cha Hae-in e os Monarcas. Anime do Ano no Crunchyroll 2025.",
+    content: "",
+    category: "otaku",
+    subtopic: "isekai",
+    image: soloLevelingImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-29",
+    readTime: "20 min",
+  },
+  {
+    id: "121",
+    slug: "tsukimichi-moonlit-fantasy-guia-completo",
+    title: "Tsukimichi Moonlit Fantasy: Guia Completo — Temporadas e Personagens",
+    excerpt: "Tsuki ga Michibiku Isekai Douchuu completo: T1 C2C (jul-set 2021, 12 eps), T2 J.C.Staff (jan-jun 2024, 25 eps), T3 anunciada. Makoto Misumi, Tomoe, Mio e o mundo de Elysion — onde o protagonista é rejeitado pela deusa e banido para as terras selvagens.",
+    content: "",
+    category: "otaku",
+    subtopic: "isekai",
+    image: tsukimichiImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-29",
+    readTime: "16 min",
+  },
+  {
+    id: "122",
+    slug: "mugen-gacha-level-9999-traicao-dungeon",
+    title: "My Gift Lvl 9999 Unlimited Gacha: Traído no Fundo da Dungeon — Guia Completo",
+    excerpt: "Shinjiteita Nakamatachi ni Dungeon Okuchi de Korosarekaketa ga Gift: anime J.C.Staff out-dez 2025, HIDIVE. Light, o humano traído pelos companheiros no Abismo, usa o dom Gacha Ilimitada para invocar guerreiras nível 9999 e buscar vingança.",
+    content: "",
+    category: "otaku",
+    subtopic: "isekai",
+    image: mugenGachaImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-29",
+    readTime: "14 min",
+  },
+  {
+    id: "123",
+    slug: "kizoku-tensei-noble-reincarnation-guia",
+    title: "Noble Reincarnation (Kizoku Tensei): O Príncipe Mais Forte — Guia Completo",
+    excerpt: "Kizoku Tensei: Megumareta Umare kara Saikyou no Chikara wo Eru — anime CompTown estreou jan 2026 (12 eps, Crunchyroll). Noah Ararat, 13º filho do imperador, reencarnado com cap de nível infinito e habilidade de absorver poderes de servos leais.",
+    content: "",
+    category: "otaku",
+    subtopic: "isekai",
+    image: kizokuTenseiImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-29",
+    readTime: "13 min",
+  },
+  {
+    id: "124",
+    slug: "hell-mode-gamer-isekai-guia-completo",
+    title: "Hell Mode: O Gamer Viciado em Desafios Domina o Isekai — Guia Completo",
+    excerpt: "Hell Mode anime Yokohama Animation Laboratory, estreou jan 2026 (HIDIVE/Prime Video). Kenichi Yamada, gamer de 35 anos reencarnado como Allen com classe Invocador — 100x mais XP necessário, 100x mais recompensas no Hell Mode.",
+    content: "",
+    category: "otaku",
+    subtopic: "isekai",
+    image: hellModeImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-29",
+    readTime: "15 min",
+  },
+  {
+    id: "125",
+    slug: "isekai-nonbiri-nouka-farming-life-guia",
+    title: "Farming Life in Another World (Isekai Nonbiri Nouka): Guia Completo",
+    excerpt: "Isekai Nonbiri Nouka: T1 anime Zero-G (jan-mar 2023, 12 eps). Hiraku Machio, morto aos 39 anos de doença terminal, reencarnado com a Ferramenta Universal de Fazenda. Vampiras, elfas e dragões na fazenda. T2 confirmada abr/2026.",
+    content: "",
+    category: "otaku",
+    subtopic: "isekai",
+    image: nonbiriNoukaImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-29",
+    readTime: "14 min",
+  },
+  {
+    id: "126",
+    slug: "maousama-retry-demon-lord-guia-completo",
+    title: "Demon Lord, Retry! (Maou-sama): O Programador Virou Rei Demônio — Guia Completo",
+    excerpt: "Maou-sama Retry: T1 Ekachi Epilka (jul-set 2019, 12 eps) e versão R Gekkō (out-dez 2024). Akira Oono, programador de 45 anos, acorda no corpo do Rei Demônio Hakuto Kunai de seu próprio MMORPG. Com Aku, Yu Kirino e Angel White.",
+    content: "",
+    category: "otaku",
+    subtopic: "isekai",
+    image: maousamaImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-29",
+    readTime: "14 min",
+  },
+  {
+    id: "127",
+    slug: "okiraku-ryoushu-territory-defense-guia",
+    title: "Easygoing Territory Defense (Okiraku Ryoushu): Guia Completo do Anime 2026",
+    excerpt: "Okiraku Ryoushu no Tanoshii Ryouchi Bouei: anime NAZ estreou jan 2026 (12 eps, Crunchyroll). Van, 4º filho exilado para vilarejo em ruínas, usa a desprezada Magia de Produção para criar a cidade-fortaleza mais poderosa do reino.",
+    content: "",
+    category: "otaku",
+    subtopic: "isekai",
+    image: okirakuImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-29",
+    readTime: "13 min",
   },
 ];
 

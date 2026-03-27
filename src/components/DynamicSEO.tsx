@@ -111,6 +111,46 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Guias, análises e ranking completo de todos os jogos Assassin's Creed.",
     keywords: "Assassins Creed, AC Valhalla, AC Shadows, AC Odyssey, AC Black Flag, AC Origins, AC Mirage, Ubisoft, jogos de mundo aberto, ranking Assassins Creed, história, parkour",
   },
+  "/post/solo-leveling-guia-completo-temporadas": {
+    title: "Solo Leveling: Guia Completo — Temporadas, Filme e Personagens",
+    description: "Solo Leveling completo: T1 A-1 Pictures (jan-mar 2024, 12 eps), T2 Arise from the Shadow (jan-mar 2025, 13 eps), filme ReAwakening (nov 2024). Sung Jinwoo, Cha Hae-in e os Monarcas. Anime do Ano Crunchyroll 2025.",
+    keywords: "Solo Leveling, Sung Jinwoo, Monarca das Sombras, A-1 Pictures, temporadas Solo Leveling, Shadow Monarch, Cha Hae-in, manhwa, anime 2024, Crunchyroll Anime Awards, ReAwakening",
+  },
+  "/post/tsukimichi-moonlit-fantasy-guia-completo": {
+    title: "Tsukimichi Moonlit Fantasy: Guia Completo de Temporadas e Personagens",
+    description: "Tsuki ga Michibiku Isekai Douchuu: T1 C2C (jul-set 2021, 12 eps), T2 J.C.Staff (jan-jun 2024, 25 eps), T3 anunciada. Makoto Misumi banido pela deusa, acompanhado de Tomoe e Mio nas terras selvagens de Elysion.",
+    keywords: "Tsukimichi, Tsuki ga Michibiku Isekai Douchuu, Moonlit Fantasy, Makoto Misumi, Tomoe, Mio, isekai 2021, isekai 2024, J.C.Staff, Elysion, temporadas Tsukimichi",
+  },
+  "/post/mugen-gacha-level-9999-traicao-dungeon": {
+    title: "My Gift Lvl 9999 Unlimited Gacha: Traído na Dungeon — Guia Completo",
+    description: "Shinjiteita Nakamatachi ni Dungeon Okuchi de Korosarekaketa: anime J.C.Staff out-dez 2025 no HIDIVE. Light traído pelos companheiros no Abismo usa o Gacha Ilimitada para invocar guerreiras nível 9999 e se vingar.",
+    keywords: "Mugen Gacha, My Gift Lvl 9999, Shinjiteita Nakamatachi, dungeon okuchi, traição isekai, vingança anime 2025, J.C.Staff HIDIVE, Gift Otome, Level 9999, isekai revenge",
+  },
+  "/post/kizoku-tensei-noble-reincarnation-guia": {
+    title: "Noble Reincarnation (Kizoku Tensei): O Príncipe Mais Forte — Guia 2026",
+    description: "Kizoku Tensei anime CompTown estreou jan 2026 (12 eps, Crunchyroll). Noah Ararat, 13º filho do imperador reencarnado, com cap de nível infinito e habilidade de absorver poderes de servos leais.",
+    keywords: "Kizoku Tensei, Noble Reincarnation, Noah Ararat, príncipe isekai, CompTown anime, isekai 2026, Megumareta Umare, Born Blessed, cap nível infinito, anime inverno 2026",
+  },
+  "/post/hell-mode-gamer-isekai-guia-completo": {
+    title: "Hell Mode: O Gamer no Isekai com Dificuldade Máxima — Guia Completo",
+    description: "Hell Mode anime Yokohama Animation Laboratory estreou jan 2026 (HIDIVE/Prime Video). Kenichi Yamada, gamer de 35 anos reencarnado como Allen o Invocador no Hell Mode — 100x mais XP necessário.",
+    keywords: "Hell Mode, Yarikomizuki Gamer, isekai gamer, Allen Invocador, Yokohama Animation Lab, anime 2026, HIDIVE, isekai dificuldade máxima, Hell Mode anime, invocador isekai",
+  },
+  "/post/isekai-nonbiri-nouka-farming-life-guia": {
+    title: "Farming Life in Another World (Isekai Nonbiri Nouka): Guia Completo",
+    description: "Isekai Nonbiri Nouka: T1 anime Zero-G (jan-mar 2023, 12 eps). Hiraku Machio reencarnado com a Ferramenta Universal de Fazenda. Vampiras, elfas e dragões na fazenda. T2 confirmada abril 2026.",
+    keywords: "Isekai Nonbiri Nouka, Farming Life Another World, Hiraku Machio, fazenda isekai, Zero-G anime 2023, temporada 2 Farming Life 2026, slice of life isekai, Loo vampira, Amazon Prime",
+  },
+  "/post/maousama-retry-demon-lord-guia-completo": {
+    title: "Demon Lord Retry! (Maou-sama): Guia Completo — Temporadas e Personagens",
+    description: "Maou-sama Retry: T1 Ekachi Epilka (jul-set 2019, 12 eps) e versão R Gekkō (out-dez 2024). Akira Oono, programador de 45 anos, reencarnado como o Rei Demônio Hakuto Kunai de seu próprio MMORPG.",
+    keywords: "Maou-sama Retry, Demon Lord Retry, Hakuto Kunai, Aku, programador isekai, Ekachi Epilka 2019, Maou-sama Retry R 2024, Kenjiro Tsuda, Angel White, Yu Kirino, rei demônio isekai",
+  },
+  "/post/okiraku-ryoushu-territory-defense-guia": {
+    title: "Easygoing Territory Defense (Okiraku Ryoushu): Guia Completo 2026",
+    description: "Okiraku Ryoushu anime NAZ estreou jan 2026 (12 eps, Crunchyroll). Van usa a Magia de Produção para transformar um vilarejo esquecido na cidade-fortaleza mais poderosa do reino.",
+    keywords: "Okiraku Ryoushu, Easygoing Territory Defense, Van Magia de Produção, NAZ anime 2026, isekai construção, defesa território isekai, Crunchyroll 2026, noble reincarnation build, anime inverno 2026",
+  }
 };
 
 const CATEGORY_KEYWORDS: Record<string, string[]> = {
