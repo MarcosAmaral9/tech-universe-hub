@@ -246,8 +246,7 @@ const PoupancaVsCDBTesouro2026 = () => {
 
         <RelatedPosts currentSlug="poupanca-vs-cdb-tesouro-2026" />
         <CommentSection postId="poupanca-vs-cdb-tesouro-2026" />
-      </article>
-    </>
+    </article>
   );
 };
 

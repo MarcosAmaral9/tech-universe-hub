@@ -249,8 +249,7 @@ const ReservaEmergencia2026 = () => {
 
         <RelatedPosts currentSlug="reserva-emergencia-2026-como-montar" />
         <CommentSection postId="reserva-emergencia-2026-como-montar" />
-      </article>
-    </>
+    </article>
   );
 };
 
