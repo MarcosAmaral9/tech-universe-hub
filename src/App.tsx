@@ -165,6 +165,9 @@ const SelicComecaCair2026    = lazy(() => import("./pages/posts/SelicComecaCair2
 const Bitcoin2026ValeComprar = lazy(() => import("./pages/posts/Bitcoin2026ValeComprar"));
 const IAFinancasPessoais2026 = lazy(() => import("./pages/posts/IAFinancasPessoais2026"));
 const FIIs2026AindaVale      = lazy(() => import("./pages/posts/FIIs2026AindaVale"));
+// 27 Mar 2026 — Finanças
+const PoupancaVsCDBTesouro2026 = lazy(() => import("./pages/posts/PoupancaVsCDBTesouro2026"));
+const ReservaEmergencia2026    = lazy(() => import("./pages/posts/ReservaEmergencia2026"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -216,9 +219,6 @@ const App = () => (
                 <Route path="/post/crimson-desert-review-2026" element={<CrimsonDesertReview />} />
                 <Route path="/post/crimson-desert-builds-guia-2026" element={<CrimsonDesertBuilds />} />
                 <Route path="/post/crimson-desert-mapa-regioes-pywel" element={<CrimsonDesertMapa />} />
-                <Route path="/post/crimson-desert-bosses-guia-chefes" element={<CrimsonDesertBosses />} />
-                <Route path="/post/crimson-desert-guia-iniciantes-dicas" element={<CrimsonDesertIniciantes />} />
-                <Route path="/post/crimson-desert-melhores-equipamentos-inicio" element={<CrimsonDesertEquipamentos />} />
                 <Route path="/post/tensura-guia-completo-temporadas-filmes" element={<TensuraGuiaCompleto />} />
                 <Route path="/post/tensura-personagens-rimuru-demon-lords" element={<TensuraPersonagens />} />
                 <Route path="/post/overlord-guia-completo-temporadas-ainz" element={<OverlordGuiaCompleto />} />
@@ -320,6 +320,9 @@ const App = () => (
                 <Route path="/post/bitcoin-2026-vale-comprar" element={<Bitcoin2026ValeComprar />} />
                 <Route path="/post/ia-para-financas-pessoais-2026" element={<IAFinancasPessoais2026 />} />
                 <Route path="/post/fiis-2026-ainda-vale-investir" element={<FIIs2026AindaVale />} />
+                {/* 27 Mar 2026 — Finanças */}
+                <Route path="/post/poupanca-vs-cdb-tesouro-2026" element={<PoupancaVsCDBTesouro2026 />} />
+                <Route path="/post/reserva-emergencia-2026-como-montar" element={<ReservaEmergencia2026 />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
