@@ -24,18 +24,8 @@ const PoupancaVsCDBTesouro2026 = () => {
   }, []);
 
   return (
-    <>
-      <DynamicSEO
-        title="Poupança vs CDB vs Tesouro Direto em 2026: Qual Rende Mais?"
-        description="Comparativo completo entre Poupança, CDB e Tesouro Direto em 2026. Veja qual rende mais com a Selic a 13,25%, simulações reais e qual é o melhor para cada objetivo."
-        keywords="poupança vs cdb, tesouro direto 2026, poupança rende quanto, cdb ou tesouro, renda fixa 2026, melhor investimento 2026, comparativo investimentos"
-        url="https://viciocode.com/post/poupanca-vs-cdb-tesouro-2026"
-        image="https://viciocode.com/assets/poupanca-vs-cdb-tesouro-2026.webp"
-        type="article"
-        faq={faqData}
-      />
-      <article className="container py-8 max-w-4xl mx-auto">
-        <BackNavigation category="invest" />
+    <article className="container py-8 max-w-4xl mx-auto">
+      <BackNavigation category="invest" />
         <header className="mb-8">
           <div className="flex items-center gap-2 mb-4">
             <CategoryBadge category="invest" size="lg" />

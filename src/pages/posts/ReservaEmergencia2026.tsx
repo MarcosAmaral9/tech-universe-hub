@@ -24,18 +24,8 @@ const ReservaEmergencia2026 = () => {
   }, []);
 
   return (
-    <>
-      <DynamicSEO
-        title="Como Montar Sua Reserva de Emergência em 2026: Guia Definitivo"
-        description="Guia completo para montar sua reserva de emergência em 2026. Quanto guardar, onde investir, quanto tempo leva e os erros mais comuns. Com simulações práticas."
-        keywords="reserva de emergência, como montar reserva, quanto guardar, tesouro selic reserva, emergência financeira 2026, planejamento financeiro, fundo de emergência"
-        url="https://viciocode.com/post/reserva-emergencia-2026-como-montar"
-        image="https://viciocode.com/assets/reserva-emergencia-2026.webp"
-        type="article"
-        faq={faqData}
-      />
-      <article className="container py-8 max-w-4xl mx-auto">
-        <BackNavigation category="invest" />
+    <article className="container py-8 max-w-4xl mx-auto">
+      <BackNavigation category="invest" />
         <header className="mb-8">
           <div className="flex items-center gap-2 mb-4">
             <CategoryBadge category="invest" size="lg" />
