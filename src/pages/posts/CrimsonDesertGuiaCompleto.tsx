@@ -113,7 +113,7 @@ const CrimsonDesertGuiaCompleto = () => {
           fraca, sistemas confusos e missões repetitivas.
         </p>
         <p>
-          As ações da Pearl Abyss caíram <strong>28,96%</strong> na bolsa sul-coreana no dia do lançamento,
+          Em termos de vendas, o jogo superou <strong>2 milhões de cópias vendidas nas primeiras 24 horas</strong> e atingiu <strong>3 milhões de cópias</strong> em cerca de 4 dias após o lançamento — um resultado comercial excepcional para um RPG de mundo aberto de estúdio independente. As ações da Pearl Abyss caíram <strong>28,96%</strong> na bolsa sul-coreana no dia do lançamento,
           pois as notas ficaram abaixo das expectativas internas da empresa.
         </p>
 
@@ -155,6 +155,20 @@ const CrimsonDesertGuiaCompleto = () => {
             comunidade. A publisher não comentou sobre planos de remoção futura.
           </p>
         </div>
+
+              <div className="my-6 p-5 bg-amber-500/10 border border-amber-500/30 rounded-xl">
+                <h3 className="font-bold mb-3 text-amber-400">⚠️ Controvérsias Pós-Lançamento</h3>
+                <div className="space-y-3 text-sm text-muted-foreground">
+                  <div>
+                    <p className="font-bold text-foreground mb-1">🎮 Intel Arc GPU — Suporte Negado</p>
+                    <p>Imediatamente após o lançamento, jogadores e veículos de mídia notaram que Crimson Desert explicitamente não suporta GPUs Intel Arc. A Pearl Abyss sugere que usuários afetados solicitem reembolso no local de compra. A Intel declarou ter contatado a Pearl Abyss múltiplas vezes oferecendo acesso antecipado a hardware, software e drivers para otimização — e que a decisão de não dar suporte foi inteiramente da desenvolvedora.</p>
+                  </div>
+                  <div>
+                    <p className="font-bold text-foreground mb-1">🤖 Assets com IA Generativa</p>
+                    <p>Após o lançamento, jogadores identificaram pinturas e sinalizações dentro do jogo que pareciam ter sido criadas com IA generativa. Isso gerou críticas sobre a Pearl Abyss não ter divulgado o uso de IA na página do Steam, que exige tal declaração pelas políticas da Valve. A Pearl Abyss emitiu um pedido de desculpas, afirmando que os assets foram "incluídos involuntariamente" no build final e que a IA generativa foi usada apenas em "fases iniciais de iteração" para "explorar tom e atmosfera".</p>
+                  </div>
+                </div>
+              </div>
 
         <h2>Requisitos de PC</h2>
         <div className="not-prose my-6 overflow-x-auto">

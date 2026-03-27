@@ -151,6 +151,22 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Okiraku Ryoushu anime NAZ estreou jan 2026 (12 eps, Crunchyroll). Van usa a Magia de Produção para transformar um vilarejo esquecido na cidade-fortaleza mais poderosa do reino.",
     keywords: "Okiraku Ryoushu, Easygoing Territory Defense, Van Magia de Produção, NAZ anime 2026, isekai construção, defesa território isekai, Crunchyroll 2026, noble reincarnation build, anime inverno 2026",
   }
+,
+  "/post/crimson-desert-bosses-guia-chefes": {
+    title: "Crimson Desert: Guia de Bosses — Como Derrotar Todos os Chefes",
+    description: "Guia completo dos 76 bosses de Crimson Desert: estratégias, fraquezas, localização e recompensas de Myurdin, Kailok, Reed Devil, White Horn, Staglord, Hexe Marie, Kearush, Caliburn e mais. Patch 23/03/2026.",
+    keywords: "Crimson Desert bosses, chefes Crimson Desert, Kailok Hornsplitter, Reed Devil, White Horn, Hexe Marie, Kearush Slayer, Caliburn boss final, guia bosses Pywel, fraquezas bosses",
+  },
+  "/post/crimson-desert-guia-iniciantes-dicas": {
+    title: "Crimson Desert: Guia para Iniciantes — 20 Dicas Essenciais",
+    description: "20 dicas para iniciantes em Crimson Desert: progressão sem XP, fast travel, combate avançado, inventário, culinária, companheiros e todos os sistemas que o jogo não explica. Evite os erros mais comuns em Pywel.",
+    keywords: "Crimson Desert iniciantes, dicas Crimson Desert, guia começar Pywel, Abyss Artifacts, fast travel Crimson Desert, combate iniciante, Kliff Greymanes, Crimson Desert tips",
+  },
+  "/post/crimson-desert-melhores-equipamentos-inicio": {
+    title: "Crimson Desert: Melhores Armas e Equipamentos do Início — Onde Encontrar",
+    description: "Os melhores equipamentos do início ao meio de Crimson Desert: Sword of the Lord, Tauria's Curved Sword, Flamespitter, Knuckledrill, armaduras do Fallen Kingdom, Palm Concentrates e guia de refinamento completo.",
+    keywords: "Crimson Desert equipamentos, melhores armas Crimson Desert, Sword of the Lord, Tauria Curved Sword, Flamespitter, Knuckledrill, Palm Concentrate, onde encontrar armas Pywel, refinamento armas",
+  }
 };
 
 const CATEGORY_KEYWORDS: Record<string, string[]> = {

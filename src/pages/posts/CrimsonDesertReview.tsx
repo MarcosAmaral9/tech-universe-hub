@@ -77,6 +77,11 @@ const CrimsonDesertReview = () => {
           <p className="text-xs text-muted-foreground mt-3">
             * IGN publicou nota provisória de 6/10 após 110 horas com o jogo inacabado. Nota final pendente.
             Metacritic PC: 78 (85–91 críticas). OpenCritic: 80, 81% de recomendação.
+              No Steam, o jogo atingiu um pico de <strong>239.000 jogadores simultâneos</strong> no lançamento,
+              mas recebeu avaliações <strong>"Mistas"</strong> inicialmente — principalmente pela densidade excessiva de sistemas,
+              curva de aprendizado íngreme e falta de tutoriais claros. A Pearl Abyss respondeu com um patch
+              em <strong>23 de março de 2026</strong> que reduziu HP e dano de bosses específicos, diminuiu consumo de stamina
+              em bloqueios e ajustou padrões de ataque de Kearush the Slayer.
           </p>
         </div>
 
