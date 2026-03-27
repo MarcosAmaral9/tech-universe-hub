@@ -7,7 +7,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import heroImg from "@/assets/poupanca-vs-cdb-tesouro-2026.webp";
-import DynamicSEO from "@/components/DynamicSEO";
+
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 
 const faqData = [
