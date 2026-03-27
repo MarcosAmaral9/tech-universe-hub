@@ -92,6 +92,7 @@ import overlordCharsImg from "@/assets/overlord-personagens.webp";
 import selicCairImg from "@/assets/selic-cair-2026.webp";
 import bitcoin2026ValeImg from "@/assets/bitcoin-2026-vale-comprar.webp";
 import iaFinancasPessoaisImg from "@/assets/ia-financas-pessoais-2026.webp";
+import fiis2026AindaValeImg from "@/assets/fiis-2026-ainda-vale.webp";
 import poupancaVsCdbTesouroImg from "@/assets/poupanca-vs-cdb-tesouro-2026.webp";
 import reservaEmergenciaImg from "@/assets/reserva-emergencia-2026.webp";
 
