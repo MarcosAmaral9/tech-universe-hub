@@ -167,6 +167,28 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Os melhores equipamentos do início ao meio de Crimson Desert: Sword of the Lord, Tauria's Curved Sword, Flamespitter, Knuckledrill, armaduras do Fallen Kingdom, Palm Concentrates e guia de refinamento completo.",
     keywords: "Crimson Desert equipamentos, melhores armas Crimson Desert, Sword of the Lord, Tauria Curved Sword, Flamespitter, Knuckledrill, Palm Concentrate, onde encontrar armas Pywel, refinamento armas",
   }
+,
+  "/post/poupanca-vs-cdb-tesouro-2026": {
+    title: "Poupança vs CDB vs Tesouro Direto 2026: Qual Rende Mais?",
+    description: "Comparativo completo entre Poupança, CDB e Tesouro Direto em 2026: rentabilidade real, liquidez, risco e imposto de renda. Saiba qual investimento é melhor para cada objetivo.",
+    keywords: "poupança vs CDB, Tesouro Direto 2026, CDB rendimento, poupança ou tesouro, melhor investimento 2026, renda fixa comparativo, liquidez investimento, IR investimentos",
+  },
+  "/post/reserva-emergencia-2026-como-montar": {
+    title: "Como Montar Sua Reserva de Emergência em 2026 — Guia Completo",
+    description: "Guia completo para montar reserva de emergência em 2026: quanto guardar, onde investir, quanto tempo leva e os erros mais comuns. Com simulações práticas por faixa de renda.",
+    keywords: "reserva de emergência 2026, quanto guardar reserva, Tesouro Selic reserva, CDB liquidez diária, como montar reserva emergência, fundo emergência, proteção financeira",
+  }
+,
+  "/post/poupanca-vs-cdb-tesouro-2026": {
+    title: "Poupança vs CDB vs Tesouro Direto em 2026: Qual Rende Mais?",
+    description: "Comparação completa entre Poupança, CDB e Tesouro Direto em 2026: rendimentos, liquidez, riscos, imposto de renda e qual escolher para cada objetivo financeiro.",
+    keywords: "poupança vs CDB vs Tesouro Direto, melhor investimento 2026, rendimento poupança, CDB liquidez diária, Tesouro Selic, renda fixa comparação, investimento iniciante, Selic 2026",
+  },
+  "/post/reserva-emergencia-2026-como-montar": {
+    title: "Como Montar Sua Reserva de Emergência em 2026: Guia Definitivo",
+    description: "Guia completo para montar reserva de emergência em 2026: quanto guardar, onde investir (Tesouro Selic vs CDB), quanto tempo leva e os erros mais comuns. Com simulações por faixa de renda.",
+    keywords: "reserva emergência 2026, quanto guardar reserva emergência, onde investir reserva emergência, Tesouro Selic reserva, CDB liquidez diária, quanto meses de despesas, reserva CLT autônomo",
+  }
 };
 
 const CATEGORY_KEYWORDS: Record<string, string[]> = {

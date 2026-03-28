@@ -43,7 +43,7 @@ const ReservaEmergencia2026 = () => {
         </header>
 
         <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-          <img src={heroImg} alt="Como montar reserva de emergência 2026" fetchPriority="high" loading="eager" decoding="async" className="w-full h-full object-cover" />
+          <img fetchpriority="high" src={heroImg} alt="Como montar reserva de emergência 2026" fetchPriority="high" loading="eager" decoding="async" className="w-full h-full object-cover" />
         </div>
 
         <div className="prose prose-lg dark:prose-invert max-w-none">
