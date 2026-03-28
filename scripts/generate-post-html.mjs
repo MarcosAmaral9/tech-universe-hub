@@ -75,23 +75,41 @@ for (const post of posts) {
   const url  = `${BASE_URL}/post/${post.slug}`;
   // Find matching image asset
   const slug = post.slug.replace(/-2026$/, "");
-  // Match Vite-hashed asset to slug by trying progressively shorter base names.
-  // e.g. "ac-1-altair-BDCJ-Fck.webp" → tries "ac-1-altair-BDCJ-Fck", "ac-1-altair-BDCJ",
-  //      "ac-1-altair" → slug "ac-1-altair-terra-santa-1191".startsWith("ac-1-altair") = true ✓
-  const img  = assetFiles.find(f => {
-    if (!/\.(webp|jpg|png)$/.test(f)) return false;
-    if (f.startsWith(slug)) return true;
+  // Explicit slug→asset-prefix overrides for slugs whose prefix doesn't match the image name
+  const SLUG_ASSET_OVERRIDES = {
+    "crimson-desert-guia-iniciantes-dicas":         "crimson-desert-iniciantes",
+    "crimson-desert-melhores-equipamentos-inicio":  "crimson-desert-equipamentos",
+    "tsukimichi-moonlit-fantasy-guia-completo":     "tsukimichi",
+    "mugen-gacha-level-9999-traicao-dungeon":       "mugen-gacha",
+    "kizoku-tensei-noble-reincarnation-guia":       "kizoku-tensei",
+    "hell-mode-gamer-isekai-guia-completo":         "hell-mode",
+    "isekai-nonbiri-nouka-farming-life-guia":       "isekai-nonbiri-nouka",
+    "maousama-retry-demon-lord-guia-completo":      "maousama-retry",
+    "okiraku-ryoushu-territory-defense-guia":       "okiraku-ryoushu",
+    "solo-leveling-guia-completo-temporadas":       "solo-leveling",
+  };
+  const assetPrefix = SLUG_ASSET_OVERRIDES[post.slug] || slug;
+  // Match Vite-hashed asset to slug using LONGEST-MATCH semantics.
+  // Strips Vite hash suffix (e.g. "crimson-desert-bosses-Cm-pQ51J.webp" → "crimson-desert-bosses")
+  // then checks slug.startsWith(base). Longest match wins to prevent cross-matches like
+  // "crimson-desert-builds" incorrectly matching "crimson-desert-bosses-guia-chefes".
+  let img = undefined;
+  let imgBestLen = 0;
+  for (const f of assetFiles) {
+    if (!/\.(webp|jpg|png)$/.test(f)) continue;
+    if (f.startsWith(assetPrefix)) { img = f; break; }
     const parts = f.replace(/\.(webp|jpg|png)$/, "").split("-");
     for (let i = parts.length; i >= 1; i--) {
       const base = parts.slice(0, i).join("-");
-      // Require base is at least 4 chars AND ends with a non-alpha segment (number or known suffix)
-      // OR is at least 8 chars. This handles "ac-3" (4 chars) without matching bare "ac"
       const endsWithNumber = /\d$/.test(base);
       const minLen = endsWithNumber ? 4 : 8;
-      if (base.length >= minLen && slug.startsWith(base)) return true;
+      if (base.length >= minLen && slug.startsWith(base) && base.length > imgBestLen) {
+        imgBestLen = base.length;
+        img = f;
+        break;
+      }
     }
-    return false;
-  });
+  }
   const ogImg = img ? `${BASE_URL}/assets/${img}` : `${BASE_URL}/og-image.jpg`;
 
   const inject = `

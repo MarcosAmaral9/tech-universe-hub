@@ -8,6 +8,9 @@ import crimsonCombateImg from "@/assets/crimson-desert-combate.webp";
 import crimsonReviewImg from "@/assets/crimson-desert-review.webp";
 import crimsonMapaImg    from "@/assets/crimson-desert-mapa-pywel.webp";
 import crimsonBuildsImg from "@/assets/crimson-desert-builds.webp";
+import crimsonBossesImg    from "@/assets/crimson-desert-bosses.webp";
+import crimsonIniciantesImg from "@/assets/crimson-desert-iniciantes.webp";
+import crimsonEquipImg     from "@/assets/crimson-desert-equipamentos.webp";
 
 const CrimsonDesertPanel = () => {
   const articles = [
@@ -50,6 +53,27 @@ const CrimsonDesertPanel = () => {
       desc: "Pywel tem 5 regiões + The Abyss — tamanho, biomas, bosses e como se locomover.",
       image: crimsonMapaImg,
       btn: "Ver Mapa",
+    },
+    {
+      slug: "crimson-desert-bosses-guia-chefes",
+      title: "Guia de Bosses",
+      desc: "76 bosses: onde encontrar, como derrotar e recompensas de cada chefe.",
+      image: crimsonBossesImg,
+      badge: "⚔️ Bosses",
+    },
+    {
+      slug: "crimson-desert-guia-iniciantes-dicas",
+      title: "Guia para Iniciantes",
+      desc: "20 dicas essenciais: combate, exploração, recursos e sistemas ocultos.",
+      image: crimsonIniciantesImg,
+      badge: "🗺️ Iniciantes",
+    },
+    {
+      slug: "crimson-desert-melhores-equipamentos-inicio",
+      title: "Melhores Equipamentos",
+      desc: "Onde encontrar as melhores armas e armaduras do início ao meio do jogo.",
+      image: crimsonEquipImg,
+      badge: "🗡️ Equipamentos",
     },
   ];
 

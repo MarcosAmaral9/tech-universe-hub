@@ -153,6 +153,9 @@ const CrimsonDesertCombate = lazy(() => import("./pages/posts/CrimsonDesertComba
 const CrimsonDesertReview = lazy(() => import("./pages/posts/CrimsonDesertReview"));
 const CrimsonDesertBuilds = lazy(() => import("./pages/posts/CrimsonDesertBuilds"));
 const CrimsonDesertMapa     = lazy(() => import("./pages/posts/CrimsonDesertMapa"));
+const CrimsonDesertBosses      = lazy(() => import("./pages/posts/CrimsonDesertBosses"));
+const CrimsonDesertIniciantes  = lazy(() => import("./pages/posts/CrimsonDesertIniciantes"));
+const CrimsonDesertEquipamentos = lazy(() => import("./pages/posts/CrimsonDesertEquipamentos"));
 const TensuraGuiaCompleto   = lazy(() => import("./pages/posts/TensuraGuiaCompleto"));
 const TensuraPersonagens    = lazy(() => import("./pages/posts/TensuraPersonagens"));
 const TensuraPortal         = lazy(() => import("./pages/posts/TensuraPortal"));
@@ -219,6 +222,9 @@ const App = () => (
                 <Route path="/post/crimson-desert-review-2026" element={<CrimsonDesertReview />} />
                 <Route path="/post/crimson-desert-builds-guia-2026" element={<CrimsonDesertBuilds />} />
                 <Route path="/post/crimson-desert-mapa-regioes-pywel" element={<CrimsonDesertMapa />} />
+                <Route path="/post/crimson-desert-bosses-guia-chefes" element={<CrimsonDesertBosses />} />
+                <Route path="/post/crimson-desert-guia-iniciantes-dicas" element={<CrimsonDesertIniciantes />} />
+                <Route path="/post/crimson-desert-melhores-equipamentos-inicio" element={<CrimsonDesertEquipamentos />} />
                 <Route path="/post/tensura-guia-completo-temporadas-filmes" element={<TensuraGuiaCompleto />} />
                 <Route path="/post/tensura-personagens-rimuru-demon-lords" element={<TensuraPersonagens />} />
                 <Route path="/post/overlord-guia-completo-temporadas-ainz" element={<OverlordGuiaCompleto />} />
