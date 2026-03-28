@@ -177,6 +177,16 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Guia completo para montar reserva de emergência em 2026: quanto guardar, onde investir (Tesouro Selic vs CDB), quanto tempo leva e os erros mais comuns. Com simulações por faixa de renda.",
     keywords: "reserva emergência 2026, quanto guardar reserva emergência, onde investir reserva emergência, Tesouro Selic reserva, CDB liquidez diária, quanto meses de despesas, reserva CLT autônomo",
   },
+  "/post/ia-ciberseguranca-2026": {
+    title: "IA e Cibersegurança em 2026: Como a Inteligência Artificial Defende e Ataca",
+    description: "A IA é a principal arma de defesa e ataque no mundo digital. Entenda como ela detecta ameaças, como hackers a exploram e como se proteger em 2026.",
+    keywords: "IA cibersegurança, inteligência artificial segurança digital, ciberataques IA 2026, deepfake fraude, phishing IA, SOC inteligência artificial, proteção digital, cibercrime 2026",
+  },
+  "/post/prompt-engineering-guia-2026": {
+    title: "Prompt Engineering 2026: Guia Definitivo para Escrever Prompts que Funcionam",
+    description: "Aprenda prompt engineering do zero ao avançado: few-shot, chain-of-thought, personas, templates prontos e erros comuns. Guia prático para ChatGPT, Gemini e Claude em 2026.",
+    keywords: "prompt engineering 2026, como escrever prompts, few-shot prompting, chain of thought, ChatGPT prompts, Gemini prompts, técnicas prompt, IA produtividade, engenharia de prompt",
+  },
 };
 
 const CATEGORY_KEYWORDS: Record<string, string[]> = {
