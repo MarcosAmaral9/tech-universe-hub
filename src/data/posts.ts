@@ -98,8 +98,52 @@ import iaFinancasPessoaisImg from "@/assets/ia-financas-pessoais-2026.webp";
 import fiis2026AindaValeImg from "@/assets/fiis-2026-ainda-vale.webp";
 import poupancaVsCdbTesouroImg from "@/assets/poupanca-vs-cdb-tesouro-2026.webp";
 import reservaEmergenciaImg from "@/assets/reserva-emergencia-2026.webp";
+import iaCibersegurancaImg from "@/assets/ia-ciberseguranca-2026.webp";
+import promptEngineeringImg from "@/assets/prompt-engineering-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+
+  // ── 28 Mar 2026 — IA ──────────────────────────────────────
+  {
+    id: "137",
+    slug: "ia-ciberseguranca-2026",
+    title: "IA e Cibersegurança em 2026: Como a Inteligência Artificial Defende (e Ataca) o Mundo Digital",
+    excerpt: "A IA é a principal arma de defesa e ataque no mundo digital. Entenda como ela detecta ameaças, como hackers a exploram e como se proteger em 2026.",
+    content: "",
+    category: "ia",
+    subtopic: "seguranca",
+    image: iaCibersegurancaImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-28",
+    readTime: "14 min",
+    faq: [
+      { q: "Como a IA é usada em cibersegurança?", a: "A IA é usada para detectar ameaças em tempo real, analisar padrões de tráfego de rede, identificar comportamentos anômalos, automatizar respostas a incidentes e prever ataques antes que aconteçam." },
+      { q: "Hackers também usam IA para atacar?", a: "Sim. Cibercriminosos usam IA para criar e-mails de phishing mais convincentes, gerar deepfakes para engenharia social, automatizar a descoberta de vulnerabilidades e adaptar malwares para escapar de antivírus." },
+      { q: "O que é um SOC com IA?", a: "Um SOC (Security Operations Center) com IA é um centro de operações de segurança que utiliza inteligência artificial para monitorar, detectar e responder a ameaças de forma automatizada." },
+      { q: "A IA vai substituir profissionais de cibersegurança?", a: "Não. A IA complementa os profissionais, automatizando tarefas repetitivas, mas decisões estratégicas e investigações complexas ainda exigem especialistas humanos." },
+      { q: "Quais são as principais ameaças de IA em 2026?", a: "Phishing gerado por IA, deepfakes em tempo real para fraudes, malware adaptativo e ataques automatizados em larga escala a APIs e infraestruturas cloud." },
+    ],
+  },
+  {
+    id: "138",
+    slug: "prompt-engineering-guia-2026",
+    title: "Prompt Engineering em 2026: Guia Definitivo para Escrever Prompts que Funcionam",
+    excerpt: "Aprenda a escrever prompts que realmente funcionam. Técnicas de few-shot, chain-of-thought, personas e templates prontos para usar no dia a dia com ChatGPT, Gemini e Claude.",
+    content: "",
+    category: "ia",
+    subtopic: "produtividade",
+    image: promptEngineeringImg,
+    author: "VICIO<CODE>",
+    date: "2026-03-28",
+    readTime: "15 min",
+    faq: [
+      { q: "O que é prompt engineering?", a: "Prompt engineering é a técnica de escrever instruções claras e estruturadas para obter melhores respostas de modelos de IA como ChatGPT, Gemini e Claude." },
+      { q: "Preciso saber programar para fazer prompt engineering?", a: "Não. Prompt engineering é essencialmente sobre comunicação clara em linguagem natural. Qualquer pessoa pode aprender as técnicas básicas." },
+      { q: "Qual a diferença entre zero-shot, few-shot e chain-of-thought?", a: "Zero-shot é pedir algo sem exemplos. Few-shot é fornecer 2-3 exemplos do resultado esperado. Chain-of-thought é pedir que a IA explique seu raciocínio passo a passo." },
+      { q: "Prompt engineering é uma profissão real?", a: "Sim. Em 2026, empresas como Anthropic, Google e startups de IA contratam especialistas em prompt engineering com salários entre US$ 80 mil e US$ 200 mil anuais nos EUA." },
+      { q: "Quais são os erros mais comuns ao escrever prompts?", a: "Prompts vagos sem contexto, não especificar formato da resposta, pedir tudo de uma vez, não iterar sobre o resultado e assumir que a IA sabe o contexto que você tem em mente." },
+    ],
+  },
 
   // ── 27 Mar 2026 — Finanças ────────────────────────────────
   {

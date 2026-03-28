@@ -171,6 +171,9 @@ const FIIs2026AindaVale      = lazy(() => import("./pages/posts/FIIs2026AindaVal
 // 27 Mar 2026 — Finanças
 const PoupancaVsCDBTesouro2026 = lazy(() => import("./pages/posts/PoupancaVsCDBTesouro2026"));
 const ReservaEmergencia2026    = lazy(() => import("./pages/posts/ReservaEmergencia2026"));
+// 28 Mar 2026 — IA
+const IACiberseguranca2026     = lazy(() => import("./pages/posts/IACiberseguranca2026"));
+const PromptEngineering2026    = lazy(() => import("./pages/posts/PromptEngineering2026"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -329,6 +332,9 @@ const App = () => (
                 {/* 27 Mar 2026 — Finanças */}
                 <Route path="/post/poupanca-vs-cdb-tesouro-2026" element={<PoupancaVsCDBTesouro2026 />} />
                 <Route path="/post/reserva-emergencia-2026-como-montar" element={<ReservaEmergencia2026 />} />
+                {/* 28 Mar 2026 — IA */}
+                <Route path="/post/ia-ciberseguranca-2026" element={<IACiberseguranca2026 />} />
+                <Route path="/post/prompt-engineering-guia-2026" element={<PromptEngineering2026 />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
