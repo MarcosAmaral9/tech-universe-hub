@@ -77,7 +77,7 @@ const MelhoresMangas2026 = () => {
           <strong>Punpun</strong> (Inio Asano) é uma exploração devastadoramente honesta de saúde mental. <strong>Homunculus</strong> explora neurociência e percepção de realidade. <strong>Nausicaä</strong> de Hayao Miyazaki vai muito além do filme. <strong>A Silent Voice</strong> é uma das obras mais emotivas sobre bullying e redenção já escritas.
         </p>
         <p>
-          Em 2026, <strong>Frieren: Beyond Journey's End</strong> continua sua publicação no Brasil pela Panini. <strong>Blue Period</strong> chegou completo e é uma das obras mais inspiradoras dos últimos anos. Fique de olho nos announcements da Panini, JBC e Newpop!
+          Em 2026, <strong>Frieren: Beyond Journey's End</strong> continua sua publicação no Brasil pela Panini. <strong>Blue Period</strong> chegou completo e é uma das obras mais inspiradoras dos últimos anos. Fique de olho nos anúncios da Panini, JBC e Newpop!
         </p>
 
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
