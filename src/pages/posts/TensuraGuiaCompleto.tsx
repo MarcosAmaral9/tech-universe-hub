@@ -55,8 +55,8 @@ const TensuraGuiaCompleto = () => {
             ["Clayman Revenge", "Dem. Lord Clayman adquire 'Regressor' e volta 70 anos no tempo"],
             ["Gourmet Story: Peko & Rimuru", "Culinária e conflitos — spin-off de Chika Nakatani (2023)"],
             ["Trinity in Tempest", "Três espiãs de diferentes Dem. Lords vivendo em Tempest"],
-            ["Ways of the Monster Nation", "Guia da vida em Tempest — by Shō Okagiri"],
-            ["How to Spend a Certain Vacation", "Side-story: Rimuru, Veldora e Hinata — by Yuzo Takada (2023–2025)"],
+            ["Ways of the Monster Nation", "Guia da vida em Tempest — de Shō Okagiri"],
+            ["How to Spend a Certain Vacation", "História paralela: Rimuru, Veldora e Hinata — de Yuzo Takada (2023–2025)"],
           ].map(([t, d]) => (
             <div key={t} className="bg-card border border-border rounded-lg p-3 text-sm">
               <p className="font-bold text-foreground">{t}</p>
