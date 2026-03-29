@@ -52,9 +52,9 @@ const TensuraGuiaCompleto = () => {
         <div className="not-prose grid sm:grid-cols-2 gap-3 my-4">
           {[
             ["The Slime Diaries", "Slice-of-life no cotidiano de Tempest — de Shiba (anime em 2021)"],
-            ["Clayman Revenge", "Dem. Lord Clayman adquire 'Regressor' e volta 70 anos no tempo"],
+            ["Clayman Revenge", "Lorde Demônio Clayman adquire 'Regressor' e volta 70 anos no tempo"],
             ["Gourmet Story: Peko & Rimuru", "Culinária e conflitos — spin-off de Chika Nakatani (2023)"],
-            ["Trinity in Tempest", "Três espiãs de diferentes Dem. Lords vivendo em Tempest"],
+            ["Trinity in Tempest", "Três espiãs de diferentes Lordes Demônio vivendo em Tempest"],
             ["Ways of the Monster Nation", "Guia da vida em Tempest — de Shō Okagiri"],
             ["How to Spend a Certain Vacation", "História paralela: Rimuru, Veldora e Hinata — de Yuzo Takada (2023–2025)"],
           ].map(([t, d]) => (
