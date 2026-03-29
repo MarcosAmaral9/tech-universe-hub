@@ -352,12 +352,12 @@ const DynamicSEO = () => {
         geek: { path: "/geek", name: "Geek" },
         otaku: { path: "/otaku", name: "Otaku" },
       };
-      const cat = categoryMap[post.category] || { path: "/", name: "Home" };
+      const cat = categoryMap[post.category] || { path: "/", name: "Início" };
       breadcrumbEl.textContent = JSON.stringify({
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+          { "@type": "ListItem", position: 1, name: "Início", item: BASE_URL },
           { "@type": "ListItem", position: 2, name: cat.name, item: `${BASE_URL}${cat.path}` },
           { "@type": "ListItem", position: 3, name: post.title, item: url },
         ],
@@ -393,7 +393,7 @@ const DynamicSEO = () => {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+          { "@type": "ListItem", position: 1, name: "Início", item: BASE_URL },
           { "@type": "ListItem", position: 2, name: catName, item: url },
         ],
       });

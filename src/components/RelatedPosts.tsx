@@ -56,7 +56,7 @@ const RelatedPosts = ({ currentSlug }: RelatedPostsProps) => {
       <AdInArticle className="mb-8" />
       <h3 className="font-display text-2xl font-bold mb-6 flex items-center gap-2">
         <ArrowRight className="h-6 w-6 text-primary" />
-        Posts Relacionados
+        Artigos Relacionados
       </h3>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
