@@ -123,7 +123,7 @@ const TermsPage = () => {
             </p>
             <ul className="list-disc pl-6 text-muted-foreground space-y-2">
               <li>Alternância entre tema claro e escuro</li>
-              <li>Escolha de cor de destaque (accent color)</li>
+              <li>Escolha de cor de destaque</li>
               <li>Ajuste do tamanho da fonte</li>
               <li>Artigos relacionados personalizados baseados no seu histórico de leitura (para usuários logados)</li>
               <li>Configuração de notificações do site e do app</li>
