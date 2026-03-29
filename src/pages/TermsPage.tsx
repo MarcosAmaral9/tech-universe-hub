@@ -125,7 +125,7 @@ const TermsPage = () => {
               <li>Alternância entre tema claro e escuro</li>
               <li>Escolha de cor de destaque (accent color)</li>
               <li>Ajuste do tamanho da fonte</li>
-              <li>Posts relacionados personalizados baseados no seu histórico de leitura (para usuários logados)</li>
+              <li>Artigos relacionados personalizados baseados no seu histórico de leitura (para usuários logados)</li>
               <li>Configuração de notificações do site e do app</li>
             </ul>
             <p className="text-muted-foreground mt-4">

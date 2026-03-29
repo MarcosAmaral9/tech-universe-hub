@@ -63,7 +63,7 @@ const PrivacyPolicyPage = () => {
               <li>Gerenciar sua conta e autenticação no site e app</li>
               <li>Exibir seu apelido e avatar nos comentários</li>
               <li>Personalizar a experiência de navegação (tema, cor, fonte)</li>
-              <li>Recomendar posts relacionados que você ainda não leu</li>
+              <li>Recomendar artigos relacionados que você ainda não leu</li>
               <li>Moderar comentários para manter um ambiente seguro</li>
               <li>Exibir anúncios personalizados através de parceiros de publicidade</li>
               <li>Analisar métricas de uso para aprimorar o site e o app</li>
