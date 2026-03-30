@@ -110,7 +110,7 @@ for (const post of posts) {
       }
     }
   }
-  const ogImg = img ? `${BASE_URL}/assets/${img}` : `${BASE_URL}/icon-512x512.png`;
+  const ogImg = img ? `${BASE_URL}/assets/${img}` : `${BASE_URL}/og-image.png`;
 
   const inject = `
     <title>${e(post.title)} | VICIO&lt;CODE&gt;</title>
