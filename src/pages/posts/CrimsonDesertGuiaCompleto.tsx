@@ -66,7 +66,7 @@ const CrimsonDesertGuiaCompleto = () => {
               ["Engine",         "BlackSpace Engine (proprietária)"],
               ["Metacritic PC",  "78 — Geralmente Favorável"],
               ["OpenCritic",     "80 — Strong (81% recomendam)"],
-              ["Preço",          "US$ 69,99 (Standard) | US$ 79,99 (Deluxe)"],
+              ["Preço",          "R$ 349,90 (Standard) | R$ 399,90 (Deluxe)"],
               ["DRM",            "Denuvo (versão PC)"],
               ["Classificação",  "Mature 17+ (ESRB)"],
               ["Tempo de jogo",  "Críticos reportam 110–150h para exploração ampla"],
@@ -123,15 +123,15 @@ const CrimsonDesertGuiaCompleto = () => {
             <thead>
               <tr className="bg-secondary">
                 <th className="text-left py-3 px-4">Edição</th>
-                <th className="text-left py-3 px-4">Preço (USD)</th>
+                <th className="text-left py-3 px-4">Preço (R$)</th>
                 <th className="text-left py-3 px-4">Conteúdo</th>
               </tr>
             </thead>
             <tbody>
               {[
-                ["Standard",    "US$ 69,99",  "Jogo base"],
-                ["Deluxe",      "US$ 79,99",  "Jogo + cosméticos exclusivos (mochila, skin de armadura, skin de cavalo)"],
-                ["Collector's", "US$ 279,99", "Deluxe + estatueta, artbook, mapa de pano de Pywel, trilha sonora em CD"],
+                ["Standard",    "R$ 349,90",  "Jogo base"],
+                ["Deluxe",      "R$ 399,90",  "Jogo + cosméticos exclusivos (mochila, skin de armadura, skin de cavalo)"],
+                ["Collector's", "R$ 1.599,90", "Deluxe + estatueta, artbook, mapa de pano de Pywel, trilha sonora em CD"],
               ].map(([e, p, c]) => (
                 <tr key={e} className="border-t border-border">
                   <td className="py-3 px-4 font-medium">{e}</td>
@@ -142,8 +142,7 @@ const CrimsonDesertGuiaCompleto = () => {
             </tbody>
           </table>
           <p className="text-xs text-muted-foreground mt-2">
-            ⚠️ Preços em USD. O valor em reais varia conforme a cotação do dólar na loja no momento da compra.
-            A Pearl Abyss não implementou regional pricing no Steam no lançamento.
+            ⚠️ Preços em reais conforme listado na Steam Brasil. Valores podem variar conforme promoções.
           </p>
         </div>
 
