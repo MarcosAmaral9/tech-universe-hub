@@ -45,7 +45,7 @@ const CrimsonDesertIniciantes = () => {
         <div className="not-prose my-6 p-5 bg-card border border-border rounded-xl">
           <p className="font-bold mb-2">📋 O que este guia cobre:</p>
           <div className="grid sm:grid-cols-2 gap-1 text-sm text-muted-foreground">
-            {["Progressão de personagem sem XP","Sistema de fast travel e exploração","Combate e mecânicas de boss","Inventário e gerenciamento de recursos","Companheiros e animais de estimação","Culinária e cura durante combate","Missões de fação e priorização","Erros comuns que custam horas de jogo"].map(i => <p key={i} className="mb-0">• {i}</p>)}
+            {["Progressão de personagem sem XP","Sistema de fast travel e exploração","Combate e mecânicas de boss","Inventário e gerenciamento de recursos","Companheiros e animais de estimação","Culinária e cura durante combate","Missões de facção e priorização","Erros comuns que custam horas de jogo"].map(i => <p key={i} className="mb-0">• {i}</p>)}
           </div>
         </div>
 
@@ -166,7 +166,7 @@ const CrimsonDesertIniciantes = () => {
             },
             {
               num:"15", title:"Compre mochilas extras em cada vendedor que encontrar",
-              desc:"Quase todo vendedor vende uma mochila barata que aumenta seu inventário em 1 slot. Parece pouco, mas visitando todos os vendedores de Hernand você pode ganhar 12+ slots cedo. Missões de fação de cada região também concedem 3 slots extras por missão. No final do jogo, você pode ter 200+ slots.",
+              desc:"Quase todo vendedor vende uma mochila barata que aumenta seu inventário em 1 slot. Parece pouco, mas visitando todos os vendedores de Hernand você pode ganhar 12+ slots cedo. Missões de facção de cada região também concedem 3 slots extras por missão. No final do jogo, você pode ter 200+ slots.",
             },
             {
               num:"16", title:"Invest em HP e Stamina antes de habilidades",
@@ -199,8 +199,8 @@ const CrimsonDesertIniciantes = () => {
               desc:"Centenas de cães e gatos habitam Pywel. Ao petear um animal regularmente ao longo de vários dias, você constrói confiança com aquele animal específico. Ao atingir 100 de confiança, ele pode ser convocado e ajudar a coletar itens automaticamente de inimigos derrotados.",
             },
             {
-              num:"19", title:"Missões de fação expandem o mapa e dão slots de inventário",
-              desc:"Cada região tem missões de fação que concedem recompensas únicas impossíveis de obter de outra forma: slots de inventário, armas exclusivas e conhecimento sobre lore. Em Hernand, complete as Hernand Commission quests — cada uma dá 3 slots extras de inventário.",
+              num:"19", title:"Missões de facção expandem o mapa e dão slots de inventário",
+              desc:"Cada região tem missões de facção que concedem recompensas únicas impossíveis de obter de outra forma: slots de inventário, armas exclusivas e conhecimento sobre lore. Em Hernand, complete as Hernand Commission quests — cada uma dá 3 slots extras de inventário.",
             },
             {
               num:"20", title:"Salvar manual existe — mas está escondido",

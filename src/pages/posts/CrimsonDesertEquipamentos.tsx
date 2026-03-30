@@ -73,7 +73,7 @@ const CrimsonDesertEquipamentos = () => {
           <span className="text-red-400">⚔️</span> Tauria's Curved Sword — Melhor Espada Curva Inicial
         </h3>
         <div className="not-prose grid sm:grid-cols-2 gap-3 my-3 text-sm">
-          {[["📍 Onde Obter","Derrote Draven the Crowcaller — Floresta, missão de fação"],["⚡ Habilidade Especial","Alta velocidade de ataque + combos longos"],["🔧 Tipo","Espada curva (velocidade)"],["💡 Observação","Ideal para estilo de combate agressivo e rápido"]].map(([k,v])=>(
+          {[["📍 Onde Obter","Derrote Draven the Crowcaller — Floresta, missão de facção"],["⚡ Habilidade Especial","Alta velocidade de ataque + combos longos"],["🔧 Tipo","Espada curva (velocidade)"],["💡 Observação","Ideal para estilo de combate agressivo e rápido"]].map(([k,v])=>(
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs text-muted-foreground">{k}</p><p className="font-medium">{v}</p></div>
           ))}
         </div>
@@ -136,9 +136,9 @@ const CrimsonDesertEquipamentos = () => {
               {[
                 ["Luvas do Fallen Kingdom","Caverna atrás da Cachoeira — norte de Hernand","Explore a cachoeira no norte. Entrada escondida pela névoa"],
                 ["Botas do Fallen Kingdom","Caverna atrás da segunda Cachoeira — leste de Pailune","Mesma mecânica — segunda cachoeira na região de Pailune"],
-                ["Armadura completa de Cavaleiro","Derrote Fortain the Cursed Knight — dungeon de fação","Boss opcional em dungeon — recomendado para Capítulo 3+"],
+                ["Armadura completa de Cavaleiro","Derrote Fortain the Cursed Knight — dungeon de facção","Boss opcional em dungeon — recomendado para Capítulo 3+"],
                 ["Elmo de Hernand","Completar série de missões Hernand Commission","3 missões = 3 slots de inventário + capacete de região"],
-                ["Peitoral dos Greymanes","Missões de fação Greymane — Camp upgrades","Upgrade o camp Greymane o quanto antes possível"],
+                ["Peitoral dos Greymanes","Missões de facção Greymane — Camp upgrades","Upgrade o camp Greymane o quanto antes possível"],
               ].map(([p,l,h]) => (
                 <TableRow key={p}>
                   <TableCell className="font-medium">{p}</TableCell>
@@ -186,7 +186,7 @@ const CrimsonDesertEquipamentos = () => {
               icon:"🎒", name:"Mochilas de Slot Adicional",
               where:"Praticamente todo vendedor em Pywel",
               how:"Cada vendedor vende uma mochila barata com +1 slot. Compre de todos que encontrar.",
-              why:"Sem slots suficientes você perde loot valioso ou precisa descartar itens constantemente. Missões de fação também dão +3 slots cada — complete-as.",
+              why:"Sem slots suficientes você perde loot valioso ou precisa descartar itens constantemente. Missões de facção também dão +3 slots cada — complete-as.",
             },
           ].map(item => (
             <div key={item.name} className="p-4 bg-card border border-border rounded-xl">

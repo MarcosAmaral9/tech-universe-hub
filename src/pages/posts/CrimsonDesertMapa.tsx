@@ -455,7 +455,7 @@ const CrimsonDesertMapa = () => {
         <p>
           Crimson Desert tem <strong>430 missões no total</strong> (fonte: Beebom) e <strong>76 bosses</strong>
           (fonte: GameSpot). Além da campanha principal, há sistemas de crafting, culinária, fazenda, gestão do
-          acampamento Greymane, missões de fação e rumores que levam a conteúdo escondido. Críticos que completaram o
+          acampamento Greymane, missões de facção e rumores que levam a conteúdo escondido. Críticos que completaram o
           jogo reportaram entre 110 e 150 horas de jogo.
         </p>
 

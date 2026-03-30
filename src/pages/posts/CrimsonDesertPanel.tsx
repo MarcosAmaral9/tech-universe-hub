@@ -89,7 +89,7 @@ const articles = [
 
 const CrimsonDesertPanel = () => (
   <div className="min-h-screen">
-    <DynamicSEO path="/geek/crimson-desert" />
+    <DynamicSEO />
     <BackNavigation category="geek" />
 
     {/* ── HERO ─────────────────────────────────────────────── */}
