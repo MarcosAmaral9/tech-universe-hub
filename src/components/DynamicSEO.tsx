@@ -229,7 +229,7 @@ const DynamicSEO = () => {
     let title = SITE_NAME;
     let description = "Seu portal definitivo para IAs, investimentos, cultura geek e o mundo otaku.";
     // og:image MUST be absolute URL for WhatsApp/Facebook/Discord to render correctly
-    let image = `${BASE_URL}/og-image.jpg`;
+    let image = `${BASE_URL}/icon-512x512.png`;
     let keywords = "VICIO CODE, tecnologia, IA, investimentos, geek, otaku, animes, mangás, finanças, games";
     const url = `${BASE_URL}${pathname}`;
     const isPost = pathname.startsWith("/post/");
