@@ -154,7 +154,7 @@ const CrimsonDesertReview = () => {
           um jogo muito melhor como sandbox do que como história."
         </p>
         <p>
-          Por US$ 69,99 no lançamento (sem regional pricing implementado no Steam no Brasil),
+          Por R$ 349,90 no lançamento na Steam Brasil,
           é um jogo que justifica o preço para fãs do gênero. Para os demais, aguardar uma promoção
           pode ser a escolha mais prudente.
         </p>
