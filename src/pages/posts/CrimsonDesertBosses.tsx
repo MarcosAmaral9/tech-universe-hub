@@ -40,7 +40,7 @@ const CrimsonDesertBosses = () => {
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          Crimson Desert conta com <strong>76 bosses</strong> espalhados pelo continente de Pywel — 28 deles fazem parte da história principal e os demais são opcionais, ligados a missões de fação ou exploração livre. Cada chefe possui fraquezas únicas, mecânicas próprias e recompensas exclusivas que podem mudar drasticamente seu poder de combate. Este guia foi atualizado com as informações do <strong>patch de 23 de março de 2026</strong>, que ajustou a vida e o ataque de vários bosses.
+          Crimson Desert conta com <strong>76 bosses</strong> espalhados pelo continente de Pywel — 28 deles fazem parte da história principal e os demais são opcionais, ligados a missões de facção ou exploração livre. Cada chefe possui fraquezas únicas, mecânicas próprias e recompensas exclusivas que podem mudar drasticamente seu poder de combate. Este guia foi atualizado com as informações do <strong>patch de 23 de março de 2026</strong>, que ajustou a vida e o ataque de vários bosses.
         </p>
 
         <div className="not-prose my-6 p-5 bg-red-500/10 border border-red-500/30 rounded-xl">
@@ -162,7 +162,7 @@ const CrimsonDesertBosses = () => {
           <span className="text-red-400">06.</span> Hexe Marie — A Bruxa
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
-          {[["📍 Localização","Floresta de Hernand — missão secundária de fação"],["⚠️ Dificuldade","★★★☆☆"],["🏆 Recompensa","Abyss Artifact + Habilidade de necromancia"]].map(([k,v])=>(
+          {[["📍 Localização","Floresta de Hernand — missão secundária de facção"],["⚠️ Dificuldade","★★★☆☆"],["🏆 Recompensa","Abyss Artifact + Habilidade de necromancia"]].map(([k,v])=>(
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs">{k}</p><p className="text-muted-foreground">{v}</p></div>
           ))}
         </div>
@@ -240,11 +240,11 @@ const CrimsonDesertBosses = () => {
             <TableBody>
               {[
                 ["Queen Stoneback Crab","Exploração — missão secundária","Arma exclusiva + habilidade de quebrar carapaças","★★★☆☆"],
-                ["Draven the Crowcaller","Floresta — missão de fação","Tauria's Curved Sword (melhor espada curva inicial)","★★★☆☆"],
+                ["Draven the Crowcaller","Floresta — missão de facção","Tauria's Curved Sword (melhor espada curva inicial)","★★★☆☆"],
                 ["Master Du","Localização secreta","Habilidades de escalada de parede + combos","★★★★☆"],
                 ["Crimson Nightmare","Abyss — voo com Crow's Wings necessário","Focused Repulsion (repele tudo no estado Focus)","★★★☆☆"],
-                ["Fortain the Cursed Knight","Dungeon de fação","Armor set completo do Fallen Kingdom","★★★★☆"],
-                ["Lucian Bastier / Awakened","Missão de fação avançada","Equipamento exclusivo de cavaleiro","★★★★★"],
+                ["Fortain the Cursed Knight","Dungeon de facção","Armor set completo do Fallen Kingdom","★★★★☆"],
+                ["Lucian Bastier / Awakened","Missão de facção avançada","Equipamento exclusivo de cavaleiro","★★★★★"],
               ].map(([b,l,r,d]) => (
                 <TableRow key={b}>
                   <TableCell className="font-medium">{b}</TableCell>
