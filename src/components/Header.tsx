@@ -79,6 +79,15 @@ const Header = () => {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
+            {/* Social Panel - admin only */}
+            {user?.email === "viciocode01@gmail.com" && (
+              <Button variant="ghost" size="icon" asChild className="hover:bg-secondary">
+                <Link to="/painel-social">
+                  <FileText className="h-5 w-5 text-primary" />
+                </Link>
+              </Button>
+            )}
+
             <Button
               variant="ghost"
               size="icon"
@@ -137,11 +146,6 @@ const Header = () => {
                   <DropdownMenuItem asChild>
                     <Link to="/configuracoes" className="w-full">⚙️ Configurações</Link>
                   </DropdownMenuItem>
-                  {user?.email === "viciocode01@gmail.com" && (
-                    <DropdownMenuItem asChild>
-                      <Link to="/painel-social" className="w-full">📱 Painel Social</Link>
-                    </DropdownMenuItem>
-                  )}
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={handleSignOut} className="text-destructive">
                     <LogOut className="w-4 h-4 mr-2" /> Sair
