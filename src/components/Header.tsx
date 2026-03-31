@@ -146,11 +146,6 @@ const Header = () => {
                   <DropdownMenuItem asChild>
                     <Link to="/configuracoes" className="w-full">⚙️ Configurações</Link>
                   </DropdownMenuItem>
-                  {user?.email === "viciocode01@gmail.com" && (
-                    <DropdownMenuItem asChild>
-                      <Link to="/painel-social" className="w-full">📱 Painel Social</Link>
-                    </DropdownMenuItem>
-                  )}
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={handleSignOut} className="text-destructive">
                     <LogOut className="w-4 h-4 mr-2" /> Sair
