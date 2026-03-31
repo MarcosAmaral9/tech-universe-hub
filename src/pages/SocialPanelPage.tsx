@@ -90,19 +90,25 @@ const SocialPanelPage = () => {
 
   /* ── Geração via Edge Function (Lovable AI credits) ── */
   const generateBothPlatforms = async (post: any): Promise<{ instagram: GeneratedContent; tiktok: GeneratedContent }> => {
-    const { data, error } = await supabase.functions.invoke("generate-social-content", {
-      body: {
+    const url = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/generate-social-content`;
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+      },
+      body: JSON.stringify({
         title: post.title,
         excerpt: post.excerpt,
         category: post.category,
         platform: "both",
-      },
+      }),
     });
 
-    if (error) throw new Error(error.message || "Erro ao gerar conteúdo");
-    if (data?.error) {
-      const err: any = new Error(data.error);
-      if (data.error.includes("Rate limit")) err.retryIn = 30;
+    const data = await res.json();
+    if (!res.ok || data?.error) {
+      const err: any = new Error(data?.error || "Erro ao gerar conteúdo");
+      if (res.status === 429) err.retryIn = 30;
       throw err;
     }
     if (!data?.instagram || !data?.tiktok) throw new Error("Resposta incompleta. Tente novamente.");
