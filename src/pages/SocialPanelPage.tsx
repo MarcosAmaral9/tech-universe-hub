@@ -3,6 +3,7 @@ import { blogPosts } from "@/data/posts";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import DynamicSEO from "@/components/DynamicSEO";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,13 +13,16 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Sparkles, Instagram, Music2, Loader2, Copy, RefreshCw,
-  Music, Zap, Image as ImageIcon, ClipboardCopy, ExternalLink,
-  Hash, MessageSquare, Megaphone, Anchor,
+  Music, Zap, Image as ImageIcon, ClipboardCopy,
+  Hash, MessageSquare, Megaphone, Anchor, Download,
 } from "lucide-react";
 import SocialHistoryPanel, { saveToHistory } from "@/components/social/SocialHistoryPanel";
 
 const COUNTER_KEY = "viciocode_social_gen_count";
 const ADMIN_EMAIL = "viciocode01@gmail.com";
+
+// In sandbox/preview (lovable.app), allow access without login
+const isSandbox = typeof window !== "undefined" && window.location.hostname.includes("lovable.app");
 
 const getTodayCount = (): number => {
   try {
@@ -40,8 +44,9 @@ interface GeneratedContent {
   hashtags: string[];
   cta: string;
   hookLine: string;
-  imagePrompt: string;
+  imagePrompt?: string;
   musicSuggestion?: string;
+  image?: string | null;
 }
 
 interface EditedContent {
@@ -49,8 +54,8 @@ interface EditedContent {
   hashtags: string;
   cta: string;
   hookLine: string;
-  imagePrompt: string;
   musicSuggestion: string;
+  image: string | null;
 }
 
 interface PlatformContent {
@@ -59,17 +64,8 @@ interface PlatformContent {
 }
 
 const emptyEdited = (): EditedContent => ({
-  caption: "", hashtags: "", cta: "", hookLine: "", imagePrompt: "", musicSuggestion: "",
+  caption: "", hashtags: "", cta: "", hookLine: "", musicSuggestion: "", image: null,
 });
-
-const IMAGE_TOOLS = [
-  { name: "Midjourney",       url: "https://www.midjourney.com",    icon: "✦" },
-  { name: "DALL-E",           url: "https://labs.openai.com",       icon: "◈" },
-  { name: "Stable Diffusion", url: "https://stability.ai",          icon: "◉" },
-  { name: "Leonardo.ai",      url: "https://app.leonardo.ai",       icon: "◆" },
-  { name: "Ideogram",         url: "https://ideogram.ai",           icon: "◐" },
-  { name: "Flux",             url: "https://blackforestlabs.ai",    icon: "◑" },
-];
 
 /* ─── SocialPanelPage ─────────────────────────────────────────────────────── */
 
@@ -88,38 +84,29 @@ const SocialPanelPage = () => {
   const [historyKey, setHistoryKey]       = useState(0);
 
   useEffect(() => {
+    if (isSandbox) return; // skip auth check in sandbox
     if (!authLoading && (!user || user.email !== ADMIN_EMAIL)) navigate("/");
   }, [user, authLoading, navigate]);
 
-  /* ── Geração — UMA única chamada Gemini para IG+TT (economiza quota) ── */
+  /* ── Geração via Edge Function (Lovable AI credits) ── */
   const generateBothPlatforms = async (post: any): Promise<{ instagram: GeneratedContent; tiktok: GeneratedContent }> => {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 60000);
-    try {
-      const res = await fetch("/api.php?action=generate_social", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        signal: controller.signal,
-        body: JSON.stringify({
-          title: post.title,
-          excerpt: post.excerpt,
-          category: post.category,
-          platform: "both",
-        }),
-      });
-      const data = await res.json();
-      if (res.status === 429 && data.retryIn) {
-        const err: any = new Error(data.error || "Limite atingido");
-        err.retryIn = data.retryIn;
-        throw err;
-      }
-      if (!res.ok || data.error) throw new Error(data.error || "Erro ao gerar conteúdo");
-      // Response: { instagram: {...}, tiktok: {...} }
-      if (!data.instagram || !data.tiktok) throw new Error("Resposta incompleta do Gemini. Tente novamente.");
-      return data;
-    } finally {
-      clearTimeout(timeout);
+    const { data, error } = await supabase.functions.invoke("generate-social-content", {
+      body: {
+        title: post.title,
+        excerpt: post.excerpt,
+        category: post.category,
+        platform: "both",
+      },
+    });
+
+    if (error) throw new Error(error.message || "Erro ao gerar conteúdo");
+    if (data?.error) {
+      const err: any = new Error(data.error);
+      if (data.error.includes("Rate limit")) err.retryIn = 30;
+      throw err;
     }
+    if (!data?.instagram || !data?.tiktok) throw new Error("Resposta incompleta. Tente novamente.");
+    return data;
   };
 
   const toEdited = (d: GeneratedContent): EditedContent => ({
@@ -127,8 +114,8 @@ const SocialPanelPage = () => {
     hashtags:        (d.hashtags || []).map((h) => (h.startsWith("#") ? h : `#${h}`)).join(" "),
     cta:             d.cta || "",
     hookLine:        d.hookLine || "",
-    imagePrompt:     d.imagePrompt || "",
     musicSuggestion: d.musicSuggestion || "",
+    image:           d.image || null,
   });
 
   const handleGenerate = async () => {
@@ -141,7 +128,6 @@ const SocialPanelPage = () => {
     setEditedTT(emptyEdited());
 
     try {
-      // Uma única chamada Gemini gera IG + TikTok simultaneamente
       const both = await generateBothPlatforms(post);
 
       const results: PlatformContent = {
@@ -181,7 +167,8 @@ const SocialPanelPage = () => {
     toast({ title: `${label} copiado!` });
   };
 
-  if (authLoading || !user || user.email !== ADMIN_EMAIL) return null;
+  // In production require admin; in sandbox allow everyone
+  if (!isSandbox && (authLoading || !user || user.email !== ADMIN_EMAIL)) return null;
 
   const sortedPosts = [...blogPosts].sort((a, b) => b.date.localeCompare(a.date));
   const hasContent  = !!(content.instagram || content.tiktok);
@@ -202,6 +189,12 @@ const SocialPanelPage = () => {
           <span className="text-muted-foreground">{todayCount === 1 ? "geração" : "gerações"} hoje</span>
         </Badge>
       </div>
+
+      {isSandbox && (
+        <div className="rounded-lg border border-yellow-500/30 bg-yellow-500/10 p-3 text-sm text-yellow-200">
+          ⚠️ Modo sandbox — acesso liberado sem login. No site publicado, apenas o administrador tem acesso.
+        </div>
+      )}
 
       {/* ── Seleção de artigo ── */}
       <Card className="border-primary/20">
@@ -232,15 +225,15 @@ const SocialPanelPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
             <div className="flex items-center gap-2 p-3 rounded-lg border border-border bg-secondary/30">
               <Instagram className="w-4 h-4 text-pink-500 shrink-0" />
-              <span className="text-muted-foreground">Instagram — legenda + hashtags + prompt de imagem</span>
+              <span className="text-muted-foreground">Instagram — legenda + hashtags + imagem</span>
             </div>
             <div className="flex items-center gap-2 p-3 rounded-lg border border-border bg-secondary/30">
               <Music2 className="w-4 h-4 text-cyan-400 shrink-0" />
-              <span className="text-muted-foreground">TikTok — legenda curta + prompt de imagem</span>
+              <span className="text-muted-foreground">TikTok — legenda curta + imagem</span>
             </div>
             <div className="flex items-center gap-2 p-3 rounded-lg border border-border bg-secondary/30">
               <Music className="w-4 h-4 text-purple-400 shrink-0" />
-              <span className="text-muted-foreground">Sugestão de música para ambas plataformas</span>
+              <span className="text-muted-foreground">Sugestão de música para ambas</span>
             </div>
           </div>
 
@@ -250,7 +243,7 @@ const SocialPanelPage = () => {
             className="w-full h-11 text-base font-semibold"
           >
             {generating ? (
-              <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Gerando para Instagram e TikTok...</>
+              <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Gerando conteúdo e imagens...</>
             ) : retryIn > 0 ? (
               <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Aguarde {retryIn}s...</>
             ) : (
@@ -337,6 +330,14 @@ interface PlatformEditorProps {
 const PlatformEditor = ({ platform, edited, setEdited, onCopyAll, onCopyField, generating }: PlatformEditorProps) => {
   const isIG = platform === "instagram";
 
+  const downloadImage = () => {
+    if (!edited.image) return;
+    const link = document.createElement("a");
+    link.href = edited.image;
+    link.download = `social-${platform}-${Date.now()}.png`;
+    link.click();
+  };
+
   return (
     <div className="space-y-5">
 
@@ -346,6 +347,28 @@ const PlatformEditor = ({ platform, edited, setEdited, onCopyAll, onCopyField, g
           <Copy className="w-4 h-4 mr-1.5" /> Copiar tudo
         </Button>
       </div>
+
+      {/* Imagem gerada */}
+      {edited.image && (
+        <div className="rounded-xl border border-primary/30 bg-primary/5 p-4 space-y-3">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <ImageIcon className="w-4 h-4 text-primary" />
+              <span className="text-sm font-semibold text-primary">
+                Imagem gerada — {isIG ? "Instagram (1:1)" : "TikTok (9:16)"}
+              </span>
+            </div>
+            <Button variant="secondary" size="sm" onClick={downloadImage}>
+              <Download className="w-3.5 h-3.5 mr-1.5" /> Baixar
+            </Button>
+          </div>
+          <img
+            src={edited.image}
+            alt={`Imagem gerada para ${platform}`}
+            className={`rounded-lg mx-auto object-cover ${isIG ? "max-h-80 aspect-square" : "max-h-96 aspect-[9/16]"}`}
+          />
+        </div>
+      )}
 
       {/* Gancho */}
       <FieldWithCopy
@@ -403,59 +426,6 @@ const PlatformEditor = ({ platform, edited, setEdited, onCopyAll, onCopyField, g
           onCopy={() => onCopyField(edited.musicSuggestion, "Sugestão de música")}
         />
       )}
-
-      {/* Prompt de imagem */}
-      {edited.imagePrompt && (
-        <div className="rounded-xl border border-dashed border-primary/40 bg-primary/5 p-4 space-y-3">
-          <div className="flex items-center justify-between flex-wrap gap-2">
-            <div className="flex items-center gap-2">
-              <ImageIcon className="w-4 h-4 text-primary" />
-              <span className="text-sm font-semibold text-primary">
-                Prompt de imagem — {isIG ? "Instagram" : "TikTok"}
-              </span>
-            </div>
-            <Button
-              variant="secondary"
-              size="sm"
-              onClick={() => onCopyField(edited.imagePrompt, "Prompt de imagem")}
-            >
-              <ClipboardCopy className="w-3.5 h-3.5 mr-1.5" /> Copiar prompt
-            </Button>
-          </div>
-
-          <p className="text-xs text-muted-foreground">
-            Cole esse prompt diretamente em uma das ferramentas abaixo para criar a imagem do post:
-          </p>
-
-          <Textarea
-            value={edited.imagePrompt}
-            onChange={(e) => setEdited((p) => ({ ...p, imagePrompt: e.target.value }))}
-            rows={4}
-            className="text-sm font-mono bg-background/60 resize-none"
-            placeholder="Prompt de imagem..."
-          />
-
-          {/* Links diretos para ferramentas */}
-          <div>
-            <p className="text-xs text-muted-foreground mb-2 font-medium">Abrir ferramenta de IA:</p>
-            <div className="flex flex-wrap gap-2">
-              {IMAGE_TOOLS.map((tool) => (
-                <a
-                  key={tool.name}
-                  href={tool.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border border-border hover:border-primary hover:text-primary hover:bg-primary/5 transition-colors"
-                >
-                  <ExternalLink className="w-3 h-3" />
-                  {tool.name}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-
     </div>
   );
 };
