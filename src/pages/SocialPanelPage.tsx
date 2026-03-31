@@ -137,8 +137,10 @@ const SocialPanelPage = () => {
 
       setEditedIG(toEdited(both.instagram));
       setEditedTT(toEdited(both.tiktok));
-      saveToHistory({ id: `${Date.now()}-ig`, postTitle: post.title, platform: "instagram", ...toEdited(both.instagram), createdAt: new Date().toISOString() });
-      saveToHistory({ id: `${Date.now()}-tt`, postTitle: post.title, platform: "tiktok",    ...toEdited(both.tiktok),    createdAt: new Date().toISOString() });
+      const igEdited = toEdited(both.instagram);
+      const ttEdited = toEdited(both.tiktok);
+      saveToHistory({ id: `${Date.now()}-ig`, postTitle: post.title, platform: "instagram", caption: igEdited.caption, hookLine: igEdited.hookLine, cta: igEdited.cta, hashtags: igEdited.hashtags, musicSuggestion: igEdited.musicSuggestion, image: igEdited.image, createdAt: new Date().toISOString() });
+      saveToHistory({ id: `${Date.now()}-tt`, postTitle: post.title, platform: "tiktok", caption: ttEdited.caption, hookLine: ttEdited.hookLine, cta: ttEdited.cta, hashtags: ttEdited.hashtags, musicSuggestion: ttEdited.musicSuggestion, image: ttEdited.image, createdAt: new Date().toISOString() });
 
       setContent(results);
       setHistoryKey((k) => k + 1);

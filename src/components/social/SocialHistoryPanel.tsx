@@ -15,6 +15,7 @@ export interface HistoryEntry {
   hashtags: string;
   musicSuggestion?: string;
   imagePrompt?: string;
+  image?: string | null;
   createdAt: string;
 }
 
