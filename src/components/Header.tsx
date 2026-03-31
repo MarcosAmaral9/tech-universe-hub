@@ -79,6 +79,15 @@ const Header = () => {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
+            {/* Social Panel - admin only */}
+            {user?.email === "viciocode01@gmail.com" && (
+              <Button variant="ghost" size="icon" asChild className="hover:bg-secondary">
+                <Link to="/painel-social">
+                  <FileText className="h-5 w-5 text-primary" />
+                </Link>
+              </Button>
+            )}
+
             <Button
               variant="ghost"
               size="icon"
