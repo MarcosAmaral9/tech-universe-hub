@@ -4,36 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { History, Trash2, Copy, ChevronDown, ChevronUp, Instagram, Music2, Download } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-
-export interface HistoryEntry {
-  id: string;
-  postTitle: string;
-  platform: string;
-  caption: string;
-  hookLine: string;
-  cta: string;
-  hashtags: string;
-  musicSuggestion?: string;
-  imagePrompt?: string;
-  image?: string | null;
-  createdAt: string;
-}
-
-const HISTORY_KEY = "viciocode_social_history";
-
-export const loadHistory = (): HistoryEntry[] => {
-  try {
-    return JSON.parse(localStorage.getItem(HISTORY_KEY) || "[]");
-  } catch {
-    return [];
-  }
-};
-
-export const saveToHistory = (entry: HistoryEntry) => {
-  const history = loadHistory();
-  history.unshift(entry);
-  localStorage.setItem(HISTORY_KEY, JSON.stringify(history.slice(0, 50)));
-};
+import { loadHistory, HistoryEntry } from "./socialHistoryUtils";
 
 const SocialHistoryPanel = () => {
   const { toast } = useToast();
@@ -41,7 +12,7 @@ const SocialHistoryPanel = () => {
   const [expanded, setExpanded] = useState<string | null>(null);
 
   const clearHistory = () => {
-    localStorage.removeItem(HISTORY_KEY);
+    localStorage.removeItem("viciocode_social_history");
     setHistory([]);
     toast({ title: "Histórico limpo" });
   };

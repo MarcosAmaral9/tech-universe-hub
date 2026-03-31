@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { blogPosts } from "@/data/posts";
+import { BlogPost } from "@/types/blog";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
@@ -15,13 +16,14 @@ import {
   Music, Zap, Image as ImageIcon, ClipboardCopy,
   Hash, MessageSquare, Megaphone, Anchor, Download,
 } from "lucide-react";
-import SocialHistoryPanel, { saveToHistory } from "@/components/social/SocialHistoryPanel";
+import SocialHistoryPanel from "@/components/social/SocialHistoryPanel";
+import { saveToHistory } from "@/components/social/socialHistoryUtils";
 
 const COUNTER_KEY = "viciocode_social_gen_count";
 const ADMIN_EMAIL = "viciocode01@gmail.com";
 
-// In sandbox/preview (lovable.app), allow access without login
-const isSandbox = typeof window !== "undefined" && window.location.hostname.includes("lovable.app");
+// In sandbox/preview (lovable.app / lovable.dev), allow access without login
+const isSandbox = typeof window !== "undefined" && window.location.hostname.includes("lovable");
 
 const getTodayCount = (): number => {
   try {
@@ -88,7 +90,7 @@ const SocialPanelPage = () => {
   }, [user, authLoading, navigate]);
 
   /* ── Geração via Edge Function (Lovable AI credits) ── */
-  const generateBothPlatforms = async (post: any): Promise<{ instagram: GeneratedContent; tiktok: GeneratedContent }> => {
+  const generateBothPlatforms = async (post: BlogPost): Promise<{ instagram: GeneratedContent; tiktok: GeneratedContent }> => {
     const url = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/generate-social-content`;
     const res = await fetch(url, {
       method: "POST",
@@ -106,7 +108,7 @@ const SocialPanelPage = () => {
 
     const data = await res.json();
     if (!res.ok || data?.error) {
-      const err: any = new Error(data?.error || "Erro ao gerar conteúdo");
+      const err = new Error(data?.error || "Erro ao gerar conteúdo") as Error & { retryIn?: number };
       if (res.status === 429) err.retryIn = 30;
       throw err;
     }
@@ -151,10 +153,11 @@ const SocialPanelPage = () => {
       setHistoryKey((k) => k + 1);
       setTodayCount(incrementTodayCount());
       toast({ title: "✅ Conteúdo gerado para Instagram e TikTok!" });
-    } catch (e: any) {
-      toast({ title: "Erro ao gerar conteúdo", description: e.message, variant: "destructive" });
-      if (e?.retryIn) {
-        setRetryIn(e.retryIn);
+    } catch (e: unknown) {
+      const err = e as Error & { retryIn?: number };
+      toast({ title: "Erro ao gerar conteúdo", description: err.message, variant: "destructive" });
+      if (err?.retryIn) {
+        setRetryIn(err.retryIn);
         const iv = setInterval(() => setRetryIn((s) => { if (s <= 1) { clearInterval(iv); return 0; } return s - 1; }), 1000);
       }
     } finally {
