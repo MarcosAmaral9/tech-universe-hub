@@ -73,6 +73,8 @@ for (const post of posts) {
   fs.mkdirSync(dir, { recursive: true });
 
   const url  = `${BASE_URL}/post/${post.slug}`;
+  const CATEGORY_LABELS = { ia: "Inteligência Artificial", invest: "Investimentos", geek: "Geek & Games", otaku: "Otaku" };
+  const categoryLabel = CATEGORY_LABELS[post.category] || post.category;
   // Find matching image asset
   const slug = post.slug.replace(/-2026$/, "");
   // Explicit slug→asset-prefix overrides for slugs whose prefix doesn't match the image name
@@ -148,6 +150,15 @@ for (const post of posts) {
       },
       "mainEntityOfPage": { "@type": "WebPage", "@id": url },
       "inLanguage": "pt-BR"
+    }, null, 0)}</script>
+    <script type="application/ld+json">${JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"VICIO<CODE>","item":"${BASE_URL}"},
+        {"@type":"ListItem","position":2,"name":"${categoryLabel}","item":"${BASE_URL}/${post.category}"},
+        {"@type":"ListItem","position":3,"name":"${e(post.title)}","item":"${url}"}
+      ]
     }, null, 0)}</script>`;
 
   // Apply critical CSS: make full CSS non-blocking, inline critical styles
