@@ -65,8 +65,13 @@ const Index = () => {
           {[...blogPosts]
             .sort((a, b) => new Date(b.date + "T12:00:00").getTime() - new Date(a.date + "T12:00:00").getTime())
             .slice(0, 12)
-            .map((post) => (
-              <PostCard key={post.id} post={post} />
+            .map((post, i) => (
+              /* First 4 cards are above the fold — render immediately.        */
+              /* Cards 5–12 are deferred: browser skips layout/paint until     */
+              /* they scroll into view (content-visibility: auto).             */
+              <div key={post.id} className={i >= 4 ? "post-card-deferred" : undefined}>
+                <PostCard post={post} />
+              </div>
             ))}
         </div>
 

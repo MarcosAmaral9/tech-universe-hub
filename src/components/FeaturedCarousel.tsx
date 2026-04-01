@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Clock } from "lucide-react";
 import { getLatestPostsByCategory } from "@/data/posts";
@@ -47,16 +47,16 @@ const FeaturedCarousel = () => {
     resetTimer();
   };
 
-  const autoAdvance = () => {
+  const autoAdvance = useCallback(() => {
     setDirection(1);
     setCurrentIndex((prev) => (prev + 1) % posts.length);
     setProgressKey((k) => k + 1);
-  };
+  }, [posts.length]);
 
   useEffect(() => {
     timerRef.current = setInterval(autoAdvance, AUTOPLAY_MS);
     return () => clearInterval(timerRef.current);
-  }, []);
+  }, [autoAdvance]);
 
   const goToPrevious = () => {
     const next = (currentIndex - 1 + posts.length) % posts.length;
@@ -98,7 +98,7 @@ const FeaturedCarousel = () => {
           onTouchEnd={() => {
             const diff = touchStartX.current - touchEndX.current;
             if (Math.abs(diff) > 50) {
-              diff > 0 ? goToNext() : goToPrevious();
+              if (diff > 0) goToNext(); else goToPrevious();
             }
           }}
         >
@@ -121,7 +121,7 @@ const FeaturedCarousel = () => {
               animate="center"
               exit="exit"
               transition={{ duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="flex flex-col md:flex-row h-auto md:h-[400px]"
+              className="carousel-slide flex flex-col md:flex-row h-auto md:h-[400px]"
             >
               {/* Image */}
               <div className="relative w-full md:w-1/2 h-48 sm:h-64 md:h-auto overflow-hidden">

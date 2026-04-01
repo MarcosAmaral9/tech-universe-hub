@@ -6,6 +6,46 @@ import fs from "fs";
 import { VitePWA } from "vite-plugin-pwa";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
+// ── LCP preload images ────────────────────────────────────────────────────────
+// Source asset names (without hash) for the 4 carousel slides (one per category).
+// The plugin finds the hashed filename at build time and injects <link rel="preload">
+// so the browser fetches them before parsing JS — critical for LCP score.
+const LCP_IMAGE_PATTERNS = [
+  "ia-ciberseguranca-2026",   // ia   (latest as of 2026-03-28)
+  "poupanca-vs-cdb-tesouro",  // invest (latest as of 2026-03-27)
+  "crimson-desert-bosses",    // geek  (latest as of 2026-03-29)
+  "solo-leveling",            // otaku (latest as of 2026-03-29)
+];
+
+function lcpPreloadPlugin(): Plugin {
+  return {
+    name: "lcp-preload",
+    apply: "build",
+    closeBundle() {
+      const distPath = path.resolve(__dirname, "dist");
+      const indexPath = path.join(distPath, "index.html");
+      if (!fs.existsSync(indexPath)) return;
+
+      const assetsDir = path.join(distPath, "assets");
+      const allAssets = fs.readdirSync(assetsDir);
+
+      const preloadTags = LCP_IMAGE_PATTERNS
+        .map((pattern) => allAssets.find((f) => f.startsWith(pattern) && f.endsWith(".webp")))
+        .filter(Boolean)
+        .map((f) => `  <link rel="preload" as="image" href="/assets/${f}" fetchpriority="high" type="image/webp">`)
+        .join("\n");
+
+      if (!preloadTags) return;
+
+      let html = fs.readFileSync(indexPath, "utf8");
+      // Inject just before </head>
+      html = html.replace("</head>", `${preloadTags}\n</head>`);
+      fs.writeFileSync(indexPath, html);
+      console.log(`✅ LCP preload tags injected (${LCP_IMAGE_PATTERNS.length} images)`);
+    },
+  };
+}
+
 
 // Plugin: inline critical CSS + make full CSS non-blocking
 function criticalCSSPlugin(): Plugin {
@@ -224,6 +264,7 @@ export default defineConfig(({ mode }) => ({
       },
     }),
     criticalCSSPlugin(),
+    lcpPreloadPlugin(),
     htaccessPlugin(),
     mode === "development" && componentTagger(),
   ].filter(Boolean),
@@ -238,6 +279,24 @@ export default defineConfig(({ mode }) => ({
     chunkSizeWarningLimit: 1000,
     minify: "esbuild",
     cssCodeSplit: true,
-
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Animation — framer-motion is large (~100 kB gzip), isolate for better caching
+          "vendor-motion": ["framer-motion"],
+          // Query — tanstack is stable between deploys
+          "vendor-query": ["@tanstack/react-query"],
+          // UI primitives — radix + shadcn components
+          "vendor-ui": [
+            "@radix-ui/react-dropdown-menu",
+            "@radix-ui/react-select",
+            "@radix-ui/react-tabs",
+            "@radix-ui/react-tooltip",
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-toast",
+          ],
+        },
+      },
+    },
   },
 }));

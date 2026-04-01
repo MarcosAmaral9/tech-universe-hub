@@ -283,3 +283,27 @@ img {
 ::-webkit-scrollbar-track  { @apply bg-transparent; }
 ::-webkit-scrollbar-thumb  { @apply bg-border rounded-full; }
 ::-webkit-scrollbar-thumb:hover { @apply bg-muted-foreground/50; }
+
+/* ── Performance: defer rendering of off-screen post cards ────────────────── */
+/* content-visibility:auto skips layout/paint for cards below the fold        */
+/* contain-intrinsic-size prevents layout shift when they're deferred          */
+.post-card-deferred {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 320px;
+}
+
+/* ── Performance: GPU-accelerate carousel slides ─────────────────────────── */
+.carousel-slide {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+/* ── Reduce motion: respect OS accessibility setting ─────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

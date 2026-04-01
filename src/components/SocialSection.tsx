@@ -31,7 +31,7 @@ const SocialSection = () => {
               <QRCodeSVG 
                 value={instagramUrl} 
                 size={150}
-                level="H"
+                level="M"
                 includeMargin={true}
               />
             </div>
@@ -46,7 +46,7 @@ const SocialSection = () => {
               <QRCodeSVG 
                 value={tiktokUrl} 
                 size={150}
-                level="H"
+                level="M"
                 includeMargin={true}
               />
             </div>

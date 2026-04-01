@@ -234,7 +234,7 @@ const DynamicSEO = () => {
     const url = `${BASE_URL}${pathname}`;
     const isPost = pathname.startsWith("/post/");
 
-    let post = isPost ? blogPosts.find((p) => p.slug === pathname.replace("/post/", "")) : undefined;
+    const post = isPost ? blogPosts.find((p) => p.slug === pathname.replace("/post/", "")) : undefined;
 
     if (post) {
       title = post.title;
@@ -286,10 +286,9 @@ const DynamicSEO = () => {
     const isPrivate = privatePaths.some(p => pathname.startsWith(p)) || pathname.startsWith("/perfil/") || pathname.startsWith("/auth/");
     const robotsContent = isPrivate
       ? "noindex, nofollow"
-      : "index, follow, max-snippet:-1, max-image-preview:large, max-image-preview:large";
+      : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1";
     setMetaTag("name", "robots", robotsContent);
     setMetaTag("name", "googlebot", isPrivate ? "noindex, nofollow" : "index, follow");
-    setMetaTag("name", "googlebot", "index, follow");
 
     // ── Canonical ────────────────────────────────────────────────────────────
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
