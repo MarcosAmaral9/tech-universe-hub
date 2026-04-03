@@ -174,6 +174,11 @@ const ReservaEmergencia2026    = lazy(() => import("./pages/posts/ReservaEmergen
 // 28 Mar 2026 — IA
 const IACiberseguranca2026     = lazy(() => import("./pages/posts/IACiberseguranca2026"));
 const PromptEngineering2026    = lazy(() => import("./pages/posts/PromptEngineering2026"));
+// 03 Abr 2026
+const Gemini3VsGPT5            = lazy(() => import("./pages/posts/Gemini3VsGPT5"));
+const IABrasilAdocao2026       = lazy(() => import("./pages/posts/IABrasilAdocao2026"));
+const InflacaoProtegerInvestimentos2026 = lazy(() => import("./pages/posts/InflacaoProtegerInvestimentos2026"));
+const FIIsDefensivosAbril2026  = lazy(() => import("./pages/posts/FIIsDefensivosAbril2026"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
