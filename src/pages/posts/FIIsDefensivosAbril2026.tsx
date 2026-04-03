@@ -7,7 +7,6 @@ import { Clock, User, Calendar, Building2, Shield, TrendingUp, BarChart3, PiggyB
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/fiis-defensivos-abril-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 
@@ -209,15 +208,6 @@ const FIIsDefensivosAbril2026 = () => {
           <p className="text-muted-foreground">Compartilhe nos comentários! 👇</p>
         </div>
       </div>
-
-      <RelatedTopics
-        title="Leia também"
-        links={[
-          { label: "FIIs 2026: Ainda Vale?", href: "/post/fiis-2026-ainda-vale-investir", desc: "Análise completa do mercado de FIIs" },
-          { label: "Inflação 2026", href: "/post/inflacao-proteger-investimentos-2026", desc: "Como proteger seus investimentos da inflação" },
-          { label: "Renda Passiva 2026", href: "/post/renda-passiva-2026-formas-comprovadas", desc: "Formas comprovadas de gerar renda passiva" },
-        ]}
-      />
       <RelatedPosts currentSlug="fiis-defensivos-abril-2026" />
       <CommentSection postId="fiis-defensivos-abril-2026" postTitle="FIIs Defensivos em Abril de 2026" />
     </article>

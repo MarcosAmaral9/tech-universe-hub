@@ -155,9 +155,9 @@ for (const post of posts) {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type":"ListItem","position":1,"name":"VICIO<CODE>","item":"${BASE_URL}"},
-        {"@type":"ListItem","position":2,"name":"${categoryLabel}","item":"${BASE_URL}/${post.category}"},
-        {"@type":"ListItem","position":3,"name":"${e(post.title)}","item":"${url}"}
+        {"@type":"ListItem","position":1,"name":"VICIO<CODE>","item":{"@type":"Thing","@id":"${BASE_URL}"}},
+        {"@type":"ListItem","position":2,"name":"${categoryLabel}","item":{"@type":"Thing","@id":"${BASE_URL}/${post.category}"}},
+        {"@type":"ListItem","position":3,"name":"${e(post.title)}","item":{"@type":"Thing","@id":"${url}"}}
       ]
     }, null, 0)}</script>`;
 

@@ -7,7 +7,6 @@ import { Clock, User, Calendar, TrendingUp, Shield, AlertTriangle, PiggyBank, Ba
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/inflacao-proteger-investimentos-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 
@@ -207,15 +206,6 @@ const InflacaoProtegerInvestimentos2026 = () => {
           <p className="text-muted-foreground">Compartilhe sua estratégia nos comentários! 👇</p>
         </div>
       </div>
-
-      <RelatedTopics
-        title="Leia também"
-        links={[
-          { label: "Poupança vs CDB vs Tesouro", href: "/post/poupanca-vs-cdb-tesouro-2026", desc: "Qual rende mais em 2026?" },
-          { label: "Tesouro Direto 2026", href: "/post/tesouro-direto-2026-guia-completo", desc: "Guia completo do Tesouro Direto" },
-          { label: "FIIs 2026: Ainda Vale?", href: "/post/fiis-2026-ainda-vale-investir", desc: "Análise atualizada dos fundos imobiliários" },
-        ]}
-      />
       <RelatedPosts currentSlug="inflacao-proteger-investimentos-2026" />
       <CommentSection postId="inflacao-proteger-investimentos-2026" postTitle="Inflação Acima da Meta em 2026" />
     </article>

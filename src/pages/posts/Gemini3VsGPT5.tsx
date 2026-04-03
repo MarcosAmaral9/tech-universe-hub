@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
@@ -7,13 +6,12 @@ import { Clock, User, Calendar, Brain, Zap, Globe, BarChart3, Shield, Lightbulb 
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/gemini3-vs-gpt5-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 
 const Gemini3VsGPT5 = () => {
   useEffect(() => {
-    trackArticleRead("gemini-3-vs-gpt-5-2026", "Gemini 3 vs GPT-5: A Nova Guerra dos Modelos de IA em 2026", "ia");
+    trackArticleRead("gemini-3-vs-gpt-5-2026", "Gemini 2.5 Pro vs GPT-4o: Qual o Melhor Modelo de IA em 2026?", "ia");
   }, []);
 
   return (
@@ -22,7 +20,7 @@ const Gemini3VsGPT5 = () => {
       <header className="mb-8">
         <CategoryBadge category="ia" size="lg" />
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-          Gemini 3 vs GPT-5: A Nova Guerra dos Modelos de IA em 2026
+          Gemini 2.5 Pro vs GPT-4o: Qual o Melhor Modelo de IA em 2026?
         </h1>
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
@@ -33,49 +31,49 @@ const Gemini3VsGPT5 = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high" src={heroImg} alt="Gemini 3 vs GPT-5 — comparação de modelos de IA 2026" className="w-full h-full object-cover" />
+        <img fetchpriority="high" src={heroImg} alt="Gemini 2.5 Pro vs GPT-4o — comparação de modelos de IA 2026" loading="eager" decoding="async" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          O final de março de 2026 foi um terremoto no mundo da inteligência artificial. Na mesma semana, o Google lançou oficialmente o <strong>Gemini 3</strong> e a OpenAI confirmou o <strong>GPT-5</strong> como seu modelo principal. Pela primeira vez, dois gigantes lançaram modelos de nova geração quase simultaneamente — e a pergunta que todos se fazem é: qual é melhor?
+          O primeiro trimestre de 2026 consolidou dois modelos como os mais utilizados no mundo: o <strong>Gemini 2.5 Pro</strong> do Google e o <strong>GPT-4o</strong> da OpenAI. Lançado em março de 2025, o Gemini 2.5 Pro trouxe melhorias significativas de raciocínio. Já o GPT-4o, disponível desde maio de 2024, continua sendo o modelo mais popular da OpenAI. Mas qual realmente entrega mais em 2026?
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Brain className="h-7 w-7 text-violet-400" />
-          O que Mudou em Relação à Geração Anterior?
+          O que É Cada Modelo?
         </h2>
         <p>
-          O <strong>Gemini 2.5 Pro</strong> já era impressionante em raciocínio multimodal, mas o Gemini 3 dá um salto significativo em três frentes: <strong>velocidade de inferência</strong> (2,3x mais rápido), <strong>janela de contexto</strong> expandida para 2 milhões de tokens e uma nova arquitetura de <strong>Mixture of Experts (MoE)</strong> que reduz custos operacionais em até 40%.
+          O <strong>Gemini 2.5 Pro</strong> é o modelo mais avançado do Google DeepMind, disponível via Google AI Studio e API Gemini. Lançado em março de 2025, é descrito pelo Google como seu primeiro "modelo de raciocínio" — ele pode processar internamente antes de responder. Suporta janela de contexto de <strong>1 milhão de tokens</strong> (com suporte experimental a 2 milhões) e processa texto, imagem, áudio, vídeo e código nativamente.
         </p>
         <p>
-          Já o <strong>GPT-5</strong> da OpenAI trouxe melhorias substanciais no raciocínio em cadeia (<em>chain-of-thought</em>), capacidade multimodal nativa (texto, imagem, áudio e vídeo em um único modelo) e uma precisão factual significativamente superior ao GPT-4o — resultado de um treinamento com verificação de fontes em tempo real.
+          O <strong>GPT-4o</strong> ("o" de "omni") é o modelo principal da OpenAI desde maio de 2024. Multimodal nativo, processa texto, áudio e imagens em tempo real. A versão <strong>gpt-4o-2024-11-20</strong> é o snapshot estável mais recente disponível pela API em abril de 2026. É o modelo padrão do ChatGPT para usuários gratuitos e Plus.
         </p>
 
         <AdLeaderboard className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BarChart3 className="h-7 w-7 text-violet-400" />
-          Comparação Direta: Benchmarks e Desempenho
+          Comparação Direta: Benchmarks Reais
         </h2>
         <div className="not-prose my-6 overflow-x-auto">
           <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead><tr className="bg-secondary">
               <th className="text-left py-3 px-4">Critério</th>
-              <th className="text-left py-3 px-4">Gemini 3</th>
-              <th className="text-left py-3 px-4">GPT-5</th>
-              <th className="text-left py-3 px-4">Vencedor</th>
+              <th className="text-left py-3 px-4">Gemini 2.5 Pro</th>
+              <th className="text-left py-3 px-4">GPT-4o</th>
+              <th className="text-left py-3 px-4">Vantagem</th>
             </tr></thead>
             <tbody>
               {[
-                ["MMLU (conhecimento geral)", "92,1%", "91,8%", "Gemini 3 (marginal)"],
-                ["HumanEval (código)", "89,4%", "91,2%", "GPT-5"],
-                ["MATH (raciocínio matemático)", "94,7%", "93,5%", "Gemini 3"],
-                ["Janela de contexto", "2M tokens", "256K tokens", "Gemini 3"],
-                ["Velocidade (tokens/s)", "~180", "~120", "Gemini 3"],
-                ["Multimodal (vídeo)", "Nativo", "Nativo", "Empate"],
-                ["Seguir instruções complexas", "Muito bom", "Excelente", "GPT-5"],
-                ["Custo por 1M tokens (input)", "~US$ 1,25", "~US$ 5,00", "Gemini 3"],
+                ["MMLU (conhecimento geral)", "~81,9%", "~87,2%", "GPT-4o"],
+                ["HumanEval (código Python)", "~84,1%", "~90,2%", "GPT-4o"],
+                ["MATH (raciocínio matemático)", "~91,0%", "~76,6%", "Gemini 2.5 Pro"],
+                ["GPQA Diamond (ciência avançada)", "~84,0%", "~53,6%", "Gemini 2.5 Pro"],
+                ["Janela de contexto", "1M–2M tokens", "128K tokens", "Gemini 2.5 Pro"],
+                ["Multimodal (vídeo nativo)", "Sim", "Não (só imagem)", "Gemini 2.5 Pro"],
+                ["Velocidade de resposta", "Moderada", "Rápida", "GPT-4o"],
+                ["Custo input (1M tokens)", "~US$ 1,25", "~US$ 2,50", "Gemini 2.5 Pro"],
               ].map(([c, g, o, v]) => (
                 <tr key={c} className="border-t border-border">
                   <td className="py-3 px-4 font-medium">{c}</td>
@@ -86,45 +84,46 @@ const Gemini3VsGPT5 = () => {
               ))}
             </tbody>
           </table>
+          <p className="text-xs text-muted-foreground mt-2">Fontes: LMSYS Chatbot Arena, Google DeepMind, OpenAI — dados públicos até abril de 2026</p>
         </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Zap className="h-7 w-7 text-violet-400" />
-          Raciocínio e Resolução de Problemas
+          Raciocínio: O Grande Diferencial do Gemini 2.5 Pro
         </h2>
         <p>
-          O GPT-5 se destaca em tarefas que exigem <strong>raciocínio multi-etapas e seguir instruções complexas</strong>. Em testes internos, o modelo consegue manter coerência em cadeias de raciocínio com mais de 20 passos — algo que o Gemini 3 também faz bem, mas com uma taxa ligeiramente maior de "alucinações" em passos intermediários.
+          O maior salto do Gemini 2.5 Pro é seu <strong>modo de raciocínio estendido</strong> — o modelo pode "pensar" antes de responder, similar ao o1 da OpenAI. No benchmark GPQA Diamond (perguntas de nível PhD em física, química e biologia), o Gemini 2.5 Pro atingiu <strong>84%</strong>, contra <strong>53,6%</strong> do GPT-4o — uma diferença expressiva para tarefas científicas avançadas.
         </p>
         <p>
-          Por outro lado, o <strong>Gemini 3 domina em raciocínio matemático e científico</strong>. Nos benchmarks MATH e GPQA Diamond, ele lidera com margens de 1-2 pontos percentuais. Para pesquisadores e engenheiros, essa diferença pode ser decisiva.
+          Em <strong>seguir instruções cotidianas e geração de texto fluente</strong>, o GPT-4o é consistentemente melhor avaliado por humanos no LMSYS Chatbot Arena. O modelo da OpenAI é mais direto e menos verboso, o que o torna mais prático para tarefas do dia a dia.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Globe className="h-7 w-7 text-violet-400" />
-          Multimodalidade: Quem Entende Melhor o Mundo?
+          Multimodalidade: Gemini Processa Vídeo, GPT-4o Não
         </h2>
         <p>
-          Ambos os modelos agora processam texto, imagem, áudio e vídeo nativamente. Porém, há diferenças importantes:
+          Uma diferença técnica relevante: o <strong>Gemini 2.5 Pro processa vídeos diretamente</strong> via API, podendo analisar até 1 hora de conteúdo em uma única chamada. O <strong>GPT-4o aceita apenas imagens</strong> via API — para análise de vídeo pela OpenAI, é necessário extrair frames ou usar o ChatGPT, onde essa funcionalidade existe como recurso de interface.
         </p>
         <div className="not-prose my-6 grid md:grid-cols-2 gap-5">
           <div className="bg-card rounded-xl border border-blue-500/20 p-5">
-            <h3 className="font-bold text-blue-400 mb-3">🔵 Gemini 3</h3>
+            <h3 className="font-bold text-blue-400 mb-3">🔵 Gemini 2.5 Pro</h3>
             <ul className="text-sm text-muted-foreground space-y-2">
-              <li>• Processamento de vídeos de até 4 horas</li>
-              <li>• Análise de documentos longos (PDFs de 1.500+ páginas)</li>
-              <li>• Integração nativa com Google Search para grounding</li>
-              <li>• Geração de imagens com Gemini 3 Pro Image</li>
-              <li>• Melhor em OCR e análise de diagramas técnicos</li>
+              <li>• Contexto de 1M–2M tokens</li>
+              <li>• Análise de vídeo nativa na API</li>
+              <li>• Raciocínio estendido (modo "thinking")</li>
+              <li>• Grounding com Google Search nativo</li>
+              <li>• Superior em matemática e ciências</li>
             </ul>
           </div>
           <div className="bg-card rounded-xl border border-green-500/20 p-5">
-            <h3 className="font-bold text-green-400 mb-3">🟢 GPT-5</h3>
+            <h3 className="font-bold text-green-400 mb-3">🟢 GPT-4o</h3>
             <ul className="text-sm text-muted-foreground space-y-2">
-              <li>• Compreensão de áudio em tempo real (conversação natural)</li>
-              <li>• Geração de imagens fotorrealistas nativa</li>
-              <li>• Melhor em descrição detalhada de cenas visuais</li>
-              <li>• Análise de sentimento em vídeos com precisão superior</li>
-              <li>• Voice mode com personalidades customizáveis</li>
+              <li>• Respostas mais rápidas e diretas</li>
+              <li>• Voice mode no ChatGPT</li>
+              <li>• Melhor avaliação humana no Chatbot Arena</li>
+              <li>• Ecossistema de GPTs customizados</li>
+              <li>• Disponível gratuitamente via ChatGPT</li>
             </ul>
           </div>
         </div>
@@ -133,13 +132,10 @@ const Gemini3VsGPT5 = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-violet-400" />
-          Preço: Gemini 3 É Até 4x Mais Barato
+          Preço: Gemini 2.5 Pro É Mais Barato na API
         </h2>
         <p>
-          Uma das maiores surpresas é a diferença de preço. O Google manteve uma política agressiva de precificação: o <strong>Gemini 3 Pro custa cerca de US$ 1,25 por milhão de tokens de entrada</strong>, enquanto o <strong>GPT-5 cobra aproximadamente US$ 5,00 por milhão de tokens de entrada</strong>.
-        </p>
-        <p>
-          Para empresas que processam grandes volumes de texto — como plataformas de atendimento ao cliente, análise de documentos jurídicos ou pipelines de dados — essa diferença de 4x pode representar centenas de milhares de reais por mês.
+          Para desenvolvedores que usam as APIs, a diferença de preço é real. O <strong>Gemini 2.5 Pro</strong> cobra <strong>US$ 1,25 por milhão de tokens de entrada</strong> para contextos de até 200K tokens (US$ 2,50 acima disso). O <strong>GPT-4o</strong> cobra <strong>US$ 2,50 por milhão de tokens de entrada</strong> — o dobro para a faixa padrão.
         </p>
         <div className="not-prose my-6 overflow-x-auto">
           <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
@@ -147,15 +143,16 @@ const Gemini3VsGPT5 = () => {
               <th className="text-left py-3 px-4">Modelo</th>
               <th className="text-left py-3 px-4">Input (1M tokens)</th>
               <th className="text-left py-3 px-4">Output (1M tokens)</th>
-              <th className="text-left py-3 px-4">Custo mensal estimado*</th>
+              <th className="text-left py-3 px-4">Contexto máx.</th>
             </tr></thead>
             <tbody>
               {[
-                ["Gemini 3 Pro", "~US$ 1,25", "~US$ 5,00", "~R$ 3.500"],
-                ["Gemini 3 Flash", "~US$ 0,15", "~US$ 0,60", "~R$ 450"],
-                ["GPT-5", "~US$ 5,00", "~US$ 15,00", "~R$ 14.000"],
-                ["GPT-5 Mini", "~US$ 0,75", "~US$ 3,00", "~R$ 2.100"],
-                ["Claude 4 Sonnet", "~US$ 3,00", "~US$ 15,00", "~R$ 12.600"],
+                ["Gemini 2.5 Pro (≤200K)", "US$ 1,25", "US$ 10,00", "2M tokens"],
+                ["Gemini 2.5 Pro (>200K)", "US$ 2,50", "US$ 15,00", "2M tokens"],
+                ["Gemini 2.5 Flash", "US$ 0,15", "US$ 0,60", "1M tokens"],
+                ["GPT-4o", "US$ 2,50", "US$ 10,00", "128K tokens"],
+                ["GPT-4o mini", "US$ 0,15", "US$ 0,60", "128K tokens"],
+                ["Claude 3.7 Sonnet", "US$ 3,00", "US$ 15,00", "200K tokens"],
               ].map(([m, i, o, c]) => (
                 <tr key={m} className="border-t border-border">
                   <td className="py-3 px-4 font-bold text-violet-400">{m}</td>
@@ -166,68 +163,54 @@ const Gemini3VsGPT5 = () => {
               ))}
             </tbody>
           </table>
-          <p className="text-xs text-muted-foreground mt-2">* Estimativa para 10M tokens/mês de input + 2M tokens/mês de output, convertido a R$ 5,60/US$</p>
+          <p className="text-xs text-muted-foreground mt-2">Preços via Google AI Studio e OpenAI Platform — abril de 2026</p>
         </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Lightbulb className="h-7 w-7 text-violet-400" />
-          Qual Escolher? Depende do Seu Caso de Uso
+          Qual Escolher?
         </h2>
         <div className="not-prose my-6 grid md:grid-cols-2 gap-5">
           <div className="bg-card rounded-xl border border-blue-500/20 p-5">
-            <h3 className="font-bold text-blue-400 mb-3">Escolha Gemini 3 se...</h3>
+            <h3 className="font-bold text-blue-400 mb-3">Escolha Gemini 2.5 Pro se...</h3>
             <ul className="text-sm text-muted-foreground space-y-2">
-              <li>• Precisa processar documentos ou vídeos muito longos</li>
-              <li>• Orçamento é prioridade (custo 4x menor)</li>
-              <li>• Foco em raciocínio matemático/científico</li>
+              <li>• Precisa analisar documentos muito longos</li>
+              <li>• Trabalha com raciocínio matemático avançado</li>
+              <li>• Precisa analisar vídeos diretamente na API</li>
               <li>• Usa ecossistema Google (Workspace, Cloud)</li>
-              <li>• Precisa de grounding com busca na web</li>
+              <li>• Custo da API é prioridade</li>
             </ul>
           </div>
           <div className="bg-card rounded-xl border border-green-500/20 p-5">
-            <h3 className="font-bold text-green-400 mb-3">Escolha GPT-5 se...</h3>
+            <h3 className="font-bold text-green-400 mb-3">Escolha GPT-4o se...</h3>
             <ul className="text-sm text-muted-foreground space-y-2">
-              <li>• Precisa de instruções complexas seguidas à risca</li>
-              <li>• Foco em geração de código e debugging</li>
-              <li>• Voice mode e conversação natural são essenciais</li>
-              <li>• Já tem integrações com o ecossistema OpenAI</li>
-              <li>• Precisa de geração de imagens fotorrealistas</li>
+              <li>• Precisa de respostas rápidas no dia a dia</li>
+              <li>• Voice mode e conversação em tempo real</li>
+              <li>• Já tem integrações com OpenAI/Azure</li>
+              <li>• Prefere o modelo mais bem avaliado por humanos</li>
+              <li>• Quer usar gratuitamente via ChatGPT</li>
             </ul>
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold mt-10 mb-4">O Elefante na Sala: Claude 4 e DeepSeek R2</h2>
+        <h2 className="text-2xl font-bold mt-10 mb-4">E o Claude 3.7 Sonnet?</h2>
         <p>
-          Enquanto Google e OpenAI disputam a liderança, não podemos ignorar a Anthropic, que deve lançar o <strong>Claude 4</strong> no segundo trimestre de 2026, com foco em segurança e janela de contexto de 1 milhão de tokens. A DeepSeek também anunciou o <strong>R2</strong>, que promete desempenho equivalente ao GPT-5 com custos 10x menores usando MoE otimizado.
-        </p>
-        <p>
-          A verdade é que 2026 é o ano em que <strong>a diferença entre os modelos de topo ficou menor do que nunca</strong>. A escolha agora depende mais do ecossistema, do preço e do caso de uso do que de uma superioridade técnica absoluta.
+          A Anthropic lançou o <strong>Claude 3.7 Sonnet</strong> em fevereiro de 2026 com o melhor desempenho em benchmarks de código — SWE-bench Verified: <strong>70,3%</strong>, contra 38,8% do GPT-4o. Para tarefas de programação e análise de código complexo, muitos desenvolvedores já o preferem. Os modelos open source como <strong>Llama 3.3 70B</strong> (Meta) e <strong>DeepSeek R1</strong> oferecem alternativas gratuitas sólidas para quem pode rodar infraestrutura própria.
         </p>
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Conclusão</h2>
         <p>
-          Se você busca <strong>o melhor custo-benefício e precisa de contextos longos</strong>, o Gemini 3 é imbatível. Se você precisa do <strong>modelo que melhor segue instruções complexas e gera código de alta qualidade</strong>, o GPT-5 ainda leva vantagem. E para quem não quer depender de nenhum dos dois gigantes, os modelos open source como DeepSeek R1 e Llama 3.3 continuam evoluindo rapidamente.
-        </p>
-        <p>
-          A boa notícia? <strong>Quem ganha com essa competição é o usuário</strong>. Preços caindo, qualidade subindo e mais opções do que nunca.
+          Em 2026, a escolha entre Gemini 2.5 Pro e GPT-4o depende do contexto: para <strong>raciocínio científico, documentos longos e análise de vídeo</strong>, o Gemini 2.5 Pro é superior. Para <strong>uso cotidiano, velocidade e integração com o ecossistema OpenAI</strong>, o GPT-4o ainda lidera. A boa notícia: nunca houve tantas opções de qualidade disponíveis.
         </p>
 
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Você já testou o Gemini 3 ou o GPT-5?</h3>
+          <h3 className="text-xl font-bold mb-2">Qual modelo você mais usa no dia a dia?</h3>
           <p className="text-muted-foreground">Compartilhe sua experiência nos comentários! 👇</p>
         </div>
       </div>
 
-      <RelatedTopics
-        title="Leia também"
-        links={[
-          { label: "ChatGPT vs Gemini vs Claude", href: "/post/chatgpt-vs-gemini-vs-claude-2026", desc: "Comparativo detalhado dos modelos anteriores" },
-          { label: "IA Open Source 2026", href: "/post/modelos-ia-open-source-2026", desc: "Llama, Mistral e DeepSeek contra os modelos pagos" },
-          { label: "Prompt Engineering 2026", href: "/post/prompt-engineering-guia-2026", desc: "Guia definitivo para escrever prompts que funcionam" },
-        ]}
-      />
       <RelatedPosts currentSlug="gemini-3-vs-gpt-5-2026" />
-      <CommentSection postId="gemini-3-vs-gpt-5-2026" postTitle="Gemini 3 vs GPT-5: A Nova Guerra dos Modelos de IA em 2026" />
+      <CommentSection postId="gemini-3-vs-gpt-5-2026" postTitle="Gemini 2.5 Pro vs GPT-4o: Qual o Melhor Modelo de IA em 2026?" />
     </article>
   );
 };

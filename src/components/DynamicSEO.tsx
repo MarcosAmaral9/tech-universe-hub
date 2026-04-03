@@ -361,9 +361,9 @@ const DynamicSEO = () => {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Início", item: BASE_URL },
-          { "@type": "ListItem", position: 2, name: cat.name, item: `${BASE_URL}${cat.path}` },
-          { "@type": "ListItem", position: 3, name: post.title, item: url },
+          { "@type": "ListItem", position: 1, name: "Início", item: { "@type": "Thing", "@id": BASE_URL } },
+          { "@type": "ListItem", position: 2, name: cat.name, item: { "@type": "Thing", "@id": `${BASE_URL}${cat.path}` } },
+          { "@type": "ListItem", position: 3, name: post.title, item: { "@type": "Thing", "@id": url } },
         ],
       });
 
@@ -397,8 +397,8 @@ const DynamicSEO = () => {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Início", item: BASE_URL },
-          { "@type": "ListItem", position: 2, name: catName, item: url },
+          { "@type": "ListItem", position: 1, name: "Início", item: { "@type": "Thing", "@id": BASE_URL } },
+          { "@type": "ListItem", position: 2, name: catName, item: { "@type": "Thing", "@id": url } },
         ],
       });
       clearScript("faq");

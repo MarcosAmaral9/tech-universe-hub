@@ -111,8 +111,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "139",
     slug: "gemini-3-vs-gpt-5-2026",
-    title: "Gemini 3 vs GPT-5: A Nova Guerra dos Modelos de IA em 2026",
-    excerpt: "Google lançou o Gemini 3 e a OpenAI confirmou o GPT-5 na mesma semana. Comparamos benchmarks, preço, multimodalidade e ajudamos você a escolher o melhor modelo.",
+    title: "Gemini 2.5 Pro vs GPT-4o: Qual o Melhor Modelo de IA em 2026?",
+    excerpt: "Comparamos os dois modelos de IA mais usados no mundo em 2026: Gemini 2.5 Pro (Google) e GPT-4o (OpenAI). Benchmarks reais, preços, multimodalidade e qual escolher para cada caso.",
     content: "",
     category: "ia",
     subtopic: "comparativos",
@@ -121,11 +121,11 @@ export const blogPosts: BlogPost[] = [
     date: "2026-04-03",
     readTime: "14 min",
     faq: [
-      { q: "Qual é melhor: Gemini 3 ou GPT-5?", a: "Depende do uso. O Gemini 3 é mais barato (4x), tem janela de contexto maior (2M tokens) e lidera em matemática. O GPT-5 é superior em seguir instruções complexas e geração de código." },
-      { q: "Quanto custa usar o Gemini 3?", a: "O Gemini 3 Pro custa aproximadamente US$ 1,25 por milhão de tokens de entrada — cerca de 4x mais barato que o GPT-5, que cobra US$ 5,00 por milhão de tokens." },
-      { q: "O GPT-5 é multimodal?", a: "Sim. O GPT-5 processa texto, imagem, áudio e vídeo nativamente em um único modelo, com destaque para conversação em voz natural e geração de imagens fotorrealistas." },
-      { q: "Qual modelo tem a maior janela de contexto?", a: "O Gemini 3 lidera com 2 milhões de tokens, contra 256 mil do GPT-5. Isso é crucial para análise de documentos longos e vídeos extensos." },
-      { q: "E os modelos open source como DeepSeek?", a: "O DeepSeek R1 e o Llama 3.3 continuam evoluindo e oferecem alternativa gratuita. O DeepSeek R2 foi anunciado com promessa de igualar o GPT-5 a custos 10x menores." },
+      { q: "Qual é melhor: Gemini 2.5 Pro ou GPT-4o?", a: "Depende do uso. O Gemini 2.5 Pro é superior em raciocínio matemático (MATH: 91% vs 76,6%), análise de vídeo nativa e contexto longo (1M tokens). O GPT-4o é mais rápido, melhor avaliado por humanos no Chatbot Arena e superior em código Python (HumanEval: 90,2% vs 84,1%)." },
+      { q: "Quanto custa usar o Gemini 2.5 Pro?", a: "O Gemini 2.5 Pro custa US$ 1,25 por milhão de tokens de entrada (para contextos até 200K tokens) e US$ 2,50 acima disso. O GPT-4o cobra US$ 2,50 por milhão de tokens de entrada — o dobro na faixa padrão." },
+      { q: "O GPT-4o processa vídeo?", a: "Não nativamente via API — o GPT-4o aceita apenas imagens. O Gemini 2.5 Pro processa vídeos diretamente na API, podendo analisar até 1 hora de conteúdo em uma única chamada." },
+      { q: "Qual modelo tem a maior janela de contexto?", a: "O Gemini 2.5 Pro lidera com 1 milhão de tokens (suporte experimental a 2 milhões), contra 128 mil tokens do GPT-4o. Para análise de documentos longos, contratos ou livros, o Gemini 2.5 Pro é a escolha clara." },
+      { q: "Existe alternativa a esses dois modelos?", a: "Sim. O Claude 3.7 Sonnet da Anthropic (lançado em fevereiro de 2026) lidera em benchmarks de código (SWE-bench: 70,3%). Para uso gratuito e local, o Llama 3.3 70B (Meta) e o DeepSeek R1 são opções open source de alta qualidade." },
     ],
   },
   {

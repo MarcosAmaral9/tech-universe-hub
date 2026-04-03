@@ -7,7 +7,6 @@ import { Clock, User, Calendar, TrendingUp, Building2, GraduationCap, Briefcase,
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/ia-brasil-adocao-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 
@@ -174,15 +173,6 @@ const IABrasilAdocao2026 = () => {
           <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
         </div>
       </div>
-
-      <RelatedTopics
-        title="Leia também"
-        links={[
-          { label: "IA no Trabalho 2026", href: "/post/ia-no-trabalho-2026-profissoes", desc: "Como a IA está mudando as profissões" },
-          { label: "Regulamentação da IA", href: "/post/regulamentacao-ia-brasil-mundo-2026", desc: "Marco legal da IA no Brasil e no mundo" },
-          { label: "IA e Ganhar Dinheiro", href: "/post/como-usar-ia-ganhar-dinheiro-2026", desc: "Formas práticas de monetizar com IA" },
-        ]}
-      />
       <RelatedPosts currentSlug="ia-brasil-adocao-2026" />
       <CommentSection postId="ia-brasil-adocao-2026" postTitle="IA no Brasil em 2026" />
     </article>
