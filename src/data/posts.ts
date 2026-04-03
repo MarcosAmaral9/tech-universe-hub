@@ -100,8 +100,96 @@ import poupancaVsCdbTesouroImg from "@/assets/poupanca-vs-cdb-tesouro-2026.webp"
 import reservaEmergenciaImg from "@/assets/reserva-emergencia-2026.webp";
 import iaCibersegurancaImg from "@/assets/ia-ciberseguranca-2026.webp";
 import promptEngineeringImg from "@/assets/prompt-engineering-2026.webp";
+import gemini3VsGpt5Img from "@/assets/gemini3-vs-gpt5-2026.webp";
+import iaBrasilAdocaoImg from "@/assets/ia-brasil-adocao-2026.webp";
+import inflacaoProtegerImg from "@/assets/inflacao-proteger-investimentos-2026.webp";
+import fiisDefensivosAbrilImg from "@/assets/fiis-defensivos-abril-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+
+  // ── 03 Abr 2026 — IA ──────────────────────────────────────
+  {
+    id: "139",
+    slug: "gemini-3-vs-gpt-5-2026",
+    title: "Gemini 3 vs GPT-5: A Nova Guerra dos Modelos de IA em 2026",
+    excerpt: "Google lançou o Gemini 3 e a OpenAI confirmou o GPT-5 na mesma semana. Comparamos benchmarks, preço, multimodalidade e ajudamos você a escolher o melhor modelo.",
+    content: "",
+    category: "ia",
+    subtopic: "comparativos",
+    image: gemini3VsGpt5Img,
+    author: "VICIO<CODE>",
+    date: "2026-04-03",
+    readTime: "14 min",
+    faq: [
+      { q: "Qual é melhor: Gemini 3 ou GPT-5?", a: "Depende do uso. O Gemini 3 é mais barato (4x), tem janela de contexto maior (2M tokens) e lidera em matemática. O GPT-5 é superior em seguir instruções complexas e geração de código." },
+      { q: "Quanto custa usar o Gemini 3?", a: "O Gemini 3 Pro custa aproximadamente US$ 1,25 por milhão de tokens de entrada — cerca de 4x mais barato que o GPT-5, que cobra US$ 5,00 por milhão de tokens." },
+      { q: "O GPT-5 é multimodal?", a: "Sim. O GPT-5 processa texto, imagem, áudio e vídeo nativamente em um único modelo, com destaque para conversação em voz natural e geração de imagens fotorrealistas." },
+      { q: "Qual modelo tem a maior janela de contexto?", a: "O Gemini 3 lidera com 2 milhões de tokens, contra 256 mil do GPT-5. Isso é crucial para análise de documentos longos e vídeos extensos." },
+      { q: "E os modelos open source como DeepSeek?", a: "O DeepSeek R1 e o Llama 3.3 continuam evoluindo e oferecem alternativa gratuita. O DeepSeek R2 foi anunciado com promessa de igualar o GPT-5 a custos 10x menores." },
+    ],
+  },
+  {
+    id: "140",
+    slug: "ia-brasil-adocao-2026",
+    title: "IA no Brasil em 2026: Investimentos em Tecnologia Crescem 18,5% e Transformam o Mercado",
+    excerpt: "Com US$ 67,8 bilhões investidos em TI e 42% das empresas usando IA em produção, o Brasil se consolida como polo de inteligência artificial na América Latina.",
+    content: "",
+    category: "ia",
+    subtopic: "trabalho",
+    image: iaBrasilAdocaoImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-03",
+    readTime: "12 min",
+    faq: [
+      { q: "Quanto o Brasil investe em tecnologia em 2026?", a: "Segundo a Abes/IDC, os investimentos em TI no Brasil totalizaram US$ 67,8 bilhões em 2025, com crescimento de 18,5%. Para 2026, a projeção é de US$ 71,4 bilhões (+5,3%)." },
+      { q: "Quantas empresas brasileiras usam IA?", a: "Cerca de 42% das empresas brasileiras já utilizam IA em produção, não apenas em projetos piloto. Os setores que mais adotam são financeiro, varejo e saúde." },
+      { q: "Qual o salário de um profissional de IA no Brasil?", a: "Em 2026, um júnior ganha entre R$ 6.000 e R$ 12.000/mês, um pleno entre R$ 12.000 e R$ 22.000, e um sênior entre R$ 22.000 e R$ 35.000. Heads de IA podem ganhar até R$ 70.000/mês." },
+      { q: "O Brasil tem regulamentação para IA?", a: "O PL 2338/2023 (Marco Legal da IA) está em tramitação no Congresso. A ANPD publicou diretrizes sobre uso de dados pessoais para treinamento de modelos em março de 2026." },
+      { q: "Quais setores mais investem em IA no Brasil?", a: "O setor financeiro lidera com R$ 12,8 bilhões, seguido por varejo (R$ 6,2 bi), indústria (R$ 4,1 bi), telecomunicações (R$ 3,5 bi), saúde (R$ 3,8 bi) e agronegócio (R$ 2,9 bi)." },
+    ],
+  },
+
+  // ── 03 Abr 2026 — Finanças ────────────────────────────────
+  {
+    id: "141",
+    slug: "inflacao-proteger-investimentos-2026",
+    title: "Inflação Acima da Meta em 2026: Como Proteger Seus Investimentos",
+    excerpt: "O IPCA projetado subiu para 4,31% e a guerra no Oriente Médio pressiona commodities. Veja 5 estratégias para proteger seu patrimônio da inflação persistente.",
+    content: "",
+    category: "invest",
+    subtopic: "planejamento",
+    image: inflacaoProtegerImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-03",
+    readTime: "13 min",
+    faq: [
+      { q: "Qual a inflação projetada para 2026?", a: "Segundo o Boletim Focus de 30/03/2026, o IPCA projetado para o fim de 2026 é de 4,31%, acima da meta de 3,0% com tolerância de 1,5 ponto percentual." },
+      { q: "Como a inflação afeta meus investimentos?", a: "A inflação corrói o poder de compra do dinheiro. Um investimento que rende 10% ao ano com inflação de 4,31% tem rendimento real de apenas ~5,5%. Poupança e renda fixa prefixada são os mais afetados." },
+      { q: "Tesouro IPCA+ protege contra inflação?", a: "Sim. O Tesouro IPCA+ paga a variação do IPCA + uma taxa prefixada. Em abril de 2026, está pagando IPCA + 6,8% ao ano — um rendimento real historicamente alto." },
+      { q: "FIIs protegem contra inflação?", a: "Sim. FIIs de tijolo têm contratos de aluguel reajustados pelo IPCA ou IGP-M. FIIs de recebíveis com CRIs indexados ao IPCA também oferecem proteção direta." },
+      { q: "Devo investir em dólar para me proteger?", a: "Uma exposição de 5-10% da carteira em dólar (via ETFs como IVVB11) pode proteger contra a desvalorização do real, mas não deve ser a estratégia principal." },
+    ],
+  },
+  {
+    id: "142",
+    slug: "fiis-defensivos-abril-2026",
+    title: "FIIs Defensivos em Abril de 2026: Estratégia para Investir com Segurança",
+    excerpt: "Com Selic a 13,25% e inflação acima da meta, grandes corretoras recomendam carteiras defensivas de FIIs. Veja critérios de seleção, segmentos e modelo de carteira.",
+    content: "",
+    category: "invest",
+    subtopic: "fiis",
+    image: fiisDefensivosAbrilImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-03",
+    readTime: "14 min",
+    faq: [
+      { q: "O que são FIIs defensivos?", a: "FIIs defensivos são fundos imobiliários com perfil de menor risco: contratos longos, inquilinos de qualidade, baixa vacância e receitas indexadas à inflação ou ao CDI." },
+      { q: "FIIs de papel são melhores que FIIs de tijolo agora?", a: "Em cenário de Selic alta (13,25%), FIIs de recebíveis (papel) tendem a distribuir mais dividendos por terem CRIs indexados ao CDI e IPCA. Mas FIIs de tijolo oferecem potencial de valorização quando os juros caírem." },
+      { q: "Qual o dividend yield médio dos FIIs em 2026?", a: "O dividend yield médio do IFIX em abril de 2026 é de 9,2% ao ano, com FIIs de recebíveis chegando a 11,5% e logística em torno de 8,8%." },
+      { q: "Como sei se um FII está caro ou barato?", a: "O principal indicador é o P/VP (Preço/Valor Patrimonial). Abaixo de 1,0 indica desconto. Acima de 1,05 pode indicar ágio. Combine com DY, vacância e qualidade dos ativos." },
+      { q: "Quando devo aumentar o risco na carteira de FIIs?", a: "Quando o Banco Central iniciar cortes mais agressivos na Selic (previsto para 2° semestre de 2026), será o momento de aumentar exposição a FIIs de tijolo e reduzir recebíveis CDI+." },
+    ],
+  },
 
   // ── 28 Mar 2026 — IA ──────────────────────────────────────
   {

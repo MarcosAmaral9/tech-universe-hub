@@ -340,6 +340,11 @@ const App = () => (
                 {/* 28 Mar 2026 — IA */}
                 <Route path="/post/ia-ciberseguranca-2026" element={<IACiberseguranca2026 />} />
                 <Route path="/post/prompt-engineering-guia-2026" element={<PromptEngineering2026 />} />
+                {/* 03 Abr 2026 */}
+                <Route path="/post/gemini-3-vs-gpt-5-2026" element={<Gemini3VsGPT5 />} />
+                <Route path="/post/ia-brasil-adocao-2026" element={<IABrasilAdocao2026 />} />
+                <Route path="/post/inflacao-proteger-investimentos-2026" element={<InflacaoProtegerInvestimentos2026 />} />
+                <Route path="/post/fiis-defensivos-abril-2026" element={<FIIsDefensivosAbril2026 />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
