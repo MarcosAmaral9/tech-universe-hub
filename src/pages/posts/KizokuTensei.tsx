@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Crown } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -31,6 +32,7 @@ const KizokuTensei = () => {
         </div>
         <ShareWhatsApp />
       </header>
+      <AdLeaderboard className="my-8" />
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high" src={heroImg} alt="Noble Reincarnation Kizoku Tensei — Noah Ararat décimo terceiro príncipe" loading="eager" decoding="async" className="w-full h-full object-cover" />
@@ -87,6 +89,7 @@ const KizokuTensei = () => {
                 <h4 className="font-bold">{p.name}</h4>
                 <span className="text-xs bg-muted px-2 py-0.5 rounded-full">VA: {p.va}</span>
               </div>
+      <AdRectangle className="my-8" />
               <p className="text-sm text-muted-foreground mb-0">{p.desc}</p>
             </div>
           ))}
@@ -107,6 +110,7 @@ const KizokuTensei = () => {
 
       <RelatedPosts currentSlug="kizoku-tensei-noble-reincarnation-guia" />
       <CommentSection postId="kizoku-tensei-noble-reincarnation-guia" postTitle="Noble Reincarnation (Kizoku Tensei) — Guia Completo" />
+          <AdLeaderboard className="my-8" />
     </article>
   );
 };

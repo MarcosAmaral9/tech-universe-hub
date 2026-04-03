@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Film, Globe, Swords } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -32,6 +33,7 @@ const SoloLeveling = () => {
         </div>
         <ShareWhatsApp />
       </header>
+      <AdLeaderboard className="my-8" />
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high" src={heroImg} alt="Solo Leveling — Sung Jinwoo o Monarca das Sombras" loading="eager" decoding="async" className="w-full h-full object-cover" />
@@ -133,6 +135,7 @@ const SoloLeveling = () => {
             No <strong>Crunchyroll Anime Awards 2025</strong>, Solo Leveling levou <strong>9 prêmios</strong>, incluindo <strong>Anime do Ano</strong>, <strong>Melhor Ação</strong> e <strong>Melhor Personagem Principal</strong> (Sung Jinwoo), com mais de 50 milhões de votos acumulados globalmente.
           </p>
         </div>
+      <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Star className="h-7 w-7 text-otaku" />
@@ -202,6 +205,7 @@ const SoloLeveling = () => {
 
       <RelatedPosts currentSlug="solo-leveling-guia-completo-temporadas" />
       <CommentSection postId="solo-leveling-guia-completo-temporadas" postTitle="Solo Leveling: Guia Completo — Temporadas, Filme e o Monarca das Sombras" />
+          <AdLeaderboard className="my-8" />
     </article>
   );
 };

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, BookOpen, Compass, Shield, Zap, MapPin, Star } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -32,6 +33,7 @@ const CrimsonDesertIniciantes = () => {
         </div>
         <ShareWhatsApp />
       </header>
+      <AdLeaderboard className="my-8" />
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high" src={heroImg} alt="Crimson Desert guia iniciantes dicas Pywel" loading="eager" decoding="async" className="w-full h-full object-cover" />
@@ -145,6 +147,7 @@ const CrimsonDesertIniciantes = () => {
                 <p className="font-bold mb-1">{tip.title}</p>
                 <p className="text-sm text-muted-foreground mb-0">{tip.desc}</p>
               </div>
+      <AdRectangle className="my-8" />
             </div>
           ))}
         </div>
@@ -232,6 +235,7 @@ const CrimsonDesertIniciantes = () => {
 
       <RelatedPosts currentSlug="crimson-desert-guia-iniciantes-dicas" />
       <CommentSection postId="crimson-desert-guia-iniciantes-dicas" postTitle="Crimson Desert: Guia de Dicas para Iniciantes" />
+          <AdLeaderboard className="my-8" />
     </article>
   );
 };

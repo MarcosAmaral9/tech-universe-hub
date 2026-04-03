@@ -147,7 +147,7 @@ const BaldursGate3Review2026 = lazy(() => import("./pages/posts/BaldursGate3Revi
 const DragonAgeVeilguard2026 = lazy(() => import("./pages/posts/DragonAgeVeilguard2026"));
 const DemonSlayerHashira2026 = lazy(() => import("./pages/posts/DemonSlayerHashira2026"));
 const OnePieceFinalSaga2026  = lazy(() => import("./pages/posts/OnePieceFinalSaga2026"));
-const CrimsonDesertPanel = lazy(() => import("./pages/posts/CrimsonDesertPanel"));
+const CrimsonDesertPortal = lazy(() => import("./pages/posts/CrimsonDesertPortal"));
 const CrimsonDesertGuiaCompleto = lazy(() => import("./pages/posts/CrimsonDesertGuiaCompleto"));
 const CrimsonDesertCombate = lazy(() => import("./pages/posts/CrimsonDesertCombate"));
 const CrimsonDesertReview = lazy(() => import("./pages/posts/CrimsonDesertReview"));
@@ -219,7 +219,7 @@ const App = () => (
                 <Route path="/otaku/tensura" element={<TensuraPortal />} />
                 <Route path="/otaku/overlord" element={<OverlordPortal />} />
                 <Route path="/geek/assassins-creed" element={<AssassinsCreedPortal />} />
-                <Route path="/geek/crimson-desert" element={<CrimsonDesertPanel />} />
+                <Route path="/geek/crimson-desert" element={<CrimsonDesertPortal />} />
                 <Route path="/post/crimson-desert-guia-completo" element={<CrimsonDesertGuiaCompleto />} />
                 <Route path="/post/crimson-desert-combate-blackspace-engine" element={<CrimsonDesertCombate />} />
                 <Route path="/post/crimson-desert-review-2026" element={<CrimsonDesertReview />} />

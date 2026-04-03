@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Sword, Shield, MapPin, Star, Package, Wrench } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -33,6 +34,7 @@ const CrimsonDesertEquipamentos = () => {
         </div>
         <ShareWhatsApp />
       </header>
+      <AdLeaderboard className="my-8" />
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high" src={heroImg} alt="Crimson Desert equipamentos melhores armas armaduras início" loading="eager" decoding="async" className="w-full h-full object-cover" />
@@ -149,6 +151,7 @@ const CrimsonDesertEquipamentos = () => {
             </TableBody>
           </Table>
         </div>
+      <AdRectangle className="my-8" />
 
         <div className="not-prose my-4 p-4 bg-amber-500/10 border border-amber-500/30 rounded-xl">
           <p className="font-bold text-amber-400 mb-1">💡 Refined Concentrate — Cura Premium</p>
@@ -261,6 +264,7 @@ const CrimsonDesertEquipamentos = () => {
 
       <RelatedPosts currentSlug="crimson-desert-melhores-equipamentos-inicio" />
       <CommentSection postId="crimson-desert-melhores-equipamentos-inicio" postTitle="Crimson Desert: Melhores Equipamentos do Início — Onde Encontrar" />
+          <AdLeaderboard className="my-8" />
     </article>
   );
 };

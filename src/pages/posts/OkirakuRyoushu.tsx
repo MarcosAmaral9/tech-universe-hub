@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Shield } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -31,6 +32,7 @@ const OkirakuRyoushu = () => {
         </div>
         <ShareWhatsApp />
       </header>
+      <AdLeaderboard className="my-8" />
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high" src={heroImg} alt="Easygoing Territory Defense Okiraku Ryoushu — Van e sua vila fortaleza" loading="eager" decoding="async" className="w-full h-full object-cover" />
@@ -87,7 +89,11 @@ const OkirakuRyoushu = () => {
             </div>
           ))}
         </div>
+      </div>
 
+      <AdRectangle className="my-8" />
+
+      <div className="prose prose-lg dark:prose-invert max-w-none">
         <div className="not-prose my-6 p-5 bg-card border border-border rounded-xl">
           <p className="font-bold mb-2 text-sm">📅 Status em março de 2026</p>
           <p className="text-sm text-muted-foreground mb-0">
@@ -103,6 +109,7 @@ const OkirakuRyoushu = () => {
 
       <RelatedPosts currentSlug="okiraku-ryoushu-territory-defense-guia" />
       <CommentSection postId="okiraku-ryoushu-territory-defense-guia" postTitle="Easygoing Territory Defense (Okiraku Ryoushu) — Guia Completo" />
+      <AdLeaderboard className="my-8" />
     </article>
   );
 };

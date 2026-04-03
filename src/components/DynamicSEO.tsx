@@ -81,10 +81,15 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Instale o VICIO<CODE> como aplicativo no seu dispositivo.",
     keywords: "instalar app, PWA, aplicativo, download, VICIO CODE app, celular, desktop",
   },
-  "/configuracoes": {
-    title: "Configurações",
-    description: "Personalize sua experiência no VICIO<CODE>.",
-    keywords: "configurações, preferências, tema, personalizar, conta, perfil",
+  "/auth/google": {
+    title: "Autenticação Google",
+    description: "Autenticando com Google no VICIO<CODE>.",
+    keywords: "login google, autenticação, VICIO CODE",
+  },
+  "/painel-social": {
+    title: "Painel Social Media",
+    description: "Painel de geração de conteúdo para redes sociais do VICIO<CODE>.",
+    keywords: "painel social, instagram, tiktok, conteúdo, VICIO CODE",
   },
   "/otaku/tensura": {
     title: "TenSura: Guia Completo — Temporadas, Filmes e Personagens",

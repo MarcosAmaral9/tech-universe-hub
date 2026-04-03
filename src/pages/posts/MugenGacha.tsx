@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Swords } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -31,6 +32,7 @@ const MugenGacha = () => {
         </div>
         <ShareWhatsApp />
       </header>
+      <AdLeaderboard className="my-8" />
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high" src={heroImg} alt="My Gift Lvl 9999 Unlimited Gacha — Light e suas companheiras" loading="eager" decoding="async" className="w-full h-full object-cover" />
@@ -77,6 +79,7 @@ const MugenGacha = () => {
                 <h4 className="font-bold">{p.name}</h4>
                 {p.va !== "—" && <span className="text-xs bg-muted px-2 py-0.5 rounded-full">VA: {p.va}</span>}
               </div>
+      <AdRectangle className="my-8" />
               <p className="text-sm text-muted-foreground mb-0">{p.desc}</p>
             </div>
           ))}
@@ -101,6 +104,7 @@ const MugenGacha = () => {
 
       <RelatedPosts currentSlug="mugen-gacha-level-9999-traicao-dungeon" />
       <CommentSection postId="mugen-gacha-level-9999-traicao-dungeon" postTitle="My Gift Lvl 9999 Unlimited Gacha — Traição no Fundo da Dungeon" />
+          <AdLeaderboard className="my-8" />
     </article>
   );
 };

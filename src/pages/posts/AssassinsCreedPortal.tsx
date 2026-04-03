@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import DynamicSEO from "@/components/DynamicSEO";
+import { AdInArticle } from "@/components/AdSense";
 import BackNavigation from "@/components/BackNavigation";
 import { Sword, Trophy, Star, ChevronRight, Skull, Anchor, Globe, Zap } from "lucide-react";
 
@@ -271,6 +272,7 @@ const AssassinsCreedPortal = () => (
             />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-card/80 hidden md:block" />
           </div>
+      <AdInArticle className="my-8" />
           {/* content */}
           <div className="bg-card md:bg-transparent p-6 md:p-8 flex flex-col justify-center flex-1">
             <span className="inline-block text-xs bg-green-500/20 text-green-400 border border-green-500/30 px-2 py-0.5 rounded-full font-bold mb-3 w-fit">{games[0].badge}</span>
@@ -352,6 +354,7 @@ const AssassinsCreedPortal = () => (
           Criada pela <strong className="text-foreground">Ubisoft Montreal</strong> em 2007, Assassin's Creed é uma das franquias mais vendidas da história dos games. A série combina história real com ficção especulativa, colocando o jogador no papel de Assassinos em conflito eterno com os Templários — uma guerra secreta que moldou a humanidade por milênios. Cada jogo reconstrói uma era histórica com riqueza de detalhes: de Damasco nas Cruzadas (2007) ao Japão Feudal (2025).
         </p>
       </div>
+      <AdInArticle className="my-8" />
     </section>
   </div>
 );

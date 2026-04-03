@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import DynamicSEO from "@/components/DynamicSEO";
+import { AdInArticle } from "@/components/AdSense";
 import BackNavigation from "@/components/BackNavigation";
 import heroImg from "@/assets/tensura-portal-banner.webp";
 import tensuraT1Img from "@/assets/tensura-guia-completo.webp";
@@ -46,6 +47,7 @@ const TensuraPortal = () => (
           <span className="text-xs bg-secondary text-muted-foreground px-3 py-1.5 rounded-full">Anime · Mangá · Light Novel</span>
           <span className="text-xs bg-secondary text-muted-foreground px-3 py-1.5 rounded-full">Estúdio 8-Bit</span>
         </div>
+      <AdInArticle className="my-8" />
       </div>
     </section>
 
@@ -96,6 +98,7 @@ const TensuraPortal = () => (
             </tbody>
           </table>
         </div>
+      <AdInArticle className="my-8" />
       </div>
     </section>
   </div>

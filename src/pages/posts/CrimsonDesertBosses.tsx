@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Skull, Swords, MapPin, Shield, Star, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -33,6 +34,7 @@ const CrimsonDesertBosses = () => {
         </div>
         <ShareWhatsApp />
       </header>
+      <AdLeaderboard className="my-8" />
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high" src={heroImg} alt="Crimson Desert bosses guia completo — chefes de Pywel" loading="eager" decoding="async" className="w-full h-full object-cover" />
@@ -166,6 +168,7 @@ const CrimsonDesertBosses = () => {
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs">{k}</p><p className="text-muted-foreground">{v}</p></div>
           ))}
         </div>
+      <AdRectangle className="my-8" />
         <p>
           Hexe Marie possui 2 barras de HP e é uma das mais bem voice-acted do jogo. Ataca atirando corvos em linha reta (fáceis de esquivar lateralmente) e invoca esbirros. Os esbirros morrem com 1 acerto.
         </p>
@@ -283,6 +286,7 @@ const CrimsonDesertBosses = () => {
 
       <RelatedPosts currentSlug="crimson-desert-bosses-guia-chefes" />
       <CommentSection postId="crimson-desert-bosses-guia-chefes" postTitle="Crimson Desert: Guia de Bosses — Onde Encontrar, Como Derrotar e Recompensas" />
+          <AdLeaderboard className="my-8" />
     </article>
   );
 };

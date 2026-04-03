@@ -1640,6 +1640,12 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-29",
     readTime: "22 min",
+    faq: [
+      { q: "Quantos bosses tem Crimson Desert?", a: "Crimson Desert tem 76 bosses no lançamento, incluindo Field Bosses, World Bosses e o boss final Caliburn. Cada região de Pywel tem seus próprios chefes com mecânicas únicas." },
+      { q: "Qual é o boss mais difícil de Crimson Desert?", a: "Caliburn é considerado o boss mais difícil do jogo. Entre os World Bosses, Hexe Marie e Kearush Slayer são os mais desafiadores para grupos." },
+      { q: "Os bosses de Crimson Desert respawnam?", a: "Sim. Field Bosses respawnam a cada 4-12 horas. World Bosses têm timers de 12-24 horas e anúncio global. O boss final Caliburn é de instância e pode ser repetido." },
+      { q: "Vale a pena farmar bosses em Crimson Desert?", a: "Sim. Bosses são a principal fonte de equipamentos raros, materiais de refinamento e Silver. World Bosses oferecem drops exclusivos não encontrados em outras fontes." },
+    ],
   },
   {
     id: "133",
@@ -1653,6 +1659,12 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-29",
     readTime: "20 min",
+    faq: [
+      { q: "Crimson Desert tem sistema de XP tradicional?", a: "Não. Crimson Desert usa progressão por habilidades e equipamentos, sem level de personagem tradicional. Você evolui dominando combos, coletando Abyss Artifacts e melhorando equipamentos." },
+      { q: "Como funciona o fast travel em Crimson Desert?", a: "O fast travel funciona por Waypoints desbloqueados ao explorar o mapa. Você também pode usar montarias. Descobrir Waypoints cedo é essencial dado o tamanho do mapa de Pywel." },
+      { q: "Crimson Desert tem multiplayer?", a: "Sim. A campanha principal é single player, mas há conteúdo co-op para World Bosses e masmorras especiais que requerem grupos de 2-4 jogadores." },
+      { q: "Qual é a melhor build para iniciantes em Crimson Desert?", a: "Sword e Shield oferece o melhor equilíbrio entre ataque e defesa para iniciantes. Foque em equipamentos da região inicial e domine os combos básicos antes de tentar builds especializadas." },
+    ],
   },
   {
     id: "134",
@@ -1666,6 +1678,12 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-29",
     readTime: "18 min",
+    faq: [
+      { q: "Quais são as melhores armas do início de Crimson Desert?", a: "As melhores armas iniciais são a Sword of the Lord (masmorra Fallen Kingdom), Tauria Curved Sword (drop de boss regional) e o Flamespitter para builds mágicas. Todas são acessíveis nas primeiras 10 horas." },
+      { q: "Como refinar equipamentos em Crimson Desert?", a: "O refinamento usa Palm Concentrates e materiais de bosses. Recomenda-se refinar até +5 antes de tentar nível superior para não desperdiçar recursos raros." },
+      { q: "Os equipamentos quebram em Crimson Desert?", a: "Não existe durabilidade — equipamentos não quebram com uso. O refinamento pode falhar mas nunca destrói o item, tornando o sistema mais acessível." },
+      { q: "Onde encontrar armaduras do Fallen Kingdom?", a: "As armaduras do Fallen Kingdom dropam de inimigos e mini-bosses dentro da Masmorra Fallen Kingdom, acessível após o segundo capítulo da história." },
+    ],
   },
   // ── Otaku Posts ──────────────────────────────────────────
   {
@@ -1828,6 +1846,12 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-29",
     readTime: "20 min",
+    faq: [
+      { q: "Quantas temporadas tem Solo Leveling?", a: "Solo Leveling tem 2 temporadas: T1 pela A-1 Pictures (jan-mar 2024, 12 eps) e T2 Arise from the Shadow (jan-mar 2025, 13 eps). O filme ReAwakening foi lançado em novembro de 2024." },
+      { q: "Solo Leveling é fiel ao manhwa?", a: "Sim, a A-1 Pictures manteve os principais momentos icônicos com alta fidelidade. Pequenas mudanças de pacing foram feitas para o formato anime." },
+      { q: "Qual é o poder de Sung Jinwoo?", a: "Sung Jinwoo é o Shadow Monarch — extrai as sombras de inimigos derrotados e os transforma em soldados leais. Seu sistema único permite evolução sem limite." },
+      { q: "Onde assistir Solo Leveling no Brasil?", a: "Solo Leveling está disponível na Crunchyroll com legendas em português. O filme ReAwakening também está na plataforma." },
+    ],
   },
   {
     id: "121",
@@ -1841,6 +1865,12 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-29",
     readTime: "16 min",
+    faq: [
+      { q: "Quantas temporadas tem Tsukimichi Moonlit Fantasy?", a: "Tsukimichi tem 2 temporadas: T1 pela C2C (jul-set 2021, 12 eps) e T2 pela J.C.Staff (jan-jun 2024, 25 eps). A T3 foi anunciada sem data confirmada." },
+      { q: "Quem são Tomoe e Mio em Tsukimichi?", a: "Tomoe é um dragão milenar em forma humana que serve Makoto. Mio é uma Aranha das Trevas extremamente poderosa. As duas são os serventes mais fortes do protagonista." },
+      { q: "Por que Makoto foi banido pela deusa em Tsukimichi?", a: "A deusa considerou Makoto feio pelos padrões do mundo de Elysion e o baniu para as Terras Selvagens, onde ele descobre seus poderes absurdos e cria sua própria comunidade." },
+      { q: "Tsukimichi é um isekai de construção de mundo?", a: "Sim. Makoto cria um refúgio para seres marginalizados, desenvolve relações comerciais e constrói influência política, combinando isekai com construção de comunidade." },
+    ],
   },
   {
     id: "122",
@@ -1854,6 +1884,12 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-29",
     readTime: "14 min",
+    faq: [
+      { q: "Qual é o enredo de Mugen Gacha Level 9999?", a: "Light é traído e abandonado pelos companheiros no fundo de uma dungeon, mas descobre o sistema Gacha Ilimitado que invoca guerreiras de nível 9999. Com elas, ele busca vingança." },
+      { q: "Mugen Gacha Level 9999 tem anime?", a: "Sim. O anime foi produzido pela J.C.Staff e exibido de outubro a dezembro de 2025 no HIDIVE, com 12 episódios." },
+      { q: "As personagens do Gacha são todas mulheres?", a: "Sim, o sistema Gacha invoca exclusivamente guerreiras chamadas Gift Otome, cada uma com habilidades únicas e lealdade absoluta ao protagonista Light." },
+      { q: "Mugen Gacha Level 9999 é focado em vingança?", a: "Sim. Light foi deixado para morrer pelos companheiros que queriam os créditos da expedição. Com o poder do Gacha ele cresce além de todos e confronta os traidores." },
+    ],
   },
   {
     id: "123",
@@ -1867,6 +1903,12 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-29",
     readTime: "13 min",
+    faq: [
+      { q: "Quem é Noah Ararat em Kizoku Tensei?", a: "Noah é o 13° filho do imperador, reencarnado com cap de nível infinito e habilidade de absorver poderes de serventes leais que sacrificam suas vidas por ele." },
+      { q: "Kizoku Tensei tem quantos episódios?", a: "A temporada 1 tem 12 episódios, lançados em janeiro de 2026 na Crunchyroll. Produzido pela CompTown, cobre os primeiros volumes do light novel." },
+      { q: "O que diferencia Kizoku Tensei de outros isekai?", a: "Noah cresce absorvendo habilidades de serventes que se sacrificam por ele — uma mecânica de evolução baseada em lealdade e sacrifício, não apenas em farmar experiência." },
+      { q: "Kizoku Tensei é reencarnação ou transmigração?", a: "Reencarnação — o protagonista nasce como bebê nobre no mundo de fantasia, crescendo com memórias da vida anterior mas como nativo do novo mundo." },
+    ],
   },
   {
     id: "124",
@@ -1880,6 +1922,12 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-29",
     readTime: "15 min",
+    faq: [
+      { q: "O que é o Hell Mode no anime?", a: "Hell Mode é a dificuldade máxima do MMORPG que Kenichi jogava — exige 100x mais XP mas oferece recompensas superiores. Ao reencarnar, ele mantém essa configuração, evoluindo lentamente mas sem limites." },
+      { q: "Hell Mode tem quantos episódios?", a: "A temporada 1 tem 12 episódios, lançados em janeiro de 2026. Produzido pela Yokohama Animation Laboratory, disponível no HIDIVE e Amazon Prime Video." },
+      { q: "Qual é a classe do protagonista em Hell Mode?", a: "Allen é um Invocador — classe considerada fraca por muitos. No Hell Mode seus invocados crescem junto com ele, tornando-se uma força devastadora conforme evolui." },
+      { q: "Hell Mode é recomendado para fãs de RPG?", a: "Sim. O anime usa mecânicas de RPG (stats, skills, builds) como parte central da narrativa, com forte apelo para jogadores de MMORPG e fãs de isekai com sistemas de progressão." },
+    ],
   },
   {
     id: "125",
@@ -1893,6 +1941,12 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-29",
     readTime: "14 min",
+    faq: [
+      { q: "Qual é a premissa de Farming Life in Another World?", a: "Hiraku Machio reencarna em um mundo de fantasia com a Ferramenta Universal de Fazenda, criando a fazenda mais extraordinária do mundo e atraindo vampiras, elfas e dragões." },
+      { q: "Farming Life in Another World tem segunda temporada?", a: "Sim. A T1 foi exibida em jan-mar 2023 (12 eps, Zero-G). A T2 foi confirmada para abril de 2026, com produção também pela Zero-G no Amazon Prime Video." },
+      { q: "É um isekai de slice of life?", a: "Sim, é um dos mais populares do gênero. Sem grandes batalhas — o foco é na vida pacífica da fazenda, relações com as esposas e crescimento da comunidade ao redor." },
+      { q: "Quem é Loo em Farming Life?", a: "Loo é uma vampira milenar extremamente poderosa que se torna a primeira esposa de Hiraku, escolhendo a vida tranquila da fazenda. Sua história é central para os primeiros arcos." },
+    ],
   },
   {
     id: "126",
@@ -1906,6 +1960,12 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-29",
     readTime: "14 min",
+    faq: [
+      { q: "Qual a diferença entre Maou-sama Retry e Retry R?", a: "Retry (2019, Ekachi Epilka) tinha animação modesta. Retry R (2024, Gekkō) é uma nova adaptação com animação completamente refeita, maior fidelidade ao material original e produção superior." },
+      { q: "Quem é Hakuto Kunai em Maou-sama Retry?", a: "Hakuto Kunai é o avatar Rei Demônio que Akira Oono, programador de 45 anos, criou em seu MMORPG. Ao ser sugado para dentro do jogo, ele mantém todos os poderes absurdos do personagem." },
+      { q: "Maou-sama Retry é comédia ou ação?", a: "Mistura dos dois. A comédia vem do contraste entre a aparência intimidadora do Rei Demônio e as atitudes mundanas de Akira preocupado com negócios e gestão. A ação mostra seu poder absurdo." },
+      { q: "Maou-sama Retry tem final completo?", a: "Retry R (2024) é mais completo que o anime de 2019. O light novel de Tsetsuki Kakeru continua em publicação com arcos que vão além do material animado." },
+    ],
   },
   {
     id: "127",
@@ -1919,6 +1979,12 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-03-29",
     readTime: "13 min",
+    faq: [
+      { q: "Qual é o poder de Van em Okiraku Ryoushu?", a: "Van tem a Magia de Produção — considerada inútil pela maioria, mas permite criar estruturas e defesas de qualidade incomparável, transformando um vilarejo esquecido em fortaleza impenetrável." },
+      { q: "Okiraku Ryoushu tem quantos episódios?", a: "A temporada 1 tem 12 episódios, lançada em janeiro de 2026 na Crunchyroll. Produzido pela NAZ, adapta o light novel de Mizu Morino." },
+      { q: "É um isekai de construção?", a: "Sim, similar ao Tensei Slime mas com Van sendo nobre humano que usa habilidades de produção para defender sua região em vez de poder de combate direto." },
+      { q: "Qual o diferencial de Okiraku Ryoushu entre os isekai de 2026?", a: "Foco em estratégia defensiva e engenharia — Van raramente combate diretamente, preferindo criar armadilhas e fortalezas superiores, dando ao anime ritmo distinto com ênfase em planejamento." },
+    ],
   },
 ];
 

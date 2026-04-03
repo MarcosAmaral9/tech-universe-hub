@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Leaf } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -31,6 +32,7 @@ const IsekaiNonbiriNouka = () => {
         </div>
         <ShareWhatsApp />
       </header>
+      <AdLeaderboard className="my-8" />
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high" src={heroImg} alt="Farming Life in Another World — Hiraku e suas companheiras na fazenda" loading="eager" decoding="async" className="w-full h-full object-cover" />
@@ -98,6 +100,7 @@ const IsekaiNonbiriNouka = () => {
                 <h4 className="font-bold">{p.name}</h4>
                 {p.va !== "—" && <span className="text-xs bg-muted px-2 py-0.5 rounded-full">VA: {p.va}</span>}
               </div>
+      <AdRectangle className="my-8" />
               <p className="text-sm text-muted-foreground mb-0">{p.desc}</p>
             </div>
           ))}
@@ -119,6 +122,7 @@ const IsekaiNonbiriNouka = () => {
 
       <RelatedPosts currentSlug="isekai-nonbiri-nouka-farming-life-guia" />
       <CommentSection postId="isekai-nonbiri-nouka-farming-life-guia" postTitle="Farming Life in Another World — Guia Completo" />
+          <AdLeaderboard className="my-8" />
     </article>
   );
 };

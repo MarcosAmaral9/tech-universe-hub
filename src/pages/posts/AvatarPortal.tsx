@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import DynamicSEO from "@/components/DynamicSEO";
+import { AdInArticle } from "@/components/AdSense";
 import BackNavigation from "@/components/BackNavigation";
 import { ArrowLeft } from "lucide-react";
 import avatarPortalBannerImg from "@/assets/avatar-portal-banner.webp";
@@ -47,6 +48,7 @@ const AvatarPortal = () => {
                   {card.btn}
                 </Link>
               </div>
+      <AdInArticle className="my-8" />
             </div>
           ))}
         </div>
@@ -101,6 +103,7 @@ const AvatarPortal = () => {
             </tbody>
           </table>
         </div>
+      <AdInArticle className="my-8" />
       </section>
     </div>
   );

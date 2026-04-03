@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Globe } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -32,6 +33,7 @@ const Tsukimichi = () => {
         </div>
         <ShareWhatsApp />
       </header>
+      <AdLeaderboard className="my-8" />
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high" src={heroImg} alt="Tsukimichi Moonlit Fantasy — Makoto Misumi e suas companheiras" loading="eager" decoding="async" className="w-full h-full object-cover" />
@@ -106,6 +108,7 @@ const Tsukimichi = () => {
             </TableBody>
           </Table>
         </div>
+      <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Star className="h-7 w-7 text-otaku" />
@@ -136,6 +139,7 @@ const Tsukimichi = () => {
 
       <RelatedPosts currentSlug="tsukimichi-moonlit-fantasy-guia-completo" />
       <CommentSection postId="tsukimichi-moonlit-fantasy-guia-completo" postTitle="Tsukimichi: Moonlit Fantasy — Guia Completo" />
+          <AdLeaderboard className="my-8" />
     </article>
   );
 };

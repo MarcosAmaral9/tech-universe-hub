@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import DynamicSEO from "@/components/DynamicSEO";
+import { AdInArticle } from "@/components/AdSense";
 import BackNavigation from "@/components/BackNavigation";
 import { ChevronRight } from "lucide-react";
 import crimsonHeroImg        from "@/assets/crimson-desert-hero.webp";
@@ -87,7 +88,7 @@ const articles = [
   },
 ];
 
-const CrimsonDesertPanel = () => (
+const CrimsonDesertPortal = () => (
   <div className="min-h-screen">
     <DynamicSEO />
     <BackNavigation category="geek" />
@@ -125,6 +126,7 @@ const CrimsonDesertPanel = () => (
             Pearl Abyss
           </span>
         </div>
+      <AdInArticle className="my-8" />
       </div>
     </section>
 
@@ -153,6 +155,7 @@ const CrimsonDesertPanel = () => (
                 </span>
               )}
             </div>
+      <AdInArticle className="my-8" />
 
             {/* Content */}
             <div className="p-5 flex flex-col flex-1">
@@ -211,4 +214,4 @@ const CrimsonDesertPanel = () => (
   </div>
 );
 
-export default CrimsonDesertPanel;
+export default CrimsonDesertPortal;

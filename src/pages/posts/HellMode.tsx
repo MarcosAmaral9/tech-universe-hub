@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Gamepad2 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -31,6 +32,7 @@ const HellMode = () => {
         </div>
         <ShareWhatsApp />
       </header>
+      <AdLeaderboard className="my-8" />
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high" src={heroImg} alt="Hell Mode anime 2026 — Allen o Invocador no mundo de dificuldade máxima" loading="eager" decoding="async" className="w-full h-full object-cover" />
@@ -90,6 +92,7 @@ const HellMode = () => {
                 <h4 className="font-bold">{p.name}</h4>
                 {p.va !== "—" && <span className="text-xs bg-muted px-2 py-0.5 rounded-full">VA: {p.va}</span>}
               </div>
+      <AdRectangle className="my-8" />
               <p className="text-sm text-muted-foreground mb-0">{p.desc}</p>
             </div>
           ))}
@@ -114,6 +117,7 @@ const HellMode = () => {
 
       <RelatedPosts currentSlug="hell-mode-gamer-isekai-guia-completo" />
       <CommentSection postId="hell-mode-gamer-isekai-guia-completo" postTitle="Hell Mode: O Gamer no Isekai com Dificuldade Máxima" />
+          <AdLeaderboard className="my-8" />
     </article>
   );
 };

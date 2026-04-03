@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import DynamicSEO from "@/components/DynamicSEO";
+import { AdInArticle } from "@/components/AdSense";
 import BackNavigation from "@/components/BackNavigation";
 import heroImg from "@/assets/overlord-portal-banner.webp";
 import overlordGuiaImg from "@/assets/overlord-guia-completo.webp";
@@ -46,6 +47,7 @@ const OverlordPortal = () => (
           <span className="text-xs bg-secondary text-muted-foreground px-3 py-1.5 rounded-full">4 Temporadas</span>
           <span className="text-xs bg-secondary text-muted-foreground px-3 py-1.5 rounded-full">Madhouse</span>
         </div>
+      <AdInArticle className="my-8" />
       </div>
     </section>
 
@@ -96,6 +98,7 @@ const OverlordPortal = () => (
             </tbody>
           </table>
         </div>
+      <AdInArticle className="my-8" />
       </div>
     </section>
   </div>
