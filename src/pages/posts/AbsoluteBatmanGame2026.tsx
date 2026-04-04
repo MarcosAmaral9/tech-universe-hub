@@ -6,7 +6,7 @@ import { Clock, User, Calendar, Gamepad2, Star, Shield, Zap, Users } from "lucid
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import heroImg from "@/assets/absolute-batman-game-2026.webp";
+import heroImg from "@/assets/lego-batman-legacy-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 
 const AbsoluteBatmanGame2026 = () => {

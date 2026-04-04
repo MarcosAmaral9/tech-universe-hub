@@ -108,7 +108,7 @@ import crimsonDesertPersonagensImg from "@/assets/crimson-desert-personagens.web
 import crimsonDesertPatchesImg from "@/assets/crimson-desert-patches.webp";
 import crimsonDesertVendasReviewImg from "@/assets/crimson-desert-vendas-review.webp";
 import lancamentosGamesAbrilImg from "@/assets/lancamentos-games-abril-2026.webp";
-import absoluteBatmanImg from "@/assets/absolute-batman-game-2026.webp";
+import absoluteBatmanImg from "@/assets/lego-batman-legacy-2026.webp";
 import reZeroT4Img from "@/assets/rezero-temporada-4-2026.webp";
 import temporadaAnimesAbrilImg from "@/assets/temporada-animes-abril-2026.webp";
 
