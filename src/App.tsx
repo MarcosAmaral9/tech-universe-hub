@@ -183,6 +183,11 @@ const Gemini25ProVsGPT4o        = lazy(() => import("./pages/posts/Gemini25ProVs
 const IABrasilAdocao2026       = lazy(() => import("./pages/posts/IABrasilAdocao2026"));
 const InflacaoProtegerInvestimentos2026 = lazy(() => import("./pages/posts/InflacaoProtegerInvestimentos2026"));
 const FIIsDefensivosAbril2026  = lazy(() => import("./pages/posts/FIIsDefensivosAbril2026"));
+// 04 Abr 2026 — Geek + Otaku
+const LancamentosGamesAbril2026 = lazy(() => import("./pages/posts/LancamentosGamesAbril2026"));
+const AbsoluteBatmanGame2026    = lazy(() => import("./pages/posts/AbsoluteBatmanGame2026"));
+const ReZeroTemporada4          = lazy(() => import("./pages/posts/ReZeroTemporada4"));
+const TemporadaAnimesAbril2026  = lazy(() => import("./pages/posts/TemporadaAnimesAbril2026"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
