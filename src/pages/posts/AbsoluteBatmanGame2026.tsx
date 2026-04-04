@@ -11,7 +11,7 @@ import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 
 const AbsoluteBatmanGame2026 = () => {
   useEffect(() => {
-    trackArticleRead("absolute-batman-game-2026", "LEGO Batman: Legacy of the Dark Knight — Tudo Sobre o Jogo de Maio de 2026", "geek");
+    trackArticleRead("lego-batman-legacy-2026", "LEGO Batman: Legacy of the Dark Knight — Guia Completo do Jogo de Maio de 2026", "geek");
   }, []);
 
   return (
