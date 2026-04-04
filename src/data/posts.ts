@@ -100,23 +100,85 @@ import poupancaVsCdbTesouroImg from "@/assets/poupanca-vs-cdb-tesouro-2026.webp"
 import reservaEmergenciaImg from "@/assets/reserva-emergencia-2026.webp";
 import iaCibersegurancaImg from "@/assets/ia-ciberseguranca-2026.webp";
 import promptEngineeringImg from "@/assets/prompt-engineering-2026.webp";
-import gemini3VsGpt5Img from "@/assets/gemini3-vs-gpt5-2026.webp";
+import gemini25ProVsGpt4oImg from "@/assets/gemini3-vs-gpt5-2026.webp";
 import iaBrasilAdocaoImg from "@/assets/ia-brasil-adocao-2026.webp";
 import inflacaoProtegerImg from "@/assets/inflacao-proteger-investimentos-2026.webp";
 import fiisDefensivosAbrilImg from "@/assets/fiis-defensivos-abril-2026.webp";
+import crimsonDesertPersonagensImg from "@/assets/crimson-desert-personagens.webp";
+import crimsonDesertPatchesImg from "@/assets/crimson-desert-patches.webp";
+import crimsonDesertVendasReviewImg from "@/assets/crimson-desert-vendas-review.webp";
 
 export const blogPosts: BlogPost[] = [
+
+  // ── 04 Abr 2026 — Geek (Crimson Desert) ──────────────────
+  {
+    id: "143",
+    slug: "crimson-desert-personagens-kliff-damiane-oongka",
+    title: "Crimson Desert: Kliff, Damiane e Oongka — Guia dos 3 Personagens Jogáveis",
+    excerpt: "Conheça os 3 personagens jogáveis de Crimson Desert: Kliff (versátil), Damiane (ágil) e Oongka (tanque). Estilos de combate, habilidades, dicas e o papel de cada um na história dos Greymanes.",
+    content: "",
+    category: "geek",
+    subtopic: "crimson-desert",
+    image: crimsonDesertPersonagensImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-04",
+    readTime: "11 min",
+    faq: [
+      { q: "Quantos personagens jogáveis tem Crimson Desert?", a: "Crimson Desert tem 3 personagens jogáveis: Kliff (protagonista e mais versátil), Damiane (ágil, foco em velocidade e evasão) e Oongka (tanque com ataques de área devastadores). Kliff é o mais utilizado na campanha." },
+      { q: "Posso escolher qual personagem jogar?", a: "Não livremente — Kliff é o personagem principal e controlável durante a maioria do jogo. Damiane e Oongka aparecem em seções específicas da campanha, com estilos de combate distintos que variam a experiência." },
+      { q: "Como Kliff aprende novas habilidades?", a: "Kliff aprende habilidades observando inimigos e NPCs executando os movimentos — um sistema de aprendizado contextual. Também usa Abyss Artifacts para desbloquear skills, sem XP ou level tradicional." },
+      { q: "Qual personagem é mais fácil para iniciantes?", a: "Kliff é o mais equilibrado e recomendado para a maioria. Oongka é mais fácil de usar em grupos (ataques de área). Damiane tem a curva de aprendizado mais íngreme, exigindo domínio de timing e evasão." },
+    ],
+  },
+  {
+    id: "144",
+    slug: "crimson-desert-patches-atualizacoes-2026",
+    title: "Crimson Desert: Todas as Atualizações e Patches Pós-Lançamento (Março–Abril 2026)",
+    excerpt: "A Pearl Abyss lançou 5+ patches em 2 semanas: novos controles, 5 montarias, Refinement Coins, fast travel expandido e correção dos assets de IA generativa. Veja o histórico completo.",
+    content: "",
+    category: "geek",
+    subtopic: "crimson-desert",
+    image: crimsonDesertPatchesImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-04",
+    readTime: "10 min",
+    faq: [
+      { q: "Quantos patches Crimson Desert recebeu no lançamento?", a: "Em menos de 2 semanas, Crimson Desert recebeu: Patch 1.00.02 (Day One, 19/03), Patch 1.00.03 (23-25/03), Patch 1.01.00 (28/03) e hotfixes 1.01.01 a 1.01.03 (29-31/03). Um ritmo de atualização incomum para um jogo desse porte." },
+      { q: "Quais foram as principais melhorias dos patches?", a: "Os patches corrigiram os controles de sprint e voo (Crow Wings), adicionaram 5 novas montarias (White Bear, Silver Fang, Snowwhite Deer, Rock Tusk Warthog, Icicle Edge Alpine Ibex), introduziram Refinement Coins, expandiram os pontos de fast travel e reduziram os tempos de carregamento." },
+      { q: "A controvérsia dos assets de IA foi resolvida?", a: "Sim. A Pearl Abyss confirmou o uso de assets gerados por IA em 22 de março, adicionou a divulgação no Steam e o Patch 1.01.00 (28/03) substituiu os assets 2D questionáveis por arte alinhada com a direção artística do jogo." },
+      { q: "Haverá DLC ou conteúdo pós-lançamento pago?", a: "A Pearl Abyss confirmou conteúdo gratuito pós-lançamento e indicou expansões de história e possível DLC dependendo do desempenho de vendas. Com 3 milhões de cópias na primeira semana, o suporte contínuo é esperado." },
+    ],
+  },
+  {
+    id: "145",
+    slug: "crimson-desert-vendas-review-completo-2026",
+    title: "Crimson Desert: 3 Milhões de Cópias, Metacritic 78 e Tudo que a Crítica Disse",
+    excerpt: "Crimson Desert vendeu 2 milhões em 24h e 3 milhões na primeira semana. Com Metacritic 78 e Steam Very Positive 85%, compilamos o que a crítica elogiou, o que criticou e se vale a pena comprar.",
+    content: "",
+    category: "geek",
+    subtopic: "crimson-desert",
+    image: crimsonDesertVendasReviewImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-04",
+    readTime: "13 min",
+    faq: [
+      { q: "Qual a nota de Crimson Desert no Metacritic?", a: "Crimson Desert tem Metacritic 78 (baseado em 93 críticas) e OpenCritic 80. No Steam, a avaliação é Very Positive com 85% de aprovação em mais de 38.870 análises de usuários — melhor que a recepção da crítica especializada." },
+      { q: "Quantas cópias Crimson Desert vendeu?", a: "O jogo vendeu 2 milhões de cópias nas primeiras 24 horas e atingiu 3 milhões na primeira semana — tornando-se um dos maiores lançamentos de 2026, apesar das notas mistas da crítica." },
+      { q: "O que a crítica mais elogiou em Crimson Desert?", a: "Os pontos mais elogiados foram o sistema de combate visceral e satisfatório, o mundo aberto de Pywel visualmente impressionante, a exploração e a quantidade de conteúdo (críticos reportaram 80-110 horas de gameplay)." },
+      { q: "O que a crítica mais criticou em Crimson Desert?", a: "As principais críticas foram à narrativa confusa e personagens pouco desenvolvidos, aos controles clunky no lançamento (corrigidos nos patches), ao sistema de inventário inicial sem armazenamento adequado e à dificuldade excessiva de alguns bosses." },
+    ],
+  },
 
   // ── 03 Abr 2026 — IA ──────────────────────────────────────
   {
     id: "139",
-    slug: "gemini-3-vs-gpt-5-2026",
+    slug: "gemini-2-5-pro-vs-gpt-4o-2026",
     title: "Gemini 2.5 Pro vs GPT-4o: Qual o Melhor Modelo de IA em 2026?",
     excerpt: "Comparamos os dois modelos de IA mais usados no mundo em 2026: Gemini 2.5 Pro (Google) e GPT-4o (OpenAI). Benchmarks reais, preços, multimodalidade e qual escolher para cada caso.",
     content: "",
     category: "ia",
     subtopic: "comparativos",
-    image: gemini3VsGpt5Img,
+    image: gemini25ProVsGpt4oImg,
     author: "VICIO<CODE>",
     date: "2026-04-03",
     readTime: "14 min",
@@ -1449,8 +1511,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "70",
     slug: "crimson-desert-guia-completo",
-    title: "Crimson Desert 2026: Guia Completo do Lançamento",
-    excerpt: "Tudo sobre história, gameplay, mundo aberto e sistema de combate do novo épico da Pearl Abyss. Descubra o continente de Pywel e a jornada de Kliff.",
+    title: "Crimson Desert: Guia Completo — Kliff, Pywel e Tudo do Lançamento",
+    excerpt: "Guia completo de Crimson Desert: história de Kliff e os Greymanes no continente de Pywel, 3 personagens jogáveis, mundo aberto sem fast travel obrigatório, 3 milhões de cópias vendidas na primeira semana.",
     content: "",
     category: "geek",
     subtopic: "crimson-desert",
@@ -1461,7 +1523,7 @@ export const blogPosts: BlogPost[] = [
     faq: [
       { q: "Crimson Desert é do mesmo estúdio de Black Desert?", a: "Sim. Pearl Abyss desenvolve ambos. Crimson Desert usa a nova BlackSpace Engine e é focado em narrativa single-player com história linear, diferente do MMO Black Desert Online." },
       { q: "Crimson Desert é MMO?", a: "Não. Crimson Desert é um RPG de ação single-player com mundo aberto. Originalmente planejado como MMO, foi redesenhado para focar em uma história cinematográfica de ~40 horas." },
-      { q: "Quando Crimson Desert lança?", a: "Crimson Desert foi lançado em 2026 para PC, PS5 e Xbox Series X|S. O jogo passou anos em desenvolvimento após ser anunciado em 2020." },
+      { q: "Quando Crimson Desert foi lançado?", a: "Crimson Desert foi lançado em 19 de março de 2026, simultaneamente para PC (Steam/Epic/Mac), PS5 e Xbox Series X|S. O lançamento ocorreu às 22h UTC (19h no horário de Brasília)." },
     ]
   },
   {
@@ -1508,8 +1570,8 @@ export const blogPosts: BlogPost[] = [
   {
     id: "72",
     slug: "crimson-desert-review-2026",
-    title: "Crimson Desert Review: Notas e Análise Crítica",
-    excerpt: "Crimson Desert recebeu notas mistas no lançamento: Metacritic 78, OpenCritic 80. Compilamos as avaliações de GameSpot, PC Gamer, IGN e outros para mostrar o que a crítica amou e o que criticou.",
+    title: "Crimson Desert Review: Vale a Pena? Metacritic 78 e Steam Very Positive",
+    excerpt: "Crimson Desert recebeu Metacritic 78 e OpenCritic 80 (93 críticos). No Steam, 85% de avaliações positivas em mais de 38 mil análises. Compilamos o que a crítica amou e o que criticou — e nossa veredicto.",
     content: "",
     category: "geek",
     subtopic: "crimson-desert",
@@ -1518,9 +1580,9 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-17",
     readTime: "15 min",
     faq: [
-      { q: "Qual a nota de Crimson Desert?", a: "O jogo recebeu Metacritic 78 e OpenCritic 80, com elogios ao combate e mundo aberto, e críticas à história e bugs de lançamento." },
+      { q: "Qual a nota de Crimson Desert?", a: "O jogo recebeu Metacritic 78 (baseado em 93 críticas) e OpenCritic 80. No Steam, tem status Very Positive com 85% de aprovação em mais de 38.870 análises de usuários." },
       { q: "Crimson Desert vale a pena comprar?", a: "Sim para fãs de RPGs de ação com mundo aberto. O combate é excelente, o mundo é lindo e há muito conteúdo. Mas se você prioriza narrativa, pode se decepcionar com a história." },
-      { q: "Quanto tempo dura Crimson Desert?", a: "A história principal leva ~35-40 horas. Com side quests e exploração completa, pode passar de 80 horas. O mundo aberto de Pywel tem bastante conteúdo opcional." },
+      { q: "Quanto tempo dura Crimson Desert?", a: "A história principal leva aproximadamente 40-50 horas. Com side quests, caça, pesca, culinária e exploração completa de Pywel, os jogadores relatam 80-110 horas. Alguns críticos jogaram mais de 100 horas sem zerar." },
     ]
   },
   {

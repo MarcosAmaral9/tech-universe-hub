@@ -11,10 +11,10 @@ import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 // The plugin finds the hashed filename at build time and injects <link rel="preload">
 // so the browser fetches them before parsing JS — critical for LCP score.
 const LCP_IMAGE_PATTERNS = [
-  "ia-ciberseguranca-2026",   // ia   (latest as of 2026-03-28)
-  "poupanca-vs-cdb-tesouro",  // invest (latest as of 2026-03-27)
-  "crimson-desert-bosses",    // geek  (latest as of 2026-03-29)
-  "solo-leveling",            // otaku (latest as of 2026-03-29)
+  "ia-brasil-adocao-2026",          // ia   (latest: 03 Abr 2026)
+  "fiis-defensivos-abril-2026",     // invest (latest: 03 Abr 2026)
+  "crimson-desert-personagens",     // geek  (latest: 04 Abr 2026)
+  "solo-leveling",                  // otaku (latest: 29 Mar 2026)
 ];
 
 function lcpPreloadPlugin(): Plugin {

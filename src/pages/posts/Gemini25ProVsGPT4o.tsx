@@ -9,9 +9,9 @@ import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/gemini3-vs-gpt5-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 
-const Gemini3VsGPT5 = () => {
+const Gemini25ProVsGPT4o = () => {
   useEffect(() => {
-    trackArticleRead("gemini-3-vs-gpt-5-2026", "Gemini 2.5 Pro vs GPT-4o: Qual o Melhor Modelo de IA em 2026?", "ia");
+    trackArticleRead("gemini-2-5-pro-vs-gpt-4o-2026", "Gemini 2.5 Pro vs GPT-4o: Qual o Melhor Modelo de IA em 2026?", "ia");
   }, []);
 
   return (
@@ -209,10 +209,10 @@ const Gemini3VsGPT5 = () => {
         </div>
       </div>
 
-      <RelatedPosts currentSlug="gemini-3-vs-gpt-5-2026" />
-      <CommentSection postId="gemini-3-vs-gpt-5-2026" postTitle="Gemini 2.5 Pro vs GPT-4o: Qual o Melhor Modelo de IA em 2026?" />
+      <RelatedPosts currentSlug="gemini-2-5-pro-vs-gpt-4o-2026" />
+      <CommentSection postId="gemini-2-5-pro-vs-gpt-4o-2026" postTitle="Gemini 2.5 Pro vs GPT-4o: Qual o Melhor Modelo de IA em 2026?" />
     </article>
   );
 };
 
-export default Gemini3VsGPT5;
+export default Gemini25ProVsGPT4o;

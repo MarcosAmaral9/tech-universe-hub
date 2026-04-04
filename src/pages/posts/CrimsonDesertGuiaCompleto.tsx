@@ -113,7 +113,7 @@ const CrimsonDesertGuiaCompleto = () => {
           fraca, sistemas confusos e missões repetitivas.
         </p>
         <p>
-          Em termos de vendas, o jogo superou <strong>2 milhões de cópias vendidas nas primeiras 24 horas</strong> e atingiu <strong>3 milhões de cópias</strong> em cerca de 4 dias após o lançamento — um resultado comercial excepcional para um RPG de mundo aberto de estúdio independente. As ações da Pearl Abyss caíram <strong>28,96%</strong> na bolsa sul-coreana no dia do lançamento,
+          Em termos de vendas, o jogo atingiu <strong>3 milhões de cópias vendidas na primeira semana</strong> de lançamento (PC, PS5 e Xbox), com projeção de chegar a 5 milhões segundo relatórios da mídia sul-coreana — resultado excepcional para um novo IP de estúdio independente. As ações da Pearl Abyss caíram <strong>28,96%</strong> na bolsa sul-coreana no dia do lançamento,
           pois as notas ficaram abaixo das expectativas internas da empresa.
         </p>
 

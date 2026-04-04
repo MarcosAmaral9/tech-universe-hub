@@ -149,6 +149,9 @@ const DemonSlayerHashira2026 = lazy(() => import("./pages/posts/DemonSlayerHashi
 const OnePieceFinalSaga2026  = lazy(() => import("./pages/posts/OnePieceFinalSaga2026"));
 const CrimsonDesertPortal = lazy(() => import("./pages/posts/CrimsonDesertPortal"));
 const CrimsonDesertGuiaCompleto = lazy(() => import("./pages/posts/CrimsonDesertGuiaCompleto"));
+const CrimsonDesertPersonagens = lazy(() => import("./pages/posts/CrimsonDesertPersonagens"));
+const CrimsonDesertPatches = lazy(() => import("./pages/posts/CrimsonDesertPatches"));
+const CrimsonDesertVendasReview = lazy(() => import("./pages/posts/CrimsonDesertVendasReview"));
 const CrimsonDesertCombate = lazy(() => import("./pages/posts/CrimsonDesertCombate"));
 const CrimsonDesertReview = lazy(() => import("./pages/posts/CrimsonDesertReview"));
 const CrimsonDesertBuilds = lazy(() => import("./pages/posts/CrimsonDesertBuilds"));
@@ -175,7 +178,7 @@ const ReservaEmergencia2026    = lazy(() => import("./pages/posts/ReservaEmergen
 const IACiberseguranca2026     = lazy(() => import("./pages/posts/IACiberseguranca2026"));
 const PromptEngineering2026    = lazy(() => import("./pages/posts/PromptEngineering2026"));
 // 03 Abr 2026
-const Gemini3VsGPT5            = lazy(() => import("./pages/posts/Gemini3VsGPT5"));
+const Gemini25ProVsGPT4o        = lazy(() => import("./pages/posts/Gemini25ProVsGPT4o"));
 const IABrasilAdocao2026       = lazy(() => import("./pages/posts/IABrasilAdocao2026"));
 const InflacaoProtegerInvestimentos2026 = lazy(() => import("./pages/posts/InflacaoProtegerInvestimentos2026"));
 const FIIsDefensivosAbril2026  = lazy(() => import("./pages/posts/FIIsDefensivosAbril2026"));
@@ -226,6 +229,9 @@ const App = () => (
                 <Route path="/geek/assassins-creed" element={<AssassinsCreedPortal />} />
                 <Route path="/geek/crimson-desert" element={<CrimsonDesertPortal />} />
                 <Route path="/post/crimson-desert-guia-completo" element={<CrimsonDesertGuiaCompleto />} />
+                <Route path="/post/crimson-desert-personagens-kliff-damiane-oongka" element={<CrimsonDesertPersonagens />} />
+                <Route path="/post/crimson-desert-patches-atualizacoes-2026" element={<CrimsonDesertPatches />} />
+                <Route path="/post/crimson-desert-vendas-review-completo-2026" element={<CrimsonDesertVendasReview />} />
                 <Route path="/post/crimson-desert-combate-blackspace-engine" element={<CrimsonDesertCombate />} />
                 <Route path="/post/crimson-desert-review-2026" element={<CrimsonDesertReview />} />
                 <Route path="/post/crimson-desert-builds-guia-2026" element={<CrimsonDesertBuilds />} />
@@ -341,7 +347,7 @@ const App = () => (
                 <Route path="/post/ia-ciberseguranca-2026" element={<IACiberseguranca2026 />} />
                 <Route path="/post/prompt-engineering-guia-2026" element={<PromptEngineering2026 />} />
                 {/* 03 Abr 2026 */}
-                <Route path="/post/gemini-3-vs-gpt-5-2026" element={<Gemini3VsGPT5 />} />
+                <Route path="/post/gemini-2-5-pro-vs-gpt-4o-2026" element={<Gemini25ProVsGPT4o />} />
                 <Route path="/post/ia-brasil-adocao-2026" element={<IABrasilAdocao2026 />} />
                 <Route path="/post/inflacao-proteger-investimentos-2026" element={<InflacaoProtegerInvestimentos2026 />} />
                 <Route path="/post/fiis-defensivos-abril-2026" element={<FIIsDefensivosAbril2026 />} />
