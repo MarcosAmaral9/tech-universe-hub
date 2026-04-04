@@ -6,12 +6,12 @@ import { Clock, User, Calendar, Gamepad2, Star, Shield, Zap, Users } from "lucid
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import heroImg from "@/assets/absolute-batman-game-2026.webp";
+import heroImg from "@/assets/lego-batman-legacy-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 
 const AbsoluteBatmanGame2026 = () => {
   useEffect(() => {
-    trackArticleRead("absolute-batman-game-2026", "LEGO Batman: Legacy of the Dark Knight — Tudo Sobre o Jogo de Maio de 2026", "geek");
+    trackArticleRead("lego-batman-legacy-2026", "LEGO Batman: Legacy of the Dark Knight — Guia Completo do Jogo de Maio de 2026", "geek");
   }, []);
 
   return (
@@ -161,8 +161,8 @@ const AbsoluteBatmanGame2026 = () => {
         </div>
       </div>
 
-      <RelatedPosts currentSlug="absolute-batman-game-2026" />
-      <CommentSection postId="absolute-batman-game-2026" postTitle="LEGO Batman: Legacy of the Dark Knight — Guia Completo" />
+      <RelatedPosts currentSlug="lego-batman-legacy-2026" />
+      <CommentSection postId="lego-batman-legacy-2026" postTitle="LEGO Batman: Legacy of the Dark Knight — Guia Completo" />
     </article>
   );
 };

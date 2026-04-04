@@ -108,7 +108,7 @@ import crimsonDesertPersonagensImg from "@/assets/crimson-desert-personagens.web
 import crimsonDesertPatchesImg from "@/assets/crimson-desert-patches.webp";
 import crimsonDesertVendasReviewImg from "@/assets/crimson-desert-vendas-review.webp";
 import lancamentosGamesAbrilImg from "@/assets/lancamentos-games-abril-2026.webp";
-import absoluteBatmanImg from "@/assets/absolute-batman-game-2026.webp";
+import absoluteBatmanImg from "@/assets/lego-batman-legacy-2026.webp";
 import reZeroT4Img from "@/assets/rezero-temporada-4-2026.webp";
 import temporadaAnimesAbrilImg from "@/assets/temporada-animes-abril-2026.webp";
 
@@ -135,9 +135,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: "147",
-    slug: "absolute-batman-game-2026",
-    title: "Absolute Batman: Do HQ ao Game — Tudo Sobre o Jogo Confirmado para 2026",
-    excerpt: "Absolute Batman de Scott Snyder vendeu 1 milhão de cópias e agora vai virar game. Board game confirmado, jogo digital AAA em rumores fortes. Tudo que sabemos.",
+    slug: "lego-batman-legacy-2026",
+    title: "LEGO Batman: Legacy of the Dark Knight — Guia Completo do Jogo de Maio de 2026",
+    excerpt: "LEGO Batman 4 chega em maio de 2026 com Gotham em mundo aberto, 5 heróis jogáveis e galeria de vilões clássicos. Guia completo com edições, DLC e preços.",
     content: "",
     category: "geek",
     subtopic: "games",
