@@ -161,8 +161,8 @@ const AbsoluteBatmanGame2026 = () => {
         </div>
       </div>
 
-      <RelatedPosts currentSlug="absolute-batman-game-2026" />
-      <CommentSection postId="absolute-batman-game-2026" postTitle="LEGO Batman: Legacy of the Dark Knight — Guia Completo" />
+      <RelatedPosts currentSlug="lego-batman-legacy-2026" />
+      <CommentSection postId="lego-batman-legacy-2026" postTitle="LEGO Batman: Legacy of the Dark Knight — Guia Completo" />
     </article>
   );
 };
