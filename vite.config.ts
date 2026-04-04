@@ -233,14 +233,60 @@ export default defineConfig(({ mode }) => ({
       includePublic: true,
     }),
     VitePWA({
-      registerType: "autoUpdate",
-      // Empty globPatterns = no JS/CSS precaching = no stale bundle white screen
+      // "prompt" allows us to show a custom notification before applying the update
+      registerType: "prompt",
+      // Inject the virtual module so we can use useRegisterSW in the app
+      injectRegister: "auto",
       workbox: {
-        globPatterns: [],
+        // Precache only the shell assets — JS/CSS bundles are hashed so safe to cache
+        globPatterns: ["**/*.{js,css,woff2}"],
         cleanupOutdatedCaches: true,
-        skipWaiting: true,
+        skipWaiting: false,   // We control this manually via the update prompt
         clientsClaim: true,
-        // Do NOT use navigateFallback — it intercepts all navigation and can serve stale HTML
+        // Runtime caching — makes the app work offline
+        runtimeCaching: [
+          {
+            // HTML pages (navigation requests) — network-first, fallback to cache
+            urlPattern: ({ request }) => request.mode === "navigate",
+            handler: "NetworkFirst",
+            options: {
+              cacheName: "pages-cache",
+              networkTimeoutSeconds: 5,
+              expiration: { maxEntries: 60, maxAgeSeconds: 7 * 24 * 60 * 60 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
+            // Images (WebP/PNG) — cache-first, long TTL
+            urlPattern: /\.(?:webp|png|jpg|jpeg|svg|ico)$/i,
+            handler: "CacheFirst",
+            options: {
+              cacheName: "images-cache",
+              expiration: { maxEntries: 200, maxAgeSeconds: 30 * 24 * 60 * 60 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
+            // Fonts — cache-first, very long TTL
+            urlPattern: /\/fonts\//i,
+            handler: "CacheFirst",
+            options: {
+              cacheName: "fonts-cache",
+              expiration: { maxEntries: 20, maxAgeSeconds: 365 * 24 * 60 * 60 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
+            // External APIs (cotações) — stale-while-revalidate so data never blocks
+            urlPattern: /^https:\/\/(api\.coingecko\.com|brapi\.dev|query1\.finance\.yahoo\.com)/i,
+            handler: "StaleWhileRevalidate",
+            options: {
+              cacheName: "api-cache",
+              expiration: { maxEntries: 30, maxAgeSeconds: 5 * 60 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+        ],
       },
       manifest: {
         name: "VICIO<CODE> - IA, Investimentos, Geek & Otaku",

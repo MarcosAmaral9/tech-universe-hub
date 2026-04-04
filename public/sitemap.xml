@@ -1,653 +1,869 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Páginas Principais -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ═══ Páginas Principais ════════════════════════════════════════ -->
   <url>
-    <loc>https://viciocode.com/</loc>
-    <lastmod>2026-03-30</lastmod>
+    <loc>https://viciocode.com</loc>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://viciocode.com/otaku</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://viciocode.com/ia</loc>
-    <lastmod>2026-03-30</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://viciocode.com/financas</loc>
-    <lastmod>2026-03-30</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://viciocode.com/geek</loc>
-    <lastmod>2026-03-30</lastmod>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/otaku</loc>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://viciocode.com/cotacoes</loc>
-    <lastmod>2026-03-30</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://viciocode.com/entrar</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <!-- Portais -->
-  <url>
-    <loc>https://viciocode.com/geek/avatar</loc>
-    <lastmod>2026-03-30</lastmod>
+    <loc>https://viciocode.com/geek/crimson-desert</loc>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/geek/avatar</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://viciocode.com/geek/assassins-creed</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Posts Otaku -->
-  <url>
-    <loc>https://viciocode.com/post/diferenca-mangas-manhuas-manhwas</loc>
-    <lastmod>2026-03-30</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://viciocode.com/post/como-diferenciar-manhuas-manhwas</loc>
-    <lastmod>2026-03-30</lastmod>
+    <loc>https://viciocode.com/otaku/tensura</loc>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://viciocode.com/post/10-melhores-manhwas-sistema-2026</loc>
-    <lastmod>2026-03-30</lastmod>
+    <loc>https://viciocode.com/otaku/overlord</loc>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://viciocode.com/post/animes-mais-aguardados-2026</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/guia-cosplay-2026-iniciantes</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/manga-vs-anime-adaptacao-2026</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/cultura-otaku-brasil-2026</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/melhores-jogos-anime-2026</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/aprender-japones-anime-2026</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/isekai-2026-genero-domina</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/merchandising-otaku-colecionar-2026</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/melhores-mangas-ler-2026</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/saude-mental-cultura-otaku-2026</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Posts IA -->
-  <url>
-    <loc>https://viciocode.com/post/ia-transformando-dublagem-animes</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/ia-remasterizacao-jogos-classicos</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/chatgpt-vs-gemini-vs-claude-2026</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/como-usar-ia-ganhar-dinheiro-2026</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/ia-no-trabalho-2026-profissoes</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/melhores-apps-ia-produtividade-2026</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/ia-generativa-iniciantes-2026-guia</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/deepfakes-ia-2026-como-identificar</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/ia-educacao-2026-estudar-inteligente</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/agentes-ia-2026-como-funcionam</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/ia-saude-2026-diagnosticos-futuro</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/regulamentacao-ia-brasil-mundo-2026</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Posts Finanças -->
-  <url>
-    <loc>https://viciocode.com/post/investir-em-tecnologia-2026</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/tesouro-direto-2026-guia-completo</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/renda-passiva-2026-formas-comprovadas</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/carteira-investimentos-iniciantes-2026</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/bitcoin-criptomoedas-2026-investir</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/irpf-2026-guia-declarar-pagar-menos</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/ia-mercado-financeiro-2026-investimentos</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/educacao-financeira-metodo-3-baldes</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/fiis-2026-melhores-fundos-imobiliarios</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/sair-das-dividas-2026-plano-acao</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/planejamento-financeiro-2026-metas</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/calculadoras-financeiras-ativos</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Posts Geek -->
-  <url>
-    <loc>https://viciocode.com/post/vikings-legado-ragnar-lothbrok</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/hell-let-loose-simulador-guerra</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Posts Geek - Avatar -->
-  <url>
-    <loc>https://viciocode.com/post/avatar-2009-filme-revolucionou-tecnologia</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/avatar-caminho-da-agua-fisica-fluidos</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/avatar-3-fogo-cinzas-lado-sombrio-pandora</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/avatar-frontiers-pandora-ubisoft-review</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Posts Geek - Assassin's Creed -->
-  <url>
-    <loc>https://viciocode.com/post/ranking-melhor-assassins-creed-2026</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/ac-valhalla-jornada-epica-eivor</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/ac-shadows-japao-feudal</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/ac-odyssey-odisseia-grecia</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/ac-black-flag-melhor-jogo-piratas</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/ac-origins-renascimento-franquia-egito</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/ac-mirage-retorno-raizes-bagda</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/ac-3-remastered-revolucao-americana</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/ac-syndicate-revolucao-industrial-londres</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/ac-unity-jogo-frente-tempo-paris</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/ac-rogue-assassino-templario</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Novos Posts IA - Março 2026 -->
-  <url>
-    <loc>https://viciocode.com/post/ia-criatividade-arte-musica-2026</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/ia-privacidade-dados-2026</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Novos Posts Finanças - Março 2026 -->
-  <url>
-    <loc>https://viciocode.com/post/etfs-2026-guia-completo-investir</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/economia-domestica-2026-cortar-gastos</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Páginas Institucionais -->
   <url>
     <loc>https://viciocode.com/sobre</loc>
-    <lastmod>2026-03-30</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://viciocode.com/contato</loc>
-    <lastmod>2026-03-30</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://viciocode.com/privacidade</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://viciocode.com/termos</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://viciocode.com/politica-conteudo</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
-  <!-- Crimson Desert Portal e Artigos -->
-  <url>
-    <loc>https://viciocode.com/geek/crimson-desert</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/crimson-desert-guia-completo</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/crimson-desert-combate-blackspace-engine</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/crimson-desert-review-2026</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/crimson-desert-builds-guia-2026</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- 17 Mar 2026 — 8 novos posts -->
-  <url><loc>https://viciocode.com/post/cdb-2026-guia-completo</loc><lastmod>2026-03-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://viciocode.com/post/previdencia-privada-pgbl-vgbl-2026</loc><lastmod>2026-03-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://viciocode.com/post/ia-codigo-programadores-2026</loc><lastmod>2026-03-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://viciocode.com/post/modelos-ia-open-source-2026</loc><lastmod>2026-03-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://viciocode.com/post/baldurs-gate-3-review-2026</loc><lastmod>2026-03-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://viciocode.com/post/dragon-age-veilguard-review-2026</loc><lastmod>2026-03-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://viciocode.com/post/demon-slayer-hashira-guia-2026</loc><lastmod>2026-03-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://viciocode.com/post/one-piece-final-saga-2026</loc><lastmod>2026-03-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://viciocode.com/post/crimson-desert-mapa-regioes-pywel</loc><lastmod>2026-03-30</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 
+  <!-- ═══ Artigos (105 posts, ordenados por data de publicação) ══ -->
+
+  <!-- 2026-04-04 -->
   <url>
-    <loc>https://viciocode.com/otaku/tensura</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/otaku/overlord</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/tensura-guia-completo-temporadas-filmes</loc>
-    <lastmod>2026-03-30</lastmod>
+    <loc>https://viciocode.com/post/crimson-desert-personagens-kliff-damiane-oongka</loc>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://viciocode.com/post/tensura-personagens-rimuru-demon-lords</loc>
-    <lastmod>2026-03-30</lastmod>
+    <loc>https://viciocode.com/post/crimson-desert-patches-atualizacoes-2026</loc>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://viciocode.com/post/overlord-guia-completo-temporadas-ainz</loc>
-    <lastmod>2026-03-30</lastmod>
+    <loc>https://viciocode.com/post/crimson-desert-vendas-review-completo-2026</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-04-03 -->
+  <url>
+    <loc>https://viciocode.com/post/gemini-2-5-pro-vs-gpt-4o-2026</loc>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://viciocode.com/post/overlord-ainz-guardians-personagens</loc>
-    <lastmod>2026-03-30</lastmod>
+    <loc>https://viciocode.com/post/ia-brasil-adocao-2026</loc>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://viciocode.com/post/ac-1-altair-terra-santa-1191</loc>
-    <lastmod>2026-03-30</lastmod>
+    <loc>https://viciocode.com/post/inflacao-proteger-investimentos-2026</loc>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://viciocode.com/post/ac-2-ezio-italia-renascentista</loc>
-    <lastmod>2026-03-30</lastmod>
+    <loc>https://viciocode.com/post/fiis-defensivos-abril-2026</loc>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://viciocode.com/post/ac-brotherhood-ezio-roma-borgia</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/ac-revelations-ezio-constantinopla</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- 22 Mar 2026 — Finanças -->
-  <url><loc>https://viciocode.com/post/selic-comeca-cair-2026</loc><lastmod>2026-03-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://viciocode.com/post/bitcoin-2026-vale-comprar</loc><lastmod>2026-03-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://viciocode.com/post/ia-para-financas-pessoais-2026</loc><lastmod>2026-03-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://viciocode.com/post/fiis-2026-ainda-vale-investir</loc><lastmod>2026-03-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url>
-    <loc>https://viciocode.com/post/solo-leveling-guia-completo-temporadas</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/tsukimichi-moonlit-fantasy-guia-completo</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/mugen-gacha-level-9999-traicao-dungeon</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/kizoku-tensei-noble-reincarnation-guia</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/hell-mode-gamer-isekai-guia-completo</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/isekai-nonbiri-nouka-farming-life-guia</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/maousama-retry-demon-lord-guia-completo</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://viciocode.com/post/okiraku-ryoushu-territory-defense-guia</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
+  <!-- 2026-03-29 -->
   <url>
     <loc>https://viciocode.com/post/crimson-desert-bosses-guia-chefes</loc>
-    <lastmod>2026-03-30</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://viciocode.com/post/crimson-desert-guia-iniciantes-dicas</loc>
-    <lastmod>2026-03-30</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://viciocode.com/post/crimson-desert-melhores-equipamentos-inicio</loc>
-    <lastmod>2026-03-30</lastmod>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://viciocode.com/post/poupanca-vs-cdb-tesouro-2026</loc>
-    <lastmod>2026-03-30</lastmod>
+    <loc>https://viciocode.com/post/solo-leveling-guia-completo-temporadas</loc>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://viciocode.com/post/reserva-emergencia-2026-como-montar</loc>
-    <lastmod>2026-03-30</lastmod>
+    <loc>https://viciocode.com/post/tsukimichi-moonlit-fantasy-guia-completo</loc>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://viciocode.com/post/mugen-gacha-level-9999-traicao-dungeon</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/kizoku-tensei-noble-reincarnation-guia</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/hell-mode-gamer-isekai-guia-completo</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/isekai-nonbiri-nouka-farming-life-guia</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/maousama-retry-demon-lord-guia-completo</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/okiraku-ryoushu-territory-defense-guia</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-28 -->
   <url>
     <loc>https://viciocode.com/post/ia-ciberseguranca-2026</loc>
-    <lastmod>2026-03-30</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://viciocode.com/post/prompt-engineering-guia-2026</loc>
-    <lastmod>2026-03-30</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- 2026-03-27 -->
+  <url>
+    <loc>https://viciocode.com/post/poupanca-vs-cdb-tesouro-2026</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/reserva-emergencia-2026-como-montar</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-22 -->
+  <url>
+    <loc>https://viciocode.com/post/selic-comeca-cair-2026</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/bitcoin-2026-vale-comprar</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/ia-para-financas-pessoais-2026</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/fiis-2026-ainda-vale-investir</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-21 -->
+  <url>
+    <loc>https://viciocode.com/post/tensura-personagens-rimuru-demon-lords</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/overlord-ainz-guardians-personagens</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/ac-1-altair-terra-santa-1191</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/ac-2-ezio-italia-renascentista</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/ac-brotherhood-ezio-roma-borgia</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/ac-revelations-ezio-constantinopla</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-20 -->
+  <url>
+    <loc>https://viciocode.com/post/tensura-guia-completo-temporadas-filmes</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/overlord-guia-completo-temporadas-ainz</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-19 -->
+  <url>
+    <loc>https://viciocode.com/post/crimson-desert-mapa-regioes-pywel</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-17 -->
+  <url>
+    <loc>https://viciocode.com/post/economia-domestica-2026-cortar-gastos</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/crimson-desert-review-2026</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/crimson-desert-builds-guia-2026</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/cdb-2026-guia-completo</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/previdencia-privada-pgbl-vgbl-2026</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/ia-codigo-programadores-2026</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/modelos-ia-open-source-2026</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/baldurs-gate-3-review-2026</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/dragon-age-veilguard-review-2026</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/demon-slayer-hashira-guia-2026</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/one-piece-final-saga-2026</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-16 -->
+  <url>
+    <loc>https://viciocode.com/post/etfs-2026-guia-completo-investir</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/crimson-desert-guia-completo</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/crimson-desert-combate-blackspace-engine</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-15 -->
+  <url>
+    <loc>https://viciocode.com/post/ia-privacidade-dados-2026</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-14 -->
+  <url>
+    <loc>https://viciocode.com/post/ia-criatividade-arte-musica-2026</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-13 -->
+  <url>
+    <loc>https://viciocode.com/post/saude-mental-cultura-otaku-2026</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-12 -->
+  <url>
+    <loc>https://viciocode.com/post/melhores-mangas-ler-2026</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-11 -->
+  <url>
+    <loc>https://viciocode.com/post/merchandising-otaku-colecionar-2026</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-10 -->
+  <url>
+    <loc>https://viciocode.com/post/isekai-2026-genero-domina</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-09 -->
+  <url>
+    <loc>https://viciocode.com/post/aprender-japones-anime-2026</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-08 -->
+  <url>
+    <loc>https://viciocode.com/post/melhores-jogos-anime-2026</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-07 -->
+  <url>
+    <loc>https://viciocode.com/post/cultura-otaku-brasil-2026</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-06 -->
+  <url>
+    <loc>https://viciocode.com/post/manga-vs-anime-adaptacao-2026</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-05 -->
+  <url>
+    <loc>https://viciocode.com/post/guia-cosplay-2026-iniciantes</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-04 -->
+  <url>
+    <loc>https://viciocode.com/post/animes-mais-aguardados-2026</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-03 -->
+  <url>
+    <loc>https://viciocode.com/post/regulamentacao-ia-brasil-mundo-2026</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-02 -->
+  <url>
+    <loc>https://viciocode.com/post/ia-saude-2026-diagnosticos-futuro</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-03-01 -->
+  <url>
+    <loc>https://viciocode.com/post/agentes-ia-2026-como-funcionam</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-28 -->
+  <url>
+    <loc>https://viciocode.com/post/ia-educacao-2026-estudar-inteligente</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-27 -->
+  <url>
+    <loc>https://viciocode.com/post/deepfakes-ia-2026-como-identificar</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-26 -->
+  <url>
+    <loc>https://viciocode.com/post/ia-generativa-iniciantes-2026-guia</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-25 -->
+  <url>
+    <loc>https://viciocode.com/post/calculadoras-financeiras-ativos</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-24 -->
+  <url>
+    <loc>https://viciocode.com/post/planejamento-financeiro-2026-metas</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-23 -->
+  <url>
+    <loc>https://viciocode.com/post/sair-das-dividas-2026-plano-acao</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-22 -->
+  <url>
+    <loc>https://viciocode.com/post/fiis-2026-melhores-fundos-imobiliarios</loc>
+    <lastmod>2026-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-21 -->
+  <url>
+    <loc>https://viciocode.com/post/educacao-financeira-metodo-3-baldes</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-20 -->
+  <url>
+    <loc>https://viciocode.com/post/ia-mercado-financeiro-2026-investimentos</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-19 -->
+  <url>
+    <loc>https://viciocode.com/post/irpf-2026-guia-declarar-pagar-menos</loc>
+    <lastmod>2026-02-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-18 -->
+  <url>
+    <loc>https://viciocode.com/post/bitcoin-criptomoedas-2026-investir</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-17 -->
+  <url>
+    <loc>https://viciocode.com/post/carteira-investimentos-iniciantes-2026</loc>
+    <lastmod>2026-02-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-16 -->
+  <url>
+    <loc>https://viciocode.com/post/renda-passiva-2026-formas-comprovadas</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-15 -->
+  <url>
+    <loc>https://viciocode.com/post/tesouro-direto-2026-guia-completo</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-14 -->
+  <url>
+    <loc>https://viciocode.com/post/melhores-apps-ia-produtividade-2026</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-13 -->
+  <url>
+    <loc>https://viciocode.com/post/ia-no-trabalho-2026-profissoes</loc>
+    <lastmod>2026-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-12 -->
+  <url>
+    <loc>https://viciocode.com/post/como-usar-ia-ganhar-dinheiro-2026</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-11 -->
+  <url>
+    <loc>https://viciocode.com/post/chatgpt-vs-gemini-vs-claude-2026</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-10 -->
+  <url>
+    <loc>https://viciocode.com/post/ranking-melhor-assassins-creed-2026</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-09 -->
+  <url>
+    <loc>https://viciocode.com/post/ac-shadows-japao-feudal</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-08 -->
+  <url>
+    <loc>https://viciocode.com/post/ac-valhalla-jornada-epica-eivor</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-07 -->
+  <url>
+    <loc>https://viciocode.com/post/vikings-legado-ragnar-lothbrok</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-06 -->
+  <url>
+    <loc>https://viciocode.com/post/investir-em-tecnologia-2026</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-05 -->
+  <url>
+    <loc>https://viciocode.com/post/ia-transformando-dublagem-animes</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-04 -->
+  <url>
+    <loc>https://viciocode.com/post/ac-odyssey-odisseia-grecia</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-03 -->
+  <url>
+    <loc>https://viciocode.com/post/hell-let-loose-simulador-guerra</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-02 -->
+  <url>
+    <loc>https://viciocode.com/post/diferenca-mangas-manhuas-manhwas</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-02-01 -->
+  <url>
+    <loc>https://viciocode.com/post/ia-remasterizacao-jogos-classicos</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-01-31 -->
+  <url>
+    <loc>https://viciocode.com/post/ac-black-flag-melhor-jogo-piratas</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-01-30 -->
+  <url>
+    <loc>https://viciocode.com/post/como-diferenciar-manhuas-manhwas</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-01-29 -->
+  <url>
+    <loc>https://viciocode.com/post/avatar-2009-filme-revolucionou-tecnologia</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-01-28 -->
+  <url>
+    <loc>https://viciocode.com/post/ac-origins-renascimento-franquia-egito</loc>
+    <lastmod>2026-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-01-27 -->
+  <url>
+    <loc>https://viciocode.com/post/10-melhores-manhwas-sistema-2026</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-01-26 -->
+  <url>
+    <loc>https://viciocode.com/post/avatar-caminho-da-agua-fisica-fluidos</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-01-25 -->
+  <url>
+    <loc>https://viciocode.com/post/ac-mirage-retorno-raizes-bagda</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-01-24 -->
+  <url>
+    <loc>https://viciocode.com/post/avatar-3-fogo-cinzas-lado-sombrio-pandora</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-01-23 -->
+  <url>
+    <loc>https://viciocode.com/post/ac-3-remastered-revolucao-americana</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-01-22 -->
+  <url>
+    <loc>https://viciocode.com/post/avatar-frontiers-pandora-ubisoft-review</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-01-21 -->
+  <url>
+    <loc>https://viciocode.com/post/ac-syndicate-revolucao-industrial-londres</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-01-20 -->
+  <url>
+    <loc>https://viciocode.com/post/ac-unity-jogo-frente-tempo-paris</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-01-19 -->
+  <url>
+    <loc>https://viciocode.com/post/ac-rogue-assassino-templario</loc>
+    <lastmod>2026-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
