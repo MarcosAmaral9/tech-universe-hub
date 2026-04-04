@@ -107,9 +107,87 @@ import fiisDefensivosAbrilImg from "@/assets/fiis-defensivos-abril-2026.webp";
 import crimsonDesertPersonagensImg from "@/assets/crimson-desert-personagens.webp";
 import crimsonDesertPatchesImg from "@/assets/crimson-desert-patches.webp";
 import crimsonDesertVendasReviewImg from "@/assets/crimson-desert-vendas-review.webp";
+import lancamentosGamesAbrilImg from "@/assets/lancamentos-games-abril-2026.webp";
+import absoluteBatmanImg from "@/assets/absolute-batman-game-2026.webp";
+import reZeroT4Img from "@/assets/rezero-temporada-4-2026.webp";
+import temporadaAnimesAbrilImg from "@/assets/temporada-animes-abril-2026.webp";
 
 export const blogPosts: BlogPost[] = [
 
+  // ── 04 Abr 2026 — Geek ──────────────────────────────────
+  {
+    id: "146",
+    slug: "lancamentos-games-abril-2026",
+    title: "Lançamentos de Games em Abril de 2026: Os 15 Jogos Mais Aguardados do Mês",
+    excerpt: "Returnal 2, Pokémon Pokopia, Death Stranding 2, Elden Ring: Nightreign e Doom: The Dark Ages lideram abril. Confira a tabela completa com datas, plataformas e preços.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: lancamentosGamesAbrilImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-04",
+    readTime: "16 min",
+    faq: [
+      { q: "Quais os maiores lançamentos de games em abril de 2026?", a: "Returnal 2 (03/04), Pokémon Pokopia (04/04), Death Stranding 2 (10/04), Elden Ring: Nightreign (11/04) e Doom: The Dark Ages (15/04)." },
+      { q: "Elden Ring Nightreign é um DLC?", a: "Não, é um spin-off standalone cooperativo para até 3 jogadores com mecânicas roguelike, desenvolvido pela FromSoftware." },
+      { q: "Qual o preço de Returnal 2?", a: "R$ 349,90 na PS Store e R$ 249,90 no Steam." },
+    ],
+  },
+  {
+    id: "147",
+    slug: "absolute-batman-game-2026",
+    title: "Absolute Batman: Do HQ ao Game — Tudo Sobre o Jogo Confirmado para 2026",
+    excerpt: "Absolute Batman de Scott Snyder vendeu 1 milhão de cópias e agora vai virar game. Board game confirmado, jogo digital AAA em rumores fortes. Tudo que sabemos.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: absoluteBatmanImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-04",
+    readTime: "14 min",
+    faq: [
+      { q: "O jogo de Absolute Batman é real?", a: "O board game Batman: Gotham City Chronicles Season 4 — Absolute U está confirmado. Um jogo digital AAA está em rumores fortes, possivelmente da Warner Bros. Games." },
+      { q: "O que é Absolute Batman?", a: "Uma reimaginação do Batman por Scott Snyder e Nick Dragotta onde Bruce Wayne é da classe trabalhadora — sem fortuna, sem mansão, sem Alfred." },
+      { q: "Quantas cópias Absolute Batman vendeu?", a: "Mais de 1 milhão de cópias nos primeiros 6 meses, sendo o maior lançamento de HQ da DC desde 2016." },
+    ],
+  },
+  // ── 04 Abr 2026 — Otaku ─────────────────────────────────
+  {
+    id: "148",
+    slug: "rezero-temporada-4-guia-2026",
+    title: "Re:ZERO Temporada 4: Tudo Sobre a Nova Temporada que Estreia em Abril na Crunchyroll",
+    excerpt: "Re:ZERO T4 estreia em 8 de abril de 2026 na Crunchyroll. Arco 6 da Torre de Plêiades, novos personagens, formato de 25 episódios. Guia completo sem spoilers.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: reZeroT4Img,
+    author: "VICIO<CODE>",
+    date: "2026-04-04",
+    readTime: "15 min",
+    faq: [
+      { q: "Quando estreia Re:ZERO Temporada 4?", a: "Em 8 de abril de 2026, na Crunchyroll com simulcast global." },
+      { q: "Qual arco a T4 de Re:ZERO adapta?", a: "O Arco 6 — Torre de Plêiades (Pleiades Watchtower), considerado pelos leitores da light novel como o mais intenso da série." },
+      { q: "Quantos episódios terá Re:ZERO T4?", a: "Estimativa de 25 episódios divididos em duas cours." },
+    ],
+  },
+  {
+    id: "149",
+    slug: "temporada-animes-abril-2026",
+    title: "Temporada de Animes Abril 2026: Guia Completo dos Melhores Lançamentos da Spring Season",
+    excerpt: "Spring Season 2026: Re:ZERO T4, TenSura T4, Dr. STONE Final, Kaiju No. 8 T2 e mais. Tabela completa com datas, estúdios e onde assistir.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: temporadaAnimesAbrilImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-04",
+    readTime: "17 min",
+    faq: [
+      { q: "Quais os melhores animes da temporada de abril 2026?", a: "Re:ZERO T4, TenSura T4, Dr. STONE Final Season, Kaiju No. 8 T2, The Apothecary Diaries T2 e Gals Can't Be Kind to Otaku!?." },
+      { q: "Onde assistir os animes da Spring 2026?", a: "A maioria está na Crunchyroll com simulcast. Alguns títulos podem ter distribuição em outras plataformas." },
+      { q: "Qual a surpresa da temporada Spring 2026?", a: "Gals Can't Be Kind to Otaku!? e Haibara's Teenage New Game+ são as apostas para surpresas da temporada." },
+    ],
+  },
   // ── 04 Abr 2026 — Geek (Crimson Desert) ──────────────────
   {
     id: "143",

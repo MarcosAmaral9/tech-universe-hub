@@ -183,6 +183,11 @@ const Gemini25ProVsGPT4o        = lazy(() => import("./pages/posts/Gemini25ProVs
 const IABrasilAdocao2026       = lazy(() => import("./pages/posts/IABrasilAdocao2026"));
 const InflacaoProtegerInvestimentos2026 = lazy(() => import("./pages/posts/InflacaoProtegerInvestimentos2026"));
 const FIIsDefensivosAbril2026  = lazy(() => import("./pages/posts/FIIsDefensivosAbril2026"));
+// 04 Abr 2026 — Geek + Otaku
+const LancamentosGamesAbril2026 = lazy(() => import("./pages/posts/LancamentosGamesAbril2026"));
+const AbsoluteBatmanGame2026    = lazy(() => import("./pages/posts/AbsoluteBatmanGame2026"));
+const ReZeroTemporada4          = lazy(() => import("./pages/posts/ReZeroTemporada4"));
+const TemporadaAnimesAbril2026  = lazy(() => import("./pages/posts/TemporadaAnimesAbril2026"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -353,6 +358,11 @@ const App = () => (
                 <Route path="/post/ia-brasil-adocao-2026" element={<IABrasilAdocao2026 />} />
                 <Route path="/post/inflacao-proteger-investimentos-2026" element={<InflacaoProtegerInvestimentos2026 />} />
                 <Route path="/post/fiis-defensivos-abril-2026" element={<FIIsDefensivosAbril2026 />} />
+                {/* 04 Abr 2026 — Geek + Otaku */}
+                <Route path="/post/lancamentos-games-abril-2026" element={<LancamentosGamesAbril2026 />} />
+                <Route path="/post/absolute-batman-game-2026" element={<AbsoluteBatmanGame2026 />} />
+                <Route path="/post/rezero-temporada-4-guia-2026" element={<ReZeroTemporada4 />} />
+                <Route path="/post/temporada-animes-abril-2026" element={<TemporadaAnimesAbril2026 />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
