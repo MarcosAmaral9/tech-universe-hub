@@ -866,4 +866,32 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- 2026-04-04 — Geek -->
+  <url>
+    <loc>https://viciocode.com/post/lancamentos-games-abril-2026</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/absolute-batman-game-2026</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026-04-04 — Otaku -->
+  <url>
+    <loc>https://viciocode.com/post/rezero-temporada-4-guia-2026</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/temporada-animes-abril-2026</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
