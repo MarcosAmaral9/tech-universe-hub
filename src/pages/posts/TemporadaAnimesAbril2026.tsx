@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
-import { Clock, User, Calendar, Tv, Star, TrendingUp, Sparkles } from "lucide-react";
+import { Clock, User, Calendar, Tv, Star, Zap, Globe } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
@@ -11,147 +11,156 @@ import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 
 const TemporadaAnimesAbril2026 = () => {
   useEffect(() => {
-    trackArticleRead("temporada-animes-abril-2026", "Temporada de Animes Abril 2026: Guia Completo dos Melhores Lançamentos", "otaku");
+    trackArticleRead("temporada-animes-abril-2026", "Temporada de Animes Abril 2026: Guia Completo da Primavera", "otaku");
   }, []);
 
   return (
     <article className="container py-8 max-w-4xl mx-auto">
       <BackNavigation category="otaku" />
-
       <header className="mb-8">
         <div className="flex items-center gap-2 mb-4">
           <CategoryBadge category="otaku" size="lg" />
-          <span className="px-3 py-1 bg-pink-500/20 text-pink-400 rounded-full text-sm font-medium">Anime · Temporada Spring</span>
+          <span className="px-3 py-1 bg-otaku/20 text-otaku rounded-full text-sm font-medium">Anime · Primavera 2026 · Guia</span>
         </div>
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-          Temporada de Animes Abril 2026: Guia Completo dos Melhores Lançamentos da Spring Season
+          Temporada de Animes Abril 2026: Guia Completo da Primavera — Re:ZERO, One Piece, Slime e Mais
         </h1>
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
           <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />04 de Abril, 2026</span>
-          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />17 min de leitura</span>
+          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />15 min de leitura</span>
         </div>
         <ShareWhatsApp />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high" src={heroImg} alt="Temporada de Animes Abril 2026" loading="eager" decoding="async" className="w-full h-full object-cover" />
+        <img fetchpriority="high" src={heroImg} alt="Temporada Animes Abril Primavera 2026" loading="eager" decoding="async" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          A Spring Season 2026 é uma das mais empolgantes dos últimos anos. Com retornos de peso como Re:ZERO T4 e That Time I Got Reincarnated as a Slime T4, além de estreias promissoras, montamos o guia definitivo para você não perder nada.
+          A temporada de Primavera 2026 (abril–junho) é uma das mais carregadas dos últimos anos: <strong>mais de 60 estreias confirmadas</strong>, com gigantes como Re:ZERO, One Piece, Slime e Dorohedoro retornando ao mesmo tempo que grandes estreias como Witch Hat Atelier chegam pela primeira vez. No Brasil, tudo se passa no outono — clima perfeito para maratonar.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Star className="h-7 w-7 text-otaku" />
-          Os 5 Animes Mais Aguardados
+          Calendário dos Destaques
         </h2>
-
-        <h3 className="text-xl font-bold mt-6 mb-3">1. Re:ZERO — Starting Life in Another World T4</h3>
-        <p>
-          <strong>Estreia:</strong> 8 de abril | <strong>Estúdio:</strong> White Fox | <strong>Onde:</strong> Crunchyroll
-        </p>
-        <p>
-          O retorno mais aguardado da temporada. Subaru e o grupo viajam à Torre de Plêiades no Arco 6 — considerado o mais intenso da light novel. Após o sucesso da T3 em 2024, as expectativas estão altíssimas. A série é conhecida por subverter as convenções do isekai, e o Arco 6 promete levar isso ao extremo.
-        </p>
-
-        <h3 className="text-xl font-bold mt-6 mb-3">2. That Time I Got Reincarnated as a Slime T4</h3>
-        <p>
-          <strong>Estreia:</strong> abril 2026 | <strong>Estúdio:</strong> 8bit | <strong>Onde:</strong> Crunchyroll
-        </p>
-        <p>
-          Rimuru Tempest retorna com a adaptação do arco do Torneio dos Dez Grandes Santos Demônios. A Federação Jura-Tempest enfrenta ameaças políticas e militares em escala continental. TenSura continua sendo um dos isekai mais populares do mundo, e a T4 chega após o filme Scarlet Bond consolidar a franquia em 2024.
-        </p>
-
-        <h3 className="text-xl font-bold mt-6 mb-3">3. Gals Can't Be Kind to Otaku!?</h3>
-        <p>
-          <strong>Estreia:</strong> 8 de abril | <strong>Onde:</strong> Crunchyroll
-        </p>
-        <p>
-          Adaptação do mangá de comédia romântica que explora a relação entre uma gal extrovertida e um otaku introvertido. O mangá original de Norishiro-chan e Uozumi Sakana é publicado pela Comic Zenon (Coamix) e acumula milhões de leitores. A premissa parece clichê, mas a execução tem surpreendido pela naturalidade dos diálogos.
-        </p>
-
-        <AdLeaderboard className="my-8" />
-
-        <h3 className="text-xl font-bold mt-6 mb-3">4. Haibara's Teenage New Game+</h3>
-        <p>
-          <strong>Estreia:</strong> abril 2026
-        </p>
-        <p>
-          E se você pudesse reviver a adolescência com todas as suas memórias intactas? Essa é a premissa deste anime baseado na light novel que conquistou o Japão. Haibara, um adulto frustrado, ganha uma segunda chance de viver o ensino médio — mas descobre que mudar o passado traz consequências inesperadas.
-        </p>
-
-        <h3 className="text-xl font-bold mt-6 mb-3">5. Dr. STONE: Science Future (Final Season)</h3>
-        <p>
-          <strong>Estúdio:</strong> TMS Entertainment | <strong>Onde:</strong> Crunchyroll
-        </p>
-        <p>
-          A conclusão épica da jornada de Senku para reconstruir a civilização. O arco final adapta os últimos capítulos do mangá de Riichiro Inagaki e Boichi, incluindo a corrida espacial e o confronto final com Why-man. Os fãs que acompanham desde 2019 terão finalmente o encerramento que a série merece.
-        </p>
-
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Tv className="h-7 w-7 text-otaku" />
-          Tabela Completa: Principais Animes da Spring 2026
-        </h2>
-        <div className="overflow-x-auto my-6">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-border">
-                <th className="text-left p-3">Anime</th>
-                <th className="text-left p-3">Gênero</th>
-                <th className="text-left p-3">Tipo</th>
-                <th className="text-left p-3">Onde Assistir</th>
-              </tr>
-            </thead>
+        <div className="not-prose my-6 overflow-x-auto">
+          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+            <thead><tr className="bg-secondary">
+              <th className="text-left py-3 px-4">Data</th>
+              <th className="text-left py-3 px-4">Anime</th>
+              <th className="text-left py-3 px-4">Onde Assistir</th>
+            </tr></thead>
             <tbody>
-              <tr className="border-b border-border/50"><td className="p-3 font-medium">Re:ZERO T4</td><td className="p-3">Isekai / Drama</td><td className="p-3">Continuação</td><td className="p-3">Crunchyroll</td></tr>
-              <tr className="border-b border-border/50"><td className="p-3 font-medium">TenSura T4</td><td className="p-3">Isekai / Fantasia</td><td className="p-3">Continuação</td><td className="p-3">Crunchyroll</td></tr>
-              <tr className="border-b border-border/50"><td className="p-3 font-medium">Gals Can't Be Kind to Otaku!?</td><td className="p-3">Comédia Romântica</td><td className="p-3">Estreia</td><td className="p-3">Crunchyroll</td></tr>
-              <tr className="border-b border-border/50"><td className="p-3 font-medium">Haibara's Teenage New Game+</td><td className="p-3">Drama / Romance</td><td className="p-3">Estreia</td><td className="p-3">A confirmar</td></tr>
-              <tr className="border-b border-border/50"><td className="p-3 font-medium">Dr. STONE: Science Future</td><td className="p-3">Aventura / Sci-fi</td><td className="p-3">Final</td><td className="p-3">Crunchyroll</td></tr>
-              <tr className="border-b border-border/50"><td className="p-3 font-medium">Kaiju No. 8 T2</td><td className="p-3">Ação / Sci-fi</td><td className="p-3">Continuação</td><td className="p-3">Crunchyroll</td></tr>
-              <tr className="border-b border-border/50"><td className="p-3 font-medium">Fairy Tail: 100 Years Quest T2</td><td className="p-3">Ação / Fantasia</td><td className="p-3">Continuação</td><td className="p-3">Crunchyroll</td></tr>
-              <tr className="border-b border-border/50"><td className="p-3 font-medium">The Apothecary Diaries T2</td><td className="p-3">Mistério / Drama</td><td className="p-3">Continuação</td><td className="p-3">Crunchyroll</td></tr>
+              {[
+                ["1º de abril", "Dorohedoro 2ª Temporada (MAPPA)", "Crunchyroll"],
+                ["1º de abril", "Classroom of the Elite 4ª Temporada", "Crunchyroll"],
+                ["1º de abril", "My Hero Academia: More (episódio final especial)", "Crunchyroll"],
+                ["2 de abril", "Dr. Stone: Science Future (3º cour — temporada final)", "Crunchyroll"],
+                ["3 de abril", "Tensei Shitara Slime Datta Ken 4ª Temporada", "Crunchyroll"],
+                ["4 de abril", "Daemons of the Shadow Realm", "A confirmar"],
+                ["5 de abril", "One Piece — Arco Elbaf (formato sazonal)", "Crunchyroll / Netflix"],
+                ["7 de abril", "Witch Hat Atelier (BUG FILMS)", "Crunchyroll"],
+                ["8 de abril", "Re:ZERO 4ª Temporada — Loss Arc (White Fox)", "Crunchyroll"],
+              ].map(([d, a, o]) => (
+                <tr key={a} className="border-t border-border">
+                  <td className="py-3 px-4 font-bold text-otaku whitespace-nowrap">{d}</td>
+                  <td className="py-3 px-4">{a}</td>
+                  <td className="py-3 px-4 text-xs text-muted-foreground">{o}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
 
+        <AdLeaderboard className="my-8" />
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Tv className="h-7 w-7 text-otaku" />
+          Os Grandes Retornos
+        </h2>
+
+        <h3 className="text-xl font-bold mt-8 mb-3">Re:ZERO − 4ª Temporada (8 de abril)</h3>
+        <p>
+          O anime mais aguardado da temporada segundo pesquisa do Dengeki Online com fãs japoneses. 19 episódios divididos em dois arcos: <strong>Loss Arc</strong> (11 eps, começa em 8/04) e <strong>Recapture Arc</strong> (8 eps, a partir de 12/08). O estúdio White Fox retorna com o diretor Masahiro Shinohara. Adapta o Arco 6 da light novel, levando Subaru à Torre de Vigia de Plêiades em busca de Shaula (dublada por Fairouz Ai). Exibe toda quarta-feira na Crunchyroll. É o 10º aniversário da franquia.
+        </p>
+
+        <h3 className="text-xl font-bold mt-8 mb-3">One Piece — Arco Elbaf (5 de abril)</h3>
+        <p>
+          Pela primeira vez em 25 anos, One Piece adota <strong>formato sazonal</strong> — temporadas de até 26 episódios por ano, com cada episódio correspondendo a um capítulo do mangá de Eiichiro Oda. O Arco Elbaf, a terra dos gigantes, é considerado pelos leitores um dos mais aguardados de toda a saga — as primeiras menções a Elbaf foram feitas no arco Little Garden, há mais de duas décadas. Disponível na Crunchyroll (1 semana antes) e na Netflix.
+        </p>
+
+        <h3 className="text-xl font-bold mt-8 mb-3">Tensei Shitara Slime Datta Ken 4ª Temporada (3 de abril)</h3>
+        <p>
+          Rimuru Tempest retorna com a 4ª temporada, focada na consolidação política de Tempest e na aliança entre humanos e monstros — um dos arcos mais estratégicos da série. Em abril, o filme <em>Lágrimas do Mar Azul-Celeste</em> também chega aos cinemas brasileiros.
+        </p>
+
+        <h3 className="text-xl font-bold mt-8 mb-3">Dorohedoro 2ª Temporada (1º de abril)</h3>
+        <p>
+          Após anos de espera, o mundo sombrio e bizarro de Caiman e Nikaido retorna no MAPPA (Chainsaw Man, Jujutsu Kaisen). Dirigido por Yuichiro Hayashi com roteiro de Hiroshi Seko (Vinland Saga, Mob Psycho 100), a 2ª temporada adapta arcos mais profundos do mangá de Q Hayashida. Um dos retornos mais celebrados pelos fãs de narrativas diferentes.
+        </p>
+
+        <h3 className="text-xl font-bold mt-8 mb-3">Dr. Stone: Science Future — 3º Cour (2 de abril)</h3>
+        <p>
+          O arco final de Dr. Stone chega como o 3º cour da 4ª e última temporada. O Reino da Ciência de Senku Ishigami coloca em prática o plano mais ambicioso: chegar à Lua para salvar a humanidade. Uma conclusão épica para uma das melhores séries de aventura científica dos últimos anos.
+        </p>
+
+        <h3 className="text-xl font-bold mt-8 mb-3">My Hero Academia: More (1º de abril)</h3>
+        <p>
+          O episódio especial final de My Hero Academia chega encerrando a história de Izuku Midoriya e da Classe 1-A. Intitulado "More", o especial é um epílogo passado anos após o confronto final, reencontrando todos os personagens. Um adeus emocionante a uma das franquias mais populares da última década.
+        </p>
+
         <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <TrendingUp className="h-7 w-7 text-otaku" />
-          Continuações para Ficar de Olho
+          <Zap className="h-7 w-7 text-otaku" />
+          As Grandes Estreias
         </h2>
+
+        <h3 className="text-xl font-bold mt-8 mb-3">Witch Hat Atelier (7 de abril)</h3>
         <p>
-          <strong>Kaiju No. 8 Temporada 2</strong> retorna após o sucesso estrondoso da primeira temporada. O anime de monstros da Production I.G conquistou audiências globais e a T2 promete escalar o conflito com novos Kaiju e revelações sobre o passado de Kafka Hibeno.
+          Uma das adaptações mais aguardadas pelos leitores de mangá. Baseada na obra de Kamome Shirahama (publicada no Brasil pela Panini como "Atelier of Witch Hat"), a animação é produzida pelo estúdio <strong>BUG FILMS</strong> (Zom 100). Conta a história de Coco, uma garota que descobre que a magia existe e que é desenhada à mão — literalmente. A série sofreu um atraso proposital para melhorar a qualidade, o que aumentou ainda mais as expectativas.
         </p>
+
+        <h3 className="text-xl font-bold mt-8 mb-3">Classroom of the Elite 4ª Temporada (1º de abril)</h3>
         <p>
-          <strong>The Apothecary Diaries Temporada 2</strong> (Kusuriya no Hitorigoto) continua a história de Maomao na corte imperial. A primeira temporada foi um dos animes mais bem avaliados de 2024, e a T2 adapta o arco onde Maomao se envolve em intrigas políticas ainda mais perigosas.
-        </p>
-        <p>
-          <strong>Fairy Tail: 100 Years Quest T2</strong> mantém a nostalgia viva para os fãs da franquia, com o grupo de Natsu enfrentando os Deuses Dragão em uma aventura que homenageia os melhores momentos do original.
+          Kiyotaka Ayanokouji retorna para mais um ano de manipulação psicológica no Colégio Tokyo Koudo Ikusei. A série, conhecida por seus plot twists e jogos mentais entre estudantes, estreia nova temporada na Crunchyroll em simultâneo com o Japão.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Sparkles className="h-7 w-7 text-otaku" />
-          Apostas da Temporada: Estreias para Descobrir
+          <Globe className="h-7 w-7 text-otaku" />
+          Como Priorizar a Temporada
         </h2>
-        <p>
-          Além dos grandes nomes, vale ficar de olho em estreias originais. <strong>Gals Can't Be Kind to Otaku!?</strong> tem potencial para ser a surpresa da temporada no gênero rom-com, e <strong>Haibara's Teenage New Game+</strong> traz uma premissa de "segunda chance" que pode agradar fãs de ReLife e ReLIFE.
-        </p>
-        <p>
-          A Spring 2026 também marca o retorno de produções que estavam em hiato. Com tantas opções, o recomendado é assistir os 3 primeiros episódios de cada série que chamar sua atenção antes de definir sua watchlist definitiva da temporada.
-        </p>
+        <div className="not-prose my-6 space-y-3">
+          {[
+            { prioridade: "🔥 Imperdível", animes: "Re:ZERO S4, One Piece Elbaf, Witch Hat Atelier", desc: "Momentos históricos — arcos definitivos ou estreias de peso que a comunidade aguarda há anos." },
+            { prioridade: "⭐ Muito Recomendado", animes: "Dorohedoro S2, Slime S4, Dr. Stone final", desc: "Grandes franquias em arcos decisivos. Fãs das séries não podem perder." },
+            { prioridade: "👍 Vale Acompanhar", animes: "Classroom of the Elite S4, MHA: More", desc: "Continuações sólidas para quem já acompanha as séries." },
+          ].map((item) => (
+            <div key={item.prioridade} className="bg-card rounded-xl border border-otaku/20 p-4">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="font-bold text-otaku">{item.prioridade}</span>
+                <span className="text-xs text-muted-foreground">— {item.animes}</span>
+              </div>
+              <p className="text-sm text-muted-foreground mb-0">{item.desc}</p>
+            </div>
+          ))}
+        </div>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Quais animes da Spring 2026 estão na sua lista?</h3>
-          <p className="text-muted-foreground">Compartilha a sua watchlist nos comentários! 🌸👇</p>
+        <h2 className="text-2xl font-bold mt-10 mb-4">Conclusão</h2>
+        <p>
+          A primavera 2026 é, por vários ângulos, uma das temporadas de anime mais densas e importantes dos últimos anos. Com o retorno de Re:ZERO celebrando 10 anos, a estreia histórica de Witch Hat Atelier, One Piece em novo formato e o fim de My Hero Academia — há material mais do que suficiente para meses de discussão nas comunidades.
+        </p>
+        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
+          <h3 className="text-xl font-bold mb-2">Qual anime você mais está animado para a primavera 2026? 🌸</h3>
+          <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
 
       <RelatedPosts currentSlug="temporada-animes-abril-2026" />
-      <CommentSection postId="temporada-animes-abril-2026" postTitle="Temporada de Animes Abril 2026: Guia Completo" />
+      <CommentSection postId="temporada-animes-abril-2026" postTitle="Temporada de Animes Abril 2026: Guia Completo da Primavera" />
     </article>
   );
 };
