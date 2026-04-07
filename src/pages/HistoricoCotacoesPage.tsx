@@ -454,7 +454,7 @@ const HistoricoCotacoesPage = () => {
 
     // ── Resultado final ──────────────────────────────────────────────────
     const hasRealData = result.some(a => a.dataSource === "real");
-    setIsFallback(!hasRealData && !b3Data && !ratesData);
+    setIsFallback(!hasRealData && !ratesData);
 
     result.sort((a, b) => {
       const order: Record<CategoryKey, number> = { crypto: 0, currency: 1, b3: 2, metal: 3 };
