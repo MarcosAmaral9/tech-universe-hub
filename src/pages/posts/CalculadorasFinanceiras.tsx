@@ -83,7 +83,7 @@ const CalculadorasFinanceiras = () => {
       const res = await fetch("/api.php?action=b3", { cache: "no-store" });
       if (res.ok) {
         const json = await res.json();
-        const stocks = json.stocks ?? json.data ?? json;
+        const stocks = json.results ?? json.stocks ?? json.data ?? json;
         if (Array.isArray(stocks)) {
           stocks.forEach((s: { symbol: string; shortName?: string; regularMarketPrice: number }) => {
             if (s.regularMarketPrice > 0) {

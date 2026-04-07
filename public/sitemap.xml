@@ -70,6 +70,13 @@
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- Histórico de cotações com gráficos interativos — 7d, 30d, 90d, 1 ano -->
+  <url>
+    <loc>https://viciocode.com/historico-cotacoes</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- Portal Crimson Desert — hub de artigos do jogo -->
   <url>
     <loc>https://viciocode.com/geek/crimson-desert</loc>

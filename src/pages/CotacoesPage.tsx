@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, BarChart3, TrendingUp, DollarSign, Bitcoin, Gem, SlidersHorizontal } from "lucide-react";
+import { ArrowLeft, BarChart3, TrendingUp, DollarSign, Bitcoin, Gem, SlidersHorizontal, History } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import B3StockTicker from "@/components/B3StockTicker";
 import CurrencyWidget from "@/components/CurrencyWidget";
@@ -65,6 +65,12 @@ const CotacoesPage = () => {
             <p className="text-muted-foreground text-sm mt-1">
               Dados consolidados de mercado, atualizados automaticamente
             </p>
+            <Link to="/historico-cotacoes" className="inline-block mt-3">
+              <Button variant="outline" className="gap-2 border-invest/30 text-invest hover:bg-invest/10">
+                <History className="h-4 w-4" />
+                Ver Histórico de Cotações
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import PostCard from "@/components/PostCard";
 import { getPostsByCategory, getPostBySlug } from "@/data/posts";
-import { ArrowLeft, Calculator, BarChart3, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, Calculator, BarChart3, ChevronLeft, ChevronRight, History } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import B3StockTicker from "@/components/B3StockTicker";
 import CurrencyWidget from "@/components/CurrencyWidget";
@@ -95,6 +95,12 @@ const InvestimentosPage = () => {
           <Button variant="outline" className="gap-2 border-invest/30 text-invest hover:bg-invest/10">
             <BarChart3 className="h-4 w-4" />
             Ver Cotações Consolidadas
+          </Button>
+        </Link>
+        <Link to="/historico-cotacoes" className="inline-block mt-3 ml-2">
+          <Button variant="outline" className="gap-2 border-invest/30 text-invest hover:bg-invest/10">
+            <History className="h-4 w-4" />
+            Histórico de Cotações
           </Button>
         </Link>
       </div>

@@ -61,6 +61,7 @@ const ContactPage = lazy(() => import("./pages/ContactPage"));
 const InstallPage = lazy(() => import("./pages/InstallPage"));
 const SettingsPage = lazy(() => import("./pages/SettingsPage"));
 const CotacoesPage = lazy(() => import("./pages/CotacoesPage"));
+const HistoricoCotacoesPage = lazy(() => import("./pages/HistoricoCotacoesPage"));
 const AuthPage = lazy(() => import("./pages/AuthPage"));
 const PublicProfilePage = lazy(() => import("./pages/PublicProfilePage"));
 const ResetPasswordPage = lazy(() => import("./pages/ResetPasswordPage"));
@@ -224,6 +225,7 @@ const App = () => (
                 <Route path="/ia" element={<IAPage />} />
                 <Route path="/financas" element={<InvestimentosPage />} />
                 <Route path="/cotacoes" element={<CotacoesPage />} />
+                <Route path="/historico-cotacoes" element={<HistoricoCotacoesPage />} />
                 <Route path="/entrar" element={<AuthPage />} />
                 <Route path="/auth/google" element={<GoogleAuthCallback />} />
                 <Route path="/perfil/:id" element={<PublicProfilePage />} />

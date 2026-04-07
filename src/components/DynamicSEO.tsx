@@ -41,6 +41,11 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Acompanhe cotações de ações da B3, câmbio, metais preciosos e criptomoedas em tempo real.",
     keywords: "cotações, ações B3, câmbio, dólar, euro, bitcoin, criptomoedas, ouro, prata, metais preciosos, bolsa de valores, mercado financeiro, cotação em tempo real, investimentos",
   },
+  "/historico-cotacoes": {
+    title: "Histórico de Cotações",
+    description: "Veja o histórico de preços de ações da B3, criptomoedas, câmbio e metais preciosos com gráficos interativos. Compare variações em 7 dias, 30 dias, 90 dias ou 1 ano.",
+    keywords: "histórico de cotações, gráfico de preços, B3 histórico, bitcoin histórico, dólar histórico, ouro histórico, variação de preços, análise de mercado, investimentos",
+  },
   "/entrar": {
     title: "Entrar",
     description: "Acesse sua conta no VICIO<CODE> para personalizar sua experiência.",
