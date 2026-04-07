@@ -772,20 +772,20 @@ const HistoricoCotacoesPage = () => {
           <h2 className="font-display text-base font-bold mb-3">Sobre os Dados</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
             <div>
-              <strong className="text-foreground">📊 B3</strong>
-              <p className="text-xs text-muted-foreground mt-0.5">Preço atual via brapi.dev (cache 30 min). Histórico simulado com volatilidade real de ações.</p>
+              <strong className="text-foreground flex items-center gap-1">📊 B3 <span className="text-[9px] text-emerald-400 font-bold">HISTÓRICO REAL</span></strong>
+              <p className="text-xs text-muted-foreground mt-0.5">Preço atual e histórico real via brapi.dev (edge function). PETR4, VALE3, ITUB4, BBDC4, ABEV3, WEGE3.</p>
             </div>
             <div>
               <strong className="text-foreground flex items-center gap-1">₿ Cripto <span className="text-[9px] text-emerald-400 font-bold">HISTÓRICO REAL</span></strong>
-              <p className="text-xs text-muted-foreground mt-0.5">Preço atual via servidor VicioCode. Histórico real via CoinGecko (gratuito) direto do navegador.</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Histórico real via CoinGecko (gratuito). BTC, ETH, SOL, BNB em BRL.</p>
             </div>
             <div>
               <strong className="text-foreground flex items-center gap-1">💱 Câmbio <span className="text-[9px] text-emerald-400 font-bold">HISTÓRICO REAL</span></strong>
-              <p className="text-xs text-muted-foreground mt-0.5">Preço atual e histórico real via AwesomeAPI (gratuito). USD, EUR, ARS e PYG em BRL.</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Histórico via AwesomeAPI + fawazahmed0 (fallback). USD, EUR, ARS e PYG em BRL.</p>
             </div>
             <div>
-              <strong className="text-foreground">🥇 Metais</strong>
-              <p className="text-xs text-muted-foreground mt-0.5">Preço atual (ouro/prata em g) via servidor. Histórico simulado com volatilidade de metais.</p>
+              <strong className="text-foreground flex items-center gap-1">🥇 Metais <span className="text-[9px] text-emerald-400 font-bold">HISTÓRICO REAL</span></strong>
+              <p className="text-xs text-muted-foreground mt-0.5">Histórico real via fawazahmed0. Ouro e Prata convertidos de troy oz para gramas.</p>
             </div>
           </div>
           <p className="text-[10px] text-muted-foreground mt-3 pt-3 border-t border-border">
