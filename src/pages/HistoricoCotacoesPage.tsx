@@ -620,6 +620,12 @@ const HistoricoCotacoesPage = () => {
                         }`}>
                           {selectedAsset.dataSource === "real" ? "✓ Dados históricos reais" : "~ Simulação baseada no preço atual"}
                         </span>
+                        {selectedAsset.category === "b3" && period === "1y" && (
+                          <span className="inline-flex items-center gap-1 mt-1 text-[10px] px-2 py-0.5 rounded-full font-medium bg-amber-500/15 text-amber-400">
+                            <AlertTriangle className="h-3 w-3" /> B3: histórico limitado a 3 meses (API gratuita)
+                          </span>
+                        )}
+                        </span>
                       </div>
                     </div>
                     <div className="text-right">
@@ -774,6 +780,10 @@ const HistoricoCotacoesPage = () => {
             <div>
               <strong className="text-foreground flex items-center gap-1">📊 B3 <span className="text-[9px] text-emerald-400 font-bold">HISTÓRICO REAL</span></strong>
               <p className="text-xs text-muted-foreground mt-0.5">Preço atual e histórico real via brapi.dev (edge function). PETR4, VALE3, ITUB4, BBDC4, ABEV3, WEGE3.</p>
+              <p className="text-[10px] text-amber-400 mt-1 flex items-center gap-1">
+                <AlertTriangle className="h-3 w-3 shrink-0" />
+                Histórico limitado a 3 meses (API gratuita).
+              </p>
             </div>
             <div>
               <strong className="text-foreground flex items-center gap-1">₿ Cripto <span className="text-[9px] text-emerald-400 font-bold">HISTÓRICO REAL</span></strong>
