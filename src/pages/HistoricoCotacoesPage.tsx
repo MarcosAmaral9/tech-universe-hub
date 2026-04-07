@@ -217,7 +217,7 @@ const RANGE_MAP: Record<Period, { range: string; interval: string }> = {
   "7d":  { range: "5d",  interval: "1d" },
   "30d": { range: "1mo", interval: "1d" },
   "90d": { range: "3mo", interval: "1d" },
-  "1y":  { range: "1y",  interval: "1wk" },
+  "1y":  { range: "3mo", interval: "1wk" },
 };
 
 async function fetchB3History(
