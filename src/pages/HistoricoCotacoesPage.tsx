@@ -134,11 +134,8 @@ const CustomTooltip = ({
 async function fetchCryptoHistory(
   coinId: string,
   days: number,
-  vsBRL: number, // preço atual em BRL para normalizar
 ): Promise<ChartPoint[] | null> {
   try {
-    // CoinGecko retorna histórico em USD — multiplicamos pelo USD/BRL atual
-    // dias ≤ 90 → granularidade diária; dias > 90 → semanal (free tier)
     const url = `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=brl&days=${days}&interval=daily`;
     const res = await fetch(url, { signal: AbortSignal.timeout(10000) });
     if (!res.ok) return null;
@@ -154,26 +151,134 @@ async function fetchCryptoHistory(
   }
 }
 
-// ── Busca histórico de câmbio via AwesomeAPI (gratuito) ───────────────────
+// ── Busca histórico real de câmbio via AwesomeAPI com fallback fawazahmed0 ──
 async function fetchCurrencyHistory(
   pair: string, // ex: "USD-BRL"
   days: number,
+  currencyCode: string, // ex: "usd"
 ): Promise<ChartPoint[] | null> {
+  // Tenta AwesomeAPI primeiro
   try {
     const url = `https://economia.awesomeapi.com.br/json/daily/${pair}/${days}`;
-    const res = await fetch(url, { signal: AbortSignal.timeout(10000) });
-    if (!res.ok) return null;
-    const json: { timestamp: string; bid: string }[] = await res.json();
-    if (!Array.isArray(json) || !json.length) return null;
-    // API retorna do mais recente ao mais antigo — revertemos
-    return [...json].reverse().map(({ timestamp, bid }) => {
-      const iso = new Date(parseInt(timestamp) * 1000).toISOString().slice(0, 10);
-      const v   = parseFloat(parseFloat(bid).toFixed(4));
-      return { date: iso, value: v, label: fmtDate(iso) };
+    const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
+    if (res.ok) {
+      const text = await res.text();
+      if (!text.includes("QuotaExceeded")) {
+        const json: { timestamp: string; bid: string }[] = JSON.parse(text);
+        if (Array.isArray(json) && json.length > 0) {
+          return [...json].reverse().map(({ timestamp, bid }) => {
+            const iso = new Date(parseInt(timestamp) * 1000).toISOString().slice(0, 10);
+            const v = parseFloat(parseFloat(bid).toFixed(4));
+            return { date: iso, value: v, label: fmtDate(iso) };
+          });
+        }
+      }
+    }
+  } catch { /* fallback below */ }
+
+  // Fallback: fawazahmed0 currency API (build series from dated snapshots)
+  try {
+    const code = currencyCode.toLowerCase();
+    const pts: ChartPoint[] = [];
+    const now = new Date();
+    // Sample dates: every ~3 days for 7d, every ~5 for 30d, weekly for 90d, biweekly for 1y
+    const step = days <= 7 ? 1 : days <= 30 ? 3 : days <= 90 ? 7 : 14;
+    const datesToFetch: string[] = [];
+    for (let i = days; i >= 0; i -= step) {
+      const d = new Date(now);
+      d.setDate(d.getDate() - i);
+      datesToFetch.push(d.toISOString().slice(0, 10));
+    }
+    // Always include today
+    const todayStr = now.toISOString().slice(0, 10);
+    if (!datesToFetch.includes(todayStr)) datesToFetch.push(todayStr);
+
+    const results = await Promise.allSettled(
+      datesToFetch.map(async (dateStr) => {
+        const url = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@${dateStr}/v1/currencies/${code}.min.json`;
+        const r = await fetch(url, { signal: AbortSignal.timeout(6000) });
+        if (!r.ok) return null;
+        const j = await r.json();
+        const brl = j[code]?.brl;
+        if (typeof brl !== "number" || brl <= 0) return null;
+        return { date: dateStr, value: parseFloat(brl.toFixed(4)), label: fmtDate(dateStr) };
+      })
+    );
+    results.forEach(r => {
+      if (r.status === "fulfilled" && r.value) pts.push(r.value);
     });
+    if (pts.length >= 3) return pts;
+  } catch { /* give up */ }
+  return null;
+}
+
+// ── Busca histórico real de B3 via edge function ──────────────────────────
+const RANGE_MAP: Record<Period, { range: string; interval: string }> = {
+  "7d":  { range: "5d",  interval: "1d" },
+  "30d": { range: "1mo", interval: "1d" },
+  "90d": { range: "3mo", interval: "1d" },
+  "1y":  { range: "1y",  interval: "1wk" },
+};
+
+async function fetchB3History(
+  ticker: string,
+  period: Period,
+): Promise<{ history: ChartPoint[]; currentPrice: number; change24h: number; shortName: string } | null> {
+  try {
+    const { range, interval } = RANGE_MAP[period];
+    const projectId = import.meta.env.VITE_SUPABASE_PROJECT_ID;
+    const url = `https://${projectId}.supabase.co/functions/v1/b3-history?ticker=${ticker}&range=${range}&interval=${interval}`;
+    const res = await fetch(url, { signal: AbortSignal.timeout(12000) });
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (!data.history?.length) return null;
+    const pts: ChartPoint[] = data.history.map((h: { date: number; close: number }) => {
+      const iso = new Date(h.date * 1000).toISOString().slice(0, 10);
+      return { date: iso, value: h.close, label: fmtDate(iso) };
+    });
+    return { history: pts, currentPrice: data.currentPrice, change24h: data.change24h ?? 0, shortName: data.shortName ?? ticker };
   } catch {
     return null;
   }
+}
+
+// ── Busca histórico real de metais via fawazahmed0 ────────────────────────
+async function fetchMetalHistory(
+  metalCode: string, // "xau" or "xag"
+  days: number,
+): Promise<ChartPoint[] | null> {
+  try {
+    const pts: ChartPoint[] = [];
+    const now = new Date();
+    const step = days <= 7 ? 1 : days <= 30 ? 3 : days <= 90 ? 7 : 14;
+    const datesToFetch: string[] = [];
+    for (let i = days; i >= 0; i -= step) {
+      const d = new Date(now);
+      d.setDate(d.getDate() - i);
+      datesToFetch.push(d.toISOString().slice(0, 10));
+    }
+    const todayStr = now.toISOString().slice(0, 10);
+    if (!datesToFetch.includes(todayStr)) datesToFetch.push(todayStr);
+
+    const results = await Promise.allSettled(
+      datesToFetch.map(async (dateStr) => {
+        const url = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@${dateStr}/v1/currencies/${metalCode}.min.json`;
+        const r = await fetch(url, { signal: AbortSignal.timeout(6000) });
+        if (!r.ok) return null;
+        const j = await r.json();
+        const brl = j[metalCode]?.brl;
+        if (typeof brl !== "number" || brl <= 0) return null;
+        // fawazahmed0 returns troy oz price → convert to grams
+        const perGram = brl / TROY;
+        return { date: dateStr, value: parseFloat(perGram.toFixed(2)), label: fmtDate(dateStr) };
+      })
+    );
+    results.forEach(r => {
+      if (r.status === "fulfilled" && r.value) pts.push(r.value);
+    });
+    if (pts.length >= 3) return pts;
+  } catch { /* give up */ }
+  return null;
 }
 
 // ── Página principal ───────────────────────────────────────────────────────
@@ -206,37 +311,55 @@ const HistoricoCotacoesPage = () => {
       } catch { return null; }
     };
 
-    // ── 1. B3 — preço atual via api.php, histórico simulado ──────────────
-    let b3Data: any = null;
-    try {
-      b3Data = await safeFetchJson("/api.php?action=b3");
-      if (b3Data) {
-        const stocks = b3Data.results ?? b3Data.stocks ?? b3Data.data ?? b3Data;
-        if (Array.isArray(stocks)) {
-          stocks.forEach((s: any) => {
-            if (s.regularMarketPrice > 0) {
-              result.push({
-                id: `b3-${s.symbol}`, name: s.shortName || s.symbol, symbol: s.symbol,
-                category: "b3", icon: B3_ICONS[s.symbol] ?? "📊",
-                currentPrice: s.regularMarketPrice,
-                change24h: s.regularMarketChangePercent ?? 0,
-                unit: "R$/ação", dataSource: "simulated",
-                data: buildSimulated(s.regularMarketPrice, 0.012, days),
-              });
-            }
+    // ── 1. B3 — histórico REAL via edge function ──────────────────────────
+    const B3_TICKERS = ["PETR4", "VALE3", "ITUB4", "BBDC4", "ABEV3", "WEGE3"];
+    await Promise.allSettled(
+      B3_TICKERS.map(async (ticker) => {
+        const data = await fetchB3History(ticker, p);
+        if (data && data.history.length > 0) {
+          result.push({
+            id: `b3-${ticker}`, name: data.shortName || ticker, symbol: ticker,
+            category: "b3", icon: B3_ICONS[ticker] ?? "📊",
+            currentPrice: data.currentPrice, change24h: data.change24h,
+            unit: "R$/ação", dataSource: "real",
+            data: data.history,
           });
         }
-      }
-    } catch { /* fallback abaixo */ }
+      })
+    );
 
-    // Se B3 falhou, usa fallback estático
+    // Se B3 falhou, tenta api.php ou usa fallback estático
     if (!result.some(a => a.category === "b3")) {
-      FALLBACK.filter(a => a.category === "b3").forEach(a => {
-        result.push({ ...a, dataSource: "simulated", data: buildSimulated(a.currentPrice, 0.012, days) });
-      });
+      let b3Data: any = null;
+      try {
+        b3Data = await safeFetchJson("/api.php?action=b3");
+        if (b3Data) {
+          const stocks = b3Data.results ?? b3Data.stocks ?? b3Data.data ?? b3Data;
+          if (Array.isArray(stocks)) {
+            stocks.forEach((s: any) => {
+              if (s.regularMarketPrice > 0) {
+                result.push({
+                  id: `b3-${s.symbol}`, name: s.shortName || s.symbol, symbol: s.symbol,
+                  category: "b3", icon: B3_ICONS[s.symbol] ?? "📊",
+                  currentPrice: s.regularMarketPrice,
+                  change24h: s.regularMarketChangePercent ?? 0,
+                  unit: "R$/ação", dataSource: "simulated",
+                  data: buildSimulated(s.regularMarketPrice, 0.012, days),
+                });
+              }
+            });
+          }
+        }
+      } catch { /* fallback */ }
+
+      if (!result.some(a => a.category === "b3")) {
+        FALLBACK.filter(a => a.category === "b3").forEach(a => {
+          result.push({ ...a, dataSource: "simulated", data: buildSimulated(a.currentPrice, 0.012, days) });
+        });
+      }
     }
 
-    // ── 2. Cripto — tenta api.php para preço atual, SEMPRE busca histórico real ──
+    // ── 2. Cripto — histórico REAL via CoinGecko ──────────────────────────
     let cryptoPrices: Map<string, { name: string; price: number; change: number }> = new Map();
     try {
       const cryptoJson = await safeFetchJson("/api.php?action=crypto");
@@ -252,7 +375,6 @@ const HistoricoCotacoesPage = () => {
       }
     } catch { /* usa fallback */ }
 
-    // Fallback de preços cripto se api.php falhou
     const cryptoFallbackMap: Record<string, { name: string; price: number; change: number }> = {
       bitcoin:      { name: "Bitcoin",   price: 387818, change: 1.5 },
       ethereum:     { name: "Ethereum",  price: 14200,  change: -2.0 },
@@ -263,11 +385,10 @@ const HistoricoCotacoesPage = () => {
       Object.entries(cryptoFallbackMap).forEach(([id, v]) => cryptoPrices.set(id, v));
     }
 
-    // Busca histórico REAL de cripto via CoinGecko (direto do navegador)
     await Promise.allSettled(
       Array.from(cryptoPrices.entries()).map(async ([coinId, info]) => {
         const gckId = CRYPTO_GCK_IDS[coinId] ?? coinId;
-        const history = await fetchCryptoHistory(gckId, days, info.price);
+        const history = await fetchCryptoHistory(gckId, days);
         result.push({
           id: `crypto-${coinId}`, name: info.name,
           symbol: (coinId === "bitcoin" ? "BTC" : coinId === "ethereum" ? "ETH" : coinId === "solana" ? "SOL" : coinId === "binancecoin" ? "BNB" : coinId.toUpperCase().slice(0, 4)),
@@ -279,25 +400,25 @@ const HistoricoCotacoesPage = () => {
       })
     );
 
-    // ── 3. Câmbio — SEMPRE busca histórico real via AwesomeAPI ───────────
+    // ── 3. Câmbio — histórico real via AwesomeAPI + fallback fawazahmed0 ──
     const currencyPairs = [
-      { key: "USDBRL", pair: "USD-BRL", id: "cur-USD", name: "Dólar Americano",   symbol: "USD", icon: "🇺🇸", fallbackPrice: 5.85, fallbackChange: 0.32 },
-      { key: "EURBRL", pair: "EUR-BRL", id: "cur-EUR", name: "Euro",              symbol: "EUR", icon: "🇪🇺", fallbackPrice: 6.35, fallbackChange: -0.15 },
-      { key: "ARSBRL", pair: "ARS-BRL", id: "cur-ARS", name: "Peso Argentino",    symbol: "ARS", icon: "🇦🇷", fallbackPrice: 0.0048, fallbackChange: 0.10 },
-      { key: "PYGBRL", pair: "PYG-BRL", id: "cur-PYG", name: "Guarani Paraguaio", symbol: "PYG", icon: "🇵🇾", fallbackPrice: 0.00076, fallbackChange: -0.05 },
+      { key: "USDBRL", pair: "USD-BRL", id: "cur-USD", name: "Dólar Americano",   symbol: "USD", icon: "🇺🇸", code: "usd", fallbackPrice: 5.85, fallbackChange: 0.32 },
+      { key: "EURBRL", pair: "EUR-BRL", id: "cur-EUR", name: "Euro",              symbol: "EUR", icon: "🇪🇺", code: "eur", fallbackPrice: 6.35, fallbackChange: -0.15 },
+      { key: "ARSBRL", pair: "ARS-BRL", id: "cur-ARS", name: "Peso Argentino",    symbol: "ARS", icon: "🇦🇷", code: "ars", fallbackPrice: 0.0048, fallbackChange: 0.10 },
+      { key: "PYGBRL", pair: "PYG-BRL", id: "cur-PYG", name: "Guarani Paraguaio", symbol: "PYG", icon: "🇵🇾", code: "pyg", fallbackPrice: 0.00076, fallbackChange: -0.05 },
     ];
 
     let ratesData: any = null;
     try { ratesData = await safeFetchJson("/api.php?action=rates"); } catch { /* usa fallback */ }
 
     await Promise.allSettled(
-      currencyPairs.map(async ({ key, pair, id, name, symbol, icon, fallbackPrice, fallbackChange }) => {
+      currencyPairs.map(async ({ key, pair, id, name, symbol, icon, code, fallbackPrice, fallbackChange }) => {
         const r = ratesData?.[key];
         const currentPrice = r ? parseFloat(r.bid) : fallbackPrice;
         const change24h = r ? parseFloat(r.pctChange || "0") : fallbackChange;
         if (currentPrice <= 0) return;
 
-        const history = await fetchCurrencyHistory(pair, days);
+        const history = await fetchCurrencyHistory(pair, days, code);
         result.push({
           id, name, symbol, icon,
           category: "currency", currentPrice, change24h,
@@ -308,27 +429,32 @@ const HistoricoCotacoesPage = () => {
       })
     );
 
-    // ── 4. Metais — preço atual + série simulada ──────────────────────────
+    // ── 4. Metais — histórico REAL via fawazahmed0 ────────────────────────
     const metals = [
-      { key: "XAUBRL", id: "metal-XAU", name: "Ouro (grama)",  symbol: "XAU", icon: "🥇", unit: "R$/g", fallbackPrice: 856.9, fallbackChange: 0.45 },
-      { key: "XAGBRL", id: "metal-XAG", name: "Prata (grama)", symbol: "XAG", icon: "🥈", unit: "R$/g", fallbackPrice: 13.58, fallbackChange: -0.30 },
+      { key: "XAUBRL", id: "metal-XAU", name: "Ouro (grama)",  symbol: "XAU", icon: "🥇", unit: "R$/g", code: "xau", fallbackPrice: 856.9, fallbackChange: 0.45 },
+      { key: "XAGBRL", id: "metal-XAG", name: "Prata (grama)", symbol: "XAG", icon: "🥈", unit: "R$/g", code: "xag", fallbackPrice: 13.58, fallbackChange: -0.30 },
     ];
-    metals.forEach(({ key, id, name, symbol, icon, unit, fallbackPrice, fallbackChange }) => {
-      const r = ratesData?.[key];
-      const currentPrice = r ? parseFloat(r.bid) / TROY : fallbackPrice;
-      const change24h = r ? parseFloat(r.pctChange || "0") : fallbackChange;
-      if (currentPrice <= 0) return;
-      result.push({
-        id, name, symbol, icon, unit,
-        category: "metal", currentPrice, change24h,
-        dataSource: "simulated",
-        data: buildSimulated(currentPrice, 0.008, days),
-      });
-    });
+
+    await Promise.allSettled(
+      metals.map(async ({ key, id, name, symbol, icon, unit, code, fallbackPrice, fallbackChange }) => {
+        const r = ratesData?.[key];
+        const currentPrice = r ? parseFloat(r.bid) / TROY : fallbackPrice;
+        const change24h = r ? parseFloat(r.pctChange || "0") : fallbackChange;
+        if (currentPrice <= 0) return;
+
+        const history = await fetchMetalHistory(code, days);
+        result.push({
+          id, name, symbol, icon, unit,
+          category: "metal", currentPrice, change24h,
+          dataSource: history ? "real" : "simulated",
+          data: history ?? buildSimulated(currentPrice, 0.008, days),
+        });
+      })
+    );
 
     // ── Resultado final ──────────────────────────────────────────────────
     const hasRealData = result.some(a => a.dataSource === "real");
-    setIsFallback(!hasRealData && !b3Data && !ratesData);
+    setIsFallback(!hasRealData && !ratesData);
 
     result.sort((a, b) => {
       const order: Record<CategoryKey, number> = { crypto: 0, currency: 1, b3: 2, metal: 3 };
@@ -646,20 +772,20 @@ const HistoricoCotacoesPage = () => {
           <h2 className="font-display text-base font-bold mb-3">Sobre os Dados</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
             <div>
-              <strong className="text-foreground">📊 B3</strong>
-              <p className="text-xs text-muted-foreground mt-0.5">Preço atual via brapi.dev (cache 30 min). Histórico simulado com volatilidade real de ações.</p>
+              <strong className="text-foreground flex items-center gap-1">📊 B3 <span className="text-[9px] text-emerald-400 font-bold">HISTÓRICO REAL</span></strong>
+              <p className="text-xs text-muted-foreground mt-0.5">Preço atual e histórico real via brapi.dev (edge function). PETR4, VALE3, ITUB4, BBDC4, ABEV3, WEGE3.</p>
             </div>
             <div>
               <strong className="text-foreground flex items-center gap-1">₿ Cripto <span className="text-[9px] text-emerald-400 font-bold">HISTÓRICO REAL</span></strong>
-              <p className="text-xs text-muted-foreground mt-0.5">Preço atual via servidor VicioCode. Histórico real via CoinGecko (gratuito) direto do navegador.</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Histórico real via CoinGecko (gratuito). BTC, ETH, SOL, BNB em BRL.</p>
             </div>
             <div>
               <strong className="text-foreground flex items-center gap-1">💱 Câmbio <span className="text-[9px] text-emerald-400 font-bold">HISTÓRICO REAL</span></strong>
-              <p className="text-xs text-muted-foreground mt-0.5">Preço atual e histórico real via AwesomeAPI (gratuito). USD, EUR, ARS e PYG em BRL.</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Histórico via AwesomeAPI + fawazahmed0 (fallback). USD, EUR, ARS e PYG em BRL.</p>
             </div>
             <div>
-              <strong className="text-foreground">🥇 Metais</strong>
-              <p className="text-xs text-muted-foreground mt-0.5">Preço atual (ouro/prata em g) via servidor. Histórico simulado com volatilidade de metais.</p>
+              <strong className="text-foreground flex items-center gap-1">🥇 Metais <span className="text-[9px] text-emerald-400 font-bold">HISTÓRICO REAL</span></strong>
+              <p className="text-xs text-muted-foreground mt-0.5">Histórico real via fawazahmed0. Ouro e Prata convertidos de troy oz para gramas.</p>
             </div>
           </div>
           <p className="text-[10px] text-muted-foreground mt-3 pt-3 border-t border-border">
