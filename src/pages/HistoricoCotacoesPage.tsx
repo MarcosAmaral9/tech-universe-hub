@@ -625,7 +625,6 @@ const HistoricoCotacoesPage = () => {
                             <AlertTriangle className="h-3 w-3" /> B3: histórico limitado a 3 meses (API gratuita)
                           </span>
                         )}
-                        </span>
                       </div>
                     </div>
                     <div className="text-right">
