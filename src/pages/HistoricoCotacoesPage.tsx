@@ -311,37 +311,55 @@ const HistoricoCotacoesPage = () => {
       } catch { return null; }
     };
 
-    // ── 1. B3 — preço atual via api.php, histórico simulado ──────────────
-    let b3Data: any = null;
-    try {
-      b3Data = await safeFetchJson("/api.php?action=b3");
-      if (b3Data) {
-        const stocks = b3Data.results ?? b3Data.stocks ?? b3Data.data ?? b3Data;
-        if (Array.isArray(stocks)) {
-          stocks.forEach((s: any) => {
-            if (s.regularMarketPrice > 0) {
-              result.push({
-                id: `b3-${s.symbol}`, name: s.shortName || s.symbol, symbol: s.symbol,
-                category: "b3", icon: B3_ICONS[s.symbol] ?? "📊",
-                currentPrice: s.regularMarketPrice,
-                change24h: s.regularMarketChangePercent ?? 0,
-                unit: "R$/ação", dataSource: "simulated",
-                data: buildSimulated(s.regularMarketPrice, 0.012, days),
-              });
-            }
+    // ── 1. B3 — histórico REAL via edge function ──────────────────────────
+    const B3_TICKERS = ["PETR4", "VALE3", "ITUB4", "BBDC4", "ABEV3", "WEGE3"];
+    await Promise.allSettled(
+      B3_TICKERS.map(async (ticker) => {
+        const data = await fetchB3History(ticker, p);
+        if (data && data.history.length > 0) {
+          result.push({
+            id: `b3-${ticker}`, name: data.shortName || ticker, symbol: ticker,
+            category: "b3", icon: B3_ICONS[ticker] ?? "📊",
+            currentPrice: data.currentPrice, change24h: data.change24h,
+            unit: "R$/ação", dataSource: "real",
+            data: data.history,
           });
         }
-      }
-    } catch { /* fallback abaixo */ }
+      })
+    );
 
-    // Se B3 falhou, usa fallback estático
+    // Se B3 falhou, tenta api.php ou usa fallback estático
     if (!result.some(a => a.category === "b3")) {
-      FALLBACK.filter(a => a.category === "b3").forEach(a => {
-        result.push({ ...a, dataSource: "simulated", data: buildSimulated(a.currentPrice, 0.012, days) });
-      });
+      let b3Data: any = null;
+      try {
+        b3Data = await safeFetchJson("/api.php?action=b3");
+        if (b3Data) {
+          const stocks = b3Data.results ?? b3Data.stocks ?? b3Data.data ?? b3Data;
+          if (Array.isArray(stocks)) {
+            stocks.forEach((s: any) => {
+              if (s.regularMarketPrice > 0) {
+                result.push({
+                  id: `b3-${s.symbol}`, name: s.shortName || s.symbol, symbol: s.symbol,
+                  category: "b3", icon: B3_ICONS[s.symbol] ?? "📊",
+                  currentPrice: s.regularMarketPrice,
+                  change24h: s.regularMarketChangePercent ?? 0,
+                  unit: "R$/ação", dataSource: "simulated",
+                  data: buildSimulated(s.regularMarketPrice, 0.012, days),
+                });
+              }
+            });
+          }
+        }
+      } catch { /* fallback */ }
+
+      if (!result.some(a => a.category === "b3")) {
+        FALLBACK.filter(a => a.category === "b3").forEach(a => {
+          result.push({ ...a, dataSource: "simulated", data: buildSimulated(a.currentPrice, 0.012, days) });
+        });
+      }
     }
 
-    // ── 2. Cripto — tenta api.php para preço atual, SEMPRE busca histórico real ──
+    // ── 2. Cripto — histórico REAL via CoinGecko ──────────────────────────
     let cryptoPrices: Map<string, { name: string; price: number; change: number }> = new Map();
     try {
       const cryptoJson = await safeFetchJson("/api.php?action=crypto");
@@ -357,7 +375,6 @@ const HistoricoCotacoesPage = () => {
       }
     } catch { /* usa fallback */ }
 
-    // Fallback de preços cripto se api.php falhou
     const cryptoFallbackMap: Record<string, { name: string; price: number; change: number }> = {
       bitcoin:      { name: "Bitcoin",   price: 387818, change: 1.5 },
       ethereum:     { name: "Ethereum",  price: 14200,  change: -2.0 },
@@ -368,11 +385,10 @@ const HistoricoCotacoesPage = () => {
       Object.entries(cryptoFallbackMap).forEach(([id, v]) => cryptoPrices.set(id, v));
     }
 
-    // Busca histórico REAL de cripto via CoinGecko (direto do navegador)
     await Promise.allSettled(
       Array.from(cryptoPrices.entries()).map(async ([coinId, info]) => {
         const gckId = CRYPTO_GCK_IDS[coinId] ?? coinId;
-        const history = await fetchCryptoHistory(gckId, days, info.price);
+        const history = await fetchCryptoHistory(gckId, days);
         result.push({
           id: `crypto-${coinId}`, name: info.name,
           symbol: (coinId === "bitcoin" ? "BTC" : coinId === "ethereum" ? "ETH" : coinId === "solana" ? "SOL" : coinId === "binancecoin" ? "BNB" : coinId.toUpperCase().slice(0, 4)),
@@ -384,25 +400,25 @@ const HistoricoCotacoesPage = () => {
       })
     );
 
-    // ── 3. Câmbio — SEMPRE busca histórico real via AwesomeAPI ───────────
+    // ── 3. Câmbio — histórico real via AwesomeAPI + fallback fawazahmed0 ──
     const currencyPairs = [
-      { key: "USDBRL", pair: "USD-BRL", id: "cur-USD", name: "Dólar Americano",   symbol: "USD", icon: "🇺🇸", fallbackPrice: 5.85, fallbackChange: 0.32 },
-      { key: "EURBRL", pair: "EUR-BRL", id: "cur-EUR", name: "Euro",              symbol: "EUR", icon: "🇪🇺", fallbackPrice: 6.35, fallbackChange: -0.15 },
-      { key: "ARSBRL", pair: "ARS-BRL", id: "cur-ARS", name: "Peso Argentino",    symbol: "ARS", icon: "🇦🇷", fallbackPrice: 0.0048, fallbackChange: 0.10 },
-      { key: "PYGBRL", pair: "PYG-BRL", id: "cur-PYG", name: "Guarani Paraguaio", symbol: "PYG", icon: "🇵🇾", fallbackPrice: 0.00076, fallbackChange: -0.05 },
+      { key: "USDBRL", pair: "USD-BRL", id: "cur-USD", name: "Dólar Americano",   symbol: "USD", icon: "🇺🇸", code: "usd", fallbackPrice: 5.85, fallbackChange: 0.32 },
+      { key: "EURBRL", pair: "EUR-BRL", id: "cur-EUR", name: "Euro",              symbol: "EUR", icon: "🇪🇺", code: "eur", fallbackPrice: 6.35, fallbackChange: -0.15 },
+      { key: "ARSBRL", pair: "ARS-BRL", id: "cur-ARS", name: "Peso Argentino",    symbol: "ARS", icon: "🇦🇷", code: "ars", fallbackPrice: 0.0048, fallbackChange: 0.10 },
+      { key: "PYGBRL", pair: "PYG-BRL", id: "cur-PYG", name: "Guarani Paraguaio", symbol: "PYG", icon: "🇵🇾", code: "pyg", fallbackPrice: 0.00076, fallbackChange: -0.05 },
     ];
 
     let ratesData: any = null;
     try { ratesData = await safeFetchJson("/api.php?action=rates"); } catch { /* usa fallback */ }
 
     await Promise.allSettled(
-      currencyPairs.map(async ({ key, pair, id, name, symbol, icon, fallbackPrice, fallbackChange }) => {
+      currencyPairs.map(async ({ key, pair, id, name, symbol, icon, code, fallbackPrice, fallbackChange }) => {
         const r = ratesData?.[key];
         const currentPrice = r ? parseFloat(r.bid) : fallbackPrice;
         const change24h = r ? parseFloat(r.pctChange || "0") : fallbackChange;
         if (currentPrice <= 0) return;
 
-        const history = await fetchCurrencyHistory(pair, days);
+        const history = await fetchCurrencyHistory(pair, days, code);
         result.push({
           id, name, symbol, icon,
           category: "currency", currentPrice, change24h,
@@ -413,23 +429,28 @@ const HistoricoCotacoesPage = () => {
       })
     );
 
-    // ── 4. Metais — preço atual + série simulada ──────────────────────────
+    // ── 4. Metais — histórico REAL via fawazahmed0 ────────────────────────
     const metals = [
-      { key: "XAUBRL", id: "metal-XAU", name: "Ouro (grama)",  symbol: "XAU", icon: "🥇", unit: "R$/g", fallbackPrice: 856.9, fallbackChange: 0.45 },
-      { key: "XAGBRL", id: "metal-XAG", name: "Prata (grama)", symbol: "XAG", icon: "🥈", unit: "R$/g", fallbackPrice: 13.58, fallbackChange: -0.30 },
+      { key: "XAUBRL", id: "metal-XAU", name: "Ouro (grama)",  symbol: "XAU", icon: "🥇", unit: "R$/g", code: "xau", fallbackPrice: 856.9, fallbackChange: 0.45 },
+      { key: "XAGBRL", id: "metal-XAG", name: "Prata (grama)", symbol: "XAG", icon: "🥈", unit: "R$/g", code: "xag", fallbackPrice: 13.58, fallbackChange: -0.30 },
     ];
-    metals.forEach(({ key, id, name, symbol, icon, unit, fallbackPrice, fallbackChange }) => {
-      const r = ratesData?.[key];
-      const currentPrice = r ? parseFloat(r.bid) / TROY : fallbackPrice;
-      const change24h = r ? parseFloat(r.pctChange || "0") : fallbackChange;
-      if (currentPrice <= 0) return;
-      result.push({
-        id, name, symbol, icon, unit,
-        category: "metal", currentPrice, change24h,
-        dataSource: "simulated",
-        data: buildSimulated(currentPrice, 0.008, days),
-      });
-    });
+
+    await Promise.allSettled(
+      metals.map(async ({ key, id, name, symbol, icon, unit, code, fallbackPrice, fallbackChange }) => {
+        const r = ratesData?.[key];
+        const currentPrice = r ? parseFloat(r.bid) / TROY : fallbackPrice;
+        const change24h = r ? parseFloat(r.pctChange || "0") : fallbackChange;
+        if (currentPrice <= 0) return;
+
+        const history = await fetchMetalHistory(code, days);
+        result.push({
+          id, name, symbol, icon, unit,
+          category: "metal", currentPrice, change24h,
+          dataSource: history ? "real" : "simulated",
+          data: history ?? buildSimulated(currentPrice, 0.008, days),
+        });
+      })
+    );
 
     // ── Resultado final ──────────────────────────────────────────────────
     const hasRealData = result.some(a => a.dataSource === "real");
