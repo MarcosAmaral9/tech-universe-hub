@@ -134,11 +134,8 @@ const CustomTooltip = ({
 async function fetchCryptoHistory(
   coinId: string,
   days: number,
-  vsBRL: number, // preço atual em BRL para normalizar
 ): Promise<ChartPoint[] | null> {
   try {
-    // CoinGecko retorna histórico em USD — multiplicamos pelo USD/BRL atual
-    // dias ≤ 90 → granularidade diária; dias > 90 → semanal (free tier)
     const url = `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=brl&days=${days}&interval=daily`;
     const res = await fetch(url, { signal: AbortSignal.timeout(10000) });
     if (!res.ok) return null;
@@ -154,26 +151,134 @@ async function fetchCryptoHistory(
   }
 }
 
-// ── Busca histórico de câmbio via AwesomeAPI (gratuito) ───────────────────
+// ── Busca histórico real de câmbio via AwesomeAPI com fallback fawazahmed0 ──
 async function fetchCurrencyHistory(
   pair: string, // ex: "USD-BRL"
   days: number,
+  currencyCode: string, // ex: "usd"
 ): Promise<ChartPoint[] | null> {
+  // Tenta AwesomeAPI primeiro
   try {
     const url = `https://economia.awesomeapi.com.br/json/daily/${pair}/${days}`;
-    const res = await fetch(url, { signal: AbortSignal.timeout(10000) });
-    if (!res.ok) return null;
-    const json: { timestamp: string; bid: string }[] = await res.json();
-    if (!Array.isArray(json) || !json.length) return null;
-    // API retorna do mais recente ao mais antigo — revertemos
-    return [...json].reverse().map(({ timestamp, bid }) => {
-      const iso = new Date(parseInt(timestamp) * 1000).toISOString().slice(0, 10);
-      const v   = parseFloat(parseFloat(bid).toFixed(4));
-      return { date: iso, value: v, label: fmtDate(iso) };
+    const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
+    if (res.ok) {
+      const text = await res.text();
+      if (!text.includes("QuotaExceeded")) {
+        const json: { timestamp: string; bid: string }[] = JSON.parse(text);
+        if (Array.isArray(json) && json.length > 0) {
+          return [...json].reverse().map(({ timestamp, bid }) => {
+            const iso = new Date(parseInt(timestamp) * 1000).toISOString().slice(0, 10);
+            const v = parseFloat(parseFloat(bid).toFixed(4));
+            return { date: iso, value: v, label: fmtDate(iso) };
+          });
+        }
+      }
+    }
+  } catch { /* fallback below */ }
+
+  // Fallback: fawazahmed0 currency API (build series from dated snapshots)
+  try {
+    const code = currencyCode.toLowerCase();
+    const pts: ChartPoint[] = [];
+    const now = new Date();
+    // Sample dates: every ~3 days for 7d, every ~5 for 30d, weekly for 90d, biweekly for 1y
+    const step = days <= 7 ? 1 : days <= 30 ? 3 : days <= 90 ? 7 : 14;
+    const datesToFetch: string[] = [];
+    for (let i = days; i >= 0; i -= step) {
+      const d = new Date(now);
+      d.setDate(d.getDate() - i);
+      datesToFetch.push(d.toISOString().slice(0, 10));
+    }
+    // Always include today
+    const todayStr = now.toISOString().slice(0, 10);
+    if (!datesToFetch.includes(todayStr)) datesToFetch.push(todayStr);
+
+    const results = await Promise.allSettled(
+      datesToFetch.map(async (dateStr) => {
+        const url = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@${dateStr}/v1/currencies/${code}.min.json`;
+        const r = await fetch(url, { signal: AbortSignal.timeout(6000) });
+        if (!r.ok) return null;
+        const j = await r.json();
+        const brl = j[code]?.brl;
+        if (typeof brl !== "number" || brl <= 0) return null;
+        return { date: dateStr, value: parseFloat(brl.toFixed(4)), label: fmtDate(dateStr) };
+      })
+    );
+    results.forEach(r => {
+      if (r.status === "fulfilled" && r.value) pts.push(r.value);
     });
+    if (pts.length >= 3) return pts;
+  } catch { /* give up */ }
+  return null;
+}
+
+// ── Busca histórico real de B3 via edge function ──────────────────────────
+const RANGE_MAP: Record<Period, { range: string; interval: string }> = {
+  "7d":  { range: "5d",  interval: "1d" },
+  "30d": { range: "1mo", interval: "1d" },
+  "90d": { range: "3mo", interval: "1d" },
+  "1y":  { range: "1y",  interval: "1wk" },
+};
+
+async function fetchB3History(
+  ticker: string,
+  period: Period,
+): Promise<{ history: ChartPoint[]; currentPrice: number; change24h: number; shortName: string } | null> {
+  try {
+    const { range, interval } = RANGE_MAP[period];
+    const projectId = import.meta.env.VITE_SUPABASE_PROJECT_ID;
+    const url = `https://${projectId}.supabase.co/functions/v1/b3-history?ticker=${ticker}&range=${range}&interval=${interval}`;
+    const res = await fetch(url, { signal: AbortSignal.timeout(12000) });
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (!data.history?.length) return null;
+    const pts: ChartPoint[] = data.history.map((h: { date: number; close: number }) => {
+      const iso = new Date(h.date * 1000).toISOString().slice(0, 10);
+      return { date: iso, value: h.close, label: fmtDate(iso) };
+    });
+    return { history: pts, currentPrice: data.currentPrice, change24h: data.change24h ?? 0, shortName: data.shortName ?? ticker };
   } catch {
     return null;
   }
+}
+
+// ── Busca histórico real de metais via fawazahmed0 ────────────────────────
+async function fetchMetalHistory(
+  metalCode: string, // "xau" or "xag"
+  days: number,
+): Promise<ChartPoint[] | null> {
+  try {
+    const pts: ChartPoint[] = [];
+    const now = new Date();
+    const step = days <= 7 ? 1 : days <= 30 ? 3 : days <= 90 ? 7 : 14;
+    const datesToFetch: string[] = [];
+    for (let i = days; i >= 0; i -= step) {
+      const d = new Date(now);
+      d.setDate(d.getDate() - i);
+      datesToFetch.push(d.toISOString().slice(0, 10));
+    }
+    const todayStr = now.toISOString().slice(0, 10);
+    if (!datesToFetch.includes(todayStr)) datesToFetch.push(todayStr);
+
+    const results = await Promise.allSettled(
+      datesToFetch.map(async (dateStr) => {
+        const url = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@${dateStr}/v1/currencies/${metalCode}.min.json`;
+        const r = await fetch(url, { signal: AbortSignal.timeout(6000) });
+        if (!r.ok) return null;
+        const j = await r.json();
+        const brl = j[metalCode]?.brl;
+        if (typeof brl !== "number" || brl <= 0) return null;
+        // fawazahmed0 returns troy oz price → convert to grams
+        const perGram = brl / TROY;
+        return { date: dateStr, value: parseFloat(perGram.toFixed(2)), label: fmtDate(dateStr) };
+      })
+    );
+    results.forEach(r => {
+      if (r.status === "fulfilled" && r.value) pts.push(r.value);
+    });
+    if (pts.length >= 3) return pts;
+  } catch { /* give up */ }
+  return null;
 }
 
 // ── Página principal ───────────────────────────────────────────────────────
