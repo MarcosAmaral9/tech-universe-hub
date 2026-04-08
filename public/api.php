@@ -684,7 +684,17 @@ if ($method === 'GET' && $action === 'b3') {
             ],
         ];
         // Salva no banco (compartilhado) e no arquivo (fallback)
-        if ($db = getPdo()) dbCacheSave($db, 'b3', $result);
+        if ($db = getPdo()) {
+            dbCacheSave($db, 'b3', $result);
+            // Salva snapshot histórico de B3
+            $histB3 = [];
+            foreach ($data['results'] as $s) {
+                if (isset($s['symbol'], $s['regularMarketPrice']) && $s['regularMarketPrice'] > 0) {
+                    $histB3[$s['symbol']] = (float)$s['regularMarketPrice'];
+                }
+            }
+            if (!empty($histB3)) saveHistorySnapshots($db, 'b3', $histB3);
+        }
         @file_put_contents($CACHE_FILE, json_encode($result));
         echo json_encode($result);
         exit;
