@@ -480,20 +480,25 @@ const HistoricoCotacoesPage = () => {
     return () => abortRef.current?.abort();
   }, [period, loadData]);
 
-  const filtered      = category === "all" ? assets : assets.filter(a => a.category === category);
+  const filtered      = assets.filter(a => a.category === category);
   const selectedAsset = assets.find(a => a.id === selected);
 
-  const periods: { key: Period; label: string }[] = [
-    { key: "7d", label: "7D" }, { key: "30d", label: "30D" },
-    { key: "90d", label: "90D" }, { key: "1y", label: "1A" },
-  ];
-  const categories: { key: CategoryKey | "all"; label: string; icon: React.ReactNode }[] = [
-    { key: "all",      label: "Todos",  icon: <BarChart3  className="h-4 w-4" /> },
-    { key: "b3",       label: "B3",     icon: <TrendingUp className="h-4 w-4" /> },
+  const availablePeriods = CATEGORY_PERIODS[category];
+  const categories: { key: CategoryKey; label: string; icon: React.ReactNode }[] = [
     { key: "crypto",   label: "Cripto", icon: <Bitcoin    className="h-4 w-4" /> },
     { key: "currency", label: "Câmbio", icon: <DollarSign className="h-4 w-4" /> },
+    { key: "b3",       label: "B3",     icon: <TrendingUp className="h-4 w-4" /> },
     { key: "metal",    label: "Metais", icon: <Gem        className="h-4 w-4" /> },
   ];
+
+  // Quando trocar de categoria, ajustar período se o atual não estiver disponível
+  const handleCategoryChange = (cat: CategoryKey) => {
+    setCategory(cat);
+    const periodsForCat = CATEGORY_PERIODS[cat];
+    if (!periodsForCat.some(p => p.key === period)) {
+      setPeriod(periodsForCat[1]?.key ?? periodsForCat[0].key);
+    }
+  };
 
   // Variação do gráfico selecionado (primeiro vs último ponto)
   const chartChange = selectedAsset?.data.length
