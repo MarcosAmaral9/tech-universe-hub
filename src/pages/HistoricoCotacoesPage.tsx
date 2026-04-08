@@ -470,7 +470,13 @@ const HistoricoCotacoesPage = () => {
       return order[a.category] - order[b.category];
     });
     setAssets(result);
-    if (result.length > 0) setSelected(prev => prev && result.find(a => a.id === prev) ? prev : result[0].id);
+    if (result.length > 0) {
+      const catAssets = result.filter(a => a.category === category);
+      setSelected(prev => {
+        if (prev && catAssets.find(a => a.id === prev)) return prev;
+        return catAssets[0]?.id ?? result[0].id;
+      });
+    }
     setLastUpdated(new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }));
     setLoading(false);
   }, []);
