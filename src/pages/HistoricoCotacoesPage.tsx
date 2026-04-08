@@ -12,8 +12,16 @@ import {
 } from "recharts";
 
 // ── Types ──────────────────────────────────────────────────────────────────
-type Period      = "7d" | "30d" | "90d" | "1y";
+type Period      = "5d" | "7d" | "30d" | "90d" | "1y";
 type CategoryKey = "b3" | "crypto" | "currency" | "metal";
+
+// Períodos disponíveis gratuitamente para cada categoria
+const CATEGORY_PERIODS: Record<CategoryKey, { key: Period; label: string }[]> = {
+  b3:       [{ key: "5d", label: "5D" }, { key: "30d", label: "1M" }, { key: "90d", label: "3M" }],
+  crypto:   [{ key: "7d", label: "7D" }, { key: "30d", label: "30D" }, { key: "90d", label: "90D" }, { key: "1y", label: "1A" }],
+  currency: [{ key: "7d", label: "7D" }, { key: "30d", label: "30D" }, { key: "90d", label: "90D" }, { key: "1y", label: "1A" }],
+  metal:    [{ key: "7d", label: "7D" }, { key: "30d", label: "30D" }, { key: "90d", label: "90D" }, { key: "1y", label: "1A" }],
+};
 
 interface ChartPoint  { date: string; value: number; label: string }
 interface AssetHistory {
