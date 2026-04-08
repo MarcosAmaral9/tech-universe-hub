@@ -11,6 +11,11 @@ interface StockQuote {
   logourl?: string;
 }
 
+const B3_ICONS: Record<string, string> = {
+  PETR4:"🛢️", VALE3:"⛏️", ITUB4:"🏦", BBDC4:"🏦", ABEV3:"🍺",
+  WEGE3:"⚙️", BBAS3:"🏦", RENT3:"🚗", MGLU3:"🛒", SUZB3:"🌲",
+};
+
 const FALLBACK_STOCKS: StockQuote[] = [
   { symbol: "PETR4", shortName: "Petrobras PN",       regularMarketPrice: 45.74, regularMarketChangePercent: 0.50  },
   { symbol: "VALE3", shortName: "Vale ON",             regularMarketPrice: 56.20, regularMarketChangePercent: -0.30 },
