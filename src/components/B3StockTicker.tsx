@@ -176,6 +176,7 @@ const B3StockTicker = () => {
         <div className="flex animate-[scroll_30s_linear_infinite] gap-6 whitespace-nowrap">
           {[...stocks, ...stocks].map((stock, i) => (
             <div key={i} className="flex items-center gap-2 text-sm">
+              <span className="text-sm">{B3_ICONS[stock.symbol] ?? "📊"}</span>
               <span className="font-bold text-foreground">{stock.symbol}</span>
               <span className="text-muted-foreground">
                 R$ {stock.regularMarketPrice?.toFixed(2)}
@@ -206,7 +207,7 @@ const B3StockTicker = () => {
             }`}
           >
             <div className="flex items-center justify-between mb-1">
-              <span className="text-xs font-bold text-foreground">{stock.symbol}</span>
+              <span className="text-xs font-bold text-foreground">{B3_ICONS[stock.symbol] ?? "📊"} {stock.symbol}</span>
               {stock.regularMarketChangePercent >= 0
                 ? <TrendingUp className="h-3 w-3 text-green-500" />
                 : <TrendingDown className="h-3 w-3 text-red-500" />}
