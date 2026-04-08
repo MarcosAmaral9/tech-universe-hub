@@ -27,6 +27,11 @@ const FALLBACK: CryptoData[] = [
   { id: "polkadot",     symbol: "dot",  name: "Polkadot",   current_price: 30.50,  price_change_percentage_24h:  0.0, market_cap: 46000000000, image: "" },
 ];
 
+const CRYPTO_ICONS: Record<string, string> = {
+  btc:"₿", eth:"⟠", sol:"◎", bnb:"🟡",
+  ada:"🔵", xrp:"💧", link:"🔗", dot:"⬤",
+};
+
 const formatBRL = (value: number) => {
   if (value >= 1000) {
     return value.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
