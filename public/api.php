@@ -191,6 +191,16 @@ if ($method === 'GET' && $action === 'ping') {
             fetch_date  DATE NOT NULL,
             req_count   INT DEFAULT 0
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
+        $tmpPdo->exec("CREATE TABLE IF NOT EXISTS price_history (
+            id          INT AUTO_INCREMENT PRIMARY KEY,
+            asset_type  VARCHAR(10) NOT NULL,
+            asset_code  VARCHAR(20) NOT NULL,
+            price       DECIMAL(20,6) NOT NULL,
+            price_date  DATE NOT NULL,
+            created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE KEY unique_asset_date (asset_type, asset_code, price_date),
+            INDEX idx_type_code (asset_type, asset_code)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
     } catch (Exception $e) {}
 
     // Testa conexão com banco
@@ -519,7 +529,20 @@ if ($method === 'GET' && $action === 'rates') {
     $fetchedAt = date('c');
     $result['_meta'] = ['source' => 'fawazahmed+frankfurter', 'fallback' => false, 'from_cache' => false, 'updatedAt' => $fetchedAt, 'expiresAt' => date('c', time() + $TTL_RATES * 60)];
     // Salva no banco e no arquivo
-    if ($db = getPdo()) dbCacheSave($db, 'rates', $result);
+    if ($db = getPdo()) {
+        dbCacheSave($db, 'rates', $result);
+        // Salva snapshot histórico de câmbio e metais
+        $histCurrency = [];
+        foreach (['USDBRL'=>'USD','EURBRL'=>'EUR','ARSBRL'=>'ARS','PYGBRL'=>'PYG'] as $k=>$c) {
+            if (isset($result[$k]['bid'])) $histCurrency[$c] = (float)$result[$k]['bid'];
+        }
+        if (!empty($histCurrency)) saveHistorySnapshots($db, 'currency', $histCurrency);
+        $histMetal = [];
+        $TROY = 31.1035;
+        if (isset($result['XAUBRL']['bid'])) $histMetal['XAU'] = (float)$result['XAUBRL']['bid'] / $TROY * 0.75; // 18k per gram
+        if (isset($result['XAGBRL']['bid'])) $histMetal['XAG'] = (float)$result['XAGBRL']['bid'] / $TROY * 0.925; // 925 per gram
+        if (!empty($histMetal)) saveHistorySnapshots($db, 'metal', $histMetal);
+    }
     @file_put_contents($CACHE_FILE, json_encode($result));
     echo json_encode($result);
     exit;
@@ -562,6 +585,17 @@ if ($method === 'GET' && $action === 'crypto') {
         $result = ['coins' => $data, '_meta' => ['source' => 'coingecko-live', 'from_cache' => false, 'updatedAt' => date('c'), 'expiresAt' => date('c', time() + $TTL_CRYPTO * 60)]];
         $json   = json_encode($result);
         @file_put_contents($CACHE_FILE, $json);
+        // Salva snapshot histórico de cripto
+        if ($db = getPdo()) {
+            $histCrypto = [];
+            foreach ($data as $coin) {
+                if (isset($coin['id'], $coin['current_price']) && $coin['current_price'] > 0) {
+                    $sym = strtoupper($coin['symbol'] ?? $coin['id']);
+                    $histCrypto[$sym] = (float)$coin['current_price'];
+                }
+            }
+            if (!empty($histCrypto)) saveHistorySnapshots($db, 'crypto', $histCrypto);
+        }
         echo $json;
         exit;
     }
@@ -650,7 +684,17 @@ if ($method === 'GET' && $action === 'b3') {
             ],
         ];
         // Salva no banco (compartilhado) e no arquivo (fallback)
-        if ($db = getPdo()) dbCacheSave($db, 'b3', $result);
+        if ($db = getPdo()) {
+            dbCacheSave($db, 'b3', $result);
+            // Salva snapshot histórico de B3
+            $histB3 = [];
+            foreach ($data['results'] as $s) {
+                if (isset($s['symbol'], $s['regularMarketPrice']) && $s['regularMarketPrice'] > 0) {
+                    $histB3[$s['symbol']] = (float)$s['regularMarketPrice'];
+                }
+            }
+            if (!empty($histB3)) saveHistorySnapshots($db, 'b3', $histB3);
+        }
         @file_put_contents($CACHE_FILE, json_encode($result));
         echo json_encode($result);
         exit;
@@ -718,6 +762,80 @@ if ($method === 'GET' && $action === 'b3') {
 }
 
 
+// ─── Helper: salva snapshot de preços no histórico ──────────────────────────
+function saveHistorySnapshots(PDO $pdo, string $assetType, array $assets): void {
+    $today = date('Y-m-d');
+    $stmt = $pdo->prepare(
+        'INSERT INTO price_history (asset_type, asset_code, price, price_date)
+         VALUES (:type, :code, :price, :date)
+         ON DUPLICATE KEY UPDATE price = VALUES(price)'
+    );
+    foreach ($assets as $code => $price) {
+        if ($price > 0) {
+            $stmt->execute([':type' => $assetType, ':code' => $code, ':price' => $price, ':date' => $today]);
+        }
+    }
+}
+
+// ─── GET: histórico de preços armazenados ──────────────────────────────────
+if ($method === 'GET' && $action === 'history') {
+    $type = $_GET['type'] ?? '';
+    $code = $_GET['code'] ?? '';
+    $days = min(max((int)($_GET['days'] ?? 90), 1), 400);
+
+    if (!in_array($type, ['b3', 'crypto', 'currency', 'metal'])) {
+        http_response_code(400);
+        echo json_encode(['error' => 'Tipo inválido. Use: b3, crypto, currency, metal']);
+        exit;
+    }
+    if (!preg_match('/^[A-Za-z0-9]{2,20}$/', $code)) {
+        http_response_code(400);
+        echo json_encode(['error' => 'Código inválido']);
+        exit;
+    }
+
+    $db = getPdo();
+    if (!$db) {
+        http_response_code(503);
+        echo json_encode(['error' => 'Banco indisponível']);
+        exit;
+    }
+
+    $stmt = $db->prepare(
+        'SELECT price_date, price FROM price_history
+         WHERE asset_type = :type AND asset_code = :code AND price_date >= DATE_SUB(CURDATE(), INTERVAL :days DAY)
+         ORDER BY price_date ASC'
+    );
+    $stmt->execute([':type' => $type, ':code' => strtoupper($code), ':days' => $days]);
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    echo json_encode([
+        'type' => $type,
+        'code' => strtoupper($code),
+        'days' => $days,
+        'points' => array_map(fn($r) => ['date' => $r['price_date'], 'price' => (float)$r['price']], $rows),
+        'count' => count($rows),
+    ]);
+    exit;
+}
+
+// ─── GET: todos os ativos com histórico disponível ──────────────────────────
+if ($method === 'GET' && $action === 'history_assets') {
+    $db = getPdo();
+    if (!$db) {
+        http_response_code(503);
+        echo json_encode(['error' => 'Banco indisponível']);
+        exit;
+    }
+
+    $stmt = $db->query(
+        'SELECT asset_type, asset_code, COUNT(*) as points, MIN(price_date) as first_date, MAX(price_date) as last_date
+         FROM price_history GROUP BY asset_type, asset_code ORDER BY asset_type, asset_code'
+    );
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    echo json_encode(['assets' => $rows]);
+    exit;
+}
 
 // ─── GET: testa conexão com Gemini ───────────────────────────────────────────
 if ($method === 'GET' && $action === 'test_gemini') {
