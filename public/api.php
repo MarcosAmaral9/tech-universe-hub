@@ -585,6 +585,17 @@ if ($method === 'GET' && $action === 'crypto') {
         $result = ['coins' => $data, '_meta' => ['source' => 'coingecko-live', 'from_cache' => false, 'updatedAt' => date('c'), 'expiresAt' => date('c', time() + $TTL_CRYPTO * 60)]];
         $json   = json_encode($result);
         @file_put_contents($CACHE_FILE, $json);
+        // Salva snapshot histórico de cripto
+        if ($db = getPdo()) {
+            $histCrypto = [];
+            foreach ($data as $coin) {
+                if (isset($coin['id'], $coin['current_price']) && $coin['current_price'] > 0) {
+                    $sym = strtoupper($coin['symbol'] ?? $coin['id']);
+                    $histCrypto[$sym] = (float)$coin['current_price'];
+                }
+            }
+            if (!empty($histCrypto)) saveHistorySnapshots($db, 'crypto', $histCrypto);
+        }
         echo $json;
         exit;
     }
