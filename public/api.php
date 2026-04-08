@@ -728,6 +728,80 @@ if ($method === 'GET' && $action === 'b3') {
 }
 
 
+// ─── Helper: salva snapshot de preços no histórico ──────────────────────────
+function saveHistorySnapshots(PDO $pdo, string $assetType, array $assets): void {
+    $today = date('Y-m-d');
+    $stmt = $pdo->prepare(
+        'INSERT INTO price_history (asset_type, asset_code, price, price_date)
+         VALUES (:type, :code, :price, :date)
+         ON DUPLICATE KEY UPDATE price = VALUES(price)'
+    );
+    foreach ($assets as $code => $price) {
+        if ($price > 0) {
+            $stmt->execute([':type' => $assetType, ':code' => $code, ':price' => $price, ':date' => $today]);
+        }
+    }
+}
+
+// ─── GET: histórico de preços armazenados ──────────────────────────────────
+if ($method === 'GET' && $action === 'history') {
+    $type = $_GET['type'] ?? '';
+    $code = $_GET['code'] ?? '';
+    $days = min(max((int)($_GET['days'] ?? 90), 1), 400);
+
+    if (!in_array($type, ['b3', 'crypto', 'currency', 'metal'])) {
+        http_response_code(400);
+        echo json_encode(['error' => 'Tipo inválido. Use: b3, crypto, currency, metal']);
+        exit;
+    }
+    if (!preg_match('/^[A-Za-z0-9]{2,20}$/', $code)) {
+        http_response_code(400);
+        echo json_encode(['error' => 'Código inválido']);
+        exit;
+    }
+
+    $db = getPdo();
+    if (!$db) {
+        http_response_code(503);
+        echo json_encode(['error' => 'Banco indisponível']);
+        exit;
+    }
+
+    $stmt = $db->prepare(
+        'SELECT price_date, price FROM price_history
+         WHERE asset_type = :type AND asset_code = :code AND price_date >= DATE_SUB(CURDATE(), INTERVAL :days DAY)
+         ORDER BY price_date ASC'
+    );
+    $stmt->execute([':type' => $type, ':code' => strtoupper($code), ':days' => $days]);
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    echo json_encode([
+        'type' => $type,
+        'code' => strtoupper($code),
+        'days' => $days,
+        'points' => array_map(fn($r) => ['date' => $r['price_date'], 'price' => (float)$r['price']], $rows),
+        'count' => count($rows),
+    ]);
+    exit;
+}
+
+// ─── GET: todos os ativos com histórico disponível ──────────────────────────
+if ($method === 'GET' && $action === 'history_assets') {
+    $db = getPdo();
+    if (!$db) {
+        http_response_code(503);
+        echo json_encode(['error' => 'Banco indisponível']);
+        exit;
+    }
+
+    $stmt = $db->query(
+        'SELECT asset_type, asset_code, COUNT(*) as points, MIN(price_date) as first_date, MAX(price_date) as last_date
+         FROM price_history GROUP BY asset_type, asset_code ORDER BY asset_type, asset_code'
+    );
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    echo json_encode(['assets' => $rows]);
+    exit;
+}
 
 // ─── GET: testa conexão com Gemini ───────────────────────────────────────────
 if ($method === 'GET' && $action === 'test_gemini') {
