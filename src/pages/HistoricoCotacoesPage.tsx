@@ -293,7 +293,7 @@ async function fetchMetalHistory(
 // ── Página principal ───────────────────────────────────────────────────────
 const HistoricoCotacoesPage = () => {
   const [period, setPeriod]           = useState<Period>("30d");
-  const [category, setCategory]       = useState<CategoryKey | "all">("all");
+  const [category, setCategory]       = useState<CategoryKey>("crypto");
   const [assets, setAssets]           = useState<AssetHistory[]>([]);
   const [selected, setSelected]       = useState<string | null>(null);
   const [loading, setLoading]         = useState(true);
