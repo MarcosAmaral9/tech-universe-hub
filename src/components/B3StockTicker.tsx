@@ -1,134 +1,18 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useMarketData } from "@/hooks/useMarketData";
 import { TrendingUp, TrendingDown, AlertTriangle, RefreshCw } from "lucide-react";
 import CacheStatusBar from "@/components/CacheStatusBar";
 import PriceAlertConfig from "@/components/PriceAlertConfig";
-
-interface StockQuote {
-  symbol: string;
-  shortName: string;
-  regularMarketPrice: number;
-  regularMarketChangePercent: number;
-  logourl?: string;
-}
 
 const B3_ICONS: Record<string, string> = {
   PETR4:"🛢️", VALE3:"⛏️", ITUB4:"🏦", BBDC4:"🏦", ABEV3:"🍺",
   WEGE3:"⚙️", BBAS3:"🏦", RENT3:"🚗", MGLU3:"🛒", SUZB3:"🌲",
 };
 
-const FALLBACK_STOCKS: StockQuote[] = [
-  { symbol: "PETR4", shortName: "Petrobras PN",       regularMarketPrice: 45.74, regularMarketChangePercent: 0.50  },
-  { symbol: "VALE3", shortName: "Vale ON",             regularMarketPrice: 56.20, regularMarketChangePercent: -0.30 },
-  { symbol: "ITUB4", shortName: "Itaú Unibanco PN",   regularMarketPrice: 38.50, regularMarketChangePercent: 0.25  },
-  { symbol: "BBDC4", shortName: "Bradesco PN",         regularMarketPrice: 16.90, regularMarketChangePercent: -0.60 },
-  { symbol: "ABEV3", shortName: "Ambev ON",            regularMarketPrice: 11.80, regularMarketChangePercent: 0.17  },
-  { symbol: "WEGE3", shortName: "WEG ON",              regularMarketPrice: 48.10, regularMarketChangePercent: 0.85  },
-  { symbol: "BBAS3", shortName: "Banco do Brasil ON",  regularMarketPrice: 27.40, regularMarketChangePercent: -0.14 },
-  { symbol: "RENT3", shortName: "Localiza ON",         regularMarketPrice: 35.60, regularMarketChangePercent: -0.55 },
-  { symbol: "MGLU3", shortName: "Magazine Luiza ON",   regularMarketPrice: 9.85,  regularMarketChangePercent: 1.23  },
-  { symbol: "SUZB3", shortName: "Suzano ON",           regularMarketPrice: 48.30, regularMarketChangePercent: -0.41 },
-];
-
-// Sem localStorage — o banco MySQL é a única fonte de verdade
-// O PHP gerencia o TTL e serve os mesmos dados para todos os usuários
-const REFRESH_MS = 1000 * 60 * 5;  // re-busca a cada 5 min (server TTL é 4 min)
-
 const B3StockTicker = () => {
-  const [stocks, setStocks]           = useState<StockQuote[]>([]);
-  const [loading, setLoading]         = useState(true);
-  const [refreshing, setRefreshing]   = useState(false);
-  const [isFallback, setIsFallback]   = useState(false);
-  const [lastUpdated, setLastUpdated] = useState("");
-  const [updatedAt, setUpdatedAt]     = useState<string>("");
-  const [expiresAt, setExpiresAt]     = useState<number>(0);
-  const fetchingRef                   = useRef(false);
+  const { data, loading, isFallback, lastUpdated, refresh } = useMarketData();
+  const stocks = data?.b3 ?? [];
+  const TTL_MS = 3 * 60 * 1000;
 
-  const fetchStocks = useCallback(async (silent = false) => {
-    if (fetchingRef.current) return;
-    fetchingRef.current = true;
-    if (silent) setRefreshing(true);
-
-    try {
-      const res = await fetch("/api.php?action=b3", {
-        headers: { "Cache-Control": "no-store" },
-        signal: AbortSignal.timeout(12000),
-      });
-      if (!res.ok) throw new Error("HTTP " + res.status);
-      const data = await res.json();
-
-      if (data?.results?.length > 0) {
-        const quotes: StockQuote[] = data.results.map((r: any) => ({
-          symbol:                    r.symbol,
-          shortName:                 r.shortName || r.longName || r.symbol,
-          regularMarketPrice:        r.regularMarketPrice,
-          regularMarketChangePercent: r.regularMarketChangePercent,
-          logourl:                   r.logourl,
-        }));
-
-        setStocks(quotes);
-        setIsFallback(false);
-        setLoading(false);
-
-        // Mostra o horário em que o servidor buscou os dados (não o horário local)
-        const serverTime = data._meta?.updatedAt
-          ? new Date(data._meta.updatedAt).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })
-          : new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
-        setLastUpdated(serverTime);
-        setUpdatedAt(data._meta?.updatedAt || new Date().toISOString());
-        // expiresAt do servidor — mesmo valor para todos os usuários
-        if (data._meta?.expiresAt) {
-          setExpiresAt(new Date(data._meta.expiresAt).getTime());
-        } else {
-          setExpiresAt(Date.now() + REFRESH_MS);
-        }
-        return;
-      }
-    } catch { /* continua para fallback */ }
-
-    // Só usa fallback na carga inicial sem dados
-    if (!silent && stocks.length === 0) {
-      setStocks(FALLBACK_STOCKS);
-      setIsFallback(true);
-      setLastUpdated("—");
-    }
-    if (!silent) setLoading(false);
-  }, [stocks.length]);
-
-  // Carga inicial — mantém skeleton até ter dados ou confirmação de erro
-  useEffect(() => {
-    fetchStocks(false).finally(() => {
-      fetchingRef.current = false;
-      setRefreshing(false);
-      // setLoading(false) já é chamado dentro de fetchStocks
-    });
-  }, []); // eslint-disable-line
-
-  // Re-busca automática a cada 15 min + ao voltar à aba
-  useEffect(() => {
-    const iv = setInterval(() => {
-      if (!document.hidden) {
-        fetchingRef.current = false;
-        fetchStocks(true).finally(() => {
-          fetchingRef.current = false;
-          setRefreshing(false);
-        });
-      }
-    }, REFRESH_MS);
-
-    const onVisible = () => {
-      if (!document.hidden) {
-        fetchingRef.current = false;
-        fetchStocks(true).finally(() => {
-          fetchingRef.current = false;
-          setRefreshing(false);
-        });
-      }
-    };
-    document.addEventListener("visibilitychange", onVisible);
-    return () => { clearInterval(iv); document.removeEventListener("visibilitychange", onVisible); };
-  }, [fetchStocks]);
-
-  // Skeleton
   if (loading && stocks.length === 0) {
     return (
       <div className="bg-card border border-border rounded-2xl p-4 sm:p-6 mb-8">
@@ -145,8 +29,6 @@ const B3StockTicker = () => {
     );
   }
 
-  // expiresAt vem do servidor — igual para todos os usuários
-
   return (
     <div className="bg-card border border-border rounded-2xl p-4 sm:p-6 mb-8">
       <div className="flex items-center justify-between mb-4">
@@ -155,7 +37,7 @@ const B3StockTicker = () => {
           <h3 className="font-bold">Bolsa de Valores B3 — Cotações</h3>
         </div>
         <div className="flex items-center gap-3">
-          {refreshing && <RefreshCw className="h-3.5 w-3.5 text-muted-foreground animate-spin" />}
+          {loading && <RefreshCw className="h-3.5 w-3.5 text-muted-foreground animate-spin" />}
           {lastUpdated && lastUpdated !== "—" && (
             <span className="text-xs text-muted-foreground hidden sm:inline">
               Dados de: {lastUpdated}
@@ -234,7 +116,7 @@ const B3StockTicker = () => {
       <CacheStatusBar
         source={isFallback ? "local-static" : "live"}
         isFallback={isFallback}
-        cacheExpiresAt={expiresAt || Date.now() + REFRESH_MS}
+        cacheExpiresAt={Date.now() + TTL_MS}
       />
       <PriceAlertConfig
         storageKey="b3_price_alerts"

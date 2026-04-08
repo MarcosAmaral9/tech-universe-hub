@@ -1,31 +1,8 @@
-import { useState, useEffect, useCallback, forwardRef } from "react";
+import { forwardRef } from "react";
+import { useMarketData } from "@/hooks/useMarketData";
 import { Bitcoin, TrendingUp, TrendingDown, AlertTriangle } from "lucide-react";
 import CacheStatusBar from "@/components/CacheStatusBar";
 import PriceAlertConfig from "@/components/PriceAlertConfig";
-
-interface CryptoData {
-  id: string;
-  symbol: string;
-  name: string;
-  current_price: number;
-  price_change_percentage_24h: number;
-  market_cap: number;
-  image: string;
-}
-
-const REFRESH_MS = 1000 * 60 * 5; // 5 min (igual ao TTL do servidor) — proxy PHP usa 86% do limite gratuito do CoinGecko (8.640/10.000 req/mês)
-const UPDATE_INTERVAL_LABEL = "5 minutos";
-
-const FALLBACK: CryptoData[] = [
-  { id: "bitcoin",      symbol: "btc",  name: "Bitcoin",    current_price: 387818, price_change_percentage_24h:  0.0, market_cap: 7700000000000, image: "" },
-  { id: "ethereum",     symbol: "eth",  name: "Ethereum",   current_price: 14200,  price_change_percentage_24h:  0.0, market_cap: 1700000000000, image: "" },
-  { id: "solana",       symbol: "sol",  name: "Solana",     current_price: 780,    price_change_percentage_24h:  0.0, market_cap: 380000000000, image: "" },
-  { id: "binancecoin",  symbol: "bnb",  name: "BNB",        current_price: 2980,   price_change_percentage_24h:  0.0, market_cap: 440000000000, image: "" },
-  { id: "cardano",      symbol: "ada",  name: "Cardano",    current_price: 3.90,   price_change_percentage_24h:  0.0, market_cap: 138000000000, image: "" },
-  { id: "ripple",       symbol: "xrp",  name: "XRP",        current_price: 14.20,  price_change_percentage_24h:  0.0, market_cap: 820000000000, image: "" },
-  { id: "chainlink",    symbol: "link", name: "Chainlink",  current_price: 90,     price_change_percentage_24h:  0.0, market_cap: 54000000000, image: "" },
-  { id: "polkadot",     symbol: "dot",  name: "Polkadot",   current_price: 30.50,  price_change_percentage_24h:  0.0, market_cap: 46000000000, image: "" },
-];
 
 const CRYPTO_ICONS: Record<string, string> = {
   btc:"₿", eth:"⟠", sol:"◎", bnb:"🟡",
@@ -33,85 +10,25 @@ const CRYPTO_ICONS: Record<string, string> = {
 };
 
 const formatBRL = (value: number) => {
-  if (value >= 1000) {
+  if (value >= 1000)
     return value.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  }
   return value.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 4 });
 };
 
 const formatMarketCap = (value: number) => {
   if (value >= 1e12) return `R$ ${(value / 1e12).toFixed(1)}T`;
-  if (value >= 1e9) return `R$ ${(value / 1e9).toFixed(1)}B`;
-  if (value >= 1e6) return `R$ ${(value / 1e6).toFixed(1)}M`;
+  if (value >= 1e9)  return `R$ ${(value / 1e9).toFixed(1)}B`;
+  if (value >= 1e6)  return `R$ ${(value / 1e6).toFixed(1)}M`;
   return `R$ ${value.toLocaleString("pt-BR")}`;
 };
 
-interface CryptoWidgetProps {
-  compact?: boolean;
-}
+interface CryptoWidgetProps { compact?: boolean }
 
 const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = false }, ref) => {
-  const [cryptos, setCryptos] = useState<CryptoData[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [isFallback, setIsFallback] = useState(false);
-  const [lastUpdated, setLastUpdated] = useState("");
-  const [cacheExpiresAt, setCacheExpiresAt] = useState<number>(0);
-  const [source, setSource] = useState<string>("");
-
-  const fetchCryptos = useCallback(async (silent = false) => {
-    try {
-      setLoading(true);
-      const res = await fetch("/api.php?action=crypto", {
-        headers: { "Cache-Control": "no-store" },
-        signal: AbortSignal.timeout(10000),
-      });
-      if (!res.ok) throw new Error(`Status ${res.status}`);
-      const json = await res.json();
-      const data: CryptoData[] = json.coins ?? json;
-
-      if (!Array.isArray(data) || data.length === 0) throw new Error("Dados vazios");
-
-      setCryptos(data);
-      setIsFallback(false);
-      const serverTime = json._meta?.updatedAt
-        ? new Date(json._meta.updatedAt).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })
-        : new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
-      setLastUpdated(serverTime);
-      // expiresAt do servidor — igual para todos os usuários
-      const expTs = json._meta?.expiresAt
-        ? new Date(json._meta.expiresAt).getTime()
-        : Date.now() + REFRESH_MS;
-      setCacheExpiresAt(expTs);
-      setSource(json._meta?.from_cache ? "cache" : "live");
-      setLoading(false);
-      return;
-    } catch (err) {
-      console.warn("API Crypto indisponível:", err);
-    }
-
-    setCryptos(FALLBACK);
-    setIsFallback(true);
-    const now = Date.now();
-    setLastUpdated(new Date(now).toLocaleString("pt-BR"));
-    setCacheExpiresAt(now + REFRESH_MS);
-    setSource("local-static");
-    // Não cacheia fallback — próxima visita sempre tentará a API
-    setLoading(false);
-  }, []);
-
-  useEffect(() => {
-    fetchCryptos(false);
-
-    const REFRESH_MS_INNER = REFRESH_MS;
-    const iv = setInterval(() => {
-      if (!document.hidden) fetchCryptos(true);
-    }, REFRESH_MS_INNER);
-    const onVisible = () => { if (!document.hidden) fetchCryptos(true); };
-    document.addEventListener("visibilitychange", onVisible);
-    return () => { clearInterval(iv); document.removeEventListener("visibilitychange", onVisible); };
-  }, [fetchCryptos]);
-
+  const { data, loading, isFallback, lastUpdated } = useMarketData();
+  const cryptos = data?.crypto ?? [];
   const displayCryptos = compact ? cryptos.slice(0, 5) : cryptos;
+  const TTL_MS = 3 * 60 * 1000;
 
   if (loading && cryptos.length === 0) {
     return (
@@ -155,20 +72,19 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
         <div className="flex animate-[scroll_25s_linear_infinite] gap-6 whitespace-nowrap">
           {[...displayCryptos, ...displayCryptos].map((crypto, i) => (
             <div key={i} className="flex items-center gap-2 text-sm">
-              {crypto.image && (
+              {crypto.image ? (
                 <img src={crypto.image} width="24" height="24" alt={crypto.name} className="w-5 h-5 rounded-full flex-shrink-0" />
+              ) : (
+                <span className="text-sm">{CRYPTO_ICONS[crypto.symbol] ?? "🪙"}</span>
               )}
-              {!crypto.image && <span className="text-sm">{CRYPTO_ICONS[crypto.symbol] ?? "🪙"}</span>}
               <span className="font-bold text-foreground uppercase">{crypto.symbol}</span>
               <span className="text-muted-foreground">R$ {formatBRL(crypto.current_price)}</span>
               <span className={`flex items-center gap-0.5 ${
                 crypto.price_change_percentage_24h >= 0 ? "text-green-500" : "text-red-500"
               }`}>
-                {crypto.price_change_percentage_24h >= 0 ? (
-                  <TrendingUp className="h-3 w-3" />
-                ) : (
-                  <TrendingDown className="h-3 w-3" />
-                )}
+                {crypto.price_change_percentage_24h >= 0
+                  ? <TrendingUp className="h-3 w-3" />
+                  : <TrendingDown className="h-3 w-3" />}
                 {crypto.price_change_percentage_24h >= 0 ? "+" : ""}
                 {crypto.price_change_percentage_24h?.toFixed(2)}%
               </span>
@@ -195,20 +111,14 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
                   )}
                   <span className="text-xs font-bold text-foreground uppercase">{CRYPTO_ICONS[crypto.symbol] ?? "🪙"} {crypto.symbol}</span>
                 </div>
-                {isUp ? (
-                  <TrendingUp className="h-3 w-3 text-green-500" />
-                ) : (
-                  <TrendingDown className="h-3 w-3 text-red-500" />
-                )}
+                {isUp ? <TrendingUp className="h-3 w-3 text-green-500" /> : <TrendingDown className="h-3 w-3 text-red-500" />}
               </div>
-              <div className="text-sm font-bold text-foreground">
-                R$ {formatBRL(crypto.current_price)}
-              </div>
+              <div className="text-sm font-bold text-foreground">R$ {formatBRL(crypto.current_price)}</div>
               <div className={`text-xs font-medium ${isUp ? "text-green-500" : "text-red-500"}`}>
                 {isUp ? "+" : ""}{crypto.price_change_percentage_24h?.toFixed(2)}%
               </div>
               <div className="text-[10px] text-muted-foreground mt-1">
-                Cap: {formatMarketCap(crypto.market_cap)}
+                Cap: {formatMarketCap(crypto.market_cap ?? 0)}
               </div>
             </div>
           );
@@ -216,17 +126,18 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
       </div>
 
       <p className="text-[10px] text-muted-foreground mt-3 text-center">
-        Cotações de criptomoedas em reais (BRL) • Atualizado automaticamente a cada {UPDATE_INTERVAL_LABEL} • Fonte: CoinGecko
+        Cotações de criptomoedas em reais (BRL) • Atualizado automaticamente a cada 3 minutos • Fonte: CoinGecko
       </p>
-      <CacheStatusBar source={source} isFallback={isFallback} cacheExpiresAt={cacheExpiresAt} />
+      <CacheStatusBar
+        source={isFallback ? "local-static" : "live"}
+        isFallback={isFallback}
+        cacheExpiresAt={Date.now() + TTL_MS}
+      />
       <PriceAlertConfig
         storageKey="crypto_price_alerts"
         assets={displayCryptos.map(c => ({
-          key: c.symbol,
-          label: c.name,
-          icon: "",
-          currentPrice: c.current_price,
-          unit: "R$",
+          key: c.symbol, label: c.name, icon: "",
+          currentPrice: c.current_price, unit: "R$",
         }))}
       />
     </div>
@@ -234,5 +145,4 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
 });
 
 CryptoWidget.displayName = "CryptoWidget";
-
 export default CryptoWidget;

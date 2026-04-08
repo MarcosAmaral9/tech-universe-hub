@@ -91,18 +91,28 @@ const InvestimentosPage = () => {
           Dicas de finanças, análises de mercado, criptomoedas e 
           educação financeira para construir seu futuro.
         </p>
-        <Link to="/cotacoes" className="inline-block mt-3">
-          <Button variant="outline" className="gap-2 border-invest/30 text-invest hover:bg-invest/10">
-            <BarChart3 className="h-4 w-4" />
-            Ver Cotações Consolidadas
-          </Button>
-        </Link>
-        <Link to="/historico-cotacoes" className="inline-block mt-3 ml-2">
-          <Button variant="outline" className="gap-2 border-invest/30 text-invest hover:bg-invest/10">
-            <History className="h-4 w-4" />
-            Histórico de Cotações
-          </Button>
-        </Link>
+        <div className="flex flex-wrap gap-3 mt-4">
+          <Link to="/cotacoes">
+            <Button
+              variant="outline"
+              size="lg"
+              className="gap-2 border-invest/40 text-invest hover:bg-invest/10 hover:border-invest/70 font-semibold text-base px-5"
+            >
+              <BarChart3 className="h-5 w-5" />
+              Ver Cotações em Tempo Real
+            </Button>
+          </Link>
+          <Link to="/historico-cotacoes">
+            <Button
+              variant="default"
+              size="lg"
+              className="gap-2 bg-invest hover:bg-invest/90 text-white font-bold shadow-lg shadow-invest/20 text-base px-5"
+            >
+              <History className="h-5 w-5" />
+              Histórico de Cotações
+            </Button>
+          </Link>
+        </div>
       </div>
 
       {/* Pinned Featured Post */}

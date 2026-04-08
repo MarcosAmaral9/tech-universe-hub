@@ -819,6 +819,144 @@ if ($method === 'GET' && $action === 'history') {
     exit;
 }
 
+// ─── GET: endpoint unificado — b3 + crypto + rates em 1 requisição ──────────
+// Serve do cache já existente de cada widget (sem novas chamadas a APIs externas)
+// TTL = menor TTL entre os três (rates = 3 min)
+if ($method === 'GET' && $action === 'all') {
+    $db = getPdo();
+
+    $b3Data     = $db ? dbCacheGet($db, 'b3',     4) : null;
+    $cryptoData = $db ? dbCacheGet($db, 'crypto',  5) : null;
+    $ratesData  = $db ? dbCacheGet($db, 'rates',   3) : null;
+
+    // Fallback para arquivo de cache quando banco não tem dados frescos
+    $cacheDir = cacheDir();
+    if (!$b3Data) {
+        $f = $cacheDir . '/viciocode_b3_v2.json';
+        if (file_exists($f) && (time() - filemtime($f)) < 4 * 60) {
+            $r = file_get_contents($f);
+            if ($r) $b3Data = json_decode($r, true);
+        }
+    }
+    if (!$cryptoData) {
+        $f = $cacheDir . '/viciocode_crypto.json';
+        if (file_exists($f) && (time() - filemtime($f)) < 5 * 60) {
+            $r = file_get_contents($f);
+            if ($r) $cryptoData = json_decode($r, true);
+        }
+    }
+    if (!$ratesData) {
+        $f = $cacheDir . '/viciocode_rates_v2.json';
+        if (file_exists($f) && (time() - filemtime($f)) < 3 * 60) {
+            $r = file_get_contents($f);
+            if ($r) $ratesData = json_decode($r, true);
+        }
+    }
+
+    // Se algum dado ainda falta, busca via loopback HTTP (reutiliza lógica de cada action)
+    $fetchedFresh = false;
+    $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http')
+        . '://127.0.0.1/api.php';
+    if (!$b3Data || !$cryptoData || !$ratesData) {
+        if (!$b3Data)     { $r = httpGet($baseUrl . '?action=b3',     5); if ($r) $b3Data     = json_decode($r, true); }
+        if (!$cryptoData) { $r = httpGet($baseUrl . '?action=crypto',  5); if ($r) $cryptoData = json_decode($r, true); }
+        if (!$ratesData)  { $r = httpGet($baseUrl . '?action=rates',   5); if ($r) $ratesData  = json_decode($r, true); }
+        $fetchedFresh = true;
+    }
+
+    echo json_encode([
+        'b3'     => $b3Data     ?? ['results' => [], '_meta' => ['error' => 'indisponível']],
+        'crypto' => $cryptoData ?? ['coins'   => [], '_meta' => ['error' => 'indisponível']],
+        'rates'  => $ratesData  ?? ['_meta'   => ['error' => 'indisponível']],
+        '_meta'  => [
+            'action'     => 'all',
+            'from_cache' => !$fetchedFresh,
+            'updatedAt'  => date('c'),
+            'b3_ok'      => !empty($b3Data['results']),
+            'crypto_ok'  => !empty($cryptoData['coins']),
+            'rates_ok'   => isset($ratesData['USDBRL']),
+        ],
+    ]);
+    exit;
+}
+
+// ─── GET: histórico múltiplo — todos os ativos de uma vez ────────────────────
+// /api.php?action=history_multi&days=30
+// Retorna: {"b3":{"PETR4":[{date,price},...]},"crypto":{...},"currency":{...},"metal":{...}}
+if ($method === 'GET' && $action === 'history_multi') {
+    $days = min(max((int)($_GET['days'] ?? 30), 1), 400);
+    $db   = getPdo();
+    if (!$db) { http_response_code(503); echo json_encode(['error' => 'Banco indisponível']); exit; }
+
+    $stmt = $db->prepare(
+        'SELECT asset_type, asset_code, price_date, price
+         FROM price_history
+         WHERE price_date >= DATE_SUB(CURDATE(), INTERVAL :days DAY)
+         ORDER BY asset_type, asset_code, price_date ASC'
+    );
+    $stmt->execute([':days' => $days]);
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $grouped = [];
+    foreach ($rows as $row) {
+        $grouped[$row['asset_type']][$row['asset_code']][] = [
+            'date' => $row['price_date'], 'price' => (float)$row['price'],
+        ];
+    }
+
+    echo json_encode([
+        'days'     => $days,
+        'b3'       => $grouped['b3']       ?? [],
+        'crypto'   => $grouped['crypto']   ?? [],
+        'currency' => $grouped['currency'] ?? [],
+        'metal'    => $grouped['metal']    ?? [],
+        '_meta'    => ['updatedAt' => date('c'), 'total_rows' => count($rows)],
+    ]);
+    exit;
+}
+
+// ─── GET: cron refresh — atualiza todos os caches em background ──────────────
+// Configure no Hostinger → hPanel → Cron Jobs → */5 * * * *
+// URL: https://viciocode.com/api.php?action=cron_refresh&secret=VC_CRON_2026
+// Cada execução: rates + crypto + b3 = 3 chamadas às APIs externas / 5 min
+// Rates: fawazahmed (sem limite) | Crypto: CoinGecko (~30/min) | B3: brapi.dev (15k/mês)
+if ($method === 'GET' && $action === 'cron_refresh') {
+    $CRON_SECRET = 'VC_CRON_2026';
+    if (file_exists(__DIR__ . '/.env.php')) { include __DIR__ . '/.env.php'; }
+    if (($_GET['secret'] ?? '') !== $CRON_SECRET) {
+        http_response_code(403); echo json_encode(['error' => 'Acesso negado']); exit;
+    }
+
+    $results = [];
+    $t0      = microtime(true);
+    $baseUrl = 'http://127.0.0.1/api.php';
+
+    // Para cada widget: invalida o cache no banco, depois chama o endpoint para repopular
+    foreach (['rates', 'crypto', 'b3'] as $w) {
+        $db = getPdo();
+        if ($db) {
+            try { $db->prepare("UPDATE widget_cache SET fetch_date='2000-01-01' WHERE widget=:w")->execute([':w' => $w]); }
+            catch (Exception $e) {}
+        }
+        $raw     = httpGet("$baseUrl?action=$w", 12);
+        $decoded = $raw ? json_decode($raw, true) : null;
+        $results[$w] = [
+            'ok'     => !empty($decoded) && empty($decoded['error']),
+            'source' => $decoded['_meta']['source'] ?? ($decoded['_meta']['from_cache'] ? 'cache' : 'unknown'),
+            'ms'     => round((microtime(true) - $t0) * 1000),
+        ];
+        usleep(600000); // 600ms entre chamadas — respeita rate limits
+    }
+
+    echo json_encode([
+        'action'     => 'cron_refresh',
+        'timestamp'  => date('c'),
+        'elapsed_ms' => round((microtime(true) - $t0) * 1000),
+        'results'    => $results,
+    ], JSON_PRETTY_PRINT);
+    exit;
+}
+
 // ─── GET: todos os ativos com histórico disponível ──────────────────────────
 if ($method === 'GET' && $action === 'history_assets') {
     $db = getPdo();

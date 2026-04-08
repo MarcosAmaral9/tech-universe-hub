@@ -65,9 +65,13 @@ const CotacoesPage = () => {
             <p className="text-muted-foreground text-sm mt-1">
               Dados consolidados de mercado, atualizados automaticamente
             </p>
-            <Link to="/historico-cotacoes" className="inline-block mt-3">
-              <Button variant="outline" className="gap-2 border-invest/30 text-invest hover:bg-invest/10">
-                <History className="h-4 w-4" />
+            <Link to="/historico-cotacoes" className="inline-block mt-4">
+              <Button
+                variant="default"
+                size="lg"
+                className="gap-2 bg-invest hover:bg-invest/90 text-white font-bold shadow-lg shadow-invest/20 text-base px-6"
+              >
+                <History className="h-5 w-5" />
                 Ver Histórico de Cotações
               </Button>
             </Link>
