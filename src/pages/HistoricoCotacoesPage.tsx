@@ -566,7 +566,7 @@ const HistoricoCotacoesPage = () => {
           {categories.map(c => (
             <button
               key={c.key}
-              onClick={() => setCategory(c.key)}
+              onClick={() => handleCategoryChange(c.key)}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
                 category === c.key
                   ? "bg-invest text-white shadow-sm"
@@ -575,12 +575,12 @@ const HistoricoCotacoesPage = () => {
             >
               {c.icon}{c.label}
               <span className={`text-xs ${category === c.key ? "text-white/70" : "text-muted-foreground/60"}`}>
-                ({c.key === "all" ? assets.length : assets.filter(a => a.category === c.key).length})
+                ({assets.filter(a => a.category === c.key).length})
               </span>
             </button>
           ))}
           <div className="ml-auto flex gap-1">
-            {periods.map(p => (
+            {availablePeriods.map(p => (
               <button
                 key={p.key}
                 onClick={() => setPeriod(p.key)}
