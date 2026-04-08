@@ -634,11 +634,6 @@ const HistoricoCotacoesPage = () => {
                         }`}>
                           {selectedAsset.dataSource === "real" ? "✓ Dados históricos reais" : "~ Simulação baseada no preço atual"}
                         </span>
-                        {selectedAsset.category === "b3" && period === "1y" && (
-                          <span className="inline-flex items-center gap-1 mt-1 text-[10px] px-2 py-0.5 rounded-full font-medium bg-amber-500/15 text-amber-400">
-                            <AlertTriangle className="h-3 w-3" /> B3: histórico limitado a 3 meses (API gratuita)
-                          </span>
-                        )}
                       </div>
                     </div>
                     <div className="text-right">
