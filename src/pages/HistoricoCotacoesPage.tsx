@@ -12,8 +12,16 @@ import {
 } from "recharts";
 
 // ── Types ──────────────────────────────────────────────────────────────────
-type Period      = "7d" | "30d" | "90d" | "1y";
+type Period      = "5d" | "7d" | "30d" | "90d" | "1y";
 type CategoryKey = "b3" | "crypto" | "currency" | "metal";
+
+// Períodos disponíveis gratuitamente para cada categoria
+const CATEGORY_PERIODS: Record<CategoryKey, { key: Period; label: string }[]> = {
+  b3:       [{ key: "5d", label: "5D" }, { key: "30d", label: "1M" }, { key: "90d", label: "3M" }],
+  crypto:   [{ key: "7d", label: "7D" }, { key: "30d", label: "30D" }, { key: "90d", label: "90D" }, { key: "1y", label: "1A" }],
+  currency: [{ key: "7d", label: "7D" }, { key: "30d", label: "30D" }, { key: "90d", label: "90D" }, { key: "1y", label: "1A" }],
+  metal:    [{ key: "7d", label: "7D" }, { key: "30d", label: "30D" }, { key: "90d", label: "90D" }, { key: "1y", label: "1A" }],
+};
 
 interface ChartPoint  { date: string; value: number; label: string }
 interface AssetHistory {
@@ -40,7 +48,7 @@ const pctArrow = (v: number) =>
 
 // ── Constantes ─────────────────────────────────────────────────────────────
 const TROY = 31.1035;
-const PERIOD_DAYS: Record<Period, number> = { "7d": 7, "30d": 30, "90d": 90, "1y": 365 };
+const PERIOD_DAYS: Record<Period, number> = { "5d": 5, "7d": 7, "30d": 30, "90d": 90, "1y": 365 };
 const CAT_STROKE: Record<CategoryKey, string> = {
   b3: "#60a5fa", crypto: "#fb923c", currency: "#34d399", metal: "#facc15",
 };
@@ -214,6 +222,7 @@ async function fetchCurrencyHistory(
 
 // ── Busca histórico real de B3 via edge function ──────────────────────────
 const RANGE_MAP: Record<Period, { range: string; interval: string }> = {
+  "5d":  { range: "5d",  interval: "1d" },
   "7d":  { range: "5d",  interval: "1d" },
   "30d": { range: "1mo", interval: "1d" },
   "90d": { range: "3mo", interval: "1d" },
@@ -284,7 +293,7 @@ async function fetchMetalHistory(
 // ── Página principal ───────────────────────────────────────────────────────
 const HistoricoCotacoesPage = () => {
   const [period, setPeriod]           = useState<Period>("30d");
-  const [category, setCategory]       = useState<CategoryKey | "all">("all");
+  const [category, setCategory]       = useState<CategoryKey>("crypto");
   const [assets, setAssets]           = useState<AssetHistory[]>([]);
   const [selected, setSelected]       = useState<string | null>(null);
   const [loading, setLoading]         = useState(true);
@@ -461,7 +470,13 @@ const HistoricoCotacoesPage = () => {
       return order[a.category] - order[b.category];
     });
     setAssets(result);
-    if (result.length > 0) setSelected(prev => prev && result.find(a => a.id === prev) ? prev : result[0].id);
+    if (result.length > 0) {
+      const catAssets = result.filter(a => a.category === category);
+      setSelected(prev => {
+        if (prev && catAssets.find(a => a.id === prev)) return prev;
+        return catAssets[0]?.id ?? result[0].id;
+      });
+    }
     setLastUpdated(new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }));
     setLoading(false);
   }, []);
@@ -471,20 +486,33 @@ const HistoricoCotacoesPage = () => {
     return () => abortRef.current?.abort();
   }, [period, loadData]);
 
-  const filtered      = category === "all" ? assets : assets.filter(a => a.category === category);
+  // Auto-select first asset when category changes
+  useEffect(() => {
+    const catAssets = assets.filter(a => a.category === category);
+    if (catAssets.length > 0 && !catAssets.find(a => a.id === selected)) {
+      setSelected(catAssets[0].id);
+    }
+  }, [category, assets, selected]);
+
+  const filtered      = assets.filter(a => a.category === category);
   const selectedAsset = assets.find(a => a.id === selected);
 
-  const periods: { key: Period; label: string }[] = [
-    { key: "7d", label: "7D" }, { key: "30d", label: "30D" },
-    { key: "90d", label: "90D" }, { key: "1y", label: "1A" },
-  ];
-  const categories: { key: CategoryKey | "all"; label: string; icon: React.ReactNode }[] = [
-    { key: "all",      label: "Todos",  icon: <BarChart3  className="h-4 w-4" /> },
-    { key: "b3",       label: "B3",     icon: <TrendingUp className="h-4 w-4" /> },
+  const availablePeriods = CATEGORY_PERIODS[category];
+  const categories: { key: CategoryKey; label: string; icon: React.ReactNode }[] = [
     { key: "crypto",   label: "Cripto", icon: <Bitcoin    className="h-4 w-4" /> },
     { key: "currency", label: "Câmbio", icon: <DollarSign className="h-4 w-4" /> },
+    { key: "b3",       label: "B3",     icon: <TrendingUp className="h-4 w-4" /> },
     { key: "metal",    label: "Metais", icon: <Gem        className="h-4 w-4" /> },
   ];
+
+  // Quando trocar de categoria, ajustar período se o atual não estiver disponível
+  const handleCategoryChange = (cat: CategoryKey) => {
+    setCategory(cat);
+    const periodsForCat = CATEGORY_PERIODS[cat];
+    if (!periodsForCat.some(p => p.key === period)) {
+      setPeriod(periodsForCat[1]?.key ?? periodsForCat[0].key);
+    }
+  };
 
   // Variação do gráfico selecionado (primeiro vs último ponto)
   const chartChange = selectedAsset?.data.length
@@ -552,7 +580,7 @@ const HistoricoCotacoesPage = () => {
           {categories.map(c => (
             <button
               key={c.key}
-              onClick={() => setCategory(c.key)}
+              onClick={() => handleCategoryChange(c.key)}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
                 category === c.key
                   ? "bg-invest text-white shadow-sm"
@@ -561,12 +589,12 @@ const HistoricoCotacoesPage = () => {
             >
               {c.icon}{c.label}
               <span className={`text-xs ${category === c.key ? "text-white/70" : "text-muted-foreground/60"}`}>
-                ({c.key === "all" ? assets.length : assets.filter(a => a.category === c.key).length})
+                ({assets.filter(a => a.category === c.key).length})
               </span>
             </button>
           ))}
           <div className="ml-auto flex gap-1">
-            {periods.map(p => (
+            {availablePeriods.map(p => (
               <button
                 key={p.key}
                 onClick={() => setPeriod(p.key)}
@@ -620,11 +648,6 @@ const HistoricoCotacoesPage = () => {
                         }`}>
                           {selectedAsset.dataSource === "real" ? "✓ Dados históricos reais" : "~ Simulação baseada no preço atual"}
                         </span>
-                        {selectedAsset.category === "b3" && period === "1y" && (
-                          <span className="inline-flex items-center gap-1 mt-1 text-[10px] px-2 py-0.5 rounded-full font-medium bg-amber-500/15 text-amber-400">
-                            <AlertTriangle className="h-3 w-3" /> B3: histórico limitado a 3 meses (API gratuita)
-                          </span>
-                        )}
                       </div>
                     </div>
                     <div className="text-right">
@@ -778,11 +801,7 @@ const HistoricoCotacoesPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
             <div>
               <strong className="text-foreground flex items-center gap-1">📊 B3 <span className="text-[9px] text-emerald-400 font-bold">HISTÓRICO REAL</span></strong>
-              <p className="text-xs text-muted-foreground mt-0.5">Preço atual e histórico real via brapi.dev (edge function). PETR4, VALE3, ITUB4, BBDC4, ABEV3, WEGE3.</p>
-              <p className="text-[10px] text-amber-400 mt-1 flex items-center gap-1">
-                <AlertTriangle className="h-3 w-3 shrink-0" />
-                Histórico limitado a 3 meses (API gratuita).
-              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">Preço atual e histórico real via brapi.dev. Períodos: 5D, 1M e 3M (limite do plano gratuito).</p>
             </div>
             <div>
               <strong className="text-foreground flex items-center gap-1">₿ Cripto <span className="text-[9px] text-emerald-400 font-bold">HISTÓRICO REAL</span></strong>
