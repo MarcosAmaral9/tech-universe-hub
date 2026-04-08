@@ -191,6 +191,16 @@ if ($method === 'GET' && $action === 'ping') {
             fetch_date  DATE NOT NULL,
             req_count   INT DEFAULT 0
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
+        $tmpPdo->exec("CREATE TABLE IF NOT EXISTS price_history (
+            id          INT AUTO_INCREMENT PRIMARY KEY,
+            asset_type  VARCHAR(10) NOT NULL,
+            asset_code  VARCHAR(20) NOT NULL,
+            price       DECIMAL(20,6) NOT NULL,
+            price_date  DATE NOT NULL,
+            created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE KEY unique_asset_date (asset_type, asset_code, price_date),
+            INDEX idx_type_code (asset_type, asset_code)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
     } catch (Exception $e) {}
 
     // Testa conexão com banco
