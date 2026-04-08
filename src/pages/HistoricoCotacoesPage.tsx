@@ -801,11 +801,7 @@ const HistoricoCotacoesPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
             <div>
               <strong className="text-foreground flex items-center gap-1">📊 B3 <span className="text-[9px] text-emerald-400 font-bold">HISTÓRICO REAL</span></strong>
-              <p className="text-xs text-muted-foreground mt-0.5">Preço atual e histórico real via brapi.dev (edge function). PETR4, VALE3, ITUB4, BBDC4, ABEV3, WEGE3.</p>
-              <p className="text-[10px] text-amber-400 mt-1 flex items-center gap-1">
-                <AlertTriangle className="h-3 w-3 shrink-0" />
-                Histórico limitado a 3 meses (API gratuita).
-              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">Preço atual e histórico real via brapi.dev. Períodos: 5D, 1M e 3M (limite do plano gratuito).</p>
             </div>
             <div>
               <strong className="text-foreground flex items-center gap-1">₿ Cripto <span className="text-[9px] text-emerald-400 font-bold">HISTÓRICO REAL</span></strong>
