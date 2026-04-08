@@ -486,6 +486,14 @@ const HistoricoCotacoesPage = () => {
     return () => abortRef.current?.abort();
   }, [period, loadData]);
 
+  // Auto-select first asset when category changes
+  useEffect(() => {
+    const catAssets = assets.filter(a => a.category === category);
+    if (catAssets.length > 0 && !catAssets.find(a => a.id === selected)) {
+      setSelected(catAssets[0].id);
+    }
+  }, [category, assets, selected]);
+
   const filtered      = assets.filter(a => a.category === category);
   const selectedAsset = assets.find(a => a.id === selected);
 
