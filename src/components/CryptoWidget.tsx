@@ -158,6 +158,7 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
               {crypto.image && (
                 <img src={crypto.image} width="24" height="24" alt={crypto.name} className="w-5 h-5 rounded-full flex-shrink-0" />
               )}
+              {!crypto.image && <span className="text-sm">{CRYPTO_ICONS[crypto.symbol] ?? "🪙"}</span>}
               <span className="font-bold text-foreground uppercase">{crypto.symbol}</span>
               <span className="text-muted-foreground">R$ {formatBRL(crypto.current_price)}</span>
               <span className={`flex items-center gap-0.5 ${
@@ -192,7 +193,7 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
                   {crypto.image && (
                     <img src={crypto.image} width="24" height="24" alt={crypto.name} className="w-5 h-5 rounded-full flex-shrink-0" />
                   )}
-                  <span className="text-xs font-bold text-foreground uppercase">{crypto.symbol}</span>
+                  <span className="text-xs font-bold text-foreground uppercase">{CRYPTO_ICONS[crypto.symbol] ?? "🪙"} {crypto.symbol}</span>
                 </div>
                 {isUp ? (
                   <TrendingUp className="h-3 w-3 text-green-500" />
