@@ -48,7 +48,7 @@ const pctArrow = (v: number) =>
 
 // ── Constantes ─────────────────────────────────────────────────────────────
 const TROY = 31.1035;
-const PERIOD_DAYS: Record<Period, number> = { "7d": 7, "30d": 30, "90d": 90, "1y": 365 };
+const PERIOD_DAYS: Record<Period, number> = { "5d": 5, "7d": 7, "30d": 30, "90d": 90, "1y": 365 };
 const CAT_STROKE: Record<CategoryKey, string> = {
   b3: "#60a5fa", crypto: "#fb923c", currency: "#34d399", metal: "#facc15",
 };
@@ -222,6 +222,7 @@ async function fetchCurrencyHistory(
 
 // ── Busca histórico real de B3 via edge function ──────────────────────────
 const RANGE_MAP: Record<Period, { range: string; interval: string }> = {
+  "5d":  { range: "5d",  interval: "1d" },
   "7d":  { range: "5d",  interval: "1d" },
   "30d": { range: "1mo", interval: "1d" },
   "90d": { range: "3mo", interval: "1d" },
