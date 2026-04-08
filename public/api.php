@@ -529,7 +529,20 @@ if ($method === 'GET' && $action === 'rates') {
     $fetchedAt = date('c');
     $result['_meta'] = ['source' => 'fawazahmed+frankfurter', 'fallback' => false, 'from_cache' => false, 'updatedAt' => $fetchedAt, 'expiresAt' => date('c', time() + $TTL_RATES * 60)];
     // Salva no banco e no arquivo
-    if ($db = getPdo()) dbCacheSave($db, 'rates', $result);
+    if ($db = getPdo()) {
+        dbCacheSave($db, 'rates', $result);
+        // Salva snapshot histórico de câmbio e metais
+        $histCurrency = [];
+        foreach (['USDBRL'=>'USD','EURBRL'=>'EUR','ARSBRL'=>'ARS','PYGBRL'=>'PYG'] as $k=>$c) {
+            if (isset($result[$k]['bid'])) $histCurrency[$c] = (float)$result[$k]['bid'];
+        }
+        if (!empty($histCurrency)) saveHistorySnapshots($db, 'currency', $histCurrency);
+        $histMetal = [];
+        $TROY = 31.1035;
+        if (isset($result['XAUBRL']['bid'])) $histMetal['XAU'] = (float)$result['XAUBRL']['bid'] / $TROY * 0.75; // 18k per gram
+        if (isset($result['XAGBRL']['bid'])) $histMetal['XAG'] = (float)$result['XAGBRL']['bid'] / $TROY * 0.925; // 925 per gram
+        if (!empty($histMetal)) saveHistorySnapshots($db, 'metal', $histMetal);
+    }
     @file_put_contents($CACHE_FILE, json_encode($result));
     echo json_encode($result);
     exit;
