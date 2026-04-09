@@ -1569,6 +1569,31 @@ CREATE TABLE IF NOT EXISTS comments (
     INDEX idx_user_id (user_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+CREATE TABLE IF NOT EXISTS user_price_alerts (
+    id VARCHAR(36) PRIMARY KEY,
+    user_id VARCHAR(255) NOT NULL,
+    asset_key VARCHAR(50) NOT NULL,
+    asset_label VARCHAR(100) NOT NULL,
+    direction ENUM('above','below') NOT NULL,
+    threshold DECIMAL(18,4) NOT NULL,
+    enabled TINYINT(1) DEFAULT 1,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_user_alerts (user_id),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS user_favorite_assets (
+    id VARCHAR(36) PRIMARY KEY,
+    user_id VARCHAR(255) NOT NULL,
+    asset_key VARCHAR(50) NOT NULL,
+    asset_label VARCHAR(100) NOT NULL,
+    asset_category VARCHAR(30) NOT NULL,
+    asset_icon VARCHAR(10) DEFAULT '',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE KEY uk_user_asset (user_id, asset_key),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 */
 
 // Já foi adicionado acima — esse bloco é reservado para append via script
