@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Bell, BellOff, Plus, Trash2, X, History, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { usePriceAlerts, PriceAlert, AlertHistoryEntry } from "@/hooks/usePriceAlerts";
+import { useAuthContext } from "@/contexts/AuthContext";
 
 export interface AlertAssetOption {
   key: string;
@@ -24,7 +25,8 @@ const formatDate = (ts: number) => {
 };
 
 const PriceAlertConfig = ({ storageKey, assets }: PriceAlertConfigProps) => {
-  const { alerts, history, addAlert, removeAlert, toggleAlert, checkAlerts, clearHistory, requestNotificationPermission } = usePriceAlerts(storageKey);
+  const { user } = useAuthContext();
+  const { alerts, history, addAlert, removeAlert, toggleAlert, checkAlerts, clearHistory, requestNotificationPermission } = usePriceAlerts(storageKey, user?.id);
   const [isOpen, setIsOpen] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
   const [selectedAsset, setSelectedAsset] = useState(assets[0]?.key || "");
