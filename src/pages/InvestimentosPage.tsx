@@ -1,6 +1,8 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import PostCard from "@/components/PostCard";
+import heroCotacoes from "@/assets/cotacoes-tempo-real.webp";
+import heroHistorico from "@/assets/historico-cotacoes.webp";
 import { getPostsByCategory, getPostBySlug } from "@/data/posts";
 import { ArrowLeft, Calculator, BarChart3, ChevronLeft, ChevronRight, History } from "lucide-react";
 import { Button } from "@/components/ui/button";
