@@ -74,6 +74,69 @@ export type Database = {
         }
         Relationships: []
       }
+      user_favorite_assets: {
+        Row: {
+          asset_category: string
+          asset_icon: string | null
+          asset_key: string
+          asset_label: string
+          created_at: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          asset_category: string
+          asset_icon?: string | null
+          asset_key: string
+          asset_label: string
+          created_at?: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          asset_category?: string
+          asset_icon?: string | null
+          asset_key?: string
+          asset_label?: string
+          created_at?: string
+          id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_price_alerts: {
+        Row: {
+          asset_key: string
+          asset_label: string
+          created_at: string
+          direction: string
+          enabled: boolean
+          id: string
+          threshold: number
+          user_id: string
+        }
+        Insert: {
+          asset_key: string
+          asset_label: string
+          created_at?: string
+          direction: string
+          enabled?: boolean
+          id?: string
+          threshold: number
+          user_id: string
+        }
+        Update: {
+          asset_key?: string
+          asset_label?: string
+          created_at?: string
+          direction?: string
+          enabled?: boolean
+          id?: string
+          threshold?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
