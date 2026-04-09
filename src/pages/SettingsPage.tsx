@@ -60,7 +60,7 @@ const SettingsPage = () => {
   const [readHistory, setReadHistory] = useState<HistoryArticle[]>([]);
   const [commentHistory, setCommentHistory] = useState<HistoryComment[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
-
+  const { favorites, toggleFavorite, loading: favLoading } = useFavoriteAssets(user?.id ?? null);
   useEffect(() => {
     if (profile) {
       setEditName(profile.name);
