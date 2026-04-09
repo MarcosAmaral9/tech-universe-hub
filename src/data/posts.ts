@@ -115,6 +115,42 @@ import guerraIraPetrobraImg from "@/assets/guerra-ira-petrobras-2026.webp";
 
 export const blogPosts: BlogPost[] = [
 
+   // ── 09 Abr 2026 — Finanças ──────────────────────────────────
+   {
+    id: "150",
+    slug: "guerra-ira-petroleo-petrobras-2026",
+    title: "Guerra EUA-Irã e Estreito de Ormuz: Vale a Pena Investir em Petrobras (PETR4) Agora?",
+    excerpt: "O fechamento do Estreito de Ormuz disparou o barril Brent de US$ 73 para US$ 116 e a PETR4 acumula 60% de alta em 2026. Com o cessar-fogo frágil de abril, analisamos os 3 cenários e se ainda vale investir.",
+    content: "",
+    category: "invest",
+    subtopic: "planejamento",
+    image: guerraIraPetrobraImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-09",
+    readTime: "15 min",
+    faq: [
+      {
+        q: "Por que a guerra EUA-Irã afetou o preço do petróleo?",
+        a: "O Irã fechou o Estreito de Ormuz, por onde passam 20% do petróleo global. O bloqueio reteve 150 navios petroleiros e disparou o Brent de US$ 73 (27/02) para um pico de US$ 116,25 (9/03) — o maior choque de oferta de petróleo desde 1979."
+      },
+      {
+        q: "Quanto subiu a PETR4 em 2026 por causa da guerra?",
+        a: "As ações preferenciais da Petrobras (PETR4) acumulam alta de aproximadamente 60% em 2026, saindo da faixa de R$ 39 para quase R$ 50. A commodity petróleo subiu mais de 80% no mesmo período."
+      },
+      {
+        q: "Vale a pena comprar PETR4 agora, após o cessar-fogo de abril de 2026?",
+        a: "Depende do perfil. Com o Brent projetado acima de US$ 80 mesmo no cenário de normalização, a Petrobras entrega cerca de 9% de dividend yield em 2026, segundo o BTG Pactual. O risco é o cessar-fogo ser permanente e o petróleo recuar para US$ 65–75, o que pressionaria a ação de volta para R$ 35–38."
+      },
+      {
+        q: "O que é o Estreito de Ormuz e por que ele é tão importante?",
+        a: "O Estreito de Ormuz é uma faixa de água de 33 km no ponto mais estreito, entre o Irã e a Península Arábica. Por ali passam diariamente 20 milhões de barris de petróleo — 20% da oferta global. É a principal rota de exportação de petróleo da Arábia Saudita, EAU, Kuwait e Iraque."
+      },
+      {
+        q: "Qual o preço-alvo da PETR4 segundo os analistas em 2026?",
+        a: "BTG Pactual tem preço-alvo de R$ 56 (recomendação de compra). JP Morgan projeta R$ ~58 equivalente (US$ 24 por ADR). Citi e Bank of America são mais conservadores, com preço-alvo de R$ 49 e recomendação neutra. De 11 casas que cobrem o papel, 8 recomendam compra."
+      },
+    ],
+  },
   // ── 04 Abr 2026 — Geek ──────────────────────────────────
   {
     id: "146",
