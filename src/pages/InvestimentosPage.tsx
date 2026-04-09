@@ -6,10 +6,6 @@ import heroHistorico from "@/assets/historico-cotacoes.webp";
 import { getPostsByCategory, getPostBySlug } from "@/data/posts";
 import { ArrowLeft, Calculator, BarChart3, ChevronLeft, ChevronRight, History } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import B3StockTicker from "@/components/B3StockTicker";
-import CurrencyWidget from "@/components/CurrencyWidget";
-import CryptoWidget from "@/components/CryptoWidget";
-import PreciousMetalsWidget from "@/components/PreciousMetalsWidget";
 import DynamicSEO from "@/components/DynamicSEO";
 import { AdInArticle } from "@/components/AdSense";
 
@@ -95,31 +91,31 @@ const InvestimentosPage = () => {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
           <Link to="/cotacoes" className="group block">
-            <div className="relative rounded-2xl overflow-hidden h-36 md:h-44 border border-invest/30 hover:border-invest/60 transition-all shadow-md hover:shadow-xl">
+            <div className="relative rounded-2xl overflow-hidden h-48 md:h-56 border border-invest/30 hover:border-invest/60 transition-all shadow-md hover:shadow-xl">
               <img src={heroCotacoes} alt="Cotações em Tempo Real" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent flex items-center p-5 md:p-6">
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent flex items-center p-6 md:p-8">
                 <div>
                   <span className="text-invest font-bold text-xs uppercase tracking-widest mb-1 block">Mercado ao Vivo</span>
-                  <h3 className="font-display text-lg md:text-2xl font-bold text-white flex items-center gap-2">
-                    <BarChart3 className="h-5 w-5 text-invest" />
+                  <h3 className="font-display text-xl md:text-3xl font-bold text-white flex items-center gap-2">
+                    <BarChart3 className="h-6 w-6 text-invest" />
                     Cotações em Tempo Real
                   </h3>
-                  <p className="text-white/60 text-xs mt-1">B3, Cripto, Câmbio e Metais</p>
+                  <p className="text-white/60 text-sm mt-2">B3, Cripto, Câmbio e Metais</p>
                 </div>
               </div>
             </div>
           </Link>
           <Link to="/historico-cotacoes" className="group block">
-            <div className="relative rounded-2xl overflow-hidden h-36 md:h-44 border border-invest/30 hover:border-invest/60 transition-all shadow-md hover:shadow-xl">
+            <div className="relative rounded-2xl overflow-hidden h-48 md:h-56 border border-invest/30 hover:border-invest/60 transition-all shadow-md hover:shadow-xl">
               <img src={heroHistorico} alt="Histórico de Cotações" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent flex items-center p-5 md:p-6">
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent flex items-center p-6 md:p-8">
                 <div>
                   <span className="text-invest font-bold text-xs uppercase tracking-widest mb-1 block">Análise</span>
-                  <h3 className="font-display text-lg md:text-2xl font-bold text-white flex items-center gap-2">
-                    <History className="h-5 w-5 text-invest" />
+                  <h3 className="font-display text-xl md:text-3xl font-bold text-white flex items-center gap-2">
+                    <History className="h-6 w-6 text-invest" />
                     Histórico de Cotações
                   </h3>
-                  <p className="text-white/60 text-xs mt-1">Gráficos e tendências de preço</p>
+                  <p className="text-white/60 text-sm mt-2">Gráficos e tendências de preço</p>
                 </div>
               </div>
             </div>
@@ -130,47 +126,32 @@ const InvestimentosPage = () => {
       {/* Pinned Featured Post */}
       {pinnedPost && !activeFilter && (
         <Link to={`/post/${pinnedPost.slug}`} className="block mb-8 group">
-          <div className="relative rounded-2xl overflow-hidden bg-card border-2 border-invest/30 hover:border-invest/60 transition-all shadow-lg hover:shadow-xl">
-            <div className="flex flex-col md:flex-row">
-              <div className="relative w-full md:w-2/5 h-48 md:h-auto overflow-hidden">
+          <div className="relative rounded-2xl overflow-hidden bg-card border border-invest/30 hover:border-invest/60 transition-all shadow-md hover:shadow-xl">
+            <div className="flex items-center gap-4 p-4">
+              <div className="relative w-16 h-16 shrink-0 rounded-xl overflow-hidden">
                 <img
                   src={pinnedPost.image}
                   alt={pinnedPost.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent md:bg-gradient-to-r" />
               </div>
-              <div className="flex-1 p-5 sm:p-6 md:p-8 flex flex-col justify-center">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-invest/15 text-invest text-xs font-bold uppercase tracking-wide">
-                    <Calculator className="h-3.5 w-3.5" />
-                    Em Destaque
-                  </span>
-                </div>
-                <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold mb-3 group-hover:text-invest transition-colors line-clamp-2">
+              <div className="flex-1 min-w-0">
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-invest/15 text-invest text-[10px] font-bold uppercase tracking-wide mb-1">
+                  <Calculator className="h-3 w-3" />
+                  Destaque
+                </span>
+                <h2 className="font-display text-sm sm:text-base font-bold group-hover:text-invest transition-colors line-clamp-1">
                   {pinnedPost.title}
                 </h2>
-                <p className="text-muted-foreground text-sm sm:text-base line-clamp-2 mb-4">
+                <p className="text-muted-foreground text-xs line-clamp-1">
                   {pinnedPost.excerpt}
                 </p>
-                <span className="text-invest font-semibold text-sm group-hover:underline">
-                  Acessar calculadoras →
-                </span>
               </div>
             </div>
           </div>
         </Link>
       )}
 
-      {/* Widgets - only show when no filter active */}
-      {!activeFilter && (
-        <>
-          <B3StockTicker />
-          <CurrencyWidget />
-          <PreciousMetalsWidget />
-          <CryptoWidget />
-        </>
-      )}
 
       {/* Subtopic Filters */}
       <div className="flex flex-wrap gap-2 mb-8">
