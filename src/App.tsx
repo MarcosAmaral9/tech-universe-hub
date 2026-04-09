@@ -189,6 +189,8 @@ const LancamentosGamesAbril2026 = lazy(() => import("./pages/posts/LancamentosGa
 const AbsoluteBatmanGame2026    = lazy(() => import("./pages/posts/AbsoluteBatmanGame2026"));
 const ReZeroTemporada4          = lazy(() => import("./pages/posts/ReZeroTemporada4"));
 const TemporadaAnimesAbril2026  = lazy(() => import("./pages/posts/TemporadaAnimesAbril2026"));
+// 09 Abr 2026 — Finanças
+const GuerraIraPetrobras2026 = lazy(() => import("./pages/posts/GuerraIraPetrobras2026"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -365,6 +367,8 @@ const App = () => (
                 <Route path="/post/lego-batman-legacy-2026" element={<AbsoluteBatmanGame2026 />} />
                 <Route path="/post/rezero-temporada-4-guia-2026" element={<ReZeroTemporada4 />} />
                 <Route path="/post/temporada-animes-abril-2026" element={<TemporadaAnimesAbril2026 />} />
+                {/* 09 Abr 2026 — Finanças */}
+                <Route path="/post/guerra-ira-petroleo-petrobras-2026" element={<Suspense fallback={<div />}><GuerraIraPetrobras2026 /></Suspense>} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
