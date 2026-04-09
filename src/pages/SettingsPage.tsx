@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import DynamicSEO from "@/components/DynamicSEO";
-import { Settings, Sun, Moon, Type, Palette, Bell, BellOff, RotateCcw, Smartphone, Globe, User, AtSign, Camera, BookOpen, MessageSquare, Clock, ExternalLink } from "lucide-react";
+import { Settings, Sun, Moon, Type, Palette, Bell, BellOff, RotateCcw, Smartphone, Globe, User, AtSign, Camera, BookOpen, MessageSquare, Clock, ExternalLink, Star, Trash2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { getReadHistory, getCommentHistory } from "@/hooks/useReadingHistory";
 import type { HistoryArticle, HistoryComment } from "@/hooks/useReadingHistory";
@@ -12,6 +12,7 @@ import { Label } from "@/components/ui/label";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { toast } from "@/hooks/use-toast";
+import { useFavoriteAssets } from "@/hooks/useFavoriteAssets";
 
 const NOTIFICATION_SOUND_KEY = "pwa_update_sound_enabled";
 const FONT_SIZE_KEY = "viciocode_font_size";
