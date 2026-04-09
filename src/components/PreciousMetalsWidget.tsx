@@ -3,6 +3,9 @@ import { TrendingUp, TrendingDown, AlertTriangle, Gem } from "lucide-react";
 import { useExchangeRates } from "@/hooks/useExchangeRates";
 import CacheStatusBar from "@/components/CacheStatusBar";
 import PriceAlertConfig from "@/components/PriceAlertConfig";
+import { useAuthContext } from "@/contexts/AuthContext";
+import { useFavoriteAssets } from "@/hooks/useFavoriteAssets";
+import FavoriteButton from "@/components/FavoriteButton";
 
 const TROY_OZ_TO_GRAMS = 31.1035;
 const GOLD_18K_PURITY = 0.75;
@@ -24,6 +27,8 @@ const FALLBACK: MetalRate[] = [
 ];
 
 const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
+  const { user } = useAuthContext();
+  const { isFavorite, toggleFavorite } = useFavoriteAssets(user?.id ?? null);
   const { data, loading, isFallback, lastUpdated, cacheExpiresAt, source } = useExchangeRates();
 
   const metals: MetalRate[] = [];
@@ -105,11 +110,14 @@ const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
                 <span className="text-sm font-bold text-foreground">
                   {icon} {metal.name} {metal.purity}
                 </span>
-                {isUp ? (
-                  <TrendingUp className="h-4 w-4 text-green-500" />
-                ) : (
-                  <TrendingDown className="h-4 w-4 text-red-500" />
-                )}
+                <div className="flex items-center gap-1">
+                  <FavoriteButton assetKey={metal.code} assetLabel={`${metal.name} ${metal.purity}`} assetCategory="metal" assetIcon={icon} isFavorite={isFavorite(metal.code)} onToggle={toggleFavorite} />
+                  {isUp ? (
+                    <TrendingUp className="h-4 w-4 text-green-500" />
+                  ) : (
+                    <TrendingDown className="h-4 w-4 text-red-500" />
+                  )}
+                </div>
               </div>
               <div className="text-2xl font-bold text-foreground mb-1">
                 R$ {metal.bidPerGram.toFixed(2)}

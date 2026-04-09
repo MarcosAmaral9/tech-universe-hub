@@ -1516,6 +1516,93 @@ if ($method === 'GET' && $action === 'google_auth_url') {
 }
 
 
+// ─── Favorite Assets CRUD ────────────────────────────────────────────────────
+if ($action === 'favorite_assets') {
+    if ($method === 'GET') {
+        $userId = $_GET['user_id'] ?? '';
+        if (!$userId) { http_response_code(400); echo json_encode(['error' => 'user_id obrigatório']); exit; }
+        $stmt = $pdo->prepare('SELECT * FROM user_favorite_assets WHERE user_id = :uid ORDER BY created_at DESC');
+        $stmt->execute([':uid' => $userId]);
+        echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+        exit;
+    }
+    if ($method === 'POST') {
+        $body = json_decode(file_get_contents('php://input'), true);
+        $uid   = $body['user_id'] ?? '';
+        $key   = $body['asset_key'] ?? '';
+        $label = $body['asset_label'] ?? '';
+        $cat   = $body['asset_category'] ?? '';
+        $icon  = $body['asset_icon'] ?? '';
+        if (!$uid || !$key || !$label || !$cat) { http_response_code(400); echo json_encode(['error' => 'Dados obrigatórios faltando']); exit; }
+        $id = sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x', mt_rand(0,0xffff),mt_rand(0,0xffff),mt_rand(0,0xffff),mt_rand(0,0x0fff)|0x4000,mt_rand(0,0x3fff)|0x8000,mt_rand(0,0xffff),mt_rand(0,0xffff),mt_rand(0,0xffff));
+        $stmt = $pdo->prepare('INSERT IGNORE INTO user_favorite_assets (id, user_id, asset_key, asset_label, asset_category, asset_icon) VALUES (:id, :uid, :key, :label, :cat, :icon)');
+        $stmt->execute([':id' => $id, ':uid' => $uid, ':key' => $key, ':label' => $label, ':cat' => $cat, ':icon' => $icon]);
+        echo json_encode(['id' => $id, 'user_id' => $uid, 'asset_key' => $key, 'asset_label' => $label, 'asset_category' => $cat, 'asset_icon' => $icon, 'created_at' => date('c')]);
+        exit;
+    }
+    if ($method === 'DELETE') {
+        $body = json_decode(file_get_contents('php://input'), true);
+        $uid = $body['user_id'] ?? '';
+        $key = $body['asset_key'] ?? '';
+        if (!$uid || !$key) { http_response_code(400); echo json_encode(['error' => 'user_id e asset_key obrigatórios']); exit; }
+        $stmt = $pdo->prepare('DELETE FROM user_favorite_assets WHERE user_id = :uid AND asset_key = :key');
+        $stmt->execute([':uid' => $uid, ':key' => $key]);
+        echo json_encode(['ok' => true]);
+        exit;
+    }
+}
+
+// ─── User Price Alerts CRUD ──────────────────────────────────────────────────
+if ($action === 'price_alerts') {
+    if ($method === 'GET') {
+        $userId = $_GET['user_id'] ?? '';
+        if (!$userId) { http_response_code(400); echo json_encode(['error' => 'user_id obrigatório']); exit; }
+        $stmt = $pdo->prepare('SELECT * FROM user_price_alerts WHERE user_id = :uid ORDER BY created_at DESC');
+        $stmt->execute([':uid' => $userId]);
+        echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+        exit;
+    }
+    if ($method === 'POST') {
+        $body = json_decode(file_get_contents('php://input'), true);
+        $uid   = $body['user_id'] ?? '';
+        $key   = $body['asset_key'] ?? '';
+        $label = $body['asset_label'] ?? '';
+        $dir   = $body['direction'] ?? '';
+        $thresh = $body['threshold'] ?? 0;
+        if (!$uid || !$key || !$label || !in_array($dir, ['above','below']) || $thresh <= 0) {
+            http_response_code(400); echo json_encode(['error' => 'Dados inválidos']); exit;
+        }
+        $id = sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x', mt_rand(0,0xffff),mt_rand(0,0xffff),mt_rand(0,0xffff),mt_rand(0,0x0fff)|0x4000,mt_rand(0,0x3fff)|0x8000,mt_rand(0,0xffff),mt_rand(0,0xffff),mt_rand(0,0xffff));
+        $stmt = $pdo->prepare('INSERT INTO user_price_alerts (id, user_id, asset_key, asset_label, direction, threshold) VALUES (:id, :uid, :key, :label, :dir, :thresh)');
+        $stmt->execute([':id' => $id, ':uid' => $uid, ':key' => $key, ':label' => $label, ':dir' => $dir, ':thresh' => $thresh]);
+        echo json_encode(['id' => $id, 'user_id' => $uid, 'asset_key' => $key, 'asset_label' => $label, 'direction' => $dir, 'threshold' => (float)$thresh, 'enabled' => true]);
+        exit;
+    }
+    if ($method === 'PUT') {
+        $body = json_decode(file_get_contents('php://input'), true);
+        $id  = $body['id'] ?? '';
+        $uid = $body['user_id'] ?? '';
+        $enabled = isset($body['enabled']) ? ($body['enabled'] ? 1 : 0) : null;
+        if (!$id || !$uid) { http_response_code(400); echo json_encode(['error' => 'id e user_id obrigatórios']); exit; }
+        if ($enabled !== null) {
+            $stmt = $pdo->prepare('UPDATE user_price_alerts SET enabled = :en WHERE id = :id AND user_id = :uid');
+            $stmt->execute([':en' => $enabled, ':id' => $id, ':uid' => $uid]);
+        }
+        echo json_encode(['ok' => true]);
+        exit;
+    }
+    if ($method === 'DELETE') {
+        $body = json_decode(file_get_contents('php://input'), true);
+        $id  = $body['id'] ?? '';
+        $uid = $body['user_id'] ?? '';
+        if (!$id || !$uid) { http_response_code(400); echo json_encode(['error' => 'id e user_id obrigatórios']); exit; }
+        $stmt = $pdo->prepare('DELETE FROM user_price_alerts WHERE id = :id AND user_id = :uid');
+        $stmt->execute([':id' => $id, ':uid' => $uid]);
+        echo json_encode(['ok' => true]);
+        exit;
+    }
+}
+
 http_response_code(404);
 echo json_encode(['error' => 'Endpoint não encontrado']);
 
@@ -1567,6 +1654,31 @@ CREATE TABLE IF NOT EXISTS comments (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     INDEX idx_post_id (post_id),
     INDEX idx_user_id (user_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS user_price_alerts (
+    id VARCHAR(36) PRIMARY KEY,
+    user_id VARCHAR(255) NOT NULL,
+    asset_key VARCHAR(50) NOT NULL,
+    asset_label VARCHAR(100) NOT NULL,
+    direction ENUM('above','below') NOT NULL,
+    threshold DECIMAL(18,4) NOT NULL,
+    enabled TINYINT(1) DEFAULT 1,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_user_alerts (user_id),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS user_favorite_assets (
+    id VARCHAR(36) PRIMARY KEY,
+    user_id VARCHAR(255) NOT NULL,
+    asset_key VARCHAR(50) NOT NULL,
+    asset_label VARCHAR(100) NOT NULL,
+    asset_category VARCHAR(30) NOT NULL,
+    asset_icon VARCHAR(10) DEFAULT '',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE KEY uk_user_asset (user_id, asset_key),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 */

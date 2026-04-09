@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import DynamicSEO from "@/components/DynamicSEO";
-import { Settings, Sun, Moon, Type, Palette, Bell, BellOff, RotateCcw, Smartphone, Globe, User, AtSign, Camera, BookOpen, MessageSquare, Clock, ExternalLink } from "lucide-react";
+import { Settings, Sun, Moon, Type, Palette, Bell, BellOff, RotateCcw, Smartphone, Globe, User, AtSign, Camera, BookOpen, MessageSquare, Clock, ExternalLink, Star, Trash2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { getReadHistory, getCommentHistory } from "@/hooks/useReadingHistory";
 import type { HistoryArticle, HistoryComment } from "@/hooks/useReadingHistory";
@@ -12,6 +12,7 @@ import { Label } from "@/components/ui/label";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { toast } from "@/hooks/use-toast";
+import { useFavoriteAssets } from "@/hooks/useFavoriteAssets";
 
 const NOTIFICATION_SOUND_KEY = "pwa_update_sound_enabled";
 const FONT_SIZE_KEY = "viciocode_font_size";
@@ -59,7 +60,7 @@ const SettingsPage = () => {
   const [readHistory, setReadHistory] = useState<HistoryArticle[]>([]);
   const [commentHistory, setCommentHistory] = useState<HistoryComment[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
-
+  const { favorites, toggleFavorite, loading: favLoading } = useFavoriteAssets(user?.id ?? null);
   useEffect(() => {
     if (profile) {
       setEditName(profile.name);
@@ -280,6 +281,47 @@ const SettingsPage = () => {
                         {new Date(cm.commentedAt).toLocaleDateString("pt-BR", { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" })}
                       </p>
                     </Link>
+                  ))}
+                </div>
+              )}
+            </section>
+
+            {/* Favorite Assets */}
+            <section className="rounded-2xl border border-border bg-card p-6">
+              <h2 className="text-lg font-semibold flex items-center gap-2 mb-4">
+                <Star className="w-5 h-5 text-yellow-500" /> Ativos Favoritos
+              </h2>
+              {favLoading ? (
+                <div className="flex justify-center py-4">
+                  <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+                </div>
+              ) : favorites.length === 0 ? (
+                <p className="text-muted-foreground text-sm text-center py-4">
+                  Nenhum ativo favoritado. Vá para{" "}
+                  <Link to="/cotacoes" className="text-primary hover:underline">Cotações</Link> e clique na ⭐ para favoritar.
+                </p>
+              ) : (
+                <div className="space-y-2">
+                  {favorites.map((fav) => (
+                    <div
+                      key={fav.id}
+                      className="flex items-center justify-between p-3 rounded-xl border border-border hover:border-primary/40 transition-all"
+                    >
+                      <div className="flex items-center gap-3 min-w-0">
+                        <span className="text-lg">{fav.asset_icon}</span>
+                        <div className="min-w-0">
+                          <p className="text-sm font-medium text-foreground">{fav.asset_label}</p>
+                          <p className="text-xs text-muted-foreground capitalize">{fav.asset_category}</p>
+                        </div>
+                      </div>
+                      <button
+                        onClick={() => toggleFavorite({ key: fav.asset_key, label: fav.asset_label, category: fav.asset_category, icon: fav.asset_icon })}
+                        className="p-1.5 rounded-full text-red-500 hover:bg-red-500/10 transition-colors"
+                        title="Remover dos favoritos"
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </button>
+                    </div>
                   ))}
                 </div>
               )}

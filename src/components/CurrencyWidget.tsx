@@ -2,6 +2,9 @@ import { DollarSign, TrendingUp, TrendingDown, AlertTriangle } from "lucide-reac
 import { useExchangeRates } from "@/hooks/useExchangeRates";
 import CacheStatusBar from "@/components/CacheStatusBar";
 import PriceAlertConfig from "@/components/PriceAlertConfig";
+import { useAuthContext } from "@/contexts/AuthContext";
+import { useFavoriteAssets } from "@/hooks/useFavoriteAssets";
+import FavoriteButton from "@/components/FavoriteButton";
 
 interface CurrencyRate {
   code: string;
@@ -55,6 +58,8 @@ const Sparkline = ({ data, isUp }: { data: number[]; isUp: boolean }) => {
 const CurrencyWidget = () => {
   const { data, loading, isFallback, lastUpdated, cacheExpiresAt, source } = useExchangeRates();
 
+  const { user } = useAuthContext();
+  const { isFavorite, toggleFavorite } = useFavoriteAssets(user?.id ?? null);
   const rates: CurrencyRate[] = [];
   
   const currencyMap = [
@@ -138,11 +143,14 @@ const CurrencyWidget = () => {
                   <span className="text-base">{rate.flag}</span>
                   {rate.code}/BRL
                 </span>
-                {isUp ? (
-                  <TrendingUp className="h-4 w-4 text-green-500" />
-                ) : (
-                  <TrendingDown className="h-4 w-4 text-red-500" />
-                )}
+                <div className="flex items-center gap-0.5">
+                  <FavoriteButton assetKey={rate.code} assetLabel={`${rate.name} (${rate.code}/BRL)`} assetCategory="câmbio" assetIcon={rate.flag} isFavorite={isFavorite(rate.code)} onToggle={toggleFavorite} />
+                  {isUp ? (
+                    <TrendingUp className="h-4 w-4 text-green-500" />
+                  ) : (
+                    <TrendingDown className="h-4 w-4 text-red-500" />
+                  )}
+                </div>
               </div>
               
               <div className="flex items-center justify-between gap-2 mb-1">

@@ -1,4 +1,7 @@
 import { useMarketData } from "@/hooks/useMarketData";
+import { useAuthContext } from "@/contexts/AuthContext";
+import { useFavoriteAssets } from "@/hooks/useFavoriteAssets";
+import FavoriteButton from "@/components/FavoriteButton";
 import { TrendingUp, TrendingDown, AlertTriangle, RefreshCw } from "lucide-react";
 import CacheStatusBar from "@/components/CacheStatusBar";
 import PriceAlertConfig from "@/components/PriceAlertConfig";
@@ -10,6 +13,8 @@ const B3_ICONS: Record<string, string> = {
 
 const B3StockTicker = () => {
   const { data, loading, isFallback, lastUpdated, refresh } = useMarketData();
+  const { user } = useAuthContext();
+  const { isFavorite, toggleFavorite } = useFavoriteAssets(user?.id ?? null);
   const stocks = data?.b3 ?? [];
   const TTL_MS = 3 * 60 * 1000;
 
@@ -90,9 +95,12 @@ const B3StockTicker = () => {
           >
             <div className="flex items-center justify-between mb-1">
               <span className="text-xs font-bold text-foreground">{B3_ICONS[stock.symbol] ?? "📊"} {stock.symbol}</span>
-              {stock.regularMarketChangePercent >= 0
-                ? <TrendingUp className="h-3 w-3 text-green-500" />
-                : <TrendingDown className="h-3 w-3 text-red-500" />}
+              <div className="flex items-center gap-0.5">
+                <FavoriteButton assetKey={stock.symbol} assetLabel={stock.symbol} assetCategory="b3" assetIcon={B3_ICONS[stock.symbol] ?? "📊"} isFavorite={isFavorite(stock.symbol)} onToggle={toggleFavorite} />
+                {stock.regularMarketChangePercent >= 0
+                  ? <TrendingUp className="h-3 w-3 text-green-500" />
+                  : <TrendingDown className="h-3 w-3 text-red-500" />}
+              </div>
             </div>
             <div className="text-sm font-bold text-foreground">
               R$ {stock.regularMarketPrice?.toFixed(2)}

@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { toast } from "@/hooks/use-toast";
 
 const NOTIFIED_PREFIX = "price_alerts_notified_";
@@ -23,7 +23,7 @@ export interface AlertHistoryEntry {
   triggeredAt: number;
 }
 
-function loadAlerts(storageKey: string): PriceAlert[] {
+function loadLocalAlerts(storageKey: string): PriceAlert[] {
   try {
     const saved = localStorage.getItem(storageKey);
     return saved ? JSON.parse(saved) : [];
@@ -32,7 +32,7 @@ function loadAlerts(storageKey: string): PriceAlert[] {
   }
 }
 
-function saveAlerts(storageKey: string, alerts: PriceAlert[]) {
+function saveLocalAlerts(storageKey: string, alerts: PriceAlert[]) {
   localStorage.setItem(storageKey, JSON.stringify(alerts));
 }
 
@@ -59,38 +59,111 @@ function loadHistory(): AlertHistoryEntry[] {
 }
 
 function saveHistory(history: AlertHistoryEntry[]) {
-  // Keep last 50 entries
   localStorage.setItem(HISTORY_KEY, JSON.stringify(history.slice(-50)));
 }
 
-export function usePriceAlerts(storageKey: string) {
-  const [alerts, setAlerts] = useState<PriceAlert[]>(() => loadAlerts(storageKey));
+export function usePriceAlerts(storageKey: string, userId?: string | null) {
+  const [alerts, setAlerts] = useState<PriceAlert[]>(() => loadLocalAlerts(storageKey));
   const [history, setHistory] = useState<AlertHistoryEntry[]>(() => loadHistory());
+  const [synced, setSynced] = useState(false);
 
-  const addAlert = useCallback((alert: Omit<PriceAlert, "id">) => {
+  // Sync alerts from server for logged-in users
+  useEffect(() => {
+    if (!userId) { setSynced(true); return; }
+    const fetchAlerts = async () => {
+      try {
+        const res = await fetch(`/api.php?action=price_alerts&user_id=${encodeURIComponent(userId)}`);
+        if (res.ok) {
+          const data = await res.json();
+          if (Array.isArray(data)) {
+            const mapped: PriceAlert[] = data.map((a: any) => ({
+              id: a.id,
+              assetKey: a.asset_key,
+              assetLabel: a.asset_label,
+              direction: a.direction,
+              threshold: parseFloat(a.threshold),
+              enabled: a.enabled === 1 || a.enabled === true,
+            }));
+            setAlerts(mapped);
+            saveLocalAlerts(storageKey, mapped);
+          }
+        }
+      } catch { /* offline — use local */ }
+      setSynced(true);
+    };
+    fetchAlerts();
+  }, [userId, storageKey]);
+
+  const addAlert = useCallback(async (alert: Omit<PriceAlert, "id">) => {
+    if (userId) {
+      try {
+        const res = await fetch(`/api.php?action=price_alerts`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            user_id: userId,
+            asset_key: alert.assetKey,
+            asset_label: alert.assetLabel,
+            direction: alert.direction,
+            threshold: alert.threshold,
+          }),
+        });
+        if (res.ok) {
+          const data = await res.json();
+          const newAlert: PriceAlert = { ...alert, id: data.id };
+          setAlerts(prev => {
+            const updated = [...prev, newAlert];
+            saveLocalAlerts(storageKey, updated);
+            return updated;
+          });
+          return;
+        }
+      } catch { /* fallback to local */ }
+    }
     const newAlert: PriceAlert = { ...alert, id: crypto.randomUUID() };
     setAlerts(prev => {
       const updated = [...prev, newAlert];
-      saveAlerts(storageKey, updated);
+      saveLocalAlerts(storageKey, updated);
       return updated;
     });
-  }, [storageKey]);
+  }, [storageKey, userId]);
 
-  const removeAlert = useCallback((id: string) => {
+  const removeAlert = useCallback(async (id: string) => {
+    if (userId) {
+      try {
+        await fetch(`/api.php?action=price_alerts`, {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id, user_id: userId }),
+        });
+      } catch { /* */ }
+    }
     setAlerts(prev => {
       const updated = prev.filter(a => a.id !== id);
-      saveAlerts(storageKey, updated);
+      saveLocalAlerts(storageKey, updated);
       return updated;
     });
-  }, [storageKey]);
+  }, [storageKey, userId]);
 
-  const toggleAlert = useCallback((id: string) => {
+  const toggleAlert = useCallback(async (id: string) => {
+    const alert = alerts.find(a => a.id === id);
+    if (!alert) return;
+    const newEnabled = !alert.enabled;
+    if (userId) {
+      try {
+        await fetch(`/api.php?action=price_alerts`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id, user_id: userId, enabled: newEnabled }),
+        });
+      } catch { /* */ }
+    }
     setAlerts(prev => {
-      const updated = prev.map(a => a.id === id ? { ...a, enabled: !a.enabled } : a);
-      saveAlerts(storageKey, updated);
+      const updated = prev.map(a => a.id === id ? { ...a, enabled: newEnabled } : a);
+      saveLocalAlerts(storageKey, updated);
       return updated;
     });
-  }, [storageKey]);
+  }, [storageKey, userId, alerts]);
 
   const clearHistory = useCallback(() => {
     setHistory([]);
@@ -100,8 +173,7 @@ export function usePriceAlerts(storageKey: string) {
   const checkAlerts = useCallback((prices: Record<string, number>) => {
     const notified = getNotifiedSet(storageKey);
     const enabledAlerts = alerts.filter(a => a.enabled);
-    let historyUpdated = false;
-
+    
     for (const alert of enabledAlerts) {
       const price = prices[alert.assetKey];
       if (price == null) continue;
@@ -114,7 +186,6 @@ export function usePriceAlerts(storageKey: string) {
         notified.add(alert.id);
         const dirLabel = alert.direction === "above" ? "acima de" : "abaixo de";
 
-        // Save to history
         const entry: AlertHistoryEntry = {
           id: crypto.randomUUID(),
           alertId: alert.id,
@@ -128,7 +199,6 @@ export function usePriceAlerts(storageKey: string) {
         currentHistory.push(entry);
         saveHistory(currentHistory);
         setHistory([...currentHistory].slice(-50));
-        historyUpdated = true;
 
         toast({
           title: `🔔 Alerta: ${alert.assetLabel}`,

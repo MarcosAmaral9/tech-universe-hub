@@ -3,6 +3,9 @@ import { useMarketData } from "@/hooks/useMarketData";
 import { Bitcoin, TrendingUp, TrendingDown, AlertTriangle } from "lucide-react";
 import CacheStatusBar from "@/components/CacheStatusBar";
 import PriceAlertConfig from "@/components/PriceAlertConfig";
+import { useAuthContext } from "@/contexts/AuthContext";
+import { useFavoriteAssets } from "@/hooks/useFavoriteAssets";
+import FavoriteButton from "@/components/FavoriteButton";
 
 const CRYPTO_ICONS: Record<string, string> = {
   btc:"₿", eth:"⟠", sol:"◎", bnb:"🟡",
@@ -26,6 +29,8 @@ interface CryptoWidgetProps { compact?: boolean }
 
 const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = false }, ref) => {
   const { data, loading, isFallback, lastUpdated } = useMarketData();
+  const { user } = useAuthContext();
+  const { isFavorite, toggleFavorite } = useFavoriteAssets(user?.id ?? null);
   const cryptos = data?.crypto ?? [];
   const displayCryptos = compact ? cryptos.slice(0, 5) : cryptos;
   const TTL_MS = 3 * 60 * 1000;
@@ -111,7 +116,10 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
                   )}
                   <span className="text-xs font-bold text-foreground uppercase">{CRYPTO_ICONS[crypto.symbol] ?? "🪙"} {crypto.symbol}</span>
                 </div>
-                {isUp ? <TrendingUp className="h-3 w-3 text-green-500" /> : <TrendingDown className="h-3 w-3 text-red-500" />}
+                <div className="flex items-center gap-0.5">
+                  <FavoriteButton assetKey={crypto.symbol} assetLabel={`${crypto.name} (${crypto.symbol.toUpperCase()})`} assetCategory="cripto" assetIcon={CRYPTO_ICONS[crypto.symbol] ?? "🪙"} isFavorite={isFavorite(crypto.symbol)} onToggle={toggleFavorite} />
+                  {isUp ? <TrendingUp className="h-3 w-3 text-green-500" /> : <TrendingDown className="h-3 w-3 text-red-500" />}
+                </div>
               </div>
               <div className="text-sm font-bold text-foreground">R$ {formatBRL(crypto.current_price)}</div>
               <div className={`text-xs font-medium ${isUp ? "text-green-500" : "text-red-500"}`}>

@@ -126,26 +126,23 @@ const InvestimentosPage = () => {
       {/* Pinned Featured Post */}
       {pinnedPost && !activeFilter && (
         <Link to={`/post/${pinnedPost.slug}`} className="block mb-8 group">
-          <div className="relative rounded-2xl overflow-hidden bg-card border border-invest/30 hover:border-invest/60 transition-all shadow-md hover:shadow-xl">
-            <div className="flex items-center gap-4 p-4">
-              <div className="relative w-16 h-16 shrink-0 rounded-xl overflow-hidden">
-                <img
-                  src={pinnedPost.image}
-                  alt={pinnedPost.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="flex-1 min-w-0">
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-invest/15 text-invest text-[10px] font-bold uppercase tracking-wide mb-1">
-                  <Calculator className="h-3 w-3" />
-                  Destaque
+          <div className="relative rounded-2xl overflow-hidden h-48 md:h-56 border-2 border-invest/50 hover:border-invest transition-all shadow-lg hover:shadow-2xl ring-2 ring-invest/20">
+            <img
+              src={pinnedPost.image}
+              alt={pinnedPost.title}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-transparent flex items-center p-6 md:p-8">
+              <div>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-invest/20 text-invest text-xs font-bold uppercase tracking-widest mb-2 backdrop-blur-sm border border-invest/30">
+                  <Calculator className="h-3.5 w-3.5" />
+                  ⭐ Destaque
                 </span>
-                <h2 className="font-display text-sm sm:text-base font-bold group-hover:text-invest transition-colors line-clamp-1">
+                <h3 className="font-display text-xl md:text-3xl font-bold text-white flex items-center gap-2">
+                  <Calculator className="h-6 w-6 text-invest" />
                   {pinnedPost.title}
-                </h2>
-                <p className="text-muted-foreground text-xs line-clamp-1">
-                  {pinnedPost.excerpt}
-                </p>
+                </h3>
+                <p className="text-white/60 text-sm mt-2 max-w-md line-clamp-2">{pinnedPost.excerpt}</p>
               </div>
             </div>
           </div>
