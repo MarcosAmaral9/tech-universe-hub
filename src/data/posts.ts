@@ -111,6 +111,7 @@ import lancamentosGamesAbrilImg from "@/assets/lancamentos-games-abril-2026.webp
 import absoluteBatmanImg from "@/assets/lego-batman-legacy-2026.webp";
 import reZeroT4Img from "@/assets/rezero-temporada-4-2026.webp";
 import temporadaAnimesAbrilImg from "@/assets/temporada-animes-abril-2026.webp";
+import guerraIraPetrobraImg from "@/assets/guerra-ira-petrobras-2026.webp";
 
 export const blogPosts: BlogPost[] = [
 
