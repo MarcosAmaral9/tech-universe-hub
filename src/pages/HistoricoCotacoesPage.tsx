@@ -7,6 +7,7 @@ import {
 import { Button } from "@/components/ui/button";
 import DynamicSEO from "@/components/DynamicSEO";
 import { useMarketData } from "@/hooks/useMarketData";
+import heroHistorico from "@/assets/historico-cotacoes.webp";
 import {
   Area, AreaChart, CartesianGrid, Line, LineChart,
   ResponsiveContainer, Tooltip, XAxis, YAxis,
@@ -421,6 +422,29 @@ const HistoricoCotacoesPage = () => {
       <DynamicSEO />
       <div className="container py-8 max-w-7xl">
 
+        {/* Hero Banner */}
+        <div className="relative rounded-2xl overflow-hidden mb-8 h-48 md:h-64">
+          <img
+            fetchpriority="high"
+            src={heroHistorico}
+            alt="Histórico de Cotações — Bitcoin, Ouro, B3"
+            loading="eager"
+            decoding="async"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent flex items-center p-6 md:p-10">
+            <div>
+              <span className="text-invest font-bold text-xs uppercase tracking-widest mb-1 block">Finanças • Análise</span>
+              <h1 className="font-display text-3xl md:text-4xl font-bold text-white">
+                <span className="text-invest">Histórico</span> de Cotações
+              </h1>
+              <p className="text-white/70 text-sm mt-2 max-w-sm">
+                Evolução de preços — B3, Câmbio, Metais e Criptomoedas
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Header */}
         <div className="mb-6">
           <div className="flex flex-wrap gap-3 mb-5">
@@ -439,14 +463,6 @@ const HistoricoCotacoesPage = () => {
           </div>
 
           <div className="flex items-start justify-between flex-wrap gap-4">
-            <div>
-              <h1 className="font-display text-3xl md:text-4xl font-bold">
-                <span className="text-invest">Histórico</span> de Cotações
-              </h1>
-              <p className="text-muted-foreground mt-1 text-sm">
-                Evolução de preços — B3, Câmbio, Metais e Criptomoedas
-              </p>
-            </div>
             <div className="flex items-center gap-2">
               {lastUpdated && (
                 <span className="flex items-center gap-1.5 text-xs text-muted-foreground">

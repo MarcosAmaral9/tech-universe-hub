@@ -15,6 +15,8 @@ const LCP_IMAGE_PATTERNS = [
   "fiis-defensivos-abril-2026",     // invest (latest: 03 Abr 2026)
   "crimson-desert-personagens",     // geek  (latest: 04 Abr 2026)
   "solo-leveling",                  // otaku (latest: 29 Mar 2026)
+  "cotacoes-tempo-real",            // /cotacoes page hero
+  "historico-cotacoes",             // /historico-cotacoes page hero
 ];
 
 function lcpPreloadPlugin(): Plugin {
