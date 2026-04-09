@@ -93,26 +93,36 @@ const InvestimentosPage = () => {
           Dicas de finanças, análises de mercado, criptomoedas e 
           educação financeira para construir seu futuro.
         </p>
-        <div className="flex flex-wrap gap-3 mt-4">
-          <Link to="/cotacoes">
-            <Button
-              variant="outline"
-              size="lg"
-              className="gap-2 border-invest/40 text-invest hover:bg-invest/10 hover:border-invest/70 font-semibold text-base px-5"
-            >
-              <BarChart3 className="h-5 w-5" />
-              Ver Cotações em Tempo Real
-            </Button>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+          <Link to="/cotacoes" className="group block">
+            <div className="relative rounded-2xl overflow-hidden h-36 md:h-44 border border-invest/30 hover:border-invest/60 transition-all shadow-md hover:shadow-xl">
+              <img src={heroCotacoes} alt="Cotações em Tempo Real" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent flex items-center p-5 md:p-6">
+                <div>
+                  <span className="text-invest font-bold text-xs uppercase tracking-widest mb-1 block">Mercado ao Vivo</span>
+                  <h3 className="font-display text-lg md:text-2xl font-bold text-white flex items-center gap-2">
+                    <BarChart3 className="h-5 w-5 text-invest" />
+                    Cotações em Tempo Real
+                  </h3>
+                  <p className="text-white/60 text-xs mt-1">B3, Cripto, Câmbio e Metais</p>
+                </div>
+              </div>
+            </div>
           </Link>
-          <Link to="/historico-cotacoes">
-            <Button
-              variant="default"
-              size="lg"
-              className="gap-2 bg-invest hover:bg-invest/90 text-white font-bold shadow-lg shadow-invest/20 text-base px-5"
-            >
-              <History className="h-5 w-5" />
-              Histórico de Cotações
-            </Button>
+          <Link to="/historico-cotacoes" className="group block">
+            <div className="relative rounded-2xl overflow-hidden h-36 md:h-44 border border-invest/30 hover:border-invest/60 transition-all shadow-md hover:shadow-xl">
+              <img src={heroHistorico} alt="Histórico de Cotações" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent flex items-center p-5 md:p-6">
+                <div>
+                  <span className="text-invest font-bold text-xs uppercase tracking-widest mb-1 block">Análise</span>
+                  <h3 className="font-display text-lg md:text-2xl font-bold text-white flex items-center gap-2">
+                    <History className="h-5 w-5 text-invest" />
+                    Histórico de Cotações
+                  </h3>
+                  <p className="text-white/60 text-xs mt-1">Gráficos e tendências de preço</p>
+                </div>
+              </div>
+            </div>
           </Link>
         </div>
       </div>
