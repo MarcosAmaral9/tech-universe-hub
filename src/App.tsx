@@ -191,6 +191,14 @@ const ReZeroTemporada4          = lazy(() => import("./pages/posts/ReZeroTempora
 const TemporadaAnimesAbril2026  = lazy(() => import("./pages/posts/TemporadaAnimesAbril2026"));
 // 09 Abr 2026 — Finanças
 const GuerraIraPetrobras2026 = lazy(() => import("./pages/posts/GuerraIraPetrobras2026"));
+// 11 Abr 2026
+const ClaudeOpusVsSonnet2026 = lazy(() => import("./pages/posts/ClaudeOpusVsSonnet2026"));
+const NegocioOnlineIA2026 = lazy(() => import("./pages/posts/NegocioOnlineIA2026"));
+const ETFsB3Guia2026 = lazy(() => import("./pages/posts/ETFsB3Guia2026"));
+const CortarGastos2026 = lazy(() => import("./pages/posts/CortarGastos2026"));
+const NintendoSwitch2Guia2026 = lazy(() => import("./pages/posts/NintendoSwitch2Guia2026"));
+const GTAVI2026 = lazy(() => import("./pages/posts/GTAVI2026"));
+const JujutsuKaisenGuia2026 = lazy(() => import("./pages/posts/JujutsuKaisenGuia2026"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -369,6 +377,14 @@ const App = () => (
                 <Route path="/post/temporada-animes-abril-2026" element={<TemporadaAnimesAbril2026 />} />
                 {/* 09 Abr 2026 — Finanças */}
                 <Route path="/post/guerra-ira-petroleo-petrobras-2026" element={<Suspense fallback={<div />}><GuerraIraPetrobras2026 /></Suspense>} />
+                {/* 11 Abr 2026 */}
+                <Route path="/post/claude-opus-vs-sonnet-2026" element={<ClaudeOpusVsSonnet2026 />} />
+                <Route path="/post/negocio-online-ia-2026" element={<NegocioOnlineIA2026 />} />
+                <Route path="/post/etfs-b3-guia-completo-2026" element={<ETFsB3Guia2026 />} />
+                <Route path="/post/cortar-gastos-2026" element={<CortarGastos2026 />} />
+                <Route path="/post/nintendo-switch-2-guia-2026" element={<NintendoSwitch2Guia2026 />} />
+                <Route path="/post/gta-vi-guia-completo-2026" element={<GTAVI2026 />} />
+                <Route path="/post/jujutsu-kaisen-guia-completo-2026" element={<JujutsuKaisenGuia2026 />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>

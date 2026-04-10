@@ -112,8 +112,109 @@ import absoluteBatmanImg from "@/assets/lego-batman-legacy-2026.webp";
 import reZeroT4Img from "@/assets/rezero-temporada-4-2026.webp";
 import temporadaAnimesAbrilImg from "@/assets/temporada-animes-abril-2026.webp";
 import guerraIraPetrobraImg from "@/assets/guerra-ira-petrobras-2026.webp";
+import claudeOpusVsSonnetImg from "@/assets/claude-opus-vs-sonnet-2026.webp";
+import negocioOnlineIaImg from "@/assets/negocio-online-ia-2026.webp";
+import nintendoSwitch2Img from "@/assets/nintendo-switch-2-2026.webp";
+import gtaViImg from "@/assets/gta-vi-2026.webp";
+import jujutsuKaisenImg from "@/assets/jujutsu-kaisen-guia-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+
+   // ── 11 Abr 2026 — IA ──────────────────────────────────
+   {
+    id: "151",
+    slug: "claude-opus-vs-sonnet-2026",
+    title: "Claude 4 Opus vs Claude 4 Sonnet: Qual Modelo Usar em 2026?",
+    excerpt: "Benchmarks, preços, casos de uso reais e recomendação por perfil. Descubra quando usar o Opus (poder máximo) e quando o Sonnet (equilíbrio ideal) é a melhor escolha.",
+    content: "",
+    category: "ia",
+    subtopic: "comparativos",
+    image: claudeOpusVsSonnetImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-11",
+    readTime: "13 min",
+  },
+  {
+    id: "152",
+    slug: "negocio-online-ia-2026",
+    title: "Como Criar um Negócio Online com IA em 2026: 10 Modelos Lucrativos",
+    excerpt: "De agência de conteúdo a micro-SaaS: 10 modelos de negócio baseados em IA com investimento inicial, potencial de receita e passo a passo para começar hoje.",
+    content: "",
+    category: "ia",
+    subtopic: "renda",
+    image: negocioOnlineIaImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-11",
+    readTime: "16 min",
+  },
+  // ── 11 Abr 2026 — Investimentos ──────────────────────────────────
+  {
+    id: "153",
+    slug: "etfs-b3-guia-completo-2026",
+    title: "ETFs na B3 em 2026: Guia Completo para Investir em Fundos de Índice",
+    excerpt: "O que são ETFs, os melhores da B3, como declarar no IR e 3 modelos de carteira por perfil de risco. Tudo sobre fundos de índice no Brasil.",
+    content: "",
+    category: "invest",
+    subtopic: "etfs",
+    image: etfs2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-04-11",
+    readTime: "15 min",
+  },
+  {
+    id: "154",
+    slug: "cortar-gastos-2026",
+    title: "Cortar Gastos em 2026: 20 Estratégias Práticas para Economizar no Brasil",
+    excerpt: "20 estratégias organizadas por impacto para economizar R$ 500 a R$ 2.000/mês sem abrir mão de qualidade de vida. Inclui dicas comportamentais e de longo prazo.",
+    content: "",
+    category: "invest",
+    subtopic: "planejamento",
+    image: economiaDomesticaImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-11",
+    readTime: "14 min",
+  },
+  // ── 11 Abr 2026 — Geek ──────────────────────────────────
+  {
+    id: "155",
+    slug: "nintendo-switch-2-guia-2026",
+    title: "Nintendo Switch 2: Guia Completo do Novo Console — Specs, Jogos e Vale a Pena?",
+    excerpt: "Ficha técnica completa, Joy-Con 2 com mouse mode, lineup de lançamento com Mario Kart World e Metroid Prime 4, preço no Brasil e se vale comprar agora.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: nintendoSwitch2Img,
+    author: "VICIO<CODE>",
+    date: "2026-04-11",
+    readTime: "14 min",
+  },
+  {
+    id: "156",
+    slug: "gta-vi-guia-completo-2026",
+    title: "GTA VI: Data de Lançamento, Plataformas, Personagens e Tudo que Sabemos",
+    excerpt: "Lançamento em 26/09/2026 para PS5 e Xbox. Lucia e Jason, Vice City, gameplay revolucionário, edições e preços no Brasil. O guia definitivo do GTA VI.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: gtaViImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-11",
+    readTime: "15 min",
+  },
+  // ── 11 Abr 2026 — Otaku ──────────────────────────────────
+  {
+    id: "157",
+    slug: "jujutsu-kaisen-guia-completo-2026",
+    title: "Jujutsu Kaisen: Guia Completo do Mangá e Anime — Arcos, Personagens e Legado",
+    excerpt: "Todos os arcos do mangá, 8 personagens principais, temporadas do anime e por onde começar. O guia definitivo de JJK para iniciantes e veteranos.",
+    content: "",
+    category: "otaku",
+    subtopic: "manga",
+    image: jujutsuKaisenImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-11",
+    readTime: "17 min",
+  },
 
    // ── 09 Abr 2026 — Finanças ──────────────────────────────────
    {
