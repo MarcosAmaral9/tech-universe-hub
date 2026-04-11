@@ -17,13 +17,19 @@ import {
 type Period      = "5d" | "7d" | "30d" | "90d" | "1y";
 type CategoryKey = "b3" | "crypto" | "currency" | "metal";
 
-// Períodos por categoria — cripto sem 1A no fallback CoinGecko (rate limit)
-// Quando DB tiver dados, 1A é desbloqueado automaticamente via dbHistoryAvailable
+// Todos os períodos possíveis — apenas exibidos se o BD tiver dados suficientes
+// O cron acumula histórico diariamente: 7D disponível após 7 execuções, 30D após 30, etc.
+const ALL_PERIODS: { key: Period; label: string }[] = [
+  { key: "7d",  label: "7D"  },
+  { key: "30d", label: "1M"  },
+  { key: "90d", label: "3M"  },
+  { key: "1y",  label: "1A"  },
+];
 const CATEGORY_PERIODS: Record<CategoryKey, { key: Period; label: string }[]> = {
-  b3:       [{ key: "5d", label: "5D" }, { key: "30d", label: "1M" }, { key: "90d", label: "3M" }],
-  crypto:   [{ key: "7d", label: "7D" }, { key: "30d", label: "30D" }, { key: "90d", label: "90D" }],
-  currency: [{ key: "7d", label: "7D" }, { key: "30d", label: "30D" }, { key: "90d", label: "90D" }, { key: "1y", label: "1A" }],
-  metal:    [{ key: "7d", label: "7D" }, { key: "30d", label: "30D" }, { key: "90d", label: "90D" }, { key: "1y", label: "1A" }],
+  b3:       ALL_PERIODS,
+  crypto:   ALL_PERIODS,
+  currency: ALL_PERIODS,
+  metal:    ALL_PERIODS,
 };
 
 interface ChartPoint  { date: string; value: number; label: string }
@@ -171,22 +177,7 @@ async function fetchCryptoHistoryProxy(
   }));
 }
 
-// AwesomeAPI — histórico de câmbio
-async function fetchCurrencyHistory(pair: string, days: number): Promise<ChartPoint[] | null> {
-  try {
-    const url = `https://economia.awesomeapi.com.br/json/daily/${pair}/${days}`;
-    const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
-    if (!res.ok) return null;
-    const text = await res.text();
-    if (text.includes("QuotaExceeded")) return null;
-    const json: { timestamp: string; bid: string }[] = JSON.parse(text);
-    if (!Array.isArray(json) || json.length < 3) return null;
-    return [...json].reverse().map(({ timestamp, bid }) => {
-      const iso = new Date(parseInt(timestamp) * 1000).toISOString().slice(0, 10);
-      return { date: iso, value: parseFloat(parseFloat(bid).toFixed(4)), label: fmtDate(iso) };
-    });
-  } catch { return null; }
-}
+
 
 // ── Página principal ───────────────────────────────────────────────────────
 const HistoricoCotacoesPage = () => {
@@ -259,30 +250,43 @@ const HistoricoCotacoesPage = () => {
       }
     }
 
-    for (const [coinId, info] of cryptoPrices.entries()) {
-      const sym = CRYPTO_SYMBOL_MAP[coinId] ?? coinId.toUpperCase().slice(0, 4);
-      const dbHistory = await fetchHistoryFromDB("crypto", sym, days);
-      if (dbHistory) {
-        hasDB = true;
+    // Cripto: paralelo (proxy server-side, sem rate limit no browser)
+    await Promise.allSettled(
+      Array.from(cryptoPrices.entries()).map(async ([coinId, info]) => {
+        const sym = CRYPTO_SYMBOL_MAP[coinId] ?? coinId.toUpperCase().slice(0, 4);
+        // 1° DB local (acumulado pelo cron)
+        const dbHistory = await fetchHistoryFromDB("crypto", sym, days);
+        if (dbHistory) {
+          hasDB = true;
+          result.push({
+            id: `crypto-${coinId}`, name: info.name, symbol: sym,
+            category: "crypto", icon: CRYPTO_ICONS[coinId] ?? "🪙",
+            currentPrice: info.price, change24h: info.change,
+            unit: "R$/un.", dataSource: "db", data: dbHistory,
+          });
+          return;
+        }
+        // 2° Proxy server-side (salva no DB para próximas visitas)
+        const proxyHistory = await fetchCryptoHistoryProxy(coinId, Math.min(days, 90));
+        if (proxyHistory) {
+          result.push({
+            id: `crypto-${coinId}`, name: info.name, symbol: sym,
+            category: "crypto", icon: CRYPTO_ICONS[coinId] ?? "🪙",
+            currentPrice: info.price, change24h: info.change,
+            unit: "R$/un.", dataSource: "real", data: proxyHistory,
+          });
+          return;
+        }
+        // Sem dados reais — não mostra simulação, indica ausência
         result.push({
           id: `crypto-${coinId}`, name: info.name, symbol: sym,
           category: "crypto", icon: CRYPTO_ICONS[coinId] ?? "🪙",
           currentPrice: info.price, change24h: info.change,
-          unit: "R$/un.", dataSource: "db", data: dbHistory,
+          unit: "R$/un.", dataSource: "simulated",
+          data: [], // array vazio = sem dados para este período
         });
-      } else {
-        const history = await fetchCryptoHistoryProxy(coinId, Math.min(days, 90));
-        result.push({
-          id: `crypto-${coinId}`, name: info.name, symbol: sym,
-          category: "crypto", icon: CRYPTO_ICONS[coinId] ?? "🪙",
-          currentPrice: info.price, change24h: info.change,
-          unit: "R$/un.",
-          dataSource: history ? "real" : "simulated",
-          data: history ?? buildSimulated(info.price, 0.04, days),
-        });
-      }
-      await sleep(280);
-    }
+      })
+    );
 
     // ── 3. Câmbio ─────────────────────────────────────────────────────────
     const currencyDefs = [
@@ -292,22 +296,22 @@ const HistoricoCotacoesPage = () => {
       { key:"PYGBRL", pair:"PYG-BRL", id:"cur-PYG", name:"Guarani Paraguaio", symbol:"PYG", icon:"🇵🇾" },
     ];
     await Promise.allSettled(
-      currencyDefs.map(async ({ key, pair, id, name, symbol, icon }) => {
+      currencyDefs.map(async ({ key, id, name, symbol, icon }) => {
         const r = ratesData?.[key];
         const fb = FALLBACK_ASSETS.find(a => a.id === id);
         const currentPrice = r ? parseFloat(r.bid) : (fb?.currentPrice ?? 0);
         const change24h    = r ? parseFloat(r.pctChange || "0") : (fb?.change24h ?? 0);
         if (currentPrice <= 0) return;
+        // Somente BD — o cron salva histórico de câmbio via fawazahmed a cada 5 min
         const dbHistory = await fetchHistoryFromDB("currency", symbol, days);
         if (dbHistory) hasDB = true;
-        const history = dbHistory ?? await fetchCurrencyHistory(pair, days);
         result.push({
           id, name, symbol, icon,
           category: "currency",
           currentPrice, change24h,
           unit: `R$/${symbol}`,
-          dataSource: dbHistory ? "db" : history ? "real" : "simulated",
-          data: history ?? buildSimulated(currentPrice, 0.004, days),
+          dataSource: dbHistory ? "db" : "simulated",
+          data: dbHistory ?? [], // sem histórico = array vazio
         });
       })
     );
@@ -324,6 +328,7 @@ const HistoricoCotacoesPage = () => {
         const currentPrice = r ? parseFloat(r.bid) / TROY : (fb?.currentPrice ?? 0);
         const change24h    = r ? parseFloat(r.pctChange || "0") : (fb?.change24h ?? 0);
         if (currentPrice <= 0) return;
+        // Somente BD — o cron salva histórico de metais via fawazahmed a cada 5 min
         const dbHistory = await fetchHistoryFromDB("metal", symbol, days);
         if (dbHistory) hasDB = true;
         result.push({
@@ -332,7 +337,7 @@ const HistoricoCotacoesPage = () => {
           currentPrice, change24h,
           unit: "R$/g",
           dataSource: dbHistory ? "db" : "simulated",
-          data: dbHistory ?? buildSimulated(currentPrice, 0.008, days),
+          data: dbHistory ?? [], // sem histórico = array vazio
         });
       })
     );
@@ -365,9 +370,21 @@ const HistoricoCotacoesPage = () => {
   const filtered      = assets.filter(a => a.category === category);
   const selectedAsset = assets.find(a => a.id === selected);
   // Se DB tiver 1A de cripto, desbloqueia o período
-  const availablePeriods = dbHistoryAvailable && category === "crypto"
-    ? [...CATEGORY_PERIODS[category], { key: "1y" as Period, label: "1A" }]
-    : CATEGORY_PERIODS[category];
+  // Mostra apenas os períodos que têm dados reais no BD para a categoria atual
+  // Calculado a partir dos ativos carregados — sem dados = período oculto
+  const availablePeriods = (() => {
+    const catAssets = assets.filter(a => a.category === category);
+    if (catAssets.length === 0) return [{ key: "7d" as Period, label: "7D" }];
+    // Descobre quantos dias de histórico temos (baseado no ativo com mais dados)
+    const maxPoints = Math.max(...catAssets.map(a => a.data.length));
+    return ALL_PERIODS.filter(p => {
+      if (p.key === "7d")  return true; // sempre mostra 7D (pode não ter dados, mas é o default)
+      if (p.key === "30d") return maxPoints >= 20; // ~20 dias
+      if (p.key === "90d") return maxPoints >= 60; // ~60 dias
+      if (p.key === "1y")  return maxPoints >= 200; // ~200 dias
+      return false;
+    });
+  })();
 
   const handleCategoryChange = (cat: CategoryKey) => {
     setCategory(cat);
@@ -402,60 +419,60 @@ const HistoricoCotacoesPage = () => {
   return (
     <>
       <DynamicSEO />
-      <div className="container py-8 max-w-7xl">
-
-        {/* Hero Banner — navegação integrada */}
-        <div className="relative rounded-2xl overflow-hidden mb-8" style={{aspectRatio:"21/9", maxHeight:"300px"}}>
-          <img
-            fetchpriority="high"
-            src={heroHistorico}
-            alt="Histórico de Cotações — Bitcoin, Ouro, B3"
-            loading="eager"
-            decoding="async"
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/10 flex flex-col justify-between p-5 md:p-8">
-            {/* Top nav dentro do hero */}
-            <div className="flex items-center gap-2 flex-wrap">
-              <Link to="/financas">
-                <Button variant="ghost" size="sm" className="gap-1.5 text-white/80 hover:text-white hover:bg-white/10 font-medium h-8 px-3">
-                  <ArrowLeft className="h-3.5 w-3.5" />Finanças
-                </Button>
-              </Link>
-              <Link to="/cotacoes">
-                <Button variant="ghost" size="sm" className="gap-1.5 text-white/80 hover:text-white hover:bg-white/10 font-medium h-8 px-3">
-                  <BarChart3 className="h-3.5 w-3.5" />Cotações
-                </Button>
-              </Link>
-              <div className="ml-auto flex items-center gap-2">
-                {lastUpdated && (
-                  <span className="hidden sm:flex items-center gap-1.5 text-xs text-white/60">
-                    <Clock className="h-3 w-3" />{lastUpdated}
-                  </span>
-                )}
-                <Button
-                  variant="outline" size="sm"
-                  onClick={() => loadData(period)}
-                  disabled={loading}
-                  className="gap-1.5 border-white/30 text-white hover:bg-white/10 hover:border-white/50 h-8 px-3"
-                >
-                  <RefreshCw className={`h-3.5 w-3.5 ${loading ? "animate-spin" : ""}`} />
-                  <span className="hidden sm:inline">{loading ? "Carregando..." : "Atualizar"}</span>
-                </Button>
-              </div>
-            </div>
-            {/* Título na parte inferior */}
-            <div>
-              <span className="text-invest font-bold text-xs uppercase tracking-widest mb-1 block">Finanças • Análise Histórica</span>
-              <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
-                <span className="text-invest">Histórico</span> de Cotações
-              </h1>
-              <p className="text-white/70 text-sm mt-1 hidden sm:block">
-                Evolução de preços — B3, Câmbio, Metais e Criptomoedas
-              </p>
+      {/* Hero Banner — full-width, outside container */}
+      <div className="relative w-full overflow-hidden" style={{height:"min(56vw, 360px)", minHeight:"200px"}}>
+        <img
+          fetchpriority="high"
+          src={heroHistorico}
+          alt="Histórico de Cotações — Bitcoin, Ouro, B3"
+          loading="eager"
+          decoding="async"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/10 flex flex-col justify-between px-6 md:px-16 py-5 md:py-8">
+          {/* Top nav */}
+          <div className="flex items-center gap-2 flex-wrap">
+            <Link to="/financas">
+              <Button variant="ghost" size="sm" className="gap-1.5 text-white/80 hover:text-white hover:bg-white/10 font-medium h-8 px-3">
+                <ArrowLeft className="h-3.5 w-3.5" />Finanças
+              </Button>
+            </Link>
+            <Link to="/cotacoes">
+              <Button variant="ghost" size="sm" className="gap-1.5 text-white/80 hover:text-white hover:bg-white/10 font-medium h-8 px-3">
+                <BarChart3 className="h-3.5 w-3.5" />Cotações
+              </Button>
+            </Link>
+            <div className="ml-auto flex items-center gap-2">
+              {lastUpdated && (
+                <span className="hidden sm:flex items-center gap-1.5 text-xs text-white/60">
+                  <Clock className="h-3 w-3" />{lastUpdated}
+                </span>
+              )}
+              <Button
+                variant="outline" size="sm"
+                onClick={() => loadData(period)}
+                disabled={loading}
+                className="gap-1.5 border-white/30 text-white hover:bg-white/10 hover:border-white/50 h-8 px-3"
+              >
+                <RefreshCw className={`h-3.5 w-3.5 ${loading ? "animate-spin" : ""}`} />
+                <span className="hidden sm:inline">{loading ? "Carregando..." : "Atualizar"}</span>
+              </Button>
             </div>
           </div>
+          {/* Título na parte inferior */}
+          <div>
+            <span className="text-invest font-bold text-xs uppercase tracking-widest mb-1 block">Finanças • Análise Histórica</span>
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
+              <span className="text-invest">Histórico</span> de Cotações
+            </h1>
+            <p className="text-white/70 text-sm mt-1 hidden sm:block">
+              Evolução de preços — B3, Câmbio, Metais e Criptomoedas
+            </p>
+          </div>
         </div>
+      </div>
+
+      <div className="container py-8 max-w-7xl">
 
         {/* Avisos */}
         {isFallback && !loading && (
@@ -549,6 +566,18 @@ const HistoricoCotacoesPage = () => {
                     </div>
                   </div>
 
+                  {selectedAsset.data.length < 3 ? (
+                    <div className="flex flex-col items-center justify-center h-64 gap-3 text-center">
+                      <Info className="h-10 w-10 text-muted-foreground/40" />
+                      <div>
+                        <p className="text-muted-foreground font-medium text-sm">Histórico ainda não disponível</p>
+                        <p className="text-xs text-muted-foreground/70 mt-1 max-w-xs">
+                          O banco de dados acumula preços a cada atualização do cron job (a cada 5 min).
+                          Este período ficará disponível automaticamente após alguns dias de acumulação.
+                        </p>
+                      </div>
+                    </div>
+                  ) : (
                   <ResponsiveContainer width="100%" height={280}>
                     <AreaChart data={selectedAsset.data} margin={{ top: 4, right: 4, left: 0, bottom: 0 }}>
                       <defs>
@@ -583,6 +612,7 @@ const HistoricoCotacoesPage = () => {
                       />
                     </AreaChart>
                   </ResponsiveContainer>
+                  )}
 
                   {selectedAsset.data.length > 1 && (() => {
                     const vals    = selectedAsset.data.map(d => d.value);

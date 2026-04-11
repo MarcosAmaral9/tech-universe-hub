@@ -826,49 +826,72 @@ if ($method === 'GET' && $action === 'history') {
 // ─── GET: endpoint unificado — b3 + crypto + rates em 1 requisição ──────────
 // Serve do cache já existente de cada widget (sem novas chamadas a APIs externas)
 // TTL = menor TTL entre os três (rates = 3 min)
+// ─── GET: endpoint unificado — SOMENTE leitura de cache, NUNCA chama APIs externas
+// Os dados são sempre servidos do banco MySQL ou arquivo de cache.
+// A atualização dos dados é feita EXCLUSIVAMENTE pelo cron_refresh (cron job).
+// Isso garante: zero requisições de API por visita de usuário.
 if ($method === 'GET' && $action === 'all') {
     $db = getPdo();
 
-    $b3Data     = $db ? dbCacheGet($db, 'b3',     4) : null;
-    $cryptoData = $db ? dbCacheGet($db, 'crypto',  5) : null;
-    $ratesData  = $db ? dbCacheGet($db, 'rates',   3) : null;
+    // Lê do banco sem limite de TTL — serve qualquer dado válido que exista
+    // (o cron garante que os dados estejam frescos; aqui só lemos o que há)
+    $b3Data     = null;
+    $cryptoData = null;
+    $ratesData  = null;
 
-    // Fallback para arquivo de cache quando banco não tem dados frescos
+    if ($db) {
+        // Busca direto da tabela sem restrição de TTL — pega o mais recente
+        foreach (['b3' => &$b3Data, 'crypto' => &$cryptoData, 'rates' => &$ratesData] as $widget => &$target) {
+            try {
+                $stmt = $db->prepare('SELECT data, fetched_at FROM widget_cache WHERE widget = :w LIMIT 1');
+                $stmt->execute([':w' => $widget]);
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                if ($row && $row['data']) {
+                    $decoded = json_decode($row['data'], true);
+                    if ($decoded) {
+                        $fetchedTs = strtotime($row['fetched_at']);
+                        // TTL dinâmico para expiresAt: B3 usa pregão, outros usam TTL fixo
+                        if ($widget === 'b3') {
+                            $hourBRT = (int)date('G', time() - 3 * 3600);
+                            $dayBRT  = (int)date('N', time() - 3 * 3600);
+                            $mktOpen = ($dayBRT >= 1 && $dayBRT <= 5 && $hourBRT >= 9 && $hourBRT < 18);
+                            $ttl = $mktOpen ? 5 * 60 : 30 * 60;
+                        } elseif ($widget === 'crypto') {
+                            $ttl = 5 * 60;
+                        } else {
+                            $ttl = 5 * 60;
+                        }
+                        $decoded['_meta']['from_cache'] = true;
+                        $decoded['_meta']['updatedAt']  = date('c', $fetchedTs);
+                        $decoded['_meta']['expiresAt']  = date('c', $fetchedTs + $ttl);
+                        $target = $decoded;
+                    }
+                }
+            } catch (Exception $e) { /* continua */ }
+        }
+        unset($target);
+    }
+
+    // Fallback: lê dos arquivos de cache (sem restrição de tempo)
     $cacheDir = cacheDir();
-    if (!$b3Data) {
-        $f = $cacheDir . '/viciocode_b3_v2.json';
-        if (file_exists($f) && (time() - filemtime($f)) < 4 * 60) {
+    $cacheFiles = ['b3' => 'viciocode_b3_v2.json', 'crypto' => 'viciocode_crypto.json', 'rates' => 'viciocode_rates_v2.json'];
+    foreach ([['b3', &$b3Data], ['crypto', &$cryptoData], ['rates', &$ratesData]] as [$widget, &$target]) {
+        if ($target !== null) continue; // já tem do banco
+        $f = $cacheDir . '/' . $cacheFiles[$widget];
+        if (file_exists($f)) {
             $r = file_get_contents($f);
-            if ($r) $b3Data = json_decode($r, true);
+            if ($r) {
+                $decoded = json_decode($r, true);
+                if ($decoded) {
+                    $decoded['_meta']['from_cache'] = true;
+                    $target = $decoded;
+                }
+            }
         }
     }
-    if (!$cryptoData) {
-        $f = $cacheDir . '/viciocode_crypto.json';
-        if (file_exists($f) && (time() - filemtime($f)) < 5 * 60) {
-            $r = file_get_contents($f);
-            if ($r) $cryptoData = json_decode($r, true);
-        }
-    }
-    if (!$ratesData) {
-        $f = $cacheDir . '/viciocode_rates_v2.json';
-        if (file_exists($f) && (time() - filemtime($f)) < 3 * 60) {
-            $r = file_get_contents($f);
-            if ($r) $ratesData = json_decode($r, true);
-        }
-    }
+    unset($target);
 
-    // Se algum dado ainda falta, busca via loopback HTTP (reutiliza lógica de cada action)
-    $fetchedFresh = false;
-    $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http')
-        . '://127.0.0.1/api.php';
-    if (!$b3Data || !$cryptoData || !$ratesData) {
-        if (!$b3Data)     { $r = httpGet($baseUrl . '?action=b3',     5); if ($r) $b3Data     = json_decode($r, true); }
-        if (!$cryptoData) { $r = httpGet($baseUrl . '?action=crypto',  5); if ($r) $cryptoData = json_decode($r, true); }
-        if (!$ratesData)  { $r = httpGet($baseUrl . '?action=rates',   5); if ($r) $ratesData  = json_decode($r, true); }
-        $fetchedFresh = true;
-    }
-
-    // Propaga o expiresAt real de cada fonte — frontend sincroniza o TTL
+    // Calcula expiresAt global = menor entre os três
     $expiresTs = PHP_INT_MAX;
     foreach ([$b3Data, $cryptoData, $ratesData] as $src) {
         if (!empty($src['_meta']['expiresAt'])) {
@@ -876,20 +899,24 @@ if ($method === 'GET' && $action === 'all') {
             if ($ts !== false && $ts < $expiresTs) $expiresTs = $ts;
         }
     }
-    if ($expiresTs === PHP_INT_MAX) $expiresTs = time() + 3 * 60;
+    if ($expiresTs === PHP_INT_MAX) $expiresTs = time() + 5 * 60;
+
+    $b3Ok     = !empty($b3Data['results']);
+    $cryptoOk = !empty($cryptoData['coins']);
+    $ratesOk  = isset($ratesData['USDBRL']);
 
     echo json_encode([
-        'b3'     => $b3Data     ?? ['results' => [], '_meta' => ['error' => 'indisponível']],
-        'crypto' => $cryptoData ?? ['coins'   => [], '_meta' => ['error' => 'indisponível']],
-        'rates'  => $ratesData  ?? ['_meta'   => ['error' => 'indisponível']],
+        'b3'     => $b3Data     ?? ['results' => [], '_meta' => ['error' => 'sem dados — aguarde o cron']],
+        'crypto' => $cryptoData ?? ['coins'   => [], '_meta' => ['error' => 'sem dados — aguarde o cron']],
+        'rates'  => $ratesData  ?? ['_meta'   => ['error' => 'sem dados — aguarde o cron']],
         '_meta'  => [
             'action'     => 'all',
-            'from_cache' => !$fetchedFresh,
+            'from_cache' => true,
             'updatedAt'  => date('c'),
             'expiresAt'  => date('c', $expiresTs),
-            'b3_ok'      => !empty($b3Data['results']),
-            'crypto_ok'  => !empty($cryptoData['coins']),
-            'rates_ok'   => isset($ratesData['USDBRL']),
+            'b3_ok'      => $b3Ok,
+            'crypto_ok'  => $cryptoOk,
+            'rates_ok'   => $ratesOk,
         ],
     ]);
     exit;
@@ -1007,6 +1034,12 @@ if ($method === 'GET' && $action === 'history_multi') {
 // URL: https://viciocode.com/api.php?action=cron_refresh&secret=VC_CRON_2026
 // Cada execução: rates + crypto + b3 = 3 chamadas às APIs externas / 5 min
 // Rates: fawazahmed (sem limite) | Crypto: CoinGecko (~30/min) | B3: brapi.dev (15k/mês)
+// ─── GET: cron_refresh — ÚNICO ponto de entrada para APIs externas ─────────────
+// Configure no Hostinger hPanel → Cron Jobs → */5 * * * *
+// URL: https://viciocode.com/api.php?action=cron_refresh&secret=VC_CRON_2026
+// Este endpoint é o ÚNICO que chama APIs externas. Usuários NUNCA chamam APIs.
+// Fluxo: cron → api.php?action=cron_refresh → brapi/CoinGecko/fawazahmed → MySQL
+// Usuário → api.php?action=all → MySQL (só leitura, zero APIs externas)
 if ($method === 'GET' && $action === 'cron_refresh') {
     $CRON_SECRET = 'VC_CRON_2026';
     if (file_exists(__DIR__ . '/.env.php')) { include __DIR__ . '/.env.php'; }
@@ -1014,37 +1047,278 @@ if ($method === 'GET' && $action === 'cron_refresh') {
         http_response_code(403); echo json_encode(['error' => 'Acesso negado']); exit;
     }
 
+    $t0 = microtime(true);
+    $db = getPdo();
     $results = [];
-    $t0      = microtime(true);
-    $baseUrl = 'http://127.0.0.1/api.php';
 
-    // Para cada widget: invalida o cache no banco, depois chama o endpoint para repopular
-    foreach (['rates', 'crypto', 'b3'] as $w) {
-        $db = getPdo();
-        if ($db) {
-            try { $db->prepare("UPDATE widget_cache SET fetch_date='2000-01-01' WHERE widget=:w")->execute([':w' => $w]); }
-            catch (Exception $e) {}
+    // ── 1. RATES (câmbio + metais via fawazahmed) ──────────────────────────
+    $ratesResult = [];
+    $brl = [];
+    $rawFw = httpGet('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/brl.min.json', 8);
+    if ($rawFw) {
+        $dataFw = json_decode($rawFw, true);
+        $brl = $dataFw['brl'] ?? [];
+        $toRate = function($key) use ($brl): ?array {
+            $rate = $brl[$key] ?? null;
+            if (!$rate || $rate <= 0) return null;
+            $bid = round(1 / $rate, 6);
+            return ['bid' => (string)$bid, 'pctChange' => '0.00', 'high' => (string)$bid, 'low' => (string)$bid];
+        };
+        if ($r = $toRate('usd')) $ratesResult['USDBRL'] = $r;
+        if ($r = $toRate('eur')) $ratesResult['EURBRL'] = $r;
+        if ($r = $toRate('ars')) $ratesResult['ARSBRL'] = $r;
+        if ($r = $toRate('pyg')) $ratesResult['PYGBRL'] = $r;
+        if ($r = $toRate('xau')) $ratesResult['XAUBRL'] = $r;
+        if ($r = $toRate('xag')) $ratesResult['XAGBRL'] = $r;
+    }
+    // pctChange via fawazahmed histórico
+    if (!empty($brl)) {
+        $yesterday = date('Y-m-d', strtotime('-1 day'));
+        $rawYest = httpGet("https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@{$yesterday}/v1/currencies/brl.min.json", 6);
+        if ($rawYest) {
+            $brlYest = json_decode($rawYest, true)['brl'] ?? [];
+            foreach (['usd'=>'USDBRL','eur'=>'EURBRL','ars'=>'ARSBRL','pyg'=>'PYGBRL','xau'=>'XAUBRL','xag'=>'XAGBRL'] as $cur => $key) {
+                if (!isset($ratesResult[$key], $brl[$cur], $brlYest[$cur])) continue;
+                $todayBrl = $brl[$cur] > 0 ? 1/$brl[$cur] : 0;
+                $yesterdayBrl = $brlYest[$cur] > 0 ? 1/$brlYest[$cur] : 0;
+                if ($yesterdayBrl > 0) {
+                    $pct = round((($todayBrl - $yesterdayBrl) / $yesterdayBrl) * 100, 2);
+                    $spread = $todayBrl * 0.003;
+                    $ratesResult[$key]['pctChange'] = (string)$pct;
+                    $ratesResult[$key]['high'] = (string)round($todayBrl + $spread, 6);
+                    $ratesResult[$key]['low']  = (string)round($todayBrl - $spread, 6);
+                }
+            }
         }
-        $raw     = httpGet("$baseUrl?action=$w", 12);
-        $decoded = $raw ? json_decode($raw, true) : null;
-        $results[$w] = [
-            'ok'     => !empty($decoded) && empty($decoded['error']),
-            'source' => $decoded['_meta']['source'] ?? ($decoded['_meta']['from_cache'] ? 'cache' : 'unknown'),
-            'ms'     => round((microtime(true) - $t0) * 1000),
-        ];
-        usleep(600000); // 600ms entre chamadas — respeita rate limits
+    }
+    if (!empty($ratesResult)) {
+        $TTL_RATES = 5 * 60;
+        $ratesResult['_meta'] = ['source' => 'fawazahmed', 'from_cache' => false, 'updatedAt' => date('c'), 'expiresAt' => date('c', time() + $TTL_RATES)];
+        if ($db) {
+            dbCacheSave($db, 'rates', $ratesResult);
+            $TROY = 31.1035;
+            $histC = []; $histM = [];
+            foreach (['USDBRL'=>'USD','EURBRL'=>'EUR','ARSBRL'=>'ARS','PYGBRL'=>'PYG'] as $k=>$c)
+                if (isset($ratesResult[$k]['bid'])) $histC[$c] = (float)$ratesResult[$k]['bid'];
+            if (isset($ratesResult['XAUBRL']['bid'])) $histM['XAU'] = round((float)$ratesResult['XAUBRL']['bid'] / $TROY, 4);
+            if (isset($ratesResult['XAGBRL']['bid'])) $histM['XAG'] = round((float)$ratesResult['XAGBRL']['bid'] / $TROY, 4);
+            if (!empty($histC)) saveHistorySnapshots($db, 'currency', $histC);
+            if (!empty($histM)) saveHistorySnapshots($db, 'metal', $histM);
+        }
+        @file_put_contents(cacheDir() . '/viciocode_rates_v2.json', json_encode($ratesResult));
+        $results['rates'] = ['ok' => true, 'source' => 'fawazahmed', 'ms' => round((microtime(true) - $t0) * 1000)];
+    } else {
+        $results['rates'] = ['ok' => false, 'source' => 'none', 'ms' => round((microtime(true) - $t0) * 1000)];
+    }
+    usleep(500000);
+
+    // ── 2. CRYPTO (CoinGecko) ─────────────────────────────────────────────
+    $TTL_CRYPTO = 5 * 60;
+    $rawCg = httpGet('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=8&page=1&sparkline=false', 10);
+    if (!$rawCg) $rawCg = httpGet('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,binancecoin,cardano,ripple,chainlink,polkadot&vs_currencies=brl&include_24hr_change=true', 8);
+    $cgData = $rawCg ? json_decode($rawCg, true) : null;
+    if (!empty($cgData) && is_array($cgData) && count($cgData) > 0) {
+        $cryptoResult = ['coins' => $cgData, '_meta' => ['source' => 'coingecko', 'from_cache' => false, 'updatedAt' => date('c'), 'expiresAt' => date('c', time() + $TTL_CRYPTO)]];
+        if ($db) {
+            dbCacheSave($db, 'crypto', $cryptoResult);
+            $histCrypto = [];
+            foreach ($cgData as $coin) {
+                if (isset($coin['id'], $coin['current_price']) && $coin['current_price'] > 0) {
+                    $sym = strtoupper($coin['symbol'] ?? $coin['id']);
+                    $histCrypto[$sym] = (float)$coin['current_price'];
+                }
+            }
+            if (!empty($histCrypto)) saveHistorySnapshots($db, 'crypto', $histCrypto);
+        }
+        @file_put_contents(cacheDir() . '/viciocode_crypto.json', json_encode($cryptoResult));
+        $results['crypto'] = ['ok' => true, 'source' => 'coingecko', 'coins' => count($cgData), 'ms' => round((microtime(true) - $t0) * 1000)];
+    } else {
+        $results['crypto'] = ['ok' => false, 'source' => 'none', 'ms' => round((microtime(true) - $t0) * 1000)];
+    }
+    usleep(500000);
+
+    // ── 3. B3 (brapi.dev + Yahoo Finance fallback) ────────────────────────
+    $hourBRT = (int)date('G', time() - 3 * 3600);
+    $dayBRT  = (int)date('N', time() - 3 * 3600);
+    $isMarketOpen = ($dayBRT >= 1 && $dayBRT <= 5 && $hourBRT >= 9 && $hourBRT < 18);
+    $TTL_B3 = $isMarketOpen ? 5 * 60 : 30 * 60;
+
+    $tickers = !empty($BRAPI_TOKEN) ? 'PETR4,VALE3,ITUB4,BBDC4,ABEV3,WEGE3,BBAS3,RENT3,MGLU3,SUZB3' : 'PETR4,VALE3,ITUB4,BBDC4,ABEV3,WEGE3,BBAS3,MGLU3';
+    $brapiUrl = "https://brapi.dev/api/quote/{$tickers}?fundamental=false";
+    $brapiHeaders = !empty($BRAPI_TOKEN) ? ["Authorization: Bearer {$BRAPI_TOKEN}", 'Accept: application/json'] : ['Accept: application/json'];
+    $brapiRaw = null;
+    if (function_exists('curl_init')) {
+        $ch = curl_init($brapiUrl);
+        curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER=>true, CURLOPT_TIMEOUT=>12, CURLOPT_FOLLOWLOCATION=>true, CURLOPT_SSL_VERIFYPEER=>true, CURLOPT_USERAGENT=>'VicioCode/1.0', CURLOPT_HTTPHEADER=>$brapiHeaders]);
+        $brapiRaw = curl_exec($ch); curl_close($ch);
+    } elseif (ini_get('allow_url_fopen')) {
+        $ctx = stream_context_create(['http' => ['timeout'=>12, 'ignore_errors'=>true, 'header'=>implode("
+", $brapiHeaders)."
+"]]);
+        $brapiRaw = @file_get_contents($brapiUrl, false, $ctx);
+    }
+    $brapiData = $brapiRaw ? json_decode($brapiRaw, true) : null;
+
+    if (!empty($brapiData['results']) && count($brapiData['results']) > 0) {
+        $b3Result = ['results' => $brapiData['results'], '_meta' => ['source' => 'brapi', 'withToken' => !empty($BRAPI_TOKEN), 'from_cache' => false, 'updatedAt' => date('c'), 'expiresAt' => date('c', time() + $TTL_B3)]];
+        if ($db) {
+            dbCacheSave($db, 'b3', $b3Result);
+            $histB3 = [];
+            foreach ($brapiData['results'] as $s) if (isset($s['symbol'], $s['regularMarketPrice']) && $s['regularMarketPrice'] > 0) $histB3[$s['symbol']] = (float)$s['regularMarketPrice'];
+            if (!empty($histB3)) saveHistorySnapshots($db, 'b3', $histB3);
+        }
+        @file_put_contents(cacheDir() . '/viciocode_b3_v2.json', json_encode($b3Result));
+        $results['b3'] = ['ok' => true, 'source' => 'brapi', 'tickers' => count($brapiData['results']), 'ms' => round((microtime(true) - $t0) * 1000)];
+    } else {
+        // Fallback: Yahoo Finance (gratuito, sem token)
+        $yfTickers = ['PETR4.SA','VALE3.SA','ITUB4.SA','BBDC4.SA','ABEV3.SA','WEGE3.SA','BBAS3.SA','MGLU3.SA'];
+        $yfResults = [];
+        foreach ($yfTickers as $ticker) {
+            $yfRaw = httpGet("https://query1.finance.yahoo.com/v8/finance/chart/{$ticker}?interval=1d&range=1d", 6, ['User-Agent: Mozilla/5.0 (compatible; VicioCode/1.0)']);
+            if ($yfRaw) {
+                $yfData = json_decode($yfRaw, true);
+                $meta = $yfData['chart']['result'][0]['meta'] ?? null;
+                if ($meta && isset($meta['regularMarketPrice'])) {
+                    $prev = $meta['chartPreviousClose'] ?? $meta['regularMarketPrice'];
+                    $price = $meta['regularMarketPrice'];
+                    $pct = $prev > 0 ? round((($price - $prev) / $prev) * 100, 2) : 0;
+                    $yfResults[] = ['symbol' => str_replace('.SA', '', $ticker), 'shortName' => $meta['shortName'] ?? str_replace('.SA', '', $ticker), 'regularMarketPrice' => $price, 'regularMarketChangePercent' => $pct];
+                }
+            }
+            usleep(200000);
+        }
+        if (!empty($yfResults)) {
+            $b3Result = ['results' => $yfResults, '_meta' => ['source' => 'yahoo', 'from_cache' => false, 'updatedAt' => date('c'), 'expiresAt' => date('c', time() + $TTL_B3)]];
+            if ($db) {
+                dbCacheSave($db, 'b3', $b3Result);
+                $histB3 = [];
+                foreach ($yfResults as $s) if (isset($s['symbol'], $s['regularMarketPrice']) && $s['regularMarketPrice'] > 0) $histB3[$s['symbol']] = (float)$s['regularMarketPrice'];
+                if (!empty($histB3)) saveHistorySnapshots($db, 'b3', $histB3);
+            }
+            @file_put_contents(cacheDir() . '/viciocode_b3_v2.json', json_encode($b3Result));
+            $results['b3'] = ['ok' => true, 'source' => 'yahoo', 'tickers' => count($yfResults), 'ms' => round((microtime(true) - $t0) * 1000)];
+        } else {
+            $results['b3'] = ['ok' => false, 'source' => 'none', 'brapi_preview' => $brapiRaw ? substr($brapiRaw, 0, 200) : null, 'ms' => round((microtime(true) - $t0) * 1000)];
+        }
     }
 
     echo json_encode([
-        'action'     => 'cron_refresh',
-        'timestamp'  => date('c'),
+        'action'      => 'cron_refresh',
+        'timestamp'   => date('c'),
+        'elapsed_ms'  => round((microtime(true) - $t0) * 1000),
+        'market_open' => $isMarketOpen,
+        'results'     => $results,
+    ], JSON_PRETTY_PRINT);
+    exit;
+}
+
+// ─── GET: todos os ativos com histórico disponível ──────────────────────────
+// ─── GET: bootstrap histórico — preenche o BD com 90 dias de histórico ─────────
+// Execute UMA VEZ via navegador após configurar o cron:
+// https://viciocode.com/api.php?action=history_bootstrap&secret=VC_CRON_2026
+// Busca 90 dias de cripto (CoinGecko) e 90 dias de câmbio (fawazahmed histórico)
+// Após isso, o cron acumula 1 ponto por dia automaticamente
+if ($method === 'GET' && $action === 'history_bootstrap') {
+    $CRON_SECRET = 'VC_CRON_2026';
+    if (file_exists(__DIR__ . '/.env.php')) { include __DIR__ . '/.env.php'; }
+    if (($_GET['secret'] ?? '') !== $CRON_SECRET) {
+        http_response_code(403); echo json_encode(['error' => 'Acesso negado']); exit;
+    }
+
+    $db = getPdo();
+    if (!$db) { http_response_code(503); echo json_encode(['error' => 'Banco indisponível']); exit; }
+
+    $t0 = microtime(true);
+    $results = [];
+    $days = 90;
+
+    // ── Cripto: 8 moedas × 90 dias via CoinGecko (server-side) ──────────
+    $cryptoCoins = [
+        'bitcoin'=>'BTC','ethereum'=>'ETH','solana'=>'SOL','binancecoin'=>'BNB',
+        'cardano'=>'ADA','ripple'=>'XRP','chainlink'=>'LINK','polkadot'=>'DOT',
+    ];
+    $cryptoResults = [];
+    foreach ($cryptoCoins as $coinId => $sym) {
+        // Verifica se já tem dados suficientes no BD
+        $stmt = $db->prepare('SELECT COUNT(*) FROM price_history WHERE asset_type="crypto" AND asset_code=:code AND price_date >= DATE_SUB(CURDATE(), INTERVAL :days DAY)');
+        $stmt->execute([':code' => $sym, ':days' => $days]);
+        $existing = (int)$stmt->fetchColumn();
+        if ($existing >= 80) {
+            $cryptoResults[$coinId] = ['skipped' => true, 'existing' => $existing];
+            continue;
+        }
+
+        $cgUrl = "https://api.coingecko.com/api/v3/coins/{$coinId}/market_chart?vs_currency=brl&days={$days}&interval=daily";
+        $raw = httpGet($cgUrl, 15);
+        if (!$raw) { $cryptoResults[$coinId] = ['error' => 'CoinGecko failed']; usleep(2000000); continue; }
+
+        $cgData = json_decode($raw, true);
+        if (empty($cgData['prices'])) { $cryptoResults[$coinId] = ['error' => 'no prices']; usleep(2000000); continue; }
+
+        $byDate = [];
+        foreach ($cgData['prices'] as [$ts, $price]) {
+            $d = date('Y-m-d', (int)($ts / 1000));
+            $byDate[$d] = round((float)$price, $price >= 1 ? 2 : 6);
+        }
+        ksort($byDate);
+
+        $ins = $db->prepare('INSERT INTO price_history (asset_type, asset_code, price, price_date) VALUES ("crypto", :code, :price, :date) ON DUPLICATE KEY UPDATE price = VALUES(price)');
+        foreach ($byDate as $d => $p) $ins->execute([':code' => $sym, ':price' => $p, ':date' => $d]);
+        $cryptoResults[$coinId] = ['saved' => count($byDate)];
+        usleep(2500000); // 2.5s entre moedas (CoinGecko: ~24 req/min)
+    }
+    $results['crypto'] = $cryptoResults;
+
+    // ── Câmbio: 90 dias via fawazahmed histórico (diário) ────────────────
+    $pairMap = ['usd'=>'USD','eur'=>'EUR','ars'=>'ARS','pyg'=>'PYG'];
+    $currencyData = []; // date → {cur: bid}
+    $today = new DateTime();
+    for ($i = 0; $i < $days; $i++) {
+        $d = clone $today;
+        $d->modify("-{$i} days");
+        $dateStr = $d->format('Y-m-d');
+
+        // Verifica se já tem dados para esta data
+        $stmt = $db->prepare('SELECT COUNT(*) FROM price_history WHERE asset_type="currency" AND price_date=:d');
+        $stmt->execute([':d' => $dateStr]);
+        if ((int)$stmt->fetchColumn() >= count($pairMap)) continue; // já tem todos
+
+        $rawFw = httpGet("https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@{$dateStr}/v1/currencies/brl.min.json", 8);
+        if (!$rawFw) continue;
+        $brlData = json_decode($rawFw, true)['brl'] ?? [];
+        if (empty($brlData)) continue;
+
+        $ins = $db->prepare('INSERT INTO price_history (asset_type, asset_code, price, price_date) VALUES (:type, :code, :price, :date) ON DUPLICATE KEY UPDATE price = VALUES(price)');
+        foreach ($pairMap as $cur => $sym) {
+            $rate = $brlData[$cur] ?? null;
+            if ($rate && $rate > 0) $ins->execute([':type' => 'currency', ':code' => $sym, ':price' => round(1/$rate, 6), ':date' => $dateStr]);
+        }
+        // Metais
+        $TROY = 31.1035;
+        if (!empty($brlData['xau'])) $ins->execute([':type' => 'metal', ':code' => 'XAU', ':price' => round(1/$brlData['xau']/$TROY, 4), ':date' => $dateStr]);
+        if (!empty($brlData['xag'])) $ins->execute([':type' => 'metal', ':code' => 'XAG', ':price' => round(1/$brlData['xag']/$TROY, 4), ':date' => $dateStr]);
+
+        usleep(200000); // 200ms entre datas
+    }
+
+    // Conta o que foi salvo
+    foreach (['currency'=>['USD','EUR','ARS','PYG'], 'metal'=>['XAU','XAG']] as $type => $codes) {
+        foreach ($codes as $code) {
+            $stmt = $db->prepare('SELECT COUNT(*) FROM price_history WHERE asset_type=:t AND asset_code=:c AND price_date >= DATE_SUB(CURDATE(), INTERVAL :d DAY)');
+            $stmt->execute([':t' => $type, ':c' => $code, ':d' => $days]);
+            $results[$type][$code] = ['points' => (int)$stmt->fetchColumn()];
+        }
+    }
+
+    echo json_encode([
+        'action'     => 'history_bootstrap',
+        'days'       => $days,
         'elapsed_ms' => round((microtime(true) - $t0) * 1000),
         'results'    => $results,
     ], JSON_PRETTY_PRINT);
     exit;
 }
 
-// ─── GET: todos os ativos com histórico disponível ──────────────────────────
 if ($method === 'GET' && $action === 'history_assets') {
     $db = getPdo();
     if (!$db) {

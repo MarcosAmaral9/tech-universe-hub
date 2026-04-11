@@ -1,9 +1,13 @@
 /**
  * useMarketData — hook centralizado de cotações
  *
- * Uma única chamada a /api.php?action=all serve B3 + crypto + rates.
- * Singleton de módulo: todos os componentes compartilham o mesmo dado.
- * TTL sincronizado com o expiresAt retornado pelo servidor (dinâmico).
+ * ARQUITETURA:
+ * - Dados são buscados das APIs externas EXCLUSIVAMENTE pelo cron job do servidor
+ *   (api.php?action=cron_refresh, a cada 5 min via Hostinger Cron Jobs)
+ * - Usuários NUNCA disparam chamadas a APIs externas
+ * - O frontend lê apenas /api.php?action=all → MySQL (cache puro)
+ * - TTL sincronizado com o expiresAt retornado pelo servidor
+ * - Singleton: todos os componentes compartilham o mesmo dado
  */
 
 import { useState, useEffect, useCallback } from "react";
@@ -67,12 +71,15 @@ export interface UseMarketDataReturn {
 }
 
 // ── Singleton ─────────────────────────────────────────────────────────────────
-const FALLBACK_TTL_MS = 3 * 60 * 1000;
+// Intervalo de polling do frontend: lê o cache do servidor periodicamente.
+// NÃO aciona APIs externas — apenas lê o MySQL através do action=all.
+const POLL_INTERVAL_MS = 5 * 60 * 1000; // 5 min — alinhado com o cron job
+
 let _cached:    MarketData | null = null;
 let _cachedAt:  number = 0;
 let _expiresAt: number = 0;
 let _promise:   Promise<MarketData | null> | null = null;
-let _refreshTimer: ReturnType<typeof setTimeout> | null = null;
+let _pollTimer: ReturnType<typeof setInterval> | null = null;
 
 const _listeners = new Set<() => void>();
 const _notify = () => _listeners.forEach(fn => fn());
@@ -109,40 +116,34 @@ const FALLBACK: MarketData = {
     XAUBRL: { bid:"26655",   pctChange:"0.45",  high:"26900",   low:"26400"   },
     XAGBRL: { bid:"422.39",  pctChange:"-0.30", high:"426.00",  low:"418.00"  },
   },
-  meta: { updatedAt:"", expiresAt:"", fromCache:false, b3Ok:false, cryptoOk:false, ratesOk:false },
+  meta: { updatedAt:"", expiresAt:"", fromCache:true, b3Ok:false, cryptoOk:false, ratesOk:false },
 };
 
-// ── Schedula o próximo refresh baseado no expiresAt do servidor ───────────────
-function scheduleNextRefresh() {
-  if (_refreshTimer) clearTimeout(_refreshTimer);
-  const delay = _expiresAt > Date.now()
-    ? (_expiresAt - Date.now() + 5000) // 5s de margem após expirar
-    : FALLBACK_TTL_MS;
-  _refreshTimer = setTimeout(() => {
-    fetchMarketData(true);
-  }, Math.max(delay, 30_000)); // mínimo 30s para evitar loops
-}
-
-// ── Fetch único com singleton e deduplicação ──────────────────────────────────
-async function fetchMarketData(force = false): Promise<MarketData | null> {
+// ── Lê cache do servidor (action=all → MySQL, sem APIs externas) ──────────────
+async function readServerCache(force = false): Promise<MarketData | null> {
   const now = Date.now();
-  const fresh = _expiresAt > 0 ? now < _expiresAt : (_cached && now - _cachedAt < FALLBACK_TTL_MS);
-  if (!force && fresh && _cached) return _cached;
+
+  // Não re-busca se o cache local ainda está dentro do expiresAt do servidor
+  const cacheValid = _expiresAt > 0 ? now < _expiresAt : (_cached && now - _cachedAt < POLL_INTERVAL_MS);
+  if (!force && cacheValid && _cached) return _cached;
+
+  // Deduplicação: se já há um fetch em voo, aguarda
   if (_promise) return _promise;
 
   _promise = (async () => {
     try {
       const res = await fetch("/api.php?action=all", {
         cache: "no-store",
-        signal: AbortSignal.timeout(10_000),
+        signal: AbortSignal.timeout(8000),
       });
       if (!res.ok) throw new Error("HTTP " + res.status);
       const json = await res.json();
       if (json.error) throw new Error(json.error);
 
+      // Usa o expiresAt do servidor para saber quando o dado vai expirar
       const serverExpiresAt = json._meta?.expiresAt
         ? new Date(json._meta.expiresAt).getTime()
-        : Date.now() + FALLBACK_TTL_MS;
+        : Date.now() + POLL_INTERVAL_MS;
 
       const data: MarketData = {
         b3:     json.b3?.results  ?? [],
@@ -151,7 +152,7 @@ async function fetchMarketData(force = false): Promise<MarketData | null> {
         meta: {
           updatedAt: json._meta?.updatedAt ?? new Date().toISOString(),
           expiresAt: json._meta?.expiresAt ?? new Date(serverExpiresAt).toISOString(),
-          fromCache: json._meta?.from_cache ?? false,
+          fromCache: json._meta?.from_cache ?? true,
           b3Ok:      json._meta?.b3_ok     ?? false,
           cryptoOk:  json._meta?.crypto_ok ?? false,
           ratesOk:   json._meta?.rates_ok  ?? false,
@@ -163,13 +164,9 @@ async function fetchMarketData(force = false): Promise<MarketData | null> {
       _expiresAt = serverExpiresAt;
       _promise   = null;
       _notify();
-      scheduleNextRefresh();
       return data;
     } catch {
       _promise = null;
-      // Retry in 30s on failure
-      if (_refreshTimer) clearTimeout(_refreshTimer);
-      _refreshTimer = setTimeout(() => fetchMarketData(true), 30_000);
       return null;
     }
   })();
@@ -177,14 +174,20 @@ async function fetchMarketData(force = false): Promise<MarketData | null> {
   return _promise;
 }
 
-// Pré-carrega imediatamente quando o módulo é importado
-fetchMarketData();
+// ── Poll global — lê o cache do servidor a cada 5 min ────────────────────────
+// Iniciado uma única vez, compartilhado entre todos os componentes.
+function ensurePollStarted() {
+  if (_pollTimer) return;
+  _pollTimer = setInterval(() => {
+    readServerCache(true);
+  }, POLL_INTERVAL_MS);
+}
 
-// Re-busca quando aba volta ao foco, se expirado
+// Re-lê quando aba volta ao foco (usuário pode ter ficado muito tempo ausente)
 if (typeof document !== "undefined") {
   document.addEventListener("visibilitychange", () => {
-    if (!document.hidden && _expiresAt < Date.now()) {
-      fetchMarketData(true);
+    if (!document.hidden) {
+      readServerCache(false); // só re-lê se expirado
     }
   });
 }
@@ -198,20 +201,27 @@ export function useMarketData(): UseMarketDataReturn {
     const listener = () => setTick(t => t + 1);
     _listeners.add(listener);
 
-    // Se os dados já chegaram antes do mount, sai do loading
-    if (_cached) setLoading(false);
-    else fetchMarketData().then(() => setLoading(false));
+    // Leitura inicial do cache do servidor
+    if (_cached) {
+      setLoading(false);
+    } else {
+      readServerCache().then(() => setLoading(false));
+    }
+
+    // Garante que o poll global está rodando
+    ensurePollStarted();
 
     return () => { _listeners.delete(listener); };
   }, []);
 
+  // Refresh manual (botão Atualizar) — relê o cache sem forçar API externa
   const refresh = useCallback(() => {
     setLoading(true);
-    fetchMarketData(true).then(() => setLoading(false));
+    readServerCache(true).then(() => setLoading(false));
   }, []);
 
-  const isFallback = !_cached ||
-    (!_cached.meta.b3Ok && !_cached.meta.cryptoOk && !_cached.meta.ratesOk);
+  const hasAnyData = _cached && (_cached.meta.b3Ok || _cached.meta.cryptoOk || _cached.meta.ratesOk);
+  const isFallback = !hasAnyData;
 
   const lastUpdated = _cached?.meta.updatedAt
     ? new Date(_cached.meta.updatedAt).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })
@@ -220,11 +230,11 @@ export function useMarketData(): UseMarketDataReturn {
   void tick;
 
   return {
-    data:        _cached,
+    data:        _cached ?? (isFallback ? FALLBACK : null),
     loading:     loading && !_cached,
     isFallback,
     lastUpdated,
-    expiresAt:   _expiresAt || Date.now() + FALLBACK_TTL_MS,
+    expiresAt:   _expiresAt || Date.now() + POLL_INTERVAL_MS,
     refresh,
   };
 }

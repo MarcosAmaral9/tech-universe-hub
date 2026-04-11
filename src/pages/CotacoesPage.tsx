@@ -47,9 +47,8 @@ const CotacoesPage = () => {
   return (
     <>
       <DynamicSEO />
-      <div className="container py-8">
-      {/* Hero Banner */}
-      <div className="relative rounded-2xl overflow-hidden mb-8" style={{aspectRatio:"21/9", maxHeight:"320px"}}>
+      {/* Hero Banner — full-width, outside container */}
+      <div className="relative w-full overflow-hidden" style={{height:"min(56vw, 380px)", minHeight:"200px"}}>
         <img
           fetchpriority="high"
           src={heroCotacoes}
@@ -58,38 +57,37 @@ const CotacoesPage = () => {
           decoding="async"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent flex items-end md:items-center p-6 md:p-10">
-          <div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/10 flex items-end md:items-center px-6 md:px-16 pb-8 md:pb-0">
+          <div className="max-w-2xl">
             <span className="text-invest font-bold text-xs uppercase tracking-widest mb-2 block">Finanças • Mercado ao Vivo</span>
-            <h1 className="font-display text-2xl sm:text-3xl md:text-5xl font-bold text-white leading-tight">
+            <h1 className="font-display text-2xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
               <span className="text-invest">Cotações</span> em Tempo Real
             </h1>
             <p className="text-white/70 text-sm mt-2 max-w-md hidden sm:block">
-              B3, Criptomoedas, Câmbio e Metais — dados atualizados automaticamente pelo servidor
+              B3, Criptomoedas, Câmbio e Metais — atualizados pelo servidor a cada 5 minutos
             </p>
-            <Link to="/historico-cotacoes" className="inline-block mt-4">
-              <Button
-                variant="default"
-                size="lg"
-                className="gap-2 bg-invest hover:bg-invest/90 text-white font-bold shadow-xl shadow-invest/40 text-sm md:text-base px-5 md:px-6"
-              >
-                <History className="h-4 w-4 md:h-5 md:w-5" />
-                Ver Histórico de Cotações
-              </Button>
-            </Link>
+            <div className="flex items-center gap-3 mt-4 flex-wrap">
+              <Link to="/historico-cotacoes">
+                <Button
+                  variant="default"
+                  size="lg"
+                  className="gap-2 bg-invest hover:bg-invest/90 text-white font-bold shadow-xl shadow-invest/40 text-sm md:text-base px-5 md:px-6"
+                >
+                  <History className="h-4 w-4 md:h-5 md:w-5" />
+                  Ver Histórico
+                </Button>
+              </Link>
+              <Link to="/financas">
+                <Button variant="ghost" size="sm" className="gap-1.5 text-white/70 hover:text-white hover:bg-white/10">
+                  <ArrowLeft className="h-3.5 w-3.5" />Finanças
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Header */}
-      <div className="mb-6">
-        <Link to="/financas">
-          <Button variant="ghost" className="mb-2 gap-2">
-            <ArrowLeft className="h-4 w-4" />
-            Voltar para Finanças
-          </Button>
-        </Link>
-      </div>
+      <div className="container py-8">
 
       {/* Filters */}
       <div className="flex flex-wrap gap-2 mb-8 sticky top-16 z-30 bg-background/95 backdrop-blur py-3 -mx-4 px-4 border-b border-border">
