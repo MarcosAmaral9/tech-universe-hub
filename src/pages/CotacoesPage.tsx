@@ -49,31 +49,31 @@ const CotacoesPage = () => {
       <DynamicSEO />
       <div className="container py-8">
       {/* Hero Banner */}
-      <div className="relative rounded-2xl overflow-hidden mb-8 h-48 md:h-64">
+      <div className="relative rounded-2xl overflow-hidden mb-8" style={{aspectRatio:"21/9", maxHeight:"320px"}}>
         <img
           fetchpriority="high"
           src={heroCotacoes}
           alt="Cotações em Tempo Real — B3, Bitcoin, Câmbio"
           loading="eager"
           decoding="async"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent flex items-center p-6 md:p-10">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent flex items-end md:items-center p-6 md:p-10">
           <div>
-            <span className="text-invest font-bold text-xs uppercase tracking-widest mb-1 block">Finanças • Mercado</span>
-            <h1 className="font-display text-3xl md:text-5xl font-bold text-white">
+            <span className="text-invest font-bold text-xs uppercase tracking-widest mb-2 block">Finanças • Mercado ao Vivo</span>
+            <h1 className="font-display text-2xl sm:text-3xl md:text-5xl font-bold text-white leading-tight">
               <span className="text-invest">Cotações</span> em Tempo Real
             </h1>
-            <p className="text-white/70 text-sm mt-2 max-w-sm">
-              B3, Criptomoedas, Câmbio e Metais — atualizados automaticamente
+            <p className="text-white/70 text-sm mt-2 max-w-md hidden sm:block">
+              B3, Criptomoedas, Câmbio e Metais — dados atualizados automaticamente pelo servidor
             </p>
             <Link to="/historico-cotacoes" className="inline-block mt-4">
               <Button
                 variant="default"
                 size="lg"
-                className="gap-2 bg-invest hover:bg-invest/90 text-white font-bold shadow-lg shadow-invest/30 text-base px-6"
+                className="gap-2 bg-invest hover:bg-invest/90 text-white font-bold shadow-xl shadow-invest/40 text-sm md:text-base px-5 md:px-6"
               >
-                <History className="h-5 w-5" />
+                <History className="h-4 w-4 md:h-5 md:w-5" />
                 Ver Histórico de Cotações
               </Button>
             </Link>

@@ -155,39 +155,20 @@ async function fetchHistoryFromDB(type: string, code: string, days: number): Pro
   }));
 }
 
-// CoinGecko público — busca com retry e delay para não estourar rate limit (30 req/min)
-async function fetchCryptoHistoryCG(
+// Histórico cripto via servidor (proxy) — não consome rate limit do usuário
+// O servidor: 1° busca BD local → 2° CoinGecko server-side → salva no BD
+async function fetchCryptoHistoryProxy(
   coinId: string,
   days: number,
-  attempt = 0,
 ): Promise<ChartPoint[] | null> {
-  // CoinGecko grátis: max 90 dias com granularidade diária confiável
   const safeDays = Math.min(days, 90);
-  try {
-    const url = `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=brl&days=${safeDays}&interval=daily`;
-    const res = await fetch(url, { signal: AbortSignal.timeout(12000) });
-    if (res.status === 429 && attempt < 2) {
-      await sleep(1500 * (attempt + 1)); // backoff exponencial
-      return fetchCryptoHistoryCG(coinId, days, attempt + 1);
-    }
-    if (!res.ok) return null;
-    const json = await res.json();
-    const prices: [number, number][] = json.prices ?? [];
-    if (prices.length < 3) return null;
-    // Deduplica por data (CoinGecko pode enviar múltiplos pontos por dia)
-    const byDate = new Map<string, number>();
-    prices.forEach(([ts, price]) => {
-      const iso = new Date(ts).toISOString().slice(0, 10);
-      byDate.set(iso, price); // sobrescreve com o mais recente do dia
-    });
-    return Array.from(byDate.entries())
-      .sort(([a], [b]) => a.localeCompare(b))
-      .map(([iso, price]) => ({
-        date: iso,
-        value: parseFloat(price.toFixed(price >= 1 ? 2 : 6)),
-        label: fmtDate(iso),
-      }));
-  } catch { return null; }
+  const json = await safeFetchJson(`/api.php?action=history_crypto_proxy&coin=${coinId}&days=${safeDays}`);
+  if (!json?.points || json.points.length < 3) return null;
+  return json.points.map((p: { date: string; price: number }) => ({
+    date: p.date,
+    value: p.price,
+    label: fmtDate(p.date),
+  }));
 }
 
 // AwesomeAPI — histórico de câmbio
@@ -290,7 +271,7 @@ const HistoricoCotacoesPage = () => {
           unit: "R$/un.", dataSource: "db", data: dbHistory,
         });
       } else {
-        const history = await fetchCryptoHistoryCG(coinId, Math.min(days, 90));
+        const history = await fetchCryptoHistoryProxy(coinId, Math.min(days, 90));
         result.push({
           id: `crypto-${coinId}`, name: info.name, symbol: sym,
           category: "crypto", icon: CRYPTO_ICONS[coinId] ?? "🪙",
@@ -373,7 +354,8 @@ const HistoricoCotacoesPage = () => {
     });
     setLastUpdated(new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }));
     setLoading(false);
-  }, [category, marketData]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [category]);
 
   useEffect(() => {
     loadData(period);
@@ -422,62 +404,55 @@ const HistoricoCotacoesPage = () => {
       <DynamicSEO />
       <div className="container py-8 max-w-7xl">
 
-        {/* Hero Banner */}
-        <div className="relative rounded-2xl overflow-hidden mb-8 h-48 md:h-64">
+        {/* Hero Banner — navegação integrada */}
+        <div className="relative rounded-2xl overflow-hidden mb-8" style={{aspectRatio:"21/9", maxHeight:"300px"}}>
           <img
             fetchpriority="high"
             src={heroHistorico}
             alt="Histórico de Cotações — Bitcoin, Ouro, B3"
             loading="eager"
             decoding="async"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent flex items-center p-6 md:p-10">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/10 flex flex-col justify-between p-5 md:p-8">
+            {/* Top nav dentro do hero */}
+            <div className="flex items-center gap-2 flex-wrap">
+              <Link to="/financas">
+                <Button variant="ghost" size="sm" className="gap-1.5 text-white/80 hover:text-white hover:bg-white/10 font-medium h-8 px-3">
+                  <ArrowLeft className="h-3.5 w-3.5" />Finanças
+                </Button>
+              </Link>
+              <Link to="/cotacoes">
+                <Button variant="ghost" size="sm" className="gap-1.5 text-white/80 hover:text-white hover:bg-white/10 font-medium h-8 px-3">
+                  <BarChart3 className="h-3.5 w-3.5" />Cotações
+                </Button>
+              </Link>
+              <div className="ml-auto flex items-center gap-2">
+                {lastUpdated && (
+                  <span className="hidden sm:flex items-center gap-1.5 text-xs text-white/60">
+                    <Clock className="h-3 w-3" />{lastUpdated}
+                  </span>
+                )}
+                <Button
+                  variant="outline" size="sm"
+                  onClick={() => loadData(period)}
+                  disabled={loading}
+                  className="gap-1.5 border-white/30 text-white hover:bg-white/10 hover:border-white/50 h-8 px-3"
+                >
+                  <RefreshCw className={`h-3.5 w-3.5 ${loading ? "animate-spin" : ""}`} />
+                  <span className="hidden sm:inline">{loading ? "Carregando..." : "Atualizar"}</span>
+                </Button>
+              </div>
+            </div>
+            {/* Título na parte inferior */}
             <div>
-              <span className="text-invest font-bold text-xs uppercase tracking-widest mb-1 block">Finanças • Análise</span>
-              <h1 className="font-display text-3xl md:text-4xl font-bold text-white">
+              <span className="text-invest font-bold text-xs uppercase tracking-widest mb-1 block">Finanças • Análise Histórica</span>
+              <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
                 <span className="text-invest">Histórico</span> de Cotações
               </h1>
-              <p className="text-white/70 text-sm mt-2 max-w-sm">
+              <p className="text-white/70 text-sm mt-1 hidden sm:block">
                 Evolução de preços — B3, Câmbio, Metais e Criptomoedas
               </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Header */}
-        <div className="mb-6">
-          <div className="flex flex-wrap gap-3 mb-5">
-            <Link to="/financas">
-              <Button variant="outline" size="default" className="gap-2 border-invest/30 text-invest hover:bg-invest/10 hover:border-invest/60 font-semibold">
-                <ArrowLeft className="h-4 w-4" />
-                Finanças
-              </Button>
-            </Link>
-            <Link to="/cotacoes">
-              <Button variant="default" size="default" className="gap-2 bg-invest hover:bg-invest/90 text-white font-semibold shadow-md">
-                <BarChart3 className="h-4 w-4" />
-                Cotações Atuais
-              </Button>
-            </Link>
-          </div>
-
-          <div className="flex items-start justify-between flex-wrap gap-4">
-            <div className="flex items-center gap-2">
-              {lastUpdated && (
-                <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                  <Clock className="h-3.5 w-3.5" />{lastUpdated}
-                </span>
-              )}
-              <Button
-                variant="outline" size="sm"
-                onClick={() => loadData(period)}
-                disabled={loading}
-                className="gap-1.5"
-              >
-                <RefreshCw className={`h-3.5 w-3.5 ${loading ? "animate-spin" : ""}`} />
-                {loading ? "Carregando..." : "Atualizar"}
-              </Button>
             </div>
           </div>
         </div>

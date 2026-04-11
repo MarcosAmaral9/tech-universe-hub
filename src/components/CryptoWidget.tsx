@@ -28,12 +28,11 @@ const formatMarketCap = (value: number) => {
 interface CryptoWidgetProps { compact?: boolean }
 
 const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = false }, ref) => {
-  const { data, loading, isFallback, lastUpdated } = useMarketData();
+  const { data, loading, isFallback, lastUpdated, expiresAt } = useMarketData();
   const { user } = useAuthContext();
   const { isFavorite, toggleFavorite } = useFavoriteAssets(user?.id ?? null);
   const cryptos = data?.crypto ?? [];
   const displayCryptos = compact ? cryptos.slice(0, 5) : cryptos;
-  const TTL_MS = 3 * 60 * 1000;
 
   if (loading && cryptos.length === 0) {
     return (
@@ -139,7 +138,7 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
       <CacheStatusBar
         source={isFallback ? "local-static" : "live"}
         isFallback={isFallback}
-        cacheExpiresAt={Date.now() + TTL_MS}
+        cacheExpiresAt={expiresAt}
       />
       <PriceAlertConfig
         storageKey="crypto_price_alerts"

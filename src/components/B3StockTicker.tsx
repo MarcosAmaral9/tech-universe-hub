@@ -12,11 +12,10 @@ const B3_ICONS: Record<string, string> = {
 };
 
 const B3StockTicker = () => {
-  const { data, loading, isFallback, lastUpdated, refresh } = useMarketData();
+  const { data, loading, isFallback, lastUpdated, expiresAt, refresh } = useMarketData();
   const { user } = useAuthContext();
   const { isFavorite, toggleFavorite } = useFavoriteAssets(user?.id ?? null);
   const stocks = data?.b3 ?? [];
-  const TTL_MS = 3 * 60 * 1000;
 
   if (loading && stocks.length === 0) {
     return (
@@ -124,7 +123,7 @@ const B3StockTicker = () => {
       <CacheStatusBar
         source={isFallback ? "local-static" : "live"}
         isFallback={isFallback}
-        cacheExpiresAt={Date.now() + TTL_MS}
+        cacheExpiresAt={expiresAt}
       />
       <PriceAlertConfig
         storageKey="b3_price_alerts"

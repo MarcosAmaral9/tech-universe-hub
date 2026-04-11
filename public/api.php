@@ -610,7 +610,11 @@ if ($method === 'GET' && $action === 'crypto') {
 // TTL: 15 min (B3 atualiza a cada 15min no plano free com token)
 // Limite free: 15.000 req/mês → com TTL 15min = máx 48 req/dia = ~1.440/mês — usa <10%
 if ($method === 'GET' && $action === 'b3') {
-    $TTL_MINUTES = 4; // 4 min → 10.800 req/mês = 72% do limite brapi.dev (15.000)
+    // TTL dinâmico: 5 min durante pregão B3 (09h–18h BRT seg–sex), 30 min fora
+    $hourBRT = (int)date('G', time() - 3 * 3600);
+    $dayBRT  = (int)date('N', time() - 3 * 3600); // 1=seg, 7=dom
+    $isMarketOpen = ($dayBRT >= 1 && $dayBRT <= 5 && $hourBRT >= 9 && $hourBRT < 18);
+    $TTL_MINUTES = $isMarketOpen ? 5 : 30;
 
     // 1. Tenta banco primeiro (cache compartilhado entre todos os usuários)
     if ($db = getPdo()) {
@@ -864,6 +868,16 @@ if ($method === 'GET' && $action === 'all') {
         $fetchedFresh = true;
     }
 
+    // Propaga o expiresAt real de cada fonte — frontend sincroniza o TTL
+    $expiresTs = PHP_INT_MAX;
+    foreach ([$b3Data, $cryptoData, $ratesData] as $src) {
+        if (!empty($src['_meta']['expiresAt'])) {
+            $ts = strtotime($src['_meta']['expiresAt']);
+            if ($ts !== false && $ts < $expiresTs) $expiresTs = $ts;
+        }
+    }
+    if ($expiresTs === PHP_INT_MAX) $expiresTs = time() + 3 * 60;
+
     echo json_encode([
         'b3'     => $b3Data     ?? ['results' => [], '_meta' => ['error' => 'indisponível']],
         'crypto' => $cryptoData ?? ['coins'   => [], '_meta' => ['error' => 'indisponível']],
@@ -872,6 +886,7 @@ if ($method === 'GET' && $action === 'all') {
             'action'     => 'all',
             'from_cache' => !$fetchedFresh,
             'updatedAt'  => date('c'),
+            'expiresAt'  => date('c', $expiresTs),
             'b3_ok'      => !empty($b3Data['results']),
             'crypto_ok'  => !empty($cryptoData['coins']),
             'rates_ok'   => isset($ratesData['USDBRL']),
@@ -883,6 +898,78 @@ if ($method === 'GET' && $action === 'all') {
 // ─── GET: histórico múltiplo — todos os ativos de uma vez ────────────────────
 // /api.php?action=history_multi&days=30
 // Retorna: {"b3":{"PETR4":[{date,price},...]},"crypto":{...},"currency":{...},"metal":{...}}
+// ─── GET: proxy histórico cripto — server-side (evita rate limit no browser) ──
+// /api.php?action=history_crypto_proxy&coin=bitcoin&days=30
+// 1° BD local → 2° CoinGecko via servidor → salva no BD para cache futuro
+if ($method === 'GET' && $action === 'history_crypto_proxy') {
+    $coin = preg_replace('/[^a-z0-9\-]/', '', strtolower($_GET['coin'] ?? ''));
+    $days = min(max((int)($_GET['days'] ?? 30), 1), 90);
+
+    if (!$coin) { http_response_code(400); echo json_encode(['error' => 'coin obrigatório']); exit; }
+
+    $symbolMap = [
+        'bitcoin'=>'BTC','ethereum'=>'ETH','solana'=>'SOL','binancecoin'=>'BNB',
+        'cardano'=>'ADA','ripple'=>'XRP','chainlink'=>'LINK','polkadot'=>'DOT',
+    ];
+    $sym = $symbolMap[$coin] ?? strtoupper(substr($coin, 0, 6));
+
+    // 1. Banco de dados (cache local)
+    $db = getPdo();
+    if ($db) {
+        $stmt = $db->prepare(
+            'SELECT price_date, price FROM price_history
+             WHERE asset_type = "crypto" AND asset_code = :code
+               AND price_date >= DATE_SUB(CURDATE(), INTERVAL :days DAY)
+             ORDER BY price_date ASC'
+        );
+        $stmt->execute([':code' => $sym, ':days' => $days]);
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if (count($rows) >= 3) {
+            echo json_encode([
+                'coin' => $coin, 'symbol' => $sym, 'days' => $days, 'source' => 'db',
+                'points' => array_map(fn($r) => ['date' => $r['price_date'], 'price' => (float)$r['price']], $rows),
+            ]);
+            exit;
+        }
+    }
+
+    // 2. CoinGecko via servidor (não consome rate limit do usuário)
+    $cgUrl = "https://api.coingecko.com/api/v3/coins/{$coin}/market_chart?vs_currency=brl&days={$days}&interval=daily";
+    $raw   = httpGet($cgUrl, 12);
+    if (!$raw) { http_response_code(503); echo json_encode(['error' => 'CoinGecko indisponível']); exit; }
+
+    $cgData = json_decode($raw, true);
+    if (empty($cgData['prices'])) { http_response_code(503); echo json_encode(['error' => 'Sem dados']); exit; }
+
+    // Deduplica por data
+    $byDate = [];
+    foreach ($cgData['prices'] as [$ts, $price]) {
+        $d = date('Y-m-d', (int)($ts / 1000));
+        $byDate[$d] = round((float)$price, $price >= 1 ? 2 : 6);
+    }
+    ksort($byDate);
+
+    // Salva no BD para reduzir futuras chamadas ao CoinGecko
+    if ($db && !empty($byDate)) {
+        try {
+            $ins = $db->prepare(
+                'INSERT INTO price_history (asset_type, asset_code, price, price_date)
+                 VALUES ("crypto", :code, :price, :date)
+                 ON DUPLICATE KEY UPDATE price = VALUES(price)'
+            );
+            foreach ($byDate as $d => $p) {
+                $ins->execute([':code' => $sym, ':price' => $p, ':date' => $d]);
+            }
+        } catch (Exception $e) { /* falha silenciosa */ }
+    }
+
+    echo json_encode([
+        'coin' => $coin, 'symbol' => $sym, 'days' => $days, 'source' => 'coingecko',
+        'points' => array_map(fn($d, $p) => ['date' => $d, 'price' => $p], array_keys($byDate), array_values($byDate)),
+    ]);
+    exit;
+}
+
 if ($method === 'GET' && $action === 'history_multi') {
     $days = min(max((int)($_GET['days'] ?? 30), 1), 400);
     $db   = getPdo();
