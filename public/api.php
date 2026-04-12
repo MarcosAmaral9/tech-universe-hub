@@ -705,7 +705,7 @@ if ($method === 'GET' && $action === 'cron_refresh') {
         }
     }
     if (!empty($ratesResult)) {
-        $TTL_RATES = 5 * 60;
+        $TTL_RATES = 30 * 60;
         $ratesResult['_meta'] = ['source' => 'fawazahmed', 'from_cache' => false, 'updatedAt' => date('c'), 'expiresAt' => date('c', time() + $TTL_RATES)];
         if ($db) {
             dbCacheSave($db, 'rates', $ratesResult);
@@ -726,7 +726,7 @@ if ($method === 'GET' && $action === 'cron_refresh') {
     usleep(500000);
 
     // ── 2. CRYPTO (CoinGecko) ─────────────────────────────────────────────
-    $TTL_CRYPTO = 5 * 60;
+    $TTL_CRYPTO = 30 * 60;
     $rawCg = httpGet('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=8&page=1&sparkline=false', 10);
     if (!$rawCg) $rawCg = httpGet('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,binancecoin,cardano,ripple,chainlink,polkadot&vs_currencies=brl&include_24hr_change=true', 8);
     $cgData = $rawCg ? json_decode($rawCg, true) : null;
