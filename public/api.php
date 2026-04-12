@@ -390,161 +390,23 @@ if ($method === 'GET' && $action === 'test_widgets') {
 }
 
 
-// ─── GET: proxy de câmbio + metais ──────────────────────────────────────────
-// Fonte principal: fawazahmed0 via jsDelivr CDN (gratuito, sem token, inclui XAU/XAG)
-// URL: https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/brl.min.json
-// Retorna: {"date":"...","brl":{"usd":0.19,"eur":0.18,"xau":0.0000058,...}}
-// Os valores são: 1 BRL = X da moeda alvo → invertemos para obter preço em BRL
-// Fallback: exchangerate-api.com (sem token, suporta USD/EUR/ARS/PYG, sem metais)
+// ─── GET: câmbio + metais — SOMENTE leitura de cache ────────────────────────
+// Os dados são atualizados EXCLUSIVAMENTE pelo cron_refresh.
+// Este endpoint apenas lê do MySQL/arquivo de cache.
 if ($method === 'GET' && $action === 'rates') {
-    $TTL_RATES  = 3; // 3 min — fawazahmed sem limite, frankfurter sem limite
-    $CACHE_FILE = cacheDir() . '/viciocode_rates_v2.json';
-
-    // Banco primeiro (cache compartilhado — 1 fetch serve todos os usuários)
-    if ($db = getPdo()) {
-        $cached = dbCacheGet($db, 'rates', $TTL_RATES);
+    $db = getPdo();
+    if ($db) {
+        $cached = dbCacheGet($db, 'rates', 60); // TTL alto — serve qualquer dado recente
         if ($cached) { $cached['_meta']['from_cache'] = true; echo json_encode($cached); exit; }
     }
-    // Arquivo como fallback — valida que os dados são de hoje
-    if (file_exists($CACHE_FILE) && (time() - filemtime($CACHE_FILE)) < $TTL_RATES * 60) {
-        $fileRaw = file_get_contents($CACHE_FILE);
-        if ($fileRaw) {
-            $fileDec = json_decode($fileRaw, true);
-            // Só serve se os dados forem de hoje (evita cache de dias anteriores)
-            $fileDate = isset($fileDec['_meta']['updatedAt'])
-                ? date('Y-m-d', strtotime($fileDec['_meta']['updatedAt']))
-                : null;
-            if ($fileDate === date('Y-m-d')) { echo $fileRaw; exit; }
-        }
+    // Fallback: arquivo de cache
+    $CACHE_FILE = cacheDir() . '/viciocode_rates_v2.json';
+    if (file_exists($CACHE_FILE)) {
+        $raw = file_get_contents($CACHE_FILE);
+        if ($raw) { echo $raw; exit; }
     }
-
-    $result = [];
-    $brl    = []; // inicializado aqui para ser acessível no bloco pctChange
-
-    // ── Fonte principal: fawazahmed via jsDelivr CDN ─────────────────────────
-    $raw = httpGet('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/brl.min.json', 8);
-    if ($raw) {
-        $data = json_decode($raw, true);
-        $brl  = $data['brl'] ?? [];
-
-        // Helper: converte "1 BRL = X moeda" para "1 moeda = Y BRL"
-        // e calcula pctChange aproximado via high/low (fawazahmed não fornece, usamos 0)
-        $toRate = function($key) use ($brl): ?array {
-            $rate = $brl[$key] ?? null;
-            if (!$rate || $rate <= 0) return null;
-            $bid = round(1 / $rate, 6);
-            return ['bid' => (string)$bid, 'pctChange' => '0.00', 'high' => (string)$bid, 'low' => (string)$bid];
-        };
-
-        if ($r = $toRate('usd')) $result['USDBRL'] = $r;
-        if ($r = $toRate('eur')) $result['EURBRL'] = $r;
-        if ($r = $toRate('ars')) $result['ARSBRL'] = $r;
-        if ($r = $toRate('pyg')) $result['PYGBRL'] = $r;
-        if ($r = $toRate('xau')) $result['XAUBRL'] = $r; // 1 troy oz ouro em BRL
-        if ($r = $toRate('xag')) $result['XAGBRL'] = $r; // 1 troy oz prata em BRL
-    }
-
-    // ── Fallback 1: open.er-api.com (gratuito, sem token) ────────────────────
-    if (empty($result['USDBRL'])) {
-        $raw2 = httpGet('https://open.er-api.com/v6/latest/BRL', 6);
-        if ($raw2) {
-            $data2 = json_decode($raw2, true);
-            $rates2 = $data2['rates'] ?? [];
-            $pairMap = ['USD'=>'USDBRL','EUR'=>'EURBRL','ARS'=>'ARSBRL','PYG'=>'PYGBRL'];
-            foreach ($pairMap as $cur => $key) {
-                $r = $rates2[$cur] ?? null;
-                if ($r && $r > 0) {
-                    $bid = round(1 / $r, 6);
-                    $result[$key] = ['bid'=>(string)$bid,'pctChange'=>'0.00','high'=>(string)$bid,'low'=>(string)$bid];
-                }
-            }
-        }
-    }
-
-    // ── Fallback 2: frankfurter.app (BCE, sem token) se ainda sem dados ───────
-    if (empty($result['USDBRL'])) {
-        $rawFr = httpGet('https://api.frankfurter.app/latest?from=BRL&to=USD,EUR', 5);
-        if ($rawFr) {
-            $dataFr = json_decode($rawFr, true);
-            $ratesFr = $dataFr['rates'] ?? [];
-            $mapFr = ['USD'=>'USDBRL','EUR'=>'EURBRL'];
-            foreach ($mapFr as $cur => $key) {
-                $r = $ratesFr[$cur] ?? null;
-                if ($r && $r > 0) {
-                    $bid = round(1 / $r, 6);
-                    $result[$key] = ['bid'=>(string)$bid,'pctChange'=>'0.00','high'=>(string)$bid,'low'=>(string)$bid];
-                }
-            }
-        }
-    }
-
-    // ── Calcula pctChange real (hoje vs ontem via fawazahmed histórico) ─────────
-    $yesterday = date('Y-m-d', strtotime('-1 day'));
-    $rawYest = httpGet("https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@{$yesterday}/v1/currencies/brl.min.json", 6);
-    if ($rawYest) {
-        $dataYest = json_decode($rawYest, true);
-        $brlYest  = $dataYest['brl'] ?? [];
-        $pairKeys = ['usd'=>'USDBRL','eur'=>'EURBRL','ars'=>'ARSBRL','pyg'=>'PYGBRL','xau'=>'XAUBRL','xag'=>'XAGBRL'];
-        foreach ($pairKeys as $cur => $key) {
-            if (!isset($result[$key]) || !isset($brl[$cur]) || !isset($brlYest[$cur])) continue;
-            $today_brl = $brl[$cur] > 0 ? 1/$brl[$cur] : 0;
-            $yest_brl  = $brlYest[$cur] > 0 ? 1/$brlYest[$cur] : 0;
-            if ($yest_brl > 0) {
-                $pct = round((($today_brl - $yest_brl) / $yest_brl) * 100, 2);
-                $result[$key]['pctChange'] = (string)$pct;
-                // high/low: sem dado intraday no fawazahmed, usamos ±0.3% como estimativa
-                $spread = $today_brl * 0.003;
-                $result[$key]['high'] = (string)round($today_brl + $spread, 6);
-                $result[$key]['low']  = (string)round($today_brl - $spread, 6);
-            }
-        }
-    }
-
-    // ── Atualiza USD/EUR com taxa ECB via frankfurter (mais precisa) ──────────
-    $rawFr = httpGet('https://api.frankfurter.app/latest?from=BRL&to=USD,EUR', 5);
-    if ($rawFr) {
-        $dataFr = json_decode($rawFr, true);
-        foreach (['USD'=>'USDBRL','EUR'=>'EURBRL'] as $cur => $key) {
-            $rate = $dataFr['rates'][$cur] ?? null;
-            if ($rate && $rate > 0 && !empty($result[$key])) {
-                $bid = round(1 / $rate, 4);
-                $prev = (float)$result[$key]['bid'];
-                if ($prev > 0) {
-                    $pct = round((($bid - $prev) / $prev) * 100, 2);
-                    // Se frankfurter diverge muito, recalcula pctChange
-                    if (abs($pct) < 5) { // sanity check
-                        $result[$key]['bid'] = (string)$bid;
-                    }
-                }
-            }
-        }
-    }
-
-    if (empty($result)) {
-        http_response_code(503);
-        echo json_encode(['error' => 'Dados de câmbio indisponíveis temporariamente']);
-        exit;
-    }
-
-    $fetchedAt = date('c');
-    $result['_meta'] = ['source' => 'fawazahmed+frankfurter', 'fallback' => false, 'from_cache' => false, 'updatedAt' => $fetchedAt, 'expiresAt' => date('c', time() + $TTL_RATES * 60)];
-    // Salva no banco e no arquivo
-    if ($db = getPdo()) {
-        dbCacheSave($db, 'rates', $result);
-        // Salva snapshot histórico de câmbio e metais
-        $histCurrency = [];
-        foreach (['USDBRL'=>'USD','EURBRL'=>'EUR','ARSBRL'=>'ARS','PYGBRL'=>'PYG'] as $k=>$c) {
-            if (isset($result[$k]['bid'])) $histCurrency[$c] = (float)$result[$k]['bid'];
-        }
-        if (!empty($histCurrency)) saveHistorySnapshots($db, 'currency', $histCurrency);
-        $histMetal = [];
-        $TROY = 31.1035;
-        if (isset($result['XAUBRL']['bid'])) $histMetal['XAU'] = (float)$result['XAUBRL']['bid'] / $TROY * 0.75; // 18k per gram
-        if (isset($result['XAGBRL']['bid'])) $histMetal['XAG'] = (float)$result['XAGBRL']['bid'] / $TROY * 0.925; // 925 per gram
-        if (!empty($histMetal)) saveHistorySnapshots($db, 'metal', $histMetal);
-    }
-    @file_put_contents($CACHE_FILE, json_encode($result));
-    echo json_encode($result);
+    http_response_code(503);
+    echo json_encode(['error' => 'Dados de câmbio indisponíveis — aguarde o cron']);
     exit;
 }
 
