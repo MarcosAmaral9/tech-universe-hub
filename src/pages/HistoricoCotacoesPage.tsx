@@ -451,8 +451,13 @@ const HistoricoCotacoesPage = () => {
               </Button>
             </Link>
             <Link to="/cotacoes">
-              <Button variant="ghost" size="sm" className="gap-1.5 text-white/80 hover:text-white hover:bg-white/10 font-medium h-8 px-3">
-                <BarChart3 className="h-3.5 w-3.5" />Cotações
+              <Button
+                variant="default"
+                size="lg"
+                className="gap-2 bg-invest hover:bg-invest/90 text-white font-bold shadow-xl shadow-invest/40 text-sm md:text-base px-5 md:px-6"
+              >
+                <BarChart3 className="h-4 w-4 md:h-5 md:w-5" />
+                Ver Cotações
               </Button>
             </Link>
             <div className="ml-auto flex items-center gap-2">
