@@ -2,11 +2,10 @@
  * useMarketData — hook centralizado de cotações
  *
  * ARQUITETURA:
- * - Dados são buscados das APIs externas EXCLUSIVAMENTE pelo cron job do servidor
- *   (api.php?action=cron_refresh, a cada 5 min via Hostinger Cron Jobs)
- * - Usuários NUNCA disparam chamadas a APIs externas
- * - O frontend lê apenas /api.php?action=all → MySQL (cache puro)
- * - TTL sincronizado com o expiresAt retornado pelo servidor
+ * - Dados são buscados das APIs externas pelo cron job (action=cron_refresh, a cada 30 min)
+ * - action=all faz auto-bootstrap se BD estiver vazio (primeiro acesso sem cron)
+ * - Frontend lê /api.php?action=all → MySQL → dados reais
+ * - TTL sincronizado com expiresAt do servidor
  * - Singleton: todos os componentes compartilham o mesmo dado
  */
 
@@ -67,12 +66,13 @@ export interface UseMarketDataReturn {
   isFallback:  boolean;
   lastUpdated: string;
   expiresAt:   number;
+  refresh:     () => void;
 }
 
 // ── Singleton ─────────────────────────────────────────────────────────────────
-// Intervalo de polling do frontend: lê o cache do servidor periodicamente.
-// NÃO aciona APIs externas — apenas lê o MySQL através do action=all.
-const POLL_INTERVAL_MS = 30 * 60 * 1000; // 30 min — alinhado com o cron job Hostinger
+// Poll a cada 10 min: lê o cache do servidor.
+// O cron roda a cada 30 min → verificamos 3× por ciclo = dados sempre frescos.
+const POLL_INTERVAL_MS = 10 * 60 * 1000; // 10 min
 
 let _cached:    MarketData | null = null;
 let _cachedAt:  number = 0;
@@ -118,28 +118,23 @@ const FALLBACK: MarketData = {
   meta: { updatedAt:"", expiresAt:"", fromCache:true, b3Ok:false, cryptoOk:false, ratesOk:false },
 };
 
-// ── Lê cache do servidor (action=all → MySQL, sem APIs externas) ──────────────
+// ── Lê cache do servidor ──────────────────────────────────────────────────────
 async function readServerCache(force = false): Promise<MarketData | null> {
   const now = Date.now();
-
-  // Não re-busca se o cache local ainda está dentro do expiresAt do servidor
   const cacheValid = _expiresAt > 0 ? now < _expiresAt : (_cached && now - _cachedAt < POLL_INTERVAL_MS);
   if (!force && cacheValid && _cached) return _cached;
-
-  // Deduplicação: se já há um fetch em voo, aguarda
   if (_promise) return _promise;
 
   _promise = (async () => {
     try {
       const res = await fetch("/api.php?action=all", {
         cache: "no-store",
-        signal: AbortSignal.timeout(8000),
+        signal: AbortSignal.timeout(15000), // 15s — auto-bootstrap pode demorar mais
       });
       if (!res.ok) throw new Error("HTTP " + res.status);
       const json = await res.json();
       if (json.error) throw new Error(json.error);
 
-      // Usa o expiresAt do servidor para saber quando o dado vai expirar
       const serverExpiresAt = json._meta?.expiresAt
         ? new Date(json._meta.expiresAt).getTime()
         : Date.now() + POLL_INTERVAL_MS;
@@ -173,8 +168,7 @@ async function readServerCache(force = false): Promise<MarketData | null> {
   return _promise;
 }
 
-// ── Poll global — lê o cache do servidor a cada 5 min ────────────────────────
-// Iniciado uma única vez, compartilhado entre todos os componentes.
+// Poll global — lê o cache a cada 10 min (cron roda a cada 30 min)
 function ensurePollStarted() {
   if (_pollTimer) return;
   _pollTimer = setInterval(() => {
@@ -182,12 +176,10 @@ function ensurePollStarted() {
   }, POLL_INTERVAL_MS);
 }
 
-// Re-lê quando aba volta ao foco (usuário pode ter ficado muito tempo ausente)
+// Re-lê quando aba volta ao foco
 if (typeof document !== "undefined") {
   document.addEventListener("visibilitychange", () => {
-    if (!document.hidden) {
-      readServerCache(false); // só re-lê se expirado
-    }
+    if (!document.hidden) readServerCache(false);
   });
 }
 
@@ -200,17 +192,21 @@ export function useMarketData(): UseMarketDataReturn {
     const listener = () => setTick(t => t + 1);
     _listeners.add(listener);
 
-    // Leitura inicial do cache do servidor
     if (_cached) {
       setLoading(false);
     } else {
       readServerCache().then(() => setLoading(false));
     }
 
-    // Garante que o poll global está rodando
     ensurePollStarted();
-
     return () => { _listeners.delete(listener); };
+  }, []);
+
+  // refresh manual — força releitura do servidor (não chama APIs externas diretamente)
+  const refresh = useCallback(() => {
+    setLoading(true);
+    _expiresAt = 0; // invalida cache local para forçar re-fetch
+    readServerCache(true).then(() => setLoading(false));
   }, []);
 
   const hasAnyData = _cached && (_cached.meta.b3Ok || _cached.meta.cryptoOk || _cached.meta.ratesOk);
@@ -228,6 +224,7 @@ export function useMarketData(): UseMarketDataReturn {
     isFallback,
     lastUpdated,
     expiresAt:   _expiresAt || Date.now() + POLL_INTERVAL_MS,
+    refresh,
   };
 }
 

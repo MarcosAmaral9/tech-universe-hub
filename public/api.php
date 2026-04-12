@@ -587,10 +587,112 @@ if ($method === 'GET' && $action === 'all') {
     $cryptoOk = !empty($cryptoData['coins']);
     $ratesOk  = isset($ratesData['USDBRL']);
 
+    // ── AUTO-BOOTSTRAP: se o BD estiver vazio, busca APIs diretamente uma vez ──
+    // Isso resolve o caso onde o cron ainda não foi configurado ou o BD foi resetado.
+    // Após esta chamada, o cron assumirá as atualizações regulares.
+    if (!$b3Ok || !$cryptoOk || !$ratesOk) {
+        // Busca o que estiver faltando diretamente das APIs externas
+        $autoBootstrapped = false;
+
+        // Rates (fawazahmed — sem limite, sempre tenta)
+        if (!$ratesOk) {
+            $rawFw = httpGet('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/brl.min.json', 8);
+            if ($rawFw) {
+                $dataFw = json_decode($rawFw, true);
+                $brl = $dataFw['brl'] ?? [];
+                $toRate = function($key) use ($brl): ?array {
+                    $rate = $brl[$key] ?? null;
+                    if (!$rate || $rate <= 0) return null;
+                    $bid = round(1 / $rate, 6);
+                    return ['bid' => (string)$bid, 'pctChange' => '0.00', 'high' => (string)$bid, 'low' => (string)$bid];
+                };
+                $r = [];
+                if ($v = $toRate('usd')) $r['USDBRL'] = $v;
+                if ($v = $toRate('eur')) $r['EURBRL'] = $v;
+                if ($v = $toRate('ars')) $r['ARSBRL'] = $v;
+                if ($v = $toRate('pyg')) $r['PYGBRL'] = $v;
+                if ($v = $toRate('xau')) $r['XAUBRL'] = $v;
+                if ($v = $toRate('xag')) $r['XAGBRL'] = $v;
+                if (!empty($r['USDBRL'])) {
+                    $r['_meta'] = ['source' => 'fawazahmed-auto', 'from_cache' => false, 'updatedAt' => date('c'), 'expiresAt' => date('c', time() + 30 * 60)];
+                    $ratesData = $r;
+                    $ratesOk = true;
+                    if ($db) { dbCacheSave($db, 'rates', $r); @file_put_contents(cacheDir() . '/viciocode_rates_v2.json', json_encode($r)); }
+                    $autoBootstrapped = true;
+                }
+            }
+        }
+
+        // Crypto (CoinGecko — apenas se rates OK para não sobrecarregar no mesmo request)
+        if (!$cryptoOk) {
+            $rawCg = httpGet('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=8&page=1&sparkline=false', 10);
+            if (!$rawCg) $rawCg = httpGet('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,binancecoin,cardano,ripple,chainlink,polkadot&vs_currencies=brl&include_24hr_change=true', 8);
+            $cgData = $rawCg ? json_decode($rawCg, true) : null;
+            if (!empty($cgData) && is_array($cgData) && count($cgData) > 0) {
+                $cr = ['coins' => $cgData, '_meta' => ['source' => 'coingecko-auto', 'from_cache' => false, 'updatedAt' => date('c'), 'expiresAt' => date('c', time() + 30 * 60)]];
+                $cryptoData = $cr;
+                $cryptoOk = true;
+                if ($db) {
+                    dbCacheSave($db, 'crypto', $cr);
+                    $histCrypto = [];
+                    foreach ($cgData as $coin) { if (isset($coin['id'], $coin['current_price']) && $coin['current_price'] > 0) $histCrypto[strtoupper($coin['symbol'] ?? $coin['id'])] = (float)$coin['current_price']; }
+                    if (!empty($histCrypto)) saveHistorySnapshots($db, 'crypto', $histCrypto);
+                    @file_put_contents(cacheDir() . '/viciocode_crypto.json', json_encode($cr));
+                }
+                $autoBootstrapped = true;
+            }
+        }
+
+        // B3 (brapi.dev — apenas se BD realmente vazio)
+        if (!$b3Ok) {
+            $tickers = !empty($BRAPI_TOKEN) ? 'PETR4,VALE3,ITUB4,BBDC4,ABEV3,WEGE3,BBAS3,RENT3,MGLU3,SUZB3' : 'PETR4,VALE3,ITUB4,BBDC4,ABEV3,WEGE3,BBAS3,MGLU3';
+            $brapiUrl = "https://brapi.dev/api/quote/{$tickers}?fundamental=false";
+            $brapiHeaders = !empty($BRAPI_TOKEN) ? ["Authorization: Bearer {$BRAPI_TOKEN}", 'Accept: application/json'] : ['Accept: application/json'];
+            $brapiRaw = null;
+            if (function_exists('curl_init')) {
+                $ch = curl_init($brapiUrl);
+                curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER=>true, CURLOPT_TIMEOUT=>10, CURLOPT_FOLLOWLOCATION=>true, CURLOPT_SSL_VERIFYPEER=>true, CURLOPT_USERAGENT=>'VicioCode/1.0', CURLOPT_HTTPHEADER=>$brapiHeaders]);
+                $brapiRaw = curl_exec($ch); curl_close($ch);
+            }
+            if (!$brapiRaw && ini_get('allow_url_fopen')) {
+                $ctx = stream_context_create(['http' => ['timeout'=>10, 'ignore_errors'=>true, 'header'=>implode("
+", $brapiHeaders)."
+"]]);
+                $brapiRaw = @file_get_contents($brapiUrl, false, $ctx);
+            }
+            $brapiData = $brapiRaw ? json_decode($brapiRaw, true) : null;
+            if (!empty($brapiData['results'])) {
+                $br = ['results' => $brapiData['results'], '_meta' => ['source' => 'brapi-auto', 'from_cache' => false, 'updatedAt' => date('c'), 'expiresAt' => date('c', time() + 30 * 60)]];
+                $b3Data = $br;
+                $b3Ok = true;
+                if ($db) {
+                    dbCacheSave($db, 'b3', $br);
+                    $histB3 = [];
+                    foreach ($brapiData['results'] as $s) if (isset($s['symbol'], $s['regularMarketPrice']) && $s['regularMarketPrice'] > 0) $histB3[$s['symbol']] = (float)$s['regularMarketPrice'];
+                    if (!empty($histB3)) saveHistorySnapshots($db, 'b3', $histB3);
+                    @file_put_contents(cacheDir() . '/viciocode_b3_v2.json', json_encode($br));
+                }
+                $autoBootstrapped = true;
+            }
+        }
+
+        // Recalcula expiresAt com os dados recém obtidos
+        if ($autoBootstrapped) {
+            $expiresTs = PHP_INT_MAX;
+            foreach ([$b3Data, $cryptoData, $ratesData] as $src) {
+                if (!empty($src['_meta']['expiresAt'])) {
+                    $ts = strtotime($src['_meta']['expiresAt']);
+                    if ($ts !== false && $ts < $expiresTs) $expiresTs = $ts;
+                }
+            }
+            if ($expiresTs === PHP_INT_MAX) $expiresTs = time() + 30 * 60;
+        }
+    }
+
     echo json_encode([
-        'b3'     => $b3Data     ?? ['results' => [], '_meta' => ['error' => 'sem dados — aguarde o cron']],
-        'crypto' => $cryptoData ?? ['coins'   => [], '_meta' => ['error' => 'sem dados — aguarde o cron']],
-        'rates'  => $ratesData  ?? ['_meta'   => ['error' => 'sem dados — aguarde o cron']],
+        'b3'     => $b3Data     ?? ['results' => [], '_meta' => ['error' => 'indisponível']],
+        'crypto' => $cryptoData ?? ['coins'   => [], '_meta' => ['error' => 'indisponível']],
+        'rates'  => $ratesData  ?? ['_meta'   => ['error' => 'indisponível']],
         '_meta'  => [
             'action'     => 'all',
             'from_cache' => true,
