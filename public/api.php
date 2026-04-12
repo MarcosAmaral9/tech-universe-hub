@@ -537,11 +537,11 @@ if ($method === 'GET' && $action === 'all') {
                             $hourBRT = (int)date('G', time() - 3 * 3600);
                             $dayBRT  = (int)date('N', time() - 3 * 3600);
                             $mktOpen = ($dayBRT >= 1 && $dayBRT <= 5 && $hourBRT >= 9 && $hourBRT < 18);
-                            $ttl = $mktOpen ? 5 * 60 : 30 * 60;
+                            $ttl = $mktOpen ? 30 * 60 : 30 * 60;
                         } elseif ($widget === 'crypto') {
-                            $ttl = 5 * 60;
+                            $ttl = 30 * 60;
                         } else {
-                            $ttl = 5 * 60;
+                            $ttl = 30 * 60;
                         }
                         $decoded['_meta']['from_cache'] = true;
                         $decoded['_meta']['updatedAt']  = date('c', $fetchedTs);
@@ -581,7 +581,7 @@ if ($method === 'GET' && $action === 'all') {
             if ($ts !== false && $ts < $expiresTs) $expiresTs = $ts;
         }
     }
-    if ($expiresTs === PHP_INT_MAX) $expiresTs = time() + 5 * 60;
+    if ($expiresTs === PHP_INT_MAX) $expiresTs = time() + 30 * 60;
 
     $b3Ok     = !empty($b3Data['results']);
     $cryptoOk = !empty($cryptoData['coins']);
