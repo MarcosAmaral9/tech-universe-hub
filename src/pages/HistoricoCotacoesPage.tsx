@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowLeft, TrendingUp, TrendingDown, DollarSign,
-  Bitcoin, Gem, BarChart3, RefreshCw, AlertTriangle, Clock, Info,
+  Bitcoin, Gem, BarChart3, AlertTriangle, Clock, Info,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DynamicSEO from "@/components/DynamicSEO";
@@ -169,22 +169,6 @@ async function fetchHistoryFromDB(type: string, code: string, days: number): Pro
   }));
 }
 
-// Histórico cripto via servidor (proxy) — não consome rate limit do usuário
-// O servidor: 1° busca BD local → 2° CoinGecko server-side → salva no BD
-async function fetchCryptoHistoryProxy(
-  coinId: string,
-  days: number,
-): Promise<ChartPoint[] | null> {
-  const safeDays = Math.min(days, 365); // CoinGecko free: até 365 dias
-  const json = await safeFetchJson(`/api.php?action=history_crypto_proxy&coin=${coinId}&days=${safeDays}`);
-  if (!json?.points || json.points.length < 3) return null;
-  return json.points.map((p: { date: string; price: number }) => ({
-    date: p.date,
-    value: p.price,
-    label: fmtDate(p.date),
-  }));
-}
-
 
 
 // ── Página principal ───────────────────────────────────────────────────────
@@ -258,40 +242,19 @@ const HistoricoCotacoesPage = () => {
       }
     }
 
-    // Cripto: paralelo (proxy server-side, sem rate limit no browser)
+    // Cripto: somente BD local (acumulado pelo cron + bootstrap)
     await Promise.allSettled(
       Array.from(cryptoPrices.entries()).map(async ([coinId, info]) => {
         const sym = CRYPTO_SYMBOL_MAP[coinId] ?? coinId.toUpperCase().slice(0, 4);
-        // 1° DB local (acumulado pelo cron)
         const dbHistory = await fetchHistoryFromDB("crypto", sym, days);
-        if (dbHistory) {
-          hasDB = true;
-          result.push({
-            id: `crypto-${coinId}`, name: info.name, symbol: sym,
-            category: "crypto", icon: CRYPTO_ICONS[coinId] ?? "🪙",
-            currentPrice: info.price, change24h: info.change,
-            unit: "R$/un.", dataSource: "db", data: dbHistory,
-          });
-          return;
-        }
-        // 2° Proxy server-side (salva no DB para próximas visitas)
-        const proxyHistory = await fetchCryptoHistoryProxy(coinId, Math.min(days, 365));
-        if (proxyHistory) {
-          result.push({
-            id: `crypto-${coinId}`, name: info.name, symbol: sym,
-            category: "crypto", icon: CRYPTO_ICONS[coinId] ?? "🪙",
-            currentPrice: info.price, change24h: info.change,
-            unit: "R$/un.", dataSource: "real", data: proxyHistory,
-          });
-          return;
-        }
-        // Sem dados reais — não mostra simulação, indica ausência
+        if (dbHistory) hasDB = true;
         result.push({
           id: `crypto-${coinId}`, name: info.name, symbol: sym,
           category: "crypto", icon: CRYPTO_ICONS[coinId] ?? "🪙",
           currentPrice: info.price, change24h: info.change,
-          unit: "R$/un.", dataSource: "simulated",
-          data: [], // array vazio = sem dados para este período
+          unit: "R$/un.",
+          dataSource: dbHistory ? "db" : "simulated",
+          data: dbHistory ?? [],
         });
       })
     );
@@ -466,15 +429,6 @@ const HistoricoCotacoesPage = () => {
                   <Clock className="h-3 w-3" />{lastUpdated}
                 </span>
               )}
-              <Button
-                variant="outline" size="sm"
-                onClick={() => loadData(period)}
-                disabled={loading}
-                className="gap-1.5 border-white/30 text-white hover:bg-white/10 hover:border-white/50 h-8 px-3"
-              >
-                <RefreshCw className={`h-3.5 w-3.5 ${loading ? "animate-spin" : ""}`} />
-                <span className="hidden sm:inline">{loading ? "Carregando..." : "Atualizar"}</span>
-              </Button>
             </div>
           </div>
           {/* Título na parte inferior */}
@@ -496,7 +450,7 @@ const HistoricoCotacoesPage = () => {
         {isFallback && !loading && (
           <div className="flex items-start gap-3 mb-4 p-3 rounded-lg border border-amber-500/30 bg-amber-500/10 text-sm text-amber-300">
             <AlertTriangle className="h-4 w-4 shrink-0 mt-0.5" />
-            <span>Usando dados de referência — servidor indisponível. Clique em <strong>Atualizar</strong> para tentar novamente.</span>
+            <span>Usando dados de referência — servidor indisponível. Os dados serão atualizados automaticamente.</span>
           </div>
         )}
         {dbHistoryAvailable && !loading && (

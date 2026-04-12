@@ -67,13 +67,12 @@ export interface UseMarketDataReturn {
   isFallback:  boolean;
   lastUpdated: string;
   expiresAt:   number;
-  refresh:     () => void;
 }
 
 // ── Singleton ─────────────────────────────────────────────────────────────────
 // Intervalo de polling do frontend: lê o cache do servidor periodicamente.
 // NÃO aciona APIs externas — apenas lê o MySQL através do action=all.
-const POLL_INTERVAL_MS = 5 * 60 * 1000; // 5 min — alinhado com o cron job
+const POLL_INTERVAL_MS = 30 * 60 * 1000; // 30 min — alinhado com o cron job Hostinger
 
 let _cached:    MarketData | null = null;
 let _cachedAt:  number = 0;
@@ -214,12 +213,6 @@ export function useMarketData(): UseMarketDataReturn {
     return () => { _listeners.delete(listener); };
   }, []);
 
-  // Refresh manual (botão Atualizar) — relê o cache sem forçar API externa
-  const refresh = useCallback(() => {
-    setLoading(true);
-    readServerCache(true).then(() => setLoading(false));
-  }, []);
-
   const hasAnyData = _cached && (_cached.meta.b3Ok || _cached.meta.cryptoOk || _cached.meta.ratesOk);
   const isFallback = !hasAnyData;
 
@@ -235,7 +228,6 @@ export function useMarketData(): UseMarketDataReturn {
     isFallback,
     lastUpdated,
     expiresAt:   _expiresAt || Date.now() + POLL_INTERVAL_MS,
-    refresh,
   };
 }
 
