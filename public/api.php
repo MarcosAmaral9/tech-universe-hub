@@ -930,7 +930,7 @@ if ($method === 'GET' && $action === 'all') {
 // 1° BD local → 2° CoinGecko via servidor → salva no BD para cache futuro
 if ($method === 'GET' && $action === 'history_crypto_proxy') {
     $coin = preg_replace('/[^a-z0-9\-]/', '', strtolower($_GET['coin'] ?? ''));
-    $days = min(max((int)($_GET['days'] ?? 30), 1), 90);
+    $days = min(max((int)($_GET['days'] ?? 90), 1), 365); // CoinGecko free: até 365 dias
 
     if (!$coin) { http_response_code(400); echo json_encode(['error' => 'coin obrigatório']); exit; }
 
@@ -961,7 +961,9 @@ if ($method === 'GET' && $action === 'history_crypto_proxy') {
     }
 
     // 2. CoinGecko via servidor (não consome rate limit do usuário)
-    $cgUrl = "https://api.coingecko.com/api/v3/coins/{$coin}/market_chart?vs_currency=brl&days={$days}&interval=daily";
+    // >90 dias: CoinGecko retorna diário automaticamente (sem &interval=daily)
+    $cgInterval = $days <= 90 ? '&interval=daily' : '';
+    $cgUrl = "https://api.coingecko.com/api/v3/coins/{$coin}/market_chart?vs_currency=brl&days={$days}{$cgInterval}";
     $raw   = httpGet($cgUrl, 12);
     if (!$raw) { http_response_code(503); echo json_encode(['error' => 'CoinGecko indisponível']); exit; }
 
@@ -1035,8 +1037,18 @@ if ($method === 'GET' && $action === 'history_multi') {
 // Cada execução: rates + crypto + b3 = 3 chamadas às APIs externas / 5 min
 // Rates: fawazahmed (sem limite) | Crypto: CoinGecko (~30/min) | B3: brapi.dev (15k/mês)
 // ─── GET: cron_refresh — ÚNICO ponto de entrada para APIs externas ─────────────
-// Configure no Hostinger hPanel → Cron Jobs → */5 * * * *
+// Configure no Hostinger hPanel → Cron Jobs → */10 * * * *  (a cada 10 MINUTOS)
 // URL: https://viciocode.com/api.php?action=cron_refresh&secret=VC_CRON_2026
+//
+// CÁLCULO DE REQUISIÇÕES MENSAIS (30 dias):
+//   CoinGecko (crypto): 1 req/10min × 30 dias × 24h × 6 = 4.320 req/mês = 43% de 10.000 ✅
+//   brapi.dev (B3):     ~2.232 req/mês = 15% de 15.000 (TTL dinâmico pregão/fora) ✅
+//   fawazahmed (rates): sem limite (CDN jsDelivr) ✅
+//
+// Por que 10 min e não 5 min?
+//   5 min = 8.640 req/mês CoinGecko = 86% do limite (arriscado, margem mínima)
+//   10 min = 4.320 req/mês = 43% do limite (seguro, sobra margem para bootstrap)
+//
 // Este endpoint é o ÚNICO que chama APIs externas. Usuários NUNCA chamam APIs.
 // Fluxo: cron → api.php?action=cron_refresh → brapi/CoinGecko/fawazahmed → MySQL
 // Usuário → api.php?action=all → MySQL (só leitura, zero APIs externas)
@@ -1213,11 +1225,20 @@ if ($method === 'GET' && $action === 'cron_refresh') {
 }
 
 // ─── GET: todos os ativos com histórico disponível ──────────────────────────
-// ─── GET: bootstrap histórico — preenche o BD com 90 dias de histórico ─────────
+// ─── GET: bootstrap histórico — preenche o BD com 365 dias de cripto+câmbio+metais ─
 // Execute UMA VEZ via navegador após configurar o cron:
 // https://viciocode.com/api.php?action=history_bootstrap&secret=VC_CRON_2026
-// Busca 90 dias de cripto (CoinGecko) e 90 dias de câmbio (fawazahmed histórico)
-// Após isso, o cron acumula 1 ponto por dia automaticamente
+//
+// O que faz:
+//   Cripto (8 moedas): CoinGecko free → 365 dias de histórico (8 req total)
+//   Câmbio (USD,EUR,ARS,PYG): fawazahmed → 365 dias (sem limite de req)
+//   Metais (XAU,XAG): fawazahmed → 365 dias (incluído no câmbio, sem custo extra)
+//   B3: NÃO faz bootstrap (Yahoo Finance restringiu em 2025, brapi free sem histórico)
+//      → B3 é acumulado automaticamente pelo cron (1 ponto/dia desde ativação)
+//
+// Requisições usadas: 8 req CoinGecko + ~730 req fawazahmed (sem limite)
+// Duração estimada: 3-5 minutos (aguarda rate limits do CoinGecko entre moedas)
+// Idempotente: pode re-executar sem problemas (pula dados já existentes)
 if ($method === 'GET' && $action === 'history_bootstrap') {
     $CRON_SECRET = 'VC_CRON_2026';
     if (file_exists(__DIR__ . '/.env.php')) { include __DIR__ . '/.env.php'; }
@@ -1230,7 +1251,7 @@ if ($method === 'GET' && $action === 'history_bootstrap') {
 
     $t0 = microtime(true);
     $results = [];
-    $days = 90;
+    $days = (int)($_GET['days'] ?? 365); // padrão 365 para máximo histórico gratuito
 
     // ── Cripto: 8 moedas × 90 dias via CoinGecko (server-side) ──────────
     $cryptoCoins = [
@@ -1248,7 +1269,11 @@ if ($method === 'GET' && $action === 'history_bootstrap') {
             continue;
         }
 
-        $cgUrl = "https://api.coingecko.com/api/v3/coins/{$coinId}/market_chart?vs_currency=brl&days={$days}&interval=daily";
+        // CoinGecko free: até 365 dias com granularidade diária
+    // 1-90 dias = hourly | >90 dias = daily (automático, sem parâmetro interval)
+    $cgDays = min($days, 365);
+    $cgInterval = $cgDays <= 90 ? '&interval=daily' : '';
+    $cgUrl = "https://api.coingecko.com/api/v3/coins/{$coinId}/market_chart?vs_currency=brl&days={$cgDays}{$cgInterval}";
         $raw = httpGet($cgUrl, 15);
         if (!$raw) { $cryptoResults[$coinId] = ['error' => 'CoinGecko failed']; usleep(2000000); continue; }
 
@@ -1301,7 +1326,14 @@ if ($method === 'GET' && $action === 'history_bootstrap') {
         usleep(200000); // 200ms entre datas
     }
 
-    // Conta o que foi salvo
+    // ── B3: sem bootstrap retroativo ──────────────────────────────────────
+    // Yahoo Finance restringiu histórico gratuito a partir de 2025 (requer premium)
+    // brapi.dev free NÃO tem endpoint de histórico
+    // O histórico B3 é acumulado EXCLUSIVAMENTE pelo cron job (1 ponto por execução)
+    // → Após 7 dias de cron: período 7D disponível | 30 dias → 1M | 90 → 3M | 365 → 1A
+    $results['b3'] = ['info' => 'Acumulado pelo cron — sem API gratuita para histórico retroativo B3'];
+
+        // Conta o que foi salvo
     foreach (['currency'=>['USD','EUR','ARS','PYG'], 'metal'=>['XAU','XAG']] as $type => $codes) {
         foreach ($codes as $code) {
             $stmt = $db->prepare('SELECT COUNT(*) FROM price_history WHERE asset_type=:t AND asset_code=:c AND price_date >= DATE_SUB(CURDATE(), INTERVAL :d DAY)');

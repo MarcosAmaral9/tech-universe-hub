@@ -17,8 +17,12 @@ import {
 type Period      = "5d" | "7d" | "30d" | "90d" | "1y";
 type CategoryKey = "b3" | "crypto" | "currency" | "metal";
 
-// Todos os períodos possíveis — apenas exibidos se o BD tiver dados suficientes
-// O cron acumula histórico diariamente: 7D disponível após 7 execuções, 30D após 30, etc.
+// Períodos por categoria — baseados nas capacidades reais de cada API gratuita:
+//   Cripto: CoinGecko free → até 365 dias (7D, 30D, 90D, 1A via bootstrap/proxy)
+//   Câmbio: fawazahmed jsDelivr → sem limite (qualquer data desde 2022)
+//   Metais: fawazahmed (inclui XAU/XAG) → sem limite (mesma API câmbio)
+//   B3:     Somente o que o cron acumulou no BD (1 ponto/dia desde ativação)
+//           Períodos mostrados dinamicamente baseados em pontos reais
 const ALL_PERIODS: { key: Period; label: string }[] = [
   { key: "7d",  label: "7D"  },
   { key: "30d", label: "1M"  },
@@ -26,9 +30,13 @@ const ALL_PERIODS: { key: Period; label: string }[] = [
   { key: "1y",  label: "1A"  },
 ];
 const CATEGORY_PERIODS: Record<CategoryKey, { key: Period; label: string }[]> = {
-  b3:       ALL_PERIODS,
+  // B3: dinâmico — só períodos com dados reais acumulados pelo cron
+  b3:       ALL_PERIODS, // filtrado dinamicamente em availablePeriods
+  // Cripto: CoinGecko free suporta até 365 dias — todos os períodos disponíveis via bootstrap
   crypto:   ALL_PERIODS,
+  // Câmbio: fawazahmed histórico diário sem limite — todos os períodos
   currency: ALL_PERIODS,
+  // Metais: mesma API do câmbio (XAU/XAG incluídos) — todos os períodos
   metal:    ALL_PERIODS,
 };
 
@@ -167,7 +175,7 @@ async function fetchCryptoHistoryProxy(
   coinId: string,
   days: number,
 ): Promise<ChartPoint[] | null> {
-  const safeDays = Math.min(days, 90);
+  const safeDays = Math.min(days, 365); // CoinGecko free: até 365 dias
   const json = await safeFetchJson(`/api.php?action=history_crypto_proxy&coin=${coinId}&days=${safeDays}`);
   if (!json?.points || json.points.length < 3) return null;
   return json.points.map((p: { date: string; price: number }) => ({
@@ -267,7 +275,7 @@ const HistoricoCotacoesPage = () => {
           return;
         }
         // 2° Proxy server-side (salva no DB para próximas visitas)
-        const proxyHistory = await fetchCryptoHistoryProxy(coinId, Math.min(days, 90));
+        const proxyHistory = await fetchCryptoHistoryProxy(coinId, Math.min(days, 365));
         if (proxyHistory) {
           result.push({
             id: `crypto-${coinId}`, name: info.name, symbol: sym,
@@ -370,20 +378,25 @@ const HistoricoCotacoesPage = () => {
   const filtered      = assets.filter(a => a.category === category);
   const selectedAsset = assets.find(a => a.id === selected);
   // Se DB tiver 1A de cripto, desbloqueia o período
-  // Mostra apenas os períodos que têm dados reais no BD para a categoria atual
-  // Calculado a partir dos ativos carregados — sem dados = período oculto
+  // Períodos disponíveis por categoria:
+  // - Cripto/Câmbio/Metais: todos os períodos (APIs suportam bootstrap de 1 ano)
+  //   Mas mostra aviso "sem dados" no gráfico se o BD ainda não foi populado
+  // - B3: dinâmico baseado em pontos reais (Yahoo Finance não confiável, só cron)
   const availablePeriods = (() => {
-    const catAssets = assets.filter(a => a.category === category);
-    if (catAssets.length === 0) return [{ key: "7d" as Period, label: "7D" }];
-    // Descobre quantos dias de histórico temos (baseado no ativo com mais dados)
-    const maxPoints = Math.max(...catAssets.map(a => a.data.length));
-    return ALL_PERIODS.filter(p => {
-      if (p.key === "7d")  return true; // sempre mostra 7D (pode não ter dados, mas é o default)
-      if (p.key === "30d") return maxPoints >= 20; // ~20 dias
-      if (p.key === "90d") return maxPoints >= 60; // ~60 dias
-      if (p.key === "1y")  return maxPoints >= 200; // ~200 dias
-      return false;
-    });
+    if (category === "b3") {
+      // B3: mostra apenas períodos com dados suficientes acumulados pelo cron
+      const catAssets = assets.filter(a => a.category === "b3");
+      const maxPoints = catAssets.length > 0 ? Math.max(...catAssets.map(a => a.data.length)) : 0;
+      return ALL_PERIODS.filter(p => {
+        if (p.key === "7d")  return true;            // sempre mostra (pode estar vazio)
+        if (p.key === "30d") return maxPoints >= 14; // ≥14 pontos no BD (~dias úteis)
+        if (p.key === "90d") return maxPoints >= 50; // ≥50 pontos
+        if (p.key === "1y")  return maxPoints >= 200;// ≥200 pontos (~dias úteis em 1 ano)
+        return false;
+      });
+    }
+    // Cripto, Câmbio, Metais: todos os períodos disponíveis (APIs gratuitas suportam 1A)
+    return ALL_PERIODS;
   })();
 
   const handleCategoryChange = (cat: CategoryKey) => {
@@ -567,13 +580,18 @@ const HistoricoCotacoesPage = () => {
                   </div>
 
                   {selectedAsset.data.length < 3 ? (
-                    <div className="flex flex-col items-center justify-center h-64 gap-3 text-center">
+                    <div className="flex flex-col items-center justify-center h-64 gap-3 text-center px-4">
                       <Info className="h-10 w-10 text-muted-foreground/40" />
                       <div>
-                        <p className="text-muted-foreground font-medium text-sm">Histórico ainda não disponível</p>
-                        <p className="text-xs text-muted-foreground/70 mt-1 max-w-xs">
-                          O banco de dados acumula preços a cada atualização do cron job (a cada 5 min).
-                          Este período ficará disponível automaticamente após alguns dias de acumulação.
+                        <p className="text-muted-foreground font-medium text-sm">
+                          {selectedAsset.category === "b3"
+                            ? "Histórico B3 ainda sendo acumulado"
+                            : "Execute o bootstrap para popular o histórico"}
+                        </p>
+                        <p className="text-xs text-muted-foreground/70 mt-1 max-w-sm">
+                          {selectedAsset.category === "b3"
+                            ? "O histórico da B3 é acumulado diariamente pelo cron job. Não há API gratuita confiável para histórico retroativo de ações brasileiras. Este período estará disponível após acumulação suficiente."
+                            : "Execute uma vez: viciocode.com/api.php?action=history_bootstrap&secret=VC_CRON_2026 — popula 365 dias de cripto, câmbio e metais no banco de dados."}
                         </p>
                       </div>
                     </div>
