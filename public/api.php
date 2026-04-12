@@ -607,79 +607,7 @@ if ($method === 'GET' && $action === 'all') {
 // ─── GET: histórico múltiplo — todos os ativos de uma vez ────────────────────
 // /api.php?action=history_multi&days=30
 // Retorna: {"b3":{"PETR4":[{date,price},...]},"crypto":{...},"currency":{...},"metal":{...}}
-// ─── GET: proxy histórico cripto — server-side (evita rate limit no browser) ──
-// /api.php?action=history_crypto_proxy&coin=bitcoin&days=30
-// 1° BD local → 2° CoinGecko via servidor → salva no BD para cache futuro
-if ($method === 'GET' && $action === 'history_crypto_proxy') {
-    $coin = preg_replace('/[^a-z0-9\-]/', '', strtolower($_GET['coin'] ?? ''));
-    $days = min(max((int)($_GET['days'] ?? 90), 1), 365); // CoinGecko free: até 365 dias
-
-    if (!$coin) { http_response_code(400); echo json_encode(['error' => 'coin obrigatório']); exit; }
-
-    $symbolMap = [
-        'bitcoin'=>'BTC','ethereum'=>'ETH','solana'=>'SOL','binancecoin'=>'BNB',
-        'cardano'=>'ADA','ripple'=>'XRP','chainlink'=>'LINK','polkadot'=>'DOT',
-    ];
-    $sym = $symbolMap[$coin] ?? strtoupper(substr($coin, 0, 6));
-
-    // 1. Banco de dados (cache local)
-    $db = getPdo();
-    if ($db) {
-        $stmt = $db->prepare(
-            'SELECT price_date, price FROM price_history
-             WHERE asset_type = "crypto" AND asset_code = :code
-               AND price_date >= DATE_SUB(CURDATE(), INTERVAL :days DAY)
-             ORDER BY price_date ASC'
-        );
-        $stmt->execute([':code' => $sym, ':days' => $days]);
-        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        if (count($rows) >= 3) {
-            echo json_encode([
-                'coin' => $coin, 'symbol' => $sym, 'days' => $days, 'source' => 'db',
-                'points' => array_map(fn($r) => ['date' => $r['price_date'], 'price' => (float)$r['price']], $rows),
-            ]);
-            exit;
-        }
-    }
-
-    // 2. CoinGecko via servidor (não consome rate limit do usuário)
-    // >90 dias: CoinGecko retorna diário automaticamente (sem &interval=daily)
-    $cgInterval = $days <= 90 ? '&interval=daily' : '';
-    $cgUrl = "https://api.coingecko.com/api/v3/coins/{$coin}/market_chart?vs_currency=brl&days={$days}{$cgInterval}";
-    $raw   = httpGet($cgUrl, 12);
-    if (!$raw) { http_response_code(503); echo json_encode(['error' => 'CoinGecko indisponível']); exit; }
-
-    $cgData = json_decode($raw, true);
-    if (empty($cgData['prices'])) { http_response_code(503); echo json_encode(['error' => 'Sem dados']); exit; }
-
-    // Deduplica por data
-    $byDate = [];
-    foreach ($cgData['prices'] as [$ts, $price]) {
-        $d = date('Y-m-d', (int)($ts / 1000));
-        $byDate[$d] = round((float)$price, $price >= 1 ? 2 : 6);
-    }
-    ksort($byDate);
-
-    // Salva no BD para reduzir futuras chamadas ao CoinGecko
-    if ($db && !empty($byDate)) {
-        try {
-            $ins = $db->prepare(
-                'INSERT INTO price_history (asset_type, asset_code, price, price_date)
-                 VALUES ("crypto", :code, :price, :date)
-                 ON DUPLICATE KEY UPDATE price = VALUES(price)'
-            );
-            foreach ($byDate as $d => $p) {
-                $ins->execute([':code' => $sym, ':price' => $p, ':date' => $d]);
-            }
-        } catch (Exception $e) { /* falha silenciosa */ }
-    }
-
-    echo json_encode([
-        'coin' => $coin, 'symbol' => $sym, 'days' => $days, 'source' => 'coingecko',
-        'points' => array_map(fn($d, $p) => ['date' => $d, 'price' => $p], array_keys($byDate), array_values($byDate)),
-    ]);
-    exit;
-}
+// NOTA: history_crypto_proxy foi REMOVIDO — todo histórico vem do BD (populado pelo cron + bootstrap)
 
 if ($method === 'GET' && $action === 'history_multi') {
     $days = min(max((int)($_GET['days'] ?? 30), 1), 400);
@@ -713,23 +641,14 @@ if ($method === 'GET' && $action === 'history_multi') {
     exit;
 }
 
-// ─── GET: cron refresh — atualiza todos os caches em background ──────────────
-// Configure no Hostinger → hPanel → Cron Jobs → */5 * * * *
-// URL: https://viciocode.com/api.php?action=cron_refresh&secret=VC_CRON_2026
-// Cada execução: rates + crypto + b3 = 3 chamadas às APIs externas / 5 min
-// Rates: fawazahmed (sem limite) | Crypto: CoinGecko (~30/min) | B3: brapi.dev (15k/mês)
 // ─── GET: cron_refresh — ÚNICO ponto de entrada para APIs externas ─────────────
-// Configure no Hostinger hPanel → Cron Jobs → */10 * * * *  (a cada 10 MINUTOS)
+// Configure no Hostinger hPanel → Cron Jobs → */30 * * * *  (a cada 30 MINUTOS)
 // URL: https://viciocode.com/api.php?action=cron_refresh&secret=VC_CRON_2026
 //
-// CÁLCULO DE REQUISIÇÕES MENSAIS (30 dias):
-//   CoinGecko (crypto): 1 req/10min × 30 dias × 24h × 6 = 4.320 req/mês = 43% de 10.000 ✅
-//   brapi.dev (B3):     ~2.232 req/mês = 15% de 15.000 (TTL dinâmico pregão/fora) ✅
+// CÁLCULO DE REQUISIÇÕES MENSAIS (30 dias, ciclo 30 min):
+//   CoinGecko (crypto): 1 req/30min × 24h × 30d = 1.440 req/mês = 14% de 10.000 ✅
+//   brapi.dev (B3):     ~1.116 req/mês (pregão) = 8% de 15.000 ✅
 //   fawazahmed (rates): sem limite (CDN jsDelivr) ✅
-//
-// Por que 10 min e não 5 min?
-//   5 min = 8.640 req/mês CoinGecko = 86% do limite (arriscado, margem mínima)
-//   10 min = 4.320 req/mês = 43% do limite (seguro, sobra margem para bootstrap)
 //
 // Este endpoint é o ÚNICO que chama APIs externas. Usuários NUNCA chamam APIs.
 // Fluxo: cron → api.php?action=cron_refresh → brapi/CoinGecko/fawazahmed → MySQL
