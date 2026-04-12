@@ -12,7 +12,7 @@ const B3_ICONS: Record<string, string> = {
 };
 
 const B3StockTicker = () => {
-  const { data, loading, isFallback, lastUpdated, expiresAt, refresh } = useMarketData();
+  const { data, loading, isFallback, lastUpdated, expiresAt } = useMarketData();
   const { user } = useAuthContext();
   const { isFavorite, toggleFavorite } = useFavoriteAssets(user?.id ?? null);
   const stocks = data?.b3 ?? [];
