@@ -7,6 +7,10 @@
  * - Frontend lê /api.php?action=all → MySQL → dados reais
  * - TTL sincronizado com expiresAt do servidor
  * - Singleton: todos os componentes compartilham o mesmo dado
+ *
+ * FIX (2026-04): expiresAt do servidor no passado não força mais re-fetch infinito.
+ * Se o servidor retornar expiresAt no passado (ex: dado B3 stale fora do pregão),
+ * o frontend usa POLL_INTERVAL_MS como fallback seguro.
  */
 
 import { useState, useEffect, useCallback } from "react";
@@ -73,6 +77,9 @@ export interface UseMarketDataReturn {
 // Poll a cada 10 min: lê o cache do servidor.
 // O cron roda a cada 30 min → verificamos 3× por ciclo = dados sempre frescos.
 const POLL_INTERVAL_MS = 10 * 60 * 1000; // 10 min
+// Mínimo de validade local: mesmo que o servidor retorne expiresAt no passado
+// (dado stale de B3 fora do pregão), não re-fetcha antes desse intervalo mínimo.
+const MIN_CACHE_MS = 5 * 60 * 1000; // 5 min — evita re-fetch infinito
 
 let _cached:    MarketData | null = null;
 let _cachedAt:  number = 0;
@@ -121,8 +128,17 @@ const FALLBACK: MarketData = {
 // ── Lê cache do servidor ──────────────────────────────────────────────────────
 async function readServerCache(force = false): Promise<MarketData | null> {
   const now = Date.now();
-  const cacheValid = _expiresAt > 0 ? now < _expiresAt : (_cached && now - _cachedAt < POLL_INTERVAL_MS);
+
+  // FIX: proteção contra re-fetch infinito quando expiresAt está no passado.
+  // Garante intervalo mínimo de MIN_CACHE_MS entre fetches independente do
+  // expiresAt retornado pelo servidor (ex: dado B3 stale fora do pregão).
+  const timeSinceLastFetch = now - _cachedAt;
+  if (!force && _cached && timeSinceLastFetch < MIN_CACHE_MS) return _cached;
+
+  // Verifica cache via expiresAt do servidor (quando confiável)
+  const cacheValid = _expiresAt > now; // só válido se expiresAt é no futuro
   if (!force && cacheValid && _cached) return _cached;
+
   if (_promise) return _promise;
 
   _promise = (async () => {
@@ -135,9 +151,16 @@ async function readServerCache(force = false): Promise<MarketData | null> {
       const json = await res.json();
       if (json.error) throw new Error(json.error);
 
-      const serverExpiresAt = json._meta?.expiresAt
+      const rawServerExpiry = json._meta?.expiresAt
         ? new Date(json._meta.expiresAt).getTime()
-        : Date.now() + POLL_INTERVAL_MS;
+        : 0;
+
+      // FIX: se o servidor retornar expiresAt no passado (dado stale de B3 fora
+      // do pregão), usa POLL_INTERVAL_MS como validade segura em vez de 0.
+      // Isso evita que o frontend entre em loop infinito de re-fetch.
+      const serverExpiresAt = rawServerExpiry > now
+        ? rawServerExpiry
+        : now + POLL_INTERVAL_MS;
 
       const data: MarketData = {
         b3:     json.b3?.results  ?? [],
@@ -176,7 +199,7 @@ function ensurePollStarted() {
   }, POLL_INTERVAL_MS);
 }
 
-// Re-lê quando aba volta ao foco
+// Re-lê quando aba volta ao foco (mas respeita MIN_CACHE_MS)
 if (typeof document !== "undefined") {
   document.addEventListener("visibilitychange", () => {
     if (!document.hidden) readServerCache(false);
@@ -205,7 +228,8 @@ export function useMarketData(): UseMarketDataReturn {
   // refresh manual — força releitura do servidor (não chama APIs externas diretamente)
   const refresh = useCallback(() => {
     setLoading(true);
-    _expiresAt = 0; // invalida cache local para forçar re-fetch
+    _expiresAt = 0;
+    _cachedAt  = 0; // FIX: zera cachedAt para permitir re-fetch imediato no refresh manual
     readServerCache(true).then(() => setLoading(false));
   }, []);
 
