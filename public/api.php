@@ -754,7 +754,7 @@ if ($method === 'GET' && $action === 'cron_refresh') {
     $hourBRT = (int)date('G', time() - 3 * 3600);
     $dayBRT  = (int)date('N', time() - 3 * 3600);
     $isMarketOpen = ($dayBRT >= 1 && $dayBRT <= 5 && $hourBRT >= 9 && $hourBRT < 18);
-    $TTL_B3 = $isMarketOpen ? 5 * 60 : 30 * 60;
+    $TTL_B3 = 30 * 60; // 30 min — alinhado com ciclo do cron
 
     $tickers = !empty($BRAPI_TOKEN) ? 'PETR4,VALE3,ITUB4,BBDC4,ABEV3,WEGE3,BBAS3,RENT3,MGLU3,SUZB3' : 'PETR4,VALE3,ITUB4,BBDC4,ABEV3,WEGE3,BBAS3,MGLU3';
     $brapiUrl = "https://brapi.dev/api/quote/{$tickers}?fundamental=false";
