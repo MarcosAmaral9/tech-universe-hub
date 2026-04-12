@@ -29,17 +29,6 @@ const CotacoesPage = () => {
 
   const handleFilter = (section: Section) => {
     setActiveSection(section);
-    if (section !== "all") {
-      const refs: Record<string, React.RefObject<HTMLDivElement>> = {
-        b3: b3Ref,
-        currency: currencyRef,
-        metals: metalsRef,
-        crypto: cryptoRef,
-      };
-      setTimeout(() => {
-        refs[section]?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 100);
-    }
   };
 
   const show = (s: Section) => activeSection === "all" || activeSection === s;
