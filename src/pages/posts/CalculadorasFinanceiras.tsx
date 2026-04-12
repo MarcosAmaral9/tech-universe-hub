@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import { useMarketData } from "@/hooks/useMarketData";
-import { Calculator, DollarSign, TrendingUp, Bitcoin, Gem, RefreshCw, AlertTriangle } from "lucide-react";
+import { Calculator, DollarSign, TrendingUp, Bitcoin, Gem, AlertTriangle } from "lucide-react";
 import RelatedPosts from "@/components/RelatedPosts";
 import CommentSection from "@/components/CommentSection";
 import calculadorasImg from "@/assets/calculadoras-financeiras.webp";
@@ -52,7 +52,7 @@ const CalculadorasFinanceiras = () => {
   const [amount, setAmount]                 = useState("1000");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
-  const { data, loading, isFallback, lastUpdated, refresh } = useMarketData();
+  const { data, loading, isFallback, lastUpdated } = useMarketData();
 
   useEffect(() => {
     trackArticleRead("calculadoras-financeiras-ativos", "Calculadoras Financeiras: Simule Seus Investimentos", "invest");
@@ -156,14 +156,6 @@ const CalculadorasFinanceiras = () => {
             {lastUpdated && !isFallback && (
               <span className="text-xs text-muted-foreground">Atualizado às {lastUpdated}</span>
             )}
-            <button
-              onClick={refresh}
-              disabled={loading}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted hover:bg-muted/80 text-xs font-medium text-muted-foreground transition-colors disabled:opacity-50"
-            >
-              <RefreshCw className={`h-3.5 w-3.5 ${loading ? "animate-spin" : ""}`} />
-              {loading ? "Carregando..." : "Atualizar"}
-            </button>
           </div>
         </div>
 
