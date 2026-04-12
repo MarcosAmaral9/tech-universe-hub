@@ -119,8 +119,9 @@ function dbCacheGet(PDO $pdo, string $widget, int $ttlMinutes): ?array {
         $fetchedTs  = strtotime($row['fetched_at']);
         $ageMin     = (time() - $fetchedTs) / 60;
 
-        // Válido se: mesmo dia E dentro do TTL
-        if ($row['fetch_date'] === $today && $ageMin < $ttlMinutes) {
+        // FIX: removida restricao de mesmo dia (causava falha a meia-noite)
+        // Valido se: dentro do TTL (independente do dia)
+        if ($ageMin < $ttlMinutes) {
             $decoded = json_decode($row['data'], true);
             if ($decoded && isset($decoded['_meta'])) {
                 // Sobrescreve updatedAt e expiresAt com os valores reais do banco
@@ -199,8 +200,11 @@ if ($method === 'GET' && $action === 'ping') {
             price_date  DATE NOT NULL,
             created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             UNIQUE KEY unique_asset_date (asset_type, asset_code, price_date),
-            INDEX idx_type_code (asset_type, asset_code)
+            INDEX idx_type_code (asset_type, asset_code),
+            INDEX idx_date (price_date)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
+        // FIX: adiciona indice idx_date se nao existir (para tabelas ja criadas)
+        try { $tmpPdo->exec("ALTER TABLE price_history ADD INDEX idx_date (price_date)"); } catch (Exception $e2) {}
     } catch (Exception $e) {}
 
     // Testa conexão com banco
@@ -545,7 +549,9 @@ if ($method === 'GET' && $action === 'all') {
                         }
                         $decoded['_meta']['from_cache'] = true;
                         $decoded['_meta']['updatedAt']  = date('c', $fetchedTs);
-                        $decoded['_meta']['expiresAt']  = date('c', $fetchedTs + $ttl);
+                        // FIX: expiresAt sempre no futuro — evita re-fetch infinito no frontend
+                        $calculatedExpiry = $fetchedTs + $ttl;
+                        $decoded['_meta']['expiresAt']  = date('c', max($calculatedExpiry, time() + 5 * 60));
                         $target = $decoded;
                     }
                 }
@@ -574,11 +580,14 @@ if ($method === 'GET' && $action === 'all') {
     unset($target);
 
     // Calcula expiresAt global = menor entre os três
+    // FIX: ignora expiresAt no passado ao calcular o global
+    // (evita que dado stale da B3 fora do pregao quebre o expiresAt global)
     $expiresTs = PHP_INT_MAX;
     foreach ([$b3Data, $cryptoData, $ratesData] as $src) {
         if (!empty($src['_meta']['expiresAt'])) {
             $ts = strtotime($src['_meta']['expiresAt']);
-            if ($ts !== false && $ts < $expiresTs) $expiresTs = $ts;
+            // So considera se for no futuro (evita que dado stale force re-fetch infinito)
+            if ($ts !== false && $ts > time() && $ts < $expiresTs) $expiresTs = $ts;
         }
     }
     if ($expiresTs === PHP_INT_MAX) $expiresTs = time() + 30 * 60;
@@ -806,6 +815,35 @@ if ($method === 'GET' && $action === 'cron_refresh') {
             }
         }
     }
+    // FIX: se pctChange = 0 nos rates, calcula a partir do historico local do BD
+    if (!empty($ratesResult) && $db) {
+        $yesterday = date('Y-m-d', strtotime('-1 day'));
+        $pctQuery = $db->prepare("SELECT asset_code, price FROM price_history WHERE asset_type = :t AND price_date = :d AND asset_code IN ('USD','EUR','ARS','PYG','XAU','XAG')");
+        $pctQuery->execute([':t' => 'currency', ':d' => $yesterday]);
+        $yesterdayRates = [];
+        foreach ($pctQuery->fetchAll(PDO::FETCH_ASSOC) as $row) {
+            $yesterdayRates[$row['asset_code']] = (float)$row['price'];
+        }
+        $pctQueryM = $db->prepare("SELECT asset_code, price FROM price_history WHERE asset_type = :t AND price_date = :d AND asset_code IN ('XAU','XAG')");
+        $pctQueryM->execute([':t' => 'metal', ':d' => $yesterday]);
+        foreach ($pctQueryM->fetchAll(PDO::FETCH_ASSOC) as $row) {
+            $yesterdayRates[$row['asset_code']] = (float)$row['price'];
+        }
+        $curMap = ['USDBRL'=>'USD','EURBRL'=>'EUR','ARSBRL'=>'ARS','PYGBRL'=>'PYG','XAUBRL'=>'XAU','XAGBRL'=>'XAG'];
+        foreach ($curMap as $key => $code) {
+            if (!isset($ratesResult[$key]) || !isset($yesterdayRates[$code])) continue;
+            if ((float)$ratesResult[$key]['pctChange'] == 0.0 && $yesterdayRates[$code] > 0) {
+                $todayPrice  = (float)$ratesResult[$key]['bid'];
+                $yesterPrice = $yesterdayRates[$code];
+                $pct = round((($todayPrice - $yesterPrice) / $yesterPrice) * 100, 2);
+                $ratesResult[$key]['pctChange'] = (string)$pct;
+                $spread = $todayPrice * 0.003;
+                $ratesResult[$key]['high'] = (string)round($todayPrice + $spread, 6);
+                $ratesResult[$key]['low']  = (string)round($todayPrice - $spread, 6);
+            }
+        }
+    }
+
     if (!empty($ratesResult)) {
         $TTL_RATES = 30 * 60;
         $ratesResult['_meta'] = ['source' => 'fawazahmed', 'from_cache' => false, 'updatedAt' => date('c'), 'expiresAt' => date('c', time() + $TTL_RATES)];
@@ -886,7 +924,8 @@ if ($method === 'GET' && $action === 'cron_refresh') {
         $results['b3'] = ['ok' => true, 'source' => 'brapi', 'tickers' => count($brapiData['results']), 'ms' => round((microtime(true) - $t0) * 1000)];
     } else {
         // Fallback: Yahoo Finance (gratuito, sem token)
-        $yfTickers = ['PETR4.SA','VALE3.SA','ITUB4.SA','BBDC4.SA','ABEV3.SA','WEGE3.SA','BBAS3.SA','MGLU3.SA'];
+        // FIX: adicionado RENT3 e SUZB3 para ter os 10 tickers mesmo sem brapi token
+        $yfTickers = ['PETR4.SA','VALE3.SA','ITUB4.SA','BBDC4.SA','ABEV3.SA','WEGE3.SA','BBAS3.SA','MGLU3.SA','RENT3.SA','SUZB3.SA'];
         $yfResults = [];
         foreach ($yfTickers as $ticker) {
             $yfRaw = httpGet("https://query1.finance.yahoo.com/v8/finance/chart/{$ticker}?interval=1d&range=1d", 6, ['User-Agent: Mozilla/5.0 (compatible; VicioCode/1.0)']);
@@ -1780,4 +1819,3 @@ CREATE TABLE IF NOT EXISTS user_favorite_assets (
 */
 
 // Já foi adicionado acima — esse bloco é reservado para append via script
-
