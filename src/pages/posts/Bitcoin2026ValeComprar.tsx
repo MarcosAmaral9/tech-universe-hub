@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import heroImg from "@/assets/bitcoin-2026-vale-comprar.webp";
+import { useMarketData } from "@/hooks/useMarketData";
 
 const CICLOS_BTC = [
   { ciclo: "2013-2015", topo: "$1.150", fundo: "$170", queda: "-85%", recuperacao: "~2 anos" },
@@ -19,18 +20,32 @@ const CICLOS_BTC = [
 
 const Bitcoin2026ValeComprar = () => {
   const [aporte, setAporte] = useState(1000);
+  const { data: marketData, isFallback } = useMarketData();
 
   useEffect(() => {
     trackArticleRead("bitcoin-2026-vale-comprar", "Bitcoin em 2026: vale comprar agora ou esperar?", "invest");
   }, []);
 
-  const btcPreco = 72000; // ~US$ 72k
+  // Preço real do Bitcoin em BRL vindo do cache centralizado
+  const btcPrecoBRL = useMemo(() => {
+    const btc = marketData?.crypto?.find(c => c.id === "bitcoin");
+    return btc?.current_price ?? 387818; // fallback
+  }, [marketData]);
+
+  // Preço em USD (usando câmbio real)
+  const usdRate = useMemo(() => {
+    const r = marketData?.rates?.USDBRL;
+    return r ? parseFloat(r.bid) : 5.85;
+  }, [marketData]);
+
+  const btcPreco = Math.round(btcPrecoBRL / usdRate); // USD
   const fracao = aporte / btcPreco;
-  const cenarioAlta = aporte * 1.8; // +80%
-  const cenarioLateral = aporte * 1.1; // +10%
-  const cenarioQueda = aporte * 0.6; // -40%
+  const cenarioAlta = aporte * 1.8;
+  const cenarioLateral = aporte * 1.1;
+  const cenarioQueda = aporte * 0.6;
 
   const fmt = (v: number) => new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(v);
+  const fmtBRL = (v: number) => new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 }).format(v);
 
   return (
     <article className="container py-8 max-w-4xl mx-auto">
