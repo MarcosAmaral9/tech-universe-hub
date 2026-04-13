@@ -174,7 +174,7 @@ async function fetchHistoryFromDB(type: string, code: string, days: number): Pro
 // ── Página principal ───────────────────────────────────────────────────────
 const HistoricoCotacoesPage = () => {
   const [period, setPeriod]               = useState<Period>("30d");
-  const [category, setCategory]           = useState<CategoryKey>("b3"); // default igual à /cotacoes
+  const [category, setCategory]           = useState<CategoryKey>("crypto");
   const [assets, setAssets]               = useState<AssetHistory[]>([]);
   const [selected, setSelected]           = useState<string | null>(null);
   const [loading, setLoading]             = useState(true);
@@ -387,12 +387,12 @@ const HistoricoCotacoesPage = () => {
       ? "bg-emerald-500/15 text-emerald-400"
       : "bg-amber-500/15 text-amber-400";
 
-  // Ordem igual à página /cotacoes: B3 → Câmbio → Metais → Cripto
+  // Ordem: Cripto → Câmbio → Metais → B3
   const categories: { key: CategoryKey; label: string; icon: React.ReactNode }[] = [
-    { key: "b3",       label: "B3",     icon: <TrendingUp className="h-4 w-4" /> },
+    { key: "crypto",   label: "Cripto", icon: <Bitcoin    className="h-4 w-4" /> },
     { key: "currency", label: "Câmbio", icon: <DollarSign className="h-4 w-4" /> },
     { key: "metal",    label: "Metais", icon: <Gem        className="h-4 w-4" /> },
-    { key: "crypto",   label: "Cripto", icon: <Bitcoin    className="h-4 w-4" /> },
+    { key: "b3",       label: "B3",     icon: <TrendingUp className="h-4 w-4" /> },
   ];
 
   return (
@@ -460,6 +460,12 @@ const HistoricoCotacoesPage = () => {
           <div className="flex items-start gap-3 mb-4 p-3 rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-sm text-emerald-300">
             <Info className="h-4 w-4 shrink-0 mt-0.5" />
             <span>Histórico carregado do banco de dados — dados acumulados automaticamente a cada atualização das cotações.</span>
+          </div>
+        )}
+        {category === "b3" && !loading && (
+          <div className="flex items-start gap-3 mb-4 p-3 rounded-lg border border-blue-500/30 bg-blue-500/10 text-sm text-blue-300">
+            <Info className="h-4 w-4 shrink-0 mt-0.5" />
+            <span><strong>Em desenvolvimento:</strong> O histórico dos valores da B3 está sendo construído gradualmente. Os dados são acumulados automaticamente a cada atualização do servidor — quanto mais tempo passar, mais completo ficará o histórico.</span>
           </div>
         )}
 

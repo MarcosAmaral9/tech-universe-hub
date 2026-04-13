@@ -120,10 +120,10 @@ const CalculadorasFinanceiras = () => {
 
   const categories = [
     { key:"all",      label:"Todos",  icon:Calculator },
-    { key:"b3",       label:"B3",     icon:TrendingUp },
     { key:"crypto",   label:"Cripto", icon:Bitcoin    },
     { key:"currency", label:"Câmbio", icon:DollarSign },
     { key:"metal",    label:"Metais", icon:Gem        },
+    { key:"b3",       label:"B3",     icon:TrendingUp },
   ];
 
   return (
