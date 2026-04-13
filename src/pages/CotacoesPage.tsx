@@ -13,10 +13,10 @@ type Section = "all" | "b3" | "currency" | "metals" | "crypto";
 
 const sections = [
   { key: "all" as Section, label: "Todos", icon: BarChart3 },
-  { key: "b3" as Section, label: "B3", icon: TrendingUp },
+  { key: "crypto" as Section, label: "Cripto", icon: Bitcoin },
   { key: "currency" as Section, label: "Câmbio", icon: DollarSign },
   { key: "metals" as Section, label: "Metais", icon: Gem },
-  { key: "crypto" as Section, label: "Cripto", icon: Bitcoin },
+  { key: "b3" as Section, label: "B3", icon: TrendingUp },
 ];
 
 const CotacoesPage = () => {
@@ -102,9 +102,9 @@ const CotacoesPage = () => {
 
       {/* Widgets */}
       <div className="space-y-6">
-        {show("b3") && (
-          <div ref={b3Ref}>
-            <B3StockTicker />
+        {show("crypto") && (
+          <div ref={cryptoRef}>
+            <CryptoWidget />
           </div>
         )}
         {show("currency") && (
@@ -117,9 +117,9 @@ const CotacoesPage = () => {
             <PreciousMetalsWidget />
           </div>
         )}
-        {show("crypto") && (
-          <div ref={cryptoRef}>
-            <CryptoWidget />
+        {show("b3") && (
+          <div ref={b3Ref}>
+            <B3StockTicker />
           </div>
         )}
       </div>
