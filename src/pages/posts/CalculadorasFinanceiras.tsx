@@ -106,7 +106,9 @@ const CalculadorasFinanceiras = () => {
     metals.forEach(({ key, id, name, symbol, icon }) => {
       const r = data.rates[key as keyof typeof data.rates] as { bid: string } | undefined;
       const priceOz = r ? parseFloat(r.bid) : 0;
-      if (priceOz > 0) result.push({ id, name, symbol, price: priceOz / TROY, category:"metal", icon, unit:"g" });
+      // Aplica pureza: ouro 18k (×0.75) e prata 925 (×0.925) — igual ao PreciousMetalsWidget
+      const purity = symbol === "XAU" ? 0.75 : 0.925;
+      if (priceOz > 0) result.push({ id, name, symbol, price: (priceOz / TROY) * purity, category:"metal", icon, unit:"g" });
     });
 
     return result;

@@ -174,7 +174,7 @@ async function fetchHistoryFromDB(type: string, code: string, days: number): Pro
 // ── Página principal ───────────────────────────────────────────────────────
 const HistoricoCotacoesPage = () => {
   const [period, setPeriod]               = useState<Period>("30d");
-  const [category, setCategory]           = useState<CategoryKey>("crypto");
+  const [category, setCategory]           = useState<CategoryKey>("b3"); // default igual à /cotacoes
   const [assets, setAssets]               = useState<AssetHistory[]>([]);
   const [selected, setSelected]           = useState<string | null>(null);
   const [loading, setLoading]             = useState(true);
@@ -296,7 +296,9 @@ const HistoricoCotacoesPage = () => {
       metalDefs.map(async ({ key, id, name, symbol, icon }) => {
         const r = ratesData?.[key];
         const fb = FALLBACK_ASSETS.find(a => a.id === id);
-        const currentPrice = r ? parseFloat(r.bid) / TROY : (fb?.currentPrice ?? 0);
+        // Aplica pureza: ouro 18k (×0.75) e prata 925 (×0.925) — igual ao PreciousMetalsWidget
+        const purity = symbol === "XAU" ? 0.75 : 0.925;
+        const currentPrice = r ? (parseFloat(r.bid) / TROY) * purity : (fb?.currentPrice ?? 0);
         const change24h    = r ? parseFloat(r.pctChange || "0") : (fb?.change24h ?? 0);
         if (currentPrice <= 0) return;
         // Somente BD — o cron salva histórico de metais via fawazahmed a cada 5 min
@@ -385,11 +387,12 @@ const HistoricoCotacoesPage = () => {
       ? "bg-emerald-500/15 text-emerald-400"
       : "bg-amber-500/15 text-amber-400";
 
+  // Ordem igual à página /cotacoes: B3 → Câmbio → Metais → Cripto
   const categories: { key: CategoryKey; label: string; icon: React.ReactNode }[] = [
     { key: "b3",       label: "B3",     icon: <TrendingUp className="h-4 w-4" /> },
-    { key: "crypto",   label: "Cripto", icon: <Bitcoin    className="h-4 w-4" /> },
     { key: "currency", label: "Câmbio", icon: <DollarSign className="h-4 w-4" /> },
     { key: "metal",    label: "Metais", icon: <Gem        className="h-4 w-4" /> },
+    { key: "crypto",   label: "Cripto", icon: <Bitcoin    className="h-4 w-4" /> },
   ];
 
   return (

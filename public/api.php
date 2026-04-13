@@ -626,7 +626,19 @@ if ($method === 'GET' && $action === 'all') {
                     $r['_meta'] = ['source' => 'fawazahmed-auto', 'from_cache' => false, 'updatedAt' => date('c'), 'expiresAt' => date('c', time() + 30 * 60)];
                     $ratesData = $r;
                     $ratesOk = true;
-                    if ($db) { dbCacheSave($db, 'rates', $r); @file_put_contents(cacheDir() . '/viciocode_rates_v2.json', json_encode($r)); }
+                    if ($db) {
+                        dbCacheSave($db, 'rates', $r);
+                        // Salva snapshot histórico com pureza aplicada
+                        $TROY = 31.1035;
+                        $histC = []; $histM = [];
+                        foreach (['USDBRL'=>'USD','EURBRL'=>'EUR','ARSBRL'=>'ARS','PYGBRL'=>'PYG'] as $k=>$c)
+                            if (isset($r[$k]['bid'])) $histC[$c] = (float)$r[$k]['bid'];
+                        if (isset($r['XAUBRL']['bid'])) $histM['XAU'] = round((float)$r['XAUBRL']['bid'] / $TROY * 0.75, 4);
+                        if (isset($r['XAGBRL']['bid'])) $histM['XAG'] = round((float)$r['XAGBRL']['bid'] / $TROY * 0.925, 4);
+                        if (!empty($histC)) saveHistorySnapshots($db, 'currency', $histC);
+                        if (!empty($histM)) saveHistorySnapshots($db, 'metal', $histM);
+                        @file_put_contents(cacheDir() . '/viciocode_rates_v2.json', json_encode($r));
+                    }
                     $autoBootstrapped = true;
                 }
             }
@@ -634,7 +646,7 @@ if ($method === 'GET' && $action === 'all') {
 
         // Crypto (CoinGecko — apenas se rates OK para não sobrecarregar no mesmo request)
         if (!$cryptoOk) {
-            $rawCg = httpGet('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=8&page=1&sparkline=false', 10);
+            $rawCg = httpGet('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&ids=bitcoin,ethereum,solana,binancecoin,cardano,ripple,chainlink,polkadot&order=market_cap_desc&sparkline=false', 10);
             if (!$rawCg) $rawCg = httpGet('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,binancecoin,cardano,ripple,chainlink,polkadot&vs_currencies=brl&include_24hr_change=true', 8);
             $cgData = $rawCg ? json_decode($rawCg, true) : null;
             if (!empty($cgData) && is_array($cgData) && count($cgData) > 0) {
@@ -853,8 +865,10 @@ if ($method === 'GET' && $action === 'cron_refresh') {
             $histC = []; $histM = [];
             foreach (['USDBRL'=>'USD','EURBRL'=>'EUR','ARSBRL'=>'ARS','PYGBRL'=>'PYG'] as $k=>$c)
                 if (isset($ratesResult[$k]['bid'])) $histC[$c] = (float)$ratesResult[$k]['bid'];
-            if (isset($ratesResult['XAUBRL']['bid'])) $histM['XAU'] = round((float)$ratesResult['XAUBRL']['bid'] / $TROY, 4);
-            if (isset($ratesResult['XAGBRL']['bid'])) $histM['XAG'] = round((float)$ratesResult['XAGBRL']['bid'] / $TROY, 4);
+            // Salva com pureza aplicada: ouro 18k (×0.75) e prata 925 (×0.925)
+            // Consistente com PreciousMetalsWidget, CalculadorasFinanceiras e HistoricoCotacoesPage
+            if (isset($ratesResult['XAUBRL']['bid'])) $histM['XAU'] = round((float)$ratesResult['XAUBRL']['bid'] / $TROY * 0.75, 4);
+            if (isset($ratesResult['XAGBRL']['bid'])) $histM['XAG'] = round((float)$ratesResult['XAGBRL']['bid'] / $TROY * 0.925, 4);
             if (!empty($histC)) saveHistorySnapshots($db, 'currency', $histC);
             if (!empty($histM)) saveHistorySnapshots($db, 'metal', $histM);
         }
@@ -867,7 +881,7 @@ if ($method === 'GET' && $action === 'cron_refresh') {
 
     // ── 2. CRYPTO (CoinGecko) ─────────────────────────────────────────────
     $TTL_CRYPTO = 30 * 60;
-    $rawCg = httpGet('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&per_page=8&page=1&sparkline=false', 10);
+    $rawCg = httpGet('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&ids=bitcoin,ethereum,solana,binancecoin,cardano,ripple,chainlink,polkadot&order=market_cap_desc&sparkline=false', 10);
     if (!$rawCg) $rawCg = httpGet('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,binancecoin,cardano,ripple,chainlink,polkadot&vs_currencies=brl&include_24hr_change=true', 8);
     $cgData = $rawCg ? json_decode($rawCg, true) : null;
     if (!empty($cgData) && is_array($cgData) && count($cgData) > 0) {
@@ -1062,8 +1076,9 @@ if ($method === 'GET' && $action === 'history_bootstrap') {
         }
         // Metais
         $TROY = 31.1035;
-        if (!empty($brlData['xau'])) $ins->execute([':type' => 'metal', ':code' => 'XAU', ':price' => round(1/$brlData['xau']/$TROY, 4), ':date' => $dateStr]);
-        if (!empty($brlData['xag'])) $ins->execute([':type' => 'metal', ':code' => 'XAG', ':price' => round(1/$brlData['xag']/$TROY, 4), ':date' => $dateStr]);
+        // Salva com pureza: ouro 18k (×0.75) e prata 925 (×0.925)
+        if (!empty($brlData['xau'])) $ins->execute([':type' => 'metal', ':code' => 'XAU', ':price' => round(1/$brlData['xau']/$TROY * 0.75, 4), ':date' => $dateStr]);
+        if (!empty($brlData['xag'])) $ins->execute([':type' => 'metal', ':code' => 'XAG', ':price' => round(1/$brlData['xag']/$TROY * 0.925, 4), ':date' => $dateStr]);
 
         usleep(200000); // 200ms entre datas
     }
