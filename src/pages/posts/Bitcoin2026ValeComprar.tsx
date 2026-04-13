@@ -77,9 +77,24 @@ const Bitcoin2026ValeComprar = () => {
         <img fetchpriority="high" src={heroImg} alt="Bitcoin 2026 - gráfico de volatilidade" className="w-full aspect-video object-cover" loading="eager" />
       </div>
 
+      {/* Live price banner */}
+      <div className="bg-card border border-border rounded-2xl p-4 mb-8 flex flex-wrap items-center justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <span className="text-3xl">₿</span>
+          <div>
+            <p className="text-xs text-muted-foreground">Preço atual do Bitcoin</p>
+            <p className="text-2xl font-bold text-foreground">{fmtBRL(btcPrecoBRL)} <span className="text-sm text-muted-foreground font-normal">({fmt(btcPreco)})</span></p>
+          </div>
+        </div>
+        <div className="flex items-center gap-2">
+          {!isFallback && <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 text-xs font-medium">✓ Cotação em tempo real</span>}
+          {isFallback && <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/15 text-amber-400 text-xs font-medium">~ Valor de referência</span>}
+        </div>
+      </div>
+
       <div className="prose prose-lg max-w-none space-y-6">
         <p className="text-muted-foreground leading-relaxed">
-          Se você acompanha o mercado cripto, já sabe que 2026 não está sendo aquele rali explosivo que alguns analistas prometiam. Mas também está longe de ser um "inverno cripto". O Bitcoin está hoje cotado em torno de <strong>US$ 70 mil a 73 mil</strong>, após ter batido o recorde histórico de US$ 125 mil em 2025 — e depois corrigido forte.
+          Se você acompanha o mercado cripto, já sabe que 2026 não está sendo aquele rali explosivo que alguns analistas prometiam. Mas também está longe de ser um "inverno cripto". O Bitcoin está hoje cotado em torno de <strong>{fmt(btcPreco)}</strong> ({fmtBRL(btcPrecoBRL)}), após ter batido o recorde histórico de US$ 125 mil em 2025 — e depois corrigido forte.
         </p>
 
         <AdLeaderboard />
