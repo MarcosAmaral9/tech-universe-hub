@@ -199,6 +199,15 @@ const CortarGastos2026 = lazy(() => import("./pages/posts/CortarGastos2026"));
 const NintendoSwitch2Guia2026 = lazy(() => import("./pages/posts/NintendoSwitch2Guia2026"));
 const GTAVI2026 = lazy(() => import("./pages/posts/GTAVI2026"));
 const JujutsuKaisenGuia2026 = lazy(() => import("./pages/posts/JujutsuKaisenGuia2026"));
+// ── 13 Abr 2026 ──────────────────────────────────────────────────────────────
+const AgentesIAAutonomos2026       = lazy(() => import("./pages/posts/AgentesIAAutonomos2026"));
+const IATrabalho2026Impacto        = lazy(() => import("./pages/posts/IATrabalho2026Impacto"));
+const IbovespaRecordeSelic2026     = lazy(() => import("./pages/posts/IbovespaRecordeSelic2026"));
+const TesouroPrefixadoVsIPCA2026   = lazy(() => import("./pages/posts/TesouroPrefixadoVsIPCA2026"));
+const PragmataCapcom2026           = lazy(() => import("./pages/posts/PragmataCapcom2026"));
+const SarosPS52026                 = lazy(() => import("./pages/posts/SarosPS52026"));
+const OnePieceElbaf2026            = lazy(() => import("./pages/posts/OnePieceElbaf2026"));
+const SpringSeasonAnimes2026       = lazy(() => import("./pages/posts/SpringSeasonAnimes2026"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -385,6 +394,15 @@ const App = () => (
                 <Route path="/post/nintendo-switch-2-guia-2026" element={<NintendoSwitch2Guia2026 />} />
                 <Route path="/post/gta-vi-guia-completo-2026" element={<GTAVI2026 />} />
                 <Route path="/post/jujutsu-kaisen-guia-completo-2026" element={<JujutsuKaisenGuia2026 />} />
+                 {/* ── 13 Abr 2026 ── */}
+                <Route path="/post/agentes-ia-autonomos-2026" element={<Suspense fallback={<div />}><AgentesIAAutonomos2026 /></Suspense>} />
+                <Route path="/post/ia-mercado-trabalho-brasil-2026" element={<Suspense fallback={<div />}><IATrabalho2026Impacto /></Suspense>} />
+                <Route path="/post/ibovespa-recorde-selic-caindo-2026" element={<Suspense fallback={<div />}><IbovespaRecordeSelic2026 /></Suspense>} />
+                <Route path="/post/tesouro-prefixado-vs-ipca-2026" element={<Suspense fallback={<div />}><TesouroPrefixadoVsIPCA2026 /></Suspense>} />
+                <Route path="/post/pragmata-capcom-guia-completo-2026" element={<Suspense fallback={<div />}><PragmataCapcom2026 /></Suspense>} />
+                <Route path="/post/saros-housemarque-ps5-2026" element={<Suspense fallback={<div />}><SarosPS52026 /></Suspense>} />
+                <Route path="/post/one-piece-elbaf-formato-sazonal-2026" element={<Suspense fallback={<div />}><OnePieceElbaf2026 /></Suspense>} />
+                <Route path="/post/spring-season-animes-abril-2026" element={<Suspense fallback={<div />}><SpringSeasonAnimes2026 /></Suspense>} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
