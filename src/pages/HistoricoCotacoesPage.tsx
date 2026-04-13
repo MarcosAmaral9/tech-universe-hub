@@ -462,6 +462,12 @@ const HistoricoCotacoesPage = () => {
             <span>Histórico carregado do banco de dados — dados acumulados automaticamente a cada atualização das cotações.</span>
           </div>
         )}
+        {category === "b3" && !loading && (
+          <div className="flex items-start gap-3 mb-4 p-3 rounded-lg border border-blue-500/30 bg-blue-500/10 text-sm text-blue-300">
+            <Info className="h-4 w-4 shrink-0 mt-0.5" />
+            <span><strong>Em desenvolvimento:</strong> O histórico dos valores da B3 está sendo construído gradualmente. Os dados são acumulados automaticamente a cada atualização do servidor — quanto mais tempo passar, mais completo ficará o histórico.</span>
+          </div>
+        )
 
         {/* Filtros categoria + período */}
         <div className="flex flex-wrap items-center gap-2 mb-4">
