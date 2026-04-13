@@ -12,14 +12,14 @@ import heroImg from "@/assets/bitcoin-2026-vale-comprar.webp";
 import { useMarketData } from "@/hooks/useMarketData";
 
 const CICLOS_BTC = [
-  { ciclo: "2013-2015", topo: "$1.150", fundo: "$170", queda: "-85%", recuperacao: "~2 anos" },
-  { ciclo: "2017-2018", topo: "$19.800", fundo: "$3.200", queda: "-84%", recuperacao: "~3 anos" },
-  { ciclo: "2021-2022", topo: "$69.000", fundo: "$15.500", queda: "-77%", recuperacao: "~2 anos" },
-  { ciclo: "2025-2026", topo: "$125.000", fundo: "$70.000*", queda: "-44%*", recuperacao: "Em andamento" },
+  { ciclo: "2013-2015", topo: "R$ 6.700",   fundo: "R$ 1.000",    queda: "-85%", recuperacao: "~2 anos" },
+  { ciclo: "2017-2018", topo: "R$ 115.800", fundo: "R$ 18.700",   queda: "-84%", recuperacao: "~3 anos" },
+  { ciclo: "2021-2022", topo: "R$ 403.600", fundo: "R$ 90.600",   queda: "-77%", recuperacao: "~2 anos" },
+  { ciclo: "2025-2026", topo: "R$ 731.000", fundo: "R$ 409.000*", queda: "-44%*", recuperacao: "Em andamento" },
 ];
 
 const Bitcoin2026ValeComprar = () => {
-  const [aporte, setAporte] = useState(1000);
+  const [aporte, setAporte] = useState(5000);
   const { data: marketData, isFallback } = useMarketData();
 
   useEffect(() => {
@@ -29,22 +29,14 @@ const Bitcoin2026ValeComprar = () => {
   // Preço real do Bitcoin em BRL vindo do cache centralizado
   const btcPrecoBRL = useMemo(() => {
     const btc = marketData?.crypto?.find(c => c.id === "bitcoin");
-    return btc?.current_price ?? 387818; // fallback
+    return btc?.current_price ?? 387818;
   }, [marketData]);
 
-  // Preço em USD (usando câmbio real)
-  const usdRate = useMemo(() => {
-    const r = marketData?.rates?.USDBRL;
-    return r ? parseFloat(r.bid) : 5.85;
-  }, [marketData]);
-
-  const btcPreco = Math.round(btcPrecoBRL / usdRate); // USD
-  const fracao = aporte / btcPreco;
+  const fracao = aporte / btcPrecoBRL;
   const cenarioAlta = aporte * 1.8;
   const cenarioLateral = aporte * 1.1;
   const cenarioQueda = aporte * 0.6;
 
-  const fmt = (v: number) => new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(v);
   const fmtBRL = (v: number) => new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 }).format(v);
 
   return (
@@ -63,7 +55,7 @@ const Bitcoin2026ValeComprar = () => {
           Bitcoin em 2026: vale comprar agora ou esperar?
         </h1>
         <p className="text-lg text-muted-foreground mb-4">
-          O Bitcoin corrigiu forte após o recorde de US$ 125 mil em 2025 e agora ronda os US$ 70-73 mil. Entenda o cenário e se faz sentido investir agora.
+          O Bitcoin corrigiu forte após o recorde de R$ 731 mil em 2025 e agora ronda os R$ 409–427 mil. Entenda o cenário e se faz sentido investir agora.
         </p>
         <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
           <span className="flex items-center gap-1"><User className="h-4 w-4" /> VICIO&lt;CODE&gt;</span>
@@ -83,7 +75,7 @@ const Bitcoin2026ValeComprar = () => {
           <span className="text-3xl">₿</span>
           <div>
             <p className="text-xs text-muted-foreground">Preço atual do Bitcoin</p>
-            <p className="text-2xl font-bold text-foreground">{fmtBRL(btcPrecoBRL)} <span className="text-sm text-muted-foreground font-normal">({fmt(btcPreco)})</span></p>
+            <p className="text-2xl font-bold text-foreground">{fmtBRL(btcPrecoBRL)}</p>
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -94,17 +86,17 @@ const Bitcoin2026ValeComprar = () => {
 
       <div className="prose prose-lg max-w-none space-y-6">
         <p className="text-muted-foreground leading-relaxed">
-          Se você acompanha o mercado cripto, já sabe que 2026 não está sendo aquele rali explosivo que alguns analistas prometiam. Mas também está longe de ser um "inverno cripto". O Bitcoin está hoje cotado em torno de <strong>{fmt(btcPreco)}</strong> ({fmtBRL(btcPrecoBRL)}), após ter batido o recorde histórico de US$ 125 mil em 2025 — e depois corrigido forte.
+          Se você acompanha o mercado cripto, já sabe que 2026 não está sendo aquele rali explosivo que alguns analistas prometiam. Mas também está longe de ser um "inverno cripto". O Bitcoin está hoje cotado em torno de <strong>{fmtBRL(btcPrecoBRL)}</strong>, após ter batido o recorde histórico de R$ 731 mil em 2025 — e depois corrigido forte.
         </p>
 
         <AdLeaderboard />
 
         <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">O que rolou com o Bitcoin em 2025 e 2026</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Em 2025, o Bitcoin fez história ao atingir <strong>US$ 125 mil</strong>, impulsionado pelo enorme fluxo de capital institucional via ETFs americanos, pelo halving de abril de 2024 e pelo ambiente político favorável nos EUA. Mas a euforia não durou para sempre. Com incertezas geopolíticas e um ambiente macroeconômico mais tenso no início de 2026, o BTC sofreu uma correção significativa, chegando a rondar os US$ 80 mil no pico da crise das tarifas, antes de se estabilizar na faixa atual dos US$ 70 mil.
+          Em 2025, o Bitcoin fez história ao atingir <strong>R$ 731 mil</strong>, impulsionado pelo enorme fluxo de capital institucional via ETFs americanos, pelo halving de abril de 2024 e pelo ambiente político favorável nos EUA. Mas a euforia não durou para sempre. Com incertezas geopolíticas e um ambiente macroeconômico mais tenso no início de 2026, o BTC sofreu uma correção significativa, chegando a rondar os R$ 468 mil no pico da crise das tarifas, antes de se estabilizar na faixa atual de R$ 409 mil.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          Em reais, isso representa aproximadamente <strong>R$ 380 mil por Bitcoin</strong> — ainda um número expressivo. Mas lembre-se: você não precisa comprar um Bitcoin inteiro. Pode comprar frações a partir de poucos reais.
+          Mesmo com a correção, o valor continua expressivo. Mas lembre-se: você não precisa comprar um Bitcoin inteiro. Pode comprar frações a partir de poucos reais.
         </p>
 
         {/* Tabela de ciclos históricos */}
@@ -136,7 +128,7 @@ const Bitcoin2026ValeComprar = () => {
             </tbody>
           </table>
         </div>
-        <p className="text-xs text-muted-foreground">* Valores de 2025-2026 baseados em dados até março de 2026. O ciclo pode não ter atingido seu fundo definitivo.</p>
+        <p className="text-xs text-muted-foreground">* Valores de 2025-2026 baseados em dados até março de 2026. O ciclo pode não ter atingido seu fundo definitivo. Valores históricos convertidos para BRL pela cotação média da época.</p>
 
         <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">O mercado institucional segue comprando</h2>
         <p className="text-muted-foreground leading-relaxed">
@@ -172,31 +164,31 @@ const Bitcoin2026ValeComprar = () => {
         <div className="bg-card border border-border rounded-2xl p-6">
           <label className="block text-sm text-muted-foreground mb-2">Se eu investir hoje:</label>
           <div className="flex items-center gap-3 mb-4 flex-wrap">
-            {[500, 1000, 5000, 10000].map(v => (
+            {[1000, 5000, 10000, 50000].map(v => (
               <button key={v} onClick={() => setAporte(v)} className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${aporte === v ? "bg-[hsl(var(--invest-color))] text-white" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}>
-                {fmt(v)}
+                {fmtBRL(v)}
               </button>
             ))}
           </div>
-          <p className="text-xs text-muted-foreground mb-4">Compraria <strong>{fracao.toFixed(6)} BTC</strong> ao preço atual (~{fmt(btcPreco)})</p>
+          <p className="text-xs text-muted-foreground mb-4">Compraria <strong>{fracao.toFixed(6)} BTC</strong> ao preço atual (~{fmtBRL(btcPrecoBRL)})</p>
           <div className="grid md:grid-cols-3 gap-3">
             <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-4 text-center">
               <TrendingUp className="h-5 w-5 text-green-500 mx-auto mb-1" />
               <p className="text-xs text-muted-foreground">Cenário otimista (+80%)</p>
-              <p className="text-lg font-bold text-green-500">{fmt(cenarioAlta)}</p>
-              <p className="text-xs text-muted-foreground">BTC a ~{fmt(btcPreco * 1.8)}</p>
+              <p className="text-lg font-bold text-green-500">{fmtBRL(cenarioAlta)}</p>
+              <p className="text-xs text-muted-foreground">BTC a ~{fmtBRL(btcPrecoBRL * 1.8)}</p>
             </div>
             <div className="bg-muted/50 rounded-xl p-4 text-center">
               <Scale className="h-5 w-5 text-muted-foreground mx-auto mb-1" />
               <p className="text-xs text-muted-foreground">Cenário lateral (+10%)</p>
-              <p className="text-lg font-bold">{fmt(cenarioLateral)}</p>
-              <p className="text-xs text-muted-foreground">BTC a ~{fmt(btcPreco * 1.1)}</p>
+              <p className="text-lg font-bold">{fmtBRL(cenarioLateral)}</p>
+              <p className="text-xs text-muted-foreground">BTC a ~{fmtBRL(btcPrecoBRL * 1.1)}</p>
             </div>
             <div className="bg-destructive/10 border border-destructive/20 rounded-xl p-4 text-center">
               <AlertTriangle className="h-5 w-5 text-destructive mx-auto mb-1" />
               <p className="text-xs text-muted-foreground">Cenário pessimista (-40%)</p>
-              <p className="text-lg font-bold text-destructive">{fmt(cenarioQueda)}</p>
-              <p className="text-xs text-muted-foreground">BTC a ~{fmt(btcPreco * 0.6)}</p>
+              <p className="text-lg font-bold text-destructive">{fmtBRL(cenarioQueda)}</p>
+              <p className="text-xs text-muted-foreground">BTC a ~{fmtBRL(btcPrecoBRL * 0.6)}</p>
             </div>
           </div>
           <p className="text-xs text-muted-foreground mt-3">Simulação ilustrativa. Cenários baseados em análises de mercado, não garantem resultado futuro.</p>
@@ -210,7 +202,7 @@ const Bitcoin2026ValeComprar = () => {
           Para quem ainda não tem exposição a cripto, uma alocação pequena — entre 1% e 5% da carteira — é uma forma de participar do potencial de valorização sem se expor demais ao risco. Para quem já tem posição, o momento de correção pode ser visto como acumulação.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          O que especialistas alertam é contra a estratégia de apostar tudo esperando um "rali até US$ 200 mil". O mercado cripto continua sendo o mais volátil do mundo.
+          O que especialistas alertam é contra a estratégia de apostar tudo esperando um rali até R$ 1,2 milhão. O mercado cripto continua sendo o mais volátil do mundo.
         </p>
 
         <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">Como comprar Bitcoin no Brasil em 2026</h2>
