@@ -467,7 +467,7 @@ const HistoricoCotacoesPage = () => {
             <Info className="h-4 w-4 shrink-0 mt-0.5" />
             <span><strong>Em desenvolvimento:</strong> O histórico dos valores da B3 está sendo construído gradualmente. Os dados são acumulados automaticamente a cada atualização do servidor — quanto mais tempo passar, mais completo ficará o histórico.</span>
           </div>
-        )
+        )}
 
         {/* Filtros categoria + período */}
         <div className="flex flex-wrap items-center gap-2 mb-4">
