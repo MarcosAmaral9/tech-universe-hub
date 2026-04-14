@@ -117,6 +117,7 @@ import negocioOnlineIaImg from "@/assets/negocio-online-ia-2026.webp";
 import nintendoSwitch2Img from "@/assets/nintendo-switch-2-2026.webp";
 import gtaViImg from "@/assets/gta-vi-2026.webp";
 import jujutsuKaisenImg from "@/assets/jujutsu-kaisen-guia-2026.webp";
+import sarosPs5Img from "@/assets/saros-ps5-2026.png";
 
 export const blogPosts: BlogPost[] = [
 
@@ -226,7 +227,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "geek",
     subtopic: "games",
-    image: lancamentosGamesAbrilImg,
+    image: sarosPs5Img,
     author: "VICIO<CODE>",
     date: "2026-04-13",
     readTime: "13 min",
