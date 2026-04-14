@@ -6,7 +6,7 @@ import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3 } from "l
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import heroImg from "@/assets/lancamentos-games-abril-2026.webp";
+import heroImg from "@/assets/saros-ps5-2026.png";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 
 const SarosPS52026 = () => {
