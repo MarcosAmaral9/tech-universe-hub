@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Sitemap do VICIO<CODE> — viciocode.com
-  Gerado em: 2026-04-04
-  Total de URLs: 125
-  Páginas estáticas: 16
-  Artigos: 109 (ordenados do mais recente para o mais antigo)
+  Gerado em: 2026-04-14
+  Total de URLs: 143
+  Páginas estáticas: 18
+  Artigos: 125 (ordenados do mais recente para o mais antigo)
 
   Estratégia de changefreq:
     daily   → Homepage e páginas de cotações (atualizam todo dia)
@@ -147,13 +147,138 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <!-- Instalar PWA -->
+  <url>
+    <loc>https://viciocode.com/instalar</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Configurações do usuário -->
+  <url>
+    <loc>https://viciocode.com/configuracoes</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 
   <!--
   ╔══════════════════════════════════════════════════════╗
- ║   SEÇÃO 2: ARTIGOS (109 posts)                          ║
+  ║   SEÇÃO 2: ARTIGOS (125 posts)                       ║
   ║   Ordenados do MAIS RECENTE para o MAIS ANTIGO       ║
   ╚══════════════════════════════════════════════════════╝
   -->
+
+  <!-- ── 2026-04-13 ──────────────────────────────────────────── -->
+  <!-- Inteligência Artificial -->
+  <url>
+    <loc>https://viciocode.com/post/agentes-ia-autonomos-2026</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/ia-mercado-trabalho-brasil-2026</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Investimentos e Finanças -->
+  <url>
+    <loc>https://viciocode.com/post/ibovespa-recorde-selic-caindo-2026</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/tesouro-prefixado-vs-ipca-2026</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Geek (Games, Filmes, Séries) -->
+  <url>
+    <loc>https://viciocode.com/post/pragmata-capcom-guia-completo-2026</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/saros-housemarque-ps5-2026</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Otaku (Animes, Mangás, Cultura Japonesa) -->
+  <url>
+    <loc>https://viciocode.com/post/one-piece-elbaf-formato-sazonal-2026</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/spring-season-animes-abril-2026</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ── 2026-04-11 ──────────────────────────────────────────── -->
+  <!-- Inteligência Artificial -->
+  <url>
+    <loc>https://viciocode.com/post/claude-opus-vs-sonnet-2026</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/negocio-online-ia-2026</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Investimentos e Finanças -->
+  <url>
+    <loc>https://viciocode.com/post/etfs-b3-guia-completo-2026</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/cortar-gastos-2026</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Geek (Games, Filmes, Séries) -->
+  <url>
+    <loc>https://viciocode.com/post/nintendo-switch-2-guia-2026</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/gta-vi-guia-completo-2026</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Otaku (Animes, Mangás, Cultura Japonesa) -->
+  <url>
+    <loc>https://viciocode.com/post/jujutsu-kaisen-guia-completo-2026</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ── 2026-04-09 ──────────────────────────────────────────── -->
+  <!-- Investimentos e Finanças -->
+  <url>
+    <loc>https://viciocode.com/post/guerra-ira-petroleo-petrobras-2026</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- ── 2026-04-04 ──────────────────────────────────────────── -->
   <!-- Otaku (Animes, Mangás, Cultura Japonesa) -->
