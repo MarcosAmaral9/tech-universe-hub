@@ -135,7 +135,7 @@ const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
       </div>
 
       <p className="text-[10px] text-muted-foreground mt-3 text-center">
-        Ouro 18k (75% pureza) • Prata 925 (92.5% pureza) • Fonte: Stooq
+        Ouro 18k (75% pureza) • Prata 925 (92.5% pureza) • Fonte: fawazahmed / jsDelivr
       </p>
       <CacheStatusBar source={source} isFallback={isFallback} cacheExpiresAt={cacheExpiresAt} />
       <PriceAlertConfig
