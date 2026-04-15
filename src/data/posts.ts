@@ -3,11 +3,11 @@ import { BlogPost, Category } from "@/types/blog";
 import mangaManhwaManhuaImg from "@/assets/manga-manhwa-manhua.webp";
 import manhwaVsManuaImg from "@/assets/manhwa-vs-manhua.webp";
 import systemManhwaImg from "@/assets/system-manhwa-hero.webp";
-import aiAnimeDubbingImg from "@/assets/ai-anime-dubbing.jpg";
+import aiAnimeDubbingImg from "@/assets/ai-anime-dubbing.webp";
 import aiRemasteringImg from "@/assets/ai-remastering.webp";
 import techInvesting2026Img from "@/assets/tech-investing-2026.webp";
 import vikingsRagnarImg from "@/assets/vikings-ragnar.webp";
-import hellLetLooseImg from "@/assets/hell-let-loose.jpg";
+import hellLetLooseImg from "@/assets/hell-let-loose.webp";
 import avatarPandoraImg from "@/assets/avatar-pandora.webp";
 import avatarWaterImg from "@/assets/avatar-water-swimming.webp";
 import avatarFireImg from "@/assets/avatar-fire.webp";
@@ -117,7 +117,16 @@ import negocioOnlineIaImg from "@/assets/negocio-online-ia-2026.webp";
 import nintendoSwitch2Img from "@/assets/nintendo-switch-2-2026.webp";
 import gtaViImg from "@/assets/gta-vi-2026.webp";
 import jujutsuKaisenImg from "@/assets/jujutsu-kaisen-guia-2026.webp";
-import sarosPs5Img from "@/assets/saros-ps5-2026.png";
+import sarosPs5Img from "@/assets/saros-ps5-2026.webp";
+import tesouroDiretoGuiaImg from "@/assets/tesouro-direto-guia-2026.webp";
+import temporadaAnimesAbrilGuiaImg from "@/assets/temporada-animes-abril-guia-2026.webp";
+import onePieceFinalSagaGuiaImg from "@/assets/one-piece-final-saga-guia-2026.webp";
+import lancamentosGamesAbrilGuiaImg from "@/assets/lancamentos-games-abril-guia-2026.webp";
+import iaTrabalhoProf2026Img from "@/assets/ia-trabalho-profissoes-2026.webp";
+import etfsGuiaCompletoImg from "@/assets/etfs-guia-completo-2026.webp";
+import economiaDomesticaDicasImg from "@/assets/economia-domestica-dicas-2026.webp";
+import carteiraIniciantesGuiaImg from "@/assets/carteira-iniciantes-guia-2026.webp";
+import agentesIaAutonomosImg from "@/assets/agentes-ia-autonomos-2026.webp";
 
 export const blogPosts: BlogPost[] = [
 
