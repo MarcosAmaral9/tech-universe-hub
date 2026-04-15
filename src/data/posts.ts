@@ -3,11 +3,11 @@ import { BlogPost, Category } from "@/types/blog";
 import mangaManhwaManhuaImg from "@/assets/manga-manhwa-manhua.webp";
 import manhwaVsManuaImg from "@/assets/manhwa-vs-manhua.webp";
 import systemManhwaImg from "@/assets/system-manhwa-hero.webp";
-import aiAnimeDubbingImg from "@/assets/ai-anime-dubbing.jpg";
+import aiAnimeDubbingImg from "@/assets/ai-anime-dubbing.webp";
 import aiRemasteringImg from "@/assets/ai-remastering.webp";
 import techInvesting2026Img from "@/assets/tech-investing-2026.webp";
 import vikingsRagnarImg from "@/assets/vikings-ragnar.webp";
-import hellLetLooseImg from "@/assets/hell-let-loose.jpg";
+import hellLetLooseImg from "@/assets/hell-let-loose.webp";
 import avatarPandoraImg from "@/assets/avatar-pandora.webp";
 import avatarWaterImg from "@/assets/avatar-water-swimming.webp";
 import avatarFireImg from "@/assets/avatar-fire.webp";
@@ -117,7 +117,16 @@ import negocioOnlineIaImg from "@/assets/negocio-online-ia-2026.webp";
 import nintendoSwitch2Img from "@/assets/nintendo-switch-2-2026.webp";
 import gtaViImg from "@/assets/gta-vi-2026.webp";
 import jujutsuKaisenImg from "@/assets/jujutsu-kaisen-guia-2026.webp";
-import sarosPs5Img from "@/assets/saros-ps5-2026.png";
+import sarosPs5Img from "@/assets/saros-ps5-2026.webp";
+import tesouroDiretoGuiaImg from "@/assets/tesouro-direto-guia-2026.webp";
+import temporadaAnimesAbrilGuiaImg from "@/assets/temporada-animes-abril-guia-2026.webp";
+import onePieceFinalSagaGuiaImg from "@/assets/one-piece-final-saga-guia-2026.webp";
+import lancamentosGamesAbrilGuiaImg from "@/assets/lancamentos-games-abril-guia-2026.webp";
+import iaTrabalhoProf2026Img from "@/assets/ia-trabalho-profissoes-2026.webp";
+import etfsGuiaCompletoImg from "@/assets/etfs-guia-completo-2026.webp";
+import economiaDomesticaDicasImg from "@/assets/economia-domestica-dicas-2026.webp";
+import carteiraIniciantesGuiaImg from "@/assets/carteira-iniciantes-guia-2026.webp";
+import agentesIaAutonomosImg from "@/assets/agentes-ia-autonomos-2026.webp";
 
 export const blogPosts: BlogPost[] = [
 
@@ -208,7 +217,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "geek",
     subtopic: "games",
-    image: lancamentosGamesAbrilImg,
+    image: lancamentosGamesAbrilGuiaImg,
     author: "VICIO<CODE>",
     date: "2026-04-13",
     readTime: "14 min",
@@ -267,7 +276,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "otaku",
     subtopic: "anime",
-    image: temporadaAnimesAbrilImg,
+    image: temporadaAnimesAbrilGuiaImg,
     author: "VICIO<CODE>",
     date: "2026-04-13",
     readTime: "17 min",
@@ -1276,7 +1285,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "ia",
     subtopic: "trabalho",
-    image: iaTrabalhoImg,
+    image: iaTrabalhoProf2026Img,
     author: "VICIO<CODE>",
     date: "2026-02-13",
     readTime: "13 min",
@@ -1314,7 +1323,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "invest",
     subtopic: "renda-fixa",
-    image: tesouroDiretoImg,
+    image: tesouroDiretoGuiaImg,
     author: "VICIO<CODE>",
     date: "2026-02-15",
     updatedAt: "2026-03-15",
@@ -1354,7 +1363,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "invest",
     subtopic: "carteira",
-    image: carteiraInvestimentosImg,
+    image: carteiraIniciantesGuiaImg,
     author: "VICIO<CODE>",
     date: "2026-02-17",
     readTime: "13 min",
@@ -1593,7 +1602,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "ia",
     subtopic: "agentes",
-    image: agentesIaImg,
+    image: agentesIaAutonomosImg,
     author: "VICIO<CODE>",
     date: "2026-03-01",
     readTime: "14 min",
@@ -1869,7 +1878,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "invest",
     subtopic: "etfs",
-    image: etfs2026Img,
+    image: etfsGuiaCompletoImg,
     author: "VICIO<CODE>",
     date: "2026-03-16",
     readTime: "15 min",
@@ -1928,7 +1937,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "invest",
     subtopic: "economia-domestica",
-    image: economiaDomesticaImg,
+    image: economiaDomesticaDicasImg,
     author: "VICIO<CODE>",
     date: "2026-03-17",
     readTime: "14 min",
@@ -2121,7 +2130,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "otaku",
     subtopic: "manga",
-    image: onePieceImg,
+    image: onePieceFinalSagaGuiaImg,
     author: "VICIO<CODE>",
     date: "2026-03-17",
     readTime: "15 min",

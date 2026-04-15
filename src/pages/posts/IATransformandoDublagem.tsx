@@ -7,7 +7,7 @@ import { ArrowLeft, Clock, Calendar, User, Mic, Globe, Zap, AlertTriangle, Targe
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import aiAnimeDubbingImg from "@/assets/ai-anime-dubbing.jpg";
+import aiAnimeDubbingImg from "@/assets/ai-anime-dubbing.webp";
 
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const IATransformandoDublagem = () => {

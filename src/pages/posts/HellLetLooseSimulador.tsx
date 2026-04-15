@@ -7,7 +7,7 @@ import { ArrowLeft, Clock, User, Calendar, Radio, Target, Users, Shield, Volume2
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import hellLetLooseImg from "@/assets/hell-let-loose.jpg";
+import hellLetLooseImg from "@/assets/hell-let-loose.webp";
 
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 const HellLetLooseSimulador = () => {
