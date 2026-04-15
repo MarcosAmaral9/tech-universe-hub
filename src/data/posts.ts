@@ -300,6 +300,12 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-04-11",
     readTime: "13 min",
+    faq: [
+      { q: "Qual a diferença entre Claude 4 Opus e Claude 4 Sonnet?", a: "O Opus é o modelo mais poderoso da Anthropic, ideal para raciocínio complexo, análise de documentos longos e tarefas criativas avançadas. O Sonnet oferece 80% da capacidade do Opus com custo 5x menor e respostas mais rápidas — perfeito para uso diário e produtividade." },
+      { q: "Quando vale a pena pagar pelo Claude 4 Opus?", a: "Vale quando você precisa de análise jurídica detalhada, revisão de código complexo, escrita criativa de alta qualidade ou processamento de documentos com mais de 100 páginas. Para tarefas rotineiras como resumos, e-mails e brainstorming, o Sonnet é suficiente." },
+      { q: "Claude 4 Opus é melhor que o GPT-5?", a: "Depende da tarefa. O Opus supera o GPT-5 em análise de documentos longos e raciocínio ético. O GPT-5 leva vantagem em multimodalidade (imagens) e integração com ecossistema Microsoft. Ambos são excelentes — a escolha depende do seu caso de uso." },
+      { q: "Quanto custa usar o Claude 4 Opus e Sonnet?", a: "O plano Pro da Anthropic custa US$ 20/mês e dá acesso ao Sonnet com limite generoso. O Opus está disponível no plano Pro com uso limitado ou via API (US$ 15/milhão de tokens de entrada, US$ 75/milhão de saída). O Sonnet via API custa US$ 3/US$ 15 respectivamente." },
+    ],
   },
   {
     id: "152",
@@ -313,6 +319,12 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-04-11",
     readTime: "16 min",
+    faq: [
+      { q: "Quais são os melhores negócios online com IA em 2026?", a: "Agência de conteúdo com IA (investimento inicial: R$ 200/mês), micro-SaaS com automação (R$ 500–R$ 2.000), consultoria de implementação de IA para PMEs (R$ 0–R$ 500), criação de cursos com IA generativa e serviços de automação com n8n/Make." },
+      { q: "Quanto posso ganhar com um negócio baseado em IA?", a: "Varia por modelo: agência de conteúdo pode faturar R$ 5k–R$ 30k/mês em 6 meses. Micro-SaaS com IA pode gerar R$ 3k–R$ 50k/mês com recorrência. Consultoria de IA para empresas parte de R$ 2k por projeto e escala para R$ 15k–R$ 50k/mês." },
+      { q: "Preciso saber programar para criar um negócio com IA?", a: "Não necessariamente. Modelos como agência de conteúdo, consultoria e automação com ferramentas no-code (n8n, Make, Zapier) não exigem programação. Para micro-SaaS, conhecimento básico de programação ajuda, mas plataformas como Lovable e Cursor permitem criar produtos com IA sem experiência prévia." },
+      { q: "Qual o investimento inicial para começar um negócio com IA?", a: "A partir de R$ 100–R$ 500/mês. Os custos principais são: assinatura de ferramentas de IA (ChatGPT Pro R$ 100/mês, Claude R$ 100/mês), domínio (R$ 40/ano) e ferramentas de automação (n8n gratuito self-hosted ou Make a partir de R$ 50/mês)." },
+    ],
   },
   // ── 11 Abr 2026 — Investimentos ──────────────────────────────────
   {
@@ -327,6 +339,12 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-04-11",
     readTime: "15 min",
+    faq: [
+      { q: "O que são ETFs e como funcionam na B3?", a: "ETFs (Exchange Traded Funds) são fundos de investimento negociados na bolsa como ações. Cada cota replica um índice (como Ibovespa, S&P 500 ou índice de renda fixa). Na B3, você compra cotas pelo home broker da sua corretora, com diversificação automática e taxas a partir de 0,03% ao ano." },
+      { q: "Quais os melhores ETFs da B3 em 2026?", a: "Para renda variável brasileira: BOVA11 (Ibovespa) e SMAC11 (small caps). Internacional: IVVB11 (S&P 500) e NASD11 (Nasdaq). Renda fixa: IMAB11 (títulos IPCA+) e B5P211 (NTN-B curta). Dividendos: NDIV11 (ações pagadoras de dividendos)." },
+      { q: "ETF paga dividendos no Brasil?", a: "A maioria dos ETFs da B3 reinveste os dividendos automaticamente no fundo (aumentando o valor da cota). Porém, desde 2023 existem ETFs de dividendos como NDIV11 e DIVD11 que distribuem proventos. Verifique o regulamento de cada fundo." },
+      { q: "Como declarar ETFs no Imposto de Renda?", a: "ETFs de renda variável: IR de 15% sobre lucro na venda (não há isenção de R$ 20k/mês como ações). ETFs de renda fixa: IR regressivo (22,5% a 15% conforme prazo). Declare na ficha 'Bens e Direitos' com código 74 e informe vendas na ficha 'Renda Variável'." },
+    ],
   },
   {
     id: "154",
@@ -340,6 +358,12 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-04-11",
     readTime: "14 min",
+    faq: [
+      { q: "Como economizar R$ 1.000 por mês no Brasil em 2026?", a: "Combine 3 estratégias de alto impacto: renegocie planos de celular e internet (economia de R$ 100–R$ 200), substitua delivery por meal prep semanal (R$ 400–R$ 600) e cancele assinaturas duplicadas de streaming (R$ 100–R$ 200). Só isso já alcança R$ 600–R$ 1.000/mês." },
+      { q: "Quais os maiores vilões do orçamento doméstico?", a: "Alimentação fora de casa (30–40% do gasto com comida), assinaturas esquecidas (brasileiro médio tem 4,7 assinaturas ativas), compras por impulso no cartão de crédito e tarifas bancárias evitáveis. Energia elétrica mal gerenciada também pesa, especialmente com bandeira vermelha." },
+      { q: "Vale a pena trocar de banco para economizar?", a: "Sim. Bancos digitais como Nubank, Inter e C6 oferecem conta sem tarifa, cartão sem anuidade e CDB com liquidez diária rendendo 100% do CDI. A economia média ao migrar de um bancão tradicional é de R$ 50–R$ 150/mês em tarifas." },
+      { q: "Como cortar gastos sem perder qualidade de vida?", a: "Foque em substituições inteligentes, não em privações. Troque restaurantes caros por cozinhar receitas gourmet em casa, substitua academia cara por treinos ao ar livre ou apps fitness, use cashback em compras recorrentes e aproveite programas de fidelidade de supermercados." },
+    ],
   },
   // ── 11 Abr 2026 — Geek ──────────────────────────────────
   {
@@ -354,6 +378,12 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-04-11",
     readTime: "14 min",
+    faq: [
+      { q: "Quanto custa o Nintendo Switch 2 no Brasil?", a: "O preço sugerido é de R$ 2.999 para a edição padrão e R$ 3.499 para o bundle com Mario Kart World. Nos EUA, o console sai por US$ 449,99. Revendedores podem cobrar mais no lançamento devido à alta demanda." },
+      { q: "O Nintendo Switch 2 roda jogos do Switch 1?", a: "Sim, o Switch 2 tem retrocompatibilidade com a maioria dos jogos físicos e digitais do Switch original. Alguns títulos recebem melhorias automáticas de performance e resolução no novo hardware." },
+      { q: "Quais os jogos de lançamento do Nintendo Switch 2?", a: "Mario Kart World (principal exclusivo de lançamento), Metroid Prime 4: Beyond, um novo Zelda anunciado para a janela de lançamento e Donkey Kong remaster. Títulos third-party incluem ports de jogos AAA atuais." },
+      { q: "Vale a pena esperar o Switch 2 ou comprar o Switch OLED?", a: "Se você não tem nenhum Switch, vale esperar o Switch 2 pelo salto geracional. Se já tem o Switch OLED e está satisfeito, espere 6–12 meses após o lançamento para preços estabilizarem e a biblioteca crescer." },
+    ],
   },
   {
     id: "156",
@@ -367,6 +397,12 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-04-11",
     readTime: "15 min",
+    faq: [
+      { q: "Quando o GTA VI será lançado?", a: "O GTA VI tem data de lançamento confirmada para 26 de setembro de 2026, disponível para PlayStation 5 e Xbox Series X|S. A versão para PC ainda não tem data oficial, mas a Rockstar indicou que chegará posteriormente." },
+      { q: "Quanto vai custar o GTA VI no Brasil?", a: "O preço sugerido é de R$ 349,90 para a edição padrão e R$ 449,90 para a edição especial. Na PS Store e Xbox Store, os preços podem variar. Edições físicas de colecionador ainda não foram anunciadas oficialmente." },
+      { q: "Quem são os protagonistas do GTA VI?", a: "Os protagonistas são Lucia e Jason, uma dupla inspirada em Bonnie e Clyde. Lucia é a primeira protagonista feminina jogável da série principal. A história se passa em Vice City (inspirada em Miami) e arredores, com narrativa dupla alternando entre os dois personagens." },
+      { q: "O GTA VI terá mapa maior que o GTA V?", a: "Sim. Segundo vazamentos e informações oficiais, o mapa de Vice City no GTA VI será significativamente maior que Los Santos, incluindo áreas urbanas, pântanos, praias e ilhas. O mundo também será mais denso e interativo, com interiores acessíveis e eventos dinâmicos." },
+    ],
   },
   // ── 11 Abr 2026 — Otaku ──────────────────────────────────
   {
@@ -381,6 +417,12 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-04-11",
     readTime: "17 min",
+    faq: [
+      { q: "Em que ordem assistir Jujutsu Kaisen?", a: "A ordem é: Jujutsu Kaisen Temporada 1 (24 episódios), filme Jujutsu Kaisen 0 (prequel, mas melhor assistir após T1), Temporada 2 (23 episódios cobrindo arcos Passado Oculto e Incidente de Shibuya) e Temporada 3 (em exibição, cobrindo o Culling Game)." },
+      { q: "O mangá de Jujutsu Kaisen já acabou?", a: "Sim. O mangá de Jujutsu Kaisen, escrito por Gege Akutami, foi finalizado em setembro de 2024 com 271 capítulos. A história completa cobre desde a entrada de Yuji na escola até a batalha final contra Sukuna." },
+      { q: "Quem é o personagem mais forte de Jujutsu Kaisen?", a: "Ryomen Sukuna (com 20 dedos) é considerado o mais forte da série, seguido por Gojo Satoru com o Domínio Ilimitado. Outros personagens extremamente poderosos incluem Yuta Okkotsu, Kenjaku e Kashimo." },
+      { q: "Vale a pena começar Jujutsu Kaisen em 2026?", a: "Sim. Com o mangá finalizado e o anime em sua terceira temporada, é o momento ideal para maratonar. A história é completa, sem fillers, e o estúdio MAPPA entrega animação de altíssima qualidade. São cerca de 50 episódios até agora + 1 filme." },
+    ],
   },
 
    // ── 09 Abr 2026 — Finanças ──────────────────────────────────
