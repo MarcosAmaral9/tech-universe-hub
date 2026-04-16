@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="md:col-span-2">
-            <Link to="/" className="font-display text-2xl font-bold inline-block">
+            <Link to="/" className="font-display text-2xl font-bold inline-block" translate="no">
               <span className="logo-vicio">VICIO</span>
               <span className="logo-code">&lt;CODE&gt;</span>
             </Link>
