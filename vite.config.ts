@@ -240,31 +240,37 @@ export default defineConfig(({ mode }) => ({
       // Inject the virtual module so we can use useRegisterSW in the app
       injectRegister: "auto",
       workbox: {
-        // Precache only the shell assets — JS/CSS bundles are hashed so safe to cache
-        globPatterns: ["**/*.{js,css,woff2}"],
+        // Precache shell assets — JS/CSS/fonts/SVG bundles (hashed → safe to cache long-term)
+        globPatterns: ["**/*.{js,css,woff2,woff,svg,ico}"],
+        // Increase precache file size limit to 5 MB (default is 2 MB) — our bundle has multiple chunks
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         cleanupOutdatedCaches: true,
         skipWaiting: false,   // We control this manually via the update prompt
         clientsClaim: true,
+        // Routes that should NEVER be served from cache (must always hit network)
+        navigateFallbackDenylist: [/^\/api\.php/, /^\/google-auth\.php/, /^\/auth\/google/],
         // Runtime caching — makes the app work offline
         runtimeCaching: [
           {
             // HTML pages (navigation requests) — network-first, fallback to cache
+            // Increased to 200 entries to cover all 125 posts + static pages
             urlPattern: ({ request }) => request.mode === "navigate",
             handler: "NetworkFirst",
             options: {
               cacheName: "pages-cache",
-              networkTimeoutSeconds: 5,
-              expiration: { maxEntries: 60, maxAgeSeconds: 7 * 24 * 60 * 60 },
+              networkTimeoutSeconds: 4,
+              expiration: { maxEntries: 200, maxAgeSeconds: 30 * 24 * 60 * 60 },
               cacheableResponse: { statuses: [0, 200] },
             },
           },
           {
-            // Images (WebP/PNG) — cache-first, long TTL
-            urlPattern: /\.(?:webp|png|jpg|jpeg|svg|ico)$/i,
+            // Images (WebP/PNG/JPG) — cache-first, long TTL
+            // Bumped to 400 entries to fit all post hero images
+            urlPattern: /\.(?:webp|png|jpg|jpeg|svg|ico|gif)$/i,
             handler: "CacheFirst",
             options: {
               cacheName: "images-cache",
-              expiration: { maxEntries: 200, maxAgeSeconds: 30 * 24 * 60 * 60 },
+              expiration: { maxEntries: 400, maxAgeSeconds: 60 * 24 * 60 * 60 },
               cacheableResponse: { statuses: [0, 200] },
             },
           },
@@ -279,12 +285,35 @@ export default defineConfig(({ mode }) => ({
             },
           },
           {
-            // External APIs (cotações) — stale-while-revalidate so data never blocks
+            // PHP API — perfil do usuário, comentários, cotações em cache no servidor
+            // StaleWhileRevalidate: serve do cache imediatamente e revalida em background
+            // Permite que usuários logados vejam seu perfil + comentários offline
+            urlPattern: /\/api\.php/i,
+            handler: "StaleWhileRevalidate",
+            options: {
+              cacheName: "php-api-cache",
+              expiration: { maxEntries: 80, maxAgeSeconds: 24 * 60 * 60 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
+            // External APIs (cotações fallback) — stale-while-revalidate
             urlPattern: /^https:\/\/(api\.coingecko\.com|brapi\.dev|query1\.finance\.yahoo\.com)/i,
             handler: "StaleWhileRevalidate",
             options: {
-              cacheName: "api-cache",
-              expiration: { maxEntries: 30, maxAgeSeconds: 5 * 60 },
+              cacheName: "external-api-cache",
+              expiration: { maxEntries: 30, maxAgeSeconds: 10 * 60 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
+            // Supabase REST/Storage (caso usado em features futuras de usuário)
+            urlPattern: /^https:\/\/.*\.supabase\.co\//i,
+            handler: "NetworkFirst",
+            options: {
+              cacheName: "supabase-cache",
+              networkTimeoutSeconds: 4,
+              expiration: { maxEntries: 50, maxAgeSeconds: 12 * 60 * 60 },
               cacheableResponse: { statuses: [0, 200] },
             },
           },
