@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="md:col-span-2">
-            <Link to="/" className="font-display text-2xl font-bold inline-block">
+            <Link to="/" className="font-display text-2xl font-bold inline-block" translate="no">
               <span className="logo-vicio">VICIO</span>
               <span className="logo-code">&lt;CODE&gt;</span>
             </Link>
@@ -140,7 +140,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-10 pt-6 border-t border-border text-center text-sm text-muted-foreground">
-          <p>© 2026 VICIO&lt;CODE&gt;. Todos os direitos reservados.</p>
+          <p>© 2026 <span translate="no" className="notranslate">VICIO&lt;CODE&gt;</span>. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
