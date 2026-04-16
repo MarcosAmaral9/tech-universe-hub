@@ -33,7 +33,9 @@ const RegulamentacaoIA2026 = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high" src={heroImg} alt="Regulamentação de IA 2026" className="w-full h-full object-cover" />
+        <img fetchpriority="high" loading="eager"
+          decoding="async"
+          src={heroImg} alt="Regulamentação de IA 2026" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">

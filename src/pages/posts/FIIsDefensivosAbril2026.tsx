@@ -32,7 +32,9 @@ const FIIsDefensivosAbril2026 = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high" src={heroImg} alt="FIIs Defensivos Abril 2026 — estratégia de investimento" className="w-full h-full object-cover" />
+        <img fetchpriority="high" loading="eager"
+          decoding="async"
+          src={heroImg} alt="FIIs Defensivos Abril 2026 — estratégia de investimento" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
