@@ -140,7 +140,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-10 pt-6 border-t border-border text-center text-sm text-muted-foreground">
-          <p>© 2026 VICIO&lt;CODE&gt;. Todos os direitos reservados.</p>
+          <p>© 2026 <span translate="no" className="notranslate">VICIO&lt;CODE&gt;</span>. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
