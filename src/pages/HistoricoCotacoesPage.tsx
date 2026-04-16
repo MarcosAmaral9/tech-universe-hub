@@ -564,10 +564,10 @@ const HistoricoCotacoesPage = () => {
                       </div>
                     </div>
                   ) : (
-                  <ResponsiveContainer width="100%" height={280}>
+                  <ResponsiveContainer key={`main-${selectedAsset.id}-${period}`} width="100%" height={280}>
                     <AreaChart data={selectedAsset.data} margin={{ top: 4, right: 4, left: 0, bottom: 0 }}>
                       <defs>
-                        <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                        <linearGradient id={`areaGrad-${selectedAsset.id}`} x1="0" y1="0" x2="0" y2="1">
                           <stop offset="5%"  stopColor={CAT_STROKE[selectedAsset.category]} stopOpacity={0.25} />
                           <stop offset="95%" stopColor={CAT_STROKE[selectedAsset.category]} stopOpacity={0.02} />
                         </linearGradient>
@@ -593,7 +593,7 @@ const HistoricoCotacoesPage = () => {
                       <Area
                         type="monotone" dataKey="value"
                         stroke={CAT_STROKE[selectedAsset.category]} strokeWidth={2}
-                        fill="url(#areaGrad)" dot={false}
+                        fill={`url(#areaGrad-${selectedAsset.id})`} dot={false}
                         activeDot={{ r: 4, fill: CAT_STROKE[selectedAsset.category], strokeWidth: 0 }}
                       />
                     </AreaChart>
@@ -673,7 +673,7 @@ const HistoricoCotacoesPage = () => {
                   </div>
                   {selected === asset.id && asset.data.length > 2 && (
                     <div className="mt-2 h-8 opacity-70">
-                      <ResponsiveContainer width="100%" height={32}>
+                      <ResponsiveContainer key={`spark-${asset.id}`} width="100%" height={32}>
                         <LineChart data={asset.data.slice(-Math.min(30, asset.data.length))}>
                           <Line type="monotone" dataKey="value" stroke={CAT_STROKE[asset.category]} strokeWidth={1.5} dot={false} />
                         </LineChart>
