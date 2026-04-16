@@ -981,20 +981,23 @@ if ($method === 'GET' && $action === 'cron_refresh') {
 }
 
 // ─── GET: todos os ativos com histórico disponível ──────────────────────────
-// ─── GET: bootstrap histórico — preenche o BD com 365 dias de cripto+câmbio+metais ─
+// ─── GET: bootstrap histórico — popula BD com até 365 dias de histórico real ──────
 // Execute UMA VEZ via navegador após configurar o cron:
 // https://viciocode.com/api.php?action=history_bootstrap&secret=VC_CRON_2026
 //
-// O que faz:
-//   Cripto (8 moedas): CoinGecko free → 365 dias de histórico (8 req total)
-//   Câmbio (USD,EUR,ARS,PYG): fawazahmed → 365 dias (sem limite de req)
-//   Metais (XAU,XAG): fawazahmed → 365 dias (incluído no câmbio, sem custo extra)
-//   B3: NÃO faz bootstrap (Yahoo Finance restringiu em 2025, brapi free sem histórico)
-//      → B3 é acumulado automaticamente pelo cron (1 ponto/dia desde ativação)
+// O que faz (e quais APIs usa):
+//   Cripto (8 moedas):        CoinGecko free   → 365 dias | 8 req total  | gratuito
+//   Câmbio (USD,EUR,ARS,PYG): fawazahmed CDN   → 365 dias | ~730 req     | sem limite
+//   Metais (XAU 18k, XAG 925):fawazahmed CDN   → 365 dias | incluso acima| sem limite
+//   B3 (10 ações):            Alpha Vantage    → até 20 anos | 10 req    | gratuito*
+//     * Requer chave gratuita: https://www.alphavantage.co/support/#api-key
+//       Adicione no Hostinger .env.php: $ALPHA_VANTAGE_KEY = 'SUA_CHAVE_AQUI';
+//       Sem a chave: B3 só acumula pelo cron (2×/hora, sem retroativo)
 //
-// Requisições usadas: 8 req CoinGecko + ~730 req fawazahmed (sem limite)
-// Duração estimada: 3-5 minutos (aguarda rate limits do CoinGecko entre moedas)
-// Idempotente: pode re-executar sem problemas (pula dados já existentes)
+// Total de APIs com limite: 18 req (CoinGecko 8 + Alpha Vantage 10)
+// Duração estimada: 7-10 min (Alpha Vantage: 13s entre tickers; CoinGecko: 2.5s)
+// Idempotente: pula dados já existentes — pode re-executar com segurança
+// Parâmetro ?days=N para limitar (padrão: 365)
 if ($method === 'GET' && $action === 'history_bootstrap') {
     $CRON_SECRET = 'VC_CRON_2026';
     if (file_exists(__DIR__ . '/.env.php')) { include __DIR__ . '/.env.php'; }
@@ -1083,12 +1086,65 @@ if ($method === 'GET' && $action === 'history_bootstrap') {
         usleep(200000); // 200ms entre datas
     }
 
-    // ── B3: sem bootstrap retroativo ──────────────────────────────────────
-    // Yahoo Finance restringiu histórico gratuito a partir de 2025 (requer premium)
-    // brapi.dev free NÃO tem endpoint de histórico
-    // O histórico B3 é acumulado EXCLUSIVAMENTE pelo cron job (1 ponto por execução)
-    // → Após 7 dias de cron: período 7D disponível | 30 dias → 1M | 90 → 3M | 365 → 1A
-    $results['b3'] = ['info' => 'Acumulado pelo cron — sem API gratuita para histórico retroativo B3'];
+    // ── B3: bootstrap via Alpha Vantage (free: 25 req/dia, 500 req/mês) ────────────
+    // Ticker B3 no Alpha Vantage: {TICKER}.SAO (ex: PETR4.SAO, VALE3.SAO)
+    // outputsize=full → até 20 anos de dados diários em 1 request por ticker
+    // 10 tickers × 1 req = 10 req totais (bem dentro do limite gratuito)
+    //
+    // Como obter chave gratuita: https://www.alphavantage.co/support/#api-key
+    // Após obter, adicione no .env.php do Hostinger: $ALPHA_VANTAGE_KEY = 'SUA_CHAVE';
+    //
+    // Sem a chave: B3 é acumulado pelo cron (1 ponto por execução, 2×/hora)
+    // → 7D disponível após 7 dias | 30D após 30 dias | 90D após 90 dias | 1A após 365 dias
+
+    $AV_KEY = '';
+    if (file_exists(__DIR__ . '/.env.php')) {
+        // .env.php já foi incluído no topo — $ALPHA_VANTAGE_KEY pode estar definida
+        $AV_KEY = isset($ALPHA_VANTAGE_KEY) ? $ALPHA_VANTAGE_KEY : '';
+    }
+
+    $b3Tickers = [
+        'PETR4'=>'PETR4.SAO','VALE3'=>'VALE3.SAO','ITUB4'=>'ITUB4.SAO',
+        'BBDC4'=>'BBDC4.SAO','ABEV3'=>'ABEV3.SAO','WEGE3'=>'WEGE3.SAO',
+        'BBAS3'=>'BBAS3.SAO','RENT3'=>'RENT3.SAO','MGLU3'=>'MGLU3.SAO','SUZB3'=>'SUZB3.SAO',
+    ];
+
+    if (empty($AV_KEY)) {
+        $results['b3'] = [
+            'info'    => 'Alpha Vantage key não configurada. Adicione $ALPHA_VANTAGE_KEY no .env.php (alphavantage.co — gratuito). Sem isso, B3 é acumulado 2x/hora pelo cron.',
+            'skipped' => true,
+        ];
+    } else {
+        $b3Results = [];
+        $avOutputSize = $days >= 100 ? 'full' : 'compact'; // full = 20 anos, compact = 100 dias
+        foreach ($b3Tickers as $sym => $avSym) {
+            // Pula se já tem dados suficientes (~55% de dias úteis no período)
+            $stmtChk = $db->prepare('SELECT COUNT(*) FROM price_history WHERE asset_type="b3" AND asset_code=:c AND price_date >= DATE_SUB(CURDATE(), INTERVAL :d DAY)');
+            $stmtChk->execute([':c' => $sym, ':d' => $days]);
+            if ((int)$stmtChk->fetchColumn() >= (int)($days * 0.55)) {
+                $b3Results[$sym] = ['skipped' => true]; continue;
+            }
+
+            $avUrl = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={$avSym}&outputsize={$avOutputSize}&apikey={$AV_KEY}";
+            $avRaw = httpGet($avUrl, 20);
+            if (!$avRaw) { $b3Results[$sym] = ['error' => 'timeout']; usleep(15000000); continue; }
+
+            $avData = json_decode($avRaw, true);
+            if (!empty($avData['Note']))        { $b3Results[$sym] = ['error' => 'rate_limit']; break; }   // rate limit
+            if (!empty($avData['Information'])) { $b3Results[$sym] = ['error' => 'api_limit']; break; }    // monthly limit
+            if (empty($avData['Time Series (Daily)'])) { $b3Results[$sym] = ['error' => 'no_data', 'raw' => substr($avRaw,0,80)]; usleep(13000000); continue; }
+
+            $ins = $db->prepare('INSERT INTO price_history (asset_type, asset_code, price, price_date) VALUES ("b3",:code,:price,:date) ON DUPLICATE KEY UPDATE price=VALUES(price)');
+            $saved = 0;
+            foreach ($avData['Time Series (Daily)'] as $date => $ohlcv) {
+                $close = (float)($ohlcv['4. close'] ?? 0);
+                if ($close > 0) { $ins->execute([':code'=>$sym, ':price'=>round($close,2), ':date'=>$date]); $saved++; }
+            }
+            $b3Results[$sym] = ['saved' => $saved, 'source' => 'alpha-vantage'];
+            usleep(13000000); // 13s entre tickers (Alpha Vantage free: 5 req/min)
+        }
+        $results['b3'] = $b3Results;
+    }
 
         // Conta o que foi salvo
     foreach (['currency'=>['USD','EUR','ARS','PYG'], 'metal'=>['XAU','XAG']] as $type => $codes) {
