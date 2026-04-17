@@ -37,6 +37,8 @@ const CommentSection = ({ postId, postTitle = "Artigo" }: CommentSectionProps) =
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  const [pending, setPending] = useState<PendingComment[]>([]);
+
   const displayName = profile?.nickname || profile?.name || user?.email?.split("@")[0] || "Usuário";
 
   const fetchComments = async () => {
@@ -53,8 +55,22 @@ const CommentSection = ({ postId, postTitle = "Artigo" }: CommentSectionProps) =
     setIsLoading(false);
   };
 
+  const refreshPending = async () => {
+    const items = await getPendingComments(postId);
+    setPending(items);
+  };
+
   useEffect(() => {
     fetchComments();
+    refreshPending();
+    const onQueueUpdate = () => {
+      refreshPending();
+      // Quando algo é flushado, recarrega lista do servidor
+      if (navigator.onLine) fetchComments();
+    };
+    window.addEventListener("comment-queue-updated", onQueueUpdate);
+    return () => window.removeEventListener("comment-queue-updated", onQueueUpdate);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [postId]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -75,27 +91,58 @@ const CommentSection = ({ postId, postTitle = "Artigo" }: CommentSectionProps) =
     }
 
     setIsSubmitting(true);
+    const payload = {
+      post_id: postId,
+      user_id: user.id,
+      author_name: displayName,
+      content: newComment.trim(),
+    };
+
+    // Offline → enfileira e mostra otimisticamente
+    if (!navigator.onLine) {
+      try {
+        await enqueueComment(payload);
+        trackCommentPosted(postId, postTitle, payload.content);
+        setNewComment("");
+        await refreshPending();
+      } catch {
+        setErrors(["Não foi possível salvar o comentário offline."]);
+      }
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       const res = await fetch(`${API_BASE}?action=comments`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          post_id: postId,
-          user_id: user.id,
-          author_name: displayName,
-          content: newComment.trim(),
-        }),
+        body: JSON.stringify(payload),
       });
 
       if (!res.ok) {
-        setErrors(["Erro ao enviar comentário. Tente novamente."]);
+        // Falha de servidor — enfileira para retry
+        await enqueueComment(payload);
+        trackCommentPosted(postId, postTitle, payload.content);
+        setNewComment("");
+        await refreshPending();
+        setErrors(["Servidor indisponível. Comentário ficou em fila e será enviado automaticamente."]);
       } else {
-        trackCommentPosted(postId, postTitle, newComment.trim());
+        trackCommentPosted(postId, postTitle, payload.content);
         setNewComment("");
         await fetchComments();
+        // Tenta limpar fila pendente que possa estar acumulada
+        void flushQueue();
       }
     } catch {
-      setErrors(["Erro ao enviar comentário. Verifique sua conexão."]);
+      // Erro de rede → enfileira
+      try {
+        await enqueueComment(payload);
+        trackCommentPosted(postId, postTitle, payload.content);
+        setNewComment("");
+        await refreshPending();
+      } catch {
+        setErrors(["Erro ao enviar comentário. Verifique sua conexão."]);
+      }
     }
 
     setIsSubmitting(false);
