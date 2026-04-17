@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Moon, Sun, Search, Menu, X, FileText, ChevronDown, LogIn, LogOut, User } from "lucide-react";
+import { Moon, Sun, Search, Menu, X, FileText, ChevronDown, LogIn, LogOut, User, WifiOff } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
@@ -14,11 +14,13 @@ import {
 import SearchModal from "./SearchModal";
 import SettingsDrawer from "./SettingsDrawer";
 import OfflinePostsBadge from "./OfflinePostsBadge";
+import { usePWAStandalone } from "@/hooks/usePWAStandalone";
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const { user, profile, signOut } = useAuthContext();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isStandalone = usePWAStandalone();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -90,6 +92,20 @@ const Header = () => {
             )}
 
             <OfflinePostsBadge />
+            {/* Atalho Offline — só aparece no PWA instalado + logado */}
+            {isStandalone && user && (
+              <Button
+                variant="ghost"
+                size="icon"
+                asChild
+                className="hover:bg-secondary text-muted-foreground hover:text-primary"
+                title="Conteúdo Offline"
+              >
+                <Link to="/configuracoes/offline">
+                  <WifiOff className="h-4 w-4" />
+                </Link>
+              </Button>
+            )}
 
             <Button
               variant="ghost"

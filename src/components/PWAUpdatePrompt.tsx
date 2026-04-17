@@ -45,15 +45,8 @@ const PWAUpdatePrompt = () => {
       if (r) {
         setInterval(() => r.update(), 60 * 60 * 1000);
       }
-      // Se havia um update pendente de precache (vindo de reload), executa agora
-      try {
-        if (sessionStorage.getItem(PRECACHE_FLAG_KEY) === "1") {
-          sessionStorage.removeItem(PRECACHE_FLAG_KEY);
-          startPrecache();
-        }
-      } catch {
-        /* ignore */
-      }
+      // Auto-precache removido: o usuário escolhe o que baixar em /configuracoes/offline
+      try { sessionStorage.removeItem(PRECACHE_FLAG_KEY); } catch { /* ignore */ }
     },
     onRegisterError(error) {
       console.warn("[PWA] SW registration error:", error);
@@ -71,7 +64,7 @@ const PWAUpdatePrompt = () => {
   };
 
   const handleUpdate = () => {
-    // Marca para iniciar o pré-cache assim que o novo SW assumir após o reload
+    // Não inicia pré-cache automático — usuário escolhe em /configuracoes/offline
     try {
       sessionStorage.setItem(PRECACHE_FLAG_KEY, "1");
     } catch {

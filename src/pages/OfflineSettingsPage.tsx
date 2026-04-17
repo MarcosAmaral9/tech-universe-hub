@@ -1,36 +1,51 @@
 /**
- * OfflineSettingsPage (/configuracoes/offline)
- * Painel de gerenciamento do cache offline:
- *  - Mostra quantos posts (do total) estão salvos.
- *  - Estima o espaço de armazenamento usado pelo navegador.
- *  - Permite baixar manualmente todos os posts agora.
- *  - Permite limpar o cache offline (caches API + IndexedDB de comentários).
+ * OfflineSettingsPage — /configuracoes/offline
  *
- * O recurso offline é exclusivo do app (PWA standalone), mas a página é
- * acessível também no navegador para o usuário inspecionar o estado.
+ * RESTRITO: apenas no app PWA instalado + usuário logado.
+ * No navegador web → redireciona para /instalar.
+ * Sem login → redireciona para /entrar.
+ *
+ * Funcionalidades:
+ *  - Status geral: posts salvos / total, espaço usado
+ *  - Download por categoria (IA, Finanças, Geek, Otaku) ou todos
+ *  - Download individual de posts específicos (por categoria)
+ *  - Lista detalhada dos posts cacheados (título, categoria, tamanho)
+ *  - Remover post individual do cache
+ *  - Limpar todo o cache offline
  */
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ArrowLeft, Download, HardDrive, Trash2, WifiOff, RefreshCw, CheckCircle2 } from "lucide-react";
+import {
+  ArrowLeft, Download, HardDrive, Trash2, WifiOff,
+  RefreshCw, CheckCircle2, Smartphone, Filter, X,
+  ChevronDown, ChevronUp, Search,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
 import DynamicSEO from "@/components/DynamicSEO";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { useOfflinePosts } from "@/hooks/useOfflinePosts";
 import { usePWAStandalone } from "@/hooks/usePWAStandalone";
-import { precacheAllPosts, type PrecacheProgress } from "@/utils/precachePosts";
+import {
+  precacheAllPosts,
+  precacheByCategories,
+  precacheSlugs,
+  type PrecacheProgress,
+} from "@/utils/precachePosts";
 import { blogPosts } from "@/data/posts";
 import { toast } from "sonner";
 
-const CACHE_NAMES = [
-  "pages-cache",
-  "images-cache",
-  "fonts-cache",
-  "php-api-cache",
-  "external-api-cache",
-  "supabase-cache",
-];
-
+// ── Constantes ────────────────────────────────────────────────────────────────
+const CACHE_NAMES = ["pages-cache", "images-cache", "fonts-cache", "php-api-cache", "external-api-cache", "supabase-cache"];
 const OFFLINE_DB_NAME = "viciocode-offline";
+
+const CATEGORIES: { key: string; label: string; emoji: string; color: string }[] = [
+  { key: "ia",     label: "Inteligência Artificial", emoji: "🤖", color: "bg-purple-500/10 border-purple-500/30 text-purple-400" },
+  { key: "invest", label: "Finanças & Investimentos", emoji: "💰", color: "bg-emerald-500/10 border-emerald-500/30 text-emerald-400" },
+  { key: "geek",   label: "Geek & Games",            emoji: "🎮", color: "bg-blue-500/10   border-blue-500/30   text-blue-400"   },
+  { key: "otaku",  label: "Otaku & Anime",            emoji: "🌸", color: "bg-pink-500/10  border-pink-500/30   text-pink-400"   },
+];
 
 function formatBytes(bytes: number): string {
   if (!bytes) return "0 B";
@@ -39,256 +54,467 @@ function formatBytes(bytes: number): string {
   return `${(bytes / Math.pow(1024, i)).toFixed(1)} ${units[i]}`;
 }
 
+// ── Componente principal ──────────────────────────────────────────────────────
 const OfflineSettingsPage = () => {
   const navigate = useNavigate();
-  const { user, loading } = useAuthContext();
+  const { user, loading: authLoading } = useAuthContext();
   const isStandalone = usePWAStandalone();
-  const { count: cachedCount, refresh } = useOfflinePosts();
+  const { cachedPosts, cachedSlugs, count, totalBytes, loading: cacheLoading, refresh, removePost } = useOfflinePosts();
+
   const totalPosts = blogPosts.length;
 
+  // ── Estado ─────────────────────────────────────────────────────────────────
   const [storage, setStorage] = useState<{ usage: number; quota: number } | null>(null);
   const [downloading, setDownloading] = useState(false);
   const [progress, setProgress] = useState<PrecacheProgress | null>(null);
   const [clearing, setClearing] = useState(false);
+  const [removingSlug, setRemovingSlug] = useState<string | null>(null);
+  const [downloadingSlugs, setDownloadingSlugs] = useState<Set<string>>(new Set());
 
+  // Filtros da lista detalhada
+  const [listCategory, setListCategory] = useState<string>("all");
+  const [listSearch, setListSearch] = useState("");
+  const [listExpanded, setListExpanded] = useState(false);
+
+  // Seleção de categorias para download
+  const [selectedCats, setSelectedCats] = useState<Set<string>>(new Set());
+
+  // ── Guards: só PWA + logado ───────────────────────────────────────────────
   useEffect(() => {
-    if (!loading && !user) navigate("/entrar", { replace: true });
-  }, [user, loading, navigate]);
+    if (authLoading) return;
+    if (!user) { navigate("/entrar", { replace: true }); return; }
+    if (!isStandalone) { navigate("/instalar", { replace: true }); }
+  }, [user, authLoading, isStandalone, navigate]);
 
-  const refreshStorage = async () => {
+  const refreshStorage = useCallback(async () => {
     try {
       if (navigator.storage?.estimate) {
         const est = await navigator.storage.estimate();
-        setStorage({ usage: est.usage || 0, quota: est.quota || 0 });
+        setStorage({ usage: est.usage ?? 0, quota: est.quota ?? 0 });
       }
-    } catch {
-      /* ignore */
-    }
-  };
-
-  useEffect(() => {
-    refreshStorage();
+    } catch { /* ignore */ }
   }, []);
+
+  useEffect(() => { refreshStorage(); }, [refreshStorage]);
+
+  // ── Helpers ───────────────────────────────────────────────────────────────
+  const toggleCat = (key: string) =>
+    setSelectedCats((prev) => {
+      const next = new Set(prev);
+      next.has(key) ? next.delete(key) : next.add(key);
+      return next;
+    });
+
+  const countByCat = useMemo(
+    () =>
+      Object.fromEntries(
+        CATEGORIES.map((c) => [c.key, blogPosts.filter((p) => p.category === c.key).length])
+      ),
+    []
+  );
+
+  const cachedByCat = useMemo(
+    () =>
+      Object.fromEntries(
+        CATEGORIES.map((c) => [
+          c.key,
+          cachedPosts.filter((p) => p.category === c.key).length,
+        ])
+      ),
+    [cachedPosts]
+  );
+
+  // Lista filtrada de posts para exibição detalhada
+  const filteredCached = useMemo(() => {
+    let posts = cachedPosts;
+    if (listCategory !== "all") posts = posts.filter((p) => p.category === listCategory);
+    if (listSearch.trim()) {
+      const q = listSearch.toLowerCase();
+      posts = posts.filter((p) => p.title.toLowerCase().includes(q));
+    }
+    return posts;
+  }, [cachedPosts, listCategory, listSearch]);
+
+  // Posts não cacheados (para download individual)
+  const uncachedByCategory = useMemo(() => {
+    return Object.fromEntries(
+      CATEGORIES.map((c) => [
+        c.key,
+        blogPosts.filter((p) => p.category === c.key && !cachedSlugs.has(p.slug)),
+      ])
+    );
+  }, [cachedSlugs]);
+
+  // ── Handlers ──────────────────────────────────────────────────────────────
+  const handleDownloadSelected = async () => {
+    if (downloading || selectedCats.size === 0) return;
+    setDownloading(true);
+    const cats = [...selectedCats];
+    const slugsToFetch = blogPosts
+      .filter((p) => cats.includes(p.category) && !cachedSlugs.has(p.slug))
+      .map((p) => p.slug);
+    if (slugsToFetch.length === 0) {
+      toast.info("Todas as categorias selecionadas já estão salvas!");
+      setDownloading(false);
+      return;
+    }
+    setProgress({ total: slugsToFetch.length, done: 0 });
+    toast.info(`Baixando ${slugsToFetch.length} posts...`, { description: cats.map((k) => CATEGORIES.find((c) => c.key === k)?.label).join(", ") });
+    try {
+      await precacheSlugs(slugsToFetch, setProgress);
+      await refresh(); await refreshStorage();
+      toast.success("Posts salvos!", { description: `${slugsToFetch.length} posts disponíveis offline.` });
+      setSelectedCats(new Set());
+    } catch { toast.error("Erro ao baixar. Tente novamente."); }
+    finally { setDownloading(false); setTimeout(() => setProgress(null), 3000); }
+  };
 
   const handleDownloadAll = async () => {
     if (downloading) return;
     setDownloading(true);
-    setProgress({ done: 0, total: totalPosts });
-    toast.info("Baixando todos os posts para offline...", {
-      description: "Isso pode demorar alguns segundos.",
-    });
+    setProgress({ total: totalPosts, done: 0 });
+    toast.info("Baixando todos os posts...", { description: "Pode demorar alguns segundos." });
     try {
-      await precacheAllPosts((p) => setProgress(p));
+      await precacheAllPosts(setProgress);
+      await refresh(); await refreshStorage();
+      toast.success("Conteúdo completo salvo!", { description: `${totalPosts} posts disponíveis offline.` });
+    } catch { toast.error("Erro ao baixar. Tente novamente."); }
+    finally { setDownloading(false); setTimeout(() => setProgress(null), 3000); }
+  };
+
+  const handleDownloadPost = async (slug: string) => {
+    setDownloadingSlugs((p) => new Set(p).add(slug));
+    try {
+      await precacheSlugs([slug]);
       await refresh();
+      toast.success("Post salvo para leitura offline!");
+    } catch { toast.error("Erro ao salvar post."); }
+    finally { setDownloadingSlugs((p) => { const n = new Set(p); n.delete(slug); return n; }); }
+  };
+
+  const handleRemovePost = async (slug: string) => {
+    setRemovingSlug(slug);
+    try {
+      await removePost(slug);
       await refreshStorage();
-      toast.success("Conteúdo salvo!", {
-        description: `${totalPosts} posts disponíveis para leitura offline.`,
-      });
-    } catch {
-      toast.error("Erro ao baixar conteúdo. Tente novamente.");
-    } finally {
-      setDownloading(false);
-      setTimeout(() => setProgress(null), 3000);
-    }
+      toast.success("Post removido do cache offline.");
+    } catch { toast.error("Erro ao remover post."); }
+    finally { setRemovingSlug(null); }
   };
 
   const handleClearCache = async () => {
     if (clearing) return;
-    if (!confirm("Tem certeza? Você precisará de internet até baixar novamente os posts.")) return;
+    if (!confirm("Tem certeza? Todo o conteúdo offline será removido.")) return;
     setClearing(true);
     try {
-      // Limpa caches HTTP do Service Worker
       if (typeof caches !== "undefined") {
         const names = await caches.keys();
-        await Promise.all(
-          names
-            .filter((n) => CACHE_NAMES.includes(n) || n.startsWith("workbox-"))
-            .map((n) => caches.delete(n))
-        );
+        await Promise.all(names.filter((n) => CACHE_NAMES.includes(n) || n.startsWith("workbox-")).map((n) => caches.delete(n)));
       }
-      // Limpa fila de comentários pendentes
       if (typeof indexedDB !== "undefined") {
         await new Promise<void>((resolve) => {
           const req = indexedDB.deleteDatabase(OFFLINE_DB_NAME);
-          req.onsuccess = () => resolve();
-          req.onerror = () => resolve();
-          req.onblocked = () => resolve();
+          req.onsuccess = req.onerror = req.onblocked = () => resolve();
         });
       }
-      await refresh();
-      await refreshStorage();
-      toast.success("Cache offline limpo");
-    } catch {
-      toast.error("Erro ao limpar cache");
-    } finally {
-      setClearing(false);
-    }
+      await refresh(); await refreshStorage();
+      toast.success("Cache offline limpo.");
+    } catch { toast.error("Erro ao limpar cache."); }
+    finally { setClearing(false); }
   };
 
-  if (loading || !user) return null;
+  // ── Guard render ──────────────────────────────────────────────────────────
+  if (authLoading || !user || !isStandalone) return null;
 
-  const percent = totalPosts > 0 ? Math.round((cachedCount / totalPosts) * 100) : 0;
-  const storagePercent = storage && storage.quota > 0
-    ? Math.round((storage.usage / storage.quota) * 100)
-    : 0;
+  const percent = totalPosts > 0 ? Math.round((count / totalPosts) * 100) : 0;
 
   return (
-    <div className="min-h-[70vh] py-12 px-4">
+    <div className="min-h-[70vh] py-10 px-4">
       <DynamicSEO />
-      <div className="max-w-2xl mx-auto space-y-8">
+      <div className="max-w-2xl mx-auto space-y-6">
+
+        {/* Voltar */}
         <Link to="/configuracoes">
           <Button variant="ghost" className="gap-2 -ml-3">
-            <ArrowLeft className="h-4 w-4" />
-            Voltar para Configurações
+            <ArrowLeft className="h-4 w-4" />Voltar para Configurações
           </Button>
         </Link>
 
         {/* Hero */}
-        <div className="text-center space-y-4">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-primary/10">
-            <WifiOff className="w-10 h-10 text-primary" />
+        <div className="text-center space-y-3">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10">
+            <WifiOff className="w-8 h-8 text-primary" />
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold font-orbitron text-foreground">
-            Conteúdo Offline
-          </h1>
-          <p className="text-muted-foreground text-lg max-w-md mx-auto">
-            Gerencie o que está salvo no seu dispositivo para ler sem internet.
+          <h1 className="text-2xl md:text-3xl font-bold font-orbitron">Conteúdo Offline</h1>
+          <p className="text-muted-foreground max-w-md mx-auto text-sm">
+            Escolha o que salvar no dispositivo para ler sem internet.
           </p>
         </div>
 
-        {/* Aviso para navegador web */}
-        {!isStandalone && (
-          <div className="rounded-xl border border-primary/30 bg-primary/5 p-4 text-sm text-foreground">
-            <p>
-              <strong>Dica:</strong> O acesso offline ao conteúdo é exclusivo do
-              aplicativo instalado. Você pode gerenciar o cache aqui, mas só
-              conseguirá ler offline pelo PWA.
-              <Link to="/instalar" className="text-primary hover:underline ml-1">
-                Saiba como instalar →
-              </Link>
-            </p>
-          </div>
-        )}
-
-        {/* Status do cache de posts */}
-        <section className="rounded-2xl border border-border bg-card p-6 space-y-5">
-          <h2 className="text-lg font-semibold flex items-center gap-2">
-            <Download className="w-5 h-5 text-primary" />
-            Posts salvos no dispositivo
+        {/* ── Status geral ─────────────────────────────────────────────── */}
+        <section className="rounded-2xl border border-border bg-card p-5 space-y-4">
+          <h2 className="font-semibold flex items-center gap-2 text-base">
+            <Download className="w-4 h-4 text-primary" />Posts salvos
           </h2>
-
           <div>
-            <div className="flex items-baseline justify-between mb-2">
-              <span className="text-3xl font-bold text-foreground">
-                {cachedCount}
-                <span className="text-base font-normal text-muted-foreground">
-                  {" "}/ {totalPosts}
-                </span>
+            <div className="flex items-baseline justify-between mb-1.5">
+              <span className="text-2xl font-bold">
+                {cacheLoading ? "—" : count}
+                <span className="text-sm font-normal text-muted-foreground"> / {totalPosts}</span>
               </span>
-              <span className="text-sm font-medium text-primary">{percent}%</span>
+              <span className="text-sm font-semibold text-primary">{percent}%</span>
             </div>
             <div className="h-2 w-full rounded-full bg-muted overflow-hidden">
-              <div
-                className="h-full bg-primary transition-all duration-500"
-                style={{ width: `${percent}%` }}
-              />
+              <div className="h-full bg-primary transition-all duration-500" style={{ width: `${percent}%` }} />
             </div>
-            <p className="text-xs text-muted-foreground mt-2">
-              {cachedCount === totalPosts
-                ? "Todo o conteúdo está disponível offline. ✨"
-                : `${totalPosts - cachedCount} posts ainda não baixados.`}
-            </p>
+            {totalBytes > 0 && (
+              <p className="text-xs text-muted-foreground mt-1.5">
+                ~{formatBytes(totalBytes)} em posts · {count === totalPosts ? "Tudo salvo ✨" : `${totalPosts - count} ainda não baixados`}
+              </p>
+            )}
           </div>
-
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Button
-              onClick={handleDownloadAll}
-              disabled={downloading}
-              className="gap-2 flex-1"
-            >
-              {downloading ? (
-                <RefreshCw className="h-4 w-4 animate-spin" />
-              ) : cachedCount >= totalPosts ? (
-                <CheckCircle2 className="h-4 w-4" />
-              ) : (
-                <Download className="h-4 w-4" />
-              )}
-              {downloading
-                ? progress
-                  ? `Baixando ${progress.done}/${progress.total}...`
-                  : "Baixando..."
-                : cachedCount >= totalPosts
-                ? "Atualizar cache"
-                : "Baixar todos os posts agora"}
-            </Button>
-          </div>
-
           {progress && downloading && (
-            <div className="h-1.5 w-full rounded-full bg-muted overflow-hidden">
-              <div
-                className="h-full bg-primary transition-all duration-300"
-                style={{
-                  width: `${progress.total > 0 ? (progress.done / progress.total) * 100 : 0}%`,
-                }}
-              />
+            <div className="space-y-1">
+              <div className="flex justify-between text-xs text-muted-foreground">
+                <span>{progress.currentSlug ?? "Baixando..."}</span>
+                <span>{progress.done}/{progress.total}</span>
+              </div>
+              <div className="h-1.5 w-full rounded-full bg-muted overflow-hidden">
+                <div className="h-full bg-primary transition-all" style={{ width: `${progress.total > 0 ? (progress.done / progress.total) * 100 : 0}%` }} />
+              </div>
             </div>
           )}
         </section>
 
-        {/* Espaço usado */}
+        {/* ── Espaço usado ─────────────────────────────────────────────── */}
         {storage && (
-          <section className="rounded-2xl border border-border bg-card p-6 space-y-4">
-            <h2 className="text-lg font-semibold flex items-center gap-2">
-              <HardDrive className="w-5 h-5 text-primary" />
-              Espaço usado
+          <section className="rounded-2xl border border-border bg-card p-5 space-y-3">
+            <h2 className="font-semibold flex items-center gap-2 text-base">
+              <HardDrive className="w-4 h-4 text-primary" />Espaço usado
             </h2>
-            <div>
-              <div className="flex items-baseline justify-between mb-2">
-                <span className="text-2xl font-bold text-foreground">
-                  {formatBytes(storage.usage)}
-                </span>
-                <span className="text-sm text-muted-foreground">
-                  de {formatBytes(storage.quota)} disponíveis
-                </span>
-              </div>
-              <div className="h-2 w-full rounded-full bg-muted overflow-hidden">
-                <div
-                  className="h-full bg-primary transition-all duration-500"
-                  style={{ width: `${Math.min(storagePercent, 100)}%` }}
-                />
-              </div>
-              <p className="text-xs text-muted-foreground mt-2">
-                Inclui páginas HTML, imagens, fontes e dados em cache.
-              </p>
+            <div className="flex items-baseline justify-between mb-1.5">
+              <span className="text-xl font-bold">{formatBytes(storage.usage)}</span>
+              <span className="text-xs text-muted-foreground">de {formatBytes(storage.quota)}</span>
             </div>
+            <div className="h-2 w-full rounded-full bg-muted overflow-hidden">
+              <div className="h-full bg-primary" style={{ width: `${Math.min((storage.usage / storage.quota) * 100, 100)}%` }} />
+            </div>
+            <p className="text-xs text-muted-foreground">Inclui páginas, imagens, fontes e dados em cache.</p>
           </section>
         )}
 
-        {/* Limpar cache */}
-        <section className="rounded-2xl border border-destructive/30 bg-destructive/5 p-6 space-y-3">
-          <h2 className="text-lg font-semibold flex items-center gap-2">
-            <Trash2 className="w-5 h-5 text-destructive" />
-            Limpar cache offline
-          </h2>
-          <p className="text-sm text-muted-foreground">
-            Remove todas as páginas, imagens e dados salvos no dispositivo. Você
-            precisará de conexão para acessar o conteúdo até baixar novamente.
-            Comentários pendentes na fila offline também serão descartados.
-          </p>
-          <Button
-            variant="destructive"
-            onClick={handleClearCache}
-            disabled={clearing}
-            className="gap-2"
-          >
-            {clearing ? (
-              <RefreshCw className="h-4 w-4 animate-spin" />
-            ) : (
-              <Trash2 className="h-4 w-4" />
+        {/* ── Download por categoria ────────────────────────────────────── */}
+        <section className="rounded-2xl border border-border bg-card p-5 space-y-4">
+          <div>
+            <h2 className="font-semibold flex items-center gap-2 text-base mb-0.5">
+              <Filter className="w-4 h-4 text-primary" />Baixar por categoria
+            </h2>
+            <p className="text-xs text-muted-foreground">Selecione as categorias que deseja salvar para leitura offline.</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {CATEGORIES.map((cat) => {
+              const total = countByCat[cat.key] ?? 0;
+              const cached = cachedByCat[cat.key] ?? 0;
+              const allSaved = cached >= total;
+              const isSelected = selectedCats.has(cat.key);
+              return (
+                <button
+                  key={cat.key}
+                  onClick={() => !allSaved && toggleCat(cat.key)}
+                  disabled={allSaved}
+                  className={`flex items-center gap-3 p-3 rounded-xl border text-left transition-all
+                    ${allSaved ? "opacity-60 cursor-default border-border bg-muted/30" :
+                      isSelected ? "border-primary bg-primary/10 ring-1 ring-primary" :
+                      "border-border bg-card hover:border-primary/50 hover:bg-muted/40"}`}
+                >
+                  <span className="text-xl">{cat.emoji}</span>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-xs font-semibold truncate">{cat.label}</div>
+                    <div className="text-[10px] text-muted-foreground">
+                      {allSaved ? "✅ Tudo salvo" : `${cached}/${total} salvos`}
+                    </div>
+                  </div>
+                  {isSelected && !allSaved && <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-2 pt-1">
+            <Button
+              onClick={handleDownloadSelected}
+              disabled={downloading || selectedCats.size === 0}
+              className="gap-2 flex-1"
+              size="sm"
+            >
+              {downloading ? <RefreshCw className="h-3.5 w-3.5 animate-spin" /> : <Download className="h-3.5 w-3.5" />}
+              {downloading ? `Baixando... ${progress ? `${progress.done}/${progress.total}` : ""}` : `Baixar selecionadas${selectedCats.size > 0 ? ` (${[...selectedCats].reduce((s, k) => s + (uncachedByCategory[k]?.length ?? 0), 0)} posts)` : ""}`}
+            </Button>
+            <Button
+              onClick={handleDownloadAll}
+              disabled={downloading || count >= totalPosts}
+              variant="outline"
+              size="sm"
+              className="gap-2"
+            >
+              {count >= totalPosts ? <CheckCircle2 className="h-3.5 w-3.5" /> : <Download className="h-3.5 w-3.5" />}
+              {count >= totalPosts ? "Tudo salvo" : "Baixar tudo"}
+            </Button>
+          </div>
+        </section>
+
+        {/* ── Download posts individuais ────────────────────────────────── */}
+        {CATEGORIES.map((cat) => {
+          const uncached = uncachedByCategory[cat.key] ?? [];
+          if (uncached.length === 0) return null;
+          return (
+            <section key={cat.key} className="rounded-2xl border border-border bg-card p-5 space-y-3">
+              <h2 className="font-semibold flex items-center gap-2 text-sm">
+                <span>{cat.emoji}</span>{cat.label}
+                <Badge variant="outline" className="ml-auto text-[10px]">{uncached.length} não salvos</Badge>
+              </h2>
+              <ul className="divide-y divide-border">
+                {uncached.slice(0, 5).map((post) => (
+                  <li key={post.slug} className="flex items-center gap-3 py-2">
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs font-medium line-clamp-1">{post.title}</p>
+                      <p className="text-[10px] text-muted-foreground">{post.readTime}</p>
+                    </div>
+                    <Button
+                      size="icon"
+                      variant="ghost"
+                      className="h-7 w-7 shrink-0"
+                      disabled={downloadingSlugs.has(post.slug)}
+                      onClick={() => handleDownloadPost(post.slug)}
+                      title="Salvar offline"
+                    >
+                      {downloadingSlugs.has(post.slug)
+                        ? <RefreshCw className="h-3.5 w-3.5 animate-spin" />
+                        : <Download className="h-3.5 w-3.5" />}
+                    </Button>
+                  </li>
+                ))}
+                {uncached.length > 5 && (
+                  <li className="pt-2">
+                    <p className="text-[10px] text-muted-foreground text-center">
+                      +{uncached.length - 5} posts · use "Baixar selecionadas" acima para salvar todos
+                    </p>
+                  </li>
+                )}
+              </ul>
+            </section>
+          );
+        })}
+
+        {/* ── Posts cacheados (lista detalhada) ─────────────────────────── */}
+        {count > 0 && (
+          <section className="rounded-2xl border border-border bg-card p-5 space-y-4">
+            <button
+              className="flex items-center justify-between w-full"
+              onClick={() => setListExpanded((v) => !v)}
+            >
+              <h2 className="font-semibold flex items-center gap-2 text-base">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                Posts salvos ({count})
+              </h2>
+              {listExpanded ? <ChevronUp className="h-4 w-4 text-muted-foreground" /> : <ChevronDown className="h-4 w-4 text-muted-foreground" />}
+            </button>
+
+            {listExpanded && (
+              <div className="space-y-3">
+                {/* Filtros */}
+                <div className="flex gap-2 flex-wrap">
+                  <div className="relative flex-1 min-w-[160px]">
+                    <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
+                    <Input
+                      placeholder="Buscar no cache..."
+                      value={listSearch}
+                      onChange={(e) => setListSearch(e.target.value)}
+                      className="pl-8 h-8 text-xs"
+                    />
+                    {listSearch && (
+                      <button className="absolute right-2 top-1/2 -translate-y-1/2" onClick={() => setListSearch("")}>
+                        <X className="h-3.5 w-3.5 text-muted-foreground" />
+                      </button>
+                    )}
+                  </div>
+                  <div className="flex gap-1 flex-wrap">
+                    <button
+                      onClick={() => setListCategory("all")}
+                      className={`text-[10px] px-2 py-1 rounded-md border transition-colors ${listCategory === "all" ? "bg-primary text-primary-foreground border-primary" : "border-border hover:border-primary/50"}`}
+                    >
+                      Todos
+                    </button>
+                    {CATEGORIES.map((c) => (
+                      <button
+                        key={c.key}
+                        onClick={() => setListCategory(listCategory === c.key ? "all" : c.key)}
+                        className={`text-[10px] px-2 py-1 rounded-md border transition-colors ${listCategory === c.key ? "bg-primary text-primary-foreground border-primary" : "border-border hover:border-primary/50"}`}
+                      >
+                        {c.emoji} {c.label.split(" ")[0]}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Lista */}
+                <ul className="divide-y divide-border max-h-96 overflow-y-auto">
+                  {filteredCached.length === 0 ? (
+                    <li className="py-6 text-center text-xs text-muted-foreground">Nenhum post encontrado com esses filtros.</li>
+                  ) : (
+                    filteredCached.map((post) => {
+                      const cat = CATEGORIES.find((c) => c.key === post.category);
+                      return (
+                        <li key={post.slug} className="flex items-center gap-3 py-2.5">
+                          <span className="text-base shrink-0">{cat?.emoji ?? "📄"}</span>
+                          <div className="flex-1 min-w-0">
+                            <Link to={`/post/${post.slug}`} className="text-xs font-medium line-clamp-1 hover:text-primary transition-colors">
+                              {post.title}
+                            </Link>
+                            <div className="flex items-center gap-2 mt-0.5">
+                              <span className="text-[10px] text-muted-foreground">{cat?.label.split(" ")[0] ?? post.category}</span>
+                              {post.sizeBytes && post.sizeBytes > 0 && (
+                                <span className="text-[10px] text-muted-foreground">· ~{formatBytes(post.sizeBytes)}</span>
+                              )}
+                            </div>
+                          </div>
+                          <Button
+                            size="icon"
+                            variant="ghost"
+                            className="h-7 w-7 shrink-0 text-muted-foreground hover:text-destructive"
+                            disabled={removingSlug === post.slug}
+                            onClick={() => handleRemovePost(post.slug)}
+                            title="Remover do cache"
+                          >
+                            {removingSlug === post.slug
+                              ? <RefreshCw className="h-3.5 w-3.5 animate-spin" />
+                              : <Trash2 className="h-3.5 w-3.5" />}
+                          </Button>
+                        </li>
+                      );
+                    })
+                  )}
+                </ul>
+              </div>
             )}
+          </section>
+        )}
+
+        {/* ── Limpar tudo ────────────────────────────────────────────────── */}
+        <section className="rounded-2xl border border-destructive/30 bg-destructive/5 p-5 space-y-3">
+          <h2 className="font-semibold flex items-center gap-2 text-base">
+            <Trash2 className="w-4 h-4 text-destructive" />Limpar cache offline
+          </h2>
+          <p className="text-xs text-muted-foreground">
+            Remove todas as páginas, imagens e dados offline. Comentários pendentes também serão descartados.
+          </p>
+          <Button variant="destructive" onClick={handleClearCache} disabled={clearing} className="gap-2" size="sm">
+            {clearing ? <RefreshCw className="h-3.5 w-3.5 animate-spin" /> : <Trash2 className="h-3.5 w-3.5" />}
             {clearing ? "Limpando..." : "Limpar tudo"}
           </Button>
         </section>
+
       </div>
     </div>
   );
