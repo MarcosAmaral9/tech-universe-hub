@@ -6,6 +6,8 @@ import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DynamicSEO from "@/components/DynamicSEO";
 import { AdInArticle } from "@/components/AdSense";
+import OfflineFilterButton from "@/components/OfflineFilterButton";
+import { useOfflinePosts } from "@/hooks/useOfflinePosts";
 
 const POSTS_PER_PAGE = 12;
 
