@@ -365,6 +365,7 @@ const App = () => (
                 <Route path="/politica-conteudo" element={<ContentPolicyPage />} />
                 <Route path="/instalar" element={<InstallPage />} />
                 <Route path="/configuracoes" element={<SettingsPage />} />
+                <Route path="/configuracoes/offline" element={<OfflineSettingsPage />} />
                 <Route path="/painel-social" element={<SocialPanelPage />} />
                 {/* 22 Mar 2026 — Finanças */}
                 <Route path="/post/selic-comeca-cair-2026" element={<SelicComecaCair2026 />} />
