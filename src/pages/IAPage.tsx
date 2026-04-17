@@ -70,6 +70,11 @@ const IAPage = () => {
     setPage(1);
   };
 
+  const handleToggleOffline = () => {
+    setOfflineOnly((v) => !v);
+    setPage(1);
+  };
+
   return (
     <>
       <DynamicSEO />
