@@ -507,6 +507,23 @@ const SettingsPage = () => {
           </div>
         </section>
 
+        {/* Conteúdo Offline (gerenciamento do cache PWA) */}
+        <Link
+          to="/configuracoes/offline"
+          className="rounded-2xl border border-border bg-card p-5 flex items-center gap-4 hover:border-primary/40 hover:bg-primary/5 transition-all group"
+        >
+          <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+            <WifiOff className="w-5 h-5 text-primary" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="font-medium text-foreground">Conteúdo Offline</p>
+            <p className="text-sm text-muted-foreground">
+              Ver posts salvos, baixar tudo agora ou limpar cache
+            </p>
+          </div>
+          <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+        </Link>
+
         {/* Reset & Logout */}
         <div className="text-center space-y-3">
           <Button variant="outline" onClick={resetAll} className="gap-2">
