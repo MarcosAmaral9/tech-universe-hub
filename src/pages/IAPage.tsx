@@ -121,6 +121,12 @@ const IAPage = () => {
             </Button>
           );
         })}
+        <OfflineFilterButton
+          active={offlineOnly}
+          onToggle={handleToggleOffline}
+          activeClass="bg-ia"
+          count={offlineCount}
+        />
       </div>
 
       {/* Posts Grid */}
