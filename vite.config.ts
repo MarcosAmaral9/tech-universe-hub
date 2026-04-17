@@ -253,7 +253,7 @@ export default defineConfig(({ mode }) => ({
         // Runtime caching — makes the app work offline
         runtimeCaching: [
           {
-            // HTML pages (navigation requests) — network-first, fallback to cache
+            // HTML pages (navigation requests) — network-first, fallback to cache, then offline.html
             // Increased to 200 entries to cover all 125 posts + static pages
             urlPattern: ({ request }) => request.mode === "navigate",
             handler: "NetworkFirst",
@@ -262,6 +262,7 @@ export default defineConfig(({ mode }) => ({
               networkTimeoutSeconds: 4,
               expiration: { maxEntries: 200, maxAgeSeconds: 30 * 24 * 60 * 60 },
               cacheableResponse: { statuses: [0, 200] },
+              precacheFallback: { fallbackURL: "/offline.html" },
             },
           },
           {
