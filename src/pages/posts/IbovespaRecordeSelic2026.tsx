@@ -8,7 +8,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
-import carteiraInvestimentosImg from "@/assets/carteira-investimentos-2026.webp";
+import carteiraInvestimentosImg from "@/assets/carteira-iniciantes-guia-2026.webp";
 
 
 
