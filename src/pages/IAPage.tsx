@@ -31,7 +31,9 @@ const SUBTOPIC_LABELS: Record<string, string> = {
 const IAPage = () => {
   const allPosts = getPostsByCategory("ia");
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
+  const [offlineOnly, setOfflineOnly] = useState(false);
   const [page, setPage] = useState(1);
+  const { isCached } = useOfflinePosts();
 
   const changePage = (newPage: number | ((p: number) => number)) => {
     setPage(newPage);
@@ -48,16 +50,23 @@ const IAPage = () => {
     );
   }, [allPosts]);
 
-  const filtered = useMemo(
-    () => (activeFilter ? allPosts.filter((p) => p.subtopic === activeFilter) : allPosts),
-    [allPosts, activeFilter]
-  );
+  const filtered = useMemo(() => {
+    let list = activeFilter ? allPosts.filter((p) => p.subtopic === activeFilter) : allPosts;
+    if (offlineOnly) list = list.filter((p) => isCached(p.slug));
+    return list;
+  }, [allPosts, activeFilter, offlineOnly, isCached]);
+
+  const offlineCount = useMemo(() => {
+    const base = activeFilter ? allPosts.filter((p) => p.subtopic === activeFilter) : allPosts;
+    return base.filter((p) => isCached(p.slug)).length;
+  }, [allPosts, activeFilter, isCached]);
 
   const totalPages = Math.ceil(filtered.length / POSTS_PER_PAGE);
   const paged = filtered.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
 
   const handleFilter = (sub: string | null) => {
     setActiveFilter(sub);
+    setOfflineOnly(false);
     setPage(1);
   };
 
