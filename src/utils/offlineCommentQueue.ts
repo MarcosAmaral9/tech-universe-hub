@@ -144,6 +144,11 @@ export async function flushQueue(): Promise<{ success: number; failed: number }>
       }
     }
     if (success > 0) {
+      // Evento usado pelo CommentSection (refresh) e por um listener global
+      // que dispara o toast "Comentário enviado!" via sonner.
+      window.dispatchEvent(
+        new CustomEvent("comment-queue-synced", { detail: { success, failed } })
+      );
       window.dispatchEvent(new CustomEvent("comment-queue-updated"));
     }
   } finally {
