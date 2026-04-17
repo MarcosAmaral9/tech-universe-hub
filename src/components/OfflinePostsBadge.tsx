@@ -40,7 +40,7 @@ const OfflinePostsBadge = () => {
   const online = useOnline();
 
   const cachedPosts = useMemo(() => {
-    return allPosts.filter((p) => cachedSlugs.has(p.slug));
+    return blogPosts.filter((p) => cachedSlugs.has(p.slug));
   }, [cachedSlugs]);
 
   // Não mostra nada quando não há posts cacheados (evita ruído visual no primeiro acesso)
