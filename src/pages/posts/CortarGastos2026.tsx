@@ -6,7 +6,7 @@ import { Clock, User, Calendar, DollarSign, TrendingDown, Shield, Lightbulb, Zap
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import heroImg from "@/assets/economia-domestica-2026.webp";
+import heroImg from "@/assets/economia-domestica-dicas-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 
 const CortarGastos2026 = () => {
