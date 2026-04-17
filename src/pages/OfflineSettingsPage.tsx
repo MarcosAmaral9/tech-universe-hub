@@ -134,10 +134,7 @@ const OfflineSettingsPage = () => {
 
   return (
     <div className="min-h-[70vh] py-12 px-4">
-      <DynamicSEO
-        title="Configurações de Offline | VICIO<CODE>"
-        description="Gerencie o conteúdo salvo no seu dispositivo para leitura sem internet."
-      />
+      <DynamicSEO />
       <div className="max-w-2xl mx-auto space-y-8">
         <Link to="/configuracoes">
           <Button variant="ghost" className="gap-2 -ml-3">
