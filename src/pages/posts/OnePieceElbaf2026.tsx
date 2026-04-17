@@ -6,7 +6,7 @@ import { Clock, User, Calendar, Star, Zap, Shield, BarChart3, BookOpen, Anchor }
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import heroImg from "@/assets/one-piece-final-saga-2026.webp";
+import heroImg from "@/assets/one-piece-final-saga-guia-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 
 const OnePieceElbaf2026 = () => {
