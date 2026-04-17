@@ -8,6 +8,8 @@ import { ArrowLeft, Calculator, BarChart3, ChevronLeft, ChevronRight, History } 
 import { Button } from "@/components/ui/button";
 import DynamicSEO from "@/components/DynamicSEO";
 import { AdInArticle } from "@/components/AdSense";
+import OfflineFilterButton from "@/components/OfflineFilterButton";
+import { useOfflinePosts } from "@/hooks/useOfflinePosts";
 
 const PINNED_SLUG = "calculadoras-financeiras-ativos";
 const POSTS_PER_PAGE = 12;
@@ -34,7 +36,9 @@ const InvestimentosPage = () => {
   const pinnedPost = getPostBySlug(PINNED_SLUG);
   const postsWithoutPinned = allPosts.filter((p) => p.slug !== PINNED_SLUG);
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
+  const [offlineOnly, setOfflineOnly] = useState(false);
   const [page, setPage] = useState(1);
+  const { isCached } = useOfflinePosts();
 
   const changePage = (newPage: number | ((p: number) => number)) => {
     setPage(newPage);
@@ -51,16 +55,28 @@ const InvestimentosPage = () => {
     );
   }, [postsWithoutPinned]);
 
-  const filtered = useMemo(
-    () => (activeFilter ? postsWithoutPinned.filter((p) => p.subtopic === activeFilter) : postsWithoutPinned),
-    [postsWithoutPinned, activeFilter]
-  );
+  const filtered = useMemo(() => {
+    let list = activeFilter ? postsWithoutPinned.filter((p) => p.subtopic === activeFilter) : postsWithoutPinned;
+    if (offlineOnly) list = list.filter((p) => isCached(p.slug));
+    return list;
+  }, [postsWithoutPinned, activeFilter, offlineOnly, isCached]);
+
+  const offlineCount = useMemo(() => {
+    const base = activeFilter ? postsWithoutPinned.filter((p) => p.subtopic === activeFilter) : postsWithoutPinned;
+    return base.filter((p) => isCached(p.slug)).length;
+  }, [postsWithoutPinned, activeFilter, isCached]);
 
   const totalPages = Math.ceil(filtered.length / POSTS_PER_PAGE);
   const paged = filtered.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
 
   const handleFilter = (sub: string | null) => {
     setActiveFilter(sub);
+    setOfflineOnly(false);
+    setPage(1);
+  };
+
+  const handleToggleOffline = () => {
+    setOfflineOnly((v) => !v);
     setPage(1);
   };
 
@@ -174,9 +190,13 @@ const InvestimentosPage = () => {
             </Button>
           );
         })}
+        <OfflineFilterButton
+          active={offlineOnly}
+          onToggle={handleToggleOffline}
+          activeClass="bg-invest"
+          count={offlineCount}
+        />
       </div>
-
-      {/* Posts Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
         {paged.map((post) => (
           <PostCard key={post.id} post={post} />

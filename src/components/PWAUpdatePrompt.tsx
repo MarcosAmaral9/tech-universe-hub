@@ -1,30 +1,37 @@
 /**
  * PWAUpdatePrompt
- * Shows a toast-style notification when a new version of the app is available.
- * Uses the virtual module provided by vite-plugin-pwa (useRegisterSW).
- *
- * Flow:
- *  1. Service Worker detects an update in the background.
- *  2. needRefresh becomes true  →  this banner appears.
- *  3. User clicks "Atualizar"  →  updateServiceWorker(true) activates the
- *     new SW and reloads the page.
- *  4. User clicks "✕"          →  banner hides (they'll see it again next visit).
+ * Mostra notificações de status do PWA:
+ *  1. Indicador "Você está offline" no topo quando sem rede.
+ *  2. Toast "Nova versão disponível" quando o SW detecta atualização.
+ *  3. Após o usuário aplicar a atualização, dispara o pré-cache de TODAS
+ *     as páginas de posts em background, exibindo um indicador discreto
+ *     de progresso. Garante que o app instalado já fique pronto para
+ *     leitura offline imediatamente após cada update.
+ *  4. Toast "Conexão restabelecida" ao voltar online.
  */
 import { useRegisterSW } from "virtual:pwa-register/react";
-import { useState, useEffect } from "react";
-import { RefreshCw, X, Wifi, WifiOff } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { RefreshCw, X, Wifi, WifiOff, Download } from "lucide-react";
+import { precacheAllPosts } from "@/utils/precachePosts";
+
+const PRECACHE_FLAG_KEY = "viciocode_pending_precache_after_update";
 
 const PWAUpdatePrompt = () => {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
+  const [precacheProgress, setPrecacheProgress] = useState<{
+    done: number;
+    total: number;
+  } | null>(null);
+  const startedPrecacheRef = useRef(false);
 
   // Track online/offline status for the offline indicator
   useEffect(() => {
-    const goOnline  = () => setIsOnline(true);
+    const goOnline = () => setIsOnline(true);
     const goOffline = () => setIsOnline(false);
-    window.addEventListener("online",  goOnline);
+    window.addEventListener("online", goOnline);
     window.addEventListener("offline", goOffline);
     return () => {
-      window.removeEventListener("online",  goOnline);
+      window.removeEventListener("online", goOnline);
       window.removeEventListener("offline", goOffline);
     };
   }, []);
@@ -34,9 +41,18 @@ const PWAUpdatePrompt = () => {
     updateServiceWorker,
   } = useRegisterSW({
     onRegistered(r) {
-      // Poll every 60 minutes for new SW versions when the tab is open
+      // Poll a cada 60 minutos por novas versões enquanto a aba está aberta
       if (r) {
         setInterval(() => r.update(), 60 * 60 * 1000);
+      }
+      // Se havia um update pendente de precache (vindo de reload), executa agora
+      try {
+        if (sessionStorage.getItem(PRECACHE_FLAG_KEY) === "1") {
+          sessionStorage.removeItem(PRECACHE_FLAG_KEY);
+          startPrecache();
+        }
+      } catch {
+        /* ignore */
       }
     },
     onRegisterError(error) {
@@ -44,13 +60,32 @@ const PWAUpdatePrompt = () => {
     },
   });
 
+  const startPrecache = () => {
+    if (startedPrecacheRef.current) return;
+    startedPrecacheRef.current = true;
+    setPrecacheProgress({ done: 0, total: 0 });
+    void precacheAllPosts((p) => setPrecacheProgress(p)).then(() => {
+      // Mantém visível por 4s ao concluir, depois esconde
+      setTimeout(() => setPrecacheProgress(null), 4000);
+    });
+  };
+
   const handleUpdate = () => {
+    // Marca para iniciar o pré-cache assim que o novo SW assumir após o reload
+    try {
+      sessionStorage.setItem(PRECACHE_FLAG_KEY, "1");
+    } catch {
+      /* ignore */
+    }
     updateServiceWorker(true);
   };
 
   const handleDismiss = () => {
     setNeedRefresh(false);
   };
+
+  const isComplete =
+    precacheProgress && precacheProgress.total > 0 && precacheProgress.done >= precacheProgress.total;
 
   return (
     <>
@@ -74,9 +109,7 @@ const PWAUpdatePrompt = () => {
           aria-live="assertive"
         >
           <RefreshCw className="h-4 w-4 text-primary shrink-0 animate-spin [animation-duration:2s]" />
-          <span className="flex-1 text-foreground">
-            Nova versão disponível!
-          </span>
+          <span className="flex-1 text-foreground">Nova versão disponível!</span>
           <button
             onClick={handleUpdate}
             className="px-3 py-1 rounded-lg bg-primary text-primary-foreground text-xs font-bold hover:bg-primary/90 transition-colors shrink-0"
@@ -93,10 +126,30 @@ const PWAUpdatePrompt = () => {
         </div>
       )}
 
-      {/* ── Back online indicator (briefly shown) ── */}
-      {isOnline && typeof window !== "undefined" && (
-        <OnlineRestored />
+      {/* ── Pré-cache em progresso (após update) ── */}
+      {precacheProgress && (
+        <div
+          className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] flex items-center gap-3 px-4 py-3 rounded-xl shadow-lg border border-primary/30 bg-card/95 backdrop-blur-md text-sm max-w-[92vw] sm:max-w-sm animate-fade-in"
+          role="status"
+          aria-live="polite"
+        >
+          <Download
+            className={`h-4 w-4 text-primary shrink-0 ${isComplete ? "" : "animate-pulse"}`}
+          />
+          <span className="flex-1 text-foreground">
+            {isComplete
+              ? "Tudo pronto! Conteúdo disponível offline."
+              : `Salvando posts para offline${
+                  precacheProgress.total
+                    ? ` (${precacheProgress.done}/${precacheProgress.total})`
+                    : "..."
+                }`}
+          </span>
+        </div>
       )}
+
+      {/* ── Back online indicator (briefly shown) ── */}
+      {isOnline && typeof window !== "undefined" && <OnlineRestored />}
     </>
   );
 };

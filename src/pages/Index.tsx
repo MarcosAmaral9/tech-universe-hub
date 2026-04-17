@@ -6,6 +6,7 @@ import { blogPosts, getPostsByCategory } from "@/data/posts";
 import { Link } from "react-router-dom";
 import DynamicSEO from "@/components/DynamicSEO";
 import { AdInArticle } from "@/components/AdSense";
+import OfflineHomeBanner from "@/components/OfflineHomeBanner";
 
 const Index = () => {
   const categoryCounts = {
@@ -26,6 +27,9 @@ const Index = () => {
     <>
       <DynamicSEO />
       <>
+      {/* Offline banner — visível apenas no app instalado (PWA standalone) */}
+      <OfflineHomeBanner />
+
       {/* Hero Carousel */}
       <FeaturedCarousel />
 
