@@ -6,7 +6,7 @@ import { Clock, User, Calendar, Brain, TrendingUp, Shield, BarChart3, Lightbulb,
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import heroImg from "@/assets/ia-trabalho-2026.webp";
+import heroImg from "@/assets/ia-trabalho-profissoes-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 
 const IATrabalho2026Impacto = () => {
