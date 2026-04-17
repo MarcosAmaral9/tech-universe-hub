@@ -1,11 +1,17 @@
 import { useState, useEffect } from "react";
 import { trackCommentPosted } from "@/hooks/useReadingHistory";
-import { MessageCircle, Send, Trash2, Shield, LogIn } from "lucide-react";
+import { MessageCircle, Send, Trash2, Shield, LogIn, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { validateComment } from "@/utils/contentModeration";
+import {
+  enqueueComment,
+  flushQueue,
+  getPendingComments,
+  type PendingComment,
+} from "@/utils/offlineCommentQueue";
 
 const API_BASE = "/api.php";
 
