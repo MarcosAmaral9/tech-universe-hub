@@ -6,7 +6,7 @@ import { Clock, User, Calendar, Brain, Zap, Shield, BarChart3, Lightbulb, Trendi
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import heroImg from "@/assets/agentes-ia-2026.webp";
+import heroImg from "@/assets/agentes-ia-autonomos-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 
 const AgentesIAAutonomos2026 = () => {
