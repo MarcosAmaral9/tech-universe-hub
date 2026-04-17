@@ -1,14 +1,18 @@
 import { forwardRef } from "react";
 import { Link } from "react-router-dom";
-import { Clock } from "lucide-react";
+import { Clock, Download } from "lucide-react";
 import { BlogPost } from "@/types/blog";
 import CategoryBadge from "./CategoryBadge";
+import { useOfflinePosts } from "@/hooks/useOfflinePosts";
 
 interface PostCardProps {
   post: BlogPost;
 }
 
 const PostCard = forwardRef<HTMLElement, PostCardProps>(({ post }, ref) => {
+  const { isCached } = useOfflinePosts();
+  const offlineReady = isCached(post.slug);
+
   return (
     <article ref={ref} className="group bg-card rounded-xl overflow-hidden border border-border card-hover">
       <Link to={`/post/${post.slug}`} className="block">
@@ -24,6 +28,15 @@ const PostCard = forwardRef<HTMLElement, PostCardProps>(({ post }, ref) => {
           <div className="absolute top-3 left-3">
             <CategoryBadge category={post.category} size="sm" />
           </div>
+          {offlineReady && (
+            <div
+              className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-full bg-emerald-500/90 text-emerald-950 text-[10px] font-bold shadow-md backdrop-blur-sm"
+              title="Este post está salvo no seu dispositivo e pode ser lido sem internet"
+            >
+              <Download className="h-3 w-3" />
+              <span className="hidden sm:inline">Offline</span>
+            </div>
+          )}
         </div>
 
         {/* Content */}

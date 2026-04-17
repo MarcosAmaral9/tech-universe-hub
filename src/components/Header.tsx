@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import SearchModal from "./SearchModal";
 import SettingsDrawer from "./SettingsDrawer";
+import OfflinePostsBadge from "./OfflinePostsBadge";
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
@@ -87,6 +88,8 @@ const Header = () => {
                 </Link>
               </Button>
             )}
+
+            <OfflinePostsBadge />
 
             <Button
               variant="ghost"

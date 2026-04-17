@@ -241,7 +241,8 @@ export default defineConfig(({ mode }) => ({
       injectRegister: "auto",
       workbox: {
         // Precache shell assets — JS/CSS/fonts/SVG bundles (hashed → safe to cache long-term)
-        globPatterns: ["**/*.{js,css,woff2,woff,svg,ico}"],
+        // Inclui offline.html para servir como fallback quando rota não cacheada é acessada offline
+        globPatterns: ["**/*.{js,css,woff2,woff,svg,ico}", "offline.html"],
         // Increase precache file size limit to 5 MB (default is 2 MB) — our bundle has multiple chunks
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         cleanupOutdatedCaches: true,
@@ -252,7 +253,7 @@ export default defineConfig(({ mode }) => ({
         // Runtime caching — makes the app work offline
         runtimeCaching: [
           {
-            // HTML pages (navigation requests) — network-first, fallback to cache
+            // HTML pages (navigation requests) — network-first, fallback to cache, then offline.html
             // Increased to 200 entries to cover all 125 posts + static pages
             urlPattern: ({ request }) => request.mode === "navigate",
             handler: "NetworkFirst",
@@ -261,6 +262,7 @@ export default defineConfig(({ mode }) => ({
               networkTimeoutSeconds: 4,
               expiration: { maxEntries: 200, maxAgeSeconds: 30 * 24 * 60 * 60 },
               cacheableResponse: { statuses: [0, 200] },
+              precacheFallback: { fallbackURL: "/offline.html" },
             },
           },
           {
