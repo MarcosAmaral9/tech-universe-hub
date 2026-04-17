@@ -165,7 +165,31 @@ const CommentSection = ({ postId, postTitle = "Artigo" }: CommentSectionProps) =
       <h3 className="font-display text-2xl font-bold mb-6 flex items-center gap-2">
         <MessageCircle className="h-6 w-6 text-primary" />
         Comentários ({comments.length})
+        {pending.length > 0 && (
+          <span className="ml-2 text-xs font-medium px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/30 flex items-center gap-1">
+            <Clock className="h-3 w-3" />
+            {pending.length} pendente{pending.length > 1 ? "s" : ""}
+          </span>
+        )}
       </h3>
+
+      {/* Pending (offline) comments — exibidos otimisticamente para o autor */}
+      {pending.length > 0 && user && (
+        <div className="mb-6 space-y-3">
+          {pending.map((p) => (
+            <div
+              key={p.id}
+              className="p-4 bg-primary/5 rounded-xl border border-primary/30 border-dashed animate-fade-in"
+            >
+              <div className="flex items-center gap-2 mb-2 text-xs text-primary font-semibold">
+                <Clock className="h-3.5 w-3.5" />
+                Aguardando envio (será publicado quando a conexão voltar)
+              </div>
+              <p className="text-foreground/90 leading-relaxed text-sm">{p.content}</p>
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* Moderation notice */}
       <div className="mb-6 p-4 bg-secondary/50 rounded-lg border border-border flex items-start gap-3">
