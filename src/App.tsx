@@ -8,6 +8,7 @@ import { AuthProvider } from "@/contexts/AuthContext";
 import Layout from "@/components/Layout";
 import ScrollToTop from "@/components/ScrollToTop";
 import PWAUpdatePrompt from "@/components/PWAUpdatePrompt";
+import CommentSyncToast from "@/components/CommentSyncToast";
 import Index from "./pages/Index";
 import CookieConsent from "./components/CookieConsent";
 import { lazy, Suspense, useEffect } from "react";
@@ -60,6 +61,7 @@ const ContentPolicyPage = lazy(() => import("./pages/ContentPolicyPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const InstallPage = lazy(() => import("./pages/InstallPage"));
 const SettingsPage = lazy(() => import("./pages/SettingsPage"));
+const OfflineSettingsPage = lazy(() => import("./pages/OfflineSettingsPage"));
 const CotacoesPage = lazy(() => import("./pages/CotacoesPage"));
 const HistoricoCotacoesPage = lazy(() => import("./pages/HistoricoCotacoesPage"));
 const AuthPage = lazy(() => import("./pages/AuthPage"));
@@ -236,6 +238,7 @@ const App = () => (
           <ScrollToTop />
           <CookieConsent />
           <PWAUpdatePrompt />
+          <CommentSyncToast />
           <Layout>
             <Suspense fallback={<PageLoader />}>
               <Routes>
@@ -362,6 +365,7 @@ const App = () => (
                 <Route path="/politica-conteudo" element={<ContentPolicyPage />} />
                 <Route path="/instalar" element={<InstallPage />} />
                 <Route path="/configuracoes" element={<SettingsPage />} />
+                <Route path="/configuracoes/offline" element={<OfflineSettingsPage />} />
                 <Route path="/painel-social" element={<SocialPanelPage />} />
                 {/* 22 Mar 2026 — Finanças */}
                 <Route path="/post/selic-comeca-cair-2026" element={<SelicComecaCair2026 />} />
