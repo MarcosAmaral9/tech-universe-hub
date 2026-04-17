@@ -27,6 +27,9 @@ const Index = () => {
     <>
       <DynamicSEO />
       <>
+      {/* Offline banner — visível apenas no app instalado (PWA standalone) */}
+      <OfflineHomeBanner />
+
       {/* Hero Carousel */}
       <FeaturedCarousel />
 
