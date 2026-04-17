@@ -35,8 +35,8 @@ const OfflineAuthGate = ({ children }: { children: ReactNode }) => {
   if (isStandalone && !isOnline && !loading && !user) {
     return (
       <div className="container py-16 flex flex-col items-center text-center gap-4 max-w-md mx-auto">
-        <div className="w-16 h-16 rounded-full bg-amber-500/15 flex items-center justify-center">
-          <WifiOff className="h-8 w-8 text-amber-500" />
+        <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center">
+          <WifiOff className="h-8 w-8 text-muted-foreground" />
         </div>
         <h1 className="font-display text-2xl font-bold">Conteúdo offline indisponível</h1>
         <p className="text-muted-foreground">
