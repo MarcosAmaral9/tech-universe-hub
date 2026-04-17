@@ -249,7 +249,11 @@ const CommentSection = ({ postId, postTitle = "Artigo" }: CommentSectionProps) =
             disabled={isSubmitting || !newComment.trim()}
           >
             <Send className="h-4 w-4" />
-            {isSubmitting ? "Enviando..." : "Comentar"}
+            {isSubmitting
+              ? "Enviando..."
+              : typeof navigator !== "undefined" && !navigator.onLine
+              ? "Salvar para enviar depois"
+              : "Comentar"}
           </Button>
         </form>
       ) : (
