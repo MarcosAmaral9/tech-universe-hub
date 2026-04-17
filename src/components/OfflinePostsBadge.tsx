@@ -5,7 +5,7 @@
  * cacheados (clicáveis), permitindo que o usuário navegue rapidamente
  * para conteúdo que ele já tem disponível localmente.
  */
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Download, WifiOff, Wifi } from "lucide-react";
 import {
@@ -15,11 +15,10 @@ import {
 } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { useOfflinePosts } from "@/hooks/useOfflinePosts";
-import { posts as allPosts } from "@/data/posts";
-import { useState as useReactState, useEffect } from "react";
+import { blogPosts } from "@/data/posts";
 
 const useOnline = () => {
-  const [online, setOnline] = useReactState(
+  const [online, setOnline] = useState(
     typeof navigator !== "undefined" ? navigator.onLine : true
   );
   useEffect(() => {
