@@ -124,6 +124,53 @@ const OfflineSettingsPage = () => {
   // Seleção de categorias para download
   const [selectedCats, setSelectedCats] = useState<Set<string>>(new Set());
 
+  // ── Service Worker: verificação manual de novas versões ────────────────────
+  const swRegistrationRef = useRef<ServiceWorkerRegistration | null>(null);
+  const [checkingUpdate, setCheckingUpdate] = useState(false);
+  const [lastChecked, setLastChecked] = useState<Date | null>(null);
+  const {
+    needRefresh: [needRefresh],
+    updateServiceWorker,
+  } = useRegisterSW({
+    onRegistered(r) { if (r) swRegistrationRef.current = r; },
+  });
+
+  const handleCheckForUpdates = useCallback(async () => {
+    if (checkingUpdate) return;
+    setCheckingUpdate(true);
+    try {
+      const reg = swRegistrationRef.current
+        ?? (await navigator.serviceWorker?.getRegistration());
+      if (reg) {
+        await reg.update();
+        setLastChecked(new Date());
+        // Aguarda um pouco para o evento `needRefresh` propagar
+        await new Promise((r) => setTimeout(r, 800));
+        if (!reg.waiting && !reg.installing) {
+          toast.success("Você já está na versão mais recente!", {
+            description: "Nenhuma atualização encontrada.",
+          });
+        } else {
+          toast.info("Nova versão encontrada!", {
+            description: "Toque em 'Aplicar atualização' para usar.",
+          });
+        }
+      } else {
+        toast.error("Service Worker indisponível.", {
+          description: "Recarregue a página e tente novamente.",
+        });
+      }
+    } catch {
+      toast.error("Erro ao verificar atualizações.");
+    } finally {
+      setCheckingUpdate(false);
+    }
+  }, [checkingUpdate]);
+
+  const handleApplyUpdate = useCallback(() => {
+    updateServiceWorker(true);
+  }, [updateServiceWorker]);
+
   // ── Guards: só PWA + logado ───────────────────────────────────────────────
   useEffect(() => {
     if (authLoading) return;
