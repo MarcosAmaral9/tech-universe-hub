@@ -58,6 +58,17 @@ export interface PrecacheProgress {
 }
 
 // ── Internos ─────────────────────────────────────────────────────────────────
+
+/** Dispara um evento global notificando que o cache de páginas mudou. */
+function emitCacheUpdated() {
+  if (typeof window === "undefined") return;
+  try {
+    window.dispatchEvent(new CustomEvent("viciocode:cache-updated"));
+  } catch {
+    /* ignore */
+  }
+}
+
 async function fetchSilent(url: string): Promise<void> {
   try {
     await fetch(url, { credentials: "same-origin", cache: "reload" });
@@ -73,6 +84,7 @@ async function runWithConcurrency(
   const total = items.length;
   let done = 0;
   const queue = [...items];
+  let lastEmit = 0;
 
   const workers = Array.from({ length: CONCURRENCY }, async () => {
     while (queue.length) {
@@ -82,10 +94,16 @@ async function runWithConcurrency(
       await fetchSilent(item.url);
       done++;
       onProgress?.({ total, done, currentLabel: item.label });
+      // Notifica UI a cada 3 itens (ou no último) para refrescar contadores em tempo real
+      if (done - lastEmit >= 3 || done === total) {
+        lastEmit = done;
+        emitCacheUpdated();
+      }
     }
   });
 
   await Promise.all(workers);
+  emitCacheUpdated();
 }
 
 // ── API pública ────────────────────────────────────────────────────────────────
