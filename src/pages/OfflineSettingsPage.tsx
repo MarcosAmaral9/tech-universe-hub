@@ -551,7 +551,7 @@ const OfflineSettingsPage = () => {
               onClick={() => setListExpanded((v) => !v)}
             >
               <h2 className="font-semibold flex items-center gap-2 text-base">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                <CheckCircle2 className="w-4 h-4 text-primary" />
                 Posts salvos ({count})
               </h2>
               {listExpanded ? <ChevronUp className="h-4 w-4 text-muted-foreground" /> : <ChevronDown className="h-4 w-4 text-muted-foreground" />}
