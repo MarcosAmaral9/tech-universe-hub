@@ -1,82 +1,176 @@
 /**
- * precachePosts
- * Utilitários para pré-cache seletivo de posts no Service Worker.
+ * precachePosts — motor de pré-cache seletivo do VicioCode PWA
  *
- * DISPONÍVEL APENAS NO APP (PWA standalone) E SOMENTE PARA USUÁRIO LOGADO.
- * Verificação feita pela OfflineSettingsPage antes de chamar qualquer função.
+ * ═══════════════════════════════════════════════════════════════
+ * COMO ADICIONAR NOVAS PÁGINAS AO SISTEMA OFFLINE
+ * ═══════════════════════════════════════════════════════════════
  *
- * Estratégia: fetch() para /post/<slug>. O SW intercepta e salva em "pages-cache".
- * Concorrência limitada para não sobrecarregar a rede do dispositivo.
+ * POSTS (artigos em /post/<slug>):
+ *   → Adicione apenas em src/data/posts.ts com os campos obrigatórios.
+ *   → O sistema de cache descobre automaticamente via blogPosts[].
+ *   → Nenhuma alteração necessária neste arquivo.
+ *
+ * PÁGINAS ESTÁTICAS (rotas fixas como /cotacoes, /financas, etc.):
+ *   → Adicione a rota no array STATIC_PAGES abaixo.
+ *   → Use o campo label para exibição amigável na UI.
+ *   → Use category para agrupar nas configurações offline.
+ *   → O restante do sistema descobre automaticamente.
+ *
+ * ═══════════════════════════════════════════════════════════════
+ * ACESSO: exclusivo para PWA instalado + usuário logado.
+ * Verificação feita pela OfflineSettingsPage.
+ * ═══════════════════════════════════════════════════════════════
  */
 import { blogPosts } from "@/data/posts";
 
 const CONCURRENCY = 3;
 
+// ── Páginas estáticas disponíveis para download offline ───────────────────────
+// Adicione aqui qualquer nova página estática que queira tornar disponível.
+// Posts de /post/<slug> são gerenciados AUTOMATICAMENTE via blogPosts[].
+export interface StaticPage {
+  path: string;       // URL da rota (ex: "/cotacoes")
+  label: string;      // Exibição na UI
+  category: string;   // Grupo: "finance" | "ia" | "geek" | "otaku" | "site"
+  emoji: string;
+}
+
+export const STATIC_PAGES: StaticPage[] = [
+  // Finanças
+  { path: "/cotacoes",          label: "Cotações em Tempo Real",    category: "finance", emoji: "📈" },
+  { path: "/historico-cotacoes",label: "Histórico de Cotações",     category: "finance", emoji: "📊" },
+  { path: "/financas",          label: "Hub de Finanças",           category: "finance", emoji: "💰" },
+  // Categorias principais
+  { path: "/ia",                label: "Hub de IA",                 category: "ia",      emoji: "🤖" },
+  { path: "/geek",              label: "Hub Geek",                  category: "geek",    emoji: "🎮" },
+  { path: "/otaku",             label: "Hub Otaku",                 category: "otaku",   emoji: "🌸" },
+  // Site
+  { path: "/",                  label: "Página Inicial",            category: "site",    emoji: "🏠" },
+  { path: "/sobre",             label: "Sobre o VicioCode",         category: "site",    emoji: "ℹ️"  },
+  { path: "/instalar",          label: "Instalar App",              category: "site",    emoji: "📲" },
+];
+
+// ── Tipos ─────────────────────────────────────────────────────────────────────
 export interface PrecacheProgress {
   total: number;
   done: number;
-  currentSlug?: string;
+  currentLabel?: string;
 }
 
+// ── Internos ─────────────────────────────────────────────────────────────────
 async function fetchSilent(url: string): Promise<void> {
   try {
     await fetch(url, { credentials: "same-origin", cache: "reload" });
   } catch {
-    // ignore — rede instável
+    /* rede instável — silencioso */
   }
 }
 
 async function runWithConcurrency(
-  urls: string[],
+  items: { url: string; label: string }[],
   onProgress?: (p: PrecacheProgress) => void
 ): Promise<void> {
-  const total = urls.length;
+  const total = items.length;
   let done = 0;
-  const queue = [...urls];
+  const queue = [...items];
 
   const workers = Array.from({ length: CONCURRENCY }, async () => {
     while (queue.length) {
-      const url = queue.shift();
-      if (!url) break;
-      const slug = url.replace("/post/", "");
-      onProgress?.({ total, done, currentSlug: slug });
-      await fetchSilent(url);
+      const item = queue.shift();
+      if (!item) break;
+      onProgress?.({ total, done, currentLabel: item.label });
+      await fetchSilent(item.url);
       done++;
-      onProgress?.({ total, done, currentSlug: slug });
+      onProgress?.({ total, done, currentLabel: item.label });
     }
   });
 
   await Promise.all(workers);
 }
 
-/** Baixa TODOS os posts (todas as categorias). */
+// ── API pública ────────────────────────────────────────────────────────────────
+
+/**
+ * Baixa TODOS os posts de todas as categorias.
+ * Não inclui páginas estáticas (use precacheStaticPages para isso).
+ */
 export async function precacheAllPosts(
   onProgress?: (p: PrecacheProgress) => void
 ): Promise<PrecacheProgress> {
-  const urls = blogPosts.map((p) => `/post/${p.slug}`);
-  await runWithConcurrency(urls, onProgress);
-  return { total: urls.length, done: urls.length };
+  const items = blogPosts.map((p) => ({ url: `/post/${p.slug}`, label: p.title }));
+  await runWithConcurrency(items, onProgress);
+  return { total: items.length, done: items.length };
 }
 
-/** Baixa posts de uma ou mais categorias específicas. */
+/**
+ * Baixa posts de categorias específicas.
+ * Descobre automaticamente todos os posts da categoria via blogPosts[].
+ */
 export async function precacheByCategories(
   categories: string[],
   onProgress?: (p: PrecacheProgress) => void
 ): Promise<PrecacheProgress> {
   const catSet = new Set(categories);
-  const urls = blogPosts
+  const items = blogPosts
     .filter((p) => catSet.has(p.category))
-    .map((p) => `/post/${p.slug}`);
-  await runWithConcurrency(urls, onProgress);
-  return { total: urls.length, done: urls.length };
+    .map((p) => ({ url: `/post/${p.slug}`, label: p.title }));
+  await runWithConcurrency(items, onProgress);
+  return { total: items.length, done: items.length };
 }
 
-/** Baixa slugs específicos (download individual). */
+/**
+ * Baixa slugs específicos de posts individuais.
+ */
 export async function precacheSlugs(
   slugs: string[],
   onProgress?: (p: PrecacheProgress) => void
 ): Promise<PrecacheProgress> {
-  const urls = slugs.map((s) => `/post/${s}`);
-  await runWithConcurrency(urls, onProgress);
-  return { total: urls.length, done: urls.length };
+  const slugSet = new Set(slugs);
+  const items = blogPosts
+    .filter((p) => slugSet.has(p.slug))
+    .map((p) => ({ url: `/post/${p.slug}`, label: p.title }));
+  // Posts não encontrados em blogPosts (slugs diretos)
+  const unknownItems = slugs
+    .filter((s) => !blogPosts.find((p) => p.slug === s))
+    .map((s) => ({ url: `/post/${s}`, label: s }));
+  await runWithConcurrency([...items, ...unknownItems], onProgress);
+  return { total: items.length + unknownItems.length, done: items.length + unknownItems.length };
+}
+
+/**
+ * Baixa páginas estáticas selecionadas (de STATIC_PAGES).
+ * Filtra por categoria se fornecida.
+ */
+export async function precacheStaticPages(
+  categories?: string[],
+  onProgress?: (p: PrecacheProgress) => void
+): Promise<PrecacheProgress> {
+  const pages = categories && categories.length > 0
+    ? STATIC_PAGES.filter((p) => categories.includes(p.category))
+    : STATIC_PAGES;
+  const items = pages.map((p) => ({ url: p.path, label: p.label }));
+  await runWithConcurrency(items, onProgress);
+  return { total: items.length, done: items.length };
+}
+
+/**
+ * Retorna todos os slugs de posts agrupados por categoria.
+ * Usado pela OfflineSettingsPage para contagens sem precisar reimportar blogPosts.
+ */
+export function getPostsByCategory(): Record<string, typeof blogPosts> {
+  const result: Record<string, typeof blogPosts> = {};
+  for (const post of blogPosts) {
+    if (!result[post.category]) result[post.category] = [];
+    result[post.category].push(post);
+  }
+  return result;
+}
+
+/** Contagem total de posts por categoria. */
+export function getPostCountByCategory(): Record<string, number> {
+  const result: Record<string, number> = {};
+  for (const post of blogPosts) {
+    result[post.category] = (result[post.category] ?? 0) + 1;
+  }
+  return result;
 }

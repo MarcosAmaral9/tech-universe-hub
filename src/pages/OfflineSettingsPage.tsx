@@ -29,8 +29,10 @@ import { useOfflinePosts } from "@/hooks/useOfflinePosts";
 import { usePWAStandalone } from "@/hooks/usePWAStandalone";
 import {
   precacheAllPosts,
-  precacheByCategories,
   precacheSlugs,
+  precacheStaticPages,
+  STATIC_PAGES,
+  getPostCountByCategory,
   type PrecacheProgress,
 } from "@/utils/precachePosts";
 import { blogPosts } from "@/data/posts";
@@ -105,13 +107,7 @@ const OfflineSettingsPage = () => {
       return next;
     });
 
-  const countByCat = useMemo(
-    () =>
-      Object.fromEntries(
-        CATEGORIES.map((c) => [c.key, blogPosts.filter((p) => p.category === c.key).length])
-      ),
-    []
-  );
+  const countByCat = useMemo(() => getPostCountByCategory(), []);
 
   const cachedByCat = useMemo(
     () =>
@@ -135,7 +131,7 @@ const OfflineSettingsPage = () => {
     return posts;
   }, [cachedPosts, listCategory, listSearch]);
 
-  // Posts não cacheados (para download individual)
+  // Posts não cacheados por categoria (auto-atualiza quando blogPosts cresce)
   const uncachedByCategory = useMemo(() => {
     return Object.fromEntries(
       CATEGORIES.map((c) => [
@@ -144,6 +140,20 @@ const OfflineSettingsPage = () => {
       ])
     );
   }, [cachedSlugs]);
+
+  // Páginas estáticas não cacheadas (sempre verifica cache ao renderizar)
+  const [cachedStaticPaths, setCachedStaticPaths] = useState<Set<string>>(new Set());
+  useEffect(() => {
+    (async () => {
+      if (typeof caches === "undefined") return;
+      try {
+        const cache = await caches.open("pages-cache");
+        const keys = await cache.keys();
+        const paths = new Set(keys.map((r) => new URL(r.url).pathname));
+        setCachedStaticPaths(paths);
+      } catch { /* ignore */ }
+    })();
+  }, [count]); // re-verifica quando o cache muda
 
   // ── Handlers ──────────────────────────────────────────────────────────────
   const handleDownloadSelected = async () => {
@@ -200,6 +210,24 @@ const OfflineSettingsPage = () => {
       toast.success("Post removido do cache offline.");
     } catch { toast.error("Erro ao remover post."); }
     finally { setRemovingSlug(null); }
+  };
+
+  const handleDownloadStaticPages = async (cats?: string[]) => {
+    const toDownload = cats && cats.length > 0
+      ? STATIC_PAGES.filter((p) => cats.includes(p.category) && !cachedStaticPaths.has(p.path))
+      : STATIC_PAGES.filter((p) => !cachedStaticPaths.has(p.path));
+    if (toDownload.length === 0) { toast.info("Páginas já salvas!"); return; }
+    setDownloading(true);
+    setProgress({ total: toDownload.length, done: 0 });
+    try {
+      await precacheStaticPages(cats, setProgress);
+      // Refresh static cache state
+      const cache = await caches.open("pages-cache");
+      const keys = await cache.keys();
+      setCachedStaticPaths(new Set(keys.map((r) => new URL(r.url).pathname)));
+      toast.success(`${toDownload.length} páginas salvas!`);
+    } catch { toast.error("Erro ao salvar páginas."); }
+    finally { setDownloading(false); setTimeout(() => setProgress(null), 2000); }
   };
 
   const handleClearCache = async () => {
@@ -362,6 +390,59 @@ const OfflineSettingsPage = () => {
               {count >= totalPosts ? "Tudo salvo" : "Baixar tudo"}
             </Button>
           </div>
+        </section>
+
+        {/* ── Páginas estáticas disponíveis para offline ───────────────── */}
+        <section className="rounded-2xl border border-border bg-card p-5 space-y-4">
+          <div>
+            <h2 className="font-semibold flex items-center gap-2 text-base mb-0.5">
+              <span>🌐</span>Páginas do site
+            </h2>
+            <p className="text-xs text-muted-foreground">
+              Páginas fixas do VicioCode (hubs, cotações, etc).
+              Novas páginas aparecem aqui automaticamente.
+            </p>
+          </div>
+          <ul className="divide-y divide-border">
+            {STATIC_PAGES.map((page) => {
+              const isSaved = cachedStaticPaths.has(page.path);
+              return (
+                <li key={page.path} className="flex items-center gap-3 py-2.5">
+                  <span className="text-base shrink-0">{page.emoji}</span>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs font-medium line-clamp-1">{page.label}</p>
+                    <p className="text-[10px] text-muted-foreground">{page.path}</p>
+                  </div>
+                  {isSaved ? (
+                    <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  ) : (
+                    <Button
+                      size="icon"
+                      variant="ghost"
+                      className="h-7 w-7 shrink-0"
+                      disabled={downloading}
+                      onClick={() => handleDownloadStaticPages([page.category])}
+                      title="Salvar offline"
+                    >
+                      <Download className="h-3.5 w-3.5" />
+                    </Button>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+          <Button
+            onClick={() => handleDownloadStaticPages()}
+            disabled={downloading || STATIC_PAGES.every((p) => cachedStaticPaths.has(p.path))}
+            variant="outline"
+            size="sm"
+            className="gap-2 w-full"
+          >
+            <Download className="h-3.5 w-3.5" />
+            {STATIC_PAGES.every((p) => cachedStaticPaths.has(p.path))
+              ? "Todas as páginas salvas ✅"
+              : "Salvar todas as páginas"}
+          </Button>
         </section>
 
         {/* ── Download posts individuais ────────────────────────────────── */}
