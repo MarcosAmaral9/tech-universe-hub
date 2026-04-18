@@ -586,9 +586,13 @@ const OfflineSettingsPage = () => {
                       <button
                         key={c.key}
                         onClick={() => setListCategory(listCategory === c.key ? "all" : c.key)}
-                        className={`text-[10px] px-2 py-1 rounded-md border transition-colors ${listCategory === c.key ? "bg-primary text-primary-foreground border-primary" : "border-border hover:border-primary/50"}`}
+                        className={`text-[10px] px-2 py-1 rounded-md border transition-colors ${
+                          listCategory === c.key
+                            ? `${c.badgeClass} border-transparent`
+                            : "border-border hover:border-primary/50"
+                        }`}
                       >
-                        {c.emoji} {c.label.split(" ")[0]}
+                        {c.emoji} {c.shortLabel}
                       </button>
                     ))}
                   </div>
