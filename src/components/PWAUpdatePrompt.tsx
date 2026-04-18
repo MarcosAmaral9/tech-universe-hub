@@ -17,6 +17,7 @@ import { usePWAStandalone } from "@/hooks/usePWAStandalone";
 
 const PRECACHE_FLAG_KEY = "viciocode_pending_precache_after_update";
 const STATIC_PAGES_PRECACHED_KEY = "viciocode_static_pages_precached_v1";
+const STATIC_PAGES_PRECACHED_VERSION = "2";
 
 const PWAUpdatePrompt = () => {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
@@ -64,14 +65,14 @@ const PWAUpdatePrompt = () => {
     const timer = setTimeout(() => {
       if (cancelled) return;
       try {
-        if (localStorage.getItem(STATIC_PAGES_PRECACHED_KEY) === "1") return;
+        if (localStorage.getItem(STATIC_PAGES_PRECACHED_KEY) === STATIC_PAGES_PRECACHED_VERSION) return;
       } catch { /* ignore */ }
       // Aguarda o SW estar pronto antes de baixar
       navigator.serviceWorker?.ready
         .then(() => {
           if (cancelled) return;
           void precacheStaticPages().then(() => {
-            try { localStorage.setItem(STATIC_PAGES_PRECACHED_KEY, "1"); } catch { /* ignore */ }
+            try { localStorage.setItem(STATIC_PAGES_PRECACHED_KEY, STATIC_PAGES_PRECACHED_VERSION); } catch { /* ignore */ }
           });
         })
         .catch(() => { /* ignore */ });

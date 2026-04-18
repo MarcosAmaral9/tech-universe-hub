@@ -21,45 +21,68 @@
  * Verificação feita pela OfflineSettingsPage.
  * ═══════════════════════════════════════════════════════════════
  */
+import heroCotacoes from "@/assets/cotacoes-tempo-real.webp";
+import heroHistorico from "@/assets/historico-cotacoes.webp";
+import crimsonDesertHeroImg from "@/assets/crimson-desert-hero.webp";
+import avatarPortalBannerImg from "@/assets/avatar-portal-banner.webp";
+import acPortalImg from "@/assets/assassins-creed-portal.webp";
+import tensuraPortalImg from "@/assets/tensura-portal-banner.webp";
+import overlordPortalImg from "@/assets/overlord-portal-banner.webp";
 import { blogPosts } from "@/data/posts";
 
 const CONCURRENCY = 3;
+const PAGE_CACHE = "pages-cache";
+const IMAGE_CACHE = "images-cache";
+
+const imagesByCategory = {
+  ia: blogPosts.filter((post) => post.category === "ia").map((post) => post.image),
+  finance: [
+    heroCotacoes,
+    heroHistorico,
+    ...blogPosts.filter((post) => post.category === "invest").map((post) => post.image),
+  ],
+  geek: [
+    crimsonDesertHeroImg,
+    avatarPortalBannerImg,
+    acPortalImg,
+    ...blogPosts.filter((post) => post.category === "geek").map((post) => post.image),
+  ],
+  otaku: [
+    tensuraPortalImg,
+    overlordPortalImg,
+    ...blogPosts.filter((post) => post.category === "otaku").map((post) => post.image),
+  ],
+};
 
 // ── Páginas estáticas disponíveis para download offline ───────────────────────
 // Adicione aqui qualquer nova página estática que queira tornar disponível.
 // Posts de /post/<slug> são gerenciados AUTOMATICAMENTE via blogPosts[].
 export interface StaticPage {
-  path: string;       // URL da rota (ex: "/cotacoes")
-  label: string;      // Exibição na UI
-  category: string;   // Grupo: "finance" | "ia" | "geek" | "otaku" | "site"
+  path: string;
+  label: string;
+  category: string;
   emoji: string;
+  assetUrls?: string[];
 }
 
 export const STATIC_PAGES: StaticPage[] = [
-  // Finanças
-  { path: "/cotacoes",          label: "Cotações em Tempo Real",    category: "finance", emoji: "📈" },
-  { path: "/historico-cotacoes",label: "Histórico de Cotações",     category: "finance", emoji: "📊" },
-  { path: "/financas",          label: "Hub de Finanças",           category: "finance", emoji: "💰" },
-  // Categorias principais
-  { path: "/ia",                label: "Hub de IA",                 category: "ia",      emoji: "🤖" },
-  { path: "/geek",              label: "Hub Geek",                  category: "geek",    emoji: "🎮" },
-  { path: "/otaku",             label: "Hub Otaku",                 category: "otaku",   emoji: "🌸" },
-  // Site
-  { path: "/",                  label: "Página Inicial",            category: "site",    emoji: "🏠" },
-  { path: "/sobre",             label: "Sobre o VicioCode",         category: "site",    emoji: "ℹ️"  },
-  { path: "/instalar",          label: "Instalar App",              category: "site",    emoji: "📲" },
+  { path: "/cotacoes", label: "Cotações em Tempo Real", category: "finance", emoji: "📈", assetUrls: [heroCotacoes] },
+  { path: "/historico-cotacoes", label: "Histórico de Cotações", category: "finance", emoji: "📊", assetUrls: [heroHistorico] },
+  { path: "/financas", label: "Hub de Finanças", category: "finance", emoji: "💰", assetUrls: imagesByCategory.finance },
+  { path: "/ia", label: "Hub de IA", category: "ia", emoji: "🤖", assetUrls: imagesByCategory.ia },
+  { path: "/geek", label: "Hub Geek", category: "geek", emoji: "🎮", assetUrls: imagesByCategory.geek },
+  { path: "/otaku", label: "Hub Otaku", category: "otaku", emoji: "🌸", assetUrls: imagesByCategory.otaku },
+  { path: "/", label: "Página Inicial", category: "site", emoji: "🏠" },
+  { path: "/sobre", label: "Sobre o VicioCode", category: "site", emoji: "ℹ️" },
+  { path: "/instalar", label: "Instalar App", category: "site", emoji: "📲" },
 ];
 
-// ── Tipos ─────────────────────────────────────────────────────────────────────
 export interface PrecacheProgress {
   total: number;
   done: number;
   currentLabel?: string;
 }
 
-// ── Internos ─────────────────────────────────────────────────────────────────
-
-/** Dispara um evento global notificando que o cache de páginas mudou. */
 function emitCacheUpdated() {
   if (typeof window === "undefined") return;
   try {
@@ -77,8 +100,43 @@ async function fetchSilent(url: string): Promise<void> {
   }
 }
 
+function toAbsoluteUrl(url: string): string {
+  return new URL(url, window.location.origin).toString();
+}
+
+async function cacheResponse(cacheName: string, url: string): Promise<void> {
+  const requestUrl = toAbsoluteUrl(url);
+  const response = await fetch(requestUrl, {
+    credentials: "same-origin",
+    cache: "reload",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Erro ao cachear ${url}`);
+  }
+
+  const cache = await caches.open(cacheName);
+  await cache.put(requestUrl, response.clone());
+}
+
+async function cachePageWithAssets(url: string, assetUrls: string[] = []): Promise<void> {
+  await cacheResponse(PAGE_CACHE, url);
+
+  if (assetUrls.length === 0) return;
+
+  await Promise.all(
+    assetUrls.map(async (assetUrl) => {
+      try {
+        await cacheResponse(IMAGE_CACHE, assetUrl);
+      } catch {
+        await fetchSilent(assetUrl);
+      }
+    })
+  );
+}
+
 async function runWithConcurrency(
-  items: { url: string; label: string }[],
+  items: { url: string; label: string; assetUrls?: string[] }[],
   onProgress?: (p: PrecacheProgress) => void
 ): Promise<void> {
   const total = items.length;
@@ -90,11 +148,18 @@ async function runWithConcurrency(
     while (queue.length) {
       const item = queue.shift();
       if (!item) break;
+
       onProgress?.({ total, done, currentLabel: item.label });
-      await fetchSilent(item.url);
+
+      try {
+        await cachePageWithAssets(item.url, item.assetUrls);
+      } catch {
+        await fetchSilent(item.url);
+      }
+
       done++;
       onProgress?.({ total, done, currentLabel: item.label });
-      // Notifica UI a cada 3 itens (ou no último) para refrescar contadores em tempo real
+
       if (done - lastEmit >= 3 || done === total) {
         lastEmit = done;
         emitCacheUpdated();
@@ -106,75 +171,69 @@ async function runWithConcurrency(
   emitCacheUpdated();
 }
 
-// ── API pública ────────────────────────────────────────────────────────────────
-
-/**
- * Baixa TODOS os posts de todas as categorias.
- * Não inclui páginas estáticas (use precacheStaticPages para isso).
- */
 export async function precacheAllPosts(
   onProgress?: (p: PrecacheProgress) => void
 ): Promise<PrecacheProgress> {
-  const items = blogPosts.map((p) => ({ url: `/post/${p.slug}`, label: p.title }));
+  const items = blogPosts.map((post) => ({
+    url: `/post/${post.slug}`,
+    label: post.title,
+    assetUrls: post.image ? [post.image] : [],
+  }));
   await runWithConcurrency(items, onProgress);
   return { total: items.length, done: items.length };
 }
 
-/**
- * Baixa posts de categorias específicas.
- * Descobre automaticamente todos os posts da categoria via blogPosts[].
- */
 export async function precacheByCategories(
   categories: string[],
   onProgress?: (p: PrecacheProgress) => void
 ): Promise<PrecacheProgress> {
   const catSet = new Set(categories);
   const items = blogPosts
-    .filter((p) => catSet.has(p.category))
-    .map((p) => ({ url: `/post/${p.slug}`, label: p.title }));
+    .filter((post) => catSet.has(post.category))
+    .map((post) => ({
+      url: `/post/${post.slug}`,
+      label: post.title,
+      assetUrls: post.image ? [post.image] : [],
+    }));
   await runWithConcurrency(items, onProgress);
   return { total: items.length, done: items.length };
 }
 
-/**
- * Baixa slugs específicos de posts individuais.
- */
 export async function precacheSlugs(
   slugs: string[],
   onProgress?: (p: PrecacheProgress) => void
 ): Promise<PrecacheProgress> {
   const slugSet = new Set(slugs);
   const items = blogPosts
-    .filter((p) => slugSet.has(p.slug))
-    .map((p) => ({ url: `/post/${p.slug}`, label: p.title }));
-  // Posts não encontrados em blogPosts (slugs diretos)
+    .filter((post) => slugSet.has(post.slug))
+    .map((post) => ({
+      url: `/post/${post.slug}`,
+      label: post.title,
+      assetUrls: post.image ? [post.image] : [],
+    }));
   const unknownItems = slugs
-    .filter((s) => !blogPosts.find((p) => p.slug === s))
-    .map((s) => ({ url: `/post/${s}`, label: s }));
+    .filter((slug) => !blogPosts.find((post) => post.slug === slug))
+    .map((slug) => ({ url: `/post/${slug}`, label: slug }));
   await runWithConcurrency([...items, ...unknownItems], onProgress);
   return { total: items.length + unknownItems.length, done: items.length + unknownItems.length };
 }
 
-/**
- * Baixa páginas estáticas selecionadas (de STATIC_PAGES).
- * Filtra por categoria se fornecida.
- */
 export async function precacheStaticPages(
   categories?: string[],
   onProgress?: (p: PrecacheProgress) => void
 ): Promise<PrecacheProgress> {
   const pages = categories && categories.length > 0
-    ? STATIC_PAGES.filter((p) => categories.includes(p.category))
+    ? STATIC_PAGES.filter((page) => categories.includes(page.category))
     : STATIC_PAGES;
-  const items = pages.map((p) => ({ url: p.path, label: p.label }));
+  const items = pages.map((page) => ({
+    url: page.path,
+    label: page.label,
+    assetUrls: page.assetUrls ?? [],
+  }));
   await runWithConcurrency(items, onProgress);
   return { total: items.length, done: items.length };
 }
 
-/**
- * Retorna todos os slugs de posts agrupados por categoria.
- * Usado pela OfflineSettingsPage para contagens sem precisar reimportar blogPosts.
- */
 export function getPostsByCategory(): Record<string, typeof blogPosts> {
   const result: Record<string, typeof blogPosts> = {};
   for (const post of blogPosts) {
@@ -184,7 +243,6 @@ export function getPostsByCategory(): Record<string, typeof blogPosts> {
   return result;
 }
 
-/** Contagem total de posts por categoria. */
 export function getPostCountByCategory(): Record<string, number> {
   const result: Record<string, number> = {};
   for (const post of blogPosts) {

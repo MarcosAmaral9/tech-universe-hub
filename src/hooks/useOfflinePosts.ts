@@ -13,7 +13,13 @@ import { useEffect, useState, useCallback } from "react";
 import { blogPosts } from "@/data/posts";
 
 const CACHE_NAME = "pages-cache";
-const IMAGES_CACHE = "images-cache";
+
+const normalizePath = (value: string) => value.replace(/\/$/, "") || "/";
+
+const normalizeSlugFromPath = (pathname: string) => {
+  const match = normalizePath(pathname).match(/^\/post\/([^/?#]+)$/);
+  return match?.[1] ?? null;
+};
 
 export interface CachedPostInfo {
   slug: string;
@@ -42,18 +48,19 @@ async function readCachedPostDetails(): Promise<CachedPostInfo[]> {
   try {
     const cache = await caches.open(CACHE_NAME);
     const requests = await cache.keys();
+    const seen = new Set<string>();
     for (const req of requests) {
       try {
         const url = new URL(req.url);
-        const m = url.pathname.match(/^\/post\/([^\/?#]+)\/?$/);
-        if (!m) continue;
-        const slug = m[1];
+        const slug = normalizeSlugFromPath(url.pathname);
+        if (!slug || seen.has(slug)) continue;
         const post = blogPosts.find((p) => p.slug === slug);
         if (!post) continue;
+        seen.add(slug);
         // Estimate size from cached response
         let sizeBytes = 0;
         try {
-          const response = await cache.match(req);
+          const response = await cache.match(req.url) ?? await cache.match(url.pathname);
           if (response) {
             const clone = response.clone();
             const blob = await clone.blob();
@@ -76,8 +83,13 @@ async function removeCachedPost(slug: string): Promise<void> {
   if (typeof caches === "undefined") return;
   try {
     const cache = await caches.open(CACHE_NAME);
-    await cache.delete(`/post/${slug}`);
-    await cache.delete(`/post/${slug}/`);
+    const absoluteUrl = new URL(`/post/${slug}`, window.location.origin).toString();
+    await Promise.all([
+      cache.delete(`/post/${slug}`),
+      cache.delete(`/post/${slug}/`),
+      cache.delete(absoluteUrl),
+      cache.delete(`${absoluteUrl}/`),
+    ]);
   } catch { /* ignore */ }
 }
 
