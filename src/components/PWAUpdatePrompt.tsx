@@ -12,9 +12,11 @@
 import { useRegisterSW } from "virtual:pwa-register/react";
 import { useState, useEffect, useRef } from "react";
 import { RefreshCw, X, Wifi, WifiOff, Download } from "lucide-react";
-import { precacheAllPosts } from "@/utils/precachePosts";
+import { precacheAllPosts, precacheStaticPages } from "@/utils/precachePosts";
+import { usePWAStandalone } from "@/hooks/usePWAStandalone";
 
 const PRECACHE_FLAG_KEY = "viciocode_pending_precache_after_update";
+const STATIC_PAGES_PRECACHED_KEY = "viciocode_static_pages_precached_v1";
 
 const PWAUpdatePrompt = () => {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
@@ -23,6 +25,7 @@ const PWAUpdatePrompt = () => {
     total: number;
   } | null>(null);
   const startedPrecacheRef = useRef(false);
+  const isStandalone = usePWAStandalone();
 
   // Track online/offline status for the offline indicator
   useEffect(() => {
@@ -45,13 +48,39 @@ const PWAUpdatePrompt = () => {
       if (r) {
         setInterval(() => r.update(), 60 * 60 * 1000);
       }
-      // Auto-precache removido: o usuário escolhe o que baixar em /configuracoes/offline
       try { sessionStorage.removeItem(PRECACHE_FLAG_KEY); } catch { /* ignore */ }
     },
     onRegisterError(error) {
       console.warn("[PWA] SW registration error:", error);
     },
   });
+
+  // ── Auto-precache de páginas FIXAS (hubs, cotações, sobre, etc) ───────────
+  // Roda 1x por instalação do PWA. Posts são opt-in via /configuracoes/offline.
+  useEffect(() => {
+    if (!isStandalone) return;
+    if (typeof navigator === "undefined" || !navigator.onLine) return;
+    let cancelled = false;
+    const timer = setTimeout(() => {
+      if (cancelled) return;
+      try {
+        if (localStorage.getItem(STATIC_PAGES_PRECACHED_KEY) === "1") return;
+      } catch { /* ignore */ }
+      // Aguarda o SW estar pronto antes de baixar
+      navigator.serviceWorker?.ready
+        .then(() => {
+          if (cancelled) return;
+          void precacheStaticPages().then(() => {
+            try { localStorage.setItem(STATIC_PAGES_PRECACHED_KEY, "1"); } catch { /* ignore */ }
+          });
+        })
+        .catch(() => { /* ignore */ });
+    }, 5000); // dá tempo da app carregar antes
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
+  }, [isStandalone]);
 
   const startPrecache = () => {
     if (startedPrecacheRef.current) return;

@@ -21,7 +21,6 @@ import {
   ChevronDown, ChevronUp, Search,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import DynamicSEO from "@/components/DynamicSEO";
 import { useAuthContext } from "@/contexts/AuthContext";
@@ -42,11 +41,54 @@ import { toast } from "sonner";
 const CACHE_NAMES = ["pages-cache", "images-cache", "fonts-cache", "php-api-cache", "external-api-cache", "supabase-cache"];
 const OFFLINE_DB_NAME = "viciocode-offline";
 
-const CATEGORIES: { key: string; label: string; emoji: string; color: string }[] = [
-  { key: "ia",     label: "Inteligência Artificial", emoji: "🤖", color: "bg-purple-500/10 border-purple-500/30 text-purple-400" },
-  { key: "invest", label: "Finanças & Investimentos", emoji: "💰", color: "bg-emerald-500/10 border-emerald-500/30 text-emerald-400" },
-  { key: "geek",   label: "Geek & Games",            emoji: "🎮", color: "bg-blue-500/10   border-blue-500/30   text-blue-400"   },
-  { key: "otaku",  label: "Otaku & Anime",            emoji: "🌸", color: "bg-pink-500/10  border-pink-500/30   text-pink-400"   },
+// Cores das categorias usam tokens semânticos (--ia-color, --invest-color, --geek-color, --otaku-color)
+// definidos em src/index.css — mesmas cores dos badges do site.
+const CATEGORIES: {
+  key: string;
+  label: string;
+  shortLabel: string;
+  emoji: string;
+  /** Tailwind classes usando tokens HSL semânticos do design system. */
+  cardClass: string;
+  /** Classe pré-existente para badges sólidos (mesmas cores do site). */
+  badgeClass: string;
+}[] = [
+  {
+    key: "ia",
+    label: "Inteligência Artificial",
+    shortLabel: "IA",
+    emoji: "🤖",
+    cardClass:
+      "bg-[hsl(var(--ia-color)/0.08)] border-[hsl(var(--ia-color)/0.35)] hover:border-[hsl(var(--ia-color)/0.7)]",
+    badgeClass: "category-ia",
+  },
+  {
+    key: "invest",
+    label: "Finanças & Investimentos",
+    shortLabel: "Finanças",
+    emoji: "💰",
+    cardClass:
+      "bg-[hsl(var(--invest-color)/0.08)] border-[hsl(var(--invest-color)/0.35)] hover:border-[hsl(var(--invest-color)/0.7)]",
+    badgeClass: "category-invest",
+  },
+  {
+    key: "geek",
+    label: "Geek & Games",
+    shortLabel: "Geek",
+    emoji: "🎮",
+    cardClass:
+      "bg-[hsl(var(--geek-color)/0.08)] border-[hsl(var(--geek-color)/0.35)] hover:border-[hsl(var(--geek-color)/0.7)]",
+    badgeClass: "category-geek",
+  },
+  {
+    key: "otaku",
+    label: "Otaku & Anime",
+    shortLabel: "Otaku",
+    emoji: "🌸",
+    cardClass:
+      "bg-[hsl(var(--otaku-color)/0.08)] border-[hsl(var(--otaku-color)/0.35)] hover:border-[hsl(var(--otaku-color)/0.7)]",
+    badgeClass: "category-otaku",
+  },
 ];
 
 function formatBytes(bytes: number): string {
@@ -257,9 +299,9 @@ const OfflineSettingsPage = () => {
   const percent = totalPosts > 0 ? Math.round((count / totalPosts) * 100) : 0;
 
   return (
-    <div className="min-h-[70vh] py-10 px-4">
+    <div className="min-h-[70vh] py-6 sm:py-10 px-3 sm:px-4 lg:px-6">
       <DynamicSEO />
-      <div className="max-w-2xl mx-auto space-y-6">
+      <div className="max-w-2xl mx-auto space-y-5 sm:space-y-6">
 
         {/* Voltar */}
         <Link to="/configuracoes">
@@ -303,9 +345,9 @@ const OfflineSettingsPage = () => {
           </div>
           {progress && downloading && (
             <div className="space-y-1">
-              <div className="flex justify-between text-xs text-muted-foreground">
-                <span>{progress.currentSlug ?? "Baixando..."}</span>
-                <span>{progress.done}/{progress.total}</span>
+              <div className="flex justify-between text-xs text-muted-foreground gap-2">
+                <span className="truncate">{progress.currentLabel ?? "Baixando..."}</span>
+                <span className="shrink-0">{progress.done}/{progress.total}</span>
               </div>
               <div className="h-1.5 w-full rounded-full bg-muted overflow-hidden">
                 <div className="h-full bg-primary transition-all" style={{ width: `${progress.total > 0 ? (progress.done / progress.total) * 100 : 0}%` }} />
@@ -344,7 +386,7 @@ const OfflineSettingsPage = () => {
             {CATEGORIES.map((cat) => {
               const total = countByCat[cat.key] ?? 0;
               const cached = cachedByCat[cat.key] ?? 0;
-              const allSaved = cached >= total;
+              const allSaved = total > 0 && cached >= total;
               const isSelected = selectedCats.has(cat.key);
               return (
                 <button
@@ -352,18 +394,24 @@ const OfflineSettingsPage = () => {
                   onClick={() => !allSaved && toggleCat(cat.key)}
                   disabled={allSaved}
                   className={`flex items-center gap-3 p-3 rounded-xl border text-left transition-all
-                    ${allSaved ? "opacity-60 cursor-default border-border bg-muted/30" :
-                      isSelected ? "border-primary bg-primary/10 ring-1 ring-primary" :
-                      "border-border bg-card hover:border-primary/50 hover:bg-muted/40"}`}
+                    ${allSaved
+                      ? "opacity-60 cursor-default border-border bg-muted/30"
+                      : isSelected
+                        ? `${cat.cardClass} ring-2 ring-offset-1 ring-offset-background`
+                        : `${cat.cardClass}`}`}
                 >
-                  <span className="text-xl">{cat.emoji}</span>
+                  <span className="text-xl shrink-0">{cat.emoji}</span>
                   <div className="flex-1 min-w-0">
                     <div className="text-xs font-semibold truncate">{cat.label}</div>
                     <div className="text-[10px] text-muted-foreground">
                       {allSaved ? "✅ Tudo salvo" : `${cached}/${total} salvos`}
                     </div>
                   </div>
-                  {isSelected && !allSaved && <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />}
+                  {isSelected && !allSaved && (
+                    <span className={`shrink-0 inline-flex items-center justify-center w-5 h-5 rounded-full ${cat.badgeClass}`}>
+                      <CheckCircle2 className="h-3 w-3" />
+                    </span>
+                  )}
                 </button>
               );
             })}
@@ -414,7 +462,7 @@ const OfflineSettingsPage = () => {
                     <p className="text-[10px] text-muted-foreground">{page.path}</p>
                   </div>
                   {isSaved ? (
-                    <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
                   ) : (
                     <Button
                       size="icon"
@@ -450,10 +498,16 @@ const OfflineSettingsPage = () => {
           const uncached = uncachedByCategory[cat.key] ?? [];
           if (uncached.length === 0) return null;
           return (
-            <section key={cat.key} className="rounded-2xl border border-border bg-card p-5 space-y-3">
-              <h2 className="font-semibold flex items-center gap-2 text-sm">
-                <span>{cat.emoji}</span>{cat.label}
-                <Badge variant="outline" className="ml-auto text-[10px]">{uncached.length} não salvos</Badge>
+            <section
+              key={cat.key}
+              className={`rounded-2xl border p-4 sm:p-5 space-y-3 ${cat.cardClass}`}
+            >
+              <h2 className="font-semibold flex items-center gap-2 text-sm flex-wrap">
+                <span className="text-base">{cat.emoji}</span>
+                <span className="truncate">{cat.label}</span>
+                <span className={`ml-auto inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold ${cat.badgeClass}`}>
+                  {uncached.length} não salvos
+                </span>
               </h2>
               <ul className="divide-y divide-border">
                 {uncached.slice(0, 5).map((post) => (
@@ -496,7 +550,7 @@ const OfflineSettingsPage = () => {
               onClick={() => setListExpanded((v) => !v)}
             >
               <h2 className="font-semibold flex items-center gap-2 text-base">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                <CheckCircle2 className="w-4 h-4 text-primary" />
                 Posts salvos ({count})
               </h2>
               {listExpanded ? <ChevronUp className="h-4 w-4 text-muted-foreground" /> : <ChevronDown className="h-4 w-4 text-muted-foreground" />}
@@ -531,9 +585,13 @@ const OfflineSettingsPage = () => {
                       <button
                         key={c.key}
                         onClick={() => setListCategory(listCategory === c.key ? "all" : c.key)}
-                        className={`text-[10px] px-2 py-1 rounded-md border transition-colors ${listCategory === c.key ? "bg-primary text-primary-foreground border-primary" : "border-border hover:border-primary/50"}`}
+                        className={`text-[10px] px-2 py-1 rounded-md border transition-colors ${
+                          listCategory === c.key
+                            ? `${c.badgeClass} border-transparent`
+                            : "border-border hover:border-primary/50"
+                        }`}
                       >
-                        {c.emoji} {c.label.split(" ")[0]}
+                        {c.emoji} {c.shortLabel}
                       </button>
                     ))}
                   </div>
@@ -553,10 +611,14 @@ const OfflineSettingsPage = () => {
                             <Link to={`/post/${post.slug}`} className="text-xs font-medium line-clamp-1 hover:text-primary transition-colors">
                               {post.title}
                             </Link>
-                            <div className="flex items-center gap-2 mt-0.5">
-                              <span className="text-[10px] text-muted-foreground">{cat?.label.split(" ")[0] ?? post.category}</span>
+                            <div className="flex items-center gap-1.5 mt-1 flex-wrap">
+                              {cat && (
+                                <span className={`inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] font-bold ${cat.badgeClass}`}>
+                                  {cat.shortLabel}
+                                </span>
+                              )}
                               {post.sizeBytes && post.sizeBytes > 0 && (
-                                <span className="text-[10px] text-muted-foreground">· ~{formatBytes(post.sizeBytes)}</span>
+                                <span className="text-[10px] text-muted-foreground">~{formatBytes(post.sizeBytes)}</span>
                               )}
                             </div>
                           </div>
