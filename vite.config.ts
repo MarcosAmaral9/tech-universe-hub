@@ -246,8 +246,10 @@ export default defineConfig(({ mode }) => ({
         // Increase precache file size limit to 5 MB (default is 2 MB) — our bundle has multiple chunks
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         cleanupOutdatedCaches: true,
-        skipWaiting: false,   // We control this manually via the update prompt
-        clientsClaim: true,
+        skipWaiting: false,   // Controlled via PWAUpdatePrompt — user confirms update
+        clientsClaim: false,  // CRITICAL: false prevents new SW claiming tabs with old HTML
+                              // clientsClaim:true + skipWaiting:false = removeChild crash
+                              // (new SW claims tab, but tab has HTML from old SW → DOM mismatch)
         // Routes that should NEVER be served from cache (must always hit network)
         navigateFallbackDenylist: [/^\/api\.php/, /^\/google-auth\.php/, /^\/auth\/google/],
         // Runtime caching — makes the app work offline
