@@ -6,19 +6,37 @@
  * ═══════════════════════════════════════════════════════════════
  *
  * POSTS (artigos em /post/<slug>):
- *   → Adicione apenas em src/data/posts.ts com os campos obrigatórios.
- *   → O sistema de cache descobre automaticamente via blogPosts[].
+ *   → Adicione apenas em src/data/posts.ts.
+ *   → O sistema descobre automaticamente via blogPosts[].
  *   → Nenhuma alteração necessária neste arquivo.
  *
- * PÁGINAS ESTÁTICAS (rotas fixas como /cotacoes, /financas, etc.):
- *   → Adicione a rota no array STATIC_PAGES abaixo.
- *   → Use o campo label para exibição amigável na UI.
- *   → Use category para agrupar nas configurações offline.
+ * PÁGINAS ESTÁTICAS (hubs, cotações, etc.):
+ *   → Adicione um item ao array STATIC_PAGES abaixo.
  *   → O restante do sistema descobre automaticamente.
  *
  * ═══════════════════════════════════════════════════════════════
- * ACESSO: exclusivo para PWA instalado + usuário logado.
- * Verificação feita pela OfflineSettingsPage.
+ * ARQUITETURA DE PERSISTÊNCIA
+ * ═══════════════════════════════════════════════════════════════
+ *
+ * Dupla fonte da verdade:
+ *
+ * 1. Cache API (pages-cache / images-cache)
+ *    → Serve as páginas offline quando o usuário navega sem internet
+ *    → Gerenciado pelo Service Worker (NetworkFirst para HTML)
+ *    → TTL: 365 dias, maxEntries: 300 páginas + 500 imagens
+ *
+ * 2. IndexedDB (offlineRegistry)
+ *    → Registro canônico do que o USUÁRIO escolheu baixar
+ *    → Nunca expira automaticamente
+ *    → Persiste entre sessões, reloads, fechamentos
+ *    → Fonte de verdade para a UI (/configuracoes/offline)
+ *
+ * Fluxo de download:
+ *   1. fetch(url) → SW intercepta → armazena em pages-cache
+ *   2. Mede o tamanho da entrada no cache
+ *   3. Registra em IndexedDB (persistência garantida)
+ *   4. Emite evento → UI atualiza contagem/tamanho instantaneamente
+ *
  * ═══════════════════════════════════════════════════════════════
  */
 import heroCotacoes from "@/assets/cotacoes-tempo-real.webp";
@@ -29,34 +47,17 @@ import acPortalImg from "@/assets/assassins-creed-portal.webp";
 import tensuraPortalImg from "@/assets/tensura-portal-banner.webp";
 import overlordPortalImg from "@/assets/overlord-portal-banner.webp";
 import { blogPosts } from "@/data/posts";
+import {
+  registerDownloaded,
+  unregisterDownloaded,
+  type DownloadedPage,
+} from "./offlineRegistry";
 
 const CONCURRENCY = 3;
-const PAGE_CACHE = "pages-cache";
+const PAGE_CACHE  = "pages-cache";
 const IMAGE_CACHE = "images-cache";
 
-const imagesByCategory = {
-  ia: blogPosts.filter((post) => post.category === "ia").map((post) => post.image),
-  finance: [
-    heroCotacoes,
-    heroHistorico,
-    ...blogPosts.filter((post) => post.category === "invest").map((post) => post.image),
-  ],
-  geek: [
-    crimsonDesertHeroImg,
-    avatarPortalBannerImg,
-    acPortalImg,
-    ...blogPosts.filter((post) => post.category === "geek").map((post) => post.image),
-  ],
-  otaku: [
-    tensuraPortalImg,
-    overlordPortalImg,
-    ...blogPosts.filter((post) => post.category === "otaku").map((post) => post.image),
-  ],
-};
-
-// ── Páginas estáticas disponíveis para download offline ───────────────────────
-// Adicione aqui qualquer nova página estática que queira tornar disponível.
-// Posts de /post/<slug> são gerenciados AUTOMATICAMENTE via blogPosts[].
+// ── Páginas estáticas ─────────────────────────────────────────────────────────
 export interface StaticPage {
   path: string;
   label: string;
@@ -65,16 +66,23 @@ export interface StaticPage {
   assetUrls?: string[];
 }
 
+const imagesByCategory = {
+  ia:      blogPosts.filter((p) => p.category === "ia").map((p) => p.image).filter(Boolean) as string[],
+  finance: [heroCotacoes, heroHistorico, ...blogPosts.filter((p) => p.category === "invest").map((p) => p.image).filter(Boolean) as string[]],
+  geek:    [crimsonDesertHeroImg, avatarPortalBannerImg, acPortalImg, ...blogPosts.filter((p) => p.category === "geek").map((p) => p.image).filter(Boolean) as string[]],
+  otaku:   [tensuraPortalImg, overlordPortalImg, ...blogPosts.filter((p) => p.category === "otaku").map((p) => p.image).filter(Boolean) as string[]],
+};
+
 export const STATIC_PAGES: StaticPage[] = [
-  { path: "/cotacoes", label: "Cotações em Tempo Real", category: "finance", emoji: "📈", assetUrls: [heroCotacoes] },
-  { path: "/historico-cotacoes", label: "Histórico de Cotações", category: "finance", emoji: "📊", assetUrls: [heroHistorico] },
-  { path: "/financas", label: "Hub de Finanças", category: "finance", emoji: "💰", assetUrls: imagesByCategory.finance },
-  { path: "/ia", label: "Hub de IA", category: "ia", emoji: "🤖", assetUrls: imagesByCategory.ia },
-  { path: "/geek", label: "Hub Geek", category: "geek", emoji: "🎮", assetUrls: imagesByCategory.geek },
-  { path: "/otaku", label: "Hub Otaku", category: "otaku", emoji: "🌸", assetUrls: imagesByCategory.otaku },
-  { path: "/", label: "Página Inicial", category: "site", emoji: "🏠" },
-  { path: "/sobre", label: "Sobre o VicioCode", category: "site", emoji: "ℹ️" },
-  { path: "/instalar", label: "Instalar App", category: "site", emoji: "📲" },
+  { path: "/cotacoes",           label: "Cotações em Tempo Real",   category: "finance", emoji: "📈", assetUrls: [heroCotacoes] },
+  { path: "/historico-cotacoes", label: "Histórico de Cotações",    category: "finance", emoji: "📊", assetUrls: [heroHistorico] },
+  { path: "/financas",           label: "Hub de Finanças",          category: "finance", emoji: "💰", assetUrls: imagesByCategory.finance },
+  { path: "/ia",                 label: "Hub de IA",                category: "ia",      emoji: "🤖", assetUrls: imagesByCategory.ia },
+  { path: "/geek",               label: "Hub Geek",                 category: "geek",    emoji: "🎮", assetUrls: imagesByCategory.geek },
+  { path: "/otaku",              label: "Hub Otaku",                category: "otaku",   emoji: "🌸", assetUrls: imagesByCategory.otaku },
+  { path: "/",                   label: "Página Inicial",           category: "site",    emoji: "🏠" },
+  { path: "/sobre",              label: "Sobre o VicioCode",        category: "site",    emoji: "ℹ️"  },
+  { path: "/instalar",           label: "Instalar App",             category: "site",    emoji: "📲" },
 ];
 
 export interface PrecacheProgress {
@@ -83,67 +91,79 @@ export interface PrecacheProgress {
   currentLabel?: string;
 }
 
-function emitCacheUpdated() {
+// ── Helpers internos ──────────────────────────────────────────────────────────
+
+function notify() {
   if (typeof window === "undefined") return;
-  try {
-    window.dispatchEvent(new CustomEvent("viciocode:cache-updated"));
-  } catch {
-    /* ignore */
-  }
+  window.dispatchEvent(new CustomEvent("viciocode:cache-updated"));
 }
 
-async function fetchSilent(url: string): Promise<void> {
-  try {
-    // "default" deixa o SW interceptar e cachear — persiste entre sessões
-    await fetch(url, { credentials: "same-origin", cache: "default" });
-  } catch {
-    /* rede instável — silencioso */
-  }
+function toAbsolute(url: string): string {
+  try { return new URL(url, window.location.origin).toString(); }
+  catch { return url; }
 }
 
-function toAbsoluteUrl(url: string): string {
-  return new URL(url, window.location.origin).toString();
-}
+/**
+ * Baixa uma URL garantindo que entre no Cache API E no IndexedDB.
+ * Retorna o tamanho em bytes da resposta cacheada.
+ */
+async function downloadAndCache(
+  cacheName: string,
+  url: string
+): Promise<number> {
+  const absUrl = toAbsolute(url);
 
-async function cacheResponse(_cacheName: string, url: string): Promise<void> {
-  // Usa fetch normal sem cache bypass — o Service Worker intercepta e armazena
-  // via NetworkFirst. Assim o Workbox rastreia a entrada no ExpirationPlugin
-  // e ela persiste entre sessões até o usuário limpar manualmente.
-  const absoluteUrl = toAbsoluteUrl(url);
-  const response = await fetch(absoluteUrl, {
+  // 1. Faz o fetch — o SW intercede e armazena em pages-cache via NetworkFirst
+  //    Usamos "reload" para forçar re-download da rede (não servir do cache SW)
+  //    porque queremos garantir que a versão mais recente foi salva
+  const response = await fetch(absUrl, {
     credentials: "same-origin",
-    // "default" respeita o SW — não "reload" que bypassa o cache
-    cache: "default",
+    cache: "reload", // força download da rede
   });
+
   if (!response.ok && response.status !== 0) {
-    throw new Error(`HTTP ${response.status} ao cachear ${url}`);
+    throw new Error(`HTTP ${response.status} ao baixar ${url}`);
   }
+
+  // 2. Armazena manualmente no cache correto com a chave canônica
+  //    Isso garante que a entrada existe independente do SW ter interceptado
+  try {
+    const cache = await caches.open(cacheName);
+    // Guarda tanto a URL absoluta quanto o path relativo para compatibilidade
+    const responseToStore = response.clone();
+    await cache.put(absUrl, responseToStore);
+    // Mede tamanho
+    const sizeResponse = await cache.match(absUrl);
+    if (sizeResponse) {
+      const blob = await sizeResponse.clone().blob();
+      return blob.size;
+    }
+  } catch { /* Cache API pode estar indisponível em alguns contextos */ }
+
+  return 0;
 }
 
-async function cachePageWithAssets(url: string, assetUrls: string[] = []): Promise<void> {
-  await cacheResponse(PAGE_CACHE, url);
-
-  if (assetUrls.length === 0) return;
-
+async function downloadPage(url: string, assetUrls: string[] = []): Promise<number> {
+  let totalBytes = 0;
+  // Baixa o HTML
+  totalBytes += await downloadAndCache(PAGE_CACHE, url);
+  // Baixa assets (imagens hero)
   await Promise.all(
-    assetUrls.map(async (assetUrl) => {
-      try {
-        await cacheResponse(IMAGE_CACHE, assetUrl);
-      } catch {
-        await fetchSilent(assetUrl);
-      }
+    assetUrls.map(async (asset) => {
+      try { totalBytes += await downloadAndCache(IMAGE_CACHE, asset); }
+      catch { /* asset não crítico */ }
     })
   );
+  return totalBytes;
 }
 
-async function runWithConcurrency(
-  items: { url: string; label: string; assetUrls?: string[] }[],
+async function runQueue(
+  items: { url: string; label: string; type: "post" | "static"; category: string; slug?: string; assetUrls?: string[] }[],
   onProgress?: (p: PrecacheProgress) => void
 ): Promise<void> {
   const total = items.length;
   let done = 0;
   const queue = [...items];
-  let lastEmit = 0;
 
   const workers = Array.from({ length: CONCURRENCY }, async () => {
     while (queue.length) {
@@ -153,101 +173,127 @@ async function runWithConcurrency(
       onProgress?.({ total, done, currentLabel: item.label });
 
       try {
-        await cachePageWithAssets(item.url, item.assetUrls);
+        const sizeBytes = await downloadPage(item.url, item.assetUrls ?? []);
+
+        // Registra no IndexedDB — fonte de verdade persistente
+        const record: DownloadedPage = {
+          key: item.url,
+          label: item.label,
+          type: item.type,
+          category: item.category,
+          slug: item.slug,
+          sizeBytes,
+          downloadedAt: Date.now(),
+        };
+        await registerDownloaded(record);
       } catch {
-        await fetchSilent(item.url);
+        // Falha silenciosa — usuário pode estar offline ou rede instável
       }
 
       done++;
       onProgress?.({ total, done, currentLabel: item.label });
-
-      if (done - lastEmit >= 3 || done === total) {
-        lastEmit = done;
-        emitCacheUpdated();
-      }
+      notify(); // UI atualiza imediatamente após cada página
     }
   });
 
   await Promise.all(workers);
-  emitCacheUpdated();
+  notify();
 }
 
-export async function precacheAllPosts(
-  onProgress?: (p: PrecacheProgress) => void
-): Promise<PrecacheProgress> {
-  const items = blogPosts.map((post) => ({
-    url: `/post/${post.slug}`,
-    label: post.title,
-    assetUrls: post.image ? [post.image] : [],
+// ── API pública ────────────────────────────────────────────────────────────────
+
+export async function precacheAllPosts(onProgress?: (p: PrecacheProgress) => void): Promise<PrecacheProgress> {
+  const items = blogPosts.map((p) => ({
+    url: `/post/${p.slug}`, label: p.title,
+    type: "post" as const, category: p.category, slug: p.slug,
+    assetUrls: p.image ? [p.image] : [],
   }));
-  await runWithConcurrency(items, onProgress);
+  await runQueue(items, onProgress);
   return { total: items.length, done: items.length };
 }
 
-export async function precacheByCategories(
-  categories: string[],
-  onProgress?: (p: PrecacheProgress) => void
-): Promise<PrecacheProgress> {
+export async function precacheByCategories(categories: string[], onProgress?: (p: PrecacheProgress) => void): Promise<PrecacheProgress> {
   const catSet = new Set(categories);
   const items = blogPosts
-    .filter((post) => catSet.has(post.category))
-    .map((post) => ({
-      url: `/post/${post.slug}`,
-      label: post.title,
-      assetUrls: post.image ? [post.image] : [],
+    .filter((p) => catSet.has(p.category))
+    .map((p) => ({
+      url: `/post/${p.slug}`, label: p.title,
+      type: "post" as const, category: p.category, slug: p.slug,
+      assetUrls: p.image ? [p.image] : [],
     }));
-  await runWithConcurrency(items, onProgress);
+  await runQueue(items, onProgress);
   return { total: items.length, done: items.length };
 }
 
-export async function precacheSlugs(
-  slugs: string[],
-  onProgress?: (p: PrecacheProgress) => void
-): Promise<PrecacheProgress> {
+export async function precacheSlugs(slugs: string[], onProgress?: (p: PrecacheProgress) => void): Promise<PrecacheProgress> {
   const slugSet = new Set(slugs);
   const items = blogPosts
-    .filter((post) => slugSet.has(post.slug))
-    .map((post) => ({
-      url: `/post/${post.slug}`,
-      label: post.title,
-      assetUrls: post.image ? [post.image] : [],
+    .filter((p) => slugSet.has(p.slug))
+    .map((p) => ({
+      url: `/post/${p.slug}`, label: p.title,
+      type: "post" as const, category: p.category, slug: p.slug,
+      assetUrls: p.image ? [p.image] : [],
     }));
-  const unknownItems = slugs
-    .filter((slug) => !blogPosts.find((post) => post.slug === slug))
-    .map((slug) => ({ url: `/post/${slug}`, label: slug }));
-  await runWithConcurrency([...items, ...unknownItems], onProgress);
-  return { total: items.length + unknownItems.length, done: items.length + unknownItems.length };
+  // Slugs desconhecidos (não estão em blogPosts)
+  const unknown = slugs
+    .filter((s) => !blogPosts.find((p) => p.slug === s))
+    .map((s) => ({ url: `/post/${s}`, label: s, type: "post" as const, category: "unknown", slug: s }));
+  await runQueue([...items, ...unknown], onProgress);
+  return { total: items.length + unknown.length, done: items.length + unknown.length };
 }
 
-export async function precacheStaticPages(
-  categories?: string[],
-  onProgress?: (p: PrecacheProgress) => void
-): Promise<PrecacheProgress> {
-  const pages = categories && categories.length > 0
-    ? STATIC_PAGES.filter((page) => categories.includes(page.category))
-    : STATIC_PAGES;
-  const items = pages.map((page) => ({
-    url: page.path,
-    label: page.label,
-    assetUrls: page.assetUrls ?? [],
+export async function precacheStaticPages(categories?: string[], onProgress?: (p: PrecacheProgress) => void): Promise<PrecacheProgress> {
+  const pages = categories?.length ? STATIC_PAGES.filter((p) => categories.includes(p.category)) : STATIC_PAGES;
+  const items = pages.map((p) => ({
+    url: p.path, label: p.label,
+    type: "static" as const, category: p.category,
+    assetUrls: p.assetUrls ?? [],
   }));
-  await runWithConcurrency(items, onProgress);
+  await runQueue(items, onProgress);
   return { total: items.length, done: items.length };
 }
 
-export function getPostsByCategory(): Record<string, typeof blogPosts> {
-  const result: Record<string, typeof blogPosts> = {};
-  for (const post of blogPosts) {
-    if (!result[post.category]) result[post.category] = [];
-    result[post.category].push(post);
+/** Remove uma página do Cache API e do IndexedDB */
+export async function removePage(key: string, imageUrls?: string[]): Promise<void> {
+  // Remove do Cache API
+  if (typeof caches !== "undefined") {
+    try {
+      const absUrl = toAbsolute(key);
+      const pageCache = await caches.open(PAGE_CACHE);
+      await Promise.all([
+        pageCache.delete(key),
+        pageCache.delete(`${key}/`),
+        pageCache.delete(absUrl),
+        pageCache.delete(`${absUrl}/`),
+      ]);
+    } catch { /* ignore */ }
+    // Remove imagens associadas
+    if (imageUrls?.length) {
+      try {
+        const imgCache = await caches.open(IMAGE_CACHE);
+        await Promise.all(imageUrls.flatMap((img) => [
+          imgCache.delete(img),
+          imgCache.delete(toAbsolute(img)),
+        ]));
+      } catch { /* ignore */ }
+    }
   }
-  return result;
+  // Remove do IndexedDB
+  await unregisterDownloaded(key);
+  notify();
 }
 
 export function getPostCountByCategory(): Record<string, number> {
   const result: Record<string, number> = {};
-  for (const post of blogPosts) {
-    result[post.category] = (result[post.category] ?? 0) + 1;
+  for (const p of blogPosts) result[p.category] = (result[p.category] ?? 0) + 1;
+  return result;
+}
+
+export function getPostsByCategory(): Record<string, typeof blogPosts> {
+  const result: Record<string, typeof blogPosts> = {};
+  for (const p of blogPosts) {
+    if (!result[p.category]) result[p.category] = [];
+    result[p.category].push(p);
   }
   return result;
 }

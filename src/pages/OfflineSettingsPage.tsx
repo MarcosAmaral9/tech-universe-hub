@@ -31,6 +31,7 @@ import {
   precacheAllPosts,
   precacheSlugs,
   precacheStaticPages,
+  removePage,
   STATIC_PAGES,
   getPostCountByCategory,
   type PrecacheProgress,
@@ -104,7 +105,7 @@ const OfflineSettingsPage = () => {
   const navigate = useNavigate();
   const { user, loading: authLoading } = useAuthContext();
   const isStandalone = usePWAStandalone();
-  const { cachedPosts, cachedSlugs, count, totalBytes, loading: cacheLoading, refresh, removePost } = useOfflinePosts();
+  const { cachedPosts, cachedSlugs, downloadedPages, count, totalBytes, loading: cacheLoading, refresh, removePost, clearAll } = useOfflinePosts();
 
   const totalPosts = blogPosts.length;
 
@@ -231,19 +232,8 @@ const OfflineSettingsPage = () => {
     );
   }, [cachedSlugs]);
 
-  // Páginas estáticas não cacheadas (sempre verifica cache ao renderizar)
-  const [cachedStaticPaths, setCachedStaticPaths] = useState<Set<string>>(new Set());
-  useEffect(() => {
-    (async () => {
-      if (typeof caches === "undefined") return;
-      try {
-        const cache = await caches.open("pages-cache");
-        const keys = await cache.keys();
-        const paths = new Set(keys.map((r) => new URL(r.url).pathname));
-        setCachedStaticPaths(paths);
-      } catch { /* ignore */ }
-    })();
-  }, [count]); // re-verifica quando o cache muda
+  // Páginas estáticas baixadas — lê do IndexedDB (fonte canônica, persiste entre sessões)
+  const downloadedPaths = new Set(downloadedPages.map((p) => p.key));
 
   // ── Handlers ──────────────────────────────────────────────────────────────
   const handleDownloadSelected = async () => {
@@ -304,8 +294,8 @@ const OfflineSettingsPage = () => {
 
   const handleDownloadStaticPages = async (cats?: string[]) => {
     const toDownload = cats && cats.length > 0
-      ? STATIC_PAGES.filter((p) => cats.includes(p.category) && !cachedStaticPaths.has(p.path))
-      : STATIC_PAGES.filter((p) => !cachedStaticPaths.has(p.path));
+      ? STATIC_PAGES.filter((p) => cats.includes(p.category) && !downloadedPaths.has(p.path))
+      : STATIC_PAGES.filter((p) => !downloadedPaths.has(p.path));
     if (toDownload.length === 0) { toast.info("Páginas já salvas!"); return; }
     setDownloading(true);
     setProgress({ total: toDownload.length, done: 0 });
@@ -325,17 +315,8 @@ const OfflineSettingsPage = () => {
     if (!confirm("Tem certeza? Todo o conteúdo offline será removido.")) return;
     setClearing(true);
     try {
-      if (typeof caches !== "undefined") {
-        const names = await caches.keys();
-        await Promise.all(names.filter((n) => CACHE_NAMES.includes(n) || n.startsWith("workbox-")).map((n) => caches.delete(n)));
-      }
-      if (typeof indexedDB !== "undefined") {
-        await new Promise<void>((resolve) => {
-          const req = indexedDB.deleteDatabase(OFFLINE_DB_NAME);
-          req.onsuccess = req.onerror = req.onblocked = () => resolve();
-        });
-      }
-      await refresh(); await refreshStorage();
+      await clearAll(); // limpa Cache API + IndexedDB registry
+      await refreshStorage();
       toast.success("Cache offline limpo.");
     } catch { toast.error("Erro ao limpar cache."); }
     finally { setClearing(false); }
@@ -541,7 +522,7 @@ const OfflineSettingsPage = () => {
           </div>
           <ul className="divide-y divide-border">
             {STATIC_PAGES.map((page) => {
-              const isSaved = cachedStaticPaths.has(page.path);
+              const isSaved = downloadedPaths.has(page.path);
               return (
                 <li key={page.path} className="flex items-center gap-3 py-2.5">
                   <span className="text-base shrink-0">{page.emoji}</span>
@@ -569,13 +550,13 @@ const OfflineSettingsPage = () => {
           </ul>
           <Button
             onClick={() => handleDownloadStaticPages()}
-            disabled={downloading || STATIC_PAGES.every((p) => cachedStaticPaths.has(p.path))}
+            disabled={downloading || STATIC_PAGES.every((p) => downloadedPaths.has(p.path))}
             variant="outline"
             size="sm"
             className="gap-2 w-full"
           >
             <Download className="h-3.5 w-3.5" />
-            {STATIC_PAGES.every((p) => cachedStaticPaths.has(p.path))
+            {STATIC_PAGES.every((p) => downloadedPaths.has(p.path))
               ? "Todas as páginas salvas ✅"
               : "Salvar todas as páginas"}
           </Button>
