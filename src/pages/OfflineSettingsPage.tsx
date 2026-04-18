@@ -346,9 +346,9 @@ const OfflineSettingsPage = () => {
           </div>
           {progress && downloading && (
             <div className="space-y-1">
-              <div className="flex justify-between text-xs text-muted-foreground">
-                <span>{progress.currentSlug ?? "Baixando..."}</span>
-                <span>{progress.done}/{progress.total}</span>
+              <div className="flex justify-between text-xs text-muted-foreground gap-2">
+                <span className="truncate">{progress.currentLabel ?? "Baixando..."}</span>
+                <span className="shrink-0">{progress.done}/{progress.total}</span>
               </div>
               <div className="h-1.5 w-full rounded-full bg-muted overflow-hidden">
                 <div className="h-full bg-primary transition-all" style={{ width: `${progress.total > 0 ? (progress.done / progress.total) * 100 : 0}%` }} />
