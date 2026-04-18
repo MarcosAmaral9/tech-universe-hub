@@ -300,9 +300,9 @@ const OfflineSettingsPage = () => {
   const percent = totalPosts > 0 ? Math.round((count / totalPosts) * 100) : 0;
 
   return (
-    <div className="min-h-[70vh] py-10 px-4">
+    <div className="min-h-[70vh] py-6 sm:py-10 px-3 sm:px-4 lg:px-6">
       <DynamicSEO />
-      <div className="max-w-2xl mx-auto space-y-6">
+      <div className="max-w-2xl mx-auto space-y-5 sm:space-y-6">
 
         {/* Voltar */}
         <Link to="/configuracoes">
