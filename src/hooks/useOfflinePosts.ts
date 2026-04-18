@@ -94,10 +94,15 @@ export const useOfflinePosts = () => {
   useEffect(() => {
     refresh();
     const onVis = () => { if (document.visibilityState === "visible") refresh(); };
+    const onCacheUpdate = () => { refresh(); };
     document.addEventListener("visibilitychange", onVis);
-    const interval = setInterval(refresh, 30_000);
+    window.addEventListener("viciocode:cache-updated", onCacheUpdate);
+    window.addEventListener("online", onCacheUpdate);
+    const interval = setInterval(refresh, 15_000);
     return () => {
       document.removeEventListener("visibilitychange", onVis);
+      window.removeEventListener("viciocode:cache-updated", onCacheUpdate);
+      window.removeEventListener("online", onCacheUpdate);
       clearInterval(interval);
     };
   }, [refresh]);
