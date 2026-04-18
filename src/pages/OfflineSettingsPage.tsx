@@ -387,7 +387,7 @@ const OfflineSettingsPage = () => {
             {CATEGORIES.map((cat) => {
               const total = countByCat[cat.key] ?? 0;
               const cached = cachedByCat[cat.key] ?? 0;
-              const allSaved = cached >= total;
+              const allSaved = total > 0 && cached >= total;
               const isSelected = selectedCats.has(cat.key);
               return (
                 <button
@@ -395,18 +395,24 @@ const OfflineSettingsPage = () => {
                   onClick={() => !allSaved && toggleCat(cat.key)}
                   disabled={allSaved}
                   className={`flex items-center gap-3 p-3 rounded-xl border text-left transition-all
-                    ${allSaved ? "opacity-60 cursor-default border-border bg-muted/30" :
-                      isSelected ? "border-primary bg-primary/10 ring-1 ring-primary" :
-                      "border-border bg-card hover:border-primary/50 hover:bg-muted/40"}`}
+                    ${allSaved
+                      ? "opacity-60 cursor-default border-border bg-muted/30"
+                      : isSelected
+                        ? `${cat.cardClass} ring-2 ring-offset-1 ring-offset-background`
+                        : `${cat.cardClass}`}`}
                 >
-                  <span className="text-xl">{cat.emoji}</span>
+                  <span className="text-xl shrink-0">{cat.emoji}</span>
                   <div className="flex-1 min-w-0">
                     <div className="text-xs font-semibold truncate">{cat.label}</div>
                     <div className="text-[10px] text-muted-foreground">
                       {allSaved ? "✅ Tudo salvo" : `${cached}/${total} salvos`}
                     </div>
                   </div>
-                  {isSelected && !allSaved && <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />}
+                  {isSelected && !allSaved && (
+                    <span className={`shrink-0 inline-flex items-center justify-center w-5 h-5 rounded-full ${cat.badgeClass}`}>
+                      <CheckCircle2 className="h-3 w-3" />
+                    </span>
+                  )}
                 </button>
               );
             })}
