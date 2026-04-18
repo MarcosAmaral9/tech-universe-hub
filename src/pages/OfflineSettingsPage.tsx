@@ -499,10 +499,16 @@ const OfflineSettingsPage = () => {
           const uncached = uncachedByCategory[cat.key] ?? [];
           if (uncached.length === 0) return null;
           return (
-            <section key={cat.key} className="rounded-2xl border border-border bg-card p-5 space-y-3">
-              <h2 className="font-semibold flex items-center gap-2 text-sm">
-                <span>{cat.emoji}</span>{cat.label}
-                <Badge variant="outline" className="ml-auto text-[10px]">{uncached.length} não salvos</Badge>
+            <section
+              key={cat.key}
+              className={`rounded-2xl border p-4 sm:p-5 space-y-3 ${cat.cardClass}`}
+            >
+              <h2 className="font-semibold flex items-center gap-2 text-sm flex-wrap">
+                <span className="text-base">{cat.emoji}</span>
+                <span className="truncate">{cat.label}</span>
+                <span className={`ml-auto inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold ${cat.badgeClass}`}>
+                  {uncached.length} não salvos
+                </span>
               </h2>
               <ul className="divide-y divide-border">
                 {uncached.slice(0, 5).map((post) => (
