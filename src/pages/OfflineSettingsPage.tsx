@@ -42,11 +42,54 @@ import { toast } from "sonner";
 const CACHE_NAMES = ["pages-cache", "images-cache", "fonts-cache", "php-api-cache", "external-api-cache", "supabase-cache"];
 const OFFLINE_DB_NAME = "viciocode-offline";
 
-const CATEGORIES: { key: string; label: string; emoji: string; color: string }[] = [
-  { key: "ia",     label: "Inteligência Artificial", emoji: "🤖", color: "bg-purple-500/10 border-purple-500/30 text-purple-400" },
-  { key: "invest", label: "Finanças & Investimentos", emoji: "💰", color: "bg-emerald-500/10 border-emerald-500/30 text-emerald-400" },
-  { key: "geek",   label: "Geek & Games",            emoji: "🎮", color: "bg-blue-500/10   border-blue-500/30   text-blue-400"   },
-  { key: "otaku",  label: "Otaku & Anime",            emoji: "🌸", color: "bg-pink-500/10  border-pink-500/30   text-pink-400"   },
+// Cores das categorias usam tokens semânticos (--ia-color, --invest-color, --geek-color, --otaku-color)
+// definidos em src/index.css — mesmas cores dos badges do site.
+const CATEGORIES: {
+  key: string;
+  label: string;
+  shortLabel: string;
+  emoji: string;
+  /** Tailwind classes usando tokens HSL semânticos do design system. */
+  cardClass: string;
+  /** Classe pré-existente para badges sólidos (mesmas cores do site). */
+  badgeClass: string;
+}[] = [
+  {
+    key: "ia",
+    label: "Inteligência Artificial",
+    shortLabel: "IA",
+    emoji: "🤖",
+    cardClass:
+      "bg-[hsl(var(--ia-color)/0.08)] border-[hsl(var(--ia-color)/0.35)] hover:border-[hsl(var(--ia-color)/0.7)]",
+    badgeClass: "category-ia",
+  },
+  {
+    key: "invest",
+    label: "Finanças & Investimentos",
+    shortLabel: "Finanças",
+    emoji: "💰",
+    cardClass:
+      "bg-[hsl(var(--invest-color)/0.08)] border-[hsl(var(--invest-color)/0.35)] hover:border-[hsl(var(--invest-color)/0.7)]",
+    badgeClass: "category-invest",
+  },
+  {
+    key: "geek",
+    label: "Geek & Games",
+    shortLabel: "Geek",
+    emoji: "🎮",
+    cardClass:
+      "bg-[hsl(var(--geek-color)/0.08)] border-[hsl(var(--geek-color)/0.35)] hover:border-[hsl(var(--geek-color)/0.7)]",
+    badgeClass: "category-geek",
+  },
+  {
+    key: "otaku",
+    label: "Otaku & Anime",
+    shortLabel: "Otaku",
+    emoji: "🌸",
+    cardClass:
+      "bg-[hsl(var(--otaku-color)/0.08)] border-[hsl(var(--otaku-color)/0.35)] hover:border-[hsl(var(--otaku-color)/0.7)]",
+    badgeClass: "category-otaku",
+  },
 ];
 
 function formatBytes(bytes: number): string {
