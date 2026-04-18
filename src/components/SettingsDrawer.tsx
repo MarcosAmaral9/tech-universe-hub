@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
-import { Settings, Sun, Moon, Type, Palette, Bell, BellOff, RotateCcw } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Settings, Sun, Moon, Type, Palette, Bell, BellOff, RotateCcw, WifiOff, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetDescription,
   SheetHeader,
@@ -11,6 +13,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { useTheme } from "@/contexts/ThemeContext";
+import { usePWAStandalone } from "@/hooks/usePWAStandalone";
+import { useAuthContext } from "@/contexts/AuthContext";
 import { toast } from "@/hooks/use-toast";
 
 const NOTIFICATION_SOUND_KEY = "pwa_update_sound_enabled";
