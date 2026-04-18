@@ -612,10 +612,14 @@ const OfflineSettingsPage = () => {
                             <Link to={`/post/${post.slug}`} className="text-xs font-medium line-clamp-1 hover:text-primary transition-colors">
                               {post.title}
                             </Link>
-                            <div className="flex items-center gap-2 mt-0.5">
-                              <span className="text-[10px] text-muted-foreground">{cat?.label.split(" ")[0] ?? post.category}</span>
+                            <div className="flex items-center gap-1.5 mt-1 flex-wrap">
+                              {cat && (
+                                <span className={`inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] font-bold ${cat.badgeClass}`}>
+                                  {cat.shortLabel}
+                                </span>
+                              )}
                               {post.sizeBytes && post.sizeBytes > 0 && (
-                                <span className="text-[10px] text-muted-foreground">· ~{formatBytes(post.sizeBytes)}</span>
+                                <span className="text-[10px] text-muted-foreground">~{formatBytes(post.sizeBytes)}</span>
                               )}
                             </div>
                           </div>
