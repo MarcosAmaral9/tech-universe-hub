@@ -463,7 +463,7 @@ const OfflineSettingsPage = () => {
                     <p className="text-[10px] text-muted-foreground">{page.path}</p>
                   </div>
                   {isSaved ? (
-                    <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                    <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
                   ) : (
                     <Button
                       size="icon"
