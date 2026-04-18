@@ -94,7 +94,8 @@ function emitCacheUpdated() {
 
 async function fetchSilent(url: string): Promise<void> {
   try {
-    await fetch(url, { credentials: "same-origin", cache: "reload" });
+    // "default" deixa o SW interceptar e cachear — persiste entre sessões
+    await fetch(url, { credentials: "same-origin", cache: "default" });
   } catch {
     /* rede instável — silencioso */
   }
@@ -104,19 +105,19 @@ function toAbsoluteUrl(url: string): string {
   return new URL(url, window.location.origin).toString();
 }
 
-async function cacheResponse(cacheName: string, url: string): Promise<void> {
-  const requestUrl = toAbsoluteUrl(url);
-  const response = await fetch(requestUrl, {
+async function cacheResponse(_cacheName: string, url: string): Promise<void> {
+  // Usa fetch normal sem cache bypass — o Service Worker intercepta e armazena
+  // via NetworkFirst. Assim o Workbox rastreia a entrada no ExpirationPlugin
+  // e ela persiste entre sessões até o usuário limpar manualmente.
+  const absoluteUrl = toAbsoluteUrl(url);
+  const response = await fetch(absoluteUrl, {
     credentials: "same-origin",
-    cache: "reload",
+    // "default" respeita o SW — não "reload" que bypassa o cache
+    cache: "default",
   });
-
-  if (!response.ok) {
-    throw new Error(`Erro ao cachear ${url}`);
+  if (!response.ok && response.status !== 0) {
+    throw new Error(`HTTP ${response.status} ao cachear ${url}`);
   }
-
-  const cache = await caches.open(cacheName);
-  await cache.put(requestUrl, response.clone());
 }
 
 async function cachePageWithAssets(url: string, assetUrls: string[] = []): Promise<void> {

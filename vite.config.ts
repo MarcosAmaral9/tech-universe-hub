@@ -256,25 +256,28 @@ export default defineConfig(({ mode }) => ({
         runtimeCaching: [
           {
             // HTML pages (navigation requests) — network-first, fallback to cache, then offline.html
-            // Increased to 200 entries to cover all 125 posts + static pages
+            // maxEntries: 300 cobre 125 posts + estáticas + margem para novos posts
+            // maxAgeSeconds: 365 dias — posts escolhidos pelo usuário devem persistir
+            // até ele limpar manualmente via /configuracoes/offline
             urlPattern: ({ request }) => request.mode === "navigate",
             handler: "NetworkFirst",
             options: {
               cacheName: "pages-cache",
               networkTimeoutSeconds: 4,
-              expiration: { maxEntries: 200, maxAgeSeconds: 30 * 24 * 60 * 60 },
+              expiration: { maxEntries: 300, maxAgeSeconds: 365 * 24 * 60 * 60 },
               cacheableResponse: { statuses: [0, 200] },
               precacheFallback: { fallbackURL: "/offline.html" },
             },
           },
           {
             // Images (WebP/PNG/JPG) — cache-first, long TTL
-            // Bumped to 400 entries to fit all post hero images
+            // 500 entradas, 365 dias — imagens de posts escolhidos pelo usuário
+            // devem persistir até limpeza manual via /configuracoes/offline
             urlPattern: /\.(?:webp|png|jpg|jpeg|svg|ico|gif)$/i,
             handler: "CacheFirst",
             options: {
               cacheName: "images-cache",
-              expiration: { maxEntries: 400, maxAgeSeconds: 60 * 24 * 60 * 60 },
+              expiration: { maxEntries: 500, maxAgeSeconds: 365 * 24 * 60 * 60 },
               cacheableResponse: { statuses: [0, 200] },
             },
           },

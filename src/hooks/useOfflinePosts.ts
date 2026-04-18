@@ -82,14 +82,27 @@ async function readCachedPostDetails(): Promise<CachedPostInfo[]> {
 async function removeCachedPost(slug: string): Promise<void> {
   if (typeof caches === "undefined") return;
   try {
-    const cache = await caches.open(CACHE_NAME);
+    // Remove a página HTML do pages-cache
+    const pageCache = await caches.open(CACHE_NAME);
     const absoluteUrl = new URL(`/post/${slug}`, window.location.origin).toString();
     await Promise.all([
-      cache.delete(`/post/${slug}`),
-      cache.delete(`/post/${slug}/`),
-      cache.delete(absoluteUrl),
-      cache.delete(`${absoluteUrl}/`),
+      pageCache.delete(`/post/${slug}`),
+      pageCache.delete(`/post/${slug}/`),
+      pageCache.delete(absoluteUrl),
+      pageCache.delete(`${absoluteUrl}/`),
     ]);
+    // Remove a hero image do images-cache se o post tiver uma
+    const post = blogPosts.find((p) => p.slug === slug);
+    if (post?.image) {
+      try {
+        const imgCache = await caches.open("images-cache");
+        const imgAbsoluteUrl = new URL(post.image, window.location.origin).toString();
+        await Promise.all([
+          imgCache.delete(post.image),
+          imgCache.delete(imgAbsoluteUrl),
+        ]);
+      } catch { /* ignore — imagem pode não estar cacheada individualmente */ }
+    }
   } catch { /* ignore */ }
 }
 
