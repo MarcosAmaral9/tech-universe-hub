@@ -13,12 +13,13 @@
  *  - Remover post individual do cache
  *  - Limpar todo o cache offline
  */
-import { useEffect, useState, useMemo, useCallback } from "react";
+import { useEffect, useState, useMemo, useCallback, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useRegisterSW } from "virtual:pwa-register/react";
 import {
   ArrowLeft, Download, HardDrive, Trash2, WifiOff,
   RefreshCw, CheckCircle2, Smartphone, Filter, X,
-  ChevronDown, ChevronUp, Search,
+  ChevronDown, ChevronUp, Search, RotateCw,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -122,6 +123,53 @@ const OfflineSettingsPage = () => {
 
   // Seleção de categorias para download
   const [selectedCats, setSelectedCats] = useState<Set<string>>(new Set());
+
+  // ── Service Worker: verificação manual de novas versões ────────────────────
+  const swRegistrationRef = useRef<ServiceWorkerRegistration | null>(null);
+  const [checkingUpdate, setCheckingUpdate] = useState(false);
+  const [lastChecked, setLastChecked] = useState<Date | null>(null);
+  const {
+    needRefresh: [needRefresh],
+    updateServiceWorker,
+  } = useRegisterSW({
+    onRegistered(r) { if (r) swRegistrationRef.current = r; },
+  });
+
+  const handleCheckForUpdates = useCallback(async () => {
+    if (checkingUpdate) return;
+    setCheckingUpdate(true);
+    try {
+      const reg = swRegistrationRef.current
+        ?? (await navigator.serviceWorker?.getRegistration());
+      if (reg) {
+        await reg.update();
+        setLastChecked(new Date());
+        // Aguarda um pouco para o evento `needRefresh` propagar
+        await new Promise((r) => setTimeout(r, 800));
+        if (!reg.waiting && !reg.installing) {
+          toast.success("Você já está na versão mais recente!", {
+            description: "Nenhuma atualização encontrada.",
+          });
+        } else {
+          toast.info("Nova versão encontrada!", {
+            description: "Toque em 'Aplicar atualização' para usar.",
+          });
+        }
+      } else {
+        toast.error("Service Worker indisponível.", {
+          description: "Recarregue a página e tente novamente.",
+        });
+      }
+    } catch {
+      toast.error("Erro ao verificar atualizações.");
+    } finally {
+      setCheckingUpdate(false);
+    }
+  }, [checkingUpdate]);
+
+  const handleApplyUpdate = useCallback(() => {
+    updateServiceWorker(true);
+  }, [updateServiceWorker]);
 
   // ── Guards: só PWA + logado ───────────────────────────────────────────────
   useEffect(() => {
@@ -320,6 +368,46 @@ const OfflineSettingsPage = () => {
             Escolha o que salvar no dispositivo para ler sem internet.
           </p>
         </div>
+
+        {/* ── Atualizar app (verificação manual de SW) ─────────────────── */}
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-5 space-y-3">
+          <div className="flex items-start gap-3">
+            <RotateCw className={`w-5 h-5 text-primary shrink-0 mt-0.5 ${checkingUpdate ? "animate-spin" : ""}`} />
+            <div className="flex-1 min-w-0">
+              <h2 className="font-semibold text-base">Atualizar app</h2>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                {needRefresh
+                  ? "Uma nova versão está pronta para ser aplicada."
+                  : lastChecked
+                    ? `Última verificação: ${lastChecked.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })}`
+                    : "Verifica se há uma nova versão do app sem esperar a checagem automática."}
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-2">
+            {needRefresh ? (
+              <Button onClick={handleApplyUpdate} className="gap-2 flex-1" size="sm">
+                <Download className="h-3.5 w-3.5" />
+                Aplicar atualização
+              </Button>
+            ) : (
+              <Button
+                onClick={handleCheckForUpdates}
+                disabled={checkingUpdate}
+                className="gap-2 flex-1"
+                size="sm"
+                variant="outline"
+              >
+                {checkingUpdate ? (
+                  <RefreshCw className="h-3.5 w-3.5 animate-spin" />
+                ) : (
+                  <RotateCw className="h-3.5 w-3.5" />
+                )}
+                {checkingUpdate ? "Verificando..." : "Verificar atualizações"}
+              </Button>
+            )}
+          </div>
+        </section>
 
         {/* ── Status geral ─────────────────────────────────────────────── */}
         <section className="rounded-2xl border border-border bg-card p-5 space-y-4">

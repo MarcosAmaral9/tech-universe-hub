@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
-import { Settings, Sun, Moon, Type, Palette, Bell, BellOff, RotateCcw } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Settings, Sun, Moon, Type, Palette, Bell, BellOff, RotateCcw, WifiOff, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetDescription,
   SheetHeader,
@@ -11,6 +13,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { useTheme } from "@/contexts/ThemeContext";
+import { usePWAStandalone } from "@/hooks/usePWAStandalone";
+import { useAuthContext } from "@/contexts/AuthContext";
 import { toast } from "@/hooks/use-toast";
 
 const NOTIFICATION_SOUND_KEY = "pwa_update_sound_enabled";
@@ -33,6 +37,8 @@ const DEFAULT_PRIMARY_HSL = "187 85% 43%";
 
 const SettingsDrawer = () => {
   const { theme, toggleTheme } = useTheme();
+  const isStandalone = usePWAStandalone();
+  const { user } = useAuthContext();
   const [soundEnabled, setSoundEnabled] = useState(() => {
     const stored = localStorage.getItem(NOTIFICATION_SOUND_KEY);
     return stored === null ? true : stored === "true";
@@ -179,6 +185,25 @@ const SettingsDrawer = () => {
             </div>
             <Switch checked={soundEnabled} onCheckedChange={toggleSound} aria-label="Ativar som e vibração" />
           </div>
+
+          {/* Conteúdo Offline (apenas no app instalado + logado) */}
+          {isStandalone && user && (
+            <SheetClose asChild>
+              <Link
+                to="/configuracoes/offline"
+                className="flex items-center justify-between py-3 border-b border-border hover:bg-secondary/50 -mx-2 px-2 rounded-md transition-colors"
+              >
+                <div className="flex items-center gap-3">
+                  <WifiOff className="w-5 h-5 text-primary" />
+                  <div>
+                    <p className="font-medium text-foreground text-sm">Conteúdo offline</p>
+                    <p className="text-xs text-muted-foreground">Gerenciar páginas salvas</p>
+                  </div>
+                </div>
+                <ChevronRight className="w-4 h-4 text-muted-foreground" />
+              </Link>
+            </SheetClose>
+          )}
 
           {/* Reset Button */}
           <div className="pt-4">
