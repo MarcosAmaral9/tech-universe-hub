@@ -13,12 +13,13 @@
  *  - Remover post individual do cache
  *  - Limpar todo o cache offline
  */
-import { useEffect, useState, useMemo, useCallback } from "react";
+import { useEffect, useState, useMemo, useCallback, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useRegisterSW } from "virtual:pwa-register/react";
 import {
   ArrowLeft, Download, HardDrive, Trash2, WifiOff,
   RefreshCw, CheckCircle2, Smartphone, Filter, X,
-  ChevronDown, ChevronUp, Search,
+  ChevronDown, ChevronUp, Search, RotateCw,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
