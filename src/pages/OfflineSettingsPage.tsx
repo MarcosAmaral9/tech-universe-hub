@@ -369,6 +369,46 @@ const OfflineSettingsPage = () => {
           </p>
         </div>
 
+        {/* ── Atualizar app (verificação manual de SW) ─────────────────── */}
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-5 space-y-3">
+          <div className="flex items-start gap-3">
+            <RotateCw className={`w-5 h-5 text-primary shrink-0 mt-0.5 ${checkingUpdate ? "animate-spin" : ""}`} />
+            <div className="flex-1 min-w-0">
+              <h2 className="font-semibold text-base">Atualizar app</h2>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                {needRefresh
+                  ? "Uma nova versão está pronta para ser aplicada."
+                  : lastChecked
+                    ? `Última verificação: ${lastChecked.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })}`
+                    : "Verifica se há uma nova versão do app sem esperar a checagem automática."}
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-2">
+            {needRefresh ? (
+              <Button onClick={handleApplyUpdate} className="gap-2 flex-1" size="sm">
+                <Download className="h-3.5 w-3.5" />
+                Aplicar atualização
+              </Button>
+            ) : (
+              <Button
+                onClick={handleCheckForUpdates}
+                disabled={checkingUpdate}
+                className="gap-2 flex-1"
+                size="sm"
+                variant="outline"
+              >
+                {checkingUpdate ? (
+                  <RefreshCw className="h-3.5 w-3.5 animate-spin" />
+                ) : (
+                  <RotateCw className="h-3.5 w-3.5" />
+                )}
+                {checkingUpdate ? "Verificando..." : "Verificar atualizações"}
+              </Button>
+            )}
+          </div>
+        </section>
+
         {/* ── Status geral ─────────────────────────────────────────────── */}
         <section className="rounded-2xl border border-border bg-card p-5 space-y-4">
           <h2 className="font-semibold flex items-center gap-2 text-base">
