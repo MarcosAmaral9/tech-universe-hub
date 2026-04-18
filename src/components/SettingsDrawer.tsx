@@ -186,6 +186,25 @@ const SettingsDrawer = () => {
             <Switch checked={soundEnabled} onCheckedChange={toggleSound} aria-label="Ativar som e vibração" />
           </div>
 
+          {/* Conteúdo Offline (apenas no app instalado + logado) */}
+          {isStandalone && user && (
+            <SheetClose asChild>
+              <Link
+                to="/configuracoes/offline"
+                className="flex items-center justify-between py-3 border-b border-border hover:bg-secondary/50 -mx-2 px-2 rounded-md transition-colors"
+              >
+                <div className="flex items-center gap-3">
+                  <WifiOff className="w-5 h-5 text-primary" />
+                  <div>
+                    <p className="font-medium text-foreground text-sm">Conteúdo offline</p>
+                    <p className="text-xs text-muted-foreground">Gerenciar páginas salvas</p>
+                  </div>
+                </div>
+                <ChevronRight className="w-4 h-4 text-muted-foreground" />
+              </Link>
+            </SheetClose>
+          )}
+
           {/* Reset Button */}
           <div className="pt-4">
             <Button variant="outline" onClick={resetAll} className="w-full gap-2">
