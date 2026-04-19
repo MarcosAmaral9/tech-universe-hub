@@ -7,6 +7,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import CommentSection from "@/components/CommentSection";
 import calculadorasImg from "@/assets/calculadoras-financeiras.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import ShareWhatsApp from "@/components/ShareWhatsApp";
 
 interface AssetOption {
   id: string; name: string; symbol: string;
@@ -129,6 +130,7 @@ const CalculadorasFinanceiras = () => {
   return (
     <div className="container py-8 max-w-5xl">
       <BackNavigation category="invest" />
+      <ShareWhatsApp />
 
       <div className="relative rounded-2xl overflow-hidden mb-8">
         <img fetchpriority="high" src={calculadorasImg} alt="Calculadoras Financeiras"
