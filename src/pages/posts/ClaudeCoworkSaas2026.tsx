@@ -49,7 +49,7 @@ const ClaudeCoworkSaas2026 = () => {
         </p>
  
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Brain className="h-7 w-7 text-violet-400" />
+          <Brain className="h-7 w-7 text-ia" />
           O Que é o Claude Cowork?
         </h2>
         <p>
@@ -77,7 +77,7 @@ const ClaudeCoworkSaas2026 = () => {
         <AdLeaderboard className="my-8" />
  
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <TrendingUp className="h-7 w-7 text-violet-400" />
+          <TrendingUp className="h-7 w-7 text-ia" />
           Por Que o SaaSpocalypse? O Que Derrubou as Ações
         </h2>
         <p>
@@ -112,7 +112,7 @@ const ClaudeCoworkSaas2026 = () => {
         </div>
  
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Shield className="h-7 w-7 text-violet-400" />
+          <Shield className="h-7 w-7 text-ia" />
           O SaaS Tradicional Vai Morrer? Não Tão Rápido
         </h2>
         <p>
@@ -142,7 +142,7 @@ const ClaudeCoworkSaas2026 = () => {
         <AdRectangle className="my-8" />
  
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Zap className="h-7 w-7 text-violet-400" />
+          <Zap className="h-7 w-7 text-ia" />
           Como Usar o Claude Cowork na Prática: Exemplos Reais
         </h2>
         <div className="not-prose my-6 space-y-4">
@@ -174,7 +174,7 @@ const ClaudeCoworkSaas2026 = () => {
         </div>
  
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Lightbulb className="h-7 w-7 text-violet-400" />
+          <Lightbulb className="h-7 w-7 text-ia" />
           O Que Fazer Se Você Trabalha com SaaS: Estratégia de Sobrevivência
         </h2>
         <ul>
