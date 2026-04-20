@@ -679,7 +679,7 @@ const OfflineSettingsPage = () => {
                           <span className="text-base shrink-0">{cat?.emoji ?? "📄"}</span>
                           <div className="flex-1 min-w-0">
                             <Link to={`/post/${post.slug}`} className="text-xs font-medium line-clamp-1 hover:text-primary transition-colors">
-                              {post.title}
+                              {post.label}
                             </Link>
                             <div className="flex items-center gap-1.5 mt-1 flex-wrap">
                               {cat && (
