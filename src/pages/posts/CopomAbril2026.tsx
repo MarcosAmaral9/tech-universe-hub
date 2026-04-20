@@ -197,10 +197,10 @@ const CopomAbril2026 = () => {
             { n: "2", erro: "Ignorar o risco eleitoral de 2026", desc: "Ano eleitoral costuma trazer volatilidade na curva longa de juros. Títulos prefixados longos (acima de 5 anos) ficam mais arriscados com incerteza política. Prefira vencimentos curtos e médios." },
             { n: "3", erro: "Concentrar em renda variável apostando em queda rápida da Selic", desc: "O mercado revisou a queda da Selic de -3pp para -1,5pp ao longo de 2026. Quem entrou pesado em ações esperando esse catalisador terá que ter paciência mais longa do que planejado." },
           ].map(({ n, erro, desc }) => (
-            <div key={n} className="flex gap-3 bg-card rounded-xl border border-red-500/20 p-4">
-              <span className="w-7 h-7 rounded-full bg-red-500/20 text-red-400 font-bold flex items-center justify-center shrink-0 text-xs">{n}</span>
+            <div key={n} className="flex gap-3 bg-card rounded-xl border border-destructive/30 p-4">
+              <span className="w-7 h-7 rounded-full bg-destructive/15 text-destructive font-bold flex items-center justify-center shrink-0 text-xs">{n}</span>
               <div>
-                <h3 className="font-bold text-sm mb-0.5 text-red-400">❌ {erro}</h3>
+                <h3 className="font-bold text-sm mb-0.5 text-destructive">❌ {erro}</h3>
                 <p className="text-sm text-muted-foreground">{desc}</p>
               </div>
             </div>

@@ -166,8 +166,8 @@ const DiabloLordOfHatred2026 = () => {
         </h2>
         <div className="not-prose my-6 space-y-3">
           {[
-            { perfil: "✅ Compre se você...", items: ["Jogou e gostou de Diablo IV ou Vessel of Hatred", "Quer uma das duas novas classes (Paladin é o hype máximo)", "Sente que o endgame atual está repetitivo — War Plans muda isso fundamentalmente", "Tem amigos para co-op — o Warlock brilha especialmente em grupo"], cor: "border-green-500/30" },
-            { perfil: "⏳ Aguarde se...", items: ["Nunca jogou Diablo IV — comece pelo jogo base que está em oferta frequente", "Não curte ARPGs com sessões longas de farm", "Prefere esperar reviews detalhados da qualidade da campanha de Skovos após o lançamento", "O preço de US$ 39,99 está fora do orçamento — projeção de desconto de 40% em Black Friday"], cor: "border-yellow-500/30" },
+            { perfil: "✅ Compre se você...", items: ["Jogou e gostou de Diablo IV ou Vessel of Hatred", "Quer uma das duas novas classes (Paladin é o hype máximo)", "Sente que o endgame atual está repetitivo — War Plans muda isso fundamentalmente", "Tem amigos para co-op — o Warlock brilha especialmente em grupo"], cor: "border-invest/30" },
+            { perfil: "⏳ Aguarde se...", items: ["Nunca jogou Diablo IV — comece pelo jogo base que está em oferta frequente", "Não curte ARPGs com sessões longas de farm", "Prefere esperar reviews detalhados da qualidade da campanha de Skovos após o lançamento", "O preço de US$ 39,99 está fora do orçamento — projeção de desconto de 40% em Black Friday"], cor: "border-geek/30" },
           ].map(({ perfil, items, cor }) => (
             <div key={perfil} className={`bg-card rounded-xl border ${cor} p-5`}>
               <h3 className="font-bold mb-3">{perfil}</h3>

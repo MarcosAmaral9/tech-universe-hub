@@ -85,10 +85,10 @@ const DolarQueda2026 = () => {
           <h3 className="font-bold mb-4 text-sm">📊 Simulação: R$ 10.000 investidos em IVVB11 agora</h3>
           <div className="space-y-3">
             {[
-              { cen: "Cenário base (dólar volta a R$ 5,40, S&P sobe 8%)", resultado: "+22% total (8% do S&P + 7,8% cambial + ganho composto)", cor: "text-green-400" },
-              { cen: "Cenário otimista (dólar vai a R$ 5,60, S&P sobe 15%)", resultado: "+34% total", cor: "text-green-400" },
-              { cen: "Cenário neutro (dólar fica em R$ 5,10, S&P sobe 8%)", resultado: "+10% apenas do S&P + 1,8% cambial", cor: "text-yellow-400" },
-              { cen: "Cenário adverso (dólar cai para R$ 4,80, guerra volta)", resultado: "+8% S&P - 4% cambial = +4% total (ainda positivo em reais)", cor: "text-amber-400" },
+              { cen: "Cenário base (dólar volta a R$ 5,40, S&P sobe 8%)", resultado: "+22% total (8% do S&P + 7,8% cambial + ganho composto)", cor: "text-invest" },
+              { cen: "Cenário otimista (dólar vai a R$ 5,60, S&P sobe 15%)", resultado: "+34% total", cor: "text-invest" },
+              { cen: "Cenário neutro (dólar fica em R$ 5,10, S&P sobe 8%)", resultado: "+10% apenas do S&P + 1,8% cambial", cor: "text-geek" },
+              { cen: "Cenário adverso (dólar cai para R$ 4,80, guerra volta)", resultado: "+8% S&P - 4% cambial = +4% total (ainda positivo em reais)", cor: "text-geek" },
             ].map(({ cen, resultado, cor }) => (
               <div key={cen} className="border-b border-border pb-2 last:border-0 last:pb-0">
                 <p className="text-xs text-muted-foreground">{cen}</p>
@@ -148,7 +148,7 @@ const DolarQueda2026 = () => {
               <div className="flex items-start justify-between gap-2 mb-1 flex-wrap">
                 <h3 className="font-bold text-sm">{etf}</h3>
                 <div className="flex gap-2 flex-wrap">
-                  <span className="text-xs bg-green-500/15 text-green-400 px-2 py-0.5 rounded-full font-bold">{perf}</span>
+                  <span className="text-xs bg-invest/15 text-invest px-2 py-0.5 rounded-full font-bold">{perf}</span>
                   <span className="text-xs text-muted-foreground">{perfil}</span>
                 </div>
               </div>

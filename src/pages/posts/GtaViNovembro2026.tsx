@@ -164,11 +164,11 @@ const GtaViNovembro2026 = () => {
               <h3 className="font-bold text-sm mb-2 text-geek">⏰ {momento}</h3>
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <p className="text-xs font-medium text-green-400 mb-0.5">✅ Vantagem</p>
+                  <p className="text-xs font-medium text-invest mb-0.5">✅ Vantagem</p>
                   <p className="text-xs text-muted-foreground">{vantagem}</p>
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-amber-400 mb-0.5">⚠️ Risco</p>
+                  <p className="text-xs font-medium text-geek mb-0.5">⚠️ Risco</p>
                   <p className="text-xs text-muted-foreground">{risco}</p>
                 </div>
               </div>
