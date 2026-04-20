@@ -70,6 +70,7 @@ const ResetPasswordPage = lazy(() => import("./pages/ResetPasswordPage"));
 const GoogleAuthCallback = lazy(() => import("./pages/GoogleAuthCallback"));
 
 // Lazy-loaded posts
+
 const DiferencaMangasManhuas = lazy(() => import("./pages/posts/DiferencaMangasManhuas"));
 const DiferenciarManhuasManhwas = lazy(() => import("./pages/posts/DiferenciarManhuasManhwas"));
 const MelhoresManhwasSistema = lazy(() => import("./pages/posts/MelhoresManhwasSistema"));
@@ -210,6 +211,15 @@ const PragmataCapcom2026           = lazy(() => import("./pages/posts/PragmataCa
 const SarosPS52026                 = lazy(() => import("./pages/posts/SarosPS52026"));
 const OnePieceElbaf2026            = lazy(() => import("./pages/posts/OnePieceElbaf2026"));
 const SpringSeasonAnimes2026       = lazy(() => import("./pages/posts/SpringSeasonAnimes2026"));
+// ── 20 Abr 2026 ───────────────────────────────────────────────────────
+const McpProtocol2026           = lazy(() => import("./pages/posts/McpProtocol2026"));
+const ClaudeCoworkSaas2026      = lazy(() => import("./pages/posts/ClaudeCoworkSaas2026"));
+const CopomAbril2026            = lazy(() => import("./pages/posts/CopomAbril2026"));
+const DolarQueda2026            = lazy(() => import("./pages/posts/DolarQueda2026"));
+const DiabloLordOfHatred2026    = lazy(() => import("./pages/posts/DiabloLordOfHatred2026"));
+const GtaViNovembro2026         = lazy(() => import("./pages/posts/GtaViNovembro2026"));
+const JJKTemporada42026         = lazy(() => import("./pages/posts/JJKTemporada42026"));
+const FreierenTemporada32026    = lazy(() => import("./pages/posts/FreierenTemporada32026"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -407,6 +417,15 @@ const App = () => (
                 <Route path="/post/saros-housemarque-ps5-2026" element={<Suspense fallback={<div />}><SarosPS52026 /></Suspense>} />
                 <Route path="/post/one-piece-elbaf-formato-sazonal-2026" element={<Suspense fallback={<div />}><OnePieceElbaf2026 /></Suspense>} />
                 <Route path="/post/spring-season-animes-abril-2026" element={<Suspense fallback={<div />}><SpringSeasonAnimes2026 /></Suspense>} />
+                 {/* ── 20 Abr 2026 ── */}
+                <Route path="/post/mcp-model-context-protocol-2026" element={<Suspense fallback={<div />}><McpProtocol2026 /></Suspense>} />
+                <Route path="/post/claude-cowork-saaspocalypse-2026" element={<Suspense fallback={<div />}><ClaudeCoworkSaas2026 /></Suspense>} />
+                <Route path="/post/copom-abril-2026-selic-investimentos" element={<Suspense fallback={<div />}><CopomAbril2026 /></Suspense>} />
+                <Route path="/post/dolar-queda-2026-investir-exterior" element={<Suspense fallback={<div />}><DolarQueda2026 /></Suspense>} />
+                <Route path="/post/diablo-iv-lord-of-hatred-2026" element={<Suspense fallback={<div />}><DiabloLordOfHatred2026 /></Suspense>} />
+                <Route path="/post/gta-vi-novembro-2026-vice-city-leonida" element={<Suspense fallback={<div />}><GtaViNovembro2026 /></Suspense>} />
+                <Route path="/post/jujutsu-kaisen-temporada-4-culling-game-2026" element={<Suspense fallback={<div />}><JJKTemporada42026 /></Suspense>} />
+                <Route path="/post/frieren-temporada-3-confirmada-2026" element={<Suspense fallback={<div />}><FreierenTemporada32026 /></Suspense>} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
