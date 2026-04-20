@@ -218,7 +218,7 @@ const OfflineSettingsPage = () => {
     if (listCategory !== "all") posts = posts.filter((p) => p.category === listCategory);
     if (listSearch.trim()) {
       const q = listSearch.toLowerCase();
-      posts = posts.filter((p) => p.title.toLowerCase().includes(q));
+      posts = posts.filter((p) => p.label.toLowerCase().includes(q));
     }
     return posts;
   }, [cachedPosts, listCategory, listSearch]);
