@@ -49,7 +49,7 @@ const ClaudeCoworkSaas2026 = () => {
         </p>
  
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Brain className="h-7 w-7 text-violet-400" />
+          <Brain className="h-7 w-7 text-ia" />
           O Que é o Claude Cowork?
         </h2>
         <p>
@@ -77,7 +77,7 @@ const ClaudeCoworkSaas2026 = () => {
         <AdLeaderboard className="my-8" />
  
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <TrendingUp className="h-7 w-7 text-violet-400" />
+          <TrendingUp className="h-7 w-7 text-ia" />
           Por Que o SaaSpocalypse? O Que Derrubou as Ações
         </h2>
         <p>
@@ -101,9 +101,9 @@ const ClaudeCoworkSaas2026 = () => {
               ].map(([cat, custo, oq, novo]) => (
                 <tr key={cat} className="border-t border-border">
                   <td className="py-3 px-4 font-medium">{cat}</td>
-                  <td className="py-3 px-4 text-red-400 font-bold text-xs">{custo}</td>
+                  <td className="py-3 px-4 text-destructive font-bold text-xs">{custo}</td>
                   <td className="py-3 px-4 text-muted-foreground text-xs">{oq}</td>
-                  <td className="py-3 px-4 text-green-400 font-bold text-xs">{novo}</td>
+                  <td className="py-3 px-4 text-invest font-bold text-xs">{novo}</td>
                 </tr>
               ))}
             </tbody>
@@ -112,15 +112,15 @@ const ClaudeCoworkSaas2026 = () => {
         </div>
  
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Shield className="h-7 w-7 text-violet-400" />
+          <Shield className="h-7 w-7 text-ia" />
           O SaaS Tradicional Vai Morrer? Não Tão Rápido
         </h2>
         <p>
           O SaaSpocalypse é real, mas não é o fim do SaaS. Há coisas que softwares especializados ainda fazem muito melhor que agentes genéricos:
         </p>
         <div className="not-prose my-6 grid md:grid-cols-2 gap-5">
-          <div className="bg-card rounded-xl border border-amber-500/20 p-5">
-            <h3 className="font-bold text-amber-400 mb-3 text-sm">⚠️ Onde o SaaS especializado ainda ganha</h3>
+          <div className="bg-card rounded-xl border border-geek/30 p-5">
+            <h3 className="font-bold text-geek mb-3 text-sm">⚠️ Onde o SaaS especializado ainda ganha</h3>
             <ul className="text-sm text-muted-foreground space-y-2">
               <li>• <strong className="text-foreground">Compliance e auditoria:</strong> Softwares com certificação CFC, CVM ou regulatória têm responsabilidade legal que agentes não assumem</li>
               <li>• <strong className="text-foreground">Integrações legadas:</strong> ERPs antigos (SAP, TOTVS Datasul) têm connectors validados que levam anos para um agente replicar com segurança</li>
@@ -128,8 +128,8 @@ const ClaudeCoworkSaas2026 = () => {
               <li>• <strong className="text-foreground">Dados sensíveis on-premise:</strong> Empresas que não podem enviar dados para nuvem de IA por regulação (bancos, hospitais) ainda precisam de SaaS local</li>
             </ul>
           </div>
-          <div className="bg-card rounded-xl border border-green-500/20 p-5">
-            <h3 className="font-bold text-green-400 mb-3 text-sm">✅ Onde o Claude Cowork claramente ganha</h3>
+          <div className="bg-card rounded-xl border border-invest/30 p-5">
+            <h3 className="font-bold text-invest mb-3 text-sm">✅ Onde o Claude Cowork claramente ganha</h3>
             <ul className="text-sm text-muted-foreground space-y-2">
               <li>• <strong className="text-foreground">Tarefas de conhecimento não-estruturadas:</strong> Redigir, revisar, analisar, resumir — o que SaaS não consegue fazer sem templates rígidos</li>
               <li>• <strong className="text-foreground">Integração cross-tool:</strong> Combinar dados de 5 sistemas numa única análise sem exportar planilhas</li>
@@ -142,7 +142,7 @@ const ClaudeCoworkSaas2026 = () => {
         <AdRectangle className="my-8" />
  
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Zap className="h-7 w-7 text-violet-400" />
+          <Zap className="h-7 w-7 text-ia" />
           Como Usar o Claude Cowork na Prática: Exemplos Reais
         </h2>
         <div className="not-prose my-6 space-y-4">
@@ -168,13 +168,13 @@ const ClaudeCoworkSaas2026 = () => {
               <div className="bg-secondary rounded-lg p-3 mb-2">
                 <p className="text-xs text-muted-foreground font-mono">{prompt}</p>
               </div>
-              <p className="text-xs text-green-400">✓ {resultado}</p>
+              <p className="text-xs text-invest">✓ {resultado}</p>
             </div>
           ))}
         </div>
  
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Lightbulb className="h-7 w-7 text-violet-400" />
+          <Lightbulb className="h-7 w-7 text-ia" />
           O Que Fazer Se Você Trabalha com SaaS: Estratégia de Sobrevivência
         </h2>
         <ul>

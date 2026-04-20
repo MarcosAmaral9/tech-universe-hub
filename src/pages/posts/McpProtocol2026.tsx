@@ -49,7 +49,7 @@ const McpProtocol2026 = () => {
         </p>
  
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Brain className="h-7 w-7 text-violet-400" />
+          <Brain className="h-7 w-7 text-ia" />
           O Problema que o MCP Resolve: O Caos das Integrações
         </h2>
         <p>
@@ -84,15 +84,15 @@ const McpProtocol2026 = () => {
         <AdLeaderboard className="my-8" />
  
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <BarChart3 className="h-7 w-7 text-violet-400" />
+          <BarChart3 className="h-7 w-7 text-ia" />
           Como o MCP Funciona: Arquitetura em 3 Camadas
         </h2>
         <p>O MCP opera com três componentes principais que se comunicam num protocolo baseado em JSON-RPC:</p>
         <div className="not-prose my-6 space-y-3">
           {[
-            { num: "1", nome: "MCP Host (o agente)", desc: "É o agente de IA (Claude, GPT, Gemini) que quer usar ferramentas externas. Ele se conecta a servidores MCP e chama as ferramentas disponíveis conforme a necessidade da tarefa.", cor: "border-violet-500/30" },
-            { num: "2", nome: "MCP Server (a ferramenta)", desc: "Cada serviço externo expõe um servidor MCP — uma interface padronizada que lista as ferramentas disponíveis, seus parâmetros e como chamá-las. Exemplos: GitHub MCP Server, Google Drive MCP Server, Slack MCP Server.", cor: "border-blue-500/30" },
-            { num: "3", nome: "MCP Client (o conector)", desc: "Gerencia a comunicação entre host e servers, traduz chamadas, autentica, verifica permissões e retorna resultados. Pode rodar localmente (no computador do usuário) ou na nuvem.", cor: "border-green-500/30" },
+            { num: "1", nome: "MCP Host (o agente)", desc: "É o agente de IA (Claude, GPT, Gemini) que quer usar ferramentas externas. Ele se conecta a servidores MCP e chama as ferramentas disponíveis conforme a necessidade da tarefa.", cor: "border-ia/30" },
+            { num: "2", nome: "MCP Server (a ferramenta)", desc: "Cada serviço externo expõe um servidor MCP — uma interface padronizada que lista as ferramentas disponíveis, seus parâmetros e como chamá-las. Exemplos: GitHub MCP Server, Google Drive MCP Server, Slack MCP Server.", cor: "border-ia/30" },
+            { num: "3", nome: "MCP Client (o conector)", desc: "Gerencia a comunicação entre host e servers, traduz chamadas, autentica, verifica permissões e retorna resultados. Pode rodar localmente (no computador do usuário) ou na nuvem.", cor: "border-invest/30" },
           ].map(({ num, nome, desc, cor }) => (
             <div key={num} className={`flex gap-4 bg-card rounded-xl border ${cor} p-4`}>
               <span className="w-8 h-8 rounded-full bg-ia/20 text-ia font-bold flex items-center justify-center shrink-0 text-sm">{num}</span>
@@ -108,7 +108,7 @@ const McpProtocol2026 = () => {
         </p>
  
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <TrendingUp className="h-7 w-7 text-violet-400" />
+          <TrendingUp className="h-7 w-7 text-ia" />
           Os 97 Milhões de Instalações: O que Esse Número Significa
         </h2>
         <p>
@@ -145,7 +145,7 @@ const McpProtocol2026 = () => {
         <AdRectangle className="my-8" />
  
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Zap className="h-7 w-7 text-violet-400" />
+          <Zap className="h-7 w-7 text-ia" />
           Os MCP Servers Mais Populares em 2026
         </h2>
         <div className="not-prose my-6 space-y-3">
@@ -165,7 +165,7 @@ const McpProtocol2026 = () => {
         </div>
  
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Lightbulb className="h-7 w-7 text-violet-400" />
+          <Lightbulb className="h-7 w-7 text-ia" />
           Como Começar com MCP Hoje: Guia Prático
         </h2>
         <div className="not-prose my-6 space-y-3">
@@ -187,7 +187,7 @@ const McpProtocol2026 = () => {
         </div>
  
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Shield className="h-7 w-7 text-violet-400" />
+          <Shield className="h-7 w-7 text-ia" />
           Riscos e Cuidados com MCP
         </h2>
         <ul>
