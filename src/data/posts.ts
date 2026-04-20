@@ -127,8 +127,174 @@ import etfsGuiaCompletoImg from "@/assets/etfs-guia-completo-2026.webp";
 import economiaDomesticaDicasImg from "@/assets/economia-domestica-dicas-2026.webp";
 import carteiraIniciantesGuiaImg from "@/assets/carteira-iniciantes-guia-2026.webp";
 import agentesIaAutonomosImg from "@/assets/agentes-ia-autonomos-2026.webp";
+import mcpProtocolImg from "@/assets/mcp-model-context-protocol-2026.webp";
+import claudeCoworkImg from "@/assets/claude-cowork-saaspocalypse-2026.webp";
+import copomAbril2026Img from "@/assets/copom-abril-2026-selic-investimentos.webp";
+import dolarQuedaImg from "@/assets/dolar-queda-2026-investir-exterior.webp";
+import diabloLordHatredImg from "@/assets/diablo-iv-lord-of-hatred-2026.webp";
+import gtaViNovembro2026Img from "@/assets/gta-vi-novembro-2026-vice-city-leonida.webp";
+import jjkTemporada4Img from "@/assets/jujutsu-kaisen-temporada-4-culling-game-2026.webp";
+import freierenT3Img from "@/assets/frieren-temporada-3-confirmada-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+
+     // ── 20 Abr 2026 — IA ──────────────────────────────────────────────
+  {
+    id: "166",
+    slug: "mcp-model-context-protocol-2026",
+    title: "MCP: O Protocolo com 97 Milhões de Instalações que Conecta Todos os Agentes de IA",
+    excerpt: "O Model Context Protocol chegou a 97 milhões de instalações em março de 2026. Todo grande provedor de IA adotou o padrão. Guia completo: como funciona, os MCP Servers mais usados, como instalar em 5 minutos e os riscos que ninguém fala.",
+    content: "",
+    category: "ia",
+    subtopic: "agentes",
+    image: mcpProtocolImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-20",
+    readTime: "14 min",
+    faq: [
+      { q: "O que é o MCP (Model Context Protocol)?", a: "O MCP é um protocolo aberto criado pela Anthropic em 2024 que padroniza a forma como agentes de IA se conectam a ferramentas externas (GitHub, Slack, banco de dados, APIs). É como um 'USB para IA': em vez de cada integração exigir código customizado, qualquer ferramenta que publique um servidor MCP conecta-se automaticamente a qualquer agente compatível." },
+      { q: "Todos os modelos de IA suportam MCP?", a: "Sim. Após atingir 97 milhões de instalações em março de 2026, todo grande provedor adotou o padrão: Claude (Anthropic), GPT (OpenAI), Gemini (Google), Copilot (Microsoft). Qualquer agente compatível com MCP pode conectar-se a qualquer servidor MCP." },
+      { q: "Como instalar o MCP no Claude Desktop?", a: "Acesse Configurações → MCP no Claude Desktop. Edite o arquivo claude_desktop_config.json e adicione o servidor desejado. Para o GitHub MCP Server: { 'mcpServers': { 'github': { 'command': 'npx', 'args': ['-y', '@modelcontextprotocol/server-github'] } } }. Reinicie o Claude Desktop e pronto." },
+      { q: "MCP é seguro? Quais os riscos?", a: "MCP tem riscos reais: MCP Injection (servidores maliciosos que instruem o agente a executar ações indesejadas), escalada de permissões e falta de auditoria. Use apenas servidores de fontes confiáveis, defina permissões mínimas necessárias e configure logs de auditoria em ambientes corporativos." },
+    ],
+  },
+  {
+    id: "167",
+    slug: "claude-cowork-saaspocalypse-2026",
+    title: "Claude Cowork e o SaaSpocalypse: Como os Agentes de IA Estão Substituindo Softwares Inteiros",
+    excerpt: "O lançamento do Claude Cowork derrubou ações de empresas de legal tech e SaaS financeiro em horas — o 'SaaSpocalypse'. Agentes especializados que fazem contratos, análise de balanço e triagem de RH por R$ 250/mês vs R$ 5.000+ em SaaS. O que muda para empresas e profissionais.",
+    content: "",
+    category: "ia",
+    subtopic: "produtividade",
+    image: claudeCoworkImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-20",
+    readTime: "15 min",
+    faq: [
+      { q: "O que é o Claude Cowork?", a: "Claude Cowork é a plataforma corporativa da Anthropic com agentes de IA especializados por setor (jurídico, financeiro, RH, marketing, engenharia). Opera com acesso a sistemas internos via MCP, memória persistente e capacidade de executar fluxos completos de trabalho. Plano Business: aprox. US$ 50/usuário/mês." },
+      { q: "O que é o SaaSpocalypse?", a: "Termo cunhado pela mídia especializada para descrever a queda nas ações de empresas de SaaS profissional após o lançamento do Claude Cowork. Agentes de IA com custo de R$ 250/mês passaram a competir com softwares especializados de R$ 800–R$ 8.000/mês em tarefas como revisão de contratos, análise financeira e triagem de RH." },
+      { q: "O SaaS tradicional vai acabar?", a: "Não completamente. Softwares com certificação regulatória (CFC, CVM), integração com ERPs legados, compliance fiscal (NF-e, SPED) e dados que não podem sair da empresa ainda têm vantagens que agentes genéricos não replicam com segurança. O SaaS que vai sofrer é o de tarefas cognitivas não-estruturadas." },
+      { q: "Como usar o Claude Cowork para revisar contratos?", a: "Envie o PDF do contrato e peça: 'Revise este contrato seguindo a lei brasileira. Identifique cláusulas abusivas, ausência de proteções padrão e pontos de risco. Gere um relatório com semáforo verde/amarelo/vermelho para cada cláusula e sugira reformulações.' O Cowork retorna análise completa em 2–3 minutos." },
+    ],
+  },
+ 
+  // ── 20 Abr 2026 — Invest ─────────────────────────────────────────
+  {
+    id: "168",
+    slug: "copom-abril-2026-selic-investimentos",
+    title: "Copom Abril 2026: Selic Cortada para 14,50% — O Que Muda para Renda Fixa, Ações e Câmbio",
+    excerpt: "Reunião do Copom dias 28–29 de abril deve cortar a Selic de 14,75% para 14,50% — corte menor que o esperado por causa da inflação em 4,80% (acima do teto). Guia completo: como reposicionar carteira, quais setores da bolsa se beneficiam e os 3 erros que não cometer agora.",
+    content: "",
+    category: "invest",
+    subtopic: "planejamento",
+    image: copomAbril2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-04-20",
+    readTime: "14 min",
+    faq: [
+      { q: "O Copom vai cortar a Selic em quanto em abril de 2026?", a: "O Boletim Focus de 20 de abril de 2026 projeta corte de 0,25 ponto percentual na reunião de 28–29 de abril, levando a Selic de 14,75% para 14,50% ao ano. O mercado revisou para baixo a expectativa (era 0,50 pp) por causa do IPCA de março em 0,88% — acima do esperado." },
+      { q: "Com a Selic caindo, ainda vale a pena ficar no Tesouro Selic?", a: "Sim, por enquanto. Com a Selic desacelerando mais devagar (projeção de 13,25–13,50% ao fim de 2026, vs 12,25% antes), o CDI continua muito atrativo. O Tesouro Selic ainda rende ~14,5% ao ano — retorno real de +9,7% acima do IPCA projetado de 4,80%." },
+      { q: "Qual a melhor renda fixa para o ciclo atual?", a: "Para o ciclo de 2026: IPCA+ (proteção contra inflação acima do esperado), CDB pós-fixado FGC (CDI alto por mais tempo) e Tesouro Prefixado curto (2–3 anos) para capturar a queda gradual de juros. Evite prefixados longos com risco eleitoral no horizonte." },
+    ],
+  },
+  {
+    id: "169",
+    slug: "dolar-queda-2026-investir-exterior",
+    title: "Dólar no Menor Nível em 2 Anos: Como Aproveitar a Queda Cambial para Investir no Exterior",
+    excerpt: "Dólar a R$ 5,01 — queda de 9,21% em 2026, menor nível desde março de 2024. Janela rara para comprar dólares baratos e diversificar em S&P 500, Nasdaq e BDRs. Guia de ETFs, simulações de retorno e o que pode fazer o câmbio subir de volta.",
+    content: "",
+    category: "invest",
+    subtopic: "carteira",
+    image: dolarQuedaImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-20",
+    readTime: "13 min",
+    faq: [
+      { q: "Por que o dólar está caindo tanto em 2026?", a: "Quatro fatores: fluxo estrangeiro recorde comprando ativos brasileiros (Selic real mais alta do mundo); dólar fraco globalmente (DXY em queda); cessar-fogo frágil Irã-EUA reduz aversão ao risco; e interesse em emergentes como o Brasil. O dólar caiu 9,21% no ano, cotado a R$ 5,01." },
+      { q: "Como investir no exterior com o dólar barato?", a: "As opções na B3: IVVB11 (ETF S&P 500, repleta o índice americano em reais), NASD11 (ETF Nasdaq 100, focado em big techs), BDRs de Apple/Google/Nvidia (negociados diretamente na B3) e fundos internacionais. Também é possível abrir conta em corretora americana (Interactive Brokers) e investir diretamente." },
+      { q: "O dólar vai subir de volta?", a: "Projeção do Focus é R$ 5,30 para fim de 2026 — alta de ~5,8% a partir do nível atual. Catalistas: reescalada da guerra Irã-EUA, incerteza eleitoral no segundo semestre ou saída de capital estrangeiro caso o Fed aumente juros. Diversificar parte da carteira em dólar faz sentido como hedge." },
+    ],
+  },
+ 
+  // ── 20 Abr 2026 — Geek ──────────────────────────────────────────────
+  {
+    id: "170",
+    slug: "diablo-iv-lord-of-hatred-2026",
+    title: "Diablo IV: Lord of Hatred — Guia Completo: Paladin, Warlock, Skovos e Novo Endgame",
+    excerpt: "28 de abril de 2026: Diablo IV recebe sua maior expansão. Paladin (retorno de D2) e Warlock (classe totalmente nova), a região de Skovos (30 anos de espera), Horadric Cube, War Plans e revisão de todas as 8 classes. Guia completo do que vem grátis e do que é pago.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: diabloLordHatredImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-20",
+    readTime: "16 min",
+    faq: [
+      { q: "O que é a expansão Lord of Hatred de Diablo IV?", a: "Lord of Hatred é a segunda grande expansão de Diablo IV, lançada em 28 de abril de 2026. Inclui duas novas classes (Paladin e Warlock), nova região jogável (Skovos — as ilhas sagradas prometidas desde D2), Horadric Cube (crafting avançado), sistema War Plans (endgame personalizado) e Talisman com Set Bonuses." },
+      { q: "O Paladin é igual ao de Diablo II?", a: "É inspirado no D2 mas completamente redesenhado. O Paladin de Lord of Hatred tem o Arbiter Form (transformação angelical que dobra velocidade e potencializa habilidades), o sistema de Juramentos (Oath) que define seu estilo e Auras como habilidades ativas com cooldown — não passivas como em D2." },
+      { q: "O que vem de graça no patch de 28 de abril?", a: "Mesmo sem comprar a expansão: revisão completa da árvore de habilidades de todas as 8 classes (+40 variantes novas), novo level cap e Loot Filter. O Paladin, Warlock, a campanha de Skovos, Horadric Cube, War Plans e Echoing Hatred são exclusivos de quem comprar Lord of Hatred." },
+      { q: "Preciso ter jogado Vessel of Hatred antes de Lord of Hatred?", a: "Não é obrigatório, mas recomendado para entender o contexto narrativo. O Standard Edition de Lord of Hatred (US$ 39,99) já inclui Vessel of Hatred — então novos jogadores têm acesso às duas expansões de uma vez." },
+    ],
+  },
+  {
+    id: "171",
+    slug: "gta-vi-novembro-2026-vice-city-leonida",
+    title: "GTA VI: Data Confirmada para 19 de Novembro — Tudo sobre Leonida, Lucia, Jason e o Maior Jogo da Década",
+    excerpt: "Take-Two confirma: GTA VI chega em 19 de novembro de 2026 para PS5 e Xbox Series. Campanha de marketing começa no verão — terceiro trailer em junho/julho. Guia completo: protagonistas Lucia e Jason, mapa de Leonida (2–3x GTA V), inovações de gameplay e estratégia de compra.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: gtaViNovembro2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-04-20",
+    readTime: "17 min",
+    faq: [
+      { q: "GTA VI vai mesmo sair em novembro de 2026?", a: "Sim. A Take-Two confirmou oficialmente 19 de novembro de 2026 como data definitiva para PS5 e Xbox Series X|S. O CEO Strauss Zelnick anunciou que a campanha de marketing começa no verão de 2026 — um sinal forte de que não haverá novo adiamento. A produção principal está concluída, com fase final de QA em andamento." },
+      { q: "GTA VI vai sair para PC?", a: "Não há confirmação oficial de data para PC. Seguindo a tradição da Rockstar (GTA V demorou 18 meses para PC), espera-se a versão PC entre maio e novembro de 2027 — com gráficos superiores e suporte a mods." },
+      { q: "Quem são os protagonistas de GTA VI?", a: "Lucia Caminos (mulher latina, calculista e estratégica) e Jason Duval (ex-segurança convertido ao crime, mais impulsivo). Os dois formam uma dupla tipo Bonnie & Clyde no estado fictício de Leonida. A narrativa é primariamente narrada pelo ponto de vista de Lucia — primeira protagonista feminina principal na série GTA." },
+      { q: "Qual o tamanho do mapa de GTA VI?", a: "Dataminers estimam que o mapa de Leonida tem 2–3 vezes o tamanho de GTA V (81 km²). O mapa inclui a metrópole de Vice City, pântanos ao sul (inspirados nos Everglades), costa atlântica e interior rural — quatro biomas radicalmente diferentes com facções e missões específicas." },
+    ],
+  },
+ 
+  // ── 20 Abr 2026 — Otaku ─────────────────────────────────────────────
+  {
+    id: "172",
+    slug: "jujutsu-kaisen-temporada-4-culling-game-2026",
+    title: "Jujutsu Kaisen Temporada 4: Culling Game Part 2 Confirmada — O Que Sabemos e Quando Estreia",
+    excerpt: "No dia do final da T3 (26/03/26), a MAPPA confirmou: Jujutsu Kaisen Temporada 4 está em produção. Título: Culling Game Part 2. Sem data oficial ainda — apostas para fim de 2026 ou início de 2027. Guia de o que esperar, quais arcos serão adaptados e como se preparar.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: jjkTemporada4Img,
+    author: "VICIO<CODE>",
+    date: "2026-04-20",
+    readTime: "14 min",
+    faq: [
+      { q: "Jujutsu Kaisen Temporada 4 foi confirmada?", a: "Sim. A confirmação veio imediatamente após o episódio 59 (final da T3) em 26 de março de 2026. A conta oficial anunciou: 'A Temporada 4: Culling Game Part 2 está em produção — fiquem atentos às próximas notícias.' Crunchyroll também confirmou a produção." },
+      { q: "Quando a Temporada 4 de JJK vai estrear?", a: "Sem data oficial ainda. O cenário mais provável (base) é início de 2027 — seguindo o intervalo médio entre temporadas. O cenário otimista é fim de 2026 (outubro/novembro). O festival JUJU FES 2026 (29–30 de agosto em Yokohama) deve revelar a data definitiva." },
+      { q: "O que vai acontecer na Temporada 4 de JJK?", a: "A T4 adapta a segunda metade do arco Culling Game (cap. 212–238+), incluindo: batalhas cruciais na Colônia de Tóquio envolvendo Megumi e Sukuna (revelações devastadoras), os segredos da Colônia da Lua, e o confronto final para encerrar o Jogo do Extermínio. Muitas mortes de personagens queridos." },
+      { q: "A Temporada 3 de JJK foi boa?", a: "Excepcional. A T3 encerrou com pontuação quase perfeita no IMDB e foi considerada pela comunidade como a melhor temporada da série. Destaques: episódios especiais de 50+ minutos para batalhas cruciais, animação consistente do início ao fim, e a batalha de Yuta na Colônia de Sendai como uma das melhores sequências de ação da história do anime." },
+    ],
+  },
+  {
+    id: "173",
+    slug: "frieren-temporada-3-confirmada-2026",
+    title: "Frieren Temporada 3 Confirmada: O Que Esperar Após o Final Devastadoramente Bonito da T2",
+    excerpt: "A segunda temporada de Frieren: Beyond Journey's End encerrou em abril de 2026 com nota quase perfeita e imediatamente confirmou a T3. Guia completo: o que aconteceu na T2, quais arcos do mangá a T3 vai cobrir, por que Frieren rivaliza com FMA Brotherhood em qualidade e como entrar na série.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: freierenT3Img,
+    author: "VICIO<CODE>",
+    date: "2026-04-20",
+    readTime: "14 min",
+    faq: [
+      { q: "Frieren Temporada 3 foi confirmada?", a: "Sim. A confirmação foi feita imediatamente após o final da Temporada 2 em abril de 2026. A produção está a cargo do estúdio Madhouse, direção de Keiichiro Saito, com a Dentsu como produtora. Sem data de estreia ainda — espera-se 2027." },
+      { q: "Do que trata o anime Frieren?", a: "Frieren: Beyond Journey's End é sobre uma elfa imortal que, após décadas na jornada heróica com seus companheiros, os sobrevive e tenta entender o que significaram para ela. É uma reflexão sobre tempo, memória, luto e conexão humana — mais filosófico e emocional do que de ação." },
+      { q: "Onde assistir Frieren no Brasil?", a: "Na Crunchyroll, com dublagem e legenda em português. As duas temporadas estão disponíveis integralmente. A T1 tem 28 episódios e a T2 tem aproximadamente 24 episódios." },
+      { q: "Frieren é realmente tão bom quanto dizem?", a: "Sim. Frieren rivaliza com Fullmetal Alchemist: Brotherhood e Steins;Gate no topo histórico do MyAnimeList — feito rarísssimo para uma série em andamento. A crítica especializada é unanime sobre qualidade de animação (Madhouse), trilha sonora (Evan Call) e roteiro (adaptação fiel com adições inteligentes)." },
+    ],
+  },
 
     // ── 13 Abr 2026 — IA ──────────────────────────────────────────────
   {
