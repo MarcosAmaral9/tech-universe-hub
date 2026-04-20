@@ -121,6 +121,9 @@ const OfflineSettingsPage = () => {
   const [listCategory, setListCategory] = useState<string>("all");
   const [listSearch, setListSearch] = useState("");
   const [listExpanded, setListExpanded] = useState(false);
+  const [cachedStaticPaths, setCachedStaticPaths] = useState<Set<string>>(new Set());
+  const [listSearch, setListSearch] = useState("");
+  const [listExpanded, setListExpanded] = useState(false);
 
   // Seleção de categorias para download
   const [selectedCats, setSelectedCats] = useState<Set<string>>(new Set());
