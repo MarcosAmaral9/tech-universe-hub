@@ -39,8 +39,17 @@ const PragmataCapcom2026 = () => {
         <ShareWhatsApp />
       </header>
 
-      <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high" src={heroImg} alt="PRAGMATA Capcom 2026 gameplay história" loading="eager" decoding="async" className="w-full h-full object-cover" />
+      <div className="relative rounded-2xl overflow-hidden mb-8 aspect-[16/9] sm:aspect-video bg-card">
+        <img
+          fetchpriority="high"
+          src={heroImg}
+          alt="PRAGMATA Capcom 2026 — astronauta e menina holográfica olhando a Terra a partir da Lua"
+          loading="eager"
+          decoding="async"
+          width={1920}
+          height={1071}
+          className="w-full h-full object-cover object-center"
+        />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
