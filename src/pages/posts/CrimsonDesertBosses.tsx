@@ -111,7 +111,7 @@ const CrimsonDesertBosses = () => {
         <p><strong>Estratégia:</strong> Por ser um boss tutorial, siga as instruções do jogo. Curiosamente, é tecnicamente possível "vencer" Myurdin aqui — mas ele reaparece de qualquer jeito por razões narrativas. Não desperdice consumíveis.</p>
 
         {/* MATTHIAS */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-matthias" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">01.</span> Matthias — O Cavaleiro de Hernand
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -125,7 +125,7 @@ const CrimsonDesertBosses = () => {
         <p><strong>Estratégia:</strong> Encadeie 3 ataques rápidos, depois 3 ataques pesados para interrompê-lo. Ataques pesados consomem stamina — cuidado para não ficar sem. Quando ele atacar, recue para regenerar stamina, depois avance e repita. Se tiver dificuldade, saia na tela de game over, compre carne em Hernand e volte com mais cura. Matthias ensina a habilidade <strong>Pump Kick</strong> via mecânica "watch and learn" — observe ele usar e mantenha o botão de interagir pressionado.</p>
 
         {/* KAILOK */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-kailok" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">02.</span> Kailok the Hornsplitter — Líder dos Goldleaf Merchants
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -139,7 +139,7 @@ const CrimsonDesertBosses = () => {
         <p><strong>Estratégia:</strong> Foque em parries perfeitos com o escudo para interromper combos. Quando ele entrar em super armadura (brilho azul, invulnerável), pare de atacar e prepare-se para bloquear/esquivar. Kailok é suscetível a grapples — agarrá-lo drena o medidor de stagger rapidamente. <strong>Recompensa essencial:</strong> a Sword of the Lord tem o efeito Abyssal Core Wind Slash e é a melhor arma de uma mão da fase inicial.</p>
 
         {/* REED DEVIL */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-reed-devil" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">03.</span> Reed Devil — O Demônio dos Juncos
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -158,7 +158,7 @@ const CrimsonDesertBosses = () => {
         </ul>
 
         {/* TENEBRUM */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-tenebrum" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">04.</span> Tenebrum — O Boss-Puzzle do Abyss
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -174,7 +174,7 @@ const CrimsonDesertBosses = () => {
         <AdRectangle className="my-8" />
 
         {/* KEARUSH */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-kearush" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">05.</span> Kearush the Slayer — O Primeiro Grande Muro
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -193,7 +193,7 @@ const CrimsonDesertBosses = () => {
         </ul>
 
         {/* CROWCALLER */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-crowcaller" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">06.</span> Crowcaller — O Chamador dos Corvos
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -208,7 +208,7 @@ const CrimsonDesertBosses = () => {
         <p><em><strong>Por que esta arma importa:</strong> A Tauria Curved Sword tem os melhores ataques pesados do jogo. Combinada com a skill Nature's Echo (árvore verde), que duplica seus ataques pesados, cria a combinação ofensiva mais forte disponível para Kliff até o final da campanha.</em></p>
 
         {/* CASSIUS MORTEN */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-cassius-morten" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">07.</span> Cassius Morten — O Primeiro Boss com Escudo
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -222,7 +222,7 @@ const CrimsonDesertBosses = () => {
         <p><strong>Estratégia:</strong> Equipe a <strong>Tauria Curved Sword</strong> e compre a skill <strong>Nature's Echo</strong> (árvore verde) para duplicar seus ataques pesados. Então spam de ataques pesados (R2/RT) — eles quebram a guarda dele mesmo bloqueando. Após 3 golpes pesados, ele fica stunado e você pode encadear ataques leves. Repita. Quando ele se mover em direção a você, use <strong>Nature's Grasp</strong> para arremessar um dos pilares da arena nele — causa dano massivo.</p>
 
         {/* WHITE HORN */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-white-horn" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">08.</span> White Horn — O Espírito da Montanha
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -236,7 +236,7 @@ const CrimsonDesertBosses = () => {
         <p><strong>Estratégia:</strong> Use ataques de fogo sempre que disponíveis. O boss tem alcance enorme — não tente enfrentá-lo corpo a corpo sem janelas claras de abertura. Após aparar um ataque pesado, aplique 2–3 ataques rápidos e recue. Na fase final (barra vermelha), ele fica mais rápido — priorize cura e espere aberturas claras.</p>
 
         {/* SAIGORD STAGLORD */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-staglord" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">09.</span> Saigord the Staglord — O Rei Caído com 3 Barras
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -250,7 +250,7 @@ const CrimsonDesertBosses = () => {
         <p><strong>Estratégia:</strong> É um boss humano estilo guerreiro. Esquive para frente-direita em seus ataques, aguarde o combo terminar, aplique 3 ataques e recue. Na fase 2 fica mais agressivo. <strong>Vale muito a pena fazer</strong> — o Turning Slash Expertise desbloqueia melhora de dano permanente para uma das suas habilidades mais fortes.</p>
 
         {/* HEXE MARIE */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-hexe-marie" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">10.</span> Hexe Marie — A Bruxa das Trevas
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -267,7 +267,7 @@ const CrimsonDesertBosses = () => {
 
         {/* KEARUSH — NOTE: article originally placed this as 07, now 11 in expanded numbering */}
         {/* LUDVIG */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-ludvig" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">11.</span> Ludvig e Awakened Ludvig — O Raio do Pailune
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -281,7 +281,7 @@ const CrimsonDesertBosses = () => {
         <p><strong>Estratégia:</strong> Equipe a Tauria Curved Sword e o maior escudo com estatísticas defensivas disponível. Tenha pelo menos resistência elétrica nível 2. Esquive todos os ataques — eles são rápidos e fortes. Ludvig teletransporta bastante; deixe ele falhar um combo ou parar de se mover antes de atacar. No Awakened, foque em esquivar em círculos e encaixe combos leves enquanto cura ao mesmo tempo. <strong>Recomendação de stats:</strong> acima de 800 HP, 200 Stamina, pelo menos 50 Spirit antes desta luta.</p>
 
         {/* ONE-ARMED LUDVIG */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-one-armed-ludvig" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">12.</span> One-Armed Ludvig — Como Oongka (Força)
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -295,7 +295,7 @@ const CrimsonDesertBosses = () => {
         <p><strong>Estratégia:</strong> <strong>Não gaste Abyss Artifacts em Oongka</strong> — você não pode reembolsar os recursos. Equipe duas espadas (não o machado inicial, que é lento demais). Use a <strong>Sword of the Lord</strong> para ataques de onda à distância. Foque em parry com a arma e encadeie combos leves. Como você acabou de ter múltiplas lutas seguidas, provavelmente estará com poucas curas — não se esqueça de re-equipar comida na roda de itens.</p>
 
         {/* MYURDIN rematch */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-myurdin-revanche" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">13.</span> Myurdin — Revanche com Fogo
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -309,7 +309,7 @@ const CrimsonDesertBosses = () => {
         <p><strong>Estratégia:</strong> Fase 1 — use parry e ataques pesados com Tauria Curved Sword. Fase 2 — não deixe sua stamina zerar completamente, você sempre precisa de uma esquiva disponível. Quando ele entrar em posição agachada e começar a se mover erraticamente, antecipe o ataque de garras e esquive imediatamente.</p>
 
         {/* GREGOR */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-gregor" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">14.</span> Gregor the Halberd of Carnage — A Armadilha da Arena
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -323,7 +323,7 @@ const CrimsonDesertBosses = () => {
         <p><strong>Estratégia:</strong> Quando ele iniciar uma cadeia de estocadas com brilho azul (super armor), esquive imediatamente e não tente bloquear — esses ataques passam pelo escudo. Posicione-se nas laterais da arena para evitar as flechas das paredes entre janelas de ataque. Após o combo terminar, aplique ataques pesados encadeados. <strong>Não venda/descarte a Golden Vanguard</strong> — você precisará dela como Damiane contra Lucian Bastier.</p>
 
         {/* FORTAIN */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-fortain" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">15.</span> Fortain the Cursed Knight — O Cavaleiro com Fantasma
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -337,7 +337,7 @@ const CrimsonDesertBosses = () => {
         <p><strong>Estratégia:</strong> Use ataques pesados com Tauria Curved Sword + Nature's Echo para quebrar a guarda de Fortain — ataques leves ricocheteiam. Quando o fantasma aparecer, afaste-se imediatamente. Quando Fortain voa para fora da arena e mergulha do alto, esconda-se atrás dos pilares e avance para punir o pouso. Empurrar Fortain em direção à entrada da arena com Forward Slash e Turning Slash pode fazer com que ele não consiga invocar o fantasma corretamente — explore este posicionamento.</p>
 
         {/* LUCIAN BASTIER */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-lucian-bastier" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">16.</span> Lucian Bastier e Awakened — Obrigatório como Damiane
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -354,7 +354,7 @@ const CrimsonDesertBosses = () => {
         <AdRectangle className="my-8" />
 
         {/* GOYEN */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-goyen" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">17.</span> Goyen — O Boss Espelho (Secreto)
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -368,7 +368,7 @@ const CrimsonDesertBosses = () => {
         <p><strong>Estratégia:</strong> Como você conhece o moveset de Kliff, use isso ao seu favor — antecipe cada ataque. O Meteor Kick (salto + slam) é o mais mortal: quando ele sair do chão, observe o raio de impacto e spam de esquiva para se afastar antes do impacto. Ele encadeia sempre um kick aéreo em seguida — continue esquivando. Use Focus para desacelerar o tempo ao esquivar. Ataques pesados com esquiva para frente-direita após combos é a base. Ative o ponto de fast travel direto antes da arena para facilitar reabastecer.</p>
 
         {/* T'RUKAN */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-trukan" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">18.</span> T'rukan the Ascended — O Boss Mais Rápido do Jogo
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -382,7 +382,7 @@ const CrimsonDesertBosses = () => {
         <p><strong>Estratégia:</strong> Spam de counter de escudo (L1/LB) para quebrar a guarda dele. Se errar o counter e for atingido, esquive imediatamente. Quando o counter funcionar, aplique 1–2 combos antes de sair. Ataques pesados com Tauria Curved Sword após um counter bem-sucedido. Se tiver dificuldade com o timing do counter, esquive para trás dele após um combo e ataque pelas costas. Use Focus (desaceleração do tempo) para ajudar a ler os ataques. Alternativamente, Focused Shot (ataque à distância) funciona surpreendentemente bem — marque T'rukan múltiplas vezes em câmera lenta antes de soltar as flechas.</p>
 
         {/* MASTER DU */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-master-du" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">19.</span> Master Du — O Sábio com Lasers (Secreto)
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -396,7 +396,7 @@ const CrimsonDesertBosses = () => {
         <p><strong>Estratégia:</strong> Use Focus ao máximo para ler os ataques em câmera lenta. Quando ele teletransportar e começar a saltar pelos pilares, use Focus para detectar de onde ele vai mergulhar — esquive imediatamente. Os lasers saem rápido demais para reagir sem Focus. Para evitar o instakill dos lasers, invista ao máximo em Health Level antes desta luta (mínimo Level 8). Se tiver sido cuidadoso com Abyss Artifacts, você terá HP suficiente para sobreviver a 1 acerto de laser e curar imediatamente.</p>
 
         {/* ANTUMBRA'S SWORD */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-antumbra-sword" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">20.</span> Antumbra's Sword — A Lâmina das Ilusões
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -410,7 +410,7 @@ const CrimsonDesertBosses = () => {
         <p><strong>Estratégia:</strong> Use Blinding Flash repetidamente para criar aberturas. Utilize as paredes e pilares para redirecionar seus ataques. As ilusões morrem rapidamente — não perca tempo com elas. Foque sempre no boss real.</p>
 
         {/* PRISCUS */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-priscus" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">21.</span> Priscus the Ancient — Boss de Mundo Aberto
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -431,7 +431,7 @@ const CrimsonDesertBosses = () => {
         </p>
 
         {/* CORRUPTED CALIBURN */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-corrupted-caliburn" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">Final #1.</span> Corrupted Caliburn (Gabriel Caliburn) — 3 Fases
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -445,7 +445,7 @@ const CrimsonDesertBosses = () => {
         <p><strong>Estratégia:</strong> Priorize sobrevivência sobre dano nos primeiros dois bosses. Use parry quando possível, esquiva quando não. Reserve Palmar Pills para o terceiro boss (Umbra). A espada que Caliburn dropa — com +28 de ataque, crítico nível 1 e refinamento nível 5 — é uma das melhores do jogo.</p>
 
         {/* MYURDIN AVATAR OF UMBRA */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-myurdin-umbra" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">Final #2.</span> Myurdin, Avatar de Umbra — O Boss Mais Difícil do Jogo
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -459,7 +459,7 @@ const CrimsonDesertBosses = () => {
         <p><strong>Estratégia:</strong> Não faça parry — muito arriscado e inconsistente por causa dos ataques mágicos que não podem ser parados. Foque 100% em esquiva. Sempre esquive para trás dele e aplique um combo. Seu ataque mais perigoso: lasers vermelhos do céu — use <strong>Nature's Snare (nível 2 — Nature's Retribution)</strong> para refleti-los. Se não tiver essa skill, afaste-se o máximo possível e cure imediatamente após ser atingido. Mantenha Health Level 10 para absorver golpes com cura imediata. Stamina nunca pode zerar — você precisa de sempre 1 esquiva disponível.</p>
 
         {/* UMBRA */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-umbra" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">Final #3.</span> Umbra — O Anjo Final (Boss no Dragão)
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
@@ -472,13 +472,13 @@ const CrimsonDesertBosses = () => {
         </p>
         <p><strong>Estratégia:</strong> Fique perto o suficiente para acertar projéteis do dragão, mas não próximo demais — ele cria onda de choque quando está perto. Voe para os lados continuamente para evitar os lasers. Atire bolas de fogo no olho central até o <strong>medidor de stun amarelo</strong> ficar cheio. Quando cheio: pule do dragão, planeie em direção ao olho de Umbra, use air dash para alcançar o olho e use <strong>Force Palm</strong> — cada acerto remove metade de uma barra de HP. Repita 2–3 vezes. Após derrota, epilogo com 8 missões de diálogo.</p>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        <h2 id="boss-opcionais" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6 scroll-mt-24">
           <Star className="h-7 w-7 text-red-400" />
           Bosses Opcionais — Guia Completo
         </h2>
 
         {/* QUEEN STONEBACK CRAB — Detailed */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-queen-stoneback" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">★</span> Queen Stoneback Crab — Boss Icônico de Escalada
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
