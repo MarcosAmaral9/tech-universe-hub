@@ -143,7 +143,7 @@ const CrimsonDesertBosses = () => {
           <span className="text-red-400">03.</span> Reed Devil — O Demônio dos Juncos
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
-          {[["📍 Localização","Campo de Juncos — leste de Hernand, missão 'Dance with the Devil'"],["⚠️ Dificuldade","★★★☆☆"],["🏆 Recompensa","Habilidade de área exclusiva + artefato Abyss"]].map(([k,v])=>(
+          {[["📍 Localização","Frozen Soul Mountain — Hernand (missão 'Dance with the Devil', Capítulo 3)"],["⚠️ Dificuldade","★★★☆☆"],["🏆 Recompensa","Skill Swift Stab + Artefato Abyss"]].map(([k,v])=>(
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs">{k}</p><p className="text-muted-foreground">{v}</p></div>
           ))}
         </div>
@@ -162,7 +162,7 @@ const CrimsonDesertBosses = () => {
           <span className="text-red-400">04.</span> Tenebrum — O Boss-Puzzle do Abyss
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
-          {[["📍 Localização","Scholarship Institute — missão 'Gate to the Otherworld' (Capítulo 4)"],["⚠️ Dificuldade","★★☆☆☆ (mais puzzle que combate)"],["🏆 Recompensa","Key to the Spire of the Stars — essencial para continuar a história"]].map(([k,v])=>(
+          {[["📍 Localização","Scholastone Institute — Hernand (missão 'Gate to the Otherworld', Capítulo 4)"],["⚠️ Dificuldade","★★☆☆☆ (mais puzzle que combate)"],["🏆 Recompensa","Key to the Spire of the Stars — essencial para continuar a história"]].map(([k,v])=>(
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs">{k}</p><p className="text-muted-foreground">{v}</p></div>
           ))}
         </div>
@@ -178,7 +178,7 @@ const CrimsonDesertBosses = () => {
           <span className="text-red-400">05.</span> Kearush the Slayer — O Primeiro Grande Muro
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
-          {[["📍 Localização","Cidade de Hernand — missão 'Demenissian Delegation' (Capítulo 5)"],["⚠️ Dificuldade","★★★★★"],["🏆 Recompensa","Arma exclusiva + Abyss Artifact raro"]].map(([k,v])=>(
+          {[["📍 Localização","Hernand Castle — missão 'Demenissian Delegation' (Capítulo 5)"],["⚠️ Dificuldade","★★★★★"],["🏆 Recompensa","Arma exclusiva + Abyss Artifact raro"]].map(([k,v])=>(
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs">{k}</p><p className="text-muted-foreground">{v}</p></div>
           ))}
         </div>
@@ -197,7 +197,7 @@ const CrimsonDesertBosses = () => {
           <span className="text-red-400">06.</span> Crowcaller — O Chamador dos Corvos
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
-          {[["📍 Localização","Crow's Nest — missões 'Bloodwind' / 'Toward the Nest' (Capítulo 5)"],["⚠️ Dificuldade","★★★★☆ (2ª luta)"],["🏆 Recompensa","Tauria Curved Sword — melhor arma para ataques pesados de todo o jogo"]].map(([k,v])=>(
+          {[["📍 Localização","Crow's Nest — região do Abyss/Hernand (missões 'Bloodwind' / 'Toward the Nest', Capítulo 5)"],["⚠️ Dificuldade","★★★★☆ (2ª luta)"],["🏆 Recompensa","Tauria Curved Sword — melhor arma para ataques pesados de todo o jogo"]].map(([k,v])=>(
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs">{k}</p><p className="text-muted-foreground">{v}</p></div>
           ))}
         </div>
@@ -212,7 +212,7 @@ const CrimsonDesertBosses = () => {
           <span className="text-red-400">07.</span> Cassius Morten — O Primeiro Boss com Escudo
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
-          {[["📍 Localização","Cidade de Calphade — missão 'Traitor' (Capítulo 6)"],["⚠️ Dificuldade","★★★☆☆"],["🏆 Recompensa","Progressão da história + Abyss Artifact"]].map(([k,v])=>(
+          {[["📍 Localização","Calphade Castle — Hernand (missão 'Traitor', Capítulo 6)"],["⚠️ Dificuldade","★★★☆☆"],["🏆 Recompensa","Shield of Betrayal"]].map(([k,v])=>(
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs">{k}</p><p className="text-muted-foreground">{v}</p></div>
           ))}
         </div>
@@ -226,7 +226,7 @@ const CrimsonDesertBosses = () => {
           <span className="text-red-400">08.</span> White Horn — O Espírito da Montanha
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
-          {[["📍 Localização","Montanhas Brancas — norte de Pywel (missão opcional/facção)"],["⚠️ Dificuldade","★★★★☆"],["🏆 Recompensa","Arma pesada exclusiva + Abyss Artifact"]].map(([k,v])=>(
+          {[["📍 Localização","Hernand norte — montanhas (boss opcional 'White Horn, Shepherd of Souls')"],["⚠️ Dificuldade","★★★★☆"],["🏆 Recompensa","Arma pesada exclusiva + Abyss Artifact"]].map(([k,v])=>(
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs">{k}</p><p className="text-muted-foreground">{v}</p></div>
           ))}
         </div>
@@ -240,7 +240,7 @@ const CrimsonDesertBosses = () => {
           <span className="text-red-400">09.</span> Saigord the Staglord — O Rei Caído com 3 Barras
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
-          {[["📍 Localização","Hernand Farmhouse — fale com os guardas (missão opcional)"],["⚠️ Dificuldade","★★★★☆"],["🏆 Recompensa","Turning Slash Expertise — aumenta dano permanente da habilidade"]].map(([k,v])=>(
+          {[["📍 Localização","Icemoor Castle Ruins — Hernand (missão 'Lord Amidst the Ruins')"],["⚠️ Dificuldade","★★★★☆"],["🏆 Recompensa","Turning Slash Expertise + Staglord's Shield"]].map(([k,v])=>(
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs">{k}</p><p className="text-muted-foreground">{v}</p></div>
           ))}
         </div>
