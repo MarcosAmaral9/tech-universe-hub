@@ -254,7 +254,7 @@ const CrimsonDesertBosses = () => {
           <span className="text-red-400">10.</span> Hexe Marie — A Bruxa das Trevas
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
-          {[["📍 Localização","Floresta de Hernand — missão secundária/Capítulo 9"],["⚠️ Dificuldade","★★★☆☆"],["🏆 Recompensa","Abyss Artifact + habilidade de necromancia"]].map(([k,v])=>(
+          {[["📍 Localização","Floresta de Hernand — boss da história/secundária"],["⚠️ Dificuldade","★★★☆☆"],["🏆 Recompensa","Abyss Artifact + habilidade de necromancia"]].map(([k,v])=>(
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs">{k}</p><p className="text-muted-foreground">{v}</p></div>
           ))}
         </div>
@@ -299,7 +299,7 @@ const CrimsonDesertBosses = () => {
           <span className="text-red-400">13.</span> Myurdin — Revanche com Fogo
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
-          {[["📍 Localização","Missão principal — Capítulo 7"],["⚠️ Dificuldade","★★★★☆"],["🏆 Recompensa","Progressão da história + cutscene importante"]].map(([k,v])=>(
+          {[["📍 Localização","Hills of No Return — Hernand norte (Capítulo 7, missão principal)"],["⚠️ Dificuldade","★★★★☆"],["🏆 Recompensa","Progressão da história + cutscene importante"]].map(([k,v])=>(
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs">{k}</p><p className="text-muted-foreground">{v}</p></div>
           ))}
         </div>
@@ -327,7 +327,7 @@ const CrimsonDesertBosses = () => {
           <span className="text-red-400">15.</span> Fortain the Cursed Knight — O Cavaleiro com Fantasma
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
-          {[["📍 Localização","Demeniss — missão 'The Cursed Knight' (Capítulo 8)"],["⚠️ Dificuldade","★★★★☆"],["🏆 Recompensa","Armor set completo do Fallen Kingdom"]].map(([k,v])=>(
+          {[["📍 Localização","Thornbriar Fortress — Demeniss (missão 'The Cursed Knight', Capítulo 8)"],["⚠️ Dificuldade","★★★★☆"],["🏆 Recompensa","Armor set completo do Fallen Kingdom"]].map(([k,v])=>(
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs">{k}</p><p className="text-muted-foreground">{v}</p></div>
           ))}
         </div>
@@ -372,7 +372,7 @@ const CrimsonDesertBosses = () => {
           <span className="text-red-400">18.</span> T'rukan the Ascended — O Boss Mais Rápido do Jogo
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
-          {[["📍 Localização","Demeniss — missão principal (Capítulo 9)"],["⚠️ Dificuldade","★★★★★"],["🏆 Recompensa","Abyss Artifact + itens raros"]].map(([k,v])=>(
+          {[["📍 Localização","Serpent Marsh — Demeniss (missão principal, Capítulo 9)"],["⚠️ Dificuldade","★★★★★"],["🏆 Recompensa","Abyss Artifact + itens raros"]].map(([k,v])=>(
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs">{k}</p><p className="text-muted-foreground">{v}</p></div>
           ))}
         </div>
@@ -386,7 +386,7 @@ const CrimsonDesertBosses = () => {
           <span className="text-red-400">19.</span> Master Du — O Sábio com Lasers (Secreto)
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
-          {[["📍 Localização","Cloister of Enlightenment — acessado após derrotar Hexe Marie, T'rukan e Goyen"],["⚠️ Dificuldade","★★★★★ (lasers matam instantaneamente)"],["🏆 Recompensa","Habilidades de escalada de parede + combos especiais. Não aparece na aba Conhecimento"]].map(([k,v])=>(
+          {[["📍 Localização","Cloister of Enlightenment — Hernand (acessado após derrotar Hexe Marie, T'rukan e Goyen)"],["⚠️ Dificuldade","★★★★★ (lasers matam instantaneamente)"],["🏆 Recompensa","Habilidades de escalada de parede + combos especiais. Não aparece na aba Conhecimento"]].map(([k,v])=>(
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs">{k}</p><p className="text-muted-foreground">{v}</p></div>
           ))}
         </div>
@@ -400,7 +400,7 @@ const CrimsonDesertBosses = () => {
           <span className="text-red-400">20.</span> Antumbra's Sword — A Lâmina das Ilusões
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
-          {[["📍 Localização","Sanctum of Absolution — missão 'Cloister of Ruination'"],["⚠️ Dificuldade","★★★★☆"],["🏆 Recompensa","Abyss Artifact + Vessel of Dark Pursuit"]].map(([k,v])=>(
+          {[["📍 Localização","Sanctum of Absolution — Hernand (região do Abyss)"],["⚠️ Dificuldade","★★★★☆"],["🏆 Recompensa","Abyss Artifact + Vessel of Dark Pursuit"]].map(([k,v])=>(
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs">{k}</p><p className="text-muted-foreground">{v}</p></div>
           ))}
         </div>
@@ -435,7 +435,7 @@ const CrimsonDesertBosses = () => {
           <span className="text-red-400">Final #1.</span> Corrupted Caliburn (Gabriel Caliburn) — 3 Fases
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
-          {[["📍 Localização","The Abyss — missão 'A Shadow in the Void'"],["⚠️ Dificuldade","★★★★★"],["🏆 Recompensa","Espada +28 ataque (Abyssal Rays, Attack 1 e Attack 2 Gears) — uma das melhores do jogo"]].map(([k,v])=>(
+          {[["📍 Localização","The Abyss — Hernand (missão 'A Shadow in the Void')"],["⚠️ Dificuldade","★★★★★"],["🏆 Recompensa","Espada +28 ataque (Abyssal Rays, Attack 1 e Attack 2 Gears) — uma das melhores do jogo"]].map(([k,v])=>(
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs">{k}</p><p className="text-muted-foreground">{v}</p></div>
           ))}
         </div>
@@ -449,7 +449,7 @@ const CrimsonDesertBosses = () => {
           <span className="text-red-400">Final #2.</span> Myurdin, Avatar de Umbra — O Boss Mais Difícil do Jogo
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
-          {[["📍 Localização","The Abyss — diretamente após Corrupted Caliburn"],["⚠️ Dificuldade","★★★★★ (objetivamente o boss mais difícil)"],["🏆 Recompensa","Progressão para o boss final"]].map(([k,v])=>(
+          {[["📍 Localização","Ashclaw Keep — Pailune (Lava Myurdin, Capítulo 7) → confronto final no Abyss"],["⚠️ Dificuldade","★★★★★ (objetivamente o boss mais difícil)"],["🏆 Recompensa","Progressão para o boss final"]].map(([k,v])=>(
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs">{k}</p><p className="text-muted-foreground">{v}</p></div>
           ))}
         </div>
@@ -515,20 +515,23 @@ const CrimsonDesertBosses = () => {
             </TableHeader>
             <TableBody>
               {[
-                ["Queen Stoneback Crab","Stoneback Crab Wetlands, Delesyia / The Wolf's Ballad","Diederik como vendor + itens raros","★★★★☆"],
-                ["Ator, Archon of Antumbra","Sanctums — último da série Antumbra (Sword, Staff, Spear, Ator)","Abyss Artifact poderoso + itens do set Antumbra","★★★★★"],
-                ["Beloth the Darksworn","Exploração — região de Demeniss","Equipamento exclusivo de magia das trevas","★★★★☆"],
-                ["Master Du","Cloister of Enlightenment (secr.) — após Hexe Marie + T'rukan + Goyen","Habilidades de escalada de parede + combos aéreos","★★★★★"],
-                ["The Forgotten General","Delesyia — exploração livre","Armor set completo do general","★★★★☆"],
-                ["White Bear of the High Mountains","Montanhas — Delesyia","Itens exclusivos de urso + artefato","★★★★☆"],
-                ["Tarandus the Ashen","Crimson Desert region — exploração","Abyss Artifact + Tarandus Ashen Armor","★★★★☆"],
-                ["Ice Walker","Região nevada — exploração","Habilidades de movimentação no gelo","★★★☆☆"],
-                ["Moren the Mistwood Huntmaster","Floresta de névoa — missão de facção","Arco exclusivo + habilidades de caça","★★★☆☆"],
-                ["Keglord Garnier Mk. XXIII","Complexo mecânico de Marni","Blueprints de armas mecânicas","★★★★☆"],
-                ["Crookrock Walker","Crimson Desert region","Artefato + materiais raros de pedra","★★★☆☆"],
-                ["Walter Lanford","Demeniss — missão de facção avançada","Equipamento de mercenário exclusivo","★★★★☆"],
-                ["Hemon Beindel","Pailune — missão de facção","Abyss Artifact + habilidade nova","★★★☆☆"],
-                ["One-Eyed Jackal Captain","Hernand — exploração / facção dos Jackals","Equipamento do clã + armas","★★★☆☆"],
+                ["Queen Stoneback Crab","Stoneback Crab Wetlands, Delesyia / The Queen's Lake (Diederik)","Diederik vendor + itens raros","★★★★☆"],
+                ["Queen Bismuth Oreback Crab","Delesyia (variante mineral da Stoneback Crab)","Itens raros + materiais únicos","★★★★☆"],
+                ["Ator, Archon of Antumbra","The Abyss — último da série Antumbra (Sword, Staff, Spear, Ator)","Abyss Artifact + itens do set Antumbra (HP 11.000)","★★★★★"],
+                ["Beloth, the Darksworn","The Abyss — World Boss (HP 13.000, Halberd)","Halberd raro + magia das trevas","★★★★★"],
+                ["The Forgotten General","The Abyss — World Boss (HP 13.000)","Armor set completo do general","★★★★★"],
+                ["Master Du","Cloister of Enlightenment, Hernand (secr.) — após Hexe Marie + T'rukan + Goyen","Wall climb + combos aéreos","★★★★★"],
+                ["White Bear of the High Mountains","Fort Askelund, Pailune (quest 'Unending Threat')","Two-Hand Axe lendário","★★★★☆"],
+                ["Tarandus the Ashen","Região oeste do Crimson Desert (próximo a Urdavah)","Tarandus Ashen War Hammer","★★★★☆"],
+                ["Muskan — Emperor of the Bonepit","The Bonepit, Crimson Desert","Itens raros + título","★★★★☆"],
+                ["Moren, the Mistwood Huntmaster","Mistwood — Hernand","Sword & Tower Shield exclusivos","★★★☆☆"],
+                ["Marni's Excavatron","Karin Quarry, Hernand (sidequest 'Estate in Dismay')","Blueprints mecânicos","★★★☆☆"],
+                ["Crimson Nightmare","Fort Perwin, Hernand (sidequest 'Continuing Concern')","Itens raros + recompensas únicas","★★★☆☆"],
+                ["Queen Spider","Arboria Castle, Hernand (Queen of the Silkspun Citadel)","Materiais de aranha raros","★★★☆☆"],
+                ["Walter Lanford","Fort Warspike, Hernand (sidequest 'Name Written in Blood')","Shotgun único + Equipamento de mercenário","★★★★☆"],
+                ["Hemon Beindel","Hernand — facção","Two-Hand Sword + Abyss Artifact","★★★☆☆"],
+                ["One-Eyed Jackal Captain","Crimson Desert — facção dos Jackals","Equipamento do clã + armas","★★★☆☆"],
+                ["Black Fang","Forest of Wolves, Hernand (lobo lendário)","Possibilidade de domar como montaria","★★★☆☆"],
               ].map(([b,l,r,d]) => (
                 <TableRow key={b}>
                   <TableCell className="font-medium">{b}</TableCell>
