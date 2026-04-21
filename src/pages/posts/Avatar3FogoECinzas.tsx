@@ -49,6 +49,8 @@ const Avatar3FogoECinzas = () => {
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high"
+          loading="eager"
+          decoding="async"
           src={avatarFireImg}
           alt="Avatar 3 Fire and Ash - Povo das Cinzas de Pandora"
           className="w-full h-full object-cover"

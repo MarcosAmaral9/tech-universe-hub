@@ -54,6 +54,8 @@ const ACRogue = () => {
       {/* Featured Image */}
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high"
+          loading="eager"
+          decoding="async"
           src={acRogueImg}
           alt="Assassin's Creed Rogue - Review 2026 Templário PC gamer"
           className="w-full h-full object-cover"

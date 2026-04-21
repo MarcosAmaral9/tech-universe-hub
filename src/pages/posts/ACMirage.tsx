@@ -55,6 +55,8 @@ const ACMirage = () => {
       {/* Featured Image */}
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high"
+          loading="eager"
+          decoding="async"
           src={acMirageImg}
           alt="Assassin's Creed Mirage - Review 2026 furtividade Bagdá PC gamer"
           className="w-full h-full object-cover"

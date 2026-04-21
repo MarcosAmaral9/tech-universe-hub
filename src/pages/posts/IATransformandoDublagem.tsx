@@ -45,6 +45,8 @@ const IATransformandoDublagem = () => {
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high"
+          loading="eager"
+          decoding="async"
           src={aiAnimeDubbingImg}
           alt="IA transformando dublagem de animes - Voice Cloning e tradução"
           className="w-full h-full object-cover"

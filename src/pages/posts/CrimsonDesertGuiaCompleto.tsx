@@ -38,7 +38,14 @@ const CrimsonDesertGuiaCompleto = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchPriority="high" src={crimsonGuiaImg} alt="Crimson Desert 2026 guia completo" className="w-full h-full object-cover" />
+        <img
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
+          src={crimsonGuiaImg}
+          alt="Crimson Desert 2026 guia completo"
+          className="w-full h-full object-cover"
+        />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">

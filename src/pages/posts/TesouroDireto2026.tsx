@@ -81,7 +81,9 @@ const TesouroDireto2026 = () => {
         </header>
 
         <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-          <img fetchpriority="high" src={tesouroDiretoImg} alt="Tesouro Direto 2026 - Guia Completo" className="w-full h-full object-cover" />
+          <img fetchpriority="high"
+          loading="eager"
+          decoding="async" src={tesouroDiretoImg} alt="Tesouro Direto 2026 - Guia Completo" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
         </div>
 

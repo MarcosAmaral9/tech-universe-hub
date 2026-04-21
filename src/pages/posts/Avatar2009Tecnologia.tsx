@@ -49,6 +49,8 @@ const Avatar2009Tecnologia = () => {
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high"
+          loading="eager"
+          decoding="async"
           src={avatarPandoraImg}
           alt="Avatar 2009 Pandora - Revolução tecnológica no cinema"
           className="w-full h-full object-cover"

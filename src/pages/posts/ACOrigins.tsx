@@ -54,6 +54,8 @@ const ACOrigins = () => {
       {/* Featured Image */}
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high"
+          loading="eager"
+          decoding="async"
           src={acOriginsImg}
           alt="Assassin's Creed Origins - Review 2026 Egito Antigo PC gamer"
           className="w-full h-full object-cover"

@@ -54,6 +54,8 @@ const ACBlackFlag = () => {
       {/* Featured Image */}
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high"
+          loading="eager"
+          decoding="async"
           src={acBlackFlagImg}
           alt="Assassin's Creed IV Black Flag - Melhor jogo de piratas PC gamer"
           className="w-full h-full object-cover"

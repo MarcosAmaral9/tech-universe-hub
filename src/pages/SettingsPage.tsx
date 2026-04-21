@@ -185,18 +185,18 @@ const SettingsPage = () => {
   };
 
   return (
-    <div className="min-h-[70vh] py-12 px-4">
+    <div className="min-h-[70vh] py-6 px-3 sm:px-4 sm:py-10 md:py-12">
       <DynamicSEO />
-      <div className="max-w-2xl mx-auto space-y-10">
+      <div className="max-w-2xl mx-auto space-y-5 sm:space-y-8 md:space-y-10">
         {/* Hero */}
         <div className="text-center space-y-4">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-primary/10 mb-2">
-            <Settings className="w-10 h-10 text-primary" />
+          <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl bg-primary/10 mb-2">
+            <Settings className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-primary" />
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold font-orbitron text-foreground">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-orbitron text-foreground">
             Configurações
           </h1>
-          <p className="text-muted-foreground text-lg max-w-md mx-auto">
+          <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-md mx-auto">
             Personalize sua experiência no VICIO&lt;CODE&gt;
           </p>
         </div>
@@ -227,8 +227,8 @@ const SettingsPage = () => {
         {activeTab === "history" && user && (
           <div className="space-y-6">
             {/* Last read articles */}
-            <section className="rounded-2xl border border-border bg-card p-6">
-              <h2 className="text-lg font-semibold flex items-center gap-2 mb-4">
+            <section className="rounded-2xl border border-border bg-card p-4 sm:p-6">
+              <h2 className="text-base sm:text-lg font-semibold flex items-center gap-2 mb-4">
                 <BookOpen className="w-5 h-5 text-primary" /> Últimos artigos lidos
               </h2>
               {readHistory.length === 0 ? (
@@ -257,8 +257,8 @@ const SettingsPage = () => {
             </section>
 
             {/* Last comments */}
-            <section className="rounded-2xl border border-border bg-card p-6">
-              <h2 className="text-lg font-semibold flex items-center gap-2 mb-4">
+            <section className="rounded-2xl border border-border bg-card p-4 sm:p-6">
+              <h2 className="text-base sm:text-lg font-semibold flex items-center gap-2 mb-4">
                 <MessageSquare className="w-5 h-5 text-primary" /> Últimos comentários
               </h2>
               {commentHistory.length === 0 ? (
@@ -287,8 +287,8 @@ const SettingsPage = () => {
             </section>
 
             {/* Favorite Assets */}
-            <section className="rounded-2xl border border-border bg-card p-6">
-              <h2 className="text-lg font-semibold flex items-center gap-2 mb-4">
+            <section className="rounded-2xl border border-border bg-card p-4 sm:p-6">
+              <h2 className="text-base sm:text-lg font-semibold flex items-center gap-2 mb-4">
                 <Star className="w-5 h-5 text-yellow-500" /> Ativos Favoritos
               </h2>
               {favLoading ? (
@@ -331,12 +331,12 @@ const SettingsPage = () => {
 
         {/* Wrap all settings sections in a conditional div */}
         {activeTab === "settings" && (
-        <div className="space-y-10 pb-1">
+        <div className="space-y-5 sm:space-y-8 md:space-y-10 pb-1">
 
         {/* User Profile Section */}
         {user && profile && (
-          <section className="rounded-2xl border border-border bg-card p-6 space-y-4">
-            <h2 className="text-lg font-semibold text-foreground flex items-center gap-2">
+          <section className="rounded-2xl border border-border bg-card p-4 sm:p-6 space-y-4">
+            <h2 className="text-base sm:text-lg font-semibold text-foreground flex items-center gap-2">
               <User className="w-5 h-5 text-primary" /> Meu Perfil
             </h2>
 
@@ -431,7 +431,7 @@ const SettingsPage = () => {
         )}
 
         {/* Settings Card */}
-        <section className="rounded-2xl border border-border bg-card p-6 space-y-4">
+        <section className="rounded-2xl border border-border bg-card p-4 sm:p-6 space-y-4">
           {/* Theme */}
           <div className="flex items-center justify-between py-3 border-b border-border">
             <div className="flex items-center gap-3">

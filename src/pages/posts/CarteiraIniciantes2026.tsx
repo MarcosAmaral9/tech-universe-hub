@@ -62,6 +62,14 @@ const AnimatedCounter = ({ target, duration = 2000 }: { target: number; duration
   const hasAnimated = useRef(false);
 
   useEffect(() => {
+    trackArticleRead(
+      "carteira-investimentos-iniciantes-2026",
+      "Carteira de Investimentos para Iniciantes 2026: Guia Completo",
+      "invest"
+    );
+  }, []);
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated.current) {
@@ -200,7 +208,9 @@ const CarteiraIniciantes2026 = () => {
         </header>
 
         <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-          <img fetchpriority="high" src={carteiraImg} alt="Carteira de Investimentos 2026" className="w-full h-full object-cover" />
+          <img fetchpriority="high"
+          loading="eager"
+          decoding="async" src={carteiraImg} alt="Carteira de Investimentos 2026" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
         </div>
 

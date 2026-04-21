@@ -54,6 +54,8 @@ const AC3Remastered = () => {
       {/* Featured Image */}
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high"
+          loading="eager"
+          decoding="async"
           src={ac3Img}
           alt="Assassin's Creed III Remastered - Review 2026 PC gamer gameplay Revolução Americana Connor Kenway"
           className="w-full h-full object-cover"

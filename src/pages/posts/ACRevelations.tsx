@@ -37,7 +37,9 @@ const ACRevelations = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high" src={acRevImg} alt="Assassin's Creed Revelations — Ezio em Constantinopla" className="w-full h-full object-cover" />
+        <img fetchpriority="high"
+          loading="eager"
+          decoding="async" src={acRevImg} alt="Assassin's Creed Revelations — Ezio em Constantinopla" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
       </div>
 

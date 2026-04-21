@@ -37,7 +37,9 @@ const AC2Ezio = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high" src={ac2Img} alt="Assassin's Creed II — Ezio Auditore na Itália Renascentista" className="w-full h-full object-cover" />
+        <img fetchpriority="high"
+          loading="eager"
+          decoding="async" src={ac2Img} alt="Assassin's Creed II — Ezio Auditore na Itália Renascentista" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
       </div>
 

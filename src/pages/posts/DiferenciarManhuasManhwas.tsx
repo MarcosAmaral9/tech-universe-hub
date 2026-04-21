@@ -45,6 +45,8 @@ const DiferenciarManhuasManhwas = () => {
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high"
+          loading="eager"
+          decoding="async"
           src={manhwaVsManuaImg}
           alt="Manhwa vs Manhua - Diferenças entre quadrinhos coreanos e chineses"
           className="w-full h-full object-cover"

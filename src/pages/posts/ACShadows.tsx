@@ -54,6 +54,8 @@ const ACShadows = () => {
       {/* Featured Image */}
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high"
+          loading="eager"
+          decoding="async"
           src={acShadowsImg}
           alt="Assassin's Creed Shadows - Review 2026 Japão Feudal PC gamer"
           className="w-full h-full object-cover"

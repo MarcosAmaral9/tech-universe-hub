@@ -54,6 +54,8 @@ const ACOdyssey = () => {
       {/* Featured Image */}
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high"
+          loading="eager"
+          decoding="async"
           src={acOdysseyImg}
           alt="Assassin's Creed Odyssey - Review 2026 Grécia Antiga PC gamer"
           className="w-full h-full object-cover"

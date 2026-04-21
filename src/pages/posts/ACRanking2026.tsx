@@ -125,6 +125,8 @@ const ACRanking2026 = () => {
       {/* Featured Image */}
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high"
+          loading="eager"
+          decoding="async"
           src={acPortalImg}
           alt="Assassin's Creed Ranking"
           className="w-full h-full object-cover"

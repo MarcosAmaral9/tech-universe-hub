@@ -39,7 +39,9 @@ const AC1Altair = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high" src={ac1Img} alt="Assassin's Creed 1 — Altaïr na Terra Santa 1191" className="w-full h-full object-cover" />
+        <img fetchpriority="high"
+          loading="eager"
+          decoding="async" src={ac1Img} alt="Assassin's Creed 1 — Altaïr na Terra Santa 1191" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
       </div>
 
