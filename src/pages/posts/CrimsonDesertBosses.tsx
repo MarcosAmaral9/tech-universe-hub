@@ -9,6 +9,7 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import CrimsonDesertBossMap from "@/components/CrimsonDesertBossMap";
 import heroImg from "@/assets/crimson-desert-bosses.webp";
 
 const CrimsonDesertBosses = () => {
@@ -82,12 +83,21 @@ const CrimsonDesertBosses = () => {
         </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <MapPin className="h-7 w-7 text-red-400" />
+          Mapa Interativo dos Bosses de Pywel
+        </h2>
+        <p>
+          Use o mapa abaixo para localizar cada boss em Pywel. Filtre por <strong>História</strong>, <strong>Opcionais</strong> ou <strong>Secretos</strong>, dê zoom para explorar regiões específicas e clique em qualquer marcador para abrir os detalhes e pular direto para a seção do guia.
+        </p>
+        <CrimsonDesertBossMap />
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Skull className="h-7 w-7 text-red-400" />
           Bosses da Campanha Principal — Ordem Cronológica
         </h2>
 
         {/* MYURDIN PROLOGUE */}
-        <h3 className="text-xl font-bold mt-8 mb-3 flex items-center gap-2">
+        <h3 id="boss-myurdin-prologo" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
           <span className="text-red-400">Prólogo.</span> Myurdin — Líder dos Black Bears (1ª aparição)
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
