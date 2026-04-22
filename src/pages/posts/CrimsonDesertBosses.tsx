@@ -143,7 +143,7 @@ const CrimsonDesertBosses = () => {
           <span className="text-red-400">03.</span> Reed Devil — O Demônio dos Juncos
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
-          {[["📍 Localização","Frozen Soul Mountain — Hernand (missão 'Dance with the Devil', Capítulo 3)"],["⚠️ Dificuldade","★★★☆☆"],["🏆 Recompensa","Skill Swift Stab + Artefato Abyss"]].map(([k,v])=>(
+          {[["📍 Localização","Mountain of Frozen Souls — Pailune (pico mais alto da região, missão 'Dance with the Devil', Capítulo 3)"],["⚠️ Dificuldade","★★★☆☆"],["🏆 Recompensa","Skill Swift Stab + Artefato Abyss"]].map(([k,v])=>(
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs">{k}</p><p className="text-muted-foreground">{v}</p></div>
           ))}
         </div>
@@ -482,14 +482,14 @@ const CrimsonDesertBosses = () => {
           <span className="text-red-400">★</span> Queen Stoneback Crab — Boss Icônico de Escalada
         </h3>
         <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
-          {[["📍 Localização","Stoneback Crab Wetlands, Delesyia — missão 'The Wolf's Ballad' (Redfox Merchants) ou 'The Queen's Lake' com Diederik"],["⚠️ Dificuldade","★★★★☆ (mecânica de escalada exige stamina alta)"],["🏆 Recompensa","Diederik se junta como vendor no camp + equipamento exclusivo. Desbloqueado após progressão suficiente nas missões de facção de Delesyia"]].map(([k,v])=>(
+          {[["📍 Localização","Redfox Forest, Hernand (Goddesses Lake / 'The Queen's Lake' com Diederik) — também conhecida pelos Redfox Merchants na missão 'The Wolf's Ballad'"],["⚠️ Dificuldade","★★★★☆ (mecânica de escalada exige stamina alta)"],["🏆 Recompensa","Diederik se junta como vendor no camp + equipamento exclusivo. Desbloqueado após progressão suficiente nas missões de facção"]].map(([k,v])=>(
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs">{k}</p><p className="text-muted-foreground">{v}</p></div>
           ))}
         </div>
         <p>
           A Queen Stoneback Crab foi um dos bosses mais icônicos mostrados nos trailers do jogo antes do lançamento — e viver o momento em que a "colina coberta de minerais" começa a se mover é um dos highlights do jogo. <strong>Ataques normais causam quase zero dano</strong> na carapaça dela. A única forma de vencê-la é subir nas costas. Invista em Stamina (Abyss Artifacts) antes desta luta — você vai precisar muito para se agarrar às costas dela.
         </p>
-        <p><strong>Como iniciar:</strong> Fale com Diederik (leste da Cidade de Demeniss, perto de Bardtree Gorge, Delesyia). Ele levará você até uma área de minerais. Quando você se aproximar do que parece ser uma formação rochosa central — a batalha começa automaticamente via cutscene.</p>
+        <p><strong>Como iniciar:</strong> Fale com Diederik (NPC Greymane perdido, encontrado a leste da Cidade de Demeniss). Ele levará você até a Goddesses Lake, na Redfox Forest (Hernand). Quando você se aproximar do que parece ser uma formação rochosa central — a batalha começa automaticamente via cutscene.</p>
         <div className="not-prose my-4 space-y-2">
           {[
             ["Fase 1 — Suba e esfaqueie os pontos fracos", "Use Jump + Triple Force Jump para subir na carapaça. Segure Cling (R3) para se agarrar enquanto ela se move. Localize as 3 fissuras vermelhas brilhantes na carapaça: direita inferior, centro (escondida sob minerais — quebre-os com Force Palm primeiro), esquerda superior (escondida sob mais minerais). Esfaqueie cada ponto fraco. Ela dispara jatos de vapor aleatoriamente — pode te arremessar no ar sem aviso, cure imediatamente ao cair."],
@@ -515,7 +515,7 @@ const CrimsonDesertBosses = () => {
             </TableHeader>
             <TableBody>
               {[
-                ["Queen Stoneback Crab","Stoneback Crab Wetlands, Delesyia / The Queen's Lake (Diederik)","Diederik vendor + itens raros","★★★★☆"],
+                ["Queen Stoneback Crab","Redfox Forest, Hernand (Goddesses Lake / 'The Queen's Lake' com Diederik)","Diederik vendor + itens raros","★★★★☆"],
                 ["Queen Bismuth Oreback Crab","Delesyia (variante mineral da Stoneback Crab)","Itens raros + materiais únicos","★★★★☆"],
                 ["Ator, Archon of Antumbra","The Abyss — último da série Antumbra (Sword, Staff, Spear, Ator)","Abyss Artifact + itens do set Antumbra (HP 11.000)","★★★★★"],
                 ["Beloth, the Darksworn","The Abyss — World Boss (HP 13.000, Halberd)","Halberd raro + magia das trevas","★★★★★"],
