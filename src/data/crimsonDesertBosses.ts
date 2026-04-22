@@ -8,348 +8,92 @@ export interface BossMarker {
   regiao: string;
   dificuldade: 1 | 2 | 3 | 4 | 5;
   recompensa: string;
-  /** Posição X em % (0-100) sobre a imagem do mapa (1178x1074) */
+  /** Posição X em % (0-100) sobre a imagem do mapa (1178×1074px, ratio ~1.1:1) */
   x: number;
-  /** Posição Y em % (0-100) sobre a imagem do mapa (1178x1074) */
+  /** Posição Y em % (0-100) sobre a imagem do mapa */
   y: number;
-  /** ID âncora no artigo (para scroll) */
   anchorId: string;
 }
 
 /**
- * Coordenadas TRIANGULADAS a partir das duas imagens oficiais do Map Genie
- * (mapgenie.io/crimson-desert/maps/pywel) — abril 2026:
+ * Dados verificados — fontes (abril 2026):
+ *   gamingpromax.com, powerpyx.com, gamerant.com, beebom.com, vulkk.com
  *
- *   - Imagem "História" (coroas, ~38 pins) → bosses tipo "historia" e "secreto"
- *   - Imagem "Opcionais" (caveiras, ~26 pins) → bosses tipo "opcional"
- *
- * Âncoras geográficas usadas para calibração (mapa 1178x1074):
- *   PAILUNE          — norte           ~14-32% / 14-32%
- *   SILVER WOLF MTN  — norte centro    ~26-30% / 22-26%
- *   HERNAND (label)  — SW              ~12-22% / 70-78%
- *   DEMENISS         — centro-sul      ~30-50% / 50-65%
- *   GORTHAK          — SW de Delesyia  ~36-44% / 70-74%
- *   DELESYIA (label) — sul             ~50-60% / 72-78%
- *   URDAVAH          — NE              ~62-72% / 24-30%
- *   TASHKALP         — NE              ~56-64% / 30-36%
- *   CRIMSON DESERT   — NE              ~64-86% / 18-46%
- *   THE OCEAN        — SE              ~72-90% / 55-75%
+ * MAPA 1178×1074px (quasi-quadrado, ratio 1.097):
+ *   Hernand      (início, SO):       x 08-38, y 52-88
+ *   Pailune      (norte, neve):      x 22-48, y 12-52
+ *   Demeniss     (centro, arcano):   x 38-65, y 40-72
+ *   Delesyia     (SE, tech):         x 55-82, y 62-88
+ *   Crimson Desert (NE, árido):      x 52-90, y 10-44
+ *   The Abyss    (portais):          espalhado
  */
 export const crimsonDesertBosses: BossMarker[] = [
-  // ============================================================
-  // CAMPANHA PRINCIPAL — coroas roxas da imagem "História"
-  // Cluster Hernand SW (10 pins entre x:8-22 / y:60-78)
-  // ============================================================
-  {
-    id: "myurdin-prologo", numero: "P", nome: "Myurdin (Tutorial — Prólogo)",
-    tipo: "historia", regiao: "Acampamento Greymane — Hernand (extremo oeste)",
-    dificuldade: 1, recompensa: "Tutorial de combate básico",
-    x: 9, y: 76, anchorId: "boss-myurdin-prologo",
-  },
-  {
-    id: "matthias", numero: "1", nome: "Matthias",
-    tipo: "historia", regiao: "Praça da cidade de Hernand (centro de Hernand)",
-    dificuldade: 2, recompensa: "Skill Pump Kick",
-    x: 14, y: 70, anchorId: "boss-matthias",
-  },
-  {
-    id: "kailok", numero: "2", nome: "Kailok the Hornsplitter",
-    tipo: "historia", regiao: "Goldleaf Guildhouse — Hernand (NE da cidade)",
-    dificuldade: 2, recompensa: "Sword of the Lord + Seal of Greed",
-    x: 19, y: 67, anchorId: "boss-kailok",
-  },
-  {
-    id: "reed-devil", numero: "3", nome: "Reed Devil",
-    tipo: "historia", regiao: "Mountain of Frozen Souls — Pailune (norte)",
-    dificuldade: 3, recompensa: "Skill Swift Stab + Abyss Artifact",
-    x: 25, y: 26, anchorId: "boss-reed-devil",
-  },
-  {
-    id: "tenebrum", numero: "4", nome: "Tenebrum",
-    tipo: "historia", regiao: "Scholastone Institute — fronteira Hernand/Pailune",
-    dificuldade: 2, recompensa: "Key to the Spire of the Stars",
-    x: 21, y: 56, anchorId: "boss-tenebrum",
-  },
-  {
-    id: "kearush", numero: "5", nome: "Kearush the Slayer",
-    tipo: "historia", regiao: "Hernand Castle (centro de Hernand)",
-    dificuldade: 5, recompensa: "Arma exclusiva + Abyss Artifact raro",
-    x: 13, y: 73, anchorId: "boss-kearush",
-  },
-  {
-    id: "crowcaller", numero: "6", nome: "Draven the Crowcaller",
-    tipo: "historia", regiao: "Crow's Nest — fronteira norte de Hernand",
-    dificuldade: 4, recompensa: "Tauria Curved Sword + skill Aerial Roll",
-    x: 28, y: 42, anchorId: "boss-crowcaller",
-  },
-  {
-    id: "cassius-morten", numero: "7", nome: "Cassius Morten",
-    tipo: "historia", regiao: "Calphade Castle — Hernand (oeste)",
-    dificuldade: 3, recompensa: "Shield of Betrayal",
-    x: 18, y: 62, anchorId: "boss-cassius-morten",
-  },
-  {
-    id: "white-horn", numero: "8", nome: "White Horn, Shepherd of Souls",
-    tipo: "historia", regiao: "Montanhas de Pailune (sul, fronteira com Hernand)",
-    dificuldade: 4, recompensa: "Arma pesada exclusiva",
-    x: 24, y: 32, anchorId: "boss-white-horn",
-  },
-  {
-    id: "staglord", numero: "9", nome: "Saigord the Staglord",
-    tipo: "historia", regiao: "Icemoor Castle Ruins — Pailune (sul)",
-    dificuldade: 4, recompensa: "Turning Slash Expertise + Staglord's Shield",
-    x: 30, y: 30, anchorId: "boss-staglord",
-  },
-  {
-    id: "hexe-marie", numero: "10", nome: "Hexe Marie",
-    tipo: "historia", regiao: "Floresta de Hernand (sul de Hernand)",
-    dificuldade: 3, recompensa: "Abyss Artifact + necromancia",
-    x: 16, y: 65, anchorId: "boss-hexe-marie",
-  },
-  // Pailune cluster norte (imagem História: ~18-32% / 14-30%)
-  {
-    id: "ludvig", numero: "11", nome: "Ludvig & Awakened Ludvig",
-    tipo: "historia", regiao: "Pailune Castle (norte)",
-    dificuldade: 4, recompensa: "Abyss Artifact + Lariat skill",
-    x: 22, y: 18, anchorId: "boss-ludvig",
-  },
-  {
-    id: "one-armed-ludvig", numero: "12", nome: "One-Armed Ludvig",
-    tipo: "historia", regiao: "Kingshield Mountain — Pailune (norte)",
-    dificuldade: 4, recompensa: "Progressão da história",
-    x: 18, y: 15, anchorId: "boss-one-armed-ludvig",
-  },
-  {
-    id: "myurdin-revanche", numero: "13", nome: "Myurdin (Revanche)",
-    tipo: "historia", regiao: "Hills of No Return — fronteira Hernand/Pailune",
-    dificuldade: 4, recompensa: "Cutscene importante + progressão",
-    x: 32, y: 38, anchorId: "boss-myurdin-revanche",
-  },
-  // Demeniss centro — cluster denso da imagem História (12 pins entre x:30-50 / y:42-62)
-  {
-    id: "gregor", numero: "14", nome: "Gregor the Halberd of Carnage",
-    tipo: "historia", regiao: "Fort Ironclad — Demeniss (oeste)",
-    dificuldade: 4, recompensa: "Golden Vanguard",
-    x: 36, y: 50, anchorId: "boss-gregor",
-  },
-  {
-    id: "fortain", numero: "15", nome: "Fortain the Cursed Knight",
-    tipo: "historia", regiao: "Thornbriar Fortress — Demeniss (centro)",
-    dificuldade: 4, recompensa: "Armor set Fallen Kingdom",
-    x: 42, y: 56, anchorId: "boss-fortain",
-  },
-  {
-    id: "lucian-bastier", numero: "16", nome: "Lucian Bastier (Awakened)",
-    tipo: "historia", regiao: "Spire of Clockwork — Demeniss (centro-leste)",
-    dificuldade: 5, recompensa: "Spire of Clockwork Key",
-    x: 47, y: 58, anchorId: "boss-lucian-bastier",
-  },
-  {
-    id: "trukan", numero: "18", nome: "T'rukan the Ascended",
-    tipo: "historia", regiao: "Serpent Marsh — Demeniss (leste)",
-    dificuldade: 5, recompensa: "Abyss Artifact + raros",
-    x: 50, y: 54, anchorId: "boss-trukan",
-  },
-  {
-    id: "antumbra-sword", numero: "19", nome: "Antumbra's Sword",
-    tipo: "historia", regiao: "Sanctum of Absolution — The Abyss (Demeniss)",
-    dificuldade: 4, recompensa: "Vessel of Dark Pursuit",
-    x: 38, y: 46, anchorId: "boss-antumbra-sword",
-  },
-  {
-    id: "priscus", numero: "20", nome: "Priscus the Ancient",
-    tipo: "historia", regiao: "Spire of Ringing Truth — Pailune (sul)",
-    dificuldade: 4, recompensa: "Blessing of the Immortal",
-    x: 34, y: 44, anchorId: "boss-priscus",
-  },
+  // HERNAND (16 bosses) — região inicial sudoeste
+  { id:"myurdin-prologo",   numero:"P",    nome:"Myurdin (Prólogo)",               tipo:"historia", regiao:"Pailune village area — Prólogo",                      dificuldade:1, recompensa:"Tutorial de combate (luta roteirizada para derrota)",        x:30, y:30, anchorId:"boss-myurdin-prologo" },
+  { id:"matthias",          numero:"1",    nome:"Matthias",                        tipo:"historia", regiao:"Hernand Town Square — Capítulo 1",                    dificuldade:2, recompensa:"Skill Pump Kick",                                           x:22, y:68, anchorId:"boss-matthias" },
+  { id:"kailok",            numero:"2",    nome:"Kailok the Hornsplitter",         tipo:"historia", regiao:"Goldleaf Guildhouse — Hernand, Capítulo 2",           dificuldade:2, recompensa:"Sword of the Lord + Seal of Greed",                        x:26, y:64, anchorId:"boss-kailok" },
+  { id:"reed-devil",        numero:"3",    nome:"Reed Devil",                      tipo:"historia", regiao:"Frozen Soul Mountain — Hernand, Capítulo 3",          dificuldade:3, recompensa:"Skill Swift Stab + Abyss Artifact",                       x:20, y:60, anchorId:"boss-reed-devil" },
+  { id:"tenebrum",          numero:"4",    nome:"Tenebrum",                        tipo:"historia", regiao:"Scholastone Institute — Hernand",                     dificuldade:2, recompensa:"Key to the Spire of the Stars",                           x:18, y:72, anchorId:"boss-tenebrum" },
+  { id:"kearush",           numero:"5",    nome:"Kearush the Slayer",              tipo:"historia", regiao:"Hernand Castle — Uninvited Guest",                    dificuldade:4, recompensa:"Arma exclusiva + Abyss Artifact raro",                    x:24, y:66, anchorId:"boss-kearush" },
+  { id:"crowcaller",        numero:"6",    nome:"Draven the Crowcaller",           tipo:"historia", regiao:"Crow's Nest — The Abyss, Capítulo 6",                 dificuldade:4, recompensa:"Tauria Curved Sword",                                    x:42, y:54, anchorId:"boss-crowcaller" },
+  { id:"cassius-morten",    numero:"7",    nome:"Cassius Morten",                  tipo:"historia", regiao:"City of Calphade — Hernand",                          dificuldade:3, recompensa:"Shield of Betrayal",                                     x:28, y:70, anchorId:"boss-cassius-morten" },
+  { id:"marni-excavatron",  numero:"8",    nome:"Marni's Excavatron",              tipo:"opcional", regiao:"Karin Quarry — Hernand (faction quest)",              dificuldade:3, recompensa:"Blueprints mecânicos (Estate in Dismay)",                 x:16, y:62, anchorId:"boss-marni-excavatron" },
+  { id:"queen-spider",      numero:"9",    nome:"Queen Spider",                    tipo:"opcional", regiao:"Arboria Castle — Hernand (Queen's Nest quest)",        dificuldade:3, recompensa:"Materiais de aranha raros",                              x:12, y:70, anchorId:"boss-queen-spider" },
+  { id:"walter-lanford",    numero:"10",   nome:"Walter Lanford",                  tipo:"opcional", regiao:"Hernand — faction quest",                             dificuldade:4, recompensa:"Shotgun único + Name Written in Blood",                   x:20, y:78, anchorId:"boss-walter-lanford" },
+  { id:"hemon-beindel",     numero:"11",   nome:"Hemon Beindel",                   tipo:"opcional", regiao:"Fort Hellwood — Hernand (faction quest)",              dificuldade:3, recompensa:"Two-Hand Sword + Abyss Artifact",                        x:30, y:76, anchorId:"boss-hemon-beindel" },
+  { id:"queen-stoneback",   numero:"12",   nome:"Queen Stoneback Crab",            tipo:"opcional", regiao:"Hernand Plains — side/faction quest",                 dificuldade:4, recompensa:"Diederik vendor + itens raros",                          x:34, y:80, anchorId:"boss-queen-stoneback" },
+  { id:"staglord",          numero:"13",   nome:"Saigord the Staglord",            tipo:"opcional", regiao:"Icemoor Castle Ruins — Hernand",                      dificuldade:4, recompensa:"Turning Slash Expertise + Staglord's Shield",            x:14, y:76, anchorId:"boss-staglord" },
+  { id:"giath",             numero:"14",   nome:"Giath",                           tipo:"opcional", regiao:"Hernand — opcional",                                  dificuldade:3, recompensa:"Abyss Artifact + itens raros",                           x:32, y:72, anchorId:"boss-giath" },
+  { id:"split-horn",        numero:"15",   nome:"Split Horn",                      tipo:"opcional", regiao:"Near Unicorn Cliffs — Hernand (Rakkash faction)",      dificuldade:3, recompensa:"Equipamento do clã Rakkash",                            x:36, y:60, anchorId:"boss-split-horn" },
 
-  // ============================================================
-  // SEQUÊNCIA FINAL — sul de Demeniss / Delesyia (imagem História)
-  // ============================================================
-  {
-    id: "corrupted-caliburn", numero: "F1", nome: "Corrupted Caliburn",
-    tipo: "historia", regiao: "The Abyss — sob Demeniss",
-    dificuldade: 5, recompensa: "Espada +28 ataque",
-    x: 44, y: 64, anchorId: "boss-corrupted-caliburn",
-  },
-  {
-    id: "myurdin-umbra", numero: "F2", nome: "Lava Myurdin (Avatar de Umbra)",
-    tipo: "historia", regiao: "Ashclaw Keep — Pailune (oeste)",
-    dificuldade: 5, recompensa: "Progressão para boss final",
-    x: 22, y: 28, anchorId: "boss-myurdin-umbra",
-  },
-  {
-    id: "umbra", numero: "F3", nome: "Umbra (Boss Final)",
-    tipo: "historia", regiao: "Mount Berge — Delesyia (clímax montado no dragão)",
-    dificuldade: 5, recompensa: "Créditos + epílogo",
-    x: 56, y: 74, anchorId: "boss-umbra",
-  },
+  // PAILUNE (13 bosses) — norte nevado
+  { id:"myurdin-lava",      numero:"16",   nome:"Myurdin (Lava Myurdin)",          tipo:"historia", regiao:"Pailune — Capítulo 7 (rematch com fogo)",             dificuldade:4, recompensa:"Progressão da história + cutscene",                      x:32, y:36, anchorId:"boss-myurdin-lava" },
+  { id:"ludvig",            numero:"17",   nome:"Ludvig",                          tipo:"historia", regiao:"Demeniss Mountains — faction quest",                  dificuldade:4, recompensa:"Abyss Artifact + Lariat skill",                          x:48, y:44, anchorId:"boss-ludvig" },
+  { id:"one-armed-ludvig",  numero:"18",   nome:"One-Armed Ludvig",                tipo:"historia", regiao:"Pailune — Capítulo 8 (joga como Oongka)",             dificuldade:4, recompensa:"Progressão da história",                                x:28, y:26, anchorId:"boss-one-armed-ludvig" },
+  { id:"white-bearclaw",    numero:"19",   nome:"White Bearclaw",                  tipo:"opcional", regiao:"Pailune — faction/opcional",                          dificuldade:3, recompensa:"Materiais raros de urso branco",                         x:24, y:34, anchorId:"boss-white-bearclaw" },
+  { id:"white-bear",        numero:"20",   nome:"White Bear of the High Mountains",tipo:"opcional", regiao:"Snowhaven Hearth — Pailune (Skoghorn faction)",        dificuldade:4, recompensa:"Two-Hand Axe lendário + montura urso",                 x:26, y:20, anchorId:"boss-white-bear" },
+  { id:"black-fang",        numero:"21",   nome:"Black Fang",                      tipo:"opcional", regiao:"Hernand North Gate → Howling Hollow",                 dificuldade:3, recompensa:"Shadow Claw + Abyss Artifact + Leebur's Soul",          x:22, y:56, anchorId:"boss-black-fang" },
+  { id:"praevus",           numero:"22",   nome:"Praevus the Ancient",             tipo:"opcional", regiao:"Pailune — opcional/faction (Ancient-class)",           dificuldade:4, recompensa:"Blessing of the Immortal",                             x:36, y:22, anchorId:"boss-praevus" },
+  { id:"primus",            numero:"23",   nome:"Primus the Ancient",              tipo:"opcional", regiao:"Pailune — opcional/faction (Ancient-class)",           dificuldade:4, recompensa:"Itens raros de Ancient",                               x:40, y:28, anchorId:"boss-primus" },
+  { id:"white-horn",        numero:"24",   nome:"White Horn, Shepherd of Souls",   tipo:"opcional", regiao:"Pailune — perto de Snowhaven Hearth",                 dificuldade:4, recompensa:"Eye of the Sky + Pillar of Wind + Infinite Arrows II", x:30, y:44, anchorId:"boss-white-horn" },
+  { id:"muskan-pailune",    numero:"25",   nome:"Muskan",                          tipo:"opcional", regiao:"Pailune — opcional",                                  dificuldade:4, recompensa:"Itens raros + título",                                  x:44, y:36, anchorId:"boss-muskan-pailune" },
+  { id:"ator-antumbra",     numero:"26",   nome:"Ator, Archon of Antumbra",        tipo:"opcional", regiao:"Cloister of Ruination — Pailune (Antumbra Order)",    dificuldade:5, recompensa:"Abyss Artifact poderoso (requer Sword+Spear+Staff)",    x:46, y:32, anchorId:"boss-ator-antumbra" },
+  { id:"antumbra-sword",    numero:"27",   nome:"Antumbra's Sword",                tipo:"opcional", regiao:"Pailune/Abyss Sanctum — Darkness Over the Sanctum",   dificuldade:4, recompensa:"Vessel of Dark Pursuit",                              x:38, y:40, anchorId:"boss-antumbra-sword" },
+  { id:"antumbra-spear",    numero:"28",   nome:"Antumbra's Spear",                tipo:"opcional", regiao:"Pailune/Abyss Sanctum — Darkness Over the Sanctum",   dificuldade:4, recompensa:"Lança das trevas + fragmento de Abyss",               x:42, y:46, anchorId:"boss-antumbra-spear" },
 
-  // ============================================================
-  // SECRETOS — não aparecem no diário Conhecimento
-  // ============================================================
-  {
-    id: "goyen", numero: "S1", nome: "Goyen (Secreto)",
-    tipo: "secreto", regiao: "Nest of Valor — Spire of the Sun (norte de Hernand)",
-    dificuldade: 5, recompensa: "Meteor Kick + itens raros",
-    x: 26, y: 48, anchorId: "boss-goyen",
-  },
-  {
-    id: "master-du", numero: "S2", nome: "Master Du (Secreto)",
-    tipo: "secreto", regiao: "Cloister of Enlightenment — Hernand (sul)",
-    dificuldade: 5, recompensa: "Wall climb + combos especiais",
-    x: 22, y: 76, anchorId: "boss-master-du",
-  },
+  // DEMENISS (16 bosses) — centro arcano
+  { id:"gregor",            numero:"29",   nome:"Gregor the Halberd of Carnage",   tipo:"historia", regiao:"Fort Ironclad — Demeniss, Capítulo 8",                dificuldade:4, recompensa:"Golden Vanguard",                                       x:50, y:54, anchorId:"boss-gregor" },
+  { id:"fortain",           numero:"30",   nome:"Fortain the Cursed Knight",       tipo:"historia", regiao:"Demeniss — Capítulo 8 (invoca aliado fantasma)",      dificuldade:4, recompensa:"Armor set Fallen Kingdom",                              x:54, y:60, anchorId:"boss-fortain" },
+  { id:"lucian-bastier",    numero:"31",   nome:"Lucian Bastier",                  tipo:"historia", regiao:"City of Caliburn — Demeniss",                         dificuldade:4, recompensa:"Spire of Clockwork Key",                               x:48, y:58, anchorId:"boss-lucian-bastier" },
+  { id:"lucian-awakened",   numero:"32",   nome:"Awakened Lucian Bastier",         tipo:"historia", regiao:"Demeniss — segue diretamente após Lucian",            dificuldade:5, recompensa:"Abyss Artifact + progressão",                           x:50, y:62, anchorId:"boss-lucian-awakened" },
+  { id:"trukan",            numero:"33",   nome:"T'rukan the Ascended",            tipo:"historia", regiao:"Demeniss — missão principal",                         dificuldade:5, recompensa:"Abyss Artifact + itens raros",                          x:58, y:52, anchorId:"boss-trukan" },
+  { id:"gabriel-caliburn",  numero:"34",   nome:"Gabriel Caliburn",                tipo:"historia", regiao:"Demeniss — missão principal",                         dificuldade:4, recompensa:"Progressão da história",                                x:56, y:58, anchorId:"boss-gabriel-caliburn" },
+  { id:"stonewalker",       numero:"35",   nome:"Stonewalker Antiquum",            tipo:"opcional", regiao:"Gate of Truth — Demeniss (Pillar of Light)",           dificuldade:4, recompensa:"Artefato arcano + Abyss Artifact",                     x:60, y:64, anchorId:"boss-stonewalker" },
+  { id:"kutum",             numero:"36",   nome:"Kutum",                           tipo:"opcional", regiao:"Kingshield Dig Site — Demeniss",                       dificuldade:4, recompensa:"Artefato de escavação raro",                           x:44, y:66, anchorId:"boss-kutum" },
+  { id:"cubewalker",        numero:"37",   nome:"Cubewalker Lithus",               tipo:"opcional", regiao:"Southern Quarry — Demeniss",                          dificuldade:3, recompensa:"Materiais de construção raros",                         x:52, y:68, anchorId:"boss-cubewalker" },
 
-  // ============================================================
-  // OPCIONAIS / WORLD BOSSES — caveiras roxas da imagem "Opcionais"
-  // ============================================================
+  // DELESYIA (representantes) — sudeste
+  { id:"delesyia-golem",    numero:"★",    nome:"Iron Sentinel",                   tipo:"opcional", regiao:"Delesyia — fortaleza tecnológica",                    dificuldade:4, recompensa:"Armadura de ferro avançada",                            x:70, y:72, anchorId:"boss-delesyia-b2" },
+  { id:"delesyia-colossus", numero:"★",    nome:"Steam Colossus",                  tipo:"opcional", regiao:"Delesyia — refinaria a vapor",                        dificuldade:4, recompensa:"Blueprints de máquina a vapor",                        x:74, y:80, anchorId:"boss-delesyia-b3" },
 
-  // ---- Cluster Pailune norte (imagem Opcionais: ~14-30% / 18-32%)
-  {
-    id: "white-bear", numero: "★", nome: "White Bear of the High Mountains",
-    tipo: "opcional", regiao: "Fort Askelund — Pailune (norte)",
-    dificuldade: 4, recompensa: "Two-Hand Axe lendário",
-    x: 16, y: 22, anchorId: "boss-opcionais",
-  },
-  {
-    id: "moren", numero: "★", nome: "Moren, the Mistwood Huntmaster",
-    tipo: "opcional", regiao: "Mistwood — fronteira Pailune/Hernand",
-    dificuldade: 3, recompensa: "Sword & Tower Shield exclusivos",
-    x: 28, y: 26, anchorId: "boss-opcionais",
-  },
-  {
-    id: "pailune-wolf", numero: "★", nome: "Alpha do Silver Wolf Mountain",
-    tipo: "opcional", regiao: "Silver Wolf Mountain — Pailune",
-    dificuldade: 3, recompensa: "Pelt lendário + materiais raros",
-    x: 22, y: 24, anchorId: "boss-opcionais",
-  },
-  {
-    id: "pailune-frost-troll", numero: "★", nome: "Frost Troll de Pailune",
-    tipo: "opcional", regiao: "Geleiras de Pailune (norte)",
-    dificuldade: 4, recompensa: "Cristal de gelo + Two-Hand Mace",
-    x: 14, y: 28, anchorId: "boss-opcionais",
-  },
+  // CRIMSON DESERT REGION — nordeste árido
+  { id:"tarandus",          numero:"★",    nome:"Tarandus the Ashen",              tipo:"opcional", regiao:"Crimson Desert — Urdavah (oeste da região árida)",    dificuldade:4, recompensa:"Tarandus Ashen War Hammer",                            x:60, y:28, anchorId:"boss-tarandus" },
+  { id:"muskan-bonepit",    numero:"★",    nome:"Muskan — Emperor of the Bonepit", tipo:"opcional", regiao:"The Bonepit — Crimson Desert region",                 dificuldade:4, recompensa:"Itens raros + título Emperor",                         x:76, y:24, anchorId:"boss-muskan-bonepit" },
+  { id:"jackal-captain",    numero:"★",    nome:"One-Eyed Jackal Captain",         tipo:"opcional", regiao:"Crimson Desert — facção Jackals",                     dificuldade:3, recompensa:"Equipamento do clã Jackal",                            x:68, y:36, anchorId:"boss-jackal-captain" },
+  { id:"crookrock",         numero:"★",    nome:"Crookrock Walker",                tipo:"opcional", regiao:"Crimson Desert — perto do Spire of the Sun",          dificuldade:4, recompensa:"Abyss Artifact + materiais raros",                     x:80, y:32, anchorId:"boss-crookrock" },
 
-  // ---- Cluster Hernand W (imagem Opcionais: ~3-12% / 56-78%)
-  {
-    id: "marni-excavatron", numero: "★", nome: "Marni's Excavatron",
-    tipo: "opcional", regiao: "Karin Quarry — Hernand (sidequest 'Estate in Dismay')",
-    dificuldade: 3, recompensa: "Blueprints mecânicos",
-    x: 12, y: 56, anchorId: "boss-opcionais",
-  },
-  {
-    id: "crimson-nightmare", numero: "★", nome: "Crimson Nightmare",
-    tipo: "opcional", regiao: "Fort Perwin — Hernand (sidequest 'Continuing Concern')",
-    dificuldade: 3, recompensa: "Itens raros + recompensas únicas",
-    x: 6, y: 60, anchorId: "boss-opcionais",
-  },
-  {
-    id: "queen-spider", numero: "★", nome: "Queen Spider",
-    tipo: "opcional", regiao: "Arboria Castle — Hernand (Queen of the Silkspun Citadel)",
-    dificuldade: 3, recompensa: "Materiais de aranha raros",
-    x: 4, y: 70, anchorId: "boss-opcionais",
-  },
-  {
-    id: "walter-lanford", numero: "★", nome: "Walter Lanford",
-    tipo: "opcional", regiao: "Fort Warspike — Hernand (sidequest 'Name Written in Blood')",
-    dificuldade: 4, recompensa: "Shotgun único + Equipamento de mercenário",
-    x: 5, y: 76, anchorId: "boss-opcionais",
-  },
-  {
-    id: "black-fang", numero: "★", nome: "Black Fang",
-    tipo: "opcional", regiao: "Forest of Wolves — Hernand (lobo lendário)",
-    dificuldade: 3, recompensa: "Possibilidade de domar como montaria",
-    x: 8, y: 64, anchorId: "boss-opcionais",
-  },
-  {
-    id: "queen-stoneback", numero: "★", nome: "Queen Stoneback Crab",
-    tipo: "opcional", regiao: "Redfox Forest — Hernand (Goddesses Lake)",
-    dificuldade: 4, recompensa: "Diederik vendor + itens raros",
-    x: 10, y: 58, anchorId: "boss-queen-stoneback",
-  },
+  // SECRETOS (não aparecem no Knowledge Tab)
+  { id:"goyen",             numero:"S1",   nome:"Goyen (Secreto)",                 tipo:"secreto",  regiao:"Nest of Valor — Hernand (Spire of the Sun area)",    dificuldade:5, recompensa:"Meteor Kick + itens raros únicos",                     x:36, y:56, anchorId:"boss-goyen" },
+  { id:"master-du",         numero:"S2",   nome:"Master Du (Secreto)",             tipo:"secreto",  regiao:"Cloister of Enlightenment — Hernand",                 dificuldade:5, recompensa:"Wall Climb habilidade + combos especiais",             x:28, y:62, anchorId:"boss-master-du" },
 
-  // ---- Cluster Demeniss centro (imagem Opcionais: ~32-44% / 48-56%)
-  {
-    id: "ator-antumbra", numero: "★", nome: "Ator, Archon of Antumbra",
-    tipo: "opcional", regiao: "The Abyss — Demeniss (último da série Antumbra)",
-    dificuldade: 5, recompensa: "Abyss Artifact + itens do set Antumbra (HP 11.000)",
-    x: 34, y: 50, anchorId: "boss-opcionais",
-  },
-  {
-    id: "beloth", numero: "★", nome: "Beloth the Darksworn",
-    tipo: "opcional", regiao: "The Abyss — Demeniss (HP 13.000)",
-    dificuldade: 5, recompensa: "Halberd raro + magia das trevas",
-    x: 40, y: 54, anchorId: "boss-opcionais",
-  },
-  {
-    id: "forgotten-general", numero: "★", nome: "The Forgotten General",
-    tipo: "opcional", regiao: "The Abyss — Demeniss (HP 13.000)",
-    dificuldade: 5, recompensa: "Armor set completo do general",
-    x: 44, y: 50, anchorId: "boss-opcionais",
-  },
-
-  // ---- Crimson Desert NE (imagem Opcionais: 7 pins entre x:60-86 / y:18-46)
-  {
-    id: "tarandus", numero: "★", nome: "Tarandus the Ashen",
-    tipo: "opcional", regiao: "Crimson Desert — oeste (próximo a Urdavah)",
-    dificuldade: 4, recompensa: "Tarandus Ashen War Hammer",
-    x: 64, y: 30, anchorId: "boss-opcionais",
-  },
-  {
-    id: "muskan", numero: "★", nome: "Muskan — Emperor of the Bonepit",
-    tipo: "opcional", regiao: "The Bonepit — Crimson Desert",
-    dificuldade: 4, recompensa: "Itens raros + título",
-    x: 76, y: 38, anchorId: "boss-opcionais",
-  },
-  {
-    id: "jackal-captain", numero: "★", nome: "One-Eyed Jackal Captain",
-    tipo: "opcional", regiao: "Crimson Desert — facção dos Jackals",
-    dificuldade: 3, recompensa: "Equipamento do clã + armas",
-    x: 82, y: 24, anchorId: "boss-opcionais",
-  },
-  {
-    id: "desert-scorpion", numero: "★", nome: "Escorpião Gigante do Deserto",
-    tipo: "opcional", regiao: "Crimson Desert — dunas centrais",
-    dificuldade: 4, recompensa: "Carapaça lendária + veneno raro",
-    x: 70, y: 42, anchorId: "boss-opcionais",
-  },
-  {
-    id: "desert-warlord", numero: "★", nome: "Warlord do Crimson Desert",
-    tipo: "opcional", regiao: "Crimson Desert — fortaleza norte",
-    dificuldade: 4, recompensa: "Cimitarra exclusiva + armadura nômade",
-    x: 74, y: 22, anchorId: "boss-opcionais",
-  },
-  {
-    id: "tashkalp-guardian", numero: "★", nome: "Guardião de Tashkalp",
-    tipo: "opcional", regiao: "Tashkalp — fronteira NE do Crimson Desert",
-    dificuldade: 4, recompensa: "Selo de Tashkalp + relíquia rara",
-    x: 60, y: 34, anchorId: "boss-opcionais",
-  },
-  {
-    id: "urdavah-champion", numero: "★", nome: "Campeão de Urdavah",
-    tipo: "opcional", regiao: "Urdavah — NE do Crimson Desert",
-    dificuldade: 4, recompensa: "Cetro de Urdavah + materiais raros",
-    x: 86, y: 44, anchorId: "boss-opcionais",
-  },
-
-  // ---- Delesyia sul (imagem Opcionais: pin único ~50% / 78%)
-  {
-    id: "queen-bismuth", numero: "★", nome: "Queen Bismuth Oreback Crab",
-    tipo: "opcional", regiao: "Delesyia — variante mineral da Stoneback Crab",
-    dificuldade: 4, recompensa: "Itens raros + materiais únicos",
-    x: 50, y: 78, anchorId: "boss-queen-bismuth",
-  },
-  {
-    id: "hemon-beindel", numero: "★", nome: "Hemon Beindel",
-    tipo: "opcional", regiao: "Hernand — facção (sul)",
-    dificuldade: 3, recompensa: "Two-Hand Sword + Abyss Artifact",
-    x: 46, y: 72, anchorId: "boss-opcionais",
-  },
+  // OVERWHELMING BEINGS — os 3 mais difíceis
+  { id:"corrupted-caliburn",numero:"OB1",  nome:"Corrupted Caliburn",              tipo:"historia", regiao:"The Abyss — clímax da campanha",                      dificuldade:5, recompensa:"Espada lendária +28 ataque",                           x:48, y:84, anchorId:"boss-corrupted-caliburn" },
+  { id:"myurdin-umbra",     numero:"OB2",  nome:"Lava Myurdin (Avatar de Umbra)",  tipo:"historia", regiao:"Ashclaw Keep — Pailune (sequência final)",             dificuldade:5, recompensa:"Progressão para boss final",                           x:34, y:38, anchorId:"boss-myurdin-umbra" },
+  { id:"umbra",             numero:"OB3",  nome:"Umbra (Boss Final)",              tipo:"historia", regiao:"The Abyss — clímax montado no dragão",                dificuldade:5, recompensa:"Créditos + epílogo + conquista final",                  x:52, y:88, anchorId:"boss-umbra" },
 ];
 
 export const bossTipoMeta: Record<BossTipo, { label: string; cor: string; bg: string; border: string }> = {
   historia: { label: "História", cor: "text-destructive-foreground", bg: "bg-destructive", border: "border-destructive" },
-  opcional: { label: "Opcional", cor: "text-background", bg: "bg-geek", border: "border-geek" },
-  secreto: { label: "Secreto", cor: "text-primary-foreground", bg: "bg-primary", border: "border-primary" },
+  opcional: { label: "Opcional", cor: "text-background",             bg: "bg-geek",        border: "border-geek"       },
+  secreto:  { label: "Secreto",  cor: "text-primary-foreground",     bg: "bg-primary",     border: "border-primary"    },
 };

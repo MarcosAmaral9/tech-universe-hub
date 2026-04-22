@@ -19,12 +19,14 @@ const CrimsonDesertBossMap = () => {
   const arrastoInicioRef = useRef({ x: 0, y: 0, panX: 0, panY: 0 });
 
   const bossesFiltrados = useMemo(() => {
-    if (filtro === "todos") return crimsonDesertBosses;
+    // "Todos" mostra história + opcionais mesclados (não secretos)
+    // Secretos só aparecem quando o filtro "Secreto" é selecionado explicitamente
+    if (filtro === "todos") return crimsonDesertBosses.filter((b) => b.tipo !== "secreto");
     return crimsonDesertBosses.filter((b) => b.tipo === filtro);
   }, [filtro]);
 
   const contadores = useMemo(() => ({
-    todos: crimsonDesertBosses.length,
+    todos: crimsonDesertBosses.filter((b) => b.tipo !== "secreto").length,
     historia: crimsonDesertBosses.filter((b) => b.tipo === "historia").length,
     opcional: crimsonDesertBosses.filter((b) => b.tipo === "opcional").length,
     secreto: crimsonDesertBosses.filter((b) => b.tipo === "secreto").length,
@@ -94,7 +96,7 @@ const CrimsonDesertBossMap = () => {
   };
 
   const filtros: Array<{ key: FiltroTipo; label: string; count: number }> = [
-    { key: "todos", label: "Todos", count: contadores.todos },
+    { key: "todos", label: "Todos (Hist. + Opcionais)", count: contadores.todos },
     { key: "historia", label: "História", count: contadores.historia },
     { key: "opcional", label: "Opcionais", count: contadores.opcional },
     { key: "secreto", label: "Secretos", count: contadores.secreto },
