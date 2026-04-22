@@ -505,6 +505,19 @@ const CrimsonDesertBosses = () => {
 
         <AdLeaderboard className="my-8" />
 
+        {/* QUEEN BISMUTH OREBACK CRAB — Detailed */}
+        <h3 id="boss-queen-bismuth" className="text-xl font-bold mt-8 mb-3 flex items-center gap-2 scroll-mt-24">
+          <span className="text-red-400">★</span> Queen Bismuth Oreback Crab — Variante Mineral em Delesyia
+        </h3>
+        <div className="not-prose grid sm:grid-cols-3 gap-3 my-3 text-sm">
+          {[["📍 Localização","Costa sul de Delesyia — variante mais rara da Stoneback, encontrada após progredir na facção da região"],["⚠️ Dificuldade","★★★★☆ (mecânica de escalada idêntica, mas com fases mais agressivas e geysers de bismuto)"],["🏆 Recompensa","Carapaça de bismuto (material único de smithing) + Abyss Artifact + recompensas de facção em Delesyia"]].map(([k,v])=>(
+            <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs">{k}</p><p className="text-muted-foreground">{v}</p></div>
+          ))}
+        </div>
+        <p>
+          A Queen Bismuth Oreback Crab é a variante "endgame" da Stoneback que aparece nas costas sul de Delesyia. As mecânicas são as mesmas da prima de Hernand — escalada, ataque às fissuras e quebra do pote mágico — mas a carapaça libera <strong>nuvens cristalinas de bismuto</strong> que causam dano contínuo se você ficar parado por mais de 2 segundos. Mantenha-se em movimento na carapaça e prepare 200 carnes grelhadas. Recompensa-chave: a carapaça de bismuto é usada para forjar uma das melhores armaduras de defesa elemental do jogo.
+        </p>
+
         <h3 className="text-xl font-bold mt-8 mb-3">Tabela de Bosses Opcionais</h3>
         <div className="not-prose overflow-x-auto my-4">
           <Table>
@@ -516,7 +529,7 @@ const CrimsonDesertBosses = () => {
             <TableBody>
               {[
                 ["Queen Stoneback Crab","Redfox Forest, Hernand (Goddesses Lake / 'The Queen's Lake' com Diederik)","Diederik vendor + itens raros","★★★★☆"],
-                ["Queen Bismuth Oreback Crab","Delesyia (variante mineral da Stoneback Crab)","Itens raros + materiais únicos","★★★★☆"],
+                ["Queen Bismuth Oreback Crab","Costa sul de Delesyia (variante mineral da Stoneback)","Carapaça de bismuto + Abyss Artifact","★★★★☆"],
                 ["Ator, Archon of Antumbra","The Abyss — último da série Antumbra (Sword, Staff, Spear, Ator)","Abyss Artifact + itens do set Antumbra (HP 11.000)","★★★★★"],
                 ["Beloth, the Darksworn","The Abyss — World Boss (HP 13.000, Halberd)","Halberd raro + magia das trevas","★★★★★"],
                 ["The Forgotten General","The Abyss — World Boss (HP 13.000)","Armor set completo do general","★★★★★"],
@@ -524,12 +537,18 @@ const CrimsonDesertBosses = () => {
                 ["White Bear of the High Mountains","Fort Askelund, Pailune (quest 'Unending Threat')","Two-Hand Axe lendário","★★★★☆"],
                 ["Tarandus the Ashen","Região oeste do Crimson Desert (próximo a Urdavah)","Tarandus Ashen War Hammer","★★★★☆"],
                 ["Muskan — Emperor of the Bonepit","The Bonepit, Crimson Desert","Itens raros + título","★★★★☆"],
-                ["Moren, the Mistwood Huntmaster","Mistwood — Hernand","Sword & Tower Shield exclusivos","★★★☆☆"],
+                ["Warlord do Crimson Desert","Fortaleza norte do Crimson Desert","Cimitarra exclusiva + armadura nômade","★★★★☆"],
+                ["Escorpião Gigante do Deserto","Dunas centrais do Crimson Desert","Carapaça lendária + veneno raro","★★★★☆"],
+                ["Guardião de Tashkalp","Tashkalp — fronteira NE do Crimson Desert","Selo de Tashkalp + relíquia rara","★★★★☆"],
+                ["Campeão de Urdavah","Urdavah — NE do Crimson Desert","Cetro de Urdavah + materiais raros","★★★★☆"],
+                ["Alpha do Silver Wolf Mountain","Silver Wolf Mountain, Pailune","Pelt lendário + materiais raros","★★★☆☆"],
+                ["Frost Troll de Pailune","Geleiras do norte de Pailune","Cristal de gelo + Two-Hand Mace","★★★★☆"],
+                ["Moren, the Mistwood Huntmaster","Mistwood — fronteira Pailune/Hernand","Sword & Tower Shield exclusivos","★★★☆☆"],
                 ["Marni's Excavatron","Karin Quarry, Hernand (sidequest 'Estate in Dismay')","Blueprints mecânicos","★★★☆☆"],
                 ["Crimson Nightmare","Fort Perwin, Hernand (sidequest 'Continuing Concern')","Itens raros + recompensas únicas","★★★☆☆"],
                 ["Queen Spider","Arboria Castle, Hernand (Queen of the Silkspun Citadel)","Materiais de aranha raros","★★★☆☆"],
                 ["Walter Lanford","Fort Warspike, Hernand (sidequest 'Name Written in Blood')","Shotgun único + Equipamento de mercenário","★★★★☆"],
-                ["Hemon Beindel","Hernand — facção","Two-Hand Sword + Abyss Artifact","★★★☆☆"],
+                ["Hemon Beindel","Hernand — facção (sul)","Two-Hand Sword + Abyss Artifact","★★★☆☆"],
                 ["One-Eyed Jackal Captain","Crimson Desert — facção dos Jackals","Equipamento do clã + armas","★★★☆☆"],
                 ["Black Fang","Forest of Wolves, Hernand (lobo lendário)","Possibilidade de domar como montaria","★★★☆☆"],
               ].map(([b,l,r,d]) => (
