@@ -84,12 +84,18 @@ const CrimsonDesertBosses = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <MapPin className="h-7 w-7 text-red-400" />
-          Mapa Interativo dos Bosses de Pywel
+          Mapa Interativo — Pywel e The Abyss
         </h2>
         <p>
-          Use o mapa abaixo para localizar cada boss em Pywel. Filtre por <strong>História</strong>, <strong>Opcionais</strong> ou <strong>Secretos</strong>, dê zoom para explorar regiões específicas e clique em qualquer marcador para abrir os detalhes e pular direto para a seção do guia.
+          Use o mapa abaixo para localizar todos os bosses. O <strong>mapa de Pywel</strong> cobre os bosses do continente principal; o <strong>mapa do Abismo</strong> mostra os bosses encontrados nas zonas de The Abyss. Filtre por <strong>História</strong>, <strong>Opcionais</strong> ou <strong>Secretos</strong>, dê zoom para explorar regiões específicas e clique em qualquer marcador para ver detalhes completos de recompensa e dica de combate.
         </p>
         <CrimsonDesertBossMap />
+        <div className="not-prose my-4 p-4 bg-slate-800/40 border border-slate-600/40 rounded-xl text-sm">
+          <p className="font-semibold mb-1 text-slate-300">🌀 Bosses do Abismo — Draven the Crowcaller</p>
+          <p className="text-muted-foreground">
+            O Abismo (The Abyss) é uma dimensão paralela acessada por portais espalhados por Pywel. O boss mais importante do Abismo é <strong>Draven the Crowcaller</strong>, encontrado no <em>Crow's Nest</em> após completar os puzzles da Spire of Soaring e Crescent Skybridge. Acesse o <strong>tab "The Abyss"</strong> no mapa para ver sua posição exata.
+          </p>
+        </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Skull className="h-7 w-7 text-red-400" />

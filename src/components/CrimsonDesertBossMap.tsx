@@ -1,15 +1,34 @@
+/**
+ * CrimsonDesertBossMap
+ * Mapa interativo de bosses do Crimson Desert.
+ * Dois tabs: Pywel (continente principal) e Abismo (The Abyss).
+ * Pins menores para não sobrepor uns aos outros.
+ * Posições calibradas a partir das imagens de referência do MapGenie.
+ */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ZoomIn, ZoomOut, RotateCcw, MapPin, X, Star } from "lucide-react";
+import { ZoomIn, ZoomOut, RotateCcw, X, MapPin, Info } from "lucide-react";
 import mapaImg from "@/assets/crimson-desert-mapa-oficial.webp";
-import { crimsonDesertBosses, bossTipoMeta, type BossMarker, type BossTipo } from "@/data/crimsonDesertBosses";
+import {
+  crimsonDesertBosses,
+  bossTipoMeta,
+  type BossMarker,
+  type BossTipo,
+} from "@/data/crimsonDesertBosses";
 
 type FiltroTipo = "todos" | BossTipo;
+type MapaTab = "pywel" | "abyss";
 
 const ZOOM_MIN = 1;
-const ZOOM_MAX = 4;
+const ZOOM_MAX = 5;
 const ZOOM_STEP = 0.5;
 
+// Estrelas de dificuldade
+const Estrelas = ({ n }: { n: number }) => (
+  <span className="text-yellow-400">{"★".repeat(n)}<span className="text-muted-foreground/40">{"★".repeat(5 - n)}</span></span>
+);
+
 const CrimsonDesertBossMap = () => {
+  const [mapaTab, setMapaTab] = useState<MapaTab>("pywel");
   const [filtro, setFiltro] = useState<FiltroTipo>("todos");
   const [zoom, setZoom] = useState(1);
   const [pan, setPan] = useState({ x: 0, y: 0 });
@@ -18,19 +37,31 @@ const CrimsonDesertBossMap = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const arrastoInicioRef = useRef({ x: 0, y: 0, panX: 0, panY: 0 });
 
+  // Filtrar por aba de mapa + tipo
   const bossesFiltrados = useMemo(() => {
-    // "Todos" mostra história + opcionais mesclados (não secretos)
-    // Secretos só aparecem quando o filtro "Secreto" é selecionado explicitamente
-    if (filtro === "todos") return crimsonDesertBosses.filter((b) => b.tipo !== "secreto");
-    return crimsonDesertBosses.filter((b) => b.tipo === filtro);
-  }, [filtro]);
+    let lista = crimsonDesertBosses.filter((b) => b.mapa === mapaTab);
+    if (filtro === "todos") {
+      // "Todos" mostra história + opcionais mesclados (secretos omitidos)
+      lista = lista.filter((b) => b.tipo !== "secreto");
+    } else {
+      lista = lista.filter((b) => b.tipo === filtro);
+    }
+    return lista;
+  }, [filtro, mapaTab]);
 
-  const contadores = useMemo(() => ({
-    todos: crimsonDesertBosses.filter((b) => b.tipo !== "secreto").length,
-    historia: crimsonDesertBosses.filter((b) => b.tipo === "historia").length,
-    opcional: crimsonDesertBosses.filter((b) => b.tipo === "opcional").length,
-    secreto: crimsonDesertBosses.filter((b) => b.tipo === "secreto").length,
-  }), []);
+  const contadores = useMemo(() => {
+    const base = crimsonDesertBosses.filter((b) => b.mapa === mapaTab);
+    return {
+      todos:    base.filter((b) => b.tipo !== "secreto").length,
+      historia: base.filter((b) => b.tipo === "historia").length,
+      opcional: base.filter((b) => b.tipo === "opcional").length,
+      secreto:  base.filter((b) => b.tipo === "secreto").length,
+    };
+  }, [mapaTab]);
+
+  // Totals across all maps for the header
+  const totalPywel  = crimsonDesertBosses.filter((b) => b.mapa === "pywel").length;
+  const totalAbyss  = crimsonDesertBosses.filter((b) => b.mapa === "abyss").length;
 
   const limitarPan = useCallback((novoPan: { x: number; y: number }, zoomAtual: number) => {
     if (!containerRef.current) return novoPan;
@@ -43,6 +74,8 @@ const CrimsonDesertBossMap = () => {
     };
   }, []);
 
+  const resetar = useCallback(() => { setZoom(1); setPan({ x: 0, y: 0 }); setBossSelecionado(null); }, []);
+
   const ajustarZoom = useCallback((delta: number) => {
     setZoom((z) => {
       const novo = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, z + delta));
@@ -52,12 +85,14 @@ const CrimsonDesertBossMap = () => {
     });
   }, [limitarPan]);
 
-  const resetar = useCallback(() => {
-    setZoom(1);
-    setPan({ x: 0, y: 0 });
-  }, []);
+  // Mudar tab reseta zoom e seleção
+  const handleTabChange = (tab: MapaTab) => {
+    setMapaTab(tab);
+    setBossSelecionado(null);
+    resetar();
+  };
 
-  // Wheel zoom
+  // Roda do mouse
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
@@ -69,118 +104,166 @@ const CrimsonDesertBossMap = () => {
     return () => el.removeEventListener("wheel", onWheel);
   }, [ajustarZoom]);
 
-  // Pan com mouse/touch
+  // Drag (mouse + touch)
   const onPointerDown = (e: React.PointerEvent) => {
-    if (zoom === 1) return;
+    if ((e.target as HTMLElement).closest("button[data-boss]")) return;
     setArrastando(true);
     arrastoInicioRef.current = { x: e.clientX, y: e.clientY, panX: pan.x, panY: pan.y };
-    (e.target as HTMLElement).setPointerCapture(e.pointerId);
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
   };
   const onPointerMove = (e: React.PointerEvent) => {
     if (!arrastando) return;
     const dx = e.clientX - arrastoInicioRef.current.x;
     const dy = e.clientY - arrastoInicioRef.current.y;
-    setPan(limitarPan({
-      x: arrastoInicioRef.current.panX + dx,
-      y: arrastoInicioRef.current.panY + dy,
-    }, zoom));
+    setPan(limitarPan({ x: arrastoInicioRef.current.panX + dx, y: arrastoInicioRef.current.panY + dy }, zoom));
   };
   const onPointerUp = () => setArrastando(false);
 
-  const irParaSecao = (anchorId: string) => {
-    const el = document.getElementById(anchorId);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-      setBossSelecionado(null);
-    }
-  };
-
-  const filtros: Array<{ key: FiltroTipo; label: string; count: number }> = [
-    { key: "todos", label: "Todos (Hist. + Opcionais)", count: contadores.todos },
-    { key: "historia", label: "História", count: contadores.historia },
-    { key: "opcional", label: "Opcionais", count: contadores.opcional },
-    { key: "secreto", label: "Secretos", count: contadores.secreto },
+  const filtros: Array<{ key: FiltroTipo; label: string; count: number; color: string }> = [
+    { key: "todos",    label: "Todos",    count: contadores.todos,    color: "bg-muted text-foreground border-border" },
+    { key: "historia", label: "História", count: contadores.historia, color: "bg-red-600/90 text-white border-red-500" },
+    { key: "opcional", label: "Opcionais",count: contadores.opcional, color: "bg-blue-600/90 text-white border-blue-500" },
+    { key: "secreto",  label: "Secretos", count: contadores.secreto,  color: "bg-yellow-500/90 text-white border-yellow-400" },
   ];
 
   return (
-    <div className="not-prose my-8 rounded-2xl border border-border bg-card overflow-hidden">
-      {/* Header com filtros */}
-      <div className="flex flex-wrap items-center justify-between gap-3 p-4 border-b border-border bg-background/50">
+    <div className="not-prose my-8 rounded-2xl border border-border bg-card overflow-hidden shadow-xl">
+      {/* Header */}
+      <div className="px-4 py-3 border-b border-border bg-muted/30 flex items-center justify-between flex-wrap gap-2">
         <div className="flex items-center gap-2">
-          <MapPin className="h-5 w-5 text-primary" />
-          <span className="font-display font-bold text-sm">Mapa de Pywel</span>
+          <MapPin className="h-4 w-4 text-primary" />
+          <span className="font-semibold text-sm">Mapa Interativo de Bosses</span>
+          <span className="text-xs text-muted-foreground hidden sm:inline">— Crimson Desert</span>
         </div>
-        <div className="flex flex-wrap gap-2">
-          {filtros.map((f) => (
-            <button
-              key={f.key}
-              onClick={() => setFiltro(f.key)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors border ${
-                filtro === f.key
-                  ? "bg-primary text-primary-foreground border-primary"
-                  : "bg-background text-muted-foreground border-border hover:border-primary/50 hover:text-foreground"
-              }`}
-              aria-pressed={filtro === f.key}
-            >
-              {f.label} <span className="opacity-70">({f.count})</span>
-            </button>
-          ))}
+        <div className="flex items-center gap-1 text-xs text-muted-foreground">
+          <Info className="h-3.5 w-3.5" />
+          <span className="hidden sm:inline">Scroll para zoom · Arraste para mover · Clique no boss para detalhes</span>
+          <span className="sm:hidden">Scroll = zoom · Tap = info</span>
         </div>
       </div>
 
-      {/* Mapa */}
-      <div className="relative">
+      {/* Tabs: Pywel / Abismo */}
+      <div className="flex border-b border-border">
+        <button
+          onClick={() => handleTabChange("pywel")}
+          className={`flex-1 py-2.5 text-sm font-medium transition-colors flex items-center justify-center gap-1.5 ${
+            mapaTab === "pywel"
+              ? "bg-primary/10 text-primary border-b-2 border-primary"
+              : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+          }`}
+        >
+          🗺️ Continente de Pywel
+          <span className="text-xs opacity-70">({totalPywel})</span>
+        </button>
+        <button
+          onClick={() => handleTabChange("abyss")}
+          className={`flex-1 py-2.5 text-sm font-medium transition-colors flex items-center justify-center gap-1.5 ${
+            mapaTab === "abyss"
+              ? "bg-primary/10 text-primary border-b-2 border-primary"
+              : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+          }`}
+        >
+          🌀 The Abyss
+          <span className="text-xs opacity-70">({totalAbyss})</span>
+        </button>
+      </div>
+
+      {/* Filtros de tipo */}
+      <div className="flex flex-wrap gap-1.5 px-3 py-2 border-b border-border bg-muted/20">
+        {filtros.map((f) => (
+          <button
+            key={f.key}
+            onClick={() => setFiltro(f.key)}
+            aria-pressed={filtro === f.key}
+            className={`px-2.5 py-1 rounded-full text-xs font-semibold border transition-all ${
+              filtro === f.key
+                ? f.color + " ring-2 ring-offset-1 ring-primary/50 shadow-sm"
+                : "bg-muted/50 text-muted-foreground border-border hover:border-primary/40"
+            }`}
+          >
+            {f.label} <span className="opacity-75">({f.count})</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Container do mapa */}
+      <div className="relative" style={{ height: "clamp(320px, 55vw, 640px)" }}>
         <div
           ref={containerRef}
-          className="relative w-full h-[400px] md:h-[600px] overflow-hidden bg-background select-none touch-none"
-          style={{ cursor: zoom > 1 ? (arrastando ? "grabbing" : "grab") : "default" }}
+          className={`w-full h-full overflow-hidden select-none ${arrastando ? "cursor-grabbing" : "cursor-grab"}`}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onPointerUp={onPointerUp}
           onPointerLeave={onPointerUp}
         >
           <div
-            className="absolute inset-0 transition-transform duration-150 ease-out"
+            className="absolute inset-0 transition-transform duration-100 ease-out"
             style={{
               transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})`,
               transformOrigin: "center center",
             }}
           >
-            <img
-              src={mapaImg}
-              alt="Mapa oficial de Pywel — Crimson Desert"
-              loading="lazy"
-              decoding="async"
-              draggable={false}
-              className="w-full h-full object-contain pointer-events-none"
-            />
-            {/* Marcadores */}
+            {mapaTab === "pywel" ? (
+              <img
+                src={mapaImg}
+                alt="Mapa oficial de Pywel — Crimson Desert"
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+                className="w-full h-full object-contain pointer-events-none"
+              />
+            ) : (
+              /* Abyss: fundo estilizado com regiões */
+              <div className="w-full h-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center relative">
+                {/* Region labels */}
+                {[
+                  { label: "Sleet Isles",          x: "18%", y: "32%" },
+                  { label: "Dry Valley",            x: "52%", y: "22%" },
+                  { label: "Triangle Ring",         x: "33%", y: "55%" },
+                  { label: "The Wanderer's Way",    x: "62%", y: "46%" },
+                  { label: "Path of Providence",    x: "22%", y: "72%" },
+                  { label: "Eternal Corridor",      x: "62%", y: "72%" },
+                ].map(({ label, x, y }) => (
+                  <span key={label} className="absolute text-slate-400/60 text-xs font-medium pointer-events-none uppercase tracking-widest"
+                    style={{ left: x, top: y, transform: "translate(-50%, -50%)" }}>
+                    {label}
+                  </span>
+                ))}
+                <span className="absolute inset-0 opacity-5 pointer-events-none"
+                  style={{ backgroundImage: "radial-gradient(circle, rgba(139,92,246,0.3) 0%, transparent 70%)" }} />
+              </div>
+            )}
+
+            {/* Pins dos bosses — TAMANHO REDUZIDO */}
             {bossesFiltrados.map((boss) => {
               const meta = bossTipoMeta[boss.tipo];
+              // Tamanho base menor: 15px no zoom 1, mínimo 13px
+              const pinSize = Math.max(13, 16 / zoom);
+              const fontSize = Math.max(7, 8 / zoom);
               return (
                 <button
                   key={boss.id}
-                  onClick={(e) => { e.stopPropagation(); setBossSelecionado(boss); }}
-                  aria-label={`Boss ${boss.nome} — ${meta.label} — ${boss.regiao}`}
-                  className={`group absolute -translate-x-1/2 -translate-y-1/2 ${meta.bg} ${meta.cor} rounded-full font-bold flex items-center justify-center shadow-lg ring-2 ring-background hover:scale-125 hover:z-20 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary transition-transform`}
+                  data-boss="true"
+                  onClick={(e) => { e.stopPropagation(); setBossSelecionado(bossSelecionado?.id === boss.id ? null : boss); }}
+                  aria-label={`${boss.nome} — ${meta.label} — ${boss.regiao}`}
+                  className={`group absolute -translate-x-1/2 -translate-y-1/2 ${meta.bg} ${meta.cor} rounded-full font-bold flex items-center justify-center shadow-md ring-1 ring-black/30 hover:scale-150 hover:z-20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white transition-transform z-10 ${bossSelecionado?.id === boss.id ? "scale-150 ring-2 ring-white z-20" : ""}`}
                   style={{
                     left: `${boss.x}%`,
                     top: `${boss.y}%`,
-                    width: `${Math.max(20, 28 / zoom)}px`,
-                    height: `${Math.max(20, 28 / zoom)}px`,
-                    fontSize: `${Math.max(9, 12 / zoom)}px`,
+                    width: `${pinSize}px`,
+                    height: `${pinSize}px`,
+                    fontSize: `${fontSize}px`,
+                    lineHeight: 1,
                   }}
                 >
-                  {boss.numero}
-                  {/* Tooltip */}
+                  <span className="leading-none">{boss.tipo === "secreto" ? "?" : ""}</span>
+                  {/* Tooltip no hover */}
                   <span
-                    className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-popover text-popover-foreground border border-border rounded-md text-xs font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity z-30 shadow-lg"
+                    className="pointer-events-none absolute bottom-full left-1/2 mb-1.5 px-2 py-1 bg-popover text-popover-foreground border border-border rounded-md text-[10px] font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity z-30 shadow-lg"
                     style={{ transform: `translateX(-50%) scale(${1 / zoom})`, transformOrigin: "bottom center" }}
                   >
                     {boss.nome}
-                    <span className="block text-[10px] text-muted-foreground font-normal">
-                      {boss.regiao} · {"★".repeat(boss.dificuldade)}
-                    </span>
+                    <span className="block text-[9px] text-muted-foreground">{boss.regiao.split("—")[0].trim()}</span>
                   </span>
                 </button>
               );
@@ -188,109 +271,76 @@ const CrimsonDesertBossMap = () => {
           </div>
 
           {/* Controles de zoom */}
-          <div className="absolute top-3 right-3 flex flex-col gap-1.5 z-10">
-            <button
-              onClick={() => ajustarZoom(ZOOM_STEP)}
-              disabled={zoom >= ZOOM_MAX}
-              aria-label="Aumentar zoom"
-              className="w-10 h-10 bg-card/95 backdrop-blur border border-border rounded-lg flex items-center justify-center hover:bg-accent disabled:opacity-40 disabled:cursor-not-allowed transition-colors shadow-md"
-            >
-              <ZoomIn className="h-5 w-5" />
+          <div className="absolute top-2 right-2 flex flex-col gap-1 z-10">
+            <button onClick={() => ajustarZoom(ZOOM_STEP)}  disabled={zoom >= ZOOM_MAX} aria-label="Zoom in"
+              className="w-8 h-8 bg-card/95 backdrop-blur border border-border rounded-lg flex items-center justify-center hover:bg-accent disabled:opacity-40 shadow">
+              <ZoomIn className="h-4 w-4" />
             </button>
-            <button
-              onClick={() => ajustarZoom(-ZOOM_STEP)}
-              disabled={zoom <= ZOOM_MIN}
-              aria-label="Diminuir zoom"
-              className="w-10 h-10 bg-card/95 backdrop-blur border border-border rounded-lg flex items-center justify-center hover:bg-accent disabled:opacity-40 disabled:cursor-not-allowed transition-colors shadow-md"
-            >
-              <ZoomOut className="h-5 w-5" />
+            <button onClick={() => ajustarZoom(-ZOOM_STEP)} disabled={zoom <= ZOOM_MIN} aria-label="Zoom out"
+              className="w-8 h-8 bg-card/95 backdrop-blur border border-border rounded-lg flex items-center justify-center hover:bg-accent disabled:opacity-40 shadow">
+              <ZoomOut className="h-4 w-4" />
             </button>
-            <button
-              onClick={resetar}
-              disabled={zoom === 1 && pan.x === 0 && pan.y === 0}
-              aria-label="Resetar zoom"
-              className="w-10 h-10 bg-card/95 backdrop-blur border border-border rounded-lg flex items-center justify-center hover:bg-accent disabled:opacity-40 disabled:cursor-not-allowed transition-colors shadow-md"
-            >
-              <RotateCcw className="h-4 w-4" />
+            <button onClick={resetar} disabled={zoom === 1 && pan.x === 0 && pan.y === 0} aria-label="Resetar"
+              className="w-8 h-8 bg-card/95 backdrop-blur border border-border rounded-lg flex items-center justify-center hover:bg-accent disabled:opacity-40 shadow">
+              <RotateCcw className="h-3.5 w-3.5" />
             </button>
           </div>
 
-          {/* Indicador de zoom */}
-          <div className="absolute bottom-3 left-3 px-2.5 py-1 bg-card/95 backdrop-blur border border-border rounded-md text-xs font-mono text-muted-foreground z-10">
+          <div className="absolute bottom-2 left-2 px-2 py-0.5 bg-card/90 backdrop-blur border border-border rounded text-[10px] font-mono text-muted-foreground z-10">
             {Math.round(zoom * 100)}%
           </div>
         </div>
 
-        {/* Painel de detalhes */}
+        {/* Painel de detalhes do boss selecionado */}
         {bossSelecionado && (
-          <div className="absolute inset-x-0 bottom-0 md:inset-auto md:bottom-3 md:right-16 md:max-w-sm bg-card border-t md:border md:rounded-xl border-border shadow-2xl p-4 z-20 animate-in fade-in slide-in-from-bottom-4">
-            <div className="flex items-start justify-between gap-3 mb-3">
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className={`inline-flex items-center justify-center w-6 h-6 ${bossTipoMeta[bossSelecionado.tipo].bg} ${bossTipoMeta[bossSelecionado.tipo].cor} rounded-full text-xs font-bold`}>
-                    {bossSelecionado.numero}
-                  </span>
-                  <span className="text-[10px] uppercase tracking-wide text-muted-foreground font-semibold">
-                    {bossTipoMeta[bossSelecionado.tipo].label}
-                  </span>
+          <div className="absolute inset-x-0 bottom-0 md:inset-auto md:bottom-2 md:right-12 md:max-w-xs bg-card border-t md:border md:rounded-xl border-border shadow-2xl z-30 animate-in fade-in slide-in-from-bottom-3">
+            <div className="p-3 space-y-2">
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-1.5 mb-0.5">
+                    <span className={`inline-flex items-center justify-center w-5 h-5 ${bossTipoMeta[bossSelecionado.tipo].bg} text-white rounded-full text-[9px] font-bold`}>
+                      {bossSelecionado.tipo === "secreto" ? "?" : bossSelecionado.numero}
+                    </span>
+                    <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${bossTipoMeta[bossSelecionado.tipo].bg} text-white`}>
+                      {bossTipoMeta[bossSelecionado.tipo].label}
+                    </span>
+                    <Estrelas n={bossSelecionado.dificuldade} />
+                  </div>
+                  <h3 className="font-bold text-sm leading-tight">{bossSelecionado.nome}</h3>
+                  <p className="text-[11px] text-muted-foreground leading-snug">{bossSelecionado.regiao}</p>
                 </div>
-                <h4 className="font-display font-bold text-base leading-tight">{bossSelecionado.nome}</h4>
+                <button onClick={() => setBossSelecionado(null)} className="p-1 rounded hover:bg-muted shrink-0" aria-label="Fechar">
+                  <X className="h-3.5 w-3.5" />
+                </button>
               </div>
-              <button
-                onClick={() => setBossSelecionado(null)}
-                aria-label="Fechar detalhes"
-                className="text-muted-foreground hover:text-foreground p-1 -m-1"
-              >
-                <X className="h-4 w-4" />
-              </button>
+              <div className="border-t border-border pt-2 space-y-1.5 text-xs">
+                <div>
+                  <span className="font-semibold text-emerald-400">🏆 Recompensa: </span>
+                  <span className="text-muted-foreground">{bossSelecionado.recompensa}</span>
+                </div>
+                <div>
+                  <span className="font-semibold text-amber-400">💡 Dica: </span>
+                  <span className="text-muted-foreground">{bossSelecionado.dica}</span>
+                </div>
+              </div>
             </div>
-            <dl className="space-y-2 text-sm">
-              <div>
-                <dt className="text-xs text-muted-foreground">📍 Localização</dt>
-                <dd className="font-medium">{bossSelecionado.regiao}</dd>
-              </div>
-              <div>
-                <dt className="text-xs text-muted-foreground">⚠️ Dificuldade</dt>
-                <dd className="flex gap-0.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className={`h-4 w-4 ${i < bossSelecionado.dificuldade ? "fill-geek text-geek" : "text-muted-foreground/30"}`} />
-                  ))}
-                </dd>
-              </div>
-              <div>
-                <dt className="text-xs text-muted-foreground">🏆 Recompensa</dt>
-                <dd className="font-medium">{bossSelecionado.recompensa}</dd>
-              </div>
-            </dl>
-            <button
-              onClick={() => irParaSecao(bossSelecionado.anchorId)}
-              className="mt-3 w-full py-2 bg-primary text-primary-foreground rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors"
-            >
-              Ver detalhes no guia ↓
-            </button>
           </div>
         )}
       </div>
 
       {/* Legenda */}
-      <div className="flex flex-wrap items-center justify-between gap-3 p-3 border-t border-border bg-background/50 text-xs">
-        <div className="flex flex-wrap items-center gap-3">
-          <span className="flex items-center gap-1.5">
-            <span className="inline-block w-3 h-3 rounded-full bg-destructive ring-1 ring-background" />
-            <span className="text-muted-foreground">História principal</span>
+      <div className="px-3 py-2 border-t border-border bg-muted/20 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
+        {[
+          { bg: "bg-red-600",    label: "Chefe da História" },
+          { bg: "bg-blue-600",   label: "Chefe Opcional/Mundo" },
+          { bg: "bg-yellow-500", label: "Chefe Secreto" },
+        ].map(({ bg, label }) => (
+          <span key={label} className="flex items-center gap-1.5">
+            <span className={`inline-block w-3 h-3 rounded-full ${bg}`} />
+            {label}
           </span>
-          <span className="flex items-center gap-1.5">
-            <span className="inline-block w-3 h-3 rounded-full bg-geek ring-1 ring-background" />
-            <span className="text-muted-foreground">Opcional</span>
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span className="inline-block w-3 h-3 rounded-full bg-primary ring-1 ring-background" />
-            <span className="text-muted-foreground">Secreto</span>
-          </span>
-        </div>
-        <span className="text-muted-foreground hidden sm:inline">
-          Use scroll/pinch para zoom · Arraste para mover · Clique nos marcadores
-        </span>
+        ))}
+        <span className="ml-auto">Clique em um pin para detalhes</span>
       </div>
     </div>
   );
