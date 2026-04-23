@@ -84,7 +84,7 @@ import bg3Img from "@/assets/baldurs-gate-3-review-2026.webp";
 import dragonAgeImg from "@/assets/dragon-age-veilguard-review-2026.webp";
 import demonSlayerImg from "@/assets/demon-slayer-hashira-2026.webp";
 import onePieceImg from "@/assets/one-piece-final-saga-guia-2026.webp";
-import crimsonMapaImg from "@/assets/crimson-desert-mapa-pywel.webp";
+import crimsonMapaImg from "@/assets/crimson-desert-pywel-completo.webp";
 import crimsonBossesImg from "@/assets/crimson-desert-bosses.webp";
 import crimsonIniciantesImg from "@/assets/crimson-desert-iniciantes.webp";
 import crimsonEquipImg from "@/assets/crimson-desert-equipamentos.webp";

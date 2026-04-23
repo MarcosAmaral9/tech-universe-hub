@@ -6,7 +6,8 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import crimsonMapaImg from "@/assets/crimson-desert-mapa-pywel.webp";
+import crimsonMapaImg from "@/assets/crimson-desert-pywel-completo.webp";
+import CrimsonDesertRegionMap from "@/components/CrimsonDesertRegionMap";
 
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 interface Region {
@@ -169,118 +170,14 @@ const CrimsonDesertMapa = () => {
         </div>
       </div>
 
-      {/* SVG Map */}
-      <div className="not-prose my-8 p-6 bg-card border border-border rounded-2xl">
+      {/* Mapa Interativo de Pywel */}
+      <div className="not-prose my-8">
         <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
-          <Map className="h-5 w-5 text-primary" /> Pywel — Disposição das Regiões
+          <Map className="h-5 w-5 text-primary" /> Pywel — Mapa Interativo das Regiões
         </h2>
-        <div className="relative w-full aspect-[16/9] bg-gradient-to-b from-blue-950/40 via-green-950/30 to-red-950/40 rounded-xl overflow-hidden border border-border">
-          <svg viewBox="0 0 800 450" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <ellipse
-              cx="400"
-              cy="80"
-              rx="220"
-              ry="70"
-              fill="rgba(96,165,250,0.15)"
-              stroke="rgba(96,165,250,0.4)"
-              strokeWidth="1.5"
-            />
-            <text x="400" y="72" textAnchor="middle" fill="rgb(147,197,253)" fontSize="14" fontWeight="bold">
-              PAILUNE
-            </text>
-            <text x="400" y="88" textAnchor="middle" fill="rgb(148,163,184)" fontSize="10">
-              Norte Gelado • Origem dos Greymanes
-            </text>
-
-            <ellipse
-              cx="240"
-              cy="220"
-              rx="170"
-              ry="90"
-              fill="rgba(74,222,128,0.12)"
-              stroke="rgba(74,222,128,0.4)"
-              strokeWidth="1.5"
-            />
-            <text x="240" y="212" textAnchor="middle" fill="rgb(134,239,172)" fontSize="14" fontWeight="bold">
-              HERNAND
-            </text>
-            <text x="240" y="228" textAnchor="middle" fill="rgb(148,163,184)" fontSize="10">
-              Área Inicial • Acampamento Greymane
-            </text>
-
-            <ellipse
-              cx="520"
-              cy="220"
-              rx="160"
-              ry="90"
-              fill="rgba(234,179,8,0.12)"
-              stroke="rgba(234,179,8,0.35)"
-              strokeWidth="1.5"
-            />
-            <text x="520" y="212" textAnchor="middle" fill="rgb(253,224,71)" fontSize="14" fontWeight="bold">
-              DEMENISS
-            </text>
-            <text x="520" y="228" textAnchor="middle" fill="rgb(148,163,184)" fontSize="10">
-              Capital Política • Centro de Poder
-            </text>
-
-            <ellipse
-              cx="690"
-              cy="300"
-              rx="110"
-              ry="80"
-              fill="rgba(168,85,247,0.12)"
-              stroke="rgba(168,85,247,0.35)"
-              strokeWidth="1.5"
-            />
-            <text x="690" y="293" textAnchor="middle" fill="rgb(216,180,254)" fontSize="13" fontWeight="bold">
-              DELESYIA
-            </text>
-            <text x="690" y="308" textAnchor="middle" fill="rgb(148,163,184)" fontSize="9">
-              Tecnologia • Dragão Mecânico
-            </text>
-
-            <ellipse
-              cx="380"
-              cy="380"
-              rx="220"
-              ry="60"
-              fill="rgba(239,68,68,0.15)"
-              stroke="rgba(239,68,68,0.4)"
-              strokeWidth="1.5"
-            />
-            <text x="380" y="373" textAnchor="middle" fill="rgb(252,165,165)" fontSize="14" fontWeight="bold">
-              CRIMSON DESERT
-            </text>
-            <text x="380" y="389" textAnchor="middle" fill="rgb(148,163,184)" fontSize="10">
-              Deserto Sem Lei • Bandidos
-            </text>
-
-            <ellipse
-              cx="160"
-              cy="370"
-              rx="100"
-              ry="45"
-              fill="rgba(255,255,255,0.06)"
-              stroke="rgba(255,255,255,0.25)"
-              strokeWidth="1"
-              strokeDasharray="5,3"
-            />
-            <text x="160" y="364" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="12" fontWeight="bold">
-              THE ABYSS
-            </text>
-            <text x="160" y="378" textAnchor="middle" fill="rgb(148,163,184)" fontSize="9">
-              Dimensão Paralela
-            </text>
-
-            <line x1="400" y1="148" x2="300" y2="132" stroke="rgba(148,163,184,0.2)" strokeWidth="1" />
-            <line x1="400" y1="148" x2="460" y2="133" stroke="rgba(148,163,184,0.2)" strokeWidth="1" />
-            <line x1="400" y1="310" x2="400" y2="322" stroke="rgba(239,68,68,0.3)" strokeWidth="1" />
-          </svg>
-        </div>
+        <CrimsonDesertRegionMap />
         <p className="text-xs text-muted-foreground mt-3 text-center">
-          Representação aproximada da disposição geográfica — baseada em Beebom, FandomWire e Fandom Wiki. O mapa
-          oficial da Pearl Abyss tem formato diferente; esta visualização é editorial.
+          Clique em um pin para abrir os detalhes da região. Use scroll, arraste e os botões de zoom para explorar o mapa completo de Pywel.
         </p>
       </div>
 
