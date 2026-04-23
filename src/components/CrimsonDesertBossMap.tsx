@@ -282,7 +282,7 @@ const CrimsonDesertBossMap = () => {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1.5 mb-0.5">
                     <span className={`inline-flex items-center justify-center w-5 h-5 ${bossTipoMeta[bossSelecionado.tipo].bg} text-white rounded-full text-[9px] font-bold`}>
-                      {bossSelecionado.tipo === "secreto" ? "?" : bossSelecionado.numero}
+                      {bossSelecionado.tipo === "secreto" ? "?" : bossSelecionado.tipo === "historia" ? "H" : "★"}
                     </span>
                     <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${bossTipoMeta[bossSelecionado.tipo].bg} text-white`}>
                       {bossTipoMeta[bossSelecionado.tipo].label}
