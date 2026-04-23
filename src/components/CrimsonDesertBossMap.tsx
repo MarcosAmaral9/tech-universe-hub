@@ -7,7 +7,8 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ZoomIn, ZoomOut, RotateCcw, X, MapPin, Info } from "lucide-react";
-import mapaImg from "@/assets/crimson-desert-mapa-oficial.webp";
+import mapaPywelImg from "@/assets/crimson-desert-pywel-completo.webp";
+import mapaAbyssImg from "@/assets/crimson-desert-abyss.webp";
 import {
   crimsonDesertBosses,
   bossTipoMeta,
