@@ -4,7 +4,7 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
-import { Clock, User, Calendar, Skull, Swords, MapPin, Shield, Star, Zap, Flame, Sword } from "lucide-react";
+import { Clock, User, Calendar, Skull, Swords, Shield, Star, Zap, Flame, Sword } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
