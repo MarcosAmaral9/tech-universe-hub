@@ -7,7 +7,8 @@
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ZoomIn, ZoomOut, RotateCcw, X, MapPin, Info } from "lucide-react";
-import mapaImg from "@/assets/crimson-desert-mapa-oficial.webp";
+import mapaPywelImg from "@/assets/crimson-desert-pywel-completo.webp";
+import mapaAbyssImg from "@/assets/crimson-desert-abyss.webp";
 import {
   crimsonDesertBosses,
   bossTipoMeta,
@@ -203,36 +204,18 @@ const CrimsonDesertBossMap = () => {
               transformOrigin: "center center",
             }}
           >
-            {mapaTab === "pywel" ? (
-              <img
-                src={mapaImg}
-                alt="Mapa oficial de Pywel — Crimson Desert"
-                loading="lazy"
-                decoding="async"
-                draggable={false}
-                className="w-full h-full object-contain pointer-events-none"
-              />
-            ) : (
-              /* Abyss: fundo estilizado com regiões */
-              <div className="w-full h-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center relative">
-                {/* Region labels */}
-                {[
-                  { label: "Sleet Isles",          x: "18%", y: "32%" },
-                  { label: "Dry Valley",            x: "52%", y: "22%" },
-                  { label: "Triangle Ring",         x: "33%", y: "55%" },
-                  { label: "The Wanderer's Way",    x: "62%", y: "46%" },
-                  { label: "Path of Providence",    x: "22%", y: "72%" },
-                  { label: "Eternal Corridor",      x: "62%", y: "72%" },
-                ].map(({ label, x, y }) => (
-                  <span key={label} className="absolute text-slate-400/60 text-xs font-medium pointer-events-none uppercase tracking-widest"
-                    style={{ left: x, top: y, transform: "translate(-50%, -50%)" }}>
-                    {label}
-                  </span>
-                ))}
-                <span className="absolute inset-0 opacity-5 pointer-events-none"
-                  style={{ backgroundImage: "radial-gradient(circle, rgba(139,92,246,0.3) 0%, transparent 70%)" }} />
-              </div>
-            )}
+            <img
+              src={mapaTab === "pywel" ? mapaPywelImg : mapaAbyssImg}
+              alt={
+                mapaTab === "pywel"
+                  ? "Mapa do Continente de Pywel — Crimson Desert"
+                  : "Mapa do Abismo (The Abyss) — Crimson Desert"
+              }
+              loading="lazy"
+              decoding="async"
+              draggable={false}
+              className="w-full h-full object-contain pointer-events-none"
+            />
 
             {/* Pins dos bosses — TAMANHO REDUZIDO */}
             {bossesFiltrados.map((boss) => {
@@ -299,7 +282,7 @@ const CrimsonDesertBossMap = () => {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1.5 mb-0.5">
                     <span className={`inline-flex items-center justify-center w-5 h-5 ${bossTipoMeta[bossSelecionado.tipo].bg} text-white rounded-full text-[9px] font-bold`}>
-                      {bossSelecionado.tipo === "secreto" ? "?" : bossSelecionado.numero}
+                      {bossSelecionado.tipo === "secreto" ? "?" : bossSelecionado.tipo === "historia" ? "H" : "★"}
                     </span>
                     <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${bossTipoMeta[bossSelecionado.tipo].bg} text-white`}>
                       {bossTipoMeta[bossSelecionado.tipo].label}
