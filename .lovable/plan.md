@@ -1,69 +1,77 @@
+## Reestruturar Mapa Interativo de Bosses — Crimson Desert
 
-
-## Recalibrar Mapa Interativo de Bosses — Crimson Desert
-
-Reposicionar os marcadores no mapa interativo do artigo `/post/crimson-desert-bosses-guia-chefes` usando as duas novas imagens do Map Genie como **referência visual exata** para as posições, separando claramente História (coroas) de Opcionais (caveiras).
+Substituir as imagens atuais do mapa interativo do artigo `/post/crimson-desert-bosses-guia-chefes` por novas imagens limpas baseadas nas referências do MapGenie, mantendo apenas **2 abas** (Pywel completo e Abyss) e preservando os **4 filtros de tipo** (Todos / História / Opcionais / Secretos).
 
 ### O que será entregue
 
-**1. Recalibração completa de coordenadas (`src/data/crimsonDesertBosses.ts`)**
+**1. Geração das novas imagens de mapa (`src/assets/`)**
 
-Re-mapeamento pin a pin usando as coordenadas observadas nas duas imagens enviadas, normalizadas para a imagem oficial existente (1178×1074):
+Três imagens originais baseadas nas referências enviadas:
 
-- **Imagem 1 (caveiras = opcionais/world)** — ~26 pins:
-  - Pailune (cluster norte): 8 pins entre `x: 14-30 / y: 18-32`
-  - Hernand W: 5 pins entre `x: 4-12 / y: 56-78`
-  - Crimson Desert NE: 7 pins entre `x: 60-86 / y: 18-46`
-  - Demeniss centro: 3 pins entre `x: 32-44 / y: 48-56`
-  - Delesyia sul: 1 pin em `x: 50 / y: 78`
+- **`crimson-desert-pywel-completo.webp`** — mesclagem das imagens 24 (norte) + 25 (sul) do MapGenie em uma única imagem do continente de Pywel inteiro
+  - Resolução alvo: ~1600×1500px (proporção próxima a 1.07:1, similar ao mapa atual)
+  - Costura vertical: img24 cobre y=0–55%, img25 cobre y=45–100%, com blend suave na faixa 45–55% para evitar emenda visível
+  - Estilo limpo, sem os pins roxos do MapGenie (apenas o terreno, rótulos de regiões e pontos de referência geográficos como PAILUNE, HERNAND, DEMENISS, DELESYIA, CRIMSON DESERT)
+  - Substitui a imagem `crimson-desert-mapa-oficial.webp` atual
 
-- **Imagem 2 (coroas = história principal)** — ~38 pins:
-  - Pailune: 8 pins entre `x: 18-32 / y: 14-30`
-  - Hernand SW (cluster denso): 10 pins entre `x: 8-22 / y: 60-78`
-  - Demeniss centro (cluster denso): 12 pins entre `x: 30-50 / y: 42-62`
-  - Delesyia/SE: 5 pins entre `x: 44-72 / y: 64-78`
-  - Borda leste solitária: 1 pin em `x: 88 / y: 60`
+- **`crimson-desert-abyss.webp`** — baseada na imagem 26
+  - Resolução alvo: ~1200×1150px
+  - Mantém as regiões do Abismo: Sleet Isles, Dry Valley, Triangle Ring, The Wanderer's Way, Path of Providence, Eternal Corridor
+  - Substitui o fundo gradiente roxo atualmente gerado por CSS no componente
 
-Cada coordenada será triangulada usando rótulos visíveis (PAILUNE, HERNAND, DEMENISS, DELESYIA, CRIMSON DESERT, Silver Wolf Mountain, Tashkalp, Goathak, Urdavah) para máxima precisão.
+**2. Recalibração de coordenadas (`src/data/crimsonDesertBosses.ts`)**
 
-**2. Numeração consistente com o conteúdo do artigo**
+Já que as duas imagens (norte e sul) serão mescladas em uma só imagem de Pywel, todas as coordenadas `x`/`y` dos bosses com `mapa: "pywel"` serão re-normalizadas para a nova imagem mesclada:
 
-- Bosses de **História**: numeração sequencial **1–25** (P para prólogo, F1/F2/F3 para sequência final) — conforme o conteúdo escrito do artigo
-- Bosses **Opcionais**: marcador `★` (já existente)
-- Bosses **Secretos**: numeração `S1, S2` (Goyen, Master Du)
-- A ordem narrativa do artigo (capítulos 1–10) será preservada
+- Bosses originalmente da metade norte (Pailune, Crimson Desert NE): `y` permanece próximo do valor atual (escala ~0–55%)
+- Bosses da metade sul (Hernand, Demeniss, Delesyia): `y` será ajustado para a faixa 45–100% da nova imagem
+- Bosses do Abyss (`mapa: "abyss"`) ganham coordenadas precisas baseadas na imagem 26
 
-**3. Adição dos bosses faltantes detectados nas imagens**
+Cada pin será triangulado pelos rótulos de região visíveis para garantir alinhamento exato com a marcação roxa do MapGenie nas imagens de referência.
 
-Comparando os ~64 pins das imagens com os 41 atuais no arquivo de dados, faltam ~20 marcadores. Serão adicionados (com base no conteúdo já presente no artigo + Map Genie):
+**3. Atualização do componente (`src/components/CrimsonDesertBossMap.tsx`)**
 
-- **Opcionais novos** (caveira): `Queen Bismuth Oreback Crab` (Delesyia), variantes de world bosses já citados na tabela mas sem pin no mapa
-- **História faltantes** que aparecem no cluster denso de Demeniss/Hernand (sub-bosses como Antumbra's Staff, Antumbra's Spear, sub-encontros do Capítulo 6–8)
-- Para cada boss adicionado, um novo bloco textual conciso será inserido no artigo (3 cards de info: 📍 Localização / ⚠️ Dificuldade / 🏆 Recompensa + estratégia curta) com `id` âncora correspondente para que o botão "Ver detalhes no guia" do mapa funcione
+- Mantém as **2 abas** já existentes: `Continente de Pywel` e `The Abyss`
+- Substitui o import `mapaImg` por `crimson-desert-pywel-completo.webp`
+- Adiciona import da nova imagem `crimson-desert-abyss.webp` e a usa no lugar do gradiente CSS atual (`bg-gradient-to-br from-slate-900...`)
+- Remove o bloco de "region labels" hardcoded do Abyss (agora vem rotulado direto na imagem)
+- Mantém os **4 filtros de tipo** intactos: Todos / História / Opcionais / Secretos
+- Corrige o erro de build TS2339 (`Property 'numero' does not exist on type 'BossMarker'`) na linha 302 — o painel de detalhes deixa de exibir `bossSelecionado.numero` (campo que não existe no schema) e passa a exibir um ícone derivado do tipo:
+  ```tsx
+  {bossSelecionado.tipo === "secreto" ? "?" : bossSelecionado.tipo === "historia" ? "H" : "★"}
+  ```
 
-**4. Atualização do conteúdo do artigo (`CrimsonDesertBosses.tsx`)**
+**4. Sincronização do conteúdo do artigo (`src/pages/posts/CrimsonDesertBosses.tsx`)**
 
-- Atualizar localização textual de cada boss para corresponder exatamente à região destacada na imagem do Map Genie (corrigir incoerências como "Hexe Marie em Floresta de Hernand" → região exata onde o pin aparece)
-- Adicionar os novos bosses faltantes em seções dedicadas (História ou Opcionais conforme o tipo)
-- Expandir tabela de Bosses Opcionais para refletir todos os pins da imagem 1
-- Manter o tom editorial existente (PT-BR, sem spoilers de história, foco em estratégia)
+- Garantir que cada `anchorId` definido em `crimsonDesertBosses.ts` tenha um `<h3 id="boss-*" className="scroll-mt-24">` correspondente no artigo
+- Atualizar localizações textuais que estavam incoerentes com as posições dos pins nas imagens do MapGenie
+- Sem novas seções de chefes — apenas correção de IDs faltantes e alinhamento de regiões
 
 ### Detalhes técnicos
 
-- Sem mudanças no componente `CrimsonDesertBossMap.tsx` — ele já lê `crimsonDesertBosses` automaticamente
-- Sem mudanças na imagem de fundo do mapa (mantém `crimson-desert-mapa-oficial.webp`)
-- Cada novo boss receberá `id`, `numero`, `tipo`, `regiao`, `dificuldade`, `recompensa`, `x`, `y`, `anchorId`
-- Todas as âncoras `boss-*` no array de dados terão um `<h3 id="boss-*" className="scroll-mt-24">` correspondente no artigo
-- Tokens semânticos do design system mantidos (`bg-destructive`, `bg-geek`, `bg-primary`)
+- A mesclagem das imagens 24 + 25 será feita via Python + Pillow (`/tmp/merge.py`) durante o build, gravando o resultado direto em `src/assets/crimson-desert-pywel-completo.webp` com qualidade WebP 90 e blend linear na zona de overlap
+- Imagem do Abismo: conversão simples PNG → WebP da imagem 26 com qualidade 90
+- A imagem antiga `crimson-desert-mapa-oficial.webp` será removida do `src/assets/`
+- Tipo `BossMarker` permanece sem campo `numero` — a correção é feita no consumidor (componente)
+- Tokens semânticos do design system mantidos
+- Sem libs novas
 
 ### Arquivos afetados
 
 ```text
-~ src/data/crimsonDesertBosses.ts          (recalibração + ~20 novos bosses)
-~ src/pages/posts/CrimsonDesertBosses.tsx  (novas seções + correções de localização)
++ src/assets/crimson-desert-pywel-completo.webp   (novo, mescla 24+25)
++ src/assets/crimson-desert-abyss.webp            (novo, baseado na 26)
+- src/assets/crimson-desert-mapa-oficial.webp     (removido)
+~ src/data/crimsonDesertBosses.ts                 (re-normalização das coordenadas y para o mapa mesclado + coords precisas do Abyss)
+~ src/components/CrimsonDesertBossMap.tsx         (novos imports + remove gradiente CSS do Abyss + corrige TS2339)
+~ src/pages/posts/CrimsonDesertBosses.tsx         (alinhamento de anchorIds e regiões textuais)
 ```
 
 ### Resultado esperado
 
-O mapa interativo passará a exibir exatamente os ~64 marcadores observados nas duas imagens do Map Genie, posicionados sobre as mesmas regiões geográficas. Ao filtrar "História" o usuário verá o layout da imagem 2; ao filtrar "Opcionais" verá o layout da imagem 1. Cada pin clicado levará a uma seção textual completa no artigo.
+O mapa interativo passará a ter:
 
+- **Aba 1 — Continente de Pywel**: imagem única e contínua mesclando norte + sul, com todos os pins de Pywel posicionados exatamente sobre as marcações roxas do MapGenie
+- **Aba 2 — The Abyss**: imagem real do Abismo (não mais um placeholder CSS) com pins precisos
+- **Filtros mantidos**: Todos, História, Opcionais, Secretos — funcionam em ambas as abas
+- **Popups funcionais**: clique em qualquer pin abre o painel com nome, região, dificuldade, recompensa e dica; sem mais erro de build
