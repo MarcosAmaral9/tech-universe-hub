@@ -246,7 +246,7 @@ const CrimsonDesertBossMap = () => {
                   data-boss="true"
                   onClick={(e) => { e.stopPropagation(); setBossSelecionado(bossSelecionado?.id === boss.id ? null : boss); }}
                   aria-label={`${boss.nome} — ${meta.label} — ${boss.regiao}`}
-                  className={`group absolute -translate-x-1/2 -translate-y-1/2 ${meta.bg} ${meta.cor} rounded-full font-bold flex items-center justify-center shadow-md ring-1 ring-black/30 hover:scale-150 hover:z-20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white transition-transform z-10 ${bossSelecionado?.id === boss.id ? "scale-150 ring-2 ring-white z-20" : ""}`}
+                  className={`group absolute -translate-x-1/2 -translate-y-1/2 ${meta.bg} text-white rounded-full font-bold flex items-center justify-center shadow-md ring-1 ring-black/30 hover:scale-150 hover:z-20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white transition-transform z-10 ${bossSelecionado?.id === boss.id ? "scale-150 ring-2 ring-white z-20" : ""}`}
                   style={{
                     left: `${boss.x}%`,
                     top: `${boss.y}%`,
