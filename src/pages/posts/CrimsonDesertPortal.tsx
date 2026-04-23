@@ -7,7 +7,7 @@ import crimsonHeroImg        from "@/assets/crimson-desert-hero.webp";
 import crimsonGuiaImg        from "@/assets/crimson-desert-guia.webp";
 import crimsonCombateImg     from "@/assets/crimson-desert-combate.webp";
 import crimsonReviewImg      from "@/assets/crimson-desert-review.webp";
-import crimsonMapaImg        from "@/assets/crimson-desert-mapa-pywel.webp";
+import crimsonMapaImg        from "@/assets/crimson-desert-pywel-completo.webp";
 import crimsonBuildsImg      from "@/assets/crimson-desert-builds.webp";
 import crimsonBossesImg      from "@/assets/crimson-desert-bosses.webp";
 import crimsonIniciantesImg  from "@/assets/crimson-desert-iniciantes.webp";
