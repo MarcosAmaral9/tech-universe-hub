@@ -457,6 +457,12 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
                     ))}
                   </ul>
                 </div>
+                <a
+                  href={`/regiao/${selecionada.key}`}
+                  className="block text-center mt-1 px-3 py-1.5 rounded-md bg-primary/10 hover:bg-primary/20 text-primary font-semibold text-[11px] transition-colors"
+                >
+                  Saiba mais sobre {selecionada.name} →
+                </a>
               </div>
             </div>
           </div>
