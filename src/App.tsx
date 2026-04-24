@@ -220,6 +220,12 @@ const DiabloLordOfHatred2026    = lazy(() => import("./pages/posts/DiabloLordOfH
 const GtaViNovembro2026         = lazy(() => import("./pages/posts/GtaViNovembro2026"));
 const JJKTemporada42026         = lazy(() => import("./pages/posts/JJKTemporada42026"));
 const FreierenTemporada32026    = lazy(() => import("./pages/posts/FreierenTemporada32026"));
+// ── Páginas dedicadas das regiões de Pywel (Crimson Desert) ──
+const PailunePage              = lazy(() => import("./pages/regions/PailunePage"));
+const HernandPage              = lazy(() => import("./pages/regions/HernandPage"));
+const DemenissPage             = lazy(() => import("./pages/regions/DemenissPage"));
+const DelesyiaPage             = lazy(() => import("./pages/regions/DelesyiaPage"));
+const CrimsonDesertRegionPage  = lazy(() => import("./pages/regions/CrimsonDesertRegionPage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -426,6 +432,12 @@ const App = () => (
                 <Route path="/post/gta-vi-novembro-2026-vice-city-leonida" element={<Suspense fallback={<div />}><GtaViNovembro2026 /></Suspense>} />
                 <Route path="/post/jujutsu-kaisen-temporada-4-culling-game-2026" element={<Suspense fallback={<div />}><JJKTemporada42026 /></Suspense>} />
                 <Route path="/post/frieren-temporada-3-confirmada-2026" element={<Suspense fallback={<div />}><FreierenTemporada32026 /></Suspense>} />
+                {/* ── Páginas dedicadas das regiões de Pywel ── */}
+                <Route path="/regiao/pailune" element={<PailunePage />} />
+                <Route path="/regiao/hernand" element={<HernandPage />} />
+                <Route path="/regiao/demeniss" element={<DemenissPage />} />
+                <Route path="/regiao/delesyia" element={<DelesyiaPage />} />
+                <Route path="/regiao/crimson-desert" element={<CrimsonDesertRegionPage />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
