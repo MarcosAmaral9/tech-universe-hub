@@ -130,7 +130,56 @@ const RegionIcon = ({ iconKey }: { iconKey: string }) => {
   }
 };
 
+const FAQ_ITEMS = [
+  {
+    q: "Qual o tamanho do mapa de Pywel em Crimson Desert?",
+    a: "Pywel é estimado em 80–110 km², segundo Will Powers (Pearl Abyss). É mais que o dobro de Skyrim (~37 km²) e maior que o mapa de Red Dead Redemption 2 (~75 km²). Atravessá-lo a cavalo leva cerca de 2 horas.",
+  },
+  {
+    q: "Quantas regiões tem o continente de Pywel?",
+    a: "O continente físico é dividido em 5 regiões principais: Pailune (norte gelado), Hernand (área inicial), Demeniss (capital política), Delesyia (região tecnológica) e Crimson Desert (deserto sem lei ao sul).",
+  },
+  {
+    q: "Qual a melhor região para começar em Crimson Desert?",
+    a: "Hernand é a região inicial e a mais recomendada para iniciantes. É lá que ficam Howling Hill, Calphade e Beighen, e onde o jogo apresenta seus principais sistemas — combate, fast travel, montarias e crafting — antes de abrir caminho para áreas mais hostis.",
+  },
+  {
+    q: "Onde fica o deserto carmesim no mapa?",
+    a: "A região homônima Crimson Desert ocupa o sul/sudeste do continente. Sua maior cidade é Tommaso (com 3 pontos de fast travel), e o Spire of the Sun fica próximo ao centro do deserto. É a área mais perigosa e sem lei de Pywel.",
+  },
+  {
+    q: "Como viajar rapidamente entre regiões em Pywel?",
+    a: "Existem 4 formas: 29 montarias diferentes (cavalos, ursos, lagartos, raptores e dragões), Abyss Cressets e Abyss Nexus (pontos de teleporte desbloqueáveis), planeio com a habilidade Glide e voo montado em dragões depois de desbloquear Flight.",
+  },
+  {
+    q: "Qual a região mais perigosa de Pywel?",
+    a: "O Crimson Desert é o território mais imprevisível, dominado por bandidos, mercenários e world bosses como o Crookrock Walker. Pailune também é brutal pelo clima extremo e pelos confrontos com os Black Bears, mas o deserto não tem nenhuma estrutura política protegendo o jogador.",
+  },
+];
+
+const REGION_LINKS: Record<RegionKey, string> = {
+  pailune: "/regiao/pailune",
+  hernand: "/regiao/hernand",
+  demeniss: "/regiao/demeniss",
+  delesyia: "/regiao/delesyia",
+  "crimson-desert": "/regiao/crimson-desert",
+};
+
+function normalize(text: string) {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+}
+
 const CrimsonDesertMapa = () => {
+  const [selectedRegion, setSelectedRegion] = useState<RegionKey | null>(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [highlightedSlug, setHighlightedSlug] = useState<RegionKey | null>(null);
+  const [searchFocused, setSearchFocused] = useState(false);
+  const highlightTimerRef = useRef<number | null>(null);
+
   useEffect(() => {
     trackArticleRead(
       "crimson-desert-mapa-regioes-pywel",
@@ -138,6 +187,85 @@ const CrimsonDesertMapa = () => {
       "geek",
     );
   }, []);
+
+  // SEO: title, description, keywords overrides + FAQ JSON-LD
+  useEffect(() => {
+    const prevTitle = document.title;
+    const title = "Mapa de Pywel — Crimson Desert: Todas as Regiões, Bosses e Locais | VICIO<CODE>";
+    const description =
+      "Mapa interativo de Pywel em Crimson Desert: 5 regiões (Pailune, Hernand, Demeniss, Delesyia e o deserto carmesim), 80–110 km², bosses, cidades e como se locomover.";
+    const keywords =
+      "crimson desert mapa, pywel mapa, regioes pywel, hernand, pailune, demeniss, delesyia, crimson desert deserto, mapa interativo crimson desert, bosses pywel, pearl abyss, kliff greymane, fast travel pywel";
+
+    document.title = title;
+    const setMeta = (name: string, content: string, attr: "name" | "property" = "name") => {
+      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute(attr, name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute("content", content);
+    };
+    setMeta("description", description);
+    setMeta("keywords", keywords);
+    setMeta("og:title", title, "property");
+    setMeta("og:description", description, "property");
+
+    // FAQ JSON-LD
+    const faqLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: FAQ_ITEMS.map(({ q, a }) => ({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: { "@type": "Answer", text: a },
+      })),
+    };
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.dataset.faq = "crimson-desert-mapa-pywel";
+    script.text = JSON.stringify(faqLd);
+    document.head.appendChild(script);
+
+    return () => {
+      document.title = prevTitle;
+      const existing = document.querySelector('script[data-faq="crimson-desert-mapa-pywel"]');
+      existing?.remove();
+    };
+  }, []);
+
+  const filteredSuggestions = useMemo(() => {
+    const q = normalize(searchTerm);
+    if (!q) return [];
+    return regionsData.filter(
+      (r) =>
+        normalize(r.name).includes(q) ||
+        normalize(r.label).includes(q) ||
+        normalize(r.biome).includes(q),
+    );
+  }, [searchTerm]);
+
+  const focarRegiao = (slug: RegionKey) => {
+    setSelectedRegion(slug);
+    setSearchTerm("");
+    setSearchFocused(false);
+    setHighlightedSlug(slug);
+    // Scroll suave até o card da região
+    requestAnimationFrame(() => {
+      const el = document.getElementById(`regiao-${slug}`);
+      el?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    if (highlightTimerRef.current) window.clearTimeout(highlightTimerRef.current);
+    highlightTimerRef.current = window.setTimeout(() => setHighlightedSlug(null), 2400);
+  };
+
+  useEffect(
+    () => () => {
+      if (highlightTimerRef.current) window.clearTimeout(highlightTimerRef.current);
+    },
+    [],
+  );
 
   return (
     <article className="container py-8 max-w-4xl mx-auto">
@@ -168,25 +296,74 @@ const CrimsonDesertMapa = () => {
         <ShareWhatsApp />
       </header>
 
-      <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img src={crimsonMapaImg} alt="Mapa de Pywel — Crimson Desert regiões" fetchpriority="high" loading="eager" decoding="async" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-6">
-          <p className="text-sm text-muted-foreground italic">
-            O continente de Pywel é estimado em 80–110 km² — mais que o dobro do mapa de Skyrim. Atravessá-lo a cavalo
-            leva aproximadamente 2 horas.
-          </p>
+      <figure className="mb-8 rounded-2xl overflow-hidden border border-border bg-card">
+        <div className="aspect-[1178/1074] w-full bg-card p-2 sm:p-4">
+          <img
+            src={crimsonMapaImg}
+            alt="Mapa completo do continente de Pywel — Crimson Desert (Pearl Abyss)"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async"
+            className="w-full h-full object-contain"
+          />
         </div>
-      </div>
+        <figcaption className="px-4 py-3 text-xs sm:text-sm text-muted-foreground italic border-t border-border bg-muted/20">
+          O continente de Pywel é estimado em 80–110 km² — mais que o dobro do mapa de Skyrim. Atravessá-lo a cavalo
+          leva aproximadamente 2 horas.
+        </figcaption>
+      </figure>
 
       {/* Mapa Interativo de Pywel */}
       <div className="not-prose my-8">
         <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
           <Map className="h-5 w-5 text-primary" /> Pywel — Mapa Interativo das Regiões
         </h2>
-        <CrimsonDesertRegionMap />
+        <CrimsonDesertRegionMap selectedKey={selectedRegion} onSelect={setSelectedRegion} />
         <p className="text-xs text-muted-foreground mt-3 text-center">
           Clique em um pin para abrir os detalhes da região. Use scroll, arraste e os botões de zoom para explorar o mapa completo de Pywel.
         </p>
+
+        {/* Busca por região */}
+        <div className="relative mt-5 max-w-md mx-auto">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+            <Input
+              type="text"
+              placeholder="Buscar região (ex.: Hernand, deserto, tundra...)"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onFocus={() => setSearchFocused(true)}
+              onBlur={() => window.setTimeout(() => setSearchFocused(false), 150)}
+              className="pl-9"
+              aria-label="Buscar região no mapa de Pywel"
+            />
+          </div>
+          {searchFocused && filteredSuggestions.length > 0 && (
+            <ul className="absolute z-20 left-0 right-0 mt-1 bg-popover border border-border rounded-md shadow-lg overflow-hidden">
+              {filteredSuggestions.map((r) => (
+                <li key={r.slug}>
+                  <button
+                    type="button"
+                    onMouseDown={(e) => {
+                      e.preventDefault();
+                      focarRegiao(r.slug);
+                    }}
+                    className="w-full text-left px-3 py-2 text-sm hover:bg-accent flex items-center gap-2"
+                  >
+                    <RegionIcon iconKey={r.iconKey} />
+                    <span className="font-semibold">{r.name}</span>
+                    <span className="text-xs text-muted-foreground ml-auto">{r.label}</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+          {searchFocused && searchTerm && filteredSuggestions.length === 0 && (
+            <div className="absolute z-20 left-0 right-0 mt-1 bg-popover border border-border rounded-md shadow-lg px-3 py-2 text-xs text-muted-foreground">
+              Nenhuma região encontrada para "{searchTerm}".
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
