@@ -14,6 +14,7 @@ import CrimsonDesertRegionMap, { type RegionKey } from "@/components/CrimsonDese
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 interface Region {
   name: string;
+  slug: RegionKey;
   iconKey: string;
   color: string;
   badge: string;
