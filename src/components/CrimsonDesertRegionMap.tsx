@@ -7,19 +7,7 @@
  * e Crimson Desert. NÃO inclui o Abismo.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import {
-  ZoomIn,
-  ZoomOut,
-  RotateCcw,
-  X,
-  MapPin,
-  Info,
-  Compass,
-  Snowflake,
-  Building2,
-  Cpu,
-  Skull,
-} from "lucide-react";
+import { ZoomIn, ZoomOut, RotateCcw, X, MapPin, Info, Compass, Snowflake, Building2, Cpu, Skull } from "lucide-react";
 import mapaPywelImg from "@/assets/crimson-desert-pywel-completo.webp";
 
 export type RegionKey = "hernand" | "pailune" | "demeniss" | "delesyia" | "crimson-desert";
@@ -53,7 +41,7 @@ const regioes: Region[] = [
     key: "pailune",
     name: "Pailune",
     label: "Norte Gelado",
-    x: 38,
+    x: 34,
     y: 18,
     iconKey: "snowflake",
     pinClass: "bg-blue-500 ring-blue-200/40",
@@ -196,19 +184,16 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
     setSelecionadaState(found);
   }, [selectedKey]);
 
-  const limitarPan = useCallback(
-    (novoPan: { x: number; y: number }, zoomAtual: number) => {
-      if (!containerRef.current) return novoPan;
-      const { width, height } = containerRef.current.getBoundingClientRect();
-      const maxX = ((zoomAtual - 1) * width) / 2;
-      const maxY = ((zoomAtual - 1) * height) / 2;
-      return {
-        x: Math.max(-maxX, Math.min(maxX, novoPan.x)),
-        y: Math.max(-maxY, Math.min(maxY, novoPan.y)),
-      };
-    },
-    [],
-  );
+  const limitarPan = useCallback((novoPan: { x: number; y: number }, zoomAtual: number) => {
+    if (!containerRef.current) return novoPan;
+    const { width, height } = containerRef.current.getBoundingClientRect();
+    const maxX = ((zoomAtual - 1) * width) / 2;
+    const maxY = ((zoomAtual - 1) * height) / 2;
+    return {
+      x: Math.max(-maxX, Math.min(maxX, novoPan.x)),
+      y: Math.max(-maxY, Math.min(maxY, novoPan.y)),
+    };
+  }, []);
 
   const resetar = useCallback(() => {
     setZoom(1);
@@ -249,12 +234,7 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
     if (!arrastando) return;
     const dx = e.clientX - arrastoInicioRef.current.x;
     const dy = e.clientY - arrastoInicioRef.current.y;
-    setPan(
-      limitarPan(
-        { x: arrastoInicioRef.current.panX + dx, y: arrastoInicioRef.current.panY + dy },
-        zoom,
-      ),
-    );
+    setPan(limitarPan({ x: arrastoInicioRef.current.panX + dx, y: arrastoInicioRef.current.panY + dy }, zoom));
   };
   const onPointerUp = () => setArrastando(false);
 
@@ -267,9 +247,7 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
         <div className="flex items-center gap-2">
           <MapPin className="h-4 w-4 text-primary" />
           <span className="font-semibold text-sm">Mapa Interativo de Pywel</span>
-          <span className="text-xs text-muted-foreground hidden sm:inline">
-            — {totalRegioes} regiões
-          </span>
+          <span className="text-xs text-muted-foreground hidden sm:inline">— {totalRegioes} regiões</span>
         </div>
         <div className="flex items-center gap-1 text-xs text-muted-foreground">
           <Info className="h-3.5 w-3.5" />
@@ -306,9 +284,7 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
       <div className="relative" style={{ height: "clamp(320px, 55vw, 640px)" }}>
         <div
           ref={containerRef}
-          className={`w-full h-full overflow-hidden select-none ${
-            arrastando ? "cursor-grabbing" : "cursor-grab"
-          }`}
+          className={`w-full h-full overflow-hidden select-none ${arrastando ? "cursor-grabbing" : "cursor-grab"}`}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onPointerUp={onPointerUp}
@@ -354,10 +330,7 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
                     height: `${pinSize}px`,
                   }}
                 >
-                  <RegionIcon
-                    iconKey={r.iconKey}
-                    className="h-3.5 w-3.5"
-                  />
+                  <RegionIcon iconKey={r.iconKey} className="h-3.5 w-3.5" />
                   {/* Rótulo permanente abaixo do pin */}
                   <span
                     className="pointer-events-none absolute top-full left-1/2 mt-1 px-1.5 py-0.5 bg-card/90 backdrop-blur border border-border rounded text-[10px] font-bold text-foreground whitespace-nowrap shadow-md"
@@ -418,16 +391,12 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
                     >
                       <RegionIcon iconKey={selecionada.iconKey} className="h-4 w-4" />
                     </span>
-                    <span
-                      className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${selecionada.badgeClass}`}
-                    >
+                    <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${selecionada.badgeClass}`}>
                       {selecionada.label}
                     </span>
                   </div>
                   <h3 className="font-bold text-base leading-tight">{selecionada.name}</h3>
-                  <p className="text-[11px] text-muted-foreground leading-snug">
-                    {selecionada.position}
-                  </p>
+                  <p className="text-[11px] text-muted-foreground leading-snug">{selecionada.position}</p>
                 </div>
                 <button
                   onClick={() => setSelecionada(null)}
@@ -447,10 +416,7 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
                   <p className="font-semibold text-foreground mb-1">📍 Locais-chave</p>
                   <ul className="space-y-0.5">
                     {selecionada.highlights.map((h) => (
-                      <li
-                        key={h}
-                        className="text-muted-foreground flex items-start gap-1.5"
-                      >
+                      <li key={h} className="text-muted-foreground flex items-start gap-1.5">
                         <span className="text-primary mt-0.5">◆</span>
                         {h}
                       </li>
