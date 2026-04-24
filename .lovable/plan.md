@@ -1,73 +1,103 @@
-## Mapa Interativo de Bosses — Crimson Desert (2 abas + 4 filtros)
 
-Reestruturar o mapa interativo do artigo `/post/crimson-desert-bosses-guia-chefes` para usar **apenas 2 abas** com imagens novas, mantendo os filtros de tipo.
 
-### O que será entregue
+## Mapa Pywel: Hero, SEO, Pins corretos, Busca e Páginas de regiões
 
-**1. Duas novas imagens de mapa (`src/assets/`)**
+Aprimoramentos no artigo `/post/crimson-desert-mapa-regioes-pywel` e criação de 5 novas páginas dedicadas para cada região do mapa.
 
-- **`crimson-desert-pywel-completo.webp`** — mesclagem das imagens 24 (norte) + 25 (sul) do MapGenie em uma única imagem do continente de Pywel inteiro
-  - Resolução alvo: ~1600×1500px (proporção próxima a 1.07:1)
-  - Costura vertical: img24 cobre y=0–55%, img25 cobre y=45–100%, com blend linear suave na faixa 45–55% para evitar emenda visível
-  - Estilo limpo: terreno + rótulos de regiões (PAILUNE, HERNAND, DEMENISS, DELESYIA, CRIMSON DESERT) sem os pins roxos do MapGenie
-  - Substitui a imagem `crimson-desert-mapa-oficial.webp` atual
+### 1. Hero do mapa exibido por completo
 
-- **`crimson-desert-abyss.webp`** — baseada na imagem 26
-  - Resolução alvo: ~1200×1150px
-  - Mantém as regiões do Abismo: Sleet Isles, Dry Valley, Triangle Ring, The Wanderer's Way, Path of Providence, Eternal Corridor
-  - Substitui o fundo gradiente roxo gerado por CSS no componente
+`src/pages/posts/CrimsonDesertMapa.tsx` (linhas 163–171):
+- Trocar `aspect-video` (16:9) + `object-cover` por um container que respeita a proporção real do mapa (~1.1:1 — quase quadrado).
+- Usar `aspect-[1178/1074]` com `object-contain` e `bg-card` para garantir que a imagem inteira apareça sem corte, com um leve padding ao redor.
+- Mover a legenda para baixo da imagem (em vez de overlay) para não cobrir o conteúdo do mapa.
+- Aplicar a mesma estratégia em qualquer outro local que use a imagem como hero (verificado: `CrimsonDesertPortal.tsx` usa em card pequeno — sem alteração necessária; `posts.ts` é apenas thumbnail).
 
-**2. Componente do mapa (`src/components/CrimsonDesertBossMap.tsx`)**
+### 2. SEO: título, metadescrição e FAQ
 
-- Mantém **2 abas**: `🗺️ Continente de Pywel` e `🌀 The Abyss`
-- Mantém os **4 filtros de tipo**: Todos / História / Opcionais / Secretos
-- Substitui o import `mapaImg` por `crimson-desert-pywel-completo.webp`
-- Adiciona import da nova `crimson-desert-abyss.webp` e a usa no lugar do gradiente CSS atual
-- Remove o bloco hardcoded de "region labels" do Abyss (rótulos agora vêm direto na imagem)
-- Corrige o erro de build TS2339 (`Property 'numero' does not exist on type 'BossMarker'`) no painel de detalhes — passa a exibir um ícone derivado do tipo:
-  ```tsx
-  {bossSelecionado.tipo === "secreto" ? "?" : bossSelecionado.tipo === "historia" ? "H" : "★"}
-  ```
+- Adicionar `<DynamicSEO>` ao topo de `CrimsonDesertMapa.tsx` com:
+  - **Title**: "Mapa de Pywel — Crimson Desert: Todas as Regiões, Bosses e Locais"
+  - **Description** (~155 chars): Resumo das 5 regiões + tamanho do mapa + locomoção.
+  - **Keywords** (12+): `crimson desert mapa, pywel mapa, regioes pywel, hernand, pailune, demeniss, delesyia, crimson desert deserto, mapa interativo crimson desert, bosses pywel, pearl abyss, kliff greymane, fast travel pywel`.
+- Inserir uma seção **"Perguntas Frequentes (FAQ)"** ao final do artigo com 6 perguntas:
+  1. Qual o tamanho do mapa de Pywel em Crimson Desert?
+  2. Quantas regiões tem o continente de Pywel?
+  3. Qual a melhor região para começar em Crimson Desert?
+  4. Onde fica o deserto carmesim no mapa?
+  5. Como viajar rapidamente entre regiões em Pywel?
+  6. Qual a região mais perigosa de Pywel?
+- Renderizar como cards visuais + injetar **JSON-LD `FAQPage`** (schema.org) em um `<script type="application/ld+json">` dentro do `<DynamicSEO>` ou via `useEffect` no DOM.
 
-**3. Recalibração de coordenadas (`src/data/crimsonDesertBosses.ts`)**
+### 3. Correção das posições dos pins no mapa interativo
 
-Como o mapa de Pywel agora é uma imagem única mesclada, as coordenadas `x`/`y` dos bosses com `mapa: "pywel"` serão re-normalizadas:
+`src/components/CrimsonDesertRegionMap.tsx` — recalibração das coordenadas `x/y` (% sobre a imagem 1178×1074) para coincidir com os rótulos visíveis no mapa oficial:
 
-- Bosses da metade norte (Pailune, Crimson Desert NE): `y` permanece próximo do valor atual (escala ~0–55%)
-- Bosses da metade sul (Hernand, Demeniss, Delesyia): `y` ajustado para a faixa 45–100% da nova imagem
-- Bosses do Abyss (`mapa: "abyss"`) recebem coordenadas precisas baseadas na imagem 26
+| Região         | Atual (x, y) | Novo (x, y) | Justificativa                              |
+|----------------|--------------|-------------|--------------------------------------------|
+| Pailune        | 50, 14       | **38, 18**  | Rótulo "PAILUNE" fica no NW, não no centro |
+| Hernand        | 30, 46       | **22, 56**  | Rótulo "HERNAND" no centro-oeste/sul       |
+| Demeniss       | 56, 50       | **52, 44**  | Rótulo "DEMENISS" no centro-norte          |
+| Delesyia       | 80, 56       | **76, 50**  | Rótulo "DELESYIA" no leste/centro          |
+| Crimson Desert | 47, 84       | **54, 78**  | Rótulo "CRIMSON DESERT" no sul/centro-sul  |
 
-Cada pin será triangulado pelos rótulos de região visíveis para garantir alinhamento exato com a marcação roxa do MapGenie nas imagens de referência.
+(Coordenadas finais validadas visualmente pela imagem `crimson-desert-pywel-completo.webp`. Pequenos ajustes finos podem ser aplicados na implementação.)
 
-**4. Sincronização do conteúdo do artigo (`src/pages/posts/CrimsonDesertBosses.tsx`)**
+### 4. Busca por região no post
 
-- Garantir que cada `anchorId` definido em `crimsonDesertBosses.ts` tenha um `<h3 id="boss-*" className="scroll-mt-24">` correspondente no artigo
-- Atualizar localizações textuais incoerentes com as posições dos pins do MapGenie
-- Sem novas seções de chefes — apenas correção de IDs faltantes e alinhamento de regiões
+Adicionar abaixo do mapa interativo um campo de busca:
+- `<Input>` com ícone de lupa (lucide `Search`).
+- Filtra `regionsData` por nome (case-insensitive, sem acento).
+- Sugestões aparecem como dropdown clicável; ao escolher:
+  - Abre o popup da região no mapa interativo (estado `selecionada` levantado para `CrimsonDesertMapa.tsx` via prop `controlledRegion`/`onRegionChange` no `CrimsonDesertRegionMap`).
+  - Faz scroll suave até o card da região (id="regiao-{nome}") com destaque temporário (ring animado).
+- Não exige backend — apenas estado local React.
+
+### 5. Páginas dedicadas por região
+
+Criar 5 novas páginas em `src/pages/regions/`:
+- `PailunePage.tsx`
+- `HernandPage.tsx`
+- `DemenissPage.tsx`
+- `DelesyiaPage.tsx`
+- `CrimsonDesertRegionPage.tsx`
+
+Cada página contém:
+- `<DynamicSEO>` específico (título, descrição, 10+ keywords focadas na região).
+- Hero com a imagem do mapa de Pywel + ícone/cor da região.
+- Seções: **Visão geral**, **Bioma e clima**, **Localização no mapa**, **Cidades e locais-chave**, **Bosses confirmados**, **Dicas de exploração**.
+- Bloco "Outras regiões de Pywel" no final com cards-link para as outras 4 regiões.
+- Link "← Voltar ao mapa completo" para `/post/crimson-desert-mapa-regioes-pywel`.
+- Conteúdo factual extraído do `regionsData` já existente + expansão.
+
+Rotas adicionadas em `src/App.tsx`:
+```text
+/regiao/pailune
+/regiao/hernand
+/regiao/demeniss
+/regiao/delesyia
+/regiao/crimson-desert
+```
+
+Nos cards de região do post `CrimsonDesertMapa.tsx`, adicionar botão **"Saiba mais sobre {região} →"** linkando para a página dedicada. No popup do mapa interativo, adicionar o mesmo link no rodapé.
 
 ### Detalhes técnicos
 
-- Mesclagem das imagens 24 + 25 via Python + Pillow (`/tmp/merge.py`), gravando direto em `src/assets/crimson-desert-pywel-completo.webp` com qualidade WebP 90 e blend linear na zona de overlap
-- Imagem do Abismo: conversão PNG → WebP da imagem 26 com qualidade 90
-- Imagem antiga `crimson-desert-mapa-oficial.webp` removida do `src/assets/`
-- Tipo `BossMarker` permanece sem campo `numero` — correção feita no consumidor
-- Tokens semânticos do design system mantidos
-- Sem libs novas
+- Sem mudanças em `crimson-desert-pywel-completo.webp` (mantém imagem atual como hero e mapa interativo).
+- `CrimsonDesertRegionMap` recebe duas novas props opcionais: `selectedKey?: RegionKey` e `onSelect?: (key: RegionKey | null) => void` para controle externo (busca).
+- FAQ JSON-LD inserido via `useEffect` (cria `<script type="application/ld+json">` no `<head>` e remove no unmount).
+- Adicionar `sitemap.xml` (público) com as 5 novas rotas — lembrar o usuário de fazer deploy.
+- Tokens semânticos (`bg-card`, `text-muted-foreground`, etc.) preservados.
 
 ### Arquivos afetados
 
 ```text
-+ src/assets/crimson-desert-pywel-completo.webp   (novo, mescla 24+25)
-+ src/assets/crimson-desert-abyss.webp            (novo, baseado na 26)
-- src/assets/crimson-desert-mapa-oficial.webp     (removido)
-~ src/data/crimsonDesertBosses.ts                 (re-normalização de coords + Abyss)
-~ src/components/CrimsonDesertBossMap.tsx         (novos imports + sem gradiente CSS + corrige TS2339)
-~ src/pages/posts/CrimsonDesertBosses.tsx         (alinhamento de anchorIds e regiões textuais)
+~ src/pages/posts/CrimsonDesertMapa.tsx          (hero, SEO, FAQ, busca, links p/ regiões)
+~ src/components/CrimsonDesertRegionMap.tsx      (coords corretas + props controladas)
+~ src/App.tsx                                    (5 novas rotas lazy)
+~ public/sitemap.xml                             (5 novas URLs)
++ src/pages/regions/PailunePage.tsx
++ src/pages/regions/HernandPage.tsx
++ src/pages/regions/DemenissPage.tsx
++ src/pages/regions/DelesyiaPage.tsx
++ src/pages/regions/CrimsonDesertRegionPage.tsx
 ```
 
-### Resultado esperado
-
-- **Aba 1 — Continente de Pywel**: imagem única e contínua mesclando norte + sul, com todos os pins de Pywel posicionados sobre as marcações roxas do MapGenie
-- **Aba 2 — The Abyss**: imagem real do Abismo (não mais placeholder CSS) com pins precisos
-- **Filtros mantidos**: Todos / História / Opcionais / Secretos — funcionam em ambas as abas
-- **Popups funcionais**: clique em qualquer pin abre painel com nome, região, dificuldade, recompensa e dica; sem mais erro de build
