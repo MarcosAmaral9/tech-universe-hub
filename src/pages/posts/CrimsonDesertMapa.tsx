@@ -412,53 +412,69 @@ const CrimsonDesertMapa = () => {
 
         <h2 className="text-2xl font-bold">As 5 Regiões de Pywel + The Abyss</h2>
 
-        {regionsData.map((r) => (
-          <div key={r.name} className={`rounded-2xl border p-5 md:p-6 ${r.color}`}>
-            <div className="flex flex-wrap items-center gap-3 mb-3">
-              <RegionIcon iconKey={r.iconKey} />
-              <h3 className="text-xl font-bold">{r.name}</h3>
-              <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${r.badge}`}>{r.label}</span>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-sm text-muted-foreground mb-3">
-              <span>
-                <strong className="text-foreground">Bioma:</strong> {r.biome}
-              </span>
-              <span>
-                <strong className="text-foreground">Posição:</strong> {r.position}
-              </span>
-            </div>
-            <p className="text-sm text-muted-foreground mb-4">{r.desc}</p>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div>
-                <p className="text-xs font-bold text-foreground uppercase tracking-wide mb-1.5">Bosses confirmados</p>
-                <ul className="space-y-1">
-                  {r.bosses.map((b) => (
-                    <li key={b} className="text-xs text-muted-foreground flex items-start gap-1.5">
-                      <span className="text-red-400 mt-0.5">⚔</span>
-                      {b}
-                    </li>
-                  ))}
-                </ul>
+        {regionsData.map((r) => {
+          const isHighlighted = highlightedSlug === r.slug;
+          return (
+            <div
+              key={r.name}
+              id={`regiao-${r.slug}`}
+              className={`scroll-mt-24 rounded-2xl border p-5 md:p-6 transition-all ${r.color} ${
+                isHighlighted ? "ring-2 ring-primary shadow-lg shadow-primary/20" : ""
+              }`}
+            >
+              <div className="flex flex-wrap items-center gap-3 mb-3">
+                <RegionIcon iconKey={r.iconKey} />
+                <h3 className="text-xl font-bold">{r.name}</h3>
+                <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${r.badge}`}>{r.label}</span>
               </div>
-              <div>
-                <p className="text-xs font-bold text-foreground uppercase tracking-wide mb-1.5">
-                  Cidades / Locais chave
-                </p>
-                <ul className="space-y-1">
-                  {r.towns.map((t) => (
-                    <li key={t} className="text-xs text-muted-foreground flex items-start gap-1.5">
-                      <span className="text-primary mt-0.5">◆</span>
-                      {t}
-                    </li>
-                  ))}
-                </ul>
+              <div className="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-sm text-muted-foreground mb-3">
+                <span>
+                  <strong className="text-foreground">Bioma:</strong> {r.biome}
+                </span>
+                <span>
+                  <strong className="text-foreground">Posição:</strong> {r.position}
+                </span>
               </div>
+              <p className="text-sm text-muted-foreground mb-4">{r.desc}</p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <p className="text-xs font-bold text-foreground uppercase tracking-wide mb-1.5">Bosses confirmados</p>
+                  <ul className="space-y-1">
+                    {r.bosses.map((b) => (
+                      <li key={b} className="text-xs text-muted-foreground flex items-start gap-1.5">
+                        <span className="text-red-400 mt-0.5">⚔</span>
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-foreground uppercase tracking-wide mb-1.5">
+                    Cidades / Locais chave
+                  </p>
+                  <ul className="space-y-1">
+                    {r.towns.map((t) => (
+                      <li key={t} className="text-xs text-muted-foreground flex items-start gap-1.5">
+                        <span className="text-primary mt-0.5">◆</span>
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              {r.notes && (
+                <p className="mt-3 text-xs text-muted-foreground italic border-t border-border/50 pt-3">💡 {r.notes}</p>
+              )}
+              <Link
+                to={REGION_LINKS[r.slug]}
+                className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+              >
+                Saiba mais sobre {r.name}
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
-            {r.notes && (
-              <p className="mt-3 text-xs text-muted-foreground italic border-t border-border/50 pt-3">💡 {r.notes}</p>
-            )}
-          </div>
-        ))}
+          );
+        })}
 
         {/* Abyss card */}
         <div className="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6">
