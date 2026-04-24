@@ -1,13 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
-import { Clock, User, Calendar, Map, Compass, Zap, Snowflake, Building2, Cpu, Skull } from "lucide-react";
+import { Clock, User, Calendar, Map, Compass, Zap, Snowflake, Building2, Cpu, Skull, Search, ArrowRight, HelpCircle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
+import { Input } from "@/components/ui/input";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import crimsonMapaImg from "@/assets/crimson-desert-pywel-completo.webp";
-import CrimsonDesertRegionMap from "@/components/CrimsonDesertRegionMap";
+import CrimsonDesertRegionMap, { type RegionKey } from "@/components/CrimsonDesertRegionMap";
 
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 interface Region {
