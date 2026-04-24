@@ -30,7 +30,7 @@ interface Region {
 const regionsData: Region[] = [
   {
     name: "Hernand",
-    iconKey: "compass",
+    slug: "hernand",
     color: "border-green-500/30 bg-green-500/5",
     badge: "bg-green-500/20 text-green-400",
     label: "Área Inicial",
@@ -44,7 +44,7 @@ const regionsData: Region[] = [
   },
   {
     name: "Pailune",
-    iconKey: "snowflake",
+    slug: "pailune",
     color: "border-blue-400/30 bg-blue-400/5",
     badge: "bg-blue-400/20 text-blue-300",
     label: "Norte Gelado",
@@ -61,7 +61,7 @@ const regionsData: Region[] = [
   },
   {
     name: "Demeniss",
-    iconKey: "building",
+    slug: "demeniss",
     color: "border-yellow-500/30 bg-yellow-500/5",
     badge: "bg-yellow-500/20 text-yellow-400",
     label: "Capital Política",
@@ -77,7 +77,7 @@ const regionsData: Region[] = [
   },
   {
     name: "Delesyia",
-    iconKey: "cpu",
+    slug: "delesyia",
     color: "border-purple-500/30 bg-purple-500/5",
     badge: "bg-purple-500/20 text-purple-400",
     label: "Região Tecnológica",
@@ -91,7 +91,7 @@ const regionsData: Region[] = [
   },
   {
     name: "Crimson Desert",
-    iconKey: "skull",
+    slug: "crimson-desert",
     color: "border-red-500/30 bg-red-500/5",
     badge: "bg-red-500/20 text-red-400",
     label: "Deserto Sem Lei",
