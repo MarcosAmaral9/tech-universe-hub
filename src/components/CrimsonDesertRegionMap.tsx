@@ -22,7 +22,14 @@ import {
 } from "lucide-react";
 import mapaPywelImg from "@/assets/crimson-desert-pywel-completo.webp";
 
-type RegionKey = "hernand" | "pailune" | "demeniss" | "delesyia" | "crimson-desert";
+export type RegionKey = "hernand" | "pailune" | "demeniss" | "delesyia" | "crimson-desert";
+
+interface CrimsonDesertRegionMapProps {
+  /** Permite controlar externamente qual região está selecionada (ex.: busca no post). */
+  selectedKey?: RegionKey | null;
+  /** Notifica o pai quando a seleção muda dentro do mapa. */
+  onSelect?: (key: RegionKey | null) => void;
+}
 
 interface Region {
   key: RegionKey;
@@ -46,8 +53,8 @@ const regioes: Region[] = [
     key: "pailune",
     name: "Pailune",
     label: "Norte Gelado",
-    x: 50,
-    y: 14,
+    x: 38,
+    y: 18,
     iconKey: "snowflake",
     pinClass: "bg-blue-500 ring-blue-200/40",
     badgeClass: "bg-blue-500/20 text-blue-300",
@@ -65,8 +72,8 @@ const regioes: Region[] = [
     key: "hernand",
     name: "Hernand",
     label: "Área Inicial",
-    x: 30,
-    y: 46,
+    x: 22,
+    y: 56,
     iconKey: "compass",
     pinClass: "bg-green-500 ring-green-200/40",
     badgeClass: "bg-green-500/20 text-green-400",
@@ -85,8 +92,8 @@ const regioes: Region[] = [
     key: "demeniss",
     name: "Demeniss",
     label: "Capital Política",
-    x: 56,
-    y: 50,
+    x: 52,
+    y: 44,
     iconKey: "building",
     pinClass: "bg-yellow-500 ring-yellow-200/40",
     badgeClass: "bg-yellow-500/20 text-yellow-400",
@@ -104,8 +111,8 @@ const regioes: Region[] = [
     key: "delesyia",
     name: "Delesyia",
     label: "Região Tecnológica",
-    x: 80,
-    y: 56,
+    x: 76,
+    y: 50,
     iconKey: "cpu",
     pinClass: "bg-purple-500 ring-purple-200/40",
     badgeClass: "bg-purple-500/20 text-purple-300",
@@ -123,8 +130,8 @@ const regioes: Region[] = [
     key: "crimson-desert",
     name: "Crimson Desert",
     label: "Deserto Sem Lei",
-    x: 47,
-    y: 84,
+    x: 54,
+    y: 78,
     iconKey: "skull",
     pinClass: "bg-red-500 ring-red-200/40",
     badgeClass: "bg-red-500/20 text-red-400",
@@ -162,13 +169,32 @@ const RegionIcon = ({ iconKey, className }: { iconKey: Region["iconKey"]; classN
   }
 };
 
-const CrimsonDesertRegionMap = () => {
+const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMapProps = {}) => {
   const [zoom, setZoom] = useState(1);
   const [pan, setPan] = useState({ x: 0, y: 0 });
-  const [selecionada, setSelecionada] = useState<Region | null>(null);
+  const [selecionada, setSelecionadaState] = useState<Region | null>(null);
   const [arrastando, setArrastando] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const arrastoInicioRef = useRef({ x: 0, y: 0, panX: 0, panY: 0 });
+
+  const setSelecionada = useCallback(
+    (r: Region | null) => {
+      setSelecionadaState(r);
+      onSelect?.(r ? r.key : null);
+    },
+    [onSelect],
+  );
+
+  // Sincroniza seleção externa (controle por busca, etc.)
+  useEffect(() => {
+    if (selectedKey === undefined) return;
+    if (selectedKey === null) {
+      setSelecionadaState(null);
+      return;
+    }
+    const found = regioes.find((r) => r.key === selectedKey) ?? null;
+    setSelecionadaState(found);
+  }, [selectedKey]);
 
   const limitarPan = useCallback(
     (novoPan: { x: number; y: number }, zoomAtual: number) => {
@@ -431,6 +457,12 @@ const CrimsonDesertRegionMap = () => {
                     ))}
                   </ul>
                 </div>
+                <a
+                  href={`/regiao/${selecionada.key}`}
+                  className="block text-center mt-1 px-3 py-1.5 rounded-md bg-primary/10 hover:bg-primary/20 text-primary font-semibold text-[11px] transition-colors"
+                >
+                  Saiba mais sobre {selecionada.name} →
+                </a>
               </div>
             </div>
           </div>
