@@ -563,6 +563,27 @@ const CrimsonDesertMapa = () => {
         </p>
       </div>
 
+      {/* FAQ — schema.org FAQPage rich snippet */}
+      <section className="not-prose my-10">
+        <h2 className="text-2xl font-bold flex items-center gap-2 mb-4">
+          <HelpCircle className="h-6 w-6 text-primary" /> Perguntas Frequentes
+        </h2>
+        <div className="space-y-3">
+          {FAQ_ITEMS.map((item) => (
+            <details
+              key={item.q}
+              className="group rounded-xl border border-border bg-card p-4 open:shadow-md transition-shadow"
+            >
+              <summary className="cursor-pointer list-none font-semibold text-foreground flex items-start justify-between gap-3">
+                <span>{item.q}</span>
+                <span className="text-primary text-xl leading-none transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
       <RelatedPosts currentSlug="crimson-desert-mapa-regioes-pywel" />
       <CommentSection postId="crimson-desert-mapa-regioes-pywel" postTitle="Crimson Desert: Mapa Completo de Pywel" />
     </article>
