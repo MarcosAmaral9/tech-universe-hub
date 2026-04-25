@@ -96,6 +96,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://viciocode.com/arquivo</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://viciocode.com/privacidade</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>yearly</changefreq>
