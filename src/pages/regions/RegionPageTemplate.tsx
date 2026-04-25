@@ -304,8 +304,8 @@ const RegionPageTemplate = ({
           </Link>
         </div>
 
-        <RelatedPosts currentSlug={articleSlug} category="geek" />
-        <CommentSection postSlug={articleSlug} />
+        <RelatedPosts currentSlug={articleSlug} />
+        <CommentSection postId={articleSlug} postTitle={`${name} — Guia da Região`} />
       </div>
     </>
   );
