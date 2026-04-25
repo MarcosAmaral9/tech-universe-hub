@@ -46,8 +46,10 @@ const regioes: Region[] = [
     name: "Pailune",
     label: "Norte Gelado",
     x: 28,
-    y: 38,
-    zoomX: 28, zoomY: 38, zoomLevel: 2.5,
+    y: 36,
+    zoomX: 28,
+    zoomY: 36,
+    zoomLevel: 2.5,
     iconKey: "snowflake",
     pinClass: "bg-blue-500 ring-blue-200/40",
     badgeClass: "bg-blue-500/20 text-blue-300",
@@ -67,7 +69,9 @@ const regioes: Region[] = [
     label: "Área Inicial",
     x: 22,
     y: 58,
-    zoomX: 22, zoomY: 58, zoomLevel: 2.5,
+    zoomX: 22,
+    zoomY: 58,
+    zoomLevel: 2.5,
     iconKey: "compass",
     pinClass: "bg-green-500 ring-green-200/40",
     badgeClass: "bg-green-500/20 text-green-400",
@@ -86,9 +90,11 @@ const regioes: Region[] = [
     key: "demeniss",
     name: "Demeniss",
     label: "Capital Política",
-    x: 52,
-    y: 44,
-    zoomX: 52, zoomY: 55, zoomLevel: 2.5,
+    x: 48,
+    y: 58,
+    zoomX: 48,
+    zoomY: 58,
+    zoomLevel: 2.5,
     iconKey: "building",
     pinClass: "bg-yellow-500 ring-yellow-200/40",
     badgeClass: "bg-yellow-500/20 text-yellow-400",
@@ -106,9 +112,11 @@ const regioes: Region[] = [
     key: "delesyia",
     name: "Delesyia",
     label: "Região Tecnológica",
-    x: 76,
-    y: 50,
-    zoomX: 76, zoomY: 68, zoomLevel: 2.5,
+    x: 58,
+    y: 68,
+    zoomX: 58,
+    zoomY: 68,
+    zoomLevel: 2.5,
     iconKey: "cpu",
     pinClass: "bg-purple-500 ring-purple-200/40",
     badgeClass: "bg-purple-500/20 text-purple-300",
@@ -128,7 +136,9 @@ const regioes: Region[] = [
     label: "Deserto Sem Lei",
     x: 54,
     y: 78,
-    zoomX: 70, zoomY: 22, zoomLevel: 2.5,
+    zoomX: 70,
+    zoomY: 22,
+    zoomLevel: 2.5,
     iconKey: "skull",
     pinClass: "bg-red-500 ring-red-200/40",
     badgeClass: "bg-red-500/20 text-red-400",
@@ -217,7 +227,6 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
     }
   }, [selectedKey, limitarPan]);
 
-
   const resetar = useCallback(() => {
     setZoom(1);
     setPan({ x: 0, y: 0 });
@@ -300,7 +309,8 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
                   setZoom(z);
                   setPan(limitarPan(newPan, z));
                 } else if (!novaRegiao) {
-                  setZoom(1); setPan({ x: 0, y: 0 });
+                  setZoom(1);
+                  setPan({ x: 0, y: 0 });
                 }
               }}
               aria-pressed={ativo}
