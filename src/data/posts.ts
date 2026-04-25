@@ -122,6 +122,7 @@ import tesouroDiretoGuiaImg from "@/assets/tesouro-direto-guia-2026.webp";
 import temporadaAnimesAbrilGuiaImg from "@/assets/temporada-animes-abril-guia-2026.webp";
 import onePieceFinalSagaGuiaImg from "@/assets/one-piece-final-saga-guia-2026.webp";
 import lancamentosGamesAbrilGuiaImg from "@/assets/lancamentos-games-abril-guia-2026.webp";
+import pragmataCapcomImg from "@/assets/pragmata-capcom-guia-completo-2026.webp";
 import iaTrabalhoProf2026Img from "@/assets/ia-trabalho-profissoes-2026.webp";
 import etfsGuiaCompletoImg from "@/assets/etfs-guia-completo-2026.webp";
 import economiaDomesticaDicasImg from "@/assets/economia-domestica-dicas-2026.webp";
@@ -383,7 +384,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "geek",
     subtopic: "games",
-    image: lancamentosGamesAbrilGuiaImg,
+    image: pragmataCapcomImg,
     author: "VICIO<CODE>",
     date: "2026-04-13",
     readTime: "14 min",
