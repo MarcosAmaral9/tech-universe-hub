@@ -7,15 +7,11 @@ import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import crimsonCombateImg from "@/assets/crimson-desert-combate.webp";
-
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+
 const CrimsonDesertCombate = () => {
   useEffect(() => {
-    trackArticleRead(
-      "crimson-desert-combate-blackspace-engine",
-      "Crimson Desert: Sistema de Combate e BlackSpace Engine",
-      "geek"
-    );
+    trackArticleRead("crimson-desert-combate-blackspace-engine", "Crimson Desert: Sistema de Combate e BlackSpace Engine", "geek");
   }, []);
 
   return (
@@ -31,7 +27,7 @@ const CrimsonDesertCombate = () => {
         </h1>
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground text-sm">
           <span className="flex items-center gap-1.5"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
-          <span className="flex items-center gap-1.5"><Calendar className="h-4 w-4" />19 de Março, 2026</span>
+          <span className="flex items-center gap-1.5"><Calendar className="h-4 w-4" />19 de Março, 2026 · Atualizado em 24 de Abril, 2026</span>
           <span className="flex items-center gap-1.5"><Clock className="h-4 w-4" />11 min de leitura</span>
         </div>
         <ShareWhatsApp />
@@ -46,7 +42,8 @@ const CrimsonDesertCombate = () => {
           O combate de Crimson Desert foi um dos aspectos mais elogiados pelas críticas no lançamento em
           19 de março de 2026. Construído sobre a <strong>BlackSpace Engine</strong> — a engine proprietária
           da Pearl Abyss — o sistema prioriza física em tempo real, peso das ações e bosses que exigem
-          leitura de padrões. A maioria dos críticos o destacou como o ponto forte do jogo.
+          leitura de padrões. Após os patches de abril de 2026, vários problemas apontados no lançamento
+          — como o lock-on problemático — foram corrigidos, tornando a experiência ainda mais sólida.
         </p>
 
         <h2>O Sistema de Combate: Peso, Física e Profundidade</h2>
@@ -54,14 +51,18 @@ const CrimsonDesertCombate = () => {
           Crimson Desert usa um sistema de combate em terceira pessoa com foco em ações pesadas e consequentes.
           Kliff pode usar múltiplas armas — espadas, alabardas, cajados — e alternar entre elas durante o combate.
           Cada arma tem um conjunto próprio de ataques, habilidades especiais e sinergias com o terreno e os inimigos.
+          Com o <strong>Patch 1.03.00</strong>, o mecanismo de lock-on durante batalhas de boss foi melhorado
+          significativamente — hard lock-on agora mantido a distâncias maiores, e o lock-on não se aplica mais
+          a certos bosses maiores onde causar confusão de câmera.
         </p>
 
         <AdLeaderboard className="my-8" />
+
         <p>
           O aspecto mais citado pelos críticos é a <strong>batalha contra bosses</strong>. Vários veículos
           compararam encontros específicos a Shadow of the Colossus pelo senso de escala e a Elden Ring pela
           exigência de leitura de padrões. A PC Gamer (8/10) descreveu o combate como "intenso, diferente
-          de qualquer coisa que você já jogou antes." A nota da TechRadar (80/100) foi ainda mais enfática:
+          de qualquer coisa que você já jogou antes." A TechRadar (80/100) foi ainda mais enfática:
           "combate incrível que não se parece com nada que você já jogou anteriormente."
         </p>
 
@@ -70,17 +71,17 @@ const CrimsonDesertCombate = () => {
             {
               icon: <Sword className="h-6 w-6 text-red-400" />,
               title: "Múltiplas Armas",
-              desc: "Kliff alterna entre diferentes tipos de armas durante o combate, cada uma com moveset próprio e sinergias distintas com o ambiente.",
+              desc: "Kliff alterna entre diferentes tipos de armas durante o combate, cada uma com moveset próprio e sinergias distintas com o ambiente. Patch 1.04.00 adicionou galhos de árvore como armas para Kliff e Oongka.",
             },
             {
               icon: <Zap className="h-6 w-6 text-yellow-400" />,
               title: "Habilidades Especiais",
-              desc: "Sistema de habilidades desbloqueadas via progressão que alteram significativamente o estilo de jogo e abrem novas abordagens de encontros.",
+              desc: "Sistema de habilidades desbloqueadas via progressão (e aprendizado contextual observando inimigos). Patch 1.03.00 adicionou Focused Aerial Roll para Kliff, Axiom Force e Nature's Snare para Damiane e Oongka.",
             },
             {
               icon: <Shield className="h-6 w-6 text-blue-400" />,
               title: "Parry e Esquiva",
-              desc: "Janelas de parry e esquiva exigem leitura dos inimigos. Execuções bem-sucedidas abrem oportunidades de ataque devastadoras.",
+              desc: "Janelas de parry e esquiva exigem leitura dos inimigos. Com os modos de dificuldade (Patch 1.04.00), no Easy as janelas são aumentadas; no Hard são reduzidas. Execuções bem-sucedidas abrem oportunidades devastadoras.",
             },
           ].map(({ icon, title, desc }) => (
             <div key={title} className="bg-card border border-border rounded-xl p-5">
@@ -91,18 +92,25 @@ const CrimsonDesertCombate = () => {
           ))}
         </div>
 
-        <h2>Críticas ao Sistema de Combate</h2>
+        <h2>Críticas ao Sistema de Combate — E o Que Foi Resolvido</h2>
         <p>
-          Apesar dos elogios, o combate recebeu críticas específicas. O <strong>sistema de lock-on</strong>
+          Apesar dos elogios, o combate recebeu críticas específicas no lançamento. O <strong>sistema de lock-on</strong>
           foi apontado como problemático por vários críticos — a PC Gamer mencionou "lock-on irritante" como
-          ponto negativo. A <strong>curva de aprendizagem</strong> também foi citada: os controles são
-          complexos, com muitos atalhos e mecânicas sobrepostas que exigem horas para serem internalizados.
-          A IGN, em sua análise provisória de 6/10 após 110 horas, mencionou "puzzles pouco intuitivos" e
-          dificuldades de progressão como fatores que prejudicam a experiência.
+          ponto negativo. O <strong>Patch 1.03.00 (abril 2026)</strong> melhorou significativamente o lock-on:
+          agora mantém hard lock-on em maiores distâncias e não aplica lock em bosses muito grandes onde causava
+          problemas de câmera.
         </p>
         <p>
-          Um ponto notável: a PC Gamer publicou um artigo separado recomendando explicitamente o uso de
-          controle em vez de teclado e mouse — o jogo foi claramente otimizado para controles.
+          Os <strong>controles complexos</strong> também foram endereçados progressivamente: o Patch 1.00.03
+          ajustou gamepad e teclado/mouse, o Patch 1.03.00 corrigiu controles de Axiom Force no K/M e o
+          <strong> Patch 1.04.00</strong> adicionou presets de controle personalizáveis (o original disponível
+          como "Classic Preset"). A PC Gamer ainda recomenda o uso de controle em detrimento de teclado/mouse no PC,
+          mas a experiência com K/M melhorou consideravelmente.
+        </p>
+        <p>
+          A IGN, em sua análise provisória de 6/10 após 110 horas, mencionou "puzzles pouco intuitivos" e
+          dificuldades de progressão. Com os modos de dificuldade adicionados em abril, esses problemas
+          foram parcialmente atenuados.
         </p>
 
         <h2>A BlackSpace Engine: O Que Ela Faz de Diferente</h2>
@@ -114,8 +122,8 @@ const CrimsonDesertCombate = () => {
         <ul>
           <li>
             <strong>Simulação de fluidos em tempo real:</strong> água, lama e líquidos reagem fisicamente
-            ao corpo de Kliff e às ações do ambiente. Em batalhas aquáticas, apenas as partes submersas
-            da armadura ficam molhadas — um nível de simulação raro em jogos AAA.
+            ao corpo de Kliff. Em batalhas aquáticas, apenas as partes submersas da armadura ficam
+            molhadas — um nível de simulação raro em jogos AAA.
           </li>
           <li>
             <strong>Destruição dinâmica:</strong> estruturas e elementos do cenário se quebram de forma
@@ -126,8 +134,13 @@ const CrimsonDesertCombate = () => {
             e condições climáticas que afetam tanto a estética quanto o gameplay.
           </li>
           <li>
-            <strong>Escalonamento de GPU:</strong> a engine escala bem de GTX 1060 (mínimo) até RTX 5070 Ti
-            (ultra), aproveitando recursos modernos como ray tracing e frame generation sem quebrar em hardware mais antigo.
+            <strong>NPCs com comportamentos dinâmicos:</strong> críticos notaram NPCs realizando construção
+            de pontes e estátuas em tempo real — comportamentos emergentes únicos.
+          </li>
+          <li>
+            <strong>Escalonamento de GPU:</strong> a engine escala de GTX 1060 (mínimo) até RTX 5070 Ti
+            (ultra). <strong>Intel Arc:</strong> suporte básico foi adicionado via patch pós-lançamento,
+            mas ainda instável — aguardar updates completos.
           </li>
         </ul>
 
@@ -160,26 +173,24 @@ const CrimsonDesertCombate = () => {
           </table>
           <p className="text-xs text-muted-foreground mt-2">
             Todos os tiers requerem: 16 GB RAM, 150 GB SSD, Windows 10 64-bit (22H2 ou posterior).
+            <strong> Intel Arc: suporte básico disponível mas instável</strong> — aguardar updates da Pearl Abyss.
             Fonte: Pearl Abyss (site oficial) e PCGamesN.
           </p>
         </div>
 
         <h2>Conclusão</h2>
         <p>
-          O combate de Crimson Desert e a tecnologia da BlackSpace Engine são os pilares técnicos mais
-          sólidos do jogo — e os mais citados pelos críticos que deram notas altas. Para quem busca uma
-          experiência de combate satisfatória e visualmente impressionante em mundo aberto, esses elementos
-          entregam o prometido. Os problemas surgem quando o sistema de combate encontra o sistema de
-          inventário mal planejado ou missões repetitivas, quebrando o ritmo do que poderia ser uma
-          experiência ainda mais coesa.
+          O combate de Crimson Desert e a tecnologia da BlackSpace Engine continuam sendo os pilares técnicos
+          mais sólidos do jogo. Com os patches de abril — especialmente o 1.03.00 (lock-on aprimorado, novas
+          habilidades) e o 1.04.00 (modos de dificuldade, presets de controle) — a experiência de combate
+          ficou significativamente mais acessível e polida. Para quem busca combate satisfatório e mundo
+          visualmente impressionante, Crimson Desert entrega o prometido. Com 5 milhões de cópias vendidas
+          e suporte ativo, o jogo está numa trajetória de melhoria contínua.
         </p>
       </div>
 
       <RelatedPosts currentSlug="crimson-desert-combate-blackspace-engine" />
-      <CommentSection
-        postId="crimson-desert-combate-blackspace-engine"
-        postTitle="Crimson Desert: Sistema de Combate e BlackSpace Engine"
-      />
+      <CommentSection postId="crimson-desert-combate-blackspace-engine" postTitle="Crimson Desert: Sistema de Combate e BlackSpace Engine" />
     </article>
   );
 };
