@@ -921,32 +921,32 @@
   <!-- Páginas dedicadas das regiões de Pywel (Crimson Desert) -->
   <url>
     <loc>https://viciocode.com/regiao/pailune</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://viciocode.com/regiao/hernand</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://viciocode.com/regiao/demeniss</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://viciocode.com/regiao/delesyia</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://viciocode.com/regiao/crimson-desert</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 </urlset>

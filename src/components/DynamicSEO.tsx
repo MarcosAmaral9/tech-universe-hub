@@ -111,7 +111,33 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Tudo sobre a franquia Avatar de James Cameron: filmes, jogos e tecnologia.",
     keywords: "Avatar, James Cameron, Pandora, Avatar 2, Avatar 3, Frontiers of Pandora, Na'vi, filme Avatar, tecnologia CGI, cinema 3D, franquia Avatar, Ubisoft",
   },
-  "/geek/crimson-desert": {
+  // ── Páginas de regiões de Pywel — SEO individual para indexação ──────────────
+  "/regiao/pailune": {
+    title: "Pailune — Guia Completo da Região Norte Gelada | Crimson Desert",
+    description: "Guia completo de Pailune em Crimson Desert: mapa da região, bosses Saigord Staglord e White Horn, Skoghorn Tribe, Silver Wolf Mountain, clima ártico e exploração no norte de Pywel.",
+    keywords: "Pailune Crimson Desert, Pailune mapa, Staglord boss, White Horn boss, Praevus Ancient, Greymane clan, Skoghorn Tribe, Stronghold Greymane, Silver Wolf Mountain, White Mountains, norte Pywel, região gelo Crimson Desert",
+  },
+  "/regiao/hernand": {
+    title: "Hernand — Guia Completo da Área Inicial | Crimson Desert",
+    description: "Guia completo de Hernand em Crimson Desert: cidades Calphade e Beighen, bosses Kearush, Reed Devil e Matthias, clã Greymane, Scholastone Institute e dicas de crafting e exploração.",
+    keywords: "Hernand Crimson Desert, Hernand mapa, Calphade cidade, Beighen cidade, Kearush boss, Reed Devil boss, Matthias boss, Greymane acampamento, Howling Hill, Scholastone Institute, área inicial Crimson Desert, Pywel centro-oeste",
+  },
+  "/regiao/demeniss": {
+    title: "Demeniss — Guia Completo da Capital Política | Crimson Desert",
+    description: "Guia completo de Demeniss em Crimson Desert: cidade de Caliburn, Fort Ironclad, Golden Plains, bosses Lucian Bastier, T'rukan e Ator Antumbra, Casas Thorel e Byron, Antumbra Order.",
+    keywords: "Demeniss Crimson Desert, Caliburn cidade, Fort Ironclad, Golden Plains, Lucian Bastier boss, Trukan boss, Ator Antumbra boss, Stonewalker Antiquum, Casa Thorel, Casa Byron, capital Pywel, Demeniss mapa",
+  },
+  "/regiao/delesyia": {
+    title: "Delesyia — Guia Completo da Região Industrial | Crimson Desert",
+    description: "Guia completo de Delesyia em Crimson Desert: Sky Fortress, Golden Star boss, Myurdin forma final, Hexe Marie boss, Porto de Gorthak, Steel Mountains e dicas de endgame.",
+    keywords: "Delesyia Crimson Desert, Delesyia mapa, Sky Fortress, Golden Star boss, Myurdin final boss, Hexe Marie boss, Thunder Tank boss, Porto Gorthak, Steel Mountains, Crimson Desert industrial, Pywel sudeste, Delesyia endgame",
+  },
+  "/regiao/crimson-desert": {
+    title: "Crimson Desert (Região) — Guia do Deserto Árido de Pywel",
+    description: "Guia completo da região Crimson Desert: Forebearer's Barrens, Urdavah, Tashkalp, bosses Tarandus, Muskan, Priscus e Crookrock Walker, lore das civilizações extintas e Spires of Ringing Truth.",
+    keywords: "Crimson Desert região, Forebearer's Barrens, Urdavah oásis, Tashkalp ruínas, Tarandus boss, Muskan boss, Priscus Ancient, Crookrock Walker, Spire of Ringing Truth, deserto Pywel, nordeste Pywel, civilização extinta Crimson Desert",
+  },
+    "/geek/crimson-desert": {
     title: "Portal Crimson Desert",
     description: "Tudo sobre Crimson Desert da Pearl Abyss: guia completo, combate, BlackSpace Engine e edições com preços em reais.",
     keywords: "Crimson Desert, Pearl Abyss, Kliff, Pywel, BlackSpace Engine, RPG ação mundo aberto, lançamento 2026, PC PS5 Xbox",
@@ -279,7 +305,8 @@ const DynamicSEO = () => {
     setMetaTag("property", "og:image:height", "630");
     setMetaTag("property", "og:image:alt", title);
     setMetaTag("property", "og:url", url);
-    setMetaTag("property", "og:type", isPost ? "article" : "website");
+    const isRegion = pathname.startsWith("/regiao/");
+    setMetaTag("property", "og:type", (isPost || isRegion) ? "article" : "website");
     setMetaTag("property", "og:site_name", SITE_NAME);
     setMetaTag("property", "og:locale", "pt_BR");
 

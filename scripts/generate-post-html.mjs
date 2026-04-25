@@ -181,3 +181,69 @@ for (const post of posts) {
 }
 
 console.log(`✅ Generated ${posts.length} post HTML files in dist/post/`);
+
+// ── Gera HTMLs estáticos para páginas de região (/regiao/<slug>) ──────────────
+// Necessário para indexação correta pelo Googlebot (site é SPA, sem SSR)
+const REGIONS = [
+  {
+    slug: "pailune",
+    title: "Pailune — Guia Completo da Região Norte Gelada | Crimson Desert",
+    description: "Guia completo de Pailune em Crimson Desert: mapa da região, bosses Saigord Staglord e White Horn, Skoghorn Tribe, Silver Wolf Mountain, clima ártico e dicas de exploração no norte de Pywel.",
+    image: "/assets/crimson-desert-regiao-pailune.webp",
+  },
+  {
+    slug: "hernand",
+    title: "Hernand — Guia Completo da Área Inicial | Crimson Desert",
+    description: "Guia completo de Hernand em Crimson Desert: cidades Calphade e Beighen, bosses Kearush, Reed Devil e Matthias, clã Greymane, Scholastone Institute e dicas de exploração.",
+    image: "/assets/crimson-desert-regiao-hernand.webp",
+  },
+  {
+    slug: "demeniss",
+    title: "Demeniss — Guia Completo da Capital Política | Crimson Desert",
+    description: "Guia completo de Demeniss em Crimson Desert: cidade de Caliburn, Fort Ironclad, Golden Plains, bosses Lucian Bastier, T'rukan e Ator Antumbra, Casas Thorel e Byron.",
+    image: "/assets/crimson-desert-regiao-demeniss.webp",
+  },
+  {
+    slug: "delesyia",
+    title: "Delesyia — Guia Completo da Região Industrial | Crimson Desert",
+    description: "Guia completo de Delesyia em Crimson Desert: Sky Fortress, Golden Star boss, Myurdin forma final, Hexe Marie, Porto de Gorthak, Steel Mountains e dicas endgame.",
+    image: "/assets/crimson-desert-regiao-delesyia.webp",
+  },
+  {
+    slug: "crimson-desert",
+    title: "Crimson Desert (Região) — Guia do Deserto de Pywel",
+    description: "Guia completo da região Crimson Desert: Forebearer's Barrens, Urdavah, Tashkalp, bosses Tarandus, Muskan, Priscus e Crookrock Walker, lore das civilizações extintas.",
+    image: "/assets/crimson-desert-regiao-crimson-desert.webp",
+  },
+];
+
+for (const region of REGIONS) {
+  const dir = path.join(DIST, "regiao");
+  fs.mkdirSync(dir, { recursive: true });
+
+  const url       = `${BASE_URL}/regiao/${region.slug}`;
+  const imgAbs    = region.image.startsWith("http") ? region.image : `${BASE_URL}${region.image}`;
+  const titleSafe = e(region.title);
+  const descSafe  = e(region.description);
+
+  const html = stripped
+    .replace("</head>", `  <title>${titleSafe}</title>
+  <meta name="description" content="${descSafe}">
+  <meta property="og:title" content="${titleSafe}">
+  <meta property="og:description" content="${descSafe}">
+  <meta property="og:url" content="${url}">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="${imgAbs}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="${titleSafe}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${titleSafe}">
+  <meta name="twitter:description" content="${descSafe}">
+  <meta name="twitter:image" content="${imgAbs}">
+  <link rel="canonical" href="${url}">
+</head>`);
+
+  fs.writeFileSync(path.join(dir, `${region.slug}.html`), html, "utf8");
+}
+console.log(`✅ Generated ${REGIONS.length} region HTML files in dist/regiao/`);

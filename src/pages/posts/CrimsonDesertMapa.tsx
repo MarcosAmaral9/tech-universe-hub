@@ -376,12 +376,12 @@ const CrimsonDesertMapa = () => {
         </p>
 
         <h2>Tamanho e Comparação</h2>
-        <div className="not-prose my-4 overflow-x-auto">
+        <div className="not-prose my-4 w-full">
           <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead>
               <tr className="bg-secondary">
-                <th className="text-left py-3 px-4">Jogo</th>
-                <th className="text-left py-3 px-4">Tamanho estimado</th>
+                <th className="text-left py-3 px-4 w-3/5">Jogo</th>
+                <th className="text-left py-3 px-4 w-2/5">Tamanho estimado</th>
               </tr>
             </thead>
             <tbody>
@@ -390,15 +390,15 @@ const CrimsonDesertMapa = () => {
                 ["Red Dead Redemption 2", "75 km²"],
                 ["The Witcher 3 (terreno jogável)", "~48 km²"],
                 ["The Elder Scrolls V: Skyrim", "~37 km²"],
-              ].map(([g, s]) => (
-                <tr key={g} className="border-t border-border">
-                  <td className="py-3 px-4 font-medium">{g}</td>
-                  <td className="py-3 px-4 text-muted-foreground">{s}</td>
+              ].map(([g, s], i) => (
+                <tr key={g} className={`border-t border-border${i === 0 ? " bg-primary/5 font-semibold" : ""}`}>
+                  <td className="py-3.5 px-4">{g}</td>
+                  <td className={`py-3.5 px-4${i === 0 ? " text-primary font-bold" : " text-muted-foreground"}`}>{s}</td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <p className="text-xs text-muted-foreground mt-2">
+          <p className="text-xs text-muted-foreground mt-2 italic">
             Fonte: Method.gg, Beebom e entrevista de Will Powers (Pearl Abyss).
           </p>
         </div>
