@@ -263,6 +263,7 @@ const App = () => (
                 <Route path="/otaku" element={<OtakuPage />} />
                 <Route path="/ia" element={<IAPage />} />
                 <Route path="/financas" element={<InvestimentosPage />} />
+                <Route path="/arquivo" element={<ArchivePage />} />
                 <Route path="/cotacoes" element={<CotacoesPage />} />
                 <Route path="/historico-cotacoes" element={<HistoricoCotacoesPage />} />
                 <Route path="/entrar" element={<AuthPage />} />
