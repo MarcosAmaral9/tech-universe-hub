@@ -82,19 +82,28 @@ const RegionPageTemplate = ({
 
   useEffect(() => {
     trackArticleRead(articleSlug, `${name} — Guia Completo da Região em Pywel`, "geek");
-  }, []);
+  }, [articleSlug, name]);
+
+  // SEO específico da região (DynamicSEO não aceita props — injetamos no head)
+  useEffect(() => {
+    const prevTitle = document.title;
+    document.title = seo.title;
+    const setMeta = (name: string, content: string) => {
+      let el = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement | null;
+      if (!el) { el = document.createElement("meta"); el.name = name; document.head.appendChild(el); }
+      el.content = content;
+    };
+    setMeta("description", seo.description);
+    setMeta("keywords", seo.keywords);
+    return () => { document.title = prevTitle; };
+  }, [seo.title, seo.description, seo.keywords]);
 
   return (
     <>
-      <DynamicSEO
-        title={seo.title}
-        description={seo.description}
-        keywords={seo.keywords}
-        image={heroImg}
-      />
+      <DynamicSEO />
 
-      <div className="container max-w-4xl mx-auto px-4 py-8">
-        <BackNavigation />
+      <div className="container max-w-4xl mx-auto px-3 sm:px-4 lg:px-6 py-6 sm:py-8">
+        <BackNavigation category="geek" />
 
         <AdLeaderboard />
 
