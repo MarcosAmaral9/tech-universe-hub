@@ -38,6 +38,10 @@ interface Region {
   /** Posições aproximadas em % sobre a imagem do mapa completo */
   x: number;
   y: number;
+  /** Centro da região para zoom automático (%) */
+  zoomX: number;
+  zoomY: number;
+  zoomLevel: number;
   iconKey: "compass" | "snowflake" | "building" | "cpu" | "skull";
   pinClass: string;
   badgeClass: string;
@@ -55,6 +59,7 @@ const regioes: Region[] = [
     label: "Norte Gelado",
     x: 38,
     y: 18,
+    zoomX: 38, zoomY: 18, zoomLevel: 2.5,
     iconKey: "snowflake",
     pinClass: "bg-blue-500 ring-blue-200/40",
     badgeClass: "bg-blue-500/20 text-blue-300",
@@ -74,6 +79,7 @@ const regioes: Region[] = [
     label: "Área Inicial",
     x: 22,
     y: 56,
+    zoomX: 22, zoomY: 58, zoomLevel: 2.5,
     iconKey: "compass",
     pinClass: "bg-green-500 ring-green-200/40",
     badgeClass: "bg-green-500/20 text-green-400",
@@ -94,6 +100,7 @@ const regioes: Region[] = [
     label: "Capital Política",
     x: 52,
     y: 44,
+    zoomX: 52, zoomY: 55, zoomLevel: 2.5,
     iconKey: "building",
     pinClass: "bg-yellow-500 ring-yellow-200/40",
     badgeClass: "bg-yellow-500/20 text-yellow-400",
@@ -113,6 +120,7 @@ const regioes: Region[] = [
     label: "Região Tecnológica",
     x: 76,
     y: 50,
+    zoomX: 76, zoomY: 68, zoomLevel: 2.5,
     iconKey: "cpu",
     pinClass: "bg-purple-500 ring-purple-200/40",
     badgeClass: "bg-purple-500/20 text-purple-300",
@@ -132,6 +140,7 @@ const regioes: Region[] = [
     label: "Deserto Sem Lei",
     x: 54,
     y: 78,
+    zoomX: 70, zoomY: 22, zoomLevel: 2.5,
     iconKey: "skull",
     pinClass: "bg-red-500 ring-red-200/40",
     badgeClass: "bg-red-500/20 text-red-400",
@@ -185,7 +194,7 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
     [onSelect],
   );
 
-  // Sincroniza seleção externa (controle por busca, etc.)
+  // Sincroniza seleção externa + dispara zoom automático na região
   useEffect(() => {
     if (selectedKey === undefined) return;
     if (selectedKey === null) {
@@ -194,7 +203,20 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
     }
     const found = regioes.find((r) => r.key === selectedKey) ?? null;
     setSelecionadaState(found);
-  }, [selectedKey]);
+    if (found && containerRef.current) {
+      // Zoom automático centrado na região
+      const { width, height } = containerRef.current.getBoundingClientRect();
+      const z = found.zoomLevel;
+      const px = found.zoomX / 100;
+      const py = found.zoomY / 100;
+      const newPan = {
+        x: (0.5 - px) * width * z,
+        y: (0.5 - py) * height * z,
+      };
+      setZoom(z);
+      setPan(limitarPan(newPan, z));
+    }
+  }, [selectedKey, limitarPan]);
 
   const limitarPan = useCallback(
     (novoPan: { x: number; y: number }, zoomAtual: number) => {
@@ -287,7 +309,21 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
           return (
             <button
               key={r.key}
-              onClick={() => setSelecionada(ativo ? null : r)}
+              onClick={() => {
+                const novaRegiao = ativo ? null : r;
+                setSelecionada(novaRegiao);
+                if (novaRegiao && containerRef.current) {
+                  const { width, height } = containerRef.current.getBoundingClientRect();
+                  const z = novaRegiao.zoomLevel;
+                  const px = novaRegiao.zoomX / 100;
+                  const py = novaRegiao.zoomY / 100;
+                  const newPan = { x: (0.5 - px) * width * z, y: (0.5 - py) * height * z };
+                  setZoom(z);
+                  setPan(limitarPan(newPan, z));
+                } else if (!novaRegiao) {
+                  setZoom(1); setPan({ x: 0, y: 0 });
+                }
+              }}
               aria-pressed={ativo}
               className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border transition-all ${
                 ativo
