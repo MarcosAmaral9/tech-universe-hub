@@ -182,6 +182,17 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
     [onSelect],
   );
 
+  const limitarPan = useCallback((novoPan: { x: number; y: number }, zoomAtual: number) => {
+    if (!containerRef.current) return novoPan;
+    const { width, height } = containerRef.current.getBoundingClientRect();
+    const maxX = ((zoomAtual - 1) * width) / 2;
+    const maxY = ((zoomAtual - 1) * height) / 2;
+    return {
+      x: Math.max(-maxX, Math.min(maxX, novoPan.x)),
+      y: Math.max(-maxY, Math.min(maxY, novoPan.y)),
+    };
+  }, []);
+
   // Sincroniza seleção externa + dispara zoom automático na região
   useEffect(() => {
     if (selectedKey === undefined) return;
@@ -206,16 +217,6 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
     }
   }, [selectedKey, limitarPan]);
 
-  const limitarPan = useCallback((novoPan: { x: number; y: number }, zoomAtual: number) => {
-    if (!containerRef.current) return novoPan;
-    const { width, height } = containerRef.current.getBoundingClientRect();
-    const maxX = ((zoomAtual - 1) * width) / 2;
-    const maxY = ((zoomAtual - 1) * height) / 2;
-    return {
-      x: Math.max(-maxX, Math.min(maxX, novoPan.x)),
-      y: Math.max(-maxY, Math.min(maxY, novoPan.y)),
-    };
-  }, []);
 
   const resetar = useCallback(() => {
     setZoom(1);
