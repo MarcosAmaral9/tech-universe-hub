@@ -510,57 +510,21 @@ const OfflineSettingsPage = () => {
           </div>
         </section>
 
-        {/* ── Páginas estáticas disponíveis para offline ───────────────── */}
-        <section className="rounded-2xl border border-border bg-card p-5 space-y-4">
-          <div>
-            <h2 className="font-semibold flex items-center gap-2 text-base mb-0.5">
-              <span>🌐</span>Páginas do site
-            </h2>
-            <p className="text-xs text-muted-foreground">
-              Páginas fixas do VicioCode (hubs, cotações, etc).
-              Novas páginas aparecem aqui automaticamente.
-            </p>
+        {/* ── Status: páginas estáticas (auto-baixadas em background) ───── */}
+        <section className="rounded-2xl border border-primary/20 bg-primary/5 p-4 sm:p-5">
+          <div className="flex items-start gap-3">
+            <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+            <div className="text-sm">
+              <p className="font-semibold text-foreground mb-0.5">
+                Páginas do site salvas automaticamente
+              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Home, hubs (IA, Finanças, Geek, Otaku), cotações, arquivo e
+                outras páginas fixas ficam disponíveis offline assim que você
+                abre o app — sem precisar baixar nada manualmente.
+              </p>
+            </div>
           </div>
-          <ul className="divide-y divide-border">
-            {STATIC_PAGES.map((page) => {
-              const isSaved = downloadedPaths.has(page.path);
-              return (
-                <li key={page.path} className="flex items-center gap-3 py-2.5">
-                  <span className="text-base shrink-0">{page.emoji}</span>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs font-medium line-clamp-1">{page.label}</p>
-                    <p className="text-[10px] text-muted-foreground">{page.path}</p>
-                  </div>
-                  {isSaved ? (
-                    <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
-                  ) : (
-                    <Button
-                      size="icon"
-                      variant="ghost"
-                      className="h-7 w-7 shrink-0"
-                      disabled={downloading}
-                      onClick={() => handleDownloadStaticPages([page.category])}
-                      title="Salvar offline"
-                    >
-                      <Download className="h-3.5 w-3.5" />
-                    </Button>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-          <Button
-            onClick={() => handleDownloadStaticPages()}
-            disabled={downloading || STATIC_PAGES.every((p) => downloadedPaths.has(p.path))}
-            variant="outline"
-            size="sm"
-            className="gap-2 w-full"
-          >
-            <Download className="h-3.5 w-3.5" />
-            {STATIC_PAGES.every((p) => downloadedPaths.has(p.path))
-              ? "Todas as páginas salvas ✅"
-              : "Salvar todas as páginas"}
-          </Button>
         </section>
 
         {/* ── Download posts individuais ────────────────────────────────── */}
