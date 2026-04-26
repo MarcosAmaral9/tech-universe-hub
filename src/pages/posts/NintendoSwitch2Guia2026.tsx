@@ -2,20 +2,16 @@ import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
-import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3, Package } from "lucide-react";
+import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3, Lightbulb } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import heroImg from "@/assets/nintendo-switch-2-guia-completo-2026.webp";
+import heroImg from "@/assets/nintendo-switch-2-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 
 const NintendoSwitch2Guia2026 = () => {
   useEffect(() => {
-    trackArticleRead(
-      "nintendo-switch-2-guia-completo-2026",
-      "Nintendo Switch 2: Guia Completo — Preço, Jogos, Specs e Vale a Pena Comprar?",
-      "geek"
-    );
+    trackArticleRead("nintendo-switch-2-guia-2026", "Nintendo Switch 2: Tudo Sobre o Novo Console da Nintendo em 2026", "geek");
   }, []);
 
   return (
@@ -24,170 +20,156 @@ const NintendoSwitch2Guia2026 = () => {
       <header className="mb-8">
         <div className="flex items-center gap-2 mb-4">
           <CategoryBadge category="geek" size="lg" />
-          <span className="px-3 py-1 bg-geek/20 text-geek rounded-full text-sm font-medium">
-            Nintendo · Switch 2 · Console · Junho 2026
-          </span>
+          <span className="px-3 py-1 bg-geek/20 text-geek rounded-full text-sm font-medium">Games · Nintendo · Switch 2</span>
         </div>
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-          Nintendo Switch 2: Guia Completo — Preço (R$ 4.500), Todos os Jogos, Specs e Vale a Pena Comprar?
+          Nintendo Switch 2: Guia Completo do Novo Console — Specs, Jogos e Vale a Pena Comprar?
         </h1>
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
-          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />25 de Abril, 2026</span>
-          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />16 min de leitura</span>
+          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />11 de Abril, 2026</span>
+          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />14 min de leitura</span>
         </div>
         <ShareWhatsApp />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high" src={heroImg} alt="Nintendo Switch 2 guia completo preço jogos 2026 Brasil" loading="eager" decoding="async" className="w-full h-full object-cover" />
+        <img fetchpriority="high" src={heroImg} alt="Nintendo Switch 2 guia completo 2026" loading="eager" decoding="async" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          O <strong>Nintendo Switch 2 chega às lojas em 5 de junho de 2026</strong> — simultaneamente no Brasil e no mundo — por <strong>R$ 4.499,90</strong>. É o maior lançamento de hardware da Nintendo desde o Switch original em 2017, que se tornou o terceiro console mais vendido da história com 150 milhões de unidades. Com tela de 7,9 polegadas HDR, saída 4K na TV, 256GB de armazenamento, Joy-Con magnéticos com função mouse e um catálogo de lançamento forte incluindo Mario Kart World, este guia reúne tudo que você precisa saber antes de decidir se compra.
+          O Nintendo Switch 2 finalmente chegou — e entregou. Após anos de especulação, a Nintendo lançou seu console de nova geração com uma proposta clara: <strong>o portátil mais poderoso já feito</strong>, mantendo a flexibilidade que tornou o Switch original um fenômeno de 143 milhões de unidades vendidas. Neste guia completo, analisamos tudo: specs, jogos de lançamento, preço no Brasil e se vale a pena comprar agora.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BarChart3 className="h-7 w-7 text-geek" />
-          Ficha Técnica Completa
+          Ficha Técnica: Switch 2 vs. Switch Original
         </h2>
-        <div className="not-prose my-6 grid md:grid-cols-2 gap-5">
-          <div className="bg-card rounded-xl border border-geek/20 p-5">
-            <h3 className="font-bold text-geek mb-3">🎮 Hardware</h3>
-            <ul className="text-sm text-muted-foreground space-y-2">
-              <li>📺 <strong className="text-foreground">Tela portátil:</strong> 7,9 pol. LCD HDR, 1080p, 120Hz</li>
-              <li>📺 <strong className="text-foreground">Tela docked:</strong> Suporte a 4K via HDMI 2.1</li>
-              <li>💾 <strong className="text-foreground">Armazenamento:</strong> 256 GB interno (8× o Switch 1)</li>
-              <li>🔋 <strong className="text-foreground">Bateria:</strong> 2–6,5h (dependendo do jogo)</li>
-              <li>🎮 <strong className="text-foreground">Joy-Con:</strong> Magnéticos (encaixe melhorado), função mouse</li>
-              <li>🎤 <strong className="text-foreground">GameChat:</strong> Chat de voz nativo com câmera opcional</li>
-              <li>🔌 <strong className="text-foreground">Portas:</strong> 2× USB-C, microSD Express</li>
-              <li>⚡ <strong className="text-foreground">Chip:</strong> NVIDIA Tegra T239 customizado</li>
-            </ul>
-          </div>
-          <div className="bg-card rounded-xl border border-geek/20 p-5">
-            <h3 className="font-bold text-geek mb-3">💰 Preços no Brasil</h3>
-            <ul className="text-sm text-muted-foreground space-y-2">
-              <li>🎮 <strong className="text-foreground">Console:</strong> R$ 4.499,90</li>
-              <li>📦 <strong className="text-foreground">Bundle + Mario Kart World:</strong> R$ 4.799,90</li>
-              <li>🏎️ <strong className="text-foreground">Mario Kart World:</strong> R$ 499,90</li>
-              <li>🦍 <strong className="text-foreground">Donkey Kong Bananza:</strong> R$ 439,90</li>
-              <li>🌌 <strong className="text-foreground">Mario Galaxy 1+2 (bundle launch):</strong> R$ 199,90</li>
-              <li>📱 <strong className="text-foreground">Jogos digitais:</strong> ~10–15% mais baratos que físico</li>
-              <li>🔵 <strong className="text-foreground">Switch Online:</strong> R$ 49,90/mês ou R$ 219,90/ano</li>
-            </ul>
-          </div>
+        <div className="not-prose my-6 overflow-x-auto">
+          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+            <thead><tr className="bg-secondary">
+              <th className="text-left py-3 px-4">Especificação</th>
+              <th className="text-left py-3 px-4">Switch 2</th>
+              <th className="text-left py-3 px-4">Switch Original</th>
+            </tr></thead>
+            <tbody>
+              {[
+                ["Processador", "NVIDIA T239 (custom Ampere)", "NVIDIA Tegra X1"],
+                ["GPU", "1536 CUDA cores (Ampere)", "256 CUDA cores (Maxwell)"],
+                ["RAM", "12 GB LPDDR5X", "4 GB LPDDR4"],
+                ["Armazenamento", "256 GB UFS 3.1 (expansível)", "32 GB eMMC"],
+                ["Tela", "8\" LCD 1080p / 120Hz (portátil)", "6,2\" LCD 720p / 60Hz"],
+                ["Resolução TV", "4K com DLSS / 1080p nativo", "1080p (dock) / 720p (portátil)"],
+                ["Bateria", "5.220 mAh (4–8h)", "4.310 mAh (2,5–6,5h)"],
+                ["Conectividade", "Wi-Fi 6, Bluetooth 5.3, USB-C", "Wi-Fi 5, Bluetooth 4.1, USB-C"],
+                ["Peso (com Joy-Con)", "420g", "398g"],
+                ["Preço (lançamento)", "US$ 449 / R$ 2.499", "US$ 299 / R$ 1.299 (2017)"],
+              ].map(([spec, sw2, sw1]) => (
+                <tr key={spec} className="border-t border-border">
+                  <td className="py-3 px-4 font-medium">{spec}</td>
+                  <td className="py-3 px-4 text-geek font-bold">{sw2}</td>
+                  <td className="py-3 px-4 text-muted-foreground">{sw1}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-        <div className="not-prose my-4 p-4 bg-green-500/10 border border-green-500/30 rounded-xl">
-          <p className="text-sm"><strong className="text-green-400">📢 Nova política de preços (Abril 2026):</strong> A Nintendo reduziu o preço das versões digitais dos jogos na eShop brasileira, atualizando a conversão interna do dólar. Jogos que custavam R$ 420–450 agora são encontrados por R$ 350–400 digitalmente. O movimento não é pegadinha de 1º de abril — a diferença entre versão física e digital foi oficializada como política permanente.</p>
+        <p>O salto geracional é significativo. O Switch 2 tem <strong>aproximadamente 10× mais poder de processamento gráfico</strong> e <strong>3× mais RAM</strong> que o original.</p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Star className="h-7 w-7 text-geek" />
+          Joy-Con 2 e o Botão C: O que Mudou
+        </h2>
+        <p>Os novos Joy-Con 2 são maiores, mais confortáveis e contam com o novo botão <strong>C</strong> (GameChat) e <strong>mouse mode</strong>.</p>
+        <div className="not-prose my-6 grid md:grid-cols-2 gap-4">
+          {[
+            { titulo: "Mouse Mode", desc: "Joy-Con 2 detecta movimento sobre superfícies como mouse óptico. Usado em Metroid Prime 4 e futuros títulos de estratégia.", icon: "🖱️" },
+            { titulo: "Botão C / GameChat", desc: "Comunicação por voz e vídeo diretamente no console, com câmera USB opcional. Grupos de até 12 pessoas.", icon: "🎤" },
+            { titulo: "Haptic Feedback HD", desc: "Vibração mais precisa e silenciosa. Simula texturas, impactos e notificações com fidelidade maior.", icon: "📳" },
+            { titulo: "Compatibilidade", desc: "Joy-Con originais funcionam no Switch 2 (sem mouse mode). Joy-Con 2 NÃO funcionam no Switch 1.", icon: "🔗" },
+          ].map(({ titulo, desc, icon }) => (
+            <div key={titulo} className="bg-card rounded-xl border border-geek/20 p-4">
+              <div className="text-xl mb-2">{icon}</div>
+              <h3 className="font-bold text-sm mb-1">{titulo}</h3>
+              <p className="text-xs text-muted-foreground">{desc}</p>
+            </div>
+          ))}
         </div>
 
         <AdLeaderboard className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Star className="h-7 w-7 text-geek" />
-          As Maiores Novidades do Switch 2
-        </h2>
-        <div className="not-prose my-6 space-y-3">
-          {[
-            { feat: "🖱️ Joy-Con com função mouse", desc: "Os novos Joy-Con podem ser deslizados numa superfície plana como um mouse de computador — moverão o cursor com precisão óptica. Isso transforma o Switch 2 num console híbrido de verdade: games de estratégia em tempo real e simuladores de gestão agora são jogáveis com controle mais intuitivo do que thumbsticks. Mario Kart World e outros títulos já têm suporte nativo a esse modo." },
-            { feat: "🎤 GameChat — voz e vídeo integrado", desc: "O Switch 2 tem chat de voz nativo via console (sem app no celular). Com a câmera opcional (vendida separado), os jogadores aparecem em tela enquanto jogam juntos. A implementação é similar ao Xbox Party Chat — sem necessidade de app de terceiros." },
-            { feat: "📺 4K no dock", desc: "Conectado à TV via HDMI 2.1, o Switch 2 suporta saída 4K com upscaling via DLSS da NVIDIA. No modo portátil, a tela é 1080p HDR a 120Hz — um salto enorme em relação ao 720p do Switch 1 portátil." },
-            { feat: "🔄 Retrocompatibilidade", desc: "A maioria dos jogos do Switch 1 funciona no Switch 2. Títulos populares como Zelda: Tears of the Kingdom, Cyberpunk 2077 e Metroid Prime 4 recebem versões remasterizadas gratuitas (se você já possui) ou atualizações pagas com gráficos melhorados. Mario Kart 8 Deluxe roda mas sem upgrades visuais." },
-            { feat: "🤝 Compartilhamento de jogos (Game Share)", desc: "Novo recurso exclusivo do Switch 2: compartilhe um jogo digital com outro Switch 2 por proximidade física, mesmo que o outro jogador não possua o título. Funciona como demo temporária enquanto os dois consoles estão próximos. Ideal para jogar com amigos sem que todos precisem comprar o mesmo jogo." },
-          ].map(({ feat, desc }) => (
-            <div key={feat} className="bg-card rounded-xl border border-geek/20 p-4">
-              <h3 className="font-bold text-sm mb-1 text-geek">{feat}</h3>
-              <p className="text-sm text-muted-foreground">{desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Gamepad2 className="h-7 w-7 text-geek" />
-          Catálogo de Lançamento: Jogos Confirmados para 2026
+          Jogos de Lançamento e Biblioteca 2026
         </h2>
         <div className="not-prose my-6 overflow-x-auto">
           <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead><tr className="bg-secondary">
               <th className="text-left py-3 px-4">Jogo</th>
-              <th className="text-left py-3 px-4">Data</th>
-              <th className="text-left py-3 px-4">Preço BR</th>
-              <th className="text-left py-3 px-4">Destaque</th>
+              <th className="text-left py-3 px-4">Gênero</th>
+              <th className="text-left py-3 px-4">Nota Média</th>
+              <th className="text-left py-3 px-4">Preço (BR)</th>
             </tr></thead>
             <tbody>
               {[
-                ["Mario Kart World", "5 jun (lançamento)", "R$ 499,90", "Maior Mario Kart já feito — mundo aberto explorável"],
-                ["Donkey Kong Bananza", "5 jun (lançamento)", "R$ 439,90", "Retorno de Donkey Kong em 3D com deformação de terreno"],
-                ["The Duskbloods (From Software + Nintendo)", "2026", "A confirmar", "Exclusivo Switch 2 da From Software — primeiro acordo exclusivo"],
-                ["Drag and Drive", "2026", "A confirmar", "Corrida com Joy-Con como volante + pedal físico"],
-                ["Pokémon Legends Z-A", "2026", "A confirmar", "Ambientado em Lumiose City, retorno ao estilo Arceus"],
-                ["Zelda: Ocarina of Time Remake", "2026", "A confirmar", "Remake completo do clássico de 1998 com engine moderna"],
-                ["Metroid Prime 4: Beyond (Switch 2 upgrade)", "5 jun", "Grátis p/ donos do Switch 1", "Versão melhorada do lançamento de março 2026 no Switch 1"],
-                ["Cyberpunk 2077 (Switch 2 upgrade)", "5 jun", "Upgrade pago", "Versão completa com Ray Tracing no dock"],
-              ].map(([jogo, data, preco, dest]) => (
+                ["Mario Kart World", "Corrida (mundo aberto)", "92/100 ⭐", "R$ 349,90"],
+                ["The Legend of Zelda: Echoes of Wisdom", "Ação-Aventura", "95/100 ⭐", "R$ 379,90"],
+                ["Metroid Prime 4: Beyond", "FPS / Aventura", "94/100 ⭐", "R$ 379,90"],
+                ["Donkey Kong Bananza", "Plataforma 3D", "88/100", "R$ 349,90"],
+                ["Pokémon Legends: Z-A", "RPG (exclusivo Switch 2)", "86/100", "R$ 379,90"],
+                ["Tomodachi Life: Living the Dream", "Simulação social", "84/100", "R$ 319,90"],
+                ["Kirby Air Riders", "Corrida / Aventura", "82/100", "R$ 299,90"],
+                ["Elden Ring (port Switch 2)", "Souls-like", "97/100 ⭐", "R$ 249,90"],
+              ].map(([jogo, genero, nota, preco]) => (
                 <tr key={jogo} className="border-t border-border">
-                  <td className="py-3 px-4 font-bold text-geek text-xs">{jogo}</td>
-                  <td className="py-3 px-4 text-xs">{data}</td>
-                  <td className="py-3 px-4 text-xs font-bold">{preco}</td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">{dest}</td>
+                  <td className="py-3 px-4 font-bold text-geek">{jogo}</td>
+                  <td className="py-3 px-4">{genero}</td>
+                  <td className="py-3 px-4 text-xs">{nota}</td>
+                  <td className="py-3 px-4 text-muted-foreground">{preco}</td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <p className="text-xs text-muted-foreground mt-2">The Duskbloods é o primeiro jogo exclusivo da From Software para um console Nintendo — parceria histórica anunciada no Nintendo Direct de fevereiro de 2026.</p>
+        </div>
+        <p>A Nintendo confirmou compatibilidade com praticamente toda a biblioteca do Switch 1 — mais de <strong>6.500 jogos</strong>.</p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Shield className="h-7 w-7 text-geek" />
+          Nintendo Switch 2 no Brasil: Preço e Edições
+        </h2>
+        <div className="not-prose my-6 grid md:grid-cols-3 gap-4">
+          {[
+            { edicao: "Switch 2 Standard", preco: "R$ 2.499", conteudo: "Console + Joy-Con 2 (vermelho/azul) + dock + cabos" },
+            { edicao: "Mario Kart World Bundle", preco: "R$ 2.799", conteudo: "Console + Joy-Con 2 + Mario Kart World (digital) + dock + cabos" },
+            { edicao: "Switch 2 + Pro Controller", preco: "R$ 3.199", conteudo: "Console + Joy-Con 2 + Pro Controller Switch 2 + dock + cabos" },
+          ].map(({ edicao, preco, conteudo }) => (
+            <div key={edicao} className="bg-card rounded-xl border border-geek/20 p-4">
+              <h3 className="font-bold text-sm mb-1">{edicao}</h3>
+              <div className="text-geek font-bold text-lg mb-2">{preco}</div>
+              <p className="text-xs text-muted-foreground">{conteudo}</p>
+            </div>
+          ))}
         </div>
 
         <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Package className="h-7 w-7 text-geek" />
-          Switch 2 vs PS5 vs Xbox Series X: Onde Se Encaixa?
-        </h2>
-        <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
-            <thead><tr className="bg-secondary">
-              <th className="text-left py-3 px-4">Aspecto</th>
-              <th className="text-left py-3 px-4">Nintendo Switch 2</th>
-              <th className="text-left py-3 px-4">PS5</th>
-              <th className="text-left py-3 px-4">Xbox Series X</th>
-            </tr></thead>
-            <tbody>
-              {[
-                ["Preço (BR)", "R$ 4.500", "R$ 4.000–R$ 4.500", "R$ 3.800–R$ 4.200"],
-                ["Portabilidade", "✅ Sim — único portátil", "❌ Apenas TV", "❌ Apenas TV"],
-                ["Potência gráfica", "Média-alta (com DLSS)", "Alta", "Alta"],
-                ["Exclusivos Nintendo", "✅ Mario, Zelda, Pokémon, Metroid", "✅ Sony exclusives", "❌ Game Pass em PC também"],
-                ["Retrocompat.", "✅ Maioria dos jogos Switch 1", "✅ PS4", "✅ Xbox One/360"],
-                ["Online grátis", "❌ Switch Online pago", "❌ PS Plus pago", "✅ F2P gratuito (alguns)"],
-                ["Game Pass/serviço", "Nintendo Switch Online", "PS Plus", "Xbox Game Pass (excelente custo-benefício)"],
-              ].map(([asp, sw2, ps5, xbx]) => (
-                <tr key={asp} className="border-t border-border">
-                  <td className="py-3 px-4 font-medium text-xs">{asp}</td>
-                  <td className="py-3 px-4 text-geek text-xs font-medium">{sw2}</td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">{ps5}</td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">{xbx}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Shield className="h-7 w-7 text-geek" />
-          Vale a Pena Comprar? Análise por Perfil
+          <Lightbulb className="h-7 w-7 text-geek" />
+          Vale a Pena Comprar o Switch 2 Agora?
         </h2>
         <div className="not-prose my-6 space-y-3">
           {[
-            { perfil: "✅ Compre se você...", items: ["Já tem um Switch 1 e quer o upgrade com 4K e tela HDR superior", "Quer um console portátil — não existe alternativa ao nível do Switch 2 nessa categoria", "É fã de jogos Nintendo (Mario, Zelda, Pokémon) — o catálogo exclusivo é insubstituível", "Quer jogar com filhos/família — Nintendo é o melhor ecossistema para jogo familiar local"], cor: "border-green-500/30" },
-            { perfil: "⏳ Espere se...", items: ["Você não tem Switch 1 e é gamer principalmente de jogos AAA como GTA, Assassin's Creed, Call of Duty — esses são melhores no PS5/Xbox", "O preço de R$ 4.500 + jogos a R$ 500 está fora do orçamento — aguarde promoções ou bundle de fim de ano", "Você quer esperar 6 meses para ver se há defeitos de hardware na primeira leva (padrão para early adopters)", "Não tem interesse no catálogo de lançamento — Mario Kart World e Donkey Kong são o motor inicial"], cor: "border-yellow-500/30" },
+            { perfil: "✅ Compre agora se...", items: ["Você nunca teve um Switch e quer entrar no ecossistema", "Mario Kart World, Metroid Prime 4 ou Zelda são seus jogos favoritos", "Você busca um console portátil premium sem abrir mão de qualidade gráfica", "Tem filhos e quer um console familiar e versátil"], cor: "border-green-500/30" },
+            { perfil: "⏳ Espere se...", items: ["Você já tem um Switch OLED em bom estado e a biblioteca satisfaz", "Está esperando o preço cair (projeção: R$ 1.999 até final de 2027)", "Prefere esperar a biblioteca de Switch 2 Edition crescer mais", "O preço de R$ 2.499 pesa no orçamento"], cor: "border-yellow-500/30" },
           ].map(({ perfil, items, cor }) => (
             <div key={perfil} className={`bg-card rounded-xl border ${cor} p-5`}>
               <h3 className="font-bold mb-3">{perfil}</h3>
-              <ul className="space-y-1">
-                {items.map((item, i) => (
-                  <li key={i} className="text-sm text-muted-foreground flex items-start gap-2"><span>•</span>{item}</li>
+              <ul className="space-y-1.5">
+                {items.map(item => (
+                  <li key={item} className="text-sm text-muted-foreground flex items-start gap-2">
+                    <span className="mt-0.5">•</span> {item}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -195,13 +177,13 @@ const NintendoSwitch2Guia2026 = () => {
         </div>
 
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Você vai comprar o Switch 2 no lançamento? 🎮</h3>
-          <p className="text-muted-foreground">Conta nos comentários! 👇</p>
+          <h3 className="text-xl font-bold mb-2">Você já comprou o Switch 2? 🎮</h3>
+          <p className="text-muted-foreground">Conta nos comentários o que achou! 👇</p>
         </div>
       </div>
 
-      <RelatedPosts currentSlug="nintendo-switch-2-guia-completo-2026" />
-      <CommentSection postId="nintendo-switch-2-guia-completo-2026" postTitle="Nintendo Switch 2: Guia Completo — Preço, Jogos, Specs e Vale a Pena Comprar?" />
+      <RelatedPosts currentSlug="nintendo-switch-2-guia-2026" />
+      <CommentSection postId="nintendo-switch-2-guia-2026" postTitle="Nintendo Switch 2: Guia Completo do Novo Console" />
     </article>
   );
 };
