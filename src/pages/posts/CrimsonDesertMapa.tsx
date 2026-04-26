@@ -178,7 +178,9 @@ const CrimsonDesertMapa = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [highlightedSlug, setHighlightedSlug] = useState<RegionKey | null>(null);
   const [searchFocused, setSearchFocused] = useState(false);
+  const [foundMessage, setFoundMessage] = useState<string | null>(null);
   const highlightTimerRef = useRef<number | null>(null);
+  const foundMsgTimerRef = useRef<number | null>(null);
 
   useEffect(() => {
     trackArticleRead(
