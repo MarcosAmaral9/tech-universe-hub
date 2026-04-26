@@ -451,6 +451,7 @@ const DynamicSEO = () => {
 
     if (post) {
       // ── Article schema ──────────────────────────────────────────────────
+      const wordCount = Math.max(0, Math.round(String(post.content ?? "").length / 5));
       const articleJsonLd: Record<string, unknown> = {
         "@context": "https://schema.org",
         "@type": "Article",
@@ -459,15 +460,13 @@ const DynamicSEO = () => {
         image: image,
         url: url,
         datePublished: post.date,
-        // dateModified signals freshness to Google — fall back to datePublished if not set
         dateModified: post.updatedAt ?? post.date,
-        author: {
-          ...organization,
-          // Treat VICIO<CODE> as the author organization for E-E-A-T
-        },
+        author: { ...organization },
         publisher: organization,
         mainEntityOfPage: { "@type": "WebPage", "@id": url },
         keywords: keywords,
+        articleSection: CATEGORY_NAME[post.category] ?? "Blog",
+        wordCount: wordCount,
         inLanguage: "pt-BR",
       };
       mainEl.textContent = JSON.stringify(articleJsonLd);
