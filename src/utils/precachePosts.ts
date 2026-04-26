@@ -81,6 +81,7 @@ export const STATIC_PAGES: StaticPage[] = [
   { path: "/geek",               label: "Hub Geek",                 category: "geek",    emoji: "🎮", assetUrls: imagesByCategory.geek },
   { path: "/otaku",              label: "Hub Otaku",                category: "otaku",   emoji: "🌸", assetUrls: imagesByCategory.otaku },
   { path: "/",                   label: "Página Inicial",           category: "site",    emoji: "🏠" },
+  { path: "/arquivo",            label: "Arquivo do Blog",          category: "site",    emoji: "🗂️" },
   { path: "/sobre",              label: "Sobre o VicioCode",        category: "site",    emoji: "ℹ️"  },
   { path: "/instalar",           label: "Instalar App",             category: "site",    emoji: "📲" },
 ];

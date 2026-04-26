@@ -30,6 +30,7 @@ const Header = () => {
     { name: "Finanças", path: "/financas", color: "text-invest" },
     { name: "Geek", path: "/geek", color: "text-geek" },
     { name: "Otaku", path: "/otaku", color: "text-otaku" },
+    { name: "Arquivo", path: "/arquivo", color: "text-foreground" },
     { name: "Instalar App", path: "/instalar", color: "text-primary" },
   ];
 
