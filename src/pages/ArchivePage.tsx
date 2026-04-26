@@ -29,6 +29,8 @@ import {
 } from "@/components/ui/pagination";
 import PostCard from "@/components/PostCard";
 import DynamicSEO from "@/components/DynamicSEO";
+import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import BackNavigation from "@/components/BackNavigation";
 import { blogPosts } from "@/data/posts";
 import type { BlogPost, Category } from "@/types/blog";
 
@@ -195,6 +197,8 @@ const ArchivePage = () => {
       <DynamicSEO />
       <div className="min-h-[70vh] py-6 sm:py-10 px-3 sm:px-4 lg:px-6">
         <div className="max-w-7xl mx-auto">
+          <BackNavigation />
+          <AdLeaderboard />
           {/* Header */}
           <header className="mb-6 sm:mb-8">
             <div className="flex items-center gap-3 mb-2">

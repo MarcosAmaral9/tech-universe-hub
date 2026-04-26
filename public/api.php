@@ -1,4 +1,11 @@
 <?php
+header('Content-Type: application/json; charset=utf-8');
+header('X-Content-Type-Options: nosniff');
+header('X-Frame-Options: DENY');
+header('X-XSS-Protection: 1; mode=block');
+header('Referrer-Policy: strict-origin-when-cross-origin');
+header('Strict-Transport-Security: max-age=31536000; includeSubDomains; preload');
+header('Cache-Control: no-store, no-cache, must-revalidate');
 /**
  * VICIO<CODE> API — Comments + Auth
  * MySQL via Hostinger phpMyAdmin.
