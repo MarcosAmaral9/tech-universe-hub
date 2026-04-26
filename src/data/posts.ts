@@ -136,10 +136,177 @@ import diabloLordHatredImg from "@/assets/diablo-iv-lord-of-hatred-2026.webp";
 import gtaViNovembro2026Img from "@/assets/gta-vi-novembro-2026-vice-city-leonida.webp";
 import jjkTemporada4Img from "@/assets/jujutsu-kaisen-temporada-4-culling-game-2026.webp";
 import freierenT3Img from "@/assets/frieren-temporada-3-confirmada-2026.webp";
+import openAiFinanciamentoImg      from "@/assets/openai-bilhoes-financiamento-record-2026.webp";
+import gemini25ProImg              from "@/assets/gemini-25-pro-vs-claude-ia-2026.webp";
+import ouroMaximaImg               from "@/assets/ouro-maxima-historica-2026-como-investir.webp";
+import acoesBrasileirasImg         from "@/assets/acoes-brasileiras-baratas-valuation-2026.webp";
+import switch2GuiaImg              from "@/assets/nintendo-switch-2-guia-completo-2026.webp";
+import zeldaOcarinaRemakeImg       from "@/assets/zelda-ocarina-of-time-remake-switch-2-2026.webp";
+import narutoEspeciaisImg          from "@/assets/naruto-especiais-confirmados-2026.webp";
+import bigThreeImg                 from "@/assets/big-three-naruto-bleach-one-piece-2026.webp";
 
 export const blogPosts: BlogPost[] = [
 
      // ── 20 Abr 2026 — IA ──────────────────────────────────────────────
+
+  // ── 25 Abr 2026 — IA ──────────────────────────────────────────────
+  {
+    id: "174",
+    slug: "openai-bilhoes-financiamento-record-2026",
+    title: "OpenAI Capta US$ 40 Bilhões e Chega a US$ 300 Bi de Valuation: O Que Isso Significa para o Futuro da IA",
+    excerpt: "A maior rodada de financiamento privado da história da tecnologia: US$ 40 bilhões liderados pela SoftBank. OpenAI chega a US$ 300 bilhões de valuation. O que isso significa para a corrida de IA, para investidores e para profissionais brasileiros?",
+    content: "",
+    category: "ia",
+    subtopic: "mercado",
+    image: openAiFinanciamentoImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-25",
+    readTime: "14 min",
+    faq: [
+      { q: "Quanto a OpenAI captou e qual o novo valuation?", a: "A OpenAI concluiu uma rodada de US$ 40 bilhões liderada pela SoftBank em abril de 2026, elevando seu valuation para US$ 300 bilhões — a maior rodada de financiamento privado da história da tecnologia." },
+      { q: "O que é a estrutura PBC da OpenAI?", a: "Public Benefit Corporation — equilibra objetivos de lucro com responsabilidade social, permitindo que a OpenAI ofereça equity real para investidores mantendo obrigações de missão pública sobre segurança da IA." },
+      { q: "Como o investidor brasileiro pode se expor à OpenAI?", a: "A OpenAI ainda é privada. Alternativas na B3: NVDC34 (Nvidia), MSFT34 (Microsoft — maior acionista da OpenAI), GOOG34 (Google — concorrente direto)." },
+      { q: "Para onde vão os US$ 40 bilhões captados?", a: "Aproximadamente 60% para infraestrutura de computação, 25% para pesquisa e desenvolvimento e 15% para expansão global — incluindo escritório em São Paulo." },
+    ],
+  },
+  {
+    id: "175",
+    slug: "gemini-25-pro-vs-claude-ia-2026",
+    title: "Gemini 2.5 Pro vs Claude Sonnet vs GPT-4o: Qual a Melhor IA de Abril de 2026?",
+    excerpt: "Comparativo completo das melhores IAs de 2026: Gemini 2.5 Pro lidera benchmarks de raciocínio, Claude Sonnet 4 lidera em código, GPT-4o mantém o melhor ecossistema. Com preços e recomendação por caso de uso.",
+    content: "",
+    category: "ia",
+    subtopic: "tutorial",
+    image: gemini25ProImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-25",
+    readTime: "15 min",
+    faq: [
+      { q: "Qual a melhor IA em abril de 2026?", a: "Depende do uso: Gemini 2.5 Pro é melhor para documentos longos e raciocínio matemático. Claude Sonnet 4 é melhor para programação e escrita criativa. GPT-4o tem melhor ecossistema de plugins." },
+      { q: "Qual o custo de cada IA em abril 2026?", a: "ChatGPT Plus: US$ 20/mês. Claude Pro: US$ 20/mês. Google Gemini Advanced: US$ 19,99/mês. Os três têm versões gratuitas funcionais." },
+      { q: "O Gemini 2.5 Pro realmente é melhor que o Claude?", a: "Em benchmarks de raciocínio e matemática: sim. Em geração de código prático: Claude Sonnet 4 lidera segundo surveys do Stack Overflow 2026." },
+      { q: "Qual IA devo usar para programar?", a: "Claude Sonnet 4 é o preferido da maioria dos desenvolvedores. Para bases de código muito grandes, o Gemini 2.5 Pro com 1M de contexto pode ler toda a codebase de uma vez." },
+    ],
+  },
+
+  // ── 25 Abr 2026 — Invest ─────────────────────────────────────────
+  {
+    id: "176",
+    slug: "ouro-maxima-historica-2026-como-investir",
+    title: "Ouro em Máxima Histórica: Por Que o Metal Subiu +30% em 12 Meses e Como Investir Agora",
+    excerpt: "Ouro cruzou US$ 3.300 por onça troy — nova máxima histórica. Em reais, acima de R$ 23.700 por grama. Alta de +43,5% em 12 meses. Guia completo: GOLD11, OZ1D, futuros — qual a melhor forma de investir?",
+    content: "",
+    category: "invest",
+    subtopic: "carteira",
+    image: ouroMaximaImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-25",
+    readTime: "14 min",
+    faq: [
+      { q: "Por que o ouro está subindo tanto em 2026?", a: "Cinco fatores: bancos centrais comprando em volume recorde, guerra Irã-EUA elevando prêmio geopolítico, dólar fraco globalmente, expectativa de cortes de juros do Fed e hedge contra dívida pública americana de US$ 37 trilhões." },
+      { q: "Como investir em ouro no Brasil?", a: "GOLD11 (ETF de ouro na B3), OZ1D/contratos futuros BM&F, fundos de ouro como Trend Ouro, ouro físico (lingotes/moedas) e ETFs americanos IAU/GLD via corretora americana." },
+      { q: "Ainda vale comprar ouro com o preço em máxima histórica?", a: "O consenso de analistas do JPMorgan, Goldman Sachs e BTG Pactual é que o ouro não está em bolha. A recomendação padrão é 5–10% da carteira em ouro como hedge." },
+      { q: "Qual a tributação do ouro no Brasil?", a: "GOLD11 e OZ1D: 15% sobre ganho de capital. Ouro físico: 15% sobre ganho. Fundos de ouro: IR come-cotas semestral. ETFs americanos: 15% + DARF mensal." },
+    ],
+  },
+  {
+    id: "177",
+    slug: "acoes-brasileiras-baratas-valuation-2026",
+    title: "Ibovespa em Recordes mas Ações Brasileiras Ainda Estão Baratas: O Paradoxo de Abril de 2026",
+    excerpt: "Ibovespa acima de 195 mil pontos mas mercado negocia a P/L de 8,5× vs média histórica de 12×. Dividend yield de 6,5% vs 1,5% do S&P 500. Por que estão baratas e 5 ações com melhor relação risco-retorno.",
+    content: "",
+    category: "invest",
+    subtopic: "carteira",
+    image: acoesBrasileirasImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-25",
+    readTime: "15 min",
+    faq: [
+      { q: "Por que as ações brasileiras estão baratas mesmo com o Ibovespa em alta?", a: "O índice em pontos não é valuation. O P/L de 8,5× (vs média histórica de 12×) e dividend yield de 6,5% indicam desconto real, causado pela Selic alta e risco eleitoral de 2026." },
+      { q: "Quais setores da bolsa estão mais baratos em abril 2026?", a: "Bancos (P/L 6–8×, DY 7–10%), Petróleo (P/L 4–6×, DY 8–15%), Utilities (P/L 10–14×, DY 5–7%), Construção civil popular (P/L 8–12×) e Agronegócio (P/L 6–10×)." },
+      { q: "Qual a diferença entre Ibovespa em pontos e valuation?", a: "O Ibovespa em pontos é preço nominal — sobe com tempo e inflação. Valuation é o quanto você paga pelos lucros (P/L). O índice pode bater recorde em pontos enquanto as ações estão baratas em múltiplos." },
+    ],
+  },
+
+  // ── 25 Abr 2026 — Geek ──────────────────────────────────────────────
+  {
+    id: "178",
+    slug: "nintendo-switch-2-guia-completo-2026",
+    title: "Nintendo Switch 2: Guia Completo — Preço (R$ 4.500), Todos os Jogos, Specs e Vale a Pena Comprar?",
+    excerpt: "Nintendo Switch 2 chega em 5 de junho de 2026 por R$ 4.499,90. Tela 7,9 pol HDR, 4K no dock, 256GB, Joy-Con magnéticos com função mouse, GameChat nativo. Catálogo: Mario Kart World, Donkey Kong Bananza, The Duskbloods e Zelda Ocarina Remake.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: switch2GuiaImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-25",
+    readTime: "16 min",
+    faq: [
+      { q: "Qual o preço do Nintendo Switch 2 no Brasil?", a: "R$ 4.499,90 (console padrão). Bundle com Mario Kart World: R$ 4.799,90. Lançamento global em 5 de junho de 2026." },
+      { q: "O Switch 2 tem 4K?", a: "Sim, quando conectado à TV via HDMI 2.1. No modo portátil a tela é 1080p HDR a 120Hz — salto enorme em relação ao 720p do Switch 1." },
+      { q: "O Switch 2 é compatível com jogos do Switch 1?", a: "A maioria dos jogos do Switch 1 funciona no Switch 2. Títulos como Zelda: Tears of the Kingdom e Metroid Prime 4 recebem versões Switch 2 melhoradas." },
+      { q: "O que é a função mouse do Joy-Con?", a: "Os Joy-Con têm sensor óptico na base e podem ser deslizados numa superfície plana como um mouse de computador." },
+    ],
+  },
+  {
+    id: "179",
+    slug: "zelda-ocarina-of-time-remake-switch-2-2026",
+    title: "Zelda: Ocarina of Time Remake — Tudo que Sabemos sobre o Retorno do Melhor Jogo da História no Switch 2",
+    excerpt: "A Nintendo confirmou: Ocarina of Time está sendo remakeado do zero para Switch 2. Engine completamente nova, gráficos reconstruídos, história e estrutura originais preservadas. Por que OoT tem 99/100 no Metacritic.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: zeldaOcarinaRemakeImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-25",
+    readTime: "14 min",
+    faq: [
+      { q: "O Zelda Ocarina of Time Remake é confirmado para Switch 2?", a: "Sim. A Nintendo confirmou durante o Nintendo Direct de fevereiro de 2026. Janela de lançamento: 2026, sem data exata. Exclusivo Switch 2." },
+      { q: "Qual a diferença entre remake e remaster de Ocarina of Time?", a: "O remaster de 2011 (3DS) melhorou texturas sobre o original. O remake de 2026 reconstrói tudo do zero — nova engine, novos gráficos, mesma história e estrutura." },
+      { q: "Por que Ocarina of Time é considerado o melhor jogo da história?", a: "Metacritic 99/100 — a nota mais alta da história do site. Criou o Z-Targeting, pioneirou mundos abertos sem loading, introduziu a estrutura dungeon/item e narrativa com duas linhas temporais." },
+      { q: "O remake de OoT vai ter conteúdo novo?", a: "A Nintendo não confirmou adições de gameplay. O confirmado: história preservada, Master Quest incluída e gráficos completamente novos." },
+    ],
+  },
+
+  // ── 25 Abr 2026 — Otaku ─────────────────────────────────────────────
+  {
+    id: "180",
+    slug: "naruto-especiais-confirmados-2026",
+    title: "Naruto: 4 Episódios Especiais Confirmados — Novos Designs Revelados e Tudo que Sabemos",
+    excerpt: "Em 21 de abril de 2026, o site oficial de Naruto revelou os novos designs dos personagens adultos. 4 episódios especiais em produção pelo Studio Pierrot para late 2026. Naruto, Sasuke, Sakura e Hinata completamente redesenhados.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: narutoEspeciaisImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-25",
+    readTime: "15 min",
+    faq: [
+      { q: "Os especiais de Naruto 2026 foram confirmados?", a: "Sim. O site oficial confirmou 4 episódios especiais em produção pelo Studio Pierrot para late 2026. Em 21 de abril de 2026, os novos designs dos personagens adultos foram revelados oficialmente." },
+      { q: "Qual história vai ser contada nos especiais de Naruto?", a: "Não foi revelado oficialmente. A teoria mais forte é adaptação expandida de The Last: Naruto the Movie. Os designs sugerem a era adulta pós-guerra ninja." },
+      { q: "Onde assistir os especiais de Naruto?", a: "Na Crunchyroll, com simulcast legendado em português no mesmo dia do Japão — confirmado como parceira de distribuição global." },
+      { q: "Como os novos designs de Naruto são diferentes do Shippuden?", a: "Naruto adulto tem visual mais maduro compatível com a fase Hokage. Sasuke mantém o braço ausente. Sakura tem visual de médica de elite. Hinata tem cabelo longo novamente." },
+    ],
+  },
+  {
+    id: "181",
+    slug: "big-three-naruto-bleach-one-piece-2026",
+    title: "Big Three em 2026: Naruto, Bleach e One Piece Juntos pela Primeira Vez desde 2012 — O Renascimento do Shonen Clássico",
+    excerpt: "One Piece com Elbaf, Bleach TYBW com novos blocos e Naruto com 4 especiais confirmados. Pela primeira vez desde 2012, os três títulos estão ativos simultaneamente. Análise completa e por que 2026 é o melhor ano do shonen clássico em uma década.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: bigThreeImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-25",
+    readTime: "16 min",
+    faq: [
+      { q: "Por que os Big Three são tão importantes para o anime?", a: "Naruto, Bleach e One Piece dominaram a cultura otaku de 2002 a 2012, criando uma geração inteira de fãs e estabelecendo o shonen como gênero cultural dominante globalmente." },
+      { q: "Qual do Big Three está melhor agora em 2026?", a: "Bleach TYBW tem a melhor animação técnica. One Piece Elbaf tem a maior importância narrativa. Naruto terá o maior impacto emocional. Em qualidade visual, Bleach lidera; em importância para fãs, One Piece Elbaf." },
+      { q: "Por que One Piece mudou para formato sazonal?", a: "O formato sazonal (12–13 eps com pausas) permite produção com qualidade cinematográfica consistente — como Attack on Titan e Jujutsu Kaisen." },
+      { q: "Por onde entrar em cada série do Big Three em 2026?", a: "Naruto: eps 460–500 de Shippuden + The Last Movie. Bleach TYBW: pode entrar direto no TYBW (2022, Crunchyroll). One Piece: One Pace (onepace.net) para maratonar sem fillers." },
+    ],
+  },
   {
     id: "166",
     slug: "mcp-model-context-protocol-2026",

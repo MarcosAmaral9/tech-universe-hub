@@ -203,6 +203,14 @@ const CortarGastos2026 = lazy(() => import("./pages/posts/CortarGastos2026"));
 const NintendoSwitch2Guia2026 = lazy(() => import("./pages/posts/NintendoSwitch2Guia2026"));
 const GTAVI2026 = lazy(() => import("./pages/posts/GTAVI2026"));
 const JujutsuKaisenGuia2026 = lazy(() => import("./pages/posts/JujutsuKaisenGuia2026"));
+const OpenAiFinanciamento2026      = lazy(() => import("./pages/posts/OpenAiFinanciamento2026"));
+const Gemini25ProVsClaude2026      = lazy(() => import("./pages/posts/Gemini25ProVsClaude2026"));
+const OuroMaximaHistorica2026      = lazy(() => import("./pages/posts/OuroMaximaHistorica2026"));
+const AcoesBrasileirasBaratas2026  = lazy(() => import("./pages/posts/AcoesBrasileirasBaratas2026"));
+const NintendoSwitch2Guia2026      = lazy(() => import("./pages/posts/NintendoSwitch2Guia2026"));
+const ZeldaOcarinaRemake2026       = lazy(() => import("./pages/posts/ZeldaOcarinaRemake2026"));
+const NarutoEspeciais2026          = lazy(() => import("./pages/posts/NarutoEspeciais2026"));
+const BigThree2026                 = lazy(() => import("./pages/posts/BigThree2026"));
 // ── 13 Abr 2026 ──────────────────────────────────────────────────────────────
 const AgentesIAAutonomos2026       = lazy(() => import("./pages/posts/AgentesIAAutonomos2026"));
 const IATrabalho2026Impacto        = lazy(() => import("./pages/posts/IATrabalho2026Impacto"));
@@ -442,6 +450,15 @@ const App = () => (
                 <Route path="/regiao/crimson-desert" element={<CrimsonDesertRegionPage />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
+                {/* ── 25 Abr 2026 ── */}
+                <Route path="/post/openai-bilhoes-financiamento-record-2026" element={<Suspense fallback={<div />}><OpenAiFinanciamento2026 /></Suspense>} />
+                <Route path="/post/gemini-25-pro-vs-claude-ia-2026" element={<Suspense fallback={<div />}><Gemini25ProVsClaude2026 /></Suspense>} />
+                <Route path="/post/ouro-maxima-historica-2026-como-investir" element={<Suspense fallback={<div />}><OuroMaximaHistorica2026 /></Suspense>} />
+                <Route path="/post/acoes-brasileiras-baratas-valuation-2026" element={<Suspense fallback={<div />}><AcoesBrasileirasBaratas2026 /></Suspense>} />
+                <Route path="/post/nintendo-switch-2-guia-completo-2026" element={<Suspense fallback={<div />}><NintendoSwitch2Guia2026 /></Suspense>} />
+                <Route path="/post/zelda-ocarina-of-time-remake-switch-2-2026" element={<Suspense fallback={<div />}><ZeldaOcarinaRemake2026 /></Suspense>} />
+                <Route path="/post/naruto-especiais-confirmados-2026" element={<Suspense fallback={<div />}><NarutoEspeciais2026 /></Suspense>} />
+                <Route path="/post/big-three-naruto-bleach-one-piece-2026" element={<Suspense fallback={<div />}><BigThree2026 /></Suspense>} />
               </Routes>
             </Suspense>
           </Layout>
