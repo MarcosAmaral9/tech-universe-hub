@@ -249,22 +249,36 @@ const CrimsonDesertMapa = () => {
   }, [searchTerm]);
 
   const focarRegiao = (slug: RegionKey) => {
+    const region = regionsData.find((r) => r.slug === slug);
     setSelectedRegion(slug);
     setSearchTerm("");
     setSearchFocused(false);
     setHighlightedSlug(slug);
-    // Scroll suave até o card da região
+    setFoundMessage(region ? region.name : null);
+
+    // 1) Scroll suave até o mapa interativo (para ver o pin pulsando)
     requestAnimationFrame(() => {
+      const mapEl = document.getElementById("mapa-pywel-interativo");
+      mapEl?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    // 2) Após 1,2s, scroll para o card detalhado da região
+    window.setTimeout(() => {
       const el = document.getElementById(`regiao-${slug}`);
       el?.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
+    }, 1200);
+
     if (highlightTimerRef.current) window.clearTimeout(highlightTimerRef.current);
     highlightTimerRef.current = window.setTimeout(() => setHighlightedSlug(null), 2400);
+
+    if (foundMsgTimerRef.current) window.clearTimeout(foundMsgTimerRef.current);
+    foundMsgTimerRef.current = window.setTimeout(() => setFoundMessage(null), 2800);
   };
 
   useEffect(
     () => () => {
       if (highlightTimerRef.current) window.clearTimeout(highlightTimerRef.current);
+      if (foundMsgTimerRef.current) window.clearTimeout(foundMsgTimerRef.current);
     },
     [],
   );
