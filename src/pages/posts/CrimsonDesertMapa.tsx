@@ -330,7 +330,7 @@ const CrimsonDesertMapa = () => {
       </figure>
 
       {/* Mapa Interativo de Pywel */}
-      <div className="not-prose my-8">
+      <div id="mapa-pywel-interativo" className="not-prose my-8 scroll-mt-20">
         <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
           <Map className="h-5 w-5 text-primary" /> Pywel — Mapa Interativo das Regiões
         </h2>
@@ -377,6 +377,17 @@ const CrimsonDesertMapa = () => {
           {searchFocused && searchTerm && filteredSuggestions.length === 0 && (
             <div className="absolute z-20 left-0 right-0 mt-1 bg-popover border border-border rounded-md shadow-lg px-3 py-2 text-xs text-muted-foreground">
               Nenhuma região encontrada para "{searchTerm}".
+            </div>
+          )}
+
+          {/* Mensagem efêmera de "local encontrado" */}
+          {foundMessage && (
+            <div
+              role="status"
+              aria-live="polite"
+              className="mt-3 mx-auto inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-semibold animate-in fade-in slide-in-from-top-2 shadow-sm"
+            >
+              📍 Local encontrado: <span className="font-bold">{foundMessage}</span>
             </div>
           )}
         </div>
