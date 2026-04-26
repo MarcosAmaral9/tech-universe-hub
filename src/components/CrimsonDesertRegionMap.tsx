@@ -367,6 +367,7 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
             {/* Pins das regiões */}
             {regioes.map((r) => {
               const ativo = selecionada?.key === r.key;
+              const pulsando = pulseKey === r.key;
               const pinSize = Math.max(20, 26 / zoom);
               const labelScale = 1 / zoom;
               return (
@@ -389,6 +390,13 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
                   }}
                 >
                   <RegionIcon iconKey={r.iconKey} className="h-3.5 w-3.5" />
+                  {/* Halo de pulso (aparece após busca/seleção externa) */}
+                  {pulsando && (
+                    <span
+                      aria-hidden="true"
+                      className={`absolute inset-0 rounded-full ${r.pinClass.split(" ")[0]} opacity-75 animate-ping`}
+                    />
+                  )}
                   {/* Rótulo permanente abaixo do pin */}
                   <span
                     className="pointer-events-none absolute top-full left-1/2 mt-1 px-1.5 py-0.5 bg-card/90 backdrop-blur border border-border rounded text-[10px] font-bold text-foreground whitespace-nowrap shadow-md"
