@@ -1,10 +1,20 @@
 import { Share2 } from "lucide-react";
+import { useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
+import OfflineDownloadButton from "./OfflineDownloadButton";
 
 const BASE_URL = "https://viciocode.com";
 
 const ShareWhatsApp = () => {
+  const location = useLocation();
+
+  // Detecta automaticamente se estamos em /post/<slug> para mostrar o botão
+  // de download offline ao lado dos botões de compartilhamento. Isso entrega
+  // o botão em todos os 130+ posts sem precisar editar cada arquivo.
+  const postMatch = /^\/post\/([^/?#]+)/.exec(location.pathname);
+  const postSlug = postMatch?.[1];
+
   const handleShare = () => {
     const url = `${BASE_URL}${window.location.pathname}`;
     const text = document.title || "Confira esse artigo no VICIO<CODE>";
@@ -30,7 +40,7 @@ const ShareWhatsApp = () => {
   };
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2 flex-wrap">
       <Button
         variant="outline"
         size="sm"
@@ -51,6 +61,9 @@ const ShareWhatsApp = () => {
       >
         <Share2 className="w-4 h-4" />
       </Button>
+
+      {/* Botão "Baixar offline" — só aparece em /post/* e dentro do PWA instalado */}
+      {postSlug && <OfflineDownloadButton slug={postSlug} />}
     </div>
   );
 };
