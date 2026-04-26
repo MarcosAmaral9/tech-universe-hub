@@ -205,7 +205,7 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
     };
   }, []);
 
-  // Sincroniza seleção externa + dispara zoom automático na região
+  // Sincroniza seleção externa + dispara zoom automático na região + pulso
   useEffect(() => {
     if (selectedKey === undefined) return;
     if (selectedKey === null) {
@@ -226,8 +226,17 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
       };
       setZoom(z);
       setPan(limitarPan(newPan, z));
+
+      // Pulso visual no pin focado
+      setPulseKey(found.key);
+      if (pulseTimerRef.current) window.clearTimeout(pulseTimerRef.current);
+      pulseTimerRef.current = window.setTimeout(() => setPulseKey(null), 2400);
     }
   }, [selectedKey, limitarPan]);
+
+  useEffect(() => () => {
+    if (pulseTimerRef.current) window.clearTimeout(pulseTimerRef.current);
+  }, []);
 
   const resetar = useCallback(() => {
     setZoom(1);
