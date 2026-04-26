@@ -181,8 +181,10 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [selecionada, setSelecionadaState] = useState<Region | null>(null);
   const [arrastando, setArrastando] = useState(false);
+  const [pulseKey, setPulseKey] = useState<RegionKey | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const arrastoInicioRef = useRef({ x: 0, y: 0, panX: 0, panY: 0 });
+  const pulseTimerRef = useRef<number | null>(null);
 
   const setSelecionada = useCallback(
     (r: Region | null) => {
