@@ -178,7 +178,9 @@ const CrimsonDesertMapa = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [highlightedSlug, setHighlightedSlug] = useState<RegionKey | null>(null);
   const [searchFocused, setSearchFocused] = useState(false);
+  const [foundMessage, setFoundMessage] = useState<string | null>(null);
   const highlightTimerRef = useRef<number | null>(null);
+  const foundMsgTimerRef = useRef<number | null>(null);
 
   useEffect(() => {
     trackArticleRead(
@@ -247,22 +249,36 @@ const CrimsonDesertMapa = () => {
   }, [searchTerm]);
 
   const focarRegiao = (slug: RegionKey) => {
+    const region = regionsData.find((r) => r.slug === slug);
     setSelectedRegion(slug);
     setSearchTerm("");
     setSearchFocused(false);
     setHighlightedSlug(slug);
-    // Scroll suave até o card da região
+    setFoundMessage(region ? region.name : null);
+
+    // 1) Scroll suave até o mapa interativo (para ver o pin pulsando)
     requestAnimationFrame(() => {
+      const mapEl = document.getElementById("mapa-pywel-interativo");
+      mapEl?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    // 2) Após 1,2s, scroll para o card detalhado da região
+    window.setTimeout(() => {
       const el = document.getElementById(`regiao-${slug}`);
       el?.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
+    }, 1200);
+
     if (highlightTimerRef.current) window.clearTimeout(highlightTimerRef.current);
     highlightTimerRef.current = window.setTimeout(() => setHighlightedSlug(null), 2400);
+
+    if (foundMsgTimerRef.current) window.clearTimeout(foundMsgTimerRef.current);
+    foundMsgTimerRef.current = window.setTimeout(() => setFoundMessage(null), 2800);
   };
 
   useEffect(
     () => () => {
       if (highlightTimerRef.current) window.clearTimeout(highlightTimerRef.current);
+      if (foundMsgTimerRef.current) window.clearTimeout(foundMsgTimerRef.current);
     },
     [],
   );
@@ -314,7 +330,7 @@ const CrimsonDesertMapa = () => {
       </figure>
 
       {/* Mapa Interativo de Pywel */}
-      <div className="not-prose my-8">
+      <div id="mapa-pywel-interativo" className="not-prose my-8 scroll-mt-20">
         <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
           <Map className="h-5 w-5 text-primary" /> Pywel — Mapa Interativo das Regiões
         </h2>
@@ -361,6 +377,17 @@ const CrimsonDesertMapa = () => {
           {searchFocused && searchTerm && filteredSuggestions.length === 0 && (
             <div className="absolute z-20 left-0 right-0 mt-1 bg-popover border border-border rounded-md shadow-lg px-3 py-2 text-xs text-muted-foreground">
               Nenhuma região encontrada para "{searchTerm}".
+            </div>
+          )}
+
+          {/* Mensagem efêmera de "local encontrado" */}
+          {foundMessage && (
+            <div
+              role="status"
+              aria-live="polite"
+              className="mt-3 mx-auto inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-semibold animate-in fade-in slide-in-from-top-2 shadow-sm"
+            >
+              📍 Local encontrado: <span className="font-bold">{foundMessage}</span>
             </div>
           )}
         </div>

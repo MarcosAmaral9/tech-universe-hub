@@ -181,8 +181,10 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [selecionada, setSelecionadaState] = useState<Region | null>(null);
   const [arrastando, setArrastando] = useState(false);
+  const [pulseKey, setPulseKey] = useState<RegionKey | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const arrastoInicioRef = useRef({ x: 0, y: 0, panX: 0, panY: 0 });
+  const pulseTimerRef = useRef<number | null>(null);
 
   const setSelecionada = useCallback(
     (r: Region | null) => {
@@ -203,7 +205,7 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
     };
   }, []);
 
-  // Sincroniza seleção externa + dispara zoom automático na região
+  // Sincroniza seleção externa + dispara zoom automático na região + pulso
   useEffect(() => {
     if (selectedKey === undefined) return;
     if (selectedKey === null) {
@@ -224,8 +226,17 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
       };
       setZoom(z);
       setPan(limitarPan(newPan, z));
+
+      // Pulso visual no pin focado
+      setPulseKey(found.key);
+      if (pulseTimerRef.current) window.clearTimeout(pulseTimerRef.current);
+      pulseTimerRef.current = window.setTimeout(() => setPulseKey(null), 2400);
     }
   }, [selectedKey, limitarPan]);
+
+  useEffect(() => () => {
+    if (pulseTimerRef.current) window.clearTimeout(pulseTimerRef.current);
+  }, []);
 
   const resetar = useCallback(() => {
     setZoom(1);
@@ -356,6 +367,7 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
             {/* Pins das regiões */}
             {regioes.map((r) => {
               const ativo = selecionada?.key === r.key;
+              const pulsando = pulseKey === r.key;
               const pinSize = Math.max(20, 26 / zoom);
               const labelScale = 1 / zoom;
               return (
@@ -378,6 +390,13 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
                   }}
                 >
                   <RegionIcon iconKey={r.iconKey} className="h-3.5 w-3.5" />
+                  {/* Halo de pulso (aparece após busca/seleção externa) */}
+                  {pulsando && (
+                    <span
+                      aria-hidden="true"
+                      className={`absolute inset-0 rounded-full ${r.pinClass.split(" ")[0]} opacity-75 animate-ping`}
+                    />
+                  )}
                   {/* Rótulo permanente abaixo do pin */}
                   <span
                     className="pointer-events-none absolute top-full left-1/2 mt-1 px-1.5 py-0.5 bg-card/90 backdrop-blur border border-border rounded text-[10px] font-bold text-foreground whitespace-nowrap shadow-md"
@@ -428,7 +447,12 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
 
         {/* Painel de detalhes da região selecionada */}
         {selecionada && (
-          <div className="absolute inset-x-0 bottom-0 md:inset-auto md:bottom-2 md:right-12 md:max-w-sm bg-card border-t md:border md:rounded-xl border-border shadow-2xl z-30 animate-in fade-in slide-in-from-bottom-3">
+          <div
+            role="region"
+            aria-live="polite"
+            aria-label={`Detalhes de ${selecionada.name}`}
+            className="absolute inset-x-0 bottom-0 md:inset-auto md:bottom-2 md:right-12 md:max-w-sm bg-card border-t md:border md:rounded-xl border-border shadow-2xl z-30 animate-in fade-in slide-in-from-bottom-3"
+          >
             <div className="p-4 space-y-2">
               <div className="flex items-start justify-between gap-2">
                 <div className="flex-1 min-w-0">

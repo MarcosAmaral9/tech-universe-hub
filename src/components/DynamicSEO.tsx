@@ -232,6 +232,76 @@ const CATEGORY_KEYWORDS: Record<string, string[]> = {
   geek: ["geek", "games", "jogos", "cultura pop", "séries", "filmes", "tecnologia", "nerd", "entretenimento", "reviews"],
 };
 
+// Stopwords PT-BR comuns que NÃO devem virar keywords
+const PT_STOPWORDS = new Set([
+  "para", "como", "mais", "tudo", "sobre", "guia", "esse", "este", "essa", "esta",
+  "isso", "aquele", "aquela", "pelos", "pela", "pelo", "pelas", "entre", "também",
+  "quando", "onde", "porque", "porquê", "porqu", "ainda", "depois", "antes",
+  "muito", "muita", "muitos", "muitas", "outro", "outra", "outros", "outras",
+  "todos", "todas", "todo", "toda", "neste", "nesta", "nessa", "nesse", "nisso",
+  "deste", "desta", "dessa", "desse", "disso", "ser", "ter", "estar", "fazer",
+  "haver", "vai", "vão", "fica", "ficou", "tem", "têm", "são", "foi", "foram",
+]);
+
+const CATEGORY_NAME: Record<string, string> = {
+  ia: "Inteligência Artificial",
+  invest: "Finanças & Investimentos",
+  geek: "Geek",
+  otaku: "Otaku",
+};
+
+// Helpers de SEO ─────────────────────────────────────────────────────────────
+const truncateAtWord = (text: string, max: number) => {
+  if (text.length <= max) return text;
+  const slice = text.slice(0, max);
+  const lastSpace = slice.lastIndexOf(" ");
+  return (lastSpace > 0 ? slice.slice(0, lastSpace) : slice).trim() + "…";
+};
+
+const extractTopWords = (text: string, top: number): string[] => {
+  const freq: Record<string, number> = {};
+  const tokens = text
+    .toLowerCase()
+    .replace(/[^a-záàâãéèêíïóôõúüç\s-]/g, " ")
+    .split(/\s+/)
+    .filter((w) => w.length > 3 && !PT_STOPWORDS.has(w));
+  for (const t of tokens) freq[t] = (freq[t] ?? 0) + 1;
+  return Object.entries(freq)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, top)
+    .map(([w]) => w);
+};
+
+const buildPostKeywords = (post: { title: string; excerpt: string; category: string; subtopic?: string | null }): string => {
+  const cat = CATEGORY_KEYWORDS[post.category] ?? [];
+  const titleWords = extractTopWords(post.title, 6);
+  const excerptWords = extractTopWords(post.excerpt, 5);
+  const sub = post.subtopic ? [post.subtopic.replace(/-/g, " ")] : [];
+
+  const all = [...titleWords, ...excerptWords, ...sub, ...cat];
+  // Remove duplicatas preservando ordem
+  const seen = new Set<string>();
+  const unique: string[] = [];
+  for (const k of all) {
+    const key = k.toLowerCase().trim();
+    if (key && !seen.has(key)) {
+      seen.add(key);
+      unique.push(k);
+    }
+  }
+  // Garante mínimo de 12 palavras (preenche com mais da categoria se faltar)
+  while (unique.length < 12 && cat.length > 0) {
+    const extra = cat[unique.length % cat.length];
+    if (!seen.has(extra.toLowerCase())) {
+      unique.push(extra);
+      seen.add(extra.toLowerCase());
+    } else {
+      break;
+    }
+  }
+  return unique.slice(0, 18).join(", ");
+};
+
 function setMetaTag(attrName: string, attrValue: string, content: string) {
   let el = document.querySelector(`meta[${attrName}="${attrValue}"]`) as HTMLMetaElement | null;
   if (!el) {
@@ -273,14 +343,35 @@ const DynamicSEO = () => {
     const post = isPost ? blogPosts.find((p) => p.slug === pathname.replace("/post/", "")) : undefined;
 
     if (post) {
-      title = post.title;
-      description = post.excerpt;
-      // Ensure absolute URL — imported assets resolve to relative paths like /assets/xyz.webp
+      // Verifica override manual em PAGE_META — tem prioridade sobre auto-geração
+      const manual = PAGE_META[pathname];
+      if (manual) {
+        title = manual.title;
+        description = manual.description;
+        keywords = manual.keywords;
+      } else {
+        // Auto-gerado: title encurtado, description balanceada, 12+ keywords
+        title = truncateAtWord(post.title, 60);
+        const catDescription = CATEGORY_NAME[post.category]
+          ? ` Confira no ${CATEGORY_NAME[post.category]} do VICIO<CODE>.`
+          : "";
+        let desc = post.excerpt || "";
+        if (desc.length > 160) {
+          desc = truncateAtWord(desc, 158);
+        } else if (desc.length < 80 && catDescription) {
+          desc = `${desc}${catDescription}`.trim();
+          if (desc.length > 160) desc = truncateAtWord(desc, 158);
+        }
+        description = desc;
+        keywords = buildPostKeywords({
+          title: post.title,
+          excerpt: post.excerpt,
+          category: post.category,
+          subtopic: post.subtopic ?? null,
+        });
+      }
       const rawImage = String(post.image);
       image = rawImage.startsWith("http") ? rawImage : `${BASE_URL}${rawImage}`;
-      const categoryKws = CATEGORY_KEYWORDS[post.category] || [];
-      const titleWords = post.title.toLowerCase().replace(/[^a-záàâãéèêíïóôõúç\s]/g, "").split(/\s+/).filter(w => w.length > 3);
-      keywords = [...new Set([...categoryKws, ...titleWords.slice(0, 5)])].join(", ");
     } else {
       const pageMeta = PAGE_META[pathname];
       if (pageMeta) {
@@ -360,6 +451,7 @@ const DynamicSEO = () => {
 
     if (post) {
       // ── Article schema ──────────────────────────────────────────────────
+      const wordCount = Math.max(0, Math.round(String(post.content ?? "").length / 5));
       const articleJsonLd: Record<string, unknown> = {
         "@context": "https://schema.org",
         "@type": "Article",
@@ -368,15 +460,13 @@ const DynamicSEO = () => {
         image: image,
         url: url,
         datePublished: post.date,
-        // dateModified signals freshness to Google — fall back to datePublished if not set
         dateModified: post.updatedAt ?? post.date,
-        author: {
-          ...organization,
-          // Treat VICIO<CODE> as the author organization for E-E-A-T
-        },
+        author: { ...organization },
         publisher: organization,
         mainEntityOfPage: { "@type": "WebPage", "@id": url },
         keywords: keywords,
+        articleSection: CATEGORY_NAME[post.category] ?? "Blog",
+        wordCount: wordCount,
         inLanguage: "pt-BR",
       };
       mainEl.textContent = JSON.stringify(articleJsonLd);

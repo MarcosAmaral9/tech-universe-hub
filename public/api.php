@@ -1382,26 +1382,78 @@ try {
     exit;
 }
 
-// ─── GET: buscar comentários ─────────────────────────────────────────────────
+// ─── Bootstrap idempotente: garante coluna parent_id e tabela comment_likes ──
+// Roda silenciosamente em toda requisição que precisa do banco (custo desprezível).
+try {
+    // Adiciona coluna parent_id em comments se ainda não existir (MySQL 5.7+)
+    $colCheck = $pdo->query(
+        "SELECT COUNT(*) FROM information_schema.COLUMNS
+         WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'comments' AND COLUMN_NAME = 'parent_id'"
+    );
+    if ($colCheck && intval($colCheck->fetchColumn()) === 0) {
+        $pdo->exec("ALTER TABLE comments ADD COLUMN parent_id VARCHAR(36) NULL, ADD INDEX idx_parent (parent_id)");
+    }
+    // Cria tabela comment_likes se ainda não existir
+    $pdo->exec(
+        "CREATE TABLE IF NOT EXISTS comment_likes (
+            comment_id VARCHAR(36) NOT NULL,
+            user_id VARCHAR(255) NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            PRIMARY KEY (comment_id, user_id),
+            INDEX idx_comment (comment_id)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci"
+    );
+} catch (PDOException $e) {
+    // Migração silenciosa — falhas não bloqueiam a API
+}
+
+// ─── GET: buscar comentários (com like_count e liked_by_me opcionais) ────────
 if ($method === 'GET' && $action === 'comments') {
     $postId = $_GET['post_id'] ?? '';
     if (!$postId) { http_response_code(400); echo json_encode(['error' => 'post_id obrigatório']); exit; }
-    $limit = isset($_GET['limit']) ? intval($_GET['limit']) : 100;
-    $stmt = $pdo->prepare('SELECT * FROM comments WHERE post_id = :post_id ORDER BY created_at DESC LIMIT :lim');
+    $limit  = isset($_GET['limit']) ? intval($_GET['limit']) : 200;
+    $userId = $_GET['user_id'] ?? '';
+
+    if ($userId !== '') {
+        $stmt = $pdo->prepare(
+            'SELECT c.*,
+                    (SELECT COUNT(*) FROM comment_likes cl WHERE cl.comment_id = c.id) AS like_count,
+                    (SELECT COUNT(*) FROM comment_likes cl WHERE cl.comment_id = c.id AND cl.user_id = :uid) AS liked_by_me
+             FROM comments c
+             WHERE c.post_id = :post_id
+             ORDER BY c.created_at DESC LIMIT :lim'
+        );
+        $stmt->bindValue(':uid', $userId, PDO::PARAM_STR);
+    } else {
+        $stmt = $pdo->prepare(
+            'SELECT c.*,
+                    (SELECT COUNT(*) FROM comment_likes cl WHERE cl.comment_id = c.id) AS like_count,
+                    0 AS liked_by_me
+             FROM comments c
+             WHERE c.post_id = :post_id
+             ORDER BY c.created_at DESC LIMIT :lim'
+        );
+    }
     $stmt->bindValue(':post_id', $postId, PDO::PARAM_STR);
     $stmt->bindValue(':lim', $limit, PDO::PARAM_INT);
     $stmt->execute();
-    echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($rows as &$r) {
+        $r['like_count']   = intval($r['like_count']);
+        $r['liked_by_me']  = intval($r['liked_by_me']) > 0;
+    }
+    echo json_encode($rows);
     exit;
 }
 
-// ─── POST: criar comentário ──────────────────────────────────────────────────
+// ─── POST: criar comentário (suporta parent_id para respostas) ───────────────
 if ($method === 'POST' && $action === 'comments') {
     $body = json_decode(file_get_contents('php://input'), true);
     $postId     = $body['post_id']     ?? '';
     $userId     = $body['user_id']     ?? '';
     $authorName = $body['author_name'] ?? '';
     $content    = $body['content']     ?? '';
+    $parentId   = $body['parent_id']   ?? null;
 
     if (!$postId || !$userId || !$authorName || !$content) {
         http_response_code(400); echo json_encode(['error' => 'Campos obrigatórios faltando']); exit;
@@ -1413,10 +1465,31 @@ if ($method === 'POST' && $action === 'comments') {
     if (strlen($content) > 1000) { http_response_code(400); echo json_encode(['error' => 'Comentário muito longo']); exit; }
     if (strlen($authorName) < 2) { http_response_code(400); echo json_encode(['error' => 'Nome muito curto']); exit; }
 
+    // Valida parent_id (deve existir e pertencer ao mesmo post)
+    if ($parentId) {
+        $chk = $pdo->prepare('SELECT post_id, parent_id FROM comments WHERE id = :id');
+        $chk->execute([':id' => $parentId]);
+        $parent = $chk->fetch(PDO::FETCH_ASSOC);
+        if (!$parent || $parent['post_id'] !== $postId) {
+            http_response_code(400); echo json_encode(['error' => 'Comentário pai inválido']); exit;
+        }
+        // Limita a profundidade a 1 nível: se o parent já tem parent, anexa ao avô
+        if (!empty($parent['parent_id'])) {
+            $parentId = $parent['parent_id'];
+        }
+    }
+
     $id = bin2hex(random_bytes(16));
-    $stmt = $pdo->prepare('INSERT INTO comments (id, post_id, user_id, author_name, content) VALUES (:id, :post_id, :user_id, :author_name, :content)');
-    $stmt->execute([':id' => $id, ':post_id' => $postId, ':user_id' => $userId, ':author_name' => $authorName, ':content' => $content]);
-    echo json_encode(['id' => $id, 'success' => true]);
+    $stmt = $pdo->prepare('INSERT INTO comments (id, post_id, user_id, author_name, content, parent_id) VALUES (:id, :post_id, :user_id, :author_name, :content, :parent_id)');
+    $stmt->execute([
+        ':id' => $id,
+        ':post_id' => $postId,
+        ':user_id' => $userId,
+        ':author_name' => $authorName,
+        ':content' => $content,
+        ':parent_id' => $parentId,
+    ]);
+    echo json_encode(['id' => $id, 'parent_id' => $parentId, 'success' => true]);
     exit;
 }
 
@@ -1425,9 +1498,45 @@ if ($method === 'DELETE' && $action === 'comments') {
     $id     = $_GET['id']      ?? '';
     $userId = $_GET['user_id'] ?? '';
     if (!$id || !$userId) { http_response_code(400); echo json_encode(['error' => 'id e user_id obrigatórios']); exit; }
+    // Apaga likes associados primeiro (sem FK formal)
+    $pdo->prepare('DELETE FROM comment_likes WHERE comment_id = :id')->execute([':id' => $id]);
+    // Apaga respostas filhas
+    $pdo->prepare('DELETE FROM comments WHERE parent_id = :id')->execute([':id' => $id]);
+    // Apaga o próprio comentário
     $stmt = $pdo->prepare('DELETE FROM comments WHERE id = :id AND user_id = :user_id');
     $stmt->execute([':id' => $id, ':user_id' => $userId]);
     echo json_encode(['success' => $stmt->rowCount() > 0]);
+    exit;
+}
+
+// ─── POST: curtir comentário (idempotente via PK) ────────────────────────────
+if ($method === 'POST' && $action === 'comment-like') {
+    $body = json_decode(file_get_contents('php://input'), true);
+    $commentId = $body['comment_id'] ?? '';
+    $userId    = $body['user_id']    ?? '';
+    if (!$commentId || !$userId) { http_response_code(400); echo json_encode(['error' => 'comment_id e user_id obrigatórios']); exit; }
+    try {
+        $stmt = $pdo->prepare('INSERT IGNORE INTO comment_likes (comment_id, user_id) VALUES (:c, :u)');
+        $stmt->execute([':c' => $commentId, ':u' => $userId]);
+        $cnt = $pdo->prepare('SELECT COUNT(*) FROM comment_likes WHERE comment_id = :c');
+        $cnt->execute([':c' => $commentId]);
+        echo json_encode(['success' => true, 'like_count' => intval($cnt->fetchColumn()), 'liked_by_me' => true]);
+    } catch (PDOException $e) {
+        http_response_code(500); echo json_encode(['error' => 'Falha ao curtir']);
+    }
+    exit;
+}
+
+// ─── DELETE: descurtir comentário ────────────────────────────────────────────
+if ($method === 'DELETE' && $action === 'comment-like') {
+    $commentId = $_GET['comment_id'] ?? '';
+    $userId    = $_GET['user_id']    ?? '';
+    if (!$commentId || !$userId) { http_response_code(400); echo json_encode(['error' => 'comment_id e user_id obrigatórios']); exit; }
+    $pdo->prepare('DELETE FROM comment_likes WHERE comment_id = :c AND user_id = :u')
+        ->execute([':c' => $commentId, ':u' => $userId]);
+    $cnt = $pdo->prepare('SELECT COUNT(*) FROM comment_likes WHERE comment_id = :c');
+    $cnt->execute([':c' => $commentId]);
+    echo json_encode(['success' => true, 'like_count' => intval($cnt->fetchColumn()), 'liked_by_me' => false]);
     exit;
 }
 
@@ -1857,9 +1966,19 @@ CREATE TABLE IF NOT EXISTS comments (
     user_id VARCHAR(255) NOT NULL,
     author_name VARCHAR(255) NOT NULL,
     content TEXT NOT NULL,
+    parent_id VARCHAR(36) NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     INDEX idx_post_id (post_id),
-    INDEX idx_user_id (user_id)
+    INDEX idx_user_id (user_id),
+    INDEX idx_parent (parent_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS comment_likes (
+    comment_id VARCHAR(36) NOT NULL,
+    user_id VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (comment_id, user_id),
+    INDEX idx_comment (comment_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS user_price_alerts (
