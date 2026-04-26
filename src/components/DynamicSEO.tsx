@@ -343,14 +343,35 @@ const DynamicSEO = () => {
     const post = isPost ? blogPosts.find((p) => p.slug === pathname.replace("/post/", "")) : undefined;
 
     if (post) {
-      title = post.title;
-      description = post.excerpt;
-      // Ensure absolute URL — imported assets resolve to relative paths like /assets/xyz.webp
+      // Verifica override manual em PAGE_META — tem prioridade sobre auto-geração
+      const manual = PAGE_META[pathname];
+      if (manual) {
+        title = manual.title;
+        description = manual.description;
+        keywords = manual.keywords;
+      } else {
+        // Auto-gerado: title encurtado, description balanceada, 12+ keywords
+        title = truncateAtWord(post.title, 60);
+        const catDescription = CATEGORY_NAME[post.category]
+          ? ` Confira no ${CATEGORY_NAME[post.category]} do VICIO<CODE>.`
+          : "";
+        let desc = post.excerpt || "";
+        if (desc.length > 160) {
+          desc = truncateAtWord(desc, 158);
+        } else if (desc.length < 80 && catDescription) {
+          desc = `${desc}${catDescription}`.trim();
+          if (desc.length > 160) desc = truncateAtWord(desc, 158);
+        }
+        description = desc;
+        keywords = buildPostKeywords({
+          title: post.title,
+          excerpt: post.excerpt,
+          category: post.category,
+          subtopic: post.subtopic ?? null,
+        });
+      }
       const rawImage = String(post.image);
       image = rawImage.startsWith("http") ? rawImage : `${BASE_URL}${rawImage}`;
-      const categoryKws = CATEGORY_KEYWORDS[post.category] || [];
-      const titleWords = post.title.toLowerCase().replace(/[^a-záàâãéèêíïóôõúç\s]/g, "").split(/\s+/).filter(w => w.length > 3);
-      keywords = [...new Set([...categoryKws, ...titleWords.slice(0, 5)])].join(", ");
     } else {
       const pageMeta = PAGE_META[pathname];
       if (pageMeta) {
