@@ -447,7 +447,12 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
 
         {/* Painel de detalhes da região selecionada */}
         {selecionada && (
-          <div className="absolute inset-x-0 bottom-0 md:inset-auto md:bottom-2 md:right-12 md:max-w-sm bg-card border-t md:border md:rounded-xl border-border shadow-2xl z-30 animate-in fade-in slide-in-from-bottom-3">
+          <div
+            role="region"
+            aria-live="polite"
+            aria-label={`Detalhes de ${selecionada.name}`}
+            className="absolute inset-x-0 bottom-0 md:inset-auto md:bottom-2 md:right-12 md:max-w-sm bg-card border-t md:border md:rounded-xl border-border shadow-2xl z-30 animate-in fade-in slide-in-from-bottom-3"
+          >
             <div className="p-4 space-y-2">
               <div className="flex items-start justify-between gap-2">
                 <div className="flex-1 min-w-0">
