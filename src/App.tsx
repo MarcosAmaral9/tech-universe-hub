@@ -12,14 +12,14 @@ import CommentSyncToast from "@/components/CommentSyncToast";
 import Index from "./pages/Index";
 import CookieConsent from "./components/CookieConsent";
 import { lazy, Suspense, useEffect } from "react";
-
+ 
 // Apply saved font size on app load
 const FONT_SIZE_KEY = "viciocode_font_size";
 const savedFontSize = localStorage.getItem(FONT_SIZE_KEY);
 if (savedFontSize) {
   document.documentElement.classList.add(`font-${savedFontSize}`);
 }
-
+ 
 // ── Limpeza de caches de widget obsoletos (migração para cache de servidor) ──
 // Remove todas as versões antigas de cache de widget do localStorage
 // O cache agora é centralizado no MySQL do servidor
@@ -31,7 +31,7 @@ const _oldWidgetKeys = [
 ];
 _oldWidgetKeys.forEach((k) => localStorage.removeItem(k));
 // ────────────────────────────────────────────────────────────────────────────
-
+ 
 // Apply saved accent color on app load
 const ACCENT_COLOR_KEY = "viciocode_accent_color";
 const accentColorMap: Record<string, string> = {
@@ -47,7 +47,7 @@ if (savedAccent && accentColorMap[savedAccent]) {
   document.documentElement.style.setProperty("--primary", accentColorMap[savedAccent]);
   document.documentElement.style.setProperty("--ring", accentColorMap[savedAccent]);
 }
-
+ 
 // Lazy-loaded pages — only downloaded when user navigates to them
 const NotFound = lazy(() => import("./pages/NotFound"));
 const OtakuPage = lazy(() => import("./pages/OtakuPage"));
@@ -69,9 +69,9 @@ const AuthPage = lazy(() => import("./pages/AuthPage"));
 const PublicProfilePage = lazy(() => import("./pages/PublicProfilePage"));
 const ResetPasswordPage = lazy(() => import("./pages/ResetPasswordPage"));
 const GoogleAuthCallback = lazy(() => import("./pages/GoogleAuthCallback"));
-
+ 
 // Lazy-loaded posts
-
+ 
 const DiferencaMangasManhuas = lazy(() => import("./pages/posts/DiferencaMangasManhuas"));
 const DiferenciarManhuasManhwas = lazy(() => import("./pages/posts/DiferenciarManhuasManhwas"));
 const MelhoresManhwasSistema = lazy(() => import("./pages/posts/MelhoresManhwasSistema"));
@@ -207,7 +207,7 @@ const OpenAiFinanciamento2026      = lazy(() => import("./pages/posts/OpenAiFina
 const Gemini25ProVsClaude2026      = lazy(() => import("./pages/posts/Gemini25ProVsClaude2026"));
 const OuroMaximaHistorica2026      = lazy(() => import("./pages/posts/OuroMaximaHistorica2026"));
 const AcoesBrasileirasBaratas2026  = lazy(() => import("./pages/posts/AcoesBrasileirasBaratas2026"));
-const NintendoSwitch2Guia2026      = lazy(() => import("./pages/posts/NintendoSwitch2Guia2026"));
+const NintendoSwitch2Completo2026  = lazy(() => import("./pages/posts/NintendoSwitch2Completo2026"));
 const ZeldaOcarinaRemake2026       = lazy(() => import("./pages/posts/ZeldaOcarinaRemake2026"));
 const NarutoEspeciais2026          = lazy(() => import("./pages/posts/NarutoEspeciais2026"));
 const BigThree2026                 = lazy(() => import("./pages/posts/BigThree2026"));
@@ -235,7 +235,7 @@ const HernandPage              = lazy(() => import("./pages/regions/HernandPage"
 const DemenissPage             = lazy(() => import("./pages/regions/DemenissPage"));
 const DelesyiaPage             = lazy(() => import("./pages/regions/DelesyiaPage"));
 const CrimsonDesertRegionPage  = lazy(() => import("./pages/regions/CrimsonDesertRegionPage"));
-
+ 
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -245,13 +245,13 @@ const queryClient = new QueryClient({
     },
   },
 });
-
+ 
 const PageLoader = () => (
   <div className="flex items-center justify-center min-h-[40vh]">
     <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" />
   </div>
 );
-
+ 
 const App = () => (
   <QueryClientProvider client={queryClient}>
       <ThemeProvider>
@@ -448,17 +448,17 @@ const App = () => (
                 <Route path="/regiao/demeniss" element={<DemenissPage />} />
                 <Route path="/regiao/delesyia" element={<DelesyiaPage />} />
                 <Route path="/regiao/crimson-desert" element={<CrimsonDesertRegionPage />} />
-                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                <Route path="*" element={<NotFound />} />
                 {/* ── 25 Abr 2026 ── */}
                 <Route path="/post/openai-bilhoes-financiamento-record-2026" element={<Suspense fallback={<div />}><OpenAiFinanciamento2026 /></Suspense>} />
                 <Route path="/post/gemini-25-pro-vs-claude-ia-2026" element={<Suspense fallback={<div />}><Gemini25ProVsClaude2026 /></Suspense>} />
                 <Route path="/post/ouro-maxima-historica-2026-como-investir" element={<Suspense fallback={<div />}><OuroMaximaHistorica2026 /></Suspense>} />
                 <Route path="/post/acoes-brasileiras-baratas-valuation-2026" element={<Suspense fallback={<div />}><AcoesBrasileirasBaratas2026 /></Suspense>} />
-                <Route path="/post/nintendo-switch-2-guia-completo-2026" element={<Suspense fallback={<div />}><NintendoSwitch2Guia2026 /></Suspense>} />
+                <Route path="/post/nintendo-switch-2-guia-completo-2026" element={<Suspense fallback={<div />}><NintendoSwitch2Completo2026 /></Suspense>} />
                 <Route path="/post/zelda-ocarina-of-time-remake-switch-2-2026" element={<Suspense fallback={<div />}><ZeldaOcarinaRemake2026 /></Suspense>} />
                 <Route path="/post/naruto-especiais-confirmados-2026" element={<Suspense fallback={<div />}><NarutoEspeciais2026 /></Suspense>} />
                 <Route path="/post/big-three-naruto-bleach-one-piece-2026" element={<Suspense fallback={<div />}><BigThree2026 /></Suspense>} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
           </Layout>
@@ -468,5 +468,5 @@ const App = () => (
       </ThemeProvider>
   </QueryClientProvider>
 );
-
+ 
 export default App;
