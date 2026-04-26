@@ -20,6 +20,11 @@ window.addEventListener("vite:preloadError", () => {
 // ── Inicia sistema de fila offline para comentários (background sync) ─────────
 initOfflineCommentSync();
 
+// ── Pré-cache automático das páginas estáticas (PWA standalone, idle time) ────
+import("./utils/autoPrecacheStatic").then(({ autoPrecacheStaticPages }) => {
+  autoPrecacheStaticPages();
+}).catch(() => { /* ignore */ });
+
 // ── Monta o app React ─────────────────────────────────────────────────────────
 const container = document.getElementById("root")!;
 
