@@ -2,13 +2,22 @@
  * ArchivePage — /arquivo
  *
  * Arquivo completo do blog com filtros por categoria (IA, Investimentos, Geek,
- * Otaku), busca por título/excerpt e paginação client-side. Estado sincronizado
- * com URL (?cat=&page=&q=) para ser bookmarkável.
+ * Otaku), busca por título/excerpt/conteúdo, ordenação (recentes/antigos/
+ * relevância) e paginação client-side. Estado sincronizado com URL
+ * (?cat=&page=&q=&deep=&sort=) para ser bookmarkável.
  */
 import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { Search, X, Archive } from "lucide-react";
+import { Search, X, Archive, ArrowDownWideNarrow } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import {
   Pagination,
   PaginationContent,
@@ -21,9 +30,11 @@ import {
 import PostCard from "@/components/PostCard";
 import DynamicSEO from "@/components/DynamicSEO";
 import { blogPosts } from "@/data/posts";
-import type { Category } from "@/types/blog";
+import type { BlogPost, Category } from "@/types/blog";
 
 const PER_PAGE = 12;
+
+type SortKey = "recent" | "oldest" | "relevance";
 
 const FILTERS: { key: "all" | Category; label: string; emoji: string }[] = [
   { key: "all",    label: "Todos",         emoji: "🗂️" },
@@ -36,12 +47,27 @@ const FILTERS: { key: "all" | Category; label: string; emoji: string }[] = [
 const norm = (s: string) =>
   s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
+// Conta quantas vezes `needle` aparece em `haystack` (ambos já normalizados)
+const countOccurrences = (haystack: string, needle: string): number => {
+  if (!needle) return 0;
+  let count = 0;
+  let pos = 0;
+  while ((pos = haystack.indexOf(needle, pos)) !== -1) {
+    count++;
+    pos += needle.length;
+  }
+  return count;
+};
+
 const ArchivePage = () => {
   const [params, setParams] = useSearchParams();
 
   const cat = (params.get("cat") as "all" | Category | null) ?? "all";
   const page = Math.max(1, Number(params.get("page") ?? "1"));
   const q = params.get("q") ?? "";
+  const deep = params.get("deep") === "1";
+  const sortParam = (params.get("sort") as SortKey | null) ?? "recent";
+  const sort: SortKey = ["recent", "oldest", "relevance"].includes(sortParam) ? sortParam : "recent";
 
   const [searchInput, setSearchInput] = useState(q);
 
@@ -64,6 +90,20 @@ const ArchivePage = () => {
     setParams(next, { replace: true });
   };
 
+  const setDeep = (v: boolean) => {
+    const next = new URLSearchParams(params);
+    if (v) next.set("deep", "1"); else next.delete("deep");
+    next.delete("page");
+    setParams(next, { replace: true });
+  };
+
+  const setSort = (s: SortKey) => {
+    const next = new URLSearchParams(params);
+    if (s === "recent") next.delete("sort"); else next.set("sort", s);
+    next.delete("page");
+    setParams(next, { replace: true });
+  };
+
   const setPage = (n: number) => {
     const next = new URLSearchParams(params);
     if (n <= 1) next.delete("page"); else next.set("page", String(n));
@@ -71,20 +111,59 @@ const ArchivePage = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // Filtragem
+  // Pré-normalização de todos os posts (1× por mount) para performance
+  const normalizedPosts = useMemo(() => {
+    return blogPosts.map((p) => ({
+      post: p,
+      nTitle: norm(p.title),
+      nExcerpt: norm(p.excerpt),
+      // content pode ser longo — só normalizamos uma vez
+      nContent: norm(String(p.content ?? "")),
+    }));
+  }, []);
+
+  // Filtragem + ordenação
   const filtered = useMemo(() => {
-    let list = [...blogPosts];
-    if (cat !== "all") list = list.filter((p) => p.category === cat);
-    if (q) {
-      const nq = norm(q);
-      list = list.filter(
-        (p) => norm(p.title).includes(nq) || norm(p.excerpt).includes(nq),
-      );
+    let list = normalizedPosts;
+    if (cat !== "all") list = list.filter((x) => x.post.category === cat);
+
+    const nq = norm(q);
+
+    if (nq) {
+      list = list.filter((x) => {
+        if (x.nTitle.includes(nq) || x.nExcerpt.includes(nq)) return true;
+        if (deep && x.nContent.includes(nq)) return true;
+        return false;
+      });
     }
-    // Ordena por data desc (string ISO compatível)
-    list.sort((a, b) => (a.date < b.date ? 1 : -1));
-    return list;
-  }, [cat, q]);
+
+    // Construir lista final com score de relevância (se aplicável)
+    const withScore = list.map((x) => {
+      let score = 0;
+      if (nq && sort === "relevance") {
+        score =
+          3 * countOccurrences(x.nTitle, nq) +
+          2 * countOccurrences(x.nExcerpt, nq) +
+          (deep ? 1 * countOccurrences(x.nContent, nq) : 0);
+      }
+      return { post: x.post, score };
+    });
+
+    // Ordenação
+    if (sort === "relevance" && nq) {
+      withScore.sort((a, b) => {
+        if (b.score !== a.score) return b.score - a.score;
+        return a.post.date < b.post.date ? 1 : -1; // desempate: mais recente
+      });
+    } else if (sort === "oldest") {
+      withScore.sort((a, b) => (a.post.date > b.post.date ? 1 : -1));
+    } else {
+      // recent (default)
+      withScore.sort((a, b) => (a.post.date < b.post.date ? 1 : -1));
+    }
+
+    return withScore.map((x) => x.post) as BlogPost[];
+  }, [normalizedPosts, cat, q, deep, sort]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
   const safePage = Math.min(page, totalPages);
@@ -109,6 +188,8 @@ const ArchivePage = () => {
     return [...set].sort((a, b) => a - b);
   }, [totalPages, safePage]);
 
+  const hasQuery = q.length > 0;
+
   return (
     <>
       <DynamicSEO />
@@ -124,7 +205,8 @@ const ArchivePage = () => {
             </div>
             <p className="text-sm sm:text-base text-muted-foreground">
               Todos os {blogPosts.length} artigos do VicioCode em um só lugar.
-              Filtre por categoria ou busque por palavra-chave.
+              Filtre por categoria, busque por palavra-chave (incluindo no corpo do post)
+              e ordene por relevância ou data.
             </p>
           </header>
 
@@ -158,26 +240,60 @@ const ArchivePage = () => {
               })}
             </div>
 
-            {/* Busca */}
-            <div className="relative max-w-md">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-              <Input
-                type="search"
-                placeholder="Buscar por título ou descrição…"
-                value={searchInput}
-                onChange={(e) => setSearchInput(e.target.value)}
-                className="pl-9 pr-9"
-              />
-              {searchInput && (
-                <button
-                  onClick={() => setSearchInput("")}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 p-1 rounded hover:bg-muted"
-                  aria-label="Limpar busca"
-                >
-                  <X className="h-4 w-4 text-muted-foreground" />
-                </button>
-              )}
+            {/* Busca + ordenação */}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+              <div className="relative flex-1 max-w-md">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Input
+                  type="search"
+                  placeholder="Buscar por título, descrição ou conteúdo…"
+                  value={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                  className="pl-9 pr-9"
+                />
+                {searchInput && (
+                  <button
+                    onClick={() => setSearchInput("")}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 p-1 rounded hover:bg-muted"
+                    aria-label="Limpar busca"
+                  >
+                    <X className="h-4 w-4 text-muted-foreground" />
+                  </button>
+                )}
+              </div>
+
+              {/* Ordenação */}
+              <div className="flex items-center gap-2">
+                <ArrowDownWideNarrow className="h-4 w-4 text-muted-foreground shrink-0" />
+                <Select value={sort} onValueChange={(v) => setSort(v as SortKey)}>
+                  <SelectTrigger className="w-[180px]" aria-label="Ordenar resultados">
+                    <SelectValue placeholder="Ordenar por" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="recent">Mais recentes</SelectItem>
+                    <SelectItem value="oldest">Mais antigos</SelectItem>
+                    <SelectItem value="relevance" disabled={!hasQuery}>
+                      Relevância {hasQuery ? "" : "(busque algo)"}
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
+
+            {/* Toggle busca profunda */}
+            <label className="inline-flex items-center gap-2 text-xs sm:text-sm text-muted-foreground cursor-pointer select-none">
+              <Checkbox
+                checked={deep}
+                onCheckedChange={(v) => setDeep(Boolean(v))}
+                aria-label="Buscar também no conteúdo dos posts"
+              />
+              <span>
+                Buscar também no <strong className="text-foreground">conteúdo</strong> dos posts
+                {deep && q && (
+                  <span className="ml-1 text-primary">(busca profunda ativa)</span>
+                )}
+              </span>
+            </label>
 
             {/* Contador */}
             <p className="text-xs sm:text-sm text-muted-foreground">
@@ -195,6 +311,9 @@ const ArchivePage = () => {
                     <>
                       {" "}para "<span className="text-foreground">{q}</span>"
                     </>
+                  )}
+                  {sort === "relevance" && hasQuery && (
+                    <span className="ml-1 text-primary">· ordenados por relevância</span>
                   )}
                 </>
               )}
@@ -214,7 +333,12 @@ const ArchivePage = () => {
                 Não encontramos posts com esses filtros.
               </p>
               <button
-                onClick={() => { setSearchInput(""); setCat("all"); }}
+                onClick={() => {
+                  setSearchInput("");
+                  setCat("all");
+                  setDeep(false);
+                  setSort("recent");
+                }}
                 className="text-primary hover:underline text-sm font-semibold"
               >
                 Limpar filtros
