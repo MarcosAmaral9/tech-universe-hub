@@ -544,7 +544,7 @@ const DynamicSEO = () => {
       clearScript("breadcrumb");
       clearScript("faq");
     }
-  }, [pathname]);
+  }, [pathname, search]);
 
   return null;
 };
