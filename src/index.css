@@ -273,6 +273,29 @@ img {
   @apply w-full overflow-x-auto block;
 }
 
+/* ── Article tables (.not-prose) — fill container, distribute columns evenly ── */
+/* Garante que tabelas de artigos ocupem 100% da largura disponível e que o    */
+/* conteúdo se distribua proporcionalmente entre as colunas em qualquer tela.  */
+.not-prose > .overflow-x-auto > table,
+.not-prose table.w-full {
+  table-layout: auto;
+  width: 100%;
+  min-width: 100%;
+}
+.not-prose > .overflow-x-auto > table th,
+.not-prose > .overflow-x-auto > table td,
+.not-prose table.w-full th,
+.not-prose table.w-full td {
+  word-break: break-word;
+}
+@media (min-width: 768px) {
+  /* Em telas md+, distribui colunas igualmente para preencher todo o quadro */
+  .not-prose > .overflow-x-auto > table,
+  .not-prose table.w-full {
+    table-layout: fixed;
+  }
+}
+
 /* Focus visible: accessibility ring */
 :focus-visible {
   @apply outline-2 outline-offset-2 outline-primary;
