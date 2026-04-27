@@ -329,7 +329,7 @@ function clearScript(dataAttr: string) {
 }
 
 const DynamicSEO = () => {
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
 
   useEffect(() => {
     let title = SITE_NAME;
@@ -337,7 +337,9 @@ const DynamicSEO = () => {
     // og:image MUST be absolute URL for WhatsApp/Facebook/Discord to render correctly
     let image = `${BASE_URL}/og-image.png`;
     let keywords = "VICIO CODE, tecnologia, IA, investimentos, geek, otaku, animes, mangás, finanças, games";
-    const url = `${BASE_URL}${pathname}`;
+    // Inclui search params no canonical/og:url para que paginação (?page=2) e
+    // filtros (?cat=geek&q=...) sejam refletidos corretamente nas metas.
+    const url = `${BASE_URL}${pathname}${search || ""}`;
     const isPost = pathname.startsWith("/post/");
 
     const post = isPost ? blogPosts.find((p) => p.slug === pathname.replace("/post/", "")) : undefined;
