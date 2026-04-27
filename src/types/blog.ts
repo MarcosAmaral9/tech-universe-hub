@@ -1,6 +1,6 @@
 export type Category = 'ia' | 'invest' | 'geek' | 'otaku';
 
-export type Subtopic = 'avatar' | 'vikings' | 'tensura' | 'overlord' | 'games' | 'manhwa' | 'manga' | 'manhua' | 'anime' | 'dublagem' | 'semicondutores' | 'datacenter' | 'ciberseguranca' | 'streaming' | 'assassins-creed' | 'crimson-desert' | 'renda-fixa' | 'renda-passiva' | 'carteira' | 'cripto' | 'impostos' | 'ia-financas' | 'educacao-financeira' | 'fiis' | 'dividas' | 'planejamento' | 'calculadoras' | 'comparativos' | 'renda' | 'trabalho' | 'apps' | 'tutorial' | 'seguranca' | 'educacao' | 'agentes' | 'saude' | 'regulacao' | 'isekai' | 'cosplay' | 'cultura' | 'idiomas' | 'generos' | 'collectibles' | 'saude-mental' | 'criatividade' | 'privacidade' | 'etfs' | 'economia-domestica' | 'produtividade' | null;
+export type Subtopic = 'avatar' | 'vikings' | 'tensura' | 'overlord' | 'games' | 'manhwa' | 'manga' | 'manhua' | 'anime' | 'dublagem' | 'semicondutores' | 'datacenter' | 'ciberseguranca' | 'streaming' | 'assassins-creed' | 'crimson-desert' | 'renda-fixa' | 'renda-passiva' | 'carteira' | 'cripto' | 'impostos' | 'ia-financas' | 'educacao-financeira' | 'fiis' | 'dividas' | 'planejamento' | 'calculadoras' | 'comparativos' | 'renda' | 'trabalho' | 'apps' | 'tutorial' | 'seguranca' | 'educacao' | 'agentes' | 'saude' | 'regulacao' | 'isekai' | 'cosplay' | 'cultura' | 'idiomas' | 'generos' | 'collectibles' | 'saude-mental' | 'criatividade' | 'privacidade' | 'etfs' | 'economia-domestica' | 'produtividade' | 'mercado' | null;
 
 export interface BlogPost {
   id: string;

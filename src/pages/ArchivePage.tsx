@@ -197,7 +197,7 @@ const ArchivePage = () => {
       <DynamicSEO />
       <div className="min-h-[70vh] py-6 sm:py-10 px-3 sm:px-4 lg:px-6">
         <div className="max-w-7xl mx-auto">
-          <BackNavigation />
+          <BackNavigation category="ia" fallbackPath="/" />
           <AdLeaderboard />
           {/* Header */}
           <header className="mb-6 sm:mb-8">
