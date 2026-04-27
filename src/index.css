@@ -273,26 +273,44 @@ img {
   @apply w-full overflow-x-auto block;
 }
 
-/* ── Article tables (.not-prose) — fill container, distribute columns evenly ── */
-/* Garante que tabelas de artigos ocupem 100% da largura disponível e que o    */
-/* conteúdo se distribua proporcionalmente entre as colunas em qualquer tela.  */
+/* ── Article tables (.not-prose) — fill the container width naturally ──────── */
+/* Mantém table-layout: auto para que as colunas com texto longo absorvam o    */
+/* espaço extra e a tabela ocupe 100% da largura do quadro sem espaço vazio.   */
 .not-prose > .overflow-x-auto > table,
 .not-prose table.w-full {
   table-layout: auto;
   width: 100%;
   min-width: 100%;
+  border-collapse: collapse;
 }
 .not-prose > .overflow-x-auto > table th,
 .not-prose > .overflow-x-auto > table td,
 .not-prose table.w-full th,
 .not-prose table.w-full td {
   word-break: break-word;
+  vertical-align: top;
 }
-@media (min-width: 768px) {
-  /* Em telas md+, distribui colunas igualmente para preencher todo o quadro */
-  .not-prose > .overflow-x-auto > table,
-  .not-prose table.w-full {
-    table-layout: fixed;
+/* Última coluna absorve o espaço sobrando para evitar áreas vazias à direita */
+.not-prose > .overflow-x-auto > table th:last-child,
+.not-prose > .overflow-x-auto > table td:last-child,
+.not-prose table.w-full th:last-child,
+.not-prose table.w-full td:last-child {
+  width: auto;
+}
+.not-prose > .overflow-x-auto > table th:not(:last-child),
+.not-prose > .overflow-x-auto > table td:not(:last-child),
+.not-prose table.w-full th:not(:last-child),
+.not-prose table.w-full td:not(:last-child) {
+  width: 1%;
+  white-space: nowrap;
+}
+/* Em telas pequenas permite quebra para evitar overflow horizontal excessivo */
+@media (max-width: 640px) {
+  .not-prose > .overflow-x-auto > table th:not(:last-child),
+  .not-prose > .overflow-x-auto > table td:not(:last-child),
+  .not-prose table.w-full th:not(:last-child),
+  .not-prose table.w-full td:not(:last-child) {
+    white-space: normal;
   }
 }
 
