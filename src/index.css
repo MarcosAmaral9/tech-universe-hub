@@ -273,45 +273,61 @@ img {
   @apply w-full overflow-x-auto block;
 }
 
-/* ── Article tables (.not-prose) — fill the container width naturally ──────── */
-/* Mantém table-layout: auto para que as colunas com texto longo absorvam o    */
-/* espaço extra e a tabela ocupe 100% da largura do quadro sem espaço vazio.   */
-.not-prose > .overflow-x-auto > table,
-.not-prose table.w-full {
+/* ── Article tables — responsive, sem overflow, última coluna expande ───────
+   Cobre tabelas dentro de overflow-x-auto E tabelas soltas com .w-full.
+   Aplica-se a qualquer .not-prose, não só ao container direto.            */
+
+/* Seletor amplo: cobre overflow-x-auto aninhado qualquer nível + table.w-full */
+.not-prose table {
   table-layout: auto;
   width: 100%;
-  min-width: 100%;
   border-collapse: collapse;
 }
-.not-prose > .overflow-x-auto > table th,
-.not-prose > .overflow-x-auto > table td,
-.not-prose table.w-full th,
-.not-prose table.w-full td {
-  word-break: break-word;
+
+/* Células: padding responsivo + quebra de palavra para evitar overflow */
+.not-prose table th,
+.not-prose table td {
   vertical-align: top;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  /* Mobile-first: padding menor */
+  padding: 0.5rem 0.625rem;   /* py-2 px-2.5 */
+  /* Tipografia: sem nowrap para não forçar scroll horizontal */
+  white-space: normal;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
-/* Última coluna absorve o espaço sobrando para evitar áreas vazias à direita */
-.not-prose > .overflow-x-auto > table th:last-child,
-.not-prose > .overflow-x-auto > table td:last-child,
-.not-prose table.w-full th:last-child,
-.not-prose table.w-full td:last-child {
+
+/* Desktop: padding maior */
+@media (min-width: 640px) {
+  .not-prose table th,
+  .not-prose table td {
+    padding: 0.75rem 1rem;    /* py-3 px-4 */
+  }
+}
+
+/* Última coluna sempre absorve o espaço restante */
+.not-prose table th:last-child,
+.not-prose table td:last-child {
   width: auto;
 }
-.not-prose > .overflow-x-auto > table th:not(:last-child),
-.not-prose > .overflow-x-auto > table td:not(:last-child),
-.not-prose table.w-full th:not(:last-child),
-.not-prose table.w-full td:not(:last-child) {
-  width: 1%;
-  white-space: nowrap;
-}
-/* Em telas pequenas permite quebra para evitar overflow horizontal excessivo */
-@media (max-width: 640px) {
-  .not-prose > .overflow-x-auto > table th:not(:last-child),
-  .not-prose > .overflow-x-auto > table td:not(:last-child),
-  .not-prose table.w-full th:not(:last-child),
-  .not-prose table.w-full td:not(:last-child) {
+
+/* Colunas que não são a última: encolhem ao mínimo necessário no desktop */
+@media (min-width: 640px) {
+  .not-prose table th:not(:last-child),
+  .not-prose table td:not(:last-child) {
+    width: 1%;
+    white-space: nowrap;
+    /* Se o conteúdo for longo, permite quebra mesmo no desktop */
+    max-width: 14rem;
     white-space: normal;
   }
+}
+
+/* Garante que overflow-x-auto seja o pai dos tables quando necessário */
+.not-prose > div > table,
+.not-prose > .overflow-x-auto > table {
+  min-width: 100%;
 }
 
 /* Focus visible: accessibility ring */
@@ -347,4 +363,60 @@ img {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ── Mobile article: responsive h1 size and reduced vertical padding ────────
+   Articles use: <article class="container py-8 max-w-4xl mx-auto">
+   h1 uses: font-display text-3xl md:text-5xl
+   On ≤375px, text-3xl (1.875rem) with 4+ lines creates excessive visual gap.  */
+
+article.container,
+.article-container {
+  padding-top: 1.25rem;     /* ~py-5 mobile */
+  padding-bottom: 1.25rem;
+}
+@media (min-width: 640px) {
+  article.container,
+  .article-container {
+    padding-top: 2rem;      /* py-8 sm+ */
+    padding-bottom: 2rem;
+  }
+}
+
+/* Article h1: scale from text-xl on very small phones to text-3xl on tablet */
+article.container h1,
+.article-container h1 {
+  font-size: clamp(1.375rem, 5vw, 1.875rem); /* 22px → 30px scaling */
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+@media (min-width: 768px) {
+  article.container h1,
+  .article-container h1 {
+    font-size: 3rem;    /* text-5xl on md+ */
+    line-height: 1.1;
+  }
+}
+
+/* Hero image: reduce bottom margin on mobile */
+article.container .aspect-video,
+.article-container .aspect-video {
+  margin-bottom: 1.25rem;   /* mb-5 mobile */
+}
+@media (min-width: 640px) {
+  article.container .aspect-video,
+  .article-container .aspect-video {
+    margin-bottom: 2rem;    /* mb-8 sm+ */
+  }
+}
+
+/* Prevent horizontal scroll on the whole page — catch-all */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Fix any element wider than viewport causing whitespace on right */
+img, video, iframe, table {
+  max-width: 100%;
 }
