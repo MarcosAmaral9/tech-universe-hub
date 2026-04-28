@@ -420,3 +420,22 @@ html, body {
 img, video, iframe, table {
   max-width: 100%;
 }
+/* ── All page h1: prevent oversized heading on very small screens ────────── */
+@media (max-width: 639px) {
+  h1 {
+    font-size: clamp(1.25rem, 6vw, 1.875rem);
+    line-height: 1.25;
+  }
+  /* Prose headings also scale */
+  .prose h1 { font-size: clamp(1.25rem, 6vw, 1.875rem); }
+  .prose h2 { font-size: clamp(1.125rem, 5vw, 1.5rem); }
+  /* Category badge + subtitle chip: allow wrapping */
+  .prose p, p { max-width: 100%; }
+}
+
+/* ── Offline & Settings pages: tighter mobile padding ───────────────────── */
+@media (max-width: 639px) {
+  .not-prose .rounded-2xl { 
+    border-radius: 0.75rem;  /* slightly smaller corners on mobile */
+  }
+}
