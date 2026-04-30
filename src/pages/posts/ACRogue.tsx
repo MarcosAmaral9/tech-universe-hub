@@ -140,6 +140,7 @@ const ACRogue = () => {
           <MapPin className="h-7 w-7 text-cyan-400" />
           Contexto Histórico: A Guerra dos Sete Anos (1756–1763)
         </h2>
+      <AdInArticle />
 
         <p>
           Rogue se passa durante a <strong>Guerra dos Sete Anos</strong>, considerada por muitos historiadores 

@@ -293,6 +293,7 @@ const CarteiraIniciantes2026 = () => {
           <p><strong>Onde guardar:</strong> Tesouro Selic (recomendação principal), CDB de liquidez diária em banco digital, ou conta remunerada do Nubank/Inter.</p>
 
           {/* Passo 3: Objetivos */}
+      <AdInArticle />
           <h2 className="text-2xl font-bold mt-10 mb-6 border-l-4 border-[hsl(var(--invest-color))] pl-4">
             Passo 3: Defina Seus Objetivos com Prazo
           </h2>

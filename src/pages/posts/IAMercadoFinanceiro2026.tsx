@@ -176,6 +176,7 @@ const IAMercadoFinanceiro2026 = () => {
               </ul>
             </div>
           </div>
+      <AdInArticle />
           
           <div className="bg-[hsl(var(--ia-color))]/10 border border-[hsl(var(--ia-color))]/30 rounded-xl p-5">
             <p className="flex items-start gap-2 text-sm">

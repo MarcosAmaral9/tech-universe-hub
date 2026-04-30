@@ -158,6 +158,7 @@ const ACOrigins = () => {
           </div>
           <div className="p-4 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-2 text-yellow-400">Júlio César</h4>
+      <AdInArticle />
             <p className="text-sm text-muted-foreground mb-0">
               O ditador romano aparece em sua campanha no Egito. O jogo mostra sua relação 
               com Cleópatra e os eventos que levaram ao seu assassinato.

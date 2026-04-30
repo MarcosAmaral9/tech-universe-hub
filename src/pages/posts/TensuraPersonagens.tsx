@@ -203,6 +203,7 @@ const TensuraPersonagens = () => {
                   <td className="py-2 text-muted-foreground text-xs">{w}</td>
                 </tr>
               ))}
+      <AdInArticle />
             </tbody>
           </table>
         </div>

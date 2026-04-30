@@ -161,6 +161,7 @@ const ACUnity = () => {
         </p>
 
         <div className="overflow-x-auto my-8">
+      <AdInArticle />
           <table className="w-full border-collapse">
             <thead>
               <tr className="border-b border-border bg-secondary/50">

@@ -120,6 +120,7 @@ const Bitcoin2026ValeComprar = () => {
                 <tr key={i} className={`border-b border-border ${i === CICLOS_BTC.length - 1 ? "bg-[hsl(var(--invest-color))]/5" : ""}`}>
                   <td className="p-3 font-mono text-xs">{c.ciclo}</td>
                   <td className="p-3 font-bold text-green-500">{c.topo}</td>
+      <AdInArticle />
                   <td className="p-3 text-destructive">{c.fundo}</td>
                   <td className="p-3 text-destructive font-medium">{c.queda}</td>
                   <td className="p-3 text-muted-foreground">{c.recuperacao}</td>

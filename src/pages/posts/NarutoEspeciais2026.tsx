@@ -132,6 +132,7 @@ const NarutoEspeciais2026 = () => {
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Flame className="h-7 w-7 text-otaku" />
           O Contexto: Naruto em 2026 — Ainda o Maior Anime da História?
+      <AdInArticle />
         </h2>
         <p>
           Naruto encerrou sua transmissão original em 2017 (com Shippuden). Em quase uma década, a série:

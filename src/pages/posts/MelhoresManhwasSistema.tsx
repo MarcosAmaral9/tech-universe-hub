@@ -247,6 +247,7 @@ const MelhoresManhwasSistema = () => {
         </div>
 
         <AdRectangle className="my-8" />
+      <AdInArticle />
 
         <AdLeaderboard className="my-8" />
 

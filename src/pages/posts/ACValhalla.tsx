@@ -174,6 +174,7 @@ const ACValhalla = () => {
               Último reino saxão independente, governado pelo lendário <strong>Rei Alfredo, o Grande</strong>. 
               Foi o único reino a resistir às invasões vikings e eventualmente unificaria a Inglaterra.
             </p>
+      <AdInArticle />
           </div>
           <div className="p-4 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-2 text-purple-400">Mércia</h4>

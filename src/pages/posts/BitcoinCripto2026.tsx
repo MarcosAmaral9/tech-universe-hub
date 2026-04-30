@@ -163,6 +163,7 @@ const BitcoinCripto2026 = () => {
           <ul className="space-y-2 text-muted-foreground mb-6">
             {["Utilidade real: Resolve um problema de verdade?", "Equipe: Quem são os desenvolvedores? São identificados?", "Market cap: Projetos pequenos têm mais potencial mas mais risco", "Tokenomics: Como são emitidas e distribuídas as moedas?"].map((item, i) => (
               <li key={i} className="flex items-start gap-2"><span className="text-[hsl(var(--invest-color))]">▶</span> {item}</li>
+      <AdInArticle />
             ))}
           </ul>
         </section>

@@ -89,6 +89,7 @@ const Gemini25ProVsGPT4o = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Zap className="h-7 w-7 text-violet-400" />
+      <AdInArticle />
           Raciocínio: O Grande Diferencial do Gemini 2.5 Pro
         </h2>
         <p>

@@ -161,6 +161,7 @@ const DiferencaMangasManhuas = () => {
             </div>
           </div>
         </div>
+      <AdInArticle />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-ia" />

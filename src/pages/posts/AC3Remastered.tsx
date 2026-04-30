@@ -172,6 +172,7 @@ const AC3Remastered = () => {
               <ul className="text-sm text-muted-foreground space-y-1 mb-0">
                 <li>• Início extremamente lento (~4 horas)</li>
                 <li>• Missões de perseguição repetitivas</li>
+      <AdInArticle />
                 <li>• Connor menos carismático que Ezio</li>
                 <li>• Sistema de crafting confuso</li>
                 <li>• Algumas missões com design antiquado</li>

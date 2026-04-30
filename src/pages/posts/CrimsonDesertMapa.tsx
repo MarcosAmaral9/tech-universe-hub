@@ -434,6 +434,7 @@ const CrimsonDesertMapa = () => {
       {/* Region cards */}
       <div className="not-prose my-8 space-y-5">
         <AdRectangle className="my-8" />
+      <AdInArticle />
 
         <AdLeaderboard className="my-8" />
 

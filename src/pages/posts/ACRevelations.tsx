@@ -86,6 +86,7 @@ const ACRevelations = () => {
           ))}
         </div>
 
+      <AdInArticle />
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Crown className="h-7 w-7 text-amber-400" />
           Ezio aos 52 e Altaïr aos 82 — Dois Legados

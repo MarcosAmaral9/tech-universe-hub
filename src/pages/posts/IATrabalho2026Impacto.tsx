@@ -101,6 +101,7 @@ const IATrabalho2026Impacto = () => {
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-violet-400" />
           Profissões com Maior Risco de Automação
+      <AdInArticle />
         </h2>
         <p>Ser substituído pela IA não significa que a profissão vai desaparecer — mas o volume de vagas e os salários para quem não se adaptar tendem a cair. As mais expostas:</p>
         <div className="not-prose my-6 overflow-x-auto">

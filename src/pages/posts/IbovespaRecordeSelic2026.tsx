@@ -109,6 +109,7 @@ const IbovespaRecordeSelic2026 = () => {
             <p className="text-xs text-muted-foreground mb-2">Taxa atual: IPCA + ~6,5% a.a. | Liquidez diária | IR regressivo</p>
             <p className="text-xs">Ideal para: proteção contra inflação com retorno real garantido. Com guerra no Oriente Médio e pressão inflacionária, este é o porto seguro da carteira.</p>
           </div>
+      <AdInArticle />
         </div>
 
         <h3 className="text-xl font-bold mt-8 mb-3">📊 Ações: Os Setores que Mais Ganham com a Queda de Juros</h3>

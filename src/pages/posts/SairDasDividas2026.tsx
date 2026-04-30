@@ -208,6 +208,7 @@ const SairDasDividas2026 = () => {
               <div key={i} className="border-2 rounded-xl p-4" style={{ borderColor: item.color + "40" }}>
                 <h3 className="font-bold mb-1" style={{ color: item.color }}>{item.level}</h3>
                 <p className="text-sm text-muted-foreground">{item.desc} — <em>{item.examples}</em></p>
+      <AdInArticle />
               </div>
             ))}
           </div>

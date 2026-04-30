@@ -111,6 +111,7 @@ const McpProtocol2026 = () => {
           <TrendingUp className="h-7 w-7 text-ia" />
           Os 97 Milhões de Instalações: O que Esse Número Significa
         </h2>
+      <AdInArticle />
         <p>
           Quando a Anthropic lançou o MCP em novembro de 2024, era um projeto experimental. Em 4 meses, chegou a 10 milhões de instalações. Em 16 meses, 97 milhões — crescimento de 870%. O que explica isso?
         </p>

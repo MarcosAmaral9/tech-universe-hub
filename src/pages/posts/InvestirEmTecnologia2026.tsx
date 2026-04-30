@@ -131,6 +131,7 @@ const InvestirEmTecnologia2026 = () => {
               diretamente dessa demanda.
             </p>
           </div>
+      <AdInArticle />
           <div className="p-5 bg-card rounded-xl border border-border">
             <Cpu className="h-8 w-8 text-purple-400 mb-3" />
             <h4 className="font-bold mb-2">Refrigeração</h4>

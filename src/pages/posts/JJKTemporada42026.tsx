@@ -95,6 +95,7 @@ const JJKTemporada42026 = () => {
               <div className="flex items-start justify-between gap-2 mb-1 flex-wrap">
                 <h3 className="font-bold text-sm">{col}</h3>
                 <span className="text-xs bg-otaku/15 text-otaku px-2 py-0.5 rounded-full shrink-0">{importante}</span>
+      <AdInArticle />
               </div>
               <p className="text-xs text-muted-foreground">{desc}</p>
             </div>

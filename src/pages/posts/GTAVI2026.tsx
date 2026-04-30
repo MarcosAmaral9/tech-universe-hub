@@ -106,6 +106,7 @@ const GTAVI2026 = () => {
           ].map(({ local, desc }) => (
             <div key={local} className="bg-card rounded-xl border border-geek/20 p-4">
               <h4 className="font-bold text-sm mb-1">{local}</h4>
+      <AdInArticle />
               <p className="text-sm text-muted-foreground">{desc}</p>
             </div>
           ))}

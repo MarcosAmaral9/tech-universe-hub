@@ -126,6 +126,7 @@ const OnePieceFinalSaga2026 = () => {
             </div>
           ))}
         </div>
+      <AdInArticle />
 
         {/* Revelações */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">

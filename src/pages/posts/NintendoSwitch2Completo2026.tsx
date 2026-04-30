@@ -111,6 +111,7 @@ const NintendoSwitch2Completo2026 = () => {
               ].map(([k, a, b]) => (
                 <tr key={k} className="border-t border-border">
                   <td className="py-3 px-4 font-bold text-geek whitespace-nowrap">{k}</td>
+      <AdInArticle />
                   <td className="py-3 px-4 font-medium">{a}</td>
                   <td className="py-3 px-4 text-xs text-muted-foreground">{b}</td>
                 </tr>

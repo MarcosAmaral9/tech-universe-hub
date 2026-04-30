@@ -1,95 +1,133 @@
-import { useEffect, useRef } from "react";
+/**
+ * AdSense.tsx — Componentes de anúncio Google AdSense
+ *
+ * SLOTS — substitua pelos IDs reais do painel:
+ *   AdSense > Anúncios > Por bloco de anúncios > Criar bloco
+ *
+ * POLÍTICA ADSENSE:
+ *   - Bloqueado em: páginas legais, auth, perfil, configurações
+ *   - AdAnchorMobile: fixo na base mobile — maior CPM no PWA
+ *   - AdInArticle: formato nativo entre parágrafos — maior CTR
+ *   - Auto Ads ativado no painel complementa os blocos manuais
+ */
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-/**
- * Paths where ads should NOT be shown (legal / utility pages).
- */
+const SLOTS = {
+  leaderboard: "1234567890", // Leaderboard / Horizontal responsivo
+  rectangle:   "2345678901", // Retângulo médio 300×250
+  inArticle:   "3456789012", // In-Article nativo (layout automático)
+  anchor:      "4567890123", // Âncora mobile (fixo na base)
+} as const;
+
+// Caminhos sem anúncio (legais, auth, configurações, perfil)
 const BLOCKED_PATHS = [
-  "/sobre",
-  "/contato",
   "/privacidade",
   "/termos",
   "/politica-conteudo",
+  "/entrar",
+  "/cadastro",
+  "/redefinir-senha",
+  "/auth/",
+  "/configuracoes",
+  "/perfil/",
   "/painel-social",
   "/instalar",
-  "/configuracoes",
-  "/entrar",
-  "/redefinir-senha",
 ];
 
-type AdFormat = "auto" | "rectangle" | "horizontal" | "vertical";
-
-interface AdSenseProps {
-  /** AdSense ad slot ID */
-  slot: string;
-  /** Ad format – defaults to "auto" (responsive) */
-  format?: AdFormat;
-  /** Extra className for the wrapper div */
-  className?: string;
-  /** Whether this is a full-width responsive ad */
-  responsive?: boolean;
-}
-
 declare global {
-  interface Window {
-    adsbygoogle: unknown[];
-  }
+  interface Window { adsbygoogle: unknown[]; }
 }
 
-const AdSense = ({ slot, format = "auto", className = "", responsive = true }: AdSenseProps) => {
-  const adRef = useRef<HTMLModElement>(null);
-  const { pathname } = useLocation();
-  const pushed = useRef(false);
+type AdFormat = "auto" | "rectangle" | "horizontal" | "vertical" | "fluid";
 
-  const isBlocked = BLOCKED_PATHS.some((p) => pathname.startsWith(p));
+interface AdProps {
+  slot: string;
+  format?: AdFormat;
+  className?: string;
+  responsive?: boolean;
+  layoutKey?: string;
+}
+
+const AdUnit = ({ slot, format = "auto", className = "", responsive = true, layoutKey }: AdProps) => {
+  const ref    = useRef<HTMLModElement>(null);
+  const pushed = useRef(false);
+  const { pathname } = useLocation();
+
+  const blocked = BLOCKED_PATHS.some((p) => pathname.startsWith(p));
 
   useEffect(() => {
-    if (isBlocked || pushed.current) return;
-    try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-      pushed.current = true;
-    } catch {
-      // AdSense not loaded yet – no-op
-    }
-  }, [isBlocked]);
+    if (blocked || pushed.current) return;
+    const t = setTimeout(() => {
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        pushed.current = true;
+      } catch { /* not ready */ }
+    }, 150);
+    return () => clearTimeout(t);
+  }, [blocked, pathname]);
 
-  if (isBlocked) return null;
+  if (blocked) return null;
 
   return (
-    <div className={`ad-container my-6 flex justify-center ${className}`} aria-hidden="true">
+    <div className={`ad-unit overflow-hidden text-center ${className}`} aria-hidden="true">
       <ins
-        ref={adRef}
+        ref={ref}
         className="adsbygoogle"
         style={{ display: "block" }}
         data-ad-client="ca-pub-4907992121422514"
         data-ad-slot={slot}
         data-ad-format={format}
         {...(responsive ? { "data-full-width-responsive": "true" } : {})}
+        {...(layoutKey ? { "data-ad-layout-key": layoutKey } : {})}
       />
     </div>
   );
 };
 
-export default AdSense;
+export default AdUnit;
 
-/**
- * Leaderboard ad – use after 2nd paragraph in articles.
- * Slot placeholder – replace with real slot IDs from AdSense dashboard.
- */
+// ── Leaderboard (topo de artigos e hubs) ─────────────────────────────────────
 export const AdLeaderboard = ({ className }: { className?: string }) => (
-  <AdSense slot="1234567890" format="horizontal" className={className} />
+  <AdUnit slot={SLOTS.leaderboard} format="horizontal" className={`my-4 ${className ?? ""}`} />
 );
 
-/**
- * Rectangle ad – use between sections in articles and sidebars.
- */
+// ── Rectangle (mid-content, entre seções) ────────────────────────────────────
 export const AdRectangle = ({ className }: { className?: string }) => (
-  <AdSense slot="2345678901" format="rectangle" className={className} />
+  <AdUnit slot={SLOTS.rectangle} format="rectangle" className={`my-6 ${className ?? ""}`} />
 );
 
-/**
- * In-article responsive ad – for within article content.
- */
+// ── In-Article nativo (entre parágrafos — maior CTR) ─────────────────────────
 export const AdInArticle = ({ className }: { className?: string }) => (
-  <AdSense slot="3456789012" format="auto" className={className} />
+  <AdUnit
+    slot={SLOTS.inArticle}
+    format="fluid"
+    layoutKey="-fb+5w+4e-db+86"
+    className={`my-6 ${className ?? ""}`}
+  />
 );
+
+// ── Âncora Mobile (fixo na base — maior CPM no PWA) ──────────────────────────
+export const AdAnchorMobile = () => {
+  const [show, setShow] = useState(false);
+  const { pathname } = useLocation();
+  const blocked = BLOCKED_PATHS.some((p) => pathname.startsWith(p));
+
+  useEffect(() => {
+    if (blocked) return;
+    const t = setTimeout(() => setShow(true), 3000);
+    return () => clearTimeout(t);
+  }, [blocked, pathname]);
+
+  if (!show || blocked) return null;
+
+  return (
+    <div className="fixed bottom-0 inset-x-0 z-40 md:hidden bg-card border-t border-border shadow-xl">
+      <div className="flex items-center justify-between px-3 py-0.5">
+        <span className="text-[10px] text-muted-foreground">Publicidade</span>
+        <button onClick={() => setShow(false)} className="text-muted-foreground px-2 py-1 text-xs" aria-label="Fechar">✕</button>
+      </div>
+      <AdUnit slot={SLOTS.anchor} format="horizontal" responsive className="pb-safe" />
+    </div>
+  );
+};

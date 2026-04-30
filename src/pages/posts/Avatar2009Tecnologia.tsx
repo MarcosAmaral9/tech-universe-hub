@@ -130,6 +130,7 @@ const Avatar2009Tecnologia = () => {
           Poder Computacional: Data Centers para Renderização
         </h2>
 
+      <AdInArticle />
         <p>
           A Weta Digital, responsável pelos efeitos visuais, construiu um dos maiores 
           <strong> data centers</strong> já utilizados para produção cinematográfica. O processamento 

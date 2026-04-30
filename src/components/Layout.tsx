@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import BackToTop from "./BackToTop";
 import ReadingProgressBar from "./ReadingProgressBar";
 import DynamicSEO from "./DynamicSEO";
+import { AdAnchorMobile } from "./AdSense";
 
 interface LayoutProps {
   children: ReactNode;
@@ -18,6 +19,7 @@ const Layout = ({ children }: LayoutProps) => {
       <main className="flex-1">{children}</main>
       <Footer />
       <BackToTop />
+      <AdAnchorMobile />
     </div>
   );
 };

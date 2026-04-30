@@ -122,6 +122,7 @@ const BigThree2026 = () => {
                 </div>
                 <div className="h-1.5 bg-secondary rounded-full">
                   <div className="h-1.5 bg-otaku rounded-full" style={{ width: `${pct}%` }} />
+      <AdInArticle />
                 </div>
               </div>
             ))}

@@ -98,6 +98,7 @@ const OpenAiFinanciamento2026 = () => {
               <li>• Public Benefit Corporation com obrigações sociais</li>
               <li>• Cap de retorno removido — investidores têm equity real</li>
               <li>• Viabiliza rodadas de capital de decenas de bilhões</li>
+      <AdInArticle />
               <li>• Mantém o conselho de missão de segurança da IA</li>
             </ul>
           </div>
