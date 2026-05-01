@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, Calendar, User, BookOpen, Target, Globe } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import mangaManhwaManhuaImg from "@/assets/manga-manhwa-manhua.webp";
 
@@ -287,7 +288,9 @@ const DiferencaMangasManhuas = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="diferenca-mangas-manhuas-manhwas" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="diferenca-mangas-manhuas-manhwas" postTitle="Sabe a diferença entre Mangas, Manhuas e Manhwas?" />
     </article>
   );

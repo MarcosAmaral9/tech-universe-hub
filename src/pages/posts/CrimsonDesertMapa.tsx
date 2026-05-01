@@ -4,6 +4,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Map, Compass, Zap, Snowflake, Building2, Cpu, Skull, Search, ArrowRight, HelpCircle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { Input } from "@/components/ui/input";
@@ -612,7 +613,9 @@ const CrimsonDesertMapa = () => {
         </div>
       </section>
 
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="crimson-desert-mapa-regioes-pywel" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="crimson-desert-mapa-regioes-pywel" postTitle="Crimson Desert: Mapa Completo de Pywel" />
     </article>
   );

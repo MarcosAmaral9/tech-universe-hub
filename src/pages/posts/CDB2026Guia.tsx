@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, TrendingUp, DollarSign, Shield, AlertTriangle, CheckCircle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/cdb-2026-guia.webp";
@@ -172,8 +173,10 @@ const CDB2026Guia = () => {
           { label: "Cotações ao Vivo", href: "/cotacoes", desc: "Acompanhe CDI e Selic em tempo real" },
         ]}
       />
+      <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="cdb-2026-guia-completo" />
-    <CommentSection postId="cdb-2026-guia-completo" postTitle="CDB em 2026: Guia Completo" />
+    <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
+      <CommentSection postId="cdb-2026-guia-completo" postTitle="CDB em 2026: Guia Completo" />
   </article>
 );
 };

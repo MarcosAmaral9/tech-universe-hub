@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Gamepad2, Star, Shield, Zap, Users } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/lego-batman-legacy-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -161,7 +162,9 @@ const AbsoluteBatmanGame2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="lego-batman-legacy-2026" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="lego-batman-legacy-2026" postTitle="LEGO Batman: Legacy of the Dark Knight — Guia Completo" />
     </article>
   );

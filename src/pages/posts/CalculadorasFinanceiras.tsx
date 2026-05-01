@@ -5,6 +5,7 @@ import { useMarketData } from "@/hooks/useMarketData";
 import { Calculator, DollarSign, TrendingUp, Bitcoin, Gem, AlertTriangle } from "lucide-react";
 import RelatedPosts from "@/components/RelatedPosts";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import calculadorasImg from "@/assets/calculadoras-financeiras.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
@@ -272,7 +273,9 @@ const CalculadorasFinanceiras = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="calculadoras-financeiras-ativos" />
+      <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="34" />
     </div>
   );

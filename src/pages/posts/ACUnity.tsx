@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Landmark, Users, Wind, Heart, Cpu, DollarSign, Target, Laptop, Gamepad2, HelpCircle, Shield, Swords, Map, BookOpen } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import acUnityImg from "@/assets/ac-unity.webp";
 
@@ -747,9 +748,11 @@ const ACUnity = () => {
       </div>
 
       {/* Related Posts */}
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="ac-unity-jogo-frente-tempo-paris" />
 
       {/* Comments */}
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="ac-unity-jogo-frente-tempo-paris" postTitle="AC Unity em 2026 Vale a Pena? Review — O Jogo que Estava à Frente do Tempo" />
     </article>
   );

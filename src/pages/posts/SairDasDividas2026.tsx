@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, Calendar, User, ChevronRight, Zap, AlertTriangle, CheckCircle2, ExternalLink, Trash2, Plus } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import sairDividasImg from "@/assets/sair-dividas-2026.webp";
 
@@ -322,8 +323,10 @@ const SairDasDividas2026 = () => {
 
         <BackNavigation category="invest" />
 
-        <RelatedPosts currentSlug="sair-das-dividas-2026-plano-acao" />
-        <CommentSection postId="32" postTitle="Sair das Dívidas em 2026: O Plano de Ação Que Realmente Funciona" />
+        <NewsletterSignup variant="inline" categories={["invest"]} />
+      <RelatedPosts currentSlug="sair-das-dividas-2026-plano-acao" />
+        <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
+      <CommentSection postId="32" postTitle="Sair das Dívidas em 2026: O Plano de Ação Que Realmente Funciona" />
       </article>
     </>
   );

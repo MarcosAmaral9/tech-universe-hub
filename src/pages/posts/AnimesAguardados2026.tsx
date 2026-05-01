@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Tv, Star, TrendingUp, Sparkles } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/animes-aguardados-2026.webp";
 
@@ -100,7 +101,9 @@ const AnimesAguardados2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="animes-mais-aguardados-2026" />
+      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="animes-mais-aguardados-2026" postTitle="Animes Mais Aguardados de 2026" />
     </article>
   );

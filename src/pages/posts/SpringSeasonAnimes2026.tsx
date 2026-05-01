@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Star, Zap, Shield, BarChart3, BookOpen } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/temporada-animes-abril-guia-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -210,7 +211,9 @@ const SpringSeasonAnimes2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="spring-season-animes-abril-2026" />
+      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="spring-season-animes-abril-2026" postTitle="Spring Season 2026: Os 15 Melhores Animes de Abril para Não Perder" />
     </article>
   );

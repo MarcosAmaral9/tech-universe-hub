@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, Calendar, User, BookOpen, Target, Sword, Sparkles } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import manhwaVsManuaImg from "@/assets/manhwa-vs-manhua.webp";
 
@@ -280,7 +281,9 @@ const DiferenciarManhuasManhwas = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="como-diferenciar-manhuas-manhwas" />
+      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="como-diferenciar-manhuas-manhwas" postTitle="Saiba como diferenciar Manhuas e Manhwas" />
     </article>
   );

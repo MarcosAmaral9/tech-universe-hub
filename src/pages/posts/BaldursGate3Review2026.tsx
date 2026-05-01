@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Gamepad2, Star, Cpu, Monitor } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/baldurs-gate-3-review-2026.webp";
@@ -123,8 +124,10 @@ const BaldursGate3Review2026 = () => {
           { label: "Todos os artigos Geek", href: "/geek" },
         ]}
       />
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="baldurs-gate-3-review-2026" />
-    <CommentSection postId="baldurs-gate-3-review-2026" postTitle="Baldur's Gate 3 em 2026" />
+    <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
+      <CommentSection postId="baldurs-gate-3-review-2026" postTitle="Baldur's Gate 3 em 2026" />
   </article>
 );
 };

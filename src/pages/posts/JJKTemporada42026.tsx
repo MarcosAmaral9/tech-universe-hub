@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Star, Zap, Shield, BarChart3, BookOpen, Flame } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/jujutsu-kaisen-temporada-4-culling-game-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -170,7 +171,9 @@ const JJKTemporada42026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="jujutsu-kaisen-temporada-4-culling-game-2026" />
+      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="jujutsu-kaisen-temporada-4-culling-game-2026" postTitle="Jujutsu Kaisen Temporada 4: Culling Game Part 2 Confirmada" />
     </article>
   );

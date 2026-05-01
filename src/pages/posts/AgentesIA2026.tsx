@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Bot, Cpu, Briefcase, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/agentes-ia-2026.webp";
 
@@ -112,7 +113,9 @@ const AgentesIA2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="agentes-ia-2026-como-funcionam" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="agentes-ia-2026-como-funcionam" postTitle="Agentes de IA 2026: O Que São, Como Funcionam e Por Que Mudam Tudo" />
     </article>
   );

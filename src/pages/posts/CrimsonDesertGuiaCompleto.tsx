@@ -3,6 +3,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Gamepad2, Monitor, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
@@ -213,7 +214,9 @@ const CrimsonDesertGuiaCompleto = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="crimson-desert-guia-completo" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="crimson-desert-guia-completo" postTitle="Crimson Desert: Guia Completo 2026" />
     </article>
   );

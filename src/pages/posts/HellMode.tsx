@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Gamepad2 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/hell-mode.webp";
 
@@ -115,7 +116,9 @@ const HellMode = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="hell-mode-gamer-isekai-guia-completo" />
+      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="hell-mode-gamer-isekai-guia-completo" postTitle="Hell Mode: O Gamer no Isekai com Dificuldade Máxima" />
           <AdLeaderboard className="my-8" />
     </article>

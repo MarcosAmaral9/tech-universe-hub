@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, GraduationCap, Brain, BookOpen, Heart } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-educacao-2026.webp";
 
@@ -114,7 +115,9 @@ const IAEducacao2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="ia-educacao-2026-estudar-inteligente" />
+      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="ia-educacao-2026-estudar-inteligente" postTitle="IA na Educação 2026: Como Estudar de Forma Inteligente" />
     </article>
   );

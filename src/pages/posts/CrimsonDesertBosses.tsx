@@ -7,6 +7,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Skull, Swords, Shield, Star, Zap, Flame, Sword } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import heroImg from "@/assets/crimson-desert-bosses.webp";
@@ -599,7 +600,9 @@ const CrimsonDesertBosses = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="crimson-desert-bosses-guia-chefes" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="crimson-desert-bosses-guia-chefes" postTitle="Crimson Desert: Guia de Bosses — Onde Encontrar, Como Derrotar e Recompensas" />
       <AdLeaderboard className="my-8" />
     </article>

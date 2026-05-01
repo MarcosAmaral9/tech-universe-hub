@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, TrendingUp, Building2, GraduationCap, Briefcase, Globe, Factory } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-brasil-adocao-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -176,7 +177,9 @@ const IABrasilAdocao2026 = () => {
           <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
         </div>
       </div>
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="ia-brasil-adocao-2026" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="ia-brasil-adocao-2026" postTitle="IA no Brasil em 2026" />
     </article>
   );

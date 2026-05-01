@@ -3,6 +3,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Shield, AlertTriangle, CheckCircle, Target, Wallet } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
@@ -247,8 +248,10 @@ const ReservaEmergencia2026 = () => {
           </p>
         </div>
 
-        <RelatedPosts currentSlug="reserva-emergencia-2026-como-montar" />
-        <CommentSection postId="reserva-emergencia-2026-como-montar" />
+        <NewsletterSignup variant="inline" categories={["invest"]} />
+      <RelatedPosts currentSlug="reserva-emergencia-2026-como-montar" />
+        <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
+      <CommentSection postId="reserva-emergencia-2026-como-montar" />
     </article>
   );
 };

@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Leaf } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/isekai-nonbiri-nouka.webp";
 
@@ -120,7 +121,9 @@ const IsekaiNonbiriNouka = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="isekai-nonbiri-nouka-farming-life-guia" />
+      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="isekai-nonbiri-nouka-farming-life-guia" postTitle="Farming Life in Another World — Guia Completo" />
           <AdLeaderboard className="my-8" />
     </article>

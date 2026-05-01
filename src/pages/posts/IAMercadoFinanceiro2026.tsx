@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, Calendar, User, ChevronRight, Zap, Bot, Brain, Shield, TrendingUp, AlertTriangle, ExternalLink, Star } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import iaFinancasImg from "@/assets/ia-financas-2026.webp";
 
@@ -330,8 +331,10 @@ const IAMercadoFinanceiro2026 = () => {
           <BackNavigation category="invest" />
         </div>
 
-        <RelatedPosts currentSlug="ia-mercado-financeiro-2026-investimentos" />
-        <CommentSection postId="29" postTitle="IA no Mercado Financeiro 2026: Como a IA Está Transformando Investimentos" />
+        <NewsletterSignup variant="inline" categories={["invest"]} />
+      <RelatedPosts currentSlug="ia-mercado-financeiro-2026-investimentos" />
+        <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
+      <CommentSection postId="29" postTitle="IA no Mercado Financeiro 2026: Como a IA Está Transformando Investimentos" />
       </article>
     </>
   );

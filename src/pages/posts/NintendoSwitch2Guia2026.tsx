@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3, Lightbulb } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/nintendo-switch-2-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -183,7 +184,9 @@ const NintendoSwitch2Guia2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="nintendo-switch-2-guia-2026" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="nintendo-switch-2-guia-2026" postTitle="Nintendo Switch 2: Guia Completo do Novo Console" />
     </article>
   );

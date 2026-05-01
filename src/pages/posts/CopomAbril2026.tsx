@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, TrendingUp, BarChart3, Shield, Lightbulb, DollarSign, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/copom-abril-2026-selic-investimentos.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -217,7 +218,9 @@ const CopomAbril2026 = () => {
         </p>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="copom-abril-2026-selic-investimentos" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="copom-abril-2026-selic-investimentos" postTitle="Copom Abril 2026: Selic a 14,50% — O Que Muda para Renda Fixa, Ações e Câmbio" />
     </article>
   );

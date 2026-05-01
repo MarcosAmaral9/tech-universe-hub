@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Wrench, Shield, Zap, CheckCircle, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/crimson-desert-patches.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -229,7 +230,9 @@ const CrimsonDesertPatches = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="crimson-desert-patches-atualizacoes-2026" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="crimson-desert-patches-atualizacoes-2026" postTitle="Crimson Desert: Todas as Atualizações e Patches Pós-Lançamento" />
     </article>
   );

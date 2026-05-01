@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Code, Bot, Cpu, TrendingUp, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/ia-codigo-programadores-2026.webp";
@@ -118,8 +119,10 @@ const IACodigo2026 = () => {
           { label: "Agentes de IA 2026", href: "/post/agentes-ia-2026-como-funcionam", desc: "O próximo passo depois das ferramentas de código" },
         ]}
       />
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="ia-codigo-programadores-2026" />
-    <CommentSection postId="ia-codigo-programadores-2026" postTitle="IA e Programação em 2026" />
+    <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
+      <CommentSection postId="ia-codigo-programadores-2026" postTitle="IA e Programação em 2026" />
   </article>
 );
 };

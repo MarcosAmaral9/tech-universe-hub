@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, TrendingUp, Shield, AlertTriangle, PiggyBank, BarChart3, Target } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/inflacao-proteger-investimentos-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -209,7 +210,9 @@ const InflacaoProtegerInvestimentos2026 = () => {
           <p className="text-muted-foreground">Compartilhe sua estratégia nos comentários! 👇</p>
         </div>
       </div>
+      <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="inflacao-proteger-investimentos-2026" />
+      <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="inflacao-proteger-investimentos-2026" postTitle="Inflação Acima da Meta em 2026" />
     </article>
   );

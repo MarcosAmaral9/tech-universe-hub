@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Waves, Clapperboard, Wind, Timer, Film, Target, Award } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import avatarWaterImg from "@/assets/avatar-water-swimming.webp";
 
@@ -283,7 +284,9 @@ const AvatarCaminhoDaAgua = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="avatar-caminho-da-agua-fisica-fluidos" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="avatar-caminho-da-agua-fisica-fluidos" postTitle="Avatar 2: O Caminho da Água — Análise da Revolução em CGI e Simulação" />
     </article>
   );

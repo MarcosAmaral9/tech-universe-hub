@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Shield, Eye, Lock, AlertTriangle, CheckCircle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-privacidade-dados-2026.webp";
 
@@ -117,7 +118,9 @@ const IAPrivacidadeDados2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="ia-privacidade-dados-2026" />
+      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="ia-privacidade-dados-2026" postTitle="IA e Privacidade de Dados 2026: Seus Dados Estão Seguros?" />
     </article>
   );

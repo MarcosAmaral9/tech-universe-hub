@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Moon, Target, Cpu, DollarSign, Laptop, Gamepad2, HelpCircle, Wind, Bomb, BookOpen, MapPin, Shield, Swords, Users, Zap, Crown } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import acMirageImg from "@/assets/ac-mirage.webp";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -817,9 +818,11 @@ const ACMirage = () => {
       </div>
 
       {/* Related Posts */}
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="ac-mirage-retorno-raizes-bagda" />
 
       {/* Comments */}
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="ac-mirage-retorno-raizes-bagda" postTitle="AC Mirage em 2026 Vale a Pena? Review Completa — Furtividade Clássica" />
     </article>
   );

@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Scissors, DollarSign, Users, Palette } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/guia-cosplay-2026.webp";
 
@@ -114,7 +115,9 @@ const GuiaCosplay2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="guia-cosplay-2026-iniciantes" />
+      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="guia-cosplay-2026-iniciantes" postTitle="Guia Definitivo para Começar no Cosplay em 2026" />
     </article>
   );

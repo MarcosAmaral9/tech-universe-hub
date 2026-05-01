@@ -3,6 +3,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, TrendingUp, Shield, AlertTriangle, CheckCircle, BarChart3 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
@@ -244,8 +245,10 @@ const PoupancaVsCDBTesouro2026 = () => {
           </p>
         </div>
 
-        <RelatedPosts currentSlug="poupanca-vs-cdb-tesouro-2026" />
-        <CommentSection postId="poupanca-vs-cdb-tesouro-2026" />
+        <NewsletterSignup variant="inline" categories={["invest"]} />
+      <RelatedPosts currentSlug="poupanca-vs-cdb-tesouro-2026" />
+        <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
+      <CommentSection postId="poupanca-vs-cdb-tesouro-2026" />
     </article>
   );
 };

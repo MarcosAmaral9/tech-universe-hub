@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, TrendingUp, BarChart3, Shield, Lightbulb, DollarSign, Globe } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/dolar-queda-2026-investir-exterior.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -181,7 +182,9 @@ const DolarQueda2026 = () => {
         </p>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="dolar-queda-2026-investir-exterior" />
+      <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="dolar-queda-2026-investir-exterior" postTitle="Dólar no Menor Nível em 2 Anos: Como Aproveitar a Queda Cambial para Investir no Exterior" />
     </article>
   );

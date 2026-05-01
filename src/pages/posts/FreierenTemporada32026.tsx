@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Star, Zap, Shield, BarChart3, BookOpen, Heart } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/frieren-temporada-3-confirmada-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -176,7 +177,9 @@ const FreierenTemporada32026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="frieren-temporada-3-confirmada-2026" />
+      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="frieren-temporada-3-confirmada-2026" postTitle="Frieren Temporada 3 Confirmada: O Que Esperar Após o Final da T2" />
     </article>
   );

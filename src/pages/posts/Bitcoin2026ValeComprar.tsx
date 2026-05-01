@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, Calendar, User, ChevronRight, TrendingUp, AlertTriangle, CheckCircle2, Shield, Zap, Globe, BarChart3, Scale } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import heroImg from "@/assets/bitcoin-2026-vale-comprar.webp";
@@ -258,7 +259,9 @@ const Bitcoin2026ValeComprar = () => {
       </div>
 
       <BackNavigation category="invest" />
+      <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="bitcoin-2026-vale-comprar" />
+      <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="bitcoin-2026-vale-comprar" />
     </article>
   );

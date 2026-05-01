@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Sword, Ship, Crown, Shield, Axe, Target, Tv, Star } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import vikingsImg from "@/assets/vikings-ragnar.webp";
 
@@ -386,7 +387,9 @@ const VikingsLegadoRagnar = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="vikings-legado-ragnar-lothbrok" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="vikings-legado-ragnar-lothbrok" postTitle="Vikings: Vale a Pena Assistir em 2026? Review Completa da Série" />
     </article>
   );

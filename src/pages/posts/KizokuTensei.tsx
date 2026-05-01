@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Crown } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/kizoku-tensei.webp";
 
@@ -108,7 +109,9 @@ const KizokuTensei = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="kizoku-tensei-noble-reincarnation-guia" />
+      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="kizoku-tensei-noble-reincarnation-guia" postTitle="Noble Reincarnation (Kizoku Tensei) — Guia Completo" />
           <AdLeaderboard className="my-8" />
     </article>

@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, TrendingUp, BarChart3, Globe, AlertTriangle, CheckCircle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/etfs-2026.webp";
 
@@ -135,7 +136,9 @@ const ETFs2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="etfs-2026-guia-completo-investir" />
+      <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="etfs-2026-guia-completo-investir" postTitle="ETFs em 2026: Guia Completo Para Investir com Diversificação" />
     </article>
   );

@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Tv, Star, Zap, Globe } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/temporada-animes-abril-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -159,7 +160,9 @@ const TemporadaAnimesAbril2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="temporada-animes-abril-2026" />
+      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="temporada-animes-abril-2026" postTitle="Temporada de Animes Abril 2026: Guia Completo da Primavera" />
     </article>
   );

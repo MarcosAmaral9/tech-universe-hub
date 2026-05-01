@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Brain, Zap, Shield, BarChart3, TrendingUp, Lightbulb } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/claude-cowork-saaspocalypse-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -191,7 +192,9 @@ const ClaudeCoworkSaas2026 = () => {
         </div>
       </div>
  
+      <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="claude-cowork-saaspocalypse-2026" />
+      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="claude-cowork-saaspocalypse-2026" postTitle="Claude Cowork e o SaaSpocalypse: Como os Agentes de IA Estão Substituindo Softwares Inteiros" />
     </article>
   );

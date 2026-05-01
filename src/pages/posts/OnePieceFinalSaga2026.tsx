@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Anchor, Map, Star, BookOpen, Flame, Shield, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/one-piece-final-saga-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -294,6 +295,7 @@ const OnePieceFinalSaga2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="one-piece-final-saga-2026" />
       <CommentSection
         postId="one-piece-final-saga-2026"

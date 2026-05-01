@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, BookOpen, Tv, ThumbsUp, ThumbsDown } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/manga-vs-anime-2026.webp";
 
@@ -97,7 +98,9 @@ const MangaVsAnime2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="manga-vs-anime-adaptacao-2026" />
+      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="manga-vs-anime-adaptacao-2026" postTitle="Mangá vs. Anime: Quando a Adaptação Supera o Original" />
     </article>
   );

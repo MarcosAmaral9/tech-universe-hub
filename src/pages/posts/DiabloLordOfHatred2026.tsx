@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3, Sword } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/diablo-iv-lord-of-hatred-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -187,7 +188,9 @@ const DiabloLordOfHatred2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="diablo-iv-lord-of-hatred-2026" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="diablo-iv-lord-of-hatred-2026" postTitle="Diablo IV: Lord of Hatred — Guia Completo" />
     </article>
   );

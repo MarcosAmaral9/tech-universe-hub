@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Building2, Shield, TrendingUp, BarChart3, PiggyBank, Target } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/fiis-defensivos-abril-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -211,7 +212,9 @@ const FIIsDefensivosAbril2026 = () => {
           <p className="text-muted-foreground">Compartilhe nos comentários! 👇</p>
         </div>
       </div>
+      <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="fiis-defensivos-abril-2026" />
+      <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="fiis-defensivos-abril-2026" postTitle="FIIs Defensivos em Abril de 2026" />
     </article>
   );

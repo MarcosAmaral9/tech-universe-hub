@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Shield } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/okiraku-ryoushu.webp";
 
@@ -107,7 +108,9 @@ const OkirakuRyoushu = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="okiraku-ryoushu-territory-defense-guia" />
+      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="okiraku-ryoushu-territory-defense-guia" postTitle="Easygoing Territory Defense (Okiraku Ryoushu) — Guia Completo" />
       <AdLeaderboard className="my-8" />
     </article>

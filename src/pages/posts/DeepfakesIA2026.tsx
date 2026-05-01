@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, ShieldAlert, Eye, Mic, Lock } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/deepfakes-ia-2026.webp";
 
@@ -118,7 +119,9 @@ const DeepfakesIA2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="deepfakes-ia-2026-como-identificar" />
+      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="deepfakes-ia-2026-como-identificar" postTitle="Deepfakes e IA 2026: Como Identificar Conteúdo Falso e Proteger sua Imagem" />
     </article>
   );

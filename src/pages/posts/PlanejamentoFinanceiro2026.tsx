@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, Calendar, User, ChevronRight, Target, CheckCircle2, CalendarDays } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import planejamentoImg from "@/assets/planejamento-financeiro-2026.webp";
 
@@ -298,8 +299,10 @@ const PlanejamentoFinanceiro2026 = () => {
 
         <BackNavigation category="invest" />
 
-        <RelatedPosts currentSlug="planejamento-financeiro-2026-metas" />
-        <CommentSection postId="33" postTitle="Planejamento Financeiro Para 2026: Como Definir Metas e Alcançá-las" />
+        <NewsletterSignup variant="inline" categories={["invest"]} />
+      <RelatedPosts currentSlug="planejamento-financeiro-2026-metas" />
+        <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
+      <CommentSection postId="33" postTitle="Planejamento Financeiro Para 2026: Como Definir Metas e Alcançá-las" />
       </article>
     </>
   );

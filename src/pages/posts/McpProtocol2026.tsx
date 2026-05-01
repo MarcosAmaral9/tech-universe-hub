@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Brain, Zap, Shield, BarChart3, Lightbulb, TrendingUp } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/mcp-model-context-protocol-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -204,7 +205,9 @@ const McpProtocol2026 = () => {
         </div>
       </div>
  
+      <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="mcp-model-context-protocol-2026" />
+      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="mcp-model-context-protocol-2026" postTitle="MCP: O Protocolo com 97 Milhões de Instalações que Conecta Todos os Agentes de IA" />
     </article>
   );

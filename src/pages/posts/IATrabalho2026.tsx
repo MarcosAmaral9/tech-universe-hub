@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, AlertTriangle, TrendingUp, Shield, Users } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-trabalho-2026.webp";
 
@@ -105,7 +106,9 @@ const IATrabalho2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="ia-no-trabalho-2026-profissoes" />
+      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="ia-no-trabalho-2026-profissoes" postTitle="IA no Trabalho em 2026: Sua Profissão Vai Acabar ou Evoluir?" />
     </article>
   );

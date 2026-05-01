@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Star, Zap, Shield, BarChart3, BookOpen, Flame } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/naruto-especiais-confirmados-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -189,7 +190,9 @@ const NarutoEspeciais2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="naruto-especiais-confirmados-2026" />
+      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="naruto-especiais-confirmados-2026" postTitle="Naruto: 4 Episódios Especiais Confirmados — Novos Designs Revelados e Tudo que Sabemos" />
     </article>
   );

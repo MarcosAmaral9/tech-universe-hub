@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Heart, AlertTriangle, Phone, Smile } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/saude-mental-otaku-2026.webp";
 
@@ -106,7 +107,9 @@ const SaudeMentalOtaku2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="saude-mental-cultura-otaku-2026" />
+      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="saude-mental-cultura-otaku-2026" postTitle="Saúde Mental e Cultura Otaku: Quando o Anime Ajuda e Quando Isola" />
     </article>
   );

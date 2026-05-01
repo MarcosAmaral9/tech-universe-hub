@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Flame, Skull, Mountain, Swords, Target, Film } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import avatarFireImg from "@/assets/avatar-fire.webp";
 
@@ -273,7 +274,9 @@ const Avatar3FogoECinzas = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="avatar-3-fogo-cinzas-lado-sombrio-pandora" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="avatar-3-fogo-cinzas-lado-sombrio-pandora" postTitle="Avatar 3: Fire and Ash — Tudo Sobre o Filme, Data e O Que Esperar" />
     </article>
   );

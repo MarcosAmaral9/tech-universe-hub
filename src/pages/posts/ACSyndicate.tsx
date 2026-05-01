@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Factory, Train, Swords, Cog, Cpu, DollarSign, Target, Laptop, Gamepad2, HelpCircle, MapPin, Crown, Users, Zap, Shield, BookOpen } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import acSyndicateImg from "@/assets/ac-syndicate.webp";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -856,9 +857,11 @@ const ACSyndicate = () => {
       </div>
 
       {/* Related Posts */}
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="ac-syndicate-revolucao-industrial-londres" />
 
       {/* Comments */}
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="ac-syndicate-revolucao-industrial-londres" postTitle="AC Syndicate em 2026 Vale a Pena? Review — Londres Vitoriana" />
     </article>
   );

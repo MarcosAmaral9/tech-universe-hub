@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Code, Globe, DollarSign, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/modelos-ia-open-source-2026.webp";
@@ -144,8 +145,10 @@ const ModelosIAOpenSource2026 = () => {
           { label: "IA e Privacidade de Dados", href: "/post/ia-privacidade-dados-2026", desc: "Por que privacidade é o principal argumento open source" },
         ]}
       />
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="modelos-ia-open-source-2026" />
-    <CommentSection postId="modelos-ia-open-source-2026" postTitle="IA Open Source 2026" />
+    <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
+      <CommentSection postId="modelos-ia-open-source-2026" postTitle="IA Open Source 2026" />
   </article>
 );
 };

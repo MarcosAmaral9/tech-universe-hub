@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, TrendingUp, BarChart3, Shield, DollarSign, Lightbulb, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/acoes-brasileiras-baratas-valuation-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -194,7 +195,9 @@ const AcoesBrasileirasBaratas2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="acoes-brasileiras-baratas-valuation-2026" />
+      <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="acoes-brasileiras-baratas-valuation-2026" postTitle="Ibovespa em Recordes mas Ações Brasileiras Ainda Estão Baratas" />
     </article>
   );

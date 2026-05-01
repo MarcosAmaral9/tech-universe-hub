@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/saros-ps5-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -184,7 +185,9 @@ const SarosPS52026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="saros-housemarque-ps5-2026" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="saros-housemarque-ps5-2026" postTitle="SAROS: Guia Completo do Sucessor Espiritual de Returnal" />
     </article>
   );

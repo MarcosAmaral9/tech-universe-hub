@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import NewsletterSignup from "./NewsletterSignup";
 import { Instagram, Download } from "lucide-react";
 
 const TikTokIcon = () => (
@@ -137,6 +138,14 @@ const Footer = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="mt-8 pt-8 border-t border-border">
+          <p className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+            ✉️ Newsletter semanal — grátis
+          </p>
+          <NewsletterSignup variant="compact" />
+          <p className="text-xs text-muted-foreground mt-2">Sem spam. Cancele quando quiser.</p>
         </div>
 
         <div className="mt-10 pt-6 border-t border-border text-center text-sm text-muted-foreground">

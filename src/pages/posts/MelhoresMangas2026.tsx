@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, BookOpen, Star, Sparkles, GraduationCap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/melhores-mangas-2026.webp";
 
@@ -88,7 +89,9 @@ const MelhoresMangas2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="melhores-mangas-ler-2026" />
+      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="melhores-mangas-ler-2026" postTitle="Os Melhores Mangás Para Ler em 2026: Guia por Gênero" />
     </article>
   );

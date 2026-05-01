@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Sword, Moon, Sun, Leaf, Cpu, DollarSign, Target, Laptop, Gamepad2, HelpCircle, Shield, MapPin } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import acShadowsImg from "@/assets/ac-shadows.webp";
 
@@ -682,9 +683,11 @@ const ACShadows = () => {
       </div>
 
       {/* Related Posts */}
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="ac-shadows-japao-feudal" />
 
       {/* Comments */}
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="ac-shadows-japao-feudal" postTitle="AC Shadows em 2026 Vale a Pena? Review Completa — Japão Feudal" />
     </article>
   );

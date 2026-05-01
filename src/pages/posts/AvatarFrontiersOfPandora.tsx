@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Gamepad2, TreePine, Crosshair, Cpu, DollarSign, Target, Laptop, HelpCircle, Star, Shield, MapPin, Palette } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import avatarGameImg from "@/assets/avatar-game-female.webp";
 
@@ -695,9 +696,11 @@ const AvatarFrontiersOfPandora = () => {
       </div>
 
       {/* Related Posts */}
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="avatar-frontiers-pandora-ubisoft-review" />
 
       {/* Comments */}
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="avatar-frontiers-pandora-ubisoft-review" postTitle="Avatar: Frontiers of Pandora em 2026 Vale a Pena? Review Completa" />
     </article>
   );

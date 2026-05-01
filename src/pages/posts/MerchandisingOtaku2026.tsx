@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, ShoppingBag, Shield, TrendingUp, Gem } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/merchandising-otaku-2026.webp";
 
@@ -94,7 +95,9 @@ const MerchandisingOtaku2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="merchandising-otaku-colecionar-2026" />
+      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="merchandising-otaku-colecionar-2026" postTitle="Merchandising Otaku: Como Colecionar com Inteligência" />
     </article>
   );

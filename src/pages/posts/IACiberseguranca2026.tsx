@@ -3,6 +3,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Shield, AlertTriangle, Lock, Eye, Bug, Server } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
@@ -202,7 +203,9 @@ const IACiberseguranca2026 = () => {
         </p>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="ia-ciberseguranca-2026" />
+      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="ia-ciberseguranca-2026" />
     </article>
   );

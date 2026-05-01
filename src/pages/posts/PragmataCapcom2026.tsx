@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/pragmata-capcom-guia-completo-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -196,7 +197,9 @@ const PragmataCapcom2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="pragmata-capcom-guia-completo-2026" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="pragmata-capcom-guia-completo-2026" postTitle="PRAGMATA: Guia Completo do Novo Jogo da Capcom" />
     </article>
   );

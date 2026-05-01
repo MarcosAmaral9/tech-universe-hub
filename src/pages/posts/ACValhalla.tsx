@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Sword, Cpu, Shield, Gamepad2, Monitor, DollarSign, Target, Laptop, HelpCircle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import acValhallaImg from "@/assets/ac-valhalla.webp";
 
@@ -566,9 +567,11 @@ const ACValhalla = () => {
       </div>
 
       {/* Related Posts */}
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="ac-valhalla-jornada-epica-eivor" />
 
       {/* Comments */}
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="ac-valhalla-jornada-epica-eivor" postTitle="AC Valhalla em 2026 Vale a Pena? Review Completa — Vikings e RPG" />
     </article>
   );

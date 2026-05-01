@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Smartphone, Star, Lightbulb } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/apps-ia-produtividade-2026.webp";
 
@@ -97,7 +98,9 @@ const AppsIAProdutividade2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="melhores-apps-ia-produtividade-2026" />
+      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="melhores-apps-ia-produtividade-2026" postTitle="Os 10 Melhores Apps de IA para Produtividade em 2026" />
     </article>
   );

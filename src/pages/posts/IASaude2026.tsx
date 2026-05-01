@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Heart, Stethoscope, Brain, Pill } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-saude-2026.webp";
 
@@ -102,7 +103,9 @@ const IASaude2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="ia-saude-2026-diagnosticos-futuro" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="ia-saude-2026-diagnosticos-futuro" postTitle="IA para Saúde 2026: Diagnósticos, Monitoramento e o Futuro da Medicina" />
     </article>
   );

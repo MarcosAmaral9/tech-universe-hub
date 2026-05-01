@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, Calendar, User, AlertTriangle, ChevronRight, Zap, CheckCircle2, Target, PieChart } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import carteiraImg from "@/assets/carteira-investimentos-2026.webp";
 
@@ -445,8 +446,10 @@ const CarteiraIniciantes2026 = () => {
           </div>
         </div>
 
-        <RelatedPosts currentSlug="carteira-investimentos-iniciantes-2026" />
-        <CommentSection postId="carteira-investimentos-iniciantes-2026" />
+        <NewsletterSignup variant="inline" categories={["invest"]} />
+      <RelatedPosts currentSlug="carteira-investimentos-iniciantes-2026" />
+        <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
+      <CommentSection postId="carteira-investimentos-iniciantes-2026" />
       </article>
     </>
   );

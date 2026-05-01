@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Trophy, Star, Gamepad2 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import acPortalImg from "@/assets/assassins-creed-portal.webp";
 
@@ -268,9 +269,11 @@ const ACRanking2026 = () => {
       </div>
 
       {/* Related Posts */}
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="ranking-melhor-assassins-creed-2026" />
 
       {/* Comments */}
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="ranking-melhor-assassins-creed-2026" postTitle="Ranking: Qual o Melhor Assassin\'s Creed para Jogar em 2026?" />
     </article>
   );

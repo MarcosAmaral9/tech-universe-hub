@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Swords } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/mugen-gacha.webp";
 
@@ -102,7 +103,9 @@ const MugenGacha = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="mugen-gacha-level-9999-traicao-dungeon" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="mugen-gacha-level-9999-traicao-dungeon" postTitle="My Gift Lvl 9999 Unlimited Gacha — Traição no Fundo da Dungeon" />
           <AdLeaderboard className="my-8" />
     </article>

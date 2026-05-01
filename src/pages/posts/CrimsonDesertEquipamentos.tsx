@@ -7,6 +7,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Sword, Shield, MapPin, Star, Package, Wrench } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import heroImg from "@/assets/crimson-desert-equipamentos.webp";
@@ -262,7 +263,9 @@ const CrimsonDesertEquipamentos = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="crimson-desert-melhores-equipamentos-inicio" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="crimson-desert-melhores-equipamentos-inicio" postTitle="Crimson Desert: Melhores Equipamentos do Início — Onde Encontrar" />
           <AdLeaderboard className="my-8" />
     </article>

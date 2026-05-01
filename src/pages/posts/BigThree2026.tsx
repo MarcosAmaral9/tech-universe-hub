@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Star, Zap, Shield, BarChart3, BookOpen, Trophy } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/big-three-naruto-bleach-one-piece-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -236,7 +237,9 @@ const BigThree2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="big-three-naruto-bleach-one-piece-2026" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="big-three-naruto-bleach-one-piece-2026" postTitle="Big Three em 2026: Naruto, Bleach e One Piece Juntos pela Primeira Vez desde 2012" />
     </article>
   );

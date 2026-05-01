@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Sparkles, AlertTriangle, Star, TrendingUp } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/isekai-2026.webp";
 
@@ -91,7 +92,9 @@ const Isekai2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="isekai-2026-genero-domina" />
+      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="isekai-2026-genero-domina" postTitle="Isekai 2026: Por Que o Gênero Mais Criticado do Anime Ainda Domina" />
     </article>
   );

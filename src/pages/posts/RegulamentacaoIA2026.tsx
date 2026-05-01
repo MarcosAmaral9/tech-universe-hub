@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Scale, Globe, Building, Users } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/regulamentacao-ia-2026.webp";
 
@@ -122,7 +123,9 @@ const RegulamentacaoIA2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="regulamentacao-ia-brasil-mundo-2026" />
+      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="regulamentacao-ia-brasil-mundo-2026" postTitle="Regulamentação de IA no Brasil e no Mundo em 2026: O Que Muda" />
     </article>
   );

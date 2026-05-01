@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, TrendingUp, Star, BarChart3, MessageSquare, Globe } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/crimson-desert-vendas-review.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -180,7 +181,9 @@ const CrimsonDesertVendasReview = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="crimson-desert-vendas-review-completo-2026" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="crimson-desert-vendas-review-completo-2026" postTitle="Crimson Desert: 5 Milhões de Cópias, Metacritic 78 e Review Completo" />
     </article>
   );

@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Star, Flame, Shield } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/demon-slayer-hashira-2026.webp";
@@ -133,8 +134,10 @@ const DemonSlayerHashira2026 = () => {
           { label: "Todos os artigos Otaku", href: "/otaku" },
         ]}
       />
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="demon-slayer-hashira-2026" />
-    <CommentSection postId="demon-slayer-hashira-2026" postTitle="Demon Slayer: Guia dos Hashira" />
+    <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
+      <CommentSection postId="demon-slayer-hashira-2026" postTitle="Demon Slayer: Guia dos Hashira" />
   </article>
 );
 };

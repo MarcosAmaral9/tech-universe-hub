@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, TrendingUp, BarChart3, Shield, Lightbulb, DollarSign, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -210,7 +211,9 @@ const IbovespaRecordeSelic2026 = () => {
         </p>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="ibovespa-recorde-selic-caindo-2026" />
+      <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="ibovespa-recorde-selic-caindo-2026" postTitle="Ibovespa em Recordes e Selic Caindo: Onde Investir Agora em Abril de 2026" />
     </article>
   );

@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Snowflake, Ship, Target, Cpu, DollarSign, Laptop, Gamepad2, HelpCircle, Crosshair, MapPin, Swords, Shield, Timer, Package } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import acRogueImg from "@/assets/ac-rogue.webp";
 
@@ -648,9 +649,11 @@ const ACRogue = () => {
       </div>
 
       {/* Related Posts */}
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="ac-rogue-assassino-templario" />
 
       {/* Comments */}
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="ac-rogue-assassino-templario" postTitle="AC Rogue em 2026 Vale a Pena? Review — Jogue Como Templário" />
     </article>
   );

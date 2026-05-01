@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, Calendar, User, ChevronRight, Brain, CheckCircle2, AlertTriangle, Smartphone, ShieldAlert, Sparkles, MessageSquare, Calculator, ListChecks } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import heroImg from "@/assets/ia-financas-pessoais-2026.webp";
@@ -215,7 +216,9 @@ const IAFinancasPessoais2026 = () => {
       </div>
 
       <BackNavigation category="invest" />
+      <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="ia-para-financas-pessoais-2026" />
+      <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="ia-para-financas-pessoais-2026" />
     </article>
   );

@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, Calendar, User, Mic, Globe, Zap, AlertTriangle, Target, Cpu, Users } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import aiAnimeDubbingImg from "@/assets/ai-anime-dubbing.webp";
 
@@ -263,7 +264,9 @@ const IATransformandoDublagem = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="ia-transformando-dublagem-animes" />
+      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="ia-transformando-dublagem-animes" postTitle="IA na Dublagem de Animes: Voice Cloning e o Futuro da Localização" />
     </article>
   );

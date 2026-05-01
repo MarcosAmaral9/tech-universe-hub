@@ -6,6 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { ArrowLeft, Clock, User, Calendar, Anchor, Ship, Cpu, DollarSign, Target, Laptop, Gamepad2, HelpCircle, Music } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import acBlackFlagImg from "@/assets/ac-black-flag.webp";
 
@@ -442,9 +443,11 @@ const ACBlackFlag = () => {
       </div>
 
       {/* Related Posts */}
+      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="ac-black-flag-melhor-jogo-piratas" />
 
       {/* Comments */}
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="ac-black-flag-melhor-jogo-piratas" postTitle="AC Black Flag em 2026: Ainda o Melhor Jogo de Piratas de Todos os Tempos?" />
     </article>
   );

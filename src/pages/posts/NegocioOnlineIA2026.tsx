@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Brain, Zap, TrendingUp, DollarSign, Lightbulb, Shield } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/negocio-online-ia-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -153,7 +154,9 @@ const NegocioOnlineIA2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="negocio-online-ia-2026" />
+      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="negocio-online-ia-2026" postTitle="Como Criar um Negócio Online com IA em 2026: 10 Modelos Lucrativos" />
     </article>
   );
