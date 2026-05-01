@@ -184,6 +184,7 @@ const ACShadows = () => {
             <h4 className="font-bold mb-2 text-purple-400">Tokugawa Ieyasu</h4>
             <p className="text-sm text-muted-foreground mb-0">
               O paciente estrategista que eventualmente unificaria o Japão e fundaria o <strong>Xogunato 
+      <AdInArticle />
               Tokugawa</strong>, inaugurando 250 anos de paz (Período Edo).
             </p>
           </div>

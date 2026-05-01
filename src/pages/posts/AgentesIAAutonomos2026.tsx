@@ -111,6 +111,7 @@ const AgentesIAAutonomos2026 = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BarChart3 className="h-7 w-7 text-violet-400" />
+      <AdInArticle />
           Os Agentes Mais Usados em 2026: Comparativo
         </h2>
         <div className="not-prose my-6 overflow-x-auto">

@@ -127,6 +127,8 @@ const OnePieceFinalSaga2026 = () => {
             </div>
           ))}
         </div>
+      <AdInArticle />
+
         {/* Revelações */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Flame className="h-7 w-7 text-pink-400" />As Maiores Revelações da Final Saga

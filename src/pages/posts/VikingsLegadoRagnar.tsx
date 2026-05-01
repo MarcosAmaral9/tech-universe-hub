@@ -178,6 +178,8 @@ const VikingsLegadoRagnar = () => {
         </div>
 
         <h3 className="text-xl font-bold mt-8 mb-4">⚔️ Realidade vs. Ficção</h3>
+      <AdInArticle />
+
         <p>
           Embora a série tome liberdades criativas (como comprimir eventos e estender vidas de 
           personagens), ela acertou em cheio ao mostrar o <strong>modo de vida nórdico</strong>. 

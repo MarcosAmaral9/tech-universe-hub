@@ -90,6 +90,7 @@ const IAFinancasPessoais2026 = () => {
               <tr className="border-b border-border">
                 <th className="text-left p-3 text-muted-foreground font-medium">Ferramenta</th>
                 <th className="text-left p-3 text-muted-foreground font-medium">Tipo</th>
+      <AdInArticle />
                 <th className="text-left p-3 text-muted-foreground font-medium">Uso principal</th>
                 <th className="text-left p-3 text-muted-foreground font-medium">Custo</th>
               </tr>

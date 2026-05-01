@@ -82,12 +82,12 @@ const Header = () => {
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-1 sm:gap-2">
+          <div className="flex items-center gap-2">
             {/* Social Panel - admin or sandbox */}
             {(user?.email === "viciocode01@gmail.com" || window.location.hostname.includes("lovable")) && (
               <Button variant="ghost" size="icon" asChild className="hover:bg-secondary">
                 <Link to="/painel-social">
-                  <FileText className="h-6 w-6 text-primary" />
+                  <FileText className="h-5 w-5 text-primary" />
                 </Link>
               </Button>
             )}
@@ -103,7 +103,7 @@ const Header = () => {
                 title="Conteúdo Offline"
               >
                 <Link to="/configuracoes/offline">
-                  <WifiOff className="h-6 w-6" />
+                  <WifiOff className="h-4 w-4" />
                 </Link>
               </Button>
             )}
@@ -114,7 +114,7 @@ const Header = () => {
               onClick={() => setIsSearchOpen(true)}
               className="hover:bg-secondary"
             >
-              <Search className="h-6 w-6" />
+              <Search className="h-5 w-5" />
             </Button>
 
             {/* Legal Pages Dropdown - Desktop */}
@@ -152,9 +152,9 @@ const Header = () => {
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="sm" className="gap-2 hover:bg-secondary">
                     {profile?.avatar_url ? (
-                      <img src={profile.avatar_url} alt="" className="w-7 h-7 rounded-full object-cover" />
+                      <img src={profile.avatar_url} alt="" className="w-6 h-6 rounded-full object-cover" />
                     ) : (
-                      <User className="h-6 w-6" />
+                      <User className="h-4 w-4" />
                     )}
                     <span className="hidden lg:inline max-w-[100px] truncate">{displayName}</span>
                   </Button>
@@ -175,7 +175,7 @@ const Header = () => {
             ) : (
               <Button variant="ghost" size="sm" asChild className="gap-2 hover:bg-secondary text-muted-foreground">
                 <Link to="/entrar">
-                  <LogIn className="h-6 w-6" />
+                  <LogIn className="h-4 w-4" />
                   <span className="hidden lg:inline">Entrar</span>
                 </Link>
               </Button>
@@ -190,7 +190,7 @@ const Header = () => {
               className="md:hidden hover:bg-secondary"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
         </div>

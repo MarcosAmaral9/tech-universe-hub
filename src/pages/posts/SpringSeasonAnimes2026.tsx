@@ -106,6 +106,7 @@ const SpringSeasonAnimes2026 = () => {
           },
           {
             rank: "04", nome: "That Time I Got Reincarnated as a Slime T4", estreia: "8 abr | Crunchyroll",
+      <AdInArticle />
             genero: "Isekai / Fantasia", nota: "B+",
             desc: "Com formato de 5 cours (incomum na franquia), a temporada mais longa de TenSura vai adaptar a fase mais ambiciosa da narrativa: Rimuru consolidando sua nação e enfrentando ameaças de escala global. Espere muito worldbuilding e batalhas épicas.",
             pra: "Fãs da série. Isekai de construção de reino com protagonista op.",

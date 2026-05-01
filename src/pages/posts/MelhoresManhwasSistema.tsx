@@ -248,6 +248,8 @@ const MelhoresManhwasSistema = () => {
         </div>
 
         <AdRectangle className="my-8" />
+      <AdInArticle />
+
         <AdLeaderboard className="my-8" />
 
         <h2 className="text-2xl font-bold mt-10 mb-6">Por Onde Começar?</h2>

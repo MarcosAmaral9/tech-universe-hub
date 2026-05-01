@@ -125,6 +125,7 @@ const NintendoSwitch2Guia2026 = () => {
               ].map(([jogo, genero, nota, preco]) => (
                 <tr key={jogo} className="border-t border-border">
                   <td className="py-3 px-4 font-bold text-geek">{jogo}</td>
+      <AdInArticle />
                   <td className="py-3 px-4">{genero}</td>
                   <td className="py-3 px-4 text-xs">{nota}</td>
                   <td className="py-3 px-4 text-muted-foreground">{preco}</td>

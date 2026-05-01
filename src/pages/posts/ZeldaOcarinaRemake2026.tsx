@@ -116,6 +116,7 @@ const ZeldaOcarinaRemake2026 = () => {
                 <span className="text-sm">{plat}</span>
                 <span className={`text-xs ${dest ? "text-geek font-bold" : "text-muted-foreground"}`}>{nota}</span>
               </div>
+      <AdInArticle />
             ))}
           </div>
         </div>

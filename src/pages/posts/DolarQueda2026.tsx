@@ -102,6 +102,7 @@ const DolarQueda2026 = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Globe className="h-7 w-7 text-invest" />
+      <AdInArticle />
           As Melhores Formas de Investir no Exterior Pelo Brasil
         </h2>
         <div className="not-prose my-6 overflow-x-auto">

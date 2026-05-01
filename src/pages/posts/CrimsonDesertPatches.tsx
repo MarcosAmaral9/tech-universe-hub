@@ -107,6 +107,7 @@ const CrimsonDesertPatches = () => {
               cor: "border-violet-500/30 bg-violet-500/5",
               descricao: "Hotfix para todas as plataformas corrigindo bugs introduzidos pelo Patch 1.04.00, incluindo a reversão temporária da redução de ataque/defesa via grindstones e anvils que causou reclamações da comunidade."
             },
+      <AdInArticle />
           ].map((p) => (
             <div key={p.versao} className={`rounded-xl border p-5 ${p.cor}`}>
               <div className="flex items-center justify-between mb-2 flex-wrap gap-2">

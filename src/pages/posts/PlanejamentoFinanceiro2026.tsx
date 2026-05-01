@@ -229,6 +229,7 @@ const PlanejamentoFinanceiro2026 = () => {
               <div key={i} className="relative pl-12 pb-6">
                 <div className="absolute left-2 w-5 h-5 rounded-full bg-[hsl(var(--invest-color))] border-4 border-background" />
                 <div className="bg-card border border-border rounded-lg p-4">
+      <AdInArticle />
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-lg">{step.icon}</span>
                     <span className="text-xs text-[hsl(var(--invest-color))] font-mono font-bold">{step.month}</span>

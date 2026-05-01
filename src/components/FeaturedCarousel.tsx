@@ -82,14 +82,14 @@ const FeaturedCarousel = () => {
     currentPost.category === "geek" ? "bg-geek" : "bg-otaku";
 
   return (
-    <section className="relative w-full overflow-hidden bg-background md:bg-gradient-to-br md:from-secondary md:via-background md:to-secondary">
+    <section className="relative w-full overflow-hidden bg-gradient-to-br from-secondary via-background to-secondary">
       <style>{`
         @keyframes progress-fill {
           from { width: 0%; }
           to { width: 100%; }
         }
       `}</style>
-      <div className="container px-2 sm:px-4 py-3 md:py-8">
+      <div className="container py-8">
         {/* Carousel Card */}
         <div
           className="relative rounded-2xl overflow-hidden bg-card border border-border shadow-lg touch-pan-y"
@@ -124,7 +124,7 @@ const FeaturedCarousel = () => {
               className="carousel-slide flex flex-col md:flex-row h-auto md:h-[400px]"
             >
               {/* Image */}
-              <div className="relative w-full md:w-1/2 h-56 sm:h-72 md:h-auto overflow-hidden">
+              <div className="relative w-full md:w-1/2 h-48 sm:h-64 md:h-auto overflow-hidden">
                 <img
                   src={currentPost.image}
                   alt={currentPost.title}
@@ -141,12 +141,12 @@ const FeaturedCarousel = () => {
                 <CategoryBadge category={currentPost.category} size="md" />
 
                 <Link to={`/post/${currentPost.slug}`}>
-                  <h2 className="font-display text-xl sm:text-2xl md:text-4xl font-bold mt-2 sm:mt-4 mb-2 sm:mb-4 hover:text-primary transition-colors line-clamp-2">
+                  <h2 className="font-display text-lg sm:text-2xl md:text-4xl font-bold mt-2 sm:mt-4 mb-2 sm:mb-4 hover:text-primary transition-colors line-clamp-2">
                     {currentPost.title}
                   </h2>
                 </Link>
 
-                <p className="text-muted-foreground text-base sm:text-lg mb-3 sm:mb-6 line-clamp-2 sm:line-clamp-3">
+                <p className="text-muted-foreground text-sm sm:text-lg mb-3 sm:mb-6 line-clamp-2 sm:line-clamp-3">
                   {currentPost.excerpt}
                 </p>
 

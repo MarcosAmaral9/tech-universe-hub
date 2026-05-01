@@ -106,6 +106,7 @@ const OverlordPersonagens = () => {
               name:"Pandora's Actor",floor:"Treasury — Doppelganger",
               color:"border-orange-500/30 bg-orange-500/5",
               va:"Yuichi Nakamura (JP)",
+      <AdInArticle />
               desc:"Guardião do Tesouro de Nazarick — um doppelganger que pode imitar qualquer Guardian com 80% de eficiência. Criado pelo próprio Momonga como um dos primeiros NPCs da guilda. Extremamente dramático e teatral, o que faz Ainz se envergonhar retroativamente de suas escolhas de jovem jogador. Apesar da aparência clichê, é um dos Guardians mais versáteis.",
             },
           ].map((c) => (

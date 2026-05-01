@@ -100,6 +100,7 @@ const CortarGastos2026 = () => {
                 <span className="text-xs bg-green-500/15 text-green-400 px-2 py-1 rounded-full font-medium">💰 {economia}</span>
               </div>
               <p className="text-sm text-muted-foreground">{desc}</p>
+      <AdInArticle />
             </div>
           ))}
         </div>

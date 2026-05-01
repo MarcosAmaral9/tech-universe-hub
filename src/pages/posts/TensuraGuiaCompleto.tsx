@@ -97,6 +97,7 @@ const TensuraGuiaCompleto = () => {
             <li>• Rimuru assume forma humana permanente (cabelos azul-prateados)</li>
             <li>• Fundação formal da Federação Jura-Tempest</li>
           </ul>
+      <AdInArticle />
         </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">

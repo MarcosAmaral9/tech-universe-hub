@@ -76,6 +76,7 @@ const CDB2026Guia = () => {
                 <td className="py-3 px-4 font-bold text-emerald-400">{pct}</td>
                 <td className="py-3 px-4">{bruto}</td>
                 <td className="py-3 px-4 text-emerald-400 font-medium">{liq}</td>
+      <AdInArticle />
                 <td className="py-3 px-4 text-muted-foreground text-xs">{onde}</td>
               </tr>
             ))}

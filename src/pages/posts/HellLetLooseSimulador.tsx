@@ -225,6 +225,7 @@ const HellLetLooseSimulador = () => {
               <tr className="border-b border-border bg-secondary">
                 <th className="text-left py-3 px-4 font-bold">Mapa</th>
                 <th className="text-left py-3 px-4 font-bold">Batalha Real</th>
+      <AdInArticle />
                 <th className="text-left py-3 px-4 font-bold">Data Histórica</th>
                 <th className="text-left py-3 px-4 font-bold">Frente</th>
               </tr>

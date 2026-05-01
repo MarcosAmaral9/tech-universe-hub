@@ -163,6 +163,7 @@ const ACBlackFlag = () => {
               Capital do domínio espanhol no Caribe, <strong>cidade fortificada</strong> e centro do 
               comércio de açúcar, rum e escravos. Base das frotas do tesouro espanhol.
             </p>
+      <AdInArticle />
           </div>
           <div className="p-4 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-2 text-amber-400">Nassau (Bahamas)</h4>

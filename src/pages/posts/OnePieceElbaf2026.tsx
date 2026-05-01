@@ -93,6 +93,7 @@ const OnePieceElbaf2026 = () => {
             { tema: "Joy Boy e o Void Century", desc: "Com as revelações de Egghead recentes sobre o Século Vazio, Elbaf pode ser o local de mais pistas sobre o primeiro Joy Boy e o que realmente aconteceu 800 anos atrás.", icon: "📜" },
           ].map(({ tema, desc, icon }) => (
             <div key={tema} className="flex gap-3 bg-card rounded-xl border border-otaku/20 p-4">
+      <AdInArticle />
               <span className="text-2xl shrink-0">{icon}</span>
               <div>
                 <h3 className="font-bold text-sm mb-1">{tema}</h3>

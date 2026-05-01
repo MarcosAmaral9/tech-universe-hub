@@ -192,6 +192,7 @@ const ACSyndicate = () => {
         </ul>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+      <AdInArticle />
           <MapPin className="h-7 w-7 text-gray-400" />
           Geografia: Explorando Londres de 1868
         </h2>

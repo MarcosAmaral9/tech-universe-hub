@@ -228,14 +228,6 @@ html.font-large {
   font-size: 18px;
 }
 
-/* Mobile boost: telas pequenas recebem +1px de base para melhor legibilidade.
-   Só se aplica quando o usuário não escolheu manualmente um tamanho. */
-@media (max-width: 380px) {
-  html:not(.font-small):not(.font-large):not(.font-normal) {
-    font-size: 17px;
-  }
-}
-
 /* ── Spacing & Typography Improvements ─────────────────────────── */
 
 /* Article images: breathing room on all screen sizes */

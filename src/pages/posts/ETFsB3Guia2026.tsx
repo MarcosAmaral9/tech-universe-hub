@@ -124,6 +124,7 @@ const ETFsB3Guia2026 = () => {
               {[
                 ["IVVB11", "iShares S&P 500", "S&P 500 (500 maiores EUA)", "0,23%", "15%"],
                 ["SPY11", "SPDR S&P 500 (BDR)", "S&P 500 via BDR", "0,09%", "15%"],
+      <AdInArticle />
                 ["NASD11", "Invesco Nasdaq-100", "Nasdaq-100 (big techs)", "0,20%", "15%"],
                 ["EURP11", "iShares MSCI Europe", "Empresas da Europa", "0,20%", "15%"],
                 ["GOLD11", "Trend ETF Ouro", "Ouro (via BDR do GLD)", "0,20%", "15%"],

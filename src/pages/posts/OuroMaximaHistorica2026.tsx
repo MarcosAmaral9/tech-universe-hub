@@ -112,6 +112,7 @@ const OuroMaximaHistorica2026 = () => {
           <DollarSign className="h-7 w-7 text-invest" />
           Como Investir em Ouro no Brasil: Todas as Opções
         </h2>
+      <AdInArticle />
         <div className="not-prose my-6 overflow-x-auto">
           <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead><tr className="bg-secondary">

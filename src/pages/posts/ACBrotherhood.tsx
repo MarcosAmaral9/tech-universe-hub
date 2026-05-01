@@ -81,6 +81,7 @@ const ACBrotherhood = () => {
             ["⚔️ Leonardo da Vinci","Retorna como aliado mas em circunstâncias mais dramáticas — forçado por Cesare a criar máquinas de guerra. Ezio deve destruí-las para impedir que os Bórgias as usem."],
           ].map(([title, desc]) => (
             <div key={title} className="p-4 bg-card rounded-xl border border-border">
+      <AdInArticle />
               <h4 className="font-bold mb-2">{title}</h4>
               <p className="text-sm text-muted-foreground mb-0">{desc}</p>
             </div>

@@ -34,8 +34,8 @@ const Index = () => {
       <FeaturedCarousel />
 
       {/* Categories Section */}
-      <section className="container px-2 sm:px-4 py-8 md:py-12">
-        <h2 className="font-display text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center">
+      <section className="container px-4 py-12">
+        <h2 className="font-display text-2xl md:text-3xl font-bold mb-8 text-center">
           Explore por <span className="text-gradient">Categoria</span>
         </h2>
         
@@ -44,12 +44,12 @@ const Index = () => {
             <Link
               key={cat.id}
               to={`/${cat.id === "ia" ? "ia" : cat.id === "invest" ? "financas" : cat.id}`}
-              className={`p-5 sm:p-7 rounded-xl border-2 ${cat.borderColor} ${cat.bgColor} hover:scale-105 transition-all duration-300 text-center card-hover`}
+              className={`p-4 sm:p-6 rounded-xl border-2 ${cat.borderColor} ${cat.bgColor} hover:scale-105 transition-all duration-300 text-center card-hover`}
             >
-              <span className={`font-display font-bold text-lg sm:text-xl ${cat.color}`}>
+              <span className={`font-display font-bold text-base sm:text-lg ${cat.color}`}>
                 {cat.name}
               </span>
-              <span className="block text-sm text-muted-foreground mt-1">
+              <span className="block text-xs sm:text-sm text-muted-foreground mt-1">
                 {categoryCounts[cat.id as keyof typeof categoryCounts]} artigos
               </span>
             </Link>
@@ -58,7 +58,7 @@ const Index = () => {
       </section>
 
       {/* Latest Posts - Show 12 latest posts sorted chronologically */}
-      <section className="container px-2 sm:px-4 py-8 md:py-12">
+      <section className="container px-4 py-8 md:py-12">
         <div className="flex items-center justify-between mb-6 md:mb-8">
           <h2 className="font-display text-2xl md:text-3xl font-bold">
             Últimos <span className="text-gradient">Artigos</span>
