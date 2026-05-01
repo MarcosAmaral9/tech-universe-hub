@@ -142,7 +142,6 @@ const GuerraIraPetrobras2026 = () => {
                 <th className="text-left py-3 px-4">Brent Projetado 2026</th>
               </tr>
             </thead>
-      <AdInArticle />
             <tbody>
               {[
                 ["BTG Pactual", "Compra ✅", "R$ 56", "US$ 85–100"],

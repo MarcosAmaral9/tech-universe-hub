@@ -139,7 +139,6 @@ const DiabloLordOfHatred2026 = () => {
               <p className="text-xs text-muted-foreground">{desc}</p>
             </div>
           ))}
-      <AdInArticle />
         </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">

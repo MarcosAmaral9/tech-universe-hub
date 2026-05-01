@@ -189,7 +189,6 @@ const TesouroDireto2026 = () => {
                   <div className="flex-1">
                     <h3 className="text-xl font-bold mb-3">{tipo.title}</h3>
                     <ul className="space-y-1 text-muted-foreground mb-3">
-      <AdInArticle />
                       {tipo.points.map((p, i) => <li key={i}>• {p}</li>)}
                     </ul>
                     <p className="text-sm font-semibold" style={{ color: tipo.color }}>

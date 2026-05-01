@@ -85,7 +85,6 @@ const AC1Altair = () => {
             <div key={title} className="p-4 bg-card rounded-xl border border-border">
               <h4 className="font-bold mb-2">{title}</h4>
               <p className="text-sm text-muted-foreground mb-0">{desc}</p>
-      <AdInArticle />
             </div>
           ))}
         </div>
