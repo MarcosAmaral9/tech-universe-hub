@@ -177,8 +177,6 @@ const IAMercadoFinanceiro2026 = () => {
               </ul>
             </div>
           </div>
-      <AdInArticle />
-          
           <div className="bg-[hsl(var(--ia-color))]/10 border border-[hsl(var(--ia-color))]/30 rounded-xl p-5">
             <p className="flex items-start gap-2 text-sm">
               <Zap className="h-5 w-5 text-[hsl(var(--ia-color))] flex-shrink-0 mt-0.5" />

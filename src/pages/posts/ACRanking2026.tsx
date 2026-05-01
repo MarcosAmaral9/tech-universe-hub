@@ -224,7 +224,6 @@ const ACRanking2026 = () => {
             <p className="text-sm text-muted-foreground mb-4">
               Mergulhe em <strong>AC Valhalla</strong> ou <strong>Odyssey</strong> para +100 horas de conteúdo épico.
             </p>
-      <AdInArticle />
             <Link 
               to="/post/ac-valhalla-jornada-epica-eivor" 
               className="text-sm text-purple-400 hover:underline"

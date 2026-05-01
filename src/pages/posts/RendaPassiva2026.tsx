@@ -226,7 +226,6 @@ const RendaPassiva2026 = () => {
                 <label className="text-sm font-semibold mb-2 block">
                   Meta de Renda Passiva Mensal: {formatCurrency(metaRenda)}
                 </label>
-      <AdInArticle />
                 <Slider value={[metaRenda]} onValueChange={(v) => setMetaRenda(v[0])} min={200} max={10000} step={100} />
               </div>
 

@@ -90,7 +90,6 @@ const AC2Ezio = () => {
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Crown className="h-7 w-7 text-amber-400" />
           Ezio Auditore da Firenze — O Protagonista
-      <AdInArticle />
         </h2>
         <p>
           <strong>Ezio Auditore</strong> começa o jogo como um jovem nobre florentino de 17 anos — sedutor, brincalhão e despreocupado. Quando seu pai Giovanni e seus irmãos Federico e Petruccio são enforcados em praça pública por acusações falsas armadas por Uberto Albertini a mando dos Pazzi, Ezio é forçado a fugir com sua mãe Maria e irmã Claudia.

@@ -156,7 +156,6 @@ const AvatarFrontiersOfPandora = () => {
         {/* Contexto do Universo */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           🌍 Contexto: Onde Frontiers of Pandora se Encaixa na Linha do Tempo?
-      <AdInArticle />
         </h2>
 
         <p>

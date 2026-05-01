@@ -142,7 +142,6 @@ const PragmataCapcom2026 = () => {
           <Gamepad2 className="h-7 w-7 text-geek" />
           O Que a Crítica Elogiou e O Que Criticou
         </h2>
-      <AdInArticle />
         <div className="not-prose my-6 grid md:grid-cols-2 gap-5">
           <div className="bg-card rounded-xl border border-green-500/20 p-5">
             <h3 className="font-bold text-green-400 mb-3">✅ Pontos Fortes</h3>
