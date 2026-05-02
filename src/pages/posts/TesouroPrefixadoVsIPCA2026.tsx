@@ -123,7 +123,6 @@ const TesouroPrefixadoVsIPCA2026 = () => {
             <h3 className="font-bold text-green-400 mb-3">✅ Escolha o IPCA+ se...</h3>
             <ul className="text-sm text-muted-foreground space-y-2">
               <li>• Você tem medo de inflação surpresa (guerra, câmbio)</li>
-      <AdInArticle />
               <li>• Quer preservar poder de compra no longo prazo</li>
               <li>• Poupando para aposentadoria (10+ anos)</li>
               <li>• Preferir certeza de retorno real a especular com juros</li>

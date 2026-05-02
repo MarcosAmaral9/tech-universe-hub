@@ -67,7 +67,6 @@ const OverlordGuiaCompleto = () => {
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
           <Tv className="h-7 w-7 text-otaku" />
           Temporada 1 — Julho a Setembro de 2015
-      <AdInArticle />
         </h2>
         <div className="not-prose bg-card border border-border rounded-xl p-4 my-4">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">

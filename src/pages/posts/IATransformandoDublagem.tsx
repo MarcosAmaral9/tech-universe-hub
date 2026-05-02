@@ -132,7 +132,6 @@ const IATransformandoDublagem = () => {
           <AlertTriangle className="h-7 w-7 text-orange-400" />
           Questões Éticas e Profissionais
         </h2>
-      <AdInArticle />
 
         <p>
           Apesar dos benefícios evidentes, a tecnologia de <strong>Voice Cloning</strong> levanta 

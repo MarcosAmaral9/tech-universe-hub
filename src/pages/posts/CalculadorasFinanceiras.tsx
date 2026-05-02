@@ -200,7 +200,6 @@ const CalculadorasFinanceiras = () => {
             const count = cat.key === "all" ? assets.length : assets.filter(a => a.category === cat.key).length;
             return (
               <button key={cat.key} onClick={() => setSelectedCategory(cat.key)}
-      <AdInArticle />
                 className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === cat.key ? "bg-invest text-white shadow-md" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}>
                 <Icon className="h-4 w-4" />{cat.label}
                 <span className={`text-xs ${selectedCategory === cat.key ? "text-white/70" : "text-muted-foreground"}`}>({count})</span>

@@ -190,7 +190,6 @@ const IRPF2026 = () => {
         </section>
 
         {/* Checklist de Documentos */}
-      <AdInArticle />
         <section className="mb-10">
           <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">Checklist de Documentos Necessários</h2>
           <div className="bg-card border border-border rounded-2xl p-6">

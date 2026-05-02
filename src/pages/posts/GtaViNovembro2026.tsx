@@ -124,7 +124,6 @@ const GtaViNovembro2026 = () => {
                 <p className="text-xs text-muted-foreground">{desc}</p>
               </div>
             </div>
-      <AdInArticle />
           ))}
         </div>
         <p>

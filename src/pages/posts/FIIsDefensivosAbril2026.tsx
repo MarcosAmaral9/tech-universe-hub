@@ -102,7 +102,6 @@ const FIIsDefensivosAbril2026 = () => {
                 ["Híbridos / FOFs", "Diversificação automática, mas taxas duplas", "9,4%", "⬇️ Underweight"],
                 ["Hotéis / Residencial", "Volátil, dependente de turismo e ciclo imobiliário", "6,5%", "⬇️ Underweight"],
               ].map(([s, c, dy, r]) => (
-      <AdInArticle />
                 <tr key={s} className="border-t border-border">
                   <td className="py-3 px-4 font-bold text-violet-400">{s}</td>
                   <td className="py-3 px-4 text-muted-foreground text-xs">{c}</td>
