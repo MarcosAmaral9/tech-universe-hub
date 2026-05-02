@@ -132,7 +132,6 @@ const AvatarCaminhoDaAgua = () => {
           </div>
           <div className="p-5 bg-card rounded-xl border border-border">
             <Wind className="h-8 w-8 text-cyan-400 mb-3" />
-      <AdInArticle />
             <h4 className="font-bold mb-2">Bolhas e Espuma</h4>
             <p className="text-sm text-muted-foreground">
               Sistema dedicado para simular bolhas de ar, espuma de onda e a forma como a luz 

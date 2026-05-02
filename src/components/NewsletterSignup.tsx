@@ -19,7 +19,7 @@
  */
 import { useState, useEffect, useRef } from "react";
 import { Mail, CheckCircle2, AlertCircle, X, Sparkles } from "lucide-react";
-import { supabase } from "@/lib/supabase";
+import { supabase } from "@/integrations/supabase/client";
 
 type Variant = "inline" | "compact" | "modal";
 
@@ -74,7 +74,7 @@ const NewsletterSignup = ({ variant = "inline", categories = [], showAfterMs = 6
     }
     setStatus("loading");
     try {
-      const { error } = await supabase
+      const { error } = await (supabase as any)
         .from("newsletter_subscribers")
         .upsert({ email: email.toLowerCase().trim(), categories: [...selectedCats] }, { onConflict: "email" });
       if (error) throw error;
