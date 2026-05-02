@@ -10,7 +10,7 @@
  *   - AdInArticle: formato nativo entre parágrafos — maior CTR
  *   - Auto Ads ativado no painel complementa os blocos manuais
  */
-import { useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 const SLOTS = {
@@ -49,7 +49,7 @@ interface AdProps {
   layoutKey?: string;
 }
 
-const AdUnit = ({ slot, format = "auto", className = "", responsive = true, layoutKey }: AdProps) => {
+const AdUnit = forwardRef<HTMLDivElement, AdProps>(({ slot, format = "auto", className = "", responsive = true, layoutKey }, forwardedRef) => {
   const ref    = useRef<HTMLModElement>(null);
   const pushed = useRef(false);
   const { pathname } = useLocation();
@@ -70,7 +70,7 @@ const AdUnit = ({ slot, format = "auto", className = "", responsive = true, layo
   if (blocked) return null;
 
   return (
-    <div className={`ad-unit overflow-hidden text-center ${className}`} aria-hidden="true">
+    <div ref={forwardedRef} className={`ad-unit overflow-hidden text-center ${className}`} aria-hidden="true">
       <ins
         ref={ref}
         className="adsbygoogle"
@@ -83,7 +83,9 @@ const AdUnit = ({ slot, format = "auto", className = "", responsive = true, layo
       />
     </div>
   );
-};
+});
+
+AdUnit.displayName = "AdUnit";
 
 export default AdUnit;
 
