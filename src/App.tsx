@@ -229,6 +229,11 @@ const DiabloLordOfHatred2026    = lazy(() => import("./pages/posts/DiabloLordOfH
 const GtaViNovembro2026         = lazy(() => import("./pages/posts/GtaViNovembro2026"));
 const JJKTemporada42026         = lazy(() => import("./pages/posts/JJKTemporada42026"));
 const FreierenTemporada32026    = lazy(() => import("./pages/posts/FreierenTemporada32026"));
+// ── 30 Abr 2026 ───────────────────────────────────────────────────────
+const AnthropicMythosGoogle2026      = lazy(() => import("./pages/posts/AnthropicMythosGoogle2026"));
+const MagnificentSevenResultados2026 = lazy(() => import("./pages/posts/MagnificentSevenResultados2026"));
+const SuperMarioGalaxyMovie2026      = lazy(() => import("./pages/posts/SuperMarioGalaxyMovie2026"));
+const DragonBallBeerus2026           = lazy(() => import("./pages/posts/DragonBallBeerus2026"));
 // ── Páginas dedicadas das regiões de Pywel (Crimson Desert) ──
 const PailunePage              = lazy(() => import("./pages/regions/PailunePage"));
 const HernandPage              = lazy(() => import("./pages/regions/HernandPage"));
@@ -458,6 +463,11 @@ const App = () => (
                 <Route path="/post/naruto-especiais-confirmados-2026" element={<Suspense fallback={<div />}><NarutoEspeciais2026 /></Suspense>} />
                 <Route path="/post/big-three-naruto-bleach-one-piece-2026" element={<Suspense fallback={<div />}><BigThree2026 /></Suspense>} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                {/* ── 30 Abr 2026 ── */}
+                <Route path="/post/anthropic-mythos-modelo-ia-google-investimento-2026" element={<Suspense fallback={<PageLoader />}><AnthropicMythosGoogle2026 /></Suspense>} />
+                <Route path="/post/magnificent-seven-resultados-q1-2026-apple-tim-cook" element={<Suspense fallback={<PageLoader />}><MagnificentSevenResultados2026 /></Suspense>} />
+                <Route path="/post/super-mario-galaxy-movie-2026-bilheteria" element={<Suspense fallback={<PageLoader />}><SuperMarioGalaxyMovie2026 /></Suspense>} />
+                <Route path="/post/dragon-ball-super-beerus-anime-confirmado-2026" element={<Suspense fallback={<PageLoader />}><DragonBallBeerus2026 /></Suspense>} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
