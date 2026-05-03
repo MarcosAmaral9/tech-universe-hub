@@ -268,66 +268,111 @@ img {
   height: auto;
 }
 
-/* Mobile: table horizontal scroll */
-.prose table {
-  @apply w-full overflow-x-auto block;
+/* ── Article tables — responsive, consistente em mobile e desktop ─────────
+   Aplica-se a tabelas dentro de .prose e .not-prose. Usa scroll horizontal
+   apenas quando realmente necessário (conteúdo > largura disponível).      */
+
+/* Wrapper de scroll horizontal para tabelas em .prose */
+.prose .table-wrapper,
+.prose > div:has(> table),
+.not-prose .overflow-x-auto,
+.not-prose > div:has(> table) {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 
-/* ── Article tables — responsive, sem overflow, última coluna expande ───────
-   Cobre tabelas dentro de overflow-x-auto E tabelas soltas com .w-full.
-   Aplica-se a qualquer .not-prose, não só ao container direto.            */
-
-/* Seletor amplo: cobre overflow-x-auto aninhado qualquer nível + table.w-full */
+/* Estilo base: tabela sempre 100% do container, com layout automático */
+.prose table,
 .not-prose table {
   table-layout: auto;
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.875rem; /* text-sm */
+  line-height: 1.4;
 }
 
-/* Células: padding responsivo + quebra de palavra para evitar overflow */
+/* Cabeçalho: peso destacado, alinhamento à esquerda */
+.prose table thead th,
+.not-prose table thead th {
+  text-align: left;
+  font-weight: 600;
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--foreground));
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+/* Células: padding responsivo, quebra de palavra, alinhamento topo */
+.prose table th,
+.prose table td,
 .not-prose table th,
 .not-prose table td {
   vertical-align: top;
-  word-break: break-word;
-  overflow-wrap: anywhere;
-  /* Mobile-first: padding menor */
-  padding: 0.5rem 0.625rem;   /* py-2 px-2.5 */
-  /* Tipografia: sem nowrap para não forçar scroll horizontal */
-  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
   hyphens: auto;
   -webkit-hyphens: auto;
+  padding: 0.5rem 0.625rem; /* mobile */
+  border-bottom: 1px solid hsl(var(--border) / 0.5);
 }
 
-/* Desktop: padding maior */
+/* Linhas: hover sutil, última sem borda */
+.prose table tbody tr:last-child td,
+.not-prose table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.prose table tbody tr:hover,
+.not-prose table tbody tr:hover {
+  background-color: hsl(var(--muted) / 0.3);
+}
+
+/* Tablet/desktop: padding mais generoso e texto base */
 @media (min-width: 640px) {
+  .prose table,
+  .not-prose table {
+    font-size: 0.9375rem;
+  }
+  .prose table th,
+  .prose table td,
   .not-prose table th,
   .not-prose table td {
-    padding: 0.75rem 1rem;    /* py-3 px-4 */
+    padding: 0.75rem 1rem;
   }
 }
 
-/* Última coluna sempre absorve o espaço restante */
-.not-prose table th:last-child,
-.not-prose table td:last-child {
-  width: auto;
-}
-
-/* Colunas que não são a última: encolhem ao mínimo necessário no desktop */
-@media (min-width: 640px) {
-  .not-prose table th:not(:last-child),
-  .not-prose table td:not(:last-child) {
-    width: 1%;
-    white-space: nowrap;
-    /* Se o conteúdo for longo, permite quebra mesmo no desktop */
-    max-width: 14rem;
-    white-space: normal;
+/* Mobile pequeno: tipografia ainda mais compacta para evitar overflow */
+@media (max-width: 480px) {
+  .prose table,
+  .not-prose table {
+    font-size: 0.8125rem;
+  }
+  .prose table th,
+  .prose table td,
+  .not-prose table th,
+  .not-prose table td {
+    padding: 0.4375rem 0.5rem;
   }
 }
 
-/* Garante que overflow-x-auto seja o pai dos tables quando necessário */
-.not-prose > div > table,
-.not-prose > .overflow-x-auto > table {
-  min-width: 100%;
+/* Garante min-width útil dentro de wrapper com overflow-x-auto:
+   tabela mantém legibilidade mínima e ativa scroll só quando necessário */
+.overflow-x-auto > table {
+  min-width: max-content;
+}
+
+/* Cantos arredondados: aplica via wrapper com bg-card/rounded-xl */
+.not-prose .overflow-x-auto {
+  border-radius: 0.75rem;
+  border: 1px solid hsl(var(--border));
+  background-color: hsl(var(--card));
+}
+
+/* Remove background duplicado da própria tabela quando wrapper já tem */
+.not-prose .overflow-x-auto > table {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
 }
 
 /* Focus visible: accessibility ring */
