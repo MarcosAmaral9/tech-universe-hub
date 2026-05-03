@@ -404,7 +404,7 @@ const CrimsonDesertMapa = () => {
         </p>
 
         <h2>Tamanho e Comparação</h2>
-        <div className="not-prose my-4 w-full">
+        <div className="not-prose my-4 w-full overflow-x-auto">
           <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead>
               <tr className="bg-secondary">
