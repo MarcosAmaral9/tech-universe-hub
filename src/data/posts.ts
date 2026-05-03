@@ -144,10 +144,91 @@ import switch2GuiaImg              from "@/assets/nintendo-switch-2-guia-complet
 import zeldaOcarinaRemakeImg       from "@/assets/zelda-ocarina-of-time-remake-switch-2-2026.webp";
 import narutoEspeciaisImg          from "@/assets/naruto-especiais-confirmados-2026.webp";
 import bigThreeImg                 from "@/assets/big-three-naruto-bleach-one-piece-2026.webp";
+import anthropicMythosImg          from "@/assets/anthropic-mythos-google-investimento-2026.webp";
+import magnificentSevenImg         from "@/assets/magnificent-seven-resultados-q1-2026-apple-tim-cook.webp";
+import marioGalaxyMovieImg         from "@/assets/super-mario-galaxy-movie-2026-bilheteria.webp";
+import dragonBallBeerusImg         from "@/assets/dragon-ball-super-beerus-anime-confirmado-2026.webp";
 
 export const blogPosts: BlogPost[] = [
 
-     // ── 20 Abr 2026 — IA ──────────────────────────────────────────────
+  // ── 30 Abr 2026 — IA ──────────────────────────────────────────────
+  {
+    id: "182",
+    slug: "anthropic-mythos-modelo-ia-google-investimento-2026",
+    title: "Google Investe US$ 40 Bilhões na Anthropic e o Modelo Mythos Chega: A Resposta ao Domínio da OpenAI",
+    excerpt: "Google compromete US$ 40 bilhões na Anthropic a valuation de US$ 350 bilhões. Na mesma semana, a Anthropic lança o Mythos — modelo mais poderoso da empresa, com capacidades em cibersegurança tão avançadas que o acesso foi restrito a parceiros selecionados. O que muda para usuários do Claude.",
+    content: "",
+    category: "ia",
+    subtopic: "mercado",
+    image: anthropicMythosImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-30",
+    readTime: "13 min",
+    faq: [
+      { q: "Quanto o Google investiu na Anthropic?", a: "O Google comprometeu até US$ 40 bilhões na Anthropic — US$ 10 bilhões imediatos e mais US$ 30 bilhões condicionados a metas de desempenho — a uma avaliação de US$ 350 bilhões." },
+      { q: "O que é o modelo Mythos da Anthropic?", a: "Mythos é o modelo mais poderoso já desenvolvido pela Anthropic, com capacidades excepcionais em cibersegurança. O acesso foi restringido a parceiros corporativos selecionados enquanto a Anthropic conduz avaliações de segurança." },
+      { q: "Qual a diferença entre o investimento do Google na Anthropic e o da SoftBank na OpenAI?", a: "OpenAI: US$ 40B da SoftBank, valuation US$ 300B, infra Azure. Anthropic: US$ 40B do Google (US$ 10B imediato + US$ 30B condicional), valuation US$ 350B, infra Google Cloud." },
+    ],
+  },
+  // ── 30 Abr 2026 — Invest ─────────────────────────────────────────
+  {
+    id: "183",
+    slug: "magnificent-seven-resultados-q1-2026-apple-tim-cook",
+    title: "Semana Mag-7: MSFT, Meta, Google e Amazon Reportam Hoje — e Tim Cook Sai da Apple em Setembro",
+    excerpt: "A semana mais importante da temporada de resultados: Microsoft, Meta, Alphabet e Amazon reportaram ontem (29/04). Capex combinado de US$ 620B+ em IA em 2026. E a surpresa: Tim Cook anunciou saída da Apple em 1º de setembro, sucedido por John Ternus.",
+    content: "",
+    category: "invest",
+    subtopic: "carteira",
+    image: magnificentSevenImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-30",
+    readTime: "14 min",
+    faq: [
+      { q: "Tim Cook está saindo da Apple?", a: "Sim. Tim Cook anunciou que deixará o cargo de CEO da Apple em 1º de setembro de 2026. Seu sucessor será John Ternus. Cook continuará como Chairman do Conselho de Administração." },
+      { q: "Qual o capex combinado das Mag-7 em 2026?", a: "Capex combinado estimado de US$ 620–650 bilhões em 2026. Amazon ~US$ 200B, Alphabet ~US$ 175–185B, Microsoft ~US$ 130B e Meta ~US$ 115–135B." },
+      { q: "Como os resultados do Mag-7 afetam o IVVB11?", a: "As Magnificent Seven representam ~35% do S&P 500. Resultados fortes valorizam o IVVB11. Com o dólar em R$ 5,01, o momento é favorável para exposição internacional." },
+    ],
+  },
+  // ── 30 Abr 2026 — Geek ──────────────────────────────────────────────
+  {
+    id: "184",
+    slug: "super-mario-galaxy-movie-2026-bilheteria",
+    title: "Super Mario Galaxy: O Filme Abre com US$ 372 Milhões Mundiais — Review Completo e o Futuro do Nintendo Cinematic Universe",
+    excerpt: "A segunda maior abertura da franquia Mario: US$ 372 milhões no fim de semana de estreia. Rosalina como protagonista emocional, Jack Black como Bowser de volta, animação deslumbrante das galáxias. Rotten Tomatoes 82% (vs 59% do primeiro).",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: marioGalaxyMovieImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-30",
+    readTime: "14 min",
+    faq: [
+      { q: "Quanto Super Mario Galaxy: O Filme arrecadou na abertura?", a: "US$ 372 milhões mundiais no fim de semana de estreia — US$ 142M domésticos e US$ 230M internacionais (incluindo US$ 48M no Japão)." },
+      { q: "Qual a nota de Super Mario Galaxy: O Filme?", a: "Rotten Tomatoes: 82% críticos e 96% público. Metacritic: 71/100. CinemaScore: A. IGN: 8/10." },
+      { q: "O filme é baseado no jogo Super Mario Galaxy?", a: "É uma adaptação livre do jogo de 2007 para o Wii. Mario viaja de galáxia em galáxia com Rosalina e os Lumas para resgatar Peach de Bowser." },
+      { q: "Quais os próximos filmes do Nintendo Cinematic Universe?", a: "Donkey Kong: O Filme (2027, com Seth Rogen) está confirmado. Kirby: O Filme está em desenvolvimento. Rumores apontam para um crossover Zelda/Mario." },
+    ],
+  },
+  // ── 30 Abr 2026 — Otaku ─────────────────────────────────────────────
+  {
+    id: "185",
+    slug: "dragon-ball-super-beerus-anime-confirmado-2026",
+    title: "Dragon Ball Super: Arco do Beerus Confirmado como Anime em 2026 — Tudo que Sabemos sobre o Retorno da Franquia",
+    excerpt: "No Dragon Ball Battle Hour 2026 (26–27 de abril), a Toei Animation confirmou: o Arco de Beerus do mangá de DBS vai ser adaptado como anime. Primeira história inédita que vai além do anime de 2015–2018. Estreia estimada em 2027.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: dragonBallBeerusImg,
+    author: "VICIO<CODE>",
+    date: "2026-04-30",
+    readTime: "15 min",
+    faq: [
+      { q: "O novo anime de Dragon Ball Super foi confirmado?", a: "Sim. No Dragon Ball Battle Hour 2026, a Toei Animation confirmou que o Arco de Beerus do mangá de DBS está sendo adaptado como anime. Toyotarou supervisionará. Estimativa: 2027." },
+      { q: "Qual é o Arco de Beerus em Dragon Ball Super?", a: "É o arco mais recente do mangá de DBS (capítulo 88 em diante), ainda em publicação mensal. Gira em torno de Beerus como Deus da Destruição e sua relação com Zeno-sama." },
+      { q: "Dragon Ball Daima foi o último trabalho de Toriyama?", a: "Sim. Dragon Ball Daima (2024–2025) foi desenvolvido com participação direta de Akira Toriyama, que faleceu em 1º de março de 2024." },
+      { q: "Onde assistir Dragon Ball Super para se preparar?", a: "Dragon Ball Super (2015–2018, 131 episódios) está disponível no Crunchyroll dublado e legendado. O mangá está completo no Manga Plus gratuito." },
+    ],
+  },
 
   // ── 25 Abr 2026 — IA ──────────────────────────────────────────────
   {
