@@ -234,6 +234,10 @@ const AnthropicMythosGoogle2026      = lazy(() => import("./pages/posts/Anthropi
 const MagnificentSevenResultados2026 = lazy(() => import("./pages/posts/MagnificentSevenResultados2026"));
 const SuperMarioGalaxyMovie2026      = lazy(() => import("./pages/posts/SuperMarioGalaxyMovie2026"));
 const DragonBallBeerus2026           = lazy(() => import("./pages/posts/DragonBallBeerus2026"));
+// ── 04 Mai 2026 (Finanças G1) ─────────────────────────────────────────
+const PnadDesempregoMarco2026        = lazy(() => import("./pages/posts/PnadDesempregoMarco2026"));
+const CopomSelic145Maio2026          = lazy(() => import("./pages/posts/CopomSelic145Maio2026"));
+const PetroleoBrent125Ormuz2026      = lazy(() => import("./pages/posts/PetroleoBrent125Ormuz2026"));
 // ── Páginas dedicadas das regiões de Pywel (Crimson Desert) ──
 const PailunePage              = lazy(() => import("./pages/regions/PailunePage"));
 const HernandPage              = lazy(() => import("./pages/regions/HernandPage"));
@@ -468,6 +472,10 @@ const App = () => (
                 <Route path="/post/magnificent-seven-resultados-q1-2026-apple-tim-cook" element={<Suspense fallback={<PageLoader />}><MagnificentSevenResultados2026 /></Suspense>} />
                 <Route path="/post/super-mario-galaxy-movie-2026-bilheteria" element={<Suspense fallback={<PageLoader />}><SuperMarioGalaxyMovie2026 /></Suspense>} />
                 <Route path="/post/dragon-ball-super-beerus-anime-confirmado-2026" element={<Suspense fallback={<PageLoader />}><DragonBallBeerus2026 /></Suspense>} />
+                {/* ── 04 Mai 2026 (Finanças G1) ── */}
+                <Route path="/post/pnad-desemprego-61-marco-2026" element={<Suspense fallback={<PageLoader />}><PnadDesempregoMarco2026 /></Suspense>} />
+                <Route path="/post/copom-selic-1450-corte-abril-2026" element={<Suspense fallback={<PageLoader />}><CopomSelic145Maio2026 /></Suspense>} />
+                <Route path="/post/petroleo-brent-125-bloqueio-ormuz-2026" element={<Suspense fallback={<PageLoader />}><PetroleoBrent125Ormuz2026 /></Suspense>} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
