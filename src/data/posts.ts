@@ -148,8 +148,70 @@ import anthropicMythosImg          from "@/assets/anthropic-mythos-google-invest
 import magnificentSevenImg         from "@/assets/magnificent-seven-resultados-q1-2026-apple-tim-cook.webp";
 import marioGalaxyMovieImg         from "@/assets/super-mario-galaxy-movie-2026-bilheteria.webp";
 import dragonBallBeerusImg         from "@/assets/dragon-ball-super-beerus-anime-confirmado-2026.webp";
+import pnadDesempregoImg           from "@/assets/pnad-desemprego-marco-2026.webp";
+import copomSelic145Img            from "@/assets/copom-selic-145-abril-2026.webp";
+import petroleoBrent125Img         from "@/assets/petroleo-brent-125-ormuz-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+
+  // ── 04 Mai 2026 — Finanças (G1) ─────────────────────────────────────
+  {
+    id: "186",
+    slug: "pnad-desemprego-61-marco-2026",
+    title: "PNAD Março 2026: Desemprego Sobe a 6,1%, Mas Mantém Mínima Histórica — O Que o Investidor Precisa Saber",
+    excerpt: "IBGE divulgou a PNAD do trimestre até março: desemprego em 6,1% (mínima histórica para o período), 6,6 milhões de desocupados, renda média recorde de R$ 3.722 e massa salarial em R$ 374,8 bilhões. Veja os impactos para Selic, bolsa e sua carteira.",
+    content: "",
+    category: "invest",
+    subtopic: "mercado",
+    image: pnadDesempregoImg,
+    author: "VICIO<CODE>",
+    date: "2026-05-04",
+    readTime: "12 min",
+    faq: [
+      { q: "Qual a taxa de desemprego no trimestre até março de 2026?", a: "6,1%, segundo a PNAD Contínua do IBGE divulgada em 30/04/2026 — o menor nível registrado para esse período do ano desde o início da série, em 2012." },
+      { q: "Quantas pessoas estão desempregadas no Brasil?", a: "6,6 milhões de pessoas desocupadas — alta de 19,6% no trimestre (+1,1 milhão) e queda de 13% em 12 meses (-987 mil)." },
+      { q: "Qual é o rendimento médio do trabalhador brasileiro?", a: "R$ 3.722 de rendimento médio habitual — recorde da série histórica, com alta de 1,6% no trimestre e 5,5% em 12 meses. A massa de rendimentos somou R$ 374,8 bilhões." },
+      { q: "Por que o desemprego subiu no trimestre?", a: "É um movimento sazonal típico do início do ano: fim de contratos temporários no comércio (vendedores, balconistas) e na rede pública municipal de educação fundamental." },
+    ],
+  },
+  {
+    id: "187",
+    slug: "copom-selic-1450-corte-abril-2026",
+    title: "Copom Corta Selic para 14,50% — Segundo Corte Consecutivo em Meio à Guerra do Oriente Médio",
+    excerpt: "Banco Central reduz a Selic em 0,25 pp, de 14,75% para 14,50% ao ano. Segundo corte consecutivo do ciclo. Comunicado pede 'serenidade e cautela' diante do choque do petróleo. Veja o impacto em renda fixa, ações, FIIs e câmbio.",
+    content: "",
+    category: "invest",
+    subtopic: "renda-fixa",
+    image: copomSelic145Img,
+    author: "VICIO<CODE>",
+    date: "2026-05-04",
+    readTime: "14 min",
+    faq: [
+      { q: "Qual é a nova taxa Selic?", a: "14,50% ao ano. O Copom reduziu a Selic em 0,25 ponto percentual na reunião de 29/04/2026 — segunda redução consecutiva do ciclo de afrouxamento monetário." },
+      { q: "Por que o corte foi de apenas 0,25 pp?", a: "A guerra no Oriente Médio está pressionando o petróleo (Brent acima de US$ 125) e os combustíveis no Brasil. O Focus projeta IPCA de 4,86% para 2026, acima do teto da meta (4,5%)." },
+      { q: "O que disse o comunicado do Copom?", a: "O Comitê reafirmou 'serenidade e cautela' na condução da política monetária e disse que os próximos passos vão depender da evolução do conflito no Oriente Médio e seus efeitos sobre os preços." },
+      { q: "Qual a meta de inflação atual?", a: "Desde 2025, com a meta contínua, o objetivo é 3% e considera-se cumprida se o IPCA oscilar entre 1,5% e 4,5%." },
+    ],
+  },
+  {
+    id: "188",
+    slug: "petroleo-brent-125-bloqueio-ormuz-2026",
+    title: "Brent Ultrapassa US$ 125: Bloqueio em Ormuz, Combustível Mais Caro e o Que Fazer com Petrobras (PETR4)",
+    excerpt: "Brent saltou +6,2% e ultrapassou US$ 125/barril após Trump indicar que manterá o bloqueio naval ao Estreito de Ormuz. Maior nível desde a crise de 2008. Veja o impacto na inflação brasileira, em PETR4, PRIO3, aéreas e na sua carteira.",
+    content: "",
+    category: "invest",
+    subtopic: "mercado",
+    image: petroleoBrent125Img,
+    author: "VICIO<CODE>",
+    date: "2026-05-04",
+    readTime: "13 min",
+    faq: [
+      { q: "Por que o petróleo Brent subiu para US$ 125?", a: "Trump indicou a empresários da indústria petrolífera que pretende manter o bloqueio naval aos portos iranianos. O colapso das negociações EUA-Irã tirou a esperança de reabertura rápida do Estreito de Ormuz." },
+      { q: "Qual o impacto do petróleo caro no Brasil?", a: "Combustíveis mais caros (gasolina, diesel, GLP), pressão inflacionária no IPCA, custos elevados na construção civil e logística. Por outro lado, beneficia diretamente Petrobras (PETR4) e PetroRio (PRIO3)." },
+      { q: "Vale a pena comprar PETR4 com Brent a US$ 125?", a: "PETR4 se beneficia diretamente — receita em dólar e custos em real. Cenário sustenta dividend yield projetado acima de 13–15%. Riscos: tabelamento político, correção do petróleo, política de dividendos." },
+      { q: "O que é o Estreito de Ormuz e por que é importante?", a: "É a passagem marítima entre o Golfo Pérsico e o Mar Arábico por onde escoa cerca de 20% do petróleo mundial. O bloqueio dos EUA aos portos iranianos restringe esse fluxo e pressiona os preços." },
+    ],
+  },
 
   // ── 30 Abr 2026 — IA ──────────────────────────────────────────────
   {
