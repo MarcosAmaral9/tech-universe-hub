@@ -144,7 +144,26 @@ const TermsPage = () => {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-display text-xl font-bold mb-4">10. Limitação de Responsabilidade</h2>
+            <h2 className="font-display text-xl font-bold mb-4">10. Newsletter</h2>
+            <p className="text-muted-foreground mb-4">
+              A inscrição na newsletter do VICIO&lt;CODE&gt; é gratuita e opcional. Ao se inscrever, você concorda que:
+            </p>
+            <ul className="list-disc pl-6 text-muted-foreground space-y-2">
+              <li>Fornecerá um e-mail válido e de sua propriedade</li>
+              <li>Receberá comunicações periódicas (geralmente semanais) com curadoria de artigos publicados no site</li>
+              <li>Pode escolher categorias de interesse (IA, Finanças, Geek, Otaku) para personalizar o conteúdo recebido</li>
+              <li>Pode cancelar a inscrição a qualquer momento, sem custo, através do link presente em cada e-mail</li>
+              <li>Os e-mails enviados não conterão conteúdo promocional de terceiros nem mensagens enganosas (spam)</li>
+              <li>O tratamento dos seus dados segue o que está descrito na nossa <Link to="/privacidade" className="text-primary hover:underline">Política de Privacidade</Link></li>
+            </ul>
+            <p className="text-muted-foreground mt-4">
+              Reservamo-nos o direito de descontinuar a newsletter ou alterar sua frequência a qualquer momento, 
+              sem aviso prévio.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="font-display text-xl font-bold mb-4">11. Limitação de Responsabilidade</h2>
             <p className="text-muted-foreground mb-4">
               O VICIO&lt;CODE&gt; não se responsabiliza por:
             </p>
