@@ -76,8 +76,16 @@ const NewsletterSignup = ({ variant = "inline", categories = [], showAfterMs = 6
     try {
       const { error } = await (supabase as any)
         .from("newsletter_subscribers")
-        .upsert({ email: email.toLowerCase().trim(), categories: [...selectedCats] }, { onConflict: "email" });
-      if (error) throw error;
+        .insert({ email: email.toLowerCase().trim(), categories: [...selectedCats] });
+      if (error) {
+        const msg = error.message || "";
+        // Duplicate email = already subscribed → treat as success
+        if (msg.includes("duplicate") || msg.includes("unique") || (error as any).code === "23505") {
+          setStatus("success");
+          return;
+        }
+        throw error;
+      }
       setStatus("success");
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : String(err);
