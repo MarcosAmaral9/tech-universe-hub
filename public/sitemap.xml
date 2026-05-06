@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Sitemap do VICIO<CODE> — viciocode.com
-  Gerado em: 2026-05-05
-  Total de URLs: 172 (24 páginas + 148 posts)
+  Gerado em: 2026-05-06
+  Total de URLs: 176 (24 páginas + 152 posts)
 -->
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -1039,5 +1039,29 @@
     <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/gpt-5-ia-trabalhador-digital-autonomo-2026</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/berkshire-hathaway-greg-abel-2026-sem-buffett</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/elden-ring-nightreign-guia-completo-2026</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/kaiju-no-8-temporada-2-guia-arco-final-2026</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
 </urlset>
