@@ -177,7 +177,7 @@ const TermsPage = () => {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-display text-xl font-bold mb-4">11. Alterações nos Termos</h2>
+            <h2 className="font-display text-xl font-bold mb-4">12. Alterações nos Termos</h2>
             <p className="text-muted-foreground">
               Reservamo-nos o direito de modificar estes Termos e Condições a qualquer momento. 
               Alterações serão publicadas nesta página com a data de atualização. 
