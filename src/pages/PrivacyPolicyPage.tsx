@@ -197,7 +197,7 @@ const PrivacyPolicyPage = () => {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-display text-xl font-bold mb-4">9. Contato</h2>
+            <h2 className="font-display text-xl font-bold mb-4">11. Contato</h2>
             <p className="text-muted-foreground">
               Se você tiver dúvidas sobre esta Política de Privacidade, entre em contato 
               através da nossa <Link to="/contato" className="text-primary hover:underline">página de contato</Link> ou 
