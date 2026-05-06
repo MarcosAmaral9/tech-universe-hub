@@ -244,6 +244,11 @@ const HernandPage              = lazy(() => import("./pages/regions/HernandPage"
 const DemenissPage             = lazy(() => import("./pages/regions/DemenissPage"));
 const DelesyiaPage             = lazy(() => import("./pages/regions/DelesyiaPage"));
 const CrimsonDesertRegionPage  = lazy(() => import("./pages/regions/CrimsonDesertRegionPage"));
+// ── 04 Mai 2026 ───────────────────────────────────────────────────────
+const GptTrabalhadorDigital2026    = lazy(() => import("./pages/posts/GptTrabalhadorDigital2026"));
+const BerkshireAbelMeeting2026     = lazy(() => import("./pages/posts/BerkshireAbelMeeting2026"));
+const EldenRingNightreign2026      = lazy(() => import("./pages/posts/EldenRingNightreign2026"));
+const KaijuNo8Temporada22026       = lazy(() => import("./pages/posts/KaijuNo8Temporada22026"));
  
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -476,6 +481,11 @@ const App = () => (
                 <Route path="/post/pnad-desemprego-61-marco-2026" element={<Suspense fallback={<PageLoader />}><PnadDesempregoMarco2026 /></Suspense>} />
                 <Route path="/post/copom-selic-1450-corte-abril-2026" element={<Suspense fallback={<PageLoader />}><CopomSelic145Maio2026 /></Suspense>} />
                 <Route path="/post/petroleo-brent-125-bloqueio-ormuz-2026" element={<Suspense fallback={<PageLoader />}><PetroleoBrent125Ormuz2026 /></Suspense>} />
+                 {/* ── 04 Mai 2026 ── */}
+                <Route path="/post/gpt-5-ia-trabalhador-digital-autonomo-2026" element={<Suspense fallback={<div />}><GptTrabalhadorDigital2026 /></Suspense>} />
+                <Route path="/post/berkshire-hathaway-greg-abel-2026-sem-buffett" element={<Suspense fallback={<div />}><BerkshireAbelMeeting2026 /></Suspense>} />
+                <Route path="/post/elden-ring-nightreign-guia-completo-2026" element={<Suspense fallback={<div />}><EldenRingNightreign2026 /></Suspense>} />
+                <Route path="/post/kaiju-no-8-temporada-2-guia-arco-final-2026" element={<Suspense fallback={<div />}><KaijuNo8Temporada22026 /></Suspense>} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
