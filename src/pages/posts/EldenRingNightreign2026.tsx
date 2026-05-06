@@ -40,7 +40,7 @@ const EldenRingNightreign2026 = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high" src={heroImg} alt="Elden Ring Nightreign guia completo classes expedições bosses DLC 2026" loading="eager" decoding="async" className="w-full h-full object-cover" />
+        <img fetchPriority="high" src={heroImg} alt="Elden Ring Nightreign guia completo classes expedições bosses DLC 2026" loading="eager" decoding="async" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">

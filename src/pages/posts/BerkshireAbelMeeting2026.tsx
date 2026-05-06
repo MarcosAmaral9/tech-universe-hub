@@ -40,7 +40,7 @@ const BerkshireAbelMeeting2026 = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high" src={heroImg} alt="Berkshire Hathaway 2026 Greg Abel primeiro meeting CEO sem Warren Buffett" loading="eager" decoding="async" className="w-full h-full object-cover" />
+        <img fetchPriority="high" src={heroImg} alt="Berkshire Hathaway 2026 Greg Abel primeiro meeting CEO sem Warren Buffett" loading="eager" decoding="async" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
