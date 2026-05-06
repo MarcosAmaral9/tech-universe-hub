@@ -186,7 +186,7 @@ const TermsPage = () => {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-display text-xl font-bold mb-4">12. Contato</h2>
+            <h2 className="font-display text-xl font-bold mb-4">13. Contato</h2>
             <p className="text-muted-foreground">
               Para dúvidas sobre estes Termos e Condições, entre em contato através da 
               nossa <Link to="/contato" className="text-primary hover:underline">página de contato</Link> ou 
