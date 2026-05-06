@@ -11,7 +11,7 @@ const PrivacyPolicyPage = () => {
           Política de <span className="text-gradient">Privacidade</span>
         </h1>
         <p className="text-muted-foreground mb-8">
-          Última atualização: 09 de Março de 2026
+          Última atualização: 06 de Maio de 2026
         </p>
 
         <div className="prose prose-lg dark:prose-invert">
@@ -153,7 +153,41 @@ const PrivacyPolicyPage = () => {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-display text-xl font-bold mb-4">8. Aplicativo (PWA)</h2>
+            <h2 className="font-display text-xl font-bold mb-4">9. Newsletter</h2>
+            <p className="text-muted-foreground mb-4">
+              Ao se inscrever na newsletter do VICIO&lt;CODE&gt;, você consente com o seguinte uso dos seus dados:
+            </p>
+            <ul className="list-disc pl-6 text-muted-foreground space-y-2">
+              <li>
+                <strong>Dados coletados:</strong> seu endereço de e-mail e, opcionalmente, as categorias de interesse 
+                escolhidas (Inteligência Artificial, Finanças, Mundo Geek, Mundo Otaku).
+              </li>
+              <li>
+                <strong>Finalidade:</strong> envio periódico (geralmente semanal) de uma seleção dos melhores artigos 
+                publicados no site, alinhados às suas preferências de categorias.
+              </li>
+              <li>
+                <strong>Armazenamento:</strong> seu e-mail é armazenado de forma segura em nosso banco de dados na nuvem (Lovable Cloud), 
+                com políticas de segurança em nível de linha (RLS) que impedem o acesso público à lista de inscritos.
+              </li>
+              <li>
+                <strong>Compartilhamento:</strong> não compartilhamos, vendemos ou cedemos seu e-mail a terceiros. 
+                Os envios são realizados exclusivamente pela equipe do VICIO&lt;CODE&gt;.
+              </li>
+              <li>
+                <strong>Cancelamento:</strong> você pode cancelar a inscrição a qualquer momento clicando no link 
+                de descadastramento presente em cada e-mail enviado, ou solicitando a remoção pela nossa 
+                <Link to="/contato" className="text-primary hover:underline"> página de contato</Link>.
+              </li>
+              <li>
+                <strong>Sem spam:</strong> garantimos que não enviaremos conteúdo promocional de terceiros 
+                nem mensagens não solicitadas.
+              </li>
+            </ul>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="font-display text-xl font-bold mb-4">10. Aplicativo (PWA)</h2>
             <p className="text-muted-foreground mb-4">
               O VICIO&lt;CODE&gt; está disponível como Progressive Web App (PWA). O app utiliza 
               as mesmas políticas de privacidade e coleta de dados descritas acima. Funcionalidades 
@@ -163,7 +197,7 @@ const PrivacyPolicyPage = () => {
           </section>
 
           <section className="mb-8">
-            <h2 className="font-display text-xl font-bold mb-4">9. Contato</h2>
+            <h2 className="font-display text-xl font-bold mb-4">11. Contato</h2>
             <p className="text-muted-foreground">
               Se você tiver dúvidas sobre esta Política de Privacidade, entre em contato 
               através da nossa <Link to="/contato" className="text-primary hover:underline">página de contato</Link> ou 
