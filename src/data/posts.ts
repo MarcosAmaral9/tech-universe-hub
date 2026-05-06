@@ -1,5 +1,9 @@
 import { BlogPost, Category } from "@/types/blog";
 
+import gptTrabalhadorImg          from "@/assets/gpt-5-trabalhador-digital-autonomo-2026.webp";
+import berkshireAbelImg           from "@/assets/berkshire-hathaway-greg-abel-2026-sem-buffett.webp";
+import eldenNightreign2026Img     from "@/assets/elden-ring-nightreign-guia-completo-2026.webp";
+import kaijuNo8T2Img              from "@/assets/kaiju-no-8-temporada-2-guia-arco-final-2026.webp";
 import mangaManhwaManhuaImg from "@/assets/manga-manhwa-manhua.webp";
 import manhwaVsManuaImg from "@/assets/manhwa-vs-manhua.webp";
 import systemManhwaImg from "@/assets/system-manhwa-hero.webp";
@@ -152,8 +156,93 @@ import pnadDesempregoImg           from "@/assets/pnad-desemprego-marco-2026.web
 import copomSelic145Img            from "@/assets/copom-selic-145-abril-2026.webp";
 import petroleoBrent125Img         from "@/assets/petroleo-brent-125-ormuz-2026.webp";
 
+
 export const blogPosts: BlogPost[] = [
 
+  
+ // ── 04 Mai 2026 — IA ──────────────────────────────────────────────
+  {
+    id: "189",
+    slug: "gpt-5-ia-trabalhador-digital-autonomo-2026",
+    title: "GPT-5.4 Superou Humanos em Produtividade: A IA que Executa Trabalho Real no Computador como um Funcionário",
+    excerpt: "No benchmark OSWorld-V, o GPT-5.4 atingiu 75% — superando a linha de base humana de 72,4%. É a primeira vez que uma IA supera profissionais em tarefas reais de computador: Excel, navegação web, formulários, código. O que muda para analistas, assistentes jurídicos, devs e o mercado de trabalho.",
+    content: "",
+    category: "ia",
+    subtopic: "agentes",
+    image: gptTrabalhadorImg,
+    author: "VICIO<CODE>",
+    date: "2026-05-04",
+    readTime: "14 min",
+    faq: [
+      { q: "O que é o OSWorld-V e por que ele importa?", a: "O OSWorld-V é um benchmark que simula um computador Windows ou macOS real com aplicativos instalados (Excel, Chrome, VS Code, Slack) e pede ao agente que complete tarefas como um trabalhador humano. Diferente de benchmarks de conhecimento, ele mede execução real — o agente vê a tela, clica, digita e arrastar janelas como um humano. O score de 75% do GPT-5.4 supera pela primeira vez a linha de base humana de 72,4%." },
+      { q: "O GPT-5.4 pode usar meu computador sem autorização?", a: "Não. O modo 'Operator' do GPT-5.4 exige permissão explícita do usuário antes de controlar o computador. Você deve autorizar o acesso e pode revogar a qualquer momento. O agente não tem acesso remoto — funciona como um programa no próprio computador do usuário, similar a um software de automação." },
+      { q: "Quais profissões são mais impactadas pelo GPT-5.4?", a: "Funções de execução repetitiva em computador: analistas de dados básicos, assistentes administrativos, suporte nível 1 e processamento de documentos. O papel humano migra para supervisão, validação e refinamento do trabalho do agente. Criatividade, julgamento estratégico e relacionamento seguem sendo domínios humanos." },
+      { q: "Como acessar o GPT-5.4 no Brasil?", a: "Via ChatGPT Plus/Pro (US$ 20–200/mês) com acesso gradual ao modo Operator via lista de espera. Desenvolvedores podem acessar via OpenAI API com cobrança por token. Para empresas, ChatGPT Enterprise com GPT-5.4 chega no Q2–Q3 2026." },
+    ],
+  },
+ 
+  // ── 04 Mai 2026 — Invest ─────────────────────────────────────────
+  {
+    id: "190",
+    slug: "berkshire-hathaway-greg-abel-2026-sem-buffett",
+    title: "Berkshire Hathaway 2026: Greg Abel Assume, US$ 397 Bilhões em Caixa e a Era Pós-Buffett Começa",
+    excerpt: "2 de maio de 2026: primeiro encontro anual de acionistas da Berkshire sem Buffett como CEO. Greg Abel presidiu com US$ 397B em caixa, lucro que dobrou no Q1 e um deepfake de Buffett para alertar sobre riscos de IA. O que muda na maior holding do mundo e o que significa para investidores brasileiros.",
+    content: "",
+    category: "invest",
+    subtopic: "carteira",
+    image: berkshireAbelImg,
+    author: "VICIO<CODE>",
+    date: "2026-05-04",
+    readTime: "14 min",
+    faq: [
+      { q: "Quem é Greg Abel e por que ele substituiu Buffett?", a: "Greg Abel, 63 anos, é engenheiro canadense que liderou as operações de energia da Berkshire por décadas. Foi designado por Buffett como sucessor em 2021 e assumiu como CEO em janeiro de 2026. Specializado em utilities e energia — área onde construiu a BHE (Berkshire Hathaway Energy). Buffett permanece como Chairman do Conselho." },
+      { q: "Por que a Berkshire tem US$ 397 bilhões em caixa e não investe?", a: "Segundo Abel (e a filosofia de Buffett que ele mantém), as valuations atuais do mercado não justificam deploy massivo de capital. Com o S&P 500 a 22× lucros, pagar múltiplos altos não faz sentido para investimento em valor. O caixa também funciona como vantagem competitiva em crises — quando ativos ficam baratos, a Berkshire pode agir rapidamente." },
+      { q: "O que foi o deepfake de Buffett no meeting de 2026?", a: "Abel abriu a sessão de perguntas projetando nas telas um vídeo deepfake de Warren Buffett — virtualizado em terno — fazendo perguntas sobre a Berkshire. O objetivo foi demonstrar para 20.000 acionistas os riscos reais da IA. O verdadeiro Buffett, na plateia, comentou: 'It's scary'." },
+      { q: "Como investir na Berkshire Hathaway pelo Brasil?", a: "Via BERK34 — o BDR da classe B da Berkshire negociado na B3. Cada BDR representa uma fração de 1 ação classe B. Disponível em qualquer corretora brasileira que ofereça BDRs. Alternativamente, via conta em corretora americana (Interactive Brokers) comprando BRK.B diretamente." },
+    ],
+  },
+ 
+  // ── 04 Mai 2026 — Geek ──────────────────────────────────────────────
+  {
+    id: "191",
+    slug: "elden-ring-nightreign-guia-completo-2026",
+    title: "Elden Ring Nightreign: Guia Completo — Classes, Expedições, Bosses Noturnos e Forsaken Hollows DLC",
+    excerpt: "Elden Ring Nightreign (mai 2025) recebeu o DLC Forsaken Hollows em maio de 2026 com 2 novas classes, 3 Nightlords e um novo bioma subterrâneo. Guia completo das 10 classes, mecânicas de Expedição, os 5 Nightlords mais difíceis e se vale a pena comprar o DLC.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: eldenNightreign2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-05-04",
+    readTime: "16 min",
+    faq: [
+      { q: "O que é Elden Ring Nightreign?", a: "Elden Ring Nightreign é um spin-off cooperativo do universo de Elden Ring com estrutura roguelite, lançado em maio de 2025 pela FromSoftware. Partidas para até 3 jogadores com duração de ~40 minutos, divididas em dois dias de exploração e dois bosses noturnos. Cada Expedição começa do zero — sem progressão de personagem entre rodadas." },
+      { q: "Quais são as classes de Elden Ring Nightreign?", a: "8 classes no jogo base: Wylder (versátil), Guardian (tank), Revenant (mobilidade + ressurreição), Recluse (magia), Ironeye (arqueiro), Raider (berserker high-risk), Duchess (suporte/veneno), Stormcaller (AoE elétrico). DLC Forsaken Hollows adiciona Ashbringer (fogo) e Veilstalker (stealth assassino)." },
+      { q: "Qual é o Nightlord mais difícil de Elden Ring Nightreign?", a: "Gaping Jaw é considerado o mais difícil do jogo base — boss dragônico cujos ataques de mordida cobrem metade da arena. O parry é quase obrigatório para causar dano significativo. Do DLC, Veilserpent é o mais frustrante, ficando invisível por até 20 segundos." },
+      { q: "Vale a pena comprar o DLC Forsaken Hollows?", a: "Sim, se você jogou o jogo base e quer mais conteúdo. O bioma das Forsaken Hollows é o mais elaborado do jogo, os 3 novos Nightlords são bem recebidos e as 2 novas classes adicionam muita variedade. Não recomendado como ponto de entrada — jogue o jogo base primeiro." },
+    ],
+  },
+ 
+  // ── 04 Mai 2026 — Otaku ─────────────────────────────────────────────
+  {
+    id: "192",
+    slug: "kaiju-no-8-temporada-2-guia-arco-final-2026",
+    title: "Kaiju No. 8: Guia Completo da Temporada 2 e Arco Final Confirmado — O Anime de Monstros Mais Quente de 2026",
+    excerpt: "Kaiju No. 8 está na Temporada 2 na Spring Season 2026 (Production I.G) e o mangá confirmou no Jump Festa que está no arco final. 45 milhões de cópias em circulação. Guia completo: história, personagens, o que acontece na T2 e por onde entrar na série.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: kaijuNo8T2Img,
+    author: "VICIO<CODE>",
+    date: "2026-05-04",
+    readTime: "15 min",
+    faq: [
+      { q: "O que é Kaiju No. 8?", a: "Kaiju No. 8 é um mangá shonen de Naoya Matsumoto publicado no Shonen Jump+ desde 2020, com mais de 45 milhões de cópias em circulação. A história acompanha Kafka Hibino, 32 anos, que ganha o poder de se transformar em um kaiju Número 8 enquanto tenta ingressar na Japan Defense Force — força militar que combate monstros gigantes." },
+      { q: "Onde assistir Kaiju No. 8 Temporada 2?", a: "Na Crunchyroll com simulcast legendado em português no mesmo dia do Japão. A Temporada 1 (12 episódios, 2024) está completa na plataforma. A Temporada 2 está em andamento na Spring Season 2026, com episódios saindo semanalmente." },
+      { q: "O mangá de Kaiju No. 8 vai acabar?", a: "Sim. No Jump Festa 2026, o autor Naoya Matsumoto confirmou que o mangá está em seu arco final. Sem data exata de encerramento, mas a estimativa da comunidade é 2026 ou início de 2027. O mangá está disponível gratuitamente no Manga Plus (Shueisha)." },
+      { q: "Kaiju No. 8 é bom? Vale a pena assistir?", a: "Sim — especialmente se você gosta de shonen de ação com protagonista mais maduro (32 anos vs o típico adolescente). A série equilibra batalhas intensas com desenvolvimento de personagem sólido e humor. A Temporada 1 tem nota 7,9/10 no MyAnimeList. É comparada favoravelmente a Jujutsu Kaisen e Attack on Titan em termos de escala e impacto emocional." },
+    ],
+  },
   // ── 04 Mai 2026 — Finanças (G1) ─────────────────────────────────────
   {
     id: "186",
