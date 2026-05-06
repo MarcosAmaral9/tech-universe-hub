@@ -11,7 +11,7 @@ const TermsPage = () => {
           Termos e <span className="text-gradient">Condições</span>
         </h1>
         <p className="text-muted-foreground mb-8">
-          Última atualização: 09 de Março de 2026
+          Última atualização: 06 de Maio de 2026
         </p>
 
         <div className="prose prose-lg dark:prose-invert">
