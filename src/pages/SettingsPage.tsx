@@ -13,6 +13,7 @@ import { useTheme } from "@/contexts/ThemeContext";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { toast } from "@/hooks/use-toast";
 import { useFavoriteAssets } from "@/hooks/useFavoriteAssets";
+import NewsletterPreferences from "@/components/NewsletterPreferences";
 
 const NOTIFICATION_SOUND_KEY = "pwa_update_sound_enabled";
 const FONT_SIZE_KEY = "viciocode_font_size";
