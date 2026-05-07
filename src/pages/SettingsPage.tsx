@@ -431,6 +431,10 @@ const SettingsPage = () => {
           </section>
         )}
 
+        {user && (
+          <NewsletterPreferences email={user.email || ""} />
+        )}
+
         {/* Settings Card */}
         <section className="rounded-2xl border border-border bg-card p-4 sm:p-6 space-y-4">
           {/* Theme */}
