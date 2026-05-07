@@ -118,28 +118,56 @@ const NewsletterSignup = ({ variant = "inline", categories = [], showAfterMs = 6
   // ── Compact (footer) ──────────────────────────────────────────────────────
   if (variant === "compact") {
     return (
-      <div className="flex flex-col sm:flex-row gap-2 w-full max-w-md">
+      <div className="w-full max-w-md space-y-2">
         {status === "success" ? (
-          <p className="flex items-center gap-2 text-emerald-400 text-sm font-medium">
-            <CheckCircle2 className="h-4 w-4" /> Inscrito! Obrigado 🎉
-          </p>
+          <div className="space-y-1">
+            <p className="flex items-center gap-2 text-emerald-400 text-sm font-medium">
+              <CheckCircle2 className="h-4 w-4" /> Inscrito! Obrigado 🎉
+            </p>
+            <Link to="/configuracoes" className="text-xs text-primary hover:underline inline-flex items-center gap-1">
+              <Settings2 className="h-3 w-3" /> Gerenciar preferências
+            </Link>
+          </div>
         ) : (
-          <form onSubmit={handleSubmit} className="flex gap-2 w-full">
-            <input
-              type="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              placeholder="seu@email.com"
-              className="flex-1 min-w-0 px-3 py-2 text-sm rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
-            />
-            <button
-              type="submit"
-              disabled={status === "loading"}
-              className="px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 disabled:opacity-60 whitespace-nowrap"
-            >
-              {status === "loading" ? "..." : "Inscrever"}
-            </button>
-          </form>
+          <>
+            <div className="flex flex-wrap gap-1">
+              {Object.entries(CATEGORY_LABELS).map(([key, label]) => (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => toggleCat(key)}
+                  className={`text-[11px] px-2 py-0.5 rounded-full border transition-colors ${
+                    selectedCats.has(key)
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : "border-border text-muted-foreground hover:border-primary/50"
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 w-full">
+              <input
+                type="email"
+                value={email}
+                onChange={e => { setEmail(e.target.value); setStatus("idle"); }}
+                placeholder="seu@email.com"
+                className="flex-1 min-w-0 px-3 py-2 text-sm rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+              />
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 disabled:opacity-60 whitespace-nowrap"
+              >
+                {status === "loading" ? "..." : "Inscrever"}
+              </button>
+            </form>
+            {status === "error" && (
+              <p className="flex items-center gap-1.5 text-xs text-destructive">
+                <AlertCircle className="h-3.5 w-3.5" /> {errorMsg}
+              </p>
+            )}
+          </>
         )}
       </div>
     );
