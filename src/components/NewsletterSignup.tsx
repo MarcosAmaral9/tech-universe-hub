@@ -256,7 +256,10 @@ const NewsletterSignup = ({ variant = "inline", categories = [], showAfterMs = 6
               </p>
             )}
             <p className="text-[11px] text-muted-foreground">
-              Sem spam. Cancelamento com 1 clique. Política de privacidade respeitada.
+              Sem spam. Cancelamento com 1 clique.{" "}
+              <Link to="/configuracoes" className="text-primary hover:underline">
+                Já é inscrito? Gerenciar preferências
+              </Link>
             </p>
           </form>
         </>
