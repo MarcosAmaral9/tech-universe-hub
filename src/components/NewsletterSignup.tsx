@@ -18,8 +18,10 @@
  *   2. A inserção usa o supabase client já configurado no projeto.
  */
 import { useState, useEffect, useRef } from "react";
-import { Mail, CheckCircle2, AlertCircle, X, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Mail, CheckCircle2, AlertCircle, X, Sparkles, Settings2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { useAuthContext } from "@/contexts/AuthContext";
 
 type Variant = "inline" | "compact" | "modal";
 
@@ -37,12 +39,18 @@ const CATEGORY_LABELS: Record<string, string> = {
 };
 
 const NewsletterSignup = ({ variant = "inline", categories = [], showAfterMs = 60_000 }: Props) => {
+  const { user } = useAuthContext();
   const [email, setEmail]           = useState("");
   const [selectedCats, setSelected] = useState<Set<string>>(new Set(categories));
   const [status, setStatus]         = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg]     = useState("");
   const [visible, setVisible]       = useState(variant !== "modal");
   const timerRef                    = useRef<ReturnType<typeof setTimeout>>();
+
+  // Pré-preenche email do usuário logado
+  useEffect(() => {
+    if (user?.email && !email) setEmail(user.email);
+  }, [user]);
 
   // Modal: aparece após showAfterMs de leitura, uma vez por sessão
   useEffect(() => {
@@ -72,15 +80,29 @@ const NewsletterSignup = ({ variant = "inline", categories = [], showAfterMs = 6
       setStatus("error");
       return;
     }
+    if (selectedCats.size === 0) {
+      setErrorMsg("Selecione ao menos uma categoria.");
+      setStatus("error");
+      return;
+    }
     setStatus("loading");
+    const cleanEmail = email.toLowerCase().trim();
+    const cats = [...selectedCats];
     try {
       const { error } = await (supabase as any)
         .from("newsletter_subscribers")
-        .insert({ email: email.toLowerCase().trim(), categories: [...selectedCats] });
+        .insert({ email: cleanEmail, categories: cats, is_active: true });
       if (error) {
         const msg = error.message || "";
-        // Duplicate email = already subscribed → treat as success
-        if (msg.includes("duplicate") || msg.includes("unique") || (error as any).code === "23505") {
+        const isDup = msg.includes("duplicate") || msg.includes("unique") || (error as any).code === "23505";
+        if (isDup) {
+          // Já inscrito — se autenticado e for o próprio email, atualiza categorias
+          if (user?.email?.toLowerCase() === cleanEmail) {
+            await (supabase as any)
+              .from("newsletter_subscribers")
+              .update({ categories: cats, is_active: true })
+              .eq("email", cleanEmail);
+          }
           setStatus("success");
           return;
         }
@@ -88,41 +110,64 @@ const NewsletterSignup = ({ variant = "inline", categories = [], showAfterMs = 6
       }
       setStatus("success");
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : String(err);
-      if (msg.includes("duplicate") || msg.includes("unique")) {
-        setStatus("success"); // already subscribed → treat as success
-      } else {
-        setErrorMsg("Erro ao salvar. Tente novamente.");
-        setStatus("error");
-      }
+      setErrorMsg("Erro ao salvar. Tente novamente.");
+      setStatus("error");
     }
   };
 
   // ── Compact (footer) ──────────────────────────────────────────────────────
   if (variant === "compact") {
     return (
-      <div className="flex flex-col sm:flex-row gap-2 w-full max-w-md">
+      <div className="w-full max-w-md space-y-2">
         {status === "success" ? (
-          <p className="flex items-center gap-2 text-emerald-400 text-sm font-medium">
-            <CheckCircle2 className="h-4 w-4" /> Inscrito! Obrigado 🎉
-          </p>
+          <div className="space-y-1">
+            <p className="flex items-center gap-2 text-emerald-400 text-sm font-medium">
+              <CheckCircle2 className="h-4 w-4" /> Inscrito! Obrigado 🎉
+            </p>
+            <Link to="/configuracoes" className="text-xs text-primary hover:underline inline-flex items-center gap-1">
+              <Settings2 className="h-3 w-3" /> Gerenciar preferências
+            </Link>
+          </div>
         ) : (
-          <form onSubmit={handleSubmit} className="flex gap-2 w-full">
-            <input
-              type="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              placeholder="seu@email.com"
-              className="flex-1 min-w-0 px-3 py-2 text-sm rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
-            />
-            <button
-              type="submit"
-              disabled={status === "loading"}
-              className="px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 disabled:opacity-60 whitespace-nowrap"
-            >
-              {status === "loading" ? "..." : "Inscrever"}
-            </button>
-          </form>
+          <>
+            <div className="flex flex-wrap gap-1">
+              {Object.entries(CATEGORY_LABELS).map(([key, label]) => (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => toggleCat(key)}
+                  className={`text-[11px] px-2 py-0.5 rounded-full border transition-colors ${
+                    selectedCats.has(key)
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : "border-border text-muted-foreground hover:border-primary/50"
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 w-full">
+              <input
+                type="email"
+                value={email}
+                onChange={e => { setEmail(e.target.value); setStatus("idle"); }}
+                placeholder="seu@email.com"
+                className="flex-1 min-w-0 px-3 py-2 text-sm rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+              />
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 disabled:opacity-60 whitespace-nowrap"
+              >
+                {status === "loading" ? "..." : "Inscrever"}
+              </button>
+            </form>
+            {status === "error" && (
+              <p className="flex items-center gap-1.5 text-xs text-destructive">
+                <AlertCircle className="h-3.5 w-3.5" /> {errorMsg}
+              </p>
+            )}
+          </>
         )}
       </div>
     );
@@ -148,6 +193,9 @@ const NewsletterSignup = ({ variant = "inline", categories = [], showAfterMs = 6
           <p className="text-muted-foreground text-sm">
             Toda semana os melhores artigos de IA, Games, Finanças e Anime direto no seu email.
           </p>
+          <Link to="/configuracoes" className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline">
+            <Settings2 className="h-4 w-4" /> Ajustar minhas preferências
+          </Link>
         </div>
       ) : (
         <>
@@ -208,7 +256,10 @@ const NewsletterSignup = ({ variant = "inline", categories = [], showAfterMs = 6
               </p>
             )}
             <p className="text-[11px] text-muted-foreground">
-              Sem spam. Cancelamento com 1 clique. Política de privacidade respeitada.
+              Sem spam. Cancelamento com 1 clique.{" "}
+              <Link to="/configuracoes" className="text-primary hover:underline">
+                Já é inscrito? Gerenciar preferências
+              </Link>
             </p>
           </form>
         </>
