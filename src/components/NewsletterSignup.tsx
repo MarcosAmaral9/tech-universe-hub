@@ -193,6 +193,9 @@ const NewsletterSignup = ({ variant = "inline", categories = [], showAfterMs = 6
           <p className="text-muted-foreground text-sm">
             Toda semana os melhores artigos de IA, Games, Finanças e Anime direto no seu email.
           </p>
+          <Link to="/configuracoes" className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline">
+            <Settings2 className="h-4 w-4" /> Ajustar minhas preferências
+          </Link>
         </div>
       ) : (
         <>
