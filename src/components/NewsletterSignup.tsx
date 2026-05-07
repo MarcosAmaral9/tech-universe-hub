@@ -39,12 +39,18 @@ const CATEGORY_LABELS: Record<string, string> = {
 };
 
 const NewsletterSignup = ({ variant = "inline", categories = [], showAfterMs = 60_000 }: Props) => {
+  const { user } = useAuthContext();
   const [email, setEmail]           = useState("");
   const [selectedCats, setSelected] = useState<Set<string>>(new Set(categories));
   const [status, setStatus]         = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg]     = useState("");
   const [visible, setVisible]       = useState(variant !== "modal");
   const timerRef                    = useRef<ReturnType<typeof setTimeout>>();
+
+  // Pré-preenche email do usuário logado
+  useEffect(() => {
+    if (user?.email && !email) setEmail(user.email);
+  }, [user]);
 
   // Modal: aparece após showAfterMs de leitura, uma vez por sessão
   useEffect(() => {
@@ -74,15 +80,29 @@ const NewsletterSignup = ({ variant = "inline", categories = [], showAfterMs = 6
       setStatus("error");
       return;
     }
+    if (selectedCats.size === 0) {
+      setErrorMsg("Selecione ao menos uma categoria.");
+      setStatus("error");
+      return;
+    }
     setStatus("loading");
+    const cleanEmail = email.toLowerCase().trim();
+    const cats = [...selectedCats];
     try {
       const { error } = await (supabase as any)
         .from("newsletter_subscribers")
-        .insert({ email: email.toLowerCase().trim(), categories: [...selectedCats] });
+        .insert({ email: cleanEmail, categories: cats, is_active: true });
       if (error) {
         const msg = error.message || "";
-        // Duplicate email = already subscribed → treat as success
-        if (msg.includes("duplicate") || msg.includes("unique") || (error as any).code === "23505") {
+        const isDup = msg.includes("duplicate") || msg.includes("unique") || (error as any).code === "23505";
+        if (isDup) {
+          // Já inscrito — se autenticado e for o próprio email, atualiza categorias
+          if (user?.email?.toLowerCase() === cleanEmail) {
+            await (supabase as any)
+              .from("newsletter_subscribers")
+              .update({ categories: cats, is_active: true })
+              .eq("email", cleanEmail);
+          }
           setStatus("success");
           return;
         }
@@ -90,13 +110,8 @@ const NewsletterSignup = ({ variant = "inline", categories = [], showAfterMs = 6
       }
       setStatus("success");
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : String(err);
-      if (msg.includes("duplicate") || msg.includes("unique")) {
-        setStatus("success"); // already subscribed → treat as success
-      } else {
-        setErrorMsg("Erro ao salvar. Tente novamente.");
-        setStatus("error");
-      }
+      setErrorMsg("Erro ao salvar. Tente novamente.");
+      setStatus("error");
     }
   };
 
