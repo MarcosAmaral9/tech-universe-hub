@@ -18,8 +18,10 @@
  *   2. A inserção usa o supabase client já configurado no projeto.
  */
 import { useState, useEffect, useRef } from "react";
-import { Mail, CheckCircle2, AlertCircle, X, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Mail, CheckCircle2, AlertCircle, X, Sparkles, Settings2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { useAuthContext } from "@/contexts/AuthContext";
 
 type Variant = "inline" | "compact" | "modal";
 
