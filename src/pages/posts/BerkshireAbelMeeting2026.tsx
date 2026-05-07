@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, TrendingUp, BarChart3, Shield, DollarSign, Lightbulb, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/berkshire-hathaway-greg-abel-2026-sem-buffett.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -171,7 +172,13 @@ const BerkshireAbelMeeting2026 = () => {
         </p>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["invest"]} />
+
+
       <RelatedPosts currentSlug="berkshire-hathaway-greg-abel-2026-sem-buffett" />
+
+
+      <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="berkshire-hathaway-greg-abel-2026-sem-buffett" postTitle="Berkshire Hathaway 2026: Greg Abel Assume, US$ 397 Bilhões em Caixa e a Era Pós-Buffett Começa" />
     </article>
   );

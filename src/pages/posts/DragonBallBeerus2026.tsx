@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Star, Zap, Shield, BarChart3, BookOpen, Flame } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/dragon-ball-super-beerus-anime-confirmado-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -210,7 +211,13 @@ const DragonBallBeerus2026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
+
+
       <RelatedPosts currentSlug="dragon-ball-super-beerus-anime-confirmado-2026" />
+
+
+      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="dragon-ball-super-beerus-anime-confirmado-2026" postTitle="Dragon Ball Super: Arco do Beerus Confirmado como Anime em 2026" />
     </article>
   );

@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Star, Zap, Shield, BarChart3, BookOpen, Flame } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/kaiju-no-8-temporada-2-guia-arco-final-2026.webp";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
@@ -181,7 +182,13 @@ const KaijuNo8Temporada22026 = () => {
         </div>
       </div>
 
+      <NewsletterSignup variant="inline" categories={["otaku"]} />
+
+
       <RelatedPosts currentSlug="kaiju-no-8-temporada-2-guia-arco-final-2026" />
+
+
+      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="kaiju-no-8-temporada-2-guia-arco-final-2026" postTitle="Kaiju No. 8: Guia Completo da Temporada 2 e Arco Final Confirmado" />
     </article>
   );
