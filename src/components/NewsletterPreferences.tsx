@@ -114,6 +114,29 @@ const NewsletterPreferences = ({ email }: Props) => {
         </div>
       ) : (
         <>
+          {/* Status atual */}
+          <div className="rounded-xl bg-muted/40 border border-border p-3 space-y-1.5 text-xs">
+            <div className="flex items-center justify-between">
+              <span className="text-muted-foreground">Status atual</span>
+              <span className={`inline-flex items-center gap-1 font-semibold ${exists && subscribed ? "text-emerald-500" : "text-muted-foreground"}`}>
+                <span className={`w-2 h-2 rounded-full ${exists && subscribed ? "bg-emerald-500" : "bg-muted-foreground/40"}`} />
+                {!exists ? "Não inscrito" : subscribed ? "Inscrição ativa" : "Pausada"}
+              </span>
+            </div>
+            {createdAt && (
+              <div className="flex items-center justify-between">
+                <span className="text-muted-foreground">Inscrito em</span>
+                <span className="text-foreground">{new Date(createdAt).toLocaleDateString("pt-BR", { day: "2-digit", month: "short", year: "numeric" })}</span>
+              </div>
+            )}
+            {updatedAt && (
+              <div className="flex items-center justify-between">
+                <span className="text-muted-foreground">Atualizado em</span>
+                <span className="text-foreground">{new Date(updatedAt).toLocaleDateString("pt-BR", { day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" })}</span>
+              </div>
+            )}
+          </div>
+
           <div className="flex items-center justify-between py-2 border-t border-border">
             <div>
               <p className="font-medium text-foreground text-sm">Inscrição ativa</p>
