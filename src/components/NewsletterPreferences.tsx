@@ -67,16 +67,25 @@ const NewsletterPreferences = ({ email }: Props) => {
         is_active: subscribed,
       };
       if (exists) {
-        const { error } = await (supabase as any)
+        const { data, error } = await (supabase as any)
           .from("newsletter_subscribers")
           .update({ categories: payload.categories, is_active: payload.is_active })
-          .eq("email", payload.email);
+          .eq("email", payload.email)
+          .select("updated_at")
+          .maybeSingle();
         if (error) throw error;
+        if (data?.updated_at) setUpdatedAt(data.updated_at);
       } else {
-        const { error } = await (supabase as any)
+        const { data, error } = await (supabase as any)
           .from("newsletter_subscribers")
-          .insert(payload);
+          .insert(payload)
+          .select("updated_at, created_at")
+          .maybeSingle();
         if (error && (error as any).code !== "23505") throw error;
+        if (data) {
+          setUpdatedAt(data.updated_at);
+          setCreatedAt(data.created_at);
+        }
         setExists(true);
       }
       toast({ title: "Preferências salvas!", description: "Suas categorias da newsletter foram atualizadas." });
