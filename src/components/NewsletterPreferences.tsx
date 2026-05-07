@@ -26,6 +26,8 @@ const NewsletterPreferences = ({ email }: Props) => {
   const [subscribed, setSubscribed] = useState(false);
   const [categories, setCategories] = useState<Set<string>>(new Set());
   const [exists, setExists] = useState(false);
+  const [updatedAt, setUpdatedAt] = useState<string | null>(null);
+  const [createdAt, setCreatedAt] = useState<string | null>(null);
 
   useEffect(() => {
     if (!email) return;
@@ -33,13 +35,15 @@ const NewsletterPreferences = ({ email }: Props) => {
       setLoading(true);
       const { data, error } = await (supabase as any)
         .from("newsletter_subscribers")
-        .select("categories, is_active")
+        .select("categories, is_active, updated_at, created_at")
         .eq("email", email.toLowerCase().trim())
         .maybeSingle();
       if (!error && data) {
         setExists(true);
         setSubscribed(!!data.is_active);
         setCategories(new Set(data.categories || []));
+        setUpdatedAt(data.updated_at);
+        setCreatedAt(data.created_at);
       }
       setLoading(false);
     })();
