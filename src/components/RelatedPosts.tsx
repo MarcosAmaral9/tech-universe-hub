@@ -97,6 +97,8 @@ const RelatedPosts = ({ currentSlug }: RelatedPostsProps) => {
           );
         })}
       </div>
+
+      <MostReadWidget className="mt-8" limit={5} />
     </section>
   );
 };
