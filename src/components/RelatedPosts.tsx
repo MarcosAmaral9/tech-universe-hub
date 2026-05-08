@@ -5,6 +5,7 @@ import { getRelatedPosts } from "@/data/posts";
 import CategoryBadge from "./CategoryBadge";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { AdInArticle } from "./AdSense";
+import MostReadWidget from "./MostReadWidget";
 
 interface RelatedPostsProps {
   currentSlug: string;
