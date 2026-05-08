@@ -1,4 +1,5 @@
 import FeaturedCarousel from "@/components/FeaturedCarousel";
+import MostReadWidget from "@/components/MostReadWidget";
 import PostCard from "@/components/PostCard";
 import { lazy, Suspense } from "react";
 const SocialSection = lazy(() => import("@/components/SocialSection"));
