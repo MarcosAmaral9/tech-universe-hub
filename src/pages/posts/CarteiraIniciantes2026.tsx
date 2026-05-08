@@ -10,7 +10,7 @@ import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import carteiraImg from "@/assets/carteira-investimentos-2026.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 // Simple donut chart component
 const DonutChart = ({ segments, label }: { segments: { name: string; pct: number; color: string }[]; label: string }) => {
   const total = segments.reduce((sum, s) => sum + s.pct, 0);
@@ -327,7 +327,9 @@ const CarteiraIniciantes2026 = () => {
           {/* Passo 4: Classes de ativos */}
           <AdRectangle className="my-8" />
 
-          <h2 className="text-2xl font-bold mt-10 mb-6 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+          
+        <AdInArticle className="my-8" />
+<h2 className="text-2xl font-bold mt-10 mb-6 border-l-4 border-[hsl(var(--invest-color))] pl-4">
             Passo 4: Entenda as Classes de Ativos
           </h2>
 

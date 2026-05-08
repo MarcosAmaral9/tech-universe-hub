@@ -8,7 +8,7 @@ import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/pragmata-capcom-guia-completo-2026.webp";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const PragmataCapcom2026 = () => {
   useEffect(() => {
@@ -138,7 +138,9 @@ const PragmataCapcom2026 = () => {
           Críticos elogiam o sistema como "genuinamente inovador" — um shooter de ação que exige raciocínio tático em vez de apenas reflexo. O lado negativo apontado: contra chefes menores, a rotina pode parecer repetitiva nas primeiras horas.
         </p>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Gamepad2 className="h-7 w-7 text-geek" />
           O Que a Crítica Elogiou e O Que Criticou
         </h2>

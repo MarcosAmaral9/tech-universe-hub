@@ -8,7 +8,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import crimsonGuiaImg from "@/assets/crimson-desert-guia.webp";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const CrimsonDesertGuiaCompleto = () => {
   useEffect(() => {
@@ -104,7 +104,9 @@ const CrimsonDesertGuiaCompleto = () => {
           <li><strong>22 de abril de 2026:</strong> Patch 1.04.00 — maior update, adiciona modos de dificuldade</li>
         </ul>
 
-        <h2>Recepção da Crítica e dos Jogadores</h2>
+        
+        <AdInArticle className="my-8" />
+<h2>Recepção da Crítica e dos Jogadores</h2>
         <p>
           Com Metacritic 78 (PC), o jogo foi recebido como "geralmente favorável" — abaixo das expectativas
           dos investidores, que precificavam uma média mid-to-high 80s. A divisão é clara: elogios para

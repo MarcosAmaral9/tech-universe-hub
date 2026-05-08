@@ -10,7 +10,7 @@ import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import systemManhwaImg from "@/assets/system-manhwa-hero.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const MelhoresManhwasSistema = () => {
   const manhwas = [
     {
@@ -251,7 +251,9 @@ const MelhoresManhwasSistema = () => {
 
         <AdLeaderboard className="my-8" />
 
-        <h2 className="text-2xl font-bold mt-10 mb-6">Por Onde Começar?</h2>
+        
+        <AdInArticle className="my-8" />
+<h2 className="text-2xl font-bold mt-10 mb-6">Por Onde Começar?</h2>
 
         <div className="grid md:grid-cols-3 gap-6 my-8">
           <div className="p-5 bg-card rounded-xl border border-yellow-500/30">

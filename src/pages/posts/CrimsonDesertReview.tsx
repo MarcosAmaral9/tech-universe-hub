@@ -9,7 +9,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import crimsonReviewImg from "@/assets/crimson-desert-review.webp";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const CrimsonDesertReview = () => {
   useEffect(() => {
@@ -137,7 +137,9 @@ const CrimsonDesertReview = () => {
           </div>
         </div>
 
-        <h2>Vale a Pena Comprar? (Atualizado — Abril 2026)</h2>
+        
+        <AdInArticle className="my-8" />
+<h2>Vale a Pena Comprar? (Atualizado — Abril 2026)</h2>
         <p>
           Com os patches lançados desde março — especialmente o <strong>1.04.00 de 22 de abril</strong>, que adicionou
           modos de dificuldade Easy/Normal/Hard — muitas das principais críticas do lançamento foram endereçadas.

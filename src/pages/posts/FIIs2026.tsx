@@ -11,7 +11,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import { Slider } from "@/components/ui/slider";
 import fiisImg from "@/assets/fiis-2026.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 // FII Simulator
 const FIISimulator = () => {
   const [targetIncome, setTargetIncome] = useState(500);
@@ -187,7 +187,9 @@ const FIIs2026 = () => {
         <section className="mb-10">
           <AdRectangle className="my-8" />
 
-          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">Como Montar Sua Carteira de FIIs</h2>
+          
+        <AdInArticle className="my-8" />
+<h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">Como Montar Sua Carteira de FIIs</h2>
           <div className="space-y-3">
             {[
               "Mínimo de 8-10 FIIs para diluir risco específico",

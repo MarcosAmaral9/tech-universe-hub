@@ -9,7 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/inflacao-proteger-investimentos-2026.webp";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const InflacaoProtegerInvestimentos2026 = () => {
   useEffect(() => {
@@ -158,7 +158,9 @@ const InflacaoProtegerInvestimentos2026 = () => {
           Em cenários de inflação persistente, ter uma <strong>exposição de 5-10% da carteira em dólar</strong> (via ETFs como IVVB11 ou fundos cambiais) e <strong>2-5% em ouro</strong> (via GOLD11 ou fundos de ouro) pode proteger contra a desvalorização do real.
         </p>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <PiggyBank className="h-7 w-7 text-violet-400" />
           O Que NÃO Fazer em Cenário de Inflação Alta
         </h2>

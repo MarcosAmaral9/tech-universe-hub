@@ -11,7 +11,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import irpfImg from "@/assets/irpf-2026.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const IRPF2026 = () => {
   const [checkedDocs, setCheckedDocs] = useState<Record<string, boolean>>({});
   
@@ -214,7 +214,9 @@ const IRPF2026 = () => {
         <section className="mb-10">
           <AdRectangle className="my-8" />
 
-          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">Calculadora: Simplificado ou Completo?</h2>
+          
+        <AdInArticle className="my-8" />
+<h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">Calculadora: Simplificado ou Completo?</h2>
           <div className="bg-card border border-border rounded-2xl p-6">
             <div className="grid md:grid-cols-2 gap-4 mb-6">
               <div>

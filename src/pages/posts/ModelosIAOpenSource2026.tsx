@@ -11,7 +11,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/modelos-ia-open-source-2026.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const ModelosIAOpenSource2026 = () => {
   useEffect(() => {
     trackArticleRead("modelos-ia-open-source-2026", "IA Open Source 2026: Llama, Mistral e DeepSeek Contra os Modelos Pagos", "ia");
@@ -107,7 +107,9 @@ const ModelosIAOpenSource2026 = () => {
 
       <AdRectangle className="my-8" />
 
-      <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+      
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
         <Code className="h-7 w-7 text-violet-400" />Como Rodar Modelos Open Source Localmente
       </h2>
       <p>A forma mais simples de experimentar modelos open source é o <strong>Ollama</strong> — uma ferramenta que permite baixar e rodar modelos como Llama 3, Mistral e Gemma com um único comando:</p>

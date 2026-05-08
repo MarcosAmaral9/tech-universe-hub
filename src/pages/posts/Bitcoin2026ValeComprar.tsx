@@ -8,7 +8,7 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import heroImg from "@/assets/bitcoin-2026-vale-comprar.webp";
 import { useMarketData } from "@/hooks/useMarketData";
 
@@ -159,7 +159,9 @@ const Bitcoin2026ValeComprar = () => {
         </p>
 
         {/* Simulador de cenários */}
-        <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">
+        
+        <AdInArticle className="my-8" />
+<h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">
           <span className="flex items-center gap-2"><BarChart3 className="h-6 w-6" /> Simulador de cenários</span>
         </h2>
         <div className="bg-card border border-border rounded-2xl p-6">

@@ -8,7 +8,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import heroImg from "@/assets/ia-ciberseguranca-2026.webp";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const faqData = [
   { q: "Como a IA é usada em cibersegurança?", a: "A IA é usada para detectar ameaças em tempo real, analisar padrões de tráfego de rede, identificar comportamentos anômalos, automatizar respostas a incidentes e prever ataques antes que aconteçam. Ferramentas como Microsoft Sentinel, CrowdStrike Falcon e Darktrace já utilizam IA como componente central." },
@@ -162,7 +162,9 @@ const IACiberseguranca2026 = () => {
 
         <AdRectangle className="my-8" />
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Eye className="h-7 w-7 text-ia" />
           O Futuro: IA vs IA
         </h2>

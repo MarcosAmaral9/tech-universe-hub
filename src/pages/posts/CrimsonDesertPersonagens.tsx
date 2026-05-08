@@ -8,7 +8,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import crimsonBuildsImg from "@/assets/crimson-desert-builds.webp";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const CrimsonDesertBuilds = () => {
   useEffect(() => {
@@ -141,7 +141,9 @@ const CrimsonDesertBuilds = () => {
           ))}
         </div>
 
-        <h2>A Questão da Dificuldade — Antes e Depois dos Patches</h2>
+        
+        <AdInArticle className="my-8" />
+<h2>A Questão da Dificuldade — Antes e Depois dos Patches</h2>
         <p>
           Múltiplos críticos mencionaram a dificuldade como ponto de divisão. A TheGamer jogou 150 horas
           descrevendo o jogo como "não feito para o jogador casual" e com uma "curva de grind enorme".

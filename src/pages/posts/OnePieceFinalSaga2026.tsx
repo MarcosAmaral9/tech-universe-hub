@@ -8,7 +8,7 @@ import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/one-piece-final-saga-2026.webp";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const OnePieceFinalSaga2026 = () => {
   useEffect(() => {
@@ -177,7 +177,9 @@ const OnePieceFinalSaga2026 = () => {
         <AdRectangle className="my-8" />
 
         {/* Personagens chave */}
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Star className="h-7 w-7 text-pink-400" />Personagens Centrais do Final
         </h2>
 

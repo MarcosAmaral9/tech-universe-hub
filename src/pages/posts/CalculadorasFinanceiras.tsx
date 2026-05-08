@@ -7,7 +7,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import calculadorasImg from "@/assets/calculadoras-financeiras.webp";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 
 interface AssetOption {
@@ -255,7 +255,9 @@ const CalculadorasFinanceiras = () => {
       <AdRectangle className="my-8" />
 
       <div className="prose prose-lg dark:prose-invert max-w-none mb-8">
-        <h2>Como usar as calculadoras</h2>
+        
+        <AdInArticle className="my-8" />
+<h2>Como usar as calculadoras</h2>
         <p>As calculadoras usam a <strong>API unificada do VicioCode</strong> — uma única requisição retorna B3, cripto, câmbio e metais em tempo real, economizando banda e garantindo consistência nos dados.</p>
         <h3>📊 Ações da B3</h3>
         <p>Veja quanto custaria comprar ações de PETR4, VALE3, ITUB4 e outras. O valor mostrado é o preço de mercado por ação — sem considerar lote mínimo ou fracionamento.</p>

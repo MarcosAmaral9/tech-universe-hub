@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Shield } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -74,7 +74,9 @@ const OkirakuRyoushu = () => {
           A adaptação foi anunciada durante o evento <strong>"Great Overlap Bunko All-Star Gathering Special 2025"</strong> em <strong>20 de abril de 2025</strong>. É produzida pelo estúdio <strong>NAZ</strong> e dirigida por <strong>Tetsuya Tatamitani</strong>, com <strong>Takayuki Kuriyama</strong> como diretor supervisor, roteiro de <strong>Yutaka Yasunaga</strong>, design de personagens de <strong>Shingo Nakamura</strong> e música de <strong>Kana Utatane</strong>. A série estreou em <strong>10 de janeiro de 2026</strong> na Tokyo MX e outras emissoras, prevista para <strong>12 episódios</strong>. A abertura é <strong>"Okirakuze~shon"</strong> (おきらくぜ～しょん) por <strong>Rei Nakashima</strong>, e o encerramento <strong>"Make It"</strong> por <strong>Nonoka Ōbuchi</strong>. A <strong>Crunchyroll</strong> transmite a série internacionalmente e a <strong>Muse Communication</strong> no Sudeste Asiático.
         </p>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Star className="h-7 w-7 text-otaku" />
           Personagens Principais
         </h2>

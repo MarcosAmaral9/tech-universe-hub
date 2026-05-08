@@ -11,7 +11,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/dragon-age-veilguard-review-2026.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const DragonAgeVeilguard2026 = () => {
   useEffect(() => {
     trackArticleRead("dragon-age-veilguard-review-2026", "Dragon Age: The Veilguard — A BioWare Voltou? Review Completo 2026", "geek");
@@ -80,7 +80,9 @@ const DragonAgeVeilguard2026 = () => {
 
       <AdRectangle className="my-8" />
 
-      <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+      
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
         <Cpu className="h-7 w-7 text-purple-400" />Performance e PC
       </h2>
       <p>The Veilguard foi elogiado pelo estado técnico no lançamento — raro para um AAA em 2024. O jogo rodava bem na maioria dos PCs com configuração média, sem os problemas de launch que afetaram jogos como The Last of Us Parte I no PC.</p>

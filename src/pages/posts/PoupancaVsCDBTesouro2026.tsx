@@ -9,7 +9,7 @@ import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import heroImg from "@/assets/poupanca-vs-cdb-tesouro-2026.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const faqData = [
   { q: "Poupança ainda vale a pena em 2026?", a: "A poupança rende 70% da Selic + TR quando a Selic está acima de 8,5%. Em março de 2026, com a Selic a 13,25%, a poupança rende cerca de 9,28% ao ano — menos que CDBs e Tesouro Direto, que oferecem 100% do CDI ou mais." },
@@ -176,7 +176,9 @@ const PoupancaVsCDBTesouro2026 = () => {
 
           <AdLeaderboard className="my-8" />
 
-          <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
             <CheckCircle className="h-7 w-7 text-invest" />
             Qual Escolher? Recomendações por Objetivo
           </h2>

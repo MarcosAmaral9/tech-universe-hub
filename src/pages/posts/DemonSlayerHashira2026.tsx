@@ -11,7 +11,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/demon-slayer-hashira-2026.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const hashiras = [
   { nome: "Giyu Tomioka", respiracao: "Água", posicao: "Pilar da Água", status: "Ativo" },
   { nome: "Shinobu Kocho", respiracao: "Inseto", posicao: "Pilar dos Insetos", status: "Ativo" },
@@ -107,7 +107,9 @@ const DemonSlayerHashira2026 = () => {
 
       <AdRectangle className="my-8" />
 
-      <h2 className="text-2xl font-bold mt-10 mb-4">A Hierarquia das Respirações</h2>
+      
+        <AdInArticle className="my-8" />
+<h2 className="text-2xl font-bold mt-10 mb-4">A Hierarquia das Respirações</h2>
       <p>No universo de Demon Slayer, todas as Respirações derivam de uma única origem: a <strong>Respiração do Sol</strong> (Hinokami Kagura), a mais antiga e poderosa. Tanjiro aprende essa respiração ao longo da história através da tradição familiar Kamado.</p>
       <p>As derivações seguem uma árvore:</p>
       <ul>

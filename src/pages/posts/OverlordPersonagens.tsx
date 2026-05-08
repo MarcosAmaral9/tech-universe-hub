@@ -9,7 +9,7 @@ import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/overlord-personagens.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const OverlordPersonagens = () => {
   useEffect(() => {
     trackArticleRead("overlord-ainz-guardians-personagens", "Overlord: Ainz Ooal Gown, os Floor Guardians e os Personagens Mais Importantes", "otaku");
@@ -163,7 +163,9 @@ const OverlordPersonagens = () => {
 
         <AdRectangle className="my-8" />
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
           <Zap className="h-7 w-7 text-otaku" />
           O Sistema de Poder: Classes, Magias e Níveis
         </h2>

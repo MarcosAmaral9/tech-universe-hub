@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, Skull, Swords, Shield, Star, Zap, Flame, Sword } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -463,7 +463,9 @@ const CrimsonDesertBosses = () => {
         </p>
         <p><strong>Estratégia:</strong> Fique perto o suficiente para acertar projéteis do dragão, mas não próximo demais — ele cria onda de choque quando está perto. Voe para os lados continuamente para evitar os lasers. Atire bolas de fogo no olho central até o <strong>medidor de stun amarelo</strong> ficar cheio. Quando cheio: pule do dragão, planeie em direção ao olho de Umbra, use air dash para alcançar o olho e use <strong>Force Palm</strong> — cada acerto remove metade de uma barra de HP. Repita 2–3 vezes. Após derrota, epilogo com 8 missões de diálogo.</p>
 
-        <h2 id="boss-opcionais" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6 scroll-mt-24">
+        
+        <AdInArticle className="my-8" />
+<h2 id="boss-opcionais" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6 scroll-mt-24">
           <Star className="h-7 w-7 text-red-400" />
           Bosses Opcionais — Guia Completo
         </h2>

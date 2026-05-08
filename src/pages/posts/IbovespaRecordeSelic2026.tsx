@@ -8,7 +8,7 @@ import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import carteiraInvestimentosImg from "@/assets/carteira-iniciantes-guia-2026.webp";
 
 
@@ -189,7 +189,9 @@ const IbovespaRecordeSelic2026 = () => {
           ))}
         </div>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-invest" />
           O Que Pode Dar Errado: Riscos de 2026
         </h2>

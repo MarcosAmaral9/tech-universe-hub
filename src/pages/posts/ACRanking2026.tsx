@@ -10,7 +10,7 @@ import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import acPortalImg from "@/assets/assassins-creed-portal.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const ACRanking2026 = () => {
   const ranking = [
     {
@@ -249,7 +249,9 @@ const ACRanking2026 = () => {
 
         <AdRectangle className="my-8" />
 
-        <h2 className="text-2xl font-bold mt-10 mb-6">Qual é o Seu Favorito?</h2>
+        <h2 className="text-2xl font-bold mt-10 mb-6">
+        <AdInArticle className="my-8" />
+Qual é o Seu Favorito?</h2>
 
         <p>
           Cada jogo da franquia tem seus fãs dedicados. Alguns preferem a furtividade clássica de Unity e 

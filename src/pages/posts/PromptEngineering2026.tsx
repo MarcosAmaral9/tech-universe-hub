@@ -8,7 +8,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import heroImg from "@/assets/prompt-engineering-2026.webp";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const faqData = [
   { q: "O que é prompt engineering?", a: "Prompt engineering é a técnica de escrever instruções claras e estruturadas para obter melhores respostas de modelos de IA como ChatGPT, Gemini e Claude. Envolve definir contexto, formato, tom e restrições para guiar a IA ao resultado desejado." },
@@ -220,7 +220,9 @@ Use analogias do dia a dia para explicar conceitos complexos.`}
 
         <AdRectangle className="my-8" />
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <AlertTriangle className="h-7 w-7 text-ia" />
           Erros Comuns e Como Evitá-los
         </h2>

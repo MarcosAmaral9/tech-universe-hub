@@ -11,7 +11,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/cdb-2026-guia.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const CDB2026Guia = () => {
   useEffect(() => {
     trackArticleRead("cdb-2026-guia-completo", "CDB em 2026: Ainda Vale a Pena? Guia Completo com Taxas Reais", "invest");
@@ -105,7 +105,9 @@ const CDB2026Guia = () => {
 
       <AdRectangle className="my-8" />
 
-      <h2 className="text-2xl font-bold mt-10 mb-6">CDB vs Outras Rendas Fixas</h2>
+      
+        <AdInArticle className="my-8" />
+<h2 className="text-2xl font-bold mt-10 mb-6">CDB vs Outras Rendas Fixas</h2>
       <div className="not-prose my-6 overflow-x-auto">
         <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
           <thead><tr className="bg-secondary">

@@ -8,7 +8,7 @@ import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/claude-opus-vs-sonnet-2026.webp";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const ClaudeOpusVsSonnet2026 = () => {
   useEffect(() => {
@@ -134,7 +134,9 @@ const ClaudeOpusVsSonnet2026 = () => {
           A diferença de custo é drástica: o <strong>Opus custa 5× mais que o Sonnet</strong> tanto na entrada quanto na saída. Para uma startup processando 100.000 requisições por mês com contextos médios de 2.000 tokens, a diferença mensal pode ser de <strong>US$ 3.000 a US$ 15.000</strong>. Essa matemática torna o Sonnet a escolha padrão para qualquer aplicação em produção.
         </p>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Zap className="h-7 w-7 text-violet-400" />
           Quando Usar Cada Modelo: Guia Definitivo
         </h2>

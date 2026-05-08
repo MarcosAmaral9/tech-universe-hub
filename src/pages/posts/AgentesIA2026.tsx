@@ -10,7 +10,7 @@ import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/agentes-ia-2026.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const AgentesIA2026 = () => {
 
   useEffect(() => {
@@ -90,7 +90,9 @@ const AgentesIA2026 = () => {
 
         <AdRectangle className="my-8" />
 
-        <h2 className="text-2xl font-bold mt-10 mb-6">Principais Agentes Disponíveis</h2>
+        
+        <AdInArticle className="my-8" />
+<h2 className="text-2xl font-bold mt-10 mb-6">Principais Agentes Disponíveis</h2>
         <ul className="space-y-2 my-6">
           <li><strong>OpenAI Operator:</strong> navega na web e executa tarefas como um humano.</li>
           <li><strong>Claude Computer Use:</strong> controla computador completo via linguagem natural.</li>

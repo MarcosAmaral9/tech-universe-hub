@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Leaf } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -77,7 +77,9 @@ const IsekaiNonbiriNouka = () => {
           A Temporada 1 acompanha os primeiros capítulos da história — a chegada de Hiraku ao mundo, o desbravamento da floresta, e os encontros iniciais com seus primeiros companheiros e habitantes da fazenda em crescimento.
         </p>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Tv className="h-7 w-7 text-otaku" />
           Temporada 2 — Confirmada para Abril de 2026
         </h2>
