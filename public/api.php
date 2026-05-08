@@ -2185,6 +2185,36 @@ CREATE TABLE IF NOT EXISTS user_favorite_assets (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+CREATE TABLE IF NOT EXISTS post_views (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    slug VARCHAR(191) NOT NULL,
+    title VARCHAR(255) DEFAULT '',
+    category VARCHAR(40) DEFAULT '',
+    ip_hash CHAR(64) DEFAULT '',
+    viewed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_slug_time (slug, viewed_at),
+    INDEX idx_time (viewed_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS newsletter_subscribers (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(191) NOT NULL UNIQUE,
+    categories VARCHAR(255) DEFAULT '',
+    is_active TINYINT(1) DEFAULT 1,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS newsletter_sends (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    subscriber_email VARCHAR(191) NOT NULL,
+    subject VARCHAR(255) NOT NULL,
+    categories VARCHAR(255) DEFAULT '',
+    status ENUM('sent','failed','pending') DEFAULT 'pending',
+    sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_email_time (subscriber_email, sent_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 */
 
 // Já foi adicionado acima — esse bloco é reservado para append via script
