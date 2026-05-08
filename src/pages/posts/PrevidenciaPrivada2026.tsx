@@ -11,7 +11,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/previdencia-privada-2026.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const PrevidenciaPrivada2026 = () => {
   useEffect(() => {
     trackArticleRead("previdencia-privada-pgbl-vgbl-2026", "Previdência Privada em 2026: PGBL ou VGBL? Guia para Decidir Sem Erro", "invest");
@@ -108,7 +108,9 @@ const PrevidenciaPrivada2026 = () => {
 
       <AdRectangle className="my-8" />
 
-      <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+      
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
         <Shield className="h-7 w-7 text-emerald-400" />Taxa de Administração: O Vilão Silencioso
       </h2>
       <p>A taxa de administração é o custo anual do plano e tem impacto enorme no longo prazo. Compare:</p>

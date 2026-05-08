@@ -10,7 +10,7 @@ import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import avatarFireImg from "@/assets/avatar-fire.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const Avatar3FogoECinzas = () => {
 
   useEffect(() => {
@@ -161,7 +161,9 @@ const Avatar3FogoECinzas = () => {
 
         <AdRectangle className="my-8" />
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Film className="h-7 w-7 text-orange-400" />
           Filmagem Simultânea: Estratégia de Produção
         </h2>

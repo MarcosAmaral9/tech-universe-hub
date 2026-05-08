@@ -8,7 +8,7 @@ import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/gemini3-vs-gpt5-2026.webp";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const Gemini25ProVsGPT4o = () => {
   useEffect(() => {
@@ -99,7 +99,9 @@ const Gemini25ProVsGPT4o = () => {
           Em <strong>seguir instruções cotidianas e geração de texto fluente</strong>, o GPT-4o é consistentemente melhor avaliado por humanos no LMSYS Chatbot Arena. O modelo da OpenAI é mais direto e menos verboso, o que o torna mais prático para tarefas do dia a dia.
         </p>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Globe className="h-7 w-7 text-violet-400" />
           Multimodalidade: Gemini Processa Vídeo, GPT-4o Não
         </h2>

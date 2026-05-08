@@ -8,7 +8,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import crimsonCombateImg from "@/assets/crimson-desert-combate.webp";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const CrimsonDesertCombate = () => {
   useEffect(() => {
@@ -145,7 +145,9 @@ const CrimsonDesertCombate = () => {
           </li>
         </ul>
 
-        <h2>Requisitos de PC por Nível de Desempenho</h2>
+        
+        <AdInArticle className="my-8" />
+<h2>Requisitos de PC por Nível de Desempenho</h2>
         <div className="not-prose my-6 overflow-x-auto">
           <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead>

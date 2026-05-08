@@ -10,7 +10,7 @@ import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import planejamentoImg from "@/assets/planejamento-financeiro-2026.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 // SMART Goal Builder
 const SmartGoalBuilder = () => {
   const [specific, setSpecific] = useState("");
@@ -247,7 +247,9 @@ const PlanejamentoFinanceiro2026 = () => {
         <section className="mb-10">
           <AdRectangle className="my-8" />
 
-          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">A Mentalidade Que Funciona</h2>
+          
+        <AdInArticle className="my-8" />
+<h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">A Mentalidade Que Funciona</h2>
           <div className="space-y-3">
             {[
               "Automatizar tudo o que for possível (tire o esforço da equação)",

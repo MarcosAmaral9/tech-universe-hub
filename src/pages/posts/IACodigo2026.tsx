@@ -11,7 +11,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/ia-codigo-programadores-2026.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const IACodigo2026 = () => {
   useEffect(() => {
     trackArticleRead("ia-codigo-programadores-2026", "IA e Programação em 2026: GitHub Copilot, Cursor e o Futuro do Dev", "ia");
@@ -82,7 +82,9 @@ const IACodigo2026 = () => {
 
       <AdRectangle className="my-8" />
 
-      <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+      
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
         <Cpu className="h-7 w-7 text-violet-400" />Limites Reais: O Que a IA Ainda Não Faz Bem
       </h2>
       <ul>

@@ -2051,6 +2051,51 @@ if ($method === 'POST' && $action === 'newsletter_send') {
     exit;
 }
 
+// ─── Post Views: tracking de leitura (rate-limit 30 min por IP+slug) ─────────
+if ($method === 'POST' && $action === 'track_view') {
+    $body     = json_decode(file_get_contents('php://input'), true) ?? [];
+    $slug     = trim($body['slug'] ?? '');
+    $title    = trim($body['title'] ?? '');
+    $category = trim($body['category'] ?? '');
+    if ($slug === '' || strlen($slug) > 191) {
+        http_response_code(400); echo json_encode(['error' => 'slug inválido']); exit;
+    }
+    $ip       = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+    $ip       = explode(',', $ip)[0];
+    $ip_hash  = hash('sha256', $ip . '|vc-views-2026');
+
+    // Rate-limit: mesmo ip+slug não conta de novo dentro de 30 min
+    $stmt = $pdo->prepare(
+        "SELECT id FROM post_views
+         WHERE slug = ? AND ip_hash = ? AND viewed_at >= (NOW() - INTERVAL 30 MINUTE)
+         LIMIT 1"
+    );
+    $stmt->execute([$slug, $ip_hash]);
+    if ($stmt->fetch()) { echo json_encode(['success' => true, 'throttled' => true]); exit; }
+
+    $pdo->prepare(
+        "INSERT INTO post_views (slug, title, category, ip_hash) VALUES (?, ?, ?, ?)"
+    )->execute([$slug, mb_substr($title, 0, 255), mb_substr($category, 0, 40), $ip_hash]);
+    echo json_encode(['success' => true]); exit;
+}
+
+// ─── Post Views: top posts por período (week/month/all) ──────────────────────
+if ($method === 'GET' && $action === 'top_posts') {
+    $period = $_GET['period'] ?? 'week';
+    $limit  = max(1, min(20, (int)($_GET['limit'] ?? 5)));
+    $where  = match ($period) {
+        'month' => 'WHERE viewed_at >= (NOW() - INTERVAL 30 DAY)',
+        'all'   => '',
+        default => 'WHERE viewed_at >= (NOW() - INTERVAL 7 DAY)',
+    };
+    $stmt = $pdo->prepare(
+        "SELECT slug, MAX(title) AS title, MAX(category) AS category, COUNT(*) AS views
+         FROM post_views $where
+         GROUP BY slug ORDER BY views DESC LIMIT $limit"
+    );
+    $stmt->execute();
+    echo json_encode(['posts' => $stmt->fetchAll(PDO::FETCH_ASSOC)]); exit;
+}
 
 http_response_code(404);
 echo json_encode(['error' => 'Endpoint não encontrado']);
@@ -2138,6 +2183,36 @@ CREATE TABLE IF NOT EXISTS user_favorite_assets (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     UNIQUE KEY uk_user_asset (user_id, asset_key),
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS post_views (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    slug VARCHAR(191) NOT NULL,
+    title VARCHAR(255) DEFAULT '',
+    category VARCHAR(40) DEFAULT '',
+    ip_hash CHAR(64) DEFAULT '',
+    viewed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_slug_time (slug, viewed_at),
+    INDEX idx_time (viewed_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS newsletter_subscribers (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(191) NOT NULL UNIQUE,
+    categories VARCHAR(255) DEFAULT '',
+    is_active TINYINT(1) DEFAULT 1,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS newsletter_sends (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    subscriber_email VARCHAR(191) NOT NULL,
+    subject VARCHAR(255) NOT NULL,
+    categories VARCHAR(255) DEFAULT '',
+    status ENUM('sent','failed','pending') DEFAULT 'pending',
+    sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_email_time (subscriber_email, sent_at)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 */

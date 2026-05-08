@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Crown } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -74,7 +74,9 @@ const KizokuTensei = () => {
           A adaptação em anime foi anunciada durante o evento <strong>"GA Fes 2025"</strong> em <strong>4 de janeiro de 2025</strong>. É produzida pelo estúdio <strong>CompTown</strong> (em cooperação com a Jumondou) e dirigida por <strong>Michio Fukuda</strong>, com roteiro de <strong>Toshiaki Satō</strong>, design de personagens por <strong>Takashi Kawashima e Ayumi Nishihata</strong>, e música de <strong>Takafumi Wada</strong>. A série estreou em <strong>4 de janeiro de 2026</strong>, prevista para <strong>12 episódios</strong>. A abertura é <strong>"Break off"</strong> pelo grupo <strong>SUPER★DRAGON</strong> e o encerramento <strong>"You'll Be In My Heart ~By My Side~"</strong>. Disponível na <strong>Crunchyroll</strong> e Amazon Prime Video.
         </p>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Star className="h-7 w-7 text-otaku" />
           Personagens Principais
         </h2>

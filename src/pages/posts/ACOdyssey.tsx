@@ -10,7 +10,7 @@ import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import acOdysseyImg from "@/assets/ac-odyssey.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const ACOdyssey = () => {
 
   useEffect(() => {
@@ -139,7 +139,9 @@ const ACOdyssey = () => {
         {/* Contexto Histórico e Geográfico */}
         <AdRectangle className="my-8" />
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Sword className="h-7 w-7 text-blue-400" />
           Contexto Histórico: A Guerra do Peloponeso (431-404 a.C.)
         </h2>

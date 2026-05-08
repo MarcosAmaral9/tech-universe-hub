@@ -8,7 +8,7 @@ import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/magnificent-seven-resultados-q1-2026-apple-tim-cook.webp";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const MagnificentSevenResultados2026 = () => {
   useEffect(() => {
@@ -178,7 +178,9 @@ const MagnificentSevenResultados2026 = () => {
 
         <AdRectangle className="my-8" />
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <TrendingUp className="h-7 w-7 text-invest" />
           O Que os Resultados Significam para o Investidor Brasileiro
         </h2>

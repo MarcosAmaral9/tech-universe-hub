@@ -8,7 +8,7 @@ import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/nintendo-switch-2-2026.webp";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const NintendoSwitch2Guia2026 = () => {
   useEffect(() => {
@@ -135,7 +135,9 @@ const NintendoSwitch2Guia2026 = () => {
         </div>
         <p>A Nintendo confirmou compatibilidade com praticamente toda a biblioteca do Switch 1 — mais de <strong>6.500 jogos</strong>.</p>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-geek" />
           Nintendo Switch 2 no Brasil: Preço e Edições
         </h2>

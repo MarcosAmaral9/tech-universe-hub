@@ -10,7 +10,7 @@ import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import aiAnimeDubbingImg from "@/assets/ai-anime-dubbing.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const IATransformandoDublagem = () => {
 
   useEffect(() => {
@@ -165,7 +165,9 @@ const IATransformandoDublagem = () => {
 
         <AdRectangle className="my-8" />
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Users className="h-7 w-7 text-ia" />
           Ferramentas de Voice Cloning Disponíveis
         </h2>

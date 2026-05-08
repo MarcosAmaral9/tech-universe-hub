@@ -11,7 +11,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import acMirageImg from "@/assets/ac-mirage.webp";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const ACMirage = () => {
 
   useEffect(() => {
@@ -255,7 +255,9 @@ const ACMirage = () => {
         {/* ==================== REVIEW ==================== */}
         <AdRectangle className="my-8" />
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Target className="h-7 w-7 text-amber-400" />
           Review Geral: Mirage Entrega o Prometido?
         </h2>

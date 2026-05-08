@@ -11,7 +11,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import ac1Img from "@/assets/ac-1-altair.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const AC1Altair = () => {
   useEffect(() => {
     trackArticleRead("ac-1-altair-terra-santa-1191", "Assassin's Creed 1: O Início da Lenda — Altaïr e a Terra Santa em 1191", "geek");
@@ -106,7 +106,9 @@ const AC1Altair = () => {
 
         <AdRectangle className="my-8" />
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <MapPin className="h-7 w-7 text-amber-400" />
           As Três Cidades: Damasco, Acre e Jerusalém
         </h2>

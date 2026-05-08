@@ -11,7 +11,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import acRevImg from "@/assets/ac-revelations.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const ACRevelations = () => {
   useEffect(() => {
     trackArticleRead("ac-revelations-ezio-constantinopla", "Assassin's Creed Revelations: Ezio em Constantinopla e o Legado de Altaïr", "geek");
@@ -113,7 +113,9 @@ const ACRevelations = () => {
 
         <AdRectangle className="my-8" />
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <MapPin className="h-7 w-7 text-amber-400" />
           Constantinopla: Os Quatro Distritos
         </h2>

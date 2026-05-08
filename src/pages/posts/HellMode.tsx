@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Gamepad2 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -77,7 +77,9 @@ const HellMode = () => {
           O elenco de vozes inclui <strong>Mutsumi Tamura</strong> como Allen, com <strong>Takaaki Torashima, Takaaki Uchino e Mayu Iizuka</strong> em papéis de suporte.
         </p>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Star className="h-7 w-7 text-otaku" />
           Personagens Principais
         </h2>

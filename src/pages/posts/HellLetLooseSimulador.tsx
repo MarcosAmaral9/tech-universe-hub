@@ -10,7 +10,7 @@ import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import hellLetLooseImg from "@/assets/hell-let-loose.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const HellLetLooseSimulador = () => {
 
   useEffect(() => {
@@ -314,7 +314,9 @@ const HellLetLooseSimulador = () => {
 
         <AdRectangle className="my-8" />
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Radio className="h-7 w-7 text-red-400" />
           Cadeia de Comando e Comunicação
         </h2>

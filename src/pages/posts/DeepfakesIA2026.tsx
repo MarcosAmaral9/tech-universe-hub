@@ -10,7 +10,7 @@ import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/deepfakes-ia-2026.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const DeepfakesIA2026 = () => {
 
   useEffect(() => {
@@ -93,7 +93,9 @@ const DeepfakesIA2026 = () => {
 
         <AdRectangle className="my-8" />
 
-        <h2 className="text-2xl font-bold mt-10 mb-6">Ferramentas para Detectar Conteúdo Falso</h2>
+        
+        <AdInArticle className="my-8" />
+<h2 className="text-2xl font-bold mt-10 mb-6">Ferramentas para Detectar Conteúdo Falso</h2>
         <ul className="space-y-2 my-6">
           <li><strong>Intel FakeCatcher:</strong> detecção em tempo real com 96% de precisão</li>
           <li><strong>Microsoft Video Authenticator:</strong> analisa vídeos frame a frame</li>

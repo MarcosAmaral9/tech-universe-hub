@@ -8,7 +8,7 @@ import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/nintendo-switch-2-guia-completo-2026.webp";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const POST_SLUG = "nintendo-switch-2-guia-completo-2026";
 const POST_TITLE = "Nintendo Switch 2: Guia Completo — Preço (R$ 4.500), Todos os Jogos, Specs e Vale a Pena Comprar?";
@@ -139,7 +139,9 @@ const NintendoSwitch2Completo2026 = () => {
 
         <AdRectangle className="my-8" />
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Gamepad2 className="h-7 w-7 text-geek" />
           Catálogo de lançamento e principais exclusivos
         </h2>

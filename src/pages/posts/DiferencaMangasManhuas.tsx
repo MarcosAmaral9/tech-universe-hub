@@ -10,7 +10,7 @@ import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import mangaManhwaManhuaImg from "@/assets/manga-manhwa-manhua.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const DiferencaMangasManhuas = () => {
 
   useEffect(() => {
@@ -203,7 +203,9 @@ const DiferencaMangasManhuas = () => {
 
         <AdRectangle className="my-8" />
 
-        <h2 className="text-2xl font-bold mt-10 mb-6">Comparação Detalhada</h2>
+        
+        <AdInArticle className="my-8" />
+<h2 className="text-2xl font-bold mt-10 mb-6">Comparação Detalhada</h2>
 
         <div className="overflow-x-auto my-8">
           <table className="w-full border-collapse bg-card rounded-xl overflow-hidden">

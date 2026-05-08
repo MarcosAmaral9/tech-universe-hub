@@ -11,7 +11,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import { Slider } from "@/components/ui/slider";
 import metodo3BaldesImg from "@/assets/metodo-3-baldes.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 // Bucket Calculator
 const BucketCalculator = () => {
   const [salary, setSalary] = useState(3000);
@@ -227,7 +227,9 @@ const EducacaoFinanceira3Baldes = () => {
         <section className="mb-10">
           <AdRectangle className="my-8" />
 
-          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">Ferramentas de Controle Financeiro 2026</h2>
+          
+        <AdInArticle className="my-8" />
+<h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">Ferramentas de Controle Financeiro 2026</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {[
               { name: "Mobills", desc: "Melhor app brasileiro de controle financeiro", icon: "📱" },

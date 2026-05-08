@@ -5,6 +5,7 @@ import { getRelatedPosts } from "@/data/posts";
 import CategoryBadge from "./CategoryBadge";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { AdInArticle } from "./AdSense";
+import MostReadWidget from "./MostReadWidget";
 
 interface RelatedPostsProps {
   currentSlug: string;
@@ -96,6 +97,8 @@ const RelatedPosts = ({ currentSlug }: RelatedPostsProps) => {
           );
         })}
       </div>
+
+      <MostReadWidget className="mt-8" limit={5} />
     </section>
   );
 };

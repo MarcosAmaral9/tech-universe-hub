@@ -12,7 +12,7 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import crimsonMapaImg from "@/assets/crimson-desert-pywel-completo.webp";
 import CrimsonDesertRegionMap, { type RegionKey } from "@/components/CrimsonDesertRegionMap";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 interface Region {
   name: string;
   slug: RegionKey;
@@ -553,7 +553,9 @@ const CrimsonDesertMapa = () => {
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
-        <h2>Como se Locomover em Pywel</h2>
+        
+        <AdInArticle className="my-8" />
+<h2>Como se Locomover em Pywel</h2>
         <ul>
           <li>
             <strong>Montarias (29 variedades):</strong> cavalos, ursos, lagartos, raptores e dragões. Cada montaria tem

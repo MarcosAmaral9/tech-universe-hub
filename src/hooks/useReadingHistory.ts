@@ -32,6 +32,16 @@ export function trackArticleRead(slug: string, title: string, category: string) 
     filtered.unshift({ slug, title, category, readAt: new Date().toISOString() });
     localStorage.setItem(ARTICLES_KEY, JSON.stringify(filtered.slice(0, MAX)));
   } catch { /* ignore */ }
+
+  // Fire-and-forget: registra view no MySQL Hostinger (falhas silenciosas em preview estático)
+  try {
+    fetch("/api.php?action=track_view", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ slug, title, category }),
+      keepalive: true,
+    }).catch(() => {});
+  } catch { /* ignore */ }
 }
 
 export function trackCommentPosted(postId: string, postTitle: string, text: string) {

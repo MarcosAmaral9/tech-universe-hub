@@ -1,9 +1,10 @@
 import { forwardRef } from "react";
 import { Link } from "react-router-dom";
-import { Clock, Download } from "lucide-react";
+import { Clock, Download, Flame } from "lucide-react";
 import { BlogPost } from "@/types/blog";
 import CategoryBadge from "./CategoryBadge";
 import { useOfflinePosts } from "@/hooks/useOfflinePosts";
+import { useTopPosts } from "@/hooks/useTopPosts";
 
 interface PostCardProps {
   post: BlogPost;
@@ -12,6 +13,8 @@ interface PostCardProps {
 const PostCard = forwardRef<HTMLElement, PostCardProps>(({ post }, ref) => {
   const { isCached } = useOfflinePosts();
   const offlineReady = isCached(post.slug);
+  const { isTop } = useTopPosts("week", 5);
+  const trending = isTop(post.slug);
 
   return (
     <article ref={ref} className="group bg-card rounded-xl overflow-hidden border border-border card-hover">
@@ -28,15 +31,26 @@ const PostCard = forwardRef<HTMLElement, PostCardProps>(({ post }, ref) => {
           <div className="absolute top-3 left-3">
             <CategoryBadge category={post.category} size="sm" />
           </div>
-          {offlineReady && (
-            <div
-              className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-full bg-emerald-500/90 text-emerald-950 text-[10px] font-bold shadow-md backdrop-blur-sm"
-              title="Este post está salvo no seu dispositivo e pode ser lido sem internet"
-            >
-              <Download className="h-3 w-3" />
-              <span className="hidden sm:inline">Offline</span>
-            </div>
-          )}
+          <div className="absolute top-3 right-3 flex flex-col items-end gap-1.5">
+            {trending && (
+              <div
+                className="flex items-center gap-1 px-2 py-1 rounded-full bg-orange-500/95 text-white text-[10px] font-bold shadow-md backdrop-blur-sm"
+                title="Entre os mais lidos da semana"
+              >
+                <Flame className="h-3 w-3" />
+                <span className="hidden sm:inline">Mais lido</span>
+              </div>
+            )}
+            {offlineReady && (
+              <div
+                className="flex items-center gap-1 px-2 py-1 rounded-full bg-emerald-500/90 text-emerald-950 text-[10px] font-bold shadow-md backdrop-blur-sm"
+                title="Este post está salvo no seu dispositivo e pode ser lido sem internet"
+              >
+                <Download className="h-3 w-3" />
+                <span className="hidden sm:inline">Offline</span>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Content */}

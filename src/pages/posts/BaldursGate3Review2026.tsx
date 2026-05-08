@@ -11,7 +11,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/baldurs-gate-3-review-2026.webp";
 
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const BaldursGate3Review2026 = () => {
   useEffect(() => {
     trackArticleRead("baldurs-gate-3-review-2026", "Baldur\'s Gate 3 em 2026: Ainda o Melhor RPG da Geração?", "geek");
@@ -79,7 +79,9 @@ const BaldursGate3Review2026 = () => {
 
       <AdRectangle className="my-8" />
 
-      <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+      
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
         <Cpu className="h-7 w-7 text-purple-400" />Requisitos de PC em 2026
       </h2>
       <div className="not-prose my-4 grid md:grid-cols-2 gap-4">

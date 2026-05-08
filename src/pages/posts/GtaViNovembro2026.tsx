@@ -8,7 +8,7 @@ import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/gta-vi-novembro-2026-vice-city-leonida.webp";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const GtaViNovembro2026 = () => {
   useEffect(() => {
@@ -130,7 +130,9 @@ const GtaViNovembro2026 = () => {
           O mapa de GTA VI é estimado pelos dataminers com base nos trailers em <strong>2–3 vezes o tamanho de GTA V</strong>. Para contexto: GTA V tinha 81 km² incluindo o oceano. Se as estimativas estiverem corretas, Leonida terá entre 160–240 km² — o maior mapa já criado pela Rockstar.
         </p>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Zap className="h-7 w-7 text-geek" />
           As Inovações de Gameplay Confirmadas nos Trailers
         </h2>

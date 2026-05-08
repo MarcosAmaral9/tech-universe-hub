@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
-import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Globe } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -78,7 +78,9 @@ const Tsukimichi = () => {
           A abertura é <strong>"Gambler"</strong> performada por <strong>Natsuki Hanae</strong> (VA de Makoto) e o encerramento é <strong>"Beautiful Dreamer"</strong> pelo <strong>Ezoshika Gourmet Club</strong>. Ao final da temporada, uma segunda temporada foi anunciada.
         </p>
 
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        
+        <AdInArticle className="my-8" />
+<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Tv className="h-7 w-7 text-otaku" />
           Temporada 2 — J.C.Staff (2024)
         </h2>
