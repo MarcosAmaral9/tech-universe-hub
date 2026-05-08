@@ -58,6 +58,11 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Mais lidos da semana — só aparece quando há dados (Hostinger prod) */}
+      <section className="container px-4">
+        <MostReadWidget className="max-w-3xl mx-auto" />
+      </section>
+
       {/* Latest Posts - Show 12 latest posts sorted chronologically */}
       <section className="container px-4 py-8 md:py-12">
         <div className="flex items-center justify-between mb-6 md:mb-8">
