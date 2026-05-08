@@ -1,9 +1,10 @@
 import { forwardRef } from "react";
 import { Link } from "react-router-dom";
-import { Clock, Download } from "lucide-react";
+import { Clock, Download, Flame } from "lucide-react";
 import { BlogPost } from "@/types/blog";
 import CategoryBadge from "./CategoryBadge";
 import { useOfflinePosts } from "@/hooks/useOfflinePosts";
+import { useTopPosts } from "@/hooks/useTopPosts";
 
 interface PostCardProps {
   post: BlogPost;
@@ -12,6 +13,8 @@ interface PostCardProps {
 const PostCard = forwardRef<HTMLElement, PostCardProps>(({ post }, ref) => {
   const { isCached } = useOfflinePosts();
   const offlineReady = isCached(post.slug);
+  const { isTop } = useTopPosts("week", 5);
+  const trending = isTop(post.slug);
 
   return (
     <article ref={ref} className="group bg-card rounded-xl overflow-hidden border border-border card-hover">
