@@ -1925,6 +1925,133 @@ if ($action === 'price_alerts') {
     }
 }
 
+// ─── Newsletter: inscrever ────────────────────────────────────────────────────
+if ($method === 'POST' && $action === 'newsletter_subscribe') {
+    $body  = json_decode(file_get_contents('php://input'), true) ?? [];
+    $email = strtolower(trim($body['email'] ?? ''));
+    $cats  = implode(',', array_filter(array_map('trim', (array)($body['categories'] ?? []))));
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        http_response_code(400); echo json_encode(['error' => 'Email inválido']); exit;
+    }
+    $stmt = $pdo->prepare(
+        "INSERT INTO newsletter_subscribers (email, categories, is_active)
+         VALUES (?, ?, 1)
+         ON DUPLICATE KEY UPDATE categories=VALUES(categories), is_active=1, updated_at=NOW()"
+    );
+    $stmt->execute([$email, $cats]);
+    echo json_encode(['success' => true]); exit;
+}
+
+// ─── Newsletter: buscar inscrito + histórico ──────────────────────────────────
+if ($method === 'GET' && $action === 'newsletter_get') {
+    $email = strtolower(trim($_GET['email'] ?? ''));
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo json_encode(['subscriber' => null, 'history' => []]); exit;
+    }
+    $stmt = $pdo->prepare(
+        "SELECT id, email, categories, is_active, created_at, updated_at
+         FROM newsletter_subscribers WHERE email = ?"
+    );
+    $stmt->execute([$email]);
+    $sub = $stmt->fetch(PDO::FETCH_ASSOC) ?: null;
+    $hist = [];
+    if ($sub) {
+        $stmt2 = $pdo->prepare(
+            "SELECT id, subject, categories, status, sent_at
+             FROM newsletter_sends WHERE subscriber_email = ?
+             ORDER BY sent_at DESC LIMIT 20"
+        );
+        $stmt2->execute([$email]);
+        $hist = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+    }
+    echo json_encode(['subscriber' => $sub, 'history' => $hist]); exit;
+}
+
+// ─── Newsletter: pausar / reativar / atualizar categorias ────────────────────
+if ($method === 'POST' && $action === 'newsletter_update') {
+    $body      = json_decode(file_get_contents('php://input'), true) ?? [];
+    $email     = strtolower(trim($body['email'] ?? ''));
+    $is_active = isset($body['is_active']) ? (int)$body['is_active'] : null;
+    $cats      = isset($body['categories'])
+                   ? implode(',', array_filter(array_map('trim', (array)$body['categories'])))
+                   : null;
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        http_response_code(400); echo json_encode(['error' => 'Email inválido']); exit;
+    }
+    $sets = []; $params = [];
+    if ($is_active !== null) { $sets[] = 'is_active=?';  $params[] = $is_active; }
+    if ($cats     !== null) { $sets[] = 'categories=?'; $params[] = $cats; }
+    if (!empty($sets)) {
+        $sets[]    = 'updated_at=NOW()';
+        $params[]  = $email;
+        $pdo->prepare("UPDATE newsletter_subscribers SET " . implode(', ', $sets) . " WHERE email=?")
+            ->execute($params);
+    }
+    echo json_encode(['success' => true, 'is_active' => $is_active]); exit;
+}
+
+// ─── Newsletter: worker de envio (CRON ou painel admin) ──────────────────────
+// Cron sugerido Hostinger: 0 9 * * 1  →  toda segunda-feira às 9h
+// Chamada: POST api.php?action=newsletter_send  body: {secret, subject, body, categories[]}
+if ($method === 'POST' && $action === 'newsletter_send') {
+    $body     = json_decode(file_get_contents('php://input'), true) ?? [];
+    $secret   = $body['secret'] ?? '';
+    $expected = defined('VC_CRON_2026') ? VC_CRON_2026 : 'vc-cron-2026-secret';
+    if ($secret !== $expected) {
+        http_response_code(403); echo json_encode(['error' => 'Não autorizado']); exit;
+    }
+    $subject   = trim($body['subject'] ?? 'Newsletter VicioCode — Novidades da Semana');
+    $html_body = trim($body['body']    ?? '');
+    $send_cats = array_filter(array_map('trim', (array)($body['categories'] ?? [])));
+    if (empty($subject) || empty($html_body)) {
+        http_response_code(400); echo json_encode(['error' => 'subject e body obrigatórios']); exit;
+    }
+    // Busca inscritos ativos
+    $stmt = $pdo->prepare("SELECT email, categories FROM newsletter_subscribers WHERE is_active = 1");
+    $stmt->execute();
+    $all = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $sent = 0; $skipped = 0;
+    foreach ($all as $row) {
+        // Filtra por categoria se especificado
+        if (!empty($send_cats)) {
+            $sub_cats = array_filter(array_map('trim', explode(',', $row['categories'] ?? '')));
+            if (empty(array_intersect($send_cats, $sub_cats))) { $skipped++; continue; }
+        }
+        $email = $row['email'];
+        $unsubscribe_link = 'https://viciocode.com/configuracoes';
+        $full_html = '<!DOCTYPE html><html lang="pt-BR"><body style="margin:0;padding:0;background:#09090b">'
+            . '<table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;margin:0 auto;background:#18181b;border-radius:12px;padding:32px">'
+            . '<tr><td><h2 style="color:#a78bfa;font-family:sans-serif;margin:0 0 16px">VicioCode</h2></td></tr>'
+            . '<tr><td style="color:#e4e4e7;font-family:sans-serif;font-size:15px;line-height:1.7">'
+            . $html_body
+            . '</td></tr>'
+            . '<tr><td style="padding-top:32px;border-top:1px solid #3f3f46;font-family:sans-serif;font-size:12px;color:#71717a">'
+            . 'Você recebe este email pois se inscreveu em <a href="https://viciocode.com" style="color:#a78bfa">viciocode.com</a>. '
+            . '<a href="' . $unsubscribe_link . '" style="color:#a78bfa">Cancelar inscrição</a>'
+            . '</td></tr></table></body></html>';
+
+        $headers = implode("\r\n", [
+            'From: VicioCode <noreply@viciocode.com>',
+            'Reply-To: contato@viciocode.com',
+            'MIME-Version: 1.0',
+            'Content-Type: text/html; charset=UTF-8',
+            'X-Mailer: VicioCode-Newsletter/1.0',
+        ]);
+        $ok = @mail($email, '=?UTF-8?B?' . base64_encode($subject) . '?=', $full_html, $headers);
+
+        $pdo->prepare(
+            "INSERT INTO newsletter_sends (subscriber_email, subject, categories, status)
+             VALUES (?, ?, ?, ?)"
+        )->execute([$email, $subject, implode(',', $send_cats), $ok ? 'sent' : 'failed']);
+
+        $ok ? $sent++ : $skipped++;
+    }
+    echo json_encode(['success' => true, 'sent' => $sent, 'skipped' => $skipped, 'total' => count($all)]);
+    exit;
+}
+
+
 http_response_code(404);
 echo json_encode(['error' => 'Endpoint não encontrado']);
 
