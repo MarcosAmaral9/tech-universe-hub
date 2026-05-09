@@ -10,6 +10,8 @@ import DynamicSEO from "@/components/DynamicSEO";
 import { AdInArticle } from "@/components/AdSense";
 import OfflineFilterButton from "@/components/OfflineFilterButton";
 import { useOfflinePosts } from "@/hooks/useOfflinePosts";
+import MostReadWidget from "@/components/MostReadWidget";
+import SubtopicFilter from "@/components/SubtopicFilter";
 
 const PINNED_SLUG = "calculadoras-financeiras-ativos";
 const POSTS_PER_PAGE = 12;
@@ -32,6 +34,51 @@ const SUBTOPIC_LABELS: Record<string, string> = {
 };
 
 const InvestimentosPage = () => {
+  const [activeSub, setActiveSub] = useState<string | null>(null);
+
+  const subtopicCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    postsWithoutPinned.forEach(p => {
+      if (p.subtopic) counts[p.subtopic] = (counts[p.subtopic] || 0) + 1;
+    });
+    return counts;
+  }, [postsWithoutPinned]);
+
+  const subtopics = useMemo(() =>
+    Object.entries(subtopicCounts)
+      .filter(([, n]) => n > 0)
+      .sort((a, b) => b[1] - a[1])
+      .map(([key, count]) => ({
+        key,
+        label: ({
+          games:"Games",crimsonDesert:"Crimson Desert",
+          "assassins-creed":"Assassin's Creed",avatar:"Avatar",vikings:"Vikings",
+          agentes:"Agentes IA",mercado:"Mercado",tutorial:"Tutorial",
+          produtividade:"Produtividade",trabalho:"Trabalho",comparativos:"Comparativos",
+          renda:"Renda",seguranca:"Segurança",apps:"Apps",educacao:"Educação",
+          saude:"Saúde",regulacao:"Regulação",criatividade:"Criatividade",
+          privacidade:"Privacidade",dublagem:"Dublagem",
+          carteira:"Carteira","renda-fixa":"Renda Fixa",planejamento:"Planejamento",
+          etfs:"ETFs",fiis:"FIIs",cripto:"Cripto",semicondutores:"Semicondutores",
+          "renda-passiva":"Renda Passiva",impostos:"Impostos",
+          "educacao-financeira":"Ed. Financeira",dividas:"Dívidas",
+          calculadoras:"Calculadoras","economia-domestica":"Economia Doméstica",
+          anime:"Anime",manga:"Manga",manhwa:"Manhwa",cosplay:"Cosplay",
+          cultura:"Cultura",idiomas:"Idiomas",generos:"Gêneros",
+          collectibles:"Colecionáveis","saude-mental":"Saúde Mental",
+          tensura:"Tensura",overlord:"Overlord",isekai:"Isekai",
+          "crimson-desert":"Crimson Desert",
+        } as Record<string,string>)[key] || key,
+        count,
+      })),
+    [subtopicCounts]
+  );
+
+  const displayPosts = useMemo(() =>
+    activeSub ? postsWithoutPinned.filter(p => p.subtopic === activeSub) : postsWithoutPinned,
+    [postsWithoutPinned, activeSub]
+  );
+
   const allPosts = getPostsByCategory("invest");
   const pinnedPost = getPostBySlug(PINNED_SLUG);
   const postsWithoutPinned = allPosts.filter((p) => p.slug !== PINNED_SLUG);
@@ -105,7 +152,8 @@ const InvestimentosPage = () => {
           Dicas de finanças, análises de mercado, criptomoedas e 
           educação financeira para construir seu futuro.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+              <SubtopicFilter subtopics={subtopics} selected={activeSub} onChange={setActiveSub} />
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
           <Link to="/cotacoes" className="group block">
             <div className="relative rounded-2xl overflow-hidden h-48 md:h-56 border border-invest/30 hover:border-invest/60 transition-all shadow-md hover:shadow-xl">
               <img src={heroCotacoes} alt="Cotações em Tempo Real" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -248,6 +296,7 @@ const InvestimentosPage = () => {
         </div>
       )}
     </div>
+      <MostReadWidget className="mt-8 mb-4 max-w-3xl mx-auto" />
   </>  
   );
 };
