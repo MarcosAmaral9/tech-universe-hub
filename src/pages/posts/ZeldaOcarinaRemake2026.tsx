@@ -116,6 +116,7 @@ const ZeldaOcarinaRemake2026 = () => {
                 <span className="text-sm">{plat}</span>
                 <span className={`text-xs ${dest ? "text-geek font-bold" : "text-muted-foreground"}`}>{nota}</span>
               </div>
+      <AdInArticle />
             ))}
           </div>
         </div>
@@ -156,7 +157,6 @@ const ZeldaOcarinaRemake2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Zap className="h-7 w-7 text-geek" />
           Comparativo: Versões de Ocarina of Time ao Longo dos Anos

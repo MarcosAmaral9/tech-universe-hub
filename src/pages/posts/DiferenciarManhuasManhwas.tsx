@@ -145,6 +145,7 @@ const DiferenciarManhuasManhwas = () => {
             </div>
           </div>
         </div>
+      <AdInArticle />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Sword className="h-7 w-7 text-accent" />
@@ -182,7 +183,6 @@ const DiferenciarManhuasManhwas = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="text-2xl font-bold mt-10 mb-6">Tabela Comparativa Completa</h2>
 
         <div className="overflow-x-auto my-8">

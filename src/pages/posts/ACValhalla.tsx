@@ -175,6 +175,7 @@ const ACValhalla = () => {
               Último reino saxão independente, governado pelo lendário <strong>Rei Alfredo, o Grande</strong>. 
               Foi o único reino a resistir às invasões vikings e eventualmente unificaria a Inglaterra.
             </p>
+      <AdInArticle />
           </div>
           <div className="p-4 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-2 text-purple-400">Mércia</h4>
@@ -224,7 +225,6 @@ const ACValhalla = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-purple-400" />
           Assassinos vs Templários: O Conflito Central da Franquia

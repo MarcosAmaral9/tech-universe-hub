@@ -67,6 +67,7 @@ const IACriatividade2026 = () => {
         <p>
           Por outro lado, produtores independentes usam IA para criar demos, experimentar com gêneros e produzir trilhas sonoras para jogos e vídeos. O <strong>Boomy</strong> reportou mais de 20 milhões de músicas criadas em sua plataforma. A democratização da produção musical é real, mas levanta questões sobre originalidade e valor artístico.
         </p>
+      <AdInArticle />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Video className="h-7 w-7 text-ia" />
@@ -82,7 +83,6 @@ const IACriatividade2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Sparkles className="h-7 w-7 text-ia" />
           Ferramentas Essenciais Para Criativos em 2026

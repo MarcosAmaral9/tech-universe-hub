@@ -173,6 +173,7 @@ const AC3Remastered = () => {
               <ul className="text-sm text-muted-foreground space-y-1 mb-0">
                 <li>• Início extremamente lento (~4 horas)</li>
                 <li>• Missões de perseguição repetitivas</li>
+      <AdInArticle />
                 <li>• Connor menos carismático que Ezio</li>
                 <li>• Sistema de crafting confuso</li>
                 <li>• Algumas missões com design antiquado</li>
@@ -220,7 +221,6 @@ const AC3Remastered = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <MapPin className="h-7 w-7 text-red-400" />
           Mapa e Regiões: A América Colonial

@@ -132,6 +132,7 @@ const AvatarCaminhoDaAgua = () => {
           </div>
           <div className="p-5 bg-card rounded-xl border border-border">
             <Wind className="h-8 w-8 text-cyan-400 mb-3" />
+      <AdInArticle />
             <h4 className="font-bold mb-2">Bolhas e Espuma</h4>
             <p className="text-sm text-muted-foreground">
               Sistema dedicado para simular bolhas de ar, espuma de onda e a forma como a luz 
@@ -161,7 +162,6 @@ const AvatarCaminhoDaAgua = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Timer className="h-7 w-7 text-cyan-400" />
           High Frame Rate (HFR): 48fps Para Fluidez Máxima

@@ -85,6 +85,7 @@ const DemonSlayerHashira2026 = () => {
                 <td className="py-3 px-4 font-medium">{h.nome}</td>
                 <td className="py-3 px-4 text-pink-400">{h.respiracao}</td>
                 <td className="py-3 px-4 text-muted-foreground">{h.posicao}</td>
+      <AdInArticle />
                 <td className={`py-3 px-4 text-xs font-medium ${h.status.includes("Falecido") ? "text-red-400" : h.status.includes("Aposentado") ? "text-yellow-400" : "text-emerald-400"}`}>{h.status}</td>
               </tr>
             ))}
@@ -108,7 +109,6 @@ const DemonSlayerHashira2026 = () => {
       <AdRectangle className="my-8" />
 
       
-        <AdInArticle className="my-8" />
 <h2 className="text-2xl font-bold mt-10 mb-4">A Hierarquia das Respirações</h2>
       <p>No universo de Demon Slayer, todas as Respirações derivam de uma única origem: a <strong>Respiração do Sol</strong> (Hinokami Kagura), a mais antiga e poderosa. Tanjiro aprende essa respiração ao longo da história através da tradição familiar Kamado.</p>
       <p>As derivações seguem uma árvore:</p>

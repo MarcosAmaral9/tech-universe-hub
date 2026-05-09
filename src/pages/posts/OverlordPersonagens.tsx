@@ -106,6 +106,7 @@ const OverlordPersonagens = () => {
               name:"Pandora's Actor",floor:"Treasury — Doppelganger",
               color:"border-orange-500/30 bg-orange-500/5",
               va:"Yuichi Nakamura (JP)",
+      <AdInArticle />
               desc:"Guardião do Tesouro de Nazarick — um doppelganger que pode imitar qualquer Guardian com 80% de eficiência. Criado pelo próprio Momonga como um dos primeiros NPCs da guilda. Extremamente dramático e teatral, o que faz Ainz se envergonhar retroativamente de suas escolhas de jovem jogador. Apesar da aparência clichê, é um dos Guardians mais versáteis.",
             },
           ].map((c) => (
@@ -164,7 +165,6 @@ const OverlordPersonagens = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
           <Zap className="h-7 w-7 text-otaku" />
           O Sistema de Poder: Classes, Magias e Níveis

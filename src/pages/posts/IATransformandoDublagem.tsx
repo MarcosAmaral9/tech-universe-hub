@@ -132,6 +132,7 @@ const IATransformandoDublagem = () => {
           <AlertTriangle className="h-7 w-7 text-orange-400" />
           Questões Éticas e Profissionais
         </h2>
+      <AdInArticle />
 
         <p>
           Apesar dos benefícios evidentes, a tecnologia de <strong>Voice Cloning</strong> levanta 
@@ -166,7 +167,6 @@ const IATransformandoDublagem = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Users className="h-7 w-7 text-ia" />
           Ferramentas de Voice Cloning Disponíveis

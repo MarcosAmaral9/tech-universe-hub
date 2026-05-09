@@ -68,6 +68,7 @@ const BaldursGate3Review2026 = () => {
       <p>Baldur's Gate 3 ganhou o GOTY (Game of the Year) no The Game Awards 2023 com votação quase unânime da crítica — Metacritic PC: 96, PS5: 97. Esses números se mantêm relevantes em 2026 por uma razão simples: a Larian continuou atualizando o jogo.</p>
       <p>Em 2024 e 2025, a Larian lançou atualizações gratuitas que adicionaram o modo fotografia, novos finais alternativos, melhorias de performance e suporte a controller aprimorado. Em março de 2025, o Patch 8 adicionou subclasses novas para todas as 12 classes originais — conteúdo gratuito que seria DLC pago em qualquer outra empresa.</p>
 
+      <AdInArticle />
       <h2 className="text-2xl font-bold mt-10 mb-4">O Que Torna BG3 Diferente</h2>
       <ul>
         <li><strong>Reatividade sem precedentes:</strong> o mundo responde a quase toda ação do jogador. NPCs lembram do que você fez. Decisões têm peso real.</li>
@@ -80,7 +81,6 @@ const BaldursGate3Review2026 = () => {
       <AdRectangle className="my-8" />
 
       
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
         <Cpu className="h-7 w-7 text-purple-400" />Requisitos de PC em 2026
       </h2>

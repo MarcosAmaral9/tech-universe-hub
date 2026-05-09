@@ -63,6 +63,7 @@ const MaousamaRetry = () => {
         <p>
           Logo após chegar, ele testemunha o demônio <strong>Greol</strong> perseguindo uma garotinha chamada <strong>Aku</strong> — e elimina a ameaça sem esforço. Aku, que era maltratada e marginalizada por sua aldeia por ter olhos heterocromáticos (considerados maldição), torna-se a primeira companheira de Hakuto. Ela o chama constantemente de "Rei Demônio" em público, para seu eterno constrangimento.
         </p>
+      <AdInArticle />
         <p>
           Confuso sobre quem o invocou e por quê, Hakuto/Akira inicia uma investigação enquanto, inadvertidamente, deixa rastros de caos e milagres por onde passa — criando hospitais gratuitos, casinos, e atraindo um grupo improvável de aliadas poderosas que se tornam suas NPC convocadas do próprio jogo.
         </p>
@@ -96,7 +97,6 @@ const MaousamaRetry = () => {
       <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Star className="h-7 w-7 text-otaku" />
           Personagens Principais

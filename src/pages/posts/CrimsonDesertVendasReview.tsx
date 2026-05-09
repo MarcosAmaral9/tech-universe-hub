@@ -87,6 +87,7 @@ const CrimsonDesertVendasReview = () => {
             </div>
           ))}
         </div>
+      <AdInArticle />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BarChart3 className="h-7 w-7 text-amber-400" />
@@ -112,7 +113,6 @@ const CrimsonDesertVendasReview = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <MessageSquare className="h-7 w-7 text-geek" />
           O Que os Jogadores Disseram (Steam e Metacritic)

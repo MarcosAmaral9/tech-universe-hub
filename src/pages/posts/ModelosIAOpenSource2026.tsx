@@ -88,6 +88,7 @@ const ModelosIAOpenSource2026 = () => {
           <ul className="text-sm text-muted-foreground space-y-2">
             <li>• <strong>Privacidade:</strong> dados nunca saem da sua infraestrutura</li>
             <li>• <strong>Custo em escala:</strong> zero custo por token após hardware</li>
+      <AdInArticle />
             <li>• <strong>Fine-tuning:</strong> customização total para domínios específicos</li>
             <li>• <strong>Sem dependência de vendor</strong> — sem risco de descontinuação</li>
             <li>• <strong>Conformidade regulatória:</strong> LGPD, GDPR, HIPAA mais simples</li>
@@ -108,7 +109,6 @@ const ModelosIAOpenSource2026 = () => {
       <AdRectangle className="my-8" />
 
       
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
         <Code className="h-7 w-7 text-violet-400" />Como Rodar Modelos Open Source Localmente
       </h2>

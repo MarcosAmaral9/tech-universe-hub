@@ -69,6 +69,7 @@ const DragonAgeVeilguard2026 = () => {
       <p>Os companheiros — o coração emocional de qualquer RPG da BioWare — foram descritos como bem escritos individualmente, com arcos pessoais que funcionam. Bellara, Harding e Neve foram os mais elogiados pelos jogadores.</p>
       <p>Visualmente, The Veilguard é deslumbrante. Os ambientes de Thedas são os mais belos já renderizados na franquia, com iluminação de alto nível e design de personagens detalhado.</p>
 
+      <AdInArticle />
       <h2 className="text-2xl font-bold mt-10 mb-4">O Que Desapontou</h2>
       <p>A comunidade de fãs de longa data da franquia teve críticas mais duras. Os principais pontos:</p>
       <ul>
@@ -81,7 +82,6 @@ const DragonAgeVeilguard2026 = () => {
       <AdRectangle className="my-8" />
 
       
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
         <Cpu className="h-7 w-7 text-purple-400" />Performance e PC
       </h2>

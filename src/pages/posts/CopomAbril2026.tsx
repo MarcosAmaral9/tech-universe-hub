@@ -105,6 +105,7 @@ const CopomAbril2026 = () => {
 
         <h3 className="text-xl font-bold mt-8 mb-3">📊 Ações: Otimismo Moderado, Seletividade Alta</h3>
         <p>
+      <AdInArticle />
           O Ibovespa reagiu positivamente ao início do ciclo de cortes, mas com inflação mais alta o ritmo de alta tende a ser mais lento do que o projetado no início de 2026. Os setores sensíveis a juros continuam favorecidos, mas com menor margem de segurança.
         </p>
         <div className="not-prose my-4 overflow-x-auto">
@@ -189,7 +190,6 @@ const CopomAbril2026 = () => {
         </div>
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Lightbulb className="h-7 w-7 text-invest" />
           Os 3 Erros que o Investidor Não Pode Cometer Agora

@@ -85,6 +85,7 @@ const AC1Altair = () => {
             <div key={title} className="p-4 bg-card rounded-xl border border-border">
               <h4 className="font-bold mb-2">{title}</h4>
               <p className="text-sm text-muted-foreground mb-0">{desc}</p>
+      <AdInArticle />
             </div>
           ))}
         </div>
@@ -107,7 +108,6 @@ const AC1Altair = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <MapPin className="h-7 w-7 text-amber-400" />
           As Três Cidades: Damasco, Acre e Jerusalém

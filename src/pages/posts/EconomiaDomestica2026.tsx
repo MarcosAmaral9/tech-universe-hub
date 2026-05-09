@@ -77,6 +77,7 @@ const EconomiaDomestica2026 = () => {
           <li><strong>Faça compras semanais</strong>, não diárias — Reduz compras por impulso</li>
           <li><strong>Congele porções</strong> — Cozinhar em lote economiza gás e tempo</li>
           <li><strong>Substitua marcas</strong> — Marcas próprias de supermercado são 20-40% mais baratas</li>
+      <AdInArticle />
           <li><strong>Feiras livres no fim</strong> — Preços caem até 50% na última hora</li>
         </ol>
 
@@ -98,7 +99,6 @@ const EconomiaDomestica2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Calculator className="h-7 w-7 text-invest" />
           Transporte: De R$ 800 Para R$ 300/Mês

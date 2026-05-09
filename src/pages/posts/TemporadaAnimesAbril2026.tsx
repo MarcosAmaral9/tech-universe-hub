@@ -94,6 +94,7 @@ const TemporadaAnimesAbril2026 = () => {
         </p>
 
         <h3 className="text-xl font-bold mt-8 mb-3">Tensei Shitara Slime Datta Ken 4ª Temporada (3 de abril)</h3>
+      <AdInArticle />
         <p>
           Rimuru Tempest retorna com a 4ª temporada, focada na consolidação política de Tempest e na aliança entre humanos e monstros — um dos arcos mais estratégicos da série. Em abril, o filme <em>Lágrimas do Mar Azul-Celeste</em> também chega aos cinemas brasileiros.
         </p>
@@ -131,7 +132,6 @@ const TemporadaAnimesAbril2026 = () => {
         </p>
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Globe className="h-7 w-7 text-otaku" />
           Como Priorizar a Temporada

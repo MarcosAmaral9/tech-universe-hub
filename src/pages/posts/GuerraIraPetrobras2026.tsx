@@ -142,6 +142,7 @@ const GuerraIraPetrobras2026 = () => {
                 <th className="text-left py-3 px-4">Brent Projetado 2026</th>
               </tr>
             </thead>
+      <AdInArticle />
             <tbody>
               {[
                 ["BTG Pactual", "Compra ✅", "R$ 56", "US$ 85–100"],
@@ -172,7 +173,6 @@ const GuerraIraPetrobras2026 = () => {
  
         {/* ── VALE A PENA? ── */}
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BarChart3 className="h-7 w-7 text-invest" />
           Vale a Pena Investir em PETR4 Agora? Os 3 Cenários

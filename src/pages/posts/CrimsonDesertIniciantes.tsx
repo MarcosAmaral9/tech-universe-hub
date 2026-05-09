@@ -91,6 +91,7 @@ const CrimsonDesertIniciantes = () => {
               num:"04", title:"Armas caem no chão — e você pode pegá-las",
               desc:"Inimigos podem te desarmar, mas você também pode pegar as armas que eles derrubam no chão. Se perder sua arma principal, procure no chão imediatamente — às vezes você pode usar a arma do próprio inimigo.",
             },
+      <AdInArticle />
             {
               num:"05", title:"Force Palm tem usos de travessia que o jogo não conta",
               desc:"Force Palm pode ser pressionado até 3 vezes após um salto para um triplo-boost de altura. Focused Force Palm (carregado) funciona em estruturas para agarrar e se lançar. Use no botão Resist enquanto pendurado para um impulso especial.",
@@ -154,7 +155,6 @@ const CrimsonDesertIniciantes = () => {
         </div>
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-red-400" />
           Sobrevivência e Recursos — 5 Dicas que Salvam Vidas

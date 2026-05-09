@@ -98,6 +98,7 @@ const CrimsonDesertBosses = () => {
         </div>
         <p>
           Myurdin é o líder dos Black Bears e o antagonista central da narrativa. Esta luta é <strong>narrativa e não pode ser vencida</strong> na primeira tentativa — serve para introduzir os sistemas de combate e para mostrar que Kliff está em desvantagem absoluta. Kliff é deixado para morrer após o confronto. Myurdin reaparece mais tarde com mecânicas mais complexas.
+      <AdInArticle />
         </p>
         <p><strong>Estratégia:</strong> Por ser um boss tutorial, siga as instruções do jogo. Curiosamente, é tecnicamente possível "vencer" Myurdin aqui — mas ele reaparece de qualquer jeito por razões narrativas. Não desperdice consumíveis.</p>
 
@@ -464,7 +465,6 @@ const CrimsonDesertBosses = () => {
         <p><strong>Estratégia:</strong> Fique perto o suficiente para acertar projéteis do dragão, mas não próximo demais — ele cria onda de choque quando está perto. Voe para os lados continuamente para evitar os lasers. Atire bolas de fogo no olho central até o <strong>medidor de stun amarelo</strong> ficar cheio. Quando cheio: pule do dragão, planeie em direção ao olho de Umbra, use air dash para alcançar o olho e use <strong>Force Palm</strong> — cada acerto remove metade de uma barra de HP. Repita 2–3 vezes. Após derrota, epilogo com 8 missões de diálogo.</p>
 
         
-        <AdInArticle className="my-8" />
 <h2 id="boss-opcionais" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6 scroll-mt-24">
           <Star className="h-7 w-7 text-red-400" />
           Bosses Opcionais — Guia Completo

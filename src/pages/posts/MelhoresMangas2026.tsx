@@ -61,6 +61,7 @@ const MelhoresMangas2026 = () => {
         <p>
           Para uma primeira experiência completa: <strong>Fullmetal Alchemist</strong> (27 volumes, autocontido), <strong>Death Note</strong> (12 volumes, thriller tenso) e <strong>Yotsubato!</strong> (slice-of-life reconfortante). Cada um oferece algo único e acessível.
         </p>
+      <AdInArticle />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Star className="h-7 w-7 text-otaku" />
@@ -73,7 +74,6 @@ const MelhoresMangas2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Sparkles className="h-7 w-7 text-otaku" />
           Para Veteranos: Os Tesouros Escondidos

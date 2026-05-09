@@ -64,6 +64,7 @@ const MerchandisingOtaku2026 = () => {
         <p>
           Para importação direta, <strong>Amiami</strong>, <strong>Hobby Search</strong> e <strong>Solaris Japan</strong> são os mais confiáveis. Atenção: itens acima de US$ 50 podem ser taxados em até 60%.
         </p>
+      <AdInArticle />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-otaku" />
@@ -79,7 +80,6 @@ const MerchandisingOtaku2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <TrendingUp className="h-7 w-7 text-otaku" />
           O Que Valoriza e O Que Desvaloriza

@@ -62,6 +62,7 @@ const IAGenerativaIniciantes2026 = () => {
           Abra o ChatGPT, Claude ou Gemini e faça pelo menos <strong>30 perguntas em 7 dias</strong> sobre temas que você já conhece bem. Você vai descobrir onde a IA acerta, onde erra e onde surpreende.
         </p>
 
+      <AdInArticle />
         <h2 className="text-2xl font-bold mt-10 mb-6">Etapa 2 — Engenharia de Prompts Básica</h2>
         <div className="my-6 p-6 bg-secondary/50 rounded-xl border border-border">
           <ul className="space-y-3 mb-0">
@@ -75,7 +76,6 @@ const IAGenerativaIniciantes2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Wrench className="h-7 w-7 text-ia" />
           Etapa 3 — Escolha Suas Ferramentas

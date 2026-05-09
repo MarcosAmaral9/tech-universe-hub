@@ -90,6 +90,7 @@ const ReservaEmergencia2026 = () => {
                 example: "Gastos de R$ 6.000/mês → Reserva de R$ 36.000 a R$ 72.000",
               },
             ].map(({ icon, title, color, months, example }) => (
+      <AdInArticle />
               <div key={title} className={`rounded-xl border p-5 ${color}`}>
                 <div className="mb-3">{icon}</div>
                 <h3 className="font-bold text-base mb-1">{title}</h3>
@@ -165,7 +166,6 @@ const ReservaEmergencia2026 = () => {
           <AdLeaderboard className="my-8" />
 
           
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
             <Wallet className="h-7 w-7 text-invest" />
             Simulação: Quanto Tempo Leva?

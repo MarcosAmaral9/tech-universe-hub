@@ -71,6 +71,7 @@ const IARemasterizacaoJogos = () => {
           <Gamepad2 className="h-7 w-7 text-ia" />
           3. O caso "Black Flag" e jogos de Mundo Aberto
         </h2>
+      <AdInArticle />
         <p>
           Em jogos como Black Flag, o maior desafio é o mar e a vegetação. A IA consegue processar os reflexos 
           da água e as folhas das árvores de forma muito mais eficiente que os métodos antigos.
@@ -89,7 +90,6 @@ const IARemasterizacaoJogos = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <MonitorPlay className="h-7 w-7 text-ia" />
           4. O Futuro: Remasterizações em Tempo Real?

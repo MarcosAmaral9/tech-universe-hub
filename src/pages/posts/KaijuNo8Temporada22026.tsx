@@ -95,6 +95,7 @@ const KaijuNo8Temporada22026 = () => {
         </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+      <AdInArticle />
           <Flame className="h-7 w-7 text-otaku" />
           Temporada 2: O Que Está Acontecendo Agora (Sem Spoilers Maiores)
         </h2>
@@ -121,7 +122,6 @@ const KaijuNo8Temporada22026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-otaku" />
           Arco Final Confirmado: O Que o Jump Festa 2026 Revelou

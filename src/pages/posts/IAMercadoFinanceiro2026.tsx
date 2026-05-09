@@ -177,6 +177,7 @@ const IAMercadoFinanceiro2026 = () => {
               </ul>
             </div>
           </div>
+      <AdInArticle />
           
           <div className="bg-[hsl(var(--ia-color))]/10 border border-[hsl(var(--ia-color))]/30 rounded-xl p-5">
             <p className="flex items-start gap-2 text-sm">
@@ -215,7 +216,6 @@ const IAMercadoFinanceiro2026 = () => {
           <AdRectangle className="my-8" />
 
           
-        <AdInArticle className="my-8" />
 <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--ia-color))] pl-4">Como a IA Analisa o Mercado</h2>
           <div className="bg-card border border-border rounded-2xl p-6">
             <div className="flex flex-col md:flex-row items-center gap-4">

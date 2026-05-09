@@ -72,6 +72,7 @@ const CulturaOtakuBrasil2026 = () => {
           <TrendingUp className="h-7 w-7 text-otaku" />
           O Mercado Brasileiro Hoje: Números que Impressionam
         </h2>
+      <AdInArticle />
         <div className="grid md:grid-cols-3 gap-4 my-6">
           <div className="p-4 bg-card rounded-xl border border-otaku/30 text-center">
             <p className="text-3xl font-bold text-otaku">1.500+</p>
@@ -93,7 +94,6 @@ const CulturaOtakuBrasil2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Mic className="h-7 w-7 text-otaku" />
           O Otaku Brasileiro como Criador de Conteúdo

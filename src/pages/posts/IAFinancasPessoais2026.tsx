@@ -90,6 +90,7 @@ const IAFinancasPessoais2026 = () => {
               <tr className="border-b border-border">
                 <th className="text-left p-3 text-muted-foreground font-medium">Ferramenta</th>
                 <th className="text-left p-3 text-muted-foreground font-medium">Tipo</th>
+      <AdInArticle />
                 <th className="text-left p-3 text-muted-foreground font-medium">Uso principal</th>
                 <th className="text-left p-3 text-muted-foreground font-medium">Custo</th>
               </tr>
@@ -119,7 +120,6 @@ const IAFinancasPessoais2026 = () => {
 
         {/* Exemplo prático com prompt */}
         
-        <AdInArticle className="my-8" />
 <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">Exemplo: prompt para analisar seus gastos</h2>
         <div className="bg-card border border-border rounded-2xl p-6">
           <p className="text-xs text-muted-foreground mb-3 flex items-center gap-2"><MessageSquare className="h-4 w-4" /> Copie e cole este prompt no ChatGPT ou Gemini:</p>

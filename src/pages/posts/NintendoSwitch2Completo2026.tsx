@@ -112,6 +112,7 @@ const NintendoSwitch2Completo2026 = () => {
               ].map(([k, a, b]) => (
                 <tr key={k} className="border-t border-border">
                   <td className="py-3 px-4 font-bold text-geek whitespace-nowrap">{k}</td>
+      <AdInArticle />
                   <td className="py-3 px-4 font-medium">{a}</td>
                   <td className="py-3 px-4 text-xs text-muted-foreground">{b}</td>
                 </tr>
@@ -140,7 +141,6 @@ const NintendoSwitch2Completo2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Gamepad2 className="h-7 w-7 text-geek" />
           Catálogo de lançamento e principais exclusivos

@@ -121,6 +121,7 @@ const Bitcoin2026ValeComprar = () => {
                 <tr key={i} className={`border-b border-border ${i === CICLOS_BTC.length - 1 ? "bg-[hsl(var(--invest-color))]/5" : ""}`}>
                   <td className="p-3 font-mono text-xs">{c.ciclo}</td>
                   <td className="p-3 font-bold text-green-500">{c.topo}</td>
+      <AdInArticle />
                   <td className="p-3 text-destructive">{c.fundo}</td>
                   <td className="p-3 text-destructive font-medium">{c.queda}</td>
                   <td className="p-3 text-muted-foreground">{c.recuperacao}</td>
@@ -160,7 +161,6 @@ const Bitcoin2026ValeComprar = () => {
 
         {/* Simulador de cenários */}
         
-        <AdInArticle className="my-8" />
 <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">
           <span className="flex items-center gap-2"><BarChart3 className="h-6 w-6" /> Simulador de cenários</span>
         </h2>

@@ -65,6 +65,7 @@ const ChatGPTvsGeminiClaude2026 = () => {
           <li><strong>Pontos fortes:</strong> Melhor para programação, raciocínio matemático e integração com ferramentas (DALL-E, Sora, análise de dados).</li>
           <li><strong>Ponto fraco:</strong> Memorização de contexto ainda limitada em conversas longas.</li>
         </ul>
+      <AdInArticle />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Cpu className="h-7 w-7 text-ia" />
@@ -81,7 +82,6 @@ const ChatGPTvsGeminiClaude2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Cpu className="h-7 w-7 text-ia" />
           Claude (Anthropic) — O Mais Seguro e Melhor para Escrever

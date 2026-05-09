@@ -86,6 +86,7 @@ const PrevidenciaPrivada2026 = () => {
       <h2 className="text-2xl font-bold mt-10 mb-6">Tributação no Resgate: Progressiva vs Regressiva</h2>
       <p>Independente de ser PGBL ou VGBL, você escolhe o <strong>regime de tributação</strong> na contratação. Esta é uma decisão irreversível:</p>
       <div className="not-prose my-6 grid md:grid-cols-2 gap-5">
+      <AdInArticle />
         <div className="bg-card rounded-xl border border-border p-5">
           <h3 className="font-bold mb-3">📈 Tabela Progressiva</h3>
           <p className="text-sm text-muted-foreground mb-3">Mesmas faixas do IR normal (0% a 27,5%)</p>
@@ -109,7 +110,6 @@ const PrevidenciaPrivada2026 = () => {
       <AdRectangle className="my-8" />
 
       
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
         <Shield className="h-7 w-7 text-emerald-400" />Taxa de Administração: O Vilão Silencioso
       </h2>

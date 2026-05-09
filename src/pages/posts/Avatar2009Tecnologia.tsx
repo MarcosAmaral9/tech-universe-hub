@@ -131,6 +131,7 @@ const Avatar2009Tecnologia = () => {
           Poder Computacional: Data Centers para Renderização
         </h2>
 
+      <AdInArticle />
         <p>
           A Weta Digital, responsável pelos efeitos visuais, construiu um dos maiores 
           <strong> data centers</strong> já utilizados para produção cinematográfica. O processamento 
@@ -160,7 +161,6 @@ const Avatar2009Tecnologia = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Film className="h-7 w-7 text-blue-400" />
           Captura de Performance vs Motion Capture Tradicional

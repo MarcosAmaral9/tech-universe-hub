@@ -92,6 +92,7 @@ const PromptEngineering2026 = () => {
             },
             {
               icon: <Zap className="h-7 w-7 text-purple-400" />,
+      <AdInArticle />
               title: "4. Formato e Restrições",
               color: "border-purple-500/30 bg-purple-500/5",
               desc: "Defina como quer a resposta: lista, tabela, parágrafos, JSON. Inclua restrições: tamanho máximo, tom, idioma, o que evitar.",
@@ -221,7 +222,6 @@ Use analogias do dia a dia para explicar conceitos complexos.`}
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <AlertTriangle className="h-7 w-7 text-ia" />
           Erros Comuns e Como Evitá-los

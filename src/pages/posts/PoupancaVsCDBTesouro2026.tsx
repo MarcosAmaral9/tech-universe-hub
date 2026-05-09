@@ -76,6 +76,7 @@ const PoupancaVsCDBTesouro2026 = () => {
 
           <h3 className="text-xl font-bold mt-6">CDB (Certificado de Depósito Bancário)</h3>
           <p>
+      <AdInArticle />
             CDBs são títulos emitidos por bancos. Em 2026, é comum encontrar CDBs pagando entre <strong>100% e 120% do CDI</strong> em bancos médios, e até 130% em ofertas promocionais de fintechs. O CDI acompanha de perto a Selic.
           </p>
           <ul>
@@ -177,7 +178,6 @@ const PoupancaVsCDBTesouro2026 = () => {
           <AdLeaderboard className="my-8" />
 
           
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
             <CheckCircle className="h-7 w-7 text-invest" />
             Qual Escolher? Recomendações por Objetivo

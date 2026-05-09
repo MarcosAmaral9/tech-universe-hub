@@ -189,6 +189,7 @@ const TesouroDireto2026 = () => {
                   <div className="flex-1">
                     <h3 className="text-xl font-bold mb-3">{tipo.title}</h3>
                     <ul className="space-y-1 text-muted-foreground mb-3">
+      <AdInArticle />
                       {tipo.points.map((p, i) => <li key={i}>• {p}</li>)}
                     </ul>
                     <p className="text-sm font-semibold" style={{ color: tipo.color }}>
@@ -243,7 +244,6 @@ const TesouroDireto2026 = () => {
           <AdRectangle className="my-8" />
 
           
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6 border-l-4 border-[hsl(var(--invest-color))] pl-4">
             Comparativo Real: Tesouro vs Concorrentes em 2026
           </h2>

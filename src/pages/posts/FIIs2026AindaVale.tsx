@@ -93,6 +93,7 @@ const FIIs2026AindaVale = () => {
           </div>
           <div className="bg-card border border-border rounded-xl p-5 text-center">
             <TrendingUp className="h-8 w-8 text-[hsl(var(--invest-color))] mx-auto mb-3" />
+      <AdInArticle />
             <h3 className="font-bold mb-1">Valorização</h3>
             <p className="text-xs text-muted-foreground">Além dos dividendos, as cotas podem se valorizar — especialmente em ciclos de queda de juros.</p>
           </div>
@@ -148,7 +149,6 @@ const FIIs2026AindaVale = () => {
 
         {/* Simulador */}
         
-        <AdInArticle className="my-8" />
 <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">
           <span className="flex items-center gap-2"><BarChart3 className="h-6 w-6" /> Simulador de renda passiva com FIIs</span>
         </h2>

@@ -104,6 +104,7 @@ const SelicComecaCair2026 = () => {
 
         {/* Simulador interativo */}
         <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">
+      <AdInArticle />
           <span className="flex items-center gap-2"><BarChart3 className="h-6 w-6" /> Simulador: quanto você perde com a queda?</span>
         </h2>
         <div className="bg-card border border-border rounded-2xl p-6">
@@ -140,7 +141,6 @@ const SelicComecaCair2026 = () => {
         <AdRectangle />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">O que ainda vale a pena na renda fixa?</h2>
         <p className="text-muted-foreground leading-relaxed">
           Enquanto os juros ainda estão em níveis elevados, títulos prefixados e indexados ao IPCA seguem sendo ótimas escolhas. Dados da Anbima mostram que os títulos públicos prefixados de longo prazo foram o investimento de maior rentabilidade da renda fixa em 2025, com o índice IRF-M 1+ avançando <strong>20,07% no ano</strong> — o melhor resultado entre todos os indicadores da entidade naquele período.

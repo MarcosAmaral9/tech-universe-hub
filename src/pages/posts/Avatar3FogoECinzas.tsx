@@ -132,6 +132,7 @@ const Avatar3FogoECinzas = () => {
           Ambiente Vulcânico: Novo Desafio Visual
         </h2>
 
+      <AdInArticle />
         <p>
           Após a floresta bioluminescente do primeiro filme e os oceanos cristalinos do segundo, 
           Avatar 3 explorará <strong>regiões vulcânicas</strong> de Pandora. Paisagens de lava, 
@@ -162,7 +163,6 @@ const Avatar3FogoECinzas = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Film className="h-7 w-7 text-orange-400" />
           Filmagem Simultânea: Estratégia de Produção

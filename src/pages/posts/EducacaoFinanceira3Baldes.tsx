@@ -196,6 +196,7 @@ const EducacaoFinanceira3Baldes = () => {
           <div className="space-y-3">
             {[
               { step: "1", title: "Mapeie", desc: "Anote TODOS os gastos do último mês. Use o extrato do banco, não a memória — ela mente." },
+      <AdInArticle />
               { step: "2", title: "Categorize", desc: "Classifique cada gasto em Necessidade, Investimento ou Qualidade de Vida." },
               { step: "3", title: "Automatize", desc: "No dia do salário: X% vai para investimento, X% fica para gastos fixos, o resto é para curtir." },
             ].map((item, i) => (
@@ -228,7 +229,6 @@ const EducacaoFinanceira3Baldes = () => {
           <AdRectangle className="my-8" />
 
           
-        <AdInArticle className="my-8" />
 <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">Ferramentas de Controle Financeiro 2026</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {[

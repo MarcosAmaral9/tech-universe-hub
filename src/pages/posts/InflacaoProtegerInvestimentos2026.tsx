@@ -91,6 +91,7 @@ const InflacaoProtegerInvestimentos2026 = () => {
                   <td className="py-3 px-4 text-amber-400">{atual}</td>
                   <td className="py-3 px-4">{proj26}</td>
                   <td className="py-3 px-4 text-muted-foreground">{proj27}</td>
+      <AdInArticle />
                 </tr>
               ))}
             </tbody>
@@ -159,7 +160,6 @@ const InflacaoProtegerInvestimentos2026 = () => {
         </p>
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <PiggyBank className="h-7 w-7 text-violet-400" />
           O Que NÃO Fazer em Cenário de Inflação Alta

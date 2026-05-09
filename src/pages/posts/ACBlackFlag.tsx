@@ -163,6 +163,7 @@ const ACBlackFlag = () => {
               Capital do domínio espanhol no Caribe, <strong>cidade fortificada</strong> e centro do 
               comércio de açúcar, rum e escravos. Base das frotas do tesouro espanhol.
             </p>
+      <AdInArticle />
           </div>
           <div className="p-4 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-2 text-amber-400">Nassau (Bahamas)</h4>
@@ -205,7 +206,6 @@ const ACBlackFlag = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Ship className="h-7 w-7 text-amber-400" />
           O Jackdaw: Seu Navio, Sua Fortaleza

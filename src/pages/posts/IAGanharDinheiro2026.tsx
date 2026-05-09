@@ -76,6 +76,7 @@ const IAGanharDinheiro2026 = () => {
             <h4 className="font-bold mb-1">4. Tradução e Localização Assistida</h4>
             <p className="text-sm text-muted-foreground mb-0">DeepL Pro e Claude elevam a produtividade do tradutor em até 3x.</p>
           </div>
+      <AdInArticle />
         </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -103,7 +104,6 @@ const IAGanharDinheiro2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Rocket className="h-7 w-7 text-ia" />
           Plano de 30 Dias para Começar

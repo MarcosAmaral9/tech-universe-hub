@@ -62,6 +62,7 @@ const Isekai2026 = () => {
           A crítica não é sem fundamento. O protagonista "overpowered" (OP) remove a tensão dramática. O harém de personagens femininas sem autonomia é uma crítica legítima. A fórmula "mundo de RPG com status na tela" se repetiu tantas vezes que virou paródia.
         </p>
 
+      <AdInArticle />
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Star className="h-7 w-7 text-otaku" />
           As Obras que Transcendem o Gênero
@@ -76,7 +77,6 @@ const Isekai2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <TrendingUp className="h-7 w-7 text-otaku" />
           Por Que o Público Continua Consumindo

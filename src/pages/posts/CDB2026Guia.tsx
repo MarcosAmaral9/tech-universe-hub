@@ -76,6 +76,7 @@ const CDB2026Guia = () => {
                 <td className="py-3 px-4 font-bold text-emerald-400">{pct}</td>
                 <td className="py-3 px-4">{bruto}</td>
                 <td className="py-3 px-4 text-emerald-400 font-medium">{liq}</td>
+      <AdInArticle />
                 <td className="py-3 px-4 text-muted-foreground text-xs">{onde}</td>
               </tr>
             ))}
@@ -106,7 +107,6 @@ const CDB2026Guia = () => {
       <AdRectangle className="my-8" />
 
       
-        <AdInArticle className="my-8" />
 <h2 className="text-2xl font-bold mt-10 mb-6">CDB vs Outras Rendas Fixas</h2>
       <div className="not-prose my-6 overflow-x-auto">
         <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">

@@ -74,6 +74,7 @@ const RegulamentacaoIA2026 = () => {
           <li><strong>Responsabilidade dos desenvolvedores</strong> por danos causados</li>
           <li>Criação de uma <strong>autoridade reguladora</strong> específica para IA</li>
         </ul>
+      <AdInArticle />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Building className="h-7 w-7 text-ia" />
@@ -89,7 +90,6 @@ const RegulamentacaoIA2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Users className="h-7 w-7 text-ia" />
           O Que Muda Para Consumidores

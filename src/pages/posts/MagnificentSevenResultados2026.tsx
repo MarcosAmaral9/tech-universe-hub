@@ -138,6 +138,7 @@ const MagnificentSevenResultados2026 = () => {
           </table>
           <p className="text-xs text-muted-foreground mt-2">Total combinado: ~US$ 620–650B. Para contexto: todo o PIB da Suécia é cerca de US$ 600B.</p>
         </div>
+      <AdInArticle />
         <p>
           Esse número tem implicações diretas para o investidor brasileiro. Toda essa infraestrutura exige <strong>chips da Nvidia, servidores da Dell e HPE, energia elétrica, resfriamento, fibra óptica</strong>. As empresas que fornecem a "picareta na corrida do ouro" da IA — a infraestrutura — estão entre as mais beneficiadas. No Brasil, investidores com exposição a NVDC34 (Nvidia) e aos ETFs de tech (QQQM, MAGS) são diretamente impactados por esse ciclo de capex.
         </p>
@@ -179,7 +180,6 @@ const MagnificentSevenResultados2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <TrendingUp className="h-7 w-7 text-invest" />
           O Que os Resultados Significam para o Investidor Brasileiro

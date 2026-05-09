@@ -183,6 +183,7 @@ const ACMirage = () => {
           A Bagdá de Mirage é dividida em <strong>4 grandes distritos</strong>, cada um com identidade visual, 
           social e econômica única. Além da cidade, o jogador explora a <strong>região rural de Wilderness</strong> 
           e a lendária <strong>Fortaleza de Alamut</strong>, berço dos Assassinos históricos.
+      <AdInArticle />
         </p>
 
         <h3 className="text-xl font-bold mt-6 mb-4">🏙️ Os Distritos de Bagdá</h3>
@@ -256,7 +257,6 @@ const ACMirage = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Target className="h-7 w-7 text-amber-400" />
           Review Geral: Mirage Entrega o Prometido?

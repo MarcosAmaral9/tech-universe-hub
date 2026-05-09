@@ -164,6 +164,7 @@ const BitcoinCripto2026 = () => {
           <ul className="space-y-2 text-muted-foreground mb-6">
             {["Utilidade real: Resolve um problema de verdade?", "Equipe: Quem são os desenvolvedores? São identificados?", "Market cap: Projetos pequenos têm mais potencial mas mais risco", "Tokenomics: Como são emitidas e distribuídas as moedas?"].map((item, i) => (
               <li key={i} className="flex items-start gap-2"><span className="text-[hsl(var(--invest-color))]">▶</span> {item}</li>
+      <AdInArticle />
             ))}
           </ul>
         </section>
@@ -196,7 +197,6 @@ const BitcoinCripto2026 = () => {
           <AdRectangle className="my-8" />
 
           
-        <AdInArticle className="my-8" />
 <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">Como Comprar Cripto com Segurança no Brasil</h2>
           <h3 className="text-lg font-bold mb-3 text-[hsl(45,100%,50%)]">Exchanges confiáveis em 2026:</h3>
           <div className="grid md:grid-cols-3 gap-4 mb-6">

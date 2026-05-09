@@ -97,6 +97,7 @@ const PetroleoBrent125Ormuz2026 = () => {
                 ["Nikkei 225", "-1,6% (58.967)", "Maior choque na Ásia"],
                 ["Hang Seng", "-1,3% (25.772)", "Sensibilidade ao petróleo"],
                 ["Sensex (Índia)", "-1,2%", "Importadora líquida — pressão pesada"],
+      <AdInArticle />
               ].map(([m, mv, obs]) => (
                 <tr key={m} className="border-t border-border">
                   <td className="py-3 px-4 font-medium text-xs">{m}</td>
@@ -124,7 +125,6 @@ const PetroleoBrent125Ormuz2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Lightbulb className="h-7 w-7 text-invest" />
           O Que Fazer com a Carteira

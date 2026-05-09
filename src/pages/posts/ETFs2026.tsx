@@ -81,6 +81,7 @@ const ETFs2026 = () => {
           <li><strong>XINA11</strong> — Grandes empresas chinesas</li>
         </ul>
 
+      <AdInArticle />
         <h3 className="text-xl font-bold mt-6">ETFs de Renda Fixa</h3>
         <ul>
           <li><strong>IMAB11</strong> — Títulos públicos indexados à inflação (NTN-B)</li>
@@ -107,7 +108,6 @@ const ETFs2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <AlertTriangle className="h-7 w-7 text-invest" />
           Erros Comuns ao Investir em ETFs

@@ -162,6 +162,7 @@ const ACUnity = () => {
         </p>
 
         <div className="overflow-x-auto my-8">
+      <AdInArticle />
           <table className="w-full border-collapse">
             <thead>
               <tr className="border-b border-border bg-secondary/50">
@@ -218,7 +219,6 @@ const ACUnity = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Target className="h-7 w-7 text-blue-400" />
           Review Geral: Unity é o AC Mais Bonito?

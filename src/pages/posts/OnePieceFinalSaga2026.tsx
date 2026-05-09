@@ -127,6 +127,7 @@ const OnePieceFinalSaga2026 = () => {
             </div>
           ))}
         </div>
+      <AdInArticle />
 
         {/* Revelações */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -178,7 +179,6 @@ const OnePieceFinalSaga2026 = () => {
 
         {/* Personagens chave */}
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Star className="h-7 w-7 text-pink-400" />Personagens Centrais do Final
         </h2>

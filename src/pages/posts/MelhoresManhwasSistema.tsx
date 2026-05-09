@@ -252,7 +252,6 @@ const MelhoresManhwasSistema = () => {
         <AdLeaderboard className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="text-2xl font-bold mt-10 mb-6">Por Onde Começar?</h2>
 
         <div className="grid md:grid-cols-3 gap-6 my-8">
@@ -270,6 +269,7 @@ const MelhoresManhwasSistema = () => {
               e inteligente do gênero.
             </p>
           </div>
+      <AdInArticle />
           <div className="p-5 bg-card rounded-xl border border-accent/30">
             <h4 className="font-bold mb-2 text-accent">⚔️ Para Artes Marciais</h4>
             <p className="text-sm text-muted-foreground">

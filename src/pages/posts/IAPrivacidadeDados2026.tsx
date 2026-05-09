@@ -70,6 +70,7 @@ const IAPrivacidadeDados2026 = () => {
         </ol>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+      <AdInArticle />
           <Shield className="h-7 w-7 text-ia" />
           Legislação e Proteção: O Que Está Mudando
         </h2>
@@ -89,7 +90,6 @@ const IAPrivacidadeDados2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Lock className="h-7 w-7 text-ia" />
           Como Proteger Seus Dados da IA em 2026

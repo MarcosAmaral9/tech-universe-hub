@@ -85,6 +85,7 @@ const CopomSelic145Maio2026 = () => {
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+      <AdInArticle />
           <DollarSign className="h-7 w-7 text-invest" />
           Por Que o Corte Foi de Apenas 0,25 pp
         </h2>
@@ -102,7 +103,6 @@ const CopomSelic145Maio2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <TrendingUp className="h-7 w-7 text-invest" />
           Impacto em Cada Classe de Ativos

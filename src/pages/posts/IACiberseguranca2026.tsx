@@ -82,6 +82,7 @@ const IACiberseguranca2026 = () => {
               desc: "Plataformas SOAR (Security Orchestration, Automation and Response) como Microsoft Sentinel e Splunk SOAR isolam máquinas comprometidas, bloqueiam IPs e notificam equipes em segundos — sem intervenção humana.",
             },
             {
+      <AdInArticle />
               icon: <Bug className="h-7 w-7 text-amber-400" />,
               title: "Análise de Malware",
               color: "border-amber-500/30 bg-amber-500/5",
@@ -163,7 +164,6 @@ const IACiberseguranca2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Eye className="h-7 w-7 text-ia" />
           O Futuro: IA vs IA

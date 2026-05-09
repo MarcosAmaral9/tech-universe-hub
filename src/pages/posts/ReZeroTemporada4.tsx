@@ -101,6 +101,7 @@ const ReZeroTemporada4 = () => {
           </div>
         </div>
 
+      <AdInArticle />
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Users className="h-7 w-7 text-otaku" />
           Elenco de Vozes: Retornos e Novidades
@@ -135,7 +136,6 @@ const ReZeroTemporada4 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Music className="h-7 w-7 text-otaku" />
           Trilha Sonora

@@ -129,6 +129,7 @@ const Gemini25ProVsClaude2026 = () => {
               tarefa: "🎨 Imagens e multimodalidade",
               vencedor: "GPT-4o (com DALL-E 3)",
               cor: "border-green-500/30",
+      <AdInArticle />
               detalhe: "Para geração e análise de imagens, o ChatGPT ainda lidera com DALL-E 3 integrado nativamente. Gemini 2.5 Pro tem boa análise de imagens via Google Lens. Claude não gera imagens — apenas analisa com alta precisão.",
             },
           ].map(({ tarefa, vencedor, cor, detalhe }) => (
@@ -175,7 +176,6 @@ const Gemini25ProVsClaude2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-violet-400" />
           Privacidade e Segurança: Uma Diferença Importante

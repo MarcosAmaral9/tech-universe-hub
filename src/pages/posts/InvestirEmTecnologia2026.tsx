@@ -132,6 +132,7 @@ const InvestirEmTecnologia2026 = () => {
               diretamente dessa demanda.
             </p>
           </div>
+      <AdInArticle />
           <div className="p-5 bg-card rounded-xl border border-border">
             <Cpu className="h-8 w-8 text-purple-400 mb-3" />
             <h4 className="font-bold mb-2">Refrigeração</h4>
@@ -165,7 +166,6 @@ const InvestirEmTecnologia2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Tv className="h-7 w-7 text-otaku" />
           4. Entretenimento Digital e Streaming

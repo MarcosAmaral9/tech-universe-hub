@@ -209,6 +209,7 @@ const SairDasDividas2026 = () => {
               <div key={i} className="border-2 rounded-xl p-4" style={{ borderColor: item.color + "40" }}>
                 <h3 className="font-bold mb-1" style={{ color: item.color }}>{item.level}</h3>
                 <p className="text-sm text-muted-foreground">{item.desc} — <em>{item.examples}</em></p>
+      <AdInArticle />
               </div>
             ))}
           </div>
@@ -225,7 +226,6 @@ const SairDasDividas2026 = () => {
           <AdRectangle className="my-8" />
 
           
-        <AdInArticle className="my-8" />
 <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">Passo 4: Negocie</h2>
           <p className="text-muted-foreground mb-4 text-sm">Bancos preferem receber algo do que perder tudo. Nunca aceite a primeira proposta.</p>
           <div className="grid md:grid-cols-2 gap-4 mb-6">

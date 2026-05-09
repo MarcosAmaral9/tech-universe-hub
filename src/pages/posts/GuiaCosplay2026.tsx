@@ -75,6 +75,7 @@ const GuiaCosplay2026 = () => {
           <DollarSign className="h-7 w-7 text-otaku" />
           Orçamentos Realistas para Cada Nível
         </h2>
+      <AdInArticle />
         <div className="grid md:grid-cols-3 gap-4 my-6">
           <div className="p-4 bg-card rounded-xl border border-border text-center">
             <h4 className="font-bold mb-2">🟢 Iniciante</h4>
@@ -99,7 +100,6 @@ const GuiaCosplay2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Users className="h-7 w-7 text-otaku" />
           Sua Primeira Convenção: O Que Esperar

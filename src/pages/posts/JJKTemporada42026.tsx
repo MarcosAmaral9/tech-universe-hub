@@ -96,6 +96,7 @@ const JJKTemporada42026 = () => {
               <div className="flex items-start justify-between gap-2 mb-1 flex-wrap">
                 <h3 className="font-bold text-sm">{col}</h3>
                 <span className="text-xs bg-otaku/15 text-otaku px-2 py-0.5 rounded-full shrink-0">{importante}</span>
+      <AdInArticle />
               </div>
               <p className="text-xs text-muted-foreground">{desc}</p>
             </div>
@@ -119,7 +120,6 @@ const JJKTemporada42026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Zap className="h-7 w-7 text-otaku" />
           Quando a T4 Estreia? As Apostas do Fandom

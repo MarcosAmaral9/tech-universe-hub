@@ -99,6 +99,7 @@ const FreierenTemporada32026 = () => {
                   <td className="py-3 px-4 text-muted-foreground text-xs">{dest}</td>
                   <td className="py-3 px-4 text-xs">{imp}</td>
                 </tr>
+      <AdInArticle />
               ))}
             </tbody>
           </table>
@@ -130,7 +131,6 @@ const FreierenTemporada32026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Zap className="h-7 w-7 text-otaku" />
           Por Que Frieren É Tecnicamente Brilhante

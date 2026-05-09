@@ -108,6 +108,7 @@ const EldenRingNightreign2026 = () => {
                   <td className="py-3 px-4 text-xs">{est}</td>
                   <td className="py-3 px-4 text-muted-foreground text-xs">{hab}</td>
                   <td className="py-3 px-4 text-xs">{dif}</td>
+      <AdInArticle />
                 </tr>
               ))}
             </tbody>
@@ -144,7 +145,6 @@ const EldenRingNightreign2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Zap className="h-7 w-7 text-geek" />
           DLC Forsaken Hollows: O Que Foi Adicionado em Maio 2026

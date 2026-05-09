@@ -69,6 +69,7 @@ const IASaude2026 = () => {
           <div className="p-4 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-1">⌚ Wearables com IA</h4>
             <p className="text-sm text-muted-foreground mb-0">Apple Watch Series 10 e Galaxy Watch 7 detectam fibrilação atrial, apneia do sono e variações de SPO2.</p>
+      <AdInArticle />
           </div>
           <div className="p-4 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-1">📊 Plataformas de Acompanhamento</h4>
@@ -87,7 +88,6 @@ const IASaude2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Pill className="h-7 w-7 text-ia" />
           O Futuro Próximo (até 2028)

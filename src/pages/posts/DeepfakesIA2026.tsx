@@ -77,6 +77,7 @@ const DeepfakesIA2026 = () => {
           <li>Lábios dessincronizados com o áudio</li>
         </ul>
         <p><strong>Dica:</strong> Peça para a pessoa fazer algo imprevisível em tempo real — tocar o nariz, mostrar as mãos. Modelos de IA têm dificuldade com movimentos não ensaiados.</p>
+      <AdInArticle />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Mic className="h-7 w-7 text-ia" />
@@ -94,7 +95,6 @@ const DeepfakesIA2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="text-2xl font-bold mt-10 mb-6">Ferramentas para Detectar Conteúdo Falso</h2>
         <ul className="space-y-2 my-6">
           <li><strong>Intel FakeCatcher:</strong> detecção em tempo real com 96% de precisão</li>

@@ -83,7 +83,6 @@ const AppsIAProdutividade2026 = () => {
         <AdLeaderboard className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Lightbulb className="h-7 w-7 text-ia" />
           Stack Econômico para Começar
@@ -101,6 +100,7 @@ const AppsIAProdutividade2026 = () => {
       </div>
 
       <NewsletterSignup variant="inline" categories={["ia"]} />
+      <AdInArticle />
       <RelatedPosts currentSlug="melhores-apps-ia-produtividade-2026" />
       <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="melhores-apps-ia-produtividade-2026" postTitle="Os 10 Melhores Apps de IA para Produtividade em 2026" />

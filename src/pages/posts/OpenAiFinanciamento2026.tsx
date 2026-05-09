@@ -99,6 +99,7 @@ const OpenAiFinanciamento2026 = () => {
               <li>• Public Benefit Corporation com obrigações sociais</li>
               <li>• Cap de retorno removido — investidores têm equity real</li>
               <li>• Viabiliza rodadas de capital de decenas de bilhões</li>
+      <AdInArticle />
               <li>• Mantém o conselho de missão de segurança da IA</li>
             </ul>
           </div>
@@ -131,7 +132,6 @@ const OpenAiFinanciamento2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <TrendingUp className="h-7 w-7 text-violet-400" />
           O Que Isso Significa para a Corrida de IA

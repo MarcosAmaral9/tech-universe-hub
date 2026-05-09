@@ -112,6 +112,7 @@ const AcoesBrasileirasBaratas2026 = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <TrendingUp className="h-7 w-7 text-invest" />
+      <AdInArticle />
           As Ações Mais Baratas por Setor em Abril de 2026
         </h2>
         <div className="not-prose my-6 space-y-3">
@@ -139,7 +140,6 @@ const AcoesBrasileirasBaratas2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <DollarSign className="h-7 w-7 text-invest" />
           Carteira Sugerida: 5 Ações Baratas para Abril de 2026

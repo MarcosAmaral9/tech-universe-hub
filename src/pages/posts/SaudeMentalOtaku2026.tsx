@@ -73,6 +73,7 @@ const SaudeMentalOtaku2026 = () => {
         <p>
           A solução não é censura — é <strong>educação para o consumo crítico</strong>. Discutir esses temas dentro da comunidade é saudável e necessário.
         </p>
+      <AdInArticle />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Phone className="h-7 w-7 text-otaku" />
@@ -91,7 +92,6 @@ const SaudeMentalOtaku2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Smile className="h-7 w-7 text-otaku" />
           Cultivando uma Relação Saudável

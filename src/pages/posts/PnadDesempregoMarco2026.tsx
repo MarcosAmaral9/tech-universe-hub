@@ -107,6 +107,7 @@ const PnadDesempregoMarco2026 = () => {
                 </tr>
               ))}
             </tbody>
+      <AdInArticle />
           </table>
         </div>
 
@@ -146,7 +147,6 @@ const PnadDesempregoMarco2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <AlertTriangle className="h-7 w-7 text-invest" />
           O Que Economistas Estão Dizendo

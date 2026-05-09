@@ -93,6 +93,7 @@ const CrimsonDesertEquipamentos = () => {
             <div key={k} className="bg-card border border-border rounded-lg p-3"><p className="font-bold text-xs text-muted-foreground">{k}</p><p className="font-medium">{v}</p></div>
           ))}
         </div>
+      <AdInArticle />
         <p>
           A lança quebrada que Kliff carrega no início do jogo tem uma habilidade escondida que a maioria ignora: o Evasive Slash Counter. Ao esquivar e ativar no timing correto, o dano é desproporcional para uma arma de entrada. Muitos jogadores avançados continuam usando-a como arma secundária por horas de jogo.
         </p>
@@ -208,7 +209,6 @@ const CrimsonDesertEquipamentos = () => {
         </div>
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Wrench className="h-7 w-7 text-red-400" />
           Como Refinar Equipamentos — Guia Rápido

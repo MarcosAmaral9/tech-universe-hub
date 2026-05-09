@@ -96,6 +96,7 @@ const LancamentosGamesAbril2026 = () => {
         </p>
 
         <h3 className="text-xl font-bold mt-8 mb-3">Saros — Housemarque (30 de abril)</h3>
+      <AdInArticle />
         <p>
           Exclusivo PS5 da <strong>Housemarque</strong> — o mesmo estúdio por trás do aclamado Returnal (2021). <strong>Saros</strong> é um roguelike de ação que mistura o estilo frenético característico do estúdio com novos elementos narrativos. Disponível apenas no PS5, é uma das grandes apostas exclusivas da Sony no primeiro semestre.
         </p>
@@ -136,7 +137,6 @@ const LancamentosGamesAbril2026 = () => {
         </div>
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Gamepad2 className="h-7 w-7 text-geek" />
           Outros Destaques que Valem Atenção

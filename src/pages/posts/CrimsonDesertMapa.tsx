@@ -456,6 +456,7 @@ const CrimsonDesertMapa = () => {
                 <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${r.badge}`}>{r.label}</span>
               </div>
               <div className="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-sm text-muted-foreground mb-3">
+      <AdInArticle />
                 <span>
                   <strong className="text-foreground">Bioma:</strong> {r.biome}
                 </span>
@@ -554,7 +555,6 @@ const CrimsonDesertMapa = () => {
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         
-        <AdInArticle className="my-8" />
 <h2>Como se Locomover em Pywel</h2>
         <ul>
           <li>

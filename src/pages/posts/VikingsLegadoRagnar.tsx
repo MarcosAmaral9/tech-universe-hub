@@ -178,6 +178,7 @@ const VikingsLegadoRagnar = () => {
         </div>
 
         <h3 className="text-xl font-bold mt-8 mb-4">⚔️ Realidade vs. Ficção</h3>
+      <AdInArticle />
 
         <p>
           Embora a série tome liberdades criativas (como comprimir eventos e estender vidas de 
@@ -230,7 +231,6 @@ const VikingsLegadoRagnar = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Star className="h-7 w-7 text-purple-400" />
           Prêmios e Reconhecimento

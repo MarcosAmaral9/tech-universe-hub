@@ -225,6 +225,7 @@ const HellLetLooseSimulador = () => {
               <tr className="border-b border-border bg-secondary">
                 <th className="text-left py-3 px-4 font-bold">Mapa</th>
                 <th className="text-left py-3 px-4 font-bold">Batalha Real</th>
+      <AdInArticle />
                 <th className="text-left py-3 px-4 font-bold">Data Histórica</th>
                 <th className="text-left py-3 px-4 font-bold">Frente</th>
               </tr>
@@ -315,7 +316,6 @@ const HellLetLooseSimulador = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Radio className="h-7 w-7 text-red-400" />
           Cadeia de Comando e Comunicação

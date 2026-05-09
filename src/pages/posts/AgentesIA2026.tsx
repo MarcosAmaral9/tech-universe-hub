@@ -73,6 +73,7 @@ const AgentesIA2026 = () => {
                 {i < 4 && <span className="text-muted-foreground">→</span>}
               </div>
             ))}
+      <AdInArticle />
           </div>
           <p className="text-sm text-muted-foreground mt-4 mb-0 text-center">Esse ciclo se repete até a tarefa ser concluída.</p>
         </div>
@@ -91,7 +92,6 @@ const AgentesIA2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="text-2xl font-bold mt-10 mb-6">Principais Agentes Disponíveis</h2>
         <ul className="space-y-2 my-6">
           <li><strong>OpenAI Operator:</strong> navega na web e executa tarefas como um humano.</li>

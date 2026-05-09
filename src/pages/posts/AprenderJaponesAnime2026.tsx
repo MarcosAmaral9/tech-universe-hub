@@ -73,6 +73,7 @@ const AprenderJaponesAnime2026 = () => {
           Ferramentas Essenciais de 2026
         </h2>
         <p>
+      <AdInArticle />
           <strong>Anki</strong> continua sendo o rei dos flashcards SRS. <strong>Japanese: The Game</strong> gamifica o aprendizado de kanji de forma eficaz. <strong>Yomitan</strong> (extensão de browser) permite tradução instantânea e se integra com o Anki automaticamente.
         </p>
 
@@ -95,7 +96,6 @@ const AprenderJaponesAnime2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <ListChecks className="h-7 w-7 text-otaku" />
           Montando Sua Rotina Semanal

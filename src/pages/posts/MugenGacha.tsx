@@ -56,6 +56,7 @@ const MugenGacha = () => {
           <Swords className="h-7 w-7 text-otaku" />
           História: A Traição no Fundo do Abismo
         </h2>
+      <AdInArticle />
         <p>
           O mundo da série foi criado por um Deus que formou <strong>nove raças</strong> — sendo os humanos a mais fraca e ridicularizada entre todas. <strong>Light</strong>, um jovem humano, é convidado a fazer parte da <strong>"Assembleia das Raças"</strong> — um grupo formado por membros das nove raças, algo extremamente raro para um humano. Feliz com essa oportunidade única, Light se dedica completamente ao grupo.
         </p>
@@ -87,7 +88,6 @@ const MugenGacha = () => {
         </div>
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Tv className="h-7 w-7 text-otaku" />
           Recepção e Onde Assistir

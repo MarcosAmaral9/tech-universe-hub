@@ -95,6 +95,7 @@ const DragonBallBeerus2026 = () => {
             </div>
           ))}
         </div>
+      <AdInArticle />
         <p>
           Uma pergunta óbvia surge: <strong>por que pular Moro e Granolah e adaptar direto o Arco de Beerus?</strong> A resposta mais provável: os arcos de Moro e Granolah ainda são relativamente recentes no mangá e podem ser adaptados depois como séries separadas ou episódios especiais. O Arco de Beerus, sendo o mais atual e com revelações sobre personagens centrais como o próprio Beerus e Zeno, tem o maior apelo de marketing agora.
         </p>
@@ -126,7 +127,6 @@ const DragonBallBeerus2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Star className="h-7 w-7 text-otaku" />
           Dragon Ball Daima e o Legado de Toriyama

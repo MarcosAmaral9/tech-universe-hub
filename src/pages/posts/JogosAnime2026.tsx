@@ -64,6 +64,7 @@ const JogosAnime2026 = () => {
         <p>
           <strong>Dragon Ball FighterZ</strong> ainda é considerado o melhor fighting game baseado em anime já feito e continua ativo na cena competitiva. <strong>Jujutsu Kaisen Cursed Clash</strong> melhorou significativamente com patches. <strong>Demon Slayer: The Hinokami Chronicles</strong> ganhou expansão com novos personagens. O esperado título de <strong>Chainsaw Man</strong> pode redefinir o gênero se confirmado para 2026.
         </p>
+      <AdInArticle />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Sparkles className="h-7 w-7 text-otaku" />
@@ -76,7 +77,6 @@ const JogosAnime2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-otaku" />
           Visual Novels: A Experiência Mais Próxima do Mangá

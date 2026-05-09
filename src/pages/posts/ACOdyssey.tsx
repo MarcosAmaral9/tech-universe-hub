@@ -122,6 +122,7 @@ const ACOdyssey = () => {
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+      <AdInArticle />
           <Users className="h-7 w-7 text-blue-400" />
           Kassandra ou Alexios: Qual Escolher?
         </h2>
@@ -140,7 +141,6 @@ const ACOdyssey = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Sword className="h-7 w-7 text-blue-400" />
           Contexto Histórico: A Guerra do Peloponeso (431-404 a.C.)

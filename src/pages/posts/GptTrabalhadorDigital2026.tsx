@@ -126,6 +126,7 @@ const GptTrabalhadorDigital2026 = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <TrendingUp className="h-7 w-7 text-violet-400" />
+      <AdInArticle />
           Casos de Uso Reais: O Que o GPT-5.4 Pode Fazer Hoje
         </h2>
         <div className="not-prose my-6 space-y-3">
@@ -154,7 +155,6 @@ const GptTrabalhadorDigital2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-violet-400" />
           O Que Isso Significa para o Mercado de Trabalho

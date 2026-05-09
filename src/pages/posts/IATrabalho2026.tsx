@@ -73,6 +73,7 @@ const IATrabalho2026 = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-ia" />
+      <AdInArticle />
           A Regra dos 3 E's: Como Proteger Sua Carreira
         </h2>
         <div className="grid md:grid-cols-3 gap-4 my-6">
@@ -93,7 +94,6 @@ const IATrabalho2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Users className="h-7 w-7 text-ia" />
           O Futuro Não é IA vs. Humanos — É IA + Humanos

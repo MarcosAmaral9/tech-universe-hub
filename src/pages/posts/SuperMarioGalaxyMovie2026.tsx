@@ -107,6 +107,7 @@ const SuperMarioGalaxyMovie2026 = () => {
             <h3 className="font-bold text-geek mb-3">📊 Notas da Crítica</h3>
             <div className="space-y-2">
               {[
+      <AdInArticle />
                 { site: "Rotten Tomatoes (críticos)", nota: "82%", comp: "O 1º tinha 59%" },
                 { site: "Rotten Tomatoes (público)", nota: "96%", comp: "Muito amado" },
                 { site: "Metacritic", nota: "71/100", comp: "vs 46 do 1º filme" },
@@ -147,7 +148,6 @@ const SuperMarioGalaxyMovie2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Zap className="h-7 w-7 text-geek" />
           O Nintendo Cinematic Universe: O Que Vem a Seguir

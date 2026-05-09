@@ -123,6 +123,7 @@ const BigThree2026 = () => {
                 </div>
                 <div className="h-1.5 bg-secondary rounded-full">
                   <div className="h-1.5 bg-otaku rounded-full" style={{ width: `${pct}%` }} />
+      <AdInArticle />
                 </div>
               </div>
             ))}
@@ -200,7 +201,6 @@ const BigThree2026 = () => {
         </div>
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Zap className="h-7 w-7 text-otaku" />
           Por Que 2026 é o Melhor Ano do Shonen Clássico em Uma Década

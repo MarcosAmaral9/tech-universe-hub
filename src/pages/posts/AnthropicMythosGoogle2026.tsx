@@ -110,6 +110,7 @@ const AnthropicMythosGoogle2026 = () => {
         </div>
         <p>
           A Anthropic ressaltou que o modelo "caiu em mãos não sancionadas" — um eufemismo para vazamento — mesmo antes do anúncio público. Esse detalhe gerou debate intenso na comunidade de segurança de IA sobre se modelos tão poderosos deveriam ser desenvolvidos na velocidade atual.
+      <AdInArticle />
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -150,7 +151,6 @@ const AnthropicMythosGoogle2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Zap className="h-7 w-7 text-violet-400" />
           O Que Muda para Usuários do Claude

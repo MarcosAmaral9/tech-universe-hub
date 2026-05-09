@@ -156,6 +156,7 @@ const AvatarFrontiersOfPandora = () => {
         {/* Contexto do Universo */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           🌍 Contexto: Onde Frontiers of Pandora se Encaixa na Linha do Tempo?
+      <AdInArticle />
         </h2>
 
         <p>
@@ -183,7 +184,6 @@ const AvatarFrontiersOfPandora = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <MapPin className="h-7 w-7 text-green-400" />
           O Continente Ocidental: Três Biomas Únicos

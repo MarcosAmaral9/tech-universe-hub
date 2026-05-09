@@ -123,6 +123,7 @@ const TesouroPrefixadoVsIPCA2026 = () => {
             <h3 className="font-bold text-green-400 mb-3">✅ Escolha o IPCA+ se...</h3>
             <ul className="text-sm text-muted-foreground space-y-2">
               <li>• Você tem medo de inflação surpresa (guerra, câmbio)</li>
+      <AdInArticle />
               <li>• Quer preservar poder de compra no longo prazo</li>
               <li>• Poupando para aposentadoria (10+ anos)</li>
               <li>• Preferir certeza de retorno real a especular com juros</li>
@@ -144,7 +145,6 @@ const TesouroPrefixadoVsIPCA2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <DollarSign className="h-7 w-7 text-invest" />
           Comparação Direta: R$ 10.000 nos Três Títulos por 3 Anos

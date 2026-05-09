@@ -68,6 +68,7 @@ const AnimesAguardados2026 = () => {
           <strong>Dragon Ball Daima</strong> consolida sua nova era visual, enquanto <strong>One Piece</strong> segue sua maratona no arco Egghead — considerado por muitos como o melhor da série inteira. Para quem prefere histórias mais intimistas, <strong>Dungeon Meshi</strong> (Delicious in Dungeon) ganhou uma segunda temporada, e <strong>Re:Zero</strong> promete resolver mistérios que deixaram a fanbase em polvorosa.
         </p>
         <p>
+      <AdInArticle />
           No campo dos newcomers, o anime original <strong>"Project Sakuga"</strong>, de um estúdio indie de Osaka financiado por fãs no Kickstarter, é o nome mais badalado entre os animadores — uma declaração de amor à arte da animação em si.
         </p>
 
@@ -85,7 +86,6 @@ const AnimesAguardados2026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Sparkles className="h-7 w-7 text-otaku" />
           Tendências Visuais e Narrativas que Vão Moldar 2026
