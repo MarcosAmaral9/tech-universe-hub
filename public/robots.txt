@@ -10,3 +10,5 @@ Disallow: /api.php
 Disallow: /cache/
 
 Sitemap: https://viciocode.com/sitemap.xml
+
+Sitemap: https://viciocode.com/sitemap-images.xml

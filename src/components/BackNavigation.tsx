@@ -13,6 +13,7 @@
  *   />
  */
 import { Link } from "react-router-dom";
+import Breadcrumb from "./Breadcrumb";
 import { ArrowLeft, LayoutGrid, Layers } from "lucide-react";
 import { useSmartBack } from "@/hooks/useSmartBack";
 
@@ -44,6 +45,8 @@ const BackNavigation = ({
   const goBack = useSmartBack(fallbackPath ?? cat.path);
 
   return (
+    <>
+      <Breadcrumb />
     <nav
       aria-label="Navegação do artigo"
       className="flex flex-wrap items-center gap-2 mb-6"

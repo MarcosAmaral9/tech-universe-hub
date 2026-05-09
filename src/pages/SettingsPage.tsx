@@ -14,6 +14,7 @@ import { useAuthContext } from "@/contexts/AuthContext";
 import { toast } from "@/hooks/use-toast";
 import { useFavoriteAssets } from "@/hooks/useFavoriteAssets";
 import NewsletterPreferences from "@/components/NewsletterPreferences";
+import PushNotificationButton from "@/components/PushNotificationButton";
 
 const NOTIFICATION_SOUND_KEY = "pwa_update_sound_enabled";
 const FONT_SIZE_KEY = "viciocode_font_size";
@@ -194,6 +195,7 @@ const SettingsPage = () => {
           <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl bg-primary/10 mb-2">
             <Settings className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-primary" />
           </div>
+          <PushNotificationButton />
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-orbitron text-foreground">
             Configurações
           </h1>
