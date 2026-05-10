@@ -99,7 +99,6 @@ const FreierenTemporada32026 = () => {
                   <td className="py-3 px-4 text-muted-foreground text-xs">{dest}</td>
                   <td className="py-3 px-4 text-xs">{imp}</td>
                 </tr>
-      <AdInArticle />
               ))}
             </tbody>
           </table>

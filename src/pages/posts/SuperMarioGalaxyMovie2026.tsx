@@ -108,7 +108,6 @@ const SuperMarioGalaxyMovie2026 = () => {
             <div className="space-y-2">
               {[
       <AdInArticle />
-                { site: "Rotten Tomatoes (críticos)", nota: "82%", comp: "O 1º tinha 59%" },
                 { site: "Rotten Tomatoes (público)", nota: "96%", comp: "Muito amado" },
                 { site: "Metacritic", nota: "71/100", comp: "vs 46 do 1º filme" },
                 { site: "CinemaScore", nota: "A", comp: "Excelente" },
