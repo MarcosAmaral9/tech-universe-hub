@@ -144,7 +144,6 @@ const GeekPage = () => {
           <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">
             🎮 Painéis Especiais
           </h2>
-                <SubtopicFilter subtopics={subtopics} selected={activeSub} onChange={setActiveSub} />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <SpecialPortalCard
               to="/geek/crimson-desert"

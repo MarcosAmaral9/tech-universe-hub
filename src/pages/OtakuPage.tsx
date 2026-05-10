@@ -116,7 +116,6 @@ const OtakuPage = () => {
           <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">
             📺 Painéis Especiais
           </h2>
-                <SubtopicFilter subtopics={subtopics} selected={activeSub} onChange={setActiveSub} />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Link to="/otaku/tensura" className="group relative rounded-xl overflow-hidden aspect-video border border-border block">
               <img src={tensuraPortalImg} alt="TenSura" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />

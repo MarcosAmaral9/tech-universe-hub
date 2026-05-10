@@ -107,7 +107,6 @@ const InvestimentosPage = () => {
           Dicas de finanças, análises de mercado, criptomoedas e 
           educação financeira para construir seu futuro.
         </p>
-              <SubtopicFilter subtopics={subtopics} selected={activeSub} onChange={setActiveSub} />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
           <Link to="/cotacoes" className="group block">
             <div className="relative rounded-2xl overflow-hidden h-48 md:h-56 border border-invest/30 hover:border-invest/60 transition-all shadow-md hover:shadow-xl">
