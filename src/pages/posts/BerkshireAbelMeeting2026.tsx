@@ -92,7 +92,6 @@ const BerkshireAbelMeeting2026 = () => {
             { q: "Por que não comprar ações da bolsa?", a: "Com o S&P 500 em múltiplos elevados (22× lucros) e a Berkshire tendo recomprado suas próprias ações em março de 2026, Abel sinalizou que as valuations atuais do mercado não justificam deploy massivo de capital. 'Paciência é uma vantagem competitiva', disse Abel." },
             { q: "Por que não fazer uma grande aquisição?", a: "Abel descartou explicitamente qualquer intenção de desmembrar a Berkshire ou fazer aquisições que distorçam a estrutura do conglomerado. A última grande aquisição foi a Alleghany (seguradora) em 2022 por US$ 11,6 bilhões. No cenário de juros elevados, pagar múltiplos altos por negócios não faz sentido." },
             { q: "Por que não distribuir dividendos?", a: "Berkshire historicamente não paga dividendos — reinveste o caixa. Abel reafirmou que Berkshire 'não será refém de ninguém' graças ao caixa, e que a liquidez imensa é uma vantagem em crises quando ativos ficam baratos." },
-      <AdInArticle />
           ].map(({ q, a }) => (
             <div key={q} className="bg-card rounded-xl border border-invest/20 p-4">
               <h3 className="font-bold text-sm mb-1 text-invest">❓ {q}</h3>

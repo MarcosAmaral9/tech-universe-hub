@@ -97,7 +97,6 @@ const PetroleoBrent125Ormuz2026 = () => {
                 ["Nikkei 225", "-1,6% (58.967)", "Maior choque na Ásia"],
                 ["Hang Seng", "-1,3% (25.772)", "Sensibilidade ao petróleo"],
                 ["Sensex (Índia)", "-1,2%", "Importadora líquida — pressão pesada"],
-      <AdInArticle />
               ].map(([m, mv, obs]) => (
                 <tr key={m} className="border-t border-border">
                   <td className="py-3 px-4 font-medium text-xs">{m}</td>
