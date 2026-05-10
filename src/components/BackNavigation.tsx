@@ -89,6 +89,7 @@ const BackNavigation = ({
         {cat.label}
       </Link>
     </nav>
+    </>
   );
 };
 
