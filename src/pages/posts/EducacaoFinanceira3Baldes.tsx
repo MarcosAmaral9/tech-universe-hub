@@ -196,7 +196,6 @@ const EducacaoFinanceira3Baldes = () => {
           <div className="space-y-3">
             {[
               { step: "1", title: "Mapeie", desc: "Anote TODOS os gastos do último mês. Use o extrato do banco, não a memória — ela mente." },
-      <AdInArticle />
               { step: "2", title: "Categorize", desc: "Classifique cada gasto em Necessidade, Investimento ou Qualidade de Vida." },
               { step: "3", title: "Automatize", desc: "No dia do salário: X% vai para investimento, X% fica para gastos fixos, o resto é para curtir." },
             ].map((item, i) => (

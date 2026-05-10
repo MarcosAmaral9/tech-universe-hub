@@ -92,7 +92,6 @@ const JujutsuKaisenGuia2026 = () => {
             { nome: "Nobara Kugisaki", papel: "Protagonista secundária / Straw Doll", desc: "Usa pregos e bonecas de palha. Autoconfiança inabalável e coração emocional do trio.", icon: "🔨" },
             { nome: "Satoru Gojo", papel: "Professor / Feiticeiro mais forte", desc: "Usuário do Infinito e Seis Olhos. Objetivo: reformar o mundo dos feiticeiros educando a próxima geração.", icon: "♾️" },
             { nome: "Ryomen Sukuna", papel: "Antagonista principal / Rei das Maldições", desc: "Maldição ancestral de 1.000 anos. Técnica Dismantle & Cleave pode cortar qualquer coisa.", icon: "😈" },
-      <AdInArticle />
             { nome: "Aoi Todo", papel: "Rival / Aliado de Yuji", desc: "Feiticeiro de grau 1. Técnica Boogie Woogie troca posições. Relação cômica com Yuji.", icon: "🤜" },
             { nome: "Kenjaku", papel: "Antagonista secundário / Manipulador", desc: "Feiticeiro de 1.000 anos que sobrevive transplantando seu cérebro. Um dos vilões mais bem construídos.", icon: "🧠" },
             { nome: "Yuta Okkotsu", papel: "Protagonista de JJK 0 / Grau Especial", desc: "Protagonista do volume 0. Feiticeiro de grau especial com reserva maldita gigantesca.", icon: "⚔️" },

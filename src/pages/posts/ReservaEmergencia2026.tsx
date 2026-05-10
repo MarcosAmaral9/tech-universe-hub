@@ -90,7 +90,6 @@ const ReservaEmergencia2026 = () => {
                 example: "Gastos de R$ 6.000/mês → Reserva de R$ 36.000 a R$ 72.000",
               },
             ].map(({ icon, title, color, months, example }) => (
-      <AdInArticle />
               <div key={title} className={`rounded-xl border p-5 ${color}`}>
                 <div className="mb-3">{icon}</div>
                 <h3 className="font-bold text-base mb-1">{title}</h3>
