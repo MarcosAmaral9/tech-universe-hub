@@ -12,7 +12,7 @@ import crimsonDesertHeroImg from "@/assets/crimson-desert-hero.webp";
 import avatarPortalBannerImg from "@/assets/avatar-portal-banner.webp";
 import acPortalImg from "@/assets/assassins-creed-portal.webp";
 import MostReadWidget from "@/components/MostReadWidget";
-import SubtopicFilter from "@/components/SubtopicFilter";
+
 
 const POSTS_PER_PAGE = 12;
 
@@ -65,51 +65,6 @@ const SpecialPortalCard = ({ to, image, title, description, badge, badgeColor }:
 );
 
 const GeekPage = () => {
-  const [activeSub, setActiveSub] = useState<string | null>(null);
-
-  const subtopicCounts = useMemo(() => {
-    const counts: Record<string, number> = {};
-    base.forEach(p => {
-      if (p.subtopic) counts[p.subtopic] = (counts[p.subtopic] || 0) + 1;
-    });
-    return counts;
-  }, [base]);
-
-  const subtopics = useMemo(() =>
-    Object.entries(subtopicCounts)
-      .filter(([, n]) => n > 0)
-      .sort((a, b) => b[1] - a[1])
-      .map(([key, count]) => ({
-        key,
-        label: ({
-          games:"Games",crimsonDesert:"Crimson Desert",
-          "assassins-creed":"Assassin's Creed",avatar:"Avatar",vikings:"Vikings",
-          agentes:"Agentes IA",mercado:"Mercado",tutorial:"Tutorial",
-          produtividade:"Produtividade",trabalho:"Trabalho",comparativos:"Comparativos",
-          renda:"Renda",seguranca:"Segurança",apps:"Apps",educacao:"Educação",
-          saude:"Saúde",regulacao:"Regulação",criatividade:"Criatividade",
-          privacidade:"Privacidade",dublagem:"Dublagem",
-          carteira:"Carteira","renda-fixa":"Renda Fixa",planejamento:"Planejamento",
-          etfs:"ETFs",fiis:"FIIs",cripto:"Cripto",semicondutores:"Semicondutores",
-          "renda-passiva":"Renda Passiva",impostos:"Impostos",
-          "educacao-financeira":"Ed. Financeira",dividas:"Dívidas",
-          calculadoras:"Calculadoras","economia-domestica":"Economia Doméstica",
-          anime:"Anime",manga:"Manga",manhwa:"Manhwa",cosplay:"Cosplay",
-          cultura:"Cultura",idiomas:"Idiomas",generos:"Gêneros",
-          collectibles:"Colecionáveis","saude-mental":"Saúde Mental",
-          tensura:"Tensura",overlord:"Overlord",isekai:"Isekai",
-          "crimson-desert":"Crimson Desert",
-        } as Record<string,string>)[key] || key,
-        count,
-      })),
-    [subtopicCounts]
-  );
-
-  const displayPosts = useMemo(() =>
-    activeSub ? base.filter(p => p.subtopic === activeSub) : base,
-    [base, activeSub]
-  );
-
   const allPosts = getPostsByCategory("geek");
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [offlineOnly, setOfflineOnly] = useState(false);

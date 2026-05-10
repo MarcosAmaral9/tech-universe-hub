@@ -92,7 +92,6 @@ const PromptEngineering2026 = () => {
             },
             {
               icon: <Zap className="h-7 w-7 text-purple-400" />,
-      <AdInArticle />
               title: "4. Formato e Restrições",
               color: "border-purple-500/30 bg-purple-500/5",
               desc: "Defina como quer a resposta: lista, tabela, parágrafos, JSON. Inclua restrições: tamanho máximo, tom, idioma, o que evitar.",

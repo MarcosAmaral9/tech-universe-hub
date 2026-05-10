@@ -9,7 +9,7 @@ import { AdInArticle } from "@/components/AdSense";
 import OfflineFilterButton from "@/components/OfflineFilterButton";
 import { useOfflinePosts } from "@/hooks/useOfflinePosts";
 import MostReadWidget from "@/components/MostReadWidget";
-import SubtopicFilter from "@/components/SubtopicFilter";
+
 
 const POSTS_PER_PAGE = 12;
 
@@ -31,51 +31,6 @@ const SUBTOPIC_LABELS: Record<string, string> = {
 };
 
 const IAPage = () => {
-  const [activeSub, setActiveSub] = useState<string | null>(null);
-
-  const subtopicCounts = useMemo(() => {
-    const counts: Record<string, number> = {};
-    base.forEach(p => {
-      if (p.subtopic) counts[p.subtopic] = (counts[p.subtopic] || 0) + 1;
-    });
-    return counts;
-  }, [base]);
-
-  const subtopics = useMemo(() =>
-    Object.entries(subtopicCounts)
-      .filter(([, n]) => n > 0)
-      .sort((a, b) => b[1] - a[1])
-      .map(([key, count]) => ({
-        key,
-        label: ({
-          games:"Games",crimsonDesert:"Crimson Desert",
-          "assassins-creed":"Assassin's Creed",avatar:"Avatar",vikings:"Vikings",
-          agentes:"Agentes IA",mercado:"Mercado",tutorial:"Tutorial",
-          produtividade:"Produtividade",trabalho:"Trabalho",comparativos:"Comparativos",
-          renda:"Renda",seguranca:"Segurança",apps:"Apps",educacao:"Educação",
-          saude:"Saúde",regulacao:"Regulação",criatividade:"Criatividade",
-          privacidade:"Privacidade",dublagem:"Dublagem",
-          carteira:"Carteira","renda-fixa":"Renda Fixa",planejamento:"Planejamento",
-          etfs:"ETFs",fiis:"FIIs",cripto:"Cripto",semicondutores:"Semicondutores",
-          "renda-passiva":"Renda Passiva",impostos:"Impostos",
-          "educacao-financeira":"Ed. Financeira",dividas:"Dívidas",
-          calculadoras:"Calculadoras","economia-domestica":"Economia Doméstica",
-          anime:"Anime",manga:"Manga",manhwa:"Manhwa",cosplay:"Cosplay",
-          cultura:"Cultura",idiomas:"Idiomas",generos:"Gêneros",
-          collectibles:"Colecionáveis","saude-mental":"Saúde Mental",
-          tensura:"Tensura",overlord:"Overlord",isekai:"Isekai",
-          "crimson-desert":"Crimson Desert",
-        } as Record<string,string>)[key] || key,
-        count,
-      })),
-    [subtopicCounts]
-  );
-
-  const displayPosts = useMemo(() =>
-    activeSub ? base.filter(p => p.subtopic === activeSub) : base,
-    [base, activeSub]
-  );
-
   const allPosts = getPostsByCategory("ia");
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [offlineOnly, setOfflineOnly] = useState(false);
@@ -182,7 +137,7 @@ const IAPage = () => {
       </div>
 
       {/* Posts Grid */}
-            <SubtopicFilter subtopics={subtopics} selected={activeSub} onChange={setActiveSub} />
+            
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
         {paged.map((post) => (
           <PostCard key={post.id} post={post} />
