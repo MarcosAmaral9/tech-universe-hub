@@ -62,29 +62,46 @@ interface AdProps {
 const AdUnit = forwardRef<HTMLDivElement, AdProps>(({ slot, format = "auto", className = "", responsive = true, layoutKey }, forwardedRef) => {
   const ref    = useRef<HTMLModElement>(null);
   const pushed = useRef(false);
+  const [unfilled, setUnfilled] = useState(false);
   const { pathname } = useLocation();
 
   const blocked = BLOCKED_PATHS.some((p) => pathname.startsWith(p));
 
   useEffect(() => {
     if (blocked || pushed.current) return;
-    const t = setTimeout(() => {
+    // Espera o container ter largura > 0 (necessário para responsive no desktop)
+    const tryPush = () => {
+      const el = ref.current;
+      if (!el) return false;
+      const w = el.parentElement?.getBoundingClientRect().width ?? 0;
+      if (w < 50) return false;
       try {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
         pushed.current = true;
-      } catch { /* not ready */ }
-    }, 150);
-    return () => clearTimeout(t);
+        // Detecta unfilled após push para esconder caixa vazia
+        setTimeout(() => {
+          if (el.getAttribute("data-ad-status") === "unfilled") setUnfilled(true);
+        }, 2000);
+        return true;
+      } catch { return false; }
+    };
+    if (tryPush()) return;
+    const id = setInterval(() => { if (tryPush()) clearInterval(id); }, 250);
+    const stop = setTimeout(() => clearInterval(id), 5000);
+    return () => { clearInterval(id); clearTimeout(stop); };
   }, [blocked, pathname]);
 
-  if (blocked) return null;
+  if (blocked || unfilled) return null;
+
+  const minHeight = MIN_HEIGHT[format] ?? "100px";
 
   return (
-    <div ref={forwardedRef} className={`ad-unit overflow-hidden text-center ${className}`} aria-hidden="true">
+    <div ref={forwardedRef} className={`ad-unit overflow-hidden text-center w-full ${className}`} aria-hidden="true">
+      <div className="text-[10px] text-muted-foreground mb-1 uppercase tracking-wider">Publicidade</div>
       <ins
         ref={ref}
         className="adsbygoogle"
-        style={{ display: "block" }}
+        style={{ display: "block", minHeight, width: "100%" }}
         data-ad-client="ca-pub-4907992121422514"
         data-ad-slot={slot}
         data-ad-format={format}
