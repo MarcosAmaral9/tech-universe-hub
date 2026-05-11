@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import OfflineGuard from "@/components/OfflineGuard";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { AuthProvider } from "@/contexts/AuthContext";
@@ -232,6 +233,7 @@ const FreierenTemporada32026    = lazy(() => import("./pages/posts/FreierenTempo
 // ── 30 Abr 2026 ───────────────────────────────────────────────────────
 const AnthropicMythosGoogle2026      = lazy(() => import("./pages/posts/AnthropicMythosGoogle2026"));
 const MagnificentSevenResultados2026 = lazy(() => import("./pages/posts/MagnificentSevenResultados2026"));
+const OfflineReaderPage = lazy(() => import("./pages/OfflineReaderPage"));
 const SuperMarioGalaxyMovie2026      = lazy(() => import("./pages/posts/SuperMarioGalaxyMovie2026"));
 const DragonBallBeerus2026           = lazy(() => import("./pages/posts/DragonBallBeerus2026"));
 // ── 04 Mai 2026 (Finanças G1) ─────────────────────────────────────────
@@ -280,7 +282,8 @@ const App = () => (
           <CommentSyncToast />
           <Layout>
             <Suspense fallback={<PageLoader />}>
-              <Routes>
+              <OfflineGuard />
+          <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/otaku" element={<OtakuPage />} />
                 <Route path="/ia" element={<IAPage />} />
@@ -405,6 +408,7 @@ const App = () => (
                 <Route path="/politica-conteudo" element={<ContentPolicyPage />} />
                 <Route path="/instalar" element={<InstallPage />} />
                 <Route path="/configuracoes" element={<SettingsPage />} />
+                <Route path="/leitura-offline" element={<Suspense fallback={<div />}><OfflineReaderPage /></Suspense>} />
                 <Route path="/configuracoes/offline" element={<OfflineSettingsPage />} />
                 <Route path="/painel-social" element={<SocialPanelPage />} />
                 {/* 22 Mar 2026 — Finanças */}

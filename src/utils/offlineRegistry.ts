@@ -111,6 +111,26 @@ export async function isDownloaded(key: string): Promise<boolean> {
   }
 }
 
+export async function removeDownloaded(slug: string): Promise<void> {
+  const db = await openDB();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(STORE, "readwrite");
+    const req = tx.objectStore(STORE).delete(slug);
+    req.onsuccess = () => resolve();
+    req.onerror   = () => reject(req.error);
+  });
+}
+
+export async function clearAllDownloaded(): Promise<void> {
+  const db = await openDB();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(STORE, "readwrite");
+    const req = tx.objectStore(STORE).clear();
+    req.onsuccess = () => resolve();
+    req.onerror   = () => reject(req.error);
+  });
+}
+
 /** Limpa todo o registro (chamado quando o usuário limpa o cache) */
 export async function clearRegistry(): Promise<void> {
   try {

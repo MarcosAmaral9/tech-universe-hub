@@ -251,6 +251,7 @@ export default defineConfig(({ mode }) => ({
                               // clientsClaim:true + skipWaiting:false = removeChild crash
                               // (new SW claims tab, but tab has HTML from old SW → DOM mismatch)
         // Routes that should NEVER be served from cache (must always hit network)
+        navigateFallback: "index.html",
         navigateFallbackDenylist: [/^\/api\.php/, /^\/google-auth\.php/, /^\/auth\/google/],
         // Runtime caching — makes the app work offline
         runtimeCaching: [

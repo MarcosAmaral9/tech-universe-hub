@@ -346,6 +346,12 @@ const OfflineSettingsPage = () => {
             <WifiOff className="w-8 h-8 text-primary" />
           </div>
           <h1 className="text-2xl md:text-3xl font-bold font-orbitron">Conteúdo Offline</h1>
+        <Link
+          to="/leitura-offline"
+          className="inline-flex items-center gap-2 mt-4 px-4 py-2.5 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors"
+        >
+          📖 Ver artigos baixados para leitura offline
+        </Link>
           <p className="text-muted-foreground max-w-md mx-auto text-sm">
             Escolha o que salvar no dispositivo para ler sem internet.
           </p>

@@ -102,7 +102,7 @@ const Header = () => {
                 className="hover:bg-secondary text-muted-foreground hover:text-primary"
                 title="Conteúdo Offline"
               >
-                <Link to="/configuracoes/offline">
+                <Link to="/leitura-offline" title="Artigos offline">
                   <WifiOff className="h-4 w-4" />
                 </Link>
               </Button>
