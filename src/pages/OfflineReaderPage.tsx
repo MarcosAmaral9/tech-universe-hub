@@ -44,7 +44,8 @@ const OfflineReaderPage = () => {
       .then((records) => {
         // records is array of {slug, downloadedAt} or similar
         const enriched = records
-          .map((r: { slug: string; downloadedAt?: number }) => {
+          .map((r: { slug?: string; downloadedAt?: number }) => {
+            if (!r.slug) return null;
             const post = blogPosts.find(p => p.slug === r.slug);
             if (!post) return null;
             return {
