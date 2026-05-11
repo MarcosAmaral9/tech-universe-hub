@@ -13,14 +13,15 @@
 import { forwardRef, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-// Altura mínima reservada por formato — evita colapso antes do fill
-// e garante largura mensurável para `data-full-width-responsive` no desktop.
-const MIN_HEIGHT: Record<string, string> = {
-  horizontal: "90px",
-  rectangle:  "250px",
-  fluid:      "120px",
-  vertical:   "250px",
-  auto:       "100px",
+// Alturas mínimas reservadas por formato e breakpoint (mobile / md / lg).
+// Evitam colapso antes do fill e garantem largura mensurável para
+// `data-full-width-responsive` em todas as resoluções.
+const SIZE_CLASS: Record<string, string> = {
+  horizontal: "min-h-[100px] md:min-h-[90px] lg:min-h-[90px] max-w-full",
+  rectangle:  "min-h-[250px] md:min-h-[250px] lg:min-h-[280px] max-w-[336px] mx-auto",
+  fluid:      "min-h-[120px] md:min-h-[150px] lg:min-h-[180px] max-w-full",
+  vertical:   "min-h-[250px] md:min-h-[600px] max-w-[160px] mx-auto",
+  auto:       "min-h-[100px] md:min-h-[120px] lg:min-h-[150px] max-w-full",
 };
 
 const SLOTS = {
