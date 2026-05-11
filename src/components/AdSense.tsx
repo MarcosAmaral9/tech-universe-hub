@@ -61,17 +61,19 @@ interface AdProps {
 }
 
 const AdUnit = forwardRef<HTMLDivElement, AdProps>(({ slot, format = "auto", className = "", responsive = true, layoutKey }, forwardedRef) => {
-  const ref    = useRef<HTMLModElement>(null);
-  const pushed = useRef(false);
+  const ref       = useRef<HTMLModElement>(null);
+  const wrapperRef= useRef<HTMLDivElement>(null);
+  const pushed    = useRef(false);
+  const lastWidth = useRef(0);
   const [unfilled, setUnfilled] = useState(false);
   const { pathname } = useLocation();
 
   const blocked = BLOCKED_PATHS.some((p) => pathname.startsWith(p));
 
   useEffect(() => {
-    if (blocked || pushed.current) return;
-    // Espera o container ter largura > 0 (necessário para responsive no desktop)
-    const tryPush = () => {
+    if (blocked) return;
+
+    const doPush = () => {
       const el = ref.current;
       if (!el) return false;
       const w = el.parentElement?.getBoundingClientRect().width ?? 0;
@@ -79,30 +81,69 @@ const AdUnit = forwardRef<HTMLDivElement, AdProps>(({ slot, format = "auto", cla
       try {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
         pushed.current = true;
-        // Detecta unfilled após push para esconder caixa vazia
+        lastWidth.current = w;
+        setUnfilled(false);
         setTimeout(() => {
           if (el.getAttribute("data-ad-status") === "unfilled") setUnfilled(true);
-        }, 2000);
+        }, 2500);
         return true;
       } catch { return false; }
     };
-    if (tryPush()) return;
-    const id = setInterval(() => { if (tryPush()) clearInterval(id); }, 250);
-    const stop = setTimeout(() => clearInterval(id), 5000);
-    return () => { clearInterval(id); clearTimeout(stop); };
+
+    // Push inicial — espera largura > 0
+    if (!pushed.current) {
+      if (!doPush()) {
+        const id = setInterval(() => { if (doPush()) clearInterval(id); }, 250);
+        const stop = setTimeout(() => clearInterval(id), 5000);
+        return () => { clearInterval(id); clearTimeout(stop); };
+      }
+    }
+
+    // Re-push em mudanças significativas de largura (resize, abertura de sidebar, etc.)
+    const target = wrapperRef.current;
+    if (!target || typeof ResizeObserver === "undefined") return;
+
+    let debounce: ReturnType<typeof setTimeout> | null = null;
+    const ro = new ResizeObserver((entries) => {
+      const w = entries[0]?.contentRect.width ?? 0;
+      if (w < 50) return;
+      const delta = Math.abs(w - lastWidth.current);
+      if (delta < 40) return; // ignora micro-ajustes
+      if (debounce) clearTimeout(debounce);
+      debounce = setTimeout(() => {
+        const el = ref.current;
+        if (!el) return;
+        // Limpa o slot anterior para permitir um novo push limpo
+        el.innerHTML = "";
+        el.removeAttribute("data-ad-status");
+        el.removeAttribute("data-adsbygoogle-status");
+        pushed.current = false;
+        doPush();
+      }, 350);
+    });
+    ro.observe(target);
+    return () => { ro.disconnect(); if (debounce) clearTimeout(debounce); };
   }, [blocked, pathname]);
 
   if (blocked || unfilled) return null;
 
-  const minHeight = MIN_HEIGHT[format] ?? "100px";
+  const sizeClass = SIZE_CLASS[format] ?? SIZE_CLASS.auto;
 
   return (
-    <div ref={forwardedRef} className={`ad-unit overflow-hidden text-center w-full ${className}`} aria-hidden="true">
+    <div
+      ref={(node) => {
+        wrapperRef.current = node;
+        if (typeof forwardedRef === "function") forwardedRef(node);
+        else if (forwardedRef) (forwardedRef as React.MutableRefObject<HTMLDivElement | null>).current = node;
+      }}
+      className={`ad-unit overflow-hidden text-center w-full ${className}`}
+      aria-hidden="true"
+    >
       <div className="text-[10px] text-muted-foreground mb-1 uppercase tracking-wider">Publicidade</div>
       <ins
         ref={ref}
-        className="adsbygoogle"
-        style={{ display: "block", minHeight, width: "100%" }}
+        className={`adsbygoogle block w-full ${sizeClass}`}
+        style={{ display: "block" }}
         data-ad-client="ca-pub-4907992121422514"
         data-ad-slot={slot}
         data-ad-format={format}
