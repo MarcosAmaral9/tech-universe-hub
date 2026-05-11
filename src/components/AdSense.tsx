@@ -13,6 +13,16 @@
 import { forwardRef, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
+// Altura mínima reservada por formato — evita colapso antes do fill
+// e garante largura mensurável para `data-full-width-responsive` no desktop.
+const MIN_HEIGHT: Record<string, string> = {
+  horizontal: "90px",
+  rectangle:  "250px",
+  fluid:      "120px",
+  vertical:   "250px",
+  auto:       "100px",
+};
+
 const SLOTS = {
   leaderboard: "1234567890", // Leaderboard / Horizontal responsivo
   rectangle:   "2345678901", // Retângulo médio 300×250
