@@ -1,93 +1,141 @@
-# Plano (revisado): Newsletter via Hostinger MySQL, sem Supabase
+# Plano completo: SEO + Segurança + AdSense
 
-Toda a leitura/escrita de newsletter passa a usar **exclusivamente** os endpoints PHP em `public/api.php` (`newsletter_get`, `newsletter_update`, `newsletter_send`). Nenhuma chamada ao Supabase para newsletter.
+## Objetivo
 
-## 1. Histórico de envios + Pausa/Cancelar (perfil & configurações)
+Resolver pendências de SEO/segurança remanescentes, restaurar PWA/Push/Offline corretamente, garantir canônicos consistentes e maximizar a receita do AdSense sem prejudicar Core Web Vitals.
 
-**`src/components/NewsletterPreferences.tsx`** — refatorado para usar PHP:
-- `useEffect` chama `GET /api.php?action=newsletter_get&email=...` e popula:
-  - `subscriber.is_active`, `categories`, `created_at`, `updated_at`
-  - `history[]` (id, subject, categorias, status, sent_at) — exibido como lista dos últimos 20 envios com data PT-BR, chips de categorias e badge de status (✓ Entregue verde / ✗ Falhou vermelho).
-- Botão **Salvar** → `POST /api.php?action=newsletter_update` com `{email, is_active, categories}`.
-- Botão **"Pausar inscrição"** (quando ativa) → `is_active=0`, mantém categorias.
-- Botão **"Cancelar inscrição"** (destrutivo, com `AlertDialog` de confirmação) → `is_active=0` + `categories=[]`.
-- Status atualizado imediatamente no estado local após sucesso (sem reload).
-- Remove todos os `import { supabase }` e `(supabase as any).from("newsletter_subscribers")` deste arquivo.
+---
 
-**`src/components/NewsletterSignup.tsx`** — refatorar fluxo de inscrição:
-- `POST /api.php?action=newsletter_subscribe` (novo endpoint) com `{email, categories}` → faz upsert (INSERT ON DUPLICATE KEY UPDATE) na tabela MySQL `newsletter_subscribers`.
-- Remove a lógica Supabase atual.
+## 1. Service Worker / PWA / Push (restauração completa)
 
-**`src/pages/SettingsPage.tsx`** — sem mudança estrutural; o `NewsletterPreferences` já está renderizado lá e agora trará histórico + pausa.
+**Problema:** Mesmo após remover o `unregister()` do `index.html`, o projeto não tem registro ativo de SW (não há `vite-plugin-pwa` configurado nem `navigator.serviceWorker.register(...)` em `src/main.tsx`). Push, offline e auto-precache estão "mortos".
 
-## 2. Endpoints PHP (`public/api.php`)
+**Ações:**
 
-- **Novo**: `POST action=newsletter_subscribe` body `{email, categories[]}` → upsert em `newsletter_subscribers` (cria com `is_active=1`; se já existe, atualiza categorias e reativa).
-- **Existente**: `newsletter_get`, `newsletter_update`, `newsletter_send` — manter (já filtram por categoria corretamente no worker).
-- Schema MySQL documentado no rodapé do arquivo (criar/ajustar):
-  ```sql
-  CREATE TABLE IF NOT EXISTS newsletter_subscribers (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(191) NOT NULL UNIQUE,
-    categories VARCHAR(255) DEFAULT '',
-    is_active TINYINT(1) DEFAULT 1,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-  CREATE TABLE IF NOT EXISTS newsletter_sends (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    subscriber_email VARCHAR(191) NOT NULL,
-    subject VARCHAR(255) NOT NULL,
-    categories VARCHAR(255) DEFAULT '',
-    status ENUM('sent','failed','pending') DEFAULT 'pending',
-    sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    INDEX idx_email_time (subscriber_email, sent_at)
-  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+- Criar `public/sw.js` próprio (sem `vite-plugin-pwa`, para evitar instabilidade no preview), com:
+  - `install` → `skipWaiting`
+  - `activate` → `clients.claim` + limpeza de caches antigos por versão
+  - `fetch`:
+    - **NetworkFirst** para navegação HTML (timeout 3s, fallback `/offline.html`)
+    - **CacheFirst** para `/assets/*`, fontes, imagens (`.webp`, `.png`, `.svg`)
+    - **StaleWhileRevalidate** para `/api.php?action=*` leves (most-read, comments)
+  - `push` → exibe `Notification` com `title`, `body`, `icon`, `badge`, `data.url`
+  - `notificationclick` → `clients.openWindow(data.url)`
+- Em `src/main.tsx`, registrar o SW **apenas em produção e fora de iframes/preview**:
+  ```ts
+  const isPreview = location.hostname.includes("lovableproject.com") || location.hostname.includes("id-preview--");
+  const inIframe = (() => { try { return self !== top; } catch { return true; } })();
+  if (import.meta.env.PROD && !isPreview && !inIframe && "serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js").catch(() => {});
+  } else {
+    navigator.serviceWorker?.getRegistrations().then(rs => rs.forEach(r => r.unregister()));
+  }
   ```
+- Versionar o cache (`viciocode-v{BUILD}`) para invalidar no deploy.
+- Adicionar `.htaccess`: `Cache-Control: no-cache` para `/sw.js` (evita SW preso).
 
-## 3. Worker de envio filtrando por categoria
+---
 
-`action=newsletter_send` em `api.php` (linhas 1996–2052) **já filtra por categoria** via `array_intersect`. Pequenos ajustes:
-- Garantir validação: se categorias do envio não vazias e assinante sem nenhuma categoria casando → pular e logar como `skipped` (não criar linha em `newsletter_sends`, evitando ruído).
-- Cron Hostinger sugerido (documentação no header): `0 9 * * 1` (segundas, 9h).
+## 2. Canônico SPA — eliminar risco de duplicado/obsoleto
 
-## 4. AdInArticle em todos os posts faltantes
+**Problema:** `DynamicSEO` injeta canônico via JS a cada rota; risco de tag remanescer da rota anterior ou de duplicar com a estática.
 
-- 152 posts; só 5 portais usam `AdInArticle`. Script Python (`/tmp/add_ad.py`) que para cada `src/pages/posts/*.tsx`:
-  1. Garante `AdInArticle` no import de `@/components/AdSense`.
-  2. Insere `<AdInArticle className="my-8" />` no meio do `<div className="prose...">`, idealmente após o ~3º `<h2>` ou na metade dos parágrafos.
-- Validação manual em 3 amostras antes da aplicação em massa.
+**Ações:**
 
-## 5. Widget "Mais Lidos" (contagem real via MySQL)
+- Auditar `src/components/DynamicSEO.tsx` para garantir que:
+  - **Remove** qualquer `<link rel="canonical">` existente antes de inserir o novo (`document.querySelectorAll('link[rel=canonical]').forEach(n => n.remove())`).
+  - Roda em `useEffect` com dependência da `pathname` atual.
+  - Confirmar que `index.html` continua **sem** canônico estático (já está ✅).
+- Migrar `DynamicSEO` para `react-helmet-async` (gerencia dedupe corretamente e prepara terreno para SSR/prerender futuro).
+- Garantir `og:url` também atualizado por rota (mesmo problema de SPA).
 
-**Backend (`api.php`):**
-- Tabela nova `post_views (slug, title, category, ip_hash, viewed_at)` com índices em `slug,viewed_at` e `viewed_at`.
-- `POST action=track_view` body `{slug, title, category}` — insere com hash do IP (rate-limit 30 min por IP+slug).
-- `GET action=top_posts&period=week&limit=10` — `SELECT slug, title, category, COUNT(*) AS views FROM post_views WHERE viewed_at >= NOW() - INTERVAL 7 DAY GROUP BY slug ORDER BY views DESC LIMIT ?`.
+---
 
-**Frontend:**
-- `src/hooks/useReadingHistory.ts` — adicionar fetch fire-and-forget para `track_view` ao registrar leitura.
-- Novo `src/components/MostReadWidget.tsx` — busca `top_posts?period=week`, exibe lista numerada "🔥 Mais Lidos da Semana" com título + view count + categoria. Fallback gracioso (esconde widget) quando endpoint indisponível (preview estático).
-- Inserir widget na `src/pages/Index.tsx` (homepage) e dentro de `src/components/RelatedPosts.tsx` (sidebar dos posts).
-- Badge **"🔥 Mais lido"** em `src/components/PostCard.tsx` quando o slug está no top 5 da semana (estado compartilhado via hook simples `useTopPosts`).
+## 3. Sitemaps — qualidade dos sinais
 
-## Resumo dos arquivos
+**Ações:**
 
-**Editados:**
-- `src/components/NewsletterPreferences.tsx` (rewrite — usa PHP, histórico, pausar/cancelar)
-- `src/components/NewsletterSignup.tsx` (rewrite signup → PHP)
-- `public/api.php` (+ `newsletter_subscribe`, `track_view`, `top_posts`, schemas atualizados)
-- `src/hooks/useReadingHistory.ts` (track_view)
-- `src/pages/Index.tsx` (insere MostReadWidget)
-- `src/components/RelatedPosts.tsx` (insere MostReadWidget)
-- `src/components/PostCard.tsx` (badge Mais lido)
-- ~140 posts em `src/pages/posts/*.tsx` via script (AdInArticle)
+- `public/sitemap.xml`: já corrigido (`xmlns` e `changefreq`/`priority` diferenciados). Validar contagem (176 URLs) bate com posts publicados.
+- `public/sitemap-images.xml`: revisar com script — listar todas imagens hero (`/assets/posts/*.webp`) referenciadas em `src/data/posts.ts`, gerar `<image:image>` por post pai. Atualizar `<lastmod>` por data do post.
+- Criar `scripts/generate-sitemaps.mjs` rodando em `prebuild` para manter ambos sempre em sincronia com `posts.ts` (evita esquecer ao publicar).
+- Manter `robots.txt` referenciando os dois sitemaps (já está ✅).
 
-**Criados:**
-- `src/components/MostReadWidget.tsx`
-- `src/hooks/useTopPosts.ts`
+---
 
-**Observação:** Como toda a feature de newsletter e widget depende de PHP/MySQL Hostinger, no preview estático essas seções mostram fallback ("disponível em produção"). A regra de memória sobre PHP em preview já está documentada.
+## 4. AdSense — rentabilidade máxima sem matar performance
 
-Confirma para implementar?
+**Problema:** Script AdSense + GA4 + GTM + Auto Ads competem pelo main thread; LCP/INP mobile sofrem.
+
+**Ações:**
+
+- **Lazy-load do `adsbygoogle.js**`: trocar `<script async>` no `<head>` por carregamento diferido após `load` (igual já é feito com GTM). Reduz JS de boot em ~100KB.
+- **Auto Ads:** garantir que o snippet `enable_page_level_ads: true` está presente no `AdSense.tsx` (ou via painel AdSense). Caso já habilitado no painel, manter.
+- **Slots manuais bem posicionados** (mais rentáveis que Auto Ads sozinho):
+  - Leaderboard topo do post (após h1, acima do fold em desktop, abaixo do hero em mobile).
+  - In-article após 2º parágrafo e após cada `<h2>` (já mapeado em memória `layout/article-features`). Auditar todos os 157 posts.
+  - Rectangle 300x250 sticky na sidebar desktop (categorias/cotações).
+  - Multiplex no fim do artigo (relacionados monetizados).
+  - Anchor mobile (já existe `AdAnchorMobile`).
+- **Nunca excluir as páginas legais (/privacidade, /termos, /sobre, /contato) — ter elas no site é uma exigência da política AdSense .**
+- **CLS:** todo `<ins>` precisa de `min-height` reservado (já feito no `SIZE_CLASS`). Confirmar visualmente em desktop ≥1280px.
+- **ads.txt:** verificar `public/ads.txt` contém linha oficial `google.com, pub-4907992121422514, DIRECT, f08c47fec0942fa0`.
+- **Política:** adicionar consentimento de cookies (GDPR/LGPD) — usar Google Funding Choices (`fundingchoicesmessages.google.com`) para servir consent banner que destrava personalized ads (eCPM maior).
+
+---
+
+## 5. CSP — desbloquear GA4/GTM eventos e Funding Choices
+
+**Problema:** apesar do fix anterior incluir `googletagmanager.com` em `connect-src`, faltam endpoints de envio de eventos e o domínio do Funding Choices para consentimento.
+
+**Ações em `index.html` CSP:**
+
+- `connect-src`: adicionar `https://region1.google-analytics.com`, `https://*.googletagmanager.com`, `https://fundingchoicesmessages.google.com`.
+- `script-src`: adicionar `https://fundingchoicesmessages.google.com`, `https://*.googlesyndication.com` (Auto Ads injeta de subdomínios).
+- `frame-src`: adicionar `https://*.googlesyndication.com`, `https://*.doubleclick.net`.
+- `img-src`: já liberal (`https:`), ok.
+
+---
+
+## 6. HTTPS / Segurança extra
+
+**Ações em `public/.htaccess`:**
+
+- HSTS já configurado ✅. Adicionar `preload` ao Google HSTS Preload List (passo manual após validar).
+- Adicionar `Cross-Origin-Opener-Policy: same-origin-allow-popups` (necessário para Google OAuth popup).
+- `Cross-Origin-Resource-Policy: cross-origin` para assets servidos a AdSense.
+- Headers de cache: `index.html` → `Cache-Control: no-cache, must-revalidate`; `/assets/*` (hashed) → `max-age=31536000, immutable`.
+
+---
+
+## 7. Performance / Core Web Vitals
+
+- Preload do hero do FeaturedCarousel (LCP image) — adicionar `<link rel="preload" as="image">` dinâmico no `Index.tsx`.
+- Confirmar `font-display: swap` em `public/fonts/fonts.css` (já deve estar).
+- Auditar `content-visibility: auto` nos cards (já aplicado em `post-card-deferred`).
+- Lighthouse target: LCP <2.5s, INP <200ms, CLS <0.1 em mobile 4G.
+
+---
+
+## 8. Validação final
+
+1. `tsc --noEmit` limpo.
+2. Build (`vite build`) sem warnings.
+3. Lighthouse mobile + desktop em `/`, `/post/<slug>`, `/cotacoes`.
+4. Validar sitemap em [https://www.xml-sitemaps.com/validate-xml-sitemap.html](https://www.xml-sitemaps.com/validate-xml-sitemap.html).
+5. Google Search Console: reenviar sitemaps, conferir cobertura.
+6. AdSense: verificar status "Ready" em todos os slots após 24h.
+7. Em produção (Hostinger): testar push notifications real, instalar PWA, navegar offline.
+
+---
+
+## Ordem de execução sugerida
+
+1. **CSP + AdSense lazy-load + ads.txt** (impacto receita imediato, baixo risco).
+2. **Service Worker novo + registro condicional** (restaura PWA/Push/Offline).
+3. **DynamicSEO → react-helmet-async** (corrige canônico SPA).
+4. **Script `generate-sitemaps.mjs` + `sitemap-images.xml**`.
+5. **Headers extras `.htaccess**` (HSTS preload, COOP, CORP).
+6. **Auditoria de slots AdSense post a post** (maior trabalho manual).
+7. **Validação Lighthouse + GSC + AdSense**.
+
+Quer que eu execute em uma única implementação ou divida em PRs menores (p.ex. começar só pelos itens 1–3)? Faça todas as mudanças de uma vez.
