@@ -189,6 +189,17 @@ const BerkshireAbelMeeting2026 = () => {
         </p>
       </div>
 
+      <ArticleSources
+        sources={[
+          { title: "Berkshire Hathaway — Annual & Quarterly Reports", url: "https://www.berkshirehathaway.com/reports.html", publisher: "Berkshire Hathaway Inc.", accessedAt: "Maio 2026" },
+          { title: "Letters from Warren E. Buffett to Berkshire Shareholders", url: "https://www.berkshirehathaway.com/letters/letters.html", publisher: "Berkshire Hathaway Inc.", accessedAt: "Maio 2026" },
+          { title: "BRK.A — historical filings and 10-K", url: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001067983", publisher: "U.S. Securities and Exchange Commission", accessedAt: "Maio 2026" },
+          { title: "CNBC Berkshire Hathaway coverage", url: "https://www.cnbc.com/berkshire-hathaway/", publisher: "CNBC", accessedAt: "Maio 2026" },
+        ]}
+      />
+
+      <AuthorBio category="invest" publishedAt="04 de Maio, 2026" variant="full" />
+
       <NewsletterSignup variant="inline" categories={["invest"]} />
 
 
