@@ -1,141 +1,182 @@
-# Plano completo: SEO + Segurança + AdSense
+# Plano: E-E-A-T, Fontes, Reescrita Editorial e Aprovação AdSense
 
-## Objetivo
+## Escopo e aviso importante
 
-Resolver pendências de SEO/segurança remanescentes, restaurar PWA/Push/Offline corretamente, garantir canônicos consistentes e maximizar a receita do AdSense sem prejudicar Core Web Vitals.
-
----
-
-## 1. Service Worker / PWA / Push (restauração completa)
-
-**Problema:** Mesmo após remover o `unregister()` do `index.html`, o projeto não tem registro ativo de SW (não há `vite-plugin-pwa` configurado nem `navigator.serviceWorker.register(...)` em `src/main.tsx`). Push, offline e auto-precache estão "mortos".
-
-**Ações:**
-
-- Criar `public/sw.js` próprio (sem `vite-plugin-pwa`, para evitar instabilidade no preview), com:
-  - `install` → `skipWaiting`
-  - `activate` → `clients.claim` + limpeza de caches antigos por versão
-  - `fetch`:
-    - **NetworkFirst** para navegação HTML (timeout 3s, fallback `/offline.html`)
-    - **CacheFirst** para `/assets/*`, fontes, imagens (`.webp`, `.png`, `.svg`)
-    - **StaleWhileRevalidate** para `/api.php?action=*` leves (most-read, comments)
-  - `push` → exibe `Notification` com `title`, `body`, `icon`, `badge`, `data.url`
-  - `notificationclick` → `clients.openWindow(data.url)`
-- Em `src/main.tsx`, registrar o SW **apenas em produção e fora de iframes/preview**:
-  ```ts
-  const isPreview = location.hostname.includes("lovableproject.com") || location.hostname.includes("id-preview--");
-  const inIframe = (() => { try { return self !== top; } catch { return true; } })();
-  if (import.meta.env.PROD && !isPreview && !inIframe && "serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/sw.js").catch(() => {});
-  } else {
-    navigator.serviceWorker?.getRegistrations().then(rs => rs.forEach(r => r.unregister()));
-  }
-  ```
-- Versionar o cache (`viciocode-v{BUILD}`) para invalidar no deploy.
-- Adicionar `.htaccess`: `Cache-Control: no-cache` para `/sw.js` (evita SW preso).
+O pedido tem 3 frentes grandes. A frente de **reescrita** é a mais pesada: 40 artigos × ≥1500 palavras = ~60.000 palavras de conteúdo factual com fontes reais. Não é viável entregar tudo numa única rodada sem comprometer a qualidade (e o pedido exige "não inventar nada"). Vou propor **arquitetura + 1ª leva (5 artigos)** nesta execução e seguir em levas seguintes mediante sua aprovação a cada bloco.
 
 ---
 
-## 2. Canônico SPA — eliminar risco de duplicado/obsoleto
+## Parte 1 — Infraestrutura editorial (uma vez só)
 
-**Problema:** `DynamicSEO` injeta canônico via JS a cada rota; risco de tag remanescer da rota anterior ou de duplicar com a estática.
+### 1.1 Componente `<AuthorBio />`
 
-**Ações:**
+Novo componente reutilizável em `src/components/AuthorBio.tsx`:
 
-- Auditar `src/components/DynamicSEO.tsx` para garantir que:
-  - **Remove** qualquer `<link rel="canonical">` existente antes de inserir o novo (`document.querySelectorAll('link[rel=canonical]').forEach(n => n.remove())`).
-  - Roda em `useEffect` com dependência da `pathname` atual.
-  - Confirmar que `index.html` continua **sem** canônico estático (já está ✅).
-- Migrar `DynamicSEO` para `react-helmet-async` (gerencia dedupe corretamente e prepara terreno para SSR/prerender futuro).
-- Garantir `og:url` também atualizado por rota (mesmo problema de SPA).
+- Foto/avatar, nome "Marcos Amaral", bio curta variável por categoria:
+  - `ia` → "entusiasta de inteligência artificial"
+  - `invest` → "entusiasta de finanças"
+  - `geek` → "entusiasta do universo geek"
+  - `otaku` → "entusiasta do mundo otaku"
+- Link para `/sobre`, data de publicação e "atualizado em".
+- Injeta `schema.org/Person` + `author` no JSON-LD do artigo (via prop para `DynamicSEO`).
+- Inserido no topo (após o header) e no rodapé de cada artigo reescrito.
 
----
+### 1.2 Componente `<ArticleSources />`
 
-## 3. Sitemaps — qualidade dos sinais
+Novo em `src/components/ArticleSources.tsx`:
 
-**Ações:**
+- Recebe array `{ title, url, publisher, accessedAt }`.
+- Renderiza bloco "Fontes e referências" no fim do artigo, com `rel="noopener nofollow"` e ícone externo.
+- Adiciona `citation` no JSON-LD (`citation: [{@type: "CreativeWork", url, name}]`).
 
-- `public/sitemap.xml`: já corrigido (`xmlns` e `changefreq`/`priority` diferenciados). Validar contagem (176 URLs) bate com posts publicados.
-- `public/sitemap-images.xml`: revisar com script — listar todas imagens hero (`/assets/posts/*.webp`) referenciadas em `src/data/posts.ts`, gerar `<image:image>` por post pai. Atualizar `<lastmod>` por data do post.
-- Criar `scripts/generate-sitemaps.mjs` rodando em `prebuild` para manter ambos sempre em sincronia com `posts.ts` (evita esquecer ao publicar).
-- Manter `robots.txt` referenciando os dois sitemaps (já está ✅).
+### 1.3 Componente `<EditorialTake />`
 
----
+Novo em `src/components/EditorialTake.tsx`:
 
-## 4. AdSense — rentabilidade máxima sem matar performance
+- Bloco destacado "Opinião do Marcos" / "Análise editorial" com borda lateral colorida pela categoria.
+- Garante que toda reescrita tenha um trecho de **perspectiva original** visualmente identificável (fator E-E-A-T do Google e crítico para AdSense).
 
-**Problema:** Script AdSense + GA4 + GTM + Auto Ads competem pelo main thread; LCP/INP mobile sofrem.
+### 1.4 Atualização do `DynamicSEO`
 
-**Ações:**
-
-- **Lazy-load do `adsbygoogle.js**`: trocar `<script async>` no `<head>` por carregamento diferido após `load` (igual já é feito com GTM). Reduz JS de boot em ~100KB.
-- **Auto Ads:** garantir que o snippet `enable_page_level_ads: true` está presente no `AdSense.tsx` (ou via painel AdSense). Caso já habilitado no painel, manter.
-- **Slots manuais bem posicionados** (mais rentáveis que Auto Ads sozinho):
-  - Leaderboard topo do post (após h1, acima do fold em desktop, abaixo do hero em mobile).
-  - In-article após 2º parágrafo e após cada `<h2>` (já mapeado em memória `layout/article-features`). Auditar todos os 157 posts.
-  - Rectangle 300x250 sticky na sidebar desktop (categorias/cotações).
-  - Multiplex no fim do artigo (relacionados monetizados).
-  - Anchor mobile (já existe `AdAnchorMobile`).
-- **Nunca excluir as páginas legais (/privacidade, /termos, /sobre, /contato) — ter elas no site é uma exigência da política AdSense .**
-- **CLS:** todo `<ins>` precisa de `min-height` reservado (já feito no `SIZE_CLASS`). Confirmar visualmente em desktop ≥1280px.
-- **ads.txt:** verificar `public/ads.txt` contém linha oficial `google.com, pub-4907992121422514, DIRECT, f08c47fec0942fa0`.
-- **Política:** adicionar consentimento de cookies (GDPR/LGPD) — usar Google Funding Choices (`fundingchoicesmessages.google.com`) para servir consent banner que destrava personalized ads (eCPM maior).
+- Aceitar props `author`, `datePublished`, `dateModified`, `citations[]` para enriquecer JSON-LD `Article` / `NewsArticle`.
+- Garantir `articleSection` por categoria.
 
 ---
 
-## 5. CSP — desbloquear GA4/GTM eventos e Funding Choices
+## Parte 2 — Reescrita dos artigos (40 no total)
 
-**Problema:** apesar do fix anterior incluir `googletagmanager.com` em `connect-src`, faltam endpoints de envio de eventos e o domínio do Funding Choices para consentimento.
+### Critérios obrigatórios por artigo
 
-**Ações em `index.html` CSP:**
+1. **≥1500 palavras** de corpo real (sem contar boilerplate).
+2. **Apenas informação verificável** — coletada via `websearch--web_search` / `code--fetch_website` antes de escrever. Se um dado não for confirmável, é omitido.
+3. **3 a 6 fontes externas** reais (sites oficiais, papers, releases, mídias estabelecidas) renderizadas via `<ArticleSources />`.
+4. **Perspectiva editorial original** via `<EditorialTake />` — opinião, comparação inédita ou recorte para mercado brasileiro (ex.: preço em BRL, disponibilidade na Steam BR, tributação, dublagem PT-BR, lançamento em streaming nacional).
+5. **Assinatura** via `<AuthorBio />` no topo e rodapé com a bio correta da categoria.
+6. **Estrutura SEO**: H2/H3 hierárquicos, FAQ schema (3-5 perguntas), `updatedAt` preenchido, slot AdSense Leaderboard após 2º parágrafo + In-Article após cada H2 (regra do projeto).
+7. **Imagem hero `.webp` única** já existente — reaproveitar.
 
-- `connect-src`: adicionar `https://region1.google-analytics.com`, `https://*.googletagmanager.com`, `https://fundingchoicesmessages.google.com`.
-- `script-src`: adicionar `https://fundingchoicesmessages.google.com`, `https://*.googlesyndication.com` (Auto Ads injeta de subdomínios).
-- `frame-src`: adicionar `https://*.googlesyndication.com`, `https://*.doubleclick.net`.
-- `img-src`: já liberal (`https:`), ok.
+### Lista dos 40 artigos (10 mais recentes por categoria, por `date`)
 
----
+**IA** (10): 189, 182, 174, 175, 166, 167, + os próximos 4 mais recentes do mesmo bucket (a confirmar lendo `posts.ts` completo).
+**Invest** (10): 190, 186, 187, 188, 183, 176, 177, 168, 169, + 1.
+**Geek** (10): 191, 184, 178, 179, 170, 171, + 4.
+**Otaku** (10): 192, 185, 180, 181, + 6.
 
-## 6. HTTPS / Segurança extra
+A lista exata será fixada na 1ª etapa de execução lendo `src/data/posts.ts` ordenado por `date desc` por categoria.
 
-**Ações em `public/.htaccess`:**
+### Ordem de execução proposta (por levas)
 
-- HSTS já configurado ✅. Adicionar `preload` ao Google HSTS Preload List (passo manual após validar).
-- Adicionar `Cross-Origin-Opener-Policy: same-origin-allow-popups` (necessário para Google OAuth popup).
-- `Cross-Origin-Resource-Policy: cross-origin` para assets servidos a AdSense.
-- Headers de cache: `index.html` → `Cache-Control: no-cache, must-revalidate`; `/assets/*` (hashed) → `max-age=31536000, immutable`.
+- **Leva 1 (esta rodada)**: infraestrutura (Parte 1) + **5 artigos piloto** (1 IA, 2 Invest, 1 Geek, 1 Otaku) — os mais recentes de cada categoria. Servem de gabarito visual e de tom.
+- **Leva 2**: 10 artigos.
+- **Leva 3**: 10 artigos.
+- **Leva 4**: 15 artigos restantes.
 
----
-
-## 7. Performance / Core Web Vitals
-
-- Preload do hero do FeaturedCarousel (LCP image) — adicionar `<link rel="preload" as="image">` dinâmico no `Index.tsx`.
-- Confirmar `font-display: swap` em `public/fonts/fonts.css` (já deve estar).
-- Auditar `content-visibility: auto` nos cards (já aplicado em `post-card-deferred`).
-- Lighthouse target: LCP <2.5s, INP <200ms, CLS <0.1 em mobile 4G.
-
----
-
-## 8. Validação final
-
-1. `tsc --noEmit` limpo.
-2. Build (`vite build`) sem warnings.
-3. Lighthouse mobile + desktop em `/`, `/post/<slug>`, `/cotacoes`.
-4. Validar sitemap em [https://www.xml-sitemaps.com/validate-xml-sitemap.html](https://www.xml-sitemaps.com/validate-xml-sitemap.html).
-5. Google Search Console: reenviar sitemaps, conferir cobertura.
-6. AdSense: verificar status "Ready" em todos os slots após 24h.
-7. Em produção (Hostinger): testar push notifications real, instalar PWA, navegar offline.
+Cada leva é uma mensagem sua autorizando seguir. Isso garante qualidade e respeita o limite "informação real, sem inventar".
 
 ---
 
-## Ordem de execução sugerida
+## Parte 3 — Página `/sobre` (AboutPage.tsx)
 
-1. **CSP + AdSense lazy-load + ads.txt** (impacto receita imediato, baixo risco).
-2. **Service Worker novo + registro condicional** (restaura PWA/Push/Offline).
-3. **DynamicSEO → react-helmet-async** (corrige canônico SPA).
-4. **Script `generate-sitemaps.mjs` + `sitemap-images.xml**`.
-5. **Headers extras `.htaccess**` (HSTS preload, COOP, CORP).
-6. **Auditoria de slots AdSense post a post** (maior trabalho manual).
-7. **Validação Lighthouse + GSC + AdSense**.
+Reescrever `src/pages/AboutPage.tsx` para incluir:
 
-Quer que eu execute em uma única implementação ou divida em PRs menores (p.ex. começar só pelos itens 1–3)? Faça todas as mudanças de uma vez.
+- **Bio completa**: "Marcos Vinícius Cavalcante Amaral, formado em Sistemas de Informação, nascido em 14/09/2000, entusiasta da tecnologia e de como ela afeta a vida humana."
+- Propósito do site: portfólio profissional + fonte de renda extra.
+- Áreas de interesse: IA, finanças, cultura geek, mundo otaku.
+- Foto/avatar (placeholder, você troca depois).
+- Bloco de contato com link para `/contato`.
+- JSON-LD `Person` + `AboutPage` schema.
+- Link para perfis sociais (já existentes no Footer).
+- Mantém o visual/tema atual (dark, primary `#00FF87`, JetBrains Mono).
+
+---
+
+## Parte 4 — Plano de aprovação no Google AdSense
+
+O AdSense já tem `ads.txt` correto. As reprovações típicas em sites como esse são: conteúdo raso, falta de E-E-A-T, navegação/políticas incompletas. Checklist completo:
+
+### 4.1 Conteúdo (resolvido pela Parte 2)
+
+- Mínimo 1500 palavras por artigo principal.
+- Autoria visível (`AuthorBio`).
+- Fontes verificáveis (`ArticleSources`).
+- Opinião original (`EditorialTake`).
+- Sem spoilers, sem conteúdo gerado puramente por IA sem revisão.
+
+### 4.2 Páginas obrigatórias (auditar e completar)
+
+- `/sobre` — reforçar identidade (Parte 3).
+- `/contato` — verificar se tem e-mail real, formulário funcional, endereço.
+- `/politica-de-privacidade` — confirmar menção a cookies, AdSense, GA4, direitos LGPD.
+- `/termos` — confirmar.
+- `/politica-de-conteudo` — já existe, confirmar.
+- Adicionar **link para todas** no rodapé (já existe — apenas auditar).
+
+### 4.3 Técnico
+
+- **Desativar Auto Ads enquanto estiver em análise** (recomendação Google): manter apenas slots manuais. Reativar após aprovação.
+- Confirmar que **não há anúncios em páginas legais** (regra de memória — verificar `AdSense.tsx`).
+- Garantir `consent mode v2` no GA4/AdSense para LGPD/GDPR (revisar `CookieConsent.tsx`).
+- Confirmar `robots.txt` permite `Mediapartners-Google`.
+- `sitemap.xml` válido e submetido no Search Console (sitemap auto-gerado já existe).
+- HTTPS em todas as páginas (Hostinger — confirmar redirect 301 no `.htaccess`).
+- Sem páginas órfãs / 404 indexáveis.
+
+### 4.4 Navegação
+
+- Menu com todas as categorias.
+- Breadcrumbs em artigos (já existe).
+- Busca funcional (já existe).
+- Tempo médio de sessão / pageviews por sessão — estimular com "Posts relacionados" (já existe).
+
+### 4.5 Submissão
+
+- Aguardar pelo menos **15-20 artigos reescritos** publicados antes de submeter (densidade editorial).
+- Submeter via painel AdSense → Sites → Adicionar `viciocode.com`.
+- Manter `<script>` do AdSense + meta `google-adsense-account` no `<head>` (já está).
+
+---
+
+## Detalhes técnicos
+
+### Arquivos novos
+
+- `src/components/AuthorBio.tsx`
+- `src/components/ArticleSources.tsx`
+- `src/components/EditorialTake.tsx`
+- `src/assets/marcos-amaral-avatar.webp` (placeholder ou gerado)
+
+### Arquivos editados (Parte 1 + 3 + piloto)
+
+- `src/components/DynamicSEO.tsx` — props de autoria/citações.
+- `src/pages/AboutPage.tsx` — bio completa.
+- `src/pages/posts/<5 piloto>.tsx` — reescrita completa.
+- `src/data/posts.ts` — preencher `updatedAt` nos reescritos, ajustar `excerpt` quando necessário.
+
+### Pesquisa de fontes
+
+Para cada artigo, antes de reescrever:
+
+1. `websearch--web_search` no tema com `category: "news"` quando for notícia financeira/tech.
+2. `code--fetch_website` em fontes oficiais (Banco Central, B3, Reuters, oficial dos jogos/animes).
+3. Cross-check de pelo menos 2 fontes por afirmação numérica.
+4. Se não encontrar fonte confiável → afirmação é cortada do artigo (não inventar).
+
+### Estimativa de tempo
+
+- Parte 1 + Parte 3: 1 rodada.
+- 5 artigos piloto: 1 rodada (várias chamadas web).
+- Cada leva subsequente: 1 rodada.
+- **Total**: ~5 rodadas suas para concluir as 40 reescritas.
+
+---
+
+## O que **não** está incluído
+
+- Tradução para outros idiomas.
+- Geração de novas imagens hero (reaproveita as existentes em `.webp`).
+- Migração de hospedagem ou mudanças no backend PHP/MySQL.
+- Auditoria post-a-post de slots AdSense nos 117 artigos restantes (não-prioritários).
+
+---
+
+Confirma este plano? Ao aprovar, começo pela **Parte 1 (infra) + Parte 3 (Sobre) + 5 artigos piloto** e te entrego para revisão antes de seguir para a Leva 2.
