@@ -240,6 +240,8 @@ export default defineConfig(({ mode }) => ({
       // Inject the virtual module so we can use useRegisterSW in the app
       injectRegister: "auto",
       workbox: {
+        // Importa handlers customizados de Web Push (push + notificationclick)
+        importScripts: ["/push-handler.js"],
         // Precache shell assets — JS/CSS/fonts/SVG bundles (hashed → safe to cache long-term)
         // Inclui offline.html para servir como fallback quando rota não cacheada é acessada offline
         globPatterns: ["**/*.{js,css,woff2,woff,svg,ico}", "offline.html"],

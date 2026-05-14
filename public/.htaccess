@@ -17,9 +17,21 @@
   Header always set X-XSS-Protection "1; mode=block"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+  # Permite popup OAuth do Google (login) sem quebrar isolamento
+  Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+  # Permite que assets sejam servidos a iframes do AdSense
+  Header always set Cross-Origin-Resource-Policy "cross-origin"
   # Remove cabeçalhos que expõem informações do servidor
   Header always unset X-Powered-By
   Header always unset Server
+
+  # Service Worker NUNCA pode ficar cacheado (senão SW antigo fica preso)
+  <FilesMatch "^(sw|service-worker|push-handler|registerSW)\.js$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "^(manifest\.webmanifest|manifest\.json)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
 </IfModule>
 
 # ── SPA: serve index.html para rotas React ────────────────────

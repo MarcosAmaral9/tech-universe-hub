@@ -31,8 +31,23 @@
       gtag('config', 'G-XDJ1D1LJMK', { send_page_view: false });
     </script>
 
-    <!-- ④ Google AdSense — async, non-blocking -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4907992121422514" crossorigin="anonymous"></script>
+    <!-- ④ Google AdSense + Funding Choices (consentimento LGPD/GDPR)
+         Carregados após `load` para não bloquear o LCP. Funding Choices habilita
+         personalized ads (eCPM maior) e cumpre exigência da política do AdSense. -->
+    <script>
+      window.addEventListener('load', function () {
+        var ad = document.createElement('script');
+        ad.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4907992121422514';
+        ad.async = true;
+        ad.crossOrigin = 'anonymous';
+        document.head.appendChild(ad);
+
+        var fc = document.createElement('script');
+        fc.src = 'https://fundingchoicesmessages.google.com/i/pub-4907992121422514?ers=1';
+        fc.async = true;
+        document.head.appendChild(fc);
+      });
+    </script>
 
     <!-- Open Graph -->
     <meta property="og:title" content="VICIO&lt;CODE&gt; - IA, Investimentos, Geek &amp; Otaku" />
@@ -99,7 +114,7 @@
     </script>
 
   <!-- ── Security Headers ─────────────────────────────────── -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://partner.googleadservices.com https://www.googletagservices.com https://tpc.googlesyndication.com https://www.gstatic.com https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https: http:; connect-src 'self' https://*.supabase.co https://brapi.dev https://api.coingecko.com wss://*.supabase.co https://pagead2.googlesyndication.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://stats.g.doubleclick.net; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.googletagmanager.com; media-src 'self'; manifest-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googlesyndication.com https://pagead2.googlesyndication.com https://partner.googleadservices.com https://www.googletagservices.com https://tpc.googlesyndication.com https://www.gstatic.com https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://fundingchoicesmessages.google.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https: http:; connect-src 'self' https://*.supabase.co https://brapi.dev https://api.coingecko.com wss://*.supabase.co https://*.googlesyndication.com https://pagead2.googlesyndication.com https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://region1.google-analytics.com https://*.analytics.google.com https://stats.g.doubleclick.net https://*.doubleclick.net https://fundingchoicesmessages.google.com; frame-src 'self' https://googleads.g.doubleclick.net https://*.doubleclick.net https://*.googlesyndication.com https://tpc.googlesyndication.com https://www.googletagmanager.com https://fundingchoicesmessages.google.com; media-src 'self'; manifest-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
