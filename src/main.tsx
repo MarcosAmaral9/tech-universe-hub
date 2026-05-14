@@ -40,6 +40,8 @@ createRoot(container, {
   },
 }).render(
   <AppErrorBoundary>
-    <App />
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
   </AppErrorBoundary>
 );
