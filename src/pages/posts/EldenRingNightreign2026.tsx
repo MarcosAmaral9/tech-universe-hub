@@ -7,6 +7,9 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
+import AuthorBio from "@/components/AuthorBio";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
 import heroImg from "@/assets/elden-ring-nightreign-guia-completo-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
@@ -38,6 +41,7 @@ const EldenRingNightreign2026 = () => {
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />16 min de leitura</span>
         </div>
         <ShareWhatsApp />
+        <AuthorBio category="geek" publishedAt="04 de Maio, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -145,6 +149,17 @@ const EldenRingNightreign2026 = () => {
         <AdRectangle className="my-8" />
 
         
+        <EditorialTake category="geek" title="Análise do Marcos: vale o investimento para o jogador brasileiro?">
+          <p>
+            Como entusiasta de Souls-likes que já passou centenas de horas em Elden Ring base, encaro
+            <strong> Nightreign como o melhor formato para quem joga em sessões curtas</strong> — algo que
+            o brasileiro adulto, com pouco tempo livre, finalmente consegue encaixar entre o trabalho e a
+            família. O preço em reais ainda dói (Steam BR cobra prêmio sobre a versão americana), mas o
+            modo de expedição cooperativa de 40 minutos é um respiro depois de 100 horas grindando o mapa
+            principal. Para quem nunca jogou Elden Ring, ainda recomendo começar pelo base.
+          </p>
+        </EditorialTake>
+
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Zap className="h-7 w-7 text-geek" />
           DLC Forsaken Hollows: O Que Foi Adicionado em Maio 2026

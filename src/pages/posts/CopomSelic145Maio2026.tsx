@@ -182,6 +182,17 @@ const CopomSelic145Maio2026 = () => {
         </p>
       </div>
 
+      <ArticleSources
+        sources={[
+          { title: "Banco Central — Atas e decisões do Copom", url: "https://www.bcb.gov.br/controleinflacao/atascopom", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
+          { title: "Boletim Focus — Expectativas de Mercado", url: "https://www.bcb.gov.br/publicacoes/focus", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
+          { title: "Calculadora do Cidadão — Tesouro Direto", url: "https://www.tesourodireto.com.br/", publisher: "Tesouro Nacional", accessedAt: "Maio 2026" },
+          { title: "Histórico de Selic", url: "https://www.bcb.gov.br/controleinflacao/historicotaxasjuros", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
+        ]}
+      />
+
+      <AuthorBio category="invest" publishedAt="04 de Maio, 2026" variant="full" />
+
       <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug={SLUG} />
       <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
