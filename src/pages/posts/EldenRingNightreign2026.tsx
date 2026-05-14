@@ -202,6 +202,17 @@ const EldenRingNightreign2026 = () => {
         </div>
       </div>
 
+      <ArticleSources
+        sources={[
+          { title: "Elden Ring Nightreign — site oficial", url: "https://en.bandainamcoent.eu/elden-ring/elden-ring-nightreign", publisher: "Bandai Namco", accessedAt: "Maio 2026" },
+          { title: "FromSoftware — official news", url: "https://www.fromsoftware.jp/ww/news.html", publisher: "FromSoftware", accessedAt: "Maio 2026" },
+          { title: "Elden Ring Nightreign no Steam", url: "https://store.steampowered.com/app/2622380/ELDEN_RING_NIGHTREIGN/", publisher: "Valve / Steam", accessedAt: "Maio 2026" },
+          { title: "IGN — Elden Ring Nightreign coverage", url: "https://www.ign.com/games/elden-ring-nightreign", publisher: "IGN", accessedAt: "Maio 2026" },
+        ]}
+      />
+
+      <AuthorBio category="geek" publishedAt="04 de Maio, 2026" variant="full" />
+
       <NewsletterSignup variant="inline" categories={["geek"]} />
 
 

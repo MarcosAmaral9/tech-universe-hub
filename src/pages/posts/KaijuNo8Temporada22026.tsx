@@ -198,6 +198,17 @@ const KaijuNo8Temporada22026 = () => {
         </div>
       </div>
 
+      <ArticleSources
+        sources={[
+          { title: "Kaiju No. 8 — site oficial do anime", url: "https://kaiju-no8.net/", publisher: "Production I.G", accessedAt: "Maio 2026" },
+          { title: "Shonen Jump+ — Kaiju No. 8 (mangá)", url: "https://shonenjumpplus.com/episode/13932016480028799982", publisher: "Shueisha", accessedAt: "Maio 2026" },
+          { title: "Crunchyroll — Kaiju No. 8 (Brasil)", url: "https://www.crunchyroll.com/pt-br/series/G9VHN9PZ2/kaiju-no-8", publisher: "Crunchyroll", accessedAt: "Maio 2026" },
+          { title: "Anime News Network — Kaiju No. 8", url: "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=27931", publisher: "Anime News Network", accessedAt: "Maio 2026" },
+        ]}
+      />
+
+      <AuthorBio category="otaku" publishedAt="04 de Maio, 2026" variant="full" />
+
       <NewsletterSignup variant="inline" categories={["otaku"]} />
 
 
