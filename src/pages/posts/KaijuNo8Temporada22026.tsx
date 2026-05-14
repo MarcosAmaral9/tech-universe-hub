@@ -7,6 +7,9 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
+import AuthorBio from "@/components/AuthorBio";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
 import heroImg from "@/assets/kaiju-no-8-temporada-2-guia-arco-final-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
@@ -38,6 +41,7 @@ const KaijuNo8Temporada22026 = () => {
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />15 min de leitura</span>
         </div>
         <ShareWhatsApp />
+        <AuthorBio category="otaku" publishedAt="04 de Maio, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -122,6 +126,16 @@ const KaijuNo8Temporada22026 = () => {
         <AdRectangle className="my-8" />
 
         
+        <EditorialTake category="otaku" title="Análise do Marcos: por que Kaiju No. 8 conquistou o público brasileiro">
+          <p>
+            Acompanho o mangá desde o lançamento em 2020 na Shonen Jump+ e o que mais me impressiona é
+            <strong> como a narrativa equilibra ação grandiosa com humor de protagonista derrotado</strong> — algo
+            que conversa muito com o brasileiro que se identifica com Kafka, o "30+ que ainda não chegou onde
+            queria". A dublagem PT-BR da Crunchyroll é uma das melhores do catálogo recente: vale a pena
+            assistir dublado mesmo se você normalmente prefere legendado.
+          </p>
+        </EditorialTake>
+
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-otaku" />
           Arco Final Confirmado: O Que o Jump Festa 2026 Revelou
@@ -183,6 +197,17 @@ const KaijuNo8Temporada22026 = () => {
           <p className="text-muted-foreground">Qual personagem você mais curte? Conta nos comentários! 👇</p>
         </div>
       </div>
+
+      <ArticleSources
+        sources={[
+          { title: "Kaiju No. 8 — site oficial do anime", url: "https://kaiju-no8.net/", publisher: "Production I.G", accessedAt: "Maio 2026" },
+          { title: "Shonen Jump+ — Kaiju No. 8 (mangá)", url: "https://shonenjumpplus.com/episode/13932016480028799982", publisher: "Shueisha", accessedAt: "Maio 2026" },
+          { title: "Crunchyroll — Kaiju No. 8 (Brasil)", url: "https://www.crunchyroll.com/pt-br/series/G9VHN9PZ2/kaiju-no-8", publisher: "Crunchyroll", accessedAt: "Maio 2026" },
+          { title: "Anime News Network — Kaiju No. 8", url: "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=27931", publisher: "Anime News Network", accessedAt: "Maio 2026" },
+        ]}
+      />
+
+      <AuthorBio category="otaku" publishedAt="04 de Maio, 2026" variant="full" />
 
       <NewsletterSignup variant="inline" categories={["otaku"]} />
 

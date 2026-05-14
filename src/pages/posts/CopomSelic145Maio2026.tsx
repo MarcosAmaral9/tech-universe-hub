@@ -7,6 +7,9 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
+import AuthorBio from "@/components/AuthorBio";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
 import heroImg from "@/assets/copom-selic-145-abril-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
@@ -37,6 +40,7 @@ const CopomSelic145Maio2026 = () => {
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />14 min de leitura</span>
         </div>
         <ShareWhatsApp />
+        <AuthorBio category="invest" publishedAt="04 de Maio, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -103,6 +107,16 @@ const CopomSelic145Maio2026 = () => {
         <AdRectangle className="my-8" />
 
         
+        <EditorialTake category="invest" title="Análise do Marcos: o que fazer com a renda fixa agora">
+          <p>
+            Cortar Selic com inflação ainda acima do teto da meta e com o Brent acima de US$ 100 é
+            <strong> uma aposta arriscada</strong>. Para o investidor pessoa física, a leitura prática é:
+            travar prefixados longos agora pode parecer atrativo, mas o IPCA+ continua sendo o porto seguro
+            até o cenário fiscal ficar mais claro. CDBs com liquidez diária ainda pagam acima de 100% do CDI
+            em bancos médios — vale travar antes que o ciclo de cortes erode o prêmio.
+          </p>
+        </EditorialTake>
+
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <TrendingUp className="h-7 w-7 text-invest" />
           Impacto em Cada Classe de Ativos
@@ -167,6 +181,17 @@ const CopomSelic145Maio2026 = () => {
           📚 <strong>Fontes:</strong> Comunicado do Copom (29/04/2026), Banco Central do Brasil, Boletim Focus (27/04/2026), reportagem g1 — Mariana Assis e Thiago Resende. Artigo educacional, não constitui recomendação de investimento.
         </p>
       </div>
+
+      <ArticleSources
+        sources={[
+          { title: "Banco Central — Atas e decisões do Copom", url: "https://www.bcb.gov.br/controleinflacao/atascopom", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
+          { title: "Boletim Focus — Expectativas de Mercado", url: "https://www.bcb.gov.br/publicacoes/focus", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
+          { title: "Calculadora do Cidadão — Tesouro Direto", url: "https://www.tesourodireto.com.br/", publisher: "Tesouro Nacional", accessedAt: "Maio 2026" },
+          { title: "Histórico de Selic", url: "https://www.bcb.gov.br/controleinflacao/historicotaxasjuros", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
+        ]}
+      />
+
+      <AuthorBio category="invest" publishedAt="04 de Maio, 2026" variant="full" />
 
       <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug={SLUG} />

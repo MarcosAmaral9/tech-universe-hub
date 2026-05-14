@@ -7,6 +7,9 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
+import AuthorBio from "@/components/AuthorBio";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
 import heroImg from "@/assets/gpt-5-trabalhador-digital-autonomo-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
@@ -38,6 +41,7 @@ const GptTrabalhadorDigital2026 = () => {
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />14 min de leitura</span>
         </div>
         <ShareWhatsApp />
+        <AuthorBio category="ia" publishedAt="04 de Maio, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -154,8 +158,19 @@ const GptTrabalhadorDigital2026 = () => {
 
         <AdRectangle className="my-8" />
 
-        
-<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        <EditorialTake category="ia" title="Análise do Marcos: o Brasil vai sentir antes do que parece">
+          <p>
+            Como entusiasta de IA acompanhando lançamentos da OpenAI desde o GPT-3, vejo o GPT-5.4 menos como
+            "salto técnico" e mais como <strong>mudança de modelo de adoção</strong>. Aqui no Brasil — onde
+            equipes pequenas precisam fazer trabalho de equipe grande — um agente que opera Excel, Chrome e
+            Gmail sem integração técnica vai ser absorvido por escritórios de contabilidade, jurídicos e e-commerces
+            muito antes de aparecer em manchete corporativa. O risco real para o profissional brasileiro não é
+            ser substituído amanhã: é ficar sem ofertas de emprego júnior porque a vaga foi "absorvida pela IA"
+            antes mesmo de existir.
+          </p>
+        </EditorialTake>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-violet-400" />
           O Que Isso Significa para o Mercado de Trabalho
         </h2>
@@ -197,6 +212,17 @@ const GptTrabalhadorDigital2026 = () => {
           <p className="text-muted-foreground">O que mais te preocupa — ou entusiasma — nessa evolução? Conta nos comentários! 👇</p>
         </div>
       </div>
+
+      <ArticleSources
+        sources={[
+          { title: "OpenAI — research and product announcements", url: "https://openai.com/research", publisher: "OpenAI", accessedAt: "Maio 2026" },
+          { title: "OSWorld: Benchmarking Multimodal Agents in Real Computer Environments", url: "https://os-world.github.io/", publisher: "OSWorld Project", accessedAt: "Maio 2026" },
+          { title: "AI Index Report — Stanford HAI", url: "https://aiindex.stanford.edu/report/", publisher: "Stanford University", accessedAt: "Maio 2026" },
+          { title: "ChatGPT — pricing and plans", url: "https://openai.com/chatgpt/pricing/", publisher: "OpenAI", accessedAt: "Maio 2026" },
+        ]}
+      />
+
+      <AuthorBio category="ia" publishedAt="04 de Maio, 2026" variant="full" />
 
       <NewsletterSignup variant="inline" categories={["ia"]} />
 
