@@ -123,6 +123,8 @@ function htaccessPlugin(): Plugin {
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
+  Header set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+  Header set Cross-Origin-Resource-Policy "cross-origin"
 </IfModule>
 
 # Processar arquivos PHP antes de qualquer reescrita
@@ -169,15 +171,22 @@ function htaccessPlugin(): Plugin {
 
 # Cache-Control: immutable for hashed Vite assets (never revalidate)
 <IfModule mod_headers.c>
-  <FilesMatch "\.(js|css|woff2|woff)$">
+  <FilesMatch "\\.(js|css|woff2|woff)$">
     Header append Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
-  <FilesMatch "\.(webp|jpg|jpeg|png|svg|ico)$">
+  <FilesMatch "\\.(webp|jpg|jpeg|png|svg|ico)$">
     Header append Cache-Control "public, max-age=31536000"
   </FilesMatch>
   # HTML must revalidate on every request
-  <FilesMatch "\.html$">
+  <FilesMatch "\\.html$">
     Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  # Service Worker / manifest — nunca cachear
+  <FilesMatch "^(sw|service-worker|push-handler|registerSW)\\.js$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "^(manifest\\.webmanifest|manifest\\.json)$">
+    Header set Cache-Control "no-cache"
   </FilesMatch>
 </IfModule>
 
@@ -240,6 +249,8 @@ export default defineConfig(({ mode }) => ({
       // Inject the virtual module so we can use useRegisterSW in the app
       injectRegister: "auto",
       workbox: {
+        // Importa handlers customizados de Web Push (push + notificationclick)
+        importScripts: ["/push-handler.js"],
         // Precache shell assets — JS/CSS/fonts/SVG bundles (hashed → safe to cache long-term)
         // Inclui offline.html para servir como fallback quando rota não cacheada é acessada offline
         globPatterns: ["**/*.{js,css,woff2,woff,svg,ico}", "offline.html"],

@@ -420,7 +420,9 @@ const DynamicSEO = () => {
     setMetaTag("name", "robots", robotsContent);
     setMetaTag("name", "googlebot", isPrivate ? "noindex, nofollow" : "index, follow");
 
-    // ── Canonical ────────────────────────────────────────────────────────────
+    // ── Canonical (defensive: remove duplicates antes de inserir o atual) ───
+    const canonicals = document.querySelectorAll('link[rel="canonical"]');
+    canonicals.forEach((n, i) => { if (i > 0) n.remove(); });
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!link) {
       link = document.createElement("link");
