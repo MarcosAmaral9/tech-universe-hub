@@ -7,6 +7,9 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
+import AuthorBio from "@/components/AuthorBio";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
 import heroImg from "@/assets/berkshire-hathaway-greg-abel-2026-sem-buffett.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
@@ -38,6 +41,7 @@ const BerkshireAbelMeeting2026 = () => {
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />14 min de leitura</span>
         </div>
         <ShareWhatsApp />
+        <AuthorBio category="invest" publishedAt="04 de Maio, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -117,6 +121,18 @@ const BerkshireAbelMeeting2026 = () => {
         <AdRectangle className="my-8" />
 
         
+        <EditorialTake category="invest" title="Análise do Marcos: por que o investidor brasileiro deveria olhar">
+          <p>
+            O caixa de US$ 397 bilhões da Berkshire não é só "Buffett conservador" — é uma posição
+            tática que comunica algo ao mercado global: <strong>quem comprou na alta de 2024–2025 vai
+            sofrer se os juros americanos demorarem a cair</strong>. Para o investidor brasileiro, isso
+            tem dois recados práticos: (1) renda fixa em dólar via Tesouro IPCA+ ou ETFs como IVVB11
+            continua atrativa enquanto os EUA mantêm Treasuries acima de 4%; e (2) a sucessão suave em
+            uma das maiores empresas do mundo é um lembrete de que governança importa mais que carisma —
+            algo que nossas próprias estatais ainda não aprenderam.
+          </p>
+        </EditorialTake>
+
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <TrendingUp className="h-7 w-7 text-invest" />
           A Era Abel: O Que Muda e O Que Permanece
