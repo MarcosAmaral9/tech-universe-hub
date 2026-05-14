@@ -123,6 +123,8 @@ function htaccessPlugin(): Plugin {
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
+  Header set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+  Header set Cross-Origin-Resource-Policy "cross-origin"
 </IfModule>
 
 # Processar arquivos PHP antes de qualquer reescrita
@@ -169,15 +171,22 @@ function htaccessPlugin(): Plugin {
 
 # Cache-Control: immutable for hashed Vite assets (never revalidate)
 <IfModule mod_headers.c>
-  <FilesMatch "\.(js|css|woff2|woff)$">
+  <FilesMatch "\\.(js|css|woff2|woff)$">
     Header append Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
-  <FilesMatch "\.(webp|jpg|jpeg|png|svg|ico)$">
+  <FilesMatch "\\.(webp|jpg|jpeg|png|svg|ico)$">
     Header append Cache-Control "public, max-age=31536000"
   </FilesMatch>
   # HTML must revalidate on every request
-  <FilesMatch "\.html$">
+  <FilesMatch "\\.html$">
     Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  # Service Worker / manifest — nunca cachear
+  <FilesMatch "^(sw|service-worker|push-handler|registerSW)\\.js$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "^(manifest\\.webmanifest|manifest\\.json)$">
+    Header set Cache-Control "no-cache"
   </FilesMatch>
 </IfModule>
 
