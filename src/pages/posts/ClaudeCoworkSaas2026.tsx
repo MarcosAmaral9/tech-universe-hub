@@ -107,7 +107,6 @@ const ClaudeCoworkSaas2026 = () => {
                   <td className="py-3 px-4 text-invest font-bold text-xs">{novo}</td>
                 </tr>
               ))}
-      <AdInArticle />
             </tbody>
           </table>
           <p className="text-xs text-muted-foreground mt-2">O plano Business do Claude Cowork custa aprox. US$ 50/usuário/mês (R$ 250) — substituindo potencialmente R$ 5.000–R$ 16.000/mês em SaaS ponto-a-ponto.</p>

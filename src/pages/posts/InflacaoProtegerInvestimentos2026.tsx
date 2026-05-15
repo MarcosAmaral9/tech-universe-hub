@@ -91,7 +91,6 @@ const InflacaoProtegerInvestimentos2026 = () => {
                   <td className="py-3 px-4 text-amber-400">{atual}</td>
                   <td className="py-3 px-4">{proj26}</td>
                   <td className="py-3 px-4 text-muted-foreground">{proj27}</td>
-      <AdInArticle />
                 </tr>
               ))}
             </tbody>

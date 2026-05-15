@@ -92,7 +92,6 @@ const IABrasilAdocao2026 = () => {
                   <td className="py-3 px-4">{i}</td>
                 </tr>
               ))}
-      <AdInArticle />
             </tbody>
           </table>
         </div>

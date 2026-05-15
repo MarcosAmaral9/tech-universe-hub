@@ -107,7 +107,6 @@ const PnadDesempregoMarco2026 = () => {
                 </tr>
               ))}
             </tbody>
-      <AdInArticle />
           </table>
         </div>
 

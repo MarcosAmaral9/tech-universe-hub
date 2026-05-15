@@ -85,7 +85,6 @@ const DemonSlayerHashira2026 = () => {
                 <td className="py-3 px-4 font-medium">{h.nome}</td>
                 <td className="py-3 px-4 text-pink-400">{h.respiracao}</td>
                 <td className="py-3 px-4 text-muted-foreground">{h.posicao}</td>
-      <AdInArticle />
                 <td className={`py-3 px-4 text-xs font-medium ${h.status.includes("Falecido") ? "text-red-400" : h.status.includes("Aposentado") ? "text-yellow-400" : "text-emerald-400"}`}>{h.status}</td>
               </tr>
             ))}
