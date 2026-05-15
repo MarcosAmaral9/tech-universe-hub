@@ -192,7 +192,7 @@ const BerkshireAbelMeeting2026 = () => {
           { title: "Berkshire Hathaway — Annual & Quarterly Reports", url: "https://www.berkshirehathaway.com/reports.html", publisher: "Berkshire Hathaway Inc.", accessedAt: "Maio 2026" },
           { title: "Letters from Warren E. Buffett to Berkshire Shareholders", url: "https://www.berkshirehathaway.com/letters/letters.html", publisher: "Berkshire Hathaway Inc.", accessedAt: "Maio 2026" },
           { title: "BRK.A — historical filings and 10-K", url: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001067983", publisher: "U.S. Securities and Exchange Commission", accessedAt: "Maio 2026" },
-          { title: "CNBC Berkshire Hathaway coverage", url: "https://www.cnbc.com/berkshire-hathaway/", publisher: "CNBC", accessedAt: "Maio 2026" },
+          { title: "CNBC — Warren Buffett coverage", url: "https://www.cnbc.com/warren-buffett/", publisher: "CNBC", accessedAt: "Maio 2026" },
         ]}
       />
       <NewsletterSignup variant="inline" categories={["invest"]} />
