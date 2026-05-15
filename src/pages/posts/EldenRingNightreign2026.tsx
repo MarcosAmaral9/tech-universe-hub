@@ -7,7 +7,6 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
-import AuthorBio from "@/components/AuthorBio";
 import ArticleSources from "@/components/ArticleSources";
 import EditorialTake from "@/components/EditorialTake";
 import heroImg from "@/assets/elden-ring-nightreign-guia-completo-2026.webp";
@@ -41,7 +40,6 @@ const EldenRingNightreign2026 = () => {
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />16 min de leitura</span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" publishedAt="04 de Maio, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -112,7 +110,6 @@ const EldenRingNightreign2026 = () => {
                   <td className="py-3 px-4 text-xs">{est}</td>
                   <td className="py-3 px-4 text-muted-foreground text-xs">{hab}</td>
                   <td className="py-3 px-4 text-xs">{dif}</td>
-      <AdInArticle />
                 </tr>
               ))}
             </tbody>
@@ -205,14 +202,11 @@ const EldenRingNightreign2026 = () => {
       <ArticleSources
         sources={[
           { title: "Elden Ring Nightreign — site oficial", url: "https://en.bandainamcoent.eu/elden-ring/elden-ring-nightreign", publisher: "Bandai Namco", accessedAt: "Maio 2026" },
-          { title: "FromSoftware — official news", url: "https://www.fromsoftware.jp/ww/news.html", publisher: "FromSoftware", accessedAt: "Maio 2026" },
+          { title: "FromSoftware — site oficial", url: "https://www.fromsoftware.jp/ww/", publisher: "FromSoftware", accessedAt: "Maio 2026" },
           { title: "Elden Ring Nightreign no Steam", url: "https://store.steampowered.com/app/2622380/ELDEN_RING_NIGHTREIGN/", publisher: "Valve / Steam", accessedAt: "Maio 2026" },
           { title: "IGN — Elden Ring Nightreign coverage", url: "https://www.ign.com/games/elden-ring-nightreign", publisher: "IGN", accessedAt: "Maio 2026" },
         ]}
       />
-
-      <AuthorBio category="geek" publishedAt="04 de Maio, 2026" variant="full" />
-
       <NewsletterSignup variant="inline" categories={["geek"]} />
 
 

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Target, Lightbulb, Code, GraduationCap, Calendar, MapPin, Mail } from "lucide-react";
+import { Heart, Lightbulb, Code, GraduationCap, Calendar, MapPin, Mail } from "lucide-react";
 import DynamicSEO from "@/components/DynamicSEO";
 
 const AboutPage = () => {
@@ -100,7 +100,7 @@ const AboutPage = () => {
           </CardContent>
         </Card>
 
-        {/* Mission Cards */}
+        {/* Mission Cards — sem repetir o que já está na bio (portfólio + renda extra) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto">
           <Card className="border-primary/20">
             <CardContent className="p-6">
@@ -128,36 +128,6 @@ const AboutPage = () => {
               <p className="text-muted-foreground">
                 Cada artigo traz uma "Análise do Marcos" — minha leitura editorial sobre o tema, com
                 comparações para o mercado brasileiro e perspectiva pessoal sobre as escolhas tecnológicas.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="border-primary/20">
-            <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 rounded-lg bg-primary/10">
-                  <Target className="h-6 w-6 text-primary" />
-                </div>
-                <h2 className="font-display text-xl font-bold">Renda Extra com Transparência</h2>
-              </div>
-              <p className="text-muted-foreground">
-                O VICIO&lt;CODE&gt; gera renda extra através de anúncios (Google AdSense) e parcerias
-                divulgadas. Isso permite manter o conteúdo gratuito e em produção contínua para você.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="border-primary/20">
-            <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 rounded-lg bg-primary/10">
-                  <Code className="h-6 w-6 text-primary" />
-                </div>
-                <h2 className="font-display text-xl font-bold">Portfólio Profissional</h2>
-              </div>
-              <p className="text-muted-foreground">
-                O site é também minha vitrine de habilidades em React, TypeScript, SEO técnico,
-                arquitetura PWA e Core Web Vitals. Disponível para freelas e projetos sob demanda.
               </p>
             </CardContent>
           </Card>

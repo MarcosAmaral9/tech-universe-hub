@@ -7,7 +7,6 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
-import AuthorBio from "@/components/AuthorBio";
 import ArticleSources from "@/components/ArticleSources";
 import EditorialTake from "@/components/EditorialTake";
 import heroImg from "@/assets/gpt-5-trabalhador-digital-autonomo-2026.webp";
@@ -41,7 +40,6 @@ const GptTrabalhadorDigital2026 = () => {
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />14 min de leitura</span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="ia" publishedAt="04 de Maio, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -221,9 +219,6 @@ const GptTrabalhadorDigital2026 = () => {
           { title: "ChatGPT — pricing and plans", url: "https://openai.com/chatgpt/pricing/", publisher: "OpenAI", accessedAt: "Maio 2026" },
         ]}
       />
-
-      <AuthorBio category="ia" publishedAt="04 de Maio, 2026" variant="full" />
-
       <NewsletterSignup variant="inline" categories={["ia"]} />
 
 

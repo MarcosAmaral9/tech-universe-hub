@@ -7,7 +7,6 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
-import AuthorBio from "@/components/AuthorBio";
 import ArticleSources from "@/components/ArticleSources";
 import EditorialTake from "@/components/EditorialTake";
 import heroImg from "@/assets/kaiju-no-8-temporada-2-guia-arco-final-2026.webp";
@@ -41,7 +40,6 @@ const KaijuNo8Temporada22026 = () => {
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />15 min de leitura</span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="otaku" publishedAt="04 de Maio, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -206,9 +204,6 @@ const KaijuNo8Temporada22026 = () => {
           { title: "Anime News Network — Kaiju No. 8", url: "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=27931", publisher: "Anime News Network", accessedAt: "Maio 2026" },
         ]}
       />
-
-      <AuthorBio category="otaku" publishedAt="04 de Maio, 2026" variant="full" />
-
       <NewsletterSignup variant="inline" categories={["otaku"]} />
 
 
