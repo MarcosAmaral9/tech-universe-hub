@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Target, Lightbulb, Code, GraduationCap, Calendar, MapPin, Mail } from "lucide-react";
+import { Heart, Lightbulb, Code, GraduationCap, Calendar, MapPin, Mail } from "lucide-react";
 import DynamicSEO from "@/components/DynamicSEO";
 
 const AboutPage = () => {
