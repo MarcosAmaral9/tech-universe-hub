@@ -4,6 +4,7 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
+import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, Skull, Swords, Shield, Star, Zap, Flame, Sword } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -34,6 +35,7 @@ const CrimsonDesertBosses = () => {
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />35 min de leitura</span>
         </div>
         <ShareWhatsApp />
+        <AuthorBio category="geek" />
       </header>
       <AdLeaderboard className="my-8" />
 

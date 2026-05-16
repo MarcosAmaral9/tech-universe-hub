@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
+import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, Star, ThumbsUp, ThumbsDown, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -46,6 +47,7 @@ const CrimsonDesertReview = () => {
           <span className="flex items-center gap-1.5"><Clock className="h-4 w-4" />12 min de leitura</span>
         </div>
         <ShareWhatsApp />
+        <AuthorBio category="geek" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">

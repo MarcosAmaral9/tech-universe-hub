@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
+import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, Calendar, User, ChevronRight, Zap, AlertTriangle, CheckCircle2, ExternalLink, Trash2, Plus } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -176,6 +177,7 @@ const SairDasDividas2026 = () => {
             <span className="flex items-center gap-1"><Clock className="h-4 w-4" /> 13 min de leitura</span>
           </div>
           <ShareWhatsApp />
+          <AuthorBio category="invest" />
         </header>
 
         <div className="rounded-2xl overflow-hidden mb-8">

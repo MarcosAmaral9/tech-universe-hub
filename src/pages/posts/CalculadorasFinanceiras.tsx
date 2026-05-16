@@ -9,6 +9,7 @@ import NewsletterSignup from "@/components/NewsletterSignup";
 import calculadorasImg from "@/assets/calculadoras-financeiras.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
+import AuthorBio from "@/components/AuthorBio";
 
 interface AssetOption {
   id: string; name: string; symbol: string;
@@ -132,6 +133,7 @@ const CalculadorasFinanceiras = () => {
     <div className="container py-8 max-w-5xl">
       <BackNavigation category="invest" />
       <ShareWhatsApp />
+      <AuthorBio category="invest" />
 
       <div className="relative rounded-2xl overflow-hidden mb-8">
         <img fetchpriority="high" src={calculadorasImg} alt="Calculadoras Financeiras"

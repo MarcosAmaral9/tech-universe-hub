@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
+import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, Shield, AlertTriangle, CheckCircle, Target, Wallet } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -41,6 +42,7 @@ const ReservaEmergencia2026 = () => {
             <span className="flex items-center gap-1.5"><Clock className="h-4 w-4" />11 min de leitura</span>
           </div>
           <ShareWhatsApp />
+          <AuthorBio category="invest" />
         </header>
 
         <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">

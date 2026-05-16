@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
+import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, User, Calendar, Moon, Target, Cpu, DollarSign, Laptop, Gamepad2, HelpCircle, Wind, Bomb, BookOpen, MapPin, Shield, Swords, Users, Zap, Crown } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -51,6 +52,7 @@ const ACMirage = () => {
           </span>
         </div>
         <ShareWhatsApp />
+        <AuthorBio category="geek" />
       </header>
 
       {/* Featured Image */}

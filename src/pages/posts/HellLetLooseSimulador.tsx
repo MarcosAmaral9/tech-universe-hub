@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
+import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, User, Calendar, Radio, Target, Users, Shield, Volume2, Cpu, DollarSign, Laptop, Gamepad2, HelpCircle, MapPin, Swords, Flag, Headphones } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -50,6 +51,7 @@ const HellLetLooseSimulador = () => {
           </span>
         </div>
         <ShareWhatsApp />
+        <AuthorBio category="geek" />
       </header>
 
       {/* Featured Image */}
