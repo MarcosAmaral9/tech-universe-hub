@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
+import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, Brain, BarChart3, Zap, Shield, TrendingUp, Lightbulb } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -38,6 +39,7 @@ const Gemini25ProVsClaude2026 = () => {
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />15 min de leitura</span>
         </div>
         <ShareWhatsApp />
+        <AuthorBio category="ia" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">

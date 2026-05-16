@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
+import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, Calendar, User, AlertTriangle, ChevronRight, ChevronDown, ChevronUp, Zap, Building2, TrendingUp, CreditCard, Laptop, Home, Handshake, Music } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -105,6 +106,7 @@ const RendaPassiva2026 = () => {
             <span className="flex items-center gap-2"><Clock className="h-4 w-4" />15 min de leitura</span>
           </div>
           <ShareWhatsApp />
+          <AuthorBio category="invest" />
         </header>
 
         <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">

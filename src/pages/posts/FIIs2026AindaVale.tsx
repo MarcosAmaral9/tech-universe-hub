@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
+import AuthorBio from "@/components/AuthorBio";
 import { Clock, Calendar, User, ChevronRight, Building2, CheckCircle2, AlertTriangle, TrendingUp, Percent, BarChart3, PiggyBank, ShieldAlert } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -55,6 +56,7 @@ const FIIs2026AindaVale = () => {
           <span className="flex items-center gap-1"><Clock className="h-4 w-4" /> 8 min de leitura</span>
         </div>
         <ShareWhatsApp />
+        <AuthorBio category="invest" />
       </header>
 
       <div className="rounded-2xl overflow-hidden mb-8">

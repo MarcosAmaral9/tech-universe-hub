@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
+import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, Calendar, User, Target, Trophy, Gamepad2, Star } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -140,6 +141,7 @@ const MelhoresManhwasSistema = () => {
           </span>
         </div>
         <ShareWhatsApp />
+        <AuthorBio category="otaku" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">

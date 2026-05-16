@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
+import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, Map, Compass, Zap, Snowflake, Building2, Cpu, Skull, Search, ArrowRight, HelpCircle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -311,6 +312,7 @@ const CrimsonDesertMapa = () => {
           </span>
         </div>
         <ShareWhatsApp />
+        <AuthorBio category="geek" />
       </header>
 
       <figure className="mb-8 rounded-2xl overflow-hidden border border-border bg-card">
