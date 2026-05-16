@@ -1,10 +1,40 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Lightbulb, Code, GraduationCap, Calendar, MapPin, Mail } from "lucide-react";
+import { Heart, Lightbulb, Code, GraduationCap, Calendar, MapPin, Mail, ArrowLeft } from "lucide-react";
 import DynamicSEO from "@/components/DynamicSEO";
 
+interface LastArticle {
+  slug: string;
+  title: string;
+  category: string;
+}
+
 const AboutPage = () => {
+  const [searchParams] = useSearchParams();
+  const [lastArticle, setLastArticle] = useState<LastArticle | null>(null);
+
+  useEffect(() => {
+    // Prioriza query string (link direto), com fallback para sessionStorage
+    const qsSlug = searchParams.get("slug");
+    const qsTitle = searchParams.get("title");
+    const qsCategory = searchParams.get("category");
+    if (qsSlug) {
+      setLastArticle({ slug: qsSlug, title: qsTitle || "o artigo", category: qsCategory || "" });
+      return;
+    }
+    try {
+      const raw = sessionStorage.getItem("viciocode:lastArticle");
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed?.slug) setLastArticle(parsed);
+      }
+    } catch {
+      /* ignore */
+    }
+  }, [searchParams]);
+
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -46,6 +76,17 @@ const AboutPage = () => {
         <script type="application/ld+json">{JSON.stringify(personSchema)}</script>
       </Helmet>
       <div className="container py-12">
+        {lastArticle && (
+          <div className="max-w-3xl mx-auto mb-6">
+            <Link
+              to={`/post/${lastArticle.slug}`}
+              className="inline-flex items-center gap-2 text-sm px-4 py-2 rounded-lg border border-primary/40 bg-primary/5 hover:bg-primary/10 transition"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Voltar para o artigo{lastArticle.title ? `: "${lastArticle.title}"` : ""}
+            </Link>
+          </div>
+        )}
         {/* Header */}
         <div className="text-center mb-12">
           <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center font-display font-bold text-3xl text-background">
