@@ -1,6 +1,40 @@
 import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { User, Calendar, RefreshCw, ArrowRight } from "lucide-react";
 import type { Category } from "@/types/blog";
+
+/**
+ * Detecta o slug do artigo de forma robusta a partir da URL atual.
+ * Suporta /post/:slug, /artigo/:slug, /blog/:slug e fallback para o último segmento.
+ * Ignora segmentos que pareçam números ou paginação (?page=2 etc).
+ */
+const detectSlugFromPath = (pathname: string): string | undefined => {
+  const segments = pathname.split("/").filter(Boolean);
+  if (segments.length === 0) return undefined;
+  const known = ["post", "artigo", "blog", "noticia", "noticias"];
+  for (let i = 0; i < segments.length - 1; i++) {
+    if (known.includes(segments[i].toLowerCase())) {
+      return segments.slice(i + 1).join("/") || undefined;
+    }
+  }
+  // Fallback: último segmento, desde que contenha hífen (típico de slug) ou letras
+  const last = segments[segments.length - 1];
+  return /^[a-z0-9-]+$/i.test(last) ? last : undefined;
+};
+
+/**
+ * Detecta o título do artigo a partir do <h1> ou do document.title.
+ * Roda só no client (useEffect).
+ */
+const detectTitleFromDOM = (): string | undefined => {
+  if (typeof document === "undefined") return undefined;
+  const h1 = document.querySelector("article h1, main h1, h1");
+  const fromH1 = h1?.textContent?.trim();
+  if (fromH1) return fromH1;
+  const title = document.title?.split("|")[0]?.split("·")[0]?.trim();
+  return title || undefined;
+};
+
 
 const CATEGORY_TAGLINE: Record<Category, string> = {
   ia: "entusiasta de inteligência artificial",
@@ -83,10 +117,22 @@ const AuthorBio = ({
   const colorClasses = CATEGORY_COLOR[category];
   const location = useLocation();
 
-  // Auto-detecta slug/título a partir da URL atual quando não informado
-  const slug = articleSlug ?? location.pathname.split("/").filter(Boolean).pop();
-  const aboutHref = buildAboutHref(category, slug, articleTitle);
-  const onClick = () => trackAuthorClick(category, slug, articleTitle);
+  // Auto-detecta slug/título com fallback robusto
+  const slug = articleSlug ?? detectSlugFromPath(location.pathname);
+  const [detectedTitle, setDetectedTitle] = useState<string | undefined>(articleTitle);
+  useEffect(() => {
+    if (articleTitle) {
+      setDetectedTitle(articleTitle);
+      return;
+    }
+    // Pequeno delay para garantir que o <h1> do post já foi montado
+    const t = setTimeout(() => setDetectedTitle(detectTitleFromDOM()), 50);
+    return () => clearTimeout(t);
+  }, [articleTitle, location.pathname]);
+
+  const effectiveTitle = articleTitle || detectedTitle;
+  const aboutHref = buildAboutHref(category, slug, effectiveTitle);
+  const onClick = () => trackAuthorClick(category, slug, effectiveTitle);
 
   if (variant === "compact") {
     return (
