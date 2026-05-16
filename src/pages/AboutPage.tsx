@@ -80,6 +80,25 @@ const AboutPage = () => {
           <div className="max-w-3xl mx-auto mb-6">
             <Link
               to={`/post/${lastArticle.slug}`}
+              onClick={() => {
+                try {
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  const w = window as any;
+                  const payload = {
+                    event: "back_to_article_click",
+                    from_page: "about",
+                    article_slug: lastArticle.slug,
+                    article_title: lastArticle.title || null,
+                    article_category: lastArticle.category || null,
+                  };
+                  if (Array.isArray(w.dataLayer)) w.dataLayer.push(payload);
+                  if (typeof w.gtag === "function") {
+                    w.gtag("event", "back_to_article_click", payload);
+                  }
+                } catch {
+                  /* no-op */
+                }
+              }}
               className="inline-flex items-center gap-2 text-sm px-4 py-2 rounded-lg border border-primary/40 bg-primary/5 hover:bg-primary/10 transition"
             >
               <ArrowLeft className="h-4 w-4" />
