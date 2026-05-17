@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, TrendingUp, BarChart3, Shield, DollarSign, Lightbulb, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -197,6 +199,19 @@ const AcoesBrasileirasBaratas2026 = () => {
           <p className="text-muted-foreground">Qual setor você prefere? Conta nos comentários! 👇</p>
         </div>
       </div>
+
+      <EditorialTake category="invest" title="Análise do Marcos: P/L baixo não é desconto — é alerta">
+        <p>O Ibovespa negocia a múltiplos historicamente baixos há quase uma década. Quem comprou 'porque está barato' em 2018, 2020 e 2022 sabe: <strong>valuation barata sem catalisador é armadilha de valor</strong>. O caso brasileiro é estrutural — risco fiscal, juros reais altos e fluxo de estrangeiros negativo. Antes de comprar qualquer ação só pelo múltiplo, pergunte: (1) tem dividendo consistente acima da Selic real? (2) o setor sobrevive a juros reais de 6%+? (3) há gatilho claro de destravamento nos próximos 12-18 meses? Se as três respostas forem 'não', você está confundindo barato com armadilha. Bancos, utilities e seguradoras (SUSEB3, BBAS3, BBSE3) são exemplos defensivos que históricamente performam bem nesse cenário.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: "Ibovespa — Composição e Histórico", url: "https://www.b3.com.br/pt_br/market-data-e-indices/indices/indices-amplos/indice-ibovespa-ibovespa.htm", publisher: "B3 — Bolsa do Brasil", accessedAt: "Maio 2026" },
+          { title: "Relatório Trimestral de Inflação", url: "https://www.bcb.gov.br/publicacoes/ri", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
+          { title: "CVM — Companhias Abertas (Demonstrações)", url: "https://www.gov.br/cvm/pt-br", publisher: "Comissão de Valores Mobiliários", accessedAt: "Maio 2026" },
+          { title: "Boletim Focus", url: "https://www.bcb.gov.br/publicacoes/focus", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
+          { title: "Valor Econômico", url: "https://valor.globo.com/", publisher: "Valor Econômico", accessedAt: "Maio 2026" },
+        ]}
+      />
 
       <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="acoes-brasileiras-baratas-valuation-2026" />

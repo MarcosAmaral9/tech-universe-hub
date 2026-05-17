@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, TrendingUp, BarChart3, Shield, DollarSign, Lightbulb, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -193,6 +195,18 @@ const OuroMaximaHistorica2026 = () => {
           ⚠️ Artigo educacional. Não constitui recomendação de investimento. Consulte um assessor certificado.
         </p>
       </div>
+
+      <EditorialTake category="invest" title="Análise do Marcos: ouro não é investimento, é seguro">
+        <p>Ouro a US$ 3.000+/oz não significa que você deveria comprar agora — significa que muita gente já comprou. Historicamente, o ouro é uma proteção contra <strong>colapso monetário</strong> e perda de confiança em moedas fiat, não um instrumento de geração de renda (não paga dividendo, não rende juro). No Brasil, a forma mais eficiente de exposição é via <strong>ETFs (GOLD11)</strong> ou fundos como o OURO11, evitando o custo de armazenamento e o IOF de operações físicas. Para quem tem mais de 5% da carteira em ouro com o ativo nessa máxima, é hora de rebalancear — não vender tudo, mas voltar à alocação tática. Como disse Buffett: ouro 'olha você de volta'. É hedge, não tese.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: "LBMA Gold Price", url: "https://www.lbma.org.uk/prices-and-data/precious-metal-prices", publisher: "London Bullion Market Association", accessedAt: "Maio 2026" },
+          { title: "World Gold Council — Research", url: "https://www.gold.org/goldhub/research", publisher: "World Gold Council", accessedAt: "Maio 2026" },
+          { title: "Boletim Focus", url: "https://www.bcb.gov.br/publicacoes/focus", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
+          { title: "B3 — ETFs disponíveis", url: "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/etf/renda-variavel/", publisher: "B3 — Bolsa do Brasil", accessedAt: "Maio 2026" },
+        ]}
+      />
 
       <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="ouro-maxima-historica-2026-como-investir" />

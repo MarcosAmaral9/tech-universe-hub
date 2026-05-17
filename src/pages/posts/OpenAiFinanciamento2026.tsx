@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Brain, TrendingUp, DollarSign, Shield, BarChart3, Zap, Lightbulb } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -191,6 +193,18 @@ const OpenAiFinanciamento2026 = () => {
           <p className="text-muted-foreground">Conta nos comentários sua opinião! 👇</p>
         </div>
       </div>
+
+      <EditorialTake category="ia" title="Análise do Marcos: o paradoxo de queimar bilhões">
+        <p>A OpenAI levantar rodadas bilionárias enquanto reporta prejuízos enormes é uma anomalia clássica de tese vencedora — ou da próxima grande bolha. O mesmo padrão aconteceu com Uber, WeWork e Amazon (que ficou no vermelho por quase uma década). A diferença aqui é o <strong>custo unitário</strong>: cada query do ChatGPT tem custo real de GPU. Para o desenvolvedor brasileiro que constrói SaaS usando API da OpenAI, a tese de risco é simples — se a OpenAI não conseguir converter usuários gratuitos em pagantes ou reduzir custo por inferência, os preços de API vão subir. Diversificar entre Claude, Gemini e modelos open source rodando em servidores brasileiros (como os da Latitude.sh) é estratégia de continuidade de negócio, não só de custo.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: "OpenAI — Newsroom", url: "https://openai.com/news/", publisher: "OpenAI", accessedAt: "Maio 2026" },
+          { title: "The Information — OpenAI Coverage", url: "https://www.theinformation.com/topics/openai", publisher: "The Information", accessedAt: "Maio 2026" },
+          { title: "Reuters Technology", url: "https://www.reuters.com/technology/", publisher: "Reuters", accessedAt: "Maio 2026" },
+          { title: "Financial Times — Artificial Intelligence", url: "https://www.ft.com/artificial-intelligence", publisher: "Financial Times", accessedAt: "Maio 2026" },
+        ]}
+      />
 
       <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="openai-bilhoes-financiamento-record-2026" />
