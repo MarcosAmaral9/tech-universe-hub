@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3, Sword } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -190,6 +192,19 @@ const DiabloLordOfHatred2026 = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
+
+            <EditorialTake category="geek" title={'Análise do Marcos: a Blizzard precisa entregar conteúdo, não cinemática'}>
+        <p>Diablo IV vendeu bem no lançamento e perdeu jogadores rápido. O motivo é estrutural: <strong>endgame raso e temporadas que pediam grind acima do divertido</strong>. Lord of Hatred chega num momento em que a concorrência endureceu — Path of Exile 2, Last Epoch e Diablo Immortal disputam o mesmo nicho. Para a expansão funcionar, o teste é simples: oferecer pelo menos 100 horas de conteúdo único (não reciclado), um sistema de itens com chase pieces verdadeiros e uma classe nova que muda o meta. Se a Blizzard repetir o erro de Vessel of Hatred (conteúdo curto, monetização agressiva), vai assistir à comunidade migrar definitivamente — e no Brasil, onde o preço de R$ 250+ pesa, segunda chance é raridade.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: 'Diablo IV — Site oficial', url: 'https://diablo4.blizzard.com/', publisher: 'Blizzard Entertainment', accessedAt: "Maio 2026" },
+          { title: 'Blizzard News', url: 'https://news.blizzard.com/', publisher: 'Blizzard Entertainment', accessedAt: "Maio 2026" },
+          { title: 'BlizzCon — Anúncios oficiais', url: 'https://www.blizzcon.com/', publisher: 'Blizzard Entertainment', accessedAt: "Maio 2026" },
+          { title: 'Metacritic — Diablo IV', url: 'https://www.metacritic.com/game/diablo-iv/', publisher: 'Metacritic', accessedAt: "Maio 2026" },
+          { title: 'Steam Charts — ARPGs', url: 'https://steamcharts.com/', publisher: 'Steam Charts', accessedAt: "Maio 2026" }
+        ]}
+      />
 
       <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="diablo-iv-lord-of-hatred-2026" />

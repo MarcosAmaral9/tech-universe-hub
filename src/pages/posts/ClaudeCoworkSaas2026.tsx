@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Brain, Zap, Shield, BarChart3, TrendingUp, Lightbulb } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -194,6 +196,19 @@ const ClaudeCoworkSaas2026 = () => {
         </div>
       </div>
  
+            <EditorialTake category="ia" title={'Análise do Marcos: SaaS não morre — vira commodity'}>
+        <p>A narrativa do 'SaaSpocalypse' confunde dois fenômenos. O que vai morrer é o <strong>SaaS de camada fina</strong>: ferramentas que basicamente envelopam um banco de dados com UI e cobravam US$ 20/mês por isso. Esses serão substituídos por agentes que geram a UI sob demanda. O que sobrevive — e talvez fortaleça — é o SaaS de <strong>workflow profundo</strong>, com dados proprietários, compliance específico e integrações complexas (Salesforce, Stripe, ServiceNow). Para o mercado brasileiro, a oportunidade está em construir verticais com regulamentação local (saúde com LGPD, fiscal com SPED, jurídico com peticionamento eletrônico) — barreiras que nenhum agente genérico replica.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: 'Claude — Anthropic', url: 'https://www.anthropic.com/claude', publisher: 'Anthropic', accessedAt: "Maio 2026" },
+          { title: 'State of AI Report', url: 'https://www.stateof.ai/', publisher: 'Air Street Capital', accessedAt: "Maio 2026" },
+          { title: 'a16z — The State of AI Agents', url: 'https://a16z.com/ai/', publisher: 'Andreessen Horowitz', accessedAt: "Maio 2026" },
+          { title: 'Gartner Hype Cycle for Artificial Intelligence', url: 'https://www.gartner.com/en/research/methodologies/gartner-hype-cycle', publisher: 'Gartner', accessedAt: "Maio 2026" },
+          { title: 'Stack Overflow Developer Survey', url: 'https://survey.stackoverflow.co/', publisher: 'Stack Overflow', accessedAt: "Maio 2026" }
+        ]}
+      />
+
       <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="claude-cowork-saaspocalypse-2026" />
       <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />

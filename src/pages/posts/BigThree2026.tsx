@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Star, Zap, Shield, BarChart3, BookOpen, Trophy } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -239,6 +241,19 @@ const BigThree2026 = () => {
           <p className="text-muted-foreground">One Piece, Bleach ou Naruto? Debate nos comentários! 👇</p>
         </div>
       </div>
+
+            <EditorialTake category="otaku" title={'Análise do Marcos: o Big Three nunca foi sobre vendas'}>
+        <p>Discussão sobre Big Three sempre escorrega para tabela de vendas e tiragens — e isso perde o ponto. <strong>Naruto, Bleach e One Piece definiram a Shonen Jump dos anos 2000 porque arquitetaram universos com mitologia escalável</strong>: poderes com sistema, facções com história e protagonistas com arco de duas décadas. Os 'novos Big Three' (Jujutsu, Chainsaw Man, Demon Slayer) vendem mais em pico mas dificilmente sustentam 20+ anos de anime semanal — o modelo de publicação mudou e o leitor moderno consome arcos fechados. Para a comunidade otaku brasileira, isso muda como recomendar para iniciantes: o Big Three clássico ainda é a melhor porta de entrada justamente porque a curva de aprendizado é longa e recompensadora.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: 'Weekly Shonen Jump — Site oficial', url: 'https://www.shonenjump.com/j/', publisher: 'Shueisha', accessedAt: "Maio 2026" },
+          { title: 'One Piece — Site oficial', url: 'https://one-piece.com/', publisher: 'Shueisha / Toei Animation', accessedAt: "Maio 2026" },
+          { title: 'Bleach — Site oficial', url: 'https://www.tv-tokyo.co.jp/anime/bleach2022/', publisher: 'TV Tokyo', accessedAt: "Maio 2026" },
+          { title: 'Anime News Network', url: 'https://www.animenewsnetwork.com/', publisher: 'Anime News Network', accessedAt: "Maio 2026" },
+          { title: 'Oricon — Vendas de Mangá', url: 'https://www.oricon.co.jp/', publisher: 'Oricon', accessedAt: "Maio 2026" }
+        ]}
+      />
 
       <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="big-three-naruto-bleach-one-piece-2026" />

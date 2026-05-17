@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, TrendingUp, BarChart3, Shield, Lightbulb, DollarSign, Globe } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -184,6 +186,19 @@ const DolarQueda2026 = () => {
           ⚠️ Artigo educacional. Não constitui recomendação de investimento. Consulte um assessor certificado.
         </p>
       </div>
+
+            <EditorialTake category="invest" title={'Análise do Marcos: dólar barato não é convite para abandonar o exterior'}>
+        <p>Toda vez que o real se aprecia, o brasileiro médio cancela o aporte em ativos internacionais — e historicamente é exatamente esse o pior momento para fazê-lo. <strong>Diversificação cambial é seguro, não aposta direcional</strong>. A regra que sigo: entre 15% e 30% do patrimônio em ativos dolarizados (BDRs, ETFs como IVVB11 ou conta no exterior), com aportes mensais constantes independente da cotação. Quem zera exposição quando o dólar cai costuma comprar de volta quando o real desvaloriza — destruindo retorno. O câmbio do dia importa menos que a disciplina de aportes ao longo de uma década.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: 'Boletim Focus', url: 'https://www.bcb.gov.br/publicacoes/focus', publisher: 'Banco Central do Brasil', accessedAt: "Maio 2026" },
+          { title: 'Cotação PTAX', url: 'https://www.bcb.gov.br/estabilidadefinanceira/historicocotacoes', publisher: 'Banco Central do Brasil', accessedAt: "Maio 2026" },
+          { title: 'Estatísticas do Setor Externo', url: 'https://www.bcb.gov.br/estatisticas/estatisticasetorexterno', publisher: 'Banco Central do Brasil', accessedAt: "Maio 2026" },
+          { title: 'BDRs e ETFs Internacionais', url: 'https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/bdrs.htm', publisher: 'B3', accessedAt: "Maio 2026" },
+          { title: 'Receita Federal — Bens no Exterior', url: 'https://www.gov.br/receitafederal/pt-br', publisher: 'Receita Federal do Brasil', accessedAt: "Maio 2026" }
+        ]}
+      />
 
       <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="dolar-queda-2026-investir-exterior" />
