@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Flame, Globe, BarChart3, AlertTriangle, Lightbulb } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -179,6 +181,19 @@ const PetroleoBrent125Ormuz2026 = () => {
           📚 <strong>Fontes:</strong> Reportagem g1/Associated Press (30/04/2026), ING Bank Research, dados de mercado da quinta-feira (30/04). Artigo educacional, não constitui recomendação de investimento.
         </p>
       </div>
+
+      <EditorialTake category="invest" title="Análise do Marcos: o que o Brent diz para sua carteira">
+        <p>O Estreito de Ormuz é o gargalo geopolítico mais perigoso do planeta: cerca de <strong>20% do petróleo mundial</strong> passa por ali todo dia (US Energy Information Administration). Quando o Brent salta para US$ 125, o investidor brasileiro precisa pensar em <strong>três camadas</strong>: (1) Petrobras (PETR4) tende a se valorizar, mas o governo pode segurar preços na bomba e comer o lucro — risco político clássico do papel; (2) inflação importada pressiona o IPCA e atrasa cortes da Selic, ruim para small caps; (3) o real tende a se valorizar quando o Brasil é exportador líquido de petróleo. Não é trivial — quem comprou PETR4 'porque o petróleo subiu' em 2022 aprendeu na pele que a equação envolve política tarifária, não só preço internacional.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: "Brent Crude Oil — Spot Prices", url: "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm", publisher: "U.S. Energy Information Administration", accessedAt: "Maio 2026" },
+          { title: "World Oil Transit Chokepoints — Strait of Hormuz", url: "https://www.eia.gov/international/analysis/special-topics/World_Oil_Transit_Chokepoints", publisher: "U.S. EIA", accessedAt: "Maio 2026" },
+          { title: "Relação com Investidores — Petrobras", url: "https://www.investidorpetrobras.com.br/", publisher: "Petrobras", accessedAt: "Maio 2026" },
+          { title: "OPEC Monthly Oil Market Report", url: "https://www.opec.org/opec_web/en/publications/202.htm", publisher: "OPEC", accessedAt: "Maio 2026" },
+          { title: "Reuters — Energy", url: "https://www.reuters.com/business/energy/", publisher: "Reuters", accessedAt: "Maio 2026" },
+        ]}
+      />
 
       <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug={SLUG} />

@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Briefcase, TrendingUp, BarChart3, AlertTriangle, Lightbulb } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -185,6 +187,18 @@ const PnadDesempregoMarco2026 = () => {
           📚 <strong>Fontes:</strong> IBGE (PNAD Contínua, 30/04/2026), declarações de Adriana Beringuy (IBGE), André Valério (Inter), Maykon Douglas. Reportagem g1 — Janize Colaço (30/04/2026). Artigo educacional, não constitui recomendação de investimento.
         </p>
       </div>
+
+      <EditorialTake category="invest" title="Análise do Marcos: o que a PNAD esconde">
+        <p>Olhar só a taxa de desemprego de 6,1% é miopia analítica. O Brasil tem uma <strong>taxa de informalidade próxima de 38%</strong> da população ocupada (IBGE/PNAD Contínua), o que distorce qualquer comparação com mercados desenvolvidos. Para o investidor brasileiro, o dado relevante é a <strong>massa de rendimento real</strong> — ela é o que sustenta o consumo interno e, por consequência, o lucro de varejistas listadas na B3 como Magazine Luiza (MGLU3) e Lojas Renner (LREN3). Quando o desemprego cai mas o rendimento real estagna, o crescimento do PIB vem de crédito — e isso tem prazo de validade curto, especialmente com a Selic ainda acima de dois dígitos.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: "PNAD Contínua — Indicadores Mensais", url: "https://www.ibge.gov.br/estatisticas/sociais/trabalho/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-mensal.html", publisher: "IBGE", accessedAt: "Maio 2026" },
+          { title: "Sistema de Contas Nacionais Trimestrais", url: "https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9300-contas-nacionais-trimestrais.html", publisher: "IBGE", accessedAt: "Maio 2026" },
+          { title: "Boletim Focus — Relatório de Mercado", url: "https://www.bcb.gov.br/publicacoes/focus", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
+          { title: "CAGED — Cadastro Geral de Empregados e Desempregados", url: "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/estatisticas-trabalho/novo-caged", publisher: "Ministério do Trabalho e Emprego", accessedAt: "Maio 2026" },
+        ]}
+      />
 
       <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug={SLUG} />

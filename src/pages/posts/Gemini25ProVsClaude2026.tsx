@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Brain, BarChart3, Zap, Shield, TrendingUp, Lightbulb } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -226,6 +228,18 @@ const Gemini25ProVsClaude2026 = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
+
+      <EditorialTake category="ia" title="Opinião do Marcos: benchmarks mentem, uso real fala">
+        <p>Já testei os dois modelos no dia-a-dia construindo o ViciOCode. Resumo honesto: <strong>Gemini 2.5 Pro</strong> brilha em raciocínio matemático e em contexto longo (1M tokens é absurdo) — perfeito para análises de planilhas e documentos legais brasileiros (contratos, holerites, declarações de IR). <strong>Claude</strong> escreve português brasileiro mais natural, com menos marcas óbvias de tradução, e é mais cuidadoso em código TypeScript/React. Quem cobra cliente final, pague pelos dois e use cada um onde performa melhor — não existe modelo universal. Benchmark como MMLU e HumanEval são úteis, mas não substituem testar com seu próprio caso de uso.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: "Gemini 2.5 — Model Card", url: "https://deepmind.google/technologies/gemini/", publisher: "Google DeepMind", accessedAt: "Maio 2026" },
+          { title: "Claude — Documentation", url: "https://docs.anthropic.com/", publisher: "Anthropic", accessedAt: "Maio 2026" },
+          { title: "LMArena Leaderboard", url: "https://lmarena.ai/", publisher: "LMSYS", accessedAt: "Maio 2026" },
+          { title: "Artificial Analysis — Model Comparison", url: "https://artificialanalysis.ai/", publisher: "Artificial Analysis", accessedAt: "Maio 2026" },
+        ]}
+      />
 
       <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="gemini-25-pro-vs-claude-ia-2026" />

@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Gamepad2, Star, BarChart3, Zap, Shield, Film } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -195,6 +197,18 @@ const SuperMarioGalaxyMovie2026 = () => {
           <p className="text-muted-foreground">O que achou? Deixa nos comentários! 👇</p>
         </div>
       </div>
+
+      <EditorialTake category="geek" title="Opinião do Marcos: Nintendo aprendeu a fórmula">
+        <p>A Illumination + Nintendo encontrou o que a Disney perdeu: fidelidade ao material original sem complexo de superioridade autoral. O primeiro Super Mario Bros. Movie (2023) arrecadou <strong>US$ 1,36 bilhão</strong> em bilheteria mundial (Box Office Mojo). No Brasil, foi o filme de animação mais visto do ano. Galaxy tem munição para superar — a estética cósmica do jogo original do Wii é cinematográfica por natureza. O risco é o mesmo de toda sequência: tentar fazer 'maior' quando o público quer 'mais do que funcionou'. Como brasileiro que jogou Galaxy lá em 2007 numa TV de tubo, torço para que Rosalina ganhe os 10 minutos de tela que ela merece.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: "The Super Mario Bros. Movie — Box Office", url: "https://www.boxofficemojo.com/title/tt6718170/", publisher: "Box Office Mojo / IMDb", accessedAt: "Maio 2026" },
+          { title: "Nintendo Investor Relations", url: "https://www.nintendo.co.jp/ir/en/index.html", publisher: "Nintendo Co., Ltd.", accessedAt: "Maio 2026" },
+          { title: "Illumination — Official Site", url: "https://www.illumination.com/", publisher: "Illumination Entertainment", accessedAt: "Maio 2026" },
+          { title: "Universal Pictures — Press", url: "https://www.universalpictures.com/", publisher: "Universal Pictures", accessedAt: "Maio 2026" },
+        ]}
+      />
 
       <NewsletterSignup variant="inline" categories={["geek"]} />
 

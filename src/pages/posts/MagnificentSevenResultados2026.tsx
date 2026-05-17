@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, TrendingUp, BarChart3, Shield, DollarSign, Zap, Lightbulb } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -225,6 +227,20 @@ const MagnificentSevenResultados2026 = () => {
           ⚠️ Artigo educacional baseado em informações disponíveis em 30/04/2026. Não constitui recomendação de investimento. Consulte um assessor certificado.
         </p>
       </div>
+
+      <EditorialTake category="invest" title="Análise do Marcos: o capex de US$ 600B é a única história">
+        <p>Resultado trimestral da Big Tech virou ritual: todos batem expectativa de lucro, todos elevam guidance de capex. O número que importa em 2026 não é EPS — é <strong>quanto cada uma vai gastar em data centers e GPUs</strong>. Microsoft, Meta, Alphabet e Amazon somando mais de US$ 600 bilhões indica que o mercado de IA está em fase de <strong>infraestrutura</strong>, não de monetização. Para o brasileiro com BDRs (MSFT34, GOGL34, AMZO34) ou ETFs como IVVB11, o ponto de atenção é margem: depreciação acelerada desses ativos vai pressionar o lucro contábil nos próximos 3-5 anos, mesmo com receita crescendo. Quem comprou Big Tech pensando em 'crescimento sem custo' vai aprender que infraestrutura física tem preço.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: "Microsoft Investor Relations", url: "https://www.microsoft.com/en-us/Investor", publisher: "Microsoft Corporation", accessedAt: "Maio 2026" },
+          { title: "Meta Investor Relations", url: "https://investor.atmeta.com/", publisher: "Meta Platforms", accessedAt: "Maio 2026" },
+          { title: "Alphabet Investor Relations", url: "https://abc.xyz/investor/", publisher: "Alphabet Inc.", accessedAt: "Maio 2026" },
+          { title: "Amazon Investor Relations", url: "https://ir.aboutamazon.com/", publisher: "Amazon.com", accessedAt: "Maio 2026" },
+          { title: "Apple Investor Relations", url: "https://investor.apple.com/", publisher: "Apple Inc.", accessedAt: "Maio 2026" },
+          { title: "CNBC Tech Earnings", url: "https://www.cnbc.com/technology/", publisher: "CNBC", accessedAt: "Maio 2026" },
+        ]}
+      />
 
       <NewsletterSignup variant="inline" categories={["invest"]} />
 
