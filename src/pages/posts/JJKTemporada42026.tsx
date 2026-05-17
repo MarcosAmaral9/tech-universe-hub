@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Star, Zap, Shield, BarChart3, BookOpen, Flame } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -173,6 +175,19 @@ const JJKTemporada42026 = () => {
           <p className="text-muted-foreground">Qual batalha você mais quer ver animada? Conta nos comentários! 👇</p>
         </div>
       </div>
+
+            <EditorialTake category="otaku" title={'Análise do Marcos: o Culling Game é o teste técnico do MAPPA'}>
+        <p>O arco do Culling Game tem fama de ser o mais denso de Jujutsu Kaisen — com dezenas de jogadores, regras que mudam e batalhas paralelas. Para a MAPPA, é um teste técnico e de gestão: o estúdio sofreu desgaste público pelas condições de produção da temporada de Shibuya, e <strong>a qualidade da temporada 4 vai definir se o estúdio mantém o status de top tier ou perde o projeto para outra produtora</strong> nos arcos finais. Para o fã brasileiro, a recomendação prática é a mesma de toda temporada recente: acompanhar o simulcast da Crunchyroll com legenda, e revisitar o arco de Shibuya na semana anterior ao primeiro episódio — sem isso, metade das referências do Culling Game se perde.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: 'Jujutsu Kaisen — Site oficial', url: 'https://jujutsukaisen.jp/', publisher: 'MAPPA / Shueisha', accessedAt: "Maio 2026" },
+          { title: 'MAPPA — Site oficial', url: 'https://mappa.co.jp/', publisher: 'MAPPA Co., Ltd.', accessedAt: "Maio 2026" },
+          { title: 'Crunchyroll — Jujutsu Kaisen', url: 'https://www.crunchyroll.com/pt-br/series/GRDV0019R/jujutsu-kaisen', publisher: 'Crunchyroll', accessedAt: "Maio 2026" },
+          { title: 'Shonen Jump — Site oficial', url: 'https://www.shonenjump.com/j/', publisher: 'Shueisha', accessedAt: "Maio 2026" },
+          { title: 'Anime News Network — JJK', url: 'https://www.animenewsnetwork.com/encyclopedia/anime.php?id=23725', publisher: 'Anime News Network', accessedAt: "Maio 2026" }
+        ]}
+      />
 
       <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="jujutsu-kaisen-temporada-4-culling-game-2026" />

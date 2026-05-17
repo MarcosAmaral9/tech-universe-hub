@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Star, Zap, Shield, BarChart3, BookOpen, Flame } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -192,6 +194,19 @@ const NarutoEspeciais2026 = () => {
           <p className="text-muted-foreground">Qual história você quer ver adaptada? Conta nos comentários! 👇</p>
         </div>
       </div>
+
+            <EditorialTake category="otaku" title={'Análise do Marcos: especiais de Naruto são fan service estratégico'}>
+        <p>Studio Pierrot e a TV Tokyo aprenderam com One Piece e Bleach: <strong>franquia veterana se mantém viva com episódios cirúrgicos, não com continuação forçada</strong>. Os especiais de Naruto cumprem três funções: aquecer o público para a próxima fase de Boruto, monetizar fanbase nostálgica e preparar terreno para um eventual remake (rumor que circula desde a divulgação dos arcos de Sasuke Retsuden). Para o fã brasileiro, a janela de exibição importa: Crunchyroll costuma trazer simulcast no mesmo dia do Japão, mas dublagem em PT-BR raramente sai em menos de 6 meses. Quem não quer esperar precisa se acostumar com legenda — e isso, ironicamente, virou diferencial cultural da comunidade otaku brasileira.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: 'Naruto — Site oficial (TV Tokyo)', url: 'https://www.tv-tokyo.co.jp/anime/naruto/', publisher: 'TV Tokyo', accessedAt: "Maio 2026" },
+          { title: 'Crunchyroll — Naruto', url: 'https://www.crunchyroll.com/pt-br/series/GYQ4MW246/naruto', publisher: 'Crunchyroll', accessedAt: "Maio 2026" },
+          { title: 'Shonen Jump — Site oficial', url: 'https://www.shonenjump.com/j/', publisher: 'Shueisha', accessedAt: "Maio 2026" },
+          { title: 'Anime News Network', url: 'https://www.animenewsnetwork.com/', publisher: 'Anime News Network', accessedAt: "Maio 2026" },
+          { title: 'MyAnimeList — Naruto', url: 'https://myanimelist.net/anime/20/Naruto', publisher: 'MyAnimeList', accessedAt: "Maio 2026" }
+        ]}
+      />
 
       <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="naruto-especiais-confirmados-2026" />

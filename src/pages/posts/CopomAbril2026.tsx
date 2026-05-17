@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, TrendingUp, BarChart3, Shield, Lightbulb, DollarSign, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -220,6 +222,19 @@ const CopomAbril2026 = () => {
           ⚠️ <strong>Aviso:</strong> Artigo educacional. Não constitui recomendação de investimento. Consulte um assessor certificado. Rentabilidade passada não garante resultados futuros.
         </p>
       </div>
+
+            <EditorialTake category="invest" title={'Análise do Marcos: o ciclo de corte exige paciência'}>
+        <p>O início do ciclo de corte da Selic não significa retorno fácil em renda variável. Em ciclos anteriores (2016, 2020 e 2023), o Ibovespa só destravou de forma consistente quando o juro real projetado caiu abaixo de 5% e o risco fiscal estava ancorado — duas condições que ainda não temos. Para o investidor pessoa física, a tese mais robusta no curto prazo continua sendo <strong>prefixado e IPCA+ longos</strong>, travando a marcação a mercado antes que o mercado precifique cortes adicionais. Ações só ganham peso na carteira depois que o Focus do Bacen consolidar Selic terminal abaixo de 12%.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: 'Atas do Copom', url: 'https://www.bcb.gov.br/publicacoes/atascopom', publisher: 'Banco Central do Brasil', accessedAt: "Maio 2026" },
+          { title: 'Boletim Focus', url: 'https://www.bcb.gov.br/publicacoes/focus', publisher: 'Banco Central do Brasil', accessedAt: "Maio 2026" },
+          { title: 'Relatório Trimestral de Inflação', url: 'https://www.bcb.gov.br/publicacoes/ri', publisher: 'Banco Central do Brasil', accessedAt: "Maio 2026" },
+          { title: 'Tesouro Direto — Preços e Taxas', url: 'https://www.tesourodireto.com.br/titulos/precos-e-taxas.htm', publisher: 'Tesouro Nacional', accessedAt: "Maio 2026" },
+          { title: 'Estudos de Mercado de Capitais', url: 'https://www.anbima.com.br/', publisher: 'ANBIMA', accessedAt: "Maio 2026" }
+        ]}
+      />
 
       <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="copom-abril-2026-selic-investimentos" />
