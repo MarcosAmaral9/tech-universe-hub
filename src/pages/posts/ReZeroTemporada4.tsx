@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Tv, Star, BookOpen, Music, Users } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -184,6 +186,20 @@ const ReZeroTemporada4 = () => {
           <p className="text-muted-foreground">Qual personagem você mais quer ver de volta? Conta nos comentários! 👇</p>
         </div>
       </div>
+      <EditorialTake category="otaku" title={"An\u00e1lise do Marcos: Re:Zero entendeu o que isekai pode ser"}>
+        <p>Re:Zero é, na minha leitura, o melhor argumento contra quem dispensa o gênero isekai inteiro: <strong>Subaru não é OP, sofre consequências reais, e o trauma é tratado com peso narrativo</strong>. A temporada 4 chega num momento em que o gênero está saturado e a maioria das obras se contenta com fan-service e power fantasy fácil. White Fox manteve a fidelidade ao light novel da Tappei Nagatsuki, o que tem peso — adaptações ruins de bons livros viraram epidemia. Para quem está começando agora em 2026, vale o investimento de assistir as 3 temporadas anteriores antes; nenhum resumo faz justiça à curva emocional do Subaru.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: "Crunchyroll \u2014 Re:Zero", url: "https://www.crunchyroll.com/pt-br/series/GRG5MEZRY/rezero--starting-life-in-another-world-", publisher: "Crunchyroll", accessedAt: "Maio 2026" },
+          { title: "MAL \u2014 Re:Zero", url: "https://myanimelist.net/anime/31240/Re_Zero_kara_Hajimeru_Isekai_Seikatsu", publisher: "MyAnimeList", accessedAt: "Maio 2026" },
+          { title: "White Fox \u2014 site oficial", url: "https://www.studio-whitefox.com/", publisher: "White Fox", accessedAt: "Maio 2026" },
+          { title: "Anime News Network", url: "https://www.animenewsnetwork.com/", publisher: "Anime News Network", accessedAt: "Maio 2026" },
+          { title: "Kadokawa \u2014 Re:Zero light novels", url: "https://www.kadokawa.co.jp/", publisher: "Kadokawa", accessedAt: "Maio 2026" }
+        ]}
+      />
+
+
 
       <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="rezero-temporada-4-guia-2026" />

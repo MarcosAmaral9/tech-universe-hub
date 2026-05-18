@@ -4,6 +4,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, TrendingUp, Building2, GraduationCap, Briefcase, Globe, Factory } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -179,6 +181,20 @@ const IABrasilAdocao2026 = () => {
           <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
         </div>
       </div>
+      <EditorialTake category="ia" title={"An\u00e1lise do Marcos: ado\u00e7\u00e3o \u00e9 alta, maturidade ainda n\u00e3o"}>
+        <p>O Brasil é o terceiro maior usuário do ChatGPT no mundo, mas a foto enganosa: <strong>uso de assistente conversacional não é adoção corporativa de IA</strong>. As pesquisas da McKinsey e do Gartner mostram que a maioria das empresas brasileiras ainda está em PoC ou em piloto isolado de marketing — pouca coisa em produção crítica. A barreira não é técnica, é de governança: LGPD, contratos com Big Tech americanas e a falta de cloud soberana para dados sensíveis (saúde, financeiro regulado) atrasam projetos. Quem quiser surfar isso profissionalmente em 2026 ganha mais aprendendo <strong>integração e segurança</strong> do que treinando modelos.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: "Pesquisa Ado\u00e7\u00e3o de IA \u2014 McKinsey", url: "https://www.mckinsey.com/capabilities/quantumblack/our-insights", publisher: "McKinsey", accessedAt: "Maio 2026" },
+          { title: "Lei Geral de Prote\u00e7\u00e3o de Dados", url: "https://www.gov.br/anpd/pt-br", publisher: "ANPD", accessedAt: "Maio 2026" },
+          { title: "Tend\u00eancias Gartner para IA", url: "https://www.gartner.com/en/information-technology/insights/artificial-intelligence", publisher: "Gartner", accessedAt: "Maio 2026" },
+          { title: "Marco Legal da IA \u2014 PL 2338/2023", url: "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233", publisher: "Senado Federal", accessedAt: "Maio 2026" },
+          { title: "OpenAI \u2014 uso por pa\u00eds", url: "https://openai.com/", publisher: "OpenAI", accessedAt: "Maio 2026" }
+        ]}
+      />
+
+
       <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="ia-brasil-adocao-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />

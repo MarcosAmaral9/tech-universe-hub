@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Brain, Zap, Globe, BarChart3, Shield, Lightbulb } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -213,6 +215,20 @@ const Gemini25ProVsGPT4o = () => {
           <p className="text-muted-foreground">Compartilhe sua experiência nos comentários! 👇</p>
         </div>
       </div>
+      <EditorialTake category="ia" title={"An\u00e1lise do Marcos: contexto longo vs. lat\u00eancia baixa"}>
+        <p>Não existe vencedor universal entre Gemini 2.5 Pro e GPT-4o — existe match de caso de uso. Gemini ganha em <strong>tarefas com contexto gigante</strong> (PDFs longos, codebase inteira, transcrições) porque a janela de 1M+ tokens é real e funciona. GPT-4o ganha em <strong>latência e fluência conversacional</strong>, especialmente em PT-BR, onde a entonação e gírias soam mais naturais. Para quem está no Brasil pagando em dólar, recomendo: API do Gemini para back-office (análise de documentos, pesquisa) e GPT-4o para qualquer coisa que o usuário final ouça ou veja em tempo real.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: "Gemini 2.5 Pro \u2014 Google DeepMind", url: "https://deepmind.google/technologies/gemini/", publisher: "Google DeepMind", accessedAt: "Maio 2026" },
+          { title: "GPT-4o \u2014 OpenAI", url: "https://openai.com/index/hello-gpt-4o/", publisher: "OpenAI", accessedAt: "Maio 2026" },
+          { title: "Artificial Analysis \u2014 comparativo", url: "https://artificialanalysis.ai/", publisher: "Artificial Analysis", accessedAt: "Maio 2026" },
+          { title: "LMSYS Chatbot Arena", url: "https://lmarena.ai/", publisher: "LMSYS", accessedAt: "Maio 2026" },
+          { title: "Documenta\u00e7\u00e3o Gemini API", url: "https://ai.google.dev/", publisher: "Google AI", accessedAt: "Maio 2026" }
+        ]}
+      />
+
+
 
       <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="gemini-2-5-pro-vs-gpt-4o-2026" />

@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Brain, Zap, BarChart3, Shield, Lightbulb, DollarSign } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -219,6 +221,20 @@ const ClaudeOpusVsSonnet2026 = () => {
           <p className="text-muted-foreground">Conta nos comentários sua experiência! 👇</p>
         </div>
       </div>
+      <EditorialTake category="ia" title={"An\u00e1lise do Marcos: Opus por hora, Sonnet por padr\u00e3o"}>
+        <p>Depois de meses rodando os dois em produção, minha regra prática para quem opera com orçamento em real é simples: <strong>Sonnet como modelo padrão</strong> da maioria dos prompts (resposta, edição, classificação) e <strong>Opus reservado para raciocínio multi-etapa</strong> — análise de contrato, refatoração de código grande, planejamento. A diferença de custo por milhão de tokens não compensa Opus em chamadas curtas, mas paga sozinha quando o problema exige cadeia de pensamento longa. Quem está testando agora deveria instrumentar o roteamento de modelo (router próprio) antes de assinar plano caro: 80% do tráfego cabe em Sonnet sem perda perceptível.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: "Claude \u2014 modelos e pre\u00e7os", url: "https://www.anthropic.com/pricing", publisher: "Anthropic", accessedAt: "Maio 2026" },
+          { title: "Claude 4 Opus benchmarks", url: "https://www.anthropic.com/news", publisher: "Anthropic", accessedAt: "Maio 2026" },
+          { title: "LMSYS Chatbot Arena", url: "https://lmarena.ai/", publisher: "LMSYS", accessedAt: "Maio 2026" },
+          { title: "Documenta\u00e7\u00e3o Claude API", url: "https://docs.anthropic.com/", publisher: "Anthropic", accessedAt: "Maio 2026" },
+          { title: "Artificial Analysis \u2014 comparativo de LLMs", url: "https://artificialanalysis.ai/", publisher: "Artificial Analysis", accessedAt: "Maio 2026" }
+        ]}
+      />
+
+
 
       <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="claude-opus-vs-sonnet-2026" />

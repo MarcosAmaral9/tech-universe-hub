@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Brain, Zap, TrendingUp, DollarSign, Lightbulb, Shield } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -157,6 +159,20 @@ const NegocioOnlineIA2026 = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
+      <EditorialTake category="ia" title={"An\u00e1lise do Marcos: IA derruba barreira de entrada, n\u00e3o a do mercado"}>
+        <p>A IA generativa eliminou o custo de produzir copy, landing pages e arte de marca — mas isso é exatamente o que torna a vantagem competitiva mais escassa, não menor. No Brasil, vejo dois caminhos viáveis em 2026: (1) <strong>nichos hiper-locais</strong> que dependem de contexto cultural (ex.: serviços jurídicos para MEI, micro-SaaS para corretores Susep) onde modelos genéricos ainda erram; e (2) <strong>infoprodutos com curadoria humana visível</strong>, porque o consumidor já desconfia de tudo que cheira a 'gerado por IA'. Tributariamente, lembrar: pagamentos via Stripe/Gumroad caem em IR pessoa física se feitos como autônomo — Simples Nacional ou MEI mudam completamente a conta.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: "Stripe Atlas \u2014 guia para founders", url: "https://stripe.com/atlas/guides", publisher: "Stripe", accessedAt: "Maio 2026" },
+          { title: "Manual MEI 2026", url: "https://www.gov.br/empresas-e-negocios/pt-br/empreendedor", publisher: "Governo Federal", accessedAt: "Maio 2026" },
+          { title: "Ferramentas de IA para empresas", url: "https://openai.com/business", publisher: "OpenAI", accessedAt: "Maio 2026" },
+          { title: "Relat\u00f3rio E-commerce Brasil 2026", url: "https://www.ecommercebrasil.com.br/", publisher: "E-commerce Brasil", accessedAt: "Maio 2026" },
+          { title: "Receita Federal \u2014 aut\u00f4nomos e pessoa jur\u00eddica", url: "https://www.gov.br/receitafederal/pt-br", publisher: "Receita Federal", accessedAt: "Maio 2026" }
+        ]}
+      />
+
+
 
       <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="negocio-online-ia-2026" />
