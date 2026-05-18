@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Tv, Star, Zap, Globe } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -163,6 +165,20 @@ const TemporadaAnimesAbril2026 = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
+      <EditorialTake category="otaku" title={"An\u00e1lise do Marcos: temporada de abril \u00e9 a mais consistente do ano"}>
+        <p>A 'spring season' (abril-junho) historicamente concentra os animes mais bem produzidos do ano — não por acaso, é a temporada em que os estúdios alinham os lançamentos com o início do ano fiscal japonês e com a maior janela de marketing. Em 2026 não foi diferente: continuações fortes, adaptações ambiciosas de mangás populares e poucos isekais genéricos do mês. Para quem tem tempo limitado, sugestão pragmática: <strong>escolher 3 animes para acompanhar semanalmente</strong> em vez de tentar acompanhar 10 e abandonar metade no episódio 4. Crunchyroll segue como hub principal no Brasil, com legenda PT-BR no mesmo dia do Japão.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: "Crunchyroll \u2014 Spring 2026", url: "https://www.crunchyroll.com/pt-br/", publisher: "Crunchyroll", accessedAt: "Maio 2026" },
+          { title: "MAL \u2014 Spring 2026 chart", url: "https://myanimelist.net/anime/season", publisher: "MyAnimeList", accessedAt: "Maio 2026" },
+          { title: "Anime News Network", url: "https://www.animenewsnetwork.com/", publisher: "Anime News Network", accessedAt: "Maio 2026" },
+          { title: "AniList", url: "https://anilist.co/", publisher: "AniList", accessedAt: "Maio 2026" },
+          { title: "Star+ / Disney+ Brasil \u2014 animes", url: "https://www.disneyplus.com/pt-br", publisher: "Disney+", accessedAt: "Maio 2026" }
+        ]}
+      />
+
+
 
       <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="temporada-animes-abril-2026" />

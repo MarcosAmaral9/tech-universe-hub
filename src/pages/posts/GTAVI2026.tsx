@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3, MapPin } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -191,6 +193,20 @@ const GTAVI2026 = () => {
           <p className="text-muted-foreground">Conta nos comentários o que mais te animou nos trailers! 👇</p>
         </div>
       </div>
+      <EditorialTake category="geek" title={"An\u00e1lise do Marcos: GTA VI vai redefinir or\u00e7amento de AAA \u2014 e o Brasil paga caro"}>
+        <p>GTA VI já é o jogo mais caro da história, com estimativas que passam de US$ 1 bilhão entre desenvolvimento e marketing — e isso vai ter dois efeitos diretos para o jogador brasileiro. Primeiro: <strong>preço de lançamento provável de US$ 80-100</strong>, que aqui vira R$ 400-500 com câmbio e imposto na PS Store / Xbox. Segundo: monetização agressiva no GTA Online 2, no estilo do GTA V atual, onde a economia interna empurra microtransações reais. Para fãs, esperar 6-12 meses pós-lançamento sempre foi a melhor jogada: bugs corrigidos, primeira queda de preço e mods (no PC) já maduros.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: "Rockstar Games \u2014 GTA VI", url: "https://www.rockstargames.com/VI", publisher: "Rockstar Games", accessedAt: "Maio 2026" },
+          { title: "Take-Two Investor Relations", url: "https://www.take2games.com/ir", publisher: "Take-Two", accessedAt: "Maio 2026" },
+          { title: "Digital Foundry", url: "https://www.eurogamer.net/digitalfoundry", publisher: "Digital Foundry", accessedAt: "Maio 2026" },
+          { title: "IGN Brasil \u2014 cobertura GTA VI", url: "https://br.ign.com/", publisher: "IGN Brasil", accessedAt: "Maio 2026" },
+          { title: "Bloomberg \u2014 ind\u00fastria de jogos", url: "https://www.bloomberg.com/", publisher: "Bloomberg", accessedAt: "Maio 2026" }
+        ]}
+      />
+
+
 
       <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="gta-vi-guia-completo-2026" />

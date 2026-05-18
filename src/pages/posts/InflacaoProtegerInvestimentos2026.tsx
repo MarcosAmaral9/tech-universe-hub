@@ -4,6 +4,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, TrendingUp, Shield, AlertTriangle, PiggyBank, BarChart3, Target } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -212,6 +214,20 @@ const InflacaoProtegerInvestimentos2026 = () => {
           <p className="text-muted-foreground">Compartilhe sua estratégia nos comentários! 👇</p>
         </div>
       </div>
+      <EditorialTake category="invest" title={"An\u00e1lise do Marcos: prote\u00e7\u00e3o real exige IPCA+ longo, n\u00e3o cripto"}>
+        <p>Inflação alta no Brasil é fenômeno cíclico — em 30 anos vimos três ciclos relevantes (1995, 2015 e 2021-22), e em todos o ativo que protegeu de fato o patrimônio foi <strong>Tesouro IPCA+ com prazo maior que 5 anos</strong>. Ouro, dólar e Bitcoin tiveram bons momentos, mas com volatilidade que destrói a tese de 'proteção'. Para o investidor PF, a fórmula simples continua valendo: 40-60% em IPCA+ longo trava o juro real, 10-20% em câmbio (preferencialmente via ETF) faz hedge cambial, e o resto fica em CDI para liquidez. Tentativas de prever inflação são geralmente piores que seguir essa alocação básica.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: "IPCA \u2014 IBGE", url: "https://www.ibge.gov.br/explica/inflacao.php", publisher: "IBGE", accessedAt: "Maio 2026" },
+          { title: "Tesouro IPCA+ \u2014 Tesouro Direto", url: "https://www.tesourodireto.com.br/titulos/precos-e-taxas.htm", publisher: "Tesouro Nacional", accessedAt: "Maio 2026" },
+          { title: "Boletim Focus", url: "https://www.bcb.gov.br/publicacoes/focus", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
+          { title: "Relat\u00f3rio de Infla\u00e7\u00e3o \u2014 Bacen", url: "https://www.bcb.gov.br/publicacoes/ri", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
+          { title: "ANBIMA \u2014 \u00cdndices de mercado", url: "https://www.anbima.com.br/", publisher: "ANBIMA", accessedAt: "Maio 2026" }
+        ]}
+      />
+
+
       <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="inflacao-proteger-investimentos-2026" />
       <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />

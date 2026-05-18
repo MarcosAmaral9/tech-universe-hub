@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, TrendingUp, BarChart3, Shield, Lightbulb, DollarSign, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -218,6 +220,20 @@ const ETFsB3Guia2026 = () => {
           ⚠️ <strong>Aviso Legal:</strong> Este conteúdo é educacional e não constitui recomendação de investimento. Consulte um assessor certificado antes de investir.
         </p>
       </div>
+      <EditorialTake category="invest" title={"An\u00e1lise do Marcos: ETF \u00e9 simples \u2014 mas a taxa importa mais do que parece"}>
+        <p>ETF é o veículo mais democrático que a B3 já entregou ao investidor pessoa física brasileiro, mas o entusiasmo recente esconde uma armadilha: <strong>taxa de administração</strong>. A diferença entre um ETF de 0,03% (BOVA11) e um ETF temático de 0,80% parece pequena, mas em 20 anos compõe a ponto de comer 15% do patrimônio final. Outro detalhe que poucos comentam: ETFs de renda variável no Brasil têm <strong>IR de 15% sobre o ganho</strong> sem isenção de R$ 20 mil/mês (diferente de ação avulsa). Para quem está montando carteira longa, o trio BOVA11 + IVVB11 + IB5M11 cobre 90% dos cenários — o resto é vaidade.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: "ETFs listados \u2014 B3", url: "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/etf-renda-variavel.htm", publisher: "B3", accessedAt: "Maio 2026" },
+          { title: "Tributa\u00e7\u00e3o de ETFs \u2014 Receita Federal", url: "https://www.gov.br/receitafederal/pt-br", publisher: "Receita Federal", accessedAt: "Maio 2026" },
+          { title: "CVM \u2014 guia do investidor", url: "https://www.investidor.gov.br/", publisher: "CVM", accessedAt: "Maio 2026" },
+          { title: "ANBIMA \u2014 dados de fundos e ETFs", url: "https://www.anbima.com.br/", publisher: "ANBIMA", accessedAt: "Maio 2026" },
+          { title: "Tesouro Direto \u2014 comparativo", url: "https://www.tesourodireto.com.br/", publisher: "Tesouro Nacional", accessedAt: "Maio 2026" }
+        ]}
+      />
+
+
 
       <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="etfs-b3-guia-completo-2026" />

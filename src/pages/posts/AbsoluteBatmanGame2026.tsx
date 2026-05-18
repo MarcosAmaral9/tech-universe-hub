@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Gamepad2, Star, Shield, Zap, Users } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -165,6 +167,20 @@ const AbsoluteBatmanGame2026 = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
+      <EditorialTake category="geek" title={"An\u00e1lise do Marcos: Absolute Batman precisa fugir do molde Arkham"}>
+        <p>A franquia Arkham definiu o gênero de jogo de super-herói, mas isso virou armadilha: qualquer jogo do Batman é comparado ao freeflow combat de 2009 e fracassa quando tenta inovar. <strong>Gotham Knights e Suicide Squad mostraram o custo dessa expectativa</strong>. Um Absolute Batman que dê certo, na minha visão, precisa apostar em <strong>narrativa adulta no tom do quadrinho do Scott Snyder</strong> — Batman como vigilante anti-establishment, gameplay focada em investigação e infiltração, menos combate ininterrupto. Para o público brasileiro, vale acompanhar antes de pré-comprar: a indústria já mostrou que confiar em hype de trailer custa caro.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: "DC Comics \u2014 Absolute Batman", url: "https://www.dc.com/", publisher: "DC Comics", accessedAt: "Maio 2026" },
+          { title: "IGN \u2014 Cobertura Batman", url: "https://www.ign.com/", publisher: "IGN", accessedAt: "Maio 2026" },
+          { title: "Eurogamer \u2014 an\u00e1lise da franquia Arkham", url: "https://www.eurogamer.net/", publisher: "Eurogamer", accessedAt: "Maio 2026" },
+          { title: "Warner Bros. Games", url: "https://www.wbgames.com/", publisher: "Warner Bros. Games", accessedAt: "Maio 2026" },
+          { title: "Game Informer", url: "https://www.gameinformer.com/", publisher: "Game Informer", accessedAt: "Maio 2026" }
+        ]}
+      />
+
+
 
       <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="lego-batman-legacy-2026" />

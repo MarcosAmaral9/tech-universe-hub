@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, DollarSign, TrendingDown, Shield, Lightbulb, Zap, BarChart3 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -178,6 +180,20 @@ const CortarGastos2026 = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
+      <EditorialTake category="invest" title={"An\u00e1lise do Marcos: cortar gasto \u00e9 matem\u00e1tica, manter o corte \u00e9 h\u00e1bito"}>
+        <p>Toda planilha de redução de despesas funciona nos primeiros 60 dias e fracassa depois — não porque a conta esteja errada, mas porque <strong>economizar exige fricção constante</strong> e o cérebro humano busca o caminho de menor esforço. A solução que recomendo, e que uso, é <strong>automatizar o que dá certo</strong>: débito automático para investimento no dia do salário, cartões virtuais com limite para assinaturas, alerta no app do banco para qualquer débito acima de R$ 200. Isso transfere a disciplina para o sistema. No Brasil de 2026, com Selic alta, cada R$ 500/mês cortados e investidos em Tesouro Selic viram R$ 7.000+ em 12 meses — vale o exercício.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: "Calculadora Tesouro Direto", url: "https://www.tesourodireto.com.br/simulador/", publisher: "Tesouro Nacional", accessedAt: "Maio 2026" },
+          { title: "Pesquisa de Endividamento \u2014 CNC", url: "https://cnc.org.br/", publisher: "CNC", accessedAt: "Maio 2026" },
+          { title: "Educa\u00e7\u00e3o Financeira \u2014 Banco Central", url: "https://www.bcb.gov.br/cidadaniafinanceira", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
+          { title: "Serasa \u2014 pesquisa de or\u00e7amento dom\u00e9stico", url: "https://www.serasa.com.br/", publisher: "Serasa", accessedAt: "Maio 2026" },
+          { title: "Procon \u2014 guia do consumidor", url: "https://www.procon.sp.gov.br/", publisher: "Procon SP", accessedAt: "Maio 2026" }
+        ]}
+      />
+
+
 
       <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="cortar-gastos-2026" />

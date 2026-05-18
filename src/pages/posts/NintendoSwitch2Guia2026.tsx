@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3, Lightbulb } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -186,6 +188,20 @@ const NintendoSwitch2Guia2026 = () => {
           <p className="text-muted-foreground">Conta nos comentários o que achou! 👇</p>
         </div>
       </div>
+      <EditorialTake category="geek" title={"An\u00e1lise do Marcos: Switch 2 acerta no hardware, erra no pre\u00e7o Brasil"}>
+        <p>O Switch 2 é o salto geracional que a Nintendo precisava — DLSS, tela maior, joycons magnéticos — e tecnicamente ele entrega. Mas no Brasil a história é outra: <strong>importação com imposto e câmbio na casa dos R$ 4.000+</strong> coloca o console na mesma faixa de um PS5 Slim com SSD extra, e isso muda completamente a tese de 'console portátil acessível' que vendeu o Switch 1. Para quem já é fã da Nintendo (Zelda, Mario, Smash), vale; para quem está escolhendo plataforma agora, faz mais sentido esperar a primeira queda de preço ou olhar Steam Deck OLED, que já tem catálogo enorme em PT-BR e roda emulação nativa.</p>
+      </EditorialTake>
+      <ArticleSources
+        sources={[
+          { title: "Nintendo Switch 2 \u2014 site oficial", url: "https://www.nintendo.com/", publisher: "Nintendo", accessedAt: "Maio 2026" },
+          { title: "Investor Relations Nintendo", url: "https://www.nintendo.co.jp/ir/en/", publisher: "Nintendo IR", accessedAt: "Maio 2026" },
+          { title: "Steam Deck \u2014 Valve", url: "https://store.steampowered.com/steamdeck", publisher: "Valve", accessedAt: "Maio 2026" },
+          { title: "Digital Foundry \u2014 an\u00e1lises de hardware", url: "https://www.eurogamer.net/digitalfoundry", publisher: "Digital Foundry", accessedAt: "Maio 2026" },
+          { title: "IGN Brasil \u2014 cobertura Switch 2", url: "https://br.ign.com/", publisher: "IGN Brasil", accessedAt: "Maio 2026" }
+        ]}
+      />
+
+
 
       <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="nintendo-switch-2-guia-2026" />
