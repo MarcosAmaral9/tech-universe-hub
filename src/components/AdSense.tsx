@@ -13,6 +13,13 @@
 import { forwardRef, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
+/**
+ * KILL SWITCH GLOBAL — desativa toda a renderização de anúncios enquanto
+ * o site aguarda aprovação do Google AdSense. Mantém todo o código intacto
+ * para reativar trocando para `true` quando o AdSense for autorizado.
+ */
+const ADS_ENABLED = false;
+
 // Alturas mínimas reservadas por formato e breakpoint (mobile / md / lg).
 // Evitam colapso antes do fill e garantem largura mensurável para
 // `data-full-width-responsive` em todas as resoluções.
