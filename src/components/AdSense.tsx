@@ -13,6 +13,13 @@
 import { forwardRef, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
+/**
+ * KILL SWITCH GLOBAL — desativa toda a renderização de anúncios enquanto
+ * o site aguarda aprovação do Google AdSense. Mantém todo o código intacto
+ * para reativar trocando para `true` quando o AdSense for autorizado.
+ */
+const ADS_ENABLED = false;
+
 // Alturas mínimas reservadas por formato e breakpoint (mobile / md / lg).
 // Evitam colapso antes do fill e garantem largura mensurável para
 // `data-full-width-responsive` em todas as resoluções.
@@ -68,7 +75,7 @@ const AdUnit = forwardRef<HTMLDivElement, AdProps>(({ slot, format = "auto", cla
   const [unfilled, setUnfilled] = useState(false);
   const { pathname } = useLocation();
 
-  const blocked = BLOCKED_PATHS.some((p) => pathname.startsWith(p));
+  const blocked = !ADS_ENABLED || BLOCKED_PATHS.some((p) => pathname.startsWith(p));
 
   useEffect(() => {
     if (blocked) return;
@@ -182,7 +189,7 @@ export const AdInArticle = ({ className }: { className?: string }) => (
 export const AdAnchorMobile = () => {
   const [show, setShow] = useState(false);
   const { pathname } = useLocation();
-  const blocked = BLOCKED_PATHS.some((p) => pathname.startsWith(p));
+  const blocked = !ADS_ENABLED || BLOCKED_PATHS.some((p) => pathname.startsWith(p));
 
   useEffect(() => {
     if (blocked) return;
