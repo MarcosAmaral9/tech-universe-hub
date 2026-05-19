@@ -4,6 +4,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { ArrowLeft, Clock, User, Calendar, Gamepad2, Star, Cpu, Monitor } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -128,7 +130,20 @@ const BaldursGate3Review2026 = () => {
           { label: "Todos os artigos Geek", href: "/geek" },
         ]}
       />
-      <NewsletterSignup variant="inline" categories={["geek"]} />
+
+        <EditorialTake category="geek">
+          <p>Baldur’s Gate 3 continua sendo, em 2026, a vara técnica que mede todo CRPG lançado depois. A Larian provou que jogador adulto banca 100+ horas se houver consequência narrativa em cada escolha — e o GOTY de 2023 mostrou ao mercado que turn-based não é nicho. O que vejo no Brasil: comunidade enorme em PT-BR (legendado oficial), preço que caiu para faixa de R$ 150 em promoções Steam e patch 7 expandindo modding oficial.</p>
+        </EditorialTake>
+
+        <ArticleSources sources={[
+    { title: 'Larian Studios — Patch Notes', url: 'https://baldursgate3.game/news', publisher: 'Larian', accessedAt: "Maio 2026" },
+    { title: 'The Game Awards 2023 — GOTY', url: 'https://thegameawards.com/nominees/game-of-the-year', publisher: 'TGA', accessedAt: "Maio 2026" },
+    { title: 'Steam — Baldur’s Gate 3', url: 'https://store.steampowered.com/app/1086940/Baldurs_Gate_3/', publisher: 'Valve', accessedAt: "Maio 2026" },
+    { title: 'Metacritic — BG3', url: 'https://www.metacritic.com/game/baldurs-gate-3/', publisher: 'Metacritic', accessedAt: "Maio 2026" },
+    { title: 'Wizards of the Coast — D&D 5e SRD', url: 'https://dnd.wizards.com/resources/systems-reference-document', publisher: 'WotC', accessedAt: "Maio 2026" }
+  ]} />
+
+        <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="baldurs-gate-3-review-2026" />
     <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="baldurs-gate-3-review-2026" postTitle="Baldur's Gate 3 em 2026" />

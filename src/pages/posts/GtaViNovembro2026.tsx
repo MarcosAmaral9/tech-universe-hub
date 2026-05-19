@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3, MapPin } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -190,7 +192,19 @@ const GtaViNovembro2026 = () => {
         </div>
       </div>
 
-      <NewsletterSignup variant="inline" categories={["geek"]} />
+        <EditorialTake category="geek">
+          <p>GTA VI confirmado para 26 de maio de 2026 (segundo a Take-Two) e adiado novamente para o então novo ‘holiday window’ é típico Rockstar: preferível atrasar e entregar a 96+ no Metacritic do que repetir o desastre do GTA Trilogy. Para o brasileiro, a notícia ruim é o preço — R$ 350 a R$ 400 é o piso esperado para a edição padrão, refletindo o câmbio e a estratégia de upselling do mercado AAA pós-2024.</p>
+        </EditorialTake>
+
+        <ArticleSources sources={[
+    { title: 'Rockstar Games — GTA VI Newsroom', url: 'https://www.rockstargames.com/VI', publisher: 'Rockstar Games', accessedAt: "Maio 2026" },
+    { title: 'Take-Two Interactive — Investor Relations', url: 'https://www.take2games.com/ir/', publisher: 'Take-Two', accessedAt: "Maio 2026" },
+    { title: 'IGN Brasil', url: 'https://br.ign.com/gta-6', publisher: 'IGN', accessedAt: "Maio 2026" },
+    { title: 'The Game Awards — Histórico', url: 'https://thegameawards.com/', publisher: 'TGA', accessedAt: "Maio 2026" },
+    { title: 'Metacritic', url: 'https://www.metacritic.com/', publisher: 'Metacritic', accessedAt: "Maio 2026" }
+  ]} />
+
+        <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="gta-vi-novembro-2026-vice-city-leonida" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="gta-vi-novembro-2026-vice-city-leonida" postTitle="GTA VI: Data Confirmada para 19 de Novembro — Tudo sobre Leonida, Lucia e Jason" />

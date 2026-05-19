@@ -4,6 +4,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { ArrowLeft, Clock, Calendar, User, ChevronRight, Zap, AlertTriangle, FileText, CheckCircle, Timer } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -396,6 +398,18 @@ const IRPF2026 = () => {
         </div>
 
         <BackNavigation category="invest" />
+
+        <EditorialTake category="invest">
+          <p>O IRPF 2026 chega com a nova tabela aprovada pela Lei 14.848/2024 ampliando a faixa de isenção, mas o ponto que ninguém comenta é que a Receita aumentou o cruzamento automático de dados com corretoras (e-Financeira) e exchanges de cripto. Quem investe em ETFs no exterior pela Lei 14.754/2023 precisa lançar tributação anual de 15%, e quem opera B3 acima de R$ 20 mil/mês em ações precisa DARF mensal. Minha dica: feche o ano com extrato consolidado da corretora antes de março.</p>
+        </EditorialTake>
+
+        <ArticleSources sources={[
+    { title: 'Receita Federal — IRPF', url: 'https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda', publisher: 'RFB', accessedAt: "Maio 2026" },
+    { title: 'Lei 14.754/2023 — Tributação Offshore e Cripto', url: 'https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/L14754.htm', publisher: 'Planalto', accessedAt: "Maio 2026" },
+    { title: 'B3 — Tributação em Renda Variável', url: 'https://www.b3.com.br/pt_br/produtos-e-servicos/tarifas/listados-a-vista-e-derivativos/renda-variavel/tributacao/', publisher: 'B3', accessedAt: "Maio 2026" },
+    { title: 'Tesouro Direto — Tributação', url: 'https://www.tesourodireto.com.br/tesouro-direto-tributacao.htm', publisher: 'Tesouro Nacional', accessedAt: "Maio 2026" },
+    { title: 'CVM — Orientações ao Investidor', url: 'https://www.gov.br/cvm/pt-br/assuntos/noticias', publisher: 'CVM', accessedAt: "Maio 2026" }
+  ]} />
 
         <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="irpf-2026-guia-declarar-pagar-menos" />

@@ -4,6 +4,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { ArrowLeft, Clock, User, Calendar, Star, Flame, Shield } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -137,7 +139,20 @@ const DemonSlayerHashira2026 = () => {
           { label: "Todos os artigos Otaku", href: "/otaku" },
         ]}
       />
-      <NewsletterSignup variant="inline" categories={["otaku"]} />
+
+        <EditorialTake category="otaku">
+          <p>Com a trilogia Infinity Castle confirmada pela Aniplex/Ufotable, o arco dos Hashira encerra a era “semanal” de Kimetsu no Yaiba e entrega o final em formato cinema — escolha econômica esperada depois de Mugen Train ter feito US$500M+ globalmente. No Brasil, a Sony Pictures fica com a distribuição e o preço médio do ingresso (R$30–40) torna o cinema o jeito mais barato de assistir Ufotable em alta qualidade. Quem nunca viu, aproveita: dublado e legendado simultâneos.</p>
+        </EditorialTake>
+
+        <ArticleSources sources={[
+    { title: 'Demon Slayer — Site Oficial', url: 'https://kimetsu.com/anime/', publisher: 'Aniplex/Ufotable', accessedAt: "Maio 2026" },
+    { title: 'Crunchyroll — Demon Slayer', url: 'https://www.crunchyroll.com/series/GY5P48XEY/demon-slayer-kimetsu-no-yaiba', publisher: 'Crunchyroll', accessedAt: "Maio 2026" },
+    { title: 'Sony Pictures Brasil', url: 'https://www.sonypictures.com.br/', publisher: 'Sony', accessedAt: "Maio 2026" },
+    { title: 'Box Office Mojo — Mugen Train', url: 'https://www.boxofficemojo.com/title/tt9166672/', publisher: 'BOM', accessedAt: "Maio 2026" },
+    { title: 'MyAnimeList — Kimetsu no Yaiba', url: 'https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba', publisher: 'MAL', accessedAt: "Maio 2026" }
+  ]} />
+
+        <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="demon-slayer-hashira-2026" />
     <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="demon-slayer-hashira-2026" postTitle="Demon Slayer: Guia dos Hashira" />

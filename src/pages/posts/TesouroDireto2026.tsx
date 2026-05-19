@@ -4,6 +4,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { ArrowLeft, Clock, Calendar, User, AlertTriangle, TrendingUp, Shield, Landmark, ChevronRight, Zap, Lock, BarChart3 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -458,6 +460,18 @@ const TesouroDireto2026 = () => {
             </p>
           </div>
         </div>
+
+        <EditorialTake category="invest">
+          <p>Tesouro Direto continua sendo a porta de entrada mais segura para investidor brasileiro, mas em 2026 o jogo mudou: com Selic ainda alta, prefixados longos pagam prêmio histórico, enquanto IPCA+ acima de 6% real virou commodity. Para quem está montando reserva ou aposentadoria, o casamento de prazos (ALM) importa mais que rentabilidade nominal. A taxa de custódia da B3 (0,2% a.a.) some na prática para títulos curtos, então não use isso como desculpa para ficar na poupança.</p>
+        </EditorialTake>
+
+        <ArticleSources sources={[
+    { title: 'Tesouro Direto — Site Oficial', url: 'https://www.tesourodireto.com.br/', publisher: 'Tesouro Nacional', accessedAt: "Maio 2026" },
+    { title: 'Banco Central — Calculadora do Cidadão', url: 'https://www.bcb.gov.br/cidadaniafinanceira/calculadora', publisher: 'BCB', accessedAt: "Maio 2026" },
+    { title: 'ANBIMA — Mercado de Renda Fixa', url: 'https://www.anbima.com.br/pt_br/informar/sistema-de-precos.htm', publisher: 'ANBIMA', accessedAt: "Maio 2026" },
+    { title: 'Receita Federal — Renda Fixa', url: 'https://www.gov.br/receitafederal/pt-br', publisher: 'RFB', accessedAt: "Maio 2026" },
+    { title: 'B3 — Tarifa de Custódia', url: 'https://www.b3.com.br/pt_br/produtos-e-servicos/tarifas/', publisher: 'B3', accessedAt: "Maio 2026" }
+  ]} />
 
         <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="tesouro-direto-2026-guia-completo" />

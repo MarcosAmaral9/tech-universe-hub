@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Shield, AlertTriangle, Lock, Eye, Bug, Server } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -206,7 +208,19 @@ const IACiberseguranca2026 = () => {
         </p>
       </div>
 
-      <NewsletterSignup variant="inline" categories={["ia"]} />
+        <EditorialTake category="ia">
+          <p>Cibersegurança com IA é a faca de dois gumes mais importante da década: a mesma tecnologia que ajuda SOCs a triar alertas em segundos está nas mãos de quem escreve phishing convincente em português. No Brasil, onde o CERT.br registra crescimento contínuo de incidentes e a LGPD ainda tem aplicação desigual, vejo empresas adotando copilots de SOC sem revisar política de dados — e depois tendo que justificar para a ANPD por que prompts com PII vão para fora do país. A regra que sigo: IA de defesa só entra depois de threat modeling e DPIA, nunca antes.</p>
+        </EditorialTake>
+
+        <ArticleSources sources={[
+    { title: 'CERT.br — Estatísticas de Incidentes', url: 'https://stats.cert.br/', publisher: 'CERT.br', accessedAt: "Maio 2026" },
+    { title: 'ANPD — Guias de Boas Práticas', url: 'https://www.gov.br/anpd/pt-br/documentos-e-publicacoes/guias-orientativos', publisher: 'ANPD', accessedAt: "Maio 2026" },
+    { title: 'Microsoft Security — Copilot for Security', url: 'https://www.microsoft.com/en-us/security/business/ai-machine-learning/microsoft-security-copilot', publisher: 'Microsoft', accessedAt: "Maio 2026" },
+    { title: 'Google — Threat Intelligence (Mandiant)', url: 'https://cloud.google.com/security/mandiant-threat-intelligence', publisher: 'Google Cloud', accessedAt: "Maio 2026" },
+    { title: 'NIST — AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework', publisher: 'NIST', accessedAt: "Maio 2026" }
+  ]} />
+
+        <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="ia-ciberseguranca-2026" />
       <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="ia-ciberseguranca-2026" />

@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Star, Zap, Shield, BarChart3, BookOpen, Anchor } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -176,7 +178,19 @@ const OnePieceElbaf2026 = () => {
         </div>
       </div>
 
-      <NewsletterSignup variant="inline" categories={["geek"]} />
+        <EditorialTake category="otaku">
+          <p>A saga de Elbaf finalmente coloca os gigantes no centro depois de 25 anos de teasing, e a Toei mudou de tom — menos filler, mais painel-a-painel do mangá. Para o fã brasileiro, a janela de 1h após o Japão no Crunchyroll (legendado) e a continuidade da dublagem na Netflix mantêm One Piece como o anime mais acompanhado simultaneamente no país. Sem spoilers: o arco confirma teorias antigas sobre o Século Vazio sem encerrar o mistério.</p>
+        </EditorialTake>
+
+        <ArticleSources sources={[
+    { title: 'Shōnen Jump — One Piece Oficial', url: 'https://www.shonenjump.com/j/rensai/onepiece.html', publisher: 'Shueisha', accessedAt: "Maio 2026" },
+    { title: 'Crunchyroll — One Piece', url: 'https://www.crunchyroll.com/series/GRMG8ZQZR/one-piece', publisher: 'Crunchyroll', accessedAt: "Maio 2026" },
+    { title: 'Toei Animation — One Piece', url: 'https://www.toei-anim.co.jp/tv/onep/', publisher: 'Toei', accessedAt: "Maio 2026" },
+    { title: 'MyAnimeList — One Piece', url: 'https://myanimelist.net/anime/21/One_Piece', publisher: 'MAL', accessedAt: "Maio 2026" },
+    { title: 'Anime News Network', url: 'https://www.animenewsnetwork.com/', publisher: 'ANN', accessedAt: "Maio 2026" }
+  ]} />
+
+        <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="one-piece-elbaf-formato-sazonal-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="one-piece-elbaf-formato-sazonal-2026" postTitle="One Piece Arco de Elbaf: A Ilha dos Gigantes e o Novo Formato Sazonal" />

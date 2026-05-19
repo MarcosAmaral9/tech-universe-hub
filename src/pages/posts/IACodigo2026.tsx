@@ -4,6 +4,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { ArrowLeft, Clock, User, Calendar, Code, Bot, Cpu, TrendingUp, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -123,7 +125,20 @@ const IACodigo2026 = () => {
           { label: "Agentes de IA 2026", href: "/post/agentes-ia-2026-como-funcionam", desc: "O próximo passo depois das ferramentas de código" },
         ]}
       />
-      <NewsletterSignup variant="inline" categories={["geek"]} />
+
+        <EditorialTake category="ia">
+          <p>Depois de testar Copilot, Cursor e Claude Code em produção, minha leitura é que o ganho real não está em escrever código mais rápido — está em revisar, refatorar e documentar o legado que ninguém queria tocar. Para o desenvolvedor brasileiro, isso significa duas coisas: empresas que ainda tratam IA como custo vão ficar para trás, e devs juniores precisam dobrar a aposta em fundamentos para não virarem apenas operadores de prompt.</p>
+        </EditorialTake>
+
+        <ArticleSources sources={[
+    { title: 'GitHub — Copilot Research', url: 'https://github.blog/news-insights/research/', publisher: 'GitHub', accessedAt: "Maio 2026" },
+    { title: 'Anthropic — Claude for Coding', url: 'https://www.anthropic.com/news', publisher: 'Anthropic', accessedAt: "Maio 2026" },
+    { title: 'Cursor — Official Site', url: 'https://cursor.com/', publisher: 'Cursor', accessedAt: "Maio 2026" },
+    { title: 'Stack Overflow Developer Survey', url: 'https://survey.stackoverflow.co/', publisher: 'Stack Overflow', accessedAt: "Maio 2026" },
+    { title: 'Google DORA — State of DevOps', url: 'https://dora.dev/research/', publisher: 'DORA', accessedAt: "Maio 2026" }
+  ]} />
+
+        <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="ia-codigo-programadores-2026" />
     <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="ia-codigo-programadores-2026" postTitle="IA e Programação em 2026" />

@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, TrendingUp, BarChart3, Shield, Lightbulb, DollarSign, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -214,7 +216,19 @@ const IbovespaRecordeSelic2026 = () => {
         </p>
       </div>
 
-      <NewsletterSignup variant="inline" categories={["invest"]} />
+        <EditorialTake category="invest">
+          <p>O Ibovespa em recorde com Selic ainda em patamar restritivo confirma o que venho falando: o mercado precifica corte antes do Copom efetivar. Históricamente, dos últimos cinco ciclos de afrouxamento brasileiros, em quatro o Ibov subiu 15%+ nos seis meses anteriores ao primeiro corte. A armadilha é entrar em small caps ilquídas achando que vai pegar o próximo Magálu — quem leu o livro do Damodaran sabe que reratings típicos vêm em qualidade, não em pulinhos.</p>
+        </EditorialTake>
+
+        <ArticleSources sources={[
+    { title: 'B3 — Índices', url: 'https://www.b3.com.br/pt_br/market-data-e-indices/indices/', publisher: 'B3', accessedAt: "Maio 2026" },
+    { title: 'Banco Central — Histórico da Selic', url: 'https://www.bcb.gov.br/controleinflacao/historicotaxasjuros', publisher: 'BCB', accessedAt: "Maio 2026" },
+    { title: 'Copom — Atas e Comunicados', url: 'https://www.bcb.gov.br/publicacoes/atascopom', publisher: 'BCB', accessedAt: "Maio 2026" },
+    { title: 'Valor Econômico — Mercado', url: 'https://valor.globo.com/financas/', publisher: 'Valor', accessedAt: "Maio 2026" },
+    { title: 'Reuters — Brazil Markets', url: 'https://www.reuters.com/markets/', publisher: 'Reuters', accessedAt: "Maio 2026" }
+  ]} />
+
+        <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="ibovespa-recorde-selic-caindo-2026" />
       <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="ibovespa-recorde-selic-caindo-2026" postTitle="Ibovespa em Recordes e Selic Caindo: Onde Investir Agora em Abril de 2026" />

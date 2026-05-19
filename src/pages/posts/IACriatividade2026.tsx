@@ -4,6 +4,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { ArrowLeft, Clock, User, Calendar, Palette, Music, Video, Sparkles, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -117,7 +119,19 @@ const IACriatividade2026 = () => {
         </div>
       </div>
 
-      <NewsletterSignup variant="inline" categories={["ia"]} />
+        <EditorialTake category="ia">
+          <p>A discussão real sobre IA generativa criativa no Brasil não é „substitui o artista?” — é quem vai pagar pelo treinamento dos modelos com obras de artistas brasileiros sem licença. Enquanto os EUA debatem fair use e a UE caminha para opt-out via AI Act, nós ainda não temos jurisprudência clara. Recomendo a todo criador de conteúdo registrar obras (Biblioteca Nacional ou cartório) antes de publicar e marcar imagens com C2PA quando possível.</p>
+        </EditorialTake>
+
+        <ArticleSources sources={[
+    { title: 'OpenAI — Sora', url: 'https://openai.com/sora/', publisher: 'OpenAI', accessedAt: "Maio 2026" },
+    { title: 'Adobe — Firefly', url: 'https://www.adobe.com/products/firefly.html', publisher: 'Adobe', accessedAt: "Maio 2026" },
+    { title: 'C2PA — Content Provenance', url: 'https://c2pa.org/', publisher: 'C2PA', accessedAt: "Maio 2026" },
+    { title: 'Biblioteca Nacional — Registro de Obras', url: 'https://www.gov.br/bn/pt-br/servicos/direitos-autorais', publisher: 'FBN', accessedAt: "Maio 2026" },
+    { title: 'EU AI Act — Texto oficial', url: 'https://artificialintelligenceact.eu/', publisher: 'European Commission', accessedAt: "Maio 2026" }
+  ]} />
+
+        <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="ia-criatividade-arte-musica-2026" />
       <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="ia-criatividade-arte-musica-2026" postTitle="IA e Criatividade 2026: Como a IA Está Revolucionando Arte e Música" />
