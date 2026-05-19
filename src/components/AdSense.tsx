@@ -75,7 +75,7 @@ const AdUnit = forwardRef<HTMLDivElement, AdProps>(({ slot, format = "auto", cla
   const [unfilled, setUnfilled] = useState(false);
   const { pathname } = useLocation();
 
-  const blocked = BLOCKED_PATHS.some((p) => pathname.startsWith(p));
+  const blocked = !ADS_ENABLED || BLOCKED_PATHS.some((p) => pathname.startsWith(p));
 
   useEffect(() => {
     if (blocked) return;
