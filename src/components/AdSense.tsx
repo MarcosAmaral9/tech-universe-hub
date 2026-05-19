@@ -189,7 +189,7 @@ export const AdInArticle = ({ className }: { className?: string }) => (
 export const AdAnchorMobile = () => {
   const [show, setShow] = useState(false);
   const { pathname } = useLocation();
-  const blocked = BLOCKED_PATHS.some((p) => pathname.startsWith(p));
+  const blocked = !ADS_ENABLED || BLOCKED_PATHS.some((p) => pathname.startsWith(p));
 
   useEffect(() => {
     if (blocked) return;
