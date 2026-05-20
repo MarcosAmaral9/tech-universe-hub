@@ -4,6 +4,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { ArrowLeft, Clock, User, Calendar, Bot, Cpu, Briefcase, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -111,11 +113,89 @@ const AgentesIA2026 = () => {
           Agentes de IA ainda erram — e quando erram de forma autônoma, o erro pode se propagar. Riscos: ações irreversíveis, viés nos critérios, vulnerabilidade a prompt injection e questões de privacidade. <strong>Regra atual:</strong> agentes são mais seguros em ambientes com ações reversíveis e supervisão humana.
         </p>
 
+        <h2 className="text-2xl font-bold mt-10 mb-6">O Estado Real dos Agentes em 2026: Benchmarks e Métricas</h2>
+        <p>
+          O hype vendido como "agentes resolvem qualquer tarefa" não bate com os números públicos. O <strong>SWE-bench Verified</strong>,
+          benchmark de engenharia de software mantido pela Princeton e mais usado para medir agentes de código, mostrava em janeiro de 2026
+          a Claude 3.7 Sonnet em <strong>~70% de acerto</strong> e o GPT-5 com agentes em torno de <strong>74%</strong> — em tarefas reais
+          do GitHub que humanos resolvem em mais de 1 hora. Avanço impressionante, mas longe da automação completa.
+        </p>
+        <p>
+          No benchmark <strong>OSWorld</strong> (Carnegie Mellon, 2024), que testa agentes operando computadores reais com mouse e teclado,
+          os melhores modelos chegaram a apenas <strong>38% de sucesso</strong> em tarefas que humanos completam em 95% das vezes.
+          A conclusão técnica: agentes funcionam para tarefas bem delimitadas, repetitivas e com reversibilidade — não para "faça
+          minha vida por mim". Quem promete o contrário está vendendo, não medindo.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">MCP, A2A e o Padrão que Está Unificando Tudo</h2>
+        <p>
+          Em novembro de 2024 a Anthropic abriu o <strong>Model Context Protocol (MCP)</strong>, um padrão aberto que permite a qualquer agente
+          (Claude, Cursor, Zed, Windsurf) conectar-se a ferramentas e fontes de dados externas via um protocolo único. Em 2025 a OpenAI,
+          Google e Microsoft adotaram o MCP — efetivamente é o "USB-C dos agentes". O ecossistema cresceu para mais de 1.000 servidores
+          MCP públicos cobrindo GitHub, Notion, Slack, Postgres e até CNPJ/SERASA no Brasil.
+        </p>
+        <p>
+          Paralelamente, o Google lançou o <strong>Agent2Agent (A2A) Protocol</strong> em abril de 2025, focado em comunicação entre agentes
+          de fornecedores diferentes. A combinação MCP (acesso a ferramentas) + A2A (orquestração entre agentes) é o que vai destravar
+          aplicações sérias em 2026-2027. Para desenvolvedores brasileiros, o tutorial oficial do MCP é o melhor ponto de partida.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Como Usar Agentes com Segurança no Brasil</h2>
+        <p>
+          Três regras práticas para evitar dor de cabeça regulatória ou financeira: <strong>(1) sandbox primeiro</strong> — todo agente que
+          executa código ou navega deve rodar em ambiente isolado (Docker, browser headless, conta-teste); <strong>(2) limite financeiro
+          duro</strong> — se o agente pode gastar (APIs, compras, ads), defina teto diário no provedor, não no prompt;
+          <strong> (3) human-in-the-loop em ações irreversíveis</strong> — envio de email externo, transação financeira, deleção de dados
+          devem exigir confirmação humana até que o agente prove confiabilidade em ambiente real.
+        </p>
+        <p>
+          Do ponto de vista LGPD, agentes que acessam dados pessoais de terceiros (clientes, leads) precisam de base legal documentada
+          e devem estar no Registro de Operações de Tratamento (ROT) da empresa. A ANPD ainda não publicou guia específico para
+          agentes autônomos, mas o Parecer 24/2024 já sinaliza que decisões automatizadas com efeito sobre titulares exigem
+          <strong> revisão humana garantida</strong> (art. 20 LGPD). Quem implanta agente em atendimento ao cliente sem botão "falar com humano"
+          está infringindo.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">FAQ — Perguntas Frequentes Sobre Agentes</h2>
+        <div className="space-y-3 my-6">
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-1">Agente é a mesma coisa que automação RPA?</h4>
+            <p className="text-sm text-muted-foreground mb-0">Não. RPA (UiPath, Automation Anywhere) segue scripts fixos. Agente decide o próximo passo com base no contexto — pode adaptar-se a mudanças na interface, mas também pode errar de formas imprevisíveis.</p>
+          </div>
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-1">Quanto custa rodar um agente?</h4>
+            <p className="text-sm text-muted-foreground mb-0">Varia muito. Um agente simples com Claude/GPT-4o gasta US$ 0,01 a US$ 0,50 por execução. Agentes com loops longos podem facilmente passar de US$ 5 por tarefa — sempre coloque limite de tokens.</p>
+          </div>
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-1">Devin substitui programador?</h4>
+            <p className="text-sm text-muted-foreground mb-0">Não. Testes independentes mostram Devin abaixo de 14% no SWE-bench original. É útil para tickets pequenos e repetitivos com supervisão — não para projetos críticos.</p>
+          </div>
+        </div>
+
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
           <h3 className="text-xl font-bold mb-2">Você já usou um agente de IA?</h3>
           <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
         </div>
       </div>
+
+      <EditorialTake category="ia">
+        <p>
+          A pressa em chamar tudo de "agente autônomo" está atrasando o uso sério dessa tecnologia. O que funciona hoje no Brasil é
+          o <strong>agente assistido</strong>: humano define a tarefa, agente executa em sandbox, humano aprova ações irreversíveis.
+          Esse desenho elimina 90% dos riscos de prompt injection e atende ao art. 20 da LGPD. Se sua empresa quer adotar agentes em 2026,
+          o caminho não é "demitir e substituir" — é mapear processos repetitivos com ações reversíveis (triagem de email, qualificação
+          de lead, atualização de planilha) e começar por aí. Quem ignorar a parte regulatória vai descobrir o custo de uma multa
+          ANPD da forma cara.
+        </p>
+      </EditorialTake>
+
+      <ArticleSources sources={[
+        { title: "Anthropic — Introducing the Model Context Protocol", url: "https://www.anthropic.com/news/model-context-protocol", publisher: "Anthropic", accessedAt: "Maio 2026" },
+        { title: "Princeton NLP — SWE-bench Verified Leaderboard", url: "https://www.swebench.com/", publisher: "Princeton NLP", accessedAt: "Maio 2026" },
+        { title: "OSWorld: Benchmarking Multimodal Agents (CMU)", url: "https://os-world.github.io/", publisher: "Carnegie Mellon University", accessedAt: "Maio 2026" },
+        { title: "Google Cloud — Agent2Agent (A2A) Protocol", url: "https://cloud.google.com/blog/products/ai-machine-learning/a2a-a-new-era-of-agent-interoperability", publisher: "Google Cloud", accessedAt: "Maio 2026" },
+        { title: "LGPD — Art. 20 (Revisão de decisões automatizadas)", url: "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm", publisher: "Planalto", accessedAt: "Maio 2026" }
+      ]} />
 
       <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="agentes-ia-2026-como-funcionam" />
