@@ -37,7 +37,7 @@ const Breadcrumb = () => {
   } else if (pathname.startsWith("/ia"))          crumbs.push({ label: CAT_LABELS.ia });
   else if (pathname.startsWith("/geek"))          crumbs.push({ label: CAT_LABELS.geek });
   else if (pathname.startsWith("/otaku"))         crumbs.push({ label: CAT_LABELS.otaku });
-  else if (pathname.startsWith("/investimentos")) crumbs.push({ label: CAT_LABELS.invest });
+  else if (pathname.startsWith("/financas") || pathname.startsWith("/investimentos")) crumbs.push({ label: CAT_LABELS.invest });
 
   if (crumbs.length <= 1) return null;
 
