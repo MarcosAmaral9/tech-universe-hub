@@ -99,6 +99,40 @@ const MerchandisingOtaku2026 = () => {
         </div>
       </div>
 
+      
+      <section className="my-10">
+        <div className="bg-card border border-otaku/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-otaku">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">Colecionar produto otaku oficial deixou de ser hobby de nicho. Grandes fabricantes como Good Smile Company (linhas Nendoroid e figma), Bandai Spirits (Ichiban Kuji, S.H. Figuarts) e Kotobukiya operam pré-venda global e o mercado secundário no Mercari/Yahoo Auctions movimenta centenas de milhões de ienes por mês segundo relatórios públicos da própria Good Smile Company.</p>
+              <p className="text-muted-foreground leading-relaxed mb-3">No Brasil, a importação legal exige atenção a três pontos: imposto de importação (60% + ICMS estadual sobre valor declarado, conforme Receita Federal), taxa Remessa Conforme da Shopee/AliExpress (17% até US$ 50, isenção do II) e fretamento via empresas como Shipito ou JapanBuyandShip para itens exclusivos do Japão.</p>
+              <p className="text-muted-foreground leading-relaxed mb-3">A análise do Marcos: priorize peças com numeração limitada e box oficial. Figmas e Nendoroids da GSC mantêm 70-90% do valor após cinco anos quando guardadas lacradas; bootlegs perdem valor imediatamente e ainda enfraquecem o suporte oficial às licenças no Brasil.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            {[
+              { title: "Good Smile Company — site oficial", url: "https://www.goodsmile.com/" },
+          { title: "Bandai Spirits Hobby Site", url: "https://bandai-hobby.net/" },
+          { title: "Receita Federal — Remessa Conforme", url: "https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/importacao-e-exportacao/remessas-internacionais/programa-remessa-conforme" },
+          { title: "MyFigureCollection — banco de dados", url: "https://myfigurecollection.net/" },
+          { title: "Kotobukiya — site oficial", url: "https://en.kotobukiya.co.jp/" },
+            ].map((s) => (
+              <li key={s.url}>
+                <a href={s.url} target="_blank" rel="noopener noreferrer"
+                  className="text-otaku hover:underline break-words">
+                  {s.title} ↗
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
       <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="merchandising-otaku-colecionar-2026" />
       <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
