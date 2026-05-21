@@ -11,7 +11,6 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
-import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/demon-slayer-hashira-2026.webp";
 
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -130,17 +129,7 @@ const DemonSlayerHashira2026 = () => {
         <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
       </div>
     </div>
-    
-      <RelatedTopics
-        title="Leia também"
-        links={[
-          { label: "One Piece: Final Saga", href: "/post/one-piece-final-saga-2026", desc: "Outro mangá/anime de geração — onde estamos" },
-          { label: "Animes mais aguardados 2026", href: "/post/animes-mais-aguardados-2026", desc: "O que vem por aí na temporada" },
-          { label: "Todos os artigos Otaku", href: "/otaku" },
-        ]}
-      />
-
-        <EditorialTake category="otaku">
+<EditorialTake category="otaku">
           <p>Com a trilogia Infinity Castle confirmada pela Aniplex/Ufotable, o arco dos Hashira encerra a era “semanal” de Kimetsu no Yaiba e entrega o final em formato cinema — escolha econômica esperada depois de Mugen Train ter feito US$500M+ globalmente. No Brasil, a Sony Pictures fica com a distribuição e o preço médio do ingresso (R$30–40) torna o cinema o jeito mais barato de assistir Ufotable em alta qualidade. Quem nunca viu, aproveita: dublado e legendado simultâneos.</p>
         </EditorialTake>
 

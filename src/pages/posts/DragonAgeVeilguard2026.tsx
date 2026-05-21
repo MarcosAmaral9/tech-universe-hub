@@ -9,7 +9,6 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
-import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/dragon-age-veilguard-review-2026.webp";
 
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -118,15 +117,7 @@ const DragonAgeVeilguard2026 = () => {
         <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
       </div>
     </div>
-    
-      <RelatedTopics
-        title="Leia também"
-        links={[
-          { label: "Baldur's Gate 3", href: "/post/baldurs-gate-3-review-2026", desc: "O RPG que definiu a geração — compare com Veilguard" },
-          { label: "Ranking dos melhores RPGs de ação", href: "/post/ranking-melhor-assassins-creed-2026" },
-        ]}
-      />
-      <NewsletterSignup variant="inline" categories={["geek"]} />
+<NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="dragon-age-veilguard-review-2026" />
     <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="dragon-age-veilguard-review-2026" postTitle="Dragon Age: The Veilguard — Review 2026" />

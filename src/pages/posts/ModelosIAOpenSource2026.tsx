@@ -9,7 +9,6 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
-import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/modelos-ia-open-source-2026.webp";
 
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -140,16 +139,7 @@ const ModelosIAOpenSource2026 = () => {
         <p className="text-muted-foreground">Compartilhe nos comentários! 👇</p>
       </div>
     </div>
-    
-      <RelatedTopics
-        title="Leia também"
-        links={[
-          { label: "IA e Programação 2026", href: "/post/ia-codigo-programadores-2026", desc: "Copilot, Cursor e Windsurf na prática" },
-          { label: "ChatGPT vs Gemini vs Claude", href: "/post/chatgpt-vs-gemini-vs-claude-2026", desc: "Compare os principais modelos pagos" },
-          { label: "IA e Privacidade de Dados", href: "/post/ia-privacidade-dados-2026", desc: "Por que privacidade é o principal argumento open source" },
-        ]}
-      />
-      <NewsletterSignup variant="inline" categories={["geek"]} />
+<NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="modelos-ia-open-source-2026" />
     <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="modelos-ia-open-source-2026" postTitle="IA Open Source 2026" />

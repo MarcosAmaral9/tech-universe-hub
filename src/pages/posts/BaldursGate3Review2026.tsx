@@ -11,7 +11,6 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
-import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/baldurs-gate-3-review-2026.webp";
 
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -121,17 +120,7 @@ const BaldursGate3Review2026 = () => {
         <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
       </div>
     </div>
-    
-      <RelatedTopics
-        title="Leia também"
-        links={[
-          { label: "Dragon Age: The Veilguard", href: "/post/dragon-age-veilguard-review-2026", desc: "O outro grande RPG do momento" },
-          { label: "AC Valhalla", href: "/post/ac-valhalla-jornada-epica-eivor", desc: "Outro RPG de mundo aberto com tema nórdico" },
-          { label: "Todos os artigos Geek", href: "/geek" },
-        ]}
-      />
-
-        <EditorialTake category="geek">
+<EditorialTake category="geek">
           <p>Baldur’s Gate 3 continua sendo, em 2026, a vara técnica que mede todo CRPG lançado depois. A Larian provou que jogador adulto banca 100+ horas se houver consequência narrativa em cada escolha — e o GOTY de 2023 mostrou ao mercado que turn-based não é nicho. O que vejo no Brasil: comunidade enorme em PT-BR (legendado oficial), preço que caiu para faixa de R$ 150 em promoções Steam e patch 7 expandindo modding oficial.</p>
         </EditorialTake>
 

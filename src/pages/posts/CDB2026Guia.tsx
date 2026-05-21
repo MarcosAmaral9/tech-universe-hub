@@ -9,7 +9,6 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
-import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/cdb-2026-guia.webp";
 
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -164,18 +163,7 @@ const CDB2026Guia = () => {
         <p className="text-muted-foreground">Conta pra gente nos comentários e tire suas dúvidas! 👇</p>
       </div>
     </div>
-
-    
-      <RelatedTopics
-        title="Leia também"
-        links={[
-          { label: "Previdência Privada: PGBL ou VGBL?", href: "/post/previdencia-privada-pgbl-vgbl-2026", desc: "Para investimentos de longo prazo com vantagem fiscal" },
-          { label: "Tesouro Direto 2026", href: "/post/tesouro-direto-2026-guia-completo", desc: "Compare o CDB com o Tesouro Selic" },
-          { label: "ETFs em 2026", href: "/post/etfs-2026-guia-completo-investir", desc: "Para quem quer diversificar além da renda fixa" },
-          { label: "Cotações ao Vivo", href: "/cotacoes", desc: "Acompanhe CDI e Selic em tempo real" },
-        ]}
-      />
-      <NewsletterSignup variant="inline" categories={["invest"]} />
+<NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="cdb-2026-guia-completo" />
     <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="cdb-2026-guia-completo" postTitle="CDB em 2026: Guia Completo" />

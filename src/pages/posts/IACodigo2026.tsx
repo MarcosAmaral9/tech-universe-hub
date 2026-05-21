@@ -11,7 +11,6 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
-import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/ia-codigo-programadores-2026.webp";
 
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -116,17 +115,7 @@ const IACodigo2026 = () => {
         <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
       </div>
     </div>
-    
-      <RelatedTopics
-        title="Leia também"
-        links={[
-          { label: "IA Open Source 2026: Llama, Mistral e DeepSeek", href: "/post/modelos-ia-open-source-2026", desc: "Compare as alternativas gratuitas às ferramentas pagas" },
-          { label: "ChatGPT vs Gemini vs Claude 2026", href: "/post/chatgpt-vs-gemini-vs-claude-2026", desc: "Qual modelo de IA é melhor para o seu uso?" },
-          { label: "Agentes de IA 2026", href: "/post/agentes-ia-2026-como-funcionam", desc: "O próximo passo depois das ferramentas de código" },
-        ]}
-      />
-
-        <EditorialTake category="ia">
+<EditorialTake category="ia">
           <p>Depois de testar Copilot, Cursor e Claude Code em produção, minha leitura é que o ganho real não está em escrever código mais rápido — está em revisar, refatorar e documentar o legado que ninguém queria tocar. Para o desenvolvedor brasileiro, isso significa duas coisas: empresas que ainda tratam IA como custo vão ficar para trás, e devs juniores precisam dobrar a aposta em fundamentos para não virarem apenas operadores de prompt.</p>
         </EditorialTake>
 

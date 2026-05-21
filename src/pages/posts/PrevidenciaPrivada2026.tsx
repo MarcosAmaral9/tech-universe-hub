@@ -9,7 +9,6 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
-import RelatedTopics from "@/components/RelatedTopics";
 import heroImg from "@/assets/previdencia-privada-2026.webp";
 
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -154,17 +153,7 @@ const PrevidenciaPrivada2026 = () => {
         <p className="text-muted-foreground">Compartilhe sua experiência nos comentários! 👇</p>
       </div>
     </div>
-
-    
-      <RelatedTopics
-        title="Leia também"
-        links={[
-          { label: "CDB em 2026", href: "/post/cdb-2026-guia-completo", desc: "Para complementar com liquidez diária" },
-          { label: "Planejamento Financeiro 2026", href: "/post/planejamento-financeiro-2026-metas", desc: "Como encaixar a previdência na sua estratégia" },
-          { label: "IRPF 2026", href: "/post/irpf-2026-guia-declarar-pagar-menos", desc: "Como declarar PGBL e VGBL no imposto de renda" },
-        ]}
-      />
-      <NewsletterSignup variant="inline" categories={["invest"]} />
+<NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="previdencia-privada-2026" />
     <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="previdencia-privada-2026" postTitle="Previdência Privada 2026: PGBL ou VGBL?" />
