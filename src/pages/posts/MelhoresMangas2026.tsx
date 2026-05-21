@@ -93,6 +93,40 @@ const MelhoresMangas2026 = () => {
         </div>
       </div>
 
+      
+      <section className="my-10">
+        <div className="bg-card border border-otaku/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-otaku">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">2026 é o ano dos finais e dos novos clássicos. Jujutsu Kaisen encerrou seu mangá em setembro de 2024 (capítulo 271, Shueisha), My Hero Academia teve seu capítulo final em agosto de 2024 e One Piece avança no arco Elbaph, confirmado por Eiichiro Oda como parte da Saga Final. Esses encerramentos abrem espaço para títulos como Sakamoto Days, Kagurabachi e Astro Royale ocuparem a capa da Weekly Shonen Jump.</p>
+              <p className="text-muted-foreground leading-relaxed mb-3">Para o leitor brasileiro, o cenário é o melhor da história: Panini publica simultaneamente JJK, Chainsaw Man e One Piece, JBC mantém Naruto e Berserk, e a Crunchyroll Manga (via app) oferece o catálogo da Kodansha em inglês para leitura legal e barata. A pirataria perdeu o argumento da indisponibilidade.</p>
+              <p className="text-muted-foreground leading-relaxed mb-3">A análise do Marcos: comece pelo gênero, não pela hype. Quem gosta de seinen denso encontra ouro em Vagabond, Vinland Saga e 20th Century Boys; quem busca shonen moderno deve testar Kaiju No. 8 e Dandadan antes de embarcar em finais longos como One Piece (110+ volumes).</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            {[
+              { title: "Shueisha — Weekly Shonen Jump", url: "https://www.shonenjump.com/j/" },
+          { title: "MANGA Plus by Shueisha", url: "https://mangaplus.shueisha.co.jp/" },
+          { title: "Panini Brasil — Mangás", url: "https://panini.com.br/mangas" },
+          { title: "Anime News Network — Jujutsu Kaisen final chapter", url: "https://www.animenewsnetwork.com/news/2024-09-29/jujutsu-kaisen-manga-ends-with-271st-chapter" },
+          { title: "Kodansha — One Piece Saga Final", url: "https://kodansha.us/" },
+            ].map((s) => (
+              <li key={s.url}>
+                <a href={s.url} target="_blank" rel="noopener noreferrer"
+                  className="text-otaku hover:underline break-words">
+                  {s.title} ↗
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
       <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="melhores-mangas-ler-2026" />
       <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />

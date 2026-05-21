@@ -119,6 +119,40 @@ const IAEducacao2026 = () => {
         </div>
       </div>
 
+      
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">O uso de IA generativa em educação está em explosão. O relatório UNESCO 'Guidance for generative AI in education and research' (2023) é o documento de referência global e recomenda idade mínima de 13 anos, transparência de uso e auditoria pedagógica. No Brasil, o MEC publicou em 2024 a primeira nota técnica sobre uso de IA em redes públicas, com diretrizes alinhadas à LGPD e à BNCC.</p>
+              <p className="text-muted-foreground leading-relaxed mb-3">Ferramentas com tração comprovada incluem Khanmigo (Khan Academy, baseado em GPT-4 com salvaguardas pedagógicas), Google NotebookLM (geração de podcast e mapas mentais a partir de PDFs), Anthropic Claude (resumo de textos longos com baixa taxa de alucinação) e ChatGPT Edu — versão institucional lançada pela OpenAI em maio de 2024 para universidades.</p>
+              <p className="text-muted-foreground leading-relaxed mb-3">A análise do Marcos: a IA não substitui estudo profundo; ela acelera o que já é bom estudo. Use a técnica de Feynman com Claude (explique o conceito, peça que aponte falhas), faça flashcards no Anki com perguntas geradas pela IA e jamais entregue trabalho sem revisão — detectores como GPTZero ainda erram bastante, mas professores brasileiros já adotam triangulação com Turnitin.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            {[
+              { title: "UNESCO — Guidance for generative AI in education and research", url: "https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research" },
+          { title: "Khan Academy — Khanmigo", url: "https://www.khanmigo.ai/" },
+          { title: "OpenAI — ChatGPT Edu", url: "https://openai.com/index/introducing-chatgpt-edu/" },
+          { title: "Google — NotebookLM", url: "https://notebooklm.google/" },
+          { title: "MEC — Estratégia Brasileira de Inteligência Artificial", url: "https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/transformacaodigital/inteligencia-artificial" },
+            ].map((s) => (
+              <li key={s.url}>
+                <a href={s.url} target="_blank" rel="noopener noreferrer"
+                  className="text-primary hover:underline break-words">
+                  {s.title} ↗
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
       <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="ia-educacao-2026-estudar-inteligente" />
       <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
