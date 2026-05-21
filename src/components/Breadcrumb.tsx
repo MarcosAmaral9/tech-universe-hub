@@ -11,7 +11,7 @@ const CAT_LABELS: Record<string, string> = {
   otaku: "Anime & Otaku", invest: "Finanças & Investimentos",
 };
 const CAT_ROUTES: Record<string, string> = {
-  ia: "/ia", geek: "/geek", otaku: "/otaku", invest: "/investimentos",
+  ia: "/ia", geek: "/geek", otaku: "/otaku", invest: "/financas",
 };
 
 interface Crumb { label: string; href?: string }
