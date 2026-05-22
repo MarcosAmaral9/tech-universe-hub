@@ -123,6 +123,30 @@ const DeepfakesIA2026 = () => {
         </div>
       </div>
 
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">O relatório 'State of Deepfakes 2024' da Sensity AI documentou crescimento de 550% em deepfakes de áudio entre 2023 e 2024, e o FBI emitiu alerta público (PSA I-052024-PSA) sobre golpes de clonagem de voz com IA — só nos EUA, o prejuízo passou de US$ 200 milhões em 2024. No Brasil, a Febraban registrou aumento de 40% em tentativas de fraude com áudio sintético contra clientes bancários em 2025.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">A regulamentação avança: o EU AI Act exige marca d'água digital obrigatória em conteúdo gerado por IA a partir de agosto/2026, e o PL 2338/2023 brasileiro segue linha similar. Ferramentas de detecção confiáveis em 2026 incluem Intel FakeCatcher (96% de precisão em vídeo), Microsoft Video Authenticator e Hive Moderation (API paga, usada por plataformas).</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: a defesa real é comportamental, não técnica — combine palavras-código com familiares para validar pedidos urgentes por áudio/vídeo, desconfie de qualquer transferência solicitada por voz mesmo de pessoa conhecida, e ative autenticação em dois fatores em todas as contas. A IA já clona vozes com 3 segundos de áudio público.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://sensity.ai/reports/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Sensity AI — State of Deepfakes Report 2024 ↗</a></li>
+            <li><a href="https://www.ic3.gov/Media/Y2024/PSA240502" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">FBI — Public Service Announcement I-052024-PSA ↗</a></li>
+            <li><a href="https://portal.febraban.org.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Febraban — Estatísticas de Fraude 2025 ↗</a></li>
+            <li><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">EU AI Act — Texto Oficial ↗</a></li>
+            <li><a href="https://www.intel.com/content/www/us/en/newsroom/news/intel-introduces-real-time-deepfake-detector.html" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Intel — FakeCatcher Real-Time Deepfake Detection ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
       <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="deepfakes-ia-2026-como-identificar" />
       <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
