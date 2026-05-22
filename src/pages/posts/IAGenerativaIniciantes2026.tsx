@@ -120,6 +120,30 @@ const IAGenerativaIniciantes2026 = () => {
         </div>
       </div>
 
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">Os modelos generativos mais relevantes em 2026 são GPT-5 (OpenAI, lançado em agosto/2025), Claude Opus 4 (Anthropic, maio/2025), Gemini 2.5 Pro (Google, março/2025) e Llama 4 (Meta, abril/2025, open source). Segundo o Stanford AI Index 2024, o custo de inferência caiu 280x entre 2022 e 2024, viabilizando uso massivo gratuito ou de baixo custo.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Para o usuário brasileiro iniciante, a recomendação prática: comece com ChatGPT gratuito (GPT-5 mini liberado para todos desde outubro/2025), Gemini gratuito (incluído no Google One) e Perplexity (combina busca com IA). Para uso profissional, planos pagos custam US$ 20/mês (R$ 100-115) e desbloqueiam modelos top-tier, contextos maiores e ferramentas como geração de imagem (DALL-E 3, Imagen 3).</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: o segredo não é decorar prompts complicados — é praticar diálogo iterativo. Faça uma pergunta, refine com 'agora aplique X', 'agora resuma em 3 bullets'. Em 30 dias de uso diário (15 min/dia), o ganho de produtividade médio reportado por estudos da Harvard Business School e Microsoft é de 25-40% em tarefas de escrita, programação e análise.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://hai.stanford.edu/research/ai-index-2024" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Stanford HAI — AI Index Report 2024 ↗</a></li>
+            <li><a href="https://platform.openai.com/docs/models" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">OpenAI — Modelos e API ↗</a></li>
+            <li><a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Anthropic — Claude Models ↗</a></li>
+            <li><a href="https://deepmind.google/technologies/gemini/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Google DeepMind — Gemini ↗</a></li>
+            <li><a href="https://www.hbs.edu/faculty/Pages/item.aspx?num=64700" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Harvard Business School — Navigating the Jagged Technological Frontier ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
       <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="ia-generativa-iniciantes-2026-guia" />
       <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />

@@ -334,6 +334,30 @@ const IAMercadoFinanceiro2026 = () => {
           <BackNavigation category="invest" />
         </div>
 
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">Segundo o relatório 'AI in Financial Services 2024' da NVIDIA (em parceria com a McKinsey), 91% das instituições financeiras globais já usam IA em produção — principalmente em detecção de fraude, análise de crédito e atendimento. No Brasil, o Banco Central regulamentou o uso de IA no Open Finance via Resolução BCB 287/2022, exigindo explicabilidade em decisões automatizadas.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Para o investidor PF brasileiro, os robôs-advisor consolidados são Warren (parceria com Galápagos), Magnetis (carteiras automatizadas) e o piloto de IA da XP Investimentos. O custo médio é de 0,3% a 0,8% ao ano sobre patrimônio, contra 1,5% a 2% de fundos ativos tradicionais. Para análise fundamentalista, ferramentas como Status Invest e Investidor10 (ambas gratuitas com versão paga) usam algoritmos para ranquear ações por indicadores.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: a IA não substitui análise humana em decisões grandes — ela é excelente para triagem (filtrar 500 ações para 20 candidatas) e péssima para julgar contexto macro. Use IA generativa (ChatGPT, Claude) para resumir relatórios trimestrais e ATAs do Copom, mas nunca para decisão de compra direta.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.nvidia.com/en-us/industries/finance/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">NVIDIA — State of AI in Financial Services 2024 ↗</a></li>
+            <li><a href="https://www.bcb.gov.br/estabilidadefinanceira/openfinance" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Banco Central — Resolução BCB 287/2022 (Open Finance e IA) ↗</a></li>
+            <li><a href="https://www.gov.br/cvm/pt-br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">CVM — Tecnologia e Inovação ↗</a></li>
+            <li><a href="https://statusinvest.com.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Status Invest — Análise Fundamentalista ↗</a></li>
+            <li><a href="https://institucional.xpi.com.br/relacao-com-investidores/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">XP Inc. — Relatórios Trimestrais ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
         <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="ia-mercado-financeiro-2026-investimentos" />
         <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />

@@ -302,6 +302,30 @@ const PlanejamentoFinanceiro2026 = () => {
 
         <BackNavigation category="invest" />
 
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">O método SMART (Specific, Measurable, Achievable, Relevant, Time-bound) foi formalizado por George T. Doran em 1981 (Management Review) e segue sendo o padrão recomendado por planejadores financeiros certificados (CFP). No Brasil, a ANBIMA exige conhecimento da técnica nas certificações CPA-10 e CPA-20.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Para 2026, o cenário macro pede atenção: o Boletim Focus do Banco Central projeta inflação (IPCA) na faixa de 3,5% a 4,5% e Selic entre 10% e 11,5% no fim do ano. Isso significa que qualquer meta financeira precisa considerar reajuste pela inflação — uma meta de R$ 50.000 hoje equivale a R$ 52.000-52.250 daqui a 12 meses.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: o erro mais comum não é definir metas erradas — é não revisar. Recomendo revisão trimestral obrigatória usando planilhas simples (Google Sheets) ou apps como Mobills, Organizze e GuiaBolso, todos com versão gratuita funcional. Quem revisa metas 4x por ano alcança o objetivo em 73% dos casos, contra 23% de quem só define no início do ano (estudo Dominican University, Dr. Gail Matthews).</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.anbima.com.br/pt_br/educar/certificacoes/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">ANBIMA — Educação e Certificações ↗</a></li>
+            <li><a href="https://www.bcb.gov.br/publicacoes/focus" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Banco Central — Boletim Focus ↗</a></li>
+            <li><a href="https://www.ibge.gov.br/explica/inflacao.php" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">IBGE — IPCA Mensal ↗</a></li>
+            <li><a href="https://www.dominican.edu/sites/default/files/2020-02/gailmatthews-harvard-goals-researchsummary.pdf" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Dominican University — Goals Research by Dr. Gail Matthews ↗</a></li>
+            <li><a href="https://www.gov.br/investidor/pt-br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">CVM — Investidor: Planejamento Financeiro ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
         <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="planejamento-financeiro-2026-metas" />
         <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
