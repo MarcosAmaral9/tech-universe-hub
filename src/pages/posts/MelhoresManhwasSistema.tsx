@@ -292,6 +292,30 @@ const MelhoresManhwasSistema = () => {
         </div>
       </div>
 
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">O gênero 'sistema' (também chamado de 'LitRPG coreano') consolidou-se como pilar da Webtoon Naver e da Kakao Page entre 2018 e 2025. Solo Leveling, adaptado pela A-1 Pictures em 2024-2026, abriu a porta global e hoje cada nova obra do nicho disputa o Top 10 semanal da Webtoon — a plataforma já passou de 89 milhões de usuários ativos mensais segundo o relatório financeiro Q4/2025 da Naver.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Para o leitor brasileiro, vale notar: Webtoon e Tappytoon têm versões oficiais traduzidas em português (gratuitas com episódios diários), enquanto Kakao opera apenas com inglês/coreano. A diferença prática entre 'manhwa', 'manhua' (chinês) e 'manga' (japonês) é a origem e o sentido de leitura: manhwa lê-se da esquerda para a direita, em formato vertical otimizado para celular.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: o gênero está saturado, mas obras com worldbuilding consistente (Solo Leveling, The Beginning After the End, Omniscient Reader) continuam justificando o hype. Para começar, prefira obras já finalizadas ou com 100+ capítulos — manhwas 'sistema' costumam abandonar promessas narrativas após o sucesso inicial.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.webtoons.com/pt/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Webtoon (Naver) — Catálogo Oficial PT-BR ↗</a></li>
+            <li><a href="https://www.tappytoon.com/pt" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Tappytoon — Catálogo PT-BR ↗</a></li>
+            <li><a href="https://page.kakao.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Kakao Page — Webtoons & Web Novels ↗</a></li>
+            <li><a href="https://www.animenewsnetwork.com/encyclopedia/anime.php?id=27987" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Anime News Network — Solo Leveling ↗</a></li>
+            <li><a href="https://www.navercorp.com/en/investment/businessReport" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Naver Financial Reports 2025 ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
       <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="10-melhores-manhwas-sistema-2026" />
       <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />

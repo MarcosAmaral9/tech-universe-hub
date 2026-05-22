@@ -127,6 +127,30 @@ const RegulamentacaoIA2026 = () => {
         </div>
       </div>
 
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">O cenário regulatório global de IA em 2026 tem três pilares definidos: o EU AI Act (Regulamento UE 2024/1689, em vigor desde agosto/2024 e com fases até agosto/2026), o PL 2338/2023 brasileiro aprovado pelo Senado em dezembro/2024 e em tramitação na Câmara, e o Executive Order 14110 dos EUA (revogado por Trump em janeiro/2025 e substituído por uma política mais flexível). A divergência entre blocos cria desafio para multinacionais.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">No Brasil, o PL 2338 cria categorias de risco semelhantes ao AI Act europeu, exige avaliação de impacto algorítmico (AIIA) para sistemas de alto risco e dá à ANPD (Autoridade Nacional de Proteção de Dados) papel central na fiscalização. Combinado com a LGPD (Lei 13.709/2018, art. 20 — direito à revisão de decisões automatizadas), o arcabouço brasileiro já permite ao cidadão exigir explicação sobre uma decisão de crédito ou triagem de currículo por IA.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: o desafio para 2026 não é se haverá regulação — é como adaptar empresas que ainda nem mapearam quais sistemas usam IA. A recomendação é começar pelo inventário (todas as ferramentas SaaS com 'IA' no nome) e, em paralelo, definir um responsável interno de compliance algorítmico.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">EU AI Act — Texto Oficial (Regulamento 2024/1689) ↗</a></li>
+            <li><a href="https://www25.senado.leg.br/web/atividade/materias/-/materia/157233" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Senado Federal — PL 2338/2023 ↗</a></li>
+            <li><a href="https://www.gov.br/anpd/pt-br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">ANPD — Autoridade Nacional de Proteção de Dados ↗</a></li>
+            <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Planalto — LGPD (Lei 13.709/2018) ↗</a></li>
+            <li><a href="https://www.whitehouse.gov/ai/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">White House — AI Executive Orders Tracker ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
       <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="regulamentacao-ia-brasil-mundo-2026" />
       <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />

@@ -255,6 +255,30 @@ const FIIs2026 = () => {
 
         <BackNavigation category="invest" />
 
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">Os dados mais recentes do Boletim Mensal de FIIs da B3 (fevereiro/2026) mostram o IFIX em recuperação consistente após o ciclo de Selic alta de 2024-2025. Com a expectativa de corte de juros pelo Copom no segundo semestre, fundos de tijolo (logística, lajes corporativas, shoppings) tendem a se beneficiar mais que fundos de papel (CRIs indexados ao CDI/IPCA).</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Pontos de atenção segundo a Instrução CVM 175 (vigente desde outubro/2024): leia sempre o regulamento e o último Relatório Gerencial antes de comprar. Os indicadores fundamentais são P/VP (preço/valor patrimonial — ideal entre 0,90 e 1,05), Dividend Yield anualizado (faixa saudável: 8% a 11% para tijolo, 11% a 14% para papel) e vacância física.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: para 2026, prefira diversificar em pelo menos 8-10 FIIs de segmentos diferentes em vez de concentrar em 2-3 'queridinhos' — o risco específico de um único ativo pode comprometer 30%+ da carteira. FIIs de fundos (FoFs) seguem como porta de entrada decente para iniciantes, apesar da camada extra de taxa.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/fundos-de-investimentos/fii/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">B3 — Boletim Mensal de FIIs ↗</a></li>
+            <li><a href="https://www.gov.br/cvm/pt-br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">CVM — Instrução 175 sobre Fundos de Investimento ↗</a></li>
+            <li><a href="https://www.gov.br/receitafederal/pt-br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Receita Federal — Tributação de FIIs (isenção de IR sobre dividendos) ↗</a></li>
+            <li><a href="https://www.clubefii.com.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Clube FII — Ranking IFIX ↗</a></li>
+            <li><a href="https://www.fundsexplorer.com.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Funds Explorer — Indicadores de FIIs ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
         <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="fiis-2026-melhores-fundos-imobiliarios" />
         <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />

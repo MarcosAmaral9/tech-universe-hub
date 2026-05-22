@@ -272,6 +272,30 @@ Qual é o Seu Favorito?</h2>
       </div>
 
       {/* Related Posts */}
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">A Ubisoft passou por reorganização significativa em 2025 (criação da Vantage Studios em parceria com a Tencent, anunciada em março/2025) e o foco da franquia Assassin's Creed se dividiu: Shadows (lançado em março/2025, ambientado no Japão feudal) recebeu nota 82 no Metacritic PC e vendeu mais de 3 milhões de cópias nas primeiras três semanas, segundo press release oficial. Mirage continua sendo o 'pequeno experimento de retorno às raízes' e Valhalla segue como o capítulo mais longo da série (130+ horas para 100%).</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Para o jogador brasileiro: a Ubisoft Connect tem promoções recorrentes (Black Friday e Golden Week) que costumam derrubar os preços de Odyssey, Origins e Valhalla para R$ 50-80 — ótimo custo-benefício considerando o conteúdo. O Ubisoft+ Premium (R$ 89,90/mês) dá acesso a todo o catálogo, valendo a pena para quem quer maratonar 2-3 títulos.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: o melhor AC para começar em 2026 depende do gosto — Black Flag (pirata, ação rápida) para iniciantes, Odyssey (RPG vasto) para quem quer 80+ horas, Mirage para quem perdeu o estilo clássico de parkour e stealth.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.ubisoft.com/pt-br/game/assassins-creed" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Ubisoft — Página Oficial Assassin's Creed ↗</a></li>
+            <li><a href="https://www.metacritic.com/game/assassins-creed-shadows/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Metacritic — Assassin's Creed Shadows ↗</a></li>
+            <li><a href="https://howlongtobeat.com/?q=assassin%27s+creed" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">HowLongToBeat — Série Assassin's Creed ↗</a></li>
+            <li><a href="https://www.ubisoft.com/en-us/company/investor-center" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Ubisoft Investor Relations — Q4 2025 ↗</a></li>
+            <li><a href="https://www.ign.com/articles/assassins-creed-shadows-review" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">IGN — Assassin's Creed Shadows Review ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
       <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="ranking-melhor-assassins-creed-2026" />
 
