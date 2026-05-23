@@ -223,6 +223,57 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Aprenda prompt engineering do zero ao avançado: few-shot, chain-of-thought, personas, templates prontos e erros comuns. Guia prático para ChatGPT, Gemini e Claude em 2026.",
     keywords: "prompt engineering 2026, como escrever prompts, few-shot prompting, chain of thought, ChatGPT prompts, Gemini prompts, técnicas prompt, IA produtividade, engenharia de prompt",
   },
+  // ── Leva 1 SEO (04 Mai 2026) ─────────────────────────────────────────────
+  "/post/gpt-5-ia-trabalhador-digital-autonomo-2026": {
+    title: "GPT-5.4 Trabalhador Digital Autônomo: IA Supera Humanos no OSWorld 2026",
+    description: "GPT-5.4 atinge 75% no OSWorld-V e supera a baseline humana de 72,4%. Primeira IA a executar trabalho real no computador: Excel, web, código. Impacto em profissões.",
+    keywords: "GPT-5.4, GPT-5 trabalhador digital, IA autônoma 2026, OSWorld benchmark, IA executa tarefas, agentes IA computador, OpenAI GPT-5, IA mercado de trabalho, IA Excel, automação profissional, IA produtividade, futuro do trabalho IA",
+  },
+  "/post/berkshire-hathaway-greg-abel-2026-sem-buffett": {
+    title: "Berkshire Hathaway 2026: Greg Abel Assume CEO e US$ 397B em Caixa",
+    description: "Greg Abel preside o primeiro encontro da Berkshire sem Buffett. US$ 397 bilhões em caixa, lucro dobrou no Q1 2026 e deepfake de Buffett alerta sobre riscos de IA.",
+    keywords: "Berkshire Hathaway 2026, Greg Abel CEO, Warren Buffett sucessão, Berkshire encontro anual, BRK.B, Berkshire caixa 397 bilhões, deepfake Buffett, holding Berkshire, investimentos value, Charlie Munger legado, BRKB ações, Berkshire investidor brasileiro",
+  },
+  "/post/elden-ring-nightreign-guia-completo-2026": {
+    title: "Elden Ring Nightreign Guia Completo: Classes, Bosses e DLC Forsaken Hollows",
+    description: "Guia de Elden Ring Nightreign 2026: as 10 classes (Nightfarers), 5 Nightlords mais difíceis, mecânicas de Expedição e tudo sobre o DLC Forsaken Hollows.",
+    keywords: "Elden Ring Nightreign, Nightreign guia 2026, Forsaken Hollows DLC, classes Nightfarers, Nightlords bosses, Elden Ring multiplayer, FromSoftware 2026, Expedição Nightreign, Limveld mapa, Bandai Namco, Elden Ring DLC, Nightreign review",
+  },
+  "/post/kaiju-no-8-temporada-2-guia-arco-final-2026": {
+    title: "Kaiju No. 8 Temporada 2: Guia Completo da T2 e Arco Final do Mangá 2026",
+    description: "Kaiju No. 8 Temporada 2 estreou na Spring Season 2026 pela Production I.G. Mangá entrou no arco final segundo Jump Festa. Guia: história, personagens e onde assistir.",
+    keywords: "Kaiju No. 8 Temporada 2, Kaiju No 8 T2, Production I.G anime, Kafka Hibino, Mina Ashiro, Defense Force Japão, arco final Kaiju No 8, Naoya Matsumoto mangá, Spring Season 2026, Crunchyroll Kaiju, monstros anime 2026, Jump Festa anime",
+  },
+  "/post/pnad-desemprego-61-marco-2026": {
+    title: "PNAD Março 2026: Desemprego em 6,1%, Mínima Histórica — Impactos para o Investidor",
+    description: "IBGE: PNAD do trimestre até março 2026 mostra desemprego em 6,1%, 6,6 milhões de desocupados e renda média recorde de R$ 3.722. Impactos em Selic, bolsa e carteira.",
+    keywords: "PNAD março 2026, desemprego Brasil 6,1%, IBGE PNAD trimestral, mercado de trabalho 2026, renda média Brasil, massa salarial 2026, taxa desocupação, impacto Selic desemprego, Copom PNAD, indicadores macroeconômicos, bolsa brasileira PNAD, investidor IBGE",
+  },
+  "/post/copom-selic-1450-corte-abril-2026": {
+    title: "Copom Corta Selic para 14,50% — Segundo Corte do Ciclo em Abril 2026",
+    description: "Copom reduz Selic de 14,75% para 14,50% ao ano. Segundo corte consecutivo. Comunicado pede cautela com choque do petróleo. Impactos em renda fixa, ações e FIIs.",
+    keywords: "Copom Selic 14,50%, corte Selic abril 2026, Banco Central juros, ata Copom 2026, ciclo de corte Selic, taxa Selic Brasil, renda fixa Selic 14,50, impacto Selic ações, FIIs Selic, Tesouro Direto Selic, Galípolo Copom, política monetária 2026",
+  },
+  "/post/petroleo-brent-125-bloqueio-ormuz-2026": {
+    title: "Petróleo Brent Ultrapassa US$ 125 com Bloqueio em Ormuz — Impacto em PETR4",
+    description: "Brent sobe 6,2% e passa de US$ 125/barril após bloqueio naval ao Estreito de Ormuz. Maior nível desde 2008. Impacto na inflação brasileira, PETR4, PRIO3 e aéreas.",
+    keywords: "petróleo Brent 125 dólares, bloqueio Estreito Ormuz, PETR4 alta petróleo, Petrobras 2026, PRIO3 petróleo, choque do petróleo 2026, crise petróleo Oriente Médio, inflação petróleo Brasil, aéreas alta combustível, Trump Irã Ormuz, commodities 2026, Brent recorde",
+  },
+  "/post/anthropic-mythos-modelo-ia-google-investimento-2026": {
+    title: "Google Investe US$ 40 Bilhões na Anthropic e Mythos Chega — Resposta à OpenAI",
+    description: "Google compromete US$ 40 bilhões na Anthropic a valuation de US$ 350B. Anthropic lança Mythos, modelo com cibersegurança avançada restrita a parceiros selecionados.",
+    keywords: "Anthropic Mythos, Google investe Anthropic, Anthropic 40 bilhões, modelo Mythos IA, Claude Anthropic 2026, Anthropic valuation 350 bilhões, Anthropic vs OpenAI, Google IA investimento, cibersegurança IA Mythos, Dario Amodei, modelos IA 2026, Anthropic Google Cloud",
+  },
+  "/post/magnificent-seven-resultados-q1-2026-apple-tim-cook": {
+    title: "Magnificent Seven Q1 2026: MSFT, Meta, Google, Amazon e Tim Cook Sai da Apple",
+    description: "Microsoft, Meta, Alphabet e Amazon reportam Q1 2026 com capex combinado de US$ 620B+ em IA. Tim Cook anuncia saída da Apple em 1º de setembro, sucedido por John Ternus.",
+    keywords: "Magnificent Seven Q1 2026, resultados Big Tech, Tim Cook sai Apple, John Ternus CEO Apple, Microsoft Meta Google Amazon, capex IA 620 bilhões, balanço Big Tech 2026, MSFT Meta GOOGL AMZN, Apple sucessão CEO, ações tech 2026, temporada balanços Wall Street, IA capex 2026",
+  },
+  "/post/super-mario-galaxy-movie-2026-bilheteria": {
+    title: "Super Mario Galaxy: O Filme Abre com US$ 372 Milhões — Review e Análise",
+    description: "Super Mario Galaxy: O Filme estreia com US$ 372 milhões mundiais, Rotten Tomatoes 82%. Rosalina como protagonista, Jack Black como Bowser e o futuro do Nintendo Cinematic Universe.",
+    keywords: "Super Mario Galaxy filme, Super Mario Galaxy bilheteria, Mario Galaxy 2026 review, Rosalina filme Mario, Jack Black Bowser, Nintendo Cinematic Universe, Illumination Nintendo, animação Mario 2026, abertura bilheteria Mario, Chris Pratt Mario, Rotten Tomatoes Mario Galaxy, filme Nintendo 2026",
+  },
 };
 
 const CATEGORY_KEYWORDS: Record<string, string[]> = {
