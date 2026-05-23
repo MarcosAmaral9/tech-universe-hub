@@ -155,6 +155,13 @@ import dragonBallBeerusImg         from "@/assets/dragon-ball-super-beerus-anime
 import pnadDesempregoImg           from "@/assets/pnad-desemprego-marco-2026.webp";
 import copomSelic145Img            from "@/assets/copom-selic-145-abril-2026.webp";
 import petroleoBrent125Img         from "@/assets/petroleo-brent-125-ormuz-2026.webp";
+import agentes_ia_2026Img from "@/assets/agentes-ia-2026.webp";
+import ia_trabalho_2026Img from "@/assets/ia-trabalho-2026.webp";
+import carteira_investimentos_2026Img from "@/assets/carteira-investimentos-2026.webp";
+import one_piece_final_saga_2026Img from "@/assets/one-piece-final-saga-2026.webp";
+import etfs_2026Img from "@/assets/etfs-2026.webp";
+import economia_domestica_2026Img from "@/assets/economia-domestica-2026.webp";
+import tesouro_prefixado_ipca_2026Img from "@/assets/tesouro-prefixado-ipca-2026.webp";
 
 
 export const blogPosts: BlogPost[] = [
@@ -744,7 +751,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "invest",
     subtopic: "carteira",
-    image: carteiraInvestimentosImg,
+    image: carteira_investimentos_2026Img,
     author: "VICIO<CODE>",
     date: "2026-04-13",
     readTime: "15 min",
@@ -762,7 +769,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "invest",
     subtopic: "renda-fixa",
-    image: tesouroDiretoImg,
+    image: tesouro_prefixado_ipca_2026Img,
     author: "VICIO<CODE>",
     date: "2026-04-13",
     readTime: "13 min",
@@ -823,7 +830,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "otaku",
     subtopic: "anime",
-    image: onePieceImg,
+    image: one_piece_final_saga_2026Img,
     author: "VICIO<CODE>",
     date: "2026-04-13",
     readTime: "16 min",
@@ -1893,7 +1900,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "ia",
     subtopic: "trabalho",
-    image: iaTrabalhoProf2026Img,
+    image: ia_trabalho_2026Img,
     author: "VICIO<CODE>",
     date: "2026-02-13",
     readTime: "13 min",
@@ -2210,7 +2217,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "ia",
     subtopic: "agentes",
-    image: agentesIaAutonomosImg,
+    image: agentes_ia_2026Img,
     author: "VICIO<CODE>",
     date: "2026-03-01",
     readTime: "14 min",
@@ -2486,7 +2493,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "invest",
     subtopic: "etfs",
-    image: etfsGuiaCompletoImg,
+    image: etfs_2026Img,
     author: "VICIO<CODE>",
     date: "2026-03-16",
     readTime: "15 min",
@@ -2545,7 +2552,7 @@ export const blogPosts: BlogPost[] = [
     content: "",
     category: "invest",
     subtopic: "economia-domestica",
-    image: economiaDomesticaDicasImg,
+    image: economia_domestica_2026Img,
     author: "VICIO<CODE>",
     date: "2026-03-17",
     readTime: "14 min",
