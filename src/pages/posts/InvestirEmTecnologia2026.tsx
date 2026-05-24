@@ -271,6 +271,31 @@ const InvestirEmTecnologia2026 = () => {
           </p>
         </div>
       </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">Os 'Magnificent Seven' (Apple, Microsoft, Alphabet, Amazon, Nvidia, Meta, Tesla) representaram cerca de 30% do S&P 500 ao fim de 2024 segundo dados do S&P Dow Jones Indices. Para investidores brasileiros, exposição vem via BDRs (B3), ETFs internacionais e contas em corretoras como Avenue, Inter US e XP US.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">ETFs setoriais relevantes: SMH (semicondutores), QQQ (Nasdaq-100), XLK (tecnologia ampla). Custos típicos: corretagem zero em BDRs nas principais corretoras BR, taxa de administração 0,09-0,68% nos ETFs internacionais. IR de 15% sobre ganho líquido em vendas acima de R$ 35 mil/mês em ações; renda variável internacional segue a tabela de ganhos de capital.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: investir em tecnologia é tese de longo prazo, mas concentrar tudo nas 7 grandes em 2026 é apostar que a era da IA continua beneficiando exatamente os mesmos vencedores — o que a história do setor (Yahoo, Nokia, Intel) sugere ser arriscado. Alocação razoável para iniciantes: 60-70% em ETF amplo (IVVB11 ou similar), 20-30% em ETF setorial e até 10% em BDRs individuais.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/bdr.htm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">B3 — BDRs ↗</a></li>
+            <li><a href="https://www.spglobal.com/spdji/en/indices/equity/sp-500/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">S&P Dow Jones — S&P 500 ↗</a></li>
+            <li><a href="https://www.gov.br/receitafederal/pt-br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Receita Federal — Ganhos de Capital ↗</a></li>
+            <li><a href="https://www.invesco.com/qqq-etf/en/home.html" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Nasdaq — QQQ Composition ↗</a></li>
+            <li><a href="https://www.vaneck.com/us/en/investments/semiconductor-etf-smh/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">VanEck — SMH Semiconductors ETF ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 
       <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="investir-em-tecnologia-2026" />

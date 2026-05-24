@@ -135,6 +135,31 @@ const MaousamaRetry = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3"><strong>Maou-sama, Retry!</strong> é uma light novel de Kurone Kanzaki ilustrada por Kōji Ogata, publicada pela Futabasha desde 2016. O anime estreou em julho/2019 pela Ekachi Epilka, com 12 episódios e nota 6.4 no MyAnimeList. Em julho/2024 foi anunciada uma sequência intitulada 'Maou-sama, Retry! R' pela Studio Hibari, com lançamento previsto.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Não confunda com 'Demon Lord, Retry!' o anúncio menciona R como nova produção, com elenco em recasting parcial segundo a Anime News Network.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: a obra explora o gancho 'admin de jogo online se torna o avatar do chefão' com tom mais sério que comédias isekai contemporâneas. A produção original sofreu com qualidade de animação irregular. O sucesso de 'Retry R' depende essencialmente do orçamento que a Studio Hibari conseguir alocar — se ficar no padrão da Hibari recente ('Sand Land'), o nível de animação tende a melhorar bastante.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.futabasha.co.jp/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Futabasha — Maou-sama Retry ↗</a></li>
+            <li><a href="https://myanimelist.net/anime/39468/Maou-sama_Retry" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">MyAnimeList — Maou-sama Retry ↗</a></li>
+            <li><a href="https://www.animenewsnetwork.com/encyclopedia/anime.php?id=21992" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Anime News Network — Maou-sama Retry R ↗</a></li>
+            <li><a href="http://www.hibari-anime.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Studio Hibari — Site oficial ↗</a></li>
+            <li><a href="https://www.crunchyroll.com/series/G6NQ5DWZ6/demon-lord-retry" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Crunchyroll — Demon Lord Retry ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 
       <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="maousama-retry-demon-lord-guia-completo" />

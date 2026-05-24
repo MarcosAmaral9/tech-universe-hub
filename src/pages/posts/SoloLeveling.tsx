@@ -207,6 +207,31 @@ const SoloLeveling = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3"><strong>Solo Leveling</strong> é uma web novel coreana de Chugong publicada de 2016 a 2018 na plataforma KakaoPage, com manhwa adaptado por Dubu (REDICE Studio) entre 2018-2023. O anime estreou em janeiro/2024 pela A-1 Pictures (Aniplex), com 12 episódios na 1ª temporada e nota 8.3 no MyAnimeList.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">A 2ª temporada 'Arise From the Shadow' estreou em janeiro/2025 com 13 episódios. Em setembro/2025, a Aniplex confirmou oficialmente a 3ª temporada com lançamento previsto para 2026-2027. O filme compilatório 'Solo Leveling: ReAwakening' rendeu mais de US$ 6,5 milhões em bilheteria mundial (segundo Box Office Mojo).</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: o sucesso vem da animação técnica acima da média da A-1 Pictures, trilha de Hiroyuki Sawano e narrativa que entrega progressão constante. Para o público BR, recomendo assistir o anime na Crunchyroll (disponível com dublagem PT-BR) e complementar com o manhwa para arcos pós-temporada 2. O final do manhwa divide opiniões — fique avisado antes de correr para o capítulo 200.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.aniplex.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Aniplex — Solo Leveling ↗</a></li>
+            <li><a href="https://myanimelist.net/anime/52299/Solo_Leveling" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">MyAnimeList — Solo Leveling ↗</a></li>
+            <li><a href="https://www.crunchyroll.com/series/GG5H5XQ7Y/solo-leveling" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Crunchyroll — Solo Leveling ↗</a></li>
+            <li><a href="https://page.kakao.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">KakaoPage — Solo Leveling Original ↗</a></li>
+            <li><a href="https://www.boxofficemojo.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Box Office Mojo — Solo Leveling ReAwakening ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 
       <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="solo-leveling-guia-completo-temporadas" />

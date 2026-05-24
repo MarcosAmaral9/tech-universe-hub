@@ -118,6 +118,31 @@ const GuiaCosplay2026 = () => {
           <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
         </div>
       </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">O cosplay no Brasil cresceu de nicho para mercado relevante: a CCXP, principal convenção do país, reúne mais de 280 mil visitantes/ano segundo dados oficiais da Omelete Company. Anime Friends, Anime Jungle e Big Festival completam o circuito nacional com público somado superior a 500 mil.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Os materiais mais usados pela comunidade — EVA, Worbla, contact cement e tintas acrílicas — têm fornecedores nacionais consolidados (Casa do Cosplay, Mundo do EVA, lojas físicas em SP/RJ). Para iniciantes, orçamentos realistas variam entre R$ 100-300 para cosplays básicos e R$ 1.500+ para armaduras competitivas.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: o erro mais comum do iniciante brasileiro é tentar copiar tutoriais americanos sem adaptar para o clima/orçamento local. EVA de 5mm é amplamente disponível em papelarias brasileiras por R$ 8-15 a placa. Comece simples, vista o cosplay completo em casa por 2h antes da convenção e participe da comunidade nas redes — a curva de aprendizado é muito mais rápida assim.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.ccxp.com.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">CCXP — Dados oficiais ↗</a></li>
+            <li><a href="https://www.omelete.com.br/ccxp" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Omelete Company — Cobertura CCXP ↗</a></li>
+            <li><a href="https://www.worbla.com/tutorials" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Worbla — Tutoriais oficiais ↗</a></li>
+            <li><a href="https://www.kamuicosplay.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Kamui Cosplay — Guias técnicos ↗</a></li>
+            <li><a href="https://animefriends.com.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Anime Friends — Site oficial ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 
       <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="guia-cosplay-2026-iniciantes" />

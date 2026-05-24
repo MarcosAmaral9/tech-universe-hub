@@ -124,6 +124,31 @@ const IAGanharDinheiro2026 = () => {
           <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
         </div>
       </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">Plataformas estabelecidas para monetizar habilidades com IA no Brasil incluem: Workana, 99Freelas e Fiverr (gigs internacionais em USD), GetNinjas (mercado interno) e LinkedIn ProFinder. Segundo o relatório 'Future of Jobs 2025' do World Economic Forum, 86% das empresas pesquisadas planejam transformar operações com IA até 2030.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Caminhos com receita real e auditável: criação de conteúdo (YouTube com Adsense, Substack, Patreon), automação de processos para pequenas empresas usando Zapier/Make + LLMs, serviços de tradução assistida por IA e produção de imagens/vídeos com Midjourney, Runway e ElevenLabs.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: o erro mais comum é tratar IA como 'botão mágico de dinheiro'. As pessoas que faturam de fato em 2026 combinam três coisas — uma habilidade prévia (escrita, design, programação), domínio de pelo menos 2 ferramentas de IA e disciplina de prospecção. Receitas iniciais realistas para freelancers BR são R$ 1-3 mil/mês nos primeiros 6 meses, escalando depois conforme reputação.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.weforum.org/reports/the-future-of-jobs-report-2025" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">World Economic Forum — Future of Jobs 2025 ↗</a></li>
+            <li><a href="https://www.workana.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Workana — Plataforma ↗</a></li>
+            <li><a href="https://openai.com/api/pricing/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">OpenAI — API Pricing ↗</a></li>
+            <li><a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Anthropic — Claude for Work ↗</a></li>
+            <li><a href="https://hai.stanford.edu/research/ai-index-report" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Stanford HAI — AI Index Report ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 
       <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="como-usar-ia-ganhar-dinheiro-2026" />

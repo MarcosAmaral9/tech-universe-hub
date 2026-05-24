@@ -254,6 +254,31 @@ Use analogias do dia a dia para explicar conceitos complexos.`}
           Conteúdo baseado em pesquisas publicadas por Google DeepMind, OpenAI e Anthropic. Técnicas referenciadas são de domínio público e amplamente documentadas na literatura de IA.
         </p>
       </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">Técnicas validadas em papers acadêmicos (NeurIPS, ICLR, ACL) e guias oficiais da OpenAI e Anthropic: Chain-of-Thought (Wei et al., 2022), Few-Shot Prompting, Role/Persona Assignment, Self-Consistency e structured output via JSON Schema/Tool Use. Em 2025-2026 ferramentas como Anthropic Workbench e OpenAI Playground oferecem prompt versioning nativo.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Modelos de raciocínio (OpenAI o1/o3, Claude com extended thinking, DeepSeek R1) reduziram a necessidade de Chain-of-Thought explícito — eles geram cadeias de raciocínio internamente. A nova fronteira é 'meta-prompting': pedir ao modelo que avalie e refine seus próprios prompts.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: para o usuário brasileiro avançado, o salto de qualidade vem de quatro práticas — definir contexto explícito (papel, audiência, formato de saída), fornecer 1-3 exemplos quando possível, separar instrução de dado com tags XML e revisar/iterar com follow-ups específicos. Domínio dessas técnicas vale mais que conhecer prompts 'mágicos' viralizados no TikTok.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://platform.openai.com/docs/guides/prompt-engineering" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">OpenAI — Prompt Engineering Guide ↗</a></li>
+            <li><a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Anthropic — Prompt Engineering ↗</a></li>
+            <li><a href="https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">DeepLearning.AI — ChatGPT Prompt Engineering ↗</a></li>
+            <li><a href="https://arxiv.org/abs/2201.11903" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">arXiv — Chain-of-Thought Paper ↗</a></li>
+            <li><a href="https://ai.google.dev/gemini-api/docs/prompting-strategies" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Google — Gemini Prompting Guide ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 
       <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="prompt-engineering-guia-2026" />

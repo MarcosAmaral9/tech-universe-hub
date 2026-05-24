@@ -124,6 +124,31 @@ const IsekaiNonbiriNouka = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3"><strong>Isekai Nonbiri Nouka (Farming Life in Another World)</strong> é uma light novel de Kinosuke Naito com ilustrações de Yasumo, publicada pela Enterbrain/Kadokawa desde 2017. O anime estreou em janeiro/2023 pela Zero-G, com 12 episódios e nota 7.4 no MyAnimeList.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">A 2ª temporada foi anunciada oficialmente no encerramento da 1ª e ainda não tem data confirmada até maio/2026. A franquia inclui 15+ volumes da light novel e adaptação em mangá pela Yasuyuki Tsurugi serializada na Young Ace UP da Kadokawa.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: o título funciona como 'slow life' puro — sem grandes vilões, com foco em construção de comunidade, casamento com diferentes raças (kuro/inferno wolves, anjas, oni) e progressão agrícola. Para quem busca isekai sem combate intenso, é uma das opções mais bem produzidas. Não confunda com 'romcom puro': há violência pontual quando bandidos atacam a vila.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://nonbiri-nouka.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Kadokawa — Isekai Nonbiri Nouka ↗</a></li>
+            <li><a href="https://myanimelist.net/anime/49934/Isekai_Nonbiri_Nouka" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">MyAnimeList — Isekai Nonbiri Nouka ↗</a></li>
+            <li><a href="https://www.animenewsnetwork.com/encyclopedia/anime.php?id=25789" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Anime News Network — Farming Life ↗</a></li>
+            <li><a href="https://www.crunchyroll.com/series/G9VHN9P0J/farming-life-in-another-world" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Crunchyroll — Farming Life in Another World ↗</a></li>
+            <li><a href="https://young-ace-up.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Young Ace UP — Mangá ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 
       <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="isekai-nonbiri-nouka-farming-life-guia" />

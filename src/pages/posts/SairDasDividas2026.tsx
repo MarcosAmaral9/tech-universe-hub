@@ -325,6 +325,31 @@ const SairDasDividas2026 = () => {
         </div>
 
         <BackNavigation category="invest" />
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">Segundo o Mapa da Inadimplência da Serasa Experian (maio/2026), o Brasil tem mais de 73 milhões de inadimplentes. As dívidas mais comuns: cartão de crédito (rotativo cobra 400-450% a.a. segundo BCB), cheque especial (teto regulamentado em 8% a.m. desde 2020), crédito pessoal sem garantia e contas de consumo (água, luz, telefone).</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Programas vigentes: Desenrola Brasil (estendido em 2024 para CPFs até 3 SM), feirões periódicos do Serasa Limpa Nome e Recupera Brasil. Portabilidade de crédito é direito garantido pela Resolução BCB 4.292/2013 — bancos não podem cobrar tarifa para transferir financiamento ativo.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: o método que comprovadamente funciona — usado por consultores certificados e relatado em estudos da Conef/BCB — é o método 'bola de neve' com priorização racional: liste todas as dívidas, negocie as de juros mais altos primeiro (cartão e cheque especial sempre antes de financiamentos longos), corte 100% o uso de cartão até zerar e crie reserva mínima de R$ 1.000 paralelamente para não recorrer ao rotativo na próxima emergência.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.serasa.com.br/limpa-nome-online/blog/mapa-da-inadimplencia-e-renegociacao-de-dividas-no-brasil/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Serasa — Mapa da Inadimplência ↗</a></li>
+            <li><a href="https://www.bcb.gov.br/estatisticas/txjuros" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Banco Central — Taxas de Juros ↗</a></li>
+            <li><a href="https://www.gov.br/fazenda/pt-br/assuntos/desenrola" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Desenrola Brasil — Site oficial ↗</a></li>
+            <li><a href="https://www.gov.br/fazenda/pt-br/assuntos/conef" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">CONEF — Estratégia Nacional de Educação Financeira ↗</a></li>
+            <li><a href="https://www.procon.sp.gov.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Procon-SP — Direitos do Consumidor ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 
         <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="sair-das-dividas-2026-plano-acao" />

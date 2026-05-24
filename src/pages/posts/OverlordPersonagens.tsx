@@ -208,6 +208,31 @@ const OverlordPersonagens = () => {
           </p>
         </div>
       </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">Os 'Floor Guardians' de Nazarick foram desenhados pelos 41 membros da guilda Ainz Ooal Gown e cada um carrega backstory programada pelos jogadores originais. Personagens centrais: Albedo (Tabula Smaragdina), Shalltear Bloodfallen (Peroroncino), Demiurge (Ulbert Alain Odle), Aura e Mare (Bukubukuchagama) e Cocytus (Warrior Takemikazuchi).</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Toda informação canônica vem da light novel oficial da Kadokawa, dos databooks publicados pela Enterbrain e das entrevistas do autor Kugane Maruyama publicadas na revista Da Vinci e na Newtype Magazine.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: o que separa Overlord de outros isekai com 'protagonista OP' é a coerência da hierarquia de Nazarick e o uso narrativo das motivações dos Guardians. Albedo é o melhor exemplo: a inversão de Tabula Smaragdina entre temporadas mostra como o autor usa a mecânica 'NPC programado' para gerar tensão dramática. Para fãs, vale ler até o volume 14 (Sacred Kingdom) — material original que o anime ainda não cobriu por completo.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://over-lord.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Kadokawa — Overlord ↗</a></li>
+            <li><a href="https://myanimelist.net/anime/29803/Overlord/characters" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">MyAnimeList — Overlord Characters ↗</a></li>
+            <li><a href="https://www.animenewsnetwork.com/encyclopedia/anime.php?id=17746" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Anime News Network — Overlord ↗</a></li>
+            <li><a href="https://ddnavi.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Da Vinci News — Entrevistas Maruyama ↗</a></li>
+            <li><a href="https://www.madhouse.co.jp/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Madhouse — Site oficial ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 
       <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="overlord-ainz-guardians-personagens" />

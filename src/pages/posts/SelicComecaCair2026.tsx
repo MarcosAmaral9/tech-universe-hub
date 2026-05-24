@@ -240,6 +240,31 @@ const SelicComecaCair2026 = () => {
       </div>
 
       <BackNavigation category="invest" />
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">Acompanhamento via Atas e Relatórios Trimestrais de Inflação do Copom (Banco Central): em ciclos de queda da Selic, prefixados e Tesouro IPCA+ longos tendem a se valorizar pela marcação a mercado (queda do yield), enquanto pós-fixados (Tesouro Selic, CDB CDI) passam a render menos em termos absolutos. Quedas previstas pelo Boletim Focus geralmente já estão precificadas nos vencimentos longos.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Histórico: no ciclo de queda 2017-2018 (Selic de 14,25% para 6,5%), o Tesouro IPCA+ 2035 valorizou aproximadamente 60% em 24 meses (incluindo cupons). Bolsa (Ibovespa) também se beneficia historicamente — mas com volatilidade alta e correlação imperfeita.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: estratégia equilibrada para ciclo de queda — manter reserva em Tesouro Selic (intacta), travar parte da renda fixa em IPCA+ longo (2035-2045) para capturar marcação a mercado, e aumentar gradualmente exposição em bolsa via ETFs (BOVA11/SMAL11) e FIIs de tijolo descontados. Cuidado: vender Tesouro IPCA+ antes do vencimento expõe à marcação negativa se a Selic subir novamente.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.bcb.gov.br/publicacoes/atascopom" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Banco Central — Atas do Copom ↗</a></li>
+            <li><a href="https://www.tesourodireto.com.br/conteudo-educacional/marcacao-a-mercado.htm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Tesouro Direto — Marcação a Mercado ↗</a></li>
+            <li><a href="https://www.bcb.gov.br/publicacoes/focus" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Banco Central — Boletim Focus ↗</a></li>
+            <li><a href="https://www.b3.com.br/pt_br/market-data-e-indices/indices/indices-amplos/indice-ibovespa-ibovespa-estatisticas-historicas.htm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">B3 — Ibovespa ↗</a></li>
+            <li><a href="https://www.anbima.com.br/pt_br/educar/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">ANBIMA — Educação Financeira ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
       <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="selic-comeca-cair-2026" />
       <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />

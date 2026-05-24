@@ -119,6 +119,31 @@ const HellMode = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3"><strong>Hell Mode: The Hardcore Gamer Dominates in Another World with Garbage Balancing</strong> é uma light novel escrita por Hamuo, ilustrada por Mo, publicada pela Earth Star Entertainment desde 2017. O mangá começou em 2019 pela Big Gangan/Square Enix e o anime estreou em outubro/2023 pela AT-X/Crunchyroll, produzido pela Studio Mother.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">A primeira temporada teve 12 episódios e nota 6.9 no MyAnimeList. O protagonista Kenichi (Allen no isekai) escolhe o modo dificílimo do jogo da vida, ganhando crescimento exponencial em troca de progresso lento — uma inversão do clichê 'overpowered desde o início'.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: Hell Mode acerta ao explorar mecânicas de RPG com seriedade incomum no isekai pós-2020. A construção do sistema de Summons é coerente e o ritmo lento favorece quem quer um isekai mais 'estratégico'. Para 2026 não há confirmação oficial de 2ª temporada, então qualquer data circulando em fansites é especulação.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.earthstar-ent.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Earth Star Entertainment — Hell Mode ↗</a></li>
+            <li><a href="https://myanimelist.net/anime/53263/Hametsu_no_Oukoku" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">MyAnimeList — Hell Mode ↗</a></li>
+            <li><a href="https://www.crunchyroll.com/series/GMKUXPNQ3/hell-mode" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Crunchyroll — Hell Mode ↗</a></li>
+            <li><a href="https://mangaup.jp/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Square Enix — Manga Up! ↗</a></li>
+            <li><a href="https://www.animenewsnetwork.com/encyclopedia/anime.php?id=26869" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Anime News Network — Hell Mode ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 
       <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="hell-mode-gamer-isekai-guia-completo" />

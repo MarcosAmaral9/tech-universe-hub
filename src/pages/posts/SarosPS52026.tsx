@@ -187,6 +187,31 @@ const SarosPS52026 = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3"><strong>Saros</strong> é o próximo jogo da Housemarque, estúdio finlandês adquirido pela Sony em 2021 (Returnal). Anunciado oficialmente em setembro/2024 no State of Play, com lançamento previsto para 2026 exclusivamente para PlayStation 5.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Pouca informação técnica foi divulgada além do CGI trailer inicial. A Housemarque tem track record de roguelites de alta qualidade (Resogun, Nex Machina, Returnal) e Saros deve combinar elementos de roguelite com narrativa expandida, conforme entrevistas do diretor Gregory Louden ao IGN e Push Square.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: o lançamento da Sony de jogos first-party para PS5 em 2025-2026 está enxuto após o reestruturamento de 2024. Saros é uma das poucas exclusividades confirmadas, ao lado de Marathon e Death Stranding 2. Para o consumidor brasileiro, fique atento a preços de PSN BR: jogos AAA da Sony tipicamente lançam por R$ 349,90 (R$ 299,90 em edição standard digital), com upgrade para PS5 padronizado em + R$ 49,90.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://housemarque.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Housemarque — Site oficial ↗</a></li>
+            <li><a href="https://blog.playstation.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">PlayStation Blog — Saros ↗</a></li>
+            <li><a href="https://www.playstation.com/en-us/ps5/state-of-play/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">State of Play September 2024 ↗</a></li>
+            <li><a href="https://www.ign.com/games/saros" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">IGN — Saros coverage ↗</a></li>
+            <li><a href="https://www.pushsquare.com/games/ps5/saros" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Push Square — Saros ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 
       <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="saros-housemarque-ps5-2026" />

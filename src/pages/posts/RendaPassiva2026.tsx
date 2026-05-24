@@ -302,6 +302,31 @@ const RendaPassiva2026 = () => {
             </p>
           </div>
         </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">Modalidades com fluxo regular comprovado no Brasil: dividendos de ações (top pagadoras 2024-2025 segundo XP, BTG e Status Invest incluem Itaúsa, Vale, Petrobras, Taesa, Banco do Brasil), rendimentos de FIIs (média histórica 0,7-0,9% a.m. líquido, isento de IR para PF), JCP (juros sobre capital próprio, IR de 15% na fonte) e cupons de Tesouro IPCA+ com Juros Semestrais.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Dados oficiais: B3 reporta mais de 2,4 milhões de CPFs em FIIs em 2025 e dividend yield médio do IFIX (índice de FIIs) em torno de 11% a.a. nos últimos 12 meses. Já o IDIV (índice de ações boas pagadoras) entregou yield de 8-12% a.a. no mesmo período.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: 'renda passiva' não é mágica — é construção patrimonial. Para receber R$ 3.000/mês de dividendos a yield de 9% a.a., é preciso patrimônio de aproximadamente R$ 400 mil investidos. O caminho realista para 2026-2030 é: 70% em ETFs amplos (IVVB11, BOVA11), 20% em FIIs diversificados e até 10% em ações pagadoras individuais para quem aceita risco maior.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/fundos-de-investimentos-imobiliarios-fii.htm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">B3 — Dados de FIIs ↗</a></li>
+            <li><a href="https://statusinvest.com.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Status Invest — Análise de Dividendos ↗</a></li>
+            <li><a href="https://www.gov.br/receitafederal/pt-br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Receita Federal — Dividendos e JCP ↗</a></li>
+            <li><a href="https://www.tesourodireto.com.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Tesouro Direto — IPCA+ ↗</a></li>
+            <li><a href="https://www.anbima.com.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">ANBIMA — IFIX e IDIV ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 
         <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="renda-passiva-2026-formas-comprovadas" />
