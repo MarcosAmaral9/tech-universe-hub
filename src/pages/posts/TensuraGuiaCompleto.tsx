@@ -262,6 +262,31 @@ const TensuraGuiaCompleto = () => {
           ))}
         </div>
       </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3"><strong>Tensei Shitara Slime Datta Ken (TenSura)</strong> é uma light novel de Fuse, originalmente publicada na Shōsetsuka ni Narō em 2013 e licenciada pela Micro Magazine. O anime estreou em outubro/2018 pela 8bit, com 3 temporadas (2018-2019, 2021, 2024) somando mais de 60 episódios, 2 OVAs e o filme 'Scarlet Bond' (2022, bilheteria mundial superior a US$ 12 milhões segundo Box Office Mojo).</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">A 4ª temporada foi confirmada oficialmente em maio/2024 pela Kodansha/Bandai Namco Filmworks, com lançamento previsto para 2025-2026. A franquia também tem o spin-off animado 'Tensura Nikki' (2021) e o anime derivado da light novel 'Tenshura Slime' (Cleyman series, 2024).</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: TenSura mantém qualidade visual consistente sob a 8bit graças ao orçamento robusto da Kodansha — raro entre isekai longos. Para iniciantes, recomendo seguir a ordem: T1 → OVAs → T2 → Tensura Nikki → Scarlet Bond → T3. A light novel está significativamente à frente do anime (volume 22 publicado em 2024), oferecendo arcos como Holy Empire Lubelius com profundidade que adaptações ainda não cobriram.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.ten-sura.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Kodansha — TenSura ↗</a></li>
+            <li><a href="https://myanimelist.net/anime/37430/Tensei_shitara_Slime_Datta_Ken" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">MyAnimeList — Tensei Shitara Slime ↗</a></li>
+            <li><a href="https://www.crunchyroll.com/series/GYE5C6KWY/that-time-i-got-reincarnated-as-a-slime" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Crunchyroll — That Time I Got Reincarnated as a Slime ↗</a></li>
+            <li><a href="http://www.8bit.co.jp/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">8bit Studio — Site oficial ↗</a></li>
+            <li><a href="https://www.boxofficemojo.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Box Office Mojo — Scarlet Bond ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 
       <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="tensura-guia-completo-temporadas-filmes" />

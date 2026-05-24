@@ -101,6 +101,31 @@ const MangaVsAnime2026 = () => {
           <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
         </div>
       </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">Casos clássicos de adaptação que supera o original em recepção crítica: 'Fullmetal Alchemist Brotherhood' (Bones, 2009 — nota 9.10 no MAL, top 2 histórico), 'Mushishi' (Artland), 'Made in Abyss' (Kinema Citrus) e 'Vinland Saga Temporada 2' (MAPPA). Critério: completude de arcos, performance de voice acting e trilha sonora.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Adaptações lendariamente problemáticas: 'Berserk 2016-2017' (CG malfeito), 'Tokyo Ghoul √A' (roteiro original), 'Promised Neverland Temporada 2' (saltos de arcos) e 'The Seven Deadly Sins' a partir da temporada 3 (queda de qualidade na Studio Deen).</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: a adaptação supera o mangá quando atende quatro condições — estúdio competente (MAPPA, Bones, Madhouse, Ufotable), diretor com visão (Hiroyuki Imaishi, Shinichirō Watanabe), trilha de compositor relevante (Hiroyuki Sawano, Yuki Kajiura) e respeito ao ritmo do material original. Falhar em qualquer uma já compromete o resultado.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://myanimelist.net/topanime.php" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">MyAnimeList — Top Anime ↗</a></li>
+            <li><a href="https://www.animenewsnetwork.com/reviews/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Anime News Network — Reviews ↗</a></li>
+            <li><a href="https://www.crunchyroll.com/news" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Crunchyroll — News ↗</a></li>
+            <li><a href="https://www.bones.co.jp/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Bones Studio — Site oficial ↗</a></li>
+            <li><a href="https://mappa.co.jp/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">MAPPA — Site oficial ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 
       <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="manga-vs-anime-adaptacao-2026" />

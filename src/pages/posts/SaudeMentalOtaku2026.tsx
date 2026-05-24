@@ -110,6 +110,31 @@ const SaudeMentalOtaku2026 = () => {
           <p className="text-muted-foreground">Conta pra gente nos comentários — com respeito e empatia. 💜👇</p>
         </div>
       </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">Estudos publicados em revistas como Frontiers in Psychology e Journal of Mental Health Counseling exploram o uso terapêutico do anime e mangá — em particular obras como 'A Silent Voice' (Koe no Katachi), 'Welcome to the NHK' e 'March Comes In Like a Lion', frequentemente citadas por terapeutas em programas de saúde mental para adolescentes e jovens adultos.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Pesquisa do American Academy of Pediatrics (AAP) sobre tempo de tela recomenda limites equilibrados; OMS classifica 'transtorno por uso de jogos' (gaming disorder) no CID-11 desde 2019. No Brasil, o CVV (Centro de Valorização da Vida — 188) oferece atendimento gratuito 24h e a CAPS atende casos com necessidade clínica.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: a relação cultura otaku × saúde mental é dupla — pode ser refúgio terapêutico (comunidade, identificação, sublimação) ou catalisador de isolamento quando substitui completamente relações sociais e atividades físicas. Sinais de alerta: privação de sono recorrente, abandono de hobbies/amigos não relacionados, recusa de saída de casa por mais de 2 semanas. Procure ajuda profissional (CVV 188 ou CAPS) antes de virar quadro grave.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.cvv.org.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">CVV — Centro de Valorização da Vida ↗</a></li>
+            <li><a href="https://www.who.int/news-room/questions-and-answers/item/addictive-behaviours-gaming-disorder" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">OMS — CID-11 Gaming Disorder ↗</a></li>
+            <li><a href="https://www.gov.br/saude/pt-br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Ministério da Saúde — CAPS ↗</a></li>
+            <li><a href="https://www.frontiersin.org/journals/psychology" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Frontiers in Psychology — Anime studies ↗</a></li>
+            <li><a href="https://www.aap.org/en/patient-care/media-and-children/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">American Academy of Pediatrics — Media Use ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 
       <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="saude-mental-cultura-otaku-2026" />

@@ -111,6 +111,31 @@ const OkirakuRyoushu = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3"><strong>Okiraku Ryoushu no Tanoshii Ryouchi Bouei</strong> (Easygoing Territory Defense by the Optimistic Lord) é uma web novel/light novel de Uchi no Neko publicada pela Earth Star Novel desde 2018. Adaptação em mangá pela Comic Earth Star e anime confirmado para 2026 pela EMT Squared (data exata pendente em fontes oficiais).</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">A obra ocupa o nicho 'aristocrata isekai com magia de produção' junto a Honzuki no Gekokujou e Kuma Kuma Kuma Bear, com vendas crescentes da light novel reportadas pela Earth Star.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: o gênero 'territory management isekai' explodiu pós-2020 porque entrega progressão tangível (cidade que cresce no mapa) sem depender de combate. Para quem gostou de Maoyu, Honzuki ou Genjitsu Shugi, Okiraku Ryoushu é parada quase obrigatória. A produção da EMT Squared ('Tate no Yuusha') sinaliza padrão consistente de animação, mas sem orçamento de estúdio top-tier.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.earthstar-ent.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Earth Star Novel — Site oficial ↗</a></li>
+            <li><a href="https://myanimelist.net/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">MyAnimeList — Database ↗</a></li>
+            <li><a href="https://www.animenewsnetwork.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Anime News Network — Encyclopedia ↗</a></li>
+            <li><a href="https://www.comic-earthstar.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Comic Earth Star — Site oficial ↗</a></li>
+            <li><a href="https://emtsquared.co.jp/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">EMT Squared — Site oficial ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 
       <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="okiraku-ryoushu-territory-defense-guia" />

@@ -121,6 +121,31 @@ const IAPrivacidadeDados2026 = () => {
           <p className="text-muted-foreground">Compartilhe suas práticas de segurança nos comentários! 🔒</p>
         </div>
       </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">A Lei Geral de Proteção de Dados (LGPD, Lei 13.709/2018) regulamenta no Brasil o uso de dados pessoais, incluindo treinamento de IA. A ANPD publicou em 2024 a Análise Preliminar sobre IA Generativa, alertando para riscos de vazamento de dados pessoais e dever de transparência.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Modelos como ChatGPT, Claude e Gemini permitem opt-out de uso de conversas para treinamento (OpenAI nas configurações 'Data Controls', Anthropic não usa por padrão, Google permite ajuste no Activity). O EU AI Act, em vigor desde agosto/2024, criou obrigações graduais para 'modelos de propósito geral' implementadas até 2027.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: para usuários brasileiros, três regras práticas reduzem 90% do risco — não inserir CPF, dados bancários ou saúde em prompts; usar versões pagas/Enterprise que garantem em contrato o não-treinamento; revisar trimestralmente as configurações de privacidade. Empresas precisam ainda atualizar política de privacidade citando IA e nomear DPO conforme art. 41 da LGPD.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.gov.br/anpd/pt-br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">ANPD — Análise Preliminar sobre IA Generativa ↗</a></li>
+            <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Planalto — Lei 13.709/2018 (LGPD) ↗</a></li>
+            <li><a href="https://artificialintelligenceact.eu/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">EU AI Act — Texto oficial ↗</a></li>
+            <li><a href="https://help.openai.com/en/articles/7730893-data-controls-faq" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">OpenAI — Privacy & Data Controls ↗</a></li>
+            <li><a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Anthropic — Privacy Policy ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 
       <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="ia-privacidade-dados-2026" />

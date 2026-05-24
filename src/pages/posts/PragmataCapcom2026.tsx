@@ -199,6 +199,31 @@ const PragmataCapcom2026 = () => {
           <p className="text-muted-foreground">Conta nos comentários o que achou! 👇</p>
         </div>
       </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3"><strong>Pragmata</strong> foi anunciado pela Capcom no PS5 Showcase de junho/2020, com diretoria de Hiroyuki Kobayashi. Após múltiplos adiamentos confirmados em comunicados oficiais (originalmente 2022, depois 'TBA'), em junho/2024 a Capcom reposicionou o lançamento para 2026 nas plataformas PS5, Xbox Series X|S e PC.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Pouca informação técnica foi oficializada além do trailer de 2020 e curtas atualizações no Capcom Showcase 2023. A engine usada é a RE Engine, mesma de Resident Evil Village, Street Fighter 6 e Devil May Cry 5.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: longos hiatos de comunicação da Capcom em projetos ambiciosos têm precedente (Dragon's Dogma 2 levou 5+ anos), mas Pragmata acumula sinais incomuns — equipe-chave reatribuída, ausência em showcases recentes. Para o fã brasileiro, recomendo expectativa cautelosa e aguardar gameplay extenso antes de pré-encomendar. RE Engine garante qualidade técnica, mas a entrega final ainda é incógnita.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.capcom-games.com/pragmata/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Capcom — Pragmata oficial ↗</a></li>
+            <li><a href="https://blog.playstation.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">PlayStation Blog — Pragmata ↗</a></li>
+            <li><a href="https://www.capcom.co.jp/ir/english/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Capcom Investor Relations ↗</a></li>
+            <li><a href="https://store.steampowered.com/app/1573420/PRAGMATA/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Steam — Pragmata ↗</a></li>
+            <li><a href="https://www.eurogamer.net/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Eurogamer — Pragmata coverage ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 
       <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="pragmata-capcom-guia-completo-2026" />

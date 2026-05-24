@@ -250,6 +250,31 @@ const ReservaEmergencia2026 = () => {
             Conteúdo informativo. Não constitui recomendação de investimento. Consulte um profissional certificado antes de tomar decisões financeiras.
           </p>
         </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">Recomendações consensuais da ANBIMA, CVM (Investidor.gov.br), Educação Financeira do Banco Central e principais planejadores CFP: reserva de 6-12 meses de despesas essenciais, em ativos de altíssima liquidez (D+0 ou D+1) e baixo risco. Para autônomos/PJ, a faixa recomendada sobe para 12 meses.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Opções compatíveis em 2026: Tesouro Selic (liquidez D+0 na maioria das corretoras, garantia do governo, IR regressivo), CDBs de liquidez diária de bancos com bom rating (Banco Inter, BTG, Pic Pay com FGC até R$ 250 mil), Caixa Tem com poupança (rendimento inferior mas zero risco de erro operacional).</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: nunca coloque reserva de emergência em ações, FIIs, criptoativos, fundos multimercado ou previdência — todos têm volatilidade ou prazo de resgate incompatível. O erro mais comum dos brasileiros é misturar reserva com investimento de longo prazo no mesmo CDB sem segregação mental. Recomendação prática: deixe reserva em corretora separada (XP, Inter, BTG) com 60% em Tesouro Selic e 40% em CDB liquidez diária para ter resgate disponível mesmo em fins de semana.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.bcb.gov.br/cidadaniafinanceira" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Banco Central — Educação Financeira ↗</a></li>
+            <li><a href="https://www.investidor.gov.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">CVM — Investidor.gov.br ↗</a></li>
+            <li><a href="https://www.tesourodireto.com.br/titulos/tipos-de-tesouro.htm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Tesouro Direto — Tesouro Selic ↗</a></li>
+            <li><a href="https://www.fgc.org.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">FGC — Garantias ↗</a></li>
+            <li><a href="https://www.anbima.com.br/pt_br/educar/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">ANBIMA — Como Investir ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 
         <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="reserva-emergencia-2026-como-montar" />

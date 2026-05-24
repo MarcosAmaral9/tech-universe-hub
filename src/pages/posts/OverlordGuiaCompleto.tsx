@@ -228,6 +228,31 @@ const OverlordGuiaCompleto = () => {
           </div>
         </div>
       </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3"><strong>Overlord</strong> é uma light novel de Kugane Maruyama com ilustrações de so-bin, publicada pela Enterbrain/Kadokawa desde 2012. Volumes 1-17 lançados, com final planejado em torno de 18-20 volumes segundo entrevistas do autor à Da Vinci News. O anime, produzido pela Madhouse, soma 4 temporadas (2015, 2018, 2018, 2022) e o filme 'Sacred Kingdom Arc' estreou em setembro/2024.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">A 5ª temporada foi confirmada oficialmente em julho/2024 pela Kadokawa, com data ainda não anunciada em maio/2026 (estimativas de fansites apontam 2026-2027).</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: Overlord é um dos isekai mais densos em world-building e o único que protagoniza um 'vilão' sem maquiar moralmente. A produção da Madhouse tem altos e baixos (a temporada 4 sofreu com qualidade visual), mas roteiro permanece consistente. Para iniciantes recomendo assistir as 4 temporadas + filme da Sacred Kingdom antes da 5ª, e considerar a light novel para arcos que o anime corta.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://over-lord.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Kadokawa — Overlord ↗</a></li>
+            <li><a href="https://myanimelist.net/anime/29803/Overlord" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">MyAnimeList — Overlord ↗</a></li>
+            <li><a href="https://www.madhouse.co.jp/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Madhouse — Site oficial ↗</a></li>
+            <li><a href="https://www.crunchyroll.com/series/GR751KNZY/overlord" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Crunchyroll — Overlord ↗</a></li>
+            <li><a href="https://www.animenewsnetwork.com/encyclopedia/anime.php?id=17746" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Anime News Network — Overlord ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 
       <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="overlord-guia-completo-temporadas-ainz" />

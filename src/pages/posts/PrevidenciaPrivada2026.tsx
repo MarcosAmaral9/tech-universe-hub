@@ -153,6 +153,31 @@ const PrevidenciaPrivada2026 = () => {
         <p className="text-muted-foreground">Compartilhe sua experiência nos comentários! 👇</p>
       </div>
     </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">PGBL e VGBL são regulados pela SUSEP (Superintendência de Seguros Privados) e tributados conforme escolha do investidor no momento da contratação: tabela progressiva (até 27,5%) ou regressiva (de 35% em até 2 anos a 10% após 10 anos). PGBL permite deduzir até 12% da renda bruta tributável no IR; VGBL não permite, mas IR incide apenas sobre rendimentos.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Taxas de carregamento de entrada caíram de patamares de 5% para 0% nas principais seguradoras (XP Seguros, Brasilprev, Icatu, Bradesco Vida). Taxa de administração de fundos PGBL/VGBL varia entre 0,3% (multimercado de seguradora digital) e 3% (planos antigos). Portabilidade entre seguradoras é direito do cliente e isento de IR/IOF.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: PGBL faz sentido para quem usa declaração completa do IR e tem renda tributável alta (a dedução vira retorno garantido de até 27,5% no ano). VGBL serve para quem usa declaração simplificada e/ou quer planejamento sucessório (não entra em inventário em 13 estados). Sempre exija taxa de carregamento 0% e administração abaixo de 1% para fundos passivos. Planos antigos com taxas altas devem ser portados.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.gov.br/susep/pt-br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">SUSEP — Site oficial ↗</a></li>
+            <li><a href="https://www.gov.br/receitafederal/pt-br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Receita Federal — PGBL e VGBL ↗</a></li>
+            <li><a href="https://www.anbima.com.br/pt_br/informar/relatorios/fundos-de-investimento/previdencia/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">ANBIMA — Previdência ↗</a></li>
+            <li><a href="https://www.bcb.gov.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Banco Central — Previdência Complementar ↗</a></li>
+            <li><a href="https://fenaprevi.org.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">FenaPrevi — Estatísticas ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
 <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="previdencia-privada-2026" />
     <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />

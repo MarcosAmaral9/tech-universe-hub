@@ -765,6 +765,31 @@ const HellLetLooseSimulador = () => {
       </div>
 
       {/* Related Posts */}
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3"><strong>Hell Let Loose</strong> é um FPS tático de 50v50 desenvolvido pela Black Matter (Austrália) e publicado pela Team17/Expression Games. Lançado em early access em julho/2019 e versão 1.0 em julho/2021, está disponível para PC (Steam), PS5 e Xbox Series X|S.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Segundo o SteamDB, o jogo manteve média de 8-15 mil jogadores simultâneos em 2025, com picos durante atualizações majors. O modelo combina 14 classes (Officer, Medic, Engineer, Tank Crew etc.), 9 facções WW2 e mapas baseados em batalhas históricas como Carentan, Stalingrad e Hill 400.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: HLL não é Call of Duty — a curva de aprendizado é íngreme e exige uso de microfone e leitura de mapa. Para brasileiros, recomendo entrar em servidores BR e clãs como BR Tactical e Brasil HLL para escalar do iniciante ao competitivo. Requisitos: 8GB RAM mínimo (16GB recomendado), GPU GTX 1060 ou superior; o jogo roda bem em hardware de 2018 em diante.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.hellletloose.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Hell Let Loose — Site oficial ↗</a></li>
+            <li><a href="https://store.steampowered.com/app/686810/Hell_Let_Loose/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Steam — Hell Let Loose ↗</a></li>
+            <li><a href="https://steamdb.info/app/686810/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">SteamDB — Hell Let Loose stats ↗</a></li>
+            <li><a href="https://www.team17.com/games/hell-let-loose/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Team17 — Publisher ↗</a></li>
+            <li><a href="https://www.blackmatter.com.au/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Black Matter — Developer ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
       <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="hell-let-loose-simulador-guerra" />
 

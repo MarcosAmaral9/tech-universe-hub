@@ -300,6 +300,31 @@ const GuerraIraPetrobras2026 = () => {
           ⚠️ <strong>Aviso Legal:</strong> Este artigo tem caráter exclusivamente informativo e educacional. Não constitui recomendação de investimento. Antes de tomar qualquer decisão financeira, consulte um assessor de investimentos certificado. Investimentos em ações envolvem riscos, incluindo perda do capital investido.
         </p>
       </div>
+      <section className="my-10">
+        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
+            <span className="text-primary">●</span> Análise do Marcos
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">A Petrobras (PETR4/PETR3) é a maior empresa listada na B3 por valor de mercado e responde por mais de 90% da produção de petróleo no Brasil. Tensões geopolíticas no Oriente Médio impactam diretamente o preço do barril Brent, referência usada na política de preços da estatal.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Segundo a Agência Internacional de Energia (IEA) e o relatório STEO da U.S. EIA, o Irã produz aproximadamente 3,3 milhões de barris/dia e o Estreito de Ormuz escoa cerca de 20% do petróleo consumido globalmente. Choques nessa rota historicamente elevam o Brent em 10-30% em janelas de semanas.</p>
+          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: para o investidor brasileiro, Petrobras se beneficia no curto prazo de Brent alto (margens de refino e exportação melhoram), mas o risco político local — paridade de preços, dividendos extraordinários, ingerência via assembleia — continua sendo o principal driver de PETR4 em 2026. Não confunda alta cíclica do petróleo com tese estrutural.</p>
+        </div>
+
+        <div className="bg-muted/30 border border-border rounded-2xl p-6">
+          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
+          <ul className="space-y-2 text-sm">
+            <li><a href="https://www.investidorpetrobras.com.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Petrobras — Relações com Investidores ↗</a></li>
+            <li><a href="https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/cotacoes/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">B3 — Cotação PETR4 ↗</a></li>
+            <li><a href="https://www.eia.gov/outlooks/steo/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">U.S. EIA — Short-Term Energy Outlook ↗</a></li>
+            <li><a href="https://www.iea.org/reports/oil-market-report" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">IEA — Oil Market Report ↗</a></li>
+            <li><a href="https://www.gov.br/cvm/pt-br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">CVM — Comunicados Petrobras ↗</a></li>
+          </ul>
+          <p className="text-xs text-muted-foreground mt-4">
+            Última verificação dos links: maio de 2026.
+          </p>
+        </div>
+      </section>
+
  
       <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="guerra-ira-petroleo-petrobras-2026" />
