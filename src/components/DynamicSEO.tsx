@@ -274,6 +274,57 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Super Mario Galaxy: O Filme estreia com US$ 372 milhões mundiais, Rotten Tomatoes 82%. Rosalina como protagonista, Jack Black como Bowser e o futuro do Nintendo Cinematic Universe.",
     keywords: "Super Mario Galaxy filme, Super Mario Galaxy bilheteria, Mario Galaxy 2026 review, Rosalina filme Mario, Jack Black Bowser, Nintendo Cinematic Universe, Illumination Nintendo, animação Mario 2026, abertura bilheteria Mario, Chris Pratt Mario, Rotten Tomatoes Mario Galaxy, filme Nintendo 2026",
   },
+  // ── Leva 2 SEO (24 Mai 2026) — Posts das expansões editoriais ────────────
+  "/post/sair-das-dividas-2026-plano-acao": {
+    title: "Sair das Dívidas em 2026: Plano de Ação Que Realmente Funciona",
+    description: "Como sair das dívidas em 2026: método bola de neve, negociação com bancos, Desenrola Brasil, juros do rotativo (400%+) e plano de 12 meses passo a passo.",
+    keywords: "sair das dívidas 2026, como quitar dívidas, método bola de neve, Desenrola Brasil 2026, juros rotativo cartão, negociar dívidas Serasa, Limpa Nome, planejamento financeiro dívidas, sair do vermelho, dívida cartão crédito, cheque especial, portabilidade crédito",
+  },
+  "/post/selic-comeca-cair-2026": {
+    title: "Selic Começa a Cair em 2026: O Que Muda nos Seus Investimentos",
+    description: "Selic em queda em 2026: como ajustar carteira de renda fixa, IPCA+ longo, marcação a mercado, oportunidades em prefixados e impacto em Tesouro Selic, CDB e bolsa.",
+    keywords: "Selic cair 2026, queda Selic Copom 2026, IPCA+ marcação a mercado, prefixado Selic baixa, Tesouro Direto Selic queda, ciclo queda juros Brasil, renda fixa Selic 2026, ações Selic cair, FIIs Selic queda, Boletim Focus 2026, ciclo de corte de juros",
+  },
+  "/post/renda-passiva-2026-formas-comprovadas": {
+    title: "Renda Passiva em 2026: 7 Formas Comprovadas de Ganhar Dinheiro",
+    description: "Renda passiva real em 2026 no Brasil: dividendos B3, FIIs (IFIX), JCP, Tesouro IPCA+ com cupons, ETFs e quanto patrimônio precisa para viver de renda.",
+    keywords: "renda passiva 2026, viver de dividendos, melhores FIIs dividendos 2026, IFIX rendimento, IDIV dividendos, JCP imposto, ações pagadoras dividendos, Tesouro IPCA juros semestrais, ETFs renda passiva, quanto investir viver renda, dividendos isentos IR",
+  },
+  "/post/previdencia-privada-pgbl-vgbl-2026": {
+    title: "Previdência Privada 2026: PGBL ou VGBL? Guia Para Decidir Sem Erro",
+    description: "PGBL vs VGBL em 2026: tabela progressiva ou regressiva, dedução IR 12%, taxa de carregamento zero, portabilidade SUSEP e quando vale para sucessão.",
+    keywords: "previdência privada 2026, PGBL ou VGBL, tabela regressiva previdência, deduzir IR PGBL, taxa carregamento zero, portabilidade previdência, SUSEP regulamentação, planejamento sucessório VGBL, melhor previdência 2026, fundo previdenciário, complementar aposentadoria",
+  },
+  "/post/investir-em-tecnologia-2026": {
+    title: "Investir em Tecnologia em 2026: Guia de Setores, BDRs e ETFs",
+    description: "Como investir em tecnologia em 2026: Magnificent Seven, ETFs QQQ, SMH, XLK, BDRs na B3, IVVB11, semicondutores, IA e alocação para o investidor brasileiro.",
+    keywords: "investir tecnologia 2026, BDRs B3 tech, ETF QQQ Nasdaq, SMH semicondutores, XLK tecnologia, Magnificent Seven, IVVB11 S&P 500, Avenue Securities, Nvidia BDR, Apple BDR, Microsoft BDR, ações de IA, investimento internacional",
+  },
+  "/post/ia-para-financas-pessoais-2026": {
+    title: "IA para Finanças Pessoais em 2026: Como Usar Sem Riscos",
+    description: "IA para finanças pessoais em 2026: ChatGPT, Mobills, Organizze, Olivia, categorização automática de gastos, simulações e o que NUNCA compartilhar com a IA.",
+    keywords: "IA finanças pessoais 2026, ChatGPT finanças, Mobills IA, Organizze app, Olivia categorizar gastos, IA controle financeiro, planilha gastos IA, IA investimentos pessoa física, privacidade dados financeiros IA, app finanças 2026, automação financeira",
+  },
+  "/post/como-usar-ia-ganhar-dinheiro-2026": {
+    title: "Como Usar IA para Ganhar Dinheiro em 2026: 15 Formas Reais",
+    description: "15 formas comprovadas de ganhar dinheiro com IA em 2026: freelance Workana, automações Zapier, criação de conteúdo, prompts profissionais e quanto dá para faturar.",
+    keywords: "ganhar dinheiro com IA 2026, freelance IA, Workana IA, automação Zapier IA, monetizar ChatGPT, criar conteúdo IA YouTube, Midjourney freelance, Runway vídeos IA, ElevenLabs voz IA, prompts para vender, renda extra IA, side hustle IA brasil",
+  },
+  "/post/ia-privacidade-dados-2026": {
+    title: "IA e Privacidade de Dados em 2026: Seus Dados Estão Seguros?",
+    description: "IA e privacidade em 2026: LGPD, ANPD, EU AI Act, opt-out ChatGPT e Claude, riscos de vazamento e checklist prático para usuários e empresas.",
+    keywords: "IA privacidade dados 2026, LGPD inteligência artificial, ANPD IA generativa, EU AI Act 2026, opt-out ChatGPT treinamento, Claude privacidade, Gemini coleta dados, DPO empresas IA, proteção dados pessoais IA, vazamento dados ChatGPT, política de privacidade IA",
+  },
+  "/post/modelos-ia-open-source-2026": {
+    title: "Modelos de IA Open Source em 2026: Llama 4, Mistral, DeepSeek e Qwen",
+    description: "Modelos de IA open source em 2026: Llama 4, DeepSeek-V3 e R1, Mistral Large 2, Qwen 2.5, comparativo de performance, custo e quando vale rodar on-premise.",
+    keywords: "IA open source 2026, Llama 4 Meta, DeepSeek R1, DeepSeek V3, Mistral Large 2, Qwen 2.5 Alibaba, Hugging Face leaderboard, LLM arena, modelos IA abertos, fine-tuning Llama, LLM on-premise Brasil, comparativo IA open source",
+  },
+  "/post/ia-transformando-dublagem-animes": {
+    title: "IA na Dublagem de Animes em 2026: Voice Cloning e o Futuro",
+    description: "IA na dublagem em 2026: ElevenLabs, VALL-E, acordo SAG-AFTRA, manifesto SATED, voice cloning ético e por que a dublagem clássica PT-BR não vai sumir.",
+    keywords: "IA dublagem animes 2026, voice cloning IA, ElevenLabs dublagem, VALL-E Microsoft, SAG-AFTRA IA, SATED dubladores Brasil, Wendel Bezerra IA, dublagem PT-BR IA, Crunchyroll IA legendagem, futuro dublagem, IA cinema dublagem",
+  },
 };
 
 const CATEGORY_KEYWORDS: Record<string, string[]> = {
