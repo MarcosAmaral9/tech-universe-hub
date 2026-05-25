@@ -1,22 +1,18 @@
 # Auditoria SEO + E-E-A-T
 
-Gerado em 25/05/2026, 00:14:03.
+Gerado em 25/05/2026, 00:14:34.
 
 ## Resumo
 
-- **Total auditado:** 145 posts (5 sem .tsx mapeado)
+- **Total auditado:** 149 posts (1 sem .tsx mapeado)
 - **OK (passa em tudo):** 0
 - **Bucket A — só SEO faltando:** 0
 - **Bucket B — só E-E-A-T faltando:** 1
 - **Bucket C — só conteúdo <1500 palavras:** 0
-- **Bucket D — múltiplos problemas:** 144
+- **Bucket D — múltiplos problemas:** 148
 
 ### Slugs sem .tsx mapeado
 
-- `pnad-desemprego-61-marco-2026`
-- `copom-selic-1450-corte-abril-2026`
-- `petroleo-brent-125-bloqueio-ormuz-2026`
-- `nintendo-switch-2-guia-completo-2026`
 - `crimson-desert-personagens-kliff-damiane-oongka`
 
 
@@ -38,7 +34,7 @@ Gerado em 25/05/2026, 00:14:03.
 |---|---|---:|---:|---|
 
 
-## Bucket D — Múltiplos problemas — 144
+## Bucket D — Múltiplos problemas — 148
 
 | Slug | Keyword | Palavras | Fontes | Issues |
 |---|---|---:|---:|---|
@@ -46,6 +42,9 @@ Gerado em 25/05/2026, 00:14:03.
 | `berkshire-hathaway-greg-abel-2026-sem-buffett` | Berkshire Hathaway | 826 | 4 | keyword ausente em meta description; keyword ausente em excerpt; ArticleSources com 4 fonte(s) (mínimo 5); apenas ~826 palavras (mínimo 1500) |
 | `elden-ring-nightreign-guia-completo-2026` | Elden Ring Nightreign | 406 | 4 | ArticleSources com 4 fonte(s) (mínimo 5); apenas ~406 palavras (mínimo 1500) |
 | `kaiju-no-8-temporada-2-guia-arco-final-2026` | Kaiju No. 8 | 567 | 4 | ArticleSources com 4 fonte(s) (mínimo 5); apenas ~567 palavras (mínimo 1500) |
+| `pnad-desemprego-61-marco-2026` | PNAD | 475 | 4 | ArticleSources com 4 fonte(s) (mínimo 5); apenas ~475 palavras (mínimo 1500) |
+| `copom-selic-1450-corte-abril-2026` | Copom Selic | 557 | 4 | keyword ausente em excerpt; ArticleSources com 4 fonte(s) (mínimo 5); apenas ~557 palavras (mínimo 1500) |
+| `petroleo-brent-125-bloqueio-ormuz-2026` | petroleo brent bloqueio | 572 | 5 | keyword ausente em meta description; keyword ausente em <h1>; keyword ausente em excerpt; apenas ~572 palavras (mínimo 1500) |
 | `anthropic-mythos-modelo-ia-google-investimento-2026` | anthropic mythos modelo | 832 | 5 | keyword ausente em meta title; apenas ~832 palavras (mínimo 1500) |
 | `magnificent-seven-resultados-q1-2026-apple-tim-cook` | magnificent seven resultados | 860 | 6 | keyword ausente em meta title; keyword ausente em meta description; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~860 palavras (mínimo 1500) |
 | `super-mario-galaxy-movie-2026-bilheteria` | super mario galaxy | 635 | 4 | keyword ausente em excerpt; ArticleSources com 4 fonte(s) (mínimo 5); apenas ~635 palavras (mínimo 1500) |
@@ -54,6 +53,7 @@ Gerado em 25/05/2026, 00:14:03.
 | `gemini-25-pro-vs-claude-ia-2026` | gemini pro claude | 422 | 4 | sem PAGE_META manual; ArticleSources com 4 fonte(s) (mínimo 5); apenas ~422 palavras (mínimo 1500) |
 | `ouro-maxima-historica-2026-como-investir` | ouro maxima historica | 604 | 4 | sem PAGE_META manual; ArticleSources com 4 fonte(s) (mínimo 5); apenas ~604 palavras (mínimo 1500) |
 | `acoes-brasileiras-baratas-valuation-2026` | acoes brasileiras baratas | 600 | 5 | sem PAGE_META manual; keyword ausente em excerpt; apenas ~600 palavras (mínimo 1500) |
+| `nintendo-switch-2-guia-completo-2026` | nintendo switch | 520 | 0 | sem PAGE_META manual; ArticleSources com 0 fonte(s) (mínimo 5); apenas ~520 palavras (mínimo 1500) |
 | `zelda-ocarina-of-time-remake-switch-2-2026` | zelda ocarina of | 604 | 0 | sem PAGE_META manual; keyword ausente em excerpt; ArticleSources com 0 fonte(s) (mínimo 5); apenas ~604 palavras (mínimo 1500) |
 | `naruto-especiais-confirmados-2026` | naruto especiais confirmados | 584 | 0 | sem PAGE_META manual; keyword ausente em excerpt; ArticleSources com 0 fonte(s) (mínimo 5); apenas ~584 palavras (mínimo 1500) |
 | `big-three-naruto-bleach-one-piece-2026` | big three naruto | 911 | 0 | sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; ArticleSources com 0 fonte(s) (mínimo 5); apenas ~911 palavras (mínimo 1500) |

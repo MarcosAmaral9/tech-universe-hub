@@ -1,17 +1,13 @@
 {
-  "generatedAt": "2026-05-25T00:14:03.634Z",
+  "generatedAt": "2026-05-25T00:14:34.174Z",
   "counts": {
     "OK": 0,
     "A": 0,
     "B": 1,
     "C": 0,
-    "D": 144
+    "D": 148
   },
   "missingFiles": [
-    "pnad-desemprego-61-marco-2026",
-    "copom-selic-1450-corte-abril-2026",
-    "petroleo-brent-125-bloqueio-ormuz-2026",
-    "nintendo-switch-2-guia-completo-2026",
     "crimson-desert-personagens-kliff-damiane-oongka"
   ],
   "reports": [
@@ -119,6 +115,87 @@
       "issues": [
         "ArticleSources com 4 fonte(s) (mínimo 5)",
         "apenas ~567 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "pnad-desemprego-61-marco-2026",
+      "file": "PnadDesempregoMarco2026.tsx",
+      "keyword": "PNAD",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 4,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 475,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "ArticleSources com 4 fonte(s) (mínimo 5)",
+        "apenas ~475 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "copom-selic-1450-corte-abril-2026",
+      "file": "CopomSelic145Maio2026.tsx",
+      "keyword": "Copom Selic",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 4,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 557,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em excerpt",
+        "ArticleSources com 4 fonte(s) (mínimo 5)",
+        "apenas ~557 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "petroleo-brent-125-bloqueio-ormuz-2026",
+      "file": "PetroleoBrent125Ormuz2026.tsx",
+      "keyword": "petroleo brent bloqueio",
+      "category": "invest",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 572,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente em <h1>",
+        "keyword ausente em excerpt",
+        "apenas ~572 palavras (mínimo 1500)"
       ]
     },
     {
@@ -339,6 +416,33 @@
         "sem PAGE_META manual",
         "keyword ausente em excerpt",
         "apenas ~600 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "nintendo-switch-2-guia-completo-2026",
+      "file": "NintendoSwitch2Completo2026.tsx",
+      "keyword": "nintendo switch",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 520,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~520 palavras (mínimo 1500)"
       ]
     },
     {
