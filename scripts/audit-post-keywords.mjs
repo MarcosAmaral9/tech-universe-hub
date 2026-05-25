@@ -178,9 +178,15 @@ function auditOne(post, file, source, meta) {
   result.checks.hasEditorial =
     /EditorialTake/.test(source) || /Análise do Marcos/.test(source);
 
-  // Word count (approx — strip JSX tags and import/export blocks)
-  const proseMatch = source.match(/className="prose[^"]*"[^>]*>([\s\S]*?)<\/div>\s*\n\s*<(?:NewsletterSignup|ArticleSources|AuthorBio)/);
-  const proseBlob = proseMatch ? proseMatch[1] : source;
+  // Word count (approx) — slice from first `className="prose` to first
+  // <NewsletterSignup / <ArticleSources / <RelatedPosts / </article>
+  const proseStart = source.indexOf('className="prose');
+  let proseEnd = source.length;
+  for (const marker of ["<NewsletterSignup", "<ArticleSources", "<RelatedPosts", "<CommentSection", "</article"]) {
+    const idx = source.indexOf(marker, proseStart >= 0 ? proseStart : 0);
+    if (idx > 0 && idx < proseEnd) proseEnd = idx;
+  }
+  const proseBlob = proseStart >= 0 ? source.slice(proseStart, proseEnd) : source;
   const text = proseBlob.replace(/<[^>]+>/g, " ").replace(/\{[^}]*\}/g, " ");
   const words = text.split(/\s+/).filter(Boolean).length;
   result.checks.wordCount = words;
