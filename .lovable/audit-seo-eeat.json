@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T00:10:02.516Z",
+  "generatedAt": "2026-05-25T00:10:50.551Z",
   "counts": {
     "OK": 0,
     "A": 0,
@@ -32,13 +32,13 @@
         "articleSourcesCount": 4,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 699,
+        "wordCount": 703,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "ArticleSources com 4 fonte(s) (mínimo 5)",
-        "apenas ~699 palavras (mínimo 1500)"
+        "apenas ~703 palavras (mínimo 1500)"
       ]
     },
     {
@@ -58,7 +58,7 @@
         "articleSourcesCount": 4,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 822,
+        "wordCount": 826,
         "has1500Words": false
       },
       "bucket": "D",
@@ -66,7 +66,7 @@
         "keyword ausente em meta description",
         "keyword ausente em excerpt",
         "ArticleSources com 4 fonte(s) (mínimo 5)",
-        "apenas ~822 palavras (mínimo 1500)"
+        "apenas ~826 palavras (mínimo 1500)"
       ]
     },
     {
@@ -86,13 +86,13 @@
         "articleSourcesCount": 4,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 402,
+        "wordCount": 406,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "ArticleSources com 4 fonte(s) (mínimo 5)",
-        "apenas ~402 palavras (mínimo 1500)"
+        "apenas ~406 palavras (mínimo 1500)"
       ]
     },
     {
@@ -112,13 +112,13 @@
         "articleSourcesCount": 4,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 563,
+        "wordCount": 567,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "ArticleSources com 4 fonte(s) (mínimo 5)",
-        "apenas ~563 palavras (mínimo 1500)"
+        "apenas ~567 palavras (mínimo 1500)"
       ]
     },
     {
@@ -138,7 +138,7 @@
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 928,
+        "wordCount": 832,
         "has1500Words": false
       },
       "bucket": "D",
@@ -149,7 +149,7 @@
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "apenas ~928 palavras (mínimo 1500)"
+        "apenas ~832 palavras (mínimo 1500)"
       ]
     },
     {
@@ -169,7 +169,7 @@
         "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 958,
+        "wordCount": 860,
         "has1500Words": false
       },
       "bucket": "D",
@@ -179,7 +179,7 @@
         "keyword ausente em meta keywords",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "apenas ~958 palavras (mínimo 1500)"
+        "apenas ~860 palavras (mínimo 1500)"
       ]
     },
     {
@@ -199,14 +199,14 @@
         "articleSourcesCount": 4,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 734,
+        "wordCount": 635,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "keyword ausente em excerpt",
         "ArticleSources com 4 fonte(s) (mínimo 5)",
-        "apenas ~734 palavras (mínimo 1500)"
+        "apenas ~635 palavras (mínimo 1500)"
       ]
     },
     {
@@ -226,7 +226,7 @@
         "articleSourcesCount": 4,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 987,
+        "wordCount": 887,
         "has1500Words": false
       },
       "bucket": "D",
@@ -234,7 +234,7 @@
         "sem PAGE_META manual",
         "keyword ausente em excerpt",
         "ArticleSources com 4 fonte(s) (mínimo 5)",
-        "apenas ~987 palavras (mínimo 1500)"
+        "apenas ~887 palavras (mínimo 1500)"
       ]
     },
     {
@@ -254,7 +254,7 @@
         "articleSourcesCount": 4,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 883,
+        "wordCount": 783,
         "has1500Words": false
       },
       "bucket": "D",
@@ -264,7 +264,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 4 fonte(s) (mínimo 5)",
-        "apenas ~883 palavras (mínimo 1500)"
+        "apenas ~783 palavras (mínimo 1500)"
       ]
     },
     {
@@ -284,7 +284,7 @@
         "articleSourcesCount": 4,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 516,
+        "wordCount": 422,
         "has1500Words": false
       },
       "bucket": "D",
@@ -294,7 +294,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 4 fonte(s) (mínimo 5)",
-        "apenas ~516 palavras (mínimo 1500)"
+        "apenas ~422 palavras (mínimo 1500)"
       ]
     },
     {
@@ -314,7 +314,7 @@
         "articleSourcesCount": 4,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 699,
+        "wordCount": 604,
         "has1500Words": false
       },
       "bucket": "D",
@@ -324,7 +324,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 4 fonte(s) (mínimo 5)",
-        "apenas ~699 palavras (mínimo 1500)"
+        "apenas ~604 palavras (mínimo 1500)"
       ]
     },
     {
@@ -332,6 +332,750 @@
       "file": "AcoesBrasileirasBaratas2026.tsx",
       "keyword": "ibovespa recordes mas acoes",
       "category": "invest",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 600,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~600 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "zelda-ocarina-of-time-remake-switch-2-2026",
+      "file": "ZeldaOcarinaRemake2026.tsx",
+      "keyword": "zelda",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 604,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~604 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "naruto-especiais-confirmados-2026",
+      "file": "NarutoEspeciais2026.tsx",
+      "keyword": "naruto",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 584,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~584 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "big-three-naruto-bleach-one-piece-2026",
+      "file": "BigThree2026.tsx",
+      "keyword": "big three",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 911,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~911 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "mcp-model-context-protocol-2026",
+      "file": "McpProtocol2026.tsx",
+      "keyword": "mcp",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 712,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~712 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "claude-cowork-saaspocalypse-2026",
+      "file": "ClaudeCoworkSaas2026.tsx",
+      "keyword": "claude cowork saaspocalypse",
+      "category": "ia",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 785,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~785 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "copom-abril-2026-selic-investimentos",
+      "file": "CopomAbril2026.tsx",
+      "keyword": "copom abril",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 537,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~537 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "dolar-queda-2026-investir-exterior",
+      "file": "DolarQueda2026.tsx",
+      "keyword": "dolar menor nivel 2",
+      "category": "invest",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 547,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~547 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "diablo-iv-lord-of-hatred-2026",
+      "file": "DiabloLordOfHatred2026.tsx",
+      "keyword": "diablo iv",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 566,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~566 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "gta-vi-novembro-2026-vice-city-leonida",
+      "file": "GtaViNovembro2026.tsx",
+      "keyword": "gta vi",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 583,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~583 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "jujutsu-kaisen-temporada-4-culling-game-2026",
+      "file": "JJKTemporada42026.tsx",
+      "keyword": "jujutsu kaisen temporada 4",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 616,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~616 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "frieren-temporada-3-confirmada-2026",
+      "file": "FreierenTemporada32026.tsx",
+      "keyword": "frieren temporada 3 confirmada",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 848,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~848 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "agentes-ia-autonomos-2026",
+      "file": "AgentesIAAutonomos2026.tsx",
+      "keyword": "agentes ia autonomos",
+      "category": "ia",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 541,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~541 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ia-mercado-trabalho-brasil-2026",
+      "file": "IATrabalho2026Impacto.tsx",
+      "keyword": "ia mercado trabalho brasileiro",
+      "category": "ia",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 603,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~603 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ibovespa-recorde-selic-caindo-2026",
+      "file": "IbovespaRecordeSelic2026.tsx",
+      "keyword": "ibovespa recordes selic caindo",
+      "category": "invest",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 625,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~625 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "tesouro-prefixado-vs-ipca-2026",
+      "file": "TesouroPrefixadoVsIPCA2026.tsx",
+      "keyword": "tesouro prefixado ipca+ qual",
+      "category": "invest",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 631,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~631 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "pragmata-capcom-guia-completo-2026",
+      "file": "PragmataCapcom2026.tsx",
+      "keyword": "pragmata",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 723,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~723 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "saros-housemarque-ps5-2026",
+      "file": "SarosPS52026.tsx",
+      "keyword": "saros ps5",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 583,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~583 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "one-piece-elbaf-formato-sazonal-2026",
+      "file": "OnePieceElbaf2026.tsx",
+      "keyword": "one piece arco elbaf",
+      "category": "otaku",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 635,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~635 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "spring-season-animes-abril-2026",
+      "file": "SpringSeasonAnimes2026.tsx",
+      "keyword": "spring season",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 358,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~358 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "negocio-online-ia-2026",
+      "file": "NegocioOnlineIA2026.tsx",
+      "keyword": "criar negocio online ia",
+      "category": "ia",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 404,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~404 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "etfs-b3-guia-completo-2026",
+      "file": "ETFsB3Guia2026.tsx",
+      "keyword": "etfs b3",
+      "category": "invest",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 458,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~458 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "cortar-gastos-2026",
+      "file": "CortarGastos2026.tsx",
+      "keyword": "cortar gastos",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 271,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~271 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "nintendo-switch-2-guia-2026",
+      "file": "NintendoSwitch2Guia2026.tsx",
+      "keyword": "nintendo switch 2",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 331,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "apenas ~331 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "gta-vi-guia-completo-2026",
+      "file": "GTAVI2026.tsx",
+      "keyword": "gta vi",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 520,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "apenas ~520 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "jujutsu-kaisen-guia-completo-2026",
+      "file": "JujutsuKaisenGuia2026.tsx",
+      "keyword": "jujutsu kaisen",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 331,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "apenas ~331 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "lancamentos-games-abril-2026",
+      "file": "LancamentosGamesAbril2026.tsx",
+      "keyword": "lancamentos games abril",
+      "category": "geek",
       "checks": {
         "h1": false,
         "intro": false,
@@ -357,750 +1101,6 @@
       ]
     },
     {
-      "slug": "zelda-ocarina-of-time-remake-switch-2-2026",
-      "file": "ZeldaOcarinaRemake2026.tsx",
-      "keyword": "zelda",
-      "category": "geek",
-      "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": true,
-        "wordCount": 703,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~703 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "naruto-especiais-confirmados-2026",
-      "file": "NarutoEspeciais2026.tsx",
-      "keyword": "naruto",
-      "category": "otaku",
-      "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": true,
-        "wordCount": 676,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~676 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "big-three-naruto-bleach-one-piece-2026",
-      "file": "BigThree2026.tsx",
-      "keyword": "big three",
-      "category": "otaku",
-      "checks": {
-        "h1": true,
-        "intro": false,
-        "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": true,
-        "wordCount": 1011,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~1011 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "mcp-model-context-protocol-2026",
-      "file": "McpProtocol2026.tsx",
-      "keyword": "mcp",
-      "category": "ia",
-      "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": true,
-        "wordCount": 803,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~803 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "claude-cowork-saaspocalypse-2026",
-      "file": "ClaudeCoworkSaas2026.tsx",
-      "keyword": "claude cowork saaspocalypse",
-      "category": "ia",
-      "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": true,
-        "wordCount": 877,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~877 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "copom-abril-2026-selic-investimentos",
-      "file": "CopomAbril2026.tsx",
-      "keyword": "copom abril",
-      "category": "invest",
-      "checks": {
-        "h1": true,
-        "intro": false,
-        "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": true,
-        "wordCount": 633,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~633 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "dolar-queda-2026-investir-exterior",
-      "file": "DolarQueda2026.tsx",
-      "keyword": "dolar menor nivel 2",
-      "category": "invest",
-      "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": true,
-        "wordCount": 642,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~642 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "diablo-iv-lord-of-hatred-2026",
-      "file": "DiabloLordOfHatred2026.tsx",
-      "keyword": "diablo iv",
-      "category": "geek",
-      "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": true,
-        "wordCount": 659,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~659 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "gta-vi-novembro-2026-vice-city-leonida",
-      "file": "GtaViNovembro2026.tsx",
-      "keyword": "gta vi",
-      "category": "geek",
-      "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": true,
-        "wordCount": 683,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~683 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "jujutsu-kaisen-temporada-4-culling-game-2026",
-      "file": "JJKTemporada42026.tsx",
-      "keyword": "jujutsu kaisen temporada 4",
-      "category": "otaku",
-      "checks": {
-        "h1": true,
-        "intro": false,
-        "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": true,
-        "wordCount": 711,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente na introdução",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~711 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "frieren-temporada-3-confirmada-2026",
-      "file": "FreierenTemporada32026.tsx",
-      "keyword": "frieren temporada 3 confirmada",
-      "category": "otaku",
-      "checks": {
-        "h1": true,
-        "intro": false,
-        "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": true,
-        "wordCount": 933,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~933 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "agentes-ia-autonomos-2026",
-      "file": "AgentesIAAutonomos2026.tsx",
-      "keyword": "agentes ia autonomos",
-      "category": "ia",
-      "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 537,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~537 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "ia-mercado-trabalho-brasil-2026",
-      "file": "IATrabalho2026Impacto.tsx",
-      "keyword": "ia mercado trabalho brasileiro",
-      "category": "ia",
-      "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": true,
-        "wordCount": 688,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~688 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "ibovespa-recorde-selic-caindo-2026",
-      "file": "IbovespaRecordeSelic2026.tsx",
-      "keyword": "ibovespa recordes selic caindo",
-      "category": "invest",
-      "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": true,
-        "wordCount": 718,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~718 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "tesouro-prefixado-vs-ipca-2026",
-      "file": "TesouroPrefixadoVsIPCA2026.tsx",
-      "keyword": "tesouro prefixado ipca+ qual",
-      "category": "invest",
-      "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 627,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~627 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "pragmata-capcom-guia-completo-2026",
-      "file": "PragmataCapcom2026.tsx",
-      "keyword": "pragmata",
-      "category": "geek",
-      "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": true,
-        "wordCount": 807,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~807 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "saros-housemarque-ps5-2026",
-      "file": "SarosPS52026.tsx",
-      "keyword": "saros ps5",
-      "category": "geek",
-      "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": true,
-        "wordCount": 668,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~668 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "one-piece-elbaf-formato-sazonal-2026",
-      "file": "OnePieceElbaf2026.tsx",
-      "keyword": "one piece arco elbaf",
-      "category": "otaku",
-      "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": true,
-        "wordCount": 731,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~731 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "spring-season-animes-abril-2026",
-      "file": "SpringSeasonAnimes2026.tsx",
-      "keyword": "spring season",
-      "category": "otaku",
-      "checks": {
-        "h1": true,
-        "intro": false,
-        "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": true,
-        "wordCount": 440,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~440 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "negocio-online-ia-2026",
-      "file": "NegocioOnlineIA2026.tsx",
-      "keyword": "criar negocio online ia",
-      "category": "ia",
-      "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 5,
-        "hasArticleSources": true,
-        "hasEditorial": true,
-        "wordCount": 495,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "apenas ~495 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "etfs-b3-guia-completo-2026",
-      "file": "ETFsB3Guia2026.tsx",
-      "keyword": "etfs b3",
-      "category": "invest",
-      "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 5,
-        "hasArticleSources": true,
-        "hasEditorial": true,
-        "wordCount": 548,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "apenas ~548 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "cortar-gastos-2026",
-      "file": "CortarGastos2026.tsx",
-      "keyword": "cortar gastos",
-      "category": "invest",
-      "checks": {
-        "h1": true,
-        "intro": false,
-        "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 5,
-        "hasArticleSources": true,
-        "hasEditorial": true,
-        "wordCount": 357,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "apenas ~357 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "nintendo-switch-2-guia-2026",
-      "file": "NintendoSwitch2Guia2026.tsx",
-      "keyword": "nintendo switch 2",
-      "category": "geek",
-      "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 5,
-        "hasArticleSources": true,
-        "hasEditorial": true,
-        "wordCount": 424,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em excerpt",
-        "apenas ~424 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "gta-vi-guia-completo-2026",
-      "file": "GTAVI2026.tsx",
-      "keyword": "gta vi",
-      "category": "geek",
-      "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 5,
-        "hasArticleSources": true,
-        "hasEditorial": true,
-        "wordCount": 609,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "apenas ~609 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "jujutsu-kaisen-guia-completo-2026",
-      "file": "JujutsuKaisenGuia2026.tsx",
-      "keyword": "jujutsu kaisen",
-      "category": "otaku",
-      "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 5,
-        "hasArticleSources": true,
-        "hasEditorial": true,
-        "wordCount": 424,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em excerpt",
-        "apenas ~424 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "lancamentos-games-abril-2026",
-      "file": "LancamentosGamesAbril2026.tsx",
-      "keyword": "lancamentos games abril",
-      "category": "geek",
-      "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 5,
-        "hasArticleSources": true,
-        "hasEditorial": true,
-        "wordCount": 786,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "apenas ~786 palavras (mínimo 1500)"
-      ]
-    },
-    {
       "slug": "lego-batman-legacy-2026",
       "file": "AbsoluteBatmanGame2026.tsx",
       "keyword": "lego batman",
@@ -1117,13 +1117,13 @@
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 760,
+        "wordCount": 668,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "apenas ~760 palavras (mínimo 1500)"
+        "apenas ~668 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1143,13 +1143,13 @@
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 785,
+        "wordCount": 692,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "apenas ~785 palavras (mínimo 1500)"
+        "apenas ~692 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1169,7 +1169,7 @@
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 878,
+        "wordCount": 785,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1178,7 +1178,7 @@
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "apenas ~878 palavras (mínimo 1500)"
+        "apenas ~785 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1198,7 +1198,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 510,
+        "wordCount": 514,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1207,7 +1207,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~510 palavras (mínimo 1500)"
+        "apenas ~514 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1227,7 +1227,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 537,
+        "wordCount": 541,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1235,7 +1235,7 @@
         "sem PAGE_META manual",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~537 palavras (mínimo 1500)"
+        "apenas ~541 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1255,7 +1255,7 @@
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 925,
+        "wordCount": 841,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1264,7 +1264,7 @@
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "apenas ~925 palavras (mínimo 1500)"
+        "apenas ~841 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1284,7 +1284,7 @@
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 797,
+        "wordCount": 709,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1293,7 +1293,7 @@
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "apenas ~797 palavras (mínimo 1500)"
+        "apenas ~709 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1313,7 +1313,7 @@
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 749,
+        "wordCount": 665,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1322,7 +1322,7 @@
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "apenas ~749 palavras (mínimo 1500)"
+        "apenas ~665 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1342,7 +1342,7 @@
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 799,
+        "wordCount": 714,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1351,7 +1351,7 @@
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "apenas ~799 palavras (mínimo 1500)"
+        "apenas ~714 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1371,7 +1371,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 1066,
+        "wordCount": 969,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1382,7 +1382,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~1066 palavras (mínimo 1500)"
+        "apenas ~969 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1402,7 +1402,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 956,
+        "wordCount": 871,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1410,7 +1410,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~956 palavras (mínimo 1500)"
+        "apenas ~871 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1430,7 +1430,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 1090,
+        "wordCount": 1004,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1442,7 +1442,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~1090 palavras (mínimo 1500)"
+        "apenas ~1004 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1462,7 +1462,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 956,
+        "wordCount": 872,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1474,7 +1474,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~956 palavras (mínimo 1500)"
+        "apenas ~872 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1494,7 +1494,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 1110,
+        "wordCount": 961,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1506,7 +1506,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~1110 palavras (mínimo 1500)"
+        "apenas ~961 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1526,7 +1526,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 856,
+        "wordCount": 678,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1534,7 +1534,7 @@
         "sem PAGE_META manual",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~856 palavras (mínimo 1500)"
+        "apenas ~678 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1554,7 +1554,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 814,
+        "wordCount": 706,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1566,7 +1566,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~814 palavras (mínimo 1500)"
+        "apenas ~706 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1586,7 +1586,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 688,
+        "wordCount": 535,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1596,7 +1596,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~688 palavras (mínimo 1500)"
+        "apenas ~535 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1616,7 +1616,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 2208,
+        "wordCount": 2123,
         "has1500Words": true
       },
       "bucket": "D",
@@ -1646,7 +1646,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 2444,
+        "wordCount": 2359,
         "has1500Words": true
       },
       "bucket": "D",
@@ -1676,7 +1676,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 2606,
+        "wordCount": 2519,
         "has1500Words": true
       },
       "bucket": "D",
@@ -1706,7 +1706,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 1744,
+        "wordCount": 1661,
         "has1500Words": true
       },
       "bucket": "D",
@@ -1734,7 +1734,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 2316,
+        "wordCount": 2232,
         "has1500Words": true
       },
       "bucket": "D",
@@ -1764,7 +1764,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 702,
+        "wordCount": 706,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1772,7 +1772,7 @@
         "sem PAGE_META manual",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~702 palavras (mínimo 1500)"
+        "apenas ~706 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1792,7 +1792,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 2617,
+        "wordCount": 2529,
         "has1500Words": true
       },
       "bucket": "D",
@@ -1822,7 +1822,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 726,
+        "wordCount": 730,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1832,7 +1832,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~726 palavras (mínimo 1500)"
+        "apenas ~730 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1852,7 +1852,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 513,
+        "wordCount": 422,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1862,7 +1862,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~513 palavras (mínimo 1500)"
+        "apenas ~422 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1882,7 +1882,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 1033,
+        "wordCount": 949,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1893,7 +1893,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~1033 palavras (mínimo 1500)"
+        "apenas ~949 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1913,7 +1913,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 685,
+        "wordCount": 689,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1923,7 +1923,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~685 palavras (mínimo 1500)"
+        "apenas ~689 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1943,7 +1943,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 463,
+        "wordCount": 467,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1954,7 +1954,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~463 palavras (mínimo 1500)"
+        "apenas ~467 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1974,7 +1974,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 1250,
+        "wordCount": 1161,
         "has1500Words": false
       },
       "bucket": "D",
@@ -1985,7 +1985,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~1250 palavras (mínimo 1500)"
+        "apenas ~1161 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2005,7 +2005,7 @@
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1209,
+        "wordCount": 1121,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2014,7 +2014,7 @@
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "apenas ~1209 palavras (mínimo 1500)"
+        "apenas ~1121 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2034,7 +2034,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 501,
+        "wordCount": 505,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2045,7 +2045,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~501 palavras (mínimo 1500)"
+        "apenas ~505 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2065,7 +2065,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 2306,
+        "wordCount": 2218,
         "has1500Words": true
       },
       "bucket": "D",
@@ -2094,7 +2094,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 1059,
+        "wordCount": 975,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2105,7 +2105,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~1059 palavras (mínimo 1500)"
+        "apenas ~975 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2125,7 +2125,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 907,
+        "wordCount": 825,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2136,7 +2136,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~907 palavras (mínimo 1500)"
+        "apenas ~825 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2156,7 +2156,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 932,
+        "wordCount": 853,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2167,7 +2167,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~932 palavras (mínimo 1500)"
+        "apenas ~853 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2187,7 +2187,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 1000,
+        "wordCount": 1004,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2196,7 +2196,7 @@
         "keyword ausente na introdução",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~1000 palavras (mínimo 1500)"
+        "apenas ~1004 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2216,7 +2216,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 1602,
+        "wordCount": 1518,
         "has1500Words": true
       },
       "bucket": "D",
@@ -2246,7 +2246,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 1671,
+        "wordCount": 1587,
         "has1500Words": true
       },
       "bucket": "D",
@@ -2276,14 +2276,14 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 543,
+        "wordCount": 454,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~543 palavras (mínimo 1500)"
+        "apenas ~454 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2303,7 +2303,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 436,
+        "wordCount": 440,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2314,7 +2314,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~436 palavras (mínimo 1500)"
+        "apenas ~440 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2334,7 +2334,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 676,
+        "wordCount": 597,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2346,7 +2346,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~676 palavras (mínimo 1500)"
+        "apenas ~597 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2366,7 +2366,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 546,
+        "wordCount": 468,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2376,7 +2376,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~546 palavras (mínimo 1500)"
+        "apenas ~468 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2396,7 +2396,7 @@
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 823,
+        "wordCount": 723,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2405,7 +2405,7 @@
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "apenas ~823 palavras (mínimo 1500)"
+        "apenas ~723 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2425,14 +2425,14 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 812,
+        "wordCount": 674,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~812 palavras (mínimo 1500)"
+        "apenas ~674 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2452,13 +2452,13 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 710,
+        "wordCount": 571,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~710 palavras (mínimo 1500)"
+        "apenas ~571 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2478,7 +2478,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 332,
+        "wordCount": 336,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2489,7 +2489,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~332 palavras (mínimo 1500)"
+        "apenas ~336 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2509,7 +2509,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 500,
+        "wordCount": 361,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2520,7 +2520,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~500 palavras (mínimo 1500)"
+        "apenas ~361 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2540,7 +2540,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 661,
+        "wordCount": 397,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2549,7 +2549,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~661 palavras (mínimo 1500)"
+        "apenas ~397 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2569,7 +2569,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 604,
+        "wordCount": 495,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2579,7 +2579,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~604 palavras (mínimo 1500)"
+        "apenas ~495 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2599,7 +2599,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 569,
+        "wordCount": 383,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2609,7 +2609,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~569 palavras (mínimo 1500)"
+        "apenas ~383 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2629,14 +2629,14 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 463,
+        "wordCount": 315,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~463 palavras (mínimo 1500)"
+        "apenas ~315 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2656,7 +2656,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 628,
+        "wordCount": 390,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2668,7 +2668,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~628 palavras (mínimo 1500)"
+        "apenas ~390 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2688,7 +2688,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 590,
+        "wordCount": 292,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2697,7 +2697,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~590 palavras (mínimo 1500)"
+        "apenas ~292 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2717,7 +2717,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 159,
+        "wordCount": 164,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2727,7 +2727,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~159 palavras (mínimo 1500)"
+        "apenas ~164 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2747,7 +2747,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 598,
+        "wordCount": 519,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2757,7 +2757,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~598 palavras (mínimo 1500)"
+        "apenas ~519 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2777,7 +2777,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 584,
+        "wordCount": 505,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2785,7 +2785,7 @@
         "sem PAGE_META manual",
         "keyword ausente na introdução",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~584 palavras (mínimo 1500)"
+        "apenas ~505 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2805,7 +2805,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 564,
+        "wordCount": 484,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2815,7 +2815,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~564 palavras (mínimo 1500)"
+        "apenas ~484 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2835,7 +2835,7 @@
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1013,
+        "wordCount": 924,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2844,7 +2844,7 @@
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "apenas ~1013 palavras (mínimo 1500)"
+        "apenas ~924 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2864,7 +2864,7 @@
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1188,
+        "wordCount": 1102,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2873,7 +2873,7 @@
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "apenas ~1188 palavras (mínimo 1500)"
+        "apenas ~1102 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2893,7 +2893,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 579,
+        "wordCount": 498,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2903,7 +2903,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~579 palavras (mínimo 1500)"
+        "apenas ~498 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2923,7 +2923,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 511,
+        "wordCount": 515,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2934,7 +2934,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~511 palavras (mínimo 1500)"
+        "apenas ~515 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2954,7 +2954,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 689,
+        "wordCount": 611,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2964,7 +2964,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~689 palavras (mínimo 1500)"
+        "apenas ~611 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2984,7 +2984,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 649,
+        "wordCount": 571,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2993,7 +2993,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~649 palavras (mínimo 1500)"
+        "apenas ~571 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3013,7 +3013,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 366,
+        "wordCount": 370,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3023,7 +3023,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~366 palavras (mínimo 1500)"
+        "apenas ~370 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3043,7 +3043,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 594,
+        "wordCount": 516,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3053,7 +3053,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~594 palavras (mínimo 1500)"
+        "apenas ~516 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3073,7 +3073,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 337,
+        "wordCount": 341,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3081,7 +3081,7 @@
         "sem PAGE_META manual",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~337 palavras (mínimo 1500)"
+        "apenas ~341 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3101,14 +3101,14 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 604,
+        "wordCount": 525,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~604 palavras (mínimo 1500)"
+        "apenas ~525 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3128,7 +3128,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 520,
+        "wordCount": 443,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3137,7 +3137,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~520 palavras (mínimo 1500)"
+        "apenas ~443 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3157,7 +3157,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 532,
+        "wordCount": 452,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3167,7 +3167,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~532 palavras (mínimo 1500)"
+        "apenas ~452 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3187,7 +3187,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 717,
+        "wordCount": 638,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3197,7 +3197,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~717 palavras (mínimo 1500)"
+        "apenas ~638 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3217,7 +3217,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 715,
+        "wordCount": 626,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3227,7 +3227,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~715 palavras (mínimo 1500)"
+        "apenas ~626 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3247,7 +3247,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 800,
+        "wordCount": 718,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3258,7 +3258,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~800 palavras (mínimo 1500)"
+        "apenas ~718 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3278,7 +3278,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 471,
+        "wordCount": 475,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3286,7 +3286,7 @@
         "sem PAGE_META manual",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~471 palavras (mínimo 1500)"
+        "apenas ~475 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3306,7 +3306,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 837,
+        "wordCount": 841,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3314,7 +3314,7 @@
         "sem PAGE_META manual",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~837 palavras (mínimo 1500)"
+        "apenas ~841 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3334,7 +3334,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 724,
+        "wordCount": 728,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3343,7 +3343,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~724 palavras (mínimo 1500)"
+        "apenas ~728 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3363,7 +3363,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 679,
+        "wordCount": 683,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3373,7 +3373,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~679 palavras (mínimo 1500)"
+        "apenas ~683 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3393,7 +3393,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 764,
+        "wordCount": 768,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3401,7 +3401,7 @@
         "sem PAGE_META manual",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~764 palavras (mínimo 1500)"
+        "apenas ~768 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3421,7 +3421,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 595,
+        "wordCount": 599,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3429,7 +3429,7 @@
         "sem PAGE_META manual",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~595 palavras (mínimo 1500)"
+        "apenas ~599 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3449,7 +3449,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 452,
+        "wordCount": 456,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3457,7 +3457,7 @@
         "sem PAGE_META manual",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~452 palavras (mínimo 1500)"
+        "apenas ~456 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3477,7 +3477,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 702,
+        "wordCount": 624,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3485,7 +3485,7 @@
         "keyword ausente em meta description",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~702 palavras (mínimo 1500)"
+        "apenas ~624 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3505,7 +3505,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 639,
+        "wordCount": 552,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3515,7 +3515,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~639 palavras (mínimo 1500)"
+        "apenas ~552 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3535,7 +3535,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 715,
+        "wordCount": 636,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3543,7 +3543,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~715 palavras (mínimo 1500)"
+        "apenas ~636 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3563,7 +3563,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 617,
+        "wordCount": 529,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3573,7 +3573,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~617 palavras (mínimo 1500)"
+        "apenas ~529 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3593,7 +3593,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 495,
+        "wordCount": 499,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3604,7 +3604,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~495 palavras (mínimo 1500)"
+        "apenas ~499 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3624,7 +3624,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 667,
+        "wordCount": 564,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3632,7 +3632,7 @@
         "sem PAGE_META manual",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~667 palavras (mínimo 1500)"
+        "apenas ~564 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3652,7 +3652,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 830,
+        "wordCount": 751,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3661,7 +3661,7 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~830 palavras (mínimo 1500)"
+        "apenas ~751 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3681,7 +3681,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 742,
+        "wordCount": 405,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3689,7 +3689,7 @@
         "sem PAGE_META manual",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~742 palavras (mínimo 1500)"
+        "apenas ~405 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3709,7 +3709,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 4141,
+        "wordCount": 4145,
         "has1500Words": true
       },
       "bucket": "B",
@@ -3735,14 +3735,14 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 343,
+        "wordCount": 347,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~343 palavras (mínimo 1500)"
+        "apenas ~347 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3762,14 +3762,14 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 629,
+        "wordCount": 633,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~629 palavras (mínimo 1500)"
+        "apenas ~633 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3789,14 +3789,14 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 1295,
+        "wordCount": 1215,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~1295 palavras (mínimo 1500)"
+        "apenas ~1215 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3816,14 +3816,14 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 1439,
+        "wordCount": 1361,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~1439 palavras (mínimo 1500)"
+        "apenas ~1361 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3843,7 +3843,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 800,
+        "wordCount": 804,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3852,7 +3852,7 @@
         "keyword ausente na introdução",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~800 palavras (mínimo 1500)"
+        "apenas ~804 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3872,7 +3872,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 738,
+        "wordCount": 660,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3880,7 +3880,7 @@
         "sem PAGE_META manual",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~738 palavras (mínimo 1500)"
+        "apenas ~660 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3900,7 +3900,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 916,
+        "wordCount": 920,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3911,7 +3911,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~916 palavras (mínimo 1500)"
+        "apenas ~920 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3931,7 +3931,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 679,
+        "wordCount": 683,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3942,7 +3942,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~679 palavras (mínimo 1500)"
+        "apenas ~683 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3962,7 +3962,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 662,
+        "wordCount": 666,
         "has1500Words": false
       },
       "bucket": "D",
@@ -3973,7 +3973,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~662 palavras (mínimo 1500)"
+        "apenas ~666 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3993,7 +3993,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 635,
+        "wordCount": 639,
         "has1500Words": false
       },
       "bucket": "D",
@@ -4004,7 +4004,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~635 palavras (mínimo 1500)"
+        "apenas ~639 palavras (mínimo 1500)"
       ]
     },
     {
@@ -4024,13 +4024,13 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 1389,
+        "wordCount": 1307,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~1389 palavras (mínimo 1500)"
+        "apenas ~1307 palavras (mínimo 1500)"
       ]
     },
     {
@@ -4050,7 +4050,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": false,
-        "wordCount": 585,
+        "wordCount": 589,
         "has1500Words": false
       },
       "bucket": "D",
@@ -4062,7 +4062,7 @@
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
-        "apenas ~585 palavras (mínimo 1500)"
+        "apenas ~589 palavras (mínimo 1500)"
       ]
     },
     {
@@ -4082,7 +4082,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 796,
+        "wordCount": 711,
         "has1500Words": false
       },
       "bucket": "D",
@@ -4092,7 +4092,7 @@
         "keyword ausente em <h1>",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~796 palavras (mínimo 1500)"
+        "apenas ~711 palavras (mínimo 1500)"
       ]
     },
     {
@@ -4112,13 +4112,13 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 753,
+        "wordCount": 672,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~753 palavras (mínimo 1500)"
+        "apenas ~672 palavras (mínimo 1500)"
       ]
     },
     {
@@ -4138,13 +4138,13 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 866,
+        "wordCount": 782,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~866 palavras (mínimo 1500)"
+        "apenas ~782 palavras (mínimo 1500)"
       ]
     },
     {
@@ -4164,13 +4164,13 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 909,
+        "wordCount": 821,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~909 palavras (mínimo 1500)"
+        "apenas ~821 palavras (mínimo 1500)"
       ]
     },
     {
@@ -4190,7 +4190,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 652,
+        "wordCount": 566,
         "has1500Words": false
       },
       "bucket": "D",
@@ -4199,7 +4199,7 @@
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~652 palavras (mínimo 1500)"
+        "apenas ~566 palavras (mínimo 1500)"
       ]
     },
     {
@@ -4219,13 +4219,13 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 790,
+        "wordCount": 705,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~790 palavras (mínimo 1500)"
+        "apenas ~705 palavras (mínimo 1500)"
       ]
     }
   ]
