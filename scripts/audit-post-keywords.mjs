@@ -312,7 +312,7 @@ Gerado em ${new Date().toLocaleString("pt-BR")}.
 
 - **Total auditado:** ${reports.length} posts (${missingFiles.length} sem .tsx mapeado)
 - **PAGE_META manual presente:** ${has("pageMetaExists")} / ${reports.length}
-- **Keyword no `<h1>`:** ${has("h1")} / ${reports.length}
+- **Keyword no \`<h1>\`:** ${has("h1")} / ${reports.length}
 - **Keyword na introdução:** ${has("intro")} / ${reports.length}
 - **Keyword no excerpt:** ${has("excerpt")} / ${reports.length}
 - **AuthorBio:** ${has("hasAuthorBio")} / ${reports.length}
