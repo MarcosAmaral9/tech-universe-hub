@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-05-25T00:12:27.492Z",
+  "generatedAt": "2026-05-25T00:12:41.372Z",
   "counts": {
     "OK": 0,
     "A": 0,
-    "B": 1,
+    "B": 0,
     "C": 0,
-    "D": 144
+    "D": 145
   },
   "missingFiles": [
     "pnad-desemprego-61-marco-2026",
@@ -124,7 +124,7 @@
     {
       "slug": "anthropic-mythos-modelo-ia-google-investimento-2026",
       "file": "AnthropicMythosGoogle2026.tsx",
-      "keyword": "google investe us 40",
+      "keyword": "anthropic mythos modelo",
       "category": "ia",
       "checks": {
         "h1": false,
@@ -155,10 +155,10 @@
     {
       "slug": "magnificent-seven-resultados-q1-2026-apple-tim-cook",
       "file": "MagnificentSevenResultados2026.tsx",
-      "keyword": "semana mag",
+      "keyword": "magnificent seven resultados",
       "category": "invest",
       "checks": {
-        "h1": true,
+        "h1": false,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": true,
@@ -177,6 +177,7 @@
         "keyword ausente em meta title",
         "keyword ausente em meta description",
         "keyword ausente em meta keywords",
+        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "apenas ~860 palavras (mínimo 1500)"
@@ -240,7 +241,7 @@
     {
       "slug": "openai-bilhoes-financiamento-record-2026",
       "file": "OpenAiFinanciamento2026.tsx",
-      "keyword": "openai capta us 40",
+      "keyword": "openai bilhoes financiamento",
       "category": "ia",
       "checks": {
         "h1": false,
@@ -270,7 +271,7 @@
     {
       "slug": "gemini-25-pro-vs-claude-ia-2026",
       "file": "Gemini25ProVsClaude2026.tsx",
-      "keyword": "gemini 2.5 pro claude",
+      "keyword": "gemini pro claude",
       "category": "ia",
       "checks": {
         "h1": false,
@@ -330,7 +331,7 @@
     {
       "slug": "acoes-brasileiras-baratas-valuation-2026",
       "file": "AcoesBrasileirasBaratas2026.tsx",
-      "keyword": "ibovespa recordes mas acoes",
+      "keyword": "acoes brasileiras baratas",
       "category": "invest",
       "checks": {
         "h1": false,
@@ -359,11 +360,11 @@
     {
       "slug": "zelda-ocarina-of-time-remake-switch-2-2026",
       "file": "ZeldaOcarinaRemake2026.tsx",
-      "keyword": "zelda",
+      "keyword": "zelda ocarina of",
       "category": "geek",
       "checks": {
-        "h1": true,
-        "intro": true,
+        "h1": false,
+        "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -379,6 +380,8 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~604 palavras (mínimo 1500)"
@@ -387,12 +390,12 @@
     {
       "slug": "naruto-especiais-confirmados-2026",
       "file": "NarutoEspeciais2026.tsx",
-      "keyword": "naruto",
+      "keyword": "naruto especiais confirmados",
       "category": "otaku",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -407,6 +410,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~584 palavras (mínimo 1500)"
       ]
@@ -414,10 +420,10 @@
     {
       "slug": "big-three-naruto-bleach-one-piece-2026",
       "file": "BigThree2026.tsx",
-      "keyword": "big three",
+      "keyword": "big three naruto",
       "category": "otaku",
       "checks": {
-        "h1": true,
+        "h1": false,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -434,6 +440,7 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -443,12 +450,12 @@
     {
       "slug": "mcp-model-context-protocol-2026",
       "file": "McpProtocol2026.tsx",
-      "keyword": "mcp",
+      "keyword": "mcp model context",
       "category": "ia",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -463,6 +470,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~712 palavras (mínimo 1500)"
       ]
@@ -500,10 +510,10 @@
     {
       "slug": "copom-abril-2026-selic-investimentos",
       "file": "CopomAbril2026.tsx",
-      "keyword": "copom abril",
+      "keyword": "copom abril selic",
       "category": "invest",
       "checks": {
-        "h1": true,
+        "h1": false,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -520,6 +530,7 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -529,7 +540,7 @@
     {
       "slug": "dolar-queda-2026-investir-exterior",
       "file": "DolarQueda2026.tsx",
-      "keyword": "dolar menor nivel 2",
+      "keyword": "dolar queda investir",
       "category": "invest",
       "checks": {
         "h1": false,
@@ -559,12 +570,12 @@
     {
       "slug": "diablo-iv-lord-of-hatred-2026",
       "file": "DiabloLordOfHatred2026.tsx",
-      "keyword": "diablo iv",
+      "keyword": "diablo iv lord",
       "category": "geek",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -579,6 +590,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~566 palavras (mínimo 1500)"
       ]
@@ -586,12 +600,12 @@
     {
       "slug": "gta-vi-novembro-2026-vice-city-leonida",
       "file": "GtaViNovembro2026.tsx",
-      "keyword": "gta vi",
+      "keyword": "gta vi novembro",
       "category": "geek",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -606,6 +620,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~583 palavras (mínimo 1500)"
       ]
@@ -613,7 +630,7 @@
     {
       "slug": "jujutsu-kaisen-temporada-4-culling-game-2026",
       "file": "JJKTemporada42026.tsx",
-      "keyword": "jujutsu kaisen temporada 4",
+      "keyword": "jujutsu kaisen temporada",
       "category": "otaku",
       "checks": {
         "h1": true,
@@ -641,10 +658,10 @@
     {
       "slug": "frieren-temporada-3-confirmada-2026",
       "file": "FreierenTemporada32026.tsx",
-      "keyword": "frieren temporada 3 confirmada",
+      "keyword": "frieren temporada confirmada",
       "category": "otaku",
       "checks": {
-        "h1": true,
+        "h1": false,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -661,6 +678,7 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -701,7 +719,7 @@
     {
       "slug": "ia-mercado-trabalho-brasil-2026",
       "file": "IATrabalho2026Impacto.tsx",
-      "keyword": "ia mercado trabalho brasileiro",
+      "keyword": "ia mercado trabalho",
       "category": "ia",
       "checks": {
         "h1": false,
@@ -731,7 +749,7 @@
     {
       "slug": "ibovespa-recorde-selic-caindo-2026",
       "file": "IbovespaRecordeSelic2026.tsx",
-      "keyword": "ibovespa recordes selic caindo",
+      "keyword": "ibovespa recorde selic",
       "category": "invest",
       "checks": {
         "h1": false,
@@ -761,7 +779,7 @@
     {
       "slug": "tesouro-prefixado-vs-ipca-2026",
       "file": "TesouroPrefixadoVsIPCA2026.tsx",
-      "keyword": "tesouro prefixado ipca+ qual",
+      "keyword": "tesouro prefixado ipca",
       "category": "invest",
       "checks": {
         "h1": false,
@@ -792,12 +810,12 @@
     {
       "slug": "pragmata-capcom-guia-completo-2026",
       "file": "PragmataCapcom2026.tsx",
-      "keyword": "pragmata",
+      "keyword": "pragmata capcom",
       "category": "geek",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -812,6 +830,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~723 palavras (mínimo 1500)"
       ]
@@ -819,7 +840,7 @@
     {
       "slug": "saros-housemarque-ps5-2026",
       "file": "SarosPS52026.tsx",
-      "keyword": "saros ps5",
+      "keyword": "saros housemarque ps5",
       "category": "geek",
       "checks": {
         "h1": false,
@@ -849,7 +870,7 @@
     {
       "slug": "one-piece-elbaf-formato-sazonal-2026",
       "file": "OnePieceElbaf2026.tsx",
-      "keyword": "one piece arco elbaf",
+      "keyword": "one piece elbaf",
       "category": "otaku",
       "checks": {
         "h1": false,
@@ -879,10 +900,10 @@
     {
       "slug": "spring-season-animes-abril-2026",
       "file": "SpringSeasonAnimes2026.tsx",
-      "keyword": "spring season",
+      "keyword": "spring season animes",
       "category": "otaku",
       "checks": {
-        "h1": true,
+        "h1": false,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -899,6 +920,7 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -908,7 +930,7 @@
     {
       "slug": "negocio-online-ia-2026",
       "file": "NegocioOnlineIA2026.tsx",
-      "keyword": "criar negocio online ia",
+      "keyword": "negocio online ia",
       "category": "ia",
       "checks": {
         "h1": false,
@@ -994,7 +1016,7 @@
     {
       "slug": "nintendo-switch-2-guia-2026",
       "file": "NintendoSwitch2Guia2026.tsx",
-      "keyword": "nintendo switch 2",
+      "keyword": "nintendo switch",
       "category": "geek",
       "checks": {
         "h1": true,
@@ -1103,12 +1125,12 @@
     {
       "slug": "lego-batman-legacy-2026",
       "file": "AbsoluteBatmanGame2026.tsx",
-      "keyword": "lego batman",
+      "keyword": "lego batman legacy",
       "category": "geek",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -1123,18 +1145,21 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "apenas ~668 palavras (mínimo 1500)"
       ]
     },
     {
       "slug": "rezero-temporada-4-guia-2026",
       "file": "ReZeroTemporada4.tsx",
-      "keyword": "re",
+      "keyword": "rezero temporada",
       "category": "otaku",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -1149,6 +1174,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "apenas ~692 palavras (mínimo 1500)"
       ]
     },
@@ -1184,11 +1212,11 @@
     {
       "slug": "crimson-desert-patches-atualizacoes-2026",
       "file": "CrimsonDesertPatches.tsx",
-      "keyword": "crimson desert",
+      "keyword": "crimson desert patches",
       "category": "geek",
       "checks": {
-        "h1": true,
-        "intro": true,
+        "h1": false,
+        "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -1204,6 +1232,8 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
@@ -1213,12 +1243,12 @@
     {
       "slug": "crimson-desert-vendas-review-completo-2026",
       "file": "CrimsonDesertVendasReview.tsx",
-      "keyword": "crimson desert",
+      "keyword": "crimson desert vendas",
       "category": "geek",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -1233,6 +1263,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~541 palavras (mínimo 1500)"
@@ -1241,7 +1274,7 @@
     {
       "slug": "gemini-2-5-pro-vs-gpt-4o-2026",
       "file": "Gemini25ProVsGPT4o.tsx",
-      "keyword": "gemini 2.5 pro gpt",
+      "keyword": "gemini pro gpt",
       "category": "ia",
       "checks": {
         "h1": false,
@@ -1270,7 +1303,7 @@
     {
       "slug": "ia-brasil-adocao-2026",
       "file": "IABrasilAdocao2026.tsx",
-      "keyword": "ia brasil",
+      "keyword": "ia brasil adocao",
       "category": "ia",
       "checks": {
         "h1": false,
@@ -1299,7 +1332,7 @@
     {
       "slug": "inflacao-proteger-investimentos-2026",
       "file": "InflacaoProtegerInvestimentos2026.tsx",
-      "keyword": "inflacao acima meta",
+      "keyword": "inflacao proteger investimentos",
       "category": "invest",
       "checks": {
         "h1": false,
@@ -1416,7 +1449,7 @@
     {
       "slug": "poupanca-vs-cdb-tesouro-2026",
       "file": "PoupancaVsCDBTesouro2026.tsx",
-      "keyword": "poupanca cdb tesouro direto",
+      "keyword": "poupanca cdb tesouro",
       "category": "invest",
       "checks": {
         "h1": false,
@@ -1448,7 +1481,7 @@
     {
       "slug": "reserva-emergencia-2026-como-montar",
       "file": "ReservaEmergencia2026.tsx",
-      "keyword": "montar sua reserva emergencia",
+      "keyword": "reserva emergencia montar",
       "category": "invest",
       "checks": {
         "h1": false,
@@ -1512,12 +1545,12 @@
     {
       "slug": "bitcoin-2026-vale-comprar",
       "file": "Bitcoin2026ValeComprar.tsx",
-      "keyword": "bitcoin",
+      "keyword": "bitcoin vale comprar",
       "category": "invest",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -1532,6 +1565,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~678 palavras (mínimo 1500)"
@@ -1540,7 +1576,7 @@
     {
       "slug": "ia-para-financas-pessoais-2026",
       "file": "IAFinancasPessoais2026.tsx",
-      "keyword": "usar ia organizar suas",
+      "keyword": "ia financas pessoais",
       "category": "invest",
       "checks": {
         "h1": false,
@@ -1549,7 +1585,7 @@
         "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
@@ -1561,7 +1597,6 @@
       "issues": [
         "keyword ausente em meta title",
         "keyword ausente em meta description",
-        "keyword ausente em meta keywords",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
@@ -1572,10 +1607,10 @@
     {
       "slug": "fiis-2026-ainda-vale-investir",
       "file": "FIIs2026AindaVale.tsx",
-      "keyword": "fiis",
+      "keyword": "fiis ainda vale",
       "category": "invest",
       "checks": {
-        "h1": true,
+        "h1": false,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -1592,6 +1627,7 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -1602,7 +1638,7 @@
     {
       "slug": "ac-rogue-assassino-templario",
       "file": "ACRogue.tsx",
-      "keyword": "ac rogue vale pena",
+      "keyword": "ac rogue assassino",
       "category": "geek",
       "checks": {
         "h1": false,
@@ -1632,7 +1668,7 @@
     {
       "slug": "ac-unity-jogo-frente-tempo-paris",
       "file": "ACUnity.tsx",
-      "keyword": "ac unity",
+      "keyword": "ac unity jogo",
       "category": "geek",
       "checks": {
         "h1": false,
@@ -1662,7 +1698,7 @@
     {
       "slug": "ac-syndicate-revolucao-industrial-londres",
       "file": "ACSyndicate.tsx",
-      "keyword": "ac syndicate vale pena",
+      "keyword": "ac syndicate revolucao",
       "category": "geek",
       "checks": {
         "h1": false,
@@ -1692,11 +1728,11 @@
     {
       "slug": "avatar-frontiers-pandora-ubisoft-review",
       "file": "AvatarFrontiersOfPandora.tsx",
-      "keyword": "avatar",
+      "keyword": "avatar frontiers pandora",
       "category": "geek",
       "checks": {
-        "h1": true,
-        "intro": true,
+        "h1": false,
+        "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -1712,6 +1748,8 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake"
@@ -1720,7 +1758,7 @@
     {
       "slug": "ac-3-remastered-revolucao-americana",
       "file": "AC3Remastered.tsx",
-      "keyword": "ac iii remastered",
+      "keyword": "ac remastered revolucao",
       "category": "geek",
       "checks": {
         "h1": false,
@@ -1750,12 +1788,12 @@
     {
       "slug": "avatar-3-fogo-cinzas-lado-sombrio-pandora",
       "file": "Avatar3FogoECinzas.tsx",
-      "keyword": "avatar 3",
+      "keyword": "avatar fogo cinzas",
       "category": "geek",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -1770,6 +1808,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~706 palavras (mínimo 1500)"
@@ -1778,7 +1819,7 @@
     {
       "slug": "ac-mirage-retorno-raizes-bagda",
       "file": "ACMirage.tsx",
-      "keyword": "ac mirage",
+      "keyword": "ac mirage retorno",
       "category": "geek",
       "checks": {
         "h1": false,
@@ -1808,10 +1849,10 @@
     {
       "slug": "avatar-caminho-da-agua-fisica-fluidos",
       "file": "AvatarCaminhoDaAgua.tsx",
-      "keyword": "avatar 2",
+      "keyword": "avatar caminho agua",
       "category": "geek",
       "checks": {
-        "h1": true,
+        "h1": false,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -1828,6 +1869,7 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -1838,7 +1880,7 @@
     {
       "slug": "10-melhores-manhwas-sistema-2026",
       "file": "MelhoresManhwasSistema.tsx",
-      "keyword": "10 manhwas sistema ler",
+      "keyword": "manhwas sistema",
       "category": "otaku",
       "checks": {
         "h1": false,
@@ -1868,7 +1910,7 @@
     {
       "slug": "ac-origins-renascimento-franquia-egito",
       "file": "ACOrigins.tsx",
-      "keyword": "ac origins vale pena",
+      "keyword": "ac origins renascimento",
       "category": "geek",
       "checks": {
         "h1": false,
@@ -1899,10 +1941,10 @@
     {
       "slug": "avatar-2009-filme-revolucionou-tecnologia",
       "file": "Avatar2009Tecnologia.tsx",
-      "keyword": "avatar 2009",
+      "keyword": "avatar filme revolucionou",
       "category": "geek",
       "checks": {
-        "h1": true,
+        "h1": false,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -1919,6 +1961,7 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -1929,7 +1972,7 @@
     {
       "slug": "como-diferenciar-manhuas-manhwas",
       "file": "DiferenciarManhuasManhwas.tsx",
-      "keyword": "saiba diferenciar manhuas manhwas",
+      "keyword": "diferenciar manhuas manhwas",
       "category": "otaku",
       "checks": {
         "h1": false,
@@ -1991,7 +2034,7 @@
     {
       "slug": "ia-remasterizacao-jogos-classicos",
       "file": "IARemasterizacaoJogos.tsx",
-      "keyword": "ia remaster",
+      "keyword": "ia remasterizacao jogos",
       "category": "ia",
       "checks": {
         "h1": false,
@@ -2020,7 +2063,7 @@
     {
       "slug": "diferenca-mangas-manhuas-manhwas",
       "file": "DiferencaMangasManhuas.tsx",
-      "keyword": "sabe diferenca entre mangas",
+      "keyword": "diferenca mangas manhuas",
       "category": "otaku",
       "checks": {
         "h1": false,
@@ -2051,11 +2094,11 @@
     {
       "slug": "hell-let-loose-simulador-guerra",
       "file": "HellLetLooseSimulador.tsx",
-      "keyword": "hell let loose vale",
+      "keyword": "hell let loose",
       "category": "geek",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -2071,8 +2114,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)"
       ]
@@ -2080,7 +2121,7 @@
     {
       "slug": "ac-odyssey-odisseia-grecia",
       "file": "ACOdyssey.tsx",
-      "keyword": "ac odyssey vale pena",
+      "keyword": "ac odyssey odisseia",
       "category": "geek",
       "checks": {
         "h1": false,
@@ -2111,7 +2152,7 @@
     {
       "slug": "ia-transformando-dublagem-animes",
       "file": "IATransformandoDublagem.tsx",
-      "keyword": "ia dublagem animes",
+      "keyword": "ia transformando dublagem",
       "category": "ia",
       "checks": {
         "h1": false,
@@ -2120,7 +2161,7 @@
         "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
-        "metaKeywords": true,
+        "metaKeywords": false,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
@@ -2132,6 +2173,7 @@
       "issues": [
         "keyword ausente em meta title",
         "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
@@ -2173,12 +2215,12 @@
     {
       "slug": "vikings-legado-ragnar-lothbrok",
       "file": "VikingsLegadoRagnar.tsx",
-      "keyword": "vikings",
+      "keyword": "vikings legado ragnar",
       "category": "geek",
       "checks": {
-        "h1": true,
+        "h1": false,
         "intro": false,
-        "excerpt": true,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -2193,7 +2235,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
         "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~1004 palavras (mínimo 1500)"
@@ -2202,7 +2246,7 @@
     {
       "slug": "ac-valhalla-jornada-epica-eivor",
       "file": "ACValhalla.tsx",
-      "keyword": "ac valhalla vale pena",
+      "keyword": "ac valhalla jornada",
       "category": "geek",
       "checks": {
         "h1": false,
@@ -2232,7 +2276,7 @@
     {
       "slug": "ac-shadows-japao-feudal",
       "file": "ACShadows.tsx",
-      "keyword": "ac shadows vale pena",
+      "keyword": "ac shadows japao",
       "category": "geek",
       "checks": {
         "h1": false,
@@ -2262,12 +2306,12 @@
     {
       "slug": "ranking-melhor-assassins-creed-2026",
       "file": "ACRanking2026.tsx",
-      "keyword": "ranking",
+      "keyword": "ranking assassins creed",
       "category": "geek",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -2282,6 +2326,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~454 palavras (mínimo 1500)"
       ]
@@ -2320,7 +2367,7 @@
     {
       "slug": "como-usar-ia-ganhar-dinheiro-2026",
       "file": "IAGanharDinheiro2026.tsx",
-      "keyword": "usar ia ganhar dinheiro",
+      "keyword": "usar ia ganhar",
       "category": "ia",
       "checks": {
         "h1": false,
@@ -2352,7 +2399,7 @@
     {
       "slug": "ia-no-trabalho-2026-profissoes",
       "file": "IATrabalho2026.tsx",
-      "keyword": "ia trabalho",
+      "keyword": "ia trabalho profissoes",
       "category": "ia",
       "checks": {
         "h1": false,
@@ -2382,7 +2429,7 @@
     {
       "slug": "melhores-apps-ia-produtividade-2026",
       "file": "AppsIAProdutividade2026.tsx",
-      "keyword": "10 apps ia produtividade",
+      "keyword": "apps ia produtividade",
       "category": "ia",
       "checks": {
         "h1": false,
@@ -2438,16 +2485,16 @@
     {
       "slug": "renda-passiva-2026-formas-comprovadas",
       "file": "RendaPassiva2026.tsx",
-      "keyword": "renda passiva",
+      "keyword": "renda passiva formas",
       "category": "invest",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": true,
-        "metaTitle": true,
-        "metaDescription": true,
-        "metaKeywords": true,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
@@ -2457,6 +2504,12 @@
       },
       "bucket": "D",
       "issues": [
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~571 palavras (mínimo 1500)"
       ]
@@ -2495,7 +2548,7 @@
     {
       "slug": "bitcoin-criptomoedas-2026-investir",
       "file": "BitcoinCripto2026.tsx",
-      "keyword": "bitcoin criptomoedas",
+      "keyword": "bitcoin criptomoedas investir",
       "category": "invest",
       "checks": {
         "h1": false,
@@ -2526,10 +2579,10 @@
     {
       "slug": "irpf-2026-guia-declarar-pagar-menos",
       "file": "IRPF2026.tsx",
-      "keyword": "irpf",
+      "keyword": "irpf declarar pagar",
       "category": "invest",
       "checks": {
-        "h1": true,
+        "h1": false,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -2546,6 +2599,7 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -2585,7 +2639,7 @@
     {
       "slug": "educacao-financeira-metodo-3-baldes",
       "file": "EducacaoFinanceira3Baldes.tsx",
-      "keyword": "metodo 3 baldes",
+      "keyword": "educacao financeira metodo",
       "category": "invest",
       "checks": {
         "h1": false,
@@ -2615,12 +2669,12 @@
     {
       "slug": "fiis-2026-melhores-fundos-imobiliarios",
       "file": "FIIs2026.tsx",
-      "keyword": "fiis",
+      "keyword": "fiis fundos imobiliarios",
       "category": "invest",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -2635,6 +2689,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~315 palavras (mínimo 1500)"
       ]
@@ -2642,7 +2699,7 @@
     {
       "slug": "sair-das-dividas-2026-plano-acao",
       "file": "SairDasDividas2026.tsx",
-      "keyword": "sair dividas",
+      "keyword": "sair dividas plano",
       "category": "invest",
       "checks": {
         "h1": false,
@@ -2674,10 +2731,10 @@
     {
       "slug": "planejamento-financeiro-2026-metas",
       "file": "PlanejamentoFinanceiro2026.tsx",
-      "keyword": "planejamento financeiro",
+      "keyword": "planejamento financeiro metas",
       "category": "invest",
       "checks": {
-        "h1": true,
+        "h1": false,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -2694,6 +2751,7 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -2703,10 +2761,10 @@
     {
       "slug": "calculadoras-financeiras-ativos",
       "file": "CalculadorasFinanceiras.tsx",
-      "keyword": "calculadoras financeiras",
+      "keyword": "calculadoras financeiras ativos",
       "category": "invest",
       "checks": {
-        "h1": true,
+        "h1": false,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -2723,6 +2781,7 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -2763,12 +2822,12 @@
     {
       "slug": "deepfakes-ia-2026-como-identificar",
       "file": "DeepfakesIA2026.tsx",
-      "keyword": "deepfakes",
+      "keyword": "deepfakes ia identificar",
       "category": "ia",
       "checks": {
-        "h1": true,
+        "h1": false,
         "intro": false,
-        "excerpt": true,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -2783,7 +2842,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
         "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~505 palavras (mínimo 1500)"
       ]
@@ -2791,7 +2852,7 @@
     {
       "slug": "ia-educacao-2026-estudar-inteligente",
       "file": "IAEducacao2026.tsx",
-      "keyword": "ia educacao",
+      "keyword": "ia educacao estudar",
       "category": "ia",
       "checks": {
         "h1": false,
@@ -2821,7 +2882,7 @@
     {
       "slug": "agentes-ia-2026-como-funcionam",
       "file": "AgentesIA2026.tsx",
-      "keyword": "agentes ia",
+      "keyword": "agentes ia funcionam",
       "category": "ia",
       "checks": {
         "h1": false,
@@ -2850,7 +2911,7 @@
     {
       "slug": "ia-saude-2026-diagnosticos-futuro",
       "file": "IASaude2026.tsx",
-      "keyword": "ia saude",
+      "keyword": "ia saude diagnosticos",
       "category": "ia",
       "checks": {
         "h1": false,
@@ -2879,7 +2940,7 @@
     {
       "slug": "regulamentacao-ia-brasil-mundo-2026",
       "file": "RegulamentacaoIA2026.tsx",
-      "keyword": "regulamentacao ia brasil mundo",
+      "keyword": "regulamentacao ia brasil",
       "category": "ia",
       "checks": {
         "h1": false,
@@ -2940,7 +3001,7 @@
     {
       "slug": "guia-cosplay-2026-iniciantes",
       "file": "GuiaCosplay2026.tsx",
-      "keyword": "definitivo comecar cosplay",
+      "keyword": "cosplay iniciantes",
       "category": "otaku",
       "checks": {
         "h1": false,
@@ -2970,10 +3031,10 @@
     {
       "slug": "manga-vs-anime-adaptacao-2026",
       "file": "MangaVsAnime2026.tsx",
-      "keyword": "manga vs. anime",
+      "keyword": "manga anime adaptacao",
       "category": "otaku",
       "checks": {
-        "h1": true,
+        "h1": false,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -2990,6 +3051,7 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -3059,12 +3121,12 @@
     {
       "slug": "aprender-japones-anime-2026",
       "file": "AprenderJaponesAnime2026.tsx",
-      "keyword": "aprender japones assistindo anime",
+      "keyword": "aprender japones anime",
       "category": "otaku",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -3079,6 +3141,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~341 palavras (mínimo 1500)"
@@ -3087,12 +3152,12 @@
     {
       "slug": "isekai-2026-genero-domina",
       "file": "Isekai2026.tsx",
-      "keyword": "isekai",
+      "keyword": "isekai genero domina",
       "category": "otaku",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -3107,6 +3172,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~525 palavras (mínimo 1500)"
       ]
@@ -3114,10 +3182,10 @@
     {
       "slug": "merchandising-otaku-colecionar-2026",
       "file": "MerchandisingOtaku2026.tsx",
-      "keyword": "merchandising otaku",
+      "keyword": "merchandising otaku colecionar",
       "category": "otaku",
       "checks": {
-        "h1": true,
+        "h1": false,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -3134,6 +3202,7 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -3173,7 +3242,7 @@
     {
       "slug": "saude-mental-cultura-otaku-2026",
       "file": "SaudeMentalOtaku2026.tsx",
-      "keyword": "saude mental cultura otaku",
+      "keyword": "saude mental cultura",
       "category": "otaku",
       "checks": {
         "h1": false,
@@ -3203,7 +3272,7 @@
     {
       "slug": "ia-criatividade-arte-musica-2026",
       "file": "IACriatividade2026.tsx",
-      "keyword": "ia criatividade",
+      "keyword": "ia criatividade arte",
       "category": "ia",
       "checks": {
         "h1": false,
@@ -3264,12 +3333,12 @@
     {
       "slug": "etfs-2026-guia-completo-investir",
       "file": "ETFs2026.tsx",
-      "keyword": "etfs",
+      "keyword": "etfs investir",
       "category": "invest",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -3284,6 +3353,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~475 palavras (mínimo 1500)"
@@ -3320,11 +3392,11 @@
     {
       "slug": "crimson-desert-combate-blackspace-engine",
       "file": "CrimsonDesertCombate.tsx",
-      "keyword": "crimson desert",
+      "keyword": "crimson desert combate",
       "category": "geek",
       "checks": {
-        "h1": true,
-        "intro": true,
+        "h1": false,
+        "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -3340,6 +3412,8 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
@@ -3349,10 +3423,10 @@
     {
       "slug": "economia-domestica-2026-cortar-gastos",
       "file": "EconomiaDomestica2026.tsx",
-      "keyword": "economia domestica",
+      "keyword": "economia domestica cortar",
       "category": "invest",
       "checks": {
-        "h1": true,
+        "h1": false,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -3369,6 +3443,7 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -3407,12 +3482,12 @@
     {
       "slug": "crimson-desert-builds-guia-2026",
       "file": "CrimsonDesertPersonagens.tsx",
-      "keyword": "crimson desert",
+      "keyword": "crimson desert builds",
       "category": "geek",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -3427,6 +3502,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~599 palavras (mínimo 1500)"
@@ -3463,16 +3541,16 @@
     {
       "slug": "previdencia-privada-pgbl-vgbl-2026",
       "file": "PrevidenciaPrivada2026.tsx",
-      "keyword": "previdencia privada",
+      "keyword": "previdencia privada pgbl",
       "category": "invest",
       "checks": {
-        "h1": true,
-        "intro": true,
+        "h1": false,
+        "intro": false,
         "excerpt": false,
         "pageMetaExists": true,
-        "metaTitle": true,
+        "metaTitle": false,
         "metaDescription": false,
-        "metaKeywords": true,
+        "metaKeywords": false,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
@@ -3482,7 +3560,11 @@
       },
       "bucket": "D",
       "issues": [
+        "keyword ausente em meta title",
         "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~624 palavras (mínimo 1500)"
@@ -3491,7 +3573,7 @@
     {
       "slug": "ia-codigo-programadores-2026",
       "file": "IACodigo2026.tsx",
-      "keyword": "ia programacao",
+      "keyword": "ia codigo programadores",
       "category": "ia",
       "checks": {
         "h1": false,
@@ -3521,16 +3603,16 @@
     {
       "slug": "modelos-ia-open-source-2026",
       "file": "ModelosIAOpenSource2026.tsx",
-      "keyword": "ia open source",
+      "keyword": "modelos ia open",
       "category": "ia",
       "checks": {
-        "h1": true,
+        "h1": false,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": true,
-        "metaTitle": true,
-        "metaDescription": true,
-        "metaKeywords": true,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
@@ -3540,6 +3622,10 @@
       },
       "bucket": "D",
       "issues": [
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
+        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -3549,7 +3635,7 @@
     {
       "slug": "baldurs-gate-3-review-2026",
       "file": "BaldursGate3Review2026.tsx",
-      "keyword": "baldur s gate 3",
+      "keyword": "baldurs gate",
       "category": "geek",
       "checks": {
         "h1": false,
@@ -3610,11 +3696,11 @@
     {
       "slug": "demon-slayer-hashira-guia-2026",
       "file": "DemonSlayerHashira2026.tsx",
-      "keyword": "demon slayer",
+      "keyword": "demon slayer hashira",
       "category": "otaku",
       "checks": {
-        "h1": true,
-        "intro": true,
+        "h1": false,
+        "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -3630,6 +3716,8 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~564 palavras (mínimo 1500)"
@@ -3638,7 +3726,7 @@
     {
       "slug": "one-piece-final-saga-2026",
       "file": "OnePieceFinalSaga2026.tsx",
-      "keyword": "one piece final saga",
+      "keyword": "one piece final",
       "category": "otaku",
       "checks": {
         "h1": true,
@@ -3667,12 +3755,12 @@
     {
       "slug": "crimson-desert-mapa-regioes-pywel",
       "file": "CrimsonDesertMapa.tsx",
-      "keyword": "crimson desert",
+      "keyword": "crimson desert mapa",
       "category": "geek",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -3687,6 +3775,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~405 palavras (mínimo 1500)"
@@ -3695,15 +3786,15 @@
     {
       "slug": "crimson-desert-bosses-guia-chefes",
       "file": "CrimsonDesertBosses.tsx",
-      "keyword": "crimson desert",
+      "keyword": "crimson desert bosses",
       "category": "geek",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": true,
-        "metaTitle": true,
-        "metaDescription": true,
+        "metaTitle": false,
+        "metaDescription": false,
         "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
@@ -3712,8 +3803,13 @@
         "wordCount": 4145,
         "has1500Words": true
       },
-      "bucket": "B",
+      "bucket": "D",
       "issues": [
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake"
       ]
@@ -3721,15 +3817,15 @@
     {
       "slug": "crimson-desert-guia-iniciantes-dicas",
       "file": "CrimsonDesertIniciantes.tsx",
-      "keyword": "crimson desert",
+      "keyword": "crimson desert iniciantes",
       "category": "geek",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": true,
-        "metaTitle": true,
-        "metaDescription": true,
+        "metaTitle": false,
+        "metaDescription": false,
         "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
@@ -3740,6 +3836,11 @@
       },
       "bucket": "D",
       "issues": [
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~347 palavras (mínimo 1500)"
@@ -3748,15 +3849,15 @@
     {
       "slug": "crimson-desert-melhores-equipamentos-inicio",
       "file": "CrimsonDesertEquipamentos.tsx",
-      "keyword": "crimson desert",
+      "keyword": "crimson desert equipamentos",
       "category": "geek",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": true,
-        "metaTitle": true,
-        "metaDescription": true,
+        "metaTitle": false,
+        "metaDescription": false,
         "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
@@ -3767,6 +3868,11 @@
       },
       "bucket": "D",
       "issues": [
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~633 palavras (mínimo 1500)"
@@ -3775,12 +3881,12 @@
     {
       "slug": "tensura-guia-completo-temporadas-filmes",
       "file": "TensuraGuiaCompleto.tsx",
-      "keyword": "tensura",
+      "keyword": "tensura temporadas filmes",
       "category": "otaku",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -3795,6 +3901,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~1215 palavras (mínimo 1500)"
       ]
@@ -3802,12 +3911,12 @@
     {
       "slug": "overlord-guia-completo-temporadas-ainz",
       "file": "OverlordGuiaCompleto.tsx",
-      "keyword": "overlord",
+      "keyword": "overlord temporadas ainz",
       "category": "otaku",
       "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": true,
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -3822,6 +3931,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~1361 palavras (mínimo 1500)"
       ]
@@ -3829,12 +3941,12 @@
     {
       "slug": "tensura-personagens-rimuru-demon-lords",
       "file": "TensuraPersonagens.tsx",
-      "keyword": "tensura",
+      "keyword": "tensura personagens rimuru",
       "category": "otaku",
       "checks": {
-        "h1": true,
+        "h1": false,
         "intro": false,
-        "excerpt": true,
+        "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -3849,7 +3961,9 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
         "keyword ausente na introdução",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~804 palavras (mínimo 1500)"
@@ -3858,11 +3972,11 @@
     {
       "slug": "overlord-ainz-guardians-personagens",
       "file": "OverlordPersonagens.tsx",
-      "keyword": "overlord",
+      "keyword": "overlord ainz guardians",
       "category": "otaku",
       "checks": {
-        "h1": true,
-        "intro": true,
+        "h1": false,
+        "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -3878,6 +3992,8 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~660 palavras (mínimo 1500)"
@@ -3886,7 +4002,7 @@
     {
       "slug": "ac-1-altair-terra-santa-1191",
       "file": "AC1Altair.tsx",
-      "keyword": "assassin s creed 2007",
+      "keyword": "ac altair terra",
       "category": "geek",
       "checks": {
         "h1": false,
@@ -3917,7 +4033,7 @@
     {
       "slug": "ac-2-ezio-italia-renascentista",
       "file": "AC2Ezio.tsx",
-      "keyword": "assassin s creed ii",
+      "keyword": "ac ezio italia",
       "category": "geek",
       "checks": {
         "h1": false,
@@ -3948,7 +4064,7 @@
     {
       "slug": "ac-brotherhood-ezio-roma-borgia",
       "file": "ACBrotherhood.tsx",
-      "keyword": "assassin s creed brotherhood",
+      "keyword": "ac brotherhood ezio",
       "category": "geek",
       "checks": {
         "h1": false,
@@ -3979,7 +4095,7 @@
     {
       "slug": "ac-revelations-ezio-constantinopla",
       "file": "ACRevelations.tsx",
-      "keyword": "assassin s creed revelations",
+      "keyword": "ac revelations ezio",
       "category": "geek",
       "checks": {
         "h1": false,

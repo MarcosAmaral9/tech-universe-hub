@@ -65,7 +65,14 @@ const norm = (s) =>
 const tokenize = (s) =>
   norm(s).replace(/[^a-z0-9\s.+-]/g, " ").split(/\s+/).filter((w) => w && !STOPWORDS.has(w));
 
-const contains = (h, k) => norm(h).includes(norm(k));
+const contains = (h, k) => {
+  const hay = norm(h);
+  const kwTokens = norm(k).split(/\s+/).filter(Boolean);
+  if (!kwTokens.length) return false;
+  // exato OU todos os tokens presentes
+  if (hay.includes(norm(k))) return true;
+  return kwTokens.every((t) => hay.includes(t));
+};
 
 function primaryKeyword(post) {
   if (KEYWORD_OVERRIDES[post.slug]) return KEYWORD_OVERRIDES[post.slug];

@@ -78,7 +78,11 @@ export function getPrimaryKeyword(post: Pick<BlogPost, "slug" | "title" | "categ
  */
 export function containsKeyword(haystack: string | undefined, keyword: string): boolean {
   if (!haystack) return false;
-  return norm(haystack).includes(norm(keyword));
+  const hay = norm(haystack);
+  const tokens = norm(keyword).split(/\s+/).filter(Boolean);
+  if (!tokens.length) return false;
+  if (hay.includes(norm(keyword))) return true;
+  return tokens.every((t) => hay.includes(t));
 }
 
 /**
