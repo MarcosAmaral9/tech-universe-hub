@@ -1,0 +1,4235 @@
+{
+  "generatedAt": "2026-05-25T00:16:00.492Z",
+  "counts": {
+    "OK": 0,
+    "A": 0,
+    "B": 1,
+    "C": 0,
+    "D": 148
+  },
+  "missingFiles": [
+    "crimson-desert-personagens-kliff-damiane-oongka"
+  ],
+  "reports": [
+    {
+      "slug": "gpt-5-ia-trabalhador-digital-autonomo-2026",
+      "file": "GptTrabalhadorDigital2026.tsx",
+      "keyword": "GPT-5.4",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 4,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 703,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "ArticleSources com 4 fonte(s) (mínimo 5)",
+        "apenas ~703 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "berkshire-hathaway-greg-abel-2026-sem-buffett",
+      "file": "BerkshireAbelMeeting2026.tsx",
+      "keyword": "Berkshire Hathaway",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 4,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 826,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente em excerpt",
+        "ArticleSources com 4 fonte(s) (mínimo 5)",
+        "apenas ~826 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "elden-ring-nightreign-guia-completo-2026",
+      "file": "EldenRingNightreign2026.tsx",
+      "keyword": "Elden Ring Nightreign",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 4,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 406,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "ArticleSources com 4 fonte(s) (mínimo 5)",
+        "apenas ~406 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "kaiju-no-8-temporada-2-guia-arco-final-2026",
+      "file": "KaijuNo8Temporada22026.tsx",
+      "keyword": "Kaiju No. 8",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 4,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 567,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "ArticleSources com 4 fonte(s) (mínimo 5)",
+        "apenas ~567 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "pnad-desemprego-61-marco-2026",
+      "file": "PnadDesempregoMarco2026.tsx",
+      "keyword": "PNAD",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 4,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 475,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "ArticleSources com 4 fonte(s) (mínimo 5)",
+        "apenas ~475 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "copom-selic-1450-corte-abril-2026",
+      "file": "CopomSelic145Maio2026.tsx",
+      "keyword": "Copom Selic",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 4,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 557,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em excerpt",
+        "ArticleSources com 4 fonte(s) (mínimo 5)",
+        "apenas ~557 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "petroleo-brent-125-bloqueio-ormuz-2026",
+      "file": "PetroleoBrent125Ormuz2026.tsx",
+      "keyword": "petroleo brent bloqueio",
+      "category": "invest",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 572,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente em <h1>",
+        "keyword ausente em excerpt",
+        "apenas ~572 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "anthropic-mythos-modelo-ia-google-investimento-2026",
+      "file": "AnthropicMythosGoogle2026.tsx",
+      "keyword": "anthropic mythos modelo",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": false,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 832,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta title",
+        "apenas ~832 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "magnificent-seven-resultados-q1-2026-apple-tim-cook",
+      "file": "MagnificentSevenResultados2026.tsx",
+      "keyword": "magnificent seven resultados",
+      "category": "invest",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 860,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~860 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "super-mario-galaxy-movie-2026-bilheteria",
+      "file": "SuperMarioGalaxyMovie2026.tsx",
+      "keyword": "super mario galaxy",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 4,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 635,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em excerpt",
+        "ArticleSources com 4 fonte(s) (mínimo 5)",
+        "apenas ~635 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "dragon-ball-super-beerus-anime-confirmado-2026",
+      "file": "DragonBallBeerus2026.tsx",
+      "keyword": "dragon ball super",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 4,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 887,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "ArticleSources com 4 fonte(s) (mínimo 5)",
+        "apenas ~887 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "openai-bilhoes-financiamento-record-2026",
+      "file": "OpenAiFinanciamento2026.tsx",
+      "keyword": "openai bilhoes financiamento",
+      "category": "ia",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 4,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 783,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "ArticleSources com 4 fonte(s) (mínimo 5)",
+        "apenas ~783 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "gemini-25-pro-vs-claude-ia-2026",
+      "file": "Gemini25ProVsClaude2026.tsx",
+      "keyword": "gemini pro claude",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 4,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 422,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 4 fonte(s) (mínimo 5)",
+        "apenas ~422 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ouro-maxima-historica-2026-como-investir",
+      "file": "OuroMaximaHistorica2026.tsx",
+      "keyword": "ouro maxima historica",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 4,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 604,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 4 fonte(s) (mínimo 5)",
+        "apenas ~604 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "acoes-brasileiras-baratas-valuation-2026",
+      "file": "AcoesBrasileirasBaratas2026.tsx",
+      "keyword": "acoes brasileiras baratas",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 600,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "apenas ~600 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "nintendo-switch-2-guia-completo-2026",
+      "file": "NintendoSwitch2Completo2026.tsx",
+      "keyword": "nintendo switch",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 520,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~520 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "zelda-ocarina-of-time-remake-switch-2-2026",
+      "file": "ZeldaOcarinaRemake2026.tsx",
+      "keyword": "zelda ocarina of",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 604,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~604 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "naruto-especiais-confirmados-2026",
+      "file": "NarutoEspeciais2026.tsx",
+      "keyword": "naruto especiais confirmados",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 584,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~584 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "big-three-naruto-bleach-one-piece-2026",
+      "file": "BigThree2026.tsx",
+      "keyword": "big three naruto",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 911,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~911 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "mcp-model-context-protocol-2026",
+      "file": "McpProtocol2026.tsx",
+      "keyword": "mcp model context",
+      "category": "ia",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 712,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~712 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "claude-cowork-saaspocalypse-2026",
+      "file": "ClaudeCoworkSaas2026.tsx",
+      "keyword": "claude cowork saaspocalypse",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 785,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~785 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "copom-abril-2026-selic-investimentos",
+      "file": "CopomAbril2026.tsx",
+      "keyword": "copom abril selic",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 537,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~537 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "dolar-queda-2026-investir-exterior",
+      "file": "DolarQueda2026.tsx",
+      "keyword": "dolar queda investir",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 547,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~547 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "diablo-iv-lord-of-hatred-2026",
+      "file": "DiabloLordOfHatred2026.tsx",
+      "keyword": "diablo iv lord",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 566,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~566 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "gta-vi-novembro-2026-vice-city-leonida",
+      "file": "GtaViNovembro2026.tsx",
+      "keyword": "gta vi novembro",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 583,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~583 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "jujutsu-kaisen-temporada-4-culling-game-2026",
+      "file": "JJKTemporada42026.tsx",
+      "keyword": "jujutsu kaisen temporada",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 616,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~616 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "frieren-temporada-3-confirmada-2026",
+      "file": "FreierenTemporada32026.tsx",
+      "keyword": "frieren temporada confirmada",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 848,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~848 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "agentes-ia-autonomos-2026",
+      "file": "AgentesIAAutonomos2026.tsx",
+      "keyword": "agentes ia autonomos",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 541,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~541 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ia-mercado-trabalho-brasil-2026",
+      "file": "IATrabalho2026Impacto.tsx",
+      "keyword": "ia mercado trabalho",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 603,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~603 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ibovespa-recorde-selic-caindo-2026",
+      "file": "IbovespaRecordeSelic2026.tsx",
+      "keyword": "ibovespa recorde selic",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 625,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~625 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "tesouro-prefixado-vs-ipca-2026",
+      "file": "TesouroPrefixadoVsIPCA2026.tsx",
+      "keyword": "tesouro prefixado ipca",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 631,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~631 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "pragmata-capcom-guia-completo-2026",
+      "file": "PragmataCapcom2026.tsx",
+      "keyword": "pragmata capcom",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 723,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~723 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "saros-housemarque-ps5-2026",
+      "file": "SarosPS52026.tsx",
+      "keyword": "saros housemarque ps5",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 583,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~583 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "one-piece-elbaf-formato-sazonal-2026",
+      "file": "OnePieceElbaf2026.tsx",
+      "keyword": "one piece elbaf",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 635,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~635 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "spring-season-animes-abril-2026",
+      "file": "SpringSeasonAnimes2026.tsx",
+      "keyword": "spring season animes",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 358,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~358 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "negocio-online-ia-2026",
+      "file": "NegocioOnlineIA2026.tsx",
+      "keyword": "negocio online ia",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 404,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "apenas ~404 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "etfs-b3-guia-completo-2026",
+      "file": "ETFsB3Guia2026.tsx",
+      "keyword": "etfs b3",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 458,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "apenas ~458 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "cortar-gastos-2026",
+      "file": "CortarGastos2026.tsx",
+      "keyword": "cortar gastos",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 271,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~271 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "nintendo-switch-2-guia-2026",
+      "file": "NintendoSwitch2Guia2026.tsx",
+      "keyword": "nintendo switch",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 331,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "apenas ~331 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "gta-vi-guia-completo-2026",
+      "file": "GTAVI2026.tsx",
+      "keyword": "gta vi",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 520,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "apenas ~520 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "jujutsu-kaisen-guia-completo-2026",
+      "file": "JujutsuKaisenGuia2026.tsx",
+      "keyword": "jujutsu kaisen",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 331,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "apenas ~331 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "lancamentos-games-abril-2026",
+      "file": "LancamentosGamesAbril2026.tsx",
+      "keyword": "lancamentos games abril",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 693,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~693 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "lego-batman-legacy-2026",
+      "file": "AbsoluteBatmanGame2026.tsx",
+      "keyword": "lego batman legacy",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 668,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "apenas ~668 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "rezero-temporada-4-guia-2026",
+      "file": "ReZeroTemporada4.tsx",
+      "keyword": "rezero temporada",
+      "category": "otaku",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 692,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~692 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "temporada-animes-abril-2026",
+      "file": "TemporadaAnimesAbril2026.tsx",
+      "keyword": "temporada animes abril",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 785,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~785 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "crimson-desert-patches-atualizacoes-2026",
+      "file": "CrimsonDesertPatches.tsx",
+      "keyword": "crimson desert patches",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 514,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~514 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "crimson-desert-vendas-review-completo-2026",
+      "file": "CrimsonDesertVendasReview.tsx",
+      "keyword": "crimson desert vendas",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 541,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~541 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "gemini-2-5-pro-vs-gpt-4o-2026",
+      "file": "Gemini25ProVsGPT4o.tsx",
+      "keyword": "gemini pro gpt",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 841,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "apenas ~841 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ia-brasil-adocao-2026",
+      "file": "IABrasilAdocao2026.tsx",
+      "keyword": "ia brasil adocao",
+      "category": "ia",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 709,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~709 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "inflacao-proteger-investimentos-2026",
+      "file": "InflacaoProtegerInvestimentos2026.tsx",
+      "keyword": "inflacao proteger investimentos",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 665,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "apenas ~665 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "fiis-defensivos-abril-2026",
+      "file": "FIIsDefensivosAbril2026.tsx",
+      "keyword": "fiis defensivos abril",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 714,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~714 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ia-ciberseguranca-2026",
+      "file": "IACiberseguranca2026.tsx",
+      "keyword": "ia ciberseguranca",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 969,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~969 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "prompt-engineering-guia-2026",
+      "file": "PromptEngineering2026.tsx",
+      "keyword": "prompt engineering",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 871,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~871 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "poupanca-vs-cdb-tesouro-2026",
+      "file": "PoupancaVsCDBTesouro2026.tsx",
+      "keyword": "poupanca cdb tesouro",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 1004,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~1004 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "reserva-emergencia-2026-como-montar",
+      "file": "ReservaEmergencia2026.tsx",
+      "keyword": "reserva emergencia montar",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 872,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta keywords",
+        "keyword ausente na introdução",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~872 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "selic-comeca-cair-2026",
+      "file": "SelicComecaCair2026.tsx",
+      "keyword": "selic comeca cair",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 961,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~961 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "bitcoin-2026-vale-comprar",
+      "file": "Bitcoin2026ValeComprar.tsx",
+      "keyword": "bitcoin vale comprar",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 678,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~678 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ia-para-financas-pessoais-2026",
+      "file": "IAFinancasPessoais2026.tsx",
+      "keyword": "ia financas pessoais",
+      "category": "invest",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 706,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~706 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "fiis-2026-ainda-vale-investir",
+      "file": "FIIs2026AindaVale.tsx",
+      "keyword": "fiis ainda vale",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 535,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~535 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ac-rogue-assassino-templario",
+      "file": "ACRogue.tsx",
+      "keyword": "ac rogue assassino",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 2123,
+        "has1500Words": true
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake"
+      ]
+    },
+    {
+      "slug": "ac-unity-jogo-frente-tempo-paris",
+      "file": "ACUnity.tsx",
+      "keyword": "ac unity jogo",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 2359,
+        "has1500Words": true
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake"
+      ]
+    },
+    {
+      "slug": "ac-syndicate-revolucao-industrial-londres",
+      "file": "ACSyndicate.tsx",
+      "keyword": "ac syndicate revolucao",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 2519,
+        "has1500Words": true
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake"
+      ]
+    },
+    {
+      "slug": "avatar-frontiers-pandora-ubisoft-review",
+      "file": "AvatarFrontiersOfPandora.tsx",
+      "keyword": "avatar frontiers pandora",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 1661,
+        "has1500Words": true
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake"
+      ]
+    },
+    {
+      "slug": "ac-3-remastered-revolucao-americana",
+      "file": "AC3Remastered.tsx",
+      "keyword": "ac remastered revolucao",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 2232,
+        "has1500Words": true
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake"
+      ]
+    },
+    {
+      "slug": "avatar-3-fogo-cinzas-lado-sombrio-pandora",
+      "file": "Avatar3FogoECinzas.tsx",
+      "keyword": "avatar fogo cinzas",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 706,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~706 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ac-mirage-retorno-raizes-bagda",
+      "file": "ACMirage.tsx",
+      "keyword": "ac mirage retorno",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 2529,
+        "has1500Words": true
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake"
+      ]
+    },
+    {
+      "slug": "avatar-caminho-da-agua-fisica-fluidos",
+      "file": "AvatarCaminhoDaAgua.tsx",
+      "keyword": "avatar caminho agua",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 730,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~730 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "10-melhores-manhwas-sistema-2026",
+      "file": "MelhoresManhwasSistema.tsx",
+      "keyword": "manhwas sistema",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 422,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~422 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ac-origins-renascimento-franquia-egito",
+      "file": "ACOrigins.tsx",
+      "keyword": "ac origins renascimento",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 949,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~949 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "avatar-2009-filme-revolucionou-tecnologia",
+      "file": "Avatar2009Tecnologia.tsx",
+      "keyword": "avatar filme revolucionou",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 689,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~689 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "como-diferenciar-manhuas-manhwas",
+      "file": "DiferenciarManhuasManhwas.tsx",
+      "keyword": "diferenciar manhuas manhwas",
+      "category": "otaku",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 467,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~467 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ac-black-flag-melhor-jogo-piratas",
+      "file": "ACBlackFlag.tsx",
+      "keyword": "ac black flag",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 1161,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~1161 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ia-remasterizacao-jogos-classicos",
+      "file": "IARemasterizacaoJogos.tsx",
+      "keyword": "ia remasterizacao jogos",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1121,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~1121 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "diferenca-mangas-manhuas-manhwas",
+      "file": "DiferencaMangasManhuas.tsx",
+      "keyword": "diferenca mangas manhuas",
+      "category": "otaku",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 505,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~505 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "hell-let-loose-simulador-guerra",
+      "file": "HellLetLooseSimulador.tsx",
+      "keyword": "hell let loose",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 2218,
+        "has1500Words": true
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)"
+      ]
+    },
+    {
+      "slug": "ac-odyssey-odisseia-grecia",
+      "file": "ACOdyssey.tsx",
+      "keyword": "ac odyssey odisseia",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 975,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~975 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ia-transformando-dublagem-animes",
+      "file": "IATransformandoDublagem.tsx",
+      "keyword": "ia transformando dublagem",
+      "category": "ia",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 825,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~825 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "investir-em-tecnologia-2026",
+      "file": "InvestirEmTecnologia2026.tsx",
+      "keyword": "investir tecnologia",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 853,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~853 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "vikings-legado-ragnar-lothbrok",
+      "file": "VikingsLegadoRagnar.tsx",
+      "keyword": "vikings legado ragnar",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 1004,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~1004 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ac-valhalla-jornada-epica-eivor",
+      "file": "ACValhalla.tsx",
+      "keyword": "ac valhalla jornada",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 1518,
+        "has1500Words": true
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake"
+      ]
+    },
+    {
+      "slug": "ac-shadows-japao-feudal",
+      "file": "ACShadows.tsx",
+      "keyword": "ac shadows japao",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 1587,
+        "has1500Words": true
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake"
+      ]
+    },
+    {
+      "slug": "ranking-melhor-assassins-creed-2026",
+      "file": "ACRanking2026.tsx",
+      "keyword": "ranking assassins creed",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 454,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~454 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "chatgpt-vs-gemini-vs-claude-2026",
+      "file": "ChatGPTvsGeminiClaude2026.tsx",
+      "keyword": "chatgpt gemini claude",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 440,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~440 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "como-usar-ia-ganhar-dinheiro-2026",
+      "file": "IAGanharDinheiro2026.tsx",
+      "keyword": "usar ia ganhar",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 597,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~597 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ia-no-trabalho-2026-profissoes",
+      "file": "IATrabalho2026.tsx",
+      "keyword": "ia trabalho profissoes",
+      "category": "ia",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 468,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~468 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "melhores-apps-ia-produtividade-2026",
+      "file": "AppsIAProdutividade2026.tsx",
+      "keyword": "apps ia produtividade",
+      "category": "ia",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 723,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~723 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "tesouro-direto-2026-guia-completo",
+      "file": "TesouroDireto2026.tsx",
+      "keyword": "tesouro direto",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 674,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~674 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "renda-passiva-2026-formas-comprovadas",
+      "file": "RendaPassiva2026.tsx",
+      "keyword": "renda passiva formas",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 571,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
+        "keyword ausente na introdução",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~571 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "carteira-investimentos-iniciantes-2026",
+      "file": "CarteiraIniciantes2026.tsx",
+      "keyword": "carteira investimentos iniciantes",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 336,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~336 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "bitcoin-criptomoedas-2026-investir",
+      "file": "BitcoinCripto2026.tsx",
+      "keyword": "bitcoin criptomoedas investir",
+      "category": "invest",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 361,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~361 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "irpf-2026-guia-declarar-pagar-menos",
+      "file": "IRPF2026.tsx",
+      "keyword": "irpf declarar pagar",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 397,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~397 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ia-mercado-financeiro-2026-investimentos",
+      "file": "IAMercadoFinanceiro2026.tsx",
+      "keyword": "ia mercado financeiro",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 495,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~495 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "educacao-financeira-metodo-3-baldes",
+      "file": "EducacaoFinanceira3Baldes.tsx",
+      "keyword": "educacao financeira metodo",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 383,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~383 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "fiis-2026-melhores-fundos-imobiliarios",
+      "file": "FIIs2026.tsx",
+      "keyword": "fiis fundos imobiliarios",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 315,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~315 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "sair-das-dividas-2026-plano-acao",
+      "file": "SairDasDividas2026.tsx",
+      "keyword": "sair dividas plano",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 390,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta keywords",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~390 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "planejamento-financeiro-2026-metas",
+      "file": "PlanejamentoFinanceiro2026.tsx",
+      "keyword": "planejamento financeiro metas",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 292,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~292 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "calculadoras-financeiras-ativos",
+      "file": "CalculadorasFinanceiras.tsx",
+      "keyword": "calculadoras financeiras ativos",
+      "category": "invest",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 164,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~164 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ia-generativa-iniciantes-2026-guia",
+      "file": "IAGenerativaIniciantes2026.tsx",
+      "keyword": "ia generativa iniciantes",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 519,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~519 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "deepfakes-ia-2026-como-identificar",
+      "file": "DeepfakesIA2026.tsx",
+      "keyword": "deepfakes ia identificar",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 505,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~505 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ia-educacao-2026-estudar-inteligente",
+      "file": "IAEducacao2026.tsx",
+      "keyword": "ia educacao estudar",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 484,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~484 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "agentes-ia-2026-como-funcionam",
+      "file": "AgentesIA2026.tsx",
+      "keyword": "agentes ia funcionam",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 924,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "apenas ~924 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ia-saude-2026-diagnosticos-futuro",
+      "file": "IASaude2026.tsx",
+      "keyword": "ia saude diagnosticos",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1102,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "apenas ~1102 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "regulamentacao-ia-brasil-mundo-2026",
+      "file": "RegulamentacaoIA2026.tsx",
+      "keyword": "regulamentacao ia brasil",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 498,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~498 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "animes-mais-aguardados-2026",
+      "file": "AnimesAguardados2026.tsx",
+      "keyword": "animes aguardados",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 515,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~515 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "guia-cosplay-2026-iniciantes",
+      "file": "GuiaCosplay2026.tsx",
+      "keyword": "cosplay iniciantes",
+      "category": "otaku",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 611,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~611 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "manga-vs-anime-adaptacao-2026",
+      "file": "MangaVsAnime2026.tsx",
+      "keyword": "manga anime adaptacao",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 571,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~571 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "cultura-otaku-brasil-2026",
+      "file": "CulturaOtakuBrasil2026.tsx",
+      "keyword": "cultura otaku brasil",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 370,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~370 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "melhores-jogos-anime-2026",
+      "file": "JogosAnime2026.tsx",
+      "keyword": "jogos anime",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 516,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~516 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "aprender-japones-anime-2026",
+      "file": "AprenderJaponesAnime2026.tsx",
+      "keyword": "aprender japones anime",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 341,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~341 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "isekai-2026-genero-domina",
+      "file": "Isekai2026.tsx",
+      "keyword": "isekai genero domina",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 525,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~525 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "merchandising-otaku-colecionar-2026",
+      "file": "MerchandisingOtaku2026.tsx",
+      "keyword": "merchandising otaku colecionar",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 443,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~443 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "melhores-mangas-ler-2026",
+      "file": "MelhoresMangas2026.tsx",
+      "keyword": "mangas ler",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 452,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~452 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "saude-mental-cultura-otaku-2026",
+      "file": "SaudeMentalOtaku2026.tsx",
+      "keyword": "saude mental cultura",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 638,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~638 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ia-criatividade-arte-musica-2026",
+      "file": "IACriatividade2026.tsx",
+      "keyword": "ia criatividade arte",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 626,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~626 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ia-privacidade-dados-2026",
+      "file": "IAPrivacidadeDados2026.tsx",
+      "keyword": "ia privacidade dados",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 718,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~718 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "etfs-2026-guia-completo-investir",
+      "file": "ETFs2026.tsx",
+      "keyword": "etfs investir",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 475,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~475 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "crimson-desert-guia-completo",
+      "file": "CrimsonDesertGuiaCompleto.tsx",
+      "keyword": "crimson desert",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 841,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~841 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "crimson-desert-combate-blackspace-engine",
+      "file": "CrimsonDesertCombate.tsx",
+      "keyword": "crimson desert combate",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 728,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~728 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "economia-domestica-2026-cortar-gastos",
+      "file": "EconomiaDomestica2026.tsx",
+      "keyword": "economia domestica cortar",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 683,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~683 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "crimson-desert-review-2026",
+      "file": "CrimsonDesertReview.tsx",
+      "keyword": "crimson desert",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 768,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~768 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "crimson-desert-builds-guia-2026",
+      "file": "CrimsonDesertPersonagens.tsx",
+      "keyword": "crimson desert builds",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 599,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~599 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "cdb-2026-guia-completo",
+      "file": "CDB2026Guia.tsx",
+      "keyword": "cdb",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 456,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~456 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "previdencia-privada-pgbl-vgbl-2026",
+      "file": "PrevidenciaPrivada2026.tsx",
+      "keyword": "previdencia privada pgbl",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 624,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~624 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ia-codigo-programadores-2026",
+      "file": "IACodigo2026.tsx",
+      "keyword": "ia codigo programadores",
+      "category": "ia",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 552,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~552 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "modelos-ia-open-source-2026",
+      "file": "ModelosIAOpenSource2026.tsx",
+      "keyword": "modelos ia open",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 636,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~636 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "baldurs-gate-3-review-2026",
+      "file": "BaldursGate3Review2026.tsx",
+      "keyword": "baldurs gate",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 529,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~529 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "dragon-age-veilguard-review-2026",
+      "file": "DragonAgeVeilguard2026.tsx",
+      "keyword": "dragon age veilguard",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 499,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~499 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "demon-slayer-hashira-guia-2026",
+      "file": "DemonSlayerHashira2026.tsx",
+      "keyword": "demon slayer hashira",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 564,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~564 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "one-piece-final-saga-2026",
+      "file": "OnePieceFinalSaga2026.tsx",
+      "keyword": "one piece final",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 751,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~751 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "crimson-desert-mapa-regioes-pywel",
+      "file": "CrimsonDesertMapa.tsx",
+      "keyword": "crimson desert mapa",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 405,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~405 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "crimson-desert-bosses-guia-chefes",
+      "file": "CrimsonDesertBosses.tsx",
+      "keyword": "crimson desert bosses",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 4145,
+        "has1500Words": true
+      },
+      "bucket": "B",
+      "issues": [
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake"
+      ]
+    },
+    {
+      "slug": "crimson-desert-guia-iniciantes-dicas",
+      "file": "CrimsonDesertIniciantes.tsx",
+      "keyword": "crimson desert iniciantes",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 347,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~347 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "crimson-desert-melhores-equipamentos-inicio",
+      "file": "CrimsonDesertEquipamentos.tsx",
+      "keyword": "crimson desert equipamentos",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 633,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~633 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "tensura-guia-completo-temporadas-filmes",
+      "file": "TensuraGuiaCompleto.tsx",
+      "keyword": "tensura temporadas filmes",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 1215,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~1215 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "overlord-guia-completo-temporadas-ainz",
+      "file": "OverlordGuiaCompleto.tsx",
+      "keyword": "overlord temporadas ainz",
+      "category": "otaku",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 1361,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~1361 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "tensura-personagens-rimuru-demon-lords",
+      "file": "TensuraPersonagens.tsx",
+      "keyword": "tensura personagens rimuru",
+      "category": "otaku",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 804,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~804 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "overlord-ainz-guardians-personagens",
+      "file": "OverlordPersonagens.tsx",
+      "keyword": "overlord ainz guardians",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 660,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~660 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ac-1-altair-terra-santa-1191",
+      "file": "AC1Altair.tsx",
+      "keyword": "ac altair terra",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 920,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~920 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ac-2-ezio-italia-renascentista",
+      "file": "AC2Ezio.tsx",
+      "keyword": "ac ezio italia",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 683,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~683 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ac-brotherhood-ezio-roma-borgia",
+      "file": "ACBrotherhood.tsx",
+      "keyword": "ac brotherhood ezio",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 666,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~666 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ac-revelations-ezio-constantinopla",
+      "file": "ACRevelations.tsx",
+      "keyword": "ac revelations ezio",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 639,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~639 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "solo-leveling-guia-completo-temporadas",
+      "file": "SoloLeveling.tsx",
+      "keyword": "Solo Leveling",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 1307,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~1307 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "tsukimichi-moonlit-fantasy-guia-completo",
+      "file": "Tsukimichi.tsx",
+      "keyword": "Tsukimichi Moonlit Fantasy",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": false,
+        "wordCount": 589,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "sem Análise do Marcos / EditorialTake",
+        "apenas ~589 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "mugen-gacha-level-9999-traicao-dungeon",
+      "file": "MugenGacha.tsx",
+      "keyword": "Mugen Gacha",
+      "category": "otaku",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 711,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em <h1>",
+        "keyword ausente em excerpt",
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~711 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "kizoku-tensei-noble-reincarnation-guia",
+      "file": "KizokuTensei.tsx",
+      "keyword": "Kizoku Tensei",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 672,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~672 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "hell-mode-gamer-isekai-guia-completo",
+      "file": "HellMode.tsx",
+      "keyword": "Hell Mode",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 782,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~782 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "isekai-nonbiri-nouka-farming-life-guia",
+      "file": "IsekaiNonbiriNouka.tsx",
+      "keyword": "Isekai Nonbiri Nouka",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 821,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~821 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "maousama-retry-demon-lord-guia-completo",
+      "file": "MaousamaRetry.tsx",
+      "keyword": "Maou-sama Retry",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 566,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~566 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "okiraku-ryoushu-territory-defense-guia",
+      "file": "OkirakuRyoushu.tsx",
+      "keyword": "Okiraku Ryoushu",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 0,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 705,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "ArticleSources com 0 fonte(s) (mínimo 5)",
+        "apenas ~705 palavras (mínimo 1500)"
+      ]
+    }
+  ]
+}

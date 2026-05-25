@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 import { blogPosts } from "@/data/posts";
+import { derivePageMeta } from "@/lib/postKeyword";
 
 const SITE_NAME = "VICIO<CODE>";
 const BASE_URL = "https://viciocode.com";
@@ -423,24 +424,21 @@ const DynamicSEO = () => {
       description = manual.description;
       keywords = manual.keywords;
     } else {
-      title = truncateAtWord(post.title, 60);
-      const catDescription = CATEGORY_NAME[post.category]
-        ? ` Confira no ${CATEGORY_NAME[post.category]} do VICIO<CODE>.`
-        : "";
-      let desc = post.excerpt || "";
-      if (desc.length > 160) {
-        desc = truncateAtWord(desc, 158);
-      } else if (desc.length < 80 && catDescription) {
-        desc = `${desc}${catDescription}`.trim();
-        if (desc.length > 160) desc = truncateAtWord(desc, 158);
-      }
-      description = desc;
-      keywords = buildPostKeywords({
-        title: post.title,
-        excerpt: post.excerpt,
-        category: post.category,
-        subtopic: post.subtopic ?? null,
-      });
+      // Fallback automático: garante que a keyword principal apareça
+      // em title, description e keywords (mesmo sem PAGE_META manual).
+      const derived = derivePageMeta(
+        {
+          slug: post.slug,
+          title: post.title,
+          excerpt: post.excerpt,
+          category: post.category,
+          subtopic: post.subtopic ?? null,
+        },
+        { categoryName: CATEGORY_NAME[post.category] }
+      );
+      title = derived.title;
+      description = derived.description;
+      keywords = derived.keywords;
     }
     const rawImage = String(post.image);
     image = rawImage.startsWith("http") ? rawImage : `${BASE_URL}${rawImage}`;
