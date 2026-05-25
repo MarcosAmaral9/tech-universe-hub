@@ -116,8 +116,14 @@ async function buildSlugMap() {
   for (const f of files) {
     if (!f.endsWith(".tsx")) continue;
     const txt = await readFile(join(dir, f), "utf8");
-    const m = txt.match(/trackArticleRead\(\s*["']([^"']+)["']/);
-    if (m) map[m[1]] = f;
+    let slug = null;
+    const literal = txt.match(/trackArticleRead\(\s*["']([^"']+)["']/);
+    if (literal) slug = literal[1];
+    if (!slug) {
+      const v = txt.match(/const\s+(?:SLUG|POST_SLUG)\s*=\s*["']([^"']+)["']/);
+      if (v) slug = v[1];
+    }
+    if (slug) map[slug] = f;
   }
   return map;
 }
