@@ -287,40 +287,85 @@ const renderTable = (rows) =>
     )
     .join("\n");
 
+// Cross-cutting counts (mais úteis que buckets para priorização)
+const has = (k) => reports.filter((r) => r.checks[k]).length;
+const missing = {
+  pageMeta: reports.filter((r) => !r.checks.pageMetaExists),
+  metaKeyword: reports.filter((r) => r.checks.pageMetaExists && (!r.checks.metaTitle || !r.checks.metaDescription || !r.checks.metaKeywords)),
+  h1: reports.filter((r) => !r.checks.h1),
+  intro: reports.filter((r) => !r.checks.intro),
+  excerpt: reports.filter((r) => !r.checks.excerpt),
+  authorBio: reports.filter((r) => !r.checks.hasAuthorBio),
+  sources: reports.filter((r) => !r.checks.hasArticleSources),
+  editorial: reports.filter((r) => !r.checks.hasEditorial),
+  words: reports.filter((r) => !r.checks.has1500Words).sort((a, b) => a.checks.wordCount - b.checks.wordCount),
+};
+
+const list = (arr, max = 999) =>
+  arr.slice(0, max).map((r) => `- \`${r.slug}\` (${r.checks.wordCount}w, ${r.checks.articleSourcesCount} fontes) — ${r.issues.join("; ")}`).join("\n") || "—";
+
 const md = `# Auditoria SEO + E-E-A-T
 
 Gerado em ${new Date().toLocaleString("pt-BR")}.
 
-## Resumo
+## Resumo executivo
 
 - **Total auditado:** ${reports.length} posts (${missingFiles.length} sem .tsx mapeado)
-- **OK (passa em tudo):** ${counts.OK}
-- **Bucket A — só SEO faltando:** ${counts.A}
-- **Bucket B — só E-E-A-T faltando:** ${counts.B}
-- **Bucket C — só conteúdo <1500 palavras:** ${counts.C}
-- **Bucket D — múltiplos problemas:** ${counts.D}
+- **PAGE_META manual presente:** ${has("pageMetaExists")} / ${reports.length}
+- **Keyword no `<h1>`:** ${has("h1")} / ${reports.length}
+- **Keyword na introdução:** ${has("intro")} / ${reports.length}
+- **Keyword no excerpt:** ${has("excerpt")} / ${reports.length}
+- **AuthorBio:** ${has("hasAuthorBio")} / ${reports.length}
+- **ArticleSources (≥5 fontes):** ${has("hasArticleSources")} / ${reports.length}
+- **EditorialTake / Análise do Marcos:** ${has("hasEditorial")} / ${reports.length}
+- **Conteúdo ≥1500 palavras:** ${has("has1500Words")} / ${reports.length}
 
-${missingFiles.length ? `### Slugs sem .tsx mapeado\n\n${missingFiles.map((s) => `- \`${s}\``).join("\n")}\n` : ""}
+${missingFiles.length ? `### Slugs sem .tsx mapeado (corrigir trackArticleRead)\n\n${missingFiles.map((s) => `- \`${s}\``).join("\n")}\n` : ""}
 
-## Bucket A — Só SEO (PAGE_META + tags) — ${counts.A}
+## Plano de levas sugerido
 
-${renderTable(byBucket("A"))}
+1. **Levas SEO (rápidas, ~10 posts/leva)** — Adicionar PAGE_META + garantir keyword em h1/intro/excerpt para os ${missing.pageMeta.length} posts sem meta manual.
+2. **Levas Fontes (3 posts/leva)** — Adicionar 5ª fonte oficial verificável para os ${missing.sources.length} posts com <5 fontes.
+3. **Levas Análise (5 posts/leva)** — Adicionar bloco "Análise do Marcos" para os ${missing.editorial.length} posts sem editorial.
+4. **Levas Expansão (2 posts/leva)** — Reescrever os ${missing.words.length} posts <1500 palavras, começando pelos mais curtos.
 
-## Bucket B — Só E-E-A-T (AuthorBio / ArticleSources / EditorialTake) — ${counts.B}
+---
 
-${renderTable(byBucket("B"))}
+## 1) Posts sem PAGE_META manual — ${missing.pageMeta.length}
 
-## Bucket C — Só conteúdo <1500 palavras — ${counts.C}
+${list(missing.pageMeta)}
 
-${renderTable(byBucket("C"))}
+## 2) Posts com PAGE_META incompleto (keyword ausente em title/desc/keywords) — ${missing.metaKeyword.length}
 
-## Bucket D — Múltiplos problemas — ${counts.D}
+${list(missing.metaKeyword)}
 
-${renderTable(byBucket("D"))}
+## 3) Posts com keyword ausente no \`<h1>\` — ${missing.h1.length}
 
-## OK — ${counts.OK}
+${list(missing.h1)}
 
-${byBucket("OK").map((r) => `- \`${r.slug}\` (${r.checks.wordCount} palavras)`).join("\n") || "—"}
+## 4) Posts com keyword ausente na introdução — ${missing.intro.length}
+
+${list(missing.intro)}
+
+## 5) Posts com keyword ausente no excerpt — ${missing.excerpt.length}
+
+${list(missing.excerpt)}
+
+## 6) Posts sem AuthorBio — ${missing.authorBio.length}
+
+${list(missing.authorBio)}
+
+## 7) Posts com menos de 5 fontes em ArticleSources — ${missing.sources.length}
+
+${list(missing.sources)}
+
+## 8) Posts sem "Análise do Marcos" / EditorialTake — ${missing.editorial.length}
+
+${list(missing.editorial)}
+
+## 9) Posts com menos de 1500 palavras (ordenados por menor) — ${missing.words.length}
+
+${list(missing.words)}
 `;
 
 await writeFile(join(ROOT, ".lovable/audit-seo-eeat.md"), md);
@@ -328,3 +373,4 @@ await writeFile(join(ROOT, ".lovable/audit-seo-eeat.md"), md);
 console.log("AUDIT DONE");
 console.log("Counts:", counts);
 console.log("Missing files:", missingFiles.length);
+
