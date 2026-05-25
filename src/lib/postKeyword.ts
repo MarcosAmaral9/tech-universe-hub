@@ -56,12 +56,19 @@ const tokenize = (s: string) =>
 export function getPrimaryKeyword(post: Pick<BlogPost, "slug" | "title" | "category">): string {
   if (KEYWORD_OVERRIDES[post.slug]) return KEYWORD_OVERRIDES[post.slug];
 
-  // Heurística: pega as 2-4 primeiras palavras significativas do título,
-  // até atingir um dos delimitadores típicos (":", "—", "-", "|").
+  // Heurística primária: extrair do SLUG (slugs são curados para SEO).
+  // Remove ano (2025/2026) e palavras genéricas (guia, completo, vs, etc).
+  const slugTokens = post.slug
+    .split("-")
+    .filter((t) => t && !STOPWORDS.has(t) && !/^\d+$/.test(t));
+  if (slugTokens.length >= 2) {
+    return slugTokens.slice(0, Math.min(3, slugTokens.length)).join(" ");
+  }
+
+  // Fallback: pega 2-4 primeiros tokens significativos do título antes de ":/—/-/|".
   const cut = post.title.split(/[:\-—|]/)[0].trim();
   const tokens = tokenize(cut);
   if (tokens.length === 0) return CATEGORY_FALLBACK[post.category];
-  // pega entre 2 e 4 tokens
   const take = Math.min(4, Math.max(2, tokens.length));
   return tokens.slice(0, take).join(" ");
 }

@@ -69,6 +69,8 @@ const contains = (h, k) => norm(h).includes(norm(k));
 
 function primaryKeyword(post) {
   if (KEYWORD_OVERRIDES[post.slug]) return KEYWORD_OVERRIDES[post.slug];
+  const slugTokens = post.slug.split("-").filter((t) => t && !STOPWORDS.has(t) && !/^\d+$/.test(t));
+  if (slugTokens.length >= 2) return slugTokens.slice(0, Math.min(3, slugTokens.length)).join(" ");
   const cut = post.title.split(/[:\-—|]/)[0].trim();
   const tokens = tokenize(cut);
   if (!tokens.length) return CATEGORY_FALLBACK[post.category];
