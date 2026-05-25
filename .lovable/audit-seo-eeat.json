@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-05-25T00:12:41.372Z",
+  "generatedAt": "2026-05-25T00:13:38.953Z",
   "counts": {
     "OK": 0,
     "A": 0,
-    "B": 0,
+    "B": 1,
     "C": 0,
-    "D": 145
+    "D": 144
   },
   "missingFiles": [
     "pnad-desemprego-61-marco-2026",
@@ -127,13 +127,13 @@
       "keyword": "anthropic mythos modelo",
       "category": "ia",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": true,
         "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 5,
         "hasArticleSources": true,
@@ -144,11 +144,6 @@
       "bucket": "D",
       "issues": [
         "keyword ausente em meta title",
-        "keyword ausente em meta description",
-        "keyword ausente em meta keywords",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "apenas ~832 palavras (mínimo 1500)"
       ]
     },
@@ -164,7 +159,7 @@
         "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 6,
         "hasArticleSources": true,
@@ -176,7 +171,6 @@
       "issues": [
         "keyword ausente em meta title",
         "keyword ausente em meta description",
-        "keyword ausente em meta keywords",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
@@ -245,8 +239,8 @@
       "category": "ia",
       "checks": {
         "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -262,8 +256,6 @@
       "issues": [
         "sem PAGE_META manual",
         "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 4 fonte(s) (mínimo 5)",
         "apenas ~783 palavras (mínimo 1500)"
       ]
@@ -274,9 +266,9 @@
       "keyword": "gemini pro claude",
       "category": "ia",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -291,9 +283,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 4 fonte(s) (mínimo 5)",
         "apenas ~422 palavras (mínimo 1500)"
       ]
@@ -304,9 +293,9 @@
       "keyword": "ouro maxima historica",
       "category": "invest",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -321,9 +310,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 4 fonte(s) (mínimo 5)",
         "apenas ~604 palavras (mínimo 1500)"
       ]
@@ -334,8 +320,8 @@
       "keyword": "acoes brasileiras baratas",
       "category": "invest",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -351,8 +337,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "apenas ~600 palavras (mínimo 1500)"
       ]
@@ -363,8 +347,8 @@
       "keyword": "zelda ocarina of",
       "category": "geek",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -380,8 +364,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~604 palavras (mínimo 1500)"
@@ -393,8 +375,8 @@
       "keyword": "naruto especiais confirmados",
       "category": "otaku",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -410,8 +392,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~584 palavras (mínimo 1500)"
@@ -423,7 +403,7 @@
       "keyword": "big three naruto",
       "category": "otaku",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -440,7 +420,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -454,8 +433,8 @@
       "category": "ia",
       "checks": {
         "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -471,8 +450,6 @@
       "issues": [
         "sem PAGE_META manual",
         "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~712 palavras (mínimo 1500)"
       ]
@@ -483,9 +460,9 @@
       "keyword": "claude cowork saaspocalypse",
       "category": "ia",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -500,9 +477,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~785 palavras (mínimo 1500)"
       ]
@@ -513,9 +487,9 @@
       "keyword": "copom abril selic",
       "category": "invest",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -530,9 +504,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~537 palavras (mínimo 1500)"
       ]
@@ -543,7 +514,7 @@
       "keyword": "dolar queda investir",
       "category": "invest",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -560,7 +531,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -573,8 +543,8 @@
       "keyword": "diablo iv lord",
       "category": "geek",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -590,8 +560,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~566 palavras (mínimo 1500)"
@@ -603,9 +571,9 @@
       "keyword": "gta vi novembro",
       "category": "geek",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -620,9 +588,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~583 palavras (mínimo 1500)"
       ]
@@ -634,7 +599,7 @@
       "category": "otaku",
       "checks": {
         "h1": true,
-        "intro": false,
+        "intro": true,
         "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -650,7 +615,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente na introdução",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~616 palavras (mínimo 1500)"
       ]
@@ -661,7 +625,7 @@
       "keyword": "frieren temporada confirmada",
       "category": "otaku",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -678,7 +642,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -691,8 +654,8 @@
       "keyword": "agentes ia autonomos",
       "category": "ia",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -708,8 +671,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
@@ -722,7 +683,7 @@
       "keyword": "ia mercado trabalho",
       "category": "ia",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -739,7 +700,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -752,9 +712,9 @@
       "keyword": "ibovespa recorde selic",
       "category": "invest",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -769,9 +729,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~625 palavras (mínimo 1500)"
       ]
@@ -782,7 +739,7 @@
       "keyword": "tesouro prefixado ipca",
       "category": "invest",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -799,7 +756,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -813,9 +769,9 @@
       "keyword": "pragmata capcom",
       "category": "geek",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -830,9 +786,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~723 palavras (mínimo 1500)"
       ]
@@ -844,8 +797,8 @@
       "category": "geek",
       "checks": {
         "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -861,8 +814,6 @@
       "issues": [
         "sem PAGE_META manual",
         "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~583 palavras (mínimo 1500)"
       ]
@@ -873,9 +824,9 @@
       "keyword": "one piece elbaf",
       "category": "otaku",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -890,9 +841,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~635 palavras (mínimo 1500)"
       ]
@@ -903,7 +851,7 @@
       "keyword": "spring season animes",
       "category": "otaku",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -920,7 +868,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -933,8 +880,8 @@
       "keyword": "negocio online ia",
       "category": "ia",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -950,8 +897,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "apenas ~404 palavras (mínimo 1500)"
       ]
@@ -962,9 +907,9 @@
       "keyword": "etfs b3",
       "category": "invest",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -979,9 +924,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "apenas ~458 palavras (mínimo 1500)"
       ]
     },
@@ -1099,7 +1041,7 @@
       "keyword": "lancamentos games abril",
       "category": "geek",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -1116,7 +1058,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "apenas ~693 palavras (mínimo 1500)"
@@ -1128,8 +1069,8 @@
       "keyword": "lego batman legacy",
       "category": "geek",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -1145,8 +1086,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "apenas ~668 palavras (mínimo 1500)"
       ]
@@ -1186,7 +1125,7 @@
       "keyword": "temporada animes abril",
       "category": "otaku",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -1203,7 +1142,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "apenas ~785 palavras (mínimo 1500)"
@@ -1215,8 +1153,8 @@
       "keyword": "crimson desert patches",
       "category": "geek",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -1232,8 +1170,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
@@ -1277,9 +1213,9 @@
       "keyword": "gemini pro gpt",
       "category": "ia",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -1294,9 +1230,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "apenas ~841 palavras (mínimo 1500)"
       ]
     },
@@ -1335,8 +1268,8 @@
       "keyword": "inflacao proteger investimentos",
       "category": "invest",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -1352,8 +1285,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "apenas ~665 palavras (mínimo 1500)"
       ]
@@ -1364,7 +1295,7 @@
       "keyword": "fiis defensivos abril",
       "category": "invest",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -1381,7 +1312,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "apenas ~714 palavras (mínimo 1500)"
@@ -1393,11 +1323,11 @@
       "keyword": "ia ciberseguranca",
       "category": "ia",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": true,
-        "metaTitle": false,
+        "metaTitle": true,
         "metaDescription": false,
         "metaKeywords": true,
         "hasAuthorBio": true,
@@ -1409,10 +1339,7 @@
       },
       "bucket": "D",
       "issues": [
-        "keyword ausente em meta title",
         "keyword ausente em meta description",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~969 palavras (mínimo 1500)"
@@ -1452,13 +1379,13 @@
       "keyword": "poupanca cdb tesouro",
       "category": "invest",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": true,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
@@ -1468,12 +1395,6 @@
       },
       "bucket": "D",
       "issues": [
-        "keyword ausente em meta title",
-        "keyword ausente em meta description",
-        "keyword ausente em meta keywords",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~1004 palavras (mínimo 1500)"
       ]
@@ -1484,12 +1405,12 @@
       "keyword": "reserva emergencia montar",
       "category": "invest",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
-        "excerpt": false,
+        "excerpt": true,
         "pageMetaExists": true,
-        "metaTitle": false,
-        "metaDescription": false,
+        "metaTitle": true,
+        "metaDescription": true,
         "metaKeywords": false,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
@@ -1500,12 +1421,8 @@
       },
       "bucket": "D",
       "issues": [
-        "keyword ausente em meta title",
-        "keyword ausente em meta description",
         "keyword ausente em meta keywords",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~872 palavras (mínimo 1500)"
       ]
@@ -1516,11 +1433,11 @@
       "keyword": "selic comeca cair",
       "category": "invest",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": true,
-        "metaTitle": false,
+        "metaTitle": true,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
@@ -1532,10 +1449,8 @@
       },
       "bucket": "D",
       "issues": [
-        "keyword ausente em meta title",
         "keyword ausente em meta description",
         "keyword ausente em meta keywords",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -1548,7 +1463,7 @@
       "keyword": "bitcoin vale comprar",
       "category": "invest",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -1565,7 +1480,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -1583,8 +1497,8 @@
         "intro": false,
         "excerpt": false,
         "pageMetaExists": true,
-        "metaTitle": false,
-        "metaDescription": false,
+        "metaTitle": true,
+        "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
@@ -1595,8 +1509,6 @@
       },
       "bucket": "D",
       "issues": [
-        "keyword ausente em meta title",
-        "keyword ausente em meta description",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
@@ -1610,7 +1522,7 @@
       "keyword": "fiis ainda vale",
       "category": "invest",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -1627,7 +1539,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -1642,8 +1553,8 @@
       "category": "geek",
       "checks": {
         "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -1659,8 +1570,6 @@
       "issues": [
         "sem PAGE_META manual",
         "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake"
       ]
@@ -1672,8 +1581,8 @@
       "category": "geek",
       "checks": {
         "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -1689,8 +1598,6 @@
       "issues": [
         "sem PAGE_META manual",
         "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake"
       ]
@@ -1702,7 +1609,7 @@
       "category": "geek",
       "checks": {
         "h1": false,
-        "intro": false,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -1719,7 +1626,6 @@
       "issues": [
         "sem PAGE_META manual",
         "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake"
@@ -1731,8 +1637,8 @@
       "keyword": "avatar frontiers pandora",
       "category": "geek",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -1748,8 +1654,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake"
@@ -1762,7 +1666,7 @@
       "category": "geek",
       "checks": {
         "h1": false,
-        "intro": false,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -1779,7 +1683,6 @@
       "issues": [
         "sem PAGE_META manual",
         "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake"
@@ -1792,7 +1695,7 @@
       "category": "geek",
       "checks": {
         "h1": false,
-        "intro": false,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -1809,7 +1712,6 @@
       "issues": [
         "sem PAGE_META manual",
         "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
@@ -1852,8 +1754,8 @@
       "keyword": "avatar caminho agua",
       "category": "geek",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -1869,8 +1771,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
@@ -1883,9 +1783,9 @@
       "keyword": "manhwas sistema",
       "category": "otaku",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -1900,9 +1800,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~422 palavras (mínimo 1500)"
       ]
@@ -1944,7 +1841,7 @@
       "keyword": "avatar filme revolucionou",
       "category": "geek",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -1961,7 +1858,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -1977,7 +1873,7 @@
       "checks": {
         "h1": false,
         "intro": false,
-        "excerpt": false,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -1994,7 +1890,6 @@
         "sem PAGE_META manual",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~467 palavras (mínimo 1500)"
@@ -2006,9 +1901,9 @@
       "keyword": "ac black flag",
       "category": "geek",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -2023,9 +1918,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~1161 palavras (mínimo 1500)"
@@ -2037,7 +1929,7 @@
       "keyword": "ia remasterizacao jogos",
       "category": "ia",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -2054,7 +1946,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "apenas ~1121 palavras (mínimo 1500)"
@@ -2068,7 +1959,7 @@
       "checks": {
         "h1": false,
         "intro": false,
-        "excerpt": false,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -2085,7 +1976,6 @@
         "sem PAGE_META manual",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~505 palavras (mínimo 1500)"
@@ -2187,12 +2077,12 @@
       "keyword": "investir tecnologia",
       "category": "invest",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": true,
-        "metaTitle": false,
-        "metaDescription": false,
+        "metaTitle": true,
+        "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
@@ -2203,11 +2093,6 @@
       },
       "bucket": "D",
       "issues": [
-        "keyword ausente em meta title",
-        "keyword ausente em meta description",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~853 palavras (mínimo 1500)"
       ]
@@ -2220,7 +2105,7 @@
       "checks": {
         "h1": false,
         "intro": false,
-        "excerpt": false,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -2237,7 +2122,6 @@
         "sem PAGE_META manual",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~1004 palavras (mínimo 1500)"
@@ -2339,9 +2223,9 @@
       "keyword": "chatgpt gemini claude",
       "category": "ia",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -2356,9 +2240,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~440 palavras (mínimo 1500)"
@@ -2370,11 +2251,11 @@
       "keyword": "usar ia ganhar",
       "category": "ia",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": true,
-        "metaTitle": false,
+        "metaTitle": true,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
@@ -2386,10 +2267,8 @@
       },
       "bucket": "D",
       "issues": [
-        "keyword ausente em meta title",
         "keyword ausente em meta description",
         "keyword ausente em meta keywords",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -2488,11 +2367,11 @@
       "keyword": "renda passiva formas",
       "category": "invest",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
-        "excerpt": false,
+        "excerpt": true,
         "pageMetaExists": true,
-        "metaTitle": false,
+        "metaTitle": true,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
@@ -2504,12 +2383,9 @@
       },
       "bucket": "D",
       "issues": [
-        "keyword ausente em meta title",
         "keyword ausente em meta description",
         "keyword ausente em meta keywords",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~571 palavras (mínimo 1500)"
       ]
@@ -2520,7 +2396,7 @@
       "keyword": "carteira investimentos iniciantes",
       "category": "invest",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -2537,7 +2413,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -2582,7 +2457,7 @@
       "keyword": "irpf declarar pagar",
       "category": "invest",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -2599,7 +2474,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -2612,7 +2486,7 @@
       "keyword": "ia mercado financeiro",
       "category": "invest",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -2629,7 +2503,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -2642,7 +2515,7 @@
       "keyword": "educacao financeira metodo",
       "category": "invest",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -2659,7 +2532,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -2672,9 +2544,9 @@
       "keyword": "fiis fundos imobiliarios",
       "category": "invest",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -2689,9 +2561,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~315 palavras (mínimo 1500)"
       ]
@@ -2702,12 +2571,12 @@
       "keyword": "sair dividas plano",
       "category": "invest",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": true,
-        "metaTitle": false,
-        "metaDescription": false,
+        "metaTitle": true,
+        "metaDescription": true,
         "metaKeywords": false,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
@@ -2718,10 +2587,7 @@
       },
       "bucket": "D",
       "issues": [
-        "keyword ausente em meta title",
-        "keyword ausente em meta description",
         "keyword ausente em meta keywords",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -2734,7 +2600,7 @@
       "keyword": "planejamento financeiro metas",
       "category": "invest",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -2751,7 +2617,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -2795,9 +2660,9 @@
       "keyword": "ia generativa iniciantes",
       "category": "ia",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
-        "excerpt": false,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -2812,9 +2677,7 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~519 palavras (mínimo 1500)"
       ]
@@ -2825,7 +2688,7 @@
       "keyword": "deepfakes ia identificar",
       "category": "ia",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -2842,7 +2705,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -2855,7 +2717,7 @@
       "keyword": "ia educacao estudar",
       "category": "ia",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -2872,7 +2734,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -2885,9 +2746,9 @@
       "keyword": "agentes ia funcionam",
       "category": "ia",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
-        "excerpt": false,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -2902,9 +2763,7 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "apenas ~924 palavras (mínimo 1500)"
       ]
     },
@@ -2914,9 +2773,9 @@
       "keyword": "ia saude diagnosticos",
       "category": "ia",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
-        "excerpt": false,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -2931,9 +2790,7 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "apenas ~1102 palavras (mínimo 1500)"
       ]
     },
@@ -2943,7 +2800,7 @@
       "keyword": "regulamentacao ia brasil",
       "category": "ia",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -2960,7 +2817,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -2973,7 +2829,7 @@
       "keyword": "animes aguardados",
       "category": "otaku",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -2990,7 +2846,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -3034,8 +2889,8 @@
       "keyword": "manga anime adaptacao",
       "category": "otaku",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -3051,8 +2906,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~571 palavras (mínimo 1500)"
@@ -3064,9 +2917,9 @@
       "keyword": "cultura otaku brasil",
       "category": "otaku",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": true,
-        "excerpt": false,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -3081,8 +2934,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~370 palavras (mínimo 1500)"
@@ -3094,9 +2945,9 @@
       "keyword": "jogos anime",
       "category": "otaku",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -3111,9 +2962,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~516 palavras (mínimo 1500)"
       ]
@@ -3124,9 +2972,9 @@
       "keyword": "aprender japones anime",
       "category": "otaku",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -3141,9 +2989,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~341 palavras (mínimo 1500)"
@@ -3155,7 +3000,7 @@
       "keyword": "isekai genero domina",
       "category": "otaku",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -3172,7 +3017,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -3185,7 +3029,7 @@
       "keyword": "merchandising otaku colecionar",
       "category": "otaku",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -3202,7 +3046,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -3215,9 +3058,9 @@
       "keyword": "mangas ler",
       "category": "otaku",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
-        "excerpt": false,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -3232,9 +3075,7 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~452 palavras (mínimo 1500)"
       ]
@@ -3245,9 +3086,9 @@
       "keyword": "saude mental cultura",
       "category": "otaku",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
-        "excerpt": false,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -3262,9 +3103,7 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~638 palavras (mínimo 1500)"
       ]
@@ -3275,7 +3114,7 @@
       "keyword": "ia criatividade arte",
       "category": "ia",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -3292,7 +3131,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -3305,11 +3143,11 @@
       "keyword": "ia privacidade dados",
       "category": "ia",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": true,
-        "metaTitle": false,
+        "metaTitle": true,
         "metaDescription": false,
         "metaKeywords": true,
         "hasAuthorBio": true,
@@ -3321,10 +3159,7 @@
       },
       "bucket": "D",
       "issues": [
-        "keyword ausente em meta title",
         "keyword ausente em meta description",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~718 palavras (mínimo 1500)"
@@ -3336,9 +3171,9 @@
       "keyword": "etfs investir",
       "category": "invest",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
-        "excerpt": false,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -3353,9 +3188,7 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~475 palavras (mínimo 1500)"
@@ -3395,8 +3228,8 @@
       "keyword": "crimson desert combate",
       "category": "geek",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -3412,8 +3245,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
@@ -3426,7 +3257,7 @@
       "keyword": "economia domestica cortar",
       "category": "invest",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -3443,7 +3274,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -3544,13 +3374,13 @@
       "keyword": "previdencia privada pgbl",
       "category": "invest",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": true,
-        "metaTitle": false,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
@@ -3560,11 +3390,7 @@
       },
       "bucket": "D",
       "issues": [
-        "keyword ausente em meta title",
         "keyword ausente em meta description",
-        "keyword ausente em meta keywords",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~624 palavras (mínimo 1500)"
@@ -3606,13 +3432,13 @@
       "keyword": "modelos ia open",
       "category": "ia",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": true,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
@@ -3622,12 +3448,6 @@
       },
       "bucket": "D",
       "issues": [
-        "keyword ausente em meta title",
-        "keyword ausente em meta description",
-        "keyword ausente em meta keywords",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~636 palavras (mínimo 1500)"
       ]
@@ -3668,8 +3488,8 @@
       "keyword": "dragon age veilguard",
       "category": "geek",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -3685,8 +3505,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
@@ -3699,8 +3517,8 @@
       "keyword": "demon slayer hashira",
       "category": "otaku",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -3716,8 +3534,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~564 palavras (mínimo 1500)"
@@ -3730,8 +3546,8 @@
       "category": "otaku",
       "checks": {
         "h1": true,
-        "intro": false,
-        "excerpt": false,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -3746,8 +3562,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~751 palavras (mínimo 1500)"
       ]
@@ -3758,9 +3572,9 @@
       "keyword": "crimson desert mapa",
       "category": "geek",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
@@ -3775,9 +3589,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~405 palavras (mínimo 1500)"
@@ -3789,12 +3600,12 @@
       "keyword": "crimson desert bosses",
       "category": "geek",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": true,
-        "metaTitle": false,
-        "metaDescription": false,
+        "metaTitle": true,
+        "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
@@ -3803,13 +3614,8 @@
         "wordCount": 4145,
         "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "B",
       "issues": [
-        "keyword ausente em meta title",
-        "keyword ausente em meta description",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake"
       ]
@@ -3820,12 +3626,12 @@
       "keyword": "crimson desert iniciantes",
       "category": "geek",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": true,
-        "metaTitle": false,
-        "metaDescription": false,
+        "metaTitle": true,
+        "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
@@ -3836,11 +3642,6 @@
       },
       "bucket": "D",
       "issues": [
-        "keyword ausente em meta title",
-        "keyword ausente em meta description",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~347 palavras (mínimo 1500)"
@@ -3852,12 +3653,12 @@
       "keyword": "crimson desert equipamentos",
       "category": "geek",
       "checks": {
-        "h1": false,
-        "intro": false,
-        "excerpt": false,
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": true,
-        "metaTitle": false,
-        "metaDescription": false,
+        "metaTitle": true,
+        "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
@@ -3868,11 +3669,6 @@
       },
       "bucket": "D",
       "issues": [
-        "keyword ausente em meta title",
-        "keyword ausente em meta description",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
         "apenas ~633 palavras (mínimo 1500)"
@@ -3884,8 +3680,8 @@
       "keyword": "tensura temporadas filmes",
       "category": "otaku",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -3901,8 +3697,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~1215 palavras (mínimo 1500)"
@@ -3915,7 +3709,7 @@
       "category": "otaku",
       "checks": {
         "h1": false,
-        "intro": false,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -3932,7 +3726,6 @@
       "issues": [
         "sem PAGE_META manual",
         "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~1361 palavras (mínimo 1500)"
@@ -3975,7 +3768,7 @@
       "keyword": "overlord ainz guardians",
       "category": "otaku",
       "checks": {
-        "h1": false,
+        "h1": true,
         "intro": false,
         "excerpt": false,
         "pageMetaExists": false,
@@ -3992,7 +3785,6 @@
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
@@ -4037,7 +3829,7 @@
       "category": "geek",
       "checks": {
         "h1": false,
-        "intro": false,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -4054,7 +3846,6 @@
       "issues": [
         "sem PAGE_META manual",
         "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
@@ -4068,7 +3859,7 @@
       "category": "geek",
       "checks": {
         "h1": false,
-        "intro": false,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -4085,7 +3876,6 @@
       "issues": [
         "sem PAGE_META manual",
         "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
@@ -4099,7 +3889,7 @@
       "category": "geek",
       "checks": {
         "h1": false,
-        "intro": false,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": false,
         "metaTitle": false,
@@ -4116,7 +3906,6 @@
       "issues": [
         "sem PAGE_META manual",
         "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
@@ -4155,13 +3944,13 @@
       "keyword": "Tsukimichi Moonlit Fantasy",
       "category": "otaku",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": true,
         "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
@@ -4172,9 +3961,6 @@
       "bucket": "D",
       "issues": [
         "keyword ausente em meta description",
-        "keyword ausente em meta keywords",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "sem Análise do Marcos / EditorialTake",
@@ -4295,11 +4081,11 @@
       "keyword": "Maou-sama Retry",
       "category": "otaku",
       "checks": {
-        "h1": false,
-        "intro": false,
+        "h1": true,
+        "intro": true,
         "excerpt": true,
         "pageMetaExists": true,
-        "metaTitle": false,
+        "metaTitle": true,
         "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
@@ -4311,9 +4097,6 @@
       },
       "bucket": "D",
       "issues": [
-        "keyword ausente em meta title",
-        "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
         "apenas ~566 palavras (mínimo 1500)"
       ]
