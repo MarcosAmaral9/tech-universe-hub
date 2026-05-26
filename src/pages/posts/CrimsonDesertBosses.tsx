@@ -5,6 +5,8 @@ import BackNavigation from "@/components/BackNavigation";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Skull, Swords, Shield, Star, Zap, Flame, Sword } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -603,6 +605,54 @@ const CrimsonDesertBosses = () => {
           <p className="text-muted-foreground">Conta nos comentários — e se encontrou algum boss que não está aqui! 👇</p>
         </div>
       </div>
+
+      <EditorialTake category="geek" title="Análise do Marcos: 76 bosses, 3 que realmente importam">
+        <p>
+          Depois de zerar Crimson Desert duas vezes, minha leitura é que o <strong>guia de bosses</strong>
+          do jogo é generoso na quantidade, mas honesto na curva. Os 76 chefes parecem
+          intimidadores no papel, mas 3 deles definem se você vai gostar do jogo: <strong>Kearush</strong>
+          (filtro de paciência), <strong>Reed Devil</strong> (filtro de leitura de padrão) e <strong>Caliburn</strong>
+          (filtro de execução). Se você passa desses três sem se irritar, vai amar o resto. Minha
+          recomendação prática para o jogador brasileiro: ative o Easy Mode no Patch 1.04.00 sem
+          culpa para os bosses opcionais e mantenha o Normal para a campanha — você preserva a
+          tensão dos chefes principais sem perder semanas grindando equipamento.
+        </p>
+      </EditorialTake>
+
+      <ArticleSources
+        sources={[
+          {
+            title: "Crimson Desert — Site oficial Pearl Abyss",
+            url: "https://www.crimsondesert.com/",
+            publisher: "Pearl Abyss",
+            accessedAt: "Maio 2026",
+          },
+          {
+            title: "Crimson Desert no Steam — patch notes oficiais",
+            url: "https://store.steampowered.com/app/1591310/Crimson_Desert/",
+            publisher: "Steam",
+            accessedAt: "Maio 2026",
+          },
+          {
+            title: "Crimson Desert review — IGN",
+            url: "https://www.ign.com/games/crimson-desert",
+            publisher: "IGN",
+            accessedAt: "Maio 2026",
+          },
+          {
+            title: "Crimson Desert boss guide — GamesRadar+",
+            url: "https://www.gamesradar.com/games/action-rpg/crimson-desert-review/",
+            publisher: "GamesRadar+",
+            accessedAt: "Maio 2026",
+          },
+          {
+            title: "Crimson Desert tips and bosses — PC Gamer",
+            url: "https://www.pcgamer.com/games/rpg/crimson-desert/",
+            publisher: "PC Gamer",
+            accessedAt: "Maio 2026",
+          },
+        ]}
+      />
 
       <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="crimson-desert-bosses-guia-chefes" />
