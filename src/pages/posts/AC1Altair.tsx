@@ -258,9 +258,7 @@ const AC1Altair = () => {
         </div>
       </div>
 
-      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="ac-1-altair-terra-santa-1191" />
-      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="ac-1-altair-terra-santa-1191" postTitle="Assassin's Creed 1 — Altaïr e a Terra Santa em 1191" />
     </article>
   );
