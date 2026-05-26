@@ -13,7 +13,7 @@ import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const CrimsonDesertBuilds = () => {
   useEffect(() => {
-    trackArticleRead("crimson-desert-builds-guia-2026", "Crimson Desert: Progressão de Kliff e Estilos de Jogo", "geek");
+    trackArticleRead("crimson-desert-personagens-kliff-damiane-oongka", "Crimson Desert: Kliff, Damiane e Oongka — Guia dos 3 Personagens Jogáveis", "geek");
   }, []);
 
   return (
