@@ -326,6 +326,51 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "IA na dublagem em 2026: ElevenLabs, VALL-E, acordo SAG-AFTRA, manifesto SATED, voice cloning ético e por que a dublagem clássica PT-BR não vai sumir.",
     keywords: "IA dublagem animes 2026, voice cloning IA, ElevenLabs dublagem, VALL-E Microsoft, SAG-AFTRA IA, SATED dubladores Brasil, Wendel Bezerra IA, dublagem PT-BR IA, Crunchyroll IA legendagem, futuro dublagem, IA cinema dublagem",
   },
+  "/post/dragon-ball-super-beerus-anime-confirmado-2026": {
+    title: "Dragon Ball Super: Beerus Anime Confirmado para 2026",
+    description: "Dragon Ball Super: Beerus é o novo anime spin-off confirmado pela Toei para 2026. Elenco, estúdio, data de estreia e o que esperar do arco do Deus da Destruição.",
+    keywords: "Dragon Ball Super Beerus, Dragon Ball novo anime 2026, Beerus anime, Toei Animation Dragon Ball, Dragon Ball Super 2026, spin-off Beerus, Whis Vermouth, Dragon Ball Super continuação, Akira Toriyama legado, anime Dragon Ball novo",
+  },
+  "/post/openai-bilhoes-financiamento-record-2026": {
+    title: "OpenAI Capta US$ 40 Bilhões: Maior Rodada de IA da História",
+    description: "OpenAI fecha financiamento recorde de US$ 40 bilhões com SoftBank a valuation de US$ 300B. O que muda para ChatGPT, GPT-5 e a corrida da IA em 2026.",
+    keywords: "OpenAI financiamento 2026, OpenAI 40 bilhões SoftBank, OpenAI valuation 300 bilhões, rodada recorde IA, ChatGPT futuro 2026, GPT-5, Sam Altman financiamento, OpenAI IPO, corrida IA, SoftBank OpenAI Masayoshi Son",
+  },
+  "/post/gemini-25-pro-vs-claude-ia-2026": {
+    title: "Gemini 2.5 Pro vs Claude em 2026: Qual a Melhor IA?",
+    description: "Comparativo Gemini 2.5 Pro vs Claude em 2026: benchmarks, contexto, preço de API, raciocínio, programação e qual IA escolher para cada caso de uso.",
+    keywords: "Gemini 2.5 Pro vs Claude 2026, comparativo Gemini Claude, qual IA usar 2026, Claude Sonnet vs Gemini, API Gemini Anthropic preço, benchmarks IA 2026, Gemini 2.5 Pro review, Claude review 2026, melhor IA programação, melhor IA texto",
+  },
+  "/post/ouro-maxima-historica-2026-como-investir": {
+    title: "Ouro em Máxima Histórica em 2026: Como Investir no Brasil",
+    description: "Ouro em máxima histórica em 2026: motivos da alta, ETFs, GLD, OURO11, ouro físico no Brasil e como montar exposição protegida contra dólar e inflação.",
+    keywords: "ouro máxima histórica 2026, como investir ouro 2026, OURO11 ETF, GLD ouro, ouro físico Brasil, ouro vs Bitcoin 2026, hedge inflação ouro, cotação ouro 2026, comprar ouro no Brasil, reservas ouro Banco Central",
+  },
+  "/post/acoes-brasileiras-baratas-valuation-2026": {
+    title: "Ações Brasileiras Baratas em 2026: Valuation Atrativo na B3",
+    description: "Ações brasileiras baratas em 2026: análise de valuation, P/L histórico, dividend yield e oportunidades na B3 com Selic em queda e Ibovespa descontado.",
+    keywords: "ações brasileiras baratas 2026, valuation B3 2026, ações P/L atrativo, dividend yield Brasil, Ibovespa descontado, ações para comprar 2026, oportunidades B3, Selic queda ações, value investing Brasil, ações baratas Selic",
+  },
+  "/post/nintendo-switch-2-guia-completo-2026": {
+    title: "Nintendo Switch 2: Guia Completo do Console em 2026",
+    description: "Nintendo Switch 2 em 2026: especificações, jogos exclusivos, retrocompatibilidade, preço no Brasil e por que o console é o maior lançamento de hardware do ano.",
+    keywords: "Nintendo Switch 2 guia 2026, Switch 2 especificações, Switch 2 preço Brasil, jogos exclusivos Switch 2, Switch 2 retrocompatível, Mario Kart Switch 2, Zelda Switch 2, Joy-Con 2, Nintendo lançamento 2026, console Nintendo novo",
+  },
+  "/post/zelda-ocarina-of-time-remake-switch-2-2026": {
+    title: "Zelda Ocarina of Time Remake no Switch 2: Tudo em 2026",
+    description: "Remake de Zelda Ocarina of Time no Switch 2 em 2026: novidades, gráficos, mudanças confirmadas pela Nintendo e o que esperar do retorno de Link a Hyrule.",
+    keywords: "Zelda Ocarina of Time remake 2026, Switch 2 Zelda, OoT Switch 2, Zelda remake gráficos, Nintendo Switch 2 jogos, Link Hyrule remake, Zelda 64 remake, remake clássico Nintendo, Zelda OoT 2026, novidades Zelda Switch 2",
+  },
+  "/post/naruto-especiais-confirmados-2026": {
+    title: "Naruto: Episódios Especiais Confirmados para 2026",
+    description: "Naruto especiais confirmados em 2026: episódios novos da Studio Pierrot, contexto da celebração de aniversário, datas e onde assistir no Brasil.",
+    keywords: "Naruto especiais 2026, Naruto novos episódios, Studio Pierrot Naruto, Naruto aniversário 2026, Naruto Shippuden especial, Boruto Naruto, Naruto onde assistir 2026, Naruto Crunchyroll, anime Naruto novo, Masashi Kishimoto Naruto",
+  },
+  "/post/big-three-naruto-bleach-one-piece-2026": {
+    title: "Big Three: Naruto, Bleach e One Piece em 2026",
+    description: "Big Three em 2026: Naruto, Bleach e One Piece — status atual do trio que definiu a Shonen Jump, novas adaptações, releituras e o legado para o anime moderno.",
+    keywords: "Big Three Naruto Bleach One Piece, Big Three anime 2026, Shonen Jump clássicos, One Piece status 2026, Bleach TYBW final, Naruto legado, Big Three shonen, anime clássicos 2026, trio shonen, jujutsu kaisen new big three",
+  },
 };
 
 const CATEGORY_KEYWORDS: Record<string, string[]> = {
