@@ -4,6 +4,8 @@ import BackNavigation from "@/components/BackNavigation";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Film, Globe, Swords } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -207,30 +209,59 @@ const SoloLeveling = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
-      <section className="my-10">
-        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
-          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
-            <span className="text-primary">●</span> Análise do Marcos
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-3"><strong>Solo Leveling</strong> é uma web novel coreana de Chugong publicada de 2016 a 2018 na plataforma KakaoPage, com manhwa adaptado por Dubu (REDICE Studio) entre 2018-2023. O anime estreou em janeiro/2024 pela A-1 Pictures (Aniplex), com 12 episódios na 1ª temporada e nota 8.3 no MyAnimeList.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">A 2ª temporada 'Arise From the Shadow' estreou em janeiro/2025 com 13 episódios. Em setembro/2025, a Aniplex confirmou oficialmente a 3ª temporada com lançamento previsto para 2026-2027. O filme compilatório 'Solo Leveling: ReAwakening' rendeu mais de US$ 6,5 milhões em bilheteria mundial (segundo Box Office Mojo).</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: o sucesso vem da animação técnica acima da média da A-1 Pictures, trilha de Hiroyuki Sawano e narrativa que entrega progressão constante. Para o público BR, recomendo assistir o anime na Crunchyroll (disponível com dublagem PT-BR) e complementar com o manhwa para arcos pós-temporada 2. O final do manhwa divide opiniões — fique avisado antes de correr para o capítulo 200.</p>
-        </div>
+      <EditorialTake category="otaku" title="Análise do Marcos: por que Solo Leveling virou fenômeno">
+        <p>
+          <strong>Solo Leveling</strong> é a adaptação que provou que o manhwa coreano consegue
+          competir de igual para igual com o anime japonês. A produção da A-1 Pictures usa um
+          padrão de animação digital próximo do cinematográfico em cenas-chave (Job Change
+          Arc, Jeju Island), o que sustenta a narrativa de power fantasy sem cair no
+          ridículo. A 3ª temporada foi confirmada pela Aniplex em setembro/2025 com previsão
+          para 2026–2027.
+        </p>
+        <p>
+          Minha leitura para o público BR: comece pelo anime na Crunchyroll (já dublado em
+          PT-BR), passe pelo filme <em>ReAwakening</em> e só vá para o manhwa se quiser saber
+          o final antes da adaptação chegar lá. Atenção ao desfecho do manhwa — divide muito
+          a base. Para quem investe em mídia coreana, o lançamento do live-action pela Netflix
+          em 2025 com Byeon Woo-seok deve consolidar Solo Leveling como uma das maiores IPs
+          asiáticas da década.
+        </p>
+      </EditorialTake>
 
-        <div className="bg-muted/30 border border-border rounded-2xl p-6">
-          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
-          <ul className="space-y-2 text-sm">
-            <li><a href="https://www.aniplex.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Aniplex — Solo Leveling ↗</a></li>
-            <li><a href="https://myanimelist.net/anime/52299/Solo_Leveling" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">MyAnimeList — Solo Leveling ↗</a></li>
-            <li><a href="https://www.crunchyroll.com/series/GG5H5XQ7Y/solo-leveling" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Crunchyroll — Solo Leveling ↗</a></li>
-            <li><a href="https://page.kakao.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">KakaoPage — Solo Leveling Original ↗</a></li>
-            <li><a href="https://www.boxofficemojo.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Box Office Mojo — Solo Leveling ReAwakening ↗</a></li>
-          </ul>
-          <p className="text-xs text-muted-foreground mt-4">
-            Última verificação dos links: maio de 2026.
-          </p>
-        </div>
-      </section>
+      <ArticleSources
+        sources={[
+          {
+            title: "Aniplex — Solo Leveling",
+            url: "https://www.aniplex.com/",
+            publisher: "Aniplex",
+            accessedAt: "Maio 2026",
+          },
+          {
+            title: "Crunchyroll — Solo Leveling",
+            url: "https://www.crunchyroll.com/series/GG5H5XQ7Y/solo-leveling",
+            publisher: "Crunchyroll",
+            accessedAt: "Maio 2026",
+          },
+          {
+            title: "MyAnimeList — Solo Leveling",
+            url: "https://myanimelist.net/anime/52299/Solo_Leveling",
+            publisher: "MyAnimeList",
+            accessedAt: "Maio 2026",
+          },
+          {
+            title: "KakaoPage — Solo Leveling original",
+            url: "https://page.kakao.com/",
+            publisher: "KakaoPage",
+            accessedAt: "Maio 2026",
+          },
+          {
+            title: "Box Office Mojo — Solo Leveling: ReAwakening",
+            url: "https://www.boxofficemojo.com/",
+            publisher: "Box Office Mojo",
+            accessedAt: "Maio 2026",
+          },
+        ]}
+      />
 
 
       <NewsletterSignup variant="inline" categories={["geek"]} />
