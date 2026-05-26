@@ -187,6 +187,115 @@ const AnthropicMythosGoogle2026 = () => {
           A decisão de restringir o Mythos a parceiros selecionados enquanto conduz avaliações é o caminho mais responsável disponível — e ainda assim o modelo "caiu em mãos não sancionadas". A comunidade de segurança de IA está usando o caso para argumentar que protocolos internacionais de avaliação de modelos de alto risco precisam ser estabelecidos antes, não depois, que os modelos sejam treinados.
         </p>
 
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Lightbulb className="h-7 w-7 text-violet-400" />
+          Por que o investimento da Anthropic e do modelo Mythos importa para o Brasil
+        </h2>
+        <p>
+          Do ponto de vista de quem desenvolve produto no Brasil, o investimento do Google na
+          Anthropic e o lançamento do modelo Mythos têm três efeitos diretos. O primeiro é a
+          consolidação do <strong>Claude como API enterprise</strong> de referência: com
+          US$ 10 bilhões em caixa imediato e contratos de uso garantidos do Google Cloud, a
+          Anthropic ganha previsibilidade para honrar SLAs que startups brasileiras precisam
+          oferecer aos seus próprios clientes corporativos. O segundo é o <strong>preço por
+          milhão de tokens</strong> — historicamente, rodadas de capital tão grandes precedem
+          quedas de preço para conquistar share. Quem fatura em real e paga API em dólar deveria
+          monitorar de perto qualquer reajuste da tabela do Claude até o terceiro trimestre.
+        </p>
+        <p>
+          O terceiro efeito é regulatório. O Brasil discute o <strong>PL 2338/2023</strong> no
+          Congresso, e o caso do Mythos vira referência prática para o debate: um modelo
+          considerado tão poderoso em cibersegurança que a própria empresa criadora restringiu o
+          acesso é exatamente o tipo de cenário que reguladores europeus e brasileiros estão
+          tentando endereçar. Para desenvolvedores que integram Claude em soluções de
+          compliance, jurídico ou financeiro, vale documentar agora quais versões do modelo são
+          usadas em produção — auditorias futuras de IA no Brasil tendem a exigir esse rastro.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <TrendingUp className="h-7 w-7 text-violet-400" />
+          Impacto no mercado de IA até o fim de 2026
+        </h2>
+        <p>
+          Com o Google bancando a Anthropic e a SoftBank bancando a OpenAI, a corrida de
+          investimento em modelos de IA passa a ser dominada por <strong>dois polos
+          financeiros</strong> — algo que muda a dinâmica competitiva da indústria. Players
+          como Mistral, Cohere e a brasileira Maritaca passam a operar em uma escala
+          totalmente diferente: enquanto Anthropic e OpenAI gastam US$ 5–10 bilhões só em
+          treinamento, concorrentes menores precisam optar entre verticalizar (modelos
+          específicos por setor) ou apostar em open source para reduzir custo de inferência.
+        </p>
+        <div className="not-prose my-6 grid md:grid-cols-3 gap-4">
+          {[
+            {
+              t: "Concentração de capital",
+              d: "OpenAI + Anthropic juntas captaram US$ 80B em menos de 12 meses. É mais capital do que toda a indústria de IA havia recebido entre 2015 e 2023 somados.",
+            },
+            {
+              t: "Cloud lock-in",
+              d: "Microsoft Azure ancora OpenAI. Google Cloud ancora Anthropic. AWS ancora parte da Anthropic (rodada anterior) e investe em modelos próprios via Bedrock. A escolha de cloud vira escolha de stack de IA.",
+            },
+            {
+              t: "Modelos de segurança",
+              d: "O Mythos sinaliza que cibersegurança e raciocínio long-horizon serão os próximos diferenciais. GPT-5.4 e Gemini 3.1 caminham na mesma direção — mas com filosofias diferentes de release.",
+            },
+          ].map((b) => (
+            <div key={b.t} className="bg-card rounded-xl border border-ia/20 p-4">
+              <h3 className="font-bold text-sm mb-2 text-ia">{b.t}</h3>
+              <p className="text-sm text-muted-foreground mb-0">{b.d}</p>
+            </div>
+          ))}
+        </div>
+        <p>
+          Para investidores brasileiros, há leitura indireta: a Alphabet (GOOGL) consolida a
+          tese de <em>IA-pick-and-shovel</em> — independentemente de quem ganhar a corrida de
+          modelos, o Google Cloud lucra com o consumo de TPUs. Esse foi um dos motivos pelos
+          quais a ação do Google reagiu positivamente ao anúncio, ainda que o desembolso de
+          US$ 40 bilhões seja substancial para o caixa da empresa. Já a relação com o IVVB11
+          fica reforçada: Microsoft e Alphabet juntas pesam ~14% do S&amp;P 500, e ambas
+          estão profundamente expostas ao tema IA via OpenAI e Anthropic, respectivamente.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Brain className="h-7 w-7 text-violet-400" />
+          Próximos marcos para acompanhar
+        </h2>
+        <p>
+          A janela crítica para a Anthropic vai até o fim do segundo semestre de 2026. Três
+          marcos definem se o investimento do Google se traduz em vantagem competitiva real ou
+          se vira apenas hedge financeiro:
+        </p>
+        <ul>
+          <li>
+            <strong>Liberação ampliada do Mythos:</strong> a Anthropic precisa publicar os
+            relatórios de avaliação de segurança até o terceiro trimestre para justificar
+            disponibilizar o modelo via API pública. Se isso acontecer, espera-se um novo
+            patamar de capacidades em cibersegurança disponível para clientes corporativos.
+          </li>
+          <li>
+            <strong>Metas de receita do Google:</strong> os US$ 30 bilhões adicionais são
+            condicionais. O contrato menciona metas relacionadas a adoção empresarial do
+            Claude e migração de cargas de trabalho para Google Cloud. Acompanhar a divulgação
+            trimestral da Alphabet é a forma mais simples de medir o progresso.
+          </li>
+          <li>
+            <strong>Resposta da OpenAI:</strong> com a Anthropic atingindo valuation maior
+            (US$ 350B vs US$ 300B), a OpenAI tende a responder com um próximo modelo de
+            destaque — possivelmente uma versão pública de raciocínio comparável ao Mythos —
+            ainda em 2026. Para usuários do ChatGPT, isso provavelmente significa upgrades
+            mais agressivos nos próximos meses.
+          </li>
+        </ul>
+        <p>
+          Em resumo, o investimento de US$ 40 bilhões do Google na Anthropic e o modelo
+          Mythos marcam o início de uma fase em que segurança, integração corporativa e
+          alianças com hyperscalers de cloud se tornam mais decisivas do que o benchmark de
+          desempenho puro. Para o brasileiro que constrói, investe ou apenas usa ferramentas
+          de IA no dia a dia, vale assumir que o Claude vai ficar mais presente e mais
+          integrado ao ecossistema Google nos próximos meses — e ajustar o stack com isso em
+          mente.
+        </p>
+
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
           <h3 className="text-xl font-bold mb-2">Você prefere usar Claude ou ChatGPT no trabalho? 🤖</h3>
           <p className="text-muted-foreground">Com esses investimentos, qual IA você acredita que ganha a corrida? Conta nos comentários! 👇</p>
