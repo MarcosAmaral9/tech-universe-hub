@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, BookOpen, MapPin, Shield, Swords, Target, Cpu, DollarSign, Crown, Globe } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import acRevImg from "@/assets/ac-revelations.webp";
@@ -232,9 +231,7 @@ const ACRevelations = () => {
         </div>
       </div>
 
-      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="ac-revelations-ezio-constantinopla" />
-      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="ac-revelations-ezio-constantinopla" postTitle="Assassin's Creed Revelations — Ezio em Constantinopla" />
     </article>
   );

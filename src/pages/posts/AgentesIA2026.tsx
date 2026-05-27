@@ -9,7 +9,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { ArrowLeft, Clock, User, Calendar, Bot, Cpu, Briefcase, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/agentes-ia-2026.webp";
 
@@ -197,9 +196,7 @@ const AgentesIA2026 = () => {
         { title: "LGPD — Art. 20 (Revisão de decisões automatizadas)", url: "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm", publisher: "Planalto", accessedAt: "Maio 2026" }
       ]} />
 
-      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="agentes-ia-2026-como-funcionam" />
-      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="agentes-ia-2026-como-funcionam" postTitle="Agentes de IA 2026: O Que São, Como Funcionam e Por Que Mudam Tudo" />
     </article>
   );

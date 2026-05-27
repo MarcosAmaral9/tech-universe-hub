@@ -4,7 +4,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, MessageSquare, Lightbulb, Target, Zap, BookOpen, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
@@ -280,9 +279,7 @@ Use analogias do dia a dia para explicar conceitos complexos.`}
       </section>
 
 
-      <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="prompt-engineering-guia-2026" />
-      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="prompt-engineering-guia-2026" />
     </article>
   );

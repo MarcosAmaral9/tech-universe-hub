@@ -8,7 +8,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Brain, TrendingUp, Shield, BarChart3, Zap, Lightbulb } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/anthropic-mythos-google-investimento-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -315,13 +314,9 @@ const AnthropicMythosGoogle2026 = () => {
         ]}
       />
 
-      <NewsletterSignup variant="inline" categories={["ia"]} />
-
-
       <RelatedPosts currentSlug="anthropic-mythos-modelo-ia-google-investimento-2026" />
 
 
-      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="anthropic-mythos-modelo-ia-google-investimento-2026" postTitle="Google Investe US$ 40 Bilhões na Anthropic e o Modelo Mythos Chega" />
     </article>
   );

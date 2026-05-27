@@ -4,7 +4,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, Sword, Zap, Shield } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
@@ -194,9 +193,7 @@ const CrimsonDesertCombate = () => {
         </p>
       </div>
 
-      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="crimson-desert-combate-blackspace-engine" />
-      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="crimson-desert-combate-blackspace-engine" postTitle="Crimson Desert: Sistema de Combate e BlackSpace Engine" />
     </article>
   );

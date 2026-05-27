@@ -6,7 +6,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, Brain, Zap, Shield, BarChart3, Lightbulb, TrendingUp } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/agentes-ia-autonomos-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -208,9 +207,7 @@ const AgentesIAAutonomos2026 = () => {
         </div>
       </div>
 
-      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="agentes-ia-autonomos-2026" />
-      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="agentes-ia-autonomos-2026" postTitle="Agentes de IA Autônomos: O que São, Como Funcionam e Por Que Vão Mudar Tudo em 2026" />
     </article>
   );

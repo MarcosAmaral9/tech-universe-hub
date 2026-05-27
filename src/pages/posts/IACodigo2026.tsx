@@ -9,7 +9,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { ArrowLeft, Clock, User, Calendar, Code, Bot, Cpu, TrendingUp, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-codigo-programadores-2026.webp";
 
@@ -127,10 +126,8 @@ const IACodigo2026 = () => {
     { title: 'Google DORA — State of DevOps', url: 'https://dora.dev/research/', publisher: 'DORA', accessedAt: "Maio 2026" }
   ]} />
 
-        <NewsletterSignup variant="inline" categories={["geek"]} />
-      <RelatedPosts currentSlug="ia-codigo-programadores-2026" />
-    <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="ia-codigo-programadores-2026" postTitle="IA e Programação em 2026" />
+        <RelatedPosts currentSlug="ia-codigo-programadores-2026" />
+    <CommentSection postId="ia-codigo-programadores-2026" postTitle="IA e Programação em 2026" />
   </article>
 );
 };

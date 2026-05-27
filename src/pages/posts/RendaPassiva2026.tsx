@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, Calendar, User, AlertTriangle, ChevronRight, ChevronDown, ChevronUp, Zap, Building2, TrendingUp, CreditCard, Laptop, Home, Handshake, Music } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import { Slider } from "@/components/ui/slider";
 import { Progress } from "@/components/ui/progress";
@@ -328,10 +327,8 @@ const RendaPassiva2026 = () => {
       </section>
 
 
-        <NewsletterSignup variant="inline" categories={["invest"]} />
-      <RelatedPosts currentSlug="renda-passiva-2026-formas-comprovadas" />
-        <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
-      <CommentSection postId="renda-passiva-2026-formas-comprovadas" postTitle="Renda Passiva Real em 2026: 7 Formas Comprovadas de Ganhar Dinheiro" />
+        <RelatedPosts currentSlug="renda-passiva-2026-formas-comprovadas" />
+        <CommentSection postId="renda-passiva-2026-formas-comprovadas" postTitle="Renda Passiva Real em 2026: 7 Formas Comprovadas de Ganhar Dinheiro" />
       </article>
     </>
   );

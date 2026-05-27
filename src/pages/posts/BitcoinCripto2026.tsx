@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, Calendar, User, ChevronRight, ChevronDown, ChevronUp, Zap, AlertTriangle, Shield, TrendingUp, TrendingDown, Bitcoin } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import { Slider } from "@/components/ui/slider";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -339,10 +338,8 @@ const BitcoinCripto2026 = () => {
 
         <BackNavigation category="invest" />
 
-        <NewsletterSignup variant="inline" categories={["invest"]} />
-      <RelatedPosts currentSlug="bitcoin-criptomoedas-2026-investir" />
-        <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
-      <CommentSection postId="27" postTitle="Bitcoin e Criptomoedas em 2026: Ainda Dá Para Lucrar?" />
+        <RelatedPosts currentSlug="bitcoin-criptomoedas-2026-investir" />
+        <CommentSection postId="27" postTitle="Bitcoin e Criptomoedas em 2026: Ainda Dá Para Lucrar?" />
       </article>
     </>
   );

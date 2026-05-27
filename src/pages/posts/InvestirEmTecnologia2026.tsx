@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, Calendar, User, AlertTriangle, TrendingUp, Cpu, Server, Shield, Tv, Target, BookOpen } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import techInvesting2026Img from "@/assets/tech-investing-2026.webp";
 
@@ -297,9 +296,7 @@ const InvestirEmTecnologia2026 = () => {
       </section>
 
 
-      <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="investir-em-tecnologia-2026" />
-      <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="investir-em-tecnologia-2026" postTitle="Como Investir em Tecnologia em 2026: Guia de Setores e ETFs" />
     </article>
   );

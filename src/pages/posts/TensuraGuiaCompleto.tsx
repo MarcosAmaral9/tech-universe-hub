@@ -6,7 +6,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, Tv, Film, BookOpen, Star, Globe, Music } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/tensura-guia-completo.webp";
 
@@ -288,9 +287,7 @@ const TensuraGuiaCompleto = () => {
       </section>
 
 
-      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="tensura-guia-completo-temporadas-filmes" />
-      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="tensura-guia-completo-temporadas-filmes" />
     </article>
   );

@@ -9,7 +9,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Film, Globe, Swords } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import heroImg from "@/assets/solo-leveling.webp";
@@ -264,9 +263,7 @@ const SoloLeveling = () => {
       />
 
 
-      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="solo-leveling-guia-completo-temporadas" />
-      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="solo-leveling-guia-completo-temporadas" postTitle="Solo Leveling: Guia Completo — Temporadas, Filme e o Monarca das Sombras" />
           <AdLeaderboard className="my-8" />
     </article>

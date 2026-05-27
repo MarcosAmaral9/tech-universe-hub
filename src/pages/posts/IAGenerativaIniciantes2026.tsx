@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, User, Calendar, BookOpen, Target, Wrench, AlertCircle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-generativa-iniciantes-2026.webp";
 
@@ -144,9 +143,7 @@ const IAGenerativaIniciantes2026 = () => {
           </p>
         </div>
       </section>
-      <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="ia-generativa-iniciantes-2026-guia" />
-      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="ia-generativa-iniciantes-2026-guia" postTitle="IA Generativa para Iniciantes 2026: Do Zero ao Avançado" />
     </article>
   );

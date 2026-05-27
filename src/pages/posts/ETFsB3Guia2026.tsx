@@ -8,7 +8,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, TrendingUp, BarChart3, Shield, Lightbulb, DollarSign, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/etfs-guia-completo-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -235,9 +234,7 @@ const ETFsB3Guia2026 = () => {
 
 
 
-      <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="etfs-b3-guia-completo-2026" />
-      <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="etfs-b3-guia-completo-2026" postTitle="ETFs na B3 em 2026: Guia Completo para Investir em Fundos de Índice" />
     </article>
   );

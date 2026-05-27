@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, User, Calendar, TrendingUp, DollarSign, Shield, BookOpen } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/previdencia-privada-2026.webp";
 
@@ -178,10 +177,8 @@ const PrevidenciaPrivada2026 = () => {
         </div>
       </section>
 
-<NewsletterSignup variant="inline" categories={["invest"]} />
-      <RelatedPosts currentSlug="previdencia-privada-2026" />
-    <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
-      <CommentSection postId="previdencia-privada-2026" postTitle="Previdência Privada 2026: PGBL ou VGBL?" />
+<RelatedPosts currentSlug="previdencia-privada-2026" />
+    <CommentSection postId="previdencia-privada-2026" postTitle="Previdência Privada 2026: PGBL ou VGBL?" />
   </article>
 );
 };

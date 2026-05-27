@@ -9,7 +9,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { ArrowLeft, Clock, Calendar, User, ChevronRight, Zap, AlertTriangle, FileText, CheckCircle, Timer } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import irpfImg from "@/assets/irpf-2026.webp";
@@ -411,10 +410,8 @@ const IRPF2026 = () => {
     { title: 'CVM — Orientações ao Investidor', url: 'https://www.gov.br/cvm/pt-br/assuntos/noticias', publisher: 'CVM', accessedAt: "Maio 2026" }
   ]} />
 
-        <NewsletterSignup variant="inline" categories={["invest"]} />
-      <RelatedPosts currentSlug="irpf-2026-guia-declarar-pagar-menos" />
-        <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
-      <CommentSection postId="28" postTitle="IRPF 2026: Guia Completo Para Declarar e Pagar Menos Imposto" />
+        <RelatedPosts currentSlug="irpf-2026-guia-declarar-pagar-menos" />
+        <CommentSection postId="28" postTitle="IRPF 2026: Guia Completo Para Declarar e Pagar Menos Imposto" />
       </article>
     </>
   );

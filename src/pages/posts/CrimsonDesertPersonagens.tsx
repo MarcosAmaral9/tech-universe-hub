@@ -16,7 +16,6 @@ import {
 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
@@ -364,9 +363,7 @@ const CrimsonDesertPersonagens = () => {
         ]}
       />
 
-      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="crimson-desert-personagens-kliff-damiane-oongka" />
-      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection
         postId="crimson-desert-personagens-kliff-damiane-oongka"
         postTitle="Crimson Desert: Kliff, Damiane e Oongka — Guia dos 3 Personagens Jogáveis"

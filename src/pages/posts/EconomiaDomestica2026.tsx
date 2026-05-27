@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, User, Calendar, Home, ShoppingCart, Lightbulb, Calculator, Sparkles } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/economia-domestica-2026.webp";
 
@@ -139,9 +138,7 @@ const EconomiaDomestica2026 = () => {
         </div>
       </div>
 
-      <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="economia-domestica-2026-cortar-gastos" />
-      <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="economia-domestica-2026-cortar-gastos" postTitle="Economia Doméstica 2026: 30 Dicas Para Cortar Gastos Sem Perder Qualidade" />
     </article>
   );

@@ -9,7 +9,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { ArrowLeft, Clock, User, Calendar, Star, Flame, Shield } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/demon-slayer-hashira-2026.webp";
 
@@ -141,10 +140,8 @@ const DemonSlayerHashira2026 = () => {
     { title: 'MyAnimeList — Kimetsu no Yaiba', url: 'https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba', publisher: 'MAL', accessedAt: "Maio 2026" }
   ]} />
 
-        <NewsletterSignup variant="inline" categories={["otaku"]} />
-      <RelatedPosts currentSlug="demon-slayer-hashira-2026" />
-    <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
-      <CommentSection postId="demon-slayer-hashira-2026" postTitle="Demon Slayer: Guia dos Hashira" />
+        <RelatedPosts currentSlug="demon-slayer-hashira-2026" />
+    <CommentSection postId="demon-slayer-hashira-2026" postTitle="Demon Slayer: Guia dos Hashira" />
   </article>
 );
 };

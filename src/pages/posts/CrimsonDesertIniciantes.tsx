@@ -8,7 +8,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, BookOpen, Compass, Shield, Zap, MapPin, Star } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/crimson-desert-iniciantes.webp";
 
@@ -237,9 +236,7 @@ const CrimsonDesertIniciantes = () => {
         </div>
       </div>
 
-      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="crimson-desert-guia-iniciantes-dicas" />
-      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="crimson-desert-guia-iniciantes-dicas" postTitle="Crimson Desert: Guia de Dicas para Iniciantes" />
           <AdLeaderboard className="my-8" />
     </article>

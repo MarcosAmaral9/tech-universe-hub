@@ -9,7 +9,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { ArrowLeft, Clock, User, Calendar, Cpu, Zap, Gamepad2, MonitorPlay } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import aiRemasteringImg from "@/assets/ai-remastering.webp";
 
@@ -206,9 +205,7 @@ const IARemasterizacaoJogos = () => {
         { title: "NVIDIA ACE — Generative AI for NPCs", url: "https://developer.nvidia.com/ace", publisher: "NVIDIA Developer", accessedAt: "Maio 2026" }
       ]} />
 
-      <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="ia-remasterizacao-jogos-classicos" />
-      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="ia-remasterizacao-jogos-classicos" postTitle="IA e Remasterização: Como a IA Está Dando Nova Vida aos Jogos Clássicos" />
     </article>
   );

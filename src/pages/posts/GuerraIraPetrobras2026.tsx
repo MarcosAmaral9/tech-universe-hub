@@ -6,7 +6,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, TrendingUp, AlertTriangle, BarChart3, Shield, Lightbulb, Flame } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/guerra-ira-petrobras-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -326,7 +325,6 @@ const GuerraIraPetrobras2026 = () => {
       </section>
 
  
-      <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="guerra-ira-petroleo-petrobras-2026" />
       <CommentSection
         postId="guerra-ira-petroleo-petrobras-2026"

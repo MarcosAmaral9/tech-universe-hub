@@ -8,7 +8,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Brain, Zap, Globe, BarChart3, Shield, Lightbulb } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/gemini3-vs-gpt5-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -230,9 +229,7 @@ const Gemini25ProVsGPT4o = () => {
 
 
 
-      <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="gemini-2-5-pro-vs-gpt-4o-2026" />
-      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="gemini-2-5-pro-vs-gpt-4o-2026" postTitle="Gemini 2.5 Pro vs GPT-4o: Qual o Melhor Modelo de IA em 2026?" />
     </article>
   );

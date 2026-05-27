@@ -8,7 +8,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Gamepad2, Star, BarChart3, Zap, Shield, Film } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/super-mario-galaxy-movie-2026-bilheteria.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -210,13 +209,9 @@ const SuperMarioGalaxyMovie2026 = () => {
         ]}
       />
 
-      <NewsletterSignup variant="inline" categories={["geek"]} />
-
-
       <RelatedPosts currentSlug="super-mario-galaxy-movie-2026-bilheteria" />
 
 
-      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="super-mario-galaxy-movie-2026-bilheteria" postTitle="Super Mario Galaxy: O Filme Abre com US$ 372 Milhões Mundiais" />
     </article>
   );

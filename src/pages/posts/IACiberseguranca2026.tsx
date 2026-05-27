@@ -6,7 +6,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Shield, AlertTriangle, Lock, Eye, Bug, Server } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
@@ -220,9 +219,7 @@ const IACiberseguranca2026 = () => {
     { title: 'NIST — AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework', publisher: 'NIST', accessedAt: "Maio 2026" }
   ]} />
 
-        <NewsletterSignup variant="inline" categories={["ia"]} />
-      <RelatedPosts currentSlug="ia-ciberseguranca-2026" />
-      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
+        <RelatedPosts currentSlug="ia-ciberseguranca-2026" />
       <CommentSection postId="ia-ciberseguranca-2026" />
     </article>
   );

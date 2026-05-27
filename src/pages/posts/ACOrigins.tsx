@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, User, Calendar, Pyramid, Bird, Sword, Cpu, DollarSign, Target, Laptop, Gamepad2, HelpCircle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import acOriginsImg from "@/assets/ac-origins.webp";
 
@@ -451,11 +450,9 @@ const ACOrigins = () => {
       </div>
 
       {/* Related Posts */}
-      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="ac-origins-renascimento-franquia-egito" />
 
       {/* Comments */}
-      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="ac-origins-renascimento-franquia-egito" postTitle="AC Origins em 2026 Vale a Pena? Review Completa — Egito Antigo" />
     </article>
   );

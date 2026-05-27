@@ -8,7 +8,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3, MapPin } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/gta-vi-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -208,9 +207,7 @@ const GTAVI2026 = () => {
 
 
 
-      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="gta-vi-guia-completo-2026" />
-      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="gta-vi-guia-completo-2026" postTitle="GTA VI: Data de Lançamento, Plataformas e Tudo que Sabemos" />
     </article>
   );

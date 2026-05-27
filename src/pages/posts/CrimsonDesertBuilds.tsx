@@ -4,7 +4,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, Sword, Wand2, Shield, Zap, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
@@ -167,9 +166,7 @@ const CrimsonDesertBuilds = () => {
 
       </div>
 
-      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="crimson-desert-builds-guia-2026" />
-      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="crimson-desert-builds-guia-2026" postTitle="Crimson Desert: Progressão de Kliff e Estilos de Jogo" />
     </article>
   );
