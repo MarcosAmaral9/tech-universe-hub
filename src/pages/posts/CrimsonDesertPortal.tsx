@@ -12,8 +12,38 @@ import crimsonBuildsImg      from "@/assets/crimson-desert-builds.webp";
 import crimsonBossesImg      from "@/assets/crimson-desert-bosses.webp";
 import crimsonIniciantesImg  from "@/assets/crimson-desert-iniciantes.webp";
 import crimsonEquipImg       from "@/assets/crimson-desert-equipamentos.webp";
+import crimsonPersonagensImg from "@/assets/crimson-desert-personagens.webp";
+import crimsonPatchesImg     from "@/assets/crimson-desert-patches.webp";
+import crimsonVendasImg      from "@/assets/crimson-desert-vendas-review.webp";
 
 const articles = [
+  {
+    slug:     "crimson-desert-personagens-kliff-damiane-oongka",
+    title:    "Personagens Jogáveis",
+    subtitle: "Kliff, Damiane e Oongka",
+    desc:     "Guia completo dos 3 protagonistas: habilidades, estilo de combate e quando cada um é desbloqueado.",
+    image:    crimsonPersonagensImg,
+    btn:      "Ver Personagens",
+    badge:    "👥 Novo",
+  },
+  {
+    slug:     "crimson-desert-patches-atualizacoes-2026",
+    title:    "Patches & Atualizações",
+    subtitle: "Histórico Completo 2026",
+    desc:     "Todas as correções, balanceamentos de bosses e novidades adicionadas desde o lançamento.",
+    image:    crimsonPatchesImg,
+    btn:      "Ver Patches",
+    badge:    "🛠️ Novo",
+  },
+  {
+    slug:     "crimson-desert-vendas-review-completo-2026",
+    title:    "Vendas & Review",
+    subtitle: "Sucesso Comercial e Recepção",
+    desc:     "+3M cópias em 4 dias, Metacritic 78 e o que isso significa para o futuro da franquia.",
+    image:    crimsonVendasImg,
+    btn:      "Ver Análise",
+    badge:    null,
+  },
   {
     slug:     "crimson-desert-melhores-equipamentos-inicio",
     title:    "Melhores Equipamentos",
