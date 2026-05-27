@@ -8,7 +8,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Star, Zap, Shield, BarChart3, BookOpen, Anchor } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/one-piece-final-saga-guia-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -190,9 +189,7 @@ const OnePieceElbaf2026 = () => {
     { title: 'Anime News Network', url: 'https://www.animenewsnetwork.com/', publisher: 'ANN', accessedAt: "Maio 2026" }
   ]} />
 
-        <NewsletterSignup variant="inline" categories={["geek"]} />
-      <RelatedPosts currentSlug="one-piece-elbaf-formato-sazonal-2026" />
-      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
+        <RelatedPosts currentSlug="one-piece-elbaf-formato-sazonal-2026" />
       <CommentSection postId="one-piece-elbaf-formato-sazonal-2026" postTitle="One Piece Arco de Elbaf: A Ilha dos Gigantes e o Novo Formato Sazonal" />
     </article>
   );

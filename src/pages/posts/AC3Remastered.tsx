@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, User, Calendar, Sword, Cpu, Monitor, DollarSign, Target, Laptop, Gamepad2, HelpCircle, Shield, MapPin, Users, BookOpen, Flame, TreePine } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import ac3Img from "@/assets/ac-3.webp";
 
@@ -784,11 +783,9 @@ const AC3Remastered = () => {
       </div>
 
       {/* Related Posts */}
-      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="ac-3-remastered-revolucao-americana" />
 
       {/* Comments */}
-      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="ac-3-remastered-revolucao-americana" postTitle="AC III Remastered em 2026 Vale a Pena? Review — Revolução Americana" />
     </article>
   );

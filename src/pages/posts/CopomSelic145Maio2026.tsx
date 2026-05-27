@@ -6,7 +6,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, BarChart3, DollarSign, TrendingUp, Lightbulb, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import ArticleSources from "@/components/ArticleSources";
 import EditorialTake from "@/components/EditorialTake";
@@ -190,9 +189,7 @@ const CopomSelic145Maio2026 = () => {
           { title: "Histórico de Selic", url: "https://www.bcb.gov.br/controleinflacao/historicotaxasjuros", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
         ]}
       />
-      <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug={SLUG} />
-      <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId={SLUG} postTitle={TITLE} />
     </article>
   );

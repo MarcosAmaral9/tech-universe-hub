@@ -6,7 +6,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, TrendingUp, BarChart3, Shield, Lightbulb, DollarSign } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/tesouro-direto-guia-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -200,9 +199,7 @@ const TesouroPrefixadoVsIPCA2026 = () => {
         </p>
       </div>
 
-      <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="tesouro-prefixado-vs-ipca-2026" />
-      <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="tesouro-prefixado-vs-ipca-2026" postTitle="Tesouro Prefixado ou IPCA+? Qual Escolher com a Selic Caindo em 2026" />
     </article>
   );

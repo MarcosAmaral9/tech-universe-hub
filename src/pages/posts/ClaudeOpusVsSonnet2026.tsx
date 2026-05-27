@@ -8,7 +8,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Brain, Zap, BarChart3, Shield, Lightbulb, DollarSign } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/claude-opus-vs-sonnet-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -236,9 +235,7 @@ const ClaudeOpusVsSonnet2026 = () => {
 
 
 
-      <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="claude-opus-vs-sonnet-2026" />
-      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="claude-opus-vs-sonnet-2026" postTitle="Claude 4 Opus vs Claude 4 Sonnet: Qual Usar em 2026?" />
     </article>
   );

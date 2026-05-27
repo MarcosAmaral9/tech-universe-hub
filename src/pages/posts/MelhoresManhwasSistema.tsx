@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, Calendar, User, Target, Trophy, Gamepad2, Star } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import systemManhwaImg from "@/assets/system-manhwa-hero.webp";
 
@@ -316,9 +315,7 @@ const MelhoresManhwasSistema = () => {
           </p>
         </div>
       </section>
-      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="10-melhores-manhwas-sistema-2026" />
-      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="10-melhores-manhwas-sistema-2026" postTitle="Os 10 melhores Manhwas de \'Sistema\' para ler em 2026" />
     </article>
   );

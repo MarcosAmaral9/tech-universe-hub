@@ -9,7 +9,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { ArrowLeft, Clock, User, Calendar, Smartphone, Star, Lightbulb } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/apps-ia-produtividade-2026.webp";
 
@@ -157,10 +156,8 @@ const AppsIAProdutividade2026 = () => {
         { title: "ANPD — Regulamento LGPD para microempresas (Res. CD/ANPD 2/2022)", url: "https://www.gov.br/anpd/pt-br/assuntos/noticias/anpd-aprova-regulamento-de-aplicacao-da-lgpd-para-microempresas", publisher: "ANPD", accessedAt: "Maio 2026" }
       ]} />
 
-      <NewsletterSignup variant="inline" categories={["ia"]} />
       <AdInArticle />
       <RelatedPosts currentSlug="melhores-apps-ia-produtividade-2026" />
-      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="melhores-apps-ia-produtividade-2026" postTitle="Os 10 Melhores Apps de IA para Produtividade em 2026" />
     </article>
   );

@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, Calendar, User, ChevronRight, Building2, CheckCircle2, AlertTriangle, TrendingUp, Percent, BarChart3, PiggyBank, ShieldAlert } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import heroImg from "@/assets/fiis-2026-ainda-vale.webp";
@@ -269,9 +268,7 @@ const FIIs2026AindaVale = () => {
       </div>
 
       <BackNavigation category="invest" />
-      <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="fiis-2026-ainda-vale-investir" />
-      <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="fiis-2026-ainda-vale-investir" />
     </article>
   );

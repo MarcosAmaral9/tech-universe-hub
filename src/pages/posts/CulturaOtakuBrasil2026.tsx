@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, User, Calendar, Globe, TrendingUp, Users, Mic } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/cultura-otaku-brasil-2026.webp";
 
@@ -113,9 +112,7 @@ const CulturaOtakuBrasil2026 = () => {
         </div>
       </div>
 
-      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="cultura-otaku-brasil-2026" />
-      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="cultura-otaku-brasil-2026" postTitle="Cultura Otaku no Brasil 2026: Uma das Maiores Comunidades do Mundo" />
     </article>
   );

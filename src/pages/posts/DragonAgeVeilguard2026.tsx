@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, User, Calendar, Gamepad2, Star, Cpu } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/dragon-age-veilguard-review-2026.webp";
 
@@ -117,10 +116,8 @@ const DragonAgeVeilguard2026 = () => {
         <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
       </div>
     </div>
-<NewsletterSignup variant="inline" categories={["geek"]} />
-      <RelatedPosts currentSlug="dragon-age-veilguard-review-2026" />
-    <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="dragon-age-veilguard-review-2026" postTitle="Dragon Age: The Veilguard — Review 2026" />
+<RelatedPosts currentSlug="dragon-age-veilguard-review-2026" />
+    <CommentSection postId="dragon-age-veilguard-review-2026" postTitle="Dragon Age: The Veilguard — Review 2026" />
   </article>
 );
 };

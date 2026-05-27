@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Globe } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import heroImg from "@/assets/tsukimichi.webp";
@@ -142,9 +141,7 @@ const Tsukimichi = () => {
         </div>
       </div>
 
-      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="tsukimichi-moonlit-fantasy-guia-completo" />
-      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="tsukimichi-moonlit-fantasy-guia-completo" postTitle="Tsukimichi: Moonlit Fantasy — Guia Completo" />
           <AdLeaderboard className="my-8" />
     </article>

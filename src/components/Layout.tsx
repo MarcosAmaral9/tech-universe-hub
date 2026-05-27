@@ -5,6 +5,7 @@ import BackToTop from "./BackToTop";
 import ReadingProgressBar from "./ReadingProgressBar";
 import DynamicSEO from "./DynamicSEO";
 import { AdAnchorMobile } from "./AdSense";
+import NewsletterSignup from "./NewsletterSignup";
 
 interface LayoutProps {
   children: ReactNode;
@@ -20,6 +21,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Footer />
       <BackToTop />
       <AdAnchorMobile />
+      <NewsletterSignup variant="modal" />
     </div>
   );
 };

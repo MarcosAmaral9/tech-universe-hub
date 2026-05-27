@@ -9,7 +9,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { ArrowLeft, Clock, User, Calendar, Gamepad2, Star, Cpu, Monitor } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/baldurs-gate-3-review-2026.webp";
 
@@ -132,10 +131,8 @@ const BaldursGate3Review2026 = () => {
     { title: 'Wizards of the Coast — D&D 5e SRD', url: 'https://dnd.wizards.com/resources/systems-reference-document', publisher: 'WotC', accessedAt: "Maio 2026" }
   ]} />
 
-        <NewsletterSignup variant="inline" categories={["geek"]} />
-      <RelatedPosts currentSlug="baldurs-gate-3-review-2026" />
-    <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="baldurs-gate-3-review-2026" postTitle="Baldur's Gate 3 em 2026" />
+        <RelatedPosts currentSlug="baldurs-gate-3-review-2026" />
+    <CommentSection postId="baldurs-gate-3-review-2026" postTitle="Baldur's Gate 3 em 2026" />
   </article>
 );
 };

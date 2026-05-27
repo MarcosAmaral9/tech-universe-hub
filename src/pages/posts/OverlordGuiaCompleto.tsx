@@ -6,7 +6,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, Tv, Film, BookOpen, Skull, Globe } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/overlord-guia-completo.webp";
 
@@ -254,9 +253,7 @@ const OverlordGuiaCompleto = () => {
       </section>
 
 
-      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="overlord-guia-completo-temporadas-ainz" />
-      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="overlord-guia-completo-temporadas-ainz" />
     </article>
   );

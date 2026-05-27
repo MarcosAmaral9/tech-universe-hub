@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, Calendar, User, ChevronRight, Zap, Brain, Smartphone, CheckCircle2 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import { Slider } from "@/components/ui/slider";
 import metodo3BaldesImg from "@/assets/metodo-3-baldes.webp";
@@ -325,10 +324,8 @@ const EducacaoFinanceira3Baldes = () => {
           </p>
         </div>
       </section>
-        <NewsletterSignup variant="inline" categories={["invest"]} />
-      <RelatedPosts currentSlug="educacao-financeira-metodo-3-baldes" />
-        <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
-      <CommentSection postId="30" postTitle="Método dos 3 Baldes: Educação Financeira Para Quem Sempre Gastou Tudo" />
+        <RelatedPosts currentSlug="educacao-financeira-metodo-3-baldes" />
+        <CommentSection postId="30" postTitle="Método dos 3 Baldes: Educação Financeira Para Quem Sempre Gastou Tudo" />
       </article>
     </>
   );

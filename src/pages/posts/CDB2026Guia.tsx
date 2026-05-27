@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, User, Calendar, TrendingUp, DollarSign, Shield, AlertTriangle, CheckCircle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/cdb-2026-guia.webp";
 
@@ -163,10 +162,8 @@ const CDB2026Guia = () => {
         <p className="text-muted-foreground">Conta pra gente nos comentários e tire suas dúvidas! 👇</p>
       </div>
     </div>
-<NewsletterSignup variant="inline" categories={["invest"]} />
-      <RelatedPosts currentSlug="cdb-2026-guia-completo" />
-    <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
-      <CommentSection postId="cdb-2026-guia-completo" postTitle="CDB em 2026: Guia Completo" />
+<RelatedPosts currentSlug="cdb-2026-guia-completo" />
+    <CommentSection postId="cdb-2026-guia-completo" postTitle="CDB em 2026: Guia Completo" />
   </article>
 );
 };

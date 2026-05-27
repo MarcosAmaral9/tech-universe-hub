@@ -8,7 +8,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, TrendingUp, BarChart3, Shield, DollarSign, Zap, Lightbulb } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/magnificent-seven-resultados-q1-2026-apple-tim-cook.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -242,13 +241,9 @@ const MagnificentSevenResultados2026 = () => {
         ]}
       />
 
-      <NewsletterSignup variant="inline" categories={["invest"]} />
-
-
       <RelatedPosts currentSlug="magnificent-seven-resultados-q1-2026-apple-tim-cook" />
 
 
-      <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="magnificent-seven-resultados-q1-2026-apple-tim-cook" postTitle="Semana Mag-7: MSFT, Meta, Google e Amazon Reportam — e Tim Cook Sai da Apple" />
     </article>
   );

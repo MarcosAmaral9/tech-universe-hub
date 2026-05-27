@@ -9,7 +9,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { ArrowLeft, Clock, User, Calendar, Heart, Stethoscope, Brain, Pill } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-saude-2026.webp";
 
@@ -208,9 +207,7 @@ const IASaude2026 = () => {
         { title: "Conselho Federal de Medicina — Resolução 2.314/2022 (Telemedicina)", url: "https://portal.cfm.org.br/images/PDF/resolucao2314.pdf", publisher: "CFM", accessedAt: "Maio 2026" }
       ]} />
 
-      <NewsletterSignup variant="inline" categories={["geek"]} />
       <RelatedPosts currentSlug="ia-saude-2026-diagnosticos-futuro" />
-      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="ia-saude-2026-diagnosticos-futuro" postTitle="IA para Saúde 2026: Diagnósticos, Monitoramento e o Futuro da Medicina" />
     </article>
   );

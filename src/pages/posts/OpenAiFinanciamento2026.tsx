@@ -8,7 +8,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Brain, TrendingUp, DollarSign, Shield, BarChart3, Zap, Lightbulb } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/openai-bilhoes-financiamento-record-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -206,9 +205,7 @@ const OpenAiFinanciamento2026 = () => {
         ]}
       />
 
-      <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="openai-bilhoes-financiamento-record-2026" />
-      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="openai-bilhoes-financiamento-record-2026" postTitle="OpenAI Capta US$ 40 Bilhões e Chega a US$ 300 Bi de Valuation" />
     </article>
   );

@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, User, Calendar, Code, Globe, DollarSign, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/modelos-ia-open-source-2026.webp";
 
@@ -164,10 +163,8 @@ const ModelosIAOpenSource2026 = () => {
         </div>
       </section>
 
-<NewsletterSignup variant="inline" categories={["geek"]} />
-      <RelatedPosts currentSlug="modelos-ia-open-source-2026" />
-    <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="modelos-ia-open-source-2026" postTitle="IA Open Source 2026" />
+<RelatedPosts currentSlug="modelos-ia-open-source-2026" />
+    <CommentSection postId="modelos-ia-open-source-2026" postTitle="IA Open Source 2026" />
   </article>
 );
 };

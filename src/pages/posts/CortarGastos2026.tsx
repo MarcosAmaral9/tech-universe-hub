@@ -8,7 +8,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, DollarSign, TrendingDown, Shield, Lightbulb, Zap, BarChart3 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/economia-domestica-dicas-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -195,9 +194,7 @@ const CortarGastos2026 = () => {
 
 
 
-      <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="cortar-gastos-2026" />
-      <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="cortar-gastos-2026" postTitle="Cortar Gastos em 2026: 20 Estratégias Práticas para Economizar no Brasil" />
     </article>
   );

@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, Calendar, User, ChevronRight, Zap, Building2, TrendingUp, AlertTriangle, CheckCircle2 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import { Slider } from "@/components/ui/slider";
 import fiisImg from "@/assets/fiis-2026.webp";
@@ -279,10 +278,8 @@ const FIIs2026 = () => {
           </p>
         </div>
       </section>
-        <NewsletterSignup variant="inline" categories={["invest"]} />
-      <RelatedPosts currentSlug="fiis-2026-melhores-fundos-imobiliarios" />
-        <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
-      <CommentSection postId="31" postTitle="FIIs em 2026: Os Melhores Fundos Imobiliários e Como Analisar" />
+        <RelatedPosts currentSlug="fiis-2026-melhores-fundos-imobiliarios" />
+        <CommentSection postId="31" postTitle="FIIs em 2026: Os Melhores Fundos Imobiliários e Como Analisar" />
       </article>
     </>
   );

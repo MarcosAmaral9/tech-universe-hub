@@ -28,12 +28,20 @@ const Breadcrumb = () => {
         label: CAT_LABELS[post.category] ?? post.category,
         href: CAT_ROUTES[post.category],
       });
+      // Painel Crimson Desert: insere nível extra
+      if (slug.startsWith("crimson-desert-")) {
+        crumbs.push({ label: "Crimson Desert", href: "/geek/crimson-desert" });
+      }
       crumbs.push({ label: post.title.length > 50 ? post.title.slice(0, 50) + "…" : post.title });
     }
   } else if (pathname.startsWith("/regiao/")) {
+    crumbs.push({ label: CAT_LABELS.geek, href: CAT_ROUTES.geek });
     crumbs.push({ label: "Crimson Desert", href: "/geek/crimson-desert" });
     const region = pathname.split("/").pop() ?? "";
     crumbs.push({ label: region.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase()) });
+  } else if (pathname === "/geek/crimson-desert") {
+    crumbs.push({ label: CAT_LABELS.geek, href: CAT_ROUTES.geek });
+    crumbs.push({ label: "Crimson Desert" });
   } else if (pathname.startsWith("/ia"))          crumbs.push({ label: CAT_LABELS.ia });
   else if (pathname.startsWith("/geek"))          crumbs.push({ label: CAT_LABELS.geek });
   else if (pathname.startsWith("/otaku"))         crumbs.push({ label: CAT_LABELS.otaku });

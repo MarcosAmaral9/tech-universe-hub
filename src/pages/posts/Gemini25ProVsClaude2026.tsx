@@ -8,7 +8,6 @@ import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Brain, BarChart3, Zap, Shield, TrendingUp, Lightbulb } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/gemini-25-pro-vs-claude-ia-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -241,9 +240,7 @@ const Gemini25ProVsClaude2026 = () => {
         ]}
       />
 
-      <NewsletterSignup variant="inline" categories={["ia"]} />
       <RelatedPosts currentSlug="gemini-25-pro-vs-claude-ia-2026" />
-      <NewsletterSignup variant="modal" categories={["ia"]} showAfterMs={60000} />
       <CommentSection postId="gemini-25-pro-vs-claude-ia-2026" postTitle="Gemini 2.5 Pro vs Claude Sonnet vs GPT-4o: Qual a Melhor IA de Abril de 2026?" />
     </article>
   );

@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, User, Calendar, Languages, BookOpen, Headphones, ListChecks } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/aprender-japones-anime-2026.webp";
 
@@ -115,9 +114,7 @@ const AprenderJaponesAnime2026 = () => {
         </div>
       </div>
 
-      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="aprender-japones-anime-2026" />
-      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="aprender-japones-anime-2026" postTitle="Como Aprender Japonês Assistindo Anime em 2026" />
     </article>
   );

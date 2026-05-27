@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, Calendar, User, ChevronRight, TrendingDown, CheckCircle2, AlertTriangle, BarChart3, Target, ArrowDownRight, Percent, Landmark, PiggyBank } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import heroImg from "@/assets/selic-cair-2026.webp";
@@ -265,9 +264,7 @@ const SelicComecaCair2026 = () => {
         </div>
       </section>
 
-      <NewsletterSignup variant="inline" categories={["invest"]} />
       <RelatedPosts currentSlug="selic-comeca-cair-2026" />
-      <NewsletterSignup variant="modal" categories={["invest"]} showAfterMs={60000} />
       <CommentSection postId="selic-comeca-cair-2026" />
     </article>
   );

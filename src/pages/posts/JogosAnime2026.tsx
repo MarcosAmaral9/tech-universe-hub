@@ -7,7 +7,6 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, User, Calendar, Gamepad2, Swords, Sparkles, BookOpen } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/jogos-anime-2026.webp";
 
@@ -130,9 +129,7 @@ const JogosAnime2026 = () => {
           </p>
         </div>
       </section>
-      <NewsletterSignup variant="inline" categories={["otaku"]} />
       <RelatedPosts currentSlug="melhores-jogos-anime-2026" />
-      <NewsletterSignup variant="modal" categories={["otaku"]} showAfterMs={60000} />
       <CommentSection postId="melhores-jogos-anime-2026" postTitle="Os Melhores Jogos de Anime de 2026: Do RPG ao Fighting Game" />
     </article>
   );
