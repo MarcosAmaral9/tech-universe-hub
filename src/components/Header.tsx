@@ -217,13 +217,10 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="md:hidden border-t border-border bg-background animate-fade-in">
             <div className="container py-4 flex flex-col gap-1">
-              {/* Search inside mobile menu */}
-              <button
-                onClick={() => { setIsSearchOpen(true); closeMenu(); }}
-                className="px-4 py-3 rounded-lg font-medium text-muted-foreground hover:text-foreground hover:bg-secondary text-left flex items-center gap-2"
-              >
-                <Search className="h-4 w-4" /> Buscar
-              </button>
+              {/* Settings inside mobile menu (replaces Buscar, agora visível no header) */}
+              <div className="px-2">
+                <SettingsDrawer />
+              </div>
 
               {/* Offline posts badge (mobile) */}
               {offlineCount > 0 && (
