@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Moon, Sun, Search, Menu, X, FileText, ChevronDown, LogIn, LogOut, User, WifiOff } from "lucide-react";
+import { Moon, Sun, Search, Menu, X, FileText, ChevronDown, LogIn, LogOut, User, WifiOff, Download } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
@@ -15,15 +15,21 @@ import SearchModal from "./SearchModal";
 import SettingsDrawer from "./SettingsDrawer";
 import OfflinePostsBadge from "./OfflinePostsBadge";
 import { usePWAStandalone } from "@/hooks/usePWAStandalone";
+import { useOfflinePosts } from "@/hooks/useOfflinePosts";
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const { user, profile, signOut } = useAuthContext();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isStandalone = usePWAStandalone();
+  const { count: offlineCount } = useOfflinePosts();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const isAdminOrPreview =
+    user?.email === "viciocode01@gmail.com" ||
+    (typeof window !== "undefined" && window.location.hostname.includes("lovable"));
 
   const navLinks = [
     { name: "IAs", path: "/ia", color: "text-ia" },
@@ -50,15 +56,17 @@ const Header = () => {
     navigate("/");
   };
 
+  const closeMenu = () => setIsMenuOpen(false);
+
   const displayName = profile?.nickname || profile?.name || user?.email?.split("@")[0] || "Usuário";
 
   return (
     <>
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-        <div className="container flex h-16 items-center justify-between">
+        <div className="container flex h-16 items-center justify-between gap-2">
           {/* Logo */}
-          <Link to="/" className="flex items-center group">
-            <span className="font-display text-2xl font-bold" translate="no">
+          <Link to="/" className="flex items-center group min-w-0 shrink">
+            <span className="font-display text-2xl font-bold truncate" translate="no">
               <span className="logo-vicio">VICIO</span>
               <span className="logo-code">&lt;CODE&gt;</span>
             </span>
@@ -82,24 +90,28 @@ const Header = () => {
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-2">
-            {/* Social Panel - admin or sandbox */}
-            {(user?.email === "viciocode01@gmail.com" || window.location.hostname.includes("lovable")) && (
-              <Button variant="ghost" size="icon" asChild className="hover:bg-secondary">
+          <div className="flex items-center gap-1 sm:gap-2 shrink-0">
+            {/* Desktop-only: Social Panel */}
+            {isAdminOrPreview && (
+              <Button variant="ghost" size="icon" asChild className="hidden md:inline-flex hover:bg-secondary">
                 <Link to="/painel-social">
                   <FileText className="h-5 w-5 text-primary" />
                 </Link>
               </Button>
             )}
 
-            <OfflinePostsBadge />
-            {/* Atalho Offline — só aparece no PWA instalado + logado */}
+            {/* Desktop-only: Offline posts badge */}
+            <div className="hidden md:flex">
+              <OfflinePostsBadge />
+            </div>
+
+            {/* Desktop-only: Standalone Offline shortcut */}
             {isStandalone && user && (
               <Button
                 variant="ghost"
                 size="icon"
                 asChild
-                className="hover:bg-secondary text-muted-foreground hover:text-primary"
+                className="hidden md:inline-flex hover:bg-secondary text-muted-foreground hover:text-primary"
                 title="Conteúdo Offline"
               >
                 <Link to="/leitura-offline" title="Artigos offline">
@@ -108,11 +120,12 @@ const Header = () => {
               </Button>
             )}
 
+            {/* Desktop-only: Search */}
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsSearchOpen(true)}
-              className="hover:bg-secondary"
+              className="hidden md:inline-flex hover:bg-secondary"
             >
               <Search className="h-5 w-5" />
             </Button>
@@ -146,17 +159,17 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* User Menu / Login Button */}
+            {/* User Menu / Login Button — always visible */}
             {user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="sm" className="gap-2 hover:bg-secondary">
+                  <Button variant="ghost" size="icon" className="hover:bg-secondary md:size-auto md:px-3" aria-label="Menu do usuário">
                     {profile?.avatar_url ? (
                       <img src={profile.avatar_url} alt="" className="w-6 h-6 rounded-full object-cover" />
                     ) : (
-                      <User className="h-4 w-4" />
+                      <User className="h-5 w-5" />
                     )}
-                    <span className="hidden lg:inline max-w-[100px] truncate">{displayName}</span>
+                    <span className="hidden lg:inline ml-2 max-w-[100px] truncate">{displayName}</span>
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48">
@@ -173,22 +186,24 @@ const Header = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Button variant="ghost" size="sm" asChild className="gap-2 hover:bg-secondary text-muted-foreground">
+              <Button variant="ghost" size="icon" asChild className="hover:bg-secondary text-muted-foreground md:size-auto md:px-3" aria-label="Entrar">
                 <Link to="/entrar">
-                  <LogIn className="h-4 w-4" />
-                  <span className="hidden lg:inline">Entrar</span>
+                  <LogIn className="h-5 w-5" />
+                  <span className="hidden lg:inline ml-2">Entrar</span>
                 </Link>
               </Button>
             )}
-            
+
+            {/* Settings — always visible */}
             <SettingsDrawer />
 
-            {/* Mobile Menu Toggle */}
+            {/* Mobile Menu Toggle — always visible on mobile */}
             <Button
               variant="ghost"
               size="icon"
               className="md:hidden hover:bg-secondary"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Abrir menu"
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
@@ -198,12 +213,55 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className="md:hidden border-t border-border bg-background animate-fade-in">
-            <div className="container py-4 flex flex-col gap-2">
+            <div className="container py-4 flex flex-col gap-1">
+              {/* Search inside mobile menu */}
+              <button
+                onClick={() => { setIsSearchOpen(true); closeMenu(); }}
+                className="px-4 py-3 rounded-lg font-medium text-muted-foreground hover:text-foreground hover:bg-secondary text-left flex items-center gap-2"
+              >
+                <Search className="h-4 w-4" /> Buscar
+              </button>
+
+              {/* Offline posts badge (mobile) */}
+              {offlineCount > 0 && (
+                <Link
+                  to="/leitura-offline"
+                  onClick={closeMenu}
+                  className="px-4 py-3 rounded-lg font-medium text-emerald-500 hover:bg-secondary flex items-center gap-2"
+                >
+                  <Download className="h-4 w-4" /> {offlineCount} {offlineCount === 1 ? "post salvo" : "posts salvos"}
+                </Link>
+              )}
+
+              {/* PWA-only Offline shortcut */}
+              {isStandalone && user && (
+                <Link
+                  to="/leitura-offline"
+                  onClick={closeMenu}
+                  className="px-4 py-3 rounded-lg font-medium text-muted-foreground hover:text-primary hover:bg-secondary flex items-center gap-2"
+                >
+                  <WifiOff className="h-4 w-4" /> Conteúdo Offline
+                </Link>
+              )}
+
+              {/* Painel Social (admin/preview) */}
+              {isAdminOrPreview && (
+                <Link
+                  to="/painel-social"
+                  onClick={closeMenu}
+                  className="px-4 py-3 rounded-lg font-medium text-primary hover:bg-secondary flex items-center gap-2"
+                >
+                  <FileText className="h-4 w-4" /> Painel Social
+                </Link>
+              )}
+
+              <div className="my-1 border-t border-border" />
+
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={closeMenu}
                   className={`px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
                     isActive(link.path)
                       ? `${link.color} bg-secondary`
@@ -213,8 +271,7 @@ const Header = () => {
                   {link.name}
                 </Link>
               ))}
-              
-              {/* Divider */}
+
               <div className="my-2 border-t border-border" />
 
               {/* Auth link in mobile */}
@@ -222,20 +279,20 @@ const Header = () => {
                 <>
                   <Link
                     to={`/perfil/${user.id}`}
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={closeMenu}
                     className="px-4 py-3 rounded-lg font-medium text-muted-foreground hover:text-foreground hover:bg-secondary"
                   >
                     👤 Meu Perfil
                   </Link>
                   <Link
                     to="/configuracoes"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={closeMenu}
                     className="px-4 py-3 rounded-lg font-medium text-muted-foreground hover:text-foreground hover:bg-secondary"
                   >
                     ⚙️ Configurações
                   </Link>
                   <button
-                    onClick={() => { handleSignOut(); setIsMenuOpen(false); }}
+                    onClick={() => { handleSignOut(); closeMenu(); }}
                     className="px-4 py-3 rounded-lg font-medium text-destructive hover:bg-secondary text-left"
                   >
                     Sair
@@ -244,17 +301,15 @@ const Header = () => {
               ) : (
                 <Link
                   to="/entrar"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={closeMenu}
                   className="px-4 py-3 rounded-lg font-medium text-primary hover:bg-secondary flex items-center gap-2"
                 >
                   <LogIn className="w-4 h-4" /> Entrar / Criar Conta
                 </Link>
               )}
 
-              {/* Divider */}
               <div className="my-2 border-t border-border" />
-              
-              {/* Legal Links in Mobile */}
+
               <div className="px-4 py-2 text-xs text-muted-foreground uppercase tracking-wider">
                 Páginas Legais
               </div>
@@ -262,7 +317,7 @@ const Header = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={closeMenu}
                   className={`px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
                     isActive(link.path)
                       ? "text-primary bg-secondary"
