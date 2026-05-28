@@ -195,8 +195,10 @@ const Header = () => {
               </Button>
             )}
 
-            {/* Settings — always visible */}
-            <SettingsDrawer />
+            {/* Settings — desktop only (no mobile; access via hamburger menu) */}
+            <div className="hidden md:block">
+              <SettingsDrawer />
+            </div>
 
             {/* Mobile Menu Toggle — always visible on mobile */}
             <Button
