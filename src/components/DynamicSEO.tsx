@@ -371,6 +371,27 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Big Three em 2026: Naruto, Bleach e One Piece — status atual do trio que definiu a Shonen Jump, novas adaptações, releituras e o legado para o anime moderno.",
     keywords: "Big Three Naruto Bleach One Piece, Big Three anime 2026, Shonen Jump clássicos, One Piece status 2026, Bleach TYBW final, Naruto legado, Big Three shonen, anime clássicos 2026, trio shonen, jujutsu kaisen new big three",
   },
+  "/post/dola-ai-app-assistente-2026": {
+    title: "Dola AI: O App de Assistente de IA que Virou Febre no Brasil em 2026",
+    description: "Tudo sobre o Dola AI em 2026: o que é, como funciona, 8 recursos principais, comparativo com ChatGPT e Gemini, planos e preço, e se vale a pena para o usuário brasileiro.",
+    keywords: "Dola AI, Dola app assistente IA, Dola AI como usar, Dola AI Android iOS, Dola AI vs ChatGPT, app IA gratuito 2026, assistente IA celular, Dola AI bots, Dola AI gerar imagem, Dola AI WhatsApp Telegram, app inteligência artificial Brasil 2026",
+  },
+  "/post/seedance-2-0-geracao-video-ia-2026": {
+    title: "Seedance 2.0: O Gerador de Vídeo com IA da ByteDance que Muda o Jogo em 2026",
+    description: "Guia completo do Seedance 2.0: como funciona a geração de vídeo multimodal da ByteDance, benchmarks reais, preços Dreamina, comparativo com Sora 2 e Kling 3.0 e como usar no Brasil.",
+    keywords: "Seedance 2.0, ByteDance gerador de vídeo IA, Seedance 2.0 como usar, Dreamina Seedance, CapCut Seedance, gerador de vídeo IA 2026, Seedance vs Sora 2, Seedance vs Kling, Dual-Branch Diffusion Transformer, video AI 2026 Brasil, geração vídeo texto imagem IA",
+  },
+  "/post/re-monster-anime-manga-guia-2026": {
+    title: "Re:Monster: Guia Completo do Anime e Mangá 2026",
+    description: "Re:Monster anime (Doga Kobo, 2024, Crunchyroll) e mangá: Rou, goblin reencarnado que absorve poderes consumindo inimigos. Sistema de poder, personagens, diferenças entre anime, mangá e light novel e status de T2.",
+    keywords: "Re:Monster anime, Re:Monster mangá, Rou goblin, absorção poder Re:Monster, Re:Monster Crunchyroll, Re:Monster temporada 2, Doga Kobo Re:Monster, isekai goblin, Re:Monster light novel, Re:Monster guia completo 2026",
+  },
+  "/post/isekai-mokushiroku-mynoghra-guia-2026": {
+    title: "Isekai Mokushiroku Mynoghra: Guia Completo — Anime e Mangá 2026",
+    description: "Mynoghra: Takuto Ira reencarna como rei da nação apocalíptica de um jogo 4X real. Anime pela Wao World confirmado, mangá em andamento. Atou, mecânicas de corrupção, comparação com Overlord e TenSura.",
+    keywords: "Isekai Mokushiroku Mynoghra, Mynoghra anime, Mynoghra manga, Atou Líder Corrupta, Takuto Ira, isekai estratégia 4X, civilização apocalipse isekai, Wao World anime, Mynoghra guia completo, Hametsu no Bunmei Sekai Seifuku 2026",
+  },
+  
 };
 
 const CATEGORY_KEYWORDS: Record<string, string[]> = {
