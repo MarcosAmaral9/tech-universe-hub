@@ -120,12 +120,13 @@ const Header = () => {
               </Button>
             )}
 
-            {/* Desktop-only: Search */}
+            {/* Search — visible on mobile + desktop */}
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsSearchOpen(true)}
-              className="hidden md:inline-flex hover:bg-secondary"
+              className="hover:bg-secondary"
+              aria-label="Buscar"
             >
               <Search className="h-5 w-5" />
             </Button>
