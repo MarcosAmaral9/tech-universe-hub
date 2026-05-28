@@ -554,14 +554,31 @@ const DynamicSEO = () => {
       otaku: { path: "/otaku", name: "Otaku" },
     };
     const cat = categoryMap[post.category] || { path: "/", name: "Início" };
+
+    // Painéis — espelha o registro de src/components/Breadcrumb.tsx
+    // Fluxo: Início > Categoria > [Painel] > Post
+    const PANELS: { label: string; path: string; prefixes: string[] }[] = [
+      { label: "Avatar",           path: "/geek/avatar",          prefixes: ["avatar-"] },
+      { label: "Assassin's Creed", path: "/geek/assassins-creed", prefixes: ["ac-"] },
+      { label: "Crimson Desert",   path: "/geek/crimson-desert",  prefixes: ["crimson-desert-"] },
+      { label: "TenSura",          path: "/otaku/tensura",        prefixes: ["tensura-"] },
+      { label: "Overlord",         path: "/otaku/overlord",       prefixes: ["overlord-"] },
+    ];
+    const panel = PANELS.find(p => p.prefixes.some(pre => post.slug.startsWith(pre)));
+
+    const items: Record<string, unknown>[] = [
+      { "@type": "ListItem", position: 1, name: "Início", item: { "@type": "Thing", "@id": BASE_URL } },
+      { "@type": "ListItem", position: 2, name: cat.name, item: { "@type": "Thing", "@id": `${BASE_URL}${cat.path}` } },
+    ];
+    if (panel) {
+      items.push({ "@type": "ListItem", position: items.length + 1, name: panel.label, item: { "@type": "Thing", "@id": `${BASE_URL}${panel.path}` } });
+    }
+    items.push({ "@type": "ListItem", position: items.length + 1, name: post.title, item: { "@type": "Thing", "@id": url } });
+
     breadcrumbJsonLd = {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Início", item: { "@type": "Thing", "@id": BASE_URL } },
-        { "@type": "ListItem", position: 2, name: cat.name, item: { "@type": "Thing", "@id": `${BASE_URL}${cat.path}` } },
-        { "@type": "ListItem", position: 3, name: post.title, item: { "@type": "Thing", "@id": url } },
-      ],
+      itemListElement: items,
     };
     if (post.faq && post.faq.length > 0) {
       faqJsonLd = {
