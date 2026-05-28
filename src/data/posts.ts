@@ -162,11 +162,91 @@ import one_piece_final_saga_2026Img from "@/assets/one-piece-final-saga-2026.web
 import etfs_2026Img from "@/assets/etfs-2026.webp";
 import economia_domestica_2026Img from "@/assets/economia-domestica-2026.webp";
 import tesouro_prefixado_ipca_2026Img from "@/assets/tesouro-prefixado-ipca-2026.webp";
-
+import dolaAIImg from "@/assets/dola-ai-app-assistente-2026.webp";
+import seedance20Img from "@/assets/seedance-2-0-geracao-video-ia-2026.webp";
+import reMonsterImg                    from "@/assets/re-monster-anime-manga-guia-2026.webp";
+import isekaiMynogrhraImg              from "@/assets/isekai-mokushiroku-mynoghra-guia-2026.webp";
 
 export const blogPosts: BlogPost[] = [
 
+
   
+// ── 28 Mai 2026 — IA ──────────────────────────────────────────────
+  {
+  id: "195",
+  slug: "dola-ai-app-assistente-2026",
+  title: "Dola AI: O App de Assistente de IA que Virou Febre no Brasil em 2026",
+  excerpt: "O Dola AI virou febre na Play Store brasileira em 2026. Testamos o app por semanas: 8 recursos, comparativo com ChatGPT e Gemini, preços e para quem realmente vale.",
+  content: "",
+  category: "ia",
+  subtopic: "apps",
+  image: dolaAIImg,
+  author: "VICIO<CODE>",
+  date: "2026-05-28",
+  readTime: "13 min",
+  faq: [
+    { q: "O Dola AI é gratuito?", a: "Sim, com créditos diários e chat ilimitado. Geração de vídeos sem marca d'água requer plano pago, cobrado via App Store ou Play Store em BRL." },
+    { q: "O Dola AI funciona em português?", a: "Sim, com suporte nativo a PT-BR e detecção automática de idioma para tradução." },
+    { q: "Qual a diferença entre Dola AI e ChatGPT?", a: "O ChatGPT tem raciocínio mais avançado; o Dola se destaca na experiência mobile-first, bots especializados e combinação de funcionalidades num único app." },
+  ]
+},
+{
+  id: "196",
+  slug: "seedance-2-0-geracao-video-ia-2026",
+  title: "Seedance 2.0: O Gerador de Vídeo com IA da ByteDance que Muda o Jogo em 2026",
+  excerpt: "O Seedance 2.0 da ByteDance gera vídeo 2K com áudio nativo sincronizado em uma única passagem — e está disponível gratuitamente no Brasil via Dreamina e CapCut desde março de 2026.",
+  content: "",
+  category: "ia",
+  subtopic: "ferramentas",
+  image: seedance20Img,
+  author: "VICIO<CODE>",
+  date: "2026-05-28",
+  readTime: "15 min",
+  faq: [
+    { q: "O Seedance 2.0 é gratuito?", a: "Sim, via Dreamina com 225 créditos diários e via CapCut Video Studio. Vídeos sem watermark requerem plano pago a partir de ~R$ 54/mês." },
+    { q: "Qual a diferença entre Seedance 2.0 e Sora 2?", a: "Seedance gera áudio nativo sincronizado e aceita 4 tipos de input. O Sora 2 não tem áudio nativo mas tem API mais madura e menos restrições de censura." },
+    { q: "O Seedance 2.0 funciona no Brasil?", a: "Sim, disponível oficialmente desde 26 de março de 2026 via Dreamina e CapCut para usuários brasileiros, sem necessidade de VPN ou conta chinesa." },
+  ]
+},
+// ── 28 Mai 2026 — Otaku ─────────────────────────────────────────────
+  {
+    id: "193",
+    slug: "re-monster-anime-manga-guia-2026",
+    title: "Re:Monster: Guia Completo do Anime e Mangá — O Goblin que Absorve Poderes e Conquista Mundos",
+    excerpt: "Re:Monster traz Rou, um humano reencarnado como goblin com a habilidade de absorver poderes de tudo que consume. Anime pela Doga Kobo (2024, Crunchyroll), mangá em andamento e light novel completa. Guia de personagens, sistema de poder e o que esperar de uma possível T2.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: reMonsterImg,
+    author: "VICIO<CODE>",
+    date: "2026-05-28",
+    readTime: "14 min",
+    faq: [
+      { q: "Re:Monster tem Temporada 2 confirmada?", a: "Não até maio de 2026. O anime da Doga Kobo de 2024 encerrou sem anúncio de T2. As vendas de Blu-ray ficaram abaixo do threshold típico para renovação, mas as vendas da light novel cresceram após o anime." },
+      { q: "Onde assistir Re:Monster no Brasil?", a: "O anime está disponível na Crunchyroll com legendas em português. São 12 episódios cobrindo os arcos iniciais da light novel." },
+      { q: "Qual a diferença entre o anime, mangá e light novel de Re:Monster?", a: "O anime cobre os primeiros arcos com ritmo comprimido. O mangá tem arte mais detalhada e vai além do anime. A light novel original (web e física) é a mais completa, com detalhes de worldbuilding e pensamentos de Rou que as outras mídias simplificam." },
+      { q: "Re:Monster é parecido com TenSura?", a: "Sim na premissa (criatura 'fraca' que absorve poderes e constrói uma comunidade), mas com tom bem diferente. TenSura é mais leve e otimista; Re:Monster é mais cru, tático e não evita consequências violentas. Goblin Slayer é uma comparação igualmente válida para o tom." },
+    ],
+  },
+  {
+    id: "194",
+    slug: "isekai-mokushiroku-mynoghra-guia-2026",
+    title: "Isekai Mokushiroku Mynoghra: Guia Completo — A Civilização do Apocalipse que Vai Conquistar o Mundo",
+    excerpt: "Mynoghra é o isekai onde o protagonista Takuto Ira renasce não como herói, mas como a nação mais sombria de um jogo de estratégia 4X. Com Atou (a Líder Corrupta) ao lado, ele precisa sobreviver num mundo real com mecânicas apocalípticas literais. Anime pela Wao World confirmado, mangá em andamento.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: isekaiMynogrhraImg,
+    author: "VICIO<CODE>",
+    date: "2026-05-28",
+    readTime: "14 min",
+    faq: [
+      { q: "Quando estreia o anime de Isekai Mokushiroku Mynoghra?", a: "O anime pela Wao World foi confirmado em produção, mas sem data de estreia definida até maio de 2026. Acompanhe o site oficial da obra e o canal Kadokawa para anúncios. Crunchyroll é o destino mais provável para o Brasil." },
+      { q: "O que é Mynoghra no isekai?", a: "Mynoghra é uma civilização do apocalipse de um jogo de estratégia 4X que se torna real. Ela literalmente corrompe o terreno ao expandir, absorve inimigos mortos como unidades e progride por decomposição — não por construção. O protagonista Takuto é o rei desta nação." },
+      { q: "Onde ler o mangá de Mynoghra em português?", a: "O mangá não tem edição oficial em português até maio de 2026. Está disponível em scanlation inglês e português no MangaDex. A light novel física existe em japonês; fan translations em inglês cobrem até o volume 5+." },
+      { q: "Mynoghra é parecido com Overlord ou TenSura?", a: "É mais próximo de Overlord em tom (dark, protagonista comanda criaturas sombrias, gerencia uma organização como num MMO). A diferença: em Overlord Ainz quer poder; em Mynoghra Takuto quer paz mas comanda o apocalipse por natureza. TenSura é comparação para o subgênero, mas o tom é bem diferente." },
+    ],
+  },
  // ── 04 Mai 2026 — IA ──────────────────────────────────────────────
   {
     id: "189",
