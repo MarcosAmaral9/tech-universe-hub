@@ -251,6 +251,11 @@ const GptTrabalhadorDigital2026    = lazy(() => import("./pages/posts/GptTrabalh
 const BerkshireAbelMeeting2026     = lazy(() => import("./pages/posts/BerkshireAbelMeeting2026"));
 const EldenRingNightreign2026      = lazy(() => import("./pages/posts/EldenRingNightreign2026"));
 const KaijuNo8Temporada22026       = lazy(() => import("./pages/posts/KaijuNo8Temporada22026"));
+// ── 28 Mai 2026 IA e Otaku ───────────────────────────────────────────────────────
+const DolaAI2026                     = lazy(() => import("./pages/posts/DolaAI2026"));
+const Seedance20IA2026               = lazy(() => import("./pages/posts/Seedance20IA2026"));
+const ReMonster2026                  = lazy(() => import("./pages/posts/ReMonster2026"));
+const IsekaiMokushirokuMynoghra2026  = lazy(() => import("./pages/posts/IsekaiMokushirokuMynoghra2026"));
  
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -490,6 +495,11 @@ const App = () => (
                 <Route path="/post/berkshire-hathaway-greg-abel-2026-sem-buffett" element={<Suspense fallback={<div />}><BerkshireAbelMeeting2026 /></Suspense>} />
                 <Route path="/post/elden-ring-nightreign-guia-completo-2026" element={<Suspense fallback={<div />}><EldenRingNightreign2026 /></Suspense>} />
                 <Route path="/post/kaiju-no-8-temporada-2-guia-arco-final-2026" element={<Suspense fallback={<div />}><KaijuNo8Temporada22026 /></Suspense>} />
+                {/* ── 28 Mai 2026 IA e Otaku ── */}
+                <Route path="/post/dola-ai-app-assistente-2026" element={<DolaAI2026 />} />
+                <Route path="/post/seedance-2-0-geracao-video-ia-2026" element={<Seedance20IA2026 />} />
+                <Route path="/post/re-monster-anime-manga-guia-2026" element={<Suspense fallback={<div />}><ReMonster2026 /></Suspense>} />
+                <Route path="/post/isekai-mokushiroku-mynoghra-guia-2026" element={<Suspense fallback={<div />}><IsekaiMokushirokuMynoghra2026 /></Suspense>} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
