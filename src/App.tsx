@@ -496,8 +496,8 @@ const App = () => (
                 <Route path="/post/elden-ring-nightreign-guia-completo-2026" element={<Suspense fallback={<div />}><EldenRingNightreign2026 /></Suspense>} />
                 <Route path="/post/kaiju-no-8-temporada-2-guia-arco-final-2026" element={<Suspense fallback={<div />}><KaijuNo8Temporada22026 /></Suspense>} />
                 {/* ── 28 Mai 2026 IA e Otaku ── */}
-                <Route path="/post/dola-ai-app-assistente-2026" element={<DolaAI2026 />} />
-                <Route path="/post/seedance-2-0-geracao-video-ia-2026" element={<Seedance20IA2026 />} />
+                <Route path="/post/dola-ai-app-assistente-2026" element={<DolaAI2026 /></Suspense>} />
+                <Route path="/post/seedance-2-0-geracao-video-ia-2026" element={<Seedance20IA2026 /></Suspense>} />
                 <Route path="/post/re-monster-anime-manga-guia-2026" element={<Suspense fallback={<div />}><ReMonster2026 /></Suspense>} />
                 <Route path="/post/isekai-mokushiroku-mynoghra-guia-2026" element={<Suspense fallback={<div />}><IsekaiMokushirokuMynoghra2026 /></Suspense>} />
                 <Route path="*" element={<NotFound />} />
