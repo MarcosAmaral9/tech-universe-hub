@@ -131,6 +131,27 @@ const Header = () => {
               <Search className="h-5 w-5" />
             </Button>
 
+            {/* PWA-only: Downloads / Offline shortcut (mobile header) */}
+            {isStandalone && (
+              <Button
+                variant="ghost"
+                size="icon"
+                asChild
+                className="md:hidden hover:bg-secondary relative text-emerald-500"
+                aria-label="Conteúdo offline"
+                title="Conteúdo offline"
+              >
+                <Link to="/leitura-offline">
+                  <Download className="h-5 w-5" />
+                  {offlineCount > 0 && (
+                    <span className="absolute -top-0.5 -right-0.5 min-w-[16px] h-4 px-1 rounded-full bg-emerald-500 text-[10px] font-bold text-background flex items-center justify-center">
+                      {offlineCount}
+                    </span>
+                  )}
+                </Link>
+              </Button>
+            )}
+
             {/* Legal Pages Dropdown - Desktop */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -233,8 +254,8 @@ const Header = () => {
                 </Link>
               )}
 
-              {/* PWA-only Offline shortcut */}
-              {isStandalone && user && (
+              {/* PWA-only Offline shortcut — sempre visível no app instalado */}
+              {isStandalone && (
                 <Link
                   to="/leitura-offline"
                   onClick={closeMenu}
