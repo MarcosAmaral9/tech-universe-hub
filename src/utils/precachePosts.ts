@@ -84,6 +84,7 @@ export const STATIC_PAGES: StaticPage[] = [
   { path: "/arquivo",            label: "Arquivo do Blog",          category: "site",    emoji: "🗂️" },
   { path: "/sobre",              label: "Sobre o VicioCode",        category: "site",    emoji: "ℹ️"  },
   { path: "/instalar",           label: "Instalar App",             category: "site",    emoji: "📲" },
+  { path: "/leitura-offline",    label: "Leitura Offline",          category: "site",    emoji: "📥" },
 ];
 
 export interface PrecacheProgress {
