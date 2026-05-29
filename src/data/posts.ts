@@ -166,12 +166,32 @@ import dolaAIImg from "@/assets/dola-ai-app-assistente-2026.webp";
 import seedance20Img from "@/assets/seedance-2-0-geracao-video-ia-2026.webp";
 import reMonsterImg                    from "@/assets/re-monster-anime-manga-guia-2026.webp";
 import isekaiMynogrhraImg              from "@/assets/isekai-mokushiroku-mynoghra-guia-2026.webp";
+import sunoAIImg from "@/assets/suno-ai-gerador-musica-2026.webp";
+
 
 export const blogPosts: BlogPost[] = [
 
 
   
 // ── 28 Mai 2026 — IA ──────────────────────────────────────────────
+  {
+  id: "197",
+  slug: "suno-ai-gerador-musica-2026",
+  title: "Suno AI: O Guia Completo do Gerador de Músicas com IA em 2026",
+  excerpt: "O Suno AI tem 100 milhões de usuários e gera 7 milhões de músicas por dia. O v5.5 trouxe clonagem de voz e áudio 44,1 kHz — mas a batalha judicial com a Sony pode mudar tudo. Guia completo para usar com segurança no Brasil.",
+  content: "",
+  category: "ia",
+  subtopic: "ferramentas",
+  image: sunoAIImg,
+  author: "VICIO<CODE>",
+  date: "2026-05-28",
+  readTime: "14 min",
+  faq: [
+    { q: "O Suno AI é gratuito?", a: "Sim, com 50 créditos mensais (~10 músicas). Para baixar MP3 e uso comercial, o plano Pro custa US$ 8/mês." },
+    { q: "Posso usar músicas do Suno comercialmente?", a: "Sim nos planos pagos, mas adicione contribuição humana documentada para proteção jurídica no Brasil." },
+    { q: "O Suno funciona em português?", a: "Sim, com excelente qualidade em gêneros brasileiros como pagode, sertanejo, funk e MPB." },
+  ],
+},
   {
   id: "195",
   slug: "dola-ai-app-assistente-2026",
