@@ -391,6 +391,11 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Mynoghra: Takuto Ira reencarna como rei da nação apocalíptica de um jogo 4X real. Anime pela Wao World confirmado, mangá em andamento. Atou, mecânicas de corrupção, comparação com Overlord e TenSura.",
     keywords: "Isekai Mokushiroku Mynoghra, Mynoghra anime, Mynoghra manga, Atou Líder Corrupta, Takuto Ira, isekai estratégia 4X, civilização apocalipse isekai, Wao World anime, Mynoghra guia completo, Hametsu no Bunmei Sekai Seifuku 2026",
   },
+  "/post/suno-ai-gerador-musica-2026": {
+    title: "Suno AI: O Guia Completo do Gerador de Músicas com IA em 2026",
+    description: "Tudo sobre o Suno AI em 2026: como funciona o v5.5, preços, plano gratuito, como criar músicas do zero, comparativo com Udio, direitos autorais e o que a batalha judicial com a RIAA significa para criadores.",
+    keywords: "Suno AI 2026, Suno gerador de música IA, Suno v5.5, como usar Suno AI, Suno AI grátis, Suno vs Udio, criar música com IA, Suno planos preços, RIAA processo Suno, direitos autorais música IA, Suno comercial, gerar música texto IA Brasil",
+  },
   
 };
 
