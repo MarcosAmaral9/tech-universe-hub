@@ -254,8 +254,8 @@ const Header = () => {
                 </Link>
               )}
 
-              {/* PWA-only Offline shortcut */}
-              {isStandalone && user && (
+              {/* PWA-only Offline shortcut — sempre visível no app instalado */}
+              {isStandalone && (
                 <Link
                   to="/leitura-offline"
                   onClick={closeMenu}
