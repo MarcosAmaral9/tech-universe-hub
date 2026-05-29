@@ -256,6 +256,7 @@ const DolaAI2026                     = lazy(() => import("./pages/posts/DolaAI20
 const Seedance20IA2026               = lazy(() => import("./pages/posts/Seedance20IA2026"));
 const ReMonster2026                  = lazy(() => import("./pages/posts/ReMonster2026"));
 const IsekaiMokushirokuMynoghra2026  = lazy(() => import("./pages/posts/IsekaiMokushirokuMynoghra2026"));
+const SunoAIMusica2026               = lazy(() => import("./pages/posts/SunoAIMusica2026"));
  
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -500,6 +501,7 @@ const App = () => (
                 <Route path="/post/seedance-2-0-geracao-video-ia-2026" element={<Suspense fallback={<div />}><Seedance20IA2026 /></Suspense>} />
                 <Route path="/post/re-monster-anime-manga-guia-2026" element={<Suspense fallback={<div />}><ReMonster2026 /></Suspense>} />
                 <Route path="/post/isekai-mokushiroku-mynoghra-guia-2026" element={<Suspense fallback={<div />}><IsekaiMokushirokuMynoghra2026 /></Suspense>} />
+                <Route path="/post/suno-ai-gerador-musica-2026" element={<Suspense fallback={<div />}><SunoAIMusica2026 /></Suspense>} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
