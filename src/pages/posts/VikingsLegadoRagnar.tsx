@@ -7,10 +7,13 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, User, Calendar, Sword, Ship, Crown, Shield, Axe, Target, Tv, Star } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import vikingsImg from "@/assets/vikings-ragnar.webp";
-
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
+
 const VikingsLegadoRagnar = () => {
 
   useEffect(() => {
@@ -41,7 +44,7 @@ const VikingsLegadoRagnar = () => {
           </span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="07 de Fevereiro, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -388,8 +391,8 @@ const VikingsLegadoRagnar = () => {
           </p>
         </div>
       </div>
-
-      <RelatedPosts currentSlug="vikings-legado-ragnar-lothbrok" />
+<RelatedPosts currentSlug="vikings-legado-ragnar-lothbrok" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="vikings-legado-ragnar-lothbrok" postTitle="Vikings: Vale a Pena Assistir em 2026? Review Completa da Série" />
     </article>
   );

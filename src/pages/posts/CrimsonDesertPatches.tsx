@@ -6,6 +6,9 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, Wrench, Shield, Zap, CheckCircle, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/crimson-desert-patches.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -32,7 +35,7 @@ const CrimsonDesertPatches = () => {
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />12 min de leitura</span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="04 de Abril, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -230,8 +233,8 @@ const CrimsonDesertPatches = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
-
-      <RelatedPosts currentSlug="crimson-desert-patches-atualizacoes-2026" />
+<RelatedPosts currentSlug="crimson-desert-patches-atualizacoes-2026" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="crimson-desert-patches-atualizacoes-2026" postTitle="Crimson Desert: Todas as Atualizações e Patches Pós-Lançamento" />
     </article>
   );

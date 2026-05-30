@@ -1,26 +1,27 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
-import { ArrowLeft, Clock, User, Calendar, Factory, Train, Swords, Cog, Cpu, DollarSign, Target, Laptop, Gamepad2, HelpCircle, MapPin, Crown, Users, Zap, Shield, BookOpen } from "lucide-react";
+import { Clock, User, Calendar, Factory, Train, Swords, Cog, Cpu, DollarSign, Target, Laptop, Gamepad2, HelpCircle, MapPin, Crown, Users, Zap, Shield, BookOpen } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
 import acSyndicateImg from "@/assets/ac-syndicate.webp";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
+
 const ACSyndicate = () => {
 
   useEffect(() => {
-    trackArticleRead("ac-syndicate-revolucao-industrial-londres", "AC Syndicate em 2026 Vale a Pena? Review — Londres Vitoriana", "geek");
+    trackArticleRead("ac-syndicate-revolucao-industrial-londres", "Assassin's Creed Syndicate em 2026: Review Completa — Londres Vitoriana e Sistema de Gangues", "geek");
   }, []);
+
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      {/* SEO-optimized meta description: Assassin's Creed Syndicate vale a pena em 2026? Review completa na Londres Vitoriana com os irmãos Frye, sistema de gangues, requisitos de PC gamer e custo-benefício. */}
-      
       {/* Back Button */}
       <BackNavigation category="geek" portalPath="/geek/assassins-creed" portalLabel="Painel Assassin's Creed" />
 
@@ -33,9 +34,9 @@ const ACSyndicate = () => {
           </span>
         </div>
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-          Assassin's Creed Syndicate em 2026 Vale a Pena? Review Completa, Londres Vitoriana, PC Ideal e Custo-Benefício
+          Assassin's Creed Syndicate em 2026 Vale a Pena? Review Completa, Londres Vitoriana, Sistema de Gangues, PC Ideal e Custo-Benefício
         </h1>
-        
+
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2">
             <User className="h-4 w-4" />
@@ -51,16 +52,17 @@ const ACSyndicate = () => {
           </span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="21 de Janeiro, 2026" />
       </header>
 
       {/* Featured Image */}
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high"
+        <img
+          fetchPriority="high"
           loading="eager"
           decoding="async"
           src={acSyndicateImg}
-          alt="Assassin's Creed Syndicate - Review 2026 Londres Vitoriana PC gamer"
+          alt="Assassin's Creed Syndicate - Review completa 2026 Londres Vitoriana gangues Rooks"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
@@ -69,19 +71,20 @@ const ACSyndicate = () => {
       {/* Content */}
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          Se você é fascinado pela estética <strong>steampunk</strong>, gangues de rua e pela atmosfera 
-          esfumaçada da <strong>Londres do século XIX</strong>, Assassin's Creed Syndicate é sua viagem 
-          definitiva no tempo. Lançado como o último jogo antes da "virada RPG", ele entrega uma das 
-          cidades mais vivas já criadas para <strong>PC gamer</strong> e consoles, permitindo que você 
-          domine os submundos da capital britânica durante a Segunda Revolução Industrial.
+          Se você é fascinado pela estética <strong>steampunk</strong>, gangues de rua e pela atmosfera
+          esfumaçada da <strong>Londres do século XIX</strong>, <strong>Assassin's Creed Syndicate</strong>{" "}
+          é sua viagem definitiva no tempo. Lançado como o último AC clássico antes da "virada RPG", ele
+          entrega uma das cidades mais vivas já criadas para <strong>PC gamer</strong> e consoles,
+          permitindo que você domine os submundos da capital britânica durante a Segunda Revolução Industrial
+          com os irmãos <strong>Jacob e Evie Frye</strong>.
         </p>
 
-        <p className="text-lg">Neste guia completo você encontra:</p>
+        <p className="text-lg">Neste guia completo de <strong>Assassin's Creed Syndicate</strong> você encontra:</p>
         <ul className="text-lg">
           <li>👉 <strong>Contexto Histórico:</strong> A Era Vitoriana e a Revolução Industrial</li>
-          <li>👉 <strong>Mundo e Geografia:</strong> Explorando Londres de 1868</li>
+          <li>👉 <strong>Mundo e Geografia:</strong> Explorando a Londres de 1868</li>
           <li>👉 <strong>Jacob ou Evie:</strong> Dual protagonistas e suas habilidades</li>
-          <li>👉 <strong>Sistema de Gangues:</strong> Construindo os Rooks</li>
+          <li>👉 <strong>Sistema de Gangues:</strong> Construindo os Rooks e liberando Londres</li>
           <li>👉 <strong>Facções e Personagens:</strong> Templários vs Assassinos em Londres</li>
           <li>👉 <strong>Combate e Mecânicas:</strong> Gancho de corda e carruagens</li>
           <li>👉 <strong>Tempo de Jogo e DLCs:</strong> Jack, o Estripador e mais</li>
@@ -110,6 +113,22 @@ const ACSyndicate = () => {
               <div className="text-sm text-muted-foreground">Plataformas</div>
               <div className="font-bold">PC, PS4/5, Xbox</div>
             </div>
+            <div>
+              <div className="text-sm text-muted-foreground">Protagonistas</div>
+              <div className="font-bold">Jacob e Evie Frye</div>
+            </div>
+            <div>
+              <div className="text-sm text-muted-foreground">Co-op</div>
+              <div className="font-bold">Não (single player)</div>
+            </div>
+            <div>
+              <div className="text-sm text-muted-foreground">DLC principal</div>
+              <div className="font-bold">Jack, o Estripador (+8h)</div>
+            </div>
+            <div>
+              <div className="text-sm text-muted-foreground">Mecânica exclusiva</div>
+              <div className="font-bold">Gancho de corda</div>
+            </div>
           </div>
           <p className="mt-4 text-muted-foreground mb-0">
             👉 <strong>Ótimo custo-benefício</strong> para fãs de ambientação vitoriana e steampunk. Frequentemente gratuito em promoções.
@@ -120,14 +139,15 @@ const ACSyndicate = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-gray-400" />
-          Contexto Histórico: A Era Vitoriana (1837-1901)
+          Contexto Histórico: A Era Vitoriana e a Revolução Industrial (1837–1901)
         </h2>
 
         <p>
-          Syndicate se passa em <strong>1868</strong>, no auge do reinado da <strong>Rainha Vitória</strong>, 
-          um período de transformações radicais na sociedade britânica. A <strong>Segunda Revolução Industrial</strong> 
-          estava em pleno vapor, com inovações como o telégrafo, a locomotiva a vapor e a eletricidade mudando 
-          completamente a forma como as pessoas viviam e trabalhavam.
+          <strong>AC Syndicate</strong> se passa em <strong>1868</strong>, no auge do reinado da{" "}
+          <strong>Rainha Vitória</strong>, um período de transformações radicais na sociedade britânica.
+          A <strong>Segunda Revolução Industrial</strong> estava em pleno vapor, com inovações como o
+          telégrafo, a locomotiva a vapor e a eletricidade mudando completamente a forma como as pessoas
+          viviam e trabalhavam.
         </p>
 
         <h3 className="text-xl font-bold mt-6 mb-4">📜 O Que Estava Acontecendo na Inglaterra de 1868?</h3>
@@ -136,73 +156,73 @@ const ACSyndicate = () => {
           <div className="p-5 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-3">🏭 Revolução Industrial</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              Fábricas dominavam a paisagem urbana. Milhões de trabalhadores, incluindo crianças, 
-              trabalhavam em condições desumanas por 16 horas diárias. O carvão alimentava tudo, 
+              Fábricas dominavam a paisagem urbana. Milhões de trabalhadores, incluindo crianças,
+              trabalhavam em condições desumanas por 16 horas diárias. O carvão alimentava tudo,
               deixando Londres coberta por uma névoa tóxica permanente.
             </p>
           </div>
           <div className="p-5 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-3">👑 Império Britânico no Auge</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              O Império Britânico controlava 25% da superfície terrestre. A riqueza de colônias 
-              como Índia, África e Caribe fluía para Londres, criando uma elite extremamente rica 
+              O Império Britânico controlava 25% da superfície terrestre. A riqueza de colônias
+              como Índia, África e Caribe fluía para Londres, criando uma elite extremamente rica
               enquanto a classe trabalhadora vivia na miséria.
             </p>
           </div>
           <div className="p-5 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-3">⚔️ Tensões Sociais</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              A desigualdade era brutal. Enquanto a aristocracia vivia em mansões luxuosas em 
-              Westminster, os pobres se amontoavam em cortiços de Whitechapel e Southwark. 
+              A desigualdade era brutal. Enquanto a aristocracia vivia em mansões luxuosas em
+              Westminster, os pobres se amontoavam em cortiços de Whitechapel e Southwark.
               Movimentos trabalhistas começavam a surgir.
             </p>
           </div>
           <div className="p-5 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-3">🔬 Era da Ciência</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              Darwin havia publicado "A Origem das Espécies" em 1859. Florence Nightingale 
-              revolucionava a enfermagem. Alexander Graham Bell trabalhava no telefone. 
+              Darwin havia publicado "A Origem das Espécies" em 1859. Florence Nightingale
+              revolucionava a enfermagem. Alexander Graham Bell trabalhava no telefone.
               Era a era dos inventores e descobertas.
             </p>
           </div>
         </div>
 
-        <h3 className="text-xl font-bold mt-6 mb-4">🗓️ Eventos Históricos Retratados no Jogo</h3>
+        <h3 className="text-xl font-bold mt-6 mb-4">🗓️ Eventos Históricos Retratados em AC Syndicate</h3>
 
         <ul className="space-y-3 my-6">
           <li className="flex items-start gap-3">
             <span className="text-gray-500 font-bold">📰</span>
-            <span><strong>Reformas Trabalhistas:</strong> O jogo aborda diretamente a exploração nas fábricas 
+            <span><strong>Reformas Trabalhistas:</strong> O jogo aborda diretamente a exploração nas fábricas
             e o trabalho infantil, com missões de libertação de crianças trabalhadoras.</span>
           </li>
           <li className="flex items-start gap-3">
             <span className="text-gray-500 font-bold">🎭</span>
-            <span><strong>Teatro Vitoriano:</strong> O Alhambra Music Hall e outros teatros aparecem como 
+            <span><strong>Teatro Vitoriano:</strong> O Alhambra Music Hall e outros teatros aparecem como
             locais de encontro e espetáculos, refletindo o entretenimento da época.</span>
           </li>
           <li className="flex items-start gap-3">
             <span className="text-gray-500 font-bold">🏛️</span>
-            <span><strong>Política Britânica:</strong> O Parlamento, Benjamin Disraeli e as lutas pelo 
-            sufrágio universal são temas presentes na narrativa.</span>
+            <span><strong>Política Britânica:</strong> O Parlamento, Benjamin Disraeli e as lutas pelo
+            sufrágio universal são temas presentes na narrativa de Syndicate.</span>
           </li>
           <li className="flex items-start gap-3">
             <span className="text-gray-500 font-bold">🔪</span>
-            <span><strong>Jack, o Estripador (DLC):</strong> A expansão se passa em 1888, durante os 
+            <span><strong>Jack, o Estripador (DLC):</strong> A expansão se passa em 1888, durante os
             infames assassinatos de Whitechapel que nunca foram solucionados.</span>
           </li>
         </ul>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-      <AdInArticle />
+          <AdInArticle />
           <MapPin className="h-7 w-7 text-gray-400" />
-          Geografia: Explorando Londres de 1868
+          Geografia: Explorando a Londres de 1868 em AC Syndicate
         </h2>
 
         <p>
-          A Londres de Syndicate é dividida em <strong>7 distritos principais</strong>, cada um com 
-          sua identidade visual, social e econômica única. A cidade é uma das maiores já recriadas 
-          na franquia, com ruas largas o suficiente para acomodar carruagens e um sistema de trens 
-          funcionando em tempo real.
+          A Londres de <strong>Assassin's Creed Syndicate</strong> é dividida em{" "}
+          <strong>7 distritos principais</strong>, cada um com sua identidade visual, social e econômica
+          única. A cidade é uma das maiores já recriadas na franquia, com ruas largas o suficiente para
+          acomodar carruagens e um sistema de trens funcionando em tempo real.
         </p>
 
         <h3 className="text-xl font-bold mt-6 mb-4">🏙️ Os Distritos de Londres</h3>
@@ -256,12 +276,7 @@ const ACSyndicate = () => {
           </Table>
         </div>
 
-        <h3 className="text-xl font-bold mt-6 mb-4">🏛️ Marcos Históricos Exploráveis</h3>
-
-        <p>
-          A atenção aos detalhes arquitetônicos é impressionante. Você pode escalar e explorar:
-        </p>
-
+        <h3 className="text-xl font-bold mt-6 mb-4">🏛️ Marcos Históricos Exploráveis em Syndicate</h3>
         <ul className="space-y-2 my-6">
           <li><strong>Big Ben e Palácio de Westminster:</strong> O símbolo de Londres, reconstituído com precisão histórica.</li>
           <li><strong>Torre de Londres:</strong> A fortaleza medieval que serviu de prisão para reis e rainhas.</li>
@@ -273,34 +288,50 @@ const ACSyndicate = () => {
 
         <AdRectangle className="my-8" />
 
-        
-<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Target className="h-7 w-7 text-gray-400" />
-          Review Geral: Syndicate Envelheceu Bem?
+          Review Geral de AC Syndicate: Envelheceu Bem em 2026?
         </h2>
 
         <p>
-          <strong>Sim</strong> — especialmente para quem valoriza <strong>ambientação</strong> sobre 
-          mecânicas RPG. Syndicate é o último AC clássico antes de Origins revolucionar a fórmula, 
-          oferecendo uma experiência mais focada em narrativa linear e combate estilizado do que em 
-          estatísticas e níveis de equipamento.
+          <strong>Sim</strong> — especialmente para quem valoriza <strong>ambientação</strong> sobre
+          mecânicas RPG. <strong>Assassin's Creed Syndicate</strong> é o último AC clássico antes de
+          Origins revolucionar a fórmula, oferecendo uma experiência mais focada em narrativa linear e
+          combate estilizado do que em estatísticas e níveis de equipamento.
         </p>
 
         <p>
-          O jogo corrigiu muitos dos problemas técnicos que atormentaram Unity no lançamento. 
-          A otimização é melhor, os bugs são raros, e a experiência é mais polida. Se você 
-          gostou do gameplay de Unity mas não da performance, Syndicate é a escolha certa.
+          O jogo corrigiu muitos dos problemas técnicos que atormentaram Unity no lançamento. A
+          otimização é melhor, os bugs são raros, e a experiência é mais polida. Se você gostou do
+          gameplay de Unity mas não da performance, <strong>Syndicate</strong> é a escolha certa.
         </p>
 
+        <EditorialTake category="geek" title="Análise do Marcos: Syndicate é o AC que o público subestimou">
+          <p>
+            <strong>Assassin's Creed Syndicate</strong> foi injustamente ofuscado pela sequência imediata
+            de Unity, que havia decepcionado tanto que muitos jogadores simplesmente pularam Syndicate.
+            Mas quem jogou sabe: a <strong>dualidade Jacob/Evie funciona muito bem</strong>. Jacob para
+            quem quer arrasar em combate com um sorriso no rosto, Evie para quem quer a experiência
+            clássica de furtividade. É como ter dois jogos num só.
+          </p>
+          <p>
+            O DLC Jack, o Estripador é, na minha opinião, <strong>o melhor DLC de toda a franquia</strong>.
+            O tom muda completamente — de aventura de ação para quasi-horror policial vitoriano — e a
+            história de Evie mais velha investigando os assassinatos é muito bem escrita. Se você comprar
+            só pelo DLC, já vale o preço.
+          </p>
+        </EditorialTake>
+
+        {/* Jacob e Evie */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Swords className="h-7 w-7 text-gray-400" />
-          Jacob e Evie Frye: A Dualidade Perfeita
+          Jacob e Evie Frye: A Dualidade Perfeita de AC Syndicate
         </h2>
 
         <p>
-          Pela primeira vez na série, o jogador alterna entre dois protagonistas irmãos gêmeos 
-          com estilos de jogo completamente distintos. Cada um tem sua própria árvore de habilidades 
-          e progressão, incentivando você a usar ambos em diferentes situações.
+          Pela primeira vez na série, o jogador alterna entre dois protagonistas irmãos gêmeos com
+          estilos de jogo completamente distintos. Cada um tem sua própria árvore de habilidades e
+          progressão, incentivando você a usar ambos em diferentes situações.
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 my-8">
@@ -308,8 +339,8 @@ const ACSyndicate = () => {
             <Swords className="h-8 w-8 text-red-400 mb-3" />
             <h4 className="font-bold mb-2">Jacob Frye – O Líder de Gangue</h4>
             <p className="text-sm text-muted-foreground mb-3">
-              Jacob é impulsivo, carismático e prefere resolver problemas com os punhos. Ele é o 
-              fundador dos <strong>Rooks</strong> e vê a luta contra os Templários como uma guerra 
+              Jacob é impulsivo, carismático e prefere resolver problemas com os punhos. Ele é o
+              fundador dos <strong>Rooks</strong> e vê a luta contra os Templários como uma guerra
               de rua que precisa ser vencida com violência e intimidação.
             </p>
             <ul className="text-sm text-muted-foreground space-y-1">
@@ -323,9 +354,9 @@ const ACSyndicate = () => {
             <Cog className="h-8 w-8 text-purple-400 mb-3" />
             <h4 className="font-bold mb-2">Evie Frye – A Assassina Clássica</h4>
             <p className="text-sm text-muted-foreground mb-3">
-              Evie é metódica, inteligente e segue os ensinamentos tradicionais da Irmandade. 
-              Enquanto Jacob foca na guerra de gangues, ela busca os <strong>Fragmentos do Éden</strong> 
-              e investiga a conspiração Templária mais profunda.
+              Evie é metódica, inteligente e segue os ensinamentos tradicionais da Irmandade.
+              Enquanto Jacob foca na guerra de gangues, ela busca os{" "}
+              <strong>Fragmentos do Éden</strong> e investiga a conspiração Templária mais profunda.
             </p>
             <ul className="text-sm text-muted-foreground space-y-1">
               <li>✔ Especialista em <strong>furtividade</strong></li>
@@ -336,102 +367,92 @@ const ACSyndicate = () => {
           </div>
         </div>
 
+        {/* Facções */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Crown className="h-7 w-7 text-gray-400" />
-          Facções e Forças em Conflito
+          Facções e Forças em Conflito em AC Syndicate
         </h2>
-
-        <p>
-          A Londres de 1868 é um campo de batalha entre diferentes grupos de poder. Os irmãos Frye 
-          precisam navegar entre aliados e inimigos para libertar a cidade do controle Templário.
-        </p>
-
-        <h3 className="text-xl font-bold mt-6 mb-4">⚔️ As Principais Facções</h3>
 
         <div className="space-y-4 my-6">
           <div className="p-5 bg-gradient-to-r from-green-500/10 to-background rounded-xl border border-green-500/30">
             <h4 className="font-bold mb-2 text-green-400">🦅 Os Rooks (Grasnadores)</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              A gangue fundada por Jacob Frye. Inicialmente pequena, cresce à medida que você liberta 
-              distritos. Os Rooks usam verde como cor distintiva e ajudam em combates nas ruas. Você 
-              pode recrutar membros, melhorar suas habilidades e equipamentos, e chamá-los para ajudar 
-              em lutas e missões.
+              A gangue fundada por Jacob Frye. Inicialmente pequena, cresce à medida que você liberta
+              distritos. Os Rooks usam verde como cor distintiva e ajudam em combates nas ruas de
+              Londres. Você pode recrutar membros, melhorar suas habilidades e equipamentos, e chamá-los
+              para ajudar em lutas e missões.
             </p>
           </div>
-          
+
           <div className="p-5 bg-gradient-to-r from-red-500/10 to-background rounded-xl border border-red-500/30">
             <h4 className="font-bold mb-2 text-red-400">💀 Os Blighters</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              A gangue rival controlada pelos Templários. Liderados por <strong>Maxwell Roth</strong>, 
-              um homem teatral e psicopata, os Blighters usam vermelho e controlam Londres no início 
-              do jogo. Eles gerenciam fábricas ilegais, extorquem comerciantes e sequestram crianças 
+              A gangue rival controlada pelos Templários. Liderados por <strong>Maxwell Roth</strong>,
+              um homem teatral e psicopata, os Blighters usam vermelho e controlam Londres no início
+              do jogo. Eles gerenciam fábricas ilegais, extorquem comerciantes e sequestram crianças
               para trabalho forçado.
             </p>
           </div>
-          
+
           <div className="p-5 bg-gradient-to-r from-yellow-500/10 to-background rounded-xl border border-yellow-500/30">
             <h4 className="font-bold mb-2 text-yellow-400">🔺 A Ordem dos Templários</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              Liderada pelo Grão-Mestre <strong>Crawford Starrick</strong>, um magnata industrial que 
-              controla ferrovias, fábricas e bancos. Starrick acredita que o controle total da economia 
-              é a chave para a "ordem perfeita". Ele é um dos vilões mais bem desenvolvidos da franquia.
+              Liderada pelo Grão-Mestre <strong>Crawford Starrick</strong>, um magnata industrial que
+              controla ferrovias, fábricas e bancos. Starrick acredita que o controle total da economia
+              é a chave para a "ordem perfeita" — um dos vilões mais bem desenvolvidos de toda a franquia.
             </p>
           </div>
-          
+
           <div className="p-5 bg-gradient-to-r from-blue-500/10 to-background rounded-xl border border-blue-500/30">
             <h4 className="font-bold mb-2 text-blue-400">🗡️ A Irmandade dos Assassinos</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              Representada pelos irmãos Frye e seu pai falecido, Ethan Frye. O mentor <strong>Henry Green</strong> 
-              (nascido Jayadeep Mir, filho de um Assassino indiano) coordena as operações em Londres 
-              e serve como interesse romântico de Evie.
+              Representada pelos irmãos Frye e seu pai falecido, Ethan Frye. O mentor{" "}
+              <strong>Henry Green</strong> (nascido Jayadeep Mir, filho de um Assassino indiano)
+              coordena as operações em Londres e serve como interesse romântico de Evie.
             </p>
           </div>
         </div>
 
-        <h3 className="text-xl font-bold mt-6 mb-4">🎭 Personagens Históricos Aliados</h3>
-
-        <p>
-          Você realiza missões ao lado de mentes brilhantes da época, cada um oferecendo 
-          linhas de missões secundárias únicas:
-        </p>
-
+        <h3 className="text-xl font-bold mt-6 mb-4">🎭 Personagens Históricos Aliados em Syndicate</h3>
         <ul className="space-y-3 my-6">
           <li className="flex items-start gap-3">
             <span className="text-gray-500 font-bold">🔬</span>
-            <span><strong>Charles Darwin:</strong> O pai da teoria da evolução precisa de ajuda para 
+            <span><strong>Charles Darwin:</strong> O pai da teoria da evolução precisa de ajuda para
             proteger sua pesquisa de grupos religiosos radicais que querem silenciá-lo.</span>
           </li>
           <li className="flex items-start gap-3">
             <span className="text-gray-500 font-bold">📞</span>
-            <span><strong>Alexander Graham Bell:</strong> O inventor do telefone cria os gadgets 
+            <span><strong>Alexander Graham Bell:</strong> O inventor do telefone cria os gadgets
             dos Frye, incluindo o icônico gancho de corda e bombas de voltagem.</span>
           </li>
           <li className="flex items-start gap-3">
             <span className="text-gray-500 font-bold">🏥</span>
-            <span><strong>Florence Nightingale:</strong> A fundadora da enfermagem moderna pede 
+            <span><strong>Florence Nightingale:</strong> A fundadora da enfermagem moderna pede
             ajuda para desmantelar redes de tráfico de ópio que financiam hospitais corruptos.</span>
           </li>
           <li className="flex items-start gap-3">
             <span className="text-gray-500 font-bold">📚</span>
-            <span><strong>Charles Dickens:</strong> O autor de "Oliver Twist" investiga casos 
+            <span><strong>Charles Dickens:</strong> O autor de "Oliver Twist" investiga casos
             sobrenaturais e atividades de cultos secretos pela cidade.</span>
           </li>
           <li className="flex items-start gap-3">
             <span className="text-gray-500 font-bold">👑</span>
-            <span><strong>Rainha Vitória:</strong> A própria monarca aparece em missões especiais 
+            <span><strong>Rainha Vitória:</strong> A própria monarca aparece em missões especiais
             onde você protege a família real de conspirações Templárias.</span>
           </li>
         </ul>
 
+        {/* Sistema de Gangues */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Users className="h-7 w-7 text-gray-400" />
-          Sistema de Gangues e Conquista de Território
+          Sistema de Gangues de AC Syndicate: Rooks vs Blighters
         </h2>
 
         <p>
-          O gameplay central de Syndicate gira em torno da <strong>libertação dos distritos</strong> 
-          de Londres das mãos dos Blighters. Cada distrito tem um líder Templário que você deve 
-          enfraquecer completando atividades antes de enfrentá-lo em uma <strong>Guerra de Gangue</strong> final.
+          O gameplay central de <strong>AC Syndicate</strong> gira em torno da{" "}
+          <strong>libertação dos distritos</strong> de Londres das mãos dos Blighters. Cada distrito
+          tem um líder Templário que você deve enfraquecer completando atividades antes de enfrentá-lo
+          em uma <strong>Guerra de Gangue</strong> final.
         </p>
 
         <h3 className="text-xl font-bold mt-6 mb-4">📋 Atividades para Libertar um Distrito</h3>
@@ -440,48 +461,42 @@ const ACSyndicate = () => {
           <div className="p-4 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-2">🏭 Libertação de Fábricas</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              Invada fábricas que usam trabalho infantil, elimine os capatazes e liberte as crianças. 
-              Cada fábrica libertada reduz a influência Templária.
+              Invada fábricas que usam trabalho infantil, elimine os capatazes e liberte as crianças.
+              Cada fábrica libertada reduz a influência Templária no distrito.
             </p>
           </div>
           <div className="p-4 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-2">🎯 Assassinatos de Templários</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              Alvos específicos dentro do distrito que devem ser eliminados de forma criativa, 
-              com oportunidades únicas de assassinato.
+              Alvos específicos dentro do distrito que devem ser eliminados de forma criativa,
+              com oportunidades únicas de assassinato em cada missão.
             </p>
           </div>
           <div className="p-4 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-2">🚂 Sequestro de Carruagens</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              Roube carruagens de carga Templária e entregue a aliados. Envolve perseguições e 
-              combate em movimento.
+              Roube carruagens de carga Templária e entregue a aliados. Envolve perseguições e
+              combate em movimento pelas ruas de Londres.
             </p>
           </div>
           <div className="p-4 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-2">👮 Recompensas de Captura</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              Capture criminosos vivos e entregue-os à polícia para recompensas e redução da 
-              presença Blighter.
+              Capture criminosos vivos e entregue-os à polícia para recompensas e redução da
+              presença Blighter no território.
             </p>
           </div>
         </div>
 
-        <h3 className="text-xl font-bold mt-6 mb-4">⚔️ Guerras de Gangue</h3>
-
+        <h3 className="text-xl font-bold mt-6 mb-4">⚔️ Guerras de Gangue em AC Syndicate</h3>
         <p>
-          Após completar atividades suficientes, você desbloqueia a <strong>Guerra de Gangue</strong> 
-          do distrito. É um combate em larga escala onde dezenas de Rooks enfrentam dezenas de 
-          Blighters nas ruas. Você lidera a batalha e deve derrotar o líder do distrito para 
+          Após completar atividades suficientes, você desbloqueia a <strong>Guerra de Gangue</strong>
+          do distrito. É um combate em larga escala onde dezenas de Rooks enfrentam dezenas de
+          Blighters nas ruas. Você lidera a batalha e deve derrotar o líder do distrito para
           conquistá-lo permanentemente.
         </p>
 
         <h3 className="text-xl font-bold mt-6 mb-4">💪 Melhorias para os Rooks</h3>
-
-        <p>
-          Você pode investir dinheiro e recursos para melhorar sua gangue:
-        </p>
-
         <ul className="space-y-2 my-6">
           <li><strong>Recrutamento:</strong> Mais membros aparecem nas ruas para ajudá-lo.</li>
           <li><strong>Equipamentos:</strong> Melhores armas e armaduras para seus gangsters.</li>
@@ -490,17 +505,19 @@ const ACSyndicate = () => {
           <li><strong>Sabotagem:</strong> Rooks podem sabotar carruagens e equipamentos inimigos.</li>
         </ul>
 
+        {/* Combate */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Zap className="h-7 w-7 text-gray-400" />
-          Sistema de Combate e Mecânicas Únicas
+          Sistema de Combate e Mecânicas Únicas de AC Syndicate
         </h2>
 
         <p>
-          Syndicate refinou o combate de Unity, tornando-o mais rápido, fluido e cinematográfico. 
-          O sistema é inspirado nos jogos Batman: Arkham, com contra-ataques, combos e finalizações brutais.
+          <strong>Syndicate</strong> refinou o combate de Unity, tornando-o mais rápido, fluido e
+          cinematográfico. O sistema é inspirado nos jogos Batman: Arkham, com contra-ataques, combos
+          e finalizações brutais.
         </p>
 
-        <h3 className="text-xl font-bold mt-6 mb-4">🥊 Arsenal e Armas</h3>
+        <h3 className="text-xl font-bold mt-6 mb-4">🥊 Arsenal de AC Syndicate</h3>
 
         <div className="overflow-x-auto my-6">
           <Table>
@@ -536,13 +553,12 @@ const ACSyndicate = () => {
           </Table>
         </div>
 
-        <h3 className="text-xl font-bold mt-6 mb-4">🪝 O Gancho de Corda</h3>
-
+        <h3 className="text-xl font-bold mt-6 mb-4">🪝 O Gancho de Corda de AC Syndicate</h3>
         <p>
-          A maior inovação de Syndicate é o <strong>gancho de corda</strong>, criado por Alexander Graham Bell. 
-          Ele funciona como o Batclaw de Batman: Arkham City, permitindo:
+          A maior inovação de <strong>Assassin's Creed Syndicate</strong> é o{" "}
+          <strong>gancho de corda</strong>, criado por Alexander Graham Bell. Ele funciona como o
+          Batclaw de Batman: Arkham City, permitindo:
         </p>
-
         <ul className="space-y-2 my-6">
           <li><strong>Subida Rápida:</strong> Alcance telhados instantaneamente sem precisar escalar.</li>
           <li><strong>Tirolesas:</strong> Crie ziplines entre prédios para travessia aérea.</li>
@@ -550,56 +566,22 @@ const ACSyndicate = () => {
           <li><strong>Fuga Rápida:</strong> Escape de combates subindo para os telhados.</li>
         </ul>
 
-        <p>
-          Isso muda completamente a navegação em Londres, cujas ruas são largas demais para o 
-          parkour tradicional. É controverso entre fãs puristas, mas essencial para o ritmo do jogo.
-        </p>
-
         <h3 className="text-xl font-bold mt-6 mb-4">🚂 Veículos e Transporte</h3>
-
         <ul className="space-y-3 my-6">
           <li className="flex items-start gap-3">
             <span className="text-gray-500 font-bold">🚃</span>
-            <span><strong>Carruagens:</strong> Você pode roubar, dirigir e lutar sobre carruagens. 
+            <span><strong>Carruagens:</strong> Você pode roubar, dirigir e lutar sobre carruagens.
             Há perseguições épicas pelas ruas de Londres com física de destruição.</span>
           </li>
           <li className="flex items-start gap-3">
             <span className="text-gray-500 font-bold">🚂</span>
-            <span><strong>Trens:</strong> O quartel-general dos Frye é um trem que circula pela cidade 
+            <span><strong>Trens:</strong> O quartel-general dos Frye é um trem que circula pela cidade
             em tempo real. Você pode personalizá-lo e usá-lo como base de operações.</span>
           </li>
           <li className="flex items-start gap-3">
             <span className="text-gray-500 font-bold">⛵</span>
-            <span><strong>Barcos:</strong> O Rio Tâmisa pode ser navegado em pequenas embarcações 
+            <span><strong>Barcos:</strong> O Rio Tâmisa pode ser navegado em pequenas embarcações
             para acessar áreas específicas.</span>
-          </li>
-        </ul>
-
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Factory className="h-7 w-7 text-gray-400" />
-          Londres: Uma Metrópole em Transformação
-        </h2>
-
-        <p>
-          A tecnologia por trás da recriação de Londres é impressionante para 2015 e ainda 
-          impressiona em 2026:
-        </p>
-
-        <ul className="space-y-3 my-6">
-          <li className="flex items-start gap-3">
-            <span className="text-gray-500 font-bold">🚂</span>
-            <span><strong>Veículos em Movimento:</strong> Ruas largas com centenas de carruagens 
-            com física de destruição e NPCs reagindo ao caos.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-gray-500 font-bold">🚃</span>
-            <span><strong>Trens em Tempo Real:</strong> O sistema ferroviário funciona continuamente, 
-            e você pode pular de trem em trem durante missões.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-gray-500 font-bold">🌫️</span>
-            <span><strong>Atmosfera Vitoriana:</strong> Névoa, fumaça de fábricas, iluminação a gás — 
-            tudo contribui para a atmosfera sombria e industrial.</span>
           </li>
         </ul>
 
@@ -607,15 +589,16 @@ const ACSyndicate = () => {
           <p className="text-muted-foreground mb-0">
             💡 Sente falta da furtividade urbana? Veja como Bagdá em{" "}
             <Link to="/post/ac-mirage-retorno-raizes-bagda" className="text-primary hover:underline">
-              Mirage
+              AC Mirage
             </Link>{" "}
             se compara à Londres de Syndicate.
           </p>
         </div>
 
+        {/* Tempo de Jogo */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Clock className="h-7 w-7 text-gray-400" />
-          Tempo de Jogo: Quanto Tempo para Zerar?
+          Tempo de Jogo de AC Syndicate: Quanto Tempo para Zerar?
         </h2>
 
         <div className="overflow-x-auto my-6">
@@ -630,43 +613,43 @@ const ACSyndicate = () => {
             <TableBody>
               <TableRow>
                 <TableCell className="font-medium">História Principal</TableCell>
-                <TableCell className="text-green-400 font-bold">18-22 horas</TableCell>
+                <TableCell className="text-green-400 font-bold">18–22 horas</TableCell>
                 <TableCell>Apenas missões da história principal</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">História + Secundárias</TableCell>
-                <TableCell className="text-yellow-400 font-bold">35-45 horas</TableCell>
+                <TableCell className="text-yellow-400 font-bold">35–45 horas</TableCell>
                 <TableCell>Conquista de distritos, personagens históricos</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">100% (Completionist)</TableCell>
-                <TableCell className="text-red-400 font-bold">55-70 horas</TableCell>
+                <TableCell className="text-red-400 font-bold">55–70 horas</TableCell>
                 <TableCell>Todos os coletáveis, segredos, upgrades</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">+ DLC Jack, o Estripador</TableCell>
-                <TableCell className="text-purple-400 font-bold">+8-12 horas</TableCell>
+                <TableCell className="text-purple-400 font-bold">+8–12 horas</TableCell>
                 <TableCell>Nova história, nova área, novo protagonista</TableCell>
               </TableRow>
             </TableBody>
           </Table>
         </div>
 
+        {/* DLCs */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-gray-400" />
-          DLCs e Conteúdo Adicional
+          DLCs de AC Syndicate: Jack, o Estripador e Mais
         </h2>
 
         <h3 className="text-xl font-bold mt-6 mb-4">🔪 Jack, o Estripador (Principal DLC)</h3>
-
         <p>
-          A expansão mais significativa se passa <strong>20 anos após o jogo base</strong>, em 1888. 
-          Os infames assassinatos de Whitechapel estão aterrorizando Londres, e uma Evie Frye 
-          mais velha retorna da Índia para investigar.
+          A expansão mais significativa se passa <strong>20 anos após o jogo base</strong>, em 1888.
+          Os infames assassinatos de Whitechapel estão aterrorizando Londres, e uma Evie Frye mais
+          velha retorna da Índia para investigar.
         </p>
 
         <div className="my-6 p-5 bg-gradient-to-r from-red-500/10 to-background rounded-xl border border-red-500/30">
-          <h4 className="font-bold mb-3 text-red-400">O Que o DLC Oferece:</h4>
+          <h4 className="font-bold mb-3 text-red-400">O Que o DLC Jack, o Estripador Oferece:</h4>
           <ul className="text-sm text-muted-foreground space-y-2">
             <li>✔ <strong>Nova História Sombria:</strong> Tom muito mais dark e horror do que o jogo base.</li>
             <li>✔ <strong>Jogar como Jack:</strong> Em algumas missões, você controla o Estripador e usa táticas de terror.</li>
@@ -676,7 +659,7 @@ const ACSyndicate = () => {
           </ul>
         </div>
 
-        <h3 className="text-xl font-bold mt-6 mb-4">📦 Outros Conteúdos</h3>
+        <h3 className="text-xl font-bold mt-6 mb-4">📦 Outros DLCs de Syndicate</h3>
 
         <div className="overflow-x-auto my-6">
           <Table>
@@ -691,17 +674,17 @@ const ACSyndicate = () => {
               <TableRow>
                 <TableCell className="font-medium">The Last Maharaja</TableCell>
                 <TableCell>Ajude o príncipe Duleep Singh a recuperar artefatos indianos roubados.</TableCell>
-                <TableCell>3-4 horas</TableCell>
+                <TableCell>3–4 horas</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">A Long Night</TableCell>
                 <TableCell>Missão de Halloween com elementos sobrenaturais.</TableCell>
-                <TableCell>1-2 horas</TableCell>
+                <TableCell>1–2 horas</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">The Dreadful Crimes</TableCell>
                 <TableCell>10 mistérios de assassinato no estilo Sherlock Holmes.</TableCell>
-                <TableCell>4-5 horas</TableCell>
+                <TableCell>4–5 horas</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">Runaway Train</TableCell>
@@ -712,9 +695,10 @@ const ACSyndicate = () => {
           </Table>
         </div>
 
+        {/* Requisitos de PC */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Cpu className="h-7 w-7 text-gray-400" />
-          Requisitos de PC: Syndicate é Pesado?
+          Requisitos de PC para AC Syndicate em 2026: É Pesado?
         </h2>
 
         <h3 className="text-xl font-bold mt-6 mb-4">🔻 Configuração Mínima (720p – 30 FPS)</h3>
@@ -739,7 +723,7 @@ const ACSyndicate = () => {
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">Armazenamento</TableCell>
-                <TableCell>50 GB (SSD extremamente recomendado para garantir a performance do jogo)</TableCell>
+                <TableCell>50 GB (SSD extremamente recomendado)</TableCell>
               </TableRow>
             </TableBody>
           </Table>
@@ -763,19 +747,19 @@ const ACSyndicate = () => {
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">Armazenamento</TableCell>
-                <TableCell>50 GB SSD (extremamente recomendado para garantir a performance do jogo)</TableCell>
+                <TableCell>50 GB SSD</TableCell>
               </TableRow>
             </TableBody>
           </Table>
         </div>
         <p className="text-muted-foreground">
-          👉 <strong>Requisitos moderados</strong> para um jogo com belos visuais. Qualquer PC gamer 
-          de entrada atual roda Syndicate sem problemas.
+          👉 <strong>Requisitos moderados</strong> para um jogo com belos visuais. Qualquer PC gamer
+          de entrada atual roda <strong>Syndicate</strong> sem problemas.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Laptop className="h-7 w-7 text-gray-400" />
-          Notebook Gamer Roda Syndicate?
+          Notebook Gamer Roda AC Syndicate?
         </h2>
 
         <p><strong>Sim</strong>, desde que seja um <strong>notebook gamer</strong> com:</p>
@@ -788,7 +772,7 @@ const ACSyndicate = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <HelpCircle className="h-7 w-7 text-gray-400" />
-          PC ou Console: Qual Vale Mais a Pena?
+          PC ou Console: Qual Vale Mais a Pena para AC Syndicate?
         </h2>
 
         <div className="grid md:grid-cols-2 gap-6 my-8">
@@ -814,15 +798,15 @@ const ACSyndicate = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <DollarSign className="h-7 w-7 text-gray-400" />
-          Vale a Pena Comprar Syndicate em 2026?
+          Vale a Pena Comprar Assassin's Creed Syndicate em 2026?
         </h2>
 
         <p><strong>Vale muito a pena</strong> se você:</p>
         <ul>
           <li>✔ É fascinado pela era vitoriana e estética steampunk</li>
           <li>✔ Prefere o AC clássico sem elementos RPG complexos</li>
-          <li>✔ Quer experimentar dois protagonistas com estilos diferentes</li>
-          <li>✔ Busca um jogo com excelente custo-benefício</li>
+          <li>✔ Quer experimentar dois protagonistas com estilos completamente diferentes</li>
+          <li>✔ Busca um jogo com excelente custo-benefício e longa duração</li>
           <li>✔ Gosta de sistemas de gangues e conquista de território</li>
           <li>✔ Quer explorar uma Londres histórica detalhada</li>
         </ul>
@@ -836,7 +820,7 @@ const ACSyndicate = () => {
 
         {/* Where to Play */}
         <div className="my-8 p-6 bg-gradient-to-br from-gray-500/20 to-background rounded-xl border border-gray-500/30">
-          <h3 className="text-xl font-bold mb-4">🎮 Onde Jogar?</h3>
+          <h3 className="text-xl font-bold mb-4">🎮 Onde Jogar AC Syndicate?</h3>
           <ul className="space-y-2 text-muted-foreground">
             <li>✓ <strong>PC:</strong> Steam, Epic Games Store, Ubisoft Connect</li>
             <li>✓ <strong>PlayStation 4 e PlayStation 5</strong></li>
@@ -844,7 +828,7 @@ const ACSyndicate = () => {
             <li>✓ <strong>Ubisoft+:</strong> Disponível no serviço de assinatura</li>
           </ul>
           <p className="mt-4 text-sm text-muted-foreground">
-            Preço médio: R$ 60 a R$ 100 (frequentemente gratuito em promoções da Epic Games)
+            Preço médio em 2026: R$ 60 a R$ 100 (frequentemente gratuito em promoções da Epic Games)
           </p>
         </div>
 
@@ -858,11 +842,51 @@ const ACSyndicate = () => {
         </div>
       </div>
 
-      {/* Related Posts */}
+      <ArticleSources
+        sources={[
+          {
+            title: "Assassin's Creed Syndicate — página oficial Ubisoft Store",
+            url: "https://store.ubisoft.com/br/assassin-s-creed-syndicate/57d0a9af88a7e300713afc14.html",
+            publisher: "Ubisoft",
+            accessedAt: "Janeiro 2026",
+          },
+          {
+            title: "Assassin's Creed Syndicate — Steam Store (requisitos e avaliações)",
+            url: "https://store.steampowered.com/app/368500/Assassins_Creed_Syndicate/",
+            publisher: "Valve / Ubisoft",
+            accessedAt: "Janeiro 2026",
+          },
+          {
+            title: "Assassin's Creed Syndicate — How Long to Beat",
+            url: "https://howlongtobeat.com/game/assassins-creed-syndicate",
+            publisher: "HowLongToBeat",
+            accessedAt: "Janeiro 2026",
+          },
+          {
+            title: "Victorian Era — Britannica",
+            url: "https://www.britannica.com/event/Victorian-era",
+            publisher: "Encyclopædia Britannica",
+            accessedAt: "Janeiro 2026",
+          },
+          {
+            title: "Jack the Ripper — Britannica",
+            url: "https://www.britannica.com/biography/Jack-the-Ripper",
+            publisher: "Encyclopædia Britannica",
+            accessedAt: "Janeiro 2026",
+          },
+          {
+            title: "Assassin's Creed Syndicate — PC Gaming Wiki (requisitos e otimizações)",
+            url: "https://www.pcgamingwiki.com/wiki/Assassin%27s_Creed:_Syndicate",
+            publisher: "PCGamingWiki",
+            accessedAt: "Janeiro 2026",
+          },
+        ]}
+      />
+
       <RelatedPosts currentSlug="ac-syndicate-revolucao-industrial-londres" />
 
-      {/* Comments */}
-      <CommentSection postId="ac-syndicate-revolucao-industrial-londres" postTitle="AC Syndicate em 2026 Vale a Pena? Review — Londres Vitoriana" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
+      <CommentSection postId="ac-syndicate-revolucao-industrial-londres" postTitle="Assassin's Creed Syndicate em 2026: Review Completa — Londres Vitoriana e Sistema de Gangues" />
     </article>
   );
 };

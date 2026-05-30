@@ -5,6 +5,9 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, Star, ThumbsUp, ThumbsDown, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
@@ -46,7 +49,7 @@ const CrimsonDesertReview = () => {
           <span className="flex items-center gap-1.5"><Clock className="h-4 w-4" />12 min de leitura</span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="17 de Março, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -155,8 +158,8 @@ const CrimsonDesertReview = () => {
           que <strong>não há DLC planejado</strong> — o suporte continuará via updates gratuitos.
         </p>
       </div>
-
-      <RelatedPosts currentSlug="crimson-desert-review-2026" />
+<RelatedPosts currentSlug="crimson-desert-review-2026" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="crimson-desert-review-2026" postTitle="Crimson Desert: Review 2026" />
     </article>
   );

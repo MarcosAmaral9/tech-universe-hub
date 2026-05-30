@@ -8,6 +8,7 @@ import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3, MapPin } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/gta-vi-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -34,7 +35,7 @@ const GTAVI2026 = () => {
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />15 min de leitura</span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="11 de Abril, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -204,10 +205,8 @@ const GTAVI2026 = () => {
           { title: "Bloomberg \u2014 ind\u00fastria de jogos", url: "https://www.bloomberg.com/", publisher: "Bloomberg", accessedAt: "Maio 2026" }
         ]}
       />
-
-
-
-      <RelatedPosts currentSlug="gta-vi-guia-completo-2026" />
+<RelatedPosts currentSlug="gta-vi-guia-completo-2026" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="gta-vi-guia-completo-2026" postTitle="GTA VI: Data de Lançamento, Plataformas e Tudo que Sabemos" />
     </article>
   );

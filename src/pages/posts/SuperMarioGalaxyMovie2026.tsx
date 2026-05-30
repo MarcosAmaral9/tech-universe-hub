@@ -8,6 +8,7 @@ import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Gamepad2, Star, BarChart3, Zap, Shield, Film } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/super-mario-galaxy-movie-2026-bilheteria.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -40,7 +41,7 @@ const SuperMarioGalaxyMovie2026 = () => {
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />14 min de leitura</span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="30 de Abril, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -208,10 +209,10 @@ const SuperMarioGalaxyMovie2026 = () => {
           { title: "Universal Pictures — Press", url: "https://www.universalpictures.com/", publisher: "Universal Pictures", accessedAt: "Maio 2026" },
         ]}
       />
+<RelatedPosts currentSlug="super-mario-galaxy-movie-2026-bilheteria" />
 
-      <RelatedPosts currentSlug="super-mario-galaxy-movie-2026-bilheteria" />
 
-
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="super-mario-galaxy-movie-2026-bilheteria" postTitle="Super Mario Galaxy: O Filme Abre com US$ 372 Milhões Mundiais" />
     </article>
   );

@@ -7,10 +7,13 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, User, Calendar, Gamepad2, Star, Cpu } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/dragon-age-veilguard-review-2026.webp";
-
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
+
 const DragonAgeVeilguard2026 = () => {
   useEffect(() => {
     trackArticleRead("dragon-age-veilguard-review-2026", "Dragon Age: The Veilguard — A BioWare Voltou? Review Completo 2026", "geek");
@@ -32,7 +35,7 @@ const DragonAgeVeilguard2026 = () => {
         <span className="flex items-center gap-2"><Clock className="h-4 w-4" />13 min de leitura</span>
       </div>
       <ShareWhatsApp />
-      <AuthorBio category="geek" />
+      <AuthorBio category="geek" publishedAt="17 de Março, 2026" />
     </header>
     <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
       <img fetchpriority="high" loading="eager"
@@ -117,7 +120,8 @@ const DragonAgeVeilguard2026 = () => {
       </div>
     </div>
 <RelatedPosts currentSlug="dragon-age-veilguard-review-2026" />
-    <CommentSection postId="dragon-age-veilguard-review-2026" postTitle="Dragon Age: The Veilguard — Review 2026" />
+    <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
+      <CommentSection postId="dragon-age-veilguard-review-2026" postTitle="Dragon Age: The Veilguard — Review 2026" />
   </article>
 );
 };

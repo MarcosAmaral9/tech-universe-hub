@@ -8,6 +8,7 @@ import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3, MapPin } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/gta-vi-novembro-2026-vice-city-leonida.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -40,7 +41,7 @@ const GtaViNovembro2026 = () => {
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />17 min de leitura</span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="20 de Abril, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -202,8 +203,8 @@ const GtaViNovembro2026 = () => {
     { title: 'The Game Awards — Histórico', url: 'https://thegameawards.com/', publisher: 'TGA', accessedAt: "Maio 2026" },
     { title: 'Metacritic', url: 'https://www.metacritic.com/', publisher: 'Metacritic', accessedAt: "Maio 2026" }
   ]} />
-
-        <RelatedPosts currentSlug="gta-vi-novembro-2026-vice-city-leonida" />
+<RelatedPosts currentSlug="gta-vi-novembro-2026-vice-city-leonida" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="gta-vi-novembro-2026-vice-city-leonida" postTitle="GTA VI: Data Confirmada para 19 de Novembro — Tudo sobre Leonida, Lucia e Jason" />
     </article>
   );

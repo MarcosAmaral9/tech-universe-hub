@@ -8,6 +8,9 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, BookOpen, Compass, Shield, Zap, MapPin, Star } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/crimson-desert-iniciantes.webp";
 
@@ -33,7 +36,7 @@ const CrimsonDesertIniciantes = () => {
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />20 min de leitura</span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="29 de Março, 2026" />
       </header>
       <AdLeaderboard className="my-8" />
 
@@ -235,8 +238,8 @@ const CrimsonDesertIniciantes = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
-
-      <RelatedPosts currentSlug="crimson-desert-guia-iniciantes-dicas" />
+<RelatedPosts currentSlug="crimson-desert-guia-iniciantes-dicas" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="crimson-desert-guia-iniciantes-dicas" postTitle="Crimson Desert: Guia de Dicas para Iniciantes" />
           <AdLeaderboard className="my-8" />
     </article>

@@ -6,6 +6,9 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/saros-ps5-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -38,7 +41,7 @@ const SarosPS52026 = () => {
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />13 min de leitura</span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="13 de Abril, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -210,9 +213,8 @@ const SarosPS52026 = () => {
           </p>
         </div>
       </section>
-
-
-      <RelatedPosts currentSlug="saros-housemarque-ps5-2026" />
+<RelatedPosts currentSlug="saros-housemarque-ps5-2026" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="saros-housemarque-ps5-2026" postTitle="SAROS: Guia Completo do Sucessor Espiritual de Returnal" />
     </article>
   );

@@ -9,10 +9,11 @@ import ArticleSources from "@/components/ArticleSources";
 import { ArrowLeft, Clock, User, Calendar, Gamepad2, Star, Cpu, Monitor } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/baldurs-gate-3-review-2026.webp";
-
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
+
 const BaldursGate3Review2026 = () => {
   useEffect(() => {
     trackArticleRead("baldurs-gate-3-review-2026", "Baldur\'s Gate 3 em 2026: Ainda o Melhor RPG da Geração?", "geek");
@@ -34,7 +35,7 @@ const BaldursGate3Review2026 = () => {
         <span className="flex items-center gap-2"><Clock className="h-4 w-4" />14 min de leitura</span>
       </div>
       <ShareWhatsApp />
-      <AuthorBio category="geek" />
+      <AuthorBio category="geek" publishedAt="17 de Março, 2026" />
     </header>
     <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
       <img fetchpriority="high" loading="eager"
@@ -130,9 +131,9 @@ const BaldursGate3Review2026 = () => {
     { title: 'Metacritic — BG3', url: 'https://www.metacritic.com/game/baldurs-gate-3/', publisher: 'Metacritic', accessedAt: "Maio 2026" },
     { title: 'Wizards of the Coast — D&D 5e SRD', url: 'https://dnd.wizards.com/resources/systems-reference-document', publisher: 'WotC', accessedAt: "Maio 2026" }
   ]} />
-
-        <RelatedPosts currentSlug="baldurs-gate-3-review-2026" />
-    <CommentSection postId="baldurs-gate-3-review-2026" postTitle="Baldur's Gate 3 em 2026" />
+<RelatedPosts currentSlug="baldurs-gate-3-review-2026" />
+    <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
+      <CommentSection postId="baldurs-gate-3-review-2026" postTitle="Baldur's Gate 3 em 2026" />
   </article>
 );
 };

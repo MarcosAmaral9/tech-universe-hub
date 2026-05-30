@@ -7,10 +7,13 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, User, Calendar, Camera, Cpu, Monitor, Sparkles, Film, Award, Target } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import avatarPandoraImg from "@/assets/avatar-pandora.webp";
-
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
+
 const Avatar2009Tecnologia = () => {
 
   useEffect(() => {
@@ -46,7 +49,7 @@ const Avatar2009Tecnologia = () => {
           </span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="29 de Janeiro, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -280,8 +283,8 @@ const Avatar2009Tecnologia = () => {
           </p>
         </div>
       </div>
-
-      <RelatedPosts currentSlug="avatar-2009-filme-revolucionou-tecnologia" />
+<RelatedPosts currentSlug="avatar-2009-filme-revolucionou-tecnologia" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="avatar-2009-filme-revolucionou-tecnologia" postTitle="Avatar (2009): O Filme que Revolucionou o Cinema 3D e a Tecnologia CGI" />
     </article>
   );

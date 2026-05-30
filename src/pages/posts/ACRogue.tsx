@@ -1,25 +1,26 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
-import { ArrowLeft, Clock, User, Calendar, Snowflake, Ship, Target, Cpu, DollarSign, Laptop, Gamepad2, HelpCircle, Crosshair, MapPin, Swords, Shield, Timer, Package } from "lucide-react";
+import { Clock, User, Calendar, Snowflake, Ship, Target, Cpu, DollarSign, Laptop, Gamepad2, HelpCircle, Crosshair, MapPin, Swords, Shield, Timer, Package } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
 import acRogueImg from "@/assets/ac-rogue.webp";
-
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
+
 const ACRogue = () => {
 
   useEffect(() => {
-    trackArticleRead("ac-rogue-assassino-templario", "AC Rogue em 2026 Vale a Pena? Review — Jogue Como Templário", "geek");
+    trackArticleRead("ac-rogue-assassino-templario", "Assassin's Creed Rogue em 2026: Review Completa — Jogue Como Templário", "geek");
   }, []);
+
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      {/* SEO-optimized meta description: Assassin's Creed Rogue vale a pena em 2026? Review completa jogando como Templário, navegação no Ártico, requisitos de PC gamer leves e análise de custo-benefício. */}
-      
       {/* Back Button */}
       <BackNavigation category="geek" portalPath="/geek/assassins-creed" portalLabel="Painel Assassin's Creed" />
 
@@ -34,7 +35,7 @@ const ACRogue = () => {
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
           Assassin's Creed Rogue em 2026 Vale a Pena? Review Completa, Jogue Como Templário, PC Ideal e Custo-Benefício
         </h1>
-        
+
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2">
             <User className="h-4 w-4" />
@@ -50,16 +51,17 @@ const ACRogue = () => {
           </span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="19 de Janeiro, 2026" />
       </header>
 
       {/* Featured Image */}
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high"
+        <img
+          fetchPriority="high"
           loading="eager"
           decoding="async"
           src={acRogueImg}
-          alt="Assassin's Creed Rogue - Review 2026 Templário PC gamer"
+          alt="Assassin's Creed Rogue - Review completa 2026 jogando como Templário no Ártico"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
@@ -68,19 +70,21 @@ const ACRogue = () => {
       {/* Content */}
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          Na maioria dos jogos da franquia, a linha entre o bem e o mal é clara: Assassinos lutam pela 
-          liberdade, Templários pela ordem. No entanto, <strong>Assassin's Creed Rogue</strong> chegou 
-          para bagunçar essa lógica, nos colocando na pele de <strong>Shay Patrick Cormac</strong>, um 
-          Assassino que decide <strong>caçar seus antigos irmãos</strong>.
+          <strong>Assassin's Creed Rogue</strong> é o único jogo da franquia que coloca você do lado dos Templários
+          — e isso muda tudo. Na maioria dos jogos da série, a linha entre bem e mal é clara: Assassinos lutam pela
+          liberdade, Templários pela ordem. Mas <strong>AC Rogue</strong> inverte essa lógica ao colocar você
+          na pele de <strong>Shay Patrick Cormac</strong>, um Assassino que decide{" "}
+          <strong>caçar seus antigos irmãos</strong> após uma tragédia que questiona os próprios fundamentos da
+          Irmandade.
         </p>
 
-        <p className="text-lg">Neste guia completo você encontra:</p>
+        <p className="text-lg">Neste guia completo de <strong>Assassin's Creed Rogue</strong> você encontra:</p>
         <ul className="text-lg">
-          <li>👉 <strong>Como é jogar do lado dos Templários?</strong></li>
+          <li>👉 <strong>Como é jogar do lado dos Templários — vale a mudança?</strong></li>
           <li>👉 Contexto histórico da Guerra dos Sete Anos</li>
-          <li>👉 Navegação no Ártico e mecânicas exclusivas</li>
+          <li>👉 Navegação no Ártico e mecânicas exclusivas do Morrigan</li>
           <li>👉 Facções, combate e sistema Anti-Assassino</li>
-          <li>👉 Requisitos de PC leves e custo-benefício</li>
+          <li>👉 Requisitos de PC leves e custo-benefício em 2026</li>
           <li>👉 Tempo para zerar e DLCs disponíveis</li>
         </ul>
 
@@ -106,6 +110,22 @@ const ACRogue = () => {
               <div className="text-sm text-muted-foreground">Duração Média</div>
               <div className="font-bold">12 a 40 horas</div>
             </div>
+            <div>
+              <div className="text-sm text-muted-foreground">Plataformas</div>
+              <div className="font-bold">PC, PS3/PS4, Xbox, Switch</div>
+            </div>
+            <div>
+              <div className="text-sm text-muted-foreground">Gênero</div>
+              <div className="font-bold">Ação/Aventura — Mundo Aberto</div>
+            </div>
+            <div>
+              <div className="text-sm text-muted-foreground">Versão Remastered</div>
+              <div className="font-bold">Sim (2018)</div>
+            </div>
+            <div>
+              <div className="text-sm text-muted-foreground">DLCs de história</div>
+              <div className="font-bold">Não — jogo base completo</div>
+            </div>
           </div>
           <p className="mt-4 text-muted-foreground mb-0">
             👉 <strong>Ótimo custo-benefício</strong> para quem quer uma perspectiva única na saga Kenway.
@@ -116,74 +136,94 @@ const ACRogue = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Target className="h-7 w-7 text-cyan-400" />
-          Review Geral: Vale a Pena Jogar Como Templário?
+          Review Geral de AC Rogue: Vale a Pena Jogar Como Templário?
         </h2>
 
         <p>
-          <strong>Absolutamente sim.</strong> Rogue oferece uma perspectiva refrescante que faz você 
-          questionar: <strong>quem são os verdadeiros vilões?</strong>
+          <strong>Absolutamente sim.</strong> <strong>Assassin's Creed Rogue</strong> oferece uma perspectiva
+          refrescante que faz você questionar: <strong>quem são os verdadeiros vilões?</strong>
         </p>
 
         <p>
-          <strong>Shay</strong> é um dos protagonistas mais complexos da saga. Após uma missão em Lisboa 
-          que resulta em uma catástrofe natural (recriada de forma impressionante), ele questiona os 
-          métodos da Irmandade. A transição para os Templários não é apenas uma mudança de uniforme, 
-          mas uma <strong>mudança de filosofia</strong>.
+          <strong>Shay Patrick Cormac</strong> é um dos protagonistas mais complexos da saga. Após uma missão
+          em Lisboa que resulta em uma catástrofe natural (recriada de forma impressionante no jogo), ele
+          questiona os métodos da Irmandade. A transição para os Templários não é apenas uma mudança de
+          uniforme — é uma <strong>mudança de filosofia</strong> que o jogador acompanha de dentro.
         </p>
 
         <p>
-          A narrativa é curta mas <strong>extremamente impactante</strong>. O jogador experimenta na pele 
-          a dor de trair seus companheiros e a convicção de que, às vezes, a ordem pode salvar mais vidas 
-          que a liberdade. É um estudo de personagem raro em jogos AAA.
+          A narrativa é curta, mas <strong>extremamente impactante</strong>. Você experimenta na pele a dor
+          de trair companheiros e a convicção de que, às vezes, a ordem pode salvar mais vidas que a
+          liberdade irrestrita. É um estudo de personagem raro em jogos AAA, e uma das razões pelas quais
+          <strong> AC Rogue</strong> permanece relevante mais de uma década depois do lançamento.
         </p>
+
+        <EditorialTake category="geek" title="Análise do Marcos: por que AC Rogue é o jogo mais corajoso da franquia">
+          <p>
+            Acompanho a franquia Assassin's Creed desde o primeiro jogo em 2007, e <strong>Rogue continua sendo
+            o mais corajoso</strong> em termos narrativos. Enquanto outros jogos apostam na grandiosidade —
+            mundos enormes, sistemas de RPG complexos, gráficos de ponta — Rogue vai na contramão: entrega
+            um jogo menor, mais focado, e usa isso para contar uma história que nenhum outro da série teve
+            coragem de contar.
+          </p>
+          <p>
+            A cena do terremoto de Lisboa é perturbadora de propósito. A Ubisoft Sofia queria que o
+            jogador sentisse a culpa de Shay, e conseguiu. Recomendo muito para quem jogou Black Flag e
+            quer entender por que Achilles estava tão amargurado em AC III — a conexão entre os dois jogos
+            é uma das melhores pontes narrativas da franquia inteira.
+          </p>
+        </EditorialTake>
 
         {/* Contexto Histórico */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <MapPin className="h-7 w-7 text-cyan-400" />
           Contexto Histórico: A Guerra dos Sete Anos (1756–1763)
         </h2>
-      <AdInArticle />
+
+        <AdInArticle />
 
         <p>
-          Rogue se passa durante a <strong>Guerra dos Sete Anos</strong>, considerada por muitos historiadores 
-          como a <strong>primeira guerra verdadeiramente global</strong>. O conflito envolveu todas as grandes 
-          potências europeias e se estendeu por cinco continentes, da América do Norte à Índia.
+          <strong>AC Rogue</strong> se passa durante a <strong>Guerra dos Sete Anos</strong>, considerada
+          por muitos historiadores como a <strong>primeira guerra verdadeiramente global</strong>. O conflito
+          envolveu todas as grandes potências europeias e se estendeu por cinco continentes, da América do
+          Norte à Índia.
         </p>
 
         <div className="my-8 p-6 bg-secondary/50 rounded-xl border border-border">
-          <h4 className="font-bold mb-4">📜 Fatos Históricos Presentes no Jogo</h4>
+          <h4 className="font-bold mb-4">📜 Fatos Históricos Presentes em AC Rogue</h4>
           <ul className="space-y-2 text-muted-foreground mb-0">
-            <li>🏛️ <strong>Terremoto de Lisboa (1755):</strong> Um dos eventos mais devastadores da história europeia, 
-            destruiu 85% da cidade e matou entre 30.000 a 50.000 pessoas. No jogo, é provocado pela ativação de um 
-            artefato Isu — um ponto de virada na consciência de Shay.</li>
-            <li>⚔️ <strong>Batalha das Planícies de Abraham (1759):</strong> A batalha decisiva que determinou o 
-            controle britânico sobre o Canadá francês. Shay participa diretamente deste evento.</li>
-            <li>🇫🇷 <strong>Queda da Nova França:</strong> O jogo retrata o fim do domínio francês na América do Norte, 
-            um processo que Shay, como Templário aliado aos britânicos, ajuda a concretizar.</li>
-            <li>🏴‍☠️ <strong>Fim da Era da Pirataria:</strong> O período entre Black Flag e Rogue marca a transição 
-            da era dos piratas para conflitos coloniais organizados entre impérios.</li>
+            <li>🏛️ <strong>Terremoto de Lisboa (1755):</strong> Um dos eventos mais devastadores da história
+            europeia, destruiu 85% da cidade e matou entre 30.000 a 50.000 pessoas. Em AC Rogue, é provocado
+            pela ativação de um artefato Isu — e serve como ponto de virada moral de Shay.</li>
+            <li>⚔️ <strong>Batalha das Planícies de Abraham (1759):</strong> A batalha decisiva que determinou
+            o controle britânico sobre o Canadá francês. Shay participa diretamente desse evento histórico.</li>
+            <li>🇫🇷 <strong>Queda da Nova França:</strong> O jogo retrata o fim do domínio francês na América
+            do Norte, processo que Shay, como Templário aliado aos britânicos, ajuda a concretizar.</li>
+            <li>🏴‍☠️ <strong>Fim da Era da Pirataria:</strong> O período entre Black Flag e Rogue marca a
+            transição da era dos piratas para os conflitos coloniais organizados entre impérios europeus.</li>
           </ul>
         </div>
 
         <p>
-          Essa ambientação é <strong>crucial para entender a saga Kenway</strong>. Edward Kenway (Black Flag) viveu a 
-          era da pirataria, Haytham Kenway fundou os Templários na América, e Connor Kenway (AC III) lutou na 
-          Revolução Americana. Shay é o <strong>catalisador</strong> que conecta todos esses eventos, mostrando 
-          como a destruição da Irmandade Colonial pelos Templários preparou o terreno para AC III.
+          Essa ambientação é <strong>crucial para entender a saga Kenway</strong>. Edward Kenway (Black Flag)
+          viveu a era da pirataria, Haytham Kenway fundou os Templários na América, e Connor Kenway (AC III)
+          lutou na Revolução Americana. Shay é o <strong>catalisador</strong> que conecta todos esses eventos,
+          mostrando como a destruição da Irmandade Colonial pelos Templários preparou o terreno para os eventos
+          de AC III.
         </p>
 
         {/* Mundo e Regiões */}
         <AdRectangle className="my-8" />
 
-        
-<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <MapPin className="h-7 w-7 text-cyan-400" />
-          O Mundo de Rogue: Três Regiões Distintas
+          O Mundo de AC Rogue: Três Regiões Distintas
         </h2>
 
         <p>
-          Diferente de outros jogos da franquia que se concentram em uma única cidade, Rogue oferece 
-          <strong>três áreas exploráveis distintas</strong>, cada uma com sua própria atmosfera e desafios:
+          Diferente de outros jogos da franquia que se concentram em uma única cidade, <strong>Assassin's
+          Creed Rogue</strong> oferece <strong>três áreas exploráveis distintas</strong>, cada uma com sua
+          própria atmosfera e desafios:
         </p>
 
         <div className="overflow-x-auto my-6">
@@ -209,53 +249,53 @@ const ACRogue = () => {
               <tr>
                 <td className="py-3 px-4 font-medium">Atlântico Norte</td>
                 <td className="py-3 px-4 text-muted-foreground">Águas geladas com icebergs, tempestades de neve e ilhas remotas no Ártico</td>
-                <td className="py-3 px-4 text-muted-foreground">Navegação perigosa, icebergs destrutíveis, bases de Assassinos secretas</td>
+                <td className="py-3 px-4 text-muted-foreground">Navegação perigosa, icebergs destrutíveis, bases secretas de Assassinos</td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <p>
-          A variedade de cenários mantém a experiência sempre <strong>fresca e envolvente</strong>. Você pode estar 
-          parkourizando pelos telhados de Nova York em um momento e, no próximo, navegando entre icebergs 
+          A variedade de cenários mantém a experiência sempre <strong>fresca e envolvente</strong>. Você pode
+          estar parkourizando pelos telhados de Nova York em um momento e, no próximo, navegando entre icebergs
           colossais no Atlântico Norte, tentando não ser esmagado por uma avalanche de gelo.
         </p>
 
         {/* Facções */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-cyan-400" />
-          Facções e Forças em Conflito
+          Facções e Forças em Conflito em AC Rogue
         </h2>
 
         <p>
-          Rogue apresenta uma dinâmica de facções <strong>invertida</strong> em relação aos outros jogos. Aqui, 
-          os Assassinos são seus inimigos e os Templários seus aliados:
+          <strong>Assassin's Creed Rogue</strong> apresenta uma dinâmica de facções <strong>invertida</strong>{" "}
+          em relação aos outros jogos. Aqui, os Assassinos são seus inimigos e os Templários, seus aliados:
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 my-8">
           <div className="p-5 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-3 text-red-400">🔴 A Irmandade dos Assassinos (Inimigos)</h4>
             <ul className="text-sm text-muted-foreground space-y-2 mb-0">
-              <li><strong>Achilles Davenport:</strong> Mentor da Irmandade Colonial. Arrogante e obcecado pelos 
+              <li><strong>Achilles Davenport:</strong> Mentor da Irmandade Colonial. Arrogante e obcecado pelos
               artefatos Isu, suas decisões levam à catástrofe de Lisboa e à revolta de Shay.</li>
-              <li><strong>Liam O'Brien:</strong> Melhor amigo de Shay e leal à Irmandade. O confronto entre os dois 
-              é um dos momentos mais emocionantes do jogo.</li>
-              <li><strong>Adéwalé:</strong> O ex-escravo e companheiro de Edward Kenway em Black Flag, agora um 
-              Mestre Assassino que Shay deve enfrentar.</li>
-              <li><strong>Hope Jensen:</strong> Especialista em venenos e química, uma das Assassinas mais letais 
-              que Shay precisa neutralizar.</li>
+              <li><strong>Liam O'Brien:</strong> Melhor amigo de Shay e leal à Irmandade. O confronto entre os
+              dois é um dos momentos mais emocionantes do jogo.</li>
+              <li><strong>Adéwalé:</strong> O ex-escravo e companheiro de Edward Kenway em Black Flag, agora
+              um Mestre Assassino que Shay deve enfrentar.</li>
+              <li><strong>Hope Jensen:</strong> Especialista em venenos e química, uma das Assassinas mais
+              letais que Shay precisa neutralizar.</li>
               <li><strong>Kesegowaase:</strong> Guerreiro nativo americano e Assassino habilidoso nas florestas.</li>
             </ul>
           </div>
           <div className="p-5 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-3 text-blue-400">🔵 A Ordem dos Templários (Aliados)</h4>
             <ul className="text-sm text-muted-foreground space-y-2 mb-0">
-              <li><strong>Haytham Kenway:</strong> Grão-Mestre dos Templários na América e pai de Connor (AC III). 
-              Ele recruta e mentora Shay, mostrando-lhe o "lado certo" da Ordem.</li>
-              <li><strong>George Monro:</strong> Coronel britânico e Templário bondoso que salva a vida de Shay, 
-              provando que nem todos os Templários são vilões.</li>
-              <li><strong>Christopher Gist:</strong> Explorador e aventureiro que se torna o imediato de Shay no 
-              Morrigan, fornecendo alívio cômico e apoio tático.</li>
+              <li><strong>Haytham Kenway:</strong> Grão-Mestre dos Templários na América e pai de Connor
+              (AC III). Ele recruta e mentora Shay, mostrando-lhe o "lado certo" da Ordem.</li>
+              <li><strong>George Monro:</strong> Coronel britânico e Templário bondoso que salva a vida de
+              Shay, provando que nem todos os Templários são vilões.</li>
+              <li><strong>Christopher Gist:</strong> Explorador e aventureiro que se torna o imediato de
+              Shay no Morrigan, fornecendo alívio cômico e apoio tático.</li>
               <li><strong>Jack Weeks:</strong> Agente Templário que auxilia Shay em missões urbanas em Nova York.</li>
             </ul>
           </div>
@@ -264,21 +304,22 @@ const ACRogue = () => {
         <div className="my-8 p-6 bg-secondary/50 rounded-xl border border-border">
           <h4 className="font-bold mb-3">⚔️ O Conflito Central: Liberdade vs. Ordem</h4>
           <p className="text-muted-foreground mb-0">
-            O que torna Rogue tão fascinante é que <strong>ambos os lados têm razão</strong>. Os Assassinos buscam 
-            os artefatos Isu para proteger a humanidade, mas sua negligência causa terremotos devastadores. 
-            Os Templários querem impedir mais catástrofes, mas seus métodos são autoritários. Shay está no meio, 
-            tentando fazer o que acredita ser certo — mesmo que isso signifique matar seus antigos amigos.
+            O que torna <strong>AC Rogue</strong> tão fascinante é que <strong>ambos os lados têm razão</strong>.
+            Os Assassinos buscam os artefatos Isu para proteger a humanidade, mas sua negligência causa
+            terremotos devastadores. Os Templários querem impedir mais catástrofes, mas seus métodos são
+            autoritários. Shay está no meio, tentando fazer o que acredita ser certo — mesmo que isso
+            signifique matar seus antigos amigos.
           </p>
         </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Snowflake className="h-7 w-7 text-cyan-400" />
-          Navegação no Ártico e o Morrigan
+          Navegação no Ártico e o Morrigan — Mecânicas Exclusivas de AC Rogue
         </h2>
 
         <p>
-          A navegação naval em Rogue herda a excelência de Black Flag e adiciona mecânicas exclusivas 
-          para o cenário gelado do <strong>Atlântico Norte</strong>:
+          A navegação naval em <strong>AC Rogue</strong> herda a excelência de Black Flag e adiciona mecânicas
+          exclusivas para o cenário gelado do <strong>Atlântico Norte</strong>:
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 my-8">
@@ -286,7 +327,7 @@ const ACRogue = () => {
             <Ship className="h-8 w-8 text-cyan-400 mb-3" />
             <h4 className="font-bold mb-2">Navegação em Águas Geladas</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              O navio Morrigan é equipado com quebra-gelo, permitindo acessar áreas bloqueadas por icebergs. 
+              O navio Morrigan é equipado com quebra-gelo, permitindo acessar áreas bloqueadas por icebergs.
               Diferente do Jackdaw de Black Flag, o Morrigan é menor e mais ágil, ideal para rios e fiordes.
             </p>
           </div>
@@ -294,7 +335,7 @@ const ACRogue = () => {
             <Snowflake className="h-8 w-8 text-cyan-400 mb-3" />
             <h4 className="font-bold mb-2">Icebergs Dinâmicos</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              Destruir um iceberg com canhões gera uma onda de choque que afunda barcos menores próximos. 
+              Destruir um iceberg com canhões gera uma onda de choque que afunda barcos menores próximos.
               Este sistema pode ser usado estrategicamente em batalhas navais contra múltiplos inimigos.
             </p>
           </div>
@@ -302,7 +343,7 @@ const ACRogue = () => {
             <Ship className="h-8 w-8 text-cyan-400 mb-3" />
             <h4 className="font-bold mb-2">Óleo Fervente</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              Arma exclusiva do Morrigan que permite despejar óleo fervente atrás do navio, incendiando 
+              Arma exclusiva do Morrigan que permite despejar óleo fervente atrás do navio, incendiando
               perseguidores. Uma mecânica defensiva brilhante que não existe em nenhum outro AC.
             </p>
           </div>
@@ -310,64 +351,65 @@ const ACRogue = () => {
             <Snowflake className="h-8 w-8 text-cyan-400 mb-3" />
             <h4 className="font-bold mb-2">Perigos Ambientais</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              Nadar nas águas geladas drena sua vida rapidamente. Tempestades de neve reduzem a visibilidade 
+              Nadar nas águas geladas drena sua vida rapidamente. Tempestades de neve reduzem a visibilidade
               e podem empurrar o Morrigan contra rochas. Avalanches de gelo podem destruir seu navio instantaneamente.
             </p>
           </div>
         </div>
 
         <div className="my-8 p-6 bg-secondary/50 rounded-xl border border-border">
-          <h4 className="font-bold mb-3">🚢 Customização do Morrigan</h4>
+          <h4 className="font-bold mb-3">🚢 Customização do Morrigan em AC Rogue</h4>
           <p className="text-muted-foreground mb-0">
-            O Morrigan pode ser personalizado com <strong>melhorias de casco, armamento, velocidade e resistência</strong>. 
-            As melhorias são adquiridas com recursos coletados durante a exploração e saques de navios inimigos. 
-            As categorias incluem: canhões laterais, morteiros, barris de óleo, armadura do casco, 
-            ram (aríete) para quebrar gelo e velas para maior velocidade.
+            O Morrigan pode ser personalizado com <strong>melhorias de casco, armamento, velocidade e
+            resistência</strong>. As melhorias são adquiridas com recursos coletados durante a exploração e
+            saques de navios inimigos. As categorias incluem: canhões laterais, morteiros, barris de óleo,
+            armadura do casco, ram (aríete) para quebrar gelo e velas para maior velocidade.
           </p>
         </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Crosshair className="h-7 w-7 text-cyan-400" />
-          O Sistema "Anti-Assassino" e Combate
+          O Sistema "Anti-Assassino" e Combate de AC Rogue
         </h2>
 
         <p>
-          Como Shay conhece todos os truques dos Assassinos, a jogabilidade muda radicalmente. Agora, <strong>você é 
-          quem pode ser emboscado</strong> por inimigos escondidos em fardos de feno, telhados ou misturados na multidão.
+          Como Shay conhece todos os truques dos Assassinos, a jogabilidade de <strong>AC Rogue</strong>{" "}
+          muda radicalmente. Agora, <strong>você é quem pode ser emboscado</strong> por inimigos escondidos
+          em fardos de feno, telhados ou misturados na multidão.
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 my-8">
           <div className="p-5 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-3">🎯 Mecânicas Anti-Assassino</h4>
             <ul className="text-sm text-muted-foreground space-y-2 mb-0">
-              <li><strong>Detector de Assassinos:</strong> Um indicador na tela avisa quando há um Assassino 
+              <li><strong>Detector de Assassinos:</strong> Um indicador na tela avisa quando há um Assassino
               escondido nas proximidades, criando tensão constante.</li>
-              <li><strong>Emboscadas invertidas:</strong> Inimigos podem pular de fardos de feno, cair de telhados 
-              ou surgir da multidão para atacá-lo — exatamente como você faria nos outros jogos.</li>
-              <li><strong>Interceptações:</strong> Você pode interceptar "Assassination Contracts" contra aliados 
-              Templários, protegendo-os de ataques da Irmandade.</li>
+              <li><strong>Emboscadas invertidas:</strong> Inimigos podem pular de fardos de feno, cair de
+              telhados ou surgir da multidão para atacá-lo — exatamente como você faria nos outros jogos.</li>
+              <li><strong>Interceptações:</strong> Você pode interceptar "Assassination Contracts" contra
+              aliados Templários, protegendo-os de ataques da Irmandade.</li>
             </ul>
           </div>
           <div className="p-5 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-3">⚔️ Arsenal de Combate</h4>
             <ul className="text-sm text-muted-foreground space-y-2 mb-0">
-              <li><strong>Rifle de Ar:</strong> A arma mais versátil do jogo. Permite disparar dardos soporíferos, 
-              dardos berserk (que enlouquecem o alvo) e granadas, tudo silenciosamente.</li>
-              <li><strong>Granadas:</strong> Fragmentação, fumaça, estilhaços e shrapnel — cada uma com uso tático 
-              diferente para combate direto ou furtividade.</li>
-              <li><strong>Espadas e pistolas:</strong> O sistema de combate segue a fórmula de Black Flag, com 
-              contra-ataques, quebra de defesa e combos rápidos.</li>
+              <li><strong>Rifle de Ar:</strong> A arma mais versátil do jogo. Permite disparar dardos
+              soporíferos, dardos berserk (que enlouquecem o alvo) e granadas, tudo silenciosamente.</li>
+              <li><strong>Granadas:</strong> Fragmentação, fumaça, estilhaços e shrapnel — cada uma com
+              uso tático diferente para combate direto ou furtividade.</li>
+              <li><strong>Espadas e pistolas:</strong> O sistema de combate segue a fórmula de Black Flag,
+              com contra-ataques, quebra de defesa e combos rápidos.</li>
             </ul>
           </div>
         </div>
 
         <div className="my-8 p-6 bg-secondary/50 rounded-xl border border-border">
-          <h4 className="font-bold mb-4">🔫 Destaque: O Rifle de Ar</h4>
+          <h4 className="font-bold mb-4">🔫 Destaque: O Rifle de Ar de AC Rogue</h4>
           <p className="text-muted-foreground mb-0">
-            Uma das melhores armas da franquia inteira. O Rifle de Ar combina alcance de um sniper com a 
-            versatilidade de munições especiais. Com dardos berserk, você pode fazer um capitão inimigo atacar 
-            seus próprios soldados, limpando acampamentos inteiros sem ser detectado. É a definição de 
-            "trabalho inteligente, não trabalho duro".
+            Uma das melhores armas da franquia inteira. O Rifle de Ar combina alcance de sniper com a
+            versatilidade de munições especiais. Com dardos berserk, você pode fazer um capitão inimigo
+            atacar seus próprios soldados, limpando acampamentos inteiros sem ser detectado. É a definição
+            de "trabalho inteligente, não trabalho duro".
           </p>
         </div>
 
@@ -378,29 +420,29 @@ const ACRogue = () => {
         </h2>
 
         <p>
-          Além da campanha principal, Rogue oferece uma <strong>quantidade generosa de conteúdo secundário</strong> 
-          espalhado pelas três regiões:
+          Além da campanha principal, <strong>Assassin's Creed Rogue</strong> oferece uma{" "}
+          <strong>quantidade generosa de conteúdo secundário</strong> espalhado pelas três regiões:
         </p>
 
         <div className="grid md:grid-cols-3 gap-6 my-8">
           <div className="p-5 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-2">🏴 Renovação de Bases</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              Capture e renove bases de Assassinos e gangues para ganhar renda passiva, similar ao sistema de 
-              torres de AC Brotherhood. Cada base gera um fluxo constante de recursos.
+              Capture e renove bases de Assassinos e gangues para ganhar renda passiva, similar ao sistema
+              de torres de AC Brotherhood. Cada base gera um fluxo constante de recursos.
             </p>
           </div>
           <div className="p-5 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-2">🗺️ Colecionáveis</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              Fragmentos do Animus, pinturas nativas, totens, mapas do tesouro e projetos de navios estão 
+              Fragmentos do Animus, pinturas nativas, totens, mapas do tesouro e projetos de navios estão
               espalhados por todas as regiões, incentivando a exploração completa do mapa.
             </p>
           </div>
           <div className="p-5 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-2">🐻 Caça e Harpooning</h4>
             <p className="text-sm text-muted-foreground mb-0">
-              Sistema de caça herdado de AC III com adição de pesca com arpão (harpooning) de Black Flag. 
+              Sistema de caça herdado de AC III com adição de pesca com arpão (harpooning) de Black Flag.
               Os materiais são usados para craftar melhorias para Shay e o Morrigan.
             </p>
           </div>
@@ -408,14 +450,14 @@ const ACRogue = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Gamepad2 className="h-7 w-7 text-cyan-400" />
-          O Elo Perdido da Saga Kenway
+          AC Rogue: O Elo Perdido da Saga Kenway
         </h2>
 
         <p>
-          Para fãs da história, Rogue é o <strong>tecido que une tudo</strong>:
+          Para fãs da história da franquia, <strong>AC Rogue</strong> é o <strong>tecido que une tudo</strong>:
         </p>
         <ul>
-          <li>Mostra como a Irmandade Colonial foi destruída (preparando AC III)</li>
+          <li>Mostra como a Irmandade Colonial foi destruída, preparando os eventos de AC III</li>
           <li>Explica por que Achilles Davenport estava sozinho e amargurado quando treinou Connor</li>
           <li>Revela o destino de Adéwalé, companheiro de Edward Kenway em Black Flag</li>
           <li>A cena final conecta diretamente com o início de AC Unity (o assassinato de um Templário em Versalhes)</li>
@@ -425,12 +467,12 @@ const ACRogue = () => {
         <div className="my-8 p-6 bg-secondary/50 rounded-xl border border-border">
           <h4 className="font-bold mb-3">📖 Ordem Cronológica Recomendada da Saga Kenway</h4>
           <ol className="text-muted-foreground space-y-1 mb-0">
-            <li>1. <Link to="/post/ac-black-flag-melhor-jogo-piratas" className="text-primary hover:underline">AC IV: Black Flag</Link> (1715-1722) — Edward Kenway</li>
-            <li>2. <strong>AC Rogue</strong> (1752-1760) — Shay Patrick Cormac</li>
-            <li>3. <Link to="/post/ac-3-remastered-revolucao-americana" className="text-primary hover:underline">AC III</Link> (1754-1783) — Connor Kenway</li>
+            <li>1. <Link to="/post/ac-black-flag-melhor-jogo-piratas" className="text-primary hover:underline">AC IV: Black Flag</Link> (1715–1722) — Edward Kenway</li>
+            <li>2. <strong>AC Rogue</strong> (1752–1760) — Shay Patrick Cormac</li>
+            <li>3. <Link to="/post/ac-3-remastered-revolucao-americana" className="text-primary hover:underline">AC III</Link> (1754–1783) — Connor Kenway</li>
           </ol>
           <p className="text-muted-foreground mt-3 mb-0">
-            💡 Jogar nessa ordem revela como as ações de cada geração afetam a próxima, criando uma das 
+            💡 Jogar nessa ordem revela como as ações de cada geração afetam a próxima, criando uma das
             narrativas mais ricas da franquia.
           </p>
         </div>
@@ -438,7 +480,7 @@ const ACRogue = () => {
         {/* Tempo para Zerar */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Timer className="h-7 w-7 text-cyan-400" />
-          Tempo para Zerar
+          Tempo para Zerar AC Rogue
         </h2>
 
         <div className="overflow-x-auto my-6">
@@ -467,19 +509,21 @@ const ACRogue = () => {
         </div>
 
         <p className="text-muted-foreground">
-          ⚡ Rogue tem a <strong>campanha mais curta</strong> da franquia, mas sua qualidade por hora jogada é 
-          altíssima. A narrativa é concisa e impactante, sem o "padding" que outros jogos da série sofrem.
+          ⚡ <strong>AC Rogue</strong> tem a <strong>campanha mais curta</strong> da franquia, mas sua
+          qualidade por hora jogada é altíssima. A narrativa é concisa e impactante, sem o "padding" que
+          outros jogos da série sofrem.
         </p>
 
         {/* DLCs */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Package className="h-7 w-7 text-cyan-400" />
-          DLCs e Conteúdo Adicional
+          DLCs e Conteúdo Adicional de AC Rogue
         </h2>
 
         <p>
-          Diferente de outros jogos da franquia, Rogue <strong>não possui DLCs de história</strong>. Todo o conteúdo 
-          narrativo está no jogo base. Os únicos extras são pacotes cosméticos:
+          Diferente de outros jogos da franquia, <strong>Assassin's Creed Rogue</strong>{" "}
+          <strong>não possui DLCs de história</strong>. Todo o conteúdo narrativo está no jogo base.
+          Os únicos extras são pacotes cosméticos:
         </p>
 
         <div className="overflow-x-auto my-6">
@@ -513,7 +557,7 @@ const ACRogue = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Cpu className="h-7 w-7 text-cyan-400" />
-          Requisitos de PC: Roda em Qualquer Máquina?
+          Requisitos de PC para AC Rogue: Roda em Qualquer Máquina?
         </h2>
 
         <h3 className="text-xl font-bold mt-6 mb-4">🔻 Configuração Mínima (1080p – 30 FPS)</h3>
@@ -538,7 +582,7 @@ const ACRogue = () => {
               </tr>
               <tr>
                 <td className="py-3 px-4 font-medium">Armazenamento</td>
-                <td className="py-3 px-4 text-muted-foreground">12 GB (SSD extremamente recomendado para garantir a performance do jogo)</td>
+                <td className="py-3 px-4 text-muted-foreground">12 GB (SSD extremamente recomendado)</td>
               </tr>
             </tbody>
           </table>
@@ -569,19 +613,20 @@ const ACRogue = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Laptop className="h-7 w-7 text-cyan-400" />
-          Notebook Gamer Roda Rogue?
+          Notebook Gamer Roda AC Rogue?
         </h2>
 
         <p>
-          <strong>Praticamente qualquer notebook</strong> roda Rogue em 2026. Os requisitos são tão leves 
-          que até notebooks com gráficos integrados modernos (Intel Iris Xe ou AMD Radeon integrada) podem 
-          rodar em configurações médias a 30-60 FPS. Um <strong>notebook gamer</strong> de entrada com GTX 1650 
-          ou superior roda o jogo no máximo sem qualquer problema.
+          <strong>Praticamente qualquer notebook</strong> roda <strong>AC Rogue</strong> em 2026. Os
+          requisitos são tão leves que até notebooks com gráficos integrados modernos (Intel Iris Xe ou
+          AMD Radeon integrada) podem rodar em configurações médias a 30–60 FPS. Um{" "}
+          <strong>notebook gamer</strong> de entrada com GTX 1650 ou superior roda o jogo no máximo sem
+          qualquer problema.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <HelpCircle className="h-7 w-7 text-cyan-400" />
-          PC ou Console: Qual Vale Mais a Pena?
+          PC ou Console: Qual Vale Mais a Pena para AC Rogue?
         </h2>
 
         <div className="grid md:grid-cols-2 gap-6 my-8">
@@ -589,7 +634,7 @@ const ACRogue = () => {
             <h4 className="font-bold mb-3">💻 PC Gamer</h4>
             <ul className="text-sm text-muted-foreground space-y-1 mb-0">
               <li>✔ Melhores gráficos e taxa de quadros</li>
-              <li>✔ Promoções absurdas (menos de R$ 20 em sales)</li>
+              <li>✔ Promoções absurdas (menos de R$ 20 em sales na Steam)</li>
               <li>✔ Roda em qualquer PC moderno</li>
               <li>✔ Suporte a mods da comunidade</li>
             </ul>
@@ -607,16 +652,16 @@ const ACRogue = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <DollarSign className="h-7 w-7 text-cyan-400" />
-          Vale a Pena Comprar Rogue em 2026?
+          Vale a Pena Comprar Assassin's Creed Rogue em 2026?
         </h2>
 
         <p><strong>Vale muito a pena</strong> se você:</p>
         <ul>
-          <li>Quer ver a perspectiva dos Templários pela primeira vez na franquia</li>
-          <li>Gosta da jogabilidade naval de Black Flag e quer mais</li>
+          <li>Quer ver a perspectiva dos Templários pela primeira e única vez na franquia principal</li>
+          <li>Gosta da jogabilidade naval de Black Flag e quer mais conteúdo com o mesmo estilo</li>
           <li>Quer entender a saga Kenway completa (Edward → Shay → Connor)</li>
-          <li>Busca um jogo curto, barato e com narrativa impactante</li>
-          <li>Quer entender por que Achilles estava tão diferente em AC III</li>
+          <li>Busca um jogo curto, barato e com narrativa emocionalmente impactante</li>
+          <li>Quer entender por que Achilles estava tão diferente e amargurado em AC III</li>
         </ul>
 
         <p><strong>Pode não ser para você</strong> se:</p>
@@ -628,7 +673,7 @@ const ACRogue = () => {
 
         {/* Where to Play */}
         <div className="my-8 p-6 bg-gradient-to-br from-cyan-500/20 to-background rounded-xl border border-cyan-500/30">
-          <h3 className="text-xl font-bold mb-4">🎮 Onde Jogar?</h3>
+          <h3 className="text-xl font-bold mb-4">🎮 Onde Jogar AC Rogue?</h3>
           <ul className="space-y-2 text-muted-foreground">
             <li>✓ <strong>PC:</strong> Steam, Epic Games Store, Ubisoft Connect</li>
             <li>✓ <strong>PlayStation 3, PlayStation 4</strong></li>
@@ -636,7 +681,7 @@ const ACRogue = () => {
             <li>✓ <strong>Nintendo Switch</strong> (versão Remastered)</li>
           </ul>
           <p className="mt-4 text-sm text-muted-foreground">
-            Preço médio: R$ 40 a R$ 70 (frequentemente abaixo de R$ 20 em promoções na Steam)
+            Preço médio em 2026: R$ 40 a R$ 70 (frequentemente abaixo de R$ 20 em promoções na Steam)
           </p>
         </div>
 
@@ -650,11 +695,51 @@ const ACRogue = () => {
         </div>
       </div>
 
-      {/* Related Posts */}
+      <ArticleSources
+        sources={[
+          {
+            title: "Assassin's Creed Rogue — página oficial no Ubisoft Store",
+            url: "https://store.ubisoft.com/br/assassin-s-creed-rogue-remastered/5a27e49888a7e300713af812.html",
+            publisher: "Ubisoft",
+            accessedAt: "Janeiro 2026",
+          },
+          {
+            title: "Assassin's Creed Rogue Remastered — Steam Store",
+            url: "https://store.steampowered.com/app/800040/Assassins_Creed_Rogue_Remastered/",
+            publisher: "Valve / Ubisoft",
+            accessedAt: "Janeiro 2026",
+          },
+          {
+            title: "Assassin's Creed Rogue — How Long to Beat (tempo de jogo)",
+            url: "https://howlongtobeat.com/game/assassins-creed-rogue",
+            publisher: "HowLongToBeat",
+            accessedAt: "Janeiro 2026",
+          },
+          {
+            title: "Seven Years' War — Britannica",
+            url: "https://www.britannica.com/event/Seven-Years-War",
+            publisher: "Encyclopædia Britannica",
+            accessedAt: "Janeiro 2026",
+          },
+          {
+            title: "1755 Lisbon earthquake — Wikipedia",
+            url: "https://en.wikipedia.org/wiki/1755_Lisbon_earthquake",
+            publisher: "Wikipedia / fontes acadêmicas",
+            accessedAt: "Janeiro 2026",
+          },
+          {
+            title: "Assassin's Creed Rogue — requisitos de sistema (PC Gaming Wiki)",
+            url: "https://www.pcgamingwiki.com/wiki/Assassin%27s_Creed:_Rogue",
+            publisher: "PCGamingWiki",
+            accessedAt: "Janeiro 2026",
+          },
+        ]}
+      />
+
       <RelatedPosts currentSlug="ac-rogue-assassino-templario" />
 
-      {/* Comments */}
-      <CommentSection postId="ac-rogue-assassino-templario" postTitle="AC Rogue em 2026 Vale a Pena? Review — Jogue Como Templário" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
+      <CommentSection postId="ac-rogue-assassino-templario" postTitle="Assassin's Creed Rogue em 2026: Review Completa — Jogue Como Templário" />
     </article>
   );
 };

@@ -3,19 +3,10 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import {
-  Clock,
-  User,
-  Calendar,
-  Sword,
-  Shield,
-  Wand2,
-  Crown,
-  Users,
-  AlertTriangle,
-} from "lucide-react";
+import { Clock, User, Calendar, Sword, Shield, Wand2, Crown, Users, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
@@ -63,7 +54,7 @@ const CrimsonDesertPersonagens = () => {
           </span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="04 de Abril, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -362,8 +353,8 @@ const CrimsonDesertPersonagens = () => {
           },
         ]}
       />
-
-      <RelatedPosts currentSlug="crimson-desert-personagens-kliff-damiane-oongka" />
+<RelatedPosts currentSlug="crimson-desert-personagens-kliff-damiane-oongka" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection
         postId="crimson-desert-personagens-kliff-damiane-oongka"
         postTitle="Crimson Desert: Kliff, Damiane e Oongka — Guia dos 3 Personagens Jogáveis"

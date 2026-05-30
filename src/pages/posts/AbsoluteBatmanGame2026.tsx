@@ -8,6 +8,7 @@ import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Gamepad2, Star, Shield, Zap, Users } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/lego-batman-legacy-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -34,7 +35,7 @@ const AbsoluteBatmanGame2026 = () => {
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />12 min de leitura</span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="03 de Maio, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -178,10 +179,8 @@ const AbsoluteBatmanGame2026 = () => {
           { title: "Game Informer", url: "https://www.gameinformer.com/", publisher: "Game Informer", accessedAt: "Maio 2026" }
         ]}
       />
-
-
-
-      <RelatedPosts currentSlug="lego-batman-legacy-2026" />
+<RelatedPosts currentSlug="lego-batman-legacy-2026" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="lego-batman-legacy-2026" postTitle="LEGO Batman: Legacy of the Dark Knight — Guia Completo" />
     </article>
   );

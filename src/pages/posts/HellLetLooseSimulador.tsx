@@ -7,10 +7,13 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, User, Calendar, Radio, Target, Users, Shield, Volume2, Cpu, DollarSign, Laptop, Gamepad2, HelpCircle, MapPin, Swords, Flag, Headphones } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import hellLetLooseImg from "@/assets/hell-let-loose.webp";
-
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
+
 const HellLetLooseSimulador = () => {
 
   useEffect(() => {
@@ -50,7 +53,7 @@ const HellLetLooseSimulador = () => {
           </span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="03 de Fevereiro, 2026" />
       </header>
 
       {/* Featured Image */}
@@ -788,10 +791,10 @@ const HellLetLooseSimulador = () => {
           </p>
         </div>
       </section>
-
-      <RelatedPosts currentSlug="hell-let-loose-simulador-guerra" />
+<RelatedPosts currentSlug="hell-let-loose-simulador-guerra" />
 
       {/* Comments */}
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="hell-let-loose-simulador-guerra" postTitle="Hell Let Loose em 2026 Vale a Pena? Review do Simulador de Guerra" />
     </article>
   );

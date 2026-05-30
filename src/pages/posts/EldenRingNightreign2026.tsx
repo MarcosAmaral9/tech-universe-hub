@@ -6,6 +6,7 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3, Sword } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import ArticleSources from "@/components/ArticleSources";
 import EditorialTake from "@/components/EditorialTake";
@@ -208,9 +209,10 @@ const EldenRingNightreign2026 = () => {
           { title: "IGN — Elden Ring Nightreign coverage", url: "https://www.ign.com/games/elden-ring-nightreign", publisher: "IGN", accessedAt: "Maio 2026" },
         ]}
       />
-      <RelatedPosts currentSlug="elden-ring-nightreign-guia-completo-2026" />
+<RelatedPosts currentSlug="elden-ring-nightreign-guia-completo-2026" />
 
 
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="elden-ring-nightreign-guia-completo-2026" postTitle="Elden Ring Nightreign: Guia Completo — Classes, Expedições, Bosses e Forsaken Hollows DLC" />
     </article>
   );

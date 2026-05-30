@@ -5,6 +5,9 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, Map, Compass, Zap, Snowflake, Building2, Cpu, Skull, Search, ArrowRight, HelpCircle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { Input } from "@/components/ui/input";
@@ -113,6 +116,18 @@ const regionsData: Region[] = [
       "Cuidado: um dos teleporters perto do Spire of the Sun spawna o world boss Crookrock Walker (fonte: GameSpot guia de fast travel).",
   },
 ];
+
+/*
+ * ─── PAGE_META — adicionar em src/components/DynamicSEO.tsx ────────────────
+ *
+ *   "/post/crimson-desert-mapa-regioes-pywel": {
+ *     title: "Crimson Desert: Mapa de Pywel — Todas as Regiões, Segredos e Pontos de Interesse",
+ *     description: "Guia completo do mapa de Pywel em Crimson Desert: todas as regiões, zonas de boss, pontos de interesse, segredos escondidos e como navegar pelo mundo abert",
+ *     keywords: "Crimson Desert mapa Pywel, regiões Crimson Desert, mapa CD 2026, Pywel zonas Crimson Desert, segredos mapa Crimson Desert, pontos interesse CD, mundo aberto Pywel",
+ *   },
+ *
+ * ───────────────────────────────────────────────────────────────────────────
+ */
 
 const RegionIcon = ({ iconKey }: { iconKey: string }) => {
   switch (iconKey) {
@@ -311,7 +326,7 @@ const CrimsonDesertMapa = () => {
           </span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="19 de Março, 2026" />
       </header>
 
       <figure className="mb-8 rounded-2xl overflow-hidden border border-border bg-card">
@@ -614,8 +629,8 @@ const CrimsonDesertMapa = () => {
           ))}
         </div>
       </section>
-
-      <RelatedPosts currentSlug="crimson-desert-mapa-regioes-pywel" />
+<RelatedPosts currentSlug="crimson-desert-mapa-regioes-pywel" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="crimson-desert-mapa-regioes-pywel" postTitle="Crimson Desert: Mapa Completo de Pywel" />
     </article>
   );

@@ -8,6 +8,9 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, Sword, Shield, MapPin, Star, Package, Wrench } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import heroImg from "@/assets/crimson-desert-equipamentos.webp";
@@ -34,7 +37,7 @@ const CrimsonDesertEquipamentos = () => {
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />18 min de leitura</span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="29 de Março, 2026" />
       </header>
       <AdLeaderboard className="my-8" />
 
@@ -265,8 +268,8 @@ const CrimsonDesertEquipamentos = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
-
-      <RelatedPosts currentSlug="crimson-desert-melhores-equipamentos-inicio" />
+<RelatedPosts currentSlug="crimson-desert-melhores-equipamentos-inicio" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="crimson-desert-melhores-equipamentos-inicio" postTitle="Crimson Desert: Melhores Equipamentos do Início — Onde Encontrar" />
           <AdLeaderboard className="my-8" />
     </article>

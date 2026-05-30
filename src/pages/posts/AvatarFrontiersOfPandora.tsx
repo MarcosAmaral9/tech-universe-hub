@@ -7,10 +7,13 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, User, Calendar, Gamepad2, TreePine, Crosshair, Cpu, DollarSign, Target, Laptop, HelpCircle, Star, Shield, MapPin, Palette } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import avatarGameImg from "@/assets/avatar-game-female.webp";
-
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
+
 const AvatarFrontiersOfPandora = () => {
 
   useEffect(() => {
@@ -50,7 +53,7 @@ const AvatarFrontiersOfPandora = () => {
           </span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="22 de Janeiro, 2026" />
       </header>
 
       {/* Featured Image */}
@@ -698,9 +701,10 @@ const AvatarFrontiersOfPandora = () => {
       </div>
 
       {/* Related Posts */}
-      <RelatedPosts currentSlug="avatar-frontiers-pandora-ubisoft-review" />
+<RelatedPosts currentSlug="avatar-frontiers-pandora-ubisoft-review" />
 
       {/* Comments */}
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="avatar-frontiers-pandora-ubisoft-review" postTitle="Avatar: Frontiers of Pandora em 2026 Vale a Pena? Review Completa" />
     </article>
   );

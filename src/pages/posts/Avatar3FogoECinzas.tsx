@@ -7,10 +7,13 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, User, Calendar, Flame, Skull, Mountain, Swords, Target, Film } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import avatarFireImg from "@/assets/avatar-fire.webp";
-
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
+
 const Avatar3FogoECinzas = () => {
 
   useEffect(() => {
@@ -46,7 +49,7 @@ const Avatar3FogoECinzas = () => {
           </span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="24 de Janeiro, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -275,8 +278,8 @@ const Avatar3FogoECinzas = () => {
           </p>
         </div>
       </div>
-
-      <RelatedPosts currentSlug="avatar-3-fogo-cinzas-lado-sombrio-pandora" />
+<RelatedPosts currentSlug="avatar-3-fogo-cinzas-lado-sombrio-pandora" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="avatar-3-fogo-cinzas-lado-sombrio-pandora" postTitle="Avatar 3: Fire and Ash — Tudo Sobre o Filme, Data e O Que Esperar" />
     </article>
   );

@@ -4,6 +4,9 @@ import AuthorBio from "@/components/AuthorBio";
 import { Clock, User, Calendar, Sword, Zap, Shield } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
@@ -32,7 +35,7 @@ const CrimsonDesertCombate = () => {
           <span className="flex items-center gap-1.5"><Clock className="h-4 w-4" />11 min de leitura</span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="16 de Março, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -192,8 +195,8 @@ const CrimsonDesertCombate = () => {
           e suporte ativo, o jogo está numa trajetória de melhoria contínua.
         </p>
       </div>
-
-      <RelatedPosts currentSlug="crimson-desert-combate-blackspace-engine" />
+<RelatedPosts currentSlug="crimson-desert-combate-blackspace-engine" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="crimson-desert-combate-blackspace-engine" postTitle="Crimson Desert: Sistema de Combate e BlackSpace Engine" />
     </article>
   );

@@ -7,10 +7,13 @@ import AuthorBio from "@/components/AuthorBio";
 import { ArrowLeft, Clock, User, Calendar, Waves, Clapperboard, Wind, Timer, Film, Target, Award } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import avatarWaterImg from "@/assets/avatar-water-swimming.webp";
-
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
+
 const AvatarCaminhoDaAgua = () => {
 
   useEffect(() => {
@@ -46,7 +49,7 @@ const AvatarCaminhoDaAgua = () => {
           </span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="26 de Janeiro, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -285,8 +288,8 @@ const AvatarCaminhoDaAgua = () => {
           </p>
         </div>
       </div>
-
-      <RelatedPosts currentSlug="avatar-caminho-da-agua-fisica-fluidos" />
+<RelatedPosts currentSlug="avatar-caminho-da-agua-fisica-fluidos" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="avatar-caminho-da-agua-fisica-fluidos" postTitle="Avatar 2: O Caminho da Água — Análise da Revolução em CGI e Simulação" />
     </article>
   );

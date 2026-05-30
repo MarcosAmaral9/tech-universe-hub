@@ -8,6 +8,7 @@ import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3, Sword } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/zelda-ocarina-of-time-remake-switch-2-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -40,7 +41,7 @@ const ZeldaOcarinaRemake2026 = () => {
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />14 min de leitura</span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" />
+        <AuthorBio category="geek" publishedAt="25 de Abril, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -226,8 +227,8 @@ const ZeldaOcarinaRemake2026 = () => {
           { title: 'Metacritic — Zelda Series', url: 'https://www.metacritic.com/browse/game/?franchise=the-legend-of-zelda', publisher: 'Metacritic', accessedAt: "Maio 2026" }
         ]}
       />
-
-      <RelatedPosts currentSlug="zelda-ocarina-of-time-remake-switch-2-2026" />
+<RelatedPosts currentSlug="zelda-ocarina-of-time-remake-switch-2-2026" />
+      <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
       <CommentSection postId="zelda-ocarina-of-time-remake-switch-2-2026" postTitle="Zelda: Ocarina of Time Remake — Tudo que Sabemos sobre o Retorno do Melhor Jogo da História no Switch 2" />
     </article>
   );
