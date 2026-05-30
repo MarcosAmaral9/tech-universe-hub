@@ -140,8 +140,8 @@ const DemonSlayerHashira2026 = () => {
     { title: 'MyAnimeList — Kimetsu no Yaiba', url: 'https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba', publisher: 'MAL', accessedAt: "Maio 2026" }
   ]} />
 
-        <RelatedPosts currentSlug="demon-slayer-hashira-2026" />
-    <CommentSection postId="demon-slayer-hashira-2026" postTitle="Demon Slayer: Guia dos Hashira" />
+      <RelatedPosts currentSlug="demon-slayer-hashira-2026" />
+      <CommentSection postId="demon-slayer-hashira-2026" postTitle="Demon Slayer: Guia dos Hashira" />
   </article>
 );
 };

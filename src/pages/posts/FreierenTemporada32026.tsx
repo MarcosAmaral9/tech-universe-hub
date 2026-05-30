@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Star, Zap, Shield, BarChart3, BookOpen, Heart } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -177,32 +179,53 @@ const FreierenTemporada32026 = () => {
           <p className="text-muted-foreground">Conta nos comentários — sem spoilers maiores por favor! 👇</p>
         </div>
       </div>
-      <section className="my-10">
-        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
-          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
-            <span className="text-primary">●</span> Análise do Marcos
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-3">A 1ª temporada de <strong>Sousou no Frieren</strong> foi produzida pela Madhouse, dirigida por Keiichirou Saitou e exibida pela Nippon TV/Crunchyroll entre setembro/2023 e março/2024 com 28 episódios. O anime adapta o mangá de Kanehito Yamada e Tsukasa Abe publicado pela Shogakukan na Weekly Shounen Sunday desde 2020.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">O sucesso foi expressivo: nota 9.34 no MyAnimeList (top 3 de todos os tempos no momento da estreia) e premiação como 'Anime of the Year' no Crunchyroll Anime Awards 2024, somando 9 categorias. A 2ª temporada foi confirmada oficialmente pela Madhouse em março/2024 com previsão de janeiro/2026.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: o ritmo contemplativo de Frieren — incomum em shounen — funciona porque o roteiro respeita o tempo emocional do leitor. Para a 3ª temporada (ainda não confirmada), o arco mais provável é o 'Exame de Magia de Primeira Classe', que no mangá entrega lutas técnicas e desenvolvimento profundo de Fern e Stark. Sem datas oficiais, qualquer cronograma é especulação.</p>
-        </div>
 
-        <div className="bg-muted/30 border border-border rounded-2xl p-6">
-          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
-          <ul className="space-y-2 text-sm">
-            <li><a href="https://frieren-anime.jp/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Madhouse — Anúncio oficial Frieren Temporada 2 ↗</a></li>
-            <li><a href="https://myanimelist.net/anime/52991/Sousou_no_Frieren" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">MyAnimeList — Sousou no Frieren ↗</a></li>
-            <li><a href="https://www.crunchyroll.com/anime-awards" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Crunchyroll Anime Awards 2024 — Resultados ↗</a></li>
-            <li><a href="https://websunday.net/rensai/frieren/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Shogakukan — Frieren Manga ↗</a></li>
-            <li><a href="https://www.animenewsnetwork.com/encyclopedia/anime.php?id=27821" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Anime News Network — Frieren Season 2 ↗</a></li>
-          </ul>
-          <p className="text-xs text-muted-foreground mt-4">
-            Última verificação dos links: maio de 2026.
+            <EditorialTake category="otaku" title="Análise do Marcos">
+          <p>
+            A 1ª temporada de <strong>Sousou no Frieren</strong> foi produzida pela Madhouse, dirigida por Keiichirou Saitou e exibida pela Nippon TV/Crunchyroll entre setembro/2023 e março/2024 com 28 episódios. O anime adapta o mangá de Kanehito Yamada e Tsukasa Abe publicado pela Shogakukan na Weekly Shounen Sunday desde 2020.
           </p>
-        </div>
-      </section>
+          <p>
+            O sucesso foi expressivo: nota 9.34 no MyAnimeList (top 3 de todos os tempos no momento da estreia) e premiação como 'Anime of the Year' no Crunchyroll Anime Awards 2024, somando 9 categorias. A 2ª temporada foi confirmada oficialmente pela Madhouse em março/2024 com previsão de janeiro/2026.
+          </p>
+          <p>
+            Minha análise: o ritmo contemplativo de Frieren — incomum em shounen — funciona porque o roteiro respeita o tempo emocional do leitor. Para a 3ª temporada (ainda não confirmada), o arco mais provável é o 'Exame de Magia de Primeira Classe', que no mangá entrega lutas técnicas e desenvolvimento profundo de Fern e Stark. Sem datas oficiais, qualquer cronograma é especulação.
+          </p>
+      </EditorialTake>
 
-
+            <ArticleSources
+        sources={[
+          {
+            title: "Madhouse — Anúncio oficial Frieren Temporada 2",
+            url: "https://frieren-anime.jp/",
+            publisher: "Madhouse",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "MyAnimeList — Sousou no Frieren",
+            url: "https://myanimelist.net/anime/52991/Sousou_no_Frieren",
+            publisher: "MyAnimeList",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "Crunchyroll Anime Awards 2024 — Resultados",
+            url: "https://www.crunchyroll.com/anime-awards",
+            publisher: "Crunchyroll Anime Awards 2024",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "Shogakukan — Frieren Manga",
+            url: "https://websunday.net/rensai/frieren/",
+            publisher: "Shogakukan",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "Anime News Network — Frieren Season 2",
+            url: "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=27821",
+            publisher: "Anime News Network",
+            accessedAt: "Maio 2026"
+          }
+        ]}
+      />
       <RelatedPosts currentSlug="frieren-temporada-3-confirmada-2026" />
       <CommentSection postId="frieren-temporada-3-confirmada-2026" postTitle="Frieren Temporada 3 Confirmada: O Que Esperar Após o Final da T2" />
     </article>

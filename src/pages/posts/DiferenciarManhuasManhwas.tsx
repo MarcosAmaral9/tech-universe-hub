@@ -4,6 +4,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { ArrowLeft, Clock, Calendar, User, BookOpen, Target, Sword, Sparkles } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -283,6 +285,49 @@ const DiferenciarManhuasManhwas = () => {
         </div>
       </div>
 
+      <EditorialTake category="otaku" title="Análise do Marcos: manhwa coreano e manhua chinês são formatos distintos com públicos próprios">
+          <p>
+            O manhwa coreano e o manhua chinês têm características distintas que refletem suas culturas de origem. O manhwa apostou no formato webtoon (scroll vertical, full color) que se adaptou perfeitamente ao consumo mobile — e isso impulsionou títulos como Solo Leveling para audiências globais que jamais leriam mangá japonês no formato tradicional.
+          </p>
+          <p>
+            O manhua chinês tem o gênero Xianxia como identidade própria — cultivo marcial, hierarquias de poder e milênios de filosofia taoísta embutidos na narrativa. São histórias de escala e ambição épicas que o manhwa raramente imita. <strong>Para o fã brasileiro: experimente os dois antes de declarar preferência — são experiências genuinamente diferentes.</strong>
+          </p>
+      </EditorialTake>
+
+      <ArticleSources
+        sources={[
+          {
+            title: "Webtoon — plataforma oficial de manhwa",
+            url: "https://www.webtoons.com/",
+            publisher: "WEBTOON Entertainment",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "Tapas — webtoon e manhua em inglês",
+            url: "https://tapas.io/",
+            publisher: "Tapas Media",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "Webnovel — plataforma de manhua chinês",
+            url: "https://www.webnovel.com/",
+            publisher: "Webnovel / Qidian",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "MyAnimeList — Top Manga Rankings",
+            url: "https://myanimelist.net/topmanga.php",
+            publisher: "MyAnimeList",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "Anime News Network — Solo Leveling adaptation",
+            url: "https://www.animenewsnetwork.com/",
+            publisher: "Anime News Network",
+            accessedAt: "Maio 2026"
+          }
+        ]}}
+      />
       <RelatedPosts currentSlug="como-diferenciar-manhuas-manhwas" />
       <CommentSection postId="como-diferenciar-manhuas-manhwas" postTitle="Saiba como diferenciar Manhuas e Manhwas" />
     </article>

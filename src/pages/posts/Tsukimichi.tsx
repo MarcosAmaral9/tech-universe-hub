@@ -4,6 +4,8 @@ import BackNavigation from "@/components/BackNavigation";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Globe } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -141,6 +143,49 @@ const Tsukimichi = () => {
         </div>
       </div>
 
+      <EditorialTake category="otaku" title="Análise do Marcos: Tsukimichi é o isekai que cresceu sem hype e ganhou com consistência">
+          <p>
+            Tsukimichi Moonlit Fantasy é um dos isekais que mais cresce em popularidade sem ter o mesmo barulho de Solo Leveling ou TenSura. A light novel de Azumi Kei tem mais de 20 volumes publicados e a adaptação anime (C2C Studio) acertou no casting de voz — especialmente Makoto, cujo tom monotônico contrasta perfeitamente com o caos ao redor.
+          </p>
+          <p>
+            <strong>Para quem ainda não viu: entre sem medo.</strong> A Temporada 1 e 2 são autossuficientes para apreciar o humor e a construção de mundo. O mangá vai mais longe nos detalhes de Azgard e nas mecânicas de poder. Disponível na Crunchyroll com legendas em português.
+          </p>
+      </EditorialTake>
+
+      <ArticleSources
+        sources={[
+          {
+            title: "Crunchyroll — Tsukimichi Moonlit Fantasy",
+            url: "https://www.crunchyroll.com/series/GYQWM1X86/tsukimichi-moonlit-fantasy",
+            publisher: "Crunchyroll",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "MyAnimeList — Tsukimichi",
+            url: "https://myanimelist.net/anime/48737/Tsukimichi__Moonlit_Fantasy",
+            publisher: "MyAnimeList",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "Manga Plus — Tsukimichi (mangá)",
+            url: "https://mangaplus.shueisha.co.jp/",
+            publisher: "Shueisha / Manga Plus",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "Anime News Network — Tsukimichi Season 2",
+            url: "https://www.animenewsnetwork.com/",
+            publisher: "Anime News Network",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "C2C Studio — site oficial",
+            url: "https://www.c2c.co.jp/",
+            publisher: "C2C Studio",
+            accessedAt: "Maio 2026"
+          }
+        ]}}
+      />
       <RelatedPosts currentSlug="tsukimichi-moonlit-fantasy-guia-completo" />
       <CommentSection postId="tsukimichi-moonlit-fantasy-guia-completo" postTitle="Tsukimichi: Moonlit Fantasy — Guia Completo" />
           <AdLeaderboard className="my-8" />

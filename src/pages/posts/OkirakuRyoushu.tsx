@@ -4,6 +4,8 @@ import BackNavigation from "@/components/BackNavigation";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Shield } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -110,32 +112,53 @@ const OkirakuRyoushu = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
-      <section className="my-10">
-        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
-          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
-            <span className="text-primary">●</span> Análise do Marcos
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-3"><strong>Okiraku Ryoushu no Tanoshii Ryouchi Bouei</strong> (Easygoing Territory Defense by the Optimistic Lord) é uma web novel/light novel de Uchi no Neko publicada pela Earth Star Novel desde 2018. Adaptação em mangá pela Comic Earth Star e anime confirmado para 2026 pela EMT Squared (data exata pendente em fontes oficiais).</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">A obra ocupa o nicho 'aristocrata isekai com magia de produção' junto a Honzuki no Gekokujou e Kuma Kuma Kuma Bear, com vendas crescentes da light novel reportadas pela Earth Star.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: o gênero 'territory management isekai' explodiu pós-2020 porque entrega progressão tangível (cidade que cresce no mapa) sem depender de combate. Para quem gostou de Maoyu, Honzuki ou Genjitsu Shugi, Okiraku Ryoushu é parada quase obrigatória. A produção da EMT Squared ('Tate no Yuusha') sinaliza padrão consistente de animação, mas sem orçamento de estúdio top-tier.</p>
-        </div>
 
-        <div className="bg-muted/30 border border-border rounded-2xl p-6">
-          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
-          <ul className="space-y-2 text-sm">
-            <li><a href="https://www.earthstar-ent.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Earth Star Novel — Site oficial ↗</a></li>
-            <li><a href="https://myanimelist.net/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">MyAnimeList — Database ↗</a></li>
-            <li><a href="https://www.animenewsnetwork.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Anime News Network — Encyclopedia ↗</a></li>
-            <li><a href="https://www.comic-earthstar.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Comic Earth Star — Site oficial ↗</a></li>
-            <li><a href="https://emtsquared.co.jp/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">EMT Squared — Site oficial ↗</a></li>
-          </ul>
-          <p className="text-xs text-muted-foreground mt-4">
-            Última verificação dos links: maio de 2026.
+            <EditorialTake category="otaku" title="Análise do Marcos">
+          <p>
+            <strong>Okiraku Ryoushu no Tanoshii Ryouchi Bouei</strong> (Easygoing Territory Defense by the Optimistic Lord) é uma web novel/light novel de Uchi no Neko publicada pela Earth Star Novel desde 2018. Adaptação em mangá pela Comic Earth Star e anime confirmado para 2026 pela EMT Squared (data exata pendente em fontes oficiais).
           </p>
-        </div>
-      </section>
+          <p>
+            A obra ocupa o nicho 'aristocrata isekai com magia de produção' junto a Honzuki no Gekokujou e Kuma Kuma Kuma Bear, com vendas crescentes da light novel reportadas pela Earth Star.
+          </p>
+          <p>
+            Minha análise: o gênero 'territory management isekai' explodiu pós-2020 porque entrega progressão tangível (cidade que cresce no mapa) sem depender de combate. Para quem gostou de Maoyu, Honzuki ou Genjitsu Shugi, Okiraku Ryoushu é parada quase obrigatória. A produção da EMT Squared ('Tate no Yuusha') sinaliza padrão consistente de animação, mas sem orçamento de estúdio top-tier.
+          </p>
+      </EditorialTake>
 
-
+            <ArticleSources
+        sources={[
+          {
+            title: "Earth Star Novel — Site oficial",
+            url: "https://www.earthstar-ent.com/",
+            publisher: "Earth Star Novel",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "MyAnimeList — Database",
+            url: "https://myanimelist.net/",
+            publisher: "MyAnimeList",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "Anime News Network — Encyclopedia",
+            url: "https://www.animenewsnetwork.com/",
+            publisher: "Anime News Network",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "Comic Earth Star — Site oficial",
+            url: "https://www.comic-earthstar.com/",
+            publisher: "Comic Earth Star",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "EMT Squared — Site oficial",
+            url: "https://emtsquared.co.jp/",
+            publisher: "EMT Squared",
+            accessedAt: "Maio 2026"
+          }
+        ]}
+      />
       <RelatedPosts currentSlug="okiraku-ryoushu-territory-defense-guia" />
       <CommentSection postId="okiraku-ryoushu-territory-defense-guia" postTitle="Easygoing Territory Defense (Okiraku Ryoushu) — Guia Completo" />
       <AdLeaderboard className="my-8" />

@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Zap, Shield, Crown, Globe, Star } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -309,7 +311,6 @@ const TensuraPersonagens = () => {
           A série de True Dragons conecta diretamente com a lore mais profunda de TenSura: Veldanava criou o mundo e desapareceu — um mistério que a série só começa a revelar na T3 e nos volumes finais da light novel. O poder de Rimuru, por carregar Veldora dentro de si durante a maior parte da T1, sempre foi ampliado por esse vínculo — mesmo que de forma indireta.
         </p>
       </div>
-
       <RelatedPosts currentSlug="tensura-personagens-rimuru-demon-lords" />
       <CommentSection postId="tensura-personagens-rimuru-demon-lords" />
     </article>

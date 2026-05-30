@@ -4,6 +4,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { ArrowLeft, Clock, User, Calendar, Gamepad2, Swords, Sparkles, BookOpen } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -95,40 +97,17 @@ const JogosAnime2026 = () => {
         </div>
       </div>
 
-      
-      <section className="my-10">
-        <div className="bg-card border border-otaku/30 rounded-2xl p-6 mb-6">
-          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
-            <span className="text-otaku">●</span> Análise do Marcos
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-3">O mercado de jogos baseados em anime amadureceu muito desde 2020. Em 2026, títulos como Dragon Ball: Sparking! ZERO (lançado em outubro de 2024 pela Bandai Namco), Naruto x Boruto: Ultimate Ninja Storm Connections e Demon Slayer -Kimetsu no Yaiba- Sweep the Board! (Nintendo Switch, abril de 2024) mostram um cuidado de produção que nos anos 2000 era reservado a franquias ocidentais.</p>
-              <p className="text-muted-foreground leading-relaxed mb-3">Para o jogador brasileiro, três fatores pesam mais que a nota de review: preço regional (Bandai Namco passou a fazer ajuste de region pricing no Brasil desde 2023), suporte a legenda em português (One Piece Odyssey e Sparking! ZERO já saíram localizados) e jogabilidade online — Ultimate Ninja Storm Connections é o caso clássico de jogo cuja vida útil depende inteiramente do netcode.</p>
-              <p className="text-muted-foreground leading-relaxed mb-3">A análise do Marcos: prefira títulos com modo offline robusto. Servidores de jogos de anime tendem a esvaziar em 12 a 18 meses, e um single-player consistente garante que o investimento não vire prejuízo quando a comunidade migrar para o próximo lançamento da Bandai Namco ou CyberConnect2.</p>
-        </div>
-
-        <div className="bg-muted/30 border border-border rounded-2xl p-6">
-          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
-          <ul className="space-y-2 text-sm">
-            {[
-              { title: "Bandai Namco — Dragon Ball Sparking! ZERO", url: "https://en.bandainamcoent.eu/dragon-ball/dragon-ball-sparking-zero" },
-          { title: "Crunchyroll News — Demon Slayer Sweep the Board", url: "https://www.crunchyroll.com/news/announcements/2024/4/26/demon-slayer-sweep-the-board-launch" },
-          { title: "Nintendo — Naruto x Boruto Ultimate Ninja Storm Connections", url: "https://www.nintendo.com/us/store/products/naruto-x-boruto-ultimate-ninja-storm-connections-switch/" },
-          { title: "Steam — One Piece Odyssey", url: "https://store.steampowered.com/app/1366540/ONE_PIECE_ODYSSEY/" },
-          { title: "CyberConnect2 — site oficial", url: "https://www.cc2.co.jp/" },
-            ].map((s) => (
-              <li key={s.url}>
-                <a href={s.url} target="_blank" rel="noopener noreferrer"
-                  className="text-otaku hover:underline break-words">
-                  {s.title} ↗
-                </a>
-              </li>
-            ))}
-          </ul>
-          <p className="text-xs text-muted-foreground mt-4">
-            Última verificação dos links: maio de 2026.
+            <EditorialTake category="otaku" title="Análise do Marcos">
+          <p>
+            O mercado de jogos baseados em anime amadureceu muito desde 2020. Em 2026, títulos como Dragon Ball: Sparking! ZERO (lançado em outubro de 2024 pela Bandai Namco), Naruto x Boruto: Ultimate Ninja Storm Connections e Demon Slayer -Kimetsu no Yaiba- Sweep the Board! (Nintendo Switch, abril de 2024) mostram um cuidado de produção que nos anos 2000 era reservado a franquias ocidentais.
           </p>
-        </div>
-      </section>
+          <p>
+            Para o jogador brasileiro, três fatores pesam mais que a nota de review: preço regional (Bandai Namco passou a fazer ajuste de region pricing no Brasil desde 2023), suporte a legenda em português (One Piece Odyssey e Sparking! ZERO já saíram localizados) e jogabilidade online — Ultimate Ninja Storm Connections é o caso clássico de jogo cuja vida útil depende inteiramente do netcode.
+          </p>
+          <p>
+            A análise do Marcos: prefira títulos com modo offline robusto. Servidores de jogos de anime tendem a esvaziar em 12 a 18 meses, e um single-player consistente garante que o investimento não vire prejuízo quando a comunidade migrar para o próximo lançamento da Bandai Namco ou CyberConnect2.
+          </p>
+      </EditorialTake>
       <RelatedPosts currentSlug="melhores-jogos-anime-2026" />
       <CommentSection postId="melhores-jogos-anime-2026" postTitle="Os Melhores Jogos de Anime de 2026: Do RPG ao Fighting Game" />
     </article>

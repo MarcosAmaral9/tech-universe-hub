@@ -205,6 +205,8 @@ const KaijuNo8Temporada22026 = () => {
           { title: "Anime News Network — Kaiju No. 8", url: "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=27931", publisher: "Anime News Network", accessedAt: "Maio 2026" },
         ]}
       />
+
+
       <RelatedPosts currentSlug="kaiju-no-8-temporada-2-guia-arco-final-2026" />
 
 

@@ -3,6 +3,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, Anchor, Map, Star, BookOpen, Flame, Shield, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -296,32 +298,53 @@ const OnePieceFinalSaga2026 = () => {
           <p className="text-muted-foreground">O que você acha que é o tesouro de Roger? Compartilhe nos comentários! 👇</p>
         </div>
       </div>
-      <section className="my-10">
-        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
-          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
-            <span className="text-primary">●</span> Análise do Marcos
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-3">A 'Final Saga' de One Piece começou no capítulo 1.054 do mangá (julho/2022), após o salto temporal pós-Wano. Em maio/2026 o mangá está aproximadamente no capítulo 1.130+, com Eiichiro Oda confirmando em entrevistas oficiais à Shueisha que pretende concluir a obra por volta de 2028-2029.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">O anime da Toei Animation entrou em hiato para 'Egghead Arc' (Arc 11) com retomada confirmada em abril/2025 com qualidade de animação significativamente elevada. O remake 'One Piece The One' (Wit Studio + Netflix) foi anunciado em novembro/2023 para 2025-2026 com a Saga de East Blue.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: a Final Saga é o melhor momento técnico do anime histórico — orçamentos maiores, direção de Megumi Ishitani na Egghead e trilha renovada. Para leitores BR, recomendo combinar mangá oficial via Manga Plus (Shueisha, gratuito até capítulo 3 e últimos 3) com o anime. Spoilers de capítulos vazam toda quinta-feira; cuidado com fóruns brasileiros e Reddit r/OnePiece.</p>
-        </div>
 
-        <div className="bg-muted/30 border border-border rounded-2xl p-6">
-          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
-          <ul className="space-y-2 text-sm">
-            <li><a href="https://mangaplus.shueisha.co.jp/titles/100020" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Shueisha — Manga Plus ↗</a></li>
-            <li><a href="https://www.toei-anim.co.jp/tv/onep/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Toei Animation — One Piece ↗</a></li>
-            <li><a href="https://witstudio.co.jp/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Wit Studio — One Piece The One ↗</a></li>
-            <li><a href="https://one-piece.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">One Piece — Site oficial ↗</a></li>
-            <li><a href="https://www.crunchyroll.com/series/GRMG8ZQZR/one-piece" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Crunchyroll — One Piece ↗</a></li>
-          </ul>
-          <p className="text-xs text-muted-foreground mt-4">
-            Última verificação dos links: maio de 2026.
+            <EditorialTake category="otaku" title="Análise do Marcos">
+          <p>
+            A 'Final Saga' de One Piece começou no capítulo 1.054 do mangá (julho/2022), após o salto temporal pós-Wano. Em maio/2026 o mangá está aproximadamente no capítulo 1.130+, com Eiichiro Oda confirmando em entrevistas oficiais à Shueisha que pretende concluir a obra por volta de 2028-2029.
           </p>
-        </div>
-      </section>
+          <p>
+            O anime da Toei Animation entrou em hiato para 'Egghead Arc' (Arc 11) com retomada confirmada em abril/2025 com qualidade de animação significativamente elevada. O remake 'One Piece The One' (Wit Studio + Netflix) foi anunciado em novembro/2023 para 2025-2026 com a Saga de East Blue.
+          </p>
+          <p>
+            Minha análise: a Final Saga é o melhor momento técnico do anime histórico — orçamentos maiores, direção de Megumi Ishitani na Egghead e trilha renovada. Para leitores BR, recomendo combinar mangá oficial via Manga Plus (Shueisha, gratuito até capítulo 3 e últimos 3) com o anime. Spoilers de capítulos vazam toda quinta-feira; cuidado com fóruns brasileiros e Reddit r/OnePiece.
+          </p>
+      </EditorialTake>
 
-
+            <ArticleSources
+        sources={[
+          {
+            title: "Shueisha — Manga Plus",
+            url: "https://mangaplus.shueisha.co.jp/titles/100020",
+            publisher: "Shueisha",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "Toei Animation — One Piece",
+            url: "https://www.toei-anim.co.jp/tv/onep/",
+            publisher: "Toei Animation",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "Wit Studio — One Piece The One",
+            url: "https://witstudio.co.jp/",
+            publisher: "Wit Studio",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "One Piece — Site oficial",
+            url: "https://one-piece.com/",
+            publisher: "One Piece",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "Crunchyroll — One Piece",
+            url: "https://www.crunchyroll.com/series/GRMG8ZQZR/one-piece",
+            publisher: "Crunchyroll",
+            accessedAt: "Maio 2026"
+          }
+        ]}
+      />
       <RelatedPosts currentSlug="one-piece-final-saga-2026" />
       <CommentSection
         postId="one-piece-final-saga-2026"

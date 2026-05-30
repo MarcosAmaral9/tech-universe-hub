@@ -188,8 +188,7 @@ const OnePieceElbaf2026 = () => {
     { title: 'MyAnimeList — One Piece', url: 'https://myanimelist.net/anime/21/One_Piece', publisher: 'MAL', accessedAt: "Maio 2026" },
     { title: 'Anime News Network', url: 'https://www.animenewsnetwork.com/', publisher: 'ANN', accessedAt: "Maio 2026" }
   ]} />
-
-        <RelatedPosts currentSlug="one-piece-elbaf-formato-sazonal-2026" />
+      <RelatedPosts currentSlug="one-piece-elbaf-formato-sazonal-2026" />
       <CommentSection postId="one-piece-elbaf-formato-sazonal-2026" postTitle="One Piece Arco de Elbaf: A Ilha dos Gigantes e o Novo Formato Sazonal" />
     </article>
   );

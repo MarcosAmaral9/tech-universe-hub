@@ -4,6 +4,8 @@ import BackNavigation from "@/components/BackNavigation";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Swords } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -105,32 +107,53 @@ const MugenGacha = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
-      <section className="my-10">
-        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
-          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
-            <span className="text-primary">●</span> Análise do Marcos
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-3"><strong>My Gift LVL 9999 Unlimited Gacha</strong> é uma light novel escrita por Akihito Kibino e ilustrada por Sao Mizuno, publicada pela Hifumi Shobo/MFJ Books desde 2020. O anime estreou em outubro/2023 pela Asahi Production, com 13 episódios e nota 6.3 no MyAnimeList.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">O mangá é serializado na ComicWalker da Kadokawa e a tradução em inglês da light novel é publicada pela Tentai Books desde 2024. Até maio/2026 não há anúncio oficial de 2ª temporada do anime.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: a obra opera sob a fórmula 'traição + power fantasy ilimitada' que vem dominando o ranking de web novels desde Tate no Yuusha. O diferencial técnico é a mecânica de gacha sem cooldown, que funciona como justificativa para o herói ter qualquer arma/aliado convenientemente. O anime da Asahi Production teve animação econômica — para quem busca produção visualmente forte, light novel é a melhor entrada.</p>
-        </div>
 
-        <div className="bg-muted/30 border border-border rounded-2xl p-6">
-          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
-          <ul className="space-y-2 text-sm">
-            <li><a href="https://hifumi.co.jp/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Hifumi Shobo — Site oficial ↗</a></li>
-            <li><a href="https://myanimelist.net/anime/50264/Yarinaoshi_Reijou_wa" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">MyAnimeList — Mugen no Gacha ↗</a></li>
-            <li><a href="https://comic-walker.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">ComicWalker — Kadokawa ↗</a></li>
-            <li><a href="https://www.crunchyroll.com/series/GG5H5XQ5R/my-unique-skill-makes-me-op-even-at-level-1" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Crunchyroll — My Gift LVL 9999 ↗</a></li>
-            <li><a href="https://tentaibooks.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Tentai Books — Catalog ↗</a></li>
-          </ul>
-          <p className="text-xs text-muted-foreground mt-4">
-            Última verificação dos links: maio de 2026.
+            <EditorialTake category="otaku" title="Análise do Marcos">
+          <p>
+            <strong>My Gift LVL 9999 Unlimited Gacha</strong> é uma light novel escrita por Akihito Kibino e ilustrada por Sao Mizuno, publicada pela Hifumi Shobo/MFJ Books desde 2020. O anime estreou em outubro/2023 pela Asahi Production, com 13 episódios e nota 6.3 no MyAnimeList.
           </p>
-        </div>
-      </section>
+          <p>
+            O mangá é serializado na ComicWalker da Kadokawa e a tradução em inglês da light novel é publicada pela Tentai Books desde 2024. Até maio/2026 não há anúncio oficial de 2ª temporada do anime.
+          </p>
+          <p>
+            Minha análise: a obra opera sob a fórmula 'traição + power fantasy ilimitada' que vem dominando o ranking de web novels desde Tate no Yuusha. O diferencial técnico é a mecânica de gacha sem cooldown, que funciona como justificativa para o herói ter qualquer arma/aliado convenientemente. O anime da Asahi Production teve animação econômica — para quem busca produção visualmente forte, light novel é a melhor entrada.
+          </p>
+      </EditorialTake>
 
-
+            <ArticleSources
+        sources={[
+          {
+            title: "Hifumi Shobo — Site oficial",
+            url: "https://hifumi.co.jp/",
+            publisher: "Hifumi Shobo",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "MyAnimeList — Mugen no Gacha",
+            url: "https://myanimelist.net/anime/50264/Yarinaoshi_Reijou_wa",
+            publisher: "MyAnimeList",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "ComicWalker — Kadokawa",
+            url: "https://comic-walker.com/",
+            publisher: "ComicWalker",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "Crunchyroll — My Gift LVL 9999",
+            url: "https://www.crunchyroll.com/series/GG5H5XQ5R/my-unique-skill-makes-me-op-even-at-level-1",
+            publisher: "Crunchyroll",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "Tentai Books — Catalog",
+            url: "https://tentaibooks.com/",
+            publisher: "Tentai Books",
+            accessedAt: "Maio 2026"
+          }
+        ]}
+      />
       <RelatedPosts currentSlug="mugen-gacha-level-9999-traicao-dungeon" />
       <CommentSection postId="mugen-gacha-level-9999-traicao-dungeon" postTitle="My Gift Lvl 9999 Unlimited Gacha — Traição no Fundo da Dungeon" />
           <AdLeaderboard className="my-8" />

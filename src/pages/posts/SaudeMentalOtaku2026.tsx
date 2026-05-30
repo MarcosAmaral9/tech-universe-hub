@@ -1,27 +1,37 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
-import { ArrowLeft, Clock, User, Calendar, Heart, AlertTriangle, Phone, Smile } from "lucide-react";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
+import { Clock, User, Calendar, Heart, AlertTriangle, Phone, Smile, BarChart3, BookOpen, Shield } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/saude-mental-otaku-2026.webp";
-
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
-const SaudeMentalOtaku2026 = () => {
 
+const SaudeMentalOtaku2026 = () => {
   useEffect(() => {
-    trackArticleRead("saude-mental-cultura-otaku-2026", "Saúde Mental e Cultura Otaku: Quando o Anime Ajuda e Quando Isola", "otaku");
+    trackArticleRead(
+      "saude-mental-cultura-otaku-2026",
+      "Saúde Mental e Cultura Otaku: Quando o Anime Ajuda e Quando Isola",
+      "otaku"
+    );
   }, []);
+
   return (
     <article className="container py-8 max-w-4xl mx-auto">
       <BackNavigation category="otaku" />
 
       <header className="mb-8">
-        <CategoryBadge category="otaku" size="lg" />
+        <div className="flex items-center gap-2 mb-4">
+          <CategoryBadge category="otaku" size="lg" />
+          <span className="px-3 py-1 bg-otaku/20 text-otaku rounded-full text-sm font-medium">
+            Saúde Mental · Cultura Otaku · Anime · Bem-estar
+          </span>
+        </div>
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
           Saúde Mental e Cultura Otaku: Quando o Anime Ajuda e Quando Ele Isola
         </h1>
@@ -31,109 +41,229 @@ const SaudeMentalOtaku2026 = () => {
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />13 min de leitura</span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="otaku" />
+        <AuthorBio category="otaku" publishedAt="13 de Março, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high" loading="eager"
+        <img
+          fetchPriority="high"
+          src={heroImg}
+          alt="Saúde mental e cultura otaku — quando o anime ajuda e quando isola, recursos e análise"
+          loading="eager"
           decoding="async"
-          src={heroImg} alt="Saúde Mental e Cultura Otaku" className="w-full h-full object-cover" />
+          className="w-full h-full object-cover"
+        />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          Anime salvou vidas. Também é verdade que, para alguns, o mergulho na cultura otaku se tornou uma forma de evitar o mundo real. Estas duas afirmações não se contradizem — e é por isso que este artigo existe. Sem julgamentos, com empatia.
+          A <strong>saúde mental e a cultura otaku</strong> têm uma relação mais complexa do que os extremos sugerem. Anime salvou vidas — não é exagero. Obras como A Silent Voice, March Comes in Like a Lion e Violet Evergarden ajudaram pessoas a nomearem e processarem traumas que não sabiam como expressar. Ao mesmo tempo, para alguns, o mergulho intenso na ficção se tornou uma forma de evitar o mundo real de maneiras que custaram caro. Este artigo explora os dois lados com empatia e baseado em evidências — sem julgamentos, sem romantizações.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Heart className="h-7 w-7 text-otaku" />
-          Como o Anime Pode Ajudar
+          Como o Anime Pode Contribuir Positivamente para a Saúde Mental
         </h2>
         <p>
-          Animes como <strong>A Silent Voice</strong>, <strong>Your Lie in April</strong>, <strong>March Comes in Like a Lion</strong> e <strong>Violet Evergarden</strong> abordam depressão, luto, isolamento e trauma com uma profundidade que muitos descrevem como transformadora.
+          Pesquisas publicadas em revistas como <strong>Frontiers in Psychology</strong> e <strong>Journal of Mental Health Counseling</strong> exploram o uso terapêutico de narrativas de anime — em particular obras que abordam temas de saúde mental com profundidade. Terapeutas em programas voltados a adolescentes e jovens adultos frequentemente citam A Silent Voice (Koe no Katachi) e March Comes in Like a Lion como pontos de entrada para discussões sobre depressão e isolamento.
         </p>
         <p>
-          A sensação de "esse personagem entende o que estou passando" é poderosa. Para adolescentes e jovens adultos que se sentem incompreendidos, encontrar representação emocional pode ser o primeiro passo para reconhecer e nomear sentimentos.
+          Os mecanismos pelos quais o anime pode ajudar incluem:
         </p>
-        <p>
-          Os laços formados em torno de interesses compartilhados são socialmente genuínos. Amizades feitas em convenções e comunidades online são reais — e para pessoas com dificuldades de socialização, podem ser a principal fonte de conexão humana.
-        </p>
+
+        <div className="not-prose my-6 space-y-3">
+          {[
+            { mecan: "❤️ Identificação e validação emocional", desc: "A sensação de 'esse personagem sente o que eu sinto' tem valor terapêutico real. Para adolescentes que se sentem incompreendidos, ver representação emocional genuína — a ansiedade de Naho em Orange, a depressão de Rei em March Comes in Like a Lion — pode ser o primeiro passo para nomear e aceitar os próprios sentimentos." },
+            { mecan: "🤝 Comunidade e pertencimento", desc: "Os laços formados em torno de interesses compartilhados são socialmente genuínos. Amizades feitas em convenções, grupos de Discord ou fóruns de anime são reais — e para pessoas com dificuldades de socialização, podem ser a principal fonte de conexão humana significativa." },
+            { mecan: "🎨 Sublimação criativa", desc: "O anime inspira cosplay, fanfic, fanart, análises, doujinshi. Canais criativos que emergem da paixão por anime oferecem saídas saudáveis para energia emocional que, sem esses meios, poderia não ter onde ir." },
+            { mecan: "🧘 Escape saudável e regulação emocional", desc: "Assistir anime como forma de descanso e descompressão é funcionalmente equivalente a ler ficção ou ver filmes. O problema não é o escapismo em si — é quando ele se torna a única estratégia de regulação emocional disponível." },
+          ].map(({ mecan, desc }) => (
+            <div key={mecan} className="bg-card rounded-xl border border-otaku/20 p-4">
+              <h3 className="font-bold text-sm mb-1 text-otaku">{mecan}</h3>
+              <p className="text-xs text-muted-foreground">{desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="not-prose my-6 bg-card rounded-xl border border-otaku/30 p-5">
+          <h3 className="font-bold text-otaku mb-3">📺 Animes que abordam saúde mental com profundidade</h3>
+          <div className="space-y-2">
+            {[
+              { titulo: "A Silent Voice (Koe no Katachi)", tema: "Bullying, surdez, culpa, depressão, ideação suicida", abordagem: "Uma das representações mais honestas e não glamorizadas de depressão no anime" },
+              { titulo: "March Comes in Like a Lion", tema: "Depressão severa, isolamento, família, propósito", abordagem: "Rei Kiriyama é uma das representações mais realistas de depressão em mídia popular" },
+              { titulo: "Violet Evergarden", tema: "TEPT, reintegração pós-guerra, emoções, luto", abordagem: "Explora trauma de guerra e reconstrução emocional com delicadeza rara" },
+              { titulo: "Welcome to the NHK", tema: "Hikikomori, paranoia social, automedicação, isolamento", abordagem: "Retrato honesto e desconfortável do isolamento social — não romantizado" },
+              { titulo: "Your Lie in April", tema: "Luto, trauma, música como cura, relacionamentos", abordagem: "Catártico mas com aviso: pode intensificar emoções pesadas para quem está em vulnerabilidade" },
+            ].map(({ titulo, tema, abordagem }) => (
+              <div key={titulo} className="border-b border-border pb-2 last:border-0 last:pb-0">
+                <p className="font-bold text-xs text-otaku">{titulo}</p>
+                <p className="text-xs text-muted-foreground"><span className="font-bold">Temas:</span> {tema}</p>
+                <p className="text-xs text-muted-foreground italic">{abordagem}</p>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <AdLeaderboard className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <AlertTriangle className="h-7 w-7 text-yellow-500" />
-          Sinais de Alerta: Quando o Escape Vira Fuga
+          Sinais de Alerta: Quando o Escape Saudável Vira Fuga Disfuncional
         </h2>
         <p>
-          Existe uma diferença importante entre <strong>escapismo saudável</strong> (usar a ficção para descansar) e <strong>fuga disfuncional</strong> (usar a ficção para evitar problemas reais). Se relacionamentos fictícios substituem completamente a busca por conexões humanas, isso merece atenção cuidadosa.
+          Existe uma diferença importante — e às vezes sutil — entre <strong>escapismo saudável</strong> (usar a ficção para descansar e recarregar) e <strong>fuga disfuncional</strong> (usar a ficção para evitar problemas reais que precisam ser enfrentados). O primeiro é adaptativo; o segundo pode agravar situações que pediam ação.
         </p>
         <p>
-          O fenômeno <strong>hikikomori</strong> (reclusão social extrema) é documentado no Japão e tem paralelos em outras culturas. Não é causado pelo anime — mas o consumo excessivo pode ser tanto sintoma quanto fator facilitador do isolamento.
+          O fenômeno <strong>hikikomori</strong> (reclusão social extrema, documentado clinicamente no Japão pelo National Counseling Center) tem paralelos em outras culturas. Não é causado pelo anime — mas o consumo excessivo pode ser tanto sintoma quanto fator que facilita a manutenção do isolamento, porque reduz o desconforto de curto prazo sem resolver as causas.
         </p>
-        <p>
-          A solução não é censura — é <strong>educação para o consumo crítico</strong>. Discutir esses temas dentro da comunidade é saudável e necessário.
-        </p>
-      <AdInArticle />
+
+        <div className="not-prose my-6 grid md:grid-cols-2 gap-4">
+          {[
+            {
+              label: "✅ Consumo Saudável",
+              items: [
+                "Assiste anime como lazer com horários delimitados",
+                "Mantém relacionamentos reais além da comunidade online",
+                "Usa anime como complemento — não substituto — de vida social",
+                "Consegue pausar o consumo quando há responsabilidades",
+                "Discute e critica obras com perspectiva crítica",
+                "A ficção inspira mas não substitui metas reais",
+              ]
+            },
+            {
+              label: "⚠️ Sinais de Atenção",
+              items: [
+                "Privação de sono recorrente para maratonar conteúdo",
+                "Abandono de hobbies ou amizades não relacionados a anime",
+                "Relacionamentos fictícios (waifus/husbandos) substituem completamente busca por conexão real",
+                "Recusa de saída de casa por mais de 2 semanas consecutivas",
+                "Consumo como única forma de lidar com ansiedade ou tristeza",
+                "Dificuldade de funcionar quando sem acesso ao conteúdo",
+              ]
+            }
+          ].map(({ label, items }) => (
+            <div key={label} className="bg-card rounded-xl border border-otaku/20 p-4">
+              <h3 className="font-bold text-sm mb-2">{label}</h3>
+              <ul className="space-y-1">
+                {items.map((item) => <li key={item} className="text-xs text-muted-foreground">• {item}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <AdInArticle />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Phone className="h-7 w-7 text-otaku" />
-          Recursos e Apoio
+          Recursos de Apoio à Saúde Mental no Brasil
         </h2>
-        <div className="p-6 bg-card rounded-xl border-2 border-otaku/40 my-6">
-          <h4 className="font-bold text-lg mb-3">Se você precisa de ajuda:</h4>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>📞 <strong>CVV</strong> (Centro de Valorização da Vida): <strong>188</strong> (24h) ou <strong>cvv.org.br</strong></li>
-            <li>🏥 <strong>CAPS</strong> (Centro de Atenção Psicossocial): atendimento gratuito pelo SUS</li>
-            <li>💻 Plataformas de terapia online tornaram o acesso mais democrático</li>
-          </ul>
-          <p className="mt-3 text-sm italic">Buscar ajuda é um ato de coragem, não fraqueza. Alguns dos personagens de anime mais amados são justamente os que reconhecem que não podem carregar tudo sozinhos.</p>
+        <p>
+          Se você ou alguém que você conhece está passando por um momento difícil, os recursos abaixo oferecem apoio gratuito e acessível:
+        </p>
+
+        <div className="not-prose my-6 bg-card rounded-xl border-2 border-otaku/40 p-5">
+          <h3 className="font-bold text-lg mb-3 text-otaku">🆘 Onde buscar ajuda</h3>
+          <div className="space-y-3">
+            {[
+              { recurso: "📞 CVV — Centro de Valorização da Vida", contato: "188 (ligação gratuita, 24h) ou cvv.org.br (chat)", desc: "Atendimento gratuito por voluntários treinados. Sigiloso. Disponível 24 horas por dia, 7 dias por semana." },
+              { recurso: "🏥 CAPS — Centro de Atenção Psicossocial", contato: "Busque pelo CAPS mais próximo em cnes.datasus.gov.br", desc: "Atendimento psicológico e psiquiátrico gratuito pelo SUS. Para casos que precisam de acompanhamento clínico continuado." },
+              { recurso: "💻 Psicoterapia Online", contato: "Plataformas como Zenklub, Vittude e Terapia Para Todos", desc: "Plataformas de terapia online tornaram o acesso mais democrático com preços por escala social e terapeutas especializados em saúde mental de jovens." },
+            ].map(({ recurso, contato, desc }) => (
+              <div key={recurso} className="border-b border-border pb-2 last:border-0 last:pb-0">
+                <p className="font-bold text-xs text-otaku">{recurso}</p>
+                <p className="text-xs font-bold">{contato}</p>
+                <p className="text-xs text-muted-foreground">{desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-muted-foreground mt-3 italic">
+            Buscar ajuda é um ato de coragem, não fraqueza. Alguns dos personagens de anime mais amados são justamente os que reconhecem que não podem carregar tudo sozinhos — e pedem ajuda.
+          </p>
         </div>
 
         <AdRectangle className="my-8" />
 
-        
-<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Smile className="h-7 w-7 text-otaku" />
-          Cultivando uma Relação Saudável
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Shield className="h-7 w-7 text-otaku" />
+          A Questão do Tempo de Tela: O Que a Ciência Diz
         </h2>
         <p>
-          Mantenha pelo menos um hobby com contato físico com pessoas. Reserve horários para o conteúdo otaku como forma de apreciar mais conscientemente. Permita-se criticar obras que você ama quando elas fazem algo problemático.
+          A <strong>Organização Mundial da Saúde (OMS)</strong> classificou o "transtorno por uso de jogos" (gaming disorder) no CID-11 desde 2019. Embora o transtorno de uso de streaming não tenha classificação equivalente, os critérios de disfuncionalidade são similares: o consumo compulsivo que prejudica funcionamento social, profissional ou acadêmico e que a pessoa não consegue controlar mesmo querendo.
         </p>
         <p>
-          A cultura otaku em seu melhor é sobre paixão compartilhada, criatividade e comunidade. Quando cultivada de forma saudável, ela enriquece a vida de formas que dificilmente encontramos em outros lugares. <strong>Cuide de você para poder desfrutar dela por muitos anos.</strong>
+          A <strong>American Academy of Pediatrics (AAP)</strong> recomenda para adolescentes acima de 13 anos: consistência em horário de dormir, manutenção de atividade física e pelo menos 1 hora de atividade offline por dia além das obrigações escolares. Não há limite rígido de horas de tela para adultos — o critério é se o consumo está interferindo em áreas importantes da vida.
         </p>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Como o anime impactou sua vida?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários — com respeito e empatia. 💜👇</p>
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Smile className="h-7 w-7 text-otaku" />
+          Cultivando uma Relação Saudável com a Cultura Otaku
+        </h2>
+        <p>
+          A cultura otaku em seu melhor é sobre paixão compartilhada, criatividade e comunidade. Não há nada inerentemente problemático em amar anime profundamente. As práticas que ajudam a manter essa relação saudável:
+        </p>
+        <ul>
+          <li><strong>Mantenha pelo menos um hobby com contato físico</strong> com pessoas — convenção, clube de mangá, grupo de cosplay.</li>
+          <li><strong>Reserve horários específicos para anime</strong> — isso aumenta o prazer e reduz o consumo ansioso/compulsivo.</li>
+          <li><strong>Permita-se criticar obras que ama</strong> — é sinal de maturidade cultural, não de deslealdade a uma franquia.</li>
+          <li><strong>Se um personagem ou arco te afeta intensamente</strong>, use isso como informação — às vezes o que ressoa tanto está dizendo algo sobre sua própria vida que merece atenção.</li>
+          <li><strong>Monitore o padrão de sono</strong> — maratonar até as 3h da manhã ocasionalmente é diferente de estruturalmente privar-se de sono por conteúdo.</li>
+        </ul>
+
+        <EditorialTake category="otaku" title="Análise do Marcos: a relação culture otaku × saúde mental é dupla — e isso é normal">
+          <p>
+            Estudos em Frontiers in Psychology e Journal of Mental Health Counseling exploram o uso terapêutico do anime — e a OMS classifica gaming disorder no CID-11 desde 2019. Esses dados coexistem sem se contradizer porque a relação entre cultura otaku e saúde mental é genuinamente dupla: pode ser refúgio terapêutico (comunidade, identificação, sublimação criativa) ou catalisador de isolamento quando substitui completamente relações sociais e atividades no mundo físico.
+          </p>
+          <p>
+            Sinais de alerta que merecem atenção profissional: privação de sono recorrente, abandono de amigos/hobbies não relacionados, recusa de saída de casa por mais de duas semanas. <strong>O CVV (188, gratuito, 24h) e os CAPS do SUS são os recursos mais acessíveis no Brasil.</strong> Procure ajuda antes de virar quadro grave — não porque gostar de anime é o problema, mas porque você merece apoio quando está difícil, independente de qual seja a causa.
+          </p>
+        </EditorialTake>
+
+        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
+          <h3 className="text-xl font-bold mb-2">Como o anime impactou sua vida? 💜</h3>
+          <p className="text-muted-foreground">Conta nos comentários — com respeito e empatia. Cada história importa. 👇</p>
         </div>
       </div>
-      <section className="my-10">
-        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
-          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
-            <span className="text-primary">●</span> Análise do Marcos
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-3">Estudos publicados em revistas como Frontiers in Psychology e Journal of Mental Health Counseling exploram o uso terapêutico do anime e mangá — em particular obras como 'A Silent Voice' (Koe no Katachi), 'Welcome to the NHK' e 'March Comes In Like a Lion', frequentemente citadas por terapeutas em programas de saúde mental para adolescentes e jovens adultos.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Pesquisa do American Academy of Pediatrics (AAP) sobre tempo de tela recomenda limites equilibrados; OMS classifica 'transtorno por uso de jogos' (gaming disorder) no CID-11 desde 2019. No Brasil, o CVV (Centro de Valorização da Vida — 188) oferece atendimento gratuito 24h e a CAPS atende casos com necessidade clínica.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: a relação cultura otaku × saúde mental é dupla — pode ser refúgio terapêutico (comunidade, identificação, sublimação) ou catalisador de isolamento quando substitui completamente relações sociais e atividades físicas. Sinais de alerta: privação de sono recorrente, abandono de hobbies/amigos não relacionados, recusa de saída de casa por mais de 2 semanas. Procure ajuda profissional (CVV 188 ou CAPS) antes de virar quadro grave.</p>
-        </div>
 
-        <div className="bg-muted/30 border border-border rounded-2xl p-6">
-          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
-          <ul className="space-y-2 text-sm">
-            <li><a href="https://www.cvv.org.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">CVV — Centro de Valorização da Vida ↗</a></li>
-            <li><a href="https://www.who.int/news-room/questions-and-answers/item/addictive-behaviours-gaming-disorder" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">OMS — CID-11 Gaming Disorder ↗</a></li>
-            <li><a href="https://www.gov.br/saude/pt-br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Ministério da Saúde — CAPS ↗</a></li>
-            <li><a href="https://www.frontiersin.org/journals/psychology" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Frontiers in Psychology — Anime studies ↗</a></li>
-            <li><a href="https://www.aap.org/en/patient-care/media-and-children/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">American Academy of Pediatrics — Media Use ↗</a></li>
-          </ul>
-          <p className="text-xs text-muted-foreground mt-4">
-            Última verificação dos links: maio de 2026.
-          </p>
-        </div>
-      </section>
-
+      <ArticleSources
+        sources={[
+          {
+            title: "CVV — Centro de Valorização da Vida (188)",
+            url: "https://www.cvv.org.br/",
+            publisher: "CVV",
+            accessedAt: "Março 2026"
+          },
+          {
+            title: "OMS — CID-11: Gaming Disorder",
+            url: "https://www.who.int/news-room/questions-and-answers/item/addictive-behaviours-gaming-disorder",
+            publisher: "Organização Mundial da Saúde",
+            accessedAt: "Março 2026"
+          },
+          {
+            title: "Ministério da Saúde — CAPS (Centros de Atenção Psicossocial)",
+            url: "https://www.gov.br/saude/pt-br",
+            publisher: "Ministério da Saúde do Brasil",
+            accessedAt: "Março 2026"
+          },
+          {
+            title: "Frontiers in Psychology — pesquisas sobre anime e saúde mental",
+            url: "https://www.frontiersin.org/journals/psychology",
+            publisher: "Frontiers in Psychology",
+            accessedAt: "Março 2026"
+          },
+          {
+            title: "American Academy of Pediatrics — Media Use e saúde de adolescentes",
+            url: "https://www.aap.org/en/patient-care/media-and-children/",
+            publisher: "American Academy of Pediatrics",
+            accessedAt: "Março 2026"
+          },
+          {
+            title: "National Counseling Center Japan — dados sobre hikikomori",
+            url: "https://www.hikikomori.ne.jp/",
+            publisher: "National Counseling Center (Japão)",
+            accessedAt: "Março 2026"
+          },
+        ]}
+      />
 
       <RelatedPosts currentSlug="saude-mental-cultura-otaku-2026" />
       <CommentSection postId="saude-mental-cultura-otaku-2026" postTitle="Saúde Mental e Cultura Otaku: Quando o Anime Ajuda e Quando Isola" />
