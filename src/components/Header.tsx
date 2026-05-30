@@ -131,8 +131,8 @@ const Header = () => {
               <Search className="h-5 w-5" />
             </Button>
 
-            {/* PWA-only: Downloads / Offline shortcut (mobile header) */}
-            {isStandalone && (
+            {/* PWA-only: Downloads / Offline shortcut (mobile header) — apenas usuários logados */}
+            {isStandalone && user && (
               <Button
                 variant="ghost"
                 size="icon"
