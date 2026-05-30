@@ -220,9 +220,9 @@ const GptTrabalhadorDigital2026 = () => {
           { title: "ChatGPT — pricing and plans", url: "https://openai.com/chatgpt/pricing/", publisher: "OpenAI", accessedAt: "Maio 2026" },
         ]}
       />
+
+
       <RelatedPosts currentSlug="gpt-5-ia-trabalhador-digital-autonomo-2026" />
-
-
       <CommentSection postId="gpt-5-ia-trabalhador-digital-autonomo-2026" postTitle="GPT-5.4 Superou Humanos em Produtividade: A IA que Executa Trabalho Real no Computador" />
     </article>
   );

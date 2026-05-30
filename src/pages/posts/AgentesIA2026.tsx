@@ -39,17 +39,17 @@ const AgentesIA2026 = () => {
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high" loading="eager"
           decoding="async"
-          src={heroImg} alt="Agentes de IA 2026" className="w-full h-full object-cover" />
+          src={heroImg} alt="Agentes de IA 2026 — como funcionam, benchmarks e uso seguro no Brasil" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          Se em 2024 a grande revolução foi o chatbot, em 2026 estamos vivendo a era dos <strong>Agentes de IA</strong>: sistemas que não apenas respondem, mas <strong>agem de forma autônoma</strong> para completar tarefas complexas.
+          Se em 2024 a grande revolução foi o chatbot, em 2026 estamos vivendo a era dos <strong>agentes de IA</strong>: sistemas que não apenas respondem, mas <strong>agem de forma autônoma</strong> para completar tarefas complexas — pesquisar, decidir, executar e revisar sem intervenção humana a cada passo.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Bot className="h-7 w-7 text-ia" />
-          Chatbot vs. Agente: A Diferença Fundamental
+          Chatbot vs. Agente de IA: A Diferença Fundamental
         </h2>
         <div className="grid md:grid-cols-2 gap-4 my-6">
           <div className="p-4 bg-card rounded-xl border border-border">
@@ -57,7 +57,7 @@ const AgentesIA2026 = () => {
             <p className="text-sm text-muted-foreground mb-0">Responde "Como reservar um hotel?" com informações e links.</p>
           </div>
           <div className="p-4 bg-card rounded-xl border border-ia/50">
-            <h4 className="font-bold mb-2">🤖 Agente</h4>
+            <h4 className="font-bold mb-2">🤖 Agente de IA</h4>
             <p className="text-sm text-muted-foreground mb-0">Recebe "Reserve o melhor hotel em SP, orçamento R$ 800", pesquisa, compara, reserva, envia comprovante e adiciona no calendário — tudo sozinho.</p>
           </div>
         </div>
@@ -66,7 +66,7 @@ const AgentesIA2026 = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Cpu className="h-7 w-7 text-ia" />
-          Como os Agentes Funcionam
+          Como os Agentes de IA Funcionam
         </h2>
         <div className="my-6 p-6 bg-secondary/50 rounded-xl border border-border">
           <div className="flex flex-wrap gap-2 justify-center">
@@ -83,7 +83,7 @@ const AgentesIA2026 = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Briefcase className="h-7 w-7 text-ia" />
-          Exemplos Reais em Uso
+          Exemplos Reais de Agentes de IA em Uso
         </h2>
         <ul className="space-y-2 my-6">
           <li><strong>Vendas:</strong> identificam leads, personalizam e-mails, agendam reuniões e atualizam o CRM.</li>
@@ -94,8 +94,7 @@ const AgentesIA2026 = () => {
 
         <AdRectangle className="my-8" />
 
-        
-<h2 className="text-2xl font-bold mt-10 mb-6">Principais Agentes Disponíveis</h2>
+        <h2 className="text-2xl font-bold mt-10 mb-6">Principais Agentes de IA Disponíveis em 2026</h2>
         <ul className="space-y-2 my-6">
           <li><strong>OpenAI Operator:</strong> navega na web e executa tarefas como um humano.</li>
           <li><strong>Claude Computer Use:</strong> controla computador completo via linguagem natural.</li>
@@ -106,7 +105,7 @@ const AgentesIA2026 = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <AlertTriangle className="h-7 w-7 text-destructive" />
-          Riscos e Limitações
+          Riscos e Limitações dos Agentes de IA
         </h2>
         <p>
           Agentes de IA ainda erram — e quando erram de forma autônoma, o erro pode se propagar. Riscos: ações irreversíveis, viés nos critérios, vulnerabilidade a prompt injection e questões de privacidade. <strong>Regra atual:</strong> agentes são mais seguros em ambientes com ações reversíveis e supervisão humana.
@@ -139,7 +138,7 @@ const AgentesIA2026 = () => {
           aplicações sérias em 2026-2027. Para desenvolvedores brasileiros, o tutorial oficial do MCP é o melhor ponto de partida.
         </p>
 
-        <h2 className="text-2xl font-bold mt-10 mb-6">Como Usar Agentes com Segurança no Brasil</h2>
+        <h2 className="text-2xl font-bold mt-10 mb-6">Como Usar Agentes de IA com Segurança no Brasil</h2>
         <p>
           Três regras práticas para evitar dor de cabeça regulatória ou financeira: <strong>(1) sandbox primeiro</strong> — todo agente que
           executa código ou navega deve rodar em ambiente isolado (Docker, browser headless, conta-teste); <strong>(2) limite financeiro
@@ -155,14 +154,14 @@ const AgentesIA2026 = () => {
           está infringindo.
         </p>
 
-        <h2 className="text-2xl font-bold mt-10 mb-6">FAQ — Perguntas Frequentes Sobre Agentes</h2>
+        <h2 className="text-2xl font-bold mt-10 mb-6">FAQ — Perguntas Frequentes Sobre Agentes de IA</h2>
         <div className="space-y-3 my-6">
           <div className="p-4 bg-card rounded-xl border border-border">
-            <h4 className="font-bold mb-1">Agente é a mesma coisa que automação RPA?</h4>
+            <h4 className="font-bold mb-1">Agente de IA é a mesma coisa que automação RPA?</h4>
             <p className="text-sm text-muted-foreground mb-0">Não. RPA (UiPath, Automation Anywhere) segue scripts fixos. Agente decide o próximo passo com base no contexto — pode adaptar-se a mudanças na interface, mas também pode errar de formas imprevisíveis.</p>
           </div>
           <div className="p-4 bg-card rounded-xl border border-border">
-            <h4 className="font-bold mb-1">Quanto custa rodar um agente?</h4>
+            <h4 className="font-bold mb-1">Quanto custa rodar um agente de IA?</h4>
             <p className="text-sm text-muted-foreground mb-0">Varia muito. Um agente simples com Claude/GPT-4o gasta US$ 0,01 a US$ 0,50 por execução. Agentes com loops longos podem facilmente passar de US$ 5 por tarefa — sempre coloque limite de tokens.</p>
           </div>
           <div className="p-4 bg-card rounded-xl border border-border">
@@ -177,11 +176,11 @@ const AgentesIA2026 = () => {
         </div>
       </div>
 
-      <EditorialTake category="ia">
+      <EditorialTake category="ia" title="Análise do Marcos: agente assistido é o único caminho sério em 2026">
         <p>
           A pressa em chamar tudo de "agente autônomo" está atrasando o uso sério dessa tecnologia. O que funciona hoje no Brasil é
           o <strong>agente assistido</strong>: humano define a tarefa, agente executa em sandbox, humano aprova ações irreversíveis.
-          Esse desenho elimina 90% dos riscos de prompt injection e atende ao art. 20 da LGPD. Se sua empresa quer adotar agentes em 2026,
+          Esse desenho elimina 90% dos riscos de prompt injection e atende ao art. 20 da LGPD. Se sua empresa quer adotar agentes de IA em 2026,
           o caminho não é "demitir e substituir" — é mapear processos repetitivos com ações reversíveis (triagem de email, qualificação
           de lead, atualização de planilha) e começar por aí. Quem ignorar a parte regulatória vai descobrir o custo de uma multa
           ANPD da forma cara.

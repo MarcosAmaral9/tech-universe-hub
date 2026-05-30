@@ -39,7 +39,7 @@ const IASaude2026 = () => {
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high" loading="eager"
           decoding="async"
-          src={heroImg} alt="IA para Saúde 2026" className="w-full h-full object-cover" />
+          src={heroImg} alt="IA para saúde em 2026 — diagnósticos, monitoramento por wearables e o futuro da medicina com inteligência artificial" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
@@ -188,7 +188,7 @@ const IASaude2026 = () => {
         </div>
       </div>
 
-      <EditorialTake category="ia">
+      <EditorialTake category="ia" title="Análise do Marcos: IA médica salva vidas em triagem, mas precisa de médico para decidir">
         <p>
           A IA na saúde já entrega resultado real <strong>onde ela é assistente do médico</strong> — radiologia, triagem,
           descoberta de fármacos. Onde ela tenta substituir o profissional ou virar "terapeuta de bolso", ainda é experimental

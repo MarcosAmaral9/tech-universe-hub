@@ -9,8 +9,8 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/regulamentacao-ia-2026.webp";
-
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
+
 const RegulamentacaoIA2026 = () => {
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const RegulamentacaoIA2026 = () => {
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high" loading="eager"
           decoding="async"
-          src={heroImg} alt="Regulamentação de IA 2026" className="w-full h-full object-cover" />
+          src={heroImg} alt="Regulamentação de IA no Brasil e no mundo em 2026 — EU AI Act, PL 2338, ANPD e o que muda para empresas brasileiras" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
@@ -126,30 +126,24 @@ const RegulamentacaoIA2026 = () => {
         </div>
       </div>
 
-      <section className="my-10">
-        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
-          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
-            <span className="text-primary">●</span> Análise do Marcos
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-3">O cenário regulatório global de IA em 2026 tem três pilares definidos: o EU AI Act (Regulamento UE 2024/1689, em vigor desde agosto/2024 e com fases até agosto/2026), o PL 2338/2023 brasileiro aprovado pelo Senado em dezembro/2024 e em tramitação na Câmara, e o Executive Order 14110 dos EUA (revogado por Trump em janeiro/2025 e substituído por uma política mais flexível). A divergência entre blocos cria desafio para multinacionais.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">No Brasil, o PL 2338 cria categorias de risco semelhantes ao AI Act europeu, exige avaliação de impacto algorítmico (AIIA) para sistemas de alto risco e dá à ANPD (Autoridade Nacional de Proteção de Dados) papel central na fiscalização. Combinado com a LGPD (Lei 13.709/2018, art. 20 — direito à revisão de decisões automatizadas), o arcabouço brasileiro já permite ao cidadão exigir explicação sobre uma decisão de crédito ou triagem de currículo por IA.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: o desafio para 2026 não é se haverá regulação — é como adaptar empresas que ainda nem mapearam quais sistemas usam IA. A recomendação é começar pelo inventário (todas as ferramentas SaaS com 'IA' no nome) e, em paralelo, definir um responsável interno de compliance algorítmico.</p>
-        </div>
 
-        <div className="bg-muted/30 border border-border rounded-2xl p-6">
-          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
-          <ul className="space-y-2 text-sm">
-            <li><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">EU AI Act — Texto Oficial (Regulamento 2024/1689) ↗</a></li>
-            <li><a href="https://www25.senado.leg.br/web/atividade/materias/-/materia/157233" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Senado Federal — PL 2338/2023 ↗</a></li>
-            <li><a href="https://www.gov.br/anpd/pt-br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">ANPD — Autoridade Nacional de Proteção de Dados ↗</a></li>
-            <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Planalto — LGPD (Lei 13.709/2018) ↗</a></li>
-            <li><a href="https://www.whitehouse.gov/ai/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">White House — AI Executive Orders Tracker ↗</a></li>
-          </ul>
-          <p className="text-xs text-muted-foreground mt-4">
-            Última verificação dos links: maio de 2026.
-          </p>
-        </div>
-      </section>
+      <EditorialTake category="ia" title="Análise do Marcos: o desafio de 2026 não é a regulação — é mapear quais sistemas já usam IA">
+        <p>
+          O cenário regulatório global tem três pilares em 2026: o <strong>EU AI Act</strong> (Reg. UE 2024/1689, em vigor desde agosto/2024 com fases até agosto/2026), o <strong>PL 2338/2023</strong> brasileiro aprovado pelo Senado em dezembro/2024 e o espaço regulatório mais flexível deixado pelos EUA após a revogação do Executive Order 14110 por Trump em janeiro/2025. A divergência entre blocos cria desafio sério para multinacionais.
+        </p>
+        <p>
+          No Brasil, o PL 2338 cria categorias de risco semelhantes ao AI Act, exige avaliação de impacto algorítmico (AIIA) para sistemas de alto risco e dá à ANPD papel central na fiscalização. Combinado com o art. 20 da LGPD (direito à revisão de decisões automatizadas), o arcabouço já permite ao cidadão exigir explicação sobre decisões de crédito ou triagem por IA. A recomendação prática: começar pelo <strong>inventário de IA</strong> (todas as ferramentas SaaS com "IA" no nome que processam dados de clientes) e nomear um responsável de compliance algorítmico antes que a fiscalização comece.
+        </p>
+      </EditorialTake>
+
+      <ArticleSources sources={[
+        { title: "EU AI Act — Texto Oficial (Regulamento UE 2024/1689)", url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj", publisher: "EUR-Lex", accessedAt: "Maio 2026" },
+        { title: "Senado Federal — PL 2338/2023 (Marco Legal da IA)", url: "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233", publisher: "Senado Federal", accessedAt: "Maio 2026" },
+        { title: "ANPD — Autoridade Nacional de Proteção de Dados", url: "https://www.gov.br/anpd/pt-br", publisher: "ANPD", accessedAt: "Maio 2026" },
+        { title: "Planalto — LGPD Art. 20 (Lei 13.709/2018)", url: "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm", publisher: "Planalto", accessedAt: "Maio 2026" },
+        { title: "White House — AI Executive Orders Tracker", url: "https://www.whitehouse.gov/ai/", publisher: "White House", accessedAt: "Maio 2026" },
+      ]} />
+
       <RelatedPosts currentSlug="regulamentacao-ia-brasil-mundo-2026" />
       <CommentSection postId="regulamentacao-ia-brasil-mundo-2026" postTitle="Regulamentação de IA no Brasil e no Mundo em 2026: O Que Muda" />
     </article>

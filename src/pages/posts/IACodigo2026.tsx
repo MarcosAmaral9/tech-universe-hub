@@ -11,8 +11,8 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-codigo-programadores-2026.webp";
-
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
+
 const IACodigo2026 = () => {
   useEffect(() => {
     trackArticleRead("ia-codigo-programadores-2026", "IA e Programação em 2026: GitHub Copilot, Cursor e o Futuro do Dev", "ia");
@@ -36,7 +36,7 @@ const IACodigo2026 = () => {
     <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
       <img fetchpriority="high" loading="eager"
           decoding="async"
-          src={heroImg} alt="IA e programação 2026 — Copilot, Cursor, Devin" className="w-full h-full object-cover" />
+          src={heroImg} alt="IA e programação em 2026 — GitHub Copilot, Cursor e o futuro do desenvolvedor" className="w-full h-full object-cover" />
     </div>
     <div className="prose prose-lg dark:prose-invert max-w-none">
       <p className="lead text-xl text-muted-foreground">
@@ -114,7 +114,7 @@ const IACodigo2026 = () => {
         <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
       </div>
     </div>
-<EditorialTake category="ia">
+<EditorialTake category="ia" title="Análise do Marcos: IA de código é para refatorar legado, não só escrever rápido">
           <p>Depois de testar Copilot, Cursor e Claude Code em produção, minha leitura é que o ganho real não está em escrever código mais rápido — está em revisar, refatorar e documentar o legado que ninguém queria tocar. Para o desenvolvedor brasileiro, isso significa duas coisas: empresas que ainda tratam IA como custo vão ficar para trás, e devs juniores precisam dobrar a aposta em fundamentos para não virarem apenas operadores de prompt.</p>
         </EditorialTake>
 
@@ -126,8 +126,8 @@ const IACodigo2026 = () => {
     { title: 'Google DORA — State of DevOps', url: 'https://dora.dev/research/', publisher: 'DORA', accessedAt: "Maio 2026" }
   ]} />
 
-        <RelatedPosts currentSlug="ia-codigo-programadores-2026" />
-    <CommentSection postId="ia-codigo-programadores-2026" postTitle="IA e Programação em 2026" />
+      <RelatedPosts currentSlug="ia-codigo-programadores-2026" />
+      <CommentSection postId="ia-codigo-programadores-2026" postTitle="IA e Programação em 2026" />
   </article>
 );
 };

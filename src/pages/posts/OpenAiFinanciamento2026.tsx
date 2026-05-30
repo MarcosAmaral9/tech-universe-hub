@@ -204,7 +204,6 @@ const OpenAiFinanciamento2026 = () => {
           { title: "Financial Times — Artificial Intelligence", url: "https://www.ft.com/artificial-intelligence", publisher: "Financial Times", accessedAt: "Maio 2026" },
         ]}
       />
-
       <RelatedPosts currentSlug="openai-bilhoes-financiamento-record-2026" />
       <CommentSection postId="openai-bilhoes-financiamento-record-2026" postTitle="OpenAI Capta US$ 40 Bilhões e Chega a US$ 300 Bi de Valuation" />
     </article>

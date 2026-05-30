@@ -11,8 +11,8 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-criatividade-2026.webp";
-
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
+
 const IACriatividade2026 = () => {
 
   useEffect(() => {
@@ -39,7 +39,7 @@ const IACriatividade2026 = () => {
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high" loading="eager"
           decoding="async"
-          src={heroImg} alt="IA e Criatividade 2026 - Arte, Música e Vídeo gerados por inteligência artificial" className="w-full h-full object-cover" />
+          src={heroImg} alt="IA e criatividade em 2026 — arte, música e vídeo gerados por inteligência artificial no Brasil" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
@@ -118,7 +118,7 @@ const IACriatividade2026 = () => {
         </div>
       </div>
 
-        <EditorialTake category="ia">
+        <EditorialTake category="ia" title="Análise do Marcos: quem vai pagar pelo treinamento com obras brasileiras sem licença?">
           <p>A discussão real sobre IA generativa criativa no Brasil não é „substitui o artista?” — é quem vai pagar pelo treinamento dos modelos com obras de artistas brasileiros sem licença. Enquanto os EUA debatem fair use e a UE caminha para opt-out via AI Act, nós ainda não temos jurisprudência clara. Recomendo a todo criador de conteúdo registrar obras (Biblioteca Nacional ou cartório) antes de publicar e marcar imagens com C2PA quando possível.</p>
         </EditorialTake>
 
@@ -130,7 +130,7 @@ const IACriatividade2026 = () => {
     { title: 'EU AI Act — Texto oficial', url: 'https://artificialintelligenceact.eu/', publisher: 'European Commission', accessedAt: "Maio 2026" }
   ]} />
 
-        <RelatedPosts currentSlug="ia-criatividade-arte-musica-2026" />
+      <RelatedPosts currentSlug="ia-criatividade-arte-musica-2026" />
       <CommentSection postId="ia-criatividade-arte-musica-2026" postTitle="IA e Criatividade 2026: Como a IA Está Revolucionando Arte e Música" />
     </article>
   );

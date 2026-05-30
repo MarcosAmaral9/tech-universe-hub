@@ -38,7 +38,7 @@ const ClaudeOpusVsSonnet2026 = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high" src={heroImg} alt="Claude 4 Opus vs Claude 4 Sonnet comparação 2026" loading="eager" decoding="async" className="w-full h-full object-cover" />
+        <img fetchpriority="high" src={heroImg} alt="Claude 4 Opus vs Claude 4 Sonnet 2026 — comparativo de benchmarks, preços e quando usar cada modelo" loading="eager" decoding="async" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">

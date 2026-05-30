@@ -177,31 +177,23 @@ const IATrabalho2026Impacto = () => {
           <p className="text-muted-foreground">Conta nos comentários qual ferramenta e quanto tempo economiza! 👇</p>
         </div>
       </div>
-      <section className="my-10">
-        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
-          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
-            <span className="text-primary">●</span> Análise do Marcos
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-3">O 'Future of Jobs Report 2025' do World Economic Forum (jan/2025) projeta criação líquida de 78 milhões de empregos globalmente até 2030, com 170 milhões criados e 92 milhões deslocados. As funções mais impactadas por automação parcial: atendimento ao cliente, contabilidade básica e desenvolvimento de software júnior.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Estudos da Goldman Sachs (2023) e do FMI (2024) estimam que 25-40% das tarefas em economias desenvolvidas podem ser automatizadas por IA generativa. No Brasil, IPEA e CNI publicaram em 2024 análises mostrando exposição maior em serviços formais urbanos do que em ocupações manuais.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: o profissional brasileiro deve focar em três competências testadas como complementares à IA — pensamento crítico para validar outputs, gestão de pessoas/projetos (não automatizável no curto prazo) e domínio de pelo menos uma ferramenta de IA aplicada à sua área. Quem ignorar o tema nos próximos 24 meses corre risco real de defasagem salarial.</p>
-        </div>
 
-        <div className="bg-muted/30 border border-border rounded-2xl p-6">
-          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
-          <ul className="space-y-2 text-sm">
-            <li><a href="https://www.weforum.org/reports/the-future-of-jobs-report-2025" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">WEF — Future of Jobs Report 2025 ↗</a></li>
-            <li><a href="https://www.goldmansachs.com/insights/pages/generative-ai-could-raise-global-gdp-by-7-percent.html" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Goldman Sachs — Generative AI economic impact ↗</a></li>
-            <li><a href="https://www.imf.org/en/Publications/Staff-Discussion-Notes" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">FMI — Gen-AI and the Future of Work ↗</a></li>
-            <li><a href="https://www.ipea.gov.br/portal/categorias/45-todas-as-publicacoes/8-boletim-de-mercado-de-trabalho" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">IPEA — Boletim Mercado de Trabalho ↗</a></li>
-            <li><a href="https://hai.stanford.edu/research/ai-index-2024" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Stanford HAI — AI Index 2024 ↗</a></li>
-          </ul>
-          <p className="text-xs text-muted-foreground mt-4">
-            Última verificação dos links: maio de 2026.
-          </p>
-        </div>
-      </section>
+      <EditorialTake category="ia" title="Análise do Marcos: três competências que nenhuma IA substitui no curto prazo">
+        <p>
+          O Future of Jobs Report 2025 do WEF projeta criação líquida de 78 milhões de empregos globalmente até 2030 — 170 milhões criados, 92 milhões deslocados. As funções mais impactadas: atendimento ao cliente, contabilidade básica e desenvolvimento de software júnior. No Brasil, IPEA e CNI publicaram em 2024 análises mostrando exposição maior em serviços formais urbanos do que em ocupações manuais.
+        </p>
+        <p>
+          O profissional brasileiro deve focar em três competências complementares à IA: <strong>pensamento crítico</strong> para validar outputs (a IA ainda erra de formas imprevisíveis), <strong>gestão de pessoas e projetos</strong> (não automatizável no curto prazo) e <strong>domínio de pelo menos uma ferramenta de IA</strong> aplicada à sua área. Quem ignorar o tema nos próximos 24 meses corre risco real de defasagem salarial — a diferença entre quem usa IA e quem não usa já é de 25–40% em produtividade em tarefas de escrita e análise.
+        </p>
+      </EditorialTake>
 
+      <ArticleSources sources={[
+        { title: "WEF — Future of Jobs Report 2025", url: "https://www.weforum.org/reports/the-future-of-jobs-report-2025", publisher: "World Economic Forum", accessedAt: "Maio 2026" },
+        { title: "Goldman Sachs — Generative AI could raise global GDP by 7%", url: "https://www.goldmansachs.com/insights/pages/generative-ai-could-raise-global-gdp-by-7-percent.html", publisher: "Goldman Sachs", accessedAt: "Maio 2026" },
+        { title: "FMI — Gen-AI and the Future of Work", url: "https://www.imf.org/en/Publications/Staff-Discussion-Notes", publisher: "FMI", accessedAt: "Maio 2026" },
+        { title: "IPEA — Boletim Mercado de Trabalho 2024", url: "https://www.ipea.gov.br/portal/categorias/45-todas-as-publicacoes/8-boletim-de-mercado-de-trabalho", publisher: "IPEA", accessedAt: "Maio 2026" },
+        { title: "Stanford HAI — AI Index 2024", url: "https://hai.stanford.edu/research/ai-index-2024", publisher: "Stanford HAI", accessedAt: "Maio 2026" },
+      ]} />
 
       <RelatedPosts currentSlug="ia-mercado-trabalho-brasil-2026" />
       <CommentSection postId="ia-mercado-trabalho-brasil-2026" postTitle="IA no Mercado de Trabalho Brasileiro em 2026: Quais Profissões Ganham e Quais Estão em Risco" />

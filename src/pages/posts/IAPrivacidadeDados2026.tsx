@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
@@ -37,7 +36,7 @@ const IAPrivacidadeDados2026 = () => {
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high" loading="eager"
           decoding="async"
-          src={heroImg} alt="IA e Privacidade de Dados 2026 - Proteção de dados na era da inteligência artificial" className="w-full h-full object-cover" />
+          src={heroImg} alt="IA e privacidade de dados em 2026 — como proteger seus dados na era da inteligência artificial" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
@@ -120,31 +119,24 @@ const IAPrivacidadeDados2026 = () => {
           <p className="text-muted-foreground">Compartilhe suas práticas de segurança nos comentários! 🔒</p>
         </div>
       </div>
-      <section className="my-10">
-        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
-          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
-            <span className="text-primary">●</span> Análise do Marcos
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-3">A Lei Geral de Proteção de Dados (LGPD, Lei 13.709/2018) regulamenta no Brasil o uso de dados pessoais, incluindo treinamento de IA. A ANPD publicou em 2024 a Análise Preliminar sobre IA Generativa, alertando para riscos de vazamento de dados pessoais e dever de transparência.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Modelos como ChatGPT, Claude e Gemini permitem opt-out de uso de conversas para treinamento (OpenAI nas configurações 'Data Controls', Anthropic não usa por padrão, Google permite ajuste no Activity). O EU AI Act, em vigor desde agosto/2024, criou obrigações graduais para 'modelos de propósito geral' implementadas até 2027.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: para usuários brasileiros, três regras práticas reduzem 90% do risco — não inserir CPF, dados bancários ou saúde em prompts; usar versões pagas/Enterprise que garantem em contrato o não-treinamento; revisar trimestralmente as configurações de privacidade. Empresas precisam ainda atualizar política de privacidade citando IA e nomear DPO conforme art. 41 da LGPD.</p>
-        </div>
+      </div>
 
-        <div className="bg-muted/30 border border-border rounded-2xl p-6">
-          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
-          <ul className="space-y-2 text-sm">
-            <li><a href="https://www.gov.br/anpd/pt-br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">ANPD — Análise Preliminar sobre IA Generativa ↗</a></li>
-            <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Planalto — Lei 13.709/2018 (LGPD) ↗</a></li>
-            <li><a href="https://artificialintelligenceact.eu/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">EU AI Act — Texto oficial ↗</a></li>
-            <li><a href="https://help.openai.com/en/articles/7730893-data-controls-faq" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">OpenAI — Privacy & Data Controls ↗</a></li>
-            <li><a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Anthropic — Privacy Policy ↗</a></li>
-          </ul>
-          <p className="text-xs text-muted-foreground mt-4">
-            Última verificação dos links: maio de 2026.
-          </p>
-        </div>
-      </section>
+      <EditorialTake category="ia" title="Análise do Marcos: três regras práticas que eliminam 90% do risco de privacidade com IA">
+        <p>
+          A LGPD (Lei 13.709/2018) regulamenta o uso de dados pessoais no Brasil, incluindo treinamento de IA. A ANPD publicou em 2024 a Análise Preliminar sobre IA Generativa, alertando para riscos de vazamento e dever de transparência. O EU AI Act (em vigor desde agosto/2024) criou obrigações graduais para modelos de propósito geral implementadas até 2027.
+        </p>
+        <p>
+          Para usuários brasileiros, três regras práticas eliminam 90% do risco: <strong>(1)</strong> não inserir CPF, dados bancários ou saúde em prompts; <strong>(2)</strong> usar versões pagas ou Enterprise que garantem em contrato o não-treinamento com suas conversas; <strong>(3)</strong> revisar trimestralmente as configurações de privacidade de cada plataforma — elas mudam. Empresas precisam ainda atualizar política de privacidade citando IA e nomear DPO conforme art. 41 da LGPD.
+        </p>
+      </EditorialTake>
 
+      <ArticleSources sources={[
+        { title: "ANPD — Análise Preliminar sobre IA Generativa", url: "https://www.gov.br/anpd/pt-br", publisher: "ANPD", accessedAt: "Maio 2026" },
+        { title: "Planalto — Lei 13.709/2018 (LGPD)", url: "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm", publisher: "Planalto", accessedAt: "Maio 2026" },
+        { title: "EU AI Act — Texto oficial (Reg. UE 2024/1689)", url: "https://artificialintelligenceact.eu/", publisher: "EU AI Act", accessedAt: "Maio 2026" },
+        { title: "OpenAI — Privacy & Data Controls FAQ", url: "https://help.openai.com/en/articles/7730893-data-controls-faq", publisher: "OpenAI", accessedAt: "Maio 2026" },
+        { title: "Anthropic — Privacy Policy", url: "https://www.anthropic.com/legal/privacy", publisher: "Anthropic", accessedAt: "Maio 2026" },
+      ]} />
 
       <RelatedPosts currentSlug="ia-privacidade-dados-2026" />
       <CommentSection postId="ia-privacidade-dados-2026" postTitle="IA e Privacidade de Dados 2026: Seus Dados Estão Seguros?" />

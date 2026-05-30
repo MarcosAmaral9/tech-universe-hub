@@ -38,7 +38,7 @@ const IABrasilAdocao2026 = () => {
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high" loading="eager"
           decoding="async"
-          src={heroImg} alt="IA no Brasil 2026 — investimentos e adoção" className="w-full h-full object-cover" />
+          src={heroImg} alt="IA no Brasil em 2026 — investimentos, adoção corporativa e desafios de maturidade tecnológica" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">

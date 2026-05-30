@@ -35,7 +35,7 @@ const Gemini25ProVsGPT4o = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high" src={heroImg} alt="Gemini 2.5 Pro vs GPT-4o — comparação de modelos de IA 2026" loading="eager" decoding="async" className="w-full h-full object-cover" />
+        <img fetchpriority="high" src={heroImg} alt="Gemini 2.5 Pro vs GPT-4o 2026 — comparativo de benchmarks, preços e quando usar cada modelo de IA" loading="eager" decoding="async" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">

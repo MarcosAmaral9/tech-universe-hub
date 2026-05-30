@@ -50,7 +50,7 @@ const IATransformandoDublagem = () => {
           loading="eager"
           decoding="async"
           src={aiAnimeDubbingImg}
-          alt="IA transformando dublagem de animes - Voice Cloning e tradução"
+          alt="IA transformando a dublagem de animes — voice cloning, localização e o futuro do mercado brasileiro"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
@@ -265,31 +265,23 @@ const IATransformandoDublagem = () => {
           </p>
         </div>
       </div>
-      <section className="my-10">
-        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
-          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
-            <span className="text-primary">●</span> Análise do Marcos
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-3">Tecnologias de voice cloning evoluíram rapidamente: ElevenLabs, Resemble AI e Microsoft VALL-E entregam clonagem com 30 segundos de áudio de referência. Crunchyroll e Netflix anunciaram em 2024 estudos com IA para legendagem, mas a dublagem profissional permanece humana.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">No Brasil, o Sindicato dos Artistas e Técnicos em Espetáculos de Diversões (Sated/SP) publicou em 2024 manifesto contra uso de voice cloning sem consentimento. A SAG-AFTRA nos EUA fechou em novembro/2023 acordo com estúdios incluindo proteções específicas contra réplicas digitais de voz sem autorização.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: para o público otaku brasileiro, a dublagem clássica em PT-BR (Wendel Bezerra como Goku, Hermes Baroli como Seiya, Marco Antônio Costa como Luffy) tem valor cultural que IA não substitui — pela performance, contexto e relação com fãs. O cenário mais provável até 2027 é uso de IA para idiomas com pouca oferta de dubladores e dublagem assistida em ADR, não substituição de elencos principais.</p>
-        </div>
 
-        <div className="bg-muted/30 border border-border rounded-2xl p-6">
-          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
-          <ul className="space-y-2 text-sm">
-            <li><a href="https://elevenlabs.io/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">ElevenLabs — Voice AI Platform ↗</a></li>
-            <li><a href="https://www.sagaftra.org/contracts-industry-resources/contracts/tv-theatrical-2023" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">SAG-AFTRA — 2023 Agreement Summary ↗</a></li>
-            <li><a href="https://www.satedsp.org.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Sated SP — Manifesto contra IA ↗</a></li>
-            <li><a href="https://www.crunchyroll.com/news" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Crunchyroll — News ↗</a></li>
-            <li><a href="https://www.microsoft.com/en-us/research/project/vall-e-x/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Microsoft Research — VALL-E ↗</a></li>
-          </ul>
-          <p className="text-xs text-muted-foreground mt-4">
-            Última verificação dos links: maio de 2026.
-          </p>
-        </div>
-      </section>
+      <EditorialTake category="ia" title="Análise do Marcos: dublagem clássica em PT-BR tem valor cultural que IA não substitui">
+        <p>
+          Tecnologias de voice cloning evoluíram rapidamente: ElevenLabs, Resemble AI e Microsoft VALL-E entregam clonagem com apenas 30 segundos de áudio de referência. Crunchyroll e Netflix anunciaram em 2024 estudos com IA para legendagem automática, mas a dublagem profissional permanece humana nos títulos principais.
+        </p>
+        <p>
+          No Brasil, o Sated/SP publicou em 2024 manifesto contra uso de voice cloning sem consentimento. A SAG-AFTRA nos EUA fechou em novembro/2023 acordo com estúdios incluindo proteções específicas contra réplicas digitais de voz sem autorização. A dublagem clássica em PT-BR (Wendel Bezerra como Goku, Hermes Baroli como Seiya, Marco Antônio Costa como Luffy) tem valor cultural que IA não substitui — pela performance, contexto e relação de décadas com os fãs. O cenário mais provável até 2027: IA para idiomas com pouca oferta de dubladores e ADR assistido, não substituição de elencos consolidados.
+        </p>
+      </EditorialTake>
 
+      <ArticleSources sources={[
+        { title: "ElevenLabs — Voice AI Platform", url: "https://elevenlabs.io/", publisher: "ElevenLabs", accessedAt: "Maio 2026" },
+        { title: "SAG-AFTRA — 2023 TV/Theatrical Agreement Summary", url: "https://www.sagaftra.org/contracts-industry-resources/contracts/tv-theatrical-2023", publisher: "SAG-AFTRA", accessedAt: "Maio 2026" },
+        { title: "Sated SP — Manifesto contra uso de IA na dublagem", url: "https://www.satedsp.org.br/", publisher: "Sated SP", accessedAt: "Maio 2026" },
+        { title: "Microsoft Research — VALL-E: Neural Codec Language Models", url: "https://www.microsoft.com/en-us/research/project/vall-e-x/", publisher: "Microsoft Research", accessedAt: "Maio 2026" },
+        { title: "Crunchyroll — Newsroom", url: "https://www.crunchyroll.com/news", publisher: "Crunchyroll", accessedAt: "Maio 2026" },
+      ]} />
 
       <RelatedPosts currentSlug="ia-transformando-dublagem-animes" />
       <CommentSection postId="ia-transformando-dublagem-animes" postTitle="IA na Dublagem de Animes: Voice Cloning e o Futuro da Localização" />

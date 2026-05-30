@@ -9,8 +9,8 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/modelos-ia-open-source-2026.webp";
-
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
+
 const ModelosIAOpenSource2026 = () => {
   useEffect(() => {
     trackArticleRead("modelos-ia-open-source-2026", "IA Open Source 2026: Llama, Mistral e DeepSeek Contra os Modelos Pagos", "ia");
@@ -34,7 +34,7 @@ const ModelosIAOpenSource2026 = () => {
     <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
       <img fetchpriority="high" loading="eager"
           decoding="async"
-          src={heroImg} alt="Modelos IA open source 2026 — Llama, Mistral, DeepSeek" className="w-full h-full object-cover" />
+          src={heroImg} alt="Modelos de IA open source em 2026 — Llama 4, Mistral Large 2, DeepSeek e Qwen contra os modelos pagos" className="w-full h-full object-cover" />
     </div>
     <div className="prose prose-lg dark:prose-invert max-w-none">
       <p className="lead text-xl text-muted-foreground">
@@ -138,35 +138,28 @@ const ModelosIAOpenSource2026 = () => {
         <p className="text-muted-foreground">Compartilhe nos comentários! 👇</p>
       </div>
     </div>
-      <section className="my-10">
-        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
-          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
-            <span className="text-primary">●</span> Análise do Marcos
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-3">Principais modelos open-source/open-weight em 2026: <strong>Llama 4</strong> (Meta, abril/2025, multimodal), <strong>DeepSeek-V3 e R1</strong> (DeepSeek, dez/2024 e jan/2025), <strong>Mistral Large 2</strong> (jul/2024) e <strong>Qwen 2.5</strong> (Alibaba, set/2024). Llama 4 e Qwen 2.5 são distribuídos no Hugging Face sob licenças permissivas com restrições para uso comercial massivo.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Benchmarks públicos (MMLU, HumanEval, MATH) do LMSYS Arena e Hugging Face Open LLM Leaderboard mostram modelos open-source alcançando 90-95% da performance dos top fechados (GPT-5, Claude Opus 4) em raciocínio geral, mas ainda atrás em multimodalidade avançada e uso de ferramentas.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: para o desenvolvedor brasileiro, modelos open-source resolvem três dores reais — soberania de dados (rodam on-premise/Hetzner), custo previsível (sem cobrança por token) e fine-tuning para domínio específico. Para a maioria dos usuários finais, no entanto, ChatGPT Plus ou Claude Pro continuam mais rápidos de adotar. Use open-source quando há volume alto, sensibilidade de dados ou necessidade de customização profunda.</p>
-        </div>
 
-        <div className="bg-muted/30 border border-border rounded-2xl p-6">
-          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
-          <ul className="space-y-2 text-sm">
-            <li><a href="https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Hugging Face — Open LLM Leaderboard ↗</a></li>
-            <li><a href="https://llama.meta.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Meta AI — Llama 4 ↗</a></li>
-            <li><a href="https://www.deepseek.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">DeepSeek — Site oficial ↗</a></li>
-            <li><a href="https://mistral.ai/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Mistral AI — Models ↗</a></li>
-            <li><a href="https://chat.lmsys.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">LMSYS — Chatbot Arena ↗</a></li>
-          </ul>
-          <p className="text-xs text-muted-foreground mt-4">
-            Última verificação dos links: maio de 2026.
-          </p>
-        </div>
-      </section>
+      <EditorialTake category="ia" title="Análise do Marcos: use open source quando há volume alto, dados sensíveis ou necessidade de customização profunda">
+        <p>
+          Os principais modelos open-weight em 2026 são o <strong>Llama 4</strong> (Meta, abril/2025, multimodal), <strong>DeepSeek-V3 e R1</strong> (dez/2024 e jan/2025), <strong>Mistral Large 2</strong> (jul/2024) e <strong>Qwen 2.5</strong> (Alibaba, set/2024). Benchmarks públicos do LMSYS Arena e Hugging Face Open LLM Leaderboard mostram esses modelos alcançando 90–95% da performance dos top fechados (GPT-4o, Claude Opus 4) em raciocínio geral — ainda atrás em multimodalidade avançada.
+        </p>
+        <p>
+          Para o desenvolvedor brasileiro, modelos open-source resolvem três dores reais: <strong>soberania de dados</strong> (rodam on-premise em Hetzner ou AWS São Paulo), <strong>custo previsível</strong> (sem cobrança por token em produção) e <strong>fine-tuning para domínio específico</strong>. Para a maioria dos usuários finais, ChatGPT Plus ou Claude Pro continuam mais rápidos de adotar. Use open-source quando há volume alto, sensibilidade de dados (saúde, financeiro, jurídico) ou necessidade de customização profunda.
+        </p>
+      </EditorialTake>
 
-<RelatedPosts currentSlug="modelos-ia-open-source-2026" />
-    <CommentSection postId="modelos-ia-open-source-2026" postTitle="IA Open Source 2026" />
-  </article>
-);
+      <ArticleSources sources={[
+        { title: "Hugging Face — Open LLM Leaderboard", url: "https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard", publisher: "Hugging Face", accessedAt: "Maio 2026" },
+        { title: "Meta AI — Llama 4", url: "https://llama.meta.com/", publisher: "Meta AI", accessedAt: "Maio 2026" },
+        { title: "DeepSeek — Site oficial e relatório técnico", url: "https://www.deepseek.com/", publisher: "DeepSeek", accessedAt: "Maio 2026" },
+        { title: "Mistral AI — Models e licenças", url: "https://mistral.ai/", publisher: "Mistral AI", accessedAt: "Maio 2026" },
+        { title: "LMSYS — Chatbot Arena Leaderboard", url: "https://chat.lmsys.org/", publisher: "LMSYS / UC Berkeley", accessedAt: "Maio 2026" },
+      ]} />
+
+      <RelatedPosts currentSlug="modelos-ia-open-source-2026" />
+      <CommentSection postId="modelos-ia-open-source-2026" postTitle="IA Open Source 2026: Llama, Mistral e DeepSeek Contra os Modelos Pagos" />
+    </article>
+  );
 };
 
 export default ModelosIAOpenSource2026;

@@ -1,21 +1,22 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
-import { ArrowLeft, Clock, User, Calendar, GraduationCap, Brain, BookOpen, Heart } from "lucide-react";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
+import { Clock, User, Calendar, GraduationCap, Brain, BookOpen, Heart } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-educacao-2026.webp";
-
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
-const IAEducacao2026 = () => {
 
+const IAEducacao2026 = () => {
   useEffect(() => {
     trackArticleRead("ia-educacao-2026-estudar-inteligente", "IA na Educação 2026: Como Estudar de Forma Inteligente", "ia");
   }, []);
+
   return (
     <article className="container py-8 max-w-4xl mx-auto">
       <BackNavigation category="ia" />
@@ -35,14 +36,19 @@ const IAEducacao2026 = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high" loading="eager"
+        <img
+          fetchpriority="high"
+          loading="eager"
           decoding="async"
-          src={heroImg} alt="IA na Educação 2026" className="w-full h-full object-cover" />
+          src={heroImg}
+          alt="IA na educação em 2026 — como usar inteligência artificial para estudar de forma inteligente"
+          className="w-full h-full object-cover"
+        />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          As mesmas ferramentas que podem tornar o aprendizado mais eficaz também podem torná-lo completamente inútil. Neste artigo, exploramos o <strong>lado produtivo</strong> — como usar IA para aprender mais rápido sem terceirizar o pensamento.
+          As mesmas ferramentas que podem tornar o aprendizado mais eficaz também podem torná-lo completamente inútil. Neste artigo, exploramos o <strong>lado produtivo da IA na educação</strong> — como usar IA para aprender mais rápido sem terceirizar o pensamento.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -50,7 +56,7 @@ const IAEducacao2026 = () => {
           O Método Correto: IA como Professor, não como Fantasma
         </h2>
         <p>
-          Ao invés de pedir "Escreva sobre X", peça <strong>"Explique X de forma que eu possa escrever sobre o assunto com minhas próprias palavras"</strong>. Essa abordagem usa a IA para construir seu mapa mental — o conteúdo permanece sendo elaborado por você.
+          Ao invés de pedir "Escreva sobre X", peça <strong>"Explique X de forma que eu possa escrever sobre o assunto com minhas próprias palavras"</strong>. Essa abordagem usa a IA para construir seu mapa mental — o conteúdo permanece sendo elaborado por você. A UNESCO recomenda exatamente esse enquadramento: IA como suporte ao aprendizado, nunca como substituta do esforço cognitivo do estudante.
         </p>
 
         <AdLeaderboard className="my-8" />
@@ -62,7 +68,7 @@ const IAEducacao2026 = () => {
         <div className="space-y-4 my-6">
           <div className="p-4 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-1">🧠 Método Feynman com IA</h4>
-            <p className="text-sm text-muted-foreground mb-0">Explique um conceito para o ChatGPT "como se você tivesse 10 anos" e peça que ele identifique o que você entendeu errado.</p>
+            <p className="text-sm text-muted-foreground mb-0">Explique um conceito para o Claude "como se você tivesse 10 anos" e peça que ele identifique o que você entendeu errado. O modelo aponta gaps sem entregar a resposta pronta.</p>
           </div>
           <div className="p-4 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-1">📇 Flashcards Automáticos</h4>
@@ -70,47 +76,56 @@ const IAEducacao2026 = () => {
           </div>
           <div className="p-4 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-1">📝 Simulado Personalizado</h4>
-            <p className="text-sm text-muted-foreground mb-0">"Crie 10 questões de múltipla escolha no estilo do ENEM sobre este tema, com gabarito comentado."</p>
+            <p className="text-sm text-muted-foreground mb-0">"Crie 10 questões de múltipla escolha no estilo do ENEM sobre este tema, com gabarito comentado." Pode especificar a banca: CESPE, FCC, FGV.</p>
+          </div>
+          <div className="p-4 bg-card rounded-xl border border-border">
+            <h4 className="font-bold mb-1">🎙️ Podcast do seu material (Google NotebookLM)</h4>
+            <p className="text-sm text-muted-foreground mb-0">Faça upload dos seus PDFs e peça ao NotebookLM que gere um podcast de debate entre dois especialistas sobre o conteúdo. Ótimo para revisar enquanto se exercita.</p>
           </div>
         </div>
 
+        <AdInArticle />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-      <AdInArticle />
           <BookOpen className="h-7 w-7 text-ia" />
-          IA para Diferentes Perfis de Estudante
+          IA na Educação para Diferentes Perfis de Estudante
         </h2>
         <div className="grid md:grid-cols-2 gap-4 my-6">
           <div className="p-4 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-2">📚 Concurseiros</h4>
-            <p className="text-sm text-muted-foreground mb-0">Cronogramas adaptados, simular bancas específicas e explicar legislações em linguagem simples.</p>
+            <p className="text-sm text-muted-foreground mb-0">Cronogramas adaptados ao edital, simulação de bancas específicas e explicação de legislações em linguagem simples com exemplos práticos.</p>
           </div>
           <div className="p-4 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-2">🎓 Universitários</h4>
-            <p className="text-sm text-muted-foreground mb-0">Peça à IA que critique seus argumentos antes de entregar trabalhos.</p>
+            <p className="text-sm text-muted-foreground mb-0">Peça à IA que critique seus argumentos antes de entregar trabalhos. "Aponte os 3 pontos mais fracos do meu argumento neste parágrafo."</p>
           </div>
           <div className="p-4 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-2">💼 Profissionais</h4>
-            <p className="text-sm text-muted-foreground mb-0">Mapeie gaps de conhecimento e crie trilhas de aprendizado personalizadas.</p>
+            <p className="text-sm text-muted-foreground mb-0">Mapeie gaps de conhecimento para uma certificação e crie trilhas de aprendizado personalizadas com cronograma realista.</p>
           </div>
           <div className="p-4 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-2">🏫 Ensino Médio</h4>
-            <p className="text-sm text-muted-foreground mb-0">Resolva exercícios de matemática passo a passo e entenda por que cada passo existe.</p>
+            <p className="text-sm text-muted-foreground mb-0">Resolva exercícios de matemática passo a passo e entenda por que cada passo existe — não apenas o resultado, mas o raciocínio.</p>
           </div>
         </div>
 
         <AdRectangle className="my-8" />
 
-        
-<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Heart className="h-7 w-7 text-ia" />
-          Habilidades Exclusivamente Humanas
+          Habilidades que IA não Substitui na Educação
         </h2>
         <ul className="space-y-2 my-6">
           <li><strong>Pensamento crítico original:</strong> criar o genuinamente novo ainda requer o humano.</li>
           <li><strong>Empatia e inteligência emocional:</strong> nenhum algoritmo substitui ler uma sala ou inspirar pessoas.</li>
-          <li><strong>Julgamento ético em contexto:</strong> aplicar princípios morais em situações complexas.</li>
-          <li><strong>Habilidades práticas e físicas:</strong> medicina cirúrgica, artes, esportes.</li>
+          <li><strong>Julgamento ético em contexto:</strong> aplicar princípios morais em situações complexas de forma coerente.</li>
+          <li><strong>Habilidades práticas e físicas:</strong> medicina cirúrgica, artes performáticas, esportes — a IA pode ensinar a teoria, não a prática.</li>
         </ul>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Atenção: Detecção de IA em Trabalhos Acadêmicos</h2>
+        <p>
+          Professores brasileiros já adotam triangulação entre GPTZero, Turnitin (que lançou detector de IA em 2023) e análise estilística manual. O problema é que detectores ainda têm alta taxa de falso positivo — estudantes com escrita formal são frequentemente sinalizados. A recomendação prática: use IA para aprender e rascunhar, mas reescreva com suas próprias palavras antes de entregar. Se a instituição tiver política clara de uso de IA, siga-a.
+        </p>
 
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
           <h3 className="text-xl font-bold mb-2">Como você usa IA para estudar?</h3>
@@ -118,40 +133,23 @@ const IAEducacao2026 = () => {
         </div>
       </div>
 
-      
-      <section className="my-10">
-        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
-          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
-            <span className="text-primary">●</span> Análise do Marcos
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-3">O uso de IA generativa em educação está em explosão. O relatório UNESCO 'Guidance for generative AI in education and research' (2023) é o documento de referência global e recomenda idade mínima de 13 anos, transparência de uso e auditoria pedagógica. No Brasil, o MEC publicou em 2024 a primeira nota técnica sobre uso de IA em redes públicas, com diretrizes alinhadas à LGPD e à BNCC.</p>
-              <p className="text-muted-foreground leading-relaxed mb-3">Ferramentas com tração comprovada incluem Khanmigo (Khan Academy, baseado em GPT-4 com salvaguardas pedagógicas), Google NotebookLM (geração de podcast e mapas mentais a partir de PDFs), Anthropic Claude (resumo de textos longos com baixa taxa de alucinação) e ChatGPT Edu — versão institucional lançada pela OpenAI em maio de 2024 para universidades.</p>
-              <p className="text-muted-foreground leading-relaxed mb-3">A análise do Marcos: a IA não substitui estudo profundo; ela acelera o que já é bom estudo. Use a técnica de Feynman com Claude (explique o conceito, peça que aponte falhas), faça flashcards no Anki com perguntas geradas pela IA e jamais entregue trabalho sem revisão — detectores como GPTZero ainda erram bastante, mas professores brasileiros já adotam triangulação com Turnitin.</p>
-        </div>
+      <EditorialTake category="ia" title="Análise do Marcos: IA acelera quem já estuda bem — e atrapalha quem não estuda">
+        <p>
+          O relatório UNESCO <em>Guidance for generative AI in education and research</em> (2023) é claro: IA deve ser suporte ao aprendizado, não substituta do esforço cognitivo. No Brasil, o MEC publicou em 2024 a primeira nota técnica sobre uso de IA em redes públicas, alinhada à LGPD e à BNCC. O Khanmigo (Khan Academy, GPT-4 com salvaguardas pedagógicas) e o Google NotebookLM são os dois melhores exemplos de IA projetada para aprender junto, não no lugar do aluno.
+        </p>
+        <p>
+          Minha leitura prática: a IA não substitui estudo profundo — ela acelera o que já é bom estudo. Quem usava técnicas sólidas (Feynman, revisão espaçada, prática deliberada) vai ficou 3× mais eficiente com IA. Quem já copiava trabalho vai só copiar mais rápido — e vai ser pego mais rápido também. A diferença de resultados entre os dois grupos vai aumentar.
+        </p>
+      </EditorialTake>
 
-        <div className="bg-muted/30 border border-border rounded-2xl p-6">
-          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
-          <ul className="space-y-2 text-sm">
-            {[
-              { title: "UNESCO — Guidance for generative AI in education and research", url: "https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research" },
-          { title: "Khan Academy — Khanmigo", url: "https://www.khanmigo.ai/" },
-          { title: "OpenAI — ChatGPT Edu", url: "https://openai.com/index/introducing-chatgpt-edu/" },
-          { title: "Google — NotebookLM", url: "https://notebooklm.google/" },
-          { title: "MEC — Estratégia Brasileira de Inteligência Artificial", url: "https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/transformacaodigital/inteligencia-artificial" },
-            ].map((s) => (
-              <li key={s.url}>
-                <a href={s.url} target="_blank" rel="noopener noreferrer"
-                  className="text-primary hover:underline break-words">
-                  {s.title} ↗
-                </a>
-              </li>
-            ))}
-          </ul>
-          <p className="text-xs text-muted-foreground mt-4">
-            Última verificação dos links: maio de 2026.
-          </p>
-        </div>
-      </section>
+      <ArticleSources sources={[
+        { title: "UNESCO — Guidance for generative AI in education and research", url: "https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research", publisher: "UNESCO", accessedAt: "Maio 2026" },
+        { title: "Khan Academy — Khanmigo (AI tutor)", url: "https://www.khanmigo.ai/", publisher: "Khan Academy", accessedAt: "Maio 2026" },
+        { title: "OpenAI — Introducing ChatGPT Edu", url: "https://openai.com/index/introducing-chatgpt-edu/", publisher: "OpenAI", accessedAt: "Maio 2026" },
+        { title: "Google — NotebookLM", url: "https://notebooklm.google/", publisher: "Google", accessedAt: "Maio 2026" },
+        { title: "MEC / MCTI — Estratégia Brasileira de Inteligência Artificial", url: "https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/transformacaodigital/inteligencia-artificial", publisher: "Governo Federal", accessedAt: "Maio 2026" },
+      ]} />
+
       <RelatedPosts currentSlug="ia-educacao-2026-estudar-inteligente" />
       <CommentSection postId="ia-educacao-2026-estudar-inteligente" postTitle="IA na Educação 2026: Como Estudar de Forma Inteligente" />
     </article>

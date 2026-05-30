@@ -218,8 +218,7 @@ const IACiberseguranca2026 = () => {
     { title: 'Google — Threat Intelligence (Mandiant)', url: 'https://cloud.google.com/security/mandiant-threat-intelligence', publisher: 'Google Cloud', accessedAt: "Maio 2026" },
     { title: 'NIST — AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework', publisher: 'NIST', accessedAt: "Maio 2026" }
   ]} />
-
-        <RelatedPosts currentSlug="ia-ciberseguranca-2026" />
+      <RelatedPosts currentSlug="ia-ciberseguranca-2026" />
       <CommentSection postId="ia-ciberseguranca-2026" />
     </article>
   );

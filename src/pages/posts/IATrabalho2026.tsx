@@ -9,8 +9,8 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-trabalho-2026.webp";
-
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
+
 const IATrabalho2026 = () => {
 
   useEffect(() => {
@@ -110,39 +110,24 @@ const IATrabalho2026 = () => {
       </div>
 
       
-      <section className="my-10">
-        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
-          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
-            <span className="text-primary">●</span> Análise do Marcos
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-3">Os relatórios mais recentes — Future of Jobs 2025 do World Economic Forum, AI Index 2024 do Stanford HAI e o estudo da McKinsey 'The state of AI in 2024' — convergem em um ponto: a IA generativa automatiza tarefas, não profissões inteiras. Funções com alta carga de redação, sumarização e atendimento (jurídico júnior, marketing operacional, SAC nível 1) são as mais expostas; trabalho técnico-manual e funções de relacionamento seguem com baixa exposição.</p>
-              <p className="text-muted-foreground leading-relaxed mb-3">No Brasil, a Lei nº 14.611/2023 (igualdade salarial), a LGPD (Lei 13.709/2018) e o PL 2338/2023 — marco legal da IA aprovado pelo Senado em dezembro de 2024 — começam a definir regras de transparência e auditoria de sistemas automatizados. Empresas que usam IA para triagem de currículo ou avaliação de funcionário precisarão informar e permitir revisão humana.</p>
-              <p className="text-muted-foreground leading-relaxed mb-3">A análise do Marcos: o profissional que ganha em 2026 é o que aprende a delegar para a IA o que é repetitivo e investe o tempo livre em julgamento, contexto e relacionamento. Cursos curtos de prompt engineering (Coursera/DeepLearning.AI, gratuitos com auditoria) e ferramentas como Notion AI ou Claude no fluxo diário entregam ROI em semanas.</p>
-        </div>
 
-        <div className="bg-muted/30 border border-border rounded-2xl p-6">
-          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
-          <ul className="space-y-2 text-sm">
-            {[
-              { title: "WEF — Future of Jobs Report 2025", url: "https://www.weforum.org/publications/the-future-of-jobs-report-2025/" },
-          { title: "Stanford HAI — AI Index 2024", url: "https://hai.stanford.edu/research/ai-index-2024" },
-          { title: "McKinsey — The state of AI 2024", url: "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" },
-          { title: "Senado Federal — PL 2338/2023", url: "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233" },
-          { title: "Planalto — LGPD (Lei 13.709/2018)", url: "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" },
-            ].map((s) => (
-              <li key={s.url}>
-                <a href={s.url} target="_blank" rel="noopener noreferrer"
-                  className="text-primary hover:underline break-words">
-                  {s.title} ↗
-                </a>
-              </li>
-            ))}
-          </ul>
-          <p className="text-xs text-muted-foreground mt-4">
-            Última verificação dos links: maio de 2026.
-          </p>
-        </div>
-      </section>
+      <EditorialTake category="ia" title="Análise do Marcos: o profissional que ganha em 2026 delega o repetitivo à IA e investe em julgamento">
+        <p>
+          Os relatórios mais recentes — Future of Jobs 2025 do WEF, AI Index 2024 do Stanford HAI e o estudo da McKinsey "The state of AI in 2024" — convergem: a IA generativa automatiza <strong>tarefas</strong>, não profissões inteiras. Funções com alta carga de redação, sumarização e atendimento (jurídico júnior, marketing operacional, SAC nível 1) são as mais expostas; trabalho técnico-manual e funções de relacionamento seguem com baixa exposição.
+        </p>
+        <p>
+          No Brasil, o PL 2338/2023 (Marco Legal da IA, aprovado pelo Senado em dezembro de 2024) começa a definir regras de transparência e auditoria para sistemas automatizados. Empresas que usam IA para triagem de currículo ou avaliação de funcionário precisarão informar e garantir revisão humana. Cursos curtos de prompt engineering (Coursera/DeepLearning.AI, gratuitos com auditoria) e ferramentas como Notion AI ou Claude no fluxo diário entregam ROI em semanas.
+        </p>
+      </EditorialTake>
+
+      <ArticleSources sources={[
+        { title: "WEF — Future of Jobs Report 2025", url: "https://www.weforum.org/publications/the-future-of-jobs-report-2025/", publisher: "World Economic Forum", accessedAt: "Maio 2026" },
+        { title: "Stanford HAI — AI Index 2024", url: "https://hai.stanford.edu/research/ai-index-2024", publisher: "Stanford HAI", accessedAt: "Maio 2026" },
+        { title: "McKinsey — The state of AI 2024", url: "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai", publisher: "McKinsey & Company", accessedAt: "Maio 2026" },
+        { title: "Senado Federal — PL 2338/2023 (Marco Legal da IA)", url: "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233", publisher: "Senado Federal", accessedAt: "Maio 2026" },
+        { title: "Planalto — LGPD (Lei 13.709/2018)", url: "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm", publisher: "Planalto", accessedAt: "Maio 2026" },
+      ]} />
+
       <RelatedPosts currentSlug="ia-no-trabalho-2026-profissoes" />
       <CommentSection postId="ia-no-trabalho-2026-profissoes" postTitle="IA no Trabalho em 2026: Sua Profissão Vai Acabar ou Evoluir?" />
     </article>

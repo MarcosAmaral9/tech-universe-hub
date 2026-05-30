@@ -55,7 +55,7 @@ const IAFinancasPessoais2026 = () => {
       </header>
 
       <div className="rounded-2xl overflow-hidden mb-8">
-        <img fetchpriority="high" src={heroImg} alt="IA e finanças pessoais 2026" className="w-full aspect-video object-cover" loading="eager" />
+        <img fetchpriority="high" src={heroImg} alt="Como usar IA para organizar finanças pessoais em 2026 — apps, simulações e limites da inteligência artificial" className="w-full aspect-video object-cover" loading="eager" />
       </div>
 
       <div className="prose prose-lg max-w-none space-y-6">
@@ -217,33 +217,26 @@ const IAFinancasPessoais2026 = () => {
       </div>
 
       <BackNavigation category="invest" />
-      <section className="my-10">
-        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
-          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
-            <span className="text-primary">●</span> Análise do Marcos
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-3">Bancos brasileiros já incorporaram IA em apps populares: Nubank com 'Tuna' (assistente em testes), Itaú com 'Íon' e Bradesco com 'BIA'. Segundo o Relatório de Cidadania Financeira 2024 do Banco Central, 87% dos brasileiros adultos têm conta bancária e 76% usam apps de banco mensalmente.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Ferramentas populares de finanças pessoais com IA: Mobills, Organizze e Olivia (esta última usa machine learning para classificar gastos automaticamente). ChatGPT e Claude também podem ser usados como copilotos financeiros — desde que você nunca compartilhe dados sensíveis como CPF, senha ou número de cartão.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: IA em finanças pessoais funciona melhor em três frentes — categorização automática de gastos, simulação de cenários ('e se eu investir R$ 500/mês por 10 anos') e revisão de assinaturas esquecidas. Para investimentos, evite seguir recomendação cega de modelos generalistas; eles não conhecem seu perfil de risco nem a tributação brasileira (IR sobre renda fixa, come-cotas em fundos, isenção em LCI/LCA até R$ 35 mil/mês de venda).</p>
-        </div>
 
-        <div className="bg-muted/30 border border-border rounded-2xl p-6">
-          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
-          <ul className="space-y-2 text-sm">
-            <li><a href="https://www.bcb.gov.br/cidadaniafinanceira/relatoriocidadania" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Banco Central — Relatório de Cidadania Financeira ↗</a></li>
-            <li><a href="https://www.gov.br/receitafederal/pt-br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Receita Federal — Tributação de Investimentos ↗</a></li>
-            <li><a href="https://www.anbima.com.br/pt_br/educar/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">ANBIMA — Educação Financeira ↗</a></li>
-            <li><a href="https://www.mobills.com.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Mobills — App oficial ↗</a></li>
-            <li><a href="https://www.investidor.gov.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">CVM — Investidor.gov.br ↗</a></li>
-          </ul>
-          <p className="text-xs text-muted-foreground mt-4">
-            Última verificação dos links: maio de 2026.
-          </p>
-        </div>
-      </section>
+      <EditorialTake category="invest" title="Análise do Marcos: IA em finanças pessoais funciona para categorizar, simular e revisar — não para investir por você">
+        <p>
+          Bancos brasileiros já incorporaram IA em apps populares: Nubank com "Tuna" (assistente em testes), Itaú com "Íon" e Bradesco com "BIA". Segundo o Relatório de Cidadania Financeira 2024 do Banco Central, 87% dos brasileiros adultos têm conta bancária e 76% usam apps de banco mensalmente — o que torna a adoção de IA financeira pessoal uma das mais rápidas do mundo entre economias emergentes.
+        </p>
+        <p>
+          Ferramentas populares de finanças pessoais com IA: Mobills, Organizze e Olivia (esta última usa machine learning para classificar gastos automaticamente). ChatGPT e Claude podem ser usados como copilotos financeiros para simulações e revisão de planilhas — desde que você nunca compartilhe dados sensíveis como CPF, senha ou número de cartão. Para investimentos, evite seguir recomendação cega de modelos generalistas; eles não conhecem seu perfil de risco nem a tributação brasileira (IR sobre renda fixa, come-cotas em fundos, isenção em LCI/LCA até R$ 35 mil/mês de venda em ações).
+        </p>
+      </EditorialTake>
+
+      <ArticleSources sources={[
+        { title: "Banco Central — Relatório de Cidadania Financeira 2024", url: "https://www.bcb.gov.br/cidadaniafinanceira/relatoriocidadania", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
+        { title: "Receita Federal — Tributação de Investimentos", url: "https://www.gov.br/receitafederal/pt-br", publisher: "Receita Federal", accessedAt: "Maio 2026" },
+        { title: "ANBIMA — Educação Financeira", url: "https://www.anbima.com.br/pt_br/educar/", publisher: "ANBIMA", accessedAt: "Maio 2026" },
+        { title: "Mobills — App de Controle Financeiro com IA", url: "https://www.mobills.com.br/", publisher: "Mobills", accessedAt: "Maio 2026" },
+        { title: "CVM — Portal do Investidor", url: "https://www.investidor.gov.br/", publisher: "CVM", accessedAt: "Maio 2026" },
+      ]} />
 
       <RelatedPosts currentSlug="ia-para-financas-pessoais-2026" />
-      <CommentSection postId="ia-para-financas-pessoais-2026" />
+      <CommentSection postId="ia-para-financas-pessoais-2026" postTitle="Como usar IA para organizar suas finanças em 2026" />
     </article>
   );
 };

@@ -39,7 +39,7 @@ const IARemasterizacaoJogos = () => {
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img fetchpriority="high"
           loading="eager"
-          decoding="async" src={aiRemasteringImg} alt="IA Remasterização" className="w-full h-full object-cover" />
+          decoding="async" src={aiRemasteringImg} alt="IA e remasterização de jogos clássicos — como a inteligência artificial está dando nova vida aos games" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
@@ -186,7 +186,7 @@ const IARemasterizacaoJogos = () => {
         </div>
       </div>
 
-      <EditorialTake category="ia">
+      <EditorialTake category="ia" title="Análise do Marcos: remasterização com IA é ferramenta, não substituto do design original">
         <p>
           A onda de "remasterização por IA" tem um lado que ninguém comenta no Brasil: ela está empurrando placas de vídeo
           para um patamar de preço que exclui o jogador médio. Uma RTX 5070 chegou ao Brasil custando mais de R$ 6.500 no

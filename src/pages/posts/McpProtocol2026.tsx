@@ -44,7 +44,7 @@ const McpProtocol2026 = () => {
       </header>
  
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high" src={heroImg} alt="MCP Model Context Protocol agentes de IA 2026" loading="eager" decoding="async" className="w-full h-full object-cover" />
+        <img fetchpriority="high" src={heroImg} alt="MCP Model Context Protocol 2026 — o padrão aberto da Anthropic que conecta agentes de IA a qualquer ferramenta" loading="eager" decoding="async" className="w-full h-full object-cover" />
       </div>
  
       <div className="prose prose-lg dark:prose-invert max-w-none">
