@@ -15,6 +15,11 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
   // ═══════════════════════════════════════════════════════════
   // PÁGINAS DO SITE
   // ═══════════════════════════════════════════════════════════
+  "/": {
+    title: "IA, Investimentos, Geek & Otaku",
+    description: "Seu portal definitivo para IAs, investimentos, cultura geek e o mundo otaku. Conteúdo de qualidade para mentes curiosas.",
+    keywords: "inteligência artificial, investimentos, finanças pessoais, cultura geek, otaku, mangás, animes, tecnologia, criptomoedas, games, manhwas, educação financeira, IA generativa, ChatGPT",
+  },
   "/otaku": {
     title: "Otaku",
     description: "Mangás, manhwas, manhuas, animes e tudo do universo otaku.",
