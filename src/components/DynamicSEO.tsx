@@ -344,6 +344,200 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     keywords: "Demon Slayer Hashira, Pilares Demon Slayer, Rengoku Hashira, Tengen Uzui, Himejima Gyomei, Respirações Demon Slayer, poderes Hashira, Kimetsu no Yaiba Hashira, hierarquia Demon Slayer",
   },
 
+   // ═══════════════════════════════════════════════════════════
+  // CATEGORIA: FINANCAS — 37 posts
+  // ═══════════════════════════════════════════════════════════
+   "/post/acoes-brasileiras-baratas-valuation-2026": {
+    title: "Ações Brasileiras Baratas em 2026: Valuation, P/L e Onde Está o Desconto",
+    description: "Com o Ibovespa oscilando e Selic ainda alta, algumas ações brasileiras negociam com desconto histórico. Análise de valuation, P/L, P/VP e setores com maior potencial em 2026.",
+    keywords: "ações brasileiras baratas 2026, valuation ações B3, P/L ações Brasil, ibovespa desconto 2026, ações subvalorizadas Brasil, onde investir bolsa 2026, VALE3 PETR4 barato, análise fundamentalista ações, setor bancário desconto, small caps baratas 2026",
+  },
+  "/post/berkshire-hathaway-greg-abel-2026-sem-buffett": {
+    title: "Berkshire Hathaway Meeting 2026: Greg Abel Sem Buffett — O Que Esperar",
+    description: "A primeira reunião anual da Berkshire Hathaway sem Warren Buffett na cadeira. O que Greg Abel sinalizou para o futuro, a carteira de ações e o que o investidor brasileiro aprende com isso.",
+    keywords: "Berkshire Hathaway 2026, Greg Abel CEO, Warren Buffett reunião anual, Berkshire meeting 2026, Greg Abel investimentos, Berkshire portfólio 2026, BRK.B BRK.A 2026, value investing 2026, lições Berkshire investidor brasileiro",
+  },
+  "/post/bitcoin-2026-vale-comprar": {
+    title: "Bitcoin em 2026: Vale Comprar Agora ou Esperar?",
+    description: "Bitcoin corrigiu após o recorde de R$ 731 mil em 2025 e ronda os R$ 409–427 mil. Análise dos ciclos históricos, ETFs, demanda institucional e se vale comprar agora.",
+    keywords: "bitcoin 2026 vale comprar, bitcoin preço 2026, BTC correção 2026, ETF bitcoin B3, BITH11 HASH11, halving bitcoin, cripto 2026 investir, bitcoin ciclos históricos, comprar bitcoin Brasil, bitcoin vs altcoins, criptomoedas 2026",
+  },
+  "/post/bitcoin-criptomoedas-2026-investir": {
+    title: "Bitcoin e Criptomoedas em 2026: Ainda Dá Para Lucrar ou Já Passou da Hora?",
+    description: "O mercado cripto entrou em maturidade regulatória em 2026. Entenda o cenário, quais criptomoedas têm potencial, estratégia DCA, tributação e como investir com segurança.",
+    keywords: "bitcoin criptomoedas 2026, investir cripto 2026, bitcoin vale a pena 2026, ethereum solana 2026, DCA cripto, ETF bitcoin B3 BITH11, tributação criptomoedas Brasil, halving bitcoin, altcoins 2026, como comprar bitcoin segurança",
+  },
+  "/post/calculadoras-financeiras-ativos": {
+    title: "Calculadoras Financeiras: Simule Investimentos em Tempo Real — B3, Cripto, Câmbio e Metais",
+    description: "Calculadoras financeiras interativas com cotações em tempo real: B3, criptomoedas, câmbio (dólar, euro) e metais preciosos. Simule quanto comprar com qualquer valor em reais.",
+    keywords: "calculadoras financeiras, simulador investimentos tempo real, quanto comprar bitcoin reais, preço ações B3 hoje, cotação dólar real, preço ouro gramas brasil, simulador cripto, calculadora PETR4 VALE3, calcular frações bitcoin, ferramenta financeira online",
+  },
+  "/post/carteira-investimentos-iniciantes-2026": {
+    title: "Carteira de Investimentos para Iniciantes 2026: Monte do Zero em 5 Passos",
+    description: "Guia completo para montar uma carteira de investimentos do zero em 2026: perfil de investidor, reserva de emergência, classes de ativos e modelos de carteira para cada perfil.",
+    keywords: "carteira de investimentos para iniciantes 2026, como investir do zero, perfil de investidor, reserva de emergência, renda fixa, renda variável, carteira conservadora moderada arrojada, onde investir 2026, ETFs FIIs ações iniciante, corretoras 2026",
+  },
+  "/post/cdb-2026-guia-completo": {
+    title: "CDB em 2026: Ainda Vale a Pena? Guia Completo com Taxas Reais",
+    description: "CDB 100% CDI, 110% CDI, IR regressivo e comparação com LCI, LCA e Tesouro Direto. Tudo que você precisa saber para investir bem em renda fixa em 2026.",
+    keywords: "CDB 2026, CDB vale a pena, CDB 110% CDI, CDB liquidez diária, IR regressivo CDB, CDB vs LCI LCA, CDB vs Tesouro Direto, renda fixa 2026, FGC CDB, CDI 2026, melhores CDBs 2026, CDB banco digital",
+  },
+  "/post/copom-abril-2026-selic-investimentos": {
+    title: "Copom Abril 2026: Selic, Decisão e O Que Muda nos Investimentos",
+    description: "O Copom reuniu-se em abril de 2026 e confirmou corte de 0,50 ponto na Selic. Entenda o que mudou, por que o mercado reagiu e como reposicionar seus investimentos.",
+    keywords: "Copom abril 2026, Selic corte abril 2026, reunião Copom decisão, investimentos após Copom, tesouro direto Selic caindo, FIIs Copom 2026, renda fixa Copom, Banco Central decisão juros abril",
+  },
+  "/post/copom-selic-1450-corte-abril-2026": {
+    title: "Copom Corta Selic para 14,50%: O Que Muda nos Seus Investimentos",
+    description: "O Copom cortou a Selic de 15% para 14,50% em março de 2026. Análise completa do comunicado, projeções do Focus e como reposicionar a carteira de renda fixa e variável.",
+    keywords: "Copom Selic 14,50 2026, corte Selic maio 2026, comunicado Copom março 2026, projeções Selic Focus, renda fixa Selic caindo, FIIs alta Copom, tesouro prefixado oportunidade, investimentos ciclo queda juros",
+  },
+  "/post/cortar-gastos-2026": {
+    title: "Cortar Gastos em 2026: 20 Estratégias Práticas Para Liberar Renda Para Investir",
+    description: "Energia, supermercado, assinaturas e transporte: estratégias validadas para cortar gastos em 2026 e redirecionar a economia para investimentos que constroem patrimônio.",
+    keywords: "cortar gastos 2026, como economizar dinheiro 2026, reduzir despesas mensais, assinaturas cancelar 2026, economia doméstica dicas, liberar dinheiro investir, orçamento familiar 2026, gastos fixos reduzir, economia energia supermercado",
+  },
+  "/post/dolar-queda-2026-investir-exterior": {
+    title: "Dólar em Queda em 2026: Vale Investir no Exterior Mesmo Assim?",
+    description: "Com o dólar recuando de R$ 6,30 para R$ 5,60, muitos investidores se perguntam se ainda faz sentido ter ativos dolarizados. A resposta é sim — e aqui está o porquê.",
+    keywords: "dólar queda 2026, investir exterior dólar barato, IVVB11 dólar caindo, ETF internacional 2026, BDR dólar fraco, hedge cambial 2026, diversificação internacional real, SP500 BRL 2026, risco cambial investimento",
+  },
+  "/post/economia-domestica-2026-cortar-gastos": {
+    title: "Economia Doméstica em 2026: 30 Dicas Para Cortar Gastos Sem Perder Qualidade de Vida",
+    description: "Energia, supermercado, assinaturas e transporte: corte até R$ 1.500/mês do orçamento doméstico com estratégias práticas validadas em 2026.",
+    keywords: "economia doméstica 2026, como economizar em casa 2026, dicas cortar gastos, reduzir conta de luz, economizar no supermercado, cancelar assinaturas, orçamento familiar 2026, reserva de emergência, marmita economia, poupar dinheiro 2026",
+  },
+  "/post/educacao-financeira-metodo-3-baldes": {
+    title: "Método dos 3 Baldes: Educação Financeira Para Quem Sempre Gastou Tudo",
+    description: "Se você chega no fim do mês sem dinheiro, o Método dos 3 Baldes é para você. Sistema simples de educação financeira que funciona para qualquer salário em 2026.",
+    keywords: "método dos 3 baldes, educação financeira 2026, como guardar dinheiro, organizar finanças pessoais, finanças para iniciantes, controle financeiro 2026, como economizar salário, regra 50 30 20, investir com pouco dinheiro, comportamento financeiro",
+  },
+  "/post/etfs-2026-guia-completo-investir": {
+    title: "ETFs em 2026: Guia Completo Para Investir com Diversificação e Baixo Custo",
+    description: "ETFs são a forma mais simples de investir com diversificação em 2026. Guia com os melhores fundos de índice na B3, como BOVA11, IVVB11 e IMAB11, estratégias e erros a evitar.",
+    keywords: "ETFs 2026, melhores ETFs Brasil 2026, BOVA11, IVVB11, SMAL11, IMAB11, NASD11, fundos de índice B3, como investir em ETFs, ETF renda fixa, ETF internacional, diversificação baixo custo, ETF vs fundo de ações",
+  },
+  "/post/etfs-b3-guia-completo-2026": {
+    title: "ETFs na B3 em 2026: Guia Completo de Fundos de Índice Listados",
+    description: "Guia completo dos ETFs disponíveis na B3 em 2026: BOVA11, IVVB11, SMAL11, IMAB11 e mais de 120 opções. Compare taxas, liquidez e estratégias para montar seu portfólio.",
+    keywords: "ETFs B3 2026, melhores ETFs listados B3, BOVA11 IVVB11 SMAL11 2026, ETF renda fixa IMAB11, fundos de índice Brasil, ETF internacional B3, como investir ETF B3, taxa administração ETF, ETF vs fundo ações ativo",
+  },
+  "/post/fiis-2026-ainda-vale-investir": {
+    title: "FIIs em 2026: Ainda Vale a Pena Investir com a Selic Caindo?",
+    description: "Com o início do ciclo de queda dos juros, os FIIs voltam ao radar. Entenda o cenário, os setores mais promissores de 2026 e os cuidados antes de investir em fundos imobiliários.",
+    keywords: "FIIs 2026 vale a pena, fundos imobiliários Selic caindo, IFIX 2026, FII papel vs tijolo, DY P/VP FIIs, melhores FIIs logística shoppings, renda passiva FII 2026, dividendos FII isento IR, investir FII ciclo de corte Selic",
+  },
+  "/post/fiis-2026-melhores-fundos-imobiliarios": {
+    title: "FIIs em 2026: Os Melhores Fundos Imobiliários e Como Analisar",
+    description: "Guia completo de FIIs para 2026: como escolher os melhores fundos imobiliários, analisar DY, P/VP e vacância, e construir uma carteira que paga dividendos mensais isentos de IR.",
+    keywords: "FIIs 2026, melhores fundos imobiliários 2026, IFIX 2026, dividendos mensais FIIs, FII papel CRI, FII tijolo logística, FII híbrido, como analisar FII, DY P/VP vacância, renda passiva imóveis, fundos imobiliários B3",
+  },
+  "/post/fiis-defensivos-abril-2026": {
+    title: "FIIs Defensivos em Abril 2026: Quais Fundos Resistem à Volatilidade",
+    description: "Num cenário de volatilidade geopolítica e Selic em queda, FIIs defensivos com contratos longos, vacância baixa e gestão comprovada se destacam. Saiba quais avaliar.",
+    keywords: "FIIs defensivos 2026, fundos imobiliários baixa volatilidade, FII logística defensivo, FII papel defensivo abril 2026, FII contrato atípico longo, FIIs crise geopolítica, IFIX volatilidade, quais FIIs comprar abril 2026",
+  },
+  "/post/guerra-ira-petroleo-petrobras-2026": {
+    title: "Guerra EUA-Irã e Estreito de Ormuz: Vale a Pena Investir em Petrobras (PETR4) Agora?",
+    description: "O conflito EUA-Irã fechou o Estreito de Ormuz e disparou o Brent de US$ 73 para US$ 116. PETR4 subiu 60% em 2026. Análise dos 3 cenários e como posicionar sua carteira.",
+    keywords: "PETR4 2026, Petrobras vale a pena comprar, guerra EUA Irã petróleo, Estreito de Ormuz fechado, Brent 2026, petróleo geopolítica, PETR4 dividendos 2026, Petrobras preço-alvo BTG, petroleo investimento 2026, PETR3 PETR4 análise",
+  },
+  "/post/ia-mercado-financeiro-2026-investimentos": {
+    title: "IA no Mercado Financeiro 2026: Como a Inteligência Artificial Transforma Investimentos",
+    description: "Mais de 40% dos trades na B3 já são executados por algoritmos. Descubra como a IA está mudando robo-advisors, análise de ações, detecção de fraudes e como usá-la a seu favor.",
+    keywords: "IA mercado financeiro 2026, robo advisor Brasil, algoritmos investimento, inteligência artificial finanças, Warren Magnetis Vérios, trade automatizado B3, análise sentimento ações, IA investimentos pessoa física, chatGPT análise ações, machine learning fintech",
+  },
+  "/post/ia-para-financas-pessoais-2026": {
+    title: "Como Usar IA Para Organizar Suas Finanças Pessoais em 2026",
+    description: "Ferramentas de IA já categorizam gastos, simulam investimentos e respondem dúvidas financeiras. Guia prático com prompts reais, apps e cuidados com privacidade.",
+    keywords: "IA finanças pessoais 2026, ChatGPT finanças, Gemini organizar gastos, apps IA controle financeiro, Mobills Organizze IA, prompt ChatGPT extratos, robo advisor Brasil gratuito, IA investimentos pessoais, simulação investimento IA",
+  },
+  "/post/ibovespa-recorde-selic-caindo-2026": {
+    title: "Ibovespa Bate Recorde com Selic Caindo em 2026: Vale Entrar Agora?",
+    description: "O Ibovespa superou 140 mil pontos pela primeira vez com o ciclo de queda da Selic. Análise dos setores mais beneficiados, valuation e estratégia para quem ainda não entrou.",
+    keywords: "Ibovespa recorde 2026, IBOV 140000 pontos, Selic caindo bolsa sobe, investir Ibovespa 2026, BOVA11 alta 2026, setores bolsa queda juros, valuation Ibovespa 2026, small caps SMAL11, ações brasileiras 2026",
+  },
+  "/post/inflacao-proteger-investimentos-2026": {
+    title: "Como Proteger Seus Investimentos da Inflação em 2026",
+    description: "Com o IPCA projetado em 4,3% e riscos de alta por geopolítica, saiba quais investimentos realmente protegem contra a inflação: IPCA+, LCI, FIIs, ouro e ações.",
+    keywords: "proteger investimentos inflação 2026, IPCA mais investimento, tesouro IPCA 2026, inflação alta onde investir, LCI LCA inflação, FIIs proteção inflação, ouro hedge inflação, renda fixa IPCA Brasil 2026",
+  },
+  "/post/investir-em-tecnologia-2026": {
+    title: "Como Investir em Tecnologia em 2026: Semicondutores, IA, Data Centers e ETFs",
+    description: "Guia completo de como investir em tecnologia em 2026: setores de semicondutores, IA, data centers e cibersegurança. ETFs, BDRs e estratégias para iniciantes e intermediários.",
+    keywords: "investir em tecnologia 2026, ETF tecnologia Brasil, semicondutores investimento, Nvidia AMD ações 2026, QQQ IVVB11 tech, BDR tecnologia B3, ETF cibersegurança, data center investimento, setor tecnologia bolsa 2026, Magnificent Seven BDR",
+  },
+  "/post/irpf-2026-guia-declarar-pagar-menos": {
+    title: "IRPF 2026: Guia Completo Para Declarar e Pagar Menos Imposto",
+    description: "Prazo, deduções, declaração de investimentos e como usar o modelo completo para pagar menos IR em 2026. Guia passo a passo com dicas de planejamento tributário.",
+    keywords: "IRPF 2026, declaração imposto de renda 2026, como declarar IR 2026, deduções IRPF 2026, modelo completo IR dedução, declarar investimentos IR, restituição IR 2026, prazo IRPF 2026, pagar menos imposto renda, planejamento tributário pessoa física",
+  },
+  "/post/magnificent-seven-resultados-q1-2026-apple-tim-cook": {
+    title: "Magnificent Seven no Q1 2026: Resultados, Apple e o Que Muda Para o Investidor Brasileiro",
+    description: "Apple, Microsoft, Nvidia, Alphabet, Meta, Amazon e Tesla divulgaram resultados do Q1 2026. Análise completa e impacto para quem tem BDRs e ETFs internacionais no Brasil.",
+    keywords: "Magnificent Seven resultados 2026, Apple Q1 2026, Nvidia resultados 2026, Microsoft Q1 2026, Big Tech resultados primeiro trimestre, BDRs Apple Microsoft Brasil, IVVB11 Big Tech, Nasdaq 2026 resultados, Tim Cook Apple resultados",
+  },
+  "/post/ouro-maxima-historica-2026-como-investir": {
+    title: "Ouro em Máxima Histórica em 2026: Como Investir e Por Que Ele Subiu",
+    description: "O ouro superou US$ 3.000/oz em 2026 com demanda de bancos centrais e incerteza geopolítica. Saiba como investir em ouro no Brasil via ETF, OZ1D ou fundos.",
+    keywords: "ouro máxima histórica 2026, preço ouro 2026 Brasil, como investir em ouro, OZ1D tesouro ouro B3, ETF ouro Brasil, ouro vs inflação, ouro hedge geopolítica, ouro bancos centrais 2026, preço ouro real grama 2026",
+  },
+  "/post/petroleo-brent-125-bloqueio-ormuz-2026": {
+    title: "Petróleo Brent a US$ 125 e Bloqueio do Estreito de Ormuz: Impacto nos Investimentos",
+    description: "O Brent disparou para US$ 125 com o bloqueio do Estreito de Ormuz. Análise do impacto em Petrobras, inflação brasileira, transportes e como posicionar a carteira.",
+    keywords: "petróleo Brent 125 2026, Estreito de Ormuz bloqueado, impacto petróleo investimentos, PETR4 alta petróleo, inflação combustíveis Brasil 2026, Petrobras Brent 125, crise petróleo 2026, crude oil 2026 Brasil",
+  },
+  "/post/planejamento-financeiro-2026-metas": {
+    title: "Planejamento Financeiro Para 2026: Como Definir Metas e Realmente Alcançá-las",
+    description: "Chega de começar o ano com as mesmas metas financeiras. Aprenda o método SMART, o roadmap mensal de 2026 e a mentalidade que separa quem alcança objetivos de quem não alcança.",
+    keywords: "planejamento financeiro 2026, metas financeiras 2026, método SMART finanças, como economizar 2026, organização financeira, reserva de emergência meta, orçamento pessoal 2026, como sair das dívidas, metas SMART dinheiro, finanças pessoais 2026",
+  },
+  "/post/pnad-desemprego-61-marco-2026": {
+    title: "PNAD: Desemprego Cai Para 6,1% em Março de 2026 — O Que Significa Para o Investidor",
+    description: "O desemprego no Brasil atingiu 6,1% em março de 2026, o menor nível histórico. Análise do impacto no consumo, renda, Selic e quais setores se beneficiam.",
+    keywords: "PNAD desemprego 2026, desemprego Brasil março 2026, desemprego 6,1% Brasil, mercado trabalho 2026, consumo baixo desemprego, impacto econômico desemprego mínimo, IBGE PNAD 2026, ações consumo desemprego, Selic desemprego baixo",
+  },
+  "/post/poupanca-vs-cdb-tesouro-2026": {
+    title: "Poupança vs CDB vs Tesouro Direto em 2026: Qual Rende Mais?",
+    description: "Com a Selic a 13,25% ao ano, a poupança perde para CDB e Tesouro Direto mesmo com IR. Comparativo completo com simulação de R$ 10.000 em 12 meses.",
+    keywords: "poupança vs CDB vs Tesouro Direto 2026, poupança ou CDB, qual rende mais 2026, Tesouro Selic rentabilidade, CDB 100% CDI, reserva de emergência, renda fixa 2026, FGC garantia, IR renda fixa, poupança vale a pena",
+  },
+  "/post/previdencia-privada-pgbl-vgbl-2026": {
+    title: "Previdência Privada em 2026: PGBL ou VGBL? Guia Completo Para Decidir Sem Erro",
+    description: "A escolha errada entre PGBL e VGBL pode custar milhares de reais em IR desnecessário. Guia definitivo com tabela progressiva vs regressiva, taxas e quando cada um compensa.",
+    keywords: "previdência privada 2026, PGBL ou VGBL, diferença PGBL VGBL, tabela regressiva progressiva previdência, taxa de administração previdência, portabilidade PGBL, PGBL dedução IR, VGBL planejamento sucessório, previdência privada vale a pena 2026",
+  },
+  "/post/renda-passiva-2026-formas-comprovadas": {
+    title: "Renda Passiva Real em 2026: 7 Formas Comprovadas de Ganhar Dinheiro Dormindo",
+    description: "Renda passiva não é mito — é construção patrimonial. Conheça 7 estratégias validadas para 2026 que geram renda recorrente, com valores reais e como começar com pouco.",
+    keywords: "renda passiva 2026, como ter renda passiva, FIIs dividendos mensais, ações pagadoras de dividendos, CDB renda passiva, renda passiva com investimentos, quanto investir para viver de renda, royalties renda passiva, P2P lending, renda passiva Brasil 2026",
+  },
+  "/post/reserva-emergencia-2026-como-montar": {
+    title: "Como Montar Sua Reserva de Emergência em 2026: Guia Definitivo",
+    description: "58% dos brasileiros não têm reserva. Aprenda quanto guardar, onde investir (Tesouro Selic ou CDB), passo a passo completo e os 5 erros que destroem a sua reserva de emergência.",
+    keywords: "reserva de emergência 2026, como montar reserva de emergência, quanto guardar reserva emergência, Tesouro Selic reserva emergência, CDB liquidez diária, reserva emergência CLT autônomo, onde guardar reserva 2026, planejamento financeiro segurança",
+  },
+  "/post/sair-das-dividas-2026-plano-acao": {
+    title: "Sair das Dívidas em 2026: O Plano de Ação Que Realmente Funciona",
+    description: "73 milhões de brasileiros estão endividados. Plano de ação passo a passo: liste, classifique, negocie (Serasa, Desenrola Brasil) e use Avalanche ou Bola de Neve para quitar de vez.",
+    keywords: "sair das dívidas 2026, como quitar dívidas, Serasa Limpa Nome, Desenrola Brasil, método avalanche dívidas, método bola de neve, negociar dívida cartão, cheque especial juros, portabilidade de crédito, dívidas cartão de crédito Brasil",
+  },
+  "/post/selic-comeca-cair-2026": {
+    title: "Selic Começa a Cair em 2026: O Que Muda nos Seus Investimentos Agora?",
+    description: "Depois de dois anos a 15%, a Selic iniciou o ciclo de queda em março de 2026. Saiba como reposicionar a carteira — prefixado, IPCA+, FIIs e ações — antes que a janela se feche.",
+    keywords: "Selic caindo 2026, queda da Selic investimentos, Tesouro Prefixado 2026, Tesouro IPCA+ longo, marcação a mercado, CDB prefixado, FIIs ciclo de queda, Copom corte Selic, Boletim Focus 2026, reposicionar carteira Selic",
+  },
+  "/post/tesouro-direto-2026-guia-completo": {
+    title: "Tesouro Direto em 2026: Ainda Vale a Pena? Guia Completo Atualizado",
+    description: "Selic acima de 13%, IPCA+ pagando 6,5% real e prefixados em alta histórica. Descubra qual título do Tesouro Direto faz mais sentido para cada objetivo em 2026.",
+    keywords: "tesouro direto 2026, tesouro selic vale a pena, tesouro ipca mais 2026, tesouro prefixado 2029, marcação a mercado tesouro, melhor tesouro direto 2026, tesouro vs CDB LCI, renda fixa governo federal, como investir tesouro direto, calculadora tesouro direto",
+  },
+  "/post/tesouro-prefixado-vs-ipca-2026": {
+    title: "Tesouro Prefixado ou IPCA+? Qual Escolher com a Selic Caindo em 2026",
+    description: "Com a Selic caindo de 15% para projeção de 12,25% até fim de 2026, a pergunta é: travo taxa prefixada agora ou fico protegido com IPCA+? Simulações reais e recomendação por perfil.",
+    keywords: "Tesouro Prefixado ou IPCA 2026, Tesouro Direto Selic caindo, marcação a mercado tesouro, NTN-B IPCA+ 2035, Tesouro Prefixado 2029, renda fixa ciclo queda juros, qual tesouro direto comprar 2026, simulação tesouro prefixado, proteção inflação investimento",
+  },
+  
   // ═══════════════════════════════════════════════════════════
   // CATEGORIA: GEEK — 52 posts
   // ═══════════════════════════════════════════════════════════
