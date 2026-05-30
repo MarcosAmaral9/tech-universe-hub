@@ -131,8 +131,8 @@ const Header = () => {
               <Search className="h-5 w-5" />
             </Button>
 
-            {/* PWA-only: Downloads / Offline shortcut (mobile header) */}
-            {isStandalone && (
+            {/* PWA-only: Downloads / Offline shortcut (mobile header) — apenas usuários logados */}
+            {isStandalone && user && (
               <Button
                 variant="ghost"
                 size="icon"
@@ -254,8 +254,8 @@ const Header = () => {
                 </Link>
               )}
 
-              {/* PWA-only Offline shortcut — sempre visível no app instalado */}
-              {isStandalone && (
+              {/* PWA-only Offline shortcut — apenas usuários logados */}
+              {isStandalone && user && (
                 <Link
                   to="/leitura-offline"
                   onClick={closeMenu}
