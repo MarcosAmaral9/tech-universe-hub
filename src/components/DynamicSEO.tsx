@@ -396,6 +396,11 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Tudo sobre o Suno AI em 2026: como funciona o v5.5, preços, plano gratuito, como criar músicas do zero, comparativo com Udio, direitos autorais e o que a batalha judicial com a RIAA significa para criadores.",
     keywords: "Suno AI 2026, Suno gerador de música IA, Suno v5.5, como usar Suno AI, Suno AI grátis, Suno vs Udio, criar música com IA, Suno planos preços, RIAA processo Suno, direitos autorais música IA, Suno comercial, gerar música texto IA Brasil",
   },
+  "/post/ac-1-altair-terra-santa-1191": {
+      title: "Assassin's Creed 1 em 2026: Review Completa — Altaïr Ibn-La'Ahad e a Terra Santa",
+      description: "Assassin's Creed 1 vale a pena em 2026? Review completa do jogo original: Altaïr Ibn-La'Ahad, Terra Santa 1191, Terceira Cruzada, Templários históricos, Animus, parkour livre e social stealth, Maçã do Éden, custo-benefício.",
+      keywords: "Assassin's Creed 1, AC 1 review 2026, Altaïr Ibn-La'Ahad, Terra Santa 1191, Terceira Cruzada jogo, AC original vale a pena, Animus origem, parkour AC1, social stealth, Templários históricos, Maçã do Éden, Ubisoft Montreal AC 1, inicio franquia AC",
+    },
   
 };
 
