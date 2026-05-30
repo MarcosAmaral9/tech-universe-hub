@@ -4,7 +4,9 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
-import { ArrowLeft, Clock, Calendar, User, AlertTriangle, TrendingUp, Cpu, Server, Shield, Tv, Target, BookOpen } from "lucide-react";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
+import { Clock, Calendar, User, AlertTriangle, TrendingUp, Cpu, Server, Shield, Tv, Target, BookOpen } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
@@ -270,31 +272,20 @@ const InvestirEmTecnologia2026 = () => {
           </p>
         </div>
       </div>
-      <section className="my-10">
-        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
-          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
-            <span className="text-primary">●</span> Análise do Marcos
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-3">Os 'Magnificent Seven' (Apple, Microsoft, Alphabet, Amazon, Nvidia, Meta, Tesla) representaram cerca de 30% do S&P 500 ao fim de 2024 segundo dados do S&P Dow Jones Indices. Para investidores brasileiros, exposição vem via BDRs (B3), ETFs internacionais e contas em corretoras como Avenue, Inter US e XP US.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">ETFs setoriais relevantes: SMH (semicondutores), QQQ (Nasdaq-100), XLK (tecnologia ampla). Custos típicos: corretagem zero em BDRs nas principais corretoras BR, taxa de administração 0,09-0,68% nos ETFs internacionais. IR de 15% sobre ganho líquido em vendas acima de R$ 35 mil/mês em ações; renda variável internacional segue a tabela de ganhos de capital.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: investir em tecnologia é tese de longo prazo, mas concentrar tudo nas 7 grandes em 2026 é apostar que a era da IA continua beneficiando exatamente os mesmos vencedores — o que a história do setor (Yahoo, Nokia, Intel) sugere ser arriscado. Alocação razoável para iniciantes: 60-70% em ETF amplo (IVVB11 ou similar), 20-30% em ETF setorial e até 10% em BDRs individuais.</p>
-        </div>
 
-        <div className="bg-muted/30 border border-border rounded-2xl p-6">
-          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
-          <ul className="space-y-2 text-sm">
-            <li><a href="https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/bdr.htm" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">B3 — BDRs ↗</a></li>
-            <li><a href="https://www.spglobal.com/spdji/en/indices/equity/sp-500/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">S&P Dow Jones — S&P 500 ↗</a></li>
-            <li><a href="https://www.gov.br/receitafederal/pt-br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Receita Federal — Ganhos de Capital ↗</a></li>
-            <li><a href="https://www.invesco.com/qqq-etf/en/home.html" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Nasdaq — QQQ Composition ↗</a></li>
-            <li><a href="https://www.vaneck.com/us/en/investments/semiconductor-etf-smh/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">VanEck — SMH Semiconductors ETF ↗</a></li>
-          </ul>
-          <p className="text-xs text-muted-foreground mt-4">
-            Última verificação dos links: maio de 2026.
-          </p>
-        </div>
-      </section>
+      <EditorialTake category="invest" title="Análise do Marcos: tecnologia exige diversificação — os vencedores de hoje nem sempre são os de amanhã">
+        <p>Os 'Magnificent Seven' (Apple, Microsoft, Alphabet, Amazon, Nvidia, Meta, Tesla) representaram cerca de 30% do S&P 500 ao fim de 2024 segundo dados do S&P Dow Jones Indices. Para investidores brasileiros, exposição vem via BDRs (B3), ETFs internacionais e contas em corretoras como Avenue, Inter US e XP US. ETFs setoriais relevantes: SMH (semicondutores), QQQ (Nasdaq-100), XLK (tecnologia ampla). Custos típicos: corretagem zero em BDRs nas principais corretoras BR, taxa de administração 0,09-0,68% nos ETFs internacionais.</p>
+        <p className="mt-2">Minha análise: investir em tecnologia é tese de longo prazo, mas concentrar tudo nas 7 grandes em 2026 é apostar que a era da IA continua beneficiando exatamente os mesmos vencedores — o que a história do setor (Yahoo, Nokia, Intel) sugere ser arriscado. <strong>Alocação razoável para iniciantes: 60-70% em ETF amplo (IVVB11 ou similar), 20-30% em ETF setorial e até 10% em BDRs individuais.</strong></p>
+      </EditorialTake>
 
+      <ArticleSources sources={[
+        { title: "B3 — BDRs: Brazilian Depositary Receipts", url: "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/bdr.htm", publisher: "B3 — Bolsa do Brasil", accessedAt: "Maio 2026" },
+        { title: "S&P Dow Jones — S&P 500 Composition", url: "https://www.spglobal.com/spdji/en/indices/equity/sp-500/", publisher: "S&P Dow Jones Indices", accessedAt: "Maio 2026" },
+        { title: "Receita Federal — Ganhos de Capital em Renda Variável Internacional", url: "https://www.gov.br/receitafederal/pt-br", publisher: "Receita Federal do Brasil", accessedAt: "Maio 2026" },
+        { title: "Invesco QQQ — Nasdaq-100 Index ETF", url: "https://www.invesco.com/qqq-etf/en/home.html", publisher: "Invesco", accessedAt: "Maio 2026" },
+        { title: "VanEck Semiconductor ETF (SMH)", url: "https://www.vaneck.com/us/en/investments/semiconductor-etf-smh/", publisher: "VanEck", accessedAt: "Maio 2026" },
+        { title: "CVM — Resolução 175/2022: ETFs e Fundos Internacionais", url: "https://www.gov.br/cvm/pt-br/legislacao/resolucoes/resocvm175consolid.pdf", publisher: "Comissão de Valores Mobiliários (CVM)", accessedAt: "Maio 2026" },
+      ]} />
 
       <RelatedPosts currentSlug="investir-em-tecnologia-2026" />
       <CommentSection postId="investir-em-tecnologia-2026" postTitle="Como Investir em Tecnologia em 2026: Guia de Setores e ETFs" />

@@ -6,7 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { ArrowLeft, Clock, Calendar, User, AlertTriangle, TrendingUp, Shield, Landmark, ChevronRight, Zap, Lock, BarChart3 } from "lucide-react";
+import { Clock, Calendar, User, AlertTriangle, TrendingUp, Shield, Landmark, ChevronRight, Zap, Lock, BarChart3 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
@@ -40,8 +40,7 @@ const TesouroDireto2026 = () => {
       totalLiquido: totalInvestido + rendimentoLiquido,
       rendimentoLiquido,
       totalInvestido,
-      aliquotaIR: ir * 100,
-    };
+      aliquotaIR: ir * 100};
   };
 
   const resultado = calcularRendimento();
@@ -160,8 +159,7 @@ const TesouroDireto2026 = () => {
                   "Liquidez D+1 (dinheiro cai em 1 dia útil)",
                 ],
                 best: "Quem quer segurança e liquidez",
-                color: "hsl(var(--invest-color))",
-              },
+                color: "hsl(var(--invest-color))"},
               {
                 icon: <TrendingUp className="h-8 w-8" />,
                 title: "2. Tesouro Prefixado",
@@ -171,8 +169,7 @@ const TesouroDireto2026 = () => {
                   "Interessante quando a Selic está prestes a cair",
                 ],
                 best: "Quem acredita que os juros vão diminuir",
-                color: "hsl(45 100% 50%)",
-              },
+                color: "hsl(45 100% 50%)"},
               {
                 icon: <Shield className="h-8 w-8" />,
                 title: "3. Tesouro IPCA+ (híbrido)",
@@ -182,8 +179,7 @@ const TesouroDireto2026 = () => {
                   "Protege contra a inflação no longo prazo",
                 ],
                 best: "Aposentadoria e objetivos de 10+ anos",
-                color: "hsl(var(--primary))",
-              },
+                color: "hsl(var(--primary))"},
             ].map((tipo, idx) => (
               <div key={idx} className="p-6 bg-card rounded-xl border border-border relative overflow-hidden">
                 <div className="absolute left-0 top-0 bottom-0 w-1" style={{ backgroundColor: tipo.color }} />
@@ -471,9 +467,8 @@ const TesouroDireto2026 = () => {
     { title: 'Receita Federal — Renda Fixa', url: 'https://www.gov.br/receitafederal/pt-br', publisher: 'RFB', accessedAt: "Maio 2026" },
     { title: 'B3 — Tarifa de Custódia', url: 'https://www.b3.com.br/pt_br/produtos-e-servicos/tarifas/', publisher: 'B3', accessedAt: "Maio 2026" }
   ]} />
-
-        <RelatedPosts currentSlug="tesouro-direto-2026-guia-completo" />
-        <CommentSection postId="tesouro-direto-2026-guia-completo" postTitle="Tesouro Direto em 2026: Ainda Vale a Pena? Guia Completo Atualizado" />
+      <RelatedPosts currentSlug="tesouro-direto-2026-guia-completo" />
+      <CommentSection postId="tesouro-direto-2026-guia-completo" postTitle="Tesouro Direto em 2026: Ainda Vale a Pena? Guia Completo Atualizado" />
       </article>
     </>
   );

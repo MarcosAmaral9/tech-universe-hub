@@ -211,7 +211,6 @@ const AcoesBrasileirasBaratas2026 = () => {
           { title: "Valor Econômico", url: "https://valor.globo.com/", publisher: "Valor Econômico", accessedAt: "Maio 2026" },
         ]}
       />
-
       <RelatedPosts currentSlug="acoes-brasileiras-baratas-valuation-2026" />
       <CommentSection postId="acoes-brasileiras-baratas-valuation-2026" postTitle="Ibovespa em Recordes mas Ações Brasileiras Ainda Estão Baratas" />
     </article>

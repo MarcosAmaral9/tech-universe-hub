@@ -241,9 +241,8 @@ const MagnificentSevenResultados2026 = () => {
         ]}
       />
 
+
       <RelatedPosts currentSlug="magnificent-seven-resultados-q1-2026-apple-tim-cook" />
-
-
       <CommentSection postId="magnificent-seven-resultados-q1-2026-apple-tim-cook" postTitle="Semana Mag-7: MSFT, Meta, Google e Amazon Reportam — e Tim Cook Sai da Apple" />
     </article>
   );

@@ -191,9 +191,6 @@ const CortarGastos2026 = () => {
           { title: "Procon \u2014 guia do consumidor", url: "https://www.procon.sp.gov.br/", publisher: "Procon SP", accessedAt: "Maio 2026" }
         ]}
       />
-
-
-
       <RelatedPosts currentSlug="cortar-gastos-2026" />
       <CommentSection postId="cortar-gastos-2026" postTitle="Cortar Gastos em 2026: 20 Estratégias Práticas para Economizar no Brasil" />
     </article>

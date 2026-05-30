@@ -206,7 +206,6 @@ const OuroMaximaHistorica2026 = () => {
           { title: "B3 — ETFs disponíveis", url: "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/etf/renda-variavel/", publisher: "B3 — Bolsa do Brasil", accessedAt: "Maio 2026" },
         ]}
       />
-
       <RelatedPosts currentSlug="ouro-maxima-historica-2026-como-investir" />
       <CommentSection postId="ouro-maxima-historica-2026-como-investir" postTitle="Ouro em Máxima Histórica: Por Que o Metal Subiu +30% e Como Investir Agora" />
     </article>

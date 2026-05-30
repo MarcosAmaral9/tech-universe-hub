@@ -225,8 +225,6 @@ const InflacaoProtegerInvestimentos2026 = () => {
           { title: "ANBIMA \u2014 \u00cdndices de mercado", url: "https://www.anbima.com.br/", publisher: "ANBIMA", accessedAt: "Maio 2026" }
         ]}
       />
-
-
       <RelatedPosts currentSlug="inflacao-proteger-investimentos-2026" />
       <CommentSection postId="inflacao-proteger-investimentos-2026" postTitle="Inflação Acima da Meta em 2026" />
     </article>

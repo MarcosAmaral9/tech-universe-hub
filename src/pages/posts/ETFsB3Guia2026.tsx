@@ -231,9 +231,6 @@ const ETFsB3Guia2026 = () => {
           { title: "Tesouro Direto \u2014 comparativo", url: "https://www.tesourodireto.com.br/", publisher: "Tesouro Nacional", accessedAt: "Maio 2026" }
         ]}
       />
-
-
-
       <RelatedPosts currentSlug="etfs-b3-guia-completo-2026" />
       <CommentSection postId="etfs-b3-guia-completo-2026" postTitle="ETFs na B3 em 2026: Guia Completo para Investir em Fundos de Índice" />
     </article>

@@ -234,7 +234,6 @@ const CopomAbril2026 = () => {
           { title: 'Estudos de Mercado de Capitais', url: 'https://www.anbima.com.br/', publisher: 'ANBIMA', accessedAt: "Maio 2026" }
         ]}
       />
-
       <RelatedPosts currentSlug="copom-abril-2026-selic-investimentos" />
       <CommentSection postId="copom-abril-2026-selic-investimentos" postTitle="Copom Abril 2026: Selic a 14,50% — O Que Muda para Renda Fixa, Ações e Câmbio" />
     </article>

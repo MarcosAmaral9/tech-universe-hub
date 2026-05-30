@@ -3,13 +3,18 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
-import { Clock, User, Calendar, TrendingUp, AlertTriangle, BarChart3, Shield, Lightbulb, Flame } from "lucide-react";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
+import {
+  Clock, User, Calendar, TrendingUp, AlertTriangle,
+  BarChart3, Shield, Lightbulb, Flame,
+} from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/guerra-ira-petrobras-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
- 
+
 const GuerraIraPetrobras2026 = () => {
   useEffect(() => {
     trackArticleRead(
@@ -18,7 +23,7 @@ const GuerraIraPetrobras2026 = () => {
       "invest"
     );
   }, []);
- 
+
   return (
     <article className="container py-8 max-w-4xl mx-auto">
       <BackNavigation category="invest" />
@@ -32,6 +37,9 @@ const GuerraIraPetrobras2026 = () => {
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
           Guerra EUA-Irã e Estreito de Ormuz: Vale a Pena Investir em Petrobras (PETR4) Agora?
         </h1>
+        <p className="text-lg text-muted-foreground mb-4">
+          O conflito entre EUA e Irã em 2026 fechou o <strong>Estreito de Ormuz</strong>, disparou o barril Brent de US$ 73 para mais de US$ 116 e fez as ações da <strong>Petrobras (PETR4)</strong> acumularem alta de 60% no ano. Com o cessar-fogo frágil e as negociações em andamento, a pergunta que todo investidor faz é: ainda vale entrar em PETR4 agora ou o melhor momento já passou?
+        </p>
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
           <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />09 de Abril, 2026</span>
@@ -40,24 +48,24 @@ const GuerraIraPetrobras2026 = () => {
         <ShareWhatsApp />
         <AuthorBio category="invest" />
       </header>
- 
+
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img
           fetchpriority="high"
           src={heroImg}
-          alt="Guerra EUA Irã petróleo Petrobras PETR4 2026"
+          alt="Guerra EUA Irã petróleo Petrobras PETR4 2026 — Estreito de Ormuz"
           loading="eager"
           decoding="async"
           className="w-full h-full object-cover"
         />
       </div>
- 
+
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
           Desde 28 de fevereiro de 2026, quando EUA e Israel iniciaram ataques conjuntos contra o Irã, o mundo vive o que analistas do Goldman Sachs já chamam de <strong>o terceiro choque do petróleo da história</strong> — depois de 1973 e 1979. O fechamento do Estreito de Ormuz, por onde passa 20% do petróleo global, disparou o barril Brent de US$ 73 para mais de US$ 116 em questão de semanas. No meio disso tudo, as ações da <strong>Petrobras (PETR4)</strong> acumulam alta de 60% em 2026. Mas o cessar-fogo frágil anunciado em 8 de abril mudou o jogo. Vale entrar agora ou já passou a hora?
         </p>
- 
-        {/* ── LINHA DO TEMPO ── */}
+
+        {/* Linha do tempo */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Flame className="h-7 w-7 text-invest" />
           A Guerra em Números: Linha do Tempo do Conflito
@@ -69,7 +77,7 @@ const GuerraIraPetrobras2026 = () => {
           {[
             { data: "28 Fev", evento: "EUA e Israel atacam o Irã", impacto: "Brent salta de US$ 73 para US$ 80 em um dia (+9,6%)" },
             { data: "02 Mar", evento: "Irã fecha o Estreito de Ormuz", impacto: "Brent ultrapassa US$ 90 — 150 navios petroleiros retidos" },
-            { data: "09 Mar", evento: "Irmã usa Ormuz como arma de guerra declarada", impacto: "Brent atinge pico de US$ 116,25 — máxima histórica recente" },
+            { data: "09 Mar", evento: "Irã usa Ormuz como arma de guerra declarada", impacto: "Brent atinge pico de US$ 116,25 — máxima histórica recente" },
             { data: "01 Abr", evento: "Pressão máxima: Trump ameaça destruir o Irã", impacto: "Brent oscila entre US$ 100–108; PETR4 atinge R$ 47,29" },
             { data: "07 Abr", evento: "Ultimato de Trump: prazo até terça-feira à noite", impacto: "Pânico nos mercados; Brent em US$ 111+" },
             { data: "08 Abr", evento: "Cessar-fogo de 2 semanas mediado pelo Paquistão", impacto: "Brent cai 13–16% no dia; PETR4 perde R$ 27,9 bi em valor de mercado" },
@@ -89,8 +97,8 @@ const GuerraIraPetrobras2026 = () => {
             </div>
           ))}
         </div>
- 
-        {/* ── ESTREITO DE ORMUZ ── */}
+
+        {/* Estreito de Ormuz */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <AlertTriangle className="h-7 w-7 text-invest" />
           Por Que o Estreito de Ormuz Importa Para Seu Investimento
@@ -117,10 +125,10 @@ const GuerraIraPetrobras2026 = () => {
         <p>
           Em 9 de abril, com o cessar-fogo ameaçado pelos ataques israelenses ao Líbano, o Irã passou a exigir um <strong>pedágio por barril transportado</strong> pelo estreito — uma medida que viola tratados internacionais de navegação e que torna a situação ainda mais imprevisível antes das negociações marcadas para 11 de abril em Islamabad.
         </p>
- 
+
         <AdLeaderboard className="my-8" />
- 
-        {/* ── PETROBRAS ── */}
+
+        {/* Petrobras */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <TrendingUp className="h-7 w-7 text-invest" />
           PETR4: +60% em 2026 — Entendendo a Alta
@@ -131,25 +139,25 @@ const GuerraIraPetrobras2026 = () => {
         <p>
           Mas a guerra explica tudo? Não exatamente. Analistas da Empiricus Research apontam que a Petrobras também se beneficia de fatores estruturais: <strong>crescimento orgânico de produção no pré-sal</strong>, modernização das refinarias e a perspectiva de <strong>autossuficiência em diesel</strong> — anunciada pela presidente Magda Chambriard em abril. A produção brasileira de petróleo bateu recorde em fevereiro, com 5,304 milhões de barris de óleo equivalente por dia, segundo a ANP.
         </p>
- 
+
         <h3 className="text-xl font-bold mt-8 mb-3">O Que os Grandes Bancos Estão Dizendo</h3>
         <div className="not-prose my-6 overflow-x-auto">
           <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead>
               <tr className="bg-secondary">
-                <th className="text-left py-3 px-4">Banco / Corretora</th>
-                <th className="text-left py-3 px-4">Recomendação</th>
-                <th className="text-left py-3 px-4">Preço-Alvo PETR4</th>
-                <th className="text-left py-3 px-4">Brent Projetado 2026</th>
+                <th className="text-left py-3 px-4 font-bold">Banco / Corretora</th>
+                <th className="text-left py-3 px-4 font-bold">Recomendação</th>
+                <th className="text-left py-3 px-4 font-bold">Preço-Alvo PETR4</th>
+                <th className="text-left py-3 px-4 font-bold">Brent Projetado 2026</th>
               </tr>
             </thead>
             <tbody>
               {[
-                ["BTG Pactual", "Compra ✅", "R$ 56", "US$ 85–100"],
-                ["JP Morgan", "Compra ✅", "R$ ~58 (US$ 24 ADR)", "US$ 85"],
-                ["Citi", "Neutro ⚖️", "R$ 49 (US$ 19,5 ADR)", "US$ 77–85"],
-                ["Bank of America", "Neutro ⚖️", "R$ 49", "US$ 77,50"],
-                ["Daycoval", "Compra ✅", "N/D", "Acima de US$ 80"],
+                ["BTG Pactual",    "Compra ✅",  "R$ 56",              "US$ 85–100"],
+                ["JP Morgan",      "Compra ✅",  "R$ ~58 (US$ 24 ADR)","US$ 85"],
+                ["Citi",           "Neutro ⚖️", "R$ 49 (US$ 19,5 ADR)","US$ 77–85"],
+                ["Bank of America","Neutro ⚖️", "R$ 49",              "US$ 77,50"],
+                ["Daycoval",       "Compra ✅",  "N/D",                "Acima de US$ 80"],
               ].map(([banco, rec, alvo, brent]) => (
                 <tr key={banco} className="border-t border-border">
                   <td className="py-3 px-4 font-medium">{banco}</td>
@@ -161,35 +169,33 @@ const GuerraIraPetrobras2026 = () => {
             </tbody>
           </table>
           <p className="text-xs text-muted-foreground mt-2">
-            Fontes: BTG Pactual, JP Morgan, Citi, Bank of America — atualizações de março/abril 2026
+            Fontes: BTG Pactual, JP Morgan, Citi, Bank of America — atualizações de março/abril 2026.
           </p>
         </div>
         <p>
           De 11 casas de análise que cobrem o papel PETR4, <strong>8 possuem recomendação de compra</strong> e 3 são neutras. Nenhuma recomenda venda. O BTG Pactual, que havia saído da ação no início do ano, voltou a incluí-la na carteira recomendada de abril — trocando a PRIO (PRIO3) pela Petrobras, sob o argumento de que a estatal oferece <strong>melhor relação risco-retorno</strong> em um cenário de possível normalização.
- 
         </p>
- 
+
         <AdRectangle className="my-8" />
- 
-        {/* ── VALE A PENA? ── */}
-        
-<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+
+        {/* Os 3 cenários */}
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BarChart3 className="h-7 w-7 text-invest" />
           Vale a Pena Investir em PETR4 Agora? Os 3 Cenários
         </h2>
         <p>
           A resposta depende do cenário que se materializar para o conflito. Veja os três principais:
         </p>
- 
+
         <div className="not-prose my-6 space-y-4">
           <div className="bg-card rounded-xl border border-green-500/30 p-5">
             <h3 className="font-bold text-green-400 mb-2">🟢 Cenário 1: Guerra Continua / Estreito Fechado</h3>
             <p className="text-sm text-muted-foreground mb-2">
               Cessar-fogo fracassa, negociações de Islamabad (11/04) são suspensas, Ormuz permanece bloqueado ou com restrições.
             </p>
-            <p className="text-sm"><strong>Petróleo:</strong> Brent volta para US$ 105–120. <strong>PETR4:</strong> pressão de alta — pode testar novos recordes acima de R$ 50. <strong>Dividendo yield estimado:</strong> acima de 12% em 2026.</p>
+            <p className="text-sm"><strong>Petróleo:</strong> Brent volta para US$ 105–120. <strong>PETR4:</strong> pressão de alta — pode testar novos recordes acima de R$ 50. <strong>Dividend yield estimado:</strong> acima de 12% em 2026.</p>
           </div>
- 
+
           <div className="bg-card rounded-xl border border-yellow-500/30 p-5">
             <h3 className="font-bold text-yellow-400 mb-2">🟡 Cenário 2: Cessar-Fogo se Sustenta (Base)</h3>
             <p className="text-sm text-muted-foreground mb-2">
@@ -197,7 +203,7 @@ const GuerraIraPetrobras2026 = () => {
             </p>
             <p className="text-sm"><strong>Petróleo:</strong> Brent se acomoda entre US$ 80–95. <strong>PETR4:</strong> pode recuar para R$ 40–45 no curto prazo, mas mantém fundamentos sólidos. <strong>Dividend yield estimado:</strong> 8–9% em 2026 — ainda atrativo.</p>
           </div>
- 
+
           <div className="bg-card rounded-xl border border-red-500/30 p-5">
             <h3 className="font-bold text-red-400 mb-2">🔴 Cenário 3: Paz Total e Normalização</h3>
             <p className="text-sm text-muted-foreground mb-2">
@@ -206,15 +212,15 @@ const GuerraIraPetrobras2026 = () => {
             <p className="text-sm"><strong>Petróleo:</strong> Brent recua para US$ 65–75. <strong>PETR4:</strong> correção significativa, possível volta à faixa de R$ 35–38. <strong>Porém:</strong> BTG calcula que mesmo com Brent a US$ 80, a estatal entregaria 9% de dividend yield e 9% de FCF yield — colchão relevante.</p>
           </div>
         </div>
- 
+
         <h3 className="text-xl font-bold mt-8 mb-3">O Argumento a Favor: Por Que Petrobras Pode Continuar Subindo</h3>
         <ul>
           <li><strong>Petróleo estruturalmente caro:</strong> Analistas da Daycoval apontam que, mesmo com o fim da guerra, o Irã levará meses para reconstruir sua cadeia produtiva — o petróleo deve permanecer elevado acima de US$ 80.</li>
           <li><strong>Valuation ainda atrativo:</strong> PETR4 negocia a cerca de 9 vezes o lucro estimado para 2026 — desconto relevante frente a pares globais como Exxon e Chevron.</li>
           <li><strong>Dividendos bilionários:</strong> Com o Brent acima de US$ 80, a Petrobras tem capacidade de distribuir dividendos próximos a dois dígitos — raro no setor em mercados emergentes.</li>
-          <li><strong>Pré-sal e produção recorde:</strong> O crescimento orgânico da produção independe da guerra — a Petrobras produz petróleo mais barato que a maioria dos concorrentes globais.</li>
+          <li><strong>Pré-sal e produção recorde:</strong> O crescimento orgânico da produção independe da guerra — a Petrobras produz petróleo mais barato que a maioria dos concorrentes globais, com custo de extração abaixo de US$ 7/barril no pré-sal.</li>
         </ul>
- 
+
         <h3 className="text-xl font-bold mt-8 mb-3">Os Riscos: Por Que Ter Cautela</h3>
         <ul>
           <li><strong>Volatilidade extrema:</strong> Em 8 de abril, só no anúncio do cessar-fogo, a PETR4 chegou a perder R$ 27,9 bilhões em valor de mercado em uma única sessão — a maior queda intradia em 4 anos.</li>
@@ -222,8 +228,10 @@ const GuerraIraPetrobras2026 = () => {
           <li><strong>Intervenção nos preços dos combustíveis:</strong> O governo pode pressionar a estatal a não repassar toda a alta do petróleo aos consumidores, reduzindo a margem.</li>
           <li><strong>Cessar-fogo frágil:</strong> O acordo atual tem prazo de apenas duas semanas e já está sendo questionado pelas partes — a incerteza permanece altíssima.</li>
         </ul>
- 
-        {/* ── COMO INVESTIR ── */}
+
+        <AdInArticle />
+
+        {/* Como posicionar */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Lightbulb className="h-7 w-7 text-invest" />
           Como Posicionar Sua Carteira — Estratégias por Perfil
@@ -233,7 +241,7 @@ const GuerraIraPetrobras2026 = () => {
             {
               perfil: "Conservador",
               emoji: "🛡️",
-              estrategia: "Evite exposição direta a PETR4 por enquanto. Se quiser petróleo na carteira, prefira ETFs de commodities diversificados (como GOLD11 ou fundos multimercado com exposição a energia). O risco de queda rápida no caso de paz é elevado para quem tem baixa tolerância.",
+              estrategia: "Evite exposição direta a PETR4 por enquanto. Se quiser petróleo na carteira, prefira ETFs de commodities diversificados ou fundos multimercado com exposição a energia. O risco de queda rápida no caso de paz é elevado para quem tem baixa tolerância à volatilidade.",
             },
             {
               perfil: "Moderado",
@@ -243,7 +251,7 @@ const GuerraIraPetrobras2026 = () => {
             {
               perfil: "Arrojado",
               emoji: "🚀",
-              estrategia: "Com petróleo estruturalmente acima de US$ 80 no horizonte de 12 meses, PETR4 ainda tem espaço até o preço-alvo do BTG (R$ 56). Posição entre 8–12% da carteira pode fazer sentido. Fique atento ao noticiário geopolítico — cada tweet de Trump sobre Ormuz move o papel.",
+              estrategia: "Com petróleo estruturalmente acima de US$ 80 no horizonte de 12 meses, PETR4 ainda tem espaço até o preço-alvo do BTG (R$ 56). Posição entre 8–12% da carteira pode fazer sentido. Fique atento ao noticiário geopolítico — cada anúncio sobre Ormuz move o papel.",
             },
           ].map(({ perfil, emoji, estrategia }) => (
             <div key={perfil} className="bg-card rounded-xl border border-invest/20 p-5">
@@ -252,8 +260,8 @@ const GuerraIraPetrobras2026 = () => {
             </div>
           ))}
         </div>
- 
-        {/* ── EFEITO NO BRASIL ── */}
+
+        {/* Efeito no Brasil */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-invest" />
           O Efeito Para o Brasil Além das Ações
@@ -281,7 +289,7 @@ const GuerraIraPetrobras2026 = () => {
             </ul>
           </div>
         </div>
- 
+
         <h2 className="text-2xl font-bold mt-10 mb-4">Conclusão: Momento de Oportunidade com Risco Elevado</h2>
         <p>
           A guerra EUA-Irã criou uma janela de oportunidade real para investidores em Petrobras. Com o barril estruturalmente acima de US$ 80 no horizonte de 12 meses — mesmo no cenário de normalização — a estatal consegue entregar dividend yield próximo de 9%, valuation descontado e crescimento de produção. Mas o caminho não é linear: a volatilidade é extrema, o cessar-fogo é frágil, e cada notícia de Ormuz move o papel violentamente em questão de horas.
@@ -289,42 +297,67 @@ const GuerraIraPetrobras2026 = () => {
         <p>
           A pergunta não é "Petrobras é boa?". É <strong>"você aguenta ver a ação cair 8% no dia de um cessar-fogo e não apertar o botão de venda?"</strong>. Se a resposta for sim, os fundamentos estão do seu lado. Se não, a renda fixa indexada à inflação (IPCA+) segue sendo a alternativa mais segura em um Brasil onde o IPCA projeta 4,31% em 2026.
         </p>
- 
+
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
           <h3 className="text-xl font-bold mb-2">Você tem PETR4 na carteira? 💰</h3>
           <p className="text-muted-foreground">Conta nos comentários sua estratégia! 👇</p>
         </div>
- 
-        <p className="text-xs text-muted-foreground mt-8 p-4 bg-secondary rounded-xl">
+
+        <p className="text-xs text-muted-foreground mt-8 p-4 bg-secondary rounded-xl not-prose">
           ⚠️ <strong>Aviso Legal:</strong> Este artigo tem caráter exclusivamente informativo e educacional. Não constitui recomendação de investimento. Antes de tomar qualquer decisão financeira, consulte um assessor de investimentos certificado. Investimentos em ações envolvem riscos, incluindo perda do capital investido.
         </p>
       </div>
-      <section className="my-10">
-        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
-          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
-            <span className="text-primary">●</span> Análise do Marcos
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-3">A Petrobras (PETR4/PETR3) é a maior empresa listada na B3 por valor de mercado e responde por mais de 90% da produção de petróleo no Brasil. Tensões geopolíticas no Oriente Médio impactam diretamente o preço do barril Brent, referência usada na política de preços da estatal.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Segundo a Agência Internacional de Energia (IEA) e o relatório STEO da U.S. EIA, o Irã produz aproximadamente 3,3 milhões de barris/dia e o Estreito de Ormuz escoa cerca de 20% do petróleo consumido globalmente. Choques nessa rota historicamente elevam o Brent em 10-30% em janelas de semanas.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: para o investidor brasileiro, Petrobras se beneficia no curto prazo de Brent alto (margens de refino e exportação melhoram), mas o risco político local — paridade de preços, dividendos extraordinários, ingerência via assembleia — continua sendo o principal driver de PETR4 em 2026. Não confunda alta cíclica do petróleo com tese estrutural.</p>
-        </div>
 
-        <div className="bg-muted/30 border border-border rounded-2xl p-6">
-          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
-          <ul className="space-y-2 text-sm">
-            <li><a href="https://www.investidorpetrobras.com.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Petrobras — Relações com Investidores ↗</a></li>
-            <li><a href="https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/cotacoes/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">B3 — Cotação PETR4 ↗</a></li>
-            <li><a href="https://www.eia.gov/outlooks/steo/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">U.S. EIA — Short-Term Energy Outlook ↗</a></li>
-            <li><a href="https://www.iea.org/reports/oil-market-report" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">IEA — Oil Market Report ↗</a></li>
-            <li><a href="https://www.gov.br/cvm/pt-br" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">CVM — Comunicados Petrobras ↗</a></li>
-          </ul>
-          <p className="text-xs text-muted-foreground mt-4">
-            Última verificação dos links: maio de 2026.
-          </p>
-        </div>
-      </section>
+      <EditorialTake category="invest" title="Análise do Marcos: não confunda alta cíclica do petróleo com tese estrutural em PETR4">
+        <p>
+          A Petrobras (PETR4/PETR3) é a maior empresa listada na B3 por valor de mercado e responde por mais de 90% da produção de petróleo no Brasil. Tensões geopolíticas no Oriente Médio impactam diretamente o preço do barril Brent, referência usada na política de preços da estatal. Segundo a IEA e o relatório STEO da U.S. EIA, o Irã produz aproximadamente 3,3 milhões de barris/dia e o Estreito de Ormuz escoa cerca de 20% do petróleo consumido globalmente — choques nessa rota historicamente elevam o Brent em 10–30% em janelas de semanas.
+        </p>
+        <p className="mt-2">
+          Minha análise: para o investidor brasileiro, Petrobras se beneficia no curto prazo de Brent alto (margens de refino e exportação melhoram), mas o <strong>risco político local permanece o principal driver de PETR4 em 2026</strong> — paridade de preços, dividendos extraordinários e eventual ingerência via assembleia em ano eleitoral. O erro mais comum que vejo é o investidor entrar na ação por causa da guerra e ficar surpreso quando ela cai 15% em uma semana porque o governo sinalizou controle de preços de combustíveis. Alta cíclica de Brent é oportunidade. Mas não é tese estrutural enquanto o risco político não for precificado.
+        </p>
+      </EditorialTake>
 
- 
+      <ArticleSources
+        sources={[
+          {
+            title: "Petrobras — Relações com Investidores: Resultados e Produção",
+            url: "https://www.investidorpetrobras.com.br/",
+            publisher: "Petrobras — Relações com Investidores",
+            accessedAt: "Maio 2026",
+          },
+          {
+            title: "ANP — Boletim de Produção de Petróleo, Gás Natural e LGN",
+            url: "https://www.gov.br/anp/pt-br/assuntos/producao-e-refino/boletim-de-producao-de-petroleo",
+            publisher: "ANP — Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
+            accessedAt: "Maio 2026",
+          },
+          {
+            title: "U.S. EIA — Short-Term Energy Outlook (STEO)",
+            url: "https://www.eia.gov/outlooks/steo/",
+            publisher: "U.S. Energy Information Administration (EIA)",
+            accessedAt: "Maio 2026",
+          },
+          {
+            title: "IEA — Oil Market Report: Geopolitics and Supply Disruptions",
+            url: "https://www.iea.org/reports/oil-market-report",
+            publisher: "International Energy Agency (IEA)",
+            accessedAt: "Maio 2026",
+          },
+          {
+            title: "B3 — Cotação e Dados Históricos PETR4",
+            url: "https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/cotacoes/",
+            publisher: "B3 — Bolsa do Brasil",
+            accessedAt: "Maio 2026",
+          },
+          {
+            title: "CVM — Comunicados e Fatos Relevantes Petrobras",
+            url: "https://www.gov.br/cvm/pt-br",
+            publisher: "Comissão de Valores Mobiliários (CVM)",
+            accessedAt: "Maio 2026",
+          },
+        ]}
+      />
+
       <RelatedPosts currentSlug="guerra-ira-petroleo-petrobras-2026" />
       <CommentSection
         postId="guerra-ira-petroleo-petrobras-2026"
@@ -333,5 +366,5 @@ const GuerraIraPetrobras2026 = () => {
     </article>
   );
 };
- 
+
 export default GuerraIraPetrobras2026;

@@ -228,8 +228,6 @@ const FIIsDefensivosAbril2026 = () => {
           { title: "Status Invest \u2014 an\u00e1lise de FIIs", url: "https://statusinvest.com.br/", publisher: "Status Invest", accessedAt: "Maio 2026" }
         ]}
       />
-
-
       <RelatedPosts currentSlug="fiis-defensivos-abril-2026" />
       <CommentSection postId="fiis-defensivos-abril-2026" postTitle="FIIs Defensivos em Abril de 2026" />
     </article>

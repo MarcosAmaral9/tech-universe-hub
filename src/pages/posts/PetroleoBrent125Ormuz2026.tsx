@@ -193,7 +193,6 @@ const PetroleoBrent125Ormuz2026 = () => {
           { title: "Reuters — Energy", url: "https://www.reuters.com/business/energy/", publisher: "Reuters", accessedAt: "Maio 2026" },
         ]}
       />
-
       <RelatedPosts currentSlug={SLUG} />
       <CommentSection postId={SLUG} postTitle={TITLE} />
     </article>

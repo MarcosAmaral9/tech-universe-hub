@@ -4,6 +4,8 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { Clock, Calendar, User, ChevronRight, Brain, CheckCircle2, AlertTriangle, Smartphone, ShieldAlert, Sparkles, MessageSquare, Calculator, ListChecks } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -55,7 +57,7 @@ const IAFinancasPessoais2026 = () => {
       </header>
 
       <div className="rounded-2xl overflow-hidden mb-8">
-        <img fetchpriority="high" src={heroImg} alt="Como usar IA para organizar finanças pessoais em 2026 — apps, simulações e limites da inteligência artificial" className="w-full aspect-video object-cover" loading="eager" />
+        <img fetchpriority="high" src={heroImg} alt="IA e finanças pessoais 2026" className="w-full aspect-video object-cover" loading="eager" />
       </div>
 
       <div className="prose prose-lg max-w-none space-y-6">
@@ -218,25 +220,22 @@ const IAFinancasPessoais2026 = () => {
 
       <BackNavigation category="invest" />
 
-      <EditorialTake category="invest" title="Análise do Marcos: IA em finanças pessoais funciona para categorizar, simular e revisar — não para investir por você">
-        <p>
-          Bancos brasileiros já incorporaram IA em apps populares: Nubank com "Tuna" (assistente em testes), Itaú com "Íon" e Bradesco com "BIA". Segundo o Relatório de Cidadania Financeira 2024 do Banco Central, 87% dos brasileiros adultos têm conta bancária e 76% usam apps de banco mensalmente — o que torna a adoção de IA financeira pessoal uma das mais rápidas do mundo entre economias emergentes.
-        </p>
-        <p>
-          Ferramentas populares de finanças pessoais com IA: Mobills, Organizze e Olivia (esta última usa machine learning para classificar gastos automaticamente). ChatGPT e Claude podem ser usados como copilotos financeiros para simulações e revisão de planilhas — desde que você nunca compartilhe dados sensíveis como CPF, senha ou número de cartão. Para investimentos, evite seguir recomendação cega de modelos generalistas; eles não conhecem seu perfil de risco nem a tributação brasileira (IR sobre renda fixa, come-cotas em fundos, isenção em LCI/LCA até R$ 35 mil/mês de venda em ações).
-        </p>
+      <EditorialTake category="invest" title="Análise do Marcos: IA no bolso — 3 usos que funcionam de verdade">
+        <p>Bancos brasileiros já incorporaram IA em apps populares: Nubank com 'Tuna' (assistente em testes), Itaú com 'Íon' e Bradesco com 'BIA'. Segundo o Relatório de Cidadania Financeira 2024 do Banco Central, 87% dos brasileiros adultos têm conta bancária e 76% usam apps de banco mensalmente. Ferramentas populares de finanças pessoais com IA: Mobills, Organizze e Olivia (esta última usa machine learning para classificar gastos automaticamente).</p>
+        <p className="mt-2">Minha análise: IA em finanças pessoais funciona melhor em três frentes — <strong>categorização automática de gastos</strong>, <strong>simulação de cenários</strong> ('e se eu investir R$ 500/mês por 10 anos') e <strong>revisão de assinaturas esquecidas</strong>. Para investimentos, evite seguir recomendação cega de modelos generalistas; eles não conhecem seu perfil de risco nem a tributação brasileira (IR sobre renda fixa, come-cotas em fundos, isenção em LCI/LCA). ChatGPT e Claude são ótimos copiloto para entender conceitos — não para decisões com seu patrimônio.</p>
       </EditorialTake>
 
       <ArticleSources sources={[
-        { title: "Banco Central — Relatório de Cidadania Financeira 2024", url: "https://www.bcb.gov.br/cidadaniafinanceira/relatoriocidadania", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
-        { title: "Receita Federal — Tributação de Investimentos", url: "https://www.gov.br/receitafederal/pt-br", publisher: "Receita Federal", accessedAt: "Maio 2026" },
-        { title: "ANBIMA — Educação Financeira", url: "https://www.anbima.com.br/pt_br/educar/", publisher: "ANBIMA", accessedAt: "Maio 2026" },
-        { title: "Mobills — App de Controle Financeiro com IA", url: "https://www.mobills.com.br/", publisher: "Mobills", accessedAt: "Maio 2026" },
-        { title: "CVM — Portal do Investidor", url: "https://www.investidor.gov.br/", publisher: "CVM", accessedAt: "Maio 2026" },
+        { title: "Relatório de Cidadania Financeira 2024", url: "https://www.bcb.gov.br/cidadaniafinanceira/relatoriocidadania", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
+        { title: "Receita Federal — Tributação de Investimentos e Renda Fixa", url: "https://www.gov.br/receitafederal/pt-br", publisher: "Receita Federal do Brasil", accessedAt: "Maio 2026" },
+        { title: "ANBIMA — Educação Financeira Digital", url: "https://www.anbima.com.br/pt_br/educar/", publisher: "ANBIMA", accessedAt: "Maio 2026" },
+        { title: "Mobills — Gestão Financeira com IA", url: "https://www.mobills.com.br/", publisher: "Mobills", accessedAt: "Maio 2026" },
+        { title: "CVM — Portal do Investidor", url: "https://www.investidor.gov.br/", publisher: "Comissão de Valores Mobiliários (CVM)", accessedAt: "Maio 2026" },
+        { title: "Banco Central — Open Finance e Inovação Financeira", url: "https://www.bcb.gov.br/estabilidadefinanceira/openfinance", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
       ]} />
 
       <RelatedPosts currentSlug="ia-para-financas-pessoais-2026" />
-      <CommentSection postId="ia-para-financas-pessoais-2026" postTitle="Como usar IA para organizar suas finanças em 2026" />
+      <CommentSection postId="ia-para-financas-pessoais-2026" />
     </article>
   );
 };

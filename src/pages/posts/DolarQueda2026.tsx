@@ -198,7 +198,6 @@ const DolarQueda2026 = () => {
           { title: 'Receita Federal — Bens no Exterior', url: 'https://www.gov.br/receitafederal/pt-br', publisher: 'Receita Federal do Brasil', accessedAt: "Maio 2026" }
         ]}
       />
-
       <RelatedPosts currentSlug="dolar-queda-2026-investir-exterior" />
       <CommentSection postId="dolar-queda-2026-investir-exterior" postTitle="Dólar no Menor Nível em 2 Anos: Como Aproveitar a Queda Cambial para Investir no Exterior" />
     </article>

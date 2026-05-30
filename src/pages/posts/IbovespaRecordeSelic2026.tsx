@@ -14,7 +14,6 @@ import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import carteiraInvestimentosImg from "@/assets/carteira-iniciantes-guia-2026.webp";
 
 
-
 const IbovespaRecordeSelic2026 = () => {
   useEffect(() => {
     trackArticleRead(
@@ -215,7 +214,7 @@ const IbovespaRecordeSelic2026 = () => {
         </p>
       </div>
 
-        <EditorialTake category="invest">
+        <EditorialTake category="invest" title="Análise do Marcos: Ibovespa em recorde não significa que qualquer ação está barata">
           <p>O Ibovespa em recorde com Selic ainda em patamar restritivo confirma o que venho falando: o mercado precifica corte antes do Copom efetivar. Históricamente, dos últimos cinco ciclos de afrouxamento brasileiros, em quatro o Ibov subiu 15%+ nos seis meses anteriores ao primeiro corte. A armadilha é entrar em small caps ilquídas achando que vai pegar o próximo Magálu — quem leu o livro do Damodaran sabe que reratings típicos vêm em qualidade, não em pulinhos.</p>
         </EditorialTake>
 
@@ -226,8 +225,7 @@ const IbovespaRecordeSelic2026 = () => {
     { title: 'Valor Econômico — Mercado', url: 'https://valor.globo.com/financas/', publisher: 'Valor', accessedAt: "Maio 2026" },
     { title: 'Reuters — Brazil Markets', url: 'https://www.reuters.com/markets/', publisher: 'Reuters', accessedAt: "Maio 2026" }
   ]} />
-
-        <RelatedPosts currentSlug="ibovespa-recorde-selic-caindo-2026" />
+      <RelatedPosts currentSlug="ibovespa-recorde-selic-caindo-2026" />
       <CommentSection postId="ibovespa-recorde-selic-caindo-2026" postTitle="Ibovespa em Recordes e Selic Caindo: Onde Investir Agora em Abril de 2026" />
     </article>
   );

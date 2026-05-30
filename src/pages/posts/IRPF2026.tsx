@@ -409,9 +409,8 @@ const IRPF2026 = () => {
     { title: 'Tesouro Direto — Tributação', url: 'https://www.tesourodireto.com.br/tesouro-direto-tributacao.htm', publisher: 'Tesouro Nacional', accessedAt: "Maio 2026" },
     { title: 'CVM — Orientações ao Investidor', url: 'https://www.gov.br/cvm/pt-br/assuntos/noticias', publisher: 'CVM', accessedAt: "Maio 2026" }
   ]} />
-
-        <RelatedPosts currentSlug="irpf-2026-guia-declarar-pagar-menos" />
-        <CommentSection postId="28" postTitle="IRPF 2026: Guia Completo Para Declarar e Pagar Menos Imposto" />
+      <RelatedPosts currentSlug="irpf-2026-guia-declarar-pagar-menos" />
+      <CommentSection postId="28" postTitle="IRPF 2026: Guia Completo Para Declarar e Pagar Menos Imposto" />
       </article>
     </>
   );

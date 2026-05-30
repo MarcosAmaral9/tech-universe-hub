@@ -198,7 +198,6 @@ const PnadDesempregoMarco2026 = () => {
           { title: "CAGED — Cadastro Geral de Empregados e Desempregados", url: "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/estatisticas-trabalho/novo-caged", publisher: "Ministério do Trabalho e Emprego", accessedAt: "Maio 2026" },
         ]}
       />
-
       <RelatedPosts currentSlug={SLUG} />
       <CommentSection postId={SLUG} postTitle={TITLE} />
     </article>

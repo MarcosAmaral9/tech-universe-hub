@@ -4,14 +4,16 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
-import { ArrowLeft, Clock, Calendar, User, ChevronRight, Zap, Bot, Brain, Shield, TrendingUp, AlertTriangle, ExternalLink, Star } from "lucide-react";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
+import { Clock, Calendar, User, ChevronRight, Zap, Bot, Brain, Shield, TrendingUp, AlertTriangle, ExternalLink, Star } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import iaFinancasImg from "@/assets/ia-financas-2026.webp";
+
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 // Matrix rain effect component
-
 const MatrixRain = () => {
   const columns = Array.from({ length: 20 }, (_, i) => ({
     left: `${i * 5}%`,
@@ -73,6 +75,9 @@ const ToolCard = ({ name, description, category, ease }: ToolCardProps) => (
 );
 
 const IAMercadoFinanceiro2026 = () => {
+  useEffect(() => {
+    trackArticleRead("ia-mercado-financeiro-2026-investimentos", "IA no Mercado Financeiro 2026: Como a IA Está Transformando Investimentos", "invest");
+  }, []);
 
   return (
     <>
@@ -109,7 +114,7 @@ const IAMercadoFinanceiro2026 = () => {
 
         {/* Hero with Matrix effect */}
         <div className="relative rounded-2xl overflow-hidden mb-8">
-          <img fetchpriority="high" src={iaFinancasImg} alt="IA no mercado financeiro em 2026 — robôs-advisor, análise fundamentalista e Open Finance no Brasil" className="w-full aspect-video object-cover" loading="eager" />
+          <img fetchpriority="high" src={iaFinancasImg} alt="IA no Mercado Financeiro 2026" className="w-full aspect-video object-cover" loading="eager" />
           <MatrixRain />
         </div>
 
@@ -330,31 +335,26 @@ const IAMercadoFinanceiro2026 = () => {
 
         <div className="flex gap-4 mb-8">
           <BackNavigation category="invest" />
-          <BackNavigation category="invest" />
         </div>
 
+        <EditorialTake category="invest" title="Análise do Marcos: IA é ferramenta de triagem, não de decisão">
+          <p>Segundo o relatório 'AI in Financial Services 2024' da NVIDIA (em parceria com a McKinsey), 91% das instituições financeiras globais já usam IA em produção — principalmente em detecção de fraude, análise de crédito e atendimento. No Brasil, o Banco Central regulamentou o uso de IA no Open Finance via Resolução BCB 287/2022, exigindo explicabilidade em decisões automatizadas.</p>
+          <p className="mt-2">Para o investidor PF brasileiro, os robôs-advisor consolidados são Warren (parceria com Galápagos), Magnetis (carteiras automatizadas) e o piloto de IA da XP Investimentos. O custo médio é de 0,3% a 0,8% ao ano sobre patrimônio, contra 1,5% a 2% de fundos ativos tradicionais. Minha análise: a IA não substitui análise humana em decisões grandes — ela é excelente para triagem (filtrar 500 ações para 20 candidatas) e péssima para julgar contexto macro. <strong>Use IA generativa para resumir relatórios trimestrais e ATAs do Copom, mas nunca para decisão de compra direta.</strong></p>
+        </EditorialTake>
 
-      <EditorialTake category="invest" title="Análise do Marcos: use IA para triagem de 500 ações — nunca para decisão de compra direta">
-        <p>
-          Segundo o relatório "AI in Financial Services 2024" da NVIDIA (em parceria com a McKinsey), 91% das instituições financeiras globais já usam IA em produção — principalmente em detecção de fraude, análise de crédito e atendimento. No Brasil, o Banco Central regulamentou o uso de IA no Open Finance via Resolução BCB 287/2022, exigindo explicabilidade em decisões automatizadas.
-        </p>
-        <p>
-          Para o investidor PF brasileiro, os robôs-advisor consolidados são Warren (parceria com Galápagos), Magnetis (carteiras automatizadas) e o piloto de IA da XP Investimentos. O custo médio é de 0,3% a 0,8% ao ano sobre patrimônio, contra 1,5% a 2% de fundos ativos tradicionais. Para análise fundamentalista, ferramentas como Status Invest e Investidor10 (ambas gratuitas com versão paga) usam algoritmos para ranquear ações por indicadores. A IA é excelente para triagem — filtrar 500 ações para 20 candidatas — e péssima para julgar contexto macro. Use IA generativa para resumir relatórios trimestrais e ATAs do Copom, nunca para decisão de compra direta.
-        </p>
-      </EditorialTake>
-
-      <ArticleSources sources={[
-        { title: "NVIDIA — State of AI in Financial Services 2024", url: "https://www.nvidia.com/en-us/industries/finance/", publisher: "NVIDIA", accessedAt: "Maio 2026" },
-        { title: "Banco Central — Resolução BCB 287/2022 (Open Finance e IA)", url: "https://www.bcb.gov.br/estabilidadefinanceira/openfinance", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
-        { title: "CVM — Tecnologia e Inovação no Mercado de Capitais", url: "https://www.gov.br/cvm/pt-br", publisher: "CVM", accessedAt: "Maio 2026" },
-        { title: "Status Invest — Plataforma de Análise Fundamentalista", url: "https://statusinvest.com.br/", publisher: "Status Invest", accessedAt: "Maio 2026" },
-        { title: "XP Inc. — Relatórios Trimestrais e IA em Investimentos", url: "https://institucional.xpi.com.br/relacao-com-investidores/", publisher: "XP Inc.", accessedAt: "Maio 2026" },
-      ]} />
+        <ArticleSources sources={[
+          { title: "NVIDIA — State of AI in Financial Services 2024", url: "https://www.nvidia.com/en-us/industries/finance/", publisher: "NVIDIA / McKinsey", accessedAt: "Maio 2026" },
+          { title: "Banco Central — Resolução BCB 287/2022 (Open Finance e IA)", url: "https://www.bcb.gov.br/estabilidadefinanceira/openfinance", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
+          { title: "CVM — Tecnologia e Inovação Financeira", url: "https://www.gov.br/cvm/pt-br", publisher: "Comissão de Valores Mobiliários (CVM)", accessedAt: "Maio 2026" },
+          { title: "Status Invest — Análise Fundamentalista com IA", url: "https://statusinvest.com.br/", publisher: "Status Invest", accessedAt: "Maio 2026" },
+          { title: "XP Inc. — Relatórios Trimestrais e Inovação", url: "https://institucional.xpi.com.br/relacao-com-investidores/", publisher: "XP Inc.", accessedAt: "Maio 2026" },
+          { title: "ANBIMA — Inovação e Tecnologia no Mercado de Capitais", url: "https://www.anbima.com.br/pt_br/informar/relatorios/mercado-de-capitais/", publisher: "ANBIMA", accessedAt: "Maio 2026" },
+        ]} />
 
       <RelatedPosts currentSlug="ia-mercado-financeiro-2026-investimentos" />
       <CommentSection postId="ia-mercado-financeiro-2026-investimentos" postTitle="IA no Mercado Financeiro 2026: Como a IA Está Transformando Investimentos" />
-    </article>
-  </>
+      </article>
+    </>
   );
 };
 
