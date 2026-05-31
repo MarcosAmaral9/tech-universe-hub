@@ -16,7 +16,7 @@ try {
 }
 
 const lines = source.split("\n");
-const keyPattern = /^  "([^"]+)":\s*\{/;
+const keyPattern = /^\s{1,4}"([^"]+)":\s*\{/;
 
 let inPageMeta = false;
 const seen = new Map(); // key -> first line number (1-based)
