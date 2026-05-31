@@ -8,6 +8,8 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-privacidade-dados-2026.webp";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const IAPrivacidadeDados2026 = () => {
@@ -119,7 +121,7 @@ const IAPrivacidadeDados2026 = () => {
           <p className="text-muted-foreground">Compartilhe suas práticas de segurança nos comentários! 🔒</p>
         </div>
       </div>
-      </div>
+
 
       <EditorialTake category="ia" title="Análise do Marcos: três regras práticas que eliminam 90% do risco de privacidade com IA">
         <p>
