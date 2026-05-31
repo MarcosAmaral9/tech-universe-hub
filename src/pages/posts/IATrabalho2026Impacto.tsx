@@ -1,3 +1,5 @@
+import ArticleSources from "@/components/ArticleSources";
+import EditorialTake from "@/components/EditorialTake";
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";

@@ -964,95 +964,20 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
   // ═══════════════════════════════════════════════════════════
   // CATEGORIA: FINANÇAS & INVESTIMENTOS — 19 posts
   // ═══════════════════════════════════════════════════════════
-  "/post/poupanca-vs-cdb-tesouro-2026": {
-    title: "Poupança vs CDB vs Tesouro Direto em 2026: Qual Rende Mais?",
-    description: "Comparação completa entre Poupança, CDB e Tesouro Direto em 2026: rendimentos, liquidez, riscos, imposto de renda e qual escolher para cada objetivo financeiro.",
-    keywords: "poupança vs CDB vs Tesouro Direto, melhor investimento 2026, rendimento poupança, CDB liquidez diária, Tesouro Selic, renda fixa comparação, investimento iniciante, Selic 2026",
-  },
-  "/post/reserva-emergencia-2026-como-montar": {
-    title: "Como Montar Sua Reserva de Emergência em 2026: Guia Definitivo",
-    description: "Guia completo para montar reserva de emergência em 2026: quanto guardar, onde investir (Tesouro Selic vs CDB), quanto tempo leva e os erros mais comuns. Com simulações por faixa de renda.",
-    keywords: "reserva emergência 2026, quanto guardar reserva emergência, onde investir reserva emergência, Tesouro Selic reserva, CDB liquidez diária, quanto meses de despesas, reserva CLT autônomo",
-  },
-  "/post/berkshire-hathaway-greg-abel-2026-sem-buffett": {
-    title: "Berkshire Hathaway 2026: Greg Abel Assume CEO e US$ 397B em Caixa",
-    description: "Greg Abel preside o primeiro encontro da Berkshire sem Buffett. US$ 397 bilhões em caixa, lucro dobrou no Q1 2026 e deepfake de Buffett alerta sobre riscos de IA.",
-    keywords: "Berkshire Hathaway 2026, Greg Abel CEO, Warren Buffett sucessão, Berkshire encontro anual, BRK.B, Berkshire caixa 397 bilhões, deepfake Buffett, holding Berkshire, investimentos value, Charlie Munger legado, BRKB ações, Berkshire investidor brasileiro",
-  },
-  "/post/pnad-desemprego-61-marco-2026": {
-    title: "PNAD Março 2026: Desemprego em 6,1%, Mínima Histórica — Impactos para o Investidor",
-    description: "IBGE: PNAD do trimestre até março 2026 mostra desemprego em 6,1%, 6,6 milhões de desocupados e renda média recorde de R$ 3.722. Impactos em Selic, bolsa e carteira.",
-    keywords: "PNAD março 2026, desemprego Brasil 6,1%, IBGE PNAD trimestral, mercado de trabalho 2026, renda média Brasil, massa salarial 2026, taxa desocupação, impacto Selic desemprego, Copom PNAD, indicadores macroeconômicos, bolsa brasileira PNAD, investidor IBGE",
-  },
-  "/post/copom-selic-1450-corte-abril-2026": {
-    title: "Copom Corta Selic para 14,50% — Segundo Corte do Ciclo em Abril 2026",
-    description: "Copom reduz Selic de 14,75% para 14,50% ao ano. Segundo corte consecutivo. Comunicado pede cautela com choque do petróleo. Impactos em renda fixa, ações e FIIs.",
-    keywords: "Copom Selic 14,50%, corte Selic abril 2026, Banco Central juros, ata Copom 2026, ciclo de corte Selic, taxa Selic Brasil, renda fixa Selic 14,50, impacto Selic ações, FIIs Selic, Tesouro Direto Selic, Galípolo Copom, política monetária 2026",
-  },
-  "/post/petroleo-brent-125-bloqueio-ormuz-2026": {
-    title: "Petróleo Brent Ultrapassa US$ 125 com Bloqueio em Ormuz — Impacto em PETR4",
-    description: "Brent sobe 6,2% e passa de US$ 125/barril após bloqueio naval ao Estreito de Ormuz. Maior nível desde 2008. Impacto na inflação brasileira, PETR4, PRIO3 e aéreas.",
-    keywords: "petróleo Brent 125 dólares, bloqueio Estreito Ormuz, PETR4 alta petróleo, Petrobras 2026, PRIO3 petróleo, choque do petróleo 2026, crise petróleo Oriente Médio, inflação petróleo Brasil, aéreas alta combustível, Trump Irã Ormuz, commodities 2026, Brent recorde",
-  },
   "/post/anthropic-mythos-modelo-ia-google-investimento-2026": {
     title: "Google Investe US$ 40 Bilhões na Anthropic e Mythos Chega — Resposta à OpenAI",
     description: "Google compromete US$ 40 bilhões na Anthropic a valuation de US$ 350B. Anthropic lança Mythos, modelo com cibersegurança avançada restrita a parceiros selecionados.",
     keywords: "Anthropic Mythos, Google investe Anthropic, Anthropic 40 bilhões, modelo Mythos IA, Claude Anthropic 2026, Anthropic valuation 350 bilhões, Anthropic vs OpenAI, Google IA investimento, cibersegurança IA Mythos, Dario Amodei, modelos IA 2026, Anthropic Google Cloud",
-  },
-  "/post/magnificent-seven-resultados-q1-2026-apple-tim-cook": {
-    title: "Magnificent Seven Q1 2026: MSFT, Meta, Google, Amazon e Tim Cook Sai da Apple",
-    description: "Microsoft, Meta, Alphabet e Amazon reportam Q1 2026 com capex combinado de US$ 620B+ em IA. Tim Cook anuncia saída da Apple em 1º de setembro, sucedido por John Ternus.",
-    keywords: "Magnificent Seven Q1 2026, resultados Big Tech, Tim Cook sai Apple, John Ternus CEO Apple, Microsoft Meta Google Amazon, capex IA 620 bilhões, balanço Big Tech 2026, MSFT Meta GOOGL AMZN, Apple sucessão CEO, ações tech 2026, temporada balanços Wall Street, IA capex 2026",
-  },
-  "/post/sair-das-dividas-2026-plano-acao": {
-    title: "Sair das Dívidas em 2026: Plano de Ação Que Realmente Funciona",
-    description: "Como sair das dívidas em 2026: método bola de neve, negociação com bancos, Desenrola Brasil, juros do rotativo (400%+) e plano de 12 meses passo a passo.",
-    keywords: "sair das dívidas 2026, como quitar dívidas, método bola de neve, Desenrola Brasil 2026, juros rotativo cartão, negociar dívidas Serasa, Limpa Nome, planejamento financeiro dívidas, sair do vermelho, dívida cartão crédito, cheque especial, portabilidade crédito",
-  },
-  "/post/selic-comeca-cair-2026": {
-    title: "Selic Começa a Cair em 2026: O Que Muda nos Seus Investimentos",
-    description: "Selic em queda em 2026: como ajustar carteira de renda fixa, IPCA+ longo, marcação a mercado, oportunidades em prefixados e impacto em Tesouro Selic, CDB e bolsa.",
-    keywords: "Selic cair 2026, queda Selic Copom 2026, IPCA+ marcação a mercado, prefixado Selic baixa, Tesouro Direto Selic queda, ciclo queda juros Brasil, renda fixa Selic 2026, ações Selic cair, FIIs Selic queda, Boletim Focus 2026, ciclo de corte de juros",
-  },
-  "/post/renda-passiva-2026-formas-comprovadas": {
-    title: "Renda Passiva em 2026: 7 Formas Comprovadas de Ganhar Dinheiro",
-    description: "Renda passiva real em 2026 no Brasil: dividendos B3, FIIs (IFIX), JCP, Tesouro IPCA+ com cupons, ETFs e quanto patrimônio precisa para viver de renda.",
-    keywords: "renda passiva 2026, viver de dividendos, melhores FIIs dividendos 2026, IFIX rendimento, IDIV dividendos, JCP imposto, ações pagadoras dividendos, Tesouro IPCA juros semestrais, ETFs renda passiva, quanto investir viver renda, dividendos isentos IR",
-  },
-  "/post/previdencia-privada-pgbl-vgbl-2026": {
-    title: "Previdência Privada 2026: PGBL ou VGBL? Guia Para Decidir Sem Erro",
-    description: "PGBL vs VGBL em 2026: tabela progressiva ou regressiva, dedução IR 12%, taxa de carregamento zero, portabilidade SUSEP e quando vale para sucessão.",
-    keywords: "previdência privada 2026, PGBL ou VGBL, tabela regressiva previdência, deduzir IR PGBL, taxa carregamento zero, portabilidade previdência, SUSEP regulamentação, planejamento sucessório VGBL, melhor previdência 2026, fundo previdenciário, complementar aposentadoria",
-  },
-  "/post/investir-em-tecnologia-2026": {
-    title: "Investir em Tecnologia em 2026: Guia de Setores, BDRs e ETFs",
-    description: "Como investir em tecnologia em 2026: Magnificent Seven, ETFs QQQ, SMH, XLK, BDRs na B3, IVVB11, semicondutores, IA e alocação para o investidor brasileiro.",
-    keywords: "investir tecnologia 2026, BDRs B3 tech, ETF QQQ Nasdaq, SMH semicondutores, XLK tecnologia, Magnificent Seven, IVVB11 S&P 500, Avenue Securities, Nvidia BDR, Apple BDR, Microsoft BDR, ações de IA, investimento internacional",
-  },
-  "/post/ia-para-financas-pessoais-2026": {
-    title: "Como Usar IA para Organizar Suas Finanças Pessoais em 2026",
-    description: "Guia completo sobre IA e finanças pessoais em 2026: apps Mobills, Organizze, Olivia, Nubank Tuna, Itaú Íon, como usar ChatGPT para simular investimentos e os limites da IA em decisões financeiras.",
-    keywords: "IA finanças pessoais 2026, app controle financeiro IA, Mobills IA, Olivia app, Nubank Tuna IA, Itaú Íon, ChatGPT finanças pessoais, simular investimento IA, orçamento doméstico IA, LGPD dados financeiros, Banco Central cidadania financeira",
   },
   "/post/openai-bilhoes-financiamento-record-2026": {
     title: "OpenAI Capta US$ 40 Bilhões: Maior Rodada de IA da História",
     description: "OpenAI fecha financiamento recorde de US$ 40 bilhões com SoftBank a valuation de US$ 300B. O que muda para ChatGPT, GPT-5 e a corrida da IA em 2026.",
     keywords: "OpenAI financiamento 2026, OpenAI 40 bilhões SoftBank, OpenAI valuation 300 bilhões, rodada recorde IA, ChatGPT futuro 2026, GPT-5, Sam Altman financiamento, OpenAI IPO, corrida IA, SoftBank OpenAI Masayoshi Son",
   },
-  "/post/ouro-maxima-historica-2026-como-investir": {
-    title: "Ouro em Máxima Histórica em 2026: Como Investir no Brasil",
-    description: "Ouro em máxima histórica em 2026: motivos da alta, ETFs, GLD, OURO11, ouro físico no Brasil e como montar exposição protegida contra dólar e inflação.",
-    keywords: "ouro máxima histórica 2026, como investir ouro 2026, OURO11 ETF, GLD ouro, ouro físico Brasil, ouro vs Bitcoin 2026, hedge inflação ouro, cotação ouro 2026, comprar ouro no Brasil, reservas ouro Banco Central",
-  },
   "/post/acoes-brasileiras-baratas-valuation-2026": {
     title: "Ações Brasileiras Baratas em 2026: Valuation Atrativo na B3",
     description: "Ações brasileiras baratas em 2026: análise de valuation, P/L histórico, dividend yield e oportunidades na B3 com Selic em queda e Ibovespa descontado.",
     keywords: "ações brasileiras baratas 2026, valuation B3 2026, ações P/L atrativo, dividend yield Brasil, Ibovespa descontado, ações para comprar 2026, oportunidades B3, Selic queda ações, value investing Brasil, ações baratas Selic",
-  },
-  "/post/ia-mercado-financeiro-2026-investimentos": {
-    title: "IA no Mercado Financeiro em 2026: Como a IA Está Transformando Investimentos",
-    description: "Como a IA está transformando investimentos em 2026: robôs-advisor (Warren, Magnetis, XP), análise fundamentalista, Open Finance, Resolução BCB 287/2022 e como usar IA para triagem de ativos no Brasil.",
-    keywords: "IA mercado financeiro 2026, robô advisor Brasil, Warren Magnetis XP IA, IA investimentos 2026, análise fundamentalista IA, Status Invest IA, Open Finance IA, BCB resolução 287 2022, NVIDIA AI financial services, ChatGPT investimentos, IA para investidor pessoa física",
   },
   "/post/openai-financiamento-2026": {
     title: "OpenAI Capta US$ 40 Bilhões em 2026: O Que Significa para o Futuro da IA",
