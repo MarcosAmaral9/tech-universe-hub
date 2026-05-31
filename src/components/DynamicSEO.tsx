@@ -974,11 +974,6 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "OpenAI fecha financiamento recorde de US$ 40 bilhões com SoftBank a valuation de US$ 300B. O que muda para ChatGPT, GPT-5 e a corrida da IA em 2026.",
     keywords: "OpenAI financiamento 2026, OpenAI 40 bilhões SoftBank, OpenAI valuation 300 bilhões, rodada recorde IA, ChatGPT futuro 2026, GPT-5, Sam Altman financiamento, OpenAI IPO, corrida IA, SoftBank OpenAI Masayoshi Son",
   },
-  "/post/acoes-brasileiras-baratas-valuation-2026": {
-    title: "Ações Brasileiras Baratas em 2026: Valuation Atrativo na B3",
-    description: "Ações brasileiras baratas em 2026: análise de valuation, P/L histórico, dividend yield e oportunidades na B3 com Selic em queda e Ibovespa descontado.",
-    keywords: "ações brasileiras baratas 2026, valuation B3 2026, ações P/L atrativo, dividend yield Brasil, Ibovespa descontado, ações para comprar 2026, oportunidades B3, Selic queda ações, value investing Brasil, ações baratas Selic",
-  },
   "/post/openai-financiamento-2026": {
     title: "OpenAI Capta US$ 40 Bilhões em 2026: O Que Significa para o Futuro da IA",
     description: "Análise completa da rodada de US$ 40 bilhões da OpenAI em 2026: investidores, valuation, impacto no mercado de IA, o que muda para ChatGPT e o que isso diz sobre a corrida pela AGI.",
