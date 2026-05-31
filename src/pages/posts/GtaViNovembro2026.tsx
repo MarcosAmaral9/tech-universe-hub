@@ -196,7 +196,7 @@ const GtaViNovembro2026 = () => {
           <p>GTA VI confirmado para 26 de maio de 2026 (segundo a Take-Two) e adiado novamente para o então novo ‘holiday window’ é típico Rockstar: preferível atrasar e entregar a 96+ no Metacritic do que repetir o desastre do GTA Trilogy. Para o brasileiro, a notícia ruim é o preço — R$ 350 a R$ 400 é o piso esperado para a edição padrão, refletindo o câmbio e a estratégia de upselling do mercado AAA pós-2024.</p>
         </EditorialTake>
 
-        <ArticleSources sources={[
+        <ArticleSources category="geek" sources={[
     { title: 'Rockstar Games — GTA VI Newsroom', url: 'https://www.rockstargames.com/VI', publisher: 'Rockstar Games', accessedAt: "Maio 2026" },
     { title: 'Take-Two Interactive — Investor Relations', url: 'https://www.take2games.com/ir/', publisher: 'Take-Two', accessedAt: "Maio 2026" },
     { title: 'IGN Brasil', url: 'https://br.ign.com/gta-6', publisher: 'IGN', accessedAt: "Maio 2026" },

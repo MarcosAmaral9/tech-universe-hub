@@ -182,7 +182,7 @@ const CortarGastos2026 = () => {
       <EditorialTake category="invest" title={"An\u00e1lise do Marcos: cortar gasto \u00e9 matem\u00e1tica, manter o corte \u00e9 h\u00e1bito"}>
         <p>Toda planilha de redução de despesas funciona nos primeiros 60 dias e fracassa depois — não porque a conta esteja errada, mas porque <strong>economizar exige fricção constante</strong> e o cérebro humano busca o caminho de menor esforço. A solução que recomendo, e que uso, é <strong>automatizar o que dá certo</strong>: débito automático para investimento no dia do salário, cartões virtuais com limite para assinaturas, alerta no app do banco para qualquer débito acima de R$ 200. Isso transfere a disciplina para o sistema. No Brasil de 2026, com Selic alta, cada R$ 500/mês cortados e investidos em Tesouro Selic viram R$ 7.000+ em 12 meses — vale o exercício.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="invest"
         sources={[
           { title: "Calculadora Tesouro Direto", url: "https://www.tesourodireto.com.br/simulador/", publisher: "Tesouro Nacional", accessedAt: "Maio 2026" },
           { title: "Pesquisa de Endividamento \u2014 CNC", url: "https://cnc.org.br/", publisher: "CNC", accessedAt: "Maio 2026" },

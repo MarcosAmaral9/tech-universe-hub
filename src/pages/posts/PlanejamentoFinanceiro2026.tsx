@@ -613,7 +613,7 @@ const PlanejamentoFinanceiro2026 = () => {
           </p>
         </EditorialTake>
 
-        <ArticleSources
+        <ArticleSources category="invest"
           sources={[
             {
               title: "ANBIMA — Educação e Certificações Financeiras (CPA-10, CPA-20, CFP)",

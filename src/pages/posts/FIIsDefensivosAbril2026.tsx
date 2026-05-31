@@ -219,7 +219,7 @@ const FIIsDefensivosAbril2026 = () => {
       <EditorialTake category="invest" title={"An\u00e1lise do Marcos: defensivo de verdade \u00e9 vac\u00e2ncia baixa e contrato longo"}>
         <p>'FII defensivo' virou rótulo de marketing, mas na prática só dois critérios separam um fundo verdadeiramente resiliente de um que vai sangrar quando a Selic cai e a economia desacelera: <strong>vacância física abaixo de 5% e prazo médio de contrato (WAULT) acima de 5 anos</strong>. Tudo o mais — segmento, gestora, dividend yield — é secundário. Em logística, KNRI11 e BTLG11 continuam casos clássicos; em corporate, alguns fundos de lajes AAA em São Paulo seguem bem posicionados. Atenção ao yield aparente: FII pagando 1,2% a.m. com vacância de 18% é trator descendo a ladeira sem freio.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="invest"
         sources={[
           { title: "FIIs listados \u2014 B3", url: "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/fundos-de-investimentos-imobiliarios-fii.htm", publisher: "B3", accessedAt: "Maio 2026" },
           { title: "Boletim mensal de FIIs \u2014 B3", url: "https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/consultas/mercado-a-vista/fundos-de-investimento/boletim-mensal/", publisher: "B3", accessedAt: "Maio 2026" },

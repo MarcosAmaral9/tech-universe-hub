@@ -284,7 +284,7 @@ const DolaAI2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources sources={[
+      <ArticleSources category="ia" sources={[
         { title: "Mobile Time — Dola, assistente de IA generativa, é a dica de app da semana", url: "https://www.mobiletime.com.br/tapps/30/03/2026/dica-da-semana-dola/", publisher: "Mobile Time", accessedAt: "Maio 2026" },
         { title: "CanalTech — 8 coisas que a Dola AI consegue fazer no celular", url: "https://canaltech.com.br/apps/bots-e-geracao-de-imagens-8-coisas-que-a-dola-ai-consegue-fazer-no-celular/", publisher: "CanalTech", accessedAt: "Maio 2026" },
         { title: "TechTudo — Dola AI: como usar IA que ajuda a organizar a sua agenda", url: "https://www.techtudo.com.br/dicas-e-tutoriais/2024/09/dola-ai-como-usar-ia-que-ajuda-a-organizar-a-sua-agenda-edsoftwares.ghtml", publisher: "TechTudo", accessedAt: "Maio 2026" },

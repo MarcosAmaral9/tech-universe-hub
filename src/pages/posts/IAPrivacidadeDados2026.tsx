@@ -132,7 +132,7 @@ const IAPrivacidadeDados2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources sources={[
+      <ArticleSources category="ia" sources={[
         { title: "ANPD — Análise Preliminar sobre IA Generativa", url: "https://www.gov.br/anpd/pt-br", publisher: "ANPD", accessedAt: "Maio 2026" },
         { title: "Planalto — Lei 13.709/2018 (LGPD)", url: "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm", publisher: "Planalto", accessedAt: "Maio 2026" },
         { title: "EU AI Act — Texto oficial (Reg. UE 2024/1689)", url: "https://artificialintelligenceact.eu/", publisher: "EU AI Act", accessedAt: "Maio 2026" },

@@ -161,7 +161,7 @@ const NegocioOnlineIA2026 = () => {
       <EditorialTake category="ia" title={"An\u00e1lise do Marcos: IA derruba barreira de entrada, n\u00e3o a do mercado"}>
         <p>A IA generativa eliminou o custo de produzir copy, landing pages e arte de marca — mas isso é exatamente o que torna a vantagem competitiva mais escassa, não menor. No Brasil, vejo dois caminhos viáveis em 2026: (1) <strong>nichos hiper-locais</strong> que dependem de contexto cultural (ex.: serviços jurídicos para MEI, micro-SaaS para corretores Susep) onde modelos genéricos ainda erram; e (2) <strong>infoprodutos com curadoria humana visível</strong>, porque o consumidor já desconfia de tudo que cheira a 'gerado por IA'. Tributariamente, lembrar: pagamentos via Stripe/Gumroad caem em IR pessoa física se feitos como autônomo — Simples Nacional ou MEI mudam completamente a conta.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="ia"
         sources={[
           { title: "Stripe Atlas \u2014 guia para founders", url: "https://stripe.com/atlas/guides", publisher: "Stripe", accessedAt: "Maio 2026" },
           { title: "Manual MEI 2026", url: "https://www.gov.br/empresas-e-negocios/pt-br/empreendedor", publisher: "Governo Federal", accessedAt: "Maio 2026" },

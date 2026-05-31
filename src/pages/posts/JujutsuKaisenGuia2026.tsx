@@ -169,7 +169,7 @@ const JujutsuKaisenGuia2026 = () => {
       <EditorialTake category="otaku" title={"An\u00e1lise do Marcos: JJK terminou no auge \u2014 e isso \u00e9 raro"}>
         <p>Jujutsu Kaisen fez algo que poucos shounens conseguem: <strong>encerrou o mangá antes de cair em arcos arrastados</strong>. Akutami escolheu manter a obra entre 270 capítulos em vez de esticar por 1000+ como One Piece ou Naruto. O custo foi um final divisivo, mas a integridade narrativa ficou preservada. Para quem está começando agora, recomendo o seguinte caminho: anime até a temporada Shibuya (MAPPA no auge), depois pular para o mangá a partir do capítulo equivalente — o anime perdeu fôlego nos arcos finais por excesso de produção paralela do estúdio. No Brasil, Crunchyroll e Star+/Disney+ têm catálogo completo dublado.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="otaku"
         sources={[
           { title: "Crunchyroll \u2014 Jujutsu Kaisen", url: "https://www.crunchyroll.com/pt-br/series/GRDV0019R/jujutsu-kaisen", publisher: "Crunchyroll", accessedAt: "Maio 2026" },
           { title: "MAL \u2014 Jujutsu Kaisen", url: "https://myanimelist.net/anime/40748/Jujutsu_Kaisen", publisher: "MyAnimeList", accessedAt: "Maio 2026" },

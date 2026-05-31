@@ -152,7 +152,7 @@ const Tsukimichi = () => {
           </p>
       </EditorialTake>
 
-      <ArticleSources
+      <ArticleSources category="otaku"
         sources={[
           {
             title: "Crunchyroll — Tsukimichi Moonlit Fantasy",

@@ -197,7 +197,7 @@ const IARemasterizacaoJogos = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources sources={[
+      <ArticleSources category="ia" sources={[
         { title: "NVIDIA — DLSS 4 with Multi Frame Generation", url: "https://www.nvidia.com/en-us/geforce/news/dlss4-multi-frame-generation-ai-innovations/", publisher: "NVIDIA", accessedAt: "Maio 2026" },
         { title: "AMD — FidelityFX Super Resolution 4 (FSR 4)", url: "https://www.amd.com/en/products/graphics/technologies/fidelityfx-super-resolution.html", publisher: "AMD", accessedAt: "Maio 2026" },
         { title: "NVIDIA RTX Remix — Official page", url: "https://www.nvidia.com/en-us/geforce/rtx-remix/", publisher: "NVIDIA", accessedAt: "Maio 2026" },

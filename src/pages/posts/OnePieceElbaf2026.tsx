@@ -181,7 +181,7 @@ const OnePieceElbaf2026 = () => {
           <p>A saga de Elbaf finalmente coloca os gigantes no centro depois de 25 anos de teasing, e a Toei mudou de tom — menos filler, mais painel-a-painel do mangá. Para o fã brasileiro, a janela de 1h após o Japão no Crunchyroll (legendado) e a continuidade da dublagem na Netflix mantêm One Piece como o anime mais acompanhado simultaneamente no país. Sem spoilers: o arco confirma teorias antigas sobre o Século Vazio sem encerrar o mistério.</p>
         </EditorialTake>
 
-        <ArticleSources sources={[
+        <ArticleSources category="otaku" sources={[
     { title: 'Shōnen Jump — One Piece Oficial', url: 'https://www.shonenjump.com/j/rensai/onepiece.html', publisher: 'Shueisha', accessedAt: "Maio 2026" },
     { title: 'Crunchyroll — One Piece', url: 'https://www.crunchyroll.com/series/GRMG8ZQZR/one-piece', publisher: 'Crunchyroll', accessedAt: "Maio 2026" },
     { title: 'Toei Animation — One Piece', url: 'https://www.toei-anim.co.jp/tv/onep/', publisher: 'Toei', accessedAt: "Maio 2026" },

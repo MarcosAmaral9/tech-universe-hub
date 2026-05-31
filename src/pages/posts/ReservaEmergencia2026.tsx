@@ -394,7 +394,7 @@ const ReservaEmergencia2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources
+      <ArticleSources category="invest"
         sources={[
           {
             title: "Cidadania Financeira — Pesquisa sobre Reservas e Endividamento das Famílias",

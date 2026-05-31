@@ -311,7 +311,7 @@ const GuiaCosplay2026 = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="otaku"
         sources={[
           {
             title: "CCXP — Dados oficiais e público do evento",

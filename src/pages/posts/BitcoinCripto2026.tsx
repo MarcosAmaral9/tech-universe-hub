@@ -525,7 +525,7 @@ const BitcoinCripto2026 = () => {
           </p>
         </EditorialTake>
 
-        <ArticleSources
+        <ArticleSources category="invest"
           sources={[
             {
               title: "Lei 14.478/2022 — Marco Legal das Criptomoedas no Brasil",

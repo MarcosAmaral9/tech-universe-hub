@@ -242,7 +242,7 @@ const OverlordGuiaCompleto = () => {
           </p>
       </EditorialTake>
 
-            <ArticleSources
+            <ArticleSources category="otaku"
         sources={[
           {
             title: "Kadokawa — Overlord",

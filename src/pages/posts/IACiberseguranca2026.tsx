@@ -211,7 +211,7 @@ const IACiberseguranca2026 = () => {
           <p>Cibersegurança com IA é a faca de dois gumes mais importante da década: a mesma tecnologia que ajuda SOCs a triar alertas em segundos está nas mãos de quem escreve phishing convincente em português. No Brasil, onde o CERT.br registra crescimento contínuo de incidentes e a LGPD ainda tem aplicação desigual, vejo empresas adotando copilots de SOC sem revisar política de dados — e depois tendo que justificar para a ANPD por que prompts com PII vão para fora do país. A regra que sigo: IA de defesa só entra depois de threat modeling e DPIA, nunca antes.</p>
         </EditorialTake>
 
-        <ArticleSources sources={[
+        <ArticleSources category="ia" sources={[
     { title: 'CERT.br — Estatísticas de Incidentes', url: 'https://stats.cert.br/', publisher: 'CERT.br', accessedAt: "Maio 2026" },
     { title: 'ANPD — Guias de Boas Práticas', url: 'https://www.gov.br/anpd/pt-br/documentos-e-publicacoes/guias-orientativos', publisher: 'ANPD', accessedAt: "Maio 2026" },
     { title: 'Microsoft Security — Copilot for Security', url: 'https://www.microsoft.com/en-us/security/business/ai-machine-learning/microsoft-security-copilot', publisher: 'Microsoft', accessedAt: "Maio 2026" },

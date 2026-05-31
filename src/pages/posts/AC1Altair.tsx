@@ -341,7 +341,7 @@ const AC1Altair = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="geek"
         sources={[
           {
             title: "Assassin's Creed (2007) — Metacritic",

@@ -125,7 +125,7 @@ const OkirakuRyoushu = () => {
           </p>
       </EditorialTake>
 
-            <ArticleSources
+            <ArticleSources category="otaku"
         sources={[
           {
             title: "Earth Star Novel — Site oficial",

@@ -277,7 +277,7 @@ const IATransformandoDublagem = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources sources={[
+      <ArticleSources category="ia" sources={[
         { title: "ElevenLabs — Voice AI Platform", url: "https://elevenlabs.io/", publisher: "ElevenLabs", accessedAt: "Maio 2026" },
         { title: "SAG-AFTRA — 2023 TV/Theatrical Agreement Summary", url: "https://www.sagaftra.org/contracts-industry-resources/contracts/tv-theatrical-2023", publisher: "SAG-AFTRA", accessedAt: "Maio 2026" },
         { title: "Sated SP — Manifesto contra uso de IA na dublagem", url: "https://www.satedsp.org.br/", publisher: "Sated SP", accessedAt: "Maio 2026" },

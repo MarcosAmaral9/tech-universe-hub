@@ -181,7 +181,7 @@ const CopomSelic145Maio2026 = () => {
         </p>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="invest"
         sources={[
           { title: "Banco Central — Atas e decisões do Copom", url: "https://www.bcb.gov.br/controleinflacao/atascopom", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
           { title: "Boletim Focus — Expectativas de Mercado", url: "https://www.bcb.gov.br/publicacoes/focus", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },

@@ -252,7 +252,7 @@ const DiferencaMangasManhuas = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="otaku"
         sources={[
           {
             title: "Manga Plus by Shueisha — plataforma oficial de mangá japonês",

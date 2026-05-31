@@ -212,7 +212,7 @@ const McpProtocol2026 = () => {
             <EditorialTake category="ia" title={'Análise do Marcos: MCP é o USB-C da era dos agentes'}>
         <p>Padrões abertos vencem APIs proprietárias toda vez que a complexidade explode — foi assim com HTTP, com USB e está sendo com MCP. O <strong>Model Context Protocol</strong> resolve o problema real: hoje, conectar Claude, GPT e Gemini a Notion, GitHub, Drive e Slack exige integrações duplicadas, cada uma com sua autenticação. Com MCP, você expõe um servidor uma vez e qualquer modelo compatível consome. Para o ecossistema brasileiro de SaaS, isso é uma janela rara: empresas que publicarem servidores MCP cedo (Pipefy, RD Station, Conta Azul, Nubank) entram no contexto padrão dos agentes de IA antes que a concorrência reaja.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="ia"
         sources={[
           { title: 'Model Context Protocol — Specification', url: 'https://modelcontextprotocol.io/', publisher: 'Anthropic', accessedAt: "Maio 2026" },
           { title: 'MCP Reference Servers', url: 'https://github.com/modelcontextprotocol/servers', publisher: 'Anthropic / GitHub', accessedAt: "Maio 2026" },

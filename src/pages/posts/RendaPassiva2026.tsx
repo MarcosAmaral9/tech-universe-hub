@@ -446,7 +446,7 @@ const RendaPassiva2026 = () => {
           </p>
         </EditorialTake>
 
-        <ArticleSources
+        <ArticleSources category="invest"
           sources={[
             {
               title: "B3 — Dados de Fundos de Investimento Imobiliário (FIIs) e IFIX",

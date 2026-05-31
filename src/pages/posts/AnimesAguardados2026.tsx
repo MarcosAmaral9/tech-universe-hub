@@ -313,7 +313,7 @@ const AnimesAguardados2026 = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="otaku"
         sources={[
           {
             title: "Anime Industry Report 2025 — Association of Japanese Animations (AJA)",

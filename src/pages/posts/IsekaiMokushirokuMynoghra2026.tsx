@@ -314,7 +314,7 @@ const IsekaiMokushirokuMynoghra2026 = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="otaku"
         sources={[
           {
             title: "Isekai Mokushiroku Mynoghra — Syosetu (light novel web original)",

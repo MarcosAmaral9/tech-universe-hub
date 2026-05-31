@@ -144,7 +144,7 @@ const DeepfakesIA2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources sources={[
+      <ArticleSources category="ia" sources={[
         { title: "Sensity AI — State of Deepfakes Report 2024", url: "https://sensity.ai/reports/", publisher: "Sensity AI", accessedAt: "Maio 2026" },
         { title: "FBI — Public Service Announcement I-052024-PSA (Voice Cloning Scams)", url: "https://www.ic3.gov/Media/Y2024/PSA240502", publisher: "FBI / IC3", accessedAt: "Maio 2026" },
         { title: "Febraban — Estatísticas de Fraude Digital 2025", url: "https://portal.febraban.org.br/", publisher: "Febraban", accessedAt: "Maio 2026" },

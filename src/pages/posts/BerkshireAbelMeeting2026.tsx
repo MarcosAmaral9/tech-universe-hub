@@ -188,7 +188,7 @@ const BerkshireAbelMeeting2026 = () => {
         </p>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="invest"
         sources={[
           { title: "Berkshire Hathaway — Annual & Quarterly Reports", url: "https://www.berkshirehathaway.com/reports.html", publisher: "Berkshire Hathaway Inc.", accessedAt: "Maio 2026" },
           { title: "Letters from Warren E. Buffett to Berkshire Shareholders", url: "https://www.berkshirehathaway.com/letters/letters.html", publisher: "Berkshire Hathaway Inc.", accessedAt: "Maio 2026" },

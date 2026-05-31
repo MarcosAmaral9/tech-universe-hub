@@ -216,7 +216,7 @@ const InflacaoProtegerInvestimentos2026 = () => {
       <EditorialTake category="invest" title={"An\u00e1lise do Marcos: prote\u00e7\u00e3o real exige IPCA+ longo, n\u00e3o cripto"}>
         <p>Inflação alta no Brasil é fenômeno cíclico — em 30 anos vimos três ciclos relevantes (1995, 2015 e 2021-22), e em todos o ativo que protegeu de fato o patrimônio foi <strong>Tesouro IPCA+ com prazo maior que 5 anos</strong>. Ouro, dólar e Bitcoin tiveram bons momentos, mas com volatilidade que destrói a tese de 'proteção'. Para o investidor PF, a fórmula simples continua valendo: 40-60% em IPCA+ longo trava o juro real, 10-20% em câmbio (preferencialmente via ETF) faz hedge cambial, e o resto fica em CDI para liquidez. Tentativas de prever inflação são geralmente piores que seguir essa alocação básica.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="invest"
         sources={[
           { title: "IPCA \u2014 IBGE", url: "https://www.ibge.gov.br/explica/inflacao.php", publisher: "IBGE", accessedAt: "Maio 2026" },
           { title: "Tesouro IPCA+ \u2014 Tesouro Direto", url: "https://www.tesourodireto.com.br/titulos/precos-e-taxas.htm", publisher: "Tesouro Nacional", accessedAt: "Maio 2026" },

@@ -138,7 +138,7 @@ const IAGenerativaIniciantes2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources sources={[
+      <ArticleSources category="ia" sources={[
         { title: "Stanford HAI — AI Index Report 2024", url: "https://hai.stanford.edu/research/ai-index-2024", publisher: "Stanford HAI", accessedAt: "Maio 2026" },
         { title: "Harvard Business School — Navigating the Jagged Technological Frontier", url: "https://www.hbs.edu/faculty/Pages/item.aspx?num=64700", publisher: "HBS", accessedAt: "Maio 2026" },
         { title: "OpenAI — Modelos e API (GPT-4o, o3)", url: "https://platform.openai.com/docs/models", publisher: "OpenAI", accessedAt: "Maio 2026" },

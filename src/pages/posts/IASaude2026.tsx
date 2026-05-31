@@ -199,7 +199,7 @@ const IASaude2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources sources={[
+      <ArticleSources category="ia" sources={[
         { title: "FDA — AI/ML-Enabled Medical Devices (lista oficial)", url: "https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices", publisher: "U.S. Food and Drug Administration", accessedAt: "Maio 2026" },
         { title: "DeepMind — AlphaFold 3 (Nature, 2024)", url: "https://deepmind.google/discover/blog/alphafold-3-predicts-the-structure-and-interactions-of-all-of-lifes-molecules/", publisher: "Google DeepMind", accessedAt: "Maio 2026" },
         { title: "Apple Heart Study — Stanford / JAMA Cardiology", url: "https://www.nejm.org/doi/full/10.1056/NEJMoa1901183", publisher: "NEJM", accessedAt: "Maio 2026" },

@@ -196,7 +196,7 @@ const GTAVI2026 = () => {
       <EditorialTake category="geek" title={"An\u00e1lise do Marcos: GTA VI vai redefinir or\u00e7amento de AAA \u2014 e o Brasil paga caro"}>
         <p>GTA VI já é o jogo mais caro da história, com estimativas que passam de US$ 1 bilhão entre desenvolvimento e marketing — e isso vai ter dois efeitos diretos para o jogador brasileiro. Primeiro: <strong>preço de lançamento provável de US$ 80-100</strong>, que aqui vira R$ 400-500 com câmbio e imposto na PS Store / Xbox. Segundo: monetização agressiva no GTA Online 2, no estilo do GTA V atual, onde a economia interna empurra microtransações reais. Para fãs, esperar 6-12 meses pós-lançamento sempre foi a melhor jogada: bugs corrigidos, primeira queda de preço e mods (no PC) já maduros.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="geek"
         sources={[
           { title: "Rockstar Games \u2014 GTA VI", url: "https://www.rockstargames.com/VI", publisher: "Rockstar Games", accessedAt: "Maio 2026" },
           { title: "Take-Two Investor Relations", url: "https://www.take2games.com/ir", publisher: "Take-Two", accessedAt: "Maio 2026" },

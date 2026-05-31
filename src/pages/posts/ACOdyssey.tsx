@@ -634,7 +634,7 @@ const ACOdyssey = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="geek"
         sources={[
           {
             title: "Assassin's Creed Odyssey — página oficial Ubisoft Store",

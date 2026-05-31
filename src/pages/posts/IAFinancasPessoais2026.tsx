@@ -225,7 +225,7 @@ const IAFinancasPessoais2026 = () => {
         <p className="mt-2">Minha análise: IA em finanças pessoais funciona melhor em três frentes — <strong>categorização automática de gastos</strong>, <strong>simulação de cenários</strong> ('e se eu investir R$ 500/mês por 10 anos') e <strong>revisão de assinaturas esquecidas</strong>. Para investimentos, evite seguir recomendação cega de modelos generalistas; eles não conhecem seu perfil de risco nem a tributação brasileira (IR sobre renda fixa, come-cotas em fundos, isenção em LCI/LCA). ChatGPT e Claude são ótimos copiloto para entender conceitos — não para decisões com seu patrimônio.</p>
       </EditorialTake>
 
-      <ArticleSources sources={[
+      <ArticleSources category="invest" sources={[
         { title: "Relatório de Cidadania Financeira 2024", url: "https://www.bcb.gov.br/cidadaniafinanceira/relatoriocidadania", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
         { title: "Receita Federal — Tributação de Investimentos e Renda Fixa", url: "https://www.gov.br/receitafederal/pt-br", publisher: "Receita Federal do Brasil", accessedAt: "Maio 2026" },
         { title: "ANBIMA — Educação Financeira Digital", url: "https://www.anbima.com.br/pt_br/educar/", publisher: "ANBIMA", accessedAt: "Maio 2026" },

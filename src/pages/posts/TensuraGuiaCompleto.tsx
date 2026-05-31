@@ -276,7 +276,7 @@ const TensuraGuiaCompleto = () => {
           </p>
       </EditorialTake>
 
-            <ArticleSources
+            <ArticleSources category="otaku"
         sources={[
           {
             title: "Kodansha — TenSura",

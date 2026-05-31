@@ -420,7 +420,7 @@ const PrevidenciaPrivada2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources
+      <ArticleSources category="invest"
         sources={[
           {
             title: "SUSEP — Previdência Complementar Aberta: PGBL e VGBL",

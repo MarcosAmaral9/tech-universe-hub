@@ -275,7 +275,7 @@ const AprenderJaponesAnime2026 = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="otaku"
         sources={[
           {
             title: "Refold — Método de imersão para aprendizado de idiomas",

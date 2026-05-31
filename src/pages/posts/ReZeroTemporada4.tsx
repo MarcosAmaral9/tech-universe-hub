@@ -188,7 +188,7 @@ const ReZeroTemporada4 = () => {
       <EditorialTake category="otaku" title={"An\u00e1lise do Marcos: Re:Zero entendeu o que isekai pode ser"}>
         <p>Re:Zero é, na minha leitura, o melhor argumento contra quem dispensa o gênero isekai inteiro: <strong>Subaru não é OP, sofre consequências reais, e o trauma é tratado com peso narrativo</strong>. A temporada 4 chega num momento em que o gênero está saturado e a maioria das obras se contenta com fan-service e power fantasy fácil. White Fox manteve a fidelidade ao light novel da Tappei Nagatsuki, o que tem peso — adaptações ruins de bons livros viraram epidemia. Para quem está começando agora em 2026, vale o investimento de assistir as 3 temporadas anteriores antes; nenhum resumo faz justiça à curva emocional do Subaru.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="otaku"
         sources={[
           { title: "Crunchyroll \u2014 Re:Zero", url: "https://www.crunchyroll.com/pt-br/series/GRG5MEZRY/rezero--starting-life-in-another-world-", publisher: "Crunchyroll", accessedAt: "Maio 2026" },
           { title: "MAL \u2014 Re:Zero", url: "https://myanimelist.net/anime/31240/Re_Zero_kara_Hajimeru_Isekai_Seikatsu", publisher: "MyAnimeList", accessedAt: "Maio 2026" },

@@ -217,7 +217,7 @@ const Gemini25ProVsGPT4o = () => {
       <EditorialTake category="ia" title={"An\u00e1lise do Marcos: contexto longo vs. lat\u00eancia baixa"}>
         <p>Não existe vencedor universal entre Gemini 2.5 Pro e GPT-4o — existe match de caso de uso. Gemini ganha em <strong>tarefas com contexto gigante</strong> (PDFs longos, codebase inteira, transcrições) porque a janela de 1M+ tokens é real e funciona. GPT-4o ganha em <strong>latência e fluência conversacional</strong>, especialmente em PT-BR, onde a entonação e gírias soam mais naturais. Para quem está no Brasil pagando em dólar, recomendo: API do Gemini para back-office (análise de documentos, pesquisa) e GPT-4o para qualquer coisa que o usuário final ouça ou veja em tempo real.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="ia"
         sources={[
           { title: "Gemini 2.5 Pro \u2014 Google DeepMind", url: "https://deepmind.google/technologies/gemini/", publisher: "Google DeepMind", accessedAt: "Maio 2026" },
           { title: "GPT-4o \u2014 OpenAI", url: "https://openai.com/index/hello-gpt-4o/", publisher: "OpenAI", accessedAt: "Maio 2026" },

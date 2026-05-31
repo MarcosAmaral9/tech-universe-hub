@@ -120,7 +120,7 @@ const MugenGacha = () => {
           </p>
       </EditorialTake>
 
-            <ArticleSources
+            <ArticleSources category="otaku"
         sources={[
           {
             title: "Hifumi Shobo — Site oficial",

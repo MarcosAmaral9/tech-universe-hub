@@ -142,7 +142,7 @@ const IAEducacao2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources sources={[
+      <ArticleSources category="ia" sources={[
         { title: "UNESCO — Guidance for generative AI in education and research", url: "https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research", publisher: "UNESCO", accessedAt: "Maio 2026" },
         { title: "Khan Academy — Khanmigo (AI tutor)", url: "https://www.khanmigo.ai/", publisher: "Khan Academy", accessedAt: "Maio 2026" },
         { title: "OpenAI — Introducing ChatGPT Edu", url: "https://openai.com/index/introducing-chatgpt-edu/", publisher: "OpenAI", accessedAt: "Maio 2026" },

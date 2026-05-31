@@ -318,7 +318,7 @@ const EconomiaDomestica2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources
+      <ArticleSources category="invest"
         sources={[
           {
             title: "Pesquisa de Orçamentos Familiares (POF) 2023 — Despesas das Famílias Brasileiras",

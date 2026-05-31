@@ -843,7 +843,7 @@ const ACSyndicate = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="geek"
         sources={[
           {
             title: "Assassin's Creed Syndicate — página oficial Ubisoft Store",

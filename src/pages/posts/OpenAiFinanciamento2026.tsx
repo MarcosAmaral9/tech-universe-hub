@@ -196,7 +196,7 @@ const OpenAiFinanciamento2026 = () => {
       <EditorialTake category="ia" title="Análise do Marcos: o paradoxo de queimar bilhões">
         <p>A OpenAI levantar rodadas bilionárias enquanto reporta prejuízos enormes é uma anomalia clássica de tese vencedora — ou da próxima grande bolha. O mesmo padrão aconteceu com Uber, WeWork e Amazon (que ficou no vermelho por quase uma década). A diferença aqui é o <strong>custo unitário</strong>: cada query do ChatGPT tem custo real de GPU. Para o desenvolvedor brasileiro que constrói SaaS usando API da OpenAI, a tese de risco é simples — se a OpenAI não conseguir converter usuários gratuitos em pagantes ou reduzir custo por inferência, os preços de API vão subir. Diversificar entre Claude, Gemini e modelos open source rodando em servidores brasileiros (como os da Latitude.sh) é estratégia de continuidade de negócio, não só de custo.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="ia"
         sources={[
           { title: "OpenAI — Newsroom", url: "https://openai.com/news/", publisher: "OpenAI", accessedAt: "Maio 2026" },
           { title: "The Information — OpenAI Coverage", url: "https://www.theinformation.com/topics/openai", publisher: "The Information", accessedAt: "Maio 2026" },

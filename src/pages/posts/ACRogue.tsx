@@ -696,7 +696,7 @@ const ACRogue = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="geek"
         sources={[
           {
             title: "Assassin's Creed Rogue — página oficial no Ubisoft Store",

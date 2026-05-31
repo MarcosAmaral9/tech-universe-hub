@@ -138,7 +138,7 @@ const IsekaiNonbiriNouka = () => {
           </p>
       </EditorialTake>
 
-            <ArticleSources
+            <ArticleSources category="otaku"
         sources={[
           {
             title: "Kadokawa — Isekai Nonbiri Nouka",

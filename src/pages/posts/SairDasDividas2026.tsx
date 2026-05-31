@@ -584,7 +584,7 @@ const SairDasDividas2026 = () => {
           </p>
         </EditorialTake>
 
-        <ArticleSources
+        <ArticleSources category="invest"
           sources={[
             {
               title: "Mapa da Inadimplência e Renegociação de Dívidas no Brasil",

@@ -460,7 +460,7 @@ const TesouroDireto2026 = () => {
           <p>Tesouro Direto continua sendo a porta de entrada mais segura para investidor brasileiro, mas em 2026 o jogo mudou: com Selic ainda alta, prefixados longos pagam prêmio histórico, enquanto IPCA+ acima de 6% real virou commodity. Para quem está montando reserva ou aposentadoria, o casamento de prazos (ALM) importa mais que rentabilidade nominal. A taxa de custódia da B3 (0,2% a.a.) some na prática para títulos curtos, então não use isso como desculpa para ficar na poupança.</p>
         </EditorialTake>
 
-        <ArticleSources sources={[
+        <ArticleSources category="invest" sources={[
     { title: 'Tesouro Direto — Site Oficial', url: 'https://www.tesourodireto.com.br/', publisher: 'Tesouro Nacional', accessedAt: "Maio 2026" },
     { title: 'Banco Central — Calculadora do Cidadão', url: 'https://www.bcb.gov.br/cidadaniafinanceira/calculadora', publisher: 'BCB', accessedAt: "Maio 2026" },
     { title: 'ANBIMA — Mercado de Renda Fixa', url: 'https://www.anbima.com.br/pt_br/informar/sistema-de-precos.htm', publisher: 'ANBIMA', accessedAt: "Maio 2026" },

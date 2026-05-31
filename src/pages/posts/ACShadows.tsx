@@ -653,7 +653,7 @@ const ACShadows = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="geek"
         sources={[
           {
             title: "Assassin's Creed Shadows — página oficial Ubisoft Store",

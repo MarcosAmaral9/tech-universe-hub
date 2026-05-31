@@ -197,7 +197,7 @@ const KaijuNo8Temporada22026 = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="otaku"
         sources={[
           { title: "Kaiju No. 8 — site oficial do anime", url: "https://kaiju-no8.net/", publisher: "Production I.G", accessedAt: "Maio 2026" },
           { title: "Shonen Jump+ — Kaiju No. 8 (mangá)", url: "https://shonenjumpplus.com/episode/13932016480028799982", publisher: "Shueisha", accessedAt: "Maio 2026" },

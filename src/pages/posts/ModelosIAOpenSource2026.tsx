@@ -150,7 +150,7 @@ const ModelosIAOpenSource2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources sources={[
+      <ArticleSources category="ia" sources={[
         { title: "Hugging Face — Open LLM Leaderboard", url: "https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard", publisher: "Hugging Face", accessedAt: "Maio 2026" },
         { title: "Meta AI — Llama 4", url: "https://llama.meta.com/", publisher: "Meta AI", accessedAt: "Maio 2026" },
         { title: "DeepSeek — Site oficial e relatório técnico", url: "https://www.deepseek.com/", publisher: "DeepSeek", accessedAt: "Maio 2026" },

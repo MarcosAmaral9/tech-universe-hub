@@ -148,7 +148,7 @@ const IAGanharDinheiro2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources sources={[
+      <ArticleSources category="ia" sources={[
         { title: "World Economic Forum — Future of Jobs Report 2025", url: "https://www.weforum.org/reports/the-future-of-jobs-report-2025", publisher: "WEF", accessedAt: "Maio 2026" },
         { title: "Workana — Plataforma de Freelancers Brasil", url: "https://www.workana.com/", publisher: "Workana", accessedAt: "Maio 2026" },
         { title: "OpenAI — API Pricing", url: "https://openai.com/api/pricing/", publisher: "OpenAI", accessedAt: "Maio 2026" },

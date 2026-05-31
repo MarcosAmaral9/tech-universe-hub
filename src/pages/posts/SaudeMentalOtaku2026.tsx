@@ -224,7 +224,7 @@ const SaudeMentalOtaku2026 = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="otaku"
         sources={[
           {
             title: "CVV — Centro de Valorização da Vida (188)",

@@ -184,7 +184,7 @@ const PetroleoBrent125Ormuz2026 = () => {
       <EditorialTake category="invest" title="Análise do Marcos: o que o Brent diz para sua carteira">
         <p>O Estreito de Ormuz é o gargalo geopolítico mais perigoso do planeta: cerca de <strong>20% do petróleo mundial</strong> passa por ali todo dia (US Energy Information Administration). Quando o Brent salta para US$ 125, o investidor brasileiro precisa pensar em <strong>três camadas</strong>: (1) Petrobras (PETR4) tende a se valorizar, mas o governo pode segurar preços na bomba e comer o lucro — risco político clássico do papel; (2) inflação importada pressiona o IPCA e atrasa cortes da Selic, ruim para small caps; (3) o real tende a se valorizar quando o Brasil é exportador líquido de petróleo. Não é trivial — quem comprou PETR4 'porque o petróleo subiu' em 2022 aprendeu na pele que a equação envolve política tarifária, não só preço internacional.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="invest"
         sources={[
           { title: "Brent Crude Oil — Spot Prices", url: "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm", publisher: "U.S. Energy Information Administration", accessedAt: "Maio 2026" },
           { title: "World Oil Transit Chokepoints — Strait of Hormuz", url: "https://www.eia.gov/international/analysis/special-topics/World_Oil_Transit_Chokepoints", publisher: "U.S. EIA", accessedAt: "Maio 2026" },

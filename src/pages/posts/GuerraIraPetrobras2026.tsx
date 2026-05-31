@@ -317,7 +317,7 @@ const GuerraIraPetrobras2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources
+      <ArticleSources category="invest"
         sources={[
           {
             title: "Petrobras — Relações com Investidores: Resultados e Produção",

@@ -132,7 +132,7 @@ const DemonSlayerHashira2026 = () => {
           <p>Com a trilogia Infinity Castle confirmada pela Aniplex/Ufotable, o arco dos Hashira encerra a era “semanal” de Kimetsu no Yaiba e entrega o final em formato cinema — escolha econômica esperada depois de Mugen Train ter feito US$500M+ globalmente. No Brasil, a Sony Pictures fica com a distribuição e o preço médio do ingresso (R$30–40) torna o cinema o jeito mais barato de assistir Ufotable em alta qualidade. Quem nunca viu, aproveita: dublado e legendado simultâneos.</p>
         </EditorialTake>
 
-        <ArticleSources sources={[
+        <ArticleSources category="otaku" sources={[
     { title: 'Demon Slayer — Site Oficial', url: 'https://kimetsu.com/anime/', publisher: 'Aniplex/Ufotable', accessedAt: "Maio 2026" },
     { title: 'Crunchyroll — Demon Slayer', url: 'https://www.crunchyroll.com/series/GY5P48XEY/demon-slayer-kimetsu-no-yaiba', publisher: 'Crunchyroll', accessedAt: "Maio 2026" },
     { title: 'Sony Pictures Brasil', url: 'https://www.sonypictures.com.br/', publisher: 'Sony', accessedAt: "Maio 2026" },

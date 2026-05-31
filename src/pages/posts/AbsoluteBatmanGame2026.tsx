@@ -170,7 +170,7 @@ const AbsoluteBatmanGame2026 = () => {
       <EditorialTake category="geek" title={"An\u00e1lise do Marcos: Absolute Batman precisa fugir do molde Arkham"}>
         <p>A franquia Arkham definiu o gênero de jogo de super-herói, mas isso virou armadilha: qualquer jogo do Batman é comparado ao freeflow combat de 2009 e fracassa quando tenta inovar. <strong>Gotham Knights e Suicide Squad mostraram o custo dessa expectativa</strong>. Um Absolute Batman que dê certo, na minha visão, precisa apostar em <strong>narrativa adulta no tom do quadrinho do Scott Snyder</strong> — Batman como vigilante anti-establishment, gameplay focada em investigação e infiltração, menos combate ininterrupto. Para o público brasileiro, vale acompanhar antes de pré-comprar: a indústria já mostrou que confiar em hype de trailer custa caro.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="geek"
         sources={[
           { title: "DC Comics \u2014 Absolute Batman", url: "https://www.dc.com/", publisher: "DC Comics", accessedAt: "Maio 2026" },
           { title: "IGN \u2014 Cobertura Batman", url: "https://www.ign.com/", publisher: "IGN", accessedAt: "Maio 2026" },

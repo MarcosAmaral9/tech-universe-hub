@@ -507,7 +507,7 @@ const CarteiraIniciantes2026 = () => {
           </p>
         </EditorialTake>
 
-        <ArticleSources
+        <ArticleSources category="invest"
           sources={[
             {
               title: "Tesouro Direto — Como Funciona e Tipos de Títulos",

@@ -178,7 +178,7 @@ const JJKTemporada42026 = () => {
             <EditorialTake category="otaku" title={'Análise do Marcos: o Culling Game é o teste técnico do MAPPA'}>
         <p>O arco do Culling Game tem fama de ser o mais denso de Jujutsu Kaisen — com dezenas de jogadores, regras que mudam e batalhas paralelas. Para a MAPPA, é um teste técnico e de gestão: o estúdio sofreu desgaste público pelas condições de produção da temporada de Shibuya, e <strong>a qualidade da temporada 4 vai definir se o estúdio mantém o status de top tier ou perde o projeto para outra produtora</strong> nos arcos finais. Para o fã brasileiro, a recomendação prática é a mesma de toda temporada recente: acompanhar o simulcast da Crunchyroll com legenda, e revisitar o arco de Shibuya na semana anterior ao primeiro episódio — sem isso, metade das referências do Culling Game se perde.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="otaku"
         sources={[
           { title: 'Jujutsu Kaisen — Site oficial', url: 'https://jujutsukaisen.jp/', publisher: 'MAPPA / Shueisha', accessedAt: "Maio 2026" },
           { title: 'MAPPA — Site oficial', url: 'https://mappa.co.jp/', publisher: 'MAPPA Co., Ltd.', accessedAt: "Maio 2026" },

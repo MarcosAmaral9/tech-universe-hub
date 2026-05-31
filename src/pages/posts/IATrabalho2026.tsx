@@ -122,7 +122,7 @@ const IATrabalho2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources sources={[
+      <ArticleSources category="ia" sources={[
         { title: "WEF — Future of Jobs Report 2025", url: "https://www.weforum.org/publications/the-future-of-jobs-report-2025/", publisher: "World Economic Forum", accessedAt: "Maio 2026" },
         { title: "Stanford HAI — AI Index 2024", url: "https://hai.stanford.edu/research/ai-index-2024", publisher: "Stanford HAI", accessedAt: "Maio 2026" },
         { title: "McKinsey — The state of AI 2024", url: "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai", publisher: "McKinsey & Company", accessedAt: "Maio 2026" },
