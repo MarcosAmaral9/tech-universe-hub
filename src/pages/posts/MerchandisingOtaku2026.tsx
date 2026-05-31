@@ -258,7 +258,7 @@ const MerchandisingOtaku2026 = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="otaku"
         sources={[
           {
             title: "Good Smile Company — site oficial e revendedores autorizados",

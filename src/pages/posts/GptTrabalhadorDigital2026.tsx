@@ -212,7 +212,7 @@ const GptTrabalhadorDigital2026 = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="ia"
         sources={[
           { title: "OpenAI — research and product announcements", url: "https://openai.com/research", publisher: "OpenAI", accessedAt: "Maio 2026" },
           { title: "OSWorld: Benchmarking Multimodal Agents in Real Computer Environments", url: "https://os-world.github.io/", publisher: "OSWorld Project", accessedAt: "Maio 2026" },

@@ -524,7 +524,7 @@ const ACBlackFlag = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="geek"
         sources={[
           {
             title: "Assassin's Creed IV Black Flag — Steam Store (requisitos e avaliações)",

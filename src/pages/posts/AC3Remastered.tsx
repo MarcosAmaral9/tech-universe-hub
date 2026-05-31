@@ -644,7 +644,7 @@ const AC3Remastered = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="geek"
         sources={[
           {
             title: "Assassin's Creed III Remastered — Steam Store (requisitos e avaliações)",

@@ -365,7 +365,7 @@ const PoupancaVsCDBTesouro2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources
+      <ArticleSources category="invest"
         sources={[
           {
             title: "Histórico da Taxa Selic e Decisões do Copom",

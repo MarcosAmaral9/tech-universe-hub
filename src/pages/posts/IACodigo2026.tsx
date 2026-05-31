@@ -118,7 +118,7 @@ const IACodigo2026 = () => {
           <p>Depois de testar Copilot, Cursor e Claude Code em produção, minha leitura é que o ganho real não está em escrever código mais rápido — está em revisar, refatorar e documentar o legado que ninguém queria tocar. Para o desenvolvedor brasileiro, isso significa duas coisas: empresas que ainda tratam IA como custo vão ficar para trás, e devs juniores precisam dobrar a aposta em fundamentos para não virarem apenas operadores de prompt.</p>
         </EditorialTake>
 
-        <ArticleSources sources={[
+        <ArticleSources category="ia" sources={[
     { title: 'GitHub — Copilot Research', url: 'https://github.blog/news-insights/research/', publisher: 'GitHub', accessedAt: "Maio 2026" },
     { title: 'Anthropic — Claude for Coding', url: 'https://www.anthropic.com/news', publisher: 'Anthropic', accessedAt: "Maio 2026" },
     { title: 'Cursor — Official Site', url: 'https://cursor.com/', publisher: 'Cursor', accessedAt: "Maio 2026" },

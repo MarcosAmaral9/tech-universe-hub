@@ -294,7 +294,7 @@ const DiferenciarManhuasManhwas = () => {
           </p>
       </EditorialTake>
 
-      <ArticleSources
+      <ArticleSources category="otaku"
         sources={[
           {
             title: "Webtoon — plataforma oficial de manhwa",

@@ -126,7 +126,7 @@ const KizokuTensei = () => {
           </p>
       </EditorialTake>
 
-            <ArticleSources
+            <ArticleSources category="otaku"
         sources={[
           {
             title: "Earth Star Entertainment — Comic Earth Star",

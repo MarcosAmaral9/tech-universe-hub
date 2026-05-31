@@ -202,7 +202,7 @@ const AcoesBrasileirasBaratas2026 = () => {
       <EditorialTake category="invest" title="Análise do Marcos: P/L baixo não é desconto — é alerta">
         <p>O Ibovespa negocia a múltiplos historicamente baixos há quase uma década. Quem comprou 'porque está barato' em 2018, 2020 e 2022 sabe: <strong>valuation barata sem catalisador é armadilha de valor</strong>. O caso brasileiro é estrutural — risco fiscal, juros reais altos e fluxo de estrangeiros negativo. Antes de comprar qualquer ação só pelo múltiplo, pergunte: (1) tem dividendo consistente acima da Selic real? (2) o setor sobrevive a juros reais de 6%+? (3) há gatilho claro de destravamento nos próximos 12-18 meses? Se as três respostas forem 'não', você está confundindo barato com armadilha. Bancos, utilities e seguradoras (SUSEB3, BBAS3, BBSE3) são exemplos defensivos que históricamente performam bem nesse cenário.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="invest"
         sources={[
           { title: "Ibovespa — Composição e Histórico", url: "https://www.b3.com.br/pt_br/market-data-e-indices/indices/indices-amplos/indice-ibovespa-ibovespa.htm", publisher: "B3 — Bolsa do Brasil", accessedAt: "Maio 2026" },
           { title: "Relatório Trimestral de Inflação", url: "https://www.bcb.gov.br/publicacoes/ri", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },

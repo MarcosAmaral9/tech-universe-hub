@@ -278,7 +278,7 @@ const InvestirEmTecnologia2026 = () => {
         <p className="mt-2">Minha análise: investir em tecnologia é tese de longo prazo, mas concentrar tudo nas 7 grandes em 2026 é apostar que a era da IA continua beneficiando exatamente os mesmos vencedores — o que a história do setor (Yahoo, Nokia, Intel) sugere ser arriscado. <strong>Alocação razoável para iniciantes: 60-70% em ETF amplo (IVVB11 ou similar), 20-30% em ETF setorial e até 10% em BDRs individuais.</strong></p>
       </EditorialTake>
 
-      <ArticleSources sources={[
+      <ArticleSources category="invest" sources={[
         { title: "B3 — BDRs: Brazilian Depositary Receipts", url: "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/bdr.htm", publisher: "B3 — Bolsa do Brasil", accessedAt: "Maio 2026" },
         { title: "S&P Dow Jones — S&P 500 Composition", url: "https://www.spglobal.com/spdji/en/indices/equity/sp-500/", publisher: "S&P Dow Jones Indices", accessedAt: "Maio 2026" },
         { title: "Receita Federal — Ganhos de Capital em Renda Variável Internacional", url: "https://www.gov.br/receitafederal/pt-br", publisher: "Receita Federal do Brasil", accessedAt: "Maio 2026" },

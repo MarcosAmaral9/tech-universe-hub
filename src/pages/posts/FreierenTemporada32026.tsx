@@ -192,7 +192,7 @@ const FreierenTemporada32026 = () => {
           </p>
       </EditorialTake>
 
-            <ArticleSources
+            <ArticleSources category="otaku"
         sources={[
           {
             title: "Madhouse — Anúncio oficial Frieren Temporada 2",

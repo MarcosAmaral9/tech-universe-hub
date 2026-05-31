@@ -201,7 +201,7 @@ const EldenRingNightreign2026 = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="geek"
         sources={[
           { title: "Elden Ring Nightreign — site oficial", url: "https://en.bandainamcoent.eu/elden-ring/elden-ring-nightreign", publisher: "Bandai Namco", accessedAt: "Maio 2026" },
           { title: "FromSoftware — site oficial", url: "https://www.fromsoftware.jp/ww/", publisher: "FromSoftware", accessedAt: "Maio 2026" },

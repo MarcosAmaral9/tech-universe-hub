@@ -109,7 +109,7 @@ const Isekai2026 = () => {
           </p>
       </EditorialTake>
 
-            <ArticleSources
+            <ArticleSources category="otaku"
         sources={[
           {
             title: "MyAnimeList — Top Isekai",

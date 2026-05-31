@@ -619,7 +619,7 @@ const CrimsonDesertBosses = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources
+      <ArticleSources category="geek"
         sources={[
           {
             title: "Crimson Desert — Site oficial Pearl Abyss",

@@ -261,7 +261,7 @@ const MangaVsAnime2026 = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="otaku"
         sources={[
           {
             title: "MyAnimeList — Top Anime (rankings históricos)",

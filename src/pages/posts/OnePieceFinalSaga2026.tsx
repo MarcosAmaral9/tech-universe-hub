@@ -311,7 +311,7 @@ const OnePieceFinalSaga2026 = () => {
           </p>
       </EditorialTake>
 
-            <ArticleSources
+            <ArticleSources category="otaku"
         sources={[
           {
             title: "Shueisha — Manga Plus",

@@ -207,7 +207,7 @@ const ClaudeCoworkSaas2026 = () => {
         <p>A narrativa do "SaaSpocalypse" confunde dois fenômenos. O que vai morrer é o <strong>SaaS de camada fina</strong>: ferramentas que basicamente envelopam um banco de dados com UI e cobravam US$ 20/mês por isso. Esses serão substituídos por agentes que geram a UI sob demanda. O que sobrevive — e talvez fortaleça — é o SaaS de <strong>workflow profundo</strong>, com dados proprietários, compliance específico e integrações complexas (Salesforce, Stripe, ServiceNow). Para o mercado brasileiro, a oportunidade está em construir verticais com regulamentação local (saúde com LGPD, fiscal com SPED, jurídico com peticionamento eletrônico) — barreiras que nenhum agente genérico replica.</p>
       </EditorialTake>
 
-      <ArticleSources
+      <ArticleSources category="ia"
         sources={[
           { title: "Claude Cowork — Anthropic", url: "https://www.anthropic.com/claude", publisher: "Anthropic", accessedAt: "Maio 2026" },
           { title: "State of AI Report 2025", url: "https://www.stateof.ai/", publisher: "Air Street Capital", accessedAt: "Maio 2026" },

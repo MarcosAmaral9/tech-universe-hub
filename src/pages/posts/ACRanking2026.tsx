@@ -349,7 +349,7 @@ const ACRanking2026 = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="geek"
         sources={[
           {
             title: "Assassin's Creed — Página Oficial Ubisoft Brasil",

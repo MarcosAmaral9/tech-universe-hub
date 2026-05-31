@@ -226,7 +226,7 @@ const SpringSeasonAnimes2026 = () => {
           </p>
       </EditorialTake>
 
-            <ArticleSources
+            <ArticleSources category="otaku"
         sources={[
           {
             title: "Anime News Network — Spring 2026 Preview",

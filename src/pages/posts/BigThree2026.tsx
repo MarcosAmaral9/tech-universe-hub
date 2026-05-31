@@ -244,7 +244,7 @@ const BigThree2026 = () => {
             <EditorialTake category="otaku" title={'Análise do Marcos: o Big Three nunca foi sobre vendas'}>
         <p>Discussão sobre Big Three sempre escorrega para tabela de vendas e tiragens — e isso perde o ponto. <strong>Naruto, Bleach e One Piece definiram a Shonen Jump dos anos 2000 porque arquitetaram universos com mitologia escalável</strong>: poderes com sistema, facções com história e protagonistas com arco de duas décadas. Os 'novos Big Three' (Jujutsu, Chainsaw Man, Demon Slayer) vendem mais em pico mas dificilmente sustentam 20+ anos de anime semanal — o modelo de publicação mudou e o leitor moderno consome arcos fechados. Para a comunidade otaku brasileira, isso muda como recomendar para iniciantes: o Big Three clássico ainda é a melhor porta de entrada justamente porque a curva de aprendizado é longa e recompensadora.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="otaku"
         sources={[
           { title: 'Weekly Shonen Jump — Site oficial', url: 'https://www.shonenjump.com/j/', publisher: 'Shueisha', accessedAt: "Maio 2026" },
           { title: 'One Piece — Site oficial', url: 'https://one-piece.com/', publisher: 'Shueisha / Toei Animation', accessedAt: "Maio 2026" },

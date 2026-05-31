@@ -242,7 +242,7 @@ const CDB2026Guia = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources
+      <ArticleSources category="invest"
         sources={[
           {
             title: "Resolução CMN nº 4.860/2020 — CDB e Instrumentos de Captação",

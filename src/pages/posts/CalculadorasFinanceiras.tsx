@@ -503,7 +503,7 @@ const CalculadorasFinanceiras = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources
+      <ArticleSources category="invest"
         sources={[
           {
             title: "B3 — Mercado Fracionário de Ações: Como Funciona",

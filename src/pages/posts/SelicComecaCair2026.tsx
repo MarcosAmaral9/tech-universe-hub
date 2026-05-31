@@ -394,7 +394,7 @@ const SelicComecaCair2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources
+      <ArticleSources category="invest"
         sources={[
           {
             title: "Atas das Reuniões do Copom — Banco Central",

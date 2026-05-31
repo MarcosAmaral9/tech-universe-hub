@@ -214,7 +214,7 @@ const AgentesIAAutonomos2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources sources={[
+      <ArticleSources category="ia" sources={[
         { title: "Deloitte — AI Agents Market Forecast 2026–2030", url: "https://www2.deloitte.com/us/en/insights/topics/ai-and-the-future-of-work.html", publisher: "Deloitte Insights", accessedAt: "Maio 2026" },
         { title: "Anthropic — Claude Code: Agentic Coding", url: "https://www.anthropic.com/claude-code", publisher: "Anthropic", accessedAt: "Maio 2026" },
         { title: "Google Cloud — Agentspace e Agent2Agent Protocol", url: "https://cloud.google.com/agentspace", publisher: "Google Cloud", accessedAt: "Maio 2026" },

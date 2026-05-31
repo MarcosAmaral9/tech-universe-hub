@@ -189,7 +189,7 @@ const IATrabalho2026Impacto = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources sources={[
+      <ArticleSources category="ia" sources={[
         { title: "WEF — Future of Jobs Report 2025", url: "https://www.weforum.org/reports/the-future-of-jobs-report-2025", publisher: "World Economic Forum", accessedAt: "Maio 2026" },
         { title: "Goldman Sachs — Generative AI could raise global GDP by 7%", url: "https://www.goldmansachs.com/insights/pages/generative-ai-could-raise-global-gdp-by-7-percent.html", publisher: "Goldman Sachs", accessedAt: "Maio 2026" },
         { title: "FMI — Gen-AI and the Future of Work", url: "https://www.imf.org/en/Publications/Staff-Discussion-Notes", publisher: "FMI", accessedAt: "Maio 2026" },

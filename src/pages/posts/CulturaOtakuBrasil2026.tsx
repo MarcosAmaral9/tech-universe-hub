@@ -223,7 +223,7 @@ const CulturaOtakuBrasil2026 = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="otaku"
         sources={[
           {
             title: "Anime Industry Report 2024 — Association of Japanese Animations",

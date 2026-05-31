@@ -185,7 +185,7 @@ const ChatGPTvsGeminiClaude2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources sources={[
+      <ArticleSources category="ia" sources={[
         { title: "LMSYS Chatbot Arena Leaderboard — ELO Rankings 2026", url: "https://chat.lmsys.org/?leaderboard", publisher: "LMSYS / UC Berkeley", accessedAt: "Maio 2026" },
         { title: "Anthropic — Claude Models Overview e Política de Privacidade", url: "https://www.anthropic.com/models", publisher: "Anthropic", accessedAt: "Maio 2026" },
         { title: "OpenAI — GPT-4o e Modelo o3: Capacidades e Preços", url: "https://openai.com/pricing", publisher: "OpenAI", accessedAt: "Maio 2026" },

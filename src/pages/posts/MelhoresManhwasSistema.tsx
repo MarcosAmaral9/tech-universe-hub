@@ -305,7 +305,7 @@ const MelhoresManhwasSistema = () => {
           </p>
       </EditorialTake>
 
-            <ArticleSources
+            <ArticleSources category="otaku"
         sources={[
           {
             title: "Webtoon (Naver) — Catálogo Oficial PT-BR",

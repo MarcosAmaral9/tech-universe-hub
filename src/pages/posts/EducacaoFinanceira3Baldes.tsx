@@ -388,7 +388,7 @@ const EducacaoFinanceira3Baldes = () => {
           </p>
         </EditorialTake>
 
-        <ArticleSources
+        <ArticleSources category="invest"
           sources={[
             {
               title: "Raio-X do Investidor Brasileiro 2024 — Perfil e Comportamento",

@@ -530,7 +530,7 @@ const ACOrigins = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="geek"
         sources={[
           {
             title: "Assassin's Creed Origins — página oficial Ubisoft Store",

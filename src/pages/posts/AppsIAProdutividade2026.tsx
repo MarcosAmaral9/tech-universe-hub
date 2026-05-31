@@ -148,7 +148,7 @@ const AppsIAProdutividade2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources sources={[
+      <ArticleSources category="ia" sources={[
         { title: "Notion AI — Pricing and capabilities", url: "https://www.notion.com/help/notion-ai-faqs", publisher: "Notion Labs", accessedAt: "Maio 2026" },
         { title: "Anthropic — Claude 3.5 Sonnet (200K context)", url: "https://www.anthropic.com/news/claude-3-5-sonnet", publisher: "Anthropic", accessedAt: "Maio 2026" },
         { title: "Microsoft & LinkedIn — Work Trend Index 2024", url: "https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part", publisher: "Microsoft WorkLab", accessedAt: "Maio 2026" },

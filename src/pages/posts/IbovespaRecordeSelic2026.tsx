@@ -218,7 +218,7 @@ const IbovespaRecordeSelic2026 = () => {
           <p>O Ibovespa em recorde com Selic ainda em patamar restritivo confirma o que venho falando: o mercado precifica corte antes do Copom efetivar. Históricamente, dos últimos cinco ciclos de afrouxamento brasileiros, em quatro o Ibov subiu 15%+ nos seis meses anteriores ao primeiro corte. A armadilha é entrar em small caps ilquídas achando que vai pegar o próximo Magálu — quem leu o livro do Damodaran sabe que reratings típicos vêm em qualidade, não em pulinhos.</p>
         </EditorialTake>
 
-        <ArticleSources sources={[
+        <ArticleSources category="invest" sources={[
     { title: 'B3 — Índices', url: 'https://www.b3.com.br/pt_br/market-data-e-indices/indices/', publisher: 'B3', accessedAt: "Maio 2026" },
     { title: 'Banco Central — Histórico da Selic', url: 'https://www.bcb.gov.br/controleinflacao/historicotaxasjuros', publisher: 'BCB', accessedAt: "Maio 2026" },
     { title: 'Copom — Atas e Comunicados', url: 'https://www.bcb.gov.br/publicacoes/atascopom', publisher: 'BCB', accessedAt: "Maio 2026" },

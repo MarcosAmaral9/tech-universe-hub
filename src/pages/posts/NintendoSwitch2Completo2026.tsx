@@ -211,7 +211,7 @@ const NintendoSwitch2Completo2026 = () => {
             <EditorialTake category="geek" title={'Análise do Marcos: o Switch 2 é caro no Brasil, e isso é proposital'}>
         <p>A Nintendo nunca brigou por preço — briga por catálogo. O Switch 2 no Brasil chega com preço sugerido próximo de R$ 4.500 e jogos físicos em R$ 400+ porque a empresa sabe que <strong>quem compra Nintendo aceita pagar premium por exclusivos</strong>. A comparação justa não é com PS5 ou Series X (que dependem de terceiros e promoções), mas com o ciclo do Switch 1 — que vendeu 140 milhões com a mesma estratégia. Para o consumidor brasileiro, a equação muda: vale esperar 6 meses pós-lançamento para o primeiro corte de preço em Mario/Zelda na eShop, comprar versão internacional via lojas confiáveis ou aguardar bundles de fim de ano com cashback.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="geek"
         sources={[
           { title: 'Nintendo Switch 2 — Site oficial', url: 'https://www.nintendo.com/pt-br/switch-2/', publisher: 'Nintendo', accessedAt: "Maio 2026" },
           { title: 'Nintendo Investor Relations', url: 'https://www.nintendo.co.jp/ir/en/', publisher: 'Nintendo Co., Ltd.', accessedAt: "Maio 2026" },

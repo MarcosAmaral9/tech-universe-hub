@@ -164,7 +164,7 @@ const LancamentosGamesAbril2026 = () => {
       <EditorialTake category="geek" title={"An\u00e1lise do Marcos: abril \u00e9 teste de prioridade para o jogador BR"}>
         <p>Abril concentrou lançamentos com preço pesado: novos AAAs estreando entre R$ 300 e R$ 400 na PS Store / Xbox, e a memória do investidor manda esperar. Em 5 anos acompanhando lançamentos, a regra empírica que mais funcionou para mim foi: <strong>jogos single-player narrativos ganham 30-50% de desconto em 90 dias</strong>; jogos-serviço e multiplayer competitivo raramente baixam de preço cheio, mas costumam ficar de graça via PS Plus / Game Pass em 6-12 meses. Para quem tem tempo limitado, escolher 1-2 títulos por trimestre e jogar fundo rende mais que comprar tudo e jogar de raspão.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="geek"
         sources={[
           { title: "PlayStation Store BR", url: "https://store.playstation.com/pt-br", publisher: "Sony Interactive", accessedAt: "Maio 2026" },
           { title: "Xbox Store BR", url: "https://www.xbox.com/pt-BR/games", publisher: "Microsoft", accessedAt: "Maio 2026" },

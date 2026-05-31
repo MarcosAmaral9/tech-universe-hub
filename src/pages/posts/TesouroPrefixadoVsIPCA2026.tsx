@@ -363,7 +363,7 @@ const TesouroPrefixadoVsIPCA2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources
+      <ArticleSources category="invest"
         sources={[
           {
             title: "Tesouro Direto — Tipos de Títulos e Rentabilidades Atuais",

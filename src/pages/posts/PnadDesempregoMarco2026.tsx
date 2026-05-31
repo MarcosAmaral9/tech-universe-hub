@@ -190,7 +190,7 @@ const PnadDesempregoMarco2026 = () => {
       <EditorialTake category="invest" title="Análise do Marcos: o que a PNAD esconde">
         <p>Olhar só a taxa de desemprego de 6,1% é miopia analítica. O Brasil tem uma <strong>taxa de informalidade próxima de 38%</strong> da população ocupada (IBGE/PNAD Contínua), o que distorce qualquer comparação com mercados desenvolvidos. Para o investidor brasileiro, o dado relevante é a <strong>massa de rendimento real</strong> — ela é o que sustenta o consumo interno e, por consequência, o lucro de varejistas listadas na B3 como Magazine Luiza (MGLU3) e Lojas Renner (LREN3). Quando o desemprego cai mas o rendimento real estagna, o crescimento do PIB vem de crédito — e isso tem prazo de validade curto, especialmente com a Selic ainda acima de dois dígitos.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="invest"
         sources={[
           { title: "PNAD Contínua — Indicadores Mensais", url: "https://www.ibge.gov.br/estatisticas/sociais/trabalho/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-mensal.html", publisher: "IBGE", accessedAt: "Maio 2026" },
           { title: "Sistema de Contas Nacionais Trimestrais", url: "https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9300-contas-nacionais-trimestrais.html", publisher: "IBGE", accessedAt: "Maio 2026" },

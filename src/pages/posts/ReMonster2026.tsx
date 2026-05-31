@@ -335,7 +335,7 @@ const ReMonster2026 = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="otaku"
         sources={[
           {
             title: "Re:Monster — Syosetu (light novel web original)",

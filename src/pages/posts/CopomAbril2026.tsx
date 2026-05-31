@@ -225,7 +225,7 @@ const CopomAbril2026 = () => {
             <EditorialTake category="invest" title={'Análise do Marcos: o ciclo de corte exige paciência'}>
         <p>O início do ciclo de corte da Selic não significa retorno fácil em renda variável. Em ciclos anteriores (2016, 2020 e 2023), o Ibovespa só destravou de forma consistente quando o juro real projetado caiu abaixo de 5% e o risco fiscal estava ancorado — duas condições que ainda não temos. Para o investidor pessoa física, a tese mais robusta no curto prazo continua sendo <strong>prefixado e IPCA+ longos</strong>, travando a marcação a mercado antes que o mercado precifique cortes adicionais. Ações só ganham peso na carteira depois que o Focus do Bacen consolidar Selic terminal abaixo de 12%.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="invest"
         sources={[
           { title: 'Atas do Copom', url: 'https://www.bcb.gov.br/publicacoes/atascopom', publisher: 'Banco Central do Brasil', accessedAt: "Maio 2026" },
           { title: 'Boletim Focus', url: 'https://www.bcb.gov.br/publicacoes/focus', publisher: 'Banco Central do Brasil', accessedAt: "Maio 2026" },

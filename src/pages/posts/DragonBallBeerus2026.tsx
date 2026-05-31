@@ -219,7 +219,7 @@ const DragonBallBeerus2026 = () => {
       <EditorialTake category="otaku" title="Opinião do Marcos: Beerus precisa de roteiro, não só animação">
         <p>Dragon Ball Super original teve momentos brilhantes (Torneio do Poder, saga Black) e momentos frustrantes (Saga do Universo 6 arrastada). O retorno com Beerus como foco é tecnicamente uma boa aposta — ele é o personagem que mais expandiu a lore desde Cell —, mas o desafio do estúdio Toei é estrutural: <strong>manter consistência de animação semanal</strong>. A geração que cresceu com Dragon Ball Z dublado pelo Wendel Bezerra no Brasil tem expectativas altas, e o mercado otaku brasileiro hoje consome anime via Crunchyroll legalmente. Se o Toei entregar 24 episódios com qualidade do filme Super Hero, é evento cultural. Se cair no padrão de produção apressada, vira meme.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="otaku"
         sources={[
           { title: "Dragon Ball Official Site", url: "https://en.dragon-ball-official.com/", publisher: "Toei Animation / Bird Studio", accessedAt: "Maio 2026" },
           { title: "Toei Animation", url: "https://www.toei-anim.co.jp/english/", publisher: "Toei Animation Co., Ltd.", accessedAt: "Maio 2026" },

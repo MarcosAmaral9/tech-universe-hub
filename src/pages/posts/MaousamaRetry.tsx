@@ -149,7 +149,7 @@ const MaousamaRetry = () => {
           </p>
       </EditorialTake>
 
-            <ArticleSources
+            <ArticleSources category="otaku"
         sources={[
           {
             title: "Futabasha — Maou-sama Retry",

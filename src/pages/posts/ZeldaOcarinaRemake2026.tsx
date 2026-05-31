@@ -218,7 +218,7 @@ const ZeldaOcarinaRemake2026 = () => {
             <EditorialTake category="geek" title={'Análise do Marcos: remake de Ocarina é o teste de fidelidade do Switch 2'}>
         <p>Remake de jogo cult é arma de dois gumes. A Nintendo já errou (Link's Awakening foi tímido demais) e acertou (Metroid Prime Remastered virou referência). O risco com <strong>Ocarina of Time</strong> é que o original de 1998 foi revolucionário justamente porque <em>inventou</em> a câmera 3D, o lock-on de combate e a estrutura aberta com dungeons — em 2026, nada disso surpreende. Um remake só justifica preço cheio se reimaginar a Hyrule original com a densidade de Tears of the Kingdom, não se for um polimento de texturas. Para o consumidor brasileiro, a métrica é simples: se sair com upgrade gratuito para quem tem o original via Switch Online, é justo. Se vier como SKU fechada de R$ 350+, é melhor esperar.</p>
       </EditorialTake>
-      <ArticleSources
+      <ArticleSources category="geek"
         sources={[
           { title: 'The Legend of Zelda — Site oficial', url: 'https://www.nintendo.com/pt-br/store/products/the-legend-of-zelda-ocarina-of-time/', publisher: 'Nintendo', accessedAt: "Maio 2026" },
           { title: 'Nintendo Switch Online', url: 'https://www.nintendo.com/pt-br/switch/online-service/', publisher: 'Nintendo', accessedAt: "Maio 2026" },

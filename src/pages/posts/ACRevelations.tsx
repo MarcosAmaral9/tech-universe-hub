@@ -356,7 +356,7 @@ const ACRevelations = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="geek"
         sources={[
           {
             title: "Assassin's Creed: The Ezio Collection — Steam Store",

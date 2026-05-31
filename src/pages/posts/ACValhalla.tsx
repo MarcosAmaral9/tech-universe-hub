@@ -642,7 +642,7 @@ const ACValhalla = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="geek"
         sources={[
           {
             title: "Assassin's Creed Valhalla — página oficial Ubisoft Store",

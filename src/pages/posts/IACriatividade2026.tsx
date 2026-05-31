@@ -122,7 +122,7 @@ const IACriatividade2026 = () => {
           <p>A discussão real sobre IA generativa criativa no Brasil não é „substitui o artista?” — é quem vai pagar pelo treinamento dos modelos com obras de artistas brasileiros sem licença. Enquanto os EUA debatem fair use e a UE caminha para opt-out via AI Act, nós ainda não temos jurisprudência clara. Recomendo a todo criador de conteúdo registrar obras (Biblioteca Nacional ou cartório) antes de publicar e marcar imagens com C2PA quando possível.</p>
         </EditorialTake>
 
-        <ArticleSources sources={[
+        <ArticleSources category="ia" sources={[
     { title: 'OpenAI — Sora', url: 'https://openai.com/sora/', publisher: 'OpenAI', accessedAt: "Maio 2026" },
     { title: 'Adobe — Firefly', url: 'https://www.adobe.com/products/firefly.html', publisher: 'Adobe', accessedAt: "Maio 2026" },
     { title: 'C2PA — Content Provenance', url: 'https://c2pa.org/', publisher: 'C2PA', accessedAt: "Maio 2026" },

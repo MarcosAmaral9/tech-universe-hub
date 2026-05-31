@@ -293,7 +293,7 @@ const Bitcoin2026ValeComprar = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources
+      <ArticleSources category="invest"
         sources={[
           {
             title: "Bitcoin: A Peer-to-Peer Electronic Cash System",

@@ -265,7 +265,7 @@ Use analogias do dia a dia para explicar conceitos complexos.`}
         </p>
       </EditorialTake>
 
-      <ArticleSources sources={[
+      <ArticleSources category="ia" sources={[
         { title: "OpenAI — Prompt Engineering Guide", url: "https://platform.openai.com/docs/guides/prompt-engineering", publisher: "OpenAI", accessedAt: "Maio 2026" },
         { title: "Anthropic — Prompt Engineering Overview", url: "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview", publisher: "Anthropic", accessedAt: "Maio 2026" },
         { title: "DeepLearning.AI — ChatGPT Prompt Engineering for Developers", url: "https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/", publisher: "DeepLearning.AI", accessedAt: "Maio 2026" },

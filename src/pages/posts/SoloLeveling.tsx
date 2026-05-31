@@ -227,7 +227,7 @@ const SoloLeveling = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources
+      <ArticleSources category="otaku"
         sources={[
           {
             title: "Aniplex — Solo Leveling",

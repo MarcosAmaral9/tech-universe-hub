@@ -187,7 +187,7 @@ const AgentesIA2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources sources={[
+      <ArticleSources category="ia" sources={[
         { title: "Anthropic — Introducing the Model Context Protocol", url: "https://www.anthropic.com/news/model-context-protocol", publisher: "Anthropic", accessedAt: "Maio 2026" },
         { title: "Princeton NLP — SWE-bench Verified Leaderboard", url: "https://www.swebench.com/", publisher: "Princeton NLP", accessedAt: "Maio 2026" },
         { title: "OSWorld: Benchmarking Multimodal Agents (CMU)", url: "https://os-world.github.io/", publisher: "Carnegie Mellon University", accessedAt: "Maio 2026" },

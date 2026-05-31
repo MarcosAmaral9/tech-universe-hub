@@ -662,7 +662,7 @@ const ACMirage = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="geek"
         sources={[
           {
             title: "Assassin's Creed Mirage — página oficial Ubisoft Store",

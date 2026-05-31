@@ -237,7 +237,7 @@ const MelhoresMangas2026 = () => {
         </div>
       </div>
 
-      <ArticleSources
+      <ArticleSources category="otaku"
         sources={[
           {
             title: "Shueisha — Weekly Shonen Jump e Manga Plus",

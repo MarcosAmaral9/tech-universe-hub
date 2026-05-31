@@ -401,7 +401,7 @@ const FIIs2026 = () => {
           </p>
         </EditorialTake>
 
-        <ArticleSources
+        <ArticleSources category="invest"
           sources={[
             {
               title: "Boletim Mensal de Fundos de Investimento Imobiliário — B3",
