@@ -326,7 +326,7 @@ const DiferenciarManhuasManhwas = () => {
             publisher: "Anime News Network",
             accessedAt: "Maio 2026"
           }
-        ]}}
+        ]}
       />
       <RelatedPosts currentSlug="como-diferenciar-manhuas-manhwas" />
       <CommentSection postId="como-diferenciar-manhuas-manhwas" postTitle="Saiba como diferenciar Manhuas e Manhwas" />

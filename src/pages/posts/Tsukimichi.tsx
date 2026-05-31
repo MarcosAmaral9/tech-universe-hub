@@ -184,7 +184,7 @@ const Tsukimichi = () => {
             publisher: "C2C Studio",
             accessedAt: "Maio 2026"
           }
-        ]}}
+        ]}
       />
       <RelatedPosts currentSlug="tsukimichi-moonlit-fantasy-guia-completo" />
       <CommentSection postId="tsukimichi-moonlit-fantasy-guia-completo" postTitle="Tsukimichi: Moonlit Fantasy — Guia Completo" />
