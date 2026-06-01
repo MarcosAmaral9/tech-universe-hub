@@ -108,6 +108,15 @@ const JogosAnime2026 = () => {
             A análise do Marcos: prefira títulos com modo offline robusto. Servidores de jogos de anime tendem a esvaziar em 12 a 18 meses, e um single-player consistente garante que o investimento não vire prejuízo quando a comunidade migrar para o próximo lançamento da Bandai Namco ou CyberConnect2.
           </p>
       </EditorialTake>
+      <ArticleSources
+        category="otaku"
+        sources={[
+          { title: "Dragon Ball: Sparking! ZERO — site oficial", url: "https://en.bandainamcoent.eu/dragon-ball/dragon-ball-sparking-zero", publisher: "Bandai Namco", accessedAt: "Maio 2026" },
+          { title: "Naruto x Boruto: Ultimate Ninja Storm Connections", url: "https://en.bandainamcoent.eu/naruto/naruto-x-boruto-ultimate-ninja-storm-connections", publisher: "Bandai Namco", accessedAt: "Maio 2026" },
+          { title: "Demon Slayer -Kimetsu no Yaiba- Sweep the Board!", url: "https://www.nintendo.com/us/store/products/demon-slayer-kimetsu-no-yaiba-sweep-the-board-switch/", publisher: "Nintendo", accessedAt: "Maio 2026" },
+          { title: "One Piece Odyssey — análise e localização PT-BR", url: "https://en.bandainamcoent.eu/one-piece/one-piece-odyssey", publisher: "Bandai Namco", accessedAt: "Maio 2026" },
+        ]}
+      />
       <RelatedPosts currentSlug="melhores-jogos-anime-2026" />
       <CommentSection postId="melhores-jogos-anime-2026" postTitle="Os Melhores Jogos de Anime de 2026: Do RPG ao Fighting Game" />
     </article>
