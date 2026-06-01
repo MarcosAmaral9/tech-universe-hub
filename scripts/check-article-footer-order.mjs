@@ -60,4 +60,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`✓ Rodapé editorial padronizado em todos os posts (${EXPECTED})`);
+console.log(`✓ Rodapé editorial padronizado em ${checked} post(s) (${EXPECTED}) — ${skipped} portal/hub ignorados`);
