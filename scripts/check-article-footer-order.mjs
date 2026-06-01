@@ -15,10 +15,30 @@ const EXPECTED = REQUIRED.join(" → ");
 
 const files = readdirSync(DIR).filter((f) => f.endsWith(".tsx"));
 const errors = [];
+let checked = 0;
+let skipped = 0;
 
 for (const f of files) {
+  // Pula páginas do tipo Portal (índices/hubs, não são artigos)
+  if (/Portal\.tsx$/.test(f)) {
+    skipped++;
+    continue;
+  }
   const src = readFileSync(join(DIR, f), "utf8");
-  if (!src.includes("<EditorialTake")) continue; // post não usa rodapé editorial
+
+  // Heurística extra: pula arquivos que claramente são hubs/índices
+  // (renderizam listas de artigos via <Link to={`/post/...`}> e não têm conteúdo editorial)
+  const isHub =
+    !src.includes("<EditorialTake") &&
+    !src.includes("<ArticleSources") &&
+    /to=\{`\/post\//.test(src);
+  if (isHub) {
+    skipped++;
+    continue;
+  }
+
+  if (!src.includes("<EditorialTake")) continue; // post sem rodapé editorial
+  checked++;
 
   const positions = REQUIRED.map((c) => ({ c, pos: src.indexOf(`<${c}`) }));
   const missing = positions.filter((p) => p.pos === -1).map((p) => p.c);
