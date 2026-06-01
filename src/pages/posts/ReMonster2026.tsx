@@ -319,12 +319,7 @@ const ReMonster2026 = () => {
             ))}
           </div>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Você já assistiu Re:Monster? 🐉</h3>
-          <p className="text-muted-foreground">Conta nos comentários o que achou do anime e se prefere o mangá ou a light novel! 👇</p>
-        </div>
-
+        
         <EditorialTake category="otaku" title="Análise do Marcos: Re:Monster é o isekai que o anime não fez jus — mas o mangá compensa">
           <p>
             Re:Monster estreou na temporada de primavera de 2024 pela Doga Kobo com nota de partida 6.7 no MyAnimeList — abaixo do potencial, mas não uma catástrofe. O problema central foi o ritmo: a web novel de Kanekiru Kogitsune tem detalhamento psicológico de Rou que o anime simplificou demais para caber em 12 episódios. O que no texto é uma progressão tática e introspectiva, na tela ficou como "goblin bate, goblin come, goblin fica mais forte" — correto, mas sem a camada que faz a light novel envolvente.
@@ -333,7 +328,11 @@ const ReMonster2026 = () => {
             Para quem assistiu o anime e ficou curioso: <strong>o mangá é a próxima parada certa</strong>. A arte de Kobayakawa dá peso visual às batalhas que o anime não conseguiu. Os arcos seguintes ao final do anime — especialmente a expansão do reino goblin e os primeiros confrontos com facções humanas organizadas — são o material mais forte da franquia. Sem T2 confirmada até maio de 2026, o mangá em inglês (scanlations) é a única forma de continuar a história. Vale muito.
           </p>
         </EditorialTake>
-        
+
+          <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
+          <h3 className="text-xl font-bold mb-2">Você já assistiu Re:Monster? 🐉</h3>
+          <p className="text-muted-foreground">Conta nos comentários o que achou do anime e se prefere o mangá ou a light novel! 👇</p>
+        </div>
       </div>
 
       <ArticleSources category="otaku"
