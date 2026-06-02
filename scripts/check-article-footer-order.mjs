@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 /**
- * Prebuild check: garante que todo post que usa <EditorialTake/> também
- * renderize <ArticleSources/>, <RelatedPosts/> e <CommentSection/> na ordem:
- *   EditorialTake → ArticleSources → RelatedPosts → CommentSection
+ * Prebuild check do rodapé editorial. Garante:
+ *  1. Ordem fixa: EditorialTake → ArticleSources → RelatedPosts → CommentSection
+ *  2. Nenhum resquício da antiga div CTA solta
+ *     (className="mt-10 p-6 bg-secondary rounded-xl text-center")
+ *  3. <CommentSection .../> com prop category="..." em posts editoriais
  *
- * Falha o build se algum post estiver fora do padrão.
+ * Pula Portals (índices) e hubs (sem EditorialTake/ArticleSources, com Links /post/).
  */
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -12,6 +14,7 @@ import { join } from "node:path";
 const DIR = "src/pages/posts";
 const REQUIRED = ["EditorialTake", "ArticleSources", "RelatedPosts", "CommentSection"];
 const EXPECTED = REQUIRED.join(" → ");
+const LEGACY_CTA = /className="mt-10 p-6 bg-secondary rounded-xl text-center"/;
 
 const files = readdirSync(DIR).filter((f) => f.endsWith(".tsx"));
 const errors = [];
@@ -19,15 +22,12 @@ let checked = 0;
 let skipped = 0;
 
 for (const f of files) {
-  // Pula páginas do tipo Portal (índices/hubs, não são artigos)
   if (/Portal\.tsx$/.test(f)) {
     skipped++;
     continue;
   }
   const src = readFileSync(join(DIR, f), "utf8");
 
-  // Heurística extra: pula arquivos que claramente são hubs/índices
-  // (renderizam listas de artigos via <Link to={`/post/...`}> e não têm conteúdo editorial)
   const isHub =
     !src.includes("<EditorialTake") &&
     !src.includes("<ArticleSources") &&
@@ -37,9 +37,10 @@ for (const f of files) {
     continue;
   }
 
-  if (!src.includes("<EditorialTake")) continue; // post sem rodapé editorial
+  if (!src.includes("<EditorialTake")) continue;
   checked++;
 
+  // 1) Ordem
   const positions = REQUIRED.map((c) => ({ c, pos: src.indexOf(`<${c}`) }));
   const missing = positions.filter((p) => p.pos === -1).map((p) => p.c);
   if (missing.length) {
@@ -49,6 +50,17 @@ for (const f of files) {
   const order = [...positions].sort((a, b) => a.pos - b.pos).map((p) => p.c).join(" → ");
   if (order !== EXPECTED) {
     errors.push(`${f}: ordem incorreta — ${order}`);
+  }
+
+  // 2) CTA legado
+  if (LEGACY_CTA.test(src)) {
+    errors.push(`${f}: contém div CTA legada (mt-10 p-6 bg-secondary rounded-xl text-center) — o convite agora vive dentro do <CommentSection/>`);
+  }
+
+  // 3) category= no CommentSection
+  const cs = src.match(/<CommentSection\b([^>]*?)\/>/);
+  if (cs && !/category=/.test(cs[0])) {
+    errors.push(`${f}: <CommentSection/> sem prop category="ia|invest|geek|otaku"`);
   }
 }
 
@@ -60,4 +72,6 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`✓ Rodapé editorial padronizado em ${checked} post(s) (${EXPECTED}) — ${skipped} portal/hub ignorados`);
+console.log(
+  `✓ Rodapé editorial padronizado em ${checked} post(s) (${EXPECTED}) — ${skipped} portal/hub ignorados`,
+);
