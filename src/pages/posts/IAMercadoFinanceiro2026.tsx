@@ -352,7 +352,7 @@ const IAMercadoFinanceiro2026 = () => {
         ]} />
 
       <RelatedPosts currentSlug="ia-mercado-financeiro-2026-investimentos" />
-      <CommentSection postId="ia-mercado-financeiro-2026-investimentos" postTitle="IA no Mercado Financeiro 2026: Como a IA Está Transformando Investimentos" />
+      <CommentSection postId="ia-mercado-financeiro-2026-investimentos" postTitle="IA no Mercado Financeiro 2026: Como a IA Está Transformando Investimentos"  category="invest" />
       </article>
     </>
   );

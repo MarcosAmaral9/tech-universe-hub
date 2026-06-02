@@ -384,7 +384,7 @@ const AC1Altair = () => {
 
       <RelatedPosts currentSlug="ac-1-altair-terra-santa-1191" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="ac-1-altair-terra-santa-1191" postTitle="Assassin's Creed 1 em 2026: Review Completa — Altaïr Ibn-La'Ahad e a Terra Santa" />
+      <CommentSection postId="ac-1-altair-terra-santa-1191" postTitle="Assassin's Creed 1 em 2026: Review Completa — Altaïr Ibn-La'Ahad e a Terra Santa"  category="geek" />
     </article>
   );
 };

@@ -213,7 +213,7 @@ const SuperMarioGalaxyMovie2026 = () => {
 
 
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="super-mario-galaxy-movie-2026-bilheteria" postTitle="Super Mario Galaxy: O Filme Abre com US$ 372 Milhões Mundiais" />
+      <CommentSection postId="super-mario-galaxy-movie-2026-bilheteria" postTitle="Super Mario Galaxy: O Filme Abre com US$ 372 Milhões Mundiais"  category="geek" />
     </article>
   );
 };

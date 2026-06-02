@@ -189,7 +189,7 @@ const JJKTemporada42026 = () => {
       />
 
       <RelatedPosts currentSlug="jujutsu-kaisen-temporada-4-culling-game-2026" />
-      <CommentSection postId="jujutsu-kaisen-temporada-4-culling-game-2026" postTitle="Jujutsu Kaisen Temporada 4: Culling Game Part 2 Confirmada" />
+      <CommentSection postId="jujutsu-kaisen-temporada-4-culling-game-2026" postTitle="Jujutsu Kaisen Temporada 4: Culling Game Part 2 Confirmada"  category="otaku" />
     </article>
   );
 };

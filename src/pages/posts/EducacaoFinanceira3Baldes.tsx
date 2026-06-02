@@ -433,7 +433,7 @@ const EducacaoFinanceira3Baldes = () => {
         <CommentSection
           postId="educacao-financeira-metodo-3-baldes"
           postTitle="Método dos 3 Baldes: Educação Financeira Para Quem Sempre Gastou Tudo"
-        />
+         category="invest" />
       </article>
     </>
   );

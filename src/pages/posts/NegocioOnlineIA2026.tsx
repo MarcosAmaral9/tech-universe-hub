@@ -174,7 +174,7 @@ const NegocioOnlineIA2026 = () => {
 
 
       <RelatedPosts currentSlug="negocio-online-ia-2026" />
-      <CommentSection postId="negocio-online-ia-2026" postTitle="Como Criar um Negócio Online com IA em 2026: 10 Modelos Lucrativos" />
+      <CommentSection postId="negocio-online-ia-2026" postTitle="Como Criar um Negócio Online com IA em 2026: 10 Modelos Lucrativos"  category="ia" />
     </article>
   );
 };

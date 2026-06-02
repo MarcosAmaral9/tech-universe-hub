@@ -128,11 +128,6 @@ const DeepfakesIA2026 = () => {
         <p>
           O <strong>EU AI Act</strong> (Reg. UE 2024/1689), em vigor desde agosto de 2024, exige marcação obrigatória de conteúdo gerado por IA a partir de agosto de 2026 para todos que operam no mercado europeu. O <strong>PL 2338/2023</strong> brasileiro — o Marco Legal da IA — segue linha similar, exigindo identificação de deepfakes em campanhas políticas e conteúdo jornalístico. Conteúdo não marcado poderá resultar em multas de até 3% do faturamento no Brasil, ou até €35 milhões na União Europeia.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Já viu ou foi vítima de um deepfake?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
-        </div>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: a defesa real contra deepfakes é comportamental, não técnica">
@@ -153,7 +148,7 @@ const DeepfakesIA2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="deepfakes-ia-2026-como-identificar" />
-      <CommentSection postId="deepfakes-ia-2026-como-identificar" postTitle="Deepfakes e IA 2026: Como Identificar Conteúdo Falso e Proteger sua Imagem" />
+      <CommentSection postId="deepfakes-ia-2026-como-identificar" postTitle="Deepfakes e IA 2026: Como Identificar Conteúdo Falso e Proteger sua Imagem"  category="ia" />
     </article>
   );
 };

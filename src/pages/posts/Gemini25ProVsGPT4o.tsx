@@ -230,7 +230,7 @@ const Gemini25ProVsGPT4o = () => {
 
 
       <RelatedPosts currentSlug="gemini-2-5-pro-vs-gpt-4o-2026" />
-      <CommentSection postId="gemini-2-5-pro-vs-gpt-4o-2026" postTitle="Gemini 2.5 Pro vs GPT-4o: Qual o Melhor Modelo de IA em 2026?" />
+      <CommentSection postId="gemini-2-5-pro-vs-gpt-4o-2026" postTitle="Gemini 2.5 Pro vs GPT-4o: Qual o Melhor Modelo de IA em 2026?"  category="ia" />
     </article>
   );
 };

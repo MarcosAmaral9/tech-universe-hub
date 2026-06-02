@@ -135,11 +135,6 @@ const AppsIAProdutividade2026 = () => {
             <p className="text-sm text-muted-foreground mb-0">A maioria cobra em dólar via cartão internacional (IOF 3,38%). Perplexity via Vivo e Zapier via parceria Cielo oferecem cobrança em BRL para empresas.</p>
           </div>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Qual aplicativo de IA é indispensável na sua rotina?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
-        </div>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: câmbio e LGPD decidem qual app de IA vale para o brasileiro">
@@ -157,7 +152,7 @@ const AppsIAProdutividade2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="melhores-apps-ia-produtividade-2026" />
-      <CommentSection postId="melhores-apps-ia-produtividade-2026" postTitle="Os 10 Melhores Apps de IA para Produtividade em 2026" />
+      <CommentSection postId="melhores-apps-ia-produtividade-2026" postTitle="Os 10 Melhores Apps de IA para Produtividade em 2026"  category="ia" />
     </article>
   );
 };

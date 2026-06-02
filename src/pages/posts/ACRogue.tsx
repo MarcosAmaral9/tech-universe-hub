@@ -685,15 +685,6 @@ const ACRogue = () => {
             Preço médio em 2026: R$ 40 a R$ 70 (frequentemente abaixo de R$ 20 em promoções na Steam)
           </p>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">
-            Você acha que Shay estava certo em abandonar os Assassinos?
-          </h3>
-          <p className="text-muted-foreground">
-            A decisão dele foi justa ou ele era apenas um traidor? Conta pra gente nos comentários! 👇
-          </p>
-        </div>
       </div>
 
       <ArticleSources category="geek"
@@ -740,7 +731,7 @@ const ACRogue = () => {
       <RelatedPosts currentSlug="ac-rogue-assassino-templario" />
 
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="ac-rogue-assassino-templario" postTitle="Assassin's Creed Rogue em 2026: Review Completa — Jogue Como Templário" />
+      <CommentSection postId="ac-rogue-assassino-templario" postTitle="Assassin's Creed Rogue em 2026: Review Completa — Jogue Como Templário"  category="geek" />
     </article>
   );
 };

@@ -199,7 +199,7 @@ const DolarQueda2026 = () => {
         ]}
       />
       <RelatedPosts currentSlug="dolar-queda-2026-investir-exterior" />
-      <CommentSection postId="dolar-queda-2026-investir-exterior" postTitle="Dólar no Menor Nível em 2 Anos: Como Aproveitar a Queda Cambial para Investir no Exterior" />
+      <CommentSection postId="dolar-queda-2026-investir-exterior" postTitle="Dólar no Menor Nível em 2 Anos: Como Aproveitar a Queda Cambial para Investir no Exterior"  category="invest" />
     </article>
   );
 };

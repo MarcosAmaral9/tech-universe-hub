@@ -182,7 +182,7 @@ const JujutsuKaisenGuia2026 = () => {
 
 
       <RelatedPosts currentSlug="jujutsu-kaisen-guia-completo-2026" />
-      <CommentSection postId="jujutsu-kaisen-guia-completo-2026" postTitle="Jujutsu Kaisen: Guia Completo do Mangá e Anime em 2026" />
+      <CommentSection postId="jujutsu-kaisen-guia-completo-2026" postTitle="Jujutsu Kaisen: Guia Completo do Mangá e Anime em 2026"  category="otaku" />
     </article>
   );
 };

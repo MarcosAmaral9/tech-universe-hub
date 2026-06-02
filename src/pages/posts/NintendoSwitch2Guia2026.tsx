@@ -202,7 +202,7 @@ const NintendoSwitch2Guia2026 = () => {
       />
 <RelatedPosts currentSlug="nintendo-switch-2-guia-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="nintendo-switch-2-guia-2026" postTitle="Nintendo Switch 2: Guia Completo do Novo Console" />
+      <CommentSection postId="nintendo-switch-2-guia-2026" postTitle="Nintendo Switch 2: Guia Completo do Novo Console"  category="geek" />
     </article>
   );
 };

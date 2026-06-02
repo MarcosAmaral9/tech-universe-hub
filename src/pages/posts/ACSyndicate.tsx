@@ -832,15 +832,6 @@ const ACSyndicate = () => {
             Preço médio em 2026: R$ 60 a R$ 100 (frequentemente gratuito em promoções da Epic Games)
           </p>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">
-            Jacob ou Evie: qual irmão você prefere jogar? O que achou do DLC do Jack, o Estripador?
-          </h3>
-          <p className="text-muted-foreground">
-            Conta pra gente nos comentários! 👇
-          </p>
-        </div>
       </div>
 
       <ArticleSources category="geek"
@@ -887,7 +878,7 @@ const ACSyndicate = () => {
       <RelatedPosts currentSlug="ac-syndicate-revolucao-industrial-londres" />
 
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="ac-syndicate-revolucao-industrial-londres" postTitle="Assassin's Creed Syndicate em 2026: Review Completa — Londres Vitoriana e Sistema de Gangues" />
+      <CommentSection postId="ac-syndicate-revolucao-industrial-londres" postTitle="Assassin's Creed Syndicate em 2026: Review Completa — Londres Vitoriana e Sistema de Gangues"  category="geek" />
     </article>
   );
 };

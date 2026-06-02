@@ -221,7 +221,7 @@ const CrimsonDesertGuiaCompleto = () => {
       </div>
 <RelatedPosts currentSlug="crimson-desert-guia-completo" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="crimson-desert-guia-completo" postTitle="Crimson Desert: Guia Completo 2026" />
+      <CommentSection postId="crimson-desert-guia-completo" postTitle="Crimson Desert: Guia Completo 2026"  category="geek" />
     </article>
   );
 };

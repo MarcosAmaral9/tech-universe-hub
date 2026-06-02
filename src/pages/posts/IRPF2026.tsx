@@ -410,7 +410,7 @@ const IRPF2026 = () => {
     { title: 'CVM — Orientações ao Investidor', url: 'https://www.gov.br/cvm/pt-br/assuntos/noticias', publisher: 'CVM', accessedAt: "Maio 2026" }
   ]} />
       <RelatedPosts currentSlug="irpf-2026-guia-declarar-pagar-menos" />
-      <CommentSection postId="28" postTitle="IRPF 2026: Guia Completo Para Declarar e Pagar Menos Imposto" />
+      <CommentSection postId="28" postTitle="IRPF 2026: Guia Completo Para Declarar e Pagar Menos Imposto"  category="invest" />
       </article>
     </>
   );

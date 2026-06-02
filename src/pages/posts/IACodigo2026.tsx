@@ -127,7 +127,7 @@ const IACodigo2026 = () => {
   ]} />
 
       <RelatedPosts currentSlug="ia-codigo-programadores-2026" />
-      <CommentSection postId="ia-codigo-programadores-2026" postTitle="IA e Programação em 2026" />
+      <CommentSection postId="ia-codigo-programadores-2026" postTitle="IA e Programação em 2026"  category="ia" />
   </article>
 );
 };

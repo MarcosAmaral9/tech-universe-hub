@@ -272,20 +272,10 @@ const Avatar2009Tecnologia = () => {
           visuais</strong> ou simplesmente quer entender como produções modernas como as 
           sequências de Avatar funcionam, assistir ao original é essencial.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">
-            Você assistiu Avatar no cinema em 2009?
-          </h3>
-          <p className="text-muted-foreground">
-            Como foi a experiência de ver essa revolução tecnológica na tela grande? 
-            Conta pra gente nos comentários! 👇
-          </p>
-        </div>
       </div>
 <RelatedPosts currentSlug="avatar-2009-filme-revolucionou-tecnologia" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="avatar-2009-filme-revolucionou-tecnologia" postTitle="Avatar (2009): O Filme que Revolucionou o Cinema 3D e a Tecnologia CGI" />
+      <CommentSection postId="avatar-2009-filme-revolucionou-tecnologia" postTitle="Avatar (2009): O Filme que Revolucionou o Cinema 3D e a Tecnologia CGI"  category="geek" />
     </article>
   );
 };

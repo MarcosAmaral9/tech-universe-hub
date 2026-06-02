@@ -187,7 +187,7 @@ const CrimsonDesertVendasReview = () => {
       </div>
 <RelatedPosts currentSlug="crimson-desert-vendas-review-completo-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="crimson-desert-vendas-review-completo-2026" postTitle="Crimson Desert: 5 Milhões de Cópias, Metacritic 78 e Review Completo" />
+      <CommentSection postId="crimson-desert-vendas-review-completo-2026" postTitle="Crimson Desert: 5 Milhões de Cópias, Metacritic 78 e Review Completo"  category="geek" />
     </article>
   );
 };

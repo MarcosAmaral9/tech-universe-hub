@@ -637,11 +637,6 @@ const AC3Remastered = () => {
             Preço médio em 2026: R$ 80 a R$ 120 (frequentemente abaixo de R$ 50 em promoções na Steam)
           </p>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">O que você achou da jornada de Connor na Revolução Americana?</h3>
-          <p className="text-muted-foreground">Jogou como parte da Saga Kenway ou separadamente? Conta nos comentários! 👇</p>
-        </div>
       </div>
 
       <ArticleSources category="geek"
@@ -687,7 +682,7 @@ const AC3Remastered = () => {
 
       <RelatedPosts currentSlug="ac-3-remastered-revolucao-americana" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="ac-3-remastered-revolucao-americana" postTitle="Assassin's Creed III Remastered em 2026: Review Completa — Revolução Americana com Connor Kenway" />
+      <CommentSection postId="ac-3-remastered-revolucao-americana" postTitle="Assassin's Creed III Remastered em 2026: Review Completa — Revolução Americana com Connor Kenway"  category="geek" />
     </article>
   );
 };

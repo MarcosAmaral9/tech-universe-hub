@@ -115,11 +115,6 @@ const IAPrivacidadeDados2026 = () => {
         <p>
           Em 2026, a privacidade de dados não é mais um luxo — é uma necessidade. A boa notícia é que tanto a legislação quanto a tecnologia estão evoluindo para dar mais controle ao usuário.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Você se preocupa com seus dados na IA?</h3>
-          <p className="text-muted-foreground">Compartilhe suas práticas de segurança nos comentários! 🔒</p>
-        </div>
       </div>
 
 
@@ -141,7 +136,7 @@ const IAPrivacidadeDados2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="ia-privacidade-dados-2026" />
-      <CommentSection postId="ia-privacidade-dados-2026" postTitle="IA e Privacidade de Dados 2026: Seus Dados Estão Seguros?" />
+      <CommentSection postId="ia-privacidade-dados-2026" postTitle="IA e Privacidade de Dados 2026: Seus Dados Estão Seguros?"  category="ia" />
     </article>
   );
 };

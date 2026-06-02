@@ -197,7 +197,7 @@ const CrimsonDesertCombate = () => {
       </div>
 <RelatedPosts currentSlug="crimson-desert-combate-blackspace-engine" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="crimson-desert-combate-blackspace-engine" postTitle="Crimson Desert: Sistema de Combate e BlackSpace Engine" />
+      <CommentSection postId="crimson-desert-combate-blackspace-engine" postTitle="Crimson Desert: Sistema de Combate e BlackSpace Engine"  category="geek" />
     </article>
   );
 };

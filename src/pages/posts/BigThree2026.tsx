@@ -254,7 +254,7 @@ const BigThree2026 = () => {
         ]}
       />
       <RelatedPosts currentSlug="big-three-naruto-bleach-one-piece-2026" />
-      <CommentSection postId="big-three-naruto-bleach-one-piece-2026" postTitle="Big Three em 2026: Naruto, Bleach e One Piece Juntos pela Primeira Vez desde 2012" />
+      <CommentSection postId="big-three-naruto-bleach-one-piece-2026" postTitle="Big Three em 2026: Naruto, Bleach e One Piece Juntos pela Primeira Vez desde 2012"  category="otaku" />
     </article>
   );
 };

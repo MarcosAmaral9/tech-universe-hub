@@ -133,7 +133,7 @@ const BaldursGate3Review2026 = () => {
   ]} />
 <RelatedPosts currentSlug="baldurs-gate-3-review-2026" />
     <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="baldurs-gate-3-review-2026" postTitle="Baldur's Gate 3 em 2026" />
+      <CommentSection postId="baldurs-gate-3-review-2026" postTitle="Baldur's Gate 3 em 2026"  category="geek" />
   </article>
 );
 };

@@ -205,7 +205,7 @@ const OpenAiFinanciamento2026 = () => {
         ]}
       />
       <RelatedPosts currentSlug="openai-bilhoes-financiamento-record-2026" />
-      <CommentSection postId="openai-bilhoes-financiamento-record-2026" postTitle="OpenAI Capta US$ 40 Bilhões e Chega a US$ 300 Bi de Valuation" />
+      <CommentSection postId="openai-bilhoes-financiamento-record-2026" postTitle="OpenAI Capta US$ 40 Bilhões e Chega a US$ 300 Bi de Valuation"  category="ia" />
     </article>
   );
 };

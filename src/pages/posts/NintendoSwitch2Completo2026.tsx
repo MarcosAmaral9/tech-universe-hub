@@ -222,7 +222,7 @@ const NintendoSwitch2Completo2026 = () => {
       />
 <RelatedPosts currentSlug={POST_SLUG} />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId={POST_SLUG} postTitle={POST_TITLE} />
+      <CommentSection postId={POST_SLUG} postTitle={POST_TITLE}  category="geek" />
     </article>
   );
 };

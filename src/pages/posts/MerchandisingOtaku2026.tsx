@@ -300,7 +300,7 @@ const MerchandisingOtaku2026 = () => {
       />
 
       <RelatedPosts currentSlug="merchandising-otaku-colecionar-2026" />
-      <CommentSection postId="merchandising-otaku-colecionar-2026" postTitle="Merchandising Otaku: Como Colecionar com Inteligência e Sem Quebrar o Orçamento" />
+      <CommentSection postId="merchandising-otaku-colecionar-2026" postTitle="Merchandising Otaku: Como Colecionar com Inteligência e Sem Quebrar o Orçamento"  category="otaku" />
     </article>
   );
 };

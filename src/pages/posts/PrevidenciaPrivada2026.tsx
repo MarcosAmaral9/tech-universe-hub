@@ -465,7 +465,7 @@ const PrevidenciaPrivada2026 = () => {
       <CommentSection
         postId="previdencia-privada-pgbl-vgbl-2026"
         postTitle="Previdência Privada 2026: PGBL ou VGBL? Guia Completo"
-      />
+       category="invest" />
     </article>
   );
 };

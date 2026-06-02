@@ -227,7 +227,7 @@ const PragmataCapcom2026 = () => {
       </section>
 <RelatedPosts currentSlug="pragmata-capcom-guia-completo-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="pragmata-capcom-guia-completo-2026" postTitle="PRAGMATA: Guia Completo do Novo Jogo da Capcom" />
+      <CommentSection postId="pragmata-capcom-guia-completo-2026" postTitle="PRAGMATA: Guia Completo do Novo Jogo da Capcom"  category="geek" />
     </article>
   );
 };

@@ -550,7 +550,7 @@ const CarteiraIniciantes2026 = () => {
 
         <BackNavigation category="invest" />
         <RelatedPosts currentSlug="carteira-investimentos-iniciantes-2026" />
-        <CommentSection postId="carteira-investimentos-iniciantes-2026" postTitle="Carteira de Investimentos para Iniciantes 2026" />
+        <CommentSection postId="carteira-investimentos-iniciantes-2026" postTitle="Carteira de Investimentos para Iniciantes 2026"  category="invest" />
       </article>
     </>
   );

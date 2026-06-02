@@ -517,11 +517,6 @@ const ACBlackFlag = () => {
             Preço médio em 2026: R$ 40 a R$ 80 (frequentemente em promoção por menos de R$ 30)
           </p>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Qual é a sua Sea Shanty favorita de Black Flag?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
-        </div>
       </div>
 
       <ArticleSources category="geek"
@@ -567,7 +562,7 @@ const ACBlackFlag = () => {
 
       <RelatedPosts currentSlug="ac-black-flag-melhor-jogo-piratas" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="ac-black-flag-melhor-jogo-piratas" postTitle="Assassin's Creed IV Black Flag em 2026: Review Completa — Ainda o Melhor Jogo de Piratas?" />
+      <CommentSection postId="ac-black-flag-melhor-jogo-piratas" postTitle="Assassin's Creed IV Black Flag em 2026: Review Completa — Ainda o Melhor Jogo de Piratas?"  category="geek" />
     </article>
   );
 };

@@ -257,7 +257,7 @@ const OverlordPersonagens = () => {
         ]}
       />
       <RelatedPosts currentSlug="overlord-ainz-guardians-personagens" />
-      <CommentSection postId="overlord-ainz-guardians-personagens" />
+      <CommentSection postId="overlord-ainz-guardians-personagens"  category="otaku" />
     </article>
   );
 };

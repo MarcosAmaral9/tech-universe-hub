@@ -408,7 +408,7 @@ const TesouroPrefixadoVsIPCA2026 = () => {
       <CommentSection
         postId="tesouro-prefixado-vs-ipca-2026"
         postTitle="Tesouro Prefixado ou IPCA+? Qual Escolher com a Selic Caindo em 2026"
-      />
+       category="invest" />
     </article>
   );
 };

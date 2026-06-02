@@ -303,7 +303,7 @@ const MangaVsAnime2026 = () => {
       />
 
       <RelatedPosts currentSlug="manga-vs-anime-adaptacao-2026" />
-      <CommentSection postId="manga-vs-anime-adaptacao-2026" postTitle="Mangá vs. Anime: Quando a Adaptação Supera o Original (e Quando Decepciona)" />
+      <CommentSection postId="manga-vs-anime-adaptacao-2026" postTitle="Mangá vs. Anime: Quando a Adaptação Supera o Original (e Quando Decepciona)"  category="otaku" />
     </article>
   );
 };

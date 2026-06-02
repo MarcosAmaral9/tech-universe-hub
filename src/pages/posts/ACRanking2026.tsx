@@ -340,13 +340,6 @@ const ACRanking2026 = () => {
           praticamente todos os períodos históricos que tocou — da Terra Santa medieval ao
           Japão Feudal — e continua sendo uma das séries mais importantes dos games.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Você concorda com nosso ranking?</h3>
-          <p className="text-muted-foreground">
-            Conta pra gente qual é o seu Assassin's Creed favorito nos comentários! 👇
-          </p>
-        </div>
       </div>
 
       <ArticleSources category="geek"
@@ -392,7 +385,7 @@ const ACRanking2026 = () => {
 
       <RelatedPosts currentSlug="ranking-melhor-assassins-creed-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="ranking-melhor-assassins-creed-2026" postTitle="Ranking: Qual o Melhor Assassin's Creed para Jogar em 2026? Top 10 Definitivo" />
+      <CommentSection postId="ranking-melhor-assassins-creed-2026" postTitle="Ranking: Qual o Melhor Assassin's Creed para Jogar em 2026? Top 10 Definitivo"  category="geek" />
     </article>
   );
 };

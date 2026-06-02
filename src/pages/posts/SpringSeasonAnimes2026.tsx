@@ -261,7 +261,7 @@ const SpringSeasonAnimes2026 = () => {
         ]}
       />
       <RelatedPosts currentSlug="spring-season-animes-abril-2026" />
-      <CommentSection postId="spring-season-animes-abril-2026" postTitle="Spring Season 2026: Os 15 Melhores Animes de Abril para Não Perder" />
+      <CommentSection postId="spring-season-animes-abril-2026" postTitle="Spring Season 2026: Os 15 Melhores Animes de Abril para Não Perder"  category="otaku" />
     </article>
   );
 };

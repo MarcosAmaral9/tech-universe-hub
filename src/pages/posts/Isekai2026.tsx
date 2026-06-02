@@ -90,11 +90,6 @@ const Isekai2026 = () => {
         <p>
           O isekai não vai morrer — vai se diversificar. <strong>KonoSuba</strong> e <strong>Cautious Hero</strong> são sátiras que amam o que criticam. Essa auto-consciência aponta para uma evolução criativa genuína.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Qual seu isekai favorito?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
-        </div>
       </div>
 
             <EditorialTake category="otaku" title="Análise do Marcos">
@@ -144,7 +139,7 @@ const Isekai2026 = () => {
         ]}
       />
       <RelatedPosts currentSlug="isekai-2026-genero-domina" />
-      <CommentSection postId="isekai-2026-genero-domina" postTitle="Isekai 2026: Por Que o Gênero Mais Criticado do Anime Ainda Domina" />
+      <CommentSection postId="isekai-2026-genero-domina" postTitle="Isekai 2026: Por Que o Gênero Mais Criticado do Anime Ainda Domina"  category="otaku" />
     </article>
   );
 };

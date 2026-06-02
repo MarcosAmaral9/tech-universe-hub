@@ -436,7 +436,7 @@ const SelicComecaCair2026 = () => {
       />
 
       <RelatedPosts currentSlug="selic-comeca-cair-2026" />
-      <CommentSection postId="selic-comeca-cair-2026" postTitle="Selic Começa a Cair em 2026: O Que Muda nos Seus Investimentos Agora?" />
+      <CommentSection postId="selic-comeca-cair-2026" postTitle="Selic Começa a Cair em 2026: O Que Muda nos Seus Investimentos Agora?"  category="invest" />
     </article>
   );
 };

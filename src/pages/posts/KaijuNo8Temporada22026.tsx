@@ -210,7 +210,7 @@ const KaijuNo8Temporada22026 = () => {
       <RelatedPosts currentSlug="kaiju-no-8-temporada-2-guia-arco-final-2026" />
 
 
-      <CommentSection postId="kaiju-no-8-temporada-2-guia-arco-final-2026" postTitle="Kaiju No. 8: Guia Completo da Temporada 2 e Arco Final Confirmado" />
+      <CommentSection postId="kaiju-no-8-temporada-2-guia-arco-final-2026" postTitle="Kaiju No. 8: Guia Completo da Temporada 2 e Arco Final Confirmado"  category="otaku" />
     </article>
   );
 };

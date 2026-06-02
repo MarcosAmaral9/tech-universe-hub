@@ -121,11 +121,6 @@ const RegulamentacaoIA2026 = () => {
             <p className="text-sm text-muted-foreground mb-0">Documente seus sistemas e implemente mecanismos de explicabilidade.</p>
           </div>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Regulação demais ou de menos?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
-        </div>
       </div>
 
 
@@ -147,7 +142,7 @@ const RegulamentacaoIA2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="regulamentacao-ia-brasil-mundo-2026" />
-      <CommentSection postId="regulamentacao-ia-brasil-mundo-2026" postTitle="Regulamentação de IA no Brasil e no Mundo em 2026: O Que Muda" />
+      <CommentSection postId="regulamentacao-ia-brasil-mundo-2026" postTitle="Regulamentação de IA no Brasil e no Mundo em 2026: O Que Muda"  category="ia" />
     </article>
   );
 };

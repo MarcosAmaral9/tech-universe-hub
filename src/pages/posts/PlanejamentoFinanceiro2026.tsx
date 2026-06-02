@@ -658,7 +658,7 @@ const PlanejamentoFinanceiro2026 = () => {
         <CommentSection
           postId="planejamento-financeiro-2026-metas"
           postTitle="Planejamento Financeiro Para 2026: Como Definir Metas e Realmente Alcançá-las"
-        />
+         category="invest" />
       </article>
     </>
   );

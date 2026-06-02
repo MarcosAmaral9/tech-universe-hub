@@ -195,7 +195,7 @@ const IABrasilAdocao2026 = () => {
 
 
       <RelatedPosts currentSlug="ia-brasil-adocao-2026" />
-      <CommentSection postId="ia-brasil-adocao-2026" postTitle="IA no Brasil em 2026" />
+      <CommentSection postId="ia-brasil-adocao-2026" postTitle="IA no Brasil em 2026"  category="ia" />
     </article>
   );
 };

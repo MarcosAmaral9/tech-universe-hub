@@ -355,7 +355,7 @@ const AnimesAguardados2026 = () => {
       />
 
       <RelatedPosts currentSlug="animes-mais-aguardados-2026" />
-      <CommentSection postId="animes-mais-aguardados-2026" postTitle="Animes Mais Aguardados de 2026: O Que Vai Dominar as Telas Este Ano" />
+      <CommentSection postId="animes-mais-aguardados-2026" postTitle="Animes Mais Aguardados de 2026: O Que Vai Dominar as Telas Este Ano"  category="otaku" />
     </article>
   );
 };

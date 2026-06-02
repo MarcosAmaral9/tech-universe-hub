@@ -181,7 +181,7 @@ const AbsoluteBatmanGame2026 = () => {
       />
 <RelatedPosts currentSlug="lego-batman-legacy-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="lego-batman-legacy-2026" postTitle="LEGO Batman: Legacy of the Dark Knight — Guia Completo" />
+      <CommentSection postId="lego-batman-legacy-2026" postTitle="LEGO Batman: Legacy of the Dark Knight — Guia Completo"  category="geek" />
     </article>
   );
 };

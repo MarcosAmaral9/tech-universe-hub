@@ -172,11 +172,6 @@ const ChatGPTvsGeminiClaude2026 = () => {
             </div>
           ))}
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Qual IA você usa no dia a dia?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
-        </div>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: pare de buscar a IA perfeita e monte um stack de duas">
@@ -195,7 +190,7 @@ const ChatGPTvsGeminiClaude2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="chatgpt-vs-gemini-vs-claude-2026" />
-      <CommentSection postId="chatgpt-vs-gemini-vs-claude-2026" postTitle="ChatGPT vs. Gemini vs. Claude em 2026: Qual IA Vale a Pena Assinar?" />
+      <CommentSection postId="chatgpt-vs-gemini-vs-claude-2026" postTitle="ChatGPT vs. Gemini vs. Claude em 2026: Qual IA Vale a Pena Assinar?"  category="ia" />
     </article>
   );
 };

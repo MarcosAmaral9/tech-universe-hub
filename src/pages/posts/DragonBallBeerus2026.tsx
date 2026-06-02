@@ -233,7 +233,7 @@ const DragonBallBeerus2026 = () => {
       <RelatedPosts currentSlug="dragon-ball-super-beerus-anime-confirmado-2026" />
 
 
-      <CommentSection postId="dragon-ball-super-beerus-anime-confirmado-2026" postTitle="Dragon Ball Super: Arco do Beerus Confirmado como Anime em 2026" />
+      <CommentSection postId="dragon-ball-super-beerus-anime-confirmado-2026" postTitle="Dragon Ball Super: Arco do Beerus Confirmado como Anime em 2026"  category="otaku" />
     </article>
   );
 };

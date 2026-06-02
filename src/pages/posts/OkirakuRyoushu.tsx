@@ -160,7 +160,7 @@ const OkirakuRyoushu = () => {
         ]}
       />
       <RelatedPosts currentSlug="okiraku-ryoushu-territory-defense-guia" />
-      <CommentSection postId="okiraku-ryoushu-territory-defense-guia" postTitle="Easygoing Territory Defense (Okiraku Ryoushu) — Guia Completo" />
+      <CommentSection postId="okiraku-ryoushu-territory-defense-guia" postTitle="Easygoing Territory Defense (Okiraku Ryoushu) — Guia Completo"  category="otaku" />
       <AdLeaderboard className="my-8" />
     </article>
   );

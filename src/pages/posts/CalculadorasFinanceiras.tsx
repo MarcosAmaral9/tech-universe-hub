@@ -548,7 +548,7 @@ const CalculadorasFinanceiras = () => {
       <CommentSection
         postId="calculadoras-financeiras-ativos"
         postTitle="Calculadoras Financeiras: Simule Seus Investimentos em Tempo Real"
-      />
+       category="invest" />
     </div>
   );
 };

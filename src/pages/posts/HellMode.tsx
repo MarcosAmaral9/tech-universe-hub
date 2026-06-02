@@ -145,7 +145,7 @@ const HellMode = () => {
 
 
       <RelatedPosts currentSlug="hell-mode-gamer-isekai-guia-completo" />
-      <CommentSection postId="hell-mode-gamer-isekai-guia-completo" postTitle="Hell Mode: O Gamer no Isekai com Dificuldade Máxima" />
+      <CommentSection postId="hell-mode-gamer-isekai-guia-completo" postTitle="Hell Mode: O Gamer no Isekai com Dificuldade Máxima"  category="otaku" />
           <AdLeaderboard className="my-8" />
     </article>
   );

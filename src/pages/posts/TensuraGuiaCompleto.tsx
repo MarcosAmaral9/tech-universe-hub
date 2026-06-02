@@ -311,7 +311,7 @@ const TensuraGuiaCompleto = () => {
         ]}
       />
       <RelatedPosts currentSlug="tensura-guia-completo-temporadas-filmes" />
-      <CommentSection postId="tensura-guia-completo-temporadas-filmes" />
+      <CommentSection postId="tensura-guia-completo-temporadas-filmes"  category="otaku" />
     </article>
   );
 };

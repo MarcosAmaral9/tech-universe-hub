@@ -207,7 +207,7 @@ const OuroMaximaHistorica2026 = () => {
         ]}
       />
       <RelatedPosts currentSlug="ouro-maxima-historica-2026-como-investir" />
-      <CommentSection postId="ouro-maxima-historica-2026-como-investir" postTitle="Ouro em Máxima Histórica: Por Que o Metal Subiu +30% e Como Investir Agora" />
+      <CommentSection postId="ouro-maxima-historica-2026-como-investir" postTitle="Ouro em Máxima Histórica: Por Que o Metal Subiu +30% e Como Investir Agora"  category="invest" />
     </article>
   );
 };

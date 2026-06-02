@@ -179,11 +179,6 @@ const IARemasterizacaoJogos = () => {
             <p className="text-sm text-muted-foreground mb-0">Para single-player, sim — desde que você faça backup do save. Para jogos com anticheat (BF, Fortnite), nunca: o anticheat detecta como modificação e bane a conta.</p>
           </div>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Qual jogo clássico você gostaria de ver remasterizado por IA?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
-        </div>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: remasterização com IA é ferramenta, não substituto do design original">
@@ -206,7 +201,7 @@ const IARemasterizacaoJogos = () => {
       ]} />
 
       <RelatedPosts currentSlug="ia-remasterizacao-jogos-classicos" />
-      <CommentSection postId="ia-remasterizacao-jogos-classicos" postTitle="IA e Remasterização: Como a IA Está Dando Nova Vida aos Jogos Clássicos" />
+      <CommentSection postId="ia-remasterizacao-jogos-classicos" postTitle="IA e Remasterização: Como a IA Está Dando Nova Vida aos Jogos Clássicos"  category="ia" />
     </article>
   );
 };

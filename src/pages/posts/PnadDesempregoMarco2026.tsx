@@ -199,7 +199,7 @@ const PnadDesempregoMarco2026 = () => {
         ]}
       />
       <RelatedPosts currentSlug={SLUG} />
-      <CommentSection postId={SLUG} postTitle={TITLE} />
+      <CommentSection postId={SLUG} postTitle={TITLE}  category="invest" />
     </article>
   );
 };

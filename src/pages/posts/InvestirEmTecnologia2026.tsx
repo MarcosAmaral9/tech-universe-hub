@@ -261,16 +261,6 @@ const InvestirEmTecnologia2026 = () => {
           investimento disciplinada</strong>, com diversificação adequada e horizonte de 
           longo prazo.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">
-            Você já investe em tecnologia?
-          </h3>
-          <p className="text-muted-foreground">
-            Qual setor te interessa mais? Semicondutores, IA ou cibersegurança? 
-            Conta pra gente nos comentários! 👇
-          </p>
-        </div>
       </div>
 
       <EditorialTake category="invest" title="Análise do Marcos: tecnologia exige diversificação — os vencedores de hoje nem sempre são os de amanhã">
@@ -288,7 +278,7 @@ const InvestirEmTecnologia2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="investir-em-tecnologia-2026" />
-      <CommentSection postId="investir-em-tecnologia-2026" postTitle="Como Investir em Tecnologia em 2026: Guia de Setores e ETFs" />
+      <CommentSection postId="investir-em-tecnologia-2026" postTitle="Como Investir em Tecnologia em 2026: Guia de Setores e ETFs"  category="invest" />
     </article>
   );
 };

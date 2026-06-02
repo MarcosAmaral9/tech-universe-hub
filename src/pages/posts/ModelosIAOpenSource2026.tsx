@@ -159,7 +159,7 @@ const ModelosIAOpenSource2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="modelos-ia-open-source-2026" />
-      <CommentSection postId="modelos-ia-open-source-2026" postTitle="IA Open Source 2026: Llama, Mistral e DeepSeek Contra os Modelos Pagos" />
+      <CommentSection postId="modelos-ia-open-source-2026" postTitle="IA Open Source 2026: Llama, Mistral e DeepSeek Contra os Modelos Pagos"  category="ia" />
     </article>
   );
 };

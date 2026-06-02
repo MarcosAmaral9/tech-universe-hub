@@ -181,11 +181,6 @@ const IASaude2026 = () => {
             <p className="text-sm text-muted-foreground mb-0">Não diretamente. Detecta fibrilação atrial e variações de ritmo que aumentam o risco. Dor no peito persistente continua sendo emergência — chame o SAMU 192.</p>
           </div>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Você usaria uma IA para monitorar sua saúde?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
-        </div>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: IA médica salva vidas em triagem, mas precisa de médico para decidir">
@@ -208,7 +203,7 @@ const IASaude2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="ia-saude-2026-diagnosticos-futuro" />
-      <CommentSection postId="ia-saude-2026-diagnosticos-futuro" postTitle="IA para Saúde 2026: Diagnósticos, Monitoramento e o Futuro da Medicina" />
+      <CommentSection postId="ia-saude-2026-diagnosticos-futuro" postTitle="IA para Saúde 2026: Diagnósticos, Monitoramento e o Futuro da Medicina"  category="ia" />
     </article>
   );
 };

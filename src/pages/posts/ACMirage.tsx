@@ -655,11 +655,6 @@ const ACMirage = () => {
           </ul>
           <p className="mt-4 text-sm text-muted-foreground">Preço médio em 2026: R$ 150 a R$ 200 (edição standard)</p>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">O retorno às raízes de AC Mirage te agradou?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
-        </div>
       </div>
 
       <ArticleSources category="geek"
@@ -705,7 +700,7 @@ const ACMirage = () => {
 
       <RelatedPosts currentSlug="ac-mirage-retorno-raizes-bagda" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="ac-mirage-retorno-raizes-bagda" postTitle="Assassin's Creed Mirage em 2026: Review Completa — Furtividade Clássica em Bagdá" />
+      <CommentSection postId="ac-mirage-retorno-raizes-bagda" postTitle="Assassin's Creed Mirage em 2026: Review Completa — Furtividade Clássica em Bagdá"  category="geek" />
     </article>
   );
 };

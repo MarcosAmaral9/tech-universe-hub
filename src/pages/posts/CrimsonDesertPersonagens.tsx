@@ -358,7 +358,7 @@ const CrimsonDesertPersonagens = () => {
       <CommentSection
         postId="crimson-desert-personagens-kliff-damiane-oongka"
         postTitle="Crimson Desert: Kliff, Damiane e Oongka — Guia dos 3 Personagens Jogáveis"
-      />
+       category="geek" />
     </article>
   );
 };

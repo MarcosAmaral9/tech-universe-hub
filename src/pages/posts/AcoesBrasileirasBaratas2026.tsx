@@ -212,7 +212,7 @@ const AcoesBrasileirasBaratas2026 = () => {
         ]}
       />
       <RelatedPosts currentSlug="acoes-brasileiras-baratas-valuation-2026" />
-      <CommentSection postId="acoes-brasileiras-baratas-valuation-2026" postTitle="Ibovespa em Recordes mas Ações Brasileiras Ainda Estão Baratas" />
+      <CommentSection postId="acoes-brasileiras-baratas-valuation-2026" postTitle="Ibovespa em Recordes mas Ações Brasileiras Ainda Estão Baratas"  category="invest" />
     </article>
   );
 };

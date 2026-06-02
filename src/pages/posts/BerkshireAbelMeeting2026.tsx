@@ -199,7 +199,7 @@ const BerkshireAbelMeeting2026 = () => {
       <RelatedPosts currentSlug="berkshire-hathaway-greg-abel-2026-sem-buffett" />
 
 
-      <CommentSection postId="berkshire-hathaway-greg-abel-2026-sem-buffett" postTitle="Berkshire Hathaway 2026: Greg Abel Assume, US$ 397 Bilhões em Caixa e a Era Pós-Buffett Começa" />
+      <CommentSection postId="berkshire-hathaway-greg-abel-2026-sem-buffett" postTitle="Berkshire Hathaway 2026: Greg Abel Assume, US$ 397 Bilhões em Caixa e a Era Pós-Buffett Começa"  category="invest" />
     </article>
   );
 };

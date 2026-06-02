@@ -267,20 +267,10 @@ const Avatar3FogoECinzas = () => {
           James Cameron demonstra que Pandora é um mundo tão complexo quanto o nosso – com 
           beleza e brutalidade coexistindo.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">
-            O que você acha da ideia de Na'vi antagonistas?
-          </h3>
-          <p className="text-muted-foreground">
-            Você está animado para ver o lado mais sombrio de Pandora? 
-            Conta pra gente nos comentários! 👇
-          </p>
-        </div>
       </div>
 <RelatedPosts currentSlug="avatar-3-fogo-cinzas-lado-sombrio-pandora" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="avatar-3-fogo-cinzas-lado-sombrio-pandora" postTitle="Avatar 3: Fire and Ash — Tudo Sobre o Filme, Data e O Que Esperar" />
+      <CommentSection postId="avatar-3-fogo-cinzas-lado-sombrio-pandora" postTitle="Avatar 3: Fire and Ash — Tudo Sobre o Filme, Data e O Que Esperar"  category="geek" />
     </article>
   );
 };

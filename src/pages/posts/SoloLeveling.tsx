@@ -264,7 +264,7 @@ const SoloLeveling = () => {
 
 
       <RelatedPosts currentSlug="solo-leveling-guia-completo-temporadas" />
-      <CommentSection postId="solo-leveling-guia-completo-temporadas" postTitle="Solo Leveling: Guia Completo — Temporadas, Filme e o Monarca das Sombras" />
+      <CommentSection postId="solo-leveling-guia-completo-temporadas" postTitle="Solo Leveling: Guia Completo — Temporadas, Filme e o Monarca das Sombras"  category="otaku" />
           <AdLeaderboard className="my-8" />
     </article>
   );

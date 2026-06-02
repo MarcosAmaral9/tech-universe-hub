@@ -316,7 +316,7 @@ const AnthropicMythosGoogle2026 = () => {
 
 
       <RelatedPosts currentSlug="anthropic-mythos-modelo-ia-google-investimento-2026" />
-      <CommentSection postId="anthropic-mythos-modelo-ia-google-investimento-2026" postTitle="Google Investe US$ 40 Bilhões na Anthropic e o Modelo Mythos Chega" />
+      <CommentSection postId="anthropic-mythos-modelo-ia-google-investimento-2026" postTitle="Google Investe US$ 40 Bilhões na Anthropic e o Modelo Mythos Chega"  category="ia" />
     </article>
   );
 };

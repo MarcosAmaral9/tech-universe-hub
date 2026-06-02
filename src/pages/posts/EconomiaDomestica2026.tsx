@@ -364,7 +364,7 @@ const EconomiaDomestica2026 = () => {
       <CommentSection
         postId="economia-domestica-2026-cortar-gastos"
         postTitle="Economia Doméstica 2026: 30 Dicas Para Cortar Gastos Sem Perder Qualidade de Vida"
-      />
+       category="invest" />
     </article>
   );
 };

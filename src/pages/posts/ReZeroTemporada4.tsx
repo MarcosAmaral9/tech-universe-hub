@@ -201,7 +201,7 @@ const ReZeroTemporada4 = () => {
 
 
       <RelatedPosts currentSlug="rezero-temporada-4-guia-2026" />
-      <CommentSection postId="rezero-temporada-4-guia-2026" postTitle="Re:ZERO Temporada 4 — Guia Completo 2026" />
+      <CommentSection postId="rezero-temporada-4-guia-2026" postTitle="Re:ZERO Temporada 4 — Guia Completo 2026"  category="otaku" />
     </article>
   );
 };

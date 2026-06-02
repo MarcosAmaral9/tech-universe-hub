@@ -627,11 +627,6 @@ const ACOdyssey = () => {
             Preço médio em 2026: R$ 80 a R$ 150 (frequentemente em promoção; edição completa com DLCs: R$ 120–200)
           </p>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Kassandra ou Alexios? Qual protagonista você prefere?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
-        </div>
       </div>
 
       <ArticleSources category="geek"
@@ -677,7 +672,7 @@ const ACOdyssey = () => {
 
       <RelatedPosts currentSlug="ac-odyssey-odisseia-grecia" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="ac-odyssey-odisseia-grecia" postTitle="Assassin's Creed Odyssey em 2026: Review Completa — RPG Épico na Grécia Antiga" />
+      <CommentSection postId="ac-odyssey-odisseia-grecia" postTitle="Assassin's Creed Odyssey em 2026: Review Completa — RPG Épico na Grécia Antiga"  category="geek" />
     </article>
   );
 };

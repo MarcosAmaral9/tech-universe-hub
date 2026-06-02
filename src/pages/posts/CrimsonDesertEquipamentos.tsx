@@ -270,7 +270,7 @@ const CrimsonDesertEquipamentos = () => {
       </div>
 <RelatedPosts currentSlug="crimson-desert-melhores-equipamentos-inicio" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="crimson-desert-melhores-equipamentos-inicio" postTitle="Crimson Desert: Melhores Equipamentos do Início — Onde Encontrar" />
+      <CommentSection postId="crimson-desert-melhores-equipamentos-inicio" postTitle="Crimson Desert: Melhores Equipamentos do Início — Onde Encontrar"  category="geek" />
           <AdLeaderboard className="my-8" />
     </article>
   );

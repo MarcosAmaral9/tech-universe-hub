@@ -187,7 +187,7 @@ const Tsukimichi = () => {
         ]}
       />
       <RelatedPosts currentSlug="tsukimichi-moonlit-fantasy-guia-completo" />
-      <CommentSection postId="tsukimichi-moonlit-fantasy-guia-completo" postTitle="Tsukimichi: Moonlit Fantasy — Guia Completo" />
+      <CommentSection postId="tsukimichi-moonlit-fantasy-guia-completo" postTitle="Tsukimichi: Moonlit Fantasy — Guia Completo"  category="otaku" />
           <AdLeaderboard className="my-8" />
     </article>
   );

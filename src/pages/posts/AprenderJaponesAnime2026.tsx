@@ -317,7 +317,7 @@ const AprenderJaponesAnime2026 = () => {
       />
 
       <RelatedPosts currentSlug="aprender-japones-anime-2026" />
-      <CommentSection postId="aprender-japones-anime-2026" postTitle="Como Aprender Japonês Assistindo Anime em 2026: Método Completo" />
+      <CommentSection postId="aprender-japones-anime-2026" postTitle="Como Aprender Japonês Assistindo Anime em 2026: Método Completo"  category="otaku" />
     </article>
   );
 };

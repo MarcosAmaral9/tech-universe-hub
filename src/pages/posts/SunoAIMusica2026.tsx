@@ -316,11 +316,6 @@ const SunoAIMusica2026 = () => {
             </div>
           ))}
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Você já criou alguma música com o Suno AI?</h3>
-          <p className="text-muted-foreground">Manda o link nos comentários — quero ouvir! 🎵👇</p>
-        </div>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: Suno é uma das IAs mais democratizantes de 2026 — mas o jurídico é terra minada">
@@ -345,7 +340,7 @@ const SunoAIMusica2026 = () => {
       <CommentSection
         postId="suno-ai-gerador-musica-2026"
         postTitle="Suno AI: O Guia Completo do Gerador de Músicas com IA em 2026"
-      />
+       category="ia" />
     </article>
   );
 };

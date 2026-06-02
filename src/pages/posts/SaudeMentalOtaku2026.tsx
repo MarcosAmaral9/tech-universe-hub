@@ -266,7 +266,7 @@ const SaudeMentalOtaku2026 = () => {
       />
 
       <RelatedPosts currentSlug="saude-mental-cultura-otaku-2026" />
-      <CommentSection postId="saude-mental-cultura-otaku-2026" postTitle="Saúde Mental e Cultura Otaku: Quando o Anime Ajuda e Quando Isola" />
+      <CommentSection postId="saude-mental-cultura-otaku-2026" postTitle="Saúde Mental e Cultura Otaku: Quando o Anime Ajuda e Quando Isola"  category="otaku" />
     </article>
   );
 };

@@ -277,7 +277,7 @@ const OverlordGuiaCompleto = () => {
         ]}
       />
       <RelatedPosts currentSlug="overlord-guia-completo-temporadas-ainz" />
-      <CommentSection postId="overlord-guia-completo-temporadas-ainz" />
+      <CommentSection postId="overlord-guia-completo-temporadas-ainz"  category="otaku" />
     </article>
   );
 };

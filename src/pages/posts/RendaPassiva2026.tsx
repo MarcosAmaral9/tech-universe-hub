@@ -491,7 +491,7 @@ const RendaPassiva2026 = () => {
         <CommentSection
           postId="renda-passiva-2026-formas-comprovadas"
           postTitle="Renda Passiva Real em 2026: 7 Formas Comprovadas de Ganhar Dinheiro Dormindo"
-        />
+         category="invest" />
       </article>
     </>
   );

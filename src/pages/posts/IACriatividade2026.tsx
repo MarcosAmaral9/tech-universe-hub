@@ -111,11 +111,6 @@ const IACriatividade2026 = () => {
         <p>
           A solução parece estar na <strong>co-criação</strong>: artistas usam IA como ferramenta dentro de um processo criativo maior, adicionando intenção, curadoria e refinamento humano. O resultado é um novo tipo de arte — nem puramente humana, nem puramente artificial.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Você já usou IA para criar algo?</h3>
-          <p className="text-muted-foreground">Compartilhe sua experiência nos comentários! 🎨</p>
-        </div>
       </div>
 
         <EditorialTake category="ia" title="Análise do Marcos: quem vai pagar pelo treinamento com obras brasileiras sem licença?">
@@ -131,7 +126,7 @@ const IACriatividade2026 = () => {
   ]} />
 
       <RelatedPosts currentSlug="ia-criatividade-arte-musica-2026" />
-      <CommentSection postId="ia-criatividade-arte-musica-2026" postTitle="IA e Criatividade 2026: Como a IA Está Revolucionando Arte e Música" />
+      <CommentSection postId="ia-criatividade-arte-musica-2026" postTitle="IA e Criatividade 2026: Como a IA Está Revolucionando Arte e Música"  category="ia" />
     </article>
   );
 };

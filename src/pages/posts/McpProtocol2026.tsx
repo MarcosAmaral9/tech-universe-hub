@@ -223,7 +223,7 @@ const McpProtocol2026 = () => {
       />
 
       <RelatedPosts currentSlug="mcp-model-context-protocol-2026" />
-      <CommentSection postId="mcp-model-context-protocol-2026" postTitle="MCP: O Protocolo com 97 Milhões de Instalações que Conecta Todos os Agentes de IA" />
+      <CommentSection postId="mcp-model-context-protocol-2026" postTitle="MCP: O Protocolo com 97 Milhões de Instalações que Conecta Todos os Agentes de IA"  category="ia" />
     </article>
   );
 };

@@ -240,7 +240,7 @@ const Gemini25ProVsClaude2026 = () => {
         ]}
       />
       <RelatedPosts currentSlug="gemini-25-pro-vs-claude-ia-2026" />
-      <CommentSection postId="gemini-25-pro-vs-claude-ia-2026" postTitle="Gemini 2.5 Pro vs Claude Sonnet vs GPT-4o: Qual a Melhor IA de Abril de 2026?" />
+      <CommentSection postId="gemini-25-pro-vs-claude-ia-2026" postTitle="Gemini 2.5 Pro vs Claude Sonnet vs GPT-4o: Qual a Melhor IA de Abril de 2026?"  category="ia" />
     </article>
   );
 };
