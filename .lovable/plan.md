@@ -1,77 +1,66 @@
-## Diagnóstico
+## Objetivo
 
-- `EditorialTake` e `ArticleSources` já são compartilhados por **156 posts** cada um.
-- A ordem `EditorialTake → ArticleSources → RelatedPosts → CommentSection` (após o CTA "Comente") já é seguida em todos os posts amostrados (Seedance, ETFs, Deepfakes, MelhoresMangas, AbsoluteBatman). Não há reordenação a fazer no corpo dos posts.
-- `EditorialTake` já é tematizado por categoria (`border-l-ia`, `bg-ia/5`, etc.).
-- `ArticleSources` **não** recebe categoria — ícone, links e bordas usam `text-primary` (verde da marca) em vez da cor da categoria. É o único ponto fora do padrão visual descrito.
+Padronizar o rodapé de todos os artigos para seguir a ordem:
 
-## Estratégia
-
-Não vou migrar 156 posts para um novo wrapper (alto risco de regressão). A padronização vive nos dois componentes existentes; basta endurecê-los e plugar `category` no `ArticleSources`.
-
-### 1. `src/components/EditorialTake.tsx`
-
-Manter o layout do screenshot (barra lateral colorida + bg tint + ícone Quote + título uppercase + assinatura em itálico) e travar tipografia e espaçamento:
-
-- Container: `not-prose my-10 border-l-4 rounded-r-xl p-6 md:p-7`
-- Título: `font-display text-xs md:text-sm font-bold uppercase tracking-[0.12em]` na cor da categoria (`text-{cat}`)
-- Corpo: `prose prose-sm md:prose-base dark:prose-invert max-w-none text-foreground/90 leading-relaxed`
-- Assinatura: `text-xs text-muted-foreground mt-4 italic`
-- Ícone Quote: usar a cor da categoria, não `text-primary`
-
-### 2. `src/components/ArticleSources.tsx`
-
-Adicionar prop opcional `category?: Category`. Quando presente:
-
-- Borda do card: `border-{cat}/30` em vez de `border-border`
-- Fundo: gradiente sutil `bg-gradient-to-br from-{cat}/5 to-card/50`
-- Ícone `BookOpen` e numeração: `text-{cat}`
-- Links: `text-{cat} hover:text-{cat}/80`
-
-Travar tipografia/espacamento iguais ao screenshot:
-
-- Container: `not-prose mt-10 rounded-xl border p-6 md:p-7`
-- Heading: `font-display text-base md:text-lg font-bold mb-4 flex items-center gap-2`
-- Intro: `text-xs md:text-sm text-muted-foreground mb-5 leading-relaxed`
-- Lista: `space-y-3 text-sm leading-relaxed list-decimal list-inside marker:font-bold`
-
-Default sem categoria continua funcionando (fallback verde primary) — compatibilidade total com qualquer post não migrado.
-
-### 3. Migração automática dos 156 posts
-
-Script único `scripts/inject-sources-category.mjs` (não vai pro `prebuild`, só roda agora) que para cada arquivo em `src/pages/posts/`:
-
-1. Lê o valor de `category="..."` da tag `<EditorialTake>` (ou do `<BackNavigation category="...">` como fallback).
-2. Encontra `<ArticleSources` e injeta `category="<cat>"` se ainda não estiver presente.
-
-Rápido, idempotente, sem tocar em nenhum outro conteúdo.
-
-### 4. Componente opcional `ArticleFooter` (novo)
-
-Criar `src/components/ArticleFooter.tsx` como conveniência **para posts futuros**:
-
-```tsx
-<ArticleFooter
-  category="ia"
-  slug="..."
-  postTitle="..."
-  editorialTitle="..."
-  sources={[...]}
->
-  <p>…opinião…</p>
-</ArticleFooter>
+```
+Conteúdo → Análise (EditorialTake) → Fontes (ArticleSources) → Relacionados (RelatedPosts) → Comentários (CommentSection, agora com convite embutido)
 ```
 
-Renderiza internamente, na ordem fixa: `EditorialTake` → `ArticleSources` → `RelatedPosts` → `CommentSection`. Garante o padrão sem depender de cada autor lembrar. Posts existentes não precisam ser migrados — usar para novos.
+A `<div className="mt-10 p-6 bg-secondary rounded-xl text-center">…</div>` ("Conta pra gente nos comentários! 👇") deixa de existir solta em cada post — vira um bloco fixo no topo do `CommentSection`, tematizado pela cor da categoria.
 
-## Resumo das mudanças
+## Mudanças
 
-- **Edit**: `src/components/EditorialTake.tsx` (tipografia + ícone na cor da categoria)
-- **Edit**: `src/components/ArticleSources.tsx` (nova prop `category`, tematização condicional, tipografia padronizada)
-- **Novo**: `src/components/ArticleFooter.tsx` (wrapper opcional para novos posts)
-- **Novo (one-off)**: `scripts/inject-sources-category.mjs` (executado uma vez para popular `category=` em todos os `<ArticleSources>` existentes)
+### 1. `CommentSection` ganha convite integrado
+- Aceitar nova prop opcional `category: Category` e `inviteTitle?: string`.
+- Renderizar, antes do formulário/listagem, um header padronizado:
+  - Caixa arredondada com `bg-{category}/5`, borda lateral `border-l-4 border-{category}`, ícone `MessageCircle`.
+  - Título: "Participe da conversa" (padrão) ou `inviteTitle` quando informado.
+  - Subtítulo fixo: "Conta pra gente o que achou — seu comentário ajuda outros leitores."
+- Mantém todo comportamento atual (auth, offline, etc.).
 
-## Não vou fazer
+### 2. `ArticleFooter` reflete nova ordem
+- Remover qualquer expectativa de CTA externo.
+- Passar `category` adiante para o `CommentSection`.
+- Ordem do wrapper: `EditorialTake → ArticleSources → RelatedPosts → CommentSection`.
 
-- Não vou refatorar os 156 posts para usar `<ArticleFooter>` — risco alto, ganho baixo, ordenação já está correta.
-- Não vou mexer na sequência de `RelatedPosts` / `CommentSection` — já está padronizada.
+### 3. Script de migração (`scripts/migrate-comment-cta.mjs`)
+Roda uma vez para limpar os 156 posts:
+- Localiza e remove qualquer bloco `<div className="mt-10 p-6 bg-secondary rounded-xl text-center"> … </div>` (regex multiline robusta, com checagem de balanceamento simples por contagem de `<div>`/`</div>` dentro do match — abortando o arquivo se ambíguo).
+- Adiciona prop `category="…"` no `<CommentSection …/>` correspondente, inferindo a categoria a partir do `<CategoryBadge category="…"/>` ou do `trackArticleRead(..., "<cat>")` do mesmo arquivo.
+- Loga: arquivos alterados, arquivos pulados (sem CTA), arquivos com aviso manual.
+
+### 4. Validação no prebuild (`scripts/check-article-footer-order.mjs`)
+- Manter skip de Portais/hubs.
+- Atualizar a lista `REQUIRED` para a nova ordem (sem CTA): `EditorialTake → ArticleSources → RelatedPosts → CommentSection`.
+- Falhar build se encontrar resquício da `div` antiga: regex `mt-10 p-6 bg-secondary rounded-xl text-center` em qualquer `src/pages/posts/*.tsx`.
+- Falhar build se `CommentSection` não tiver `category=` em posts não-hub.
+
+### 5. Documentação
+- Atualizar `docs/article-footer.md`: descrever que o CTA virou parte do `CommentSection`, novo exemplo de uso, prop `category` obrigatória, exemplo do `ArticleFooter` simplificado.
+
+### 6. Post modelo
+- Atualizar `Seedance20IA2026.tsx` (remover a `<div>` CTA, passar `category="ia"` ao `CommentSection`) para servir de referência viva.
+
+## Detalhes técnicos
+
+- Tokens de cor já existem por categoria (`ia`, `invest`, `geek`, `otaku`) — reaproveitar mesmo mapa usado em `EditorialTake`.
+- Tipografia/espaçamento: replicar a métrica de `EditorialTake` (`my-10`, `p-6 md:p-7`, `font-display text-xs md:text-sm uppercase tracking-[0.12em]`) para consistência mobile/tablet/desktop.
+- Script de migração é idempotente: rodar duas vezes não duplica `category` (checa se prop já existe antes de inserir).
+- Sem mudanças de business logic, RLS ou backend.
+
+## Plano de execução
+
+```text
+1. Editar CommentSection (nova prop + bloco de convite).
+2. Editar ArticleFooter para repassar category.
+3. Atualizar docs/article-footer.md.
+4. Criar scripts/migrate-comment-cta.mjs e rodar 1x.
+5. Atualizar scripts/check-article-footer-order.mjs (nova ordem + checagens extras).
+6. Ajustar manualmente posts marcados como "aviso" pelo migrator (se houver).
+7. Rodar prebuild — esperar 0 erros, 137 posts validados.
+```
+
+## Riscos
+
+- Posts onde a `<div>` CTA foi customizada (texto diferente) serão removidos igualmente — o convite passa a ser único no `CommentSection`. Se algum post precisar de CTA específico de conteúdo (ex.: "qual seu isekai favorito?"), proponho deixar essa pergunta como último parágrafo do corpo do artigo, não como caixa separada.
+- Inferência de categoria por arquivo falha se o post não usar `CategoryBadge` nem `trackArticleRead`; nesse caso o script loga aviso e pula, exigindo ajuste manual.
