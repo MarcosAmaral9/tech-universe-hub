@@ -38,8 +38,9 @@ const ArticleFooter = ({
     </EditorialTake>
     <ArticleSources category={category} sources={sources} />
     <RelatedPosts currentSlug={slug} />
-    <CommentSection postId={slug} postTitle={postTitle} />
+    <CommentSection postId={slug} postTitle={postTitle} category={category} />
   </>
+
 );
 
 export default ArticleFooter;
