@@ -455,6 +455,22 @@ const CommentSection = ({
 
   return (
     <section className="mt-12 pt-8 border-t border-border">
+      {category && (
+        <aside
+          className={`not-prose mb-8 border-l-4 ${INVITE_STYLES[category].border} ${INVITE_STYLES[category].bg} rounded-r-xl p-6 md:p-7`}
+        >
+          <div className="flex items-center gap-2 mb-2">
+            <MessageCircle className={`h-4 w-4 ${INVITE_STYLES[category].text}`} />
+            <h3
+              className={`font-display text-xs md:text-sm font-bold uppercase tracking-[0.12em] ${INVITE_STYLES[category].text}`}
+            >
+              {inviteTitle}
+            </h3>
+          </div>
+          <p className="text-sm md:text-base text-foreground/90 leading-relaxed">{inviteSubtitle}</p>
+        </aside>
+      )}
+
       <div className="flex items-center justify-between flex-wrap gap-3 mb-6">
         <h3 className="font-display text-2xl font-bold flex items-center gap-2">
           <MessageCircle className="h-6 w-6 text-primary" />
