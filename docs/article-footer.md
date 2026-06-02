@@ -119,9 +119,40 @@ depender do autor lembrar da sequência.
 
 ---
 
+---
+
+## Convite a comentar (dentro do `CommentSection`)
+
+O antigo bloco solto
+
+```tsx
+<div className="mt-10 p-6 bg-secondary rounded-xl text-center">
+  <h3>Qual sua opinião?</h3>
+  <p>Conta pra gente nos comentários! 👇</p>
+</div>
+```
+
+foi **removido de todos os posts**. O convite agora vive no topo da própria
+seção de comentários, com a cor da categoria. Basta passar `category`:
+
+```tsx
+<CommentSection
+  postId="meu-post"
+  postTitle="Meu post"
+  category="ia"               // pinta o convite com a cor da categoria
+  inviteTitle="Participe da conversa"          // opcional
+  inviteSubtitle="Conta pra gente o que achou…" // opcional
+/>
+```
+
+`ArticleFooter` já repassa `category` automaticamente — posts novos não
+precisam se preocupar.
+
+---
+
 ## Posts existentes
 
-Os 156 posts existentes usam os 4 componentes individualmente (não via
+Os 157 posts existentes usam os 4 componentes individualmente (não via
 `ArticleFooter`). Funciona igual — o `check-article-footer-order.mjs`
 valida a ordem em ambos os formatos. Use `ArticleFooter` apenas em posts
 **novos** para reduzir boilerplate.
@@ -132,5 +163,9 @@ valida a ordem em ambos os formatos. Use `ArticleFooter` apenas em posts
 node scripts/check-article-footer-order.mjs
 ```
 
-Roda automaticamente no `npm run build` via `prebuild`. Falha se algum post
-estiver fora da ordem ou sem um dos 4 componentes.
+Roda no `prebuild`. Falha se algum post:
+
+- estiver fora da ordem `EditorialTake → ArticleSources → RelatedPosts → CommentSection`
+- ainda tiver a div CTA legada (`mt-10 p-6 bg-secondary rounded-xl text-center`)
+- não passar `category` ao `<CommentSection/>`
+
