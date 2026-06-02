@@ -294,7 +294,7 @@ const DiferencaMangasManhuas = () => {
       />
 
       <RelatedPosts currentSlug="diferenca-mangas-manhuas-manhwas" />
-      <CommentSection postId="diferenca-mangas-manhuas-manhwas" postTitle="Manga vs Manhwa vs Manhua: Guia Completo das Diferenças e Melhores Obras" />
+      <CommentSection postId="diferenca-mangas-manhuas-manhwas" postTitle="Manga vs Manhwa vs Manhua: Guia Completo das Diferenças e Melhores Obras"  category="otaku" />
     </article>
   );
 };

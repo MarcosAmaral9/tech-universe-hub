@@ -104,11 +104,6 @@ const IATrabalho2026 = () => {
         <p>
           As empresas mais bem-sucedidas não escolheram entre equipes humanas ou IA — elas criaram <strong>processos híbridos</strong> onde cada lado faz o que faz melhor. Humanos trazem julgamento ético, empatia e criatividade disruptiva. A IA traz velocidade, escala e consistência.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Sua profissão está em risco ou em oportunidade?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
-        </div>
       </div>
 
       
@@ -131,7 +126,7 @@ const IATrabalho2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="ia-no-trabalho-2026-profissoes" />
-      <CommentSection postId="ia-no-trabalho-2026-profissoes" postTitle="IA no Trabalho em 2026: Sua Profissão Vai Acabar ou Evoluir?" />
+      <CommentSection postId="ia-no-trabalho-2026-profissoes" postTitle="IA no Trabalho em 2026: Sua Profissão Vai Acabar ou Evoluir?"  category="ia" />
     </article>
   );
 };

@@ -229,7 +229,7 @@ const FIIsDefensivosAbril2026 = () => {
         ]}
       />
       <RelatedPosts currentSlug="fiis-defensivos-abril-2026" />
-      <CommentSection postId="fiis-defensivos-abril-2026" postTitle="FIIs Defensivos em Abril de 2026" />
+      <CommentSection postId="fiis-defensivos-abril-2026" postTitle="FIIs Defensivos em Abril de 2026"  category="invest" />
     </article>
   );
 };

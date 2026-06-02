@@ -175,7 +175,7 @@ const LancamentosGamesAbril2026 = () => {
       />
 <RelatedPosts currentSlug="lancamentos-games-abril-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="lancamentos-games-abril-2026" postTitle="Lançamentos de Games em Abril de 2026" />
+      <CommentSection postId="lancamentos-games-abril-2026" postTitle="Lançamentos de Games em Abril de 2026"  category="geek" />
     </article>
   );
 };

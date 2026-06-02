@@ -229,7 +229,7 @@ const ZeldaOcarinaRemake2026 = () => {
       />
 <RelatedPosts currentSlug="zelda-ocarina-of-time-remake-switch-2-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="zelda-ocarina-of-time-remake-switch-2-2026" postTitle="Zelda: Ocarina of Time Remake — Tudo que Sabemos sobre o Retorno do Melhor Jogo da História no Switch 2" />
+      <CommentSection postId="zelda-ocarina-of-time-remake-switch-2-2026" postTitle="Zelda: Ocarina of Time Remake — Tudo que Sabemos sobre o Retorno do Melhor Jogo da História no Switch 2"  category="geek" />
     </article>
   );
 };

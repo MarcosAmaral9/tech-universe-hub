@@ -570,7 +570,7 @@ const BitcoinCripto2026 = () => {
         <CommentSection
           postId="bitcoin-criptomoedas-2026-investir"
           postTitle="Bitcoin e Criptomoedas em 2026: Ainda Dá Para Lucrar ou Já Passou da Hora?"
-        />
+         category="invest" />
       </article>
     </>
   );

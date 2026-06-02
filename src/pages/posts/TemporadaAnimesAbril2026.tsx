@@ -180,7 +180,7 @@ const TemporadaAnimesAbril2026 = () => {
 
 
       <RelatedPosts currentSlug="temporada-animes-abril-2026" />
-      <CommentSection postId="temporada-animes-abril-2026" postTitle="Temporada de Animes Abril 2026: Guia Completo da Primavera" />
+      <CommentSection postId="temporada-animes-abril-2026" postTitle="Temporada de Animes Abril 2026: Guia Completo da Primavera"  category="otaku" />
     </article>
   );
 };

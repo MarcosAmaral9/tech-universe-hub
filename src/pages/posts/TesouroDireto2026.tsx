@@ -447,13 +447,6 @@ const TesouroDireto2026 = () => {
               </div>
             </div>
           </div>
-
-          <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-            <h3 className="text-xl font-bold mb-2">Você já investe no Tesouro Direto?</h3>
-            <p className="text-muted-foreground">
-              Qual tipo é o seu favorito? Selic, Prefixado ou IPCA+? Conta pra gente nos comentários! 👇
-            </p>
-          </div>
         </div>
 
         <EditorialTake category="invest">
@@ -468,7 +461,7 @@ const TesouroDireto2026 = () => {
     { title: 'B3 — Tarifa de Custódia', url: 'https://www.b3.com.br/pt_br/produtos-e-servicos/tarifas/', publisher: 'B3', accessedAt: "Maio 2026" }
   ]} />
       <RelatedPosts currentSlug="tesouro-direto-2026-guia-completo" />
-      <CommentSection postId="tesouro-direto-2026-guia-completo" postTitle="Tesouro Direto em 2026: Ainda Vale a Pena? Guia Completo Atualizado" />
+      <CommentSection postId="tesouro-direto-2026-guia-completo" postTitle="Tesouro Direto em 2026: Ainda Vale a Pena? Guia Completo Atualizado"  category="invest" />
       </article>
     </>
   );

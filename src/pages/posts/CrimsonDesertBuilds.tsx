@@ -170,7 +170,7 @@ const CrimsonDesertBuilds = () => {
       </div>
 <RelatedPosts currentSlug="crimson-desert-builds-guia-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="crimson-desert-builds-guia-2026" postTitle="Crimson Desert: Progressão de Kliff e Estilos de Jogo" />
+      <CommentSection postId="crimson-desert-builds-guia-2026" postTitle="Crimson Desert: Progressão de Kliff e Estilos de Jogo"  category="geek" />
     </article>
   );
 };

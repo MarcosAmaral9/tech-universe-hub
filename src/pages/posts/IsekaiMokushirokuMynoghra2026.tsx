@@ -356,7 +356,7 @@ const IsekaiMokushirokuMynoghra2026 = () => {
       />
 
       <RelatedPosts currentSlug="isekai-mokushiroku-mynoghra-guia-2026" />
-      <CommentSection postId="isekai-mokushiroku-mynoghra-guia-2026" postTitle="Isekai Mokushiroku Mynoghra: Guia Completo — A Civilização do Apocalipse que Vai Conquistar o Mundo" />
+      <CommentSection postId="isekai-mokushiroku-mynoghra-guia-2026" postTitle="Isekai Mokushiroku Mynoghra: Guia Completo — A Civilização do Apocalipse que Vai Conquistar o Mundo"  category="otaku" />
     </article>
   );
 };

@@ -155,7 +155,7 @@ const MugenGacha = () => {
         ]}
       />
       <RelatedPosts currentSlug="mugen-gacha-level-9999-traicao-dungeon" />
-      <CommentSection postId="mugen-gacha-level-9999-traicao-dungeon" postTitle="My Gift Lvl 9999 Unlimited Gacha — Traição no Fundo da Dungeon" />
+      <CommentSection postId="mugen-gacha-level-9999-traicao-dungeon" postTitle="My Gift Lvl 9999 Unlimited Gacha — Traição no Fundo da Dungeon"  category="otaku" />
           <AdLeaderboard className="my-8" />
     </article>
   );

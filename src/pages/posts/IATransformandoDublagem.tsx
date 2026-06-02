@@ -256,16 +256,6 @@ const IATransformandoDublagem = () => {
           que essa transição seja feita de forma ética, respeitando os profissionais da indústria 
           enquanto beneficia os fãs com acesso mais rápido a conteúdo de qualidade.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">
-            Qual será o futuro da dublagem?
-          </h3>
-          <p className="text-muted-foreground">
-            Você prefere dublagem humana tradicional ou aceitaria dublagem por IA se 
-            mantivesse a qualidade? Conta pra gente nos comentários! 👇
-          </p>
-        </div>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: dublagem clássica em PT-BR tem valor cultural que IA não substitui">
@@ -286,7 +276,7 @@ const IATransformandoDublagem = () => {
       ]} />
 
       <RelatedPosts currentSlug="ia-transformando-dublagem-animes" />
-      <CommentSection postId="ia-transformando-dublagem-animes" postTitle="IA na Dublagem de Animes: Voice Cloning e o Futuro da Localização" />
+      <CommentSection postId="ia-transformando-dublagem-animes" postTitle="IA na Dublagem de Animes: Voice Cloning e o Futuro da Localização"  category="ia" />
     </article>
   );
 };

@@ -268,11 +268,6 @@ const DolaAI2026 = () => {
             </div>
           ))}
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Você já testou o Dola AI?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários o que achou! 👇</p>
-        </div>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: Dola resolve o problema real de quem não quer 5 apps de IA no celular">
@@ -293,7 +288,7 @@ const DolaAI2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="dola-ai-app-assistente-2026" />
-      <CommentSection postId="dola-ai-app-assistente-2026" postTitle="Dola AI: O App de Assistente de IA que Virou Febre no Brasil em 2026" />
+      <CommentSection postId="dola-ai-app-assistente-2026" postTitle="Dola AI: O App de Assistente de IA que Virou Febre no Brasil em 2026"  category="ia" />
     </article>
   );
 };

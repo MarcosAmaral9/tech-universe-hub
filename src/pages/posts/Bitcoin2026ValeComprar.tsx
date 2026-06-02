@@ -336,7 +336,7 @@ const Bitcoin2026ValeComprar = () => {
 
       <BackNavigation category="invest" />
       <RelatedPosts currentSlug="bitcoin-2026-vale-comprar" />
-      <CommentSection postId="bitcoin-2026-vale-comprar" postTitle="Bitcoin em 2026: vale comprar agora ou esperar?" />
+      <CommentSection postId="bitcoin-2026-vale-comprar" postTitle="Bitcoin em 2026: vale comprar agora ou esperar?"  category="invest" />
     </article>
   );
 };

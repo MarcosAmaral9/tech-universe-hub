@@ -235,7 +235,7 @@ const CopomAbril2026 = () => {
         ]}
       />
       <RelatedPosts currentSlug="copom-abril-2026-selic-investimentos" />
-      <CommentSection postId="copom-abril-2026-selic-investimentos" postTitle="Copom Abril 2026: Selic a 14,50% — O Que Muda para Renda Fixa, Ações e Câmbio" />
+      <CommentSection postId="copom-abril-2026-selic-investimentos" postTitle="Copom Abril 2026: Selic a 14,50% — O Que Muda para Renda Fixa, Ações e Câmbio"  category="invest" />
     </article>
   );
 };

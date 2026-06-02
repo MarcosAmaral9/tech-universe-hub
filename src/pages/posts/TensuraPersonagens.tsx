@@ -312,7 +312,7 @@ const TensuraPersonagens = () => {
         </p>
       </div>
       <RelatedPosts currentSlug="tensura-personagens-rimuru-demon-lords" />
-      <CommentSection postId="tensura-personagens-rimuru-demon-lords" />
+      <CommentSection postId="tensura-personagens-rimuru-demon-lords"  category="otaku" />
     </article>
   );
 };

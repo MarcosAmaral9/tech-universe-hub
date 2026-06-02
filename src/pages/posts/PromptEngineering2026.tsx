@@ -245,12 +245,6 @@ Use analogias do dia a dia para explicar conceitos complexos.`}
         <p>
           Comece aplicando os 4 componentes (papel, contexto, tarefa, formato) no seu próximo prompt. Itere sobre as respostas. Em poucas semanas, a diferença nos resultados será enorme.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Qual seu prompt favorito?</h3>
-          <p className="text-muted-foreground">Compartilhe nos comentários o melhor prompt que você já usou! 🤖</p>
-        </div>
-
         <p className="text-xs text-muted-foreground mt-6 italic">
           Conteúdo baseado em pesquisas publicadas por Google DeepMind, OpenAI e Anthropic. Técnicas referenciadas são de domínio público e amplamente documentadas na literatura de IA.
         </p>
@@ -274,7 +268,7 @@ Use analogias do dia a dia para explicar conceitos complexos.`}
       ]} />
 
       <RelatedPosts currentSlug="prompt-engineering-guia-2026" />
-      <CommentSection postId="prompt-engineering-guia-2026" postTitle="Prompt Engineering em 2026: Guia Definitivo para Escrever Prompts que Funcionam" />
+      <CommentSection postId="prompt-engineering-guia-2026" postTitle="Prompt Engineering em 2026: Guia Definitivo para Escrever Prompts que Funcionam"  category="ia" />
     </article>
   );
 };

@@ -629,7 +629,7 @@ const SairDasDividas2026 = () => {
         <CommentSection
           postId="sair-das-dividas-2026-plano-acao"
           postTitle="Sair das Dívidas em 2026: O Plano de Ação Que Realmente Funciona"
-        />
+         category="invest" />
       </article>
     </>
   );

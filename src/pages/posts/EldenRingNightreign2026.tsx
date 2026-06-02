@@ -213,7 +213,7 @@ const EldenRingNightreign2026 = () => {
 
 
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="elden-ring-nightreign-guia-completo-2026" postTitle="Elden Ring Nightreign: Guia Completo — Classes, Expedições, Bosses e Forsaken Hollows DLC" />
+      <CommentSection postId="elden-ring-nightreign-guia-completo-2026" postTitle="Elden Ring Nightreign: Guia Completo — Classes, Expedições, Bosses e Forsaken Hollows DLC"  category="geek" />
     </article>
   );
 };

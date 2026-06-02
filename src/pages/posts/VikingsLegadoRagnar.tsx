@@ -380,20 +380,10 @@ const VikingsLegadoRagnar = () => {
           nórdica criou uma obra que transcende seu gênero. Com <strong>final fechado</strong> e 
           um spin-off que continua a história, é o momento perfeito para maratonar ambas as séries.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">
-            Qual foi sua cena favorita de Vikings?
-          </h3>
-          <p className="text-muted-foreground">
-            O ataque a Lindisfarne? A batalha de Kattegat? O ataque a Paris?
-            Conta pra gente nos comentários! 👇
-          </p>
-        </div>
       </div>
 <RelatedPosts currentSlug="vikings-legado-ragnar-lothbrok" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="vikings-legado-ragnar-lothbrok" postTitle="Vikings: Vale a Pena Assistir em 2026? Review Completa da Série" />
+      <CommentSection postId="vikings-legado-ragnar-lothbrok" postTitle="Vikings: Vale a Pena Assistir em 2026? Review Completa da Série"  category="geek" />
     </article>
   );
 };

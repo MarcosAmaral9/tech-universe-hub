@@ -224,7 +224,7 @@ const AgentesIAAutonomos2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="agentes-ia-autonomos-2026" />
-      <CommentSection postId="agentes-ia-autonomos-2026" postTitle="Agentes de IA Autônomos: O que São, Como Funcionam e Por Que Vão Mudar Tudo em 2026" />
+      <CommentSection postId="agentes-ia-autonomos-2026" postTitle="Agentes de IA Autônomos: O que São, Como Funcionam e Por Que Vão Mudar Tudo em 2026"  category="ia" />
     </article>
   );
 };

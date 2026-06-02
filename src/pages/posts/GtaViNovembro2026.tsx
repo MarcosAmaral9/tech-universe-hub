@@ -205,7 +205,7 @@ const GtaViNovembro2026 = () => {
   ]} />
 <RelatedPosts currentSlug="gta-vi-novembro-2026-vice-city-leonida" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="gta-vi-novembro-2026-vice-city-leonida" postTitle="GTA VI: Data Confirmada para 19 de Novembro — Tudo sobre Leonida, Lucia e Jason" />
+      <CommentSection postId="gta-vi-novembro-2026-vice-city-leonida" postTitle="GTA VI: Data Confirmada para 19 de Novembro — Tudo sobre Leonida, Lucia e Jason"  category="geek" />
     </article>
   );
 };

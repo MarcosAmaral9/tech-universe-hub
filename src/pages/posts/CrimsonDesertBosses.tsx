@@ -655,7 +655,7 @@ const CrimsonDesertBosses = () => {
       />
 <RelatedPosts currentSlug="crimson-desert-bosses-guia-chefes" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="crimson-desert-bosses-guia-chefes" postTitle="Crimson Desert: Guia de Bosses — Onde Encontrar, Como Derrotar e Recompensas" />
+      <CommentSection postId="crimson-desert-bosses-guia-chefes" postTitle="Crimson Desert: Guia de Bosses — Onde Encontrar, Como Derrotar e Recompensas"  category="geek" />
       <AdLeaderboard className="my-8" />
     </article>
   );

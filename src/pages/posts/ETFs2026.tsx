@@ -361,7 +361,7 @@ const ETFs2026 = () => {
       <CommentSection
         postId="etfs-2026-guia-completo-investir"
         postTitle="ETFs em 2026: Guia Completo Para Investir com Diversificação"
-      />
+       category="invest" />
     </article>
   );
 };

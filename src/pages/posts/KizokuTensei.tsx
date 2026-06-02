@@ -161,7 +161,7 @@ const KizokuTensei = () => {
         ]}
       />
       <RelatedPosts currentSlug="kizoku-tensei-noble-reincarnation-guia" />
-      <CommentSection postId="kizoku-tensei-noble-reincarnation-guia" postTitle="Noble Reincarnation (Kizoku Tensei) — Guia Completo" />
+      <CommentSection postId="kizoku-tensei-noble-reincarnation-guia" postTitle="Noble Reincarnation (Kizoku Tensei) — Guia Completo"  category="otaku" />
           <AdLeaderboard className="my-8" />
     </article>
   );

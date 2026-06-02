@@ -273,16 +273,6 @@ const DiferenciarManhuasManhwas = () => {
             </p>
           </div>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">
-            Qual você prefere?
-          </h3>
-          <p className="text-muted-foreground">
-            Você curte mais as histórias de sistema dos Manhwas coreanos ou o cultivo 
-            marcial dos Manhuas chineses? Conta pra gente nos comentários! 👇
-          </p>
-        </div>
       </div>
 
       <EditorialTake category="otaku" title="Análise do Marcos: manhwa coreano e manhua chinês são formatos distintos com públicos próprios">
@@ -329,7 +319,7 @@ const DiferenciarManhuasManhwas = () => {
         ]}
       />
       <RelatedPosts currentSlug="como-diferenciar-manhuas-manhwas" />
-      <CommentSection postId="como-diferenciar-manhuas-manhwas" postTitle="Saiba como diferenciar Manhuas e Manhwas" />
+      <CommentSection postId="como-diferenciar-manhuas-manhwas" postTitle="Saiba como diferenciar Manhuas e Manhwas"  category="otaku" />
     </article>
   );
 };

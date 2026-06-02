@@ -121,7 +121,7 @@ const DragonAgeVeilguard2026 = () => {
     </div>
 <RelatedPosts currentSlug="dragon-age-veilguard-review-2026" />
     <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="dragon-age-veilguard-review-2026" postTitle="Dragon Age: The Veilguard — Review 2026" />
+      <CommentSection postId="dragon-age-veilguard-review-2026" postTitle="Dragon Age: The Veilguard — Review 2026"  category="geek" />
   </article>
 );
 };

@@ -196,12 +196,6 @@ const IACiberseguranca2026 = () => {
         <p>
           A batalha entre IA defensiva e ofensiva não vai acabar — vai apenas se intensificar. E estar informado é a primeira camada de proteção.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Você já ativou o 2FA em todas as suas contas?</h3>
-          <p className="text-muted-foreground">Compartilhe sua experiência com segurança digital nos comentários! 🔒</p>
-        </div>
-
         <p className="text-xs text-muted-foreground mt-6 italic">
           Conteúdo informativo baseado em relatórios públicos de IBM, Gartner, CrowdStrike, SlashNext e World Economic Forum. Dados e estatísticas referenciados são de fontes verificáveis.
         </p>
@@ -219,7 +213,7 @@ const IACiberseguranca2026 = () => {
     { title: 'NIST — AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework', publisher: 'NIST', accessedAt: "Maio 2026" }
   ]} />
       <RelatedPosts currentSlug="ia-ciberseguranca-2026" />
-      <CommentSection postId="ia-ciberseguranca-2026" />
+      <CommentSection postId="ia-ciberseguranca-2026"  category="ia" />
     </article>
   );
 };

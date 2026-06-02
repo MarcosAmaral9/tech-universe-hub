@@ -122,11 +122,6 @@ const IAGenerativaIniciantes2026 = () => {
           <li><strong>Ignorar privacidade:</strong> Não insira dados de clientes, CPF ou informações confidenciais sem verificar a política da plataforma.</li>
           <li><strong>Querer tudo de uma vez:</strong> Foco em uma ferramenta por mês é mais valioso que testar 20 superficialmente.</li>
         </ul>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Qual foi sua primeira experiência com IA generativa?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
-        </div>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: 15 minutos por dia de prática vale mais do que qualquer curso de IA">
@@ -147,7 +142,7 @@ const IAGenerativaIniciantes2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="ia-generativa-iniciantes-2026-guia" />
-      <CommentSection postId="ia-generativa-iniciantes-2026-guia" postTitle="IA Generativa para Iniciantes 2026: Do Zero ao Avançado" />
+      <CommentSection postId="ia-generativa-iniciantes-2026-guia" postTitle="IA Generativa para Iniciantes 2026: Do Zero ao Avançado"  category="ia" />
     </article>
   );
 };

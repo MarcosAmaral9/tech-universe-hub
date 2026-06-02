@@ -631,7 +631,7 @@ const CrimsonDesertMapa = () => {
       </section>
 <RelatedPosts currentSlug="crimson-desert-mapa-regioes-pywel" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="crimson-desert-mapa-regioes-pywel" postTitle="Crimson Desert: Mapa Completo de Pywel" />
+      <CommentSection postId="crimson-desert-mapa-regioes-pywel" postTitle="Crimson Desert: Mapa Completo de Pywel"  category="geek" />
     </article>
   );
 };

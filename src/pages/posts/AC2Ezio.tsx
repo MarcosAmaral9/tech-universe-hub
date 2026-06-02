@@ -393,7 +393,7 @@ const AC2Ezio = () => {
 
       <RelatedPosts currentSlug="ac-2-ezio-italia-renascentista" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="ac-2-ezio-italia-renascentista" postTitle="Assassin's Creed II em 2026: Review Completa — Ezio Auditore e a Itália Renascentista" />
+      <CommentSection postId="ac-2-ezio-italia-renascentista" postTitle="Assassin's Creed II em 2026: Review Completa — Ezio Auditore e a Itália Renascentista"  category="geek" />
     </article>
   );
 };

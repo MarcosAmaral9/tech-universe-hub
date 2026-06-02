@@ -236,7 +236,7 @@ const ClaudeOpusVsSonnet2026 = () => {
 
 
       <RelatedPosts currentSlug="claude-opus-vs-sonnet-2026" />
-      <CommentSection postId="claude-opus-vs-sonnet-2026" postTitle="Claude 4 Opus vs Claude 4 Sonnet: Qual Usar em 2026?" />
+      <CommentSection postId="claude-opus-vs-sonnet-2026" postTitle="Claude 4 Opus vs Claude 4 Sonnet: Qual Usar em 2026?"  category="ia" />
     </article>
   );
 };

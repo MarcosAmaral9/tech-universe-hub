@@ -235,7 +235,7 @@ const CrimsonDesertPatches = () => {
       </div>
 <RelatedPosts currentSlug="crimson-desert-patches-atualizacoes-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="crimson-desert-patches-atualizacoes-2026" postTitle="Crimson Desert: Todas as Atualizações e Patches Pós-Lançamento" />
+      <CommentSection postId="crimson-desert-patches-atualizacoes-2026" postTitle="Crimson Desert: Todas as Atualizações e Patches Pós-Lançamento"  category="geek" />
     </article>
   );
 };

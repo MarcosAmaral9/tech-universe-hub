@@ -281,16 +281,6 @@ const MelhoresManhwasSistema = () => {
             </p>
           </div>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">
-            Qual desses é o seu favorito? Esqueci de algum?
-          </h3>
-          <p className="text-muted-foreground">
-            Conta pra gente qual manhwa de sistema você mais gosta e nos indica 
-            outros que deveriam estar na lista! 👇
-          </p>
-        </div>
       </div>
 
             <EditorialTake category="otaku" title="Análise do Marcos">
@@ -340,7 +330,7 @@ const MelhoresManhwasSistema = () => {
         ]}
       />
       <RelatedPosts currentSlug="10-melhores-manhwas-sistema-2026" />
-      <CommentSection postId="10-melhores-manhwas-sistema-2026" postTitle="Os 10 melhores Manhwas de \'Sistema\' para ler em 2026" />
+      <CommentSection postId="10-melhores-manhwas-sistema-2026" postTitle="Os 10 melhores Manhwas de \'Sistema\' para ler em 2026"  category="otaku" />
     </article>
   );
 };

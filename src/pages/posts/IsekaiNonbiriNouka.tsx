@@ -173,7 +173,7 @@ const IsekaiNonbiriNouka = () => {
         ]}
       />
       <RelatedPosts currentSlug="isekai-nonbiri-nouka-farming-life-guia" />
-      <CommentSection postId="isekai-nonbiri-nouka-farming-life-guia" postTitle="Farming Life in Another World — Guia Completo" />
+      <CommentSection postId="isekai-nonbiri-nouka-farming-life-guia" postTitle="Farming Life in Another World — Guia Completo"  category="otaku" />
           <AdLeaderboard className="my-8" />
     </article>
   );

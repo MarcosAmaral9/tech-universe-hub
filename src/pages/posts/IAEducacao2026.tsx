@@ -126,11 +126,6 @@ const IAEducacao2026 = () => {
         <p>
           Professores brasileiros já adotam triangulação entre GPTZero, Turnitin (que lançou detector de IA em 2023) e análise estilística manual. O problema é que detectores ainda têm alta taxa de falso positivo — estudantes com escrita formal são frequentemente sinalizados. A recomendação prática: use IA para aprender e rascunhar, mas reescreva com suas próprias palavras antes de entregar. Se a instituição tiver política clara de uso de IA, siga-a.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Como você usa IA para estudar?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
-        </div>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: IA acelera quem já estuda bem — e atrapalha quem não estuda">
@@ -151,7 +146,7 @@ const IAEducacao2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="ia-educacao-2026-estudar-inteligente" />
-      <CommentSection postId="ia-educacao-2026-estudar-inteligente" postTitle="IA na Educação 2026: Como Estudar de Forma Inteligente" />
+      <CommentSection postId="ia-educacao-2026-estudar-inteligente" postTitle="IA na Educação 2026: Como Estudar de Forma Inteligente"  category="ia" />
     </article>
   );
 };

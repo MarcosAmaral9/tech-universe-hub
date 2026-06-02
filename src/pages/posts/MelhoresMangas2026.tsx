@@ -279,7 +279,7 @@ const MelhoresMangas2026 = () => {
       />
 
       <RelatedPosts currentSlug="melhores-mangas-ler-2026" />
-      <CommentSection postId="melhores-mangas-ler-2026" postTitle="Os Melhores Mangás Para Ler em 2026: Guia por Gênero e Nível de Experiência" />
+      <CommentSection postId="melhores-mangas-ler-2026" postTitle="Os Melhores Mangás Para Ler em 2026: Guia por Gênero e Nível de Experiência"  category="otaku" />
     </article>
   );
 };

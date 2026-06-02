@@ -160,7 +160,7 @@ const CrimsonDesertReview = () => {
       </div>
 <RelatedPosts currentSlug="crimson-desert-review-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="crimson-desert-review-2026" postTitle="Crimson Desert: Review 2026" />
+      <CommentSection postId="crimson-desert-review-2026" postTitle="Crimson Desert: Review 2026"  category="geek" />
     </article>
   );
 };

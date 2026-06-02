@@ -377,7 +377,7 @@ const ReMonster2026 = () => {
       />
 
       <RelatedPosts currentSlug="re-monster-anime-manga-guia-2026" />
-      <CommentSection postId="re-monster-anime-manga-guia-2026" postTitle="Re:Monster: Guia Completo do Anime e Mangá — O Goblin que Absorve Poderes e Conquista Mundos" />
+      <CommentSection postId="re-monster-anime-manga-guia-2026" postTitle="Re:Monster: Guia Completo do Anime e Mangá — O Goblin que Absorve Poderes e Conquista Mundos"  category="otaku" />
     </article>
   );
 };

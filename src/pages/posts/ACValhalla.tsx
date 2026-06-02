@@ -635,11 +635,6 @@ const ACValhalla = () => {
             Preço médio em 2026: R$ 150 a R$ 200 (edição completa com DLCs: R$ 250–350)
           </p>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Você já explorou a Inglaterra Viking como Eivor?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
-        </div>
       </div>
 
       <ArticleSources category="geek"
@@ -685,7 +680,7 @@ const ACValhalla = () => {
 
       <RelatedPosts currentSlug="ac-valhalla-jornada-epica-eivor" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="ac-valhalla-jornada-epica-eivor" postTitle="Assassin's Creed Valhalla em 2026: Review Completa — RPG Viking na Inglaterra Medieval" />
+      <CommentSection postId="ac-valhalla-jornada-epica-eivor" postTitle="Assassin's Creed Valhalla em 2026: Review Completa — RPG Viking na Inglaterra Medieval"  category="geek" />
     </article>
   );
 };

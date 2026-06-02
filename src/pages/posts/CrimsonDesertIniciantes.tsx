@@ -240,7 +240,7 @@ const CrimsonDesertIniciantes = () => {
       </div>
 <RelatedPosts currentSlug="crimson-desert-guia-iniciantes-dicas" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="crimson-desert-guia-iniciantes-dicas" postTitle="Crimson Desert: Guia de Dicas para Iniciantes" />
+      <CommentSection postId="crimson-desert-guia-iniciantes-dicas" postTitle="Crimson Desert: Guia de Dicas para Iniciantes"  category="geek" />
           <AdLeaderboard className="my-8" />
     </article>
   );

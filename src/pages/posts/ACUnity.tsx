@@ -773,15 +773,6 @@ const ACUnity = () => {
             </Link>.
           </p>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">
-            Unity é realmente o jogo mais bonito da franquia?
-          </h3>
-          <p className="text-muted-foreground">
-            Conta pra gente nos comentários! 👇
-          </p>
-        </div>
       </div>
 
       <ArticleSources category="geek"
@@ -828,7 +819,7 @@ const ACUnity = () => {
       <RelatedPosts currentSlug="ac-unity-jogo-frente-tempo-paris" />
 
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="ac-unity-jogo-frente-tempo-paris" postTitle="Assassin's Creed Unity em 2026: Review Completa — O Melhor Parkour da Franquia em Paris" />
+      <CommentSection postId="ac-unity-jogo-frente-tempo-paris" postTitle="Assassin's Creed Unity em 2026: Review Completa — O Melhor Parkour da Franquia em Paris"  category="geek" />
     </article>
   );
 };

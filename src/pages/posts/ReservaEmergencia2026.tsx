@@ -439,7 +439,7 @@ const ReservaEmergencia2026 = () => {
       <CommentSection
         postId="reserva-emergencia-2026-como-montar"
         postTitle="Como Montar Sua Reserva de Emergência em 2026: Guia Definitivo"
-      />
+       category="invest" />
     </article>
   );
 };

@@ -192,7 +192,7 @@ const CortarGastos2026 = () => {
         ]}
       />
       <RelatedPosts currentSlug="cortar-gastos-2026" />
-      <CommentSection postId="cortar-gastos-2026" postTitle="Cortar Gastos em 2026: 20 Estratégias Práticas para Economizar no Brasil" />
+      <CommentSection postId="cortar-gastos-2026" postTitle="Cortar Gastos em 2026: 20 Estratégias Práticas para Economizar no Brasil"  category="invest" />
     </article>
   );
 };

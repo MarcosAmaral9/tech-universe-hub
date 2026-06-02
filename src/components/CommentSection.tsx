@@ -48,12 +48,34 @@ interface Comment {
 
 type SortMode = "recent" | "best";
 
+import type { Category } from "@/types/blog";
+
+const INVITE_STYLES: Record<Category, { border: string; bg: string; text: string }> = {
+  ia: { border: "border-l-ia", bg: "bg-ia/5", text: "text-ia" },
+  invest: { border: "border-l-invest", bg: "bg-invest/5", text: "text-invest" },
+  geek: { border: "border-l-geek", bg: "bg-geek/5", text: "text-geek" },
+  otaku: { border: "border-l-otaku", bg: "bg-otaku/5", text: "text-otaku" },
+};
+
 interface CommentSectionProps {
   postId: string;
   postTitle?: string;
+  /** Categoria do post — colore o convite no topo da seção. */
+  category?: Category;
+  /** Título alternativo para o convite. Padrão: "Participe da conversa". */
+  inviteTitle?: string;
+  /** Subtítulo alternativo para o convite. */
+  inviteSubtitle?: string;
 }
 
-const CommentSection = ({ postId, postTitle = "Artigo" }: CommentSectionProps) => {
+const CommentSection = ({
+  postId,
+  postTitle = "Artigo",
+  category,
+  inviteTitle = "Participe da conversa",
+  inviteSubtitle = "Conta pra gente o que achou — seu comentário ajuda outros leitores.",
+}: CommentSectionProps) => {
+
   const { user, profile } = useAuthContext();
   const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState("");
@@ -433,6 +455,22 @@ const CommentSection = ({ postId, postTitle = "Artigo" }: CommentSectionProps) =
 
   return (
     <section className="mt-12 pt-8 border-t border-border">
+      {category && (
+        <aside
+          className={`not-prose mb-8 border-l-4 ${INVITE_STYLES[category].border} ${INVITE_STYLES[category].bg} rounded-r-xl p-6 md:p-7`}
+        >
+          <div className="flex items-center gap-2 mb-2">
+            <MessageCircle className={`h-4 w-4 ${INVITE_STYLES[category].text}`} />
+            <h3
+              className={`font-display text-xs md:text-sm font-bold uppercase tracking-[0.12em] ${INVITE_STYLES[category].text}`}
+            >
+              {inviteTitle}
+            </h3>
+          </div>
+          <p className="text-sm md:text-base text-foreground/90 leading-relaxed">{inviteSubtitle}</p>
+        </aside>
+      )}
+
       <div className="flex items-center justify-between flex-wrap gap-3 mb-6">
         <h3 className="font-display text-2xl font-bold flex items-center gap-2">
           <MessageCircle className="h-6 w-6 text-primary" />

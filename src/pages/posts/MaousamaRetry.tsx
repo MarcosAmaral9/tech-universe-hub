@@ -184,7 +184,7 @@ const MaousamaRetry = () => {
         ]}
       />
       <RelatedPosts currentSlug="maousama-retry-demon-lord-guia-completo" />
-      <CommentSection postId="maousama-retry-demon-lord-guia-completo" postTitle="Demon Lord Retry! (Maou-sama) — Guia Completo" />
+      <CommentSection postId="maousama-retry-demon-lord-guia-completo" postTitle="Demon Lord Retry! (Maou-sama) — Guia Completo"  category="otaku" />
           <AdLeaderboard className="my-8" />
     </article>
   );

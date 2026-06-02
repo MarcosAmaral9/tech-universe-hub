@@ -90,11 +90,6 @@ const JogosAnime2026 = () => {
         <p>
           💡 <strong>Dica:</strong> Plataformas como Steam têm promoções regulares em bundles de jogos de anime — preço de R$ 20-40 por títulos que custam R$ 150-200 no lançamento. A diferença entre pré-comprar e esperar 6 meses pode ser mais de 50%.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Qual seu jogo de anime favorito?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
-        </div>
       </div>
 
             <EditorialTake category="otaku" title="Análise do Marcos">
@@ -118,7 +113,7 @@ const JogosAnime2026 = () => {
         ]}
       />
       <RelatedPosts currentSlug="melhores-jogos-anime-2026" />
-      <CommentSection postId="melhores-jogos-anime-2026" postTitle="Os Melhores Jogos de Anime de 2026: Do RPG ao Fighting Game" />
+      <CommentSection postId="melhores-jogos-anime-2026" postTitle="Os Melhores Jogos de Anime de 2026: Do RPG ao Fighting Game"  category="otaku" />
     </article>
   );
 };

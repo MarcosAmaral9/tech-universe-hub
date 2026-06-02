@@ -232,7 +232,7 @@ const ETFsB3Guia2026 = () => {
         ]}
       />
       <RelatedPosts currentSlug="etfs-b3-guia-completo-2026" />
-      <CommentSection postId="etfs-b3-guia-completo-2026" postTitle="ETFs na B3 em 2026: Guia Completo para Investir em Fundos de Índice" />
+      <CommentSection postId="etfs-b3-guia-completo-2026" postTitle="ETFs na B3 em 2026: Guia Completo para Investir em Fundos de Índice"  category="invest" />
     </article>
   );
 };

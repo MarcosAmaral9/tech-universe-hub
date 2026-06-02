@@ -226,7 +226,7 @@ const IbovespaRecordeSelic2026 = () => {
     { title: 'Reuters — Brazil Markets', url: 'https://www.reuters.com/markets/', publisher: 'Reuters', accessedAt: "Maio 2026" }
   ]} />
       <RelatedPosts currentSlug="ibovespa-recorde-selic-caindo-2026" />
-      <CommentSection postId="ibovespa-recorde-selic-caindo-2026" postTitle="Ibovespa em Recordes e Selic Caindo: Onde Investir Agora em Abril de 2026" />
+      <CommentSection postId="ibovespa-recorde-selic-caindo-2026" postTitle="Ibovespa em Recordes e Selic Caindo: Onde Investir Agora em Abril de 2026"  category="invest" />
     </article>
   );
 };

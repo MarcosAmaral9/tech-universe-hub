@@ -523,11 +523,6 @@ const ACOrigins = () => {
             Preço médio em 2026: R$ 80 a R$ 130 (frequentemente em promoção)
           </p>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">O que você achou da jornada de Bayek no Egito Antigo?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
-        </div>
       </div>
 
       <ArticleSources category="geek"
@@ -573,7 +568,7 @@ const ACOrigins = () => {
 
       <RelatedPosts currentSlug="ac-origins-renascimento-franquia-egito" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="ac-origins-renascimento-franquia-egito" postTitle="Assassin's Creed Origins em 2026: Review Completa — Renascimento da Franquia no Egito Antigo" />
+      <CommentSection postId="ac-origins-renascimento-franquia-egito" postTitle="Assassin's Creed Origins em 2026: Review Completa — Renascimento da Franquia no Egito Antigo"  category="geek" />
     </article>
   );
 };

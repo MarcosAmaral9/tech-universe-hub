@@ -755,15 +755,6 @@ const HellLetLooseSimulador = () => {
             Preço médio: R$ 80 a R$ 120 (frequentemente em promoção nas Steam Sales)
           </p>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">
-            Você já jogou Hell Let Loose? Qual sua classe favorita?
-          </h3>
-          <p className="text-muted-foreground">
-            Conta pra gente nos comentários! 👇
-          </p>
-        </div>
       </div>
 
       {/* Related Posts */}
@@ -795,7 +786,7 @@ const HellLetLooseSimulador = () => {
 
       {/* Comments */}
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="hell-let-loose-simulador-guerra" postTitle="Hell Let Loose em 2026 Vale a Pena? Review do Simulador de Guerra" />
+      <CommentSection postId="hell-let-loose-simulador-guerra" postTitle="Hell Let Loose em 2026 Vale a Pena? Review do Simulador de Guerra"  category="geek" />
     </article>
   );
 };

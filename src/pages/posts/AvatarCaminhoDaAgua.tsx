@@ -277,20 +277,10 @@ const AvatarCaminhoDaAgua = () => {
           gráfica</strong> ou <strong>efeitos visuais</strong>, Avatar 2 é estudo obrigatório. 
           O filme representa o estado da arte em simulação de fluidos para cinema.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">
-            Qual cena aquática mais te impressionou?
-          </h3>
-          <p className="text-muted-foreground">
-            A perseguição com os Skimwings? O mergulho noturno bioluminescente? 
-            Conta pra gente nos comentários! 👇
-          </p>
-        </div>
       </div>
 <RelatedPosts currentSlug="avatar-caminho-da-agua-fisica-fluidos" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="avatar-caminho-da-agua-fisica-fluidos" postTitle="Avatar 2: O Caminho da Água — Análise da Revolução em CGI e Simulação" />
+      <CommentSection postId="avatar-caminho-da-agua-fisica-fluidos" postTitle="Avatar 2: O Caminho da Água — Análise da Revolução em CGI e Simulação"  category="geek" />
     </article>
   );
 };

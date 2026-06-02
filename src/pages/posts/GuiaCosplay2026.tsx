@@ -353,7 +353,7 @@ const GuiaCosplay2026 = () => {
       />
 
       <RelatedPosts currentSlug="guia-cosplay-2026-iniciantes" />
-      <CommentSection postId="guia-cosplay-2026-iniciantes" postTitle="Guia Definitivo para Começar no Cosplay em 2026: Do Zero à Convenção" />
+      <CommentSection postId="guia-cosplay-2026-iniciantes" postTitle="Guia Definitivo para Começar no Cosplay em 2026: Do Zero à Convenção"  category="otaku" />
     </article>
   );
 };

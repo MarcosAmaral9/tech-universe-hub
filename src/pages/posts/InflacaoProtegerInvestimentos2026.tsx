@@ -226,7 +226,7 @@ const InflacaoProtegerInvestimentos2026 = () => {
         ]}
       />
       <RelatedPosts currentSlug="inflacao-proteger-investimentos-2026" />
-      <CommentSection postId="inflacao-proteger-investimentos-2026" postTitle="Inflação Acima da Meta em 2026" />
+      <CommentSection postId="inflacao-proteger-investimentos-2026" postTitle="Inflação Acima da Meta em 2026"  category="invest" />
     </article>
   );
 };

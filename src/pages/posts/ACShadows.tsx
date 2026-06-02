@@ -646,11 +646,6 @@ const ACShadows = () => {
             Preço médio em 2026: R$ 250 a R$ 350 (edição padrão) | R$ 400 a R$ 500 (Gold com Season Pass)
           </p>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Naoe ou Yasuke: qual protagonista você prefere jogar?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
-        </div>
       </div>
 
       <ArticleSources category="geek"
@@ -696,7 +691,7 @@ const ACShadows = () => {
 
       <RelatedPosts currentSlug="ac-shadows-japao-feudal" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="ac-shadows-japao-feudal" postTitle="Assassin's Creed Shadows em 2026: Review Completa — Japão Feudal, Naoe e Yasuke" />
+      <CommentSection postId="ac-shadows-japao-feudal" postTitle="Assassin's Creed Shadows em 2026: Review Completa — Japão Feudal, Naoe e Yasuke"  category="geek" />
     </article>
   );
 };

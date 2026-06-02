@@ -399,7 +399,7 @@ const ACRevelations = () => {
 
       <RelatedPosts currentSlug="ac-revelations-ezio-constantinopla" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="ac-revelations-ezio-constantinopla" postTitle="Assassin's Creed Revelations em 2026: Review Completa — Ezio em Constantinopla e o Legado de Altaïr" />
+      <CommentSection postId="ac-revelations-ezio-constantinopla" postTitle="Assassin's Creed Revelations em 2026: Review Completa — Ezio em Constantinopla e o Legado de Altaïr"  category="geek" />
     </article>
   );
 };

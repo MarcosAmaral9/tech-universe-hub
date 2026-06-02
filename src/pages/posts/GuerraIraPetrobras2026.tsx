@@ -362,7 +362,7 @@ const GuerraIraPetrobras2026 = () => {
       <CommentSection
         postId="guerra-ira-petroleo-petrobras-2026"
         postTitle="Guerra EUA-Irã e Estreito de Ormuz: Vale a Pena Investir em Petrobras (PETR4) Agora?"
-      />
+       category="invest" />
     </article>
   );
 };

@@ -218,7 +218,7 @@ const ClaudeCoworkSaas2026 = () => {
       />
 
       <RelatedPosts currentSlug="claude-cowork-saaspocalypse-2026" />
-      <CommentSection postId="claude-cowork-saaspocalypse-2026" postTitle="Claude Cowork e o SaaSpocalypse: Como os Agentes de IA Estão Substituindo Softwares Inteiros" />
+      <CommentSection postId="claude-cowork-saaspocalypse-2026" postTitle="Claude Cowork e o SaaSpocalypse: Como os Agentes de IA Estão Substituindo Softwares Inteiros"  category="ia" />
     </article>
   );
 };

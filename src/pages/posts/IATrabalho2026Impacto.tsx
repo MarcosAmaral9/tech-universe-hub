@@ -198,7 +198,7 @@ const IATrabalho2026Impacto = () => {
       ]} />
 
       <RelatedPosts currentSlug="ia-mercado-trabalho-brasil-2026" />
-      <CommentSection postId="ia-mercado-trabalho-brasil-2026" postTitle="IA no Mercado de Trabalho Brasileiro em 2026: Quais Profissões Ganham e Quais Estão em Risco" />
+      <CommentSection postId="ia-mercado-trabalho-brasil-2026" postTitle="IA no Mercado de Trabalho Brasileiro em 2026: Quais Profissões Ganham e Quais Estão em Risco"  category="ia" />
     </article>
   );
 };

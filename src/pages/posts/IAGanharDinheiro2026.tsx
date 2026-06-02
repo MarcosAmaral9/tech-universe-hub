@@ -132,11 +132,6 @@ const IAGanharDinheiro2026 = () => {
             <li><strong>Semana 4:</strong> Entregue, colete depoimentos em vídeo e reajuste o preço para o valor real.</li>
           </ul>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Já começou a monetizar com IA?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
-        </div>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: quem fatura de verdade combina habilidade prévia com IA, não só IA">
@@ -157,7 +152,7 @@ const IAGanharDinheiro2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="como-usar-ia-ganhar-dinheiro-2026" />
-      <CommentSection postId="como-usar-ia-ganhar-dinheiro-2026" postTitle="Como Usar IA para Ganhar Dinheiro em 2026: 15 Formas" />
+      <CommentSection postId="como-usar-ia-ganhar-dinheiro-2026" postTitle="Como Usar IA para Ganhar Dinheiro em 2026: 15 Formas"  category="ia" />
     </article>
   );
 };

@@ -259,11 +259,6 @@ const Seedance20IA2026 = () => {
             </div>
           ))}
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Você já gerou vídeos com o Seedance 2.0?</h3>
-          <p className="text-muted-foreground">Conta nos comentários como foi a experiência! 👇</p>
-        </div>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: Seedance 2.0 resolve o problema que o Sora criou — mas a ByteDance ainda assusta com censura">
@@ -284,7 +279,7 @@ const Seedance20IA2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="seedance-2-0-geracao-video-ia-2026" />
-      <CommentSection postId="seedance-2-0-geracao-video-ia-2026" postTitle="Seedance 2.0: O Gerador de Vídeo com IA da ByteDance que Muda o Jogo em 2026" />
+      <CommentSection postId="seedance-2-0-geracao-video-ia-2026" postTitle="Seedance 2.0: O Gerador de Vídeo com IA da ByteDance que Muda o Jogo em 2026"  category="ia" />
     </article>
   );
 };

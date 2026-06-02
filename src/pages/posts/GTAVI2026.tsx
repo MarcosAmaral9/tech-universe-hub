@@ -207,7 +207,7 @@ const GTAVI2026 = () => {
       />
 <RelatedPosts currentSlug="gta-vi-guia-completo-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="gta-vi-guia-completo-2026" postTitle="GTA VI: Data de Lançamento, Plataformas e Tudo que Sabemos" />
+      <CommentSection postId="gta-vi-guia-completo-2026" postTitle="GTA VI: Data de Lançamento, Plataformas e Tudo que Sabemos"  category="geek" />
     </article>
   );
 };

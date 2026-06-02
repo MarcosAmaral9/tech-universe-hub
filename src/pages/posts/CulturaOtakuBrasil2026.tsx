@@ -265,7 +265,7 @@ const CulturaOtakuBrasil2026 = () => {
       />
 
       <RelatedPosts currentSlug="cultura-otaku-brasil-2026" />
-      <CommentSection postId="cultura-otaku-brasil-2026" postTitle="Cultura Otaku no Brasil 2026: Como Virou uma das Maiores Comunidades do Mundo" />
+      <CommentSection postId="cultura-otaku-brasil-2026" postTitle="Cultura Otaku no Brasil 2026: Como Virou uma das Maiores Comunidades do Mundo"  category="otaku" />
     </article>
   );
 };

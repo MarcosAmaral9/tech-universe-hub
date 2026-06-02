@@ -446,7 +446,7 @@ const FIIs2026 = () => {
         <CommentSection
           postId="fiis-2026-melhores-fundos-imobiliarios"
           postTitle="FIIs em 2026: Os Melhores Fundos Imobiliários e Como Analisar"
-        />
+         category="invest" />
       </article>
     </>
   );

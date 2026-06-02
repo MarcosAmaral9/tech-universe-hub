@@ -411,7 +411,7 @@ const ACBrotherhood = () => {
 
       <RelatedPosts currentSlug="ac-brotherhood-ezio-roma-borgia" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="ac-brotherhood-ezio-roma-borgia" postTitle="Assassin's Creed Brotherhood em 2026: Review Completa — Ezio Reconstrói a Irmandade em Roma" />
+      <CommentSection postId="ac-brotherhood-ezio-roma-borgia" postTitle="Assassin's Creed Brotherhood em 2026: Review Completa — Ezio Reconstrói a Irmandade em Roma"  category="geek" />
     </article>
   );
 };

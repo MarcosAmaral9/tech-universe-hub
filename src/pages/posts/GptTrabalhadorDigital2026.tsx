@@ -223,7 +223,7 @@ const GptTrabalhadorDigital2026 = () => {
 
 
       <RelatedPosts currentSlug="gpt-5-ia-trabalhador-digital-autonomo-2026" />
-      <CommentSection postId="gpt-5-ia-trabalhador-digital-autonomo-2026" postTitle="GPT-5.4 Superou Humanos em Produtividade: A IA que Executa Trabalho Real no Computador" />
+      <CommentSection postId="gpt-5-ia-trabalhador-digital-autonomo-2026" postTitle="GPT-5.4 Superou Humanos em Produtividade: A IA que Executa Trabalho Real no Computador"  category="ia" />
     </article>
   );
 };

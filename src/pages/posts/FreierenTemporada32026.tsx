@@ -227,7 +227,7 @@ const FreierenTemporada32026 = () => {
         ]}
       />
       <RelatedPosts currentSlug="frieren-temporada-3-confirmada-2026" />
-      <CommentSection postId="frieren-temporada-3-confirmada-2026" postTitle="Frieren Temporada 3 Confirmada: O Que Esperar Após o Final da T2" />
+      <CommentSection postId="frieren-temporada-3-confirmada-2026" postTitle="Frieren Temporada 3 Confirmada: O Que Esperar Após o Final da T2"  category="otaku" />
     </article>
   );
 };

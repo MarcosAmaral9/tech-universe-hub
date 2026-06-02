@@ -169,11 +169,6 @@ const AgentesIA2026 = () => {
             <p className="text-sm text-muted-foreground mb-0">Não. Testes independentes mostram Devin abaixo de 14% no SWE-bench original. É útil para tickets pequenos e repetitivos com supervisão — não para projetos críticos.</p>
           </div>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Você já usou um agente de IA?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
-        </div>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: agente assistido é o único caminho sério em 2026">
@@ -196,7 +191,7 @@ const AgentesIA2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="agentes-ia-2026-como-funcionam" />
-      <CommentSection postId="agentes-ia-2026-como-funcionam" postTitle="Agentes de IA 2026: O Que São, Como Funcionam e Por Que Mudam Tudo" />
+      <CommentSection postId="agentes-ia-2026-como-funcionam" postTitle="Agentes de IA 2026: O Que São, Como Funcionam e Por Que Mudam Tudo"  category="ia" />
     </article>
   );
 };

@@ -366,7 +366,7 @@ const FIIs2026AindaVale = () => {
       <CommentSection
         postId="fiis-2026-ainda-vale-investir"
         postTitle="FIIs em 2026: ainda vale a pena investir com a Selic caindo?"
-      />
+       category="invest" />
     </article>
   );
 };

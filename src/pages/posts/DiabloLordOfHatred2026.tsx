@@ -207,7 +207,7 @@ const DiabloLordOfHatred2026 = () => {
       />
 <RelatedPosts currentSlug="diablo-iv-lord-of-hatred-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="diablo-iv-lord-of-hatred-2026" postTitle="Diablo IV: Lord of Hatred — Guia Completo" />
+      <CommentSection postId="diablo-iv-lord-of-hatred-2026" postTitle="Diablo IV: Lord of Hatred — Guia Completo"  category="geek" />
     </article>
   );
 };

@@ -215,7 +215,7 @@ const SarosPS52026 = () => {
       </section>
 <RelatedPosts currentSlug="saros-housemarque-ps5-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="saros-housemarque-ps5-2026" postTitle="SAROS: Guia Completo do Sucessor Espiritual de Returnal" />
+      <CommentSection postId="saros-housemarque-ps5-2026" postTitle="SAROS: Guia Completo do Sucessor Espiritual de Returnal"  category="geek" />
     </article>
   );
 };

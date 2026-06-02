@@ -689,15 +689,6 @@ const AvatarFrontiersOfPandora = () => {
             Preço médio: R$ 150 a R$ 250 (edição padrão) | R$ 300 a R$ 400 (edição Gold com Season Pass)
           </p>
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">
-            Você já jogou Frontiers of Pandora? O que achou?
-          </h3>
-          <p className="text-muted-foreground">
-            Conta pra gente nos comentários! 👇
-          </p>
-        </div>
       </div>
 
       {/* Related Posts */}
@@ -705,7 +696,7 @@ const AvatarFrontiersOfPandora = () => {
 
       {/* Comments */}
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="avatar-frontiers-pandora-ubisoft-review" postTitle="Avatar: Frontiers of Pandora em 2026 Vale a Pena? Review Completa" />
+      <CommentSection postId="avatar-frontiers-pandora-ubisoft-review" postTitle="Avatar: Frontiers of Pandora em 2026 Vale a Pena? Review Completa"  category="geek" />
     </article>
   );
 };

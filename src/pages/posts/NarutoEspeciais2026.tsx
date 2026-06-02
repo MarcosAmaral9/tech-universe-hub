@@ -208,7 +208,7 @@ const NarutoEspeciais2026 = () => {
       />
 
       <RelatedPosts currentSlug="naruto-especiais-confirmados-2026" />
-      <CommentSection postId="naruto-especiais-confirmados-2026" postTitle="Naruto: 4 Episódios Especiais Confirmados — Novos Designs Revelados e Tudo que Sabemos" />
+      <CommentSection postId="naruto-especiais-confirmados-2026" postTitle="Naruto: 4 Episódios Especiais Confirmados — Novos Designs Revelados e Tudo que Sabemos"  category="otaku" />
     </article>
   );
 };

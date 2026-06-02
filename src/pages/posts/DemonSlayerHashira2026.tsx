@@ -141,7 +141,7 @@ const DemonSlayerHashira2026 = () => {
   ]} />
 
       <RelatedPosts currentSlug="demon-slayer-hashira-2026" />
-      <CommentSection postId="demon-slayer-hashira-2026" postTitle="Demon Slayer: Guia dos Hashira" />
+      <CommentSection postId="demon-slayer-hashira-2026" postTitle="Demon Slayer: Guia dos Hashira"  category="otaku" />
   </article>
 );
 };

@@ -235,7 +235,7 @@ const IAFinancasPessoais2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="ia-para-financas-pessoais-2026" />
-      <CommentSection postId="ia-para-financas-pessoais-2026" />
+      <CommentSection postId="ia-para-financas-pessoais-2026"  category="invest" />
     </article>
   );
 };

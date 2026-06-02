@@ -285,7 +285,7 @@ const CDB2026Guia = () => {
 
       <BackNavigation category="invest" />
       <RelatedPosts currentSlug="cdb-2026-guia-completo" />
-      <CommentSection postId="cdb-2026-guia-completo" postTitle="CDB em 2026: Guia Completo" />
+      <CommentSection postId="cdb-2026-guia-completo" postTitle="CDB em 2026: Guia Completo"  category="invest" />
     </article>
   );
 };

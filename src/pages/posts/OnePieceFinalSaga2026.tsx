@@ -349,7 +349,7 @@ const OnePieceFinalSaga2026 = () => {
       <CommentSection
         postId="one-piece-final-saga-2026"
         postTitle="One Piece Final Saga: Onde Estamos e O Que Esperar do Final"
-      />
+       category="otaku" />
     </article>
   );
 };
