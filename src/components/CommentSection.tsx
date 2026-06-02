@@ -48,12 +48,34 @@ interface Comment {
 
 type SortMode = "recent" | "best";
 
+import type { Category } from "@/types/blog";
+
+const INVITE_STYLES: Record<Category, { border: string; bg: string; text: string }> = {
+  ia: { border: "border-l-ia", bg: "bg-ia/5", text: "text-ia" },
+  invest: { border: "border-l-invest", bg: "bg-invest/5", text: "text-invest" },
+  geek: { border: "border-l-geek", bg: "bg-geek/5", text: "text-geek" },
+  otaku: { border: "border-l-otaku", bg: "bg-otaku/5", text: "text-otaku" },
+};
+
 interface CommentSectionProps {
   postId: string;
   postTitle?: string;
+  /** Categoria do post — colore o convite no topo da seção. */
+  category?: Category;
+  /** Título alternativo para o convite. Padrão: "Participe da conversa". */
+  inviteTitle?: string;
+  /** Subtítulo alternativo para o convite. */
+  inviteSubtitle?: string;
 }
 
-const CommentSection = ({ postId, postTitle = "Artigo" }: CommentSectionProps) => {
+const CommentSection = ({
+  postId,
+  postTitle = "Artigo",
+  category,
+  inviteTitle = "Participe da conversa",
+  inviteSubtitle = "Conta pra gente o que achou — seu comentário ajuda outros leitores.",
+}: CommentSectionProps) => {
+
   const { user, profile } = useAuthContext();
   const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState("");
