@@ -11,6 +11,7 @@ import { useOfflinePosts } from "@/hooks/useOfflinePosts";
 import crimsonDesertHeroImg from "@/assets/crimson-desert-hero.webp";
 import avatarPortalBannerImg from "@/assets/avatar-portal-banner.webp";
 import acPortalImg from "@/assets/assassins-creed-portal.webp";
+import bannerlordPortalImg from "@/assets/bannerlord-hero.webp";
 import MostReadWidget from "@/components/MostReadWidget";
 
 
@@ -19,6 +20,7 @@ const POSTS_PER_PAGE = 12;
 const SUBTOPIC_LABELS: Record<string, string> = {
   "assassins-creed": "Assassin's Creed",
   avatar: "Avatar",
+  bannerlord: "Mount & Blade II: Bannerlord",
   "crimson-desert": "Crimson Desert",
   games: "Games",
   vikings: "Vikings",
@@ -144,7 +146,15 @@ const GeekPage = () => {
           <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">
             🎮 Painéis Especiais
           </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <SpecialPortalCard
+              to="/geek/bannerlord"
+              image={bannerlordPortalImg}
+              title="Bannerlord"
+              description="Mount & Blade II: Bannerlord — Calradia, culturas, tropas, mods e a expansão War Sails."
+              badge="🛡️ Novo"
+              badgeColor="bg-amber-900/80 text-amber-300 border border-amber-700/50"
+            />
             <SpecialPortalCard
               to="/geek/crimson-desert"
               image={crimsonDesertHeroImg}
