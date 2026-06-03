@@ -1,66 +1,78 @@
-## Objetivo
+# Painel Mount & Blade II: Bannerlord — Geek
 
-Padronizar o rodapé de todos os artigos para seguir a ordem:
+Espelhar o padrão dos painéis Crimson Desert / Assassin's Creed / Avatar: um portal central (`/geek/bannerlord`) + artigos individuais com a estrutura editorial completa do site.
 
-```
-Conteúdo → Análise (EditorialTake) → Fontes (ArticleSources) → Relacionados (RelatedPosts) → Comentários (CommentSection, agora com convite embutido)
-```
+## 1. Subtopic e taxonomia
 
-A `<div className="mt-10 p-6 bg-secondary rounded-xl text-center">…</div>` ("Conta pra gente nos comentários! 👇") deixa de existir solta em cada post — vira um bloco fixo no topo do `CommentSection`, tematizado pela cor da categoria.
+- Adicionar `'bannerlord'` ao tipo `Subtopic` em `src/types/blog.ts`.
+- Registrar label `"bannerlord": "Mount & Blade II: Bannerlord"` em `SUBTOPIC_LABELS` no `GeekPage.tsx`.
+- Adicionar `SpecialPortalCard` no `GeekPage` apontando para `/geek/bannerlord` (badge "🛡️ Especial").
 
-## Mudanças
+## 2. Rotas
 
-### 1. `CommentSection` ganha convite integrado
-- Aceitar nova prop opcional `category: Category` e `inviteTitle?: string`.
-- Renderizar, antes do formulário/listagem, um header padronizado:
-  - Caixa arredondada com `bg-{category}/5`, borda lateral `border-l-4 border-{category}`, ícone `MessageCircle`.
-  - Título: "Participe da conversa" (padrão) ou `inviteTitle` quando informado.
-  - Subtítulo fixo: "Conta pra gente o que achou — seu comentário ajuda outros leitores."
-- Mantém todo comportamento atual (auth, offline, etc.).
+Em `src/App.tsx`:
 
-### 2. `ArticleFooter` reflete nova ordem
-- Remover qualquer expectativa de CTA externo.
-- Passar `category` adiante para o `CommentSection`.
-- Ordem do wrapper: `EditorialTake → ArticleSources → RelatedPosts → CommentSection`.
+- `/geek/bannerlord` → `BannerlordPortal.tsx`
+- `/post/<slug>` para cada um dos 12 artigos abaixo (mesmo padrão dos posts Crimson).
 
-### 3. Script de migração (`scripts/migrate-comment-cta.mjs`)
-Roda uma vez para limpar os 156 posts:
-- Localiza e remove qualquer bloco `<div className="mt-10 p-6 bg-secondary rounded-xl text-center"> … </div>` (regex multiline robusta, com checagem de balanceamento simples por contagem de `<div>`/`</div>` dentro do match — abortando o arquivo se ambíguo).
-- Adiciona prop `category="…"` no `<CommentSection …/>` correspondente, inferindo a categoria a partir do `<CategoryBadge category="…"/>` ou do `trackArticleRead(..., "<cat>")` do mesmo arquivo.
-- Loga: arquivos alterados, arquivos pulados (sem CTA), arquivos com aviso manual.
+## 3. Imagens (12 + portal + hero)
 
-### 4. Validação no prebuild (`scripts/check-article-footer-order.mjs`)
-- Manter skip de Portais/hubs.
-- Atualizar a lista `REQUIRED` para a nova ordem (sem CTA): `EditorialTake → ArticleSources → RelatedPosts → CommentSection`.
-- Falhar build se encontrar resquício da `div` antiga: regex `mt-10 p-6 bg-secondary rounded-xl text-center` em qualquer `src/pages/posts/*.tsx`.
-- Falhar build se `CommentSection` não tiver `category=` em posts não-hub.
+Gerar via `imagegen` (premium para hero/portal, fast/standard para artigos) em `src/assets/`:
+`bannerlord-hero.webp`, `bannerlord-portal.webp`, `bannerlord-guia.webp`, `bannerlord-mapa.webp`, `bannerlord-culturas.webp`, `bannerlord-reinos.webp`, `bannerlord-tropas.webp`, `bannerlord-melhores-tropas.webp`, `bannerlord-comparacao-tropas.webp`, `bannerlord-war-sails.webp`, `bannerlord-mods.webp`, `bannerlord-requisitos.webp`, `bannerlord-tempo-zerar.webp`, `bannerlord-dicas.webp`. Estilo realista, sem texto, sem rostos próximos detalhados.
 
-### 5. Documentação
-- Atualizar `docs/article-footer.md`: descrever que o CTA virou parte do `CommentSection`, novo exemplo de uso, prop `category` obrigatória, exemplo do `ArticleFooter` simplificado.
+## 4. Artigos (12, todos ≥ 1500 palavras escritas)
 
-### 6. Post modelo
-- Atualizar `Seedance20IA2026.tsx` (remover a `<div>` CTA, passar `category="ia"` ao `CommentSection`) para servir de referência viva.
+Todos com `category: "geek"`, `subtopic: "bannerlord"`, FAQ (mín. 5 perguntas), 4–5 fontes oficiais, blocos `EditorialTake` + `ArticleSources` + `RelatedPosts` + `CommentSection` (com `category="geek"`), `AuthorBio`, `BackNavigation` apontando para `/geek/bannerlord`, `trackArticleRead`, `ShareWhatsApp`, `AdLeaderboard` + `AdInArticle` posicionados conforme padrão, `DynamicSEO` via `posts.ts` (excerpt + 10+ keywords + readTime), Breadcrumb completo do caminho no portal e nos artigos.
 
-## Detalhes técnicos
+Lista de artigos e foco factual (apenas dados reais, verificáveis via fontes oficiais TaleWorlds, Steam, Mount&Blade Wiki, PCGamingWiki, Nexus Mods):
 
-- Tokens de cor já existem por categoria (`ia`, `invest`, `geek`, `otaku`) — reaproveitar mesmo mapa usado em `EditorialTake`.
-- Tipografia/espaçamento: replicar a métrica de `EditorialTake` (`my-10`, `p-6 md:p-7`, `font-display text-xs md:text-sm uppercase tracking-[0.12em]`) para consistência mobile/tablet/desktop.
-- Script de migração é idempotente: rodar duas vezes não duplica `category` (checa se prop já existe antes de inserir).
-- Sem mudanças de business logic, RLS ou backend.
+1. **bannerlord-guia-completo-2026** — Ficha técnica, lançamento (1.0 em 25/10/2022), engine, versões (datas e novidades de cada versão), modos (campanha sandbox, custom battle, multiplayer), preço atual Steam e Epic Games BRL/USD, edições.
+2. **bannerlord-mapa-calradia-regioes** — Mapa de Calradia, regiões (Império do Norte/Sul/Oeste, Battania, Sturgia, Vlandia, Khuzaits, Aserai), cidades principais, geografia.
+3. **bannerlord-culturas-explicadas** — 8 culturas jogáveis, bônus de cultura, traços, impactos em economia/diplomacia/recrutamento.
+4. **bannerlord-reinos-faccoes-completo** — Os 8 reinos majoritários + clãs menores, líderes, política, casamentos, vassalagem.
+5. **bannerlord-tropas-arvores-completas** — Árvores de tropas de cada cultura (recruta → tier 6), tropas nobres, tropas regulares, mercenárias.
+6. **bannerlord-melhores-tropas-tier-list** — Ranking factual baseado em estatísticas do jogo: Fian Champions, Banner Knights, Druzhinnik Champions, Khan's Guard, Imperial Legionary, Mamluke Heavy, Veteran Falxman, Aserai Master Archer.
+7. **bannerlord-comparacao-tropas-reinos** — Comparações tier 6 vs tier 6 entre reinos (cavalaria pesada, infantaria, arqueiros, montaria a distância) com stats reais (armadura, dano, skill).
+8. **bannerlord-war-sails-dlc** — Tudo atualizado sobre a expansão War Sails: data de lançamento real, mecânica naval, novo conteúdo, preço real, plataformas, fontes oficiais TaleWorlds.
+9. **bannerlord-mods-guia-instalacao** — Como funcionam mods: Steam Workshop vs Nexus Mods, Bannerlord Mod Launcher, ordem de carregamento, mods essenciais (Harmony, ButterLib, UIExtenderEx, Diplomacy, Calradia Expanded, RBM, BannerKings).
+10. **bannerlord-requisitos-pc-armazenamento** — Requisitos mínimos e recomendados (CPU, GPU, RAM), tamanho de instalação (~60 GB), SSD obrigatório/recomendado conforme PCGamingWiki, performance por configuração.
+11. **bannerlord-tempo-zerar-campanha** — Tempo aproximado para zerar (dados HowLongToBeat): main story ~50h, completionist ~200h+, sandbox infinito; objetivos da campanha (Império unificado vs novo reino, dragon banner).
+12. **bannerlord-dicas-iniciantes-economia-combate** — 25+ dicas verificáveis: caravanas, workshops, política, perks, smithing, recrutamento, battle tactics.
 
-## Plano de execução
+> Regra dura: zero invenção. Qualquer dado que não tiver fonte oficial fica de fora. Se a War Sails não tiver detalhe específico publicado, dizer "ainda não confirmado".
 
-```text
-1. Editar CommentSection (nova prop + bloco de convite).
-2. Editar ArticleFooter para repassar category.
-3. Atualizar docs/article-footer.md.
-4. Criar scripts/migrate-comment-cta.mjs e rodar 1x.
-5. Atualizar scripts/check-article-footer-order.mjs (nova ordem + checagens extras).
-6. Ajustar manualmente posts marcados como "aviso" pelo migrator (se houver).
-7. Rodar prebuild — esperar 0 erros, 137 posts validados.
-```
+## 5. Portal `BannerlordPortal.tsx`
 
-## Riscos
+Copiar a estrutura do `CrimsonDesertPortal.tsx`:
 
-- Posts onde a `<div>` CTA foi customizada (texto diferente) serão removidos igualmente — o convite passa a ser único no `CommentSection`. Se algum post precisar de CTA específico de conteúdo (ex.: "qual seu isekai favorito?"), proponho deixar essa pergunta como último parágrafo do corpo do artigo, não como caixa separada.
-- Inferência de categoria por arquivo falha se o post não usar `CategoryBadge` nem `trackArticleRead`; nesse caso o script loga aviso e pula, exigindo ajuste manual.
+- `DynamicSEO`, `BackNavigation`, hero com `bannerlord-hero.webp`, intro (~3 parágrafos sobre Bannerlord/Calradia/TaleWorlds).
+- Grid dos 12 artigos com card padrão (slug, title, subtitle, desc, image, badge).
+- Seção CTA "Participe da conversa" via `CommentSection postId="bannerlord-portal" category="geek"` (hub, sem `EditorialTake`/`Sources`).
+- Adicionar `'bannerlord-portal'` à allowlist de hubs em `scripts/check-article-footer-order.mjs`.
+
+## 6. Registro em `src/data/posts.ts`
+
+Cada um dos 12 artigos com: id, slug, title, excerpt (≤160 chars), content (resumo), category `"geek"`, subtopic `"bannerlord"`, image, author "VICIO&nbsp;", date, readTime, faq.
+
+- Atualizar `prebuild` rodando `node scripts/generate-sitemaps.mjs` automaticamente (já no fluxo).
+
+## 7. Validações automáticas no fim
+
+- `node scripts/check-article-footer-order.mjs` deve passar 12 novos artigos.
+- `node scripts/check-dynamicseo-duplicates.mjs`.
+- Conferir manualmente word-count ≥ 1500 em cada novo arquivo (script utilitário pode ser reaproveitado do loop anterior).
+
+## 8. Documentação curta
+
+Atualizar `docs/article-footer.md` apenas se necessário (não deve mudar). Memory `mem://features/categories` já contempla Geek.
+
+## Riscos / pontos de atenção
+
+- **War Sails**: informação ainda esparsa. Manter o post focado em fatos anunciados pela TaleWorlds; evitar especulação.
+- **Stats de tropas**: usar valores exatos da wiki oficial (mountandblade.fandom.com) e referenciar.
+- **Preço Steam BRL**: snapshot com data de consulta, alertando que pode mudar.
+- **Mods**: links apenas para Steam Workshop e Nexus Mods (sem hosts piratas).
+- 12 artigos longos = chat extenso; vou implementar em batches paralelos por grupos de 3–4 arquivos.  
+Irei adicionar a imagem original do mapa de war sails para você guardar e usar nos artigos que falarem de War Sails. O mapa oficial da campanha do jogo principal pode pesquisar na internet e usar.  
+  
+Faça o portal e o artigo 1 primeiro e depois vá fazendo 1 artigo por vez.
