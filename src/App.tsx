@@ -257,6 +257,8 @@ const Seedance20IA2026               = lazy(() => import("./pages/posts/Seedance
 const ReMonster2026                  = lazy(() => import("./pages/posts/ReMonster2026"));
 const IsekaiMokushirokuMynoghra2026  = lazy(() => import("./pages/posts/IsekaiMokushirokuMynoghra2026"));
 const SunoAIMusica2026               = lazy(() => import("./pages/posts/SunoAIMusica2026"));
+const BannerlordPortal               = lazy(() => import("./pages/posts/BannerlordPortal"));
+const BannerlordGuiaCompleto         = lazy(() => import("./pages/posts/BannerlordGuiaCompleto"));
  
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -308,6 +310,8 @@ const App = () => (
                 <Route path="/otaku/overlord" element={<OverlordPortal />} />
                 <Route path="/geek/assassins-creed" element={<AssassinsCreedPortal />} />
                 <Route path="/geek/crimson-desert" element={<CrimsonDesertPortal />} />
+                <Route path="/geek/bannerlord" element={<BannerlordPortal />} />
+                <Route path="/post/bannerlord-guia-completo-2026" element={<BannerlordGuiaCompleto />} />
                 <Route path="/post/crimson-desert-guia-completo" element={<CrimsonDesertGuiaCompleto />} />
                 <Route path="/post/crimson-desert-personagens-kliff-damiane-oongka" element={<CrimsonDesertPersonagens />} />
                 <Route path="/post/crimson-desert-patches-atualizacoes-2026" element={<CrimsonDesertPatches />} />
