@@ -77,6 +77,7 @@ import iaPrivacidadeImg from "@/assets/ia-privacidade-dados-2026.webp";
 import etfs2026Img from "@/assets/etfs-guia-completo-2026.webp";
 import economiaDomesticaImg from "@/assets/economia-domestica-dicas-2026.webp";
 import crimsonDesertGuiaImg from "@/assets/crimson-desert-guia.webp";
+import bannerlordGuiaImg from "@/assets/bannerlord-guia.webp";
 import crimsonDesertCombateImg from "@/assets/crimson-desert-combate.webp";
 import crimsonDesertReviewImg from "@/assets/crimson-desert-review.webp";
 import crimsonDesertBuildsImg from "@/assets/crimson-desert-builds.webp";
