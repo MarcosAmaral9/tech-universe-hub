@@ -77,6 +77,7 @@ import iaPrivacidadeImg from "@/assets/ia-privacidade-dados-2026.webp";
 import etfs2026Img from "@/assets/etfs-guia-completo-2026.webp";
 import economiaDomesticaImg from "@/assets/economia-domestica-dicas-2026.webp";
 import crimsonDesertGuiaImg from "@/assets/crimson-desert-guia.webp";
+import bannerlordGuiaImg from "@/assets/bannerlord-guia.webp";
 import crimsonDesertCombateImg from "@/assets/crimson-desert-combate.webp";
 import crimsonDesertReviewImg from "@/assets/crimson-desert-review.webp";
 import crimsonDesertBuildsImg from "@/assets/crimson-desert-builds.webp";
@@ -2702,7 +2703,29 @@ export const blogPosts: BlogPost[] = [
     ]
   },
 
-  // ── Investimentos Posts ───────────────────────────────────
+  // ── Bannerlord Painel (Geek) ─────────────────────────────
+  {
+    id: "bannerlord-1",
+    slug: "bannerlord-guia-completo-2026",
+    title: "Mount & Blade II: Bannerlord — Guia Completo, História, Lançamento, Modos e Preços",
+    excerpt: "Guia completo de Mount & Blade II: Bannerlord. Lançamento 1.0 em 25/10/2022, modos de jogo, preço Steam, requisitos de PC, tempo para zerar, suporte a mods e a expansão War Sails.",
+    content: "",
+    category: "geek",
+    subtopic: "bannerlord",
+    image: bannerlordGuiaImg,
+    author: "VICIO<CODE>",
+    date: "2026-06-03",
+    readTime: "14 min",
+    faq: [
+      { q: "Quando Mount & Blade II: Bannerlord foi lançado?", a: "Entrou em Early Access em 30 de março de 2020 e teve a versão 1.0 lançada em 25 de outubro de 2022 para PC (Steam, Epic, GOG), Xbox One, Xbox Series X|S, PS4 e PS5, sempre desenvolvido e publicado pela TaleWorlds Entertainment." },
+      { q: "Quanto custa Bannerlord?", a: "O preço base no Steam é US$ 49,99, em torno de R$ 99,90 na Steam Brasil, com variação por câmbio e promoções. A versão Digital Deluxe custa um pouco mais e inclui cosméticos e a trilha sonora. O preço da expansão War Sails ainda não foi divulgado oficialmente pela TaleWorlds." },
+      { q: "Quantas horas para zerar Bannerlord?", a: "Segundo o HowLongToBeat, a história principal leva cerca de 50 horas, main + extras cerca de 120 horas e a busca pelo conteúdo completo passa de 200 horas. Como o modo sandbox é virtualmente infinito, é comum ver jogadores com mais de 1.000 horas." },
+      { q: "Quais os requisitos de PC para Bannerlord?", a: "Os requisitos mínimos pedem Intel Core i3-8100 ou Ryzen 3 1200, 6 GB de RAM e GeForce GTX 660 2 GB. Os recomendados pedem Core i5-9600K ou Ryzen 5 3600X, 8 GB de RAM e GTX 1060 6 GB. A instalação base ocupa cerca de 60 GB e é fortemente recomendado usar uma unidade de armazenamento em estado sólido (SSD)." },
+      { q: "Bannerlord aceita mods?", a: "Sim. A TaleWorlds suporta mods oficialmente via Steam Workshop, Nexus Mods e o launcher do próprio jogo. A maioria dos mods grandes depende de bibliotecas como Harmony, ButterLib e UIExtenderEx e é instalada na ordem correta pelo launcher." },
+    ],
+  },
+
+
   {
     id: "111",
     slug: "cdb-2026-guia-completo",
