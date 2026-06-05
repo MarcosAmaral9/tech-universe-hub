@@ -415,21 +415,22 @@ const BannerlordGuiaCompleto = () => {
           extra de gestão para reinos com saída para o mar — atendendo a um pedido histórico da comunidade.
         </p>
 
-        <figure className="not-prose my-8">
-          <div className="rounded-xl overflow-hidden border border-amber-500/30">
-            <img
-              src={bannerlordWarSailsMap}
-              alt="Mapa oficial de War Sails — costa de Calradia com cidades portuárias e estandartes das culturas"
-              loading="lazy"
-              decoding="async"
-              className="w-full"
-            />
+        <div className="not-prose my-10 p-6 md:p-8 rounded-2xl bg-gradient-to-br from-blue-950/40 via-slate-900/30 to-background border border-blue-500/30 shadow-xl">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/40 text-blue-300 text-[11px] font-bold uppercase tracking-wider">
+              <Ship className="h-3.5 w-3.5" /> Mapa Oficial · War Sails
+            </span>
           </div>
-          <figcaption className="text-xs text-muted-foreground mt-2 text-center italic">
+          <LightboxImage
+            src={bannerlordWarSailsMap}
+            alt="Mapa oficial de War Sails — costa de Calradia com cidades portuárias e estandartes das culturas"
+            caption="Clique para ampliar · Inspecione cidades portuárias, ilhas e estandartes"
+          />
+          <p className="text-xs text-muted-foreground mt-4 italic leading-relaxed">
             Mapa oficial divulgado pela TaleWorlds — costa de Calradia com cidades portuárias, ilhas e estandartes das
-            culturas envolvidas no combate naval da expansão <strong>War Sails</strong>.
-          </figcaption>
-        </figure>
+            culturas envolvidas no combate naval da expansão <strong className="text-blue-300">War Sails</strong>.
+          </p>
+        </div>
 
         <EditorialTake category="geek">
           <p>
