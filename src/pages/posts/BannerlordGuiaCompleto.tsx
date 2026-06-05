@@ -212,38 +212,28 @@ const BannerlordGuiaCompleto = () => {
           <Trophy className="inline h-7 w-7 mr-2 -mt-1" />
           Modos de Jogo Disponíveis
         </h2>
-        <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+        <div className="not-prose my-6 overflow-x-auto rounded-xl border border-amber-500/20 shadow-lg">
+          <table className="w-full border-collapse bg-card text-sm">
             <thead>
-              <tr className="bg-secondary">
-                <th className="text-left py-3 px-4">Modo</th>
-                <th className="text-left py-3 px-4">Para Quem</th>
-                <th className="text-left py-3 px-4">Detalhes</th>
+              <tr className="bg-gradient-to-r from-amber-500/25 via-amber-500/15 to-transparent">
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Modo</th>
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Para Quem</th>
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Detalhes</th>
               </tr>
             </thead>
             <tbody>
               {[
-                [
-                  "Campanha (Story Mode)",
-                  "Primeira partida",
-                  "Sandbox com a missão do Dragon Banner ativada. Dá direção e desbloqueia eventos únicos.",
-                ],
-                ["Sandbox", "Veteranos", "Mesmo mapa, sem missão principal. Zero gatilhos narrativos, jogo do zero."],
-                [
-                  "Custom Battle",
-                  "Quem quer testar",
-                  "Batalha avulsa fora da campanha. Escolha terreno, exércitos e comandantes.",
-                ],
-                [
-                  "Multiplayer",
-                  "Competitivo",
-                  "Captain · Skirmish 6v6 · Siege · TDM · Battle · Duel. Comunidade ativa em servidores modados.",
-                ],
-              ].map(([m, q, d]) => (
-                <tr key={m} className="border-t border-border hover:bg-muted/30 transition-colors">
-                  <td className="py-3 px-4 font-bold text-amber-400">{m}</td>
-                  <td className="py-3 px-4 text-foreground text-xs">{q}</td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">{d}</td>
+                ["Campanha (Story Mode)", "Primeira partida", "Sandbox com a missão do Dragon Banner ativada. Dá direção e desbloqueia eventos únicos.", "bg-amber-500/15 text-amber-300 border-amber-500/30"],
+                ["Sandbox", "Veteranos", "Mesmo mapa, sem missão principal. Zero gatilhos narrativos, jogo do zero.", "bg-sky-500/15 text-sky-300 border-sky-500/30"],
+                ["Custom Battle", "Quem quer testar", "Batalha avulsa fora da campanha. Escolha terreno, exércitos e comandantes.", "bg-emerald-500/15 text-emerald-300 border-emerald-500/30"],
+                ["Multiplayer", "Competitivo", "Captain · Skirmish 6v6 · Siege · TDM · Battle · Duel. Comunidade ativa em servidores modados.", "bg-purple-500/15 text-purple-300 border-purple-500/30"],
+              ].map(([m, q, d, color], i) => (
+                <tr key={m} className={`border-t border-border/60 hover:bg-muted/30 transition-colors ${i % 2 === 1 ? "bg-muted/20" : ""}`}>
+                  <td className="py-3.5 px-4">
+                    <span className={`inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-bold ${color}`}>{m}</span>
+                  </td>
+                  <td className="py-3.5 px-4 text-foreground text-xs font-medium">{q}</td>
+                  <td className="py-3.5 px-4 text-muted-foreground text-xs leading-relaxed">{d}</td>
                 </tr>
               ))}
             </tbody>
