@@ -32,6 +32,7 @@ const PANELS: PanelDef[] = [
   { label: "Avatar",           href: "/geek/avatar",           category: "geek",  matchPrefixes: ["avatar-"] },
   { label: "Assassin's Creed", href: "/geek/assassins-creed",  category: "geek",  matchPrefixes: ["ac-"] },
   { label: "Crimson Desert",   href: "/geek/crimson-desert",   category: "geek",  matchPrefixes: ["crimson-desert-"] },
+  { label: "Bannerlord",       href: "/geek/bannerlord",       category: "geek",  matchPrefixes: ["bannerlord-"] },
   { label: "TenSura",          href: "/otaku/tensura",         category: "otaku", matchPrefixes: ["tensura-"] },
   { label: "Overlord",         href: "/otaku/overlord",        category: "otaku", matchPrefixes: ["overlord-"] },
 ];

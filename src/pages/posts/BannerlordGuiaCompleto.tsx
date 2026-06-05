@@ -24,6 +24,7 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
+import LightboxImage from "@/components/LightboxImage";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import bannerlordGuiaImg from "@/assets/bannerlord-guia.webp";
 import bannerlordWarSailsMap from "@/assets/bannerlord-war-sails-map.webp";
@@ -169,25 +170,30 @@ const BannerlordGuiaCompleto = () => {
           <strong>Arenicos</strong>:
         </p>
 
-        <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+        <div className="not-prose my-6 overflow-x-auto rounded-xl border border-amber-500/20 shadow-lg">
+          <table className="w-full border-collapse bg-card text-sm">
             <thead>
-              <tr className="bg-amber-500/15 text-amber-300">
-                <th className="text-left py-3 px-4">Facção Imperial</th>
-                <th className="text-left py-3 px-4">Líder</th>
-                <th className="text-left py-3 px-4">Pretensão</th>
+              <tr className="bg-gradient-to-r from-amber-500/25 via-amber-500/15 to-transparent">
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Facção Imperial</th>
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Líder</th>
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Pretensão</th>
               </tr>
             </thead>
             <tbody>
               {[
-                ["Empire of the North", "Lucon", "Continuidade dinástica imperial"],
-                ["Empire of the South", "Rhagaea", "Regência em nome do herdeiro"],
-                ["Empire of the West", "Garios", "Restauração via eleição senatorial"],
-              ].map(([f, l, p]) => (
-                <tr key={f} className="border-t border-border hover:bg-muted/30 transition-colors">
-                  <td className="py-3 px-4 font-medium">{f}</td>
-                  <td className="py-3 px-4 text-amber-400">{l}</td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">{p}</td>
+                ["Empire of the North", "Lucon", "Continuidade dinástica imperial", "bg-blue-500/10 text-blue-300 border-blue-500/30"],
+                ["Empire of the South", "Rhagaea", "Regência em nome do herdeiro", "bg-rose-500/10 text-rose-300 border-rose-500/30"],
+                ["Empire of the West", "Garios", "Restauração via eleição senatorial", "bg-emerald-500/10 text-emerald-300 border-emerald-500/30"],
+              ].map(([f, l, p, color], i) => (
+                <tr key={f} className={`border-t border-border/60 hover:bg-muted/30 transition-colors ${i % 2 === 1 ? "bg-muted/20" : ""}`}>
+                  <td className="py-3.5 px-4">
+                    <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-bold ${color}`}>
+                      <span className="w-1.5 h-1.5 rounded-full bg-current" />
+                      {f}
+                    </span>
+                  </td>
+                  <td className="py-3.5 px-4 font-semibold text-amber-400">{l}</td>
+                  <td className="py-3.5 px-4 text-muted-foreground text-xs leading-relaxed">{p}</td>
                 </tr>
               ))}
             </tbody>
@@ -206,38 +212,28 @@ const BannerlordGuiaCompleto = () => {
           <Trophy className="inline h-7 w-7 mr-2 -mt-1" />
           Modos de Jogo Disponíveis
         </h2>
-        <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+        <div className="not-prose my-6 overflow-x-auto rounded-xl border border-amber-500/20 shadow-lg">
+          <table className="w-full border-collapse bg-card text-sm">
             <thead>
-              <tr className="bg-secondary">
-                <th className="text-left py-3 px-4">Modo</th>
-                <th className="text-left py-3 px-4">Para Quem</th>
-                <th className="text-left py-3 px-4">Detalhes</th>
+              <tr className="bg-gradient-to-r from-amber-500/25 via-amber-500/15 to-transparent">
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Modo</th>
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Para Quem</th>
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Detalhes</th>
               </tr>
             </thead>
             <tbody>
               {[
-                [
-                  "Campanha (Story Mode)",
-                  "Primeira partida",
-                  "Sandbox com a missão do Dragon Banner ativada. Dá direção e desbloqueia eventos únicos.",
-                ],
-                ["Sandbox", "Veteranos", "Mesmo mapa, sem missão principal. Zero gatilhos narrativos, jogo do zero."],
-                [
-                  "Custom Battle",
-                  "Quem quer testar",
-                  "Batalha avulsa fora da campanha. Escolha terreno, exércitos e comandantes.",
-                ],
-                [
-                  "Multiplayer",
-                  "Competitivo",
-                  "Captain · Skirmish 6v6 · Siege · TDM · Battle · Duel. Comunidade ativa em servidores modados.",
-                ],
-              ].map(([m, q, d]) => (
-                <tr key={m} className="border-t border-border hover:bg-muted/30 transition-colors">
-                  <td className="py-3 px-4 font-bold text-amber-400">{m}</td>
-                  <td className="py-3 px-4 text-foreground text-xs">{q}</td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">{d}</td>
+                ["Campanha (Story Mode)", "Primeira partida", "Sandbox com a missão do Dragon Banner ativada. Dá direção e desbloqueia eventos únicos.", "bg-amber-500/15 text-amber-300 border-amber-500/30"],
+                ["Sandbox", "Veteranos", "Mesmo mapa, sem missão principal. Zero gatilhos narrativos, jogo do zero.", "bg-sky-500/15 text-sky-300 border-sky-500/30"],
+                ["Custom Battle", "Quem quer testar", "Batalha avulsa fora da campanha. Escolha terreno, exércitos e comandantes.", "bg-emerald-500/15 text-emerald-300 border-emerald-500/30"],
+                ["Multiplayer", "Competitivo", "Captain · Skirmish 6v6 · Siege · TDM · Battle · Duel. Comunidade ativa em servidores modados.", "bg-purple-500/15 text-purple-300 border-purple-500/30"],
+              ].map(([m, q, d, color], i) => (
+                <tr key={m} className={`border-t border-border/60 hover:bg-muted/30 transition-colors ${i % 2 === 1 ? "bg-muted/20" : ""}`}>
+                  <td className="py-3.5 px-4">
+                    <span className={`inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-bold ${color}`}>{m}</span>
+                  </td>
+                  <td className="py-3.5 px-4 text-foreground text-xs font-medium">{q}</td>
+                  <td className="py-3.5 px-4 text-muted-foreground text-xs leading-relaxed">{d}</td>
                 </tr>
               ))}
             </tbody>
@@ -248,39 +244,35 @@ const BannerlordGuiaCompleto = () => {
           <Coins className="inline h-7 w-7 mr-2 -mt-1" />
           Quanto Custa e Onde Comprar
         </h2>
-        <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+        <div className="not-prose my-6 overflow-x-auto rounded-xl border border-amber-500/20 shadow-lg">
+          <table className="w-full border-collapse bg-card text-sm">
             <thead>
-              <tr className="bg-secondary">
-                <th className="text-left py-3 px-4">Edição</th>
-                <th className="text-left py-3 px-4">Preço (USD)</th>
-                <th className="text-left py-3 px-4">Conteúdo Adicional</th>
+              <tr className="bg-gradient-to-r from-amber-500/25 via-amber-500/15 to-transparent">
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Edição</th>
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Preço (USD)</th>
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Conteúdo Adicional</th>
               </tr>
             </thead>
             <tbody>
               {[
-                ["Standard", "US$ 49,99", "Jogo base completo, atualizações gratuitas pós-1.0"],
-                ["Digital Deluxe", "US$ 59,99", "Jogo base + pacote cosmético de armaduras + trilha sonora oficial"],
-                [
-                  "War Sails (DLC)",
-                  "A confirmar",
-                  "Expansão com combate naval — preço oficial ainda não divulgado pela TaleWorlds",
-                ],
-              ].map(([e, p, c]) => (
-                <tr key={e} className="border-t border-border">
-                  <td className="py-3 px-4 font-medium">{e}</td>
-                  <td className="py-3 px-4 text-amber-400 font-bold">{p}</td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">{c}</td>
+                ["Standard", "US$ 49,99", "Jogo base completo, atualizações gratuitas pós-1.0", "text-foreground"],
+                ["Digital Deluxe", "US$ 59,99", "Jogo base + pacote cosmético de armaduras + trilha sonora oficial", "text-amber-300"],
+                ["War Sails (DLC)", "A confirmar", "Expansão com combate naval — preço oficial ainda não divulgado pela TaleWorlds", "text-blue-300"],
+              ].map(([e, p, c, color], i) => (
+                <tr key={e} className={`border-t border-border/60 hover:bg-muted/30 transition-colors ${i % 2 === 1 ? "bg-muted/20" : ""}`}>
+                  <td className={`py-3.5 px-4 font-bold ${color}`}>{e}</td>
+                  <td className="py-3.5 px-4 text-amber-400 font-bold">{p}</td>
+                  <td className="py-3.5 px-4 text-muted-foreground text-xs leading-relaxed">{c}</td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <p className="text-xs text-muted-foreground mt-2">
-            ⚠️ Valor brasileiro historicamente em torno de <strong>R$ 99,90</strong>; varia conforme câmbio e promoções
-            sazonais. Disponível também em <strong>Epic Games Store</strong>, <strong>GOG</strong>,
-            <strong> Xbox Store</strong> e <strong>PlayStation Store</strong> com paridade de preço.
-          </p>
         </div>
+        <p className="text-xs text-muted-foreground mt-2 not-prose">
+          ⚠️ Valor brasileiro historicamente em torno de <strong>R$ 99,90</strong>; varia conforme câmbio e promoções
+          sazonais. Disponível também em <strong>Epic Games Store</strong>, <strong>GOG</strong>,{" "}
+          <strong>Xbox Store</strong> e <strong>PlayStation Store</strong> com paridade de preço.
+        </p>
 
         <div className="not-prose my-6 p-5 bg-emerald-500/10 border border-emerald-500/30 rounded-xl">
           <h3 className="font-bold text-emerald-300 mb-2 flex items-center gap-2">
@@ -297,46 +289,42 @@ const BannerlordGuiaCompleto = () => {
           <Monitor className="inline h-7 w-7 mr-2 -mt-1" />
           Requisitos de PC e Armazenamento
         </h2>
-        <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+        <div className="not-prose my-6 overflow-x-auto rounded-xl border border-amber-500/20 shadow-lg">
+          <table className="w-full border-collapse bg-card text-sm">
             <thead>
-              <tr className="bg-secondary">
-                <th className="text-left py-3 px-4">Tier</th>
-                <th className="text-left py-3 px-4">CPU</th>
-                <th className="text-left py-3 px-4">GPU</th>
-                <th className="text-left py-3 px-4">RAM</th>
-                <th className="text-left py-3 px-4">Espaço</th>
+              <tr className="bg-gradient-to-r from-amber-500/25 via-amber-500/15 to-transparent">
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Tier</th>
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">CPU</th>
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">GPU</th>
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">RAM</th>
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Espaço</th>
               </tr>
             </thead>
             <tbody>
               {[
-                ["Mínimo", "Intel i3-8100 / Ryzen 3 1200", "GTX 660 2 GB / HD 7850 2 GB", "6 GB", "60 GB HDD"],
-                ["Recomendado", "Intel i5-9600K / Ryzen 5 3600X", "GTX 1060 6 GB / RX 580 8 GB", "8 GB", "60 GB SSD"],
-                [
-                  "Ultra/1000 tropas",
-                  "Ryzen 5 5600 / i5-12400",
-                  "RTX 3060 12 GB / RX 6700 XT 12 GB",
-                  "16 GB",
-                  "90 GB+ SSD",
-                ],
-              ].map(([t, c, g, r, s]) => (
-                <tr key={t} className="border-t border-border hover:bg-muted/30 transition-colors">
-                  <td className="py-3 px-4 font-bold text-amber-400">{t}</td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">{c}</td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">{g}</td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">{r}</td>
-                  <td className="py-3 px-4 text-primary text-xs">{s}</td>
+                ["Mínimo", "Intel i3-8100 / Ryzen 3 1200", "GTX 660 2 GB / HD 7850 2 GB", "6 GB", "60 GB HDD", "bg-slate-500/15 text-slate-300 border-slate-500/30"],
+                ["Recomendado", "Intel i5-9600K / Ryzen 5 3600X", "GTX 1060 6 GB / RX 580 8 GB", "8 GB", "60 GB SSD", "bg-emerald-500/15 text-emerald-300 border-emerald-500/30"],
+                ["Ultra · 1000 tropas", "Ryzen 5 5600 / i5-12400", "RTX 3060 12 GB / RX 6700 XT 12 GB", "16 GB", "90 GB+ SSD", "bg-red-500/15 text-red-300 border-red-500/30"],
+              ].map(([t, c, g, r, s, color], i) => (
+                <tr key={t} className={`border-t border-border/60 hover:bg-muted/30 transition-colors ${i % 2 === 1 ? "bg-muted/20" : ""}`}>
+                  <td className="py-3.5 px-4">
+                    <span className={`inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-bold ${color}`}>{t}</span>
+                  </td>
+                  <td className="py-3.5 px-4 text-muted-foreground text-xs">{c}</td>
+                  <td className="py-3.5 px-4 text-muted-foreground text-xs">{g}</td>
+                  <td className="py-3.5 px-4 text-foreground text-xs font-semibold">{r}</td>
+                  <td className="py-3.5 px-4 text-amber-400 text-xs font-semibold">{s}</td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <p className="text-xs text-muted-foreground mt-2">
-            Em batalhas com 1.000 unidades o gargalo costuma ser <strong>CPU e RAM</strong>, não GPU. Por isso o jogo
-            escala bem em placas antigas, mas sofre em processadores fracos quando passa de 600 soldados na tela. Mods
-            grandes (RBM, BannerKings, texturas em alta) podem ultrapassar 90 GB de instalação. Fonte: página oficial
-            Steam · PCGamingWiki.
-          </p>
         </div>
+        <p className="text-xs text-muted-foreground mt-2 not-prose">
+          Em batalhas com 1.000 unidades o gargalo costuma ser <strong>CPU e RAM</strong>, não GPU. Por isso o jogo
+          escala bem em placas antigas, mas sofre em processadores fracos quando passa de 600 soldados na tela. Mods
+          grandes (RBM, BannerKings, texturas em alta) podem ultrapassar 90 GB de instalação. Fonte: página oficial
+          Steam · PCGamingWiki.
+        </p>
 
         <h2>
           <Clock className="inline h-7 w-7 mr-2 -mt-1" />
@@ -427,21 +415,22 @@ const BannerlordGuiaCompleto = () => {
           extra de gestão para reinos com saída para o mar — atendendo a um pedido histórico da comunidade.
         </p>
 
-        <figure className="not-prose my-8">
-          <div className="rounded-xl overflow-hidden border border-amber-500/30">
-            <img
-              src={bannerlordWarSailsMap}
-              alt="Mapa oficial de War Sails — costa de Calradia com cidades portuárias e estandartes das culturas"
-              loading="lazy"
-              decoding="async"
-              className="w-full"
-            />
+        <div className="not-prose my-10 p-6 md:p-8 rounded-2xl bg-gradient-to-br from-blue-950/40 via-slate-900/30 to-background border border-blue-500/30 shadow-xl">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/40 text-blue-300 text-[11px] font-bold uppercase tracking-wider">
+              <Ship className="h-3.5 w-3.5" /> Mapa Oficial · War Sails
+            </span>
           </div>
-          <figcaption className="text-xs text-muted-foreground mt-2 text-center italic">
+          <LightboxImage
+            src={bannerlordWarSailsMap}
+            alt="Mapa oficial de War Sails — costa de Calradia com cidades portuárias e estandartes das culturas"
+            caption="Clique para ampliar · Inspecione cidades portuárias, ilhas e estandartes"
+          />
+          <p className="text-xs text-muted-foreground mt-4 italic leading-relaxed">
             Mapa oficial divulgado pela TaleWorlds — costa de Calradia com cidades portuárias, ilhas e estandartes das
-            culturas envolvidas no combate naval da expansão <strong>War Sails</strong>.
-          </figcaption>
-        </figure>
+            culturas envolvidas no combate naval da expansão <strong className="text-blue-300">War Sails</strong>.
+          </p>
+        </div>
 
         <EditorialTake category="geek">
           <p>
