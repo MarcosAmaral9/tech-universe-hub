@@ -289,46 +289,42 @@ const BannerlordGuiaCompleto = () => {
           <Monitor className="inline h-7 w-7 mr-2 -mt-1" />
           Requisitos de PC e Armazenamento
         </h2>
-        <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+        <div className="not-prose my-6 overflow-x-auto rounded-xl border border-amber-500/20 shadow-lg">
+          <table className="w-full border-collapse bg-card text-sm">
             <thead>
-              <tr className="bg-secondary">
-                <th className="text-left py-3 px-4">Tier</th>
-                <th className="text-left py-3 px-4">CPU</th>
-                <th className="text-left py-3 px-4">GPU</th>
-                <th className="text-left py-3 px-4">RAM</th>
-                <th className="text-left py-3 px-4">Espaço</th>
+              <tr className="bg-gradient-to-r from-amber-500/25 via-amber-500/15 to-transparent">
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Tier</th>
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">CPU</th>
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">GPU</th>
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">RAM</th>
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Espaço</th>
               </tr>
             </thead>
             <tbody>
               {[
-                ["Mínimo", "Intel i3-8100 / Ryzen 3 1200", "GTX 660 2 GB / HD 7850 2 GB", "6 GB", "60 GB HDD"],
-                ["Recomendado", "Intel i5-9600K / Ryzen 5 3600X", "GTX 1060 6 GB / RX 580 8 GB", "8 GB", "60 GB SSD"],
-                [
-                  "Ultra/1000 tropas",
-                  "Ryzen 5 5600 / i5-12400",
-                  "RTX 3060 12 GB / RX 6700 XT 12 GB",
-                  "16 GB",
-                  "90 GB+ SSD",
-                ],
-              ].map(([t, c, g, r, s]) => (
-                <tr key={t} className="border-t border-border hover:bg-muted/30 transition-colors">
-                  <td className="py-3 px-4 font-bold text-amber-400">{t}</td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">{c}</td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">{g}</td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">{r}</td>
-                  <td className="py-3 px-4 text-primary text-xs">{s}</td>
+                ["Mínimo", "Intel i3-8100 / Ryzen 3 1200", "GTX 660 2 GB / HD 7850 2 GB", "6 GB", "60 GB HDD", "bg-slate-500/15 text-slate-300 border-slate-500/30"],
+                ["Recomendado", "Intel i5-9600K / Ryzen 5 3600X", "GTX 1060 6 GB / RX 580 8 GB", "8 GB", "60 GB SSD", "bg-emerald-500/15 text-emerald-300 border-emerald-500/30"],
+                ["Ultra · 1000 tropas", "Ryzen 5 5600 / i5-12400", "RTX 3060 12 GB / RX 6700 XT 12 GB", "16 GB", "90 GB+ SSD", "bg-red-500/15 text-red-300 border-red-500/30"],
+              ].map(([t, c, g, r, s, color], i) => (
+                <tr key={t} className={`border-t border-border/60 hover:bg-muted/30 transition-colors ${i % 2 === 1 ? "bg-muted/20" : ""}`}>
+                  <td className="py-3.5 px-4">
+                    <span className={`inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-bold ${color}`}>{t}</span>
+                  </td>
+                  <td className="py-3.5 px-4 text-muted-foreground text-xs">{c}</td>
+                  <td className="py-3.5 px-4 text-muted-foreground text-xs">{g}</td>
+                  <td className="py-3.5 px-4 text-foreground text-xs font-semibold">{r}</td>
+                  <td className="py-3.5 px-4 text-amber-400 text-xs font-semibold">{s}</td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <p className="text-xs text-muted-foreground mt-2">
-            Em batalhas com 1.000 unidades o gargalo costuma ser <strong>CPU e RAM</strong>, não GPU. Por isso o jogo
-            escala bem em placas antigas, mas sofre em processadores fracos quando passa de 600 soldados na tela. Mods
-            grandes (RBM, BannerKings, texturas em alta) podem ultrapassar 90 GB de instalação. Fonte: página oficial
-            Steam · PCGamingWiki.
-          </p>
         </div>
+        <p className="text-xs text-muted-foreground mt-2 not-prose">
+          Em batalhas com 1.000 unidades o gargalo costuma ser <strong>CPU e RAM</strong>, não GPU. Por isso o jogo
+          escala bem em placas antigas, mas sofre em processadores fracos quando passa de 600 soldados na tela. Mods
+          grandes (RBM, BannerKings, texturas em alta) podem ultrapassar 90 GB de instalação. Fonte: página oficial
+          Steam · PCGamingWiki.
+        </p>
 
         <h2>
           <Clock className="inline h-7 w-7 mr-2 -mt-1" />
