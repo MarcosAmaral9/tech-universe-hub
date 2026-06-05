@@ -244,39 +244,35 @@ const BannerlordGuiaCompleto = () => {
           <Coins className="inline h-7 w-7 mr-2 -mt-1" />
           Quanto Custa e Onde Comprar
         </h2>
-        <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+        <div className="not-prose my-6 overflow-x-auto rounded-xl border border-amber-500/20 shadow-lg">
+          <table className="w-full border-collapse bg-card text-sm">
             <thead>
-              <tr className="bg-secondary">
-                <th className="text-left py-3 px-4">Edição</th>
-                <th className="text-left py-3 px-4">Preço (USD)</th>
-                <th className="text-left py-3 px-4">Conteúdo Adicional</th>
+              <tr className="bg-gradient-to-r from-amber-500/25 via-amber-500/15 to-transparent">
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Edição</th>
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Preço (USD)</th>
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Conteúdo Adicional</th>
               </tr>
             </thead>
             <tbody>
               {[
-                ["Standard", "US$ 49,99", "Jogo base completo, atualizações gratuitas pós-1.0"],
-                ["Digital Deluxe", "US$ 59,99", "Jogo base + pacote cosmético de armaduras + trilha sonora oficial"],
-                [
-                  "War Sails (DLC)",
-                  "A confirmar",
-                  "Expansão com combate naval — preço oficial ainda não divulgado pela TaleWorlds",
-                ],
-              ].map(([e, p, c]) => (
-                <tr key={e} className="border-t border-border">
-                  <td className="py-3 px-4 font-medium">{e}</td>
-                  <td className="py-3 px-4 text-amber-400 font-bold">{p}</td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">{c}</td>
+                ["Standard", "US$ 49,99", "Jogo base completo, atualizações gratuitas pós-1.0", "text-foreground"],
+                ["Digital Deluxe", "US$ 59,99", "Jogo base + pacote cosmético de armaduras + trilha sonora oficial", "text-amber-300"],
+                ["War Sails (DLC)", "A confirmar", "Expansão com combate naval — preço oficial ainda não divulgado pela TaleWorlds", "text-blue-300"],
+              ].map(([e, p, c, color], i) => (
+                <tr key={e} className={`border-t border-border/60 hover:bg-muted/30 transition-colors ${i % 2 === 1 ? "bg-muted/20" : ""}`}>
+                  <td className={`py-3.5 px-4 font-bold ${color}`}>{e}</td>
+                  <td className="py-3.5 px-4 text-amber-400 font-bold">{p}</td>
+                  <td className="py-3.5 px-4 text-muted-foreground text-xs leading-relaxed">{c}</td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <p className="text-xs text-muted-foreground mt-2">
-            ⚠️ Valor brasileiro historicamente em torno de <strong>R$ 99,90</strong>; varia conforme câmbio e promoções
-            sazonais. Disponível também em <strong>Epic Games Store</strong>, <strong>GOG</strong>,
-            <strong> Xbox Store</strong> e <strong>PlayStation Store</strong> com paridade de preço.
-          </p>
         </div>
+        <p className="text-xs text-muted-foreground mt-2 not-prose">
+          ⚠️ Valor brasileiro historicamente em torno de <strong>R$ 99,90</strong>; varia conforme câmbio e promoções
+          sazonais. Disponível também em <strong>Epic Games Store</strong>, <strong>GOG</strong>,{" "}
+          <strong>Xbox Store</strong> e <strong>PlayStation Store</strong> com paridade de preço.
+        </p>
 
         <div className="not-prose my-6 p-5 bg-emerald-500/10 border border-emerald-500/30 rounded-xl">
           <h3 className="font-bold text-emerald-300 mb-2 flex items-center gap-2">
