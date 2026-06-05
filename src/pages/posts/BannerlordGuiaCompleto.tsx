@@ -170,25 +170,30 @@ const BannerlordGuiaCompleto = () => {
           <strong>Arenicos</strong>:
         </p>
 
-        <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+        <div className="not-prose my-6 overflow-x-auto rounded-xl border border-amber-500/20 shadow-lg">
+          <table className="w-full border-collapse bg-card text-sm">
             <thead>
-              <tr className="bg-amber-500/15 text-amber-300">
-                <th className="text-left py-3 px-4">Facção Imperial</th>
-                <th className="text-left py-3 px-4">Líder</th>
-                <th className="text-left py-3 px-4">Pretensão</th>
+              <tr className="bg-gradient-to-r from-amber-500/25 via-amber-500/15 to-transparent">
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Facção Imperial</th>
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Líder</th>
+                <th className="text-left py-3.5 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Pretensão</th>
               </tr>
             </thead>
             <tbody>
               {[
-                ["Empire of the North", "Lucon", "Continuidade dinástica imperial"],
-                ["Empire of the South", "Rhagaea", "Regência em nome do herdeiro"],
-                ["Empire of the West", "Garios", "Restauração via eleição senatorial"],
-              ].map(([f, l, p]) => (
-                <tr key={f} className="border-t border-border hover:bg-muted/30 transition-colors">
-                  <td className="py-3 px-4 font-medium">{f}</td>
-                  <td className="py-3 px-4 text-amber-400">{l}</td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">{p}</td>
+                ["Empire of the North", "Lucon", "Continuidade dinástica imperial", "bg-blue-500/10 text-blue-300 border-blue-500/30"],
+                ["Empire of the South", "Rhagaea", "Regência em nome do herdeiro", "bg-rose-500/10 text-rose-300 border-rose-500/30"],
+                ["Empire of the West", "Garios", "Restauração via eleição senatorial", "bg-emerald-500/10 text-emerald-300 border-emerald-500/30"],
+              ].map(([f, l, p, color], i) => (
+                <tr key={f} className={`border-t border-border/60 hover:bg-muted/30 transition-colors ${i % 2 === 1 ? "bg-muted/20" : ""}`}>
+                  <td className="py-3.5 px-4">
+                    <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-bold ${color}`}>
+                      <span className="w-1.5 h-1.5 rounded-full bg-current" />
+                      {f}
+                    </span>
+                  </td>
+                  <td className="py-3.5 px-4 font-semibold text-amber-400">{l}</td>
+                  <td className="py-3.5 px-4 text-muted-foreground text-xs leading-relaxed">{p}</td>
                 </tr>
               ))}
             </tbody>
