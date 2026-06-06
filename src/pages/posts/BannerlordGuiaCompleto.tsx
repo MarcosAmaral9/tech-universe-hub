@@ -70,12 +70,13 @@ const BannerlordGuiaCompleto = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img
-          fetchpriority="high"
-          loading="eager"
-          decoding="async"
+        <SkeletonImage
+          priority
           src={bannerlordGuiaImg}
           alt="Cavaleiro medieval observando exército formado em Calradia"
+          width={1920}
+          height={1080}
+          wrapperClassName="w-full h-full"
           className="w-full h-full object-cover"
         />
       </div>
