@@ -4,6 +4,7 @@ import { AdInArticle } from "@/components/AdSense";
 import BackNavigation from "@/components/BackNavigation";
 import CommentSection from "@/components/CommentSection";
 import LightboxImage from "@/components/LightboxImage";
+import SkeletonImage from "@/components/SkeletonImage";
 import { ChevronRight, Ship, Map as MapIcon, Crown, Sword, Users, Hammer, Flag, Calendar } from "lucide-react";
 import bannerlordHeroImg from "@/assets/bannerlord-hero.webp";
 import bannerlordGuiaImg from "@/assets/bannerlord-guia.webp";
@@ -47,12 +48,13 @@ const BannerlordPortal = () => (
 
     {/* HERO */}
     <section className="relative h-[60vh] md:h-[460px] overflow-hidden">
-      <img
-        fetchpriority="high"
+      <SkeletonImage
+        priority
         src={bannerlordHeroImg}
         alt="Mount & Blade II: Bannerlord — batalha medieval em Calradia"
-        loading="eager"
-        decoding="async"
+        width={1920}
+        height={1080}
+        wrapperClassName="absolute inset-0 w-full h-full"
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-background/10" />
@@ -186,11 +188,12 @@ const BannerlordPortal = () => (
             className="group bg-card rounded-2xl border border-border overflow-hidden hover:border-amber-500/60 hover:shadow-xl hover:shadow-amber-500/5 hover:-translate-y-1 transition-all flex flex-col"
           >
             <div className="relative aspect-video overflow-hidden shrink-0">
-              <img
+              <SkeletonImage
                 src={article.image}
                 alt={article.title}
-                loading="lazy"
-                decoding="async"
+                width={1920}
+                height={1080}
+                wrapperClassName="w-full h-full"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

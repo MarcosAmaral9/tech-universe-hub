@@ -25,6 +25,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import LightboxImage from "@/components/LightboxImage";
+import SkeletonImage from "@/components/SkeletonImage";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import bannerlordGuiaImg from "@/assets/bannerlord-guia.webp";
 import bannerlordWarSailsMap from "@/assets/bannerlord-war-sails-map.webp";
@@ -70,12 +71,13 @@ const BannerlordGuiaCompleto = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img
-          fetchpriority="high"
-          loading="eager"
-          decoding="async"
+        <SkeletonImage
+          priority
           src={bannerlordGuiaImg}
           alt="Cavaleiro medieval observando exército formado em Calradia"
+          width={1920}
+          height={1080}
+          wrapperClassName="w-full h-full"
           className="w-full h-full object-cover"
         />
       </div>
