@@ -136,9 +136,12 @@ const BannerlordPortal = () => (
 
         <LightboxImage
           src={bannerlordWarSailsMap}
-          alt="Mapa oficial de War Sails — costa de Calradia com cidades portuárias e estandartes das culturas"
+          alt="Mapa oficial da expansão War Sails de Mount & Blade II: Bannerlord, mostrando a costa de Calradia com cidades portuárias, ilhas e estandartes coloridos de cada cultura envolvida no combate naval"
           caption="Clique para ampliar · Mapa oficial divulgado pela TaleWorlds"
           className="shadow-2xl shadow-blue-500/10"
+          width={1991}
+          height={1821}
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
         />
 
         <div className="grid sm:grid-cols-3 gap-4 mt-8">
