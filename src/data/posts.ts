@@ -2746,6 +2746,8 @@ export const blogPosts: BlogPost[] = [
       { q: "Posso mudar de cultura durante a campanha?", a: "Não. A cultura do personagem é definida na criação e é permanente. Mas você pode conquistar cidades de qualquer cultura — elas só ficarão com penalidade de lealdade caso sua cultura seja diferente da população local." },
     ],
   },
+
+  {
     id: "111",
     slug: "cdb-2026-guia-completo",
     title: "CDB em 2026: Ainda Vale a Pena? Guia Completo com Taxas Reais",
