@@ -8,6 +8,7 @@ import SkeletonImage from "@/components/SkeletonImage";
 import { ChevronRight, Ship, Map as MapIcon, Crown, Sword, Users, Hammer, Flag, Calendar } from "lucide-react";
 import bannerlordHeroImg from "@/assets/bannerlord-hero.webp";
 import bannerlordGuiaImg from "@/assets/bannerlord-guia.webp";
+import bannerlordCulturasImg from "@/assets/bannerlord-culturas-reinos.webp";
 import bannerlordWarSailsMap from "@/assets/bannerlord-war-sails-map.webp";
 
 const articles = [
@@ -19,7 +20,17 @@ const articles = [
       "História, lançamento, modos, preço, edições e o estado atual do jogo após anos de atualizações da TaleWorlds.",
     image: bannerlordGuiaImg,
     btn: "Ver Guia",
-    badge: "🛡️ Novo",
+    badge: "🛡️ Guia",
+  },
+  {
+    slug: "bannerlord-culturas-reinos-calradia-2026",
+    title: "Culturas & Reinos",
+    subtitle: "Guia das 8 Facções de Calradia",
+    desc:
+      "Vlandia, Battania, Sturgia, Aserai, Khuzait e os 3 Impérios — tropas-estrela, pontos fortes, fracos e qual escolher na primeira partida.",
+    image: bannerlordCulturasImg,
+    btn: "Ver Culturas",
+    badge: "✨ Novo",
   },
 ];
 
