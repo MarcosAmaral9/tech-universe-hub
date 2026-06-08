@@ -36,7 +36,6 @@ const articles = [
 
 const upcoming = [
   { icon: MapIcon, title: "Mapa de Calradia", desc: "Cidades, castelos e vilas de cada cultura" },
-  { icon: Crown, title: "Culturas & Reinos", desc: "Vlandia, Battania, Sturgia, Aserai, Khuzait e mais" },
   { icon: Users, title: "Árvores de Tropas", desc: "Comparativo unidade a unidade" },
   { icon: Sword, title: "Melhores Tropas", desc: "Tier list por reino e estilo" },
   { icon: Hammer, title: "Mods Essenciais", desc: "Steam Workshop, Nexus, Harmony" },
