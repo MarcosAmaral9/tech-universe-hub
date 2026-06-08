@@ -78,6 +78,7 @@ import etfs2026Img from "@/assets/etfs-guia-completo-2026.webp";
 import economiaDomesticaImg from "@/assets/economia-domestica-dicas-2026.webp";
 import crimsonDesertGuiaImg from "@/assets/crimson-desert-guia.webp";
 import bannerlordGuiaImg from "@/assets/bannerlord-guia.webp";
+import bannerlordCulturasImg from "@/assets/bannerlord-culturas-reinos.webp";
 import crimsonDesertCombateImg from "@/assets/crimson-desert-combate.webp";
 import crimsonDesertReviewImg from "@/assets/crimson-desert-review.webp";
 import crimsonDesertBuildsImg from "@/assets/crimson-desert-builds.webp";
@@ -2725,8 +2726,26 @@ export const blogPosts: BlogPost[] = [
     ],
   },
 
-
   {
+    id: "bannerlord-2",
+    slug: "bannerlord-culturas-reinos-calradia-2026",
+    title: "Bannerlord: Culturas e Reinos de Calradia — Guia das 8 Facções",
+    excerpt: "As 8 culturas jogáveis de Mount & Blade II: Bannerlord — Vlandia, Battania, Sturgia, Aserai, Khuzait e os 3 Impérios. Tropas-estrela, pontos fortes, fracos e qual escolher na primeira partida.",
+    content: "",
+    category: "geek",
+    subtopic: "bannerlord",
+    image: bannerlordCulturasImg,
+    author: "VICIO<CODE>",
+    date: "2026-06-08",
+    readTime: "12 min",
+    faq: [
+      { q: "Quantas culturas existem em Mount & Blade II: Bannerlord?", a: "São 8 culturas jogáveis: Vlandia (inspirada nos normandos), Battania (celtas), Sturgia (vikings/Rus), Aserai (árabes), Khuzait (mongóis) e os três fragmentos do Império de Calradia — Norte, Sul e Oeste (inspirados em Bizâncio)." },
+      { q: "Qual a melhor cultura para começar em Bannerlord?", a: "Para iniciantes, Vlandia é a mais perdoadora graças à cavalaria pesada (Vlandian Banner Knights) que vence batalhas mesmo com táticas básicas. Império é a escolha mais equilibrada e Khuzait é recomendada para jogadores avançados que dominam horse archers." },
+      { q: "A cultura escolhida afeta o jogo?", a: "Sim. Cada cultura dá bônus passivos diferentes (Aserai melhora caravanas, Khuzait acelera movimento na campanha, Battania melhora bônus em florestas) e define a árvore inicial de tropas que você recruta nas vilas controladas por essa facção." },
+      { q: "Qual a tropa mais forte de Bannerlord?", a: "Depende do contexto. Khuzait Khan's Guard e Battanian Fian Champion dominam à distância, Vlandian Banner Knight é a melhor cavalaria pesada do jogo, e Imperial Cataphract é a unidade mais cara e versátil. Não há uma tropa universalmente 'melhor'." },
+      { q: "Posso mudar de cultura durante a campanha?", a: "Não. A cultura do personagem é definida na criação e é permanente. Mas você pode conquistar cidades de qualquer cultura — elas só ficarão com penalidade de lealdade caso sua cultura seja diferente da população local." },
+    ],
+  },
     id: "111",
     slug: "cdb-2026-guia-completo",
     title: "CDB em 2026: Ainda Vale a Pena? Guia Completo com Taxas Reais",
