@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Clock, Download, Flame } from "lucide-react";
 import { BlogPost } from "@/types/blog";
 import CategoryBadge from "./CategoryBadge";
+import SkeletonImage from "./SkeletonImage";
 import { useOfflinePosts } from "@/hooks/useOfflinePosts";
 import { useTopPosts } from "@/hooks/useTopPosts";
 
@@ -21,11 +22,12 @@ const PostCard = forwardRef<HTMLElement, PostCardProps>(({ post }, ref) => {
       <Link to={`/post/${post.slug}`} className="block">
         {/* Image */}
         <div className="relative aspect-video overflow-hidden">
-          <img
+          <SkeletonImage
             src={post.image}
             alt={post.title}
-            loading="lazy"
-            decoding="async"
+            width={1920}
+            height={1080}
+            wrapperClassName="w-full h-full"
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div className="absolute top-3 left-3">

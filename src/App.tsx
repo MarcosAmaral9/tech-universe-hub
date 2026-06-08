@@ -259,6 +259,7 @@ const IsekaiMokushirokuMynoghra2026  = lazy(() => import("./pages/posts/IsekaiMo
 const SunoAIMusica2026               = lazy(() => import("./pages/posts/SunoAIMusica2026"));
 const BannerlordPortal               = lazy(() => import("./pages/posts/BannerlordPortal"));
 const BannerlordGuiaCompleto         = lazy(() => import("./pages/posts/BannerlordGuiaCompleto"));
+const BannerlordCulturasReinos       = lazy(() => import("./pages/posts/BannerlordCulturasReinos"));
  
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -312,6 +313,7 @@ const App = () => (
                 <Route path="/geek/crimson-desert" element={<CrimsonDesertPortal />} />
                 <Route path="/geek/bannerlord" element={<BannerlordPortal />} />
                 <Route path="/post/bannerlord-guia-completo-2026" element={<BannerlordGuiaCompleto />} />
+                <Route path="/post/bannerlord-culturas-reinos-calradia-2026" element={<BannerlordCulturasReinos />} />
                 <Route path="/post/crimson-desert-guia-completo" element={<CrimsonDesertGuiaCompleto />} />
                 <Route path="/post/crimson-desert-personagens-kliff-damiane-oongka" element={<CrimsonDesertPersonagens />} />
                 <Route path="/post/crimson-desert-patches-atualizacoes-2026" element={<CrimsonDesertPatches />} />

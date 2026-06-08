@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Clock } from "lucide-react";
 import { getLatestPostsByCategory } from "@/data/posts";
 import CategoryBadge from "./CategoryBadge";
+import SkeletonImage from "./SkeletonImage";
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -125,12 +126,13 @@ const FeaturedCarousel = () => {
             >
               {/* Image */}
               <div className="relative w-full md:w-1/2 h-48 sm:h-64 md:h-auto overflow-hidden">
-                <img
+                <SkeletonImage
+                  priority
                   src={currentPost.image}
                   alt={currentPost.title}
-                  loading="eager"
-                  decoding="async"
-                  fetchPriority="high"
+                  width={1920}
+                  height={1080}
+                  wrapperClassName="w-full h-full"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent md:bg-gradient-to-r" />
