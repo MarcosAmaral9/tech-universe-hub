@@ -503,7 +503,7 @@ const BannerlordCulturasReinos = () => {
           práticas para começar:
         </p>
 
-        <div className="not-prose my-6 grid sm:grid-cols-3 gap-4">
+        <div className="not-prose my-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
             {
               label: "Iniciante",
@@ -518,6 +518,13 @@ const BannerlordCulturasReinos = () => {
               note: "Tropas equilibradas, boa em qualquer batalha",
               box: "bg-indigo-500/10 border-indigo-500/30",
               text: "text-indigo-300",
+            },
+            {
+              label: "Naval (War Sails)",
+              value: "Nords",
+              note: "Domine os mares, raids costeiros e abordagem",
+              box: "bg-blue-500/10 border-blue-500/30",
+              text: "text-blue-300",
             },
             {
               label: "Avançado",
@@ -535,6 +542,13 @@ const BannerlordCulturasReinos = () => {
           ))}
         </div>
 
+        <p>
+          Vale lembrar que a cultura do personagem é diferente da cultura do reino que você funda ou serve: você
+          pode ser um Nord vassalo do Império, por exemplo, e isso gera tensão diplomática deliciosa em
+          roleplay — clãs imperiais te enxergam como bárbaro, enquanto os Nords te chamam de traidor. Esse tipo
+          de conflito narrativo é parte do charme de Bannerlord em campanha longa.
+        </p>
+
         <h2>
           <MapIcon className="inline h-7 w-7 mr-2 -mt-1" />
           Geografia e Fronteiras
@@ -543,8 +557,11 @@ const BannerlordCulturasReinos = () => {
           O <strong>Império</strong> ocupa o centro-sul de Calradia, fragmentado entre três facções (Norte, Sul e
           Oeste) em guerra civil. <strong>Vlandia</strong> domina o oeste continental, <strong>Battania</strong> as
           montanhas centrais, <strong>Sturgia</strong> o norte gelado, <strong>Aserai</strong> os desertos do sul e
-          <strong> Khuzait</strong> as estepes orientais. As fronteiras são fluidas — guerras, casamentos e rebeliões
-          podem redesenhar o mapa em uma única campanha.
+          <strong> Khuzait</strong> as estepes orientais. Com a expansão <strong className="text-blue-300">
+          War Sails</strong>, os <strong className="text-blue-300">Nords</strong> reivindicam o litoral norte e as
+          ilhas, criando uma nova frente de conflito que atravessa fronteiras tradicionais por via marítima. As
+          fronteiras são fluidas — guerras, casamentos, rebeliões e agora <em>raids</em> costeiros podem
+          redesenhar o mapa em uma única campanha.
         </p>
 
         <p>
@@ -552,6 +569,8 @@ const BannerlordCulturasReinos = () => {
           cidades, castelos e vilas culturais detalhadas — fique atento ao{" "}
           <a href="/geek/bannerlord">painel completo</a>.
         </p>
+
+
 
         <EditorialTake category="geek">
           <p>
