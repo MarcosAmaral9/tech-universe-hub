@@ -14,14 +14,20 @@ import {
   Map as MapIcon,
   Users,
   AlertTriangle,
+  Ship,
+  Anchor,
+  Coins,
+  Mountain,
 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import SkeletonImage from "@/components/SkeletonImage";
+import LightboxImage from "@/components/LightboxImage";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import culturasImg from "@/assets/bannerlord-culturas-reinos.webp";
+import bannerlordWarSailsMap from "@/assets/bannerlord-war-sails-map.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
 
 const cultures = [
