@@ -111,6 +111,16 @@ const cultures = [
     weakness: "Sem grande pico de poder em uma arma",
     troopStar: "Imperial Menavliaton",
   },
+  {
+    name: "Nords",
+    inspiration: "Nórdicos · Vikings de mar aberto",
+    capital: "Wercheg (porto-fortaleza)",
+    color: "bg-blue-500/15 text-blue-300 border-blue-500/30",
+    accent: "text-blue-300",
+    strength: "Infantaria de abordagem e domínio naval (War Sails)",
+    weakness: "Cavalaria praticamente inexistente, fraca em campo aberto",
+    troopStar: "Nord Huscarl",
+  },
 ];
 
 const BannerlordCulturasReinos = () => {
