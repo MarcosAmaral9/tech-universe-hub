@@ -415,6 +415,85 @@ const BannerlordCulturasReinos = () => {
         </div>
 
         <h2>
+          <Coins className="inline h-7 w-7 mr-2 -mt-1" />
+          Bônus Passivos e Economia por Cultura
+        </h2>
+        <p>
+          Além das tropas, cada cultura entrega um <strong>bônus passivo</strong> que muda a economia de campanha
+          e o modo como você sobe de poder. Esses modificadores são silenciosos no começo, mas viram bola-de-neve
+          depois de 50 horas de jogo — especialmente quando você começa a administrar várias cidades.
+        </p>
+
+        <div className="not-prose my-6 overflow-x-auto rounded-xl border border-amber-500/20 shadow-lg">
+          <table className="w-full border-collapse bg-card text-sm">
+            <thead>
+              <tr className="bg-gradient-to-r from-amber-500/25 via-amber-500/15 to-transparent">
+                <th className="text-left py-3 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Cultura</th>
+                <th className="text-left py-3 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Bônus Passivo</th>
+                <th className="text-left py-3 px-4 font-bold text-amber-300 uppercase tracking-wider text-xs">Melhor para</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["Vlandia", "+20% renda em vilas de mineração", "Roleplay feudal, foco em castelos", "text-rose-300"],
+                ["Battania", "Sem penalidade de movimento em florestas", "Guerrilha, emboscadas em terreno fechado", "text-emerald-300"],
+                ["Sturgia", "Imunidade parcial a frio, +1 moral no inverno", "Campanhas longas no norte gelado", "text-sky-300"],
+                ["Aserai", "+10% relação com clãs de caravana", "Comerciante, mercador-rei", "text-amber-300"],
+                ["Khuzait", "+1 velocidade no mapa-mundi com cavalos", "Guerra de manobra, ataques relâmpago", "text-orange-300"],
+                ["Império", "+1 lealdade em cidades imperiais", "Reinos centralizados e burocráticos", "text-indigo-300"],
+                ["Nords (War Sails)", "+25% velocidade naval, desconto em estaleiros", "Pirataria, controle litorâneo, raids costeiros", "text-blue-300"],
+              ].map(([cult, bonus, best, color], i) => (
+                <tr key={cult} className={`border-t border-border/60 hover:bg-muted/30 transition-colors ${i % 2 === 1 ? "bg-muted/20" : ""}`}>
+                  <td className={`py-3 px-4 font-bold ${color}`}>{cult}</td>
+                  <td className="py-3 px-4 text-foreground text-xs">{bonus}</td>
+                  <td className="py-3 px-4 text-muted-foreground text-xs">{best}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          Note que o bônus dos Nords da expansão <strong className="text-blue-300">War Sails</strong> é o único
+          que oferece vantagem direta em <strong>combate naval</strong>. Se você pretende investir em frota
+          comercial ou militar, escolher Nords na criação do personagem corta dezenas de horas de grind de
+          tripulação e construção de navios — porque o bônus de tripulação acelera o recrutamento de remadores em
+          vilas costeiras controladas pela facção.
+        </p>
+
+        <h2>
+          <Mountain className="inline h-7 w-7 mr-2 -mt-1" />
+          Tier List: Quem Domina o Late-Game em 2026?
+        </h2>
+        <p>
+          Tier lists em Bannerlord variam por <em>patch</em> e por <em>mod</em>, mas a comunidade competitiva
+          (siege-only, batalhas customizadas 200v200 e clãs de PvP) costuma convergir nestas posições para o
+          jogo base atualizado e com a expansão War Sails ativa:
+        </p>
+
+        <div className="not-prose my-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
+          {[
+            { tier: "S", cult: "Khuzait", reason: "Khan's Guard dominante em campo aberto", color: "border-orange-500/40 bg-orange-500/10", text: "text-orange-300" },
+            { tier: "S", cult: "Nords", reason: "Domínio naval absoluto + Huscarls em cerco", color: "border-blue-500/40 bg-blue-500/10", text: "text-blue-300" },
+            { tier: "A", cult: "Vlandia", reason: "Banner Knights perdoam erros, cerco forte", color: "border-rose-500/40 bg-rose-500/10", text: "text-rose-300" },
+            { tier: "A", cult: "Battania", reason: "Fian Champions são os melhores arqueiros do jogo", color: "border-emerald-500/40 bg-emerald-500/10", text: "text-emerald-300" },
+            { tier: "B", cult: "Aserai", reason: "Mamelukes versáteis, mas exigem comando ativo", color: "border-amber-500/40 bg-amber-500/10", text: "text-amber-300" },
+            { tier: "B", cult: "Império", reason: "Tropas equilibradas, sem grande pico", color: "border-indigo-500/40 bg-indigo-500/10", text: "text-indigo-300" },
+            { tier: "C", cult: "Sturgia", reason: "Boa infantaria, mas frágil contra horse archers", color: "border-sky-500/40 bg-sky-500/10", text: "text-sky-300" },
+          ].map((t) => (
+            <div key={t.cult} className={`p-4 rounded-xl border ${t.color}`}>
+              <div className="flex items-center gap-3 mb-2">
+                <span className={`inline-flex items-center justify-center w-8 h-8 rounded-lg font-display font-black text-lg ${t.text} bg-background/60`}>
+                  {t.tier}
+                </span>
+                <span className={`font-bold ${t.text}`}>{t.cult}</span>
+              </div>
+              <p className="text-xs text-muted-foreground m-0">{t.reason}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2>
           <Users className="inline h-7 w-7 mr-2 -mt-1" />
           Qual Cultura Escolher na Primeira Partida?
         </h2>
