@@ -258,6 +258,135 @@ const BannerlordCulturasReinos = () => {
 
         <AdInArticle className="my-8" />
 
+        {/* WAR SAILS · NORDS */}
+        <h2>
+          <Ship className="inline h-7 w-7 mr-2 -mt-1 text-blue-300" />
+          Nords — A 9ª Cultura Trazida pela Expansão War Sails
+        </h2>
+        <p>
+          A primeira grande expansão paga de Bannerlord, <strong className="text-blue-300">War Sails</strong>,
+          anunciada pela TaleWorlds em 2025, fez muito mais do que adicionar combate naval ao jogo: ela trouxe
+          oficialmente para Calradia uma cultura inteira que, até então, só existia em
+          <em> Mount &amp; Blade: Warband</em> — os <strong className="text-blue-300">Nords</strong>. Esses povos
+          nórdicos do litoral norte são marinheiros nascidos, guerreiros de machado de duas mãos e mestres da
+          abordagem em alto-mar.
+        </p>
+
+        <div className="not-prose my-8 p-6 rounded-2xl border border-blue-500/30 bg-gradient-to-br from-blue-500/10 via-blue-500/5 to-background shadow-lg">
+          <div className="flex flex-wrap items-center gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-500/20 border border-blue-500/40 px-3 py-1 text-xs font-bold text-blue-200 uppercase tracking-wider">
+              <Anchor className="h-3.5 w-3.5" /> Novidade · War Sails
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 px-3 py-1 text-xs font-bold text-amber-300 uppercase tracking-wider">
+              <Flag className="h-3.5 w-3.5" /> Cultura jogável
+            </span>
+          </div>
+          <h3 className="font-display text-2xl font-bold mb-3 text-blue-200">Identidade dos Nords</h3>
+          <div className="grid md:grid-cols-2 gap-4 text-sm">
+            <div className="p-4 rounded-lg bg-background/40 border border-blue-500/20">
+              <div className="text-xs uppercase tracking-wide text-blue-300 mb-1">Inspiração histórica</div>
+              <p className="text-muted-foreground m-0">
+                Nórdicos da era Viking, com clara referência a saxões, dinamarqueses e noruegueses da Alta Idade
+                Média — incursões marítimas, runas, drakkars e jarls.
+              </p>
+            </div>
+            <div className="p-4 rounded-lg bg-background/40 border border-blue-500/20">
+              <div className="text-xs uppercase tracking-wide text-blue-300 mb-1">Estilo de combate</div>
+              <p className="text-muted-foreground m-0">
+                Infantaria pesada de escudo redondo, lanças de arremesso (<em>throwing spears</em>), machados de
+                duas mãos e a icônica <em>shield wall</em> capaz de aguentar cargas de cavalaria pesada.
+              </p>
+            </div>
+            <div className="p-4 rounded-lg bg-background/40 border border-blue-500/20">
+              <div className="text-xs uppercase tracking-wide text-blue-300 mb-1">Domínio naval</div>
+              <p className="text-muted-foreground m-0">
+                Únicos com bônus de cultura aplicado a navios: tripulações maiores, velocidade extra em alto-mar e
+                desconto na construção de longships e snekkjas.
+              </p>
+            </div>
+            <div className="p-4 rounded-lg bg-background/40 border border-blue-500/20">
+              <div className="text-xs uppercase tracking-wide text-blue-300 mb-1">Bônus passivo</div>
+              <p className="text-muted-foreground m-0">
+                +1 de moral em batalhas costeiras e a bordo, redução de penalidade por terreno arenoso e bônus de
+                relação ao saquear assentamentos litorâneos rivais.
+              </p>
+            </div>
+          </div>
+
+          <h3 className="font-display text-xl font-bold mt-6 mb-3 text-blue-200">Árvore de Tropas dos Nords</h3>
+          <div className="overflow-x-auto rounded-lg border border-blue-500/20">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-blue-500/15">
+                  <th className="text-left py-2.5 px-3 font-bold text-blue-200 uppercase tracking-wider text-xs">Tier</th>
+                  <th className="text-left py-2.5 px-3 font-bold text-blue-200 uppercase tracking-wider text-xs">Tropa</th>
+                  <th className="text-left py-2.5 px-3 font-bold text-blue-200 uppercase tracking-wider text-xs">Papel</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["T1", "Nord Recruit", "Infantaria leve com lança e escudo redondo"],
+                  ["T2", "Nord Footman", "Infantaria de linha, cota de malha curta"],
+                  ["T3", "Nord Warrior", "Veterano com machado de uma mão e javelins"],
+                  ["T4", "Nord Raider", "Escaramuçador de costa, especialista em abordagem"],
+                  ["T5", "Nord Huscarl", "Elite — machado de duas mãos, armadura pesada, shield wall"],
+                  ["T5", "Sea Jarl", "Capitão naval — bônus de comando em batalha de navio"],
+                ].map(([tier, troop, role]) => (
+                  <tr key={troop} className="border-t border-blue-500/15 hover:bg-blue-500/5 transition-colors">
+                    <td className="py-2.5 px-3 font-bold text-blue-300">{tier}</td>
+                    <td className="py-2.5 px-3 text-foreground font-semibold">{troop}</td>
+                    <td className="py-2.5 px-3 text-muted-foreground text-xs">{role}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* MAPA WAR SAILS — LIGHTBOX */}
+        <div className="not-prose my-10">
+          <div className="flex flex-col items-center text-center mb-5">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-300 text-xs font-bold uppercase tracking-wider mb-3">
+              <MapIcon className="h-4 w-4" /> Mapa Oficial · War Sails
+            </div>
+            <h3 className="font-display text-2xl md:text-3xl font-bold mb-2">A Costa dos Nords em Calradia</h3>
+            <p className="text-muted-foreground max-w-2xl text-sm">
+              Os Nords ocupam o litoral norte e as ilhas no mapa da expansão. Clique para ampliar — use os botões
+              de zoom ou arraste a imagem para inspecionar cada porto, fortaleza costeira e estandarte.
+            </p>
+          </div>
+
+          <LightboxImage
+            src={bannerlordWarSailsMap}
+            alt="Mapa oficial da expansão War Sails de Mount & Blade II: Bannerlord, destacando o litoral norte ocupado pelos Nords, seus portos-fortaleza, ilhas e estandartes culturais"
+            caption="Mapa oficial War Sails · Clique para ampliar, arraste para navegar e use +/- para o zoom"
+            className="shadow-2xl shadow-blue-500/10"
+            width={1991}
+            height={1821}
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
+          />
+        </div>
+
+        <p>
+          Diferente das outras culturas, os Nords não disputam grandes territórios continentais no mapa-mãe de
+          Calradia: o poder deles está no <strong className="text-blue-300">controle dos mares</strong>. Em uma
+          campanha de War Sails, vassalos Nords recebem feudos que incluem portos com estaleiros — locais que
+          permitem construir, reparar e armar longships e drakkars. Perder o porto significa perder a frota, e isso
+          muda completamente a lógica de cerco para essa cultura.
+        </p>
+
+        <p>
+          A IA Nord também é diferente: clãs comandados por jarls priorizam saques rápidos a vilas costeiras
+          rivais (<em>coastal raids</em>) em vez de cercos prolongados, o que cria conflitos diplomáticos
+          assimétricos — você pode perder uma vila inteira em uma noite sem nunca ter declarado guerra formal.
+          Para o jogador que escolhe Nords, isso significa renda de pilhagem alta, mas reputação flutuante e
+          tribunais permanentemente exigindo reparações.
+        </p>
+
+        <AdInArticle className="my-8" />
+
+
+
         <h2>
           <Shield className="inline h-7 w-7 mr-2 -mt-1" />
           Pontos Fortes e Fracos
