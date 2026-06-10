@@ -185,10 +185,12 @@ const BannerlordCulturasReinos = () => {
         prose-a:text-amber-400"
       >
         <p className="lead text-xl text-muted-foreground">
-          <strong>Calradia</strong> é o continente fictício de <em>Mount &amp; Blade II: Bannerlord</em>, dividido em
-          <strong> 8 culturas jogáveis</strong> inspiradas em civilizações reais da Antiguidade Tardia e da Alta Idade
-          Média. Cada uma tem cidades, arquitetura, bônus passivos, árvore de tropas e estilo de combate próprios — e
-          escolher a cultura certa muda completamente como você joga.
+          <strong>Calradia</strong> é o continente fictício de <em>Mount &amp; Blade II: Bannerlord</em>, dividido
+          historicamente em <strong>8 culturas jogáveis</strong> — e, com a chegada da expansão
+          <strong className="text-blue-300"> War Sails</strong>, ganha uma <strong>9ª cultura oficial</strong>: os
+          <strong className="text-blue-300"> Nords</strong>, povo nórdico do litoral norte. Cada cultura tem cidades,
+          arquitetura, bônus passivos, árvore de tropas e estilo de combate próprios — e escolher a cultura certa
+          muda completamente como você joga.
         </p>
 
         <div className="not-prose my-8 p-6 bg-gradient-to-br from-amber-500/10 via-amber-500/5 to-background rounded-xl border border-amber-500/30">
@@ -198,10 +200,10 @@ const BannerlordCulturasReinos = () => {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
             {[
-              ["Culturas", "8"],
-              ["Cidades", "70+"],
-              ["Castelos", "120+"],
-              ["Vilas", "350+"],
+              ["Culturas", "9"],
+              ["Cidades", "75+"],
+              ["Castelos", "125+"],
+              ["Vilas", "360+"],
             ].map(([k, v]) => (
               <div key={k} className="p-3 bg-background/40 rounded-lg border border-border/50 text-center">
                 <div className="text-2xl font-display font-bold text-amber-400">{v}</div>
@@ -213,7 +215,7 @@ const BannerlordCulturasReinos = () => {
 
         <h2>
           <Crown className="inline h-7 w-7 mr-2 -mt-1" />
-          As 8 Culturas em uma Tabela
+          As 9 Culturas em uma Tabela
         </h2>
         <p>
           O quadro abaixo resume cada facção, sua inspiração histórica, capital padrão e a tropa de elite mais
