@@ -217,13 +217,37 @@ const LightboxImage = ({
           {/* Área da imagem com scroll/pan quando ampliada */}
           <div
             ref={scrollRef}
-            className={`flex-1 overflow-auto overscroll-contain ${zoom > 1 ? "cursor-grab" : "cursor-zoom-in"}`}
+            className={`flex-1 overflow-auto overscroll-contain select-none ${zoom > 1 ? "cursor-grab active:cursor-grabbing" : "cursor-zoom-in"}`}
             style={{
               WebkitOverflowScrolling: "touch",
               touchAction: zoom > 1 ? "pan-x pan-y pinch-zoom" : "auto",
             }}
             onClick={(e) => e.stopPropagation()}
             onDoubleClick={toggleZoom}
+            onPointerDown={(e) => {
+              if (zoom <= 1) return;
+              if (e.pointerType === "mouse" && e.button !== 0) return;
+              const el = scrollRef.current;
+              if (!el) return;
+              const startX = e.clientX;
+              const startY = e.clientY;
+              const startScrollLeft = el.scrollLeft;
+              const startScrollTop = el.scrollTop;
+              el.style.cursor = "grabbing";
+              const move = (ev: PointerEvent) => {
+                el.scrollLeft = startScrollLeft - (ev.clientX - startX);
+                el.scrollTop = startScrollTop - (ev.clientY - startY);
+              };
+              const up = () => {
+                window.removeEventListener("pointermove", move);
+                window.removeEventListener("pointerup", up);
+                window.removeEventListener("pointercancel", up);
+                el.style.cursor = "";
+              };
+              window.addEventListener("pointermove", move);
+              window.addEventListener("pointerup", up);
+              window.addEventListener("pointercancel", up);
+            }}
           >
             <figure
               className="min-h-full min-w-full flex items-center justify-center p-4"
