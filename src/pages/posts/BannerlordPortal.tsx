@@ -5,10 +5,12 @@ import BackNavigation from "@/components/BackNavigation";
 import CommentSection from "@/components/CommentSection";
 import LightboxImage from "@/components/LightboxImage";
 import SkeletonImage from "@/components/SkeletonImage";
-import { ChevronRight, Ship, Map as MapIcon, Crown, Sword, Users, Hammer, Flag, Calendar } from "lucide-react";
+import { ChevronRight, Ship, Map as MapIcon, Crown, Sword, Users, Hammer, Flag, Calendar, Trophy } from "lucide-react";
 import bannerlordHeroImg from "@/assets/bannerlord-hero.webp";
 import bannerlordGuiaImg from "@/assets/bannerlord-guia.webp";
 import bannerlordCulturasImg from "@/assets/bannerlord-culturas-reinos.webp";
+import bannerlordArvoresTropasImg from "@/assets/bannerlord-arvores-tropas.webp";
+import bannerlordMelhoresTropasImg from "@/assets/bannerlord-melhores-tropas.webp";
 import bannerlordWarSailsMap from "@/assets/bannerlord-war-sails-map.webp";
 
 const articles = [
@@ -32,12 +34,30 @@ const articles = [
     btn: "Ver Culturas",
     badge: "✨ Novo",
   },
+  {
+    slug: "bannerlord-arvores-tropas-completo-2026",
+    title: "Árvores de Tropas",
+    subtitle: "Guia Completo das 9 Culturas (com Nords)",
+    desc:
+      "Todas as árvores tier por tier — do recruta T1 à elite T5. Inclui os Nords da expansão War Sails e composições híbridas testadas.",
+    image: bannerlordArvoresTropasImg,
+    btn: "Ver Tropas",
+    badge: "✨ Novo",
+  },
+  {
+    slug: "bannerlord-melhores-tropas-tier-list-2026",
+    title: "Tier List 2026",
+    subtitle: "As Melhores Tropas por Estilo",
+    desc:
+      "Ranking S/A/B/C por papel — linha, choque, arqueiros, cavalaria, horse archers e tropas navais dos Nords (War Sails).",
+    image: bannerlordMelhoresTropasImg,
+    btn: "Ver Ranking",
+    badge: "🏆 Novo",
+  },
 ];
 
 const upcoming = [
   { icon: MapIcon, title: "Mapa de Calradia", desc: "Cidades, castelos e vilas de cada cultura" },
-  { icon: Users, title: "Árvores de Tropas", desc: "Comparativo unidade a unidade" },
-  { icon: Sword, title: "Melhores Tropas", desc: "Tier list por reino e estilo" },
   { icon: Hammer, title: "Mods Essenciais", desc: "Steam Workshop, Nexus, Harmony" },
   { icon: Ship, title: "Expansão War Sails", desc: "Combate naval e novas regiões costeiras" },
 ];
