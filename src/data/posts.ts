@@ -79,6 +79,8 @@ import economiaDomesticaImg from "@/assets/economia-domestica-dicas-2026.webp";
 import crimsonDesertGuiaImg from "@/assets/crimson-desert-guia.webp";
 import bannerlordGuiaImg from "@/assets/bannerlord-guia.webp";
 import bannerlordCulturasImg from "@/assets/bannerlord-culturas-reinos.webp";
+import bannerlordArvoresTropasImg from "@/assets/bannerlord-arvores-tropas.webp";
+import bannerlordMelhoresTropasImg from "@/assets/bannerlord-melhores-tropas.webp";
 import crimsonDesertCombateImg from "@/assets/crimson-desert-combate.webp";
 import crimsonDesertReviewImg from "@/assets/crimson-desert-review.webp";
 import crimsonDesertBuildsImg from "@/assets/crimson-desert-builds.webp";
@@ -2744,6 +2746,48 @@ export const blogPosts: BlogPost[] = [
       { q: "A cultura escolhida afeta o jogo?", a: "Sim. Cada cultura dá bônus passivos diferentes (Aserai melhora caravanas, Khuzait acelera movimento na campanha, Battania melhora bônus em florestas) e define a árvore inicial de tropas que você recruta nas vilas controladas por essa facção." },
       { q: "Qual a tropa mais forte de Bannerlord?", a: "Depende do contexto. Khuzait Khan's Guard e Battanian Fian Champion dominam à distância, Vlandian Banner Knight é a melhor cavalaria pesada do jogo, e Imperial Cataphract é a unidade mais cara e versátil. Não há uma tropa universalmente 'melhor'." },
       { q: "Posso mudar de cultura durante a campanha?", a: "Não. A cultura do personagem é definida na criação e é permanente. Mas você pode conquistar cidades de qualquer cultura — elas só ficarão com penalidade de lealdade caso sua cultura seja diferente da população local." },
+    ],
+  },
+
+  {
+    id: "bannerlord-3",
+    slug: "bannerlord-arvores-tropas-completo-2026",
+    title: "Bannerlord: Árvores de Tropas — Guia Completo das 9 Culturas",
+    excerpt: "Todas as árvores de tropas de Mount & Blade II: Bannerlord — Vlandia, Battania, Sturgia, Aserai, Khuzait, Império (3) e Nords da expansão War Sails. Tier por tier, do recruta T1 à unidade de elite T5.",
+    content: "",
+    category: "geek",
+    subtopic: "bannerlord",
+    image: bannerlordArvoresTropasImg,
+    author: "VICIO<CODE>",
+    date: "2026-06-11",
+    readTime: "14 min",
+    faq: [
+      { q: "Quantos tiers de tropas existem em Bannerlord?", a: "Cada cultura tem uma árvore que vai do Tier 1 (recruta) até o Tier 5 (elite). Algumas árvores se ramificam no Tier 2 ou 3 entre infantaria pesada e atirador, ou entre cavalaria leve e cavalaria pesada." },
+      { q: "Qual a melhor cultura para árvore de tropas?", a: "Não há uma melhor universal. Vlandia tem a melhor cavalaria pesada (Banner Knight), Battania o melhor arqueiro (Fian Champion), Khuzait o melhor horse archer (Khan's Guard), Império a melhor linha (Legionary) e os Nords da expansão War Sails a melhor infantaria 2-mãos (Huscarl)." },
+      { q: "Os Nords entraram com a expansão War Sails?", a: "Sim. Os Nords foram introduzidos como 9ª cultura jogável na expansão paga War Sails, anunciada pela TaleWorlds em 2025. São especializados em infantaria pesada e tropas navais (Huscarl, Sea Jarl, Raider, Seafarer)." },
+      { q: "Como treinar tropas mais rápido em Bannerlord?", a: "Combine perks de Liderança (Leadership) e Cura (Medicine), use companheiros com Trainer alto, cace looters para ganhar XP de baixo risco e mantenha vilas da cultura desejada para fluxo constante de recrutas T1." },
+      { q: "Posso misturar tropas de várias culturas?", a: "Sim, e é a estratégia recomendada no late-game. Exércitos vencedores costumam misturar Vlandian Banner Knights, Battanian Fian Champions, Imperial Legionaries e (com War Sails) Nord Huscarls para cobrir todos os papéis táticos." },
+    ],
+  },
+
+  {
+    id: "bannerlord-4",
+    slug: "bannerlord-melhores-tropas-tier-list-2026",
+    title: "Bannerlord: Melhores Tropas e Tier List 2026 — Ranking por Estilo",
+    excerpt: "Tier list S/A/B/C das melhores tropas de Mount & Blade II: Bannerlord em 2026 com expansão War Sails. Ranking por papel: linha, choque, arqueiros, cavalaria, horse archers e tropas navais dos Nords.",
+    content: "",
+    category: "geek",
+    subtopic: "bannerlord",
+    image: bannerlordMelhoresTropasImg,
+    author: "VICIO<CODE>",
+    date: "2026-06-11",
+    readTime: "13 min",
+    faq: [
+      { q: "Qual a melhor tropa de Bannerlord em 2026?", a: "O consenso da comunidade aponta Khuzait Khan's Guard como a tropa mais quebrada do jogo em campo aberto. Mas o ranking varia por papel: Banner Knight (cavalaria), Fian Champion (arqueiro), Nord Huscarl (infantaria pesada) e Imperial Cataphract (versatilidade) dividem o topo." },
+      { q: "Os Nords são meta na expansão War Sails?", a: "Sim. O Nord Huscarl é S-tier em infantaria pesada e em combate naval, e o Sea Jarl é o único capitão com bônus de moral para tripulação de navio. A grande fraqueza dos Nords é a cavalaria, que precisa ser suprida com mercenários Vlandian ou Imperiais." },
+      { q: "Khan's Guard é a melhor tropa do jogo?", a: "Em campo aberto, sim. É praticamente imparável quando usada em massa por causa do arco composto pesado a cavalo. Mas perde muito desempenho em cerco, contra muralhas e contra fileiras de pikemen, então não é universalmente a melhor." },
+      { q: "Vale a pena montar exército de uma única cultura?", a: "Não no late-game. Mesmo a cultura mais forte tem buracos táticos. Os exércitos vencedores em modo difícil costumam ser híbridos: Banner Knight + Fian Champion + Imperial Legionary é uma composição clássica que cobre choque, dano à distância e linha." },
+      { q: "Como a tier list muda com mods?", a: "Mods grandes como Realistic Battle Mod, BannerKings e Europe 1100 reescrevem armaduras, dano e até árvores inteiras de tropas. A tier list deste guia vale para a versão 1.x do jogo base + expansão War Sails sem mods de combate pesados." },
     ],
   },
 
