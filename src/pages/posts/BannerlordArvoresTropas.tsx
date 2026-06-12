@@ -102,8 +102,9 @@ const trees: Array<{
       ["T4", "Sturgian Shock Troop", "Choque a pé", "2 mãos, sem escudo"],
       ["T4", "Sturgian Veteran Warrior", "Linha pesada", "Cota de malha, machado/escudo"],
       ["T4", "Sturgian Druzhinnik Champion", "Cavalaria pesada", "Melhor cavaleiro pesado de Sturgia"],
-      ["T5", "Sturgian Heavy Axeman", "Elite anti-armadura", "Machado pesado de uma mão + escudo"],
       ["T5", "Sturgian Heavy Spearman", "Elite anti-cavalaria", "Pique + cota de placas"],
+      ["T6", "Sturgian Druzhinnik Champion", "Cavalaria de elite (linha nobre, topo)", "Cota de placas + lança + maça"],
+      ["T6", "Sturgian Heavy Axeman", "Quebra-armadura de elite (linha nobre, topo)", "Machado pesado de uma mão + escudo"],
     ],
   },
   {
