@@ -59,7 +59,7 @@ const trees: Array<{
       ["T4", "Vlandian Sharpshooter", "Atirador de elite", "Besta pesada, dano devastador"],
       ["T4", "Vlandian Knight", "Cavalaria pesada", "Armadura completa, lança"],
       ["T5", "Vlandian Voulgier", "Infantaria pesada", "Voulge (machado-pique), 2 mãos"],
-      ["T5", "Vlandian Banner Knight", "Cavalaria de elite", "Lança em ristre, plate armor"],
+      ["T6", "Vlandian Banner Knight", "Cavalaria de elite (linha nobre, topo)", "Lança em ristre, plate armor"],
     ],
   },
   {
@@ -81,7 +81,7 @@ const trees: Array<{
       ["T4", "Battanian Highborn", "Arqueiro pesado", "Arco longo, sem escudo"],
       ["T4", "Battanian Mounted Skirmisher", "Cavalaria de escaramuça", "Javelins a cavalo"],
       ["T5", "Battanian Wildling", "Berserker", "2 mãos, sem armadura pesada"],
-      ["T5", "Battanian Fian Champion", "Arqueiro de elite", "Arco longo + espada de 2 mãos"],
+      ["T6", "Battanian Fian Champion", "Arqueiro de elite (linha nobre, topo)", "Arco longo + espada de 2 mãos"],
     ],
   },
   {
@@ -101,9 +101,10 @@ const trees: Array<{
       ["T3", "Sturgian Horseman", "Cavalaria leve", "Lança curta, fraca"],
       ["T4", "Sturgian Shock Troop", "Choque a pé", "2 mãos, sem escudo"],
       ["T4", "Sturgian Veteran Warrior", "Linha pesada", "Cota de malha, machado/escudo"],
-      ["T4", "Sturgian Druzhinnik Champion", "Cavalaria pesada", "Melhor cavaleiro pesado de Sturgia"],
-      ["T5", "Sturgian Heavy Axeman", "Elite anti-armadura", "Machado pesado de uma mão + escudo"],
+      ["T4", "Sturgian Druzhinnik", "Cavalaria pesada", "Lança + escudo redondo"],
       ["T5", "Sturgian Heavy Spearman", "Elite anti-cavalaria", "Pique + cota de placas"],
+      ["T6", "Sturgian Druzhinnik Champion", "Cavalaria de elite (linha nobre, topo)", "Cota de placas + lança + maça"],
+      ["T6", "Sturgian Heavy Axeman", "Quebra-armadura de elite (linha nobre, topo)", "Machado pesado de uma mão + escudo"],
     ],
   },
   {
@@ -125,7 +126,7 @@ const trees: Array<{
       ["T4", "Aserai Master Archer", "Arqueiro pesado", "Arco recurvo + flechas perfurantes"],
       ["T4", "Aserai Mameluke Heavy Cavalry", "Cavalaria pesada", "Cota de placas + cimitarra"],
       ["T5", "Aserai Faris", "Cavalaria mista", "Arco a cavalo + lança"],
-      ["T5", "Aserai Mameluke Cavalry", "Cavalaria de elite", "Cimitarra + arco + escudo"],
+      ["T6", "Aserai Mameluke Cavalry", "Cavalaria de elite (linha nobre, topo)", "Cimitarra + arco + escudo"],
     ],
   },
   {
@@ -146,19 +147,19 @@ const trees: Array<{
       ["T4", "Khuzait Spearman", "Linha de pique", "Cota de malha + pique"],
       ["T4", "Khuzait Heavy Horseman", "Cavalaria pesada", "Lança + espada curva"],
       ["T4", "Khuzait Lancer", "Cavalaria de choque", "Lança em ristre"],
-      ["T5", "Khuzait Darkhan", "Cavalaria de elite", "Espada longa a cavalo"],
-      ["T5", "Khuzait Khan's Guard", "Horse archer de elite", "Arco composto pesado"],
+      ["T5", "Khuzait Darkhan", "Cavalaria de choque", "Espada longa a cavalo"],
+      ["T6", "Khuzait Khan's Guard", "Horse archer de elite (linha nobre, topo)", "Arco composto pesado"],
     ],
   },
   {
-    name: "Empire (Norte)",
-    inspiration: "Bizâncio remanescente — capital Lycaron",
+    name: "Empire (Norte, Sul e Oeste)",
+    inspiration: "Bizâncio fragmentado — capitais Lycaron, Pravend e Jalmarys",
     color: "bg-indigo-500/15 text-indigo-300 border-indigo-500/30",
     accent: "text-indigo-300",
     bg: "from-indigo-500/10",
     border: "border-indigo-500/30",
     highlight:
-      "Facção liderada pela imperatriz Rhagaea. Compartilha a árvore imperial — destaque para Legionary + Cataphract, com forte tradição de cavalaria pesada nas estepes do norte.",
+      "As três facções imperiais (Norte de Rhagaea, Sul de Garios e Oeste de Lucon) compartilham exatamente a mesma árvore de tropas — os nomes e estatísticas das unidades são idênticos. O que muda é apenas a região onde você recruta. Estrela: Cataphract (T6) — maça + lança + armadura completa.",
     rows: [
       ["T1", "Imperial Recruit", "Infantaria leve", "Lança, sem armadura"],
       ["T2", "Imperial Infantryman", "Infantaria de linha", "Espada curta, escudo de torre"],
@@ -170,53 +171,7 @@ const trees: Array<{
       ["T4", "Imperial Bowman", "Atirador de elite", "Arco composto pesado"],
       ["T4", "Imperial Heavy Horseman", "Cavalaria pesada", "Lança + cota de placas"],
       ["T5", "Imperial Menavliaton", "Anti-cavalaria pesada", "Menaulion (lança curta 2 mãos)"],
-      ["T5", "Imperial Cataphract", "Cavalaria de choque", "Maça + lança + armadura completa"],
-    ],
-  },
-  {
-    name: "Empire (Sul)",
-    inspiration: "Bizâncio fragmentado — capital Pravend",
-    color: "bg-violet-500/15 text-violet-300 border-violet-500/30",
-    accent: "text-violet-300",
-    bg: "from-violet-500/10",
-    border: "border-violet-500/30",
-    highlight:
-      "Facção liderada por Garios e a viúva de Arenicos. Mesma árvore imperial, mas com forte presença em cercos urbanos — Legionary é a tropa-bandeira do recrutamento sulista.",
-    rows: [
-      ["T1", "Imperial Recruit", "Infantaria leve", "Lança, sem armadura"],
-      ["T2", "Imperial Infantryman", "Infantaria de linha", "Espada curta, escudo de torre"],
-      ["T2", "Imperial Archer", "Atirador", "Arco composto, alcance médio"],
-      ["T3", "Imperial Trained Infantryman", "Veterano de linha", "Cota de malha + escudo"],
-      ["T3", "Imperial Veteran Archer", "Atirador pesado", "Arco composto + espada curta"],
-      ["T3", "Imperial Equite", "Cavalaria leve", "Lança curta, escudo redondo"],
-      ["T4", "Imperial Legionary", "Linha de elite", "Pilum + espada curta + escudo de torre"],
-      ["T4", "Imperial Bowman", "Atirador de elite", "Arco composto pesado"],
-      ["T4", "Imperial Heavy Horseman", "Cavalaria pesada", "Lança + cota de placas"],
-      ["T5", "Imperial Menavliaton", "Anti-cavalaria pesada", "Menaulion (lança curta 2 mãos)"],
-      ["T5", "Imperial Cataphract", "Cavalaria de choque", "Maça + lança + armadura completa"],
-    ],
-  },
-  {
-    name: "Empire (Oeste)",
-    inspiration: "Bizâncio fragmentado — capital Jalmarys",
-    color: "bg-fuchsia-500/15 text-fuchsia-300 border-fuchsia-500/30",
-    accent: "text-fuchsia-300",
-    bg: "from-fuchsia-500/10",
-    border: "border-fuchsia-500/30",
-    highlight:
-      "Facção liderada por Lucon. Mesma árvore imperial, mas o Império Oeste defende fronteira com Vlandia — historicamente, jogadores priorizam Legionary + Menavliaton para travar carga vlandiana.",
-    rows: [
-      ["T1", "Imperial Recruit", "Infantaria leve", "Lança, sem armadura"],
-      ["T2", "Imperial Infantryman", "Infantaria de linha", "Espada curta, escudo de torre"],
-      ["T2", "Imperial Archer", "Atirador", "Arco composto, alcance médio"],
-      ["T3", "Imperial Trained Infantryman", "Veterano de linha", "Cota de malha + escudo"],
-      ["T3", "Imperial Veteran Archer", "Atirador pesado", "Arco composto + espada curta"],
-      ["T3", "Imperial Equite", "Cavalaria leve", "Lança curta, escudo redondo"],
-      ["T4", "Imperial Legionary", "Linha de elite", "Pilum + espada curta + escudo de torre"],
-      ["T4", "Imperial Bowman", "Atirador de elite", "Arco composto pesado"],
-      ["T4", "Imperial Heavy Horseman", "Cavalaria pesada", "Lança + cota de placas"],
-      ["T5", "Imperial Menavliaton", "Anti-cavalaria pesada", "Menaulion (lança curta 2 mãos)"],
-      ["T5", "Imperial Cataphract", "Cavalaria de choque", "Maça + lança + armadura completa"],
+      ["T6", "Imperial Cataphract", "Cavalaria de choque (elite máxima)", "Maça + lança + armadura completa"],
     ],
   },
   {
@@ -237,8 +192,8 @@ const trees: Array<{
       ["T4", "Nord Veteran Warrior", "Linha pesada", "Cota de placas + escudo grande"],
       ["T4", "Nord Berserker", "Choque sem escudo", "Machado de 2 mãos, frenesi"],
       ["T4", "Nord Seafarer", "Atirador naval", "Arco longo + javelins, bônus em barco"],
-      ["T5", "Nord Huscarl", "Elite de infantaria", "Machado de 2 mãos + armadura pesada"],
-      ["T5", "Sea Jarl", "Capitão de elite", "Espada + escudo, bônus de comando naval"],
+      ["T6", "Nord Huscarl", "Elite de infantaria (linha nobre, topo)", "Machado de 2 mãos + armadura pesada"],
+      ["T6", "Sea Jarl", "Capitão de elite (linha nobre, topo)", "Espada + escudo, bônus de comando naval"],
     ],
   },
 ];
@@ -307,12 +262,13 @@ const BannerlordArvoresTropas = () => {
       >
         <p className="lead text-xl text-muted-foreground">
           Em <strong>Mount &amp; Blade II: Bannerlord</strong>, cada cultura tem uma <strong>árvore de tropas</strong>{" "}
-          própria — uma cadeia de promoção que vai do recruta camponês (Tier 1) até a unidade de elite (Tier 5 ou 6).
-          Entender essas árvores é o que separa o jogador que perde batalhas para clãs menores do veterano que vence
-          superado em número. Este guia mostra <strong>todas as 9 culturas</strong> — incluindo os{" "}
+          própria — uma cadeia de promoção que vai do recruta camponês (<strong>Tier 1, o mais fraco</strong>) até a
+          unidade de elite da linha nobre (<strong>Tier 6, o topo da árvore</strong>). Entender essas árvores é o que
+          separa o jogador que perde batalhas para clãs menores do veterano que vence superado em número. Este guia
+          mostra <strong>todas as 9 facções jogáveis</strong> — Vlandia, Battania, Sturgia, Aserai, Khuzait, os três
+          Impérios (Norte, Sul e Oeste — que compartilham a mesma árvore imperial) e os{" "}
           <strong className="text-blue-300">Nords</strong>, trazidos oficialmente pela expansão paga{" "}
-          <strong className="text-blue-300">War Sails</strong> — com cada tropa, função tática e a unidade-estrela
-          de cada facção.
+          <strong className="text-blue-300">War Sails</strong>.
         </p>
 
         <div className="not-prose my-8 p-6 bg-gradient-to-br from-amber-500/10 via-amber-500/5 to-background rounded-xl border border-amber-500/30">
@@ -320,12 +276,13 @@ const BannerlordArvoresTropas = () => {
           <h2 className="text-xl font-bold mb-4 flex items-center gap-2 text-amber-400">
             <Flag className="h-5 w-5" /> Como Ler uma Árvore de Tropas
           </h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+          <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-3 text-sm">
             {[
-              ["T1–T2", "Recruta básico, perde rápido"],
+              ["T1", "Recruta camponês — o mais fraco"],
+              ["T2", "Tropa regular sem armadura pesada"],
               ["T3", "Veterano de linha, custo/benefício"],
               ["T4", "Tropa pesada, exige equipamento"],
-              ["T5", "Elite — gargalo de XP e ouro"],
+              ["T5–T6", "Elite e linha nobre — T6 é o topo"],
             ].map(([k, v]) => (
               <div key={k} className="p-3 bg-background/40 rounded-lg border border-border/50">
                 <div className="text-lg font-display font-bold text-amber-400">{k}</div>
@@ -344,7 +301,8 @@ const BannerlordArvoresTropas = () => {
           (a vila Aserai dá Aserai Tribesman, a vila Khuzait dá Khuzait Nomad, e assim por diante). Com{" "}
           <strong>experiência em batalha</strong> a tropa acumula XP e pode ser promovida: gasta-se <em>denars</em> e
           às vezes você escolhe entre dois caminhos (linha pesada ou atirador, por exemplo). A árvore se ramifica
-          principalmente nos Tiers 2–3, e converge em uma ou duas unidades de elite no Tier 5.
+          principalmente nos Tiers 2–3, e converge na unidade de elite máxima da linha nobre — <strong>Tier 6</strong>{" "}
+          (Banner Knight, Fian Champion, Khan's Guard, Cataphract, Huscarl etc.).
         </p>
         <p>
           Tropas <strong>não trocam de cultura</strong> ao serem capturadas ou contratadas — uma vez Vlandian, sempre

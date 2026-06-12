@@ -2753,7 +2753,7 @@ export const blogPosts: BlogPost[] = [
     id: "bannerlord-3",
     slug: "bannerlord-arvores-tropas-completo-2026",
     title: "Bannerlord: Árvores de Tropas — Guia Completo das 9 Culturas",
-    excerpt: "Todas as árvores de tropas de Mount & Blade II: Bannerlord — Vlandia, Battania, Sturgia, Aserai, Khuzait, Império (3) e Nords da expansão War Sails. Tier por tier, do recruta T1 à unidade de elite T5.",
+    excerpt: "Todas as árvores de tropas de Mount & Blade II: Bannerlord — Vlandia, Battania, Sturgia, Aserai, Khuzait, Império (3 facções com a mesma árvore) e Nords da expansão War Sails. Tier por tier, do recruta T1 (o pior) à unidade de elite T6 da linha nobre (o melhor).",
     content: "",
     category: "geek",
     subtopic: "bannerlord",
@@ -2762,7 +2762,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-06-11",
     readTime: "14 min",
     faq: [
-      { q: "Quantos tiers de tropas existem em Bannerlord?", a: "Cada cultura tem uma árvore que vai do Tier 1 (recruta) até o Tier 5 (elite). Algumas árvores se ramificam no Tier 2 ou 3 entre infantaria pesada e atirador, ou entre cavalaria leve e cavalaria pesada." },
+      { q: "Quantos tiers de tropas existem em Bannerlord?", a: "As árvores vão do Tier 1 (recruta camponês, o mais fraco) ao Tier 6 (linha nobre, o topo — Banner Knight, Fian Champion, Khan's Guard, Cataphract, Mameluke Cavalry, Huscarl etc.). A árvore regular se ramifica nos Tiers 2–3 entre linha pesada, atirador e cavalaria, e converge no T5; o T6 só é atingido pela linha nobre da cultura." },
       { q: "Qual a melhor cultura para árvore de tropas?", a: "Não há uma melhor universal. Vlandia tem a melhor cavalaria pesada (Banner Knight), Battania o melhor arqueiro (Fian Champion), Khuzait o melhor horse archer (Khan's Guard), Império a melhor linha (Legionary) e os Nords da expansão War Sails a melhor infantaria 2-mãos (Huscarl)." },
       { q: "Os Nords entraram com a expansão War Sails?", a: "Sim. Os Nords foram introduzidos como 9ª cultura jogável na expansão paga War Sails, anunciada pela TaleWorlds em 2025. São especializados em infantaria pesada e tropas navais (Huscarl, Sea Jarl, Raider, Seafarer)." },
       { q: "Como treinar tropas mais rápido em Bannerlord?", a: "Combine perks de Liderança (Leadership) e Cura (Medicine), use companheiros com Trainer alto, cace looters para ganhar XP de baixo risco e mantenha vilas da cultura desejada para fluxo constante de recrutas T1." },
