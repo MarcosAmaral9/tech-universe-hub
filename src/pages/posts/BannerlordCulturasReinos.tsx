@@ -127,7 +127,7 @@ const BannerlordCulturasReinos = () => {
   useEffect(() => {
     trackArticleRead(
       "bannerlord-culturas-reinos-calradia-2026",
-      "Bannerlord: Culturas e Reinos de Calradia — Guia das 8 Facções",
+      "Bannerlord: Culturas e Reinos de Calradia — Guia das 9 Facções",
       "geek",
     );
   }, []);
@@ -143,7 +143,7 @@ const BannerlordCulturasReinos = () => {
           </span>
         </div>
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-          Bannerlord: Culturas e Reinos de Calradia — Guia das 8 Facções
+          Bannerlord: Culturas e Reinos de Calradia — Guia das 9 Facções
         </h1>
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground text-sm">
           <span className="flex items-center gap-1.5">

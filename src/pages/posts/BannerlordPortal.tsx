@@ -26,7 +26,7 @@ const articles = [
   {
     slug: "bannerlord-culturas-reinos-calradia-2026",
     title: "Culturas & Reinos",
-    subtitle: "Guia das 8 Facções de Calradia",
+    subtitle: "Guia das 9 Facções de Calradia",
     desc: "Vlandia, Battania, Sturgia, Aserai, Khuzait e os 3 Impérios — tropas-estrela, pontos fortes, fracos e qual escolher na primeira partida.",
     image: bannerlordCulturasImg,
     btn: "Ver Culturas",
