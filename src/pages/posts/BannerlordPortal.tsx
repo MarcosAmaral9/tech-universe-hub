@@ -18,8 +18,7 @@ const articles = [
     slug: "bannerlord-guia-completo-2026",
     title: "Guia Completo",
     subtitle: "Tudo Sobre Mount & Blade II",
-    desc:
-      "História, lançamento, modos, preço, edições e o estado atual do jogo após anos de atualizações da TaleWorlds.",
+    desc: "História, lançamento, modos, preço, edições e o estado atual do jogo após anos de atualizações da TaleWorlds.",
     image: bannerlordGuiaImg,
     btn: "Ver Guia",
     badge: "🛡️ Guia",
@@ -28,8 +27,7 @@ const articles = [
     slug: "bannerlord-culturas-reinos-calradia-2026",
     title: "Culturas & Reinos",
     subtitle: "Guia das 8 Facções de Calradia",
-    desc:
-      "Vlandia, Battania, Sturgia, Aserai, Khuzait e os 3 Impérios — tropas-estrela, pontos fortes, fracos e qual escolher na primeira partida.",
+    desc: "Vlandia, Battania, Sturgia, Aserai, Khuzait e os 3 Impérios — tropas-estrela, pontos fortes, fracos e qual escolher na primeira partida.",
     image: bannerlordCulturasImg,
     btn: "Ver Culturas",
     badge: "✨ Novo",
@@ -38,8 +36,7 @@ const articles = [
     slug: "bannerlord-arvores-tropas-completo-2026",
     title: "Árvores de Tropas",
     subtitle: "Guia Completo das 9 Culturas (com Nords)",
-    desc:
-      "Todas as árvores tier por tier — do recruta T1 à elite T5. Inclui os Nords da expansão War Sails e composições híbridas testadas.",
+    desc: "Todas as árvores tier por tier — do recruta T1 à elite T5. Inclui os Nords da expansão War Sails e composições híbridas testadas.",
     image: bannerlordArvoresTropasImg,
     btn: "Ver Tropas",
     badge: "✨ Novo",
@@ -48,8 +45,7 @@ const articles = [
     slug: "bannerlord-melhores-tropas-tier-list-2026",
     title: "Tier List 2026",
     subtitle: "As Melhores Tropas por Estilo",
-    desc:
-      "Ranking S/A/B/C por papel — linha, choque, arqueiros, cavalaria, horse archers e tropas navais dos Nords (War Sails).",
+    desc: "Ranking S/A/B/C por papel — linha, choque, arqueiros, cavalaria, horse archers e tropas navais dos Nords (War Sails).",
     image: bannerlordMelhoresTropasImg,
     btn: "Ver Ranking",
     badge: "🏆 Novo",
@@ -64,7 +60,7 @@ const upcoming = [
 
 const stats = [
   { label: "Culturas", value: "8" },
-  { label: "Tropas por unidade", value: "Até 1.000" },
+  { label: "Tropas por batalha", value: "Até 1.000" },
   { label: "Plataformas", value: "5" },
   { label: "Versão", value: "1.0+" },
 ];
@@ -99,8 +95,8 @@ const BannerlordPortal = () => (
           </span>
         </h1>
         <p className="text-base md:text-xl text-white/85 max-w-2xl leading-relaxed">
-          O sandbox medieval da TaleWorlds — Calradia, 8 culturas, batalhas com mil soldados, política, comércio,
-          forja e a expansão <strong>War Sails</strong>.
+          O sandbox medieval da TaleWorlds — Calradia, 8 culturas, batalhas com mil soldados, política, comércio, forja
+          e a expansão <strong>War Sails</strong>.
         </p>
         <div className="flex flex-wrap gap-2 md:gap-3 mt-6">
           <span className="inline-flex items-center gap-1.5 text-xs bg-green-500/20 text-green-300 border border-green-500/40 px-3 py-1.5 rounded-full font-medium">
@@ -141,8 +137,8 @@ const BannerlordPortal = () => (
         <strong className="text-foreground">Mount &amp; Blade II: Bannerlord</strong> é a sequência direta de{" "}
         <em>Mount &amp; Blade: Warband</em>, ambientada 200 anos antes em <strong>Calradia</strong> — um continente
         fictício inspirado na Europa medieval, no Império Bizantino e nas estepes da Ásia Central. Desenvolvido pela
-        turca <strong>TaleWorlds Entertainment</strong>, ficou em Early Access desde 30 de março de 2020 e teve a
-        versão <strong>1.0 lançada em 25 de outubro de 2022</strong>, com suporte contínuo via patches e expansões.
+        turca <strong>TaleWorlds Entertainment</strong>, ficou em Early Access desde 30 de março de 2020 e teve a versão{" "}
+        <strong>1.0 lançada em 25 de outubro de 2022</strong>, com suporte contínuo via patches e expansões.
       </p>
       <p className="text-lg text-muted-foreground leading-relaxed mt-4">
         Em 2025 a TaleWorlds anunciou a primeira grande expansão, <strong className="text-amber-400">War Sails</strong>,
@@ -194,9 +190,7 @@ const BannerlordPortal = () => (
           <div className="p-4 rounded-xl bg-blue-500/5 border border-blue-500/20">
             <Crown className="h-5 w-5 text-blue-300 mb-2" />
             <h3 className="font-bold text-sm text-blue-200">Gestão Marítima</h3>
-            <p className="text-xs text-muted-foreground mt-1">
-              Camada extra para reinos com saída para o mar.
-            </p>
+            <p className="text-xs text-muted-foreground mt-1">Camada extra para reinos com saída para o mar.</p>
           </div>
         </div>
       </div>
@@ -279,7 +273,9 @@ const BannerlordPortal = () => (
           <thead>
             <tr className="bg-gradient-to-r from-amber-500/20 via-amber-500/10 to-transparent">
               <th className="text-left py-4 px-6 font-bold text-sm text-amber-300 uppercase tracking-wider">Detalhe</th>
-              <th className="text-left py-4 px-6 font-bold text-sm text-amber-300 uppercase tracking-wider">Informação</th>
+              <th className="text-left py-4 px-6 font-bold text-sm text-amber-300 uppercase tracking-wider">
+                Informação
+              </th>
             </tr>
           </thead>
           <tbody>
