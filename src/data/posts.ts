@@ -2753,7 +2753,7 @@ export const blogPosts: BlogPost[] = [
     id: "bannerlord-3",
     slug: "bannerlord-arvores-tropas-completo-2026",
     title: "Bannerlord: Árvores de Tropas — Guia Completo das 9 Culturas",
-    excerpt: "Todas as árvores de tropas de Mount & Blade II: Bannerlord — Vlandia, Battania, Sturgia, Aserai, Khuzait, Império (3) e Nords da expansão War Sails. Tier por tier, do recruta T1 à unidade de elite T5.",
+    excerpt: "Todas as árvores de tropas de Mount & Blade II: Bannerlord — Vlandia, Battania, Sturgia, Aserai, Khuzait, Império (3 facções com a mesma árvore) e Nords da expansão War Sails. Tier por tier, do recruta T1 (o pior) à unidade de elite T6 da linha nobre (o melhor).",
     content: "",
     category: "geek",
     subtopic: "bannerlord",
