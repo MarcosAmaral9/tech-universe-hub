@@ -275,12 +275,13 @@ const BannerlordArvoresTropas = () => {
           <h2 className="text-xl font-bold mb-4 flex items-center gap-2 text-amber-400">
             <Flag className="h-5 w-5" /> Como Ler uma Árvore de Tropas
           </h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+          <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-3 text-sm">
             {[
-              ["T1–T2", "Recruta básico, perde rápido"],
+              ["T1", "Recruta camponês — o mais fraco"],
+              ["T2", "Tropa regular sem armadura pesada"],
               ["T3", "Veterano de linha, custo/benefício"],
               ["T4", "Tropa pesada, exige equipamento"],
-              ["T5", "Elite — gargalo de XP e ouro"],
+              ["T5–T6", "Elite e linha nobre — T6 é o topo"],
             ].map(([k, v]) => (
               <div key={k} className="p-3 bg-background/40 rounded-lg border border-border/50">
                 <div className="text-lg font-display font-bold text-amber-400">{k}</div>
