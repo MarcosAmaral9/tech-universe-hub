@@ -95,7 +95,7 @@ const BannerlordPortal = () => (
           </span>
         </h1>
         <p className="text-base md:text-xl text-white/85 max-w-2xl leading-relaxed">
-          O sandbox medieval da TaleWorlds — Calradia, 8 culturas, batalhas com mil soldados, política, comércio, forja
+          O sandbox medieval da TaleWorlds — Calradia, 9 culturas, batalhas com mil soldados, política, comércio, forja
           e a expansão <strong>War Sails</strong>.
         </p>
         <div className="flex flex-wrap gap-2 md:gap-3 mt-6">
