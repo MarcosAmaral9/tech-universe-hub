@@ -300,7 +300,8 @@ const BannerlordArvoresTropas = () => {
           (a vila Aserai dá Aserai Tribesman, a vila Khuzait dá Khuzait Nomad, e assim por diante). Com{" "}
           <strong>experiência em batalha</strong> a tropa acumula XP e pode ser promovida: gasta-se <em>denars</em> e
           às vezes você escolhe entre dois caminhos (linha pesada ou atirador, por exemplo). A árvore se ramifica
-          principalmente nos Tiers 2–3, e converge em uma ou duas unidades de elite no Tier 5.
+          principalmente nos Tiers 2–3, e converge na unidade de elite máxima da linha nobre — <strong>Tier 6</strong>{" "}
+          (Banner Knight, Fian Champion, Khan's Guard, Cataphract, Huscarl etc.).
         </p>
         <p>
           Tropas <strong>não trocam de cultura</strong> ao serem capturadas ou contratadas — uma vez Vlandian, sempre
