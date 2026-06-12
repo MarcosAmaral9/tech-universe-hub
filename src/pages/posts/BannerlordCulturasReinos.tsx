@@ -329,8 +329,8 @@ const BannerlordCulturasReinos = () => {
                   ["T2", "Nord Footman", "Infantaria de linha, cota de malha curta"],
                   ["T3", "Nord Warrior", "Veterano com machado de uma mão e javelins"],
                   ["T4", "Nord Raider", "Escaramuçador de costa, especialista em abordagem"],
-                  ["T5", "Nord Huscarl", "Elite — machado de duas mãos, armadura pesada, shield wall"],
-                  ["T5", "Sea Jarl", "Capitão naval — bônus de comando em batalha de navio"],
+                  ["T6", "Nord Huscarl", "Linha nobre — machado de duas mãos, armadura pesada, shield wall"],
+                  ["T6", "Sea Jarl", "Capitão naval de linha nobre — bônus de comando em batalha de navio"],
                 ].map(([tier, troop, role]) => (
                   <tr key={troop} className="border-t border-blue-500/15 hover:bg-blue-500/5 transition-colors">
                     <td className="py-2.5 px-3 font-bold text-blue-300">{tier}</td>
