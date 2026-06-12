@@ -35,7 +35,7 @@ const tierColors: Record<string, { badge: string; row: string; accent: string }>
   C: { badge: "bg-emerald-500/20 text-emerald-300 border-emerald-500/40", row: "bg-emerald-500/5", accent: "text-emerald-300" },
 };
 
-type RankRow = { tier: "S" | "A" | "B" | "C"; troop: string; faction: string; why: string };
+type RankRow = { tier: "S" | "A" | "B" | "C"; unit: "T2" | "T3" | "T4" | "T5"; troop: string; faction: string; why: string };
 
 const sections: Array<{ title: string; icon: typeof Sword; subtitle: string; rows: RankRow[] }> = [
   {
@@ -43,12 +43,12 @@ const sections: Array<{ title: string; icon: typeof Sword; subtitle: string; row
     icon: Shield,
     subtitle: "Escudo grande, sustenta o centro da batalha e absorve cargas.",
     rows: [
-      { tier: "S", troop: "Imperial Legionary", faction: "Empire", why: "Pilum + espada curta + escudo de torre. Linha mais disciplinada do jogo." },
-      { tier: "S", troop: "Nord Huscarl", faction: "Nords (War Sails)", why: "Shield wall + machado 2M. Aguenta carga pesada e quebra linhas." },
-      { tier: "A", troop: "Sturgian Heavy Spearman", faction: "Sturgia", why: "Pique pesado, melhor anti-cavalaria de linha." },
-      { tier: "A", troop: "Vlandian Sergeant", faction: "Vlandia", why: "Escudo grande + espada longa, sólido em qualquer terreno." },
-      { tier: "B", troop: "Aserai Veteran Footman", faction: "Aserai", why: "Boa em terreno aberto, fraca contra arco longo." },
-      { tier: "C", troop: "Khuzait Spear Infantry", faction: "Khuzait", why: "Khuzait não foi feita para linha — use só em emergência." },
+      { tier: "S", unit: "T4", troop: "Imperial Legionary", faction: "Empire", why: "Pilum + espada curta + escudo de torre. Linha mais disciplinada do jogo." },
+      { tier: "S", unit: "T5", troop: "Nord Huscarl", faction: "Nords (War Sails)", why: "Shield wall + machado 2M. Aguenta carga pesada e quebra linhas." },
+      { tier: "A", unit: "T5", troop: "Sturgian Heavy Spearman", faction: "Sturgia", why: "Pique pesado, melhor anti-cavalaria de linha." },
+      { tier: "A", unit: "T3", troop: "Vlandian Sergeant", faction: "Vlandia", why: "Escudo grande + espada longa, sólido em qualquer terreno." },
+      { tier: "B", unit: "T4", troop: "Aserai Veteran Footman", faction: "Aserai", why: "Boa em terreno aberto, fraca contra arco longo." },
+      { tier: "C", unit: "T3", troop: "Khuzait Spear Infantry", faction: "Khuzait", why: "Khuzait não foi feita para linha — use só em emergência." },
     ],
   },
   {
@@ -56,11 +56,11 @@ const sections: Array<{ title: string; icon: typeof Sword; subtitle: string; row
     icon: Zap,
     subtitle: "Sem escudo, dano massivo — quebra de linha, flanco, abordagem.",
     rows: [
-      { tier: "S", troop: "Nord Huscarl", faction: "Nords (War Sails)", why: "Machado 2M + placa pesada — anti-armadura e anti-cavalo a pé." },
-      { tier: "S", troop: "Sturgian Heavy Axeman", faction: "Sturgia", why: "Machado 1M com bônus anti-armadura, mata cavaleiros em 2 golpes." },
-      { tier: "A", troop: "Vlandian Voulgier", faction: "Vlandia", why: "Voulge — combina anti-cavalaria e dano de 2 mãos." },
-      { tier: "A", troop: "Battanian Wildling", faction: "Battania", why: "Espada 2M, sem armadura — frágil mas brutal em emboscada." },
-      { tier: "B", troop: "Imperial Menavliaton", faction: "Empire", why: "Menaulion curto, ótimo anti-cavalaria mas vulnerável a flechas." },
+      { tier: "S", unit: "T5", troop: "Nord Huscarl", faction: "Nords (War Sails)", why: "Machado 2M + placa pesada — anti-armadura e anti-cavalo a pé." },
+      { tier: "S", unit: "T5", troop: "Sturgian Heavy Axeman", faction: "Sturgia", why: "Machado 1M com bônus anti-armadura, mata cavaleiros em 2 golpes." },
+      { tier: "A", unit: "T5", troop: "Vlandian Voulgier", faction: "Vlandia", why: "Voulge — combina anti-cavalaria e dano de 2 mãos." },
+      { tier: "A", unit: "T5", troop: "Battanian Wildling", faction: "Battania", why: "Espada 2M, sem armadura — frágil mas brutal em emboscada." },
+      { tier: "B", unit: "T5", troop: "Imperial Menavliaton", faction: "Empire", why: "Menaulion curto, ótimo anti-cavalaria mas vulnerável a flechas." },
     ],
   },
   {
@@ -68,12 +68,12 @@ const sections: Array<{ title: string; icon: typeof Sword; subtitle: string; row
     icon: Target,
     subtitle: "Dano à distância — decidem batalhas de cerco e formações lentas.",
     rows: [
-      { tier: "S", troop: "Battanian Fian Champion", faction: "Battania", why: "Arco longo + espada 2M. Headshots a 80m, melhor sniper do jogo." },
-      { tier: "S", troop: "Vlandian Sharpshooter", faction: "Vlandia", why: "Besta pesada — perfura plate armor, ideal em cerco." },
-      { tier: "A", troop: "Aserai Master Archer", faction: "Aserai", why: "Arco recurvo pesado, alto rate of fire em terreno aberto." },
-      { tier: "A", troop: "Imperial Bowman", faction: "Empire", why: "Arco composto + escudo pequeno, sobrevive melhor em corpo a corpo." },
-      { tier: "B", troop: "Nord Seafarer", faction: "Nords (War Sails)", why: "Arco longo + javelins, bônus em convés de navio." },
-      { tier: "C", troop: "Sturgian Veteran Bowman", faction: "Sturgia", why: "Atirador mais fraco entre T4–T5, use só se for tudo que tem." },
+      { tier: "S", unit: "T5", troop: "Battanian Fian Champion", faction: "Battania", why: "Arco longo + espada 2M. Headshots a 80m, melhor sniper do jogo." },
+      { tier: "S", unit: "T4", troop: "Vlandian Sharpshooter", faction: "Vlandia", why: "Besta pesada — perfura plate armor, ideal em cerco." },
+      { tier: "A", unit: "T4", troop: "Aserai Master Archer", faction: "Aserai", why: "Arco recurvo pesado, alto rate of fire em terreno aberto." },
+      { tier: "A", unit: "T4", troop: "Imperial Bowman", faction: "Empire", why: "Arco composto + escudo pequeno, sobrevive melhor em corpo a corpo." },
+      { tier: "B", unit: "T4", troop: "Nord Seafarer", faction: "Nords (War Sails)", why: "Arco longo + javelins, bônus em convés de navio." },
+      { tier: "C", unit: "T3", troop: "Sturgian Veteran Bowman", faction: "Sturgia", why: "Atirador mais fraco entre T4–T5, use só se for tudo que tem." },
     ],
   },
   {
@@ -81,11 +81,11 @@ const sections: Array<{ title: string; icon: typeof Sword; subtitle: string; row
     icon: Sword,
     subtitle: "Lança em ristre — devasta formações leves e arqueiros desprotegidos.",
     rows: [
-      { tier: "S", troop: "Vlandian Banner Knight", faction: "Vlandia", why: "Lança em ristre + plate armor. Melhor cavalaria pesada do jogo." },
-      { tier: "S", troop: "Imperial Cataphract", faction: "Empire", why: "Maça + lança + armadura completa. Versátil para choque e melee." },
-      { tier: "A", troop: "Khuzait Lancer", faction: "Khuzait", why: "Carga mais rápida que Vlandian, armadura levemente menor." },
-      { tier: "A", troop: "Aserai Mameluke Heavy Cavalry", faction: "Aserai", why: "Cimitarra + cota de placas, ótima em deserto e estepe." },
-      { tier: "B", troop: "Sturgian Druzhinnik Champion", faction: "Sturgia", why: "Boa cavalaria, mas a única robusta da Sturgia." },
+      { tier: "S", unit: "T5", troop: "Vlandian Banner Knight", faction: "Vlandia", why: "Lança em ristre + plate armor. Melhor cavalaria pesada do jogo." },
+      { tier: "S", unit: "T5", troop: "Imperial Cataphract", faction: "Empire", why: "Maça + lança + armadura completa. Versátil para choque e melee." },
+      { tier: "A", unit: "T4", troop: "Khuzait Lancer", faction: "Khuzait", why: "Carga mais rápida que Vlandian, armadura levemente menor." },
+      { tier: "A", unit: "T4", troop: "Aserai Mameluke Heavy Cavalry", faction: "Aserai", why: "Cimitarra + cota de placas, ótima em deserto e estepe." },
+      { tier: "B", unit: "T4", troop: "Sturgian Druzhinnik Champion", faction: "Sturgia", why: "Boa cavalaria, mas a única robusta da Sturgia." },
     ],
   },
   {
@@ -93,10 +93,10 @@ const sections: Array<{ title: string; icon: typeof Sword; subtitle: string; row
     icon: Target,
     subtitle: "Hit and run — destroem formações lentas e anulam infantaria pesada em campo aberto.",
     rows: [
-      { tier: "S", troop: "Khuzait Khan's Guard", faction: "Khuzait", why: "Arco composto pesado a cavalo. Tropa mais letal em campo aberto." },
-      { tier: "A", troop: "Aserai Faris", faction: "Aserai", why: "Arco a cavalo + lança. Híbrido único: kite + carga." },
-      { tier: "B", troop: "Khuzait Horse Archer (T3)", faction: "Khuzait", why: "Versão econômica do Khan's Guard, ainda muito eficiente." },
-      { tier: "C", troop: "Battanian Mounted Skirmisher", faction: "Battania", why: "Javelins + cavalo, alcance curto, papel de nicho." },
+      { tier: "S", unit: "T5", troop: "Khuzait Khan's Guard", faction: "Khuzait", why: "Arco composto pesado a cavalo. Tropa mais letal em campo aberto." },
+      { tier: "A", unit: "T5", troop: "Aserai Faris", faction: "Aserai", why: "Arco a cavalo + lança. Híbrido único: kite + carga." },
+      { tier: "B", unit: "T3", troop: "Khuzait Horse Archer", faction: "Khuzait", why: "Versão econômica do Khan's Guard, ainda muito eficiente." },
+      { tier: "C", unit: "T4", troop: "Battanian Mounted Skirmisher", faction: "Battania", why: "Javelins + cavalo, alcance curto, papel de nicho." },
     ],
   },
   {
@@ -104,12 +104,12 @@ const sections: Array<{ title: string; icon: typeof Sword; subtitle: string; row
     icon: Ship,
     subtitle: "Exclusivo da expansão — bônus em combate a bordo, abordagens e tripulação.",
     rows: [
-      { tier: "S", troop: "Nord Huscarl", faction: "Nords", why: "Domina o convés. Ataque pesado e shield wall em espaço apertado." },
-      { tier: "S", troop: "Sea Jarl", faction: "Nords", why: "Capitão Nord — bônus de moral e comando para a tripulação inteira." },
-      { tier: "A", troop: "Nord Raider", faction: "Nords", why: "Especialista em abordagem, javelins + machado." },
-      { tier: "A", troop: "Nord Seafarer", faction: "Nords", why: "Atirador naval — bônus de mira em convés balançando." },
-      { tier: "B", troop: "Aserai Mameluke Soldier", faction: "Aserai", why: "Improvisa bem em abordagem por causa do escudo + cimitarra." },
-      { tier: "C", troop: "Vlandian Crossbowman", faction: "Vlandia", why: "Sem bônus naval — besta recarrega devagar no balanço." },
+      { tier: "S", unit: "T5", troop: "Nord Huscarl", faction: "Nords (War Sails)", why: "Domina o convés. Ataque pesado e shield wall em espaço apertado." },
+      { tier: "S", unit: "T5", troop: "Sea Jarl", faction: "Nords (War Sails)", why: "Capitão Nord — bônus de moral e comando para a tripulação inteira." },
+      { tier: "A", unit: "T3", troop: "Nord Raider", faction: "Nords (War Sails)", why: "Especialista em abordagem, javelins + machado." },
+      { tier: "A", unit: "T4", troop: "Nord Seafarer", faction: "Nords (War Sails)", why: "Atirador naval — bônus de mira em convés balançando." },
+      { tier: "B", unit: "T3", troop: "Aserai Mameluke Soldier", faction: "Aserai", why: "Improvisa bem em abordagem por causa do escudo + cimitarra." },
+      { tier: "C", unit: "T2", troop: "Vlandian Crossbowman", faction: "Vlandia", why: "Sem bônus naval — besta recarrega devagar no balanço." },
     ],
   },
 ];
@@ -259,6 +259,7 @@ const BannerlordMelhoresTropas = () => {
                 <thead>
                   <tr className="bg-gradient-to-r from-amber-500/20 via-amber-500/10 to-transparent">
                     <th className="text-left py-2.5 px-3 font-bold text-amber-300 uppercase tracking-wider text-xs">Tier</th>
+                    <th className="text-left py-2.5 px-3 font-bold text-amber-300 uppercase tracking-wider text-xs">Nível</th>
                     <th className="text-left py-2.5 px-3 font-bold text-amber-300 uppercase tracking-wider text-xs">Tropa</th>
                     <th className="text-left py-2.5 px-3 font-bold text-amber-300 uppercase tracking-wider text-xs hidden sm:table-cell">Facção</th>
                     <th className="text-left py-2.5 px-3 font-bold text-amber-300 uppercase tracking-wider text-xs">Por quê</th>
@@ -277,6 +278,11 @@ const BannerlordMelhoresTropas = () => {
                         <td className="py-2.5 px-3">
                           <span className={`inline-flex items-center justify-center w-7 h-7 rounded-md border font-bold text-xs ${c.badge}`}>
                             {r.tier}
+                          </span>
+                        </td>
+                        <td className="py-2.5 px-3">
+                          <span className="inline-flex items-center justify-center px-2 py-0.5 rounded-md border border-border/60 bg-background/60 font-mono font-bold text-[11px] text-foreground/90">
+                            {r.unit}
                           </span>
                         </td>
                         <td className="py-2.5 px-3 text-foreground font-semibold">{r.troop}</td>

@@ -147,8 +147,11 @@ const BannerlordGuiaCompleto = () => {
               <Crown className="h-4 w-4" /> Escala
             </h3>
             <p className="text-sm text-muted-foreground m-0">
-              Mapa de Calradia com <strong>centenas de cidades, castelos e vilas</strong> entre 8 culturas jogáveis,
-              cada uma com árvores de tropas, arquitetura e bônus próprios.
+              Mapa de Calradia com <strong>centenas de cidades, castelos e vilas</strong> entre{" "}
+              <strong>9 culturas jogáveis</strong> — as 8 originais (Vlandia, Battania, Sturgia, Aserai, Khuzait e os
+              três Impérios Norte/Sul/Oeste) e os <strong className="text-blue-300">Nords</strong>, adicionados pela
+              expansão paga <strong className="text-blue-300">War Sails</strong>. Cada cultura tem árvores de tropas,
+              arquitetura e bônus próprios.
             </p>
           </div>
           <div className="p-5 bg-amber-500/5 border border-amber-500/20 rounded-xl">
