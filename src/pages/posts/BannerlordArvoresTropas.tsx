@@ -192,8 +192,8 @@ const trees: Array<{
       ["T4", "Nord Veteran Warrior", "Linha pesada", "Cota de placas + escudo grande"],
       ["T4", "Nord Berserker", "Choque sem escudo", "Machado de 2 mãos, frenesi"],
       ["T4", "Nord Seafarer", "Atirador naval", "Arco longo + javelins, bônus em barco"],
-      ["T5", "Nord Huscarl", "Elite de infantaria", "Machado de 2 mãos + armadura pesada"],
-      ["T5", "Sea Jarl", "Capitão de elite", "Espada + escudo, bônus de comando naval"],
+      ["T6", "Nord Huscarl", "Elite de infantaria (linha nobre, topo)", "Machado de 2 mãos + armadura pesada"],
+      ["T6", "Sea Jarl", "Capitão de elite (linha nobre, topo)", "Espada + escudo, bônus de comando naval"],
     ],
   },
 ];
