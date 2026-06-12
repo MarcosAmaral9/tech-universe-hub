@@ -81,7 +81,7 @@ const trees: Array<{
       ["T4", "Battanian Highborn", "Arqueiro pesado", "Arco longo, sem escudo"],
       ["T4", "Battanian Mounted Skirmisher", "Cavalaria de escaramuça", "Javelins a cavalo"],
       ["T5", "Battanian Wildling", "Berserker", "2 mãos, sem armadura pesada"],
-      ["T5", "Battanian Fian Champion", "Arqueiro de elite", "Arco longo + espada de 2 mãos"],
+      ["T6", "Battanian Fian Champion", "Arqueiro de elite (linha nobre, topo)", "Arco longo + espada de 2 mãos"],
     ],
   },
   {
