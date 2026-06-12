@@ -147,8 +147,8 @@ const trees: Array<{
       ["T4", "Khuzait Spearman", "Linha de pique", "Cota de malha + pique"],
       ["T4", "Khuzait Heavy Horseman", "Cavalaria pesada", "Lança + espada curva"],
       ["T4", "Khuzait Lancer", "Cavalaria de choque", "Lança em ristre"],
-      ["T5", "Khuzait Darkhan", "Cavalaria de elite", "Espada longa a cavalo"],
-      ["T5", "Khuzait Khan's Guard", "Horse archer de elite", "Arco composto pesado"],
+      ["T5", "Khuzait Darkhan", "Cavalaria de choque", "Espada longa a cavalo"],
+      ["T6", "Khuzait Khan's Guard", "Horse archer de elite (linha nobre, topo)", "Arco composto pesado"],
     ],
   },
   {
