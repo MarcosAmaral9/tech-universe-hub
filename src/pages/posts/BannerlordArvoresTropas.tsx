@@ -126,7 +126,7 @@ const trees: Array<{
       ["T4", "Aserai Master Archer", "Arqueiro pesado", "Arco recurvo + flechas perfurantes"],
       ["T4", "Aserai Mameluke Heavy Cavalry", "Cavalaria pesada", "Cota de placas + cimitarra"],
       ["T5", "Aserai Faris", "Cavalaria mista", "Arco a cavalo + lança"],
-      ["T5", "Aserai Mameluke Cavalry", "Cavalaria de elite", "Cimitarra + arco + escudo"],
+      ["T6", "Aserai Mameluke Cavalry", "Cavalaria de elite (linha nobre, topo)", "Cimitarra + arco + escudo"],
     ],
   },
   {
