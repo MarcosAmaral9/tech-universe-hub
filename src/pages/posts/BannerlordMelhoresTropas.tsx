@@ -190,6 +190,11 @@ const BannerlordMelhoresTropas = () => {
           <h2 className="text-xl font-bold mb-4 flex items-center gap-2 text-amber-400">
             <Trophy className="h-5 w-5" /> Como Lemos o Tier
           </h2>
+          <p className="text-xs text-muted-foreground mb-3">
+            Em Bannerlord, as unidades vão de <strong>Tier 1 (recruta camponês, o pior)</strong> a{" "}
+            <strong>Tier 6 (linha nobre, o melhor)</strong>. A nossa nota de ranking é independente do tier do jogo —
+            ela mede o desempenho dentro do <em>papel tático</em>.
+          </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
             {[
               ["S", "Meta — domina o papel"],
