@@ -36,7 +36,7 @@ const articles = [
     slug: "bannerlord-arvores-tropas-completo-2026",
     title: "Árvores de Tropas",
     subtitle: "Guia Completo das 9 Culturas (com Nords)",
-    desc: "Todas as árvores tier por tier — do recruta T1 à elite T5. Inclui os Nords da expansão War Sails e composições híbridas testadas.",
+    desc: "Todas as árvores tier por tier — do recruta T1 (o pior) à elite T6 (linha nobre, o topo). Inclui os Nords da expansão War Sails e composições híbridas testadas.",
     image: bannerlordArvoresTropasImg,
     btn: "Ver Tropas",
     badge: "✨ Novo",
