@@ -59,7 +59,7 @@ const trees: Array<{
       ["T4", "Vlandian Sharpshooter", "Atirador de elite", "Besta pesada, dano devastador"],
       ["T4", "Vlandian Knight", "Cavalaria pesada", "Armadura completa, lança"],
       ["T5", "Vlandian Voulgier", "Infantaria pesada", "Voulge (machado-pique), 2 mãos"],
-      ["T5", "Vlandian Banner Knight", "Cavalaria de elite", "Lança em ristre, plate armor"],
+      ["T6", "Vlandian Banner Knight", "Cavalaria de elite (linha nobre, topo)", "Lança em ristre, plate armor"],
     ],
   },
   {
