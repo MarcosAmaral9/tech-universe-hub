@@ -259,6 +259,7 @@ const BannerlordMelhoresTropas = () => {
                 <thead>
                   <tr className="bg-gradient-to-r from-amber-500/20 via-amber-500/10 to-transparent">
                     <th className="text-left py-2.5 px-3 font-bold text-amber-300 uppercase tracking-wider text-xs">Tier</th>
+                    <th className="text-left py-2.5 px-3 font-bold text-amber-300 uppercase tracking-wider text-xs">Nível</th>
                     <th className="text-left py-2.5 px-3 font-bold text-amber-300 uppercase tracking-wider text-xs">Tropa</th>
                     <th className="text-left py-2.5 px-3 font-bold text-amber-300 uppercase tracking-wider text-xs hidden sm:table-cell">Facção</th>
                     <th className="text-left py-2.5 px-3 font-bold text-amber-300 uppercase tracking-wider text-xs">Por quê</th>
@@ -277,6 +278,11 @@ const BannerlordMelhoresTropas = () => {
                         <td className="py-2.5 px-3">
                           <span className={`inline-flex items-center justify-center w-7 h-7 rounded-md border font-bold text-xs ${c.badge}`}>
                             {r.tier}
+                          </span>
+                        </td>
+                        <td className="py-2.5 px-3">
+                          <span className="inline-flex items-center justify-center px-2 py-0.5 rounded-md border border-border/60 bg-background/60 font-mono font-bold text-[11px] text-foreground/90">
+                            {r.unit}
                           </span>
                         </td>
                         <td className="py-2.5 px-3 text-foreground font-semibold">{r.troop}</td>
