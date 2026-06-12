@@ -35,7 +35,7 @@ const tierColors: Record<string, { badge: string; row: string; accent: string }>
   C: { badge: "bg-emerald-500/20 text-emerald-300 border-emerald-500/40", row: "bg-emerald-500/5", accent: "text-emerald-300" },
 };
 
-type RankRow = { tier: "S" | "A" | "B" | "C"; unit: "T2" | "T3" | "T4" | "T5"; troop: string; faction: string; why: string };
+type RankRow = { tier: "S" | "A" | "B" | "C"; unit: "T2" | "T3" | "T4" | "T5" | "T6"; troop: string; faction: string; why: string };
 
 const sections: Array<{ title: string; icon: typeof Sword; subtitle: string; rows: RankRow[] }> = [
   {
