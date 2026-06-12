@@ -261,12 +261,13 @@ const BannerlordArvoresTropas = () => {
       >
         <p className="lead text-xl text-muted-foreground">
           Em <strong>Mount &amp; Blade II: Bannerlord</strong>, cada cultura tem uma <strong>árvore de tropas</strong>{" "}
-          própria — uma cadeia de promoção que vai do recruta camponês (Tier 1) até a unidade de elite (Tier 5 ou 6).
-          Entender essas árvores é o que separa o jogador que perde batalhas para clãs menores do veterano que vence
-          superado em número. Este guia mostra <strong>todas as 9 culturas</strong> — incluindo os{" "}
+          própria — uma cadeia de promoção que vai do recruta camponês (<strong>Tier 1, o mais fraco</strong>) até a
+          unidade de elite da linha nobre (<strong>Tier 6, o topo da árvore</strong>). Entender essas árvores é o que
+          separa o jogador que perde batalhas para clãs menores do veterano que vence superado em número. Este guia
+          mostra <strong>todas as 9 facções jogáveis</strong> — Vlandia, Battania, Sturgia, Aserai, Khuzait, os três
+          Impérios (Norte, Sul e Oeste — que compartilham a mesma árvore imperial) e os{" "}
           <strong className="text-blue-300">Nords</strong>, trazidos oficialmente pela expansão paga{" "}
-          <strong className="text-blue-300">War Sails</strong> — com cada tropa, função tática e a unidade-estrela
-          de cada facção.
+          <strong className="text-blue-300">War Sails</strong>.
         </p>
 
         <div className="not-prose my-8 p-6 bg-gradient-to-br from-amber-500/10 via-amber-500/5 to-background rounded-xl border border-amber-500/30">
