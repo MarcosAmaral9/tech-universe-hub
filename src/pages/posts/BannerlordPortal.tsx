@@ -59,7 +59,7 @@ const upcoming = [
 ];
 
 const stats = [
-  { label: "Culturas", value: "8" },
+  { label: "Culturas", value: "9" },
   { label: "Tropas por batalha", value: "Até 1.000" },
   { label: "Plataformas", value: "5" },
   { label: "Versão", value: "1.0+" },
