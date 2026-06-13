@@ -22,10 +22,9 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import SkeletonImage from "@/components/SkeletonImage";
-import LightboxImage from "@/components/LightboxImage";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import heroImg from "@/assets/bannerlord-melhores-tropas.webp";
-import warSailsMap from "@/assets/bannerlord-war-sails-map.webp";
+import CalradiaMap from "@/components/CalradiaMap";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
 
 const tierColors: Record<string, { badge: string; row: string; accent: string }> = {
@@ -334,14 +333,10 @@ const BannerlordMelhoresTropas = () => {
               zoom para inspecionar cada porto e estandarte.
             </p>
           </div>
-          <LightboxImage
-            src={warSailsMap}
-            alt="Mapa oficial da expansão War Sails de Mount & Blade II: Bannerlord mostrando os territórios e portos dos Nords no litoral norte de Calradia"
-            caption="Mapa oficial War Sails · arraste para navegar · use + e − para o zoom"
-            className="shadow-2xl shadow-blue-500/10"
-            width={1991}
-            height={1821}
-            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
+          <CalradiaMap
+            variant="warsails"
+            title="Mapa interativo · Território Nord (War Sails)"
+            caption="Clique nos pinos para ver onde recrutar Huscarls, Raiders e Sea Jarls"
           />
         </div>
 

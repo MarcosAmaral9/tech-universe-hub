@@ -22,10 +22,9 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import SkeletonImage from "@/components/SkeletonImage";
-import LightboxImage from "@/components/LightboxImage";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import heroImg from "@/assets/bannerlord-arvores-tropas.webp";
-import warSailsMap from "@/assets/bannerlord-war-sails-map.webp";
+import CalradiaMap from "@/components/CalradiaMap";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
 
 type TroopRow = [string, string, string, string]; // [tier, troop, role, notes]
@@ -407,14 +406,10 @@ const BannerlordArvoresTropas = () => {
               identificar cada porto e estandarte.
             </p>
           </div>
-          <LightboxImage
-            src={warSailsMap}
-            alt="Mapa oficial da expansão War Sails mostrando os portos-fortaleza dos Nords no litoral norte de Calradia em Mount & Blade II: Bannerlord"
-            caption="Mapa oficial War Sails · arraste para navegar · use + e − para zoom"
-            className="shadow-2xl shadow-blue-500/10"
-            width={1991}
-            height={1821}
-            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
+          <CalradiaMap
+            variant="warsails"
+            title="Mapa interativo · Onde recrutar Nords (War Sails)"
+            caption="Clique no pino dos Nords para ver Jorvik, Skagar, Hafnir e demais portos"
           />
         </div>
 

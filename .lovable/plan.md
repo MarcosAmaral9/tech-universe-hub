@@ -1,78 +1,78 @@
-# Painel Mount & Blade II: Bannerlord — Geek
+# Mapas Interativos de Calradia — Bannerlord
 
-Espelhar o padrão dos painéis Crimson Desert / Assassin's Creed / Avatar: um portal central (`/geek/bannerlord`) + artigos individuais com a estrutura editorial completa do site.
+Criar dois mapas interativos (pré-War Sails e pós-War Sails) com base em dados públicos de Calradia (TaleWorlds, Mount & Blade Wiki, materiais oficiais do War Sails). Os mapas mostram regiões de cada facção contornadas e coloridas, com cidades nomeadas, legenda e interatividade (hover/click revela tooltip com facção, capital, cultura, tier de tropas).
 
-## 1. Subtopic e taxonomia
+## 1. Imagens base (alta resolução, premium)
 
-- Adicionar `'bannerlord'` ao tipo `Subtopic` em `src/types/blog.ts`.
-- Registrar label `"bannerlord": "Mount & Blade II: Bannerlord"` em `SUBTOPIC_LABELS` no `GeekPage.tsx`.
-- Adicionar `SpecialPortalCard` no `GeekPage` apontando para `/geek/bannerlord` (badge "🛡️ Especial").
+Gerar via `imagegen` em qualidade **premium** (texto legível, sem cortes), 1792x1024:
 
-## 2. Rotas
+- `src/assets/bannerlord-calradia-map-classic.webp` — mapa de Calradia **pré-War Sails** (8 facções). Estilo pergaminho/topográfico realista, com nomes de cidades e regiões em PT-BR já legíveis na imagem base.
+- `src/assets/bannerlord-calradia-map-warsails.webp` — mapa **pós-War Sails** (9 facções, com território Nord no arquipélago norte/costa setentrional adicionado pela expansão).
 
-Em `src/App.tsx`:
+Critérios: nomes não cortados nas bordas, tipografia serifada estilo manuscrito, alto contraste, sem rostos.
 
-- `/geek/bannerlord` → `BannerlordPortal.tsx`
-- `/post/<slug>` para cada um dos 12 artigos abaixo (mesmo padrão dos posts Crimson).
+## 2. Componente interativo `CalradiaMap.tsx`
 
-## 3. Imagens (12 + portal + hero)
+Novo componente em `src/components/CalradiaMap.tsx` inspirado em `CrimsonDesertRegionMap.tsx`:
 
-Gerar via `imagegen` (premium para hero/portal, fast/standard para artigos) em `src/assets/`:
-`bannerlord-hero.webp`, `bannerlord-portal.webp`, `bannerlord-guia.webp`, `bannerlord-mapa.webp`, `bannerlord-culturas.webp`, `bannerlord-reinos.webp`, `bannerlord-tropas.webp`, `bannerlord-melhores-tropas.webp`, `bannerlord-comparacao-tropas.webp`, `bannerlord-war-sails.webp`, `bannerlord-mods.webp`, `bannerlord-requisitos.webp`, `bannerlord-tempo-zerar.webp`, `bannerlord-dicas.webp`. Estilo realista, sem texto, sem rostos próximos detalhados.
+- Recebe prop `variant: "classic" | "warsails"`.
+- Renderiza `<LightboxImage>` (mantém zoom/pan já existente) como camada base.
+- Sobreposição SVG absoluta com `<polygon>` por facção, `fill` semitransparente na cor da facção + `stroke` sólido (contorno colorido) + `pointer-events: all`.
+- Hover/foco em uma região: destaca contorno (stroke mais grosso, fill mais opaco) e exibe tooltip com: nome da facção, cultura, capital, cidades principais, tropa-tier 6, badge "DLC War Sails" quando aplicável.
+- Tap em mobile abre painel inferior com as mesmas infos (acessível por teclado, ARIA).
+- Legenda lateral/inferior: quadrados coloridos com nome de cada facção; clicar na legenda também destaca a região no mapa.
+- Coordenadas das polygons baseadas em proporções (`viewBox` 0–100) para escalar com a imagem.
+- Suporte a leitura por screen reader: `role="img"`, `aria-label`, lista textual oculta com cidades.
 
-## 4. Artigos (12, todos ≥ 1500 palavras escritas)
+### Dados (`src/data/bannerlordFactions.ts`)
 
-Todos com `category: "geek"`, `subtopic: "bannerlord"`, FAQ (mín. 5 perguntas), 4–5 fontes oficiais, blocos `EditorialTake` + `ArticleSources` + `RelatedPosts` + `CommentSection` (com `category="geek"`), `AuthorBio`, `BackNavigation` apontando para `/geek/bannerlord`, `trackArticleRead`, `ShareWhatsApp`, `AdLeaderboard` + `AdInArticle` posicionados conforme padrão, `DynamicSEO` via `posts.ts` (excerpt + 10+ keywords + readTime), Breadcrumb completo do caminho no portal e nos artigos.
+Array tipado com as 9 facções; cada uma:
 
-Lista de artigos e foco factual (apenas dados reais, verificáveis via fontes oficiais TaleWorlds, Steam, Mount&Blade Wiki, PCGamingWiki, Nexus Mods):
+```ts
+{ id, name, culture, capital, cities: string[], color: string,
+  troopT6: string, dlc?: "war-sails", polygon: [number, number][] }
+```
 
-1. **bannerlord-guia-completo-2026** — Ficha técnica, lançamento (1.0 em 25/10/2022), engine, versões (datas e novidades de cada versão), modos (campanha sandbox, custom battle, multiplayer), preço atual Steam e Epic Games BRL/USD, edições.
-2. **bannerlord-mapa-calradia-regioes** — Mapa de Calradia, regiões (Império do Norte/Sul/Oeste, Battania, Sturgia, Vlandia, Khuzaits, Aserai), cidades principais, geografia.
-3. **bannerlord-culturas-explicadas** — 8 culturas jogáveis, bônus de cultura, traços, impactos em economia/diplomacia/recrutamento.
-4. **bannerlord-reinos-faccoes-completo** — Os 8 reinos majoritários + clãs menores, líderes, política, casamentos, vassalagem.
-5. **bannerlord-tropas-arvores-completas** — Árvores de tropas de cada cultura (recruta → tier 6), tropas nobres, tropas regulares, mercenárias.
-6. **bannerlord-melhores-tropas-tier-list** — Ranking factual baseado em estatísticas do jogo: Fian Champions, Banner Knights, Druzhinnik Champions, Khan's Guard, Imperial Legionary, Mamluke Heavy, Veteran Falxman, Aserai Master Archer.
-7. **bannerlord-comparacao-tropas-reinos** — Comparações tier 6 vs tier 6 entre reinos (cavalaria pesada, infantaria, arqueiros, montaria a distância) com stats reais (armadura, dano, skill).
-8. **bannerlord-war-sails-dlc** — Tudo atualizado sobre a expansão War Sails: data de lançamento real, mecânica naval, novo conteúdo, preço real, plataformas, fontes oficiais TaleWorlds.
-9. **bannerlord-mods-guia-instalacao** — Como funcionam mods: Steam Workshop vs Nexus Mods, Bannerlord Mod Launcher, ordem de carregamento, mods essenciais (Harmony, ButterLib, UIExtenderEx, Diplomacy, Calradia Expanded, RBM, BannerKings).
-10. **bannerlord-requisitos-pc-armazenamento** — Requisitos mínimos e recomendados (CPU, GPU, RAM), tamanho de instalação (~60 GB), SSD obrigatório/recomendado conforme PCGamingWiki, performance por configuração.
-11. **bannerlord-tempo-zerar-campanha** — Tempo aproximado para zerar (dados HowLongToBeat): main story ~50h, completionist ~200h+, sandbox infinito; objetivos da campanha (Império unificado vs novo reino, dragon banner).
-12. **bannerlord-dicas-iniciantes-economia-combate** — 25+ dicas verificáveis: caravanas, workshops, política, perks, smithing, recrutamento, battle tactics.
+Cores oficiais usadas pela comunidade/wiki:
+- Empire (Norte/Sul/Oeste) — tons de roxo escuro / vinho / púrpura
+- Vlandia — vermelho
+- Battania — verde-musgo
+- Sturgia — azul-aço
+- Khuzait — laranja/ocre
+- Aserai — amarelo-areia
+- Nords (War Sails) — azul-gelo / ciano (apenas no mapa pós-DLC)
 
-> Regra dura: zero invenção. Qualquer dado que não tiver fonte oficial fica de fora. Se a War Sails não tiver detalhe específico publicado, dizer "ainda não confirmado".
+## 3. Substituições no site
 
-## 5. Portal `BannerlordPortal.tsx`
+Onde hoje aparece `bannerlord-war-sails-map.webp` (5 arquivos), trocar pelo novo `CalradiaMap variant="warsails"`:
 
-Copiar a estrutura do `CrimsonDesertPortal.tsx`:
+- `BannerlordPortal.tsx`
+- `BannerlordGuiaCompleto.tsx`
+- `BannerlordCulturasReinos.tsx`
+- `BannerlordArvoresTropas.tsx`
+- `BannerlordMelhoresTropas.tsx`
 
-- `DynamicSEO`, `BackNavigation`, hero com `bannerlord-hero.webp`, intro (~3 parágrafos sobre Bannerlord/Calradia/TaleWorlds).
-- Grid dos 12 artigos com card padrão (slug, title, subtitle, desc, image, badge).
-- Seção CTA "Participe da conversa" via `CommentSection postId="bannerlord-portal" category="geek"` (hub, sem `EditorialTake`/`Sources`).
-- Adicionar `'bannerlord-portal'` à allowlist de hubs em `scripts/check-article-footer-order.mjs`.
+Manter o arquivo antigo no repo apenas se ainda referenciado por OG/SEO; senão remover import e arquivo.
 
-## 6. Registro em `src/data/posts.ts`
+## 4. Adições no painel `/geek/bannerlord`
 
-Cada um dos 12 artigos com: id, slug, title, excerpt (≤160 chars), content (resumo), category `"geek"`, subtopic `"bannerlord"`, image, author "VICIO&nbsp;", date, readTime, faq.
+Nova seção "Mapas de Calradia" com dois cards/abas:
 
-- Atualizar `prebuild` rodando `node scripts/generate-sitemaps.mjs` automaticamente (já no fluxo).
+- **Antes da expansão** → `CalradiaMap variant="classic"` (8 facções)
+- **Depois da expansão War Sails** → `CalradiaMap variant="warsails"` (9 facções, destaque visual no território Nord)
 
-## 7. Validações automáticas no fim
+Texto curto explicando a diferença entre os dois mapas (territórios adicionados, novas rotas marítimas).
 
-- `node scripts/check-article-footer-order.mjs` deve passar 12 novos artigos.
-- `node scripts/check-dynamicseo-duplicates.mjs`.
-- Conferir manualmente word-count ≥ 1500 em cada novo arquivo (script utilitário pode ser reaproveitado do loop anterior).
+## 5. Validações finais
 
-## 8. Documentação curta
+- `node scripts/check-article-footer-order.mjs`
+- Conferir que nenhum arquivo importa o `bannerlord-war-sails-map.webp` antigo após a troca (`rg`).
+- Verificar layout mobile: legenda colapsável, tooltip vira bottom sheet.
+- Lighthouse: imagens com `width/height` e `loading="lazy"` exceto a primeira do portal.
 
-Atualizar `docs/article-footer.md` apenas se necessário (não deve mudar). Memory `mem://features/categories` já contempla Geek.
+## Pontos técnicos
 
-## Riscos / pontos de atenção
-
-- **War Sails**: informação ainda esparsa. Manter o post focado em fatos anunciados pela TaleWorlds; evitar especulação.
-- **Stats de tropas**: usar valores exatos da wiki oficial (mountandblade.fandom.com) e referenciar.
-- **Preço Steam BRL**: snapshot com data de consulta, alertando que pode mudar.
-- **Mods**: links apenas para Steam Workshop e Nexus Mods (sem hosts piratas).
-- 12 artigos longos = chat extenso; vou implementar em batches paralelos por grupos de 3–4 arquivos.  
-Irei adicionar a imagem original do mapa de war sails para você guardar e usar nos artigos que falarem de War Sails. O mapa oficial da campanha do jogo principal pode pesquisar na internet e usar.  
-  
-Faça o portal e o artigo 1 primeiro e depois vá fazendo 1 artigo por vez.
+- Polygons em `viewBox="0 0 100 100"` para alinhar com qualquer tamanho da imagem.
+- Calibragem das polygons: feita por inspeção visual de cada imagem após geração; possível ajuste fino depois (são 8–9 polígonos por mapa, ~6-10 pontos cada).
+- Acessibilidade: cada `<polygon>` é `<button>`-like via `tabIndex={0}` + `onKeyDown` Enter/Espaço.
+- Nenhuma mudança em backend, posts.ts ou SEO além de remover referências mortas.
