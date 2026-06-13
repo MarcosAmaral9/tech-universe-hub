@@ -801,7 +801,32 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Fichas completas de Ainz Ooal Gown, Albedo, Demiurge, Shalltear, Cocytus, Sebas e todos os Floor Guardians de Overlord. Poderes, hierarquia de Nazarick e personalidades.",
     keywords: "Overlord personagens, Ainz Ooal Gown, Albedo Overlord, Demiurge Overlord, Shalltear Bloodfallen, Floor Guardians Nazarick, Sebas Tian Overlord, poderes Overlord, Overlord ficha personagens",
   },
-
+  "/post/hell-let-loose-simulador-guerra": {
+  title: "Hell Let Loose em 2026 Vale a Pena? Review do Simulador Tático de Segunda Guerra",
+  description: "Hell Let Loose vale a pena em 2026? Review completa do simulador tático de Segunda Guerra: 100 jogadores, frentes históricas, sistema de recursos, comunicação por voz e requisitos de PC.",
+  keywords: "Hell Let Loose review 2026, Hell Let Loose vale a pena, simulador guerra Segunda Guerra, HLL PC requisitos, Hell Let Loose 100 jogadores, HLL tático realista, Team17 Hell Let Loose, FPS tático realista 2026",
+  },
+  "/post/avatar-3-fogo-cinzas-lado-sombrio-pandora": {
+  title: "Avatar 3: Fire and Ash — Ash People, Enredo, Elenco e Tudo que Sabemos",
+  description: "Avatar: Fire and Ash (2025) completo: os Ash People, elenco com Michelle Yeoh e Oona Chaplin, regiões vulcânicas de Pandora, arco de Quaritch e bilheteria.",
+  keywords: "Avatar 3 Fire and Ash, Avatar 3 Ash People, Avatar Fire and Ash 2025, Povo das Cinzas Pandora, Avatar 3 elenco, Avatar 3 data lançamento, James Cameron Avatar 3, Quaritch Avatar 3, Avatar 3 bilheteria",
+  },
+  "/post/avatar-caminho-da-agua-fisica-fluidos": {
+  title: "Avatar 2: O Caminho da Água — A Revolução em CGI e Simulação de Fluidos",
+  description: "Como Avatar: O Caminho da Água revolucionou o cinema: simulação de fluidos com o sistema Splash, captura de performance subaquática, HFR 48fps e Oscar de Melhores Efeitos Visuais.",
+  keywords: "Avatar O Caminho da Água tecnologia, Avatar 2 CGI fluidos, simulação água cinema Avatar, captura performance subaquática, HFR 48fps Avatar 2, Weta FX Avatar 2, Tulkun Avatar, Metkayina anatomia, Avatar 2 Oscar efeitos visuais",
+  },
+  "/post/avatar-frontiers-pandora-ubisoft-review": {
+  title: "Avatar: Frontiers of Pandora em 2026 Vale a Pena? Review Completa",
+  description: "Avatar: Frontiers of Pandora vale a pena em 2026? Review completa: biomas do continente ocidental, clãs Na'vi, combate, crafting orgânico, voo de Ikran, requisitos de PC pesados e custo-benefício.",
+  keywords: "Avatar Frontiers of Pandora review 2026, Frontiers of Pandora vale a pena, Avatar jogo PC, Pandora mundo aberto, Ubisoft Massive Pandora, Frontiers of Pandora requisitos PC, Avatar Ikran voo, clãs Na'vi Aranahe Zeswa",
+  },
+  "/post/avatar-2009-filme-revolucionou-tecnologia": {
+  title: "Avatar 2009: O Filme que Revolucionou o Cinema 3D e a Tecnologia de CGI",
+  description: "Como Avatar (2009) de James Cameron revolucionou o cinema: Câmera Virtual, captura de performance facial, 3D estereoscópico nativo e o legado técnico que Hollywood usa até hoje.",
+  keywords: "Avatar 2009 tecnologia, Avatar James Cameron revolução, Câmera Virtual cinema, captura performance Avatar, 3D estereoscópico, Weta Digital Avatar, Avatar CGI revolução, cinema digital moderno, Avatar bilheteria recorde",
+  },
+  
   // ═══════════════════════════════════════════════════════════
   // CATEGORIA: OTAKU — 31 posts
   // ═══════════════════════════════════════════════════════════
