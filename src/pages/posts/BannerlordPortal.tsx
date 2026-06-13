@@ -3,7 +3,7 @@ import DynamicSEO from "@/components/DynamicSEO";
 import { AdInArticle } from "@/components/AdSense";
 import BackNavigation from "@/components/BackNavigation";
 import CommentSection from "@/components/CommentSection";
-import LightboxImage from "@/components/LightboxImage";
+
 import SkeletonImage from "@/components/SkeletonImage";
 import { ChevronRight, Ship, Map as MapIcon, Crown, Sword, Users, Hammer, Flag, Calendar, Trophy } from "lucide-react";
 import bannerlordHeroImg from "@/assets/bannerlord-hero.webp";
