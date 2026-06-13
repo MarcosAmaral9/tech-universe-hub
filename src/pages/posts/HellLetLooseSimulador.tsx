@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
-import { ArrowLeft, Clock, User, Calendar, Radio, Target, Users, Shield, Volume2, Cpu, DollarSign, Laptop, Gamepad2, HelpCircle, MapPin, Swords, Flag, Headphones } from "lucide-react";
+import { Clock, User, Calendar, Radio, Target, Users, Shield, Volume2, Cpu, DollarSign, Laptop, Gamepad2, HelpCircle, MapPin, Swords, Flag, Headphones } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import ArticleSources from "@/components/ArticleSources";
@@ -58,7 +58,7 @@ const HellLetLooseSimulador = () => {
 
       {/* Featured Image */}
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high"
+        <img fetchPriority="high"
           loading="eager"
           decoding="async"
           src={hellLetLooseImg}
@@ -782,6 +782,65 @@ const HellLetLooseSimulador = () => {
           </p>
         </div>
       </section>
+
+      <EditorialTake category="geek" title="Análise do Marcos: Hell Let Loose é o FPS mais difícil — e mais recompensador — de aprender">
+        <p>
+          Passei minhas primeiras 10 horas em <strong>Hell Let Loose</strong> morrendo sem entender
+          por quê. Sem minimapa com inimigos marcados, sem hitscan garantido, sem sprint infinito —
+          o jogo não te pega pela mão em nenhum momento. Mas quando finalmente comecei a entender
+          a comunicação de squad, o posicionamento de suprimentos e como apoiar o Oficer com
+          construção de pontos defensivos, a experiência mudou completamente.
+        </p>
+        <p>
+          É o único FPS onde já passei 20 minutos completamente imóvel numa posição de atirador
+          esperando o momento certo — e me sentindo mais tenso do que qualquer outra coisa que
+          um jogo já me fez sentir. Hell Let Loose não simula a guerra: simula a <em>espera</em>
+          da guerra, que é onde 90% do tempo real de combate acontece. Obrigatório para quem
+          busca algo genuinamente diferente dos FPS convencionais.
+        </p>
+      </EditorialTake>
+
+      <ArticleSources
+        sources={[
+          {
+            title: "Hell Let Loose — Steam Store",
+            url: "https://store.steampowered.com/app/686810/Hell_Let_Loose/",
+            publisher: "Valve / Team17",
+            accessedAt: "Fevereiro 2026",
+          },
+          {
+            title: "Hell Let Loose — How Long to Beat",
+            url: "https://howlongtobeat.com/game/hell-let-loose",
+            publisher: "HowLongToBeat",
+            accessedAt: "Fevereiro 2026",
+          },
+          {
+            title: "World War II — Britannica",
+            url: "https://www.britannica.com/event/World-War-II",
+            publisher: "Encyclopædia Britannica",
+            accessedAt: "Fevereiro 2026",
+          },
+          {
+            title: "Western Front WWII — Britannica",
+            url: "https://www.britannica.com/topic/Western-Front",
+            publisher: "Encyclopædia Britannica",
+            accessedAt: "Fevereiro 2026",
+          },
+          {
+            title: "Hell Let Loose — PC Gaming Wiki",
+            url: "https://www.pcgamingwiki.com/wiki/Hell_Let_Loose",
+            publisher: "PCGamingWiki",
+            accessedAt: "Fevereiro 2026",
+          },
+          {
+            title: "Hell Let Loose — Metacritic",
+            url: "https://www.metacritic.com/game/hell-let-loose/",
+            publisher: "Metacritic",
+            accessedAt: "Fevereiro 2026",
+          },
+        ]}
+      />
+
 <RelatedPosts currentSlug="hell-let-loose-simulador-guerra" />
 
       {/* Comments */}
