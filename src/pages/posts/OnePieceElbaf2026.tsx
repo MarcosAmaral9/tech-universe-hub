@@ -177,9 +177,56 @@ const OnePieceElbaf2026 = () => {
         </div>
       </div>
 
-        <EditorialTake category="otaku">
-          <p>A saga de Elbaf finalmente coloca os gigantes no centro depois de 25 anos de teasing, e a Toei mudou de tom — menos filler, mais painel-a-painel do mangá. Para o fã brasileiro, a janela de 1h após o Japão no Crunchyroll (legendado) e a continuidade da dublagem na Netflix mantêm One Piece como o anime mais acompanhado simultaneamente no país. Sem spoilers: o arco confirma teorias antigas sobre o Século Vazio sem encerrar o mistério.</p>
-        </EditorialTake>
+        
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#9973;</span>
+          Elbaf no Mangá: Por Que os Fãs Esperam há Décadas
+        </h2>
+        <p>
+          Elbaf — a Ilha dos Gigantes — é mencionada pela primeira vez no mangá de Eiichiro Oda em 1997, no arco de Little Garden, quando os gigantes Dorry e Brogy revelam que vieram dessa terra lendária. Durante quase 30 anos, Oda foi construindo a mitologia de Elbaf através de referências esparsas, personagens de passagem e a promessa implícita de que a ilha seria fundamental para a conclusão de várias linhas narrativas abertas há décadas — especialmente a de Usopp.
+        </p>
+        <p>
+          No mangá, o arco de Elbaf começa após Egghead e representa a realização de uma promessa feita aos leitores desde os primórdios da série. Oda confirmou em entrevistas coletadas pelo Shōnen Jump que Elbaf é um dos arcos que ele planejou em detalhes desde o início da série — o equivalente de Marineford em escala emocional, mas com um tom diferente. O arco aprofunda a conexão entre Usopp e os gigantes, revela segredos sobre os Yonkou, e avança a narrativa sobre as figuras que controlam o Governo Mundial.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128250;</span>
+          O Formato Sazonal: Por Que a Toei Mudou e o Que Isso Significa
+        </h2>
+        <p>
+          A decisão da Toei Animation de mudar One Piece para o formato sazonal em 2026 foi anunciada oficialmente em dezembro de 2025 e representa a maior mudança estrutural na produção do anime desde seu lançamento em 1999. Por 27 anos, One Piece emitiu semanalmente sem interrupção significativa — criando um legado de mais de 1.100 episódios, mas também um histórico de episódios de qualidade irregular, cenas de recap extensas e fillers que chegaram a anos de duração.
+        </p>
+        <p>
+          O modelo sazonal adotado para Elbaf segue o padrão que Attack on Titan e Jujutsu Kaisen estabeleceram como alternativa superior para séries longas: blocos de 10–13 episódios com qualidade cinematográfica consistente, seguidos de pausas para que a equipe de produção prepare o próximo bloco sem o ritmo insustentável do semanal. Para o espectador, significa menos episódios por ano mas muito mais qualidade por episódio. A Toei confirmou que o episódio de estreia do arco de Elbaf teve formato estendido — uma declaração de intenção sobre o nível de produção planejado.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128101;</span>
+          Os Personagens Centrais do Arco de Elbaf
+        </h2>
+        <p>
+          O arco de Elbaf é, narrativamente, o arco de <strong>Usopp</strong>. O francoatirador da tripulação dos Chapéus de Palha cresceu ao longo de toda a série carregando o peso de ser o "mais fraco" do grupo — algo que ele mesmo admite com regularidade e que a série usa tanto para humor quanto para desenvolvimento genuíno de personagem. Elbaf, onde os gigantes são os seres mais poderosos e respeitados, inverte esse dinamismo: Usopp é descendente espiritual de Noland, herói lendário entre os gigantes, e sua jornada em Elbaf representa a resolução de arcos abertos desde Little Garden.
+        </p>
+        <p>
+          <strong>Big Mom</strong> — Charlotte Linlin — tem presença significativa em Elbaf tanto no mangá quanto no anime. Sua relação com os gigantes remonta à infância em Elbaf, antes de ela se tornar Yonkou, e o arco revela dimensões do passado da personagem que contextualizam sua relação complexa com a ilha. Para os fãs que acompanham o mangá, as revelações sobre Big Mom em Elbaf representam o encerramento de um dos arcos de backstory mais elaborados da série.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128218;</span>
+          Como Acompanhar: Por Onde Entrar em One Piece para Elbaf
+        </h2>
+        <p>
+          Para quem quer acompanhar Elbaf sem maratonar mais de 1.100 episódios, o projeto comunitário <strong>One Pace</strong> (onepace.net) remonta os episódios do anime removendo fillers, recaps e cenas redundantes — reduzindo o tempo total de assistência de centenas de horas para algo comparável a uma série normal. One Pace cobre até o arco de Wano e está sendo atualizado progressivamente. Para quem prefere mangá, os capítulos estão disponíveis oficialmente no Manga Plus em inglês. O arco de Elbaf começa nos capítulos publicados a partir de 2024 — acessíveis na plataforma.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: Elbaf é a promessa de 30 anos — e o formato sazonal é a única forma honesta de entregá-la">
+        <p>
+          One Piece é uma obra de <strong>Eiichiro Oda</strong>, serializada na Weekly Shōnen Jump desde 1997 — com mais de 1.100 capítulos e mais de 530 milhões de cópias vendidas segundo a Shueisha, o mangá mais vendido da história. O anime é produzido pela <strong>Toei Animation</strong> desde outubro de 1999. Em dezembro de 2025, a Toei anunciou oficialmente a migração para o formato sazonal a partir do arco de Elbaf, com estreia em abril de 2026. Disponível na <strong>Crunchyroll</strong> com simulcast legendado em português.
+        </p>
+        <p>
+          Elbaf representa algo raro em narrativas longas: uma promessa feita há 30 anos que precisa ser cumprida à altura do que os fãs construíram na imaginação ao longo de décadas. O formato sazonal é a única escolha de produção honesta para esse material — qualidade cinematográfica consistente em vez do semanal irregular que resultou nos recaps e fillers históricos de One Piece. Se a Toei mantiver o nível anunciado para o episódio de estreia estendido, Elbaf pode ser o arco que reposiciona One Piece anime ao lado das melhores produções da era.
+        </p>
+      </EditorialTake>
 
         <ArticleSources category="otaku" sources={[
     { title: 'Shōnen Jump — One Piece Oficial', url: 'https://www.shonenjump.com/j/rensai/onepiece.html', publisher: 'Shueisha', accessedAt: "Maio 2026" },

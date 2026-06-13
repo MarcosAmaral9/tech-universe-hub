@@ -126,16 +126,44 @@ const IsekaiNonbiriNouka = () => {
         </div>
       </div>
 
-            <EditorialTake category="otaku" title="Análise do Marcos">
-          <p>
-            <strong>Isekai Nonbiri Nouka (Farming Life in Another World)</strong> é uma light novel de Kinosuke Naito com ilustrações de Yasumo, publicada pela Enterbrain/Kadokawa desde 2017. O anime estreou em janeiro/2023 pela Zero-G, com 12 episódios e nota 7.4 no MyAnimeList.
-          </p>
-          <p>
-            A 2ª temporada foi anunciada oficialmente no encerramento da 1ª e ainda não tem data confirmada até maio/2026. A franquia inclui 15+ volumes da light novel e adaptação em mangá pela Yasuyuki Tsurugi serializada na Young Ace UP da Kadokawa.
-          </p>
-          <p>
-            Minha análise: o título funciona como 'slow life' puro — sem grandes vilões, com foco em construção de comunidade, casamento com diferentes raças (kuro/inferno wolves, anjas, oni) e progressão agrícola. Para quem busca isekai sem combate intenso, é uma das opções mais bem produzidas. Não confunda com 'romcom puro': há violência pontual quando bandidos atacam a vila.
-          </p>
+            
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127807;</span>
+          A Ferramenta Universal de Fazenda: Por Que É Mais Poderosa do Que Parece
+        </h2>
+        <p>
+          A <strong>Ferramenta Universal de Fazenda</strong> que o ser divino presenteia a Hiraku é, à primeira vista, um presente modesto comparado às habilidades de outros protagonistas de isekai. Sem magia ofensiva, sem invocação de exércitos, sem buffs de combate — apenas um implemento agrícola que pode se transformar em qualquer ferramenta de cultivo que Hiraku precisar.
+        </p>
+        <p>
+          A série é, no entanto, consistente em mostrar que a Ferramenta Universal é extraordinariamente poderosa dentro de seus parâmetros. Ela pode desbravar floresta em horas, preparar solo de qualidade em minutos, e produzir colheitas que qualquer especialista humano consideraria impossíveis. A terra que Hiraku cultiva responde de maneira diferente da terra normal — suas colheitas são abundantes e de qualidade muito superior, atraindo a atenção de raças que normalmente evitam humanos. Vampiras que precisam de ingredientes raros, elfas com tradição de cultivo mágico, dragões curiosos com o aroma das colheitas — todos encontram na fazenda de Hiraku algo que precisam e não conseguem facilmente em outro lugar.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127968;</span>
+          A Comunidade: Como a Fazenda Cresceu em Vila
+        </h2>
+        <p>
+          A progressão central de Farming Life in Another World não é de poder — é de comunidade. Hiraku começa completamente sozinho e, sem nenhum planejamento deliberado nesse sentido, sua fazenda vai atraindo habitantes. A narrativa é honesta sobre esse processo: ninguém chega porque Hiraku os convidou. Chegam porque encontraram na fazenda algo que precisavam. <strong>Loo</strong>, a vampira, aparece buscando um lugar seguro para se recuperar após conflito com humanos. As elfas chegam em busca de ingredientes específicos e ficam ao notar a qualidade do solo. Cada chegada é orgânica, não forçada pela narrativa.
+        </p>
+        <p>
+          O resultado é uma vila que funciona como microcosmo de coexistência: raças que historicamente não convivem aprendem a dividir espaço ao redor do trabalho agrícola compartilhado. Há tensões pontuais — a série não é ingênua sobre os preconceitos que raças acumularam ao longo de séculos — mas são resolvidas através de convivência e trabalho conjunto, não de batalhas. Para uma série de isekai, esse modelo de resolução de conflito é raro e bem executado.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128249;</span>
+          Temporada 2: O Que Foi Confirmado e Quando Estreia
+        </h2>
+        <p>
+          A <strong>Temporada 2 de Isekai Nonbiri Nouka foi confirmada oficialmente em agosto de 2025</strong>, com estreia prevista para <strong>abril de 2026</strong> — integrando a Spring Season 2026. O estúdio Zero-G retorna à produção. A T2 cobre os arcos seguintes ao ponto em que a T1 encerrou, aprofundando o crescimento da vila e introduzindo novos habitantes e desafios externos que chegam à fazenda de Hiraku conforme sua reputação se expande. Para quem assistiu a T1 e ficou com vontade de mais do cotidiano tranquilo e das relações entre Hiraku e seus habitantes — a T2 entrega exatamente isso, com escala ligeiramente maior.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: Farming Life é o antídoto para o isekai de combate — e funciona muito bem">
+        <p>
+          <strong>Isekai Nonbiri Nouka</strong> é uma light novel de <strong>Kinosuke Naito</strong>, ilustrada por <strong>Yasumo</strong>, publicada pela <strong>Enterbrain</strong> desde outubro de 2017 — vinte volumes lançados. O mangá, com arte de <strong>Yasuyuki Tsurugi</strong>, é serializado na <strong>Monthly Dragon Age</strong> (Fujimi Shobo) desde novembro de 2017. A Temporada 1 foi produzida pelo estúdio <strong>Zero-G</strong>, dirigida por Ryōichi Kuraya, e foi ao ar de 6 de janeiro a 24 de março de 2023. Disponível no <strong>Amazon Prime Video</strong>, HIDIVE e Hulu. A <strong>Temporada 2 foi confirmada em agosto de 2025</strong>, com estreia prevista para abril de 2026.
+        </p>
+        <p>
+          Farming Life in Another World funciona como contraposição intencional ao isekai de combate — sem Dungeon, sem Demon Lord, sem ranking de poder. Hiraku resolve conflitos com presença genuína e capacidade produtiva, não com violência. Para quem está com fadiga de batalhas de anime e quer algo que se assemelhe mais a um slice-of-life de fantasia, esta é talvez a melhor escolha disponível no catálogo atual.
+        </p>
       </EditorialTake>
 
             <ArticleSources category="otaku"

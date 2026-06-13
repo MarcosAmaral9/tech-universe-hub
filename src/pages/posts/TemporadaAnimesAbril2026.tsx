@@ -164,8 +164,58 @@ const TemporadaAnimesAbril2026 = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
-      <EditorialTake category="otaku" title={"An\u00e1lise do Marcos: temporada de abril \u00e9 a mais consistente do ano"}>
-        <p>A 'spring season' (abril-junho) historicamente concentra os animes mais bem produzidos do ano — não por acaso, é a temporada em que os estúdios alinham os lançamentos com o início do ano fiscal japonês e com a maior janela de marketing. Em 2026 não foi diferente: continuações fortes, adaptações ambiciosas de mangás populares e poucos isekais genéricos do mês. Para quem tem tempo limitado, sugestão pragmática: <strong>escolher 3 animes para acompanhar semanalmente</strong> em vez de tentar acompanhar 10 e abandonar metade no episódio 4. Crunchyroll segue como hub principal no Brasil, com legenda PT-BR no mesmo dia do Japão.</p>
+      
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128197;</span>
+          Calendário de Estreias: Semana a Semana de Abril 2026
+        </h2>
+        <p>
+          A Spring Season 2026 distribuiu seus lançamentos ao longo das quatro semanas de abril, com os títulos mais aguardados concentrados nas duas primeiras semanas. <strong>One Piece: Arco de Elbaf</strong> abriu a temporada em 5 de abril com um episódio especial de formato estendido — a Toei Animation usou o estreante sazonal para sinalizar o padrão de qualidade pretendido para o arco. <strong>Re:Zero Temporada 4</strong> estreou em 6 de abril, e <strong>TenSura Temporada 4</strong> em 7 de abril, criando uma semana de estreias que a comunidade chamou informalmente de "Super Week" nas redes sociais.
+        </p>
+        <p>
+          A segunda semana trouxe os títulos de médio perfil que competiram por atenção: <strong>Dr. STONE: Science World</strong> (arco final, estúdio TMS Entertainment) estreou em 12 de abril, junto com as continuações de séries em andamento como <strong>Dandadan</strong> (parceria Science SARU / Crunchyroll) e novidades como <strong>Lazarus</strong>, o projeto original de Shinichirō Watanabe com MAPPA. A terceira e quarta semanas preencheram com títulos menores — isekais de temporada, romcoms e continuações de nicho.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127919;</span>
+          Guia de Prioridade: O Que Acompanhar Semanalmente
+        </h2>
+        <p>
+          Com mais de 60 títulos estreando em abril, a maioria do público acompanha entre 5 e 15 séries simultaneamente. A seleção depende do gênero e do tempo disponível, mas algumas séries têm consenso de prioridade na comunidade independente de preferência de gênero:
+        </p>
+        <p>
+          <strong>Prioridade máxima</strong> (eventos que a comunidade vai discutir independente do que você assiste): One Piece Elbaf, Re:Zero T4, TenSura T4. <strong>Alta prioridade para fãs de shonen/ação</strong>: Dr. STONE arco final, Kaiju No. 8 T2 (que continua da T1 de 2024). <strong>Para fãs de isekai</strong>: Farming Life in Another World T2, mais os isekais de inverno continuando da temporada anterior (Hell Mode, Kizoku Tensei, Okiraku Ryoushu). <strong>Para quem busca original/experimental</strong>: Lazarus (Watanabe + MAPPA) é o maior título original de 2026 até o momento e o mais imprevisível em qualidade — mas a combinação de diretor e estúdio justifica a aposta.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127916;</span>
+          Onde Assistir Cada Título no Brasil
+        </h2>
+        <p>
+          A distribuição de streaming da Spring Season 2026 no Brasil segue o padrão dos últimos anos com algumas mudanças de exclusividades. A <strong>Crunchyroll</strong> mantém o maior catálogo de simulcast com One Piece Elbaf, Re:Zero T4, TenSura T4, Dr. STONE, Kaiju No. 8 T2 e a maioria dos títulos de médio porte. A <strong>Netflix</strong> retém algumas exclusividades do catálogo Aniplex — e Lazarus (MAPPA) foi confirmado como exclusivo Netflix para fora do Japão. O <strong>Amazon Prime Video</strong> mantém alguns títulos de isekai e as continuações de Farming Life. O <strong>HIDIVE</strong> (Sentai Filmworks) tem títulos menores sem simulcast na Crunchyroll, especialmente isekais de nicho e seinen.
+        </p>
+        <p>
+          Para quem não quer assinar múltiplos serviços, a Crunchyroll cobre mais de 80% dos títulos da temporada com relevância para o público brasileiro. O plano básico (R$ 19,90/mês em maio de 2026) inclui simulcast no mesmo dia do Japão para todos os títulos principais. Uma assinatura Netflix adicional expande o catálogo para Lazarus e os demais exclusivos — mas não é obrigatória para acompanhar a temporada em seus títulos mais discutidos.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128202;</span>
+          Spring Season em Números: Comparativo com Anos Anteriores
+        </h2>
+        <p>
+          A Spring Season 2026 com 66 estreias representa um número ligeiramente abaixo do pico de 2024 (71 estreias) mas acima da média de 2020–2022 (55–60 estreias). O dado mais relevante não é o volume total, mas a concentração de títulos de alto perfil: em 2026, cinco séries com bases de fãs superiores a 10 milhões de seguidores estrearam na mesma temporada — um número que não acontecia desde a temporada de outono de 2023. Isso criou um ambiente de competição por atenção incomum, com discussões sobre qual temporada era a "melhor em anos" começando ainda na primeira semana de abril.
+        </p>
+        <p>
+          O formato sazonal de One Piece, inaugurado nessa temporada, representa a mudança estrutural mais significativa da indústria de anime em 2026. Se bem executado, abre precedente para outras séries longas (Boruto, Fairy Tail eventual retorno, One Piece si mesmo por anos) adotarem o modelo — o que mudaria fundamentalmente a relação entre calendário de lançamentos e base de fãs de séries de longa duração.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: Spring Season 2026 é a temporada mais disputada em anos — e o formato sazonal de One Piece muda tudo">
+        <p>
+          A Spring Season 2026 (temporada de primavera, que começa em abril no calendário japonês de anime) trouxe mais de 60 estreias simultâneas. Os destaques confirmados: <strong>One Piece Elbaf</strong> (Toei, formato sazonal, 5 de abril), <strong>Re:Zero Temporada 4</strong> (White Fox, 6 de abril), <strong>TenSura Temporada 4</strong> (8bit, 7 de abril), <strong>Dr. STONE: Science World</strong> (TMS Entertainment, arco final, 12 de abril) e <strong>Lazarus</strong> (MAPPA + Shinichirō Watanabe, original). Todos com simulcast na Crunchyroll exceto Lazarus (Netflix).
+        </p>
+        <p>
+          Cinco séries com bases de fãs superiores a 10 milhões estreando na mesma temporada não acontecia desde o outono de 2023. O resultado prático para o espectador: impossível acompanhar tudo semanalmente sem comprometer qualidade de atenção. A estratégia mais eficiente é priorizar dois ou três títulos para acompanhar ao vivo e deixar os demais para maratonar quando a temporada encerrar — especialmente para One Piece, onde o formato sazonal permite esperar o bloco completo.
+        </p>
       </EditorialTake>
       <ArticleSources category="otaku"
         sources={[

@@ -113,16 +113,44 @@ const OkirakuRyoushu = () => {
         </div>
       </div>
 
-            <EditorialTake category="otaku" title="Análise do Marcos">
-          <p>
-            <strong>Okiraku Ryoushu no Tanoshii Ryouchi Bouei</strong> (Easygoing Territory Defense by the Optimistic Lord) é uma web novel/light novel de Uchi no Neko publicada pela Earth Star Novel desde 2018. Adaptação em mangá pela Comic Earth Star e anime confirmado para 2026 pela EMT Squared (data exata pendente em fontes oficiais).
-          </p>
-          <p>
-            A obra ocupa o nicho 'aristocrata isekai com magia de produção' junto a Honzuki no Gekokujou e Kuma Kuma Kuma Bear, com vendas crescentes da light novel reportadas pela Earth Star.
-          </p>
-          <p>
-            Minha análise: o gênero 'territory management isekai' explodiu pós-2020 porque entrega progressão tangível (cidade que cresce no mapa) sem depender de combate. Para quem gostou de Maoyu, Honzuki ou Genjitsu Shugi, Okiraku Ryoushu é parada quase obrigatória. A produção da EMT Squared ('Tate no Yuusha') sinaliza padrão consistente de animação, mas sem orçamento de estúdio top-tier.
-          </p>
+            
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128296;</span>
+          A Magia de Produção: Por Que Artesanato É Tática de Defesa
+        </h2>
+        <p>
+          A Magia de Produção de Van parece inútil em batalha direta — e é exatamente essa percepção que a série subverte sistematicamente. Em vez de conjurar fogo ou invocar monstros, Van usa sua habilidade para criar: muralhas mais resistentes que qualquer pedreira humana poderia produzir, armas de qualidade que superam os melhores ferreiros do reino, e infraestrutura que transforma um vilarejo em declínio numa fortaleza autossuficiente. A lógica tática é simples mas elegante: defesa mais eficiente é aquela que não precisa ser testada. Van não cria um exército — cria um território tão bem protegido que atacá-lo representa custo estratégico inaceitável para qualquer inimigo.
+        </p>
+        <p>
+          O conhecimento da vida anterior de Van — de gerente de escritório japonês — é menos sobre tecnologia e mais sobre gestão. Ele sabe organizar prioridades, delegar tarefas de acordo com habilidades individuais e planejar infraestrutura a longo prazo. Numa sociedade de fantasia onde a maioria dos nobres pensa taticamente (batalhas imediatas), Van pensa estrategicamente (o que torna o território invulnerável em cinco anos). Essa diferença de perspectiva é o verdadeiro "cheat" da série.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128737;</span>
+          Os Aliados de Van e a Dinâmica do Território
+        </h2>
+        <p>
+          O vilarejo exilado de Van começa com habitantes resistentes — pessoas que ficaram porque não tinham para onde ir, não por lealdade. A transformação desse grupo desgastado em uma comunidade coesa é um dos arcos mais satisfatórios da série, porque não é tratada como automática. Os personagens que se tornam aliados de Van têm razões específicas para confiar nele: uma aldeã que desconfia de nobres por experiência passada, um cavaleiro enviado para "vigiar" Van que gradualmente reconhece sua competência, guerreiros mercenários que ficam porque Van é o cliente mais honesto que já tiveram. Cada relação tem textura própria. O ritmo é deliberadamente slow — a construção do território ocupa meses internos à história, e a série não teme mostrar o processo iterativo: algo falha, Van ajusta, tenta de novo.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127758;</span>
+          Okiraku Ryoushu entre os Isekais de Construção de Território
+        </h2>
+        <p>
+          O subgênero de isekais focados em construção de território cresceu muito desde o sucesso de <strong>TenSura</strong> e <strong>Overlord</strong>. Em 2026, títulos como <strong>Okiraku Ryoushu</strong>, <strong>Hell Mode</strong> e <strong>Kizoku Tensei</strong> competem pela atenção do público na temporada de inverno — cada um com proposta distinta dentro do subgênero. O que posiciona Okiraku Ryoushu de forma única é o foco quase exclusivo no aspecto de infraestrutura e artesanato em vez de combate. Enquanto TenSura constrói uma nação diplomática com exércitos poderosos e Overlord constrói uma dominação pelo terror, Van constrói uma fortaleza pela competência técnica e pela confiança que ganha um trabalhador por vez.
+        </p>
+        <p>
+          Para o público que gosta de detalhes de construção e progressão orgânica de comunidade — mais próximo de um colony-building game do que de um RPG — Okiraku Ryoushu é uma das séries mais satisfatórias do catálogo atual de isekais. O estúdio NAZ, responsável pela produção, tem no currículo títulos como <strong>Id:Invaded</strong> (2020) e <strong>Hamatora</strong> (2014), com experiência em narrativas mais contidas e focadas — um fit razoável para o material de Sou Akaike.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: Van é o isekai-builder mais criativo da temporada de inverno 2026">
+        <p>
+          <strong>Okiraku Ryoushu no Tanoshii Ryouchi Bouei</strong> é uma light novel de <strong>Sou Akaike</strong>, publicada pela <strong>Overlap</strong> sob o selo <em>Overlap Novels</em> desde setembro de 2021 — sete volumes publicados. O mangá, com arte de <strong>Maro Aoiro</strong>, é serializado no <em>Comic Gardo</em> (Overlap). A <strong>Seven Seas Entertainment</strong> licencia light novel e mangá em inglês. O anime é produzido pelo estúdio <strong>NAZ</strong>, dirigido por <strong>Tetsuya Tatamitani</strong>, e estreou em <strong>10 de janeiro de 2026</strong> com 12 episódios. Disponível na <strong>Crunchyroll</strong>.
+        </p>
+        <p>
+          O que diferencia Okiraku Ryoushu de outros isekais de construção de território é o otimismo estrutural — Van nunca trata a Magia de Produção como maldição, apenas como ferramenta que outros não souberam usar. Para quem gostou de <em>Honzuki no Gekokujou</em> (Ascendance of a Bookworm) pela construção detalhada de mundo, Okiraku Ryoushu está na mesma família — com ritmo mais leve e menos carga emocional.
+        </p>
       </EditorialTake>
 
             <ArticleSources category="otaku"

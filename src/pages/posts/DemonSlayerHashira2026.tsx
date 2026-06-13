@@ -128,9 +128,54 @@ const DemonSlayerHashira2026 = () => {
         <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
       </div>
     </div>
-<EditorialTake category="otaku">
-          <p>Com a trilogia Infinity Castle confirmada pela Aniplex/Ufotable, o arco dos Hashira encerra a era “semanal” de Kimetsu no Yaiba e entrega o final em formato cinema — escolha econômica esperada depois de Mugen Train ter feito US$500M+ globalmente. No Brasil, a Sony Pictures fica com a distribuição e o preço médio do ingresso (R$30–40) torna o cinema o jeito mais barato de assistir Ufotable em alta qualidade. Quem nunca viu, aproveita: dublado e legendado simultâneos.</p>
-        </EditorialTake>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#129354;</span>
+          A Corporação de Extermínio: Como Funciona a Organização
+        </h2>
+        <p>
+          A <strong>Corporação de Extermínio de Demônios</strong> (Kisatsutai) é uma organização secreta que existe há séculos no Japão — não reconhecida oficialmente pelo governo, mas com uma rede extensa de treinadores (Nichirin), caçadores e apoiadores civis. Sua missão: eliminar demônios criados por Muzan Kibutsuji e, eventualmente, Muzan si mesmo. A Corporação se divide em hierarquias bem definidas — do caçador recém-aprovado que recebe uma Espada Nichirin até os nove Pilares (Hashira) que representam o topo absoluto da força humana na série.
+        </p>
+        <p>
+          Os Pilares são selecionados por dois critérios únicos: ou o caçador eliminou <strong>50 demônios</strong>, ou eliminou um dos <strong>12 Kizuki</strong> (as Luas — demônios diretos de Muzan). Isso explica por que existem apenas nove Hashira ativos no início da história — o nível de habilidade exigido para qualquer uma das duas condições elimina a vasta maioria dos caçadores. Cada Hashira domina uma <strong>Técnica de Respiração</strong> única derivada da Respiração Solar original de Yoriichi Tsugikuni — o único caçador na história da série que a dominou de forma nata.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128293;</span>
+          Cada Hashira: Técnica, Arco e Destino
+        </h2>
+        <p>
+          <strong>Kyojuro Rengoku</strong> (Respiração das Chamas) é o Pilar do Fogo e o primeiro Hashira a ser profundamente desenvolvido na série — seu arco no filme Mugen Train (2020) é considerado um dos momentos mais impactantes do anime moderno. Sua determinação inabalável e a afirmação "Queime seu coração!" definem o código ético de como um Hashira deve viver. Seu confronto com Akaza no final do filme estabelece o padrão para as batalhas de Hashira que viriam a seguir.
+        </p>
+        <p>
+          <strong>Tengen Uzui</strong> (Respiração do Som) é o Pilar do Som — ex-shinobi de uma família de operativos de espionagem. Seu arco no Distrito de Entretenimento (Temporada 2) o coloca frente a frente com Gyutaro e Daki, os demônios gêmeos da Lua Superior Seis. Tengen é o único Hashira que se aposenta com vida intacta durante os eventos principais — uma raridade numa série que não protege seus personagens.
+        </p>
+        <p>
+          <strong>Muichiro Tokito</strong> (Respiração da Névoa) é o Pilar da Névoa — o mais jovem Hashira da história, tendo alcançado o título em apenas dois meses de treinamento. Seu arco na Vila dos Ferreiros revela sua origem e conexão com a linhagem de Yoriichi. <strong>Mitsuri Kanroji</strong> (Respiração do Amor) é a Pilar do Amor — sua técnica única adaptada ao físico dela cria movimentos impossíveis para qualquer outro corpo humano. <strong>Obanai Iguro</strong> (Respiração da Serpente) é o Pilar da Serpente — sua relação com Mitsuri é o único arco romântico substancial entre Hashira na série.
+        </p>
+        <p>
+          <strong>Sanemi Shinazugawa</strong> (Respiração do Vento) é o Pilar do Vento — inicialmente hostil a Tanjiro por razões reveladas gradualmente. Seu passado trágico com demônios informa cada escolha que ele faz. <strong>Gyomei Himejima</strong> (Respiração da Pedra) é o Pilar da Pedra — considerado o Hashira mais forte fisicamente na era atual. Ex-monge cego com força física descomunal que usa uma cadeia com bola e machado em vez de espada. <strong>Giyu Tomioka</strong> (Respiração da Água) é o Pilar da Água — o Hashira que Tanjiro encontra no episódio 1. Sua decisão de poupar Nezuko foi o catalisador de toda a série.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#9728;</span>
+          A Respiração Solar: A Origem de Tudo
+        </h2>
+        <p>
+          Todas as Técnicas de Respiração derivam de uma única fonte: a <strong>Respiração Solar</strong>, criada por <strong>Yoriichi Tsugikuni</strong> há trezentos anos. Yoriichi foi o único humano na história da série que nasceu com o Marca do Caçador já ativa — o que o tornava literalmente o ser humano mais poderoso que existiu. Suas técnicas foram adaptadas e transformadas ao longo de séculos: Respiração do Trovão, da Água, das Chamas, da Pedra, do Vento e todas as outras são ramificações que diferentes linhagens desenvolveram a partir da Respiração Solar original.
+        </p>
+        <p>
+          Tanjiro Kamado é o único caçador da era atual que aprende a Respiração Solar de forma direta — através de uma dança ritual preservada por sua família por gerações. Essa revelação no arco do Castelo Infinity é um dos momentos de maior impacto narrativo de toda a série, conectando a origem da Corporação de Extermínio com a família de Tanjiro de maneiras que remontam a Yoriichi.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: os Hashira são o coração narrativo de Demon Slayer — e o anime de Ufotable fez jus a cada um">
+        <p>
+          Demon Slayer: Kimetsu no Yaiba é uma obra de <strong>Koyoharu Gotouge</strong>, serializada na Weekly Shōnen Jump de fevereiro de 2016 a maio de 2020 — 205 capítulos, 23 volumes. O anime é produzido pela <strong>Ufotable</strong> e se tornou o anime mais rentável da história do Japão em bilheteria (considerando o filme Mugen Train, com mais de 30 bilhões de ienes arrecadados no Japão). Os filmes do arco final, cobrindo o Castelo Infinity e o Amanhecer, estão em produção para 2026.
+        </p>
+        <p>
+          O que Ufotable fez pelos Hashira vai além da animação espetacular dos combates: cada personagem recebeu um tratamento de direção de arte específico — paleta de cores, música tema e ritmo de cena que refletem a personalidade da técnica de cada Pilar. Rengoku tem calor e amplitude. Muichiro tem distância etérea. Giyu tem contenção e peso. Esse cuidado de direção é o que transforma batalhas potencialmente genéricas em momentos que a comunidade discute por anos.
+        </p>
+      </EditorialTake>
 
         <ArticleSources category="otaku" sources={[
     { title: 'Demon Slayer — Site Oficial', url: 'https://kimetsu.com/anime/', publisher: 'Aniplex/Ufotable', accessedAt: "Maio 2026" },
