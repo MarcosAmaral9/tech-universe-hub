@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
-import { ArrowLeft, Clock, User, Calendar, Gamepad2, TreePine, Crosshair, Cpu, DollarSign, Target, Laptop, HelpCircle, Star, Shield, MapPin, Palette } from "lucide-react";
+import { Clock, User, Calendar, Gamepad2, TreePine, Crosshair, Cpu, DollarSign, Target, Laptop, HelpCircle, Star, Shield, MapPin, Palette } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import ArticleSources from "@/components/ArticleSources";
@@ -58,7 +58,7 @@ const AvatarFrontiersOfPandora = () => {
 
       {/* Featured Image */}
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high"
+        <img fetchPriority="high"
           loading="eager"
           decoding="async"
           src={avatarGameImg}
@@ -692,6 +692,68 @@ const AvatarFrontiersOfPandora = () => {
       </div>
 
       {/* Related Posts */}
+
+      <EditorialTake category="geek" title="Análise do Marcos: Frontiers of Pandora é o mais bonito — mas não o mais profundo">
+        <p>
+          Joguei <strong>Avatar: Frontiers of Pandora</strong> logo no lançamento e saí dividido.
+          Do ponto de vista técnico, é um dos jogos mais bonitos já feitos — a vegetação de Pandora
+          respira, os animais têm comportamentos próprios e a atmosfera noturna com as plantas
+          bioluminescentes é de tirar o fôlego. A Ubisoft Massive conseguiu capturar a essência
+          visual dos filmes de James Cameron de forma mais fiel do que qualquer adaptação anterior
+          do universo.
+        </p>
+        <p>
+          O problema é que por baixo da beleza há um mundo aberto bastante genérico — torres de
+          sincronização disfarçadas de árvores sagradas, campos de atividades repetitivas e uma
+          narrativa que não tem nada da profundidade emocional dos filmes. O sistema de crafting
+          orgânico é genuinamente criativo e o voo de Ikran está entre os melhores do gênero. Mas
+          quando você para de explorar e começa a seguir a história principal, Frontiers of Pandora
+          se revela um Far Cry bem produzido. Se você quer a experiência visual de Pandora, vale
+          cada centavo. Se quer uma história que prenda, prepare suas expectativas.
+        </p>
+      </EditorialTake>
+
+      <ArticleSources
+        sources={[
+          {
+            title: "Avatar: Frontiers of Pandora — Steam Store",
+            url: "https://store.steampowered.com/app/1877890/Avatar_Frontiers_of_Pandora/",
+            publisher: "Valve / Ubisoft",
+            accessedAt: "Janeiro 2026",
+          },
+          {
+            title: "Avatar: Frontiers of Pandora — Ubisoft Store",
+            url: "https://www.ubisoft.com/pt-br/game/avatar/frontiers-of-pandora",
+            publisher: "Ubisoft",
+            accessedAt: "Janeiro 2026",
+          },
+          {
+            title: "Avatar: Frontiers of Pandora — How Long to Beat",
+            url: "https://howlongtobeat.com/game/avatar-frontiers-of-pandora",
+            publisher: "HowLongToBeat",
+            accessedAt: "Janeiro 2026",
+          },
+          {
+            title: "Avatar: Frontiers of Pandora — PC Gaming Wiki",
+            url: "https://www.pcgamingwiki.com/wiki/Avatar:_Frontiers_of_Pandora",
+            publisher: "PCGamingWiki",
+            accessedAt: "Janeiro 2026",
+          },
+          {
+            title: "Avatar: Frontiers of Pandora Review — IGN",
+            url: "https://www.ign.com/articles/avatar-frontiers-of-pandora-review",
+            publisher: "IGN",
+            accessedAt: "Janeiro 2026",
+          },
+          {
+            title: "Avatar: Frontiers of Pandora — Metacritic",
+            url: "https://www.metacritic.com/game/avatar-frontiers-of-pandora/",
+            publisher: "Metacritic",
+            accessedAt: "Janeiro 2026",
+          },
+        ]}
+      />
+
 <RelatedPosts currentSlug="avatar-frontiers-pandora-ubisoft-review" />
 
       {/* Comments */}
