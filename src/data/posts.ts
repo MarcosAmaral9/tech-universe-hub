@@ -1588,7 +1588,7 @@ export const blogPosts: BlogPost[] = [
     image: avatarGameImg,
     author: "VICIO<CODE>",
     date: "2026-01-22",
-    readTime: "18 min",
+    readTime: "8 min",
     faq: [
       { q: "Avatar Frontiers of Pandora vale a pena em 2026?", a: "Sim para fãs de Avatar e jogos de mundo aberto. A flora e fauna de Pandora são deslumbrantes. O gameplay é competente, embora siga a fórmula Ubisoft." },
       { q: "Precisa ter assistido Avatar para jogar?", a: "Não. O jogo conta uma história independente com um protagonista Na'vi original. Conhecer os filmes enriquece a experiência, mas não é obrigatório." },
@@ -1624,7 +1624,7 @@ export const blogPosts: BlogPost[] = [
     image: avatarFireImg,
     author: "VICIO<CODE>",
     date: "2026-01-24",
-    readTime: "10 min",
+    readTime: "9 min",
     faq: [
       { q: "Quando estreia Avatar 3?", a: "Avatar 3: Fire and Ash estreou em dezembro de 2025, explorando o 'lado sombrio de Pandora' com novos biomas vulcânicos e tribos Na'vi desconhecidas." },
       { q: "Avatar 3 é o último filme?", a: "Não. James Cameron planeja pelo menos 5 filmes Avatar. O quarto está previsto para 2029 e o quinto para 2031." },
@@ -1660,7 +1660,7 @@ export const blogPosts: BlogPost[] = [
     image: avatarWaterImg,
     author: "VICIO<CODE>",
     date: "2026-01-26",
-    readTime: "14 min",
+    readTime: "8 min",
     faq: [
       { q: "Como foi feita a captura subaquática de Avatar 2?", a: "James Cameron desenvolveu um sistema inédito de captura de performance subaquática. Os atores fizeram cenas em tanques gigantes com câmeras especiais que capturam movimentos debaixo d'água." },
       { q: "Avatar 2 bateu recordes de bilheteria?", a: "Sim. Arrecadou mais de US$ 2,3 bilhões mundialmente, tornando-se o terceiro filme de maior bilheteria da história, atrás apenas de Avatar (2009) e Avengers: Endgame." },
@@ -1718,7 +1718,7 @@ export const blogPosts: BlogPost[] = [
     image: avatarPandoraImg,
     author: "VICIO<CODE>",
     date: "2026-01-29",
-    readTime: "12 min",
+    readTime: "9 min",
     faq: [
       { q: "Por que Avatar (2009) revolucionou o cinema?", a: "Avatar introduziu captura de performance em tempo real, câmeras virtuais e CGI fotorrealista em escala inédita. O filme popularizou o cinema 3D e arrecadou US$ 2,9 bilhões." },
       { q: "James Cameron esperou quanto tempo para fazer Avatar?", a: "Cameron concebeu a ideia nos anos 1990, mas esperou mais de uma década até que a tecnologia de CGI e captura de movimento fosse capaz de criar Pandora de forma convincente." },
@@ -1818,7 +1818,7 @@ export const blogPosts: BlogPost[] = [
     image: hellLetLooseImg,
     author: "VICIO<CODE>",
     date: "2026-02-03",
-    readTime: "18 min",
+    readTime: "10 min",
     faq: [
       { q: "Hell Let Loose vale a pena em 2026?", a: "Sim. Com atualizações constantes e uma comunidade ativa, HLL continua sendo o melhor simulador tático de WWII para quem busca realismo sem a curva de aprendizado extrema de outros milsims." },
       { q: "Hell Let Loose é realista?", a: "Sim. Balas são letais (1-2 tiros matam), não há minimapa com inimigos, comunicação por voz é essencial e partidas com 100 jogadores exigem coordenação real entre esquadrões." },
