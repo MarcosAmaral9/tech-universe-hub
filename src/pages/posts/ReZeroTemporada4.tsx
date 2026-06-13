@@ -185,8 +185,58 @@ const ReZeroTemporada4 = () => {
           <p className="text-muted-foreground">Qual personagem você mais quer ver de volta? Conta nos comentários! 👇</p>
         </div>
       </div>
-      <EditorialTake category="otaku" title={"An\u00e1lise do Marcos: Re:Zero entendeu o que isekai pode ser"}>
-        <p>Re:Zero é, na minha leitura, o melhor argumento contra quem dispensa o gênero isekai inteiro: <strong>Subaru não é OP, sofre consequências reais, e o trauma é tratado com peso narrativo</strong>. A temporada 4 chega num momento em que o gênero está saturado e a maioria das obras se contenta com fan-service e power fantasy fácil. White Fox manteve a fidelidade ao light novel da Tappei Nagatsuki, o que tem peso — adaptações ruins de bons livros viraram epidemia. Para quem está começando agora em 2026, vale o investimento de assistir as 3 temporadas anteriores antes; nenhum resumo faz justiça à curva emocional do Subaru.</p>
+      
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128260;</span>
+          O Mecanismo do Loop: Como Retorno pela Morte Funciona em Re:Zero
+        </h2>
+        <p>
+          O poder central de Subaru Natsuki — <strong>Retorno pela Morte</strong> (Shisha no Ki wo Motsu Mono) — é apresentado inicialmente como uma vantagem, mas a série passa três temporadas demonstrando que é uma forma elaborada de tortura psicológica. Subaru morre, retorna a um ponto de retomada anterior, e ninguém exceto ele tem memória dos eventos entre o ponto de retomada e a morte. Isso significa que cada progresso emocional, cada aliança construída, cada confiança ganha pode ser apagada — exceto na memória de Subaru.
+        </p>
+        <p>
+          A série é rigorosa em mostrar as consequências psicológicas acumuladas: Subaru desenvolve TEPT real ao longo das temporadas, com flashbacks, ataques de pânico e comportamentos dissociativos que a série nomeia e representa com precisão incomum para o gênero. O poder, que parece cheat, é na prática uma maldição — ele não pode morrer permanentemente, mas cada morte é experimentada com dor e medo totais, e os traumas se acumulam sem a possibilidade de superação convencional.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128336;</span>
+          O Que a Temporada 4 Cobre: Arco 6 — A Torre de Plêiades
+        </h2>
+        <p>
+          A Temporada 4 de Re:Zero, que estreou em <strong>abril de 2026</strong> na Crunchyroll, adapta o <strong>Arco 6</strong> da light novel de Tappei Nagatsuki — o Arco da Torre de Plêiades (<em>Pleiades Watchtower</em>). O arco tem 25 episódios previstos e representa uma das seções mais densas emocionalmente e em lore da série. Produzida pelo <strong>White Fox</strong> — o mesmo estúdio das temporadas anteriores — a T4 mantém a continuidade de estilo e equipe.
+        </p>
+        <p>
+          O arco da Torre coloca Subaru e um grupo pequeno de aliados dentro de uma estrutura antiga e isolada, buscando resgatar Rem — que, desde o arco de Shibuya da T2, teve seu nome e memórias apagados por uma bruxa. A Torre de Plêiades é um labirinto de provações que testa cada membro do grupo de formas distintas, revelando segredos sobre o passado de personagens cruciais — especialmente sobre Beatrice, a espírito que Subaru liberou do contrato no final da T2.
+        </p>
+        <p>
+          As revelações sobre <strong>Satella</strong> — a Bruxa da Inveja e fonte do poder de Subaru — são parte central deste arco. A série até aqui tratou Satella como uma presença ominosa e antagonista implícita; o Arco 6 começa a desconstruir essa percepção com informações que mudam fundamentalmente a compreensão do espectador sobre quem Satella é e qual sua relação real com Subaru. Para leitores da light novel, este é consistentemente citado como o arco de maior impacto emocional da série.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128101;</span>
+          Os Personagens que Definem a Temporada 4
+        </h2>
+        <p>
+          <strong>Subaru Natsuki</strong> chega na T4 como um personagem transformado pela T3 — ele tem aliados que confiam nele genuinamente, tem objetivos claros e tem Emilia ao lado. Mas a Torre vai testá-lo de formas que o crescimento das temporadas anteriores não o preparou completamente para enfrentar. <strong>Beatrice</strong>, a espírito que escolheu sair de sua biblioteca para acompanhar Subaru, tem seu arco mais aprofundado aqui — a série finalmente revela o que ela esperava no contrato que a aprisionou por séculos.
+        </p>
+        <p>
+          <strong>Roswaal L. Mathers</strong>, o conde que patrocina Emilia na campanha real e cujas motivações foram reveladas como muito mais sinistras do que apareciam, tem papel significativo no Arco 6. Sua obsessão com um livro do futuro e suas ações calculadas ao longo de décadas colocam-no numa posição de antagonista que a série resiste em simplificar. <strong>Echidna</strong>, a Bruxa da Avareza morta há séculos mas presente em sonhos e provas da Torre, continua sendo um dos personagens mais fascinantes — seu intellecto frio e interesse genuíno em Subaru criam uma dinâmica que a série usa para explorar o que significa ser amado por alguém incapaz de empatia convencional.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127902;</span>
+          Como Revisitar Re:Zero Antes da T4: Guia de Revisão
+        </h2>
+        <p>
+          Para quem assistiu as temporadas anteriores mas perdeu detalhes, os elementos mais importantes para manter em mente na T4: a natureza exata do poder de Subaru e seus limites; o destino de Rem e o que significa ter nome e memórias apagados; a relação entre Roswaal e o Livro do Futuro; e as cinco Grandes Bruxas — quem são, quais poderes possuem e como se relacionam com o mundo atual. A Crunchyroll tem todas as temporadas disponíveis com legendas em português. O recap especial que a White Fox costuma lançar antes de cada temporada cobre os eventos essenciais em cerca de 25 minutos.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: Re:Zero T4 é onde as peças colocadas em três temporadas finalmente se encaixam">
+        <p>
+          Re:Zero − Starting Life in Another World é uma light novel de <strong>Tappei Nagatsuki</strong>, ilustrada por <strong>Shinichirou Otsuka</strong>, publicada pela <strong>Media Factory</strong> (Kadokawa) desde 2012 — 40+ volumes publicados. O anime é produzido pelo <strong>White Fox</strong>. As T1 e T2 estão disponíveis na <strong>Crunchyroll</strong>. A <strong>Temporada 4 estreou em abril de 2026</strong> na Crunchyroll com 25 episódios previstos, cobrindo o Arco 6 da light novel — o Arco da Torre de Plêiades.
+        </p>
+        <p>
+          Re:Zero é a série que mais honestamente tratou trauma psicológico na ficção popular japonesa — o TEPT de Subaru não é um desvio de personagem, é a premissa central de como a série funciona. A T4 leva isso ao extremo: o Arco da Torre de Plêiades é o arco mais introspectivo e emocionalmente exigente da série até agora. Se você chegou até a T3, a T4 é onde o investimento de horas nas temporadas anteriores paga dividendos narrativos que poucos outros animes são capazes de entregar.
+        </p>
       </EditorialTake>
       <ArticleSources category="otaku"
         sources={[

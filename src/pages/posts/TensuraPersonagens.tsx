@@ -5,13 +5,13 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { Clock, User, Calendar, Zap, Shield, Crown, Globe, Star } from "lucide-react";
+import { Clock, User, Calendar, Zap, Shield, Crown, Globe, Star, Users } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/tensura-personagens.webp";
-
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
+
 const TensuraPersonagens = () => {
   useEffect(() => {
     trackArticleRead(
@@ -134,7 +134,7 @@ const TensuraPersonagens = () => {
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
           <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />21 de Março, 2026</span>
-          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />16 min de leitura</span>
+          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />11 min de leitura</span>
         </div>
         <ShareWhatsApp />
         <AuthorBio category="otaku" />
@@ -160,6 +160,9 @@ const TensuraPersonagens = () => {
           <Crown className="h-7 w-7 text-otaku" />
           Os Principais Habitantes de Tempest
         </h2>
+        <p>
+          A Federação Jura-Tempest começou como uma pequena aldeia de goblins na Grande Floresta de Jura. O que a transformou em uma nação reconhecida pelos maiores poderes do mundo foi a qualidade das pessoas que Rimuru atraiu e nomeou ao longo do caminho. Cada habitante de Tempest que recebe um nome de Rimuru passa por uma evolução — física, mágica e moral. O elenco abaixo representa os personagens centrais que aparecem nas três primeiras temporadas do anime e na light novel de Fuse.
+        </p>
 
         <div className="not-prose grid gap-4 my-4">
           {mainChars.map((c) => (
@@ -197,9 +200,9 @@ const TensuraPersonagens = () => {
             </thead>
             <tbody>
               {[
-                ["Predator (Predador)","Gluttony (Glutoneria)","T1–T2, batalha do Orc Lord"],
-                ["Great Sage (Grande Sábio)","Raphael, Lord of Wisdom","T2, evolução para Demon Lord"],
-                ["Merciless (Implacável)","Mercy of Demon Lord (Graça do Rei)","T2, após ressurreição dos súditos"],
+                ["Predator (Predador)", "Gluttony (Glutoneria)", "T1–T2, batalha do Orc Lord"],
+                ["Great Sage (Grande Sábio)", "Raphael, Lord of Wisdom", "T2, evolução para Demon Lord"],
+                ["Merciless (Implacável)", "Mercy of Demon Lord (Graça do Rei)", "T2, após ressurreição dos súditos"],
               ].map(([a, b, w]) => (
                 <tr key={a} className="border-b border-border/50">
                   <td className="py-2 pr-4 text-otaku font-medium">{a}</td>
@@ -210,6 +213,9 @@ const TensuraPersonagens = () => {
             </tbody>
           </table>
         </div>
+        <p>
+          A progressão de Rimuru não é linear nem garantida. Cada evolução exige uma condição específica — a transição para True Demon Lord, por exemplo, só foi possível após Rimuru mobilizar energia espiritual suficiente através da morte e ressurreição de seus súditos. A série é cuidadosa em estabelecer que poder não é dado, mas conquistado com consequências reais. Esse sistema diferencia TenSura de isekais onde o protagonista simplesmente "já nasce forte" — Rimuru acumula poder gradualmente, e cada etapa tem peso narrativo.
+        </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Globe className="h-7 w-7 text-otaku" />
@@ -221,17 +227,20 @@ const TensuraPersonagens = () => {
         <p>
           Ao longo dos séculos, o conselho cresceu à medida que novos Demon Lords surgiam ou eram reconhecidos. A última grande mudança antes dos eventos do anime foi a <strong>última Grande Guerra de Tenma</strong>, cinco séculos antes do início da história. Após esse conflito devastador, o número de membros foi limitado a dez — e a humanidade começou a chamá-los informalmente de "Dez Grandes Demon Lords". O próprio conselho nunca havia se dado esse nome oficialmente.
         </p>
+        <p>
+          É importante entender que o conselho não era um governo unificado. Cada Demon Lord mantinha seu próprio território, suas próprias leis e sua própria agenda. O conselho servia como mecanismo de contenção — um fórum onde os seres mais poderosos do mundo podiam resolver disputas sem destruir continentes inteiros no processo. A Walpurgis, a grande assembleia periódica dos Demon Lords, era o único momento em que todos precisavam estar no mesmo lugar ao mesmo tempo.
+        </p>
         <div className="not-prose bg-otaku/10 border border-otaku/30 rounded-xl p-4 my-4">
           <p className="font-bold text-otaku mb-2 text-sm">📜 Linha do Tempo do Conselho</p>
           <div className="space-y-2 text-sm">
             {[
-              ["~2.000 anos atrás","Guy Crimson funda o conselho (3 membros: Guy, Milim, Ramiris)"],
-              ["~500 anos atrás","Última Grande Guerra de Tenma — limite de 10 membros adotado"],
-              ["~500 anos atrás","Humanos passam a chamá-los 'Dez Grandes Demon Lords'"],
-              ["Antes da T1","Clayman, Carrion, Frey, Leon, Luminous e Dagruel compõem o conselho"],
-              ["T2 — Walpurgis","Clayman derrotado, Carrion e Frey renunciam, Rimuru ingressa"],
-              ["T2 — Após Walpurgis","Rimuru propõe novo nome: 'Octagram' (8 membros)"],
-              ["T3 em diante","Octagram é o nome oficial do conselho"],
+              ["~2.000 anos atrás", "Guy Crimson funda o conselho (3 membros: Guy, Milim, Ramiris)"],
+              ["~500 anos atrás", "Última Grande Guerra de Tenma — limite de 10 membros adotado"],
+              ["~500 anos atrás", "Humanos passam a chamá-los 'Dez Grandes Demon Lords'"],
+              ["Antes da T1", "Clayman, Carrion, Frey, Leon, Luminous e Dagruel compõem o conselho"],
+              ["T2 — Walpurgis", "Clayman derrotado, Carrion e Frey renunciam, Rimuru ingressa"],
+              ["T2 — Após Walpurgis", "Rimuru propõe novo nome: 'Octagram' (8 membros)"],
+              ["T3 em diante", "Octagram é o nome oficial do conselho"],
             ].map(([d, e]) => (
               <div key={d} className="flex gap-3">
                 <span className="text-otaku font-bold shrink-0 w-36 text-xs">{d}</span>
@@ -241,10 +250,9 @@ const TensuraPersonagens = () => {
           </div>
         </div>
 
-        <AdRectangle className="my-8" />
+        <AdInArticle />
 
-        
-<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Star className="h-7 w-7 text-otaku" />
           O Nascimento do Octagram — Como os 10 Viraram 8
         </h2>
@@ -287,6 +295,8 @@ const TensuraPersonagens = () => {
           </p>
         </div>
 
+        <AdRectangle className="my-8" />
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Globe className="h-7 w-7 text-otaku" />
           Os True Dragons — Acima dos Demon Lords
@@ -296,10 +306,10 @@ const TensuraPersonagens = () => {
         </p>
         <div className="not-prose grid sm:grid-cols-2 gap-3 my-4">
           {[
-            ["Veldanava","True Dragon da Criação — pai de Milim, criador do mundo, desaparecido misteriosamente"],
-            ["Veldora Tempest","Storm Dragon — aprisionado 300 anos, libertado na T2, agora cidadão de Tempest"],
-            ["Velgrynd","Scarlet Dragon — irmã de Veldora, ligada ao Imperador de Farmas por pacto antigo"],
-            ["Velzard","White Dragon — irmã de Veldora, parceira de longa data de Guy Crimson"],
+            ["Veldanava", "True Dragon da Criação — pai de Milim, criador do mundo, desaparecido misteriosamente"],
+            ["Veldora Tempest", "Storm Dragon — aprisionado 300 anos, libertado na T2, agora cidadão de Tempest"],
+            ["Velgrynd", "Scarlet Dragon — irmã de Veldora, ligada ao Imperador de Farmas por pacto antigo"],
+            ["Velzard", "White Dragon — irmã de Veldora, parceira de longa data de Guy Crimson"],
           ].map(([n, d]) => (
             <div key={n} className="bg-card border border-border rounded-lg p-3 text-sm">
               <p className="font-bold text-foreground">{n}</p>
@@ -310,9 +320,98 @@ const TensuraPersonagens = () => {
         <p>
           A série de True Dragons conecta diretamente com a lore mais profunda de TenSura: Veldanava criou o mundo e desapareceu — um mistério que a série só começa a revelar na T3 e nos volumes finais da light novel. O poder de Rimuru, por carregar Veldora dentro de si durante a maior parte da T1, sempre foi ampliado por esse vínculo — mesmo que de forma indireta.
         </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Users className="h-7 w-7 text-otaku" />
+          Aliados Externos e Personagens Recorrentes
+        </h2>
+        <p>
+          Além dos habitantes de Tempest e dos membros do Octagram, TenSura tem um elenco extenso de personagens externos que se tornam aliados, rivais ou figuras ambíguas ao longo das temporadas. Alguns dos mais relevantes para quem assiste o anime:
+        </p>
+        <p>
+          <strong>Gazel Dwargo</strong> é o Rei Anão e um dos primeiros líderes humanos a reconhecer Tempest como nação legítima. Sua relação com Rimuru passa de desconfiança para respeito genuíno — ele é pragmático o suficiente para entender que uma nação de monstros pacífica é um aliado mais valioso do que um inimigo. Gazel representa a corrente reformista dentro da política humana que enxerga os monstros como pares, não como ameaças.
+        </p>
+        <p>
+          <strong>Fuze</strong>, o líder da guilda de aventureiros na cidade de Brumund, é outro personagem que oscila entre a desconfiança institucional e a admiração pessoal por Rimuru. Sua posição na guilda o obriga a manter neutralidade oficial, mas suas ações repetidamente demonstram que ele favorece a coexistência. É através de Fuze que o espectador vê como a comunidade de aventureiros — habituada a matar monstros como atividade profissional — reage à existência de uma nação de monstros civilizada.
+        </p>
+        <p>
+          <strong>Hinata Sakaguchi</strong> é a líder das Cruzadas do Ocidente e uma das antagonistas mais moralmente complexas da série. Ex-discípula da heroína Shizu (a humana que Rimuru absorveu na T1), Hinata não é simplesmente uma vilã — ela tem razões concretas para desconfiar de Demon Lords e para ter Rimuru em sua lista de alvos. O arco que a envolve na T2 é um dos mais tensos da série, exatamente porque ela não está errada em seus princípios, apenas em suas conclusões sobre Rimuru especificamente.
+        </p>
+
+        <div className="not-prose bg-card border border-otaku/20 rounded-xl p-5 my-6">
+          <h3 className="font-bold text-otaku mb-3 text-sm">📺 Em qual temporada cada personagem aparece?</h3>
+          <div className="space-y-1.5">
+            {[
+              ["Rimuru, Ranga, Gobta, Rigurd", "T1 (desde o episódio 1)"],
+              ["Benimaru, Shion, Shuna, Hakurou", "T1 (arco dos Ogres, episódios 7–8)"],
+              ["Milim Nava", "T1 (arco dos Dez Grandes, episódios 16–17)"],
+              ["Diablo", "T2 Parte 1 (convocado por Rimuru após evolução)"],
+              ["Veldora (forma humana)", "T2 Parte 1 (libertado do selo de Rimuru)"],
+              ["Octagram completo", "T2 Parte 2 (Walpurgis — episódios finais da T2)"],
+              ["Hinata Sakaguchi", "T2 Parte 1 (confronto principal)"],
+              ["True Dragons Velgrynd e Velzard", "T3 em diante"],
+            ].map(([chars, season]) => (
+              <div key={chars} className="flex gap-3 text-xs">
+                <span className="font-bold text-otaku shrink-0 w-52">{chars}</span>
+                <span className="text-muted-foreground">{season}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: o elenco de TenSura é seu maior ativo — e seu maior risco">
+        <p>
+          Acompanho TenSura desde a T1 e o que mais me impressiona na série de Fuse não é o protagonista — é a capacidade de dar personalidade real a personagens que poderiam facilmente ser decoração. Shion, que começa como "secretária leal perigosamente má cozinheira", tem um dos arcos de morte e ressurreição mais emocionalmente honestos do anime recente. Diablo, que chegou como fanservice de poder, se tornou um dos personagens mais hiláriamente sinistros e ao mesmo tempo genuínos da série.
+        </p>
+        <p>
+          O risco do elenco grande é que, com a expansão de Tempest em T3 e T4, alguns personagens ficam sem tempo de tela adequado. Benimaru e Shuna aparecem cada vez menos em cenas de destaque conforme novos aliados chegam. É um problema estrutural de séries de construção de reino: o worldbuilding cresce mais rápido do que o desenvolvimento de personagem consegue acompanhar. A light novel de Fuse resolve isso melhor do que o anime — com capítulos de perspectiva de personagens secundários que o anime simplesmente não tem tempo de incluir.
+        </p>
+      </EditorialTake>
+
+      <ArticleSources
+        sources={[
+          {
+            title: "Tensei Shitara Slime Datta Ken — Light Novel (Micro Magazine)",
+            url: "https://www.micromagazine.co.jp/gc/slime/",
+            publisher: "Micro Magazine",
+            accessedAt: "Março 2026"
+          },
+          {
+            title: "TenSura Anime — site oficial (T1–T3)",
+            url: "https://www.ten-sura.com/",
+            publisher: "Ten-Sura.com",
+            accessedAt: "Março 2026"
+          },
+          {
+            title: "Tensei Shitara Slime Datta Ken — MyAnimeList",
+            url: "https://myanimelist.net/anime/37430/Tensei_shitara_Slime_Datta_Ken",
+            publisher: "MyAnimeList",
+            accessedAt: "Março 2026"
+          },
+          {
+            title: "TenSura — Crunchyroll (todas as temporadas)",
+            url: "https://www.crunchyroll.com/series/GR49G9VP6/that-time-i-got-reincarnated-as-a-slime",
+            publisher: "Crunchyroll",
+            accessedAt: "Março 2026"
+          },
+          {
+            title: "Anime News Network — Tensei Shitara Slime Datta Ken encyclopedia",
+            url: "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=21664",
+            publisher: "Anime News Network",
+            accessedAt: "Março 2026"
+          },
+          {
+            title: "Fuse (autor) — perfil Shōsetsuka ni Narō",
+            url: "https://mypage.syosetu.com/186987/",
+            publisher: "Shōsetsuka ni Narō",
+            accessedAt: "Março 2026"
+          },
+        ]}
+      />
+
       <RelatedPosts currentSlug="tensura-personagens-rimuru-demon-lords" />
-      <CommentSection postId="tensura-personagens-rimuru-demon-lords"  category="otaku" />
+      <CommentSection postId="tensura-personagens-rimuru-demon-lords" category="otaku" />
     </article>
   );
 };

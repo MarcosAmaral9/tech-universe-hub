@@ -166,8 +166,58 @@ const JujutsuKaisenGuia2026 = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
-      <EditorialTake category="otaku" title={"An\u00e1lise do Marcos: JJK terminou no auge \u2014 e isso \u00e9 raro"}>
-        <p>Jujutsu Kaisen fez algo que poucos shounens conseguem: <strong>encerrou o mangá antes de cair em arcos arrastados</strong>. Akutami escolheu manter a obra entre 270 capítulos em vez de esticar por 1000+ como One Piece ou Naruto. O custo foi um final divisivo, mas a integridade narrativa ficou preservada. Para quem está começando agora, recomendo o seguinte caminho: anime até a temporada Shibuya (MAPPA no auge), depois pular para o mangá a partir do capítulo equivalente — o anime perdeu fôlego nos arcos finais por excesso de produção paralela do estúdio. No Brasil, Crunchyroll e Star+/Disney+ têm catálogo completo dublado.</p>
+      
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128218;</span>
+          Os Arcos do Mangá: Do Início ao Capítulo 271
+        </h2>
+        <p>
+          Jujutsu Kaisen foi serializado na Weekly Shōnen Jump de março de 2018 a setembro de 2024, totalizando 271 capítulos compilados em 27 volumes tankobon. A obra de Gege Akutami passou por arcos distintos com tons progressivamente mais sombrios — uma das características que a diferenciou do shonen convencional.
+        </p>
+        <p>
+          O <strong>Arco da Academia</strong> (cap. 1–63) estabelece o mundo, as regras da energia maldita e os personagens centrais. Yuji Itadori ingere um dedo de Ryomen Sukuna para salvar companheiros e se torna recipiente do maior feiticeiro maldito da história. É condenado a executar todos os dedos e depois ser eliminado. O tom ainda é relativamente esperançoso para o shonen — antes que Akutami começasse a desmantelar essa esperança sistematicamente. O <strong>Arco de Shibuya</strong> (cap. 79–136) é o ponto de inflexão da série: uma noite de carnificina em Tóquio onde personagens queridos morrem, aliados são destruídos e o status quo da série é radicalmente alterado. O número de mortes e a brutalidade das consequências quebrou expectativas do público e consolidou JJK como série que não protege seu elenco.
+        </p>
+        <p>
+          O <strong>Arco do Culling Game</strong> (cap. 158–238) é o mais complexo em escala — dezenas de participantes, regras que mudam, batalhas simultâneas em múltiplas colônias. É onde personagens como Yuta Okkotsu e Hakari Kinji se tornam centrais. O <strong>Arco de Shinjuku</strong> (cap. 222 em diante) é o clímax final: confronto direto entre Itadori, seus aliados e Sukuna, que nesse ponto assumiu o controle de um corpo diferente de Yuji. O mangá encerrou em setembro de 2024 com o capítulo 271.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#9889;</span>
+          O Sistema de Maldições: Como a Energia Maldita Funciona
+        </h2>
+        <p>
+          O sistema de magia de JJK é construído sobre um conceito central: <strong>energia maldita</strong> (jujutsu) é gerada por emoções negativas humanas — medo, ódio, tristeza, raiva. Essa energia se acumula e eventualmente se materializa em <strong>espíritos malditos</strong> (jujutsu spirits) que assombram e matam humanos comuns, que não podem vê-los. Feiticeiros de jujutsu são humanos com a capacidade natural de perceber e manipular energia maldita — e sua função social é eliminar esses espíritos para proteger a população.
+        </p>
+        <p>
+          As <strong>Técnicas Malditas</strong> (cursed techniques) são habilidades únicas herdadas geneticamente ou desenvolvidas individualmente. Cada feiticeiro tem no máximo uma técnica inata — Yuji não tem técnica inata (o que o torna anômalo entre feiticeiros de alto nível). Ele compensa com proficiência excepcional em <strong>Extensão do Corpo</strong> (controle de energia maldita pelo corpo físico) e, progressivamente, absorvendo traços de Sukuna através dos dedos. As <strong>Técnicas de Domínio</strong> (Domain Expansion) são o ápice do sistema — áreas fechadas onde a técnica do feiticeiro se aplica com 100% de precisão a todos dentro do espaço.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128101;</span>
+          Personagens Centrais: Além do Trio Principal
+        </h2>
+        <p>
+          <strong>Yuji Itadori</strong> é o protagonista — humano comum com físico excepcional que se torna recipiente de Sukuna. Sem técnica maldita inata, compensa com força bruta, aprendizado acelerado e uma disposição emocional que o torna genuinamente diferente dos outros feiticeiros. <strong>Megumi Fushiguro</strong> usa a Técnica das Dez Sombras — invocação de dez shikigami com poderes distintos. Seu arco é o mais trágico da série. <strong>Nobara Kugisaki</strong> usa a Técnica do Martelo e Prego — unindo objetos físicos à energia maldita. Representa um archetype de shonen raro: competente, autossuficiente e sem interesse romântico no protagonista.
+        </p>
+        <p>
+          <strong>Satoru Gojo</strong> é o feiticeiro mais poderoso da era atual e o professor dos três protagonistas. Seu Infinito (Mukagen) e Domínio Ilimitado o tornaram, até os eventos de Shibuya, tecnicamente imbatível. Sua ausência após Shibuya reorganiza completamente o equilíbrio de poder da série. <strong>Yuta Okkotsu</strong>, protagonista do volume zero (prequela), retorna como personagem central durante o Culling Game — com nível de poder que rivaliza com os mais fortes da série. <strong>Ryomen Sukuna</strong> é o antagonista central — o Rei das Maldições do período Heian, cujos 20 dedos foram consumidos por Yuji ao longo da série. Suas motivações são reveladas progressivamente, e o que parece ser simplesmente "destruição" tem nuances que o manga desenvolve nos arcos finais.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127916;</span>
+          Guia de Entrada: Por Onde Começar em JJK em 2026
+        </h2>
+        <p>
+          Para novos espectadores em 2026, a ordem de entrada recomendada é: <strong>Temporada 1</strong> (24 episódios, MAPPA, 2020) cobrindo os arcos da Academia e da Missão de Kyoto. <strong>Filme JJK 0</strong> (2021) — adapta o volume zero com Yuta Okkotsu antes dos eventos da T1, recomendado assistir antes ou depois da T1 (ambas as ordens funcionam, mas antes adiciona contexto). <strong>Temporada 2</strong> (23 episódios, 2023) — arcos de Shibuya e Incidente. <strong>Temporada 3</strong> (17 episódios, 2024–2025) — Culling Game Part 1. Toda a série está disponível na Crunchyroll com legendas em português. O mangá completo (27 volumes) está disponível oficialmente no Manga Plus em inglês, ou via edição física da JBC no Brasil.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: JJK provou que shonen pode ser brutal e emocionalmente honesto ao mesmo tempo">
+        <p>
+          Jujutsu Kaisen é uma obra de <strong>Gege Akutami</strong>, serializada na Weekly Shōnen Jump de março de 2018 a setembro de 2024 — 271 capítulos, 27 volumes. Vendeu mais de 100 milhões de cópias segundo a Shueisha, tornando-se um dos mangás mais vendidos da história. O anime é produzido pela <strong>MAPPA</strong> e está disponível na <strong>Crunchyroll</strong> com simulcast em português. A <strong>JBC Editora</strong> publica os volumes físicos no Brasil.
+        </p>
+        <p>
+          O que Akutami fez em JJK que poucos shonen ousaram antes: tratar mortes de personagens principais como consequências permanentes, não como momentos revertíveis. Isso criou uma tensão narrativa genuína onde cada batalha tem stakes reais. O custo é emocional — o público investe em personagens que Akutami pode e vai eliminar. O resultado é uma das experiências de leitura mais intensas do shonen moderno, especialmente no arco de Shibuya e nos capítulos finais.
+        </p>
       </EditorialTake>
       <ArticleSources category="otaku"
         sources={[

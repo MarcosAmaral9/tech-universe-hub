@@ -137,16 +137,47 @@ const MaousamaRetry = () => {
         </div>
       </div>
 
-            <EditorialTake category="otaku" title="Análise do Marcos">
-          <p>
-            <strong>Maou-sama, Retry!</strong> é uma light novel de Kurone Kanzaki ilustrada por Kōji Ogata, publicada pela Futabasha desde 2016. O anime estreou em julho/2019 pela Ekachi Epilka, com 12 episódios e nota 6.4 no MyAnimeList. Em julho/2024 foi anunciada uma sequência intitulada 'Maou-sama, Retry! R' pela Studio Hibari, com lançamento previsto.
-          </p>
-          <p>
-            Não confunda com 'Demon Lord, Retry!' o anúncio menciona R como nova produção, com elenco em recasting parcial segundo a Anime News Network.
-          </p>
-          <p>
-            Minha análise: a obra explora o gancho 'admin de jogo online se torna o avatar do chefão' com tom mais sério que comédias isekai contemporâneas. A produção original sofreu com qualidade de animação irregular. O sucesso de 'Retry R' depende essencialmente do orçamento que a Studio Hibari conseguir alocar — se ficar no padrão da Hibari recente ('Sand Land'), o nível de animação tende a melhorar bastante.
-          </p>
+            
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127918;</span>
+          Hakuto Kunai: Programador de MMO no Corpo do Vilão que Criou
+        </h2>
+        <p>
+          A premissa de <strong>Maou-sama, Retry!</strong> é mais sofisticada do que aparece à primeira vista. <strong>Akira Oono</strong> não é apenas um jogador que entrou no seu jogo favorito — ele é o criador e administrador do personagem Hakuto Kunai por 15 anos. Isso significa que ele conhece cada habilidade, cada fraqueza e cada segredo do "Rei Demônio" melhor do que qualquer jogador poderia. Essa distinção muda a dinâmica de poder: Hakuto Kunai foi criado por Akira como o chefe final inderrotável do <em>Infinity Game</em>. No mundo real onde agora existe, ele tem poderes que nenhum habitante jamais enfrentou de forma controlada. Mas Akira, o programador dentro de Hakuto, sabe que "inderrotável dentro do sistema do jogo" não é o mesmo que "inderrotável num mundo real com regras diferentes".
+        </p>
+        <p>
+          O instinto de Akira é administrativo: ele quer entender o sistema, mapear as regras, identificar os atores e só então agir. Para alguém que administrou um MMORPG com centenas de milhares de usuários simultâneos por 15 anos, isso é segunda natureza. O problema é que o mundo não espera que ele termine seu diagnóstico — e a primeira interação com Aku o força a agir antes que esteja pronto.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127800;</span>
+          Aku e a Dinâmica Central da Série
+        </h2>
+        <p>
+          <strong>Aku</strong> — a criança que Hakuto salva logo no início — é o coração emocional de Maou-sama Retry. Marginalizada por sua aldeia por causa de olhos heterocromáticos (considerados sinal de maldição), ela é a primeira pessoa que Hakuto/Akira escolhe proteger por razões puramente pessoais, não estratégicas. A dinâmica entre os dois é propositalmente paternal e não-romântica — o que é uma escolha deliberada que se destaca num gênero onde as companheiras femininas frequentemente têm interesse amoroso no protagonista.
+        </p>
+        <p>
+          Aku chama Hakuto de "Rei Demônio" em todo momento público possível, para o constrangimento constante dele, porque genuinamente acredita que esse é o título correto e sente orgulho em anunciá-lo. Esse gag recorrente funciona porque a série estabelece que Aku não está sendo ingênua — ela simplesmente tem um código de honra que não permite esconder quem seu protetor é. As alianças que Hakuto forma, os conflitos que ele aceita ou evita, e a velocidade com que usa seu poder são todos moldados pela pergunta "isso protege Aku?".
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128250;</span>
+          Maou-sama Retry! R: A Segunda Chance da Franquia
+        </h2>
+        <p>
+          A série original de 2019 foi produzida pelo estúdio <strong>Ekachi Epilka</strong> e sofreu limitações de orçamento que resultaram em qualidade de animação irregular — especialmente visível nas sequências de ação. A premissa tinha potencial genuíno que a produção original não conseguiu realizar completamente. Em 2024, a franquia ganhou uma continuação: <strong>Maou-sama, Retry! R</strong> (Retry Revised), produzida pelo <strong>Studio Geek Toys</strong>, com parte do elenco original e retornando à história com produção superior. A série está disponível na Crunchyroll.
+        </p>
+        <p>
+          Retry R se posiciona como uma oportunidade de refazer a primeira impressão para quem desistiu da série em 2019 pelas questões de produção. O material de base — a light novel de Kurone Kanzaki publicada pela Futabasha desde setembro de 2016 — tem construção de mundo e desenvolvimento de personagens suficientemente sólidos para sustentar uma adaptação melhor executada. Para novos espectadores, Retry R é o ponto de entrada recomendado em vez da série original.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: Maou-sama Retry! tem premissa acima da execução — mas Retry R corrige isso">
+        <p>
+          <strong>Maou-sama, Retry!</strong> é uma light novel de <strong>Kurone Kanzaki</strong>, ilustrada por <strong>Kōji Ogata</strong>, publicada pela <strong>Futabasha</strong> desde setembro de 2016. O anime original foi produzido pelo estúdio <strong>Ekachi Epilka</strong>, com 12 episódios de julho a setembro de 2019. A continuação <strong>Maou-sama, Retry! R</strong> foi produzida pelo <strong>Studio Geek Toys</strong> e está disponível na <strong>Crunchyroll</strong>. Até maio de 2026, nenhuma temporada adicional além de Retry R foi anunciada.
+        </p>
+        <p>
+          A série original de 2019 teve limitações de orçamento que prejudicaram a animação em momentos decisivos. A premissa — programador de MMO acorda no corpo do chefe final que ele mesmo criou — tem potencial genuíno que a produção original não conseguiu realizar completamente. Retry R representa uma segunda chance para o material provar o que pode — e para quem desistiu em 2019 pelas questões técnicas, é o ponto de entrada recomendado.
+        </p>
       </EditorialTake>
 
             <ArticleSources category="otaku"

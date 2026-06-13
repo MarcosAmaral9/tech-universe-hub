@@ -214,16 +214,58 @@ const SpringSeasonAnimes2026 = () => {
         </div>
       </div>
 
-            <EditorialTake category="otaku" title="Análise do Marcos">
-          <p>
-            A Spring Season 2026 confirma a tendência observada pela Anime News Network e pela MyAnimeList no AniList Annual Report: as adaptações de Shonen Jump e light novels Kadokawa seguem dominando o Top 10 de hype, mas obras originais (sem material-fonte) começam a recuperar espaço — algo que não víamos com força desde 2020.
-          </p>
-          <p>
-            No Brasil, Crunchyroll e Netflix dividem o catálogo principal e a simuldublagem chega cada vez mais rápido — a média do primeiro trimestre de 2026 foi de 5 a 7 dias após o lançamento japonês, segundo dados da própria Crunchyroll BR. Para quem quer acompanhar tudo, vale combinar Crunchyroll (catálogo amplo) + ADN/Netflix (exclusivos) — gasto médio mensal de R$ 45 a R$ 70.
-          </p>
-          <p>
-            Minha análise: 2026 é o ano em que o anime virou produto mainstream definitivo no streaming brasileiro. Para o espectador casual, a recomendação é seguir 2-3 títulos da temporada sem tentar abraçar tudo — burnout de simulcast é real.
-          </p>
+            
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127776;</span>
+          Por Gênero: O Que a Spring Season 2026 Oferece para Cada Perfil
+        </h2>
+        <p>
+          A Spring Season 2026 tem densidade incomum em múltiplos gêneros simultaneamente — o que significa que independente de preferência, há pelo menos dois ou três títulos de alto nível para acompanhar. Para fãs de <strong>shonen e ação</strong>: One Piece Elbaf, Re:Zero T4 (que mistura ação com drama psicológico), Dr. STONE arco final e Kaiju No. 8 T2 formam uma grade robusta. Para fãs de <strong>isekai e construção de mundo</strong>: TenSura T4, Farming Life T2 e as continuações dos isekais de inverno (Hell Mode, Okiraku Ryoushu) que seguem em exibição. Para quem busca <strong>anime original sem adaptação de mangá</strong>: Lazarus (Shinichirō Watanabe + MAPPA) é o projeto mais ambicioso da temporada nessa categoria.
+        </p>
+        <p>
+          O <strong>seinen e slice-of-life</strong> têm representação mais discreta na Spring 2026 comparado com temporadas como outono de 2023 (Frieren) ou inverno de 2024 (Mushishi Zoku Shou). A temporada é dominada por continuações de franquias estabelecidas, o que é esperado para uma Spring Season após um inverno que trouxe muitas estreias novas. Para fãs de slice-of-life, Farming Life T2 é o título mais indicado — mantém o tom relaxado da T1 com mais desenvolvimento dos relacionamentos entre Hiraku e os habitantes da fazenda.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128202;</span>
+          Os Números da Temporada: Quantos Títulos, Quais Estúdios
+        </h2>
+        <p>
+          A Spring Season 2026 tem 66 estreias confirmadas segundo o banco de dados do <em>Anime News Network</em> e do <em>MyAnimeList</em>, distribuídas entre continuações, novas séries e OVAs especiais. Os estúdios com maior presença na temporada: <strong>MAPPA</strong> com dois projetos (Lazarus original + continuação de título da temporada anterior), <strong>Crunchyroll Originals</strong> com produções próprias, e estúdios tier-1 como <strong>White Fox</strong>, <strong>8bit</strong> e <strong>TMS Entertainment</strong> com suas respectivas franquias. A Toei Animation ocupa posição única com One Piece Elbaf — tecnicamente uma continuação, mas com formato de produção completamente novo que a coloca num patamar diferente das outras séries em andamento.
+        </p>
+        <p>
+          Em termos de horas de conteúdo novo por semana, a Spring 2026 produz aproximadamente 22 horas de anime novo semanalmente — impossível de acompanhar integralmente. A comunidade desenvolveu ao longo dos anos um sistema informal de triagem: assistir o primeiro episódio de qualquer título que pareça interessante, e continuar apenas os que justificam o tempo. Para a Spring 2026 especificamente, os primeiros episódios de One Piece Elbaf e Re:Zero T4 foram os mais assistidos e discutidos simultaneamente em anos segundo dados do AniList.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128218;</span>
+          Títulos Que Merecem Atenção Além dos Óbvios
+        </h2>
+        <p>
+          Toda temporada tem títulos que passam despercebidos pelo radar do hype mas entregam qualidade consistente. Na Spring 2026, três merecem atenção além dos cinco grandes:
+        </p>
+        <p>
+          <strong>Dandadan</strong> (Science SARU / Crunchyroll, segunda parte) continua a história de Momo e Okarun — a combinação de paranormal, romance adolescente e humor absurdo que tornou a série um dos destaques de 2024. Science SARU mantém o estilo visual experimental que diferencia a série de qualquer outro anime em produção. <strong>Kaiju No. 8 T2</strong> (Production I.G) entra no arco final do mangá de Naoya Matsumoto, com Kafka Hibino e a Defense Force enfrentando uma ameaça em escala nacional. A T1 encerrou num ponto que a T2 promete resolver de forma definitiva. <strong>Wistoria: Wand and Sword</strong> continua da temporada anterior com o arco de Regalia — um shonen de magia que tem a estrutura narrativa mais sólida entre os títulos de médio porte da temporada.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128336;</span>
+          Como Gerenciar o Acompanhamento Semanal Sem Perder o Prazer
+        </h2>
+        <p>
+          Uma das reclamações mais comuns do público de anime durante temporadas densas é a sensação de "obrigação" de acompanhar tudo ao vivo para não receber spoilers. Essa ansiedade é real mas gerenciável com algumas estratégias práticas. Primeiro: identificar seus três títulos de maior prioridade e assisti-los no dia de lançamento — o resto pode esperar dias ou semanas sem prejuízo real. Segundo: usar o AniList ou MyAnimeList para criar uma lista de "assistir depois" em vez de tentar manter tudo em dia simultaneamente.
+        </p>
+        <p>
+          Para quem não tem tempo de acompanhar semanalmente, a estratégia de maratonar ao final da temporada (junho/julho) tem a vantagem adicional de permitir verificar avaliações da comunidade antes de investir tempo em séries que decepcionaram. Para One Piece Elbaf especificamente, o formato sazonal resolve o problema: o bloco inteiro estará disponível quando a temporada encerrar, permitindo maratonar 10–13 episódios de qualidade cinematográfica em vez de esperar semana a semana. É provavelmente a forma mais satisfatória de acompanhar o arco de Elbaf.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: Spring Season 2026 é o melhor argumento contra a ideia de que anime está em declínio">
+        <p>
+          A Spring Season 2026 concentrou em um único trimestre mais séries de alto perfil simultâneas do que qualquer temporada desde o outono de 2023. <strong>One Piece Elbaf</strong> (formato sazonal inédito para a série), <strong>Re:Zero T4</strong>, <strong>TenSura T4</strong>, <strong>Dr. STONE arco final</strong> e <strong>Lazarus</strong> (Shinichirō Watanabe + MAPPA) estrearam na mesma janela de abril a junho. O volume total de estreias — 66 títulos confirmados — é o maior dos últimos três anos segundo o AniList.
+        </p>
+        <p>
+          Para quem questiona se o anime ainda produz obras de referência: a Spring 2026 é a resposta. Cinco franquias com bases globais de mais de 10 milhões de seguidores entregando novos conteúdos simultaneamente, mais um original de Watanabe que é o projeto mais ambicioso de anime inédito do ano. O problema não é falta de qualidade — é gerenciar o excesso dela sem comprometer a atenção dada a cada título. A estratégia mais honesta: escolha dois ou três e os assista com atenção real. O resto pode esperar.
+        </p>
       </EditorialTake>
 
             <ArticleSources category="otaku"

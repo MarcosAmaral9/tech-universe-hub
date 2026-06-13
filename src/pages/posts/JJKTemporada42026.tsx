@@ -175,8 +175,58 @@ const JJKTemporada42026 = () => {
         </div>
       </div>
 
-            <EditorialTake category="otaku" title={'Análise do Marcos: o Culling Game é o teste técnico do MAPPA'}>
-        <p>O arco do Culling Game tem fama de ser o mais denso de Jujutsu Kaisen — com dezenas de jogadores, regras que mudam e batalhas paralelas. Para a MAPPA, é um teste técnico e de gestão: o estúdio sofreu desgaste público pelas condições de produção da temporada de Shibuya, e <strong>a qualidade da temporada 4 vai definir se o estúdio mantém o status de top tier ou perde o projeto para outra produtora</strong> nos arcos finais. Para o fã brasileiro, a recomendação prática é a mesma de toda temporada recente: acompanhar o simulcast da Crunchyroll com legenda, e revisitar o arco de Shibuya na semana anterior ao primeiro episódio — sem isso, metade das referências do Culling Game se perde.</p>
+            
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128218;</span>
+          O Culling Game: Regras, Colônias e o Que Está em Jogo
+        </h2>
+        <p>
+          O Culling Game (Shimetsu Kaiyu — literalmente "Jogo do Extermínio") foi ativado por Kenjaku — o feiticeiro de mil anos que transplanta seu cérebro para sobreviver através dos séculos — como ritual para despertar feiticeiros que estavam selados há séculos. Esses feiticeiros ressuscitados são obrigados a participar de um jogo de sobrevivência em colônias isoladas espalhadas pelo Japão: áreas separadas do mundo normal onde as regras convencionais da sociedade não se aplicam. Matar outros participantes ganha pontos, e pontos suficientes permitem que o participante proponha alterações nas regras do jogo. O objetivo de Itadori e aliados na Part 2: acumular pontos para criar uma regra que permita que não-participantes entrem nas colônias e retirem aliados presos — especialmente Tsumiki Fushiguro, irmã de Megumi.
+        </p>
+        <p>
+          A lógica do jogo é cruel por design: obriga feiticeiros humanos a matarem uns aos outros enquanto Kenjaku observa o resultado. O verdadeiro propósito do Culling Game não é entretenimento — é a coleta de energia maldita em larga escala para um ritual maior cujos contornos a série revela progressivamente. A Part 2 é onde esses contornos ficam mais nítidos e onde as ações de Kenjaku ao longo de décadas começam a fazer sentido.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#9876;</span>
+          Por Que a T3 Foi Considerada a Melhor Temporada da Série
+        </h2>
+        <p>
+          A Temporada 3 de JJK encerrou com avaliações próximas de perfeitas no IMDB e MyAnimeList — foi considerada por boa parte da comunidade como a melhor temporada da série até o momento. Três fatores principais contribuíram para esse consenso. O primeiro foi a decisão da MAPPA de usar episódios de formato estendido para os confrontos mais importantes: o episódio final da Colônia de Sendai com Yuta Okkotsu teve quase 50 minutos de duração — uma declaração de intenção sobre a prioridade de qualidade sobre brevidade.
+        </p>
+        <p>
+          O segundo fator foi a consistência visual ao longo de todos os episódios. A Temporada 2 (Incidente de Shibuya) teve críticas por qualidade irregular entre episódios — picos de qualidade alternando com episódios visivelmente mais simples. A T3 eliminou essa variação, mantendo padrão alto do início ao fim. O terceiro fator foi a trilha sonora de Yoshimasa Terui: o compositor elevou a escala orquestral especialmente para o arco da Colônia de Sendai, criando temas que a comunidade já coloca entre os melhores do anime moderno.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128101;</span>
+          Os Personagens Centrais da Part 2
+        </h2>
+        <p>
+          A Temporada 4 concentra os confrontos mais importantes entre personagens que foram construídos ao longo de três temporadas. A relação entre <strong>Yuji Itadori e Ryomen Sukuna</strong> chega a um ponto de ruptura — toda a premissa da série envolve Yuji como recipiente que contém Sukuna, mas a Part 2 força essa dinâmica ao extremo quando Sukuna demonstra capacidade de agir com autonomia crescente. A T3 já estabeleceu os alicerces para esse confronto; a T4 é onde as consequências se materializam de forma definitiva.
+        </p>
+        <p>
+          <strong>Megumi Fushiguro</strong> tem o arco individual mais trágico do Culling Game. Sua Técnica das Dez Sombras, construída com cuidado desde a T1, é central para eventos que os leitores do mangá consideram entre os mais impactantes de toda a série. <strong>Yuta Okkotsu</strong> — protagonista do Volume 0 e personagem que cresceu enormemente nas temporadas recentes — continua sua trajetória na Part 2, com sua relação com Rika aprofundada de maneiras que conectam o passado da série com seu arco final.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128347;</span>
+          Quando Estreia: As Apostas e o JUJU FES 2026
+        </h2>
+        <p>
+          Sem data de estreia confirmada até maio de 2026, a comunidade trabalha com dois cenários principais. O <strong>cenário base</strong> — o mais provável segundo o padrão histórico da MAPPA — é uma estreia no inverno japonês de 2027 (janeiro–março), seguindo o intervalo médio de 18 meses entre temporadas que a série manteve. O <strong>cenário otimista</strong> é uma estreia no outono de 2026 (outubro–dezembro), possível se a produção tiver avançado rapidamente desde o anúncio em março. O <strong>JUJU FES 2026</strong>, o festival de aniversário realizado em agosto, é o evento mais provável para a revelação da data oficial — a MAPPA usou eventos similares para anunciar datas de temporadas anteriores.
+        </p>
+        <p>
+          Para quem quer se preparar antes da estreia, o mangá está disponível oficialmente no <strong>Manga Plus</strong> em inglês — os capítulos do Culling Game Part 2 (212 em diante) cobrem exatamente o que a T4 vai adaptar. A <strong>JBC Editora</strong> publica os volumes físicos em português no Brasil, com lançamentos regulares ainda em andamento.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: o Culling Game é o teste técnico do MAPPA">
+        <p>
+          Em 26 de março de 2026, ao final do episódio 59 da Temporada 3, a <strong>MAPPA</strong> confirmou a <strong>Temporada 4: Culling Game Part 2</strong> em produção. A conta oficial no X postou mensagem de agradecimento e confirmação imediatamente após o episódio. A Crunchyroll também confirmou a produção em andamento. Sem data de estreia anunciada até maio de 2026 — as apostas da comunidade ficam entre outono de 2026 e inverno de 2027.
+        </p>
+        <p>
+          O arco do Culling Game tem fama de ser o mais denso de Jujutsu Kaisen — com dezenas de jogadores, regras que mudam e batalhas paralelas em múltiplas colônias. Para a MAPPA, é o maior teste de consistência de produção desde Shibuya: o estúdio precisa manter a qualidade da T3 (considerada a melhor da série) durante um arco estruturalmente mais complexo. Para o fã brasileiro, a recomendação prática: acompanhar na Crunchyroll com legenda no mesmo dia do Japão, e revisitar os episódios 48–59 da T3 na semana anterior à estreia — sem esse contexto, metade das referências da Part 2 se perde.
+        </p>
       </EditorialTake>
       <ArticleSources category="otaku"
         sources={[
