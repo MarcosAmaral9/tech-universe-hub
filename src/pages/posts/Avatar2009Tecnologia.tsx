@@ -396,7 +396,7 @@ const Avatar2009Tecnologia = () => {
 
       <EditorialTake category="geek" title="Análise do Marcos: Avatar inventou um cinema que Hollywood demorou 15 anos para entender">
         <p>
-          Assisti <strong>Avatar</strong> no cinema em 2009, com 16 anos, e saí com a sensação de
+          Assisti <strong>Avatar</strong> no cinema em 2009, com 9 anos, e saí com a sensação de
           ter visto o futuro. A tecnologia 3D de Cameron era genuinamente diferente de tudo que
           existia — não era o 3D fraco de anaglifos coloridos dos anos 1950, mas imersão
           estereoscópica que criava profundidade de campo real. O problema é que Hollywood tentou
