@@ -779,7 +779,7 @@ export const blogPosts: BlogPost[] = [
     image: jjkTemporada4Img,
     author: "VICIO<CODE>",
     date: "2026-04-20",
-    readTime: "14 min",
+    readTime: "15 min",
     faq: [
       { q: "Jujutsu Kaisen Temporada 4 foi confirmada?", a: "Sim. A confirmação veio imediatamente após o episódio 59 (final da T3) em 26 de março de 2026. A conta oficial anunciou: 'A Temporada 4: Culling Game Part 2 está em produção — fiquem atentos às próximas notícias.' Crunchyroll também confirmou a produção." },
       { q: "Quando a Temporada 4 de JJK vai estrear?", a: "Sem data oficial ainda. O cenário mais provável (base) é início de 2027 — seguindo o intervalo médio entre temporadas. O cenário otimista é fim de 2026 (outubro/novembro). O festival JUJU FES 2026 (29–30 de agosto em Yokohama) deve revelar a data definitiva." },
@@ -956,7 +956,7 @@ export const blogPosts: BlogPost[] = [
     image: temporadaAnimesAbrilGuiaImg,
     author: "VICIO<CODE>",
     date: "2026-04-13",
-    readTime: "17 min",
+    readTime: "16 min",
     faq: [
       { q: "Qual o melhor anime da temporada de abril 2026?", a: "Depende do gosto: One Piece Elbaf (para fãs da série — histórico), Re:ZERO T4 (isekai psicológico, Arco 6 da Torre de Plêiades), Daemons of the Shadow Realm (nova obra da autora de FMA pelo estúdio Bones), Witch Hat Atelier (fantasia visualmente deslumbrante)." },
       { q: "Onde assistir os animes da Spring Season 2026?", a: "A maioria está na Crunchyroll com simulcast em português. Steel Ball Run (JoJo Parte 7) está na Netflix. MAO e alguns títulos específicos dividem distribuição entre as duas plataformas." },
@@ -1093,7 +1093,7 @@ export const blogPosts: BlogPost[] = [
     image: jujutsuKaisenImg,
     author: "VICIO<CODE>",
     date: "2026-04-11",
-    readTime: "17 min",
+    readTime: "16 min",
     faq: [
       { q: "Em que ordem assistir Jujutsu Kaisen?", a: "A ordem é: Jujutsu Kaisen Temporada 1 (24 episódios), filme Jujutsu Kaisen 0 (prequel, mas melhor assistir após T1), Temporada 2 (23 episódios cobrindo arcos Passado Oculto e Incidente de Shibuya) e Temporada 3 (em exibição, cobrindo o Culling Game)." },
       { q: "O mangá de Jujutsu Kaisen já acabou?", a: "Sim. O mangá de Jujutsu Kaisen, escrito por Gege Akutami, foi finalizado em setembro de 2024 com 271 capítulos. A história completa cobre desde a entrada de Yuji na escola até a batalha final contra Sukuna." },
@@ -1205,7 +1205,7 @@ export const blogPosts: BlogPost[] = [
     image: temporadaAnimesAbrilImg,
     author: "VICIO<CODE>",
     date: "2026-04-04",
-    readTime: "17 min",
+    readTime: "16 min",
     faq: [
       { q: "Quais os melhores animes da temporada de abril 2026?", a: "Re:ZERO T4, TenSura T4, Dr. STONE Final Season, Kaiju No. 8 T2, The Apothecary Diaries T2 e Gals Can't Be Kind to Otaku!?." },
       { q: "Onde assistir os animes da Spring 2026?", a: "A maioria está na Crunchyroll com simulcast. Alguns títulos podem ter distribuição em outras plataformas." },
@@ -1738,7 +1738,7 @@ export const blogPosts: BlogPost[] = [
     image: manhwaVsManuaImg,
     author: "VICIO<CODE>",
     date: "2026-01-30",
-    readTime: "4 min",
+    readTime: "12 min",
     faq: [
       { q: "Qual a diferença entre manhua e manhwa?", a: "Manhuas são quadrinhos chineses (lidos da esquerda para direita) e manhwas são quadrinhos coreanos (também esquerda para direita). Diferem em estilos artísticos, temas culturais e plataformas de publicação." },
       { q: "Manhuas são coloridos?", a: "Sim. Tanto manhuas quanto manhwas modernos são publicados em formato webtoon colorido e vertical, diferente dos mangás japoneses que são em preto e branco." },
@@ -2488,7 +2488,7 @@ export const blogPosts: BlogPost[] = [
     image: isekaiImg,
     author: "VICIO<CODE>",
     date: "2026-03-10",
-    readTime: "14 min",
+    readTime: "13 min",
     faq: [
       { q: "O que é isekai?", a: "Isekai ('outro mundo') é um gênero de anime/mangá onde o protagonista é transportado ou reencarnado em um mundo diferente, geralmente de fantasia com sistema de RPG." },
       { q: "Por que isekai é tão popular?", a: "O gênero oferece escapismo, fantasia de poder e familiaridade com mecânicas de jogos. A premissa simples permite histórias variadas — de comédia a dark fantasy — atraindo público amplo." },
@@ -3069,7 +3069,7 @@ export const blogPosts: BlogPost[] = [
     image: tensuraCharsImg,
     author: "VICIO<CODE>",
     date: "2026-03-21",
-    readTime: "10 min",
+    readTime: "11 min",
     faq: [
       { q: "Rimuru Tempest é o protagonista mais forte dos isekais?", a: "Rimuru está entre os mais fortes. Como True Demon Lord e posteriormente True Dragon, seus poderes incluem análise, absorção de habilidades e controle sobre espaço-tempo. Poucos protagonistas isekai o superam." },
       { q: "Quantos Demon Lords existem em TenSura?", a: "São 10 Grandes Demon Lords (Octagram após reorganização): Guy Crimson, Milim Nava, Ramiris, Dagruel, Dino, Luminous Valentine, Leon Cromwell, Rimuru Tempest e dois assentos variáveis." },
@@ -3219,7 +3219,7 @@ export const blogPosts: BlogPost[] = [
     image: mugenGachaImg,
     author: "VICIO<CODE>",
     date: "2026-03-29",
-    readTime: "14 min",
+    readTime: "13 min",
     faq: [
       { q: "Qual é o enredo de Mugen Gacha Level 9999?", a: "Light é traído e abandonado pelos companheiros no fundo de uma dungeon, mas descobre o sistema Gacha Ilimitado que invoca guerreiras de nível 9999. Com elas, ele busca vingança." },
       { q: "Mugen Gacha Level 9999 tem anime?", a: "Sim. O anime foi produzido pela J.C.Staff e exibido de outubro a dezembro de 2025 no HIDIVE, com 12 episódios." },
@@ -3257,7 +3257,7 @@ export const blogPosts: BlogPost[] = [
     image: hellModeImg,
     author: "VICIO<CODE>",
     date: "2026-03-29",
-    readTime: "15 min",
+    readTime: "13 min",
     faq: [
       { q: "O que é o Hell Mode no anime?", a: "Hell Mode é a dificuldade máxima do MMORPG que Kenichi jogava — exige 100x mais XP mas oferece recompensas superiores. Ao reencarnar, ele mantém essa configuração, evoluindo lentamente mas sem limites." },
       { q: "Hell Mode tem quantos episódios?", a: "A temporada 1 tem 12 episódios, lançados em janeiro de 2026. Produzido pela Yokohama Animation Laboratory, disponível no HIDIVE e Amazon Prime Video." },
@@ -3295,7 +3295,7 @@ export const blogPosts: BlogPost[] = [
     image: maousamaImg,
     author: "VICIO<CODE>",
     date: "2026-03-29",
-    readTime: "14 min",
+    readTime: "13 min",
     faq: [
       { q: "Qual a diferença entre Maou-sama Retry e Retry R?", a: "Retry (2019, Ekachi Epilka) tinha animação modesta. Retry R (2024, Gekkō) é uma nova adaptação com animação completamente refeita, maior fidelidade ao material original e produção superior." },
       { q: "Quem é Hakuto Kunai em Maou-sama Retry?", a: "Hakuto Kunai é o avatar Rei Demônio que Akira Oono, programador de 45 anos, criou em seu MMORPG. Ao ser sugado para dentro do jogo, ele mantém todos os poderes absurdos do personagem." },
