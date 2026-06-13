@@ -11,7 +11,7 @@ import bannerlordGuiaImg from "@/assets/bannerlord-guia.webp";
 import bannerlordCulturasImg from "@/assets/bannerlord-culturas-reinos.webp";
 import bannerlordArvoresTropasImg from "@/assets/bannerlord-arvores-tropas.webp";
 import bannerlordMelhoresTropasImg from "@/assets/bannerlord-melhores-tropas.webp";
-import bannerlordWarSailsMap from "@/assets/bannerlord-war-sails-map.webp";
+import CalradiaMap from "@/components/CalradiaMap";
 
 const articles = [
   {
@@ -154,23 +154,27 @@ const BannerlordPortal = () => (
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-300 text-xs font-bold uppercase tracking-wider mb-4">
             <Ship className="h-4 w-4" /> Expansão · War Sails
           </div>
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">Mapa Oficial — Costa de Calradia</h2>
+          <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">Mapas Interativos de Calradia</h2>
           <p className="text-muted-foreground max-w-2xl">
-            A primeira expansão paga traz <strong className="text-blue-300">combate naval</strong>, novas regiões
-            costeiras e uma camada de gestão para reinos com saída para o mar. Clique no mapa para inspecionar cada
-            cidade portuária e estandarte.
+            Compare o continente <strong>antes</strong> e <strong className="text-blue-300">depois</strong> da
+            expansão <strong className="text-blue-300">War Sails</strong>: a chegada dos Nords no arquipélago norte
+            adicionou uma nona facção e abriu rotas marítimas inéditas. Clique nos pinos ou na legenda colorida para
+            ver cultura, capital, cidades-chave e tropa T6 de cada reino.
           </p>
         </div>
 
-        <LightboxImage
-          src={bannerlordWarSailsMap}
-          alt="Mapa oficial da expansão War Sails de Mount & Blade II: Bannerlord, mostrando a costa de Calradia com cidades portuárias, ilhas e estandartes coloridos de cada cultura envolvida no combate naval"
-          caption="Clique para ampliar · Mapa oficial divulgado pela TaleWorlds"
-          className="shadow-2xl shadow-blue-500/10"
-          width={1991}
-          height={1821}
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
-        />
+        <div className="grid gap-6 lg:grid-cols-2">
+          <CalradiaMap
+            variant="classic"
+            title="Antes da expansão · 8 facções"
+            caption="Calradia clássica · clique para ampliar"
+          />
+          <CalradiaMap
+            variant="warsails"
+            title="Após War Sails · 9 facções (com Nords)"
+            caption="Calradia pós-War Sails · clique para ampliar"
+          />
+        </div>
 
         <div className="grid sm:grid-cols-3 gap-4 mt-8">
           <div className="p-4 rounded-xl bg-blue-500/5 border border-blue-500/20">
