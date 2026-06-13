@@ -27,7 +27,7 @@ import SkeletonImage from "@/components/SkeletonImage";
 import LightboxImage from "@/components/LightboxImage";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import culturasImg from "@/assets/bannerlord-culturas-reinos.webp";
-import bannerlordWarSailsMap from "@/assets/bannerlord-war-sails-map.webp";
+import CalradiaMap from "@/components/CalradiaMap";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
 
 const cultures = [
@@ -356,14 +356,10 @@ const BannerlordCulturasReinos = () => {
             </p>
           </div>
 
-          <LightboxImage
-            src={bannerlordWarSailsMap}
-            alt="Mapa oficial da expansão War Sails de Mount & Blade II: Bannerlord, destacando o litoral norte ocupado pelos Nords, seus portos-fortaleza, ilhas e estandartes culturais"
-            caption="Mapa oficial War Sails · Clique para ampliar, arraste para navegar e use +/- para o zoom"
-            className="shadow-2xl shadow-blue-500/10"
-            width={1991}
-            height={1821}
-            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
+          <CalradiaMap
+            variant="warsails"
+            title="Mapa interativo · Calradia após War Sails"
+            caption="9 facções, incluindo o território Nord no arquipélago norte"
           />
         </div>
 

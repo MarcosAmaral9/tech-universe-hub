@@ -28,7 +28,7 @@ import LightboxImage from "@/components/LightboxImage";
 import SkeletonImage from "@/components/SkeletonImage";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import bannerlordGuiaImg from "@/assets/bannerlord-guia.webp";
-import bannerlordWarSailsMap from "@/assets/bannerlord-war-sails-map.webp";
+import CalradiaMap from "@/components/CalradiaMap";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
 
 const BannerlordGuiaCompleto = () => {
@@ -426,13 +426,10 @@ const BannerlordGuiaCompleto = () => {
               <Ship className="h-3.5 w-3.5" /> Mapa Oficial · War Sails
             </span>
           </div>
-          <LightboxImage
-            src={bannerlordWarSailsMap}
-            alt="Mapa oficial da expansão War Sails de Mount & Blade II: Bannerlord, mostrando a costa de Calradia com cidades portuárias, ilhas e estandartes coloridos de cada cultura envolvida no combate naval"
-            caption="Clique para ampliar · Inspecione cidades portuárias, ilhas e estandartes"
-            width={1991}
-            height={1821}
-            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 900px"
+          <CalradiaMap
+            variant="warsails"
+            title="Mapa interativo · Calradia após War Sails"
+            caption="9 facções (com Nords) · clique nos pinos ou legenda"
           />
           <p className="text-xs text-muted-foreground mt-4 italic leading-relaxed">
             Mapa oficial divulgado pela TaleWorlds — costa de Calradia com cidades portuárias, ilhas e estandartes das
