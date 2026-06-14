@@ -11,7 +11,7 @@ import bannerlordGuiaImg from "@/assets/bannerlord-guia.webp";
 import bannerlordCulturasImg from "@/assets/bannerlord-culturas-reinos.webp";
 import bannerlordArvoresTropasImg from "@/assets/bannerlord-arvores-tropas.webp";
 import bannerlordMelhoresTropasImg from "@/assets/bannerlord-melhores-tropas.webp";
-import CalradiaMap from "@/components/CalradiaMap";
+
 
 const articles = [
   {
@@ -53,7 +53,6 @@ const articles = [
 ];
 
 const upcoming = [
-  { icon: MapIcon, title: "Mapa de Calradia", desc: "Cidades, castelos e vilas de cada cultura" },
   { icon: Hammer, title: "Mods Essenciais", desc: "Steam Workshop, Nexus, Harmony" },
   { icon: Ship, title: "Expansão War Sails", desc: "Combate naval e novas regiões costeiras" },
 ];
@@ -154,26 +153,12 @@ const BannerlordPortal = () => (
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-300 text-xs font-bold uppercase tracking-wider mb-4">
             <Ship className="h-4 w-4" /> Expansão · War Sails
           </div>
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">Mapas Interativos de Calradia</h2>
+          <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">A expansão que mudou Calradia</h2>
           <p className="text-muted-foreground max-w-2xl">
-            Compare o continente <strong>antes</strong> e <strong className="text-blue-300">depois</strong> da
-            expansão <strong className="text-blue-300">War Sails</strong>: a chegada dos Nords no arquipélago norte
-            adicionou uma nona facção e abriu rotas marítimas inéditas. Clique nos pinos ou na legenda colorida para
-            ver cultura, capital, cidades-chave e tropa T6 de cada reino.
+            <strong className="text-blue-300">War Sails</strong> trouxe combate naval, novas regiões costeiras e a
+            <strong className="text-blue-300"> 9ª cultura</strong> oficial — os <strong>Nords</strong> — que ocupam
+            o litoral norte com as cidades de Sibir, Tyal e Varnovapol.
           </p>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-2">
-          <CalradiaMap
-            variant="classic"
-            title="Antes da expansão · 8 facções"
-            caption="Calradia clássica · clique para ampliar"
-          />
-          <CalradiaMap
-            variant="warsails"
-            title="Após War Sails · 9 facções (com Nords)"
-            caption="Calradia pós-War Sails · clique para ampliar"
-          />
         </div>
 
         <div className="grid sm:grid-cols-3 gap-4 mt-8">
@@ -199,6 +184,7 @@ const BannerlordPortal = () => (
         </div>
       </div>
     </section>
+
 
     {/* ARTICLES GRID */}
     <section className="container py-14 max-w-6xl">
