@@ -24,7 +24,7 @@ import BackNavigation from "@/components/BackNavigation";
 import SkeletonImage from "@/components/SkeletonImage";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import heroImg from "@/assets/bannerlord-arvores-tropas.webp";
-import CalradiaMap from "@/components/CalradiaMap";
+
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
 
 type TroopRow = [string, string, string, string]; // [tier, troop, role, notes]
@@ -398,20 +398,6 @@ const BannerlordArvoresTropas = () => {
           pesadas do jogo — comparado de igual para igual com Imperial Legionary e Sturgian Heavy Axeman.
         </p>
 
-        <div className="not-prose my-10">
-          <div className="flex flex-col items-center text-center mb-5">
-            <h3 className="font-display text-2xl md:text-3xl font-bold mb-2">Onde recrutar Nords</h3>
-            <p className="text-muted-foreground max-w-2xl text-sm">
-              Vilas costeiras controladas por clãs Nords no mapa War Sails. Clique no mapa, arraste e use zoom para
-              identificar cada porto e estandarte.
-            </p>
-          </div>
-          <CalradiaMap
-            variant="warsails"
-            title="Mapa interativo · Onde recrutar Nords (War Sails)"
-            caption="Clique no pino dos Nords para ver Jorvik, Skagar, Hafnir e demais portos"
-          />
-        </div>
 
         <h3>Comparativo direto: Nord Huscarl vs. as melhores T5 do jogo</h3>
         <div className="not-prose my-6 overflow-x-auto rounded-xl border border-blue-500/20 shadow-lg">
