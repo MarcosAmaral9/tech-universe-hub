@@ -81,6 +81,7 @@ import bannerlordGuiaImg from "@/assets/bannerlord-guia.webp";
 import bannerlordCulturasImg from "@/assets/bannerlord-culturas-reinos.webp";
 import bannerlordArvoresTropasImg from "@/assets/bannerlord-arvores-tropas.webp";
 import bannerlordMelhoresTropasImg from "@/assets/bannerlord-melhores-tropas.webp";
+import bannerlordTerritoriosImg from "@/assets/bannerlord-territorios-faccoes.webp";
 import crimsonDesertCombateImg from "@/assets/crimson-desert-combate.webp";
 import crimsonDesertReviewImg from "@/assets/crimson-desert-review.webp";
 import crimsonDesertBuildsImg from "@/assets/crimson-desert-builds.webp";
@@ -2788,6 +2789,27 @@ export const blogPosts: BlogPost[] = [
       { q: "Khan's Guard é a melhor tropa do jogo?", a: "Em campo aberto, sim. É praticamente imparável quando usada em massa por causa do arco composto pesado a cavalo. Mas perde muito desempenho em cerco, contra muralhas e contra fileiras de pikemen, então não é universalmente a melhor." },
       { q: "Vale a pena montar exército de uma única cultura?", a: "Não no late-game. Mesmo a cultura mais forte tem buracos táticos. Os exércitos vencedores em modo difícil costumam ser híbridos: Banner Knight + Fian Champion + Imperial Legionary é uma composição clássica que cobre choque, dano à distância e linha." },
       { q: "Como a tier list muda com mods?", a: "Mods grandes como Realistic Battle Mod, BannerKings e Europe 1100 reescrevem armaduras, dano e até árvores inteiras de tropas. A tier list deste guia vale para a versão 1.x do jogo base + expansão War Sails sem mods de combate pesados." },
+    ],
+  },
+
+  {
+    id: "bannerlord-5",
+    slug: "bannerlord-territorios-faccoes-calradia-2026",
+    title: "Bannerlord: Territórios das Facções — Cidades e Castelos das 9 Culturas",
+    excerpt: "Mapa narrado dos territórios de Calradia em Mount & Blade II: Bannerlord. Cidades, castelos e contagem de vilas das 9 facções — Vlandia, Battania, Sturgia, Aserai, Khuzait, os 3 Impérios e os Nords da expansão War Sails.",
+    content: "",
+    category: "geek",
+    subtopic: "bannerlord",
+    image: bannerlordTerritoriosImg,
+    author: "VICIO<CODE>",
+    date: "2026-06-16",
+    readTime: "12 min",
+    faq: [
+      { q: "Quantas cidades e castelos existem em Bannerlord?", a: "Somando o jogo base e a expansão War Sails, Calradia tem mais de 45 cidades e mais de 65 castelos distribuídos entre as 9 culturas, além de mais de 200 vilas que orbitam esses assentamentos maiores." },
+      { q: "Qual a capital de cada facção em Bannerlord?", a: "Vlandia: Pravend. Battania: Marunath. Sturgia: Tyal. Aserai: Quyaz. Khuzait: Makeb. Império Norte: Epicrotea. Império Sul: Lycaron. Império Oeste: Jalmarys. Nords (War Sails): Wercheg." },
+      { q: "Quais cidades são mais disputadas no mapa?", a: "Pen Cannoc (Battania x Vlandia), Charas (Vlandia x Império Oeste x Norte), Sargot, Amitatys, Phycaon e Husn Fulq trocam de dono em mais de 40% das campanhas, segundo dados internos divulgados pela TaleWorlds em 2023." },
+      { q: "Os Nords têm muitas cidades em Bannerlord?", a: "Não. A 9ª cultura, adicionada pela expansão War Sails em 2025, começa com 3 cidades costeiras (Wercheg, Sibir e Varnovapol) e 5 castelos. A força nord vem dos estaleiros e do controle do mar do norte, não do número de assentamentos terrestres." },
+      { q: "Vilas têm a mesma importância de cidades?", a: "Não. Vilas são produtoras de matérias-primas (grãos, ferro, cavalos, peixe, peles) e fonte de recrutas T1, mas a renda principal e o poder político vêm das cidades e castelos. Cada cidade controla de 3 a 5 vilas; cada castelo, de 2 a 3." },
     ],
   },
 
