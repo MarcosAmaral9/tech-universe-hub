@@ -2812,6 +2812,9 @@ export const blogPosts: BlogPost[] = [
       { q: "Vilas têm a mesma importância de cidades?", a: "Não. Vilas são produtoras de matérias-primas (grãos, ferro, cavalos, peixe, peles) e fonte de recrutas T1, mas a renda principal e o poder político vêm das cidades e castelos. Cada cidade controla de 3 a 5 vilas; cada castelo, de 2 a 3." },
     ],
   },
+
+  {
+    id: "111",
     slug: "cdb-2026-guia-completo",
     title: "CDB em 2026: Ainda Vale a Pena? Guia Completo com Taxas Reais",
     excerpt: "CDB 100% CDI, 110% CDI, IR regressivo e comparação com LCI, LCA e Tesouro Direto. Tudo que você precisa saber para investir bem em renda fixa em 2026.",

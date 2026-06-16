@@ -11,6 +11,7 @@ import bannerlordGuiaImg from "@/assets/bannerlord-guia.webp";
 import bannerlordCulturasImg from "@/assets/bannerlord-culturas-reinos.webp";
 import bannerlordArvoresTropasImg from "@/assets/bannerlord-arvores-tropas.webp";
 import bannerlordMelhoresTropasImg from "@/assets/bannerlord-melhores-tropas.webp";
+import bannerlordTerritoriosImg from "@/assets/bannerlord-territorios-faccoes.webp";
 
 
 const articles = [
@@ -49,6 +50,15 @@ const articles = [
     image: bannerlordMelhoresTropasImg,
     btn: "Ver Ranking",
     badge: "🏆 Novo",
+  },
+  {
+    slug: "bannerlord-territorios-faccoes-calradia-2026",
+    title: "Territórios das Facções",
+    subtitle: "Cidades e Castelos das 9 Culturas",
+    desc: "Mapa narrado de Calradia — cidades, castelos e contagem de vilas das 9 facções, incluindo os Nords e seus portos da expansão War Sails.",
+    image: bannerlordTerritoriosImg,
+    btn: "Ver Territórios",
+    badge: "🗺️ Novo",
   },
 ];
 
