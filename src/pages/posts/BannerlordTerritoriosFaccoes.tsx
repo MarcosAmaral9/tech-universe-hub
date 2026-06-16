@@ -418,11 +418,11 @@ const BannerlordTerritoriosFaccoes = () => {
           que esse guia listou as cidades por <em>função</em>, não só por nome.
         </p>
 
-        <EditorialTake
-          author="VICIO<CODE>"
-          category="geek"
-          quote="O segredo de Calradia não está em quantas cidades cada facção tem, mas em como elas se conectam. Os Nords provaram com War Sails que três portos bem posicionados valem mais que oito castelos isolados — e isso reescreveu a estratégia do meta competitivo de 2026."
-        />
+        <EditorialTake category="geek" title="Leitura do VICIO<CODE>">
+          O segredo de Calradia não está em quantas cidades cada facção tem, mas em como elas se conectam. Os
+          Nords provaram com War Sails que três portos bem posicionados valem mais que oito castelos isolados — e
+          isso reescreveu a estratégia do meta competitivo de 2026.
+        </EditorialTake>
 
         <ArticleSources
           sources={[
@@ -433,7 +433,7 @@ const BannerlordTerritoriosFaccoes = () => {
         />
       </div>
 
-      <RelatedPosts currentPostId="bannerlord-5" category="geek" />
+      <RelatedPosts currentSlug="bannerlord-territorios-faccoes-calradia-2026" />
 
       <div className="max-w-4xl mx-auto mt-12">
         <CommentSection
