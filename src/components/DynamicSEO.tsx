@@ -901,19 +901,19 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     keywords: "melhores mangas 2026, mangas para ler 2026, melhores mangas iniciante, melhor manga seinen, Fullmetal Alchemist, Berserk, Vagabond, Chainsaw Man, Sakamoto Days, Manga Plus, Panini manga 2026",
   },
   "/post/saude-mental-cultura-otaku-2026": {
-    title: "Saúde Mental e Cultura Otaku: Quando o Anime Ajuda e Quando Isola",
-    description: "Análise baseada em evidências sobre saúde mental e cultura otaku: quando o anime é terapêutico, sinais de fuga disfuncional, hikikomori e recursos de apoio no Brasil (CVV 188).",
-    keywords: "saude mental otaku, anime saude mental, hikikomori brasil, CVV 188, anime depressao, A Silent Voice saude mental, March Comes in Like a Lion, escapismo saudavel anime, CAPS saude mental brasil",
+    title: "Saúde Mental e Cultura Otaku: Fandom, Isolamento e Onde Buscar Ajuda",
+    description: "Análise completa da relação entre saúde mental e cultura otaku: fandom como suporte social, hikikomori no Brasil, sinais de alerta, autocuidado e recursos (CVV 188, CAPS). Baseado em pesquisas reais e dados do CVV.",
+    keywords: "saúde mental otaku, fandom suporte social, hikikomori Brasil, CVV 188 gratuito, CAPS saúde mental, isolamento anime, A Silent Voice saúde mental, autocuidado otaku, cultura otaku isolamento, FGV pesquisa jovens pandemia",
   },
   "/post/manga-vs-anime-adaptacao-2026": {
     title: "Mangá vs. Anime: Quando a Adaptação Supera o Original — Análise 2026",
-    description: "Análise de quando o anime supera o mangá (FMA Brotherhood, Demon Slayer) e quando decepciona (Tokyo Ghoul, Berserk 2016). Os 4 critérios que determinam o sucesso de uma adaptação.",
-    keywords: "manga vs anime, adaptacao anime manga, FMA Brotherhood adaptacao, Demon Slayer anime, Tokyo Ghoul decepcao, Berserk 2016 CGI, quando anime supera manga, melhores adaptacoes anime, MAL top anime 2026",
+    description: "O que o anime adiciona que o mangá não tem (trilha, voice acting, timing). Casos de 2025-2026: Dandadan supera, Solo Leveling perde detalhes. Guia por franquia: One Piece, JJK, Frieren, Berserk, Vinland Saga.",
+    keywords: "manga vs anime adaptação, anime supera manga, manga melhor que anime, Dandadan anime, Solo Leveling anime manhwa, FMA Brotherhood, Berserk adaptação, trilha sonora anime, voice acting anime, guia por franquia manga anime 2026",
   },
   "/post/diferenca-mangas-manhuas-manhwas": {
-    title: "Manga vs Manhwa vs Manhua: Diferenças e Melhores Obras 2026",
-    description: "Guia completo das diferenças entre manga japonês, manhwa coreano e manhua chinês: formato, leitura, cores, gêneros, plataformas e os melhores títulos de cada tipo para 2026.",
-    keywords: "diferenca manga manhwa manhua, manga vs manhwa, manga japones, manhwa coreano, manhua chines, Solo Leveling manhwa, One Piece manga, webtoon br, Manga Plus brasil, xianxia manhua, 2026",
+    title: "Manga vs Manhwa vs Manhua: Diferenças Completas — História e Cultura",
+    description: "Guia completo das diferenças entre manga japonês (Tezuka, preto e branco, Jump), manhwa coreano (webtoon, Naver, Solo Leveling) e manhua chinês (Xianxia, cultivo, Bilibili). Onde ler cada um legalmente.",
+    keywords: "diferença manga manhwa manhua, manga japonês história, manhwa coreano webtoon, manhua chinês xianxia, Osamu Tezuka mangá origem, Naver Webtoon manhwa, Bilibili manhua, One Piece mangá, Solo Leveling manhwa, Tales Demons Gods",
   },
   "/post/como-diferenciar-manhuas-manhwas": {
     title: "Como Diferenciar Manhwa (Coreano) de Manhua (Chinês): Guia Completo",
