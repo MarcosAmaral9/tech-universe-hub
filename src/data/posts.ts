@@ -347,7 +347,7 @@ export const blogPosts: BlogPost[] = [
     image: kaijuNo8T2Img,
     author: "VICIO<CODE>",
     date: "2026-05-04",
-    readTime: "15 min",
+    readTime: "14 min",
     faq: [
       { q: "O que é Kaiju No. 8?", a: "Kaiju No. 8 é um mangá shonen de Naoya Matsumoto publicado no Shonen Jump+ desde 2020, com mais de 45 milhões de cópias em circulação. A história acompanha Kafka Hibino, 32 anos, que ganha o poder de se transformar em um kaiju Número 8 enquanto tenta ingressar na Japan Defense Force — força militar que combate monstros gigantes." },
       { q: "Onde assistir Kaiju No. 8 Temporada 2?", a: "Na Crunchyroll com simulcast legendado em português no mesmo dia do Japão. A Temporada 1 (12 episódios, 2024) está completa na plataforma. A Temporada 2 está em andamento na Spring Season 2026, com episódios saindo semanalmente." },
@@ -484,7 +484,7 @@ export const blogPosts: BlogPost[] = [
     image: dragonBallBeerusImg,
     author: "VICIO<CODE>",
     date: "2026-04-30",
-    readTime: "15 min",
+    readTime: "14 min",
     faq: [
       { q: "O novo anime de Dragon Ball Super foi confirmado?", a: "Sim. No Dragon Ball Battle Hour 2026, a Toei Animation confirmou que o Arco de Beerus do mangá de DBS está sendo adaptado como anime. Toyotarou supervisionará. Estimativa: 2027." },
       { q: "Qual é o Arco de Beerus em Dragon Ball Super?", a: "É o arco mais recente do mangá de DBS (capítulo 88 em diante), ainda em publicação mensal. Gira em torno de Beerus como Deus da Destruição e sua relação com Zeno-sama." },
@@ -624,7 +624,7 @@ export const blogPosts: BlogPost[] = [
     image: narutoEspeciaisImg,
     author: "VICIO<CODE>",
     date: "2026-04-25",
-    readTime: "15 min",
+    readTime: "14 min",
     faq: [
       { q: "Os especiais de Naruto 2026 foram confirmados?", a: "Sim. O site oficial confirmou 4 episódios especiais em produção pelo Studio Pierrot para late 2026. Em 21 de abril de 2026, os novos designs dos personagens adultos foram revelados oficialmente." },
       { q: "Qual história vai ser contada nos especiais de Naruto?", a: "Não foi revelado oficialmente. A teoria mais forte é adaptação expandida de The Last: Naruto the Movie. Os designs sugerem a era adulta pós-guerra ninja." },
@@ -643,7 +643,7 @@ export const blogPosts: BlogPost[] = [
     image: bigThreeImg,
     author: "VICIO<CODE>",
     date: "2026-04-25",
-    readTime: "16 min",
+    readTime: "15 min",
     faq: [
       { q: "Por que os Big Three são tão importantes para o anime?", a: "Naruto, Bleach e One Piece dominaram a cultura otaku de 2002 a 2012, criando uma geração inteira de fãs e estabelecendo o shonen como gênero cultural dominante globalmente." },
       { q: "Qual do Big Three está melhor agora em 2026?", a: "Bleach TYBW tem a melhor animação técnica. One Piece Elbaf tem a maior importância narrativa. Naruto terá o maior impacto emocional. Em qualidade visual, Bleach lidera; em importância para fãs, One Piece Elbaf." },
@@ -1681,7 +1681,7 @@ export const blogPosts: BlogPost[] = [
     image: systemManhwaImg,
     author: "VICIO<CODE>",
     date: "2026-01-27",
-    readTime: "8 min",
+    readTime: "13 min",
     faq: [
       { q: "O que é um manhwa de sistema?", a: "É um quadrinho coreano (manhwa) onde o protagonista recebe um 'sistema de jogo' com níveis, quests, status e habilidades, similar a um RPG dentro da história." },
       { q: "Solo Leveling é o melhor manhwa de sistema?", a: "Solo Leveling é o mais popular e pioneiro do gênero, mas títulos como Omniscient Reader's Viewpoint e The Beginning After The End são considerados tão bons ou melhores por muitos leitores." },
@@ -1799,7 +1799,7 @@ export const blogPosts: BlogPost[] = [
     image: mangaManhwaManhuaImg,
     author: "VICIO<CODE>",
     date: "2026-02-02",
-    readTime: "5 min",
+    readTime: "13 min",
     faq: [
       { q: "O que é mangá?", a: "Mangá é a forma japonesa de quadrinhos, geralmente em preto e branco, lido da direita para esquerda. É publicado em revistas semanais/mensais e depois compilado em volumes (tankōbon)." },
       { q: "Qual a diferença entre mangá, manhwa e manhua?", a: "Mangá é japonês (P&B, direita→esquerda). Manhwa é coreano (colorido, esquerda→direita). Manhua é chinês (colorido, esquerda→direita). Cada um tem estilos e temas culturais distintos." },
@@ -2417,7 +2417,7 @@ export const blogPosts: BlogPost[] = [
     image: mangaVsAnimeImg,
     author: "VICIO<CODE>",
     date: "2026-03-06",
-    readTime: "13 min",
+    readTime: "14 min",
     faq: [
       { q: "Mangá ou anime: qual é melhor?", a: "Depende do título. Animes com boa animação (Demon Slayer, JJK) podem superar o mangá. Mangás com arte detalhada (Berserk, Vagabond) são superiores. Ambos se complementam." },
       { q: "Por que adaptações de anime cortam conteúdo?", a: "Por limitações de tempo. Uma temporada de 12 episódios cobre ~50 capítulos de mangá. Material extra, arcos secundários e detalhes narrativos são frequentemente omitidos ou condensados." },
@@ -2543,7 +2543,7 @@ export const blogPosts: BlogPost[] = [
     image: saudeMentalOtakuImg,
     author: "VICIO<CODE>",
     date: "2026-03-13",
-    readTime: "13 min",
+    readTime: "14 min",
     faq: [
       { q: "Assistir anime faz bem para saúde mental?", a: "Pode sim. Animes oferecem escape saudável, representação de emoções complexas, senso de comunidade e personagens que inspiram resiliência. O problema é quando substitui relacionamentos reais." },
       { q: "Quando a cultura otaku pode ser prejudicial?", a: "Quando leva ao isolamento social extremo, quando substitui tratamento profissional de saúde mental, quando causa dependência de escape ou quando interfere significativamente no trabalho/estudos." },
@@ -3055,7 +3055,7 @@ export const blogPosts: BlogPost[] = [
     image: tensuraGuiaImg,
     author: "VICIO<CODE>",
     date: "2026-03-20",
-    readTime: "18 min",
+    readTime: "16 min",
     faq: [
       { q: "Quantas temporadas TenSura tem?", a: "4 temporadas: T1 (2018), T2 Part 1 e 2 (2021), T3 (2024) e T4 (abril 2026). Além de Slime Diaries (spin-off), filme Scarlet Bond (2022) e filme Tears of the Azure Sea." },
       { q: "TenSura T4 já lançou?", a: "A Temporada 4 estreia em abril de 2026 com 5 cours planejados, sendo a maior temporada da série. A produção segue com 8-Bit Studio." },
@@ -3073,7 +3073,7 @@ export const blogPosts: BlogPost[] = [
     image: overlordGuiaImg,
     author: "VICIO<CODE>",
     date: "2026-03-20",
-    readTime: "18 min",
+    readTime: "15 min",
     faq: [
       { q: "Quantas temporadas Overlord tem?", a: "4 temporadas (T1: 2015, T2: 2018, T3: 2018, T4: 2022) e o filme The Sacred Kingdom (setembro 2024). A Temporada 5 ainda não foi confirmada oficialmente." },
       { q: "Overlord terá Temporada 5?", a: "Não foi confirmada oficialmente. O filme Sacred Kingdom adaptou os volumes 12-13 da light novel. Os volumes 14-18 ainda não foram adaptados, deixando material para uma possível T5." },
@@ -3109,7 +3109,7 @@ export const blogPosts: BlogPost[] = [
     image: overlordCharsImg,
     author: "VICIO<CODE>",
     date: "2026-03-21",
-    readTime: "15 min",
+    readTime: "14 min",
     faq: [
       { q: "Quem é Ainz Ooal Gown?", a: "Ainz (nome real: Momonga) é um jogador de YGGDRASIL que ficou preso no jogo quando ele fechou. Ele é um Elder Lich supremo, líder da Grande Tumba de Nazarick e o Sorcerer King." },
       { q: "Quantos Floor Guardians Nazarick tem?", a: "7 Floor Guardians: Shalltear (1-3), Cocytus (5), Aura e Mare (6 — são gêmeos), Demiurge (7), Victim (8) e Albedo (Overseer). Gargantua (4) é um golem sem personalidade." },
@@ -3222,7 +3222,7 @@ export const blogPosts: BlogPost[] = [
     image: tsukimichiImg,
     author: "VICIO<CODE>",
     date: "2026-03-29",
-    readTime: "16 min",
+    readTime: "14 min",
     faq: [
       { q: "Quantas temporadas tem Tsukimichi Moonlit Fantasy?", a: "Tsukimichi tem 2 temporadas: T1 pela C2C (jul-set 2021, 12 eps) e T2 pela J.C.Staff (jan-jun 2024, 25 eps). A T3 foi anunciada sem data confirmada." },
       { q: "Quem são Tomoe e Mio em Tsukimichi?", a: "Tomoe é um dragão milenar em forma humana que serve Makoto. Mio é uma Aranha das Trevas extremamente poderosa. As duas são os serventes mais fortes do protagonista." },

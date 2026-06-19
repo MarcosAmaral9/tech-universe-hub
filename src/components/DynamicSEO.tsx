@@ -787,19 +787,19 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     keywords: "melhores jogos anime 2026, Dragon Ball Sparking ZERO, Dragon Ball FighterZ, One Piece Odyssey, Demon Slayer Hinokami Chronicles, jogos anime PS5 PC, Genshin Impact, Blue Archive, Steins Gate visual novel, jogos otaku brasil",
   },
   "/post/tensura-guia-completo-temporadas-filmes": {
-    title: "TenSura: Guia Completo — Todas as Temporadas, Filmes e Novidades 2026",
-    description: "Guia completo de Tensei Shitara Slime Datta Ken (TenSura): T1 a T4 (2026), filmes, OVAs, spin-offs e o que está vindo. Rimuru, Demon Lords e como assistir em ordem.",
-    keywords: "TenSura guia completo, Tensei Shitara Slime, TenSura temporadas, TenSura T4 2026, Rimuru Tempest, TenSura filmes, Crunchyroll TenSura, TenSura ordem assistir, TenSura spin-off",
+    title: "TenSura: Guia Completo — T1 a T4, Filme Scarlet Bond e Ordem de Assistência",
+    description: "Guia definitivo de TenSura: Temporadas 1 a 4 (Spring 2026), Tensura Nikki spin-off, filme Scarlet Bond (2022), worldbuilding de Tempest e ordem de assistência recomendada. Light novel Fuse, estúdio 8bit, Crunchyroll.",
+    keywords: "TenSura guia completo, Tensei Shitara Slime temporadas, TenSura T4 2026, filme Scarlet Bond TenSura, Tensura Nikki, ordem assistência TenSura, Rimuru Tempest worldbuilding, 8bit anime, Crunchyroll TenSura, Fuse light novel",
   },
   "/post/tensura-personagens-rimuru-demon-lords": {
-    title: "TenSura: Rimuru Tempest, Demon Lords e Sistema de Poderes",
-    description: "Ficha completa dos personagens de TenSura: Rimuru, Milim, Diablo, Veldora, Shion, Benimaru e os 10 Grandes Demon Lords. Habilidades únicas e hierarquia do sistema de poder.",
-    keywords: "TenSura personagens, Rimuru Tempest poderes, Milim Nava, Diablo TenSura, Veldora Tempest, 10 Grandes Demon Lords TenSura, habilidades TenSura, sistema poder Slime, Benimaru Shion",
+    title: "TenSura: Personagens, Floor Guardians e o Nascimento do Octagram",
+    description: "Guia completo dos personagens de TenSura: Rimuru, Benimaru, Shion, Diablo, Veldora e Milim. Os 8 membros do Octagram com títulos e territórios. True Dragons. Personagens da T3 e T4 (Yuuki, Chloe).",
+    keywords: "TenSura personagens, Rimuru Tempest, Milim Nava Dragon Nova, Diablo Primordial, Veldora Tempest, Octagram Demon Lords, Guy Crimson, Benimaru Shion TenSura, Chloe O'Bell heroína, Floor Guardians TenSura, T4 personagens novos",
   },
   "/post/overlord-ainz-guardians-personagens": {
     title: "Overlord: Ainz Ooal Gown, Floor Guardians e Personagens do Novo Mundo",
-    description: "Fichas completas de Ainz Ooal Gown, Albedo, Demiurge, Shalltear, Cocytus, Sebas e todos os Floor Guardians de Overlord. Poderes, hierarquia de Nazarick e personalidades.",
-    keywords: "Overlord personagens, Ainz Ooal Gown, Albedo Overlord, Demiurge Overlord, Shalltear Bloodfallen, Floor Guardians Nazarick, Sebas Tian Overlord, poderes Overlord, Overlord ficha personagens",
+    description: "Fichas completas de Overlord: Ainz, Albedo, Demiurge, Shalltear, Cocytus, Aura, Mare, Sebas, Climb, Gazef Stronoff, Brain Unglaus e Fluder Paradyne. Nazarick, lealdade programada e os NPCs que ganharam vida.",
+    keywords: "Overlord personagens, Ainz Ooal Gown poderes, Albedo Overlord, Demiurge Overlord, Shalltear Bloodfallen, Cocytus guardião, Nazarick Floor Guardians, Climb Overlord, Gazef Stronoff, Fluder Paradyne, Rubedo Overlord",
   },
   
   // ═══════════════════════════════════════════════════════════
@@ -811,9 +811,9 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     keywords: "Solo Leveling, Sung Jinwoo, Monarca das Sombras, A-1 Pictures, temporadas Solo Leveling, Shadow Monarch, Cha Hae-in, manhwa, anime 2024, Crunchyroll Anime Awards, ReAwakening",
   },
   "/post/tsukimichi-moonlit-fantasy-guia-completo": {
-    title: "Tsukimichi Moonlit Fantasy: Guia Completo de Temporadas e Personagens",
-    description: "Tsuki ga Michibiku Isekai Douchuu: T1 C2C (jul-set 2021, 12 eps), T2 J.C.Staff (jan-jun 2024, 25 eps), T3 anunciada. Makoto Misumi banido pela deusa, acompanhado de Tomoe e Mio nas terras selvagens de Elysion.",
-    keywords: "Tsukimichi, Tsuki ga Michibiku Isekai Douchuu, Moonlit Fantasy, Makoto Misumi, Tomoe, Mio, isekai 2021, isekai 2024, J.C.Staff, Elysion, temporadas Tsukimichi",
+    title: "Tsukimichi Moonlit Fantasy: Guia Completo — T1 (C2C), T2 (J.C.Staff) e Sistema de Magia",
+    description: "Tsuki ga Michibiku Isekai Douchuu: T1 C2C (2021), T2 J.C.Staff (jan-jun 2024, 25 eps). Sistema de magia de Makoto (Sakai, mana ilimitado), os três mundos da série e diferenças entre anime e light novel Azumi Kei.",
+    keywords: "Tsukimichi Moonlit Fantasy, Tsuki ga Michibiku Isekai, T2 J.C.Staff 2024, Makoto Misumi magia, Sakai Tsukimichi, Tomoe Mio personagens, Azumi Kei light novel, C2C anime, J.C.Staff anime, Crunchyroll Tsukimichi, Tsukimichi T3",
   },
   "/post/mugen-gacha-level-9999-traicao-dungeon": {
     title: "My Gift Lvl 9999 Unlimited Gacha: O Revenge Isekai do J.C.Staff — Guia 2026",
@@ -841,9 +841,9 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     keywords: "Okiraku Ryoushu, Easygoing Territory Defense, Van Magia de Produção, NAZ anime 2026, Sou Akaike Overlap, Seven Seas Entertainment, Crunchyroll 2026, isekai construção território, Tetsuya Tatamitani, inverno 2026 anime",
   },
   "/post/kaiju-no-8-temporada-2-guia-arco-final-2026": {
-    title: "Kaiju No. 8 Temporada 2: Guia Completo da T2 e Arco Final do Mangá 2026",
-    description: "Kaiju No. 8 Temporada 2 estreou na Spring Season 2026 pela Production I.G. Mangá entrou no arco final segundo Jump Festa. Guia: história, personagens e onde assistir.",
-    keywords: "Kaiju No. 8 Temporada 2, Kaiju No 8 T2, Production I.G anime, Kafka Hibino, Mina Ashiro, Defense Force Japão, arco final Kaiju No 8, Naoya Matsumoto mangá, Spring Season 2026, Crunchyroll Kaiju, monstros anime 2026, Jump Festa anime",
+    title: "Kaiju No. 8 Temporada 2: Guia Completo da T2 e Arco Final 2026",
+    description: "Kaiju No. 8 T2 estreou na Spring Season 2026 pela Production I.G. Sistema da Defense Force, personagens centrais da T2 (Kafka, Mina, Kikoru) e o arco final do mangá de Naoya Matsumoto. Disponível na Crunchyroll.",
+    keywords: "Kaiju No. 8 Temporada 2, Kaiju No 8 T2, Kafka Hibino, Mina Ashiro, Kikoru Shinomiya, Defense Force Numbers, Production I.G 2026, Naoya Matsumoto manga, Spring Season 2026, Crunchyroll Kaiju No 8, arco final Kaiju",
   },
   "/post/ia-transformando-dublagem-animes": {
     title: "IA na Dublagem de Animes: Voice Cloning e o Futuro da Localização",
@@ -851,19 +851,19 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     keywords: "IA dublagem animes, voice cloning dublagem, ElevenLabs dublagem, VALL-E Microsoft, SAG-AFTRA IA voz, Sated SP manifesto IA, dublagem brasileira IA, clonagem de voz anime, Crunchyroll IA legendagem, futuro dublagem 2026",
   },
   "/post/dragon-ball-super-beerus-anime-confirmado-2026": {
-    title: "Dragon Ball Super: Beerus Anime Confirmado para 2026",
-    description: "Dragon Ball Super: Beerus é o novo anime spin-off confirmado pela Toei para 2026. Elenco, estúdio, data de estreia e o que esperar do arco do Deus da Destruição.",
-    keywords: "Dragon Ball Super Beerus, Dragon Ball novo anime 2026, Beerus anime, Toei Animation Dragon Ball, Dragon Ball Super 2026, spin-off Beerus, Whis Vermouth, Dragon Ball Super continuação, Akira Toriyama legado, anime Dragon Ball novo",
+    title: "Dragon Ball: Série Beerus — Tudo que Sabemos sobre o Anime do Deus da Destruição",
+    description: "Toei Animation confirmou série anime de Beerus, Deus da Destruição do Universo 7. Contexto pós-Toriyama, o que esperar, quem é Beerus desde Battle of Gods (2013) e o desafio de Dragon Ball sem seu criador.",
+    keywords: "Dragon Ball Beerus anime, Dragon Ball novo anime 2026, Beerus Deus da Destruição, Toei Animation Dragon Ball, Akira Toriyama legado, Toyotaro Dragon Ball, Dragon Ball Super Beerus, Whis, Champa, Dragon Ball 2026",
   },
   "/post/naruto-especiais-confirmados-2026": {
-    title: "Naruto: Episódios Especiais Confirmados para 2026",
-    description: "Naruto especiais confirmados em 2026: episódios novos da Studio Pierrot, contexto da celebração de aniversário, datas e onde assistir no Brasil.",
-    keywords: "Naruto especiais 2026, Naruto novos episódios, Studio Pierrot Naruto, Naruto aniversário 2026, Naruto Shippuden especial, Boruto Naruto, Naruto onde assistir 2026, Naruto Crunchyroll, anime Naruto novo, Masashi Kishimoto Naruto",
+    title: "Naruto: Episódios Especiais 2026 — Light Novels, Studio Pierrot e Crunchyroll",
+    description: "Studio Pierrot e TV Tokyo confirmaram especiais de Naruto para 2026 adaptando light novels da franquia (Sasuke Retsuden, Konoha Shinden). O que cobrem, quando estreiam na Crunchyroll e o legado de Naruto no Brasil.",
+    keywords: "Naruto especiais 2026, Naruto novos episódios 2026, Studio Pierrot Naruto, Naruto light novel anime, Sasuke Retsuden anime, Konoha Shinden, Crunchyroll Naruto, TV Tokyo Naruto, Panini Naruto Brasil, Naruto 20 anos",
   },
   "/post/big-three-naruto-bleach-one-piece-2026": {
-    title: "Big Three: Naruto, Bleach e One Piece em 2026",
-    description: "Big Three em 2026: Naruto, Bleach e One Piece — status atual do trio que definiu a Shonen Jump, novas adaptações, releituras e o legado para o anime moderno.",
-    keywords: "Big Three Naruto Bleach One Piece, Big Three anime 2026, Shonen Jump clássicos, One Piece status 2026, Bleach TYBW final, Naruto legado, Big Three shonen, anime clássicos 2026, trio shonen, jujutsu kaisen new big three",
+    title: "Big Three em 2026: Status Atual de Naruto, Bleach e One Piece",
+    description: "O Big Three do anime em 2026: One Piece na Final Saga com Elbaf, Bleach TYBW encerrado, Naruto com especiais. Histórico, números de vendas, legado e a questão do 'novo Big Three' (JJK, MHA, Demon Slayer).",
+    keywords: "Big Three anime, Naruto Bleach One Piece 2026, Big Three status, One Piece Final Saga, Bleach TYBW encerrado, Naruto especiais 2026, novo Big Three, JJK MHA Demon Slayer, shonen jump clássicos, legado Big Three",
   },
   "/post/re-monster-anime-manga-guia-2026": {
     title: "Re:Monster: Guia Completo do Anime e Mangá 2026",
@@ -901,19 +901,19 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     keywords: "melhores mangas 2026, mangas para ler 2026, melhores mangas iniciante, melhor manga seinen, Fullmetal Alchemist, Berserk, Vagabond, Chainsaw Man, Sakamoto Days, Manga Plus, Panini manga 2026",
   },
   "/post/saude-mental-cultura-otaku-2026": {
-    title: "Saúde Mental e Cultura Otaku: Quando o Anime Ajuda e Quando Isola",
-    description: "Análise baseada em evidências sobre saúde mental e cultura otaku: quando o anime é terapêutico, sinais de fuga disfuncional, hikikomori e recursos de apoio no Brasil (CVV 188).",
-    keywords: "saude mental otaku, anime saude mental, hikikomori brasil, CVV 188, anime depressao, A Silent Voice saude mental, March Comes in Like a Lion, escapismo saudavel anime, CAPS saude mental brasil",
+    title: "Saúde Mental e Cultura Otaku: Fandom, Isolamento e Onde Buscar Ajuda",
+    description: "Análise completa da relação entre saúde mental e cultura otaku: fandom como suporte social, hikikomori no Brasil, sinais de alerta, autocuidado e recursos (CVV 188, CAPS). Baseado em pesquisas reais e dados do CVV.",
+    keywords: "saúde mental otaku, fandom suporte social, hikikomori Brasil, CVV 188 gratuito, CAPS saúde mental, isolamento anime, A Silent Voice saúde mental, autocuidado otaku, cultura otaku isolamento, FGV pesquisa jovens pandemia",
   },
   "/post/manga-vs-anime-adaptacao-2026": {
     title: "Mangá vs. Anime: Quando a Adaptação Supera o Original — Análise 2026",
-    description: "Análise de quando o anime supera o mangá (FMA Brotherhood, Demon Slayer) e quando decepciona (Tokyo Ghoul, Berserk 2016). Os 4 critérios que determinam o sucesso de uma adaptação.",
-    keywords: "manga vs anime, adaptacao anime manga, FMA Brotherhood adaptacao, Demon Slayer anime, Tokyo Ghoul decepcao, Berserk 2016 CGI, quando anime supera manga, melhores adaptacoes anime, MAL top anime 2026",
+    description: "O que o anime adiciona que o mangá não tem (trilha, voice acting, timing). Casos de 2025-2026: Dandadan supera, Solo Leveling perde detalhes. Guia por franquia: One Piece, JJK, Frieren, Berserk, Vinland Saga.",
+    keywords: "manga vs anime adaptação, anime supera manga, manga melhor que anime, Dandadan anime, Solo Leveling anime manhwa, FMA Brotherhood, Berserk adaptação, trilha sonora anime, voice acting anime, guia por franquia manga anime 2026",
   },
   "/post/diferenca-mangas-manhuas-manhwas": {
-    title: "Manga vs Manhwa vs Manhua: Diferenças e Melhores Obras 2026",
-    description: "Guia completo das diferenças entre manga japonês, manhwa coreano e manhua chinês: formato, leitura, cores, gêneros, plataformas e os melhores títulos de cada tipo para 2026.",
-    keywords: "diferenca manga manhwa manhua, manga vs manhwa, manga japones, manhwa coreano, manhua chines, Solo Leveling manhwa, One Piece manga, webtoon br, Manga Plus brasil, xianxia manhua, 2026",
+    title: "Manga vs Manhwa vs Manhua: Diferenças Completas — História e Cultura",
+    description: "Guia completo das diferenças entre manga japonês (Tezuka, preto e branco, Jump), manhwa coreano (webtoon, Naver, Solo Leveling) e manhua chinês (Xianxia, cultivo, Bilibili). Onde ler cada um legalmente.",
+    keywords: "diferença manga manhwa manhua, manga japonês história, manhwa coreano webtoon, manhua chinês xianxia, Osamu Tezuka mangá origem, Naver Webtoon manhwa, Bilibili manhua, One Piece mangá, Solo Leveling manhwa, Tales Demons Gods",
   },
   "/post/como-diferenciar-manhuas-manhwas": {
     title: "Como Diferenciar Manhwa (Coreano) de Manhua (Chinês): Guia Completo",
@@ -921,9 +921,9 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     keywords: "diferenciar manhwa manhua, manhwa coreano, manhua chines, webtoon manhwa, xianxia manhua, cultivo marcial, Solo Leveling manhwa, Tower of God webtoon, Tales of Demons and Gods, Bilibili Comics, Webtoon gratuito",
   },
   "/post/frieren-temporada-3-confirmada-2026": {
-    title: "Frieren Temporada 3 Confirmada: O Que Esperar da Continuação",
-    description: "Frieren T3 confirmada após final aclamado da T2 em abril 2026. Tudo sobre os novos arcos, o que o mangá reserva e quando esperar a continuação da série nota 9,3 no MAL.",
-    keywords: "Frieren temporada 3, Frieren Beyond Journey End T3, Frieren confirmada, Madhouse Frieren, anime Frieren 2026, Frieren mangá arcos, Stark Frieren, Sense Fern, Frieren Crunchyroll",
+    title: "Frieren Temporada 3: Confirmada — O Que o Mangá Reserva e Quando Chega",
+    description: "Frieren T3 confirmada em abril de 2026 (Madhouse). O que a T2 cobriu (Exame de Primeira Classe), o que a T3 deve adaptar (arcos do Norte / Aureole), personagens e a nota 9,3 no MAL.",
+    keywords: "Frieren temporada 3, Frieren Beyond Journey End T3, Madhouse Frieren, Frieren confirmada 2026, Kanehito Yamada mangá, Tsukasa Abe arte, Fern Stark Frieren, exame primeira classe, Norte Aureole Frieren, Crunchyroll Frieren",
   },
   "/post/one-piece-elbaf-formato-sazonal-2026": {
     title: "One Piece: Arco de Elbaf e o Formato Sazonal — Tudo que Sabemos",
@@ -941,9 +941,9 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     keywords: "temporada animes abril 2026, spring season animes 2026, One Piece Elbaf estreia, ReZero T4, TenSura T4, Dr STONE final, Lazarus anime, Crunchyroll abril 2026, simulcast abril 2026",
   },
   "/post/10-melhores-manhwas-sistema-2026": {
-    title: "Os 10 Melhores Manhwas de Sistema para Ler em 2026",
-    description: "Os 10 melhores manhwas com sistema de 2026: Solo Leveling, Tower of God, Omniscient Reader e mais. Seleção com sinopse, número de capítulos e onde ler legalmente.",
-    keywords: "melhores manhwas sistema 2026, manhwa sistema, manhwa regressão, Solo Leveling manhwa, Tower of God, Omniscient Reader, manhwa webtoon brasil, manhwa 2026, melhores manhwas coreanos",
+    title: "Os 10 Melhores Manhwas de Sistema para Ler em 2026 — Guia Completo",
+    description: "Guia completo dos melhores manhwas de sistema em 2026: Solo Leveling, Omniscient Reader, Tower of God, The Beginning After the End e mais. O que é 'sistema', onde ler (Webtoon, Tapas, Kakao) e como o subgênero dominou o manhwa.",
+    keywords: "melhores manhwas sistema 2026, manhwa sistema guia, Solo Leveling manhwa, Omniscient Reader's Viewpoint, Tower of God SIU, The Beginning After the End, manhwa webtoon brasil, Kakao manhwa, subgênero sistema manhwa, Dubu arte",
   },
   "/post/isekai-2026-genero-domina": {
     title: "Isekai 2026: Por Que o Gênero Ainda Domina o Anime e Seus Subgêneros",
@@ -951,14 +951,14 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     keywords: "isekai 2026, porque isekai domina anime, subgeneros isekai, isekai sistema level up, isekai construcao reino, isekai regressao, TenSura isekai, Mushoku Tensei, Re:Zero, KonoSuba, melhores isekais 2026, Narou isekai",
   },
   "/post/one-piece-final-saga-2026": {
-    title: "One Piece Final Saga: Onde Estamos e O Que Esperar do Final",
-    description: "A Final Saga de One Piece começou em 2022. Arco de Egghead, revelações sobre Imu e os Gorosei, One Piece final e o que já sabemos sobre o desfecho de Luffy.",
-    keywords: "One Piece Final Saga, One Piece arco final, Egghead One Piece, Imu One Piece, One Piece Elbaf, One Piece 2026, One Piece fim, Luffy Gear 5, One Piece Oda final, One Piece spoilers",
+    title: "One Piece Final Saga: Egghead, Elbaf e o Que Esperar do Final de Oda",
+    description: "A Final Saga de One Piece: Arco de Egghead (revelações sobre Fruto do Diabo e Imu), Arco de Elbaf no anime (formato sazonal, abril 2026), Os Cinco Anciões, Joy Boy e como acompanhar via Manga Plus e One Pace.",
+    keywords: "One Piece Final Saga, One Piece Egghead, One Piece Elbaf 2026, Imu Im-sama One Piece, Cinco Anciões Gorosei, Joy Boy One Piece, Eiichiro Oda final, Fruto Diabo Luffy Nika, One Pace site, Manga Plus One Piece, Panini One Piece",
   },
   "/post/overlord-guia-completo-temporadas-ainz": {
-    title: "Overlord: Guia Completo — 4 Temporadas, Filmes e T5",
-    description: "Overlord completo: T1 a T4, filme Sacred Kingdom (2023) e novidades de T5. Ainz Ooal Gown, o Novo Mundo, Nazarick e por onde começar em 2026.",
-    keywords: "Overlord guia completo, Overlord temporadas, Overlord Sacred Kingdom filme, Overlord T5, Ainz Ooal Gown, Nazarick, Overlord Crunchyroll, Overlord anime 2026, Overlord ordem assistir",
+    title: "Overlord: Guia Completo — T1 a T4, Filme Sacred Kingdom e T5",
+    description: "Overlord completo: T1–T3 Madhouse, T4 Studio Deen (2022), Filme Sacred Kingdom (2023), estrutura de Nazarick e o que a T5 deve cobrir. Maruyama, Kadokawa, Yen Press. Status de 2026.",
+    keywords: "Overlord guia completo, Overlord temporadas, Overlord Sacred Kingdom filme, Overlord T4 Studio Deen, Overlord T5 2026, Ainz Ooal Gown, Nazarick estrutura, Madhouse Overlord, Kugane Maruyama, Yen Press Overlord inglês",
   },
 
   // ═══════════════════════════════════════════════════════════

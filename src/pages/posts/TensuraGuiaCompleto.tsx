@@ -264,16 +264,47 @@ const TensuraGuiaCompleto = () => {
         </div>
       </div>
 
-            <EditorialTake category="otaku" title="Análise do Marcos">
-          <p>
-            <strong>Tensei Shitara Slime Datta Ken (TenSura)</strong> é uma light novel de Fuse, originalmente publicada na Shōsetsuka ni Narō em 2013 e licenciada pela Micro Magazine. O anime estreou em outubro/2018 pela 8bit, com 3 temporadas (2018-2019, 2021, 2024) somando mais de 60 episódios, 2 OVAs e o filme 'Scarlet Bond' (2022, bilheteria mundial superior a US$ 12 milhões segundo Box Office Mojo).
-          </p>
-          <p>
-            A 4ª temporada foi confirmada oficialmente em maio/2024 pela Kodansha/Bandai Namco Filmworks, com lançamento previsto para 2025-2026. A franquia também tem o spin-off animado 'Tensura Nikki' (2021) e o anime derivado da light novel 'Tenshura Slime' (Cleyman series, 2024).
-          </p>
-          <p>
-            Minha análise: TenSura mantém qualidade visual consistente sob a 8bit graças ao orçamento robusto da Kodansha — raro entre isekai longos. Para iniciantes, recomendo seguir a ordem: T1 → OVAs → T2 → Tensura Nikki → Scarlet Bond → T3. A light novel está significativamente à frente do anime (volume 22 publicado em 2024), oferecendo arcos como Holy Empire Lubelius com profundidade que adaptações ainda não cobriram.
-          </p>
+            
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127916;</span>
+          Guia Completo de Ordem de Assistência
+        </h2>
+        <p>
+          Com múltiplas temporadas, spin-offs e um filme, a ordem de assistência pode confundir novos espectadores. A sequência recomendada:
+        </p>
+        <p>
+          <strong>1. Temporada 1</strong> (2018–2019, 24 eps + 2 OVAs) — Rimuru reencarna como gosma, nomeia os goblins, enfrenta o Orc Lord e estabelece as bases de Tempest. <strong>2. Temporada 2 Parte 1</strong> (jan–mar 2021, 12 eps) — Evolução para True Demon Lord, eventos do ataque a Tempest, recuperação dos súditos. <strong>3. Tensura Nikki: Visions of Coleus</strong> (abr–jun 2021, 12 eps) — Spin-off de slice-of-life ambientado durante a T2; pode ser pulado sem perda narrativa, mas recomendado para fãs dos personagens. <strong>4. Temporada 2 Parte 2</strong> (jul–set 2021, 12 eps) — Walpurgis, Clayman, entrada no Octagram. <strong>5. Filme: Scarlet Bond</strong> (novembro 2022) — História original de 108 min, ambientada entre T2 e T3; não é essencial mas bem executada. <strong>6. Temporada 3</strong> (abr–set 2024, 24 eps) — Arco do Labirinto de Tempest, Yuuki Kagurazaka como antagonista, expansão da escala narrativa. <strong>7. Temporada 4</strong> (Spring Season 2026) — Em exibição.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127760;</span>
+          O Worldbuilding de Tempest: Por Que Funciona
+        </h2>
+        <p>
+          A Federação Jura-Tempest é construída sobre um princípio que a série estabelece desde os primeiros arcos: coexistência entre raças que historicamente se matavam. Goblins, lobos, Ogres, Lizardmen, Dwarves e humanos funcionando dentro de uma estrutura econômica e política comum é implausível no contexto de fantasia medieval tradicional — TenSura usa exatamente essa implausibilidade como motor de conflito externo. O mundo fora de Tempest não acredita que a coexistência é possível; Rimuru precisa constantemente provar que é.
+        </p>
+        <p>
+          O sistema econômico de Tempest é um dos mais detalhados em qualquer isekai: a série mostra comércio, impostos, relações de troca com reinos vizinhos, e a gestão de recursos num território que cresce rapidamente. Rimuru usa seu conhecimento como homem de negócios japonês moderno para criar estruturas que o mundo de fantasia não tinha — não tecnologia anacrônica, mas organização e sistema. Isso é o que diferencia TenSura do "protagonista que traz tecnologia moderna para mundo medieval" — a inovação é administrativa, não tecnológica.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127381;</span>
+          O Que a Temporada 4 Cobre
+        </h2>
+        <p>
+          A Temporada 4, em exibição na Spring Season 2026, adapta os arcos seguintes ao final da T3. Com base no ritmo de adaptação das temporadas anteriores (8bit cobre aproximadamente 6–7 volumes de light novel por temporada), a T4 deve cobrir os arcos do Labirinto de Tempest continuado, a expansão territorial de Rimuru além das fronteiras estabelecidas e os primeiros contatos com forças que operam em escala continental — antagonistas que tornam os Demon Lords anteriores parecerem conflitos locais.
+        </p>
+        <p>
+          A light novel de Fuse tem 21 volumes publicados com material suficiente para pelo menos mais duas temporadas além da T4. Para quem quer ir além do anime, a <strong>J-Novel Club</strong> e a <strong>Yen Press</strong> publicam os volumes em inglês. No Brasil, a light novel não tem edição oficial em português — apenas o mangá, publicado pela <strong>Panini</strong>.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: TenSura é o isekai mais completo em construção de mundo depois de Mushoku Tensei">
+        <p>
+          Tensei Shitara Slime Datta Ken é uma obra de <strong>Fuse</strong>, originalmente serializada na Shōsetsuka ni Narō desde 2013 — a light novel física é publicada pela <strong>Micro Magazine</strong> sob o selo GC Novels (21+ volumes). O mangá, com arte de <strong>Taiki Kawakami</strong>, é serializado na <em>Monthly Shōnen Sirius</em> (Kodansha) desde 2015. O anime é produzido pelo estúdio <strong>8bit</strong>: Temporada 1 (2018–2019, 24 eps), Temporada 2 dividida em T2 Parte 1 (jan–mar 2021) e T2 Parte 2 (jul–set 2021), filme <em>Scarlet Bond</em> (novembro de 2022), spin-off <em>Tensura Nikki</em> (abril–jun 2021) e <strong>Temporada 3</strong> (abril–setembro de 2024, 24 episódios). A <strong>Temporada 4</strong> foi confirmada e estreou na Spring Season de 2026.
+        </p>
+        <p>
+          O que diferencia TenSura dos outros isekais de construção de reino é a escala da ambição narrativa de Fuse: Rimuru não constrói apenas uma aldeia ou uma nação — constrói um sistema político, econômico e diplomático de um continente inteiro. A série investe tempo real em mostrar como tratados entre nações funcionam, como economias de fantasia são geridas e como lideranças se legitimam. Para quem tem fadiga de isekais onde o protagonista simplesmente 'ganha' de tudo sem estratégia real, TenSura é o antídoto — cada expansão de Tempest tem custo político e humano.
+        </p>
       </EditorialTake>
 
             <ArticleSources category="otaku"

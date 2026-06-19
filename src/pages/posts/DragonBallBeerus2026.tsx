@@ -216,8 +216,42 @@ const DragonBallBeerus2026 = () => {
         </div>
       </div>
 
+      
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128161;</span>
+          Quem é Beerus: Do Filme de 2013 ao Anime de 2026
+        </h2>
+        <p>
+          <strong>Beerus, o Deus da Destruição</strong>, foi introduzido no filme <em>Dragon Ball Super: Battle of Gods</em> (março de 2013) — o primeiro novo filme de Dragon Ball em 17 anos com envolvimento direto de Akira Toriyama no roteiro. O personagem foi concebido como um gato de aparência egípcia com poderes de destruição que transcendem qualquer guerreiro Saiyan — incluindo Goku em Super Saiyan God. Essa assimetria de poder deliberada foi uma das escolhas narrativas mais inteligentes de Toriyama: criar um antagonista que não é derrotável pela fórmula padrão da série.
+        </p>
+        <p>
+          Em Dragon Ball Super (2015–2018), Beerus passou de antagonista a personagem recorrente semi-aliado — presente nos arcos do Super Dragon Ball, do Torneio do Poder e em momentos cruciais da narrativa sem jamais ser o antagonista principal novamente. Sua relação com Whis, seu assistente e professor, e a dinâmica cómica com Champa (o Deus da Destruição do Universo 6 e seu irmão gêmeo) criaram um duo de personagens que a comunidade de Dragon Ball recebeu excepcionalmente bem.
+        </p>
+        <p>
+          A série spin-off anunciada para 2026 explora o passado e as responsabilidades de Beerus como Deus da Destruição em detalhes que Dragon Ball Super não teve tempo de aprofundar. Questões como como Beerus foi escolhido para o cargo, sua relação com o Zeno-sama (o Deus Supremo), e o que significa ser um Deus da Destruição numa cosmologia onde múltiplos universos coexistem são o tipo de worldbuilding que os fãs pedem desde 2015.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127759;</span>
+          Dragon Ball Pós-Toriyama: O Desafio de Continuar sem o Criador
+        </h2>
+        <p>
+          Akira Toriyama faleceu em 1 de março de 2024 aos 68 anos, de hemorragia cerebral aguda. Seu impacto na cultura pop global é difícil de quantificar — Dragon Ball, Dr. Slump e seu trabalho de design em franchises como Dragon Quest e Chrono Trigger moldaram a estética visual de gerações inteiras de fãs. Para Dragon Ball especificamente, sua morte levanta uma questão genuína: como a franquia continua sendo autêntica sem o criador que estabeleceu suas regras?
+        </p>
+        <p>
+          <strong>Toyotaro</strong> (Toyble), o mangaká responsável pelo mangá de Dragon Ball Super desde 2015, é o herdeiro mais direto da visão de Toriyama dentro da franquia. Ele trabalhou em estreita colaboração com Toriyama por anos, e seus arcos do mangá — especialmente o Arco de Granolah e o Arco dos Herdeiros do Guerreiro — demonstram compreensão profunda do tom e das regras do universo. A Toei, por sua vez, tem o desafio adicional de traduzir o material para anime de forma que honre tanto o mangá de Toyotaro quanto a memória do criador original.
+        </p>
+        <p>
+          Para o público brasileiro — um dos maiores fandoms de Dragon Ball do mundo, com o anime sendo um dos mais assistidos da história da televisão aberta no país — a continuidade da franquia pós-Toriyama é um assunto emocionalmente carregado. A série Beerus será observada de perto como o primeiro projeto de Dragon Ball concebido sem a supervisão direta do criador, e sua qualidade vai estabelecer o precedente para como a franquia se posiciona na próxima fase de sua existência.
+        </p>
+
       <EditorialTake category="otaku" title="Opinião do Marcos: Beerus precisa de roteiro, não só animação">
-        <p>Dragon Ball Super original teve momentos brilhantes (Torneio do Poder, saga Black) e momentos frustrantes (Saga do Universo 6 arrastada). O retorno com Beerus como foco é tecnicamente uma boa aposta — ele é o personagem que mais expandiu a lore desde Cell —, mas o desafio do estúdio Toei é estrutural: <strong>manter consistência de animação semanal</strong>. A geração que cresceu com Dragon Ball Z dublado pelo Wendel Bezerra no Brasil tem expectativas altas, e o mercado otaku brasileiro hoje consome anime via Crunchyroll legalmente. Se o Toei entregar 24 episódios com qualidade do filme Super Hero, é evento cultural. Se cair no padrão de produção apressada, vira meme.</p>
+        <p>
+          A Toei Animation anunciou oficialmente em 2025 uma nova série de anime de Dragon Ball focada em <strong>Beerus</strong>, o Deus da Destruição do Universo 7. O projeto faz parte da continuidade do universo expandido de Dragon Ball Super e foi confirmado com uma equipe criativa que inclui participação de Akira Toriyama no desenvolvimento conceitual antes de seu falecimento em março de 2024. Toyotaro, responsável pelo mangá de Dragon Ball Super, está envolvido na supervisão do material. Sem data de estreia definida até maio de 2026.
+        </p>
+        <p>
+          A morte de Akira Toriyama em março de 2024 mudou o contexto de qualquer novo projeto de Dragon Ball. O criador não está mais presente para supervisionar diretamente — o que aumenta a responsabilidade de Toyotaro e da equipe da Toei de honrar o legado estabelecido. Beerus, introduzido em Dragon Ball Super: Battle of Gods (2013), é um dos personagens mais bem recebidos da era moderna da franquia justamente porque Toriyama o concebeu com lógica interna consistente. A série spin-off precisa manter essa consistência sem o criador original — um desafio que nenhuma extensão do universo de Dragon Ball enfrentou antes.
+        </p>
       </EditorialTake>
       <ArticleSources category="otaku"
         sources={[

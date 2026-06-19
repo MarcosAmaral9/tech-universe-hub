@@ -241,8 +241,50 @@ const BigThree2026 = () => {
         </div>
       </div>
 
-            <EditorialTake category="otaku" title={'Análise do Marcos: o Big Three nunca foi sobre vendas'}>
-        <p>Discussão sobre Big Three sempre escorrega para tabela de vendas e tiragens — e isso perde o ponto. <strong>Naruto, Bleach e One Piece definiram a Shonen Jump dos anos 2000 porque arquitetaram universos com mitologia escalável</strong>: poderes com sistema, facções com história e protagonistas com arco de duas décadas. Os 'novos Big Three' (Jujutsu, Chainsaw Man, Demon Slayer) vendem mais em pico mas dificilmente sustentam 20+ anos de anime semanal — o modelo de publicação mudou e o leitor moderno consome arcos fechados. Para a comunidade otaku brasileira, isso muda como recomendar para iniciantes: o Big Three clássico ainda é a melhor porta de entrada justamente porque a curva de aprendizado é longa e recompensadora.</p>
+            
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128218;</span>
+          O Status Atual de Cada Membro em 2026
+        </h2>
+        <p>
+          <strong>One Piece</strong> está na Final Saga — iniciada em 2022 com o arco de Wano encerrando. Eiichiro Oda confirmou em múltiplas entrevistas ao Shōnen Jump que a série está na reta final, sem previsão exata de término. O arco de Elbaf, que estreou no anime em formato sazonal em abril de 2026, é seguido pelo arco de Egghead (já encerrado no mangá) e pelos arcos finais que a comunidade especula conter revelações sobre o Fruto do Diabo de Luffy, o Governo Mundial e o legado de Joy Boy. O mangá passa de 1.110 capítulos publicados.
+        </p>
+        <p>
+          <strong>Bleach</strong> encerrou formalmente com o último bloco do anime Thousand-Year Blood War em 2024, cobrindo os capítulos finais do mangá com qualidade que reabilitou a série no imaginário do público após o encerramento abrupto da série original em 2012. O mangá de Tite Kubo (686 capítulos, publicado pela JBC no Brasil) está completo. Não há anúncio de continuação ou spin-off oficial até maio de 2026, mas Kubo mantém presença ativa nas redes e não descartou retornar ao universo.
+        </p>
+        <p>
+          <strong>Naruto</strong> encerrou formalmente em 2014 (700 capítulos, Panini Brasil) e Naruto Shippuden em 2017 como anime. O universo continua via Boruto: Naruto Next Generations — uma série com recepção dividida que no ano de 2023 reiniciou com a minissérie Boruto: Two Blue Vortex, ambientada três anos depois do punto de pausa. Os especiais de 2026 adaptam light novels da franquia sem exigir acompanhamento de Boruto.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128202;</span>
+          O Legado Numérico: O Que o Big Three Representa em Vendas
+        </h2>
+        <p>
+          Para compreender a escala do Big Three em termos concretos: <strong>One Piece</strong> ultrapassou 530 milhões de cópias vendidas segundo dados da Shueisha de 2024 — o mangá mais vendido da história da humanidade. <strong>Naruto</strong> chegou a 250 milhões de cópias vendidas em mais de 46 países. <strong>Bleach</strong> acumulou mais de 130 milhões de cópias — um número que seria o recorde de praticamente qualquer outro mangá, mas fica em terceiro dentro do próprio trio.
+        </p>
+        <p>
+          Esses números têm implicação cultural direta: o Big Three foi responsável por criar o fandom ocidental de manga/anime como fenômeno de massa. Antes dos anos 2000, anime era um nicho nos mercados fora do Japão. A combinação de acessibilidade (shonen de aventura com protagonistas universalmente compreensíveis) e alcance global (TV aberta, depois streaming) transformou o Big Three em veículo de acesso à cultura japonesa para dezenas de milhões de pessoas no Ocidente — incluindo a geração brasileira que os assistia no Cartoon Network e SBT.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127919;</span>
+          O "Novo Big Three": Existe ou É Só Nostalgia?
+        </h2>
+        <p>
+          A discussão sobre um "novo Big Three" é recorrente na comunidade de anime desde o encerramento de Naruto em 2014. Candidatos frequentemente mencionados: <strong>Jujutsu Kaisen</strong> (encerrou o mangá em 2024), <strong>My Hero Academia</strong> (encerrou o mangá em agosto de 2024) e <strong>Demon Slayer</strong> (encerrou o mangá em 2020, anime em filmes de 2026). Outros mencionados: Black Clover, Chainsaw Man, Spy x Family.
+        </p>
+        <p>
+          O problema com a categoria "novo Big Three" é que ela não se aplica da mesma forma: o Big Three original dominou a Jump simultaneamente por mais de uma década em publicação semanal. JJK, MHA e Demon Slayer nunca coincidiram exatamente da mesma forma — cada um teve seu pico em momentos diferentes e nenhum chegou perto da longevidade de Naruto ou Bleach, muito menos de One Piece. O mercado de anime moderno também é muito mais fragmentado — centenas de títulos competindo simultaneamente, sem a concentração que a Jump semanal proporcionava nos anos 2000. A nostalgia pelo Big Three é real e legítima; a busca por um substituto direto provavelmente está procurando algo que o mercado atual simplesmente não pode replicar.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: o Big Three nunca foi sobre vendas">
+        <p>
+          O termo <strong>Big Three</strong> foi cunhado pela comunidade ocidental de anime/mangá no início dos anos 2000 para descrever os três títulos que dominavam a Weekly Shōnen Jump simultaneamente: <strong>Naruto</strong> (Masashi Kishimoto, 1999–2014), <strong>Bleach</strong> (Tite Kubo, 2001–2016) e <strong>One Piece</strong> (Eiichiro Oda, desde 1997). Em 2026, dos três, apenas One Piece continua — com o arco de Elbaf no formato sazonal inédito. Bleach encerrou o TYBW (anime) em 2024 e Naruto produz especiais ocasionais. O Big Three como fenômeno semanal simultâneo existe apenas na memória — mas seu legado molda tudo que veio depois.
+        </p>
+        <p>
+          Cresci lendo o Big Three e o que mais me impressiona retrospectivamente não é a popularidade — é a longevidade com consistência. Oda leva 27 anos publicando semanalmente e a qualidade criativa de One Piece não decaiu. Kubo revitalizou Bleach com TYBW de forma que a maioria dos fãs considerou superior às temporadas anteriores do anime. Kishimoto encerrou Naruto de forma divisiva, mas o núcleo emocional da série permanece intacto. Nenhum dos três usou fórmulas com cinismo — cada um manteve fé genuína em seus personagens até o fim. É isso que o Big Three significa para mim: autoria sustentada em escala industrial.
+        </p>
       </EditorialTake>
       <ArticleSources category="otaku"
         sources={[
