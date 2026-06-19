@@ -252,6 +252,7 @@ const AbsoluteBatmanGame2026 = () => {
         <p>
           Para o consumidor brasileiro, o histórico de preços da Warner Bros. Games na PSN e Xbox Store sugere valores entre R$ 299,90 e R$ 349,90 na edição padrão, com a Deluxe Edition na faixa de R$ 399,90 a R$ 449,90. Vale acompanhar a Steam e a Epic Games Store para o lançamento no PC, onde promoções regionais costumam ser mais agressivas que nas lojas de console.
         </p>
+      </div>
 <EditorialTake category="geek" title={"An\u00e1lise do Marcos: Absolute Batman precisa fugir do molde Arkham"}>
         <p>A franquia Arkham definiu o gênero de jogo de super-herói, mas isso virou armadilha: qualquer jogo do Batman é comparado ao freeflow combat de 2009 e fracassa quando tenta inovar. <strong>Gotham Knights e Suicide Squad mostraram o custo dessa expectativa</strong>. Um Absolute Batman que dê certo, na minha visão, precisa apostar em <strong>narrativa adulta no tom do quadrinho do Scott Snyder</strong> — Batman como vigilante anti-establishment, gameplay focada em investigação e infiltração, menos combate ininterrupto. Para o público brasileiro, vale acompanhar antes de pré-comprar: a indústria já mostrou que confiar em hype de trailer custa caro.</p>
       </EditorialTake>
