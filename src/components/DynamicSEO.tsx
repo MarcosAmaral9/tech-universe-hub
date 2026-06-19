@@ -851,19 +851,19 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     keywords: "IA dublagem animes, voice cloning dublagem, ElevenLabs dublagem, VALL-E Microsoft, SAG-AFTRA IA voz, Sated SP manifesto IA, dublagem brasileira IA, clonagem de voz anime, Crunchyroll IA legendagem, futuro dublagem 2026",
   },
   "/post/dragon-ball-super-beerus-anime-confirmado-2026": {
-    title: "Dragon Ball Super: Beerus Anime Confirmado para 2026",
-    description: "Dragon Ball Super: Beerus é o novo anime spin-off confirmado pela Toei para 2026. Elenco, estúdio, data de estreia e o que esperar do arco do Deus da Destruição.",
-    keywords: "Dragon Ball Super Beerus, Dragon Ball novo anime 2026, Beerus anime, Toei Animation Dragon Ball, Dragon Ball Super 2026, spin-off Beerus, Whis Vermouth, Dragon Ball Super continuação, Akira Toriyama legado, anime Dragon Ball novo",
+    title: "Dragon Ball: Série Beerus — Tudo que Sabemos sobre o Anime do Deus da Destruição",
+    description: "Toei Animation confirmou série anime de Beerus, Deus da Destruição do Universo 7. Contexto pós-Toriyama, o que esperar, quem é Beerus desde Battle of Gods (2013) e o desafio de Dragon Ball sem seu criador.",
+    keywords: "Dragon Ball Beerus anime, Dragon Ball novo anime 2026, Beerus Deus da Destruição, Toei Animation Dragon Ball, Akira Toriyama legado, Toyotaro Dragon Ball, Dragon Ball Super Beerus, Whis, Champa, Dragon Ball 2026",
   },
   "/post/naruto-especiais-confirmados-2026": {
-    title: "Naruto: Episódios Especiais Confirmados para 2026",
-    description: "Naruto especiais confirmados em 2026: episódios novos da Studio Pierrot, contexto da celebração de aniversário, datas e onde assistir no Brasil.",
-    keywords: "Naruto especiais 2026, Naruto novos episódios, Studio Pierrot Naruto, Naruto aniversário 2026, Naruto Shippuden especial, Boruto Naruto, Naruto onde assistir 2026, Naruto Crunchyroll, anime Naruto novo, Masashi Kishimoto Naruto",
+    title: "Naruto: Episódios Especiais 2026 — Light Novels, Studio Pierrot e Crunchyroll",
+    description: "Studio Pierrot e TV Tokyo confirmaram especiais de Naruto para 2026 adaptando light novels da franquia (Sasuke Retsuden, Konoha Shinden). O que cobrem, quando estreiam na Crunchyroll e o legado de Naruto no Brasil.",
+    keywords: "Naruto especiais 2026, Naruto novos episódios 2026, Studio Pierrot Naruto, Naruto light novel anime, Sasuke Retsuden anime, Konoha Shinden, Crunchyroll Naruto, TV Tokyo Naruto, Panini Naruto Brasil, Naruto 20 anos",
   },
   "/post/big-three-naruto-bleach-one-piece-2026": {
-    title: "Big Three: Naruto, Bleach e One Piece em 2026",
-    description: "Big Three em 2026: Naruto, Bleach e One Piece — status atual do trio que definiu a Shonen Jump, novas adaptações, releituras e o legado para o anime moderno.",
-    keywords: "Big Three Naruto Bleach One Piece, Big Three anime 2026, Shonen Jump clássicos, One Piece status 2026, Bleach TYBW final, Naruto legado, Big Three shonen, anime clássicos 2026, trio shonen, jujutsu kaisen new big three",
+    title: "Big Three em 2026: Status Atual de Naruto, Bleach e One Piece",
+    description: "O Big Three do anime em 2026: One Piece na Final Saga com Elbaf, Bleach TYBW encerrado, Naruto com especiais. Histórico, números de vendas, legado e a questão do 'novo Big Three' (JJK, MHA, Demon Slayer).",
+    keywords: "Big Three anime, Naruto Bleach One Piece 2026, Big Three status, One Piece Final Saga, Bleach TYBW encerrado, Naruto especiais 2026, novo Big Three, JJK MHA Demon Slayer, shonen jump clássicos, legado Big Three",
   },
   "/post/re-monster-anime-manga-guia-2026": {
     title: "Re:Monster: Guia Completo do Anime e Mangá 2026",
