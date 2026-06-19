@@ -811,9 +811,9 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     keywords: "Solo Leveling, Sung Jinwoo, Monarca das Sombras, A-1 Pictures, temporadas Solo Leveling, Shadow Monarch, Cha Hae-in, manhwa, anime 2024, Crunchyroll Anime Awards, ReAwakening",
   },
   "/post/tsukimichi-moonlit-fantasy-guia-completo": {
-    title: "Tsukimichi Moonlit Fantasy: Guia Completo de Temporadas e Personagens",
-    description: "Tsuki ga Michibiku Isekai Douchuu: T1 C2C (jul-set 2021, 12 eps), T2 J.C.Staff (jan-jun 2024, 25 eps), T3 anunciada. Makoto Misumi banido pela deusa, acompanhado de Tomoe e Mio nas terras selvagens de Elysion.",
-    keywords: "Tsukimichi, Tsuki ga Michibiku Isekai Douchuu, Moonlit Fantasy, Makoto Misumi, Tomoe, Mio, isekai 2021, isekai 2024, J.C.Staff, Elysion, temporadas Tsukimichi",
+    title: "Tsukimichi Moonlit Fantasy: Guia Completo — T1 (C2C), T2 (J.C.Staff) e Sistema de Magia",
+    description: "Tsuki ga Michibiku Isekai Douchuu: T1 C2C (2021), T2 J.C.Staff (jan-jun 2024, 25 eps). Sistema de magia de Makoto (Sakai, mana ilimitado), os três mundos da série e diferenças entre anime e light novel Azumi Kei.",
+    keywords: "Tsukimichi Moonlit Fantasy, Tsuki ga Michibiku Isekai, T2 J.C.Staff 2024, Makoto Misumi magia, Sakai Tsukimichi, Tomoe Mio personagens, Azumi Kei light novel, C2C anime, J.C.Staff anime, Crunchyroll Tsukimichi, Tsukimichi T3",
   },
   "/post/mugen-gacha-level-9999-traicao-dungeon": {
     title: "My Gift Lvl 9999 Unlimited Gacha: O Revenge Isekai do J.C.Staff — Guia 2026",
