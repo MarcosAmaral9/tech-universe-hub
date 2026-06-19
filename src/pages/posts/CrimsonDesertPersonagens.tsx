@@ -347,6 +347,8 @@ const CrimsonDesertPersonagens = () => {
         <p>
           Oongka evolui de forma diferente: seu arco é menos sobre crescimento emocional e mais sobre revelação gradual do peso que carrega. As missões de defesa de acampamento — que parecem side content repetitivo — na verdade constroem o contexto do seu passado com os Stahlhart. Jogadores que pularam essas missões relatam que a cena final do arco de Oongka não teve o impacto emocional que tinha para quem fez tudo. É um dos exemplos mais claros no jogo de que o conteúdo opcional não é padding.
         </p>
+      </div>
+
 <EditorialTake category="geek" title="Análise do Marcos: a troca de POV salva o ritmo">
         <p>
           A decisão da Pearl Abyss de dividir o controle entre <strong>3 personagens
