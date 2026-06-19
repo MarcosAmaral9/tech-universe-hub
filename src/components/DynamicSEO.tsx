@@ -921,9 +921,9 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     keywords: "diferenciar manhwa manhua, manhwa coreano, manhua chines, webtoon manhwa, xianxia manhua, cultivo marcial, Solo Leveling manhwa, Tower of God webtoon, Tales of Demons and Gods, Bilibili Comics, Webtoon gratuito",
   },
   "/post/frieren-temporada-3-confirmada-2026": {
-    title: "Frieren Temporada 3 Confirmada: O Que Esperar da Continuação",
-    description: "Frieren T3 confirmada após final aclamado da T2 em abril 2026. Tudo sobre os novos arcos, o que o mangá reserva e quando esperar a continuação da série nota 9,3 no MAL.",
-    keywords: "Frieren temporada 3, Frieren Beyond Journey End T3, Frieren confirmada, Madhouse Frieren, anime Frieren 2026, Frieren mangá arcos, Stark Frieren, Sense Fern, Frieren Crunchyroll",
+    title: "Frieren Temporada 3: Confirmada — O Que o Mangá Reserva e Quando Chega",
+    description: "Frieren T3 confirmada em abril de 2026 (Madhouse). O que a T2 cobriu (Exame de Primeira Classe), o que a T3 deve adaptar (arcos do Norte / Aureole), personagens e a nota 9,3 no MAL.",
+    keywords: "Frieren temporada 3, Frieren Beyond Journey End T3, Madhouse Frieren, Frieren confirmada 2026, Kanehito Yamada mangá, Tsukasa Abe arte, Fern Stark Frieren, exame primeira classe, Norte Aureole Frieren, Crunchyroll Frieren",
   },
   "/post/one-piece-elbaf-formato-sazonal-2026": {
     title: "One Piece: Arco de Elbaf e o Formato Sazonal — Tudo que Sabemos",
