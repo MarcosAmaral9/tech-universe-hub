@@ -237,14 +237,48 @@ const DiferencaMangasManhuas = () => {
           ))}
         </div>
 
-        <EditorialTake category="otaku" title="Análise do Marcos: manga, manhwa e manhua não competem — se complementam">
-          <p>
-            Li a primeira edição de One Piece em 1997 e hoje leio manhwa semanal no Webtoon. O que mais me impressiona é que o crescimento do manhwa coreano não cannibalizou o mercado do mangá japonês — <strong>os dois crescem simultaneamente</strong> porque atendem públicos ligeiramente diferentes e com formatos distintos.
-          </p>
-          <p>
-            O mangá tem o peso histórico e a profundidade artística que 100 anos de indústria criam. O manhwa tem a inovação do formato webtoon e gêneros que o mangá nunca explorou tão bem. O manhua tem um nicho de fãs apaixonados pelo gênero Xianxia que nenhum outro formato preenche da mesma forma. <strong>Não existe um formato superior — existe o formato certo para o que você quer ler naquele momento.</strong> E se você só lê um dos três, está perdendo muito.
-          </p>
-        </EditorialTake>
+        
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127471;&#127477;</span>
+          O Mangá Japonês: Cem Anos de Indústria
+        </h2>
+        <p>
+          O mangá como formato moderno tem raízes no trabalho de <strong>Osamu Tezuka</strong> nos anos 1940–1950 — especialmente <em>Shin Takarajima</em> (1947) e a influência do cinema americano na forma como Tezuka estruturou suas páginas com enquadramentos cinematográficos em vez das tradicionais composições estáticas dos quadrinhos japoneses anteriores. O sistema de publicação em revistas semanais como a Weekly Shōnen Jump (fundada em 1968) criou a infraestrutura que produziu Dragon Ball, Naruto, One Piece e Demon Slayer — todos publicados na mesma revista em décadas diferentes.
+        </p>
+        <p>
+          O mangá japonês tem características técnicas e culturais específicas que o distinguem: leitura da <strong>direita para a esquerda</strong> (seguindo a tradição de escrita vertical japonesa), publicação originalmente em <strong>preto e branco</strong> (colorização é exceção, não regra), e um sistema de categorias por público-alvo (shonen, shojo, seinen, josei) que é cultural antes de ser etário. A arte em preto e branco não é limitação mas escolha estética — Kentaro Miura em Berserk e Takehiko Inoue em Vagabond demonstraram que preto e branco pode ser o meio mais expressivo possível para determinados tipos de narrativa visual.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127472;&#127479;</span>
+          O Manhwa Coreano: A Revolução do Webtoon
+        </h2>
+        <p>
+          O manhwa coreano moderno é inseparável do formato <strong>webtoon</strong> — quadrinhos em scroll vertical, full color, produzidos para leitura em smartphones. A plataforma Webtoon (subsidiária da Naver desde 2004) criou o modelo de negócio que democratizou a criação e o acesso: qualquer criador pode publicar, os melhores são promovidos pela plataforma, e os leitores acessam a maioria do conteúdo gratuitamente com sistema de "espera ou pague" para capítulos antecipados.
+        </p>
+        <p>
+          Esse modelo gerou uma diversidade enorme de estilos dentro do manhwa — desde romances cotidianos até épicos de fantasia com sistemas de magia elaborados. O full color não é apenas estética: ele é parte da linguagem visual do manhwa, onde paletas de cores específicas comunicam o estado emocional de cenas da mesma forma que o preto e branco usa a variação de traço no mangá. A Coreia do Sul investiu massivamente em plataformas de manhwa como parte de sua estratégia de exportação de conteúdo cultural (Hallyu) — e os resultados são visíveis na audiência global.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127464;&#127475;</span>
+          O Manhua Chinês: Cultivo, Imortalidade e Dois Mil Anos de Literatura
+        </h2>
+        <p>
+          O manhua chinês moderno bebe de uma tradição literária que remonta à <em>Water Margin</em> (século XIV) e ao <em>Journey to the West</em> (século XVI) — obras clássicas que estabeleceram os arquétipos de herói e jornada que o manhua de Xianxia e Wuxia modernamente reimagina com sistemas de progressão explícitos. A filosofia taoísta de cultivo espiritual — a ideia de que praticantes podem transcender a mortalidade através de eras de treinamento — é o motor narrativo de praticamente todo manhua de Xianxia.
+        </p>
+        <p>
+          O manhua em 2026 é distribuído principalmente via plataformas digitais chinesas com alcance internacional limitado — <strong>Bilibili Comics</strong>, <strong>Kuaikan Manhua</strong> e <strong>Webnovel</strong> têm seleções em inglês crescentes mas ainda abaixo do volume disponível em coreano e japonês para audiências ocidentais. Para o público brasileiro, o acesso é quase exclusivamente via scanlations ou plataformas em inglês. Adaptações donghua (animação chinesa) de títulos populares — como <em>Battle Through the Heavens</em> e <em>A Record of a Mortal's Journey to Immortality</em> — são uma alternativa de entrada no universo manhua para quem prefere o formato animado.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: mangá, manhwa e manhua são três culturas distintas — e só enriquece ler os três">
+        <p>
+          O mercado global de quadrinhos asiáticos em 2024 apresentou dados significativos: o mangá japonês exportou mais de 3 bilhões de dólares em royalties, segundo a Association of Japanese Animations (AJA). O manhwa coreano, impulsionado pelo sucesso de Solo Leveling (mais de 14,4 bilhões de visualizações no Kakao antes do encerramento), está crescendo a taxas de dois dígitos por ano. O manhua chinês permanece menos acessível globalmente mas tem bases de leitores massivas nas plataformas nativas como Bilibili Comics e Kuaikan Manhua.
+        </p>
+        <p>
+          A confusão entre os três formatos é compreensível mas tem consequências práticas: recomendar manhua Xianxia para alguém que quer o ritmo e a estética do manhwa coreano moderno é praticamente garantir uma experiência frustrante. Cada formato tem público, expectativas e convenções próprias. Depois de anos lendo os três, minha recomendação para iniciantes é sempre começar pelo que mais ressona com franquias que já conhecem: se veio pelo anime, comece pelo mangá. Se veio pelo Solo Leveling, comece pelo manhwa de sistema. Se fascina mitologia e cultivo marcial, o manhua tem material suficiente para anos de leitura.
+        </p>
+      </EditorialTake>
 
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
           <h3 className="text-xl font-bold mb-2">Qual formato é o seu favorito? 📚🇯🇵🇰🇷🇨🇳</h3>

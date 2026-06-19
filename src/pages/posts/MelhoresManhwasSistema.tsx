@@ -283,16 +283,47 @@ const MelhoresManhwasSistema = () => {
         </div>
       </div>
 
-            <EditorialTake category="otaku" title="Análise do Marcos">
-          <p>
-            O gênero 'sistema' (também chamado de 'LitRPG coreano') consolidou-se como pilar da Webtoon Naver e da Kakao Page entre 2018 e 2025. Solo Leveling, adaptado pela A-1 Pictures em 2024-2026, abriu a porta global e hoje cada nova obra do nicho disputa o Top 10 semanal da Webtoon — a plataforma já passou de 89 milhões de usuários ativos mensais segundo o relatório financeiro Q4/2025 da Naver.
-          </p>
-          <p>
-            Para o leitor brasileiro, vale notar: Webtoon e Tappytoon têm versões oficiais traduzidas em português (gratuitas com episódios diários), enquanto Kakao opera apenas com inglês/coreano. A diferença prática entre 'manhwa', 'manhua' (chinês) e 'manga' (japonês) é a origem e o sentido de leitura: manhwa lê-se da esquerda para a direita, em formato vertical otimizado para celular.
-          </p>
-          <p>
-            Minha análise: o gênero está saturado, mas obras com worldbuilding consistente (Solo Leveling, The Beginning After the End, Omniscient Reader) continuam justificando o hype. Para começar, prefira obras já finalizadas ou com 100+ capítulos — manhwas 'sistema' costumam abandonar promessas narrativas após o sucesso inicial.
-          </p>
+            
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127918;</span>
+          O Que é o "Sistema" no Manhwa: A Mecânica que Dominou o Gênero
+        </h2>
+        <p>
+          O "sistema" em manhwas de sistema refere-se a uma interface de progressão visível — semelhante aos menus de um RPG — que o protagonista (e apenas ele, na maioria dos títulos) consegue ver e usar. Notificações aparecem no campo de visão do personagem: "[Nível Aumentado]", "[Nova Habilidade Adquirida]", "[Quest Disponível]". Esse dispositivo narrativo cumpre duas funções simultâneas: mostrar ao leitor a progressão de poder de forma visual e concreta, e criar um senso de gamificação que ativa os mesmos mecanismos de satisfação dos jogos de RPG.
+        </p>
+        <p>
+          A origem do tropo "sistema" em manhwa tem raízes no gênero de "web novel" chinesa (especialmente o Wuxia moderno), mas a forma webtoon coreana o aperfeiçoou visualmente. O scroll vertical do webtoon permite revelar uma notificação de sistema como uma virada dramática — o leitor desce na tela e encontra a interface de status no momento exato de impacto máximo. Essa coordenação entre narrativa e formato de leitura é um dos motivos pelos quais manhwas de sistema funcionam melhor na tela do que impressos.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128218;</span>
+          Guia de Entrada: Os 5 Melhores Manhwas de Sistema para Começar
+        </h2>
+        <p>
+          <strong>Solo Leveling</strong> (Chugong / DUBU, Kakao — finalizado, 179 capítulos): o ponto de entrada obrigatório. Sung Jinwoo parte do mais fraco caçador para o mais forte do mundo. Arte de DUBU é referência absoluta em manhwa de ação. Anime pela A-1 Pictures disponível na Crunchyroll. <strong>Omniscient Reader's Viewpoint</strong> (Sing N Song, Kakao — finalizado, 551 capítulos): considerado por muitos leitores o melhor manhwa em construção narrativa — Kim Dokja é o único leitor de um webnovel que se torna realidade. Metanarrativa sobre leitura e heroísmo que transcende o subgênero.
+        </p>
+        <p>
+          <strong>The Beginning After the End</strong> (TurtleMe, Tapas — em andamento): reencarnação de um rei poderoso como bebê num mundo de magia. Um dos manhwas mais lidos do Tapas, com mais de 170 capítulos e arte que evoluiu substancialmente ao longo da serialização. <strong>Leveling With The Gods</strong> (Ro Yun, KakaoPage — em andamento): Kim YuWoo regride ao passado para evitar o Ragnarok. Sistema de Tower of God misturado com mitologia nórdica e grega. <strong>Second Life Ranker</strong> (Nong Nong, KakaoPage — em andamento): Yeon-woo descobre o diário do irmão morto e entra na Torre para se vingar. Progressão de poder bem calculada e sistema de habilidades diversificado.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127760;</span>
+          Onde Ler Manhwas de Sistema Legalmente no Brasil
+        </h2>
+        <p>
+          A plataforma <strong>Webtoon</strong> (webtoons.com — app gratuito) tem o maior catálogo de manhwa com suporte parcial em português e modelo freemium que permite acesso à maioria dos títulos sem pagamento. O <strong>Tapas</strong> (tapas.io) tem catálogo complementar com alguns títulos exclusivos como The Beginning After the End. O <strong>KakaoPage</strong> e o <strong>Kakao Webtoon</strong> têm o maior catálogo em coreano mas com seleção crescente em inglês — necessário para acessar títulos como Solo Leveling na plataforma original.
+        </p>
+        <p>
+          Para o público brasileiro que prefere português, scanlations em PT-BR de vários manhwas de sistema estão disponíveis no <strong>MangaDex</strong> feitas por grupos de tradução voluntária. Alguns títulos como Solo Leveling têm edição física em português pela <strong>Panini</strong> — os volumes físicos têm qualidade de impressão excelente e são uma forma de apoiar a publicação oficial no Brasil. A chegada do anime de Solo Leveling acelerou o interesse das editoras brasileiras em manhwa, e é provável que mais títulos do subgênero ganhem edições nacionais até 2027.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: o manhwa de sistema popularizou algo que o mangá nunca soube fazer bem">
+        <p>
+          O subgênero manhwa de sistema — protagonista que recebe uma interface de jogo visível com stats, níveis e habilidades — é uma criação essencialmente coreana que influenciou o isekai japonês de forma profunda a partir de 2019. <strong>Solo Leveling</strong> de Chugong, com arte de DUBU, foi o título que transformou o formato de nicho em fenômeno global: o manhwa acumulou mais de 14,4 bilhões de visualizações na plataforma Kakao antes do encerramento em dezembro de 2021. O anime da A-1 Pictures em 2024 e o filme ReAwakening (novembro de 2024) consolidaram a franquia internacionalmente.
+        </p>
+        <p>
+          O que o manhwa de sistema faz melhor do que o isekai japonês de level-up é <strong>a visualização do progresso</strong>. As interfaces de jogo em full color, com fontes estilizadas e efeitos visuais que representam a evolução do personagem, são pensadas para o formato webtoon scroll — cada tela do smartphone é uma revelação cinematográfica. Títulos como <strong>Omniscient Reader's Viewpoint</strong> e <strong>The Beginning After the End</strong> levam essa linguagem visual além do simples level-up e criam sistemas narrativos onde o próprio formato do manhwa é parte da experiência.
+        </p>
       </EditorialTake>
 
             <ArticleSources category="otaku"

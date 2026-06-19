@@ -194,8 +194,39 @@ const NarutoEspeciais2026 = () => {
         </div>
       </div>
 
-            <EditorialTake category="otaku" title={'Análise do Marcos: especiais de Naruto são fan service estratégico'}>
-        <p>Studio Pierrot e a TV Tokyo aprenderam com One Piece e Bleach: <strong>franquia veterana se mantém viva com episódios cirúrgicos, não com continuação forçada</strong>. Os especiais de Naruto cumprem três funções: aquecer o público para a próxima fase de Boruto, monetizar fanbase nostálgica e preparar terreno para um eventual remake (rumor que circula desde a divulgação dos arcos de Sasuke Retsuden). Para o fã brasileiro, a janela de exibição importa: Crunchyroll costuma trazer simulcast no mesmo dia do Japão, mas dublagem em PT-BR raramente sai em menos de 6 meses. Quem não quer esperar precisa se acostumar com legenda — e isso, ironicamente, virou diferencial cultural da comunidade otaku brasileira.</p>
+            
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127987;</span>
+          O Que os Especiais Cobrem: Light Novels e Personagens Secundários
+        </h2>
+        <p>
+          Os especiais de Naruto de 2026 adaptam material das light novels publicadas pela Shueisha como parte da linha <em>Naruto Saga</em> — uma série de novelas que expande o universo da série principal com histórias focadas em personagens que a série animada não aprofundou adequadamente. Os títulos mais relevantes para os especiais confirmados incluem <strong>Sasuke Retsuden</strong> (Masashi Kishimoto e Jun Esaka), que cobre uma missão de Sasuke e Sakura após os eventos de Shippuden, e <strong>Konoha Shinden</strong>, focado em personagens como Kakashi em sua fase como Hokage.
+        </p>
+        <p>
+          Para o fã que acompanhou Naruto mas se distanciou durante o período de Boruto, esses especiais funcionam como porta de entrada de volta ao universo — sem exigir acompanhamento de anos de Boruto para entender o contexto. São histórias autocontidas que usam personagens familiares em situações novas, com qualidade de animação superior à série original dos anos 2000 graças aos avanços tecnológicos da Studio Pierrot na última década.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128248;</span>
+          Naruto no Brasil: Um Legado de Duas Décadas
+        </h2>
+        <p>
+          Naruto chegou ao Brasil em 2006 pelo Cartoon Network e SBT — dois anos após o início da serialização no Japão — e rapidamente se tornou um dos animes mais populares já exibidos na televisão aberta brasileira. A geração que cresceu com Naruto está hoje na faixa dos 25–35 anos: adultos com renda própria e nostalgia poderosa pelo conteúdo que moldou sua adolescência. É exatamente esse público que os especiais de 2026 miram.
+        </p>
+        <p>
+          O mangá de Masashi Kishimoto, publicado no Brasil pela <strong>Panini Comics</strong> em 72 volumes, continua sendo uma das séries mais vendidas da editora anos após o encerramento da serialização original. A <strong>Panini</strong> também publica as light novels da franquia — incluindo Sasuke Retsuden, que ganhou edição brasileira e teve boa recepção comercial, validando o interesse do mercado local no material que os especiais adaptam.
+        </p>
+        <p>
+          Para os fãs que querem revisitar a série antes dos especiais, a Crunchyroll tem Naruto (2002–2007) e Naruto: Shippuden (2007–2017) completos com legendas em português. Vale usar o guia de fillers disponível no site naruto.fandom.com para pular os episódios de preenchimento — especialmente em Shippuden, onde fillers chegam a arcos de 40–50 episódios sem conteúdo do mangá.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: especiais de Naruto são fan service estratégico">
+        <p>
+          Os especiais de Naruto confirmados para 2026 são produzidos pelo <strong>Studio Pierrot</strong> — o mesmo responsável pelas séries originais de Naruto (2002–2007) e Naruto: Shippuden (2007–2017). A TV Tokyo co-produz. Os episódios adaptam conteúdo das <strong>light novels</strong> de autores como Masashi Kishimoto (roteiro original) e outros colaboradores da franquia — especialmente os arcos de Sasuke Retsuden e Itachi Shinden, que exploram personagens secundários em maior profundidade do que a série principal permitiu. Disponíveis na <strong>Crunchyroll</strong> com simulcast no mesmo dia da exibição japonesa.
+        </p>
+        <p>
+          Studio Pierrot e a TV Tokyo aprenderam com One Piece e Bleach: <strong>franquia veterana se mantém viva com episódios cirúrgicos, não com continuação forçada</strong>. Os especiais de Naruto cumprem três funções: aquecer o público para a próxima fase de Boruto, monetizar fanbase nostálgica e preparar terreno para um eventual remake (rumor que circula desde a divulgação dos arcos de Sasuke Retsuden). Para o fã brasileiro, a janela de exibição importa: Crunchyroll costuma trazer simulcast no mesmo dia do Japão, mas dublagem em PT-BR raramente sai em menos de 6 meses.
+        </p>
       </EditorialTake>
       <ArticleSources category="otaku"
         sources={[

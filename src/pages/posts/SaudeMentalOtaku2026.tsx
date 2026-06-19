@@ -209,14 +209,54 @@ const SaudeMentalOtaku2026 = () => {
           <li><strong>Monitore o padrão de sono</strong> — maratonar até as 3h da manhã ocasionalmente é diferente de estruturalmente privar-se de sono por conteúdo.</li>
         </ul>
 
-        <EditorialTake category="otaku" title="Análise do Marcos: a relação culture otaku × saúde mental é dupla — e isso é normal">
-          <p>
-            Estudos em Frontiers in Psychology e Journal of Mental Health Counseling exploram o uso terapêutico do anime — e a OMS classifica gaming disorder no CID-11 desde 2019. Esses dados coexistem sem se contradizer porque a relação entre cultura otaku e saúde mental é genuinamente dupla: pode ser refúgio terapêutico (comunidade, identificação, sublimação criativa) ou catalisador de isolamento quando substitui completamente relações sociais e atividades no mundo físico.
-          </p>
-          <p>
-            Sinais de alerta que merecem atenção profissional: privação de sono recorrente, abandono de amigos/hobbies não relacionados, recusa de saída de casa por mais de duas semanas. <strong>O CVV (188, gratuito, 24h) e os CAPS do SUS são os recursos mais acessíveis no Brasil.</strong> Procure ajuda antes de virar quadro grave — não porque gostar de anime é o problema, mas porque você merece apoio quando está difícil, independente de qual seja a causa.
-          </p>
-        </EditorialTake>
+        
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128150;</span>
+          Fandom e Identidade: A Comunidade Como Suporte Social
+        </h2>
+        <p>
+          Um aspecto frequentemente subestimado da cultura otaku é o papel do fandom como estrutura de suporte social. Para adolescentes e jovens adultos que experimentam dificuldades de pertencimento em contextos escolares ou de trabalho, a comunidade de anime oferece algo raro: <strong>interesse compartilhado como ponto de entrada imediato para conexão</strong>. Não é preciso demonstrar popularidade ou seguir padrões sociais convencionais — basta gostar da mesma série.
+        </p>
+        <p>
+          Grupos de Discord de franquias específicas, comunidades no Reddit e fóruns de anime têm documentação informal de pessoas que atribuem ao fandom a superação de períodos de isolamento grave. A identificação com personagens que enfrentam adversidades — Naruto rejeitado pela aldeia, Rimuru recomeçando do zero, Subaru acumulando traumas sem poder compartilhá-los — cria uma forma de espelhamento emocional que a psicologia reconhece como valioso para processamento de experiências difíceis.
+        </p>
+        <p>
+          O cuidado necessário é distinguir entre comunidade de suporte e câmara de eco. Grupos de fandom saudáveis têm diversidade de perspectiva, crítica construtiva das obras e conversas sobre vida fora do anime. Grupos problemáticos tendem à uniformidade total, ao isolamento de qualquer visão crítica e ao reforço mútuo de comportamentos de evitação social. A diferença pode ser difícil de identificar de dentro — especialmente quando a communidade é a principal fonte de contato social de uma pessoa.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128250;</span>
+          O Fenômeno Hikikomori no Brasil: Isolamento Social e Cultura Otaku
+        </h2>
+        <p>
+          O termo <strong>hikikomori</strong> — documentado clinicamente no Japão pelo National Counseling Center como reclusão social voluntária extrema por seis meses ou mais — não tem equivalente diagnóstico direto no CID-11 ou no DSM-5, mas descreve uma realidade que clínicos brasileiros reconhecem em pacientes. A associação com cultura otaku existe mas é correlação, não causalidade: o isolamento social severo frequentemente precede o consumo intenso de anime, que se torna a principal forma de estímulo disponível durante o isolamento — não o causador dele.
+        </p>
+        <p>
+          A pandemia de COVID-19 acelerou padrões de isolamento social em jovens adultos globalmente. No Brasil, pesquisas da FGV e do IBGE sobre saúde mental pós-pandemia documentaram aumento significativo de isolamento voluntário em jovens de 18 a 29 anos — o grupo demográfico central do consumo de anime. A sobreposição temporal não é coincidência: o anime se tornou a principal ocupação de muitas pessoas durante períodos de isolamento forçado, e alguns mantiveram o padrão mesmo após o fim das restrições.
+        </p>
+        <p>
+          O que os profissionais de saúde mental enfatizam: <strong>o consumo de anime durante isolamento não é o problema</strong>. É uma consequência e, frequentemente, um mecanismo de sobrevivência. O trabalho terapêutico não é eliminar o anime — é reconstruir gradualmente conexões sociais reais usando o anime como ponto de partida. Grupos de assistência de anime presenciais, clubes universitários de cultura japonesa e convenções são exemplos de como o próprio hobby pode ser o veículo para a reconexão social.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127807;</span>
+          Autocuidado Dentro da Cultura Otaku: Práticas Concretas
+        </h2>
+        <p>
+          Para quem quer manter uma relação saudável com o anime e a cultura otaku no longo prazo, algumas práticas concretas que a comunidade e os profissionais de saúde mental recomendam de forma convergente:
+        </p>
+        <p>
+          <strong>Horários intencionais</strong>: definir início e fim para sessões de assistência — não por rigidez, mas para manter percepção de quanto tempo está sendo investido. Maratonar uma série inteira num fim de semana ocasionalmente é diferente de não conseguir parar independente de hora. <strong>Diversidade de input</strong>: intercalar anime com outras formas de lazer — leitura, exercício físico, culinária, saídas. Não como compensação por assistir anime, mas para manter o anime como uma das partes da vida, não a totalidade. <strong>Contato social offline regular</strong>: pelo menos uma interação presencial por semana com pessoas de fora do contexto digital, mesmo que breve. A pesquisa sobre solidão do MIT indica que contatos físicos breves têm impacto desproporcional na percepção de conexão social.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: a relação cultura otaku e saúde mental é dupla — e isso é normal">
+        <p>
+          Estudos publicados em <strong>Frontiers in Psychology</strong> e em revistas de aconselhamento como o <strong>Journal of Mental Health Counseling</strong> exploram o uso terapêutico de narrativas de anime — em particular obras que abordam saúde mental com profundidade. A <strong>OMS</strong> classificou o transtorno por uso de jogos (gaming disorder) no CID-11 desde 2019. Esses dados coexistem sem se contradizer: a relação entre cultura otaku e saúde mental é genuinamente dupla — pode ser refúgio terapêutico (comunidade, identificação, sublimação criativa) ou catalisador de isolamento quando substitui completamente relações no mundo físico.
+        </p>
+        <p>
+          Sinais de alerta que merecem atenção profissional: privação de sono recorrente por maratonas, abandono de amigos e hobbies não relacionados ao anime, e recusa de saída de casa por mais de duas semanas consecutivas. O <strong>CVV</strong> (188, ligação gratuita 24h) e os <strong>CAPS</strong> do SUS são os recursos mais acessíveis no Brasil para apoio em saúde mental. Procure ajuda antes de virar quadro grave — não porque gostar de anime é o problema, mas porque você merece apoio quando está difícil.
+        </p>
+      </EditorialTake>
 
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
           <h3 className="text-xl font-bold mb-2">Como o anime impactou sua vida? 💜</h3>

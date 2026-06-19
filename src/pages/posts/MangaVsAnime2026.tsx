@@ -246,14 +246,51 @@ const MangaVsAnime2026 = () => {
           ))}
         </div>
 
-        <EditorialTake category="otaku" title="Análise do Marcos: a adaptação supera o mangá quando atende quatro condições">
-          <p>
-            Acompanho adaptações de mangá há mais de 15 anos e o padrão é consistente: <strong>FMA Brotherhood (Bones, 2009 — nota 9,10 no MAL, top 2 histórico), Mushishi (Artland) e Vinland Saga T2 (MAPPA)</strong> compartilham o mesmo DNA — estúdio comprometido, diretor com visão e trilha que amplifica o material.
-          </p>
-          <p>
-            As adaptações lendariamente problemáticas — Berserk 2016 (CGI malfeito), Tokyo Ghoul √A (roteiro original), Promised Neverland T2 (arcos cortados) e Seven Deadly Sins a partir da T3 (queda de qualidade na Studio Deen) — todas falharam em pelo menos dois dos quatro critérios. <strong>A adaptação supera o mangá quando estúdio competente + diretor com visão + compositor relevante + respeito ao ritmo se alinham.</strong> Falhar em qualquer uma já compromete o resultado — às vezes irreversivelmente.
-          </p>
-        </EditorialTake>
+        
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127916;</span>
+          O Que o Anime Adiciona que o Mangá Não Tem
+        </h2>
+        <p>
+          A discussão "mangá vs anime" frequentemente ignora o elemento mais óbvio: são mídias fundamentalmente diferentes. O mangá controla o ritmo através do layout de página — o mangaká decide quanto espaço cada cena ocupa e onde o leitor olha primeiro. O anime controla o ritmo através do tempo real e do som. Essas diferenças criam vantagens específicas para cada formato em contextos específicos.
+        </p>
+        <p>
+          O anime adiciona três elementos que o mangá não tem: <strong>trilha sonora</strong> (o elemento mais transformador — uma cena que no mangá é silenciosa ganha dimensão emocional completamente diferente com a música certa), <strong>voice acting</strong> (a interpretação vocal de personagens adiciona nuances de personalidade que o texto e a arte raramente conseguem comunicar com a mesma precisão) e <strong>movimento e timing</strong> (uma batalha que ocupa dez páginas no mangá pode ser magnificada ou diminuída pelo diretor — o movimento flui de formas que o papel não permite).
+        </p>
+        <p>
+          O mangá, por sua vez, tem vantagens que o anime frequentemente perde: <strong>detalhe visual estático</strong> (o leitor pode estudar cada traço de uma página de Berserk ou Vagabond — o anime passa rápido demais para capturar a textura do original), <strong>ritmo controlado pelo leitor</strong> (você pode reler a mesma página dez vezes sem botão de pausa) e <strong>fidelidade de roteiro</strong> (capítulos nunca são cortados por questões de tempo de episódio).
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127775;</span>
+          Os Casos de 2025–2026 que Definem o Debate
+        </h2>
+        <p>
+          Dois casos recentes de 2025–2026 ilustram perfeitamente os dois extremos do espectro de adaptação. <strong>Dandadan</strong> (Science SARU / Crunchyroll, 2024–2025) é considerado pela comunidade como um caso de anime que supera o mangá em atmosfera e ritmo — a estética visual do Science SARU, com sua mistura de animação experimental e design de personagens do mangaká Yukinobu Tatsu, criou algo visualmente distinto que amplifica o caos controlado da obra. Fãs do mangá original frequentemente afirmam que o anime "entendeu" o material de forma que outras adaptações não conseguem.
+        </p>
+        <p>
+          No extremo oposto, <strong>Solo Leveling</strong> (A-1 Pictures, 2024) gerou debate intenso: a arte de DUBU no manhwa é considerada excepcional dentro do gênero, e a adaptação A-1 — tecnicamente competente mas visualmente mais genérica que o original — foi criticada por parte dos leitores do manhwa por "nivelar por baixo" o que tornava o manhwa visualmente único. Para iniciantes que nunca leram o manhwa, o anime foi excelente; para fãs do manhwa, houve perda de detalhes que o formato webtoon full color original tinha.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128218;</span>
+          Guia Prático: Mangá ou Anime Primeiro por Franquia
+        </h2>
+        <p>
+          Para as principais franquias em atividade em 2026, a recomendação de entrada varia baseada na qualidade da adaptação e na disponibilidade do material original:
+        </p>
+        <p>
+          <strong>One Piece:</strong> Anime primeiro via One Pace (onepace.net) para remover fillers — o anime tem camadas de direção de arte e voice acting que o mangá não reproduz. <strong>Jujutsu Kaisen:</strong> Anime primeiro (MAPPA), depois mangá para o arco final (Shinjuku Showdown) antes da T4 estrear. <strong>Frieren:</strong> Anime ou mangá — ambos são excelentes, a trilha de Evan Call no anime adiciona camada emocional única, mas o mangá tem detalhes de arte que o anime comprime em alguns momentos. <strong>Berserk:</strong> Mangá obrigatório — nenhuma adaptação anime fez jus ao material de Miura. <strong>Vinland Saga:</strong> Anime T1 e T2 (Wit Studio e MAPPA respectivamente) são excelentes; mangá para quem quer ir além dos arcos adaptados.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: a adaptação supera o mangá quando quatro condições se alinham">
+        <p>
+          Acompanho adaptações de mangá há mais de 15 anos e o padrão é consistente: <strong>FMA Brotherhood</strong> (Bones, 2009 — nota 9,10 no MAL, top 2 histórico), <strong>Mushishi</strong> (Artland) e <strong>Vinland Saga T2</strong> (MAPPA) compartilham o mesmo DNA — estúdio comprometido, diretor com visão e trilha que amplifica o material. As adaptações lendariamente problemáticas — Berserk 2016 (CGI malfeito), Tokyo Ghoul √A (roteiro original), Promised Neverland T2 (arcos cortados) e Seven Deadly Sins a partir da T3 (queda de qualidade na Studio Deen) — todas falharam em pelo menos dois dos quatro critérios.
+        </p>
+        <p>
+          A adaptação supera o mangá quando estúdio competente + diretor com visão + compositor relevante + respeito ao ritmo original se alinham. Falhar em qualquer uma já compromete o resultado — às vezes irreversivelmente. Para o leitor/espectador, a regra prática mais útil é: se a adaptação tem reputação ruim em critérios técnicos (qualidade de animação, fidelidade ao roteiro), vá ao mangá. Se a adaptação tem reputação de adicionar camadas (trilha sonora, direção de arte, voice acting), assista primeiro. Raramente os dois são verdadeiros ao mesmo tempo.
+        </p>
+      </EditorialTake>
 
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
           <h3 className="text-xl font-bold mb-2">Mangá ou Anime: qual você prefere? 📚📺</h3>

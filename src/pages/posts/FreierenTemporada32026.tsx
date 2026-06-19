@@ -180,16 +180,47 @@ const FreierenTemporada32026 = () => {
         </div>
       </div>
 
-            <EditorialTake category="otaku" title="Análise do Marcos">
-          <p>
-            A 1ª temporada de <strong>Sousou no Frieren</strong> foi produzida pela Madhouse, dirigida por Keiichirou Saitou e exibida pela Nippon TV/Crunchyroll entre setembro/2023 e março/2024 com 28 episódios. O anime adapta o mangá de Kanehito Yamada e Tsukasa Abe publicado pela Shogakukan na Weekly Shounen Sunday desde 2020.
-          </p>
-          <p>
-            O sucesso foi expressivo: nota 9.34 no MyAnimeList (top 3 de todos os tempos no momento da estreia) e premiação como 'Anime of the Year' no Crunchyroll Anime Awards 2024, somando 9 categorias. A 2ª temporada foi confirmada oficialmente pela Madhouse em março/2024 com previsão de janeiro/2026.
-          </p>
-          <p>
-            Minha análise: o ritmo contemplativo de Frieren — incomum em shounen — funciona porque o roteiro respeita o tempo emocional do leitor. Para a 3ª temporada (ainda não confirmada), o arco mais provável é o 'Exame de Magia de Primeira Classe', que no mangá entrega lutas técnicas e desenvolvimento profundo de Fern e Stark. Sem datas oficiais, qualquer cronograma é especulação.
-          </p>
+            
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#10024;</span>
+          O Que a Temporada 2 Cobriu: O Exame de Primeira Classe
+        </h2>
+        <p>
+          A Temporada 2 de Frieren adaptou principalmente o <strong>Arco do Exame de Primeira Classe</strong> — um torneio de avaliação para mages que querem alcançar a classificação máxima. O arco foi recebido de forma um pouco mais dividida do que a T1 pelos fãs que preferiram o tom mais contemplativo dos episódios iniciais — o exame introduz mais personagens novos e tem um ritmo ligeiramente mais acelerado. No entanto, os capítulos finais da T2 recuperaram plenamente o tom da série, com Frieren e Fern avançando em direção ao norte com um propósito mais definido.
+        </p>
+        <p>
+          O exame serviu narrativamente para introduzir <strong>Lawine</strong> e <strong>Kanne</strong> (duas mages jovens que se tornam recorrentes), aprofundar a técnica de Fern como mage de suporte e revelar mais sobre a história da magia no mundo — especialmente sobre as gerações anteriores de mages que Frieren conheceu em vida e que já morreram. Essa camada de perspectiva histórica, vista pelos olhos de alguém que sobreviveu a todos, continua sendo o elemento mais único da série.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128218;</span>
+          O Que a Temporada 3 Deve Cobrir: Os Arcos do Norte
+        </h2>
+        <p>
+          Com base no ritmo de adaptação das temporadas anteriores (Madhouse cobriu aproximadamente 60–65 capítulos por temporada), a Temporada 3 deve adaptar os capítulos seguintes ao exame — os arcos da jornada ao Norte, onde Frieren, Fern e Stark se aproximam do <strong>Aureole</strong>, o destino final da viagem: o lugar onde, segundo a lenda, os espíritos dos mortos se reúnem. É para lá que Frieren quer ir para encontrar o espírito de Himmel pela última vez.
+        </p>
+        <p>
+          O mangá de Yamada e Abe continua em serialização e tem material de alta qualidade para pelo menos mais duas temporadas além da T3. Os arcos do Norte aprofundam o passado de Frieren antes da aventura com Himmel — revelando conflitos e relacionamentos que moldaram quem ela é. A série usa flashbacks com precisão cirúrgica: nunca sobrecarrega, mas cada revelação do passado recontextualiza o presente de maneira que o espectador leva dias para processar completamente.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128101;</span>
+          Os Personagens que Definem Frieren
+        </h2>
+        <p>
+          <strong>Frieren</strong> — interpretada por Atsumi Tanaka no japonês, com performance unanimemente elogiada — é uma das protagonistas mais originais do anime moderno. Não é fria: é simplesmente alguém que aprendeu que expressões humanas de afeto têm durações diferentes para quem vive por séculos. Ela coleciona magias inúteis com o mesmo cuidado com que outros colecionariam relíquias — porque cada magia inútil que um humano criou representa um momento de vida que ela pode preservar.
+        </p>
+        <p>
+          <strong>Fern</strong> é a aprendiz de Frieren e tem um dos arcos de desenvolvimento mais sutis da série — ela começa como uma criança resgatada por Heiter e termina a T2 como uma das mages mais competentes de sua geração, sem nunca ter um "momento de transformação" dramático. O crescimento é mostrado retroativamente: você percebe o quanto ela mudou comparando episódios distantes. <strong>Stark</strong>, o guerreiro que completa o trio, funciona como âncora emocional — sua vulnerabilidade e coragem simultaneamente são o equivalente de Himmel no grupo atual, e Frieren reconhece isso sem nunca dizer explicitamente.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: Frieren é o anime que provou que lento pode ser perfeito">
+        <p>
+          Frieren: Beyond Journey's End é uma obra de <strong>Kanehito Yamada</strong> (roteiro) e <strong>Tsukasa Abe</strong> (arte), serializada na Weekly Shōnen Sunday (Shogakukan) desde abril de 2020 — mais de 130 capítulos, 13 volumes. O anime foi produzido pela <strong>Madhouse</strong>, dirigido por <strong>Keiichiro Saito</strong>, e foi ao ar de setembro de 2023 a março de 2024 com 28 episódios — nota 9,3/10 no MyAnimeList, posição de top 5 histórico. A <strong>Temporada 3 foi confirmada</strong> em abril de 2026 ao final do último episódio da T2, sem data de estreia definida. O mangá continua em serialização semanal com material suficiente para múltiplas temporadas.
+        </p>
+        <p>
+          O que Frieren fez que nenhum outro anime da última década conseguiu com a mesma eficiência: <strong>usar a passagem do tempo como dispositivo emocional principal</strong>. Não é o que acontece nas cenas — é o intervalo entre elas que carrega o peso. Uma elfa que viveu mil anos lembra de um humano que conheceu por dez como alguém que 'mal chegou a ser uma estrela no céu'. Esse enquadramento transforma cada momento de Frieren numa meditação sobre a fragilidade da memória humana. Madhouse entendeu isso e construiu uma direção de arte que amplifica o silêncio em vez de preenchê-lo.
+        </p>
       </EditorialTake>
 
             <ArticleSources category="otaku"

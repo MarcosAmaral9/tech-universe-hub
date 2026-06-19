@@ -125,15 +125,40 @@ const KaijuNo8Temporada22026 = () => {
         <AdRectangle className="my-8" />
 
         
-        <EditorialTake category="otaku" title="Análise do Marcos: por que Kaiju No. 8 conquistou o público brasileiro">
-          <p>
-            Acompanho o mangá desde o lançamento em 2020 na Shonen Jump+ e o que mais me impressiona é
-            <strong> como a narrativa equilibra ação grandiosa com humor de protagonista derrotado</strong> — algo
-            que conversa muito com o brasileiro que se identifica com Kafka, o "30+ que ainda não chegou onde
-            queria". A dublagem PT-BR da Crunchyroll é uma das melhores do catálogo recente: vale a pena
-            assistir dublado mesmo se você normalmente prefere legendado.
-          </p>
-        </EditorialTake>
+        
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#129502;</span>
+          O Sistema da Defense Force: Numerações, Neutralizers e a Hierarquia
+        </h2>
+        <p>
+          O mundo de Kaiju No. 8 é organizado em torno de ataques constantes de kaiju — monstros biologicamente complexos que aparecem sem aviso e destroem cidades. A <strong>Japan Defense Force</strong> (Nihon Kaijuu Tokusou Tai) é a única linha de defesa humana. Seus membros são numerados por poder: os <strong>Defense Force Numbers</strong> são os soldados de elite cujas habilidades são medidas em percentual de potência de neutralização.
+        </p>
+        <p>
+          Os <strong>Capitães de Divisão</strong> têm numerações individuais — o número indica seu ranking oficial dentro da organização. Mina Ashiro, a Capitã da 3ª Divisão e amiga de infância de Kafka, é a Number 2 oficial da Defense Force — a segunda mais poderosa do Japão. Essa hierarquia cria uma estrutura política dentro da organização que a série usa para gerar tensão mesmo fora dos combates: promoções, avaliações de aptidão e decisões de missão têm consequências narrativas reais.
+        </p>
+        <p>
+          Os <strong>Neutralizers</strong> (Akusutaraizaa) são as armas da Defense Force — armas especializadas que canalizam energia dos próprios kaiju para combater outros. Cada soldado de elite usa um Neutralizer específico para seu estilo de combate. A lógica do sistema é elegante: os humanos aprenderam a usar contra os kaiju a mesma energia que os torna perigosos. Kafka, ao se transformar em Kaiju No. 8, inverte esse sistema — ele é simultaneamente a ameaça que a Defense Force combate e um de seus melhores aliados.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128101;</span>
+          Os Personagens Centrais da Temporada 2
+        </h2>
+        <p>
+          <strong>Kafka Hibino</strong> entra na T2 com seu segredo mais próximo de ser revelado — a tensão entre sua identidade como recrutado da Defense Force e sua natureza como Kaiju No. 8 é o motor central da série. <strong>Mina Ashiro</strong>, Capitã da 3ª Divisão e sua amiga de infância, não sabe da dupla identidade de Kafka — e a relação entre os dois carrega o peso emocional de décadas de separação e uma promessa feita na infância. <strong>Kikoru Shinomiya</strong>, a recruta de alto desempenho e filha do comandante geral, tem um arco individual que a Temporada 2 aprofunda — especialmente sua relação com o legado do pai e sua própria definição de força.
+        </p>
+        <p>
+          O mangá de Matsumoto entra no arco final durante a T2 segundo informações divulgadas no Jump Festa 2025 — o que adiciona urgência às decisões de cada personagem. Para os fãs que acompanham o mangá em paralelo, a T2 adapta os capítulos subsequentes ao arco de Hachioji, onde a escala da ameaça kaiju e as revelações sobre a natureza do Kaiju No. 8 mudam completamente o contexto da série.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: por que Kaiju No. 8 conquistou o público brasileiro">
+        <p>
+          Kaiju No. 8 é uma obra de <strong>Naoya Matsumoto</strong>, serializada na Shōnen Jump+ (Shueisha) desde julho de 2020 — mais de 100 capítulos, 11 volumes. Segundo dados da Shueisha, ultrapassou 10 milhões de cópias físicas e digitais em circulação até 2025. A Temporada 1 do anime foi produzida pela <strong>Production I.G</strong>, dirigida por Shinji Ishihara, e foi ao ar de abril a junho de 2024 com 12 episódios — disponível na Crunchyroll com legenda em português. A <strong>Temporada 2</strong> estreou na Spring Season 2026 também pela Production I.G.
+        </p>
+        <p>
+          O que torna Kaiju No. 8 especialmente popular no Brasil é o protagonista: Kafka Hibino, 32 anos, trabalhador comum que limpava corpos de kaiju enquanto via jovens mais novos ingressarem na Defense Force que ele sempre quis integrar. Essa premissa ressoa com uma geração que entende de sonhos adiados por circunstâncias da vida — e a série não trivializa isso. Kafka não é um perdedor que virou herói por acidente: é alguém que nunca desistiu de um objetivo por décadas, e a série trata essa persistência com seriedade genuína.
+        </p>
+      </EditorialTake>
 
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-otaku" />
