@@ -321,8 +321,6 @@ const CrimsonDesertPersonagens = () => {
         <p>
           <strong>Os personagens secundários têm mortes permanentes?</strong> Não. Mortes de Damiane e Oongka durante seus arcos resultam em game over e retorno ao último checkpoint — não são mortes permanentes narrativas. O jogo usa isso como pressão dramática, não como penalidade de progressão.
         </p>
-      </div>
-</div>
 
       
         <h2 className="text-2xl font-bold mt-10 mb-4">Lore dos Personagens — Contexto Narrativo</h2>
