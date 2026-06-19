@@ -414,6 +414,30 @@ const AvatarCaminhoDaAgua = () => {
           </Link>
           , é a peça que falta para entender a família Sully e os Metkayina.
         </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">A Equipe de Produção — Quem Fez O Caminho da Água</h2>
+        <p>
+          Avatar: O Caminho da Água reuniu uma equipe de mais de 2.000 pessoas entre produção e pós-produção, distribuídas principalmente entre Nova Zelândia (Weta FX), Los Angeles (ILM) e o estúdio da MRC em Manhattan Beach, Califórnia. Cameron dirigiu as filmagens principais entre 2017 e 2022, com a captura de performance aquática sendo o maior desafio logístico: os atores aprenderam a respirar embaixo d'água por períodos de até 7 minutos (Kate Winslet bateu o recorde pessoal de 7 minutos e 15 segundos) para que as cenas subaquáticas pudessem ser filmadas com marcadores de captura reais, não simuladas em pós-produção.
+        </p>
+        <p>
+          A Weta FX desenvolveu um sistema proprietário de simulação de fluidos que processou cada cena aquática individualmente — não há loops ou reciclagem de animação de água no filme. Cada onda, corrente e bolha foi simulada em relação direta com o corpo dos personagens e a geometria do ambiente. O tempo de renderização para cenas complexas chegou a 100 horas por frame em servidores de alta performance, totalizando centenas de petabytes de dados de renderização ao longo da produção.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Bilheteria e Impacto Comercial</h2>
+        <p>
+          Avatar: O Caminho da Água faturou $2,32 bilhões globalmente, tornando-se o terceiro maior filme da história, atrás apenas do Avatar original ($2,92 bilhões) e Avengers: Endgame ($2,79 bilhões). O resultado foi considerado um triunfo por analistas que haviam questionado se uma sequência de 13 anos poderia sobreviver sem a novidade tecnológica que impulsionou o original. A resposta foi que Pandora como mundo — não como tecnologia — tem audiência fiel o suficiente para sustentar uma franquia de cinco filmes.
+        </p>
+        <p>
+          No Brasil, O Caminho da Água foi um dos maiores lançamentos de 2022, com ocupação de salas IMAX que permaneceu acima de 80% durante as primeiras três semanas. A Cinemark e a UCI relataram demanda recorde para sessões 3D HFR — a versão de 48 quadros por segundo que Cameron preferiu para capturar o movimento subaquático sem borramento de movimento nas cenas de ação.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Como Assistir — Versões e Formatos Disponíveis</h2>
+        <p>
+          Avatar: O Caminho da Água está disponível no Disney+ desde março de 2023. A versão de streaming é a corte teatral de 192 minutos com qualidade 4K HDR e Dolby Atmos onde disponível. Para quem quer a experiência máxima, a versão Blu-ray 4K UHD traz a versão HFR (48fps) que Cameron considera a preferida para home theater — uma experiência radicalmente diferente do 24fps padrão, especialmente nas cenas de ação subaquática.
+        </p>
+        <p>
+          Para se preparar para Avatar: Fire and Ash (dezembro 2025) e o restante da franquia, a ordem recomendada é Avatar (2009) seguido de O Caminho da Água. Fire and Ash pressupõe conhecimento de ambos os filmes anteriores — a família Sully, a cultura Metkayina e o conflito com a RDA são todos contextos que Fire and Ash não para para reexplicar. Uma maratona dos dois primeiros filmes antes de Fire and Ash é a preparação ideal.
+        </p>
       </div>
 
       <EditorialTake category="geek" title="Análise do Marcos: Avatar 2 é obra de engenharia — e de amor obsessivo ao detalhe">

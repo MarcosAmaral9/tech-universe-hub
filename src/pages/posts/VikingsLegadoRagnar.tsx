@@ -381,9 +381,49 @@ const VikingsLegadoRagnar = () => {
           um spin-off que continua a história, é o momento perfeito para maratonar ambas as séries.
         </p>
       </div>
-<RelatedPosts currentSlug="vikings-legado-ragnar-lothbrok" />
+
+      <EditorialTake category="geek" title="Análise: Vikings Envelheceu Bem — e Mal ao Mesmo Tempo">
+        <p>Vikings é uma série que existe em dois tempos distintos. As três primeiras temporadas são televisão de altíssima qualidade: um protagonista complexo, um mundo construído com cuidado arqueológico razoável, e uma tensão narrativa que raramente cede. As temporadas 4 a 6 são um programa diferente — mais violento, mais disperso, menos interessado nos personagens que construiu. <strong>Ragnar Lothbrok é um dos protagonistas mais bem escritos da televisão dos anos 2010</strong>, e sua ausência nas temporadas finais nunca foi verdadeiramente compensada. Em 2026, com Vikings: Valhalla na Netflix como continuação espiritual, a série original permanece relevante como origem de uma franquia — mas a recomendação honesta é assistir as três primeiras temporadas com total atenção e as demais com expectativas calibradas. O legado de Vikings não está nas batalhas finais, mas em Ragnar olhando para o horizonte e sonhando com o que existe além.</p>
+      </EditorialTake>
+
+      <ArticleSources category="geek"
+        sources={[
+          {
+            title: "Vikings — IMDb (série completa, 6 temporadas)",
+            url: "https://www.imdb.com/title/tt2306299/",
+            publisher: "IMDb",
+            accessedAt: "Março 2026",
+          },
+          {
+            title: "Vikings — Rotten Tomatoes (crítica e público)",
+            url: "https://www.rottentomatoes.com/tv/vikings",
+            publisher: "Rotten Tomatoes",
+            accessedAt: "Março 2026",
+          },
+          {
+            title: "Vikings: Valhalla — Netflix",
+            url: "https://www.netflix.com/title/81028245",
+            publisher: "Netflix",
+            accessedAt: "Março 2026",
+          },
+          {
+            title: "Ragnar Lothbrok — Base histórica e adaptação (History Channel)",
+            url: "https://www.history.com/topics/middle-ages/ragnar-lothbrok",
+            publisher: "History Channel",
+            accessedAt: "Março 2026",
+          },
+          {
+            title: "Vikings — Wikipedia (produção e contexto histórico)",
+            url: "https://en.wikipedia.org/wiki/Vikings_(TV_series)",
+            publisher: "Wikipedia",
+            accessedAt: "Março 2026",
+          },
+        ]}
+      />
+
+      <RelatedPosts currentSlug="vikings-legado-ragnar-lothbrok" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="vikings-legado-ragnar-lothbrok" postTitle="Vikings: Vale a Pena Assistir em 2026? Review Completa da Série"  category="geek" />
+      <CommentSection postId="vikings-legado-ragnar-lothbrok" postTitle="Vikings: Vale a Pena Assistir em 2026? Review Completa da Série" category="geek" />
     </article>
   );
 };

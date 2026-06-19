@@ -691,7 +691,40 @@ const AvatarFrontiersOfPandora = () => {
         </div>
       </div>
 
-      {/* Related Posts */}
+
+      <div className="prose prose-lg dark:prose-invert max-w-none">
+        <h2 className="text-2xl font-bold mt-10 mb-4">Frontiers of Pandora Dois Anos Depois — Vale em 2026?</h2>
+        <p>
+          Com lançamento em dezembro de 2023, Avatar: Frontiers of Pandora chegou a 2026 com preço reduzido, patches de otimização e os dois DLCs completos disponíveis. A pergunta que mais recebo é: <strong>vale a pena comprar agora?</strong> A resposta depende do que você busca.
+        </p>
+        <p>
+          Para quem quer a experiência visual mais impressionante disponível em mundo aberto — sim, vale absolutamente. A Ubisoft Massive nunca fez um jogo tão bonito, e dois anos de patches melhoraram a performance em PC significativamente. Com uma RTX 4070 hoje, o que exigia configurações médias em 2023 roda em ultra 1440p sem esforço. O DLC Secrets of the Spires é especialmente elogiado pela comunidade como o melhor conteúdo do jogo — mais focado narrativamente e com um bioma que rivaliza com os melhores do jogo base.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">O Que a Crítica Disse — E O Que o Tempo Confirmou</h2>
+        <p>
+          Na época do lançamento, Frontiers of Pandora recebeu nota <strong>Metacritic 73</strong> no PC — "recepção mista" oficialmente, mas com elogios consistentes para o visual e críticas para a estrutura de mundo aberto genérica. Dois anos depois, o Steam mostra <strong>Mostly Positive</strong> com mais de 28 mil análises, refletindo exatamente essa divisão: quem entrou esperando inovação saiu decepcionado; quem entrou querendo viver em Pandora saiu satisfeito.
+        </p>
+        <p>
+          O Digital Foundry publicou uma análise técnica extensa elogiando a Snowdrop Engine pela qualidade da vegetação e do sistema de iluminação global — e foi uma das análises mais citadas positivamente nos fóruns. A IGN (7/10) resumiu bem: "É o Far Cry mais bonito que já existiu, e às vezes isso é suficiente."
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Co-op — O Diferencial Subestimado</h2>
+        <p>
+          Talvez o aspecto mais subestimado de Frontiers of Pandora seja o <strong>co-op online de campanha completa</strong>. Diferente de muitos jogos de mundo aberto onde o co-op é uma adição superficial, aqui a campanha inteira foi projetada para ser jogada com um amigo — com progressão compartilhada, crafting colaborativo e bosses que têm comportamentos distintos quando dois jogadores estão presentes. A dinâmica de voo de Ikran sincronizado entre dois jogadores é um dos momentos mais memoráveis do jogo.
+        </p>
+        <p>
+          Para o contexto brasileiro, onde jogar junto é frequentemente a motivação principal de compra, o co-op torna Frontiers of Pandora uma proposta muito mais atrativa. Se você tem um amigo fã de Avatar — ou apenas fã de mundos abertos bonitos — a experiência cooperativa justifica o preço de duas cópias em promoção.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Onde Comprar em 2026 — Melhores Preços</h2>
+        <p>
+          Em 2026, Frontiers of Pandora pode ser encontrado frequentemente em promoção nas plataformas digitais. As melhores oportunidades historicamente aparecem durante as sales de verão americano (junho/julho), a Black Friday (novembro) e as promoções de fim de ano. A edição Gold com os dois DLCs inclusos frequentemente fica abaixo do preço da edição base de lançamento durante promoções sazonais.
+        </p>
+        <p>
+          No Brasil, a Ubisoft Connect frequentemente oferece descontos adicionais para clientes com histórico de compra anterior. A versão PS5 também tem chegado às promoções mensais de PS Plus Deluxe como título adicional — vale conferir antes de comprar, já que poderia estar disponível sem custo extra para assinantes.
+        </p>
+      </div>
 
       <EditorialTake category="geek" title="Análise do Marcos: Frontiers of Pandora é o mais bonito — mas não o mais profundo">
         <p>
