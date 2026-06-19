@@ -941,9 +941,9 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     keywords: "temporada animes abril 2026, spring season animes 2026, One Piece Elbaf estreia, ReZero T4, TenSura T4, Dr STONE final, Lazarus anime, Crunchyroll abril 2026, simulcast abril 2026",
   },
   "/post/10-melhores-manhwas-sistema-2026": {
-    title: "Os 10 Melhores Manhwas de Sistema para Ler em 2026",
-    description: "Os 10 melhores manhwas com sistema de 2026: Solo Leveling, Tower of God, Omniscient Reader e mais. Seleção com sinopse, número de capítulos e onde ler legalmente.",
-    keywords: "melhores manhwas sistema 2026, manhwa sistema, manhwa regressão, Solo Leveling manhwa, Tower of God, Omniscient Reader, manhwa webtoon brasil, manhwa 2026, melhores manhwas coreanos",
+    title: "Os 10 Melhores Manhwas de Sistema para Ler em 2026 — Guia Completo",
+    description: "Guia completo dos melhores manhwas de sistema em 2026: Solo Leveling, Omniscient Reader, Tower of God, The Beginning After the End e mais. O que é 'sistema', onde ler (Webtoon, Tapas, Kakao) e como o subgênero dominou o manhwa.",
+    keywords: "melhores manhwas sistema 2026, manhwa sistema guia, Solo Leveling manhwa, Omniscient Reader's Viewpoint, Tower of God SIU, The Beginning After the End, manhwa webtoon brasil, Kakao manhwa, subgênero sistema manhwa, Dubu arte",
   },
   "/post/isekai-2026-genero-domina": {
     title: "Isekai 2026: Por Que o Gênero Ainda Domina o Anime e Seus Subgêneros",
@@ -951,14 +951,14 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     keywords: "isekai 2026, porque isekai domina anime, subgeneros isekai, isekai sistema level up, isekai construcao reino, isekai regressao, TenSura isekai, Mushoku Tensei, Re:Zero, KonoSuba, melhores isekais 2026, Narou isekai",
   },
   "/post/one-piece-final-saga-2026": {
-    title: "One Piece Final Saga: Onde Estamos e O Que Esperar do Final",
-    description: "A Final Saga de One Piece começou em 2022. Arco de Egghead, revelações sobre Imu e os Gorosei, One Piece final e o que já sabemos sobre o desfecho de Luffy.",
-    keywords: "One Piece Final Saga, One Piece arco final, Egghead One Piece, Imu One Piece, One Piece Elbaf, One Piece 2026, One Piece fim, Luffy Gear 5, One Piece Oda final, One Piece spoilers",
+    title: "One Piece Final Saga: Egghead, Elbaf e o Que Esperar do Final de Oda",
+    description: "A Final Saga de One Piece: Arco de Egghead (revelações sobre Fruto do Diabo e Imu), Arco de Elbaf no anime (formato sazonal, abril 2026), Os Cinco Anciões, Joy Boy e como acompanhar via Manga Plus e One Pace.",
+    keywords: "One Piece Final Saga, One Piece Egghead, One Piece Elbaf 2026, Imu Im-sama One Piece, Cinco Anciões Gorosei, Joy Boy One Piece, Eiichiro Oda final, Fruto Diabo Luffy Nika, One Pace site, Manga Plus One Piece, Panini One Piece",
   },
   "/post/overlord-guia-completo-temporadas-ainz": {
-    title: "Overlord: Guia Completo — 4 Temporadas, Filmes e T5",
-    description: "Overlord completo: T1 a T4, filme Sacred Kingdom (2023) e novidades de T5. Ainz Ooal Gown, o Novo Mundo, Nazarick e por onde começar em 2026.",
-    keywords: "Overlord guia completo, Overlord temporadas, Overlord Sacred Kingdom filme, Overlord T5, Ainz Ooal Gown, Nazarick, Overlord Crunchyroll, Overlord anime 2026, Overlord ordem assistir",
+    title: "Overlord: Guia Completo — T1 a T4, Filme Sacred Kingdom e T5",
+    description: "Overlord completo: T1–T3 Madhouse, T4 Studio Deen (2022), Filme Sacred Kingdom (2023), estrutura de Nazarick e o que a T5 deve cobrir. Maruyama, Kadokawa, Yen Press. Status de 2026.",
+    keywords: "Overlord guia completo, Overlord temporadas, Overlord Sacred Kingdom filme, Overlord T4 Studio Deen, Overlord T5 2026, Ainz Ooal Gown, Nazarick estrutura, Madhouse Overlord, Kugane Maruyama, Yen Press Overlord inglês",
   },
 
   // ═══════════════════════════════════════════════════════════
