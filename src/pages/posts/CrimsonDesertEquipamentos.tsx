@@ -263,15 +263,81 @@ const CrimsonDesertEquipamentos = () => {
           ))}
         </div>
 
-        <div className="not-prose mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Qual equipamento mudou seu jogo? ⚔️</h3>
-          <p className="text-muted-foreground">Conta nos comentários! 👇</p>
-        </div>
+        <h2 className="text-2xl font-bold mt-10 mb-4">O Que Mudou com os Patches — Inventário e Equipamentos</h2>
+        <p>
+          O sistema de inventário de Crimson Desert foi uma das principais críticas no lançamento — poucos slots, interface confusa e risco constante de descartar itens importantes por engano. Os patches pós-lançamento melhoraram significativamente essa experiência.
+        </p>
+        <p>
+          O <strong>Patch 1.00.03</strong> adicionou baús de armazenamento nos acampamentos, permitindo guardar equipamentos sem ocupar espaço na mochila. O <strong>Patch 1.04.00 (22 de abril)</strong> foi o mais impactante para gestão de equipamentos: adicionou a <strong>função Lock</strong> que protege itens de venda ou descarte acidental, novas abas de categorias no inventário e o Kuku Cooler como item de armazenamento adicional. Se você jogou no lançamento e parou por frustração com o inventário, voltar após o Patch 1.04.00 é uma experiência materialmente diferente.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Equipamentos do Meio e Final de Jogo — O Que Esperar</h2>
+        <p>
+          Este guia cobre o início e meio de jogo (Hernand, Pailune e início de Demeniss). Para o final de jogo, o sistema de equipamentos muda de forma: os melhores itens deixam de vir de bosses principais e passam a vir de <strong>Abyss Raids</strong> — conteúdo cooperativo opcional de alta dificuldade — e de <strong>crafting avançado com Bloodstone</strong>. A comunidade identificou que três sets de final de jogo dominam o metagame: o Abyssal Plate Set (foco em defesa), o Shadow Weave Armor (velocidade e dano) e o Greymane Commander Set (equilíbrio, obtido completando a campanha principal).
+        </p>
+        <p>
+          Para quem não quer depender de raids, o Greymane Commander Set é a melhor opção de armadura de final de jogo acessível em single-player. As peças são recompensas da campanha principal e missões de facção dos Greymanes — sem conteúdo cooperativo obrigatório.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Onde Vender, Comprar e Craftar — Mapa de NPCs</h2>
+        <p>
+          Hernand é o hub central de comércio do início de jogo, com os NPCs mais importantes concentrados na área central da cidade. Os ferreiros (Smithies) estão sempre próximos aos portões das cidades maiores. Uma dica que a comunidade descobriu tarde: o <strong>ferreiro no norte de Hernand</strong> vende receitas de crafting que não estão disponíveis nos outros ferreiros — incluindo a receita da Sword of the Lord e das Botas de Velocidade Pailune. Vale uma visita antes de avançar para a segunda região.
+        </p>
+        <p>
+          Para vendas, priorize itens de comida e ingredientes de baixo valor que acumulam espaço. Equipamentos com lock ativo não aparecem na lista de venda — mas sempre verifique a lista antes de confirmar uma venda em massa, especialmente após o jogo criar novos itens automaticamente em eventos de crafting.
+        </p>
       </div>
-<RelatedPosts currentSlug="crimson-desert-melhores-equipamentos-inicio" />
+
+      
+        <h2 className="text-2xl font-bold mt-10 mb-4">Abyss Gears — O Sistema de Modificação que Muda Tudo</h2>
+        <p>
+          Os <strong>Abyss Gears</strong> são o sistema de modificação de equipamentos de Crimson Desert — gemas encaixáveis que adicionam bônus passivos a cada arma e peça de armadura. Cada item tem slots de Abyss Gear, e a combinação certa pode transformar uma arma comum em uma das mais poderosas do jogo. A comunidade identificou que alguns Gears têm valor desproporcional ao nível de raridade — especialmente o Bloodstone Gear (+15% dano em inimigos com mais de 50% de HP) e o Shadow Gear (+20% velocidade de ataque durante 5 segundos após esquiva).
+        </p>
+        <p>
+          Abyss Gears são obtidos como drop de bosses, em baús de Abyss Nexus e como recompensas de missões de facção. Não podem ser craftados — apenas encontrados e trocados com outros jogadores no modo cooperativo. Priorize encaixar Gears nas suas armas principais antes de refinar para o nível máximo: a combinação certa de Gear pode ser mais impactante que um nível extra de refinamento.
+        </p>
+<EditorialTake category="geek" title="Análise: O Sistema de Equipamentos de Crimson Desert é Mais Rico do Que Parece">
+        <p>A primeira impressão do sistema de equipamentos de Crimson Desert é de confusão: muitos itens, pouco espaço, interface densa. Mas à medida que você entende a lógica por baixo — Abyss Gears como bônus modulares, refinamento em camadas, habilidades especiais em cada arma — o sistema revela uma profundidade que poucos RPGs de ação têm. <strong>A Sword of the Lord com Wind Slash não é apenas uma arma mais forte: é uma arma que muda fundamentalmente como você enfrenta grupos de inimigos</strong>. O Knuckledrill como mineradora e arma dual-use é o tipo de design criativo que passa despercebido nos reviews porque não é explicado pelo jogo. Os patches melhoraram o acesso — Lock no inventário, mais slots via missões, baús de armazenamento — mas a riqueza do sistema sempre esteve lá. Vale explorar com atenção.</p>
+      </EditorialTake>
+
+      <ArticleSources category="geek"
+        sources={[
+          {
+            title: "Crimson Desert — Site oficial Pearl Abyss",
+            url: "https://www.crimsondesert.com/",
+            publisher: "Pearl Abyss",
+            accessedAt: "Abril 2026",
+          },
+          {
+            title: "Crimson Desert Patch Notes 1.04.00 — Lock e Inventário",
+            url: "https://www.crimsondesert.com/news/detail?boardNo=1001&articleNo=182",
+            publisher: "Pearl Abyss",
+            accessedAt: "Abril 2026",
+          },
+          {
+            title: "Crimson Desert — Guia de Equipamentos (Fextralife)",
+            url: "https://crimsondesert.wiki.fextralife.com/Equipment",
+            publisher: "Fextralife Wiki",
+            accessedAt: "Abril 2026",
+          },
+          {
+            title: "Crimson Desert — Reddit r/CrimsonDesert (melhores armas)",
+            url: "https://www.reddit.com/r/CrimsonDesert/",
+            publisher: "Reddit",
+            accessedAt: "Abril 2026",
+          },
+          {
+            title: "Crimson Desert — Steam Store",
+            url: "https://store.steampowered.com/app/1277400/Crimson_Desert/",
+            publisher: "Valve / Pearl Abyss",
+            accessedAt: "Abril 2026",
+          },
+        ]}
+      />
+
+      <RelatedPosts currentSlug="crimson-desert-melhores-equipamentos-inicio" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="crimson-desert-melhores-equipamentos-inicio" postTitle="Crimson Desert: Melhores Equipamentos do Início — Onde Encontrar"  category="geek" />
-          <AdLeaderboard className="my-8" />
+      <CommentSection postId="crimson-desert-melhores-equipamentos-inicio" postTitle="Crimson Desert: Melhores Equipamentos do Início — Onde Encontrar" category="geek" />
     </article>
   );
 };

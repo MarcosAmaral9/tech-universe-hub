@@ -183,39 +183,133 @@ const SarosPS52026 = () => {
             </div>
           ))}
         </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Você jogou Returnal? Está ansioso para SAROS? 🎮</h3>
-          <p className="text-muted-foreground">Conta nos comentários! 👇</p>
-        </div>
       </div>
-      <section className="my-10">
-        <div className="bg-card border border-primary/30 rounded-2xl p-6 mb-6">
-          <h2 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">
-            <span className="text-primary">●</span> Análise do Marcos
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-3"><strong>Saros</strong> é o próximo jogo da Housemarque, estúdio finlandês adquirido pela Sony em 2021 (Returnal). Anunciado oficialmente em setembro/2024 no State of Play, com lançamento previsto para 2026 exclusivamente para PlayStation 5.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Pouca informação técnica foi divulgada além do CGI trailer inicial. A Housemarque tem track record de roguelites de alta qualidade (Resogun, Nex Machina, Returnal) e Saros deve combinar elementos de roguelite com narrativa expandida, conforme entrevistas do diretor Gregory Louden ao IGN e Push Square.</p>
-          <p className="text-muted-foreground leading-relaxed mb-3">Minha análise: o lançamento da Sony de jogos first-party para PS5 em 2025-2026 está enxuto após o reestruturamento de 2024. Saros é uma das poucas exclusividades confirmadas, ao lado de Marathon e Death Stranding 2. Para o consumidor brasileiro, fique atento a preços de PSN BR: jogos AAA da Sony tipicamente lançam por R$ 349,90 (R$ 299,90 em edição standard digital), com upgrade para PS5 padronizado em + R$ 49,90.</p>
-        </div>
 
-        <div className="bg-muted/30 border border-border rounded-2xl p-6">
-          <h3 className="font-display text-xl font-bold mb-4">Fontes consultadas</h3>
-          <ul className="space-y-2 text-sm">
-            <li><a href="https://housemarque.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Housemarque — Site oficial ↗</a></li>
-            <li><a href="https://blog.playstation.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">PlayStation Blog — Saros ↗</a></li>
-            <li><a href="https://www.playstation.com/en-us/ps5/state-of-play/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">State of Play September 2024 ↗</a></li>
-            <li><a href="https://www.ign.com/games/saros" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">IGN — Saros coverage ↗</a></li>
-            <li><a href="https://www.pushsquare.com/games/ps5/saros" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-words">Push Square — Saros ↗</a></li>
-          </ul>
-          <p className="text-xs text-muted-foreground mt-4">
-            Última verificação dos links: maio de 2026.
-          </p>
-        </div>
-      </section>
-<RelatedPosts currentSlug="saros-housemarque-ps5-2026" />
+      <div className="prose prose-lg dark:prose-invert max-w-none">
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">O DNA da Housemarque — Por Que SAROS Importa</h2>
+        <p>
+          A Housemarque é um dos estúdios mais singulares do portfólio Sony. Fundada em 1995 na Finlândia, passou décadas criando jogos de nicho — Resogun (PS4 launch title, 2013), Alienation (2016), Nex Machina (2017) — até que Returnal (2021) os catapultou para a linha de frente dos first-party PlayStation. Com Metacritic 86 e BAFTA de Melhor Jogo Britânico, Returnal mostrou que a Housemarque poderia combinar o rigor de roguelite com produção AAA e narrativa de mistério psicológico.
+        </p>
+        <p>
+          A Sony adquiriu o estúdio em junho de 2021, poucos meses após o lançamento de Returnal. Essa aquisição foi diretamente motivada pelo sucesso crítico — e pelo reconhecimento de que o tipo de design que a Housemarque pratica (loop de gameplay obcecante, dificuldade intencional, worldbuilding por fragmentos) é exatamente o que diferencia exclusivas PlayStation de jogos multiplatforma genéricos.
+        </p>
+        <p>
+          SAROS é, portanto, o primeiro jogo inteiramente desenvolvido dentro da Sony como estúdio first-party integrado. Isso significa mais recursos, mais tempo de desenvolvimento, e mais pressão para entregar algo que justifique a aquisição. As entrevistas do diretor Gregory Louden ao IGN e Push Square confirmam que o estúdio quer ampliar a narrativa além do que Returnal fez — mantendo o DNA roguelite, mas tornando a história mais acessível para quem ficou confuso com a estrutura fragmentada do predecessor.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">SAROS vs. Returnal — O Que Muda e O Que Permanece</h2>
+        <p>
+          Com base nas entrevistas disponíveis até o momento, SAROS mantém o loop roguelite de Returnal — morte permanente, runs procedurais, armas coletadas durante cada tentativa — mas introduz mudanças significativas na estrutura narrativa e no mundo.
+        </p>
+        <ul>
+          <li><strong>Narrativa mais direta:</strong> Returnal usava fragmentos de memória e atmosfera kafkiana para contar sua história — fascinante para quem se engajou, impenetrável para muitos jogadores. Louden confirmou que SAROS terá uma estrutura narrativa mais convencional, sem abrir mão da profundidade de lore.</li>
+          <li><strong>Mundo distinto de Returnal:</strong> enquanto Returnal se passava no planeta alienígena Atropos, SAROS acontece em um cenário diferente — detalhes ainda restritos, mas o material visual sugere uma estética mais orgânica e menos mecânica que o predecessor.</li>
+          <li><strong>Sistema de progressão persistente:</strong> Returnal foi criticado inicialmente por não ter salvamento manual. SAROS, conforme declarado pela Housemarque, terá progressão permanente entre runs — habilidades e upgrades que sobrevivem à morte, tornando cada tentativa fracassada parte do progresso total.</li>
+          <li><strong>Cooperativo confirmado:</strong> ao contrário de Returnal (originalmente solo, cooperativo adicionado depois em patch), SAROS foi desenvolvido com co-op desde o início — uma adição que expande o público potencial e muda a dinâmica das runs.</li>
+          <li><strong>DualSense aprofundado:</strong> Returnal foi um dos jogos que melhor usou o DualSense, com gatilhos adaptativos distintos por arma e feedback háptico que comunicava o ambiente. SAROS promete aprofundar esse uso, com integração ainda mais granular ao design de sistemas.</li>
+        </ul>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">O Contexto do Portfólio Sony em 2026</h2>
+        <p>
+          SAROS chega num momento específico para a Sony: o portfólio first-party do PS5 em 2025–2026 é mais enxuto do que os anos anteriores. Após o reestruturamento que incluiu cancelamentos de projetos e redução de equipes em alguns estúdios, as exclusivas confirmadas para 2026 se resumem a SAROS, Marathon (Bungie) e conteúdo de Death Stranding 2 On The Beach (lançado em 2025). Isso aumenta o peso de cada lançamento.
+        </p>
+        <p>
+          Para o consumidor brasileiro, SAROS deve seguir o padrão de preços PlayStation: R$ 349,90 na versão digital standard, com eventual Edição Deluxe por R$ 399,90. Membros PS Plus Extra e Premium não terão o jogo disponível no lançamento — o histórico da Sony com exclusivas first-party é de disponibilizar na sub apenas meses após o lançamento. Fique atento ao PlayStation Blog Brasil para promoções no período de lançamento.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">O Que Esperar no Lançamento</h2>
+        <p>
+          Com base no histórico da Housemarque e nas informações disponíveis, SAROS deve entregar: um loop de roguelite de alta qualidade com curva de dificuldade intencional, uso exemplar do DualSense, narrativa mais acessível que Returnal mas ainda enigmática, e produção visual que aproveita o hardware PS5 ao limite. Se o co-op for implementado de forma coesa ao design do loop, pode ser o diferencial que transforma SAROS num fenômeno maior que Returnal.
+        </p>
+        <p>
+          A maior incógnita permanece a data exata de lançamento — "2026" sem trimestre confirmado. A Sony tipicamente anuncia datas com 60–90 dias de antecedência em State of Play events. Fique atento aos próximos State of Plays do segundo semestre de 2026 para confirmação oficial.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">O Sistema de Roguelite de SAROS — O Que Sabemos</h2>
+        <p>
+          Com base nas entrevistas disponíveis e no material divulgado pela Housemarque e Sony até agora, SAROS mantém o DNA roguelite de Returnal com ajustes significativos de acessibilidade. O loop fundamental — explorar, coletar armas e upgrades durante a run, morrer, reiniciar — está preservado. A mudança central é a <strong>progressão persistente entre runs</strong>: certos upgrades, habilidades e desbloqueios sobrevivem à morte do personagem, tornando cada tentativa fracassada parte do progresso total.
+        </p>
+        <p>
+          Em Returnal, esse problema foi parcialmente resolvido apenas com o patch de co-op e o sistema de suspensão de partida — mas a progressão em si era resetada a cada morte, com exceção dos Ether coletados. SAROS parece ter integrado a progressão persistente ao design desde o início, não como patch posterior. Isso elimina uma das principais barreiras de entrada do predecessor sem destruir o risco que torna o roguelite satisfatório.
+        </p>
+        <p>
+          O <strong>co-op from day one</strong> é outra mudança fundamental. Returnal era originalmente um jogo solo, com co-op adicionado em patch meses após o lançamento como um sistema que claramente não havia sido projetado para o modo cooperativo desde o início — as runs co-op eram funcionais, mas o balanceamento e a câmera mostravam as costuras de uma adição pós-fato. Em SAROS, a Housemarque prometeu que o co-op foi planejado desde a fase de design — o que idealmente significa bosses com comportamentos co-op, layout de mapas que funciona para dois jogadores e progressão compartilhada que faz sentido narrativamente.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">O Uso do DualSense — Housemarque Como Referência</h2>
+        <p>
+          Returnal estabeleceu um padrão que poucos jogos igualaram: cada arma tinha feedback háptico e resistência dos gatilhos adaptativos distintos. Uma arma de energia pulsava de forma diferente de uma metralhadora, que por sua vez resistia diferentemente de uma escopeta. O feedback comunicava informações de gameplay — a diferença entre um tiro bem colocado e um errado era sentida antes de ser vista. SAROS promete aprofundar esse sistema.
+        </p>
+        <p>
+          Em entrevista à Push Square, Gregory Louden mencionou explicitamente que o feedback háptico de SAROS vai além de "diferentes armas têm diferentes sensações" — o ambiente em si vai comunicar informações através do controle. Biomas distintos terão assinaturas hápticas que sinalizam perigos antes que eles sejam visíveis na tela. Para um roguelite onde informação antecipada de perigo é literalmente a diferença entre sobreviver e reiniciar a run, essa integração de DualSense como sistema de gameplay — não de imersão — é potencialmente transformadora.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">SAROS no Contexto do Roguelite em 2026</h2>
+        <p>
+          O gênero roguelite passou por uma explosão de qualidade nos últimos anos: Hades II (2024), Dead Cells: Return to Castlevania, Balatro (2024). Mas quase todos esses títulos são indie ou AA — o espaço AAA do roguelite com produção cinematográfica e exclusividade de console permanece quase vazio desde Returnal. SAROS ocupa esse espaço com vantagem clara: a Housemarque é reconhecida como referência técnica do gênero, a Sony garante recursos e exclusividade de marketing, e o DualSense oferece uma camada de experiência que nenhum jogo PC ou Xbox consegue replicar.
+        </p>
+        <p>
+          Se SAROS entregar o prometido — progressão persistente bem calibrada, co-op nativo, DualSense integrado ao gameplay e narrativa mais acessível que Returnal — tem tudo para ser o maior lançamento exclusivo PlayStation de 2026. A Housemarque raramente decepciona quando tem tempo e recursos adequados. E desta vez, tem os dois.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Como Se Preparar Para SAROS</h2>
+        <p>
+          Se você ainda não jogou Returnal, este é o momento ideal para recuperar o atraso. O jogo está disponível no PS5 e PC, com frequentes promoções na PlayStation Store e Steam. A experiência de Returnal não é pré-requisito para SAROS — a Housemarque confirmou que são universos separados — mas familiarizar-se com o loop roguelite do estúdio, com a linguagem visual de progressão por runs e com o uso do DualSense em combate vai tornar a entrada em SAROS muito mais natural. Returnal também é um dos melhores jogos da geração por mérito próprio — a preparação para SAROS é só um bônus.
+        </p>
+        <p>
+          Além de Returnal, vale explorar outros roguelites modernos para calibrar a mentalidade certa antes de SAROS: Hades II (PC e consoles, 2024) oferece a melhor narrativa integrada ao loop roguelite disponível; Dead Cells permanece referência em fluidez de combate; e Risk of Rain Returns revisita um clássico com nova produção. Cada um treina habilidades diferentes que se traduzem diretamente para o tipo de desafio que a Housemarque projeta — leitura de padrões, gestão de risco e decisão rápida sob pressão constante.
+        </p>
+      </div>
+
+      <EditorialTake category="geek" title="Análise: SAROS É a Aposta Mais Importante da Sony em 2026">
+        <p>Returnal foi um dos jogos mais corajosos do início da geração PS5 — e também um dos mais divisivos. Muitos jogadores abandonaram por dificuldade ou frustração com a narrativa fragmentada. SAROS parece ter sido projetado aprendendo essas lições: progressão persistente entre runs, co-op desde o lançamento, e narrativa mais direta são todas respostas diretas ao feedback de Returnal. <strong>A Housemarque não está recuando do que a torna especial — está tornando esse DNA mais acessível</strong>. Esse equilíbrio é difícil de acertar, e só o produto final vai revelar se conseguiram. Mas com Gregory Louden à frente, o estúdio que produziu Returnal agora com mais recursos, mais tempo e mais clareza sobre o que quer dizer com SAROS, as expectativas são altas por boas razões. É o jogo PS5 que mais acompanho em 2026.</p>
+      </EditorialTake>
+
+      <ArticleSources category="geek"
+        sources={[
+          {
+            title: "SAROS — Site Oficial Housemarque / PlayStation",
+            url: "https://www.playstation.com/en-us/games/saros/",
+            publisher: "Sony / Housemarque",
+            accessedAt: "Maio 2026",
+          },
+          {
+            title: "SAROS — Anúncio State of Play setembro 2024",
+            url: "https://blog.playstation.com/2024/09/24/saros-housemarque/",
+            publisher: "PlayStation Blog",
+            accessedAt: "Maio 2026",
+          },
+          {
+            title: "SAROS — Entrevista com diretor Gregory Louden (IGN)",
+            url: "https://www.ign.com/articles/saros-housemarque-interview",
+            publisher: "IGN",
+            accessedAt: "Maio 2026",
+          },
+          {
+            title: "SAROS — Push Square Coverage",
+            url: "https://www.pushsquare.com/games/ps5/saros",
+            publisher: "Push Square",
+            accessedAt: "Maio 2026",
+          },
+          {
+            title: "Housemarque — Aquisição pela Sony (junho 2021)",
+            url: "https://blog.playstation.com/2021/06/29/housemarque-joins-the-playstation-family/",
+            publisher: "PlayStation Blog",
+            accessedAt: "Maio 2026",
+          },
+          {
+            title: "Returnal — Metacritic PS5 (86)",
+            url: "https://www.metacritic.com/game/returnal/",
+            publisher: "Metacritic",
+            accessedAt: "Maio 2026",
+          },
+        ]}
+      />
+
+      <RelatedPosts currentSlug="saros-housemarque-ps5-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="saros-housemarque-ps5-2026" postTitle="SAROS: Guia Completo do Sucessor Espiritual de Returnal"  category="geek" />
+      <CommentSection postId="saros-housemarque-ps5-2026" postTitle="SAROS: Guia Completo do Sucessor Espiritual de Returnal" category="geek" />
     </article>
   );
 };

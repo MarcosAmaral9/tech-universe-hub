@@ -295,17 +295,61 @@ const CrimsonDesertPersonagens = () => {
           cedo e a luta deixa de ser o muro de dificuldade que foi descrito por <em>PC
           Gamer</em> e <em>TheGamer</em> no lançamento.
         </p>
+      
 
-        <div className="not-prose mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Qual dos 3 personagens é o seu favorito? ⚔️</h3>
-          <p className="text-muted-foreground">
-            Kliff, Damiane ou Oongka? Conta nos comentários abaixo qual estilo combina mais
-            com você. 👇
-          </p>
-        </div>
+        <h2 className="text-2xl font-bold mt-10 mb-4">Habilidades Novas Adicionadas nos Patches</h2>
+        <p>
+          A Pearl Abyss expandiu os três personagens após o lançamento com habilidades completamente novas. O <strong>Patch 1.03.00 (abril 2026)</strong> foi o maior update de conteúdo para os personagens:
+        </p>
+        <ul>
+          <li><strong>Kliff — Focused Aerial Roll:</strong> nova esquiva aérea com mais mobilidade vertical durante combates em terrenos irregulares e contra bosses com ataques de área no chão. Combinada com Crow Wings, abre sequências de combate aéreo que não eram possíveis no lançamento.</li>
+          <li><strong>Damiane — Nature's Snare:</strong> imobiliza grupos de até 3 inimigos por 3 segundos. Transforma Damiane de especialista em duelos 1v1 em personagem viável para conteúdo cooperativo. Combinada com Crescent Riposte, permite sequências de dano devastadoras contra grupos.</li>
+          <li><strong>Oongka — Axiom Force:</strong> ataque carregado que empurra inimigos e cria distância. Essencial nos encontros de defesa de acampamento onde grupos grandes cercam Oongka. No Hard Mode, frequentemente a habilidade que separa vitória de derrota em combates de turba.</li>
+          <li><strong>Kliff e Oongka — galhos de árvore como armas (Patch 1.04.00):</strong> o update de abril adicionou galhos arrancados como armas improvisadas. O dano é surpreendentemente alto contra inimigos blindados específicos — descoberta da comunidade que gerou debates sobre intencionalidade ou bug.</li>
+        </ul>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Perguntas Frequentes sobre os Personagens</h2>
+        <p>
+          <strong>Posso escolher qual personagem jogar a qualquer momento?</strong> Não livremente — a câmera alterna automaticamente em pontos específicos da história. Fora dos arcos obrigatórios, você controla apenas Kliff no mundo aberto.
+        </p>
+        <p>
+          <strong>Os Artifacts gastos em Kliff ficam disponíveis para Damiane e Oongka?</strong> O pool é único e compartilhado. Priorizar Kliff é a estratégia correta, mas guarde Artifacts para as habilidades essenciais de Damiane (Shadowstep e Crescent Riposte) e Oongka (Iron Stance e Axiom Force) antes dos seus arcos começarem.
+        </p>
+        <p>
+          <strong>Vale jogar os arcos de Damiane no Hard Mode?</strong> Damiane no Hard exige memorização extensa dos padrões de boss — genuinamente desafiador mesmo para veteranos de Sekiro. A recomendação da comunidade é jogar o arco de Damiane em Normal, especialmente o duelo Lucian Bastier. Oongka no Hard é mais tolerante pela alta vida base — uma opção mais razoável para quem quer desafio.
+        </p>
+        <p>
+          <strong>Os personagens secundários têm mortes permanentes?</strong> Não. Mortes de Damiane e Oongka durante seus arcos resultam em game over e retorno ao último checkpoint — não são mortes permanentes narrativas. O jogo usa isso como pressão dramática, não como penalidade de progressão.
+        </p>
       </div>
+</div>
 
-      <EditorialTake category="geek" title="Análise do Marcos: a troca de POV salva o ritmo">
+      
+        <h2 className="text-2xl font-bold mt-10 mb-4">Lore dos Personagens — Contexto Narrativo</h2>
+        <p>
+          Para quem quer entender o background de cada personagem além do gameplay, aqui está o contexto narrativo que o jogo revela progressivamente ao longo da campanha — sem spoilers maiores:
+        </p>
+        <p>
+          <strong>Kliff</strong> cresceu como órfão nas margens do império de Pywel, recrutado pelos Greymanes adolescente. Sua motivação central é a lealdade ao grupo que o criou — não ambição pessoal ou poder. Isso o torna um protagonista incomum para o gênero: ele não quer ser o herói, quer apenas proteger os seus. Essa caracterização é o que salva Kliff de ser um protagonista genérico, apesar da narrativa geral não desenvolvê-lo tanto quanto Origins ou Inquisition desenvolveram seus protagonistas.
+        </p>
+        <p>
+          <strong>Damiane</strong> carrega o peso de uma linhagem nobre em decadência — os Vael perderam influência política e ela usa a espada para recuperar o que a família perdeu. Sua arrogância inicial é armor emocional, e as missões da Vael House revelam camadas que o arco principal não tem tempo de explorar. Vale completar todas as missões opcionais antes do duelo final de seu arco.
+        </p>
+        <p>
+          <strong>Oongka</strong> é o personagem com menos desenvolvimento narrativo dos três, mas tem o backstory mais trágico: sua tribo Stahlhart foi dizimada em conflito com os Black Bears antes dos eventos do jogo. Sua brutalidade em combate é inseparável da perda que carrega. O jogo revela isso em fragmentos de diálogo durante as missões de defesa de acampamento — preste atenção.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Como os Personagens Evoluem ao Longo da Campanha</h2>
+        <p>
+          Uma das melhores decisões de design de Crimson Desert é que Kliff, Damiane e Oongka não são estáticos durante a campanha — eles mudam tanto no gameplay quanto na narrativa à medida que você progride. Kliff no Capítulo 1 é um mercenário pragmático com moveset básico; Kliff no Capítulo 8 é um guerreiro com dezenas de habilidades, montarias e uma relação com os outros Greymanes que o jogo construiu gradualmente. Essa sensação de crescimento orgânico é especialmente forte se você completou as missões de facção e explorou o mapa além da história principal.
+        </p>
+        <p>
+          Damiane, em particular, tem o arco de personagem mais bem escrito dos três — começando arrogante e territorial, tornando-se aliada genuína ao longo de seu arco em Pailune. Os momentos de diálogo entre ela e Kliff depois da missão de Lucian Bastier são os mais bem escritos de toda a campanha segundo múltiplos críticos que jogaram mais de 80 horas. O jogo não tem a profundidade narrativa de um RPG BioWare, mas nesses momentos se aproxima.
+        </p>
+        <p>
+          Oongka evolui de forma diferente: seu arco é menos sobre crescimento emocional e mais sobre revelação gradual do peso que carrega. As missões de defesa de acampamento — que parecem side content repetitivo — na verdade constroem o contexto do seu passado com os Stahlhart. Jogadores que pularam essas missões relatam que a cena final do arco de Oongka não teve o impacto emocional que tinha para quem fez tudo. É um dos exemplos mais claros no jogo de que o conteúdo opcional não é padding.
+        </p>
+<EditorialTake category="geek" title="Análise do Marcos: a troca de POV salva o ritmo">
         <p>
           A decisão da Pearl Abyss de dividir o controle entre <strong>3 personagens
           jogáveis</strong> é, na minha leitura, a melhor escolha de design de Crimson Desert.
@@ -358,7 +402,7 @@ const CrimsonDesertPersonagens = () => {
       <CommentSection
         postId="crimson-desert-personagens-kliff-damiane-oongka"
         postTitle="Crimson Desert: Kliff, Damiane e Oongka — Guia dos 3 Personagens Jogáveis"
-       category="geek" />
+        category="geek" />
     </article>
   );
 };

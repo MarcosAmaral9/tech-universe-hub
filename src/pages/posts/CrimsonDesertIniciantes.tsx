@@ -227,21 +227,83 @@ const CrimsonDesertIniciantes = () => {
         </div>
 
         <div className="not-prose my-6 p-5 bg-card border border-border rounded-xl">
-          <h3 className="font-bold mb-3">🎮 Controle ou Mouse/Teclado?</h3>
+          <h3 className="font-bold mb-2">🎮 Controle ou Mouse/Teclado?</h3>
           <p className="text-sm text-muted-foreground mb-0">
-            A vasta maioria dos players e a própria comunidade recomendam jogar Crimson Desert com um controle PS5/Xbox — o jogo foi claramente desenhado pensando em controles. Mouse e teclado funcionam, mas o sistema de combate complexo fica significativamente mais difícil. Se você tem um controle disponível, use.
+            A vasta maioria dos players e a própria comunidade recomendam jogar Crimson Desert com um controle PS5/Xbox. O Patch 1.04.00 adicionou presets personalizáveis de controle — o layout original está disponível como "Classic Preset". Mouse e teclado funcionam, mas o sistema de combate complexo fica significativamente mais difícil. Se você tem um controle disponível, use.
           </p>
         </div>
 
-        <div className="not-prose mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Qual dica mais te ajudou? 🗡️</h3>
-          <p className="text-muted-foreground">Conta nos comentários! 👇</p>
-        </div>
+        <h2 className="text-2xl font-bold mt-10 mb-4">Modos de Dificuldade — Escolha Certa Desde o Início</h2>
+        <p>
+          O Patch 1.04.00 de 22 de abril de 2026 adicionou modos de dificuldade Easy, Normal e Hard — o pedido mais votado da comunidade desde o lançamento. Para iniciantes, a recomendação é clara: <strong>comece no Normal</strong> para a experiência que a Pearl Abyss projetou, ou <strong>Easy se você quer focar na exploração</strong> sem travar em bosses. O Hard é para veteranos de Elden Ring e Sekiro que querem máximo desafio.
+        </p>
+        <p>
+          Os modos podem ser alterados a qualquer momento no menu de Configurações &gt; Jogar. Não há penalidade por mudar a dificuldade durante a campanha — se um boss específico está muito frustrante, baixar para Easy naquele confronto e retornar ao Normal depois é totalmente válido e suportado pelo design.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Os Maiores Erros que Iniciantes Cometem</h2>
+        <p>
+          Com base nos fóruns da comunidade após o primeiro mês de lançamento, estes são os erros mais comuns que custam horas de jogo:
+        </p>
+        <ul>
+          <li><strong>Vender itens sem usar a função Lock:</strong> o Patch 1.04.00 adicionou Lock para proteger equipamentos. Ative imediatamente nos Abyss Artifacts e armas principais antes de qualquer venda em massa.</li>
+          <li><strong>Ignorar as missões de facção:</strong> cada região tem missões que dão slots de inventário, armas exclusivas e acesso a áreas secretas impossíveis de obter de outra forma.</li>
+          <li><strong>Gastar Artifacts em habilidades antes de HP/Stamina:</strong> os primeiros Artifacts devem ir nos nós de HP e Stamina. Bosses que matam em 2 hits não são difíceis — são mal equipados.</li>
+          <li><strong>Tentar explorar tudo antes de desbloquear travessia:</strong> habilidades de movimento como Force Palm e voo só são desbloqueadas progredindo na história. Complete os primeiros capítulos antes de explorar livremente.</li>
+          <li><strong>Não usar animais de estimação:</strong> peteando animais regularmente você constrói confiança e os convoca para coletar loot automaticamente — um sistema que o jogo nunca explica diretamente.</li>
+        </ul>
       </div>
-<RelatedPosts currentSlug="crimson-desert-guia-iniciantes-dicas" />
+
+      
+        <h2 className="text-2xl font-bold mt-10 mb-4">Sistema de Culinária — Cura Além do Combate</h2>
+        <p>
+          Crimson Desert tem um sistema de culinária completo que a maioria dos iniciantes ignora nas primeiras 15 horas de jogo. Fogueiras e caldeirões espalhados pelo mundo permitem cozinhar ingredientes coletados em receitas que fornecem buffs de ataque, defesa, velocidade e regeneração — indo muito além da simples cura da Carne Grelhada. O guia de culinária completo está disponível com a cozinheira em Hernand, mas as receitas mais poderosas são encontradas apenas explorando o mundo ou comprando de vendedores específicos nas regiões avançadas.
+        </p>
+        <p>
+          Para iniciantes, as três receitas mais importantes de aprender cedo são o Beef Stew (regeneração de HP durante combate), o Stamina Tonic (regenera Stamina 40% mais rápido por 10 minutos — essencial contra bosses de múltiplas fases) e o Protection Broth (reduz dano recebido em 15% por 5 minutos). Ingredientes para todas as três estão disponíveis em Hernand.
+        </p>
+<EditorialTake category="geek" title="Análise: Crimson Desert Recompensa Paciência — Mas Não Avisa Isso">
+        <p>O guia de iniciantes mais honesto que posso oferecer sobre Crimson Desert é este: o jogo vai te punir pelas primeiras 10 horas se você jogar no piloto automático dos open worlds modernos. <strong>Não há marcadores de missão para tudo, não há tutoriais para cada sistema e não há hand-holding</strong>. Isso é proposital — a Pearl Abyss quer que você explore, experimente e descubra. O problema é que sistemas importantes como o aprendizado contextual de habilidades e o fast travel via Abyss Nexus nunca são explicados. Este guia existe porque o jogo não os explica. Uma vez que você entende esses sistemas, Crimson Desert abre de forma que poucos open worlds conseguem. A curva de entrada é íngreme, mas o platô que vem depois é vasto.</p>
+      </EditorialTake>
+
+      <ArticleSources category="geek"
+        sources={[
+          {
+            title: "Crimson Desert — Site oficial Pearl Abyss",
+            url: "https://www.crimsondesert.com/",
+            publisher: "Pearl Abyss",
+            accessedAt: "Abril 2026",
+          },
+          {
+            title: "Crimson Desert Patch Notes 1.04.00 — Modos de Dificuldade",
+            url: "https://www.crimsondesert.com/news/detail?boardNo=1001&articleNo=182",
+            publisher: "Pearl Abyss",
+            accessedAt: "Abril 2026",
+          },
+          {
+            title: "Crimson Desert — Reddit r/CrimsonDesert",
+            url: "https://www.reddit.com/r/CrimsonDesert/",
+            publisher: "Reddit",
+            accessedAt: "Abril 2026",
+          },
+          {
+            title: "Crimson Desert — Steam Store",
+            url: "https://store.steampowered.com/app/1277400/Crimson_Desert/",
+            publisher: "Valve / Pearl Abyss",
+            accessedAt: "Abril 2026",
+          },
+          {
+            title: "Crimson Desert Review — GamesRadar+ (4/5)",
+            url: "https://www.gamesradar.com/games/action-rpg/crimson-desert-review/",
+            publisher: "GamesRadar+",
+            accessedAt: "Abril 2026",
+          },
+        ]}
+      />
+
+      <RelatedPosts currentSlug="crimson-desert-guia-iniciantes-dicas" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="crimson-desert-guia-iniciantes-dicas" postTitle="Crimson Desert: Guia de Dicas para Iniciantes"  category="geek" />
-          <AdLeaderboard className="my-8" />
+      <CommentSection postId="crimson-desert-guia-iniciantes-dicas" postTitle="Crimson Desert: Guia de Dicas para Iniciantes" category="geek" />
     </article>
   );
 };

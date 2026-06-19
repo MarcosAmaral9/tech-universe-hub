@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
-import { Clock, User, Calendar, Gamepad2, Monitor, AlertTriangle } from "lucide-react";
+import { Clock, User, Calendar, Gamepad2, Monitor, AlertTriangle, Map, TrendingUp, Sword, Star, CheckCircle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import ArticleSources from "@/components/ArticleSources";
@@ -32,7 +32,7 @@ const CrimsonDesertGuiaCompleto = () => {
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground text-sm">
           <span className="flex items-center gap-1.5"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
           <span className="flex items-center gap-1.5"><Calendar className="h-4 w-4" />19 de Março, 2026 · Atualizado em 24 de Abril, 2026</span>
-          <span className="flex items-center gap-1.5"><Clock className="h-4 w-4" />15 min de leitura</span>
+          <span className="flex items-center gap-1.5"><Clock className="h-4 w-4" />16 min de leitura</span>
         </div>
         <ShareWhatsApp />
         <AuthorBio category="geek" publishedAt="16 de Março, 2026" />
@@ -75,7 +75,9 @@ const CrimsonDesertGuiaCompleto = () => {
           </div>
         </div>
 
-        <h2>O Que É Crimson Desert?</h2>
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Star className="h-7 w-7 text-red-400" />O Que É Crimson Desert?
+        </h2>
         <p>
           Crimson Desert é um RPG de ação em mundo aberto focado em single-player, ambientado no continente
           fictício de <strong>Pywel</strong>. O jogador controla <strong>Kliff</strong>, membro dos Greymanes
@@ -91,12 +93,14 @@ const CrimsonDesertGuiaCompleto = () => {
           ao longo dos 7 anos. Não há microtransações de poder, pay-to-win ou planos de DLC confirmados.
         </p>
 
-        <h2>Histórico de Desenvolvimento</h2>
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <TrendingUp className="h-7 w-7 text-red-400" />Histórico de Desenvolvimento
+        </h2>
         <ul>
           <li><strong>2019:</strong> anúncio inicial como prequel MMO de Black Desert Online</li>
           <li><strong>Dezembro 2020:</strong> trailer no The Game Awards revelando foco em ação single-player</li>
           <li><strong>2021–2023:</strong> múltiplos adiamentos sem data definida; mudança de escopo para single-player puro e IP separado</li>
-          <li><strong>Agosto 2023:</strong> trailer na Gamescom mostrando escopo revisado e motor gráfico</li>
+          <li><strong>Agosto 2023:</strong> trailer na Gamescom mostrando escopo revisado e motor gráfico BlackSpace Engine</li>
           <li><strong>Setembro 2025:</strong> data oficial de 19/03/2026 confirmada na Tokyo Game Show</li>
           <li><strong>17 de março de 2026:</strong> pré-load disponível 48h antes do lançamento</li>
           <li><strong>18 de março de 2026:</strong> embargo de reviews levantado</li>
@@ -105,12 +109,14 @@ const CrimsonDesertGuiaCompleto = () => {
           <li><strong>24 de março de 2026:</strong> 3 milhões de cópias; ações Pearl Abyss sobem 27,76%</li>
           <li><strong>Início de abril de 2026:</strong> 4 milhões de cópias em aproximadamente 2 semanas</li>
           <li><strong>15 de abril de 2026:</strong> 5 milhões de cópias em 26 dias</li>
-          <li><strong>22 de abril de 2026:</strong> Patch 1.04.00 — maior update, adiciona modos de dificuldade</li>
+          <li><strong>22 de abril de 2026:</strong> Patch 1.04.00 — maior update, adiciona modos de dificuldade Easy/Normal/Hard</li>
         </ul>
 
-        
         <AdInArticle className="my-8" />
-<h2>Recepção da Crítica e dos Jogadores</h2>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Star className="h-7 w-7 text-amber-400" />Recepção da Crítica e dos Jogadores
+        </h2>
         <p>
           Com Metacritic 78 (PC), o jogo foi recebido como "geralmente favorável" — abaixo das expectativas
           dos investidores, que precificavam uma média mid-to-high 80s. A divisão é clara: elogios para
@@ -124,7 +130,62 @@ const CrimsonDesertGuiaCompleto = () => {
           permaneceu no top 10 de best-sellers na Steam, PlayStation Store e Xbox Store desde o lançamento.
         </p>
 
-        <h2>Edições Disponíveis</h2>
+        <div className="not-prose my-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { val: "78", label: "Metacritic PC" },
+            { val: "80", label: "OpenCritic (Strong)" },
+            { val: "87%", label: "Steam — Very Positive" },
+            { val: "5M+", label: "Cópias vendidas em < 1 mês" },
+          ].map(({ val, label }) => (
+            <div key={label} className="bg-card border border-red-500/20 rounded-xl p-4 text-center">
+              <div className="text-3xl font-bold text-red-400">{val}</div>
+              <div className="text-xs text-muted-foreground mt-1">{label}</div>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Map className="h-7 w-7 text-red-400" />O Mundo de Pywel — O Que Esperar
+        </h2>
+        <p>
+          Pywel é o continente onde toda a ação de Crimson Desert se desenrola. Com uma área estimada em
+          <strong> 80 a 110 km²</strong>, é um dos maiores mapas de RPG de ação já criados — mais que o dobro
+          de Skyrim (~37 km²) e maior que Red Dead Redemption 2 (~75 km²), segundo Will Powers (Pearl Abyss).
+          Atravessá-lo a cavalo leva cerca de 2 horas.
+        </p>
+        <p>
+          O continente se divide em <strong>5 regiões principais</strong>: Hernand (área inicial, pradarias medievais),
+          Pailune (norte gelado, terra natal de Kliff), Demeniss (capital política), Delesyia (região tecnológica com
+          criaturas mecânicas) e o Crimson Desert (deserto sem lei ao sul). Além das regiões físicas, existe
+          <strong> The Abyss</strong> — uma dimensão paralela de ilhas flutuantes acessível em pontos específicos
+          do mapa, onde ficam os Abyss Artifacts, os recursos mais valiosos do jogo.
+        </p>
+        <p>
+          O jogo tem <strong>430 missões no total</strong> e <strong>76 bosses</strong> confirmados.
+          Críticos que completaram a campanha reportaram entre 110 e 150 horas de jogo, com sistemas paralelos
+          de crafting, culinária, fazenda e gestão do acampamento Greymane disponíveis ao longo de toda a jornada.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Sword className="h-7 w-7 text-red-400" />Combate e Personagens Jogáveis
+        </h2>
+        <p>
+          Kliff é o protagonista principal, mas não é o único personagem controlável. Ao avançar na campanha,
+          <strong> Damiane</strong> e <strong>Oongka</strong> se tornam jogáveis — cada um com moveset e árvore
+          de habilidades distintos. O Patch 1.03.00 adicionou novas habilidades para os três (incluindo
+          Focused Aerial Roll para Kliff e Axiom Force para Oongka), e o Patch 1.04.00 acrescentou a
+          <strong> Sword of Starlight</strong> exclusiva para Damiane e novos galhos de árvore para Kliff e Oongka.
+        </p>
+        <p>
+          O combate foi o ponto mais elogiado pela crítica. A PC Gamer (8/10) o descreveu como "intenso,
+          diferente de qualquer coisa que você já jogou." O sistema de lock-on foi melhorado no Patch 1.03.00
+          e os controles foram progressivamente ajustados — com o Patch 1.04.00 adicionando presets
+          personalizáveis para teclado/mouse e controles.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <CheckCircle className="h-7 w-7 text-green-400" />Edições Disponíveis e Preços
+        </h2>
         <div className="not-prose my-6 overflow-x-auto">
           <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead>
@@ -174,7 +235,11 @@ const CrimsonDesertGuiaCompleto = () => {
           </div>
         </div>
 
-        <h2>Requisitos de PC</h2>
+        <AdRectangle className="my-8" />
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Monitor className="h-7 w-7 text-red-400" />Requisitos de PC
+        </h2>
         <div className="not-prose my-6 overflow-x-auto">
           <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead>
@@ -218,10 +283,72 @@ const CrimsonDesertGuiaCompleto = () => {
             oficialmente. Há rumores de interesse em uma versão para Nintendo Switch 2, mas sem confirmação.
           </p>
         </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Vale a Pena Comprar em 2026?</h2>
+        <p>
+          Com os patches pós-lançamento acumulados — especialmente o Patch 1.04.00 (22 de abril) que adicionou
+          modos de dificuldade Easy/Normal/Hard — as principais reclamações do lançamento foram endereçadas.
+          O jogo saiu "Mixed" no Steam e chegou a "Very Positive" (87%) em abril. Para fãs de RPG de ação e
+          mundo aberto, Crimson Desert oferece uma das experiências mais extensas disponíveis em 2026:
+          <strong> 430 missões, 76 bosses e 80–110 km² para explorar</strong>, com suporte ativo e sem DLC pago.
+        </p>
+        <p>
+          A recomendação da crítica convergiu bem: "Dedique tempo para explorar fora do caminho principal e
+          descubra quais facetas do jogo te atraem — você encontrará Crimson Desert muito melhor como sandbox
+          do que como história" (GamesRadar+, 4/5). A TheGamer (4/5) jogou 150 horas e ainda não havia esgotado
+          o conteúdo. Se a proposta de um mundo aberto enorme com combate satisfatório te atrai, o jogo justifica
+          o preço — especialmente com o suporte de patches mensais confirmado pela Pearl Abyss.
+        </p>
       </div>
-<RelatedPosts currentSlug="crimson-desert-guia-completo" />
+
+      <EditorialTake category="geek" title="Análise: Crimson Desert é o RPG de Mundo Aberto Mais Ambicioso de 2026">
+        <p>Crimson Desert não é perfeito, mas é inegavelmente ambicioso de uma forma que poucos jogos AAA conseguem ser. A Pearl Abyss — uma empresa que nunca havia feito um single-player de grande escala — entregou um mundo de 80–110 km², 76 bosses, combate elogiado pela crítica e tecnologia gráfica de ponta. As falhas são reais: a narrativa não sustenta o peso das 60+ horas de campanha e os sistemas inicialmente confusos repeliram parte dos jogadores no lançamento. Mas a resposta da Pearl Abyss com patches agressivos — mais de 10 atualizações no primeiro mês, culminando nos modos de dificuldade do Patch 1.04.00 — demonstra comprometimento genuíno. <strong>O fato de o jogo ter saído "Mixed" no Steam e chegado a 87% Very Positive em semanas não é coincidência: é o resultado de escuta ativa e execução rápida.</strong> Crimson Desert é um primeiro capítulo promissor de um IP que, se a Pearl Abyss aprender com os acertos e erros, pode se tornar uma das franquias mais importantes da próxima geração de RPGs de ação.</p>
+      </EditorialTake>
+
+      <ArticleSources category="geek"
+        sources={[
+          {
+            title: "Crimson Desert — Site Oficial Pearl Abyss",
+            url: "https://www.crimsondesert.com/",
+            publisher: "Pearl Abyss",
+            accessedAt: "Abril 2026",
+          },
+          {
+            title: "Crimson Desert — Metacritic PC (78)",
+            url: "https://www.metacritic.com/game/crimson-desert/",
+            publisher: "Metacritic",
+            accessedAt: "Abril 2026",
+          },
+          {
+            title: "Crimson Desert — Steam Store (87% Very Positive)",
+            url: "https://store.steampowered.com/app/1277400/Crimson_Desert/",
+            publisher: "Valve / Pearl Abyss",
+            accessedAt: "Abril 2026",
+          },
+          {
+            title: "Crimson Desert — OpenCritic (80, Strong)",
+            url: "https://opencritic.com/game/16847/crimson-desert",
+            publisher: "OpenCritic",
+            accessedAt: "Abril 2026",
+          },
+          {
+            title: "Crimson Desert Patch Notes 1.04.00",
+            url: "https://www.crimsondesert.com/news/detail?boardNo=1001&articleNo=182",
+            publisher: "Pearl Abyss",
+            accessedAt: "Abril 2026",
+          },
+          {
+            title: "Crimson Desert — PCGamesN (Requisitos de Sistema)",
+            url: "https://www.pcgamesn.com/crimson-desert/system-requirements",
+            publisher: "PCGamesN",
+            accessedAt: "Abril 2026",
+          },
+        ]}
+      />
+
+      <RelatedPosts currentSlug="crimson-desert-guia-completo" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="crimson-desert-guia-completo" postTitle="Crimson Desert: Guia Completo 2026"  category="geek" />
+      <CommentSection postId="crimson-desert-guia-completo" postTitle="Crimson Desert: Guia Completo 2026" category="geek" />
     </article>
   );
 };

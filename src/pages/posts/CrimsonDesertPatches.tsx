@@ -228,14 +228,50 @@ const CrimsonDesertPatches = () => {
         <p>
           A Pearl Abyss confirmou que <strong>não há DLC planejado</strong> para Crimson Desert. O foco da empresa é em updates de qualidade de vida baseados no feedback da comunidade, incluindo boss rematches e mais customização de controles. Com <strong>5 milhões de cópias vendidas</strong> e suporte ativo, o jogo continuará recebendo patches. O próximo grande projeto da Pearl Abyss é o <strong>DokeV</strong>, que usará a mesma BlackSpace Engine.
         </p>
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Qual melhoria do patch mais te ajudou? 🔧</h3>
-          <p className="text-muted-foreground">Conta nos comentários! 👇</p>
-        </div>
       </div>
-<RelatedPosts currentSlug="crimson-desert-patches-atualizacoes-2026" />
+
+      <EditorialTake category="geek" title="Análise: A Pearl Abyss Mostrou Como Fazer Suporte Pós-Lançamento">
+        <p>O ritmo de patches de Crimson Desert — mais de 10 atualizações no primeiro mês, culminando em modos de dificuldade, novos conteúdos e melhorias de controle — é um caso de estudo em como um estúdio deve responder a críticas legítimas. <strong>Nenhum dos problemas centrais apontados no lançamento (controles, dificuldade única, inventário caótico, falta de habilidades para Damiane e Oongka) ficou sem resposta</strong>. A velocidade de resposta foi notável: o pedido mais votado da comunidade (modos de dificuldade) foi atendido em 34 dias. Isso não apaga os problemas do lançamento, mas demonstra uma relação com o público que muitos publishers — incluindo gigantes do setor — deveriam observar. A trajetória de "Mixed" para "Very Positive" no Steam não aconteceu por sorte: foi construída patch a patch, update a update, com a Pearl Abyss ouvindo e executando. É o tipo de compromisso que transforma um IP de estreia em uma franquia sustentável.</p>
+      </EditorialTake>
+
+      <ArticleSources category="geek"
+        sources={[
+          {
+            title: "Crimson Desert Patch Notes 1.04.00 — Pearl Abyss",
+            url: "https://www.crimsondesert.com/news/detail?boardNo=1001&articleNo=182",
+            publisher: "Pearl Abyss",
+            accessedAt: "Abril 2026",
+          },
+          {
+            title: "Crimson Desert Patch Notes 1.03.00 — Pearl Abyss",
+            url: "https://www.crimsondesert.com/news/detail?boardNo=1001&articleNo=175",
+            publisher: "Pearl Abyss",
+            accessedAt: "Abril 2026",
+          },
+          {
+            title: "Crimson Desert Patch Notes 1.01.00 — Pearl Abyss",
+            url: "https://www.crimsondesert.com/news/detail?boardNo=1001&articleNo=152",
+            publisher: "Pearl Abyss",
+            accessedAt: "Abril 2026",
+          },
+          {
+            title: "Crimson Desert — Steam Store (histórico de atualizações)",
+            url: "https://store.steampowered.com/app/1277400/Crimson_Desert/",
+            publisher: "Valve / Pearl Abyss",
+            accessedAt: "Abril 2026",
+          },
+          {
+            title: "Crimson Desert — Intel Arc GPU Statement",
+            url: "https://www.crimsondesert.com/news/detail?boardNo=1001&articleNo=140",
+            publisher: "Pearl Abyss",
+            accessedAt: "Abril 2026",
+          },
+        ]}
+      />
+
+      <RelatedPosts currentSlug="crimson-desert-patches-atualizacoes-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="crimson-desert-patches-atualizacoes-2026" postTitle="Crimson Desert: Todas as Atualizações e Patches Pós-Lançamento"  category="geek" />
+      <CommentSection postId="crimson-desert-patches-atualizacoes-2026" postTitle="Crimson Desert: Todas as Atualizações e Patches Pós-Lançamento" category="geek" />
     </article>
   );
 };
