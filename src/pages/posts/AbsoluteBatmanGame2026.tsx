@@ -181,8 +181,7 @@ const AbsoluteBatmanGame2026 = () => {
         <p>
           A Traveller's Tales tem track record sólido: Metacritic médio de 75–85 para os títulos principais, com LEGO Star Wars: The Skywalker Saga (2022) alcançando Metacritic 80 e mais de 5 milhões de cópias vendidas. Legacy of the Dark Knight tem barra mais alta: o universo Batman é mais reconhecível globalmente, o mundo aberto é o mais ambicioso já tentado pelo estúdio, e fãs moldados pelos jogos Arkham têm expectativas elevadas. O histórico da TT Games sugere resultado ao menos competente — a questão é se vai além disso.
         </p>
-      </div>
-</div>
+      
       
         <h2 className="text-2xl font-bold mt-10 mb-4">LEGO Batman Legacy vs. Jogos Arkham — Expectativas Corretas</h2>
         <p>
