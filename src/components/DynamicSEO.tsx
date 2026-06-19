@@ -841,9 +841,9 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     keywords: "Okiraku Ryoushu, Easygoing Territory Defense, Van Magia de Produção, NAZ anime 2026, Sou Akaike Overlap, Seven Seas Entertainment, Crunchyroll 2026, isekai construção território, Tetsuya Tatamitani, inverno 2026 anime",
   },
   "/post/kaiju-no-8-temporada-2-guia-arco-final-2026": {
-    title: "Kaiju No. 8 Temporada 2: Guia Completo da T2 e Arco Final do Mangá 2026",
-    description: "Kaiju No. 8 Temporada 2 estreou na Spring Season 2026 pela Production I.G. Mangá entrou no arco final segundo Jump Festa. Guia: história, personagens e onde assistir.",
-    keywords: "Kaiju No. 8 Temporada 2, Kaiju No 8 T2, Production I.G anime, Kafka Hibino, Mina Ashiro, Defense Force Japão, arco final Kaiju No 8, Naoya Matsumoto mangá, Spring Season 2026, Crunchyroll Kaiju, monstros anime 2026, Jump Festa anime",
+    title: "Kaiju No. 8 Temporada 2: Guia Completo da T2 e Arco Final 2026",
+    description: "Kaiju No. 8 T2 estreou na Spring Season 2026 pela Production I.G. Sistema da Defense Force, personagens centrais da T2 (Kafka, Mina, Kikoru) e o arco final do mangá de Naoya Matsumoto. Disponível na Crunchyroll.",
+    keywords: "Kaiju No. 8 Temporada 2, Kaiju No 8 T2, Kafka Hibino, Mina Ashiro, Kikoru Shinomiya, Defense Force Numbers, Production I.G 2026, Naoya Matsumoto manga, Spring Season 2026, Crunchyroll Kaiju No 8, arco final Kaiju",
   },
   "/post/ia-transformando-dublagem-animes": {
     title: "IA na Dublagem de Animes: Voice Cloning e o Futuro da Localização",
