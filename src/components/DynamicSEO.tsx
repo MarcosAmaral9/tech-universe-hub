@@ -787,19 +787,19 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     keywords: "melhores jogos anime 2026, Dragon Ball Sparking ZERO, Dragon Ball FighterZ, One Piece Odyssey, Demon Slayer Hinokami Chronicles, jogos anime PS5 PC, Genshin Impact, Blue Archive, Steins Gate visual novel, jogos otaku brasil",
   },
   "/post/tensura-guia-completo-temporadas-filmes": {
-    title: "TenSura: Guia Completo — Todas as Temporadas, Filmes e Novidades 2026",
-    description: "Guia completo de Tensei Shitara Slime Datta Ken (TenSura): T1 a T4 (2026), filmes, OVAs, spin-offs e o que está vindo. Rimuru, Demon Lords e como assistir em ordem.",
-    keywords: "TenSura guia completo, Tensei Shitara Slime, TenSura temporadas, TenSura T4 2026, Rimuru Tempest, TenSura filmes, Crunchyroll TenSura, TenSura ordem assistir, TenSura spin-off",
+    title: "TenSura: Guia Completo — T1 a T4, Filme Scarlet Bond e Ordem de Assistência",
+    description: "Guia definitivo de TenSura: Temporadas 1 a 4 (Spring 2026), Tensura Nikki spin-off, filme Scarlet Bond (2022), worldbuilding de Tempest e ordem de assistência recomendada. Light novel Fuse, estúdio 8bit, Crunchyroll.",
+    keywords: "TenSura guia completo, Tensei Shitara Slime temporadas, TenSura T4 2026, filme Scarlet Bond TenSura, Tensura Nikki, ordem assistência TenSura, Rimuru Tempest worldbuilding, 8bit anime, Crunchyroll TenSura, Fuse light novel",
   },
   "/post/tensura-personagens-rimuru-demon-lords": {
-    title: "TenSura: Rimuru Tempest, Demon Lords e Sistema de Poderes",
-    description: "Ficha completa dos personagens de TenSura: Rimuru, Milim, Diablo, Veldora, Shion, Benimaru e os 10 Grandes Demon Lords. Habilidades únicas e hierarquia do sistema de poder.",
-    keywords: "TenSura personagens, Rimuru Tempest poderes, Milim Nava, Diablo TenSura, Veldora Tempest, 10 Grandes Demon Lords TenSura, habilidades TenSura, sistema poder Slime, Benimaru Shion",
+    title: "TenSura: Personagens, Floor Guardians e o Nascimento do Octagram",
+    description: "Guia completo dos personagens de TenSura: Rimuru, Benimaru, Shion, Diablo, Veldora e Milim. Os 8 membros do Octagram com títulos e territórios. True Dragons. Personagens da T3 e T4 (Yuuki, Chloe).",
+    keywords: "TenSura personagens, Rimuru Tempest, Milim Nava Dragon Nova, Diablo Primordial, Veldora Tempest, Octagram Demon Lords, Guy Crimson, Benimaru Shion TenSura, Chloe O'Bell heroína, Floor Guardians TenSura, T4 personagens novos",
   },
   "/post/overlord-ainz-guardians-personagens": {
     title: "Overlord: Ainz Ooal Gown, Floor Guardians e Personagens do Novo Mundo",
-    description: "Fichas completas de Ainz Ooal Gown, Albedo, Demiurge, Shalltear, Cocytus, Sebas e todos os Floor Guardians de Overlord. Poderes, hierarquia de Nazarick e personalidades.",
-    keywords: "Overlord personagens, Ainz Ooal Gown, Albedo Overlord, Demiurge Overlord, Shalltear Bloodfallen, Floor Guardians Nazarick, Sebas Tian Overlord, poderes Overlord, Overlord ficha personagens",
+    description: "Fichas completas de Overlord: Ainz, Albedo, Demiurge, Shalltear, Cocytus, Aura, Mare, Sebas, Climb, Gazef Stronoff, Brain Unglaus e Fluder Paradyne. Nazarick, lealdade programada e os NPCs que ganharam vida.",
+    keywords: "Overlord personagens, Ainz Ooal Gown poderes, Albedo Overlord, Demiurge Overlord, Shalltear Bloodfallen, Cocytus guardião, Nazarick Floor Guardians, Climb Overlord, Gazef Stronoff, Fluder Paradyne, Rubedo Overlord",
   },
   
   // ═══════════════════════════════════════════════════════════
