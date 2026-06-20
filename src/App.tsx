@@ -263,6 +263,7 @@ const BannerlordCulturasReinos       = lazy(() => import("./pages/posts/Bannerlo
 const BannerlordArvoresTropas        = lazy(() => import("./pages/posts/BannerlordArvoresTropas"));
 const BannerlordMelhoresTropas       = lazy(() => import("./pages/posts/BannerlordMelhoresTropas"));
 const BannerlordTerritoriosFaccoes   = lazy(() => import("./pages/posts/BannerlordTerritoriosFaccoes"));
+const BannerlordWarSailsExpansao     = lazy(() => import("./pages/posts/BannerlordWarSailsExpansao"));
  
 const queryClient = new QueryClient({
   defaultOptions: {
