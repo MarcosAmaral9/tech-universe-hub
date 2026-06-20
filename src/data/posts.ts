@@ -2834,6 +2834,9 @@ export const blogPosts: BlogPost[] = [
       { q: "Quanto custa a expansão War Sails?", a: "O preço cheio é cerca de US$ 24,99 segundo a página oficial da TaleWorlds em 2026. Em promoções sazonais do Steam costuma cair para a faixa de US$ 15 a 18, o sweet spot recomendado para a comunidade brasileira." },
     ],
   },
+
+  {
+    id: "111",
     slug: "cdb-2026-guia-completo",
     title: "CDB em 2026: Ainda Vale a Pena? Guia Completo com Taxas Reais",
     excerpt: "CDB 100% CDI, 110% CDI, IR regressivo e comparação com LCI, LCA e Tesouro Direto. Tudo que você precisa saber para investir bem em renda fixa em 2026.",
