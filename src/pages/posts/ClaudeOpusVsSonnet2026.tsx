@@ -1,3 +1,13 @@
+/*
+ * PAGE_META — adicionar em DynamicSEO.tsx dentro do objeto PAGE_META:
+ *
+ * "/post/claude-opus-vs-sonnet-2026": {
+ *   title: "Claude 4 Opus vs Claude 4 Sonnet: Qual Modelo Usar em 2026?",
+ *   description: "Comparativo completo Claude 4 Opus vs Sonnet: benchmarks reais (MMLU, HumanEval, SWE-bench), preços em dólar, estratégia híbrida e qual modelo escolher por perfil de uso.",
+ *   keywords: "Claude 4 Opus vs Sonnet, Claude 4 comparativo, Claude Opus benchmarks, Claude Sonnet preço, qual modelo Claude usar, Anthropic Claude 4, HumanEval Claude, SWE-bench Claude, estratégia híbrida LLM, Claude API custo",
+ * },
+ */
+
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
@@ -82,11 +92,11 @@ const ClaudeOpusVsSonnet2026 = () => {
             </tr></thead>
             <tbody>
               {[
-                ["MMLU (conhecimento geral)", "92,1%", "88,7%", "+3,4 pp"],
-                ["HumanEval (código Python)", "92,5%", "88,3%", "+4,2 pp"],
-                ["MATH (raciocínio matemático)", "95,2%", "90,1%", "+5,1 pp"],
-                ["GPQA Diamond (ciência avançada)", "87,8%", "79,4%", "+8,4 pp"],
-                ["SWE-bench (engenharia de software)", "72,5%", "65,8%", "+6,7 pp"],
+                ["SWE-bench Verified (eng. de software)", "80,8%", "79,6%", "1,2 pp — negligível"],
+                ["GPQA Diamond (ciência PhD-level)", "91,3%", "74,1%", "17,2 pp — Opus muito superior"],
+                ["OSWorld (uso de computador/GUI)", ">72%", ">72%", "Praticamente igual"],
+                ["HumanEval (código Python)", "90%+", "90%+", "Saturado — ambos no topo"],
+                ["SWE-bench Pro (multi-linguagem)", "45,9%", "43,6%", "2,3 pp"],
                 ["Velocidade (tokens/seg)", "~40", "~95", "Sonnet 2,4× mais rápido"],
                 ["Janela de contexto", "200K tokens", "200K tokens", "Igual"],
               ].map(([bench, opus, sonnet, diff]) => (
@@ -99,7 +109,7 @@ const ClaudeOpusVsSonnet2026 = () => {
               ))}
             </tbody>
           </table>
-          <p className="text-xs text-muted-foreground mt-2">Fontes: Anthropic, benchmarks públicos — abril 2026</p>
+          <p className="text-xs text-muted-foreground mt-2">Fontes: Anthropic, Morph LLM Claude Benchmarks, NxCode — fevereiro/março 2026 (Claude 4.6)</p>
         </div>
 
         <p>
@@ -137,9 +147,9 @@ const ClaudeOpusVsSonnet2026 = () => {
           A diferença de custo é drástica: o <strong>Opus custa 5× mais que o Sonnet</strong> tanto na entrada quanto na saída. Para uma startup processando 100.000 requisições por mês com contextos médios de 2.000 tokens, a diferença mensal pode ser de <strong>US$ 3.000 a US$ 15.000</strong>. Essa matemática torna o Sonnet a escolha padrão para qualquer aplicação em produção.
         </p>
 
-        
-        <AdInArticle className="my-8" />
-<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        <AdInArticle />
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Zap className="h-7 w-7 text-violet-400" />
           Quando Usar Cada Modelo: Guia Definitivo
         </h2>
@@ -197,9 +207,45 @@ const ClaudeOpusVsSonnet2026 = () => {
         </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Lightbulb className="h-7 w-7 text-violet-400" />
-          Recomendação Final por Perfil
+          <Brain className="h-7 w-7 text-violet-400" />
+          O Que os Benchmarks Realmente Dizem: A Análise Que a Anthropic Não Faz
         </h2>
+        <p>
+          O lançamento do Claude 4.6 em fevereiro de 2026 foi marcado por um dado histórico: <strong>pela primeira vez na história da Anthropic, a diferença entre o modelo mid-tier e o flagship ficou tão pequena que a escolha ficou genuinamente difícil</strong>. O Sonnet 4.6 (lançado em 17 de fevereiro) marca 79,6% no SWE-bench Verified — apenas 1,2 pontos percentuais abaixo do Opus 4.6 (80,8%, lançado em 5 de fevereiro).
+        </p>
+        <p>
+          Isso tem uma implicação prática importante: o Sonnet 4.6 superou o <strong>Opus 4.5</strong> (geração anterior do flagship) em SWE-bench. Ou seja, quem estava usando Opus 4.5 para resolver issues de código e migrar para Sonnet 4.6 vai notar <em>melhoria</em>, não degradação. A geração 4.6 claramente evoluiu mais o Sonnet do que o Opus — algo que a Rootly confirmou em testes internos: o Sonnet 4.6 ganhou mais de 4 pontos sobre o Sonnet 4.5, enquanto o Opus mal se moveu entre gerações.
+        </p>
+        <p>
+          O único benchmark onde o Opus ainda domina de forma inequívoca é o <strong>GPQA Diamond</strong>, que mede questões de nível PhD em física, química e biologia. Com 91,3% (Opus) contra 74,1% (Sonnet), a diferença de 17,2 pontos percentuais é real e significativa. Se o seu trabalho envolve pesquisa científica avançada, síntese de literatura médica ou engenharia de materiais, o Opus justifica seu preço 5× maior. Para o restante, a matemática fala sozinha.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Lightbulb className="h-7 w-7 text-violet-400" />
+          Terminal-Bench: O Benchmark que Claude Perde para GPT e Gemini
+        </h2>
+        <p>
+          Há um benchmark importante onde os modelos Claude 4.6 ficam atrás dos concorrentes: o <strong>Terminal-Bench</strong>, que avalia a capacidade de operar um computador via linha de comando — administração de sistemas, gerenciamento de ambientes, debugging e operações multi-etapa em terminal ao vivo. Enquanto o GPT-5.3-Codex e o Gemini 3.1 Pro pontuam 77,3%, o Opus 4.6 fica cerca de 12 pontos abaixo. Isso acontece porque o Terminal-Bench recompensa <em>iteração rápida e comandos curtos e precisos</em> — um padrão de trabalho diferente do planejamento de sequências longas que o Claude faz melhor.
+        </p>
+        <p>
+          A implicação prática: para tarefas de <strong>agente que opera um computador via terminal</strong> (DevOps, SRE, automação de infraestrutura), o GPT-5.4 ou o Gemini 3.1 Pro são escolhas mais defensáveis. Para análise de código, refatoração e entendimento de base de código grande, o Claude continua na frente. Avaliar o modelo pelo <em>tipo de tarefa</em> é sempre mais preciso do que escolher por reputação geral.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <BarChart3 className="h-7 w-7 text-violet-400" />
+          Custo em Reais: O Que Você Paga na Prática em Produção
+        </h2>
+        <p>
+          Os preços da API são em dólar, e o câmbio mais IOF muda a conta para quem paga de conta pessoa física brasileira. Com câmbio de R$ 5,60 e IOF de 3,38% no cartão internacional:
+        </p>
+        <ul className="space-y-2 my-6">
+          <li><strong>Sonnet 4.6:</strong> US$ 3,00/M tokens de input = R$ 17,34 | US$ 15,00/M de output = R$ 86,72</li>
+          <li><strong>Opus 4.6:</strong> US$ 15,00/M tokens de input = R$ 86,72 | US$ 75,00/M de output = R$ 433,60</li>
+          <li><strong>Exemplo real:</strong> Um chatbot de atendimento processando 500 conversas/dia com 2.000 tokens de output médio gera 30M tokens de output/mês. Sonnet: ~R$ 2.600/mês. Opus: ~R$ 13.008/mês. Diferença: R$ 10.408/mês.</li>
+        </ul>
+        <p>
+          Para uso pessoal via claude.ai, o <strong>Claude Pro (US$ 20/mês ≈ R$ 115)</strong> dá acesso a ambos os modelos. O Opus tem limite de mensagens mais restritivo por sessão. Para a maioria dos usuários individuais, o Sonnet entrega tudo que precisam com mais mensagens disponíveis.
+        </p>
         <div className="not-prose my-6 space-y-3">
           {[
             { perfil: "👨‍💻 Desenvolvedor / Indie Hacker", rec: "Sonnet 4 como padrão. Opus só para revisão de arquitetura ou debugging de bugs críticos que o Sonnet não resolve em 2–3 tentativas.", cor: "border-violet-500/20" },
@@ -220,23 +266,23 @@ const ClaudeOpusVsSonnet2026 = () => {
           <p className="text-muted-foreground">Conta nos comentários sua experiência! 👇</p>
         </div>
       </div>
-      <EditorialTake category="ia" title={"An\u00e1lise do Marcos: Opus por hora, Sonnet por padr\u00e3o"}>
+      <EditorialTake category="ia" title="Análise do Marcos: Opus por hora, Sonnet por padrão">
         <p>Depois de meses rodando os dois em produção, minha regra prática para quem opera com orçamento em real é simples: <strong>Sonnet como modelo padrão</strong> da maioria dos prompts (resposta, edição, classificação) e <strong>Opus reservado para raciocínio multi-etapa</strong> — análise de contrato, refatoração de código grande, planejamento. A diferença de custo por milhão de tokens não compensa Opus em chamadas curtas, mas paga sozinha quando o problema exige cadeia de pensamento longa. Quem está testando agora deveria instrumentar o roteamento de modelo (router próprio) antes de assinar plano caro: 80% do tráfego cabe em Sonnet sem perda perceptível.</p>
       </EditorialTake>
-      <ArticleSources category="ia"
+      <ArticleSources
         sources={[
-          { title: "Claude \u2014 modelos e pre\u00e7os", url: "https://www.anthropic.com/pricing", publisher: "Anthropic", accessedAt: "Maio 2026" },
-          { title: "Claude 4 Opus benchmarks", url: "https://www.anthropic.com/news", publisher: "Anthropic", accessedAt: "Maio 2026" },
-          { title: "LMSYS Chatbot Arena", url: "https://lmarena.ai/", publisher: "LMSYS", accessedAt: "Maio 2026" },
-          { title: "Documenta\u00e7\u00e3o Claude API", url: "https://docs.anthropic.com/", publisher: "Anthropic", accessedAt: "Maio 2026" },
-          { title: "Artificial Analysis \u2014 comparativo de LLMs", url: "https://artificialanalysis.ai/", publisher: "Artificial Analysis", accessedAt: "Maio 2026" }
+          { title: "Anthropic — Claude models overview e pricing", url: "https://www.anthropic.com/pricing", publisher: "Anthropic", accessedAt: "Maio 2026" },
+          { title: "Morph LLM — Claude Benchmarks 2026 (Opus 4.6, Sonnet 4.6, Haiku 4.5)", url: "https://www.morphllm.com/claude-benchmarks", publisher: "Morph LLM", accessedAt: "Maio 2026" },
+          { title: "NxCode — Sonnet vs Opus: Which Claude Model to Pick (fev/2026)", url: "https://www.nxcode.io/resources/news/claude-sonnet-4-6-vs-opus-4-6-which-model-to-choose-2026", publisher: "NxCode", accessedAt: "Maio 2026" },
+          { title: "Rootly — Claude Sonnet 4.6 Benchmark Results (fev/2026)", url: "https://rootly.com/blog/claude-sonnet-4-6-benchmark-results-and-lessons-for-ai-sre", publisher: "Rootly", accessedAt: "Maio 2026" },
+          { title: "Morph LLM — Best AI for Coding 2026 (SWE-bench Pro ranking)", url: "https://www.morphllm.com/best-ai-model-for-coding", publisher: "Morph LLM", accessedAt: "Maio 2026" }
         ]}
       />
 
 
 
       <RelatedPosts currentSlug="claude-opus-vs-sonnet-2026" />
-      <CommentSection postId="claude-opus-vs-sonnet-2026" postTitle="Claude 4 Opus vs Claude 4 Sonnet: Qual Usar em 2026?"  category="ia" />
+      <CommentSection category="ia" postId="claude-opus-vs-sonnet-2026" postTitle="Claude 4 Opus vs Claude 4 Sonnet: Qual Usar em 2026?" />
     </article>
   );
 };

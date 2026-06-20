@@ -197,17 +197,46 @@ const ClaudeCoworkSaas2026 = () => {
           <li><strong>Founders de SaaS:</strong> O nicho seguro agora é compliance regulatório, integração com sistemas legados e dados que não podem sair da empresa. Esses são os fossos que a IA genérica ainda não cruzou.</li>
         </ul>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Você já testou o Claude Cowork ou algum agente corporativo? 🤖</h3>
-          <p className="text-muted-foreground">Conta nos comentários sua experiência! 👇</p>
+        <h2 className="text-2xl font-bold mt-10 mb-6">Claude Cowork vs Microsoft Copilot Studio: Comparativo Direto para Empresas Brasileiras</h2>
+        <p>
+          Para a maioria das empresas médias e grandes, a decisão real não é entre Claude Cowork e SaaS antigo — é entre Claude Cowork e <strong>Microsoft Copilot Studio</strong>, a plataforma da Microsoft para criação de agentes corporativos. Ambas disputam o mesmo orçamento de automação corporativa.
+        </p>
+        <div className="not-prose my-6 overflow-x-auto">
+          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+            <thead><tr className="bg-secondary text-left">
+              <th className="p-3">Critério</th>
+              <th className="p-3">Claude Cowork</th>
+              <th className="p-3">Copilot Studio (Microsoft)</th>
+            </tr></thead>
+            <tbody>
+              {[
+                ["Integração nativa","MCP + APIs personalizadas","Microsoft 365, Teams, SharePoint, Power Platform"],
+                ["Modelo de linguagem","Claude Opus 4.6 (Anthropic)","GPT-5.4 via Azure OpenAI"],
+                ["Custo estimado","~US$ 50/usuário/mês (Business)","~US$ 30/usuário/mês + consumo por mensagem"],
+                ["Residência de dados","Servidores Anthropic (US e EU)","Azure (Brasil Sul disponível — dados no Brasil)"],
+                ["Conformidade","SOC 2 Type II, GDPR","ISO 27001, SOC 2, LGPD via Azure BR"],
+                ["Melhor para","Análise de documentos, código, linguagem natural complexa","Empresas no ecossistema Microsoft 365"],
+                ["Treinamento de usuários","Baixo (interface conversacional)","Médio (Power Apps / Power Automate)"],
+              ].map(([c, cw, ms]) => (
+                <tr key={c} className="border-t border-border">
+                  <td className="p-3 font-medium text-sm">{c}</td>
+                  <td className="p-3 text-sm">{cw}</td>
+                  <td className="p-3 text-sm">{ms}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
+        <p>
+          Para empresas já no ecossistema Microsoft 365 (Teams, SharePoint, Outlook), o Copilot Studio é mais fácil de adotar por não exigir novo contrato, integra nativamente com processos existentes e tem opção de residência de dados no Brasil Sul via Azure — ponto importante para setores com requisitos LGPD mais rígidos. Para empresas que precisam de raciocínio mais sofisticado em linguagem natural e processamento de documentos complexos, o Claude Cowork tem vantagem qualitativa documentada.
+        </p>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: SaaS não morre — vira commodity">
         <p>A narrativa do "SaaSpocalypse" confunde dois fenômenos. O que vai morrer é o <strong>SaaS de camada fina</strong>: ferramentas que basicamente envelopam um banco de dados com UI e cobravam US$ 20/mês por isso. Esses serão substituídos por agentes que geram a UI sob demanda. O que sobrevive — e talvez fortaleça — é o SaaS de <strong>workflow profundo</strong>, com dados proprietários, compliance específico e integrações complexas (Salesforce, Stripe, ServiceNow). Para o mercado brasileiro, a oportunidade está em construir verticais com regulamentação local (saúde com LGPD, fiscal com SPED, jurídico com peticionamento eletrônico) — barreiras que nenhum agente genérico replica.</p>
       </EditorialTake>
 
-      <ArticleSources category="ia"
+      <ArticleSources
         sources={[
           { title: "Claude Cowork — Anthropic", url: "https://www.anthropic.com/claude", publisher: "Anthropic", accessedAt: "Maio 2026" },
           { title: "State of AI Report 2025", url: "https://www.stateof.ai/", publisher: "Air Street Capital", accessedAt: "Maio 2026" },
@@ -218,7 +247,7 @@ const ClaudeCoworkSaas2026 = () => {
       />
 
       <RelatedPosts currentSlug="claude-cowork-saaspocalypse-2026" />
-      <CommentSection postId="claude-cowork-saaspocalypse-2026" postTitle="Claude Cowork e o SaaSpocalypse: Como os Agentes de IA Estão Substituindo Softwares Inteiros"  category="ia" />
+      <CommentSection category="ia" postId="claude-cowork-saaspocalypse-2026" postTitle="Claude Cowork e o SaaSpocalypse: Como os Agentes de IA Estão Substituindo Softwares Inteiros" />
     </article>
   );
 };

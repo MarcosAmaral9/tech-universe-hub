@@ -205,19 +205,73 @@ const Gemini25ProVsGPT4o = () => {
         </p>
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Conclusão</h2>
+        <h2 className="text-2xl font-bold mt-10 mb-6">Os Benchmarks Atualizados em 2026: O Que os Dados Independentes Dizem</h2>
         <p>
-          Em 2026, a escolha entre Gemini 2.5 Pro e GPT-4o depende do contexto: para <strong>raciocínio científico, documentos longos e análise de vídeo</strong>, o Gemini 2.5 Pro é superior. Para <strong>uso cotidiano, velocidade e integração com o ecossistema OpenAI</strong>, o GPT-4o ainda lidera. A boa notícia: nunca houve tantas opções de qualidade disponíveis.
+          Com base em dados verificados do TokenMix.ai (abril de 2026), LM Council (junho de 2026) e iternal.ai (junho de 2026), os números atualizados de ambos os modelos mostram que o campo de fronteira ficou muito comprimido — as diferenças entre os modelos top estão dentro de 2-3 pontos percentuais na maioria dos benchmarks saturados. Isso torna a escolha ainda mais dependente do caso de uso específico do que dos números absolutos.
+        </p>
+        <div className="not-prose my-6 overflow-x-auto">
+          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+            <thead><tr className="bg-secondary text-left">
+              <th className="p-3">Benchmark</th>
+              <th className="p-3">Gemini 2.5 Pro</th>
+              <th className="p-3">GPT-5.4</th>
+              <th className="p-3">Claude Sonnet 4.6</th>
+              <th className="p-3">Notas</th>
+            </tr></thead>
+            <tbody>
+              {[
+                ["SWE-bench Verified","~78%","~80%","79,6%","Diferença dentro da margem — funcional empate"],
+                ["GPQA Diamond","84,0%","~82%","74,1%","Gemini lidera em ciência de nível PhD"],
+                ["MMLU","~90%","~91%","~88%","Saturado — não diferencia modelos modernos"],
+                ["AIME 2025 (matemática)","86,7%","~85%","—","Gemini forte em raciocínio matemático"],
+                ["Contexto","1M tokens","128k tokens","200k tokens","Gemini único com 1M real e estável"],
+                ["Preço input API","US$ 1,25/M","US$ 2,50/M","US$ 3,00/M","Gemini mais barato para processamento em volume"],
+              ].map(([bench, gem, gpt, claude, nota]) => (
+                <tr key={bench} className="border-t border-border">
+                  <td className="p-3 font-medium text-sm">{bench}</td>
+                  <td className="p-3 text-sm">{gem}</td>
+                  <td className="p-3 text-sm">{gpt}</td>
+                  <td className="p-3 text-sm">{claude}</td>
+                  <td className="p-3 text-xs text-muted-foreground">{nota}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="text-xs text-muted-foreground mt-2">Fontes: TokenMix.ai (abr/2026), LM Council (jun/2026), iternal.ai (jun/2026). MMLU é considerado saturado pelos pesquisadores — use GPQA Diamond e SWE-bench como referências mais discriminantes.</p>
+        </div>
+        <p>
+          Um insight importante da literatura técnica em 2026: segundo o benchmark RULER da NVIDIA, modelos normalmente usam de forma confiável apenas <strong>50–65% da janela de contexto anunciada</strong>. Um modelo com 1M de tokens pode performar bem até 600–700k tokens, mas degradar além disso. O Gemini 2.5 Pro é, por enquanto, a exceção mais robusta — testes independentes confirmam coerência em contextos de 700k+ tokens.
         </p>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Qual modelo você mais usa no dia a dia?</h3>
-          <p className="text-muted-foreground">Compartilhe sua experiência nos comentários! 👇</p>
+        <h2 className="text-2xl font-bold mt-10 mb-6">Cenários Práticos: Qual Modelo Usar em Cada Situação</h2>
+        <div className="not-prose my-6 space-y-3">
+          {[
+            { cenario: "📄 Analisar contrato de 200 páginas", winner: "Gemini 2.5 Pro", razao: "Contexto de 1M tokens garante que o documento inteiro cabe, sem truncamento. O GPT-5.4 trunca contratos acima de ~100k tokens." },
+            { cenario: "💻 Debugar código Python com 50 arquivos", winner: "Empate (Cursor+Claude ou Gemini)", razao: "Claude Sonnet via Cursor tem melhor integração no editor. Gemini via API é mais barato para volume." },
+            { cenario: "🎥 Analisar vídeo de reunião (2h)", winner: "Gemini 2.5 Pro", razao: "Processamento nativo de vídeo e áudio. GPT-5.4 requer transcrição separada antes de analisar." },
+            { cenario: "✍️ Escrever artigo longo em PT-BR", winner: "Claude Sonnet 4.6", razao: "Prosa mais natural em português segundo avaliações humanas no LMSys Arena. Gemini e GPT ficam atrás em nuances do idioma." },
+            { cenario: "🔢 Resolver problema de matemática competitiva", winner: "Gemini 2.5 Pro", razao: "86,7% no AIME 2025 — melhor performance em matemática avançada entre os modelos públicos." },
+            { cenario: "💬 Chatbot de atendimento ao cliente em escala", winner: "Gemini 2.5 Flash", razao: "US$ 0,15/M tokens de input — ~16x mais barato que GPT-5.4. Para volume, o Flash da mesma família entrega qualidade suficiente." },
+          ].map(({ cenario, winner, razao }) => (
+            <div key={cenario} className="bg-card rounded-xl border border-border p-4">
+              <div className="flex justify-between items-start gap-2 mb-1">
+                <h3 className="font-bold text-sm">{cenario}</h3>
+                <span className="text-xs font-medium text-invest whitespace-nowrap">→ {winner}</span>
+              </div>
+              <p className="text-sm text-muted-foreground">{razao}</p>
+            </div>
+          ))}
         </div>
+
+        <p>
+          Em 2026, a escolha entre Gemini 2.5 Pro e GPT-5.4 depende do contexto: para <strong>raciocínio científico, documentos longos e análise de vídeo</strong>, o Gemini 2.5 Pro é superior. Para <strong>uso cotidiano, fluência em português e integração com o ecossistema OpenAI</strong>, o GPT-5.4 ainda lidera. A boa notícia: nunca houve tantas opções de qualidade disponíveis.
+        </p>
+
       </div>
-      <EditorialTake category="ia" title={"An\u00e1lise do Marcos: contexto longo vs. lat\u00eancia baixa"}>
+      <EditorialTake category="ia" title="Análise do Marcos: contexto longo vs. latência baixa">
         <p>Não existe vencedor universal entre Gemini 2.5 Pro e GPT-4o — existe match de caso de uso. Gemini ganha em <strong>tarefas com contexto gigante</strong> (PDFs longos, codebase inteira, transcrições) porque a janela de 1M+ tokens é real e funciona. GPT-4o ganha em <strong>latência e fluência conversacional</strong>, especialmente em PT-BR, onde a entonação e gírias soam mais naturais. Para quem está no Brasil pagando em dólar, recomendo: API do Gemini para back-office (análise de documentos, pesquisa) e GPT-4o para qualquer coisa que o usuário final ouça ou veja em tempo real.</p>
       </EditorialTake>
-      <ArticleSources category="ia"
+      <ArticleSources
         sources={[
           { title: "Gemini 2.5 Pro \u2014 Google DeepMind", url: "https://deepmind.google/technologies/gemini/", publisher: "Google DeepMind", accessedAt: "Maio 2026" },
           { title: "GPT-4o \u2014 OpenAI", url: "https://openai.com/index/hello-gpt-4o/", publisher: "OpenAI", accessedAt: "Maio 2026" },
@@ -230,7 +284,7 @@ const Gemini25ProVsGPT4o = () => {
 
 
       <RelatedPosts currentSlug="gemini-2-5-pro-vs-gpt-4o-2026" />
-      <CommentSection postId="gemini-2-5-pro-vs-gpt-4o-2026" postTitle="Gemini 2.5 Pro vs GPT-4o: Qual o Melhor Modelo de IA em 2026?"  category="ia" />
+      <CommentSection category="ia" postId="gemini-2-5-pro-vs-gpt-4o-2026" postTitle="Gemini 2.5 Pro vs GPT-4o: Qual o Melhor Modelo de IA em 2026?" />
     </article>
   );
 };

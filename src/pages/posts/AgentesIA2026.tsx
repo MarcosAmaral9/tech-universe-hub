@@ -6,7 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { ArrowLeft, Clock, User, Calendar, Bot, Cpu, Briefcase, AlertTriangle } from "lucide-react";
+import {, Clock, User, Calendar, Bot, Cpu, Briefcase, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
@@ -182,7 +182,7 @@ const AgentesIA2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources category="ia" sources={[
+      <ArticleSources sources={[
         { title: "Anthropic — Introducing the Model Context Protocol", url: "https://www.anthropic.com/news/model-context-protocol", publisher: "Anthropic", accessedAt: "Maio 2026" },
         { title: "Princeton NLP — SWE-bench Verified Leaderboard", url: "https://www.swebench.com/", publisher: "Princeton NLP", accessedAt: "Maio 2026" },
         { title: "OSWorld: Benchmarking Multimodal Agents (CMU)", url: "https://os-world.github.io/", publisher: "Carnegie Mellon University", accessedAt: "Maio 2026" },
@@ -191,7 +191,7 @@ const AgentesIA2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="agentes-ia-2026-como-funcionam" />
-      <CommentSection postId="agentes-ia-2026-como-funcionam" postTitle="Agentes de IA 2026: O Que São, Como Funcionam e Por Que Mudam Tudo"  category="ia" />
+      <CommentSection category="ia" postId="agentes-ia-2026-como-funcionam" postTitle="Agentes de IA 2026: O Que São, Como Funcionam e Por Que Mudam Tudo" />
     </article>
   );
 };

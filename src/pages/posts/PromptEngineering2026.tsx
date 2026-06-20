@@ -1,5 +1,3 @@
-import ArticleSources from "@/components/ArticleSources";
-import EditorialTake from "@/components/EditorialTake";
 import { useEffect } from "react";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
@@ -245,6 +243,33 @@ Use analogias do dia a dia para explicar conceitos complexos.`}
         <p>
           Comece aplicando os 4 componentes (papel, contexto, tarefa, formato) no seu próximo prompt. Itere sobre as respostas. Em poucas semanas, a diferença nos resultados será enorme.
         </p>
+        <h2 className="text-2xl font-bold mt-10 mb-6">10 Templates de Prompt Prontos para Usar Agora</h2>
+        <div className="not-prose my-6 space-y-3">
+          {[
+            { cat: "✍️ Escrita", prompt: '"Você é redator sênior de [nicho]. Escreva um [tipo de conteúdo] de [tamanho] sobre [tema] para [audiência]. Tom: [formal/casual/persuasivo]. Inclua [estrutura específica]."' },
+            { cat: "💻 Código", prompt: '"Você é desenvolvedor [linguagem] sênior. Revise este código e identifique: (1) bugs, (2) problemas de performance, (3) melhorias de legibilidade. Explique cada ponto brevemente. Código: [cole aqui]"' },
+            { cat: "📊 Análise", prompt: '"Analise estes dados e responda: (1) qual é a tendência principal, (2) quais anomalias existem, (3) quais 3 ações você recomenda com base nisso. Dados: [cole aqui]. Formato: tópicos com evidências."' },
+            { cat: "🎯 Brainstorm", prompt: '"Gere 15 ideias para [objetivo]. Para cada uma: nome da ideia (4-6 palavras), 1 frase de descrição, viabilidade em 6 meses (alta/média/baixa). Seja específico e acionável, não genérico."' },
+            { cat: "📧 Email", prompt: '"Você é assistente executivo. Redija um email para [destinatário/cargo] sobre [assunto]. Objetivo: [conseguir X / informar Y]. Tom: [profissional/cordial]. Máximo 150 palavras. Não use "prezado"."' },
+          ].map(({ cat, prompt }) => (
+            <div key={cat} className="bg-card rounded-xl border border-border p-4">
+              <span className="text-xs font-bold text-ia mb-2 block">{cat}</span>
+              <p className="text-xs text-muted-foreground font-mono bg-secondary rounded p-2 leading-relaxed">{prompt}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Como a Engenharia de Prompts Mudou com Modelos de Raciocínio</h2>
+        <p>
+          Os modelos de raciocínio como <strong>DeepSeek R1</strong>, <strong>Claude com extended thinking</strong> e <strong>OpenAI o3</strong> mudam o paradigma do prompt engineering de forma significativa. Esses modelos geram cadeias de raciocínio interno antes de responder — o que significa que você não precisa mais de Chain-of-Thought explícito no prompt. Escrever "pense passo a passo" para um modelo o3 ou R1 é redundante: eles já fazem isso internamente.
+        </p>
+        <p>
+          O que muda na prática: com modelos de raciocínio, <strong>prompts mais curtos e diretos frequentemente superam prompts longos e elaborados</strong>. A instrução detalhada de "como chegar à resposta" pode até atrapalhar o raciocínio interno do modelo. O foco do prompt engineering migrou para <strong>definição clara de contexto e formato de saída</strong>, não para orquestrar o processo de pensamento.
+        </p>
+        <p>
+          O meta-prompting — pedir ao modelo que crie ou avalie seus próprios prompts — funciona melhor com modelos de raciocínio. Exemplo: "Você é especialista em prompt engineering. Critique este prompt e reescreva-o para obter resultados mais precisos: [prompt original]". O modelo usa seu raciocínio interno para analisar e melhorar — algo que modelos standard não faziam com a mesma profundidade.
+        </p>
+
         <p className="text-xs text-muted-foreground mt-6 italic">
           Conteúdo baseado em pesquisas publicadas por Google DeepMind, OpenAI e Anthropic. Técnicas referenciadas são de domínio público e amplamente documentadas na literatura de IA.
         </p>
@@ -259,7 +284,7 @@ Use analogias do dia a dia para explicar conceitos complexos.`}
         </p>
       </EditorialTake>
 
-      <ArticleSources category="ia" sources={[
+      <ArticleSources sources={[
         { title: "OpenAI — Prompt Engineering Guide", url: "https://platform.openai.com/docs/guides/prompt-engineering", publisher: "OpenAI", accessedAt: "Maio 2026" },
         { title: "Anthropic — Prompt Engineering Overview", url: "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview", publisher: "Anthropic", accessedAt: "Maio 2026" },
         { title: "DeepLearning.AI — ChatGPT Prompt Engineering for Developers", url: "https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/", publisher: "DeepLearning.AI", accessedAt: "Maio 2026" },
@@ -268,7 +293,7 @@ Use analogias do dia a dia para explicar conceitos complexos.`}
       ]} />
 
       <RelatedPosts currentSlug="prompt-engineering-guia-2026" />
-      <CommentSection postId="prompt-engineering-guia-2026" postTitle="Prompt Engineering em 2026: Guia Definitivo para Escrever Prompts que Funcionam"  category="ia" />
+      <CommentSection category="ia" postId="prompt-engineering-guia-2026" postTitle="Prompt Engineering em 2026: Guia Definitivo para Escrever Prompts que Funcionam" />
     </article>
   );
 };

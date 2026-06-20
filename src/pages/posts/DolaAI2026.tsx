@@ -207,7 +207,7 @@ const DolaAI2026 = () => {
         </h2>
         <div className="not-prose space-y-3 my-6">
           {[
-            { p: "1", t: "Baixe o app", d: "Disponível na Play Store (Android) e App Store (iOS). Busque por \"Dola\" — o ícone é um assistente com design minimalista." },
+            { p: "1", t: "Baixe o app", d: "Disponível na Play Store (Android) e App Store (iOS). Busque por "Dola" — o ícone é um assistente com design minimalista." },
             { p: "2", t: "Crie uma conta", d: "Login via Google, Apple ou e-mail. Não precisa de cartão de crédito para o plano gratuito." },
             { p: "3", t: "Explore a tela inicial", d: "Você verá a área de chat e, na aba inferior, acesso a Bots, Imagens, Vídeos e Ferramentas." },
             { p: "4", t: "Experimente os bots", d: "Vá em \"Bots\" e escolha um especializado na sua necessidade. O bot de tradução, por exemplo, já identifica o idioma automaticamente." },
@@ -268,7 +268,7 @@ const DolaAI2026 = () => {
             </div>
           ))}
         </div>
-      </div>
+</div>
 
       <EditorialTake category="ia" title="Análise do Marcos: Dola resolve o problema real de quem não quer 5 apps de IA no celular">
         <p>
@@ -279,7 +279,7 @@ const DolaAI2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources category="ia" sources={[
+      <ArticleSources sources={[
         { title: "Mobile Time — Dola, assistente de IA generativa, é a dica de app da semana", url: "https://www.mobiletime.com.br/tapps/30/03/2026/dica-da-semana-dola/", publisher: "Mobile Time", accessedAt: "Maio 2026" },
         { title: "CanalTech — 8 coisas que a Dola AI consegue fazer no celular", url: "https://canaltech.com.br/apps/bots-e-geracao-de-imagens-8-coisas-que-a-dola-ai-consegue-fazer-no-celular/", publisher: "CanalTech", accessedAt: "Maio 2026" },
         { title: "TechTudo — Dola AI: como usar IA que ajuda a organizar a sua agenda", url: "https://www.techtudo.com.br/dicas-e-tutoriais/2024/09/dola-ai-como-usar-ia-que-ajuda-a-organizar-a-sua-agenda-edsoftwares.ghtml", publisher: "TechTudo", accessedAt: "Maio 2026" },
@@ -288,7 +288,7 @@ const DolaAI2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="dola-ai-app-assistente-2026" />
-      <CommentSection postId="dola-ai-app-assistente-2026" postTitle="Dola AI: O App de Assistente de IA que Virou Febre no Brasil em 2026"  category="ia" />
+      <CommentSection category="ia" postId="dola-ai-app-assistente-2026" postTitle="Dola AI: O App de Assistente de IA que Virou Febre no Brasil em 2026" />
     </article>
   );
 };

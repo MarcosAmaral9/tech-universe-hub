@@ -172,6 +172,17 @@ const ChatGPTvsGeminiClaude2026 = () => {
             </div>
           ))}
         </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">O que Mudou em 2026: Atualizações de Cada Plataforma</h2>
+        <p>
+          O mercado de IAs de uso geral evoluiu rapidamente entre 2025 e 2026. As mudanças mais relevantes para o usuário brasileiro:
+        </p>
+        <ul className="space-y-2 my-6">
+          <li><strong>ChatGPT (OpenAI):</strong> O GPT-5.4 com raciocínio avançado ficou disponível no plano Plus (US$ 20/mês) em março de 2026 — antes estava restrito ao Pro (US$ 200/mês). Memória persistente entre conversas agora é padrão para todos os usuários. O Sora (gerador de vídeo) foi encerrado como plataforma independente em abril de 2026 e integrado ao ChatGPT Pro.</li>
+          <li><strong>Gemini (Google):</strong> O Gemini 2.5 Pro com contexto de 1 milhão de tokens chegou ao plano Advanced (US$ 19,99/mês) em fevereiro de 2026. Deep Research — que pesquisa na web por até 30 minutos antes de responder — foi lançado e está disponível globalmente incluindo Brasil.</li>
+          <li><strong>Claude (Anthropic):</strong> O Claude Sonnet 4.6 se tornou o modelo padrão do plano gratuito em fevereiro de 2026, com contexto de 200k tokens. O plano Pro dá acesso ao Opus 4.6. A Anthropic lançou Projects (memória compartilhada por projeto) e Claude Code (agente de programação via CLI).</li>
+          <li><strong>Copilot (Microsoft):</strong> Integração com o Microsoft 365 Copilot Pages — documentos colaborativos com IA — e Copilot Studio para criar agentes customizados. Plano Business inclui auditoria de uso para conformidade corporativa.</li>
+        </ul>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: pare de buscar a IA perfeita e monte um stack de duas">
@@ -180,7 +191,7 @@ const ChatGPTvsGeminiClaude2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources category="ia" sources={[
+      <ArticleSources sources={[
         { title: "LMSYS Chatbot Arena Leaderboard — ELO Rankings 2026", url: "https://chat.lmsys.org/?leaderboard", publisher: "LMSYS / UC Berkeley", accessedAt: "Maio 2026" },
         { title: "Anthropic — Claude Models Overview e Política de Privacidade", url: "https://www.anthropic.com/models", publisher: "Anthropic", accessedAt: "Maio 2026" },
         { title: "OpenAI — GPT-4o e Modelo o3: Capacidades e Preços", url: "https://openai.com/pricing", publisher: "OpenAI", accessedAt: "Maio 2026" },
@@ -190,7 +201,7 @@ const ChatGPTvsGeminiClaude2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="chatgpt-vs-gemini-vs-claude-2026" />
-      <CommentSection postId="chatgpt-vs-gemini-vs-claude-2026" postTitle="ChatGPT vs. Gemini vs. Claude em 2026: Qual IA Vale a Pena Assinar?"  category="ia" />
+      <CommentSection category="ia" postId="chatgpt-vs-gemini-vs-claude-2026" postTitle="ChatGPT vs. Gemini vs. Claude em 2026: Qual IA Vale a Pena Assinar?" />
     </article>
   );
 };

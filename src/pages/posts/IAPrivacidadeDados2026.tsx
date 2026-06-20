@@ -8,8 +8,6 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/ia-privacidade-dados-2026.webp";
-import EditorialTake from "@/components/EditorialTake";
-import ArticleSources from "@/components/ArticleSources";
 
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const IAPrivacidadeDados2026 = () => {
@@ -115,7 +113,52 @@ const IAPrivacidadeDados2026 = () => {
         <p>
           Em 2026, a privacidade de dados não é mais um luxo — é uma necessidade. A boa notícia é que tanto a legislação quanto a tecnologia estão evoluindo para dar mais controle ao usuário.
         </p>
-      </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">O Que a ANPD Está Fazendo com IA: Agenda Regulatória 2025-2026</h2>
+        <p>
+          A <strong>ANPD</strong> publicou sua Agenda Regulatória para o biênio 2025-2026 com 16 ações prioritárias. A inteligência artificial ocupa posição central: o documento prevê análise e regulamentação do uso de IA no tratamento de dados pessoais, com foco em transparência, segurança e responsabilização. A ANPD também abriu canal formal de diálogo com a OpenAI, responsável pelo ChatGPT, após questionamentos sobre o uso de dados de usuários brasileiros para treinamento de modelos.
+        </p>
+        <p>
+          O caso mais emblemático foi o da plataforma X (ex-Twitter): a ANPD cobrou a empresa por usar dados de usuários brasileiros para treinar o modelo de IA Grok sem informar como esses usuários poderiam recusar — direito expressamente garantido pela LGPD. A autarquia anunciou que convocaria a empresa para prestar esclarecimentos e sinalizou que "caso seja percebido risco de grave dano, outras medidas poderão ser tomadas". O caso estabelece precedente claro: <strong>qualquer plataforma que use dados de usuários brasileiros para treinar IA sem mecanismo de opt-out está em risco regulatório imediato</strong>.
+        </p>
+        <p>
+          Um estudo do <strong>Centro de Tecnologia e Sociedade da FGV Direito Rio</strong> concluiu que nenhuma das ferramentas de IA generativa disponíveis atualmente atende plenamente à LGPD — seja por falta de transparência sobre finalidade de treinamento, seja pela dificuldade de cumprir o "direito ao esquecimento" do Art. 18 (excluir dados de um modelo já treinado exige retreinamento completo, processo custoso que a maioria das empresas não está preparada para executar).
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Como Cada Plataforma de IA Trata Seus Dados: Guia Prático</h2>
+        <div className="not-prose my-6 space-y-3">
+          {[
+            { plat: "Claude.ai (Anthropic)", politica: "Plano gratuito: conversas podem ser usadas para melhorar o modelo. Plano Pro e Team: opt-out disponível nas configurações. Enterprise: DPA, não usa dados para treino por padrão.", nota: "✅ Transparente", cor: "border-invest/30" },
+            { plat: "ChatGPT (OpenAI)", politica: "Opt-out manual disponível em Configurações → Controles de dados. Se desativado, conversas não são usadas para treino. API: não usa dados para treino por padrão.", nota: "✅ Transparente com opt-out", cor: "border-invest/30" },
+            { plat: "Gemini (Google)", politica: "Plano gratuito: Google usa interações para melhorar produtos por padrão. Workspace (pago): controles enterprise. Revisores humanos podem ler amostras de conversas.", nota: "⚠️ Opt-out existe mas não é o padrão", cor: "border-yellow-500/30" },
+            { plat: "X/Twitter (Grok)", politica: "ANPD notificou em 2024 por falta de mecanismo claro de opt-out. Usuário precisaria sair da plataforma para não ter dados usados no treinamento.", nota: "❌ Em processo com ANPD", cor: "border-destructive/30" },
+            { plat: "Meta AI (Facebook/Instagram)", politica: "ANPD também acompanha. Meta usa posts públicos de usuários do Brasil para treinar IA. Opt-out via formulário — disponível mas não proeminente.", nota: "⚠️ ANPD monitorando", cor: "border-yellow-500/30" },
+          ].map(({ plat, politica, nota, cor }) => (
+            <div key={plat} className={`bg-card rounded-xl border ${cor} p-4`}>
+              <div className="flex justify-between items-start gap-2 mb-1">
+                <h3 className="font-bold text-sm">{plat}</h3>
+                <span className="text-xs font-medium whitespace-nowrap">{nota}</span>
+              </div>
+              <p className="text-sm text-muted-foreground">{politica}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Checklist de Privacidade com IA para Empresas Brasileiras</h2>
+        <div className="not-prose my-6 p-5 bg-secondary/50 rounded-xl border border-border">
+          <ul className="space-y-2 text-sm text-muted-foreground">
+            {[
+              "☐ Inventário de todas as ferramentas de IA que processam dados pessoais (incluindo SaaS com IA embutida)",
+              "☐ DPA (Data Processing Agreement) assinado com cada fornecedor de IA antes de usar dados de clientes",
+              "☐ Política de privacidade atualizada mencionando uso de IA e finalidades do tratamento",
+              "☐ DPO (Encarregado de Dados) nomeado conforme Art. 41 da LGPD — obrigatório para empresas que processam dados em larga escala",
+              "☐ Mecanismo de revisão humana para decisões automatizadas com efeito negativo (Art. 20 LGPD)",
+              "☐ Treinamento de equipe: colaboradores sabem o que não colocar em prompts (CPF, dados de saúde, contratos)",
+              "☐ Avaliação de Impacto (RIPD) para sistemas de IA de alto risco",
+              "☐ Registros de operações de tratamento atualizados (ROT) incluindo os processos com IA",
+            ].map((item, i) => <li key={i}>{item}</li>)}
+          </ul>
+        </div>
 
 
       <EditorialTake category="ia" title="Análise do Marcos: três regras práticas que eliminam 90% do risco de privacidade com IA">
@@ -127,7 +170,7 @@ const IAPrivacidadeDados2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources category="ia" sources={[
+      <ArticleSources sources={[
         { title: "ANPD — Análise Preliminar sobre IA Generativa", url: "https://www.gov.br/anpd/pt-br", publisher: "ANPD", accessedAt: "Maio 2026" },
         { title: "Planalto — Lei 13.709/2018 (LGPD)", url: "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm", publisher: "Planalto", accessedAt: "Maio 2026" },
         { title: "EU AI Act — Texto oficial (Reg. UE 2024/1689)", url: "https://artificialintelligenceact.eu/", publisher: "EU AI Act", accessedAt: "Maio 2026" },
@@ -136,7 +179,7 @@ const IAPrivacidadeDados2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="ia-privacidade-dados-2026" />
-      <CommentSection postId="ia-privacidade-dados-2026" postTitle="IA e Privacidade de Dados 2026: Seus Dados Estão Seguros?"  category="ia" />
+      <CommentSection category="ia" postId="ia-privacidade-dados-2026" postTitle="IA e Privacidade de Dados 2026: Seus Dados Estão Seguros?" />
     </article>
   );
 };

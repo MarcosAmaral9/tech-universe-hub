@@ -1,3 +1,13 @@
+/*
+ * PAGE_META — adicionar em DynamicSEO.tsx dentro do objeto PAGE_META:
+ *
+ * "/post/gemini-2-5-pro-vs-claude-2026": {
+ *   title: "Gemini 2.5 Pro vs Claude em 2026: Qual Modelo Vence nas Tarefas do Dia a Dia?",
+ *   description: "Comparativo Gemini 2.5 Pro vs Claude (Sonnet e Opus) em 2026: benchmarks reais, contexto, preço, integração com Workspace e quando usar cada modelo para máxima produtividade.",
+ *   keywords: "Gemini 2.5 Pro vs Claude, Gemini 2.5 Pro 2026, Claude Sonnet comparativo, Claude Opus vs Gemini, Google vs Anthropic modelos, 1 milhão tokens contexto, benchmarks LLM 2026, melhor IA escrita, melhor IA código 2026",
+ * },
+ */
+
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
@@ -202,6 +212,98 @@ const Gemini25ProVsClaude2026 = () => {
         </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Brain className="h-7 w-7 text-violet-400" />
+          SWE-bench 2026: O Dado que Fez Desenvolvedores Migrarem para o Claude
+        </h2>
+        <p>
+          O <strong>SWE-bench Verified</strong> é atualmente o benchmark mais respeitado para código: mede a capacidade de resolver issues reais do GitHub — bugs, refatorações e implementações de funcionalidades em projetos open-source de produção. Não é um teste de "completar código" — é resolver um problema real que um engenheiro humano levaria horas para fechar.
+        </p>
+        <p>
+          Os números mais recentes disponíveis (Artificial Analysis, maio de 2026) mostram uma diferença expressiva: o <strong>Claude Sonnet 4.6 acerta 82,1%</strong> das tarefas do SWE-bench Verified. O <strong>Gemini 2.5 Pro fica em 63,8%</strong> — uma diferença de 18 pontos percentuais. Para contexto: o melhor modelo da geração anterior, o GPT-4o original, marcava cerca de 33% quando o benchmark foi publicado em 2024. Ambos avançaram muito; a vantagem do Claude em código é real e documentada de forma independente.
+        </p>
+        <p>
+          No <strong>LMSys Chatbot Arena Code Arena</strong> (fevereiro de 2026, mais de 5,3 milhões de votos em pares cegos), a Anthropic ocupa os quatro primeiros lugares em código. O Claude Sonnet 4.6 aparece em terceiro com Elo 1.531, atrás apenas das versões Opus. O Gemini não aparece no top 4 do ranking de código. Para desenvolvimento de software profissional, essa hierarquia é consistente há dois anos consecutivos.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <TrendingUp className="h-7 w-7 text-violet-400" />
+          Custo Real na API: O Que Você Paga por 1 Milhão de Tokens em Reais
+        </h2>
+        <p>
+          Para uso pessoal via interface web, os planos custam o mesmo (~US$ 20/mês). A diferença de custo fica evidente ao usar a API em produção — e é aí que a decisão se torna financeira:
+        </p>
+        <div className="not-prose my-6 overflow-x-auto">
+          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+            <thead><tr className="bg-secondary">
+              <th className="text-left py-3 px-4">Modelo</th>
+              <th className="text-left py-3 px-4">Input (1M tokens)</th>
+              <th className="text-left py-3 px-4">Output (1M tokens)</th>
+              <th className="text-left py-3 px-4">Em reais (câmbio R$ 5,60)</th>
+            </tr></thead>
+            <tbody>
+              {[
+                ["Claude Sonnet 4.6", "US$ 3,00", "US$ 15,00", "R$ 16,80 input / R$ 84,00 output"],
+                ["Gemini 2.5 Pro", "US$ 1,25", "US$ 10,00", "R$ 7,00 input / R$ 56,00 output"],
+                ["Gemini 2.5 Flash", "US$ 0,15", "US$ 0,60", "R$ 0,84 input / R$ 3,36 output"],
+                ["GPT-4o", "US$ 2,50", "US$ 10,00", "R$ 14,00 input / R$ 56,00 output"],
+              ].map(([modelo, inp, out, brl]) => (
+                <tr key={modelo} className="border-t border-border">
+                  <td className="py-3 px-4 font-medium text-sm">{modelo}</td>
+                  <td className="py-3 px-4 text-sm">{inp}</td>
+                  <td className="py-3 px-4 text-sm">{out}</td>
+                  <td className="py-3 px-4 text-xs text-muted-foreground">{brl}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="text-xs text-muted-foreground mt-2">Preços da API conforme Anthropic e Google, maio de 2026. Cobrança em USD + IOF 3,38% no cartão.</p>
+        </div>
+        <p>
+          A conclusão prática: o <strong>Claude Sonnet 4.6 custa 2,4× mais no input e 1,5× mais no output</strong> que o Gemini 2.5 Pro. Para uma startup brasileira que processa 100 milhões de tokens por mês em output — um chatbot de atendimento médio, por exemplo — a diferença é de R$ 2.800/mês versus R$ 1.568/mês. Em escala, o Gemini é mais barato. Em qualidade de código e instrução-following, o Claude entrega mais. A escolha depende do seu workload específico.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Shield className="h-7 w-7 text-violet-400" />
+          Google Workspace + Gemini Advanced: Quando a Integração Vale o Preço
+        </h2>
+        <p>
+          O argumento mais forte do Gemini 2.5 Pro para o usuário brasileiro não está nos benchmarks — está na <strong>integração nativa com o ecossistema Google</strong>. O plano <strong>Gemini Advanced</strong> (US$ 19,99/mês via Google One) inclui acesso ao Gemini 2.5 Pro dentro do Gmail, Google Docs, Google Sheets, Google Slides e Google Meet.
+        </p>
+        <p>
+          Na prática isso significa: o modelo lê seus e-mails e rascunha respostas em contexto, resume reuniões do Meet automaticamente, analisa planilhas do Sheets com dados reais da sua conta, e sugere edições em documentos já abertos no Docs — tudo sem copiar e colar nada. Para quem usa Google Workspace como ferramenta principal de trabalho (o que inclui a maioria das PMEs e startups brasileiras), essa integração nativa elimina o atrito de usar uma IA externa.
+        </p>
+        <p>
+          O Claude não tem esse nível de integração nativa com Workspace — ele pode ser conectado via MCP ou extensões de terceiros, mas exige configuração. Se você vive no Gmail e no Google Docs, o Gemini Advanced entrega mais ROI imediato. Se você escreve código ou trabalha com documentos fora do ecossistema Google, o Claude Pro é a melhor escolha.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">FAQ — Perguntas Práticas de Quem Usa os Dois Modelos</h2>
+        <div className="not-prose space-y-3 my-6">
+          {[
+            {
+              q: "Posso usar o Gemini 2.5 Pro de graça?",
+              a: "Sim, mas com limitações. O plano gratuito do Google Gemini usa o Gemini 2.5 Flash, uma versão menor e mais rápida. O Gemini 2.5 Pro completo requer o plano Gemini Advanced (US$ 19,99/mês via Google One) ou a API paga."
+            },
+            {
+              q: "O contexto de 1 milhão de tokens do Gemini é real e estável?",
+              a: "Sim, desde março de 2025 o Gemini 2.5 Pro suporta 1 milhão de tokens em produção (2 milhões em preview). A Artificial Analysis confirmou que o modelo mantém coerência de resposta mesmo em contextos muito longos — algo que modelos anteriores não faziam de forma confiável."
+            },
+            {
+              q: "Para escrever em português brasileiro, qual é melhor?",
+              a: "Claude Sonnet 4.6 produz textos em português mais naturais e com menos marcas de tradução. Isso é consistente com avaliações humanas independentes no LMSys Arena, onde usuários preferem o Claude para escrita expressiva. O Gemini é bom em português, mas ainda apresenta construções menos naturais ocasionalmente."
+            },
+            {
+              q: "Qual usar para analisar um contrato de 200 páginas?",
+              a: "Para documentos longos mas que cabem em 200K tokens (aproximadamente 150K palavras), ambos funcionam. Para contratos maiores ou bases de documentos inteiras, o contexto de 1M tokens do Gemini 2.5 Pro é a única opção viável entre os modelos de uso geral disponíveis hoje."
+            },
+          ].map(({ q, a }) => (
+            <div key={q} className="bg-card rounded-xl border border-border p-4">
+              <h4 className="font-bold text-sm mb-1">{q}</h4>
+              <p className="text-sm text-muted-foreground">{a}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Lightbulb className="h-7 w-7 text-violet-400" />
           Recomendação Final: Use os Três
         </h2>
@@ -231,16 +333,17 @@ const Gemini25ProVsClaude2026 = () => {
       <EditorialTake category="ia" title="Opinião do Marcos: benchmarks mentem, uso real fala">
         <p>Já testei os dois modelos no dia-a-dia construindo o ViciOCode. Resumo honesto: <strong>Gemini 2.5 Pro</strong> brilha em raciocínio matemático e em contexto longo (1M tokens é absurdo) — perfeito para análises de planilhas e documentos legais brasileiros (contratos, holerites, declarações de IR). <strong>Claude</strong> escreve português brasileiro mais natural, com menos marcas óbvias de tradução, e é mais cuidadoso em código TypeScript/React. Quem cobra cliente final, pague pelos dois e use cada um onde performa melhor — não existe modelo universal. Benchmark como MMLU e HumanEval são úteis, mas não substituem testar com seu próprio caso de uso.</p>
       </EditorialTake>
-      <ArticleSources category="ia"
+      <ArticleSources
         sources={[
           { title: "Gemini 2.5 — Model Card", url: "https://deepmind.google/technologies/gemini/", publisher: "Google DeepMind", accessedAt: "Maio 2026" },
           { title: "Claude — Documentation", url: "https://docs.anthropic.com/", publisher: "Anthropic", accessedAt: "Maio 2026" },
           { title: "LMArena Leaderboard", url: "https://lmarena.ai/", publisher: "LMSYS", accessedAt: "Maio 2026" },
           { title: "Artificial Analysis — Model Comparison", url: "https://artificialanalysis.ai/", publisher: "Artificial Analysis", accessedAt: "Maio 2026" },
+          { title: "Rootly — Claude Sonnet 4.6 Benchmark Results (fev/2026)", url: "https://rootly.com/blog/claude-sonnet-4-6-benchmark-results-and-lessons-for-ai-sre", publisher: "Rootly", accessedAt: "Maio 2026" },
         ]}
       />
       <RelatedPosts currentSlug="gemini-25-pro-vs-claude-ia-2026" />
-      <CommentSection postId="gemini-25-pro-vs-claude-ia-2026" postTitle="Gemini 2.5 Pro vs Claude Sonnet vs GPT-4o: Qual a Melhor IA de Abril de 2026?"  category="ia" />
+      <CommentSection category="ia" postId="gemini-25-pro-vs-claude-ia-2026" postTitle="Gemini 2.5 Pro vs Claude Sonnet vs GPT-4o: Qual a Melhor IA de Abril de 2026?" />
     </article>
   );
 };

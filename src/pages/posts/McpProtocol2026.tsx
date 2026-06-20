@@ -115,7 +115,8 @@ const McpProtocol2026 = () => {
           <TrendingUp className="h-7 w-7 text-ia" />
           Os 97 Milhões de Instalações: O que Esse Número Significa
         </h2>
-      <AdInArticle />
+
+        <AdInArticle />
         <p>
           Quando a Anthropic lançou o MCP em novembro de 2024, era um projeto experimental. Em 4 meses, chegou a 10 milhões de instalações. Em 16 meses, 97 milhões — crescimento de 870%. O que explica isso?
         </p>
@@ -202,17 +203,31 @@ const McpProtocol2026 = () => {
           <li><strong>Servidores MCP de terceiros:</strong> Qualquer pessoa pode publicar um MCP Server. Antes de instalar, verifique o código-fonte (são projetos open-source) e a reputação do mantenedor.</li>
           <li><strong>Logs de auditoria:</strong> Configure seu ambiente MCP para logar todas as chamadas do agente. Isso é essencial em ambientes corporativos para rastrear o que foi executado.</li>
         </ul>
- 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Você já usa MCP no seu fluxo de trabalho? 🔌</h3>
-          <p className="text-muted-foreground">Conta nos comentários qual servidor MCP está mudando sua vida! 👇</p>
-        </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">O Ecossistema MCP em Números: O Crescimento em 2026</h2>
+        <p>
+          O MCP foi anunciado em novembro de 2024 e o crescimento foi extraordinariamente rápido. Em inicio de 2026, a Linux Foundation confirmou mais de <strong>10.000 servidores MCP públicos ativos</strong> e dezenas de milhões de downloads mensais dos SDKs. O <strong>Python SDK</strong> ultrapassou <strong>164 milhões de downloads mensais</strong> no PyPI em abril de 2026 — para referência, Django tem 30 milhões mensais.
+        </p>
+        <p>
+          Em <strong>dezembro de 2025</strong>, a Anthropic fez o movimento mais estratégico da história do protocolo: doou o MCP para a <strong>Agentic AI Foundation (AAIF)</strong>, governada pela Linux Foundation, com membros platinum incluindo Anthropic, OpenAI, Block, Bloomberg, Cloudflare, Google, Microsoft e AWS — todos na mesma mesa. A comparação com outros projetos da Linux Foundation é reveladora: Linux Kernel, Kubernetes, Node.js e PyTorch compartilham esse modelo de governança. Projetos que transcenderam qualquer empresa individual para se tornar infraestrutura crítica de toda uma indústria.
+        </p>
+        <p>
+          <cite index="172">Em maio de 2026, a Anthropic adquiriu a Stainless — líder em ferramentas de geração de SDKs e servidores MCP — por mais de US$ 300 milhões</cite>, sinalizando investimento institucional de longo prazo no ecossistema. O <strong>HubSpot lançou seu servidor MCP com mais de 100 ferramentas</strong> em abril de 2026. Outros com servidores MCP oficiais: Stripe, Elastic, Neo4j, GitHub, Notion, Slack, Google Drive, PostgreSQL e — do ecossistema brasileiro — a Conta Azul (anunciou integração MCP em março de 2026).
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Riscos de Segurança Documentados no Ecossistema MCP</h2>
+        <p>
+          A adoção rápida trouxe riscos que precisam ser endereçados. Um estudo analisou 1.899 servidores MCP de código aberto e encontrou vulnerabilidades em parte relevante deles. O Invariant Labs documentou que <strong>72,8% dos ataques de Tool Poisoning têm sucesso</strong> — onde um servidor MCP malicioso instrui o agente a executar ações não autorizadas através de prompts ocultos nas respostas das ferramentas. E Zhou et al. (2026) identificaram que <strong>40% dos servidores MCP públicos não têm autenticação adequada</strong>.
+        </p>
+        <p>
+          As boas práticas de segurança para produção: exija <strong>OAuth 2.1</strong> em todos os servidores remotos, use <strong>sandboxing</strong> para isolar a execução (o Docker MCP Toolkit, lançado com Stripe, Elastic e Neo4j, oferece isso nativamente), implemente <strong>aprovação humana explícita</strong> para ações irreversíveis, e mantenha logs de auditoria de todas as chamadas de ferramentas. Para servidores MCP de terceiros, verifique o código-fonte antes de conceder acesso a dados sensíveis — qualquer pessoa pode publicar um servidor no repositório público.
+        </p>
       </div>
  
             <EditorialTake category="ia" title={'Análise do Marcos: MCP é o USB-C da era dos agentes'}>
         <p>Padrões abertos vencem APIs proprietárias toda vez que a complexidade explode — foi assim com HTTP, com USB e está sendo com MCP. O <strong>Model Context Protocol</strong> resolve o problema real: hoje, conectar Claude, GPT e Gemini a Notion, GitHub, Drive e Slack exige integrações duplicadas, cada uma com sua autenticação. Com MCP, você expõe um servidor uma vez e qualquer modelo compatível consome. Para o ecossistema brasileiro de SaaS, isso é uma janela rara: empresas que publicarem servidores MCP cedo (Pipefy, RD Station, Conta Azul, Nubank) entram no contexto padrão dos agentes de IA antes que a concorrência reaja.</p>
       </EditorialTake>
-      <ArticleSources category="ia"
+      <ArticleSources
         sources={[
           { title: 'Model Context Protocol — Specification', url: 'https://modelcontextprotocol.io/', publisher: 'Anthropic', accessedAt: "Maio 2026" },
           { title: 'MCP Reference Servers', url: 'https://github.com/modelcontextprotocol/servers', publisher: 'Anthropic / GitHub', accessedAt: "Maio 2026" },
@@ -223,7 +238,7 @@ const McpProtocol2026 = () => {
       />
 
       <RelatedPosts currentSlug="mcp-model-context-protocol-2026" />
-      <CommentSection postId="mcp-model-context-protocol-2026" postTitle="MCP: O Protocolo com 97 Milhões de Instalações que Conecta Todos os Agentes de IA"  category="ia" />
+      <CommentSection category="ia" postId="mcp-model-context-protocol-2026" postTitle="MCP: O Protocolo com 97 Milhões de Instalações que Conecta Todos os Agentes de IA" />
     </article>
   );
 };

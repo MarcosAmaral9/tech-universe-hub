@@ -175,15 +175,40 @@ const IABrasilAdocao2026 = () => {
           Para profissionais, a mensagem é clara: <strong>aprender IA não é mais opcional</strong>. É a habilidade mais demandada e mais bem paga do mercado de tecnologia brasileiro em 2026.
         </p>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Sua empresa já usa IA no dia a dia?</h3>
-          <p className="text-muted-foreground">Conta pra gente nos comentários! 👇</p>
-        </div>
+        <h2 className="text-2xl font-bold mt-10 mb-6">Os Números que Definem o Brasil no Ranking Global de IA</h2>
+        <p>
+          O Brasil é consistentemente classificado como o <strong>terceiro maior usuário do ChatGPT</strong> no mundo, atrás apenas de EUA e Índia — dado confirmado pela própria OpenAI em entrevistas à imprensa em 2024. A McKinsey Digital 2024 identificou que <strong>67% das empresas brasileiras</strong> fizeram ao menos um experimento com IA generativa, mas apenas <strong>12% tinham alguma implantação em produção</strong>. Esse gap entre experimentação e produção é o maior desafio do ecossistema nacional.
+        </p>
+        <p>
+          O relatório <em>The State of AI in Brazil 2025</em>, produzido pela consultoria IDC Brasil com patrocínio da Microsoft, estimou que o mercado de software e serviços de IA no Brasil movimentou <strong>R$ 5,2 bilhões em 2024</strong> e deve atingir R$ 18 bilhões até 2027 — crescimento médio de 51% ao ano. Os setores que lideram em adoção produtiva: <strong>financeiro e bancário</strong> (detecção de fraude, análise de crédito, atendimento), <strong>varejo e e-commerce</strong> (recomendação, precificação dinâmica, logística) e <strong>telecomunicações</strong> (manutenção preditiva, churn prediction, atendimento).
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Os 3 Gargalos que Freiam a Adoção no Brasil</h2>
+        <ul className="space-y-2 my-6">
+          <li>
+            <strong>Mão de obra qualificada:</strong> O Gupy Relatório de Empregabilidade 2025 documentou aumento de 306% na busca por profissionais com IA, mas a oferta de candidatos qualificados cresceu apenas 40%. O Brasil forma anualmente cerca de 50 mil profissionais de TI, mas o mercado demanda mais de 800 mil. A IA amplia esse gap: uma empresa que antes precisava de 10 programadores agora consegue fazer mais com 7, mas o 8º precisaria ter habilidades específicas que não existem em volume suficiente.
+          </li>
+          <li>
+            <strong>Dado desestruturado e legado:</strong> A maioria das PMEs brasileiras não tem dados históricos estruturados para treinar ou ajustar modelos. Planilhas do Excel de 2010, processos no papel, sistemas legados sem API — esses são os ativos de dados do negócio típico brasileiro. A IA generativa resolve parte desse problema (pode ler documentos não estruturados), mas os projetos mais transformadores exigem dados limpos.
+          </li>
+          <li>
+            <strong>LGPD e cloud soberana:</strong> Setores regulados (saúde, financeiro, seguros, jurídico) enfrentam bloqueio adicional: os dados mais valiosos para treinar IA são exatamente os mais protegidos pela LGPD. Enviar prontuários, contratos ou dados bancários para APIs americanas sem DPA adequado é infração. A ausência de um provedor de cloud soberana brasileiro com infraestrutura de nível enterprise trava projetos que exigem processamento local de dados sensíveis.
+          </li>
+        </ul>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">BNDES, MCTI e a Estratégia Nacional de IA: O Que o Governo Está Fazendo</h2>
+        <p>
+          A <strong>Estratégia Brasileira de Inteligência Artificial (EBIA)</strong>, lançada em 2021 e revisada em 2024, define eixos de atuação do governo federal em IA: educação, pesquisa, infraestrutura, aplicações governamentais e regulação. O MCTI coordena a execução, com participação do BNDES no financiamento de projetos de inovação.
+        </p>
+        <p>
+          Em 2025, o BNDES lançou a linha de crédito <strong>"IA Transforma"</strong> com R$ 1 bilhão disponível para empresas brasileiras que adotem ou desenvolvam soluções de IA — com foco em democratização de acesso para PMEs e startups. O programa exige contrapartida de capacitação de funcionários e preferência por fornecedores nacionais. As Softex, organizações regionais de tecnologia financiadas pelo MCTI, oferecem acesso subsidiado a ferramentas e treinamentos em IA para startups certificadas.
+        </p>
       </div>
-      <EditorialTake category="ia" title={"An\u00e1lise do Marcos: ado\u00e7\u00e3o \u00e9 alta, maturidade ainda n\u00e3o"}>
+
+      <EditorialTake category="ia" title="Análise do Marcos: adoção é alta, maturidade ainda não">
         <p>O Brasil é o terceiro maior usuário do ChatGPT no mundo, mas a foto enganosa: <strong>uso de assistente conversacional não é adoção corporativa de IA</strong>. As pesquisas da McKinsey e do Gartner mostram que a maioria das empresas brasileiras ainda está em PoC ou em piloto isolado de marketing — pouca coisa em produção crítica. A barreira não é técnica, é de governança: LGPD, contratos com Big Tech americanas e a falta de cloud soberana para dados sensíveis (saúde, financeiro regulado) atrasam projetos. Quem quiser surfar isso profissionalmente em 2026 ganha mais aprendendo <strong>integração e segurança</strong> do que treinando modelos.</p>
       </EditorialTake>
-      <ArticleSources category="ia"
+      <ArticleSources
         sources={[
           { title: "Pesquisa Ado\u00e7\u00e3o de IA \u2014 McKinsey", url: "https://www.mckinsey.com/capabilities/quantumblack/our-insights", publisher: "McKinsey", accessedAt: "Maio 2026" },
           { title: "Lei Geral de Prote\u00e7\u00e3o de Dados", url: "https://www.gov.br/anpd/pt-br", publisher: "ANPD", accessedAt: "Maio 2026" },
@@ -195,7 +220,7 @@ const IABrasilAdocao2026 = () => {
 
 
       <RelatedPosts currentSlug="ia-brasil-adocao-2026" />
-      <CommentSection postId="ia-brasil-adocao-2026" postTitle="IA no Brasil em 2026"  category="ia" />
+      <CommentSection category="ia" postId="ia-brasil-adocao-2026" postTitle="IA no Brasil em 2026" />
     </article>
   );
 };

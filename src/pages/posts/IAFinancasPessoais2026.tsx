@@ -4,8 +4,6 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
-import EditorialTake from "@/components/EditorialTake";
-import ArticleSources from "@/components/ArticleSources";
 import { Clock, Calendar, User, ChevronRight, Brain, CheckCircle2, AlertTriangle, Smartphone, ShieldAlert, Sparkles, MessageSquare, Calculator, ListChecks } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -57,11 +55,11 @@ const IAFinancasPessoais2026 = () => {
       </header>
 
       <div className="rounded-2xl overflow-hidden mb-8">
-        <img fetchpriority="high" src={heroImg} alt="IA e finanças pessoais 2026" className="w-full aspect-video object-cover" loading="eager" />
+        <img fetchpriority="high" src={heroImg} alt="Como usar IA para organizar finanças pessoais em 2026 — apps, simulações e limites da inteligência artificial" className="w-full aspect-video object-cover" loading="eager" />
       </div>
 
       <div className="prose prose-lg max-w-none space-y-6">
-        <p className="text-muted-foreground leading-relaxed">
+        <p className="lead text-xl text-muted-foreground">
           Você provavelmente já usa IA no trabalho ou pra criar conteúdo. Mas você já pensou em usar inteligência artificial para cuidar do seu bolso? Em 2026, isso virou realidade acessível — e quem ainda não experimentou está deixando dinheiro (e tempo) na mesa.
         </p>
         <p className="text-muted-foreground leading-relaxed">
@@ -210,6 +208,54 @@ const IAFinancasPessoais2026 = () => {
             Conteúdo informativo. Resultados de IA podem conter imprecisões. Sempre valide cálculos importantes com um profissional.
           </p>
         </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Comparativo: Apps de Finanças com IA no Brasil em 2026</h2>
+        <p>
+          O mercado de controle financeiro pessoal ganhou camada de inteligência artificial em todos os apps líderes. A diferença não está mais apenas em "categorizar automaticamente" — está em insights acionáveis, previsões de gastos e alertas proativos antes que o problema ocorra.
+        </p>
+        <div className="not-prose my-6 space-y-3">
+          {[
+            { app: "Nubank (Tuna / IA nativa)", desc: "O assistente de IA do Nubank, em testes desde 2025, analisa padrões de gasto e sugere metas de economia. Integrado ao feed de transações sem precisar exportar dados. Gratuito para clientes.", destaque: "Sem custo extra para correntistas" },
+            { app: "Mobills", desc: "Categorização automática de transações com ML, alerta de conta chegando ao limite e relatórios de tendência mensal. Plano gratuito com funcionalidades básicas; Premium ~R$ 19,90/mês.", destaque: "Melhor para controle de cartão" },
+            { app: "Olivia", desc: "Focado em Machine Learning para classificação de gastos. Conecta via Open Finance ao banco. Destaque para a funcionalidade de 'modo crise': redirecionamento automático de gastos supérfluos para meta de emergência.", destaque: "Melhor para quem quer automação" },
+            { app: "Organizze", desc: "Interface mais simples, IA para sugestão de orçamento baseado em histórico de 3 meses. Popular entre profissionais liberais. Plano gratuito funcional; Pro ~R$ 16,90/mês.", destaque: "Melhor para autônomos e MEI" },
+            { app: "Itaú Íon", desc: "Assistente IA integrado ao app do Itaú para análise de portfólio, simulações de investimento e renegociação de dívidas. Exclusivo para correntistas.", destaque: "Melhor integração bancária completa" },
+          ].map(({ app, desc, destaque }) => (
+            <div key={app} className="bg-card rounded-xl border border-border p-4">
+              <div className="flex justify-between items-start gap-2 mb-1">
+                <h3 className="font-bold text-sm">{app}</h3>
+                <span className="text-xs text-invest font-medium whitespace-nowrap">{destaque}</span>
+              </div>
+              <p className="text-sm text-muted-foreground">{desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Como Usar ChatGPT ou Claude para Planejar Suas Finanças: Prompts Prontos</h2>
+        <p>
+          IA generativa não substitui um planejador financeiro certificado (CFP), mas pode ser uma ferramenta poderosa para organizar ideias, calcular cenários e revisar seu orçamento. Use esses prompts com dados fictícios ou agregados primeiro para testar — nunca insira CPF, senha ou dados de conta real.
+        </p>
+        <div className="not-prose my-6 space-y-3">
+          {[
+            { titulo: "📊 Análise de Orçamento", prompt: '"Tenho renda mensal de R$ [X]. Meus gastos fixos somam R$ [Y]. Gastos variáveis em torno de R$ [Z]. Me ajude a identificar onde posso economizar e quanto precisaria poupar mensalmente para criar uma reserva de emergência de 6 meses em 12 meses."' },
+            { titulo: "📈 Simulação de Investimento", prompt: '"Se eu investir R$ [X] por mês em um fundo com rendimento de [Y]% ao ano, qual será meu patrimônio em 5, 10 e 20 anos? Calcule também o impacto do Imposto de Renda no resgate, considerando tabela regressiva."' },
+            { titulo: "💳 Análise de Dívida", prompt: '"Tenho 3 dívidas: cartão de crédito R$ [A] a 12% ao mês, empréstimo pessoal R$ [B] a 3% ao mês, e financiamento R$ [C] a 1,2% ao mês. Qual a estratégia mais eficiente para quitar tudo? Compare bola de neve (menor saldo) com avalanche (maior juros)."' },
+            { titulo: "🏠 Comprar vs Alugar", prompt: '"Apartamento custa R$ [X], entrada de R$ [Y], financiamento em 30 anos. Aluguel equivalente seria R$ [Z]/mês. Com inflação de [%] ao ano e taxa SELIC projetada de [%], compensa comprar ou alugar e investir a diferença? Simule os dois cenários em 10 anos."' },
+          ].map(({ titulo, prompt }) => (
+            <div key={titulo} className="bg-card rounded-xl border border-border p-4">
+              <h3 className="font-bold text-sm mb-2">{titulo}</h3>
+              <p className="text-xs text-muted-foreground font-mono bg-secondary rounded p-2">{prompt}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">O Open Finance e o Que Muda Para o Consumidor</h2>
+        <p>
+          O <strong>Open Finance</strong> (antes Open Banking) do Banco Central, em plena operação desde 2022 e expandido em 2025, permite que você autorize o compartilhamento dos seus dados bancários entre diferentes instituições. Na prática: conecte seu histórico do banco A ao app de finanças B, que usa IA para analisar todos os seus dados integrados sem você precisar digitar nada.
+        </p>
+        <p>
+          O benefício imediato é a <strong>portabilidade financeira automatizada</strong>: comparadores de crédito como Bcredi, Creditas e Serasa Crédito usam os dados do Open Finance para buscar a taxa mais baixa disponível no mercado para o seu perfil sem burocracia. O Banco Central reportou que o Open Finance tinha mais de 45 milhões de consentimentos ativos em 2025 — o maior sistema do tipo no mundo em volume de usuários. Para cancelar o compartilhamento a qualquer momento, acesse o aplicativo do seu banco e revogue as permissões em "Open Finance".
+        </p>
       </div>
 
       <div className="flex flex-wrap gap-2 my-8">
@@ -218,24 +264,27 @@ const IAFinancasPessoais2026 = () => {
         ))}
       </div>
 
-      <BackNavigation category="invest" />
 
-      <EditorialTake category="invest" title="Análise do Marcos: IA no bolso — 3 usos que funcionam de verdade">
-        <p>Bancos brasileiros já incorporaram IA em apps populares: Nubank com 'Tuna' (assistente em testes), Itaú com 'Íon' e Bradesco com 'BIA'. Segundo o Relatório de Cidadania Financeira 2024 do Banco Central, 87% dos brasileiros adultos têm conta bancária e 76% usam apps de banco mensalmente. Ferramentas populares de finanças pessoais com IA: Mobills, Organizze e Olivia (esta última usa machine learning para classificar gastos automaticamente).</p>
-        <p className="mt-2">Minha análise: IA em finanças pessoais funciona melhor em três frentes — <strong>categorização automática de gastos</strong>, <strong>simulação de cenários</strong> ('e se eu investir R$ 500/mês por 10 anos') e <strong>revisão de assinaturas esquecidas</strong>. Para investimentos, evite seguir recomendação cega de modelos generalistas; eles não conhecem seu perfil de risco nem a tributação brasileira (IR sobre renda fixa, come-cotas em fundos, isenção em LCI/LCA). ChatGPT e Claude são ótimos copiloto para entender conceitos — não para decisões com seu patrimônio.</p>
+
+      <EditorialTake category="invest" title="Análise do Marcos: IA em finanças pessoais funciona para categorizar, simular e revisar — não para investir por você">
+        <p>
+          Bancos brasileiros já incorporaram IA em apps populares: Nubank com "Tuna" (assistente em testes), Itaú com "Íon" e Bradesco com "BIA". Segundo o Relatório de Cidadania Financeira 2024 do Banco Central, 87% dos brasileiros adultos têm conta bancária e 76% usam apps de banco mensalmente — o que torna a adoção de IA financeira pessoal uma das mais rápidas do mundo entre economias emergentes.
+        </p>
+        <p>
+          Ferramentas populares de finanças pessoais com IA: Mobills, Organizze e Olivia (esta última usa machine learning para classificar gastos automaticamente). ChatGPT e Claude podem ser usados como copilotos financeiros para simulações e revisão de planilhas — desde que você nunca compartilhe dados sensíveis como CPF, senha ou número de cartão. Para investimentos, evite seguir recomendação cega de modelos generalistas; eles não conhecem seu perfil de risco nem a tributação brasileira (IR sobre renda fixa, come-cotas em fundos, isenção em LCI/LCA até R$ 35 mil/mês de venda em ações).
+        </p>
       </EditorialTake>
 
-      <ArticleSources category="invest" sources={[
-        { title: "Relatório de Cidadania Financeira 2024", url: "https://www.bcb.gov.br/cidadaniafinanceira/relatoriocidadania", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
-        { title: "Receita Federal — Tributação de Investimentos e Renda Fixa", url: "https://www.gov.br/receitafederal/pt-br", publisher: "Receita Federal do Brasil", accessedAt: "Maio 2026" },
-        { title: "ANBIMA — Educação Financeira Digital", url: "https://www.anbima.com.br/pt_br/educar/", publisher: "ANBIMA", accessedAt: "Maio 2026" },
-        { title: "Mobills — Gestão Financeira com IA", url: "https://www.mobills.com.br/", publisher: "Mobills", accessedAt: "Maio 2026" },
-        { title: "CVM — Portal do Investidor", url: "https://www.investidor.gov.br/", publisher: "Comissão de Valores Mobiliários (CVM)", accessedAt: "Maio 2026" },
-        { title: "Banco Central — Open Finance e Inovação Financeira", url: "https://www.bcb.gov.br/estabilidadefinanceira/openfinance", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
+      <ArticleSources sources={[
+        { title: "Banco Central — Relatório de Cidadania Financeira 2024", url: "https://www.bcb.gov.br/cidadaniafinanceira/relatoriocidadania", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
+        { title: "Receita Federal — Tributação de Investimentos", url: "https://www.gov.br/receitafederal/pt-br", publisher: "Receita Federal", accessedAt: "Maio 2026" },
+        { title: "ANBIMA — Educação Financeira", url: "https://www.anbima.com.br/pt_br/educar/", publisher: "ANBIMA", accessedAt: "Maio 2026" },
+        { title: "Mobills — App de Controle Financeiro com IA", url: "https://www.mobills.com.br/", publisher: "Mobills", accessedAt: "Maio 2026" },
+        { title: "CVM — Portal do Investidor", url: "https://www.investidor.gov.br/", publisher: "CVM", accessedAt: "Maio 2026" },
       ]} />
 
       <RelatedPosts currentSlug="ia-para-financas-pessoais-2026" />
-      <CommentSection postId="ia-para-financas-pessoais-2026"  category="invest" />
+      <CommentSection category="invest" postId="ia-para-financas-pessoais-2026" postTitle="Como usar IA para organizar suas finanças em 2026" />
     </article>
   );
 };

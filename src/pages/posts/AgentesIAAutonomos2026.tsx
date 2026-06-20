@@ -202,10 +202,6 @@ const AgentesIAAutonomos2026 = () => {
           ))}
         </div>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Você já usa algum agente de IA autônomo no trabalho? 🤖</h3>
-          <p className="text-muted-foreground">Conta nos comentários qual ferramenta e para que você usa! 👇</p>
-        </div>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: o mercado brasileiro ainda confunde agente com chatbot turbinado">
@@ -214,7 +210,7 @@ const AgentesIAAutonomos2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources category="ia" sources={[
+      <ArticleSources sources={[
         { title: "Deloitte — AI Agents Market Forecast 2026–2030", url: "https://www2.deloitte.com/us/en/insights/topics/ai-and-the-future-of-work.html", publisher: "Deloitte Insights", accessedAt: "Maio 2026" },
         { title: "Anthropic — Claude Code: Agentic Coding", url: "https://www.anthropic.com/claude-code", publisher: "Anthropic", accessedAt: "Maio 2026" },
         { title: "Google Cloud — Agentspace e Agent2Agent Protocol", url: "https://cloud.google.com/agentspace", publisher: "Google Cloud", accessedAt: "Maio 2026" },
@@ -224,7 +220,7 @@ const AgentesIAAutonomos2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="agentes-ia-autonomos-2026" />
-      <CommentSection postId="agentes-ia-autonomos-2026" postTitle="Agentes de IA Autônomos: O que São, Como Funcionam e Por Que Vão Mudar Tudo em 2026"  category="ia" />
+      <CommentSection category="ia" postId="agentes-ia-autonomos-2026" postTitle="Agentes de IA Autônomos: O que São, Como Funcionam e Por Que Vão Mudar Tudo em 2026" />
     </article>
   );
 };

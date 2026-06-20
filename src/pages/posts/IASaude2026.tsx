@@ -6,7 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { ArrowLeft, Clock, User, Calendar, Heart, Stethoscope, Brain, Pill } from "lucide-react";
+import {, Clock, User, Calendar, Heart, Stethoscope, Brain, Pill } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
@@ -181,6 +181,25 @@ const IASaude2026 = () => {
             <p className="text-sm text-muted-foreground mb-0">Não diretamente. Detecta fibrilação atrial e variações de ritmo que aumentam o risco. Dor no peito persistente continua sendo emergência — chame o SAMU 192.</p>
           </div>
         </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">IA na Saúde no Brasil: O Que o CFM, ANVISA e SUS Já Fazem</h2>
+        <p>
+          A regulamentação brasileira de IA na saúde avançou concretamente em 2024-2025. A <strong>ANVISA</strong> atualizou em 2024 a Resolução RDC 657/2022 para incluir dispositivos de software médico com componentes de IA — agora classificados como Dispositivos Médicos de Software (DMAS), sujeitos a registro sanitário. O prazo para adequação de produtos já comercializados era março de 2025. Isso significa que qualquer app de saúde com IA que opera no Brasil precisou — ou deveria ter — passado por essa regularização.
+        </p>
+        <p>
+          O <strong>Conselho Federal de Medicina (CFM)</strong> publicou em 2024 a Resolução CFM 2.314/2024 atualizando as normas de telemedicina, incluindo diretrizes sobre uso de IA em teleconsultas. O ponto mais importante: a <strong>responsabilidade pelo diagnóstico e decisão terapêutica continua sendo exclusivamente do médico</strong>, mesmo quando IA participa do processo. O uso de IA como ferramenta de suporte é permitido; o uso de IA como tomadora de decisão clínica não.
+        </p>
+        <p>
+          No <strong>SUS</strong>, o Ministério da Saúde tem projetos de IA em três frentes principais: <strong>SISCAN com IA</strong> (triagem de exames de câncer de mama e colo de útero), <strong>e-SUS com análise preditiva</strong> (identificação de pacientes com risco de agravamento) e <strong>regulação hospitalar com IA</strong> (otimização de leitos e agendamentos na rede federal). Os projetos ainda são pilotos em 2026, mas a base tecnológica está sendo construída.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">IA Aprovada pela FDA e ANVISA: O que Já Está em Uso Clínico</h2>
+        <ul className="space-y-2 my-6">
+          <li><strong>IDx-DR (Digital Diagnostics):</strong> Primeiro dispositivo de IA aprovado pela FDA (2018) para diagnóstico autônomo sem médico presente — detecta retinopatia diabética em imagens de fundo de olho com 87,2% de sensibilidade. Disponível em clínicas brasileiras parceiras da Zeiss desde 2023.</li>
+          <li><strong>Viz.ai (AVC):</strong> Aprovado pela FDA e em uso em grandes hospitais brasileiros — detecta AVCs isquêmicos em tomografias e alerta equipes em minutos, reduzindo o tempo até trombectomia.</li>
+          <li><strong>Paige.AI (oncologia):</strong> IA para análise de patologia digital — identifica células cancerígenas em lâminas histológicas com precisão superior à de patologistas em alguns subtipos tumorais.</li>
+          <li><strong>Apple Watch ECG:</strong> Aprovado pela ANVISA em 2024 para o mercado brasileiro (Series 9 e Watch Ultra 2). Detecta fibrilação atrial com sensibilidade de 98,3% segundo dados da Apple submetidos à FDA.</li>
+        </ul>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: IA médica salva vidas em triagem, mas precisa de médico para decidir">
@@ -194,7 +213,7 @@ const IASaude2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources category="ia" sources={[
+      <ArticleSources sources={[
         { title: "FDA — AI/ML-Enabled Medical Devices (lista oficial)", url: "https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices", publisher: "U.S. Food and Drug Administration", accessedAt: "Maio 2026" },
         { title: "DeepMind — AlphaFold 3 (Nature, 2024)", url: "https://deepmind.google/discover/blog/alphafold-3-predicts-the-structure-and-interactions-of-all-of-lifes-molecules/", publisher: "Google DeepMind", accessedAt: "Maio 2026" },
         { title: "Apple Heart Study — Stanford / JAMA Cardiology", url: "https://www.nejm.org/doi/full/10.1056/NEJMoa1901183", publisher: "NEJM", accessedAt: "Maio 2026" },
@@ -203,7 +222,7 @@ const IASaude2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="ia-saude-2026-diagnosticos-futuro" />
-      <CommentSection postId="ia-saude-2026-diagnosticos-futuro" postTitle="IA para Saúde 2026: Diagnósticos, Monitoramento e o Futuro da Medicina"  category="ia" />
+      <CommentSection category="ia" postId="ia-saude-2026-diagnosticos-futuro" postTitle="IA para Saúde 2026: Diagnósticos, Monitoramento e o Futuro da Medicina" />
     </article>
   );
 };

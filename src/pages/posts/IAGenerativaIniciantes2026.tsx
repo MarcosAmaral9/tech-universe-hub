@@ -122,6 +122,38 @@ const IAGenerativaIniciantes2026 = () => {
           <li><strong>Ignorar privacidade:</strong> Não insira dados de clientes, CPF ou informações confidenciais sem verificar a política da plataforma.</li>
           <li><strong>Querer tudo de uma vez:</strong> Foco em uma ferramenta por mês é mais valioso que testar 20 superficialmente.</li>
         </ul>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">O Estado Atual da IA Generativa: Modelos e Números Reais</h2>
+        <p>
+          Segundo o <strong>Stanford AI Index 2024</strong>, o custo de treinar um modelo do tamanho do GPT-3 caiu <strong>280 vezes</strong> entre 2022 e 2024 — o que explica por que hoje temos acesso gratuito a modelos que dois anos atrás custariam milhões de dólares para usar. Esse mesmo relatório documentou que o número de modelos de linguagem lançados publicamente cresceu de 3 em 2019 para mais de 150 em 2024, com qualidade crescente.
+        </p>
+        <p>
+          Os principais modelos em 2026 e seus pontos fortes documentados: <strong>Claude Sonnet 4.6</strong> (Anthropic) — melhor para escrita em português e análise de documentos longos (contexto 200k tokens); <strong>GPT-5.4</strong> (OpenAI) — melhor para raciocínio estruturado e geração de imagem via DALL-E; <strong>Gemini 2.5 Pro</strong> (Google) — melhor para documentos muito longos (1M tokens) e integração com Google Workspace; <strong>Llama 4</strong> (Meta, open-source) — melhor para quem precisa rodar localmente sem enviar dados para nuvem; <strong>DeepSeek V4</strong> (China) — melhor custo-benefício via API (US$ 0,14/M tokens de input).
+        </p>
+        <p>
+          Um dado importante do <strong>Microsoft Work Trend Index 2025</strong>: <strong>78% dos profissionais</strong> que usam IA no trabalho trouxeram a ferramenta por conta própria, sem que o RH ou TI da empresa soubesse — fenômeno chamado de "Bring Your Own AI" (BYOAI). Isso cria um risco regulatório real: dados de clientes sendo enviados a plataformas sem DPA assinado. Para uso profissional, sempre verifique a política de privacidade da ferramenta antes de inserir qualquer dado sensível.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Recursos Gratuitos para Começar: Cursos, Comunidades e Canais</h2>
+        <div className="not-prose my-6 space-y-3">
+          {[
+            { rec: "DeepLearning.AI (Coursera)", tipo: "Curso", desc: "\"ChatGPT Prompt Engineering for Developers\" — co-criado pela OpenAI e DeepLearning.AI. Gratuito para auditar. 1h30 de conteúdo prático com código Python." },
+            { rec: "Google AI Essentials", tipo: "Curso", desc: "Curso gratuito do Google sobre IA generativa para não-técnicos. Certificado reconhecido. Disponível em português." },
+            { rec: "Anthropic Prompt Engineering Guide", tipo: "Documentação", desc: "Guia oficial da Anthropic sobre como escrever prompts eficazes para o Claude. Gratuito, com exemplos práticos em PT-BR." },
+            { rec: "Reddit r/ChatGPT e r/ClaudeAI", tipo: "Comunidade", desc: "Comunidades internacionais com casos de uso reais, bugs relatados e prompt sharing. Bom para ver o que outros estão construindo." },
+            { rec: "Comunidade IA Descomplicada (Discord BR)", tipo: "Comunidade", desc: "Comunidade brasileira de IA com mais de 50.000 membros. Canais por ferramenta, compartilhamento de prompts e suporte em português." },
+          ].map(({ rec, tipo, desc }) => (
+            <div key={rec} className="bg-card rounded-xl border border-border p-4">
+              <div className="flex justify-between items-start gap-2 mb-1">
+                <h3 className="font-bold text-sm">{rec}</h3>
+                <span className="text-xs px-2 py-0.5 bg-ia/10 text-ia rounded-full">{tipo}</span>
+              </div>
+              <p className="text-sm text-muted-foreground">{desc}</p>
+            </div>
+          ))}
+        </div>
+
+
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: 15 minutos por dia de prática vale mais do que qualquer curso de IA">
@@ -133,7 +165,7 @@ const IAGenerativaIniciantes2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources category="ia" sources={[
+      <ArticleSources sources={[
         { title: "Stanford HAI — AI Index Report 2024", url: "https://hai.stanford.edu/research/ai-index-2024", publisher: "Stanford HAI", accessedAt: "Maio 2026" },
         { title: "Harvard Business School — Navigating the Jagged Technological Frontier", url: "https://www.hbs.edu/faculty/Pages/item.aspx?num=64700", publisher: "HBS", accessedAt: "Maio 2026" },
         { title: "OpenAI — Modelos e API (GPT-4o, o3)", url: "https://platform.openai.com/docs/models", publisher: "OpenAI", accessedAt: "Maio 2026" },
@@ -142,7 +174,7 @@ const IAGenerativaIniciantes2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="ia-generativa-iniciantes-2026-guia" />
-      <CommentSection postId="ia-generativa-iniciantes-2026-guia" postTitle="IA Generativa para Iniciantes 2026: Do Zero ao Avançado"  category="ia" />
+      <CommentSection category="ia" postId="ia-generativa-iniciantes-2026-guia" postTitle="IA Generativa para Iniciantes 2026: Do Zero ao Avançado" />
     </article>
   );
 };

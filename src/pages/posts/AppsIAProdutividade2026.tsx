@@ -135,6 +135,43 @@ const AppsIAProdutividade2026 = () => {
             <p className="text-sm text-muted-foreground mb-0">A maioria cobra em dólar via cartão internacional (IOF 3,38%). Perplexity via Vivo e Zapier via parceria Cielo oferecem cobrança em BRL para empresas.</p>
           </div>
         </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Apps que Não Valem a Assinatura em 2026</h2>
+        <p>
+          Para cada app que merece o custo, há três que cobram caro por funcionalidades mediocres ou por acessar modelos que você consegue usar de graça em outras plataformas. Três exemplos baseados em testes e feedbacks da comunidade:
+        </p>
+        <ul className="space-y-2 my-6">
+          <li><strong>Apps de "geração de textos" no nicho de copywriting:</strong> Plataformas como Jasper ou Copy.ai cobram US$ 39–$99/mês por interfaces com GPT-4o que você acessa por US$ 20/mês pelo ChatGPT Plus diretamente, com muito mais flexibilidade. O valor está nos templates — e templates você pode criar nos 10 primeiros dias de uso do ChatGPT.</li>
+          <li><strong>Apps de "IA para produtividade" genéricos no Play Store:</strong> A Play Store brasileira está saturada de apps com ícone de robô que cobram assinatura de R$ 29–R$ 79/mês e por baixo acessam a API gratuita ou o ChatGPT-3.5. Sempre verifique o modelo por baixo antes de pagar.</li>
+          <li><strong>Plataformas de resumo de PDF com IA:</strong> Se você já tem o Claude.ai gratuito (contexto de 200k tokens que cabe qualquer PDF), pagar por uma ferramenta de "resumo de PDF" separada não faz sentido financeiro. O Google NotebookLM cobre esse caso de uso gratuitamente.</li>
+        </ul>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Como Montar Seu Stack de IA Sem Gastar Mais de R$ 100/Mês</h2>
+        <div className="not-prose my-6 p-5 bg-secondary/50 rounded-xl border border-border">
+          <h3 className="font-bold text-sm mb-3">Stack gratuito (R$ 0/mês) — cobre 80% das necessidades</h3>
+          <ul className="text-sm text-muted-foreground space-y-1 mb-4">
+            <li>• <strong>ChatGPT gratuito:</strong> Chat + DALL-E básico + análise de arquivo</li>
+            <li>• <strong>Claude.ai gratuito:</strong> 200k tokens de contexto, melhor para documentos longos</li>
+            <li>• <strong>Perplexity gratuito</strong> (ou via Vivo): pesquisa com fontes citadas</li>
+            <li>• <strong>Google NotebookLM:</strong> Q&A sobre seus próprios PDFs + podcast gerado</li>
+            <li>• <strong>Canva Magic Studio:</strong> Design com IA integrada, plano gratuito funcional</li>
+          </ul>
+          <h3 className="font-bold text-sm mb-3">Stack pago essencial (~R$ 110/mês) — para uso profissional diário</h3>
+          <ul className="text-sm text-muted-foreground space-y-1">
+            <li>• <strong>Claude Pro (US$ 20 ≈ R$ 110):</strong> Melhor escrita, código e análise de documentos — o único que justifica assinatura para a maioria dos profissionais brasileiros</li>
+            <li>• Todos os gratuitos acima, que continuam complementares</li>
+          </ul>
+        </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Tendências: O Que Muda no Ecossistema de Apps de IA nos Próximos 12 Meses</h2>
+        <p>
+          Três tendências verificadas que vão remodelar os apps de IA para produtividade até o final de 2026:
+        </p>
+        <ul className="space-y-2 my-6">
+          <li><strong>IA nativa no sistema operacional:</strong> O Apple Intelligence (disponível em iPhones com A17 Pro e A18 no Brasil desde março de 2026) e o Google AI Core (Android 16) estão tornando a IA um recurso do sistema, não de apps separados. Isso vai commoditizar funções básicas como resumo, reescrita e busca inteligente.</li>
+          <li><strong>Agentes substituindo apps de tarefa única:</strong> O mesmo movimento do SaaSpocalypse está chegando aos apps de produtividade. Em vez de abrir Otter para transcrever + Notion para anotar + Zapier para automatizar, agentes como o Claude Cowork fazem tudo em uma conversa. Apps que não se integram a esse fluxo tendem a perder relevância.</li>
+          <li><strong>Preços caindo, mas qualidade subindo:</strong> O custo de inferência por token caiu ~10× entre 2023 e 2025. Isso significa que funcionalidades que eram premium hoje serão gratuitas em 12 meses — quem paga hoje por geração de imagem, transcrição e resumo terá essas funções de graça na próxima geração de planos.</li>
+        </ul>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: câmbio e LGPD decidem qual app de IA vale para o brasileiro">
@@ -143,7 +180,7 @@ const AppsIAProdutividade2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources category="ia" sources={[
+      <ArticleSources sources={[
         { title: "Notion AI — Pricing and capabilities", url: "https://www.notion.com/help/notion-ai-faqs", publisher: "Notion Labs", accessedAt: "Maio 2026" },
         { title: "Anthropic — Claude 3.5 Sonnet (200K context)", url: "https://www.anthropic.com/news/claude-3-5-sonnet", publisher: "Anthropic", accessedAt: "Maio 2026" },
         { title: "Microsoft & LinkedIn — Work Trend Index 2024", url: "https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part", publisher: "Microsoft WorkLab", accessedAt: "Maio 2026" },
@@ -152,7 +189,7 @@ const AppsIAProdutividade2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="melhores-apps-ia-produtividade-2026" />
-      <CommentSection postId="melhores-apps-ia-produtividade-2026" postTitle="Os 10 Melhores Apps de IA para Produtividade em 2026"  category="ia" />
+      <CommentSection category="ia" postId="melhores-apps-ia-produtividade-2026" postTitle="Os 10 Melhores Apps de IA para Produtividade em 2026" />
     </article>
   );
 };
