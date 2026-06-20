@@ -321,6 +321,7 @@ const App = () => (
                 <Route path="/post/bannerlord-arvores-tropas-completo-2026" element={<BannerlordArvoresTropas />} />
                 <Route path="/post/bannerlord-melhores-tropas-tier-list-2026" element={<BannerlordMelhoresTropas />} />
                 <Route path="/post/bannerlord-territorios-faccoes-calradia-2026" element={<BannerlordTerritoriosFaccoes />} />
+                <Route path="/post/bannerlord-war-sails-expansao-2026" element={<BannerlordWarSailsExpansao />} />
                 <Route path="/post/crimson-desert-guia-completo" element={<CrimsonDesertGuiaCompleto />} />
                 <Route path="/post/crimson-desert-personagens-kliff-damiane-oongka" element={<CrimsonDesertPersonagens />} />
                 <Route path="/post/crimson-desert-patches-atualizacoes-2026" element={<CrimsonDesertPatches />} />
