@@ -276,6 +276,8 @@ const EldenRingNightreign2026 = () => {
 
 
 
+      </div>
+
       <EditorialTake category="geek" title="Análise do Marcos: vale o investimento para o jogador brasileiro?">
         <p>
           Como entusiasta de Souls-likes que já passou centenas de horas em Elden Ring base, encaro
