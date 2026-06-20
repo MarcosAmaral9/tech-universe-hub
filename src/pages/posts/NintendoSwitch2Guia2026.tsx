@@ -182,12 +182,113 @@ const NintendoSwitch2Guia2026 = () => {
             </div>
           ))}
         </div>
+      
+        <h2 className="text-2xl font-bold mt-10 mb-4">DLSS no Switch 2 — A Verdadeira Inovação Técnica</h2>
+        <p>
+          O recurso mais transformador do Switch 2 não é a tela maior ou o processador mais rápido — é o suporte a <strong>DLSS (Deep Learning Super Sampling)</strong> da NVIDIA, tecnologia que permite renderizar jogos em resolução interna baixa e fazer upscale com IA para 4K com qualidade quase indistinguível da renderização nativa. Isso resolve o maior problema histórico do Switch original: hardware fraco demais para rodar jogos modernos em qualidade aceitável.
+        </p>
+        <p>
+          Com DLSS, jogos como Cyberpunk 2077 e Elden Ring — impensáveis no Switch original — rodam no Switch 2 com qualidade visual surpreendente. A Digital Foundry, em análise técnica detalhada, descreveu o port de Elden Ring como "genuinamente jogável, com quedas de frame ocasionais em áreas de muita densidade gráfica, mas overall impressionante para um portátil." Isso reposiciona o Switch 2 não apenas como sucessor do Switch original, mas como concorrente direto do Steam Deck em capacidade de rodar jogos AAA recentes.
+        </p>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Você já comprou o Switch 2? 🎮</h3>
-          <p className="text-muted-foreground">Conta nos comentários o que achou! 👇</p>
-        </div>
-      </div>
+        <h2 className="text-2xl font-bold mt-10 mb-4">GameChat e a Aposta Social da Nintendo</h2>
+        <p>
+          O recurso GameChat, ativado pelo novo botão C, representa a primeira tentativa seria da Nintendo de competir com funcionalidades sociais que Xbox e PlayStation já oferecem há anos. Com suporte a chamadas de voz e vídeo (usando câmera USB opcional vendida separadamente), grupos de até 12 pessoas podem se comunicar durante o jogo — uma mudança cultural significativa para uma empresa historicamente conservadora em recursos online.
+        </p>
+        <p>
+          A implementação não é perfeita: usuários relataram em fóruns que a qualidade de vídeo da câmera oficial da Nintendo é inferior a webcams USB genéricas de preço similar, e o sistema de chat por voz tem leve latência em comparação com Discord ou Party Chat do Xbox. Ainda assim, é a base sobre a qual a Nintendo pretende construir uma experiência social mais robusta nas próximas atualizações de firmware.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Retrocompatibilidade — Como Funciona na Prática</h2>
+        <p>
+          A Nintendo confirmou compatibilidade com praticamente toda a biblioteca física e digital do Switch original — mais de 6.500 jogos. Na prática, isso significa que cartuchos físicos do Switch 1 funcionam diretamente no Switch 2, e jogos digitais da conta Nintendo são automaticamente acessíveis através do eShop no novo console. Vale notar que jogos do Switch 1 não recebem upgrade automático de performance — eles rodam na mesma resolução e taxa de quadros originais, a menos que a desenvolvedora lance um patch específico "Switch 2 Enhanced" (como aconteceu com vários títulos de lançamento).
+        </p>
+      
+        <h2 className="text-2xl font-bold mt-10 mb-4">Mouse Mode — A Funcionalidade Mais Subestimada</h2>
+        <p>
+          Entre todas as novidades do Switch 2, o Mouse Mode dos Joy-Con 2 é provavelmente a menos compreendida pelo público geral, mas a mais interessante para desenvolvedores de jogos de estratégia e simulação. Ao deslizar o Joy-Con sobre uma superfície plana, o sensor óptico na base funciona exatamente como um mouse de computador — permitindo precisão de mira e seleção que o joystick analógico tradicional nunca conseguiu replicar adequadamente.
+        </p>
+        <p>
+          Metroid Prime 4: Beyond foi o primeiro grande título a implementar essa funcionalidade de forma central ao gameplay, permitindo que jogadores escolham entre controle tradicional com analógico ou Mouse Mode para mira mais precisa em momentos de combate intenso. Desenvolvedores terceirizados já sinalizaram interesse em portar jogos de estratégia em tempo real e simulação de gestão — gêneros historicamente difíceis de jogar em consoles sem mouse — usando essa funcionalidade.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">A Estratégia de Preço da Nintendo e o Mercado Brasileiro</h2>
+        <p>
+          O preço de R$ 2.499 no Brasil reflete a estratégia histórica da Nintendo de precificação regional ajustada por impostos de importação e câmbio — uma realidade que torna consoles japoneses e americanos consistentemente mais caros no mercado brasileiro do que em outros países. Comparado ao preço americano de US$ 449 (aproximadamente R$ 2.300 na conversão direta sem impostos), o valor de R$ 2.499 inclui margem de distribuição nacional, mas ainda representa um aumento percentual menor do que consoles anteriores sofreram no lançamento.
+        </p>
+        <p>
+          Para o consumidor brasileiro avaliando a compra, vale considerar que a Nintendo historicamente reduz preços de consoles entre 12 e 18 meses após o lançamento — o Switch original, lançado a R$ 1.299 em 2017, chegou a ser vendido por R$ 999 já em 2019 durante promoções. Se o padrão se repetir, uma queda de preço para a faixa de R$ 1.999–2.199 é razoável esperar entre o final de 2027 e início de 2028.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Switch 2 Edition — Os Jogos Remasterizados</h2>
+        <p>
+          Além dos jogos totalmente novos, a Nintendo lançou versões "Switch 2 Edition" de vários títulos do Switch original — atualizações pagas que aproveitam o hardware mais potente para entregar resolução 4K, taxa de quadros estabilizada em 60fps e tempos de carregamento reduzidos. The Legend of Zelda: Tears of the Kingdom e Breath of the Wild receberam esse tratamento, assim como Super Mario Odyssey. O preço dessas atualizações varia entre R$ 79,90 e R$ 119,90 para quem já possui o jogo original, ou inclusas na versão completa para novos compradores.
+        </p>
+      
+        <h2 className="text-2xl font-bold mt-10 mb-4">Acessórios Essenciais — O Que Vale a Pena Comprar</h2>
+        <p>
+          Além do console em si, o ecossistema de acessórios do Switch 2 já se expandiu consideravelmente nos primeiros meses após o lançamento. O Pro Controller Switch 2, vendido separadamente por R$ 449,90, é considerado pela maioria dos reviewers como upgrade essencial para quem joga sessões longas — o conforto ergonômico supera significativamente os Joy-Con padrão, especialmente para jogos competitivos onde precisão de input é crítica.
+        </p>
+        <p>
+          A câmera USB oficial da Nintendo, necessária para aproveitar o GameChat em sua totalidade, custa R$ 299,90 — preço considerado alto pela comunidade em comparação com webcams USB genéricas de qualidade similar disponíveis por menos da metade do valor. Para quem não pretende usar a funcionalidade de chamada de vídeo regularmente, esse acessório pode ser dispensável, já que o GameChat funciona perfeitamente bem apenas com áudio.
+        </p>
+        <p>
+          Capas protetoras de terceiros já inundaram o mercado, com opções que vão de R$ 39,90 até R$ 199,90 para modelos com proteção reforçada e compartimentos para cartões de jogo. Vale notar que, devido às dimensões maiores do Switch 2 em relação ao original, acessórios do Switch 1 não são compatíveis — um detalhe que pega muitos consumidores de surpresa ao tentar reaproveitar capas e grips antigos.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">O Futuro do Catálogo — O Que Está Confirmado para o Resto de 2026</h2>
+        <p>
+          A Nintendo já confirmou um calendário robusto de lançamentos para o restante de 2026, incluindo um novo título da franquia Animal Crossing reformulado para aproveitar o hardware mais potente, uma expansão significativa de conteúdo para Pokémon Legends Z-A, e o aguardado retorno de F-Zero em formato totalmente novo — primeira entrada principal da franquia em mais de duas décadas. Esses lançamentos devem fortalecer ainda mais a proposta de valor do console ao longo do ano, especialmente para famílias que adiaram a compra esperando mais conteúdo disponível.
+        </p>
+      
+        <h2 className="text-2xl font-bold mt-10 mb-4">Comparação com a Concorrência Direta</h2>
+        <p>
+          No segmento de consoles portáteis premium, o Switch 2 entra em competição direta com o Steam Deck OLED da Valve e o ROG Ally X da Asus. A vantagem da Nintendo permanece sendo o catálogo exclusivo first-party — ninguém mais pode oferecer Zelda, Mario ou Metroid — enquanto a vantagem do Steam Deck é o acesso à biblioteca completa da Steam, incluindo milhares de jogos indies e AAA recentes via emulação de Windows ou suporte nativo Linux através do Proton.
+        </p>
+        <p>
+          Para o consumidor que já possui um PC gamer robusto, o Steam Deck funciona como extensão portátil da biblioteca já adquirida, sem custo adicional de jogos. Para quem busca uma experiência mais curada e família-amigável, com jogos desenhados especificamente para o hardware e sem necessidade de configuração técnica, o Switch 2 continua sendo a escolha mais direta e acessível em termos de curva de aprendizado.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Perguntas Frequentes Sobre o Switch 2</h2>
+        <p>
+          <strong>Meus jogos físicos do Switch 1 funcionam no Switch 2?</strong> Sim, a vasta maioria dos cartuchos físicos do Switch original são compatíveis e funcionam diretamente no slot de cartão do Switch 2, sem necessidade de patches ou downloads adicionais.
+        </p>
+        <p>
+          <strong>Posso usar meus Joy-Con antigos no Switch 2?</strong> Sim, mas com limitações — Joy-Con do Switch 1 funcionam no Switch 2 para jogabilidade básica, porém não suportam o recurso Mouse Mode exclusivo dos Joy-Con 2, que depende de hardware sensor específico presente apenas nos novos controles.
+        </p>
+        <p>
+          <strong>Vale a pena para quem só joga ocasionalmente?</strong> Para jogadores casuais satisfeitos com a biblioteca atual do Switch original, a recomendação é aguardar uma queda de preço ou esperar até que mais exclusivos justifiquem o upgrade — a menos que jogos específicos como Mario Kart World ou Metroid Prime 4 sejam prioridade imediata.
+        </p>
+      
+        <h2 className="text-2xl font-bold mt-10 mb-4">A Bateria e a Experiência Portátil no Dia a Dia</h2>
+        <p>
+          A duração de bateria entre 4 e 8 horas (dependendo da intensidade gráfica do jogo) representa melhoria considerável sobre o Switch original, mas ainda fica abaixo do que dispositivos puramente portáteis dedicados oferecem. Para uso real no dia a dia — trajetos de transporte público, viagens, ou simplesmente jogar no sofá sem estar conectado ao dock — essa duração é suficiente para a maioria das sessões de jogo casuais, embora jogadores que pretendem maratonas longas sem acesso a tomada devem considerar adquirir um power bank USB-C compatível.
+        </p>
+        <p>
+          O tempo de carregamento completo do Switch 2, de aproximadamente 3 horas via cabo USB-C padrão, é consistente com a maioria dos dispositivos eletrônicos modernos dessa categoria. A Nintendo também manteve a capacidade de jogar enquanto carrega, uma funcionalidade que parece básica mas que historicamente diferenciou o Switch de outros portáteis dedicados no mercado.
+        </p>
+      
+        <h2 className="text-2xl font-bold mt-10 mb-4">Veredito Final</h2>
+        <p>
+          O Nintendo Switch 2 cumpre a promessa de ser o portátil mais poderoso já lançado pela empresa, com DLSS resolvendo de forma elegante a maior limitação histórica da linha Switch. Para fãs da Nintendo com orçamento disponível, é um upgrade que vale o investimento desde já. Para quem está no limite do orçamento ou satisfeito com o Switch original, esperar pelo crescimento do catálogo exclusivo ou por uma eventual queda de preço continua sendo estratégia razoável e sem grandes perdas a curto prazo.
+        </p>
+      
+        <h2 className="text-2xl font-bold mt-10 mb-4">Disponibilidade e Estoque no Brasil</h2>
+        <p>
+          Desde o lançamento, a disponibilidade do Switch 2 no varejo brasileiro tem sido instável, com lojas frequentemente esgotando estoque rapidamente após reposições. A recomendação para quem busca a edição padrão ou bundles especiais é acompanhar diretamente os canais oficiais de varejistas autorizados, já que revendedores não oficiais frequentemente praticam ágio significativo acima do preço sugerido pela Nintendo do Brasil.
+        </p>
+      
+        <p>
+          Para quem decidir aguardar, vale acompanhar regularmente os anúncios da Nintendo do Brasil sobre novos lotes e bundles especiais, já que edições limitadas ligadas a lançamentos específicos costumam aparecer periodicamente ao longo do ano.
+        </p>
+
+
+
+
+
+
+
+
       <EditorialTake category="geek" title={"An\u00e1lise do Marcos: Switch 2 acerta no hardware, erra no pre\u00e7o Brasil"}>
         <p>O Switch 2 é o salto geracional que a Nintendo precisava — DLSS, tela maior, joycons magnéticos — e tecnicamente ele entrega. Mas no Brasil a história é outra: <strong>importação com imposto e câmbio na casa dos R$ 4.000+</strong> coloca o console na mesma faixa de um PS5 Slim com SSD extra, e isso muda completamente a tese de 'console portátil acessível' que vendeu o Switch 1. Para quem já é fã da Nintendo (Zelda, Mario, Smash), vale; para quem está escolhendo plataforma agora, faz mais sentido esperar a primeira queda de preço ou olhar Steam Deck OLED, que já tem catálogo enorme em PT-BR e roda emulação nativa.</p>
       </EditorialTake>
