@@ -284,7 +284,9 @@ const DiabloLordOfHatred2026 = () => {
 
 
 
-            <EditorialTake category="geek" title={'Análise do Marcos: a Blizzard precisa entregar conteúdo, não cinemática'}>
+      </div>
+
+      <EditorialTake category="geek" title={'Análise do Marcos: a Blizzard precisa entregar conteúdo, não cinemática'}>
         <p>Diablo IV vendeu bem no lançamento e perdeu jogadores rápido. O motivo é estrutural: <strong>endgame raso e temporadas que pediam grind acima do divertido</strong>. Lord of Hatred chega num momento em que a concorrência endureceu — Path of Exile 2, Last Epoch e Diablo Immortal disputam o mesmo nicho. Para a expansão funcionar, o teste é simples: oferecer pelo menos 100 horas de conteúdo único (não reciclado), um sistema de itens com chase pieces verdadeiros e uma classe nova que muda o meta. Se a Blizzard repetir o erro de Vessel of Hatred (conteúdo curto, monetização agressiva), vai assistir à comunidade migrar definitivamente — e no Brasil, onde o preço de R$ 250+ pesa, segunda chance é raridade.</p>
       </EditorialTake>
       <ArticleSources category="geek"

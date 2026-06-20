@@ -295,7 +295,9 @@ const GtaViNovembro2026 = () => {
 
 
 
-        <EditorialTake category="geek" title="Análise do Marcos: dois adiamentos, um lançamento que vale a espera">
+      </div>
+
+      <EditorialTake category="geek" title="Análise do Marcos: dois adiamentos, um lançamento que vale a espera">
           <p>GTA VI confirmado para 26 de maio de 2026 (segundo a Take-Two) e adiado novamente para o então novo ‘holiday window’ é típico Rockstar: preferível atrasar e entregar a 96+ no Metacritic do que repetir o desastre do GTA Trilogy. Para o brasileiro, a notícia ruim é o preço — R$ 350 a R$ 400 é o piso esperado para a edição padrão, refletindo o câmbio e a estratégia de upselling do mercado AAA pós-2024.</p>
         </EditorialTake>
 
