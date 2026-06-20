@@ -60,6 +60,20 @@ const articles = [
     btn: "Ver Territórios",
     badge: "🗺️ Novo",
   },
+  {
+    slug: "bannerlord-war-sails-expansao-2026",
+    title: "Expansão War Sails",
+    subtitle: "Guia Completo da Expansão Naval",
+    desc: "Combate naval, drakkars, fogo grego, estaleiros e a chegada dos Nords como 9ª cultura jogável — tudo sobre a primeira grande expansão de Bannerlord.",
+    image: bannerlordWarSailsImg,
+    btn: "Ver Expansão",
+    badge: "⚓ Novo",
+  },
+    desc: "Mapa narrado de Calradia — cidades, castelos e contagem de vilas das 9 facções, incluindo os Nords e seus portos da expansão War Sails.",
+    image: bannerlordTerritoriosImg,
+    btn: "Ver Territórios",
+    badge: "🗺️ Novo",
+  },
 ];
 
 const upcoming = [
