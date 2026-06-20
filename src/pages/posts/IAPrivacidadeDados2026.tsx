@@ -7,6 +7,8 @@ import { ArrowLeft, Clock, User, Calendar, Shield, Eye, Lock, AlertTriangle, Che
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import heroImg from "@/assets/ia-privacidade-dados-2026.webp";
 
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";

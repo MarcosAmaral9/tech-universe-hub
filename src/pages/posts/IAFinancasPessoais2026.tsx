@@ -8,6 +8,8 @@ import { Clock, Calendar, User, ChevronRight, Brain, CheckCircle2, AlertTriangle
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import heroImg from "@/assets/ia-financas-pessoais-2026.webp";
 

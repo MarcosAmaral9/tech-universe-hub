@@ -5,6 +5,8 @@ import { Clock, User, Calendar, MessageSquare, Lightbulb, Target, Zap, BookOpen,
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import BackNavigation from "@/components/BackNavigation";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import heroImg from "@/assets/prompt-engineering-2026.webp";
