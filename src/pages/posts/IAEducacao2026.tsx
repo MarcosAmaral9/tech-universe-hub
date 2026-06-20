@@ -126,7 +126,62 @@ const IAEducacao2026 = () => {
         <p>
           Professores brasileiros já adotam triangulação entre GPTZero, Turnitin (que lançou detector de IA em 2023) e análise estilística manual. O problema é que detectores ainda têm alta taxa de falso positivo — estudantes com escrita formal são frequentemente sinalizados. A recomendação prática: use IA para aprender e rascunhar, mas reescreva com suas próprias palavras antes de entregar. Se a instituição tiver política clara de uso de IA, siga-a.
         </p>
-      </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">O Que Universidades e o MEC Já Decidiram sobre IA</h2>
+        <p>
+          O debate nas instituições de ensino superior brasileiras acelerou em 2024-2025. A <strong>Universidade de São Paulo (USP)</strong> publicou em julho de 2024 a sua Política de Inteligência Artificial, estabelecendo que o uso de IA em trabalhos acadêmicos é permitido desde que declarado, com citação da ferramenta usada e do prompt aplicado — semelhante à citação de qualquer outra fonte. A <strong>UNICAMP</strong> adotou postura similar. A <strong>Universidade Federal do Rio de Janeiro (UFRJ)</strong> optou por regulamentação mais restritiva em cursos de saúde e direito.
+        </p>
+        <p>
+          O <strong>MEC</strong> publicou em 2024 a primeira nota técnica sobre uso de IA em redes públicas de ensino, alinhada à LGPD e à BNCC. A nota não proíbe o uso, mas exige que escolas garantam que dados de menores de 18 anos não sejam tratados por plataformas sem DPA adequado — o que na prática restringe o uso de versões gratuitas do ChatGPT e Gemini em ambientes escolares, já que os planos gratuitos geralmente não oferecem as garantias contratuais exigidas. Para uso seguro em escolas, as alternativas são as versões <strong>Google Workspace for Education</strong> (inclui Gemini com proteções de dados para menores) e o <strong>Microsoft Education (Copilot for Education)</strong>.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Ferramentas de IA para Educação: Comparativo Prático</h2>
+        <div className="not-prose my-6 overflow-x-auto">
+          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+            <thead><tr className="bg-secondary text-left">
+              <th className="p-3">Ferramenta</th>
+              <th className="p-3">Melhor Para</th>
+              <th className="p-3">Gratuito?</th>
+              <th className="p-3">LGPD/Menores</th>
+            </tr></thead>
+            <tbody>
+              {[
+                ["Khanmigo (Khan Academy)", "Tutoria personalizada ENEM/vestibular, matemática", "Sim (acessível via Khan Academy)", "✅ Proteções pedagógicas + sem dados para treino"],
+                ["Google NotebookLM", "Resumos de PDF, Q&A sobre material próprio", "Sim", "✅ Workspace Education: dados protegidos"],
+                ["ChatGPT Edu", "Escrita, análise, explicações por tópico", "Pago (via instituição)", "✅ Quando via plano institucional com DPA"],
+                ["Copilot for Education", "Integração com Word, PowerPoint, Teams", "Pago (via M365 Education)", "✅ Políticas Microsoft para educação"],
+                ["ChatGPT gratuito", "Explicações rápidas, brainstorm", "Sim", "⚠️ Sem DPA — não usar com dados de alunos"],
+                ["Claude.ai gratuito", "Análise de documentos, escrita", "Sim", "⚠️ Sem DPA — não usar com dados de alunos"],
+              ].map(([f, m, g, l]) => (
+                <tr key={f} className="border-t border-border">
+                  <td className="p-3 font-medium text-sm">{f}</td>
+                  <td className="p-3 text-xs text-muted-foreground">{m}</td>
+                  <td className="p-3 text-xs">{g}</td>
+                  <td className="p-3 text-xs">{l}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">30 Dias de Prática: Plano de Estudo com IA</h2>
+        <div className="not-prose my-6 space-y-3">
+          {[
+            { semana: "Semana 1", foco: "Experimentação", acao: "Use apenas o modo simples: faça o modelo explicar 3 conceitos da sua área de estudo. Compare com o livro. Identifique onde ele acerta e onde inventa." },
+            { semana: "Semana 2", foco: "Flashcards e Resumos", acao: "Cole um capítulo do seu material e peça 20 flashcards no formato Pergunta/Resposta. Importe no Anki para revisão espaçada." },
+            { semana: "Semana 3", foco: "Método Feynman", acao: "Explique um conceito para o Claude 'como se eu tivesse 10 anos'. Peça que ele aponte o que está errado ou incompleto na sua explicação." },
+            { semana: "Semana 4", foco: "Simulados", acao: "Peça 10 questões no estilo da sua banca (CESPE, FCC, FGV) com gabarito comentado. Use o NotebookLM para criar um episódio de podcast do material." },
+          ].map(({ semana, foco, acao }) => (
+            <div key={semana} className="flex gap-3 bg-card rounded-xl border border-ia/20 p-4">
+              <div className="shrink-0 text-center min-w-[80px]">
+                <p className="font-bold text-xs text-ia">{semana}</p>
+                <p className="text-xs text-muted-foreground">{foco}</p>
+              </div>
+              <p className="text-sm text-muted-foreground">{acao}</p>
+            </div>
+          ))}
+        </div>
+
 
       <EditorialTake category="ia" title="Análise do Marcos: IA acelera quem já estuda bem — e atrapalha quem não estuda">
         <p>
@@ -137,7 +192,7 @@ const IAEducacao2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources category="ia" sources={[
+      <ArticleSources sources={[
         { title: "UNESCO — Guidance for generative AI in education and research", url: "https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research", publisher: "UNESCO", accessedAt: "Maio 2026" },
         { title: "Khan Academy — Khanmigo (AI tutor)", url: "https://www.khanmigo.ai/", publisher: "Khan Academy", accessedAt: "Maio 2026" },
         { title: "OpenAI — Introducing ChatGPT Edu", url: "https://openai.com/index/introducing-chatgpt-edu/", publisher: "OpenAI", accessedAt: "Maio 2026" },
@@ -146,7 +201,7 @@ const IAEducacao2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="ia-educacao-2026-estudar-inteligente" />
-      <CommentSection postId="ia-educacao-2026-estudar-inteligente" postTitle="IA na Educação 2026: Como Estudar de Forma Inteligente"  category="ia" />
+      <CommentSection category="ia" postId="ia-educacao-2026-estudar-inteligente" postTitle="IA na Educação 2026: Como Estudar de Forma Inteligente" />
     </article>
   );
 };

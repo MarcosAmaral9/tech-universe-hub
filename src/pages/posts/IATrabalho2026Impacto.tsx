@@ -1,11 +1,21 @@
-import ArticleSources from "@/components/ArticleSources";
-import EditorialTake from "@/components/EditorialTake";
+/*
+ * PAGE_META — adicionar em DynamicSEO.tsx dentro do objeto PAGE_META:
+ *
+ * "/post/ia-mercado-trabalho-brasil-2026": {
+ *   title: "IA no Mercado de Trabalho Brasileiro em 2026: Quais Profissões Ganham e Quais Estão em Risco",
+ *   description: "Análise completa do impacto da IA no mercado de trabalho brasileiro: dados do WEF, Goldman Sachs, FMI e IPEA, profissões mais expostas, plano de 90 dias para se diferenciar e o que o PL 2338/2023 muda.",
+ *   keywords: "IA mercado de trabalho Brasil 2026, profissões em risco IA, WEF Future Jobs 2025, Goldman Sachs IA empregos, FMI inteligência artificial trabalho, IPEA IA Brasil, automação empregos Brasil, reskilling IA 90 dias, PL 2338 automação, impacto IA empregos",
+ * },
+ */
+
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
-import { Clock, User, Calendar, Brain, TrendingUp, Shield, BarChart3, Lightbulb, Zap } from "lucide-react";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
+import { Clock, User, Calendar, Brain, TrendingUp, Shield, BarChart3, Lightbulb, Zap, Users } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
@@ -44,7 +54,7 @@ const IATrabalho2026Impacto = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high" src={heroImg} alt="IA no mercado de trabalho Brasil 2026" loading="eager" decoding="async" className="w-full h-full object-cover" />
+        <img fetchpriority="high" src={heroImg} alt="IA no mercado de trabalho brasileiro em 2026 — quais profissões ganham, quais estão em risco e como se reposicionar" loading="eager" decoding="async" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
@@ -105,8 +115,8 @@ const IATrabalho2026Impacto = () => {
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-violet-400" />
           Profissões com Maior Risco de Automação
-      <AdInArticle />
         </h2>
+        <AdInArticle />
         <p>Ser substituído pela IA não significa que a profissão vai desaparecer — mas o volume de vagas e os salários para quem não se adaptar tendem a cair. As mais expostas:</p>
         <div className="not-prose my-6 overflow-x-auto">
           <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
@@ -174,10 +184,48 @@ const IATrabalho2026Impacto = () => {
           A pesquisa da Avantia é clara: 52% dos líderes discordam que a IA reduz empregos — mas acreditam que o perfil de quem é contratado vai mudar. Quem domina IA vai ganhar mais e trabalhar menos nas tarefas repetitivas. Quem ignora vai competir com quem domina. A escolha, por enquanto, ainda é sua.
         </p>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Você já usa IA no seu trabalho? 💼</h3>
-          <p className="text-muted-foreground">Conta nos comentários qual ferramenta e quanto tempo economiza! 👇</p>
-        </div>
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Users className="h-7 w-7 text-violet-400" />
+          Os Dados Brasileiros: IBRE/FGV, OIT e IPEA Sobre Automação no Brasil
+        </h2>
+        <p>
+          Enquanto debates globais usam estimativas amplas, três estudos com dados especificamente brasileiros foram publicados em 2025-2026 e merecem atenção direta. O primeiro é o levantamento do <strong>IBRE/FGV</strong> com base na metodologia da OIT: no terceiro trimestre de 2025, <strong>30% dos trabalhadores brasileiros estavam em ocupações expostas à IA generativa</strong> — equivalente a aproximadamente <strong>30,9 milhões de pessoas</strong>. O impacto é desproporcionalmente maior entre mulheres, trabalhadores jovens (18 a 30 anos), e em três setores específicos: comércio, serviços de informação e intermediação financeira.
+        </p>
+        <p>
+          O segundo dado vem da própria <strong>OIT</strong>, no estudo <em>Generative AI and Jobs: A Refined Global Index of Occupational Exposure</em> (maio de 2025): globalmente, <strong>25% dos empregos estão potencialmente expostos</strong> à IA generativa, mas <strong>apenas 5% a 6% estão sob risco de substituição quase total</strong>. A distinção é crucial — "exposto" não significa "substituído". Significa que parte relevante das tarefas da ocupação pode ser automatizada, o que geralmente aumenta a produtividade do trabalhador que aprende a usar a IA, não elimina o trabalhador.
+        </p>
+        <p>
+          O terceiro é do <strong>IPEA</strong>: em abril de 2026, o instituto lançou na Câmara dos Deputados o livro <em>Inteligência Artificial, Automação do Trabalho, Empregabilidade e Previdência Social</em>, 18º volume da série Estudos Estratégicos. O pesquisador Luis Kubota (CTS-Ipea) conclui que a automação contemporânea <strong>não elimina ocupações inteiras, mas reconfigura tarefas</strong> — alterando o conteúdo do trabalho, os requisitos de qualificação e os próprios processos. O alerta central do IPEA é para o setor de serviços, onde mais de <strong>80% das ocupações têm alguma exposição à IA generativa</strong> segundo o IBRE/FGV, concentrando o maior impacto absoluto em atividades administrativas, contábeis, jurídicas e de atendimento.
+        </p>
+        <p>
+          Para a América Latina como um todo, o contexto é ainda mais delicado: <strong>aproximadamente 62% dos empregos</strong> estão em ocupações com alta probabilidade de automação — percentual significativamente superior ao de países desenvolvidos — porque a região tem maior concentração de trabalho repetitivo e menor capacidade imediata de requalificação em escala.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Brain className="h-7 w-7 text-violet-400" />
+          Setores Brasileiros Mais Expostos: Onde o Impacto É Maior
+        </h2>
+        <p>
+          Com base nos dados combinados do DIAP, IBRE/FGV e CNI/IPEA, os setores com maior exposição imediata no Brasil em 2026 são os seguintes:
+        </p>
+        <ul className="space-y-2 my-6">
+          <li>
+            <strong>Serviços financeiros e intermediação:</strong> Análise de crédito automatizada, atendimento bancário digital, processamento de documentos, gestão de carteiras. O Nubank, Itaú e Bradesco já processam bilhões de eventos por dia com IA sem intervenção humana. As funções que sobram são as de relacionamento, gestão de exceções e compliance regulatório.
+          </li>
+          <li>
+            <strong>Comércio e varejo:</strong> Atendimento no ponto de venda, reposição de estoque, precificação dinâmica, análise de demanda. Autoatendimento e logística inteligente estão eliminando funções operacionais, mas expandindo papéis em e-commerce, análise de dados de comportamento do consumidor e marketing digital.
+          </li>
+          <li>
+            <strong>Serviços administrativos e de escritório:</strong> CNI e IPEA confirmam que funções como assistente administrativo, operador de caixa, cobrador e datilógrafo estão em rápido declínio no mercado formal. Empresas médias que antes tinham 5 assistentes administrativos estão operando com 2 + ferramentas de automação.
+          </li>
+          <li>
+            <strong>Indústria:</strong> O DIAP projeta redução de 10% a 20% em tarefas repetitivas até 2030, mas compensada em parte pelo aumento de demanda por técnicos, analistas e operadores qualificados em automação industrial, manutenção preditiva e controle de qualidade com visão computacional.
+          </li>
+          <li>
+            <strong>Setores em expansão:</strong> Saúde, educação, cuidados pessoais e economia criativa devem expandir — reforçando a tese de reconfiguração do mercado, não colapso. O crescimento em técnicos de energia renovável, manutenção industrial especializada, programação e análise de dados também é confirmado por CNI e IPEA.
+          </li>
+        </ul>
+
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: três competências que nenhuma IA substitui no curto prazo">
@@ -189,16 +237,16 @@ const IATrabalho2026Impacto = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources category="ia" sources={[
+      <ArticleSources sources={[
         { title: "WEF — Future of Jobs Report 2025", url: "https://www.weforum.org/reports/the-future-of-jobs-report-2025", publisher: "World Economic Forum", accessedAt: "Maio 2026" },
-        { title: "Goldman Sachs — Generative AI could raise global GDP by 7%", url: "https://www.goldmansachs.com/insights/pages/generative-ai-could-raise-global-gdp-by-7-percent.html", publisher: "Goldman Sachs", accessedAt: "Maio 2026" },
-        { title: "FMI — Gen-AI and the Future of Work", url: "https://www.imf.org/en/Publications/Staff-Discussion-Notes", publisher: "FMI", accessedAt: "Maio 2026" },
-        { title: "IPEA — Boletim Mercado de Trabalho 2024", url: "https://www.ipea.gov.br/portal/categorias/45-todas-as-publicacoes/8-boletim-de-mercado-de-trabalho", publisher: "IPEA", accessedAt: "Maio 2026" },
+        { title: "IPEA/CTS — IA, Automação do Trabalho, Empregabilidade e Previdência Social (abr/2026)", url: "https://www.ipea.gov.br/cts/pt/central-de-conteudo/todas-as-publicacoes/publicacoes/538-ia-e-o-futuro-do-mercado-de-trabalho", publisher: "IPEA", accessedAt: "Maio 2026" },
+        { title: "OIT — Generative AI and Jobs: A Refined Global Index (maio 2025)", url: "https://www.ilo.org/publications/artificial-intelligence-and-jobs", publisher: "Organização Internacional do Trabalho", accessedAt: "Maio 2026" },
+        { title: "DIAP — Transformações Estruturais no Mercado de Trabalho Brasileiro 2026–2030", url: "https://www.diap.org.br/index.php/noticias/artigos/92762-transformacoes-estruturais-no-mercado-de-trabalho-brasileiro-2026-2030-inteligencia-artificial-automacao-e-desigualdades-emergentes", publisher: "DIAP", accessedAt: "Maio 2026" },
         { title: "Stanford HAI — AI Index 2024", url: "https://hai.stanford.edu/research/ai-index-2024", publisher: "Stanford HAI", accessedAt: "Maio 2026" },
       ]} />
 
       <RelatedPosts currentSlug="ia-mercado-trabalho-brasil-2026" />
-      <CommentSection postId="ia-mercado-trabalho-brasil-2026" postTitle="IA no Mercado de Trabalho Brasileiro em 2026: Quais Profissões Ganham e Quais Estão em Risco"  category="ia" />
+      <CommentSection category="ia" postId="ia-mercado-trabalho-brasil-2026" postTitle="IA no Mercado de Trabalho Brasileiro em 2026: Quais Profissões Ganham e Quais Estão em Risco" />
     </article>
   );
 };

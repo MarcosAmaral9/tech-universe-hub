@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
@@ -6,7 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { ArrowLeft, Clock, User, Calendar, Cpu, Zap, Gamepad2, MonitorPlay } from "lucide-react";
+import { Clock, User, Calendar, Cpu, Zap, Gamepad2, MonitorPlay, BarChart3 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
@@ -74,7 +74,7 @@ const IARemasterizacaoJogos = () => {
           <Gamepad2 className="h-7 w-7 text-ia" />
           3. O caso "Black Flag" e jogos de Mundo Aberto
         </h2>
-      <AdInArticle />
+        <AdInArticle />
         <p>
           Em jogos como Black Flag, o maior desafio é o mar e a vegetação. A IA consegue processar os reflexos 
           da água e as folhas das árvores de forma muito mais eficiente que os métodos antigos.
@@ -149,6 +149,30 @@ const IARemasterizacaoJogos = () => {
           possibilidade de Skyrim com NPCs que <strong>realmente conversam</strong> em vez de repetir 5 linhas pré-gravadas.
         </p>
 
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <BarChart3 className="h-7 w-7 text-ia" />
+          9. DLSS 4.5 vs FSR 4: O Teste Cego com 7.000 Participantes
+        </h2>
+        <p>
+          Em fevereiro de 2026, o site alemão <strong>ComputerBase</strong> conduziu o maior teste cego de tecnologias de upscaling
+          já realizado: quase 7.000 participantes analisaram imagens de seis jogos em 4K (Anno 117, Arc Raiders, Cyberpunk 2077,
+          Horizon Forbidden West, Satisfactory e The Last of Us Part II) sem saber qual tecnologia estava sendo usada —
+          resolução nativa com TAA, DLSS 4.5 ou FSR 4.
+        </p>
+        <p>
+          O resultado foi inequívoco: <strong>DLSS 4.5 com 48,2% das preferências</strong> (3.249 votos), resolução nativa com
+          24% (1.619 votos) e FSR 4 com apenas 15% (1.013 votos). O detalhe mais surpreendente: o DLSS 4.5 foi preferido
+          à resolução nativa em todos os seis jogos testados. Isso significa que, para uma parcela significativa dos jogadores,
+          a imagem <em>upscalada</em> parece melhor que renderização 100% nativa — graças ao anti-aliasing neural e à
+          reconstrução de detalhes que o DLSS 4.5 aplica.
+        </p>
+        <p>
+          O FSR 4 ficou aquém, mas representa um avanço real da AMD: é a primeira geração a usar rede híbrida CNN + Transformer
+          treinada em FP8, com ganho de 15% em eficiência por watt sobre a geração anterior (Computex 2025, TechPowerUp).
+          A grande vantagem do FSR 4 sobre o DLSS continua sendo a <strong>compatibilidade universal</strong> — funciona em
+          qualquer GPU moderna, enquanto o DLSS 4.5 exige RTX com Tensor Cores e o Multi Frame Generation exige RTX 50 especificamente.
+        </p>
+
         <h2 className="text-2xl font-bold mt-10 mb-6">8. O Lado Polêmico: Texturas IA, Direitos Autorais e Performance</h2>
         <p>
           Nem tudo é elogio. Mods de upscaling com IA frequentemente <strong>quebram o estilo artístico original</strong> —
@@ -179,7 +203,7 @@ const IARemasterizacaoJogos = () => {
             <p className="text-sm text-muted-foreground mb-0">Para single-player, sim — desde que você faça backup do save. Para jogos com anticheat (BF, Fortnite), nunca: o anticheat detecta como modificação e bane a conta.</p>
           </div>
         </div>
-      </div>
+</div>
 
       <EditorialTake category="ia" title="Análise do Marcos: remasterização com IA é ferramenta, não substituto do design original">
         <p>
@@ -192,7 +216,7 @@ const IARemasterizacaoJogos = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources category="ia" sources={[
+      <ArticleSources sources={[
         { title: "NVIDIA — DLSS 4 with Multi Frame Generation", url: "https://www.nvidia.com/en-us/geforce/news/dlss4-multi-frame-generation-ai-innovations/", publisher: "NVIDIA", accessedAt: "Maio 2026" },
         { title: "AMD — FidelityFX Super Resolution 4 (FSR 4)", url: "https://www.amd.com/en/products/graphics/technologies/fidelityfx-super-resolution.html", publisher: "AMD", accessedAt: "Maio 2026" },
         { title: "NVIDIA RTX Remix — Official page", url: "https://www.nvidia.com/en-us/geforce/rtx-remix/", publisher: "NVIDIA", accessedAt: "Maio 2026" },
@@ -201,7 +225,7 @@ const IARemasterizacaoJogos = () => {
       ]} />
 
       <RelatedPosts currentSlug="ia-remasterizacao-jogos-classicos" />
-      <CommentSection postId="ia-remasterizacao-jogos-classicos" postTitle="IA e Remasterização: Como a IA Está Dando Nova Vida aos Jogos Clássicos"  category="ia" />
+      <CommentSection category="ia" postId="ia-remasterizacao-jogos-classicos" postTitle="IA e Remasterização: Como a IA Está Dando Nova Vida aos Jogos Clássicos" />
     </article>
   );
 };

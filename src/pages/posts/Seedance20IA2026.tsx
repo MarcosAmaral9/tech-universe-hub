@@ -259,7 +259,7 @@ const Seedance20IA2026 = () => {
             </div>
           ))}
         </div>
-      </div>
+</div>
 
       <EditorialTake category="ia" title="Análise do Marcos: Seedance 2.0 resolve o problema que o Sora criou — mas a ByteDance ainda assusta com censura">
         <p>
@@ -270,7 +270,7 @@ const Seedance20IA2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources category="ia" sources={[
+      <ArticleSources sources={[
         { title: "arXiv — Seedance 2.0: Advancing Video Generation for World Complexity (2604.14148)", url: "https://arxiv.org/abs/2604.14148", publisher: "ByteDance SEED Lab / arXiv", accessedAt: "Maio 2026" },
         { title: "Atlas Cloud — Seedance 2.0: The Complete Guide (2026)", url: "https://www.atlascloud.ai/blog/guides/seedance-2.0-complete-guide", publisher: "Atlas Cloud", accessedAt: "Maio 2026" },
         { title: "ZenCreator — Seedance AI: The Ultimate AI Video Generator Guide (2026)", url: "https://zencreator.pro/ai-university/guides/seedance-2-ai-video-generator-guide", publisher: "ZenCreator / AI University", accessedAt: "Maio 2026" },
@@ -279,7 +279,7 @@ const Seedance20IA2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="seedance-2-0-geracao-video-ia-2026" />
-      <CommentSection postId="seedance-2-0-geracao-video-ia-2026" postTitle="Seedance 2.0: O Gerador de Vídeo com IA da ByteDance que Muda o Jogo em 2026"  category="ia" />
+      <CommentSection category="ia" postId="seedance-2-0-geracao-video-ia-2026" postTitle="Seedance 2.0: O Gerador de Vídeo com IA da ByteDance que Muda o Jogo em 2026" />
     </article>
   );
 };

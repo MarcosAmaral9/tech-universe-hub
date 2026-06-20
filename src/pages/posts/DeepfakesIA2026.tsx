@@ -128,7 +128,30 @@ const DeepfakesIA2026 = () => {
         <p>
           O <strong>EU AI Act</strong> (Reg. UE 2024/1689), em vigor desde agosto de 2024, exige marcação obrigatória de conteúdo gerado por IA a partir de agosto de 2026 para todos que operam no mercado europeu. O <strong>PL 2338/2023</strong> brasileiro — o Marco Legal da IA — segue linha similar, exigindo identificação de deepfakes em campanhas políticas e conteúdo jornalístico. Conteúdo não marcado poderá resultar em multas de até 3% do faturamento no Brasil, ou até €35 milhões na União Europeia.
         </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Os Números Reais: Deepfakes e Golpes no Brasil em 2025-2026</h2>
+        <p>
+          Os dados verificados mostram uma escalada preocupante. A <strong>Serasa Experian</strong> registrou 6.937.832 tentativas de fraude no Brasil apenas no primeiro semestre de 2025 — uma média de <strong>uma ocorrência a cada 2,3 segundos</strong> —, com 53,7% direcionadas a bancos e emissores de cartões. A <strong>Febraban</strong> estimou que fraudes bancárias causaram perdas de <strong>R$ 10,1 bilhões</strong> no Brasil, e o Anuário Brasileiro de Segurança Pública (2024) registrou 281 mil casos de estelionato eletrônico — alta de 17% em um ano.
+        </p>
+        <p>
+          O dado mais alarmante vem da <strong>Polícia Federal</strong>: relatório divulgado em 2026 aponta que <strong>42,5% das fraudes financeiras no país já utilizam ferramentas de inteligência artificial</strong>, e o uso de deepfakes cresceu <strong>830% entre 2024 e 2025</strong>. Nos EUA, as perdas com impersonation scams chegaram a quase US$ 3 bilhões em 2024 (FTC).
+        </p>
+        <p>
+          Casos brasileiros documentados: em janeiro de 2025, uma quadrilha foi presa por aplicar golpes usando deepfakes do apresentador <strong>Marcos Mion</strong> para promover promoções falsas do Outback. Figuras públicas como William Bonner, Lula, Marina Silva, Drauzio Varella e Fernando Haddad já tiveram imagens e vozes clonadas em esquemas de fraude. O golpe do "familiar em aperto" — onde a voz clonada de um filho ou cônjuge pede transferência urgente — é o mais comum em famílias de classe média.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Casos Corporativos: Quando a IA Engana Empresas Inteiras</h2>
+        <p>
+          O caso mais impactante foi em Hong Kong, em fevereiro de 2024: um funcionário do departamento financeiro de uma multinacional transferiu <strong>US$ 25 milhões</strong> após uma videoconferência com deepfakes ao vivo de seu CFO e outros executivos. Não foi um vídeo pré-gravado — foi uma videoconferência interativa com avatares de IA respondendo perguntas em tempo real.
+        </p>
+        <p>
+          No modelo corporativo de ataque, os golpistas precisam de apenas 3 a 5 minutos de áudio claro para replicar o timbre, cadência, pausas e tiques de linguagem de um executivo. Qualquer CEO com presença pública relevante — entrevistas, podcasts, lives — está fornecendo involuntariamente o dataset necessário para sua própria clonagem digital. A <strong>Migalhas</strong> reportou casos no Brasil de CFOs falsos usados para autorizar transferências em empresas médias.
+        </p>
+        <p>
+          A defesa corporativa recomendada especialistas de cibersegurança: estabelecer <strong>palavra-código secreta</strong> verificada em chamadas críticas, exigir dupla aprovação fora do canal original para transferências acima de determinado valor, e nunca autorizar pagamentos apenas com base em ligação de vídeo ou áudio — independentemente de quão convincente pareça.
+        </p>
       </div>
+
 
       <EditorialTake category="ia" title="Análise do Marcos: a defesa real contra deepfakes é comportamental, não técnica">
         <p>
@@ -139,16 +162,17 @@ const DeepfakesIA2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources category="ia" sources={[
-        { title: "Sensity AI — State of Deepfakes Report 2024", url: "https://sensity.ai/reports/", publisher: "Sensity AI", accessedAt: "Maio 2026" },
-        { title: "FBI — Public Service Announcement I-052024-PSA (Voice Cloning Scams)", url: "https://www.ic3.gov/Media/Y2024/PSA240502", publisher: "FBI / IC3", accessedAt: "Maio 2026" },
-        { title: "Febraban — Estatísticas de Fraude Digital 2025", url: "https://portal.febraban.org.br/", publisher: "Febraban", accessedAt: "Maio 2026" },
+      <ArticleSources sources={[
+        { title: "Polícia Federal — 42,5% das fraudes financeiras usam IA (2026)", url: "https://minutodaseguranca.blog.br/deepfakes-e-golpes-com-ia-ampliam-disputas-sobre-responsabilidade/", publisher: "Minuto da Segurança", accessedAt: "Maio 2026" },
+        { title: "Serasa Experian — 6,9M tentativas de fraude no 1º sem/2025 (1 a cada 2,3 seg)", url: "https://www.tribunadosertao.com.br/geral/2026/02/25/862930-golpes-por-voz-clonada-deixam-bancos-brasileiros-em-alerta-uma-fraude-a-cada-23-segundos", publisher: "Tribuna do Sertão / Serasa", accessedAt: "Maio 2026" },
+        { title: "Febraban — Fraudes bancárias: R$ 10,1 bilhões de perdas", url: "https://www.folhamax.com/mundo/ia-impulsiona-nova-onda-de-golpes-com-clonagem-de-voz/541939", publisher: "Febraban / FolhaMax", accessedAt: "Maio 2026" },
         { title: "EU AI Act — Texto Oficial (Reg. UE 2024/1689)", url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj", publisher: "EUR-Lex", accessedAt: "Maio 2026" },
-        { title: "Intel — FakeCatcher Real-Time Deepfake Detection", url: "https://www.intel.com/content/www/us/en/newsroom/news/intel-introduces-real-time-deepfake-detector.html", publisher: "Intel Newsroom", accessedAt: "Maio 2026" },
+        { title: "Migalhas — Deepfake de voz e CFOs falsos: a nova fraude corporativa", url: "https://www.migalhas.com.br/depeso/446123/deepfake-de-voz-e-cfos-falsos-a-nova-fraude-corporativa-de-alto-nivel", publisher: "Migalhas", accessedAt: "Maio 2026" },
+        { title: "FBI / IC3 — PSA I-052024-PSA (Voice Cloning Scams)", url: "https://www.ic3.gov/Media/Y2024/PSA240502", publisher: "FBI / IC3", accessedAt: "Maio 2026" },
       ]} />
 
       <RelatedPosts currentSlug="deepfakes-ia-2026-como-identificar" />
-      <CommentSection postId="deepfakes-ia-2026-como-identificar" postTitle="Deepfakes e IA 2026: Como Identificar Conteúdo Falso e Proteger sua Imagem"  category="ia" />
+      <CommentSection category="ia" postId="deepfakes-ia-2026-como-identificar" postTitle="Deepfakes e IA 2026: Como Identificar Conteúdo Falso e Proteger sua Imagem" />
     </article>
   );
 };

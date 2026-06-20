@@ -316,7 +316,7 @@ const SunoAIMusica2026 = () => {
             </div>
           ))}
         </div>
-      </div>
+</div>
 
       <EditorialTake category="ia" title="Análise do Marcos: Suno é uma das IAs mais democratizantes de 2026 — mas o jurídico é terra minada">
         <p>
@@ -327,7 +327,7 @@ const SunoAIMusica2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources category="ia" sources={[
+      <ArticleSources sources={[
         { title: "Music Business Worldwide — Suno sued by Poseidon Wave Media; v5.5 launch details", url: "https://www.musicbusinessworldwide.com/suno-sued-by-poseidon-wave-media-an-entity-behind-indie-duo-the-american-dollar-claiming-it-nearly-eliminated-their-licensing-revenue/", publisher: "Music Business Worldwide", accessedAt: "Maio 2026" },
         { title: "Chartlex — Music Industry AI Lawsuits Tracker 2026 (Warner-Suno settlement)", url: "https://www.chartlex.com/blog/business/music-industry-ai-lawsuits-tracker-2026", publisher: "Chartlex", accessedAt: "Maio 2026" },
         { title: "RIAA — Record Companies Bring Landmark Cases Against Suno and Udio", url: "https://www.riaa.com/record-companies-bring-landmark-cases-for-responsible-ai-againstsuno-and-udio-in-boston-and-new-york-federal-courts-respectively/", publisher: "RIAA", accessedAt: "Maio 2026" },
@@ -337,10 +337,10 @@ const SunoAIMusica2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="suno-ai-gerador-musica-2026" />
-      <CommentSection
+      <CommentSection category="ia"
         postId="suno-ai-gerador-musica-2026"
         postTitle="Suno AI: O Guia Completo do Gerador de Músicas com IA em 2026"
-       category="ia" />
+      />
     </article>
   );
 };

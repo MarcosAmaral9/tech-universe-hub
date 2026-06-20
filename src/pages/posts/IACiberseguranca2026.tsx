@@ -196,16 +196,45 @@ const IACiberseguranca2026 = () => {
         <p>
           A batalha entre IA defensiva e ofensiva não vai acabar — vai apenas se intensificar. E estar informado é a primeira camada de proteção.
         </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">IA Ofensiva: Como Atacantes Estão Usando IA em 2026</h2>
+        <p>
+          O <strong>Gartner</strong> projetou que até 2025 mais de 50% dos ataques de engenharia social usariam IA generativa — projeção que se confirmou. Em 2026, as principais técnicas documentadas por empresas de cibersegurança como CrowdStrike, Mandiant e Palo Alto Networks:
+        </p>
+        <ul className="space-y-2 my-6">
+          <li><strong>Spear-phishing hiperpersonalizado:</strong> LLMs analisam o perfil público do alvo (LinkedIn, GitHub, entrevistas) e geram e-mails que imitam escrita, tom e contexto específico da pessoa. Taxa de clique 3–4× maior que phishing genérico, segundo dados da Proofpoint.</li>
+          <li><strong>Vishing com voz clonada:</strong> Clonagem da voz do CEO ou CFO para ligar para o financeiro e autorizar transferências. O SlashNext reportou crescimento de 300% nesse vetor em 2024.</li>
+          <li><strong>Geração automatizada de malware:</strong> LLMs ajudam a escrever código de ataque e variações de malware que evitam detecção por assinatura — não criam código novo sofisticado, mas aceleram o ciclo de ataque e personalização de payloads existentes.</li>
+          <li><strong>Deepfakes em contexto corporativo:</strong> Videoconferências com avatares de executivos para autorizar ações críticas (o caso de Hong Kong com US$ 25M em 2024 é o exemplo mais documentado).</li>
+        </ul>
+        <p>
+          O CERT.br registrou no primeiro semestre de 2025 um crescimento de <strong>47% nos incidentes relatados</strong> em relação ao mesmo período de 2024, com fraudes e tentativas de intrusão como principais categorias. O Brasil é o 5º país mais atacado por ransomware no mundo, segundo o relatório da IBM X-Force 2025.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Como Montar uma Defesa com IA: O Que Empresas Brasileiras Podem Fazer Agora</h2>
+        <div className="not-prose my-6 space-y-3">
+          {[
+            { nivel: "🟢 Básico (qualquer empresa)", acoes: "Email gateway com detecção de phishing por IA (Microsoft Defender, Proofpoint Essentials); MFA em todas as contas críticas; treinamento trimestral anti-phishing com simulações reais." },
+            { nivel: "🟡 Intermediário (PMEs com dados sensíveis)", acoes: "SIEM com correlação por ML (Microsoft Sentinel, IBM QRadar SaaS); EDR em todos os endpoints (CrowdStrike Falcon Go, SentinelOne Singularity); monitoramento de Dark Web para credenciais vazadas." },
+            { nivel: "🔴 Avançado (enterprise/setores regulados)", acoes: "SOC copilot como Microsoft Security Copilot ou Exabeam AI; DAST/SAST automatizados em CI/CD com IA; BAS (Breach and Attack Simulation) contínuo; threat hunting com IA generativa." },
+          ].map(({ nivel, acoes }) => (
+            <div key={nivel} className="bg-card rounded-xl border border-border p-4">
+              <h3 className="font-bold text-sm mb-2">{nivel}</h3>
+              <p className="text-sm text-muted-foreground">{acoes}</p>
+            </div>
+          ))}
+        </div>
+
         <p className="text-xs text-muted-foreground mt-6 italic">
           Conteúdo informativo baseado em relatórios públicos de IBM, Gartner, CrowdStrike, SlashNext e World Economic Forum. Dados e estatísticas referenciados são de fontes verificáveis.
         </p>
       </div>
 
-        <EditorialTake category="ia">
+        <EditorialTake category="ia" title="Análise do Marcos: IA de defesa só entra depois de threat modeling e DPIA, nunca antes">
           <p>Cibersegurança com IA é a faca de dois gumes mais importante da década: a mesma tecnologia que ajuda SOCs a triar alertas em segundos está nas mãos de quem escreve phishing convincente em português. No Brasil, onde o CERT.br registra crescimento contínuo de incidentes e a LGPD ainda tem aplicação desigual, vejo empresas adotando copilots de SOC sem revisar política de dados — e depois tendo que justificar para a ANPD por que prompts com PII vão para fora do país. A regra que sigo: IA de defesa só entra depois de threat modeling e DPIA, nunca antes.</p>
         </EditorialTake>
 
-        <ArticleSources category="ia" sources={[
+        <ArticleSources sources={[
     { title: 'CERT.br — Estatísticas de Incidentes', url: 'https://stats.cert.br/', publisher: 'CERT.br', accessedAt: "Maio 2026" },
     { title: 'ANPD — Guias de Boas Práticas', url: 'https://www.gov.br/anpd/pt-br/documentos-e-publicacoes/guias-orientativos', publisher: 'ANPD', accessedAt: "Maio 2026" },
     { title: 'Microsoft Security — Copilot for Security', url: 'https://www.microsoft.com/en-us/security/business/ai-machine-learning/microsoft-security-copilot', publisher: 'Microsoft', accessedAt: "Maio 2026" },
@@ -213,7 +242,7 @@ const IACiberseguranca2026 = () => {
     { title: 'NIST — AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework', publisher: 'NIST', accessedAt: "Maio 2026" }
   ]} />
       <RelatedPosts currentSlug="ia-ciberseguranca-2026" />
-      <CommentSection postId="ia-ciberseguranca-2026"  category="ia" />
+      <CommentSection category="ia" postId="ia-ciberseguranca-2026" />
     </article>
   );
 };

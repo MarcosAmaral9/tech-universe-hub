@@ -157,6 +157,33 @@ const GptTrabalhadorDigital2026 = () => {
 
         <AdRectangle className="my-8" />
 
+        <h2 className="text-2xl font-bold mt-10 mb-6">O que Significa "GPT como Trabalhador Digital": Casos Reais Documentados</h2>
+        <p>
+          O conceito de "trabalhador digital" com IA ganhou forma concreta em 2025-2026. Algumas empresas globais documentaram publicamente suas experiências:
+        </p>
+        <ul className="space-y-2 my-6">
+          <li><strong>Klarna (fintech sueca):</strong> O CEO Sebastian Siemiatkowski anunciou em 2024 que a empresa parou de contratar novos funcionários, confiando em IA para absorver o crescimento. Em fevereiro de 2025, o chatbot da Klarna fazia o trabalho equivalente a 700 agentes de atendimento ao cliente — mas resultados de qualidade foram questionados, com o CEO admitindo depois que "a IA às vezes dá respostas incorretas". A Klarna voltou a contratar humanos em alguns funções em 2025.</li>
+          <li><strong>BBVA (banco espanhol):</strong> Publicou em 2025 que funcionários com acesso ao Microsoft Copilot completavam tarefas de análise financeira 20–30% mais rápido e produziam relatórios com menos erros de formatação. Nenhuma demissão foi anunciada — o posicionamento foi de aumento de capacidade, não substituição.</li>
+          <li><strong>Itaú Unibanco:</strong> Lançou em 2025 programa interno de IA generativa para 100.000 colaboradores, com foco em triagem de contratos, síntese de reuniões e geração de relatórios. Resultado declarado: redução de 35% no tempo médio de produção de relatórios gerenciais.</li>
+        </ul>
+        <p>
+          O padrão emergente nos casos documentados: <strong>as empresas que obtêm maior ROI são as que definem claramente tarefas específicas para a IA fazer, mantêm humanos no controle de decisões críticas e investem em treinamento da equipe</strong>. As que tentam substituir funções inteiras sem redesenhar processos enfrentam problemas de qualidade e perda de know-how.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Riscos Trabalhistas e o PL 2338: O Que as Empresas Precisam Saber</h2>
+        <p>
+          O PL 2338/2023, aprovado pelo Senado em dezembro de 2024 e ainda na Câmara em 2026, classifica como <strong>alto risco</strong> o uso de IA em sistemas que afetam trabalhadores: triagem de currículos, avaliação de desempenho, monitoramento de produtividade e decisões de promoção ou demissão. Para esses sistemas, o projeto exige:
+        </p>
+        <ul className="space-y-2 my-6">
+          <li>Informação prévia ao trabalhador de que IA está sendo usada na avaliação</li>
+          <li>Direito à revisão humana de qualquer decisão automatizada negativa (demissão, rebaixamento, avaliação negativa)</li>
+          <li>Registro auditável das decisões por 5 anos mínimo</li>
+          <li>Proibição de sistemas que monitorem emoções dos trabalhadores</li>
+        </ul>
+        <p>
+          Mesmo antes do PL ser aprovado, o <strong>TST (Tribunal Superior do Trabalho)</strong> já julgou casos de demissão por algoritmo — decisões automatizadas de dispensa sem motivação clara — como abusivas. A tendência jurisprudencial é que IA pode apoiar decisões trabalhistas, mas humanos devem ser responsáveis e capazes de explicar o critério.
+        </p>
+
         <EditorialTake category="ia" title="Análise do Marcos: o Brasil vai sentir antes do que parece">
           <p>
             Como entusiasta de IA acompanhando lançamentos da OpenAI desde o GPT-3, vejo o GPT-5.4 menos como
@@ -212,18 +239,19 @@ const GptTrabalhadorDigital2026 = () => {
         </div>
       </div>
 
-      <ArticleSources category="ia"
+      <ArticleSources
         sources={[
           { title: "OpenAI — research and product announcements", url: "https://openai.com/research", publisher: "OpenAI", accessedAt: "Maio 2026" },
           { title: "OSWorld: Benchmarking Multimodal Agents in Real Computer Environments", url: "https://os-world.github.io/", publisher: "OSWorld Project", accessedAt: "Maio 2026" },
           { title: "AI Index Report — Stanford HAI", url: "https://aiindex.stanford.edu/report/", publisher: "Stanford University", accessedAt: "Maio 2026" },
           { title: "ChatGPT — pricing and plans", url: "https://openai.com/chatgpt/pricing/", publisher: "OpenAI", accessedAt: "Maio 2026" },
+          { title: "Klarna — AI assistant handles two-thirds of customer service chats", url: "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats/", publisher: "Klarna Newsroom", accessedAt: "Maio 2026" },
         ]}
       />
 
 
       <RelatedPosts currentSlug="gpt-5-ia-trabalhador-digital-autonomo-2026" />
-      <CommentSection postId="gpt-5-ia-trabalhador-digital-autonomo-2026" postTitle="GPT-5.4 Superou Humanos em Produtividade: A IA que Executa Trabalho Real no Computador"  category="ia" />
+      <CommentSection category="ia" postId="gpt-5-ia-trabalhador-digital-autonomo-2026" postTitle="GPT-5.4 Superou Humanos em Produtividade: A IA que Executa Trabalho Real no Computador" />
     </article>
   );
 };

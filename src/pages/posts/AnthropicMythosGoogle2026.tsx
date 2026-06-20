@@ -295,16 +295,12 @@ const AnthropicMythosGoogle2026 = () => {
           mente.
         </p>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Você prefere usar Claude ou ChatGPT no trabalho? 🤖</h3>
-          <p className="text-muted-foreground">Com esses investimentos, qual IA você acredita que ganha a corrida? Conta nos comentários! 👇</p>
-        </div>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: Google blindando duas pontas">
         <p>O movimento do Google de bancar a Anthropic ao mesmo tempo em que desenvolve o Gemini internamente é uma jogada clássica de <strong>hedge corporativo</strong>: se o Gemini falhar em alguma vertical, a participação na Anthropic garante exposição. Para o desenvolvedor brasileiro que monta produtos com Claude via API, o recado é prático: a Anthropic ganha fôlego financeiro, o que reduz risco de descontinuidade ou de saltos abruptos de preço. Mas atenção — a dependência de infraestrutura do Google (TPUs) cria um vendor lock-in indireto que vale acompanhar, especialmente se você cobra clientes em reais e paga API em dólar.</p>
       </EditorialTake>
-      <ArticleSources category="ia"
+      <ArticleSources
         sources={[
           { title: "Anthropic — Company News", url: "https://www.anthropic.com/news", publisher: "Anthropic", accessedAt: "Maio 2026" },
           { title: "Google DeepMind", url: "https://deepmind.google/", publisher: "Google DeepMind", accessedAt: "Maio 2026" },
@@ -316,7 +312,7 @@ const AnthropicMythosGoogle2026 = () => {
 
 
       <RelatedPosts currentSlug="anthropic-mythos-modelo-ia-google-investimento-2026" />
-      <CommentSection postId="anthropic-mythos-modelo-ia-google-investimento-2026" postTitle="Google Investe US$ 40 Bilhões na Anthropic e o Modelo Mythos Chega"  category="ia" />
+      <CommentSection category="ia" postId="anthropic-mythos-modelo-ia-google-investimento-2026" postTitle="Google Investe US$ 40 Bilhões na Anthropic e o Modelo Mythos Chega" />
     </article>
   );
 };

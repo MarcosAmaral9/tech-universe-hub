@@ -1,78 +1,16 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { Clock, Calendar, User, ChevronRight, Zap, Bot, Brain, Shield, TrendingUp, AlertTriangle, ExternalLink, Star } from "lucide-react";
+import { Clock, User, Calendar, Bot, Brain, Shield, TrendingUp, AlertTriangle, Zap, BarChart3, BookOpen } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import iaFinancasImg from "@/assets/ia-financas-2026.webp";
-
+import heroImg from "@/assets/ia-financas-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
-// Matrix rain effect component
-const MatrixRain = () => {
-  const columns = Array.from({ length: 20 }, (_, i) => ({
-    left: `${i * 5}%`,
-    delay: `${Math.random() * 5}s`,
-    duration: `${3 + Math.random() * 4}s`,
-    chars: Array.from({ length: 8 }, () => String.fromCharCode(0x30A0 + Math.random() * 96)).join('\n'),
-  }));
-  
-
-  useEffect(() => {
-    trackArticleRead("ia-mercado-financeiro-2026-investimentos", "IA no Mercado Financeiro 2026: Como a IA Está Transformando Investimentos", "invest");
-  }, []);
-  return (
-    <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
-      <style>{`
-        @keyframes matrixFall {
-          0% { transform: translateY(-100%); opacity: 1; }
-          100% { transform: translateY(100vh); opacity: 0; }
-        }
-      `}</style>
-      {columns.map((col, i) => (
-        <div
-          key={i}
-          className="absolute text-[hsl(var(--invest-color))] text-xs font-mono whitespace-pre leading-tight"
-          style={{
-            left: col.left,
-            top: 0,
-            animation: `matrixFall ${col.duration} ${col.delay} linear infinite`,
-          }}
-        >
-          {col.chars}
-        </div>
-      ))}
-    </div>
-  );
-};
-
-interface ToolCardProps {
-  name: string;
-  description: string;
-  category: string;
-  ease: number; // 1-5
-  link?: string;
-}
-
-const ToolCard = ({ name, description, category, ease }: ToolCardProps) => (
-  <div className="bg-card border border-border rounded-xl p-5 hover:border-[hsl(var(--invest-color))]/50 transition-all">
-    <div className="flex items-center justify-between mb-2">
-      <span className="text-xs bg-[hsl(var(--invest-color))]/20 text-[hsl(var(--invest-color))] px-2 py-0.5 rounded-full">{category}</span>
-      <div className="flex gap-0.5">
-        {[1,2,3,4,5].map(i => (
-          <Star key={i} className={`h-3 w-3 ${i <= ease ? 'fill-[hsl(45,100%,50%)] text-[hsl(45,100%,50%)]' : 'text-muted'}`} />
-        ))}
-      </div>
-    </div>
-    <h4 className="font-bold mb-1">{name}</h4>
-    <p className="text-sm text-muted-foreground">{description}</p>
-  </div>
-);
 
 const IAMercadoFinanceiro2026 = () => {
   useEffect(() => {
@@ -80,281 +18,185 @@ const IAMercadoFinanceiro2026 = () => {
   }, []);
 
   return (
-    <>
-      <article className="container py-8 max-w-4xl mx-auto">
-        <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-          <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
-          <ChevronRight className="h-3 w-3" />
-          <Link to="/financas" className="hover:text-foreground transition-colors">Finanças</Link>
-          <span className="text-muted-foreground">/</span>
-          <Link to="/ia" className="hover:text-foreground transition-colors">IA</Link>
-          <ChevronRight className="h-3 w-3" />
-          <span className="text-foreground">IA no Mercado Financeiro</span>
-        </nav>
+    <article className="container py-8 max-w-4xl mx-auto">
+      <BackNavigation category="invest" />
 
-        <header className="mb-8">
-          <div className="flex gap-2 mb-4">
-            <CategoryBadge category="invest" size="lg" />
-            <CategoryBadge category="ia" size="lg" />
-          </div>
-          <h1 className="font-display text-3xl md:text-5xl font-bold mb-4">
-            Inteligência Artificial no Mercado Financeiro 2026: Como a IA Está Transformando Seus Investimentos
-          </h1>
-          <p className="text-lg text-muted-foreground mb-4">
-            A IA já está gerenciando bilhões em investimentos. Descubra como a inteligência artificial está mudando as finanças em 2026 e como você pode usar isso a seu favor.
-          </p>
-          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-            <span className="flex items-center gap-1"><User className="h-4 w-4" /> VICIO&lt;CODE&gt;</span>
-            <span className="flex items-center gap-1"><Calendar className="h-4 w-4" /> 20 Fev 2026</span>
-            <span className="flex items-center gap-1"><Clock className="h-4 w-4" /> 12 min de leitura</span>
-          </div>
-          <ShareWhatsApp />
-          <AuthorBio category="invest" />
-        </header>
-
-        {/* Hero with Matrix effect */}
-        <div className="relative rounded-2xl overflow-hidden mb-8">
-          <img fetchpriority="high" src={iaFinancasImg} alt="IA no Mercado Financeiro 2026" className="w-full aspect-video object-cover" loading="eager" />
-          <MatrixRain />
+      <header className="mb-8">
+        <div className="flex gap-2 mb-4">
+          <CategoryBadge category="invest" size="lg" />
+          <CategoryBadge category="ia" size="lg" />
         </div>
-
-        {/* Intro */}
-        <div className="prose prose-lg max-w-none mb-8">
-          <p className="text-muted-foreground leading-relaxed">
-            Em 2026, mais de <strong>40% dos trades na B3 são executados por algoritmos</strong>. Robôs gerenciam carteiras de fundos multibilionários. E agora, pela primeira vez na história, o investidor comum tem acesso às mesmas ferramentas que os grandes fundos usavam exclusivamente até há pouco tempo.
-          </p>
-          <p className="text-muted-foreground leading-relaxed">
-            A questão não é mais "a IA vai substituir os analistas?". Ela já substituiu muitos. A questão é: <strong>você vai usar isso a seu favor?</strong>
-          </p>
+        <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
+          Inteligência Artificial no Mercado Financeiro em 2026: Como a IA Está Transformando Seus Investimentos
+        </h1>
+        <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
+          <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
+          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />20 de Fevereiro, 2026</span>
+          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />14 min de leitura</span>
         </div>
+        <ShareWhatsApp />
+        <AuthorBio category="invest" />
+      </header>
 
-        {/* O que a IA faz */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--ia-color))] pl-4">O Que a IA Faz no Mercado Financeiro Hoje</h2>
-          <div className="grid md:grid-cols-2 gap-4 mb-6">
-            {[
-              { icon: <Brain className="h-6 w-6" />, title: "Análise de Sentimento", desc: "Modelos de linguagem analisam milhões de notícias, posts e relatórios em tempo real para prever movimentos antes que apareçam nos gráficos." },
-              { icon: <Shield className="h-6 w-6" />, title: "Gestão de Risco Automatizada", desc: "Algoritmos monitoram carteiras 24/7 e rebalanceiam automaticamente quando os ativos saem dos parâmetros." },
-              { icon: <AlertTriangle className="h-6 w-6" />, title: "Detecção de Fraudes", desc: "Bancos como Itaú e Bradesco usam IA para identificar transações suspeitas em milissegundos." },
-              { icon: <TrendingUp className="h-6 w-6" />, title: "Credit Scoring Dinâmico", desc: "Fintechs calculam risco de crédito em tempo real com centenas de variáveis, não apenas o score do Serasa." },
-            ].map((item, i) => (
-              <div key={i} className="bg-card border border-border rounded-xl p-5">
-                <div className="text-[hsl(var(--ia-color))] mb-3">{item.icon}</div>
-                <h3 className="font-bold mb-2 text-[hsl(45,100%,50%)]">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+      <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
+        <img fetchpriority="high" loading="eager" decoding="async"
+          src={heroImg}
+          alt="IA no mercado financeiro em 2026 — robôs-advisor, análise fundamentalista e Open Finance no Brasil"
+          className="w-full h-full object-cover" />
+      </div>
 
-        {/* Robo-Advisors */}
-        <section className="mb-10">
-          <AdLeaderboard className="my-8" />
+      <div className="prose prose-lg dark:prose-invert max-w-none">
+        <p className="lead text-xl text-muted-foreground">
+          Em 2026, mais de <strong>40% dos trades na B3 são executados por algoritmos</strong>. Robôs gerenciam carteiras de fundos multibilionários. E pela primeira vez na história, o investidor comum tem acesso às mesmas ferramentas que os grandes fundos usavam exclusivamente. A questão é: como usar isso a seu favor — e onde os riscos se escondem?
+        </p>
 
-          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--ia-color))] pl-4">Robo-Advisors: O Consultor Financeiro de R$ 0</h2>
-          <p className="text-muted-foreground mb-6">Plataformas como Warren, Magnetis e Vérios usam IA para analisar seu perfil, montar carteira diversificada automaticamente, rebalancear periodicamente e minimizar custos.</p>
-          
-          {/* Comparativo visual */}
-          <div className="grid md:grid-cols-2 gap-4 mb-6">
-            <div className="bg-card border border-border rounded-xl p-6">
-              <div className="text-center mb-4">
-                <User className="h-10 w-10 mx-auto text-muted-foreground mb-2" />
-                <h3 className="font-bold text-lg">Gestor Humano</h3>
-              </div>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-start gap-2"><span className="text-[hsl(var(--ia-color))]">▶</span> Taxa de administração: 1-3% ao ano</li>
-                <li className="flex items-start gap-2"><span className="text-[hsl(var(--ia-color))]">▶</span> Investimento mínimo: R$ 50.000+</li>
-                <li className="flex items-start gap-2"><span className="text-[hsl(var(--ia-color))]">▶</span> Rebalanceamento: mensal/trimestral</li>
-                <li className="flex items-start gap-2"><span className="text-[hsl(var(--ia-color))]">▶</span> Análise: baseada em experiência e vieses</li>
-                <li className="flex items-start gap-2"><span className="text-[hsl(var(--ia-color))]">▶</span> Disponibilidade: horário comercial</li>
-              </ul>
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Brain className="h-7 w-7 text-invest" />
+          O Que a IA Já Faz no Mercado Financeiro Hoje
+        </h2>
+        <p>
+          A inteligência artificial não é novidade no mercado financeiro — bancos e fundos usam algoritmos desde os anos 1980. O que mudou em 2023-2026 é a <strong>democratização</strong>: modelos que antes exigiam infraestrutura de R$ 50 milhões agora rodam em APIs com custo de centavos por requisição. As funções principais onde a IA atua hoje:
+        </p>
+        <div className="not-prose my-6 grid md:grid-cols-2 gap-4">
+          {[
+            { icon: <Brain className="h-5 w-5" />, titulo: "Análise de Sentimento de Mercado", desc: "Modelos NLP analisam milhões de notícias, posts no X, relatórios de analistas e atas do Copom em tempo real para identificar mudança de sentimento antes que apareça nos gráficos." },
+            { icon: <Shield className="h-5 w-5" />, titulo: "Gestão de Risco Automatizada", desc: "Algoritmos monitoram carteiras 24/7 e rebalanceiam automaticamente quando ativos saem dos parâmetros de risco definidos — sem emoção, sem timing errado." },
+            { icon: <AlertTriangle className="h-5 w-5" />, titulo: "Detecção de Fraudes em Tempo Real", desc: "Itaú, Bradesco e Nubank usam redes neurais para identificar transações suspeitas em milissegundos — o Nubank processa mais de 2 bilhões de eventos por dia com IA." },
+            { icon: <TrendingUp className="h-5 w-5" />, titulo: "Credit Scoring Dinâmico", desc: "Fintechs como Creditas e Rebel calculam risco de crédito em tempo real com centenas de variáveis além do Serasa — histórico de pagamento de aluguel, comportamento de consumo, padrões de renda." },
+          ].map(({ icon, titulo, desc }) => (
+            <div key={titulo} className="bg-card border border-border rounded-xl p-5">
+              <div className="text-invest mb-3">{icon}</div>
+              <h3 className="font-bold mb-2 text-sm">{titulo}</h3>
+              <p className="text-sm text-muted-foreground">{desc}</p>
             </div>
-            <div className="bg-[hsl(var(--ia-color))]/5 border-2 border-[hsl(var(--ia-color))]/30 rounded-xl p-6">
-              <div className="text-center mb-4">
-                <Bot className="h-10 w-10 mx-auto text-[hsl(var(--ia-color))] mb-2" />
-                <h3 className="font-bold text-lg">Robo-Advisor (IA)</h3>
-              </div>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-start gap-2"><span className="text-[hsl(var(--ia-color))]">✓</span> Taxa de administração: 0,3-0,7% ao ano</li>
-                <li className="flex items-start gap-2"><span className="text-[hsl(var(--ia-color))]">✓</span> Investimento mínimo: R$ 100</li>
-                <li className="flex items-start gap-2"><span className="text-[hsl(var(--ia-color))]">✓</span> Rebalanceamento: contínuo (24/7)</li>
-                <li className="flex items-start gap-2"><span className="text-[hsl(var(--ia-color))]">✓</span> Análise: baseada em dados e modelos</li>
-                <li className="flex items-start gap-2"><span className="text-[hsl(var(--ia-color))]">✓</span> Disponibilidade: 24 horas, 7 dias</li>
-              </ul>
-            </div>
-          </div>
-      <AdInArticle />
-          
-          <div className="bg-[hsl(var(--ia-color))]/10 border border-[hsl(var(--ia-color))]/30 rounded-xl p-5">
-            <p className="flex items-start gap-2 text-sm">
-              <Zap className="h-5 w-5 text-[hsl(var(--ia-color))] flex-shrink-0 mt-0.5" />
-              <span><strong>Vantagem para o pequeno investidor:</strong> Acesso a gestão profissional por taxas muito menores que fundos tradicionais, com investimento mínimo acessível.</span>
-            </p>
-          </div>
-        </section>
-
-        {/* Ferramentas */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--ia-color))] pl-4">Ferramentas de IA Para Usar Agora</h2>
-          
-          <h3 className="text-lg font-bold mb-3 text-[hsl(45,100%,50%)]">Para Análise de Ações</h3>
-          <div className="grid md:grid-cols-3 gap-4 mb-6">
-            <ToolCard name="Trade Map" description="Dados fundamentalistas com IA integrada" category="Ações" ease={4} />
-            <ToolCard name="Bloomberg Terminal" description="Padrão da indústria para profissionais" category="Ações" ease={2} />
-            <ToolCard name="ChatGPT + Code Interpreter" description="Analise sua carteira com dados do Excel" category="Ações" ease={5} />
-          </div>
-
-          <h3 className="text-lg font-bold mb-3 text-[hsl(45,100%,50%)]">Para Cripto</h3>
-          <div className="grid md:grid-cols-2 gap-4 mb-6">
-            <ToolCard name="Glassnode" description="Análise on-chain com inteligência artificial" category="Cripto" ease={3} />
-            <ToolCard name="Messari" description="Pesquisa de mercado cripto com IA" category="Cripto" ease={3} />
-          </div>
-
-          <h3 className="text-lg font-bold mb-3 text-[hsl(45,100%,50%)]">Para Gestão Pessoal</h3>
-          <div className="grid md:grid-cols-2 gap-4 mb-6">
-            <ToolCard name="Mobills com IA" description="Categoriza gastos automaticamente usando machine learning" category="Finanças Pessoais" ease={5} />
-            <ToolCard name="Organizze" description="Previsão de fluxo de caixa com inteligência artificial" category="Finanças Pessoais" ease={4} />
-          </div>
-        </section>
-
-        {/* Infográfico: Como IA analisa o mercado */}
-        <section className="mb-10">
-          <AdRectangle className="my-8" />
-
-          
-<h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--ia-color))] pl-4">Como a IA Analisa o Mercado</h2>
-          <div className="bg-card border border-border rounded-2xl p-6">
-            <div className="flex flex-col md:flex-row items-center gap-4">
-              {[
-                { step: "1", title: "Coleta", desc: "Milhões de dados: notícias, redes sociais, relatórios, preços" },
-                { step: "2", title: "Processamento", desc: "NLP e Machine Learning identificam padrões e sentimentos" },
-                { step: "3", title: "Análise", desc: "Modelos preditivos calculam probabilidades de cenários" },
-                { step: "4", title: "Decisão", desc: "Algoritmos executam trades ou geram recomendações" },
-                { step: "5", title: "Aprendizado", desc: "Resultados retroalimentam o modelo para melhorar previsões" },
-              ].map((item, i) => (
-                <div key={i} className="flex-1 text-center">
-                  <div className="w-10 h-10 rounded-full bg-[hsl(var(--ia-color))]/20 border-2 border-[hsl(var(--ia-color))] flex items-center justify-center mx-auto mb-2 text-sm font-bold">
-                    {item.step}
-                  </div>
-                  <h4 className="font-bold text-sm mb-1">{item.title}</h4>
-                  <p className="text-xs text-muted-foreground">{item.desc}</p>
-                  {i < 4 && <div className="hidden md:block text-muted-foreground mt-2">→</div>}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Lado Negro */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--ia-color))] pl-4">O Lado Negro: Riscos da IA nas Finanças</h2>
-          <div className="space-y-4">
-            {[
-              { title: "Flash Crashes", desc: "Em 2010, algoritmos causaram queda de 9% em minutos no mercado americano. Episódios similares ocorreram em cripto em 2025.", icon: "⚡" },
-              { title: "Viés Algorítmico", desc: "Modelos de crédito baseados em IA podem perpetuar discriminações históricas presentes nos dados de treinamento.", icon: "⚠️" },
-              { title: "Over-otimização", desc: "Algoritmos que funcionam perfeitamente no backtesting falham quando as condições do mercado mudam.", icon: "📉" },
-            ].map((item, i) => (
-              <div key={i} className="bg-destructive/5 border border-destructive/20 rounded-xl p-5 flex items-start gap-4">
-                <span className="text-2xl">{item.icon}</span>
-                <div>
-                  <h3 className="font-bold mb-1">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* O que a IA NÃO consegue */}
-        <section className="mb-10">
-          <div className="bg-card border-2 border-dashed border-[hsl(var(--ia-color))]/30 rounded-2xl p-6">
-            <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
-              <Bot className="h-5 w-5 text-[hsl(var(--ia-color))]" />
-              O Que a IA Não Consegue Fazer (Ainda)
-            </h2>
-            <div className="grid md:grid-cols-2 gap-3">
-              {[
-                "Prever eventos inesperados (cisnes negros, pandemias, guerras)",
-                "Entender mudanças políticas e regulatórias complexas",
-                "Substituir totalmente a intuição de mercado de traders experientes",
-                "Garantir lucro — nenhum modelo é infalível",
-                "Adaptar-se instantaneamente a condições de mercado nunca vistas",
-                "Considerar seus objetivos de vida pessoais",
-              ].map((item, i) => (
-                <p key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <span className="text-destructive">✕</span> {item}
-                </p>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Dicas práticas */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--ia-color))] pl-4">Como Usar IA Para Melhorar Suas Finanças Pessoais</h2>
-          <div className="space-y-3">
-            {[
-              "Use ChatGPT/Gemini para entender relatórios de empresas que você quer investir",
-              "Automatize seu orçamento com apps de IA (Mobills, Organizze)",
-              "Consulte robo-advisors como ponto de partida para sua carteira",
-              "Use screeners com IA para filtrar ações por múltiplos critérios",
-              "Fique atento a alertas de notícias com análise de sentimento",
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-3 bg-[hsl(var(--ia-color))]/5 rounded-lg p-4">
-                <span className="text-[hsl(var(--ia-color))] font-bold">{i + 1}.</span>
-                <span className="text-sm text-muted-foreground">{item}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Conclusão */}
-        <section className="mb-10">
-          <div className="bg-card border border-border rounded-2xl p-6">
-            <h2 className="text-xl font-bold mb-4">📋 Resumo do Artigo</h2>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              {[
-                "Mais de 40% dos trades na B3 já são executados por algoritmos de IA",
-                "Robo-advisors democratizam o acesso a gestão profissional a partir de R$ 100",
-                "Ferramentas como ChatGPT e Trade Map permitem análise sofisticada para qualquer investidor",
-                "IA tem limitações reais: flash crashes, vieses e incapacidade de prever cisnes negros",
-                "Use IA como ferramenta complementar, nunca como decisão única de investimento",
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2"><span className="text-[hsl(var(--ia-color))]">✓</span> {item}</li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-8">
-          {["IA finanças", "robo advisor", "inteligência artificial", "investimentos 2026", "machine learning", "fintech"].map(tag => (
-            <span key={tag} className="px-3 py-1 bg-muted rounded-full text-xs text-muted-foreground">#{tag}</span>
           ))}
         </div>
 
-        <div className="flex gap-4 mb-8">
-          <BackNavigation category="invest" />
+        <AdLeaderboard className="my-8" />
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Bot className="h-7 w-7 text-invest" />
+          Robôs-Advisor no Brasil: Warren, Magnetis e Vérios — Comparativo Honesto
+        </h2>
+        <p>
+          O principal benefício prático da IA para o investidor pessoa física brasileiro são os <strong>robôs-advisor</strong>: plataformas que usam algoritmos para montar e rebalancear carteiras automaticamente, com taxas muito menores que fundos ativos tradicionais. O diferencial em relação à gestão humana não é apenas custo — é <strong>ausência de viés emocional</strong> e rebalanceamento contínuo sem a necessidade de acompanhamento manual.
+        </p>
+        <div className="not-prose my-6 overflow-x-auto">
+          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+            <thead><tr className="bg-secondary text-left">
+              <th className="p-3">Plataforma</th>
+              <th className="p-3">Taxa ao Ano</th>
+              <th className="p-3">Aporte Mínimo</th>
+              <th className="p-3">Modelo</th>
+              <th className="p-3">Diferencial</th>
+            </tr></thead>
+            <tbody>
+              {[
+                ["Warren", "~0,30–0,50%", "R$ 1 (taxa mín. R$ 7,50/mês)", "Gestora CVM", "Carteiras personalizadas, corretagem zero em ações/FIIs/ETFs, rebates devolvidos ao investidor"],
+                ["Magnetis", "~0,59% total médio", "R$ 0 (isenção nos 1ºs R$ 5.000)", "Consultoria de investimentos", "Rebalanceamento automático, alocação em fundos exclusivos com taxas baixas"],
+                ["Vérios", "~0,95%", "R$ 5.000", "Gestora CVM", "Carteiras diversificadas, foco em long-term buy-and-hold"],
+                ["Monetus", "0,30–0,60%", "Sem mínimo declarado", "Gestora de recursos", "Fundos próprios com taxas competitivas, sem conflito de interesses"],
+                ["Gestor Humano/Fundo Ativo", "1,5–3,0%", "R$ 50.000+", "Gestão discricionária", "Experiência humana, relação pessoal, estratégias sofisticadas"],
+              ].map(([plat, taxa, min, modelo, dif]) => (
+                <tr key={plat} className={`border-t border-border ${plat === "Gestor Humano/Fundo Ativo" ? "opacity-60" : ""}`}>
+                  <td className="p-3 font-medium">{plat}</td>
+                  <td className="p-3 font-bold text-invest">{taxa}</td>
+                  <td className="p-3 text-xs">{min}</td>
+                  <td className="p-3 text-xs text-muted-foreground">{modelo}</td>
+                  <td className="p-3 text-xs text-muted-foreground">{dif}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="text-xs text-muted-foreground mt-2">Fonte: sites oficiais de cada plataforma. Taxas sujeitas a alteração. Warren, Vérios: credenciadas na CVM como gestoras. Magnetis: consultoria de investimentos.</p>
         </div>
+        <p>
+          A economia de taxa parece pequena mas é transformadora em prazo longo. Uma diferença de 1,5% ao ano entre um fundo ativo (2%) e um robô-advisor (0,5%) resulta, em 20 anos com R$ 100.000 investidos e retorno bruto de 10% ao ano, em uma diferença de <strong>aproximadamente R$ 175.000</strong> no patrimônio final — apenas pelo custo menor. O poder dos juros compostos amplifica qualquer diferença de taxa ao longo do tempo.
+        </p>
 
-        <EditorialTake category="invest" title="Análise do Marcos: IA é ferramenta de triagem, não de decisão">
-          <p>Segundo o relatório 'AI in Financial Services 2024' da NVIDIA (em parceria com a McKinsey), 91% das instituições financeiras globais já usam IA em produção — principalmente em detecção de fraude, análise de crédito e atendimento. No Brasil, o Banco Central regulamentou o uso de IA no Open Finance via Resolução BCB 287/2022, exigindo explicabilidade em decisões automatizadas.</p>
-          <p className="mt-2">Para o investidor PF brasileiro, os robôs-advisor consolidados são Warren (parceria com Galápagos), Magnetis (carteiras automatizadas) e o piloto de IA da XP Investimentos. O custo médio é de 0,3% a 0,8% ao ano sobre patrimônio, contra 1,5% a 2% de fundos ativos tradicionais. Minha análise: a IA não substitui análise humana em decisões grandes — ela é excelente para triagem (filtrar 500 ações para 20 candidatas) e péssima para julgar contexto macro. <strong>Use IA generativa para resumir relatórios trimestrais e ATAs do Copom, mas nunca para decisão de compra direta.</strong></p>
-        </EditorialTake>
+        <AdInArticle />
 
-        <ArticleSources category="invest" sources={[
-          { title: "NVIDIA — State of AI in Financial Services 2024", url: "https://www.nvidia.com/en-us/industries/finance/", publisher: "NVIDIA / McKinsey", accessedAt: "Maio 2026" },
-          { title: "Banco Central — Resolução BCB 287/2022 (Open Finance e IA)", url: "https://www.bcb.gov.br/estabilidadefinanceira/openfinance", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
-          { title: "CVM — Tecnologia e Inovação Financeira", url: "https://www.gov.br/cvm/pt-br", publisher: "Comissão de Valores Mobiliários (CVM)", accessedAt: "Maio 2026" },
-          { title: "Status Invest — Análise Fundamentalista com IA", url: "https://statusinvest.com.br/", publisher: "Status Invest", accessedAt: "Maio 2026" },
-          { title: "XP Inc. — Relatórios Trimestrais e Inovação", url: "https://institucional.xpi.com.br/relacao-com-investidores/", publisher: "XP Inc.", accessedAt: "Maio 2026" },
-          { title: "ANBIMA — Inovação e Tecnologia no Mercado de Capitais", url: "https://www.anbima.com.br/pt_br/informar/relatorios/mercado-de-capitais/", publisher: "ANBIMA", accessedAt: "Maio 2026" },
-        ]} />
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <BookOpen className="h-7 w-7 text-invest" />
+          Como Usar ChatGPT e Claude para Analisar Investimentos
+        </h2>
+        <p>
+          Modelos de IA generativa não são consultores de investimentos regulamentados e não devem ser usados para receber recomendações de compra e venda. O que eles fazem muito bem — e que costuma levar horas de um analista humano — é <strong>processar e resumir informações densas</strong>. Casos de uso verificados e seguros:
+        </p>
+        <ul className="space-y-2 my-6">
+          <li><strong>Resumo de Resultados Trimestrais (ITR/DFP):</strong> Cole o Release de Resultados da empresa na conversa e peça "resuma os principais indicadores, compare com o trimestre anterior e identifique pontos de atenção". Leva 30 segundos; sem IA levaria 45 minutos.</li>
+          <li><strong>Análise de Atas do Copom:</strong> Cada comunicado do Comitê de Política Monetária tem dezenas de páginas. IA generativa identifica as mudanças de linguagem que sinalizam virada de ciclo de juros — padrão que analistas experientes levam tempo para capturar manualmente.</li>
+          <li><strong>Comparativo de múltiplos de valuation:</strong> "Calcule P/L, EV/EBITDA, P/VPA e Dividend Yield para as 5 maiores empresas do setor elétrico com base nessa planilha" — algo que pode ser feito via Code Interpreter do ChatGPT em minutos.</li>
+          <li><strong>Triagem de carteira:</strong> Use Status Invest ou Investidor10 para exportar dados de 500 ações e peça ao Claude/ChatGPT para filtrar por critérios (ex: ROE {'>'} 15%, dívida/EBITDA {'<'} 2x, crescimento de lucro {'>'} 10%) e rankear os candidatos.</li>
+        </ul>
+
+        <AdRectangle className="my-8" />
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <BarChart3 className="h-7 w-7 text-invest" />
+          O Que a CVM Permite e Proíbe em Recomendações Automatizadas
+        </h2>
+        <p>
+          A <strong>Comissão de Valores Mobiliários</strong> regulamenta a atividade de análise e recomendação de investimentos no Brasil. Para qualquer pessoa ou empresa que queira oferecer recomendações de carteira automatizadas via IA, as regras da CVM são claras e não admitem exceções:
+        </p>
+        <p>
+          A Instrução CVM 598/2018 (substituída pela Resolução CVM 20/2021) exige que analistas de valores mobiliários sejam <strong>certificados pelo CNPI</strong> (Certificação Nacional do Profissional de Investimento) ou estejam vinculados a uma instituição autorizada. Sistemas de IA que recomendam ativos específicos sem supervisão humana de um analista CNPI estão em descumprimento. Isso significa que aplicativos que "recomendam ações com IA" precisam ter um analista humano certificado supervisionando o processo ou sendo o responsável pelas recomendações.
+        </p>
+        <p>
+          Para o investidor pessoa física, a regra prática é: <strong>use IA para pesquisa e análise própria, nunca como substituto de um consultor regulamentado</strong> quando o assunto for alocar patrimônio significativo. A IA pode ser o motor de triagem; a decisão final precisa ser sua — e preferencialmente validada com um assessor de investimentos certificado pela CVM ou ANBIMA.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <AlertTriangle className="h-7 w-7 text-destructive" />
+          Riscos Reais da IA nas Finanças: O Que Não Aparece nos Anúncios
+        </h2>
+        <ul className="space-y-2 my-6">
+          <li><strong>Flash Crashes:</strong> Em 2010, algoritmos causaram queda de 9% em 20 minutos no mercado americano (o "Flash Crash"). Em 2025, episódios similares ocorreram em mercados de cripto quando modelos de diferentes fundos interpretaram o mesmo sinal de forma convergente e venderam simultaneamente.</li>
+          <li><strong>Viés nos dados de treinamento:</strong> Modelos de crédito baseados em IA perpetuam discriminações históricas quando os dados de treinamento refletem decisões injustas do passado. A Resolução BCB 287/2022 já exige explicabilidade em modelos de crédito no Open Finance exatamente por isso.</li>
+          <li><strong>Over-otimização (overfitting):</strong> Algoritmos que funcionam perfeitamente no backtesting histórico frequentemente falham em mercados reais quando as condições mudam — porque otimizaram demais para o passado.</li>
+          <li><strong>Dependência de conectividade:</strong> Robôs-advisor dependem de conexão constante. Em momentos de crise quando você mais precisaria de intervenção rápida, instabilidades de sistema podem ocorrer.</li>
+        </ul>
+
+        <div className="not-prose my-6 p-5 bg-secondary/50 rounded-xl border border-border">
+          <h3 className="font-bold text-sm mb-3">📋 Resumo: Use IA nas Finanças Para Isso</h3>
+          <ul className="space-y-2 text-sm text-muted-foreground">
+            {[
+              "✅ Triagem de ações por múltiplos quantitativos (filtrar 500 → 20 candidatos)",
+              "✅ Resumo de relatórios trimestrais, atas do Copom e prospectos",
+              "✅ Rebalanceamento automático de carteira via robô-advisor",
+              "✅ Categorização e análise de gastos pessoais",
+              "✅ Cálculo de cenários e projeções financeiras com dados fornecidos por você",
+              "❌ Receber recomendação de compra/venda sem supervisão de analista CNPI",
+              "❌ Confiar cegamente em previsões de preço de qualquer modelo de IA",
+              "❌ Usar dados de clientes em IA sem verificar o DPA da plataforma (LGPD)",
+            ].map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <EditorialTake category="invest" title="Análise do Marcos: use IA para triagem de 500 ações — nunca para decisão de compra direta">
+        <p>
+          Segundo o relatório "AI in Financial Services 2024" da NVIDIA, 91% das instituições financeiras globais já usam IA em produção. No Brasil, o Banco Central regulamentou o uso de IA no Open Finance via Resolução BCB 287/2022, exigindo explicabilidade em decisões automatizadas. A economia de taxa dos robôs-advisor (0,3% vs 2% de fundos ativos) é real e mensurável — em 20 anos, a diferença pode superar R$ 175 mil num patrimônio de R$ 100 mil.
+        </p>
+        <p>
+          Para o investidor PF brasileiro, a mensagem prática é esta: use IA generativa para resumir relatórios trimestrais e ATAs do Copom — isso economiza horas e aumenta a qualidade da análise. Use robôs-advisor para o componente de carteira diversificada de longo prazo. Mas nunca confunda triagem automatizada com recomendação regulamentada. A CVM existe por razões concretas, e qualquer sistema que diz "minha IA garante X% de retorno" está mentindo ou está fora da lei.
+        </p>
+      </EditorialTake>
+
+      <ArticleSources sources={[
+        { title: "NVIDIA — State of AI in Financial Services 2024", url: "https://www.nvidia.com/en-us/industries/finance/", publisher: "NVIDIA", accessedAt: "Maio 2026" },
+        { title: "Banco Central — Resolução BCB 287/2022 (Open Finance)", url: "https://www.bcb.gov.br/estabilidadefinanceira/openfinance", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
+        { title: "Warren — Revisão completa 2026", url: "https://educacaofinanceirabrasil.com.br/artigos/warren-review", publisher: "Educação Financeira Brasil", accessedAt: "Maio 2026" },
+        { title: "CVM — Resolução CVM 20/2021 (Analistas de Valores Mobiliários)", url: "https://www.gov.br/cvm/pt-br/assuntos/normas/instrucoes/rcvm20", publisher: "CVM", accessedAt: "Maio 2026" },
+        { title: "Status Invest — Plataforma de Análise Fundamentalista", url: "https://statusinvest.com.br/", publisher: "Status Invest", accessedAt: "Maio 2026" },
+        { title: "iDinheiro — Robô de Investimento: quais são os melhores", url: "https://www.idinheiro.com.br/investimentos/robo-de-investimento/", publisher: "iDinheiro", accessedAt: "Maio 2026" },
+      ]} />
 
       <RelatedPosts currentSlug="ia-mercado-financeiro-2026-investimentos" />
-      <CommentSection postId="ia-mercado-financeiro-2026-investimentos" postTitle="IA no Mercado Financeiro 2026: Como a IA Está Transformando Investimentos"  category="invest" />
-      </article>
-    </>
+      <CommentSection category="invest" postId="ia-mercado-financeiro-2026-investimentos" postTitle="IA no Mercado Financeiro 2026: Como a IA Está Transformando Investimentos" />
+    </article>
   );
 };
 

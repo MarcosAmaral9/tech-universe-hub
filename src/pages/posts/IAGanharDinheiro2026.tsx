@@ -132,6 +132,47 @@ const IAGanharDinheiro2026 = () => {
             <li><strong>Semana 4:</strong> Entregue, colete depoimentos em vídeo e reajuste o preço para o valor real.</li>
           </ul>
         </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Quanto os Profissionais de IA Estão Ganhando no Brasil: Dados de Mercado</h2>
+        <p>
+          O Gupy Relatório de Empregabilidade 2025 registrou aumento de <strong>306% na busca por profissionais com conhecimento em IA</strong> por parte das empresas brasileiras entre 2024 e 2025. O LinkedIn publicou que <strong>habilidades de IA generativa aumentam o salário médio em 20–25%</strong> para profissionais com formação técnica em TI — e em até 40% para engenheiros de ML/IA sêniors.
+        </p>
+        <div className="not-prose my-6 overflow-x-auto">
+          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+            <thead><tr className="bg-secondary text-left">
+              <th className="p-3">Perfil</th>
+              <th className="p-3">Experiência</th>
+              <th className="p-3">Faixa CLT</th>
+              <th className="p-3">Faixa PJ/Freelancer</th>
+            </tr></thead>
+            <tbody>
+              {[
+                ["Especialista IA/ML","3–5 anos","R$ 15.000–R$ 30.000/mês","R$ 25.000–R$ 60.000/mês"],
+                ["Prompt Engineer / IA Ops","1–3 anos","R$ 6.000–R$ 15.000/mês","R$ 8.000–R$ 25.000/mês"],
+                ["Consultor Implementação IA","2–4 anos","R$ 8.000–R$ 18.000/mês","R$ 200–R$ 500/hora"],
+                ["Criador Conteúdo IA (full-time)","6+ meses","R$ 3.000–R$ 8.000/mês","R$ 2.000–R$ 20.000/mês (variável)"],
+                ["Automações n8n/Make (freelancer)","6+ meses","—","R$ 150–R$ 400/hora"],
+              ].map(([p, e, clt, pj]) => (
+                <tr key={p} className="border-t border-border">
+                  <td className="p-3 font-medium text-sm">{p}</td>
+                  <td className="p-3 text-xs text-muted-foreground">{e}</td>
+                  <td className="p-3 text-xs">{clt}</td>
+                  <td className="p-3 text-xs font-medium text-invest">{pj}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="text-xs text-muted-foreground mt-2">Referências: LinkedIn Salary Insights BR (2026), Glassdoor BR (2026), Gupy Relatório de Empregabilidade 2025. Faixas amplas refletem grande variação por empresa e região.</p>
+        </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Os 5 Erros Que Destroem a Renda com IA Antes dos 6 Meses</h2>
+        <ul className="space-y-2 my-6">
+          <li><strong>Cobrar pelo tempo, não pelo resultado:</strong> R$ 50/hora por automação está sempre errado — o cliente paga pelo ROI. Uma automação que economiza R$ 5.000/mês vale R$ 3.000–R$ 6.000 de setup, independentemente de quantas horas levou.</li>
+          <li><strong>Depender de uma única plataforma:</strong> Quem construiu negócio em cima só do ChatGPT ou só do Midjourney sofreu quando houve mudanças de política ou preço. Diversifique ferramentas desde o início.</li>
+          <li><strong>Não documentar o processo:</strong> A documentação de como você faz o que faz é o que permite escalar de 1 cliente para 10, contratar colaboradores e criar produtos a partir de serviços.</li>
+          <li><strong>Aceitar todo tipo de trabalho:</strong> Nichar é contraintuitivo mas necessário. "Automação para clínicas odontológicas" bate "automação para qualquer empresa" em conversão, precificação e reputação.</li>
+          <li><strong>Ignorar o jurídico:</strong> Contratos sem NDA, serviços entregues sem nota fiscal e chatbots corporativos sem DPA são bombas-relógio. A economia inicial no contador sai cara no primeiro problema com cliente.</li>
+        </ul>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: quem fatura de verdade combina habilidade prévia com IA, não só IA">
@@ -143,7 +184,7 @@ const IAGanharDinheiro2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources category="ia" sources={[
+      <ArticleSources sources={[
         { title: "World Economic Forum — Future of Jobs Report 2025", url: "https://www.weforum.org/reports/the-future-of-jobs-report-2025", publisher: "WEF", accessedAt: "Maio 2026" },
         { title: "Workana — Plataforma de Freelancers Brasil", url: "https://www.workana.com/", publisher: "Workana", accessedAt: "Maio 2026" },
         { title: "OpenAI — API Pricing", url: "https://openai.com/api/pricing/", publisher: "OpenAI", accessedAt: "Maio 2026" },
@@ -152,7 +193,7 @@ const IAGanharDinheiro2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="como-usar-ia-ganhar-dinheiro-2026" />
-      <CommentSection postId="como-usar-ia-ganhar-dinheiro-2026" postTitle="Como Usar IA para Ganhar Dinheiro em 2026: 15 Formas"  category="ia" />
+      <CommentSection category="ia" postId="como-usar-ia-ganhar-dinheiro-2026" postTitle="Como Usar IA para Ganhar Dinheiro em 2026: 15 Formas" />
     </article>
   );
 };

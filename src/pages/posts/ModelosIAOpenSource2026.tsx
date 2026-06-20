@@ -1,18 +1,16 @@
-import ArticleSources from "@/components/ArticleSources";
-import EditorialTake from "@/components/EditorialTake";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
-import { ArrowLeft, Clock, User, Calendar, Code, Globe, DollarSign, Zap } from "lucide-react";
+import {, Clock, User, Calendar, Code, Globe, DollarSign, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/modelos-ia-open-source-2026.webp";
-import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
+import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const ModelosIAOpenSource2026 = () => {
   useEffect(() => {
     trackArticleRead("modelos-ia-open-source-2026", "IA Open Source 2026: Llama, Mistral e DeepSeek Contra os Modelos Pagos", "ia");
@@ -135,11 +133,52 @@ const ModelosIAOpenSource2026 = () => {
         <li>❌ Tarefas multimodais complexas — modelos pagos ainda têm vantagem</li>
       </ul>
 
-      <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-        <h3 className="text-xl font-bold mb-2">Você usa modelos open source no seu trabalho?</h3>
-        <p className="text-muted-foreground">Compartilhe nos comentários! 👇</p>
+        <h2 className="text-2xl font-bold mt-10 mb-6">Como Rodar Llama 4 Localmente: Requisitos Reais</h2>
+        <p>
+          O <strong>Llama 4 Scout</strong> (17B de parâmetros ativos, 16 especialistas) é o modelo da Meta mais acessível para rodar localmente — exige <strong>GPU com 8GB de VRAM</strong> (RTX 3080 ou superior) e funciona via Ollama, LM Studio ou llama.cpp. O <strong>Llama 4 Maverick</strong> (17B ativos, 128 especialistas) precisa de <strong>24GB de VRAM</strong> (RTX 4090 ou L40S) ou pode ser inferenciado em CPU com quantização Q4 em máquinas com 64GB de RAM — lento, mas funcional para testes.
+        </p>
+        <p>
+          Para desenvolvedores brasileiros sem GPU potente, a opção mais prática em 2026 é usar o Llama 4 via <strong>Groq</strong> (inferência ultrarrápida, gratuita até certo volume) ou via <strong>Together.ai</strong> (US$ 0,18/M tokens de input para Llama 4 Scout). Ambos oferecem API compatível com a da OpenAI — você só muda a base URL no seu código. A latência do Groq com Llama 4 chega a <strong>400–800 tokens/segundo</strong>, significativamente mais rápido que qualquer modelo da OpenAI ou Anthropic.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Licenças dos Modelos Open-Source: O Que Você Pode Fazer Comercialmente</h2>
+        <div className="not-prose my-6 overflow-x-auto">
+          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+            <thead><tr className="bg-secondary text-left">
+              <th className="p-3">Modelo</th>
+              <th className="p-3">Licença</th>
+              <th className="p-3">Uso Comercial</th>
+              <th className="p-3">Restrições</th>
+            </tr></thead>
+            <tbody>
+              {[
+                ["Llama 4 (Meta)","Meta Llama 4 Community License","✅ Sim","Proibido para empresas com +700M usuários mensais ativos"],
+                ["DeepSeek-V3 / R1","MIT License","✅ Sim, irrestrito","Nenhuma — licença mais permissiva do mercado"],
+                ["Mistral Large 2","Mistral AI Non-Production License","❌ Só pesquisa","Uso comercial requer contrato com Mistral AI"],
+                ["Mistral Small / NeMo","Apache 2.0","✅ Sim, irrestrito","Nenhuma para versões com Apache 2.0"],
+                ["Qwen 2.5 (Alibaba)","Qwen License","✅ Sim","Proibido para empresas com +100M usuários globais"],
+                ["Gemma 3 (Google)","Gemma Terms of Use","✅ Sim","Não pode usar para treinar modelos concorrentes ao Google"],
+              ].map(([m,l,c,r]) => (
+                <tr key={m} className="border-t border-border align-top">
+                  <td className="p-3 font-medium text-sm">{m}</td>
+                  <td className="p-3 text-xs">{l}</td>
+                  <td className="p-3 text-xs">{c}</td>
+                  <td className="p-3 text-xs text-muted-foreground">{r}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="text-xs text-muted-foreground mt-2">Licenças atualizadas em maio de 2026. Sempre verifique a versão atual antes de usar em produção — Meta alterou a licença do Llama 3 retroativamente em 2024.</p>
+        </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Fine-tuning: Quando Vale o Esforço</h2>
+        <p>
+          Fine-tuning de modelos open-source cria uma versão especializada para um domínio ou estilo específico. É investimento de tempo e custo que só vale em três situações: <strong>(1)</strong> você precisa de comportamento muito consistente que prompts não conseguem garantir; <strong>(2)</strong> você tem um dataset proprietário com linguagem técnica específica (laudos médicos, documentos jurídicos, código de um sistema legado); ou <strong>(3)</strong> você precisa de latência sub-100ms em produção, que exige modelo menor bem ajustado.
+        </p>
+        <p>
+          O custo de um fine-tuning básico do Llama 4 Scout (3 épocas em um dataset de 10.000 exemplos) custa aproximadamente <strong>US$ 30–US$ 80 na Lambda Labs ou RunPod</strong> em 2026. Modelos da OpenAI para fine-tuning do GPT-4o Mini custam US$ 3/M tokens de treino, o que sai mais caro para datasets grandes mas não requer infraestrutura própria.
+        </p>
       </div>
-    </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: use open source quando há volume alto, dados sensíveis ou necessidade de customização profunda">
         <p>
@@ -150,7 +189,7 @@ const ModelosIAOpenSource2026 = () => {
         </p>
       </EditorialTake>
 
-      <ArticleSources category="ia" sources={[
+      <ArticleSources sources={[
         { title: "Hugging Face — Open LLM Leaderboard", url: "https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard", publisher: "Hugging Face", accessedAt: "Maio 2026" },
         { title: "Meta AI — Llama 4", url: "https://llama.meta.com/", publisher: "Meta AI", accessedAt: "Maio 2026" },
         { title: "DeepSeek — Site oficial e relatório técnico", url: "https://www.deepseek.com/", publisher: "DeepSeek", accessedAt: "Maio 2026" },
@@ -159,7 +198,7 @@ const ModelosIAOpenSource2026 = () => {
       ]} />
 
       <RelatedPosts currentSlug="modelos-ia-open-source-2026" />
-      <CommentSection postId="modelos-ia-open-source-2026" postTitle="IA Open Source 2026: Llama, Mistral e DeepSeek Contra os Modelos Pagos"  category="ia" />
+      <CommentSection category="ia" postId="modelos-ia-open-source-2026" postTitle="IA Open Source 2026: Llama, Mistral e DeepSeek Contra os Modelos Pagos" />
     </article>
   );
 };
