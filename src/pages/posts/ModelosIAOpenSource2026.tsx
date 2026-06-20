@@ -8,6 +8,8 @@ import { Clock, User, Calendar, Code, Globe, DollarSign, Zap } from "lucide-reac
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
+import EditorialTake from "@/components/EditorialTake";
+import ArticleSources from "@/components/ArticleSources";
 import heroImg from "@/assets/modelos-ia-open-source-2026.webp";
 
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
