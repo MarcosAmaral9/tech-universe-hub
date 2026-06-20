@@ -12,6 +12,7 @@ import bannerlordCulturasImg from "@/assets/bannerlord-culturas-reinos.webp";
 import bannerlordArvoresTropasImg from "@/assets/bannerlord-arvores-tropas.webp";
 import bannerlordMelhoresTropasImg from "@/assets/bannerlord-melhores-tropas.webp";
 import bannerlordTerritoriosImg from "@/assets/bannerlord-territorios-faccoes.webp";
+import bannerlordWarSailsImg from "@/assets/bannerlord-war-sails-expansao.webp";
 
 
 const articles = [
@@ -60,12 +61,21 @@ const articles = [
     btn: "Ver Territórios",
     badge: "🗺️ Novo",
   },
+  {
+    slug: "bannerlord-war-sails-expansao-2026",
+    title: "Expansão War Sails",
+    subtitle: "Guia Completo da Expansão Naval",
+    desc: "Combate naval, drakkars, fogo grego, estaleiros e a chegada dos Nords como 9ª cultura jogável — tudo sobre a primeira grande expansão de Bannerlord.",
+    image: bannerlordWarSailsImg,
+    btn: "Ver Expansão",
+    badge: "⚓ Novo",
+  },
 ];
 
 const upcoming = [
   { icon: Hammer, title: "Mods Essenciais", desc: "Steam Workshop, Nexus, Harmony" },
-  { icon: Ship, title: "Expansão War Sails", desc: "Combate naval e novas regiões costeiras" },
 ];
+
 
 const stats = [
   { label: "Culturas", value: "9" },

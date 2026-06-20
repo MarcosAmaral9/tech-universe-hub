@@ -82,6 +82,7 @@ import bannerlordCulturasImg from "@/assets/bannerlord-culturas-reinos.webp";
 import bannerlordArvoresTropasImg from "@/assets/bannerlord-arvores-tropas.webp";
 import bannerlordMelhoresTropasImg from "@/assets/bannerlord-melhores-tropas.webp";
 import bannerlordTerritoriosImg from "@/assets/bannerlord-territorios-faccoes.webp";
+import bannerlordWarSailsImg from "@/assets/bannerlord-war-sails-expansao.webp";
 import crimsonDesertCombateImg from "@/assets/crimson-desert-combate.webp";
 import crimsonDesertReviewImg from "@/assets/crimson-desert-review.webp";
 import crimsonDesertBuildsImg from "@/assets/crimson-desert-builds.webp";
@@ -2810,6 +2811,27 @@ export const blogPosts: BlogPost[] = [
       { q: "Quais cidades são mais disputadas no mapa?", a: "Pen Cannoc (Battania x Vlandia), Charas (Vlandia x Império Oeste x Norte), Sargot, Amitatys, Phycaon e Husn Fulq trocam de dono em mais de 40% das campanhas, segundo dados internos divulgados pela TaleWorlds em 2023." },
       { q: "Os Nords têm muitas cidades em Bannerlord?", a: "Não. A 9ª cultura, adicionada pela expansão War Sails em 2025, começa com 3 cidades costeiras (Wercheg, Sibir e Varnovapol) e 5 castelos. A força nord vem dos estaleiros e do controle do mar do norte, não do número de assentamentos terrestres." },
       { q: "Vilas têm a mesma importância de cidades?", a: "Não. Vilas são produtoras de matérias-primas (grãos, ferro, cavalos, peixe, peles) e fonte de recrutas T1, mas a renda principal e o poder político vêm das cidades e castelos. Cada cidade controla de 3 a 5 vilas; cada castelo, de 2 a 3." },
+    ],
+  },
+
+  {
+    id: "bannerlord-6",
+    slug: "bannerlord-war-sails-expansao-2026",
+    title: "Bannerlord War Sails: Guia Completo da Expansão Naval de Calradia",
+    excerpt: "Tudo sobre a expansão War Sails de Mount & Blade II: Bannerlord — combate naval, drakkars, fogo grego, estaleiros e a chegada dos Nords como 9ª cultura jogável de Calradia.",
+    content: "",
+    category: "geek",
+    subtopic: "bannerlord",
+    image: bannerlordWarSailsImg,
+    author: "VICIO<CODE>",
+    date: "2026-06-20",
+    readTime: "14 min",
+    faq: [
+      { q: "O que é a expansão War Sails de Bannerlord?", a: "War Sails é a primeira grande expansão de Mount & Blade II: Bannerlord, lançada pela TaleWorlds. Adiciona combate naval completo, novas rotas marítimas, estaleiros, cinco tipos de embarcação e a 9ª cultura jogável: os Nords." },
+      { q: "Quem são os Nords em Bannerlord?", a: "Os Nords são a 9ª cultura adicionada pela expansão War Sails, inspirados nos vikings. Ocupam a costa norte de Calradia com as cidades de Wercheg (capital), Sibir e Varnovapol, mais 5 castelos costeiros. Têm tropas como o Nord Huscarl (T6) e os Sea Raiders." },
+      { q: "Como funciona o combate naval em War Sails?", a: "Quando duas frotas se encontram, o jogo carrega uma cena 3D em alto-mar. Há três fases: aproximação com projéteis longos, ofensiva média com arpões e fogo grego, e abordagem corpo a corpo no convés com mecânicas iguais às batalhas terrestres." },
+      { q: "Vale a pena comprar War Sails em 2026?", a: "Para quem nunca jogou Bannerlord, sim — é o melhor ponto de entrada. Para veteranos, depende de quanto a ausência de mar incomodava. A expansão entrega uma cultura completa, novas tropas, cidades, estaleiros e 40-60h de campanha inédita." },
+      { q: "Quanto custa a expansão War Sails?", a: "O preço cheio é cerca de US$ 24,99 segundo a página oficial da TaleWorlds em 2026. Em promoções sazonais do Steam costuma cair para a faixa de US$ 15 a 18, o sweet spot recomendado para a comunidade brasileira." },
     ],
   },
 
