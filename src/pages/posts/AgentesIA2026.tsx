@@ -6,7 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import {, Clock, User, Calendar, Bot, Cpu, Briefcase, AlertTriangle } from "lucide-react";
+import { Clock, User, Calendar, Bot, Cpu, Briefcase, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
