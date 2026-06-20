@@ -289,6 +289,8 @@ const NintendoSwitch2Guia2026 = () => {
 
 
 
+      </div>
+
       <EditorialTake category="geek" title={"An\u00e1lise do Marcos: Switch 2 acerta no hardware, erra no pre\u00e7o Brasil"}>
         <p>O Switch 2 é o salto geracional que a Nintendo precisava — DLSS, tela maior, joycons magnéticos — e tecnicamente ele entrega. Mas no Brasil a história é outra: <strong>importação com imposto e câmbio na casa dos R$ 4.000+</strong> coloca o console na mesma faixa de um PS5 Slim com SSD extra, e isso muda completamente a tese de 'console portátil acessível' que vendeu o Switch 1. Para quem já é fã da Nintendo (Zelda, Mario, Smash), vale; para quem está escolhendo plataforma agora, faz mais sentido esperar a primeira queda de preço ou olhar Steam Deck OLED, que já tem catálogo enorme em PT-BR e roda emulação nativa.</p>
       </EditorialTake>
