@@ -181,6 +181,9 @@ const IAEducacao2026 = () => {
             </div>
           ))}
         </div>
+      </div>
+
+
 
 
       <EditorialTake category="ia" title="Análise do Marcos: IA acelera quem já estuda bem — e atrapalha quem não estuda">
