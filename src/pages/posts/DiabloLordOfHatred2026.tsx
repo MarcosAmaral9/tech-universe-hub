@@ -185,6 +185,9 @@ const DiabloLordOfHatred2026 = () => {
               </ul>
             </div>
           ))}
+        </div>
+
+
         
         <p>
           O número de jogadores ativos nas primeiras semanas pós-lançamento vai ser o termômetro mais confiável de sucesso, muito mais relevante do que qualquer projeção feita antes do conteúdo estar efetivamente nas mãos da comunidade.
