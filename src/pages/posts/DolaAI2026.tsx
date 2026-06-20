@@ -207,7 +207,7 @@ const DolaAI2026 = () => {
         </h2>
         <div className="not-prose space-y-3 my-6">
           {[
-            { p: "1", t: "Baixe o app", d: "Disponível na Play Store (Android) e App Store (iOS). Busque por "Dola" — o ícone é um assistente com design minimalista." },
+            { p: "1", t: "Baixe o app", d: "Disponível na Play Store (Android) e App Store (iOS). Busque por \"Dola\" — o ícone é um assistente com design minimalista." },
             { p: "2", t: "Crie uma conta", d: "Login via Google, Apple ou e-mail. Não precisa de cartão de crédito para o plano gratuito." },
             { p: "3", t: "Explore a tela inicial", d: "Você verá a área de chat e, na aba inferior, acesso a Bots, Imagens, Vídeos e Ferramentas." },
             { p: "4", t: "Experimente os bots", d: "Vá em \"Bots\" e escolha um especializado na sua necessidade. O bot de tradução, por exemplo, já identifica o idioma automaticamente." },
