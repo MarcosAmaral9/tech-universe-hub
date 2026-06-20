@@ -4,7 +4,7 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
-import {, Clock, User, Calendar, Code, Globe, DollarSign, Zap } from "lucide-react";
+import { Clock, User, Calendar, Code, Globe, DollarSign, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
