@@ -181,6 +181,9 @@ const GtaViNovembro2026 = () => {
               </div>
             </div>
           ))}
+        </div>
+
+
         
         <h2 className="text-2xl font-bold mt-10 mb-4">Resumo dos Pontos-Chave Para Lembrar</h2>
         <p>
