@@ -12,6 +12,7 @@ import bannerlordCulturasImg from "@/assets/bannerlord-culturas-reinos.webp";
 import bannerlordArvoresTropasImg from "@/assets/bannerlord-arvores-tropas.webp";
 import bannerlordMelhoresTropasImg from "@/assets/bannerlord-melhores-tropas.webp";
 import bannerlordTerritoriosImg from "@/assets/bannerlord-territorios-faccoes.webp";
+import bannerlordWarSailsImg from "@/assets/bannerlord-war-sails-expansao.webp";
 
 
 const articles = [
