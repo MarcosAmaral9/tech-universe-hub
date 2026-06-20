@@ -69,17 +69,12 @@ const articles = [
     btn: "Ver Expansão",
     badge: "⚓ Novo",
   },
-    desc: "Mapa narrado de Calradia — cidades, castelos e contagem de vilas das 9 facções, incluindo os Nords e seus portos da expansão War Sails.",
-    image: bannerlordTerritoriosImg,
-    btn: "Ver Territórios",
-    badge: "🗺️ Novo",
-  },
 ];
 
 const upcoming = [
   { icon: Hammer, title: "Mods Essenciais", desc: "Steam Workshop, Nexus, Harmony" },
-  { icon: Ship, title: "Expansão War Sails", desc: "Combate naval e novas regiões costeiras" },
 ];
+
 
 const stats = [
   { label: "Culturas", value: "9" },
