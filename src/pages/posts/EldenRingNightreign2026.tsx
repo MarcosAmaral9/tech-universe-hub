@@ -147,19 +147,7 @@ const EldenRingNightreign2026 = () => {
 
         <AdRectangle className="my-8" />
 
-        
-        <EditorialTake category="geek" title="Análise do Marcos: vale o investimento para o jogador brasileiro?">
-          <p>
-            Como entusiasta de Souls-likes que já passou centenas de horas em Elden Ring base, encaro
-            <strong> Nightreign como o melhor formato para quem joga em sessões curtas</strong> — algo que
-            o brasileiro adulto, com pouco tempo livre, finalmente consegue encaixar entre o trabalho e a
-            família. O preço em reais ainda dói (Steam BR cobra prêmio sobre a versão americana), mas o
-            modo de expedição cooperativa de 40 minutos é um respiro depois de 100 horas grindando o mapa
-            principal. Para quem nunca jogou Elden Ring, ainda recomendo começar pelo base.
-          </p>
-        </EditorialTake>
-
-<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Zap className="h-7 w-7 text-geek" />
           DLC Forsaken Hollows: O Que Foi Adicionado em Maio 2026
         </h2>
@@ -195,11 +183,111 @@ const EldenRingNightreign2026 = () => {
           ))}
         </div>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Você está jogando Elden Ring Nightreign? ⚔️</h3>
-          <p className="text-muted-foreground">Qual classe mais curte? Qual Nightlord te deu mais trabalho? Conta nos comentários! 👇</p>
-        </div>
-      </div>
+        <h2 className="text-2xl font-bold mt-10 mb-4">Por Que Nightreign Funciona Como Conceito</h2>
+        <p>
+          O que torna Nightreign fascinante é como ele resolve um problema real dos jogos da FromSoftware: a curva de entrada longuíssima. Elden Ring base exige 60–100 horas para ser completado adequadamente — um investimento de tempo que muitos jogadores adultos simplesmente não têm disponível. Nightreign comprime a essência do combate da FromSoftware — leitura de padrões, punição justa, satisfação ao superar um desafio difícil — em sessões de exatamente 40 minutos, com início, meio e fim definidos.
+        </p>
+        <p>
+          Essa decisão de design também resolve o problema de progressão eterna que afeta muitos roguelites: como cada Expedição começa do zero, não existe a ansiedade de "investir errado" em builds ou desperdiçar horas em uma run que não vai dar certo. Você aprende rápido, erra rápido, e tenta de novo em minutos — não em horas.
+        </p>
+        <p>
+          A escolha de manter o sistema de combate idêntico ao Elden Ring base também foi acertada. Em vez de simplificar a complexidade técnica para acomodar o ritmo mais rápido, a FromSoftware manteve toda a profundidade de parry, poise, posicionamento e gerenciamento de recursos — apenas comprimindo o tempo disponível para executar essas decisões. O resultado é uma versão mais intensa, não mais simples, do combate que definiu a série.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Forsaken Hollows no Contexto da Estratégia de DLC da FromSoftware</h2>
+        <p>
+          O lançamento do Forsaken Hollows em maio de 2026, um ano após o lançamento base de Nightreign, segue o padrão da FromSoftware com Elden Ring: Shadow of the Erdtree chegou cerca de 14 meses após o jogo base, dando tempo para a comunidade explorar completamente o conteúdo original antes de receber mais material. Essa cadência deliberada — em contraste com modelos de "season pass" trimestral comuns em outros jogos de serviço — reforça a reputação do estúdio de qualidade sobre velocidade de entrega.
+        </p>
+        <p>
+          As novas classes Ashbringer e Veilstalker também seguem um padrão notável: ambas são desenhadas para jogadores experientes, não para facilitar a entrada de novatos. Isso reflete a filosofia consistente da FromSoftware de recompensar maestria em vez de acessibilidade ampla — uma escolha que divide opiniões, mas que mantém a identidade da marca intacta mesmo em um formato de jogo radicalmente diferente dos Souls tradicionais.
+        </p>
+      
+        <h2 className="text-2xl font-bold mt-10 mb-4">Como o Sistema de Matchmaking Funciona</h2>
+        <p>
+          Nightreign usa um sistema de matchmaking por habilidade que considera o progresso de desbloqueio de Relics e Classes do jogador, não apenas tempo de jogo. Isso significa que jogadores experientes com poucas horas investidas no título específico (mas vindos de outros Souls-likes) tendem a ser pareados com grupos de habilidade similar, em vez de apenas novatos completos. O sistema também permite formar grupos privados com amigos via código de convite, contornando completamente o matchmaking aleatório — a opção recomendada pela maioria dos guias da comunidade para uma primeira experiência mais controlada.
+        </p>
+        <p>
+          Para quem joga solo sem grupo formado, o sistema de matchmaking público tem reputação mista nos fóruns: a maior reclamação é a variação na comunicação entre jogadores aleatórios, já que o jogo não tem chat de voz nativo — apenas um sistema limitado de emotes e marcações no mapa. Mods e aplicativos terceiros de comunicação por voz (Discord sendo o mais comum) preenchem essa lacuna na prática, especialmente para grupos que jogam regularmente juntos.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Builds Recomendadas para os Nightlords Mais Difíceis</h2>
+        <p>
+          A comunidade desenvolveu meta-builds específicas para cada Nightlord ao longo do primeiro ano de Nightreign. Para o Gaping Jaw — consensualmente o boss mais difícil do jogo base — a composição recomendada combina Revenant (pela habilidade de ressurreição), Guardian (tanque para absorver os ataques de mordida em área) e qualquer classe ofensiva com alto burst damage para aproveitar as janelas de parry. Times que seguem essa composição relatam taxa de sucesso significativamente maior do que grupos formados aleatoriamente sem estratégia prévia.
+        </p>
+        <p>
+          Com a chegada do DLC, o Hollow Monarch já está sendo classificado pela comunidade como potencialmente mais difícil que o Gaping Jaw, principalmente pela mecânica de sombras clonadas que exige que o grupo distribua atenção entre múltiplos alvos simultaneamente. Guias específicos para esse boss ainda estão sendo refinados nas primeiras semanas pós-lançamento do Forsaken Hollows, mas o consenso inicial sugere que a classe Veilstalker, com sua mobilidade de teleporte nas sombras, tem vantagem situacional única contra esse Nightlord específico.
+        </p>
+      
+        <h2 className="text-2xl font-bold mt-10 mb-4">Performance Técnica — Como Nightreign Roda em Diferentes Plataformas</h2>
+        <p>
+          No PS5 e Xbox Series X, Nightreign mantém 60fps estáveis na maior parte do tempo, com quedas ocasionais durante os momentos mais caóticos de batalhas com múltiplos inimigos e efeitos visuais simultâneos — algo esperado dado o ritmo acelerado do formato roguelite. No PC, o jogo escala bem desde GPUs de gama média (GTX 1660 entrega 1080p 60fps estável) até configurações de ponta com ray tracing ativo em 4K.
+        </p>
+        <p>
+          O Steam Deck também roda Nightreign satisfatoriamente, embora com necessidade de reduzir algumas configurações gráficas para manter taxa de quadros estável durante sessões portáteis — a natureza de partidas curtas de 40 minutos faz do Steam Deck uma plataforma particularmente adequada para o formato, já que cada Expedição cabe confortavelmente numa única sessão de bateria sem necessidade de pausas longas.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">A Recepção da Crítica no Lançamento de 2025</h2>
+        <p>
+          Quando lançado em maio de 2025, Nightreign recebeu recepção majoritariamente positiva da crítica especializada, com Metacritic na faixa de 80-83 nas principais plataformas. As críticas mais consistentes apontaram para a curva de aprendizado abrupta para jogadores que tentam o modo solo sem experiência prévia em Elden Ring, e a falta de tutorial adequado explicando as nuances do sistema de classes e sinergias de grupo. Os elogios se concentraram na execução técnica do conceito roguelite aplicado ao combate denso e recompensador da FromSoftware — algo que poucos estúdios conseguiram replicar com sucesso similar.
+        </p>
+        <p>
+          Um ano depois, com o lançamento do DLC Forsaken Hollows, a recepção da comunidade se consolidou positivamente: o jogo manteve base de jogadores ativa consistentemente acima da média para títulos de nicho como roguelites cooperativos, e o suporte contínuo da FromSoftware — incluindo balanceamentos regulares de classes e correções de bugs reportados pela comunidade — reforçou a confiança dos jogadores no compromisso de longo prazo do estúdio com o título.
+        </p>
+      
+        <h2 className="text-2xl font-bold mt-10 mb-4">O Modelo de Monetização e Comparação de Preço</h2>
+        <p>
+          Nightreign foi lançado com preço inicial de US$ 39,99 — significativamente abaixo do padrão de US$ 69,99 da maioria dos AAAs, refletindo a natureza mais focada e compacta da experiência em comparação com Elden Ring base. O DLC Forsaken Hollows segue padrão similar de preço acessível, em torno de US$ 19,99, consistente com a estratégia da FromSoftware de manter expansões de conteúdo a preços razoáveis em vez de adotar modelos de monetização agressiva comuns em jogos de serviço.
+        </p>
+        <p>
+          Essa estratégia de preço contribuiu significativamente para a adoção ampla do título — jogadores que hesitariam em investir o preço cheio de um AAA tradicional em um spin-off experimental se sentiram mais confortáveis testando o conceito a um preço de entrada menor, o que por sua vez ajudou a construir a base de jogadores que sustenta o suporte contínuo via DLC um ano depois.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Perguntas Frequentes Sobre Nightreign</h2>
+        <p>
+          <strong>Preciso ter jogado Elden Ring antes?</strong> Não é obrigatório, mas é altamente recomendado. O sistema de combate é idêntico, e jogadores sem experiência prévia enfrentam curva de aprendizado consideravelmente mais acentuada nos primeiros Nightlords.
+        </p>
+        <p>
+          <strong>Nightreign substitui Elden Ring base?</strong> Não — são experiências complementares. Elden Ring oferece a narrativa completa e exploração livre do mundo aberto; Nightreign oferece sessões intensas e focadas em combate cooperativo sem o investimento de tempo da campanha completa.
+        </p>
+        <p>
+          <strong>O DLC é necessário para acompanhar futuras atualizações?</strong> Sim, conteúdo futuro da FromSoftware para o título deve continuar expandindo a base estabelecida pelo Forsaken Hollows, tornando o DLC um investimento relevante para quem pretende acompanhar o jogo a longo prazo.
+        </p>
+      
+        <h2 className="text-2xl font-bold mt-10 mb-4">Dicas Práticas para Sua Primeira Expedição</h2>
+        <p>
+          Para jogadores iniciando agora, a recomendação mais consistente da comunidade é começar com a classe Wylder — sua versatilidade entre combate corpo a corpo e à distância, combinada com o Grappling Hook para reposicionamento rápido, oferece a curva de aprendizado mais suave entre as 8 classes do jogo base. Evite o Duchess e o Stormcaller nas primeiras tentativas, já que ambos exigem entendimento profundo de timing e posicionamento que só vem com experiência acumulada no sistema de combate da FromSoftware.
+        </p>
+        <p>
+          Priorizar comunicação básica com o grupo — mesmo que apenas através de marcações no mapa e emotes — durante a Fase 1 de exploração diurna aumenta consideravelmente as chances de sucesso na Noite 1. Coordenar quem vai focar em coleta de equipamento versus quem prioriza eliminar inimigos para ganhar experiência rapidamente faz diferença real na preparação adequada antes do primeiro Boss Noturno.
+        </p>
+      
+        <h2 className="text-2xl font-bold mt-10 mb-4">Veredito Final</h2>
+        <p>
+          Elden Ring Nightreign com o DLC Forsaken Hollows consolida-se como um dos experimentos mais bem-sucedidos da FromSoftware fora da fórmula Souls tradicional. Para grupos de 3 jogadores dispostos a investir em coordenação e estratégia, é dificilmente superado em termos de densidade de ação por minuto de jogo. A expansão recente prova que o estúdio pretende apoiar o título a longo prazo, tornando o investimento ainda mais justificável para quem busca uma experiência cooperativa intensa com a qualidade de combate característica da empresa.
+        </p>
+      
+        <p>
+          A combinação de exploração diurna, sobrevivência noturna e a tensão constante da contagem regressiva para a chegada do Nightlord cria um loop de jogo que poucos títulos cooperativos conseguem replicar com a mesma intensidade.
+        </p>
+
+
+
+
+
+
+
+      <EditorialTake category="geek" title="Análise do Marcos: vale o investimento para o jogador brasileiro?">
+        <p>
+          Como entusiasta de Souls-likes que já passou centenas de horas em Elden Ring base, encaro
+          <strong> Nightreign como o melhor formato para quem joga em sessões curtas</strong> — algo que
+          o brasileiro adulto, com pouco tempo livre, finalmente consegue encaixar entre o trabalho e a
+          família. O preço em reais ainda dói (Steam BR cobra prêmio sobre a versão americana), mas o
+          modo de expedição cooperativa de 40 minutos é um respiro depois de 100 horas grindando o mapa
+          principal. O DLC Forsaken Hollows reforça essa tese: mais conteúdo no mesmo formato compacto,
+          sem inflar a experiência com horas desnecessárias. Para quem nunca jogou Elden Ring, ainda
+          recomendo começar pelo base — Nightreign é uma experiência complementar, não substituta.
+        </p>
+      </EditorialTake>
 
       <ArticleSources category="geek"
         sources={[
