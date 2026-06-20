@@ -159,6 +159,9 @@ const IAPrivacidadeDados2026 = () => {
             ].map((item, i) => <li key={i}>{item}</li>)}
           </ul>
         </div>
+      </div>
+
+
 
 
       <EditorialTake category="ia" title="Análise do Marcos: três regras práticas que eliminam 90% do risco de privacidade com IA">
