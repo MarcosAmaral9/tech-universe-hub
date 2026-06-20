@@ -186,6 +186,9 @@ const GTAVI2026 = () => {
               <li>• Windows 11 64-bit</li>
             </ul>
           </div>
+        </div>
+
+
         
         <h2 className="text-2xl font-bold mt-10 mb-4">O Que Significa Ser o Jogo Mais Esperado da Década</h2>
         <p>
