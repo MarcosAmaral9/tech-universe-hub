@@ -3,6 +3,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
+// EditorialTake & ArticleSources are used inside the article body.
 import {
   Clock,
   User,

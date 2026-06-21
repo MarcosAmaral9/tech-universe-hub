@@ -83,6 +83,7 @@ import bannerlordArvoresTropasImg from "@/assets/bannerlord-arvores-tropas.webp"
 import bannerlordMelhoresTropasImg from "@/assets/bannerlord-melhores-tropas.webp";
 import bannerlordTerritoriosImg from "@/assets/bannerlord-territorios-faccoes.webp";
 import bannerlordWarSailsImg from "@/assets/bannerlord-war-sails-expansao.webp";
+import bannerlordModsEssenciaisImg from "@/assets/bannerlord-mods-essenciais.webp";
 import crimsonDesertCombateImg from "@/assets/crimson-desert-combate.webp";
 import crimsonDesertReviewImg from "@/assets/crimson-desert-review.webp";
 import crimsonDesertBuildsImg from "@/assets/crimson-desert-builds.webp";
