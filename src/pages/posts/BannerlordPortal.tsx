@@ -13,6 +13,7 @@ import bannerlordArvoresTropasImg from "@/assets/bannerlord-arvores-tropas.webp"
 import bannerlordMelhoresTropasImg from "@/assets/bannerlord-melhores-tropas.webp";
 import bannerlordTerritoriosImg from "@/assets/bannerlord-territorios-faccoes.webp";
 import bannerlordWarSailsImg from "@/assets/bannerlord-war-sails-expansao.webp";
+import bannerlordModsImg from "@/assets/bannerlord-mods-essenciais.webp";
 
 
 const articles = [
@@ -70,11 +71,18 @@ const articles = [
     btn: "Ver Expansão",
     badge: "⚓ Novo",
   },
+  {
+    slug: "bannerlord-mods-essenciais-2026",
+    title: "Mods Essenciais",
+    subtitle: "Bibliotecas, QoL, Combate e Overhauls",
+    desc: "Harmony, ButterLib, UIExtenderEx, MCM, RTS Camera, Dismemberment, BannerKings e mais — o guia completo de mods de Bannerlord 2 em 2026.",
+    image: bannerlordModsImg,
+    btn: "Ver Mods",
+    badge: "🔧 Novo",
+  },
 ];
 
-const upcoming = [
-  { icon: Hammer, title: "Mods Essenciais", desc: "Steam Workshop, Nexus, Harmony" },
-];
+const upcoming: { icon: typeof Hammer; title: string; desc: string }[] = [];
 
 
 const stats = [
