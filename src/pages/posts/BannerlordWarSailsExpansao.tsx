@@ -48,6 +48,30 @@ const featureCards = [
   },
 ];
 
+const combatPhases = [
+  { phase: "1. Aproximação", range: "200–600 m", duration: "3–6 min", focus: "Vento, vela e arcos", risk: "Baixo" },
+  { phase: "2. Média distância", range: "40–200 m", duration: "2–4 min", focus: "Arpões, fogo grego, ramming", risk: "Médio" },
+  { phase: "3. Abordagem", range: "0–10 m", duration: "5–12 min", focus: "Corpo a corpo no convés", risk: "Alto" },
+];
+
+const economyImpact = [
+  { route: "Pravend → Wercheg", landDays: 25, seaDays: 10, mainGood: "Tecido / Âmbar", risk: "Médio" },
+  { route: "Sargot → Husn Fulq", landDays: 32, seaDays: 14, mainGood: "Sal / Especiarias", risk: "Alto" },
+  { route: "Wercheg → Tyal", landDays: 12, seaDays: 6, mainGood: "Peixe / Peles", risk: "Baixo" },
+  { route: "Phycaon → Lycaron", landDays: 18, seaDays: 8, mainGood: "Azeite / Vinho", risk: "Baixo" },
+  { route: "Sibir → Varnovapol", landDays: 9, seaDays: 4, mainGood: "Madeira / Ferro", risk: "Médio" },
+];
+
+const cultureImpact = [
+  { culture: "Nords", impact: "Estreia como cultura", power: "↑↑↑", note: "Domínio do mar do norte e saques costeiros." },
+  { culture: "Sturgia", impact: "Perde monopólio nórdico", power: "↓↓", note: "Fronteira direta com os Nords, conflito padrão." },
+  { culture: "Vlandia", impact: "Rotas atacadas", power: "↓", note: "Karves defendem mal contra drakkars." },
+  { culture: "Impérios", impact: "Ganham galera pesada", power: "↑", note: "Phycaon e Amitatys viram bases navais." },
+  { culture: "Aserai", impact: "Monopólio do fogo grego", power: "↑↑", note: "Exporta dromons como mercadoria de elite." },
+  { culture: "Khuzait", impact: "Pequeno ganho comercial", power: "→", note: "Ichamur exporta cavalos por mar." },
+  { culture: "Battania", impact: "Praticamente intacta", power: "→", note: "Sem litoral, só sente reflexo de preços." },
+];
+
 const shipTypes = [
   {
     name: "Drakkar (Longship)",
@@ -230,6 +254,32 @@ const BannerlordWarSailsExpansao = () => {
           terrestres. Vencer um navio inimigo significa capturá-lo, libertá-lo ou afundá-lo, com consequências
           diferentes para reputação, butim e influência política.
         </p>
+
+        <div className="not-prose overflow-x-auto my-6 rounded-xl border border-blue-500/30">
+          <table className="w-full border-collapse bg-card text-sm">
+            <thead className="bg-blue-500/15">
+              <tr>
+                <th className="text-left py-3 px-4 font-bold text-blue-200 uppercase tracking-wider text-xs">Fase</th>
+                <th className="text-left py-3 px-4 font-bold text-blue-200 uppercase tracking-wider text-xs">Distância</th>
+                <th className="text-left py-3 px-4 font-bold text-blue-200 uppercase tracking-wider text-xs">Duração média</th>
+                <th className="text-left py-3 px-4 font-bold text-blue-200 uppercase tracking-wider text-xs">Foco tático</th>
+                <th className="text-left py-3 px-4 font-bold text-blue-200 uppercase tracking-wider text-xs">Risco de baixas</th>
+              </tr>
+            </thead>
+            <tbody>
+              {combatPhases.map((p, i) => (
+                <tr key={p.phase} className={`border-t border-border/60 ${i % 2 === 1 ? "bg-muted/20" : ""}`}>
+                  <td className="py-3 px-4 font-semibold text-foreground">{p.phase}</td>
+                  <td className="py-3 px-4 text-muted-foreground">{p.range}</td>
+                  <td className="py-3 px-4 text-muted-foreground">{p.duration}</td>
+                  <td className="py-3 px-4 text-muted-foreground">{p.focus}</td>
+                  <td className="py-3 px-4 text-muted-foreground">{p.risk}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
         <p>
           Existem cinco tipos principais de embarcação na expansão, cada um com função tática própria:
         </p>
@@ -292,6 +342,31 @@ const BannerlordWarSailsExpansao = () => {
           estratégia inteira.
         </p>
 
+        <div className="not-prose overflow-x-auto my-6 rounded-xl border border-blue-500/30">
+          <table className="w-full border-collapse bg-card text-sm">
+            <thead className="bg-blue-500/15">
+              <tr>
+                <th className="text-left py-3 px-4 font-bold text-blue-200 uppercase tracking-wider text-xs">Rota</th>
+                <th className="text-left py-3 px-4 font-bold text-blue-200 uppercase tracking-wider text-xs">Por terra</th>
+                <th className="text-left py-3 px-4 font-bold text-blue-200 uppercase tracking-wider text-xs">Por mar</th>
+                <th className="text-left py-3 px-4 font-bold text-blue-200 uppercase tracking-wider text-xs">Mercadoria principal</th>
+                <th className="text-left py-3 px-4 font-bold text-blue-200 uppercase tracking-wider text-xs">Risco de pirataria</th>
+              </tr>
+            </thead>
+            <tbody>
+              {economyImpact.map((r, i) => (
+                <tr key={r.route} className={`border-t border-border/60 ${i % 2 === 1 ? "bg-muted/20" : ""}`}>
+                  <td className="py-3 px-4 font-semibold text-foreground">{r.route}</td>
+                  <td className="py-3 px-4 text-muted-foreground">{r.landDays} dias</td>
+                  <td className="py-3 px-4 text-muted-foreground">{r.seaDays} dias</td>
+                  <td className="py-3 px-4 text-muted-foreground">{r.mainGood}</td>
+                  <td className="py-3 px-4 text-muted-foreground">{r.risk}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
         <h2><Shield className="inline h-7 w-7 mr-2 -mt-1" />Impacto na Campanha e nas Outras Culturas</h2>
         <p>
           A chegada dos Nords mexeu com o equilíbrio diplomático de Calradia. Os <strong>Sturgianos</strong> são os
@@ -309,6 +384,29 @@ const BannerlordWarSailsExpansao = () => {
           leste. <strong>Aserai</strong> foi quem mais lucrou economicamente: o dromon com fogo grego virou
           mercadoria de exportação, e o sul ganhou supremacia naval defensiva.
         </p>
+
+        <div className="not-prose overflow-x-auto my-6 rounded-xl border border-blue-500/30">
+          <table className="w-full border-collapse bg-card text-sm">
+            <thead className="bg-blue-500/15">
+              <tr>
+                <th className="text-left py-3 px-4 font-bold text-blue-200 uppercase tracking-wider text-xs">Cultura</th>
+                <th className="text-left py-3 px-4 font-bold text-blue-200 uppercase tracking-wider text-xs">Impacto da expansão</th>
+                <th className="text-left py-3 px-4 font-bold text-blue-200 uppercase tracking-wider text-xs">Tendência de poder</th>
+                <th className="text-left py-3 px-4 font-bold text-blue-200 uppercase tracking-wider text-xs">Observação</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cultureImpact.map((c, i) => (
+                <tr key={c.culture} className={`border-t border-border/60 ${i % 2 === 1 ? "bg-muted/20" : ""}`}>
+                  <td className="py-3 px-4 font-semibold text-foreground">{c.culture}</td>
+                  <td className="py-3 px-4 text-muted-foreground">{c.impact}</td>
+                  <td className="py-3 px-4 font-bold text-blue-200">{c.power}</td>
+                  <td className="py-3 px-4 text-muted-foreground">{c.note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
         <h2><AlertTriangle className="inline h-7 w-7 mr-2 -mt-1" />O Que Não Mudou (E o Que Ainda Falta)</h2>
         <p>
