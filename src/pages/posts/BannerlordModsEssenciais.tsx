@@ -69,6 +69,13 @@ const loadOrder = [
   { step: 8, label: "Mods de QoL e cosméticos", note: "Por último, para sobrescrever ajustes finais." },
 ];
 
+const tableWrapClass = "not-prose my-6 rounded-xl border border-amber-500/30 overflow-hidden";
+const tableClass = "w-full table-fixed border-collapse bg-card text-sm";
+const thClass = "text-left py-3 px-3 md:px-4 font-bold text-amber-200 uppercase tracking-wider text-xs whitespace-normal break-words leading-snug";
+const tdClass = "py-3 px-3 md:px-4 text-muted-foreground whitespace-normal break-words leading-relaxed align-top";
+const nameCellClass = "py-3 px-3 md:px-4 font-semibold text-foreground whitespace-normal break-words leading-snug align-top";
+const versionCellClass = "py-3 px-3 md:px-4 text-amber-200 font-mono text-xs whitespace-normal break-words leading-snug align-top";
+
 const BannerlordModsEssenciais = () => {
   useEffect(() => {
     trackArticleRead(
@@ -143,23 +150,23 @@ const BannerlordModsEssenciais = () => {
           ou foi carregada na ordem errada.
         </p>
 
-        <div className="not-prose overflow-x-auto my-6 rounded-xl border border-amber-500/30">
-          <table className="w-full border-collapse bg-card text-sm">
+        <div className={tableWrapClass}>
+          <table className={tableClass}>
             <thead className="bg-amber-500/15">
               <tr>
-                <th className="text-left py-3 px-4 font-bold text-amber-200 uppercase tracking-wider text-xs">Biblioteca</th>
-                <th className="text-left py-3 px-4 font-bold text-amber-200 uppercase tracking-wider text-xs">Versão estável</th>
-                <th className="text-left py-3 px-4 font-bold text-amber-200 uppercase tracking-wider text-xs">Função</th>
-                <th className="text-left py-3 px-4 font-bold text-amber-200 uppercase tracking-wider text-xs">Por que importa</th>
+                <th className={`${thClass} w-[22%]`}>Biblioteca</th>
+                <th className={`${thClass} w-[18%]`}>Versão estável</th>
+                <th className={`${thClass} w-[22%]`}>Função</th>
+                <th className={thClass}>Por que importa</th>
               </tr>
             </thead>
             <tbody>
               {coreLibs.map((m, i) => (
                 <tr key={m.name} className={`border-t border-border/60 ${i % 2 === 1 ? "bg-muted/20" : ""}`}>
-                  <td className="py-3 px-4 font-semibold text-foreground">{m.name}</td>
-                  <td className="py-3 px-4 text-amber-200 font-mono text-xs">{m.version}</td>
-                  <td className="py-3 px-4 text-muted-foreground">{m.role}</td>
-                  <td className="py-3 px-4 text-muted-foreground">{m.desc}</td>
+                  <td className={nameCellClass}>{m.name}</td>
+                  <td className={versionCellClass}>{m.version}</td>
+                  <td className={tdClass}>{m.role}</td>
+                  <td className={tdClass}>{m.desc}</td>
                 </tr>
               ))}
             </tbody>
@@ -183,23 +190,23 @@ const BannerlordModsEssenciais = () => {
           terminar a campanha sem mods e descobrir o que mais te irritou.
         </p>
 
-        <div className="not-prose overflow-x-auto my-6 rounded-xl border border-amber-500/30">
-          <table className="w-full border-collapse bg-card text-sm">
+        <div className={tableWrapClass}>
+          <table className={tableClass}>
             <thead className="bg-amber-500/15">
               <tr>
-                <th className="text-left py-3 px-4 font-bold text-amber-200 uppercase tracking-wider text-xs">Mod</th>
-                <th className="text-left py-3 px-4 font-bold text-amber-200 uppercase tracking-wider text-xs">Versão</th>
-                <th className="text-left py-3 px-4 font-bold text-amber-200 uppercase tracking-wider text-xs">Categoria</th>
-                <th className="text-left py-3 px-4 font-bold text-amber-200 uppercase tracking-wider text-xs">O que faz</th>
+                <th className={`${thClass} w-[22%]`}>Mod</th>
+                <th className={`${thClass} w-[18%]`}>Versão</th>
+                <th className={`${thClass} w-[20%]`}>Categoria</th>
+                <th className={thClass}>O que faz</th>
               </tr>
             </thead>
             <tbody>
               {qolMods.map((m, i) => (
                 <tr key={m.name} className={`border-t border-border/60 ${i % 2 === 1 ? "bg-muted/20" : ""}`}>
-                  <td className="py-3 px-4 font-semibold text-foreground">{m.name}</td>
-                  <td className="py-3 px-4 text-amber-200 font-mono text-xs">{m.version}</td>
-                  <td className="py-3 px-4 text-muted-foreground">{m.category}</td>
-                  <td className="py-3 px-4 text-muted-foreground">{m.desc}</td>
+                  <td className={nameCellClass}>{m.name}</td>
+                  <td className={versionCellClass}>{m.version}</td>
+                  <td className={tdClass}>{m.category}</td>
+                  <td className={tdClass}>{m.desc}</td>
                 </tr>
               ))}
             </tbody>
@@ -234,23 +241,23 @@ const BannerlordModsEssenciais = () => {
           personagem em primeira pessoa só atrapalha.
         </p>
 
-        <div className="not-prose overflow-x-auto my-6 rounded-xl border border-amber-500/30">
-          <table className="w-full border-collapse bg-card text-sm">
+        <div className={tableWrapClass}>
+          <table className={tableClass}>
             <thead className="bg-amber-500/15">
               <tr>
-                <th className="text-left py-3 px-4 font-bold text-amber-200 uppercase tracking-wider text-xs">Mod</th>
-                <th className="text-left py-3 px-4 font-bold text-amber-200 uppercase tracking-wider text-xs">Versão</th>
-                <th className="text-left py-3 px-4 font-bold text-amber-200 uppercase tracking-wider text-xs">Categoria</th>
-                <th className="text-left py-3 px-4 font-bold text-amber-200 uppercase tracking-wider text-xs">Detalhes</th>
+                <th className={`${thClass} w-[22%]`}>Mod</th>
+                <th className={`${thClass} w-[18%]`}>Versão</th>
+                <th className={`${thClass} w-[20%]`}>Categoria</th>
+                <th className={thClass}>Detalhes</th>
               </tr>
             </thead>
             <tbody>
               {combatMods.map((m, i) => (
                 <tr key={m.name} className={`border-t border-border/60 ${i % 2 === 1 ? "bg-muted/20" : ""}`}>
-                  <td className="py-3 px-4 font-semibold text-foreground">{m.name}</td>
-                  <td className="py-3 px-4 text-amber-200 font-mono text-xs">{m.version}</td>
-                  <td className="py-3 px-4 text-muted-foreground">{m.category}</td>
-                  <td className="py-3 px-4 text-muted-foreground">{m.desc}</td>
+                  <td className={nameCellClass}>{m.name}</td>
+                  <td className={versionCellClass}>{m.version}</td>
+                  <td className={tdClass}>{m.category}</td>
+                  <td className={tdClass}>{m.desc}</td>
                 </tr>
               ))}
             </tbody>
@@ -312,21 +319,21 @@ const BannerlordModsEssenciais = () => {
           neste guia:
         </p>
 
-        <div className="not-prose overflow-x-auto my-6 rounded-xl border border-amber-500/30">
-          <table className="w-full border-collapse bg-card text-sm">
+        <div className={tableWrapClass}>
+          <table className={tableClass}>
             <thead className="bg-amber-500/15">
               <tr>
-                <th className="text-left py-3 px-4 font-bold text-amber-200 uppercase tracking-wider text-xs">Ordem</th>
-                <th className="text-left py-3 px-4 font-bold text-amber-200 uppercase tracking-wider text-xs">Módulo / Camada</th>
-                <th className="text-left py-3 px-4 font-bold text-amber-200 uppercase tracking-wider text-xs">Observação</th>
+                <th className={`${thClass} w-[16%] text-center`}>Ordem</th>
+                <th className={`${thClass} w-[36%]`}>Módulo / Camada</th>
+                <th className={thClass}>Observação</th>
               </tr>
             </thead>
             <tbody>
               {loadOrder.map((o, i) => (
                 <tr key={o.step} className={`border-t border-border/60 ${i % 2 === 1 ? "bg-muted/20" : ""}`}>
-                  <td className="py-3 px-4 font-bold text-amber-200 text-center">{o.step}</td>
-                  <td className="py-3 px-4 font-semibold text-foreground">{o.label}</td>
-                  <td className="py-3 px-4 text-muted-foreground">{o.note}</td>
+                  <td className="py-3 px-3 md:px-4 font-bold text-amber-200 text-center align-top">{o.step}</td>
+                  <td className={nameCellClass}>{o.label}</td>
+                  <td className={tdClass}>{o.note}</td>
                 </tr>
               ))}
             </tbody>
