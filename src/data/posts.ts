@@ -2837,6 +2837,27 @@ export const blogPosts: BlogPost[] = [
   },
 
   {
+    id: "bannerlord-7",
+    slug: "bannerlord-mods-essenciais-2026",
+    title: "Mods Essenciais de Bannerlord 2: Combate, Gestão, Cosméticos e Mod Menu",
+    excerpt: "Guia completo de mods essenciais para Mount & Blade II: Bannerlord 2 em 2026: Harmony, ButterLib, UIExtenderEx, MCM, RTS Camera, Dismemberment, BannerKings, Diplomacy, Improved Garrisons, RBM e outros mods de combate, gestão, expansão, correção e cosméticos.",
+    content: "",
+    category: "geek",
+    subtopic: "bannerlord",
+    image: bannerlordModsEssenciaisImg,
+    author: "VICIO<CODE>",
+    date: "2026-06-22",
+    readTime: "15 min",
+    faq: [
+      { q: "Quais são os mods obrigatórios de Bannerlord 2?", a: "A base obrigatória é Harmony, ButterLib, UIExtenderEx e Mod Configuration Menu v5. Eles não mudam a campanha sozinhos, mas permitem que mods maiores carreguem menus, patches e configurações sem quebrar o launcher." },
+      { q: "Qual é a ordem correta de carregamento dos mods?", a: "Use os módulos oficiais primeiro, depois Harmony, ButterLib, UIExtenderEx, Mod Configuration Menu, bibliotecas auxiliares, overhauls grandes e, por último, mods de qualidade de vida ou cosméticos." },
+      { q: "RTS Camera e Dismemberment funcionam juntos?", a: "Sim, normalmente funcionam juntos porque alteram áreas diferentes: RTS Camera mexe em câmera e comandos, enquanto Dismemberment altera efeitos visuais de combate. Ainda assim, ambos devem estar atualizados para a mesma versão do jogo." },
+      { q: "BannerKings, Diplomacy e RBM podem ser usados na mesma campanha?", a: "Podem, mas exigem cuidado. BannerKings e Diplomacy costumam combinar bem; RBM altera combate, dano e armaduras, então deve ser testado com os módulos opcionais corretos para evitar conflito." },
+      { q: "Os mods são compatíveis com War Sails?", a: "As bibliotecas principais e vários mods leves já têm versões compatíveis. Mods que mexem em tropas nords, combate naval, economia marítima ou IA de navios precisam ser verificados caso a caso no changelog do autor." },
+    ],
+  },
+
+  {
     id: "111",
     slug: "cdb-2026-guia-completo",
     title: "CDB em 2026: Ainda Vale a Pena? Guia Completo com Taxas Reais",
