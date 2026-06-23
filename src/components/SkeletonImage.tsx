@@ -31,7 +31,7 @@ const SkeletonImage = ({
       {!loaded && (
         <div
           aria-hidden="true"
-          className={`absolute inset-0 animate-pulse bg-gradient-to-br from-muted/50 via-muted/30 to-muted/50 ${skeletonClassName ?? ""}`}
+          className={`absolute inset-0 bg-gradient-to-br from-muted/50 via-muted/30 to-muted/50 ${skeletonClassName ?? ""}`}
         />
       )}
       <img

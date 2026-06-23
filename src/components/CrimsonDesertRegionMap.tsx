@@ -390,11 +390,11 @@ const CrimsonDesertRegionMap = ({ selectedKey, onSelect }: CrimsonDesertRegionMa
                   }}
                 >
                   <RegionIcon iconKey={r.iconKey} className="h-3.5 w-3.5" />
-                  {/* Halo de pulso (aparece após busca/seleção externa) */}
+                  {/* Halo estático sem animação para evitar flash de luz no modo claro */}
                   {pulsando && (
                     <span
                       aria-hidden="true"
-                      className={`absolute inset-0 rounded-full ${r.pinClass.split(" ")[0]} opacity-75 animate-ping`}
+                      className={`absolute inset-0 rounded-full ${r.pinClass.split(" ")[0]} opacity-40`}
                     />
                   )}
                   {/* Rótulo permanente abaixo do pin */}

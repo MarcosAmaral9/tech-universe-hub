@@ -95,7 +95,7 @@ const CurrencyWidget = () => {
           <h3 className="font-bold">Câmbio</h3>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-          {[0, 1, 2, 3].map(i => <div key={i} className="animate-pulse bg-muted rounded-xl h-28" />)}
+          {[0, 1, 2, 3].map(i => <div key={i} className="bg-muted rounded-xl h-28" />)}
         </div>
       </div>
     );

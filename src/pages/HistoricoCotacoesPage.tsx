@@ -507,10 +507,10 @@ const HistoricoCotacoesPage = () => {
         {/* Layout principal */}
         {loading ? (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-            <div className="lg:col-span-2 animate-pulse bg-muted rounded-2xl h-96" />
+            <div className="lg:col-span-2 bg-muted rounded-2xl h-96" />
             <div className="space-y-2">
               {Array.from({ length: 8 }).map((_, i) => (
-                <div key={i} className="animate-pulse bg-muted rounded-xl h-16" />
+                <div key={i} className="bg-muted rounded-xl h-16" />
               ))}
             </div>
           </div>

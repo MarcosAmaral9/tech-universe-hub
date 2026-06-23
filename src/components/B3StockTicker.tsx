@@ -26,7 +26,7 @@ const B3StockTicker = () => {
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-3">
           {Array.from({ length: 10 }).map((_, i) => (
-            <div key={i} className="animate-pulse bg-muted rounded-xl h-20" />
+            <div key={i} className="bg-muted rounded-xl h-20" />
           ))}
         </div>
       </div>

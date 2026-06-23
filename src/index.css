@@ -122,7 +122,8 @@
 
   :root,
   .dark {
-    transition: --primary 0.3s ease, --ring 0.3s ease;
+    /* As variáveis de tema mudam de valor instantaneamente para evitar
+       flash branco ao carregar/trocar de tema no modo claro. */
   }
 
   body {
@@ -132,16 +133,18 @@
     line-height: 1.6;
   }
 
-  /* Smooth color transitions for accent color changes */
-  *,
-  *::before,
-  *::after {
+  /* Transições de tema aplicadas somente onde necessário.
+     Transição global em * causava flash branco ao alternar/trocar de tema,
+     especialmente no modo claro. Componentes que precisam de hover/foco
+     devem usar as utilidades do Tailwind (transition-colors etc.). */
+  .theme-transition,
+  .theme-transition * {
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.15s ease, box-shadow 0.3s ease;
   }
 
   /* Exclude animations from transition delays */
-  .animate-slide-left,
-  [class*="animate-"] {
+  .theme-transition .animate-slide-left,
+  .theme-transition [class*="animate-"] {
     transition: none;
   }
 

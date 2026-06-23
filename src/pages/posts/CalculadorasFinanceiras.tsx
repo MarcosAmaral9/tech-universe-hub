@@ -269,7 +269,7 @@ const CalculadorasFinanceiras = () => {
         {loading && assets.length === 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {Array.from({ length: 9 }).map((_, i) => (
-              <div key={i} className="animate-pulse bg-muted rounded-xl h-36" />
+              <div key={i} className="bg-muted rounded-xl h-36" />
             ))}
           </div>
         ) : filteredAssets.length === 0 ? (

@@ -33,7 +33,7 @@ const BackToTop = () => {
   return (
     <Button
       onClick={scrollToTop}
-      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-primary hover:bg-primary/90 shadow-lg animate-fade-in glow-effect"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-primary hover:bg-primary/90 shadow-lg animate-fade-in"
       size="icon"
       aria-label="Voltar ao topo"
     >
