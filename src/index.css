@@ -122,7 +122,8 @@
 
   :root,
   .dark {
-    transition: --primary 0.3s ease, --ring 0.3s ease;
+    /* As variáveis de tema mudam de valor instantaneamente para evitar
+       flash branco ao carregar/trocar de tema no modo claro. */
   }
 
   body {
