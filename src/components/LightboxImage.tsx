@@ -121,11 +121,11 @@ const LightboxImage = ({
         className={`group relative block w-full overflow-hidden rounded-xl border border-amber-500/30 bg-card focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background ${className ?? ""}`}
         style={aspectRatio ? { aspectRatio } : undefined}
       >
-        {/* Skeleton/placeholder enquanto carrega */}
+        {/* Skeleton/placeholder enquanto carrega (estático para evitar flash no modo claro) */}
         {!loaded && (
           <div
             aria-hidden="true"
-            className="absolute inset-0 animate-pulse bg-gradient-to-br from-muted/40 via-muted/20 to-muted/40"
+            className="absolute inset-0 bg-gradient-to-br from-muted/40 via-muted/20 to-muted/40"
           />
         )}
         <img
