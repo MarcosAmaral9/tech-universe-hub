@@ -48,6 +48,43 @@ function lcpPreloadPlugin(): Plugin {
   };
 }
 
+// Rollup chunk grouping: this project has many article routes loaded with
+// React.lazy. Leaving every route as its own JS file creates hundreds of small
+// assets and can make the preview uploader hit S3 request throttling. Grouping
+// route chunks keeps lazy loading, but drastically reduces concurrent uploads.
+function groupedManualChunks(id: string): string | undefined {
+  const normalizedId = id.replace(/\\/g, "/");
+
+  if (normalizedId.includes("/node_modules/")) {
+    if (normalizedId.includes("framer-motion")) return "vendor-motion";
+    if (normalizedId.includes("@tanstack/react-query")) return "vendor-query";
+    if (normalizedId.includes("@radix-ui/")) return "vendor-ui";
+    if (normalizedId.includes("lucide-react")) return "vendor-icons";
+    if (
+      normalizedId.includes("/react/") ||
+      normalizedId.includes("/react-dom/") ||
+      normalizedId.includes("/react-router-dom/")
+    ) {
+      return "vendor-react";
+    }
+    return "vendor";
+  }
+
+  const postMatch = normalizedId.match(/\/src\/pages\/posts\/([^/?]+)\.(tsx|ts|jsx|js)$/);
+  if (postMatch) {
+    const firstLetter = postMatch[1].charAt(0).toLowerCase();
+    if (firstLetter >= "a" && firstLetter <= "f") return "posts-a-f";
+    if (firstLetter >= "g" && firstLetter <= "m") return "posts-g-m";
+    if (firstLetter >= "n" && firstLetter <= "s") return "posts-n-s";
+    return "posts-t-z";
+  }
+
+  if (normalizedId.includes("/src/pages/regions/")) return "pages-regions";
+  if (/\/src\/pages\/[^/]+\.(tsx|ts|jsx|js)$/.test(normalizedId)) return "pages-core";
+
+  return undefined;
+}
+
 
 // Plugin: inline critical CSS + make full CSS non-blocking
 function criticalCSSPlugin(): Plugin {
@@ -377,21 +414,7 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Animation — framer-motion is large (~100 kB gzip), isolate for better caching
-          "vendor-motion": ["framer-motion"],
-          // Query — tanstack is stable between deploys
-          "vendor-query": ["@tanstack/react-query"],
-          // UI primitives — radix + shadcn components
-          "vendor-ui": [
-            "@radix-ui/react-dropdown-menu",
-            "@radix-ui/react-select",
-            "@radix-ui/react-tabs",
-            "@radix-ui/react-tooltip",
-            "@radix-ui/react-dialog",
-            "@radix-ui/react-toast",
-          ],
-        },
+        manualChunks: groupedManualChunks,
       },
     },
   },
