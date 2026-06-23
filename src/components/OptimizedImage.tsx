@@ -40,7 +40,7 @@ const OptimizedImage = memo(({
       {showSkeleton && !loaded && (
         <span
           aria-hidden="true"
-          className="absolute inset-0 animate-pulse bg-gradient-to-br from-muted/40 via-muted/20 to-muted/40"
+          className="absolute inset-0 bg-gradient-to-br from-muted/40 via-muted/20 to-muted/40"
         />
       )}
       <img

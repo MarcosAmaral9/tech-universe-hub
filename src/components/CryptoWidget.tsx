@@ -43,7 +43,7 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
         </div>
         <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-4 gap-3">
           {Array.from({ length: compact ? 5 : 8 }).map((_, i) => (
-            <div key={i} className="animate-pulse bg-muted rounded-xl h-24" />
+            <div key={i} className="bg-muted rounded-xl h-24" />
           ))}
         </div>
       </div>
