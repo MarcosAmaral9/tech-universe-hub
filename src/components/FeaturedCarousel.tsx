@@ -83,7 +83,7 @@ const FeaturedCarousel = () => {
     currentPost.category === "geek" ? "bg-geek" : "bg-otaku";
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-br from-secondary via-background to-secondary">
+    <section className="relative w-full overflow-hidden bg-background">
       <style>{`
         @keyframes progress-fill {
           from { width: 0%; }
@@ -135,7 +135,7 @@ const FeaturedCarousel = () => {
                   wrapperClassName="w-full h-full"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent md:bg-gradient-to-r" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent md:bg-gradient-to-r" />
               </div>
 
               {/* Content */}
