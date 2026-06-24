@@ -360,35 +360,9 @@ const TensuraPersonagens = () => {
         </div>
       </div>
 
-      
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <span className="h-7 w-7 text-otaku text-2xl">&#127775;</span>
-          Os Personagens da T3 e T4: Expansão do Elenco
-        </h2>
-        <p>
-          A Temporada 3 e a Temporada 4 (Spring 2026) introduzem personagens que aprofundam o lado político e diplomático de Tempest. <strong>Yuuki Kagurazaka</strong>, o antagonista central da T3, representa algo raro em isekais: um humano que conhece profundamente os reais pontos fracos de Rimuru e tem um plano que vai além do poder bruto. Sua relação com a Children's Coalition e sua ideologia sobre raças e poder criam um contraponto ideológico genuíno à abordagem de coexistência de Rimuru.
-        </p>
-        <p>
-          <strong>Chloe O'Bell</strong> — a Heroína — é um dos personagens mais importantes da mitologia de TenSura e uma das figuras mais complexas em termos de timeline. Sua história cruza com Veldora (que ela aprisionou por 300 anos), com Rimuru e com eventos que ocorrem tanto no passado quanto no futuro da série. A T3 começa a revelar as camadas de sua história, e a T4 aprofunda sua conexão com os elementos mais cósmicos do worldbuilding de Fuse.
-        </p>
-        <p>
-          Os <strong>Primordial Demons</strong> — os sete demônios primordiais identificados por cores — são introduzidos progressivamente a partir de Diablo na T2. Cada primordial representa um nível de poder que transcende os Demon Lords convencionais. A T4 deve apresentar mais primordiais além de Diablo e Guy Crimson, expandindo a hierarquia de poder da série para uma escala que o início de TenSura nunca insinuou existir.
-        </p>
-
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <span className="h-7 w-7 text-otaku text-2xl">&#127381;</span>
-          Ordem de Assistência para Novos Espectadores
-        </h2>
-        <p>
-          Para quem está descobrindo TenSura em 2026 por causa da T4, a ordem completa de assistência é: <strong>T1</strong> (2018–2019, 24 eps) → <strong>T2 Parte 1</strong> (jan–mar 2021, 12 eps) → <strong>Tensura Nikki</strong> (abr–jun 2021 — opcional, spin-off de slice-of-life) → <strong>T2 Parte 2</strong> (jul–set 2021, 12 eps) → <strong>Filme Scarlet Bond</strong> (nov 2022 — recomendado mas não obrigatório para entender a T3) → <strong>T3</strong> (abr–set 2024, 24 eps) → <strong>T4</strong> (Spring 2026, em exibição).
-        </p>
-        <p>
-          O total de episódios sem os opcionais é de aproximadamente 72 episódios — algo entre 24 e 30 horas de conteúdo. Com os opcionais (Nikki + filme), chega a cerca de 38 horas. Para quem quer ir direto ao essencial antes de acompanhar a T4 ao vivo: as T2 Partes 1 e 2 e a T3 são os arcos que constroem diretamente os conflitos e relações centrais da T4. A T1 é fundamental para entender Rimuru e os personagens de Tempest. O Nikki e o filme são camadas adicionais para quem quer a experiência completa.
-        </p>
-
       <EditorialTake category="otaku" title="Análise do Marcos: o elenco de TenSura é seu maior ativo — e seu maior risco">
         <p>
-          Acompanho TenSura desde a T1 e o que mais me impressiona na série de Fuse não é o protagonista — é a capacidade de dar personalidade real a personagens que poderiam facilmente ser decoração. Shion, que começa como 'secretária leal perigosamente má cozinheira', tem um dos arcos de morte e ressurreição mais emocionalmente honestos do anime recente. Diablo, que chegou como fanservice de poder, se tornou um dos personagens mais hiláriamente sinistros e ao mesmo tempo genuínos da série.
+          Acompanho TenSura desde a T1 e o que mais me impressiona na série de Fuse não é o protagonista — é a capacidade de dar personalidade real a personagens que poderiam facilmente ser decoração. Shion, que começa como "secretária leal perigosamente má cozinheira", tem um dos arcos de morte e ressurreição mais emocionalmente honestos do anime recente. Diablo, que chegou como fanservice de poder, se tornou um dos personagens mais hiláriamente sinistros e ao mesmo tempo genuínos da série.
         </p>
         <p>
           O risco do elenco grande é que, com a expansão de Tempest em T3 e T4, alguns personagens ficam sem tempo de tela adequado. Benimaru e Shuna aparecem cada vez menos em cenas de destaque conforme novos aliados chegam. É um problema estrutural de séries de construção de reino: o worldbuilding cresce mais rápido do que o desenvolvimento de personagem consegue acompanhar. A light novel de Fuse resolve isso melhor do que o anime — com capítulos de perspectiva de personagens secundários que o anime simplesmente não tem tempo de incluir.

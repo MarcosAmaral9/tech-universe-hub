@@ -301,44 +301,47 @@ const OnePieceFinalSaga2026 = () => {
 
             
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <span className="h-7 w-7 text-otaku text-2xl">&#127757;</span>
-          O Arco de Egghead: A Virada que Mudou Tudo
+          <span className="h-7 w-7 text-otaku text-2xl">&#9928;</span>
+          O Arco de Egghead: O Que Foi Revelado
         </h2>
         <p>
-          O <strong>Arco de Egghead</strong> — a Ilha do Futuro, laboratório do Dr. Vegapunk — foi o arco que transformou a Final Saga de uma promessa em realidade para os leitores do mangá. Vegapunk, o gênio científico mais importante do universo de One Piece e personagem mencionado desde o arco de Thriller Bark em 2007, finalmente aparece como figura central. O arco revela segredos sobre a história apagada do mundo, a natureza do Fruto do Diabo de Luffy (Gomu Gomu no Mi / Hito Hito no Mi, Model Nika) e o projeto D com um nível de detalhe que anos de foreshadowing haviam prometido.
+          O Arco de Egghead (capítulos 1058–1127) foi encerrado no mangá em janeiro de 2025 e representou a maior concentração de revelações de lore da série desde Marineford. O arco se passa na Ilha de Egghead — a ilha do futuro onde o Dr. Vegapunk, o maior cientista do mundo de One Piece, tem seu laboratório. As revelações do arco mudaram fundamentalmente a compreensão do espectador sobre o universo de One Piece.
         </p>
         <p>
-          Para o espectador do anime em 2026, o Arco de Egghead ainda está à frente — o anime está em Elbaf. Mas os leitores do mangá já processaram as revelações de Egghead, e o consenso é inequívoco: é um dos arcos mais importantes de toda a série em termos de revelações de lore, equiparável ao Marineford em impacto narrativo mas com uma natureza completamente diferente — não é sobre emoção bruta, mas sobre compreensão. Você termina o Arco de Egghead relendo capítulos antigos com olhos completamente novos.
-        </p>
-
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <span className="h-7 w-7 text-otaku text-2xl">&#128101;</span>
-          Os Cinco Anciões e Imu: Os Antagonistas Finais Revelados
-        </h2>
-        <p>
-          A Final Saga revela os verdadeiros controladores do Governo Mundial com um nível de detalhe que as temporadas anteriores apenas insinuavam. <strong>Imu</strong> (Im-sama), o governante oculto sentado no Trono Vazio, aparece com poderes que redimensionam a escala de ameaça da série. Os <strong>Cinco Anciões</strong> (Gorosei), que nos arcos anteriores eram figuras de fundo em reuniões políticas, se revelam como guerreiros de elite com poderes comparáveis aos antagonistas mais fortes já apresentados na série.
+          As revelações mais significativas: a natureza dos <strong>Akuma no Mi</strong> (Frutas do Diabo) foi parcialmente explicada — Dr. Vegapunk descobriu que todas as frutas derivam de um único desejo que alguém teve em algum ponto da história. A identidade e os poderes dos <strong>Cinco Anciões (Gorosei)</strong> foram revelados — eles não são humanos comuns mas entidades com Frutas do Diabo próprias de escala mítica. O passado de <strong>Lily</strong>, a primeira rainha de Alabasta, conectou-se diretamente aos eventos do Void Century. E <strong>Joy Boy</strong> — o personagem histórico mencionado desde o arco de Fishman Island — ganhou contexto que recontextualiza toda a saga de Luffy.
         </p>
         <p>
-          A questão do <strong>Século Vazio</strong> — os cem anos apagados da história do mundo que as Poneglyphs registram — é central para entender o conflito entre o Governo Mundial e os herdeiros do legado de Joy Boy. Robin, que passou a série inteira decifrando Poneglyphs, está no centro dessa revelação. A conexão entre o legado de Roger, a missão de Joy Boy, o Fruto do Diabo de Luffy e o projeto D cria uma teia narrativa que Oda vem construindo por mais de duas décadas.
+          O custo narrativo de Egghead foi alto em termos de personagens: o arco tem algumas das perdas mais impactantes da Final Saga até o momento. Oda demonstrou que a Final Saga não vai proteger personagens estabelecidos — e que o custo de revelar os segredos do Void Century para o mundo é real dentro da ficção.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <span className="h-7 w-7 text-otaku text-2xl">&#128218;</span>
-          Como Acompanhar a Final Saga: Mangá, Anime ou One Pace
+          Joy Boy, o Void Century e o Que Elbaf Deve Revelar
         </h2>
         <p>
-          Para quem está no anime e quer entender o que está por vir sem spoilers diretos: o arco de Elbaf (anime abril 2026) é seguido por Egghead e depois pelos arcos que encerram a série. Para quem quer ir além do anime e ler o mangá: os capítulos estão disponíveis oficialmente no <strong>Manga Plus</strong> em inglês gratuitamente. A <strong>Panini Brasil</strong> publica os volumes físicos em português com regularidade — atualmente acompanha o ritmo de lançamento japonês com atraso de poucos meses.
+          <strong>Joy Boy</strong> é o personagem histórico mais importante de One Piece além do próprio Roger — e Oda tem revelado sua história em camadas deliberadamente lentas desde o arco de Fishman Island (2011). O que sabemos até Egghead: Joy Boy viveu no Void Century, há 900 anos; fez uma promessa ao povo de Fishman Island que não pôde cumprir; era o usuário anterior do Fruto do Sol (Gomu Gomu no Mi / Hito Hito no Mi, Model: Nika) antes de Luffy; e Zunesha, o elefante que carrega Zou nas costas, caminhou pelo mundo acompanhando Joy Boy.
         </p>
         <p>
-          Para quem está fora do anime e quer entrar na Final Saga sem assistir mais de 1.100 episódios, o projeto comunitário <strong>One Pace</strong> (onepace.net) remonta os episódios removendo fillers e recaps — reduzindo centenas de horas para uma experiência mais próxima do mangá em ritmo. One Pace cobre até o Arco de Wano com versões remontadas disponíveis para download. A comunidade está trabalhando nos arcos subsequentes. Para quem prefere começar diretamente do mangá, os capítulos iniciais de One Piece (1997) estão disponíveis no Manga Plus e são surpreendentemente acessíveis — Oda tinha 22 anos quando publicou o capítulo 1 e a voz da série já estava completamente formada.
+          O <strong>Void Century</strong> — o século apagado da história do mundo pelo Governo Mundial — é o contexto histórico de Joy Boy. Quem eram os Ancient Kings que se opuseram ao Governo Mundial? Por que a história foi apagada? O que as Poneglyphs revelam sobre esse período? Oda construiu esse mistério por mais de duas décadas, e a Final Saga está respondendo essas perguntas em ordem — Egghead respondeu parte, Elbaf deve aprofundar, e os arcos finais devem completar o quadro.
         </p>
 
-      <EditorialTake category="otaku" title="Análise do Marcos: a Final Saga de One Piece é a prova de que Oda sabia o fim desde o começo">
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128101;</span>
+          O Estado dos Chapéus de Palha em 2026: Onde Está Cada Membro
+        </h2>
         <p>
-          One Piece é uma obra de <strong>Eiichiro Oda</strong>, serializada na Weekly Shōnen Jump desde julho de 1997 — mais de 1.110 capítulos, 110+ volumes, mais de 530 milhões de cópias vendidas segundo a Shueisha. A <strong>Final Saga</strong> foi declarada por Oda em setembro de 2022, começando com o arco de Wano encerrando e o Arco de Egghead se iniciando. O anime está no arco de Elbaf desde abril de 2026, em formato sazonal pela Toei Animation. O manga do arco de Egghead encerrou em 2024 e Oda está no arco seguinte (Elbaf no mangá) com publicação semanal.
+          Após Egghead e no início do arco de Elbaf, o grupo dos Chapéus de Palha está mais poderoso do que em qualquer ponto anterior da série — cada membro passou por desenvolvimentos significativos nos últimos arcos. <strong>Luffy</strong> dominou o Gear 5 (Nika) e sua Conquista do Rei foi confirmada. <strong>Zoro</strong> tem três espadas de alto nível após os eventos de Wano. <strong>Nami</strong> com o Zeus integrado ao Clima-Tact tem poder de ataque muito superior ao da T1. <strong>Usopp</strong> — cujo arco em Elbaf é aguardado desde 1997 — chega ao destino que Oda prometeu para ele há quase três décadas.
         </p>
         <p>
-          Acompanho One Piece desde 2001 e o que mais me impressiona na Final Saga é a confirmação de algo que os fãs mais atentos sempre suspeitaram: <strong>Oda planejou os pilares narrativos desde os primeiros capítulos</strong>. O Straw Hat de Luffy vem de Shanks que veio de Roger. A Poneglyph que Robin lê em Alabasta conecta ao projeto D. O Fruto do Diabo de Luffy tem história que remonta ao próprio Joy Boy. Ver esses fios se conectando após 27 anos é uma experiência que poucos narrativas de qualquer mídia proporcionam.
+          <strong>Sanji</strong> desbloqueou os modificadores genéticos Vinsmoke sem perder a emoção — uma resolução do arco de Whole Cake que a série levou tempo para confirmar. <strong>Robin</strong> sabe ler os Poneglyphs e está mais próxima de descobrir a verdade do Void Century do que qualquer pessoa viva. <strong>Franky</strong>, <strong>Brook</strong> e <strong>Jinbe</strong> completam o grupo mais coeso que a série já teve — cada um com função e motivação claras para o arco final. Elbaf, com seus gigantes e revelações sobre o passado de personagens como Usopp e Big Mom, é o próximo capítulo na jornada de cada um deles.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: a Final Saga de One Piece é a prova de que Oda planejou tudo desde o início">
+        <p>
+          One Piece é uma obra de <strong>Eiichiro Oda</strong>, serializada na Weekly Shōnen Jump desde julho de 1997 — passando de 1.110 capítulos e 530 milhões de cópias vendidas segundo dados da Shueisha de 2024, o mangá mais vendido da história. A <strong>Final Saga</strong> começou com o Arco de Wano encerrando (capítulo 1057) em 2022 e inclui o Arco de Egghead (cap. 1058–1127, encerrado em janeiro de 2025), seguido pelo Arco de Elbaf (em andamento). O anime é produzido pela <strong>Toei Animation</strong> e estreou o Arco de Elbaf em <strong>abril de 2026</strong> no formato sazonal inédito.
+        </p>
+        <p>
+          Revisitar os foreshadowings de Oda após a Saga de Egghead é uma experiência de humildade: o cara estava plantando seeds em 1999 que germinaram em 2024. O Fruto do Diabo de Luffy, Joy Boy, o Void Century, as Akuma no Mi dos Gorosei — tudo estava nos fundamentos da série desde os primeiros volumes, esperando pacientemente. Isso não é retroatividade narrativa conveniente: é estrutura de longo prazo que pouquíssimos autores têm disciplina para manter por 27 anos. A Final Saga não é sobre revelar mistérios — é sobre confirmar que sempre houve uma história maior por baixo da que estávamos vendo.
         </p>
       </EditorialTake>
 

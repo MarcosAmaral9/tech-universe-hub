@@ -145,50 +145,47 @@ const Tsukimichi = () => {
 
       
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <span className="h-7 w-7 text-otaku text-2xl">&#127761;</span>
-          O Sistema de Magia de Tsukimichi: Por Que Makoto É Diferente
+          <span className="h-7 w-7 text-otaku text-2xl">&#127769;</span>
+          O Sistema de Magia de Tsukimichi: Maná, Contratos e Poderes de Deus
         </h2>
         <p>
-          Makoto Misumi tem uma relação incomum com a magia no mundo de Tsukimichi. Ele foi enviado para o mundo de fantasia pela deusa — mas rejeitado por ela imediatamente por ser "feio demais para um herói" (os padrões estéticos do mundo de fantasia diferem dos humanos modernos). Sem a benção da deusa, Makoto chega às Terras Selvagens com um poder de mana bruto que os habitantes nativos não conseguem processar — ele simplesmente tem mana em quantidade que transborda os limites normais do mundo.
+          O sistema de poder de Tsukimichi é construído sobre dois eixos principais. O primeiro é o <strong>maná</strong> (mana) — a energia mágica presente em todos os seres vivos. Makoto tem uma quantidade absurda de maná, herdada de seus pais que foram heróis invocados anteriores — mas por muito tempo não tem habilidades desenvolvidas suficientes para canalizá-la adequadamente. Esse desequilíbrio entre poder bruto e controle é o motor da progressão de Makoto: ele começa como alguém que pode destruir montanhas por acidente mas não consegue acender uma vela com precisão.
         </p>
         <p>
-          O <strong>Arco de Magia</strong> de Makoto é construído sobre uma premissa interessante: quantidade sem controle é perigosa, mas quantidade com treino é avassaladora. Makoto começa incapaz de fazer magias básicas (porque seus feitiços destroem tudo ao redor) e evolui para um usuário que manipula os elementos em escala que poucos seres no mundo conseguem. Seu arco não é de descoberta de um poder oculto — é de aprendizado metódico de controle sobre poder que sempre esteve lá.
-        </p>
-        <p>
-          O sistema também inclui o <strong>Sakai</strong> — a habilidade única de Makoto que permite criar um domínio espacial próprio. O Sakai começa como uma bolha de espaço modificado e evolui progressivamente para algo que se assemelha mais a uma realidade paralela que Makoto pode moldar. É dentro do Sakai que a comunidade das Terras Selvagens de Makoto — goblin, orcs, aranhas e outras criaturas "rejeitadas" pelo mundo principal — vive e se desenvolve.
+          O segundo eixo são os <strong>Contratos de Servidão</strong> — laços mágicos formados entre Makoto e seres poderosos que escolhem segui-lo. Tomoe (um dragão Azul que Makoto subjugou) e Mio (uma aranha demoníaca) são as primeiras a estabelecer contratos. O sistema de contrato tem implicações narrativas além do combate: os servos de Makoto ganham acesso a parte de seu poder, e Makoto por sua vez fica encarregado da proteção e do crescimento deles. É um sistema de responsabilidade mútua que a série usa para desenvolver as relações entre os personagens ao longo de várias temporadas.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <span className="h-7 w-7 text-otaku text-2xl">&#127758;</span>
-          Os Três Mundos de Tsukimichi: Onde a História Acontece
+          Os Dois Mundos de Tsukimichi: O Mundo da Deusa e a Área das Terras Selvagens
         </h2>
         <p>
-          A narrativa de Tsukimichi opera em três espaços distintos que interagem progressivamente ao longo das temporadas. As <strong>Terras Selvagens</strong> (Shura) são o território além dos limites do mundo humano — onde criaturas rejeitadas pelas sociedades convencionais vivem. É onde Makoto pousa após ser descartado pela deusa e onde ele constrói sua comunidade. Tomoe e Mio chegam nesse espaço. A maioria da T1 se passa aqui.
+          O universo de Tsukimichi tem uma estrutura geográfica e social deliberadamente dividida. O <strong>Mundo da Deusa</strong> — as terras onde humanos e raças demihumanas coexistem sob influência direta da deusa que banhou Makoto — é governado por regras de magia convencional e hierarquias sociais estabelecidas. Heróis (convocados pela deusa), aventureiros e raças demihumanas têm posições definidas dentro desse sistema.
         </p>
         <p>
-          As <strong>cidades humanas</strong> — especialmente a cidade mercante de Rotsgard — são o espaço onde Makoto começa a interagir com a sociedade convencional do mundo de fantasia. O arco de Rotsgard na T2 é onde Makoto entra na Academia como estudante e encontra outros heróis humanos convocados de forma mais convencional — com a benção da deusa e com o tipo de poder "adequado" que Makoto nunca recebeu. O contraste entre o herói reconhecido e Makoto, o "rejeitado" que é na prática mais poderoso que qualquer herói, é o motor cômico e dramático central desse espaço.
-        </p>
-        <p>
-          O <strong>Sakai</strong> de Makoto é o terceiro espaço — sua realidade pessoal que ele carrega consigo. Com o tempo, o Sakai cresce de uma bolha defensiva para um espaço habitável onde sua comunidade de Terras Selvagens pode existir protegida. A relação entre esses três espaços e como Makoto navega entre eles sem revelar sua verdadeira escala de poder para quem não precisa saber é uma das mecânicas mais engenhosas da série.
+          As <strong>Terras Selvagens</strong> (Wasteland) são o território onde Makoto foi jogado pela deusa — considerado inabitável pelas raças convencionais por ser hostil demais. É onde Makoto funda o <strong>Asahi</strong>, seu estabelecimento comercial, que gradualmente se transforma numa comunidade de raças exiladas e marginalizadas que encontraram em Makoto um protetor. Essa dicotomia — o mundo oficial que o rejeitou versus a comunidade que ele construiu fora das margens — é a estrutura narrativa central da série, e a série a usa com consistência ao longo das temporadas.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <span className="h-7 w-7 text-otaku text-2xl">&#128218;</span>
-          Light Novel vs. Anime: Diferenças e o Que Explorar
+          <span className="h-7 w-7 text-otaku text-2xl">&#128101;</span>
+          Tomoe e Mio: Por Que a Dinâmica Funciona Além do Harem
         </h2>
         <p>
-          A light novel de Azumi Kei tem mais conteúdo e detalhamento do que o anime conseguiu adaptar em duas temporadas. Especialmente nas motivações dos personagens secundários e nas mecânicas políticas dos reinos humanos — elementos que o anime comprime significativamente para manter ritmo. Para quem quer mais profundidade após a T2, a light novel em inglês está disponível pela <strong>J-Novel Club</strong> (digital) e pela <strong>Yen Press</strong> (físico). Os volumes cobrem os arcos que uma potencial T3 adaptaria.
+          A relação de Makoto com Tomoe e Mio é frequentemente categorizada como harem por quem não assistiu a série — a categorização é superficialmente correta mas perde o que torna as relações interessantes. <strong>Tomoe</strong>, o Dragão Azul (evoluída para Tomoe-san como servo de Makoto), é um ser milenar com conhecimento e poder que superam os de Makoto em muitos aspectos. Sua fascinação com a história humana — especialmente com o Japão que Makoto veio — é o que a motivou a se tornar serva em vez de simplesmente ser derrotada. Ela age como mentora e guia tanto quanto como aliada de combate.
         </p>
         <p>
-          O mangá, serializado na Comic Alive e adaptado por Kotora Kivi, mantém o humor e o tom do original com boa fidelidade. Para o mercado brasileiro, nem a light novel nem o mangá têm edição oficial confirmada em português até maio de 2026 — o acesso é via scanlation em inglês ou português no MangaDex para o mangá, e J-Novel Club em inglês para a LN. A Crunchyroll tem as duas temporadas com legendas em português, que é o ponto de entrada recomendado para o público brasileiro.
+          <strong>Mio</strong>, a Aranha Negra que aterrorizava as Terras Selvagens por séculos, escolheu Makoto porque ele foi o primeiro ser que não fugiu dela — ele ficou parado de medo, o que ela interpretou como coragem. Sua devoção a Makoto é absoluta e frequentemente perigosa para quem ele considera inimigos. Mas a série não a trata como fanservice de poder — Mio tem uma perspectiva própria sobre o que significa existir num mundo onde ela era temida, e sua relação com culinária (ela aprende a cozinhar para Makoto e leva isso com seriedade total) é um dos elementos de caracterização mais memoráveis da série.
+        </p>
+        <p>
+          A dinâmica com Makoto funciona porque a série não trata os três como mestre-e-servos no sentido hierárquico simples. Makoto frequentemente consulta Tomoe e Mio, ouve perspectivas que não considerou, e revisa seus planos baseado no input delas. É uma parceria horizontal disfarçada de hierarquia — e essa honestidade sobre o que a relação realmente é dá às três dinâmicas substância que a maioria dos trios de harem não tem.
         </p>
 
       <EditorialTake category="otaku" title="Análise do Marcos: Tsukimichi é o isekai que cresceu sem hype e ganhou com consistência">
         <p>
-          Tsukimichi Moonlit Fantasy — título original <strong>Tsuki ga Michibiku Isekai Douchuu</strong> — é uma light novel de <strong>Azumi Kei</strong>, publicada pela <strong>Alphapolis</strong> desde 2012 no formato web e em volumes físicos desde 2015 — 18+ volumes publicados. O mangá, com arte de <strong>Kotora Kivi</strong>, é serializado na revista <em>Comic Alive</em> (Media Factory / Kadokawa). A Temporada 1 foi produzida pelo estúdio <strong>C2C</strong>, com 12 episódios de julho a setembro de 2021. A Temporada 2 foi produzida pelo <strong>J.C.Staff</strong>, com 25 episódios de janeiro a junho de 2024. A série está disponível na <strong>Crunchyroll</strong> com legendas em português.
+          Tsukimichi Moonlit Fantasy é uma light novel de <strong>Azumi Kei</strong>, publicada pela <strong>Alphapolis</strong> desde agosto de 2015 — mais de 17 volumes lançados. O mangá, adaptado por <strong>Kotora Kino</strong>, é serializado no <em>Comic Alive</em> (Media Factory / Kadokawa). A Temporada 1 foi produzida pelo estúdio <strong>C2C</strong>, dirigida por Shouta Ihata, com 12 episódios de julho a setembro de 2021. A <strong>Temporada 2</strong> foi produzida pelo estúdio <strong>J.C.Staff</strong>, também dirigida por Shouta Ihata, com 13 episódios de janeiro a abril de 2024. Disponível na <strong>Crunchyroll</strong> com legendas em português. A Temporada 3 ainda não foi confirmada oficialmente até maio de 2026.
         </p>
         <p>
-          Tsukimichi Moonlit Fantasy é um dos isekais que mais cresce em popularidade sem ter o mesmo barulho de Solo Leveling ou TenSura. A light novel de Azumi Kei tem mais de 18 volumes publicados e a adaptação anime acertou no casting de voz — especialmente Makoto, cujo tom monotônico contrasta perfeitamente com o caos ao redor. A troca de estúdio entre T1 (C2C) e T2 (J.C.Staff) resultou numa melhoria de qualidade visual que a comunidade reconheceu positivamente. Para quem ainda não viu: a T1 e a T2 são autossuficientes para apreciar o humor e a construção de mundo.
+          Tsukimichi Moonlit Fantasy é o isekai que a comunidade que acompanha o gênero há anos tende a descobrir depois — não é o primeiro título que aparece numa busca de 'melhores isekais', mas quem chega a ele raramente se arrepende. Makoto é um protagonista que a série leva a sério: seus erros têm consequências, seu crescimento é gradual, e a dinâmica com Tomoe e Mio tem textura de relação real em vez de harem convencional. Para quem está com fadiga dos protagonistas invulneráveis desde o episódio 1, Tsukimichi oferece uma alternativa com substância.
         </p>
       </EditorialTake>
 

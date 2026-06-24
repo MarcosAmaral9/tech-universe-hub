@@ -299,14 +299,29 @@ const IsekaiMokushirokuMynoghra2026 = () => {
           ))}
         </div>
 
-        <EditorialTake category="otaku" title="Análise do Marcos: Mynoghra é o isekai de estratégia mais ambicioso em anos">
-          <p>
-            Li o mangá de Mynoghra (Kiyoshi Funatsu, Monthly Comic Alive) e a premissa me pegou de surpresa. A maioria dos isekais de construção de reino tem um arco básico: protagonista chega, faz aliados, cria nação boa, enfrenta invasor. <strong>Mynoghra inverte isso completamente</strong> — Takuto chega e já é o invasor por natureza, mesmo sem querer. Cada expansão territorial é uma destruição. Cada aliado que Mynoghra cria tem o preço de corromper algo.
-          </p>
-          <p>
-            O anime pela Wao World foi anunciado e está em produção — sem data confirmada até maio de 2026. O estúdio não tem histórico extenso em produções de grande escala, o que é um ponto de atenção para a qualidade final. Mas o material original é forte o suficiente para sustentar uma adaptação sólida se o budget permitir fazer jus às cenas de batalha em larga escala. <strong>Minha recomendação: leia o mangá agora e entre no anime já familiarizado com os personagens</strong> — a experiência vai ser muito mais rica do que entrar às cegas.
-          </p>
-        </EditorialTake>
+        
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#9680;</span>
+          Mynoghra no Contexto dos Isekais de 4X: Uma Categoria em Expansão
+        </h2>
+        <p>
+          O subgênero de isekai onde o protagonista gerencia uma civilização inteira — em vez de apenas um personagem individual — existe em menor escala na ficção japonesa mas cresce consistentemente. <strong>Overlord</strong> é o exemplo mais próximo: Ainz Ooal Gown não é apenas um aventureiro mas o líder de uma organização com regras, hierarquia e objetivos coletivos. A diferença fundamental é que Overlord usa mecânicas de MMO como metáfora; Mynoghra usa mecânicas de 4X (eXplore, eXpand, eXploit, eXterminate) como regras literais do mundo.
+        </p>
+        <p>
+          Essa literalidade tem consequências narrativas que Overlord não explora: em Mynoghra, o terreno é fisicamente alterado pelo avanço da civilização. Cada hexágono conquistado se corrompe — não como metáfora de influência política, mas como evento físico visível que afeta os ecossistemas, as populações e os recursos da região. Isso cria um sistema de consequências ambientais que nenhum outro isekai de construção de nação usa de forma tão explícita. Takuto não pode expandir sem destruir; não pode proteger sem comprometer territórios adjacentes.
+        </p>
+        <p>
+          A comparação com <strong>TenSura</strong> é inevitável para leitores do subgênero mas superficial: TenSura expande Tempest com diplomacia e coexistência ativa. Mynoghra expande por corrupção passiva — Mynoghra não precisa conquistar ativamente; ela apenas existe e o entorno se adapta ao apocalipse. Para o espectador que gosta de worldbuilding com lógica interna rigorosa e consequências políticas reais de cada decisão territorial, Mynoghra oferece algo genuinamente diferente dentro do catálogo de isekais de 2025–2026.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: Mynoghra é o isekai de estratégia mais ambicioso em anos">
+        <p>
+          Isekai Mokushiroku Mynoghra: Hametsu no Bunmei de Hajimeru Sekai Seifuku é uma light novel de <strong>Meij</strong>, serializada no Shōsetsuka ni Narō e publicada fisicamente pela <strong>Kadokawa</strong> (Enterbrain). O mangá, com arte de <strong>Kiyoshi Funatsu</strong>, é serializado na <em>Monthly Comic Alive</em> (Media Factory / Kadokawa). O anime foi anunciado oficialmente em outubro de 2024 pela produtora <strong>Wao World</strong>. Sem data de estreia definida até maio de 2026. A série está disponível em inglês via scanlations no MangaDex e via fan translations da light novel.
+        </p>
+        <p>
+          Li o mangá de Mynoghra (Kiyoshi Funatsu, Monthly Comic Alive) e a premissa me pegou de surpresa. A maioria dos isekais de construção de reino tem um arco básico: protagonista chega, faz aliados, cria nação boa, enfrenta invasor. <strong>Mynoghra inverte isso completamente</strong> — Takuto chega e já é o invasor por natureza, mesmo sem querer. O anime pela Wao World foi anunciado em outubro de 2024 e está em produção. O estúdio não tem histórico extenso em produções de grande escala, o que é um ponto de atenção para a qualidade final — mas o material original é forte o suficiente para sustentar uma adaptação sólida se o orçamento permitir.
+        </p>
+      </EditorialTake>
 
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
           <h3 className="text-xl font-bold mb-2">Você conhecia Mynoghra? 🌑</h3>

@@ -320,14 +320,29 @@ const ReMonster2026 = () => {
           </div>
         </div>
         
-        <EditorialTake category="otaku" title="Análise do Marcos: Re:Monster é o isekai que o anime não fez jus — mas o mangá compensa">
-          <p>
-            Re:Monster estreou na temporada de primavera de 2024 pela Doga Kobo com nota de partida 6.7 no MyAnimeList — abaixo do potencial, mas não uma catástrofe. O problema central foi o ritmo: a web novel de Kanekiru Kogitsune tem detalhamento psicológico de Rou que o anime simplificou demais para caber em 12 episódios. O que no texto é uma progressão tática e introspectiva, na tela ficou como "goblin bate, goblin come, goblin fica mais forte" — correto, mas sem a camada que faz a light novel envolvente.
-          </p>
-          <p>
-            Para quem assistiu o anime e ficou curioso: <strong>o mangá é a próxima parada certa</strong>. A arte de Kobayakawa dá peso visual às batalhas que o anime não conseguiu. Os arcos seguintes ao final do anime — especialmente a expansão do reino goblin e os primeiros confrontos com facções humanas organizadas — são o material mais forte da franquia. Sem T2 confirmada até maio de 2026, o mangá em inglês (scanlations) é a única forma de continuar a história. Vale muito.
-          </p>
-        </EditorialTake>
+        
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127865;</span>
+          Re:Monster no Contexto do Subgênero "Monster Protagonist"
+        </h2>
+        <p>
+          Re:Monster pertence a um subgênero específico de isekai que ganhou tração significativa a partir dos anos 2010: o "monster protagonist" — protagonista reencarnado como criatura geralmente tratada como inimigo nas narrativas convencionais de fantasia. O precedente mais famoso é <strong>Tensei Shitara Slime Datta Ken</strong> (TenSura), publicado no mesmo ano de Re:Monster (2013 no Narou), onde Rimuru reencarna como uma gosma. A diferença de tom é fundamental: TenSura adota um registro otimista e diplomático; Re:Monster é deliberadamente mais cru, com a sobrevivência e a predação como motores narrativos.
+        </p>
+        <p>
+          <strong>Goblin Slayer</strong> (2016, Kumo Kagyu) abordou o mesmo território de outro ângulo — goblins como ameaça violenta a ser erradicada — criando um universo onde a existência das criaturas é tratada com seriedade perturbadora. Re:Monster posiciona Rou nesse espectro como um intermediário: ele é goblin, mas com consciência humana que observa e analisa a hierarquia de predadores da qual faz parte. Para o leitor familiarizado com TenSura e Goblin Slayer, Re:Monster oferece uma terceira perspectiva dentro do mesmo território temático.
+        </p>
+        <p>
+          O que diferencia Rou de outros protagonistas do subgênero é a mecânica de absorção por consumo — não há paralelo direto em outras obras populares do gênero. Rimuru absorve através de Predator (depois Glutoneria) de forma mágica e abstrata; Rou absorve literalmente, consumindo partes físicas dos inimigos. Essa especificidade mecânica cria uma narrativa de progressão com lógica interna mais estrita: o que Rou come determina exatamente o que ele ganha, e as decisões de o que consumir têm peso estratégico real ao longo da série.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: Re:Monster é o isekai que o anime não fez jus — mas o mangá compensa">
+        <p>
+          Re:Monster é uma light novel de <strong>Kanekiru Kogitsune</strong>, serializada no Shōsetsuka ni Narō entre 2012 e 2016 e publicada fisicamente pela <strong>Media Factory</strong> em 13 volumes. O mangá, com arte de <strong>Haruyoshi Kobayakawa</strong>, é serializado na <em>Monthly Comic Alive</em> (Media Factory / Kadokawa). O anime foi adaptado pela <strong>Doga Kobo</strong>, dirigido por <strong>Hiroshi Kimura</strong>, com 12 episódios de abril a junho de 2024. Nota 6.7/10 no MyAnimeList. Disponível na <strong>Crunchyroll</strong>. Sem anúncio de T2 até maio de 2026. A light novel em inglês está disponível na <strong>J-Novel Club</strong> (e Yen Press para edição física).
+        </p>
+        <p>
+          Re:Monster estreou na temporada de primavera de 2024 pela Doga Kobo com nota de partida 6.7 no MyAnimeList — abaixo do potencial, mas não uma catástrofe. O problema central foi o ritmo: a web novel de Kanekiru Kogitsune tem detalhamento psicológico de Rou que o anime simplificou demais para caber em 12 episódios. Para quem assistiu o anime e ficou curioso: <strong>o mangá é a próxima parada certa</strong>. Os arcos seguintes ao final do anime — a expansão do reino goblin e os primeiros confrontos com facções humanas organizadas — são o material mais forte da franquia.
+        </p>
+      </EditorialTake>
 
           <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
           <h3 className="text-xl font-bold mb-2">Você já assistiu Re:Monster? 🐉</h3>

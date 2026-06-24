@@ -296,14 +296,32 @@ const GuiaCosplay2026 = () => {
           ))}
         </div>
 
-        <EditorialTake category="otaku" title="Análise do Marcos: cosplay brasileiro cresceu de nicho para referência internacional">
-          <p>
-            A CCXP reúne mais de 280 mil visitantes por ano segundo dados oficiais da Omelete Company — e boa parte deles veste cosplay. O que mais me impressiona é como o <strong>cosplayer brasileiro se adaptou à realidade local</strong>: EVA de 5mm encontrado em qualquer papelaria por R$ 8–15 a placa, tintas acrílicas de marca nacional, contact cement de sapataria. Os tutoriais europeus e americanos assumem materiais e ferramentas que custam 5x mais aqui — e os cosplayers brasileiros resolveram isso com criatividade.
-          </p>
-          <p>
-            O erro mais comum do iniciante brasileiro é tentar copiar tutoriais americanos sem adaptar para o clima e orçamento local. <strong>Comece simples, vista o cosplay completo em casa por 2 horas antes da convenção e participe das comunidades nas redes</strong> — a curva de aprendizado é muito mais rápida quando você tem uma comunidade para tirar dúvidas. Cosplayers brasileiros ganham prêmios em campeonatos japoneses há anos — a qualidade é real e cresce a cada geração.
-          </p>
-        </EditorialTake>
+        
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127909;</span>
+          A Comunidade de Cosplay nas Redes Sociais: Como Participar e Crescer
+        </h2>
+        <p>
+          O cosplay brasileiro tem uma das comunidades mais ativas e colaborativas nas redes sociais — especialmente no Instagram e TikTok, onde criadores de conteúdo de cosplay têm bases de seguidores expressivas que vão muito além do público de convenção. Para iniciantes, participar dessas comunidades antes de aparecer na primeira convenção acelera enormemente a curva de aprendizado.
+        </p>
+        <p>
+          No <strong>Instagram</strong>, as hashtags #cosplaybrasil, #cosplaybr e hashtags específicas de personagens (#narutocos, #demonslayercosplay) conectam você a criadores nacionais de todos os níveis. Seguir cosplayers brasileiros mais experientes — especialmente os que documentam o processo de confecção em stories e Reels — é equivalente a ter tutoriais personalizados para a realidade de materiais e preços do Brasil. Muitos cosplayers experientes respondem perguntas de iniciantes nos comentários com generosidade notável.
+        </p>
+        <p>
+          No <strong>TikTok</strong>, o nicho de cosplay brasileiro cresceu exponencialmente desde 2021 — vídeos de making-of, transformações (before/after), e compilações de convenções têm alcance orgânico alto e são uma forma eficiente de encontrar criadores com estilos e orçamentos similares ao seu. Para grupos de discussão mais detalhados, o <strong>Discord</strong> tem servidores específicos por região (Cosplay SP, Cosplay RJ, Cosplay NE) onde membros compartilham fornecedores locais, fazem encomendas coletivas de materiais e organizam grupos para ir juntos a convenções.
+        </p>
+        <p>
+          O <strong>World Cosplay Summit</strong> (WCS), realizado anualmente em Nagoya (Japão), é a maior competição de cosplay do mundo — e o Brasil tem tradição de classificar representantes com consistência. As seleções nacionais ocorrem geralmente na Anime Friends (São Paulo) entre julho e agosto. Acompanhar o processo de seleção — mesmo sem participar — é uma forma de ver o nível técnico de referência do cosplay brasileiro e entender o que os juízes valorizam: precisão ao personagem, qualidade de confecção, performance e apresentação em conjunto.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: cosplay brasileiro cresceu de nicho para referência internacional">
+        <p>
+          A CCXP reúne mais de 280 mil visitantes por ano segundo dados oficiais da Omelete Company — e boa parte deles veste cosplay. O mercado brasileiro de materiais para cosplay movimenta mais de <strong>R$ 500 milhões anuais</strong> segundo estimativas da Associação Brasileira de Cosplay, com mais de 15 mil cosplayers ativos participando de eventos regulares. Competidores brasileiros de cosplay conquistaram prêmios no <strong>World Cosplay Summit</strong> (WCS) em Nagoya, Japão, em múltiplas edições — colocando o Brasil no mapa como potência técnica do cosplay internacional.
+        </p>
+        <p>
+          A CCXP reúne mais de 280 mil visitantes por ano segundo dados oficiais da Omelete Company — e boa parte deles veste cosplay. O que mais me impressiona é como o <strong>cosplayer brasileiro se adaptou à realidade local</strong>: EVA de 5mm encontrado em qualquer papelaria por R$ 8–15 a placa, tintas acrílicas de marca nacional, contact cement de sapataria. Os tutoriais europeus e americanos assumem materiais e ferramentas que custam 5x mais aqui — e os cosplayers brasileiros resolveram isso com criatividade. Comece simples, teste o cosplay completo em casa por 2 horas antes da convenção e participe das comunidades nas redes — a curva de aprendizado é muito mais rápida com uma comunidade para tirar dúvidas.
+        </p>
+      </EditorialTake>
 
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
           <h3 className="text-xl font-bold mb-2">Já fez seu primeiro cosplay? 🎭</h3>

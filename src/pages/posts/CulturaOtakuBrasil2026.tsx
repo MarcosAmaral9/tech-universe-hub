@@ -208,14 +208,29 @@ const CulturaOtakuBrasil2026 = () => {
           </div>
         </div>
 
-        <EditorialTake category="otaku" title="Análise do Marcos: o Brasil otaku que o Japão não esperava">
-          <p>
-            Cresci assistindo Cavaleiros do Zodíaco escondido porque minha família achava que anime "era coisa de criança". Hoje minha sobrinha de 8 anos tem uma estante cheia de mangás e meu cunhado de 45 anos assiste One Piece com ela. <strong>Essa travessia geracional é o dado mais importante da cultura otaku brasileira</strong> — ela deixou de ser identidade de nicho para ser parte da cultura pop geral.
-          </p>
-          <p>
-            O que o Japão não esperava era a força criativa do fã brasileiro. Os cosplayers, os YouTubers, os dubladores amadores que depois viraram profissionais — o Brasil não apenas consumiu a cultura otaku, mas a reprocessou com identidade própria. Quando um fansub brasileiro dos anos 2000 traduzia Naruto com gírias cariocas, estava criando algo novo. <strong>Em 2026, esse espírito criativo é a razão do Brasil ser reconhecido globalmente como uma potência otaku.</strong>
-          </p>
-        </EditorialTake>
+        
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128202;</span>
+          O Perfil do Otaku Brasileiro em 2026: Dados e Tendências
+        </h2>
+        <p>
+          A comunidade otaku brasileira de 2026 é demograficamente mais diversa do que em qualquer ponto anterior de sua história. A geração que cresceu com Cavaleiros do Zodíaco e Dragon Ball nos anos 1990–2000 está hoje na faixa dos 30–45 anos — e não abandonou o hobby, mas o integrou à vida adulta de formas diferentes: colecionando mangás físicos, assinando Crunchyroll, levando filhos às convenções. Ao mesmo tempo, gerações mais jovens entram pelo TikTok e pelo YouTube, com Demon Slayer e Jujutsu Kaisen como porta de entrada.
+        </p>
+        <p>
+          Essa sobreposição geracional é uma das características mais interessantes do fandom brasileiro contemporâneo. Diferente de fandoms que se renovam com a substituição de uma geração pela próxima, a cultura otaku brasileira <strong>acumula</strong> — o fã dos anos 1990 coexiste com o fã de 2024 no mesmo espaço de convenção, no mesmo servidor de Discord, na mesma fila para autógrafo. Essa continuidade cria uma profundidade de conhecimento coletivo sobre a história do anime que poucos fandoms ocidentais têm.
+        </p>
+        <p>
+          O crescimento do cosplay como profissão é outro dado relevante. Em 2026, centenas de cosplayers brasileiros sustentam parte ou toda sua renda com patrocínios, venda de prints, workshops de confecção e aparições pagas em eventos. Criadores de conteúdo sobre anime e mangá no YouTube têm canais com audiências de 500 mil a 5 milhões de inscritos. O mercado de dublagem — ainda centralizado em São Paulo e Rio de Janeiro — absorve talentos que começaram em fan dubs amadores nos anos 2000 e hoje trabalham profissionalmente. Isso não é nicho: é indústria.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: o Brasil otaku que o Japão não esperava">
+        <p>
+          O Brasil é o segundo maior mercado de mangá fora do Japão em volume de vendas, segundo dados da Shueisha e das editoras brasileiras divulgados em 2024. A <strong>Panini Comics Brasil</strong>, a <strong>JBC</strong>, a <strong>Newpop</strong> e a <strong>Pipoca & Nanquim</strong> publicam centenas de títulos anualmente com o modelo de simultâneos com o Japão para os principais títulos. A Anime Friends, maior convenção de anime da América Latina, registrou mais de 120 mil visitantes em sua edição de 2024 segundo dados oficiais do evento.
+        </p>
+        <p>
+          Cresci assistindo Cavaleiros do Zodíaco escondido porque minha família achava que anime era coisa de criança. Hoje minha sobrinha de 8 anos tem uma estante cheia de mangás e meu cunhado de 45 anos assiste One Piece com ela. <strong>Essa travessia geracional é o dado mais importante da cultura otaku brasileira</strong> — ela deixou de ser identidade de nicho para ser parte da cultura pop geral. O que o Japão não esperava era a força criativa do fã brasileiro. Os cosplayers, os YouTubers, os dubladores amadores que depois viraram profissionais — o Brasil não apenas consumiu a cultura otaku, mas a reprocessou com identidade própria.
+        </p>
+      </EditorialTake>
 
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
           <h3 className="text-xl font-bold mb-2">Qual foi seu primeiro contato com a cultura otaku? 🎌</h3>

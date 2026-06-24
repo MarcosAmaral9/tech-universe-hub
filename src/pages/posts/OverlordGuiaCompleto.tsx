@@ -232,44 +232,44 @@ const OverlordGuiaCompleto = () => {
 
             
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <span className="h-7 w-7 text-otaku text-2xl">&#127981;</span>
-          Nazarick: A Grande Tumba e Sua Estrutura
+          <span className="h-7 w-7 text-otaku text-2xl">&#128302;</span>
+          O Filme Sacred Kingdom: O Que Cobriu e Por Que Importa
         </h2>
         <p>
-          A <strong>Grande Tumba de Nazarick</strong> é o ponto de partida e o centro constante de Overlord — o guild dungeon do MMORPG YGGDRASIL que foi transportado para o Novo Mundo junto com Ainz. Com 10 andares, cada um guardado por um <strong>Floor Guardian</strong> com poder que transcende a maioria dos humanos e monstros do Novo Mundo, Nazarick é simultaneamente a nação de Ainz e sua sede militar.
+          O filme <strong>Overlord: The Sacred Kingdom</strong> (novembro de 2023) adaptou os volumes 12 e 13 da light novel — o arco mais longo da série, centrado no conflito entre o Reino Sagrado e o exército de mortos-vivos de Jaldabaoth (a persona demônio de Demiurge). O filme teve duração de aproximadamente 2 horas e 20 minutos e foi produzido pela Studio Kai com qualidade de animação superior à T4.
         </p>
         <p>
-          A estrutura de Nazarick reflete as escolhas dos membros originais da Ainz Ooal Gown — o guild de 41 jogadores que construiu a dungeon no jogo. Cada andar e cada guardião foi criado por um membro diferente, o que explica a diversidade radical de estilos entre, por exemplo, o quinto andar (arena gelada guardada por Cocytus) e o sexto andar (guardado por Aura e Mare, elfas gêmeas de estética completamente diferente). Esse detalhe de worldbuilding — que a dungeon é produto de múltiplos criadores com gostos distintos — é o tipo de coerência interna que Overlord mantém ao longo de 17 volumes.
-        </p>
-
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <span className="h-7 w-7 text-otaku text-2xl">&#127860;</span>
-          O Filme Sacred Kingdom (2023): O Que Adicionou
-        </h2>
-        <p>
-          O filme <em>The Sacred Kingdom</em> (junho de 2023) adapta o Volume 12 da light novel — o Arco do País Santo — em formato cinematográfico. Cronologicamente, o arco ocorre após os eventos da T4 e representa a primeira grande interação de Ainz com uma nação humana organizada que tem seu próprio poder espiritual e defesas sofisticadas. O filme foi bem recebido pela comunidade como uma forma de avançar a narrativa além da T4 enquanto a T5 não é confirmada.
-        </p>
-        <p>
-          O Sacred Kingdom introduz personagens que se tornarão relevantes nos volumes finais da light novel — especialmente os líderes religiosos do País Santo e sua relação com as forças do Universo que Ainz ainda não encontrou diretamente. Para quem assistiu todas as quatro temporadas e quer continuar antes de uma possível T5, o filme é o próximo passo lógico — disponível em plataformas de streaming com licença regional.
+          O arco do Reino Sagrado é significativo por dois motivos: primeiro, é onde o plano maquiavélico de Demiurge — que opera de forma quase completamente autônoma de Ainz enquanto persegue objetivos que ele acredita serem os desejos de Ainz — atinge sua escala máxima até o momento. Segundo, é onde personagens do mundo humano (especialmente Remedios Custodio, a Paladina) têm seu desenvolvimento mais aprofundado — dando ao arco perspectiva humana que a série frequentemente minimiza. A decisão de adaptar em formato de filme em vez de temporada foi controversa: alguns fãs sentiram que o material necessitava de mais tempo; outros apreciaram a qualidade visual concentrada.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <span className="h-7 w-7 text-otaku text-2xl">&#128218;</span>
-          A Temporada 5: O Que Sabemos
+          Ordem de Assistência: Como Entrar em Overlord em 2026
         </h2>
         <p>
-          Até maio de 2026, nenhuma data oficial de Temporada 5 foi anunciada. O estúdio Studio Deen produziu a T4 com qualidade de animação que gerou discussão na comunidade — parte considerou adequada ao material, parte sentiu que ficou aquém do padrão estabelecido pelo Madhouse nas primeiras três temporadas. A decisão de qual estúdio produzirá a T5, se e quando anunciada, será monitorada de perto.
+          Para quem quer começar ou revisitar Overlord em 2026, a ordem cronológica é direta mas requer atenção às diferenças entre as plataformas e formatos disponíveis:
         </p>
         <p>
-          A light novel com 17 volumes tem material para pelo menos mais duas ou três temporadas além da T4. Maruyama publicou declarações confirmando que a série está na fase final de sua narrativa — o que sugere que a T5, quando produzida, pode ser a penúltima ou última temporada. Para quem não quer esperar, os volumes 13–17 da light novel estão disponíveis em inglês pela Yen Press e cobrem os arcos que a T5 eventualmente adaptará.
+          <strong>T1</strong> (13 episódios, Madhouse, 2015) — Ainz e Nazarick se estabelecem no Novo Mundo. Apresenta o sistema de poder, os Floor Guardians e os primeiros contatos com civilizações humanas. <strong>T2</strong> (13 episódios, Madhouse, 2018) — Arcos de Lizardman, Ainz nas ruas de Re-Estize e a batalha de Demihuman. Mais diverso em perspectiva do que a T1. <strong>T3</strong> (13 episódios, Madhouse, 2018) — Arco de Enri e do confronto com o Feiticeiro Adamantium. <strong>T4</strong> (13 episódios, Madhouse + Studio Kai, 2022) — Arco da Queda do Reino de Re-Estize. O mais sombrio da série até o momento — não é recomendado sem assistir as temporadas anteriores. <strong>Filme Sacred Kingdom</strong> (Studio Kai, novembro 2023) — Após a T4. Toda a série está disponível na Crunchyroll.
         </p>
 
-      <EditorialTake category="otaku" title="Análise do Marcos: Overlord envelheceu melhor do que qualquer isekai da sua geração">
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#10067;</span>
+          Temporada 5: O Que Maruyama Disse
+        </h2>
         <p>
-          Overlord é uma obra de <strong>Kugane Maruyama</strong>, originalmente publicada no Shōsetsuka ni Narō desde 2010. A light novel física é publicada pela <strong>Enterbrain</strong> (Kadokawa) desde julho de 2012 — 17 volumes lançados, com o autor confirmando que a série está na fase final. O manga, com arte de <strong>Hugin Miyama</strong>, é publicado na <em>Comp Ace</em> (Kadokawa). O anime é produzido pelo estúdio <strong>Madhouse</strong> para as T1–T3 e pelo estúdio <strong>Studio Deen</strong> para a T4 (2022). O <strong>filme The Sacred Kingdom</strong> (junho de 2023) adapta o arco da Nação Santa. A <strong>Yen Press</strong> publica os volumes em inglês no Ocidente; o <strong>Anime News Network</strong> e o <strong>MyAnimeList</strong> documentam os dados de audiência e produção.
+          <strong>Kugane Maruyama</strong> confirmou em entrevistas ao Dengeki Online e ao Shōnen Magazine Web que Overlord como série de light novel ainda não terminou — o volume 18 (março de 2024) não foi o final. O autor mencionou que a série tem mais conteúdo a ser escrito, mas não deu prazo para o próximo volume ou para um possível anúncio de Temporada 5.
         </p>
         <p>
-          Overlord foi lançado em 2015 quando o isekai de MMO ainda era uma novidade — antes de TenSura, antes de Re:Zero, quando Sword Art Online ainda dominava o gênero. O que Maruyama fez que outros não fizeram: colocou um protagonista verdadeiramente poderoso num mundo que ele não poderia simplesmente destruir sem consequências morais. Ainz não é um herói disfarçado — é um líder de uma nação que usa terror como instrumento de política externa porque funciona. A série é o isekai mais honesto sobre o que poder absoluto realmente significa, e envelheceu melhor do que qualquer contemporâneo justamente por não romantizar seu protagonista.
+          Para a comunidade, a situação é de espera cautelosamente otimista: o filme Sacred Kingdom foi produzido com qualidade superior à T4, sugerindo que a Kadokawa mantém interesse em novos projetos de Overlord. A falta de anúncio oficial de T5 até maio de 2026 pode ser explicada pela espera do próximo volume da light novel para ter material suficiente para uma temporada completa. Fãs que querem continuar além do ponto atual do anime têm os volumes 14–18 disponíveis em inglês via Yen Press, e a JBC publicou os volumes do mangá no Brasil até volume recente.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: Overlord é o único isekai onde o protagonista é genuinamente o vilão">
+        <p>
+          Overlord é uma light novel de <strong>Kugane Maruyama</strong>, publicada originalmente no Shōsetsuka ni Narō a partir de 2010 e publicada fisicamente pela <strong>Enterbrain</strong> (Kadokawa) desde 2012 — 18 volumes lançados, com o 18º publicado em março de 2024. O anime é produzido pelo estúdio <strong>Madhouse</strong> (T1–T3) e pela <strong>Studio Kai</strong> em colaboração (T4): T1 (julho–setembro 2015), T2 (janeiro–março 2018), T3 (julho–outubro 2018), T4 (julho–outubro 2022). O filme <strong>Sacred Kingdom</strong> (novembro de 2023) adapta os volumes 12 e 13. Disponível na <strong>Crunchyroll</strong>. Até maio de 2026, a <strong>Temporada 5 não foi oficialmente anunciada</strong>, mas Maruyama confirmou que a série ainda não terminou.
+        </p>
+        <p>
+          Overlord faz algo que nenhum outro isekai mainstream ousou de forma consistente: <strong>Ainz Ooal Gown é objetivamente o vilão</strong>. Não um anti-herói com um coração de ouro escondido — um ser que conquista territórios, escraviza populações e executa planos que causam sofrimento em larga escala, tudo enquanto tenta descobrir se outros jogadores do seu MMORPG foram transportados para o mesmo mundo. A série se recusa a redenção fácil e a série é mais interessante por isso. O espectador torce por Ainz não apesar de suas ações, mas dentro delas — e essa tensão moral é o que mantém Overlord relevante enquanto outros isekais se esquecem.
         </p>
       </EditorialTake>
 

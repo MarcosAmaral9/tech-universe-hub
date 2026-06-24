@@ -212,39 +212,47 @@ const OverlordPersonagens = () => {
 
             
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <span className="h-7 w-7 text-otaku text-2xl">&#127981;</span>
-          Os Floor Guardians: Quem Protege Cada Andar de Nazarick
+          <span className="h-7 w-7 text-otaku text-2xl">&#127970;</span>
+          Os Floor Guardians: Hierarquia e Funções em Nazarick
         </h2>
         <p>
-          Os <strong>Floor Guardians</strong> de Nazarick são os NPCs mais poderosos da Grande Tumba — criados pelos membros do guild Ainz Ooal Gown para guardar cada andar do dungeon. Quando Nazarick foi transportada para o Novo Mundo, todos eles ganharam consciência genuína. Cada um tem personalidade, objetivos e uma relação única com Ainz — que eles tratam como a última ligação viva com os criadores que nunca mais verão.
+          A Grande Tumba de Nazarick tem 10 andares (floors), cada um com um guardião responsável pela sua defesa. O termo "Floor Guardian" refere-se especificamente aos NPCs mais poderosos de cada andar — criados pelos 41 membros originais da guilda Ainz Ooal Gown antes de Yggdrasil encerrar. Além dos Floor Guardians, Nazarick tem uma hierarquia de Pleiades (as Valquírias da Batalha), as Donzelas Sombrias e centenas de outros NPCs e monstros invocados.
         </p>
         <p>
-          <strong>Cocytus</strong> guarda o 5º andar — a arena de gelo — e é o Floor Guardian mais honroso e direto. Criado para ser um guerreiro de elite, Cocytus segue um código de honra rígido que frequentemente o coloca em conflito com as estratégias mais maquiavélicas de Demiurge. Seu arco no Reino do Rei-Lagarto (T2) é um dos melhores momentos de desenvolvimento de personagem da série. <strong>Aura Bella Fiora e Mare Bello Fiore</strong> são os guardiões elfos gêmeos do 6º andar — criados pelo membro Bukubukuchagama. Aura é extrovertida e combativa; Mare é introvertido mas com poder mágico excepcional. A dualidade intencional de seus designs é um dos detalhes de worldbuilding mais sutis da série.
+          <strong>Albedo</strong> (8º Andar) é a Supervisora Geral dos Floor Guardians — o cargo mais alto abaixo de Ainz em Nazarick. Criada por Tabula Smaragdina com a configuração de "a mais bela e a mais corrupta das sucubos", Ainz modificou sua configuração antes do jogo fechar para adicionar que ela "ama Momonga". Essa modificação — feita na brincadeira — tornou-se real quando ela ganhou emoções genuínas no Novo Mundo. Albedo sabe da modificação e a aceita; o que ela sente sobre isso é um dos arcos emocionais mais sutis da série.
         </p>
         <p>
-          <strong>Victim</strong> guarda o 8º andar — uma criatura de aparência angelical com um poder de sacrifício que torna o andar essencialmente intransponível para qualquer invasor que chegue até lá. <strong>Aureole Omega</strong> guarda os andares superiores e é raramente mostrada — ela administra a logística interna de Nazarick. <strong>Rubedo</strong> é a criatura mais poderosa de Nazarick — tão poderosa que Ainz a mantém em restrições especiais porque nem ele mesmo sabe exatamente como a controlar em combate total.
+          <strong>Demiurge</strong> (7º Andar) é o mais inteligente dos Floor Guardians e o responsável pela política externa de Nazarick. Criado por Ulbert Alain Odle com um design de demônio aristocrático, Demiurge é o arquiteto da maioria dos planos de grande escala que Nazarick implementa no Novo Mundo. Sua tendência a interpretar as declarações de Ainz no nível mais elaborado possível cria situações onde os planos de Nazarick são mais complexos do que o próprio Ainz planejou.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <span className="h-7 w-7 text-otaku text-2xl">&#127758;</span>
-          Os Personagens do Novo Mundo: As Nações que Encontram Ainz
+          Os Personagens do Novo Mundo: Como os Humanos Percebem Nazarick
         </h2>
         <p>
-          O Novo Mundo tem seus próprios personagens recorrentes que interagem com Nazarick — e a série é cuidadosa em desenvolvê-los como mais do que obstáculos. <strong>Climb</strong>, o jovem cavaleiro devotado à Princesa Renner, é o ponto de vista humano mais consistente da série — um personagem sem poder excepcional que compensa com dedicação absoluta. Seu relacionamento com <strong>Brain Unglaus</strong>, o espadachim que encontrou seus limites contra Shalltear na T1, é um dos arcos de amizade mais bem desenvolvidos entre personagens secundários.
+          Uma das qualidades de Overlord que a distingue de outros isekais é a perspectiva dos personagens do Novo Mundo — especialmente os humanos que interagem com Ainz e Nazarick sem saber o que realmente estão enfrentando. <strong>Climb</strong>, o jovem guerreiro dedicado à princesa Renner, é um dos melhores exemplos: sincero, trabalhador e completamente sem as ferramentas para entender a escala do que está acontecendo ao seu redor. Seu relacionamento com <strong>Brain Unglaus</strong> — um guerreiro de elite que foi traumatizado por um confronto com Shalltear — cria uma dinâmica de mentor/aprendiz que a série usa para mostrar como o mundo humano tenta se adaptar à existência de Nazarick.
         </p>
         <p>
-          <strong>Gazef Stronoff</strong>, o Guerreiro Chefe do Reino de Re-Estize, é o antagonista mais honrado de Overlord — alguém que entende claramente que está do lado que vai perder, mas mantém seu código de honra até o fim. Seu confronto final com Ainz é um dos momentos mais comentados da T4 exatamente porque Maruyama não usa ele como obstáculo mas como medida de caráter — de ambos os lados.
-        </p>
-        <p>
-          <strong>Fluder Paradyne</strong>, o feiticeiro mais poderoso do Novo Mundo antes da chegada de Ainz, representa um archetype específico: o intelectual que abandona toda lealdade anterior em troca de conhecimento que está além de sua compreensão atual. Sua traição ao Império para se tornar seguidor de Ainz é narrada sem julgamento moral — a série o apresenta como alguém fazendo uma escolha racional dentro de sua própria escala de valores, não como um vilão.
+          <strong>Gazef Stronoff</strong>, o Guerreiro Real do Reino de Re-Estize e um dos personagens humanos mais bem desenvolvidos, representa a perspectiva de alguém que reconhece a impossibilidade da situação mas mantém integridade moral apesar disso. Seu encontro e relação com Ainz é um dos poucos momentos de conexão genuína entre o protagonista e um humano — e a série usa essa relação para fazer perguntas sobre o que significa ser honrado num mundo onde o poder é tão absolutamente assimétrico.
         </p>
 
-      <EditorialTake category="otaku" title="Análise do Marcos: Albedo e Demiurge são os personagens mais bem escritos de Overlord">
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#9878;</span>
+          As Pleiade e os Outros Subordinados de Nazarick
+        </h2>
         <p>
-          Os personagens de Overlord foram criados por <strong>Kugane Maruyama</strong> na light novel publicada pela <strong>Enterbrain / Kadokawa</strong> desde 2012. Os Floor Guardians de Nazarick são, cada um, NPCs criados por membros originais do guild Ainz Ooal Gown — o que significa que suas personalidades e habilidades refletem os gostos e escolhas criativas dos jogadores originais, não de Ainz. Albedo foi criada pelo membro Tabula Smaragdina, Demiurge pelo membro Ulbert Alain Odle, Shalltear pelo membro Peroroncino. Essa divisão de autoria é consistente ao longo de toda a light novel e cria uma coerência de design que o anime captura bem.
+          Além dos Floor Guardians, Nazarick tem estruturas adicionais de poder que a série expande progressivamente. As <strong>Pleiades</strong> — as seis Valquírias da Batalha que guardam a entrada de Nazarick — incluem personagens como <strong>Sebas Tian</strong> (o mordomo chefe, criado por Touch Me com características de dragão) e <strong>Solution Epsilon</strong>. Sebas é um dos personagens mais moralmente complexos de Overlord: criado com o conceito de "cavaleiro justo", ele desenvolveu empatia real por humanos que conflita diretamente com os objetivos de Nazarick. O arco de Sebas em Re-Estize (T2) é um dos mais emocionalmente impactantes da série.
         </p>
         <p>
-          O que mais me impressiona nos personagens de Overlord é como Maruyama usou a premissa de 'NPCs que ganharam vida' para explorar algo genuinamente filosófico: o que é personalidade quando você foi literalmente programado para tê-la? Albedo e Demiurge são absolutamente leais a Ainz — não porque escolheram ser, mas porque foram criados assim. E a série é honesta sobre a diferença entre lealdade escolhida e lealdade programada sem nunca diminuir a autenticidade dos personagens. Para mim, é o subplot mais interessante de Overlord e um dos mais subutilizados pelo anime, que precisaria de mais tempo para desenvolvê-lo.
+          <strong>Pandora's Actor</strong>, o guardião do Mausoléu da Tumba e criado pelo próprio Momonga/Ainz no jogo original, é tecnicamente o único NPC criado pelo próprio Ainz — o que torna sua dinâmica única. É excessivamente dramático e performático, refletindo a personalidade que Ainz tinha quando era jovem e jogava Yggdrasil pela primeira vez. O reencuentro entre Ainz e Pandora's Actor na T3 é considerado por muitos fãs como um dos momentos mais emocionalmente honestos de toda a série.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: os Floor Guardians são o elenco mais bem construído de qualquer isekai">
+        <p>
+          O elenco de Overlord foi concebido por Kugane Maruyama com uma lógica interna incomum para isekai: cada Floor Guardian tem uma personalidade construída a partir dos jogadores originais de Yggdrasil que os criaram, mas evoluiu de forma autônoma no Novo Mundo ao ganhar emoções reais. Albedo, criada para ser apaixonada por Momonga, tem seus sentimentos tratados pela série como genuínos — não como programação. Demiurge, construído como o NPCs mais inteligente de Nazarick, desenvolveu capacidade de planejamento que frequentemente supera a dos próprios criadores. Essa premissa — NPCs que se tornaram pessoas — é o coração emocional de Overlord por baixo da camada de domínio mundial.
+        </p>
+        <p>
+          O que me fascina em Demiurge especificamente é a forma como Maruyama usa o personagem para explorar o limite entre lealdade e autonomia. Demiurge interpreta os desejos de Ainz com uma precisão tão exagerada que frequentemente implementa planos que Ainz nunca planejou — e Ainz, para não parecer inferior ao seu próprio subordinado, confirma esses planos como se fossem suas intenções originais. Essa dinâmica cria uma narrativa dentro da narrativa onde o suposto protagonista/vilão onisciente é frequentemente reativo em vez de proativo. É uma subversão de expectativa sustentada por toda a série.
         </p>
       </EditorialTake>
 
