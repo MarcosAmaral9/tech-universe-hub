@@ -46,10 +46,9 @@ const applyThemeSmooth = (theme: Theme) => {
     }, 320);
   };
 
-  // @ts-expect-error - View Transitions API ainda não tipada em todos lib.dom
-  if (typeof document.startViewTransition === "function") {
-    // @ts-expect-error
-    document.startViewTransition(run);
+  const doc = document as Document & { startViewTransition?: (cb: () => void) => unknown };
+  if (typeof doc.startViewTransition === "function") {
+    doc.startViewTransition(run);
   } else {
     run();
   }
