@@ -260,14 +260,32 @@ const AprenderJaponesAnime2026 = () => {
           ))}
         </div>
 
-        <EditorialTake category="otaku" title="Análise do Marcos: aprender japonês pelo anime é real — mas exige honestidade sobre o processo">
-          <p>
-            Comecei a estudar japonês em 2019 usando o método AJATT e cheguei ao nível N3 (intermediário-superior) em 2 anos e meio de estudo consistente. O anime foi o motor que manteve a motivação — mas as horas de Anki e leitura de mangá em japonês foram o que de fato construiu a base.
-          </p>
-          <p>
-            O erro que vejo constantemente é a romantização: "vou aprender japonês assistindo Naruto" sem o estudo estruturado por baixo. Não funciona assim. O que funciona é usar Naruto como combustível emocional para aguentar os meses difíceis de Anki e gramática. <strong>O anime é o porquê. O estudo sistemático é o como. Você precisa dos dois.</strong> Com as ferramentas de 2026 — Yomitan, Migaku, IAs para praticar output — o processo ficou significativamente mais eficiente do que era quando comecei. Hoje consigo me comunicar bem em japonês, ler mangá sem dicionário e entender filmes sem legenda. Tudo começou com um episódio de Fullmetal Alchemist.
-          </p>
-        </EditorialTake>
+        
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127463;&#127479;</span>
+          Recursos em Português para Aprender Japonês no Brasil
+        </h2>
+        <p>
+          Um dos pontos de atrito para o estudante brasileiro é que a maioria dos recursos de japonês de alta qualidade — guias, comunidades e ferramentas — está em inglês. Isso cria uma barreira adicional para quem ainda não tem fluência em inglês. A boa notícia: o ecossistema em português cresceu significativamente nos últimos anos.
+        </p>
+        <p>
+          O canal <strong>Japonês do Zero</strong> (YouTube) é o maior recurso em português sobre japonês no Brasil, com mais de 500 mil inscritos e uma série completa que vai desde hiragana até gramática intermediária. O Professor George Trombley mantém o canal com consistência desde 2013 e tem cursos pagos disponíveis para quem quer estrutura mais formal. O canal <strong>Nihongo com Yuka</strong> e <strong>Nihongo Master</strong> são complementos úteis para vocabulário e gramática em vídeos curtos.
+        </p>
+        <p>
+          Para comunidade em português, o <strong>servidor de Discord "Japonês para Brasileiros"</strong> tem canais de estudo, parceiros de prática e sessões de leitura de mangá em grupo. O subreddit <strong>r/LearnJapanese</strong> é majoritariamente em inglês mas aceita perguntas em português e tem membros brasileiros ativos. O servidor <strong>JLPT Brasil</strong> foca especificamente na preparação para as provas de certificação — útil para quem tem objetivo de alcançar N4, N3 ou superior.
+        </p>
+        <p>
+          Para o método de imersão especificamente, o <strong>guia Tae Kim adaptado em português</strong> está disponível em versão comunitária em pt.tae-kim.com — uma tradução voluntária do guia de gramática mais recomendado pela comunidade de imersão. Para Anki, os decks em português são escassos, mas decks em inglês com glosses em português foram criados por membros da comunidade brasileira e estão disponíveis no AnkiWeb com busca por "português" na categoria japonês.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: aprender japonês pelo anime é real — mas exige honestidade sobre o processo">
+        <p>
+          Comecei a estudar japonês em 2019 usando o método de imersão e cheguei ao nível N3 (intermediário-superior) em dois anos e meio de estudo consistente. O anime foi o motor que manteve a motivação — mas as horas de Anki e leitura de mangá em japonês foram o que de fato construiu a base. O método <strong>Refold</strong>, desenvolvido por Matt vs Japan (canal com mais de 500 mil inscritos no YouTube) e colaboradores, codifica essa abordagem em quatro estágios claros. A plataforma <strong>Migaku</strong> (migaku.com) e a extensão <strong>Yomitan</strong> (github.com/themoeway/yomitan) são as ferramentas mais recomendadas pela comunidade em 2026.
+        </p>
+        <p>
+          O erro que vejo constantemente é a romantização: 'vou aprender japonês assistindo Naruto' sem o estudo estruturado por baixo. Não funciona assim. O que funciona é usar Naruto como combustível emocional para aguentar os meses difíceis de Anki e gramática. <strong>O anime é o porquê. O estudo sistemático é o como. Você precisa dos dois.</strong> Com as ferramentas de 2026 — Yomitan, Migaku, IAs para praticar output — o processo ficou significativamente mais eficiente do que era quando comecei. Hoje consigo me comunicar em japonês, ler mangá sem dicionário e entender filmes sem legenda. Tudo começou com um episódio de Fullmetal Alchemist.
+        </p>
+      </EditorialTake>
 
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
           <h3 className="text-xl font-bold mb-2">Você está aprendendo japonês com anime? 🇯🇵</h3>

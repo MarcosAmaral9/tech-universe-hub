@@ -247,7 +247,7 @@ export const blogPosts: BlogPost[] = [
     image: reMonsterImg,
     author: "VICIO<CODE>",
     date: "2026-05-28",
-    readTime: "14 min",
+    readTime: "15 min",
     faq: [
       { q: "Re:Monster tem Temporada 2 confirmada?", a: "Não até maio de 2026. O anime da Doga Kobo de 2024 encerrou sem anúncio de T2. As vendas de Blu-ray ficaram abaixo do threshold típico para renovação, mas as vendas da light novel cresceram após o anime." },
       { q: "Onde assistir Re:Monster no Brasil?", a: "O anime está disponível na Crunchyroll com legendas em português. São 12 episódios cobrindo os arcos iniciais da light novel." },
@@ -266,7 +266,7 @@ export const blogPosts: BlogPost[] = [
     image: isekaiMynogrhraImg,
     author: "VICIO<CODE>",
     date: "2026-05-28",
-    readTime: "14 min",
+    readTime: "15 min",
     faq: [
       { q: "Quando estreia o anime de Isekai Mokushiroku Mynoghra?", a: "O anime pela Wao World foi confirmado em produção, mas sem data de estreia definida até maio de 2026. Acompanhe o site oficial da obra e o canal Kadokawa para anúncios. Crunchyroll é o destino mais provável para o Brasil." },
       { q: "O que é Mynoghra no isekai?", a: "Mynoghra é uma civilização do apocalipse de um jogo de estratégia 4X que se torna real. Ela literalmente corrompe o terreno ao expandir, absorve inimigos mortos como unidades e progride por decomposição — não por construção. O protagonista Takuto é o rei desta nação." },
@@ -349,7 +349,7 @@ export const blogPosts: BlogPost[] = [
     image: kaijuNo8T2Img,
     author: "VICIO<CODE>",
     date: "2026-05-04",
-    readTime: "14 min",
+    readTime: "16 min",
     faq: [
       { q: "O que é Kaiju No. 8?", a: "Kaiju No. 8 é um mangá shonen de Naoya Matsumoto publicado no Shonen Jump+ desde 2020, com mais de 45 milhões de cópias em circulação. A história acompanha Kafka Hibino, 32 anos, que ganha o poder de se transformar em um kaiju Número 8 enquanto tenta ingressar na Japan Defense Force — força militar que combate monstros gigantes." },
       { q: "Onde assistir Kaiju No. 8 Temporada 2?", a: "Na Crunchyroll com simulcast legendado em português no mesmo dia do Japão. A Temporada 1 (12 episódios, 2024) está completa na plataforma. A Temporada 2 está em andamento na Spring Season 2026, com episódios saindo semanalmente." },
@@ -486,7 +486,7 @@ export const blogPosts: BlogPost[] = [
     image: dragonBallBeerusImg,
     author: "VICIO<CODE>",
     date: "2026-04-30",
-    readTime: "14 min",
+    readTime: "16 min",
     faq: [
       { q: "O novo anime de Dragon Ball Super foi confirmado?", a: "Sim. No Dragon Ball Battle Hour 2026, a Toei Animation confirmou que o Arco de Beerus do mangá de DBS está sendo adaptado como anime. Toyotarou supervisionará. Estimativa: 2027." },
       { q: "Qual é o Arco de Beerus em Dragon Ball Super?", a: "É o arco mais recente do mangá de DBS (capítulo 88 em diante), ainda em publicação mensal. Gira em torno de Beerus como Deus da Destruição e sua relação com Zeno-sama." },
@@ -645,7 +645,7 @@ export const blogPosts: BlogPost[] = [
     image: bigThreeImg,
     author: "VICIO<CODE>",
     date: "2026-04-25",
-    readTime: "15 min",
+    readTime: "17 min",
     faq: [
       { q: "Por que os Big Three são tão importantes para o anime?", a: "Naruto, Bleach e One Piece dominaram a cultura otaku de 2002 a 2012, criando uma geração inteira de fãs e estabelecendo o shonen como gênero cultural dominante globalmente." },
       { q: "Qual do Big Three está melhor agora em 2026?", a: "Bleach TYBW tem a melhor animação técnica. One Piece Elbaf tem a maior importância narrativa. Naruto terá o maior impacto emocional. Em qualidade visual, Bleach lidera; em importância para fãs, One Piece Elbaf." },
@@ -801,7 +801,7 @@ export const blogPosts: BlogPost[] = [
     image: freierenT3Img,
     author: "VICIO<CODE>",
     date: "2026-04-20",
-    readTime: "14 min",
+    readTime: "15 min",
     faq: [
       { q: "Frieren Temporada 3 foi confirmada?", a: "Sim. A confirmação foi feita imediatamente após o final da Temporada 2 em abril de 2026. A produção está a cargo do estúdio Madhouse, direção de Keiichiro Saito, com a Dentsu como produtora. Sem data de estreia ainda — espera-se 2027." },
       { q: "Do que trata o anime Frieren?", a: "Frieren: Beyond Journey's End é sobre uma elfa imortal que, após décadas na jornada heróica com seus companheiros, os sobrevive e tenta entender o que significaram para ela. É uma reflexão sobre tempo, memória, luto e conexão humana — mais filosófico e emocional do que de ação." },
@@ -2383,7 +2383,7 @@ export const blogPosts: BlogPost[] = [
     image: animesAguardadosImg,
     author: "VICIO<CODE>",
     date: "2026-03-04",
-    readTime: "12 min",
+    readTime: "13 min",
     faq: [
       { q: "Quais animes estreiam em 2026?", a: "Destaques incluem TenSura T4, Chainsaw Man Parte 2, Solo Leveling T2, Oshi no Ko T3, Vinland Saga T3 e Blue Lock T2. A temporada de abril/2026 é uma das mais aguardadas da década." },
       { q: "Onde assistir animes novos em 2026?", a: "Crunchyroll é a principal plataforma com simulcast. Netflix, Amazon Prime Video e Disney+ também licenciam títulos exclusivos. Funimation foi integrada ao Crunchyroll." },
@@ -2401,7 +2401,7 @@ export const blogPosts: BlogPost[] = [
     image: guiaCosplayImg,
     author: "VICIO<CODE>",
     date: "2026-03-05",
-    readTime: "14 min",
+    readTime: "15 min",
     faq: [
       { q: "Quanto custa fazer cosplay?", a: "Varia muito. Cosplays simples custam R$ 100-300. Intermediários, R$ 500-1.500. Elaborados com armaduras e LEDs podem passar de R$ 3.000. Reaproveitar materiais e DIY reduzem custos." },
       { q: "Qual personagem escolher para o primeiro cosplay?", a: "Escolha um personagem que você ama e que tenha um visual relativamente simples. Protagonistas de uniformes escolares (Demon Slayer, MHA) ou roupas casuais são boas opções para iniciantes." },
@@ -2527,7 +2527,7 @@ export const blogPosts: BlogPost[] = [
     image: melhoresMangasImg,
     author: "VICIO<CODE>",
     date: "2026-03-12",
-    readTime: "15 min",
+    readTime: "14 min",
     faq: [
       { q: "Quais os melhores mangás para iniciantes?", a: "Death Note (suspense), Fullmetal Alchemist (aventura), One Punch Man (comédia/ação), Spy x Family (comédia/família) e Chainsaw Man (ação) são ótimos pontos de entrada." },
       { q: "Onde ler mangás online de graça?", a: "MangaPlus (app oficial da Shueisha) oferece capítulos gratuitos de One Piece, Naruto, Dragon Ball e mais. Crunchyroll Manga também tem títulos selecionados." },
@@ -3002,7 +3002,7 @@ export const blogPosts: BlogPost[] = [
     image: onePieceFinalSagaGuiaImg,
     author: "VICIO<CODE>",
     date: "2026-03-17",
-    readTime: "15 min",
+    readTime: "16 min",
     faq: [
       { q: "One Piece está acabando?", a: "Sim. Eiichiro Oda iniciou a Final Saga em 2022. Estimativas apontam que o mangá termine entre 2027-2028, após mais de 25 anos de publicação e 1100+ capítulos." },
       { q: "O que é o One Piece (tesouro)?", a: "Ainda é um mistério. Oda revelou que o One Piece é algo físico, tangível, e que Luffy vai encontrá-lo na ilha de Laugh Tale. A revelação é o clímax mais aguardado da história dos mangás." },
@@ -3099,7 +3099,7 @@ export const blogPosts: BlogPost[] = [
     image: tensuraGuiaImg,
     author: "VICIO<CODE>",
     date: "2026-03-20",
-    readTime: "16 min",
+    readTime: "17 min",
     faq: [
       { q: "Quantas temporadas TenSura tem?", a: "4 temporadas: T1 (2018), T2 Part 1 e 2 (2021), T3 (2024) e T4 (abril 2026). Além de Slime Diaries (spin-off), filme Scarlet Bond (2022) e filme Tears of the Azure Sea." },
       { q: "TenSura T4 já lançou?", a: "A Temporada 4 estreia em abril de 2026 com 5 cours planejados, sendo a maior temporada da série. A produção segue com 8-Bit Studio." },
@@ -3117,7 +3117,7 @@ export const blogPosts: BlogPost[] = [
     image: overlordGuiaImg,
     author: "VICIO<CODE>",
     date: "2026-03-20",
-    readTime: "15 min",
+    readTime: "17 min",
     faq: [
       { q: "Quantas temporadas Overlord tem?", a: "4 temporadas (T1: 2015, T2: 2018, T3: 2018, T4: 2022) e o filme The Sacred Kingdom (setembro 2024). A Temporada 5 ainda não foi confirmada oficialmente." },
       { q: "Overlord terá Temporada 5?", a: "Não foi confirmada oficialmente. O filme Sacred Kingdom adaptou os volumes 12-13 da light novel. Os volumes 14-18 ainda não foram adaptados, deixando material para uma possível T5." },
@@ -3153,7 +3153,7 @@ export const blogPosts: BlogPost[] = [
     image: overlordCharsImg,
     author: "VICIO<CODE>",
     date: "2026-03-21",
-    readTime: "14 min",
+    readTime: "16 min",
     faq: [
       { q: "Quem é Ainz Ooal Gown?", a: "Ainz (nome real: Momonga) é um jogador de YGGDRASIL que ficou preso no jogo quando ele fechou. Ele é um Elder Lich supremo, líder da Grande Tumba de Nazarick e o Sorcerer King." },
       { q: "Quantos Floor Guardians Nazarick tem?", a: "7 Floor Guardians: Shalltear (1-3), Cocytus (5), Aura e Mare (6 — são gêmeos), Demiurge (7), Victim (8) e Albedo (Overseer). Gargantua (4) é um golem sem personalidade." },
@@ -3247,7 +3247,7 @@ export const blogPosts: BlogPost[] = [
     image: soloLevelingImg,
     author: "VICIO<CODE>",
     date: "2026-03-29",
-    readTime: "20 min",
+    readTime: "18 min",
     faq: [
       { q: "Quantas temporadas tem Solo Leveling?", a: "Solo Leveling tem 2 temporadas: T1 pela A-1 Pictures (jan-mar 2024, 12 eps) e T2 Arise from the Shadow (jan-mar 2025, 13 eps). O filme ReAwakening foi lançado em novembro de 2024." },
       { q: "Solo Leveling é fiel ao manhwa?", a: "Sim, a A-1 Pictures manteve os principais momentos icônicos com alta fidelidade. Pequenas mudanças de pacing foram feitas para o formato anime." },
@@ -3266,7 +3266,7 @@ export const blogPosts: BlogPost[] = [
     image: tsukimichiImg,
     author: "VICIO<CODE>",
     date: "2026-03-29",
-    readTime: "14 min",
+    readTime: "15 min",
     faq: [
       { q: "Quantas temporadas tem Tsukimichi Moonlit Fantasy?", a: "Tsukimichi tem 2 temporadas: T1 pela C2C (jul-set 2021, 12 eps) e T2 pela J.C.Staff (jan-jun 2024, 25 eps). A T3 foi anunciada sem data confirmada." },
       { q: "Quem são Tomoe e Mio em Tsukimichi?", a: "Tomoe é um dragão milenar em forma humana que serve Makoto. Mio é uma Aranha das Trevas extremamente poderosa. As duas são os serventes mais fortes do protagonista." },

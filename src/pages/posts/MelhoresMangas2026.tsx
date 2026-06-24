@@ -222,14 +222,32 @@ const MelhoresMangas2026 = () => {
           ))}
         </div>
 
-        <EditorialTake category="otaku" title="Análise do Marcos: 2026 é o ano dos finais e dos novos clássicos">
-          <p>
-            Jujutsu Kaisen encerrou em setembro de 2024 (capítulo 271, Shueisha) e My Hero Academia teve seu capítulo final em agosto de 2024. Esses encerramentos abrem espaço para <strong>Sakamoto Days, Kagurabachi e Astro Royale ocuparem a capa da Weekly Shonen Jump</strong> — e o Brasil está acompanhando em tempo real graças ao Manga Plus e à rapidez das editoras nacionais.
-          </p>
-          <p>
-            Para o leitor brasileiro, o cenário é o melhor da história: Panini publica simultaneamente JJK, Chainsaw Man e One Piece; JBC mantém Naruto e Berserk; e o Manga Plus oferece catálogo legal gratuito em inglês. A pirataria perdeu o argumento da indisponibilidade. <strong>Minha recomendação: comece pelo gênero, não pela hype.</strong> Quem gosta de seinen denso encontra ouro em Vagabond, Vinland Saga e 20th Century Boys; quem busca shonen moderno deve testar Kaiju No. 8 e Dandadan antes de embarcar em finais longos como One Piece (110+ volumes).
-          </p>
-        </EditorialTake>
+        
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#128269;</span>
+          Como Descobrir Novos Mangás: Ferramentas e Recursos para 2026
+        </h2>
+        <p>
+          Com mais de 90 mil títulos de mangá publicados ao longo da história e centenas de novos volumes por mês, encontrar novos títulos para ler requer um sistema. As ferramentas mais eficientes para descoberta em 2026:
+        </p>
+        <p>
+          O <strong>MyAnimeList</strong> (myanimelist.net/topmanga.php) tem o ranking mais abrangente de mangá por nota, popularidade e membros. A seção "Recommendations" mostra o que leitores de um título específico costumam ler em seguida — uma forma eficiente de encontrar obras no mesmo subgênero. O <strong>AniList</strong> tem uma interface mais moderna e um sistema de tags que permite filtrar por gênero, tema e tom com precisão maior do que o MAL. Para descoberta por subgênero específico (ex: "slice-of-life seinen ambientado em Tóquio"), o AniList é superior.
+        </p>
+        <p>
+          O subreddit <strong>r/manga</strong> tem threads semanais de recomendação onde leitores experientes sugerem títulos com base em preferências descritas. A comunidade é ativa e as sugestões tendem a ser bem calibradas para o nível de experiência declarado. Para mangá brasileiro especificamente, o <strong>r/mangabr</strong> e grupos do Facebook como "Leitores de Mangá Brasil" têm discussões mais próximas do contexto local — preços, editoras nacionais e títulos com edição em português.
+        </p>
+        <p>
+          O <strong>Manga Plus</strong> (mangaplus.shueisha.co.jp) tem uma seção "New Releases" que publica os primeiros três capítulos de qualquer novo título da Shueisha de graça — sem compromisso, sem cadastro necessário. É a forma mais eficiente de testar um título antes de decidir comprar os volumes físicos ou acompanhar semanalmente.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: 2026 é o ano dos finais e dos novos clássicos">
+        <p>
+          Jujutsu Kaisen encerrou em setembro de 2024 (capítulo 271, Shueisha) e My Hero Academia encerrou em agosto de 2024. Esses encerramentos abrem espaço para <strong>Sakamoto Days</strong>, <strong>Kagurabachi</strong> e outros títulos emergentes ocuparem destaque na Weekly Shōnen Jump. Para o leitor brasileiro, o cenário é o melhor da história: <strong>Panini</strong> publica simultaneamente JJK, Chainsaw Man e One Piece; <strong>JBC</strong> mantém Naruto e Berserk; e o <strong>Manga Plus</strong> oferece catálogo legal gratuito em inglês com simultâneos no dia do Japão.
+        </p>
+        <p>
+          Para o leitor brasileiro, minha recomendação: comece pelo gênero, não pela hype. Quem gosta de seinen denso encontra ouro em Vagabond, Vinland Saga e 20th Century Boys; quem busca shonen moderno deve testar Kaiju No. 8 e Dandadan antes de embarcar em finais longos como One Piece (110+ volumes). O Manga Plus gratuito é o melhor ponto de entrada para testar novos títulos sem custo — e a Panini e a JBC garantem que os mais importantes chegam fisicamente ao Brasil em prazo razoável.
+        </p>
+      </EditorialTake>
 
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
           <h3 className="text-xl font-bold mb-2">Qual mangá mudou sua vida? 📚</h3>

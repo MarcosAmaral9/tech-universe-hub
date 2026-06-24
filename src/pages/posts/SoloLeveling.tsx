@@ -208,22 +208,38 @@ const SoloLeveling = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
-      <EditorialTake category="otaku" title="Análise do Marcos: por que Solo Leveling virou fenômeno">
+      
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127757;</span>
+          O Universo Expandido: Ragnarok e Side Stories
+        </h2>
         <p>
-          <strong>Solo Leveling</strong> é a adaptação que provou que o manhwa coreano consegue
-          competir de igual para igual com o anime japonês. A produção da A-1 Pictures usa um
-          padrão de animação digital próximo do cinematográfico em cenas-chave (Job Change
-          Arc, Jeju Island), o que sustenta a narrativa de power fantasy sem cair no
-          ridículo. A 3ª temporada foi confirmada pela Aniplex em setembro/2025 com previsão
-          para 2026–2027.
+          Além da série principal, o universo de Solo Leveling expandiu com material adicional que aprofunda personagens e eventos laterais. <strong>Solo Leveling: Ragnarok</strong> é uma continuação oficial de Chugong, publicada desde 2023 no Kakao Page, com arte de <strong>Gyeongtak Gina</strong>. Ambientada dez anos após os eventos da série original, Ragnarok acompanha <strong>Suho Sung</strong> — o filho de Sung Jinwoo — enquanto enfrenta uma nova ameaça em escala global. A série está disponível no Manhwa Webtoon com tradução em inglês.
         </p>
         <p>
-          Minha leitura para o público BR: comece pelo anime na Crunchyroll (já dublado em
-          PT-BR), passe pelo filme <em>ReAwakening</em> e só vá para o manhwa se quiser saber
-          o final antes da adaptação chegar lá. Atenção ao desfecho do manhwa — divide muito
-          a base. Para quem investe em mídia coreana, o lançamento do live-action pela Netflix
-          em 2025 com Byeon Woo-seok deve consolidar Solo Leveling como uma das maiores IPs
-          asiáticas da década.
+          As <strong>side stories</strong> da série original — episódios extras publicados após o encerramento — expandem momentos específicos e perspectivas de personagens secundários que a série principal não tinha espaço para aprofundar. Go Gunhee, o Chairman da Associação de Caçadores da Coreia, e Hwang Dongsoo, o antagonista americano da T2, têm side stories que adicionam nuances às motivações apresentadas na série principal. Para o fã que terminou o manhwa e ainda quer mais do universo, as side stories oficiais no Kakao Page são o próximo passo antes de Ragnarok.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <span className="h-7 w-7 text-otaku text-2xl">&#127926;</span>
+          O Impacto Cultural: Como Solo Leveling Mudou a Indústria de Manhwa
+        </h2>
+        <p>
+          O impacto de Solo Leveling na indústria de manhwa e na percepção global do formato é difícil de exagerar. Antes de Solo Leveling, manhwa era conhecido internacionalmente por um nicho pequeno de leitores de quadrinhos asiáticos. Depois de Solo Leveling — especialmente após a animação pela A-1 Pictures em 2024 — o manhwa entrou no radar de audiências que nunca haviam distinguido entre mangá japonês e manhwa coreano.
+        </p>
+        <p>
+          O subgênero "sistema" no manhwa, que Solo Leveling popularizou, influenciou diretamente o mercado de light novels japonesas: desde 2020, o número de light novels com sistemas explícitos de progresso (levels, stats visíveis, notificações de missão) aumentou significativamente no Shōsetsuka ni Narō — uma influência retroativa do manhwa coreano sobre o gênero que o precedeu. Isso representa uma inversão incomum do fluxo histórico de influência, que tipicamente vai do Japão para a Coreia em termos de manga/anime.
+        </p>
+        <p>
+          Para o mercado brasileiro especificamente, Solo Leveling abriu caminho para a publicação de outros manhwas no Brasil. A <strong>Panini</strong> publicou os volumes físicos de Solo Leveling em português — e o sucesso comercial da série foi argumento para que outras editoras brasileiras considerassem licenciar títulos adicionais de manhwa. Tower of God, Omniscient Reader's Viewpoint e outros títulos estão em discussão de licenciamento no Brasil justamente porque Solo Leveling demonstrou que há mercado para manhwa em edição física nacional.
+        </p>
+
+      <EditorialTake category="otaku" title="Análise do Marcos: Solo Leveling provou que manhwa pode ser fenômeno global">
+        <p>
+          Solo Leveling é uma light novel web de <strong>Chugong</strong>, serializada no D&C Media (Kakao Page) entre 2016 e 2018, com adaptação em manhwa publicada de 2018 a 2021 com arte de <strong>DUBU (Jang Sung-Rak)</strong> — 179 capítulos, 8 volumes físicos. O manhwa acumulou mais de <strong>14,4 bilhões de visualizações</strong> no Kakao Page antes do encerramento em dezembro de 2021. O anime foi produzido pela <strong>A-1 Pictures</strong>, dirigido por <strong>Shunsuke Nakashige</strong>: T1 (janeiro–março 2024, 12 episódios), T2 <em>Arise from the Shadow</em> (janeiro–março 2025, 13 episódios), filme <em>ReAwakening</em> (novembro de 2024). Crunchyroll confirmou como <strong>Anime do Ano</strong> no Crunchyroll Anime Awards 2025.
+        </p>
+        <p>
+          Solo Leveling é o manhwa que provou que o formato webtoon pode competir com mangá japonês em alcance global — e ganhar em alguns aspectos. A arte de DUBU (Jang Sung-Rak) é o argumento mais forte: cada spread do manhwa é uma pintura digital completa, com uso de luz e sombra que o mangá preto e branco simplesmente não pode replicar. O anime da A-1 Pictures capturou isso com competência mas perdeu a textura do original — quem leu o manhwa percebe que a adaptação é boa, mas o manhwa é excepcional. Para quem não conhece a franquia: comece pelo manhwa. Para quem quer saber se Vale assistir o anime: sim, mas o manhwa é melhor.
         </p>
       </EditorialTake>
 
