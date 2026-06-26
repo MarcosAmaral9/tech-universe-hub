@@ -24,6 +24,7 @@ const SUBTOPIC_LABELS: Record<string, string> = {
   bannerlord: "Mount & Blade II: Bannerlord",
   "crimson-desert": "Crimson Desert",
   games: "Games",
+  "gta-vi": "GTA VI",
   vikings: "Vikings",
 };
 
