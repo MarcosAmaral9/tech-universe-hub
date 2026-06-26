@@ -57,26 +57,24 @@ const GtaViPreVendaEdicoes2026 = () => {
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <AlertTriangle className="h-7 w-7 text-pink-400" /> Estado real da pré-venda em junho de 2026
+          <CheckCircle2 className="h-7 w-7 text-pink-400" /> Pré-venda aberta: estado oficial em 25 de junho de 2026
         </h2>
         <p>
-          Até a data de publicação deste artigo, a Rockstar Games <strong>não abriu a pré-compra global</strong> de GTA
-          VI nas lojas oficiais. Isso significa que não existe SKU listado na PlayStation Store, não há página de produto
-          no Xbox Store, e o site oficial da Rockstar mostra apenas o teaser do jogo, sem botão de "pré-encomendar".
-          A Take-Two Interactive, na conferência de resultados de maio de 2026, confirmou a janela de novembro e
-          reforçou que a "campanha de marketing comercial começa no verão" — em linguagem do setor, isso aponta para o
-          terceiro trailer entre junho e julho de 2026 e, junto com ele, a habilitação das pré-vendas.
+          A pré-venda global de <strong>Grand Theft Auto VI</strong> foi oficialmente aberta pela Rockstar Games à
+          <strong> meia-noite de 25 de junho de 2026</strong>, horário local de cada região, conforme comunicado da
+          editora publicado na Rockstar Newswire e replicado por veículos como The Verge, PCMag, Variety, Forbes,
+          Gematsu e IGN. No Brasil, as listagens estão ativas na PlayStation Store, na Xbox Store e em varejistas
+          oficiais (Amazon, Kabum, Nuuvem) com os mesmos valores praticados pela Rockstar.
         </p>
-        <p>
-          O padrão histórico ajuda a calibrar a expectativa. Red Dead Redemption 2 abriu pré-venda em <strong>fevereiro
-          de 2018</strong>, oito meses antes do lançamento de outubro. GTA V, na geração anterior, abriu pré-venda em
-          fevereiro de 2013, oito meses antes do lançamento de setembro. Aplicando essa lógica a novembro de 2026, a
-          pré-venda deveria ter aberto em março ou abril — o que não aconteceu. Existem duas leituras plausíveis: ou a
-          Rockstar está deliberadamente reduzindo o tempo entre pré-venda e lançamento para maximizar o impulso da
-          campanha final, ou ainda existe ajuste fino no calendário comercial. Em ambos os casos, a comunicação será
-          via Rockstar Newswire, e qualquer "página de pré-venda" que esteja circulando sem link para um desses canais
-          oficiais é, no melhor dos casos, especulação, e no pior, golpe.
-        </p>
+        <div className="not-prose my-6 rounded-xl border border-pink-500/40 bg-pink-500/10 p-5">
+          <ul className="text-sm leading-relaxed list-disc list-inside space-y-1 text-foreground/90">
+            <li><strong>Standard Edition:</strong> US$ 79,99 / <strong>R$ 449,90</strong></li>
+            <li><strong>Ultimate Edition:</strong> US$ 99,99 / <strong>R$ 549,90</strong></li>
+            <li><strong>Pré-carregamento:</strong> 12 de novembro de 2026</li>
+            <li><strong>Lançamento:</strong> 19 de novembro de 2026 — PS5 e Xbox Series X|S</li>
+          </ul>
+        </div>
+
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Store className="h-7 w-7 text-pink-400" /> Onde a pré-venda vai (de fato) abrir

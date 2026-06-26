@@ -38,6 +38,7 @@ const PANELS: PanelDef[] = [
   { label: "Assassin's Creed", href: "/geek/assassins-creed", category: "geek", matchPrefixes: ["ac-"] },
   { label: "Crimson Desert", href: "/geek/crimson-desert", category: "geek", matchPrefixes: ["crimson-desert-"] },
   { label: "Bannerlord", href: "/geek/bannerlord", category: "geek", matchPrefixes: ["bannerlord-"] },
+  { label: "GTA VI", href: "/geek/gta-vi", category: "geek", matchPrefixes: ["gta-vi-"] },
   { label: "TenSura", href: "/otaku/tensura", category: "otaku", matchPrefixes: ["tensura-"] },
   { label: "Overlord", href: "/otaku/overlord", category: "otaku", matchPrefixes: ["overlord-"] },
 ];
