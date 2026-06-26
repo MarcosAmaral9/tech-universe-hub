@@ -13,6 +13,7 @@ import avatarPortalBannerImg from "@/assets/avatar-portal-banner.webp";
 import acPortalImg from "@/assets/assassins-creed-portal.webp";
 import bannerlordPortalImg from "@/assets/bannerlord-hero.webp";
 import gtaViPortalImg from "@/assets/gta-vi-portal-hero.webp";
+import MostReadWidget from "@/components/MostReadWidget";
 
 
 const POSTS_PER_PAGE = 12;
