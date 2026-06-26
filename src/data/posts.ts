@@ -84,6 +84,12 @@ import bannerlordMelhoresTropasImg from "@/assets/bannerlord-melhores-tropas.web
 import bannerlordTerritoriosImg from "@/assets/bannerlord-territorios-faccoes.webp";
 import bannerlordWarSailsImg from "@/assets/bannerlord-war-sails-expansao.webp";
 import bannerlordModsEssenciaisImg from "@/assets/bannerlord-mods-essenciais.webp";
+import gtaViPreVendaImg from "@/assets/gta-vi-pre-venda-edicoes.webp";
+import gtaViPrecosImg from "@/assets/gta-vi-precos.webp";
+import gtaViPlataformasImg from "@/assets/gta-vi-plataformas.webp";
+import gtaViMecanicasImg from "@/assets/gta-vi-mecanicas.webp";
+import gtaViTrailersImg from "@/assets/gta-vi-trailers.webp";
+import gtaViMapaImg from "@/assets/gta-vi-mapa-leonida.webp";
 import crimsonDesertCombateImg from "@/assets/crimson-desert-combate.webp";
 import crimsonDesertReviewImg from "@/assets/crimson-desert-review.webp";
 import crimsonDesertBuildsImg from "@/assets/crimson-desert-builds.webp";
