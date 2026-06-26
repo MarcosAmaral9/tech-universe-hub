@@ -265,6 +265,13 @@ const BannerlordMelhoresTropas       = lazy(() => import("./pages/posts/Bannerlo
 const BannerlordTerritoriosFaccoes   = lazy(() => import("./pages/posts/BannerlordTerritoriosFaccoes"));
 const BannerlordWarSailsExpansao     = lazy(() => import("./pages/posts/BannerlordWarSailsExpansao"));
 const BannerlordModsEssenciais       = lazy(() => import("./pages/posts/BannerlordModsEssenciais"));
+const GtaViPortal                    = lazy(() => import("./pages/posts/GtaViPortal"));
+const GtaViPreVendaEdicoes2026       = lazy(() => import("./pages/posts/GtaViPreVendaEdicoes2026"));
+const GtaViPrecosBrasilDolar2026     = lazy(() => import("./pages/posts/GtaViPrecosBrasilDolar2026"));
+const GtaViPlataformasRequisitos2026 = lazy(() => import("./pages/posts/GtaViPlataformasRequisitos2026"));
+const GtaViMecanicasGameplay2026     = lazy(() => import("./pages/posts/GtaViMecanicasGameplay2026"));
+const GtaViTrailersMarketing2026     = lazy(() => import("./pages/posts/GtaViTrailersMarketing2026"));
+const GtaViMapaLeonida2026           = lazy(() => import("./pages/posts/GtaViMapaLeonida2026"));
  
 const queryClient = new QueryClient({
   defaultOptions: {
