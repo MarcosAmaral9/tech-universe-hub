@@ -84,6 +84,12 @@ import bannerlordMelhoresTropasImg from "@/assets/bannerlord-melhores-tropas.web
 import bannerlordTerritoriosImg from "@/assets/bannerlord-territorios-faccoes.webp";
 import bannerlordWarSailsImg from "@/assets/bannerlord-war-sails-expansao.webp";
 import bannerlordModsEssenciaisImg from "@/assets/bannerlord-mods-essenciais.webp";
+import gtaViPreVendaImg from "@/assets/gta-vi-pre-venda-edicoes.webp";
+import gtaViPrecosImg from "@/assets/gta-vi-precos.webp";
+import gtaViPlataformasImg from "@/assets/gta-vi-plataformas.webp";
+import gtaViMecanicasImg from "@/assets/gta-vi-mecanicas.webp";
+import gtaViTrailersImg from "@/assets/gta-vi-trailers.webp";
+import gtaViMapaImg from "@/assets/gta-vi-mapa-leonida.webp";
 import crimsonDesertCombateImg from "@/assets/crimson-desert-combate.webp";
 import crimsonDesertReviewImg from "@/assets/crimson-desert-review.webp";
 import crimsonDesertBuildsImg from "@/assets/crimson-desert-builds.webp";
@@ -2854,6 +2860,126 @@ export const blogPosts: BlogPost[] = [
       { q: "RTS Camera e Dismemberment funcionam juntos?", a: "Sim, normalmente funcionam juntos porque alteram áreas diferentes: RTS Camera mexe em câmera e comandos, enquanto Dismemberment altera efeitos visuais de combate. Ainda assim, ambos devem estar atualizados para a mesma versão do jogo." },
       { q: "BannerKings, Diplomacy e RBM podem ser usados na mesma campanha?", a: "Podem, mas exigem cuidado. BannerKings e Diplomacy costumam combinar bem; RBM altera combate, dano e armaduras, então deve ser testado com os módulos opcionais corretos para evitar conflito." },
       { q: "Os mods são compatíveis com War Sails?", a: "As bibliotecas principais e vários mods leves já têm versões compatíveis. Mods que mexem em tropas nords, combate naval, economia marítima ou IA de navios precisam ser verificados caso a caso no changelog do autor." },
+    ],
+  },
+
+  {
+    id: "gta-vi-1",
+    slug: "gta-vi-pre-venda-edicoes-2026",
+    title: "GTA VI: Pré-Venda e Edições — Como, Quando e Onde Comprar",
+    excerpt: "Estado real da pré-venda de GTA VI nas lojas oficiais, edições anunciadas pela Rockstar, bônus, política de reembolso da Take-Two e o que esperar do anúncio oficial em 2026.",
+    content: "",
+    category: "geek",
+    subtopic: "gta-vi",
+    image: gtaViPreVendaImg,
+    author: "VICIO<CODE>",
+    date: "2026-06-24",
+    readTime: "13 min",
+    faq: [
+      { q: "A pré-venda de GTA VI já está aberta?", a: "Até a data de publicação deste artigo, a Rockstar Games e a Take-Two Interactive não abriram pré-venda oficial em nenhuma loja digital. Qualquer página de pré-reserva ativa antes do anúncio oficial é especulação de revendedor." },
+      { q: "Onde poderei pré-comprar GTA VI quando abrir?", a: "Os canais confirmados historicamente pela Rockstar são PlayStation Store (PS5) e Microsoft Store (Xbox Series X|S). A versão física virá pela rede tradicional de varejistas anunciada após a abertura oficial." },
+      { q: "Vai existir edição especial ou Collector’s?", a: "A Rockstar não anunciou edições. Pelo padrão de GTA V e RDR2, o esperado é Standard, Special/Premium digital e uma Collector’s Edition física com itens colecionáveis, mas tudo depende do anúncio oficial." },
+      { q: "Posso pedir reembolso depois de pré-comprar?", a: "Sim, dentro das políticas de cada loja: PlayStation Store e Microsoft Store costumam permitir cancelamento até 14 dias antes do lançamento, desde que o jogo não tenha sido pré-carregado e iniciado." },
+    ],
+  },
+
+  {
+    id: "gta-vi-2",
+    slug: "gta-vi-precos-brasil-dolar-real-2026",
+    title: "GTA VI no Brasil: Preço em Dólar, Real e o Que Esperar das Edições",
+    excerpt: "Histórico de preços da Take-Two em GTA V e RDR2, política de regionalização brasileira, expectativa em USD e BRL para GTA VI e como se preparar financeiramente para o lançamento.",
+    content: "",
+    category: "geek",
+    subtopic: "gta-vi",
+    image: gtaViPrecosImg,
+    author: "VICIO<CODE>",
+    date: "2026-06-24",
+    readTime: "12 min",
+    faq: [
+      { q: "Quanto deve custar GTA VI no Brasil?", a: "A expectativa, baseada no padrão recente da Take-Two para jogos AAA de nova geração, é uma edição Standard entre US$ 69,99 e US$ 79,99, com preço regionalizado no Brasil estimado entre R$ 299 e R$ 399 — sujeito ao câmbio do dia do anúncio." },
+      { q: "A Take-Two costuma regionalizar preços para o Brasil?", a: "Sim. GTA V e RDR2 receberam preços brasileiros consideravelmente menores que a conversão direta do dólar, prática que se mantém em lançamentos recentes da Take-Two e da 2K Games." },
+      { q: "Vale a pena esperar promoção?", a: "Historicamente, jogos da Rockstar levam de 12 a 18 meses para entrar na primeira promoção significativa. Quem quer jogar no lançamento dificilmente terá desconto antes de 2027." },
+      { q: "Edição física ou digital sai mais barato?", a: "No Brasil, a edição física costuma ter preço inicial maior, mas perde valor mais rápido no varejo. A digital tende a manter preço cheio por mais tempo, mas oferece pré-carregamento e crossplay de saves." },
+    ],
+  },
+
+  {
+    id: "gta-vi-3",
+    slug: "gta-vi-plataformas-requisitos-2026",
+    title: "GTA VI: Plataformas, PS5, Xbox Series e o Mistério da Versão de PC",
+    excerpt: "Por que GTA VI sai só para PS5 e Xbox Series X|S no lançamento, ausência confirmada de PS4 e Xbox One e o histórico da Rockstar que indica versão PC entre 2027 e 2028.",
+    content: "",
+    category: "geek",
+    subtopic: "gta-vi",
+    image: gtaViPlataformasImg,
+    author: "VICIO<CODE>",
+    date: "2026-06-24",
+    readTime: "12 min",
+    faq: [
+      { q: "Em quais plataformas GTA VI será lançado?", a: "PlayStation 5 e Xbox Series X|S, conforme anúncio oficial da Rockstar Games em dezembro de 2023. Não há versão para PS4, Xbox One ou Nintendo Switch confirmada." },
+      { q: "Vai ter versão para PC?", a: "Não foi anunciada. Pelo padrão histórico da Rockstar (GTA V e RDR2), a versão PC costuma chegar 12 a 18 meses após os consoles, o que projetaria GTA VI para PC entre 2027 e 2028." },
+      { q: "GTA VI roda no PS5 base ou só no PS5 Pro?", a: "Roda em ambos. A Rockstar confirmou compatibilidade com PS5 e Xbox Series X|S; é provável que o PS5 Pro tenha modo de fidelidade aprimorado, como ocorreu com outros AAA recentes." },
+      { q: "Vai precisar de SSD grande?", a: "Sim. Comparações com GTA V e RDR2 indicam ocupação esperada de 130 GB a 180 GB de instalação, exigindo espaço livre no SSD interno ou em SSD NVMe expansível." },
+    ],
+  },
+
+  {
+    id: "gta-vi-4",
+    slug: "gta-vi-mecanicas-gameplay-2026",
+    title: "GTA VI: Mecânicas e Gameplay Confirmados nos Trailers Oficiais",
+    excerpt: "Dupla protagonista Jason e Lucia, NPCs reativos, física de veículos, sistema climático e tudo o que os dois trailers oficiais da Rockstar realmente confirmaram sobre o gameplay de GTA VI.",
+    content: "",
+    category: "geek",
+    subtopic: "gta-vi",
+    image: gtaViMecanicasImg,
+    author: "VICIO<CODE>",
+    date: "2026-06-24",
+    readTime: "13 min",
+    faq: [
+      { q: "GTA VI tem dois protagonistas?", a: "Sim. Os trailers oficiais confirmam Jason e Lucia como dupla jogável, em uma narrativa inspirada em Bonnie & Clyde ambientada no estado fictício de Leonida." },
+      { q: "Dá para trocar entre Jason e Lucia como em GTA V?", a: "A Rockstar ainda não confirmou se a troca será livre como em GTA V ou se acontecerá em momentos roteirizados. Os trailers mostram os dois juntos na maior parte das cenas." },
+      { q: "Quais mecânicas novas foram mostradas?", a: "NPCs com comportamento muito mais reativo, sistema climático com tempestades tropicais, física de água aprimorada, fauna densa nos pântanos e variação dinâmica de multidões em Vice City." },
+      { q: "GTA VI terá GTA Online no lançamento?", a: "A Rockstar não confirmou. Pelo padrão da casa, é provável que o modo multiplayer venha algumas semanas ou meses após o lançamento da campanha." },
+    ],
+  },
+
+  {
+    id: "gta-vi-5",
+    slug: "gta-vi-trailers-marketing-2026",
+    title: "GTA VI: Linha do Tempo Completa dos Trailers e do Marketing",
+    excerpt: "Do vazamento de 2022 ao anúncio oficial, Trailer 1 (recorde mundial no YouTube), Trailer 2 de 2025 e a campanha de marketing do verão 2026 da Rockstar Games e Take-Two.",
+    content: "",
+    category: "geek",
+    subtopic: "gta-vi",
+    image: gtaViTrailersImg,
+    author: "VICIO<CODE>",
+    date: "2026-06-24",
+    readTime: "12 min",
+    faq: [
+      { q: "Quando foi lançado o primeiro trailer de GTA VI?", a: "O Trailer 1 foi lançado pela Rockstar Games em 5 de dezembro de 2023 e bateu o recorde mundial de visualizações em 24 horas em um vídeo não musical no YouTube." },
+      { q: "Já existe um segundo trailer oficial?", a: "Sim. O Trailer 2 foi divulgado em maio de 2025 com novas cenas de gameplay, mais detalhes de Vice City e a confirmação reforçada do casal protagonista." },
+      { q: "Quantas visualizações o Trailer 1 fez?", a: "Cerca de 93 milhões de visualizações nas primeiras 24 horas, segundo dados públicos do YouTube e cobertura de Variety, IGN e The Verge na época do lançamento." },
+      { q: "Quando sai o próximo trailer?", a: "A Take-Two indicou janela de marketing pesado entre o terceiro trimestre de 2026 e o lançamento em 19 de novembro de 2026, mas não há data oficial para um terceiro trailer." },
+    ],
+  },
+
+  {
+    id: "gta-vi-6",
+    slug: "gta-vi-mapa-leonida-vice-city-2026",
+    title: "GTA VI: Mapa de Leonida — Vice City, Keys e Everglades Reimaginados",
+    excerpt: "Geografia confirmada nos trailers oficiais — Vice City, interior do estado fictício de Leonida, pântanos, ilhas e a comparação realista com San Andreas de GTA V.",
+    content: "",
+    category: "geek",
+    subtopic: "gta-vi",
+    image: gtaViMapaImg,
+    author: "VICIO<CODE>",
+    date: "2026-06-24",
+    readTime: "13 min",
+    faq: [
+      { q: "Onde se passa GTA VI?", a: "No estado fictício de Leonida, inspirado na Flórida real, com Vice City (versão fictícia de Miami) como cidade principal, além de pântanos, interior rural e arquipélago inspirado nos Florida Keys." },
+      { q: "O mapa de GTA VI é maior que o de GTA V?", a: "A Rockstar não divulgou a área oficial. Análises de dataminers e veículos como IGN e Eurogamer estimam mapa de duas a três vezes o tamanho do interior de San Andreas, considerando água navegável." },
+      { q: "Vice City será toda explorável?", a: "Sim, conforme cenas dos dois trailers oficiais. Vice City aparece como a maior cidade do estado, com bairros distintos, marina, praias, distrito Art Déco e área comercial inspirada em Brickell." },
+      { q: "Dá para entrar nas Florida Keys?", a: "Os trailers confirmam ilhas ao sul do estado, com pontes e travessias marítimas. Não está claro se todas serão acessíveis a pé ou apenas por barco e veículo." },
     ],
   },
 

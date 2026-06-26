@@ -265,6 +265,13 @@ const BannerlordMelhoresTropas       = lazy(() => import("./pages/posts/Bannerlo
 const BannerlordTerritoriosFaccoes   = lazy(() => import("./pages/posts/BannerlordTerritoriosFaccoes"));
 const BannerlordWarSailsExpansao     = lazy(() => import("./pages/posts/BannerlordWarSailsExpansao"));
 const BannerlordModsEssenciais       = lazy(() => import("./pages/posts/BannerlordModsEssenciais"));
+const GtaViPortal                    = lazy(() => import("./pages/posts/GtaViPortal"));
+const GtaViPreVendaEdicoes2026       = lazy(() => import("./pages/posts/GtaViPreVendaEdicoes2026"));
+const GtaViPrecosBrasilDolar2026     = lazy(() => import("./pages/posts/GtaViPrecosBrasilDolar2026"));
+const GtaViPlataformasRequisitos2026 = lazy(() => import("./pages/posts/GtaViPlataformasRequisitos2026"));
+const GtaViMecanicasGameplay2026     = lazy(() => import("./pages/posts/GtaViMecanicasGameplay2026"));
+const GtaViTrailersMarketing2026     = lazy(() => import("./pages/posts/GtaViTrailersMarketing2026"));
+const GtaViMapaLeonida2026           = lazy(() => import("./pages/posts/GtaViMapaLeonida2026"));
  
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -324,6 +331,13 @@ const App = () => (
                 <Route path="/post/bannerlord-territorios-faccoes-calradia-2026" element={<BannerlordTerritoriosFaccoes />} />
                 <Route path="/post/bannerlord-war-sails-expansao-2026" element={<BannerlordWarSailsExpansao />} />
                 <Route path="/post/bannerlord-mods-essenciais-2026" element={<BannerlordModsEssenciais />} />
+                <Route path="/geek/gta-vi" element={<Suspense fallback={<PageLoader />}><GtaViPortal /></Suspense>} />
+                <Route path="/post/gta-vi-pre-venda-edicoes-2026" element={<Suspense fallback={<PageLoader />}><GtaViPreVendaEdicoes2026 /></Suspense>} />
+                <Route path="/post/gta-vi-precos-brasil-dolar-real-2026" element={<Suspense fallback={<PageLoader />}><GtaViPrecosBrasilDolar2026 /></Suspense>} />
+                <Route path="/post/gta-vi-plataformas-requisitos-2026" element={<Suspense fallback={<PageLoader />}><GtaViPlataformasRequisitos2026 /></Suspense>} />
+                <Route path="/post/gta-vi-mecanicas-gameplay-2026" element={<Suspense fallback={<PageLoader />}><GtaViMecanicasGameplay2026 /></Suspense>} />
+                <Route path="/post/gta-vi-trailers-marketing-2026" element={<Suspense fallback={<PageLoader />}><GtaViTrailersMarketing2026 /></Suspense>} />
+                <Route path="/post/gta-vi-mapa-leonida-vice-city-2026" element={<Suspense fallback={<PageLoader />}><GtaViMapaLeonida2026 /></Suspense>} />
                 <Route path="/post/crimson-desert-guia-completo" element={<CrimsonDesertGuiaCompleto />} />
                 <Route path="/post/crimson-desert-personagens-kliff-damiane-oongka" element={<CrimsonDesertPersonagens />} />
                 <Route path="/post/crimson-desert-patches-atualizacoes-2026" element={<CrimsonDesertPatches />} />

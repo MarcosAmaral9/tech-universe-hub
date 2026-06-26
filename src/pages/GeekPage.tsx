@@ -12,6 +12,7 @@ import crimsonDesertHeroImg from "@/assets/crimson-desert-hero.webp";
 import avatarPortalBannerImg from "@/assets/avatar-portal-banner.webp";
 import acPortalImg from "@/assets/assassins-creed-portal.webp";
 import bannerlordPortalImg from "@/assets/bannerlord-hero.webp";
+import gtaViPortalImg from "@/assets/gta-vi-portal-hero.webp";
 import MostReadWidget from "@/components/MostReadWidget";
 
 
@@ -23,6 +24,7 @@ const SUBTOPIC_LABELS: Record<string, string> = {
   bannerlord: "Mount & Blade II: Bannerlord",
   "crimson-desert": "Crimson Desert",
   games: "Games",
+  "gta-vi": "GTA VI",
   vikings: "Vikings",
 };
 
@@ -146,7 +148,15 @@ const GeekPage = () => {
           <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">
             🎮 Painéis Especiais
           </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+            <SpecialPortalCard
+              to="/geek/gta-vi"
+              image={gtaViPortalImg}
+              title="GTA VI"
+              description="Painel completo da Rockstar — pré-venda, preços, plataformas, mecânicas, trailers e o mapa de Leonida."
+              badge="🔥 Destaque"
+              badgeColor="bg-pink-900/80 text-pink-300 border border-pink-700/50"
+            />
             <SpecialPortalCard
               to="/geek/bannerlord"
               image={bannerlordPortalImg}
