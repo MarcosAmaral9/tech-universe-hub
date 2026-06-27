@@ -135,6 +135,38 @@ const GtaViMecanicasGameplay2026 = () => {
 
         <AdInArticle className="my-8" />
 
+        <h2 className="text-2xl font-bold mt-10 mb-4">Mecânicas confirmadas (resumo)</h2>
+        <div className="not-prose my-6 overflow-x-auto rounded-xl border border-pink-500/20">
+          <table className="w-full text-sm bg-card table-fixed">
+            <thead>
+              <tr className="bg-pink-500/10 text-pink-200">
+                <th className="w-1/4 text-left py-3 px-4 font-bold">Mecânica</th>
+                <th className="w-1/5 text-left py-3 px-4 font-bold">Fonte</th>
+                <th className="w-[55%] text-left py-3 px-4 font-bold">Detalhe verificado</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { mec: "Dupla protagonista (Lucia + Jason)", fonte: "Trailer 1 e 2", det: "Casal aparece em conjunto em assaltos, fugas e cenas sociais. Sistema de troca contextual entre os dois personagens." },
+                { mec: "Dano localizado de veículos", fonte: "Trailer 2", det: "Capôs, portas e laterais se deformam de forma específica conforme o impacto, substituindo o modelo genérico de GTA V." },
+                { mec: "Nuvens volumétricas dinâmicas", fonte: "Trailer 1 e 2", det: "Sistemas de tempestade tropical 3D com formação orgânica e iluminação reativa em tempo real." },
+                { mec: "IA de NPCs expandida", fonte: "Trailer 2", det: "Multidões filmando com celulares, reações individuais, comportamento social diverso em clubes, praias e eventos." },
+                { mec: "Mundo aquático ampliado", fonte: "Trailer 2", det: "Lanchas, jet skis, mergulho com snorkel, jacarés reativos em pântanos e rotas navegáveis longas." },
+                { mec: "Redes sociais fictícias internas", fonte: "Trailer 2", det: "Personagens gravam e postam vídeos dentro do jogo; sátira da cultura de influencer integrada ao mundo." },
+                { mec: "GTA Online VI no lançamento", fonte: "Take-Two (call de investidores)", det: "Modo online lançado simultaneamente com a campanha em 19/11/2026, sem janela de espera como em 2013." },
+              ].map((r, i) => (
+                <tr key={r.mec} className={`border-t border-border/60 ${i % 2 ? "bg-muted/20" : ""}`}>
+                  <td className="py-3 px-4 font-semibold break-words">{r.mec}</td>
+                  <td className="py-3 px-4 text-xs text-pink-300 break-words">{r.fonte}</td>
+                  <td className="py-3 px-4 text-xs text-muted-foreground break-words">{r.det}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+
+
         <h2 className="text-2xl font-bold mt-10 mb-4">Mundo aquático: pântanos, praias e mar</h2>
         <p>
           O Trailer 2 dedica tempo significativo ao ambiente aquático, o que faz sentido dado que Leonida é inspirada
