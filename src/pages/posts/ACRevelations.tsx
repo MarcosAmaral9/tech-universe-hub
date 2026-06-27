@@ -85,7 +85,46 @@ const ACRevelations = () => {
             👉 O encerramento da trilogia Ezio. Disponível via{" "}
             <strong>AC: The Ezio Collection</strong> no PS4/PS5, Xbox e PC.
           </p>
-        </div>
+        
+        <h2 className="text-2xl font-bold mt-10 mb-4">A Conclusão Definitiva do Arco de Ezio e Altaïr</h2>
+        <p>
+          Revelations representa conclusão narrativa cuidadosamente construída que entrelaça as histórias de Ezio Auditore e Altaïr Ibn-La'Ahad de forma que poucos jogos conseguiriam executar sem parecer forçado. Através das sequências de memória de Altaïr, jogáveis como segmentos especiais dentro da jornada principal de Ezio, a Ubisoft criou ponte narrativa que conecta gerações de protagonistas Assassinos de forma emocionalmente satisfatória para fãs que acompanharam a saga desde o primeiro jogo de 2007.
+        </p>
+        <p>
+          Constantinopla, como cenário principal, oferece variação visual bem-vinda em relação à Roma renascentista de Brotherhood, capturando a atmosfera única de cidade na intersecção entre Europa e Ásia, com arquitetura otomana detalhada e ambiente urbano vibrante que demonstra evolução técnica considerável da Ubisoft Montreal em recriar cenários históricos cada vez mais convincentes.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">O Hookblade e Inovações de Gameplay</h2>
+        <p>
+          Revelations introduziu o Hookblade, ferramenta que revolucionou parkour urbano ao permitir movimentos de zipline entre edifícios e ataques aéreos mais dinâmicos. Essa adição, combinada com o sistema de Bomb Crafting que permitia personalização de explosivos para diferentes situações táticas, demonstrou que a Ubisoft ainda buscava inovação mecânica mesmo no que seria a conclusão da trilogia de Ezio, evitando estagnação criativa que poderia ter prejudicado a recepção deste capítulo final.
+        </p>
+    
+        <h2 className="text-2xl font-bold mt-10 mb-4">Vale a Pena Para Quem Não Jogou os Anteriores?</h2>
+        <p>
+          Embora Revelations funcione tecnicamente como experiência standalone, seu impacto emocional completo depende fortemente de conhecimento prévio de Assassin's Creed II e Brotherhood. Jogadores que tentam começar diretamente por Revelations sem esse contexto perdem grande parte do peso narrativo das despedidas e revelações que tornam este capítulo tão especial para fãs de longa data da trilogia de Ezio.
+        </p>
+    
+        <p>
+          Para quem já investiu tempo nos jogos anteriores, no entanto, Revelations oferece uma das conclusões mais satisfatórias e emocionalmente ressonantes de toda a franquia Assassin's Creed até hoje lançada.
+        </p>
+    
+        <h2 className="text-2xl font-bold mt-10 mb-4">O Multiplayer Esquecido de Revelations</h2>
+        <p>
+          Vale mencionar que Revelations também incluía modo multiplayer competitivo, parte de experimento iniciado em Brotherhood que permitia jogadores assumirem papéis de Assassinos e Templários em partidas de caça e fuga estratégica. Embora os servidores oficiais tenham sido descontinuados anos atrás, esse modo representou tentativa interessante da Ubisoft de expandir a franquia para experiências sociais competitivas além da campanha single-player tradicional que sempre definiu a identidade central da série.
+        </p>
+    
+        <p>
+          Mesmo sem suporte multiplayer ativo hoje, a experiência single-player de Revelations permanece completa e satisfatória, garantindo seu lugar como conclusão memorável de uma das trilogias mais celebradas da franquia.
+        </p>
+    
+        <p>
+          Para qualquer fã dedicado da saga, completar essa jornada através de Constantinopla representa não apenas conclusão narrativa, mas verdadeira celebração de tudo que tornou Assassin's Creed uma das franquias mais queridas da indústria.
+        </p>
+    
+        <p>
+          A Ubisoft, com este capítulo, demonstrou que sabe quando e como encerrar arcos narrativos de forma satisfatória, lição valiosa que infelizmente nem sempre foi replicada em entradas posteriores da franquia ao longo dos anos seguintes.
+        </p>
+    </div>
 
         <AdLeaderboard className="my-8" />
 
@@ -348,11 +387,6 @@ const ACRevelations = () => {
             <li>✓ <strong>Xbox One / Xbox Series X|S</strong> (AC: The Ezio Collection)</li>
             <li>✓ <strong>Nintendo Switch</strong> (AC: The Ezio Collection)</li>
           </ul>
-        </div>
-
-        <div className="not-prose mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Qual foi a revelação mais marcante para você? 🕌</h3>
-          <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
 

@@ -86,7 +86,40 @@ const ACBrotherhood = () => {
             👉 Primeiro AC com <strong>multijogador online competitivo</strong>. Disponível via{" "}
             <strong>AC: The Ezio Collection</strong> no PS4/PS5, Xbox e PC.
           </p>
-        </div>
+        
+        <h2 className="text-2xl font-bold mt-10 mb-4">A Roma Renascentista Como Cenário Único na Franquia</h2>
+        <p>
+          Brotherhood marcou a primeira vez que a franquia Assassin's Creed concentrou toda sua narrativa numa única cidade, em vez de alternar entre múltiplas localizações ao longo da campanha principal. Essa decisão de design permitiu à Ubisoft Montreal criar a recriação mais detalhada e densa de Roma renascentista já vista em um videogame, com monumentos icônicos como o Coliseu, o Panteão e o Vaticano integrados de forma orgânica à jogabilidade através de eventos históricos e missões secundárias relacionadas a cada localização específica.
+        </p>
+        <p>
+          A introdução do sistema de recrutamento de Assassinos, permitindo que Ezio formasse e comandasse sua própria irmandade de combatentes secundários, adicionou camada estratégica inédita que diferenciou Brotherhood significativamente de seus antecessores, transformando o protagonista de assassino solitário em verdadeiro líder de organização clandestina influente em toda a cidade.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">O Multiplayer Pioneiro que Influenciou o Gênero</h2>
+        <p>
+          Brotherhood também introduziu modo multiplayer competitivo inovador, onde jogadores assumiam papéis de Templários treinando para se tornarem Assassinos, competindo em partidas de caça e fuga estratégica que misturavam elementos de stealth social com ação direta. Esse modo, embora descontinuado em servidores oficiais há anos, influenciou conceitualmente outros jogos de ação social que viriam a explorar dinâmicas similares de identidade oculta e perseguição tática em ambientes urbanos densamente povoados por NPCs.
+        </p>
+    
+        <p>
+          Combinada com narrativa madura e personagens secundários memoráveis como Niccolò Machiavelli e Cesare Borgia, Brotherhood consolidou Ezio como um dos protagonistas mais bem desenvolvidos de toda a história da franquia, preparando terreno perfeito para a conclusão emocional que viria com Revelations no ano seguinte.
+        </p>
+    
+        <h2 className="text-2xl font-bold mt-10 mb-4">A Evolução Técnica Sobre Assassin's Creed II</h2>
+        <p>
+          Tecnicamente, Brotherhood representou refinamento substancial sobre os sistemas já estabelecidos em Assassin's Creed II, com melhorias notáveis em fluidez de animação durante combate, variedade de armas disponíveis e adição de armas de fogo precoces que adicionaram nova dimensão tática aos confrontos. O sistema de combate em geral tornou-se mais responsivo e satisfatório, refletindo aprendizado direto da Ubisoft Montreal sobre o que funcionava bem no jogo anterior e onde havia espaço para refinamento adicional.
+        </p>
+        <p>
+          A Roma recriada também demonstrou avanço técnico significativo em densidade populacional de NPCs e variedade arquitetônica, com a cidade sendo consideravelmente mais detalhada e vibrante do que qualquer ambiente urbano anterior da franquia até aquele momento, estabelecendo novo padrão de qualidade visual que jogos subsequentes precisariam igualar ou superar para manter a reputação técnica da série.
+        </p>
+    
+        <p>
+          Esse salto de qualidade visual e técnica, combinado com narrativa mais madura e sistemas de gameplay expandidos, explica por que tantos fãs consideram Brotherhood o ponto culminante da trilogia de Ezio, superando em muitos aspectos até mesmo o aclamado jogo anterior.
+        </p>
+    
+        <p>
+          O legado de Brotherhood permanece visível até hoje em discussões da comunidade sobre os melhores capítulos da franquia.
+        </p>
+    </div>
 
         <AdLeaderboard className="my-8" />
 
@@ -360,11 +393,6 @@ const ACBrotherhood = () => {
             A <strong>AC: The Ezio Collection</strong> inclui AC2, Brotherhood e Revelations
             remasterizados — a melhor forma de jogar os três em sequência.
           </p>
-        </div>
-
-        <div className="not-prose mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Roma valeu o esforço de Ezio? 🏛️</h3>
-          <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
 

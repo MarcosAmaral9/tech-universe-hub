@@ -93,7 +93,19 @@ const ACOrigins = () => {
           <p className="mt-4 text-muted-foreground mb-0">
             👉 <strong>Excelente custo-benefício</strong> com Discovery Tour educativo incluso gratuitamente.
           </p>
-        </div>
+        
+        <h2 className="text-2xl font-bold mt-10 mb-4">O Renascimento da Franquia Após Hiato Estratégico</h2>
+        <p>
+          Após a fadiga de lançamentos anuais que culminou em recepção mais fria para Assassin's Creed Unity e Syndicate, a Ubisoft tomou decisão estratégica corajosa de pausar lançamentos anuais e dedicar tempo adicional de desenvolvimento para Origins. Esse hiato de um ano permitiu reformulação completa de sistemas fundamentais, desde combate (migrando para sistema mais próximo de RPGs de ação com hitboxes reais) até a estrutura de mundo aberto, que passou a incluir elementos de progressão por nível similares a RPGs tradicionais.
+        </p>
+        <p>
+          O Egito Antigo ptolemaico recriado em Origins recebeu elogios unânimes por densidade histórica e visual, com a Ubisoft investindo em consultoria egiptológica extensiva que resultou em recriações cuidadosas de monumentos icônicos como as Pirâmides de Gizé e a Biblioteca de Alexandria, complementadas por modo educacional "Discovery Tour" que permitiu exploração livre sem elementos de combate, focada puramente em aprendizado histórico.
+        </p>
+    
+        <p>
+          Esse equilíbrio cuidadoso entre rigor histórico e liberdade narrativa de ficção estabeleceu novo padrão de qualidade para a franquia, influenciando diretamente a abordagem usada em entradas subsequentes como Odyssey e Valhalla, consolidando Origins como verdadeiro divisor de águas na evolução criativa da série.
+        </p>
+    </div>
 
         <AdLeaderboard className="my-8" />
 

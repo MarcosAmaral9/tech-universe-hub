@@ -86,7 +86,50 @@ const AC2Ezio = () => {
             👉 Considerado o melhor da franquia por muitos fãs. Disponível via{" "}
             <strong>AC: The Ezio Collection</strong> no PS4/PS5, Xbox e PC com gráficos remasterizados.
           </p>
-        </div>
+        
+        <h2 className="text-2xl font-bold mt-10 mb-4">Como Ezio Redefiniu o Protagonista da Franquia</h2>
+        <p>
+          A introdução de Ezio Auditore em Assassin's Creed II representou virada criativa fundamental para a franquia. Diferente de Altaïr, retratado como figura mais fria e calculista no primeiro jogo, Ezio foi concebido como personagem mais carismático e emocionalmente acessível, com arco de vingança pessoal que dava motivação narrativa muito mais clara e envolvente para as ações do jogador ao longo da campanha principal.
+        </p>
+        <p>
+          Essa mudança de abordagem narrativa, combinada com cenário da Renascença italiana — rico em história, arte e intriga política — criou fórmula que a crítica e o público abraçaram imediatamente, elevando Assassin's Creed II a status de clássico atemporal do gênero, frequentemente citado como o momento em que a franquia verdadeiramente encontrou sua identidade definitiva após as bases estabelecidas, mas imperfeitas, do jogo original de 2007.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Florença e Veneza Como Protagonistas Visuais</h2>
+        <p>
+          A recriação digital de Florença e Veneza renascentistas em AC2 estabeleceu padrão de qualidade visual e atenção histórica que se tornaria marca registrada da franquia. Monumentos reais como a Catedral de Santa Maria del Fiore e a Ponte Vecchio foram recriados com detalhe impressionante para a época de lançamento, criando sensação de turismo histórico interativo que complementava perfeitamente a narrativa de vingança e conspiração política que move a trama principal do jogo.
+        </p>
+    
+        <h2 className="text-2xl font-bold mt-10 mb-4">O Legado Duradouro de AC2 na Indústria</h2>
+        <p>
+          Quase duas décadas após seu lançamento original, Assassin's Creed II continua sendo referência obrigatória em discussões sobre evolução de sequências em videogames — o exemplo clássico de como um estúdio pode aprender de críticas ao primeiro título e entregar melhoria dramática mantendo a essência fundamental que tornou a franquia interessante desde o início.
+        </p>
+    
+        <p>
+          Para qualquer fã de RPGs históricos ou jogos de ação-aventura em geral, Assassin's Creed II permanece experiência essencial que ajuda a explicar por que esta franquia se tornou um dos pilares mais duradouros da indústria de videogames moderna.
+        </p>
+    
+        <h2 className="text-2xl font-bold mt-10 mb-4">A Trilha Sonora Memorável de Jesper Kyd</h2>
+        <p>
+          A trilha sonora composta por Jesper Kyd para Assassin's Creed II merece reconhecimento especial por capturar perfeitamente a atmosfera da Renascença italiana enquanto mantinha tensão apropriada durante sequências de ação e infiltração. Faixas como "Earth" se tornaram tão icônicas que continuam sendo referenciadas e remixadas pela comunidade de fãs anos após o lançamento original, demonstrando impacto cultural que transcende o próprio jogo.
+        </p>
+    
+        <p>
+          Combinada com narrativa envolvente e mundo aberto cuidadosamente recriado, a trilha sonora de Kyd contribui significativamente para a experiência atemporal que torna este título referência obrigatória até os dias de hoje.
+        </p>
+    
+        <p>
+          Mais de quinze anos depois, Assassin's Creed II continua sendo prova viva de que boa narrativa, ambientação cuidadosa e trilha sonora memorável podem elevar qualquer jogo a status de clássico atemporal e influente.
+        </p>
+    
+        <p>
+          Para gerações futuras de jogadores que ainda vão descobrir este clássico, a experiência de explorar a Itália renascentista ao lado de Ezio permanece tão envolvente hoje quanto foi para quem viveu esse lançamento em sua época original.
+        </p>
+    
+        <p>
+          Esse legado duradouro é o verdadeiro testemunho de uma obra atemporal e influente que marcou definitivamente a história dos jogos eletrônicos.
+        </p>
+    </div>
 
         <AdLeaderboard className="my-8" />
 
@@ -342,11 +385,6 @@ const AC2Ezio = () => {
             A <strong>AC: The Ezio Collection</strong> inclui AC2, Brotherhood e Revelations
             remasterizados — a melhor forma de jogar os três em sequência.
           </p>
-        </div>
-
-        <div className="not-prose mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Ezio é o seu Assassino favorito? 🦅</h3>
-          <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
 

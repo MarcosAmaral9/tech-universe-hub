@@ -90,7 +90,49 @@ const AC1Altair = () => {
             nas lojas digitais atuais em versão autônoma — incluído na{" "}
             <strong>Assassin's Creed Heritage Collection</strong>.
           </p>
-        </div>
+        
+        <h2 className="text-2xl font-bold mt-10 mb-4">O Contexto Histórico das Cruzadas Retratado no Jogo</h2>
+        <p>
+          Assassin's Creed (2007) se destaca por ambientar sua narrativa durante a Terceira Cruzada, período histórico de conflito intenso entre forças cristãs europeias e o mundo islâmico no Oriente Médio medieval. A Ubisoft investiu pesquisa histórica considerável para recriar com razoável fidelidade as três cidades principais do jogo — Jerusalém, Acre e Damasco — capturando arquitetura, vestimenta e dinâmicas sociais da época de forma que, mesmo com tomadas de liberdade criativa significativas para a narrativa central de ficção científica envolvendo a Animus, manteve respeito notável pelo contexto histórico real que serviu de cenário.
+        </p>
+        <p>
+          Altaïr Ibn-La'Ahad, como protagonista, representa figura moralmente complexa que opera numa zona cinzenta entre os conflitos religiosos da época — um Assassino que mata tanto cruzados quanto líderes muçulmanos corruptos, sugerindo crítica sutil a fanatismo religioso de ambos os lados do conflito histórico, independentemente de afiliação religiosa específica.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">As Limitações Técnicas que Definiram a Experiência Original</h2>
+        <p>
+          Jogado em 2026, o primeiro Assassin's Creed mostra claramente as limitações técnicas e de design de uma era anterior do gênero de mundo aberto. A repetição de estrutura de missões — investigar, eliminar, repetir em nova cidade — torna-se evidente rapidamente, e a inteligência artificial dos NPCs urbanos parece rudimentar comparada a padrões modernos estabelecidos por jogos subsequentes da própria franquia, especialmente a partir de Brotherhood e Revelations.
+        </p>
+        <p>
+          Apesar dessas limitações, o jogo original merece reconhecimento histórico por estabelecer fundamentos de parkour urbano e stealth contextual que influenciariam não apenas o resto da franquia, mas o gênero de ação-aventura como um todo nas gerações seguintes de consoles e PC.
+        </p>
+    
+        <h2 className="text-2xl font-bold mt-10 mb-4">Vale a Pena Jogar o Original em 2026?</h2>
+        <p>
+          Para novos jogadores descobrindo a franquia hoje, a recomendação geralmente é começar por Assassin's Creed II ou mesmo Black Flag, que oferecem experiências mais refinadas e acessíveis. No entanto, para quem busca compreender completamente a evolução histórica da série e apreciar o contexto fundacional que tornou os jogos posteriores possíveis, o original de 2007 ainda oferece valor histórico significativo, especialmente considerando seu preço atual extremamente acessível em promoções frequentes nas principais plataformas digitais.
+        </p>
+    
+        <p>
+          Independentemente da decisão final, entender as origens da franquia através deste primeiro capítulo enriquece significativamente a apreciação de toda a evolução subsequente da série ao longo de quase duas décadas de lançamentos contínuos.
+        </p>
+    
+        <h2 className="text-2xl font-bold mt-10 mb-4">A Versão Remasterizada Disponível Hoje</h2>
+        <p>
+          Para quem decide experimentar o jogo original em 2026, vale considerar especificamente a versão remasterizada disponível em plataformas atuais, que oferece melhorias visuais e de performance significativas em relação ao lançamento original de PlayStation 3 e Xbox 360, tornando a experiência mais palatável para padrões modernos sem alterar fundamentalmente o design original que definiu a base da franquia.
+        </p>
+    
+        <p>
+          Vale o investimento de tempo para quem aprecia compreender completamente as origens de uma das franquias mais influentes e duradouras da história recente dos videogames de ação-aventura.
+        </p>
+    
+        <p>
+          A jornada de Altaïr, apesar de tecnicamente datada, continua oferecendo perspectiva valiosa sobre como uma franquia inteira pode evoluir e se reinventar ao longo de quase duas décadas de lançamentos contínuos.
+        </p>
+    
+        <p>
+          Por ora, basta reconhecer o valor histórico fundamental que este primeiro capítulo representa para qualquer discussão séria sobre a evolução do gênero de ação-aventura em mundo aberto nos últimos vinte anos.
+        </p>
+    </div>
 
         <AdLeaderboard className="my-8" />
 
@@ -334,11 +376,6 @@ const AC1Altair = () => {
             AC2
           </Link>.
         </p>
-
-        <div className="not-prose mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Altaïr foi o seu Assassino favorito? 🦅</h3>
-          <p className="text-muted-foreground">Conta nos comentários! 👇</p>
-        </div>
       </div>
 
       <ArticleSources category="geek"

@@ -20,11 +20,13 @@ import {
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import BackNavigation from "@/components/BackNavigation";
 import SkeletonImage from "@/components/SkeletonImage";
+import LightboxImage from "@/components/LightboxImage";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import heroImg from "@/assets/bannerlord-melhores-tropas.webp";
-
+import warSailsMap from "@/assets/bannerlord-war-sails-map.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
 
 const tierColors: Record<string, { badge: string; row: string; accent: string }> = {
@@ -322,6 +324,27 @@ const BannerlordMelhoresTropas = () => {
           mercenários, mantendo a base Nord para infantaria e tropas navais.
         </p>
 
+        <div className="not-prose my-10">
+          <div className="flex flex-col items-center text-center mb-5">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-300 text-xs font-bold uppercase tracking-wider mb-3">
+              <Ship className="h-4 w-4" /> Território dos Nords
+            </div>
+            <h3 className="font-display text-2xl md:text-3xl font-bold mb-2">Litoral norte de Calradia (War Sails)</h3>
+            <p className="text-muted-foreground max-w-2xl text-sm">
+              Onde recrutar Huscarls, Raiders e Sea Jarls. Clique no mapa, arraste para navegar e use os botões de
+              zoom para inspecionar cada porto e estandarte.
+            </p>
+          </div>
+          <LightboxImage
+            src={warSailsMap}
+            alt="Mapa oficial da expansão War Sails de Mount & Blade II: Bannerlord mostrando os territórios e portos dos Nords no litoral norte de Calradia"
+            caption="Mapa oficial War Sails · arraste para navegar · use + e − para o zoom"
+            className="shadow-2xl shadow-blue-500/10"
+            width={1991}
+            height={1821}
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
+          />
+        </div>
 
         <AdInArticle className="my-8" />
 
@@ -367,15 +390,118 @@ const BannerlordMelhoresTropas = () => {
               <p className="text-xs text-muted-foreground italic m-0">{c.note}</p>
             </div>
           ))}
-        </div>
+        <h2 className="text-2xl font-bold mt-10 mb-4">Como a Meta Evoluiu Desde o Lançamento de War Sails</h2>
+        <p>
+          Quando War Sails foi lançado, a expectativa inicial da comunidade era de que os Nords entrariam como cultura
+          de nicho, relevante apenas para quem quisesse explorar o conteúdo naval específico da expansão. A realidade
+          se mostrou diferente: o Huscarl rapidamente se consolidou como uma das melhores tropas de infantaria pesada
+          do jogo inteiro, não apenas dentro do contexto naval — algo que pegou veteranos de surpresa, já que culturas
+          recém-adicionadas historicamente entram balanceadas para baixo em relação às 8 culturas originais.
+        </p>
+        <p>
+          Esse desbalanceamento positivo gerou debate intenso nos fóruns oficiais da TaleWorlds sobre se ajustes de
+          patch seriam necessários. Até a publicação desta tier list, a desenvolvedora manteve os números do Huscarl
+          inalterados, sugerindo que a força da unidade é design intencional para tornar a aquisição da expansão paga
+          mais atrativa — uma estratégia comum em jogos com conteúdo DLC opcional que precisa competir com o conteúdo
+          base gratuito em termos de relevância competitiva.
+        </p>
 
-        <EditorialTake category="geek">
+        <h2 className="text-2xl font-bold mt-10 mb-4">Erros Comuns na Composição de Exércitos</h2>
+        <p>
+          Um erro recorrente entre jogadores menos experientes é montar exércitos puramente mono-tipo — todo cavalaria,
+          ou todo infantaria de choque — sem considerar contra quais composições inimigas isso é vulnerável. Um exército
+          inteiramente composto por Khan's Guards, por exemplo, é devastador contra infantaria desorganizada mas sofre
+          severamente contra pikemen bem posicionados em terreno fechado, onde a mobilidade da cavalaria a cavalo perde
+          sua principal vantagem tática.
+        </p>
+        <p>
+          Outro erro comum é ignorar completamente o papel do terreno na escolha de composição. Tropas otimizadas para
+          campo aberto, como horse archers, têm desempenho dramaticamente reduzido em batalhas de cerco ou em terrenos
+          montanhosos com pouca visibilidade de linha de tiro. A tier list apresentada aqui reflete desempenho médio
+          considerando múltiplos cenários, mas jogadores avançados devem ajustar composições especificamente para o
+          tipo de batalha esperada — algo que separa comandantes medianos de mestres táticos em Bannerlord.
+        </p>
+      
+        <h2 className="text-2xl font-bold mt-10 mb-4">A Importância da Sinergia Entre Tropas e Comandante</h2>
+        <p>
+          Além das estatísticas individuais de cada tropa, a tier list não captura completamente o impacto das
+          perícias do personagem comandante sobre o desempenho geral do exército. Um jogador com alta perícia em
+          Tática pode reorganizar formações em combate de forma mais eficiente, enquanto perícias de Liderança
+          afetam diretamente o moral das tropas — fator que determina quando uma unidade entra em pânico e foge
+          do campo de batalha, independentemente de sua qualidade nominal listada na tier list.
+        </p>
+        <p>
+          Isso significa que, na prática, um exército composto por tropas B-tier comandado por um jogador com
+          perícias bem desenvolvidas pode superar consistentemente um exército A-tier liderado por um comandante
+          inexperiente. A meta apresentada aqui assume nível de habilidade de comando razoavelmente desenvolvido —
+          jogadores no início de campanha devem considerar investir tempo em desenvolver perícias de liderança e
+          tática antes de assumir que as tropas mais fortes da lista garantirão vitória automática em qualquer
+          confronto.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">O Papel dos Clãs e Lealdade nas Composições Avançadas</h2>
+        <p>
+          Em estágios avançados de campanha, jogadores que estabeleceram seu próprio reino enfrentam desafio
+          adicional: a disponibilidade de tropas de elite frequentemente depende da lealdade de clãs vassalos,
+          que controlam cidades específicas onde essas unidades podem ser recrutadas. Um comandante pode ter
+          acesso teórico aos melhores Banner Knights do jogo, mas se o clã que controla os territórios Vlandianos
+          relevantes estiver insatisfeito com a liderança do jogador, a disponibilidade de recrutamento pode ser
+          severamente limitada.
+        </p>
+        <p>
+          Essa camada estratégica adicional, frequentemente ignorada em discussões puramente focadas em estatísticas
+          de combate, é essencial para jogadores que pretendem manter exércitos de elite de forma sustentável ao
+          longo de uma campanha completa. Diplomacia e gestão de relações entre clãs tornam-se, portanto, tão
+          importantes quanto o conhecimento tático de qual tropa usar em cada situação específica de combate.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Considerações Finais Sobre a Tier List</h2>
+        <p>
+          Esta tier list representa um retrato fiel da meta competitiva de Bannerlord em 2026, mas vale lembrar
+          que o jogo é fundamentalmente sandbox — não há vencedor único ou estratégia universalmente correta.
+          Jogadores que preferem desafios maiores podem deliberadamente optar por composições sub-ótimas para
+          tornar a experiência mais interessante, enquanto speedrunners e completistas de campanhas em dificuldade
+          máxima vão naturalmente gravitar para as combinações mais eficientes listadas aqui.
+        </p>
+        <p>
+          Independentemente do seu estilo de jogo, entender por que certas tropas se destacam em papéis específicos
+          ajuda a tomar decisões mais informadas sobre onde investir recursos de recrutamento e treinamento — seja
+          você um conquistador ambicioso construindo um império ou um mercenário satisfeito em vender seus serviços
+          para o maior pagador em cada região de Calradia.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Comparando Bannerlord com Outros Jogos de Estratégia Medieval</h2>
+        <p>
+          No panorama mais amplo de jogos de estratégia e simulação medieval, Bannerlord ocupa posição única ao
+          combinar combate tático em primeira pessoa com elementos de gestão de reino similares a Total War ou
+          Crusader Kings, mas com profundidade de personalização de tropas que nenhum desses concorrentes diretos
+          oferece no mesmo nível de detalhe. Essa combinação de gêneros é parte do motivo pelo qual a comunidade
+          de Bannerlord permanece ativa e engajada anos após o lançamento original, mesmo com o jogo ainda tecnicamente
+          em desenvolvimento contínuo pela TaleWorlds.
+        </p>
+        <p>
+          A expansão War Sails reforçou essa posição diferenciada ao introduzir mecânicas navais que poucos jogos
+          do gênero oferecem com a mesma profundidade tática, criando um nicho competitivo que a TaleWorlds parece
+          determinada a continuar expandindo através de futuras atualizações de conteúdo pago e gratuito.
+        </p>
+
+        <p>
+          Para quem está apenas começando sua jornada em Calradia, a recomendação é dominar primeiro os fundamentos
+          de uma única cultura antes de tentar composições híbridas mais complexas — entender profundamente as
+          forças e fraquezas de uma facção específica acelera consideravelmente a curva de aprendizado necessária
+          para se tornar um comandante eficiente neste jogo de profundidade quase ilimitada.
+        </p>
+</div>
+
+        <EditorialTake category="geek" title="Análise: A Meta de Bannerlord em 2026 Recompensa Versatilidade, Não Especialização">
           <p>
             A tier list de Bannerlord é menos sobre "qual tropa mata mais" e mais sobre <em>qual tropa cobre as
             fraquezas do seu plano</em>. Banner Knight é S-tier, mas inútil contra uma muralha de besteiros. Khan's
             Guard atropela infantaria, mas se autodestrói contra pikemen. O que mudou em 2026 é que a expansão War
             Sails forçou todo mundo a repensar a composição: ignorar os Nords significa entregar o controle do mar
-            — e, com isso, metade dos cercos custeiros de Calradia.
+            — e, com isso, metade dos cercos custeiros de Calradia. <strong>O comandante que vence consistentemente
+            não é o que tem as tropas mais fortes individualmente, mas o que sabe quando trocar de composição</strong>
+            conforme o inimigo e o terreno mudam a cada batalha.
           </p>
         </EditorialTake>
 
@@ -404,6 +530,7 @@ const BannerlordMelhoresTropas = () => {
         />
 
         <RelatedPosts currentSlug="bannerlord-melhores-tropas-tier-list-2026" />
+        <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
 
         <CommentSection
           postId="bannerlord-melhores-tropas-tier-list-2026"

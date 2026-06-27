@@ -92,7 +92,23 @@ const ACBlackFlag = () => {
           <p className="mt-4 text-muted-foreground mb-0">
             👉 <strong>Melhor custo-benefício</strong> da franquia — frequentemente abaixo de R$ 30 em promoções.
           </p>
-        </div>
+        
+        <h2 className="text-2xl font-bold mt-10 mb-4">A Era de Ouro da Pirataria Recriada com Autenticidade</h2>
+        <p>
+          Black Flag se destacou por capturar a atmosfera única da era de ouro da pirataria caribenha do século XVIII com autenticidade histórica notável, apresentando figuras reais como Edward Thatch (Barba Negra) e Charles Vane integradas organicamente à narrativa fictícia de Edward Kenway. Essa mistura de história real com elementos de ficção da franquia Assassin's Creed criou uma das ambientações mais memoráveis e visualmente distintas de toda a série, com o Caribe vibrante servindo de cenário perfeito para a vida pirata.
+        </p>
+        <p>
+          O sistema de combate naval, embora introduzido timidamente em Assassin's Creed III, foi completamente refinado e expandido em Black Flag, tornando-se elemento central da experiência em vez de mecânica secundária. Batalhas navais contra outros navios, abordagens e até mesmo caça a criaturas marinhas como baleias e tubarões adicionaram variedade que poucos jogos de ação-aventura conseguiram replicar com sucesso similar.
+        </p>
+    
+        <p>
+          A figura icônica de Edward Kenway, com sua jornada de pirata ambicioso a Assassino reluctante, continua sendo um dos protagonistas mais carismáticos e memoráveis de toda a franquia, frequentemente citado por fãs como um dos melhores capítulos da série mesmo mais de uma década após o lançamento original em 2013.
+        </p>
+    
+        <p>
+          Sua trajetória continua inspirando discussões apaixonadas entre fãs sobre qual protagonista da franquia realmente merece o título de favorito definitivo.
+        </p>
+    </div>
 
         <AdLeaderboard className="my-8" />
 

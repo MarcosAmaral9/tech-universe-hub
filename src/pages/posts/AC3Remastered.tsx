@@ -137,7 +137,19 @@ const AC3Remastered = () => {
               </ul>
             </div>
           </div>
-        </div>
+        
+        <h2 className="text-2xl font-bold mt-10 mb-4">A Revolução Americana Como Cenário Histórico Ambicioso</h2>
+        <p>
+          Assassin's Creed III ambientou sua narrativa durante a Revolução Americana, com protagonista Connor Kenway (Ratonhnhaké:ton) de herança nativa americana e britânica, oferecendo perspectiva narrativa única sobre eventos históricos fundamentais para a formação dos Estados Unidos. A inclusão de figuras históricas reais como George Washington, Benjamin Franklin e Charles Lee integradas à trama de ficção científica da Animus criou narrativa ambiciosa que, apesar de algumas críticas sobre ritmo nos capítulos iniciais, ofereceu uma das histórias mais ricas historicamente da franquia até aquele momento.
+        </p>
+        <p>
+          A versão remasterizada lançada anos após o original trouxe melhorias visuais significativas e correção de muitos problemas técnicos que afetaram a recepção inicial do jogo em 2012, incluindo otimização de performance e refinamento de controles de navegação em ambientes florestais que representaram desafio técnico considerável para o hardware da época do lançamento original.
+        </p>
+    
+        <p>
+          Para jogadores dispostos a superar o ritmo inicial mais lento, AC III oferece uma das narrativas historicamente mais ricas e emocionalmente complexas de toda a franquia, com Connor sendo reconhecido cada vez mais como protagonista subestimado que merece reavaliação crítica mais favorável décadas após seu lançamento original.
+        </p>
+    </div>
 
         <EditorialTake category="geek" title="Análise do Marcos: AC III é o AC mais injustiçado da franquia">
           <p>
