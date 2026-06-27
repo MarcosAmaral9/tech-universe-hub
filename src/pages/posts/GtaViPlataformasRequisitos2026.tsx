@@ -163,6 +163,41 @@ const GtaViPlataformasRequisitos2026 = () => {
           de RAM rápida (DDR5-6000 ou superior), RTX 5080/5090 ou equivalente AMD, e SSD PCIe 5.0.
         </p>
 
+        <h2 className="text-2xl font-bold mt-10 mb-4">Requisitos esperados (extrapolação técnica)</h2>
+        <div className="not-prose my-6 overflow-x-auto rounded-xl border border-pink-500/20">
+          <table className="w-full text-sm bg-card table-fixed">
+            <thead>
+              <tr className="bg-pink-500/10 text-pink-200">
+                <th className="w-1/5 text-left py-3 px-4 font-bold">Perfil</th>
+                <th className="w-1/5 text-left py-3 px-4 font-bold">CPU</th>
+                <th className="w-1/5 text-left py-3 px-4 font-bold">GPU</th>
+                <th className="w-[15%] text-left py-3 px-4 font-bold">RAM</th>
+                <th className="w-1/4 text-left py-3 px-4 font-bold">Armazenamento</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { p: "Mínimo (1080p / 30 fps médio)", c: "Ryzen 5 5600 ou i5-12400", g: "RTX 3060 / RX 6600 XT", r: "16 GB", s: "SSD NVMe, 150 GB livres" },
+                { p: "Recomendado (1440p / 60 fps alto)", c: "Ryzen 7 7700X ou i7-13700K", g: "RTX 4070 / RX 7800 XT", r: "32 GB", s: "SSD NVMe rápido, 200 GB livres" },
+                { p: "Ultra (4K + RT / 60+ fps)", c: "Ryzen 9 7950X ou Core i9", g: "RTX 5080/5090 ou equiv. AMD", r: "32 GB DDR5-6000+", s: "SSD PCIe 5.0, 200 GB+ livres" },
+              ].map((r, i) => (
+                <tr key={r.p} className={`border-t border-border/60 ${i % 2 ? "bg-muted/20" : ""}`}>
+                  <td className="py-3 px-4 font-semibold break-words">{r.p}</td>
+                  <td className="py-3 px-4 text-xs break-words">{r.c}</td>
+                  <td className="py-3 px-4 text-xs break-words">{r.g}</td>
+                  <td className="py-3 px-4 text-xs text-pink-300 break-words">{r.r}</td>
+                  <td className="py-3 px-4 text-xs text-muted-foreground break-words">{r.s}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="px-4 py-3 text-xs text-muted-foreground border-t border-border/60">
+            Estimativas baseadas em RDR2 e no perfil técnico observado nos trailers de GTA VI. A Rockstar não divulgou
+            requisitos oficiais — versão para PC sequer foi confirmada.
+          </p>
+        </div>
+
+
         <h2 className="text-2xl font-bold mt-10 mb-4">Cross-save e cross-progression entre plataformas</h2>
         <p>
           A Rockstar não confirmou se GTA VI terá cross-save (transferência de save entre PS5 e Xbox) ou
