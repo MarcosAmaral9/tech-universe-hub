@@ -290,15 +290,40 @@ const GtaViNovembro2026 = () => {
           O que era apenas especulação por anos finalmente se transforma em contagem regressiva concreta — e a comunidade global de jogadores está mais unida do que nunca em torno de uma única data: 19 de novembro de 2026.
         </p>
 
-
-
-
-
-
-
-
-
+        <h2 className="text-2xl font-bold mt-10 mb-4">Resumo oficial (dados confirmados)</h2>
+        <div className="not-prose my-6 overflow-x-auto rounded-xl border border-geek/20">
+          <table className="w-full text-sm bg-card table-fixed">
+            <thead>
+              <tr className="bg-geek/10 text-geek">
+                <th className="w-1/3 text-left py-3 px-4 font-bold">Item</th>
+                <th className="w-2/3 text-left py-3 px-4 font-bold">Dado oficial</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { k: "Lançamento", v: "19 de novembro de 2026" },
+                { k: "Pré-download (preload)", v: "12 de novembro de 2026" },
+                { k: "Plataformas no dia 1", v: "PlayStation 5 (inclui Pro) e Xbox Series X|S" },
+                { k: "Versão PC", v: "Não confirmada — janela provável entre out/2027 e abr/2028" },
+                { k: "Preço Standard (EUA)", v: "US$ 79,99 — Rockstar Store, PSN, Xbox" },
+                { k: "Preço Ultimate (EUA)", v: "US$ 99,99" },
+                { k: "Preço Standard (Brasil)", v: "R$ 449,90" },
+                { k: "Preço Ultimate (Brasil)", v: "R$ 549,90" },
+                { k: "Pré-venda aberta em", v: "25 de junho de 2026" },
+                { k: "Protagonistas", v: "Lucia Caminos e Jason Duval" },
+                { k: "Cenário", v: "Estado fictício de Leonida (inspirado na Flórida) — Vice City, Leonida Keys, pântanos, interior" },
+                { k: "GTA Online VI", v: "Confirmado para lançamento simultâneo com a campanha" },
+              ].map((r, i) => (
+                <tr key={r.k} className={`border-t border-border/60 ${i % 2 ? "bg-muted/20" : ""}`}>
+                  <td className="py-3 px-4 font-semibold break-words">{r.k}</td>
+                  <td className="py-3 px-4 text-muted-foreground break-words">{r.v}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
+
 
       <EditorialTake category="geek" title="Análise do Marcos: dois adiamentos, um lançamento que vale a espera">
           <p>Depois de adiamentos sucessivos (de outono de 2025 → 26 de maio de 2026 → 19 de novembro de 2026), a Take-Two confirmou em maio/2026 que a janela de novembro é definitiva. A pré-venda foi oficialmente aberta em 25 de junho de 2026 com preços confirmados pela Rockstar: <strong>US$ 79,99 (Standard)</strong> e <strong>US$ 99,99 (Ultimate)</strong> nos EUA, e <strong>R$ 449,90 (Standard)</strong> e <strong>R$ 549,90 (Ultimate)</strong> no Brasil — valores divulgados na Rockstar Store e replicados nas lojas PlayStation e Xbox. Para quem espera o jogo desde 2013, o pedágio é alto, mas coerente com o reposicionamento de preço da geração: é o mesmo patamar de NBA 2K e dos AAAs first-party da Sony.</p>
