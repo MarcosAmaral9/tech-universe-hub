@@ -175,17 +175,27 @@ const GtaViTrailersMarketing2026 = () => {
         </p>
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Linha do tempo completa</h2>
-        <div className="not-prose my-6 space-y-3">
-          {timeline.map((t) => (
-            <div key={t.data + t.evento} className="bg-card rounded-xl border border-pink-500/20 p-4">
-              <div className="flex items-baseline gap-3 mb-1">
-                <span className="text-xs font-bold text-pink-400 uppercase tracking-wider shrink-0">{t.data}</span>
-                <h3 className="font-bold text-sm">{t.evento}</h3>
-              </div>
-              <p className="text-xs text-muted-foreground">{t.desc}</p>
-            </div>
-          ))}
+        <div className="not-prose my-6 overflow-x-auto rounded-xl border border-pink-500/20">
+          <table className="w-full text-sm bg-card table-fixed">
+            <thead>
+              <tr className="bg-pink-500/10 text-pink-200">
+                <th className="w-[18%] text-left py-3 px-4 font-bold">Data</th>
+                <th className="w-[27%] text-left py-3 px-4 font-bold">Evento</th>
+                <th className="w-[55%] text-left py-3 px-4 font-bold">Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+              {timeline.map((t, i) => (
+                <tr key={t.data + t.evento} className={`border-t border-border/60 ${i % 2 ? "bg-muted/20" : ""}`}>
+                  <td className="py-3 px-4 text-xs font-bold text-pink-400 uppercase tracking-wider break-words">{t.data}</td>
+                  <td className="py-3 px-4 font-semibold text-sm break-words">{t.evento}</td>
+                  <td className="py-3 px-4 text-xs text-muted-foreground break-words">{t.desc}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
+
 
         <h2 className="text-2xl font-bold mt-10 mb-4">A estratégia de escassez como diferencial</h2>
         <p>
