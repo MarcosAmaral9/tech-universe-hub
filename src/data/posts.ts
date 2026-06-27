@@ -1252,7 +1252,7 @@ export const blogPosts: BlogPost[] = [
     image: crimsonDesertPatchesImg,
     author: "VICIO<CODE>",
     date: "2026-04-04",
-    readTime: "10 min",
+    readTime: "8 min",
     faq: [
       { q: "Quantos patches Crimson Desert recebeu no lançamento?", a: "Em menos de 2 semanas, Crimson Desert recebeu: Patch 1.00.02 (Day One, 19/03), Patch 1.00.03 (23-25/03), Patch 1.01.00 (28/03) e hotfixes 1.01.01 a 1.01.03 (29-31/03). Um ritmo de atualização incomum para um jogo desse porte." },
       { q: "Quais foram as principais melhorias dos patches?", a: "Os patches corrigiram os controles de sprint e voo (Crow Wings), adicionaram 5 novas montarias (White Bear, Silver Fang, Snowwhite Deer, Rock Tusk Warthog, Icicle Edge Alpine Ibex), introduziram Refinement Coins, expandiram os pontos de fast travel e reduziram os tempos de carregamento." },
@@ -1271,7 +1271,7 @@ export const blogPosts: BlogPost[] = [
     image: crimsonDesertVendasReviewImg,
     author: "VICIO<CODE>",
     date: "2026-04-04",
-    readTime: "13 min",
+    readTime: "8 min",
     faq: [
       { q: "Qual a nota de Crimson Desert no Metacritic?", a: "Crimson Desert tem Metacritic 78 (baseado em 93 críticas) e OpenCritic 80. No Steam, a avaliação é Very Positive com 85% de aprovação em mais de 38.870 análises de usuários — melhor que a recepção da crítica especializada." },
       { q: "Quantas cópias Crimson Desert vendeu?", a: "O jogo vendeu 2 milhões de cópias nas primeiras 24 horas e atingiu 3 milhões na primeira semana — tornando-se um dos maiores lançamentos de 2026, apesar das notas mistas da crítica." },
@@ -1615,7 +1615,7 @@ export const blogPosts: BlogPost[] = [
     image: ac3Img,
     author: "VICIO<CODE>",
     date: "2026-01-23",
-    readTime: "18 min",
+    readTime: "8 min",
     faq: [
       { q: "AC 3 Remastered vale a pena em 2026?", a: "Sim. Os gráficos melhorados e a história de Connor durante a Revolução Americana são envolventes. Inclui AC Liberation e todos os DLCs." },
       { q: "Quem é Connor em AC 3?", a: "Ratonhnhaké:ton (Connor) é um Assassino meio-nativo americano, meio-inglês que luta durante a Guerra de Independência dos EUA entre 1753 e 1783." },
@@ -1709,7 +1709,7 @@ export const blogPosts: BlogPost[] = [
     image: acOriginsImg,
     author: "VICIO<CODE>",
     date: "2026-01-28",
-    readTime: "18 min",
+    readTime: "8 min",
     faq: [
       { q: "AC Origins revolucionou a franquia?", a: "Sim. Origins redesenhou completamente o combate, introduziu sistema de níveis RPG, loot e um mundo aberto imenso no Egito Antigo, redefinindo a fórmula da série." },
       { q: "Quem é Bayek de Siwa?", a: "Bayek é um Medjay (protetor) egípcio e o fundador da Irmandade dos Assassinos. Sua história de vingança se passa no Egito de Ptolomeu XIII e Cleópatra." },
@@ -1767,7 +1767,7 @@ export const blogPosts: BlogPost[] = [
     image: acBlackFlagImg,
     author: "VICIO<CODE>",
     date: "2026-01-31",
-    readTime: "18 min",
+    readTime: "8 min",
     faq: [
       { q: "AC Black Flag é o melhor jogo de piratas?", a: "Para muitos jogadores e críticos, sim. A exploração naval, a história de Edward Kenway e o Caribe aberto fazem dele um dos melhores jogos de piratas já feitos." },
       { q: "AC Black Flag tem batalhas navais?", a: "Sim. O sistema naval é um dos pilares do jogo. Você comanda o Jackdaw em batalhas contra navios mercantes, fragatas e fortes, podendo abordá-los e saquear cargas." },
@@ -1845,7 +1845,7 @@ export const blogPosts: BlogPost[] = [
     image: acOdysseyImg,
     author: "VICIO<CODE>",
     date: "2026-02-04",
-    readTime: "18 min",
+    readTime: "8 min",
     faq: [
       { q: "AC Odyssey é o maior mapa da franquia?", a: "É um dos maiores. A Grécia Antiga de Odyssey inclui dezenas de ilhas, cidades e regiões exploráveis, com mais de 100 horas de conteúdo entre história principal e secundária." },
       { q: "Posso jogar como Kassandra ou Alexios?", a: "Sim. Você escolhe entre os dois irmãos no início. A Ubisoft confirmou que Kassandra é a protagonista canônica da história." },
@@ -1906,7 +1906,7 @@ export const blogPosts: BlogPost[] = [
     image: vikingsRagnarImg,
     author: "VICIO<CODE>",
     date: "2026-02-07",
-    readTime: "18 min",
+    readTime: "8 min",
     faq: [
       { q: "A série Vikings é historicamente precisa?", a: "Parcialmente. A série mistura fatos históricos com ficção. Ragnar Lothbrok é uma figura semi-lendária, mas eventos como o ataque a Lindisfarne (793) e a Grande Armada Viking são reais." },
       { q: "Vikings vale a pena assistir em 2026?", a: "Sim. As 6 temporadas contam uma saga épica de expansão nórdica. A série é elogiada por batalhas, personagens complexos e uma representação fascinante da cultura viking." },
@@ -1942,7 +1942,7 @@ export const blogPosts: BlogPost[] = [
     image: acShadowsImg,
     author: "VICIO<CODE>",
     date: "2026-02-09",
-    readTime: "18 min",
+    readTime: "8 min",
     faq: [
       { q: "AC Shadows se passa no Japão?", a: "Sim. É o primeiro AC ambientado no Japão Feudal do século XVI, com dois protagonistas jogáveis: Naoe (shinobi) e Yasuke (samurai histórico)." },
       { q: "Quem é Yasuke em AC Shadows?", a: "Yasuke foi um samurai real de origem africana que serviu Oda Nobunaga no Japão do século XVI. É uma figura histórica documentada que se tornou um dos protagonistas de Shadows." },
@@ -2630,7 +2630,7 @@ export const blogPosts: BlogPost[] = [
     image: crimsonDesertGuiaImg,
     author: "VICIO<CODE>",
     date: "2026-03-16",
-    readTime: "12 min",
+    readTime: "8 min",
     faq: [
       { q: "Crimson Desert é do mesmo estúdio de Black Desert?", a: "Sim. Pearl Abyss desenvolve ambos. Crimson Desert usa a nova BlackSpace Engine e é focado em narrativa single-player com história linear, diferente do MMO Black Desert Online." },
       { q: "Crimson Desert é MMO?", a: "Não. Crimson Desert é um RPG de ação single-player com mundo aberto. Originalmente planejado como MMO, foi redesenhado para focar em uma história cinematográfica de ~40 horas." },
@@ -2648,7 +2648,7 @@ export const blogPosts: BlogPost[] = [
     image: crimsonDesertCombateImg,
     author: "VICIO<CODE>",
     date: "2026-03-16",
-    readTime: "9 min",
+    readTime: "8 min",
     faq: [
       { q: "O que é a BlackSpace Engine?", a: "É o motor gráfico proprietário da Pearl Abyss, evolução do motor de Black Desert. Oferece renderização de cenários massivos, física avançada e animações de combate cinematográficas." },
       { q: "O combate de Crimson Desert é difícil?", a: "O combate é desafiador e recompensador, similar a jogos como Devil May Cry e Dark Souls. Chefes têm padrões únicos e exigem aprendizado. Há opções de dificuldade para diferentes perfis." },
@@ -2689,7 +2689,7 @@ export const blogPosts: BlogPost[] = [
     image: crimsonDesertReviewImg,
     author: "VICIO<CODE>",
     date: "2026-03-17",
-    readTime: "15 min",
+    readTime: "8 min",
     faq: [
       { q: "Qual a nota de Crimson Desert?", a: "O jogo recebeu Metacritic 78 (baseado em 93 críticas) e OpenCritic 80. No Steam, tem status Very Positive com 85% de aprovação em mais de 38.870 análises de usuários." },
       { q: "Crimson Desert vale a pena comprar?", a: "Sim para fãs de RPGs de ação com mundo aberto. O combate é excelente, o mundo é lindo e há muito conteúdo. Mas se você prioriza narrativa, pode se decepcionar com a história." },
@@ -2707,7 +2707,7 @@ export const blogPosts: BlogPost[] = [
     image: crimsonDesertBuildsImg,
     author: "VICIO<CODE>",
     date: "2026-03-17",
-    readTime: "14 min",
+    readTime: "8 min",
     faq: [
       { q: "Crimson Desert tem classes?", a: "Não há classes tradicionais. Kliff pode usar diferentes estilos de combate (agressivo, defensivo, híbrido) que funcionam como 'builds' personalizáveis ao longo do jogo." },
       { q: "Qual o melhor estilo de jogo em Crimson Desert?", a: "O estilo agressivo é mais divertido e rápido. Defensivo é mais seguro contra chefes. Híbrido oferece versatilidade. A maioria dos jogadores recomenda começar com agressivo e adaptar conforme o desafio." },
@@ -2727,7 +2727,7 @@ export const blogPosts: BlogPost[] = [
     image: bannerlordGuiaImg,
     author: "VICIO<CODE>",
     date: "2026-06-03",
-    readTime: "14 min",
+    readTime: "8 min",
     faq: [
       { q: "Quando Mount & Blade II: Bannerlord foi lançado?", a: "Entrou em Early Access em 30 de março de 2020 e teve a versão 1.0 lançada em 25 de outubro de 2022 para PC (Steam, Epic, GOG), Xbox One, Xbox Series X|S, PS4 e PS5, sempre desenvolvido e publicado pela TaleWorlds Entertainment." },
       { q: "Quanto custa Bannerlord?", a: "O preço base no Steam é US$ 49,99, em torno de R$ 99,90 na Steam Brasil, com variação por câmbio e promoções. A versão Digital Deluxe custa um pouco mais e inclui cosméticos e a trilha sonora. O preço da expansão War Sails ainda não foi divulgado oficialmente pela TaleWorlds." },
@@ -2748,7 +2748,7 @@ export const blogPosts: BlogPost[] = [
     image: bannerlordCulturasImg,
     author: "VICIO<CODE>",
     date: "2026-06-08",
-    readTime: "12 min",
+    readTime: "8 min",
     faq: [
       { q: "Quantas culturas existem em Mount & Blade II: Bannerlord?", a: "São 9 culturas: 8 originais do jogo base — Vlandia (normandos), Battania (celtas), Sturgia (vikings/Rus), Aserai (árabes), Khuzait (mongóis) e os três fragmentos do Império de Calradia (Norte, Sul e Oeste, inspirados em Bizâncio) — mais os Nords (nórdicos do litoral), adicionados oficialmente pela expansão paga War Sails." },
       { q: "Qual a melhor cultura para começar em Bannerlord?", a: "Para iniciantes, Vlandia é a mais perdoadora graças à cavalaria pesada (Vlandian Banner Knights) que vence batalhas mesmo com táticas básicas. Império é a escolha mais equilibrada e Khuzait é recomendada para jogadores avançados que dominam horse archers. Os Nords (War Sails) são a melhor escolha para quem quer focar em combate naval e infantaria pesada." },
@@ -2790,7 +2790,7 @@ export const blogPosts: BlogPost[] = [
     image: bannerlordMelhoresTropasImg,
     author: "VICIO<CODE>",
     date: "2026-06-11",
-    readTime: "13 min",
+    readTime: "8 min",
     faq: [
       { q: "Qual a melhor tropa de Bannerlord em 2026?", a: "O consenso da comunidade aponta Khuzait Khan's Guard como a tropa mais quebrada do jogo em campo aberto. Mas o ranking varia por papel: Banner Knight (cavalaria), Fian Champion (arqueiro), Nord Huscarl (infantaria pesada) e Imperial Cataphract (versatilidade) dividem o topo." },
       { q: "Os Nords são meta na expansão War Sails?", a: "Sim. O Nord Huscarl é S-tier em infantaria pesada e em combate naval, e o Sea Jarl é o único capitão com bônus de moral para tripulação de navio. A grande fraqueza dos Nords é a cavalaria, que precisa ser suprida com mercenários Vlandian ou Imperiais." },
@@ -3090,7 +3090,7 @@ export const blogPosts: BlogPost[] = [
     image: dragonAgeImg,
     author: "VICIO<CODE>",
     date: "2026-03-17",
-    readTime: "13 min",
+    readTime: "8 min",
     faq: [
       { q: "Dragon Age Veilguard vale a pena?", a: "Para fãs da série, sim. A história conclui arcos importantes e o combate é fluido. Para novatos, o jogo é acessível mas pode não ter o mesmo impacto emocional sem contexto das 3 entradas anteriores." },
       { q: "Preciso jogar os Dragon Ages anteriores?", a: "Recomendado mas não obrigatório. Veilguard tem resumos da história. Porém, personagens como Solas, Varric e Harding têm muito mais impacto se você jogou Inquisition." },
@@ -3299,7 +3299,7 @@ export const blogPosts: BlogPost[] = [
     image: ac1AltairImg,
     author: "VICIO<CODE>",
     date: "2026-03-21",
-    readTime: "18 min",
+    readTime: "8 min",
     faq: [
       { q: "AC 1 vale a pena jogar em 2026?", a: "Historicamente importante, mas o gameplay é repetitivo pelos padrões atuais. Vale para fãs que querem entender as origens de Altaïr, o Credo e a rivalidade Assassinos vs Templários." },
       { q: "Quem é Altaïr?", a: "Altaïr Ibn-La'Ahad é um Assassino sírio-árabe que atua durante a Terceira Cruzada em 1191. Ele redescobre o Credo após uma missão fracassada e se torna o maior Mentor da Irmandade." },
@@ -3317,7 +3317,7 @@ export const blogPosts: BlogPost[] = [
     image: ac2EzioImg,
     author: "VICIO<CODE>",
     date: "2026-03-21",
-    readTime: "20 min",
+    readTime: "8 min",
     faq: [
       { q: "AC 2 é considerado o melhor da franquia?", a: "Por muitos fãs e críticos, sim. A história de Ezio, a Itália Renascentista, o salto de qualidade em relação ao AC 1 e a parceria com Leonardo da Vinci fazem dele um dos jogos mais memoráveis." },
       { q: "Quem é Ezio Auditore?", a: "Ezio Auditore da Firenze é um nobre florentino que se torna Assassino após a execução de sua família pelos Templários. Protagoniza AC 2, Brotherhood e Revelations (1459-1524)." },
@@ -3335,7 +3335,7 @@ export const blogPosts: BlogPost[] = [
     image: acBrotherImg,
     author: "VICIO<CODE>",
     date: "2026-03-21",
-    readTime: "17 min",
+    readTime: "8 min",
     faq: [
       { q: "AC Brotherhood vale a pena em 2026?", a: "Sim. Brotherhood refinou tudo de AC 2, adicionou o sistema de recrutamento de Assassinos e um multiplayer inovador. Roma é um dos melhores mapas da franquia." },
       { q: "O que é o sistema de Assassinos em Brotherhood?", a: "Você recruta cidadãos de Roma como Assassinos aprendizes, treina-os em missões e pode convocá-los em combate. É um dos sistemas mais queridos da franquia e influenciou jogos posteriores." },
@@ -3353,7 +3353,7 @@ export const blogPosts: BlogPost[] = [
     image: acRevImg,
     author: "VICIO<CODE>",
     date: "2026-03-21",
-    readTime: "16 min",
+    readTime: "8 min",
     faq: [
       { q: "AC Revelations encerra a história de Ezio?", a: "Sim. Revelations é o último jogo com Ezio como protagonista. A história se passa em Constantinopla (1511) e conecta as histórias de Ezio, Altaïr e Desmond Miles." },
       { q: "Altaïr aparece em AC Revelations?", a: "Sim. Através dos Selos de Masyaf, Ezio revive memórias de Altaïr em diferentes fases da vida, revelando o que aconteceu após AC 1 e o destino final do lendário Assassino." },
