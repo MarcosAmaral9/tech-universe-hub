@@ -24,10 +24,11 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
+import LightboxImage from "@/components/LightboxImage";
 import SkeletonImage from "@/components/SkeletonImage";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import bannerlordGuiaImg from "@/assets/bannerlord-guia.webp";
-
+import bannerlordWarSailsMap from "@/assets/bannerlord-war-sails-map.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
 
 const BannerlordGuiaCompleto = () => {
@@ -419,8 +420,64 @@ const BannerlordGuiaCompleto = () => {
           extra de gestão para reinos com saída para o mar — atendendo a um pedido histórico da comunidade.
         </p>
 
+        <div className="not-prose my-10 p-6 md:p-8 rounded-2xl bg-gradient-to-br from-blue-950/40 via-slate-900/30 to-background border border-blue-500/30 shadow-xl">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/40 text-blue-300 text-[11px] font-bold uppercase tracking-wider">
+              <Ship className="h-3.5 w-3.5" /> Mapa Oficial · War Sails
+            </span>
+          </div>
+          <LightboxImage
+            src={bannerlordWarSailsMap}
+            alt="Mapa oficial da expansão War Sails de Mount & Blade II: Bannerlord, mostrando a costa de Calradia com cidades portuárias, ilhas e estandartes coloridos de cada cultura envolvida no combate naval"
+            caption="Clique para ampliar · Inspecione cidades portuárias, ilhas e estandartes"
+            width={1991}
+            height={1821}
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 900px"
+          />
+          <p className="text-xs text-muted-foreground mt-4 italic leading-relaxed">
+            Mapa oficial divulgado pela TaleWorlds — costa de Calradia com cidades portuárias, ilhas e estandartes das
+            culturas envolvidas no combate naval da expansão <strong className="text-blue-300">War Sails</strong>.
+          </p>
 
-        <EditorialTake category="geek">
+          <h2 className="text-2xl font-bold mt-10 mb-4">A Jornada de Acesso Antecipado Mais Longa da História dos Games</h2>
+          <p>
+            Mount & Blade II: Bannerlord passou impressionantes 4 anos em acesso antecipado na Steam, de março de 2020 até outubro de 2024, quando finalmente recebeu seu lançamento 1.0 completo. Esse período excepcionalmente longo de desenvolvimento público gerou tanto frustração quanto fidelidade intensa por parte da comunidade, que acompanhou de perto cada atualização incremental enquanto a TaleWorlds refinava sistemas complexos de simulação econômica, diplomacia entre clãs e combate tático em tempo real.
+          </p>
+          <p>
+            Diferente de muitos jogos em acesso antecipado que lançam versão inicial limitada e expandem gradualmente, Bannerlord já oferecia experiência substancial mesmo nos primeiros meses de 2020 — decisão que permitiu à TaleWorlds construir base de jogadores dedicada desde o início, mesmo com sistemas ainda sendo ativamente balanceados e expandidos ao longo de quatro anos completos de desenvolvimento público transparente.
+          </p>
+
+          <h2 className="text-2xl font-bold mt-10 mb-4">Por Que Bannerlord Continua Relevante em 2026</h2>
+          <p>
+            Mesmo anos após seu lançamento completo, Bannerlord mantém base de jogadores ativa e engajada graças à expansão War Sails, que introduziu mecânicas navais completamente novas, e ao suporte contínuo da TaleWorlds através de patches de balanceamento regulares. A profundidade de simulação que o jogo oferece — desde economia de mercado realista até sistemas de lealdade de clãs e diplomacia complexa — continua sem equivalente direto no mercado atual de jogos de estratégia medieval.
+          </p>
+          <p>
+            A comunidade de modding também desempenha papel crucial na longevidade do título: mods populares como Bannerlord Online (recriando experiência multiplayer massiva) e Realistic Battle Mod (ajustando física e dano de combate) demonstram como jogadores continuam encontrando novas formas de experimentar o sandbox medieval da TaleWorlds, muito além do que o conteúdo base oficial originalmente oferecia no lançamento.
+          </p>
+        
+        <h2 className="text-2xl font-bold mt-10 mb-4">Comparando as Versões de Console e PC</h2>
+        <p>
+          Bannerlord chegou aos consoles PS5 e Xbox Series X|S em 2024, trazendo a experiência completa de simulação medieval para jogadores que preferem jogar fora do PC. A adaptação de controles para combate tático em terceira pessoa e gestão de menus complexos representou desafio de design de interface considerável, mas a TaleWorlds conseguiu manter a profundidade da experiência original sem comprometer significativamente a jogabilidade em controle, embora alguns aspectos de gestão econômica e diplomacia ainda sejam considerados mais intuitivos com mouse e teclado pela maioria da comunidade.
+        </p>
+    
+        <p>
+          Independentemente da plataforma escolhida, a profundidade estratégica e a liberdade criativa que Bannerlord oferece continuam sendo seus maiores trunfos, garantindo centenas de horas de gameplay variado para quem se dispõe a investir tempo dominando seus sistemas complexos.
+        </p>
+    
+        <h2 className="text-2xl font-bold mt-10 mb-4">Recursos para Novos Jogadores em 2026</h2>
+        <p>
+          Para quem está iniciando agora, a comunidade de Bannerlord oferece recursos extensivos de aprendizado através de wikis dedicadas, vídeos tutoriais no YouTube e guias detalhados em fóruns especializados. A curva de aprendizado do jogo, embora desafiadora nas primeiras horas, se torna gradualmente mais gerenciável conforme o jogador compreende a interconexão entre sistemas de combate, economia e diplomacia que tornam Bannerlord uma experiência tão rica e variada.
+        </p>
+        <p>
+          Vale a recomendação de começar com tutoriais oficiais do próprio jogo antes de mergulhar em conteúdo de modding ou estratégias avançadas compartilhadas pela comunidade — entender primeiro os fundamentos base ajuda significativamente na apreciação posterior de nuances mais complexas do sistema de Calradia.
+        </p>
+    
+        <p>
+          Com paciência e disposição para aprender, qualquer jogador pode eventualmente dominar os sistemas complexos que tornam Bannerlord uma das experiências mais recompensadoras do gênero de estratégia medieval disponível atualmente.
+        </p>
+    </div>
+
+        <EditorialTake category="geek" title="Análise: Bannerlord é o Sandbox Medieval que Ninguém Mais Tem Coragem de Fazer">
           <p>
             Bannerlord é o jogo de medieval mais completo da década, com a estranha qualidade de ser ao mesmo tempo um
             RPG, um simulador econômico e um <em>grand strategy</em> de bolso. Não é um jogo polido como um Total War —

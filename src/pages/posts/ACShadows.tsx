@@ -93,7 +93,15 @@ const ACShadows = () => {
           <p className="mt-4 text-muted-foreground mb-0">
             👉 <strong>O AC mais tecnologicamente avançado</strong> — exige hardware sério, mas entrega gráficos de geração atual.
           </p>
-        </div>
+        
+        <h2 className="text-2xl font-bold mt-10 mb-4">O Japão Feudal Como Ambientação Mais Aguardada da Franquia</h2>
+        <p>
+          Assassin's Creed Shadows representa há muito tempo o pedido mais frequente da comunidade de fãs: ambientação no Japão feudal durante o período Sengoku, com elementos de samurais e ninjas que combinam perfeitamente com a temática central de assassinos secretos que define toda a franquia desde sua origem em 2007. A escolha de dois protagonistas jogáveis, Naoe (ninja) e Yasuke (samurai histórico real de origem africana), oferece perspectivas duais sobre essa era histórica fascinante do Japão.
+        </p>
+        <p>
+          A recriação visual de castelos japoneses, templos xintoístas e paisagens rurais durante diferentes estações climáticas demonstra evolução técnica impressionante da Ubisoft em capturar atmosfera e detalhe arquitetônico de culturas não-ocidentais, expandindo significativamente o alcance geográfico e cultural que a franquia havia explorado em entradas anteriores focadas predominantemente em civilizações europeias e mediterrâneas.
+        </p>
+    </div>
 
         <AdLeaderboard className="my-8" />
 

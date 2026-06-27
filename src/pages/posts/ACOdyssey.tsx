@@ -90,7 +90,20 @@ const ACOdyssey = () => {
           <p className="mt-4 text-muted-foreground mb-0">
             👉 <strong>Excelente custo-benefício</strong> para quem quer centenas de horas de conteúdo premium.
           </p>
-        </div>
+        
+        <h2 className="text-2xl font-bold mt-10 mb-4">A Grécia Antiga Recriada em Escala Épica</h2>
+        <p>
+          Assassin's Creed Odyssey transportou jogadores para a Grécia Antiga durante a Guerra do Peloponeso, oferecendo uma das recriações históricas mais ambiciosas já produzidas pela Ubisoft. Com mapa significativamente maior que qualquer entrada anterior da franquia, o jogo permite explorar desde Atenas e Esparta até ilhas remotas do Mar Egeu, cada uma com identidade visual e cultural distinta que recompensa exploração extensiva além da narrativa principal focada em Kassandra ou Alexios.
+        </p>
+        <p>
+          A introdução de sistema de diálogo com múltiplas escolhas e consequências narrativas representou evolução significativa sobre jogos anteriores da série, aproximando Odyssey mais de um RPG completo do que dos títulos de ação-aventura mais lineares que definiram a franquia em seus primeiros anos, mudança que dividiu opiniões entre fãs tradicionais e novos jogadores atraídos pela maior agência narrativa oferecida.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">O Sistema de Combate Mais Robusto da Série</h2>
+        <p>
+          Construindo sobre as bases estabelecidas em Origins, Odyssey expandiu significativamente o sistema de habilidades e combate, introduzindo árvore de habilidades mais profunda com opções de build que vão desde abordagens furtivas tradicionais até combate direto com habilidades quase sobrenaturais inspiradas na mitologia grega. Essa flexibilidade permite que jogadores personalizem completamente seu estilo de jogo, desde assassino silencioso até guerreiro espartano implacável em combate direto.
+        </p>
+    </div>
 
         <AdLeaderboard className="my-8" />
 
