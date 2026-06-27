@@ -163,7 +163,7 @@ const GtaViPlataformasRequisitos2026 = () => {
           de RAM rápida (DDR5-6000 ou superior), RTX 5080/5090 ou equivalente AMD, e SSD PCIe 5.0.
         </p>
 
-        <h2 className="text-2xl font-bold mt-10 mb-4">Requisitos esperados (extrapolação técnica)</h2>
+        <h2 className="text-2xl font-bold mt-6 mb-4">Tabela-resumo de hardware estimado</h2>
         <div className="not-prose my-6 overflow-x-auto rounded-xl border border-pink-500/20">
           <table className="w-full text-sm bg-card table-fixed">
             <thead>
