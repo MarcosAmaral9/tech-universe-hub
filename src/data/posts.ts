@@ -3072,7 +3072,7 @@ export const blogPosts: BlogPost[] = [
     image: bg3Img,
     author: "VICIO<CODE>",
     date: "2026-03-17",
-    readTime: "14 min",
+    readTime: "8 min",
     faq: [
       { q: "Baldur's Gate 3 ainda vale a pena em 2026?", a: "Absolutamente. Com Metacritic 96, mais de 20 milhões de cópias vendidas e atualizações gratuitas da Larian, BG3 continua sendo referência em RPGs. O mod support ampliou muito a longevidade." },
       { q: "Baldur's Gate 3 é difícil?", a: "Tem curva de aprendizado por ser baseado em D&D 5e, mas oferece múltiplos níveis de dificuldade. O modo Explorer é acessível para novatos. Tactician e Honour Mode são para veteranos." },
