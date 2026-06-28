@@ -52,7 +52,7 @@ const AbsoluteBatmanGame2026 = () => {
           Ficha Técnica
         </h2>
         <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <tbody>
               {[
                 ["Desenvolvedor", "Traveller's Tales (TT Games)"],
@@ -65,8 +65,8 @@ const AbsoluteBatmanGame2026 = () => {
                 ["Classificação Indicativa", "Teens (13+)"],
               ].map(([k, v]) => (
                 <tr key={k} className="border-t border-border">
-                  <td className="py-3 px-4 font-bold text-geek w-1/3">{k}</td>
-                  <td className="py-3 px-4 text-muted-foreground">{v}</td>
+                  <td className="py-3 px-4 font-bold text-geek w-1/3 break-words">{k}</td>
+                  <td className="py-3 px-4 text-muted-foreground break-words">{v}</td>
                 </tr>
               ))}
             </tbody>

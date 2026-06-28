@@ -52,11 +52,11 @@ const NintendoSwitch2Guia2026 = () => {
           Ficha Técnica: Switch 2 vs. Switch Original
         </h2>
         <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead><tr className="bg-secondary">
-              <th className="text-left py-3 px-4">Especificação</th>
-              <th className="text-left py-3 px-4">Switch 2</th>
-              <th className="text-left py-3 px-4">Switch Original</th>
+              <th className="text-left py-3 px-4 break-words">Especificação</th>
+              <th className="text-left py-3 px-4 break-words">Switch 2</th>
+              <th className="text-left py-3 px-4 break-words">Switch Original</th>
             </tr></thead>
             <tbody>
               {[
@@ -72,9 +72,9 @@ const NintendoSwitch2Guia2026 = () => {
                 ["Preço (lançamento)", "US$ 449 / R$ 2.499", "US$ 299 / R$ 1.299 (2017)"],
               ].map(([spec, sw2, sw1]) => (
                 <tr key={spec} className="border-t border-border">
-                  <td className="py-3 px-4 font-medium">{spec}</td>
-                  <td className="py-3 px-4 text-geek font-bold">{sw2}</td>
-                  <td className="py-3 px-4 text-muted-foreground">{sw1}</td>
+                  <td className="py-3 px-4 font-medium break-words">{spec}</td>
+                  <td className="py-3 px-4 text-geek font-bold break-words">{sw2}</td>
+                  <td className="py-3 px-4 text-muted-foreground break-words">{sw1}</td>
                 </tr>
               ))}
             </tbody>
@@ -109,12 +109,12 @@ const NintendoSwitch2Guia2026 = () => {
           Jogos de Lançamento e Biblioteca 2026
         </h2>
         <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead><tr className="bg-secondary">
-              <th className="text-left py-3 px-4">Jogo</th>
-              <th className="text-left py-3 px-4">Gênero</th>
-              <th className="text-left py-3 px-4">Nota Média</th>
-              <th className="text-left py-3 px-4">Preço (BR)</th>
+              <th className="text-left py-3 px-4 break-words">Jogo</th>
+              <th className="text-left py-3 px-4 break-words">Gênero</th>
+              <th className="text-left py-3 px-4 break-words">Nota Média</th>
+              <th className="text-left py-3 px-4 break-words">Preço (BR)</th>
             </tr></thead>
             <tbody>
               {[
@@ -128,10 +128,10 @@ const NintendoSwitch2Guia2026 = () => {
                 ["Elden Ring (port Switch 2)", "Souls-like", "97/100 ⭐", "R$ 249,90"],
               ].map(([jogo, genero, nota, preco]) => (
                 <tr key={jogo} className="border-t border-border">
-                  <td className="py-3 px-4 font-bold text-geek">{jogo}</td>
-                  <td className="py-3 px-4">{genero}</td>
-                  <td className="py-3 px-4 text-xs">{nota}</td>
-                  <td className="py-3 px-4 text-muted-foreground">{preco}</td>
+                  <td className="py-3 px-4 font-bold text-geek break-words">{jogo}</td>
+                  <td className="py-3 px-4 break-words">{genero}</td>
+                  <td className="py-3 px-4 text-xs break-words">{nota}</td>
+                  <td className="py-3 px-4 text-muted-foreground break-words">{preco}</td>
                 </tr>
               ))}
             </tbody>

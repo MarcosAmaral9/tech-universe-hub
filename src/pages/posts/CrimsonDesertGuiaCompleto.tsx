@@ -187,12 +187,12 @@ const CrimsonDesertGuiaCompleto = () => {
           <CheckCircle className="h-7 w-7 text-green-400" />Edições Disponíveis e Preços
         </h2>
         <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead>
               <tr className="bg-secondary">
-                <th className="text-left py-3 px-4">Edição</th>
-                <th className="text-left py-3 px-4">Preço (USD)</th>
-                <th className="text-left py-3 px-4">Conteúdo</th>
+                <th className="text-left py-3 px-4 break-words">Edição</th>
+                <th className="text-left py-3 px-4 break-words">Preço (USD)</th>
+                <th className="text-left py-3 px-4 break-words">Conteúdo</th>
               </tr>
             </thead>
             <tbody>
@@ -201,9 +201,9 @@ const CrimsonDesertGuiaCompleto = () => {
                 ["Deluxe Edition",                  "$79.99", "Jogo base + Deluxe Pack (mesmos itens acima)"],
               ].map(([e, p, c]) => (
                 <tr key={e} className="border-t border-border">
-                  <td className="py-3 px-4 font-medium">{e}</td>
-                  <td className="py-3 px-4 text-red-400 font-bold">{p}</td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">{c}</td>
+                  <td className="py-3 px-4 font-medium break-words">{e}</td>
+                  <td className="py-3 px-4 text-red-400 font-bold break-words">{p}</td>
+                  <td className="py-3 px-4 text-muted-foreground text-xs break-words">{c}</td>
                 </tr>
               ))}
             </tbody>
@@ -241,13 +241,13 @@ const CrimsonDesertGuiaCompleto = () => {
           <Monitor className="h-7 w-7 text-red-400" />Requisitos de PC
         </h2>
         <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead>
               <tr className="bg-secondary">
-                <th className="text-left py-3 px-4">Tier</th>
-                <th className="text-left py-3 px-4">GPU</th>
-                <th className="text-left py-3 px-4">CPU</th>
-                <th className="text-left py-3 px-4">Meta</th>
+                <th className="text-left py-3 px-4 break-words">Tier</th>
+                <th className="text-left py-3 px-4 break-words">GPU</th>
+                <th className="text-left py-3 px-4 break-words">CPU</th>
+                <th className="text-left py-3 px-4 break-words">Meta</th>
               </tr>
             </thead>
             <tbody>
@@ -258,10 +258,10 @@ const CrimsonDesertGuiaCompleto = () => {
                 ["Ultra",       "RTX 5070 Ti / RX 9070 XT", "i7-13700K / Ryzen 7 7700", "4K 60fps"],
               ].map(([t, g, c, m]) => (
                 <tr key={t} className="border-t border-border">
-                  <td className="py-3 px-4 font-medium">{t}</td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">{g}</td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">{c}</td>
-                  <td className="py-3 px-4 text-primary text-xs">{m}</td>
+                  <td className="py-3 px-4 font-medium break-words">{t}</td>
+                  <td className="py-3 px-4 text-muted-foreground text-xs break-words">{g}</td>
+                  <td className="py-3 px-4 text-muted-foreground text-xs break-words">{c}</td>
+                  <td className="py-3 px-4 text-primary text-xs break-words">{m}</td>
                 </tr>
               ))}
             </tbody>

@@ -137,12 +137,12 @@ const GTAVI2026 = () => {
           Edições, Preços e Pré-compra no Brasil
         </h2>
         <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead><tr className="bg-secondary">
-              <th className="text-left py-3 px-4">Edição</th>
-              <th className="text-left py-3 px-4">Preço EUA</th>
-              <th className="text-left py-3 px-4">Preço Brasil</th>
-              <th className="text-left py-3 px-4">Conteúdo Extra</th>
+              <th className="text-left py-3 px-4 break-words">Edição</th>
+              <th className="text-left py-3 px-4 break-words">Preço EUA</th>
+              <th className="text-left py-3 px-4 break-words">Preço Brasil</th>
+              <th className="text-left py-3 px-4 break-words">Conteúdo Extra</th>
             </tr></thead>
             <tbody>
               {[
@@ -151,10 +151,10 @@ const GTAVI2026 = () => {
                 ["Collector's Edition", "US$ 149,99", "R$ 799,90", "Steelbook + mapa + arte + todos os DLCs"],
               ].map(([edicao, eua, br, extra]) => (
                 <tr key={edicao} className="border-t border-border">
-                  <td className="py-3 px-4 font-medium">{edicao}</td>
-                  <td className="py-3 px-4 text-muted-foreground">{eua}</td>
-                  <td className="py-3 px-4 text-geek font-bold">{br}</td>
-                  <td className="py-3 px-4 text-xs text-muted-foreground">{extra}</td>
+                  <td className="py-3 px-4 font-medium break-words">{edicao}</td>
+                  <td className="py-3 px-4 text-muted-foreground break-words">{eua}</td>
+                  <td className="py-3 px-4 text-geek font-bold break-words">{br}</td>
+                  <td className="py-3 px-4 text-xs text-muted-foreground break-words">{extra}</td>
                 </tr>
               ))}
             </tbody>

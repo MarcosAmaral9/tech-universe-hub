@@ -87,12 +87,12 @@ const EldenRingNightreign2026 = () => {
           As 8 Classes do Jogo Base (+ 2 do DLC)
         </h2>
         <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead><tr className="bg-secondary">
-              <th className="text-left py-3 px-4">Classe</th>
-              <th className="text-left py-3 px-4">Estilo</th>
-              <th className="text-left py-3 px-4">Habilidade Passiva</th>
-              <th className="text-left py-3 px-4">Dificuldade</th>
+              <th className="text-left py-3 px-4 break-words">Classe</th>
+              <th className="text-left py-3 px-4 break-words">Estilo</th>
+              <th className="text-left py-3 px-4 break-words">Habilidade Passiva</th>
+              <th className="text-left py-3 px-4 break-words">Dificuldade</th>
             </tr></thead>
             <tbody>
               {[
@@ -108,10 +108,10 @@ const EldenRingNightreign2026 = () => {
                 ["Veilstalker ⭐ DLC", "Stealth — assassino das sombras", "Teleporte nas sombras + dano de backstab elevado", "★★★★★ Expert"],
               ].map(([cls, est, hab, dif]) => (
                 <tr key={cls} className={`border-t border-border ${cls.includes("DLC") ? "bg-geek/5" : ""}`}>
-                  <td className="py-3 px-4 font-bold text-geek text-xs">{cls}</td>
-                  <td className="py-3 px-4 text-xs">{est}</td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">{hab}</td>
-                  <td className="py-3 px-4 text-xs">{dif}</td>
+                  <td className="py-3 px-4 font-bold text-geek text-xs break-words">{cls}</td>
+                  <td className="py-3 px-4 text-xs break-words">{est}</td>
+                  <td className="py-3 px-4 text-muted-foreground text-xs break-words">{hab}</td>
+                  <td className="py-3 px-4 text-xs break-words">{dif}</td>
                 </tr>
               ))}
             </tbody>
