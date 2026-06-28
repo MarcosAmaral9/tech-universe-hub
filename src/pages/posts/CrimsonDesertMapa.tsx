@@ -424,8 +424,8 @@ const CrimsonDesertMapa = () => {
           <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead>
               <tr className="bg-secondary">
-                <th className="text-left py-3 px-4 w-3/5">Jogo</th>
-                <th className="text-left py-3 px-4 w-2/5">Tamanho estimado</th>
+                <th className="text-left py-3 px-4 w-3/5 break-words">Jogo</th>
+                <th className="text-left py-3 px-4 w-2/5 break-words">Tamanho estimado</th>
               </tr>
             </thead>
             <tbody>
@@ -436,7 +436,7 @@ const CrimsonDesertMapa = () => {
                 ["The Elder Scrolls V: Skyrim", "~37 km²"],
               ].map(([g, s], i) => (
                 <tr key={g} className={`border-t border-border${i === 0 ? " bg-primary/5 font-semibold" : ""}`}>
-                  <td className="py-3.5 px-4">{g}</td>
+                  <td className="py-3.5 px-4 break-words">{g}</td>
                   <td className={`py-3.5 px-4${i === 0 ? " text-primary font-bold" : " text-muted-foreground"}`}>{s}</td>
                 </tr>
               ))}

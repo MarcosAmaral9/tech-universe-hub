@@ -162,10 +162,10 @@ const CrimsonDesertCombate = () => {
           <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead>
               <tr className="bg-secondary">
-                <th className="text-left py-3 px-4">Nível</th>
-                <th className="text-left py-3 px-4">GPU</th>
-                <th className="text-left py-3 px-4">CPU</th>
-                <th className="text-left py-3 px-4">Desempenho alvo</th>
+                <th className="text-left py-3 px-4 break-words">Nível</th>
+                <th className="text-left py-3 px-4 break-words">GPU</th>
+                <th className="text-left py-3 px-4 break-words">CPU</th>
+                <th className="text-left py-3 px-4 break-words">Desempenho alvo</th>
               </tr>
             </thead>
             <tbody>
@@ -176,10 +176,10 @@ const CrimsonDesertCombate = () => {
                 ["Ultra",        "RTX 5070 Ti / RX 9070 XT", "i7-13700K / Ryzen 7 7700", "4K 60fps com ray tracing"],
               ].map(([level, gpu, cpu, perf]) => (
                 <tr key={level} className="border-t border-border">
-                  <td className="py-3 px-4 font-medium">{level}</td>
-                  <td className="py-3 px-4 text-muted-foreground">{gpu}</td>
-                  <td className="py-3 px-4 text-muted-foreground">{cpu}</td>
-                  <td className="py-3 px-4 text-primary text-xs">{perf}</td>
+                  <td className="py-3 px-4 font-medium break-words">{level}</td>
+                  <td className="py-3 px-4 text-muted-foreground break-words">{gpu}</td>
+                  <td className="py-3 px-4 text-muted-foreground break-words">{cpu}</td>
+                  <td className="py-3 px-4 text-primary text-xs break-words">{perf}</td>
                 </tr>
               ))}
             </tbody>

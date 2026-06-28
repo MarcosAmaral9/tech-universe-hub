@@ -70,9 +70,9 @@ const NintendoSwitch2Completo2026 = () => {
         <div className="not-prose my-6 overflow-x-auto">
           <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead><tr className="bg-secondary">
-              <th className="text-left py-3 px-4">Edição</th>
-              <th className="text-left py-3 px-4">Preço (Brasil)</th>
-              <th className="text-left py-3 px-4">O que vem na caixa</th>
+              <th className="text-left py-3 px-4 break-words">Edição</th>
+              <th className="text-left py-3 px-4 break-words">Preço (Brasil)</th>
+              <th className="text-left py-3 px-4 break-words">O que vem na caixa</th>
             </tr></thead>
             <tbody>
               {[
@@ -82,9 +82,9 @@ const NintendoSwitch2Completo2026 = () => {
                 ["Joy-Con 2 (par adicional)", "R$ 699,90", "Sensor mouse, IR e câmera embutida"],
               ].map(([ed, p, o]) => (
                 <tr key={ed} className="border-t border-border">
-                  <td className="py-3 px-4 font-bold text-geek whitespace-nowrap">{ed}</td>
-                  <td className="py-3 px-4 font-medium">{p}</td>
-                  <td className="py-3 px-4 text-xs text-muted-foreground">{o}</td>
+                  <td className="py-3 px-4 font-bold text-geek whitespace-nowrap break-words">{ed}</td>
+                  <td className="py-3 px-4 font-medium break-words">{p}</td>
+                  <td className="py-3 px-4 text-xs text-muted-foreground break-words">{o}</td>
                 </tr>
               ))}
             </tbody>
@@ -100,9 +100,9 @@ const NintendoSwitch2Completo2026 = () => {
         <div className="not-prose my-6 overflow-x-auto">
           <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead><tr className="bg-secondary">
-              <th className="text-left py-3 px-4">Componente</th>
-              <th className="text-left py-3 px-4">Switch 2</th>
-              <th className="text-left py-3 px-4">Switch 1 (referência)</th>
+              <th className="text-left py-3 px-4 break-words">Componente</th>
+              <th className="text-left py-3 px-4 break-words">Switch 2</th>
+              <th className="text-left py-3 px-4 break-words">Switch 1 (referência)</th>
             </tr></thead>
             <tbody>
               {[
@@ -115,9 +115,9 @@ const NintendoSwitch2Completo2026 = () => {
                 ["Conectividade", "Wi-Fi 6, Bluetooth 5.3, USB-C duplo", "Wi-Fi 5, BT 4.1"],
               ].map(([k, a, b]) => (
                 <tr key={k} className="border-t border-border">
-                  <td className="py-3 px-4 font-bold text-geek whitespace-nowrap">{k}</td>
-                  <td className="py-3 px-4 font-medium">{a}</td>
-                  <td className="py-3 px-4 text-xs text-muted-foreground">{b}</td>
+                  <td className="py-3 px-4 font-bold text-geek whitespace-nowrap break-words">{k}</td>
+                  <td className="py-3 px-4 font-medium break-words">{a}</td>
+                  <td className="py-3 px-4 text-xs text-muted-foreground break-words">{b}</td>
                 </tr>
               ))}
             </tbody>
@@ -151,9 +151,9 @@ const NintendoSwitch2Completo2026 = () => {
         <div className="not-prose my-6 overflow-x-auto">
           <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead><tr className="bg-secondary">
-              <th className="text-left py-3 px-4">Janela</th>
-              <th className="text-left py-3 px-4">Jogo</th>
-              <th className="text-left py-3 px-4">Estúdio</th>
+              <th className="text-left py-3 px-4 break-words">Janela</th>
+              <th className="text-left py-3 px-4 break-words">Jogo</th>
+              <th className="text-left py-3 px-4 break-words">Estúdio</th>
             </tr></thead>
             <tbody>
               {[
@@ -166,9 +166,9 @@ const NintendoSwitch2Completo2026 = () => {
                 ["Q4 2026", "Kirby Air Riders", "Sora Ltd. / Bandai Namco"],
               ].map(([d, g, e]) => (
                 <tr key={g} className="border-t border-border">
-                  <td className="py-3 px-4 font-bold text-geek whitespace-nowrap">{d}</td>
-                  <td className="py-3 px-4 font-medium">{g}</td>
-                  <td className="py-3 px-4 text-xs text-muted-foreground">{e}</td>
+                  <td className="py-3 px-4 font-bold text-geek whitespace-nowrap break-words">{d}</td>
+                  <td className="py-3 px-4 font-medium break-words">{g}</td>
+                  <td className="py-3 px-4 text-xs text-muted-foreground break-words">{e}</td>
                 </tr>
               ))}
             </tbody>

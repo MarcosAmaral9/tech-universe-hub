@@ -251,10 +251,10 @@ const CrimsonDesertPersonagens = () => {
           <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead>
               <tr className="bg-secondary">
-                <th className="text-left py-3 px-4">Critério</th>
-                <th className="text-left py-3 px-4 text-red-400">Kliff</th>
-                <th className="text-left py-3 px-4 text-purple-400">Damiane</th>
-                <th className="text-left py-3 px-4 text-amber-400">Oongka</th>
+                <th className="text-left py-3 px-4 break-words">Critério</th>
+                <th className="text-left py-3 px-4 text-red-400 break-words">Kliff</th>
+                <th className="text-left py-3 px-4 text-purple-400 break-words">Damiane</th>
+                <th className="text-left py-3 px-4 text-amber-400 break-words">Oongka</th>
               </tr>
             </thead>
             <tbody>
@@ -267,10 +267,10 @@ const CrimsonDesertPersonagens = () => {
                 ["Inspiração de gameplay", "Witcher 3 + Dark Souls", "Sekiro + Lies of P", "God of War + Berserker"],
               ].map(([a, b, c, d]) => (
                 <tr key={a} className="border-t border-border">
-                  <td className="py-3 px-4 font-medium text-xs">{a}</td>
-                  <td className="py-3 px-4 text-xs">{b}</td>
-                  <td className="py-3 px-4 text-xs">{c}</td>
-                  <td className="py-3 px-4 text-xs">{d}</td>
+                  <td className="py-3 px-4 font-medium text-xs break-words">{a}</td>
+                  <td className="py-3 px-4 text-xs break-words">{b}</td>
+                  <td className="py-3 px-4 text-xs break-words">{c}</td>
+                  <td className="py-3 px-4 text-xs break-words">{d}</td>
                 </tr>
               ))}
             </tbody>

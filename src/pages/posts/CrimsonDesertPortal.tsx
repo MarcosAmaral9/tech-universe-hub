@@ -215,8 +215,8 @@ const CrimsonDesertPortal = () => (
         <table className="w-full border-collapse bg-card">
           <thead>
             <tr className="bg-secondary">
-              <th className="text-left py-4 px-6 font-bold text-sm">Detalhe</th>
-              <th className="text-left py-4 px-6 font-bold text-sm">Informação</th>
+              <th className="text-left py-4 px-6 font-bold text-sm break-words">Detalhe</th>
+              <th className="text-left py-4 px-6 font-bold text-sm break-words">Informação</th>
             </tr>
           </thead>
           <tbody>
@@ -233,8 +233,8 @@ const CrimsonDesertPortal = () => (
               ["Patch",          "23/03/2026 — ajuste de HP/dano de bosses"],
             ].map(([key, val]) => (
               <tr key={key} className="border-t border-border hover:bg-muted/30 transition-colors">
-                <td className="py-3 px-6 font-medium text-sm">{key}</td>
-                <td className="py-3 px-6 text-muted-foreground text-sm">{val}</td>
+                <td className="py-3 px-6 font-medium text-sm break-words">{key}</td>
+                <td className="py-3 px-6 text-muted-foreground text-sm break-words">{val}</td>
               </tr>
             ))}
           </tbody>

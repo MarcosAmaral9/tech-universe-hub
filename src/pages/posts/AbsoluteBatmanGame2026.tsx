@@ -65,8 +65,8 @@ const AbsoluteBatmanGame2026 = () => {
                 ["Classificação Indicativa", "Teens (13+)"],
               ].map(([k, v]) => (
                 <tr key={k} className="border-t border-border">
-                  <td className="py-3 px-4 font-bold text-geek w-1/3">{k}</td>
-                  <td className="py-3 px-4 text-muted-foreground">{v}</td>
+                  <td className="py-3 px-4 font-bold text-geek w-1/3 break-words">{k}</td>
+                  <td className="py-3 px-4 text-muted-foreground break-words">{v}</td>
                 </tr>
               ))}
             </tbody>

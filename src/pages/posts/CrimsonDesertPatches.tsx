@@ -152,9 +152,9 @@ const CrimsonDesertPatches = () => {
         <div className="not-prose my-6 overflow-x-auto">
           <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead><tr className="bg-secondary">
-              <th className="text-left py-3 px-4">Montaria</th>
-              <th className="text-left py-3 px-4">Categoria</th>
-              <th className="text-left py-3 px-4">Como Obter</th>
+              <th className="text-left py-3 px-4 break-words">Montaria</th>
+              <th className="text-left py-3 px-4 break-words">Categoria</th>
+              <th className="text-left py-3 px-4 break-words">Como Obter</th>
             </tr></thead>
             <tbody>
               {[
@@ -165,9 +165,9 @@ const CrimsonDesertPatches = () => {
                 ["Icicle Edge Alpine Ibex", "Montaria de Boss", "Derrotar boss específico"],
               ].map(([m, c, o]) => (
                 <tr key={m} className="border-t border-border">
-                  <td className="py-3 px-4 font-bold text-geek">{m}</td>
-                  <td className="py-3 px-4 text-muted-foreground">{c}</td>
-                  <td className="py-3 px-4 text-xs text-muted-foreground">{o}</td>
+                  <td className="py-3 px-4 font-bold text-geek break-words">{m}</td>
+                  <td className="py-3 px-4 text-muted-foreground break-words">{c}</td>
+                  <td className="py-3 px-4 text-xs text-muted-foreground break-words">{o}</td>
                 </tr>
               ))}
             </tbody>
