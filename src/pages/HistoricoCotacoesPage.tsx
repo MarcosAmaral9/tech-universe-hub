@@ -347,22 +347,10 @@ const HistoricoCotacoesPage = () => {
   // - Cripto/Câmbio/Metais: todos os períodos (APIs suportam bootstrap de 1 ano)
   //   Mas mostra aviso "sem dados" no gráfico se o BD ainda não foi populado
   // - B3: dinâmico baseado em pontos reais (Yahoo Finance não confiável, só cron)
-  const availablePeriods = (() => {
-    if (category === "b3") {
-      // B3: mostra apenas períodos com dados suficientes acumulados pelo cron
-      const catAssets = assets.filter(a => a.category === "b3");
-      const maxPoints = catAssets.length > 0 ? Math.max(...catAssets.map(a => a.data.length)) : 0;
-      return ALL_PERIODS.filter(p => {
-        if (p.key === "7d")  return true;            // sempre mostra (pode estar vazio)
-        if (p.key === "30d") return maxPoints >= 14; // ≥14 pontos no BD (~dias úteis)
-        if (p.key === "90d") return maxPoints >= 50; // ≥50 pontos
-        if (p.key === "1y")  return maxPoints >= 200;// ≥200 pontos (~dias úteis em 1 ano)
-        return false;
-      });
-    }
-    // Cripto, Câmbio, Metais: todos os períodos disponíveis (APIs gratuitas suportam 1A)
-    return ALL_PERIODS;
-  })();
+  // Todos os períodos (7D, 1M, 3M, 1A) ficam sempre visíveis em todas as categorias.
+  // Quando o BD da B3 ainda não tem pontos suficientes para 3M ou 1A, o gráfico
+  // exibe o aviso de "sem dados" via dataSourceLabel.
+  const availablePeriods = ALL_PERIODS;
 
   const handleCategoryChange = (cat: CategoryKey) => {
     setCategory(cat);
