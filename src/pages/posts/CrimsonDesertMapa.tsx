@@ -421,7 +421,7 @@ const CrimsonDesertMapa = () => {
 
         <h2>Tamanho e Comparação</h2>
         <div className="not-prose my-4 w-full overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead>
               <tr className="bg-secondary">
                 <th className="text-left py-3 px-4 w-3/5">Jogo</th>

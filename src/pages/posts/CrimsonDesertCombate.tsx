@@ -159,7 +159,7 @@ const CrimsonDesertCombate = () => {
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Requisitos de PC por Nível de Desempenho</h2>
         <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead>
               <tr className="bg-secondary">
                 <th className="text-left py-3 px-4">Nível</th>

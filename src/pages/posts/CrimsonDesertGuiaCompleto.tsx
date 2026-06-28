@@ -187,7 +187,7 @@ const CrimsonDesertGuiaCompleto = () => {
           <CheckCircle className="h-7 w-7 text-green-400" />Edições Disponíveis e Preços
         </h2>
         <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead>
               <tr className="bg-secondary">
                 <th className="text-left py-3 px-4">Edição</th>
@@ -241,7 +241,7 @@ const CrimsonDesertGuiaCompleto = () => {
           <Monitor className="h-7 w-7 text-red-400" />Requisitos de PC
         </h2>
         <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead>
               <tr className="bg-secondary">
                 <th className="text-left py-3 px-4">Tier</th>

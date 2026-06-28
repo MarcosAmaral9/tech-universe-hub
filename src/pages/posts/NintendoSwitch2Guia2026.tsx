@@ -52,7 +52,7 @@ const NintendoSwitch2Guia2026 = () => {
           Ficha Técnica: Switch 2 vs. Switch Original
         </h2>
         <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead><tr className="bg-secondary">
               <th className="text-left py-3 px-4">Especificação</th>
               <th className="text-left py-3 px-4">Switch 2</th>
@@ -109,7 +109,7 @@ const NintendoSwitch2Guia2026 = () => {
           Jogos de Lançamento e Biblioteca 2026
         </h2>
         <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead><tr className="bg-secondary">
               <th className="text-left py-3 px-4">Jogo</th>
               <th className="text-left py-3 px-4">Gênero</th>

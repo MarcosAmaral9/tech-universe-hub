@@ -52,7 +52,7 @@ const AbsoluteBatmanGame2026 = () => {
           Ficha Técnica
         </h2>
         <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <tbody>
               {[
                 ["Desenvolvedor", "Traveller's Tales (TT Games)"],

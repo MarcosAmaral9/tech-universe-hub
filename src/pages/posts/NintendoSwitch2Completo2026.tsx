@@ -68,7 +68,7 @@ const NintendoSwitch2Completo2026 = () => {
           Preço no Brasil e edições disponíveis
         </h2>
         <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead><tr className="bg-secondary">
               <th className="text-left py-3 px-4">Edição</th>
               <th className="text-left py-3 px-4">Preço (Brasil)</th>
@@ -98,7 +98,7 @@ const NintendoSwitch2Completo2026 = () => {
           Ficha técnica completa
         </h2>
         <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead><tr className="bg-secondary">
               <th className="text-left py-3 px-4">Componente</th>
               <th className="text-left py-3 px-4">Switch 2</th>
@@ -149,7 +149,7 @@ const NintendoSwitch2Completo2026 = () => {
           Catálogo de lançamento e principais exclusivos
         </h2>
         <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead><tr className="bg-secondary">
               <th className="text-left py-3 px-4">Janela</th>
               <th className="text-left py-3 px-4">Jogo</th>
