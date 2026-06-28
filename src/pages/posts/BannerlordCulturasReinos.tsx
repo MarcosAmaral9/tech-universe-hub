@@ -27,7 +27,7 @@ import SkeletonImage from "@/components/SkeletonImage";
 import LightboxImage from "@/components/LightboxImage";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import culturasImg from "@/assets/bannerlord-culturas-reinos.webp";
-import bannerlordWarSailsMap from "@/assets/bannerlord-war-sails-map.webp";
+import bannerlordWarSailsMap from "@/assets/bannerlord-war-sails-expansao.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
 
 const cultures = [
