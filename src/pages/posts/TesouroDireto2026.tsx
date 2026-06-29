@@ -188,7 +188,6 @@ const TesouroDireto2026 = () => {
                   <div className="flex-1">
                     <h3 className="text-xl font-bold mb-3">{tipo.title}</h3>
                     <ul className="space-y-1 text-muted-foreground mb-3">
-      <AdInArticle />
                       {tipo.points.map((p, i) => <li key={i}>• {p}</li>)}
                     </ul>
                     <p className="text-sm font-semibold" style={{ color: tipo.color }}>
@@ -407,7 +406,102 @@ const TesouroDireto2026 = () => {
             ))}
           </div>
 
-          {/* Conclusão */}
+          {/* Como comprar passo a passo */}
+          <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            Como Comprar Seu Primeiro Título: Passo a Passo
+          </h2>
+          <p>
+            Comprar Tesouro Direto é mais simples do que parece, mas o processo tem
+            detalhes que confundem quem está começando. Veja o caminho completo, do
+            cadastro até a primeira compra:
+          </p>
+          <div className="grid gap-3 my-8">
+            {[
+              { n: "1", titulo: "Abra conta em uma corretora habilitada", desc: "Praticamente todas as corretoras brasileiras (XP, Rico, Nubank, BTG, Inter) oferecem acesso gratuito ao Tesouro Direto, sem taxa de corretagem para a maioria dos títulos." },
+              { n: "2", titulo: "Faça a transferência via Pix ou TED", desc: "Transfira o valor que deseja investir para a conta da corretora. O dinheiro fica disponível em minutos via Pix." },
+              { n: "3", titulo: "Acesse a área de Tesouro Direto da corretora", desc: "Cada corretora tem uma seção dedicada com a lista de títulos disponíveis, suas taxas e vencimentos atualizados em tempo real durante o pregão." },
+              { n: "4", titulo: "Escolha o título e o valor", desc: "Você pode comprar fração de título — o mínimo costuma ser cerca de R$ 30 a R$ 100, dependendo do preço unitário do título no dia." },
+              { n: "5", titulo: "Confirme a compra e acompanhe", desc: "A liquidação ocorre em D+1 (Tesouro Selic) ou conforme o cronograma do título. Você pode acompanhar a posição e o rendimento diretamente no extrato da corretora ou no site do Tesouro Direto." },
+            ].map(({ n, titulo, desc }) => (
+              <div key={n} className="flex gap-4 bg-card border border-border rounded-xl p-4">
+                <span className="text-3xl font-black text-invest/40 shrink-0">{n}</span>
+                <div>
+                  <h3 className="font-bold text-sm mb-1">{titulo}</h3>
+                  <p className="text-sm text-muted-foreground">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Quando NÃO vale a pena */}
+          <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6 border-l-4 border-[hsl(25,95%,55%)] pl-4">
+            Quando o Tesouro Direto NÃO é a Melhor Opção
+          </h2>
+          <p>
+            Apesar de todas as vantagens, existem cenários específicos onde outras
+            opções de renda fixa podem superar o Tesouro Direto — entender essas
+            situações evita a armadilha de tratar o Tesouro como solução universal:
+          </p>
+          <div className="grid gap-3 my-6">
+            {[
+              { titulo: "Quando um CDB de banco médio paga muito mais que 100% do CDI", desc: "Alguns bancos médios, cobertos pelo FGC até R$ 250 mil por CPF/instituição, oferecem CDBs a 115-130% do CDI — superando o Tesouro Selic em rendimento líquido, com risco adicional mínimo dado a garantia do FGC." },
+              { titulo: "Quando LCI/LCA isenta de IR está disponível com taxa competitiva", desc: "Uma LCI pagando 90% do CDI isenta de IR pode equivaler, em termos líquidos, a um CDB pagando mais de 105% do CDI com IR de 15%. Para objetivos de médio prazo, vale comparar o rendimento líquido real, não a taxa nominal anunciada." },
+              { titulo: "Quando o valor é muito pequeno e a praticidade importa mais", desc: "Para valores muito pequenos (abaixo de R$ 100), a diferença de rendimento entre Tesouro Selic e um CDB de banco digital de liquidez diária é geralmente irrelevante em termos absolutos — nesses casos, a praticidade do app que você já usa pode pesar mais na decisão." },
+            ].map(({ titulo, desc }) => (
+              <div key={titulo} className="bg-card border border-border rounded-xl p-4">
+                <h4 className="font-bold text-sm mb-1">{titulo}</h4>
+                <p className="text-sm text-muted-foreground">{desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <h2 className="text-2xl font-bold mt-10 mb-6 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            Tesouro Direto vs. Tesouro Selic: Esclarecendo a Confusão de Nomes
+          </h2>
+          <p>
+            Muitos investidores iniciantes confundem "Tesouro Direto" com "Tesouro Selic",
+            tratando os dois nomes como sinônimos. Na realidade, <strong>Tesouro Direto é
+            o programa</strong> do governo federal que permite a qualquer pessoa física
+            comprar títulos públicos diretamente, enquanto <strong>Tesouro Selic é apenas
+            um dos tipos de título</strong> disponíveis dentro desse programa — ao lado do
+            Tesouro Prefixado e do Tesouro IPCA+. Entender essa diferença evita confusão
+            na hora de comparar produtos e de conversar com outros investidores sobre
+            estratégias de renda fixa.
+          </p>
+          <p>
+            Essa distinção importa porque cada um dos três tipos de título tem
+            características de risco e retorno completamente diferentes, apesar de todos
+            serem igualmente garantidos pelo Tesouro Nacional. Um investidor que ouve
+            "invista no Tesouro Direto" sem especificar qual título precisa primeiro
+            entender qual modalidade se encaixa no seu objetivo — não existe um único
+            "Tesouro Direto" genérico que sirva igualmente bem para qualquer situação
+            financeira.
+          </p>
+
+          <h2 className="text-2xl font-bold mt-10 mb-6 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            Reinvestimento Automático: Maximizando o Efeito dos Juros Compostos
+          </h2>
+          <p>
+            Um recurso pouco utilizado, mas extremamente poderoso, é configurar o
+            reinvestimento automático dos cupons semestrais pagos por alguns títulos do
+            Tesouro IPCA+. Em vez de receber esse valor na conta corrente e gastá-lo ou
+            deixá-lo parado, reinvestir automaticamente em mais frações do mesmo título
+            (ou em outro de sua escolha) acelera significativamente o efeito dos juros
+            compostos ao longo de décadas — a diferença entre reinvestir consistentemente
+            e simplesmente sacar os cupons pode representar dezenas de milhares de reais
+            de patrimônio adicional num horizonte de 20 a 30 anos.
+          </p>
+          <p>
+            Para quem está construindo patrimônio de longo prazo e não depende da renda
+            periódica dos cupons para despesas correntes, optar por títulos "principal" ou
+            "zero cupom" (sem pagamento semestral, com todo o retorno concentrado no
+            vencimento) elimina essa decisão de reinvestimento manual, automatizando o
+            processo de acumulação. Já para quem está na fase de usufruir da renda gerada
+            pelos investimentos — tipicamente na aposentadoria — os títulos com cupom
+            semestral se tornam mais adequados, oferecendo fluxo de caixa regular sem
+            necessidade de vender o título principal.
+          </p>
+
           <h2 className="text-2xl font-bold mt-10 mb-6 border-l-4 border-[hsl(var(--invest-color))] pl-4">
             Conclusão: Vale a Pena em 2026?
           </h2>
@@ -416,6 +510,19 @@ const TesouroDireto2026 = () => {
             <strong>Sim, mas com estratégia.</strong> O Tesouro Direto é a base de qualquer carteira sólida,
             especialmente para iniciantes. Em 2026, com juros altos, o Tesouro Selic se destaca para reserva de emergência,
             enquanto o IPCA+ brilha para quem pensa no longo prazo.
+          </p>
+          <p>
+            O mais importante não é escolher um único título "perfeito", mas entender que
+            cada modalidade cumpre um papel diferente dentro de uma estratégia financeira
+            completa — combinando liquidez para emergências, proteção contra inflação para
+            objetivos de longo prazo e, eventualmente, exposição tática ao ciclo de juros
+            via prefixados. Comece pequeno, entenda cada produto antes de aportar valores
+            maiores, e construa o hábito de revisar sua alocação periodicamente conforme
+            o cenário econômico e seus objetivos pessoais evoluem ao longo do tempo. O
+            Tesouro Direto, com sua combinação de segurança máxima, acessibilidade e
+            variedade de produtos, continua sendo um dos pilares mais sólidos sobre os
+            quais qualquer investidor brasileiro pode construir seu patrimônio de longo
+            prazo, independentemente do estágio em que se encontra na jornada financeira.
           </p>
 
           <div className="my-8 p-6 bg-[hsl(var(--invest-color))]/10 rounded-xl border border-[hsl(var(--invest-color))]/30">
@@ -449,8 +556,9 @@ const TesouroDireto2026 = () => {
           </div>
         </div>
 
-        <EditorialTake category="invest">
-          <p>Tesouro Direto continua sendo a porta de entrada mais segura para investidor brasileiro, mas em 2026 o jogo mudou: com Selic ainda alta, prefixados longos pagam prêmio histórico, enquanto IPCA+ acima de 6% real virou commodity. Para quem está montando reserva ou aposentadoria, o casamento de prazos (ALM) importa mais que rentabilidade nominal. A taxa de custódia da B3 (0,2% a.a.) some na prática para títulos curtos, então não use isso como desculpa para ficar na poupança.</p>
+        <EditorialTake category="invest" title="Análise do Marcos: a taxa de custódia não é desculpa para ficar na poupança">
+          <p>Tesouro Direto continua sendo a porta de entrada mais segura para investidor brasileiro, mas em 2026 o jogo mudou: com Selic ainda alta, prefixados longos pagam prêmio histórico, enquanto IPCA+ acima de 6% real virou commodity. Para quem está montando reserva ou aposentadoria, o casamento de prazos (ALM — Asset Liability Matching) importa mais que rentabilidade nominal isolada.</p>
+          <p className="mt-2">A taxa de custódia da B3 (0,2% a.a.) some na prática para títulos curtos e para valores investidos abaixo de R$ 10.000 — está isenta nessa faixa desde 2020. Minha recomendação prática para 2026: trate o Tesouro Selic como reserva intocável, use o IPCA+ de médio prazo (2029-2031) para objetivos de 3-7 anos, e reserve o IPCA+ longo (2035+) apenas para quem realmente não vai precisar do dinheiro antes de 10 anos — a marcação a mercado em títulos longos pode assustar quem olha o extrato com frequência, mas não importa para quem segura até o vencimento.</p>
         </EditorialTake>
 
         <ArticleSources category="invest" sources={[
@@ -458,7 +566,8 @@ const TesouroDireto2026 = () => {
     { title: 'Banco Central — Calculadora do Cidadão', url: 'https://www.bcb.gov.br/cidadaniafinanceira/calculadora', publisher: 'BCB', accessedAt: "Maio 2026" },
     { title: 'ANBIMA — Mercado de Renda Fixa', url: 'https://www.anbima.com.br/pt_br/informar/sistema-de-precos.htm', publisher: 'ANBIMA', accessedAt: "Maio 2026" },
     { title: 'Receita Federal — Renda Fixa', url: 'https://www.gov.br/receitafederal/pt-br', publisher: 'RFB', accessedAt: "Maio 2026" },
-    { title: 'B3 — Tarifa de Custódia', url: 'https://www.b3.com.br/pt_br/produtos-e-servicos/tarifas/', publisher: 'B3', accessedAt: "Maio 2026" }
+    { title: 'B3 — Tarifa de Custódia', url: 'https://www.b3.com.br/pt_br/produtos-e-servicos/tarifas/', publisher: 'B3', accessedAt: "Maio 2026" },
+    { title: 'Tesouro Nacional — Educação Financeira e Marcação a Mercado', url: 'https://www.tesourodireto.com.br/conteudo-educacional/marcacao-a-mercado.htm', publisher: 'Tesouro Nacional', accessedAt: "Maio 2026" }
   ]} />
       <RelatedPosts currentSlug="tesouro-direto-2026-guia-completo" />
       <CommentSection postId="tesouro-direto-2026-guia-completo" postTitle="Tesouro Direto em 2026: Ainda Vale a Pena? Guia Completo Atualizado"  category="invest" />

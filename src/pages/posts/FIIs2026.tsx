@@ -8,7 +8,7 @@ import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
 import {
   Clock, Calendar, User, ChevronRight, TrendingUp,
-  Building2, AlertTriangle, CheckCircle2, DollarSign, BarChart3,
+  Building2, AlertTriangle, CheckCircle2, DollarSign, BarChart3, FileText, Percent,
 } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -181,7 +181,7 @@ const FIIs2026 = () => {
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
             <span className="flex items-center gap-1"><User className="h-4 w-4" /> VICIO&lt;CODE&gt;</span>
             <span className="flex items-center gap-1"><Calendar className="h-4 w-4" /> 22 Fev 2026</span>
-            <span className="flex items-center gap-1"><Clock className="h-4 w-4" /> 14 min de leitura</span>
+            <span className="flex items-center gap-1"><Clock className="h-4 w-4" /> 15 min de leitura</span>
           </div>
           <ShareWhatsApp />
           <AuthorBio category="invest" />
@@ -205,6 +205,9 @@ const FIIs2026 = () => {
           <p className="text-muted-foreground leading-relaxed">
             Mas investir em FIIs exige mais do que olhar o Dividend Yield mais alto da lista. Um DY de 15% pode mascarar uma cota que despencou, uma vacância crescente ou uma gestora que está liquidando patrimônio para pagar dividendos. Este guia vai te ensinar a separar as boas oportunidades das armadilhas.
           </p>
+          <p className="text-muted-foreground leading-relaxed">
+            O cenário macroeconômico de 2026 é especialmente relevante para quem investe em FIIs. Com a Selic em processo de corte gradual (de 15% para a faixa de 14,00–14,50%) e o IFIX reagindo positivamente a cada sinal de afrouxamento monetário, o mercado de fundos imobiliários está em um momento de transição: FIIs de papel, que se beneficiaram do CDI elevado nos últimos dois anos, começam a perder parte do brilho relativo, enquanto FIIs de tijolo — especialmente logística e lajes corporativas premium — ganham espaço como apostas de valorização patrimonial no médio prazo. Entender essa dinâmica de rotação setorial é tão importante quanto escolher fundos individuais com boa gestão.
+          </p>
         </div>
 
         {/* 3 tipos */}
@@ -222,14 +225,14 @@ const FIIs2026 = () => {
                 desc: "Investem em Certificados de Recebíveis Imobiliários. Não possuem imóveis físicos — são mais parecidos com renda fixa.",
                 pros: "Rendimentos altos quando a Selic está elevada. Mais defensivos.",
                 cons: "Sem imóvel físico para se valorizar. Exposto a risco de crédito dos emissores.",
-                cenario: "Ideal agora em 2026",
+                cenario: "Ainda forte, perdendo força",
               },
               {
                 type: "Tijolo", icon: "🧱",
                 desc: "Possuem imóveis físicos: shoppings, galpões logísticos, lajes corporativas, hospitais.",
                 pros: "Valorização patrimonial real dos imóveis. Proteção contra inflação no longo prazo.",
                 cons: "Vacância afeta diretamente os dividendos. Mais sensível à alta de juros.",
-                cenario: "Bom para longo prazo",
+                cenario: "Ganhando força com cortes",
               },
               {
                 type: "Híbridos", icon: "🔄",
@@ -302,6 +305,9 @@ const FIIs2026 = () => {
             Clique em cada setor para ver a análise de perspectiva para 2026:
           </p>
           <SectorTiles />
+          <p className="text-sm text-muted-foreground">
+            A rotação setorial que se desenha para 2026 segue um padrão clássico de ciclo de juros: setores com fluxo de caixa mais previsível e menos dependentes de financiamento (hospitais, logística com contratos atípicos longos) tendem a sustentar valorização mesmo durante a transição. Já os setores mais sensíveis ao crédito do consumidor — shoppings e, em menor medida, lajes corporativas — dependem mais da recuperação da atividade econômica geral do que apenas da queda da Selic isoladamente.
+          </p>
         </section>
 
         {/* Simulador */}
@@ -312,10 +318,58 @@ const FIIs2026 = () => {
           setDy={setDy}
         />
 
-        {/* Montar carteira */}
+        {/* Tributação */}
         <section className="mb-10">
           <AdRectangle className="my-8" />
 
+          <h2 className="flex items-center gap-3 text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            <Percent className="h-6 w-6 shrink-0" />
+            Tributação de FIIs: O Que Você Precisa Saber
+          </h2>
+          <p className="text-sm text-muted-foreground mb-4">
+            A isenção de IR sobre dividendos é um dos maiores atrativos dos FIIs, mas existem regras específicas que precisam ser respeitadas para que essa isenção seja válida — e uma segunda camada de tributação que muita gente esquece:
+          </p>
+          <div className="space-y-3">
+            {[
+              { titulo: "Dividendos mensais — isentos para pessoa física", desc: "Rendimentos distribuídos por FIIs são isentos de IR para pessoa física, desde que o fundo tenha no mínimo 50 cotistas, seja negociado exclusivamente em bolsa ou mercado de balcão organizado, e nenhum cotista detenha 10% ou mais das cotas. A grande maioria dos FIIs listados na B3 atende a esses critérios automaticamente." },
+              { titulo: "Ganho de capital na venda das cotas — tributado em 20%", desc: "Diferente dos dividendos, o lucro obtido ao vender cotas de FIIs por um preço maior que o de compra é tributado em 20%, sem qualquer faixa de isenção (diferente das ações, que têm isenção até R$ 20.000/mês em vendas). O IR deve ser recolhido via DARF até o último dia útil do mês seguinte à venda com lucro." },
+              { titulo: "Compensação de perdas entre FIIs", desc: "Perdas na venda de cotas de um FII podem ser compensadas com ganhos de outro FII dentro do mesmo mês ou em meses futuros, desde que ambos sejam FIIs — não é possível compensar perda em FII com ganho em ações ou ETFs, por exemplo." },
+              { titulo: "Declaração no IRPF mesmo sem vendas", desc: "Mesmo sem ter vendido nenhuma cota, é obrigatório declarar a posição de FIIs na ficha 'Bens e Direitos' pelo valor de aquisição (código 73), e os dividendos recebidos devem ser informados como 'Rendimentos Isentos e Não Tributáveis' na declaração anual." },
+            ].map(({ titulo, desc }) => (
+              <div key={titulo} className="bg-card border border-border rounded-xl p-4">
+                <h4 className="font-bold text-sm mb-1">{titulo}</h4>
+                <p className="text-sm text-muted-foreground">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Como ler relatório gerencial */}
+        <section className="mb-10">
+          <h2 className="flex items-center gap-3 text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            <FileText className="h-6 w-6 shrink-0" />
+            Como Ler um Relatório Gerencial de FII
+          </h2>
+          <p className="text-sm text-muted-foreground mb-4">
+            O Relatório Gerencial mensal é o documento mais importante para acompanhar um FII — e a maioria dos investidores nunca chega a abri-lo. Publicado todo mês pela gestora, ele contém as informações que realmente importam para avaliar a saúde do fundo no médio prazo:
+          </p>
+          <div className="space-y-3">
+            {[
+              { secao: "Carta da gestão", o_que_olhar: "Procure por mudanças de estratégia, aquisições ou vendas de imóveis planejadas, e como a gestora está reagindo ao cenário macro (Selic, inflação). Gestoras transparentes explicam decisões com dados concretos, não apenas otimismo genérico." },
+              { secao: "Composição da carteira", o_que_olhar: "Verifique a concentração por imóvel e por inquilino. Um fundo onde um único inquilino representa mais de 20% da receita tem risco de concentração elevado — a saída desse inquilino impacta desproporcionalmente os dividendos." },
+              { secao: "Vacância e contratos a vencer", o_que_olhar: "Além da vacância atual, observe o cronograma de vencimento de contratos nos próximos 12–24 meses. Um fundo com vacância baixa hoje mas com 30% dos contratos vencendo no próximo ano carrega risco que não aparece no número atual." },
+              { secao: "Distribuição vs resultado do período", o_que_olhar: "Compare o valor distribuído com o resultado (FFO) gerado no período. Se o fundo está distribuindo mais do que gera consistentemente, está usando reservas acumuladas — um padrão insustentável no longo prazo, mesmo que pareça positivo no curto prazo." },
+            ].map(({ secao, o_que_olhar }) => (
+              <div key={secao} className="bg-card border border-border rounded-xl p-4">
+                <h4 className="font-bold text-sm mb-1">{secao}</h4>
+                <p className="text-sm text-muted-foreground">{o_que_olhar}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Montar carteira */}
+        <section className="mb-10">
           <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">
             <DollarSign className="inline h-6 w-6 mr-2" />
             Como Montar Sua Carteira de FIIs em 2026
@@ -373,6 +427,7 @@ const FIIs2026 = () => {
                 "FIIs pagam dividendos mensais isentos de IR para pessoa física investidora",
                 "3 tipos: Papel (defensivo em juro alto), Tijolo (crescimento no longo prazo), Híbrido (para iniciantes)",
                 "4 indicadores chave: DY, P/VP, Vacância e Liquidez — analise todos juntos, nunca isolados",
+                "Ganho de capital na venda de cotas é tributado em 20%, sem isenção de faixa de valor",
                 "Logística e Papel são os setores mais atrativos em 2026; Lajes Corp. e Shoppings exigem seletividade",
                 "Monte carteira com 8–10 FIIs de setores e gestoras distintas e reinvista os dividendos no início",
               ].map((item, i) => (

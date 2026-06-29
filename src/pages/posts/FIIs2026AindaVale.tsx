@@ -276,6 +276,71 @@ const FIIs2026AindaVale = () => {
 
         {/* Como começar */}
         <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">
+          FIIs de Papel vs. Tijolo: Qual Faz Mais Sentido Agora
+        </h2>
+        <p>
+          Com o ciclo de corte de juros em andamento, a dinâmica entre fundos de papel
+          (recebíveis) e fundos de tijolo (imóveis físicos) merece atenção redobrada.
+          Fundos de papel, que investem majoritariamente em CRIs indexados ao CDI ou
+          IPCA, tendem a perder atratividade relativa conforme a Selic cai — o rendimento
+          nominal desses fundos acompanha diretamente a taxa básica de juros, então um
+          corte de 1 ponto percentual na Selic se traduz quase imediatamente em menor
+          distribuição mensal para o cotista.
+        </p>
+        <p>
+          Fundos de tijolo, por outro lado, tendem a se valorizar nesse mesmo cenário,
+          por dois motivos complementares: primeiro, porque o desconto em relação ao
+          valor patrimonial (P/VP abaixo de 1,0) tende a se reduzir quando o custo de
+          oportunidade da renda fixa cai, atraindo capital de volta para ativos de maior
+          risco; segundo, porque imóveis físicos com contratos de aluguel indexados à
+          inflação mantêm o poder de compra da receita gerada, independentemente do nível
+          da Selic. Para o investidor que está montando ou rebalanceando a carteira em
+          2026, uma transição gradual de exposição maior em papel para uma combinação
+          mais equilibrada com tijolo costuma fazer sentido à medida que o ciclo de
+          cortes avança.
+        </p>
+
+        <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">
+          Erros Que Reduzem o Retorno em FIIs
+        </h2>
+        <div className="not-prose space-y-3 my-6">
+          {[
+            { erro: "Vender em pânico durante correções normais do mercado", desc: "O IFIX, como qualquer índice de renda variável, passa por correções de 5-10% periodicamente sem que isso represente problema estrutural nos fundos. Vender nesses momentos, em vez de aproveitar para comprar mais barato, é um dos erros mais custosos no investimento de longo prazo em FIIs." },
+            { erro: "Ignorar o spread de compra e venda em fundos pouco líquidos", desc: "Fundos com baixo volume diário de negociação podem ter diferença significativa entre o preço de compra e venda, encarecendo a operação tanto na entrada quanto na eventual saída da posição." },
+            { erro: "Não diversificar entre gestoras diferentes", desc: "Concentrar a carteira em fundos de uma única gestora, mesmo que ela tenha bom histórico, expõe o investidor a um risco de gestão específico que poderia ser mitigado com diversificação entre 3 ou mais gestoras distintas." },
+            { erro: "Comprar baseado apenas em recomendação de redes sociais", desc: "FIIs 'queridinhos' das redes sociais frequentemente já estão com preço inflado pela demanda gerada pela própria divulgação. Sempre faça sua própria análise de indicadores antes de seguir qualquer recomendação, por mais popular que seja o influenciador." },
+          ].map(({ erro, desc }) => (
+            <div key={erro} className="bg-destructive/5 border border-destructive/20 rounded-xl p-4">
+              <h4 className="font-bold text-sm mb-1">{erro}</h4>
+              <p className="text-sm text-muted-foreground">{desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">
+          O Papel dos FIIs Numa Carteira Diversificada
+        </h2>
+        <p>
+          Para além da análise individual de cada fundo, vale considerar o papel que os
+          FIIs desempenham dentro de uma carteira de investimentos mais ampla. Por
+          gerarem renda mensal isenta de IR, eles funcionam como um complemento natural a
+          uma estratégia de aposentadoria ou independência financeira, oferecendo fluxo
+          de caixa recorrente sem a necessidade de vender ativos periodicamente — uma
+          vantagem comportamental relevante para quem tem dificuldade em manter
+          disciplina vendendo apenas o necessário de uma carteira puramente de
+          valorização.
+        </p>
+        <p>
+          A correlação dos FIIs com outras classes de ativos também merece atenção: eles
+          tendem a ter comportamento parcialmente descorrelacionado de ações tradicionais
+          (já que o mercado imobiliário responde a dinâmicas próprias de oferta e demanda
+          física) e de renda fixa pura (já que incorporam tanto o componente de juros
+          quanto o de valorização patrimonial dos imóveis). Essa característica os torna
+          um componente útil de diversificação, mesmo para investidores que já têm boa
+          exposição a ações e títulos públicos na carteira.
+        </p>
+
+        <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">
           Como começar a investir em FIIs hoje
         </h2>
         <div className="not-prose space-y-3">

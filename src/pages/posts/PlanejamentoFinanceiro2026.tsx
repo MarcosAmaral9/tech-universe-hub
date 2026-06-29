@@ -530,6 +530,81 @@ const PlanejamentoFinanceiro2026 = () => {
           </div>
         </section>
 
+        {/* Planejamento por fase de vida */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            Planejamento Financeiro Por Fase de Vida
+          </h2>
+          <p className="text-sm text-muted-foreground mb-4">
+            As prioridades financeiras mudam radicalmente conforme a fase de vida. Um
+            planejamento genérico, copiado de influenciadores ou de listas prontas,
+            raramente reflete o que realmente importa para o seu momento atual:
+          </p>
+          <div className="grid md:grid-cols-2 gap-4">
+            {[
+              { fase: "20–30 anos: Construção da base", foco: "Prioridade máxima: reserva de emergência e eliminação de dívidas caras (cartão de crédito, cheque especial). É também o melhor momento para assumir mais risco em investimentos, já que o horizonte de tempo até a aposentadoria é longo o suficiente para absorver oscilações." },
+              { fase: "30–45 anos: Crescimento e proteção", foco: "Além de investir para o futuro, surgem novas responsabilidades: filhos, financiamento imobiliário, seguro de vida. O planejamento precisa equilibrar metas de curto prazo (educação dos filhos, troca de carro) com a continuidade dos aportes de longo prazo." },
+              { fase: "45–60 anos: Aceleração da aposentadoria", foco: "Momento de revisar se o ritmo de acumulação é suficiente para o padrão de vida desejado na aposentadoria. Geralmente é a fase de maior capacidade de poupança, pois despesas com filhos tendem a diminuir e a carreira está em momento de maior remuneração." },
+              { fase: "60+ anos: Preservação e transição", foco: "O foco migra de acumulação para preservação de capital e geração de renda. A alocação de portfólio tende a reduzir exposição a ativos de maior volatilidade, priorizando renda fixa e fontes de renda passiva previsíveis." },
+            ].map(({ fase, foco }) => (
+              <div key={fase} className="bg-card border border-border rounded-xl p-4">
+                <h3 className="font-bold text-sm text-[hsl(var(--invest-color))] mb-2">{fase}</h3>
+                <p className="text-xs text-muted-foreground">{foco}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Erros na revisão */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            Como Fazer a Revisão Trimestral Sem Virar Tortura
+          </h2>
+          <p className="text-sm text-muted-foreground mb-4">
+            A revisão trimestral é o elemento que mais diferencia quem atinge metas de
+            quem não atinge — mas também é o passo mais frequentemente abandonado, porque
+            muita gente transforma a revisão em um exercício de autopunição. Veja como
+            fazer isso de forma produtiva:
+          </p>
+          <div className="space-y-3">
+            {[
+              { titulo: "Separe 30 minutos, sem distrações", desc: "A revisão não precisa ser longa, mas precisa ser focada. Escolha um horário fixo (ex: primeiro sábado de cada trimestre) e trate como um compromisso inegociável, da mesma forma que trataria uma consulta médica." },
+              { titulo: "Compare números, não sentimentos", desc: "'Acho que gastei muito' não é uma revisão — é uma impressão. Abra o extrato, some os valores reais por categoria e compare com o trimestre anterior. Números removem a carga emocional da autoavaliação." },
+              { titulo: "Pergunte 'por quê' antes de 'como corrigir'", desc: "Se uma meta não foi atingida, investigue a causa raiz antes de simplesmente aumentar a meta do próximo trimestre. Foi falta de renda, gasto inesperado, ou a meta era irrealista desde o início? Cada causa exige uma correção diferente." },
+              { titulo: "Ajuste, não abandone", desc: "Se uma meta se mostrou inalcançável no prazo definido, a resposta correta é ajustar o prazo ou o valor — não descartar a meta inteira. Uma meta de R$ 20.000 em 12 meses que está em ritmo de R$ 14.000 não é um fracasso; é uma meta de 17 meses que precisa de ajuste de cronograma." },
+            ].map(({ titulo, desc }) => (
+              <div key={titulo} className="bg-card border border-border rounded-xl p-4">
+                <h4 className="font-bold text-sm mb-1">{titulo}</h4>
+                <p className="text-sm text-muted-foreground">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            Ferramentas Complementares Para Sustentar o Planejamento
+          </h2>
+          <p className="text-sm text-muted-foreground mb-4">
+            Além da revisão trimestral manual, diversas ferramentas digitais podem
+            automatizar parte do acompanhamento financeiro, reduzindo o esforço necessário
+            para manter o planejamento atualizado. Aplicativos de gestão financeira
+            conectados via Open Finance categorizam gastos automaticamente, eliminando a
+            necessidade de lançar manualmente cada transação — uma das principais
+            barreiras que levam as pessoas a abandonar o controle financeiro nos
+            primeiros meses.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Independentemente da ferramenta escolhida, o princípio central permanece o
+            mesmo: um sistema só funciona se for simples o suficiente para ser mantido
+            consistentemente ao longo do tempo. Planilhas elaboradas demais, com dezenas
+            de categorias e fórmulas complexas, frequentemente são abandonadas em poucas
+            semanas. Comece simples, com poucas categorias amplas, e adicione
+            complexidade apenas se sentir necessidade real de mais granularidade na
+            análise dos seus gastos.
+          </p>
+        </section>
+
         {/* Conclusão */}
         <section className="mb-10">
           <div className="bg-[hsl(var(--invest-color))]/10 border border-[hsl(var(--invest-color))]/30 rounded-2xl p-6 text-center">

@@ -354,6 +354,74 @@ const SelicComecaCair2026 = () => {
             </span>
           </p>
         </div>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          Ciclos de Corte da Selic: Lições dos Últimos 20 Anos
+        </h2>
+        <p>
+          Olhar para os ciclos de corte de juros anteriores ajuda a calibrar
+          expectativas realistas para o comportamento do mercado no ciclo atual.
+          No ciclo 2016–2018, quando a Selic foi de 14,25% para 6,5%, a renda
+          variável respondeu com valorização expressiva do Ibovespa — mas não de
+          forma linear. Houve períodos de 3 a 4 meses em que a bolsa ficou
+          estacionada ou até caiu, mesmo com os juros em trajetória de queda, por
+          conta de incertezas políticas e eventos externos que criaram volatilidade
+          adicional ao longo do caminho.
+        </p>
+        <p>
+          No ciclo 2019–2020, a Selic chegou ao piso histórico de 2% durante a
+          pandemia, com o Banco Central cortando de forma agressiva para estimular a
+          economia. Esse ciclo produziu um ambiente extraordinariamente favorável
+          para FIIs e ações de crescimento — que depois sofreram quando o ciclo
+          inevitavelmente se reverteu em 2021, com a inflação forçando uma alta
+          acelerada de volta ao patamar de dois dígitos.
+        </p>
+        <p>
+          A lição que unifica esses ciclos é que o patamar de chegada da Selic — não
+          apenas a direção de queda — determina em grande medida quais classes de ativos
+          se beneficiam mais. Uma Selic que cai até 12% ainda favorece renda fixa de
+          qualidade e FIIs de recebíveis de forma relevante, enquanto uma Selic que
+          chegasse a 6–7% (como no ciclo pandêmico) criaria um ambiente completamente
+          diferente de maior apetite por risco e valorização de ativos de crescimento.
+          Calibrar as expectativas conforme as projeções do Focus evoluem é tão
+          importante quanto entender a direção do movimento.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          O Que a Curva de Juros Revela Sobre as Expectativas do Mercado
+        </h2>
+        <p>
+          Além da Selic de curto prazo decidida pelo Copom, o mercado também negocia
+          contratos de juros futuros de prazos mais longos — 2, 5 e 10 anos. A diferença
+          entre esses contratos e a Selic atual forma o que analistas chamam de "curva
+          de juros", e a inclinação dessa curva revela expectativas importantes do
+          mercado sobre a trajetória futura dos juros e da inflação.
+        </p>
+        <p>
+          Uma curva "normal" ou inclinada positivamente — onde juros longos são maiores
+          que juros curtos — indica que o mercado espera inflação e/ou juros mais altos
+          no futuro. Uma curva "flat" ou invertida pode sinalizar expectativa de
+          desaceleração econômica ou cortes de juros mais agressivos no médio prazo.
+          Acompanhar a inclinação da curva de juros brasileira, disponível em plataformas
+          como o site da Anbima ou terminais financeiros, é uma forma sofisticada mas
+          acessível de antecipar como o mercado está interpretando a trajetória da
+          política monetária — informação que influencia diretamente o preço de títulos
+          do Tesouro Direto prefixados e IPCA+.
+        </p>
+        <p>
+          Para o investidor de varejo que não acompanha diariamente a curva de juros,
+          uma heurística simplificada funciona bem na prática: quando analistas e
+          economistas revisam consistentemente para baixo as projeções de Selic
+          terminal (o patamar onde os cortes vão parar), é um sinal de que os títulos
+          prefixados e IPCA+ de prazo mais longo tendem a se valorizar via marcação
+          a mercado — e vice-versa quando a projeção terminal é revisada para cima.
+          Acompanhar essa evolução no Boletim Focus, publicado toda segunda-feira,
+          oferece essa informação de forma gratuita, atualizada e consolidada, sem
+          necessidade de acesso a terminais profissionais ou análise técnica avançada.
+          Combinado com a leitura trimestral dos relatórios de inflação do Banco
+          Central, esse hábito simples de acompanhamento semanal oferece uma base
+          sólida para decisões de renda fixa bem fundamentadas ao longo do ciclo.
+        </p>
       </div>
 
       <div className="flex flex-wrap gap-2 my-8">

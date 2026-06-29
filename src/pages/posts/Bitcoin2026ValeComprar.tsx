@@ -265,16 +265,35 @@ const Bitcoin2026ValeComprar = () => {
           Altcoins podem ser complementares para quem já entende o mercado e aceita volatilidade ainda maior — mas nunca devem ser a base da carteira cripto de um investidor iniciante. Uma alocação sensata seria 70-80% em BTC e o restante distribuído entre ETH e projetos consolidados, se houver interesse em diversificação dentro do universo cripto.
         </p>
 
+        <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">Dollar Cost Averaging: a estratégia que reduz o estresse de comprar Bitcoin</h2>
+        <p className="text-muted-foreground leading-relaxed">
+          Para a maioria dos investidores, tentar identificar o "fundo do mercado" para comprar Bitcoin é um exercício fadado ao fracasso — mesmo analistas profissionais erram sistematicamente esse tipo de previsão. A estratégia de <strong>Dollar Cost Averaging (DCA)</strong>, que consiste em investir um valor fixo em intervalos regulares (semanal ou mensal) independentemente do preço do momento, elimina a necessidade de acertar o timing e reduz significativamente o estresse emocional de investir em um ativo tão volátil.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          Estudos de backtesting com dados históricos do Bitcoin mostram que investidores que aplicaram DCA consistentemente ao longo de qualquer período de 4 anos (correspondente a um ciclo completo de halving) obtiveram retornos positivos na esmagadora maioria dos casos, mesmo entrando em momentos de alta de curto prazo. Isso acontece porque o DCA naturalmente compra mais unidades quando o preço está baixo e menos quando está alto, suavizando o preço médio de entrada ao longo do tempo sem exigir nenhuma previsão sobre a direção do mercado.
+        </p>
+
+        <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">Tributação de Bitcoin no Brasil: o que você precisa declarar</h2>
+        <p className="text-muted-foreground leading-relaxed">
+          Diferente de ações, onde existe isenção de IR para vendas mensais até R$ 20.000, criptomoedas têm uma regra de isenção própria: vendas totais de até <strong>R$ 35.000 por mês</strong>, somando todas as exchanges e tipos de criptoativos, são isentas de Imposto de Renda sobre o ganho de capital. Acima desse valor, a alíquota varia de 15% a 22,5% conforme o lucro total auferido, seguindo uma tabela progressiva por faixas.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          Mesmo sem vender, é obrigatório declarar a posição em criptomoedas na ficha de Bens e Direitos da declaração anual de Imposto de Renda, sempre que o valor de aquisição ultrapassar R$ 5.000 para um mesmo tipo de criptoativo. Exchanges brasileiras são obrigadas a reportar movimentações à Receita Federal, e operações em exchanges estrangeiras acima de determinados limites mensais também precisam ser declaradas — a fiscalização sobre criptoativos tem se tornado cada vez mais rigorosa nos últimos anos.
+        </p>
+
+        <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">Custódia: guardar na exchange ou usar carteira própria?</h2>
+        <p className="text-muted-foreground leading-relaxed">
+          Uma decisão importante para quem investe em Bitcoin é onde manter a custódia dos ativos. Manter na própria exchange (como Binance, Mercado Bitcoin ou Foxbit) é mais prático para quem opera com frequência ou tem valores menores, mas implica confiar a segurança dos fundos a um terceiro — episódios históricos como o colapso da FTX em 2022 mostraram que esse risco, embora baixo nas exchanges mais sólidas, não é zero.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          Para valores mais significativos ou horizonte de investimento mais longo, transferir os Bitcoins para uma carteira própria (hardware wallet como Ledger ou Trezor, ou carteiras de software mais seguras) elimina o risco de contraparte da exchange, ao custo de maior responsabilidade pessoal sobre a segurança das chaves privadas. A máxima recorrente na comunidade cripto — "not your keys, not your coins" — resume bem essa tensão entre praticidade e controle total sobre o próprio patrimônio digital.
+        </p>
+
         <div className="not-prose bg-card border border-border rounded-2xl p-6 mt-8">
           <p className="text-sm text-muted-foreground flex items-start gap-2">
             <AlertTriangle className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
             <span>O Bitcoin não morreu. Mas também não é milagre. Entenda o risco antes de entrar. Conteúdo informativo — não constitui recomendação de investimento. Consulte um assessor de investimentos certificado (AAI ou CFP) antes de tomar decisões financeiras.</span>
           </p>
-        </div>
-
-        <div className="not-prose mt-10 p-6 bg-secondary rounded-xl text-center">
-          <h3 className="text-xl font-bold mb-2">Você está comprando Bitcoin em 2026? ₿</h3>
-          <p className="text-muted-foreground">ETF na B3 ou corretora cripto? Conta nos comentários! 👇</p>
         </div>
       </div>
 

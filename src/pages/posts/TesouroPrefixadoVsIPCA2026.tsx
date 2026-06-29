@@ -308,10 +308,106 @@ const TesouroPrefixadoVsIPCA2026 = () => {
           ))}
         </div>
 
-        {/* Checklist final */}
+        <h2 className="text-2xl font-bold mt-10 mb-4">
+          Simulação Prática: Investidor de 35 Anos Planejando Aposentadoria
+        </h2>
+        <p>
+          Para tornar a decisão mais concreta, considere o caso de um investidor de 35 anos
+          que pretende se aposentar aos 60 e está decidindo como alocar R$ 50.000 de reserva
+          já formada, fora da reserva de emergência. Com 25 anos de horizonte até a
+          aposentadoria, esse investidor tem o tempo necessário para absorver a volatilidade
+          de curto prazo de títulos longos em troca de retorno superior no acumulado.
+        </p>
+        <p>
+          Uma alocação sensata para esse perfil seria destinar a maior parte — algo entre
+          50% e 60% do valor — para Tesouro IPCA+ com vencimento entre 2040 e 2050,
+          aproveitando o juro real elevado disponível em 2026 e travando esse retorno por
+          décadas. O restante poderia se dividir entre prefixados de prazo médio, para
+          captura tática do ciclo de queda de juros nos próximos 2 a 3 anos, e uma pequena
+          parcela em Tesouro Selic para flexibilidade caso surjam oportunidades de
+          realocação. Esse tipo de planejamento de longo prazo é precisamente onde a
+          escolha entre prefixado e IPCA+ tem maior impacto cumulativo: pequenas diferenças
+          de taxa real, compostas ao longo de 20-25 anos, geram diferenças de dezenas de
+          milhares de reais no patrimônio final.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">
+          O Papel da Taxa de Custódia B3 na Decisão
+        </h2>
+        <p>
+          Um detalhe frequentemente esquecido na comparação entre os títulos é a taxa de
+          custódia cobrada pela B3, atualmente em 0,20% ao ano sobre o saldo investido,
+          com isenção total para valores até R$ 10.000 em Tesouro Selic. Essa taxa incide
+          igualmente sobre prefixados e IPCA+, mas seu peso relativo no retorno líquido é
+          maior em títulos com taxa nominal mais baixa — fazendo pouca diferença em
+          prefixados que pagam 13-14% ao ano, mas merecendo atenção em simulações de
+          longuíssimo prazo onde cada fração percentual de custo é amplificada pelos
+          juros compostos ao longo de décadas.
+        </p>
+
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">
+          Perguntas Frequentes Sobre Prefixado e IPCA+
+        </h2>
+        <div className="not-prose space-y-3 my-6">
+          {[
+            { q: "Posso vender o título antes do vencimento sem perder dinheiro?", a: "Depende inteiramente do cenário de juros no momento da venda. Se a Selic caiu desde a compra, prefixados e IPCA+ se valorizam e você pode vender com lucro antes do vencimento. Se a Selic subiu, o título pode valer menos do que você pagou — por isso só venda antes do prazo se realmente precisar do dinheiro ou se identificar uma janela de valorização clara." },
+            { q: "O que acontece se eu não puder esperar até o vencimento?", a: "Você pode vender a qualquer momento durante o horário de negociação do Tesouro Direto, mas o preço de venda reflete a marcação a mercado do dia — que pode ser maior ou menor que o valor investido. Por isso, títulos de longo prazo (IPCA+ 2045, por exemplo) são mais adequados para dinheiro que você tem certeza de não precisar no curto prazo." },
+            { q: "É melhor comprar um único título grande ou fracionar a compra?", a: "Fracionar a compra ao longo de vários meses (uma estratégia conhecida como DCA aplicada à renda fixa) reduz o risco de comprar tudo em um momento de taxa desfavorável. Para quem está migrando uma quantia grande de pós-fixado, dividir em 3 a 6 parcelas mensais é uma prática comum entre investidores experientes." },
+            { q: "Existe limite de quanto posso investir no Tesouro Direto?", a: "Não há limite máximo, mas o limite mínimo de compra é o preço de uma fração do título, que costuma variar entre R$ 30 e R$ 150 dependendo do título e da cotação do dia. Não existe limite de valor para pessoa física investir em títulos públicos via Tesouro Direto." },
+          ].map(({ q, a }) => (
+            <div key={q} className="bg-card border border-border rounded-xl p-4">
+              <h4 className="font-bold text-sm mb-1">{q}</h4>
+              <p className="text-sm text-muted-foreground">{a}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">
+          Lição do Ciclo 2016-2018: O Que a História Ensina
+        </h2>
+        <p>
+          O último grande ciclo completo de corte de juros no Brasil — de 14,25% em 2016
+          para 6,5% em 2018 — oferece um estudo de caso valioso para quem está decidindo
+          entre prefixado e IPCA+ hoje. Investidores que travaram prefixados longos no
+          início desse ciclo, quando as taxas ainda refletiam o pico de juros, viram seus
+          títulos se valorizarem de forma expressiva à medida que a Selic caía — alguns
+          conseguindo retornos superiores a 25% em períodos de 18 a 24 meses via marcação
+          a mercado, muito acima do que a taxa contratada originalmente sugeria.
+        </p>
+        <p>
+          Por outro lado, quem tinha IPCA+ no mesmo período também foi bem recompensado,
+          ainda que por motivos diferentes: a inflação naqueles anos ficou consistentemente
+          dentro da meta, então o retorno real elevado contratado nos títulos IPCA+ de
+          então (alguns pagando IPCA+7% ou mais) gerou ganhos reais expressivos e
+          consistentes. A lição que fica não é que um título é estruturalmente melhor que
+          o outro, mas que <strong>ambos podem performar bem no mesmo ciclo</strong>,
+          através de mecanismos distintos — daí a robustez da estratégia de diversificar
+          entre os dois em vez de apostar tudo em apenas um.
+        </p>
+        <p>
+          Vale notar que ciclos de juros raramente se repetem de forma idêntica. O cenário
+          de 2026, com tensão geopolítica elevada e inflação ainda pressionada por choques
+          externos, tem características distintas do ciclo 2016-2018, que ocorreu num
+          contexto de recuperação pós-recessão doméstica sem grandes choques externos
+          relevantes. Usar o histórico como guia direcional é útil; tratá-lo como garantia
+          de repetição exata do padrão é um erro comum entre investidores menos experientes.
+        </p>
+
         <h2 className="text-2xl font-bold mt-10 mb-4">
           Checklist: O Que Verificar Antes de Comprar
         </h2>
+        <p>
+          Antes de finalizar a compra de qualquer título do Tesouro Direto, vale revisar
+          rapidamente alguns pontos práticos que evitam arrependimentos: confirme o
+          vencimento exato do título e se ele se alinha ao seu objetivo financeiro,
+          verifique se há pagamento de cupons semestrais (vantajoso para quem busca renda
+          periódica) ou se o título é "zero cupom" (pagamento integral apenas no
+          vencimento, mais eficiente para acumulação pura), e confira a corretora
+          escolhida para garantir que não há taxas adicionais de custódia além da cobrada
+          pela própria B3.
+        </p>
+
         <div className="not-prose space-y-2 my-6">
           {[
             "Qual é o prazo até quando posso deixar o dinheiro investido sem precisar dele?",
@@ -325,11 +421,6 @@ const TesouroPrefixadoVsIPCA2026 = () => {
               <span className="text-sm text-muted-foreground">{item}</span>
             </div>
           ))}
-        </div>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Você já investe no Tesouro Direto? 📈</h3>
-          <p className="text-muted-foreground">Conta qual título prefere e por quê! 👇</p>
         </div>
 
         <p className="text-xs text-muted-foreground mt-8 p-4 bg-secondary rounded-xl not-prose">

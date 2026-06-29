@@ -52,6 +52,10 @@ const DolarQueda2026 = () => {
           O dólar fechou a semana passada cotado a <strong>R$ 5,01</strong> — a menor cotação em dois anos. No acumulado de 2026, a moeda americana caiu <strong>9,21%</strong> frente ao real. Para o investidor que quer diversificar em ativos internacionais, esse momento é uma janela rara: comprar dólares baratos para investir em empresas americanas que, em dólares, estão em máximas históricas. O paradoxo é real — e exige estratégia para não errar.
         </p>
 
+        <p>
+          Esse tipo de movimento cambial costuma gerar reação emocional equivocada no investidor brasileiro: quando o dólar cai, muita gente interpreta como "sinal de que não vale mais investir fora" — exatamente o oposto da lógica correta. Câmbio favorável significa que cada real compra mais dólares hoje do que comprava há seis meses. Para quem está construindo posição internacional gradualmente, isso é uma vantagem temporária, não um sinal de alerta.
+        </p>
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BarChart3 className="h-7 w-7 text-invest" />
           Por Que o Dólar Está Tão Barato?
@@ -75,6 +79,9 @@ const DolarQueda2026 = () => {
             </div>
           ))}
         </div>
+        <p>
+          O ponto importante é que esses quatro fatores têm durações muito diferentes. O fluxo estrangeiro recorde pode persistir enquanto a Selic se mantiver alta — meses, possivelmente um ano. Já o efeito do cessar-fogo Irã-EUA é frágil por natureza, podendo se reverter em dias caso o conflito volte a escalar. Entender essa diferença de horizontes ajuda a calibrar a velocidade com que você deve aproveitar a janela: para o fluxo estrutural, há tempo; para o componente geopolítico, a janela pode se fechar rapidamente.
+        </p>
 
         <AdLeaderboard className="my-8" />
 
@@ -102,12 +109,19 @@ const DolarQueda2026 = () => {
           </div>
           <p className="text-xs text-muted-foreground mt-3">*Simulações aproximadas. Não considera IR (15% sobre ganho em 24+ meses) nem come-cotas de fundos.</p>
         </div>
+        <p>
+          O cenário "adverso" da tabela merece atenção especial: mesmo no pior caso simulado — dólar caindo ainda mais e ativos americanos performando bem — o resultado final ainda é positivo em reais. Isso ilustra por que diversificação cambial funciona como seguro: mesmo quando a "aposta" cambial específica não se confirma, o crescimento dos ativos subjacentes tende a compensar. O risco real está em cenários onde tanto o câmbio quanto os ativos americanos performam mal simultaneamente — historicamente raro, mas não impossível.
+        </p>
+
+        <AdInArticle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Globe className="h-7 w-7 text-invest" />
-      <AdInArticle />
           As Melhores Formas de Investir no Exterior Pelo Brasil
         </h2>
+        <p>
+          O investidor brasileiro tem hoje mais opções do que nunca para ganhar exposição internacional, com diferentes níveis de complexidade, custo e tributação. A tabela abaixo resume as principais alternativas disponíveis em 2026:
+        </p>
         <div className="not-prose my-6 overflow-x-auto">
           <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead><tr className="bg-secondary">
@@ -135,11 +149,13 @@ const DolarQueda2026 = () => {
             </tbody>
           </table>
         </div>
+        <p>
+          Para a maioria dos investidores que está começando a diversificar internacionalmente, ETFs listados na B3 (IVVB11, NASD11) representam o caminho de menor fricção: a compra é feita em reais pelo mesmo home broker usado para ações brasileiras, não exige abertura de conta no exterior, não envolve declaração complexa de bens no exterior no IRPF, e a liquidez é diária. A conta em corretora americana só costuma fazer sentido para patrimônios maiores, onde a diferença de taxas de administração ao longo de décadas justifica a complexidade adicional de declarar bens no exterior.
+        </p>
 
         <AdRectangle className="my-8" />
 
-        
-<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <TrendingUp className="h-7 w-7 text-invest" />
           Quais ETFs Internacionais Estão em Alta Agora
         </h2>
@@ -177,17 +193,54 @@ const DolarQueda2026 = () => {
           A conclusão prática: <strong>o momento é bom para começar ou ampliar a posição internacional</strong>, mas com sizing adequado ao perfil de risco (10–25% da carteira para perfis moderados) e sem tentar market timing perfeito. O real pode cair mais antes de voltar — e isso seria ainda melhor para quem já está posicionado em dólar.
         </p>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Você investe em ativos dolarizados? 🌎</h3>
-          <p className="text-muted-foreground">Conta nos comentários seu portfólio internacional! 👇</p>
-        </div>
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Lightbulb className="h-7 w-7 text-invest" />
+          Como Estruturar Aportes Internacionais de Forma Disciplinada
+        </h2>
+        <p>
+          Em vez de tentar decidir "o momento perfeito" para converter um valor grande de uma vez, a abordagem mais robusta é dividir o aporte planejado em parcelas mensais ao longo de 6 a 12 meses — uma estratégia de DCA (Dollar Cost Averaging) aplicada ao câmbio. Se o dólar continuar caindo, você captura preços ainda melhores nos meses seguintes. Se ele subir, sua primeira parcela já estava bem posicionada. Essa abordagem elimina a ansiedade de "vou perder a janela" e transforma uma decisão pontual de timing em um processo contínuo — exatamente o tipo de automação que costuma gerar melhores resultados de longo prazo do que decisões pontuais baseadas em previsões de câmbio, historicamente um dos exercícios mais difíceis em finanças.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          O Impacto do Dólar Fraco na Inflação Brasileira
+        </h2>
+        <p>
+          Vale destacar um efeito colateral positivo do dólar em queda que vai além da
+          oportunidade de diversificação internacional: produtos importados, insumos
+          industriais e componentes eletrônicos ficam mais baratos quando o real se
+          aprecia, contribuindo para desacelerar a inflação doméstica. Esse efeito é
+          particularmente relevante para setores que dependem de insumos importados,
+          como eletrônicos, automóveis e produtos farmacêuticos, onde a variação cambial
+          se traduz relativamente rápido em mudança de preço ao consumidor final.
+        </p>
+        <p>
+          Para o Banco Central, um real mais forte reduz parte da pressão inflacionária
+          importada, criando espaço adicional — ainda que modesto diante de outros
+          fatores como o choque do petróleo — para a continuidade do ciclo de corte de
+          juros. Esse círculo é interessante de acompanhar: fluxo estrangeiro positivo
+          aprecia o real, que por sua vez ajuda a conter a inflação, que por sua vez
+          sustenta a trajetória de queda da Selic, que por sua vez tende a manter o
+          fluxo de capital positivo enquanto o diferencial de juros real brasileiro
+          continuar atrativo frente a outras economias emergentes comparáveis.
+        </p>
+        <p>
+          Esse tipo de dinâmica reforça por que acompanhar o câmbio não é relevante
+          apenas para quem investe diretamente em ativos internacionais, mas para
+          qualquer investidor que queira entender o contexto macroeconômico mais amplo
+          que influencia decisões de política monetária e, por consequência, o
+          desempenho de praticamente todas as classes de ativos domésticos.
+        </p>
+
         <p className="text-xs text-muted-foreground mt-8 p-4 bg-secondary rounded-xl">
           ⚠️ Artigo educacional. Não constitui recomendação de investimento. Consulte um assessor certificado.
         </p>
       </div>
 
-            <EditorialTake category="invest" title={'Análise do Marcos: dólar barato não é convite para abandonar o exterior'}>
+      <EditorialTake category="invest" title="Análise do Marcos: dólar barato não é convite para abandonar o exterior">
         <p>Toda vez que o real se aprecia, o brasileiro médio cancela o aporte em ativos internacionais — e historicamente é exatamente esse o pior momento para fazê-lo. <strong>Diversificação cambial é seguro, não aposta direcional</strong>. A regra que sigo: entre 15% e 30% do patrimônio em ativos dolarizados (BDRs, ETFs como IVVB11 ou conta no exterior), com aportes mensais constantes independente da cotação. Quem zera exposição quando o dólar cai costuma comprar de volta quando o real desvaloriza — destruindo retorno. O câmbio do dia importa menos que a disciplina de aportes ao longo de uma década.</p>
+        <p className="mt-3">
+          Um ponto que reforço sempre: o objetivo da fatia internacional da carteira não é "ganhar do Ibovespa" — é descorrelacionar o patrimônio da economia brasileira. Em crises domésticas (fiscal, política, cambial), os ativos dolarizados tendem a se valorizar em reais justamente quando os ativos brasileiros sofrem, suavizando o impacto total na carteira. Esse efeito de proteção só funciona se a posição já estiver montada antes da crise — construir esse hedge durante o pânico custa muito mais caro. Por isso, momentos de dólar "barato" como este de abril de 2026 são, paradoxalmente, os melhores momentos para montar ou reforçar essa proteção.
+        </p>
       </EditorialTake>
       <ArticleSources category="invest"
         sources={[
@@ -199,7 +252,7 @@ const DolarQueda2026 = () => {
         ]}
       />
       <RelatedPosts currentSlug="dolar-queda-2026-investir-exterior" />
-      <CommentSection postId="dolar-queda-2026-investir-exterior" postTitle="Dólar no Menor Nível em 2 Anos: Como Aproveitar a Queda Cambial para Investir no Exterior"  category="invest" />
+      <CommentSection postId="dolar-queda-2026-investir-exterior" postTitle="Dólar no Menor Nível em 2 Anos: Como Aproveitar a Queda Cambial para Investir no Exterior" category="invest" />
     </article>
   );
 };

@@ -414,13 +414,102 @@ const RendaPassiva2026 = () => {
             </div>
           </div>
 
-          <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-            <h3 className="text-xl font-bold mb-2">Você já tem alguma fonte de renda passiva?</h3>
-            <p className="text-muted-foreground">
-              Qual das 7 formas te interessou mais? Compartilhe nos comentários! 👇
-            </p>
+          {/* Tributação detalhada */}
+          <h2 className="text-2xl font-bold mt-10 mb-6 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            Tributação de Cada Fonte de Renda Passiva
+          </h2>
+          <p>
+            Antes de escolher onde concentrar esforços, é fundamental entender como cada
+            fonte de renda passiva é tributada — porque o rendimento "líquido no bolso"
+            pode variar significativamente mesmo entre fontes com retorno bruto parecido:
+          </p>
+          <div className="not-prose overflow-x-auto my-6">
+            <table className="w-full text-sm border-collapse bg-card rounded-xl overflow-hidden">
+              <thead>
+                <tr className="bg-secondary">
+                  <th className="text-left p-3 font-bold">Fonte</th>
+                  <th className="text-left p-3 font-bold">Tributação</th>
+                  <th className="text-left p-3 font-bold">Observação</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["Dividendos de FIIs", "Isento de IR", "Desde que o fundo tenha 50+ cotistas e seja negociado em bolsa"],
+                  ["Dividendos de ações", "Isento de IR", "JCP (Juros sobre Capital Próprio) tem 15% retido na fonte"],
+                  ["CDB com juros mensais", "Tabela regressiva (15-22,5%)", "IR já descontado na fonte pelo banco automaticamente"],
+                  ["Tesouro IPCA+ com cupom", "Tabela regressiva (15-22,5%)", "Alíquota cai conforme tempo desde a compra do título"],
+                  ["Infoprodutos (pessoa física)", "Tabela progressiva do IRPF", "Pode ser vantajoso abrir MEI/PJ para tributação menor"],
+                  ["P2P Lending", "Tabela regressiva (15-22,5%)", "Mesma regra de renda fixa — informe de rendimentos da plataforma"],
+                  ["Royalties (Shutterstock, Spotify)", "Tabela progressiva do IRPF", "Rendimento do exterior exige carnê-leão mensal se recebido em moeda estrangeira"],
+                ].map(([fonte, trib, obs]) => (
+                  <tr key={fonte} className="border-t border-border">
+                    <td className="p-3 font-bold text-[hsl(var(--invest-color))] text-xs">{fonte}</td>
+                    <td className="p-3 text-xs">{trib}</td>
+                    <td className="p-3 text-muted-foreground text-xs">{obs}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p>
+            Essa diferença tributária explica, em parte, por que FIIs e dividendos de
+            ações são tão populares entre investidores brasileiros que buscam renda
+            passiva: a isenção de IR significa que <strong>100% do valor distribuído
+            chega ao bolso do investidor</strong>, sem necessidade de cálculos adicionais
+            ou retenção na fonte. Já fontes como infoprodutos e royalties, embora possam
+            ter retornos brutos mais altos, exigem planejamento tributário mais cuidadoso
+            — especialmente para quem está construindo um negócio digital que pode crescer
+            significativamente ano a ano.
+          </p>
+
+          {/* Erros comuns */}
+          <h2 className="text-2xl font-bold mt-10 mb-6 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            5 Erros Comuns ao Buscar Renda Passiva
+          </h2>
+          <div className="not-prose space-y-3 my-6">
+            {[
+              { erro: "Confundir renda passiva com 'dinheiro sem esforço'", desc: "Toda fonte de renda passiva listada exige esforço inicial — seja capital para investir, seja tempo para criar conteúdo ou construir um produto digital. O que muda é que o esforço é concentrado no início, não recorrente. Quem espera 'zero esforço desde o dia 1' geralmente desiste antes de ver resultado." },
+              { erro: "Gastar a renda passiva antes de atingir a meta", desc: "Os primeiros R$ 50-100/mês de dividendos parecem pouco, mas reinvestidos aceleram exponencialmente o crescimento do patrimônio via juros compostos. Gastar essa renda nos primeiros anos é como comer a semente em vez de plantá-la." },
+              { erro: "Buscar apenas o yield mais alto, ignorando o risco", desc: "Um FII pagando DY de 18% pode estar distribuindo mais do que gera, sinalizando problema estrutural. Sempre compare o yield com a média do setor — yields muito acima da média geralmente indicam risco elevado ou distribuição não sustentável." },
+              { erro: "Concentrar tudo em uma única fonte de renda", desc: "Diversificar entre FIIs, dividendos de ações e renda fixa reduz o impacto de problemas específicos de um setor. Em 2020, por exemplo, FIIs de shopping sofreram muito mais que FIIs de logística — quem tinha apenas shoppings sentiu o impacto de forma desproporcional." },
+              { erro: "Não considerar o tempo necessário para fontes não-financeiras", desc: "Infoprodutos, sites monetizados e royalties de propriedade intelectual costumam levar 6 a 18 meses para gerar receita relevante. Tratar essas fontes com a mesma expectativa de prazo de um CDB (rendimento desde o dia 1) gera frustração e abandono prematuro de projetos que poderiam funcionar com mais paciência." },
+            ].map(({ erro, desc }) => (
+              <div key={erro} className="bg-destructive/5 border border-destructive/20 rounded-xl p-4 flex gap-3">
+                <AlertTriangle className="h-5 w-5 text-destructive shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="font-bold text-sm mb-1">{erro}</h4>
+                  <p className="text-sm text-muted-foreground">{desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
+
+        <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4 mb-6 mt-10">
+          O Primeiro Passo Concreto: Qual Renda Passiva Começar
+        </h2>
+        <p>
+          Com tantas opções disponíveis, a maior armadilha é não começar por indecisão.
+          A recomendação mais prática é começar pela forma mais simples possível para
+          o seu perfil atual e adicionar complexidade gradualmente, conforme constrói
+          experiência e patrimônio. Para quem ainda está formando reserva de emergência,
+          o Tesouro Selic já gera renda passiva enquanto cumpre sua função de segurança
+          — não há necessidade de esperar ter muito capital para começar a receber algum
+          rendimento. Para quem já tem reserva formada, FIIs são frequentemente o
+          próximo passo natural, pela combinação de acesso fácil via B3, dividendos
+          mensais isentos de IR e possibilidade de começar com apenas algumas dezenas
+          de reais por mês em aportes regulares.
+        </p>
+        <p>
+          Independentemente da combinação escolhida, o denominador comum de todas as
+          histórias bem-sucedidas de construção de renda passiva é tempo e consistência.
+          R$ 300 por mês investidos em FIIs com dividend yield de 9% ao ano geram
+          aproximadamente R$ 27 de renda mensal após 12 meses de aportes — parece
+          pouco, mas depois de 5 anos com os dividendos reinvestidos o quadro é
+          completamente diferente, com a renda mensal gerada crescendo de forma
+          acelerada à medida que o patrimônio acumula e o efeito dos juros compostos
+          começa a se manifestar de forma mais visível no extrato.
+        </p>
 
         <EditorialTake
           category="invest"

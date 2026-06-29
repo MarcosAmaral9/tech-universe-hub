@@ -269,7 +269,7 @@ const CalculadorasFinanceiras = () => {
         {loading && assets.length === 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {Array.from({ length: 9 }).map((_, i) => (
-              <div key={i} className="bg-muted rounded-xl h-36" />
+              <div key={i} className="animate-pulse bg-muted rounded-xl h-36" />
             ))}
           </div>
         ) : filteredAssets.length === 0 ? (
@@ -444,7 +444,71 @@ const CalculadorasFinanceiras = () => {
           ))}
         </div>
 
-        {/* Limitações */}
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
+          Como as Cotações Chegam Até Você
+        </h2>
+        <p>
+          A confiabilidade de uma calculadora financeira depende inteiramente da
+          qualidade e atualidade das cotações usadas como base de cálculo. As
+          calculadoras do VicioCode consolidam dados de múltiplas fontes especializadas:
+          a brapi.dev fornece cotações de ações e fundos negociados na B3 com atualização
+          a cada poucos minutos durante o pregão; a CoinGecko agrega preços de
+          criptomoedas de dezenas de exchanges globais, oferecendo uma média ponderada
+          mais resistente a manipulação de preço em uma única corretora; e a AwesomeAPI
+          fornece cotações de câmbio e metais preciosos com base em mercados
+          internacionais de referência.
+        </p>
+        <p>
+          Esse modelo de agregação de múltiplas fontes, em vez de depender de um único
+          provedor de dados, reduz o risco de exibir uma cotação defasada ou
+          incorreta caso uma das fontes tenha instabilidade temporária. Quando uma fonte
+          específica está indisponível, o sistema automaticamente recorre a uma cotação
+          de referência mais recente disponível em cache, sinalizando claramente ao
+          usuário que os dados podem não refletir o preço exato do momento — transparência
+          que é importante para qualquer ferramenta financeira que pretenda ser usada
+          para decisões reais de investimento.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
+          Perguntas Frequentes Sobre as Calculadoras
+        </h2>
+        <div className="not-prose space-y-3 my-6">
+          {[
+            { q: "Com que frequência as cotações são atualizadas?", a: "Durante o horário de pregão da B3 (10h às 17h em dias úteis), as cotações de ações são atualizadas a cada poucos minutos. Criptomoedas, que operam 24 horas por dia, têm atualização contínua. Câmbio e metais seguem o horário de funcionamento dos principais mercados internacionais de referência." },
+            { q: "Os valores calculados incluem taxas e impostos?", a: "Não. As calculadoras mostram o valor bruto de compra com base na cotação de mercado, sem descontar corretagem, spread de compra/venda, IOF (no caso de câmbio) ou Imposto de Renda sobre eventual ganho futuro. Use os valores como ponto de partida para planejamento, não como valor final exato de uma operação." },
+            { q: "Por que o valor de gramas de ouro parece diferente do que vejo em outros sites?", a: "O preço exibido considera ouro 18 quilates (75% de pureza), o padrão mais comum em joalherias brasileiras. Sites que mostram ouro puro (24 quilates) ou outras purezas terão valores proporcionalmente diferentes — sempre confirme a pureza ao comparar cotações entre fontes diferentes." },
+            { q: "Posso confiar nessas calculadoras para decisões reais de investimento?", a: "As calculadoras são excelentes para planejamento e dimensionamento de posições, mas a cotação exata no momento da execução de uma ordem de compra real pode variar, especialmente em ativos mais voláteis. Sempre confirme o preço final na plataforma da sua corretora antes de finalizar qualquer operação." },
+          ].map(({ q, a }) => (
+            <div key={q} className="bg-card border border-border rounded-xl p-4">
+              <h4 className="font-bold text-sm mb-1">{q}</h4>
+              <p className="text-sm text-muted-foreground">{a}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
+          Usando as Calculadoras Para Planejar Metas Financeiras
+        </h2>
+        <p>
+          Além de simular compras pontuais, as calculadoras financeiras podem ser usadas
+          de forma mais estratégica para planejar metas de médio e longo prazo. Por
+          exemplo, ao simular quanto um determinado valor mensal compraria em diferentes
+          ativos ao longo de vários meses consecutivos, é possível visualizar de forma
+          mais concreta o que significa "investir R$ 500 por mês" — em vez de um número
+          abstrato, você vê exatamente quantas frações de Bitcoin, quantas ações ou
+          quantos gramas de ouro esse valor representa mês a mês, o que ajuda a manter a
+          motivação e a disciplina de aportes regulares.
+        </p>
+        <p>
+          Outra aplicação prática é comparar o "custo de oportunidade" entre diferentes
+          ativos para o mesmo valor disponível. Se você está decidindo entre alocar uma
+          quantia em ações brasileiras, dólar ou ouro, ver lado a lado quanto cada opção
+          representaria em termos concretos — não apenas em percentual — facilita a
+          tomada de decisão, especialmente para investidores que estão começando e ainda
+          desenvolvendo intuição sobre ordens de grandeza no mercado financeiro.
+        </p>
+
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
           <AlertTriangle className="h-7 w-7 text-yellow-400" />
           Limitações Importantes das Simulações
