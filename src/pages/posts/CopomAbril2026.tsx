@@ -272,6 +272,7 @@ const CopomAbril2026 = () => {
         </p>
 
 
+        <p className="text-sm text-muted-foreground mt-6 p-4 border-l-4 border-yellow-500 bg-yellow-500/10 rounded">
           ⚠️ <strong>Aviso:</strong> Artigo educacional. Não constitui recomendação de investimento. Consulte um assessor certificado. Rentabilidade passada não garante resultados futuros.
         </p>
       </div>
