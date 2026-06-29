@@ -453,7 +453,7 @@ export const blogPosts: BlogPost[] = [
     image: magnificentSevenImg,
     author: "VICIO<CODE>",
     date: "2026-04-30",
-    readTime: "14 min",
+    readTime: "13 min",
     faq: [
       { q: "Tim Cook está saindo da Apple?", a: "Sim. Tim Cook anunciou que deixará o cargo de CEO da Apple em 1º de setembro de 2026. Seu sucessor será John Ternus. Cook continuará como Chairman do Conselho de Administração." },
       { q: "Qual o capex combinado das Mag-7 em 2026?", a: "Capex combinado estimado de US$ 620–650 bilhões em 2026. Amazon ~US$ 200B, Alphabet ~US$ 175–185B, Microsoft ~US$ 130B e Meta ~US$ 115–135B." },
@@ -710,7 +710,7 @@ export const blogPosts: BlogPost[] = [
     image: copomAbril2026Img,
     author: "VICIO<CODE>",
     date: "2026-04-20",
-    readTime: "14 min",
+    readTime: "12 min",
     faq: [
       { q: "O Copom vai cortar a Selic em quanto em abril de 2026?", a: "O Boletim Focus de 20 de abril de 2026 projeta corte de 0,25 ponto percentual na reunião de 28–29 de abril, levando a Selic de 14,75% para 14,50% ao ano. O mercado revisou para baixo a expectativa (era 0,50 pp) por causa do IPCA de março em 0,88% — acima do esperado." },
       { q: "Com a Selic caindo, ainda vale a pena ficar no Tesouro Selic?", a: "Sim, por enquanto. Com a Selic desacelerando mais devagar (projeção de 13,25–13,50% ao fim de 2026, vs 12,25% antes), o CDI continua muito atrativo. O Tesouro Selic ainda rende ~14,5% ao ano — retorno real de +9,7% acima do IPCA projetado de 4,80%." },
@@ -1024,7 +1024,7 @@ export const blogPosts: BlogPost[] = [
     image: etfs2026Img,
     author: "VICIO<CODE>",
     date: "2026-04-11",
-    readTime: "15 min",
+    readTime: "12 min",
     faq: [
       { q: "O que são ETFs e como funcionam na B3?", a: "ETFs (Exchange Traded Funds) são fundos de investimento negociados na bolsa como ações. Cada cota replica um índice (como Ibovespa, S&P 500 ou índice de renda fixa). Na B3, você compra cotas pelo home broker da sua corretora, com diversificação automática e taxas a partir de 0,03% ao ano." },
       { q: "Quais os melhores ETFs da B3 em 2026?", a: "Para renda variável brasileira: BOVA11 (Ibovespa) e SMAC11 (small caps). Internacional: IVVB11 (S&P 500) e NASD11 (Nasdaq). Renda fixa: IMAB11 (títulos IPCA+) e B5P211 (NTN-B curta). Dividendos: NDIV11 (ações pagadoras de dividendos)." },
@@ -1043,7 +1043,7 @@ export const blogPosts: BlogPost[] = [
     image: economiaDomesticaImg,
     author: "VICIO<CODE>",
     date: "2026-04-11",
-    readTime: "14 min",
+    readTime: "10 min",
     faq: [
       { q: "Como economizar R$ 1.000 por mês no Brasil em 2026?", a: "Combine 3 estratégias de alto impacto: renegocie planos de celular e internet (economia de R$ 100–R$ 200), substitua delivery por meal prep semanal (R$ 400–R$ 600) e cancele assinaturas duplicadas de streaming (R$ 100–R$ 200). Só isso já alcança R$ 600–R$ 1.000/mês." },
       { q: "Quais os maiores vilões do orçamento doméstico?", a: "Alimentação fora de casa (30–40% do gasto com comida), assinaturas esquecidas (brasileiro médio tem 4,7 assinaturas ativas), compras por impulso no cartão de crédito e tarifas bancárias evitáveis. Energia elétrica mal gerenciada também pesa, especialmente com bandeira vermelha." },
@@ -1123,7 +1123,7 @@ export const blogPosts: BlogPost[] = [
     image: guerraIraPetrobraImg,
     author: "VICIO<CODE>",
     date: "2026-04-09",
-    readTime: "15 min",
+    readTime: "13 min",
     faq: [
       {
         q: "Por que a guerra EUA-Irã afetou o preço do petróleo?",
@@ -1438,7 +1438,7 @@ export const blogPosts: BlogPost[] = [
     image: reservaEmergenciaImg,
     author: "VICIO<CODE>",
     date: "2026-03-27",
-    readTime: "11 min",
+    readTime: "12 min",
     faq: [
       { q: "Quanto devo ter de reserva de emergência?", a: "A recomendação padrão é entre 3 e 12 meses de gastos mensais fixos. CLT com estabilidade: 3-6 meses. Autônomos e MEIs: 6-12 meses. Famílias com dependentes: pelo menos 6 meses." },
       { q: "Onde guardar a reserva de emergência em 2026?", a: "O Tesouro Selic é a opção mais indicada: liquidez D+1, risco soberano e rendimento de 13,25% ao ano bruto. CDBs com liquidez diária de grandes bancos também servem." },
@@ -1481,7 +1481,7 @@ export const blogPosts: BlogPost[] = [
     image: bitcoin2026ValeImg,
     author: "VICIO<CODE>",
     date: "2026-03-22",
-    readTime: "8 min",
+    readTime: "12 min",
     faq: [
       { q: "Qual o preço do Bitcoin em março de 2026?", a: "O Bitcoin está cotado entre US$ 70 mil e US$ 73 mil em março de 2026, após ter atingido o recorde histórico de US$ 125 mil em 2025 e corrigido cerca de 44%." },
       { q: "Preciso comprar um Bitcoin inteiro?", a: "Não. Você pode comprar frações de Bitcoin a partir de poucos reais, tanto em exchanges (Mercado Bitcoin, Binance) quanto via ETFs na B3 (BITH11, HASH11, QBTC11)." },
@@ -1502,7 +1502,7 @@ export const blogPosts: BlogPost[] = [
     image: iaFinancasPessoaisImg,
     author: "VICIO<CODE>",
     date: "2026-03-22",
-    readTime: "16 min",
+    readTime: "12 min",
     faq: [
       { q: "Como a IA pode ajudar nas finanças pessoais?", a: "A IA pode categorizar gastos automaticamente, identificar padrões de consumo, simular cenários de investimento e responder dúvidas financeiras personalizadas, tudo de forma gratuita usando assistentes como ChatGPT ou Gemini." },
       { q: "É seguro colar meu extrato bancário no ChatGPT?", a: "Você deve evitar inserir dados sensíveis como número de conta, agência, senhas ou documentos. Copie apenas valores e categorias. Use ferramentas com política clara de não treinamento com seus dados, como ChatGPT Plus ou Gemini Advanced." },
@@ -1521,7 +1521,7 @@ export const blogPosts: BlogPost[] = [
     image: fiis2026AindaValeImg,
     author: "VICIO<CODE>",
     date: "2026-03-22",
-    readTime: "8 min",
+    readTime: "12 min",
     faq: [
       { q: "O que são Fundos Imobiliários (FIIs)?", a: "FIIs são fundos que investem em imóveis ou títulos do setor imobiliário. São obrigados por lei a distribuir pelo menos 95% do lucro aos cotistas mensalmente, gerando renda passiva isenta de Imposto de Renda para pessoa física." },
       { q: "Por que FIIs ficam mais atrativos com a Selic caindo?", a: "Com juros menores, a renda fixa paga menos, tornando os dividendos dos FIIs relativamente mais atrativos. Além disso, as cotas tendem a se valorizar em ciclos de queda de juros — no último ciclo (2023-2024), o IFIX subiu cerca de 15% em 12 meses." },
@@ -1885,7 +1885,7 @@ export const blogPosts: BlogPost[] = [
     image: techInvesting2026Img,
     author: "VICIO<CODE>",
     date: "2026-02-06",
-    readTime: "12 min",
+    readTime: "13 min",
     faq: [
       { q: "O que são ETFs de tecnologia?", a: "São fundos negociados em bolsa que investem em empresas de tecnologia. Na B3, o NASD11 replica o Nasdaq 100 e o USTK11 é focado em tech americana, permitindo exposição ao setor sem comprar ações individuais." },
       { q: "Quais setores de tecnologia têm mais potencial em 2026?", a: "Inteligência artificial, semicondutores, computação em nuvem, cibersegurança e data centers lideram o crescimento. Empresas como NVIDIA, TSMC, Microsoft e AMD estão entre as mais promissoras." },
@@ -2075,7 +2075,7 @@ export const blogPosts: BlogPost[] = [
     image: rendaPassivaImg,
     author: "VICIO<CODE>",
     date: "2026-02-16",
-    readTime: "15 min",
+    readTime: "12 min",
     faq: [
       { q: "O que é renda passiva?", a: "É o dinheiro que você recebe sem precisar trabalhar ativamente por ele. Exemplos incluem dividendos de ações e FIIs, rendimentos de CDBs, aluguéis e royalties de conteúdo digital." },
       { q: "Quanto preciso investir para viver de renda passiva?", a: "Depende do seu custo de vida. Para receber R$ 5.000/mês com FIIs rendendo 0,8% ao mês, você precisaria de aproximadamente R$ 625.000 investidos." },
@@ -2114,7 +2114,7 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-02-18",
     updatedAt: "2026-03-15",
-    readTime: "14 min",
+    readTime: "12 min",
     faq: [
       { q: "O que é DeFi (Finanças Descentralizadas)?", a: "Ecossistema de serviços financeiros construídos sobre blockchain, sem intermediários como bancos. Inclui empréstimos, exchanges e seguros descentralizados." },
       { q: "O que é NFT (Token Não-Fungível)?", a: "Um ativo digital único registrado em blockchain. Usado para arte, colecionáveis, ingressos e propriedade intelectual." },
@@ -2163,7 +2163,7 @@ export const blogPosts: BlogPost[] = [
     image: iaFinancas2026Img,
     author: "VICIO<CODE>",
     date: "2026-02-20",
-    readTime: "14 min",
+    readTime: "12 min",
     faq: [
       { q: "Como a IA é usada no mercado financeiro?", a: "A IA é usada em trading algorítmico, análise de risco de crédito, detecção de fraudes, robo-advisors (gestão automatizada de carteira) e análise de sentimento de mercado em tempo real." },
       { q: "O que são robo-advisors?", a: "São plataformas de investimento que usam algoritmos de IA para criar e gerenciar carteiras automaticamente. No Brasil, exemplos incluem Warren, Magnetis e o advisor do BTG Pactual." },
@@ -2182,7 +2182,7 @@ export const blogPosts: BlogPost[] = [
     image: metodo3BaldesImg,
     author: "VICIO<CODE>",
     date: "2026-02-21",
-    readTime: "11 min",
+    readTime: "12 min",
     faq: [
       { q: "O que é o Método dos 3 Baldes?", a: "É uma estratégia simples de organização financeira que divide sua renda em três partes: Essencial (50-60%), Objetivos (20-30%) e Liberdade (10-20%), facilitando o controle sem planilhas complexas." },
       { q: "O Método dos 3 Baldes funciona para qualquer salário?", a: "Sim. Os percentuais são ajustáveis. Se você ganha pouco, pode começar com 70% essencial, 20% objetivos e 10% liberdade. O importante é criar o hábito de separar." },
@@ -2202,7 +2202,7 @@ export const blogPosts: BlogPost[] = [
     author: "VICIO<CODE>",
     date: "2026-02-22",
     updatedAt: "2026-03-15",
-    readTime: "14 min",
+    readTime: "15 min",
     faq: [
       { q: "Devo escolher FIIs só pelo Dividend Yield (DY)?", a: "Não. Um DY de 15% pode significar que a cota despencou, não que o fundo paga mais. Analise sempre o histórico de distribuições, qualidade dos imóveis e contratos antes de investir." },
       { q: "A qualidade dos imóveis dentro do FII importa?", a: "Sim, é um dos critérios mais importantes. Galpões logísticos de primeira linha têm vacância menor e contratos mais longos do que imóveis de terceira categoria." },
@@ -2241,7 +2241,7 @@ export const blogPosts: BlogPost[] = [
     image: planejamentoFinanceiro2026Img,
     author: "VICIO<CODE>",
     date: "2026-02-24",
-    readTime: "11 min",
+    readTime: "12 min",
     faq: [
       { q: "Como definir metas financeiras realistas?", a: "Use o método SMART: Específica, Mensurável, Alcançável, Relevante e com Prazo. Em vez de 'quero economizar', diga 'quero juntar R$ 10.000 em 12 meses guardando R$ 834/mês'." },
       { q: "Qual a diferença entre planejamento financeiro de curto e longo prazo?", a: "Curto prazo (até 1 ano): reserva de emergência, quitar dívidas, viagens. Longo prazo (5+ anos): aposentadoria, compra de imóvel, independência financeira. Os investimentos mudam conforme o prazo." },
@@ -2260,7 +2260,7 @@ export const blogPosts: BlogPost[] = [
     image: calculadorasFinanceirasImg,
     author: "VICIO<CODE>",
     date: "2026-02-25",
-    readTime: "5 min",
+    readTime: "12 min",
     faq: [
       { q: "Como funciona a calculadora de investimentos?", a: "Você insere o valor de aporte, prazo e taxa de rendimento. A calculadora mostra quanto seu dinheiro renderá com juros compostos, considerando aportes mensais e inflação." },
       { q: "As cotações das calculadoras são em tempo real?", a: "As cotações são atualizadas em intervalos regulares durante o pregão da B3. Podem ter delay de até 15 minutos em relação ao preço real de mercado." },
@@ -2668,7 +2668,7 @@ export const blogPosts: BlogPost[] = [
     image: economia_domestica_2026Img,
     author: "VICIO<CODE>",
     date: "2026-03-17",
-    readTime: "14 min",
+    readTime: "13 min",
     faq: [
       { q: "Quanto é possível economizar por mês com economia doméstica?", a: "Com as 30 dicas deste guia, famílias brasileiras conseguem cortar entre R$ 500 e R$ 1.500 por mês do orçamento, dependendo da renda e dos hábitos atuais de consumo." },
       { q: "Vale a pena trocar de bandeira tarifária de energia?", a: "Sim. Mudar para tarifa branca e concentrar uso de eletrodomésticos pesados no horário fora de ponta pode reduzir a conta de luz em até 20%." },
