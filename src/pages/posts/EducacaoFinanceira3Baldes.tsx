@@ -6,7 +6,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { Clock, Calendar, User, ChevronRight, Zap, Brain, Smartphone, CheckCircle2 } from "lucide-react";
+import { Clock, Calendar, User, ChevronRight, Zap, Brain, Smartphone, CheckCircle2, AlertTriangle, Users } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
@@ -127,11 +127,11 @@ const EducacaoFinanceira3Baldes = () => {
   }, []);
 
   const timelineSteps = [
-    { period: "Mês 1–3",  title: "Mapeamento",  desc: "Ajuste inicial e categorização dos gastos. Vai ser desconfortável descobrir para onde vai o dinheiro — é assim mesmo." },
-    { period: "Mês 3–6",  title: "Automático",  desc: "O sistema roda sozinho. Você para de pensar em dinheiro todo dia. A ansiedade financeira reduz visivelmente." },
-    { period: "Mês 6–12", title: "Reserva",     desc: "Reserva de emergência de 3–6 meses formada. Primeiro grande marco de segurança financeira real." },
-    { period: "Ano 2–3",  title: "Crescimento", desc: "Juros compostos começam a fazer diferença visível no extrato. O patrimônio cresce por si mesmo." },
-    { period: "Ano 5",    title: "Liberdade",   desc: "Posição financeira top 20% da população brasileira. Você tem escolhas que a maioria não tem." },
+    { period: "Mês 1–3",  title: "Mapeamento",  desc: "Ajuste inicial e categorização dos gastos. Vai ser desconfortável descobrir para onde vai o dinheiro — é assim mesmo. A maioria das pessoas descobre nesse período que está gastando 15–25% mais do que imaginava em pequenas categorias como delivery, assinaturas e transporte por aplicativo." },
+    { period: "Mês 3–6",  title: "Automático",  desc: "O sistema roda sozinho. Você para de pensar em dinheiro todo dia. A ansiedade financeira reduz visivelmente, porque a decisão de quanto gastar e quanto investir já foi tomada uma vez — e não precisa ser tomada de novo a cada compra." },
+    { period: "Mês 6–12", title: "Reserva",     desc: "Reserva de emergência de 3–6 meses formada. Primeiro grande marco de segurança financeira real — a partir daqui, imprevistos deixam de ser crises e passam a ser apenas inconvenientes administráveis." },
+    { period: "Ano 2–3",  title: "Crescimento", desc: "Juros compostos começam a fazer diferença visível no extrato. O patrimônio cresce por si mesmo, e o Balde 2 começa a gerar rendimentos que, somados aos novos aportes, aceleram o crescimento de forma perceptível mês a mês." },
+    { period: "Ano 5",    title: "Liberdade",   desc: "Posição financeira top 20% da população brasileira. Você tem escolhas que a maioria não tem — trocar de emprego sem desespero, lidar com uma emergência médica sem pânico, ou simplesmente dormir tranquilo sabendo que o sistema está funcionando." },
   ];
 
   return (
@@ -161,7 +161,7 @@ const EducacaoFinanceira3Baldes = () => {
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
             <span className="flex items-center gap-1"><User className="h-4 w-4" /> VICIO&lt;CODE&gt;</span>
             <span className="flex items-center gap-1"><Calendar className="h-4 w-4" /> 21 Fev 2026</span>
-            <span className="flex items-center gap-1"><Clock className="h-4 w-4" /> 11 min de leitura</span>
+            <span className="flex items-center gap-1"><Clock className="h-4 w-4" /> 12 min de leitura</span>
           </div>
           <ShareWhatsApp />
           <AuthorBio category="invest" />
@@ -184,6 +184,9 @@ const EducacaoFinanceira3Baldes = () => {
           </p>
           <p className="text-muted-foreground leading-relaxed">
             O <strong>Método dos 3 Baldes</strong> é inspirado nas pesquisas de finanças comportamentais — em especial nos trabalhos de Daniel Kahneman sobre vieses cognitivos e tomada de decisão — e foi adaptado para a realidade brasileira de 2026. O princípio é radical na simplicidade: <em>divida o dinheiro em três destinos fixos antes de gastar um centavo</em>.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            A grande virada de chave deste método não está na matemática — qualquer planilha de orçamento já sugere divisões parecidas há décadas. A virada está na <strong>ordem e na automação</strong>. A maioria das pessoas tenta investir o que sobra no fim do mês. O Método dos 3 Baldes inverte essa lógica: o dinheiro do investimento sai primeiro, automaticamente, no mesmo dia em que o salário cai. O que resta é o que existe para o resto do mês — e é com esse valor menor que o cérebro vai precisar lidar, não com o salário cheio.
           </p>
         </div>
 
@@ -250,6 +253,9 @@ const EducacaoFinanceira3Baldes = () => {
               </div>
             ))}
           </div>
+          <p className="text-sm text-muted-foreground">
+            Esses percentuais são um ponto de partida, não uma lei. Em regiões metropolitanas com aluguel elevado, é comum o Balde 1 ultrapassar 60% nos primeiros meses — e está tudo bem. O importante é começar com a divisão que sua realidade atual permite e ir ajustando gradualmente: cada ponto percentual que você consegue reduzir do Balde 1 pode ser redirecionado diretamente para o Balde 2, acelerando seus resultados sem exigir aumento de renda.
+          </p>
         </section>
 
         {/* Calculadora */}
@@ -294,6 +300,30 @@ const EducacaoFinanceira3Baldes = () => {
 
         <AdInArticle />
 
+        {/* Adaptações por perfil */}
+        <section className="mb-10">
+          <h2 className="flex items-center gap-3 text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            <Users className="h-6 w-6 shrink-0" />
+            Adaptações do Método para Diferentes Perfis
+          </h2>
+          <p className="text-muted-foreground text-sm mb-4">
+            O método dos 3 baldes não é uma fórmula rígida — ele precisa se adaptar à realidade de cada pessoa. Veja como ajustar para situações comuns:
+          </p>
+          <div className="grid md:grid-cols-2 gap-4">
+            {[
+              { perfil: "Renda variável (autônomos e freelancers)", desc: "Em vez de percentuais fixos sobre um salário previsível, calcule a média dos últimos 6 meses de recebimentos e use esse valor como base para o Balde 1 (Necessidades). Tudo que exceder essa média em meses bons vai majoritariamente para o Balde 2, criando um colchão para os meses mais fracos." },
+              { perfil: "Casais com finanças conjuntas", desc: "Cada pessoa pode manter seu próprio Balde 3 (Qualidade de Vida) individual, evitando atritos sobre gastos pessoais, enquanto os Baldes 1 e 2 são geridos em conjunto com contribuições proporcionais à renda de cada um — não necessariamente 50/50." },
+              { perfil: "Quem está endividado", desc: "Antes de aplicar os percentuais padrão, crie temporariamente um 'quarto balde' para quitação de dívidas com juros altos (acima de 10% ao mês), reduzindo o Balde 3 para o mínimo possível até as dívidas mais caras serem eliminadas." },
+              { perfil: "Quem recebe 13º salário e bônus", desc: "Trate valores extras com a mesma lógica dos 3 baldes: pelo menos 50% direto para o Balde 2 (investimentos), já que esses valores não fazem parte do orçamento mensal recorrente e representam a melhor oportunidade do ano para acelerar metas financeiras." },
+            ].map(({ perfil, desc }) => (
+              <div key={perfil} className="bg-card border border-border rounded-xl p-4">
+                <h4 className="font-bold text-sm mb-1">{perfil}</h4>
+                <p className="text-xs text-muted-foreground">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Ferramentas */}
         <section className="mb-10">
           <AdRectangle className="my-8" />
@@ -325,6 +355,30 @@ const EducacaoFinanceira3Baldes = () => {
 
         {/* Quiz comportamental */}
         <BehaviorQuiz />
+
+        {/* Erros comuns */}
+        <section className="mb-10">
+          <h2 className="flex items-center gap-3 text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            <AlertTriangle className="h-6 w-6 shrink-0" />
+            Erros Comuns ao Aplicar o Método
+          </h2>
+          <div className="space-y-3">
+            {[
+              { titulo: "Tentar a divisão perfeita desde o primeiro mês", desc: "Se hoje suas Necessidades consomem 75% do salário, pular direto para 55% é irreal e gera frustração. Reduza 2–3 pontos percentuais por mês até chegar à proporção ideal — progresso gradual sustenta-se; perfeição instantânea geralmente não." },
+              { titulo: "Usar o Balde 2 como reserva de emergência E investimento de longo prazo misturados", desc: "Separe contas diferentes para cada finalidade. Misturar reserva de emergência com investimentos de longo prazo cria confusão sobre quanto está realmente disponível para imprevistos versus quanto está 'travado' para objetivos futuros." },
+              { titulo: "Esquecer de revisar o orçamento após mudanças de vida", desc: "Mudança de emprego, nascimento de filho, mudança de cidade — qualquer evento desses exige recalcular os percentuais. Um orçamento que não é revisado periodicamente vira ficção rapidamente." },
+              { titulo: "Culpar-se pelos gastos do Balde 3", desc: "O propósito do Balde 3 é justamente permitir gastos sem culpa, dentro do limite definido. Sentir culpa por usar o dinheiro que foi alocado para isso é contraproducente e tende a gerar o efeito rebote de gastar ainda mais depois." },
+            ].map(({ titulo, desc }) => (
+              <div key={titulo} className="flex gap-3 bg-destructive/5 border border-destructive/20 rounded-xl p-4">
+                <AlertTriangle className="h-5 w-5 text-destructive shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="font-bold text-sm mb-1">{titulo}</h4>
+                  <p className="text-sm text-muted-foreground">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
         {/* Timeline */}
         <section className="mb-10">
@@ -359,6 +413,7 @@ const EducacaoFinanceira3Baldes = () => {
                 "Método dos 3 Baldes: Necessidades (55%), Investimentos (25%), Qualidade de Vida (20%)",
                 "Automatize tudo — transferência automática no dia do salário elimina a decisão e a tentação",
                 "A Regra das 24h elimina ~70% das compras impulsivas sem precisar de força de vontade",
+                "Adapte os percentuais à sua realidade atual e ajuste gradualmente — 2 a 3 pontos por mês",
                 "Em 5 anos de método consistente, você estará numa posição financeira que 80% dos brasileiros nunca alcançam",
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2">
@@ -433,7 +488,7 @@ const EducacaoFinanceira3Baldes = () => {
         <CommentSection
           postId="educacao-financeira-metodo-3-baldes"
           postTitle="Método dos 3 Baldes: Educação Financeira Para Quem Sempre Gastou Tudo"
-         category="invest" />
+          category="invest" />
       </article>
     </>
   );

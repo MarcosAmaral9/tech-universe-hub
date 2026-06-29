@@ -227,10 +227,82 @@ const CDB2026Guia = () => {
           ))}
         </div>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Qual o seu perfil de investidor?</h3>
-          <p className="text-muted-foreground">Está usando CDB ou prefere Tesouro Direto? Conta pra gente nos comentários! 👇</p>
+        <h2 className="text-2xl font-bold mt-10 mb-6">CDB Prefixado vs. Pós-fixado: Qual Escolher em 2026?</h2>
+        <p>
+          Além do CDB pós-fixado (atrelado ao CDI), bancos também oferecem CDBs prefixados,
+          com taxa fixa definida no momento da contratação. A escolha entre os dois modelos
+          depende diretamente da sua expectativa sobre o futuro da Selic:
+        </p>
+        <div className="not-prose my-6 grid md:grid-cols-2 gap-4">
+          <div className="bg-card rounded-xl border border-emerald-500/20 p-5">
+            <h3 className="font-bold text-emerald-400 mb-3 text-sm">📊 CDB Pós-fixado (% do CDI)</h3>
+            <p className="text-sm text-muted-foreground mb-2">
+              Acompanha a Selic automaticamente. Se os juros subirem, seu rendimento sobe
+              junto. Ideal para quem acredita que a Selic vai se manter estável ou subir,
+              e para quem prioriza previsibilidade de não perder para o CDI.
+            </p>
+          </div>
+          <div className="bg-card rounded-xl border border-violet-500/20 p-5">
+            <h3 className="font-bold text-violet-400 mb-3 text-sm">🔒 CDB Prefixado (taxa fixa)</h3>
+            <p className="text-sm text-muted-foreground mb-2">
+              Trava uma taxa no momento da compra (ex: 14,5% ao ano). Vantajoso se você
+              acredita que a Selic vai cair — você garante a taxa atual mesmo que os juros
+              futuros sejam menores. Risco: se a Selic subir, você fica com taxa inferior
+              à nova realidade do mercado.
+            </p>
+          </div>
         </div>
+        <p>
+          Com o ciclo de cortes de juros em curso no Brasil em 2026, CDBs prefixados de
+          médio prazo (2 a 4 anos) começam a ganhar atratividade para quem quer travar as
+          taxas elevadas atuais antes que caiam ainda mais. A decisão ideal raramente é
+          binária — muitos investidores experientes mantêm uma combinação de pós-fixado
+          (para a reserva de emergência) e prefixado (para objetivos com prazo definido),
+          equilibrando previsibilidade com aproveitamento do ciclo de juros.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Perguntas Frequentes Sobre CDB em 2026</h2>
+        <div className="not-prose space-y-3 my-6">
+          {[
+            { q: "Existe valor mínimo para investir em CDB?", a: "Sim, varia por instituição. Bancos digitais costumam aceitar a partir de R$ 1 a R$ 100, enquanto alguns CDBs de bancos tradicionais exigem aplicação mínima de R$ 1.000 a R$ 5.000. Plataformas agregadoras facilitam encontrar opções com ticket de entrada baixo." },
+            { q: "Posso ter mais de um CDB ao mesmo tempo?", a: "Sim, e é recomendado. Diversificar entre diferentes bancos e prazos é uma estratégia comum para otimizar o uso do limite de cobertura do FGC e equilibrar liquidez com rentabilidade." },
+            { q: "O que acontece se eu precisar resgatar antes do prazo?", a: "Depende das condições do CDB contratado. CDBs com liquidez diária permitem resgate a qualquer momento, geralmente sem perda de rentabilidade proporcional. CDBs com carência podem não permitir resgate algum até o vencimento, ou permitir apenas com perda significativa de rendimento — sempre leia o regulamento antes de contratar." },
+            { q: "CDB de banco digital é tão seguro quanto de banco tradicional?", a: "Sim, desde que o banco emissor seja regulado pelo Banco Central e o valor investido esteja dentro do limite de cobertura do FGC (R$ 250 mil por CPF por instituição). O porte do banco não altera a proteção do FGC — ela é a mesma para bancos grandes e pequenos dentro do limite de cobertura." },
+          ].map(({ q, a }) => (
+            <div key={q} className="bg-card border border-border rounded-xl p-4">
+              <h4 className="font-bold text-sm mb-1">{q}</h4>
+              <p className="text-sm text-muted-foreground">{a}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">
+          CDB Como Parte de Uma Estratégia de Diversificação em Renda Fixa
+        </h2>
+        <p>
+          Embora o CDB seja um excelente instrumento, a estratégia mais robusta de renda
+          fixa raramente se resume a um único produto. Combinar CDBs de diferentes
+          prazos e bancos com Tesouro Direto e LCI/LCA isentas de IR cria uma carteira
+          de renda fixa mais resiliente, que aproveita as vantagens específicas de cada
+          modalidade: a previsibilidade do Tesouro Selic para liquidez imediata, o
+          potencial de rendimento superior de CDBs de bancos médios para parte do
+          capital com prazo definido, e a isenção fiscal das LCI/LCA para otimizar a
+          rentabilidade líquida de quem já esgotou a vantagem marginal de outras opções.
+        </p>
+        <p>
+          Uma prática recomendada por planejadores financeiros é escalonar os
+          vencimentos dos CDBs ao longo do tempo — uma estratégia conhecida como
+          "escada de vencimentos" — de forma que diferentes parcelas do capital se
+          tornem líquidas em momentos espaçados. Isso reduz o risco de precisar resgatar
+          tudo de uma vez em um momento de taxa desfavorável, ao mesmo tempo em que
+          mantém parte do capital sempre disponível para reaplicação nas taxas vigentes
+          no momento, capturando eventuais melhorias nas condições de mercado sem
+          comprometer a liquidez geral da carteira de renda fixa. Revisar essa escada a
+          cada 6 a 12 meses, ajustando os vencimentos conforme novos aportes são feitos
+          ou conforme o cenário de juros evolui, mantém a estratégia sempre alinhada aos
+          objetivos financeiros do investidor ao longo do tempo.
+        </p>
+
       </div>
 
       <EditorialTake category="invest" title="Análise do Marcos: CDB de grande banco é cilada silenciosa">
@@ -283,7 +355,6 @@ const CDB2026Guia = () => {
         ]}
       />
 
-      <BackNavigation category="invest" />
       <RelatedPosts currentSlug="cdb-2026-guia-completo" />
       <CommentSection postId="cdb-2026-guia-completo" postTitle="CDB em 2026: Guia Completo"  category="invest" />
     </article>

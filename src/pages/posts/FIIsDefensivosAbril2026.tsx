@@ -1,12 +1,11 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { Clock, User, Calendar, Building2, Shield, TrendingUp, BarChart3, PiggyBank, Target } from "lucide-react";
+import { Clock, User, Calendar, Building2, Shield, TrendingUp, BarChart3, PiggyBank, Target, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
@@ -22,7 +21,12 @@ const FIIsDefensivosAbril2026 = () => {
     <article className="container py-8 max-w-4xl mx-auto">
       <BackNavigation category="invest" />
       <header className="mb-8">
-        <CategoryBadge category="invest" size="lg" />
+        <div className="flex items-center gap-2 mb-4">
+          <CategoryBadge category="invest" size="lg" />
+          <span className="px-3 py-1 bg-invest/20 text-invest rounded-full text-sm font-medium">
+            FIIs · IFIX · Estratégia Defensiva
+          </span>
+        </div>
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
           FIIs Defensivos em Abril de 2026: Estratégia para Investir com Segurança
         </h1>
@@ -36,14 +40,16 @@ const FIIsDefensivosAbril2026 = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img fetchpriority="high" loading="eager"
-          decoding="async"
-          src={heroImg} alt="FIIs Defensivos Abril 2026 — estratégia de investimento" className="w-full h-full object-cover" />
+        <img fetchpriority="high" loading="eager" decoding="async" src={heroImg} alt="FIIs Defensivos Abril 2026 — estratégia de investimento" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
           Com a inflação acima da meta e a Selic ainda em <strong>13,25% ao ano</strong>, o mercado de <strong>Fundos Imobiliários (FIIs)</strong> vive um momento de seleção estratégica. Grandes corretoras como XP e BTG Pactual ajustaram suas carteiras recomendadas para abril com <strong>perfil defensivo</strong>, priorizando fundos de recebíveis (papel) e logística. Neste guia, explicamos o cenário e apresentamos os critérios para montar uma carteira de FIIs resiliente.
+        </p>
+
+        <p>
+          O termo "defensivo" em FIIs costuma ser usado de forma vaga no mercado — basicamente como sinônimo de "fundo que paga dividendo alto e não vai cair muito". Mas essa definição é incompleta e perigosa. Um fundo verdadeiramente defensivo é aquele cuja <strong>receita não depende de condições de mercado favoráveis</strong> para se manter estável. Isso significa contratos longos, inquilinos sólidos e baixa exposição a renegociações que possam ocorrer justamente nos momentos em que o mercado está mais fraco — exatamente quando a proteção é mais necessária.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -64,7 +70,10 @@ const FIIsDefensivosAbril2026 = () => {
           ))}
         </div>
         <p>
-          O primeiro trimestre de 2026 foi positivo para os FIIs, com o IFIX acumulando alta puxada por fundos de recebíveis (CRIs) que se beneficiam da Selic alta. No entanto, o cenário de inflação persistente e a incerteza geopolítica exigem cautela na seleção de ativos.
+          O primeiro trimestre de 2026 foi positivo para os FIIs, com o IFIX acumulando alta puxada por fundos de recebíveis (CRIs) que se beneficiam da Selic alta. No entanto, o cenário de inflação persistente e a incerteza geopolítica exigem cautela na seleção de ativos. O volume negociado de R$ 48,5 bilhões no trimestre — um recorde para o período — reflete também o crescimento da base de investidores: a B3 reporta mais de 2,4 milhões de CPFs com posição em FIIs, número que praticamente dobrou desde 2021.
+        </p>
+        <p>
+          Esse crescimento da base de investidores tem uma consequência prática importante: fundos com boa comunicação, relatórios gerenciais transparentes e histórico consistente de distribuição tendem a atrair fluxo desproporcional em relação a fundos com fundamentos similares mas menor visibilidade. Para o investidor, isso significa que parte da "qualidade" percebida de um FII reflete também sua popularidade — e popularidade não é sinônimo de segurança, ainda que frequentemente caminhem juntas.
         </p>
 
         <AdLeaderboard className="my-8" />
@@ -74,15 +83,18 @@ const FIIsDefensivosAbril2026 = () => {
           O Que É uma Estratégia Defensiva em FIIs?
         </h2>
         <p>
-          Uma carteira defensiva de FIIs prioriza:
+          Uma carteira defensiva de FIIs prioriza cinco características que, combinadas, reduzem a probabilidade de surpresas negativas na distribuição mensal:
         </p>
         <ul>
-          <li><strong>Previsibilidade de receita:</strong> fundos com contratos longos e inquilinos de alta qualidade</li>
-          <li><strong>Proteção contra inflação:</strong> fundos de recebíveis indexados ao IPCA e CDI</li>
-          <li><strong>Baixa vacância:</strong> imóveis localizados em regiões premium com demanda estável</li>
-          <li><strong>Diversificação:</strong> mix de segmentos para reduzir risco específico</li>
-          <li><strong>Liquidez:</strong> fundos com volume de negociação diário acima de R$ 1 milhão</li>
+          <li><strong>Previsibilidade de receita:</strong> fundos com contratos longos e inquilinos de alta qualidade, cuja capacidade de pagamento não depende de ciclos econômicos de curto prazo</li>
+          <li><strong>Proteção contra inflação:</strong> fundos de recebíveis indexados ao IPCA e CDI, que ajustam automaticamente a receita conforme o cenário macro muda</li>
+          <li><strong>Baixa vacância:</strong> imóveis localizados em regiões premium com demanda estável, onde a reposição de inquilinos é rápida em caso de saída</li>
+          <li><strong>Diversificação:</strong> mix de segmentos para reduzir risco específico — um problema setorial isolado não compromete toda a carteira</li>
+          <li><strong>Liquidez:</strong> fundos com volume de negociação diário acima de R$ 1 milhão, permitindo ajustes de posição sem impacto relevante no preço</li>
         </ul>
+        <p>
+          Vale notar que esses cinco critérios funcionam como um sistema, não isoladamente. Um fundo com contratos extremamente longos mas concentrado em um único inquilino, por exemplo, tem previsibilidade de receita alta mas diversificação baixa — se esse inquilino específico entrar em dificuldades financeiras, o "contrato longo" perde grande parte do seu valor protetor. A análise de qualidade de um FII defensivo precisa olhar para a combinação desses fatores, não para um único indicador isoladamente.
+        </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Building2 className="h-7 w-7 text-violet-400" />
@@ -116,9 +128,9 @@ const FIIsDefensivosAbril2026 = () => {
           </table>
         </div>
 
-        
         <AdInArticle className="my-8" />
-<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BarChart3 className="h-7 w-7 text-violet-400" />
           Critérios para Selecionar FIIs Defensivos
         </h2>
@@ -165,6 +177,9 @@ const FIIsDefensivosAbril2026 = () => {
             💡 <strong>Estratégia:</strong> Monte uma carteira com <strong>60% CRIs IPCA+ e 40% CRIs CDI+</strong>. Se a Selic começar a cair, a parcela IPCA+ mantém rendimento atrativo via spread real. A parcela CDI+ gera caixa forte enquanto os juros permanecem altos.
           </p>
         </div>
+        <p>
+          Um aspecto técnico importante ao avaliar fundos de recebíveis é o <strong>rating de crédito dos CRIs</strong> que compõem a carteira. CRIs de empresas com rating elevado (AAA, AA) pagam spread menor sobre o CDI/IPCA, mas têm risco de inadimplência substancialmente menor. CRIs de empresas com rating mais baixo pagam spread maior — e é exatamente esse spread adicional que infla o dividend yield de alguns fundos de papel acima da média do segmento. Um DY de 13-14% em fundo de recebíveis pode ser legítimo se a carteira tiver boa diversificação de devedores com rating sólido, ou pode ser um sinal de concentração em crédito de maior risco — a única forma de saber é consultar a composição detalhada no relatório gerencial.
+        </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Target className="h-7 w-7 text-violet-400" />
@@ -196,6 +211,30 @@ const FIIsDefensivosAbril2026 = () => {
           </table>
         </div>
 
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <AlertTriangle className="h-7 w-7 text-yellow-400" />
+          Sinais de Alerta: Quando um FII "Defensivo" Deixa de Ser
+        </h2>
+        <p>
+          Mesmo fundos historicamente considerados defensivos podem deteriorar com o tempo. Monitorar esses sinais no relatório gerencial mensal evita que uma posição "segura" se transforme em surpresa negativa:
+        </p>
+        <div className="not-prose my-4 space-y-3">
+          {[
+            { sinal: "Queda consistente do FFO por cota", desc: "Se o resultado operacional por cota cai trimestre a trimestre, mas a distribuição se mantém estável, o fundo está usando reservas acumuladas para sustentar o dividendo — um padrão que tem prazo de validade." },
+            { sinal: "Concentração crescente em poucos inquilinos", desc: "Se a aquisição de novos imóveis aumenta a dependência de um número pequeno de locatários, o fundo está reduzindo sua diversificação interna mesmo crescendo em tamanho." },
+            { sinal: "Aumento da alavancagem sem justificativa clara", desc: "Dívida crescente para financiar distribuições (em vez de aquisições que geram receita adicional) é sinal de que a gestão está priorizando o curto prazo em detrimento da saúde financeira do fundo." },
+            { sinal: "Mudança de estratégia sem comunicação transparente", desc: "Um fundo que historicamente focava em lajes corporativas e começa a diversificar para segmentos completamente diferentes sem explicar a lógica está mudando seu perfil de risco — o que pode não corresponder mais ao motivo pelo qual você o escolheu inicialmente." },
+          ].map(({ sinal, desc }) => (
+            <div key={sinal} className="flex gap-3 bg-yellow-500/5 border border-yellow-500/20 rounded-xl p-4">
+              <AlertTriangle className="h-5 w-5 text-yellow-500 shrink-0 mt-0.5" />
+              <div>
+                <h4 className="font-bold text-sm mb-0.5">{sinal}</h4>
+                <p className="text-sm text-muted-foreground">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
         <h2 className="text-2xl font-bold mt-10 mb-4">Quando Aumentar o Risco?</h2>
         <p>
           A postura defensiva deve ser mantida enquanto a inflação estiver acima de 4% e a Selic acima de 12%. Quando o Banco Central iniciar um ciclo mais agressivo de corte de juros (sinalizado para o 2° semestre de 2026), será o momento de:
@@ -205,31 +244,65 @@ const FIIsDefensivosAbril2026 = () => {
           <li>📉 Reduzir parcela de <strong>recebíveis CDI+</strong> (que rendem menos com Selic baixa)</li>
           <li>🔄 Considerar <strong>FIIs de desenvolvimento</strong> para capturar valorização imobiliária</li>
         </ul>
+        <p>
+          A transição entre uma carteira defensiva e uma carteira mais orientada a crescimento não precisa — e geralmente não deve — ser feita de uma vez. Conforme os sinais de queda de juros se consolidam (não apenas uma expectativa, mas cortes efetivos do Copom), a realocação gradual, trimestre a trimestre, permite ajustar a exposição sem depender de acertar o timing exato da virada de ciclo.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Acompanhando a Carteira: Frequência Ideal de Revisão</h2>
+        <p>
+          Diferente de ações individuais, que podem exigir acompanhamento mais frequente
+          devido à maior volatilidade de curto prazo, FIIs costumam se beneficiar de uma
+          cadência de revisão mais espaçada — trimestral é geralmente suficiente para a
+          maioria dos investidores. Isso porque a tese de investimento em fundos
+          imobiliários depende de fatores estruturais (qualidade dos imóveis, solidez dos
+          contratos, capacidade da gestão) que mudam lentamente, ao contrário de notícias
+          de curto prazo que frequentemente geram ruído sem alterar os fundamentos reais
+          do fundo.
+        </p>
+        <p>
+          Ao revisar a carteira trimestralmente, dedique atenção especial aos relatórios
+          gerenciais publicados pelas gestoras, que trazem atualizações sobre vacância,
+          contratos vencendo nos próximos meses, e eventuais aquisições ou vendas de
+          imóveis. Mudanças bruscas nesses indicadores — um salto repentino de vacância,
+          por exemplo — merecem investigação mais aprofundada antes de decidir manter,
+          aumentar ou reduzir a posição em um fundo específico dentro da carteira.
+        </p>
+        <p>
+          Por fim, mantenha registro simples da composição da sua carteira de FIIs ao
+          longo do tempo — uma planilha básica com data de compra, preço médio, número
+          de cotas e setor de cada fundo já é suficiente para acompanhar a evolução do
+          patrimônio e identificar rapidamente se algum segmento específico está
+          excessivamente concentrado em relação ao restante da carteira diversificada
+          que você planejou originalmente.
+        </p>
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Conclusão</h2>
         <p>
           Em abril de 2026, a estratégia mais prudente para FIIs é <strong>defensiva mas não paralisante</strong>. Fundos de recebíveis oferecem rendimento atrativo e proteção inflacionária, enquanto logística e lajes bem localizadas adicionam diversificação e potencial de valorização. O segredo é <strong>não tentar acertar o timing perfeito</strong>, mas montar uma carteira resiliente que performe bem em qualquer cenário de juros.
         </p>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Quais FIIs estão na sua carteira de abril?</h3>
-          <p className="text-muted-foreground">Compartilhe nos comentários! 👇</p>
-        </div>
+        <p className="text-xs text-muted-foreground mt-8 p-4 bg-secondary rounded-xl">
+          ⚠️ Artigo educacional. Não constitui recomendação de investimento. Consulte um assessor certificado.
+        </p>
       </div>
-      <EditorialTake category="invest" title={"An\u00e1lise do Marcos: defensivo de verdade \u00e9 vac\u00e2ncia baixa e contrato longo"}>
+      <EditorialTake category="invest" title="Análise do Marcos: defensivo de verdade é vacância baixa e contrato longo">
         <p>'FII defensivo' virou rótulo de marketing, mas na prática só dois critérios separam um fundo verdadeiramente resiliente de um que vai sangrar quando a Selic cai e a economia desacelera: <strong>vacância física abaixo de 5% e prazo médio de contrato (WAULT) acima de 5 anos</strong>. Tudo o mais — segmento, gestora, dividend yield — é secundário. Em logística, KNRI11 e BTLG11 continuam casos clássicos; em corporate, alguns fundos de lajes AAA em São Paulo seguem bem posicionados. Atenção ao yield aparente: FII pagando 1,2% a.m. com vacância de 18% é trator descendo a ladeira sem freio.</p>
+        <p className="mt-2">
+          Outro ponto que costumo reforçar: diversificação em FIIs não significa apenas "comprar vários fundos" — significa comprar fundos cujos riscos não estão correlacionados. Ter 10 FIIs de shopping não é diversificação real, porque todos compartilham a mesma exposição ao ciclo de consumo. Uma carteira defensiva de verdade combina segmentos com drivers diferentes: recebíveis reagem à Selic, logística reage ao e-commerce, lajes corporativas reagem ao mercado de trabalho de colarinho branco. Quando um segmento sofre, os outros tendem a compensar — é esse comportamento, e não o número de fundos na carteira, que define proteção real.
+        </p>
       </EditorialTake>
       <ArticleSources category="invest"
         sources={[
-          { title: "FIIs listados \u2014 B3", url: "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/fundos-de-investimentos-imobiliarios-fii.htm", publisher: "B3", accessedAt: "Maio 2026" },
-          { title: "Boletim mensal de FIIs \u2014 B3", url: "https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/consultas/mercado-a-vista/fundos-de-investimento/boletim-mensal/", publisher: "B3", accessedAt: "Maio 2026" },
+          { title: "FIIs listados — B3", url: "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/fundos-de-investimentos-imobiliarios-fii.htm", publisher: "B3", accessedAt: "Maio 2026" },
+          { title: "Boletim mensal de FIIs — B3", url: "https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/consultas/mercado-a-vista/fundos-de-investimento/boletim-mensal/", publisher: "B3", accessedAt: "Maio 2026" },
           { title: "Funds Explorer", url: "https://www.fundsexplorer.com.br/", publisher: "Funds Explorer", accessedAt: "Maio 2026" },
-          { title: "CVM \u2014 informa\u00e7\u00f5es de FIIs", url: "https://www.investidor.gov.br/", publisher: "CVM", accessedAt: "Maio 2026" },
-          { title: "Status Invest \u2014 an\u00e1lise de FIIs", url: "https://statusinvest.com.br/", publisher: "Status Invest", accessedAt: "Maio 2026" }
+          { title: "CVM — informações de FIIs", url: "https://www.investidor.gov.br/", publisher: "CVM", accessedAt: "Maio 2026" },
+          { title: "Status Invest — análise de FIIs", url: "https://statusinvest.com.br/", publisher: "Status Invest", accessedAt: "Maio 2026" },
+          { title: "ANBIMA — Boletim de Fundos Imobiliários", url: "https://www.anbima.com.br/pt_br/informar/relatorios/fundos-de-investimento/fundos-de-investimento-imobiliario.htm", publisher: "ANBIMA", accessedAt: "Maio 2026" },
         ]}
       />
       <RelatedPosts currentSlug="fiis-defensivos-abril-2026" />
-      <CommentSection postId="fiis-defensivos-abril-2026" postTitle="FIIs Defensivos em Abril de 2026"  category="invest" />
+      <CommentSection postId="fiis-defensivos-abril-2026" postTitle="FIIs Defensivos em Abril de 2026: Estratégia para Investir com Segurança" category="invest" />
     </article>
   );
 };

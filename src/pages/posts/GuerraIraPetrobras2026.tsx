@@ -298,10 +298,27 @@ const GuerraIraPetrobras2026 = () => {
           A pergunta não é "Petrobras é boa?". É <strong>"você aguenta ver a ação cair 8% no dia de um cessar-fogo e não apertar o botão de venda?"</strong>. Se a resposta for sim, os fundamentos estão do seu lado. Se não, a renda fixa indexada à inflação (IPCA+) segue sendo a alternativa mais segura em um Brasil onde o IPCA projeta 4,31% em 2026.
         </p>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Você tem PETR4 na carteira? 💰</h3>
-          <p className="text-muted-foreground">Conta nos comentários sua estratégia! 👇</p>
-        </div>
+        <h2 className="text-2xl font-bold mt-10 mb-4">Como Acompanhar Petrobras e o Mercado de Petróleo</h2>
+        <p>
+          Para quem decide investir em PETR4 ou em outras empresas do setor de petróleo,
+          acompanhar regularmente algumas fontes de informação ajuda a antecipar
+          movimentos relevantes antes que apareçam nas manchetes e já estejam
+          precificados pelo mercado. A U.S. Energy Information Administration (EIA)
+          publica relatórios semanais de estoque de petróleo dos EUA — quando os
+          estoques sobem além do esperado, o preço do Brent tende a cair; quando
+          caem além do esperado, sobe. Esse relatório, divulgado toda quarta-feira,
+          é uma das publicações mais monitoradas por traders de energia globalmente.
+        </p>
+        <p>
+          Para a situação geopolítica específica do Estreito de Ormuz, acompanhar
+          agências internacionais como Reuters e Bloomberg para qualquer notícia
+          relacionada a navegação comercial no Golfo Pérsico é essencial — um único
+          incidente com navio de carga pode mover o preço do petróleo em mais de 5%
+          em questão de horas, com impacto direto e imediato nas ações de PETR4 e
+          PRIO3. A Petrobras em si divulga relatórios de resultado trimestrais e
+          apresentações para investidores com dados de produção e receita, disponíveis
+          no site de Relações com Investidores da companhia.
+        </p>
 
         <p className="text-xs text-muted-foreground mt-8 p-4 bg-secondary rounded-xl not-prose">
           ⚠️ <strong>Aviso Legal:</strong> Este artigo tem caráter exclusivamente informativo e educacional. Não constitui recomendação de investimento. Antes de tomar qualquer decisão financeira, consulte um assessor de investimentos certificado. Investimentos em ações envolvem riscos, incluindo perda do capital investido.

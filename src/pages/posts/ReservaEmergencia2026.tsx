@@ -343,7 +343,76 @@ const ReservaEmergencia2026 = () => {
           {faqData.map(({ q, a }) => <FAQItem key={q} q={q} a={a} />)}
         </div>
 
-        {/* Conclusão */}
+        {/* Onde guardar por perfil de vida */}
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          Reserva de Emergência Por Momento de Vida
+        </h2>
+        <p>
+          O tamanho ideal da reserva de emergência não é um número fixo — ele varia
+          conforme a estabilidade da sua fonte de renda e as responsabilidades financeiras
+          que você carrega. Funcionários públicos com estabilidade de cargo, por exemplo,
+          podem se sentir confortáveis com uma reserva mais próxima de 3 meses de gastos,
+          enquanto autônomos e empreendedores com renda variável deveriam mirar 9 a 12
+          meses, dada a maior imprevisibilidade do fluxo de caixa mensal.
+        </p>
+        <p>
+          Famílias com filhos pequenos ou dependentes que exigem cuidados especiais
+          também tendem a precisar de reservas maiores, já que imprevistos médicos ou
+          educacionais podem surgir com pouco aviso prévio e exigir desembolsos
+          significativos. Já quem é solteiro, sem dependentes e com baixo custo fixo
+          mensal pode operar com segurança em reservas mais enxutas, redirecionando o
+          excedente para investimentos de maior retorno mais cedo.
+        </p>
+        <p>
+          Um exercício útil é revisar o tamanho da reserva a cada mudança relevante de
+          vida: casamento, nascimento de filho, troca de emprego, financiamento de imóvel.
+          Cada um desses eventos altera a estrutura de gastos fixos e o nível de
+          imprevisibilidade da renda, e a reserva deveria ser recalculada para refletir
+          essa nova realidade — não permanecer congelada no valor definido anos atrás.
+        </p>
+
+        {/* Erros no resgate */}
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          Como Usar a Reserva Sem Cometer Erros
+        </h2>
+        <div className="not-prose space-y-3 my-6">
+          {[
+            { erro: "Usar a reserva para 'oportunidades' de investimento", desc: "Uma ação que 'só vai subir' ou uma criptomoeda em alta não são emergências. A reserva existe para imprevistos genuínos — perda de renda, problemas de saúde, reparos urgentes — não para aproveitar supostas oportunidades de mercado que podem (e frequentemente vão) dar errado." },
+            { erro: "Não repor a reserva depois de usá-la", desc: "Usar parte da reserva para uma emergência real é exatamente para isso que ela existe. O erro está em não priorizar a reposição nos meses seguintes, deixando a família vulnerável a um segundo imprevisto antes de reconstruir o colchão de segurança." },
+            { erro: "Resgatar tudo de uma vez por impulso", desc: "Antes de sacar a reserva inteira para qualquer gasto, pergunte: isso é realmente uma emergência, ou é um desejo de consumo disfarçado de urgência? Criar esse pequeno intervalo de reflexão evita o uso indevido do fundo de segurança." },
+            { erro: "Guardar a reserva em conta corrente sem rendimento", desc: "Deixar a reserva parada em conta corrente, sem qualquer aplicação, significa perder rendimento todos os meses sem necessidade. Mesmo a liquidez mais imediata (Tesouro Selic, CDB com resgate D+0) já garante proteção contra a inflação enquanto mantém acesso rápido ao dinheiro." },
+          ].map(({ erro, desc }) => (
+            <div key={erro} className="bg-destructive/5 border border-destructive/20 rounded-xl p-4">
+              <h4 className="font-bold text-sm mb-1">{erro}</h4>
+              <p className="text-sm text-muted-foreground">{desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          Reserva de Emergência e o Cenário de Juros de 2026
+        </h2>
+        <p>
+          Com a Selic ainda em patamar elevado em 2026, manter a reserva de emergência em
+          ativos pós-fixados como Tesouro Selic ou CDB de liquidez diária nunca foi tão
+          rentável. O retorno real (acima da inflação) desses instrumentos está em níveis
+          historicamente altos, o que significa que a reserva não apenas protege contra
+          imprevistos, mas também gera um rendimento líquido relevante simplesmente por
+          estar guardada de forma inteligente, em vez de parada sem render nada.
+        </p>
+        <p>
+          Esse cenário favorável não deve, porém, mudar a lógica fundamental da reserva:
+          ela continua sendo prioritariamente sobre segurança e liquidez, não sobre
+          maximização de retorno. Mesmo que CDBs de bancos médios ofereçam taxas
+          ligeiramente superiores ao Tesouro Selic, a reserva de emergência deveria
+          priorizar sempre a combinação de garantia (FGC) e liquidez imediata sobre
+          ganhos marginais de rentabilidade — o objetivo dessa parcela do patrimônio nunca
+          é otimizar retorno, é garantir que você nunca precise recorrer a dívidas caras
+          ou vender investimentos de longo prazo no pior momento possível. Pense nessa
+          reserva como um seguro que você paga para si mesmo, não como um investimento
+          que precisa competir em rentabilidade com o restante da sua carteira.
+        </p>
+
         <h2>Conclusão: Comece Hoje, Mesmo Que Com Pouco</h2>
         <p>
           A reserva de emergência é o primeiro e mais importante passo de qualquer
@@ -357,13 +426,6 @@ const ReservaEmergencia2026 = () => {
           a liberdade de investir em ativos de maior risco <em>porque sabe que sua base
           está protegida</em>.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Já tem sua reserva montada? 🛡️</h3>
-          <p className="text-muted-foreground">
-            Conta nos comentários quanto tempo levou para construir a sua!
-          </p>
-        </div>
 
         <p className="text-xs text-muted-foreground mt-6 italic">
           Conteúdo informativo. Não constitui recomendação de investimento. Consulte um

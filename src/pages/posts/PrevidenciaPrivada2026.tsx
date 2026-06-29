@@ -366,7 +366,91 @@ const PrevidenciaPrivada2026 = () => {
           plataformas. A nova seguradora geralmente auxilia em todo o processo.
         </p>
 
-        {/* Guia rápido */}
+        {/* Sucessão patrimonial */}
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          Previdência Privada Como Ferramenta de Planejamento Sucessório
+        </h2>
+        <p>
+          Um dos benefícios menos conhecidos da previdência privada — tanto PGBL quanto
+          VGBL — é sua eficiência como instrumento de planejamento sucessório. Diferente
+          de outros investimentos, que entram no inventário e podem ficar bloqueados por
+          meses ou anos até a partilha de bens ser concluída judicialmente, os valores
+          aplicados em planos de previdência são transferidos diretamente aos beneficiários
+          indicados, sem passar pelo processo de inventário.
+        </p>
+        <p>
+          Essa característica reduz significativamente o tempo até que a família tenha
+          acesso aos recursos em caso de falecimento do titular — frequentemente em
+          questão de semanas, em vez dos meses ou anos típicos de um inventário judicial
+          complexo. Além disso, em muitos estados brasileiros, a transferência por
+          previdência privada não está sujeita ao ITCMD (Imposto de Transmissão Causa
+          Mortis e Doação) da mesma forma que outros bens, embora esse tratamento varie
+          conforme a legislação estadual e seja objeto de debate jurídico em alguns casos
+          — vale consultar um advogado especializado em planejamento sucessório para
+          confirmar a aplicação específica no seu estado.
+        </p>
+        <p>
+          Para famílias com patrimônio relevante ou estrutura familiar mais complexa
+          (segundo casamento, filhos de relacionamentos diferentes, sócios em empresas
+          familiares), a previdência privada pode ser usada estrategicamente para garantir
+          que determinados beneficiários recebam recursos de forma mais rápida e
+          previsível, complementando — não substituindo — um planejamento sucessório mais
+          amplo que pode incluir testamento, holding familiar e outros instrumentos
+          jurídicos especializados.
+        </p>
+
+        {/* Erros comuns */}
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          Erros Mais Comuns ao Contratar Previdência Privada
+        </h2>
+        <div className="not-prose space-y-3 my-6">
+          {[
+            { erro: "Contratar PGBL sem declarar IR no modelo completo", desc: "O benefício fiscal do PGBL (dedução de até 12% da renda bruta) só se aplica a quem declara pelo modelo completo. Contratar PGBL declarando pelo simplificado é um erro comum que elimina a principal vantagem do produto — nesse caso, o VGBL é sempre a escolha correta." },
+            { erro: "Não comparar taxa de administração entre plataformas", desc: "A mesma seguradora pode oferecer o mesmo fundo de previdência com taxas de administração drasticamente diferentes dependendo do canal de venda. Bancos tradicionais no balcão costumam cobrar 2 a 3 vezes mais que plataformas digitais especializadas para o produto equivalente." },
+            { erro: "Escolher tabela progressiva sem planejar o resgate", desc: "A tabela progressiva pode parecer mais simples, mas se você resgatar valores grandes de uma vez no futuro, pode cair nas faixas mais altas do IR (até 27,5%). A tabela regressiva, com planejamento de longo prazo, quase sempre resulta em menos imposto pago no total." },
+            { erro: "Ignorar a portabilidade quando a taxa está alta", desc: "Muitos investidores mantêm planos antigos com taxas de administração elevadas por desconhecimento ou inércia. A portabilidade é gratuita, não gera tributação e pode ser feita a qualquer momento — não há motivo para permanecer em um plano caro quando existem alternativas mais baratas no mercado." },
+          ].map(({ erro, desc }) => (
+            <div key={erro} className="bg-destructive/5 border border-destructive/20 rounded-xl p-4">
+              <h4 className="font-bold text-sm mb-1">{erro}</h4>
+              <p className="text-sm text-muted-foreground">{desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          PGBL/VGBL vs. Outros Investimentos de Longo Prazo
+        </h2>
+        <p>
+          Vale comparar a previdência privada com alternativas de longo prazo como Tesouro
+          IPCA+ e fundos de investimento tradicionais. A grande vantagem da previdência
+          está na ausência de come-cotas semestral — o imposto que incide automaticamente
+          duas vezes por ano sobre fundos de renda fixa tradicionais, reduzindo o efeito
+          dos juros compostos ao longo do tempo. Na previdência, o IR só é cobrado no
+          resgate, permitindo que 100% do capital permaneça investido e gerando retorno
+          composto sobre o valor total, não apenas sobre o líquido de impostos intermediários.
+        </p>
+        <p>
+          Por outro lado, o Tesouro IPCA+ direto tem a vantagem de não cobrar taxa de
+          administração de terceiros (apenas a taxa de custódia da B3, de 0,20% ao ano,
+          isenta para valores até R$ 10.000) e permite resgate parcial flexível a qualquer
+          momento sem as regras específicas de portabilidade e carência que alguns planos
+          de previdência podem impor. Para investidores com bom nível de educação
+          financeira que não dependem do benefício fiscal do PGBL, montar uma carteira
+          própria de Tesouro IPCA+ pode, em alguns casos, superar a previdência privada em
+          custo total — mas perde a vantagem sucessória e a praticidade de não precisar
+          gerenciar ativamente os investimentos.
+        </p>
+
+        <p>
+          Independentemente da escolha entre previdência e Tesouro Direto, o ponto mais
+          importante é simplesmente começar a poupar de forma consistente para a
+          aposentadoria o quanto antes — o custo de adiar essa decisão em alguns anos
+          costuma superar, em termos de patrimônio final, qualquer diferença marginal
+          entre os produtos disputados nessa comparação. Use a tabela abaixo como ponto de
+          partida rápido para identificar qual caminho costuma fazer mais sentido para o
+          seu perfil específico:
+        </p>
+
         <h2 className="text-2xl font-bold mt-10 mb-4">
           Guia Rápido de Decisão — Previdência Privada em 2026
         </h2>
@@ -386,13 +470,6 @@ const PrevidenciaPrivada2026 = () => {
           ))}
         </div>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Você já tem previdência privada?</h3>
-          <p className="text-muted-foreground">
-            Compartilhe sua experiência nos comentários! Já fez portabilidade ou está
-            avaliando? 👇
-          </p>
-        </div>
       </div>
 
       <EditorialTake

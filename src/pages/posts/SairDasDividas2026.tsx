@@ -547,6 +547,74 @@ const SairDasDividas2026 = () => {
           </div>
         </section>
 
+        <section className="mb-10">
+          <div className="bg-card border border-border rounded-2xl p-6">
+            <h2 className="text-xl font-bold mb-4">Como Negociar Dívidas Antigas: Um Roteiro Prático</h2>
+            <p className="text-sm text-muted-foreground mb-3">
+              Dívidas com mais de 5 anos costumam ter o maior potencial de desconto na
+              negociação, já que muitas vezes já foram baixadas como prejuízo contábil
+              pelo credor — significando que qualquer valor recebido, mesmo que pequeno,
+              representa lucro líquido para a instituição. Antes de ligar, pesquise o
+              valor atualizado da dívida em plataformas como Serasa Limpa Nome, que
+              costumam mostrar ofertas de desconto já pré-aprovadas sem necessidade de
+              negociação direta.
+            </p>
+            <p className="text-sm text-muted-foreground mb-3">
+              Ao negociar diretamente com o banco ou financeira, tenha em mãos o valor
+              total que você pode pagar à vista — propostas de pagamento integral
+              costumam receber descontos significativamente maiores do que propostas
+              parceladas. Peça sempre a confirmação por escrito (e-mail ou contrato) antes
+              de efetuar qualquer pagamento, e guarde o comprovante de quitação por pelo
+              menos 5 anos após a negociação, mesmo depois que a dívida sumir do extrato
+              dos birôs de crédito.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Um erro comum é aceitar a primeira oferta sem questionar. Centrais de
+              atendimento costumam ter margem para melhorar a proposta inicial — pedir
+              para "pensar" e ligar novamente em outro dia, ou até falar com um atendente
+              diferente, frequentemente resulta em condições mais vantajosas do que a
+              primeira oferta apresentada.
+            </p>
+          </div>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            O Impacto Psicológico do Endividamento (E Como Lidar Com Ele)
+          </h2>
+          <p className="text-sm text-muted-foreground mb-4">
+            Estar endividado tem um custo que vai além do financeiro: estudos de
+            comportamento financeiro associam dívidas crônicas a níveis elevados de
+            estresse, ansiedade e até problemas de sono. Reconhecer esse impacto
+            emocional, em vez de tratá-lo como fraqueza pessoal, é parte importante do
+            processo de recuperação financeira — culpa e vergonha excessivas tendem a
+            paralisar a ação, exatamente o oposto do que é necessário para sair do
+            ciclo de endividamento.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Buscar apoio, seja de familiares, amigos de confiança ou até grupos de apoio
+            especializados em educação financeira, pode aliviar parte desse peso
+            emocional e tornar o processo de quitação mais sustentável. Celebrar pequenas
+            vitórias ao longo do caminho — a primeira dívida quitada, o primeiro mês sem
+            usar o limite do cartão — ajuda a manter a motivação durante um processo que,
+            para a maioria das pessoas, leva de 12 a 36 meses para ser concluído por
+            completo.
+          </p>
+          <p className="text-sm text-muted-foreground mt-4">
+            Vale lembrar que sair das dívidas não é apenas uma questão de força de
+            vontade individual — fatores estruturais como juros abusivos do rotativo,
+            práticas agressivas de oferta de crédito por parte de instituições financeiras
+            e a falta de educação financeira no currículo escolar brasileiro também
+            contribuem para o problema em escala nacional. Reconhecer esses fatores
+            sistêmicos não isenta a responsabilidade individual sobre o próprio
+            orçamento, mas ajuda a entender que o endividamento generalizado da
+            população brasileira não é simplesmente uma questão de falta de disciplina
+            pessoal de milhões de pessoas — é também resultado de um ambiente financeiro
+            que, historicamente, facilitou o acesso a crédito caro sem oferecer educação
+            equivalente sobre como usá-lo de forma sustentável.
+          </p>
+        </section>
+
         <div className="flex flex-wrap gap-2 mb-8">
           {["sair das dívidas", "quitar dívidas", "método avalanche", "bola de neve", "Serasa", "Desenrola Brasil", "negociação bancária"].map(tag => (
             <span key={tag} className="px-3 py-1 bg-muted rounded-full text-xs text-muted-foreground">#{tag}</span>

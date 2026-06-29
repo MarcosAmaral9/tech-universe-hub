@@ -472,6 +472,86 @@ const BitcoinCripto2026 = () => {
           </Accordion>
         </section>
 
+        {/* Custódia */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            Exchange vs. Carteira Própria: Onde Guardar Suas Criptomoedas
+          </h2>
+          <p className="text-muted-foreground mb-4">
+            Uma das decisões mais importantes para quem investe em criptomoedas é onde
+            manter a custódia dos ativos. Deixar na própria exchange (Binance, Mercado
+            Bitcoin, Foxbit) é prático para quem opera com frequência, mas implica
+            confiar a um terceiro a guarda das chaves privadas que controlam seus fundos.
+            Episódios como o colapso da FTX em 2022, que resultou em perdas bilionárias
+            para milhares de usuários, são lembretes de que esse risco, embora baixo em
+            exchanges reguladas e estabelecidas, não é nulo.
+          </p>
+          <p className="text-muted-foreground mb-4">
+            Para valores mais significativos, transferir os ativos para uma carteira
+            própria — seja um hardware wallet físico (Ledger, Trezor) ou uma carteira de
+            software bem configurada — elimina o risco de contraparte da exchange. O
+            princípio fundamental da comunidade cripto, resumido na frase "not your keys,
+            not your coins", reflete essa tensão entre a praticidade de manter na
+            exchange e o controle total que só uma carteira própria oferece. Para
+            investidores iniciantes com valores menores, manter na exchange costuma ser
+            aceitável; para quem acumula posições relevantes ao longo do tempo, migrar
+            parte dos fundos para custódia própria é uma prática de segurança recomendada
+            por especialistas da área.
+          </p>
+        </section>
+
+        {/* Diversificação dentro de cripto */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            Como Pensar a Alocação Dentro da Classe Cripto
+          </h2>
+          <p className="text-muted-foreground mb-4">
+            Para quem decide incluir criptomoedas na carteira, a pergunta seguinte é como
+            distribuir entre os diferentes ativos disponíveis. O consenso entre analistas
+            especializados é que o Bitcoin, por ter o maior histórico, maior liquidez e
+            menor risco regulatório relativo (incluindo a aprovação de ETFs spot nos
+            EUA), deveria compor a maior parte de qualquer alocação cripto para
+            investidores menos experientes — tipicamente entre 60% e 80% do total
+            destinado a essa classe de ativos.
+          </p>
+          <p className="text-muted-foreground mb-4">
+            O restante pode ser distribuído entre Ethereum, que mantém a maior base de
+            desenvolvedores e aplicações descentralizadas do ecossistema, e eventualmente
+            outras criptomoedas de maior capitalização de mercado, sempre com a
+            consciência de que a volatilidade aumenta significativamente conforme se
+            avança para projetos menores e menos estabelecidos. Independentemente da
+            distribuição escolhida, o tamanho total da posição em criptomoedas dentro do
+            patrimônio geral deveria refletir a tolerância a perdas do investidor — para a
+            maioria dos perfis, recomendações de mercado sugerem manter essa exposição
+            entre 5% e 15% do patrimônio total investido, nunca mais do que o investidor
+            pode perder sem comprometer objetivos financeiros essenciais.
+          </p>
+        </section>
+
+        {/* Volatilidade histórica */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            Lidando com a Volatilidade: O Que Esperar Emocionalmente
+          </h2>
+          <p className="text-muted-foreground mb-4">
+            Quedas de 30%, 40% ou até mais em questão de semanas não são eventos raros no
+            mercado de criptomoedas — são parte recorrente do ciclo histórico desse tipo
+            de ativo. Investidores que entram em cripto sem essa expectativa
+            frequentemente vendem em pânico durante essas correções, cristalizando perdas
+            que poderiam ter sido recuperadas (ou até revertidas em ganho) caso tivessem
+            mantido a posição com horizonte de médio a longo prazo.
+          </p>
+          <p className="text-muted-foreground mb-4">
+            Preparar-se mentalmente para essa volatilidade antes de investir — definindo
+            de antemão quanto você está disposto a ver o valor da posição oscilar sem
+            entrar em pânico — é tão importante quanto a escolha dos ativos em si. Investir
+            apenas o que você não precisará no curto prazo, e tratar criptomoedas como uma
+            posição de longo prazo dentro de uma carteira diversificada, são práticas que
+            ajudam a atravessar os períodos de maior turbulência sem comprometer o
+            patrimônio ou a tranquilidade financeira.
+          </p>
+        </section>
+
         {/* Resumo */}
         <section className="mb-10">
           <div className="bg-card border border-border rounded-2xl p-6">

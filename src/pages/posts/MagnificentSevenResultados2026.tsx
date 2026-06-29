@@ -218,10 +218,102 @@ const MagnificentSevenResultados2026 = () => {
           <li><strong>O JPMorgan estima:</strong> que o capex de 2026 gera retorno mensuravelmente positivo para os hyperscalers a partir de 2027–2028 — quando a adoção enterprise de IA atingir escala crítica.</li>
         </ul>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Você investe em alguma empresa do Mag-7? 📱</h3>
-          <p className="text-muted-foreground">O que achou dos resultados e da saída do Tim Cook? Conta nos comentários! 👇</p>
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Shield className="h-7 w-7 text-invest" />
+          Apple Reporta Hoje: O Que o Mercado Espera
+        </h2>
+        <p>
+          Diferente das outras quatro empresas, a Apple reporta resultados <strong>após o
+          fechamento do mercado de hoje (30/04)</strong> — no mesmo dia em que confirmou a
+          saída de Tim Cook. Essa coincidência de calendário cria um cenário raro: o
+          mercado vai precisar digerir dois eventos de magnitude completamente diferente
+          simultaneamente — resultado trimestral e troca de CEO — o que historicamente
+          aumenta a volatilidade da ação nas sessões seguintes.
+        </p>
+        <p>
+          As expectativas de consenso apontam para receita entre US$ 95 e 98 bilhões no
+          trimestre, impulsionada principalmente pela linha de Serviços (App Store,
+          iCloud, Apple Music, Apple TV+), que mantém margens muito superiores às de
+          hardware. O mercado vai prestar atenção especial a três métricas: crescimento de
+          receita na China (região onde a Apple perdeu participação para fabricantes
+          locais como Huawei e Xiaomi), avanço da adoção do Apple Intelligence em iPhones
+          elegíveis, e qualquer comentário de Tim Cook sobre o cronograma de transição para
+          Ternus durante a teleconferência com analistas.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <BarChart3 className="h-7 w-7 text-invest" />
+          Histórico: Como o Mercado Reage a Trocas de CEO em Big Tech
+        </h2>
+        <p>
+          Transições de liderança em empresas de grande porte nem sempre seguem o mesmo
+          padrão. Vale comparar a saída de Cook com outras trocas recentes no setor de
+          tecnologia para entender o que historicamente acontece com o preço da ação nos
+          meses seguintes ao anúncio:
+        </p>
+        <div className="not-prose my-4 overflow-x-auto">
+          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
+            <thead><tr className="bg-secondary">
+              <th className="text-left py-3 px-4">Empresa</th>
+              <th className="text-left py-3 px-4">Transição</th>
+              <th className="text-left py-3 px-4">Reação imediata</th>
+              <th className="text-left py-3 px-4">12 meses depois</th>
+            </tr></thead>
+            <tbody>
+              {[
+                ["Apple (2011)", "Jobs → Cook", "-2% no dia (saúde de Jobs já precificada)", "+25% (transição operacional bem-sucedida)"],
+                ["Microsoft (2014)", "Ballmer → Nadella", "+1% no dia (mercado cético inicialmente)", "+27% (virada estratégica para cloud)"],
+                ["Twitter (2021)", "Dorsey → Agrawal", "+2% no dia", "-50%+ (antes da aquisição por Musk)"],
+                ["Intel (2021)", "Swan → Gelsinger", "+5% no dia (otimismo com engenheiro no comando)", "-15% (turnaround mais lento que esperado)"],
+              ].map(([emp, trans, imediata, depois]) => (
+                <tr key={emp} className="border-t border-border">
+                  <td className="py-3 px-4 font-bold text-invest text-xs">{emp}</td>
+                  <td className="py-3 px-4 text-xs">{trans}</td>
+                  <td className="py-3 px-4 text-muted-foreground text-xs">{imediata}</td>
+                  <td className="py-3 px-4 text-xs">{depois}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
+        <p>
+          O padrão histórico sugere que o fator decisivo não é a reação imediata do
+          mercado — que costuma ser modesta em qualquer direção — mas sim se o sucessor
+          tem um plano estratégico claro e consegue executá-lo nos primeiros 12 a 24 meses.
+          Casos como Nadella na Microsoft mostram que um CEO técnico, com visão de produto
+          clara, pode gerar valor substancial mesmo sucedendo uma liderança icônica. Já
+          casos como o de Gelsinger na Intel mostram que mesmo um perfil tecnicamente
+          qualificado pode enfrentar dificuldades quando os desafios estruturais da empresa
+          são profundos demais para uma resolução rápida.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          O Capex Bilionário em IA: Onde o Dinheiro Está Indo
+        </h2>
+        <p>
+          Para além dos resultados trimestrais individuais, o tema que conecta todas as
+          sete empresas do grupo é o volume sem precedentes de investimento em
+          infraestrutura de inteligência artificial anunciado para 2026. Somando os
+          planos de capex divulgados por Microsoft, Google, Amazon e Meta, o total
+          ultrapassa centenas de bilhões de dólares destinados a data centers, chips
+          especializados e capacidade energética — um nível de investimento que, em
+          termos absolutos, supera o PIB de diversos países de porte médio.
+        </p>
+        <p>
+          Esse volume de capex gera duas leituras possíveis entre analistas: otimistas
+          argumentam que essas empresas estão construindo a infraestrutura que sustentará
+          décadas de crescimento via IA, com retorno sobre o capital investido se
+          materializando ao longo do tempo conforme a tecnologia amadurece e novos casos
+          de uso geram receita. Céticos apontam para o risco de excesso de capacidade —
+          investir mais em infraestrutura do que a demanda real eventualmente justifica,
+          um padrão que já se observou em ciclos anteriores de investimento tecnológico,
+          como a bolha de fibra óptica no início dos anos 2000. Para o investidor que
+          acompanha essas empresas via BDRs ou ETFs, monitorar a evolução da margem de
+          lucro associada aos investimentos em IA — não apenas o volume de capex em si
+          — é o indicador mais relevante para avaliar se esse ciclo de investimento está
+          gerando retorno proporcional ao capital empregado.
+        </p>
+
         <p className="text-xs text-muted-foreground mt-8 p-4 bg-secondary rounded-xl">
           ⚠️ Artigo educacional baseado em informações disponíveis em 30/04/2026. Não constitui recomendação de investimento. Consulte um assessor certificado.
         </p>

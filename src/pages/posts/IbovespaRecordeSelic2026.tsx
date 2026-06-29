@@ -5,14 +5,12 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { Clock, User, Calendar, TrendingUp, BarChart3, Shield, Lightbulb, DollarSign, Zap } from "lucide-react";
+import { Clock, User, Calendar, TrendingUp, BarChart3, Shield, Lightbulb, DollarSign, AlertTriangle } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import carteiraInvestimentosImg from "@/assets/carteira-iniciantes-guia-2026.webp";
-
 
 const IbovespaRecordeSelic2026 = () => {
   useEffect(() => {
@@ -51,7 +49,11 @@ const IbovespaRecordeSelic2026 = () => {
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          O Ibovespa renovou recordes históricos pelo 3º dia seguido na semana passada, fechando acima dos 195 mil pontos. O dólar caiu para a menor cotação em dois anos. E o Banco Central já iniciou o ciclo de queda da Selic, com projeções de chegar a 12,25% até o fim de 2026. Este é o cenário mais favorável ao investidor brasileiro dos últimos anos — e também o mais delicado para tomar a decisão certa.
+          O Ibovespa renovou recordes históricos pelo 3º dia seguido na semana passada, fechando acima dos <strong>195 mil pontos</strong>. O dólar caiu para a menor cotação em dois anos. E o Banco Central já iniciou o ciclo de queda da Selic, com projeções de chegar a <strong>12,25% até o fim de 2026</strong>. Este é o cenário mais favorável ao investidor brasileiro dos últimos anos — e também o mais delicado para tomar a decisão certa.
+        </p>
+
+        <p>
+          A combinação simultânea de bolsa em máxima histórica, câmbio favorável e juros em queda é rara — e historicamente de curta duração. Quando os três fatores convergem ao mesmo tempo, o mercado está precificando uma transição: o fim de um ciclo de juros restritivos e o início de outro mais favorável a ativos de risco. O desafio para o investidor não é decidir <em>se</em> deve haver exposição a esses ativos — é decidir <em>o quanto</em> e <em>com que velocidade</em> reposicionar uma carteira que provavelmente ainda está concentrada em renda fixa pós-fixada, construída durante os dois anos de Selic acima de 14%.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -89,6 +91,9 @@ const IbovespaRecordeSelic2026 = () => {
         <p>
           A grande narrativa de 2026 é a transição: <strong>de um ambiente de juros proibitivos (Selic a 15%) para um ciclo de afrouxamento</strong>. O Ibovespa sobe na antecipação desta mudança. Segundo um estudo da Rico Investimentos analisando os 5 últimos ciclos de queda de juros, a bolsa sobe em média antes E depois do primeiro corte. O maior erro do investidor é esperar o corte acontecer para entrar.
         </p>
+        <p>
+          Vale notar que essa antecipação não é uma curiosidade estatística isolada — é o mecanismo central de como mercados de ações precificam mudanças de política monetária. Quando o Copom sinaliza, via atas e comunicados, que o ciclo de cortes está próximo, gestores institucionais já começam a recompor posições semanas ou meses antes da decisão oficial. Isso significa que, no momento em que o corte efetivamente acontece e aparece nas manchetes, parte relevante do movimento de alta já ocorreu — o que não significa que não haja espaço adicional, mas significa que o "timing perfeito" de esperar a confirmação raramente existe na prática.
+        </p>
 
         <AdLeaderboard className="my-8" />
 
@@ -112,8 +117,9 @@ const IbovespaRecordeSelic2026 = () => {
             <p className="text-xs text-muted-foreground mb-2">Taxa atual: IPCA + ~6,5% a.a. | Liquidez diária | IR regressivo</p>
             <p className="text-xs">Ideal para: proteção contra inflação com retorno real garantido. Com guerra no Oriente Médio e pressão inflacionária, este é o porto seguro da carteira.</p>
           </div>
-      <AdInArticle />
         </div>
+
+        <AdInArticle className="my-8" />
 
         <h3 className="text-xl font-bold mt-8 mb-3">📊 Ações: Os Setores que Mais Ganham com a Queda de Juros</h3>
         <p>A queda da Selic beneficia diretamente empresas que dependem de crédito para crescer ou que concorrem com a renda fixa pelo dinheiro do investidor:</p>
@@ -130,11 +136,14 @@ const IbovespaRecordeSelic2026 = () => {
                 <h4 className="font-bold text-sm">{setor}</h4>
                 <span className="text-xs bg-green-500/15 text-green-400 px-2 py-0.5 rounded-full">{alta}</span>
               </div>
-              <p className="text-xs text-ia mb-1">{empresas}</p>
+              <p className="text-xs text-invest mb-1">{empresas}</p>
               <p className="text-xs text-muted-foreground">{motivo}</p>
             </div>
           ))}
         </div>
+        <p>
+          Um ponto que merece atenção especial é o setor de construção civil. Depois de quase dois anos com financiamento imobiliário restritivo, a combinação de Selic em queda com programas habitacionais do governo (MCMV) cria um efeito duplo: mais pessoas conseguem aprovação de crédito, e o crédito aprovado fica mais barato. Esse tipo de setor tende a ter reação defasada — a melhora nos resultados das construtoras aparece nos balanços com 1 a 2 trimestres de atraso em relação à queda da Selic, porque o ciclo de venda, aprovação de financiamento e repasse contábil de receita não é instantâneo.
+        </p>
 
         <AdRectangle className="my-8" />
 
@@ -192,41 +201,106 @@ const IbovespaRecordeSelic2026 = () => {
           ))}
         </div>
 
-        
-<h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Lightbulb className="h-7 w-7 text-invest" />
+          Como Fazer a Transição Sem Vender Tudo de Uma Vez
+        </h2>
+        <p>
+          Para quem tem hoje a maior parte do patrimônio em Tesouro Selic ou CDBs pós-fixados — uma alocação racional durante os dois anos de Selic acima de 14% — a tentação é migrar tudo de uma vez para ações e prefixados ao ver o Ibovespa em recorde. Essa é, historicamente, a forma mais cara de entrar no mercado: comprando perto de topos locais por ansiedade de "não ficar de fora".
+        </p>
+        <p>
+          A abordagem mais robusta é a migração gradual em parcelas mensais ao longo de 4 a 8 meses, redirecionando uma fração fixa do que está em pós-fixado para a nova alocação-alvo a cada mês. Isso suaviza o preço médio de entrada e reduz o risco de comprar tudo num pico que se revele temporário. Para quem está perto da reserva de emergência mínima recomendada (3 a 6 meses de gastos), essa parte nunca deve entrar nessa migração — ela permanece em Tesouro Selic ou CDB de liquidez diária independentemente do cenário de mercado.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-invest" />
           O Que Pode Dar Errado: Riscos de 2026
         </h2>
-        <ul>
-          <li><strong>Risco fiscal e eleições:</strong> 2026 é ano eleitoral. Incerteza sobre o próximo governo pode gerar volatilidade no segundo semestre, especialmente na curva longa de juros.</li>
-          <li><strong>Guerra no Oriente Médio:</strong> Cessar-fogo frágil com Irã. Se o conflito reescalar, petróleo dispara novamente, inflação pressiona e o BC pode pausar os cortes.</li>
-          <li><strong>Ibovespa já subiu muito:</strong> Com o índice perto de recordes, parte do movimento já está precificada. A margem de segurança é menor do que há 6 meses.</li>
-          <li><strong>Risco China:</strong> Desaceleração chinesa afeta commodities (Vale, mineração), que têm peso relevante no Ibovespa.</li>
-        </ul>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Em qual classe de ativo você está investindo em 2026? 📊</h3>
-          <p className="text-muted-foreground">Conta nos comentários! 👇</p>
+        <div className="not-prose my-4 space-y-3">
+          {[
+            { titulo: "Risco fiscal e eleições", desc: "2026 é ano eleitoral. Incerteza sobre o próximo governo pode gerar volatilidade no segundo semestre, especialmente na curva longa de juros. Propostas fiscais não precificadas pelo mercado tendem a gerar reprecificação abrupta quando ganham viabilidade nas pesquisas." },
+            { titulo: "Guerra no Oriente Médio", desc: "Cessar-fogo frágil com Irã. Se o conflito reescalar, petróleo dispara novamente, inflação pressiona e o BC pode pausar os cortes — revertendo parte da narrativa que sustenta o rali atual da bolsa." },
+            { titulo: "Ibovespa já subiu muito", desc: "Com o índice perto de recordes, parte do movimento já está precificada. A margem de segurança é menor do que há 6 meses, o que significa que más notícias têm potencial de gerar correções proporcionalmente maiores." },
+            { titulo: "Risco China", desc: "Desaceleração chinesa afeta commodities (Vale, mineração), que têm peso relevante no Ibovespa. Dados de PIB chinês abaixo do esperado historicamente pressionam o índice via setor de materiais básicos." },
+          ].map(({ titulo, desc }) => (
+            <div key={titulo} className="flex gap-3 bg-card rounded-xl border border-yellow-500/20 p-4">
+              <AlertTriangle className="h-5 w-5 text-yellow-500 shrink-0 mt-0.5" />
+              <div>
+                <h4 className="font-bold text-sm mb-0.5">{titulo}</h4>
+                <p className="text-sm text-muted-foreground">{desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <DollarSign className="h-7 w-7 text-invest" />
+          Setores Defensivos vs. Cíclicos: Como Balancear a Carteira
+        </h2>
+        <p>
+          Numa carteira de ações em momento de recordes do índice, balancear exposição
+          entre setores defensivos e cíclicos ajuda a navegar tanto cenários de
+          continuidade do rali quanto eventuais correções. Setores defensivos —
+          utilities, bancos com receita previsível, seguradoras — tendem a sofrer menos
+          em correções de mercado, mas também participam menos de movimentos fortes de
+          alta. Setores cíclicos — construção civil, varejo de bens duráveis, commodities
+          — amplificam tanto altas quanto quedas, sendo mais sensíveis ao ciclo
+          econômico e à confiança do consumidor.
+        </p>
+        <p>
+          Uma carteira de ações bem construída para o cenário atual do Brasil costuma
+          combinar entre 50% e 60% em setores defensivos, que sustentam o valor da
+          carteira em momentos de maior incerteza, com o restante em setores cíclicos
+          selecionados, que capturam o potencial de valorização adicional caso o cenário
+          macroeconômico continue evoluindo favoravelmente. Essa combinação reduz a
+          volatilidade total da carteira sem sacrificar completamente o potencial de
+          retorno em um ambiente de juros em queda e recuperação econômica gradual.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <BarChart3 className="h-7 w-7 text-invest" />
+          Acompanhando os Indicadores-Chave Mês a Mês
+        </h2>
+        <p>
+          Para quem decide investir nesse cenário, monitorar alguns indicadores
+          regularmente ajuda a calibrar expectativas e identificar mudanças de tendência
+          antes que se tornem óbvias para o mercado em geral. O Boletim Focus, divulgado
+          semanalmente pelo Banco Central, consolida as projeções de Selic, IPCA, câmbio
+          e PIB do mercado, servindo como termômetro confiável das expectativas
+          consensuais. A ata do Copom, divulgada após cada reunião, detalha o raciocínio
+          por trás de cada decisão e costuma sinalizar a trajetória esperada para as
+          próximas reuniões.
+        </p>
+        <p>
+          Além desses indicadores macro, acompanhar o fluxo de capital estrangeiro na B3
+          — divulgado diariamente — oferece pistas sobre se o movimento de alta do
+          Ibovespa está sendo sustentado por compradores institucionais internacionais ou
+          apenas por capital doméstico, informação relevante para avaliar a robustez do
+          movimento de valorização em curso.
+        </p>
 
         <p className="text-xs text-muted-foreground mt-8 p-4 bg-secondary rounded-xl">
           ⚠️ <strong>Aviso Legal:</strong> Este artigo é educacional e não constitui recomendação de investimento. Consulte um assessor certificado antes de tomar decisões financeiras. Rentabilidade passada não garante resultados futuros.
         </p>
       </div>
 
-        <EditorialTake category="invest" title="Análise do Marcos: Ibovespa em recorde não significa que qualquer ação está barata">
-          <p>O Ibovespa em recorde com Selic ainda em patamar restritivo confirma o que venho falando: o mercado precifica corte antes do Copom efetivar. Históricamente, dos últimos cinco ciclos de afrouxamento brasileiros, em quatro o Ibov subiu 15%+ nos seis meses anteriores ao primeiro corte. A armadilha é entrar em small caps ilquídas achando que vai pegar o próximo Magálu — quem leu o livro do Damodaran sabe que reratings típicos vêm em qualidade, não em pulinhos.</p>
-        </EditorialTake>
+      <EditorialTake category="invest" title="Análise do Marcos: Ibovespa em recorde não significa que qualquer ação está barata">
+        <p>O Ibovespa em recorde com Selic ainda em patamar restritivo confirma o que venho falando: o mercado precifica corte antes do Copom efetivar. Historicamente, dos últimos cinco ciclos de afrouxamento brasileiros, em quatro o Ibov subiu 15%+ nos seis meses anteriores ao primeiro corte. A armadilha é entrar em small caps ilíquidas achando que vai pegar o próximo Magazine Luiza de 2018 — quem leu Damodaran sabe que reratings consistentes vêm de qualidade de negócio, não de "pulinhos" especulativos em papéis sem liquidez.</p>
+        <p className="mt-2">
+          Para quem está migrando da renda fixa pós-fixada agora, minha sugestão prática: separe a reserva de emergência (intocável) e migre o restante em parcelas mensais ao longo do segundo e terceiro trimestre de 2026, priorizando setores com fluxo de caixa previsível (utilities, bancos) antes de setores mais cíclicos (construção, varejo de luxo). Recordes de índice não são sinal de venda automática nem de compra automática — são sinal de que o regime mudou, e o regime novo exige seletividade maior do que o regime anterior, quando bastava estar em qualquer ativo de renda fixa para ter retorno excelente.
+        </p>
+      </EditorialTake>
 
-        <ArticleSources category="invest" sources={[
-    { title: 'B3 — Índices', url: 'https://www.b3.com.br/pt_br/market-data-e-indices/indices/', publisher: 'B3', accessedAt: "Maio 2026" },
-    { title: 'Banco Central — Histórico da Selic', url: 'https://www.bcb.gov.br/controleinflacao/historicotaxasjuros', publisher: 'BCB', accessedAt: "Maio 2026" },
-    { title: 'Copom — Atas e Comunicados', url: 'https://www.bcb.gov.br/publicacoes/atascopom', publisher: 'BCB', accessedAt: "Maio 2026" },
-    { title: 'Valor Econômico — Mercado', url: 'https://valor.globo.com/financas/', publisher: 'Valor', accessedAt: "Maio 2026" },
-    { title: 'Reuters — Brazil Markets', url: 'https://www.reuters.com/markets/', publisher: 'Reuters', accessedAt: "Maio 2026" }
-  ]} />
+      <ArticleSources category="invest" sources={[
+        { title: 'B3 — Índices', url: 'https://www.b3.com.br/pt_br/market-data-e-indices/indices/', publisher: 'B3', accessedAt: "Maio 2026" },
+        { title: 'Banco Central — Histórico da Selic', url: 'https://www.bcb.gov.br/controleinflacao/historicotaxasjuros', publisher: 'Banco Central do Brasil', accessedAt: "Maio 2026" },
+        { title: 'Copom — Atas e Comunicados', url: 'https://www.bcb.gov.br/publicacoes/atascopom', publisher: 'Banco Central do Brasil', accessedAt: "Maio 2026" },
+        { title: 'Boletim Focus — Expectativas de Mercado', url: 'https://www.bcb.gov.br/publicacoes/focus', publisher: 'Banco Central do Brasil', accessedAt: "Maio 2026" },
+        { title: 'Valor Econômico — Mercados', url: 'https://valor.globo.com/financas/', publisher: 'Valor Econômico', accessedAt: "Maio 2026" },
+        { title: 'Reuters — Brazil Markets', url: 'https://www.reuters.com/markets/', publisher: 'Reuters', accessedAt: "Maio 2026" }
+      ]} />
       <RelatedPosts currentSlug="ibovespa-recorde-selic-caindo-2026" />
-      <CommentSection postId="ibovespa-recorde-selic-caindo-2026" postTitle="Ibovespa em Recordes e Selic Caindo: Onde Investir Agora em Abril de 2026"  category="invest" />
+      <CommentSection postId="ibovespa-recorde-selic-caindo-2026" postTitle="Ibovespa em Recordes e Selic Caindo: Onde Investir Agora em Abril de 2026" category="invest" />
     </article>
   );
 };

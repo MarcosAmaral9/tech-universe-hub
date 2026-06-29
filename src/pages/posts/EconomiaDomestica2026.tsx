@@ -273,7 +273,34 @@ const EconomiaDomestica2026 = () => {
           ))}
         </div>
 
-        {/* Impacto real */}
+        {/* Erros comuns */}
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-4">
+          <AlertTriangle className="h-7 w-7 text-invest" />
+          6. Erros Comuns Que Sabotam a Economia Doméstica
+        </h2>
+        <p>
+          Mesmo seguindo as dicas acima, alguns hábitos podem anular boa parte do esforço
+          de economizar. Reconhecer esses padrões é tão importante quanto aplicar as
+          estratégias de corte de gastos:
+        </p>
+        <div className="not-prose space-y-2 my-6">
+          {[
+            { titulo: "Comprar em grande quantidade sem necessidade real", detalhe: "Promoções de 'leve 3, pague 2' só geram economia se você realmente vai consumir tudo antes do vencimento. Calcule o consumo médio mensal antes de estocar — alimento vencido na despensa é dinheiro jogado fora, não economia." },
+            { titulo: "Trocar economia de dinheiro por gasto de tempo excessivo", detalhe: "Visitar 5 supermercados diferentes para economizar R$ 15 no total raramente compensa o tempo e o combustível gastos no trajeto. Escolha 1–2 estabelecimentos com bom custo-benefício geral e otimize ali." },
+            { titulo: "Ignorar o custo de oportunidade de eletrodomésticos antigos", detalhe: "Uma geladeira com mais de 15 anos pode consumir até 50% mais energia que um modelo atual com selo Procel A. Em alguns casos, a troca se paga em 2–3 anos só pela economia na conta de luz." },
+            { titulo: "Tratar a economia como evento único, não como hábito", detalhe: "Cortar gastos em um mês de 'crise' e voltar ao padrão antigo no mês seguinte não constrói patrimônio. O valor real da economia doméstica vem da consistência ao longo de anos, não de esforços pontuais." },
+          ].map(({ titulo, detalhe }) => (
+            <div key={titulo} className="flex gap-3 bg-destructive/5 border border-destructive/20 rounded-xl p-4">
+              <AlertTriangle className="h-4 w-4 text-destructive shrink-0 mt-1" />
+              <div>
+                <p className="font-semibold text-sm mb-0.5">{titulo}</p>
+                <p className="text-xs text-muted-foreground">{detalhe}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <TrendingDown className="h-7 w-7 text-invest" />
           O Impacto Real: O Que Fazer Com Esse Dinheiro
@@ -303,10 +330,29 @@ const EconomiaDomestica2026 = () => {
           </p>
         </div>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Qual sua melhor dica de economia? 💰</h3>
-          <p className="text-muted-foreground">Compartilhe nos comentários e ajude outros leitores!</p>
-        </div>
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          A Psicologia Por Trás dos Gastos Domésticos
+        </h2>
+        <p>
+          Muito do que gastamos de forma desnecessária em casa não é resultado de má
+          gestão consciente, mas de mecanismos psicológicos bem documentados que nos
+          levam a comportamentos de consumo automáticos. A "fadiga de decisão" — o
+          esgotamento mental que acumula ao longo do dia e nos torna mais vulneráveis
+          a compras impulsivas no final da tarde e à noite — explica por que os
+          momentos mais perigosos para abrir um aplicativo de delivery ou navegar em
+          sites de compras são justamente aqueles em que já tomamos dezenas de decisões
+          ao longo do dia.
+        </p>
+        <p>
+          Criar barreiras físicas e digitais para esses momentos de maior
+          vulnerabilidade — remover a opção de compra imediata salva em aplicativos,
+          deslogar de sites de e-commerce, estabelecer horários fixos para compras não
+          urgentes — redireciona a energia cognitiva limitada do cérebro para momentos
+          de maior clareza e deliberação. Essa abordagem de design comportamental, em
+          vez de depender de força de vontade pura, tende a produzir resultados muito
+          mais consistentes no controle de gastos domésticos ao longo do tempo.
+        </p>
+
       </div>
 
       <EditorialTake category="invest" title="Análise do Marcos: economizar é só metade da equação">
@@ -359,7 +405,6 @@ const EconomiaDomestica2026 = () => {
         ]}
       />
 
-      <BackNavigation category="invest" />
       <RelatedPosts currentSlug="economia-domestica-2026-cortar-gastos" />
       <CommentSection
         postId="economia-domestica-2026-cortar-gastos"

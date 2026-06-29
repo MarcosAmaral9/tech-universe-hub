@@ -315,6 +315,76 @@ const PoupancaVsCDBTesouro2026 = () => {
           </li>
         </ol>
 
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          Por Que a Poupança Ainda É a Escolha Padrão de Tantos Brasileiros
+        </h2>
+        <p>
+          Apesar de toda a evidência matemática contra a poupança, dados do Banco Central
+          mostram que ela ainda concentra uma fatia relevante das aplicações financeiras
+          dos brasileiros, especialmente entre famílias de renda mais baixa e pessoas com
+          menor familiaridade com o sistema financeiro. As razões para essa persistência
+          são mais comportamentais do que racionais: a poupança tem isenção total de IR
+          (o que cria a ilusão de ser "mais vantajosa"), não exige nenhuma decisão ativa
+          do investidor, e está disponível em praticamente todas as agências bancárias
+          do país, inclusive em cidades pequenas onde outras opções de investimento
+          podem não ter presença física.
+        </p>
+        <p>
+          O problema é que essa simplicidade tem um custo real e silencioso: a diferença
+          entre poupança e CDB ou Tesouro Selic, mantida ao longo de décadas, representa
+          dezenas de milhares de reais de patrimônio que deixam de ser construídos. A boa
+          notícia é que migrar para alternativas mais rentáveis ficou drasticamente mais
+          simples nos últimos anos — bancos digitais e corretoras oferecem onboarding
+          completo em poucos minutos, sem necessidade de conhecimento técnico avançado
+          sobre o mercado financeiro.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          Simulação ao Longo de 10 Anos: O Custo Real de Ficar na Poupança
+        </h2>
+        <p>
+          Para tornar a diferença mais tangível, considere alguém que aporta R$ 300 por
+          mês de forma consistente ao longo de 10 anos. Mantendo esse valor na poupança,
+          com rendimento médio histórico em torno de 6-7% ao ano nos últimos ciclos, o
+          patrimônio acumulado ficaria sensivelmente abaixo do que seria obtido com a
+          mesma disciplina de aportes em um CDB pagando 100% do CDI ou em Tesouro Selic —
+          a diferença, em boa parte dos cenários históricos analisados por especialistas
+          em finanças pessoais, ultrapassa 25% a 30% de patrimônio adicional ao final do
+          período, simplesmente pela escolha do veículo de investimento, sem qualquer
+          mudança no valor ou na disciplina dos aportes.
+        </p>
+        <p>
+          Essa diferença se amplia ainda mais quando se considera horizontes de 20 ou 30
+          anos, típicos de um planejamento de aposentadoria — o efeito composto de uma
+          rentabilidade superior, mantida de forma consistente ao longo de décadas,
+          tipicamente resulta em diferenças de patrimônio final que podem superar 50%
+          em relação ao caminho da poupança, ilustrando por que essa é frequentemente
+          citada como uma das decisões financeiras de maior impacto cumulativo que uma
+          pessoa pode tomar ao longo da vida.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          Quando a Poupança Pode Fazer Sentido (Casos Raros)
+        </h2>
+        <p>
+          Apesar de toda a argumentação contrária, existem situações pontuais e bastante
+          específicas em que manter algum dinheiro em poupança pode ser justificável —
+          embora quase sempre por motivos práticos, não financeiros. Crianças e
+          adolescentes que estão aprendendo os primeiros conceitos de poupar dinheiro,
+          por exemplo, podem se beneficiar da simplicidade da poupança como primeira
+          experiência, antes de migrar para opções mais sofisticadas conforme amadurecem
+          financeiramente.
+        </p>
+        <p>
+          Da mesma forma, para valores extremamente pequenos (abaixo de R$ 50, por
+          exemplo) guardados por períodos muito curtos, a diferença absoluta em reais
+          entre poupança e CDB pode ser tão pequena que não justifica o esforço adicional
+          de abrir conta em outra instituição. Mas esses casos são exceções pontuais, não
+          regra geral — para qualquer reserva de emergência ou investimento de médio a
+          longo prazo, a migração para CDB, Tesouro Selic ou LCI/LCA continua sendo a
+          decisão financeiramente correta para a esmagadora maioria dos brasileiros.
+        </p>
+
         {/* Conclusão */}
         <h2>Conclusão: Não Existe Justificativa Para Poupança em 2026</h2>
         <p>
@@ -329,13 +399,6 @@ const PoupancaVsCDBTesouro2026 = () => {
           remunerada) para o dinheiro do mês, Tesouro Selic para a reserva de emergência e
           CDBs acima de 110% CDI para objetivos de médio prazo de 1 a 3 anos.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Onde você guarda seu dinheiro?</h3>
-          <p className="text-muted-foreground">
-            Já migrou da poupança para renda fixa? Conta nos comentários! 💰
-          </p>
-        </div>
 
         <p className="text-xs text-muted-foreground mt-6 italic">
           Conteúdo informativo. Não constitui recomendação de investimento. Consulte um

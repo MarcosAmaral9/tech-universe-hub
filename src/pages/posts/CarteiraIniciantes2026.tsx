@@ -467,6 +467,50 @@ const CarteiraIniciantes2026 = () => {
             </div>
           </div>
 
+          <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+            Erros Mais Comuns de Quem Está Começando
+          </h2>
+          <div className="not-prose space-y-3 my-6">
+            {[
+              { erro: "Investir antes de ter reserva de emergência", desc: "É tentador começar pela parte 'divertida' — escolher ações ou fundos. Mas sem reserva de emergência, qualquer imprevisto força a venda de investimentos no pior momento possível, muitas vezes com prejuízo. A reserva é sempre o primeiro passo, sem exceção." },
+              { erro: "Tentar acertar o timing perfeito do mercado", desc: "Esperar 'o melhor momento' para começar a investir é uma armadilha comum — na prática, ninguém consegue prever consistentemente altas e baixas do mercado. Começar com aportes regulares, independente do cenário, supera historicamente quem fica esperando o momento ideal." },
+              { erro: "Copiar a carteira de outra pessoa sem entender o porquê", desc: "O que funciona para um investidor com 15 anos de experiência e tolerância alta a risco pode ser completamente inadequado para quem está começando. Entenda a lógica por trás de cada escolha antes de replicá-la na sua própria carteira." },
+              { erro: "Checar a carteira todos os dias", desc: "Acompanhamento excessivo do desempenho de curto prazo gera ansiedade desnecessária e aumenta a tentação de tomar decisões precipitadas baseadas em flutuações que, no longo prazo, são apenas ruído de mercado." },
+            ].map(({ erro, desc }) => (
+              <div key={erro} className="bg-destructive/5 border border-destructive/20 rounded-xl p-4">
+                <h4 className="font-bold text-sm mb-1">{erro}</h4>
+                <p className="text-sm text-muted-foreground">{desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+            O Primeiro Ano: O Que Esperar na Prática
+          </h2>
+          <p className="text-muted-foreground mb-4">
+            Para quem está dando os primeiros passos, é útil ter uma expectativa realista
+            sobre como o primeiro ano de investimentos costuma se desenrolar. Os primeiros
+            meses tendem a ser de aprendizado intenso — entender a diferença entre os
+            produtos, se acostumar com a plataforma da corretora, e desenvolver a
+            disciplina de aportar regularmente, mesmo que o valor inicial pareça pequeno
+            diante do objetivo final.
+          </p>
+          <p className="text-muted-foreground mb-4">
+            É normal que a curva de aprendizado inclua alguns erros de avaliação ao longo
+            do caminho — talvez um investimento que não performou como esperado, ou um
+            momento de ansiedade diante de uma queda do mercado. O que diferencia
+            investidores que constroem patrimônio consistente ao longo de décadas não é a
+            ausência de erros, mas a capacidade de aprender com eles sem abandonar o
+            processo. Tratar o primeiro ano como um período de aprendizado, e não como um
+            teste definitivo de sucesso ou fracasso, ajuda a manter a perspectiva
+            correta sobre o que realmente importa: consistência ao longo de muitos anos,
+            não performance perfeita nos primeiros meses. Revisitar os objetivos
+            definidos no Passo 3 a cada trimestre, ajustando o que for necessário sem
+            abandonar a estratégia de longo prazo por completo, é o hábito que separa
+            quem constrói patrimônio de forma sustentável de quem desiste no primeiro
+            obstáculo encontrado pelo caminho.
+          </p>
+
           {/* Resumo */}
           <div className="not-prose my-8 p-6 bg-[hsl(var(--invest-color))]/10 rounded-xl border border-[hsl(var(--invest-color))]/30">
             <h3 className="text-lg font-bold mb-3">📝 Resumo dos 5 Passos para Iniciantes</h3>
@@ -492,10 +536,6 @@ const CarteiraIniciantes2026 = () => {
             </div>
           </div>
 
-          <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-            <h3 className="text-xl font-bold mb-2">Qual perfil deu no seu quiz? 📊</h3>
-            <p className="text-muted-foreground">Conservador, moderado ou arrojado? Conta nos comentários! 👇</p>
-          </div>
         </div>
 
         <EditorialTake category="invest" title="Análise do Marcos: o maior erro do iniciante não é investir errado — é não investir">

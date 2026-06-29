@@ -14,62 +14,28 @@ import heroImg from "@/assets/etfs-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const ETF_TABLE = [
-  // Nacionais
   { ticker: "BOVA11",  indice: "Ibovespa",         tipo: "Nacional",       taxa: "0,10%", nota: "O mais negociado do Brasil. Exposição às 80+ maiores empresas da B3." },
   { ticker: "BOVV11",  indice: "Ibovespa",         tipo: "Nacional",       taxa: "0,04%", nota: "Menor taxa de todos os ETFs de Ibovespa — ideal para quem otimiza custos." },
   { ticker: "SMAL11",  indice: "SMLL (Small Caps)",tipo: "Nacional",       taxa: "0,50%", nota: "Empresas menores com maior potencial de valorização — maior volatilidade." },
   { ticker: "DIVO11",  indice: "IDIV",             tipo: "Nacional",       taxa: "0,50%", nota: "Foco em empresas pagadoras de dividendos consistentes." },
-  // Internacionais
   { ticker: "IVVB11",  indice: "S&P 500 (EUA)",    tipo: "Internacional",  taxa: "0,23%", nota: "As 500 maiores empresas dos EUA. Maior ETF internacional do Brasil." },
   { ticker: "NASD11",  indice: "Nasdaq-100 (EUA)", tipo: "Internacional",  taxa: "0,30%", nota: "Foco em gigantes de tecnologia: Apple, Microsoft, Nvidia, Google." },
   { ticker: "EURP11",  indice: "Europa",           tipo: "Internacional",  taxa: "0,40%", nota: "Ações europeias diversificadas: UK, Alemanha, França, Suíça." },
   { ticker: "XINA11",  indice: "China",            tipo: "Internacional",  taxa: "0,45%", nota: "Grandes empresas chinesas listadas em Hong Kong e EUA." },
-  // Renda Fixa
   { ticker: "IMAB11",  indice: "IMA-B (IPCA+)",    tipo: "Renda Fixa",     taxa: "0,25%", nota: "Títulos públicos atrelados ao IPCA. Proteção contra inflação." },
   { ticker: "IRFM11",  indice: "IRF-M (Prefixado)",tipo: "Renda Fixa",     taxa: "0,25%", nota: "Títulos prefixados do governo. Bom para travar taxa alta antes do corte." },
   { ticker: "B5P211",  indice: "IMA-B 5 (IPCA+)",  tipo: "Renda Fixa",     taxa: "0,20%", nota: "NTN-B com vencimento até 5 anos — menos volatilidade que o IMAB11." },
 ];
 
 const PORTFOLIOS = [
-  {
-    nome: "🟢 Conservador",
-    alocacao: [
-      { etf: "IMAB11", pct: 50 },
-      { etf: "BOVA11", pct: 20 },
-      { etf: "IVVB11", pct: 30 },
-    ],
-    desc: "Ideal para prazo de 2–5 anos. Prioriza proteção contra inflação com renda fixa e exposição moderada à bolsa nacional e internacional.",
-  },
-  {
-    nome: "🟡 Moderado",
-    alocacao: [
-      { etf: "IMAB11", pct: 30 },
-      { etf: "BOVA11 / BOVV11", pct: 30 },
-      { etf: "IVVB11", pct: 25 },
-      { etf: "NASD11", pct: 15 },
-    ],
-    desc: "Para horizonte de 5–10 anos. Equilibra proteção inflacionária com crescimento via bolsa brasileira e americana.",
-  },
-  {
-    nome: "🔴 Arrojado",
-    alocacao: [
-      { etf: "IMAB11", pct: 10 },
-      { etf: "BOVA11", pct: 20 },
-      { etf: "SMAL11", pct: 15 },
-      { etf: "IVVB11", pct: 30 },
-      { etf: "NASD11", pct: 25 },
-    ],
-    desc: "Para horizonte de 10+ anos. Máxima exposição a renda variável. Aceita volatilidade em troca de maior potencial de retorno.",
-  },
+  { nome: "🟢 Conservador", alocacao: [{ etf: "IMAB11", pct: 50 }, { etf: "BOVA11", pct: 20 }, { etf: "IVVB11", pct: 30 }], desc: "Ideal para prazo de 2–5 anos. Prioriza proteção contra inflação com renda fixa e exposição moderada à bolsa nacional e internacional." },
+  { nome: "🟡 Moderado", alocacao: [{ etf: "IMAB11", pct: 30 }, { etf: "BOVA11 / BOVV11", pct: 30 }, { etf: "IVVB11", pct: 25 }, { etf: "NASD11", pct: 15 }], desc: "Para horizonte de 5–10 anos. Equilibra proteção inflacionária com crescimento via bolsa brasileira e americana." },
+  { nome: "🔴 Arrojado", alocacao: [{ etf: "IMAB11", pct: 10 }, { etf: "BOVA11", pct: 20 }, { etf: "SMAL11", pct: 15 }, { etf: "IVVB11", pct: 30 }, { etf: "NASD11", pct: 25 }], desc: "Para horizonte de 10+ anos. Máxima exposição a renda variável. Aceita volatilidade em troca de maior potencial de retorno." },
 ];
 
 const ETFs2026 = () => {
   useEffect(() => {
-    trackArticleRead(
-      "etfs-2026-guia-completo-investir",
-      "ETFs em 2026: Guia Completo Para Investir com Diversificação",
-      "invest"
-    );
+    trackArticleRead("etfs-2026-guia-completo-investir", "ETFs em 2026: Guia Completo Para Investir com Diversificação", "invest");
   }, []);
 
   return (
@@ -87,9 +53,7 @@ const ETFs2026 = () => {
       <header className="mb-8">
         <div className="flex items-center gap-2 mb-4">
           <CategoryBadge category="invest" size="lg" />
-          <span className="px-3 py-1 bg-invest/20 text-invest rounded-full text-sm font-medium">
-            ETFs · Fundos de Índice · Diversificação
-          </span>
+          <span className="px-3 py-1 bg-invest/20 text-invest rounded-full text-sm font-medium">ETFs · Fundos de Índice · Diversificação</span>
         </div>
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
           ETFs em 2026: Guia Completo Para Investir com Diversificação e Baixo Custo
@@ -107,14 +71,7 @@ const ETFs2026 = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img
-          fetchpriority="high"
-          loading="eager"
-          decoding="async"
-          src={heroImg}
-          alt="ETFs em 2026 — guia completo fundos de índice BOVA11 IVVB11 B3"
-          className="w-full h-full object-cover"
-        />
+        <img fetchpriority="high" loading="eager" decoding="async" src={heroImg} alt="ETFs em 2026 — guia completo fundos de índice BOVA11 IVVB11 B3" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
@@ -123,16 +80,19 @@ const ETFs2026 = () => {
           <strong>ETFs em 2026</strong> são a estratégia favorita de quem quer diversificação real sem pagar caro por isso. Um único ETF pode dar exposição a 500 empresas americanas ou ao Ibovespa inteiro com taxa de administração de apenas 0,04% ao ano — menos que a taxa de administração de qualquer fundo de ações ativo do mercado. E o mercado brasileiro de ETFs nunca foi tão rico em opções.
         </p>
 
-        {/* O que são ETFs */}
+        <p>
+          Para entender o tamanho da virada, vale lembrar o ponto de partida: em 2010, o investidor brasileiro tinha acesso a menos de 10 ETFs na B3, quase todos replicando o Ibovespa. Hoje, com mais de 120 opções, é possível montar uma carteira global completa — ações americanas, europeias, chinesas, renda fixa indexada à inflação, small caps brasileiras — tudo via home broker, com liquidez diária e sem necessidade de conta no exterior. Essa democratização de acesso é, sem exagero, uma das maiores transformações da década para o investidor de varejo brasileiro.
+        </p>
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <TrendingUp className="h-7 w-7 text-invest" />
           O Que São ETFs e Por Que Investir Neles em 2026
         </h2>
         <p>
-          Um <strong>ETF (Exchange Traded Fund)</strong> é um fundo de investimento negociado em bolsa que replica automaticamente o desempenho de um índice, setor ou classe de ativos. Em vez de comprar 80 ações individualmente para montar uma carteira diversificada, você compra uma única cota de BOVA11 e já tem exposição a todas as empresas do Ibovespa.
+          Um <strong>ETF (Exchange Traded Fund)</strong> é um fundo de investimento negociado em bolsa que replica automaticamente o desempenho de um índice, setor ou classe de ativos. Em vez de comprar 80 ações individualmente para montar uma carteira diversificada, você compra uma única cota de BOVA11 e já tem exposição a todas as empresas do Ibovespa, nas proporções exatas do índice.
         </p>
         <p>
-          O modelo nasceu nos EUA em 1993 com o SPY (que replica o S&P 500) e chegou ao Brasil em 2004. Em 2026, o mercado brasileiro conta com mais de 120 ETFs listados, cobrindo renda variável nacional, internacional e renda fixa. As vantagens são difíceis de ignorar:
+          O modelo nasceu nos EUA em 1993 com o SPY (que replica o S&P 500) e chegou ao Brasil em 2004. Em 2026, o mercado brasileiro conta com mais de 120 ETFs listados, cobrindo renda variável nacional, internacional e renda fixa. A gestão é passiva — não há equipe de analistas tentando "bater o mercado" — e essa simplicidade é justamente o que torna o produto tão poderoso no longo prazo. As vantagens são difíceis de ignorar:
         </p>
 
         <div className="not-prose grid sm:grid-cols-2 lg:grid-cols-3 gap-4 my-8">
@@ -153,13 +113,12 @@ const ETFs2026 = () => {
 
         <AdLeaderboard className="my-8" />
 
-        {/* Tabela de ETFs */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BarChart3 className="h-7 w-7 text-invest" />
           Os Melhores ETFs da B3 em 2026: Tabela Completa
         </h2>
         <p>
-          Abaixo estão os principais ETFs disponíveis para o investidor brasileiro em 2026, organizados por tipo. As taxas de administração são anuais e incidem diariamente sobre o patrimônio do fundo — sem cobrança separada pelo investidor.
+          Abaixo estão os principais ETFs disponíveis para o investidor brasileiro em 2026, organizados por tipo. As taxas de administração são anuais e incidem diariamente sobre o patrimônio do fundo — sem cobrança separada pelo investidor. Note como a diferença entre o BOVV11 (0,04%) e ETFs temáticos (0,40–0,50%) pode parecer pequena no papel, mas em horizontes de 20+ anos representa diferença de milhares de reais no patrimônio final:
         </p>
 
         <div className="not-prose my-6 overflow-x-auto">
@@ -196,27 +155,18 @@ const ETFs2026 = () => {
 
         <AdInArticle />
 
-        {/* Tributação */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <DollarSign className="h-7 w-7 text-invest" />
           Tributação de ETFs em 2026: O Que Mudou
         </h2>
         <p>
-          A tributação de ETFs no Brasil tem duas regras distintas dependendo do tipo, e entender isso evita surpresas no IR:
+          A tributação de ETFs no Brasil tem duas regras distintas dependendo do tipo, e entender isso evita surpresas no IR. Uma confusão muito comum é o investidor assumir que ETFs de ações têm a mesma isenção de R$ 20.000/mês das ações individuais — não têm. Essa diferença, sutil, mas importante, já gerou autuações para muitos investidores que venderam BOVA11 abaixo de R$ 20.000 achando que estavam isentos:
         </p>
 
         <div className="not-prose space-y-3 my-6">
           {[
-            {
-              titulo: "ETFs de Renda Variável (BOVA11, IVVB11, SMAL11…)",
-              descricao: "Alíquota de 15% sobre o lucro na venda. Não existe a isenção de R$ 20.000/mês que vale para ações. O IR é recolhido via DARF até o último dia útil do mês seguinte à venda. Não há come-cotas.",
-              cor: "border-blue-500/30 bg-blue-500/5",
-            },
-            {
-              titulo: "ETFs de Renda Fixa (IMAB11, IRFM11, B5P211…)",
-              descricao: "Sujeitos à tabela regressiva de IR: 25% (até 180 dias), 20% (181–360 dias), 15% (361–720 dias) e 15% (acima de 720 dias). Incide come-cotas semestral (maio e novembro) como os fundos de renda fixa tradicionais.",
-              cor: "border-amber-500/30 bg-amber-500/5",
-            },
+            { titulo: "ETFs de Renda Variável (BOVA11, IVVB11, SMAL11…)", descricao: "Alíquota de 15% sobre o lucro na venda. Não existe a isenção de R$ 20.000/mês que vale para ações. O IR é recolhido via DARF até o último dia útil do mês seguinte à venda. Não há come-cotas.", cor: "border-blue-500/30 bg-blue-500/5" },
+            { titulo: "ETFs de Renda Fixa (IMAB11, IRFM11, B5P211…)", descricao: "Sujeitos à tabela regressiva de IR: 25% (até 180 dias), 20% (181–360 dias), 15% (361–720 dias) e 15% (acima de 720 dias). Incide come-cotas semestral (maio e novembro) como os fundos de renda fixa tradicionais.", cor: "border-amber-500/30 bg-amber-500/5" },
           ].map(({ titulo, descricao, cor }) => (
             <div key={titulo} className={`rounded-xl border p-5 ${cor}`}>
               <h3 className="font-bold text-sm mb-2">{titulo}</h3>
@@ -225,13 +175,12 @@ const ETFs2026 = () => {
           ))}
         </div>
 
-        {/* Portfólios modelo */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Globe className="h-7 w-7 text-invest" />
           Portfólios Modelo com ETFs por Perfil
         </h2>
         <p>
-          A estratégia mais comprovada é o <strong>investimento passivo com aportes regulares</strong> (Dollar Cost Averaging — DCA): comprar parcelas fixas mensalmente independentemente do preço. Estudos da S&P Dow Jones mostram que fundos passivos superam entre 85% e 92% dos gestores ativos em períodos de 15 anos. Veja três portfólios completos:
+          A estratégia mais comprovada é o <strong>investimento passivo com aportes regulares</strong> (Dollar Cost Averaging — DCA): comprar parcelas fixas mensalmente independentemente do preço. Estudos da S&P Dow Jones mostram que fundos passivos superam entre 85% e 92% dos gestores ativos em períodos de 15 anos. A razão é estatística, não circunstancial: para um gestor ativo bater o índice consistentemente, ele precisa acertar mais do que erra em centenas de decisões ao longo de décadas — e os custos extras de gestão (1,5–2% ao ano) consomem boa parte de qualquer vantagem que ele eventualmente consiga gerar. Veja três portfólios completos, organizados por horizonte de tempo e tolerância a oscilações:
         </p>
 
         <div className="not-prose space-y-4 my-6">
@@ -240,9 +189,7 @@ const ETFs2026 = () => {
               <h3 className="font-bold mb-3">{nome}</h3>
               <div className="flex flex-wrap gap-2 mb-3">
                 {alocacao.map(({ etf, pct }) => (
-                  <span key={etf} className="px-3 py-1 bg-invest/10 text-invest rounded-full text-xs font-mono font-bold">
-                    {pct}% {etf}
-                  </span>
+                  <span key={etf} className="px-3 py-1 bg-invest/10 text-invest rounded-full text-xs font-mono font-bold">{pct}% {etf}</span>
                 ))}
               </div>
               <p className="text-xs text-muted-foreground">{desc}</p>
@@ -252,7 +199,6 @@ const ETFs2026 = () => {
 
         <AdRectangle className="my-8" />
 
-        {/* Erros comuns */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <AlertTriangle className="h-7 w-7 text-yellow-400" />
           5 Erros Comuns ao Investir em ETFs em 2026
@@ -276,7 +222,6 @@ const ETFs2026 = () => {
           ))}
         </div>
 
-        {/* Como começar */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <CheckCircle className="h-7 w-7 text-invest" />
           Como Começar a Investir em ETFs Hoje: Passo a Passo
@@ -300,10 +245,44 @@ const ETFs2026 = () => {
           ))}
         </div>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Já investe em ETFs? 📈</h3>
-          <p className="text-muted-foreground">Conta pra gente quais são seus favoritos nos comentários!</p>
-        </div>
+        <h2 className="text-2xl font-bold mt-10 mb-6">
+          Rebalanceamento na Prática: Um Exemplo Real
+        </h2>
+        <p>
+          Para entender por que o rebalanceamento periódico importa, considere um portfólio moderado que começou com 30% em IMAB11, 30% em BOVA11, 25% em IVVB11 e 15% em NASD11. Se ao longo de seis meses o NASD11 subir 40% enquanto o IMAB11 ficar estável, sua alocação real pode passar para 18% em NASD11 — acima da meta de 15%. Rebalancear significa vender parte do NASD11 (realizando lucro) e redirecionar para o IMAB11, voltando à proporção original. Esse processo, feito mecanicamente a cada seis meses, tem um efeito sutil mas poderoso: força você a vender na alta e comprar na baixa relativa, sem precisar prever nada — é disciplina embutida no próprio sistema.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">
+          ETFs de Acumulação vs. Distribuição: Qual Escolher
+        </h2>
+        <p>
+          Outro detalhe técnico relevante na escolha de ETFs é entender se o fundo
+          distribui dividendos periodicamente aos cotistas ou se reinveste
+          automaticamente os proventos recebidos das empresas que compõem a carteira,
+          aumentando o valor da cota sem gerar distribuição em dinheiro. ETFs de
+          distribuição, como o DIVO11, pagam dividendos diretamente na conta do
+          investidor, o que pode ser interessante para quem busca renda periódica. Já
+          ETFs de acumulação reinvestem automaticamente, o que tende a ser mais
+          eficiente do ponto de vista tributário para quem está em fase de acumulação de
+          patrimônio, já que evita a necessidade de decidir o que fazer com pequenos
+          valores de dividendos recebidos mês a mês.
+        </p>
+        <p>
+          Para o investidor brasileiro que está construindo patrimônio de longo prazo
+          sem necessidade imediata de renda, ETFs com política de reinvestimento
+          automático de dividendos tendem a ser mais práticos, eliminando a fricção de
+          decidir frequentemente sobre pequenos valores recebidos. Já para quem já está
+          na fase de usufruir do patrimônio acumulado — tipicamente na aposentadoria —
+          ETFs de distribuição como o DIVO11 oferecem fluxo de caixa mais previsível,
+          similar ao que FIIs oferecem no mercado imobiliário, mas com a diversificação
+          adicional de estar exposto a múltiplos setores da economia simultaneamente.
+          Avalie qual perfil de fluxo de caixa se alinha melhor ao seu momento de vida
+          financeira antes de definir a composição final da sua carteira de ETFs.
+        </p>
+
+        <p className="text-xs text-muted-foreground mt-8 p-4 bg-secondary rounded-xl">
+          ⚠️ <strong>Aviso Legal:</strong> Este conteúdo é educacional e não constitui recomendação de investimento. Consulte um assessor certificado antes de investir.
+        </p>
       </div>
 
       <EditorialTake category="invest" title="Análise do Marcos: ETFs são a vacina contra a preguiça de diversificar">
@@ -317,51 +296,17 @@ const ETFs2026 = () => {
 
       <ArticleSources category="invest"
         sources={[
-          {
-            title: "ETFs listados na B3 — Fundos de Índice de Renda Variável e Renda Fixa",
-            url: "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/etf/renda-variavel/etfs-listados.htm",
-            publisher: "B3 — Bolsa do Brasil",
-            accessedAt: "Maio 2026",
-          },
-          {
-            title: "SPIVA Brazil Scorecard — Fundos Ativos vs Índices",
-            url: "https://www.spglobal.com/spdji/en/research-insights/spiva/spiva-brazil-scorecard/",
-            publisher: "S&P Dow Jones Indices",
-            accessedAt: "Maio 2026",
-          },
-          {
-            title: "Tributação de Fundos de Índice (ETF) no Brasil",
-            url: "https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/tributos/irpf/imposto-de-renda-sobre-aplicacoes-financeiras",
-            publisher: "Receita Federal do Brasil",
-            accessedAt: "Maio 2026",
-          },
-          {
-            title: "Instrução CVM nº 359/2002 — Fundos de Índice",
-            url: "https://www.gov.br/cvm/pt-br/legislacao/instrucoes/inst359consolid.pdf",
-            publisher: "Comissão de Valores Mobiliários (CVM)",
-            accessedAt: "Maio 2026",
-          },
-          {
-            title: "Tesouro Direto — IMA-B e Indexadores de Renda Fixa",
-            url: "https://www.tesourodireto.com.br/conheca/rentabilidade-dos-titulos.htm",
-            publisher: "Tesouro Nacional",
-            accessedAt: "Maio 2026",
-          },
-          {
-            title: "iShares — Introdução aos ETFs (Educação de Investidores)",
-            url: "https://www.blackrock.com/br/investidores/education/etf-education",
-            publisher: "BlackRock iShares Brasil",
-            accessedAt: "Maio 2026",
-          },
+          { title: "ETFs listados na B3 — Fundos de Índice de Renda Variável e Renda Fixa", url: "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/etf/renda-variavel/etfs-listados.htm", publisher: "B3 — Bolsa do Brasil", accessedAt: "Maio 2026" },
+          { title: "SPIVA Brazil Scorecard — Fundos Ativos vs Índices", url: "https://www.spglobal.com/spdji/en/research-insights/spiva/spiva-brazil-scorecard/", publisher: "S&P Dow Jones Indices", accessedAt: "Maio 2026" },
+          { title: "Tributação de Fundos de Índice (ETF) no Brasil", url: "https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/tributos/irpf/imposto-de-renda-sobre-aplicacoes-financeiras", publisher: "Receita Federal do Brasil", accessedAt: "Maio 2026" },
+          { title: "Instrução CVM nº 359/2002 — Fundos de Índice", url: "https://www.gov.br/cvm/pt-br/legislacao/instrucoes/inst359consolid.pdf", publisher: "Comissão de Valores Mobiliários (CVM)", accessedAt: "Maio 2026" },
+          { title: "Tesouro Direto — IMA-B e Indexadores de Renda Fixa", url: "https://www.tesourodireto.com.br/conheca/rentabilidade-dos-titulos.htm", publisher: "Tesouro Nacional", accessedAt: "Maio 2026" },
+          { title: "iShares — Introdução aos ETFs (Educação de Investidores)", url: "https://www.blackrock.com/br/investidores/education/etf-education", publisher: "BlackRock iShares Brasil", accessedAt: "Maio 2026" },
         ]}
       />
 
-      <BackNavigation category="invest" />
       <RelatedPosts currentSlug="etfs-2026-guia-completo-investir" />
-      <CommentSection
-        postId="etfs-2026-guia-completo-investir"
-        postTitle="ETFs em 2026: Guia Completo Para Investir com Diversificação"
-       category="invest" />
+      <CommentSection postId="etfs-2026-guia-completo-investir" postTitle="ETFs em 2026: Guia Completo Para Investir com Diversificação" category="invest" />
     </article>
   );
 };
