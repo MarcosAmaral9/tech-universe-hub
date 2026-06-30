@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/check-dynamicseo-duplicates.mjs && node scripts/check-article-footer-order.mjs && node scripts/check-post-prose.mjs && node scripts/generate-sitemaps.mjs",
+    "prebuild": "node scripts/check-dynamicseo-duplicates.mjs && node scripts/check-article-footer-order.mjs && node scripts/check-editorial-standard.mjs && node scripts/check-post-prose.mjs && node scripts/generate-sitemaps.mjs",
+    "standardize:editorial": "node scripts/standardize-editorial.mjs",
     "build": "vite build && node scripts/generate-post-html.mjs",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
