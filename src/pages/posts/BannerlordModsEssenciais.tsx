@@ -379,7 +379,7 @@ const BannerlordModsEssenciais = () => {
           via configuração do RBM.
         </p>
 
-        <EditorialTake category="geek" title="Leitura do VICIO<CODE>">
+        <EditorialTake category="geek" title="Análise do Marcos">
           Bannerlord é dos poucos jogos modernos onde a comunidade entrega mais conteúdo, mais polimento e
           mais profundidade do que o estúdio original. As quatro bibliotecas-base deveriam vir empacotadas no
           jogo de fábrica — sem elas, metade da experiência de PC fica inacessível. Para quem quer começar

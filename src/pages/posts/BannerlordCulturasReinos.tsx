@@ -619,8 +619,6 @@ const BannerlordCulturasReinos = () => {
           postId="bannerlord-culturas-reinos-calradia-2026"
           postTitle="Bannerlord: Culturas e Reinos de Calradia"
           category="geek"
-          inviteTitle="Qual cultura você joga?"
-          inviteSubtitle="Vlandia, Khuzait, Aserai... qual reino domina a sua Calradia? Conta nos comentários."
         />
 
         <div className="not-prose mt-10 p-4 bg-amber-500/5 border border-amber-500/20 rounded-xl flex gap-3">

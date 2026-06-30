@@ -540,8 +540,6 @@ const BannerlordGuiaCompleto = () => {
           postId="bannerlord-guia-completo-2026"
           postTitle="Mount & Blade II: Bannerlord — Guia Completo"
           category="geek"
-          inviteTitle="Participe da conversa"
-          inviteSubtitle="Quantas horas você já tem em Bannerlord? Qual foi seu primeiro reino? Conta nos comentários."
         />
 
         <div className="not-prose mt-10 p-4 bg-amber-500/5 border border-amber-500/20 rounded-xl flex gap-3">

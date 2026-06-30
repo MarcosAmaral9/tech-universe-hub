@@ -330,7 +330,7 @@ const Gemini25ProVsClaude2026 = () => {
         </div>
       </div>
 
-      <EditorialTake category="ia" title="Opinião do Marcos: benchmarks mentem, uso real fala">
+      <EditorialTake category="ia" title="Análise do Marcos: Opinião do Marcos: benchmarks mentem, uso real fala">
         <p>Já testei os dois modelos no dia-a-dia construindo o ViciOCode. Resumo honesto: <strong>Gemini 2.5 Pro</strong> brilha em raciocínio matemático e em contexto longo (1M tokens é absurdo) — perfeito para análises de planilhas e documentos legais brasileiros (contratos, holerites, declarações de IR). <strong>Claude</strong> escreve português brasileiro mais natural, com menos marcas óbvias de tradução, e é mais cuidadoso em código TypeScript/React. Quem cobra cliente final, pague pelos dois e use cada um onde performa melhor — não existe modelo universal. Benchmark como MMLU e HumanEval são úteis, mas não substituem testar com seu próprio caso de uso.</p>
       </EditorialTake>
       <ArticleSources
