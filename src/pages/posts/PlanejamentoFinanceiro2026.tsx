@@ -286,21 +286,6 @@ const PlanejamentoFinanceiro2026 = () => {
   return (
     <>
       <article className="container py-8 max-w-4xl mx-auto">
-        <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-          <Link to="/" className="hover:text-foreground transition-colors">
-            Home
-          </Link>
-          <ChevronRight className="h-3 w-3" />
-          <Link
-            to="/financas"
-            className="hover:text-foreground transition-colors"
-          >
-            Finanças
-          </Link>
-          <ChevronRight className="h-3 w-3" />
-          <span className="text-foreground">Planejamento Financeiro 2026</span>
-        </nav>
-
         <header className="mb-8">
           <div className="flex items-center gap-2 mb-4">
             <CategoryBadge category="invest" size="lg" />

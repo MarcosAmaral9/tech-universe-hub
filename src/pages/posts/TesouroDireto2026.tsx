@@ -55,15 +55,6 @@ const TesouroDireto2026 = () => {
   return (
     <>
       <article className="container py-8 max-w-4xl mx-auto">
-        {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-          <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
-          <ChevronRight className="h-3 w-3" />
-          <Link to="/financas" className="hover:text-foreground transition-colors">Finanças</Link>
-          <ChevronRight className="h-3 w-3" />
-          <span className="text-foreground">Tesouro Direto 2026</span>
-        </nav>
-
         <BackNavigation category="invest" />
 
         <header className="mb-8">

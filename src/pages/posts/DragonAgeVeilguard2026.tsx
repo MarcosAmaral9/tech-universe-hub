@@ -219,7 +219,7 @@ const DragonAgeVeilguard2026 = () => {
       </p>
     </div>
 
-    <EditorialTake category="geek" title="Análise: Dragon Age precisa decidir o que quer ser">
+    <EditorialTake category="geek" title="Análise do Marcos: Dragon Age precisa decidir o que quer ser">
       <p>The Veilguard é um jogo em conflito consigo mesmo — e isso fica evidente em cada escolha de design. A BioWare tentou modernizar Dragon Age tornando o combate mais ágil, a acessibilidade mais ampla e o tom mais palatável para um público casual. Em partes, funcionou. O combate é genuinamente satisfatório, e os companheiros têm momentos que lembram o melhor da empresa. Mas ao tentar atingir todo mundo, o jogo perdeu a identidade que fez a franquia especial. <strong>Origins foi brutal, moralmente ambíguo e narrativamente corajoso</strong> — Veilguard é seguro onde deveria arriscar. Para a franquia sobreviver, o próximo Dragon Age precisa escolher: ou abraça o público casual de forma completa, ou volta às raízes RPG sem desculpas. Tentar os dois ao mesmo tempo produziu este resultado dividido.</p>
     </EditorialTake>
 

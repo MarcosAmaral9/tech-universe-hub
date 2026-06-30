@@ -223,7 +223,7 @@ const CrimsonDesertCombate = () => {
         </p>
     </div>
 
-      <EditorialTake category="geek" title="Análise: O Combate de Crimson Desert Merece Mais Crédito do Que Recebeu">
+      <EditorialTake category="geek" title="Análise do Marcos: O Combate de Crimson Desert Merece Mais Crédito do Que Recebeu">
         <p>O debate sobre Crimson Desert se concentrou tanto na narrativa fraca e nos problemas de inventário que o sistema de combate — genuinamente excepcional — acabou subrepresentado na cobertura crítica. Comparar bosses a Shadow of the Colossus não é exagero editorial: há momentos em que a escala, a física e o impacto visual de um confronto em Crimson Desert não têm equivalente direto em nenhum RPG de ação de 2024 ou 2025. <strong>A BlackSpace Engine faz coisas que outras engines simplesmente não fazem ainda</strong> — a simulação de fluidos que afeta o combate em tempo real, a destruição procedural que torna cada arena diferente. Após os patches de controle e dificuldade, o que restou é um sistema de combate que poucos jogos vão conseguir igualar em 2026. Esse ponto merecia destaque maior nos reviews de lançamento.</p>
       </EditorialTake>
 

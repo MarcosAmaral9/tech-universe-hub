@@ -228,7 +228,7 @@ const CrimsonDesertReview = () => {
       </p>
     </div>
 
-      <EditorialTake category="geek" title="Análise: Crimson Desert — O Primeiro AAA da Pearl Abyss é uma Vitória Imperfeita">
+      <EditorialTake category="geek" title="Análise do Marcos: Crimson Desert — O Primeiro AAA da Pearl Abyss é uma Vitória Imperfeita">
         <p>Criticar Crimson Desert comparando ao Elden Ring ou ao Witcher 3 é uma armadilha. A Pearl Abyss nunca fez um jogo assim antes — e que o resultado seja um RPG de ação com 5 milhões de cópias vendidas, 276 mil jogadores simultâneos no Steam e 87% de aprovação da comunidade fala muito sobre o que foi entregue. A narrativa fraca e os sistemas excessivos são falhas reais, mas <strong>são falhas de um jogo ambicioso demais, não de um jogo descuidado</strong>. O mundo de Pywel tem mais vida, detalhe técnico e conteúdo surpresa do que a maioria dos concorrentes — e isso conta. A divergência entre a nota da crítica (78) e a dos jogadores (87) não é a crítica errada: é uma medição diferente. Uma avalia Crimson Desert contra o estado da arte do gênero. A outra avalia quantas horas você vai passar feliz explorando. As duas têm razão.</p>
       </EditorialTake>
 

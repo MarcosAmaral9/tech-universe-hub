@@ -493,7 +493,7 @@ const BannerlordMelhoresTropas = () => {
         </p>
 </div>
 
-        <EditorialTake category="geek" title="Análise: A Meta de Bannerlord em 2026 Recompensa Versatilidade, Não Especialização">
+        <EditorialTake category="geek" title="Análise do Marcos: A Meta de Bannerlord em 2026 Recompensa Versatilidade, Não Especialização">
           <p>
             A tier list de Bannerlord é menos sobre "qual tropa mata mais" e mais sobre <em>qual tropa cobre as
             fraquezas do seu plano</em>. Banner Knight é S-tier, mas inútil contra uma muralha de besteiros. Khan's

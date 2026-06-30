@@ -251,7 +251,7 @@ const CrimsonDesertVendasReview = () => {
       </p>
     </div>
 
-      <EditorialTake category="geek" title="Análise: Crimson Desert Prova que Metacritic Não é Tudo">
+      <EditorialTake category="geek" title="Análise do Marcos: Crimson Desert Prova que Metacritic Não é Tudo">
         <p>O lançamento de Crimson Desert vai entrar nos livros de história dos games como estudo de caso da divergência entre crítica e público. Um Metacritic 78 que gera 5 milhões de cópias vendidas, 276 mil jogadores simultâneos e 87% de aprovação no Steam conta uma história que notas numéricas não conseguem capturar. <strong>O jogo não é perfeito — a narrativa é fraca e os sistemas inicialmente caóticos são reclamações legítimas</strong>. Mas Crimson Desert entregou algo que muitos AAAs perfeitos tecnicamente não conseguem: a sensação de explorar um mundo que parece vivo, de combater inimigos que exigem respeito, de descobrir algo inesperado ao virar cada curva de Pywel. A Pearl Abyss respondeu com patches rápidos e efetivos. O resultado, em abril de 2026, é um jogo substancialmente melhor do que saiu no lançamento — e o número de jogadores continuando a jogar sugere que Pywel tem muito mais a oferecer do que os primeiros reviews indicaram.</p>
       </EditorialTake>
 
