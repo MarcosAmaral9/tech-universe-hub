@@ -93,14 +93,6 @@ const IRPF2026 = () => {
 
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-        <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
-        <ChevronRight className="h-3 w-3" />
-        <Link to="/financas" className="hover:text-foreground transition-colors">Finanças</Link>
-        <ChevronRight className="h-3 w-3" />
-        <span className="text-foreground">IRPF 2026</span>
-      </nav>
-
       <header className="mb-8">
         <CategoryBadge category="invest" size="lg" />
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
