@@ -245,7 +245,7 @@ const DragonBallBeerus2026 = () => {
           Para o público brasileiro — um dos maiores fandoms de Dragon Ball do mundo, com o anime sendo um dos mais assistidos da história da televisão aberta no país — a continuidade da franquia pós-Toriyama é um assunto emocionalmente carregado. A série Beerus será observada de perto como o primeiro projeto de Dragon Ball concebido sem a supervisão direta do criador, e sua qualidade vai estabelecer o precedente para como a franquia se posiciona na próxima fase de sua existência.
         </p>
 
-      <EditorialTake category="otaku" title="Opinião do Marcos: Beerus precisa de roteiro, não só animação">
+      <EditorialTake category="otaku" title="Análise do Marcos: Opinião do Marcos: Beerus precisa de roteiro, não só animação">
         <p>
           A Toei Animation anunciou oficialmente em 2025 uma nova série de anime de Dragon Ball focada em <strong>Beerus</strong>, o Deus da Destruição do Universo 7. O projeto faz parte da continuidade do universo expandido de Dragon Ball Super e foi confirmado com uma equipe criativa que inclui participação de Akira Toriyama no desenvolvimento conceitual antes de seu falecimento em março de 2024. Toyotaro, responsável pelo mangá de Dragon Ball Super, está envolvido na supervisão do material. Sem data de estreia definida até maio de 2026.
         </p>

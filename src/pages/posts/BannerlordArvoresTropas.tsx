@@ -554,8 +554,6 @@ const BannerlordArvoresTropas = () => {
           postId="bannerlord-arvores-tropas-completo-2026"
           postTitle="Bannerlord: Árvores de Tropas das 9 Culturas"
           category="geek"
-          inviteTitle="Qual a sua composição preferida?"
-          inviteSubtitle="Banner Knight + Fian Champion? 100% Nord Huscarl? Conta como você monta o exército ideal em Calradia."
         />
 
         <div className="not-prose mt-10 p-4 bg-amber-500/5 border border-amber-500/20 rounded-xl flex gap-3">

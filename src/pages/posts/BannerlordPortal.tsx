@@ -331,8 +331,6 @@ const BannerlordPortal = () => (
         postId="bannerlord-portal"
         postTitle="Painel Mount & Blade II: Bannerlord"
         category="geek"
-        inviteTitle="Participe da conversa"
-        inviteSubtitle="Qual cultura você joga? Qual sua tropa favorita? Compartilhe sua experiência em Calradia."
       />
     </section>
   </div>

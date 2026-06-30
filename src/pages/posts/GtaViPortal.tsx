@@ -305,8 +305,6 @@ const GtaViPortal = () => (
         postId="gta-vi-portal"
         postTitle="Painel Grand Theft Auto VI"
         category="geek"
-        inviteTitle="Participe da conversa"
-        inviteSubtitle="Vai comprar no dia 1? Esperar PC? Compartilhe sua expectativa para GTA VI."
       />
     </section>
   </div>

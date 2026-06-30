@@ -418,7 +418,7 @@ const BannerlordTerritoriosFaccoes = () => {
           que esse guia listou as cidades por <em>função</em>, não só por nome.
         </p>
 
-        <EditorialTake category="geek" title="Leitura do VICIO<CODE>">
+        <EditorialTake category="geek" title="Análise do Marcos">
           O segredo de Calradia não está em quantas cidades cada facção tem, mas em como elas se conectam. Os
           Nords provaram com War Sails que três portos bem posicionados valem mais que oito castelos isolados — e
           isso reescreveu a estratégia do meta competitivo de 2026.

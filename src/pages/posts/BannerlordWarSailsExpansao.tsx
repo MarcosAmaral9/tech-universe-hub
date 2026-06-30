@@ -443,7 +443,7 @@ const BannerlordWarSailsExpansao = () => {
           spot para a comunidade brasileira.
         </p>
 
-        <EditorialTake category="geek" title="Leitura do VICIO<CODE>">
+        <EditorialTake category="geek" title="Análise do Marcos">
           War Sails é o que Bannerlord precisava para deixar de ser &quot;Warband em HD&quot; e virar um jogo
           próprio. O combate naval entrega, os Nords ocupam um vácuo cultural óbvio, e a economia marítima abre
           espaço para builds de personagem que nunca foram viáveis no jogo base. A expansão não conserta tudo o

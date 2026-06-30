@@ -198,7 +198,7 @@ const SuperMarioGalaxyMovie2026 = () => {
         </div>
       </div>
 
-      <EditorialTake category="geek" title="Opinião do Marcos: Nintendo aprendeu a fórmula">
+      <EditorialTake category="geek" title="Análise do Marcos: Opinião do Marcos: Nintendo aprendeu a fórmula">
         <p>A Illumination + Nintendo encontrou o que a Disney perdeu: fidelidade ao material original sem complexo de superioridade autoral. O primeiro Super Mario Bros. Movie (2023) arrecadou <strong>US$ 1,36 bilhão</strong> em bilheteria mundial (Box Office Mojo). No Brasil, foi o filme de animação mais visto do ano. Galaxy tem munição para superar — a estética cósmica do jogo original do Wii é cinematográfica por natureza. O risco é o mesmo de toda sequência: tentar fazer 'maior' quando o público quer 'mais do que funcionou'. Como brasileiro que jogou Galaxy lá em 2007 numa TV de tubo, torço para que Rosalina ganhe os 10 minutos de tela que ela merece.</p>
       </EditorialTake>
       <ArticleSources category="geek"
