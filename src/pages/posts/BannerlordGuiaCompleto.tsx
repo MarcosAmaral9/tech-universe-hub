@@ -477,7 +477,7 @@ const BannerlordGuiaCompleto = () => {
         </p>
     </div>
 
-        <EditorialTake category="geek" title="Análise: Bannerlord é o Sandbox Medieval que Ninguém Mais Tem Coragem de Fazer">
+        <EditorialTake category="geek" title="Análise do Marcos: Bannerlord é o Sandbox Medieval que Ninguém Mais Tem Coragem de Fazer">
           <p>
             Bannerlord é o jogo de medieval mais completo da década, com a estranha qualidade de ser ao mesmo tempo um
             RPG, um simulador econômico e um <em>grand strategy</em> de bolso. Não é um jogo polido como um Total War —

@@ -580,7 +580,7 @@ const BannerlordCulturasReinos = () => {
 
 
 
-        <EditorialTake category="geek" title="Análise: As Culturas de Bannerlord São o Verdadeiro Coração Estratégico do Jogo">
+        <EditorialTake category="geek" title="Análise do Marcos: As Culturas de Bannerlord São o Verdadeiro Coração Estratégico do Jogo">
           <p>
             A graça de Bannerlord é justamente a tensão entre culturas: cada facção tem identidade visual, sonora e
             tática própria. Jogar como Sturgia em terreno aberto contra Khuzait é frustrante; jogar como Khuzait em

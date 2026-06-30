@@ -271,7 +271,7 @@ const PragmataCapcom2026 = () => {
         </p>
       </div>
 
-      <EditorialTake category="geek" title="Análise: PRAGMATA Prova que a Capcom Ainda Sabe Arriscar">
+      <EditorialTake category="geek" title="Análise do Marcos: PRAGMATA Prova que a Capcom Ainda Sabe Arriscar">
         <p>Após anos de remakes excelentes mas previsíveis, PRAGMATA é a prova de que a Capcom ainda tem coragem de criar algo novo. O sistema de combate hack-e-ataque entre Hugh e Diana é genuinamente inovador num gênero — ação em terceira pessoa — que parecia esgotado em termos de mecânicas novas. A dupla protagonista funciona porque a Capcom entendeu que Diana não pode ser apenas uma ferramenta: ela tem personalidade, motivações e momentos que transformam a relação com Hugh de forma crível. <strong>Isso é design narrativo que poucos jogos de ação conseguem executar sem parar o gameplay</strong>. O ritmo lento das primeiras três horas e a exploração limitada são defeitos reais, mas o núcleo — o loop de hackear e atacar com lógica tática, num cenário lunar impressionante com trilha sonora excepcional — justifica a espera de seis anos. PRAGMATA não é perfeito, mas é original. E em 2026, isso já é raro o suficiente para valer o preço.</p>
       </EditorialTake>
 

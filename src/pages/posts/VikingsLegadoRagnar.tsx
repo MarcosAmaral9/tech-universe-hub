@@ -431,7 +431,7 @@ const VikingsLegadoRagnar = () => {
       </p>
     </div>
 
-      <EditorialTake category="geek" title="Análise: Vikings Envelheceu Bem — e Mal ao Mesmo Tempo">
+      <EditorialTake category="geek" title="Análise do Marcos: Vikings Envelheceu Bem — e Mal ao Mesmo Tempo">
         <p>Vikings é uma série que existe em dois tempos distintos. As três primeiras temporadas são televisão de altíssima qualidade: um protagonista complexo, um mundo construído com cuidado arqueológico razoável, e uma tensão narrativa que raramente cede. As temporadas 4 a 6 são um programa diferente — mais violento, mais disperso, menos interessado nos personagens que construiu. <strong>Ragnar Lothbrok é um dos protagonistas mais bem escritos da televisão dos anos 2010</strong>, e sua ausência nas temporadas finais nunca foi verdadeiramente compensada. Em 2026, com Vikings: Valhalla na Netflix como continuação espiritual, a série original permanece relevante como origem de uma franquia — mas a recomendação honesta é assistir as três primeiras temporadas com total atenção e as demais com expectativas calibradas. O legado de Vikings não está nas batalhas finais, mas em Ragnar olhando para o horizonte e sonhando com o que existe além.</p>
       </EditorialTake>
 

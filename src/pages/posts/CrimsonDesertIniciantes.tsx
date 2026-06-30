@@ -262,7 +262,7 @@ const CrimsonDesertIniciantes = () => {
         <p>
           Para iniciantes, as três receitas mais importantes de aprender cedo são o Beef Stew (regeneração de HP durante combate), o Stamina Tonic (regenera Stamina 40% mais rápido por 10 minutos — essencial contra bosses de múltiplas fases) e o Protection Broth (reduz dano recebido em 15% por 5 minutos). Ingredientes para todas as três estão disponíveis em Hernand.
         </p>
-<EditorialTake category="geek" title="Análise: Crimson Desert Recompensa Paciência — Mas Não Avisa Isso">
+<EditorialTake category="geek" title="Análise do Marcos: Crimson Desert Recompensa Paciência — Mas Não Avisa Isso">
         <p>O guia de iniciantes mais honesto que posso oferecer sobre Crimson Desert é este: o jogo vai te punir pelas primeiras 10 horas se você jogar no piloto automático dos open worlds modernos. <strong>Não há marcadores de missão para tudo, não há tutoriais para cada sistema e não há hand-holding</strong>. Isso é proposital — a Pearl Abyss quer que você explore, experimente e descubra. O problema é que sistemas importantes como o aprendizado contextual de habilidades e o fast travel via Abyss Nexus nunca são explicados. Este guia existe porque o jogo não os explica. Uma vez que você entende esses sistemas, Crimson Desert abre de forma que poucos open worlds conseguem. A curva de entrada é íngreme, mas o platô que vem depois é vasto.</p>
       </EditorialTake>
 

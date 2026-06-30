@@ -275,7 +275,7 @@ const CrimsonDesertPatches = () => {
       </p>
     </div>
 
-      <EditorialTake category="geek" title="Análise: A Pearl Abyss Mostrou Como Fazer Suporte Pós-Lançamento">
+      <EditorialTake category="geek" title="Análise do Marcos: A Pearl Abyss Mostrou Como Fazer Suporte Pós-Lançamento">
         <p>O ritmo de patches de Crimson Desert — mais de 10 atualizações no primeiro mês, culminando em modos de dificuldade, novos conteúdos e melhorias de controle — é um caso de estudo em como um estúdio deve responder a críticas legítimas. <strong>Nenhum dos problemas centrais apontados no lançamento (controles, dificuldade única, inventário caótico, falta de habilidades para Damiane e Oongka) ficou sem resposta</strong>. A velocidade de resposta foi notável: o pedido mais votado da comunidade (modos de dificuldade) foi atendido em 34 dias. Isso não apaga os problemas do lançamento, mas demonstra uma relação com o público que muitos publishers — incluindo gigantes do setor — deveriam observar. A trajetória de "Mixed" para "Very Positive" no Steam não aconteceu por sorte: foi construída patch a patch, update a update, com a Pearl Abyss ouvindo e executando. É o tipo de compromisso que transforma um IP de estreia em uma franquia sustentável.</p>
       </EditorialTake>
 

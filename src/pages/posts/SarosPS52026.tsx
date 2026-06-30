@@ -262,7 +262,7 @@ const SarosPS52026 = () => {
         </p>
       </div>
 
-      <EditorialTake category="geek" title="Análise: SAROS É a Aposta Mais Importante da Sony em 2026">
+      <EditorialTake category="geek" title="Análise do Marcos: SAROS É a Aposta Mais Importante da Sony em 2026">
         <p>Returnal foi um dos jogos mais corajosos do início da geração PS5 — e também um dos mais divisivos. Muitos jogadores abandonaram por dificuldade ou frustração com a narrativa fragmentada. SAROS parece ter sido projetado aprendendo essas lições: progressão persistente entre runs, co-op desde o lançamento, e narrativa mais direta são todas respostas diretas ao feedback de Returnal. <strong>A Housemarque não está recuando do que a torna especial — está tornando esse DNA mais acessível</strong>. Esse equilíbrio é difícil de acertar, e só o produto final vai revelar se conseguiram. Mas com Gregory Louden à frente, o estúdio que produziu Returnal agora com mais recursos, mais tempo e mais clareza sobre o que quer dizer com SAROS, as expectativas são altas por boas razões. É o jogo PS5 que mais acompanho em 2026.</p>
       </EditorialTake>
 

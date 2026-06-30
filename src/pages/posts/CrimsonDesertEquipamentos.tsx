@@ -296,7 +296,7 @@ const CrimsonDesertEquipamentos = () => {
         <p>
           Abyss Gears são obtidos como drop de bosses, em baús de Abyss Nexus e como recompensas de missões de facção. Não podem ser craftados — apenas encontrados e trocados com outros jogadores no modo cooperativo. Priorize encaixar Gears nas suas armas principais antes de refinar para o nível máximo: a combinação certa de Gear pode ser mais impactante que um nível extra de refinamento.
         </p>
-<EditorialTake category="geek" title="Análise: O Sistema de Equipamentos de Crimson Desert é Mais Rico do Que Parece">
+<EditorialTake category="geek" title="Análise do Marcos: O Sistema de Equipamentos de Crimson Desert é Mais Rico do Que Parece">
         <p>A primeira impressão do sistema de equipamentos de Crimson Desert é de confusão: muitos itens, pouco espaço, interface densa. Mas à medida que você entende a lógica por baixo — Abyss Gears como bônus modulares, refinamento em camadas, habilidades especiais em cada arma — o sistema revela uma profundidade que poucos RPGs de ação têm. <strong>A Sword of the Lord com Wind Slash não é apenas uma arma mais forte: é uma arma que muda fundamentalmente como você enfrenta grupos de inimigos</strong>. O Knuckledrill como mineradora e arma dual-use é o tipo de design criativo que passa despercebido nos reviews porque não é explicado pelo jogo. Os patches melhoraram o acesso — Lock no inventário, mais slots via missões, baús de armazenamento — mas a riqueza do sistema sempre esteve lá. Vale explorar com atenção.</p>
       </EditorialTake>
 

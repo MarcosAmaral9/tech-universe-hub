@@ -209,7 +209,7 @@ const CrimsonDesertBuilds = () => {
         </p>
     </div>
 
-      <EditorialTake category="geek" title="Análise: O Sistema de Progressão de Crimson Desert é Mais Profundo do que Parece">
+      <EditorialTake category="geek" title="Análise do Marcos: O Sistema de Progressão de Crimson Desert é Mais Profundo do que Parece">
         <p>A primeira impressão do sistema de progressão de Crimson Desert pode ser avassaladora — muitos sistemas, pouca tutorização, inventário caótico. Mas por baixo da complexidade existe uma coerência de design que recompensa paciência. <strong>O aprendizado contextual ao observar inimigos é uma das mecânicas mais originais de um RPG de ação em anos</strong> — e raramente mencionada nos reviews que focaram nos problemas de controle do lançamento. A decisão de não fixar Kliff numa classe rígida, permitindo que o jogador descubra seu próprio estilo organicamente, é corajosa para um primeiro AAA single-player da Pearl Abyss. Os patches melhoraram o acesso, mas a arquitetura do sistema sempre foi sólida. Quem der tempo ao jogo vai encontrar uma curva de aprendizado que tem mais em comum com Elden Ring do que com as aparências iniciais sugerem.</p>
       </EditorialTake>
 
