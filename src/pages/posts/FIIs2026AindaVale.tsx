@@ -331,6 +331,9 @@ const FIIs2026AindaVale = () => {
           um componente útil de diversificação, mesmo para investidores que já têm boa
           exposição a ações e títulos públicos na carteira.
         </p>
+        <p>
+          Vale reforçar um ponto tributário que reforça o apelo dos FIIs para quem busca renda recorrente: a isenção de IR sobre os dividendos mensais só vale para fundos negociados em bolsa, com no mínimo 50 cotistas, desde que nenhum cotista pessoa física detenha 10% ou mais das cotas — condições que praticamente todos os FIIs listados na B3 cumprem. Já o ganho de capital obtido na venda de cotas é tributado em 15% sobre o lucro, sem o limite de isenção de R$ 20 mil mensais que existe para ações individuais, o que reforça a lógica de tratar FIIs como veículo de renda recorrente de longo prazo, e não como instrumento de especulação de curto prazo via compra e venda frequente de cotas.
+        </p>
 
         <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">
           Como começar a investir em FIIs hoje

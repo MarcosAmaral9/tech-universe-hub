@@ -493,6 +493,10 @@ const TesouroDireto2026 = () => {
             necessidade de vender o título principal.
           </p>
 
+          <p>
+            Vale mencionar dois produtos mais recentes da família Tesouro Direto, pensados para objetivos específicos de longuíssimo prazo: o <strong>Tesouro RendA+</strong>, lançado para complementar a aposentadoria, que acumula recursos até uma data definida e depois paga 240 parcelas mensais automáticas, e o <strong>Tesouro Educa+</strong>, com lógica semelhante voltada ao financiamento de educação, pagando parcelas mensais ao longo de 60 meses a partir da data de início dos desembolsos planejados. Ambos seguem a mesma lógica de proteção contra a inflação do Tesouro IPCA+, mas com um desenho de fluxo de saída já pré-programado, o que pode simplificar o planejamento para quem tem uma data-alvo bem definida no horizonte.
+          </p>
+
           <h2 className="text-2xl font-bold mt-10 mb-6 border-l-4 border-[hsl(var(--invest-color))] pl-4">
             Conclusão: Vale a Pena em 2026?
           </h2>

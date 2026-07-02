@@ -302,6 +302,9 @@ const CDB2026Guia = () => {
           ou conforme o cenário de juros evolui, mantém a estratégia sempre alinhada aos
           objetivos financeiros do investidor ao longo do tempo.
         </p>
+        <p>
+          Sobre a tributação: o CDB segue a <strong>tabela regressiva do Imposto de Renda</strong>, na qual a alíquota cai conforme o prazo da aplicação aumenta: 22,5% para resgates em até 180 dias, 20% entre 181 e 360 dias, 17,5% entre 361 e 720 dias, e 15% para aplicações acima de 720 dias. O imposto incide apenas sobre o rendimento (não sobre o valor principal investido) e é retido automaticamente na fonte pela instituição financeira no momento do resgate, sem necessidade de recolhimento manual via DARF pelo investidor — uma vantagem operacional importante em relação a ações e ETFs, cuja apuração é de responsabilidade do próprio contribuinte.
+        </p>
 
       </div>
 

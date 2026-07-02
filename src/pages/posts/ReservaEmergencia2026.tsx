@@ -404,6 +404,10 @@ const ReservaEmergencia2026 = () => {
           reserva como um seguro que você paga para si mesmo, não como um investimento
           que precisa competir em rentabilidade com o restante da sua carteira.
         </p>
+        <p>
+          Sobre a garantia do FGC especificamente: o Fundo Garantidor de Créditos cobre depósitos e CDBs em até <strong>R$ 250.000 por CPF, por instituição financeira</strong>, com um teto adicional de <strong>R$ 1 milhão a cada período de quatro anos</strong> por CPF, somando todas as instituições. Para a grande maioria das famílias que está formando sua primeira reserva de emergência, esse limite está muito acima do valor necessário — mas vale o alerta para quem já tem patrimônio maior: distribuir CDBs de reserva entre duas ou três instituições financeiras diferentes, em vez de concentrar tudo em uma única corretora ou banco, mantém toda a reserva dentro da cobertura integral do fundo, eliminando qualquer risco de crédito residual mesmo em cenários extremos de insolvência bancária.
+        </p>
+
 
         <h2>Conclusão: Comece Hoje, Mesmo Que Com Pouco</h2>
         <p>

@@ -272,6 +272,16 @@ const ETFs2026 = () => {
           financeira antes de definir a composição final da sua carteira de ETFs.
         </p>
 
+        <h2 className="text-2xl font-bold mt-10 mb-6">
+          Tributação de ETFs: O Que Muda em Relação às Ações
+        </h2>
+        <p>
+          Um ponto frequentemente mal compreendido por quem está começando é a tributação dos ETFs, que difere em um detalhe importante da tributação de ações individuais. Assim como as ações, o ganho de capital obtido na venda de cotas de ETFs de renda variável é tributado pela alíquota de <strong>15% sobre o lucro</strong>, recolhido via DARF até o último dia útil do mês seguinte à venda. A diferença está na <strong>isenção mensal de R$ 20 mil em vendas</strong>, que existe para ações individuais negociadas em bolsa, mas <strong>não se aplica a ETFs</strong> — qualquer ganho de capital na venda de cotas de ETF é tributável, independentemente do valor total vendido no mês. Operações de day trade com ETFs, por sua vez, são tributadas em 20% sobre o lucro, com retenção de IR na fonte de 1% (o chamado "dedo-duro"), assim como ocorre com ações.
+        </p>
+        <p>
+          Vale notar que ETFs de renda fixa, como o IMAB11, seguem a mesma lógica de tributação dos ETFs de renda variável — 15% sobre o ganho de capital na venda, sem isenção de faixa de valor — e não a tabela regressiva aplicada a CDBs e Tesouro Direto, que reduz a alíquota conforme o prazo da aplicação. Essa diferença é relevante na hora de comparar o retorno líquido entre investir diretamente em títulos públicos via Tesouro Direto e investir no ETF que replica esses mesmos títulos: para prazos muito longos (acima de 720 dias), a tabela regressiva da renda fixa tradicional pode ser mais vantajosa, com alíquota de 15%, igualando-se ao ETF, mas para resgates antes desse prazo, a renda fixa direta tende a pagar mais imposto do que o ETF equivalente.
+        </p>
+
         <p className="text-xs text-muted-foreground mt-8 p-4 bg-secondary rounded-xl">
           ⚠️ <strong>Aviso Legal:</strong> Este conteúdo é educacional e não constitui recomendação de investimento. Consulte um assessor certificado antes de investir.
         </p>

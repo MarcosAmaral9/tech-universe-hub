@@ -51,7 +51,7 @@ const CortarGastos2026 = () => {
         </p>
 
         <p>
-          O contexto econômico de 2026 torna esse exercício ainda mais urgente. Com a inflação corroendo o poder de compra, cada real economizado hoje vale mais do que vai valer amanhã. E com a Selic acima de 13% ao ano, cada R$ 500 mensais poupados e investidos no Tesouro Selic viram aproximadamente R$ 7.200 em 12 meses — incluindo os juros. Cortar gastos não é sacrifício: é trocar consumo imediato por liberdade financeira futura.
+          O contexto econômico de 2026 torna esse exercício ainda mais urgente. Com a inflação corroendo o poder de compra, cada real economizado hoje vale mais do que vai valer amanhã. E com a Selic acima de 13% ao ano, cada R$ 500 mensais poupados e investidos no Tesouro Selic viram aproximadamente R$ 7.200 em 12 meses — incluindo os juros. Cortar gastos não é sacrifício: é trocar consumo imediato por liberdade financeira futura. Vale lembrar também que cortar gastos e renegociar dívidas caminham juntos: de nada adianta economizar R$ 300 por mês em assinaturas se uma dívida de cartão de crédito, com juros que ultrapassam 400% ao ano segundo dados do Banco Central, continua corroendo qualquer esforço de economia em paralelo.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -188,6 +188,23 @@ const CortarGastos2026 = () => {
         </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Shield className="h-7 w-7 text-invest" />
+          Novo Desenrola Brasil: a Renegociação de Dívidas Que Pode Acelerar Seus Cortes
+        </h2>
+
+        <p>
+          Para quem já está com dívidas em atraso, cortar gastos por si só não resolve a raiz do problema — e em 2026 existe uma ferramenta extra que pode acelerar muito a virada de chave. O Governo Federal relançou em 4 de maio de 2026, por meio da Medida Provisória nº 1.355/2026, o <strong>Novo Desenrola Brasil</strong>, programa de renegociação que já havia beneficiado cerca de 15 milhões de brasileiros desde sua primeira edição em 2023, com cerca de R$ 53 bilhões em dívidas renegociadas até então. A nova fase tem duração inicial de 90 dias e projeta movimentar mais R$ 58 bilhões em débitos contraídos até 31 de janeiro de 2026.
+        </p>
+
+        <p>
+          O <strong>Desenrola Famílias</strong>, eixo voltado à pessoa física, atende quem tem renda de até 5 salários mínimos (cerca de R$ 8.105) e dívidas de cartão de crédito, cheque especial ou crédito pessoal (CDC) atrasadas entre 91 dias e 2 anos. As instituições financeiras participantes aplicam descontos que variam de 30% a 90% sobre o valor da dívida, a depender do tempo de atraso, e o novo crédito gerado na renegociação tem juros limitados a 1,99% ao mês, prazo de até 48 meses e parcela mínima de R$ 50, com teto de R$ 15 mil por pessoa em cada instituição. Uma novidade desta edição é a possibilidade de usar até 20% do saldo do FGTS — ou R$ 1 mil, o que for maior — para abater ou quitar a dívida renegociada, embora valha lembrar que o FGTS é uma reserva de proteção social e seu uso para esse fim deve ser bem ponderado.
+        </p>
+
+        <p>
+          A renegociação não acontece em um aplicativo único do governo: o consumidor precisa procurar diretamente o banco ou a instituição onde a dívida foi contraída, pelos canais oficiais (aplicativo, site ou agência). Vale o alerta feito por entidades de defesa do consumidor: o Novo Desenrola não apaga a dívida, apenas a substitui por uma nova com condições mais brandas — por isso, antes de fechar qualquer acordo, é essencial colocar todas as despesas fixas no papel e confirmar que a nova parcela cabe confortavelmente no orçamento, sem comprometer o básico. Para quem está usando as estratégias deste guia para cortar gastos, entrar no Desenrola com uma parcela compatível com a renda real — e não com a menor parcela possível, que estende o prazo e aumenta o custo total — é o que faz a renegociação se converter em alívio duradouro, e não em mais uma dívida arrastada.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Lightbulb className="h-7 w-7 text-invest" />
           O Que Fazer Com o Dinheiro Economizado
         </h2>
@@ -195,6 +212,7 @@ const CortarGastos2026 = () => {
         <p>
           Cortar gastos sem um destino claro para o dinheiro economizado é o erro mais comum — e o mais custoso. O valor que "sobra" tende a se diluir em pequenas despesas ao longo do mês sem nunca gerar patrimônio real. A regra é simples: <strong>o dinheiro economizado deve ter destino antes de ser liberado</strong>.
         </p>
+
 
         <p>
           Para quem está começando a organizar as finanças, a ordem de prioridade é a seguinte. Primeiro, quite todas as dívidas com juros acima de 10% ao mês — nenhum investimento legal remunera mais que isso, então pagar essas dívidas é o melhor retorno possível. Segundo, monte uma reserva de emergência equivalente a 3 a 6 meses de gastos fixos, mantida em Tesouro Selic ou CDB de liquidez diária com 100% do CDI. Somente depois de cumprir esses dois passos, direcione o restante para investimentos de médio e longo prazo.
@@ -240,6 +258,7 @@ const CortarGastos2026 = () => {
           { title: "Educação Financeira — Banco Central", url: "https://www.bcb.gov.br/cidadaniafinanceira", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
           { title: "Serasa — Mapa da Inadimplência 2026", url: "https://www.serasa.com.br/limpa-nome-online/blog/mapa-da-inadimplencia-e-renegociacao-de-dividas-no-brasil/", publisher: "Serasa Experian", accessedAt: "Maio 2026" },
           { title: "ANS — Reajuste de Planos de Saúde 2026", url: "https://www.gov.br/ans/pt-br", publisher: "Agência Nacional de Saúde Suplementar", accessedAt: "Maio 2026" },
+          { title: "Novo Desenrola Brasil — Programa de Renegociação de Dívidas", url: "https://www.gov.br/fazenda/pt-br/acesso-a-informacao/acoes-e-programas/novo-desenrola-brasil", publisher: "Ministério da Fazenda", accessedAt: "Junho 2026" },
         ]}
       />
       <RelatedPosts currentSlug="cortar-gastos-2026" />

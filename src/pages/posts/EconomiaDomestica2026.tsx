@@ -345,6 +345,31 @@ const EconomiaDomestica2026 = () => {
           mais consistentes no controle de gastos domésticos ao longo do tempo.
         </p>
 
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Home className="h-7 w-7 text-invest" />
+          Tarifa Social e Desconto Social de Energia: o Benefício Que Muita Família Esquece de Ativar
+        </h2>
+        <p>
+          Antes de qualquer dica de consumo consciente, vale conferir se sua família já tem direito a um desconto legal na conta de luz — porque muita gente paga tarifa cheia sem saber que se enquadra. A <strong>Tarifa Social de Energia Elétrica (TSEE)</strong>, criada pela Lei nº 10.438/2002 e atualizada pela Lei nº 15.235/2025, garante isenção de 100% sobre os primeiros 80 kWh consumidos por mês para famílias inscritas no CadÚnico com renda mensal por pessoa de até meio salário mínimo, para beneficiários do BPC (Benefício de Prestação Continuada) e para famílias com integrante que dependa de equipamento elétrico de saúde. O consumo que ultrapassar essa faixa de 80 kWh é cobrado normalmente, sem desconto — por isso vale acompanhar o uso de chuveiro elétrico e ar-condicionado, que sozinhos podem consumir 40 a 60 kWh por mês em residências pequenas.
+        </p>
+        <p>
+          A partir de 1º de janeiro de 2026 passou a valer também o <strong>Desconto Social de Energia</strong>, uma faixa intermediária para famílias com renda per capita entre meio e um salário mínimo inscritas no CadÚnico: nesse caso, a isenção é apenas sobre a Conta de Desenvolvimento Energético (CDE) embutida na tarifa, aplicada aos primeiros 120 kWh de consumo mensal, resultando em desconto médio estimado pelo governo em torno de 11,8% sobre o valor da fatura. A expectativa oficial é alcançar cerca de 17 milhões de famílias em todo o país com a soma dos dois programas. Na maioria dos casos a concessão é automática, por cruzamento de dados entre o CadÚnico e a base da distribuidora — mas funciona apenas se o CPF do titular da conta de luz for o mesmo CPF cadastrado no CadÚnico, e se o cadastro estiver atualizado há menos de dois anos.
+        </p>
+        <p>
+          Para conferir se sua casa já está enquadrada, basta olhar o campo "Subclasse" ou "Classe" no topo da fatura de energia: se aparecer "Residencial Baixa Renda" ou "Residencial Desconto Social", o benefício já está ativo. Se o cadastro estiver correto e o desconto ainda assim não aparecer, o caminho é contatar a distribuidora informando o CPF e o NIS (Número de Identificação Social), disponível no Cartão Bolsa Família ou no aplicativo CadÚnico, e pedir a inclusão manual. Para atualizar ou regularizar o CadÚnico, o atendimento é feito presencialmente no CRAS (Centro de Referência de Assistência Social) do município, mediante apresentação de documentos de todos os moradores do imóvel. É importante lembrar que itens como Contribuição para Iluminação Pública (CIP) e encargos municipais não fazem parte da tarifa de energia em si e continuam sendo cobrados mesmo com o desconto aplicado — por isso a conta raramente chega a zero mesmo para quem tem isenção total na tarifa.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Calculator className="h-7 w-7 text-invest" />
+          A Regra 50-30-20 Adaptada à Realidade Brasileira
+        </h2>
+        <p>
+          Um dos métodos de orçamento mais difundidos no mundo é a chamada regra 50-30-20, popularizada pela ex-senadora americana e especialista em direito de falências Elizabeth Warren em seu livro sobre finanças pessoais. A lógica é simples: 50% da renda líquida vai para necessidades essenciais (moradia, alimentação, contas básicas, transporte para o trabalho), 30% vai para desejos pessoais (lazer, assinaturas, restaurantes, compras não essenciais) e 20% vai para poupança e quitação de dívidas. No Brasil, onde moradia e alimentação consomem uma fatia historicamente maior da renda das famílias de classe média e baixa, segundo dados da Pesquisa de Orçamentos Familiares do IBGE, muitos planejadores financeiros adaptam a proporção para algo como 60-20-20 ou até 65-15-20 em famílias com renda mensal abaixo de R$ 4.000, justamente para refletir o peso real do aluguel e do supermercado no orçamento.
+        </p>
+        <p>
+          O valor prático da regra não está no número exato das porcentagens — está em ter uma referência simples para classificar cada gasto antes de fazer a compra. Antes de qualquer assinatura nova, pergunte: isso é necessidade, desejo ou deveria estar indo para a poupança? Esse exercício de três segundos, repetido de forma consistente, é o que separa famílias que conseguem reduzir o comprometimento de renda com dívidas ao longo dos anos daquelas que vivem no limite do salário, mês após mês, independentemente de quanto ganham.
+        </p>
+
       </div>
 
       <EditorialTake category="invest" title="Análise do Marcos: economizar é só metade da equação">
@@ -393,6 +418,18 @@ const EconomiaDomestica2026 = () => {
             url: "https://www.bcb.gov.br/publicacoes/notasreuniaodp",
             publisher: "Banco Central do Brasil",
             accessedAt: "Maio 2026",
+          },
+          {
+            title: "Tarifa Social de Energia Elétrica — Quem Tem Direito",
+            url: "https://www.aneel.gov.br/tarifa-social-baixa-renda",
+            publisher: "Aneel — Agência Nacional de Energia Elétrica",
+            accessedAt: "Junho 2026",
+          },
+          {
+            title: "Lei nº 15.235/2025 — Desconto Social de Energia Elétrica",
+            url: "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15235.htm",
+            publisher: "Planalto — Presidência da República",
+            accessedAt: "Junho 2026",
           },
         ]}
       />

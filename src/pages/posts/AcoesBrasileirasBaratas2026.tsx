@@ -270,7 +270,7 @@ const AcoesBrasileirasBaratas2026 = () => {
           investidor de longo prazo, no entanto, essa distinção importa menos do que
           manter uma estratégia disciplinada de aportes regulares, que captura o
           movimento de valorização independentemente de sua origem específica ser
-          doméstica ou global.
+          doméstica ou global. Vale notar ainda que esse fluxo é monitorado de perto pela própria B3, que divulga periodicamente dados sobre a participação de investidores estrangeiros, institucionais e pessoas físicas no volume negociado em bolsa — um indicador útil para quem quer acompanhar se o movimento de entrada ou saída de capital estrangeiro está se acelerando ou perdendo força ao longo dos meses.
         </p>
 
         <p className="text-xs text-muted-foreground mt-8 p-4 bg-secondary rounded-xl">
