@@ -225,6 +225,9 @@ const CulturaOtakuBrasil2026 = () => {
 
       <EditorialTake category="otaku" title="Análise do Marcos: o Brasil otaku que o Japão não esperava">
         <p>
+          Vale destacar o contexto histórico que torna a relação do Brasil com o anime especialmente profunda em comparação com outros países ocidentais: a maior comunidade japonesa fora do Japão está no Brasil — estimada em cerca de 1,5 a 2 milhões de pessoas de origem japonesa, concentradas principalmente em São Paulo — e essa presença criou canais de distribuição e influência cultural que outros mercados ocidentais simplesmente não tinham. Muito antes do anime chegar à Europa ou ao mercado anglófono de forma mainstream, o Brasil já tinha acesso a produções japonesas via essa comunidade. Esse histórico ajuda a explicar por que o fandom otaku brasileiro tem raízes tão profundas e por que eventos como a Anime Friends e a CCXP conseguem mobilizar centenas de milhares de pessoas em um único fim de semana — uma escala difícil de reproduzir em qualquer outro país ocidental do mundo.
+        </p>
+        <p>
           O Brasil é o segundo maior mercado de mangá fora do Japão em volume de vendas, segundo dados da Shueisha e das editoras brasileiras divulgados em 2024. A <strong>Panini Comics Brasil</strong>, a <strong>JBC</strong>, a <strong>Newpop</strong> e a <strong>Pipoca & Nanquim</strong> publicam centenas de títulos anualmente com o modelo de simultâneos com o Japão para os principais títulos. A Anime Friends, maior convenção de anime da América Latina, registrou mais de 120 mil visitantes em sua edição de 2024 segundo dados oficiais do evento.
         </p>
         <p>

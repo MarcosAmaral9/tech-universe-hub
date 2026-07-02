@@ -53,6 +53,9 @@ const MaousamaRetry = () => {
           Origem: Light Novel
         </h2>
         <p>
+          Vale situar a premissa de Maou-sama, Retry! dentro de um subgênero específico do isekai que ganhou força a partir de meados dos anos 2010: histórias em que o protagonista não é simplesmente um jogador transportado para dentro de um RPG, mas alguém que ocupava posição de administrador, designer ou criador de conteúdo do próprio jogo. Essa variação inverte a lógica usual do gênero — em vez de aprender as regras de um mundo novo por tentativa e erro, o protagonista já conhece cada mecânica por tê-la projetado, o que cria um tipo diferente de tensão dramática: o desafio não é descobrir como o sistema funciona, mas como aplicar esse conhecimento técnico em um contexto que se tornou subitamente real, com consequências morais e emocionais que o ambiente puramente virtual nunca exigiu.
+        </p>
+        <p>
           A série é baseada em uma <strong>light novel escrita por Kurone Kanzaki</strong> e ilustrada por <strong>Kōji Ogata</strong>. A história de Akira Oono — programador de 45 anos que gerencia o MMORPG <strong>Infinity Game</strong> há quinze anos — e sua reencarnação no corpo de seu personagem criado, o Rei Demônio <strong>Hakuto Kunai</strong>, conquistou leitores fãs de isekai com foco em gerenciamento e criação de comunidades.
         </p>
 
@@ -128,6 +131,9 @@ const MaousamaRetry = () => {
           Onde Assistir
         </h2>
         <p>
+          O caso de Retry R também ilustra uma tendência mais ampla da indústria japonesa de animação na segunda metade da década de 2020: o "remake" ou "redo" de adaptações cuja recepção original foi prejudicada por limitações de orçamento, em vez de problemas no material de origem. Esse fenômeno se tornou mais comum à medida que mais estúdios de médio porte ganharam acesso a financiamento maior, frequentemente vindo de plataformas de streaming internacionais interessadas em revitalizar propriedades com fanbase já estabelecida mas subaproveitada visualmente. Para o espectador, esse tipo de retrabalho costuma ser uma aposta mais segura do que uma adaptação completamente nova e desconhecida, já que o material de origem já passou pelo teste do tempo junto aos leitores da light novel ou mangá original.
+        </p>
+        <p>
           A série original de 2019 está disponível na <strong>Crunchyroll</strong> (após a Sony adquirir a Funimation, os direitos foram migrados para a plataforma). <strong>Maou-sama, Retry! R</strong> (2024) também está disponível na Crunchyroll.
         </p>
 
@@ -169,6 +175,9 @@ const MaousamaRetry = () => {
         </p>
         <p>
           Retry R se posiciona como uma oportunidade de refazer a primeira impressão para quem desistiu da série em 2019 pelas questões de produção. O material de base — a light novel de Kurone Kanzaki publicada pela Futabasha desde setembro de 2016 — tem construção de mundo e desenvolvimento de personagens suficientemente sólidos para sustentar uma adaptação melhor executada. Para novos espectadores, Retry R é o ponto de entrada recomendado em vez da série original.
+        </p>
+        <p>
+          Para quem se interessa em explorar mais o subgênero de "protagonista que administra um sistema de jogo dentro de um mundo real", outras obras com premissa semelhante incluem títulos como Overlord, onde o protagonista também é um jogador veterano de longa data de seu próprio personagem, e Death March kara Hajimaru Isekai Kyousoukyoku, onde o conhecimento técnico do protagonista sobre desenvolvimento de jogos influencia diretamente suas decisões estratégicas. Comparar essas obras entre si ajuda a entender quais elementos do subgênero "administrador isekai" Maou-sama, Retry! compartilha com seus pares e quais escolhas narrativas — como a relação não-romântica com Aku — tornam essa série especificamente distinta dentro de um nicho que, à primeira vista, pode parecer mais homogêneo do que realmente é.
         </p>
 
       <EditorialTake category="otaku" title="Análise do Marcos: Maou-sama Retry! tem premissa acima da execução — mas Retry R corrige isso">

@@ -97,6 +97,13 @@ const MelhoresMangas2026 = () => {
           </table>
         </div>
 
+        <p>
+          Vale notar que essa classificação por demografia nasceu de uma lógica editorial japonesa, não de uma régua de qualidade ou de faixa etária estrita: revistas como a Weekly Shōnen Jump foram criadas para vender para adolescentes do sexo masculino nos anos 1960 e 1970, e os temas e o ritmo de publicação (capítulos semanais, votação dos leitores decidindo cancelamentos) moldaram o estilo narrativo conhecido hoje como "shonen" — arcos longos, torneios, evolução constante de poder. Já o seinen nasceu de revistas voltadas a leitores universitários e adultos nos anos 1960–80, com menos pressão de ranking semanal e mais liberdade para ritmos lentos, finais ambíguos e temas como guerra, trauma e decadência moral. Entender essa origem editorial ajuda a explicar por que um shonen como One Piece pode ter mais de 1.100 capítulos sem perder o fôlego comercial, enquanto um seinen como Vagabond pode passar anos em hiato sem que isso afete sua reputação crítica.
+        </p>
+        <p>
+          Outro ponto frequentemente ignorado por quem está começando é que a tradução para o português nem sempre acompanha o ritmo de lançamento japonês. Editoras como Panini, JBC e Newpop compram os direitos de publicação por território e seguem calendários próprios de tradução, revisão e impressão — o que significa que um título pode estar com dezenas de volumes lançados no Japão e ainda incompleto no catálogo brasileiro. Antes de se apegar a uma obra em andamento, vale conferir o site da editora responsável para saber quantos volumes já saíram por aqui.
+        </p>
+
         <AdLeaderboard className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -125,6 +132,10 @@ const MelhoresMangas2026 = () => {
           ))}
         </div>
 
+        <p>
+          Um erro comum de quem está começando é tentar ler um mangá pulando direto para a adaptação em anime, achando que é a mesma experiência em formato diferente. Na prática, anime e mangá têm ritmos de produção totalmente diferentes: um estúdio japonês produz, em média, uma temporada de 12 a 24 episódios por ano para um título popular, enquanto o mangá original pode ter publicado o equivalente a três ou quatro temporadas de material nesse mesmo período. Isso significa que ler o mangá depois de assistir ao anime quase sempre revela arcos inteiros que a adaptação ainda não cobriu — e, em casos como Fullmetal Alchemist, existem inclusive duas adaptações diferentes (2003 e Brotherhood, de 2009) por causa do ritmo de publicação da obra original na época.
+        </p>
+
         <AdInArticle />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -150,6 +161,10 @@ const MelhoresMangas2026 = () => {
             </div>
           ))}
         </div>
+
+        <p>
+          Uma diferença importante entre seinen e shonen que só fica clara depois que se lê alguns títulos de cada categoria é o tratamento dado à morte e às consequências de batalhas. Em séries seinen como Vinland Saga e Berserk, a violência tem peso narrativo: personagens morrem de forma definitiva, decisões erradas custam caro e o protagonista frequentemente carrega o trauma das próprias ações por dezenas de capítulos. Já no shonen tradicional, é comum que o poder de amizade, uma reviravolta de última hora ou um novo nível de força resolvam conflitos que pareciam definitivos — uma convenção que não é defeito, apenas reflete o público e o objetivo editorial de cada revista. Saber reconhecer essa diferença ajuda o leitor a calibrar expectativas antes de migrar de gênero.
+        </p>
 
         <AdRectangle className="my-8" />
 
@@ -201,6 +216,10 @@ const MelhoresMangas2026 = () => {
             </div>
           ))}
         </div>
+
+        <p>
+          Para quem decide migrar do digital gratuito para a coleção física, vale lembrar que volumes de mangá no Brasil costumam ter tiragens menores do que romances ou quadrinhos americanos, o que faz com que títulos esgotados demorem para serem reimpressos — ou, em casos de baixa demanda, nunca sejam reimpressos. Acompanhar o calendário de lançamentos das editoras (geralmente divulgado em redes sociais e nos próprios sites) e comprar os primeiros volumes de uma série logo após o lançamento é a forma mais segura de garantir a coleção completa sem depender do mercado de usados, que pode encarecer significativamente títulos de catálogo limitado.
+        </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BarChart3 className="h-7 w-7 text-otaku" />

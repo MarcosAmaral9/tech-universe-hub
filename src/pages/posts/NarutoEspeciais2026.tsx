@@ -88,6 +88,9 @@ const NarutoEspeciais2026 = () => {
           Os Novos Designs: O Que Mudou e Por Que a Comunidade Está Dividida
         </h2>
         <p>
+          Antes de entrar nos detalhes de cada personagem, vale lembrar o contexto histórico desses designs: Masashi Kishimoto encerrou a serialização original de Naruto na Weekly Shōnen Jump em novembro de 2014, após 15 anos de publicação contínua. Desde então, o autor colaborou em diversos materiais derivados — incluindo roteiros para filmes, supervisão de spin-offs como Boruto e ilustrações de capa para as edições especiais do mangá — mas raramente desenhou pessoalmente os personagens adultos em cenas de ação completas, já que a maior parte do material visual de Boruto: Naruto Next Generations ficou a cargo de outros artistas, como Mikio Ikemoto. Por isso, qualquer novo design supervisionado diretamente por Kishimoto tende a gerar atenção desproporcional da comunidade, que historicamente trata o traço do criador original como referência de canonicidade.
+        </p>
+        <p>
           Os novos designs revelados em 21 de abril causaram reações intensas — e polarizadas — na comunidade. A maioria dos fãs elogiou a evolução visual; uma minoria pediu manutenção do estilo Shippuden clássico. Aqui está o que mudou em cada personagem principal:
         </p>
         <div className="not-prose my-6 space-y-3">
@@ -134,6 +137,10 @@ const NarutoEspeciais2026 = () => {
         </div>
 
         
+        <p>
+          O fenômeno Naruto também ajudou a consolidar o modelo de negócio do "merchandising cruzado" tão comum no mercado japonês de animação: a cada novo arco do anime, a Bandai (responsável pelos brinquedos e action figures) e a Konami/Bandai Namco (responsáveis pelos jogos, incluindo a franquia Ultimate Ninja Storm) lançavam produtos sincronizados com a trama, criando um ciclo de receita que se manteve ativo mesmo após o fim da série original. Esse modelo é parte do motivo pelo qual a expectativa em torno de qualquer retorno de Naruto — como os especiais de 2026 — costuma vir acompanhada de rumores sobre novos jogos, brinquedos colecionáveis e parcerias de moda, mesmo antes de qualquer anúncio oficial nesse sentido.
+        </p>
+
         <AdInArticle className="my-8" />
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Flame className="h-7 w-7 text-otaku" />
@@ -149,6 +156,9 @@ const NarutoEspeciais2026 = () => {
           <li>Em 2026, com a "renascença do shonen clássico" (One Piece Elbaf, Bleach Thousand-Year Blood War, JJK T4), o momentum para novos especiais de Naruto nunca foi melhor</li>
           <li>Os 4 especiais serão a <strong>primeira animação original nova de Naruto da geração adulta</strong> — distinto de Boruto</li>
         </ul>
+        <p>
+          Naruto estreou como mangá na Weekly Shōnen Jump em 1999 e se tornou, ao lado de One Piece e Bleach, um dos pilares do que a imprensa especializada japonesa chamou de "Big Three" da Jump nos anos 2000 — três séries que sustentaram a popularidade da revista e definiram o gosto de uma geração inteira de leitores de shonen fora do Japão. O anime estreou no Japão em outubro de 2002 pela TV Tokyo, com a fase Shippuden começando em fevereiro de 2007 e se estendendo até março de 2017, somando, entre as duas fases, mais de 700 episódios — um dos maiores volumes de produção contínua de qualquer anime de ação já realizado por um único estúdio.
+        </p>
         <div className="not-prose my-6 bg-card rounded-xl border border-otaku/30 p-5">
           <h3 className="font-bold text-otaku mb-3">📊 Naruto em Números (2026)</h3>
           <div className="grid grid-cols-2 gap-3">
@@ -167,6 +177,10 @@ const NarutoEspeciais2026 = () => {
             ))}
           </div>
         </div>
+
+        <p>
+          Outro fator que costuma pesar na recepção de qualquer retorno de uma franquia como Naruto é a continuidade do elenco de dublagem original. No Japão, atores como Junko Takeuchi (Naruto), Noriaki Sugiyama (Sasuke) e Chie Nakamura (Sakura) interpretam os personagens desde o início da série em 2002, e a expectativa da comunidade é que esses profissionais retornem para os especiais — mantendo a coerência vocal que acompanhou os fãs por mais de duas décadas. No Brasil, a dublagem clássica feita por estúdios como a Centauro Comunicações também tem forte identificação com o público, e qualquer mudança de elenco na versão nacional tende a gerar debate intenso nas redes sociais assim que for anunciada.
+        </p>
 
         <AdRectangle className="my-8" />
 
@@ -187,6 +201,10 @@ const NarutoEspeciais2026 = () => {
             </div>
           ))}
         </div>
+
+        <p>
+          Independentemente de qual teoria se confirmar, a simples existência de uma nova produção oficial — supervisionada pelo mesmo estúdio responsável pela série clássica — já é significativa para o status de Naruto dentro do mercado de animação japonesa. Poucas franquias de shonen conseguem manter relevância de mídia e engajamento de fãs quase uma década após o encerramento da história principal, e isso reforça por que editoras, plataformas de streaming e fabricantes de produtos licenciados continuam tratando Naruto como um dos ativos mais valiosos do catálogo de anime mundial.
+        </p>
 
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
           <h3 className="text-xl font-bold mb-2">Você está animado com os especiais de Naruto? 🍥</h3>

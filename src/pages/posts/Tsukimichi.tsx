@@ -182,6 +182,9 @@ const Tsukimichi = () => {
 
       <EditorialTake category="otaku" title="Análise do Marcos: Tsukimichi é o isekai que cresceu sem hype e ganhou com consistência">
         <p>
+          Um aspecto relevante do posicionamento de Tsukimichi no mercado de isekai é como a série construiu uma audiência fiel sem os picos de hype que acompanham títulos como Solo Leveling ou Jujutsu Kaisen. A light novel de Azumi Kei existe desde 2015 — publicada pela Alphapolis, editora especializada em light novels de origem web que inclui no catálogo outras obras como "In Another World With My Smartphone" — e acumulou sua fanbase de forma orgânica e gradual ao longo de quase uma década antes de ganhar a adaptação em anime. Esse tipo de construção de audiência "slow burn" é parte do que explica o nivel de engajamento acima da média da comunidade de Tsukimichi: os fãs que chegaram através da light novel antes do anime são geralmente leitores de longa data com investimento emocional profundo na série, o que cria uma base de suporte estável para futuras temporadas mesmo sem campanhas de marketing agressivas.
+        </p>
+        <p>
           Tsukimichi Moonlit Fantasy é uma light novel de <strong>Azumi Kei</strong>, publicada pela <strong>Alphapolis</strong> desde agosto de 2015 — mais de 17 volumes lançados. O mangá, adaptado por <strong>Kotora Kino</strong>, é serializado no <em>Comic Alive</em> (Media Factory / Kadokawa). A Temporada 1 foi produzida pelo estúdio <strong>C2C</strong>, dirigida por Shouta Ihata, com 12 episódios de julho a setembro de 2021. A <strong>Temporada 2</strong> foi produzida pelo estúdio <strong>J.C.Staff</strong>, também dirigida por Shouta Ihata, com 13 episódios de janeiro a abril de 2024. Disponível na <strong>Crunchyroll</strong> com legendas em português. A Temporada 3 ainda não foi confirmada oficialmente até maio de 2026.
         </p>
         <p>

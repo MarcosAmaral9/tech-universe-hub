@@ -216,6 +216,9 @@ const FreierenTemporada32026 = () => {
 
       <EditorialTake category="otaku" title="Análise do Marcos: Frieren é o anime que provou que lento pode ser perfeito">
         <p>
+          Vale registrar que Frieren venceu o Manga Taisho em 2021 — prêmio independente votado por livreiros japoneses para recomendar obras novas que merecem mais atenção, considerado um dos indicadores mais honestos de qualidade literária dentro do manga moderno, já que é votado por profissionais do setor de livraria em vez de fãs ou críticos especializados. Esse reconhecimento, junto com o 14º prêmio na 67a edição do Shogakukan Manga Award na categoria shōnen em 2022, posicionou Frieren como obra de prestígio crítico antes mesmo da adaptação em anime — o que ajuda a explicar por que o estúdio Madhouse recebeu o projeto com tanto cuidado: havia expectativa estabelecida de qualidade literária a ser honrada, não apenas popularidade a ser monetizada.
+        </p>
+        <p>
           Frieren: Beyond Journey's End é uma obra de <strong>Kanehito Yamada</strong> (roteiro) e <strong>Tsukasa Abe</strong> (arte), serializada na Weekly Shōnen Sunday (Shogakukan) desde abril de 2020 — mais de 130 capítulos, 13 volumes. O anime foi produzido pela <strong>Madhouse</strong>, dirigido por <strong>Keiichiro Saito</strong>, e foi ao ar de setembro de 2023 a março de 2024 com 28 episódios — nota 9,3/10 no MyAnimeList, posição de top 5 histórico. A <strong>Temporada 3 foi confirmada</strong> em abril de 2026 ao final do último episódio da T2, sem data de estreia definida. O mangá continua em serialização semanal com material suficiente para múltiplas temporadas.
         </p>
         <p>

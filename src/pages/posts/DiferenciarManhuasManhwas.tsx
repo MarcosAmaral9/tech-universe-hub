@@ -325,6 +325,9 @@ const DiferenciarManhuasManhwas = () => {
 
       <EditorialTake category="otaku" title="Análise do Marcos: manhwa e manhua são formatos distintos com culturas próprias — confundi-los é perder metade da experiência">
         <p>
+          Vale destacar uma dimensão econômica frequentemente ignorada nas discussões sobre manhwa e manhua: o mercado digital asiático de quadrinhos é significativamente maior do que o público ocidental normalmente percebe. O Webtoon reportou mais de 89 milhões de usuários mensais globais em 2023 segundo dados divulgados pela NAVER, e plataformas chinesas como Kuaikan Manhua e Bilibili Comics têm bases de usuários ainda maiores dentro da China — um mercado que raramente aparece nas análises ocidentais do setor por operar majoritariamente em mandarim. Essa escala explica por que tanto a indústria coreana quanto a chinesa investem cada vez mais em adaptações para donghua (animação chinesa) e anime com coproduções, buscando distribuição internacional para propriedades que já têm audiência doméstica massiva.
+        </p>
+        <p>
           A confusão entre manhwa coreano e manhua chinês é compreensível porque ambos são full color e digitais — mas são culturalmente tão distintos quanto o mangá japonês é de ambos. O manhwa sul-coreano nasceu no formato webtoon para smartphones e popularizou globalmente o subgênero de 'sistema' com obras como <strong>Solo Leveling</strong>. O manhua chinês tem raízes em literatura de Xianxia e Wuxia com séculos de história, e seu sistema de 'cultivo' influenciou diretamente o isekai japonês moderno.
         </p>
         <p>

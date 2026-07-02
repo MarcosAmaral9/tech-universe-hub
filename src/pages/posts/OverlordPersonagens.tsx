@@ -48,6 +48,9 @@ const OverlordPersonagens = () => {
           Ainz Ooal Gown — O Sorcerer King
         </h2>
         <p>
+          Antes de entrar nos personagens individualmente, vale entender o que torna Overlord estruturalmente diferente da maioria dos isekais: a série é escrita deliberadamente do ponto de vista do antagonista. Ainz Ooal Gown não é um herói tentando salvar o mundo — é uma entidade monstruosa com poder absurdo que constrói progressivamente um império pelo terror e pela manipulação. O que impede que isso se torne um relato de crueldade gratuita é a ironia central do protagonista: Ainz é, no fundo, um trabalhador comum japonês que não sabe o que está fazendo, apenas finge que sim. Esse contraste entre a fachada de vilão onisciente e a realidade de um NPC improvisando estratégias que não planejou é o coração cômico e dramático da série — e é o que torna o cast de personagens ao seu redor tão eficaz: eles acreditam genuinamente na onisciência de Ainz, e isso cria situações narrativas que variam do genuinamente cômico ao perturbadoramente sombrio.
+        </p>
+        <p>
           <strong>Suzuki Satoru</strong> era um trabalhador de TI solitário de 30 e poucos anos — o único membro restante ativo da guilda YGGDRASIL <em>Ainz Ooal Gown</em> antes do transporte. Seu avatar é um feiticeiro esqueleto de nível máximo, especializado em magia de negação da morte e convocação. Como Ainz Ooal Gown no Novo Mundo, ele adota uma persona de soberano onisciente e inescrutável — mesmo quando está improvisando. O sistema do jogo suprime automaticamente emoções extremas, tornando-o incapaz de demonstrar hesitação ou medo mesmo que queira.
         </p>
         <p>

@@ -60,6 +60,9 @@ const KizokuTensei = () => {
           Premissa: O Príncipe Cheat que Nasceu Privilegiado
         </h2>
         <p>
+          Vale notar como o caminho editorial de Kizoku Tensei segue o padrão típico de boa parte do isekai contemporâneo: nasceu como web novel gratuita no Shōsetsuka ni Narō em 2019, foi notada pela editora SB Creative com base em popularidade entre os leitores da plataforma, e só então recebeu publicação física sob o selo GA Novel — antes de eventualmente ganhar adaptação em mangá e, finalmente, em anime. Esse pipeline de "descoberta orgânica seguida de profissionalização" é hoje o caminho mais comum para a maioria dos isekais que chegam à televisão, e explica por que tantas dessas séries têm volumes web gratuitos disponíveis ao lado da versão física revisada e ilustrada — a versão impressa costuma incluir edição adicional, ilustrações profissionais e, em alguns casos, conteúdo extra que não estava na publicação original online.
+        </p>
+        <p>
           O protagonista é um homem comum do Japão que, após morrer, é <strong>reencarnado no mesmo mundo de fantasia medieval</strong> como <strong>Noah Ararat</strong> — o décimo terceiro filho do imperador. Diferente da maioria dos isekais, Noah nasce em excelente posição social: família imperial, acesso a educação de elite e recursos abundantes.
         </p>
         <p>
@@ -110,7 +113,7 @@ const KizokuTensei = () => {
 
         <div className="not-prose mt-10 p-6 bg-secondary rounded-xl text-center">
           <h3 className="text-xl font-bold mb-2">O príncipe mais forte da temporada? 👑</h3>
-          <p className="text-muted-foreground">Conta nos comentários! 👇</p>
+          <p className="text-muted-foreground">Conta nos comentários — e se já leu a light novel, conta também onde a história está em relação ao anime! 👇</p>
         </div>
       </div>
 
@@ -124,6 +127,9 @@ const KizokuTensei = () => {
         </p>
         <p>
           O cap de nível infinito significa que não há teto teórico para onde Noah pode chegar. Na prática, o crescimento é limitado pelo número e qualidade dos seguidores genuinamente leais — o que injeta um elemento de construção de personagem na progressão de poder. Para um isekai de inverno 2026, esse sistema se destaca pela coerência interna.
+        </p>
+        <p>
+          Essa coerência interna é justamente o que separa sistemas de poder bem construídos de power fantasies arbitrárias dentro do gênero isekai: quando as regras de progressão fazem sentido lógico e têm consequências narrativas claras (como a impossibilidade de forçar lealdade), o espectador consegue prever e investir emocionalmente nas escolhas do protagonista, em vez de simplesmente assistir a uma sequência de vitórias sem risco real. É esse tipo de atenção ao design do próprio sistema de fantasia que costuma diferenciar as adaptações isekai mais bem recebidas pela crítica das que são esquecidas rapidamente após o fim da temporada de exibição.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -146,6 +152,9 @@ const KizokuTensei = () => {
         </p>
 
       <EditorialTake category="otaku" title="Análise do Marcos: Kizoku Tensei inverte o clichê do isekai pobre — com resultados interessantes">
+        <p>
+          Antes de fechar com a análise editorial, vale mencionar que o uso de intriga política como motor narrativo dentro de fantasia medieval não é exclusividade do isekai — é uma tradição que remonta a obras ocidentais clássicas de fantasia política, como o ciclo de romances de George R.R. Martin, que popularizaram a ideia de que conflitos de sucessão e alianças entre famílias nobres podem ser tão tensos quanto batalhas físicas. O que o isekai japonês contemporâneo, incluindo Kizoku Tensei, faz de diferente é combinar esse interesse por intriga cortesã com a familiaridade do protagonista reencarnado — que carrega sensibilidades modernas para dentro de uma estrutura de poder hereditária e historicamente rígida, criando atrito entre os valores do protagonista e as expectativas do mundo em que ele nasceu.
+        </p>
         <p>
           <strong>Kizoku Tensei: Megumareta Umare kara Saikyou no Chikara wo Eru</strong> é uma light novel de <strong>Nazuna Miki</strong> publicada pela <strong>SB Creative</strong> sob o selo <em>GA Novel</em> desde setembro de 2019 — dez volumes até agosto de 2025, décimo primeiro em janeiro de 2026. O mangá é serializado na <strong>Manga UP!</strong> (Square Enix). O anime é produzido pelo <strong>CompTown</strong>, dirigido por <strong>Michio Fukuda</strong>, com 12 episódios que estrearam em <strong>4 de janeiro de 2026</strong>. Disponível na <strong>Crunchyroll</strong> e Amazon Prime Video.
         </p>
@@ -184,6 +193,12 @@ const KizokuTensei = () => {
             title: "Comic Natalie — News",
             url: "https://natalie.mu/comic",
             publisher: "Comic Natalie",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "SB Creative — GA Novel",
+            url: "https://ga.sbcr.jp/",
+            publisher: "SB Creative",
             accessedAt: "Maio 2026"
           }
         ]}

@@ -52,6 +52,9 @@ const OkirakuRyoushu = () => {
           Origem: Light Novel e Mangá
         </h2>
         <p>
+          Vale situar Okiraku Ryoushu dentro do subgênero conhecido como "territory management isekai" ou "village-building isekai" — uma vertente específica que cresceu consideravelmente no catálogo do Narou a partir de meados dos anos 2010, em paralelo ao isekai de combate mais convencional. Nesse subgênero, o foco narrativo se desloca das batalhas para a construção: o protagonista usa conhecimento moderno para introduzir tecnologias, técnicas agrícolas ou de manufatura anacrônicas no mundo de fantasia, geralmente começando de uma posição desfavorável (um território pobre, uma cidade em ruínas, uma aldeia ignorada) e gradualmente a transformando em potência. Outras obras representativas do subgênero incluem Ascendance of a Bookworm (foco em produção editorial e cultural) e Release That Witch (foco em industrialização), cada uma com abordagem diferente do mesmo impulso narrativo de construção e desenvolvimento progressivo.
+        </p>
+        <p>
           A história foi criada por <strong>Sou Akaike</strong>, com ilustrações de <strong>Kururi</strong>, e começou a ser serializada em maio de 2020 na plataforma <em>Shōsetsuka ni Narō</em>. A <strong>Overlap</strong> adquiriu a série e publica a light novel desde setembro de 2021 pelo selo <em>Overlap Novels</em> — sete volumes lançados até janeiro de 2025 e o sexto volume em janeiro de 2026. O mangá, desenhado por <strong>Maro Aoiro</strong>, é serializado no <em>Comic Gardo</em> (Overlap) desde agosto de 2021, com sete volumes coletados até abril de 2025. A <strong>Seven Seas Entertainment</strong> publica tanto a light novel quanto o mangá em inglês.
         </p>
 
@@ -143,8 +146,14 @@ const OkirakuRyoushu = () => {
         <p>
           Para o público que gosta de detalhes de construção e progressão orgânica de comunidade — mais próximo de um colony-building game do que de um RPG — Okiraku Ryoushu é uma das séries mais satisfatórias do catálogo atual de isekais. O estúdio NAZ, responsável pela produção, tem no currículo títulos como <strong>Id:Invaded</strong> (2020) e <strong>Hamatora</strong> (2014), com experiência em narrativas mais contidas e focadas — um fit razoável para o material de Sou Akaike.
         </p>
+        <p>
+          Para quem está no Brasil e quer acompanhar a série, a Crunchyroll distribui os episódios com legenda em português. O ritmo semanal funciona especialmente bem para esse tipo de isekai: a proposta de construção de território recompensa o intervalo entre episódios, dando tempo de assimilar o progresso antes do próximo passo. Para quem prefere o material escrito, a Seven Seas Entertainment publica light novel e mangá em inglês — e o conteúdo web original em japonês ainda pode ser lido gratuitamente no Narou. Quem vier de séries como Ascendance of a Bookworm ou That Time I Got Reincarnated as a Slime vai se sentir em casa desde o primeiro episódio.
+        </p>
 
       <EditorialTake category="otaku" title="Análise do Marcos: Van é o isekai-builder mais criativo da temporada de inverno 2026">
+        <p>
+          Um aspecto importante do subgênero de construção de território que Okiraku Ryoushu representa bem é a diferença de ritmo em relação ao isekai de combate: em vez de arcos de tensão crescente culminando em batalhas decisivas, a narrativa avança por meio de problemas práticos e soluções criativas — como resolver um problema de abastecimento de alimentos, melhorar a defesa de uma muralha ou conquistar a confiança de artesãos locais resistentes a mudanças. Esse ritmo mais lento e deliberado não é uma fraqueza do gênero, mas sua proposta narrativa: o prazer está na competência revelada progressivamente e na satisfação de ver um projeto crescer, não na catarse de uma batalha resolvida. Para espectadores acostumados à adrenalina de series de ação, a transição para esse tipo de isekai pode exigir um ajuste de expectativa — mas quem se adapta costuma encontrar um tipo de satisfação narrativa muito diferente e igualmente viciante.
+        </p>
         <p>
           <strong>Okiraku Ryoushu no Tanoshii Ryouchi Bouei</strong> é uma light novel de <strong>Sou Akaike</strong>, publicada pela <strong>Overlap</strong> sob o selo <em>Overlap Novels</em> desde setembro de 2021 — sete volumes publicados. O mangá, com arte de <strong>Maro Aoiro</strong>, é serializado no <em>Comic Gardo</em> (Overlap). A <strong>Seven Seas Entertainment</strong> licencia light novel e mangá em inglês. O anime é produzido pelo estúdio <strong>NAZ</strong>, dirigido por <strong>Tetsuya Tatamitani</strong>, e estreou em <strong>10 de janeiro de 2026</strong> com 12 episódios. Disponível na <strong>Crunchyroll</strong>.
         </p>

@@ -79,6 +79,9 @@ const AprenderJaponesAnime2026 = () => {
         <p>
           A conclusão prática: o anime é um <strong>acelerador poderoso de imersão</strong>, não um substituto para estudo sistemático. O método mais eficiente combina os dois.
         </p>
+        <p>
+          A base teórica por trás dessa abordagem remonta à "Hipótese do Input Compreensível", formulada pelo linguista Stephen Krashen nos anos 1980, segundo a qual a aquisição de uma segunda língua acontece principalmente através da exposição a conteúdo que está ligeiramente acima do nível atual do aprendiz — o que Krashen chamou de "i+1". A teoria argumenta que a aquisição de linguagem (processo inconsciente e intuitivo) é diferente do aprendizado de linguagem (processo consciente de memorização de regras), e que o primeiro é mais duradouro e natural. Embora a hipótese de Krashen tenha gerado debate acadêmico ao longo das décadas — alguns linguistas argumentam que o estudo explícito de gramática também tem papel relevante — ela continua sendo a base teórica mais citada pelas comunidades de aprendizado por imersão, incluindo o método AJATT e suas variações modernas como o Refold.
+        </p>
 
         <div className="not-prose my-6 grid md:grid-cols-2 gap-4">
           {[
@@ -165,6 +168,9 @@ const AprenderJaponesAnime2026 = () => {
           Animes e Mangás Recomendados por Nível
         </h2>
         <p>
+          Para quem busca um objetivo mensurável ao longo do processo de imersão, vale conhecer o <strong>JLPT (Japanese Language Proficiency Test)</strong>, o exame de proficiência mais reconhecido internacionalmente, organizado pela Japan Foundation e pela Japan Educational Exchanges and Services. O teste é dividido em cinco níveis, de N5 (básico) a N1 (avançado, próximo de fluência acadêmica), e é aplicado duas vezes por ano em diversos países, incluindo o Brasil, em cidades como São Paulo. Embora não seja necessário para quem aprende japonês apenas por hobby, o JLPT funciona como um marco objetivo de progresso para quem gosta de medir evolução com certificações formais, e a certificação em níveis mais altos (N2 ou N1) é frequentemente exigida por universidades japonesas e algumas vagas de emprego que envolvem uso profissional do idioma.
+        </p>
+        <p>
           A escolha do conteúdo certo para cada nível faz enorme diferença. Conteúdo muito difícil desencoraja; fácil demais não tem ganho de aprendizado. A regra i+1 de Krashen: o conteúdo ideal é aquele em que você entende tudo exceto 1 elemento novo por vez.
         </p>
 
@@ -208,6 +214,9 @@ const AprenderJaponesAnime2026 = () => {
           <ListChecks className="h-7 w-7 text-otaku" />
           Montando Sua Rotina Semanal de Estudo
         </h2>
+        <p>
+          Vale dedicar um parágrafo específico ao maior obstáculo técnico para falantes de português que aprendem japonês: o sistema de escrita. O japonês usa três sistemas simultaneamente — hiragana e katakana, com 46 caracteres fonéticos cada, que podem ser aprendidos em poucas semanas de prática consistente, e os kanji, ideogramas de origem chinesa que representam conceitos e não apenas sons. O Ministério da Educação japonês define uma lista oficial de cerca de 2.136 kanji considerados de uso cotidiano (o "Jōyō Kanji"), e a maioria dos materiais voltados a falantes nativos pressupõe conhecimento desse conjunto. Diferente do alfabeto latino, cada kanji pode ter múltiplas leituras dependendo do contexto e da combinação com outros caracteres, o que torna a leitura — mais do que a fala — o componente que costuma exigir mais tempo de estudo dedicado dentro de qualquer método de aprendizado, incluindo os baseados em imersão por anime.
+        </p>
         <p>
           A constância supera a intensidade em aquisição de linguagem. Trinta minutos diários todos os dias supera com folga cinco horas concentradas no fim de semana — porque o aprendizado de língua é cumulativo e depende de revisão espaçada regular. Aqui está uma rotina diária eficiente para iniciantes/intermediários:
         </p>

@@ -56,6 +56,9 @@ const SpringSeasonAnimes2026 = () => {
           <BarChart3 className="h-7 w-7 text-otaku" />
           Visão Geral da Temporada
         </h2>
+        <p>
+          O sistema de "temporadas de anime" (cours, em japonês) é uma particularidade da indústria de televisão japonesa que organiza a programação em blocos de aproximadamente três meses — inverno (janeiro–março), primavera (abril–junho), verão (julho–setembro) e outono (outubro–dezembro). Essa estrutura existe porque a maioria das emissoras japonesas vende espaços publicitários trimestrais, e os estúdios de animação planejam produção, orçamento e cronograma de exibição em torno desses blocos fixos. Séries mais longas frequentemente são divididas em múltiplos cours — por isso é comum ver uma franquia anunciar "Temporada 4" que na prática é a continuação direta da história sem hiato narrativo, apenas uma pausa de produção entre os blocos trimestrais de exibição.
+        </p>
         <div className="not-prose my-6 overflow-x-auto">
           <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead><tr className="bg-secondary">
@@ -190,6 +193,9 @@ const SpringSeasonAnimes2026 = () => {
           <Zap className="h-7 w-7 text-otaku" />
           Os 5 Animes Mais Subestimados da Temporada
         </h2>
+        <p>
+          Vale entender também como funciona a distribuição internacional desses títulos para o público fora do Japão. O modelo de "simulcast" — exibição praticamente simultânea à transmissão japonesa, geralmente com legendas disponibilizadas em poucas horas após o episódio ir ao ar — tornou-se padrão da indústria a partir da expansão da Crunchyroll na década de 2010, substituindo o modelo antigo em que fãs ocidentais esperavam meses ou até anos por uma licença oficial. Esse modelo depende de acordos diretos entre as plataformas de streaming e os comitês de produção japoneses (chamados "seiyuu iinkai"), consórcios que reúnem a editora detentora dos direitos do material original, a emissora de TV, o estúdio de animação e empresas de distribuição, todos dividindo os custos de produção e os lucros proporcionalmente. Esse modelo de financiamento compartilhado é parte do motivo pelo qual a velocidade de disponibilização internacional melhorou tanto nos últimos dez anos.
+        </p>
         <div className="not-prose my-6 space-y-3">
           {[
             { n: "11", nome: "Rooster Fighter", desc: "Um galo enfrenta kaijus para proteger seu país. Parece ridículo — e é. Mas de forma absolutamente brilhante e emocionante. A comunidade está adorando.", onde: "Crunchyroll" },
@@ -257,6 +263,9 @@ const SpringSeasonAnimes2026 = () => {
         </p>
         <p>
           Para quem não tem tempo de acompanhar semanalmente, a estratégia de maratonar ao final da temporada (junho/julho) tem a vantagem adicional de permitir verificar avaliações da comunidade antes de investir tempo em séries que decepcionaram. Para One Piece Elbaf especificamente, o formato sazonal resolve o problema: o bloco inteiro estará disponível quando a temporada encerrar, permitindo maratonar 10–13 episódios de qualidade cinematográfica em vez de esperar semana a semana. É provavelmente a forma mais satisfatória de acompanhar o arco de Elbaf.
+        </p>
+        <p>
+          Por fim, vale lembrar que a forma como cada pessoa consome uma temporada densa como essa também afeta a experiência social do fandom: assistir simultaneamente ao lançamento japonês permite participar de discussões em tempo real nas redes sociais e em comunidades como o Discord e o Reddit, mas exige disciplina para evitar spoilers de quem está adiantado. Já maratonar depois reduz esse risco, mas tira a pessoa do "momento" coletivo de reação imediata que costuma acompanhar grandes revelações de arco — como aconteceu, historicamente, em momentos marcantes de séries como Attack on Titan e Demon Slayer, quando a comunidade reagia coletivamente em tempo quase real à exibição de um episódio específico.
         </p>
 
       <EditorialTake category="otaku" title="Análise do Marcos: Spring Season 2026 é o melhor argumento contra a ideia de que anime está em declínio">

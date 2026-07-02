@@ -222,6 +222,9 @@ const JJKTemporada42026 = () => {
 
       <EditorialTake category="otaku" title="Análise do Marcos: o Culling Game é o teste técnico do MAPPA">
         <p>
+          Vale situar o que o Culling Game Part 2 representa dentro da estrutura geral de JJK: é o penúltimo bloco narrativo antes do Arco de Shinjuku, o clímax final da série onde Yuji e seus aliados enfrentam Sukuna pelo desfecho definitivo. Isso significa que a T4 tem a função dupla de resolver as threads abertas do Culling Game (o destino de vários personagens jogadores, a derrota de Kenjaku, a libertação das colônias) e posicionar o elenco sobrevivente para o confronto final. A MAPPA tem experiência com esse tipo de arco de transição narrativa — a Temporada 2 cumpriu papel similar ao preparar Shibuya — mas a escala de personagens simultâneos no Culling Game Part 2 é maior do que qualquer coisa que a série pediu ao estúdio até agora, o que torna a gestão de tempo de tela por personagem o maior desafio criativo da produção.
+        </p>
+        <p>
           Em 26 de março de 2026, ao final do episódio 59 da Temporada 3, a <strong>MAPPA</strong> confirmou a <strong>Temporada 4: Culling Game Part 2</strong> em produção. A conta oficial no X postou mensagem de agradecimento e confirmação imediatamente após o episódio. A Crunchyroll também confirmou a produção em andamento. Sem data de estreia anunciada até maio de 2026 — as apostas da comunidade ficam entre outono de 2026 e inverno de 2027.
         </p>
         <p>

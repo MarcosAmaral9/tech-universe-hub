@@ -70,6 +70,9 @@ const MangaVsAnime2026 = () => {
         <p>
           O processo de adaptação envolve três camadas distintas, cada uma com seus próprios riscos:
         </p>
+        <p>
+          Historicamente, a indústria de animação japonesa também opera sob restrições de produção que raramente são visíveis para o público casual. Estúdios de anime trabalham com cronogramas extremamente apertados e equipes de animadores frequentemente terceirizados entre múltiplos projetos simultâneos — uma estrutura de produção documentada por pesquisas sobre as condições de trabalho na indústria, que mostram jornadas longas e remuneração historicamente baixa para animadores iniciantes. Esse contexto ajuda a explicar por que algumas adaptações sofrem quedas de qualidade visual ao longo de uma temporada: não é incomum que episódios do meio de uma série recebam menos horas de animação do que a estreia ou o final, simplesmente porque a equipe de produção precisa redistribuir recursos limitados ao longo de semanas de prazo apertado.
+        </p>
 
         <div className="not-prose my-6 space-y-3">
           {[
@@ -187,6 +190,9 @@ const MangaVsAnime2026 = () => {
           Os 4 Critérios que Determinam se uma Adaptação Funciona
         </h2>
         <p>
+          Vale notar que notas agregadas de plataformas como o MyAnimeList, embora úteis como indicador geral de recepção, têm limitações metodológicas conhecidas: refletem majoritariamente a opinião de um público específico — usuários ativos da própria plataforma, predominantemente ocidentais e já familiarizados com convenções do gênero — e podem ser influenciadas por efeitos de recência (episódios mais recentes pesam mais na nota momentânea do que episódios antigos) e por campanhas coordenadas de avaliação, tanto positivas quanto negativas, em casos de controvérsia. Por isso, a análise qualitativa dos quatro critérios técnicos abaixo costuma ser mais reveladora do que comparar apenas números de nota entre diferentes adaptações.
+        </p>
+        <p>
           Com base em padrões identificados nos melhores e piores casos, quatro critérios se repetem nas adaptações bem-sucedidas. Falhar em qualquer um compromete o resultado:
         </p>
 
@@ -260,6 +266,9 @@ const MangaVsAnime2026 = () => {
         <p>
           O mangá, por sua vez, tem vantagens que o anime frequentemente perde: <strong>detalhe visual estático</strong> (o leitor pode estudar cada traço de uma página de Berserk ou Vagabond — o anime passa rápido demais para capturar a textura do original), <strong>ritmo controlado pelo leitor</strong> (você pode reler a mesma página dez vezes sem botão de pausa) e <strong>fidelidade de roteiro</strong> (capítulos nunca são cortados por questões de tempo de episódio).
         </p>
+        <p>
+          Outra diferença estrutural raramente discutida é o sentido de leitura: o mangá japonês é publicado e lido da direita para a esquerda, seguindo a convenção tradicional da escrita japonesa, o que afeta diretamente como o mangaká compõe o movimento visual de uma página — o olho do leitor japonês é treinado a percorrer o quadro nessa direção, e cenas de ação são desenhadas com esse fluxo em mente. A maioria das editoras ocidentais, incluindo as brasileiras, mantém esse sentido original de leitura ao publicar localmente, diferente da prática mais antiga de "inverter" as páginas que era comum nos anos 1990 e início dos 2000. O anime, por trabalhar com tempo linear em vez de composição espacial de página, não enfrenta essa mesma questão de direção, o que é mais um motivo pelo qual a experiência de "ler ação" e "assistir ação" é fundamentalmente diferente entre as duas mídias, independentemente da qualidade da adaptação.
+        </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <span className="h-7 w-7 text-otaku text-2xl">&#127775;</span>
@@ -281,6 +290,9 @@ const MangaVsAnime2026 = () => {
         </p>
         <p>
           <strong>One Piece:</strong> Anime primeiro via One Pace (onepace.net) para remover fillers — o anime tem camadas de direção de arte e voice acting que o mangá não reproduz. <strong>Jujutsu Kaisen:</strong> Anime primeiro (MAPPA), depois mangá para o arco final (Shinjuku Showdown) antes da T4 estrear. <strong>Frieren:</strong> Anime ou mangá — ambos são excelentes, a trilha de Evan Call no anime adiciona camada emocional única, mas o mangá tem detalhes de arte que o anime comprime em alguns momentos. <strong>Berserk:</strong> Mangá obrigatório — nenhuma adaptação anime fez jus ao material de Miura. <strong>Vinland Saga:</strong> Anime T1 e T2 (Wit Studio e MAPPA respectivamente) são excelentes; mangá para quem quer ir além dos arcos adaptados.
+        </p>
+        <p>
+          No fim das contas, a decisão de "por onde entrar" também deveria considerar o tempo disponível de cada pessoa: assistir a um anime de 24 episódios costuma exigir entre 8 e 10 horas, enquanto ler o equivalente em mangá — dependendo da densidade de texto e do ritmo de leitura individual — pode levar bem menos tempo para leitores experientes. Para quem tem pouco tempo livre e quer simplesmente saber "o que acontece" numa franquia popular antes de discutir com amigos, o mangá costuma ser o caminho mais rápido; para quem busca a experiência completa de imersão sensorial — som, movimento, ritmo de câmera — o anime continua insubstituível, mesmo quando tecnicamente menos fiel ao material original.
         </p>
 
       <EditorialTake category="otaku" title="Análise do Marcos: a adaptação supera o mangá quando quatro condições se alinham">

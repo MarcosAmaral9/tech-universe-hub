@@ -67,6 +67,9 @@ const DemonSlayerHashira2026 = () => {
         <li>Matar um <strong>membro das Doze Luas — os demônios mais poderosos</strong> de Muzan Kibutsuji</li>
       </ul>
       <p>Existem apenas 9 Hashiras em qualquer momento na história — cada um especializado em uma Respiração (estilo de respiração que amplifica as capacidades físicas humanas a níveis sobre-humanos).</p>
+      <p>
+        Vale contextualizar o papel narrativo dos Hashira dentro da estrutura da obra: em Demon Slayer, eles funcionam como o equivalente funcional de um "Exército dos Bons" já no topo da pirâmide — personagens que o protagonista Tanjiro Kamado admira e aspira igualar, cada um com uma especialidade, personalidade e história distinta. Essa estrutura de "grupo de elite com membros individualizados" é um arquétipo clássico do shonen, encontrado em obras como Naruto (os Kage e os Sannin), Bleach (os Capitães da Soul Society) e My Hero Academia (os Pro Heroes ranqueados). O que Koyoharu Gotōge fez de distinto em Demon Slayer foi dar a cada Hashira um arco pessoal de peso comparável ao do protagonista principal — algo que a adaptação do estúdio Ufotable realçou ao dedicar arcos de temporada inteiros a personagens como Rengoku (no Trem Infinito) e Tengen Uzui (no Bairro do Entretenimento).
+      </p>
 
       <AdLeaderboard className="my-8" />
 

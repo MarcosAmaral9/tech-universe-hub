@@ -54,6 +54,9 @@ const Isekai2026 = () => {
         <p>
           Isekai (異世界, literalmente "mundo diferente") é o gênero onde o protagonista é transportado para outro mundo. O gênero tem raízes antigas: <strong>Alice no País das Maravilhas</strong> e <strong>O Mágico de Oz</strong> são isekais avant la lettre. A explosão aconteceu com <strong>Sword Art Online</strong> em 2012 e se consolidou com Re:Zero, KonoSuba e That Time I Got Reincarnated as a Slime.
         </p>
+        <p>
+          Vale notar que a tradição de protagonistas transportados para outros mundos também tem precedentes diretos dentro da própria cultura pop japonesa anteriores ao boom moderno. Séries como Fushigi Yuugi (1992) e Inuyasha (1996), ambas de grande popularidade nos anos 1990, já usavam a premissa de uma protagonista que atravessa para um mundo paralelo de fantasia japonesa antiga. O que diferencia o isekai contemporâneo dessas obras anteriores não é a premissa em si, mas o tratamento sistemático de poder — a ideia de níveis, status, classes e progressão mensurável, emprestada diretamente da linguagem dos RPGs eletrônicos e de mesa, que se tornou a gramática visual e narrativa padrão do gênero a partir da década de 2010.
+        </p>
 
         <AdLeaderboard className="my-8" />
 
@@ -63,6 +66,9 @@ const Isekai2026 = () => {
         </h2>
         <p>
           A crítica não é sem fundamento. O protagonista "overpowered" (OP) remove a tensão dramática. O harém de personagens femininas sem autonomia é uma crítica legítima. A fórmula "mundo de RPG com status na tela" se repetiu tantas vezes que virou paródia.
+        </p>
+        <p>
+          Outro ponto frequentemente levantado por críticos especializados é a questão da originalidade estrutural: como o gênero nasceu majoritariamente de plataformas de publicação amadora como o Shōsetsuka ni Narō, onde os rankings de popularidade recompensam fórmulas já testadas, existe um incentivo editorial real para que novos autores repliquem elementos de sucessos anteriores em vez de arriscar premissas originais. Esse fenômeno — apelidado pejorativamente de "Narou kei" (estilo Narou) por parte da crítica japonesa — é comparável ao que aconteceu em outros mercados editoriais quando um formato de sucesso comercial gera uma onda de imitações com qualidade desigual, como ocorreu com os romances de vampiros após o sucesso de Crepúsculo no mercado ocidental.
         </p>
 
       <AdInArticle />
@@ -86,6 +92,9 @@ const Isekai2026 = () => {
         </h2>
         <p>
           O gênero oferece a fantasia de escapismo total: "como seria eu em outro mundo, começando do zero, com todo o conhecimento que tenho". É uma fantasia de recomeço e reconhecimento. No contexto socioeconômico japonês de pressão intensa, essa fantasia ressoa de forma poderosa.
+        </p>
+        <p>
+          Pesquisadores que estudam cultura pop japonesa costumam relacionar a popularidade do isekai a fenômenos sociais documentados no Japão contemporâneo, como o estresse no ambiente corporativo (incluindo o fenômeno conhecido como karoshi, morte por excesso de trabalho), a precariedade de muitos empregos temporários e a sensação de estagnação econômica que marcou as últimas três décadas no país após o estouro da bolha especulativa dos anos 1990. Nesse contexto, a fantasia de "morrer e recomeçar com vantagem" funciona quase como um espelho invertido da experiência cotidiana de boa parte do público leitor — um mecanismo de escapismo que não é exclusivo do Japão, mas que encontra terreno particularmente fértil em uma sociedade onde a sensação de estagnação pessoal é um tema recorrente no debate público.
         </p>
         <p>
           O isekai não vai morrer — vai se diversificar. <strong>KonoSuba</strong> e <strong>Cautious Hero</strong> são sátiras que amam o que criticam. Essa auto-consciência aponta para uma evolução criativa genuína.
@@ -113,6 +122,9 @@ const Isekai2026 = () => {
         </p>
         <p>
           Essa categorização importa para quem quer entrar no gênero: alguém que amou Re:Zero pelo drama psicológico pode detestar um level-up isekai típico. Identificar qual subgênero você procura antes de entrar em uma série evita decepções e ajuda a encontrar exatamente o que você busca dentro de um catálogo enorme.
+        </p>
+        <p>
+          Vale ainda mencionar que a indústria japonesa de animação também enxerga vantagens de produção no isekai como categoria, além do apelo de audiência. Por se apoiar em material de origem já testado em popularidade no Narou ou em plataformas equivalentes, os estúdios reduzem o risco financeiro de adaptar uma história sem fanbase comprovada — um fator relevante numa indústria que opera historicamente com margens de lucro apertadas para os próprios animadores e equipes de produção. Esse cálculo de risco é um dos motivos estruturais, além do gosto do público, pelos quais o catálogo de isekai segue crescendo temporada após temporada, mesmo em meio a críticas recorrentes sobre saturação do gênero.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">

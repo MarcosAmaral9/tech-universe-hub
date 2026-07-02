@@ -70,6 +70,9 @@ const MerchandisingOtaku2026 = () => {
         <p>
           Antes de comprar qualquer coisa, é essencial entender os tipos de produtos e suas características de preço e valorização:
         </p>
+        <p>
+          O hobby de figuras colecionáveis japonesas tem raízes nos anos 1980 e 1990, quando fabricantes como Kaiyodo e Bandai começaram a produzir estátuas em PVC de personagens de anime voltadas a um público adulto disposto a pagar por qualidade de escultura. A virada para o mercado de massa aconteceu nos anos 2000, com a popularização do formato "garage kit" (kits artesanais montados e pintados pelo próprio colecionador) e, posteriormente, com o lançamento da linha Nendoroid pela Good Smile Company em 2006 — um formato chibi articulado que reduziu drasticamente o custo de produção e tornou o hobby acessível a um público muito mais amplo. Essa democratização é parte do motivo pelo qual o mercado de colecionáveis de anime se tornou uma indústria bilionária global nas últimas duas décadas, em vez de permanecer restrito a um nicho de entusiastas no Japão.
+        </p>
 
         <div className="not-prose my-6 space-y-3">
           {[
@@ -111,6 +114,9 @@ const MerchandisingOtaku2026 = () => {
         <h3 className="text-xl font-bold mt-8 mb-4 text-otaku">🇯🇵 Importação Direta do Japão</h3>
         <p>
           Para figuras, <strong>AmiAmi</strong>, <strong>Hobby Search</strong> e <strong>Solaris Japan</strong> são os mais confiáveis e com melhor reputação internacional. Preços em iene frequentemente 30–50% menores que o Brasil — mas há custos adicionais:
+        </p>
+        <p>
+          Um aspecto importante do mercado japonês que colecionadores iniciantes frequentemente desconhecem é a cultura de pré-venda. A maioria das figuras de PVC scale e Nendoroids é anunciada com 6 a 12 meses de antecedência da data de lançamento, e o pagamento costuma ser parcelado — sinal no momento da reserva e o restante perto do envio. Esse modelo permite que os fabricantes calculem com precisão o volume de produção necessário, evitando excesso de estoque, mas também significa que figuras muito populares esgotam as vagas de pré-venda rapidamente, às vezes em poucas horas após o anúncio. Acompanhar contas oficiais de fabricantes como Good Smile Company, Kotobukiya e Alter no X (antigo Twitter) e se cadastrar em lojas como AmiAmi para alertas de pré-venda é a forma mais confiável de garantir uma unidade de itens muito disputados sem precisar recorrer ao mercado secundário, onde o ágio pode chegar a 50–100% do preço original.
         </p>
 
         <div className="not-prose my-6 bg-card rounded-xl border border-otaku/30 p-5">
@@ -206,6 +212,9 @@ const MerchandisingOtaku2026 = () => {
         <p>
           Uma coleção bem conservada é a diferença entre um ativo que mantém valor e objetos que viram sucata em poucos anos. As principais práticas:
         </p>
+        <p>
+          Para colecionadores com itens de valor mais elevado, vale considerar também a dimensão de segurança patrimonial: algumas seguradoras brasileiras já oferecem apólices específicas para coleções (bens de uso pessoal de valor declarado), que cobrem roubo, incêndio e danos acidentais. Embora pouco comum no mercado nacional, esse tipo de cobertura costuma ser viável a partir de coleções com valor agregado de R$ 15 a 20 mil — o que é mais comum do que parece entre colecionadores que acumulam PVC scale figures e itens de edição limitada por vários anos. Documentar a coleção com notas fiscais, fotos datadas e, quando possível, comprovantes de autenticidade da fabricante facilita tanto a contratação do seguro quanto eventuais sinistros.
+        </p>
 
         <div className="not-prose my-6 space-y-2">
           {[
@@ -256,6 +265,9 @@ const MerchandisingOtaku2026 = () => {
         </p>
         <p>
           Para venda de itens da própria coleção, o <strong>Mercari Brasil</strong> (lançado em 2023) segue o modelo japonês de marketplace C2C com taxas menores que o Mercado Livre para vendas individuais. O <strong>OLX</strong> tem nicho de colecionáveis com compradores que entendem o mercado. Para itens de alto valor (acima de R$ 1.000), grupos de WhatsApp específicos de colecionadores tendem a ter compradores mais qualificados e dispostos a pagar o preço justo do que marketplaces generalistas.
+        </p>
+        <p>
+          Por fim, vale lembrar que convenções e eventos otaku presenciais — como a Anime Friends e a Comic Con Experience, ambas realizadas em São Paulo — continuam sendo um dos canais mais confiáveis para comprar colecionáveis no Brasil, já que permitem inspecionar o produto fisicamente antes da compra e negociar diretamente com lojistas especializados que participam regularmente desses eventos. Para quem está começando a colecionar, visitar uma convenção antes de fazer compras online de maior valor é uma forma prática de aprender a identificar a textura, o peso e o acabamento de produtos originais — conhecimento que depois ajuda a reconhecer bootlegs em fotos de anúncios na internet.
         </p>
 
       <EditorialTake category="otaku" title="Análise do Marcos: colecionar produto oficial é diferente de acumular bootleg">

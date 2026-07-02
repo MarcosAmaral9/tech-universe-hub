@@ -337,6 +337,9 @@ const ReMonster2026 = () => {
 
       <EditorialTake category="otaku" title="Análise do Marcos: Re:Monster é o isekai que o anime não fez jus — mas o mangá compensa">
         <p>
+          Vale também mencionar que Re:Monster foi uma das primeiras obras a popularizar, dentro do nicho do Narou, a perspectiva de protagonista monstro — subgênero que Tensei Shitara Slime Datta Ken depois levou para as massas com muito mais polimento. A serialização de Re:Monster na plataforma começa em 2012, dois anos antes de TenSura, o que a torna tecnicamente uma das pioneiras do que viria a ser um dos subgêneros mais populares do isekai contemporâneo. Esse contexto histórico, raramente mencionado em análises superficiais da obra, ajuda a entender por que a base de fãs da light novel original é substancial e fiel, mesmo diante de uma adaptação em anime que a maioria considerou aquém do material de origem.
+        </p>
+        <p>
           Re:Monster é uma light novel de <strong>Kanekiru Kogitsune</strong>, serializada no Shōsetsuka ni Narō entre 2012 e 2016 e publicada fisicamente pela <strong>Media Factory</strong> em 13 volumes. O mangá, com arte de <strong>Haruyoshi Kobayakawa</strong>, é serializado na <em>Monthly Comic Alive</em> (Media Factory / Kadokawa). O anime foi adaptado pela <strong>Doga Kobo</strong>, dirigido por <strong>Hiroshi Kimura</strong>, com 12 episódios de abril a junho de 2024. Nota 6.7/10 no MyAnimeList. Disponível na <strong>Crunchyroll</strong>. Sem anúncio de T2 até maio de 2026. A light novel em inglês está disponível na <strong>J-Novel Club</strong> (e Yen Press para edição física).
         </p>
         <p>
