@@ -146,6 +146,13 @@ const ACRanking2026 = () => {
           seja você um iniciante ou um veterano da série.
         </p>
 
+        <p>
+          A franquia nasceu em novembro de 2007 com o Assassin's Creed original, criado por Patrice Désilets na Ubisoft Montreal a partir de um conceito que originalmente seria um spin-off de Prince of Persia. Desde então, a série se tornou uma das mais lucrativas da história dos videogames: a Ubisoft já divulgou, em relatórios anuais para investidores, que a franquia ultrapassou a marca de 200 milhões de unidades vendidas somando todos os títulos numerados, spin-offs e jogos mobile. Esse alcance comercial é parte do motivo pelo qual decidir "qual é o melhor" se tornou um debate tão acalorado entre os fãs — são quase duas décadas de jogos, ambientados em mais de dez períodos históricos diferentes, cada um com sua própria base de fãs fiéis.
+        </p>
+        <p>
+          Vale notar que a franquia passou por pelo menos três grandes reformulações de motor gráfico e de design ao longo de sua história. Os primeiros títulos (AC1 até Syndicate) rodam sobre variações do motor AnvilNext, focados em parkour urbano e furtividade linear. A partir de Origins (2017), a Ubisoft adotou uma abordagem de RPG de mundo aberto com árvores de habilidade, loot e sistemas de nível, mudança que dividiu a opinião de parte da base de fãs mais antiga mas atraiu um público massivamente maior — Odyssey, por exemplo, se tornou um dos jogos mais jogados da história do estúdio em horas totais registradas, segundo dados divulgados pela própria Ubisoft em apresentações de resultados.
+        </p>
+
         <div className="my-8 p-6 bg-gradient-to-br from-purple-500/10 to-background rounded-xl border border-purple-500/30">
           <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
             <Trophy className="h-6 w-6 text-yellow-400" />
@@ -311,6 +318,10 @@ const ACRanking2026 = () => {
           </div>
         </div>
 
+        <p>
+          Importante reforçar que qualquer ranking deste tipo carrega inevitavelmente uma dose de subjetividade. Diferenças de gosto pessoal pesam bastante quando se compara, por exemplo, a furtividade mais lenta e cinematográfica de Unity com o ritmo de ação mais acelerado de Valhalla, ou a escala intimista de Mirage com a escala épica de Odyssey. Por isso, antes de seguir cegamente qualquer lista — inclusive esta — vale a pena assistir a vídeos de gameplay sem cortes dos primeiros 30 a 60 minutos de cada jogo candidato, disponíveis gratuitamente em canais de YouTube dedicados à franquia, para sentir o ritmo de cada título antes de investir tempo e dinheiro na compra.
+        </p>
+
         <AdRectangle className="my-8" />
 
         <div className="my-8 p-6 bg-gradient-to-br from-amber-500/20 to-background rounded-xl border border-amber-500/30">
@@ -326,7 +337,16 @@ const ACRanking2026 = () => {
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold mt-10 mb-6">Qual É o Seu Favorito?</h2>
+        <h2 className="text-2xl font-bold mt-10 mb-6">Como a Crítica Avaliou Cada Era da Franquia</h2>
+        <p>
+          Olhando para as notas agregadas no Metacritic ao longo da história da série, fica claro que a franquia teve dois grandes picos de qualidade segundo a crítica especializada: a trilogia de Ezio (Assassin's Creed II, Brotherhood e Revelations, lançados entre 2009 e 2011) e o início da era RPG com Origins e Odyssey. Black Flag, apesar de não ser tecnicamente um "pico" de notas críticas tão alto quanto AC II, é frequentemente citado por publicações como IGN, GameSpot e Eurogamer como o título mais consistentemente bem avaliado pelo público em retrospectivas da franquia, muito por causa do sistema de exploração naval, que se tornou referência para jogos de pirataria lançados posteriormente, incluindo produções de outros estúdios.
+        </p>
+        <p>
+          Já a recepção de Assassin's Creed Unity em 2014 ficou marcada por um lançamento tecnicamente problemático, com bugs gráficos e quedas de frame rate generalizadas no PC e nos consoles da época, o que levou a Ubisoft a oferecer DLCs gratuitos como forma de compensação aos jogadores. Anos depois, com patches de correção e hardware mais potente, Unity é hoje reavaliado de forma mais positiva pela comunidade, especialmente pela qualidade da recriação de Paris durante a Revolução Francesa, incluindo uma reconstrução detalhada da Catedral de Notre-Dame que ganhou atenção da imprensa internacional após o incêndio real que atingiu o monumento em 2019 — a Ubisoft chegou a doar recursos para o esforço de restauração da catedral na época.
+        </p>
+        <p>
+          Quanto ao futuro da franquia, a Ubisoft já confirmou publicamente o desenvolvimento de Assassin's Creed Hexe, um projeto ambientado na Europa Central durante o período de caça às bruxas dos séculos XVI e XVII, com tom mais sombrio do que os jogos recentes. O título ainda não tem data de lançamento oficial confirmada, mas representa a continuidade do investimento da Ubisoft Montreal e dos demais estúdios do grupo (incluindo Ubisoft Bordeaux e Ubisoft Quebec) na franquia, que segue como um dos pilares financeiros mais importantes do catálogo da empresa francesa.
+        </p>
 
         <p>
           Cada jogo da franquia tem seus fãs dedicados. Alguns preferem a furtividade clássica
@@ -339,6 +359,13 @@ const ACRanking2026 = () => {
           O que é inegável é que a franquia Assassin's Creed produziu experiências únicas em
           praticamente todos os períodos históricos que tocou — da Terra Santa medieval ao
           Japão Feudal — e continua sendo uma das séries mais importantes dos games.
+        </p>
+
+        <p>
+          Outro fator que ajuda a explicar a longevidade do ranking é o investimento contínuo da Ubisoft em pesquisa histórica para cada jogo. Desde Origins, a empresa passou a contratar historiadores consultores e a desenvolver o modo "Discovery Tour", uma versão educativa sem combate que transforma os mapas dos jogos em museus virtuais navegáveis, hoje disponível para Origins (Egito Ptolemaico), Odyssey (Grécia Antiga) e Valhalla (Inglaterra e Escandinávia medievais). Esse material já foi usado por professores de história em sala de aula em diversos países, incluindo iniciativas documentadas pela própria Ubisoft em parceria com instituições de ensino na França e no Reino Unido, o que reforça o peso cultural da franquia para muito além do entretenimento puro.
+        </p>
+        <p>
+          Para quem está decidindo entre maratonar a franquia inteira ou escolher apenas dois ou três títulos, vale considerar também a disponibilidade em plataformas atuais. Praticamente todos os jogos numerados seguem ativos para compra na Steam, PlayStation Store e Xbox Store, com exceção de versões muito antigas que foram descontinuadas das lojas digitais e hoje só podem ser encontradas via mídia física ou coleções remasterizadas, como é o caso do Assassin's Creed original, hoje disponível principalmente dentro da Assassin's Creed: The Ezio Collection e de pacotes retrospectivos lançados pela Ubisoft em datas comemorativas da franquia.
         </p>
       </div>
 

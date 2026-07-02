@@ -420,6 +420,9 @@ const CrimsonDesertMapa = () => {
         </p>
 
         <h2>Tamanho e Comparação</h2>
+        <p>
+          A comparação de tamanho entre mundos abertos é um tópico recorrente no marketing de jogos do gênero, mas precisa ser lida com algum cuidado. Medir "área jogável" varia significativamente entre desenvolvedores: alguns incluem apenas o terreno explorável a pé, outros somam áreas internas de masmorras e edifícios, e há ainda diferenças metodológicas sobre como contar regiões verticais, como montanhas escaláveis ou áreas aéreas. Mesmo assim, os números divulgados pela Pearl Abyss para Pywel — quando comparados a medições amplamente aceitas pela comunidade de jogos para títulos de referência como Skyrim (2011) e Red Dead Redemption 2 (2018) — colocam Crimson Desert entre os maiores mundos abertos lançados nos últimos anos, ficando atrás apenas de produções com escala excepcionalmente grande, como os jogos da série Just Cause ou simuladores de voo dedicados.
+        </p>
         <div className="not-prose my-4 w-full overflow-x-auto">
           <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead>
@@ -601,6 +604,12 @@ const CrimsonDesertMapa = () => {
           (fonte: GameSpot). Além da campanha principal, há sistemas de crafting, culinária, fazenda, gestão do
           acampamento Greymane, missões de facção e rumores que levam a conteúdo escondido. Críticos que completaram o
           jogo reportaram entre 110 e 150 horas de jogo.
+        </p>
+        <p>
+          Esse volume de conteúdo coloca Crimson Desert na categoria de jogos que a indústria informalmente chama de "open world bloat positivo" — termo usado por jornalistas especializados para descrever mundos abertos cuja densidade de atividades é alta o suficiente para sustentar dezenas de horas extras além da campanha principal, sem recorrer a conteúdo repetitivo gerado proceduralmente em excesso, prática comum em produções de menor orçamento que tentam inflar artificialmente o tempo de jogo. A comparação mais direta dentro do próprio catálogo da Pearl Abyss é com Black Desert Online, que também é conhecido por oferecer dezenas de sistemas paralelos de progressão — pesca, culinária, comércio marítimo, vida em vilarejos — que historicamente mantêm jogadores engajados muito além da história principal do jogo, uma filosofia de design que a empresa parece ter transportado, de forma adaptada, para o formato single-player de Crimson Desert.
+        </p>
+        <p>
+          A escala do mundo também trouxe desafios técnicos consideráveis para a equipe de desenvolvimento. Jogos de mundo aberto dessa magnitude costumam exigir soluções específicas de streaming de dados — carregamento progressivo de texturas e geometria conforme o jogador se aproxima de novas áreas — para evitar telas de carregamento longas ou quedas perceptíveis de taxa de quadros durante a exploração. A Pearl Abyss já havia desenvolvido expertise considerável nessa área com Black Desert Online, que precisa lidar com centenas de jogadores simultâneos navegando pelo mesmo mundo persistente em tempo real, conhecimento técnico que parece ter sido reaproveitado e adaptado para o contexto single-player de Crimson Desert, onde o desafio passa a ser garantir transições suaves entre os cinco biomas tão distintos do continente de Pywel sem comprometer o desempenho em consoles de geração atual.
         </p>
 
         <p className="text-sm text-muted-foreground">

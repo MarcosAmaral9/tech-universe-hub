@@ -270,6 +270,13 @@ const BannerlordArvoresTropas = () => {
           <strong className="text-blue-300">War Sails</strong>.
         </p>
 
+        <p>
+          Mount &amp; Blade II: Bannerlord é desenvolvido pela TaleWorlds Entertainment, estúdio turco fundado em 2005 por Armağan Yavalar (mais conhecido pelo apelido "Armagan") e sua esposa İpek Yavalar, que começaram a série criando o Mount & Blade original como um projeto quase artesanal, vendido inicialmente de forma independente direto pelo site da empresa antes de chegar a distribuidoras maiores em 2008. A sequência mais influente da franquia, Mount & Blade: Warband (2010), se tornou um fenômeno duradouro de comunidade modder, com centenas de total conversions gratuitas no Steam Workshop ambientadas em universos como Game of Thrones, Napoleão Bonaparte e a Guerra dos Cem Anos, o que ajudou a manter a base de fãs engajada por quase uma década até o lançamento de Bannerlord.
+        </p>
+        <p>
+          Bannerlord entrou em acesso antecipado na Steam em março de 2020, após um período de desenvolvimento que se estendeu por quase oito anos desde o primeiro anúncio oficial em 2012 — um dos ciclos de produção mais longos já registrados para um jogo independente de grande escala. Segundo comunicado da própria TaleWorlds divulgado na época do lançamento, o jogo vendeu mais de 1 milhão de cópias nas primeiras 24 horas de acesso antecipado, número expressivo mesmo considerando os padrões inflacionados de vendas digitais da era pós-pandemia. O lançamento da versão 1.0 completa, saindo oficialmente do acesso antecipado, ocorreu somente em outubro de 2022, e a chegada do jogo para PlayStation 5 e Xbox Series X|S aconteceu posteriormente, ampliando a base de jogadores para além do público tradicional de PC que sustentou a franquia desde seus primórdios.
+        </p>
+
         <div className="not-prose my-8 p-6 bg-gradient-to-br from-amber-500/10 via-amber-500/5 to-background rounded-xl border border-amber-500/30">
           <AdLeaderboard className="my-6" />
           <h2 className="text-xl font-bold mb-4 flex items-center gap-2 text-amber-400">
@@ -308,6 +315,12 @@ const BannerlordArvoresTropas = () => {
           Vlandian. Por isso é comum jogadores manterem exércitos <em>multiculturais</em>, mesclando, por exemplo,
           Imperial Legionários (linha) com Khan's Guards (à distância) e Vlandian Banner Knights (cavalaria). É a
           forma mais consistente de ter um exército imbatível no late-game.
+        </p>
+        <p>
+          Um dos motivos pelos quais o sistema de batalha de Bannerlord é tão respeitado pela crítica especializada é o motor de física de combate corpo a corpo baseado em direção de golpe, herdado e refinado a partir dos jogos anteriores da série. Diferente da maioria dos jogos de ação medieval, em que ataques são simplesmente animações fixas disparadas por um botão, o sistema da TaleWorlds permite que o jogador direcione o ataque (para cima, para baixo, para os lados) usando o movimento do mouse, e o bloqueio funciona da mesma forma, exigindo posicionamento correto do escudo ou da arma na direção do golpe recebido. Esse sistema, batizado informalmente pela comunidade de "combat system direcional", é citado com frequência por veículos como PC Gamer e Rock Paper Shotgun como um dos aspectos mais profundos e tecnicamente impressionantes da franquia, mantendo relevância mesmo treze anos depois do lançamento do Warband original.
+        </p>
+        <p>
+          As inspirações históricas e culturais das nove facções jogáveis também não são aleatórias. A TaleWorlds optou conscientemente por não recriar nações reais específicas, e sim por construir civilizações fictícias de Calradia inspiradas em misturas de períodos e povos históricos reais — Vlandia bebe da estética feudal normanda e franca, Battania remete aos povos celtas das Ilhas Britânicas, Sturgia evoca os povos eslavos e nórdicos do leste europeu medieval, Aserai se inspira nas culturas árabes e beduínas do deserto, e Khuzait reflete claramente os povos nômades das estepes da Ásia Central, com paralelos evidentes ao Império Mongol histórico. Essa abordagem de "história alternativa" dá à equipe de design liberdade criativa para combinar elementos de diferentes épocas sem o compromisso de precisão histórica rígida que um jogo ambientado num período real exigiria, ao mesmo tempo em que mantém uma sensação de autenticidade reconhecível para jogadores familiarizados com a história medieval.
         </p>
 
         <h3>Os 5 papéis táticos principais</h3>
@@ -543,6 +556,18 @@ const BannerlordArvoresTropas = () => {
               title: "Mount & Blade II: Bannerlord no Steam",
               url: "https://store.steampowered.com/app/261550/Mount__Blade_II_Bannerlord/",
               publisher: "Valve / Steam",
+              accessedAt: "Junho 2026",
+            },
+            {
+              title: "TaleWorlds Entertainment — Sobre o estúdio",
+              url: "https://www.taleworlds.com/en/About",
+              publisher: "TaleWorlds Entertainment",
+              accessedAt: "Junho 2026",
+            },
+            {
+              title: "Mount & Blade II: Bannerlord — Metacritic",
+              url: "https://www.metacritic.com/game/mount-blade-ii-bannerlord/",
+              publisher: "Metacritic",
               accessedAt: "Junho 2026",
             },
           ]}

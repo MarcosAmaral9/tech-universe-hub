@@ -223,6 +223,9 @@ const CrimsonDesertPatches = () => {
         <p>
           Sobre os <strong>assets de IA generativa</strong>: a Pearl Abyss confirmou o uso, atualizou a página do Steam com a divulgação exigida pela Valve e o Patch 1.01.00 (28/03) já substituiu os assets 2D identificados, conforme anunciado nas notas oficiais.
         </p>
+        <p>
+          Essa divulgação não foi um gesto espontâneo da desenvolvedora: desde 2024, a Valve exige que todo jogo publicado na Steam que utilize conteúdo gerado por inteligência artificial declare esse uso publicamente na própria página da loja, política implementada após preocupações levantadas pela comunidade de desenvolvedores e jogadores sobre transparência no uso dessas ferramentas. O sistema de avaliações da Steam, por sua vez, funciona através de categorias automáticas calculadas a partir da proporção de avaliações positivas e negativas dos últimos 30 dias e do histórico total acumulado desde o lançamento — rótulos como "Mixed" (Avaliação Mista), "Mostly Positive" (Majoritariamente Positiva) e "Very Positive" (Muito Positiva) não são opiniões editoriais da Valve, mas cálculos estatísticos públicos, o que torna a evolução de Crimson Desert nesse índice um indicador relativamente objetivo de como a percepção real dos jogadores mudou ao longo dos patches sucessivos lançados pela Pearl Abyss entre março e abril de 2026.
+        </p>
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Planos Futuros</h2>
         <p>

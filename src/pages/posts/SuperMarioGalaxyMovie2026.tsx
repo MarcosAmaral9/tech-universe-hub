@@ -74,6 +74,12 @@ const SuperMarioGalaxyMovie2026 = () => {
         <p>
           A abertura de US$ 372 milhões coloca Super Mario Galaxy: O Filme como o maior lançamento de animação de 2026 até agora, superando o Moana 2 (US$ 326M em 2024) e rivaliza com o histórico de qualquer filme animado. O desempenho é especialmente impressionante considerando que o primeiro filme ainda era recente na memória do público — normalmente, sequências perdem 20–30% da abertura. Galaxy está apenas 1,3% abaixo do original.
         </p>
+        <p>
+          Esse patamar de bilheteria não surpreende quem acompanha o histórico da Illumination Entertainment, estúdio fundado por Chris Meledandri em 2007 e responsável pela franquia Meu Malvado Favorito/Minions, que sozinha já ultrapassou US$ 4,6 bilhões somados em bilheteria mundial ao longo de seus diversos filmes, segundo dados consolidados pela Box Office Mojo. A Illumination opera com orçamentos de produção historicamente mais enxutos do que rivais como Pixar e DreamWorks Animation, o que torna seus filmes lucrativos mesmo com aberturas proporcionalmente menores — uma vantagem financeira que ajuda a justificar a aposta contínua da Nintendo na parceria, formalizada desde 2018 quando Miyamoto e Meledandri anunciaram juntos o desenvolvimento do primeiro longa de Mario.
+        </p>
+        <p>
+          O elenco de voz do filme de 2023 — que deve se repetir em Galaxy — reuniu nomes de peso de Hollywood: Chris Pratt como Mario, Anya Taylor-Joy como Peach, Charlie Day como Luigi, Jack Black como Bowser, Keegan-Michael Key como Toad e Seth Rogen como Donkey Kong. A escalação gerou debate intenso nas redes sociais quando anunciada em 2021, especialmente em torno do sotaque de Pratt para o encanador italiano, mas o resultado em bilheteria e a recepção do público (CinemaScore A no lançamento original) acabaram silenciando boa parte da crítica inicial. Jack Black, em particular, ganhou notoriedade extra ao lançar a música "Peaches" como parte da trilha sonora do primeiro filme, faixa que viralizou nas plataformas de streaming e acumulou centenas de milhões de execuções.
+        </p>
 
         <AdLeaderboard className="my-8" />
 
@@ -86,6 +92,12 @@ const SuperMarioGalaxyMovie2026 = () => {
         </p>
         <p>
           No filme, <strong>Peach é capturada por Bowser durante um festival estelar</strong> e levada ao espaço em seu Observatory Galáctico voador. Mario, perseguindo Bowser, acaba sendo lançado ao espaço e encontra <strong>Rosalina e os Lumas</strong> — guardiões das galáxias. Com a ajuda deles, Mario viaja de galáxia em galáxia coletando Power Stars para enfrentar Bowser no Grand Observatory.
+        </p>
+        <p>
+          O jogo original, lançado pela Nintendo em novembro de 2007 para o Wii, foi dirigido por Yoshiaki Koizumi e produzido por Shigeru Miyamoto, e é frequentemente apontado por críticos e veículos especializados como o ápice da era 3D de Mario, ao lado de Super Mario 64 e Super Mario Odyssey. O jogo introduziu a manipulação de gravidade em pequenos planetoides esféricos como mecânica central, recebeu nota quase perfeita em diversas publicações da época e venceu o prêmio de Jogo do Ano em premiações como o BAFTA Games Awards de 2008. Sua sequência direta, Super Mario Galaxy 2 (2010), é até hoje um dos jogos mais bem avaliados da história no agregador Metacritic. Essa base sólida no material de origem é o que torna a adaptação cinematográfica tecnicamente viável: diferente de outros jogos de Mario com pouca narrativa, Galaxy já trazia uma estrutura de personagens, cenários e arco emocional (a história de Rosalina contada via livro de estampas dentro do jogo) prontos para serem expandidos em um roteiro de longa-metragem.
+        </p>
+        <p>
+          A escolha de adaptar justamente esse título não foi acidental. Desde o sucesso do primeiro filme em 2023, a Nintendo e a Illumination sinalizaram publicamente — inclusive em entrevistas concedidas por Shigeru Miyamoto à imprensa americana — que pretendiam explorar partes menos óbvias do catálogo Mario em vez de simplesmente repetir a fórmula de Mario Kart e do Reino dos Cogumelos. Galaxy oferecia um cenário visualmente distinto (o espaço, em vez de florestas e castelos), um elenco de apoio querido pelos fãs (os Lumas) e uma personagem, Rosalina, com peso dramático suficiente para sustentar um segundo eixo narrativo ao lado da dupla Mario e Bowser.
         </p>
         <div className="not-prose my-6 grid md:grid-cols-2 gap-4">
           {[
@@ -157,6 +169,12 @@ const SuperMarioGalaxyMovie2026 = () => {
         <p>
           Com US$ 372 milhões na abertura e a Illumination/Universal claramente planejando uma franquia, o Nintendo Cinematic Universe ganhou tração real. O que já está confirmado e o que se especula:
         </p>
+        <p>
+          O sucesso de Mario no cinema também precisa ser entendido dentro da trajetória mais ampla de adaptações de videogame para as telonas, um gênero que historicamente penava com a crítica e o público até meados dos anos 2020. Antes de 2023, filmes como Super Mario Bros. (1993), com Bob Hoskins e John Leguizamo, eram lembrados como fracassos de bilheteria e relação conturbada com o material original — o próprio Hoskins chegou a declarar publicamente, em entrevistas anos depois, que considerava aquele o pior trabalho de sua carreira. A virada começou com produções como Sonic the Hedgehog (2020), que mostrou que era possível equilibrar fidelidade ao público fã com apelo de massa, e se consolidou definitivamente com o filme de Mario de 2023, que se tornou o quinto filme de maior bilheteria daquele ano nos Estados Unidos segundo o ranking anual da Comscore. Esse histórico ajuda a explicar por que estúdios como Sony Pictures (com sua linha de filmes baseados em personagens da Sega e da PlayStation) e a própria Warner Bros. Games passaram a investir pesado em adaptações cinematográficas a partir da segunda metade da década.
+        </p>
+        <p>
+          Do ponto de vista técnico, Galaxy: O Filme manteve a mesma equipe de animação por trás do primeiro longa, incluindo os diretores Aaron Horvath e Michael Jelenic, ambos com histórico prévio em produções da Cartoon Network como Teen Titans Go!. A dupla é conhecida por equilibrar humor pastelão acessível a crianças pequenas com referências mais sutis voltadas a quem cresceu jogando os games da Nintendo nos anos 1990 e 2000 — uma estratégia de "dois públicos simultâneos" que se tornou marca registrada da franquia cinematográfica e ajuda a explicar por que os filmes performam tão bem tanto em sessões dominicais em família quanto entre adultos nostálgicos que assistem sozinhos ou em grupos de amigos.
+        </p>
         <div className="not-prose my-6 space-y-3">
           {[
             { projeto: "🎮 Super Mario Galaxy: O Filme", status: "✅ Em cartaz agora", desc: "Abertura de US$ 372M — projeção de US$ 900M–US$ 1,2B total em bilheteria mundial se mantiver o ritmo do primeiro." },
@@ -196,6 +214,9 @@ const SuperMarioGalaxyMovie2026 = () => {
           <h3 className="text-xl font-bold mb-2">Você já assistiu Super Mario Galaxy: O Filme? ⭐</h3>
           <p className="text-muted-foreground">O que achou? Deixa nos comentários! 👇</p>
         </div>
+        <p>
+          Para a Nintendo, o impacto vai além da bilheteria isolada do filme. A empresa japonesa historicamente trata o cinema como vitrine para vender consoles e jogos: após a estreia do primeiro filme em 2023, a própria Nintendo registrou, em seus relatórios financeiros trimestrais divulgados ao mercado, picos de vendas em jogos clássicos de Mario no eShop e reedições físicas em lojas parceiras nas semanas seguintes ao lançamento nos cinemas. É razoável esperar movimento semelhante com Galaxy, especialmente porque o jogo original de 2007 segue disponível por assinatura no serviço Nintendo Switch Online + Expansion Pack, o que facilita a conversão de espectadores curiosos em jogadores. Esse efeito cruzado entre cinema e games é hoje parte central da estratégia de "Nintendo IP" anunciada publicamente pela empresa em apresentações a investidores, que também incluem o parque temático Super Nintendo World, presente em Osaka, Hollywood e Orlando.
+        </p>
       </div>
 
       <EditorialTake category="geek" title="Análise do Marcos: Opinião do Marcos: Nintendo aprendeu a fórmula">
@@ -207,6 +228,8 @@ const SuperMarioGalaxyMovie2026 = () => {
           { title: "Nintendo Investor Relations", url: "https://www.nintendo.co.jp/ir/en/index.html", publisher: "Nintendo Co., Ltd.", accessedAt: "Maio 2026" },
           { title: "Illumination — Official Site", url: "https://www.illumination.com/", publisher: "Illumination Entertainment", accessedAt: "Maio 2026" },
           { title: "Universal Pictures — Press", url: "https://www.universalpictures.com/", publisher: "Universal Pictures", accessedAt: "Maio 2026" },
+          { title: "Super Mario Galaxy — ficha do jogo original (2007)", url: "https://www.metacritic.com/game/super-mario-galaxy/", publisher: "Metacritic", accessedAt: "Maio 2026" },
+          { title: "Illumination Entertainment — perfil do estúdio", url: "https://www.comingsoon.net/studios/illumination", publisher: "Comingsoon.net", accessedAt: "Maio 2026" },
         ]}
       />
 <RelatedPosts currentSlug="super-mario-galaxy-movie-2026-bilheteria" />

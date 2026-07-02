@@ -93,6 +93,12 @@ const ZeldaOcarinaRemake2026 = () => {
         <p>
           Lançado em novembro de 1998 para Nintendo 64, The Legend of Zelda: Ocarina of Time revolucionou os videogames de maneiras que até hoje influenciam todo o design de jogos 3D:
         </p>
+        <p>
+          O jogo foi dirigido por Yoshiaki Koizumi e Eiji Aonuma sob supervisão geral de Shigeru Miyamoto, criador da franquia Zelda, e levou cerca de três anos para ser desenvolvido — um prazo considerado longo para os padrões da época. A trilha sonora, composta por Koji Kondo (o mesmo responsável pelos temas icônicos de Super Mario Bros.), incluiu melodias tocáveis pela ocarina dentro do próprio jogo, mecânica que se tornou tão marcante que a Nintendo posteriormente vendeu réplicas físicas do instrumento como produto oficial de merchandising. Comercialmente, Ocarina of Time vendeu mais de 7,6 milhões de cópias apenas na sua versão original de Nintendo 64, segundo dados históricos de vendas compilados pela própria Nintendo em relatórios consolidados de desempenho de franquias, e segue como um dos jogos mais vendidos do console.
+        </p>
+        <p>
+          O reconhecimento crítico do título não se limitou ao lançamento. O Guinness World Records chegou a listar Ocarina of Time como o jogo mais bem avaliado da história segundo a média de notas da imprensa especializada, título que o jogo mantém no Metacritic desde que o site começou a agregar notas retroativas de lançamentos anteriores à sua fundação em 2001. Esse status de "nota mais alta de sempre" é frequentemente citado em debates sobre os melhores jogos da história, ao lado de títulos como Super Mario Galaxy, Grand Theft Auto IV e Tony Hawk's Pro Skater 2 — todos também com notas igualmente altas no agregador, mas nenhum superando o 99/100 de OoT.
+        </p>
         <div className="not-prose my-6 space-y-3">
           {[
             { contrib: "🎯 Z-Targeting — a invenção do lock-on moderno", desc: "O sistema de mira em terceira pessoa com Z-Targeting foi criado para Ocarina of Time em 1998 e é usado em praticamente todo jogo 3D desde então — de Dark Souls a Horizon Zero Dawn. Antes de OoT, jogos 3D tinham combate confuso. Depois, havia um padrão." },
@@ -156,6 +162,12 @@ const ZeldaOcarinaRemake2026 = () => {
         <p>
           O exemplo mais próximo de referência é o <strong>Resident Evil 2 Remake</strong> da Capcom (2019) — que manteve toda a história e estrutura do original de 1998 mas reconstruiu absolutamente tudo do zero visualmente e mecanicamente. A Nintendo não deu exemplos concretos de mudanças de gameplay, mas a palavra "remake" garante que o visual será moderno, não apenas filtrado.
         </p>
+        <p>
+          Vale notar que o modo Master Quest, mencionado entre os recursos confirmados, não é uma invenção recente: ele estreou originalmente em 2003 dentro do GameCube, distribuído como bônus de pré-venda do The Legend of Zelda: Collector's Edition e, separadamente, incluído fisicamente com unidades especiais do console vendidas no Japão e nos Estados Unidos. O modo reorganiza os puzzles de todas as dungeons em configuração espelhada e aumenta a dificuldade dos inimigos, e desde então se tornou item recorrente em praticamente toda reedição do jogo, incluindo a versão de Nintendo 3DS lançada em 2011, que vendeu mais de 3,7 milhões de cópias e foi bem recebida pela crítica especializada, mantendo nota acima de 90 no Metacritic apesar de ser, tecnicamente, apenas uma remasterização e não um remake completo.
+        </p>
+        <p>
+          Outro aspecto que reforça a relevância cultural de Ocarina of Time é sua comunidade de speedrunning, uma das mais ativas e tecnicamente sofisticadas dos videogames. Corredores profissionais desenvolveram, ao longo de mais de duas décadas, técnicas de manipulação de memória que permitem completar o jogo em poucos minutos explorando bugs do código original — recordes que são frequentemente exibidos em eventos beneficentes como o Games Done Quick, transmitido ao vivo e que arrecada milhões de dólares para instituições de caridade a cada edição. Esse nível de engajamento da comunidade é um indicativo direto de por que a Nintendo trata o anúncio do remake com tanto cuidado: qualquer alteração na física ou na estrutura de colisão do jogo original pode impactar diretamente essa cultura de décadas construída em torno do título.
+        </p>
 
         <AdRectangle className="my-8" />
 
@@ -213,6 +225,15 @@ const ZeldaOcarinaRemake2026 = () => {
           <h3 className="text-xl font-bold mb-2">Você já jogou Ocarina of Time? Está animado com o remake? 🗡️</h3>
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
+        <p>
+          O anúncio de Ocarina of Time também precisa ser entendido dentro de uma tendência maior da indústria: remakes de grandes clássicos se tornaram um dos segmentos mais lucrativos dos videogames na última década. Capcom, com Resident Evil 2, Resident Evil 4 e o recém-relançado Resident Evil Code: Veronica, mostrou que recriar jogos consagrados do zero pode gerar vendas iguais ou superiores às do título original, atraindo tanto veteranos nostálgicos quanto jogadores jovens que nunca tiveram acesso ao hardware antigo. A própria Square Enix seguiu caminho semelhante com Final Fantasy VII Remake, dividido em múltiplas partes e expandido narrativamente além do escopo do jogo original de 1997. A Nintendo, historicamente mais conservadora com remakes completos — preferindo ports e remasterizações pontuais, como fez com Super Mario 3D All-Stars em 2020 — sinaliza com Ocarina of Time uma mudança de postura em relação ao tratamento dado aos clássicos mais valiosos do seu catálogo.
+        </p>
+        <p>
+          Do ponto de vista técnico, o Nintendo Switch 2 representa o primeiro salto de hardware da Nintendo em anos que efetivamente viabiliza um remake gráfico ambicioso de um jogo de Nintendo 64. O console sucessor do Switch original foi anunciado com suporte a resoluções mais altas, taxa de quadros mais estável e capacidade gráfica substancialmente superior, características que a própria Nintendo destacou em apresentações oficiais como fundamentais para viabilizar experiências visuais mais próximas do padrão atual da indústria sem abrir mão da portabilidade que é a marca registrada da linha Switch. É justamente esse salto de potência que, segundo analistas do setor que cobrem a indústria de games, torna factível um projeto do porte de reconstruir inteiramente do zero um mundo tridimensional tão extenso quanto a Hyrule de 1998, incluindo todas as suas dungeons, vilarejos e a icônica Hyrule Field que conecta as regiões do mapa.
+        </p>
+        <p>
+          Por fim, vale lembrar que este não é o primeiro rumor de remake de Ocarina of Time a circular entre fãs: especulações sobre uma versão totalmente reconstruída do jogo já apareciam recorrentemente em fóruns e veículos especializados desde pelo menos 2015, alimentadas por patentes registradas pela Nintendo e por declarações ambíguas de executivos em entrevistas. A diferença desta vez é que, ao contrário dos rumores anteriores, o anúncio partiu diretamente de um Nintendo Direct oficial, o que historicamente é o canal que a empresa usa exclusivamente para confirmações definitivas de produtos em desenvolvimento — reduzindo drasticamente a chance de se tratar de mais um boato sem fundamento, como tantos que já circularam sobre a franquia ao longo dos anos.
+        </p>
       </div>
 
             <EditorialTake category="geek" title={'Análise do Marcos: remake de Ocarina é o teste de fidelidade do Switch 2'}>
