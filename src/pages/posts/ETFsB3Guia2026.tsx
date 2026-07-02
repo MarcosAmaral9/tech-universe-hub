@@ -308,6 +308,16 @@ const ETFsB3Guia2026 = () => {
           ETF do que olhar apenas para a taxa anunciada publicamente pela gestora.
         </p>
 
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          Tributação de ETFs na B3: a Diferença Que Pega Muita Gente de Surpresa
+        </h2>
+        <p>
+          Um detalhe técnico que confunde até investidores experientes é a forma como o ganho de capital em ETFs é tributado em comparação com ações individuais. Ambos pagam <strong>15% sobre o lucro</strong> obtido na venda, recolhido via DARF até o último dia útil do mês seguinte à operação. A diferença está na <strong>isenção de R$ 20 mil em vendas mensais</strong>, que existe para ações individuais negociadas em bolsa — mas <strong>não se aplica a ETFs</strong>. Isso significa que, mesmo vendendo apenas R$ 5 mil em cotas de BOVA11 ou IVVB11 num mês, o investidor deve apurar e recolher o imposto sobre o lucro daquela operação, diferentemente do que ocorreria se tivesse vendido o equivalente em ações avulsas dentro do limite de isenção.
+        </p>
+        <p>
+          Day trade com ETFs segue a regra geral de 20% sobre o lucro, com retenção de 1% na fonte a título de antecipação (o chamado "dedo-duro"), igual ao que ocorre com ações. Vale notar que prejuízos apurados na venda de ETFs podem ser compensados com ganhos futuros da mesma classe de ativo (renda variável), mas a apuração mensal e o recolhimento do DARF são de responsabilidade exclusiva do investidor — a corretora não retém o imposto automaticamente, como faz em alguns produtos de renda fixa. Manter um controle simples de cada operação de compra e venda, com data, quantidade e preço, facilita muito a apuração no fim do mês e evita erros na declaração anual de Imposto de Renda.
+        </p>
+
         <p className="text-xs text-muted-foreground mt-8 p-4 bg-secondary rounded-xl">
           ⚠️ <strong>Aviso Legal:</strong> Este conteúdo é educacional e não constitui recomendação de investimento. Consulte um assessor certificado antes de investir.
         </p>

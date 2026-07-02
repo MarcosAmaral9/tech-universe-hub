@@ -410,6 +410,19 @@ const FIIs2026 = () => {
           </div>
         </section>
 
+        {/* Tributação */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            Como Funciona a Tributação dos FIIs na Prática
+          </h2>
+          <p className="text-sm text-muted-foreground mb-4">
+            A isenção de Imposto de Renda sobre os dividendos mensais de FIIs é um dos maiores atrativos da classe, mas ela não é automática para qualquer fundo — depende do cumprimento de três condições estabelecidas pela legislação e fiscalizadas pela Receita Federal e pela CVM. Primeiro, as cotas do fundo precisam ser negociadas exclusivamente em bolsa de valores ou mercado de balcão organizado, como a B3. Segundo, o fundo precisa ter no mínimo 50 cotistas. Terceiro, nenhum cotista pessoa física pode ser titular de 10% ou mais das cotas do fundo, nem ter direito a recebimento de valor superior a 10% do total de rendimentos auferidos pelo fundo. Praticamente todos os FIIs listados na B3 disponíveis ao público em geral cumprem essas três condições, mas vale conferir o regulamento do fundo antes de investir somas relevantes.
+          </p>
+          <p className="text-sm text-muted-foreground mb-4">
+            A isenção vale apenas para os <strong>rendimentos distribuídos mensalmente</strong> (os "dividendos" do fundo). O <strong>ganho de capital na venda das cotas</strong> — ou seja, o lucro obtido ao vender uma cota por valor mais alto do que o pago na compra — é tributado em <strong>20% sobre o lucro</strong>, recolhido via DARF até o último dia útil do mês seguinte à venda. Diferentemente das ações, em que existe isenção para vendas de até R$ 20 mil por mês, nos FIIs não existe esse limite de isenção: qualquer ganho de capital na venda de cotas é tributável, independentemente do valor da operação. Outro ponto importante: prejuízos na venda de cotas de FIIs podem ser compensados com ganhos futuros da mesma classe de ativo, mas a apuração e o recolhimento são de responsabilidade do próprio investidor — diferentemente da renda fixa, onde o imposto é retido automaticamente na fonte.
+          </p>
+        </section>
+
         {/* Resumo */}
         <section className="mb-10">
           <div className="bg-card border border-border rounded-2xl p-6">
@@ -448,7 +461,19 @@ const FIIs2026 = () => {
           </p>
         </EditorialTake>
 
-        <ArticleSources category="invest"
+        {/* FoFs */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            FoFs: Uma Forma de Diversificar Sem Escolher Fundo a Fundo
+          </h2>
+          <p className="text-sm text-muted-foreground">
+            Para quem está começando e ainda não tem confiança para escolher fundos individuais, os <strong>Fundos de Fundos (FoFs)</strong> são uma alternativa válida: em vez de investir diretamente em imóveis, recebíveis ou ativos financeiros, um FoF compra cotas de outros FIIs, terceirizando a seleção de ativos para um gestor especializado. A vantagem é a diversificação automática — um único FoF pode deter posições em 20 a 40 fundos diferentes, reduzindo o risco específico de qualquer ativo individual sem exigir que o investidor analise cada um deles. A desvantagem é a chamada "dupla camada de taxa de gestão": além da taxa cobrada pelos FIIs que compõem a carteira, o FoF cobra sua própria taxa de administração, o que tende a reduzir um pouco o rendimento líquido final em comparação a uma carteira bem montada manualmente. Para FIIs de papel — aqueles que investem majoritariamente em Certificados de Recebíveis Imobiliários (CRIs) — vale lembrar que o risco principal não é de vacância, como nos fundos de tijolo, mas sim de crédito: a capacidade dos devedores dos CRIs honrarem os pagamentos. Por isso, fundos de papel com CRIs pulverizados entre muitos devedores e com garantias reais (como alienação fiduciária do imóvel) tendem a ser mais resilientes do que fundos concentrados em poucos CRIs de empresas específicas.
+          </p>
+        </section>
+
+
+        <ArticleSources
+          category="invest"
           sources={[
             {
               title: "Boletim Mensal de Fundos de Investimento Imobiliário — B3",

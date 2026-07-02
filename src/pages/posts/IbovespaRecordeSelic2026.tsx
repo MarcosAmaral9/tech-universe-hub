@@ -276,7 +276,7 @@ const IbovespaRecordeSelic2026 = () => {
           — divulgado diariamente — oferece pistas sobre se o movimento de alta do
           Ibovespa está sendo sustentado por compradores institucionais internacionais ou
           apenas por capital doméstico, informação relevante para avaliar a robustez do
-          movimento de valorização em curso.
+          movimento de valorização em curso. Combinar essa leitura com o volume médio diário negociado e a participação de pessoas físicas no total negociado completa um quadro mais robusto sobre a qualidade e a sustentabilidade do movimento — recordes sustentados por volume consistente e ampla participação tendem a ser mais duradouros do que altas concentradas em poucos pregões com volume atipicamente baixo.
         </p>
 
         <p className="text-xs text-muted-foreground mt-8 p-4 bg-secondary rounded-xl">

@@ -272,6 +272,10 @@ const CopomAbril2026 = () => {
         </p>
 
 
+        <p>
+          Vale entender também contra qual referência o Copom mede seu próprio sucesso. Desde 2025, o regime de metas de inflação no Brasil passou de um horizonte fixo por ano-calendário para uma <strong>meta contínua</strong>: o Conselho Monetário Nacional (CMN) fixou a meta de inflação em <strong>3,0% ao ano</strong>, com banda de tolerância de <strong>1,5 ponto percentual para cima ou para baixo</strong> (intervalo de 1,5% a 4,5%), e o Banco Central passou a perseguir esse alvo de forma contínua, sem a obrigação de fechar o ano-calendário dentro da banda. Essa mudança dá ao Copom mais flexibilidade para absorver choques temporários — como o do petróleo discutido neste artigo — sem precisar reagir de forma abrupta apenas para "zerar a conta" em dezembro, permitindo um ritmo de ajuste mais gradual e menos sujeito a sobressaltos bruscos na Selic. Na prática, isso significa que um único mês de IPCA acima do esperado, motivado por um choque pontual de oferta, tende a pesar menos na decisão do comitê do que pesaria sob o regime de ano-calendário anterior — desde que as expectativas de inflação para os próximos seis a oito trimestres permaneçam ancoradas próximas ao centro da meta.
+        </p>
+
         <p className="text-sm text-muted-foreground mt-6 p-4 border-l-4 border-yellow-500 bg-yellow-500/10 rounded">
           ⚠️ <strong>Aviso:</strong> Artigo educacional. Não constitui recomendação de investimento. Consulte um assessor certificado. Rentabilidade passada não garante resultados futuros.
         </p>
@@ -293,6 +297,7 @@ const CopomAbril2026 = () => {
           { title: "Relatório Trimestral de Inflação", url: "https://www.bcb.gov.br/publicacoes/ri", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
           { title: "Tesouro Direto — Preços e Taxas", url: "https://www.tesourodireto.com.br/titulos/precos-e-taxas.htm", publisher: "Tesouro Nacional", accessedAt: "Maio 2026" },
           { title: "ANBIMA — Estudos de Mercado de Capitais", url: "https://www.anbima.com.br/", publisher: "ANBIMA", accessedAt: "Maio 2026" },
+          { title: "CMN — Meta de Inflação Contínua e Decisões do Conselho Monetário Nacional", url: "https://www.gov.br/fazenda/pt-br/canais_atendimento/imprensa/notas-a-imprensa/2024/junho/nova-sistematica-de-meta-para-a-inflacao-1", publisher: "Ministério da Fazenda", accessedAt: "Junho 2026" },
         ]}
       />
       <RelatedPosts currentSlug="copom-abril-2026-selic-investimentos" />

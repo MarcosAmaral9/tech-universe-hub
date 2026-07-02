@@ -372,6 +372,35 @@ const EducacaoFinanceira3Baldes = () => {
           </div>
         </section>
 
+        {/* Comparação com outros métodos */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            Como o Método dos 3 Baldes se Compara a Outras Técnicas de Orçamento
+          </h2>
+          <p className="text-muted-foreground text-sm mb-4">
+            O Método dos 3 Baldes não nasceu no vácuo — ele é uma simplificação de princípios bem estabelecidos na literatura de finanças pessoais, adaptados para quem precisa de algo fácil de manter no longo prazo. Vale entender de onde ele vem para saber por que funciona.
+          </p>
+          <p className="text-muted-foreground text-sm mb-4">
+            A regra <strong>50-30-20</strong>, popularizada pela ex-senadora americana Elizabeth Warren, sugere 50% para necessidades, 30% para desejos e 20% para poupança — a base conceitual mais próxima dos 3 Baldes, só que sem a ênfase na automação no dia do pagamento. O <strong>sistema de envelopes</strong>, muito mais antigo, consiste em separar dinheiro físico (ou contas digitais) por categoria de gasto: quando o envelope acaba, o gasto naquela categoria para até o próximo mês. Funciona bem para quem tem dificuldade de controlar gastos por categoria específica, mas exige mais manutenção manual do que os 3 Baldes, que usam apenas três grandes blocos. Já o método <strong>"pague-se primeiro"</strong> (pay yourself first), citado por autores como George Clason em "O Homem Mais Rico da Babilônia", é o princípio central por trás do Balde 2: investir uma fatia fixa da renda antes de qualquer outro gasto, em vez de investir "o que sobrar".
+          </p>
+          <p className="text-muted-foreground text-sm">
+            A diferença prática do Método dos 3 Baldes para esses sistemas mais tradicionais é o número reduzido de categorias. Pesquisas em economia comportamental mostram que sistemas com muitas categorias (10, 15, 20 linhas de orçamento) tendem a ser abandonados em poucos meses por exigirem decisões constantes. Com apenas três blocos, a manutenção mental é mínima — você decide uma vez por mês, no dia do salário, e não precisa revisitar a decisão a cada compra do dia a dia.
+          </p>
+        </section>
+
+        {/* Onde alocar cada balde */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            Onde Guardar o Dinheiro de Cada Balde na Prática
+          </h2>
+          <p className="text-muted-foreground text-sm mb-4">
+            Separar os percentuais no papel é só metade do trabalho — o dinheiro de cada balde deve ficar fisicamente em contas diferentes, ou a mistura mental acontece de qualquer forma. Para o <strong>Balde 1 (Necessidades)</strong>, a recomendação é manter na conta corrente principal, de onde saem débitos automáticos de aluguel, contas e cartão. Para o <strong>Balde 2 (Investimentos)</strong>, o ideal é uma conta de investimentos separada — corretora ou banco digital — com aplicação automática em Tesouro Selic ou CDB de liquidez diária para a reserva de emergência, já que ambos contam com a garantia do <strong>Fundo Garantidor de Créditos (FGC)</strong> em CDBs até o limite de R$ 250.000 por CPF e por instituição financeira (limitado a R$ 1 milhão a cada período de quatro anos), enquanto o Tesouro Selic tem garantia direta do Tesouro Nacional.
+          </p>
+          <p className="text-muted-foreground text-sm">
+            Para o <strong>Balde 3 (Qualidade de Vida)</strong>, uma conta digital separada — ou mesmo um cartão pré-pago carregado uma vez por mês — cumpre bem o papel de limitar fisicamente o gasto ao valor disponível. Quando o saldo zera, o balde "fechou" para o mês, sem necessidade de força de vontade adicional: a própria estrutura da conta impede o gasto além do planejado. Esse tipo de barreira física — separar contas em vez de confiar apenas em planilhas e boas intenções — é consistentemente apontado por estudos de finanças comportamentais como mais eficaz do que depender exclusivamente de autocontrole.
+          </p>
+        </section>
+
         {/* Timeline */}
         <section className="mb-10">
           <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">
@@ -472,6 +501,12 @@ const EducacaoFinanceira3Baldes = () => {
               url: "https://www.fecomercio.com.br/pesquisas/indicador/peic",
               publisher: "FecomercioSP / CNC",
               accessedAt: "Maio 2026",
+            },
+            {
+              title: "FGC — Fundo Garantidor de Créditos: Regras de Cobertura",
+              url: "https://www.fgc.org.br/o-que-e-garantido",
+              publisher: "FGC — Fundo Garantidor de Créditos",
+              accessedAt: "Junho 2026",
             },
           ]}
         />

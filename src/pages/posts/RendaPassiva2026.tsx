@@ -477,9 +477,20 @@ const RendaPassiva2026 = () => {
           </div>
         </div>
 
+        <h2 className="text-2xl font-bold mt-10 mb-6 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+          A Nova Tributação de Dividendos em 2026: O Que Muda Para Quem Vive de Renda Passiva
+        </h2>
+        <p>
+          Quem está construindo renda passiva via dividendos de ações precisa conhecer uma mudança legal importante que passou a valer em 2026. A <strong>Lei nº 15.270/2025</strong>, sancionada em novembro de 2025 como parte da reforma do Imposto de Renda, instituiu a chamada "tributação de altas rendas": a partir de janeiro de 2026, quando uma mesma pessoa jurídica paga a uma mesma pessoa física mais de <strong>R$ 50 mil em lucros e dividendos no mês</strong>, o valor que ultrapassar esse teto passa a sofrer retenção de Imposto de Renda na Fonte de <strong>10%</strong>. Distribuições de até R$ 50 mil mensais por pagadora continuam isentas, como sempre foram desde 1996.
+        </p>
+        <p>
+          Na prática, isso significa que a esmagadora maioria dos investidores pessoa física que vivem de dividendos de ações ou de fundos imobiliários não é afetada — o valor isento de R$ 50 mil por mês, por empresa pagadora, está muito acima do que a maior parte das carteiras de varejo gera em proventos. A nova regra mira especificamente investidores de altíssima renda, e funciona em conjunto com o <strong>Imposto de Renda da Pessoa Física Mínimo (IRPFM)</strong>, que se aplica a quem tem rendimento global anual acima de R$ 600 mil, somando todos os rendimentos tributáveis e isentos, com alíquota mínima que pode chegar a 10% para quem recebe mais de R$ 1,2 milhão por ano. Para quem planeja construir uma carteira de R$ 400 mil a R$ 1 milhão visando dividendos como renda complementar, a mudança não altera a estratégia: dividendos de ações continuam isentos de IR na fonte na grande maioria dos casos, e os FIIs mantêm sua isenção própria, regida por regras separadas que não foram alteradas pela Lei 15.270/2025.
+        </p>
+
         <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4 mb-6 mt-10">
           O Primeiro Passo Concreto: Qual Renda Passiva Começar
         </h2>
+
         <p>
           Com tantas opções disponíveis, a maior armadilha é não começar por indecisão.
           A recomendação mais prática é começar pela forma mais simples possível para
@@ -564,6 +575,12 @@ const RendaPassiva2026 = () => {
               url: "https://www.investidor.gov.br/menu/Menu_Investidor/produtos/Produto_RendaVariavel.html",
               publisher: "Comissão de Valores Mobiliários (CVM)",
               accessedAt: "Maio 2026",
+            },
+            {
+              title: "Lei nº 15.270/2025 — Tributação Mínima de Altas Rendas e Dividendos",
+              url: "http://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15270.htm",
+              publisher: "Presidência da República / Planalto",
+              accessedAt: "Junho 2026",
             },
           ]}
         />

@@ -502,6 +502,10 @@ const CarteiraIniciantes2026 = () => {
             quem constrói patrimônio de forma sustentável de quem desiste no primeiro
             obstáculo encontrado pelo caminho.
           </p>
+          <p className="text-muted-foreground">
+            Para quem sente necessidade de orientação personalizada além do que um guia geral pode oferecer, vale considerar a busca por um profissional certificado. No Brasil, as certificações mais reconhecidas para planejamento financeiro pessoal são o <strong>CFP (Certified Financial Planner)</strong>, emitido pela Planejar — Associação Brasileira de Planejadores Financeiros — e voltado especificamente para planejamento financeiro integral, e as certificações da ANBIMA, como <strong>CPA-10 e CPA-20</strong>, que credenciam profissionais para distribuição de produtos de investimento em instituições financeiras. Antes de seguir qualquer recomendação paga, vale verificar se o profissional está devidamente registrado e se atua como agente autônomo de investimentos (AAI) credenciado pela CVM, o que garante um mínimo de supervisão regulatória sobre a atividade de consultoria prestada.
+          </p>
+
 
           {/* Resumo */}
           <div className="not-prose my-8 p-6 bg-[hsl(var(--invest-color))]/10 rounded-xl border border-[hsl(var(--invest-color))]/30">

@@ -590,7 +590,31 @@ const PlanejamentoFinanceiro2026 = () => {
           </p>
         </section>
 
-        {/* Conclusão */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            Open Finance: Como Usar a Portabilidade de Dados a Seu Favor
+          </h2>
+          <p className="text-sm text-muted-foreground mb-4">
+            O <strong>Open Finance Brasil</strong>, regulado conjuntamente pelo Banco Central e pela Comissão de Valores Mobiliários, é o sistema que permite ao consumidor autorizar o compartilhamento seguro de seus dados financeiros entre diferentes instituições — bancos, corretoras, fintechs e cooperativas de crédito — mediante consentimento explícito e revogável a qualquer momento. Na prática, isso significa que um aplicativo de gestão financeira pode enxergar, com sua autorização, o saldo e as movimentações de todas as suas contas em bancos diferentes em uma única tela, sem que você precise abrir vários aplicativos separadamente para montar o quadro completo do seu planejamento.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Para o planejamento financeiro, o Open Finance resolve um dos maiores obstáculos práticos: a fragmentação de informações entre conta corrente, cartão de crédito, investimentos e financiamentos em instituições distintas. Antes de autorizar o compartilhamento com qualquer aplicativo de terceiros, vale conferir se a instituição está registrada e autorizada a funcionar pelo Banco Central — a lista de participantes autorizados do Open Finance é pública e pode ser consultada no site do próprio Banco Central. O consentimento tem prazo de validade definido pelo usuário (no máximo 12 meses, renovável) e pode ser revogado a qualquer momento diretamente no aplicativo do banco de origem dos dados, sem necessidade de contatar a instituição que recebeu o compartilhamento.
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">
+            A Metodologia SMART Aplicada a Metas Financeiras
+          </h2>
+          <p className="text-sm text-muted-foreground mb-4">
+            Uma das razões mais comuns para o abandono de metas financeiras é a forma vaga como elas são definidas. "Quero economizar mais" ou "quero investir melhor" são intenções, não metas — e intenções não têm prazo nem critério claro de sucesso. A metodologia <strong>SMART</strong>, originada na literatura de administração e amplamente adotada em planejamento financeiro pessoal, propõe que toda meta seja Específica (Specific), Mensurável (Measurable), Atingível (Achievable), Relevante (Relevant) e Temporal (Time-bound).
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Aplicada às finanças, a diferença prática é nítida: em vez de "quero juntar dinheiro para viajar", a meta SMART seria "vou juntar R$ 8.000 para uma viagem em julho de 2027, guardando R$ 667 por mês a partir de agosto de 2026, em um CDB de liquidez diária". Esse nível de especificidade transforma uma intenção abstrata em um plano executável, com um número exato para acompanhar a cada revisão trimestral e um critério objetivo para saber se a meta foi cumprida. Metas SMART também facilitam identificar, cedo, quando o ritmo está fora do esperado — permitindo ajustes graduais em vez de uma surpresa desagradável no prazo final.
+          </p>
+        </section>
+
+
         <section className="mb-10">
           <div className="bg-[hsl(var(--invest-color))]/10 border border-[hsl(var(--invest-color))]/30 rounded-2xl p-6 text-center">
             <h2 className="text-xl font-bold mb-3">
