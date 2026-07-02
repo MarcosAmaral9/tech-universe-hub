@@ -187,10 +187,19 @@ const MelhoresManhwasSistema = () => {
           </p>
         </div>
 
+        <p>
+          O termo "manhwa" se refere especificamente a quadrinhos produzidos na Coreia do Sul, em contraste com "mangá" (Japão) e "manhua" (China). A maior parte dos manhwas de sistema modernos é publicada no formato webtoon — rolagem vertical contínua, colorido, pensado para leitura no celular — diferente do formato tradicional em páginas e preto e branco do mangá japonês. Esse formato nasceu da plataforma Naver Webtoon, lançada em 2004 na Coreia do Sul, que revolucionou a forma de consumir quadrinhos ao adaptar o layout para o scroll do smartphone em vez do virar de página de uma revista impressa.</p>
+        <p>
+          O gênero de sistema também costuma se sobrepor a outro tropo popular dos webtoons coreanos: o "regressor" ou "retornado", personagem que reaparece no passado com memórias do futuro. Títulos como Leveling With The Gods e Second Life Ranker combinam as duas mecânicas — sistema de progressão visível e conhecimento prévio dos eventos — criando protagonistas que otimizam decisões com base no que já viveram. Essa fusão de tropos é uma das razões pelas quais o gênero conseguiu se reinventar constantemente sem cair em repetição, mesmo com dezenas de títulos lançados todos os anos nas plataformas coreanas.
+        </p>
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Trophy className="h-7 w-7 text-yellow-400" />
           O Ranking Definitivo
         </h2>
+        <p>
+          Os critérios usados para montar este ranking levam em conta a recepção da crítica especializada e da comunidade leitora (notas em plataformas como MyAnimeList e MangaUpdates), a qualidade e consistência da arte ao longo da publicação, a coerência do sistema de progressão (se as regras de poder fazem sentido e evoluem de forma satisfatória) e o impacto comercial de cada obra — incluindo adaptações para anime, jogos e merchandising, que costumam ser um indicador da força de um título dentro da indústria coreana de conteúdo.
+        </p>
 
         <div className="space-y-6 my-8">
           {manhwas.map((manhwa) => (
@@ -305,6 +314,9 @@ const MelhoresManhwasSistema = () => {
         <p>
           <strong>The Beginning After the End</strong> (TurtleMe, Tapas — em andamento): reencarnação de um rei poderoso como bebê num mundo de magia. Um dos manhwas mais lidos do Tapas, com mais de 170 capítulos e arte que evoluiu substancialmente ao longo da serialização. <strong>Leveling With The Gods</strong> (Ro Yun, KakaoPage — em andamento): Kim YuWoo regride ao passado para evitar o Ragnarok. Sistema de Tower of God misturado com mitologia nórdica e grega. <strong>Second Life Ranker</strong> (Nong Nong, KakaoPage — em andamento): Yeon-woo descobre o diário do irmão morto e entra na Torre para se vingar. Progressão de poder bem calculada e sistema de habilidades diversificado.
         </p>
+        <p>
+          O sucesso comercial desse subgênero também transformou a forma como a indústria coreana de conteúdo trata propriedade intelectual. A Naver Webtoon e a Kakao Entertainment — as duas maiores plataformas do setor — hoje funcionam como estúdios de desenvolvimento de IP, vendendo direitos de adaptação para animes, jogos mobile, séries live-action e até musicais a partir de webtoons de sucesso. Solo Leveling é o caso mais visível: além do anime produzido pela A-1 Pictures e distribuído pela Crunchyroll, a obra gerou o jogo mobile "Solo Leveling: Arise", desenvolvido pela Netmarble, que se tornou um dos lançamentos de maior faturamento em sua categoria logo na semana de estreia. Esse modelo de expansão multiplataforma — chamado de "OSMU" (One Source Multi-Use) na indústria coreana — é hoje o principal motor financeiro por trás da explosão de novos títulos de sistema lançados a cada mês nas plataformas coreanas.
+        </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <span className="h-7 w-7 text-otaku text-2xl">&#127760;</span>
@@ -315,6 +327,10 @@ const MelhoresManhwasSistema = () => {
         </p>
         <p>
           Para o público brasileiro que prefere português, scanlations em PT-BR de vários manhwas de sistema estão disponíveis no <strong>MangaDex</strong> feitas por grupos de tradução voluntária. Alguns títulos como Solo Leveling têm edição física em português pela <strong>Panini</strong> — os volumes físicos têm qualidade de impressão excelente e são uma forma de apoiar a publicação oficial no Brasil. A chegada do anime de Solo Leveling acelerou o interesse das editoras brasileiras em manhwa, e é provável que mais títulos do subgênero ganhem edições nacionais até 2027.
+        </p>
+
+        <p>
+          Vale destacar que, diferente do mangá japonês — onde grande parte do mercado físico ainda depende de revistas semanais e tankōbon impressos — o manhwa coreano nasceu essencialmente digital e gratuito, com monetização baseada em "ads" (capítulos liberados após período de espera) ou compra avulsa de capítulos antecipados ("fast pass"). Esse modelo facilitou a expansão internacional: qualquer leitor com acesso à internet pode acompanhar simultaneamente o lançamento de um capítulo novo, sem depender de importação de volumes físicos ou de tradução oficial demorada — o que ajuda a explicar a velocidade com que esses títulos constroem fanbases globais antes mesmo de receberem uma adaptação em anime ou tradução física no Ocidente.
         </p>
 
       <EditorialTake category="otaku" title="Análise do Marcos: o manhwa de sistema popularizou algo que o mangá nunca soube fazer bem">
@@ -356,6 +372,12 @@ const MelhoresManhwasSistema = () => {
             title: "Naver Financial Reports 2025",
             url: "https://www.navercorp.com/en/investment/businessReport",
             publisher: "Naver Financial Reports 2025",
+            accessedAt: "Maio 2026"
+          },
+          {
+            title: "Netmarble — Solo Leveling: Arise",
+            url: "https://www.netmarble.com/",
+            publisher: "Netmarble Corporation",
             accessedAt: "Maio 2026"
           }
         ]}

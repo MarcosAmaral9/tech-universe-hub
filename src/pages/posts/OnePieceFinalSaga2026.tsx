@@ -338,6 +338,9 @@ const OnePieceFinalSaga2026 = () => {
 
       <EditorialTake category="otaku" title="Análise do Marcos: a Final Saga de One Piece é a prova de que Oda planejou tudo desde o início">
         <p>
+          Um ponto que vale destacar antes da análise editorial é a extensão do planejamento narrativo de Eiichiro Oda, documentada ao longo de décadas em entrevistas e materiais extras da obra. Referências a Elbaf, ao Void Century, à Poneglyph e à Akuma no Mi de Luffy foram plantadas nos primeiros capítulos da série, quando One Piece ainda era uma obra relativamente desconhecida publicada na Shōnen Jump de 1997. A continuidade dessas promessas narrativas ao longo de mais de 1.100 capítulos — sem contradições estruturais maiores — é considerada pela crítica especializada em narrativa serializada como um dos feitos de planejamento de longo prazo mais impressionantes da história das publicações em quadrinhos, comparável ao que Yoshihiro Togashi fez em Hunter x Hunter, mas numa escala de tempo e número de capítulos muito maior.
+        </p>
+        <p>
           One Piece é uma obra de <strong>Eiichiro Oda</strong>, serializada na Weekly Shōnen Jump desde julho de 1997 — passando de 1.110 capítulos e 530 milhões de cópias vendidas segundo dados da Shueisha de 2024, o mangá mais vendido da história. A <strong>Final Saga</strong> começou com o Arco de Wano encerrando (capítulo 1057) em 2022 e inclui o Arco de Egghead (cap. 1058–1127, encerrado em janeiro de 2025), seguido pelo Arco de Elbaf (em andamento). O anime é produzido pela <strong>Toei Animation</strong> e estreou o Arco de Elbaf em <strong>abril de 2026</strong> no formato sazonal inédito.
         </p>
         <p>

@@ -52,6 +52,9 @@ const MugenGacha = () => {
           Origem: Light Novel e Manga
         </h2>
         <p>
+          Antes de entrar nos detalhes da obra, vale entender o que torna a premissa de "Gacha Ilimitada" relevante como metáfora dentro da cultura otaku contemporânea. O sistema de gacha — sorteios aleatórios de personagens ou itens em jogos mobile, baseados no modelo de capsule toys (gachapon) japoneses — é uma das mecânicas mais lucrativas e controversas da indústria de jogos mobile global, com o Japão sendo seu maior mercado. A crítica às práticas de monetização dos gachas (especialmente as probabilidades extremamente baixas para personagens ou itens de raridade máxima) é tema constante no debate da comunidade de gamers. Usar o "Gacha Ilimitada" como poder central de um isekai é, portanto, ao mesmo tempo uma referência direta à cultura de jogos mobile e uma forma de fantasy power trip onde a mecânica que normalmente frustra o jogador — nunca sair um personagem de raridade máxima — é subvertida para um protagonista que não tem esse limite.
+        </p>
+        <p>
           A série é baseada em uma <strong>light novel japonesa</strong> adaptada para manga. O anime foi anunciado em <strong>15 de novembro de 2024</strong> e revelado como série de televisão produzida pelo <strong>J.C.Staff</strong>, dirigida por <strong>Katsushi Sakurabi</strong>, com roteiros de <strong>Hiroshi Ōnogi</strong>, design de personagens de <strong>Yukie Suzuki</strong> e música de <strong>Ryo Takahashi</strong>. A série foi ao ar de <strong>3 de outubro a 19 de dezembro de 2025</strong> na Tokyo MX e outras emissoras. A abertura é <strong>"Sen yori Kaminari ya, Sarariya Takaki"</strong> performada por <strong>Tei</strong> e o encerramento <strong>"Shirogarasu"</strong> por <strong>Nowlu</strong>. A <strong>Sentai Filmworks</strong> licenciou a série para a América do Norte, Austrália e Ilhas Britânicas, disponível no <strong>HIDIVE</strong>. A <strong>Muse Communication</strong> distribuiu no Sudeste Asiático.
         </p>
 
@@ -143,6 +146,9 @@ const MugenGacha = () => {
         </p>
 
       <EditorialTake category="otaku" title="Análise do Marcos: Mugen Gacha entrega o que promete — e não mais que isso">
+        <p>
+          Vale notar que a escolha do J.C.Staff como estúdio para Mugen Gacha não é acidental: o estúdio tem longa experiência com light novels de gênero — incluindo adaptações de séries de harém, isekai e fantasia — que frequentemente não são obras de prestígio crítico mas têm bases de fãs fiéis que garantem vendas de Blu-Ray e merchandise suficientes para justificar a produção. Esse modelo de mercado, distinto das apostas criativas de estúdios como MAPPA ou Ufotable, é parte do ecossistema da indústria japonesa de animação: séries de entretenimento direto ao ponto, sem pretensão de arte, que servem um nicho específico com competência técnica adequada e sem surpresas negativas. Mugen Gacha se encaixa precisamente nessa categoria — e para o público que busca exatamente esse tipo de experiência, isso é uma qualidade, não uma limitação.
+        </p>
         <p>
           O anime <strong>My Gift Lvl 9999 Unlimited Gacha</strong> foi produzido pelo <strong>J.C.Staff</strong>, dirigido por Katsushi Sakurabi, com roteiros de Hiroshi Ōnogi e música de Ryo Takahashi. Foi ao ar de <strong>3 de outubro a 19 de dezembro de 2025</strong> na Tokyo MX. Licenciado pela <strong>Sentai Filmworks</strong> para o HIDIVE e pela <strong>Muse Communication</strong> no Sudeste Asiático. Até maio de 2026, nenhuma segunda temporada foi anunciada.
         </p>

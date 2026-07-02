@@ -54,6 +54,9 @@ const JujutsuKaisenGuia2026 = () => {
           Jujutsu Kaisen se passa em um Japão moderno onde existem <strong>Maldições</strong> — entidades sobrenaturais nascidas das emoções negativas humanas. Para combatê-las, existem os <strong>Feiticeiros de Jujutsu</strong>. A premissa central: <strong>Yuji Itadori</strong> engole um dedo do Rei das Maldições, Ryomen Sukuna, e passa a ser seu recipiente — condenado a ser executado após reunir todos os 20 dedos.
         </p>
         <p>O que torna JJK especial é a execução: sistemas de magia originais, personagens com motivações complexas, batalhas com consequências reais e subversão brutal de expectativas.</p>
+        <p>
+          Antes de ingressar no shonen, Gege Akutami já havia publicado uma série anterior chamada Jujutsu Kaisen — tecnicamente um one-shot de 2017 que viria a se tornar o "Volume 0" da série, lançado oficialmente como prequela após o sucesso da série principal. Esse histórico é relevante porque a maturidade narrativa que marca Jujutsu Kaisen desde o primeiro capítulo da serialização principal não foi um acidente: Akutami já vinha desenvolvendo o tom sombrio e a disposição de matar personagens queridos desde esse material inicial, características que se tornariam a marca registrada da obra e que a diferenciariam estruturalmente de outros shonen da mesma geração editorial da Weekly Shōnen Jump.
+        </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BarChart3 className="h-7 w-7 text-otaku" />
@@ -115,6 +118,9 @@ const JujutsuKaisenGuia2026 = () => {
           <Flame className="h-7 w-7 text-otaku" />
           O Anime: Temporadas, Studios e Onde Assistir
         </h2>
+        <p>
+          A escolha da MAPPA como estúdio de animação para JJK foi, retrospectivamente, decisiva para a recepção da série. O estúdio, fundado em 2011 por Masao Maruyama (um dos fundadores originais do Madhouse), já havia demonstrado capacidade técnica com produções anteriores como Yuri!!! on Ice e Banana Fish, mas foi a adaptação da Temporada 1 de JJK em 2020 que consolidou a MAPPA como um dos estúdios de referência para séries de ação do gênero shonen. A técnica de câmera dinâmica, a fluidez das cenas de combate e as escolhas de trilha sonora foram consistentemente apontadas pela crítica como responsáveis por elevar o material escrito — especialmente nas batalhas com uso de Domínio, onde a animação consegue transmitir escala e velocidade de forma que a página estática não consegue reproduzir com o mesmo efeito.
+        </p>
         <div className="not-prose my-6 overflow-x-auto">
           <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead><tr className="bg-secondary">
@@ -211,6 +217,10 @@ const JujutsuKaisenGuia2026 = () => {
           Para novos espectadores em 2026, a ordem de entrada recomendada é: <strong>Temporada 1</strong> (24 episódios, MAPPA, 2020) cobrindo os arcos da Academia e da Missão de Kyoto. <strong>Filme JJK 0</strong> (2021) — adapta o volume zero com Yuta Okkotsu antes dos eventos da T1, recomendado assistir antes ou depois da T1 (ambas as ordens funcionam, mas antes adiciona contexto). <strong>Temporada 2</strong> (23 episódios, 2023) — arcos de Shibuya e Incidente. <strong>Temporada 3</strong> (17 episódios, 2024–2025) — Culling Game Part 1. Toda a série está disponível na Crunchyroll com legendas em português. O mangá completo (27 volumes) está disponível oficialmente no Manga Plus em inglês, ou via edição física da JBC no Brasil.
         </p>
 
+        <p>
+          Para quem leu o mangá até o final e está esperando a adaptação dos arcos finais, vale também registrar que o encerramento de Jujutsu Kaisen em setembro de 2024 gerou reações divididas na comunidade: parte dos leitores elogiou a coragem de Akutami em manter o tom brutal até o último capítulo, enquanto outra parte criticou a velocidade de resolução de certos arcos e personagens nos capítulos finais — um debate que provavelmente acompanhará a recepção da adaptação animada do arco de Shinjuku quando os episódios correspondentes forem ao ar, já que a MAPPA terá que lidar com a mesma tensão entre ritmo e satisfação narrativa que o mangá original enfrentou com sua serialização semanal.
+        </p>
+
       <EditorialTake category="otaku" title="Análise do Marcos: JJK provou que shonen pode ser brutal e emocionalmente honesto ao mesmo tempo">
         <p>
           Jujutsu Kaisen é uma obra de <strong>Gege Akutami</strong>, serializada na Weekly Shōnen Jump de março de 2018 a setembro de 2024 — 271 capítulos, 27 volumes. Vendeu mais de 100 milhões de cópias segundo a Shueisha, tornando-se um dos mangás mais vendidos da história. O anime é produzido pela <strong>MAPPA</strong> e está disponível na <strong>Crunchyroll</strong> com simulcast em português. A <strong>JBC Editora</strong> publica os volumes físicos no Brasil.
@@ -225,7 +235,8 @@ const JujutsuKaisenGuia2026 = () => {
           { title: "MAL \u2014 Jujutsu Kaisen", url: "https://myanimelist.net/anime/40748/Jujutsu_Kaisen", publisher: "MyAnimeList", accessedAt: "Maio 2026" },
           { title: "Shueisha \u2014 Weekly Shonen Jump", url: "https://www.shonenjump.com/j/", publisher: "Shueisha", accessedAt: "Maio 2026" },
           { title: "Anime News Network", url: "https://www.animenewsnetwork.com/", publisher: "Anime News Network", accessedAt: "Maio 2026" },
-          { title: "MAPPA \u2014 site oficial", url: "https://mappa.co.jp/", publisher: "MAPPA", accessedAt: "Maio 2026" }
+          { title: "MAPPA — site oficial", url: "https://mappa.co.jp/", publisher: "MAPPA", accessedAt: "Maio 2026" },
+          { title: "JBC Editora — Jujutsu Kaisen", url: "https://editorajbc.com.br/mangas/jujutsu-kaisen/", publisher: "JBC Editora", accessedAt: "Maio 2026" }
         ]}
       />
 

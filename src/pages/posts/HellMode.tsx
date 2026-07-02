@@ -64,6 +64,9 @@ const HellMode = () => {
           Origem: Light Novel e Mangá
         </h2>
         <p>
+          Hell Mode pertence ao subgênero específico de "gamer isekai" — histórias onde o protagonista traz mentalidade, vocabulário e hábitos de jogador veterano para dentro de um mundo de fantasia com mecânicas de RPG. Esse subgênero cresceu paralelamente à popularização dos MMORPGs no Japão e no mundo, com obras como Sword Art Online (2009) como ponto de inflexão do gênero, seguido de variações como Log Horizon (foco em estratégia e mecânicas de jogo), KonoSuba (paródia) e No Game No Life (jogos como competição de estratégia pura). O diferencial de Hell Mode dentro desse subgênero é o foco no archetype do "tryhard" — o jogador que deliberadamente escolhe as configurações mais difíceis, que gasta horas estudando builds e mecânicas antes de agir, e que enxerga o processo de grind não como obstáculo mas como a experiência central que torna o jogo significativo. Essa mentalidade, familiar para qualquer pessoa que já jogou um MMORPG de forma séria, é o que estrutura as decisões do protagonista Kenichi ao longo da série.
+        </p>
+        <p>
           A história foi criada por <strong>Hamuo</strong>, com ilustrações de <strong>Mo</strong>, e começou a ser serializada em novembro de 2019 na plataforma <em>Shōsetsuka ni Narō</em>. A <strong>Earth Star Entertainment</strong> adquiriu os direitos e publica a light novel desde julho de 2020 pelo selo <em>Earth Star Novel</em> — treze volumes lançados até janeiro de 2026. O mangá, com arte de <strong>Enji Tetta</strong>, é serializado no site <em>Comic Earth Star</em> desde outubro de 2020, com treze volumes coletados. A <strong>J-Novel Club</strong> (e a <strong>Yen Press</strong> para versões físicas) licenciou a série em inglês.
         </p>
         <p>

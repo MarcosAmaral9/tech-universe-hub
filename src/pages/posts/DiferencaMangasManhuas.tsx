@@ -270,6 +270,9 @@ const DiferencaMangasManhuas = () => {
         <p>
           O manhua em 2026 é distribuído principalmente via plataformas digitais chinesas com alcance internacional limitado — <strong>Bilibili Comics</strong>, <strong>Kuaikan Manhua</strong> e <strong>Webnovel</strong> têm seleções em inglês crescentes mas ainda abaixo do volume disponível em coreano e japonês para audiências ocidentais. Para o público brasileiro, o acesso é quase exclusivamente via scanlations ou plataformas em inglês. Adaptações donghua (animação chinesa) de títulos populares — como <em>Battle Through the Heavens</em> e <em>A Record of a Mortal's Journey to Immortality</em> — são uma alternativa de entrada no universo manhua para quem prefere o formato animado.
         </p>
+        <p>
+          Uma distinção prática útil para quem está começando: o sentido de leitura é um dos indicadores mais imediatos da origem de uma obra. O mangá japonês é lido da direita para a esquerda (seguindo a escrita vertical japonesa tradicional), o manhwa coreano e o manhua chinês são lidos da esquerda para a direita — o mesmo sentido da leitura ocidental. Isso facilita a entrada de leitores brasileiros no manhwa e no manhua em comparação ao mangá, já que não há necessidade de adaptar o sentido de leitura. O formato full color em scroll vertical, predominante no manhwa e em parte do manhua moderno, também elimina a barreira do preto e branco que às vezes afasta leitores menos habituados ao estilo visual do mangá tradicional japonês.
+        </p>
 
       <EditorialTake category="otaku" title="Análise do Marcos: mangá, manhwa e manhua são três culturas distintas — e só enriquece ler os três">
         <p>

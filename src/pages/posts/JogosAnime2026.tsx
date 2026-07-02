@@ -57,6 +57,9 @@ const JogosAnime2026 = () => {
         <p>
           O modelo gacha também moldou o mercado: jogos como <strong>Genshin Impact</strong>, <strong>Blue Archive</strong> e <strong>Honkai: Star Rail</strong> provam que títulos com estética anime podem faturar bilhões mensalmente.
         </p>
+        <p>
+          Essa transformação tem raízes em duas décadas de evolução técnica. Nos anos 2000, jogos licenciados de anime eram tipicamente produções de orçamento médio voltadas quase exclusivamente para fãs da obra original — gráficos simplificados, jogabilidade repetitiva e pouco investimento em produção. A virada começou com estúdios como a CyberConnect2, responsável pela série Naruto: Ultimate Ninja Storm a partir de 2008, que demonstrou ser possível recriar a linguagem visual de um anime em 3D com fidelidade impressionante, usando técnicas de cel-shading e direção de câmera cinematográfica durante combates. Esse padrão de qualidade elevou as expectativas do público e pressionou outras desenvolvedoras — como a Arc System Works, conhecida por sua expertise em animação 2D aplicada a jogos de luta — a investir pesado em fidelidade visual, o que culminou em títulos como Dragon Ball FighterZ e Guilty Gear Strive, hoje referências técnicas do gênero.
+        </p>
 
         <AdLeaderboard className="my-8" />
 
@@ -90,6 +93,9 @@ const JogosAnime2026 = () => {
         <p>
           💡 <strong>Dica:</strong> Plataformas como Steam têm promoções regulares em bundles de jogos de anime — preço de R$ 20-40 por títulos que custam R$ 150-200 no lançamento. A diferença entre pré-comprar e esperar 6 meses pode ser mais de 50%.
         </p>
+        <p>
+          Outra dica prática para quem acompanha o calendário de lançamentos é observar os períodos de promoção sazonal da própria Steam — como a Steam Summer Sale e a Winter Sale — que historicamente concentram os maiores descontos do ano em jogos licenciados de anime, muitas vezes superando 70% sobre o preço de tabela em títulos com mais de seis meses de lançamento. Acompanhar listas de desejos (wishlist) na plataforma e ativar notificações de preço é a forma mais simples de não perder essas janelas, que costumam durar apenas uma ou duas semanas por temporada.
+        </p>
       </div>
 
             
@@ -114,6 +120,9 @@ const JogosAnime2026 = () => {
         <p>
           As visual novels merecem destaque especial como categoria frequentemente ignorada pelo público de anime que não joga. <strong>Steins;Gate</strong>, disponível no Steam com preço acessível em promoções, é considerado por muitos superior ao anime pelas ramificações de roteiro que a série de TV não pôde explorar. O mesmo vale para <strong>Clannad</strong> e <strong>Fate/stay night Remastered</strong> — obras literárias completas em formato interativo cujo roteiro supera o das adaptações animadas em profundidade narrativa.
         </p>
+        <p>
+          Historicamente, o maior obstáculo para o público brasileiro consumir visual novels foi a falta de localização: a maioria dos clássicos do gênero, como Steins;Gate e Fate/stay night, foi lançada originalmente apenas em japonês, com fãs ocidentais dependendo de traduções não oficiais (fan translations) feitas por comunidades dedicadas ao longo de anos. Esse cenário mudou consideravelmente na última década com a expansão da Steam e de editoras como a Sekai Project e a MangaGamer, que passaram a licenciar oficialmente títulos com tradução para o inglês — embora a tradução para o português ainda seja rara, restrita principalmente a fan translations de qualidade variável. Para quem está disposto a ler em inglês, a Steam se tornou de longe a forma mais simples e segura de acessar legalmente o catálogo clássico do gênero, incluindo edições remasterizadas com texto e arte atualizados.
+        </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <span className="h-7 w-7 text-otaku text-2xl">&#128241;</span>
@@ -124,6 +133,9 @@ const JogosAnime2026 = () => {
         </p>
         <p>
           Para o jogador brasileiro, o câmbio torna os jogos gacha japoneses mais caros proporcionalmente do que para jogadores norte-americanos ou europeus. A HoYoverse e a Bandai Namco implementaram preços regionais no Brasil nos últimos anos — compare o preço em reais antes de assumir que é a conversão direta do dólar. Muitos jogos mobile de anime passaram a ter pacotes ajustados para o mercado brasileiro desde 2023, o que mudou significativamente o custo-benefício para jogadores locais.
+        </p>
+        <p>
+          A cena competitiva brasileira de fighting games também é parte relevante desse ecossistema. O Brasil tem tradição consolidada em jogos de luta em geral — eventos como o CEO Brasil e torneios regionais organizados por comunidades locais frequentemente incluem categorias dedicadas a Dragon Ball FighterZ e outros títulos de luta com licença de anime, ao lado de clássicos como Street Fighter e Tekken. Jogadores brasileiros já conquistaram boas colocações em torneios internacionais de jogos de luta ao longo dos últimos anos, e a comunidade de FGC (Fighting Game Community) nacional costuma ser um dos caminhos mais ativos para quem quer evoluir tecnicamente em títulos como Dragon Ball FighterZ ou Guilty Gear Strive, já que oferece treino presencial contra jogadores experientes — algo que o treino apenas online dificilmente reproduz com a mesma qualidade.
         </p>
 
       <EditorialTake category="otaku" title="Análise do Marcos: jogos de anime amadureceram — e o mercado brasileiro finalmente percebeu">
@@ -141,6 +153,7 @@ const JogosAnime2026 = () => {
           { title: "Naruto x Boruto: Ultimate Ninja Storm Connections", url: "https://en.bandainamcoent.eu/naruto/naruto-x-boruto-ultimate-ninja-storm-connections", publisher: "Bandai Namco", accessedAt: "Maio 2026" },
           { title: "Demon Slayer -Kimetsu no Yaiba- Sweep the Board!", url: "https://www.nintendo.com/us/store/products/demon-slayer-kimetsu-no-yaiba-sweep-the-board-switch/", publisher: "Nintendo", accessedAt: "Maio 2026" },
           { title: "One Piece Odyssey — análise e localização PT-BR", url: "https://en.bandainamcoent.eu/one-piece/one-piece-odyssey", publisher: "Bandai Namco", accessedAt: "Maio 2026" },
+          { title: "Steins;Gate — página oficial Steam", url: "https://store.steampowered.com/app/412830/STEINSGATE/", publisher: "Valve / Steam", accessedAt: "Maio 2026" },
         ]}
       />
       <RelatedPosts currentSlug="melhores-jogos-anime-2026" />

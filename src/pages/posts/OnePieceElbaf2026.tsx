@@ -219,6 +219,9 @@ const OnePieceElbaf2026 = () => {
         <p>
           Para quem quer acompanhar Elbaf sem maratonar mais de 1.100 episódios, o projeto comunitário <strong>One Pace</strong> (onepace.net) remonta os episódios do anime removendo fillers, recaps e cenas redundantes — reduzindo o tempo total de assistência de centenas de horas para algo comparável a uma série normal. One Pace cobre até o arco de Wano e está sendo atualizado progressivamente. Para quem prefere mangá, os capítulos estão disponíveis oficialmente no Manga Plus em inglês. O arco de Elbaf começa nos capítulos publicados a partir de 2024 — acessíveis na plataforma.
         </p>
+        <p>
+          O contexto histórico de Elbaf dentro da narrativa de One Piece é importante para entender por que o arco importa além do espetáculo visual. Os gigantes de Elbaf são, no universo ficcional, considerados os guerreiros mais poderosos do mundo — uma reputação construída ao longo de centenas de capítulos em que personagens como Dorry e Brogy (encontrados no arco Little Garden, no início da série) e Hajrudin (que aparece em Dressrosa e Whole Cake Island) funcionaram como prévia do que a ilha em si poderia oferecer. O lore de Elbaf também é conectado ao Void Century — o período de cem anos apagado da história oficial do mundo de One Piece — o que posiciona o arco não apenas como uma aventura de gigantes mas como um passo narrativo significativo no desvendamento dos mistérios centrais da série.
+        </p>
 
       <EditorialTake category="otaku" title="Análise do Marcos: Elbaf é a promessa de 30 anos — e o formato sazonal é a única forma honesta de entregá-la">
         <p>

@@ -52,6 +52,9 @@ const IsekaiNonbiriNouka = () => {
           Origem: Light Novel e Mangá
         </h2>
         <p>
+          Isekai Nonbiri Nōka pertence ao subgênero chamado "healing isekai" ou "slow life isekai" — uma vertente deliberadamente oposta ao isekai de ação, em que o foco narrativo não é combate, progressão de poder ou derrotar vilões, mas a experiência cotidiana de construir uma vida tranquila e satisfatória em um novo mundo. O subgênero ganhou força no final dos anos 2010 como uma resposta ao cansaço de parte do público com a fórmula mais repetitiva do isekai de ação — protagonista overpowered, harém de batalha, torneio de poder. Obras representativas incluem Spice and Wolf (mercado medieval sem combate como elemento central), Kuma Kuma Kuma Bear (protagonista forte que prefere cozinhar a lutar) e Hakumei and Mikochi (vida cotidiana em escala miniaturizada). Dentro desse subgênero, a proposta de "vou realmente fazer uma fazenda" de Isekai Nonbiri Nōka é particularmente honesta: o anime não usa a fazenda como pretexto para batalhas, é de fato sobre o processo de cultivar, construir e acolher.
+        </p>
+        <p>
           A história foi criada por <strong>Kinosuke Naito</strong>, com ilustrações de <strong>Yasumo</strong>, e serializada online na plataforma <em>Shōsetsuka ni Narō</em> desde dezembro de 2016. A <strong>Enterbrain</strong> adquiriu a série e publica a light novel desde outubro de 2017 — vinte volumes lançados. O mangá, desenhado por <strong>Yasuyuki Tsurugi</strong>, é serializado na revista <strong>Monthly Dragon Age</strong> (Fujimi Shobo) desde novembro de 2017, com 16 volumes coletados até março de 2026. Um mangá spin-off de quatro painéis, <em>Isekai Nonbiri Nōka no Nichijō</em>, também é publicado no Monthly Dragon Age desde julho de 2022, com sete volumes.
         </p>
 
@@ -158,6 +161,9 @@ const IsekaiNonbiriNouka = () => {
         </p>
 
       <EditorialTake category="otaku" title="Análise do Marcos: Farming Life é o antídoto para o isekai de combate — e funciona muito bem">
+        <p>
+          Um aspecto técnico que distingue a adaptação de Isekai Nonbiri Nōka de produções similares é como o estúdio Zero-G lida com o ritmo de um material que, por definição, não tem cliffhangers de batalha para sustentar o interesse episódio a episódio. A solução usada pela maioria dos healing isekais bem-sucedidos é a mesma da série: construir encanto nos detalhes — a textura visual das culturas sendo colhidas, a personalidade das companheiras não-humanas, as pequenas conquistas que precedem as grandes. Quando esse elemento funciona, o espectador sente satisfação genuína ao ver a fazenda crescer, mesmo sem explosões ou batalhas de alto impacto. Para que isso funcione em animação, a direcção de arte precisa ser mais caprichosa que a média — e Zero-G, estúdio menor com portfólio em séries de nicho, demonstrou competência suficiente para entregar essa experiência visual.
+        </p>
         <p>
           <strong>Isekai Nonbiri Nouka</strong> é uma light novel de <strong>Kinosuke Naito</strong>, ilustrada por <strong>Yasumo</strong>, publicada pela <strong>Enterbrain</strong> desde outubro de 2017 — vinte volumes lançados. O mangá, com arte de <strong>Yasuyuki Tsurugi</strong>, é serializado na <strong>Monthly Dragon Age</strong> (Fujimi Shobo) desde novembro de 2017. A Temporada 1 foi produzida pelo estúdio <strong>Zero-G</strong>, dirigida por Ryōichi Kuraya, e foi ao ar de 6 de janeiro a 24 de março de 2023. Disponível no <strong>Amazon Prime Video</strong>, HIDIVE e Hulu. A <strong>Temporada 2 foi confirmada em agosto de 2025</strong>, com estreia prevista para abril de 2026.
         </p>

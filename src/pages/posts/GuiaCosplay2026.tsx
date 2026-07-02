@@ -70,6 +70,9 @@ const GuiaCosplay2026 = () => {
         <p>
           A paixão pelo personagem vai sustentar você nas horas frustrantes de confecção quando algo não sai como planejado — e na convenção, a energia de quem está incorporando um personagem que realmente ama é visível e contagiante para quem fotografa.
         </p>
+        <p>
+          Vale conhecer um pouco da origem do termo antes de mergulhar na prática: a palavra "cosplay" é uma fusão de "costume" e "play" (interpretação), cunhada em 1984 pelo jornalista japonês Nobuyuki Takahashi após visitar a Worldcon (convenção mundial de ficção científica) em Los Angeles, onde ficou impressionado com fãs vestidos como personagens favoritos. Ele adaptou o conceito para o público japonês de ficção científica e animação, e o termo se popularizou rapidamente no Japão antes de retornar ao Ocidente nos anos 1990 e 2000, já consolidado como prática cultural própria das convenções de anime e mangá. O Brasil teve sua primeira onda relevante de cosplay a partir dos anos 2000, impulsionada pela popularização de animes na TV aberta e pelo crescimento de eventos como a extinta Anime Dream e, posteriormente, a Anime Friends, fundada em 2002.
+        </p>
 
         <div className="not-prose my-6 space-y-3">
           {[
@@ -244,6 +247,9 @@ const GuiaCosplay2026 = () => {
           <Star className="h-7 w-7 text-otaku" />
           Calendário de Convenções no Brasil 2026
         </h2>
+        <p>
+          Vale lembrar que o clima brasileiro impõe um desafio adicional pouco discutido em tutoriais internacionais: a maioria dos grandes eventos de cosplay no país acontece em meses quentes, e materiais como o EVA, embora resistentes, podem amolecer ou perder forma quando expostos a calor excessivo por horas seguidas dentro de pavilhões fechados e lotados. Cosplayers experientes recomendam testar a resistência da peça em condições simuladas de calor antes do evento e levar sempre uma muda de pequenos reparos — cola quente portátil e fita adesiva resistente — para ajustes de última hora causados pelo amolecimento de peças estruturais ao longo do dia.
+        </p>
 
         <div className="not-prose my-6 overflow-x-auto">
           <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
@@ -313,6 +319,9 @@ const GuiaCosplay2026 = () => {
         <p>
           O <strong>World Cosplay Summit</strong> (WCS), realizado anualmente em Nagoya (Japão), é a maior competição de cosplay do mundo — e o Brasil tem tradição de classificar representantes com consistência. As seleções nacionais ocorrem geralmente na Anime Friends (São Paulo) entre julho e agosto. Acompanhar o processo de seleção — mesmo sem participar — é uma forma de ver o nível técnico de referência do cosplay brasileiro e entender o que os juízes valorizam: precisão ao personagem, qualidade de confecção, performance e apresentação em conjunto.
         </p>
+        <p>
+          Para quem se interessa especificamente pelo lado competitivo do cosplay, vale entender que o WCS avalia equipes de dois representantes por país em uma performance coreografada de aproximadamente noventa segundos, geralmente baseada em uma cena marcante do anime ou jogo de origem dos personagens escolhidos. Diferente de concursos de fidelidade estática, onde apenas a qualidade da confecção é avaliada, o formato do WCS exige também habilidades de teatro, coreografia e, frequentemente, efeitos especiais ao vivo — o que torna a preparação para esse tipo de competição um projeto de meses, geralmente envolvendo parceria entre cosplayer e um segundo profissional especializado em coreografia ou efeitos cênicos.
+        </p>
 
       <EditorialTake category="otaku" title="Análise do Marcos: cosplay brasileiro cresceu de nicho para referência internacional">
         <p>
@@ -325,7 +334,7 @@ const GuiaCosplay2026 = () => {
 
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
           <h3 className="text-xl font-bold mb-2">Já fez seu primeiro cosplay? 🎭</h3>
-          <p className="text-muted-foreground">Conta qual foi o personagem e o que aprendeu com o processo nos comentários! 👇</p>
+          <p className="text-muted-foreground">Conta qual foi o personagem e o que aprendeu com o processo nos comentários! Toda jornada começa com o primeiro projeto imperfeito — e está tudo bem. 👇</p>
         </div>
       </div>
 

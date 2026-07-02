@@ -65,6 +65,9 @@ const IsekaiMokushirokuMynoghra2026 = () => {
           O Que é Mynoghra: Premissa, Origem e Por Que É Diferente
         </h2>
         <p>
+          Para entender o que torna a premissa de Mynoghra interessante, vale primeiro entender de onde vem o termo "4X" usado para descrever o jogo dentro da ficção. A sigla, cunhada pela imprensa especializada em jogos de estratégia nos anos 1990 para descrever títulos como a série Civilization, representa as quatro fases centrais da jogabilidade: eXplore (explorar o mapa), eXpand (expandir o território), eXploit (explorar os recursos disponíveis) e eXterminate (eliminar civilizações rivais). É um gênero consagrado nos jogos de computador ocidentais e japoneses havia décadas antes de ganhar uma reinterpretação isekai — e a familiaridade do público com essas mecânicas é parte do que torna a premissa de Mynoghra imediatamente compreensível, mesmo para quem nunca jogou um 4X de verdade: o leitor reconhece a lógica de "conquistar território, gerenciar recursos, eliminar rivais" mesmo sem experiência prévia com o gênero de videogame que inspira a obra.
+        </p>
+        <p>
           Mynoghra começa com <strong>Takuto Ira</strong>, um jogador dedicado de um 4X (eXplore, eXpand, eXploit, eXterminate) game de estratégia por turnos. No jogo, ele era especialista em usar a nação mais difícil e sombria do game: <strong>Mynoghra</strong> — uma civilização do apocalipse baseada em degradação, corrupção e destruição progressiva. As unidades de Mynoghra enfraquecem e corrompem o terreno ao redor, criaturas mortas se tornam aliadas, e a vitória vem pelo colapso sistemático do inimigo.
         </p>
         <p>
@@ -171,6 +174,9 @@ const IsekaiMokushirokuMynoghra2026 = () => {
           <Star className="h-7 w-7 text-otaku" />
           A Franquia: Light Novel, Mangá e Anime
         </h2>
+        <p>
+          Como a maioria dos isekais lançados na última década, Mynoghra nasceu como web novel publicada gratuitamente no <strong>Shōsetsuka ni Narō</strong> ("Let's Become a Novelist", conhecido popularmente como Syosetu) — a maior plataforma de publicação amadora de ficção do Japão, responsável por revelar séries que mais tarde se tornaram fenômenos comerciais, como Re:Zero, That Time I Got Reincarnated as a Slime e Mushoku Tensei. O modelo de descoberta funciona de forma simples: autores publicam capítulos gratuitamente, leitores avaliam e comentam, e editoras como a Kadokawa monitoram os rankings de popularidade da plataforma em busca de obras com potencial comercial para adaptar em light novel física, mangá e eventualmente anime. Esse pipeline de descoberta orgânica é uma das razões pelas quais o gênero isekai produziu uma quantidade tão grande de premissas originais e nichadas nos últimos anos — incluindo conceitos de estratégia e construção de civilização como o de Mynoghra, que dificilmente passariam pelo crivo editorial mais conservador de uma revista impressa tradicional.
+        </p>
 
         <div className="not-prose my-6 overflow-x-auto">
           <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
@@ -270,6 +276,9 @@ const IsekaiMokushirokuMynoghra2026 = () => {
           <Zap className="h-7 w-7 text-otaku" />
           Como Acompanhar Mynoghra em 2026
         </h2>
+        <p>
+          Vale notar também que o tempo entre o anúncio de um anime e sua estreia efetiva costuma variar muito no mercado japonês — produções de estúdios estabelecidos como MAPPA ou Wit Studio podem levar de 12 a 24 meses do anúncio até a primeira exibição, enquanto estúdios menores ou com menos recursos de produção podem levar ainda mais tempo, dependendo da disponibilidade de animadores e da fila de outras produções em andamento no mesmo período. Esse intervalo costuma ser usado pelas editoras para reforçar a publicação do material original — aumentando o ritmo de lançamento de capítulos do mangá ou volumes da light novel — como estratégia de aquecer a base de fãs antes da estreia do anime, prática comum na indústria conhecida informalmente como "anime push".
+        </p>
 
         <div className="not-prose my-6 space-y-3">
           {[

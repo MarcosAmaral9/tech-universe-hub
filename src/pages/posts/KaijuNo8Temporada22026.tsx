@@ -62,6 +62,9 @@ const KaijuNo8Temporada22026 = () => {
         <p>
           A história se passa num Japão alternativo onde <strong>kaijus (monstros gigantes)</strong> atacam regularmente as cidades. Uma força de defesa militar especial — a <strong>Japan Defense Force (JDF)</strong> — é responsável por combatê-los. O protagonista <strong>Kafka Hibino</strong>, de 32 anos, sempre sonhou em ingressar na JDF mas nunca passou nos exames. Até o dia em que um pequeno monstro entra em sua boca e lhe concede o poder de se transformar em um kaiju Número 8 — com força equivalente ao monstro mais poderoso já registrado.
         </p>
+        <p>
+          A escolha da Production I.G como estúdio responsável pela adaptação não foi acidental: o estúdio, fundado em 1987, é um dos nomes mais respeitados da indústria de animação japonesa, com um currículo que inclui clássicos como Ghost in the Shell (1995) e produções esportivas aclamadas como Haikyuu!!. Essa experiência em equilibrar ação espetacular com desenvolvimento de personagem ajudou a explicar por que a adaptação de Kaiju No. 8 foi recebida com entusiasmo já na primeira temporada — o estúdio tinha o histórico técnico necessário para fazer justiça tanto às cenas de combate em larga escala quanto aos momentos mais intimistas entre os personagens da Defense Force.
+        </p>
         <div className="not-prose my-6 grid md:grid-cols-3 gap-4">
           {[
             { aspecto: "🏆 Popularidade", dado: "45 milhões de cópias em circulação", extra: "#1 no Shonen Jump+ por 3 anos consecutivos" },
@@ -131,6 +134,9 @@ const KaijuNo8Temporada22026 = () => {
           O Sistema da Defense Force: Numerações, Neutralizers e a Hierarquia
         </h2>
         <p>
+          Vale situar Kaiju No. 8 dentro da longa tradição japonesa do gênero "kaiju" propriamente dito, que remonta ao cinema tokusatsu (efeitos especiais práticos) das décadas de 1950 e 1960, com Godzilla (1954, Toho) como marco fundador. Diferente da maioria das produções clássicas do gênero, que tratavam os monstros gigantes como metáforas para ansiedades históricas específicas — Godzilla, por exemplo, nasceu como resposta direta aos bombardeios atômicos no Japão — Kaiju No. 8 usa a estrutura de mundo "infestado de monstros" mais como cenário para uma história sobre identidade pessoal e burocracia militar, aproximando-se mais da estrutura narrativa de séries shonen de ação contemporâneas do que do tokusatsu clássico. Essa combinação de estética kaiju tradicional com sensibilidade narrativa de shonen moderno é um dos fatores citados por críticos como responsável pelo apelo da obra tanto para fãs de longa data do gênero quanto para um público mais jovem que nunca assistiu a um filme de Godzilla.
+        </p>
+        <p>
           O mundo de Kaiju No. 8 é organizado em torno de ataques constantes de kaiju — monstros biologicamente complexos que aparecem sem aviso e destroem cidades. A <strong>Japan Defense Force</strong> (Nihon Kaijuu Tokusou Tai) é a única linha de defesa humana. Seus membros são numerados por poder: os <strong>Defense Force Numbers</strong> são os soldados de elite cujas habilidades são medidas em percentual de potência de neutralização.
         </p>
         <p>
@@ -187,6 +193,9 @@ const KaijuNo8Temporada22026 = () => {
           <Zap className="h-7 w-7 text-otaku" />
           Por Onde Entrar em Kaiju No. 8
         </h2>
+        <p>
+          A direção de Shinji Ishihara e o roteiro adaptado de Ryota Kosawa mantiveram boa parte da equipe entre a primeira e a segunda temporada, o que é um sinal positivo de continuidade criativa — trocas de diretor entre temporadas são uma causa comum de queda de qualidade em adaptações de anime, já que cada diretor traz interpretações próprias de ritmo e composição visual. A trilha sonora, composta para a primeira temporada, também recebeu elogios da crítica por equilibrar momentos de tensão militar com os elementos mais cômicos e cotidianos da vida de Kafka antes de sua transformação — um equilíbrio tonal que a própria obra original do mangá já demonstrava ser um de seus pontos fortes.
+        </p>
         <div className="not-prose my-6 space-y-3">
           {[
             { opcao: "📺 Anime (T1 + T2) — Recomendado para iniciantes", desc: "A Temporada 1 tem 12 episódios e está completa na Crunchyroll. A Temporada 2 está em andamento na Spring Season 2026, com episódios saindo semanalmente. Começar pelo anime é a entrada mais acessível.", plat: "Crunchyroll — legendado PT-BR simulcast" },
@@ -216,6 +225,10 @@ const KaijuNo8Temporada22026 = () => {
           </div>
         </div>
 
+        <p>
+          Para quem está decidindo se vale a pena começar agora, vale considerar que séries de ação shonen com arco final em andamento tendem a gerar dois movimentos opostos no fandom: parte dos leitores corre para acompanhar o mangá e descobrir o desfecho antes do anime, enquanto outra parte prefere deliberadamente atrasar a leitura para preservar a experiência de assistir cada revelação pela primeira vez na adaptação animada. Não existe escolha "errada" nesse caso — depende apenas de qual tipo de experiência de consumo de mídia o espectador prefere, e ambos os caminhos são plenamente possíveis graças à disponibilidade simultânea do mangá no Manga Plus e do anime na Crunchyroll.
+        </p>
+
         <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
           <h3 className="text-xl font-bold mb-2">Você está acompanhando Kaiju No. 8 T2? 🐉</h3>
           <p className="text-muted-foreground">Qual personagem você mais curte? Conta nos comentários! 👇</p>
@@ -228,6 +241,7 @@ const KaijuNo8Temporada22026 = () => {
           { title: "Shonen Jump+ — Kaiju No. 8 (mangá)", url: "https://shonenjumpplus.com/episode/13932016480028799982", publisher: "Shueisha", accessedAt: "Maio 2026" },
           { title: "Crunchyroll — Kaiju No. 8 (Brasil)", url: "https://www.crunchyroll.com/pt-br/series/G9VHN9PZ2/kaiju-no-8", publisher: "Crunchyroll", accessedAt: "Maio 2026" },
           { title: "Anime News Network — Kaiju No. 8", url: "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=27931", publisher: "Anime News Network", accessedAt: "Maio 2026" },
+          { title: "MyAnimeList — Kaiju No. 8", url: "https://myanimelist.net/anime/55701/Kaijuu_8-gou", publisher: "MyAnimeList", accessedAt: "Maio 2026" },
         ]}
       />
 
