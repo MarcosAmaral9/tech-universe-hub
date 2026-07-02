@@ -301,6 +301,12 @@ const BannerlordTerritoriosFaccoes = () => {
           castelo a que estão ligadas, além de servirem como fonte primária de recrutas T1 da cultura local.
         </p>
         <p>
+          Essa estrutura de três camadas é administrada, mecanicamente, pelo sistema de clãs e reinos da TaleWorlds. Cada assentamento conquistado precisa ser atribuído a um clã específico dentro do reino — seja o do próprio jogador, seja o de um vassalo — através do conselho de guerra exibido ao término de cada cerco bem-sucedido, onde outros líderes de clã votam ou disputam a posse do território com base em sua influência acumulada. Esse mecanismo, inspirado em sistemas de feudo medievais reais, cria tensão política interna mesmo dentro de um único reino: distribuir territórios de forma desigual entre vassalos tende a gerar descontentamento e, em casos extremos, pode levar clãs insatisfeitos a desertar para reinos rivais ou mesmo declarar uma facção própria através de uma rebelião, sistema que a TaleWorlds chama de "Civil War" e que foi expandido em atualizações pós-lançamento do jogo base.
+        </p>
+        <p>
+          Vale notar também que o número de assentamentos controlados por uma facção no início de uma campanha não é fixo: a configuração de Calradia pode variar levemente entre partidas dependendo das configurações de dificuldade e dos eventos aleatórios de guerra que ocorrem nos primeiros dias simulados de jogo antes mesmo do jogador tomar uma ação relevante. Por isso, listas como esta funcionam melhor como retrato do estado "padrão" do mapa nas configurações balanceadas oficiais do jogo, e não como contagem absoluta e imutável — jogadores avançados costumam consultar o mapa em tempo real através da tecla M para confirmar a posse atual de cada cidade e castelo antes de planejar uma campanha de conquista de longo prazo.
+        </p>
+        <p>
           Cada cidade controla em média de 3 a 5 vilas; cada castelo, de 2 a 3. Quando você conquista uma cidade,
           herda também essas vilas — e por isso a malha de assentamentos importa tanto: tomar Sargot, por exemplo,
           significa cortar o oeste vlandiano do mar. Tomar Quyaz quebra a sucessão tribal aserai. Tomar Tyal isola
@@ -429,6 +435,8 @@ const BannerlordTerritoriosFaccoes = () => {
             { title: "Mount & Blade Wiki — Settlements", url: "https://mountandblade.fandom.com/wiki/Settlements_(Bannerlord)", publisher: "Fandom" },
             { title: "TaleWorlds — War Sails Expansion", url: "https://www.taleworlds.com/", publisher: "TaleWorlds Entertainment" },
             { title: "Steam — Mount & Blade II: Bannerlord", url: "https://store.steampowered.com/app/261550/", publisher: "Valve / Steam" },
+            { title: "Mount & Blade Wiki — Kingdoms (Bannerlord)", url: "https://mountandblade.fandom.com/wiki/Kingdoms_(Bannerlord)", publisher: "Fandom" },
+            { title: "TaleWorlds Forums — Diplomacy & Clan System", url: "https://forums.taleworlds.com/", publisher: "TaleWorlds Entertainment" },
           ]}
         />
       </div>

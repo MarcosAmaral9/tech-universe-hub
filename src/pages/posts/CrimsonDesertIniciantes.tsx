@@ -49,6 +49,13 @@ const CrimsonDesertIniciantes = () => {
           Crimson Desert é um dos jogos de mundo aberto mais ambiciosos de 2026 — e um dos mais intimidadores para iniciantes. A Pearl Abyss não segura sua mão: você é despejado em Pywel com sistemas complexos, mecânicas sobrepostas e quase zero explicação. Após centenas de horas da comunidade global catalogando tudo, aqui estão as <strong>20 dicas essenciais</strong> que você precisa saber antes de começar.
         </p>
 
+        <p>
+          A Pearl Abyss é uma desenvolvedora sul-coreana fundada em 2010 por Kim Dae-il, conhecida internacionalmente por Black Desert Online, MMORPG lançado originalmente na Coreia do Sul em 2014 e que se tornou um dos jogos online mais duradouros do gênero, ainda recebendo atualizações regulares mais de uma década depois de seu lançamento. Crimson Desert nasceu inicialmente como uma expansão ou prequela conectada ao universo de Black Desert, mas ao longo do desenvolvimento — que se estendeu por quase uma década desde os primeiros anúncios conceituais em 2019 — o projeto evoluiu para um jogo de ação e aventura standalone, com narrativa e sistemas de combate completamente independentes do MMORPG que deu fama ao estúdio. Essa mudança de escopo, que incluiu múltiplos atrasos de lançamento amplamente noticiados pela imprensa especializada coreana e internacional, é parte do motivo pelo qual as expectativas em torno do jogo eram tão altas quando ele finalmente chegou ao mercado.
+        </p>
+        <p>
+          Tecnicamente, Crimson Desert utiliza uma versão evoluída do motor gráfico proprietário da Pearl Abyss, o mesmo "Black Desert Engine" usado em Black Desert Online, adaptado especificamente para suportar combate de ação em tempo real mais próximo de referências como God of War e Elden Ring do que da estrutura tradicional de MMORPG com barras de habilidade e cooldowns longos. Esse motor é conhecido na indústria por sua capacidade de renderizar grandes multidões de personagens simultâneos em tela sem grande perda de desempenho, recurso que a Pearl Abyss já demonstrava em Black Desert Online através das batalhas em massa de até centenas de jogadores em conflitos de guilda, e que reaparece em Crimson Desert nas sequências de batalha campal com dezenas de inimigos simultâneos.
+        </p>
+
         <div className="not-prose my-6 p-5 bg-card border border-border rounded-xl">
           <p className="font-bold mb-2">📋 O que este guia cobre:</p>
           <div className="grid sm:grid-cols-2 gap-1 text-sm text-muted-foreground">
@@ -252,6 +259,9 @@ const CrimsonDesertIniciantes = () => {
           <li><strong>Tentar explorar tudo antes de desbloquear travessia:</strong> habilidades de movimento como Force Palm e voo só são desbloqueadas progredindo na história. Complete os primeiros capítulos antes de explorar livremente.</li>
           <li><strong>Não usar animais de estimação:</strong> peteando animais regularmente você constrói confiança e os convoca para coletar loot automaticamente — um sistema que o jogo nunca explica diretamente.</li>
         </ul>
+        <p>
+          Vale notar que esse padrão de "sistemas escondidos que o jogo nunca explica claramente" não é exclusividade de Crimson Desert — é uma característica recorrente em produções de estúdios asiáticos de grande porte que historicamente preferem confiar na curiosidade orgânica do jogador e em comunidades online para disseminar conhecimento, em vez de sobrecarregar a interface com tutoriais extensos. Esse mesmo padrão de design já era visível em Black Desert Online, o MMORPG anterior da Pearl Abyss, que ficou conhecido entre jogadores ocidentais justamente pela curva de aprendizado íngreme e pela quantidade de mecânicas que só se tornavam claras através de wikis e guias produzidos pela própria comunidade — exatamente o papel que este guia de iniciantes busca cumprir para quem está chegando agora a Pywel.
+        </p>
       </div>
 
       
@@ -261,6 +271,9 @@ const CrimsonDesertIniciantes = () => {
         </p>
         <p>
           Para iniciantes, as três receitas mais importantes de aprender cedo são o Beef Stew (regeneração de HP durante combate), o Stamina Tonic (regenera Stamina 40% mais rápido por 10 minutos — essencial contra bosses de múltiplas fases) e o Protection Broth (reduz dano recebido em 15% por 5 minutos). Ingredientes para todas as três estão disponíveis em Hernand.
+        </p>
+        <p>
+          O design de Crimson Desert também reflete uma tendência mais ampla observada na indústria de jogos de ação e mundo aberto na última década: a influência crescente do chamado gênero "soulslike", popularizado por estúdios japoneses como FromSoftware com a série Dark Souls e, mais recentemente, Elden Ring. Embora a Pearl Abyss evite classificar oficialmente o jogo dessa forma, elementos como a punição por morte, a necessidade de aprender padrões de ataque de bosses através de tentativa e erro, e a ausência de marcadores de missão excessivos remetem diretamente a essa escola de design. A diferença fundamental é que Crimson Desert combina esses elementos com a escala e a liberdade de exploração típicas de mundos abertos massivos, criando um híbrido que tem dividido opiniões entre jogadores que preferem experiências mais guiadas e aqueles que valorizam a descoberta orgânica sem assistência constante da interface.
         </p>
 <EditorialTake category="geek" title="Análise do Marcos: Crimson Desert Recompensa Paciência — Mas Não Avisa Isso">
         <p>O guia de iniciantes mais honesto que posso oferecer sobre Crimson Desert é este: o jogo vai te punir pelas primeiras 10 horas se você jogar no piloto automático dos open worlds modernos. <strong>Não há marcadores de missão para tudo, não há tutoriais para cada sistema e não há hand-holding</strong>. Isso é proposital — a Pearl Abyss quer que você explore, experimente e descubra. O problema é que sistemas importantes como o aprendizado contextual de habilidades e o fast travel via Abyss Nexus nunca são explicados. Este guia existe porque o jogo não os explica. Uma vez que você entende esses sistemas, Crimson Desert abre de forma que poucos open worlds conseguem. A curva de entrada é íngreme, mas o platô que vem depois é vasto.</p>

@@ -63,6 +63,13 @@ const NintendoSwitch2Completo2026 = () => {
           catálogo de lançamento e o veredito final sobre comprar agora ou esperar.
         </p>
 
+        <p>
+          Para entender o tamanho da aposta da Nintendo, vale relembrar o histórico do Switch original, lançado em março de 2017. O console combinou pela primeira vez de forma sólida a experiência portátil e a de console de mesa em um único aparelho, conceito que a própria Nintendo já havia tentado de forma mais limitada com o Wii U em 2012 — um console que vendeu pouco mais de 13 milhões de unidades em todo o seu ciclo de vida, segundo relatórios financeiros divulgados pela própria empresa, e é hoje considerado um dos maiores fracassos comerciais da história recente da companhia. O Switch corrigiu essa equação e se tornou, segundo dados consolidados de vendas anuais da Nintendo, um dos consoles mais vendidos de todos os tempos, ultrapassando a marca histórica do Wii (cerca de 101 milhões de unidades) e se aproximando dos números do Nintendo DS e do PlayStation 2 entre os hardwares mais vendidos já lançados pela indústria.
+        </p>
+        <p>
+          O anúncio oficial do Switch 2 seguiu o padrão que a Nintendo costuma adotar para grandes lançamentos: um teaser inicial divulgado meses antes, seguido por um Nintendo Direct dedicado e mais detalhado revelando especificações técnicas, preço e catálogo de lançamento. Esse formato de revelação escalonada, usado também nos anúncios do Switch original em 2016 e 2017, tem como objetivo manter o hype do público crescendo de forma controlada ao longo de várias semanas, em vez de revelar tudo de uma vez em um único evento — estratégia de marketing que a empresa repete há praticamente uma década com resultados consistentes em termos de pré-vendas.
+        </p>
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BarChart3 className="h-7 w-7 text-geek" />
           Preço no Brasil e edições disponíveis
@@ -140,6 +147,12 @@ const NintendoSwitch2Completo2026 = () => {
           <li><strong>Botão C:</strong> dedicado ao GameChat para iniciar chamadas de voz e vídeo entre jogadores instantaneamente.</li>
           <li><strong>Câmera IR:</strong> mantida e melhorada para reconhecimento de rosto durante o GameChat.</li>
         </ul>
+        <p>
+          O recurso de GameChat representa a primeira tentativa séria da Nintendo de competir diretamente com funcionalidades sociais já consolidadas no PlayStation Network e no Xbox Live, plataformas que oferecem chamadas de voz e compartilhamento de tela entre jogadores há mais de uma década. A função permite que até 12 jogadores participem de uma chamada de voz simultânea, com a possibilidade de compartilhar a tela do próprio jogo para os demais participantes em tempo real — recurso que pode ser ativado tanto via microfone embutido no console quanto via headset USB-C ou Bluetooth. A Nintendo também introduziu suporte opcional a uma câmera USB externa, vendida separadamente, que permite chamadas de vídeo durante o jogo, em formato similar ao que consoles concorrentes já ofereciam havia anos.
+        </p>
+        <p>
+          Já a função mouse dos Joy-Con 2 nasceu de um sensor óptico posicionado na borda lateral de cada controle, permitindo que o jogador deslize o Joy-Con sobre qualquer superfície plana como faria com um mouse de computador tradicional. A Nintendo demonstrou publicamente essa funcionalidade em jogos de estratégia em tempo real e em ferramentas criativas de desenho, citando como inspiração direta a precisão exigida por gêneros historicamente mais difíceis de adaptar para controle analógico tradicional, como jogos de tabuleiro digitais, RTS e algumas ferramentas de produtividade. É um recurso que não existia em nenhuma geração anterior de Joy-Con e representa, junto ao encaixe magnético, a mudança física mais significativa no design do acessório desde o lançamento do Switch original em 2017.
+        </p>
 
         <AdRectangle className="my-8" />
 
@@ -184,6 +197,12 @@ const NintendoSwitch2Completo2026 = () => {
           recebem <strong>Nintendo Switch 2 Edition</strong>: melhorias gratuitas (Tears of the Kingdom, Breath of
           the Wild, Super Mario Odyssey) ou pagas (Metroid Prime 4 e versões aprimoradas de jogos third-party).
           Saves da nuvem migram automaticamente via conta Nintendo.
+        </p>
+        <p>
+          Essa retrocompatibilidade ampla é uma mudança importante em relação ao histórico da Nintendo, que tradicionalmente abandonava o catálogo físico de gerações anteriores a cada salto de hardware — quem possuía cartuchos de Nintendo 64 não podia usá-los no GameCube, e jogos de GameCube não rodavam no Wii sem emulação limitada. Ao manter compatibilidade ampla com a biblioteca física e digital do Switch original, a Nintendo reduz a barreira de entrada para quem já investiu em uma biblioteca grande de jogos ao longo dos quase dez anos de vida do primeiro console, ao mesmo tempo em que cria um incentivo extra de upgrade através das versões "Switch 2 Edition", que entregam resolução mais alta, taxa de quadros melhorada e tempos de carregamento reduzidos para títulos já consagrados.
+        </p>
+        <p>
+          Do ponto de vista de mercado, o lançamento do Switch 2 acontece num momento em que a concorrência direta — PlayStation 5 e Xbox Series X|S — já está há alguns anos no mercado e enfrenta desaceleração natural de vendas típica do meio de ciclo de uma geração de consoles. Esse cenário historicamente favorece a Nintendo, que costuma lançar hardware novo justamente quando rivais começam a perder fôlego, repetindo o padrão observado quando o Switch original chegou em 2017, alguns anos depois do PlayStation 4 e do Xbox One. Analistas do setor de games frequentemente apontam essa estratégia de timing como um dos fatores que explicam por que a Nintendo, apesar de não competir diretamente em poder gráfico bruto com Sony e Microsoft, segue conseguindo vender dezenas de milhões de unidades de hardware a cada novo ciclo.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">

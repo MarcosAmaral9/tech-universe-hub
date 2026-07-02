@@ -578,6 +578,10 @@ const BannerlordCulturasReinos = () => {
           <a href="/geek/bannerlord">painel completo</a>.
         </p>
 
+        <p>
+          Boa parte da longevidade dessas culturas e da forma como os jogadores experimentam o equilíbrio entre elas vem do suporte da TaleWorlds à modificação do jogo. A empresa disponibiliza ferramentas oficiais de modding e integração nativa com o Steam Workshop desde os primeiros meses de acesso antecipado, permitindo que a comunidade crie desde pequenos ajustes de balanceamento de tropas até conversões totais que substituem completamente o cenário de Calradia por outros períodos e regiões históricas. Esse ecossistema de mods é parte do motivo pelo qual debates sobre qual cultura é "mais forte" seguem ativos anos após o lançamento: cada atualização de balanceamento, oficial ou feita pela comunidade, reabre a discussão sobre o equilíbrio entre cavalaria, infantaria e arqueiros das nove facções jogáveis.
+        </p>
+
 
 
         <EditorialTake category="geek" title="Análise do Marcos: As Culturas de Bannerlord São o Verdadeiro Coração Estratégico do Jogo">
@@ -608,6 +612,18 @@ const BannerlordCulturasReinos = () => {
               title: "Mount & Blade II: Bannerlord no Steam",
               url: "https://store.steampowered.com/app/261550/Mount__Blade_II_Bannerlord/",
               publisher: "Valve / Steam",
+              accessedAt: "Junho 2026",
+            },
+            {
+              title: "Steam Workshop — Mount & Blade II: Bannerlord Mods",
+              url: "https://steamcommunity.com/app/261550/workshop/",
+              publisher: "Valve / Steam Workshop",
+              accessedAt: "Junho 2026",
+            },
+            {
+              title: "Mount & Blade II: Bannerlord — Metacritic",
+              url: "https://www.metacritic.com/game/mount-blade-ii-bannerlord/",
+              publisher: "Metacritic",
               accessedAt: "Junho 2026",
             },
           ]}

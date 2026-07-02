@@ -305,6 +305,9 @@ const BannerlordModsEssenciais = () => {
           do limite de tamanho de upload da Valve.
         </p>
         <p>
+          Vale destacar que o Harmony, biblioteca central para todo o ecossistema de mods de Bannerlord, não é uma ferramenta exclusiva da franquia: trata-se de uma biblioteca de código aberto para a linguagem C#, desenvolvida originalmente por Andreas Pardeike e disponibilizada publicamente no GitHub, amplamente adotada pela comunidade de modding de jogos construídos sobre o motor Unity e frameworks .NET em geral. Títulos como Rimworld, Cities: Skylines e Valheim também dependem de bibliotecas equivalentes ou do próprio Harmony para permitir que mods alterem comportamento do jogo sem a necessidade de acesso ao código-fonte original — o que explica por que desenvolvedores que já modificaram outros jogos baseados nesse mesmo ecossistema técnico costumam se adaptar rapidamente ao fluxo de instalação de mods em Bannerlord.
+        </p>
+        <p>
           O fluxo recomendado é: instalar manualmente as quatro bibliotecas base do Nexus, criar uma pasta de
           backup do seu <code>Modules/</code> antes de mexer, ativar uma camada por vez no launcher (Native →
           Bibliotecas → QoL → Combate → Overhauls), e só depois carregar a campanha. Qualquer crash na tela de
