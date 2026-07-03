@@ -27,6 +27,8 @@ const STATIC_PAGES = [
   { path: "/geek/avatar",            changefreq: "weekly", priority: "0.8" },
   { path: "/geek/assassins-creed",   changefreq: "weekly", priority: "0.8" },
   { path: "/geek/crimson-desert",    changefreq: "weekly", priority: "0.8" },
+  { path: "/geek/bannerlord",        changefreq: "weekly", priority: "0.8" },
+  { path: "/geek/gta-vi",            changefreq: "weekly", priority: "0.8" },
   { path: "/otaku/tensura",          changefreq: "weekly", priority: "0.8" },
   { path: "/otaku/overlord",         changefreq: "weekly", priority: "0.8" },
   // Regiões Crimson Desert
