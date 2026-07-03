@@ -1119,8 +1119,15 @@ const DynamicSEO = () => {
   const isRegion = pathname.startsWith("/regiao/");
   const ogType = (isPost || isRegion) ? "article" : "website";
 
-  const privatePaths = ["/configuracoes", "/entrar", "/redefinir-senha", "/painel-social", "/instalar"];
-  const isPrivate = privatePaths.some(p => pathname.startsWith(p)) || pathname.startsWith("/perfil/") || pathname.startsWith("/auth/");
+  const privatePaths = ["/configuracoes", "/entrar", "/redefinir-senha", "/painel-social", "/instalar", "/leitura-offline"];
+  // noindex para: rotas privadas/utilitárias, perfis dinâmicos, callbacks de auth,
+  // e posts inexistentes (URLs órfãs /post/... que caem em 404 lógico).
+  const isOrphanPost = isPost && !post;
+  const isPrivate =
+    privatePaths.some((p) => pathname.startsWith(p)) ||
+    pathname.startsWith("/perfil/") ||
+    pathname.startsWith("/auth/") ||
+    isOrphanPost;
   const robotsContent = isPrivate
     ? "noindex, nofollow"
     : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1";
