@@ -412,10 +412,11 @@ export default defineConfig(({ mode }) => ({
     chunkSizeWarningLimit: 1000,
     minify: "esbuild",
     cssCodeSplit: true,
+    // NOTE: manual chunking removed — it caused TDZ errors ("Cannot access 'A'
+    // before initialization") on production builds due to circular deps between
+    // vendor/vendor-react/vendor-ui chunks. Let Rollup auto-split.
     rollupOptions: {
-      output: {
-        manualChunks: groupedManualChunks,
-      },
+      output: {},
     },
   },
 }));
