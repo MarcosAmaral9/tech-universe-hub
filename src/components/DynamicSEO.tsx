@@ -1065,13 +1065,17 @@ const buildPostKeywords = (post: { title: string; excerpt: string; category: str
 };
 
 const DynamicSEO = () => {
-  const { pathname, search } = useLocation();
+  const { pathname } = useLocation();
 
   let title = SITE_NAME;
   let description = "Seu portal definitivo para IAs, investimentos, cultura geek e o mundo otaku.";
   let image = `${BASE_URL}/og-image.png`;
   let keywords = "VICIO CODE, tecnologia, IA, investimentos, geek, otaku, animes, mangás, finanças, games";
-  const url = `${BASE_URL}${pathname}${search || ""}`;
+  // Canonical/og:url sempre limpos (sem query/hash) — evita duplicidade
+  // no Google para variações como ?utm_*, ?subtopic=..., ?ref=..., etc.
+  // Normaliza trailing slash: mantém "/" para raiz e remove para o resto.
+  const cleanPath = pathname.length > 1 && pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+  const url = `${BASE_URL}${cleanPath}`;
   const isPost = pathname.startsWith("/post/");
 
   const post = isPost ? blogPosts.find((p) => p.slug === pathname.replace("/post/", "")) : undefined;
