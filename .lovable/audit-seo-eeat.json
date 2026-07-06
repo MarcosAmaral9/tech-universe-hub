@@ -1,21 +1,19 @@
 {
-  "generatedAt": "2026-05-25T00:16:00.492Z",
+  "generatedAt": "2026-07-06T20:21:35.613Z",
   "counts": {
-    "OK": 0,
-    "A": 0,
-    "B": 1,
-    "C": 0,
-    "D": 148
+    "OK": 14,
+    "A": 59,
+    "B": 3,
+    "C": 12,
+    "D": 77
   },
-  "missingFiles": [
-    "crimson-desert-personagens-kliff-damiane-oongka"
-  ],
+  "missingFiles": [],
   "reports": [
     {
-      "slug": "gpt-5-ia-trabalhador-digital-autonomo-2026",
-      "file": "GptTrabalhadorDigital2026.tsx",
-      "keyword": "GPT-5.4",
-      "category": "ia",
+      "slug": "re-monster-anime-manga-guia-2026",
+      "file": "ReMonster2026.tsx",
+      "keyword": "re monster anime",
+      "category": "otaku",
       "checks": {
         "h1": true,
         "intro": true,
@@ -25,16 +23,71 @@
         "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 4,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 703,
+        "wordCount": 1467,
+        "has1500Words": false
+      },
+      "bucket": "C",
+      "issues": [
+        "apenas ~1467 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "isekai-mokushiroku-mynoghra-guia-2026",
+      "file": "IsekaiMokushirokuMynoghra2026.tsx",
+      "keyword": "isekai mokushiroku mynoghra",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1356,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "ArticleSources com 4 fonte(s) (mínimo 5)",
-        "apenas ~703 palavras (mínimo 1500)"
+        "keyword ausente em meta description",
+        "keyword ausente em excerpt",
+        "apenas ~1356 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "gpt-5-ia-trabalhador-digital-autonomo-2026",
+      "file": "GptTrabalhadorDigital2026.tsx",
+      "keyword": "GPT-5.4",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1480,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
+        "keyword ausente em excerpt",
+        "apenas ~1480 palavras (mínimo 1500)"
       ]
     },
     {
@@ -51,18 +104,16 @@
         "metaDescription": false,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 4,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 826,
-        "has1500Words": false
+        "wordCount": 1710,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
         "keyword ausente em meta description",
-        "keyword ausente em excerpt",
-        "ArticleSources com 4 fonte(s) (mínimo 5)",
-        "apenas ~826 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -82,13 +133,12 @@
         "articleSourcesCount": 4,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 406,
-        "has1500Words": false
+        "wordCount": 1957,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "B",
       "issues": [
-        "ArticleSources com 4 fonte(s) (mínimo 5)",
-        "apenas ~406 palavras (mínimo 1500)"
+        "ArticleSources com 4 fonte(s) (mínimo 5)"
       ]
     },
     {
@@ -103,18 +153,17 @@
         "pageMetaExists": true,
         "metaTitle": true,
         "metaDescription": true,
-        "metaKeywords": true,
+        "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 4,
-        "hasArticleSources": false,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 567,
-        "has1500Words": false
+        "wordCount": 1586,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "ArticleSources com 4 fonte(s) (mínimo 5)",
-        "apenas ~567 palavras (mínimo 1500)"
+        "keyword ausente em meta keywords"
       ]
     },
     {
@@ -128,19 +177,18 @@
         "excerpt": true,
         "pageMetaExists": true,
         "metaTitle": true,
-        "metaDescription": true,
+        "metaDescription": false,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 4,
-        "hasArticleSources": false,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 475,
-        "has1500Words": false
+        "wordCount": 1561,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "ArticleSources com 4 fonte(s) (mínimo 5)",
-        "apenas ~475 palavras (mínimo 1500)"
+        "keyword ausente em meta description"
       ]
     },
     {
@@ -154,20 +202,19 @@
         "excerpt": false,
         "pageMetaExists": true,
         "metaTitle": true,
-        "metaDescription": true,
+        "metaDescription": false,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 4,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 557,
-        "has1500Words": false
+        "wordCount": 1570,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "keyword ausente em excerpt",
-        "ArticleSources com 4 fonte(s) (mínimo 5)",
-        "apenas ~557 palavras (mínimo 1500)"
+        "keyword ausente em meta description",
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -180,22 +227,21 @@
         "intro": true,
         "excerpt": false,
         "pageMetaExists": true,
-        "metaTitle": true,
-        "metaDescription": false,
+        "metaTitle": false,
+        "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 5,
+        "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 572,
-        "has1500Words": false
+        "wordCount": 1602,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "keyword ausente em meta description",
+        "keyword ausente em meta title",
         "keyword ausente em <h1>",
-        "keyword ausente em excerpt",
-        "apenas ~572 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -210,18 +256,19 @@
         "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": true,
-        "metaKeywords": true,
+        "metaKeywords": false,
         "hasAuthorBio": true,
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 832,
+        "wordCount": 1484,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "keyword ausente em meta title",
-        "apenas ~832 palavras (mínimo 1500)"
+        "keyword ausente em meta keywords",
+        "apenas ~1484 palavras (mínimo 1500)"
       ]
     },
     {
@@ -235,23 +282,22 @@
         "excerpt": false,
         "pageMetaExists": true,
         "metaTitle": false,
-        "metaDescription": false,
+        "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 860,
+        "wordCount": 1398,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "keyword ausente em meta title",
-        "keyword ausente em meta description",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "apenas ~860 palavras (mínimo 1500)"
+        "apenas ~1398 palavras (mínimo 1500)"
       ]
     },
     {
@@ -268,17 +314,15 @@
         "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 4,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 635,
-        "has1500Words": false
+        "wordCount": 1591,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "keyword ausente em excerpt",
-        "ArticleSources com 4 fonte(s) (mínimo 5)",
-        "apenas ~635 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -290,23 +334,22 @@
         "h1": true,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 4,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 887,
+        "wordCount": 1475,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
         "keyword ausente em excerpt",
         "ArticleSources com 4 fonte(s) (mínimo 5)",
-        "apenas ~887 palavras (mínimo 1500)"
+        "apenas ~1475 palavras (mínimo 1500)"
       ]
     },
     {
@@ -317,24 +360,24 @@
       "checks": {
         "h1": false,
         "intro": true,
-        "excerpt": true,
-        "pageMetaExists": false,
+        "excerpt": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 4,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 783,
-        "has1500Words": false
+        "wordCount": 1604,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
         "keyword ausente em <h1>",
-        "ArticleSources com 4 fonte(s) (mínimo 5)",
-        "apenas ~783 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -346,22 +389,21 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 4,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 422,
+        "wordCount": 1352,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 4 fonte(s) (mínimo 5)",
-        "apenas ~422 palavras (mínimo 1500)"
+        "keyword ausente em meta description",
+        "apenas ~1352 palavras (mínimo 1500)"
       ]
     },
     {
@@ -373,22 +415,20 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 4,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 604,
+        "wordCount": 1411,
         "has1500Words": false
       },
-      "bucket": "D",
+      "bucket": "C",
       "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 4 fonte(s) (mínimo 5)",
-        "apenas ~604 palavras (mínimo 1500)"
+        "apenas ~1411 palavras (mínimo 1500)"
       ]
     },
     {
@@ -400,22 +440,23 @@
         "h1": true,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 5,
+        "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 600,
+        "wordCount": 1379,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente em excerpt",
-        "apenas ~600 palavras (mínimo 1500)"
+        "apenas ~1379 palavras (mínimo 1500)"
       ]
     },
     {
@@ -427,22 +468,21 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 520,
+        "wordCount": 1290,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~520 palavras (mínimo 1500)"
+        "apenas ~1290 palavras (mínimo 1500)"
       ]
     },
     {
@@ -454,23 +494,21 @@
         "h1": true,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 604,
-        "has1500Words": false
+        "wordCount": 1520,
+        "has1500Words": true
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~604 palavras (mínimo 1500)"
+        "ArticleSources com 0 fonte(s) (mínimo 5)"
       ]
     },
     {
@@ -482,7 +520,7 @@
         "h1": true,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
         "metaKeywords": false,
@@ -490,15 +528,16 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 584,
-        "has1500Words": false
+        "wordCount": 1580,
+        "has1500Words": true
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~584 palavras (mínimo 1500)"
+        "ArticleSources com 0 fonte(s) (mínimo 5)"
       ]
     },
     {
@@ -510,24 +549,22 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 911,
-        "has1500Words": false
+        "wordCount": 1603,
+        "has1500Words": true
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~911 palavras (mínimo 1500)"
+        "ArticleSources com 0 fonte(s) (mínimo 5)"
       ]
     },
     {
@@ -538,24 +575,25 @@
       "checks": {
         "h1": false,
         "intro": true,
-        "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 712,
+        "wordCount": 1414,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta description",
         "keyword ausente em <h1>",
+        "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~712 palavras (mínimo 1500)"
+        "apenas ~1414 palavras (mínimo 1500)"
       ]
     },
     {
@@ -566,23 +604,23 @@
       "checks": {
         "h1": true,
         "intro": true,
-        "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 785,
+        "wordCount": 1285,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~785 palavras (mínimo 1500)"
+        "keyword ausente em meta description",
+        "keyword ausente em excerpt",
+        "apenas ~1285 palavras (mínimo 1500)"
       ]
     },
     {
@@ -594,22 +632,20 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 537,
+        "wordCount": 1447,
         "has1500Words": false
       },
-      "bucket": "D",
+      "bucket": "C",
       "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~537 palavras (mínimo 1500)"
+        "apenas ~1447 palavras (mínimo 1500)"
       ]
     },
     {
@@ -621,24 +657,23 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 547,
+        "wordCount": 1350,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~547 palavras (mínimo 1500)"
+        "apenas ~1350 palavras (mínimo 1500)"
       ]
     },
     {
@@ -650,23 +685,21 @@
         "h1": true,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 566,
-        "has1500Words": false
+        "wordCount": 2170,
+        "has1500Words": true
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~566 palavras (mínimo 1500)"
+        "ArticleSources com 0 fonte(s) (mínimo 5)"
       ]
     },
     {
@@ -678,22 +711,20 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 583,
-        "has1500Words": false
+        "wordCount": 2323,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "B",
       "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~583 palavras (mínimo 1500)"
+        "ArticleSources com 0 fonte(s) (mínimo 5)"
       ]
     },
     {
@@ -705,22 +736,21 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 616,
-        "has1500Words": false
+        "wordCount": 1551,
+        "has1500Words": true
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~616 palavras (mínimo 1500)"
+        "keyword ausente em meta description",
+        "ArticleSources com 0 fonte(s) (mínimo 5)"
       ]
     },
     {
@@ -732,24 +762,24 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 848,
+        "wordCount": 1484,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~848 palavras (mínimo 1500)"
+        "apenas ~1484 palavras (mínimo 1500)"
       ]
     },
     {
@@ -761,24 +791,21 @@
         "h1": true,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 541,
+        "articleSourcesCount": 8,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1443,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~541 palavras (mínimo 1500)"
+        "apenas ~1443 palavras (mínimo 1500)"
       ]
     },
     {
@@ -790,24 +817,23 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 603,
+        "wordCount": 1379,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta description",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~603 palavras (mínimo 1500)"
+        "apenas ~1379 palavras (mínimo 1500)"
       ]
     },
     {
@@ -819,22 +845,22 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 625,
+        "wordCount": 1473,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta description",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~625 palavras (mínimo 1500)"
+        "apenas ~1473 palavras (mínimo 1500)"
       ]
     },
     {
@@ -846,25 +872,21 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 631,
-        "has1500Words": false
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1539,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~631 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -876,23 +898,19 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 723,
-        "has1500Words": false
+        "wordCount": 2113,
+        "has1500Words": true
       },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~723 palavras (mínimo 1500)"
-      ]
+      "bucket": "OK",
+      "issues": []
     },
     {
       "slug": "saros-housemarque-ps5-2026",
@@ -903,23 +921,20 @@
         "h1": false,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 583,
-        "has1500Words": false
+        "wordCount": 1986,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~583 palavras (mínimo 1500)"
+        "keyword ausente em <h1>"
       ]
     },
     {
@@ -931,22 +946,20 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 635,
-        "has1500Words": false
+        "wordCount": 1513,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "B",
       "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~635 palavras (mínimo 1500)"
+        "ArticleSources com 0 fonte(s) (mínimo 5)"
       ]
     },
     {
@@ -958,24 +971,24 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 358,
+        "wordCount": 1423,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~358 palavras (mínimo 1500)"
+        "apenas ~1423 palavras (mínimo 1500)"
       ]
     },
     {
@@ -987,22 +1000,22 @@
         "h1": true,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 5,
+        "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 404,
+        "wordCount": 1327,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta description",
         "keyword ausente em excerpt",
-        "apenas ~404 palavras (mínimo 1500)"
+        "apenas ~1327 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1014,22 +1027,19 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 5,
+        "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 458,
-        "has1500Words": false
+        "wordCount": 1529,
+        "has1500Words": true
       },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "apenas ~458 palavras (mínimo 1500)"
-      ]
+      "bucket": "OK",
+      "issues": []
     },
     {
       "slug": "cortar-gastos-2026",
@@ -1040,23 +1050,22 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 5,
+        "articleSourcesCount": 7,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 271,
-        "has1500Words": false
+        "wordCount": 1553,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta description",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "apenas ~271 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -1068,22 +1077,20 @@
         "h1": true,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 331,
-        "has1500Words": false
+        "wordCount": 2062,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em excerpt",
-        "apenas ~331 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -1095,22 +1102,19 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 520,
-        "has1500Words": false
+        "wordCount": 2225,
+        "has1500Words": true
       },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "apenas ~520 palavras (mínimo 1500)"
-      ]
+      "bucket": "OK",
+      "issues": []
     },
     {
       "slug": "jujutsu-kaisen-guia-completo-2026",
@@ -1121,22 +1125,21 @@
         "h1": true,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 5,
+        "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 331,
-        "has1500Words": false
+        "wordCount": 1513,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em excerpt",
-        "apenas ~331 palavras (mínimo 1500)"
+        "keyword ausente em meta description",
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -1148,23 +1151,22 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 693,
+        "wordCount": 1407,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "apenas ~693 palavras (mínimo 1500)"
+        "apenas ~1407 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1176,22 +1178,20 @@
         "h1": true,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 668,
-        "has1500Words": false
+        "wordCount": 2307,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em excerpt",
-        "apenas ~668 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -1203,24 +1203,25 @@
         "h1": false,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 692,
+        "wordCount": 1480,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "apenas ~692 palavras (mínimo 1500)"
+        "apenas ~1480 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1232,24 +1233,46 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 785,
-        "has1500Words": false
+        "wordCount": 1519,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta description",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "apenas ~785 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
+    },
+    {
+      "slug": "crimson-desert-personagens-kliff-damiane-oongka",
+      "file": "CrimsonDesertPersonagens.tsx",
+      "keyword": "crimson desert personagens",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1903,
+        "has1500Words": true
+      },
+      "bucket": "OK",
+      "issues": []
     },
     {
       "slug": "crimson-desert-patches-atualizacoes-2026",
@@ -1260,24 +1283,21 @@
         "h1": true,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 514,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1462,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~514 palavras (mínimo 1500)"
+        "apenas ~1462 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1287,28 +1307,23 @@
       "category": "geek",
       "checks": {
         "h1": false,
-        "intro": false,
+        "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 541,
-        "has1500Words": false
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2000,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
         "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~541 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -1320,21 +1335,20 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 5,
+        "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 841,
+        "wordCount": 1351,
         "has1500Words": false
       },
-      "bucket": "D",
+      "bucket": "C",
       "issues": [
-        "sem PAGE_META manual",
-        "apenas ~841 palavras (mínimo 1500)"
+        "apenas ~1351 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1346,24 +1360,25 @@
         "h1": false,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 5,
+        "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 709,
+        "wordCount": 1464,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "apenas ~709 palavras (mínimo 1500)"
+        "apenas ~1464 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1375,22 +1390,21 @@
         "h1": true,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 5,
+        "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 665,
-        "has1500Words": false
+        "wordCount": 1515,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em excerpt",
-        "apenas ~665 palavras (mínimo 1500)"
+        "keyword ausente em meta description",
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -1402,23 +1416,21 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 5,
+        "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 714,
-        "has1500Words": false
+        "wordCount": 1593,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "apenas ~714 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -1438,15 +1450,14 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 969,
-        "has1500Words": false
+        "wordCount": 1507,
+        "has1500Words": true
       },
       "bucket": "D",
       "issues": [
         "keyword ausente em meta description",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~969 palavras (mínimo 1500)"
+        "ArticleSources com 0 fonte(s) (mínimo 5)"
       ]
     },
     {
@@ -1460,21 +1471,21 @@
         "excerpt": false,
         "pageMetaExists": true,
         "metaTitle": true,
-        "metaDescription": true,
+        "metaDescription": false,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 871,
+        "wordCount": 1490,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
+        "keyword ausente em meta description",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~871 palavras (mínimo 1500)"
+        "apenas ~1490 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1491,17 +1502,14 @@
         "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1004,
-        "has1500Words": false
+        "wordCount": 1612,
+        "has1500Words": true
       },
-      "bucket": "D",
-      "issues": [
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~1004 palavras (mínimo 1500)"
-      ]
+      "bucket": "OK",
+      "issues": []
     },
     {
       "slug": "reserva-emergencia-2026-como-montar",
@@ -1513,22 +1521,23 @@
         "intro": false,
         "excerpt": true,
         "pageMetaExists": true,
-        "metaTitle": true,
-        "metaDescription": true,
+        "metaTitle": false,
+        "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 872,
+        "wordCount": 1437,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
         "keyword ausente em meta keywords",
         "keyword ausente na introdução",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~872 palavras (mínimo 1500)"
+        "apenas ~1437 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1543,22 +1552,19 @@
         "pageMetaExists": true,
         "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 961,
-        "has1500Words": false
+        "wordCount": 1547,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
         "keyword ausente em meta description",
-        "keyword ausente em meta keywords",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~961 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -1570,25 +1576,21 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 678,
-        "has1500Words": false
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1624,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~678 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -1601,23 +1603,24 @@
         "intro": false,
         "excerpt": false,
         "pageMetaExists": true,
-        "metaTitle": true,
-        "metaDescription": true,
+        "metaTitle": false,
+        "metaDescription": false,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 706,
+        "wordCount": 1401,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~706 palavras (mínimo 1500)"
+        "apenas ~1401 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1629,25 +1632,22 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 535,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1226,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~535 palavras (mínimo 1500)"
+        "apenas ~1226 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1659,23 +1659,21 @@
         "h1": false,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 2123,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2384,
         "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake"
+        "keyword ausente em meta title",
+        "keyword ausente em <h1>"
       ]
     },
     {
@@ -1687,23 +1685,22 @@
         "h1": false,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 2359,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2546,
         "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em <h1>",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake"
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em <h1>"
       ]
     },
     {
@@ -1715,24 +1712,24 @@
         "h1": false,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 2519,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2543,
         "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente em <h1>",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -1744,23 +1741,20 @@
         "h1": true,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 1661,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2337,
         "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -1772,24 +1766,22 @@
         "h1": false,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 2232,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2037,
         "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
         "keyword ausente em <h1>",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -1799,27 +1791,27 @@
       "category": "geek",
       "checks": {
         "h1": false,
-        "intro": true,
+        "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 706,
-        "has1500Words": false
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2254,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente em <h1>",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~706 palavras (mínimo 1500)"
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -1831,25 +1823,25 @@
         "h1": false,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 2529,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2209,
         "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -1861,24 +1853,20 @@
         "h1": true,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 730,
-        "has1500Words": false
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2264,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~730 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -1890,22 +1878,20 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 422,
+        "wordCount": 1457,
         "has1500Words": false
       },
-      "bucket": "D",
+      "bucket": "C",
       "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~422 palavras (mínimo 1500)"
+        "apenas ~1457 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1917,26 +1903,25 @@
         "h1": false,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 949,
-        "has1500Words": false
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2010,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~949 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -1948,25 +1933,23 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 689,
-        "has1500Words": false
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2386,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~689 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -1978,25 +1961,25 @@
         "h1": false,
         "intro": false,
         "excerpt": true,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 467,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1499,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~467 palavras (mínimo 1500)"
+        "apenas ~1499 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2008,24 +1991,19 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 1161,
-        "has1500Words": false
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1938,
+        "has1500Words": true
       },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~1161 palavras (mínimo 1500)"
-      ]
+      "bucket": "OK",
+      "issues": []
     },
     {
       "slug": "ia-remasterizacao-jogos-classicos",
@@ -2036,23 +2014,22 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 5,
+        "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1121,
-        "has1500Words": false
+        "wordCount": 1558,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta description",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "apenas ~1121 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -2064,25 +2041,25 @@
         "h1": false,
         "intro": false,
         "excerpt": true,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 505,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1449,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~505 palavras (mínimo 1500)"
+        "apenas ~1449 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2094,22 +2071,20 @@
         "h1": true,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 2218,
+        "wordCount": 2335,
         "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -2121,26 +2096,25 @@
         "h1": false,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 975,
-        "has1500Words": false
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2015,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~975 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -2157,10 +2131,10 @@
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 825,
+        "wordCount": 1375,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2171,8 +2145,7 @@
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~825 palavras (mínimo 1500)"
+        "apenas ~1375 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2189,17 +2162,14 @@
         "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 853,
-        "has1500Words": false
+        "wordCount": 1629,
+        "has1500Words": true
       },
-      "bucket": "D",
-      "issues": [
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~853 palavras (mínimo 1500)"
-      ]
+      "bucket": "OK",
+      "issues": []
     },
     {
       "slug": "vikings-legado-ragnar-lothbrok",
@@ -2210,25 +2180,21 @@
         "h1": false,
         "intro": false,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 1004,
-        "has1500Words": false
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1868,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
         "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~1004 palavras (mínimo 1500)"
+        "keyword ausente na introdução"
       ]
     },
     {
@@ -2240,25 +2206,25 @@
         "h1": false,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 1518,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2069,
         "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -2268,27 +2234,24 @@
       "category": "geek",
       "checks": {
         "h1": false,
-        "intro": false,
+        "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 1587,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2077,
         "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
         "keyword ausente em <h1>",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -2300,25 +2263,25 @@
         "h1": false,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 454,
-        "has1500Words": false
+        "wordCount": 1593,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~454 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -2330,23 +2293,20 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 440,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1499,
         "has1500Words": false
       },
-      "bucket": "D",
+      "bucket": "C",
       "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~440 palavras (mínimo 1500)"
+        "apenas ~1499 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2363,10 +2323,10 @@
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 597,
+        "wordCount": 1442,
         "has1500Words": false
       },
       "bucket": "D",
@@ -2375,8 +2335,7 @@
         "keyword ausente em meta keywords",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~597 palavras (mínimo 1500)"
+        "apenas ~1442 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2388,25 +2347,24 @@
         "h1": false,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 468,
-        "has1500Words": false
+        "wordCount": 1563,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~468 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -2417,25 +2375,24 @@
       "checks": {
         "h1": false,
         "intro": false,
-        "excerpt": false,
-        "pageMetaExists": false,
+        "excerpt": true,
+        "pageMetaExists": true,
         "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 5,
+        "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 723,
+        "wordCount": 1496,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "apenas ~723 palavras (mínimo 1500)"
+        "apenas ~1496 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2447,22 +2404,21 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 674,
+        "wordCount": 1398,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~674 palavras (mínimo 1500)"
+        "apenas ~1398 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2476,22 +2432,20 @@
         "excerpt": true,
         "pageMetaExists": true,
         "metaTitle": true,
-        "metaDescription": false,
+        "metaDescription": true,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 7,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 571,
+        "wordCount": 1348,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "keyword ausente em meta description",
         "keyword ausente em meta keywords",
         "keyword ausente na introdução",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~571 palavras (mínimo 1500)"
+        "apenas ~1348 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2501,27 +2455,24 @@
       "category": "invest",
       "checks": {
         "h1": true,
-        "intro": false,
+        "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 336,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1262,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente na introdução",
+        "keyword ausente em meta description",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~336 palavras (mínimo 1500)"
+        "apenas ~1262 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2531,28 +2482,25 @@
       "category": "invest",
       "checks": {
         "h1": false,
-        "intro": false,
+        "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 361,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1271,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta description",
         "keyword ausente em <h1>",
-        "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~361 palavras (mínimo 1500)"
+        "apenas ~1271 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2564,24 +2512,25 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 397,
+        "wordCount": 1197,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~397 palavras (mínimo 1500)"
+        "apenas ~1197 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2593,24 +2542,23 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 495,
+        "wordCount": 1112,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta description",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~495 palavras (mínimo 1500)"
+        "apenas ~1112 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2620,26 +2568,24 @@
       "category": "invest",
       "checks": {
         "h1": true,
-        "intro": false,
+        "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 7,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 383,
+        "wordCount": 1296,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente na introdução",
+        "keyword ausente em meta description",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~383 palavras (mínimo 1500)"
+        "apenas ~1296 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2651,22 +2597,21 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 315,
+        "wordCount": 1296,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~315 palavras (mínimo 1500)"
+        "keyword ausente em meta description",
+        "apenas ~1296 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2676,26 +2621,24 @@
       "category": "invest",
       "checks": {
         "h1": true,
-        "intro": false,
+        "intro": true,
         "excerpt": false,
         "pageMetaExists": true,
         "metaTitle": true,
-        "metaDescription": true,
-        "metaKeywords": false,
+        "metaDescription": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 390,
+        "wordCount": 1174,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "keyword ausente em meta keywords",
-        "keyword ausente na introdução",
+        "keyword ausente em meta description",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~390 palavras (mínimo 1500)"
+        "apenas ~1174 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2705,26 +2648,24 @@
       "category": "invest",
       "checks": {
         "h1": true,
-        "intro": false,
+        "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 292,
+        "wordCount": 1132,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente na introdução",
+        "keyword ausente em meta description",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~292 palavras (mínimo 1500)"
+        "apenas ~1132 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2736,26 +2677,26 @@
         "h1": false,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 164,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1136,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~164 palavras (mínimo 1500)"
+        "apenas ~1136 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2765,25 +2706,23 @@
       "category": "ia",
       "checks": {
         "h1": true,
-        "intro": false,
-        "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 8,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 519,
-        "has1500Words": false
+        "wordCount": 1540,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente na introdução",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~519 palavras (mínimo 1500)"
+        "keyword ausente em meta description",
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -2794,25 +2733,22 @@
       "checks": {
         "h1": true,
         "intro": false,
-        "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 505,
+        "wordCount": 1485,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~505 palavras (mínimo 1500)"
+        "apenas ~1485 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2824,24 +2760,24 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 484,
+        "wordCount": 1392,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~484 palavras (mínimo 1500)"
+        "apenas ~1392 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2852,23 +2788,25 @@
       "checks": {
         "h1": true,
         "intro": false,
-        "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 5,
+        "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 924,
+        "wordCount": 1456,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente na introdução",
-        "apenas ~924 palavras (mínimo 1500)"
+        "keyword ausente em excerpt",
+        "apenas ~1456 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2879,23 +2817,24 @@
       "checks": {
         "h1": true,
         "intro": false,
-        "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 5,
+        "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1102,
-        "has1500Words": false
+        "wordCount": 1698,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente na introdução",
-        "apenas ~1102 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -2907,24 +2846,23 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 498,
+        "wordCount": 1451,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta description",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~498 palavras (mínimo 1500)"
+        "apenas ~1451 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2934,27 +2872,22 @@
       "category": "otaku",
       "checks": {
         "h1": true,
-        "intro": false,
+        "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 515,
-        "has1500Words": false
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1696,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~515 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -2966,25 +2899,26 @@
         "h1": false,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 611,
+        "wordCount": 1286,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~611 palavras (mínimo 1500)"
+        "apenas ~1286 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2996,23 +2930,21 @@
         "h1": true,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 571,
-        "has1500Words": false
+        "wordCount": 1581,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~571 palavras (mínimo 1500)"
+        "keyword ausente em meta description",
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -3024,23 +2956,20 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 370,
-        "has1500Words": false
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1611,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~370 palavras (mínimo 1500)"
+        "keyword ausente em meta description"
       ]
     },
     {
@@ -3052,23 +2981,19 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 516,
-        "has1500Words": false
+        "wordCount": 1520,
+        "has1500Words": true
       },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~516 palavras (mínimo 1500)"
-      ]
+      "bucket": "OK",
+      "issues": []
     },
     {
       "slug": "aprender-japones-anime-2026",
@@ -3079,23 +3004,20 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 341,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1446,
         "has1500Words": false
       },
-      "bucket": "D",
+      "bucket": "C",
       "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~341 palavras (mínimo 1500)"
+        "apenas ~1446 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3107,24 +3029,22 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 525,
+        "wordCount": 1486,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~525 palavras (mínimo 1500)"
+        "apenas ~1486 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3134,26 +3054,24 @@
       "category": "otaku",
       "checks": {
         "h1": true,
-        "intro": false,
+        "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 443,
-        "has1500Words": false
+        "wordCount": 1530,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~443 palavras (mínimo 1500)"
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -3163,25 +3081,23 @@
       "category": "otaku",
       "checks": {
         "h1": true,
-        "intro": false,
+        "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 452,
+        "wordCount": 1398,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente na introdução",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~452 palavras (mínimo 1500)"
+        "keyword ausente em meta description",
+        "apenas ~1398 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3191,25 +3107,23 @@
       "category": "otaku",
       "checks": {
         "h1": true,
-        "intro": false,
+        "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 638,
+        "wordCount": 1488,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente na introdução",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~638 palavras (mínimo 1500)"
+        "keyword ausente em meta description",
+        "apenas ~1488 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3221,24 +3135,24 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 626,
+        "wordCount": 1482,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~626 palavras (mínimo 1500)"
+        "apenas ~1482 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3255,18 +3169,17 @@
         "metaDescription": false,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 718,
+        "wordCount": 1350,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "keyword ausente em meta description",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~718 palavras (mínimo 1500)"
+        "apenas ~1350 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3278,24 +3191,21 @@
         "h1": true,
         "intro": false,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 475,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1452,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
         "keyword ausente na introdução",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~475 palavras (mínimo 1500)"
+        "apenas ~1452 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3307,24 +3217,19 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 841,
-        "has1500Words": false
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1909,
+        "has1500Words": true
       },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~841 palavras (mínimo 1500)"
-      ]
+      "bucket": "OK",
+      "issues": []
     },
     {
       "slug": "crimson-desert-combate-blackspace-engine",
@@ -3335,24 +3240,20 @@
         "h1": true,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 728,
-        "has1500Words": false
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1684,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~728 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -3364,25 +3265,24 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 683,
-        "has1500Words": false
+        "articleSourcesCount": 8,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1592,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~683 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -3394,29 +3294,346 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2007,
+        "has1500Words": true
+      },
+      "bucket": "OK",
+      "issues": []
+    },
+    {
+      "slug": "crimson-desert-builds-guia-2026",
+      "file": "CrimsonDesertBuilds.tsx",
+      "keyword": "crimson desert builds",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1621,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "bannerlord-guia-completo-2026",
+      "file": "BannerlordGuiaCompleto.tsx",
+      "keyword": "mount blade ii",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
         "pageMetaExists": false,
         "metaTitle": false,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 768,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1436,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~768 palavras (mínimo 1500)"
+        "apenas ~1436 palavras (mínimo 1500)"
       ]
     },
     {
-      "slug": "crimson-desert-builds-guia-2026",
-      "file": "CrimsonDesertPersonagens.tsx",
-      "keyword": "crimson desert builds",
+      "slug": "bannerlord-culturas-reinos-calradia-2026",
+      "file": "BannerlordCulturasReinos.tsx",
+      "keyword": "bannerlord culturas reinos",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1311,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~1311 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "bannerlord-arvores-tropas-completo-2026",
+      "file": "BannerlordArvoresTropas.tsx",
+      "keyword": "bannerlord arvores tropas",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1333,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "apenas ~1333 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "bannerlord-melhores-tropas-tier-list-2026",
+      "file": "BannerlordMelhoresTropas.tsx",
+      "keyword": "bannerlord tropas tier",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 3,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 1538,
+        "has1500Words": true
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "ArticleSources com 3 fonte(s) (mínimo 5)"
+      ]
+    },
+    {
+      "slug": "bannerlord-territorios-faccoes-calradia-2026",
+      "file": "BannerlordTerritoriosFaccoes.tsx",
+      "keyword": "bannerlord territorios faccoes",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1299,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "apenas ~1299 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "bannerlord-war-sails-expansao-2026",
+      "file": "BannerlordWarSailsExpansao.tsx",
+      "keyword": "bannerlord war sails",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 4,
+        "hasArticleSources": false,
+        "hasEditorial": true,
+        "wordCount": 1880,
+        "has1500Words": true
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "ArticleSources com 4 fonte(s) (mínimo 5)"
+      ]
+    },
+    {
+      "slug": "bannerlord-mods-essenciais-2026",
+      "file": "BannerlordModsEssenciais.tsx",
+      "keyword": "bannerlord mods essenciais",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1438,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "apenas ~1438 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "gta-vi-pre-venda-edicoes-2026",
+      "file": "GtaViPreVendaEdicoes2026.tsx",
+      "keyword": "gta vi pre",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1978,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução"
+      ]
+    },
+    {
+      "slug": "gta-vi-precos-brasil-dolar-real-2026",
+      "file": "GtaViPrecosBrasilDolar2026.tsx",
+      "keyword": "gta vi precos",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 7,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1670,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução"
+      ]
+    },
+    {
+      "slug": "gta-vi-plataformas-requisitos-2026",
+      "file": "GtaViPlataformasRequisitos2026.tsx",
+      "keyword": "gta vi plataformas",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1777,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "gta-vi-mecanicas-gameplay-2026",
+      "file": "GtaViMecanicasGameplay2026.tsx",
+      "keyword": "gta vi mecanicas",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1799,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "gta-vi-trailers-marketing-2026",
+      "file": "GtaViTrailersMarketing2026.tsx",
+      "keyword": "gta vi trailers",
       "category": "geek",
       "checks": {
         "h1": false,
@@ -3427,21 +3644,45 @@
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 599,
-        "has1500Words": false
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1599,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
         "sem PAGE_META manual",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~599 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "gta-vi-mapa-leonida-vice-city-2026",
+      "file": "GtaViMapaLeonida2026.tsx",
+      "keyword": "gta vi mapa",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1708,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -3453,23 +3694,20 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 456,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1397,
         "has1500Words": false
       },
-      "bucket": "D",
+      "bucket": "C",
       "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~456 palavras (mínimo 1500)"
+        "apenas ~1397 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3483,21 +3721,18 @@
         "excerpt": false,
         "pageMetaExists": true,
         "metaTitle": true,
-        "metaDescription": false,
+        "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 624,
-        "has1500Words": false
+        "wordCount": 1566,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "keyword ausente em meta description",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~624 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -3509,25 +3744,26 @@
         "h1": false,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 7,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 552,
+        "wordCount": 1451,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~552 palavras (mínimo 1500)"
+        "apenas ~1451 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3538,22 +3774,24 @@
       "checks": {
         "h1": true,
         "intro": true,
-        "excerpt": true,
+        "excerpt": false,
         "pageMetaExists": true,
         "metaTitle": true,
-        "metaDescription": true,
-        "metaKeywords": true,
+        "metaDescription": false,
+        "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 636,
+        "wordCount": 1351,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~636 palavras (mínimo 1500)"
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
+        "keyword ausente em excerpt",
+        "apenas ~1351 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3565,7 +3803,7 @@
         "h1": false,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
         "metaKeywords": false,
@@ -3573,17 +3811,18 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 529,
-        "has1500Words": false
+        "wordCount": 2202,
+        "has1500Words": true
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~529 palavras (mínimo 1500)"
+        "ArticleSources com 0 fonte(s) (mínimo 5)"
       ]
     },
     {
@@ -3595,24 +3834,20 @@
         "h1": true,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 499,
-        "has1500Words": false
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1845,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~499 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -3624,23 +3859,22 @@
         "h1": true,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 564,
+        "wordCount": 1474,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
         "keyword ausente em excerpt",
         "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~564 palavras (mínimo 1500)"
+        "apenas ~1474 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3652,23 +3886,19 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 751,
-        "has1500Words": false
+        "wordCount": 1528,
+        "has1500Words": true
       },
-      "bucket": "D",
-      "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~751 palavras (mínimo 1500)"
-      ]
+      "bucket": "OK",
+      "issues": []
     },
     {
       "slug": "crimson-desert-mapa-regioes-pywel",
@@ -3679,23 +3909,20 @@
         "h1": true,
         "intro": true,
         "excerpt": true,
-        "pageMetaExists": false,
-        "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 405,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 939,
         "has1500Words": false
       },
-      "bucket": "D",
+      "bucket": "C",
       "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~405 palavras (mínimo 1500)"
+        "apenas ~939 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3712,17 +3939,14 @@
         "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 4145,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 4255,
         "has1500Words": true
       },
-      "bucket": "B",
-      "issues": [
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake"
-      ]
+      "bucket": "OK",
+      "issues": []
     },
     {
       "slug": "crimson-desert-guia-iniciantes-dicas",
@@ -3738,17 +3962,15 @@
         "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 347,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1463,
         "has1500Words": false
       },
-      "bucket": "D",
+      "bucket": "C",
       "issues": [
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~347 palavras (mínimo 1500)"
+        "apenas ~1463 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3765,17 +3987,15 @@
         "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 633,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1338,
         "has1500Words": false
       },
-      "bucket": "D",
+      "bucket": "C",
       "issues": [
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~633 palavras (mínimo 1500)"
+        "apenas ~1338 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3787,23 +4007,23 @@
         "h1": true,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1215,
-        "has1500Words": false
+        "wordCount": 1717,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~1215 palavras (mínimo 1500)"
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -3815,24 +4035,23 @@
         "h1": false,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1361,
-        "has1500Words": false
+        "wordCount": 1897,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
         "keyword ausente em <h1>",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~1361 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -3844,26 +4063,24 @@
         "h1": false,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 804,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1495,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~804 palavras (mínimo 1500)"
+        "apenas ~1495 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3875,24 +4092,23 @@
         "h1": true,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
-        "metaTitle": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 660,
+        "wordCount": 1455,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta description",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~660 palavras (mínimo 1500)"
+        "apenas ~1455 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3904,26 +4120,24 @@
         "h1": false,
         "intro": false,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 920,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1446,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~920 palavras (mínimo 1500)"
+        "apenas ~1446 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3935,25 +4149,23 @@
         "h1": false,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
-        "metaDescription": false,
-        "metaKeywords": false,
+        "metaDescription": true,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 683,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1442,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
         "keyword ausente em <h1>",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~683 palavras (mínimo 1500)"
+        "apenas ~1442 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3965,25 +4177,24 @@
         "h1": false,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 666,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1475,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
         "keyword ausente em <h1>",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~666 palavras (mínimo 1500)"
+        "apenas ~1475 palavras (mínimo 1500)"
       ]
     },
     {
@@ -3995,25 +4206,24 @@
         "h1": false,
         "intro": true,
         "excerpt": false,
-        "pageMetaExists": false,
+        "pageMetaExists": true,
         "metaTitle": false,
         "metaDescription": false,
-        "metaKeywords": false,
+        "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 639,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1433,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "sem PAGE_META manual",
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
         "keyword ausente em <h1>",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~639 palavras (mínimo 1500)"
+        "apenas ~1433 palavras (mínimo 1500)"
       ]
     },
     {
@@ -4030,17 +4240,14 @@
         "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1307,
-        "has1500Words": false
+        "wordCount": 1738,
+        "has1500Words": true
       },
-      "bucket": "D",
-      "issues": [
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~1307 palavras (mínimo 1500)"
-      ]
+      "bucket": "OK",
+      "issues": []
     },
     {
       "slug": "tsukimichi-moonlit-fantasy-guia-completo",
@@ -4056,19 +4263,16 @@
         "metaDescription": false,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
-        "hasEditorial": false,
-        "wordCount": 589,
-        "has1500Words": false
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1586,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
         "keyword ausente em meta description",
-        "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "sem Análise do Marcos / EditorialTake",
-        "apenas ~589 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -4082,23 +4286,21 @@
         "excerpt": false,
         "pageMetaExists": true,
         "metaTitle": false,
-        "metaDescription": false,
+        "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 711,
+        "wordCount": 1477,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "keyword ausente em meta title",
-        "keyword ausente em meta description",
         "keyword ausente em <h1>",
         "keyword ausente em excerpt",
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~711 palavras (mínimo 1500)"
+        "apenas ~1477 palavras (mínimo 1500)"
       ]
     },
     {
@@ -4115,17 +4317,14 @@
         "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 672,
-        "has1500Words": false
+        "wordCount": 1545,
+        "has1500Words": true
       },
-      "bucket": "D",
-      "issues": [
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~672 palavras (mínimo 1500)"
-      ]
+      "bucket": "OK",
+      "issues": []
     },
     {
       "slug": "hell-mode-gamer-isekai-guia-completo",
@@ -4141,16 +4340,15 @@
         "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 782,
+        "wordCount": 1493,
         "has1500Words": false
       },
-      "bucket": "D",
+      "bucket": "C",
       "issues": [
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~782 palavras (mínimo 1500)"
+        "apenas ~1493 palavras (mínimo 1500)"
       ]
     },
     {
@@ -4163,20 +4361,19 @@
         "intro": true,
         "excerpt": true,
         "pageMetaExists": true,
-        "metaTitle": true,
+        "metaTitle": false,
         "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 821,
-        "has1500Words": false
+        "wordCount": 1565,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~821 palavras (mínimo 1500)"
+        "keyword ausente em meta title"
       ]
     },
     {
@@ -4189,20 +4386,20 @@
         "intro": true,
         "excerpt": true,
         "pageMetaExists": true,
-        "metaTitle": true,
+        "metaTitle": false,
         "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 566,
+        "wordCount": 1449,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~566 palavras (mínimo 1500)"
+        "keyword ausente em meta title",
+        "apenas ~1449 palavras (mínimo 1500)"
       ]
     },
     {
@@ -4215,20 +4412,19 @@
         "intro": true,
         "excerpt": true,
         "pageMetaExists": true,
-        "metaTitle": true,
+        "metaTitle": false,
         "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 0,
-        "hasArticleSources": false,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 705,
-        "has1500Words": false
+        "wordCount": 1579,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "ArticleSources com 0 fonte(s) (mínimo 5)",
-        "apenas ~705 palavras (mínimo 1500)"
+        "keyword ausente em meta title"
       ]
     }
   ]
