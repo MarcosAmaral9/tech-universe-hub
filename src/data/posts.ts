@@ -169,6 +169,8 @@ import pnadDesempregoImg           from "@/assets/pnad-desemprego-marco-2026.web
 import copomSelic145Img            from "@/assets/copom-selic-145-abril-2026.webp";
 import petroleoBrent125Img         from "@/assets/petroleo-brent-125-ormuz-2026.webp";
 import agentes_ia_2026Img from "@/assets/agentes-ia-2026.webp";
+import agentes_ia_autonomos_2026Img from "@/assets/agentes-ia-autonomos-2026.webp";
+import claude_cowork_saas_2026Img from "@/assets/claude-cowork-saaspocalypse-2026.webp";
 import ia_trabalho_2026Img from "@/assets/ia-trabalho-2026.webp";
 import carteira_investimentos_2026Img from "@/assets/carteira-investimentos-2026.webp";
 import one_piece_final_saga_2026Img from "@/assets/one-piece-final-saga-2026.webp";
