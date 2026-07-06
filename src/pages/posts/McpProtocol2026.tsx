@@ -220,12 +220,18 @@ const McpProtocol2026 = () => {
           A adoção rápida trouxe riscos que precisam ser endereçados. Um estudo analisou 1.899 servidores MCP de código aberto e encontrou vulnerabilidades em parte relevante deles. O Invariant Labs documentou que <strong>72,8% dos ataques de Tool Poisoning têm sucesso</strong> — onde um servidor MCP malicioso instrui o agente a executar ações não autorizadas através de prompts ocultos nas respostas das ferramentas. E Zhou et al. (2026) identificaram que <strong>40% dos servidores MCP públicos não têm autenticação adequada</strong>.
         </p>
         <p>
-          As boas práticas de segurança para produção: exija <strong>OAuth 2.1</strong> em todos os servidores remotos, use <strong>sandboxing</strong> para isolar a execução (o Docker MCP Toolkit, lançado com Stripe, Elastic e Neo4j, oferece isso nativamente), implemente <strong>aprovação humana explícita</strong> para ações irreversíveis, e mantenha logs de auditoria de todas as chamadas de ferramentas. Para servidores MCP de terceiros, verifique o código-fonte antes de conceder acesso a dados sensíveis — qualquer pessoa pode publicar um servidor no repositório público.
+          As boas práticas de segurança para produção: exija <strong>OAuth 2.1</strong> em todos os servidores remotos, use <strong>sandboxing</strong> para isolar a execução (o Docker MCP Toolkit, lançado com Stripe, Elastic e Neo4j, oferece isso nativamente), implemente <strong>aprovação humana explícita</strong> para ações irreversíveis, e mantenha logs de auditoria de todas as chamadas de ferramentas. Para servidores MCP de terceiros, verifique o código-fonte antes de conceder acesso a dados sensíveis — qualquer pessoa pode publicar um servidor no repositório público, sem curadoria de segurança obrigatória.
+        </p>
+        <p>
+          A escala do ecossistema MCP em 2026 contextualiza tanto a oportunidade quanto o risco: em menos de 18 meses após a abertura do protocolo, já existem mais de <strong>5.000 servidores MCP públicos</strong> catalogados. Plataformas como Claude.ai, Cursor, Zed e Replit suportam MCP nativamente. A OpenAI, que inicialmente desenvolveu uma alternativa própria, anunciou em março de 2026 a adoção do MCP como padrão — um sinal de convergência raramente visto nessa velocidade em protocolos de infraestrutura. Para o desenvolvedor brasileiro, dominar a criação de servidores MCP para nichos locais (integrações com Receita Federal, BACEN, SPED, ERPs nacionais como Totvs e Sankhya) tornou-se uma habilidade diferenciada e altamente demandada em projetos de automação corporativa — e uma oportunidade de produto para quem souber empacotar essas integrações como serviço de assinatura.
         </p>
       </div>
- 
+
             <EditorialTake category="ia" title={'Análise do Marcos: MCP é o USB-C da era dos agentes'}>
         <p>Padrões abertos vencem APIs proprietárias toda vez que a complexidade explode — foi assim com HTTP, com USB e está sendo com MCP. O <strong>Model Context Protocol</strong> resolve o problema real: hoje, conectar Claude, GPT e Gemini a Notion, GitHub, Drive e Slack exige integrações duplicadas, cada uma com sua autenticação. Com MCP, você expõe um servidor uma vez e qualquer modelo compatível consome. Para o ecossistema brasileiro de SaaS, isso é uma janela rara: empresas que publicarem servidores MCP cedo (Pipefy, RD Station, Conta Azul, Nubank) entram no contexto padrão dos agentes de IA antes que a concorrência reaja.</p>
+        <p>
+          O risco de segurança é real mas gerenciável — e não deve ser argumento para atrasar a adoção. O HTTP também tinha brechas conhecidas quando foi adotado em massa; o HTTPS veio depois como camada adicional, não como bloqueador. O MCP vai ter o mesmo trajeto: os problemas de autenticação e sandboxing serão resolvidos progressivamente pelo ecossistema, e quem souber trabalhar com o protocolo agora — incluindo suas limitações — estará mais preparado para usar as versões mais seguras quando chegarem. A adoção do MCP pela OpenAI em março de 2026, menos de 18 meses após o lançamento pela Anthropic, é o sinal mais forte de que o protocolo não é um projeto isolado — é infraestrutura que vai durar, do mesmo jeito que o HTTP durou, mesmo com todas as suas imperfeições iniciais. A diferença é que o MCP está evoluindo muito mais rápido do que o HTTP evoluiu — o que significa que os profissionais que investirem em aprendê-lo agora terão uma vantagem competitiva concreta e mensurável no mercado de desenvolvimento de software, especialmente em projetos de automação empresarial onde a integração entre sistemas é sempre o gargalo mais caro e demorado.
+        </p>
       </EditorialTake>
       <ArticleSources
         sources={[
@@ -233,7 +239,8 @@ const McpProtocol2026 = () => {
           { title: 'MCP Reference Servers', url: 'https://github.com/modelcontextprotocol/servers', publisher: 'Anthropic / GitHub', accessedAt: "Maio 2026" },
           { title: 'Introducing the Model Context Protocol', url: 'https://www.anthropic.com/news/model-context-protocol', publisher: 'Anthropic', accessedAt: "Maio 2026" },
           { title: 'OpenAI Platform — Tools and Agents', url: 'https://platform.openai.com/docs', publisher: 'OpenAI', accessedAt: "Maio 2026" },
-          { title: 'Google AI for Developers', url: 'https://ai.google.dev/', publisher: 'Google', accessedAt: "Maio 2026" }
+          { title: 'Google AI for Developers', url: 'https://ai.google.dev/', publisher: 'Google', accessedAt: "Maio 2026" },
+          { title: 'Invariant Labs — MCP Security Vulnerabilities Report 2026', url: 'https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks', publisher: 'Invariant Labs', accessedAt: "Junho 2026" },
         ]}
       />
 

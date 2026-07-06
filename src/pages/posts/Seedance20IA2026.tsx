@@ -236,6 +236,26 @@ const Seedance20IA2026 = () => {
           <li><strong>API ainda não aberta:</strong> Desenvolvedores aguardam Q3/2026 para integração em pipelines de produção. Por enquanto, o fluxo é manual via Dreamina ou CapCut.</li>
           <li><strong>C2PA obrigatório:</strong> Todo output tem watermark de proveniência. Plataformas como YouTube e Instagram já lêem esse metadado e podem rotular o conteúdo como "gerado por IA".</li>
         </ul>
+        <p>
+          O contexto mais amplo por trás dessa exigência de marcação é o crescimento real de fraudes com vídeo sintético. Casos como o roubo de US$ 25 milhões sofrido pela empresa de engenharia Arup, em janeiro de 2024 — em que um funcionário participou de uma videochamada com um "CFO" e vários "colegas" inteiramente gerados por IA antes de autorizar 15 transferências bancárias — se tornaram referência recorrente em relatórios de segurança corporativa sobre os riscos do vídeo sintético. Relatórios de fraude para 2026 já citam deepfakes capazes de "enganar o RH" como ameaça emergente, incluindo candidatos fictícios capazes de passar por entrevistas de emprego em tempo real. Isso não significa que ferramentas como o Seedance sejam perigosas em si — a esmagadora maioria do uso é para marketing, entretenimento e criação de conteúdo legítimo —, mas explica por que a marcação de proveniência deixou de ser opcional e por que empresas que recebem vídeos institucionais por e-mail ou WhatsApp deveriam adotar verificação adicional para decisões financeiras sensíveis.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Shield className="h-7 w-7 text-ia" />
+          C2PA na Prática: Por Que o Watermark Invisível do Seedance Importa
+        </h2>
+        <p>
+          O selo C2PA (Coalition for Content Provenance and Authenticity) que o Seedance 2.0 embute em cada vídeo gerado não é um detalhe técnico isolado — é parte de um padrão que se tornou referência global em 2026. A coalizão, fundada em 2021 por empresas como Adobe, Intel e Microsoft, já reúne mais de <strong>6.000 membros e afiliados</strong>, incluindo Google, Meta, OpenAI, Sony, Nikon e Leica. O padrão usa certificados digitais e hashes criptográficos para registrar quem criou o conteúdo, quais ferramentas foram usadas e quais edições foram feitas — uma espécie de "rótulo nutricional" à prova de adulteração.
+        </p>
+        <p>
+          Esse selo deixou de ser opcional na prática. O <strong>EU AI Act</strong>, no Artigo 50, exige que provedores de IA generativa marquem seus conteúdos em formato legível por máquina e detectável como artificial — obrigação que entra em vigor em <strong>2 de agosto de 2026</strong>, com multas de até €15 milhões ou 3% do faturamento global para descumprimento. A própria Comissão Europeia reconhece, no entanto, que metadados como o C2PA sozinhos não bastam: eles são removidos facilmente quando alguém tira um print da tela ou faz upload em certas redes sociais. Por isso o padrão recomendado combina três camadas — metadado C2PA, marca d'água invisível entrelaçada no próprio conteúdo (resistente a compressão e corte) e, como último recurso, fingerprinting para identificação posterior.
+        </p>
+        <p>
+          Para quem usa o Seedance ou qualquer outro gerador de vídeo por IA para criar conteúdo comercial, vale entender que essa marca não é uma desvantagem a ser escondida — em breve será exigência legal em mercados como a União Europeia, e plataformas como YouTube e Instagram já leem esse metadado para rotular automaticamente o conteúdo como "gerado por IA". Tentar remover esse selo manualmente, além de ir contra os termos de uso da maioria das ferramentas, pode configurar violação direta de regulações como o EU AI Act para quem distribui o conteúdo na Europa.
+        </p>
+        <p>
+          Vale comparar a abordagem do Seedance com a de outros grandes players: o Google, por exemplo, já usa seu próprio sistema de marca d'água invisível, o SynthID, em mais de 10 bilhões de conteúdos gerados, com sinais a nível de pixel desenhados para sobreviver à compressão e à edição. A convergência entre concorrentes em torno de padrões como C2PA e SynthID sugere que, nos próximos anos, a marcação de proveniência deve se tornar tão universal e invisível para o usuário final quanto o HTTPS é hoje para navegação segura — uma camada de confiança que ninguém nota até que falte.
+        </p>
 
         <h2 className="text-2xl font-bold mt-10 mb-6">Seedance 2.0 no CapCut: A Rota Mais Fácil para Brasileiros</h2>
         <p>
@@ -276,6 +296,7 @@ const Seedance20IA2026 = () => {
         { title: "ZenCreator — Seedance AI: The Ultimate AI Video Generator Guide (2026)", url: "https://zencreator.pro/ai-university/guides/seedance-2-ai-video-generator-guide", publisher: "ZenCreator / AI University", accessedAt: "Maio 2026" },
         { title: "Seedance2AI.cc — Seedance 2.0: Official Website, Release Date & Access", url: "https://www.seedanceai.cc/guides/seedance-2-0-overview", publisher: "Seedance2AI", accessedAt: "Maio 2026" },
         { title: "Atlas Cloud — Seedance 2.0 Pricing: Full Cost Breakdown 2026", url: "https://www.atlascloud.ai/blog/case-studies/seedance-2.0-pricing-full-cost-breakdown-2026", publisher: "Atlas Cloud", accessedAt: "Maio 2026" },
+        { title: "TrueScreen — C2PA Standard: History, Promises and Structural Limitations", url: "https://truescreen.io/articles/c2pa-standard-history-limitations/", publisher: "TrueScreen", accessedAt: "Junho 2026" },
       ]} />
 
       <RelatedPosts currentSlug="seedance-2-0-geracao-video-ia-2026" />

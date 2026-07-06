@@ -55,6 +55,9 @@ const ClaudeOpusVsSonnet2026 = () => {
         <p className="lead text-xl text-muted-foreground">
           A Anthropic lançou a família Claude 4 em 2026 com dois modelos principais: o <strong>Claude 4 Opus</strong>, topo de linha para tarefas complexas, e o <strong>Claude 4 Sonnet</strong>, equilibrado entre performance e custo. A dúvida de desenvolvedores, empresas e usuários é a mesma: qual usar? Este guia responde com benchmarks, preços, casos de uso reais e uma recomendação clara por perfil.
         </p>
+        <p>
+          A lógica de ter múltiplos tamanhos de modelo no mesmo família não é nova — a OpenAI faz isso com GPT-4o e o1-mini, o Google com Gemini Pro e Flash. Mas a Anthropic foi particularmente clara sobre a diferenciação: Opus é construído para raciocínio de múltiplas etapas onde a qualidade final importa mais do que a velocidade ou o custo, enquanto Sonnet é otimizado para o maior número de casos de uso com latência baixa e custo por token competitivo. Para a API, o Haiku completa a família como o modelo de "micro-tarefas" — classificação, triagem, respostas simples — onde qualquer token economizado em escala representa economia real.
+        </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Brain className="h-7 w-7 text-violet-400" />
@@ -268,6 +271,12 @@ const ClaudeOpusVsSonnet2026 = () => {
       </div>
       <EditorialTake category="ia" title="Análise do Marcos: Opus por hora, Sonnet por padrão">
         <p>Depois de meses rodando os dois em produção, minha regra prática para quem opera com orçamento em real é simples: <strong>Sonnet como modelo padrão</strong> da maioria dos prompts (resposta, edição, classificação) e <strong>Opus reservado para raciocínio multi-etapa</strong> — análise de contrato, refatoração de código grande, planejamento. A diferença de custo por milhão de tokens não compensa Opus em chamadas curtas, mas paga sozinha quando o problema exige cadeia de pensamento longa. Quem está testando agora deveria instrumentar o roteamento de modelo (router próprio) antes de assinar plano caro: 80% do tráfego cabe em Sonnet sem perda perceptível.</p>
+        <p>
+          Uma estratégia concreta para equipes que querem extrair máximo custo-benefício: use o <strong>prompt caching</strong> da API da Anthropic para reutilizar contextos longos (documentos de referência, system prompts extensos) e economizar até 90% no custo de tokens repetidos. Combine isso com roteamento por complexidade — um classificador simples (pode ser o próprio Haiku) avalia o prompt e decide se manda para Sonnet ou Opus. Com esse setup, a diferença de custo entre "usar Opus para tudo" e "roteamento inteligente" costuma ser de 5x a 15x no custo mensal de API, dependendo da distribuição de tarefas.
+        </p>
+        <p>
+          Para o usuário individual no Claude.ai, a mensagem é mais simples: o plano Pro dá acesso a ambos os modelos sem custo adicional por token, e o Claude escolhe automaticamente qual usar dependendo da complexidade da tarefa quando você usa o seletor "Auto". A escolha manual de Opus faz sentido quando você sabe que a tarefa é genuinamente complexa e não tem urgência de latência — análises longas, revisão de documentos extensos, planejamento de projetos. Para respostas rápidas e tarefas cotidianas, deixar no modo Auto ou escolher Sonnet explicitamente resulta em respostas mais rápidas sem perda mensurável de qualidade para a maioria dos usos.
+        </p>
       </EditorialTake>
       <ArticleSources
         sources={[
@@ -275,7 +284,8 @@ const ClaudeOpusVsSonnet2026 = () => {
           { title: "Morph LLM — Claude Benchmarks 2026 (Opus 4.6, Sonnet 4.6, Haiku 4.5)", url: "https://www.morphllm.com/claude-benchmarks", publisher: "Morph LLM", accessedAt: "Maio 2026" },
           { title: "NxCode — Sonnet vs Opus: Which Claude Model to Pick (fev/2026)", url: "https://www.nxcode.io/resources/news/claude-sonnet-4-6-vs-opus-4-6-which-model-to-choose-2026", publisher: "NxCode", accessedAt: "Maio 2026" },
           { title: "Rootly — Claude Sonnet 4.6 Benchmark Results (fev/2026)", url: "https://rootly.com/blog/claude-sonnet-4-6-benchmark-results-and-lessons-for-ai-sre", publisher: "Rootly", accessedAt: "Maio 2026" },
-          { title: "Morph LLM — Best AI for Coding 2026 (SWE-bench Pro ranking)", url: "https://www.morphllm.com/best-ai-model-for-coding", publisher: "Morph LLM", accessedAt: "Maio 2026" }
+          { title: "Morph LLM — Best AI for Coding 2026 (SWE-bench Pro ranking)", url: "https://www.morphllm.com/best-ai-model-for-coding", publisher: "Morph LLM", accessedAt: "Maio 2026" },
+          { title: "Anthropic Docs — Prompt caching: reducing costs for repeated context", url: "https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching", publisher: "Anthropic", accessedAt: "Junho 2026" },
         ]}
       />
 

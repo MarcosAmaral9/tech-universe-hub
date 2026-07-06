@@ -72,7 +72,7 @@ const IAEducacao2026 = () => {
           </div>
           <div className="p-4 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-1">📇 Flashcards Automáticos</h4>
-            <p className="text-sm text-muted-foreground mb-0">Cole qualquer material no Claude e peça "Crie 20 flashcards no formato pergunta/resposta". Use no Anki para revisão espaçada.</p>
+            <p className="text-sm text-muted-foreground mb-0">Cole qualquer material no Claude e peça "Crie 20 flashcards no formato pergunta/resposta". Use no Anki para revisão espaçada. A combinação de geração assistida por IA com revisão espaçada no Anki é uma das combinações mais validadas pela pesquisa em ciências cognitivas para memorização de longo prazo.</p>
           </div>
           <div className="p-4 bg-card rounded-xl border border-border">
             <h4 className="font-bold mb-1">📝 Simulado Personalizado</h4>
@@ -122,9 +122,26 @@ const IAEducacao2026 = () => {
           <li><strong>Habilidades práticas e físicas:</strong> medicina cirúrgica, artes performáticas, esportes — a IA pode ensinar a teoria, não a prática.</li>
         </ul>
 
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <GraduationCap className="h-7 w-7 text-ia" />
+          Quantos Estudantes Brasileiros Já Usam IA: os Números Oficiais
+        </h2>
+        <p>
+          A adoção entre universitários brasileiros cresceu de forma consistente nos últimos anos. Segundo pesquisa da ABMES (Associação Brasileira de Mantenedoras de Ensino Superior) em parceria com a Educa Insights, divulgada em agosto de 2024, <strong>71% dos estudantes universitários brasileiros já utilizavam ferramentas de IA regularmente nos estudos</strong> — sendo 29% diariamente e 42% semanalmente. Um levantamento anterior da Agência Brasil, com universitários e candidatos a uma vaga na faculdade, encontrou que sete em cada dez já usavam IA com frequência na rotina de estudos, um salto de 18 pontos percentuais em relação a 2023, quando o índice era de 53%.
+        </p>
+        <p>
+          Entre os benefícios mais citados pelos próprios estudantes nessas pesquisas estão a possibilidade de aprender a qualquer hora e em qualquer lugar (53%), o acesso a conteúdos mais atualizados e diversificados (50%), e a melhora na velocidade de resolução de dúvidas (49%). Por outro lado, uma pesquisa global do CFA Institute encontrou que <strong>48% dos estudantes brasileiros que usam IA se dizem preocupados com a possibilidade de receber uma resposta incorreta</strong> — um nível saudável de ceticismo que, segundo especialistas em educação consultados nessas pesquisas, é exatamente o que deveria orientar o uso da ferramenta: apoio ativo à verificação, nunca fonte única de informação.
+        </p>
+
         <h2 className="text-2xl font-bold mt-10 mb-6">Atenção: Detecção de IA em Trabalhos Acadêmicos</h2>
         <p>
           Professores brasileiros já adotam triangulação entre GPTZero, Turnitin (que lançou detector de IA em 2023) e análise estilística manual. O problema é que detectores ainda têm alta taxa de falso positivo — estudantes com escrita formal são frequentemente sinalizados. A recomendação prática: use IA para aprender e rascunhar, mas reescreva com suas próprias palavras antes de entregar. Se a instituição tiver política clara de uso de IA, siga-a.
+        </p>
+        <p>
+          Importa entender a distinção que pesquisadores de ética na educação fazem entre dois usos radicalmente diferentes: usar IA para <em>aprender melhor</em> — pedir explicações, gerar perguntas, criar flashcards, simular bancas — e usar IA para <em>substituir o aprendizado</em> — pedir que ela escreva o trabalho no lugar do estudante. O primeiro aprofunda o aprendizado e é amplamente encorajado pelas políticas mais atuais das instituições, incluindo USP e UNICAMP. O segundo é academicamente desonesto independentemente de política formal — não porque a ferramenta é proibida, mas porque o estudante está abrindo mão do próprio desenvolvimento intelectual pelo qual está pagando (ou sendo financiado pelo contribuinte). O risco de longo prazo não é a reprovação ou a detecção pelo professor, mas sim o profissional que chega ao mercado sem saber pensar por conta própria.
+        </p>
+        <p>
+          Para concurseiros, um alerta específico: todo o processo de seleção — a prova em si — ocorre sem IA disponível. Usar IA excessivamente no estudo pode criar uma dependência cognitiva que prejudica o desempenho na hora que mais importa. A recomendação para concurseiros é sempre terminar cada sessão de estudo com IA fazendo <em>sem</em> a ferramenta pelo menos um exercício completo do início ao fim — seja uma dissertação, uma questão de raciocínio lógico, um cálculo ou uma redação — para garantir que o aprendizado genuíno aconteceu e não apenas a exposição passiva ao conteúdo gerado pela máquina.
         </p>
 
         <h2 className="text-2xl font-bold mt-10 mb-6">O Que Universidades e o MEC Já Decidiram sobre IA</h2>
@@ -191,16 +208,17 @@ const IAEducacao2026 = () => {
           O relatório UNESCO <em>Guidance for generative AI in education and research</em> (2023) é claro: IA deve ser suporte ao aprendizado, não substituta do esforço cognitivo. No Brasil, o MEC publicou em 2024 a primeira nota técnica sobre uso de IA em redes públicas, alinhada à LGPD e à BNCC. O Khanmigo (Khan Academy, GPT-4 com salvaguardas pedagógicas) e o Google NotebookLM são os dois melhores exemplos de IA projetada para aprender junto, não no lugar do aluno.
         </p>
         <p>
-          Minha leitura prática: a IA não substitui estudo profundo — ela acelera o que já é bom estudo. Quem usava técnicas sólidas (Feynman, revisão espaçada, prática deliberada) vai ficou 3× mais eficiente com IA. Quem já copiava trabalho vai só copiar mais rápido — e vai ser pego mais rápido também. A diferença de resultados entre os dois grupos vai aumentar.
+          Minha leitura prática: a IA não substitui estudo profundo — ela acelera o que já é bom estudo. Quem usava técnicas sólidas (Feynman, revisão espaçada, prática deliberada) ficou 3× mais eficiente com IA. Quem já copiava trabalho vai só copiar mais rápido — e vai ser pego mais rápido também. A diferença de resultados entre os dois grupos vai aumentar. O dado mais revelador disso é justamente o salto de 18 pontos percentuais no uso frequente de IA entre universitários brasileiros em apenas um ano: a ferramenta chegou, e o que vai definir quem se beneficia de verdade não é o acesso — é o método com que se usa, combinado com a honestidade intelectual de saber quando a ferramenta está sendo usada para crescer e quando está sendo usada apenas para evitar o esforço que gera crescimento real a longo prazo.
         </p>
       </EditorialTake>
 
       <ArticleSources sources={[
         { title: "UNESCO — Guidance for generative AI in education and research", url: "https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research", publisher: "UNESCO", accessedAt: "Maio 2026" },
         { title: "Khan Academy — Khanmigo (AI tutor)", url: "https://www.khanmigo.ai/", publisher: "Khan Academy", accessedAt: "Maio 2026" },
-        { title: "OpenAI — Introducing ChatGPT Edu", url: "https://openai.com/index/introducing-chatgpt-edu/", publisher: "OpenAI", accessedAt: "Maio 2026" },
         { title: "Google — NotebookLM", url: "https://notebooklm.google/", publisher: "Google", accessedAt: "Maio 2026" },
         { title: "MEC / MCTI — Estratégia Brasileira de Inteligência Artificial", url: "https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/transformacaodigital/inteligencia-artificial", publisher: "Governo Federal", accessedAt: "Maio 2026" },
+        { title: "Tesify — IA no Ensino Superior 2026: Estatísticas Oficiais Portugal e Brasil (dados ABMES/Educa Insights)", url: "https://tesify.pt/ia-no-ensino-superior-estatisticas-2026-portugal-brasil/", publisher: "Tesify", accessedAt: "Junho 2026" },
+        { title: "Agência Brasil — Sete a cada dez estudantes usam IA na rotina de estudos", url: "https://agenciabrasil.ebc.com.br/educacao/noticia/2024-08/sete-cada-dez-estudantes-usam-ia-na-rotina-de-estudos", publisher: "Agência Brasil (EBC)", accessedAt: "Junho 2026" },
       ]} />
 
       <RelatedPosts currentSlug="ia-educacao-2026-estudar-inteligente" />

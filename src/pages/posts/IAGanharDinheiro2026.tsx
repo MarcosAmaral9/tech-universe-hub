@@ -58,6 +58,9 @@ const IAGanharDinheiro2026 = () => {
         <p>
           O mercado de serviços baseados em IA no Brasil cresceu <strong>312%</strong> entre 2023 e 2025. Segundo o relatório <em>Future of Jobs 2025</em> do World Economic Forum, 86% das empresas pesquisadas planejam transformar operações com IA até 2030 — e a maioria não tem profissionais para implementar. Existe uma janela de oportunidade real para quem agir agora.
         </p>
+        <p>
+          O outro lado dessa curva de crescimento é o aumento de concorrência: novas plataformas de freelancer voltadas a serviços de IA surgiram em 2026, como a Jobbers, que já tem seção dedicada ao mercado brasileiro, somando-se às já conhecidas Upwork, Fiverr e Workana. A taxa de comissão típica dessas plataformas varia entre 5% e 20% do valor do projeto — um custo que precisa entrar no cálculo de precificação de quem está começando. Quem persiste de forma consistente costuma fechar, segundo análises do próprio setor de freelancing brasileiro, entre R$ 2.000 e R$ 5.000 por mês de renda freelance após cerca de 90 dias de atuação ativa, número que serve como referência realista de curto prazo — bem mais conservador do que os valores de topo de tabela frequentemente divulgados em cursos e infoprodutos sobre o tema.
+        </p>
 
         <AdLeaderboard className="my-8" />
 
@@ -121,9 +124,22 @@ const IAGanharDinheiro2026 = () => {
         </ul>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Rocket className="h-7 w-7 text-ia" />
-          Plano de 30 Dias para Começar a Ganhar com IA
+          <Briefcase className="h-7 w-7 text-ia" />
+          O Mercado Mudou: Por Que "Texto com ChatGPT" Não Paga Mais Bem
         </h2>
+        <p>
+          Em 2023, saber escrever um prompt decente já era diferencial competitivo. Em 2026, virou commodity — o equivalente a saber usar o Word. A própria Workana, maior plataforma de freelancers da América Latina, reconhece em seu blog oficial que o mercado de textos genéricos gerados com ChatGPT está saturado em plataformas como Workana e VintePila, com cobranças na casa de R$ 50 por artigo e concorrência acirrada. Em compensação, nichos específicos — como "estratégia de conteúdo para clínicas de estética" ou "automação de marketing para e-commerce" — continuam com demanda alta e pouca oferta qualificada.
+        </p>
+        <p>
+          O blog da própria plataforma resume bem o critério que separa quem fatura bem de quem compete por migalhas: o cliente não compra "um agente de IA" — compra "atendimento 24h que economiza 30% da equipe". Em outras palavras, o profissional que vende resultado mensurável (economia de tempo, aumento de conversão, redução de erro) cobra mais e disputa menos do que quem vende "uso de ferramenta de IA" como serviço genérico. A demanda por profissionais que efetivamente sabem aplicar IA a problemas de negócio cresceu cerca de 300% no LinkedIn entre 2024 e 2025, segundo análise do setor — mas essa demanda é seletiva, e não distribuída igualmente entre todos os tipos de serviço relacionados a IA.
+        </p>
+        <p>
+          Na prática da Workana, o conselho mais repetido por especialistas da própria plataforma é começar pelo gratuito: ChatGPT, Gemini, Canva com IA e a versão cloud gratuita do n8n cobrem a maioria dos casos de uso iniciais, sem nenhum investimento. A primeira venda, segundo o mesmo material, raramente vem de uma plataforma de freelancer — vem da rede de contatos do próprio profissional, com um projeto-teste gratuito para um conhecido ou negócio local servindo como portfólio inicial documentado com dados concretos de resultado.
+        </p>
+        <p>
+          Para quem já tem alguma base de inglês, vale considerar também plataformas que pagam em dólar, como Fiverr, Upwork e Toptal — a vantagem cambial pode multiplicar o valor recebido em reais mesmo cobrando preços competitivos no mercado internacional. O ponto de atenção, nesse caso, é o prazo de retenção do pagamento (geralmente cerca de 14 dias após a entrega na maioria dessas plataformas) e as comissões fixas, que no caso do Fiverr chegam a 20% sobre cada venda — um detalhe que costuma pegar de surpresa quem está calculando preço pela primeira vez sem considerar esses custos no orçamento final, especialmente nos primeiros meses de atividade.
+        </p>
+
         <div className="my-6 p-6 bg-secondary/50 rounded-xl border border-border">
           <ul className="space-y-3 mb-0">
             <li><strong>Semana 1:</strong> Escolha UMA das 15 formas e estude intensamente. Não tente fazer várias ao mesmo tempo.</li>
@@ -189,7 +205,8 @@ const IAGanharDinheiro2026 = () => {
         { title: "Workana — Plataforma de Freelancers Brasil", url: "https://www.workana.com/", publisher: "Workana", accessedAt: "Maio 2026" },
         { title: "OpenAI — API Pricing", url: "https://openai.com/api/pricing/", publisher: "OpenAI", accessedAt: "Maio 2026" },
         { title: "Stanford HAI — AI Index Report 2025", url: "https://hai.stanford.edu/research/ai-index-report", publisher: "Stanford HAI", accessedAt: "Maio 2026" },
-        { title: "Anthropic — Claude for Work", url: "https://www.anthropic.com/claude", publisher: "Anthropic", accessedAt: "Maio 2026" },
+        { title: "Workana Blog — Como Usar a IA Como Aliada em 2026: de Operador a Estrategista", url: "https://blog.workana.com/pt/freelanceando-pt/ia-como-aliada-freelancer-2026-2/", publisher: "Workana", accessedAt: "Junho 2026" },
+        { title: "Workana Blog — As 5 Habilidades Freelance Mais Demandadas em 2026", url: "https://blog.workana.com/pt/freelanceando-pt/as-5-habilidades-freelance-mais-demandadas-em-2026-para-conseguir-trabalho-remoto/", publisher: "Workana", accessedAt: "Junho 2026" },
       ]} />
 
       <RelatedPosts currentSlug="como-usar-ia-ganhar-dinheiro-2026" />

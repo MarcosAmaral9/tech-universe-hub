@@ -183,6 +183,9 @@ const IATrabalho2026Impacto = () => {
         <p>
           A pesquisa da Avantia é clara: 52% dos líderes discordam que a IA reduz empregos — mas acreditam que o perfil de quem é contratado vai mudar. Quem domina IA vai ganhar mais e trabalhar menos nas tarefas repetitivas. Quem ignora vai competir com quem domina. A escolha, por enquanto, ainda é sua.
         </p>
+        <p>
+          O dado que mais impressiona nos levantamentos brasileiros é a velocidade da mudança: 30 milhões de trabalhadores com alguma exposição à IA generativa em menos de dois anos desde que o ChatGPT entrou no mainstream. A aceleração não dá sinais de desaquecimento — e os modelos lançados nos primeiros meses de 2026 são consideravelmente mais capazes do que os de meados de 2025, o que sugere que o ritmo de impacto só vai crescer. Para o profissional que está lendo este artigo agora, o melhor momento para começar a se adaptar foi há dois anos. O segundo melhor momento é hoje — com recursos gratuitos, comunidades abertas e um mercado que ainda paga prêmio significativo por quem chega na vaga já sabendo usar IA de forma produtiva e com resultados concretos para mostrar — currículos com números superam currículos com descrições genéricas de habilidades em qualquer processo seletivo competitivo.
+        </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Users className="h-7 w-7 text-violet-400" />
@@ -235,6 +238,9 @@ const IATrabalho2026Impacto = () => {
         <p>
           O profissional brasileiro deve focar em três competências complementares à IA: <strong>pensamento crítico</strong> para validar outputs (a IA ainda erra de formas imprevisíveis), <strong>gestão de pessoas e projetos</strong> (não automatizável no curto prazo) e <strong>domínio de pelo menos uma ferramenta de IA</strong> aplicada à sua área. Quem ignorar o tema nos próximos 24 meses corre risco real de defasagem salarial — a diferença entre quem usa IA e quem não usa já é de 25–40% em produtividade em tarefas de escrita e análise.
         </p>
+        <p>
+          Os dados do IBRE/FGV são particularmente relevantes porque mostram uma assimetria importante: <strong>62% da exposição à IA no Brasil se concentra em trabalhadores com ensino superior</strong> — advogados, contadores, analistas financeiros, jornalistas, desenvolvedores — justamente o segmento que mais cresceu economicamente nas últimas duas décadas e que tem menor tradição de requalificação rápida. Para esse grupo, a IA não chega como ameaça distante: chega como uma mudança que já está afetando a precificação de serviços e a velocidade de entrega que clientes esperam. O caminho mais seguro é adotar IA como multiplicador da própria especialização, não tentar competir com ela em velocidade de execução de tarefas que ela já executa melhor e mais barato do que qualquer humano especializado.
+        </p>
       </EditorialTake>
 
       <ArticleSources sources={[
@@ -243,6 +249,7 @@ const IATrabalho2026Impacto = () => {
         { title: "OIT — Generative AI and Jobs: A Refined Global Index (maio 2025)", url: "https://www.ilo.org/publications/artificial-intelligence-and-jobs", publisher: "Organização Internacional do Trabalho", accessedAt: "Maio 2026" },
         { title: "DIAP — Transformações Estruturais no Mercado de Trabalho Brasileiro 2026–2030", url: "https://www.diap.org.br/index.php/noticias/artigos/92762-transformacoes-estruturais-no-mercado-de-trabalho-brasileiro-2026-2030-inteligencia-artificial-automacao-e-desigualdades-emergentes", publisher: "DIAP", accessedAt: "Maio 2026" },
         { title: "Stanford HAI — AI Index 2024", url: "https://hai.stanford.edu/research/ai-index-2024", publisher: "Stanford HAI", accessedAt: "Maio 2026" },
+        { title: "IBRE/FGV — 30% dos trabalhadores brasileiros expostos à IA generativa (3T25)", url: "https://portal.fgv.br/artigos/inteligencia-artificial-e-emprego-brasil-quem-tem-mais-perder", publisher: "IBRE/FGV", accessedAt: "Junho 2026" },
       ]} />
 
       <RelatedPosts currentSlug="ia-mercado-trabalho-brasil-2026" />

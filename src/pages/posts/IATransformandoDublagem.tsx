@@ -68,7 +68,10 @@ const IATransformandoDublagem = () => {
           Voice Cloning: O Que É e Como Funciona
         </h2>
         <p>
-          <strong>Voice Cloning</strong> (clonagem de voz) é uma tecnologia de IA que captura as características únicas de uma voz humana — tom, ritmo, entonação, sotaque — e as replica em qualquer idioma. O resultado é ouvir a voz do dublador japonês original "falando" português com a mesma emoção e nuance, sem que esse dublador tenha gravado uma única sílaba em português.
+          <strong>Voice Cloning</strong> (clonagem de voz) é uma tecnologia de IA que captura as características únicas de uma voz humana — tom, ritmo, entonação, sotaque — e as replica em qualquer idioma. O resultado é ouvir a voz do dublador japonês original "falando" português com a mesma emoção e nuance, sem que esse dublador tenha gravado uma única sílaba em português. O ElevenLabs, líder do mercado nessa tecnologia em 2026, consegue clonar uma voz convincente com apenas 3 segundos de áudio de referência — e uma clonagem de alta fidelidade com apenas 1 minuto de sample. A companhia levantou US$ 180 milhões na sua rodada de série C em 2024, evidenciando o tamanho do mercado endereçável para síntese de voz profissional em escala global.
+        </p>
+        <p>
+          Para a indústria de anime especificamente, a tecnologia abre uma possibilidade que estúdios de localização pequenos começaram a explorar em 2025: dublar episódios de séries nicho diretamente do japonês para o português usando a voz clonada do dublador brasileiro original da série — eliminando a necessidade de convocar o ator para cada lote de gravação. A prática está em zona cinza legal no Brasil até que o PL 2338 seja aprovado e regulamentado, e requer contrato específico com o dublador para uso da voz sintética — algo que o Sated-SP tem pressionado para que seja padrão antes da publicação da lei, não depois.
         </p>
         <div className="not-prose my-6 p-5 bg-card rounded-xl border border-border">
           <h3 className="font-bold text-sm mb-3 text-ia">Como a Tecnologia Funciona</h3>
@@ -206,6 +209,15 @@ const IATransformandoDublagem = () => {
       <EditorialTake category="ia" title="Análise do Marcos: dublagem clássica em PT-BR tem valor cultural que IA não substitui">
         <p>
           O Sated-SP documentou em 2024 que novos contratos do mercado brasileiro já incluíam cláusulas para alimentar machine learning com dublagens humanas sem compensação. A SAG-AFTRA levou 4 meses de greve e três rodadas de negociação para estabelecer que o uso de IA para replicar a voz de um ator exige consentimento e remuneração — princípio que o PL 2338/2023 busca consolidar no Brasil. O cenário mais provável até 2027: IA para idiomas com pouca oferta de dubladores e ADR assistido, não substituição de elencos consolidados como os do Dragon Ball, Cavaleiros do Zodíaco e One Piece em PT-BR. A identidade cultural da dublagem brasileira é um patrimônio que nenhum modelo de IA criou — e que merece proteção equivalente à da música e das artes plásticas.
+        </p>
+        <p>
+          O ponto mais importante que falta no debate público sobre IA e dublagem é a distinção entre dois usos radicalmente diferentes: (1) usar IA para <em>acelerar e baratear</em> o processo de dublagem — geração de rascunho de sincronia labial, redução de estúdio, apoio a ADR — e (2) usar IA para <em>substituir completamente</em> o elenco humano com clones de voz. O primeiro uso tem benefícios reais para a indústria sem prejudicar trabalhadores; o segundo é o que os sindicatos de atores e dubladores resistem com razão. A confusão entre eles alimenta debates polarizados que não ajudam a construir regulação inteligente.
+        </p>
+        <p>
+          Para fãs de anime que acompanham esse debate: a dublagem brasileira de One Piece e Dragon Ball tem um valor afetivo e cultural que vai muito além da qualidade técnica da voz. Os elencos históricos dessas franquias criaram a identidade sonora que gerações de brasileiros associam a esses personagens — algo que nenhuma clonagem de voz pode reproduzir, porque não se trata apenas do timbre, mas da interpretação, da história e do vínculo emocional que se construiu ao longo de décadas. Isso não significa que a IA não vai pressionar o mercado de dublagem — vai. Mas significa que a resistência cultural tem uma base real, não apenas nostálgica.
+        </p>
+        <p>
+          A linha mais clara para distinguir uso legítimo de uso abusivo: se a IA está sendo usada com consentimento e compensação do ator original, é uma ferramenta de extensão. Se está sendo usada para evitar contratar ou remunerar o ator — ou para replicar a voz de alguém sem autorização — é violação de direitos, independentemente de o Brasil ter ou não regulamentação específica aprovada no momento.
         </p>
       </EditorialTake>
 
