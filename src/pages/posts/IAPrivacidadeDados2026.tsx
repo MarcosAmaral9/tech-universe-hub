@@ -146,6 +146,17 @@ const IAPrivacidadeDados2026 = () => {
           ))}
         </div>
 
+        <h2 className="text-2xl font-bold mt-10 mb-6">Incidentes Reais de Privacidade com IA: O Que Já Aconteceu e O Que Aprender</h2>
+        <p>
+          A teoria de privacidade fica mais concreta quando observamos casos reais. Em março de 2023, a Samsung teve um dos mais emblemáticos incidentes corporativos com IA: três funcionários da divisão de semicondutores inseriram código-fonte proprietário, gravações de reuniões internas e resultados de testes confidenciais diretamente em prompts do ChatGPT dentro de um período de 20 dias. A empresa proibiu o uso de ferramentas de IA generativa externas em computadores corporativos logo depois. O incidente é documentado por especialistas em segurança como prova de que o maior vetor de vazamento via IA não é o ataque externo — é o uso inadvertido por funcionários bem-intencionados que não entendem para onde os dados vão.
+        </p>
+        <p>
+          No Brasil, o cenário ainda não tem casos públicos com o mesmo nível de detalhe, mas a ANPD abriu em 2024 dois processos administrativos relacionados ao uso de IA por organizações brasileiras sem base legal documentada para o tratamento automatizado de dados. A ausência de notícia não é sinal de ausência de risco — é sinal de que a regulação ainda não tem capacidade de investigação suficiente para rastrear todos os casos, o que vai mudar conforme o marco legal de IA avança no Congresso.
+        </p>
+        <p>
+          Do ponto de vista do usuário individual, os riscos de privacidade mais subavaliados são os relacionados a dados <em>inferidos</em>: plataformas de IA que não armazenam seus dados pessoais diretamente ainda podem inferir informações sensíveis sobre você a partir do padrão e conteúdo das suas perguntas — diagnósticos de saúde implícitos, preferências políticas, situação financeira. Dados inferidos têm o mesmo status jurídico de dados fornecidos diretamente sob a LGPD, segundo interpretação da própria ANPD em sua análise preliminar de 2024.
+        </p>
+
         <h2 className="text-2xl font-bold mt-10 mb-6">Checklist de Privacidade com IA para Empresas Brasileiras</h2>
         <div className="not-prose my-6 p-5 bg-secondary/50 rounded-xl border border-border">
           <ul className="space-y-2 text-sm text-muted-foreground">
@@ -173,6 +184,9 @@ const IAPrivacidadeDados2026 = () => {
         <p>
           Para usuários brasileiros, três regras práticas eliminam 90% do risco: <strong>(1)</strong> não inserir CPF, dados bancários ou saúde em prompts; <strong>(2)</strong> usar versões pagas ou Enterprise que garantem em contrato o não-treinamento com suas conversas; <strong>(3)</strong> revisar trimestralmente as configurações de privacidade de cada plataforma — elas mudam. Empresas precisam ainda atualizar política de privacidade citando IA e nomear DPO conforme art. 41 da LGPD.
         </p>
+        <p>
+          O caso Samsung, embora ocorrido em 2023, continua sendo o exemplo mais poderoso para treinar equipes sobre privacidade com IA — não porque funcionários foram mal-intencionados, mas porque o problema foi exatamente o oposto: eles estavam usando a ferramenta como deveriam, para resolver problemas reais do trabalho, sem saber que o conteúdo dos prompts poderia ser usado para treinar o modelo. A lição prática: treinamento de equipe não é sobre proibir o uso de IA — é sobre criar um entendimento claro de quais tipos de dados são seguros de inserir em ferramentas externas e quais nunca deveriam sair do ambiente corporativo, especialmente no contexto regulatório atual onde a ANPD está gradualmente aumentando sua capacidade de fiscalização. Uma página de FAQ interna sobre isso, com exemplos concretos de prompts permitidos e proibidos para o contexto específico da empresa, vale mais do que qualquer política de segurança genérica que ninguém vai ler antes do primeiro incidente acontecer na prática.
+        </p>
       </EditorialTake>
 
       <ArticleSources sources={[
@@ -181,6 +195,7 @@ const IAPrivacidadeDados2026 = () => {
         { title: "EU AI Act — Texto oficial (Reg. UE 2024/1689)", url: "https://artificialintelligenceact.eu/", publisher: "EU AI Act", accessedAt: "Maio 2026" },
         { title: "OpenAI — Privacy & Data Controls FAQ", url: "https://help.openai.com/en/articles/7730893-data-controls-faq", publisher: "OpenAI", accessedAt: "Maio 2026" },
         { title: "Anthropic — Privacy Policy", url: "https://www.anthropic.com/legal/privacy", publisher: "Anthropic", accessedAt: "Maio 2026" },
+        { title: "The Guardian — Samsung bans staff from using ChatGPT after data leak", url: "https://www.theguardian.com/technology/2023/may/02/samsung-bans-chatgpt-after-employees-leaked-sensitive-data-via-the-chatbot", publisher: "The Guardian", accessedAt: "Junho 2026" },
       ]} />
 
       <RelatedPosts currentSlug="ia-privacidade-dados-2026" />

@@ -78,8 +78,21 @@ const ModelosIAOpenSource2026 = () => {
       <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
         <Zap className="h-7 w-7 text-violet-400" />DeepSeek: O Momento que Mudou Tudo
       </h2>
-      <p>O DeepSeek R1, lançado em janeiro de 2025 pela empresa chinesa DeepSeek, foi treinado com uma eficiência de custos radicalmente menor do que os modelos da OpenAI e Anthropic. A empresa reportou um custo de treinamento de aproximadamente US$ 5,6 milhões — comparado aos bilhões estimados para GPT-4.</p>
-      <p>Em benchmarks de raciocínio matemático e científico (MATH, AIME, GPQA), o DeepSeek R1 igualou ou superou o GPT-4o. O impacto foi imediato: as ações da Nvidia caíram 17% em um único dia quando a notícia veio a público, pois questionava a narrativa de que era necessário hardware extraordinariamente caro para treinar modelos de ponta.</p>
+      <p>O DeepSeek R1, lançado em janeiro de 2025 pela empresa chinesa DeepSeek, foi treinado com uma eficiência de custos radicalmente menor do que os modelos da OpenAI e Anthropic. A empresa reportou um custo de treinamento de aproximadamente US$ 5,6 milhões — comparado aos bilhões estimados para GPT-4. Em benchmarks de raciocínio matemático e científico (MATH, AIME, GPQA), o DeepSeek R1 igualou ou superou o GPT-4o. O impacto foi imediato: as ações da Nvidia caíram 17% em um único dia quando a notícia veio a público, pois questionava a narrativa de que era necessário hardware extraordinariamente caro para treinar modelos de ponta.</p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Zap className="h-7 w-7 text-violet-400" />Llama 4: O Marco de Abril de 2025 que Redefiniu o Open Source
+        </h2>
+        <p>
+          Em abril de 2025, a Meta lançou a família Llama 4 — três modelos com arquitetura Mixture of Experts (MoE) que representaram uma virada no ecossistema de modelos abertos. O <strong>Llama 4 Scout</strong> (109B parâmetros totais, 17B ativos, 16 experts) roda em uma única GPU NVIDIA H100 e suporta uma janela de contexto de <strong>10 milhões de tokens</strong> — 78 vezes maior que o Llama 3 e a maior de qualquer LLM de pesos abertos até o momento. O <strong>Llama 4 Maverick</strong> (400B totais, 17B ativos, 128 experts) atingiu ELO de 1.417 no LMArena logo após o lançamento, superando GPT-4o, Gemini 2.0 Flash e DeepSeek V3 em avaliações gerais — com custo por token estimado entre 9 e 23 vezes menor que o GPT-4o.
+        </p>
+        <p>
+          O terceiro modelo, o <strong>Llama 4 Behemoth</strong> (2T parâmetros totais, 288B ativos), é um "modelo professor" ainda em treinamento no momento do lançamento, usado para destilação de conhecimento nos dois modelos menores. Nos benchmarks STEM divulgados pela Meta, o Behemoth supera GPT-4.5, Claude Sonnet 3.7 e Gemini 2.0 Pro em matemática e raciocínio científico — mas não está disponível publicamente. Uma nota importante sobre esses resultados: houve controvérsia após o lançamento quando se descobriu que os resultados do LMArena se referiam a uma "versão experimental de chat" diferente do modelo público, o que levou a LMArena a alterar sua política. Testes independentes, como os da Rootly AI Labs, não conseguiram reproduzir a superioridade em tarefas de código especializado — o Llama 4 ficou em último lugar em um benchmark focado em debugging. A lição: benchmarks oficiais e testes de terceiros raramente contam a mesma história, e o modelo certo depende sempre da tarefa específica.
+        </p>
+        <p>
+          Do ponto de vista prático para quem programa no Brasil, o Llama 4 Scout disponível via API (Groq, Together AI, Fireworks) é hoje uma das opções de melhor custo-benefício para tarefas de longa janela de contexto — análise de repositórios inteiros de código, sumarização de múltiplos documentos, ou chatbots que precisam manter histórico longo sem truncamento. A disponibilidade para download no Hugging Face, com suporte nativo a 200 idiomas, também o torna interessante para projetos que precisam de modelo embarcado sem dependência de API externa.
+        </p>
+
 
       <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
         <DollarSign className="h-7 w-7 text-violet-400" />Open Source vs Pago: Onde Cada Um Ganha
@@ -184,10 +197,10 @@ const ModelosIAOpenSource2026 = () => {
 
       <EditorialTake category="ia" title="Análise do Marcos: use open source quando há volume alto, dados sensíveis ou necessidade de customização profunda">
         <p>
-          Os principais modelos open-weight em 2026 são o <strong>Llama 4</strong> (Meta, abril/2025, multimodal), <strong>DeepSeek-V3 e R1</strong> (dez/2024 e jan/2025), <strong>Mistral Large 2</strong> (jul/2024) e <strong>Qwen 2.5</strong> (Alibaba, set/2024). Benchmarks públicos do LMSYS Arena e Hugging Face Open LLM Leaderboard mostram esses modelos alcançando 90–95% da performance dos top fechados (GPT-4o, Claude Opus 4) em raciocínio geral — ainda atrás em multimodalidade avançada.
+          Os principais modelos open-weight em 2026 são o <strong>Llama 4</strong> (Meta, abril/2025, multimodal, 10M tokens de contexto), <strong>DeepSeek-V3 e R1</strong> (dez/2024 e jan/2025), <strong>Mistral Large 2</strong> (jul/2024) e <strong>Qwen 2.5</strong> (Alibaba, set/2024). Benchmarks públicos do LMSYS Arena e Hugging Face Open LLM Leaderboard mostram esses modelos alcançando 90–95% da performance dos top fechados (GPT-4o, Claude Opus 4) em raciocínio geral — ainda atrás em multimodalidade avançada e raciocínio profundo, onde Claude e o1 da OpenAI mantêm vantagem mensurável.
         </p>
         <p>
-          Para o desenvolvedor brasileiro, modelos open-source resolvem três dores reais: <strong>soberania de dados</strong> (rodam on-premise em Hetzner ou AWS São Paulo), <strong>custo previsível</strong> (sem cobrança por token em produção) e <strong>fine-tuning para domínio específico</strong>. Para a maioria dos usuários finais, ChatGPT Plus ou Claude Pro continuam mais rápidos de adotar. Use open-source quando há volume alto, sensibilidade de dados (saúde, financeiro, jurídico) ou necessidade de customização profunda.
+          Para o desenvolvedor brasileiro, modelos open-source resolvem três dores reais: <strong>soberania de dados</strong> (rodam on-premise em Hetzner ou AWS São Paulo), <strong>custo previsível</strong> (sem cobrança por token em produção) e <strong>fine-tuning para domínio específico</strong>. Para a maioria dos usuários finais, ChatGPT Plus ou Claude Pro continuam mais rápidos de adotar. Use open-source quando há volume alto, sensibilidade de dados (saúde, financeiro, jurídico) ou necessidade de customização profunda. O caso do Llama 4 Maverick — que entrega performance comparável ao GPT-4o com custo por token até 23 vezes menor — é o melhor argumento disponível para essa escolha em 2026, desde que a equipe tenha capacidade técnica para gerenciar a infraestrutura sem depender de um provedor externo para disponibilidade e atualizações de segurança.
         </p>
       </EditorialTake>
 
@@ -197,6 +210,7 @@ const ModelosIAOpenSource2026 = () => {
         { title: "DeepSeek — Site oficial e relatório técnico", url: "https://www.deepseek.com/", publisher: "DeepSeek", accessedAt: "Maio 2026" },
         { title: "Mistral AI — Models e licenças", url: "https://mistral.ai/", publisher: "Mistral AI", accessedAt: "Maio 2026" },
         { title: "LMSYS — Chatbot Arena Leaderboard", url: "https://chat.lmsys.org/", publisher: "LMSYS / UC Berkeley", accessedAt: "Maio 2026" },
+        { title: "Meta AI — Llama 4: The beginning of a new era of natively multimodal AI", url: "https://ai.meta.com/blog/llama-4-multimodal-intelligence/", publisher: "Meta AI", accessedAt: "Junho 2026" },
       ]} />
 
       <RelatedPosts currentSlug="modelos-ia-open-source-2026" />

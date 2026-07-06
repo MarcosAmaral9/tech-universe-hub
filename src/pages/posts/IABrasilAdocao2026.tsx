@@ -207,14 +207,21 @@ const IABrasilAdocao2026 = () => {
 
       <EditorialTake category="ia" title="Análise do Marcos: adoção é alta, maturidade ainda não">
         <p>O Brasil é o terceiro maior usuário do ChatGPT no mundo, mas a foto enganosa: <strong>uso de assistente conversacional não é adoção corporativa de IA</strong>. As pesquisas da McKinsey e do Gartner mostram que a maioria das empresas brasileiras ainda está em PoC ou em piloto isolado de marketing — pouca coisa em produção crítica. A barreira não é técnica, é de governança: LGPD, contratos com Big Tech americanas e a falta de cloud soberana para dados sensíveis (saúde, financeiro regulado) atrasam projetos. Quem quiser surfar isso profissionalmente em 2026 ganha mais aprendendo <strong>integração e segurança</strong> do que treinando modelos.</p>
+        <p>
+          A pesquisa TIC Domicílios 2025 do Cetic.br revelou que 50 milhões de brasileiros já usam IA generativa — com a ressalva importante de que 84% desse uso é pessoal, não profissional. A diferença entre o entusiasmo do usuário final e a adoção corporativa real cria uma janela de oportunidade específica: empresas que souberem fazer a ponte entre "os funcionários já usam IA nos celulares pessoais" e "temos um processo corporativo estruturado de uso de IA" vão sair na frente com vantagem competitiva concreta. O BNDES lançou a linha "IA Transforma" exatamente para catalisar essa transição para PMEs, mas recursos públicos sozinhos não resolvem o déficit de cultura de dados e de profissionais com experiência real em implantação de projetos de IA em produção — não apenas em pilotos — que a maioria das médias empresas brasileiras ainda enfrenta como gargalo principal.
+        </p>
+        <p>
+          Para o empreendedor ou profissional que quer se posicionar nesse mercado: o diferencial mais escasso e valorizado no Brasil em 2026 não é conhecimento técnico de modelos de IA — é a capacidade de desenhar um processo de adoção que respeite LGPD, eduque o time, defina métricas de sucesso e não dependa de uma única API externa crítica, garantindo continuidade operacional mesmo em caso de mudanças de preço ou disponibilidade dos provedores. Quem domina essa combinação de IA + governança + gestão de mudança tem muito mais mercado do que quem sabe apenas usar o ChatGPT — e cobra proporcionalmente mais, porque está resolvendo o problema estrutural real de adoção que as empresas brasileiras enfrentam em 2026.
+        </p>
       </EditorialTake>
       <ArticleSources
         sources={[
-          { title: "Pesquisa Ado\u00e7\u00e3o de IA \u2014 McKinsey", url: "https://www.mckinsey.com/capabilities/quantumblack/our-insights", publisher: "McKinsey", accessedAt: "Maio 2026" },
-          { title: "Lei Geral de Prote\u00e7\u00e3o de Dados", url: "https://www.gov.br/anpd/pt-br", publisher: "ANPD", accessedAt: "Maio 2026" },
-          { title: "Tend\u00eancias Gartner para IA", url: "https://www.gartner.com/en/information-technology/insights/artificial-intelligence", publisher: "Gartner", accessedAt: "Maio 2026" },
-          { title: "Marco Legal da IA \u2014 PL 2338/2023", url: "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233", publisher: "Senado Federal", accessedAt: "Maio 2026" },
-          { title: "OpenAI \u2014 uso por pa\u00eds", url: "https://openai.com/", publisher: "OpenAI", accessedAt: "Maio 2026" }
+          { title: "Pesquisa Adoção de IA — McKinsey", url: "https://www.mckinsey.com/capabilities/quantumblack/our-insights", publisher: "McKinsey", accessedAt: "Maio 2026" },
+          { title: "Lei Geral de Proteção de Dados", url: "https://www.gov.br/anpd/pt-br", publisher: "ANPD", accessedAt: "Maio 2026" },
+          { title: "Tendências Gartner para IA", url: "https://www.gartner.com/en/information-technology/insights/artificial-intelligence", publisher: "Gartner", accessedAt: "Maio 2026" },
+          { title: "Marco Legal da IA — PL 2338/2023", url: "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233", publisher: "Senado Federal", accessedAt: "Maio 2026" },
+          { title: "OpenAI — uso por país", url: "https://openai.com/", publisher: "OpenAI", accessedAt: "Maio 2026" },
+          { title: "Cetic.br/CGI.br — TIC Domicílios 2025: 50 milhões de brasileiros usam IA generativa", url: "https://www.cgi.br/noticia/releases/50-milhoes-de-brasileiros-ja-usam-ia-mas-potenciais-beneficios-continuam-limitados-as-camadas-de-maior-renda-e-escolaridade/", publisher: "CGI.br / Cetic.br", accessedAt: "Junho 2026" },
         ]}
       />
 

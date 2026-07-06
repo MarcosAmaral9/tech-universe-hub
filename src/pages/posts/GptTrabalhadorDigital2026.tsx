@@ -194,6 +194,9 @@ const GptTrabalhadorDigital2026 = () => {
             ser substituído amanhã: é ficar sem ofertas de emprego júnior porque a vaga foi "absorvida pela IA"
             antes mesmo de existir.
           </p>
+          <p>
+            O caso da Klarna é o exemplo mais documentado: a empresa substituiu o equivalente a 700 funcionários de atendimento ao cliente com um único agente de IA — e divulgou os dados publicamente. Não foi demissão em massa: foi a combinação de não contratar novos funcionários enquanto o agente absorvia o volume crescente. Essa é a trajetória mais comum: substituição gradual por atrito, não ruptura. Para o profissional que já está no mercado, o risco é menor e o tempo de adaptação é maior. Para quem está entrando agora na força de trabalho, o cenário exige uma resposta diferente: focar em habilidades que os próprios documentos de avaliação de risco da OpenAI e Anthropic identificam como mais resistentes à automação — criatividade, julgamento contextual e trabalho de alta confiança interpessoal.
+          </p>
         </EditorialTake>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -211,6 +214,12 @@ const GptTrabalhadorDigital2026 = () => {
         </ul>
         <p>
           O CEO da Novo Nordisk (maior farmacêutica da Europa) declarou que a empresa usará a IA para "turbinar cientistas, não substituí-los" — adicionando que a IA reduzirá o crescimento de contratações futuras. É a fórmula que a maioria das empresas adotará: não demissões em massa imediatas, mas congelamento de contratações enquanto os agentes absorvem o trabalho incremental.
+        </p>
+        <p>
+          No contexto brasileiro, esse fenômeno tem uma nuança importante: o mercado de trabalho formal já tem uma barreira estrutural de qualificação, com grande parte da força de trabalho em funções que combinam execução repetitiva com atendimento interpessoal. A automação agêntica vai primeiro atingir o trabalho de escritório qualificado — exatamente o segmento que mais cresceu nos últimos 15 anos com a digitalização da economia — antes de ter impacto significativo em trabalho físico ou de alta especialização. Para o jovem profissional brasileiro que está escolhendo área de atuação agora, a pergunta mais relevante não é "minha profissão vai acabar?" — é "quais habilidades dentro da minha área vão ser mais valorizadas quando agentes absorverem as tarefas operacionais?" Essa pergunta tem respostas diferentes para cada área, e encontrá-las é o trabalho mais estratégico que qualquer pessoa em início de carreira pode fazer em 2026.
+        </p>
+        <p>
+          Um dado que serve de norte: o WEF Future of Jobs 2025 estima que 39% das habilidades atuais se tornarão obsoletas até 2030 — mas ao mesmo tempo, 85 milhões de novos empregos serão criados globalmente, exigindo habilidades de análise, criatividade e colaboração com sistemas de IA. O Brasil, por ter um mercado de trabalho historicamente mais informal e com menor automação industrial do que economias mais ricas, pode ter uma janela de transição um pouco maior — mas isso não é argumento para acomodação: é argumento para usar esse tempo de forma inteligente, investindo em habilidades que os próprios modelos de linguagem ainda não conseguem replicar de forma confiável.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -246,6 +255,7 @@ const GptTrabalhadorDigital2026 = () => {
           { title: "AI Index Report — Stanford HAI", url: "https://aiindex.stanford.edu/report/", publisher: "Stanford University", accessedAt: "Maio 2026" },
           { title: "ChatGPT — pricing and plans", url: "https://openai.com/chatgpt/pricing/", publisher: "OpenAI", accessedAt: "Maio 2026" },
           { title: "Klarna — AI assistant handles two-thirds of customer service chats", url: "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats/", publisher: "Klarna Newsroom", accessedAt: "Maio 2026" },
+          { title: "WEF — Future of Jobs Report 2025: impacto de IA no trabalho global", url: "https://www.weforum.org/reports/the-future-of-jobs-report-2025/", publisher: "World Economic Forum", accessedAt: "Junho 2026" },
         ]}
       />
 

@@ -211,6 +211,12 @@ const IASaude2026 = () => {
           sem revisão humana — algo que a <strong>LGPD veda</strong> e que ainda é pouco fiscalizado. Se você teve procedimento
           recusado em 2025-2026, peça expressamente revisão humana baseada no art. 20.
         </p>
+        <p>
+          O caso do AlphaFold é o melhor argumento para o potencial real da IA na saúde: em 2024, o Google DeepMind recebeu o Prêmio Nobel de Química pela previsão de estruturas proteicas com o AlphaFold 2 — o primeiro Nobel dado por contribuição de IA. O AlphaFold 3 foi publicado na Nature em maio de 2024, capaz de prever interações entre proteínas, DNA, RNA e moléculas pequenas com precisão sem precedentes. Esses modelos já estão sendo usados por laboratórios farmacêuticos para identificar candidatos a fármaco muito mais rapidamente do que métodos tradicionais — o processo que costumava levar anos na fase de descoberta pode agora ser reduzido a semanas em alguns casos. Isso não significa que novos remédios chegarão ao mercado mais rápido necessariamente, mas a triagem de candidatos promissores ficou substancialmente mais eficiente.
+        </p>
+        <p>
+          Para o brasileiro que usa apps de saúde com IA (smartwatches, apps de sintomas, chatbots de triagem), três alertas práticos: primeiro, nenhum diagnóstico de app substitui consulta médica — use-os como triagem para decidir se a consulta é urgente, não para substituí-la. Segundo, verifique se o app tem registro na Anvisa — software médico sem registro opera em área cinza regulatória, sem garantia de validação clínica. Terceiro, dados de saúde têm proteção extra na LGPD (dados sensíveis, art. 11) — antes de dar acesso a um app ao seu histórico de saúde, leia a política de privacidade e verifique onde os dados são processados e por quanto tempo ficam retidos.
+        </p>
       </EditorialTake>
 
       <ArticleSources sources={[
@@ -218,7 +224,8 @@ const IASaude2026 = () => {
         { title: "DeepMind — AlphaFold 3 (Nature, 2024)", url: "https://deepmind.google/discover/blog/alphafold-3-predicts-the-structure-and-interactions-of-all-of-lifes-molecules/", publisher: "Google DeepMind", accessedAt: "Maio 2026" },
         { title: "Apple Heart Study — Stanford / JAMA Cardiology", url: "https://www.nejm.org/doi/full/10.1056/NEJMoa1901183", publisher: "NEJM", accessedAt: "Maio 2026" },
         { title: "Anvisa — Consulta Pública 1.301 (Software como Dispositivo Médico)", url: "https://www.gov.br/anvisa/pt-br/assuntos/regulamentacao/agenda-regulatoria/temas/2021-2023/dispositivos-medicos", publisher: "Anvisa", accessedAt: "Maio 2026" },
-        { title: "Conselho Federal de Medicina — Resolução 2.314/2022 (Telemedicina)", url: "https://portal.cfm.org.br/images/PDF/resolucao2314.pdf", publisher: "CFM", accessedAt: "Maio 2026" }
+        { title: "Conselho Federal de Medicina — Resolução 2.314/2022 (Telemedicina)", url: "https://portal.cfm.org.br/images/PDF/resolucao2314.pdf", publisher: "CFM", accessedAt: "Maio 2026" },
+        { title: "Nobel Prize 2024 Chemistry — AlphaFold e a previsão de estrutura proteica", url: "https://www.nobelprize.org/prizes/chemistry/2024/summary/", publisher: "The Nobel Prize", accessedAt: "Junho 2026" },
       ]} />
 
       <RelatedPosts currentSlug="ia-saude-2026-diagnosticos-futuro" />

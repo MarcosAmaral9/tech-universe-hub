@@ -134,6 +134,26 @@ const IAGenerativaIniciantes2026 = () => {
           Um dado importante do <strong>Microsoft Work Trend Index 2025</strong>: <strong>78% dos profissionais</strong> que usam IA no trabalho trouxeram a ferramenta por conta própria, sem que o RH ou TI da empresa soubesse — fenômeno chamado de "Bring Your Own AI" (BYOAI). Isso cria um risco regulatório real: dados de clientes sendo enviados a plataformas sem DPA assinado. Para uso profissional, sempre verifique a política de privacidade da ferramenta antes de inserir qualquer dado sensível.
         </p>
 
+        <h2 className="text-2xl font-bold mt-10 mb-6">O Brasileiro e a IA Generativa: o Que a TIC Domicílios Revelou</h2>
+        <p>
+          Para quem está começando agora, vale entender em que ponto o país está. A pesquisa <strong>TIC Domicílios 2025</strong>, do Cetic.br (Comitê Gestor da Internet no Brasil), mediu pela primeira vez a adoção de IA generativa entre os brasileiros e encontrou que <strong>32% dos usuários de internet do país já usam essas ferramentas no dia a dia</strong> — o equivalente a cerca de 50 milhões de pessoas com 10 anos ou mais. A finalidade declarada mais comum, por 84% dos usuários, é para fins pessoais, não profissionais.
+        </p>
+        <p>
+          O dado mais importante para quem pensa em educação e inclusão digital é a desigualdade de acesso: enquanto <strong>69% dos usuários de internet da classe A</strong> já adotaram IA generativa, a proporção cai para apenas <strong>16% nas classes D e E</strong>. O recorte por escolaridade mostra o mesmo padrão — 59% dos usuários com ensino superior já usam essas ferramentas, contra 17% entre os que têm apenas ensino fundamental. Entre quem ainda não usa, os motivos mais citados foram falta de interesse ou necessidade (76%), preocupações com segurança e privacidade (63%) e falta de habilidade para usar a tecnologia (58%) — o que reforça que este guia, ao detalhar o passo a passo do zero, ataca justamente a barreira mais citada pelos próprios brasileiros.
+        </p>
+        <p>
+          Entre estudantes, a adoção já é quase universal: <strong>86% dos estudantes de escolas ou universidades</strong> recorreram à IA para realizar pesquisas ou trabalhos acadêmicos, segundo o mesmo levantamento. Outra pesquisa, da Cisco em parceria com a OCDE, ouviu mais de 14 mil pessoas em 14 países e colocou o Brasil na <strong>2ª posição global de uso ativo de IA generativa</strong>, atrás apenas da Índia — à frente de economias desenvolvidas como Estados Unidos, Reino Unido e países da Europa Ocidental, que historicamente lideravam ondas de adoção tecnológica.
+        </p>
+        <p>
+          A velocidade dessa adoção também chama atenção. Segundo o estudo "Inteligência Artificial na Vida Real", da Talk Inc., a proporção de usuários de internet brasileiros que usam IA saltou de 63% para 89% em apenas um ano — e a frequência de uso também dobrou no período. Ao mesmo tempo, a percepção de risco vem caindo: a preocupação com invasão de privacidade passou de 77% para 69% dos usuários entre uma edição e outra da pesquisa, e o medo de notícias falsas e deepfakes caiu de 80% para 74%. Entre quem usa IA regularmente, 74% relatam sensação de "superpoder" de produtividade, 62% se dizem mais produtivos e 56% mais criativos ao delegar tarefas para a tecnologia.
+        </p>
+        <p>
+          O alerta que pesquisadores fazem sobre esses números é justamente o ponto de partida deste guia: a adoção está crescendo mais rápido do que a compreensão de como essas ferramentas funcionam, o que aumenta o risco de uso displicente com dados sensíveis e de confiança excessiva em respostas que soam seguras mas podem estar erradas. Por isso a recomendação prática é sempre a mesma, independentemente de qual modelo você escolher: trate a primeira resposta como rascunho, verifique fatos importantes em uma segunda fonte e nunca insira informações confidenciais — suas ou de terceiros — sem entender a política de privacidade da ferramenta.
+        </p>
+        <p>
+          Vale notar que o uso predominantemente pessoal — e não profissional — da IA generativa no Brasil, registrado pela TIC Domicílios, é coerente com o caminho de aprendizado proposto neste guia: a maioria das pessoas começa testando a ferramenta em curiosidades do dia a dia antes de levá-la para o trabalho. Seguir essa ordem natural, em vez de tentar pular direto para automações complexas, é exatamente o que separa quem mantém o hábito de IA por mais de um mês de quem desiste na primeira semana — um padrão observado tanto em pesquisas acadêmicas quanto na prática editorial deste site ao longo de 2026.
+        </p>
+
         <h2 className="text-2xl font-bold mt-10 mb-6">Recursos Gratuitos para Começar: Cursos, Comunidades e Canais</h2>
         <div className="not-prose my-6 space-y-3">
           {[
@@ -171,6 +191,9 @@ const IAGenerativaIniciantes2026 = () => {
         { title: "OpenAI — Modelos e API (GPT-4o, o3)", url: "https://platform.openai.com/docs/models", publisher: "OpenAI", accessedAt: "Maio 2026" },
         { title: "Anthropic — Claude Models Overview", url: "https://www.anthropic.com/claude", publisher: "Anthropic", accessedAt: "Maio 2026" },
         { title: "Google DeepMind — Gemini 2.5 Pro", url: "https://deepmind.google/technologies/gemini/", publisher: "Google DeepMind", accessedAt: "Maio 2026" },
+        { title: "CGI.br/Cetic.br — TIC Domicílios 2025: adoção de IA generativa no Brasil", url: "https://www.cgi.br/noticia/releases/50-milhoes-de-brasileiros-ja-usam-ia-mas-potenciais-beneficios-continuam-limitados-as-camadas-de-maior-renda-e-escolaridade/", publisher: "CGI.br / NIC.br", accessedAt: "Junho 2026" },
+        { title: "Meio & Mensagem — Brasil é o segundo país que mais usa IA generativa no mundo (Cisco/OCDE)", url: "https://www.meioemensagem.com.br/marketing/brasil-e-o-segundo-pais-que-mais-usa-ia-generativa-no-mundo", publisher: "Meio & Mensagem", accessedAt: "Junho 2026" },
+        { title: "Fast Company Brasil — Adoção e frequência de uso de IA dobram no Brasil (pesquisa Talk Inc.)", url: "https://fastcompanybrasil.com/ia/adocao-e-frequencia-de-uso-de-ia-dobram-no-brasil-enquanto-percepcao-de-risco-cai/", publisher: "Fast Company Brasil", accessedAt: "Junho 2026" },
       ]} />
 
       <RelatedPosts currentSlug="ia-generativa-iniciantes-2026-guia" />

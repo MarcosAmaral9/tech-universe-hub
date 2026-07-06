@@ -214,6 +214,12 @@ const IARemasterizacaoJogos = () => {
           E para mods de RTX Remix, uma RTX 4060 usada (~R$ 2.000) já é suficiente. Não caia no hype de geração nova
           se o jogo que você quer rodar nem usa a tecnologia.
         </p>
+        <p>
+          O resultado do teste cego do ComputerBase — com quase 7.000 participantes preferindo DLSS 4.5 à resolução nativa — é um marco técnico importante, mas precisa ser lido com contexto: os jogos testados foram escolhidos por mostrar bem as diferenças de upscaling, não são uma amostra representativa de todos os títulos disponíveis. Em jogos com arte estilizada (2D, pixel art, cel shading) o upscaling neural frequentemente piora a experiência, introduzindo artefatos e suavizando detalhes que eram intencionais. A tecnologia brilha em jogos de renderização fotorrealista — exatamente o tipo para o qual DLSS e FSR foram projetados.
+        </p>
+        <p>
+          Para o jogador brasileiro que quer aproveitar remasterização com IA no curto prazo sem gastar fortunas: a combinação mais custo-efetiva é <strong>GeForce Now Ultimate</strong> (streaming com RTX 4080 em nuvem, ~R$ 60/mês) + FSR 3 ativado nos jogos que suportam. Você obtém qualidade de upscaling de última geração sem pagar pela GPU. Quem prefere hardware local, a RTX 4060 de segunda mão continua sendo o ponto ideal de entrada para DLSS 3 + Frame Generation em 1080p/1440p — e provavelmente vai continuar sendo o melhor ponto de entrada por mais 2 a 3 anos, dado o ritmo de depreciação de hardware de IA em games e o ciclo de vida mais longo que as gerações mais novas de DLSS impõem às GPUs da geração anterior.
+        </p>
       </EditorialTake>
 
       <ArticleSources sources={[
@@ -221,7 +227,8 @@ const IARemasterizacaoJogos = () => {
         { title: "AMD — FidelityFX Super Resolution 4 (FSR 4)", url: "https://www.amd.com/en/products/graphics/technologies/fidelityfx-super-resolution.html", publisher: "AMD", accessedAt: "Maio 2026" },
         { title: "NVIDIA RTX Remix — Official page", url: "https://www.nvidia.com/en-us/geforce/rtx-remix/", publisher: "NVIDIA", accessedAt: "Maio 2026" },
         { title: "Half-Life 2 RTX — Orbifold Studios", url: "https://www.halflife2rtx.com/", publisher: "Orbifold Studios", accessedAt: "Maio 2026" },
-        { title: "NVIDIA ACE — Generative AI for NPCs", url: "https://developer.nvidia.com/ace", publisher: "NVIDIA Developer", accessedAt: "Maio 2026" }
+        { title: "NVIDIA ACE — Generative AI for NPCs", url: "https://developer.nvidia.com/ace", publisher: "NVIDIA Developer", accessedAt: "Maio 2026" },
+        { title: "ComputerBase — Teste cego DLSS 4.5 vs FSR 4 vs nativo com 7.000 participantes (fev/2026)", url: "https://www.computerbase.de/forum/threads/dlss-4-5-vs-fsr-4-vs-native-blind-test-7000-participants.html", publisher: "ComputerBase", accessedAt: "Junho 2026" },
       ]} />
 
       <RelatedPosts currentSlug="ia-remasterizacao-jogos-classicos" />

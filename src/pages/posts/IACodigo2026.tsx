@@ -156,11 +156,33 @@ const IACodigo2026 = () => {
           <li><strong>Debugging complexo:</strong> Erros lógicos de alto nível e race conditions em sistemas concorrentes ainda são melhor rastreados por engenheiros humanos experientes.</li>
           <li><strong>Código legado sem documentação:</strong> Bases antigas com lógica de domínio específica confundem os modelos — o contexto histórico não está acessível.</li>
         </ul>
+        <p>
+          Os números de 2026 confirmam o tamanho do problema. A Veracode testou mais de 100 modelos de linguagem em tarefas de código sensíveis à segurança e encontrou que <strong>45% das amostras geradas por IA introduzem vulnerabilidades do OWASP Top 10</strong> — taxa que não melhorou de forma consistente entre 2025 e o início de 2026, mesmo com modelos mais novos. Em linguagens específicas o cenário piora: Java teve <strong>72% de taxa de falha</strong> nos testes de segurança, e 86% das amostras analisadas falharam em se proteger contra cross-site scripting.
+        </p>
+        <p>
+          Um dado ainda mais preocupante vem de uma pesquisa controlada da Snyk: quase <strong>80% dos desenvolvedores acreditam que ferramentas de IA geram código mais seguro do que humanos escrevem</strong> — uma crença que contradiz praticamente todos os estudos empíricos sobre o tema. Em um experimento controlado, desenvolvedores usando GitHub Copilot submeteram código inseguro com mais frequência do que os que programaram sem assistência de IA, e ainda assim relataram mais confiança nas próprias entregas. O efeito prático é uma falsa sensação de segurança que tende a reduzir a revisão crítica que o desenvolvedor normalmente faria.
+        </p>
+        <p>
+          Pesquisa acadêmica em larga escala também mostra que código assistido por IA gera commits 3 a 4 vezes mais rápido, mas introduz falhas de segurança a uma taxa até <strong>10 vezes maior</strong> em organizações Fortune 50 — um padrão que pesquisadores descrevem como "dívida de segurança" acumulando-se mais rápido do que os times conseguem corrigir. Isso reforça a recomendação prática deste artigo: trate todo código gerado por IA como rascunho de um júnior talentoso, nunca como produto final pronto para produção sem revisão.
+        </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Zap className="h-7 w-7 text-ia" />
-          Como Integrar IA ao Seu Fluxo de Trabalho: 5 Práticas
+          <Bot className="h-7 w-7 text-ia" />
+          De Copiloto a Agente: a Virada de 2026 na Forma de Programar com IA
         </h2>
+        <p>
+          A mudança mais estrutural de 2026 não está em qual ferramenta pontua melhor no SWE-bench, mas na própria categoria do produto. Em 2024, o mercado era dominado por <strong>copilotos</strong> — ferramentas que sugerem trechos de código enquanto você digita. Em 2026, o padrão migrou para <strong>agentes</strong>: sistemas que pesquisam, executam, iteram e validam tarefas inteiras sem direção passo a passo. O relatório de tendências de codificação agêntica da Anthropic descreve essa mudança como uma reconfiguração do papel do desenvolvedor, que passa a atuar como "orquestrador" — definindo objetivos, validando resultados e tomando decisões estratégicas, em vez de escrever cada linha manualmente.
+        </p>
+        <p>
+          O exemplo mais citado dessa categoria é o <strong>Devin</strong>, da Cognition AI, vendido como um "engenheiro de software autônomo" com ambiente, terminal e navegador próprios. A empresa dobrou sua avaliação de mercado para perto de US$ 4 bilhões, e a versão Devin 2.0 completa 83% mais tarefas por unidade de computação do que a primeira versão. O Cursor, por sua vez, já fatura na casa de meio bilhão de dólares em receita anualizada com um produto que praticamente não existia um ano antes — uma velocidade de crescimento sem precedentes recentes no mercado de ferramentas para desenvolvedores.
+        </p>
+        <p>
+          Esses números vêm acompanhados de um dado contraintuitivo: segundo um estudo randomizado e controlado do METR, ferramentas de IA tornaram desenvolvedores experientes <strong>19% mais lentos</strong> em bases de código já familiares a eles — o oposto do que a maioria espera. O resultado contradiz a percepção subjetiva de produtividade que aparece em pesquisas de autoavaliação, e reforça um padrão recorrente nos estudos mais rigorosos sobre o tema: o ganho de produtividade da IA em código é real, mas desigual — maior em tarefas repetitivas, testes e documentação, e menor (às vezes negativo) em refatorações complexas de sistemas que o desenvolvedor já domina profundamente.
+        </p>
+        <p>
+          Para quem acompanha o mercado de trabalho, vale registrar também a confiança em queda: segundo o Stack Overflow Developer Survey, a proporção de desenvolvedores que confiam na precisão do código gerado por IA caiu de mais de 70% em 2023 para cerca de 29% em 2025 — mesmo com o uso da ferramenta crescendo no mesmo período. O padrão sugere uma curva de maturidade saudável: desenvolvedores estão usando mais essas ferramentas, mas com mais ceticismo e mais revisão, exatamente a combinação que os dados de segurança apresentados acima recomendam.
+        </p>
+
         <ol className="space-y-2 my-6">
           <li><strong>Comece com Copilot gratuito</strong> — 2.000 completions mensais sem cartão de crédito. É suficiente para validar se IA de código muda sua produtividade antes de pagar.</li>
           <li><strong>Use IA principalmente para testes</strong> — geração de testes unitários é onde a IA tem o melhor custo-benefício documentado. Um bom prompt gera 10–20 casos de teste em segundos.</li>
@@ -182,6 +204,8 @@ const IACodigo2026 = () => {
         { title: "Stack Overflow Developer Survey 2025", url: "https://survey.stackoverflow.co/", publisher: "Stack Overflow", accessedAt: "Maio 2026" },
         { title: "GitHub — Copilot Research & Blog", url: "https://github.blog/news-insights/research/", publisher: "GitHub", accessedAt: "Maio 2026" },
         { title: "Snyk — AI-Generated Code Security Report", url: "https://snyk.io/reports/ai-code-security/", publisher: "Snyk", accessedAt: "Maio 2026" },
+        { title: "Cloud Security Alliance — Vibe Coding's Security Debt: The AI-Generated CVE Surge (2026)", url: "https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-generated-code-vulnerability-surge-2026/", publisher: "Cloud Security Alliance", accessedAt: "Junho 2026" },
+        { title: "Modall — AI in Software Development: 25+ Trends & Statistics (2026)", url: "https://modall.ca/blog/ai-in-software-development-trends-statistics", publisher: "Modall", accessedAt: "Junho 2026" },
       ]} />
 
       <RelatedPosts currentSlug="ia-codigo-programadores-2026" />

@@ -138,6 +138,17 @@ const AgentesIA2026 = () => {
           aplicações sérias em 2026-2027. Para desenvolvedores brasileiros, o tutorial oficial do MCP é o melhor ponto de partida.
         </p>
 
+        <h2 className="text-2xl font-bold mt-10 mb-6">Impacto no Emprego e na Organização das Empresas: O Que Dizem os Dados</h2>
+        <p>
+          Um dos debates mais importantes em torno dos agentes de IA envolve o impacto no mercado de trabalho — e os dados disponíveis em 2026 mostram um quadro mais nuançado do que as narrativas de "substituição total" ou de "nenhum impacto" sugerem. O Anthropic Economic Index, que analisou centenas de milhares de conversas no Claude, encontrou que apenas 4% das tarefas das ocupações americanas poderiam ser inteiramente automatizadas pelos modelos atuais, e que a IA aparece majoritariamente como ferramenta de colaboração e aumento de capacidade, não de substituição direta. Já o World Economic Forum, no <em>Future of Jobs 2025</em>, estima que 41% das empresas pesquisadas planejam reduzir equipes em funções onde IA pode substituir o trabalho, mas que o mesmo movimento vai criar 170 milhões de novos empregos enquanto elimina 92 milhões — resultando em saldo líquido positivo de 78 milhões de postos globais até 2030, mas com enorme deslocamento setorial no meio do caminho.
+        </p>
+        <p>
+          No Brasil, a pesquisa Avantia de IA nas Empresas 2026 mostrou que a maioria dos gestores já enxerga agentes como complemento da equipe, não como substitutos — ao menos por enquanto. A postura mais comum é o que analistas chamam de "automação das bordas": identificar as tarefas mais repetitivas, padronizadas e de baixo risco de erro catastrófico, e automatizá-las primeiro. Tarefas centrais de julgamento, negociação, criação original e gestão de relacionamentos permanecem predominantemente humanas. Esse padrão explica por que o medo do desemprego imediato por IA, embora real em nichos específicos (como alguns papéis de call center e entrada de dados), não se confirmou como um colapso amplo do mercado de trabalho em 2025-2026.
+        </p>
+        <p>
+          Para profissionais individuais, a implicação prática é clara: as habilidades mais protegidas são aquelas que os agentes ainda não conseguem replicar de forma confiável — julgamento contextual complexo, adaptação a situações inéditas, criatividade original e confiança interpessoal. Essas são exatamente as habilidades que profissionais deveriam fortalecer enquanto delegam trabalho operacional repetitivo para agentes.
+        </p>
+
         <h2 className="text-2xl font-bold mt-10 mb-6">Como Usar Agentes de IA com Segurança no Brasil</h2>
         <p>
           Três regras práticas para evitar dor de cabeça regulatória ou financeira: <strong>(1) sandbox primeiro</strong> — todo agente que
@@ -151,7 +162,7 @@ const AgentesIA2026 = () => {
           e devem estar no Registro de Operações de Tratamento (ROT) da empresa. A ANPD ainda não publicou guia específico para
           agentes autônomos, mas o Parecer 24/2024 já sinaliza que decisões automatizadas com efeito sobre titulares exigem
           <strong> revisão humana garantida</strong> (art. 20 LGPD). Quem implanta agente em atendimento ao cliente sem botão "falar com humano"
-          está infringindo.
+          está infringindo esse requisito — e o risco não é só regulatório: estudos de experiência do usuário mostram que a satisfação cai significativamente quando clientes percebem que não conseguem escalar para um humano em situações de conflito ou urgência. A combinação de conformidade legal e UX aponta para o mesmo desenho: agente como primeiro contato, humano como revisão garantida em ações de alto impacto.
         </p>
 
         <h2 className="text-2xl font-bold mt-10 mb-6">FAQ — Perguntas Frequentes Sobre Agentes de IA</h2>
@@ -180,6 +191,9 @@ const AgentesIA2026 = () => {
           de lead, atualização de planilha) e começar por aí. Quem ignorar a parte regulatória vai descobrir o custo de uma multa
           ANPD da forma cara.
         </p>
+        <p>
+          O que os dados do Anthropic Economic Index mostram — e que o debate público em torno de "IA vai substituir empregos" frequentemente ignora — é que a automação agêntica está sendo absorvida muito mais como camada adicional de capacidade do que como substituição direta de postos de trabalho. A maioria dos casos bem-sucedidos em 2026 envolve equipes humanas que ficaram mais eficientes, não equipes que foram eliminadas. Isso pode mudar com modelos mais capazes nos próximos anos, mas no cenário atual, a ameaça imediata é menor e a oportunidade de diferenciação para profissionais que souberem orquestrar agentes é muito maior do que o senso comum sugere.
+        </p>
       </EditorialTake>
 
       <ArticleSources sources={[
@@ -187,7 +201,8 @@ const AgentesIA2026 = () => {
         { title: "Princeton NLP — SWE-bench Verified Leaderboard", url: "https://www.swebench.com/", publisher: "Princeton NLP", accessedAt: "Maio 2026" },
         { title: "OSWorld: Benchmarking Multimodal Agents (CMU)", url: "https://os-world.github.io/", publisher: "Carnegie Mellon University", accessedAt: "Maio 2026" },
         { title: "Google Cloud — Agent2Agent (A2A) Protocol", url: "https://cloud.google.com/blog/products/ai-machine-learning/a2a-a-new-era-of-agent-interoperability", publisher: "Google Cloud", accessedAt: "Maio 2026" },
-        { title: "LGPD — Art. 20 (Revisão de decisões automatizadas)", url: "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm", publisher: "Planalto", accessedAt: "Maio 2026" }
+        { title: "LGPD — Art. 20 (Revisão de decisões automatizadas)", url: "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm", publisher: "Planalto", accessedAt: "Maio 2026" },
+        { title: "Anthropic Economic Index — AI's Impact on Work and What Models Do", url: "https://www.anthropic.com/research/anthropic-economic-index", publisher: "Anthropic", accessedAt: "Junho 2026" },
       ]} />
 
       <RelatedPosts currentSlug="agentes-ia-2026-como-funcionam" />

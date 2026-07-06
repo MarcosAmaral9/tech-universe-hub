@@ -231,7 +231,13 @@ const IACiberseguranca2026 = () => {
       </div>
 
         <EditorialTake category="ia" title="Análise do Marcos: IA de defesa só entra depois de threat modeling e DPIA, nunca antes">
-          <p>Cibersegurança com IA é a faca de dois gumes mais importante da década: a mesma tecnologia que ajuda SOCs a triar alertas em segundos está nas mãos de quem escreve phishing convincente em português. No Brasil, onde o CERT.br registra crescimento contínuo de incidentes e a LGPD ainda tem aplicação desigual, vejo empresas adotando copilots de SOC sem revisar política de dados — e depois tendo que justificar para a ANPD por que prompts com PII vão para fora do país. A regra que sigo: IA de defesa só entra depois de threat modeling e DPIA, nunca antes.</p>
+          <p>Cibersegurança com IA é a faca de dois gumes mais importante da década: a mesma tecnologia que ajuda SOCs a triar alertas em segundos está nas mãos de quem escreve phishing convincente em português. No Brasil, onde o CERT.br registra crescimento contínuo de incidentes e a LGPD ainda tem aplicação desigual, vejo empresas adotando copilots de SOC sem revisar política de dados — e depois tendo que justificar para a ANPD por que prompts com PII vão para fora do país. A regra que sigo: IA de defesa só entra depois de threat modeling e DPIA, nunca antes — e nunca sem um DPA assinado com o fornecedor da ferramenta de IA, garantindo que os dados de alertas e logs processados não serão usados para treinar modelos de terceiros.</p>
+          <p>
+            O dado mais revelador sobre o estado real da cibersegurança com IA no Brasil vem do CERT.br: os incidentes reportados voluntariamente crescem ano a ano, mas especialistas estimam que menos de 10% dos incidentes reais chegam ao CERT — a maioria das empresas brasileiras ainda trata ransomware e vazamentos como assunto de TI interna, não como notificação obrigatória à ANPD. Esse subregistro mascara a real dimensão do problema e alimenta a falsa sensação de que "nossa empresa nunca foi atacada". Com a LGPD exigindo notificação de incidentes relevantes à ANPD em até 3 dias úteis após a ciência do evento, essa postura vai se tornar progressivamente mais cara — tanto financeiramente quanto reputacionalmente — à medida que a autoridade aumenta sua capacidade de cruzamento de dados e fiscalização ativa ao longo de 2026 e 2027 — um cenário já sinalizado pela própria ANPD em seu planejamento estratégico público.
+          </p>
+          <p>
+            Para equipes de segurança com orçamento limitado — a realidade da maioria das empresas brasileiras médias —, a melhor entrada em IA de defesa é via <strong>threat intelligence</strong>: usar modelos de linguagem para processar feeds de CVEs, relatórios de ameaças e indicadores de comprometimento, gerando resumos acionáveis para o time de TI sem exigir expertise de análise de malware. Ferramentas como Microsoft Security Copilot e Google Mandiant oferecem isso como serviço, enquanto alternativas open-source (TheHive + Cortex com Ollama local) permitem que equipes com budget restrito façam o mesmo sem enviar dados sensíveis para fora do ambiente controlado — uma distinção regulatória importante para empresas sujeitas a compliance setorial, como instituições financeiras reguladas pelo BACEN ou prestadores de serviços de saúde sujeitos à Resolução CFM sobre prontuários eletrônicos.
+          </p>
         </EditorialTake>
 
         <ArticleSources sources={[
@@ -239,7 +245,8 @@ const IACiberseguranca2026 = () => {
     { title: 'ANPD — Guias de Boas Práticas', url: 'https://www.gov.br/anpd/pt-br/documentos-e-publicacoes/guias-orientativos', publisher: 'ANPD', accessedAt: "Maio 2026" },
     { title: 'Microsoft Security — Copilot for Security', url: 'https://www.microsoft.com/en-us/security/business/ai-machine-learning/microsoft-security-copilot', publisher: 'Microsoft', accessedAt: "Maio 2026" },
     { title: 'Google — Threat Intelligence (Mandiant)', url: 'https://cloud.google.com/security/mandiant-threat-intelligence', publisher: 'Google Cloud', accessedAt: "Maio 2026" },
-    { title: 'NIST — AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework', publisher: 'NIST', accessedAt: "Maio 2026" }
+    { title: 'NIST — AI Risk Management Framework', url: 'https://www.nist.gov/itl/ai-risk-management-framework', publisher: 'NIST', accessedAt: "Maio 2026" },
+    { title: 'OWASP — Top 10 for LLM Applications 2025', url: 'https://owasp.org/www-project-top-10-for-large-language-model-applications/', publisher: 'OWASP', accessedAt: "Junho 2026" },
   ]} />
       <RelatedPosts currentSlug="ia-ciberseguranca-2026" />
       <CommentSection category="ia" postId="ia-ciberseguranca-2026" />

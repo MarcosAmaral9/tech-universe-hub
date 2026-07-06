@@ -140,9 +140,23 @@ const DeepfakesIA2026 = () => {
           Casos brasileiros documentados: em janeiro de 2025, uma quadrilha foi presa por aplicar golpes usando deepfakes do apresentador <strong>Marcos Mion</strong> para promover promoções falsas do Outback. Figuras públicas como William Bonner, Lula, Marina Silva, Drauzio Varella e Fernando Haddad já tiveram imagens e vozes clonadas em esquemas de fraude. O golpe do "familiar em aperto" — onde a voz clonada de um filho ou cônjuge pede transferência urgente — é o mais comum em famílias de classe média.
         </p>
 
+        <h2 className="text-2xl font-bold mt-10 mb-6">Como Funciona a Detecção de Deepfakes: Tecnologia por Tecnologia</h2>
+        <p>
+          As ferramentas de detecção de deepfakes trabalham identificando artefatos que modelos generativos ainda deixam em seus outputs — padrões que o olho humano não percebe, mas algoritmos especializados conseguem encontrar. Os principais sinais em deepfakes de vídeo incluem micromovimentos inconsistentes nas bordas do rosto (especialmente nos cabelos e contorno da mandíbula), piscar de olhos com timing artificial, reflexos nas córneas que não condizem com a iluminação da cena e inconsistências nos batimentos vasculares faciais (rPPG), que câmeras de alta qualidade capturam e que modelos de IA ainda geram de forma artificial.
+        </p>
+        <p>
+          Para deepfakes de áudio, os detectores analisam padrões de respiração, ausência de sons de fundo realistas, microvariações de tom inconsistentes com o ritmo de fala natural e a cadência de deglutição — sons que vozes sintéticas raramente reproduzem de forma convincente em falas mais longas. O problema é que esses sinais estão cada vez mais difíceis de detectar: enquanto ferramentas como a Eleven Labs melhoram a naturalidade de vozes sintéticas a cada versão, os detectores precisam correr atrás.
+        </p>
+        <p>
+          A taxa de acerto das principais ferramentas de detecção varia amplamente. Testes independentes em 2025 mostraram que detectores como Intel FakeCatcher e Microsoft Video Authenticator têm precisão acima de 90% com deepfakes de qualidade moderada, mas caem para 70% ou menos com deepfakes gerados pelos modelos mais recentes. O Intel FakeCatcher é o mais citado em contextos corporativos por operar em tempo real — detectando deepfakes durante a própria videoconferência, não apenas em vídeos gravados. Já o Hive Moderation é uma opção via API amplamente usada por plataformas de conteúdo para moderação em escala.
+        </p>
+        <p>
+          A lição mais importante sobre detecção, no entanto, não é técnica — é contextual. A maioria dos golpes bem-sucedidos com deepfakes não depende de perfeição técnica: depende de urgência emocional. O golpe do "familiar em aperto" funciona porque quem recebe a ligação está sob estresse e não ativa o pensamento crítico necessário para notar artefatos. Da mesma forma, o caso Arup funcionou porque o funcionário tinha histórico de conferências com o CFO e não tinha motivo óbvio para desconfiar do contexto. A defesa técnica é necessária em nível corporativo; a defesa comportamental — protocolos de verificação, palavras-código, ceticismo treinado — é o que realmente protege no dia a dia individual.
+        </p>
+
         <h2 className="text-2xl font-bold mt-10 mb-6">Casos Corporativos: Quando a IA Engana Empresas Inteiras</h2>
         <p>
-          O caso mais impactante foi em Hong Kong, em fevereiro de 2024: um funcionário do departamento financeiro de uma multinacional transferiu <strong>US$ 25 milhões</strong> após uma videoconferência com deepfakes ao vivo de seu CFO e outros executivos. Não foi um vídeo pré-gravado — foi uma videoconferência interativa com avatares de IA respondendo perguntas em tempo real.
+          O caso mais impactante foi em Hong Kong, em fevereiro de 2024: um funcionário do departamento financeiro de uma multinacional transferiu <strong>US$ 25 milhões</strong> após uma videoconferência com deepfakes ao vivo de seu CFO e outros executivos. Não foi um vídeo pré-gravado — foi uma videoconferência interativa com avatares de IA respondendo perguntas em tempo real, o que mostra que o nível de sofisticação dos ataques mais avançados já superou qualquer verificação visual ingênua.
         </p>
         <p>
           No modelo corporativo de ataque, os golpistas precisam de apenas 3 a 5 minutos de áudio claro para replicar o timbre, cadência, pausas e tiques de linguagem de um executivo. Qualquer CEO com presença pública relevante — entrevistas, podcasts, lives — está fornecendo involuntariamente o dataset necessário para sua própria clonagem digital. A <strong>Migalhas</strong> reportou casos no Brasil de CFOs falsos usados para autorizar transferências em empresas médias.
@@ -158,7 +172,7 @@ const DeepfakesIA2026 = () => {
           O relatório <em>State of Deepfakes 2024</em> da Sensity AI documentou crescimento de 550% em deepfakes de áudio entre 2023 e 2024. O FBI emitiu alerta público (PSA I-052024-PSA) sobre golpes de clonagem de voz com IA — só nos EUA, o prejuízo passou de US$ 200 milhões em 2024. No Brasil, a Febraban registrou aumento de 40% em tentativas de fraude com áudio sintético contra clientes bancários em 2025.
         </p>
         <p>
-          Ferramentas de detecção ajudam em contexto corporativo, mas para o cidadão comum a proteção mais eficaz é <strong>comportamental</strong>: combine palavras-código com familiares, desconfie de urgência artificial e nunca autorize transferências por áudio ou vídeo sem verificar por canal independente. A IA já clona vozes com 3 segundos de áudio — a tecnologia está acessível demais para esperar que a regulamentação resolva antes de você agir.
+          Ferramentas de detecção ajudam em contexto corporativo, mas para o cidadão comum a proteção mais eficaz é <strong>comportamental</strong>: combine palavras-código com familiares, desconfie de urgência artificial e nunca autorize transferências por áudio ou vídeo sem verificar por canal independente. A IA já clona vozes com 3 segundos de áudio — a tecnologia está acessível demais para esperar que a regulamentação resolva antes de você agir. O hábito de pausar, respirar e verificar por um segundo canal antes de qualquer ação financeira urgente é a medida com melhor relação custo-benefício disponível hoje, e que não depende de nenhum app ou ferramenta especial para funcionar — O hábito deliberado e consistente de verificar antes de agir especialmente em situações criadas para eliminar exatamente esse espaço de reflexão necessário para perceber o golpe.
         </p>
       </EditorialTake>
 

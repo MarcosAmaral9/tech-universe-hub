@@ -69,6 +69,9 @@ const ClaudeCoworkSaas2026 = () => {
         <p>
           Diferente do Claude.ai para consumidores, o Cowork opera com <strong>agentes configurados para setores específicos</strong>: jurídico, financeiro, RH, marketing, engenharia. Cada agente tem conhecimento especializado pré-treinado sobre regulações brasileiras, normas contábeis, legislação trabalhista e práticas do setor — funcionando como um especialista sênior disponível 24h.
         </p>
+        <p>
+          O alerta de que agentes de IA podem substituir SaaS inteiros ganhou substância com dados concretos em 2025–2026. A Salesforce registrou queda de 25% na demanda por licenças de Slack após lançar o Agentforce — seu produto de automação com IA —, segundo análises de analistas de mercado. A Klarna eliminou o uso de diversas ferramentas de terceiros depois de implantar agentes de IA para atendimento ao cliente, relatórios financeiros e gestão de fornecedores, segundo comunicados da própria empresa. O padrão é claro: quando um agente consegue orquestrar múltiplos sistemas de uma vez, ferramentas que existiam para preencher uma única função isolada tornam-se redundantes. Isso não quer dizer que todo SaaS vai desaparecer — mas que o mercado está passando por uma seleção natural acelerada, e ferramentas sem dados proprietários, integrações profundas ou compliance setorial específico serão as primeiras a sentir o impacto real dessa transição.
+        </p>
         <div className="not-prose my-6 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
             { area: "⚖️ Jurídico", tarefas: "Revisão de contratos, triagem de NDAs, pesquisa de jurisprudência, minutas automáticas, due diligence preliminar" },
@@ -234,6 +237,12 @@ const ClaudeCoworkSaas2026 = () => {
 
       <EditorialTake category="ia" title="Análise do Marcos: SaaS não morre — vira commodity">
         <p>A narrativa do "SaaSpocalypse" confunde dois fenômenos. O que vai morrer é o <strong>SaaS de camada fina</strong>: ferramentas que basicamente envelopam um banco de dados com UI e cobravam US$ 20/mês por isso. Esses serão substituídos por agentes que geram a UI sob demanda. O que sobrevive — e talvez fortaleça — é o SaaS de <strong>workflow profundo</strong>, com dados proprietários, compliance específico e integrações complexas (Salesforce, Stripe, ServiceNow). Para o mercado brasileiro, a oportunidade está em construir verticais com regulamentação local (saúde com LGPD, fiscal com SPED, jurídico com peticionamento eletrônico) — barreiras que nenhum agente genérico replica.</p>
+        <p>
+          O Cowork em si é um produto que a Anthropic lançou reconhecendo que o ChatGPT se tornou o default para muitos usuários simplesmente pela força de marca e distribuição — não por desempenho superior em todas as tarefas. A estratégia de posicionar o Claude dentro de um ambiente de trabalho desktop, integrado a arquivos e apps locais, é uma resposta direta ao Google Gemini integrado ao Workspace e ao Copilot integrado ao Microsoft 365. Para o profissional brasileiro que ainda não escolheu um ecossistema de IA, a recomendação prática é: teste os três em fluxos reais do seu trabalho antes de pagar. A diferença de qualidade em tarefas específicas (redação em português, análise de contratos, código com contexto longo) pode ser significativa e só fica clara no uso real, não em comparações de benchmark.
+        </p>
+        <p>
+          Um dado relevante para a decisão: segundo o State of AI Report, modelos de IA generativa já são avaliados internamente por mais de 90% das empresas com mais de 500 funcionários — mas a taxa de adoção em produção ainda é muito mais baixa. O gargalo quase sempre está em integração com dados existentes e treinamento de equipe, não na qualidade do modelo em si — o que significa que a escolha da ferramenta importa menos do que o processo de adoção e a cultura de uso que a empresa consegue construir ao redor dela nos primeiros 90 dias de implantação, quando o retorno sobre o investimento ainda é invisível e a resistência interna à mudança tende a ser maior.
+        </p>
       </EditorialTake>
 
       <ArticleSources
@@ -243,6 +252,7 @@ const ClaudeCoworkSaas2026 = () => {
           { title: "a16z — The State of AI Agents", url: "https://a16z.com/ai/", publisher: "Andreessen Horowitz", accessedAt: "Maio 2026" },
           { title: "Gartner Hype Cycle for Artificial Intelligence", url: "https://www.gartner.com/en/research/methodologies/gartner-hype-cycle", publisher: "Gartner", accessedAt: "Maio 2026" },
           { title: "Stack Overflow Developer Survey 2025", url: "https://survey.stackoverflow.co/", publisher: "Stack Overflow", accessedAt: "Maio 2026" },
+          { title: "Microsoft — Copilot Studio: automação de workflows empresariais", url: "https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio", publisher: "Microsoft", accessedAt: "Junho 2026" },
         ]}
       />
 

@@ -201,6 +201,26 @@ const DolaAI2026 = () => {
           </div>
         </div>
 
+        <h2 className="text-2xl font-bold mt-10 mb-6">Quem Está por Trás do Dola: a Origem ByteDance e a Troca de Nome</h2>
+        <p>
+          Um dado pouco divulgado pelo próprio app, mas verificável em registros de imprensa e na documentação pública do produto: o Dola é desenvolvido pela <strong>ByteDance</strong>, a mesma empresa chinesa dona do TikTok. O aplicativo foi lançado originalmente em 2023 como <strong>Cici</strong>, voltado a mercados internacionais como México, Indonésia, Malásia, Filipinas e Reino Unido, antes de ser rebatizado como Dola entre o fim de 2025 e o início de 2026. Diferente do Doubao — assistente da ByteDance focado no mercado chinês, que usa modelo proprietário —, o Dola roda sobre modelos de terceiros, incluindo GPT da OpenAI e Gemini do Google, além de módulos próprios da empresa como o editor de imagens PicPic e o assistente de programação Coze.
+        </p>
+        <p>
+          A estratégia da ByteDance para o Dola sempre foi de "baixa exposição de marca": o app não menciona a empresa controladora em nenhum lugar visível da interface ou do site oficial, uma escolha que analistas relacionam à resistência política e regulatória que aplicativos chineses enfrentam em mercados ocidentais — o mesmo tipo de escrutínio já vivido pelo TikTok nos Estados Unidos e na Europa. Para o usuário brasileiro, essa informação muda o cálculo de risco: trata-se de um produto operado por uma das maiores empresas de tecnologia da China, sujeita à legislação chinesa de compartilhamento de dados com o Estado, ainda que a empresa afirme que dados de usuários internacionais sejam processados fora do país.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-6">Crescimento Acelerado: Como o Dola Chegou ao Top 10 Mundial de Apps</h2>
+        <p>
+          Os números de 2026 confirmam que o Dola não é mais um app de nicho. Segundo levantamento da AppMagic divulgado pela Itshow, o aplicativo alcançou a <strong>6ª posição no ranking mundial de apps mais baixados em março de 2026</strong>, com 35 milhões de instalações no mês — um crescimento de 30% sobre os 27 milhões de fevereiro. A enciclopédia colaborativa Wikipédia, citando reportagens da imprensa especializada, registra que o serviço passou a superar <strong>10 milhões de usuários ativos diários</strong> na sua fase como Dola.
+        </p>
+        <p>
+          Esse salto não aconteceu isolado: março de 2026 marcou a primeira vez que quatro assistentes de IA generativa apareceram simultaneamente no top 10 mundial de downloads — ChatGPT na liderança com 76 milhões de instalações, Gemini em 3º com 52 milhões e Claude entrando no ranking pela primeira vez, com 30 milhões de downloads e crescimento de 330% no período. Para especialistas em segurança da informação, o fenômeno acende um alerta corporativo: a adoção em massa de assistentes de IA por funcionários — muitas vezes via apps pessoais no celular — amplia a exposição de dados sensíveis a plataformas com políticas de privacidade, jurisdição legal e arquitetura de segurança bastante diferentes entre si.
+        </p>
+
+        <p>
+          Vale lembrar que rebatizar produtos é uma prática comum entre as grandes plataformas chinesas de tecnologia ao entrarem em mercados ocidentais, e o caso Cici → Dola segue um roteiro parecido ao de outros aplicativos da ByteDance fora da China. Para o usuário comum, isso não muda o funcionamento do app no dia a dia, mas reforça a importância de ler a política de privacidade antes de conectar contas, calendários ou documentos de trabalho ao assistente — independentemente de qual empresa esteja por trás dele.
+        </p>
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Mic className="h-7 w-7 text-ia" />
           Como Usar o Dola AI: Primeiros Passos
@@ -225,10 +245,12 @@ const DolaAI2026 = () => {
 
         <h2 className="text-2xl font-bold mt-10 mb-6">Pontos Negativos do Dola AI que Você Precisa Saber</h2>
         <ul className="space-y-2 my-6">
+          <li><strong>Empresa controladora pouco transparente:</strong> o Dola é operado pela ByteDance — dona do TikTok —, mas não menciona essa ligação na interface nem no site oficial. Antes de inserir dados sensíveis, vale considerar que se trata de uma empresa chinesa sujeita a um arcabouço regulatório diferente do brasileiro.</li>
           <li><strong>Política de privacidade:</strong> verifique se o app usa suas conversas para treino antes de compartilhar dados sensíveis. A empresa não é tão transparente quanto Anthropic ou OpenAI nesse ponto.</li>
           <li><strong>Vídeos com marca d'água no gratuito:</strong> se precisar de vídeos sem marca para uso comercial, o plano pago é necessário.</li>
           <li><strong>Qualidade de texto inferior:</strong> em tarefas complexas de raciocínio ou análise profunda, o ChatGPT Plus e o Claude Pro ainda entregam resultados superiores.</li>
           <li><strong>Contexto menor:</strong> documentos muito longos podem ser truncados. Para PDFs extensos, o Claude.ai (200k tokens) é mais adequado.</li>
+          <li><strong>Avaliações mistas de qualidade:</strong> nas lojas de aplicativos, parte dos usuários relata que a geração de imagens é rápida, mas inconsistente em qualidade, e que conversas mais aprofundadas tendem a "travar" em respostas genéricas — um padrão comum em apps que priorizam volume de usuários sobre profundidade de raciocínio do modelo.</li>
         </ul>
 
         <h2 className="text-2xl font-bold mt-10 mb-6">Para Quem o Dola AI é Indicado?</h2>
@@ -272,10 +294,10 @@ const DolaAI2026 = () => {
 
       <EditorialTake category="ia" title="Análise do Marcos: Dola resolve o problema real de quem não quer 5 apps de IA no celular">
         <p>
-          O grande acerto do Dola AI é entender que a maioria dos usuários brasileiros não quer gerenciar cinco apps de IA diferentes — um para texto, um para imagem, um para vídeo, um para tradução. O Dola empacota tudo em uma interface conversacional simples e em português, o que reduz drasticamente a barreira de entrada. O crescimento nas lojas em 2026 reflete isso.
+          O grande acerto do Dola AI é entender que a maioria dos usuários brasileiros não quer gerenciar cinco apps de IA diferentes — um para texto, um para imagem, um para vídeo, um para tradução. O Dola empacota tudo em uma interface conversacional simples e em português, o que reduz drasticamente a barreira de entrada. O crescimento de 30% em downloads em um único mês, alcançando o top 10 mundial, reflete isso.
         </p>
         <p>
-          A ressalva importante é a <strong>privacidade</strong>: a empresa por trás do Dola ainda não tem a mesma transparência de Anthropic ou OpenAI em termos de política de retenção e uso de dados. Para uso pessoal e casual, o risco é baixo. Para qualquer coisa que envolva dados de cliente, empresa ou informação sensível, use plataformas com DPA documentado. No mais, o Dola é genuinamente uma boa pedida gratuita para quem está dando os primeiros passos com IA no celular.
+          A ressalva importante é a <strong>privacidade</strong>, e ela ficou mais concreta depois de mapear quem está por trás do produto: o Dola é da ByteDance, controladora do TikTok, e a empresa optou deliberadamente por não expor essa ligação na interface do app. Isso não significa, por si só, que o produto seja inseguro para uso casual — mas significa que o usuário deveria ter essa informação antes de decidir o que compartilha. Para uso pessoal e descompromissado, o risco é baixo. Para qualquer coisa que envolva dados de cliente, empresa ou informação sensível, prefira plataformas com política de retenção documentada e, idealmente, contrato de processamento de dados (DPA) assinado — algo que a Anthropic e a OpenAI já oferecem para clientes corporativos e que o Dola, até o momento, não disponibiliza claramente. No mais, o Dola é genuinamente uma boa pedida gratuita para quem está dando os primeiros passos com IA no celular, desde que o usuário entre de olhos abertos sobre quem está do outro lado.
         </p>
       </EditorialTake>
 
@@ -285,6 +307,8 @@ const DolaAI2026 = () => {
         { title: "TechTudo — Dola AI: como usar IA que ajuda a organizar a sua agenda", url: "https://www.techtudo.com.br/dicas-e-tutoriais/2024/09/dola-ai-como-usar-ia-que-ajuda-a-organizar-a-sua-agenda-edsoftwares.ghtml", publisher: "TechTudo", accessedAt: "Maio 2026" },
         { title: "App Store — Dola: assistente inteligente (IA)", url: "https://apps.apple.com/br/app/dola-assist-inteligente-ia/id6451431247", publisher: "Apple App Store", accessedAt: "Maio 2026" },
         { title: "Google Play — Dola: assistente inteligente (IA)", url: "https://play.google.com/store/apps/details?id=com.larus.wolf&gl=br&hl=pt", publisher: "Google Play Store", accessedAt: "Maio 2026" },
+        { title: "Wikipédia — Dola (chatbot): histórico, origem ByteDance e renomeação de Cici", url: "https://pt.wikipedia.org/wiki/Dola_(chatbot)", publisher: "Wikipédia", accessedAt: "Junho 2026" },
+        { title: "Itshow — Dola no top 10: IA da ByteDance cresce 30% em março de 2026", url: "https://itshow.com.br/dola-bytedance-top-10-ranking-apps-ia-generativa/", publisher: "Itshow", accessedAt: "Junho 2026" },
       ]} />
 
       <RelatedPosts currentSlug="dola-ai-app-assistente-2026" />

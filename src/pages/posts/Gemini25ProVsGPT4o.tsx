@@ -53,6 +53,9 @@ const Gemini25ProVsGPT4o = () => {
         <p>
           O <strong>GPT-4o</strong> ("o" de "omni") é o modelo principal da OpenAI desde maio de 2024. Multimodal nativo, processa texto, áudio e imagens em tempo real. A versão <strong>gpt-4o-2024-11-20</strong> é o snapshot estável mais recente disponível pela API em abril de 2026. É o modelo padrão do ChatGPT para usuários gratuitos e Plus.
         </p>
+        <p>
+          Antes de entrar nas comparações, uma nota sobre metodologia: benchmarks oficiais divulgados pelas próprias empresas têm viés favorável documentado — é comum o modelo avaliado superar concorrentes nos benchmarks do próprio fabricante e performar de forma menos dominante em testes independentes. As comparações mais confiáveis vêm do LMSYS Chatbot Arena (avaliação cega por humanos) e do Artificial Analysis (testes automatizados padronizados). Este artigo se baseia prioritariamente nessas fontes independentes, com dados dos fabricantes usados apenas para especificações técnicas verificáveis.
+        </p>
 
         <AdLeaderboard className="my-8" />
 
@@ -266,18 +269,25 @@ const Gemini25ProVsGPT4o = () => {
         <p>
           Em 2026, a escolha entre Gemini 2.5 Pro e GPT-5.4 depende do contexto: para <strong>raciocínio científico, documentos longos e análise de vídeo</strong>, o Gemini 2.5 Pro é superior. Para <strong>uso cotidiano, fluência em português e integração com o ecossistema OpenAI</strong>, o GPT-5.4 ainda lidera. A boa notícia: nunca houve tantas opções de qualidade disponíveis.
         </p>
+        <p>
+          Do ponto de vista de custo via API — relevante para quem constrói produtos — o Gemini 2.5 Pro tem preço por token mais competitivo para entradas longas: US$ 1,25 por milhão de tokens de entrada (até 200k tokens) contra US$ 2,50 do GPT-4o. Para saídas, os preços se equiparam mais. Na prática, para casos de uso com documentos longos e alto volume, o Gemini 2.5 Pro pode representar uma economia significativa em escala, enquanto o GPT-5.4 continua com vantagem em qualidade de raciocínio geral e consistência de saída em português. Essa diferença de custo raramente aparece nos comparativos de benchmark, mas é decisiva para founders e equipes de produto que precisam calcular o custo por interação antes de subir para produção.
+        </p>
 
       </div>
       <EditorialTake category="ia" title="Análise do Marcos: contexto longo vs. latência baixa">
         <p>Não existe vencedor universal entre Gemini 2.5 Pro e GPT-4o — existe match de caso de uso. Gemini ganha em <strong>tarefas com contexto gigante</strong> (PDFs longos, codebase inteira, transcrições) porque a janela de 1M+ tokens é real e funciona. GPT-4o ganha em <strong>latência e fluência conversacional</strong>, especialmente em PT-BR, onde a entonação e gírias soam mais naturais. Para quem está no Brasil pagando em dólar, recomendo: API do Gemini para back-office (análise de documentos, pesquisa) e GPT-4o para qualquer coisa que o usuário final ouça ou veja em tempo real.</p>
+        <p>
+          Um dado que costuma surpreender: o Gemini 2.5 Pro atingiu o primeiro lugar geral no LMSYS Chatbot Arena em múltiplos períodos de 2025, superando GPT-4o e Claude Opus em avaliação humana cega — resultados que raramente aparecem no noticiário mainstream, que tende a cobrir mais os lançamentos da OpenAI. Para quem toma decisões baseadas em dados independentes, o Artificial Analysis e o LMSYS Arena são referências mais confiáveis do que benchmarks divulgados pelos próprios fabricantes, que consistentemente avaliam seus próprios modelos com viés favorável — uma prática tão comum no setor que a própria comunidade de pesquisa em ML cunhou o termo "benchmark overfitting" para descrever modelos treinados especificamente para maximizar scores em benchmarks conhecidos sem ganho equivalente em desempenho real.
+        </p>
       </EditorialTake>
       <ArticleSources
         sources={[
-          { title: "Gemini 2.5 Pro \u2014 Google DeepMind", url: "https://deepmind.google/technologies/gemini/", publisher: "Google DeepMind", accessedAt: "Maio 2026" },
-          { title: "GPT-4o \u2014 OpenAI", url: "https://openai.com/index/hello-gpt-4o/", publisher: "OpenAI", accessedAt: "Maio 2026" },
-          { title: "Artificial Analysis \u2014 comparativo", url: "https://artificialanalysis.ai/", publisher: "Artificial Analysis", accessedAt: "Maio 2026" },
+          { title: "Gemini 2.5 Pro — Google DeepMind", url: "https://deepmind.google/technologies/gemini/", publisher: "Google DeepMind", accessedAt: "Maio 2026" },
+          { title: "GPT-4o — OpenAI", url: "https://openai.com/index/hello-gpt-4o/", publisher: "OpenAI", accessedAt: "Maio 2026" },
+          { title: "Artificial Analysis — comparativo", url: "https://artificialanalysis.ai/", publisher: "Artificial Analysis", accessedAt: "Maio 2026" },
           { title: "LMSYS Chatbot Arena", url: "https://lmarena.ai/", publisher: "LMSYS", accessedAt: "Maio 2026" },
-          { title: "Documenta\u00e7\u00e3o Gemini API", url: "https://ai.google.dev/", publisher: "Google AI", accessedAt: "Maio 2026" }
+          { title: "Documentação Gemini API", url: "https://ai.google.dev/", publisher: "Google AI", accessedAt: "Maio 2026" },
+          { title: "Google — Gemini 2.5 Pro API pricing", url: "https://ai.google.dev/gemini-api/docs/pricing", publisher: "Google AI for Developers", accessedAt: "Junho 2026" },
         ]}
       />
 

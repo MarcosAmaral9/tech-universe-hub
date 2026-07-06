@@ -141,6 +141,26 @@ const RegulamentacaoIA2026 = () => {
         <AdRectangle className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Scale className="h-7 w-7 text-ia" />
+          Atualização 2026: Comissão Especial, Novos Projetos e a Promessa de Votação
+        </h2>
+        <p>
+          A Câmara dos Deputados instalou uma <strong>Comissão Especial sobre Inteligência Artificial</strong> especificamente para analisar o PL 2338/2023, presidida pela deputada Luísa Canziani (União Brasil-PR) e relatada pelo deputado Aguinaldo Ribeiro (PP-PB). Entre maio e setembro de 2025, a comissão realizou doze audiências públicas com especialistas, setor produtivo e sociedade civil. A votação, inicialmente prevista para o fim de 2025, foi adiada de forma alinhada entre as presidências da Câmara e do Senado por falta de consenso em pontos sensíveis — direitos autorais no treinamento de modelos, exceções para sistemas de alto risco e impactos ambientais da cadeia produtiva de IA (consumo de energia e água por data centers).
+        </p>
+        <p>
+          Em 28 de maio de 2026, o presidente da Câmara, Hugo Motta, declarou publicamente que a Casa vai votar a regulamentação de IA ainda em 2026, com expectativa de apresentação do parecer do relator em 9 de junho. Paralelamente, em 24 e 25 de fevereiro de 2026, dois novos projetos foram apresentados na Câmara para complementar o PL 2338: o <strong>PL 704/2026</strong>, focado em diretrizes para combate à corrupção e redução de desigualdades através do uso de IA no setor público, e o <strong>PL 762/2026</strong>, que cria uma estrutura regulatória específica para sistemas de IA de alto impacto, com exigência de Avaliação de Impacto de Inteligência Artificial (AIIA), certificação obrigatória e registro de empresas antes de operar no Brasil — competências que ficariam a cargo da ANPD. Na prática, os dois novos projetos sinalizam que o Congresso não está apenas tentando aprovar um texto único e estático — está construindo um ecossistema regulatório que deve continuar sendo ajustado mesmo depois da votação inicial do PL 2338, o que reforça a necessidade de empresas acompanharem o tema de forma contínua, e não apenas no momento da sanção da lei principal.
+        </p>
+        <p>
+          Importante: mesmo que aprovado pela Câmara, o texto pode sofrer alterações em relação à versão do Senado, o que obrigaria o projeto a retornar para nova análise na Casa de origem antes da sanção presidencial. Na prática, isso significa que mesmo com a sinalização otimista de votação ainda em 2026, advogados especializados no tema apontam que a vigência efetiva da lei — após período de adaptação (vacatio legis) que costuma variar entre 12 e 24 meses — só deve ocorrer entre 2028 e 2029. Para empresas, a recomendação prática não muda: começar a adequação agora, e não esperar a sanção final.
+        </p>
+        <p>
+          O PL 762/2026 chama atenção por detalhar diretamente os direitos do titular de dados afetado por sistemas de alto impacto: direito de ser notificado sobre o uso de IA na decisão, direito de acesso a explicações sobre a lógica do sistema (respeitando segredo industrial), e direito a mecanismo de revisão humana para decisões potencialmente prejudiciais. O texto também propõe alterar o Marco Civil da Internet e o Código de Defesa do Consumidor para obrigar plataformas e provedores a manter registros (logs) auditáveis e publicar relatórios de transparência periódicos — indo além do que o PL 2338 original previa nesse ponto específico.
+        </p>
+        <p>
+          Já o PL 704/2026 tem um recorte mais voltado ao setor público: estabelece que a política nacional de IA deve ter como eixo central o combate à corrupção e a redução de desigualdades sociais, raciais, regionais e digitais. Entre as áreas de aplicação prioritárias citadas no texto estão análise de contratos e transações públicas, scoring de crédito, compras governamentais e monitoramento de fluxos financeiros para detecção de padrões atípicos — fraude, sobrepreço ou favorecimento. Para o setor de telecomunicações, vale lembrar que já existem normas específicas da Anatel que se conectam a esse debate, como o Regulamento Geral de Serviços de Telecomunicações (Resolução 777/2025) e o Regulamento de Cibersegurança para Telecomunicações, ambos com princípios aplicáveis ao uso de IA no setor.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Building className="h-7 w-7 text-ia" />
           O Que Empresas Brasileiras Precisam Fazer Agora
         </h2>
@@ -210,9 +230,9 @@ const RegulamentacaoIA2026 = () => {
         { title: "EUR-Lex — Regulamento (UE) 2024/1689 (EU AI Act)", url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj", publisher: "EUR-Lex", accessedAt: "Maio 2026" },
         { title: "Senado Federal — PL 2338/2023 (Marco Legal da IA)", url: "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233", publisher: "Senado Federal", accessedAt: "Maio 2026" },
         { title: "Barbieri Advogados — Regulamentação da IA no Brasil: Estado Atual", url: "https://www.barbieriadvogados.com/regulamentacao-inteligencia-artificial-brasil/", publisher: "Barbieri Advogados", accessedAt: "Maio 2026" },
-        { title: "ANPD — Autoridade Nacional de Proteção de Dados", url: "https://www.gov.br/anpd/pt-br", publisher: "ANPD", accessedAt: "Maio 2026" },
         { title: "Planalto — LGPD Art. 20 (Lei 13.709/2018)", url: "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm", publisher: "Planalto", accessedAt: "Maio 2026" },
-        { title: "Mind Group — EU AI Act e PL 2338: O Que Muda na Sua Operação em 2026", url: "https://mindconsulting.com.br/2026/04/eu-ai-act-pl-2338-regulacao-ia-empresas-brasileiras-2026/", publisher: "Mind Group", accessedAt: "Maio 2026" },
+        { title: "ND Mais — Câmara dos Deputados vai votar IA em 2026, diz Hugo Motta", url: "https://ndmais.com.br/politica/camara-dos-deputados-vai-votar-ia-em-2026-diz-hugo-motta/", publisher: "ND Mais", accessedAt: "Junho 2026" },
+        { title: "Demarest — Inteligência artificial reacende debates na Câmara dos Deputados (PL 704/2026 e PL 762/2026)", url: "https://www.demarest.com.br/en/inteligencia-artificial-reacende-debates-na-camara-dos-deputados/", publisher: "Demarest Advogados", accessedAt: "Junho 2026" },
       ]} />
 
       <RelatedPosts currentSlug="regulamentacao-ia-brasil-mundo-2026" />

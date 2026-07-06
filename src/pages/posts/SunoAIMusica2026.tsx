@@ -55,7 +55,7 @@ const SunoAIMusica2026 = () => {
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          O <strong>Suno AI</strong> é o gerador de músicas com IA mais popular do mundo — com mais de <strong>100 milhões de usuários</strong> e 7 milhões de novas faixas criadas por dia. Em 2026, a plataforma lançou o modelo v5.5 com clonagem de voz, músicas de até 8 minutos em 44,1 kHz e acordos de licenciamento com as majors. Mas também enfrenta batalhas judiciais que podem mudar tudo para criadores. Guia completo aqui.
+          O <strong>Suno AI</strong> é o gerador de músicas com IA mais popular do mundo — com mais de <strong>100 milhões de usuários</strong> e 7 milhões de novas faixas criadas por dia em mais de 50 idiomas. Em 2026, a plataforma lançou o modelo v5.5 com clonagem de voz, músicas de até 8 minutos em 44,1 kHz e acordos de licenciamento com as majors. Mas também enfrenta batalhas judiciais que podem mudar tudo para criadores. Guia completo aqui.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -66,7 +66,7 @@ const SunoAIMusica2026 = () => {
           O <strong>Suno AI</strong> é uma plataforma de geração musical baseada em inteligência artificial desenvolvida pela <strong>Suno Inc.</strong>, fundada em Cambridge (EUA) em 2023. Você escreve um prompt de texto — gênero, humor, tema, letra ou estilo — e o modelo gera uma música completa com <strong>vocais, instrumentação, mixagem e masterização</strong> em segundos. Não é necessário saber música, tocar instrumento ou usar DAW.
         </p>
         <p>
-          O modelo mais recente, o <strong>v5.5</strong> (lançado em março de 2026), introduziu três capacidades inéditas: <strong>clonagem de voz</strong> para personalizar o timbre do cantor gerado, <strong>modelos customizados</strong> treinados no catálogo do próprio usuário, e um motor de personalização chamado <strong>My Taste</strong> que aprende suas preferências ao longo do uso. A qualidade de áudio chegou a <strong>44,1 kHz</strong> — padrão de estúdio profissional.
+          O modelo mais recente, o <strong>v5.5</strong> (lançado em março de 2026), introduziu três capacidades inéditas: <strong>clonagem de voz</strong> para personalizar o timbre do cantor gerado, <strong>modelos customizados</strong> treinados no catálogo do próprio usuário, e um motor de personalização chamado <strong>My Taste</strong> que aprende suas preferências ao longo do uso. A qualidade de áudio chegou a <strong>44,1 kHz</strong> — padrão de estúdio profissional. As músicas geradas podem chegar a <strong>8 minutos de duração</strong>, o que cobre a grande maioria dos formatos de faixas comerciais e torna a ferramenta viável para episódios de podcast, trilhas de curta-metragem e até jingles mais elaborados. A função de clonagem de voz, no entanto, requer que o usuário carregue amostras de voz para as quais tem direitos — a plataforma verifica declaratoriamente, mas a responsabilidade legal por uso não autorizado de voz de terceiros recai inteiramente sobre o usuário — sem exoneração pela plataforma.
         </p>
 
         <div className="not-prose my-6 grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -324,6 +324,12 @@ const SunoAIMusica2026 = () => {
         </p>
         <p>
           A ressalva séria é a batalha com a Sony. Enquanto Warner e Universal já encontraram o caminho do acordo, a Sony está apostando num precedente judicial que, se obtido, pode reformular como todos os geradores de música operam. Para o usuário final, o risco prático no Brasil é baixo no curto prazo — mas quem quiser construir um catálogo musical com valor comercial real precisa documentar contribuição criativa humana em cada faixa. Gerar e publicar sem nenhum toque humano é juridicamente frágil, independentemente do que o contrato da plataforma diz.
+        </p>
+        <p>
+          Um dado importante para músicos profissionais que pensam em usar o Suno como ferramenta de trabalho: segundo o contrato de termos de serviço da plataforma, usuários do plano gratuito concedem ao Suno licença para usar os outputs gerados — incluindo para treinar modelos futuros. Somente assinantes do plano Pro ou Premier têm ownership comercial pleno sobre os outputs. Para quem pensa em usar músicas do Suno em projetos comerciais, a assinatura paga não é opcional — é o que determina se você tem direitos sobre o que gerou. Essa distinção raramente aparece nos tutoriais virais sobre a ferramenta e pega muitos criadores de surpresa na hora de licenciar o conteúdo.
+        </p>
+        <p>
+          Para o mercado brasileiro de música independente, o Suno representa uma ferramenta de democratização real: produzir trilhas de qualidade profissional sem estúdio, sem instrumentistas e sem direitos de uso de sample ficou ao alcance de qualquer criador com internet. Isso não elimina a demanda por músicos humanos, mas redistribui o mercado — os produtores independentes que souberem usar IA para acelerar partes do processo enquanto mantêm identidade sonora própria vão ter uma vantagem competitiva real sobre os que rejeitam a ferramenta por princípio e sobre os que a usam sem nenhuma contribuição criativa — um equilíbrio que o mercado de música independente brasileiro já está começando a exigir dos criadores que querem ser levados a sério tanto por plataformas de streaming quanto por parceiros comerciais.
         </p>
       </EditorialTake>
 
