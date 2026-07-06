@@ -129,6 +129,8 @@ const IAGenerativaIniciantes2026 = lazy(() => import("./pages/posts/IAGenerativa
 const DeepfakesIA2026 = lazy(() => import("./pages/posts/DeepfakesIA2026"));
 const IAEducacao2026 = lazy(() => import("./pages/posts/IAEducacao2026"));
 const AgentesIA2026 = lazy(() => import("./pages/posts/AgentesIA2026"));
+const AgentesIAAutonomos2026 = lazy(() => import("./pages/posts/AgentesIAAutonomos2026"));
+const ClaudeCoworkSaas2026 = lazy(() => import("./pages/posts/ClaudeCoworkSaas2026"));
 const IASaude2026 = lazy(() => import("./pages/posts/IASaude2026"));
 const RegulamentacaoIA2026 = lazy(() => import("./pages/posts/RegulamentacaoIA2026"));
 const AnimesAguardados2026 = lazy(() => import("./pages/posts/AnimesAguardados2026"));
