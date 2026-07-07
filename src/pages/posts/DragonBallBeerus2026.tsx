@@ -259,6 +259,7 @@ const DragonBallBeerus2026 = () => {
           { title: "Toei Animation", url: "https://www.toei-anim.co.jp/english/", publisher: "Toei Animation Co., Ltd.", accessedAt: "Maio 2026" },
           { title: "Crunchyroll News", url: "https://www.crunchyroll.com/news", publisher: "Crunchyroll", accessedAt: "Maio 2026" },
           { title: "Anime News Network", url: "https://www.animenewsnetwork.com/", publisher: "Anime News Network", accessedAt: "Maio 2026" },
+          { title: "MyAnimeList — Dragon Ball Super", url: "https://myanimelist.net/anime/30694/Dragon_Ball_Super", publisher: "MyAnimeList", accessedAt: "Maio 2026" },
         ]}
       />
 
