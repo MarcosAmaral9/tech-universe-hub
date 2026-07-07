@@ -45,16 +45,21 @@ function countSources(src) {
 }
 
 function hasAdInsideMap(src) {
-  // Procura .map( ... ) e verifica se há <Ad... dentro do callback (balanceado)
   const re = /\.map\s*\(/g;
   let m;
   while ((m = re.exec(src)) !== null) {
     let i = m.index + m[0].length;
     let depth = 1;
     const start = i;
+    let str = null; // '"' | "'" | '`'
     while (i < src.length && depth > 0) {
       const c = src[i];
-      if (c === "(") depth++;
+      const p = src[i - 1];
+      if (str) {
+        if (c === str && p !== "\\") str = null;
+      } else if (c === '"' || c === "'" || c === "`") {
+        str = c;
+      } else if (c === "(") depth++;
       else if (c === ")") depth--;
       i++;
     }
