@@ -523,6 +523,9 @@ const CrimsonDesertMapa = () => {
           );
         })}
 
+        <AdInArticle />
+
+
         {/* Abyss card */}
         <div className="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6">
           <div className="flex flex-wrap items-center gap-3 mb-3">
