@@ -6,7 +6,7 @@
  *  3. <AuthorBio ... /> presente
  *  4. <CommentSection category="..."> presente
  *  5. Ordem: EditorialTake -> ArticleSources -> RelatedPosts -> CommentSection
- *  6. Nenhum componente <Ad*/> dentro de blocos .map(...)
+ *  6. Nenhum componente Ad* dentro de blocos .map(...)
  *  7. EditorialTake vem sempre DEPOIS do conteúdo principal do artigo
  *     e ANTES de ArticleSources.
  *
