@@ -458,6 +458,7 @@ const BannerlordWarSailsExpansao = () => {
             { title: "Steam — Mount & Blade II: Bannerlord", url: "https://store.steampowered.com/app/261550/", publisher: "Valve / Steam" },
             { title: "Mount & Blade Wiki — Factions and Cultures", url: "https://mountandblade.fandom.com/wiki/Factions_(Bannerlord)", publisher: "Fandom" },
             { title: "PCGamingWiki — Mount & Blade II: Bannerlord", url: "https://www.pcgamingwiki.com/wiki/Mount_%26_Blade_II:_Bannerlord", publisher: "PCGamingWiki" },
+            { title: "TaleWorlds Forums — War Sails patch notes", url: "https://forums.taleworlds.com/index.php?forums/patch-notes.700/", publisher: "TaleWorlds Forums" },
           ]}
         />
       </div>
