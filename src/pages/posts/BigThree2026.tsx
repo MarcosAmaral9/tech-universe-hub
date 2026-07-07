@@ -133,6 +133,9 @@ const BigThree2026 = () => {
           <p className="text-xs text-muted-foreground mt-2">Baseado em enquetes coletadas em Reddit, X e MyAnimeList — abril 2026.</p>
         </div>
 
+        <AdInArticle />
+
+
         <h3 className="text-xl font-bold mt-8 mb-4 text-otaku">⚔️ Bleach: TYBW — O Retorno Que Provou Que É Possível</h3>
         <p>
           Bleach: Thousand-Year Blood War se tornou o benchmark de como fazer um retorno de série clássica. Quando foi anunciado em 2022, muitos eram céticos — Bleach tinha uma reputação de pacing ruim e o arco final do mangá não havia sido bem recebido por todos os leitores. O que a Studio Pierrot entregou foi uma das produções mais impressionantes da história do anime:
