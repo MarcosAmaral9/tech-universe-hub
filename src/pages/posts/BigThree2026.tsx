@@ -126,13 +126,15 @@ const BigThree2026 = () => {
                 </div>
                 <div className="h-1.5 bg-secondary rounded-full">
                   <div className="h-1.5 bg-otaku rounded-full" style={{ width: `${pct}%` }} />
-      <AdInArticle />
                 </div>
               </div>
             ))}
           </div>
           <p className="text-xs text-muted-foreground mt-2">Baseado em enquetes coletadas em Reddit, X e MyAnimeList — abril 2026.</p>
         </div>
+
+        <AdInArticle />
+
 
         <h3 className="text-xl font-bold mt-8 mb-4 text-otaku">⚔️ Bleach: TYBW — O Retorno Que Provou Que É Possível</h3>
         <p>

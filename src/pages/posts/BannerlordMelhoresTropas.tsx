@@ -526,6 +526,18 @@ const BannerlordMelhoresTropas = () => {
               publisher: "Valve / Steam",
               accessedAt: "Junho 2026",
             },
+            {
+              title: "Bannerlord Guide — Best Faction Troops Tier List",
+              url: "https://www.pcgamer.com/mount-and-blade-2-bannerlord-guide/",
+              publisher: "PC Gamer",
+              accessedAt: "Junho 2026",
+            },
+            {
+              title: "Mount & Blade II: Bannerlord — patch notes e balance updates",
+              url: "https://forums.taleworlds.com/index.php?forums/patch-notes.700/",
+              publisher: "TaleWorlds Forums",
+              accessedAt: "Junho 2026",
+            },
           ]}
         />
 

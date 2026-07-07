@@ -87,11 +87,14 @@ const MugenGacha = () => {
                 <h4 className="font-bold">{p.name}</h4>
                 {p.va !== "—" && <span className="text-xs bg-muted px-2 py-0.5 rounded-full">VA: {p.va}</span>}
               </div>
-      <AdRectangle className="my-8" />
               <p className="text-sm text-muted-foreground mb-0">{p.desc}</p>
             </div>
           ))}
         </div>
+
+        <AdRectangle className="my-8" />
+
+
 
         
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">

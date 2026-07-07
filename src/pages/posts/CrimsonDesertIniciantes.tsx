@@ -159,10 +159,12 @@ const CrimsonDesertIniciantes = () => {
                 <p className="font-bold mb-1">{tip.title}</p>
                 <p className="text-sm text-muted-foreground mb-0">{tip.desc}</p>
               </div>
-      <AdRectangle className="my-8" />
             </div>
           ))}
         </div>
+
+        <AdRectangle className="my-8" />
+
 
         
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">

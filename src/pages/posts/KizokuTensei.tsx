@@ -98,11 +98,14 @@ const KizokuTensei = () => {
                 <h4 className="font-bold">{p.name}</h4>
                 <span className="text-xs bg-muted px-2 py-0.5 rounded-full">VA: {p.va}</span>
               </div>
-      <AdRectangle className="my-8" />
               <p className="text-sm text-muted-foreground mb-0">{p.desc}</p>
             </div>
           ))}
         </div>
+
+        <AdRectangle className="my-8" />
+
+
 
         <div className="not-prose my-6 p-5 bg-card border border-border rounded-xl">
           <p className="font-bold mb-2 text-sm">📅 Status em março de 2026</p>
