@@ -136,6 +136,18 @@ const GtaViMecanicasGameplay2026 = () => {
 
         <AdInArticle className="my-8" />
 
+        <h2 className="text-2xl font-bold mt-10 mb-4">Pilares do gameplay confirmados nos trailers</h2>
+        <GtaFeatureGrid features={[
+          { icon: Users, title: "Dupla protagonista", desc: "Lucia e Jason atuam em conjunto — troca contextual entre os dois em assaltos, fugas e cenas sociais.", accent: "pink" },
+          { icon: Car, title: "Dano localizado de veículos", desc: "Capôs, portas e laterais deformam de forma específica conforme o impacto, substituindo o modelo genérico de GTA V.", accent: "amber" },
+          { icon: Cloud, title: "Nuvens volumétricas 3D", desc: "Sistemas de tempestade tropical formados dinamicamente, com iluminação reativa em tempo real.", accent: "cyan" },
+          { icon: MessageSquare, title: "IA de NPCs expandida", desc: "Multidões filmando com celulares, reações individuais, comportamento social diverso em clubes, praias e eventos.", accent: "violet" },
+          { icon: Waves, title: "Mundo aquático ampliado", desc: "Lanchas, jet skis, mergulho, jacarés reativos em pântanos e rotas navegáveis longas em Leonida Keys.", accent: "cyan" },
+          { icon: Smartphone, title: "Redes sociais internas", desc: "Personagens gravam e postam vídeos dentro do jogo. Sátira à cultura de influencer integrada ao mundo.", accent: "pink" },
+          { icon: Wifi, title: "GTA Online VI no dia 1", desc: "Modo online lançado simultâneo com a campanha em 19/11/2026 — sem janela de espera como em 2013.", accent: "emerald" },
+          { icon: Cpu, title: "Densidade urbana inédita", desc: "Muito mais NPCs, veículos e detalhes ambientais simultâneos que Los Santos em GTA V.", accent: "violet" },
+        ]} />
+
         <h2 className="text-2xl font-bold mt-10 mb-4">Mecânicas confirmadas (resumo)</h2>
         <div className="not-prose my-6 overflow-x-auto rounded-xl border border-pink-500/20">
           <table className="w-full text-sm bg-card table-fixed">
