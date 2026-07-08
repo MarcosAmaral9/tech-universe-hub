@@ -12,6 +12,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import SkeletonImage from "@/components/SkeletonImage";
 import heroImg from "@/assets/gta-vi-trailers.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
+import { GtaTimeline, GtaBarChart, GtaStatGrid } from "@/components/gta/GtaVisuals";
 
 const SLUG = "gta-vi-trailers-marketing-2026";
 const TITLE = "Trailers de GTA VI: Do Vazamento de 2022 ao Trailer 2 Recorde e a Campanha de 2026";
