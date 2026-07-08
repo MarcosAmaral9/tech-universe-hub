@@ -215,10 +215,21 @@ const GtaViNovembro2026 = () => {
         </p>
       
         <h2 className="text-2xl font-bold mt-10 mb-4">Por Que Dois Adiamentos Não São um Mau Sinal</h2>
+
+        <GtaTimeline
+          title="Cronologia dos adiamentos até 19/nov/2026"
+          events={[
+            { date: "Mai/2024", title: "Janela inicial: outono 2025", desc: "Take-Two confirma faixa entre setembro e novembro de 2025.", done: true },
+            { date: "Nov/2024", title: "Primeiro adiamento", desc: "Data movida para outono de 2025 estendido — produção precisa de mais tempo.", done: true },
+            { date: "Mai/2025", title: "Trailer 2 + data 26/mai/2026", desc: "Rockstar libera Trailer 2 e anuncia formalmente adiamento para maio de 2026.", done: true },
+            { date: "Nov/2025", title: "Segundo adiamento", desc: "Data move para 19 de novembro de 2026 — justificada como polimento final.", done: true },
+            { date: "Mai/2026", title: "Confirmação final", desc: "CEO Strauss Zelnick confirma na call de resultados: data mantida. Campanha começa no verão.", done: true },
+            { date: "19/Nov/2026", title: "Lançamento definitivo", desc: "Preload 12/nov · Lançamento mundial em PS5 e Xbox Series X|S.", highlight: true },
+          ]}
+        />
+
         <p>
-          GTA VI já sofreu dois adiamentos desde a primeira data informal especulada para 2025. Embora adiamentos gerem ansiedade na comunidade, o histórico da Rockstar mostra que a empresa prioriza consistentemente qualidade sobre cronograma. Red Dead Redemption 2 foi adiado duas vezes antes do lançamento em 2018 e se tornou um dos jogos mais aclamados da história. GTA V também sofreu adiamento antes de seu lançamento em 2013.
-        </p>
-        <p>
+
           A contratação massiva de equipes de QA em Bangalore, confirmada em abril de 2026, é um sinal positivo nesse contexto — indica que a Rockstar está investindo pesadamente em testes extensivos antes do lançamento de novembro, reduzindo a probabilidade de um lançamento problemático como aconteceu com Cyberpunk 2077 em 2020. A lição da indústria nos últimos anos parece ter sido absorvida: lançar polido é mais valioso a longo prazo do que cumprir uma data específica.
         </p>
 
