@@ -5,13 +5,14 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { Clock, User, Calendar, MapPin, Trees, Waves, Building2 } from "lucide-react";
+import { Clock, User, Calendar, MapPin, Trees, Waves, Building2, Home, Sailboat } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import SkeletonImage from "@/components/SkeletonImage";
 import heroImg from "@/assets/gta-vi-mapa-leonida.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
+import { GtaFeatureGrid, GtaBarChart } from "@/components/gta/GtaVisuals";
 
 const SLUG = "gta-vi-mapa-leonida-vice-city-2026";
 const TITLE = "Mapa de Leonida em GTA VI: Vice City, Keys, Everglades e Tudo Confirmado nos Trailers Oficiais";
