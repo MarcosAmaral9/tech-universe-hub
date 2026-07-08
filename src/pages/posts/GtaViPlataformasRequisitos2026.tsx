@@ -5,13 +5,14 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { Clock, User, Calendar, Gamepad2, Monitor, HardDrive, Wifi } from "lucide-react";
+import { Clock, User, Calendar, Gamepad2, Monitor, HardDrive, Wifi, Cpu, MemoryStick, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import SkeletonImage from "@/components/SkeletonImage";
 import heroImg from "@/assets/gta-vi-plataformas.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
+import { GtaBarChart, GtaFeatureGrid, GtaStatGrid, GtaCallout } from "@/components/gta/GtaVisuals";
 
 const SLUG = "gta-vi-plataformas-requisitos-2026";
 const TITLE = "Plataformas de GTA VI: PS5, Xbox Series, Ausência de PS4 e o Mistério da Versão PC";
