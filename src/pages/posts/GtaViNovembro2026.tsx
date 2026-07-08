@@ -215,6 +215,10 @@ const GtaViNovembro2026 = () => {
         </p>
       
         <h2 className="text-2xl font-bold mt-10 mb-4">Por Que Dois Adiamentos Não São um Mau Sinal</h2>
+        <p>
+          GTA VI já sofreu dois adiamentos desde a primeira data informal especulada para 2025. Embora adiamentos gerem ansiedade na comunidade, o histórico da Rockstar mostra que a empresa prioriza consistentemente qualidade sobre cronograma. Red Dead Redemption 2 foi adiado duas vezes antes do lançamento em 2018 e se tornou um dos jogos mais aclamados da história. GTA V também sofreu adiamento antes de seu lançamento em 2013.
+        </p>
+
 
         <GtaTimeline
           title="Cronologia dos adiamentos até 19/nov/2026"
