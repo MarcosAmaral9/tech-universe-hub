@@ -48,6 +48,14 @@ const GTAVI2026 = () => {
           GTA VI é o jogo mais esperado da história dos videogames. Com lançamento confirmado para <strong>26 de setembro de 2026</strong> no PS5 e Xbox Series X|S, e PC em 2027, este guia reúne absolutamente tudo que a Rockstar revelou: Vice City, os protagonistas Lucia e Jason, gameplay e preços no Brasil.
         </p>
 
+        <GtaStatGrid stats={[
+          { label: "Lançamento", value: "19/nov/26", hint: "PS5 · Xbox Series X|S", icon: Calendar, accent: "pink" },
+          { label: "Preço BR", value: "R$ 449,90", hint: "Standard · US$ 79,99", icon: DollarSign, accent: "amber" },
+          { label: "Trailer 1 (24h)", value: "93M", hint: "recorde mundial YouTube", icon: Eye, accent: "cyan" },
+          { label: "Protagonistas", value: "Lucia + Jason", hint: "primeira dupla oficial", icon: Users, accent: "violet" },
+        ]} />
+
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Star className="h-7 w-7 text-geek" />
           Informações Confirmadas pela Rockstar Games
