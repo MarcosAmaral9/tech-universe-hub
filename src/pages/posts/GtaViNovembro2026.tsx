@@ -5,13 +5,14 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3, MapPin } from "lucide-react";
+import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3, MapPin, Eye, DollarSign, Users, Trophy } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/gta-vi-novembro-2026-vice-city-leonida.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
+import { GtaStatGrid, GtaBarChart, GtaHypeMeter, GtaTimeline, GtaCallout } from "@/components/gta/GtaVisuals";
 
 const GtaViNovembro2026 = () => {
   useEffect(() => {
@@ -52,6 +53,20 @@ const GtaViNovembro2026 = () => {
         <p className="lead text-xl text-muted-foreground">
           A Take-Two Interactive confirmou oficialmente: <strong>Grand Theft Auto VI chega em 19 de novembro de 2026</strong> para PS5 e Xbox Series X|S. A campanha de marketing começa no verão — o terceiro trailer deve chegar em junho ou julho. Após dois adiamentos (de outono de 2025 para maio de 2026, depois para novembro), a data é definitiva. Com 250 milhões de visualizações no Trailer 1 e um mundo aberto ambientado em Leonida (versão fictícia da Flórida moderna), GTA VI promete ser o maior lançamento da história dos games. Este guia reúne tudo confirmado e o que esperar.
         </p>
+
+        <GtaStatGrid stats={[
+          { label: "Lançamento", value: "19/nov", hint: "PS5 · Xbox Series X|S", icon: Calendar, accent: "pink" },
+          { label: "Trailer 1 em 24h", value: "93M", hint: "recorde mundial YouTube", icon: Eye, accent: "cyan" },
+          { label: "Orçamento estimado", value: "US$ 1–2 bi", hint: "maior da história", icon: DollarSign, accent: "amber" },
+          { label: "GTA V vendas", value: "400M+", hint: "desde 2013 (Take-Two)", icon: Trophy, accent: "violet" },
+        ]} />
+
+        <GtaHypeMeter
+          value={97}
+          label="Hype Meter — GTA VI"
+          caption="Baseado em views de trailer, base instalada de PS5/Xbox Series, buscas orgânicas e projeções de venda no dia 1"
+        />
+
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BarChart3 className="h-7 w-7 text-geek" />
@@ -203,7 +218,22 @@ const GtaViNovembro2026 = () => {
         <p>
           GTA VI já sofreu dois adiamentos desde a primeira data informal especulada para 2025. Embora adiamentos gerem ansiedade na comunidade, o histórico da Rockstar mostra que a empresa prioriza consistentemente qualidade sobre cronograma. Red Dead Redemption 2 foi adiado duas vezes antes do lançamento em 2018 e se tornou um dos jogos mais aclamados da história. GTA V também sofreu adiamento antes de seu lançamento em 2013.
         </p>
+
+
+        <GtaTimeline
+          title="Cronologia dos adiamentos até 19/nov/2026"
+          events={[
+            { date: "Mai/2024", title: "Janela inicial: outono 2025", desc: "Take-Two confirma faixa entre setembro e novembro de 2025.", done: true },
+            { date: "Nov/2024", title: "Primeiro adiamento", desc: "Data movida para outono de 2025 estendido — produção precisa de mais tempo.", done: true },
+            { date: "Mai/2025", title: "Trailer 2 + data 26/mai/2026", desc: "Rockstar libera Trailer 2 e anuncia formalmente adiamento para maio de 2026.", done: true },
+            { date: "Nov/2025", title: "Segundo adiamento", desc: "Data move para 19 de novembro de 2026 — justificada como polimento final.", done: true },
+            { date: "Mai/2026", title: "Confirmação final", desc: "CEO Strauss Zelnick confirma na call de resultados: data mantida. Campanha começa no verão.", done: true },
+            { date: "19/Nov/2026", title: "Lançamento definitivo", desc: "Preload 12/nov · Lançamento mundial em PS5 e Xbox Series X|S.", highlight: true },
+          ]}
+        />
+
         <p>
+
           A contratação massiva de equipes de QA em Bangalore, confirmada em abril de 2026, é um sinal positivo nesse contexto — indica que a Rockstar está investindo pesadamente em testes extensivos antes do lançamento de novembro, reduzindo a probabilidade de um lançamento problemático como aconteceu com Cyberpunk 2077 em 2020. A lição da indústria nos últimos anos parece ter sido absorvida: lançar polido é mais valioso a longo prazo do que cumprir uma data específica.
         </p>
 

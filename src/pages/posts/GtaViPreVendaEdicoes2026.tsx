@@ -5,13 +5,14 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { Clock, User, Calendar, ShoppingCart, AlertTriangle, CheckCircle2, Store } from "lucide-react";
+import { Clock, User, Calendar, ShoppingCart, AlertTriangle, CheckCircle2, Store, Gamepad2, Globe, Package } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import SkeletonImage from "@/components/SkeletonImage";
 import heroImg from "@/assets/gta-vi-pre-venda-edicoes.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
+import { GtaFeatureGrid, GtaStatGrid, GtaCallout } from "@/components/gta/GtaVisuals";
 
 const SLUG = "gta-vi-pre-venda-edicoes-2026";
 const TITLE = "Pré-Venda de GTA VI: Estado Real, Edições, Bônus e Como se Preparar Para Comprar";
@@ -88,6 +89,14 @@ const GtaViPreVendaEdicoes2026 = () => {
           até dez dias antes do lançamento caso o jogador mude de ideia — é a política mais flexível do mercado de
           consoles atualmente.
         </p>
+
+        <GtaFeatureGrid features={[
+          { icon: Gamepad2, title: "PlayStation Store BR", desc: "Preço R$ 449,90 · parcelamento em até 12x no cartão · reembolso pré-lançamento avaliado caso a caso.", accent: "cyan" },
+          { icon: Gamepad2, title: "Xbox Store BR", desc: "Preço R$ 449,90 · parcelamento em cartão · reembolso integral até 10 dias antes do lançamento (mais flexível do mercado).", accent: "emerald" },
+          { icon: Globe, title: "Rockstar Store", desc: "Bônus exclusivos possíveis. Cobrança em USD via cartão internacional com IOF 3,5%. Sem reembolso após resgate.", accent: "pink" },
+          { icon: Package, title: "Varejo físico (Amazon, Kabum)", desc: "Caixa sem disco com voucher digital para PS5 ou Xbox. Mesmo preço da loja, com prazo de entrega.", accent: "amber" },
+        ]} />
+
         <p>
           O <strong>site oficial da Rockstar (Rockstar Store)</strong> historicamente vende chaves e edições exclusivas
           diretamente, com bônus que não aparecem nas lojas dos consoles — foi assim em Red Dead Redemption 2. E,

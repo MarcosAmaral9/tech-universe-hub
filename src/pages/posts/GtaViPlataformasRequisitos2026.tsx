@@ -5,13 +5,14 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { Clock, User, Calendar, Gamepad2, Monitor, HardDrive, Wifi } from "lucide-react";
+import { Clock, User, Calendar, Gamepad2, Monitor, HardDrive, Wifi, Cpu, MemoryStick, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import SkeletonImage from "@/components/SkeletonImage";
 import heroImg from "@/assets/gta-vi-plataformas.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
+import { GtaBarChart, GtaFeatureGrid, GtaStatGrid, GtaCallout } from "@/components/gta/GtaVisuals";
 
 const SLUG = "gta-vi-plataformas-requisitos-2026";
 const TITLE = "Plataformas de GTA VI: PS5, Xbox Series, Ausência de PS4 e o Mistério da Versão PC";
@@ -52,6 +53,14 @@ const GtaViPlataformasRequisitos2026 = () => {
           explica, com base em comunicados oficiais e no histórico da Rockstar, exatamente o que esperar para cada
           plataforma e por quê.
         </p>
+
+        <GtaFeatureGrid features={[
+          { icon: Gamepad2, title: "PlayStation 5 / PS5 Pro", desc: "Confirmado no dia 1 (19/nov/2026). PS5 Pro deve entregar versão visual superior com ray tracing aprimorado.", accent: "cyan" },
+          { icon: Gamepad2, title: "Xbox Series X | S", desc: "Confirmado no dia 1. Series S deve receber versão visualmente reduzida com o mesmo conteúdo de gameplay.", accent: "emerald" },
+          { icon: Monitor, title: "PC (não confirmado)", desc: "Janela histórica da Rockstar aponta entre out/2027 e abr/2028 — 13 a 18 meses após consoles.", accent: "amber" },
+          { icon: HardDrive, title: "PS4 / Xbox One / Switch 2", desc: "Não terá versão. GTA VI exige SSD ultrarrápido, RAM unificada e GPU com ray tracing.", accent: "pink" },
+        ]} />
+
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Gamepad2 className="h-7 w-7 text-pink-400" /> O que está confirmado: PS5 e Xbox Series X|S
@@ -196,6 +205,20 @@ const GtaViPlataformasRequisitos2026 = () => {
             requisitos oficiais — versão para PC sequer foi confirmada.
           </p>
         </div>
+
+        <GtaBarChart
+          title="Tamanho de instalação (GB) — histórico Rockstar"
+          subtitle="GTA VI deve ser o maior download de game já feito"
+          accent="violet"
+          bars={[
+            { label: "GTA V (2013, atualizado)", value: 95, display: "95 GB" },
+            { label: "Red Dead Redemption 2", value: 110, display: "110 GB" },
+            { label: "GTA VI — estimativa mínima", value: 150, display: "≈ 150 GB", highlight: true },
+            { label: "GTA VI — estimativa máxima", value: 200, display: "≈ 200 GB", highlight: true, sub: "PS5 base tem apenas 667 GB utilizáveis" },
+          ]}
+        />
+
+
 
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Cross-save e cross-progression entre plataformas</h2>

@@ -12,6 +12,7 @@ import RelatedPosts from "@/components/RelatedPosts";
 import SkeletonImage from "@/components/SkeletonImage";
 import heroImg from "@/assets/gta-vi-trailers.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
+import { GtaTimeline, GtaBarChart, GtaStatGrid } from "@/components/gta/GtaVisuals";
 
 const SLUG = "gta-vi-trailers-marketing-2026";
 const TITLE = "Trailers de GTA VI: Do Vazamento de 2022 ao Trailer 2 Recorde e a Campanha de 2026";
@@ -175,26 +176,28 @@ const GtaViTrailersMarketing2026 = () => {
         </p>
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Linha do tempo completa</h2>
-        <div className="not-prose my-6 overflow-x-auto rounded-xl border border-pink-500/20">
-          <table className="w-full text-sm bg-card table-fixed">
-            <thead>
-              <tr className="bg-pink-500/10 text-pink-200">
-                <th className="w-[18%] text-left py-3 px-4 font-bold">Data</th>
-                <th className="w-[27%] text-left py-3 px-4 font-bold">Evento</th>
-                <th className="w-[55%] text-left py-3 px-4 font-bold">Descrição</th>
-              </tr>
-            </thead>
-            <tbody>
-              {timeline.map((t, i) => (
-                <tr key={t.data + t.evento} className={`border-t border-border/60 ${i % 2 ? "bg-muted/20" : ""}`}>
-                  <td className="py-3 px-4 text-xs font-bold text-pink-400 uppercase tracking-wider break-words">{t.data}</td>
-                  <td className="py-3 px-4 font-semibold text-sm break-words">{t.evento}</td>
-                  <td className="py-3 px-4 text-xs text-muted-foreground break-words">{t.desc}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <GtaTimeline
+          events={timeline.map((t, i) => ({
+            date: t.data,
+            title: t.evento,
+            desc: t.desc,
+            highlight: i === timeline.length - 1,
+            done: i < timeline.length - 1,
+          }))}
+        />
+
+        <GtaBarChart
+          title="Visualizações do Trailer 1 no YouTube (milhões)"
+          subtitle="Curva orgânica pós-lançamento em dez/2023 até jun/2026"
+          accent="pink"
+          bars={[
+            { label: "24 horas", value: 93, display: "93M", sub: "recorde mundial" },
+            { label: "1 semana", value: 150, display: "150M" },
+            { label: "1 mês", value: 200, display: "200M" },
+            { label: "Meados de 2026", value: 250, display: "250M+", highlight: true },
+          ]}
+        />
+
 
 
         <h2 className="text-2xl font-bold mt-10 mb-4">A estratégia de escassez como diferencial</h2>

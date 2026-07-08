@@ -5,13 +5,14 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { Clock, User, Calendar, DollarSign, TrendingUp, BarChart3, CheckCircle2, AlertTriangle } from "lucide-react";
+import { Clock, User, Calendar, DollarSign, TrendingUp, BarChart3, CheckCircle2, AlertTriangle, Wallet, CreditCard, Gift, Percent } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import SkeletonImage from "@/components/SkeletonImage";
 import heroImg from "@/assets/gta-vi-precos.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
+import { GtaBarChart, GtaStatGrid, GtaFeatureGrid, GtaCallout } from "@/components/gta/GtaVisuals";
 
 const SLUG = "gta-vi-precos-brasil-dolar-real-2026";
 const TITLE = "Preço de GTA VI no Brasil: Valores Oficiais em Dólar e Real, Edições e Comparação com a Indústria";
@@ -84,6 +85,14 @@ const GtaViPrecosBrasilDolar2026 = () => {
             <li><strong>Lançamento mundial:</strong> 19 de novembro de 2026 — PS5 e Xbox Series X|S.</li>
           </ul>
         </div>
+
+        <GtaStatGrid stats={[
+          { label: "Standard BR", value: "R$ 449,90", hint: "US$ 79,99 · PS/Xbox Store", icon: Wallet, accent: "pink" },
+          { label: "Ultimate BR", value: "R$ 549,90", hint: "US$ 99,99 · +R$ 100 sobre Standard", icon: Gift, accent: "violet" },
+          { label: "Parcelado", value: "12x R$ 37", hint: "Standard s/ juros na PS Store", icon: CreditCard, accent: "cyan" },
+          { label: "Preload", value: "12/nov", hint: "Lançamento 19/nov/2026", icon: Calendar, accent: "amber" },
+        ]} />
+
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <DollarSign className="h-7 w-7 text-pink-400" /> Tabela oficial: o que cada edição custa
@@ -162,6 +171,21 @@ const GtaViPrecosBrasilDolar2026 = () => {
           do que a Nintendo praticou no Switch 2.
         </p>
 
+        <GtaBarChart
+          title="Preço de lançamento em BRL (sem promoção)"
+          subtitle="Comparação direta na semana de lançamento — lojas oficiais brasileiras"
+          accent="pink"
+          bars={[
+            { label: "GTA V (2013)", value: 149.9, display: "R$ 149,90" },
+            { label: "GTA V PS5/XSX (2022)", value: 149.9, display: "R$ 149,90" },
+            { label: "RDR2 (2018)", value: 249.9, display: "R$ 249,90" },
+            { label: "NBA 2K25 (2024)", value: 349.9, display: "R$ 349,90" },
+            { label: "Mario Kart World (2025)", value: 439.9, display: "R$ 439,90" },
+            { label: "GTA VI Standard (2026)", value: 449.9, display: "R$ 449,90", highlight: true, sub: "Paridade quase perfeita com câmbio técnico" },
+            { label: "GTA VI Ultimate (2026)", value: 549.9, display: "R$ 549,90", highlight: true },
+          ]}
+        />
+
         <AdLeaderboard className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -173,6 +197,7 @@ const GtaViPrecosBrasilDolar2026 = () => {
           single-player quanto ao GTA Online VI quando o multiplayer for ativado. Segundo o anúncio oficial da
           Rockstar, a Ultimate inclui:
         </p>
+
         <ul>
           <li><strong>Frota de veículos exclusivos:</strong> '67 Vapid Dominator Buggy, '95 Grotti Cheetah, Vapid Ganado, moto Dinka Enduro e barco Shitzu Squalo.</li>
           <li><strong>Armas premium:</strong> revólveres Hawk &amp; Little Morgan com skins exclusivas.</li>
@@ -238,6 +263,22 @@ const GtaViPrecosBrasilDolar2026 = () => {
           entrante no Xbox Series S fica próximo de <strong>R$ 3.500 a R$ 4.000</strong>; no PS5 Slim, entre
           <strong> R$ 5.000 e R$ 5.500</strong>.
         </p>
+
+        <GtaBarChart
+          title="Quanto custa entrar em GTA VI no dia 1 (Brasil)"
+          subtitle="Pacote completo: console + SSD + assinatura online + jogo Standard"
+          accent="cyan"
+          bars={[
+            { label: "Jogo Standard (digital)", value: 449.9, display: "R$ 449,90" },
+            { label: "Xbox Game Pass Core (anual)", value: 199, display: "R$ 199,00" },
+            { label: "PS Plus Essential (anual)", value: 239.9, display: "R$ 239,90" },
+            { label: "SSD 1 TB compatível", value: 1200, display: "R$ 1.200 (médio)" },
+            { label: "Xbox Series S", value: 2799, display: "R$ 2.799", sub: "Menor entrada da geração" },
+            { label: "PS5 Slim digital", value: 3799, display: "R$ 3.799", highlight: true },
+          ]}
+        />
+
+
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Estratégias para pagar menos (legalmente)</h2>
         <p>

@@ -5,13 +5,14 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { Clock, User, Calendar, MapPin, Trees, Waves, Building2 } from "lucide-react";
+import { Clock, User, Calendar, MapPin, Trees, Waves, Building2, Home, Sailboat } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import SkeletonImage from "@/components/SkeletonImage";
 import heroImg from "@/assets/gta-vi-mapa-leonida.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
+import { GtaFeatureGrid, GtaBarChart } from "@/components/gta/GtaVisuals";
 
 const SLUG = "gta-vi-mapa-leonida-vice-city-2026";
 const TITLE = "Mapa de Leonida em GTA VI: Vice City, Keys, Everglades e Tudo Confirmado nos Trailers Oficiais";
@@ -148,7 +149,18 @@ const GtaViMapaLeonida2026 = () => {
           estado completo — Vice City não é tudo que existe em Leonida.
         </p>
 
+        <h2 className="text-2xl font-bold mt-10 mb-4">As regiões de Leonida em destaque</h2>
+        <GtaFeatureGrid features={[
+          { icon: Building2, title: "Vice City (metrópole)", desc: "Inspirada em Miami: arranha-céus, art deco em South Beach, praias urbanas, bairros latinos e vida noturna intensa.", accent: "pink" },
+          { icon: Sailboat, title: "Leonida Keys", desc: "Arquipélago ao sul, ligado por pontes longas. Marinas, mergulho, pesca e casas em palafitas — inspiração direta nos Florida Keys.", accent: "cyan" },
+          { icon: Waves, title: "Pântanos (Everglades fictícios)", desc: "Canais navegáveis, mangues densos, jacarés reativos e ambiente hostil no sudoeste do mapa.", accent: "emerald" },
+          { icon: Trees, title: "Mount Kalaga National Park", desc: "Reserva natural com floresta, trilhas, lagos e fauna típica do interior da Flórida.", accent: "emerald" },
+          { icon: Building2, title: "Port Gellhorn", desc: "Cidade portuária menor, com porto industrial e bairros operários — contraste direto ao glamour de Vice City.", accent: "amber" },
+          { icon: Home, title: "Ambrosia", desc: "Comunidade rural pequena — igreja, posto de gasolina e estética caipira do interior sul-americano.", accent: "violet" },
+        ]} />
+
         <h2 className="text-2xl font-bold mt-10 mb-4">Regiões confirmadas (resumo)</h2>
+
         <div className="not-prose my-6 overflow-x-auto rounded-xl border border-pink-500/20">
           <table className="w-full text-sm bg-card table-fixed">
             <thead>
@@ -210,6 +222,22 @@ const GtaViMapaLeonida2026 = () => {
           específico nessa faixa é estimativa. Para o jogador, o que importa não é o número em si: é a sensação de
           variedade e densidade. E nessa métrica, os trailers entregam expectativa altíssima.
         </p>
+
+        <GtaBarChart
+          title="Escala dos mapas Rockstar (km² estimados de fãs)"
+          subtitle="Números oficiais nunca foram divulgados — todos os valores são estimativas de comunidade"
+          accent="violet"
+          bars={[
+            { label: "GTA III (2001) — Liberty City", value: 8, display: "≈ 8 km²" },
+            { label: "Vice City (2002)", value: 8, display: "≈ 8 km²" },
+            { label: "GTA IV (2008) — Liberty City", value: 12, display: "≈ 12 km²" },
+            { label: "San Andreas (2004)", value: 36, display: "≈ 36 km²" },
+            { label: "GTA V (2013) — San Andreas", value: 81, display: "≈ 75–81 km²" },
+            { label: "GTA VI — Leonida (estimativa)", value: 200, display: "≈ 100–200 km²", highlight: true, sub: "Vice City + Keys + pântanos + interior" },
+          ]}
+        />
+
+
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Locais especulados mas não confirmados</h2>
         <p>
