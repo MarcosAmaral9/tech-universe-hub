@@ -54,6 +54,14 @@ const GtaViPlataformasRequisitos2026 = () => {
           plataforma e por quê.
         </p>
 
+        <GtaFeatureGrid features={[
+          { icon: Gamepad2, title: "PlayStation 5 / PS5 Pro", desc: "Confirmado no dia 1 (19/nov/2026). PS5 Pro deve entregar versão visual superior com ray tracing aprimorado.", accent: "cyan" },
+          { icon: Gamepad2, title: "Xbox Series X | S", desc: "Confirmado no dia 1. Series S deve receber versão visualmente reduzida com o mesmo conteúdo de gameplay.", accent: "emerald" },
+          { icon: Monitor, title: "PC (não confirmado)", desc: "Janela histórica da Rockstar aponta entre out/2027 e abr/2028 — 13 a 18 meses após consoles.", accent: "amber" },
+          { icon: HardDrive, title: "PS4 / Xbox One / Switch 2", desc: "Não terá versão. GTA VI exige SSD ultrarrápido, RAM unificada e GPU com ray tracing.", accent: "pink" },
+        ]} />
+
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Gamepad2 className="h-7 w-7 text-pink-400" /> O que está confirmado: PS5 e Xbox Series X|S
         </h2>
