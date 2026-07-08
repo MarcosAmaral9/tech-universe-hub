@@ -5,13 +5,14 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { Clock, User, Calendar, DollarSign, TrendingUp, BarChart3, CheckCircle2, AlertTriangle } from "lucide-react";
+import { Clock, User, Calendar, DollarSign, TrendingUp, BarChart3, CheckCircle2, AlertTriangle, Wallet, CreditCard, Gift, Percent } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import SkeletonImage from "@/components/SkeletonImage";
 import heroImg from "@/assets/gta-vi-precos.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
+import { GtaBarChart, GtaStatGrid, GtaFeatureGrid, GtaCallout } from "@/components/gta/GtaVisuals";
 
 const SLUG = "gta-vi-precos-brasil-dolar-real-2026";
 const TITLE = "Preço de GTA VI no Brasil: Valores Oficiais em Dólar e Real, Edições e Comparação com a Indústria";
