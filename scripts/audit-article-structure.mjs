@@ -149,6 +149,16 @@ for (const f of readdirSync(DIR).filter((x) => x.endsWith(".tsx"))) {
   if (firstContent !== Number.MAX_SAFE_INTEGER && posET < firstContent) {
     errors.push(`${f}: <EditorialTake> aparece antes do conteúdo do artigo`);
   }
+
+  // 8) EditorialTake deve ser o ÚLTIMO conteúdo antes de ArticleSources
+  const etCloseIdx = src.indexOf("</EditorialTake>");
+  if (etCloseIdx !== -1 && posAS !== -1 && etCloseIdx < posAS) {
+    const between = src.slice(etCloseIdx + "</EditorialTake>".length, posAS);
+    const tagCount = (between.match(/<[A-Za-z]/g) || []).length;
+    if (tagCount > 0) {
+      errors.push(`${f}: há ${tagCount} tag(s) entre </EditorialTake> e <ArticleSources> — ET deve ser o último bloco antes das fontes`);
+    }
+  }
 }
 
 if (errors.length) {
