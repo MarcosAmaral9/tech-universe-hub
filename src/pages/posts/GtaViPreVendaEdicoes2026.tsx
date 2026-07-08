@@ -5,13 +5,14 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { Clock, User, Calendar, ShoppingCart, AlertTriangle, CheckCircle2, Store } from "lucide-react";
+import { Clock, User, Calendar, ShoppingCart, AlertTriangle, CheckCircle2, Store, Gamepad2, Globe, Package } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import SkeletonImage from "@/components/SkeletonImage";
 import heroImg from "@/assets/gta-vi-pre-venda-edicoes.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
+import { GtaFeatureGrid, GtaStatGrid, GtaCallout } from "@/components/gta/GtaVisuals";
 
 const SLUG = "gta-vi-pre-venda-edicoes-2026";
 const TITLE = "Pré-Venda de GTA VI: Estado Real, Edições, Bônus e Como se Preparar Para Comprar";
