@@ -171,6 +171,21 @@ const GtaViPrecosBrasilDolar2026 = () => {
           do que a Nintendo praticou no Switch 2.
         </p>
 
+        <GtaBarChart
+          title="Preço de lançamento em BRL (sem promoção)"
+          subtitle="Comparação direta na semana de lançamento — lojas oficiais brasileiras"
+          accent="pink"
+          bars={[
+            { label: "GTA V (2013)", value: 149.9, display: "R$ 149,90" },
+            { label: "GTA V PS5/XSX (2022)", value: 149.9, display: "R$ 149,90" },
+            { label: "RDR2 (2018)", value: 249.9, display: "R$ 249,90" },
+            { label: "NBA 2K25 (2024)", value: 349.9, display: "R$ 349,90" },
+            { label: "Mario Kart World (2025)", value: 439.9, display: "R$ 439,90" },
+            { label: "GTA VI Standard (2026)", value: 449.9, display: "R$ 449,90", highlight: true, sub: "Paridade quase perfeita com câmbio técnico" },
+            { label: "GTA VI Ultimate (2026)", value: 549.9, display: "R$ 549,90", highlight: true },
+          ]}
+        />
+
         <AdLeaderboard className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -182,6 +197,7 @@ const GtaViPrecosBrasilDolar2026 = () => {
           single-player quanto ao GTA Online VI quando o multiplayer for ativado. Segundo o anúncio oficial da
           Rockstar, a Ultimate inclui:
         </p>
+
         <ul>
           <li><strong>Frota de veículos exclusivos:</strong> '67 Vapid Dominator Buggy, '95 Grotti Cheetah, Vapid Ganado, moto Dinka Enduro e barco Shitzu Squalo.</li>
           <li><strong>Armas premium:</strong> revólveres Hawk &amp; Little Morgan com skins exclusivas.</li>
