@@ -5,13 +5,14 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { Clock, User, Calendar, Zap, Users, Cloud, Car, MessageSquare } from "lucide-react";
+import { Clock, User, Calendar, Zap, Users, Cloud, Car, MessageSquare, Waves, Smartphone, Wifi, Cpu } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import SkeletonImage from "@/components/SkeletonImage";
 import heroImg from "@/assets/gta-vi-mecanicas.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
+import { GtaFeatureGrid, GtaBarChart, GtaCallout } from "@/components/gta/GtaVisuals";
 
 const SLUG = "gta-vi-mecanicas-gameplay-2026";
 const TITLE = "Mecânicas de GTA VI: Tudo Confirmado nos Trailers Sobre Combate, Direção, NPCs e Mundo Aberto";
