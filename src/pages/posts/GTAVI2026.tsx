@@ -5,13 +5,14 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3, MapPin } from "lucide-react";
+import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3, MapPin, DollarSign, Trophy, Eye, Users } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RelatedPosts from "@/components/RelatedPosts";
 import heroImg from "@/assets/gta-vi-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
+import { GtaStatGrid, GtaBarChart, GtaHypeMeter } from "@/components/gta/GtaVisuals";
 
 const GTAVI2026 = () => {
   useEffect(() => {
