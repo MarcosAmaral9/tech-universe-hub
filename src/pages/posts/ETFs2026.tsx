@@ -287,6 +287,8 @@ const ETFs2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="invest" title="Análise do Marcos: ETFs são a vacina contra a preguiça de diversificar">
         <p>
           Depois de anos acompanhando investidores pessoa física, o padrão que mais me impressiona é o seguinte: quem usa ETFs dorme melhor. Não porque não haja risco — BOVA11 caiu 30% em 2020 — mas porque a estratégia passiva remove a tentação de ficar pulando de ativo em ativo tentando "pegar a próxima alta". E estudos do SPIVA confirmam repetidamente: no Brasil, mais de 80% dos fundos ativos de ações perdem para o Ibovespa em 10 anos.
@@ -295,7 +297,6 @@ const ETFs2026 = () => {
           Minha combinação favorita para a maioria dos investidores brasileiros com horizonte de 10+ anos: <strong>40% IVVB11 + 30% BOVA11 + 20% IMAB11 + 10% SMAL11</strong>. Exposição a EUA, Brasil, inflação e small caps — quatro mercados distintos, uma única revisão semestral, custo total abaixo de 0,25% ao ano. Simples, barato e historicamente eficiente.
         </p>
       </EditorialTake>
-
       <ArticleSources category="invest"
         sources={[
           { title: "ETFs listados na B3 — Fundos de Índice de Renda Variável e Renda Fixa", url: "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/etf/renda-variavel/etfs-listados.htm", publisher: "B3 — Bolsa do Brasil", accessedAt: "Maio 2026" },

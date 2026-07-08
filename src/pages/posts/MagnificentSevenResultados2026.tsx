@@ -319,6 +319,8 @@ const MagnificentSevenResultados2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="invest" title="Análise do Marcos: o capex de US$ 600B é a única história">
         <p>Resultado trimestral da Big Tech virou ritual: todos batem expectativa de lucro, todos elevam guidance de capex. O número que importa em 2026 não é EPS — é <strong>quanto cada uma vai gastar em data centers e GPUs</strong>. Microsoft, Meta, Alphabet e Amazon somando mais de US$ 600 bilhões indica que o mercado de IA está em fase de <strong>infraestrutura</strong>, não de monetização. Para o brasileiro com BDRs (MSFT34, GOGL34, AMZO34) ou ETFs como IVVB11, o ponto de atenção é margem: depreciação acelerada desses ativos vai pressionar o lucro contábil nos próximos 3-5 anos, mesmo com receita crescendo. Quem comprou Big Tech pensando em 'crescimento sem custo' vai aprender que infraestrutura física tem preço.</p>
       </EditorialTake>

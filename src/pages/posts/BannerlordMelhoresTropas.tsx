@@ -493,6 +493,8 @@ const BannerlordMelhoresTropas = () => {
         </p>
 </div>
 
+
+
         <EditorialTake category="geek" title="Análise do Marcos: A Meta de Bannerlord em 2026 Recompensa Versatilidade, Não Especialização">
           <p>
             A tier list de Bannerlord é menos sobre "qual tropa mata mais" e mais sobre <em>qual tropa cobre as
@@ -504,7 +506,6 @@ const BannerlordMelhoresTropas = () => {
             conforme o inimigo e o terreno mudam a cada batalha.
           </p>
         </EditorialTake>
-
         <ArticleSources
           category="geek"
           sources={[

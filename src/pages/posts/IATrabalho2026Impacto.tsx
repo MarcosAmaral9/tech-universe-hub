@@ -231,6 +231,8 @@ const IATrabalho2026Impacto = () => {
 
       </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: três competências que nenhuma IA substitui no curto prazo">
         <p>
           O Future of Jobs Report 2025 do WEF projeta criação líquida de 78 milhões de empregos globalmente até 2030 — 170 milhões criados, 92 milhões deslocados. As funções mais impactadas: atendimento ao cliente, contabilidade básica e desenvolvimento de software júnior. No Brasil, IPEA e CNI publicaram em 2024 análises mostrando exposição maior em serviços formais urbanos do que em ocupações manuais.
@@ -242,7 +244,6 @@ const IATrabalho2026Impacto = () => {
           Os dados do IBRE/FGV são particularmente relevantes porque mostram uma assimetria importante: <strong>62% da exposição à IA no Brasil se concentra em trabalhadores com ensino superior</strong> — advogados, contadores, analistas financeiros, jornalistas, desenvolvedores — justamente o segmento que mais cresceu economicamente nas últimas duas décadas e que tem menor tradição de requalificação rápida. Para esse grupo, a IA não chega como ameaça distante: chega como uma mudança que já está afetando a precificação de serviços e a velocidade de entrega que clientes esperam. O caminho mais seguro é adotar IA como multiplicador da própria especialização, não tentar competir com ela em velocidade de execução de tarefas que ela já executa melhor e mais barato do que qualquer humano especializado.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "WEF — Future of Jobs Report 2025", url: "https://www.weforum.org/reports/the-future-of-jobs-report-2025", publisher: "World Economic Forum", accessedAt: "Maio 2026" },
         { title: "IPEA/CTS — IA, Automação do Trabalho, Empregabilidade e Previdência Social (abr/2026)", url: "https://www.ipea.gov.br/cts/pt/central-de-conteudo/todas-as-publicacoes/publicacoes/538-ia-e-o-futuro-do-mercado-de-trabalho", publisher: "IPEA", accessedAt: "Maio 2026" },

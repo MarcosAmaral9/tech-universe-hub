@@ -220,12 +220,13 @@ const RegulamentacaoIA2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: o desafio de 2026 não é a regulação — é mapear quais sistemas já usam IA">
         <p>
           O EU AI Act já tem obrigações ativas. O PL 2338/2023 ainda tramita na Câmara, mas o Art. 20 da LGPD já garante revisão humana. A divergência entre blocos (UE rígida, Brasil em construção, EUA desregulado) é o maior desafio para multinacionais. Para a empresa brasileira média, o caminho prático começa pelo inventário: identifique cada ferramenta SaaS com IA que processa dados de clientes ou funcionários, classifique por risco, e implante mecanismo de revisão humana nos sistemas de alto risco. Quem fizer isso proativamente estará pronto tanto para o PL 2338 quanto para o EU AI Act — e terá diferencial competitivo quando a fiscalização começar.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "EUR-Lex — Regulamento (UE) 2024/1689 (EU AI Act)", url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj", publisher: "EUR-Lex", accessedAt: "Maio 2026" },
         { title: "Senado Federal — PL 2338/2023 (Marco Legal da IA)", url: "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233", publisher: "Senado Federal", accessedAt: "Maio 2026" },

@@ -269,6 +269,8 @@ const ClaudeOpusVsSonnet2026 = () => {
           <p className="text-muted-foreground">Conta nos comentários sua experiência! 👇</p>
         </div>
       </div>
+
+
       <EditorialTake category="ia" title="Análise do Marcos: Opus por hora, Sonnet por padrão">
         <p>Depois de meses rodando os dois em produção, minha regra prática para quem opera com orçamento em real é simples: <strong>Sonnet como modelo padrão</strong> da maioria dos prompts (resposta, edição, classificação) e <strong>Opus reservado para raciocínio multi-etapa</strong> — análise de contrato, refatoração de código grande, planejamento. A diferença de custo por milhão de tokens não compensa Opus em chamadas curtas, mas paga sozinha quando o problema exige cadeia de pensamento longa. Quem está testando agora deveria instrumentar o roteamento de modelo (router próprio) antes de assinar plano caro: 80% do tráfego cabe em Sonnet sem perda perceptível.</p>
         <p>

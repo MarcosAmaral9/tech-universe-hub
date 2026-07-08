@@ -270,6 +270,13 @@ const MerchandisingOtaku2026 = () => {
           Por fim, vale lembrar que convenções e eventos otaku presenciais — como a Anime Friends e a Comic Con Experience, ambas realizadas em São Paulo — continuam sendo um dos canais mais confiáveis para comprar colecionáveis no Brasil, já que permitem inspecionar o produto fisicamente antes da compra e negociar diretamente com lojistas especializados que participam regularmente desses eventos. Para quem está começando a colecionar, visitar uma convenção antes de fazer compras online de maior valor é uma forma prática de aprender a identificar a textura, o peso e o acabamento de produtos originais — conhecimento que depois ajuda a reconhecer bootlegs em fotos de anúncios na internet.
         </p>
 
+        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
+          <h3 className="text-xl font-bold mb-2">O que você coleciona? 🗂️</h3>
+          <p className="text-muted-foreground">Mangás, Nendoroids, Figmas? Conta a sua coleção nos comentários! 👇</p>
+        </div>
+      </div>
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: colecionar produto oficial é diferente de acumular bootleg">
         <p>
           O mercado global de merchandise de anime e mangá movimentou <strong>US$ 12,4 bilhões em 2023</strong> segundo dados da Yano Research Institute — número que inclui figuras, vestuário licenciado, acessórios, quadros e colecionáveis digitais. No Brasil, o mercado secundário no Mercado Livre e Shopee movimenta dezenas de milhões de reais mensais em produto otaku. A <strong>Good Smile Company</strong> opera pré-venda global com lista de revendedores autorizados verificável no site oficial — qualquer produto fora dessa lista é potencial bootleg.
@@ -278,13 +285,6 @@ const MerchandisingOtaku2026 = () => {
           Tenho figuras desde 2015 e aprendi na marra que <strong>colecionar produto oficial deixou de ser hobby de nicho para virar mercado sério</strong>. A Good Smile Company opera pré-venda global e o mercado secundário no Mercari e Yahoo Auctions Japão movimenta centenas de milhões de ienes mensalmente. No Brasil, a importação legal exige atenção a três pontos: imposto de importação conforme as regras do Programa Remessa Conforme da Receita Federal (20% até US$ 50, cobrado na compra em parceiros habilitados como Shopee), fretamento via intermediárias como Shipito para itens exclusivos do Japão, e verificação do holograma de autenticidade da GSC. Prefira peças com numeração limitada e caixa original — Figmas e Nendoroids da GSC mantêm 70–90% do valor após cinco anos quando guardadas lacradas.
         </p>
       </EditorialTake>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">O que você coleciona? 🗂️</h3>
-          <p className="text-muted-foreground">Mangás, Nendoroids, Figmas? Conta a sua coleção nos comentários! 👇</p>
-        </div>
-      </div>
-
       <ArticleSources category="otaku"
         sources={[
           {

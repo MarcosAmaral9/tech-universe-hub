@@ -191,6 +191,8 @@ const IAGanharDinheiro2026 = () => {
         </ul>
       </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: quem fatura de verdade combina habilidade prévia com IA, não só IA">
         <p>
           O erro mais comum é tratar IA como "botão mágico de dinheiro". As pessoas que faturam de fato em 2026 combinam três coisas: uma <strong>habilidade prévia</strong> (escrita, design, programação, vendas), domínio de <strong>pelo menos duas ferramentas de IA</strong> relevantes para esse nicho, e <strong>disciplina de prospecção</strong> — porque a IA não traz cliente, ela entrega o serviço mais rápido depois que você vendeu.
@@ -199,7 +201,6 @@ const IAGanharDinheiro2026 = () => {
           Receitas iniciais realistas para freelancers brasileiros são R$ 1.000–3.000/mês nos primeiros 6 meses, escalando conforme reputação e portfólio. Plataformas com melhor relação esforço/retorno no Brasil: Workana para geral, 99Freelas para micro-PMEs, e Fiverr em inglês para quem quer receber em dólar.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "World Economic Forum — Future of Jobs Report 2025", url: "https://www.weforum.org/reports/the-future-of-jobs-report-2025", publisher: "WEF", accessedAt: "Maio 2026" },
         { title: "Workana — Plataforma de Freelancers Brasil", url: "https://www.workana.com/", publisher: "Workana", accessedAt: "Maio 2026" },

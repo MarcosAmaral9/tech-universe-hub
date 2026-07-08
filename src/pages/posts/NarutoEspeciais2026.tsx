@@ -238,6 +238,8 @@ const NarutoEspeciais2026 = () => {
           Para os fãs que querem revisitar a série antes dos especiais, a Crunchyroll tem Naruto (2002–2007) e Naruto: Shippuden (2007–2017) completos com legendas em português. Vale usar o guia de fillers disponível no site naruto.fandom.com para pular os episódios de preenchimento — especialmente em Shippuden, onde fillers chegam a arcos de 40–50 episódios sem conteúdo do mangá.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: especiais de Naruto são fan service estratégico">
         <p>
           Os especiais de Naruto confirmados para 2026 são produzidos pelo <strong>Studio Pierrot</strong> — o mesmo responsável pelas séries originais de Naruto (2002–2007) e Naruto: Shippuden (2007–2017). A TV Tokyo co-produz. Os episódios adaptam conteúdo das <strong>light novels</strong> de autores como Masashi Kishimoto (roteiro original) e outros colaboradores da franquia — especialmente os arcos de Sasuke Retsuden e Itachi Shinden, que exploram personagens secundários em maior profundidade do que a série principal permitiu. Disponíveis na <strong>Crunchyroll</strong> com simulcast no mesmo dia da exibição japonesa.

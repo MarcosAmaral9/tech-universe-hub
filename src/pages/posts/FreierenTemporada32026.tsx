@@ -214,6 +214,8 @@ const FreierenTemporada32026 = () => {
           <strong>Fern</strong> é a aprendiz de Frieren e tem um dos arcos de desenvolvimento mais sutis da série — ela começa como uma criança resgatada por Heiter e termina a T2 como uma das mages mais competentes de sua geração, sem nunca ter um "momento de transformação" dramático. O crescimento é mostrado retroativamente: você percebe o quanto ela mudou comparando episódios distantes. <strong>Stark</strong>, o guerreiro que completa o trio, funciona como âncora emocional — sua vulnerabilidade e coragem simultaneamente são o equivalente de Himmel no grupo atual, e Frieren reconhece isso sem nunca dizer explicitamente.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: Frieren é o anime que provou que lento pode ser perfeito">
         <p>
           Vale registrar que Frieren venceu o Manga Taisho em 2021 — prêmio independente votado por livreiros japoneses para recomendar obras novas que merecem mais atenção, considerado um dos indicadores mais honestos de qualidade literária dentro do manga moderno, já que é votado por profissionais do setor de livraria em vez de fãs ou críticos especializados. Esse reconhecimento, junto com o 14º prêmio na 67a edição do Shogakukan Manga Award na categoria shōnen em 2022, posicionou Frieren como obra de prestígio crítico antes mesmo da adaptação em anime — o que ajuda a explicar por que o estúdio Madhouse recebeu o projeto com tanto cuidado: havia expectativa estabelecida de qualidade literária a ser honrada, não apenas popularidade a ser monetizada.
@@ -225,7 +227,6 @@ const FreierenTemporada32026 = () => {
           O que Frieren fez que nenhum outro anime da última década conseguiu com a mesma eficiência: <strong>usar a passagem do tempo como dispositivo emocional principal</strong>. Não é o que acontece nas cenas — é o intervalo entre elas que carrega o peso. Uma elfa que viveu mil anos lembra de um humano que conheceu por dez como alguém que 'mal chegou a ser uma estrela no céu'. Esse enquadramento transforma cada momento de Frieren numa meditação sobre a fragilidade da memória humana. Madhouse entendeu isso e construiu uma direção de arte que amplifica o silêncio em vez de preenchê-lo.
         </p>
       </EditorialTake>
-
             <ArticleSources category="otaku"
         sources={[
           {

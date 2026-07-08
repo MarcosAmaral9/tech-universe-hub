@@ -295,6 +295,8 @@ const Bitcoin2026ValeComprar = () => {
         ))}
       </div>
 
+
+
       <EditorialTake category="invest" title="Análise do Marcos: Bitcoin continua sendo o mais imprevisível">
         <p>
           Toda vez que o Bitcoin corrige, surgem dois times: os que declaram o fim das criptomoedas e os que gritam "oportunidade histórica". A verdade, como sempre, está no meio. O que muda em 2026 é que a entrada institucional via ETFs criou um <strong>piso de demanda estrutural</strong> que não existia em 2018 ou 2022 — BlackRock e Fidelity não vendem seus ETFs de BTC em pânico como investidores pessoa física.
@@ -303,7 +305,6 @@ const Bitcoin2026ValeComprar = () => {
           Minha visão: Bitcoin hoje é menos um instrumento especulativo puro e mais uma <strong>reserva de valor alternativa ao ouro</strong> para uma faixa crescente de investidores. Para quem tem horizonte de 3-5 anos e consegue suportar a volatilidade, uma alocação de 2-5% faz sentido dentro de uma carteira diversificada. Para quem precisa do dinheiro em menos de 2 anos — esqueça. O Bitcoin em janelas curtas é um cassino regulado.
         </p>
       </EditorialTake>
-
       <ArticleSources category="invest"
         sources={[
           {

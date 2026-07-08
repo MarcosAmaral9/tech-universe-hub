@@ -167,6 +167,8 @@ const DeepfakesIA2026 = () => {
       </div>
 
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: a defesa real contra deepfakes é comportamental, não técnica">
         <p>
           O relatório <em>State of Deepfakes 2024</em> da Sensity AI documentou crescimento de 550% em deepfakes de áudio entre 2023 e 2024. O FBI emitiu alerta público (PSA I-052024-PSA) sobre golpes de clonagem de voz com IA — só nos EUA, o prejuízo passou de US$ 200 milhões em 2024. No Brasil, a Febraban registrou aumento de 40% em tentativas de fraude com áudio sintético contra clientes bancários em 2025.
@@ -175,7 +177,6 @@ const DeepfakesIA2026 = () => {
           Ferramentas de detecção ajudam em contexto corporativo, mas para o cidadão comum a proteção mais eficaz é <strong>comportamental</strong>: combine palavras-código com familiares, desconfie de urgência artificial e nunca autorize transferências por áudio ou vídeo sem verificar por canal independente. A IA já clona vozes com 3 segundos de áudio — a tecnologia está acessível demais para esperar que a regulamentação resolva antes de você agir. O hábito de pausar, respirar e verificar por um segundo canal antes de qualquer ação financeira urgente é a medida com melhor relação custo-benefício disponível hoje, e que não depende de nenhum app ou ferramenta especial para funcionar — O hábito deliberado e consistente de verificar antes de agir especialmente em situações criadas para eliminar exatamente esse espaço de reflexão necessário para perceber o golpe.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "Polícia Federal — 42,5% das fraudes financeiras usam IA (2026)", url: "https://minutodaseguranca.blog.br/deepfakes-e-golpes-com-ia-ampliam-disputas-sobre-responsabilidade/", publisher: "Minuto da Segurança", accessedAt: "Maio 2026" },
         { title: "Serasa Experian — 6,9M tentativas de fraude no 1º sem/2025 (1 a cada 2,3 seg)", url: "https://www.tribunadosertao.com.br/geral/2026/02/25/862930-golpes-por-voz-clonada-deixam-bancos-brasileiros-em-alerta-uma-fraude-a-cada-23-segundos", publisher: "Tribuna do Sertão / Serasa", accessedAt: "Maio 2026" },

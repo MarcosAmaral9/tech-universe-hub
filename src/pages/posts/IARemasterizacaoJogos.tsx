@@ -205,6 +205,8 @@ const IARemasterizacaoJogos = () => {
         </div>
 </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: remasterização com IA é ferramenta, não substituto do design original">
         <p>
           A onda de "remasterização por IA" tem um lado que ninguém comenta no Brasil: ela está empurrando placas de vídeo
@@ -221,7 +223,6 @@ const IARemasterizacaoJogos = () => {
           Para o jogador brasileiro que quer aproveitar remasterização com IA no curto prazo sem gastar fortunas: a combinação mais custo-efetiva é <strong>GeForce Now Ultimate</strong> (streaming com RTX 4080 em nuvem, ~R$ 60/mês) + FSR 3 ativado nos jogos que suportam. Você obtém qualidade de upscaling de última geração sem pagar pela GPU. Quem prefere hardware local, a RTX 4060 de segunda mão continua sendo o ponto ideal de entrada para DLSS 3 + Frame Generation em 1080p/1440p — e provavelmente vai continuar sendo o melhor ponto de entrada por mais 2 a 3 anos, dado o ritmo de depreciação de hardware de IA em games e o ciclo de vida mais longo que as gerações mais novas de DLSS impõem às GPUs da geração anterior.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "NVIDIA — DLSS 4 with Multi Frame Generation", url: "https://www.nvidia.com/en-us/geforce/news/dlss4-multi-frame-generation-ai-innovations/", publisher: "NVIDIA", accessedAt: "Maio 2026" },
         { title: "AMD — FidelityFX Super Resolution 4 (FSR 4)", url: "https://www.amd.com/en/products/graphics/technologies/fidelityfx-super-resolution.html", publisher: "AMD", accessedAt: "Maio 2026" },

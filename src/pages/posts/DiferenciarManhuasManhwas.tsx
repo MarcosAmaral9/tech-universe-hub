@@ -323,6 +323,8 @@ const DiferenciarManhuasManhwas = () => {
           Para <strong>manhua</strong>: o <strong>Bilibili Comics</strong> (app gratuito) tem grande catálogo em inglês, incluindo adaptações de donghua (animação chinesa) populares. O <strong>Webnovel</strong> tem manhuas baseados em webnovels populares. Para títulos sem licença oficial, o <strong>MangaDex</strong> centraliza scanlations de manhwa e manhua em múltiplos idiomas — incluindo algumas traduções em português feitas por grupos de fãs brasileiros.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: manhwa e manhua são formatos distintos com culturas próprias — confundi-los é perder metade da experiência">
         <p>
           Vale destacar uma dimensão econômica frequentemente ignorada nas discussões sobre manhwa e manhua: o mercado digital asiático de quadrinhos é significativamente maior do que o público ocidental normalmente percebe. O Webtoon reportou mais de 89 milhões de usuários mensais globais em 2023 segundo dados divulgados pela NAVER, e plataformas chinesas como Kuaikan Manhua e Bilibili Comics têm bases de usuários ainda maiores dentro da China — um mercado que raramente aparece nas análises ocidentais do setor por operar majoritariamente em mandarim. Essa escala explica por que tanto a indústria coreana quanto a chinesa investem cada vez mais em adaptações para donghua (animação chinesa) e anime com coproduções, buscando distribuição internacional para propriedades que já têm audiência doméstica massiva.
@@ -334,7 +336,6 @@ const DiferenciarManhuasManhwas = () => {
           Para o leitor brasileiro em 2026, o acesso ao manhwa nunca foi tão fácil — o Webtoon tem centenas de títulos gratuitos em inglês, e alguns chegam ao português via scanlation. O manhua ainda depende mais de plataformas como Bilibili Comics e Webnovel em inglês. Identificar qual dos dois você prefere antes de mergulhar no catálogo disponível economiza frustração e garante que você encontre exatamente o que busca.
         </p>
       </EditorialTake>
-
       <ArticleSources category="otaku"
         sources={[
           {

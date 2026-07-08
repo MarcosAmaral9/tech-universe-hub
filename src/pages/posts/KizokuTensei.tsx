@@ -154,6 +154,8 @@ const KizokuTensei = () => {
           O subgênero "nobre reencarnado" floresceu no Narou após o sucesso de <strong>Mushoku Tensei</strong> (2012) e tem dezenas de títulos com premissas similares. O que diferencia as obras dentro do subgênero geralmente é a forma como o autor usa o privilégio aristocrático: como ponto de partida para aventura exterior, como mecanismo político, ou como contraste para desenvolvimento de caráter. Kizoku Tensei usa o privilégio como <em>complicação</em>, não como recurso. Ser o décimo terceiro filho do imperador é mais perigoso do que ser um camponês — há mais pessoas que querem eliminar Noah do que protegê-lo. Para fãs de isekais políticos como <strong>The Genius Prince's Guide to Raising a Nation Out of Debt</strong>, Kizoku Tensei está na mesma família de subgênero.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: Kizoku Tensei inverte o clichê do isekai pobre — com resultados interessantes">
         <p>
           Antes de fechar com a análise editorial, vale mencionar que o uso de intriga política como motor narrativo dentro de fantasia medieval não é exclusividade do isekai — é uma tradição que remonta a obras ocidentais clássicas de fantasia política, como o ciclo de romances de George R.R. Martin, que popularizaram a ideia de que conflitos de sucessão e alianças entre famílias nobres podem ser tão tensos quanto batalhas físicas. O que o isekai japonês contemporâneo, incluindo Kizoku Tensei, faz de diferente é combinar esse interesse por intriga cortesã com a familiaridade do protagonista reencarnado — que carrega sensibilidades modernas para dentro de uma estrutura de poder hereditária e historicamente rígida, criando atrito entre os valores do protagonista e as expectativas do mundo em que ele nasceu.
@@ -165,7 +167,6 @@ const KizokuTensei = () => {
           O que me chamou atenção em Kizoku Tensei é a inversão da premissa padrão: Noah não começa sem nada. Começa com tudo — família imperial, recursos, educação de elite. O drama não vem da pobreza mas das conspirações ao redor de alguém excessivamente capaz. Esse enquadramento evita a jornada de ascensão do zero que saturou o gênero e entrega algo diferente: gestão de excesso de poder numa estrutura política hostil.
         </p>
       </EditorialTake>
-
             <ArticleSources category="otaku"
         sources={[
           {

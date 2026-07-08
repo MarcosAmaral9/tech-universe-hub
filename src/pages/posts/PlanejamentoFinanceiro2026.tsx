@@ -668,6 +668,8 @@ const PlanejamentoFinanceiro2026 = () => {
 
         <BackNavigation category="invest" />
 
+
+
         <EditorialTake
           category="invest"
           title="Análise do Marcos: planejamento financeiro é projeto, não resolução de ano novo"
@@ -696,7 +698,6 @@ const PlanejamentoFinanceiro2026 = () => {
             sistema, não apenas o esforço.
           </p>
         </EditorialTake>
-
         <ArticleSources category="invest"
           sources={[
             {

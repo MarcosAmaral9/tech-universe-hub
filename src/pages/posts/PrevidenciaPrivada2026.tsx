@@ -464,6 +464,8 @@ const PrevidenciaPrivada2026 = () => {
 
       </div>
 
+
+
       <EditorialTake
         category="invest"
         title="Análise do Marcos: PGBL é ferramenta fiscal, não apenas investimento"
@@ -488,7 +490,6 @@ const PrevidenciaPrivada2026 = () => {
           carregamento zero e administração abaixo de 1%.
         </p>
       </EditorialTake>
-
       <ArticleSources category="invest"
         sources={[
           {

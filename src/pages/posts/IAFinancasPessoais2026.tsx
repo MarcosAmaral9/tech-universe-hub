@@ -275,11 +275,12 @@ const IAFinancasPessoais2026 = () => {
 
       <BackNavigation category="invest" />
 
+
+
       <EditorialTake category="invest" title="Análise do Marcos: IA no bolso — 3 usos que funcionam de verdade">
         <p>Bancos brasileiros já incorporaram IA em apps populares: Nubank com 'Tuna' (assistente em testes), Itaú com 'Íon' e Bradesco com 'BIA'. Segundo o Relatório de Cidadania Financeira 2024 do Banco Central, 87% dos brasileiros adultos têm conta bancária e 76% usam apps de banco mensalmente. Ferramentas populares de finanças pessoais com IA: Mobills, Organizze e Olivia (esta última usa machine learning para classificar gastos automaticamente).</p>
         <p className="mt-2">Minha análise: IA em finanças pessoais funciona melhor em três frentes — <strong>categorização automática de gastos</strong>, <strong>simulação de cenários</strong> ('e se eu investir R$ 500/mês por 10 anos') e <strong>revisão de assinaturas esquecidas</strong>. Para investimentos, evite seguir recomendação cega de modelos generalistas; eles não conhecem seu perfil de risco nem a tributação brasileira (IR sobre renda fixa, come-cotas em fundos, isenção em LCI/LCA). ChatGPT e Claude são ótimos copiloto para entender conceitos — não para decisões com seu patrimônio.</p>
       </EditorialTake>
-
       <ArticleSources category="invest" sources={[
         { title: "Relatório de Cidadania Financeira 2024", url: "https://www.bcb.gov.br/cidadaniafinanceira/relatoriocidadania", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },
         { title: "Receita Federal — Tributação de Investimentos e Renda Fixa", url: "https://www.gov.br/receitafederal/pt-br", publisher: "Receita Federal do Brasil", accessedAt: "Maio 2026" },

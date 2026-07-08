@@ -440,6 +440,8 @@ const AvatarCaminhoDaAgua = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="geek" title="Análise do Marcos: Avatar 2 é obra de engenharia — e de amor obsessivo ao detalhe">
         <p>
           Assisti <strong>O Caminho da Água</strong> três vezes no cinema — uma delas em IMAX 3D
@@ -457,7 +459,6 @@ const AvatarCaminhoDaAgua = () => {
           algo genuinamente único. O Oscar de Efeitos Visuais foi merecidíssimo.
         </p>
       </EditorialTake>
-
       <ArticleSources
         sources={[
           {

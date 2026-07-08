@@ -209,6 +209,8 @@ const TemporadaAnimesAbril2026 = () => {
           O formato sazonal de One Piece, inaugurado nessa temporada, representa a mudança estrutural mais significativa da indústria de anime em 2026. Se bem executado, abre precedente para outras séries longas (Boruto, Fairy Tail eventual retorno, One Piece si mesmo por anos) adotarem o modelo — o que mudaria fundamentalmente a relação entre calendário de lançamentos e base de fãs de séries de longa duração.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: Spring Season 2026 é a temporada mais disputada em anos — e o formato sazonal de One Piece muda tudo">
         <p>
           A Spring Season 2026 (temporada de primavera, que começa em abril no calendário japonês de anime) trouxe mais de 60 estreias simultâneas. Os destaques confirmados: <strong>One Piece Elbaf</strong> (Toei, formato sazonal, 5 de abril), <strong>Re:Zero Temporada 4</strong> (White Fox, 6 de abril), <strong>TenSura Temporada 4</strong> (8bit, 7 de abril), <strong>Dr. STONE: Science World</strong> (TMS Entertainment, arco final, 12 de abril) e <strong>Lazarus</strong> (MAPPA + Shinichirō Watanabe, original). Todos com simulcast na Crunchyroll exceto Lazarus (Netflix).

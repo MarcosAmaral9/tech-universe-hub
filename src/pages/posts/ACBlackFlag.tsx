@@ -127,23 +127,6 @@ const ACBlackFlag = () => {
           mesmo com tecnologia superior, não conseguiu superar Black Flag.
         </p>
 
-        <EditorialTake category="geek" title="Análise do Marcos: Black Flag é o AC que transcendeu a franquia">
-          <p>
-            Joguei <strong>AC Black Flag</strong> pela primeira vez em 2013 e voltei a ele três
-            vezes nos anos seguintes. Cada vez encontro algo novo — um naufrágio submerso com uma
-            nota de tripulante, uma Sea Shanty que não havia coletado, uma conversa de NPCs sobre
-            a República dos Piratas de Nassau. A Ubisoft Montreal construiu um mundo vivo, não
-            apenas um mapa de missões.
-          </p>
-          <p>
-            O que diferencia Black Flag de todos os concorrentes é simples: <strong>Edward Kenway
-            é humano</strong>. Ele mente, falha, perde pessoas que ama por causa de sua ambição e
-            lentamente entende o custo de suas escolhas. Isso não é roteiro genérico de videogame.
-            A cena final com seu filho Haytham é mais emotiva do que 90% das histórias dos jogos
-            modernos. Obrigatório para qualquer fã da franquia.
-          </p>
-        </EditorialTake>
-
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-amber-400" />
           Contexto Histórico: A Era de Ouro da Pirataria (1715–1726)
@@ -535,6 +518,23 @@ const ACBlackFlag = () => {
         </div>
       </div>
 
+
+        <EditorialTake category="geek" title="Análise do Marcos: Black Flag é o AC que transcendeu a franquia">
+          <p>
+            Joguei <strong>AC Black Flag</strong> pela primeira vez em 2013 e voltei a ele três
+            vezes nos anos seguintes. Cada vez encontro algo novo — um naufrágio submerso com uma
+            nota de tripulante, uma Sea Shanty que não havia coletado, uma conversa de NPCs sobre
+            a República dos Piratas de Nassau. A Ubisoft Montreal construiu um mundo vivo, não
+            apenas um mapa de missões.
+          </p>
+          <p>
+            O que diferencia Black Flag de todos os concorrentes é simples: <strong>Edward Kenway
+            é humano</strong>. Ele mente, falha, perde pessoas que ama por causa de sua ambição e
+            lentamente entende o custo de suas escolhas. Isso não é roteiro genérico de videogame.
+            A cena final com seu filho Haytham é mais emotiva do que 90% das histórias dos jogos
+            modernos. Obrigatório para qualquer fã da franquia.
+          </p>
+        </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {

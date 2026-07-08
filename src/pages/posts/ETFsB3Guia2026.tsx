@@ -323,6 +323,8 @@ const ETFsB3Guia2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="invest" title="Análise do Marcos: ETF é simples — mas a taxa e o timing importam mais do que parecem">
         <p>
           ETF é o veículo mais democrático que a B3 já entregou ao investidor pessoa física brasileiro, mas o entusiasmo recente esconde uma armadilha: <strong>taxa de administração</strong>. A diferença entre um ETF de 0,10% ao ano (BOVA11) e um ETF temático de 0,80% ao ano parece pequena no papel — mas em 20 anos com juros compostos, essa diferença consome 12 a 15% do patrimônio final. Outro detalhe que poucos comentam: ETFs internacionais como IVVB11 não têm a isenção de R$ 20.000/mês que as ações brasileiras têm — qualquer ganho no IVVB11 é tributado a 15%, enquanto uma venda de BOVA11 abaixo de R$ 20.000/mês é isenta.
@@ -331,7 +333,6 @@ const ETFsB3Guia2026 = () => {
           Para quem está montando uma carteira de longo prazo com ETFs, minha visão prática para 2026: o trio <strong>BOVA11 + IVVB11 + IMAB11</strong> cobre 90% dos cenários para perfil moderado — bolsa brasileira, bolsa americana e renda fixa inflacionária em partes iguais. Todo o resto é especialização que exige mais conhecimento para justificar o custo e a complexidade adicionais. Comece simples, seja consistente nos aportes mensais e revise a alocação a cada 12 meses, não a cada semana.
         </p>
       </EditorialTake>
-
       <ArticleSources category="invest"
         sources={[
           { title: "ETFs listados — B3", url: "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/etf-renda-variavel.htm", publisher: "B3", accessedAt: "Maio 2026" },

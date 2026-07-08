@@ -230,6 +230,8 @@ const IACiberseguranca2026 = () => {
         </p>
       </div>
 
+
+
         <EditorialTake category="ia" title="Análise do Marcos: IA de defesa só entra depois de threat modeling e DPIA, nunca antes">
           <p>Cibersegurança com IA é a faca de dois gumes mais importante da década: a mesma tecnologia que ajuda SOCs a triar alertas em segundos está nas mãos de quem escreve phishing convincente em português. No Brasil, onde o CERT.br registra crescimento contínuo de incidentes e a LGPD ainda tem aplicação desigual, vejo empresas adotando copilots de SOC sem revisar política de dados — e depois tendo que justificar para a ANPD por que prompts com PII vão para fora do país. A regra que sigo: IA de defesa só entra depois de threat modeling e DPIA, nunca antes — e nunca sem um DPA assinado com o fornecedor da ferramenta de IA, garantindo que os dados de alertas e logs processados não serão usados para treinar modelos de terceiros.</p>
           <p>
@@ -239,7 +241,6 @@ const IACiberseguranca2026 = () => {
             Para equipes de segurança com orçamento limitado — a realidade da maioria das empresas brasileiras médias —, a melhor entrada em IA de defesa é via <strong>threat intelligence</strong>: usar modelos de linguagem para processar feeds de CVEs, relatórios de ameaças e indicadores de comprometimento, gerando resumos acionáveis para o time de TI sem exigir expertise de análise de malware. Ferramentas como Microsoft Security Copilot e Google Mandiant oferecem isso como serviço, enquanto alternativas open-source (TheHive + Cortex com Ollama local) permitem que equipes com budget restrito façam o mesmo sem enviar dados sensíveis para fora do ambiente controlado — uma distinção regulatória importante para empresas sujeitas a compliance setorial, como instituições financeiras reguladas pelo BACEN ou prestadores de serviços de saúde sujeitos à Resolução CFM sobre prontuários eletrônicos.
           </p>
         </EditorialTake>
-
         <ArticleSources sources={[
     { title: 'CERT.br — Estatísticas de Incidentes', url: 'https://stats.cert.br/', publisher: 'CERT.br', accessedAt: "Maio 2026" },
     { title: 'ANPD — Guias de Boas Práticas', url: 'https://www.gov.br/anpd/pt-br/documentos-e-publicacoes/guias-orientativos', publisher: 'ANPD', accessedAt: "Maio 2026" },

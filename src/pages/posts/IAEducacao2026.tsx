@@ -203,6 +203,8 @@ const IAEducacao2026 = () => {
 
 
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: IA acelera quem já estuda bem — e atrapalha quem não estuda">
         <p>
           O relatório UNESCO <em>Guidance for generative AI in education and research</em> (2023) é claro: IA deve ser suporte ao aprendizado, não substituta do esforço cognitivo. No Brasil, o MEC publicou em 2024 a primeira nota técnica sobre uso de IA em redes públicas, alinhada à LGPD e à BNCC. O Khanmigo (Khan Academy, GPT-4 com salvaguardas pedagógicas) e o Google NotebookLM são os dois melhores exemplos de IA projetada para aprender junto, não no lugar do aluno.
@@ -211,7 +213,6 @@ const IAEducacao2026 = () => {
           Minha leitura prática: a IA não substitui estudo profundo — ela acelera o que já é bom estudo. Quem usava técnicas sólidas (Feynman, revisão espaçada, prática deliberada) ficou 3× mais eficiente com IA. Quem já copiava trabalho vai só copiar mais rápido — e vai ser pego mais rápido também. A diferença de resultados entre os dois grupos vai aumentar. O dado mais revelador disso é justamente o salto de 18 pontos percentuais no uso frequente de IA entre universitários brasileiros em apenas um ano: a ferramenta chegou, e o que vai definir quem se beneficia de verdade não é o acesso — é o método com que se usa, combinado com a honestidade intelectual de saber quando a ferramenta está sendo usada para crescer e quando está sendo usada apenas para evitar o esforço que gera crescimento real a longo prazo.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "UNESCO — Guidance for generative AI in education and research", url: "https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research", publisher: "UNESCO", accessedAt: "Maio 2026" },
         { title: "Khan Academy — Khanmigo (AI tutor)", url: "https://www.khanmigo.ai/", publisher: "Khan Academy", accessedAt: "Maio 2026" },

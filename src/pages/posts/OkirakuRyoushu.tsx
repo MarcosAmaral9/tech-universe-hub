@@ -150,6 +150,8 @@ const OkirakuRyoushu = () => {
           Para quem está no Brasil e quer acompanhar a série, a Crunchyroll distribui os episódios com legenda em português. O ritmo semanal funciona especialmente bem para esse tipo de isekai: a proposta de construção de território recompensa o intervalo entre episódios, dando tempo de assimilar o progresso antes do próximo passo. Para quem prefere o material escrito, a Seven Seas Entertainment publica light novel e mangá em inglês — e o conteúdo web original em japonês ainda pode ser lido gratuitamente no Narou. Quem vier de séries como Ascendance of a Bookworm ou That Time I Got Reincarnated as a Slime vai se sentir em casa desde o primeiro episódio.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: Van é o isekai-builder mais criativo da temporada de inverno 2026">
         <p>
           Um aspecto importante do subgênero de construção de território que Okiraku Ryoushu representa bem é a diferença de ritmo em relação ao isekai de combate: em vez de arcos de tensão crescente culminando em batalhas decisivas, a narrativa avança por meio de problemas práticos e soluções criativas — como resolver um problema de abastecimento de alimentos, melhorar a defesa de uma muralha ou conquistar a confiança de artesãos locais resistentes a mudanças. Esse ritmo mais lento e deliberado não é uma fraqueza do gênero, mas sua proposta narrativa: o prazer está na competência revelada progressivamente e na satisfação de ver um projeto crescer, não na catarse de uma batalha resolvida. Para espectadores acostumados à adrenalina de series de ação, a transição para esse tipo de isekai pode exigir um ajuste de expectativa — mas quem se adapta costuma encontrar um tipo de satisfação narrativa muito diferente e igualmente viciante.
@@ -161,7 +163,6 @@ const OkirakuRyoushu = () => {
           O que diferencia Okiraku Ryoushu de outros isekais de construção de território é o otimismo estrutural — Van nunca trata a Magia de Produção como maldição, apenas como ferramenta que outros não souberam usar. Para quem gostou de <em>Honzuki no Gekokujou</em> (Ascendance of a Bookworm) pela construção detalhada de mundo, Okiraku Ryoushu está na mesma família — com ritmo mais leve e menos carga emocional.
         </p>
       </EditorialTake>
-
             <ArticleSources category="otaku"
         sources={[
           {

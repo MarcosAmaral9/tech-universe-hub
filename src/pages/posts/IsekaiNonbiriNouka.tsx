@@ -163,6 +163,8 @@ const IsekaiNonbiriNouka = () => {
           A <strong>Temporada 2 de Isekai Nonbiri Nouka foi confirmada oficialmente em agosto de 2025</strong>, com estreia prevista para <strong>abril de 2026</strong> — integrando a Spring Season 2026. O estúdio Zero-G retorna à produção. A T2 cobre os arcos seguintes ao ponto em que a T1 encerrou, aprofundando o crescimento da vila e introduzindo novos habitantes e desafios externos que chegam à fazenda de Hiraku conforme sua reputação se expande. Para quem assistiu a T1 e ficou com vontade de mais do cotidiano tranquilo e das relações entre Hiraku e seus habitantes — a T2 entrega exatamente isso, com escala ligeiramente maior.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: Farming Life é o antídoto para o isekai de combate — e funciona muito bem">
         <p>
           Um aspecto técnico que distingue a adaptação de Isekai Nonbiri Nōka de produções similares é como o estúdio Zero-G lida com o ritmo de um material que, por definição, não tem cliffhangers de batalha para sustentar o interesse episódio a episódio. A solução usada pela maioria dos healing isekais bem-sucedidos é a mesma da série: construir encanto nos detalhes — a textura visual das culturas sendo colhidas, a personalidade das companheiras não-humanas, as pequenas conquistas que precedem as grandes. Quando esse elemento funciona, o espectador sente satisfação genuína ao ver a fazenda crescer, mesmo sem explosões ou batalhas de alto impacto. Para que isso funcione em animação, a direcção de arte precisa ser mais caprichosa que a média — e Zero-G, estúdio menor com portfólio em séries de nicho, demonstrou competência suficiente para entregar essa experiência visual.
@@ -174,7 +176,6 @@ const IsekaiNonbiriNouka = () => {
           Farming Life in Another World funciona como contraposição intencional ao isekai de combate — sem Dungeon, sem Demon Lord, sem ranking de poder. Hiraku resolve conflitos com presença genuína e capacidade produtiva, não com violência. Para quem está com fadiga de batalhas de anime e quer algo que se assemelhe mais a um slice-of-life de fantasia, esta é talvez a melhor escolha disponível no catálogo atual.
         </p>
       </EditorialTake>
-
             <ArticleSources category="otaku"
         sources={[
           {

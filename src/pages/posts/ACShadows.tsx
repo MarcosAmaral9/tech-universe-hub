@@ -124,21 +124,6 @@ const ACShadows = () => {
           ambientação cultural japonesa de tirar o fôlego.
         </p>
 
-        <EditorialTake category="geek" title="Análise do Marcos: Shadows entregou o Japão que merecíamos — e mais">
-          <p>
-            Joguei <strong>Assassin's Creed Shadows</strong> desde o lançamento e posso dizer com
-            convicção: é o AC que mais me fez parar de jogar só para olhar para a tela. A neve
-            caindo sobre um telhado de templo com as cerejeiras ao fundo, enquanto Naoe desliza
-            silenciosamente entre as sombras criadas por uma tocha — isso é cinema interativo.
-          </p>
-          <p>
-            A dualidade Naoe/Yasuke vai além do gimmick de marketing. Jogar como Yasuke em combate
-            aberto e depois trocar para Naoe numa infiltração noturna são experiências tão distintas
-            que parecem jogos separados compartilhando o mesmo mundo. Minha única ressalva é o peso
-            técnico: se você não tem hardware adequado, considere o console ou espere uma promoção.
-          </p>
-        </EditorialTake>
-
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           🏯 Contexto Histórico: O Período Sengoku (1467–1615)
         </h2>
@@ -656,6 +641,21 @@ const ACShadows = () => {
         </div>
       </div>
 
+
+        <EditorialTake category="geek" title="Análise do Marcos: Shadows entregou o Japão que merecíamos — e mais">
+          <p>
+            Joguei <strong>Assassin's Creed Shadows</strong> desde o lançamento e posso dizer com
+            convicção: é o AC que mais me fez parar de jogar só para olhar para a tela. A neve
+            caindo sobre um telhado de templo com as cerejeiras ao fundo, enquanto Naoe desliza
+            silenciosamente entre as sombras criadas por uma tocha — isso é cinema interativo.
+          </p>
+          <p>
+            A dualidade Naoe/Yasuke vai além do gimmick de marketing. Jogar como Yasuke em combate
+            aberto e depois trocar para Naoe numa infiltração noturna são experiências tão distintas
+            que parecem jogos separados compartilhando o mesmo mundo. Minha única ressalva é o peso
+            técnico: se você não tem hardware adequado, considere o console ou espere uma promoção.
+          </p>
+        </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {

@@ -606,6 +606,8 @@ const CrimsonDesertBosses = () => {
         </div>
       </div>
 
+
+
       <EditorialTake category="geek" title="Análise do Marcos: 76 bosses, 3 que realmente importam">
         <p>
           Depois de zerar Crimson Desert duas vezes, minha leitura é que o <strong>guia de bosses</strong>
@@ -618,7 +620,6 @@ const CrimsonDesertBosses = () => {
           tensão dos chefes principais sem perder semanas grindando equipamento.
         </p>
       </EditorialTake>
-
       <ArticleSources category="geek"
         sources={[
           {

@@ -360,6 +360,8 @@ const IAMercadoFinanceiro2026 = () => {
 
         <BackNavigation category="invest" />
 
+
+
         <EditorialTake category="invest" title="Análise do Marcos: IA é ferramenta de triagem, não de decisão">
           <p>
             Segundo o relatório "AI in Financial Services 2024" da NVIDIA em parceria com a McKinsey, 91% das instituições financeiras globais já usam IA em produção — principalmente em detecção de fraude, análise de crédito e atendimento. No Brasil, o Banco Central regulamentou o uso de IA no Open Finance via Resolução BCB 287/2022, exigindo explicabilidade em decisões automatizadas para proteger o consumidor de caixas-pretas algorítmicas.
@@ -368,7 +370,6 @@ const IAMercadoFinanceiro2026 = () => {
             Para o investidor PF brasileiro, os robo-advisors consolidados são Warren (parceria com Galápagos), Magnetis (carteiras automatizadas) e o piloto de IA da XP Investimentos. O custo médio é de 0,3% a 0,8% ao ano sobre patrimônio, contra 1,5% a 2% de fundos ativos tradicionais. Minha análise: a IA não substitui análise humana em decisões grandes — ela é excelente para triagem (filtrar 500 ações para 20 candidatas) e péssima para julgar contexto político e macro. <strong>Use IA generativa para resumir relatórios trimestrais e ATAs do Copom, mas nunca para a decisão final de compra ou venda de um ativo.</strong>
           </p>
         </EditorialTake>
-
         <ArticleSources category="invest" sources={[
           { title: "NVIDIA — State of AI in Financial Services 2024", url: "https://www.nvidia.com/en-us/industries/finance/", publisher: "NVIDIA / McKinsey", accessedAt: "Maio 2026" },
           { title: "Banco Central — Resolução BCB 287/2022 (Open Finance e IA)", url: "https://www.bcb.gov.br/estabilidadefinanceira/openfinance", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },

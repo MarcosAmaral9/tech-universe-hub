@@ -726,6 +726,8 @@ const AvatarFrontiersOfPandora = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="geek" title="Análise do Marcos: Frontiers of Pandora é o mais bonito — mas não o mais profundo">
         <p>
           Joguei <strong>Avatar: Frontiers of Pandora</strong> logo no lançamento e saí dividido.
@@ -745,7 +747,6 @@ const AvatarFrontiersOfPandora = () => {
           cada centavo. Se quer uma história que prenda, prepare suas expectativas.
         </p>
       </EditorialTake>
-
       <ArticleSources
         sources={[
           {

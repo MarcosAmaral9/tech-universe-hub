@@ -349,6 +349,8 @@ const CrimsonDesertPersonagens = () => {
         </p>
       </div>
 
+
+
 <EditorialTake category="geek" title="Análise do Marcos: a troca de POV salva o ritmo">
         <p>
           A decisão da Pearl Abyss de dividir o controle entre <strong>3 personagens
@@ -362,7 +364,6 @@ const CrimsonDesertPersonagens = () => {
           Damiane e Oongka — você aproveita melhor o que cada um foi desenhado para fazer.
         </p>
       </EditorialTake>
-
       <ArticleSources category="geek"
         sources={[
           {

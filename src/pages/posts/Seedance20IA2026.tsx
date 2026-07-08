@@ -281,6 +281,8 @@ const Seedance20IA2026 = () => {
         </div>
 </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: Seedance 2.0 resolve o problema que o Sora criou — mas a ByteDance ainda assusta com censura">
         <p>
           O Seedance 2.0 é tecnicamente o melhor gerador de vídeo com IA disponível ao público em maio de 2026 — a combinação de áudio nativo, 2K e 4 tipos de input em uma única passagem é um salto real sobre o que existia antes. O acesso gratuito via Dreamina e CapCut o coloca imediatamente nas mãos de 30 milhões de usuários brasileiros do CapCut, sem barreira de entrada.
@@ -289,7 +291,6 @@ const Seedance20IA2026 = () => {
           A ressalva séria é dupla: <strong>censura e soberania de dados</strong>. A ByteDance aplica filtros de conteúdo muito mais restritivos que concorrentes ocidentais — qualquer conteúdo politicamente sensível ou que envolva rostos humanos reais é bloqueado sem aviso claro. Para criadores de conteúdo político, jornalístico ou com personagens baseados em pessoas reais, Runway Gen-4 ou Sora 2 são escolhas mais seguras. Para criadores de entretenimento, marketing e conteúdo de marca, o Seedance entrega o melhor custo-benefício do mercado hoje.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "arXiv — Seedance 2.0: Advancing Video Generation for World Complexity (2604.14148)", url: "https://arxiv.org/abs/2604.14148", publisher: "ByteDance SEED Lab / arXiv", accessedAt: "Maio 2026" },
         { title: "Atlas Cloud — Seedance 2.0: The Complete Guide (2026)", url: "https://www.atlascloud.ai/blog/guides/seedance-2.0-complete-guide", publisher: "Atlas Cloud", accessedAt: "Maio 2026" },

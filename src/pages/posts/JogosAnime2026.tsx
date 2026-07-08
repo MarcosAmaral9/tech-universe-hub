@@ -138,6 +138,8 @@ const JogosAnime2026 = () => {
           A cena competitiva brasileira de fighting games também é parte relevante desse ecossistema. O Brasil tem tradição consolidada em jogos de luta em geral — eventos como o CEO Brasil e torneios regionais organizados por comunidades locais frequentemente incluem categorias dedicadas a Dragon Ball FighterZ e outros títulos de luta com licença de anime, ao lado de clássicos como Street Fighter e Tekken. Jogadores brasileiros já conquistaram boas colocações em torneios internacionais de jogos de luta ao longo dos últimos anos, e a comunidade de FGC (Fighting Game Community) nacional costuma ser um dos caminhos mais ativos para quem quer evoluir tecnicamente em títulos como Dragon Ball FighterZ ou Guilty Gear Strive, já que oferece treino presencial contra jogadores experientes — algo que o treino apenas online dificilmente reproduz com a mesma qualidade.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: jogos de anime amadureceram — e o mercado brasileiro finalmente percebeu">
         <p>
           Títulos como <strong>Dragon Ball: Sparking! ZERO</strong> (outubro de 2024, Bandai Namco), <strong>Naruto x Boruto: Ultimate Ninja Storm Connections</strong> e <strong>Demon Slayer: The Hinokami Chronicles</strong> mostram um nível de produção que nos anos 2000 era reservado a franquias ocidentais. Para o jogador brasileiro, três fatores pesam mais que a nota de review: preço regional (Bandai Namco faz ajuste de pricing no Brasil desde 2023), suporte a legenda em português, e jogabilidade offline robusta — servidores de jogos de anime tendem a esvaziar em 12 a 18 meses.

@@ -274,6 +274,13 @@ const DiferencaMangasManhuas = () => {
           Uma distinção prática útil para quem está começando: o sentido de leitura é um dos indicadores mais imediatos da origem de uma obra. O mangá japonês é lido da direita para a esquerda (seguindo a escrita vertical japonesa tradicional), o manhwa coreano e o manhua chinês são lidos da esquerda para a direita — o mesmo sentido da leitura ocidental. Isso facilita a entrada de leitores brasileiros no manhwa e no manhua em comparação ao mangá, já que não há necessidade de adaptar o sentido de leitura. O formato full color em scroll vertical, predominante no manhwa e em parte do manhua moderno, também elimina a barreira do preto e branco que às vezes afasta leitores menos habituados ao estilo visual do mangá tradicional japonês.
         </p>
 
+        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
+          <h3 className="text-xl font-bold mb-2">Qual formato é o seu favorito? 📚🇯🇵🇰🇷🇨🇳</h3>
+          <p className="text-muted-foreground">Manga, manhwa ou manhua — conta nos comentários qual você mais lê e por quê! 👇</p>
+        </div>
+      </div>
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: mangá, manhwa e manhua são três culturas distintas — e só enriquece ler os três">
         <p>
           O mercado global de quadrinhos asiáticos em 2024 apresentou dados significativos: o mangá japonês exportou mais de 3 bilhões de dólares em royalties, segundo a Association of Japanese Animations (AJA). O manhwa coreano, impulsionado pelo sucesso de Solo Leveling (mais de 14,4 bilhões de visualizações no Kakao antes do encerramento), está crescendo a taxas de dois dígitos por ano. O manhua chinês permanece menos acessível globalmente mas tem bases de leitores massivas nas plataformas nativas como Bilibili Comics e Kuaikan Manhua.
@@ -282,13 +289,6 @@ const DiferencaMangasManhuas = () => {
           A confusão entre os três formatos é compreensível mas tem consequências práticas: recomendar manhua Xianxia para alguém que quer o ritmo e a estética do manhwa coreano moderno é praticamente garantir uma experiência frustrante. Cada formato tem público, expectativas e convenções próprias. Depois de anos lendo os três, minha recomendação para iniciantes é sempre começar pelo que mais ressona com franquias que já conhecem: se veio pelo anime, comece pelo mangá. Se veio pelo Solo Leveling, comece pelo manhwa de sistema. Se fascina mitologia e cultivo marcial, o manhua tem material suficiente para anos de leitura.
         </p>
       </EditorialTake>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Qual formato é o seu favorito? 📚🇯🇵🇰🇷🇨🇳</h3>
-          <p className="text-muted-foreground">Manga, manhwa ou manhua — conta nos comentários qual você mais lê e por quê! 👇</p>
-        </div>
-      </div>
-
       <ArticleSources category="otaku"
         sources={[
           {

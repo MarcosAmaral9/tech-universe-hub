@@ -534,6 +534,8 @@ const CarteiraIniciantes2026 = () => {
 
         </div>
 
+
+
         <EditorialTake category="invest" title="Análise do Marcos: o maior erro do iniciante não é investir errado — é não investir">
           <p>
             Depois de anos acompanhando leitores que começaram a investir, o padrão é claro: quem começa com qualquer coisa — R$ 50 no Tesouro Selic, um CDB de liquidez diária — e mantém o hábito mensal, chega a um patrimônio relevante em 10 anos. Quem espera ter mais dinheiro para começar a investir "de verdade", simplesmente nunca começa.
@@ -542,7 +544,6 @@ const CarteiraIniciantes2026 = () => {
             O quiz de perfil importa, mas não é definitivo — ele muda ao longo da vida. O que não pode mudar é o <strong>hábito do aporte mensal</strong>. Uma carteira imperfeita que cresce todo mês bate qualquer carteira "ideal" que fica parada. Para iniciantes em 2026: <strong>Tesouro Selic para reserva + CDB 100% CDI para o restante da renda fixa + IVVB11 para ter exposição internacional</strong>. Simples, barato e eficiente.
           </p>
         </EditorialTake>
-
         <ArticleSources category="invest"
           sources={[
             {

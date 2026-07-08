@@ -382,6 +382,8 @@ const BannerlordModsEssenciais = () => {
           via configuração do RBM.
         </p>
 
+
+
         <EditorialTake category="geek" title="Análise do Marcos">
           Bannerlord é dos poucos jogos modernos onde a comunidade entrega mais conteúdo, mais polimento e
           mais profundidade do que o estúdio original. As quatro bibliotecas-base deveriam vir empacotadas no
@@ -389,7 +391,6 @@ const BannerlordModsEssenciais = () => {
           hoje, a receita é simples: as quatro libs, três ou quatro QoL da camada 2 e <em>um único</em>{" "}
           overhaul grande de cada vez. A partir daí, escalar é só questão de paciência e ordem de carregamento.
         </EditorialTake>
-
         <ArticleSources
           category="geek"
           sources={[

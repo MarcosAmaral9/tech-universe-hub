@@ -406,6 +406,8 @@ const PoupancaVsCDBTesouro2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake
         category="invest"
         title="Análise do Marcos: poupança por hábito tem custo real que a maioria ignora"
@@ -427,7 +429,6 @@ const PoupancaVsCDBTesouro2026 = () => {
           dinheiro na poupança "por hábito".
         </p>
       </EditorialTake>
-
       <ArticleSources category="invest"
         sources={[
           {

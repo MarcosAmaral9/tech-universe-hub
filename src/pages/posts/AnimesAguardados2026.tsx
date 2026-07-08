@@ -313,6 +313,13 @@ const AnimesAguardados2026 = () => {
           O site <strong>LiveChart.me</strong> tem o calendário mais completo de estreias de anime por data, com contagem regressiva e links para as plataformas de streaming. Para o público brasileiro, o <strong>r/animebrasil</strong> no Reddit e grupos de Discord específicos por franquia são as melhores fontes de discussão em português com spoiler-tags adequadas — uma forma de participar da comunidade sem ser surpreendido por revelações não solicitadas.
         </p>
 
+        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
+          <h3 className="text-xl font-bold mb-2">Qual é o Seu Mais Esperado de 2026? 🎌</h3>
+          <p className="text-muted-foreground">Monte sua lista, organize as temporadas e conta pra gente nos comentários qual anime você mais espera este ano! 👇</p>
+        </div>
+      </div>
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: 2026 é o ano em que o anime virou mainstream de vez">
         <p>
           O mercado global de anime ultrapassou <strong>US$ 31,4 bilhões em 2023</strong> segundo o relatório anual da Association of Japanese Animations (AJA), publicado em 2024 — o dado mais recente disponível. O crescimento é consistente há oito anos consecutivos, impulsionado pela expansão do streaming e pela penetração do anime em mercados historicamente menores. O Brasil figura entre os cinco maiores mercados globais de anime por volume de consumo de streaming, segundo dados da Crunchyroll divulgados em 2024.
@@ -321,13 +328,6 @@ const AnimesAguardados2026 = () => {
           Cresci assistindo Cavaleiros do Zodíaco escondido porque minha família achava que anime era coisa de criança. Hoje minha sobrinha de 8 anos tem uma estante cheia de mangás e meu cunhado de 45 anos assiste One Piece com ela. <strong>Essa travessia geracional é o dado mais importante da cultura otaku brasileira</strong> — ela deixou de ser identidade de nicho para ser parte da cultura pop geral. O que o Japão não esperava era a força criativa do fã brasileiro. 2026, com Demon Slayer em filme, One Piece no formato sazonal e JJK T4 confirmada, vai provar que o mainstream veio para ficar.
         </p>
       </EditorialTake>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Qual é o Seu Mais Esperado de 2026? 🎌</h3>
-          <p className="text-muted-foreground">Monte sua lista, organize as temporadas e conta pra gente nos comentários qual anime você mais espera este ano! 👇</p>
-        </div>
-      </div>
-
       <ArticleSources category="otaku"
         sources={[
           {

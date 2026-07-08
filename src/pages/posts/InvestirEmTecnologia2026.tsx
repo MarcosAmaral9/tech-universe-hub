@@ -360,11 +360,12 @@ const InvestirEmTecnologia2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="invest" title="Análise do Marcos: tecnologia exige diversificação — os vencedores de hoje nem sempre são os de amanhã">
         <p>Os 'Magnificent Seven' (Apple, Microsoft, Alphabet, Amazon, Nvidia, Meta, Tesla) representaram cerca de 30% do S&P 500 ao fim de 2024 segundo dados do S&P Dow Jones Indices. Para investidores brasileiros, exposição vem via BDRs (B3), ETFs internacionais e contas em corretoras como Avenue, Inter US e XP US. ETFs setoriais relevantes: SMH (semicondutores), QQQ (Nasdaq-100), XLK (tecnologia ampla). Custos típicos: corretagem zero em BDRs nas principais corretoras BR, taxa de administração 0,09-0,68% nos ETFs internacionais.</p>
         <p className="mt-2">Minha análise: investir em tecnologia é tese de longo prazo, mas concentrar tudo nas 7 grandes em 2026 é apostar que a era da IA continua beneficiando exatamente os mesmos vencedores — o que a história do setor (Yahoo, Nokia, Intel) sugere ser arriscado. <strong>Alocação razoável para iniciantes: 60-70% em ETF amplo (IVVB11 ou similar), 20-30% em ETF setorial e até 10% em BDRs individuais.</strong></p>
       </EditorialTake>
-
       <ArticleSources category="invest" sources={[
         { title: "B3 — BDRs: Brazilian Depositary Receipts", url: "https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/bdr.htm", publisher: "B3 — Bolsa do Brasil", accessedAt: "Maio 2026" },
         { title: "S&P Dow Jones — S&P 500 Composition", url: "https://www.spglobal.com/spdji/en/indices/equity/sp-500/", publisher: "S&P Dow Jones Indices", accessedAt: "Maio 2026" },

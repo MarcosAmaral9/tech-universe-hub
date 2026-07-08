@@ -429,6 +429,8 @@ const ReservaEmergencia2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake
         category="invest"
         title="Análise do Marcos: reserva de emergência em corretora separada — a dica que mais funciona"
@@ -451,7 +453,6 @@ const ReservaEmergencia2026 = () => {
           fundamental para manter a reserva intocável quando o imprevisto aparecer.
         </p>
       </EditorialTake>
-
       <ArticleSources category="invest"
         sources={[
           {

@@ -206,6 +206,8 @@ const IATransformandoDublagem = () => {
         </div>
       </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: dublagem clássica em PT-BR tem valor cultural que IA não substitui">
         <p>
           O Sated-SP documentou em 2024 que novos contratos do mercado brasileiro já incluíam cláusulas para alimentar machine learning com dublagens humanas sem compensação. A SAG-AFTRA levou 4 meses de greve e três rodadas de negociação para estabelecer que o uso de IA para replicar a voz de um ator exige consentimento e remuneração — princípio que o PL 2338/2023 busca consolidar no Brasil. O cenário mais provável até 2027: IA para idiomas com pouca oferta de dubladores e ADR assistido, não substituição de elencos consolidados como os do Dragon Ball, Cavaleiros do Zodíaco e One Piece em PT-BR. A identidade cultural da dublagem brasileira é um patrimônio que nenhum modelo de IA criou — e que merece proteção equivalente à da música e das artes plásticas.
@@ -220,7 +222,6 @@ const IATransformandoDublagem = () => {
           A linha mais clara para distinguir uso legítimo de uso abusivo: se a IA está sendo usada com consentimento e compensação do ator original, é uma ferramenta de extensão. Se está sendo usada para evitar contratar ou remunerar o ator — ou para replicar a voz de alguém sem autorização — é violação de direitos, independentemente de o Brasil ter ou não regulamentação específica aprovada no momento.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "ElevenLabs — Guia de Dublagem Automática e Voice Cloning", url: "https://elevenlabs.io/pt/blog/automate-voice-acting-work", publisher: "ElevenLabs", accessedAt: "Maio 2026" },
         { title: "Olhar Digital — SAG-AFTRA ratifica contratos de animação TV (95% aprovação)", url: "https://olhardigital.com.br/2024/03/26/cinema-e-streaming/novo-contrato-preve-protecoes-contra-uso-da-ia-para-dubladores/", publisher: "Olhar Digital", accessedAt: "Maio 2026" },

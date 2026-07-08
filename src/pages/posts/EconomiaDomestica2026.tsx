@@ -372,6 +372,8 @@ const EconomiaDomestica2026 = () => {
 
       </div>
 
+
+
       <EditorialTake category="invest" title="Análise do Marcos: economizar é só metade da equação">
         <p>
           Depois de acompanhar centenas de leitores em suas jornadas financeiras, o padrão é consistente: quem consegue liberar R$ 500–1.000/mês cortando gastos domésticos e <em>não define para onde esse dinheiro vai</em> — não muda de situação financeira. O dinheiro simplesmente migra para outros gastos menos visíveis.
@@ -380,7 +382,6 @@ const EconomiaDomestica2026 = () => {
           Minha dica prática: no mesmo dia em que você cortar a primeira assinatura desnecessária, configure uma transferência automática para uma conta de investimentos — seja Tesouro Selic, CDB de liquidez diária ou até uma poupança, que já é melhor que nada. O <strong>pagamento automático para si mesmo</strong> é o único hábito financeiro que, sozinho, já muda a trajetória patrimonial de uma família em 5 anos.
         </p>
       </EditorialTake>
-
       <ArticleSources category="invest"
         sources={[
           {

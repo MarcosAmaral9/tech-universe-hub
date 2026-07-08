@@ -323,6 +323,13 @@ const GuiaCosplay2026 = () => {
           Para quem se interessa especificamente pelo lado competitivo do cosplay, vale entender que o WCS avalia equipes de dois representantes por país em uma performance coreografada de aproximadamente noventa segundos, geralmente baseada em uma cena marcante do anime ou jogo de origem dos personagens escolhidos. Diferente de concursos de fidelidade estática, onde apenas a qualidade da confecção é avaliada, o formato do WCS exige também habilidades de teatro, coreografia e, frequentemente, efeitos especiais ao vivo — o que torna a preparação para esse tipo de competição um projeto de meses, geralmente envolvendo parceria entre cosplayer e um segundo profissional especializado em coreografia ou efeitos cênicos.
         </p>
 
+        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
+          <h3 className="text-xl font-bold mb-2">Já fez seu primeiro cosplay? 🎭</h3>
+          <p className="text-muted-foreground">Conta qual foi o personagem e o que aprendeu com o processo nos comentários! Toda jornada começa com o primeiro projeto imperfeito — e está tudo bem. 👇</p>
+        </div>
+      </div>
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: cosplay brasileiro cresceu de nicho para referência internacional">
         <p>
           A CCXP reúne mais de 280 mil visitantes por ano segundo dados oficiais da Omelete Company — e boa parte deles veste cosplay. O mercado brasileiro de materiais para cosplay movimenta mais de <strong>R$ 500 milhões anuais</strong> segundo estimativas da Associação Brasileira de Cosplay, com mais de 15 mil cosplayers ativos participando de eventos regulares. Competidores brasileiros de cosplay conquistaram prêmios no <strong>World Cosplay Summit</strong> (WCS) em Nagoya, Japão, em múltiplas edições — colocando o Brasil no mapa como potência técnica do cosplay internacional.
@@ -331,13 +338,6 @@ const GuiaCosplay2026 = () => {
           A CCXP reúne mais de 280 mil visitantes por ano segundo dados oficiais da Omelete Company — e boa parte deles veste cosplay. O que mais me impressiona é como o <strong>cosplayer brasileiro se adaptou à realidade local</strong>: EVA de 5mm encontrado em qualquer papelaria por R$ 8–15 a placa, tintas acrílicas de marca nacional, contact cement de sapataria. Os tutoriais europeus e americanos assumem materiais e ferramentas que custam 5x mais aqui — e os cosplayers brasileiros resolveram isso com criatividade. Comece simples, teste o cosplay completo em casa por 2 horas antes da convenção e participe das comunidades nas redes — a curva de aprendizado é muito mais rápida com uma comunidade para tirar dúvidas.
         </p>
       </EditorialTake>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Já fez seu primeiro cosplay? 🎭</h3>
-          <p className="text-muted-foreground">Conta qual foi o personagem e o que aprendeu com o processo nos comentários! Toda jornada começa com o primeiro projeto imperfeito — e está tudo bem. 👇</p>
-        </div>
-      </div>
-
       <ArticleSources category="otaku"
         sources={[
           {

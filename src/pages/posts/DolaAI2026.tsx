@@ -292,6 +292,8 @@ const DolaAI2026 = () => {
         </div>
 </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: Dola resolve o problema real de quem não quer 5 apps de IA no celular">
         <p>
           O grande acerto do Dola AI é entender que a maioria dos usuários brasileiros não quer gerenciar cinco apps de IA diferentes — um para texto, um para imagem, um para vídeo, um para tradução. O Dola empacota tudo em uma interface conversacional simples e em português, o que reduz drasticamente a barreira de entrada. O crescimento de 30% em downloads em um único mês, alcançando o top 10 mundial, reflete isso.
@@ -300,7 +302,6 @@ const DolaAI2026 = () => {
           A ressalva importante é a <strong>privacidade</strong>, e ela ficou mais concreta depois de mapear quem está por trás do produto: o Dola é da ByteDance, controladora do TikTok, e a empresa optou deliberadamente por não expor essa ligação na interface do app. Isso não significa, por si só, que o produto seja inseguro para uso casual — mas significa que o usuário deveria ter essa informação antes de decidir o que compartilha. Para uso pessoal e descompromissado, o risco é baixo. Para qualquer coisa que envolva dados de cliente, empresa ou informação sensível, prefira plataformas com política de retenção documentada e, idealmente, contrato de processamento de dados (DPA) assinado — algo que a Anthropic e a OpenAI já oferecem para clientes corporativos e que o Dola, até o momento, não disponibiliza claramente. No mais, o Dola é genuinamente uma boa pedida gratuita para quem está dando os primeiros passos com IA no celular, desde que o usuário entre de olhos abertos sobre quem está do outro lado.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "Mobile Time — Dola, assistente de IA generativa, é a dica de app da semana", url: "https://www.mobiletime.com.br/tapps/30/03/2026/dica-da-semana-dola/", publisher: "Mobile Time", accessedAt: "Maio 2026" },
         { title: "CanalTech — 8 coisas que a Dola AI consegue fazer no celular", url: "https://canaltech.com.br/apps/bots-e-geracao-de-imagens-8-coisas-que-a-dola-ai-consegue-fazer-no-celular/", publisher: "CanalTech", accessedAt: "Maio 2026" },

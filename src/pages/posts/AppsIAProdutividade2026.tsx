@@ -174,6 +174,8 @@ const AppsIAProdutividade2026 = () => {
         </ul>
       </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: câmbio e LGPD decidem qual app de IA vale para o brasileiro">
         <p>
           As listas de "melhores apps de IA" que circulam no Brasil copiam rankings em inglês sem considerar dois detalhes que decidem tudo aqui: <strong>câmbio</strong> e <strong>LGPD</strong>. Três assinaturas de US$ 20 dão quase R$ 350/mês com IOF — mais do que muita gente gasta em plano de celular. Minha recomendação prática para começar: <strong>Perplexity grátis (ou via Vivo) + ChatGPT gratuito + Notion gratuito</strong>. Só assine algo quando bater no teto consistentemente por 3 semanas. E nunca cole prompt com dado de cliente em IA sem DPA assinado — desde a Resolução CD/ANPD nº 2/2022 o risco regulatório é concreto.
@@ -188,7 +190,6 @@ const AppsIAProdutividade2026 = () => {
           Para o usuário individual, a dica que mais reduz frustração: comece com <strong>uma ferramenta, um caso de uso, por 30 dias</strong>. A tendência de testar cinco apps ao mesmo tempo impede o aprendizado profundo de qualquer um deles. O profissional que domina 80% do potencial de uma única ferramenta entrega mais valor do que aquele que usa 20% de cada uma de cinco.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "Notion AI — Pricing and capabilities", url: "https://www.notion.com/help/notion-ai-faqs", publisher: "Notion Labs", accessedAt: "Maio 2026" },
         { title: "Anthropic — Claude 3.5 Sonnet (200K context)", url: "https://www.anthropic.com/news/claude-3-5-sonnet", publisher: "Anthropic", accessedAt: "Maio 2026" },

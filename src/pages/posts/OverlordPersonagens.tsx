@@ -250,6 +250,8 @@ const OverlordPersonagens = () => {
           <strong>Pandora's Actor</strong>, o guardião do Mausoléu da Tumba e criado pelo próprio Momonga/Ainz no jogo original, é tecnicamente o único NPC criado pelo próprio Ainz — o que torna sua dinâmica única. É excessivamente dramático e performático, refletindo a personalidade que Ainz tinha quando era jovem e jogava Yggdrasil pela primeira vez. O reencuentro entre Ainz e Pandora's Actor na T3 é considerado por muitos fãs como um dos momentos mais emocionalmente honestos de toda a série.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: os Floor Guardians são o elenco mais bem construído de qualquer isekai">
         <p>
           O elenco de Overlord foi concebido por Kugane Maruyama com uma lógica interna incomum para isekai: cada Floor Guardian tem uma personalidade construída a partir dos jogadores originais de Yggdrasil que os criaram, mas evoluiu de forma autônoma no Novo Mundo ao ganhar emoções reais. Albedo, criada para ser apaixonada por Momonga, tem seus sentimentos tratados pela série como genuínos — não como programação. Demiurge, construído como o NPCs mais inteligente de Nazarick, desenvolveu capacidade de planejamento que frequentemente supera a dos próprios criadores. Essa premissa — NPCs que se tornaram pessoas — é o coração emocional de Overlord por baixo da camada de domínio mundial.
@@ -258,7 +260,6 @@ const OverlordPersonagens = () => {
           O que me fascina em Demiurge especificamente é a forma como Maruyama usa o personagem para explorar o limite entre lealdade e autonomia. Demiurge interpreta os desejos de Ainz com uma precisão tão exagerada que frequentemente implementa planos que Ainz nunca planejou — e Ainz, para não parecer inferior ao seu próprio subordinado, confirma esses planos como se fossem suas intenções originais. Essa dinâmica cria uma narrativa dentro da narrativa onde o suposto protagonista/vilão onisciente é frequentemente reativo em vez de proativo. É uma subversão de expectativa sustentada por toda a série.
         </p>
       </EditorialTake>
-
             <ArticleSources category="otaku"
         sources={[
           {

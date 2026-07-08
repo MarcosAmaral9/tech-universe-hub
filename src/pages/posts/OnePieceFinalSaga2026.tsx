@@ -336,6 +336,8 @@ const OnePieceFinalSaga2026 = () => {
           <strong>Sanji</strong> desbloqueou os modificadores genéticos Vinsmoke sem perder a emoção — uma resolução do arco de Whole Cake que a série levou tempo para confirmar. <strong>Robin</strong> sabe ler os Poneglyphs e está mais próxima de descobrir a verdade do Void Century do que qualquer pessoa viva. <strong>Franky</strong>, <strong>Brook</strong> e <strong>Jinbe</strong> completam o grupo mais coeso que a série já teve — cada um com função e motivação claras para o arco final. Elbaf, com seus gigantes e revelações sobre o passado de personagens como Usopp e Big Mom, é o próximo capítulo na jornada de cada um deles.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: a Final Saga de One Piece é a prova de que Oda planejou tudo desde o início">
         <p>
           Um ponto que vale destacar antes da análise editorial é a extensão do planejamento narrativo de Eiichiro Oda, documentada ao longo de décadas em entrevistas e materiais extras da obra. Referências a Elbaf, ao Void Century, à Poneglyph e à Akuma no Mi de Luffy foram plantadas nos primeiros capítulos da série, quando One Piece ainda era uma obra relativamente desconhecida publicada na Shōnen Jump de 1997. A continuidade dessas promessas narrativas ao longo de mais de 1.100 capítulos — sem contradições estruturais maiores — é considerada pela crítica especializada em narrativa serializada como um dos feitos de planejamento de longo prazo mais impressionantes da história das publicações em quadrinhos, comparável ao que Yoshihiro Togashi fez em Hunter x Hunter, mas numa escala de tempo e número de capítulos muito maior.
@@ -347,7 +349,6 @@ const OnePieceFinalSaga2026 = () => {
           Revisitar os foreshadowings de Oda após a Saga de Egghead é uma experiência de humildade: o cara estava plantando seeds em 1999 que germinaram em 2024. O Fruto do Diabo de Luffy, Joy Boy, o Void Century, as Akuma no Mi dos Gorosei — tudo estava nos fundamentos da série desde os primeiros volumes, esperando pacientemente. Isso não é retroatividade narrativa conveniente: é estrutura de longo prazo que pouquíssimos autores têm disciplina para manter por 27 anos. A Final Saga não é sobre revelar mistérios — é sobre confirmar que sempre houve uma história maior por baixo da que estávamos vendo.
         </p>
       </EditorialTake>
-
             <ArticleSources category="otaku"
         sources={[
           {

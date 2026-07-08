@@ -783,6 +783,8 @@ const HellLetLooseSimulador = () => {
         </div>
       </section>
 
+
+
       <EditorialTake category="geek" title="Análise do Marcos: Hell Let Loose é o FPS mais difícil — e mais recompensador — de aprender">
         <p>
           Passei minhas primeiras 10 horas em <strong>Hell Let Loose</strong> morrendo sem entender
@@ -799,7 +801,6 @@ const HellLetLooseSimulador = () => {
           busca algo genuinamente diferente dos FPS convencionais.
         </p>
       </EditorialTake>
-
       <ArticleSources
         sources={[
           {

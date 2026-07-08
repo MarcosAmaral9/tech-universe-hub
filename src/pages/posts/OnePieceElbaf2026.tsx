@@ -223,6 +223,8 @@ const OnePieceElbaf2026 = () => {
           O contexto histórico de Elbaf dentro da narrativa de One Piece é importante para entender por que o arco importa além do espetáculo visual. Os gigantes de Elbaf são, no universo ficcional, considerados os guerreiros mais poderosos do mundo — uma reputação construída ao longo de centenas de capítulos em que personagens como Dorry e Brogy (encontrados no arco Little Garden, no início da série) e Hajrudin (que aparece em Dressrosa e Whole Cake Island) funcionaram como prévia do que a ilha em si poderia oferecer. O lore de Elbaf também é conectado ao Void Century — o período de cem anos apagado da história oficial do mundo de One Piece — o que posiciona o arco não apenas como uma aventura de gigantes mas como um passo narrativo significativo no desvendamento dos mistérios centrais da série.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: Elbaf é a promessa de 30 anos — e o formato sazonal é a única forma honesta de entregá-la">
         <p>
           One Piece é uma obra de <strong>Eiichiro Oda</strong>, serializada na Weekly Shōnen Jump desde 1997 — com mais de 1.100 capítulos e mais de 530 milhões de cópias vendidas segundo a Shueisha, o mangá mais vendido da história. O anime é produzido pela <strong>Toei Animation</strong> desde outubro de 1999. Em dezembro de 2025, a Toei anunciou oficialmente a migração para o formato sazonal a partir do arco de Elbaf, com estreia em abril de 2026. Disponível na <strong>Crunchyroll</strong> com simulcast legendado em português.
@@ -231,7 +233,6 @@ const OnePieceElbaf2026 = () => {
           Elbaf representa algo raro em narrativas longas: uma promessa feita há 30 anos que precisa ser cumprida à altura do que os fãs construíram na imaginação ao longo de décadas. O formato sazonal é a única escolha de produção honesta para esse material — qualidade cinematográfica consistente em vez do semanal irregular que resultou nos recaps e fillers históricos de One Piece. Se a Toei mantiver o nível anunciado para o episódio de estreia estendido, Elbaf pode ser o arco que reposiciona One Piece anime ao lado das melhores produções da era.
         </p>
       </EditorialTake>
-
         <ArticleSources category="otaku" sources={[
     { title: 'Shōnen Jump — One Piece Oficial', url: 'https://www.shonenjump.com/j/rensai/onepiece.html', publisher: 'Shueisha', accessedAt: "Maio 2026" },
     { title: 'Crunchyroll — One Piece', url: 'https://www.crunchyroll.com/series/GRMG8ZQZR/one-piece', publisher: 'Crunchyroll', accessedAt: "Maio 2026" },

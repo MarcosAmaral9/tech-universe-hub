@@ -222,6 +222,8 @@ const JJKTemporada42026 = () => {
           Para quem quer se preparar antes da estreia, o mangá está disponível oficialmente no <strong>Manga Plus</strong> em inglês — os capítulos do Culling Game Part 2 (212 em diante) cobrem exatamente o que a T4 vai adaptar. A <strong>JBC Editora</strong> publica os volumes físicos em português no Brasil, com lançamentos regulares ainda em andamento.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: o Culling Game é o teste técnico do MAPPA">
         <p>
           Vale situar o que o Culling Game Part 2 representa dentro da estrutura geral de JJK: é o penúltimo bloco narrativo antes do Arco de Shinjuku, o clímax final da série onde Yuji e seus aliados enfrentam Sukuna pelo desfecho definitivo. Isso significa que a T4 tem a função dupla de resolver as threads abertas do Culling Game (o destino de vários personagens jogadores, a derrota de Kenjaku, a libertação das colônias) e posicionar o elenco sobrevivente para o confronto final. A MAPPA tem experiência com esse tipo de arco de transição narrativa — a Temporada 2 cumpriu papel similar ao preparar Shibuya — mas a escala de personagens simultâneos no Culling Game Part 2 é maior do que qualquer coisa que a série pediu ao estúdio até agora, o que torna a gestão de tempo de tela por personagem o maior desafio criativo da produção.

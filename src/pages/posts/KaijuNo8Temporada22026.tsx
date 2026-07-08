@@ -157,15 +157,6 @@ const KaijuNo8Temporada22026 = () => {
           O mangá de Matsumoto entra no arco final durante a T2 segundo informações divulgadas no Jump Festa 2025 — o que adiciona urgência às decisões de cada personagem. Para os fãs que acompanham o mangá em paralelo, a T2 adapta os capítulos subsequentes ao arco de Hachioji, onde a escala da ameaça kaiju e as revelações sobre a natureza do Kaiju No. 8 mudam completamente o contexto da série.
         </p>
 
-      <EditorialTake category="otaku" title="Análise do Marcos: por que Kaiju No. 8 conquistou o público brasileiro">
-        <p>
-          Kaiju No. 8 é uma obra de <strong>Naoya Matsumoto</strong>, serializada na Shōnen Jump+ (Shueisha) desde julho de 2020 — mais de 100 capítulos, 11 volumes. Segundo dados da Shueisha, ultrapassou 10 milhões de cópias físicas e digitais em circulação até 2025. A Temporada 1 do anime foi produzida pela <strong>Production I.G</strong>, dirigida por Shinji Ishihara, e foi ao ar de abril a junho de 2024 com 12 episódios — disponível na Crunchyroll com legenda em português. A <strong>Temporada 2</strong> estreou na Spring Season 2026 também pela Production I.G.
-        </p>
-        <p>
-          O que torna Kaiju No. 8 especialmente popular no Brasil é o protagonista: Kafka Hibino, 32 anos, trabalhador comum que limpava corpos de kaiju enquanto via jovens mais novos ingressarem na Defense Force que ele sempre quis integrar. Essa premissa ressoa com uma geração que entende de sonhos adiados por circunstâncias da vida — e a série não trivializa isso. Kafka não é um perdedor que virou herói por acidente: é alguém que nunca desistiu de um objetivo por décadas, e a série trata essa persistência com seriedade genuína.
-        </p>
-      </EditorialTake>
-
 <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-otaku" />
           Arco Final Confirmado: O Que o Jump Festa 2026 Revelou
@@ -235,6 +226,15 @@ const KaijuNo8Temporada22026 = () => {
         </div>
       </div>
 
+
+      <EditorialTake category="otaku" title="Análise do Marcos: por que Kaiju No. 8 conquistou o público brasileiro">
+        <p>
+          Kaiju No. 8 é uma obra de <strong>Naoya Matsumoto</strong>, serializada na Shōnen Jump+ (Shueisha) desde julho de 2020 — mais de 100 capítulos, 11 volumes. Segundo dados da Shueisha, ultrapassou 10 milhões de cópias físicas e digitais em circulação até 2025. A Temporada 1 do anime foi produzida pela <strong>Production I.G</strong>, dirigida por Shinji Ishihara, e foi ao ar de abril a junho de 2024 com 12 episódios — disponível na Crunchyroll com legenda em português. A <strong>Temporada 2</strong> estreou na Spring Season 2026 também pela Production I.G.
+        </p>
+        <p>
+          O que torna Kaiju No. 8 especialmente popular no Brasil é o protagonista: Kafka Hibino, 32 anos, trabalhador comum que limpava corpos de kaiju enquanto via jovens mais novos ingressarem na Defense Force que ele sempre quis integrar. Essa premissa ressoa com uma geração que entende de sonhos adiados por circunstâncias da vida — e a série não trivializa isso. Kafka não é um perdedor que virou herói por acidente: é alguém que nunca desistiu de um objetivo por décadas, e a série trata essa persistência com seriedade genuína.
+        </p>
+      </EditorialTake>
       <ArticleSources category="otaku"
         sources={[
           { title: "Kaiju No. 8 — site oficial do anime", url: "https://kaiju-no8.net/", publisher: "Production I.G", accessedAt: "Maio 2026" },

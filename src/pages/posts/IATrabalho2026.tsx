@@ -183,6 +183,8 @@ const IATrabalho2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: o profissional que ganha em 2026 delega o repetitivo à IA e investe em julgamento">
         <p>
           Os relatórios mais recentes — Future of Jobs 2025 do WEF, AI Index 2024 do Stanford HAI e o estudo da McKinsey "The state of AI in 2024" — convergem: a IA generativa automatiza <strong>tarefas</strong>, não profissões inteiras. Funções com alta carga de redação, sumarização e atendimento (jurídico júnior, marketing operacional, SAC nível 1) são as mais expostas; trabalho técnico-manual e funções de relacionamento seguem com baixa exposição.
@@ -191,7 +193,6 @@ const IATrabalho2026 = () => {
           No Brasil, o PL 2338/2023 ainda tramita na Câmara dos Deputados (aprovado pelo Senado em dezembro de 2024), mas já orienta boas práticas: empresas que usam IA para triagem de currículo ou avaliação de funcionário devem informar o trabalhador e garantir revisão humana — isso já é exigência do art. 20 da LGPD. Cursos curtos de prompt engineering (Coursera/DeepLearning.AI, gratuitos com auditoria) e ferramentas como Notion AI ou Claude no fluxo diário entregam ROI em semanas.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "WEF — Future of Jobs Report 2025", url: "https://www.weforum.org/publications/the-future-of-jobs-report-2025/", publisher: "World Economic Forum", accessedAt: "Maio 2026" },
         { title: "Gupy — Relatório de Empregabilidade 2025", url: "https://www.gupy.io/blog/ia-mercado-trabalho", publisher: "Gupy", accessedAt: "Maio 2026" },

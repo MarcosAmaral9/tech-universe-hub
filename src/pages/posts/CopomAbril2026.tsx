@@ -281,6 +281,8 @@ const CopomAbril2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="invest" title="Análise do Marcos: o ciclo de corte exige paciência — não pressa">
         <p>
           O início do ciclo de corte da Selic não significa retorno fácil em renda variável. Em ciclos anteriores (2016, 2020 e 2023), o Ibovespa só destravou de forma consistente quando o juro real projetado caiu abaixo de 5% e o risco fiscal estava ancorado — duas condições que ainda não temos em abril de 2026. Com IPCA projetado em 4,80% e Selic a 14,50%, o juro real ainda está próximo de 9,5% — um dos mais altos do mundo e muito acima do nível que historicamente destranca fluxo de capital para ativos de risco no Brasil.
@@ -289,7 +291,6 @@ const CopomAbril2026 = () => {
           Para o investidor pessoa física, a tese mais robusta no curto prazo continua sendo <strong>prefixado e IPCA+ de médio prazo</strong>, travando marcação a mercado antes que o mercado precifique cortes adicionais. Ações só ganham peso maior na carteira depois que o Focus do Banco Central consolidar Selic terminal abaixo de 12% — o que, com a revisão de abril, parece improvável antes do segundo semestre de 2027. Paciência aqui não é fraqueza: é reconhecer que o timing do ciclo mudou e que a renda fixa ainda remunera muito bem quem espera.
         </p>
       </EditorialTake>
-
       <ArticleSources category="invest"
         sources={[
           { title: "Atas do Copom", url: "https://www.bcb.gov.br/publicacoes/atascopom", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },

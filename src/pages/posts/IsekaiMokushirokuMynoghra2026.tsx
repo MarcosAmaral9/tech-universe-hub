@@ -323,6 +323,13 @@ const IsekaiMokushirokuMynoghra2026 = () => {
           A comparação com <strong>TenSura</strong> é inevitável para leitores do subgênero mas superficial: TenSura expande Tempest com diplomacia e coexistência ativa. Mynoghra expande por corrupção passiva — Mynoghra não precisa conquistar ativamente; ela apenas existe e o entorno se adapta ao apocalipse. Para o espectador que gosta de worldbuilding com lógica interna rigorosa e consequências políticas reais de cada decisão territorial, Mynoghra oferece algo genuinamente diferente dentro do catálogo de isekais de 2025–2026.
         </p>
 
+        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
+          <h3 className="text-xl font-bold mb-2">Você conhecia Mynoghra? 🌑</h3>
+          <p className="text-muted-foreground">Conta nos comentários o que achou da premissa — e se já leu o mangá! 👇</p>
+        </div>
+      </div>
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: Mynoghra é o isekai de estratégia mais ambicioso em anos">
         <p>
           Isekai Mokushiroku Mynoghra: Hametsu no Bunmei de Hajimeru Sekai Seifuku é uma light novel de <strong>Meij</strong>, serializada no Shōsetsuka ni Narō e publicada fisicamente pela <strong>Kadokawa</strong> (Enterbrain). O mangá, com arte de <strong>Kiyoshi Funatsu</strong>, é serializado na <em>Monthly Comic Alive</em> (Media Factory / Kadokawa). O anime foi anunciado oficialmente em outubro de 2024 pela produtora <strong>Wao World</strong>. Sem data de estreia definida até maio de 2026. A série está disponível em inglês via scanlations no MangaDex e via fan translations da light novel.
@@ -331,13 +338,6 @@ const IsekaiMokushirokuMynoghra2026 = () => {
           Li o mangá de Mynoghra (Kiyoshi Funatsu, Monthly Comic Alive) e a premissa me pegou de surpresa. A maioria dos isekais de construção de reino tem um arco básico: protagonista chega, faz aliados, cria nação boa, enfrenta invasor. <strong>Mynoghra inverte isso completamente</strong> — Takuto chega e já é o invasor por natureza, mesmo sem querer. O anime pela Wao World foi anunciado em outubro de 2024 e está em produção. O estúdio não tem histórico extenso em produções de grande escala, o que é um ponto de atenção para a qualidade final — mas o material original é forte o suficiente para sustentar uma adaptação sólida se o orçamento permitir.
         </p>
       </EditorialTake>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Você conhecia Mynoghra? 🌑</h3>
-          <p className="text-muted-foreground">Conta nos comentários o que achou da premissa — e se já leu o mangá! 👇</p>
-        </div>
-      </div>
-
       <ArticleSources category="otaku"
         sources={[
           {

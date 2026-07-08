@@ -184,21 +184,6 @@ const GptTrabalhadorDigital2026 = () => {
           Mesmo antes do PL ser aprovado, o <strong>TST (Tribunal Superior do Trabalho)</strong> já julgou casos de demissão por algoritmo — decisões automatizadas de dispensa sem motivação clara — como abusivas. A tendência jurisprudencial é que IA pode apoiar decisões trabalhistas, mas humanos devem ser responsáveis e capazes de explicar o critério.
         </p>
 
-        <EditorialTake category="ia" title="Análise do Marcos: o Brasil vai sentir antes do que parece">
-          <p>
-            Como entusiasta de IA acompanhando lançamentos da OpenAI desde o GPT-3, vejo o GPT-5.4 menos como
-            "salto técnico" e mais como <strong>mudança de modelo de adoção</strong>. Aqui no Brasil — onde
-            equipes pequenas precisam fazer trabalho de equipe grande — um agente que opera Excel, Chrome e
-            Gmail sem integração técnica vai ser absorvido por escritórios de contabilidade, jurídicos e e-commerces
-            muito antes de aparecer em manchete corporativa. O risco real para o profissional brasileiro não é
-            ser substituído amanhã: é ficar sem ofertas de emprego júnior porque a vaga foi "absorvida pela IA"
-            antes mesmo de existir.
-          </p>
-          <p>
-            O caso da Klarna é o exemplo mais documentado: a empresa substituiu o equivalente a 700 funcionários de atendimento ao cliente com um único agente de IA — e divulgou os dados publicamente. Não foi demissão em massa: foi a combinação de não contratar novos funcionários enquanto o agente absorvia o volume crescente. Essa é a trajetória mais comum: substituição gradual por atrito, não ruptura. Para o profissional que já está no mercado, o risco é menor e o tempo de adaptação é maior. Para quem está entrando agora na força de trabalho, o cenário exige uma resposta diferente: focar em habilidades que os próprios documentos de avaliação de risco da OpenAI e Anthropic identificam como mais resistentes à automação — criatividade, julgamento contextual e trabalho de alta confiança interpessoal.
-          </p>
-        </EditorialTake>
-
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-violet-400" />
           O Que Isso Significa para o Mercado de Trabalho
@@ -248,6 +233,21 @@ const GptTrabalhadorDigital2026 = () => {
         </div>
       </div>
 
+
+        <EditorialTake category="ia" title="Análise do Marcos: o Brasil vai sentir antes do que parece">
+          <p>
+            Como entusiasta de IA acompanhando lançamentos da OpenAI desde o GPT-3, vejo o GPT-5.4 menos como
+            "salto técnico" e mais como <strong>mudança de modelo de adoção</strong>. Aqui no Brasil — onde
+            equipes pequenas precisam fazer trabalho de equipe grande — um agente que opera Excel, Chrome e
+            Gmail sem integração técnica vai ser absorvido por escritórios de contabilidade, jurídicos e e-commerces
+            muito antes de aparecer em manchete corporativa. O risco real para o profissional brasileiro não é
+            ser substituído amanhã: é ficar sem ofertas de emprego júnior porque a vaga foi "absorvida pela IA"
+            antes mesmo de existir.
+          </p>
+          <p>
+            O caso da Klarna é o exemplo mais documentado: a empresa substituiu o equivalente a 700 funcionários de atendimento ao cliente com um único agente de IA — e divulgou os dados publicamente. Não foi demissão em massa: foi a combinação de não contratar novos funcionários enquanto o agente absorvia o volume crescente. Essa é a trajetória mais comum: substituição gradual por atrito, não ruptura. Para o profissional que já está no mercado, o risco é menor e o tempo de adaptação é maior. Para quem está entrando agora na força de trabalho, o cenário exige uma resposta diferente: focar em habilidades que os próprios documentos de avaliação de risco da OpenAI e Anthropic identificam como mais resistentes à automação — criatividade, julgamento contextual e trabalho de alta confiança interpessoal.
+          </p>
+        </EditorialTake>
       <ArticleSources
         sources={[
           { title: "OpenAI — research and product announcements", url: "https://openai.com/research", publisher: "OpenAI", accessedAt: "Maio 2026" },

@@ -235,6 +235,8 @@ const ClaudeCoworkSaas2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: SaaS não morre — vira commodity">
         <p>A narrativa do "SaaSpocalypse" confunde dois fenômenos. O que vai morrer é o <strong>SaaS de camada fina</strong>: ferramentas que basicamente envelopam um banco de dados com UI e cobravam US$ 20/mês por isso. Esses serão substituídos por agentes que geram a UI sob demanda. O que sobrevive — e talvez fortaleça — é o SaaS de <strong>workflow profundo</strong>, com dados proprietários, compliance específico e integrações complexas (Salesforce, Stripe, ServiceNow). Para o mercado brasileiro, a oportunidade está em construir verticais com regulamentação local (saúde com LGPD, fiscal com SPED, jurídico com peticionamento eletrônico) — barreiras que nenhum agente genérico replica.</p>
         <p>
@@ -244,7 +246,6 @@ const ClaudeCoworkSaas2026 = () => {
           Um dado relevante para a decisão: segundo o State of AI Report, modelos de IA generativa já são avaliados internamente por mais de 90% das empresas com mais de 500 funcionários — mas a taxa de adoção em produção ainda é muito mais baixa. O gargalo quase sempre está em integração com dados existentes e treinamento de equipe, não na qualidade do modelo em si — o que significa que a escolha da ferramenta importa menos do que o processo de adoção e a cultura de uso que a empresa consegue construir ao redor dela nos primeiros 90 dias de implantação, quando o retorno sobre o investimento ainda é invisível e a resistência interna à mudança tende a ser maior.
         </p>
       </EditorialTake>
-
       <ArticleSources
         sources={[
           { title: "Claude Cowork — Anthropic", url: "https://www.anthropic.com/claude", publisher: "Anthropic", accessedAt: "Maio 2026" },

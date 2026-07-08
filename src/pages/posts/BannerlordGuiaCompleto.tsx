@@ -477,6 +477,8 @@ const BannerlordGuiaCompleto = () => {
         </p>
     </div>
 
+
+
         <EditorialTake category="geek" title="Análise do Marcos: Bannerlord é o Sandbox Medieval que Ninguém Mais Tem Coragem de Fazer">
           <p>
             Bannerlord é o jogo de medieval mais completo da década, com a estranha qualidade de ser ao mesmo tempo um
@@ -491,7 +493,6 @@ const BannerlordGuiaCompleto = () => {
             sandbox pura.
           </p>
         </EditorialTake>
-
         <ArticleSources
           category="geek"
           sources={[

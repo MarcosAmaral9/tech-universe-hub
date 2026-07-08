@@ -148,6 +148,8 @@ const MugenGacha = () => {
           A ironia que a série desenvolve é que Light, agora com acesso ilimitado a aliadas de nível máximo de múltiplas raças, transcende a hierarquia que o descartou. Ele não pertence mais a nenhuma categoria do sistema — é o topo de facto enquanto o sistema finge que ele não existe. Esse posicionamento narrativo permite explorar o contraste entre poder real e reconhecimento social sem precisar resolver o conflito diretamente nos primeiros arcos.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: Mugen Gacha entrega o que promete — e não mais que isso">
         <p>
           Vale notar que a escolha do J.C.Staff como estúdio para Mugen Gacha não é acidental: o estúdio tem longa experiência com light novels de gênero — incluindo adaptações de séries de harém, isekai e fantasia — que frequentemente não são obras de prestígio crítico mas têm bases de fãs fiéis que garantem vendas de Blu-Ray e merchandise suficientes para justificar a produção. Esse modelo de mercado, distinto das apostas criativas de estúdios como MAPPA ou Ufotable, é parte do ecossistema da indústria japonesa de animação: séries de entretenimento direto ao ponto, sem pretensão de arte, que servem um nicho específico com competência técnica adequada e sem surpresas negativas. Mugen Gacha se encaixa precisamente nessa categoria — e para o público que busca exatamente esse tipo de experiência, isso é uma qualidade, não uma limitação.
@@ -159,7 +161,6 @@ const MugenGacha = () => {
           O revenge isekai tem uma fórmula testada e Mugen Gacha a segue com competência — traição, isolamento, acúmulo de poder, retorno. O que diferencia a obra de concorrentes diretos como <em>Tate no Yuusha</em> é a mecânica do gacha como sistema de progressão: a invocação aleatória de aliadas cria um elemento de surpresa na construção do grupo de Light. Para quem já assistiu Shield Hero e quer algo no mesmo espírito com premissa mais extrema, é uma escolha coerente.
         </p>
       </EditorialTake>
-
             <ArticleSources category="otaku"
         sources={[
           {

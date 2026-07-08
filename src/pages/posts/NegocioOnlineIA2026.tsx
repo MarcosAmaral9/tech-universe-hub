@@ -280,6 +280,8 @@ const NegocioOnlineIA2026 = () => {
           <p className="text-muted-foreground">Conta nos comentários! 👇</p>
         </div>
       </div>
+
+
       <EditorialTake category="ia" title={"Análise do Marcos: IA derruba barreira de entrada, não a do mercado"}>
         <p>A IA generativa eliminou o custo de produzir copy, landing pages e arte de marca — mas isso é exatamente o que torna a vantagem competitiva mais escassa, não menor. No Brasil, vejo dois caminhos viáveis em 2026: (1) <strong>nichos hiper-locais</strong> que dependem de contexto cultural (ex.: serviços jurídicos para MEI, micro-SaaS para corretores Susep) onde modelos genéricos ainda erram; e (2) <strong>infoprodutos com curadoria humana visível</strong>, porque o consumidor já desconfia de tudo que cheira a "gerado por IA". Tributariamente, lembrar: pagamentos via Stripe/Gumroad caem em IR pessoa física se feitos como autônomo — Simples Nacional ou MEI mudam completamente a conta.</p>
         <p>

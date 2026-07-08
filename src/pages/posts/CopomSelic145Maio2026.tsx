@@ -254,6 +254,8 @@ const CopomSelic145Maio2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="invest" title="Análise do Marcos: o que fazer com a renda fixa agora">
         <p>
           Cortar a Selic com inflação ainda acima do teto da meta e com o Brent acima de US$ 100 é <strong>uma aposta arriscada</strong> do Banco Central — uma aposta de que o choque geopolítico será passageiro. Para o investidor pessoa física, a leitura prática é dupla: travar prefixados longos agora pode parecer atrativo dado o nível elevado das taxas, mas o IPCA+ continua sendo o porto seguro até o cenário fiscal e geopolítico ficar mais claro. CDBs com liquidez diária ainda pagam acima de 100% do CDI em bancos médios — vale travar agora, antes que o eventual avanço do ciclo de cortes comece a erodir esse prêmio.
@@ -262,7 +264,6 @@ const CopomSelic145Maio2026 = () => {
           Minha visão para os próximos 60 dias: mantenha 40–50% da carteira de renda fixa em Tesouro IPCA+ de médio prazo (2030–2035), 30% em pós-fixado de alta liquidez para capturar o CDI elevado enquanto durar, e apenas 10–20% em prefixado, priorizando vencimentos abaixo de 4 anos para reduzir exposição ao risco eleitoral de 2026. A "serenidade" pedida pelo Copom também deveria valer para o investidor: não há urgência em reposicionar tudo de uma vez diante de um cenário geopolítico que pode se resolver — ou se agravar — em questão de semanas.
         </p>
       </EditorialTake>
-
       <ArticleSources category="invest"
         sources={[
           { title: "Banco Central — Atas e decisões do Copom", url: "https://www.bcb.gov.br/controleinflacao/atascopom", publisher: "Banco Central do Brasil", accessedAt: "Maio 2026" },

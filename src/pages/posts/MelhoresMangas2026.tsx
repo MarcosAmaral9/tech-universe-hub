@@ -259,6 +259,13 @@ const MelhoresMangas2026 = () => {
           O <strong>Manga Plus</strong> (mangaplus.shueisha.co.jp) tem uma seção "New Releases" que publica os primeiros três capítulos de qualquer novo título da Shueisha de graça — sem compromisso, sem cadastro necessário. É a forma mais eficiente de testar um título antes de decidir comprar os volumes físicos ou acompanhar semanalmente.
         </p>
 
+        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
+          <h3 className="text-xl font-bold mb-2">Qual mangá mudou sua vida? 📚</h3>
+          <p className="text-muted-foreground">Conta nos comentários — adoro saber quais obras marcaram gerações diferentes de leitores! 👇</p>
+        </div>
+      </div>
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: 2026 é o ano dos finais e dos novos clássicos">
         <p>
           Jujutsu Kaisen encerrou em setembro de 2024 (capítulo 271, Shueisha) e My Hero Academia encerrou em agosto de 2024. Esses encerramentos abrem espaço para <strong>Sakamoto Days</strong>, <strong>Kagurabachi</strong> e outros títulos emergentes ocuparem destaque na Weekly Shōnen Jump. Para o leitor brasileiro, o cenário é o melhor da história: <strong>Panini</strong> publica simultaneamente JJK, Chainsaw Man e One Piece; <strong>JBC</strong> mantém Naruto e Berserk; e o <strong>Manga Plus</strong> oferece catálogo legal gratuito em inglês com simultâneos no dia do Japão.
@@ -267,13 +274,6 @@ const MelhoresMangas2026 = () => {
           Para o leitor brasileiro, minha recomendação: comece pelo gênero, não pela hype. Quem gosta de seinen denso encontra ouro em Vagabond, Vinland Saga e 20th Century Boys; quem busca shonen moderno deve testar Kaiju No. 8 e Dandadan antes de embarcar em finais longos como One Piece (110+ volumes). O Manga Plus gratuito é o melhor ponto de entrada para testar novos títulos sem custo — e a Panini e a JBC garantem que os mais importantes chegam fisicamente ao Brasil em prazo razoável.
         </p>
       </EditorialTake>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Qual mangá mudou sua vida? 📚</h3>
-          <p className="text-muted-foreground">Conta nos comentários — adoro saber quais obras marcaram gerações diferentes de leitores! 👇</p>
-        </div>
-      </div>
-
       <ArticleSources category="otaku"
         sources={[
           {

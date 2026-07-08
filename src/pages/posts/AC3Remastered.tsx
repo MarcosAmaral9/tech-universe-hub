@@ -151,23 +151,6 @@ const AC3Remastered = () => {
         </p>
     </div>
 
-        <EditorialTake category="geek" title="Análise do Marcos: AC III é o AC mais injustiçado da franquia">
-          <p>
-            Fui injusto com <strong>AC III</strong> por anos. Joguei no lançamento em 2012,
-            achei o início lento demais e acabei parando. Voltei com a versão Remastered e
-            descobri um dos jogos mais maduros que a Ubisoft já fez. Connor não é likeable
-            no sentido fácil — ele é difícil, obstinado, frequentemente errado nas suas
-            decisões. E é exatamente isso que o torna real.
-          </p>
-          <p>
-            A cena onde Connor descobre o que Washington fez com sua vila é um dos momentos
-            mais perturbadores da franquia. Nenhum AC anterior ou posterior teve coragem de
-            mostrar um "aliado histórico" de forma tão sombria. Se você pulou AC III,
-            recomendo fortemente a versão Remastered — especialmente pelo DLC
-            <strong> Tirania do Rei Washington</strong>, que é puro entretenimento criativo.
-          </p>
-        </EditorialTake>
-
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Sword className="h-7 w-7 text-red-400" />
           Contexto Histórico: A Revolução Americana (1765–1783)
@@ -651,6 +634,23 @@ const AC3Remastered = () => {
         </div>
       </div>
 
+
+        <EditorialTake category="geek" title="Análise do Marcos: AC III é o AC mais injustiçado da franquia">
+          <p>
+            Fui injusto com <strong>AC III</strong> por anos. Joguei no lançamento em 2012,
+            achei o início lento demais e acabei parando. Voltei com a versão Remastered e
+            descobri um dos jogos mais maduros que a Ubisoft já fez. Connor não é likeable
+            no sentido fácil — ele é difícil, obstinado, frequentemente errado nas suas
+            decisões. E é exatamente isso que o torna real.
+          </p>
+          <p>
+            A cena onde Connor descobre o que Washington fez com sua vila é um dos momentos
+            mais perturbadores da franquia. Nenhum AC anterior ou posterior teve coragem de
+            mostrar um "aliado histórico" de forma tão sombria. Se você pulou AC III,
+            recomendo fortemente a versão Remastered — especialmente pelo DLC
+            <strong> Tirania do Rei Washington</strong>, que é puro entretenimento criativo.
+          </p>
+        </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {

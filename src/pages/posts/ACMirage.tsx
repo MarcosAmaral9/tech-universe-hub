@@ -239,21 +239,6 @@ const ACMirage = () => {
           intimista do que os jogos RPG recentes da franquia.
         </p>
 
-        <EditorialTake category="geek" title="Análise do Marcos: Mirage é o AC que o fã nostálgico esperava">
-          <p>
-            Joguei o AC original em 2007 e achei Mirage a experiência mais próxima daquele primeiro
-            jogo em quase duas décadas. A Bagdá do século IX é deslumbrante e absolutamente crível —
-            cada minarete escalável, cada beco com fardos de feno posicionados estrategicamente, cada
-            guarda com padrão de patrulha lógico. A Ubisoft Bordeaux entendeu a missão.
-          </p>
-          <p>
-            O <strong>Assassin's Focus</strong> é o momento de puro prazer do jogo — quando você encadeia
-            5 assassinatos em sequência e Basim some como sombra entre um inimigo e outro, é cinema
-            interativo. Minha única ressalva é a duração: 18 horas para a história principal parece curto
-            demais para o preço pedido. Espere uma promoção ou compare com o Ubisoft+ antes de comprar.
-          </p>
-        </EditorialTake>
-
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-amber-400" />
           Facções e Forças em Conflito em AC Mirage
@@ -657,6 +642,21 @@ const ACMirage = () => {
         </div>
       </div>
 
+
+        <EditorialTake category="geek" title="Análise do Marcos: Mirage é o AC que o fã nostálgico esperava">
+          <p>
+            Joguei o AC original em 2007 e achei Mirage a experiência mais próxima daquele primeiro
+            jogo em quase duas décadas. A Bagdá do século IX é deslumbrante e absolutamente crível —
+            cada minarete escalável, cada beco com fardos de feno posicionados estrategicamente, cada
+            guarda com padrão de patrulha lógico. A Ubisoft Bordeaux entendeu a missão.
+          </p>
+          <p>
+            O <strong>Assassin's Focus</strong> é o momento de puro prazer do jogo — quando você encadeia
+            5 assassinatos em sequência e Basim some como sombra entre um inimigo e outro, é cinema
+            interativo. Minha única ressalva é a duração: 18 horas para a história principal parece curto
+            demais para o preço pedido. Espere uma promoção ou compare com o Ubisoft+ antes de comprar.
+          </p>
+        </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {

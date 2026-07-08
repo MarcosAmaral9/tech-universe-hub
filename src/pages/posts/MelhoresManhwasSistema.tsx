@@ -333,6 +333,8 @@ const MelhoresManhwasSistema = () => {
           Vale destacar que, diferente do mangá japonês — onde grande parte do mercado físico ainda depende de revistas semanais e tankōbon impressos — o manhwa coreano nasceu essencialmente digital e gratuito, com monetização baseada em "ads" (capítulos liberados após período de espera) ou compra avulsa de capítulos antecipados ("fast pass"). Esse modelo facilitou a expansão internacional: qualquer leitor com acesso à internet pode acompanhar simultaneamente o lançamento de um capítulo novo, sem depender de importação de volumes físicos ou de tradução oficial demorada — o que ajuda a explicar a velocidade com que esses títulos constroem fanbases globais antes mesmo de receberem uma adaptação em anime ou tradução física no Ocidente.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: o manhwa de sistema popularizou algo que o mangá nunca soube fazer bem">
         <p>
           O subgênero manhwa de sistema — protagonista que recebe uma interface de jogo visível com stats, níveis e habilidades — é uma criação essencialmente coreana que influenciou o isekai japonês de forma profunda a partir de 2019. <strong>Solo Leveling</strong> de Chugong, com arte de DUBU, foi o título que transformou o formato de nicho em fenômeno global: o manhwa acumulou mais de 14,4 bilhões de visualizações na plataforma Kakao antes do encerramento em dezembro de 2021. O anime da A-1 Pictures em 2024 e o filme ReAwakening (novembro de 2024) consolidaram a franquia internacionalmente.
@@ -341,7 +343,6 @@ const MelhoresManhwasSistema = () => {
           O que o manhwa de sistema faz melhor do que o isekai japonês de level-up é <strong>a visualização do progresso</strong>. As interfaces de jogo em full color, com fontes estilizadas e efeitos visuais que representam a evolução do personagem, são pensadas para o formato webtoon scroll — cada tela do smartphone é uma revelação cinematográfica. Títulos como <strong>Omniscient Reader's Viewpoint</strong> e <strong>The Beginning After the End</strong> levam essa linguagem visual além do simples level-up e criam sistemas narrativos onde o próprio formato do manhwa é parte da experiência.
         </p>
       </EditorialTake>
-
             <ArticleSources category="otaku"
         sources={[
           {

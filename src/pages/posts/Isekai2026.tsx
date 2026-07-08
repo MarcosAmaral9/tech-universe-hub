@@ -138,6 +138,8 @@ const Isekai2026 = () => {
           <strong>Mushoku Tensei: Jobless Reincarnation</strong> (Studio Bind, 2021–) é frequentemente citado como o isekai de maior profundidade narrativa em produção — Rudeus Greyrat é um dos protagonistas mais bem desenvolvidos do gênero moderno. <strong>TenSura</strong> (8bit, 2018–) é o melhor isekai de construção de reino com worldbuilding consistente ao longo de quatro temporadas. <strong>Re:Zero</strong> (White Fox, 2016–) é o referencial de drama psicológico no gênero — nenhum outro isekai aborda saúde mental com a mesma seriedade. Para estreantes que querem começar com algo mais leve, <strong>KonoSuba</strong> (Studio DEEN, 2016) é o melhor ponto de entrada — parodia as convenções do isekai com humor inteligente e elenco memorável. Disponíveis na Crunchyroll com legendas em português.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: isekai domina porque resolve a fantasia que o entretenimento tradicional não cobre">
         <p>
           A pesquisa da NHK Bunken de 2023 sobre preferências de anime mostrou que isekai ocupa consistentemente três dos dez títulos mais populares por temporada desde 2018 — um feito que nenhum outro subgênero do anime moderno repete com essa regularidade. A razão estrutural é simples mas ignorada pela crítica que rejeita o gênero em bloco: o isekai resolve a fantasia de recomeço que o entretenimento realista não consegue — você não apenas cresce, você começa de zero num mundo diferente com todo o conhecimento que acumulou.
@@ -146,7 +148,6 @@ const Isekai2026 = () => {
           O que diferencia o isekai que envelhece bem do que se esquece em dois meses não é a premissa — é o que o autor faz com ela após o episódio 3. <strong>TenSura</strong> usa o isekai como palco para uma série política e diplomática. <strong>Mushoku Tensei</strong> usa como moldura para estudo de personagem denso. <strong>Re:Zero</strong> usa como mecanismo para explorar trauma e saúde mental de formas que o drama realista raramente aborda com essa frontalidade. O isekai que fracassa é o que usa a premissa como ponto de chegada em vez de ponto de partida.
         </p>
       </EditorialTake>
-
             <ArticleSources category="otaku"
         sources={[
           {

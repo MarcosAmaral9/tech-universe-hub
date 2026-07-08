@@ -191,6 +191,8 @@ const ChatGPTvsGeminiClaude2026 = () => {
         </ul>
       </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: pare de buscar a IA perfeita e monte um stack de duas">
         <p>
           Depois de meses testando todas as plataformas, a conclusão que ninguém quer ouvir é que <strong>não existe uma IA que vença em tudo</strong>. O ChatGPT o3 domina código e lógica, o Claude domina escrita e documentos longos, o Gemini domina quem está enraizado no Google. Tentar forçar uma única ferramenta para tudo cria frustração. Para o profissional brasileiro em 2026, o stack mais inteligente e barato é <strong>Claude gratuito (200k contexto) + ChatGPT gratuito (imagens + código)</strong> — custo zero, cobertura de 90% dos casos de uso. Só assine se trabalhar com IA mais de 2 horas por dia. E jamais cole dado de cliente sem verificar o DPA — o risco LGPD é real e a ANPD já abriu processos por isso.
@@ -199,7 +201,6 @@ const ChatGPTvsGeminiClaude2026 = () => {
           Uma última observação sobre longevidade: a velocidade de evolução nesse mercado é tão alta que qualquer comparação específica de benchmark fica desatualizada em 3 a 6 meses. O que vale para além das features momentâneas é a qualidade do ecossistema de cada plataforma — integrações, documentação, comunidade de desenvolvedores e histórico de segurança. Nesse critério de longo prazo, as três plataformas principais (Anthropic, OpenAI e Google) têm desempenho muito diferente do que o de qualquer alternativa emergente, e essa estabilidade de ecossistema é o que justifica o investimento em aprender profundamente uma delas em vez de ficar saltando entre novidades toda semana — hábito que consome tempo e atenção sem gerar profundidade real em nenhuma delas — e profundidade é exatamente o que diferencia quem extrai valor real dessas ferramentas de quem apenas as experimenta superficialmente.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "LMSYS Chatbot Arena Leaderboard — ELO Rankings 2026", url: "https://chat.lmsys.org/?leaderboard", publisher: "LMSYS / UC Berkeley", accessedAt: "Maio 2026" },
         { title: "Anthropic — Claude Models Overview e Política de Privacidade", url: "https://www.anthropic.com/models", publisher: "Anthropic", accessedAt: "Maio 2026" },

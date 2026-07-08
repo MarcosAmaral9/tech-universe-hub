@@ -231,6 +231,8 @@ const HellMode = () => {
         </div>
       </div>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: Hell Mode acerta onde a maioria dos isekais de gamer erra">
         <p>
           Hell Mode, escrito por Hamuo e publicado originalmente no Shōsetsuka ni Narō a partir de novembro de 2019, é um dos poucos isekais de gamer que leva a sério a premissa de jogar no modo difícil. A Earth Star Entertainment publica a light novel desde julho de 2020 — treze volumes lançados até o início de 2026. O anime pela Yokohama Animation Laboratory estreou em janeiro de 2026 no HIDIVE e Prime Video.
@@ -239,7 +241,6 @@ const HellMode = () => {
           O que o diferencia: Allen não é forte porque o destino quis. Ele é forte porque grindou 100 vezes mais do que qualquer personagem normal precisaria. Esse detalhe muda completamente o tom da série — cada conquista tem peso real, cada nível de evolução foi pago com horas de esforço mostradas em tela. Para isekais do pós-2020 que viram o protagonista "nascido op" se tornar clichê cansativo, Hell Mode oferece a alternativa mais honesta: <strong>mérito, não sorte</strong>. Para T2, sem anúncio oficial até março de 2026.
         </p>
       </EditorialTake>
-
       <ArticleSources
         sources={[
           {

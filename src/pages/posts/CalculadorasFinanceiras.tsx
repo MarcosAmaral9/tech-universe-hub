@@ -546,6 +546,8 @@ const CalculadorasFinanceiras = () => {
         </div>
       </div>
 
+
+
       <EditorialTake
         category="invest"
         title="Análise do Marcos: simular antes de comprar é o hábito que separa o investidor consciente do impulsivo"
@@ -566,7 +568,6 @@ const CalculadorasFinanceiras = () => {
           Use as calculadoras para planejar o tamanho da posição, não como único critério de decisão.
         </p>
       </EditorialTake>
-
       <ArticleSources category="invest"
         sources={[
           {

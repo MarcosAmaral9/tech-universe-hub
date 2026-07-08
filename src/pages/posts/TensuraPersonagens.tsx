@@ -360,6 +360,8 @@ const TensuraPersonagens = () => {
         </div>
       </div>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: o elenco de TenSura é seu maior ativo — e seu maior risco">
         <p>
           Acompanho TenSura desde a T1 e o que mais me impressiona na série de Fuse não é o protagonista — é a capacidade de dar personalidade real a personagens que poderiam facilmente ser decoração. Shion, que começa como "secretária leal perigosamente má cozinheira", tem um dos arcos de morte e ressurreição mais emocionalmente honestos do anime recente. Diablo, que chegou como fanservice de poder, se tornou um dos personagens mais hiláriamente sinistros e ao mesmo tempo genuínos da série.
@@ -368,7 +370,6 @@ const TensuraPersonagens = () => {
           O risco do elenco grande é que, com a expansão de Tempest em T3 e T4, alguns personagens ficam sem tempo de tela adequado. Benimaru e Shuna aparecem cada vez menos em cenas de destaque conforme novos aliados chegam. É um problema estrutural de séries de construção de reino: o worldbuilding cresce mais rápido do que o desenvolvimento de personagem consegue acompanhar. A light novel de Fuse resolve isso melhor do que o anime — com capítulos de perspectiva de personagens secundários que o anime simplesmente não tem tempo de incluir.
         </p>
       </EditorialTake>
-
       <ArticleSources
         sources={[
           {

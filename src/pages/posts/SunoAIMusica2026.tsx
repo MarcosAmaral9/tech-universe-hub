@@ -318,6 +318,8 @@ const SunoAIMusica2026 = () => {
         </div>
 </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: Suno é uma das IAs mais democratizantes de 2026 — mas o jurídico é terra minada">
         <p>
           O Suno v5.5 é genuinamente impressionante. Gerar uma música de pagode em português com vocais convincentes, cavaquinho e bateria de samba a partir de um prompt de duas linhas é algo que teria parecido ficção científica em 2022. Para criadores de conteúdo, podcasters e marcas que precisam de trilhas originais sem pagar royalties, o Suno é uma das melhores ferramentas disponíveis hoje — e o plano gratuito é surpreendentemente generoso.
@@ -332,7 +334,6 @@ const SunoAIMusica2026 = () => {
           Para o mercado brasileiro de música independente, o Suno representa uma ferramenta de democratização real: produzir trilhas de qualidade profissional sem estúdio, sem instrumentistas e sem direitos de uso de sample ficou ao alcance de qualquer criador com internet. Isso não elimina a demanda por músicos humanos, mas redistribui o mercado — os produtores independentes que souberem usar IA para acelerar partes do processo enquanto mantêm identidade sonora própria vão ter uma vantagem competitiva real sobre os que rejeitam a ferramenta por princípio e sobre os que a usam sem nenhuma contribuição criativa — um equilíbrio que o mercado de música independente brasileiro já está começando a exigir dos criadores que querem ser levados a sério tanto por plataformas de streaming quanto por parceiros comerciais.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "Music Business Worldwide — Suno sued by Poseidon Wave Media; v5.5 launch details", url: "https://www.musicbusinessworldwide.com/suno-sued-by-poseidon-wave-media-an-entity-behind-indie-duo-the-american-dollar-claiming-it-nearly-eliminated-their-licensing-revenue/", publisher: "Music Business Worldwide", accessedAt: "Maio 2026" },
         { title: "Chartlex — Music Industry AI Lawsuits Tracker 2026 (Warner-Suno settlement)", url: "https://www.chartlex.com/blog/business/music-industry-ai-lawsuits-tracker-2026", publisher: "Chartlex", accessedAt: "Maio 2026" },
