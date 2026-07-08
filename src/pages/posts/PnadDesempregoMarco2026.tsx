@@ -255,6 +255,8 @@ const PnadDesempregoMarco2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="invest" title="Análise do Marcos: a PNAD que importa é a da massa salarial, não a do desemprego">
         <p>
           Olhar só a taxa de desemprego de 6,1% é miopia analítica. O Brasil tem uma <strong>taxa de informalidade próxima de 37–38%</strong> da população ocupada (IBGE/PNAD Contínua), o que distorce completamente qualquer comparação com mercados desenvolvidos. Para o investidor brasileiro, o dado verdadeiramente relevante é a <strong>massa de rendimento real</strong> — ela é o que sustenta o consumo interno e, por consequência, o lucro de varejistas, bancos e empresas de serviços listadas na B3. Quando o desemprego cai mas o rendimento real estagna, o crescimento do PIB vem de crédito — e isso tem prazo de validade curto, especialmente com a Selic ainda acima de dois dígitos.
@@ -263,7 +265,6 @@ const PnadDesempregoMarco2026 = () => {
           A boa notícia desta PNAD é que os dois indicadores andam juntos: emprego e renda crescendo acima da inflação ao mesmo tempo. Historicamente, esse combo de mercado de trabalho aquecido com ganho real de renda gera um ciclo de 3–4 trimestres de crescimento consistente do consumo. Para a carteira: mantenho exposição a consumo doméstico via LREN3, ASSAI3 e BBAS3, que se beneficiam diretamente da expansão da massa salarial. O risco principal é político: se o governo acelerar a concessão de crédito público para estimular o consumo de curto prazo, o efeito positivo da PNAD pode ser ofuscado pelo impacto fiscal no câmbio e nos juros longos.
         </p>
       </EditorialTake>
-
       <ArticleSources category="invest"
         sources={[
           { title: "PNAD Contínua — Indicadores Mensais", url: "https://www.ibge.gov.br/estatisticas/sociais/trabalho/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-mensal.html", publisher: "IBGE", accessedAt: "Maio 2026" },

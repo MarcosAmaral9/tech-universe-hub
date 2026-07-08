@@ -202,6 +202,8 @@ const IASaude2026 = () => {
         </ul>
       </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: IA médica salva vidas em triagem, mas precisa de médico para decidir">
         <p>
           A IA na saúde já entrega resultado real <strong>onde ela é assistente do médico</strong> — radiologia, triagem,
@@ -218,7 +220,6 @@ const IASaude2026 = () => {
           Para o brasileiro que usa apps de saúde com IA (smartwatches, apps de sintomas, chatbots de triagem), três alertas práticos: primeiro, nenhum diagnóstico de app substitui consulta médica — use-os como triagem para decidir se a consulta é urgente, não para substituí-la. Segundo, verifique se o app tem registro na Anvisa — software médico sem registro opera em área cinza regulatória, sem garantia de validação clínica. Terceiro, dados de saúde têm proteção extra na LGPD (dados sensíveis, art. 11) — antes de dar acesso a um app ao seu histórico de saúde, leia a política de privacidade e verifique onde os dados são processados e por quanto tempo ficam retidos.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "FDA — AI/ML-Enabled Medical Devices (lista oficial)", url: "https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices", publisher: "U.S. Food and Drug Administration", accessedAt: "Maio 2026" },
         { title: "DeepMind — AlphaFold 3 (Nature, 2024)", url: "https://deepmind.google/discover/blog/alphafold-3-predicts-the-structure-and-interactions-of-all-of-lifes-molecules/", publisher: "Google DeepMind", accessedAt: "Maio 2026" },

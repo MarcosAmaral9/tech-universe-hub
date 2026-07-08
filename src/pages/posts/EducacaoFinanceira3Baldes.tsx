@@ -455,6 +455,8 @@ const EducacaoFinanceira3Baldes = () => {
 
         <BackNavigation category="invest" />
 
+
+
         <EditorialTake category="invest" title="Análise do Marcos: o método dos 3 baldes funciona porque elimina a decisão diária">
           <p>
             O "método dos 3 baldes" é uma simplificação didática de princípios estabelecidos por autores como Daniel Kahneman (<em>Thinking, Fast and Slow</em>) e adaptado por educadores financeiros brasileiros como Gustavo Cerbasi e Nathalia Arcuri. A lógica converge com o que o relatório Raio-X do Investidor Brasileiro 2024 da ANBIMA mostra: 64% dos brasileiros não conseguem poupar mensalmente — e o problema quase nunca é falta de renda.
@@ -463,7 +465,6 @@ const EducacaoFinanceira3Baldes = () => {
             Para 2026, a recomendação para o <strong>Balde 2 (Investimentos)</strong> está alinhada com a Selic projetada pelo Boletim Focus: alocar a reserva de emergência em Tesouro Selic ou CDB de liquidez diária a 100%+ CDI — rentabilidade líquida de ~9-10% ao ano após IR. Para objetivos de 1–5 anos, LCI e LCA isentas de IR oferecem 90–95% do CDI sem desconto tributário. Minha análise: o método funciona porque <strong>elimina a decisão diária sobre dinheiro</strong>. Quem tem o sistema rodando há 6 meses reporta, quase unanimemente, sensação de controle financeiro inédita.
           </p>
         </EditorialTake>
-
         <ArticleSources category="invest"
           sources={[
             {

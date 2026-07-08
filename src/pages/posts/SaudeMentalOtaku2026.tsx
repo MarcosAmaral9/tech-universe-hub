@@ -249,6 +249,13 @@ const SaudeMentalOtaku2026 = () => {
           Para anime especificamente, a distinção prática é entre <strong>consumo intencional</strong> (escolher títulos que você genuinamente quer assistir, no ritmo que funciona para sua vida) e <strong>consumo ansioso</strong> (fazer binge por compulsão ou por medo de ficar "para trás" nas discussões da comunidade). O primeiro é enriquecedor; o segundo é a forma de consumo que mais frequentemente contribui para problemas de sono e procrastinação. Desligar notificações de spoilers, criar listas de "assistir depois" e aceitar que você nunca vai ver tudo são estratégias que a comunidade mais experiente usa para manter o prazer no consumo de anime a longo prazo.
         </p>
 
+        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
+          <h3 className="text-xl font-bold mb-2">Como o anime impactou sua vida? 💜</h3>
+          <p className="text-muted-foreground">Conta nos comentários — com respeito e empatia. Cada história importa. 👇</p>
+        </div>
+      </div>
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: a relação entre cultura otaku e saúde mental é dupla — e isso é normal">
         <p>
           Estudos publicados em <em>Frontiers in Psychology</em> e <em>Journal of Mental Health Counseling</em> exploram o uso terapêutico do anime — e a OMS classifica gaming disorder no CID-11 desde 2019. Esses dados coexistem sem se contradizer porque a relação entre cultura otaku e saúde mental é genuinamente dupla: pode ser refúgio terapêutico (comunidade, identificação, sublimação criativa) ou catalisador de isolamento quando substitui completamente relações sociais e atividades no mundo físico.
@@ -257,13 +264,6 @@ const SaudeMentalOtaku2026 = () => {
           Sinais de alerta que merecem atenção profissional: privação de sono recorrente, abandono de amigos e hobbies não relacionados, recusa de saída de casa por mais de duas semanas. O <strong>CVV</strong> (188, gratuito, 24h) e os <strong>CAPS do SUS</strong> são os recursos mais acessíveis no Brasil. Procure ajuda antes de virar quadro grave — não porque gostar de anime seja o problema, mas porque você merece apoio quando está difícil, independente de qual seja a causa.
         </p>
       </EditorialTake>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Como o anime impactou sua vida? 💜</h3>
-          <p className="text-muted-foreground">Conta nos comentários — com respeito e empatia. Cada história importa. 👇</p>
-        </div>
-      </div>
-
       <ArticleSources category="otaku"
         sources={[
           {

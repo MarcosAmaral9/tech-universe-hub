@@ -113,21 +113,6 @@ const ACValhalla = () => {
           jogadores tantos anos após o lançamento.
         </p>
 
-        <EditorialTake category="geek" title="Análise do Marcos: Valhalla é o AC mais ambicioso — e isso tem um preço">
-          <p>
-            Joguei <strong>Valhalla</strong> do lançamento até o último DLC e minha relação com o
-            jogo é complicada. A escala é impressionante: construir Ravensthorpe do zero, fazer
-            raids pela Inglaterra medieval, explorar Asgard — são momentos que ficam na memória.
-            Mas a diluição do conteúdo ao longo de 130 horas pesa.
-          </p>
-          <p>
-            Minha recomendação é clara: <strong>joguem pelo personagem de Eivor, não pela narrativa
-            central</strong>. Os arcos individuais de cada reino inglês — especialmente Oxenefordscire
-            e Sciropescire — são melhores do que a trama principal da Ordem dos Antigos. E o DLC
-            Dawn of Ragnarök é uma obra separada que vale o preço sozinho.
-          </p>
-        </EditorialTake>
-
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-purple-400" />
           Contexto Histórico: A Era Viking na Inglaterra (793–1066 d.C.)
@@ -637,6 +622,21 @@ const ACValhalla = () => {
         </div>
       </div>
 
+
+        <EditorialTake category="geek" title="Análise do Marcos: Valhalla é o AC mais ambicioso — e isso tem um preço">
+          <p>
+            Joguei <strong>Valhalla</strong> do lançamento até o último DLC e minha relação com o
+            jogo é complicada. A escala é impressionante: construir Ravensthorpe do zero, fazer
+            raids pela Inglaterra medieval, explorar Asgard — são momentos que ficam na memória.
+            Mas a diluição do conteúdo ao longo de 130 horas pesa.
+          </p>
+          <p>
+            Minha recomendação é clara: <strong>joguem pelo personagem de Eivor, não pela narrativa
+            central</strong>. Os arcos individuais de cada reino inglês — especialmente Oxenefordscire
+            e Sciropescire — são melhores do que a trama principal da Ordem dos Antigos. E o DLC
+            Dawn of Ragnarök é uma obra separada que vale o preço sozinho.
+          </p>
+        </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {

@@ -122,22 +122,6 @@ const ACOrigins = () => {
           tudo o que veio depois.
         </p>
 
-        <EditorialTake category="geek" title="Análise do Marcos: Origins é onde a franquia reencontrou sua alma">
-          <p>
-            Quando joguei <strong>AC Origins</strong> pela primeira vez, senti que a Ubisoft havia
-            reencontrado algo que estava perdido desde AC III: um protagonista que você{" "}
-            <em>genuinamente</em> se importa. Bayek é um pai de luto, um marido que tenta manter um
-            casamento sob o peso da tragédia, um protetor sem proteção. A cena de abertura com Khemu
-            ainda me afeta depois de todas as vezes que joguei.
-          </p>
-          <p>
-            O Discovery Tour é um presente inesperado. Usei com minha sobrinha de 12 anos para
-            ensinar sobre Cleópatra e as Pirâmides de Gizé — ela depois foi pesquisar por conta própria.
-            Isso é o que os melhores jogos históricos fazem: <strong>acendem a curiosidade</strong>. AC
-            Origins é obrigatório para qualquer coleção de jogos sérios.
-          </p>
-        </EditorialTake>
-
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-yellow-400" />
           Contexto Histórico: O Egito Ptolemaico (49–43 a.C.)
@@ -537,6 +521,22 @@ const ACOrigins = () => {
         </div>
       </div>
 
+
+        <EditorialTake category="geek" title="Análise do Marcos: Origins é onde a franquia reencontrou sua alma">
+          <p>
+            Quando joguei <strong>AC Origins</strong> pela primeira vez, senti que a Ubisoft havia
+            reencontrado algo que estava perdido desde AC III: um protagonista que você{" "}
+            <em>genuinamente</em> se importa. Bayek é um pai de luto, um marido que tenta manter um
+            casamento sob o peso da tragédia, um protetor sem proteção. A cena de abertura com Khemu
+            ainda me afeta depois de todas as vezes que joguei.
+          </p>
+          <p>
+            O Discovery Tour é um presente inesperado. Usei com minha sobrinha de 12 anos para
+            ensinar sobre Cleópatra e as Pirâmides de Gizé — ela depois foi pesquisar por conta própria.
+            Isso é o que os melhores jogos históricos fazem: <strong>acendem a curiosidade</strong>. AC
+            Origins é obrigatório para qualquer coleção de jogos sérios.
+          </p>
+        </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {

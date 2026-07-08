@@ -182,6 +182,8 @@ const AgentesIA2026 = () => {
         </div>
       </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: agente assistido é o único caminho sério em 2026">
         <p>
           A pressa em chamar tudo de "agente autônomo" está atrasando o uso sério dessa tecnologia. O que funciona hoje no Brasil é
@@ -195,7 +197,6 @@ const AgentesIA2026 = () => {
           O que os dados do Anthropic Economic Index mostram — e que o debate público em torno de "IA vai substituir empregos" frequentemente ignora — é que a automação agêntica está sendo absorvida muito mais como camada adicional de capacidade do que como substituição direta de postos de trabalho. A maioria dos casos bem-sucedidos em 2026 envolve equipes humanas que ficaram mais eficientes, não equipes que foram eliminadas. Isso pode mudar com modelos mais capazes nos próximos anos, mas no cenário atual, a ameaça imediata é menor e a oportunidade de diferenciação para profissionais que souberem orquestrar agentes é muito maior do que o senso comum sugere.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "Anthropic — Introducing the Model Context Protocol", url: "https://www.anthropic.com/news/model-context-protocol", publisher: "Anthropic", accessedAt: "Maio 2026" },
         { title: "Princeton NLP — SWE-bench Verified Leaderboard", url: "https://www.swebench.com/", publisher: "Princeton NLP", accessedAt: "Maio 2026" },

@@ -145,23 +145,6 @@ const AC2Ezio = () => {
           é o jogo que melhor equilibra todos os elementos que fazem uma experiência inesquecível.
         </p>
 
-        <EditorialTake category="geek" title="Análise do Marcos: AC II é o jogo que fez a franquia ser o que é hoje">
-          <p>
-            Joguei <strong>Assassin's Creed II</strong> em 2009 e ele ainda está na minha lista
-            pessoal dos 10 melhores jogos de todos os tempos. Ezio começa como um garoto rico
-            e irresponsável — você passa os primeiros 30 minutos ajudando ele a marcar encontros
-            com garotas — e termina como o Assassino mais sábio da história da franquia. Essa
-            jornada de crescimento tem poucos rivais nos games.
-          </p>
-          <p>
-            A cena do enforcamento da família Auditore ainda é brutal para assistir. A Ubisoft
-            tomou um risco ao não deixar o jogador salvar a família — você só observa impotente.
-            Essa escolha de design transforma a vingança de Ezio em algo visceral e pessoal de
-            um jeito que poucos jogos conseguem. E depois, quando a <em>Ezio's Family</em> de
-            Jesper Kyd toca enquanto você escapa de Florença com a mãe e a irmã... é cinema.
-          </p>
-        </EditorialTake>
-
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-amber-400" />
           Contexto Histórico: Itália Renascentista (1476–1499)
@@ -388,6 +371,23 @@ const AC2Ezio = () => {
         </div>
       </div>
 
+
+        <EditorialTake category="geek" title="Análise do Marcos: AC II é o jogo que fez a franquia ser o que é hoje">
+          <p>
+            Joguei <strong>Assassin's Creed II</strong> em 2009 e ele ainda está na minha lista
+            pessoal dos 10 melhores jogos de todos os tempos. Ezio começa como um garoto rico
+            e irresponsável — você passa os primeiros 30 minutos ajudando ele a marcar encontros
+            com garotas — e termina como o Assassino mais sábio da história da franquia. Essa
+            jornada de crescimento tem poucos rivais nos games.
+          </p>
+          <p>
+            A cena do enforcamento da família Auditore ainda é brutal para assistir. A Ubisoft
+            tomou um risco ao não deixar o jogador salvar a família — você só observa impotente.
+            Essa escolha de design transforma a vingança de Ezio em algo visceral e pessoal de
+            um jeito que poucos jogos conseguem. E depois, quando a <em>Ezio's Family</em> de
+            Jesper Kyd toca enquanto você escapa de Florença com a mãe e a irmã... é cinema.
+          </p>
+        </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {

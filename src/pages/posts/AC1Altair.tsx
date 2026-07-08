@@ -362,6 +362,8 @@ const AC1Altair = () => {
       </div>
 
 
+
+
         <EditorialTake category="geek" title="Análise do Marcos: AC1 é imperfeito, mas fundou algo único">
           <p>
             Joguei o <strong>Assassin's Creed original</strong> no lançamento em 2007 e fiquei

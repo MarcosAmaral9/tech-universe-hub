@@ -252,6 +252,8 @@ const OuroMaximaHistorica2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="invest" title="Análise do Marcos: ouro não é investimento, é seguro">
         <p>Ouro a US$ 3.000+/oz não significa que você deveria comprar agora — significa que muita gente já comprou. Historicamente, o ouro é uma proteção contra <strong>colapso monetário</strong> e perda de confiança em moedas fiat, não um instrumento de geração de renda (não paga dividendo, não rende juro). No Brasil, a forma mais eficiente de exposição é via <strong>ETFs (GOLD11)</strong> ou fundos como o OURO11, evitando o custo de armazenamento e o IOF de operações físicas. Para quem tem mais de 5% da carteira em ouro com o ativo nessa máxima, é hora de rebalancear — não vender tudo, mas voltar à alocação tática. Como disse Buffett: ouro "olha você de volta". É hedge, não tese.</p>
         <p className="mt-3">

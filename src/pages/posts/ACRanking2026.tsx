@@ -218,24 +218,6 @@ const ACRanking2026 = () => {
 
         <AdInArticle />
 
-        <EditorialTake category="geek" title="Análise do Marcos: como montar sua maratona de Assassin's Creed em 2026">
-          <p>
-            Depois de jogar todos os títulos da franquia, minha conclusão é simples:{" "}
-            <strong>não existe um único melhor AC — existe o melhor AC para você agora</strong>.
-            Se você tem 20 horas livres, Black Flag é perfeito. Se tem 200 horas, comece pela
-            Saga Kenway (Black Flag → Rogue → AC III) e depois parta para a trilogia RPG
-            (Origins → Odyssey → Valhalla). Se você quer só o mais moderno e impressionante,
-            Shadows entrega exatamente isso.
-          </p>
-          <p>
-            Um aviso importante para quem vai maratonar em 2026: a Ubisoft Connect tem promoções
-            recorrentes (Black Friday e Golden Week) que costumam derrubar os preços de Odyssey,
-            Origins e Valhalla para R$ 50–80 — ótimo custo-benefício. O{" "}
-            <strong>Ubisoft+ Premium (R$ 89,90/mês)</strong> dá acesso a todo o catálogo,
-            valendo a pena para quem quer maratonar 2–3 títulos num único mês.
-          </p>
-        </EditorialTake>
-
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Target className="h-7 w-7 text-purple-400" />
           Por Onde Começar? Guia por Perfil de Jogador
@@ -369,6 +351,24 @@ const ACRanking2026 = () => {
         </p>
       </div>
 
+
+        <EditorialTake category="geek" title="Análise do Marcos: como montar sua maratona de Assassin's Creed em 2026">
+          <p>
+            Depois de jogar todos os títulos da franquia, minha conclusão é simples:{" "}
+            <strong>não existe um único melhor AC — existe o melhor AC para você agora</strong>.
+            Se você tem 20 horas livres, Black Flag é perfeito. Se tem 200 horas, comece pela
+            Saga Kenway (Black Flag → Rogue → AC III) e depois parta para a trilogia RPG
+            (Origins → Odyssey → Valhalla). Se você quer só o mais moderno e impressionante,
+            Shadows entrega exatamente isso.
+          </p>
+          <p>
+            Um aviso importante para quem vai maratonar em 2026: a Ubisoft Connect tem promoções
+            recorrentes (Black Friday e Golden Week) que costumam derrubar os preços de Odyssey,
+            Origins e Valhalla para R$ 50–80 — ótimo custo-benefício. O{" "}
+            <strong>Ubisoft+ Premium (R$ 89,90/mês)</strong> dá acesso a todo o catálogo,
+            valendo a pena para quem quer maratonar 2–3 títulos num único mês.
+          </p>
+        </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {

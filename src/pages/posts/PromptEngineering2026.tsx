@@ -287,6 +287,8 @@ Use analogias do dia a dia para explicar conceitos complexos.`}
         </p>
       </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: domínio de técnicas vale mais do que prompts 'mágicos' viralizados">
         <p>
           Técnicas validadas em papers (NeurIPS, ICLR, ACL) e guias oficiais: <strong>Chain-of-Thought</strong> (Wei et al., 2022), Few-Shot Prompting, Role Assignment, Self-Consistency e structured output via JSON Schema. Modelos de raciocínio (OpenAI o1/o3, Claude com extended thinking, DeepSeek R1) reduziram a necessidade de Chain-of-Thought explícito — eles geram cadeias de raciocínio internamente. A nova fronteira é o <strong>meta-prompting</strong>: pedir ao modelo que avalie e refine seus próprios prompts.
@@ -295,7 +297,6 @@ Use analogias do dia a dia para explicar conceitos complexos.`}
           Para o usuário brasileiro avançado, o salto de qualidade vem de quatro práticas: <strong>(1)</strong> definir contexto explícito (papel, audiência, formato de saída); <strong>(2)</strong> fornecer 1–3 exemplos quando possível; <strong>(3)</strong> separar instrução de dado com tags XML; <strong>(4)</strong> revisar e iterar com follow-ups específicos em vez de repetir o prompt inicial. Dominar isso vale mais que colecionar prompts "viralizados" — que geralmente funcionam uma vez e perdem eficácia com updates de modelo, além de raramente se transferirem para outros contextos sem adaptação significativa por parte do próprio usuário.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "OpenAI — Prompt Engineering Guide", url: "https://platform.openai.com/docs/guides/prompt-engineering", publisher: "OpenAI", accessedAt: "Maio 2026" },
         { title: "Anthropic — Prompt Engineering Overview", url: "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview", publisher: "Anthropic", accessedAt: "Maio 2026" },

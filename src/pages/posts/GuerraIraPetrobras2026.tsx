@@ -325,6 +325,8 @@ const GuerraIraPetrobras2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="invest" title="Análise do Marcos: não confunda alta cíclica do petróleo com tese estrutural em PETR4">
         <p>
           A Petrobras (PETR4/PETR3) é a maior empresa listada na B3 por valor de mercado e responde por mais de 90% da produção de petróleo no Brasil. Tensões geopolíticas no Oriente Médio impactam diretamente o preço do barril Brent, referência usada na política de preços da estatal. Segundo a IEA e o relatório STEO da U.S. EIA, o Irã produz aproximadamente 3,3 milhões de barris/dia e o Estreito de Ormuz escoa cerca de 20% do petróleo consumido globalmente — choques nessa rota historicamente elevam o Brent em 10–30% em janelas de semanas.
@@ -333,7 +335,6 @@ const GuerraIraPetrobras2026 = () => {
           Minha análise: para o investidor brasileiro, Petrobras se beneficia no curto prazo de Brent alto (margens de refino e exportação melhoram), mas o <strong>risco político local permanece o principal driver de PETR4 em 2026</strong> — paridade de preços, dividendos extraordinários e eventual ingerência via assembleia em ano eleitoral. O erro mais comum que vejo é o investidor entrar na ação por causa da guerra e ficar surpreso quando ela cai 15% em uma semana porque o governo sinalizou controle de preços de combustíveis. Alta cíclica de Brent é oportunidade. Mas não é tese estrutural enquanto o risco político não for precificado.
         </p>
       </EditorialTake>
-
       <ArticleSources category="invest"
         sources={[
           {

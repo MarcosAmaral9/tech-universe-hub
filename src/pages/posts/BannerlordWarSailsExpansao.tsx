@@ -443,6 +443,8 @@ const BannerlordWarSailsExpansao = () => {
           spot para a comunidade brasileira.
         </p>
 
+
+
         <EditorialTake category="geek" title="Análise do Marcos">
           War Sails é o que Bannerlord precisava para deixar de ser &quot;Warband em HD&quot; e virar um jogo
           próprio. O combate naval entrega, os Nords ocupam um vácuo cultural óbvio, e a economia marítima abre
@@ -450,7 +452,6 @@ const BannerlordWarSailsExpansao = () => {
           que falta no jogo, mas conserta o que mais doía — e isso, em 2026, justifica o ressurgimento do título
           no top 50 do Steam.
         </EditorialTake>
-
         <ArticleSources
           category="geek"
           sources={[

@@ -260,23 +260,6 @@ const ACUnity = () => {
           Unity finalmente brilha como a Ubisoft sempre quis.
         </p>
 
-        <EditorialTake category="geek" title="Análise do Marcos: Unity é o AC que o tempo fez justiça">
-          <p>
-            Joguei Unity no lançamento em 2014 e foi uma experiência frustrante — crashes, rostos
-            sumindo, frame rate caindo para 15 FPS em áreas com multidão. Voltei ao jogo em 2022 num
-            PC moderno e foi como jogar um título diferente.{" "}
-            <strong>A Paris de Unity é de longe a cidade mais bem construída de qualquer AC.</strong>{" "}
-            Entrar na Notre-Dame pela primeira vez ainda me para de jogar por uns 2 minutos só para
-            olhar para cima.
-          </p>
-          <p>
-            O parkour de Arno com Parkour Down é insubstituível — Mirage tentou resgatar isso e
-            chegou perto, mas a fluidez de Unity em telhados medievais ainda é o padrão. Se você tem
-            um PC com uma GPU decente (RTX 3060 ou melhor), a experiência é diferente de tudo que a
-            franquia fez antes ou depois.
-          </p>
-        </EditorialTake>
-
         {/* Facções */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-blue-400" />
@@ -775,6 +758,23 @@ const ACUnity = () => {
         </div>
       </div>
 
+
+        <EditorialTake category="geek" title="Análise do Marcos: Unity é o AC que o tempo fez justiça">
+          <p>
+            Joguei Unity no lançamento em 2014 e foi uma experiência frustrante — crashes, rostos
+            sumindo, frame rate caindo para 15 FPS em áreas com multidão. Voltei ao jogo em 2022 num
+            PC moderno e foi como jogar um título diferente.{" "}
+            <strong>A Paris de Unity é de longe a cidade mais bem construída de qualquer AC.</strong>{" "}
+            Entrar na Notre-Dame pela primeira vez ainda me para de jogar por uns 2 minutos só para
+            olhar para cima.
+          </p>
+          <p>
+            O parkour de Arno com Parkour Down é insubstituível — Mirage tentou resgatar isso e
+            chegou perto, mas a fluidez de Unity em telhados medievais ainda é o padrão. Se você tem
+            um PC com uma GPU decente (RTX 3060 ou melhor), a experiência é diferente de tudo que a
+            franquia fez antes ou depois.
+          </p>
+        </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {

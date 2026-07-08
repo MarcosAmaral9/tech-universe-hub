@@ -239,12 +239,13 @@ A diferença entre quem consegue sustentar um agente em produção e quem o aban
         </p>
       </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: o mercado brasileiro ainda confunde agente com chatbot turbinado">
         <p>
           A maioria das empresas brasileiras que diz "usar agentes de IA" está usando, na prática, <strong>chatbots com RAG</strong> — úteis, mas longe de um agente autônomo real. O salto verdadeiro exige integração com sistemas externos, loop de raciocínio e capacidade de replanejar quando algo falha. Isso eleva o custo e a complexidade de implantação. Minha recomendação para 2026: comece pelos processos com maior volume de tarefas repetitivas e menor risco em caso de erro (triagem de e-mails, atualização de planilhas, geração de rascunhos). Guarde os casos críticos para quando você tiver pelo menos 3 meses de dados de desempenho do agente em produção. A pressa em "autonomizar tudo" é o maior gerador de retrabalho que vejo hoje.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "Deloitte — AI Agents Market Forecast 2026–2030", url: "https://www2.deloitte.com/us/en/insights/topics/ai-and-the-future-of-work.html", publisher: "Deloitte Insights", accessedAt: "Maio 2026" },
         { title: "Anthropic — Claude Code: Agentic Coding", url: "https://www.anthropic.com/claude-code", publisher: "Anthropic", accessedAt: "Maio 2026" },

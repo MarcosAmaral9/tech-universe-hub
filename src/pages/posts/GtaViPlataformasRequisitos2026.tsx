@@ -230,6 +230,8 @@ const GtaViPlataformasRequisitos2026 = () => {
           preload abrir; em 100 Mbps, leva entre 4 e 6 horas; em fibra de 500+ Mbps, menos de 1 hora.
         </p>
 
+
+
         <EditorialTake category="geek">
           <p>
             Minha posição sobre plataforma é direta: se você já tem PS5 ou Xbox Series, jogue no dia 1 sem dúvida. Se
@@ -241,7 +243,6 @@ const GtaViPlataformasRequisitos2026 = () => {
             mas ganha acesso ao maior jogo da década no preço mais baixo da geração.
           </p>
         </EditorialTake>
-
         <ArticleSources
           category="geek"
           sources={[

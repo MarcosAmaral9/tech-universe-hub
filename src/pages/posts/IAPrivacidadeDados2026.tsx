@@ -177,6 +177,8 @@ const IAPrivacidadeDados2026 = () => {
 
 
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: três regras práticas que eliminam 90% do risco de privacidade com IA">
         <p>
           A LGPD (Lei 13.709/2018) regulamenta o uso de dados pessoais no Brasil, incluindo treinamento de IA. A ANPD publicou em 2024 a Análise Preliminar sobre IA Generativa, alertando para riscos de vazamento e dever de transparência. O EU AI Act (em vigor desde agosto/2024) criou obrigações graduais para modelos de propósito geral implementadas até 2027.
@@ -188,7 +190,6 @@ const IAPrivacidadeDados2026 = () => {
           O caso Samsung, embora ocorrido em 2023, continua sendo o exemplo mais poderoso para treinar equipes sobre privacidade com IA — não porque funcionários foram mal-intencionados, mas porque o problema foi exatamente o oposto: eles estavam usando a ferramenta como deveriam, para resolver problemas reais do trabalho, sem saber que o conteúdo dos prompts poderia ser usado para treinar o modelo. A lição prática: treinamento de equipe não é sobre proibir o uso de IA — é sobre criar um entendimento claro de quais tipos de dados são seguros de inserir em ferramentas externas e quais nunca deveriam sair do ambiente corporativo, especialmente no contexto regulatório atual onde a ANPD está gradualmente aumentando sua capacidade de fiscalização. Uma página de FAQ interna sobre isso, com exemplos concretos de prompts permitidos e proibidos para o contexto específico da empresa, vale mais do que qualquer política de segurança genérica que ninguém vai ler antes do primeiro incidente acontecer na prática.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "ANPD — Análise Preliminar sobre IA Generativa", url: "https://www.gov.br/anpd/pt-br", publisher: "ANPD", accessedAt: "Maio 2026" },
         { title: "Planalto — Lei 13.709/2018 (LGPD)", url: "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm", publisher: "Planalto", accessedAt: "Maio 2026" },

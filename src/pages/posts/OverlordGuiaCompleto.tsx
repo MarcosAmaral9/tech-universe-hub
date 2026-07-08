@@ -264,6 +264,8 @@ const OverlordGuiaCompleto = () => {
           Para a comunidade, a situação é de espera cautelosamente otimista: o filme Sacred Kingdom foi produzido com qualidade superior à T4, sugerindo que a Kadokawa mantém interesse em novos projetos de Overlord. A falta de anúncio oficial de T5 até maio de 2026 pode ser explicada pela espera do próximo volume da light novel para ter material suficiente para uma temporada completa. Fãs que querem continuar além do ponto atual do anime têm os volumes 14–18 disponíveis em inglês via Yen Press, e a JBC publicou os volumes do mangá no Brasil até volume recente.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: Overlord é o único isekai onde o protagonista é genuinamente o vilão">
         <p>
           Overlord é uma light novel de <strong>Kugane Maruyama</strong>, publicada originalmente no Shōsetsuka ni Narō a partir de 2010 e publicada fisicamente pela <strong>Enterbrain</strong> (Kadokawa) desde 2012 — 18 volumes lançados, com o 18º publicado em março de 2024. O anime é produzido pelo estúdio <strong>Madhouse</strong> (T1–T3) e pela <strong>Studio Kai</strong> em colaboração (T4): T1 (julho–setembro 2015), T2 (janeiro–março 2018), T3 (julho–outubro 2018), T4 (julho–outubro 2022). O filme <strong>Sacred Kingdom</strong> (novembro de 2023) adapta os volumes 12 e 13. Disponível na <strong>Crunchyroll</strong>. Até maio de 2026, a <strong>Temporada 5 não foi oficialmente anunciada</strong>, mas Maruyama confirmou que a série ainda não terminou.
@@ -272,7 +274,6 @@ const OverlordGuiaCompleto = () => {
           Overlord faz algo que nenhum outro isekai mainstream ousou de forma consistente: <strong>Ainz Ooal Gown é objetivamente o vilão</strong>. Não um anti-herói com um coração de ouro escondido — um ser que conquista territórios, escraviza populações e executa planos que causam sofrimento em larga escala, tudo enquanto tenta descobrir se outros jogadores do seu MMORPG foram transportados para o mesmo mundo. A série se recusa a redenção fácil e a série é mais interessante por isso. O espectador torce por Ainz não apesar de suas ações, mas dentro delas — e essa tensão moral é o que mantém Overlord relevante enquanto outros isekais se esquecem.
         </p>
       </EditorialTake>
-
             <ArticleSources category="otaku"
         sources={[
           {

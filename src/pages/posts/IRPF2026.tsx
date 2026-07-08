@@ -439,11 +439,12 @@ const IRPF2026 = () => {
 
       <BackNavigation category="invest" />
 
+
+
       <EditorialTake category="invest" title="Análise do Marcos: a malha fina de 2026 está mais inteligente — sua declaração precisa estar também">
         <p>O IRPF 2026 chega com a nova tabela aprovada pela Lei 14.848/2024 ampliando a faixa de isenção, mas o ponto que ninguém comenta é que a Receita aumentou substancialmente o cruzamento automático de dados com corretoras via e-Financeira e com exchanges de criptomoedas. Quem investe em ETFs no exterior pela Lei 14.754/2023 precisa lançar tributação anual de 15% mesmo sem resgate, e quem opera na B3 acima de R$ 20 mil/mês em ações precisa de DARF mensal — sem isenção.</p>
         <p className="mt-3">Minha recomendação prática: feche o ano com extrato consolidado de todas as corretoras antes de março, e use a declaração pré-preenchida apenas como ponto de partida — nunca como verdade absoluta. Ela frequentemente não captura corretamente operações de cripto fora das exchanges reguladas, nem rendimentos de aluguel informados via carnê-leão de forma inconsistente. O investidor que separa 1 hora por mês para organizar documentos financeiros chega a março com a declaração praticamente pronta, evitando tanto erros quanto a corrida de última hora que costuma gerar omissões caras.</p>
       </EditorialTake>
-
       <ArticleSources category="invest" sources={[
         { title: 'Receita Federal — IRPF', url: 'https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda', publisher: 'Receita Federal do Brasil', accessedAt: "Maio 2026" },
         { title: 'Lei 14.754/2023 — Tributação Offshore e Cripto', url: 'https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/L14754.htm', publisher: 'Planalto', accessedAt: "Maio 2026" },

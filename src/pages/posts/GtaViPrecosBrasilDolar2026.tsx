@@ -268,6 +268,8 @@ const GtaViPrecosBrasilDolar2026 = () => {
           direto do publisher.
         </p>
 
+
+
         <EditorialTake category="geek">
           <p>
             Os R$ 449,90 da Standard são exatamente o que eu esperaria para um lançamento desse calibre em 2026 — não
@@ -279,7 +281,6 @@ const GtaViPrecosBrasilDolar2026 = () => {
             console, o Xbox Series S segue sendo o caminho de menor entrada na geração para jogar GTA VI no dia 1.
           </p>
         </EditorialTake>
-
         <ArticleSources
           category="geek"
           sources={[

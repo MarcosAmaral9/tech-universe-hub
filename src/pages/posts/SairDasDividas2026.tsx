@@ -615,6 +615,8 @@ const SairDasDividas2026 = () => {
 
         <BackNavigation category="invest" />
 
+
+
         <EditorialTake
           category="invest"
           title="Análise do Marcos: dívida não é falta de caráter — é falta de método"
@@ -643,7 +645,6 @@ const SairDasDividas2026 = () => {
             </strong>
           </p>
         </EditorialTake>
-
         <ArticleSources category="invest"
           sources={[
             {

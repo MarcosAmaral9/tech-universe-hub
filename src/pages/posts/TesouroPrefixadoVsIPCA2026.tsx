@@ -430,6 +430,8 @@ const TesouroPrefixadoVsIPCA2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake
         category="invest"
         title="Análise do Marcos: diversifique os três tipos — o mercado raramente avisa antes de mudar"
@@ -453,7 +455,6 @@ const TesouroPrefixadoVsIPCA2026 = () => {
           surpreende.
         </p>
       </EditorialTake>
-
       <ArticleSources category="invest"
         sources={[
           {

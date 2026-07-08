@@ -216,6 +216,8 @@ const PetroleoBrent125Ormuz2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="invest" title="Análise do Marcos: o que o Brent diz para sua carteira">
         <p>O Estreito de Ormuz é o gargalo geopolítico mais perigoso do planeta: cerca de <strong>20% do petróleo mundial</strong> passa por ali todo dia (US Energy Information Administration). Quando o Brent salta para US$ 125, o investidor brasileiro precisa pensar em <strong>três camadas</strong>: (1) Petrobras (PETR4) tende a se valorizar, mas o governo pode segurar preços na bomba e comer o lucro — risco político clássico do papel; (2) inflação importada pressiona o IPCA e atrasa cortes da Selic, ruim para small caps e setores dependentes de crédito; (3) o real tende a se valorizar quando o Brasil é exportador líquido de petróleo, mas o efeito é gradual e pode demorar trimestres para se refletir totalmente no câmbio.</p>
         <p className="mt-3">Não é trivial — quem comprou PETR4 "porque o petróleo subiu" em 2022 aprendeu na pele que a equação envolve política tarifária, não só preço internacional. Minha recomendação para quem já está exposto: não aumente posição em PETR4 só por causa do choque atual — se você já tem exposição via BOVA11 ou ações diretas, o ganho marginal de concentrar mais raramente compensa o risco adicional. Prefira usar o momento para reforçar Tesouro IPCA+ longo, que protege contra o efeito colateral mais certo deste evento: a inflação mais alta e persistente em 2026.</p>

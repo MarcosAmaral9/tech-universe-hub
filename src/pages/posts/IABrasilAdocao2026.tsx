@@ -205,6 +205,8 @@ const IABrasilAdocao2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: adoção é alta, maturidade ainda não">
         <p>O Brasil é o terceiro maior usuário do ChatGPT no mundo, mas a foto enganosa: <strong>uso de assistente conversacional não é adoção corporativa de IA</strong>. As pesquisas da McKinsey e do Gartner mostram que a maioria das empresas brasileiras ainda está em PoC ou em piloto isolado de marketing — pouca coisa em produção crítica. A barreira não é técnica, é de governança: LGPD, contratos com Big Tech americanas e a falta de cloud soberana para dados sensíveis (saúde, financeiro regulado) atrasam projetos. Quem quiser surfar isso profissionalmente em 2026 ganha mais aprendendo <strong>integração e segurança</strong> do que treinando modelos.</p>
         <p>

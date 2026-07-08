@@ -274,6 +274,8 @@ const Gemini25ProVsGPT4o = () => {
         </p>
 
       </div>
+
+
       <EditorialTake category="ia" title="Análise do Marcos: contexto longo vs. latência baixa">
         <p>Não existe vencedor universal entre Gemini 2.5 Pro e GPT-4o — existe match de caso de uso. Gemini ganha em <strong>tarefas com contexto gigante</strong> (PDFs longos, codebase inteira, transcrições) porque a janela de 1M+ tokens é real e funciona. GPT-4o ganha em <strong>latência e fluência conversacional</strong>, especialmente em PT-BR, onde a entonação e gírias soam mais naturais. Para quem está no Brasil pagando em dólar, recomendo: API do Gemini para back-office (análise de documentos, pesquisa) e GPT-4o para qualquer coisa que o usuário final ouça ou veja em tempo real.</p>
         <p>

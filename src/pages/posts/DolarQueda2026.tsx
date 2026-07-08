@@ -236,6 +236,8 @@ const DolarQueda2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="invest" title="Análise do Marcos: dólar barato não é convite para abandonar o exterior">
         <p>Toda vez que o real se aprecia, o brasileiro médio cancela o aporte em ativos internacionais — e historicamente é exatamente esse o pior momento para fazê-lo. <strong>Diversificação cambial é seguro, não aposta direcional</strong>. A regra que sigo: entre 15% e 30% do patrimônio em ativos dolarizados (BDRs, ETFs como IVVB11 ou conta no exterior), com aportes mensais constantes independente da cotação. Quem zera exposição quando o dólar cai costuma comprar de volta quando o real desvaloriza — destruindo retorno. O câmbio do dia importa menos que a disciplina de aportes ao longo de uma década.</p>
         <p className="mt-3">

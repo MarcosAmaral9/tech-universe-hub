@@ -284,13 +284,14 @@ const IbovespaRecordeSelic2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="invest" title="Análise do Marcos: Ibovespa em recorde não significa que qualquer ação está barata">
         <p>O Ibovespa em recorde com Selic ainda em patamar restritivo confirma o que venho falando: o mercado precifica corte antes do Copom efetivar. Historicamente, dos últimos cinco ciclos de afrouxamento brasileiros, em quatro o Ibov subiu 15%+ nos seis meses anteriores ao primeiro corte. A armadilha é entrar em small caps ilíquidas achando que vai pegar o próximo Magazine Luiza de 2018 — quem leu Damodaran sabe que reratings consistentes vêm de qualidade de negócio, não de "pulinhos" especulativos em papéis sem liquidez.</p>
         <p className="mt-2">
           Para quem está migrando da renda fixa pós-fixada agora, minha sugestão prática: separe a reserva de emergência (intocável) e migre o restante em parcelas mensais ao longo do segundo e terceiro trimestre de 2026, priorizando setores com fluxo de caixa previsível (utilities, bancos) antes de setores mais cíclicos (construção, varejo de luxo). Recordes de índice não são sinal de venda automática nem de compra automática — são sinal de que o regime mudou, e o regime novo exige seletividade maior do que o regime anterior, quando bastava estar em qualquer ativo de renda fixa para ter retorno excelente.
         </p>
       </EditorialTake>
-
       <ArticleSources category="invest" sources={[
         { title: 'B3 — Índices', url: 'https://www.b3.com.br/pt_br/market-data-e-indices/indices/', publisher: 'B3', accessedAt: "Maio 2026" },
         { title: 'Banco Central — Histórico da Selic', url: 'https://www.bcb.gov.br/controleinflacao/historicotaxasjuros', publisher: 'Banco Central do Brasil', accessedAt: "Maio 2026" },

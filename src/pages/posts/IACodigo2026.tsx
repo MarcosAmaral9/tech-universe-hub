@@ -192,12 +192,13 @@ const IACodigo2026 = () => {
         </ol>
       </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: IA de código é para refatorar legado, não só escrever rápido">
         <p>
           Depois de testar Copilot, Cursor e Claude Code em produção, o ganho real não está em escrever código mais rápido — está em revisar, refatorar e documentar o legado que ninguém queria tocar. O Claude Code com 80,8% no SWE-bench e contexto de 1M tokens é hoje a ferramenta mais poderosa para quem precisa entender e evoluir bases grandes. O Cursor lidera em velocidade de iteração. O Copilot lidera em acessibilidade e custo. Para o desenvolvedor brasileiro em 2026: se você ainda não usa nenhuma dessas ferramentas, está deixando 20–35% de produtividade na mesa. Se usa mas aceita código sem revisar, está gerando dívida técnica e risco de segurança. O segredo é tratar a IA como par programador sênior que às vezes alucina — não como oráculo infalível.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "NxCode — Cursor vs Claude Code vs GitHub Copilot 2026", url: "https://www.nxcode.io/resources/news/cursor-vs-claude-code-vs-github-copilot-2026-ultimate-comparison", publisher: "NxCode", accessedAt: "Maio 2026" },
         { title: "Tech-Insider — Claude Code vs GitHub Copilot 2026", url: "https://tech-insider.org/claude-code-vs-github-copilot-2026/", publisher: "Tech-Insider", accessedAt: "Maio 2026" },

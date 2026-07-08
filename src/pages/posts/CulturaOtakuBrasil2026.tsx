@@ -223,6 +223,13 @@ const CulturaOtakuBrasil2026 = () => {
           O crescimento do cosplay como profissão é outro dado relevante. Em 2026, centenas de cosplayers brasileiros sustentam parte ou toda sua renda com patrocínios, venda de prints, workshops de confecção e aparições pagas em eventos. Criadores de conteúdo sobre anime e mangá no YouTube têm canais com audiências de 500 mil a 5 milhões de inscritos. O mercado de dublagem — ainda centralizado em São Paulo e Rio de Janeiro — absorve talentos que começaram em fan dubs amadores nos anos 2000 e hoje trabalham profissionalmente. Isso não é nicho: é indústria.
         </p>
 
+        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
+          <h3 className="text-xl font-bold mb-2">Qual foi seu primeiro contato com a cultura otaku? 🎌</h3>
+          <p className="text-muted-foreground">Conta nos comentários — Cavaleiros do Zodíaco? Dragon Ball? Naruto? Cada história é diferente! 👇</p>
+        </div>
+      </div>
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: o Brasil otaku que o Japão não esperava">
         <p>
           Vale destacar o contexto histórico que torna a relação do Brasil com o anime especialmente profunda em comparação com outros países ocidentais: a maior comunidade japonesa fora do Japão está no Brasil — estimada em cerca de 1,5 a 2 milhões de pessoas de origem japonesa, concentradas principalmente em São Paulo — e essa presença criou canais de distribuição e influência cultural que outros mercados ocidentais simplesmente não tinham. Muito antes do anime chegar à Europa ou ao mercado anglófono de forma mainstream, o Brasil já tinha acesso a produções japonesas via essa comunidade. Esse histórico ajuda a explicar por que o fandom otaku brasileiro tem raízes tão profundas e por que eventos como a Anime Friends e a CCXP conseguem mobilizar centenas de milhares de pessoas em um único fim de semana — uma escala difícil de reproduzir em qualquer outro país ocidental do mundo.
@@ -234,13 +241,6 @@ const CulturaOtakuBrasil2026 = () => {
           Cresci assistindo Cavaleiros do Zodíaco escondido porque minha família achava que anime era coisa de criança. Hoje minha sobrinha de 8 anos tem uma estante cheia de mangás e meu cunhado de 45 anos assiste One Piece com ela. <strong>Essa travessia geracional é o dado mais importante da cultura otaku brasileira</strong> — ela deixou de ser identidade de nicho para ser parte da cultura pop geral. O que o Japão não esperava era a força criativa do fã brasileiro. Os cosplayers, os YouTubers, os dubladores amadores que depois viraram profissionais — o Brasil não apenas consumiu a cultura otaku, mas a reprocessou com identidade própria.
         </p>
       </EditorialTake>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Qual foi seu primeiro contato com a cultura otaku? 🎌</h3>
-          <p className="text-muted-foreground">Conta nos comentários — Cavaleiros do Zodíaco? Dragon Ball? Naruto? Cada história é diferente! 👇</p>
-        </div>
-      </div>
-
       <ArticleSources category="otaku"
         sources={[
           {

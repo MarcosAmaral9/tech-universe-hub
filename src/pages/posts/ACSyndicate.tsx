@@ -307,22 +307,6 @@ const ACSyndicate = () => {
           gameplay de Unity mas não da performance, <strong>Syndicate</strong> é a escolha certa.
         </p>
 
-        <EditorialTake category="geek" title="Análise do Marcos: Syndicate é o AC que o público subestimou">
-          <p>
-            <strong>Assassin's Creed Syndicate</strong> foi injustamente ofuscado pela sequência imediata
-            de Unity, que havia decepcionado tanto que muitos jogadores simplesmente pularam Syndicate.
-            Mas quem jogou sabe: a <strong>dualidade Jacob/Evie funciona muito bem</strong>. Jacob para
-            quem quer arrasar em combate com um sorriso no rosto, Evie para quem quer a experiência
-            clássica de furtividade. É como ter dois jogos num só.
-          </p>
-          <p>
-            O DLC Jack, o Estripador é, na minha opinião, <strong>o melhor DLC de toda a franquia</strong>.
-            O tom muda completamente — de aventura de ação para quasi-horror policial vitoriano — e a
-            história de Evie mais velha investigando os assassinatos é muito bem escrita. Se você comprar
-            só pelo DLC, já vale o preço.
-          </p>
-        </EditorialTake>
-
         {/* Jacob e Evie */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Swords className="h-7 w-7 text-gray-400" />
@@ -834,6 +818,22 @@ const ACSyndicate = () => {
         </div>
       </div>
 
+
+        <EditorialTake category="geek" title="Análise do Marcos: Syndicate é o AC que o público subestimou">
+          <p>
+            <strong>Assassin's Creed Syndicate</strong> foi injustamente ofuscado pela sequência imediata
+            de Unity, que havia decepcionado tanto que muitos jogadores simplesmente pularam Syndicate.
+            Mas quem jogou sabe: a <strong>dualidade Jacob/Evie funciona muito bem</strong>. Jacob para
+            quem quer arrasar em combate com um sorriso no rosto, Evie para quem quer a experiência
+            clássica de furtividade. É como ter dois jogos num só.
+          </p>
+          <p>
+            O DLC Jack, o Estripador é, na minha opinião, <strong>o melhor DLC de toda a franquia</strong>.
+            O tom muda completamente — de aventura de ação para quasi-horror policial vitoriano — e a
+            história de Evie mais velha investigando os assassinatos é muito bem escrita. Se você comprar
+            só pelo DLC, já vale o preço.
+          </p>
+        </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {

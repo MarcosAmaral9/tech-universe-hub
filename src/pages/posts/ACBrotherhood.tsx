@@ -137,22 +137,6 @@ const ACBrotherhood = () => {
           evoluir de novato a Mestre Assassino é uma progressão incrivelmente satisfatória.
         </p>
 
-        <EditorialTake category="geek" title="Análise do Marcos: Brotherhood é o AC mais viciante da trilogia Ezio">
-          <p>
-            Das três aventuras de Ezio, <strong>Brotherhood</strong> é a que me fez jogar
-            mais horas sem perceber. O loop de destruir Torres de Borgia, recrutar Assassinos,
-            enviá-los em missões pela Europa e chamá-los quando precisava de ajuda criou uma
-            dependência que poucos jogos conseguem replicar. É gameplay de gestão disfarçado
-            de ação, e funciona perfeitamente.
-          </p>
-          <p>
-            O final com Lucy ainda me incomoda. Não pela execução em si, mas porque a Ubisoft
-            nunca resolveu adequadamente o arco de Desmond depois disso. Brotherhood plantou
-            uma bomba narrativa que AC3 não soube detonar direito. Mesmo assim, o jogo em si
-            é excelente — e o modo multiplayer assimétrico foi genial para sua época.
-          </p>
-        </EditorialTake>
-
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-amber-400" />
           Contexto Histórico: Roma dos Bórgias (1499–1507)
@@ -396,6 +380,22 @@ const ACBrotherhood = () => {
         </div>
       </div>
 
+
+        <EditorialTake category="geek" title="Análise do Marcos: Brotherhood é o AC mais viciante da trilogia Ezio">
+          <p>
+            Das três aventuras de Ezio, <strong>Brotherhood</strong> é a que me fez jogar
+            mais horas sem perceber. O loop de destruir Torres de Borgia, recrutar Assassinos,
+            enviá-los em missões pela Europa e chamá-los quando precisava de ajuda criou uma
+            dependência que poucos jogos conseguem replicar. É gameplay de gestão disfarçado
+            de ação, e funciona perfeitamente.
+          </p>
+          <p>
+            O final com Lucy ainda me incomoda. Não pela execução em si, mas porque a Ubisoft
+            nunca resolveu adequadamente o arco de Desmond depois disso. Brotherhood plantou
+            uma bomba narrativa que AC3 não soube detonar direito. Mesmo assim, o jogo em si
+            é excelente — e o modo multiplayer assimétrico foi genial para sua época.
+          </p>
+        </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {

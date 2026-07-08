@@ -230,6 +230,8 @@ const ReZeroTemporada4 = () => {
           Para quem assistiu as temporadas anteriores mas perdeu detalhes, os elementos mais importantes para manter em mente na T4: a natureza exata do poder de Subaru e seus limites; o destino de Rem e o que significa ter nome e memórias apagados; a relação entre Roswaal e o Livro do Futuro; e as cinco Grandes Bruxas — quem são, quais poderes possuem e como se relacionam com o mundo atual. A Crunchyroll tem todas as temporadas disponíveis com legendas em português. O recap especial que a White Fox costuma lançar antes de cada temporada cobre os eventos essenciais em cerca de 25 minutos.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: Re:Zero T4 é onde as peças colocadas em três temporadas finalmente se encaixam">
         <p>
           Re:Zero − Starting Life in Another World é uma light novel de <strong>Tappei Nagatsuki</strong>, ilustrada por <strong>Shinichirou Otsuka</strong>, publicada pela <strong>Media Factory</strong> (Kadokawa) desde 2012 — 40+ volumes publicados. O anime é produzido pelo <strong>White Fox</strong>. As T1 e T2 estão disponíveis na <strong>Crunchyroll</strong>. A <strong>Temporada 4 estreou em abril de 2026</strong> na Crunchyroll com 25 episódios previstos, cobrindo o Arco 6 da light novel — o Arco da Torre de Plêiades.

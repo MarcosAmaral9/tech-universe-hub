@@ -159,22 +159,6 @@ const ACRogue = () => {
           <strong> AC Rogue</strong> permanece relevante mais de uma década depois do lançamento.
         </p>
 
-        <EditorialTake category="geek" title="Análise do Marcos: por que AC Rogue é o jogo mais corajoso da franquia">
-          <p>
-            Acompanho a franquia Assassin's Creed desde o primeiro jogo em 2007, e <strong>Rogue continua sendo
-            o mais corajoso</strong> em termos narrativos. Enquanto outros jogos apostam na grandiosidade —
-            mundos enormes, sistemas de RPG complexos, gráficos de ponta — Rogue vai na contramão: entrega
-            um jogo menor, mais focado, e usa isso para contar uma história que nenhum outro da série teve
-            coragem de contar.
-          </p>
-          <p>
-            A cena do terremoto de Lisboa é perturbadora de propósito. A Ubisoft Sofia queria que o
-            jogador sentisse a culpa de Shay, e conseguiu. Recomendo muito para quem jogou Black Flag e
-            quer entender por que Achilles estava tão amargurado em AC III — a conexão entre os dois jogos
-            é uma das melhores pontes narrativas da franquia inteira.
-          </p>
-        </EditorialTake>
-
         {/* Contexto Histórico */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <MapPin className="h-7 w-7 text-cyan-400" />
@@ -687,6 +671,22 @@ const ACRogue = () => {
         </div>
       </div>
 
+
+        <EditorialTake category="geek" title="Análise do Marcos: por que AC Rogue é o jogo mais corajoso da franquia">
+          <p>
+            Acompanho a franquia Assassin's Creed desde o primeiro jogo em 2007, e <strong>Rogue continua sendo
+            o mais corajoso</strong> em termos narrativos. Enquanto outros jogos apostam na grandiosidade —
+            mundos enormes, sistemas de RPG complexos, gráficos de ponta — Rogue vai na contramão: entrega
+            um jogo menor, mais focado, e usa isso para contar uma história que nenhum outro da série teve
+            coragem de contar.
+          </p>
+          <p>
+            A cena do terremoto de Lisboa é perturbadora de propósito. A Ubisoft Sofia queria que o
+            jogador sentisse a culpa de Shay, e conseguiu. Recomendo muito para quem jogou Black Flag e
+            quer entender por que Achilles estava tão amargurado em AC III — a conexão entre os dois jogos
+            é uma das melhores pontes narrativas da franquia inteira.
+          </p>
+        </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {

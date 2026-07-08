@@ -285,6 +285,8 @@ const FIIsDefensivosAbril2026 = () => {
           ⚠️ Artigo educacional. Não constitui recomendação de investimento. Consulte um assessor certificado.
         </p>
       </div>
+
+
       <EditorialTake category="invest" title="Análise do Marcos: defensivo de verdade é vacância baixa e contrato longo">
         <p>'FII defensivo' virou rótulo de marketing, mas na prática só dois critérios separam um fundo verdadeiramente resiliente de um que vai sangrar quando a Selic cai e a economia desacelera: <strong>vacância física abaixo de 5% e prazo médio de contrato (WAULT) acima de 5 anos</strong>. Tudo o mais — segmento, gestora, dividend yield — é secundário. Em logística, KNRI11 e BTLG11 continuam casos clássicos; em corporate, alguns fundos de lajes AAA em São Paulo seguem bem posicionados. Atenção ao yield aparente: FII pagando 1,2% a.m. com vacância de 18% é trator descendo a ladeira sem freio.</p>
         <p className="mt-2">

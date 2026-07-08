@@ -278,6 +278,8 @@ const EldenRingNightreign2026 = () => {
 
       </div>
 
+
+
       <EditorialTake category="geek" title="Análise do Marcos: vale o investimento para o jogador brasileiro?">
         <p>
           Como entusiasta de Souls-likes que já passou centenas de horas em Elden Ring base, encaro
@@ -290,7 +292,6 @@ const EldenRingNightreign2026 = () => {
           recomendo começar pelo base — Nightreign é uma experiência complementar, não substituta.
         </p>
       </EditorialTake>
-
       <ArticleSources category="geek"
         sources={[
           { title: "Elden Ring Nightreign — site oficial", url: "https://en.bandainamcoent.eu/elden-ring/elden-ring-nightreign", publisher: "Bandai Namco", accessedAt: "Maio 2026" },

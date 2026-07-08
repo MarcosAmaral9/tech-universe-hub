@@ -141,23 +141,6 @@ const ACRevelations = () => {
           inovador, mas certamente o mais maduro narrativamente.
         </p>
 
-        <EditorialTake category="geek" title="Análise do Marcos: Revelations é a despedida que Ezio e Altaïr mereciam">
-          <p>
-            Quando finalmente abri a Biblioteca de Altaïr com Ezio em{" "}
-            <strong>Revelations</strong> e ouvi o discurso final de Ezio para Desmond (e para
-            o jogador), precisei pausar o jogo. Mais de 60 horas de jornada com Ezio — desde
-            sua adolescência em AC2 — condensadas num único momento de despedida. A Ubisoft
-            raramente acerta emocionalmente assim.
-          </p>
-          <p>
-            O sistema de craft de bombas é subestimado. Com tempo, você descobre combinações
-            absurdamente criativas — bombas de atração que grudam guardas em paredes, granadas
-            que fingem ser civis e explodem no meio de patrulhas. É o sistema de furtividade
-            mais versátil dos três jogos da trilogia. O tower defense é irritante, concordo,
-            mas ocorre raramente o suficiente para não arruinar a experiência.
-          </p>
-        </EditorialTake>
-
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-amber-400" />
           Contexto Histórico: Constantinopla (1511–1512)
@@ -390,6 +373,23 @@ const ACRevelations = () => {
         </div>
       </div>
 
+
+        <EditorialTake category="geek" title="Análise do Marcos: Revelations é a despedida que Ezio e Altaïr mereciam">
+          <p>
+            Quando finalmente abri a Biblioteca de Altaïr com Ezio em{" "}
+            <strong>Revelations</strong> e ouvi o discurso final de Ezio para Desmond (e para
+            o jogador), precisei pausar o jogo. Mais de 60 horas de jornada com Ezio — desde
+            sua adolescência em AC2 — condensadas num único momento de despedida. A Ubisoft
+            raramente acerta emocionalmente assim.
+          </p>
+          <p>
+            O sistema de craft de bombas é subestimado. Com tempo, você descobre combinações
+            absurdamente criativas — bombas de atração que grudam guardas em paredes, granadas
+            que fingem ser civis e explodem no meio de patrulhas. É o sistema de furtividade
+            mais versátil dos três jogos da trilogia. O tower defense é irritante, concordo,
+            mas ocorre raramente o suficiente para não arruinar a experiência.
+          </p>
+        </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {

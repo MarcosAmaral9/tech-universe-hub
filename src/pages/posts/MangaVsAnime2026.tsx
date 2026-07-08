@@ -295,6 +295,13 @@ const MangaVsAnime2026 = () => {
           No fim das contas, a decisão de "por onde entrar" também deveria considerar o tempo disponível de cada pessoa: assistir a um anime de 24 episódios costuma exigir entre 8 e 10 horas, enquanto ler o equivalente em mangá — dependendo da densidade de texto e do ritmo de leitura individual — pode levar bem menos tempo para leitores experientes. Para quem tem pouco tempo livre e quer simplesmente saber "o que acontece" numa franquia popular antes de discutir com amigos, o mangá costuma ser o caminho mais rápido; para quem busca a experiência completa de imersão sensorial — som, movimento, ritmo de câmera — o anime continua insubstituível, mesmo quando tecnicamente menos fiel ao material original.
         </p>
 
+        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
+          <h3 className="text-xl font-bold mb-2">Mangá ou Anime: qual você prefere? 📚📺</h3>
+          <p className="text-muted-foreground">E qual foi a adaptação que mais te decepcionou — ou surpreendeu? Conta nos comentários! 👇</p>
+        </div>
+      </div>
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: a adaptação supera o mangá quando quatro condições se alinham">
         <p>
           Acompanho adaptações de mangá há mais de 15 anos e o padrão é consistente: <strong>FMA Brotherhood</strong> (Bones, 2009 — nota 9,10 no MAL, top 2 histórico), <strong>Mushishi</strong> (Artland) e <strong>Vinland Saga T2</strong> (MAPPA) compartilham o mesmo DNA — estúdio comprometido, diretor com visão e trilha que amplifica o material. As adaptações lendariamente problemáticas — Berserk 2016 (CGI malfeito), Tokyo Ghoul √A (roteiro original), Promised Neverland T2 (arcos cortados) e Seven Deadly Sins a partir da T3 (queda de qualidade na Studio Deen) — todas falharam em pelo menos dois dos quatro critérios.
@@ -303,13 +310,6 @@ const MangaVsAnime2026 = () => {
           A adaptação supera o mangá quando estúdio competente + diretor com visão + compositor relevante + respeito ao ritmo original se alinham. Falhar em qualquer uma já compromete o resultado — às vezes irreversivelmente. Para o leitor/espectador, a regra prática mais útil é: se a adaptação tem reputação ruim em critérios técnicos (qualidade de animação, fidelidade ao roteiro), vá ao mangá. Se a adaptação tem reputação de adicionar camadas (trilha sonora, direção de arte, voice acting), assista primeiro. Raramente os dois são verdadeiros ao mesmo tempo.
         </p>
       </EditorialTake>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Mangá ou Anime: qual você prefere? 📚📺</h3>
-          <p className="text-muted-foreground">E qual foi a adaptação que mais te decepcionou — ou surpreendeu? Conta nos comentários! 👇</p>
-        </div>
-      </div>
-
       <ArticleSources category="otaku"
         sources={[
           {

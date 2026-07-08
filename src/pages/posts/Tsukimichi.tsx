@@ -180,6 +180,8 @@ const Tsukimichi = () => {
           A dinâmica com Makoto funciona porque a série não trata os três como mestre-e-servos no sentido hierárquico simples. Makoto frequentemente consulta Tomoe e Mio, ouve perspectivas que não considerou, e revisa seus planos baseado no input delas. É uma parceria horizontal disfarçada de hierarquia — e essa honestidade sobre o que a relação realmente é dá às três dinâmicas substância que a maioria dos trios de harem não tem.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: Tsukimichi é o isekai que cresceu sem hype e ganhou com consistência">
         <p>
           Um aspecto relevante do posicionamento de Tsukimichi no mercado de isekai é como a série construiu uma audiência fiel sem os picos de hype que acompanham títulos como Solo Leveling ou Jujutsu Kaisen. A light novel de Azumi Kei existe desde 2015 — publicada pela Alphapolis, editora especializada em light novels de origem web que inclui no catálogo outras obras como "In Another World With My Smartphone" — e acumulou sua fanbase de forma orgânica e gradual ao longo de quase uma década antes de ganhar a adaptação em anime. Esse tipo de construção de audiência "slow burn" é parte do que explica o nivel de engajamento acima da média da comunidade de Tsukimichi: os fãs que chegaram através da light novel antes do anime são geralmente leitores de longa data com investimento emocional profundo na série, o que cria uma base de suporte estável para futuras temporadas mesmo sem campanhas de marketing agressivas.
@@ -191,7 +193,6 @@ const Tsukimichi = () => {
           Tsukimichi Moonlit Fantasy é o isekai que a comunidade que acompanha o gênero há anos tende a descobrir depois — não é o primeiro título que aparece numa busca de 'melhores isekais', mas quem chega a ele raramente se arrepende. Makoto é um protagonista que a série leva a sério: seus erros têm consequências, seu crescimento é gradual, e a dinâmica com Tomoe e Mio tem textura de relação real em vez de harem convencional. Para quem está com fadiga dos protagonistas invulneráveis desde o episódio 1, Tsukimichi oferece uma alternativa com substância.
         </p>
       </EditorialTake>
-
       <ArticleSources category="otaku"
         sources={[
           {

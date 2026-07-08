@@ -176,6 +176,8 @@ const IAGenerativaIniciantes2026 = () => {
 
       </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: 15 minutos por dia de prática vale mais do que qualquer curso de IA">
         <p>
           Os modelos generativos mais relevantes em 2026 são Claude Opus 4 (Anthropic), GPT-4o e o3 (OpenAI), Gemini 2.5 Pro (Google) e Llama 4 (Meta, open source). O segredo não é decorar prompts complicados — é praticar diálogo iterativo. Faça uma pergunta, refine com "agora aplique X", "agora resuma em 3 bullets". Em 30 dias de uso diário de 15 minutos, o ganho de produtividade médio reportado por estudos da Harvard Business School e Microsoft é de <strong>25–40%</strong> em tarefas de escrita, programação e análise.
@@ -184,7 +186,6 @@ const IAGenerativaIniciantes2026 = () => {
           Para o usuário brasileiro iniciante: comece com <strong>ChatGPT gratuito + Perplexity gratuito</strong>. Custo zero, cobre 80% das necessidades. Só assine plano pago quando bater no limite do gratuito consistentemente por 2 semanas. E nunca cole dado de cliente sem verificar a política da plataforma — o risco LGPD é real.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "Stanford HAI — AI Index Report 2024", url: "https://hai.stanford.edu/research/ai-index-2024", publisher: "Stanford HAI", accessedAt: "Maio 2026" },
         { title: "Harvard Business School — Navigating the Jagged Technological Frontier", url: "https://www.hbs.edu/faculty/Pages/item.aspx?num=64700", publisher: "HBS", accessedAt: "Maio 2026" },

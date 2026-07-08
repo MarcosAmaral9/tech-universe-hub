@@ -228,6 +228,8 @@ const GtaViTrailersMarketing2026 = () => {
           ser o lançamento de entretenimento mais lucrativo da história em uma única janela de tempo.
         </p>
 
+
+
         <EditorialTake category="geek">
           <p>
             Marketing de GTA VI é mais do que estratégia comercial: virou pedagogia involuntária sobre como comunicar
@@ -239,7 +241,6 @@ const GtaViTrailersMarketing2026 = () => {
             novembro o que os trailers prometem, vai ser também um manual de gestão de expectativa cumprida.
           </p>
         </EditorialTake>
-
         <ArticleSources
           category="geek"
           sources={[

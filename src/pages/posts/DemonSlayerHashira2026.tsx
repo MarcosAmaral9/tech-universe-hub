@@ -171,6 +171,8 @@ const DemonSlayerHashira2026 = () => {
           Tanjiro Kamado é o único caçador da era atual que aprende a Respiração Solar de forma direta — através de uma dança ritual preservada por sua família por gerações. Essa revelação no arco do Castelo Infinity é um dos momentos de maior impacto narrativo de toda a série, conectando a origem da Corporação de Extermínio com a família de Tanjiro de maneiras que remontam a Yoriichi.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: os Hashira são o coração narrativo de Demon Slayer — e o anime de Ufotable fez jus a cada um">
         <p>
           Demon Slayer: Kimetsu no Yaiba é uma obra de <strong>Koyoharu Gotouge</strong>, serializada na Weekly Shōnen Jump de fevereiro de 2016 a maio de 2020 — 205 capítulos, 23 volumes. O anime é produzido pela <strong>Ufotable</strong> e se tornou o anime mais rentável da história do Japão em bilheteria (considerando o filme Mugen Train, com mais de 30 bilhões de ienes arrecadados no Japão). Os filmes do arco final, cobrindo o Castelo Infinity e o Amanhecer, estão em produção para 2026.
@@ -179,7 +181,6 @@ const DemonSlayerHashira2026 = () => {
           O que Ufotable fez pelos Hashira vai além da animação espetacular dos combates: cada personagem recebeu um tratamento de direção de arte específico — paleta de cores, música tema e ritmo de cena que refletem a personalidade da técnica de cada Pilar. Rengoku tem calor e amplitude. Muichiro tem distância etérea. Giyu tem contenção e peso. Esse cuidado de direção é o que transforma batalhas potencialmente genéricas em momentos que a comunidade discute por anos.
         </p>
       </EditorialTake>
-
         <ArticleSources category="otaku" sources={[
     { title: 'Demon Slayer — Site Oficial', url: 'https://kimetsu.com/anime/', publisher: 'Aniplex/Ufotable', accessedAt: "Maio 2026" },
     { title: 'Crunchyroll — Demon Slayer', url: 'https://www.crunchyroll.com/series/GY5P48XEY/demon-slayer-kimetsu-no-yaiba', publisher: 'Crunchyroll', accessedAt: "Maio 2026" },

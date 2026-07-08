@@ -149,6 +149,8 @@ const IACriatividade2026 = () => {
         </ul>
       </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: quem vai pagar pelo treinamento com obras brasileiras sem licença?">
         <p>
           O encerramento do Sora em março de 2026 foi sintomático: um produto lançado com política de opt-out que enfrentou resistência tão organizada da indústria criativa que acabou inviabilizado comercialmente. A lição é que IA criativa sem licenciamento claro das obras de treinamento tem vida curta. A discussão real no Brasil não é "substitui o artista?" — é quem vai pagar pelo treinamento dos modelos com obras de artistas brasileiros sem licença. Enquanto os EUA debatem fair use e a UE avança com opt-out obrigatório via AI Act, nós ainda não temos jurisprudência clara. Recomendo a todo criador registrar obras (Biblioteca Nacional ou cartório) antes de publicar e ativar C2PA quando possível. O Adobe Firefly é hoje a opção mais segura juridicamente e tecnicamente para uso comercial justamente por ser treinado exclusivamente em conteúdo licenciado ou de domínio público, oferecendo cobertura de indenização comercial para outputs gerados com a ferramenta.
@@ -160,7 +162,6 @@ const IACriatividade2026 = () => {
           O risco real não é a substituição — é a homogeneização estética. Quando milhares de criadores usam os mesmos modelos com prompts similares, os outputs começam a convergir para um estilo visualmente genérico que a indústria já chama de "AI slop". Os criadores que mais vão se proteger disso são exatamente os que usam IA como ferramenta de aceleração do próprio estilo, não como substituto do desenvolvimento de um estilo próprio. A distinção entre esses dois usos é justamente o que vai separar, nos próximos anos, os profissionais criativos que se beneficiam da IA dos que serão gradualmente pressionados por ela — uma distinção que o mercado de trabalho criativo já está começando a fazer em 2026, premiando quem usa IA para ampliar e acelerar voz própria, não quem a usa como atalho para evitar o processo longo e necessário de desenvolver uma identidade criativa reconhecível e sustentável.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "Estado de Minas — Sora da OpenAI será encerrado em 2026", url: "https://www.em.com.br/trends/2026/04/7400071-sora-da-openai-sera-encerrado-entenda-a-ia-que-criava-videos.html", publisher: "Estado de Minas", accessedAt: "Maio 2026" },
         { title: "Casa do Dev — OpenAI reverte política de direitos autorais do Sora", url: "https://casado.dev/openai-reverte-politica-direitos-autorais-sora", publisher: "Casa do Dev", accessedAt: "Maio 2026" },

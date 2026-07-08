@@ -527,6 +527,8 @@ const BannerlordArvoresTropas = () => {
           ))}
         </div>
 
+
+
         <EditorialTake category="geek">
           <p>
             A graça da árvore de tropas em Bannerlord é que não existe escolha "ruim" — só escolhas inadequadas ao
@@ -536,7 +538,6 @@ const BannerlordArvoresTropas = () => {
             você consegue projetar poder pelo mar — ou se assiste a sua costa ser saqueada sem reação.
           </p>
         </EditorialTake>
-
         <ArticleSources
           category="geek"
           sources={[

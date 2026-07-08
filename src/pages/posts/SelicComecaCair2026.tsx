@@ -429,6 +429,8 @@ const SelicComecaCair2026 = () => {
 
       <BackNavigation category="invest" />
 
+
+
       <EditorialTake
         category="invest"
         title="Análise do Marcos: ciclo de queda da Selic é a janela mais previsível do mercado"
@@ -453,7 +455,6 @@ const SelicComecaCair2026 = () => {
           esse risco é real e deve ser dimensionado no tamanho da posição.
         </p>
       </EditorialTake>
-
       <ArticleSources category="invest"
         sources={[
           {

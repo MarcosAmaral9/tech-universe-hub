@@ -325,11 +325,11 @@ const GtaViNovembro2026 = () => {
       </div>
 
 
+
+
       <EditorialTake category="geek" title="Análise do Marcos: dois adiamentos, um lançamento que vale a espera">
           <p>Depois de adiamentos sucessivos (de outono de 2025 → 26 de maio de 2026 → 19 de novembro de 2026), a Take-Two confirmou em maio/2026 que a janela de novembro é definitiva. A pré-venda foi oficialmente aberta em 25 de junho de 2026 com preços confirmados pela Rockstar: <strong>US$ 79,99 (Standard)</strong> e <strong>US$ 99,99 (Ultimate)</strong> nos EUA, e <strong>R$ 449,90 (Standard)</strong> e <strong>R$ 549,90 (Ultimate)</strong> no Brasil — valores divulgados na Rockstar Store e replicados nas lojas PlayStation e Xbox. Para quem espera o jogo desde 2013, o pedágio é alto, mas coerente com o reposicionamento de preço da geração: é o mesmo patamar de NBA 2K e dos AAAs first-party da Sony.</p>
         </EditorialTake>
-
-
         <ArticleSources category="geek" sources={[
     { title: 'Rockstar Games — GTA VI Newsroom', url: 'https://www.rockstargames.com/VI', publisher: 'Rockstar Games', accessedAt: "Maio 2026" },
     { title: 'Take-Two Interactive — Investor Relations', url: 'https://www.take2games.com/ir/', publisher: 'Take-Two', accessedAt: "Maio 2026" },

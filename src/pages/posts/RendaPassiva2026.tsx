@@ -514,6 +514,8 @@ const RendaPassiva2026 = () => {
           começa a se manifestar de forma mais visível no extrato.
         </p>
 
+
+
         <EditorialTake
           category="invest"
           title="Análise do Marcos: renda passiva é maratona — o começo importa mais que a velocidade"
@@ -537,7 +539,6 @@ const RendaPassiva2026 = () => {
             do que quem espera ter R$ 2.000/mês para começar "de verdade".
           </p>
         </EditorialTake>
-
         <ArticleSources category="invest"
           sources={[
             {

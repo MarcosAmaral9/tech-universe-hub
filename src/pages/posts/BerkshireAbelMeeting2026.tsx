@@ -224,6 +224,8 @@ const BerkshireAbelMeeting2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="invest" title="Análise do Marcos: por que o investidor brasileiro deveria olhar">
         <p>
           O caixa de US$ 397 bilhões da Berkshire não é só "Buffett conservador" — é uma posição
@@ -246,7 +248,6 @@ const BerkshireAbelMeeting2026 = () => {
           longo prazo.
         </p>
       </EditorialTake>
-
       <ArticleSources category="invest"
         sources={[
           { title: "Berkshire Hathaway — Annual & Quarterly Reports", url: "https://www.berkshirehathaway.com/reports.html", publisher: "Berkshire Hathaway Inc.", accessedAt: "Maio 2026" },

@@ -228,6 +228,8 @@ const GtaViPreVendaEdicoes2026 = () => {
           X, ativar notificações e estar pronto para entrar na loja minutos depois do trailer.
         </p>
 
+
+
         <EditorialTake category="geek">
           <p>
             Pré-venda de jogo não é, e nunca foi, uma decisão racional sob a ótica do consumidor. Você está pagando hoje
@@ -242,7 +244,6 @@ const GtaViPreVendaEdicoes2026 = () => {
             existe se mudar de ideia.
           </p>
         </EditorialTake>
-
         <ArticleSources
           category="geek"
           sources={[

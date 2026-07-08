@@ -438,6 +438,8 @@ const Avatar3FogoECinzas = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="geek" title="Análise do Marcos: Fire and Ash aposta no lado sombrio — uma escolha corajosa">
         <p>
           Depois de <strong>O Caminho da Água</strong> focar nos Metkayina aquáticos com uma
@@ -459,7 +461,6 @@ const Avatar3FogoECinzas = () => {
           único no cinema de blockbuster.
         </p>
       </EditorialTake>
-
       <ArticleSources
         sources={[
           {

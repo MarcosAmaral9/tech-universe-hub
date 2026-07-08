@@ -584,6 +584,8 @@ const BannerlordCulturasReinos = () => {
 
 
 
+
+
         <EditorialTake category="geek" title="Análise do Marcos: As Culturas de Bannerlord São o Verdadeiro Coração Estratégico do Jogo">
           <p>
             A graça de Bannerlord é justamente a tensão entre culturas: cada facção tem identidade visual, sonora e
@@ -592,7 +594,6 @@ const BannerlordCulturasReinos = () => {
             casual do veterano de 500 horas.
           </p>
         </EditorialTake>
-
         <ArticleSources
           category="geek"
           sources={[

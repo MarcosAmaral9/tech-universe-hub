@@ -308,6 +308,8 @@ const CDB2026Guia = () => {
 
       </div>
 
+
+
       <EditorialTake category="invest" title="Análise do Marcos: CDB de grande banco é cilada silenciosa">
         <p>
           O erro mais comum que vejo entre investidores iniciantes é aceitar o CDB que o gerente do banco oferece — geralmente 80% a 90% do CDI — por comodidade. Em 2026, com plataformas digitais oferecendo 110% a 115% do CDI com o mesmo FGC, aceitar 80% significa jogar fora entre 2 e 4 pontos percentuais de rentabilidade por ano. Em R$ 50.000 por 3 anos, essa diferença passa de R$ 5.000 no bolso.
@@ -316,7 +318,6 @@ const CDB2026Guia = () => {
           Minha recomendação prática: use o <strong>CDB com liquidez diária a 100% CDI</strong> para a reserva de emergência (tem em praticamente todos os bancos digitais) e, para o dinheiro com prazo definido acima de 2 anos, compare sempre com LCI e LCA antes de fechar. O CDB vence a LCI apenas quando oferece 118%+ do CDI — o que existe, mas exige pesquisa ativa. <strong>Preguiça financeira tem custo.</strong>
         </p>
       </EditorialTake>
-
       <ArticleSources category="invest"
         sources={[
           {

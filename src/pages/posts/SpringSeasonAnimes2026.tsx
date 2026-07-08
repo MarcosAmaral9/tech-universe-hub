@@ -268,6 +268,8 @@ const SpringSeasonAnimes2026 = () => {
           Por fim, vale lembrar que a forma como cada pessoa consome uma temporada densa como essa também afeta a experiência social do fandom: assistir simultaneamente ao lançamento japonês permite participar de discussões em tempo real nas redes sociais e em comunidades como o Discord e o Reddit, mas exige disciplina para evitar spoilers de quem está adiantado. Já maratonar depois reduz esse risco, mas tira a pessoa do "momento" coletivo de reação imediata que costuma acompanhar grandes revelações de arco — como aconteceu, historicamente, em momentos marcantes de séries como Attack on Titan e Demon Slayer, quando a comunidade reagia coletivamente em tempo quase real à exibição de um episódio específico.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: Spring Season 2026 é o melhor argumento contra a ideia de que anime está em declínio">
         <p>
           A Spring Season 2026 concentrou em um único trimestre mais séries de alto perfil simultâneas do que qualquer temporada desde o outono de 2023. <strong>One Piece Elbaf</strong> (formato sazonal inédito para a série), <strong>Re:Zero T4</strong>, <strong>TenSura T4</strong>, <strong>Dr. STONE arco final</strong> e <strong>Lazarus</strong> (Shinichirō Watanabe + MAPPA) estrearam na mesma janela de abril a junho. O volume total de estreias — 66 títulos confirmados — é o maior dos últimos três anos segundo o AniList.
@@ -276,7 +278,6 @@ const SpringSeasonAnimes2026 = () => {
           Para quem questiona se o anime ainda produz obras de referência: a Spring 2026 é a resposta. Cinco franquias com bases globais de mais de 10 milhões de seguidores entregando novos conteúdos simultaneamente, mais um original de Watanabe que é o projeto mais ambicioso de anime inédito do ano. O problema não é falta de qualidade — é gerenciar o excesso dela sem comprometer a atenção dada a cada título. A estratégia mais honesta: escolha dois ou três e os assista com atenção real. O resto pode esperar.
         </p>
       </EditorialTake>
-
             <ArticleSources category="otaku"
         sources={[
           {

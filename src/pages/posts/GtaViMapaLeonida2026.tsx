@@ -244,6 +244,8 @@ const GtaViMapaLeonida2026 = () => {
           ambientação e história, é talvez o sinal mais promissor que os trailers oferecem.
         </p>
 
+
+
         <EditorialTake category="geek">
           <p>
             Leonida me parece a aposta estrutural mais ambiciosa da Rockstar desde RDR2. Apostar em estado completo, em
@@ -256,7 +258,6 @@ const GtaViMapaLeonida2026 = () => {
             justifica os adiamentos: melhor entregar quatro biomas excelentes que oito medíocres.
           </p>
         </EditorialTake>
-
         <ArticleSources
           category="geek"
           sources={[

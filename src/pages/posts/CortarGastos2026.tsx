@@ -241,6 +241,8 @@ const CortarGastos2026 = () => {
 
       </div>
 
+
+
       <EditorialTake category="invest" title="Análise do Marcos: cortar gasto é matemática, manter o corte é hábito">
         <p>
           Toda planilha de redução de despesas funciona nos primeiros 60 dias e fracassa depois — não porque a conta esteja errada, mas porque <strong>economizar exige fricção constante</strong> e o cérebro humano busca o caminho de menor esforço. A solução que recomendo, e que uso, é <strong>automatizar o que dá certo</strong>: débito automático para investimento no dia do salário, cartões virtuais com limite fixo para assinaturas, alerta no app do banco para qualquer débito acima de R$ 200. Isso transfere a disciplina para o sistema, não para a força de vontade individual — e é por isso que funciona onde a maioria das planilhas falha.
@@ -249,7 +251,6 @@ const CortarGastos2026 = () => {
           Um ponto que pouca gente menciona: a ordem dos cortes importa muito psicologicamente. Comece pelas assinaturas esquecidas — elas têm alto impacto financeiro e baixo custo emocional, porque você não vai sentir falta do que não estava usando. Depois, refinanciamento de dívidas caras. Somente então ataque hábitos mais arraigados como alimentação fora de casa. Fazer o contrário — tentar mudar hábitos alimentares antes de eliminar dívidas caras — cria sofrimento sem impacto financeiro proporcional e aumenta muito a chance de abandono de todo o processo. No Brasil de 2026, com Selic alta, cada R$ 500 por mês cortados e investidos em Tesouro Selic viram mais de R$ 7.000 em 12 meses — essa visualização concreta é o combustível para manter a disciplina.
         </p>
       </EditorialTake>
-
       <ArticleSources category="invest"
         sources={[
           { title: "Pesquisa de Orçamentos Familiares (POF) — IBGE", url: "https://www.ibge.gov.br/estatisticas/sociais/saude/24786-pesquisa-de-orcamentos-familiares.html", publisher: "IBGE", accessedAt: "Maio 2026" },

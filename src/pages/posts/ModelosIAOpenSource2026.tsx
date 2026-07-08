@@ -195,6 +195,8 @@ const ModelosIAOpenSource2026 = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="ia" title="Análise do Marcos: use open source quando há volume alto, dados sensíveis ou necessidade de customização profunda">
         <p>
           Os principais modelos open-weight em 2026 são o <strong>Llama 4</strong> (Meta, abril/2025, multimodal, 10M tokens de contexto), <strong>DeepSeek-V3 e R1</strong> (dez/2024 e jan/2025), <strong>Mistral Large 2</strong> (jul/2024) e <strong>Qwen 2.5</strong> (Alibaba, set/2024). Benchmarks públicos do LMSYS Arena e Hugging Face Open LLM Leaderboard mostram esses modelos alcançando 90–95% da performance dos top fechados (GPT-4o, Claude Opus 4) em raciocínio geral — ainda atrás em multimodalidade avançada e raciocínio profundo, onde Claude e o1 da OpenAI mantêm vantagem mensurável.
@@ -203,7 +205,6 @@ const ModelosIAOpenSource2026 = () => {
           Para o desenvolvedor brasileiro, modelos open-source resolvem três dores reais: <strong>soberania de dados</strong> (rodam on-premise em Hetzner ou AWS São Paulo), <strong>custo previsível</strong> (sem cobrança por token em produção) e <strong>fine-tuning para domínio específico</strong>. Para a maioria dos usuários finais, ChatGPT Plus ou Claude Pro continuam mais rápidos de adotar. Use open-source quando há volume alto, sensibilidade de dados (saúde, financeiro, jurídico) ou necessidade de customização profunda. O caso do Llama 4 Maverick — que entrega performance comparável ao GPT-4o com custo por token até 23 vezes menor — é o melhor argumento disponível para essa escolha em 2026, desde que a equipe tenha capacidade técnica para gerenciar a infraestrutura sem depender de um provedor externo para disponibilidade e atualizações de segurança.
         </p>
       </EditorialTake>
-
       <ArticleSources sources={[
         { title: "Hugging Face — Open LLM Leaderboard", url: "https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard", publisher: "Hugging Face", accessedAt: "Maio 2026" },
         { title: "Meta AI — Llama 4", url: "https://llama.meta.com/", publisher: "Meta AI", accessedAt: "Maio 2026" },

@@ -221,6 +221,8 @@ const JujutsuKaisenGuia2026 = () => {
           Para quem leu o mangá até o final e está esperando a adaptação dos arcos finais, vale também registrar que o encerramento de Jujutsu Kaisen em setembro de 2024 gerou reações divididas na comunidade: parte dos leitores elogiou a coragem de Akutami em manter o tom brutal até o último capítulo, enquanto outra parte criticou a velocidade de resolução de certos arcos e personagens nos capítulos finais — um debate que provavelmente acompanhará a recepção da adaptação animada do arco de Shinjuku quando os episódios correspondentes forem ao ar, já que a MAPPA terá que lidar com a mesma tensão entre ritmo e satisfação narrativa que o mangá original enfrentou com sua serialização semanal.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: JJK provou que shonen pode ser brutal e emocionalmente honesto ao mesmo tempo">
         <p>
           Jujutsu Kaisen é uma obra de <strong>Gege Akutami</strong>, serializada na Weekly Shōnen Jump de março de 2018 a setembro de 2024 — 271 capítulos, 27 volumes. Vendeu mais de 100 milhões de cópias segundo a Shueisha, tornando-se um dos mangás mais vendidos da história. O anime é produzido pela <strong>MAPPA</strong> e está disponível na <strong>Crunchyroll</strong> com simulcast em português. A <strong>JBC Editora</strong> publica os volumes físicos no Brasil.

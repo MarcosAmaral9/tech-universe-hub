@@ -335,6 +335,13 @@ const ReMonster2026 = () => {
           O que diferencia Rou de outros protagonistas do subgênero é a mecânica de absorção por consumo — não há paralelo direto em outras obras populares do gênero. Rimuru absorve através de Predator (depois Glutoneria) de forma mágica e abstrata; Rou absorve literalmente, consumindo partes físicas dos inimigos. Essa especificidade mecânica cria uma narrativa de progressão com lógica interna mais estrita: o que Rou come determina exatamente o que ele ganha, e as decisões de o que consumir têm peso estratégico real ao longo da série.
         </p>
 
+          <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
+          <h3 className="text-xl font-bold mb-2">Você já assistiu Re:Monster? 🐉</h3>
+          <p className="text-muted-foreground">Conta nos comentários o que achou do anime e se prefere o mangá ou a light novel! 👇</p>
+        </div>
+      </div>
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: Re:Monster é o isekai que o anime não fez jus — mas o mangá compensa">
         <p>
           Vale também mencionar que Re:Monster foi uma das primeiras obras a popularizar, dentro do nicho do Narou, a perspectiva de protagonista monstro — subgênero que Tensei Shitara Slime Datta Ken depois levou para as massas com muito mais polimento. A serialização de Re:Monster na plataforma começa em 2012, dois anos antes de TenSura, o que a torna tecnicamente uma das pioneiras do que viria a ser um dos subgêneros mais populares do isekai contemporâneo. Esse contexto histórico, raramente mencionado em análises superficiais da obra, ajuda a entender por que a base de fãs da light novel original é substancial e fiel, mesmo diante de uma adaptação em anime que a maioria considerou aquém do material de origem.
@@ -346,13 +353,6 @@ const ReMonster2026 = () => {
           Re:Monster estreou na temporada de primavera de 2024 pela Doga Kobo com nota de partida 6.7 no MyAnimeList — abaixo do potencial, mas não uma catástrofe. O problema central foi o ritmo: a web novel de Kanekiru Kogitsune tem detalhamento psicológico de Rou que o anime simplificou demais para caber em 12 episódios. Para quem assistiu o anime e ficou curioso: <strong>o mangá é a próxima parada certa</strong>. Os arcos seguintes ao final do anime — a expansão do reino goblin e os primeiros confrontos com facções humanas organizadas — são o material mais forte da franquia.
         </p>
       </EditorialTake>
-
-          <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Você já assistiu Re:Monster? 🐉</h3>
-          <p className="text-muted-foreground">Conta nos comentários o que achou do anime e se prefere o mangá ou a light novel! 👇</p>
-        </div>
-      </div>
-
       <ArticleSources category="otaku"
         sources={[
           {

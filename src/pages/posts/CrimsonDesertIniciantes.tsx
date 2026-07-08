@@ -277,10 +277,11 @@ const CrimsonDesertIniciantes = () => {
         <p>
           O design de Crimson Desert também reflete uma tendência mais ampla observada na indústria de jogos de ação e mundo aberto na última década: a influência crescente do chamado gênero "soulslike", popularizado por estúdios japoneses como FromSoftware com a série Dark Souls e, mais recentemente, Elden Ring. Embora a Pearl Abyss evite classificar oficialmente o jogo dessa forma, elementos como a punição por morte, a necessidade de aprender padrões de ataque de bosses através de tentativa e erro, e a ausência de marcadores de missão excessivos remetem diretamente a essa escola de design. A diferença fundamental é que Crimson Desert combina esses elementos com a escala e a liberdade de exploração típicas de mundos abertos massivos, criando um híbrido que tem dividido opiniões entre jogadores que preferem experiências mais guiadas e aqueles que valorizam a descoberta orgânica sem assistência constante da interface.
         </p>
+
+
 <EditorialTake category="geek" title="Análise do Marcos: Crimson Desert Recompensa Paciência — Mas Não Avisa Isso">
         <p>O guia de iniciantes mais honesto que posso oferecer sobre Crimson Desert é este: o jogo vai te punir pelas primeiras 10 horas se você jogar no piloto automático dos open worlds modernos. <strong>Não há marcadores de missão para tudo, não há tutoriais para cada sistema e não há hand-holding</strong>. Isso é proposital — a Pearl Abyss quer que você explore, experimente e descubra. O problema é que sistemas importantes como o aprendizado contextual de habilidades e o fast travel via Abyss Nexus nunca são explicados. Este guia existe porque o jogo não os explica. Uma vez que você entende esses sistemas, Crimson Desert abre de forma que poucos open worlds conseguem. A curva de entrada é íngreme, mas o platô que vem depois é vasto.</p>
       </EditorialTake>
-
       <ArticleSources category="geek"
         sources={[
           {

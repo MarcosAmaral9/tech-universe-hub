@@ -280,6 +280,8 @@ const BigThree2026 = () => {
           O problema com a categoria "novo Big Three" é que ela não se aplica da mesma forma: o Big Three original dominou a Jump simultaneamente por mais de uma década em publicação semanal. JJK, MHA e Demon Slayer nunca coincidiram exatamente da mesma forma — cada um teve seu pico em momentos diferentes e nenhum chegou perto da longevidade de Naruto ou Bleach, muito menos de One Piece. O mercado de anime moderno também é muito mais fragmentado — centenas de títulos competindo simultaneamente, sem a concentração que a Jump semanal proporcionava nos anos 2000. A nostalgia pelo Big Three é real e legítima; a busca por um substituto direto provavelmente está procurando algo que o mercado atual simplesmente não pode replicar.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: o Big Three nunca foi sobre vendas">
         <p>
           O termo <strong>Big Three</strong> foi cunhado pela comunidade ocidental de anime/mangá no início dos anos 2000 para descrever os três títulos que dominavam a Weekly Shōnen Jump simultaneamente: <strong>Naruto</strong> (Masashi Kishimoto, 1999–2014), <strong>Bleach</strong> (Tite Kubo, 2001–2016) e <strong>One Piece</strong> (Eiichiro Oda, desde 1997). Em 2026, dos três, apenas One Piece continua — com o arco de Elbaf no formato sazonal inédito. Bleach encerrou o TYBW (anime) em 2024 e Naruto produz especiais ocasionais. O Big Three como fenômeno semanal simultâneo existe apenas na memória — mas seu legado molda tudo que veio depois.

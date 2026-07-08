@@ -452,15 +452,6 @@ const FIIs2026 = () => {
 
         <BackNavigation category="invest" />
 
-        <EditorialTake category="invest" title="Análise do Marcos: FIIs de tijolo voltam ao radar com perspectiva de queda de juros">
-          <p>
-            Os dados do Boletim Mensal de FIIs da B3 (fevereiro/2026) mostram o IFIX em recuperação consistente após o ciclo de Selic alta de 2024-2025. Com a expectativa de corte de juros pelo Copom no segundo semestre de 2026, fundos de tijolo — especialmente logística e lajes corporativas premium — tendem a se beneficiar mais que fundos de papel (CRIs indexados ao CDI/IPCA), que perdem atratividade relativa quando os juros caem.
-          </p>
-          <p className="mt-2">
-            Segundo a Resolução CVM 175 (vigente desde outubro/2024): leia sempre o regulamento e o último Relatório Gerencial antes de comprar qualquer FII. Os indicadores fundamentais são P/VP (ideal entre 0,90 e 1,05 para tijolo), Dividend Yield anualizado (8–11% para tijolo, 11–14% para papel) e vacância física abaixo de 8%. Minha visão para 2026: <strong>prefira diversificar em 8–10 FIIs de segmentos distintos</strong> em vez de concentrar em 2–3 "queridinhos" — o risco específico de um único ativo pode comprometer toda a estratégia de renda passiva.
-          </p>
-        </EditorialTake>
-
         {/* FoFs */}
         <section className="mb-10">
           <h2 className="text-2xl font-bold mb-4 border-l-4 border-[hsl(var(--invest-color))] pl-4">
@@ -472,6 +463,14 @@ const FIIs2026 = () => {
         </section>
 
 
+        <EditorialTake category="invest" title="Análise do Marcos: FIIs de tijolo voltam ao radar com perspectiva de queda de juros">
+          <p>
+            Os dados do Boletim Mensal de FIIs da B3 (fevereiro/2026) mostram o IFIX em recuperação consistente após o ciclo de Selic alta de 2024-2025. Com a expectativa de corte de juros pelo Copom no segundo semestre de 2026, fundos de tijolo — especialmente logística e lajes corporativas premium — tendem a se beneficiar mais que fundos de papel (CRIs indexados ao CDI/IPCA), que perdem atratividade relativa quando os juros caem.
+          </p>
+          <p className="mt-2">
+            Segundo a Resolução CVM 175 (vigente desde outubro/2024): leia sempre o regulamento e o último Relatório Gerencial antes de comprar qualquer FII. Os indicadores fundamentais são P/VP (ideal entre 0,90 e 1,05 para tijolo), Dividend Yield anualizado (8–11% para tijolo, 11–14% para papel) e vacância física abaixo de 8%. Minha visão para 2026: <strong>prefira diversificar em 8–10 FIIs de segmentos distintos</strong> em vez de concentrar em 2–3 "queridinhos" — o risco específico de um único ativo pode comprometer toda a estratégia de renda passiva.
+          </p>
+        </EditorialTake>
         <ArticleSources
           category="invest"
           sources={[

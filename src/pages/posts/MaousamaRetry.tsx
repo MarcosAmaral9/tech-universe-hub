@@ -180,6 +180,8 @@ const MaousamaRetry = () => {
           Para quem se interessa em explorar mais o subgênero de "protagonista que administra um sistema de jogo dentro de um mundo real", outras obras com premissa semelhante incluem títulos como Overlord, onde o protagonista também é um jogador veterano de longa data de seu próprio personagem, e Death March kara Hajimaru Isekai Kyousoukyoku, onde o conhecimento técnico do protagonista sobre desenvolvimento de jogos influencia diretamente suas decisões estratégicas. Comparar essas obras entre si ajuda a entender quais elementos do subgênero "administrador isekai" Maou-sama, Retry! compartilha com seus pares e quais escolhas narrativas — como a relação não-romântica com Aku — tornam essa série especificamente distinta dentro de um nicho que, à primeira vista, pode parecer mais homogêneo do que realmente é.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: Maou-sama Retry! tem premissa acima da execução — mas Retry R corrige isso">
         <p>
           <strong>Maou-sama, Retry!</strong> é uma light novel de <strong>Kurone Kanzaki</strong>, ilustrada por <strong>Kōji Ogata</strong>, publicada pela <strong>Futabasha</strong> desde setembro de 2016. O anime original foi produzido pelo estúdio <strong>Ekachi Epilka</strong>, com 12 episódios de julho a setembro de 2019. A continuação <strong>Maou-sama, Retry! R</strong> foi produzida pelo <strong>Studio Geek Toys</strong> e está disponível na <strong>Crunchyroll</strong>. Até maio de 2026, nenhuma temporada adicional além de Retry R foi anunciada.
@@ -188,7 +190,6 @@ const MaousamaRetry = () => {
           A série original de 2019 teve limitações de orçamento que prejudicaram a animação em momentos decisivos. A premissa — programador de MMO acorda no corpo do chefe final que ele mesmo criou — tem potencial genuíno que a produção original não conseguiu realizar completamente. Retry R representa uma segunda chance para o material provar o que pode — e para quem desistiu em 2019 pelas questões técnicas, é o ponto de entrada recomendado.
         </p>
       </EditorialTake>
-
             <ArticleSources category="otaku"
         sources={[
           {

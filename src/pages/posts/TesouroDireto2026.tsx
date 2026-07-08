@@ -551,11 +551,12 @@ const TesouroDireto2026 = () => {
           </div>
         </div>
 
+
+
         <EditorialTake category="invest" title="Análise do Marcos: a taxa de custódia não é desculpa para ficar na poupança">
           <p>Tesouro Direto continua sendo a porta de entrada mais segura para investidor brasileiro, mas em 2026 o jogo mudou: com Selic ainda alta, prefixados longos pagam prêmio histórico, enquanto IPCA+ acima de 6% real virou commodity. Para quem está montando reserva ou aposentadoria, o casamento de prazos (ALM — Asset Liability Matching) importa mais que rentabilidade nominal isolada.</p>
           <p className="mt-2">A taxa de custódia da B3 (0,2% a.a.) some na prática para títulos curtos e para valores investidos abaixo de R$ 10.000 — está isenta nessa faixa desde 2020. Minha recomendação prática para 2026: trate o Tesouro Selic como reserva intocável, use o IPCA+ de médio prazo (2029-2031) para objetivos de 3-7 anos, e reserve o IPCA+ longo (2035+) apenas para quem realmente não vai precisar do dinheiro antes de 10 anos — a marcação a mercado em títulos longos pode assustar quem olha o extrato com frequência, mas não importa para quem segura até o vencimento.</p>
         </EditorialTake>
-
         <ArticleSources category="invest" sources={[
     { title: 'Tesouro Direto — Site Oficial', url: 'https://www.tesourodireto.com.br/', publisher: 'Tesouro Nacional', accessedAt: "Maio 2026" },
     { title: 'Banco Central — Calculadora do Cidadão', url: 'https://www.bcb.gov.br/cidadaniafinanceira/calculadora', publisher: 'BCB', accessedAt: "Maio 2026" },

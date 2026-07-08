@@ -169,10 +169,11 @@ const BaldursGate3Review2026 = () => {
 
 
 
+
+
 <EditorialTake category="geek" title="Análise do Marcos: Baldur's Gate 3 Continua Definindo o Padrão do Gênero em 2026">
           <p>Baldur's Gate 3 continua sendo, em 2026, a vara técnica que mede todo CRPG lançado depois. A Larian provou que jogador adulto banca 100+ horas se houver consequência narrativa em cada escolha — e o GOTY de 2023 mostrou ao mercado que turn-based não é nicho. O que vejo no Brasil: comunidade enorme em PT-BR (legendado oficial), preço que caiu para faixa de R$ 150 em promoções Steam e patch 7 expandindo modding oficial. <strong>O suporte contínuo gratuito por mais de dois anos pós-lançamento é o que realmente diferencia a Larian de praticamente toda a concorrência AAA</strong> — poucos estúdios entregam tanto conteúdo gratuito tanto tempo depois do lançamento original.</p>
         </EditorialTake>
-
         <ArticleSources category="geek" sources={[
     { title: 'Larian Studios — Patch Notes', url: 'https://baldursgate3.game/news', publisher: 'Larian', accessedAt: "Maio 2026" },
     { title: 'The Game Awards 2023 — GOTY', url: 'https://thegameawards.com/nominees/game-of-the-year', publisher: 'TGA', accessedAt: "Maio 2026" },

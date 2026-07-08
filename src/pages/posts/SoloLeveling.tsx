@@ -234,6 +234,8 @@ const SoloLeveling = () => {
           Para o mercado brasileiro especificamente, Solo Leveling abriu caminho para a publicação de outros manhwas no Brasil. A <strong>Panini</strong> publicou os volumes físicos de Solo Leveling em português — e o sucesso comercial da série foi argumento para que outras editoras brasileiras considerassem licenciar títulos adicionais de manhwa. Tower of God, Omniscient Reader's Viewpoint e outros títulos estão em discussão de licenciamento no Brasil justamente porque Solo Leveling demonstrou que há mercado para manhwa em edição física nacional.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: Solo Leveling provou que manhwa pode ser fenômeno global">
         <p>
           Solo Leveling é uma light novel web de <strong>Chugong</strong>, serializada no D&C Media (Kakao Page) entre 2016 e 2018, com adaptação em manhwa publicada de 2018 a 2021 com arte de <strong>DUBU (Jang Sung-Rak)</strong> — 179 capítulos, 8 volumes físicos. O manhwa acumulou mais de <strong>14,4 bilhões de visualizações</strong> no Kakao Page antes do encerramento em dezembro de 2021. O anime foi produzido pela <strong>A-1 Pictures</strong>, dirigido por <strong>Shunsuke Nakashige</strong>: T1 (janeiro–março 2024, 12 episódios), T2 <em>Arise from the Shadow</em> (janeiro–março 2025, 13 episódios), filme <em>ReAwakening</em> (novembro de 2024). Crunchyroll confirmou como <strong>Anime do Ano</strong> no Crunchyroll Anime Awards 2025.
@@ -242,7 +244,6 @@ const SoloLeveling = () => {
           Solo Leveling é o manhwa que provou que o formato webtoon pode competir com mangá japonês em alcance global — e ganhar em alguns aspectos. A arte de DUBU (Jang Sung-Rak) é o argumento mais forte: cada spread do manhwa é uma pintura digital completa, com uso de luz e sombra que o mangá preto e branco simplesmente não pode replicar. O anime da A-1 Pictures capturou isso com competência mas perdeu a textura do original — quem leu o manhwa percebe que a adaptação é boa, mas o manhwa é excepcional. Para quem não conhece a franquia: comece pelo manhwa. Para quem quer saber se Vale assistir o anime: sim, mas o manhwa é melhor.
         </p>
       </EditorialTake>
-
       <ArticleSources category="otaku"
         sources={[
           {

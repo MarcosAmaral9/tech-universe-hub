@@ -119,22 +119,6 @@ const ACOdyssey = () => {
           AC que mais se aproxima de um The Witcher 3 em escala e profundidade de sistema.
         </p>
 
-        <EditorialTake category="geek" title="Análise do Marcos: Odyssey é o AC que mais divide a comunidade — e o que mais recompensa quem investe tempo">
-          <p>
-            Joguei mais de 200 horas em <strong>Assassin's Creed Odyssey</strong> entre o jogo base
-            e os DLCs, e ainda assim sinto que não vi tudo. Isso é uma bênção e uma maldição: a
-            escala é intimidante para quem não tem tempo, mas incrivelmente satisfatória para quem
-            mergulha fundo.
-          </p>
-          <p>
-            <strong>Kassandra é obrigatória.</strong> A atuação de Melissanthi Mahut é simplesmente
-            superior — ela traz humor, gravidade e humanidade que Alexios simplesmente não consegue
-            igualar. O DLC <em>Fate of Atlantis</em> é o melhor de toda a trilogia RPG: visitar o
-            Elísio e o Hades com a mitologia grega em plena forma é uma das experiências mais únicas
-            que os jogos de mundo aberto já produziram.
-          </p>
-        </EditorialTake>
-
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Users className="h-7 w-7 text-blue-400" />
           Kassandra ou Alexios: Qual Escolher?
@@ -642,6 +626,22 @@ const ACOdyssey = () => {
         </div>
       </div>
 
+
+        <EditorialTake category="geek" title="Análise do Marcos: Odyssey é o AC que mais divide a comunidade — e o que mais recompensa quem investe tempo">
+          <p>
+            Joguei mais de 200 horas em <strong>Assassin's Creed Odyssey</strong> entre o jogo base
+            e os DLCs, e ainda assim sinto que não vi tudo. Isso é uma bênção e uma maldição: a
+            escala é intimidante para quem não tem tempo, mas incrivelmente satisfatória para quem
+            mergulha fundo.
+          </p>
+          <p>
+            <strong>Kassandra é obrigatória.</strong> A atuação de Melissanthi Mahut é simplesmente
+            superior — ela traz humor, gravidade e humanidade que Alexios simplesmente não consegue
+            igualar. O DLC <em>Fate of Atlantis</em> é o melhor de toda a trilogia RPG: visitar o
+            Elísio e o Hades com a mitologia grega em plena forma é uma das experiências mais únicas
+            que os jogos de mundo aberto já produziram.
+          </p>
+        </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {

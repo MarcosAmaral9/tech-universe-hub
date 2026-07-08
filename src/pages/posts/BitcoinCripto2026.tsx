@@ -577,6 +577,8 @@ const BitcoinCripto2026 = () => {
 
         <BackNavigation category="invest" />
 
+
+
         <EditorialTake category="invest" title="Análise do Marcos: cripto em 2026 é uma classe de ativos madura — mas ainda violenta">
           <p>
             O maior equívoco que vejo sobre cripto em 2026 é a falsa dicotomia entre "é
@@ -596,7 +598,6 @@ const BitcoinCripto2026 = () => {
             e com a mesma liquidez de uma ação qualquer.
           </p>
         </EditorialTake>
-
         <ArticleSources category="invest"
           sources={[
             {

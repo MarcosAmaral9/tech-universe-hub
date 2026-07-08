@@ -298,6 +298,8 @@ const TensuraGuiaCompleto = () => {
           <strong>1.</strong> Temporada 1 (24 episódios, outubro 2018 – março 2019) — Do nascimento de Rimuru até a fundação de Tempest e primeiros contatos com o mundo. <strong>2.</strong> Temporada 2 Parte 1 (12 episódios, janeiro–março 2021) — Primeiros conflitos com nações humanas, revelações sobre os Demon Lords. <strong>3.</strong> Tensura Nikki (12 episódios, abril–junho 2021) — Opcional; cotidiano de Tempest entre os arcos, recomendado após a T2P1. <strong>4.</strong> Temporada 2 Parte 2 (12 episódios, julho–setembro 2021) — Walpurgis, ingresso de Rimuru no Octagram, resolução dos conflitos da T2P1. <strong>5.</strong> Filme Scarlet Bond (novembro 2022, ~90 min) — História original, pode ser assistido após a T2. <strong>6.</strong> Temporada 3 (24 episódios, outubro 2023 – março 2024) — Expansão de Tempest, novos aliados e antagonistas, escalonamento do conflito. <strong>7.</strong> Temporada 4 (abril 2026 em diante) — Arcos finais da light novel em andamento. Todo o conteúdo está disponível na Crunchyroll com legendas em português.
         </p>
 
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: TenSura provei que slice-of-life de construção de nação funciona em escala épica">
         <p>
           Tensei Shitara Slime Datta Ken é uma light novel de <strong>Fuse</strong>, serializada originalmente no Shōsetsuka ni Narō a partir de 2013 e publicada fisicamente pela <strong>Micro Magazine</strong> (GC Novels) desde 2015 — 22 volumes lançados até 2026. O mangá, com arte de <strong>Taiki Kawakami</strong>, é publicado na Monthly Shōnen Sirius (Kodansha) desde 2015. O anime é produzido pelo estúdio <strong>8bit</strong>: T1 (outubro 2018 – março 2019, 24 eps), T2 Parte 1 (jan–mar 2021), T2 Parte 2 (jul–set 2021), especial Tensura Nikki (2021), filme Scarlet Bond (novembro 2022), T3 (outubro 2023 – março 2024) e <strong>T4 confirmada para abril de 2026</strong>. Disponível na <strong>Crunchyroll</strong> com legendas em português.
@@ -306,7 +308,6 @@ const TensuraGuiaCompleto = () => {
           O que me impressiona em TenSura depois de anos de acompanhamento é como Fuse manteve coerência no sistema de poder ao longo de 20+ volumes. Rimuru não é simplesmente 'forte demais para tudo' — há regras claras sobre o que ele pode e não pode fazer, e os antagonistas das temporadas mais recentes representam ameaças genuínas dentro dessas regras. A série provou que isekai de construção pode escalar para conflitos de escala divina sem perder o coração que fez a T1 funcionar: pessoas comuns tentando construir algo melhor juntas.
         </p>
       </EditorialTake>
-
             <ArticleSources category="otaku"
         sources={[
           {

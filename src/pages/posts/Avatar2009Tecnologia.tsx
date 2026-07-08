@@ -416,6 +416,8 @@ const Avatar2009Tecnologia = () => {
         </p>
       </div>
 
+
+
       <EditorialTake category="geek" title="Análise do Marcos: Avatar inventou um cinema que Hollywood demorou 15 anos para entender">
         <p>
           Assisti <strong>Avatar</strong> no cinema em 2009, com 9 anos, e saí com a sensação de
@@ -434,7 +436,6 @@ const Avatar2009Tecnologia = () => {
           contribuído mais para a infraestrutura técnica do cinema moderno.
         </p>
       </EditorialTake>
-
       <ArticleSources
         sources={[
           {

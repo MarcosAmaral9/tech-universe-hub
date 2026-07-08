@@ -287,6 +287,13 @@ const AprenderJaponesAnime2026 = () => {
           Para o método de imersão especificamente, o <strong>guia Tae Kim adaptado em português</strong> está disponível em versão comunitária em pt.tae-kim.com — uma tradução voluntária do guia de gramática mais recomendado pela comunidade de imersão. Para Anki, os decks em português são escassos, mas decks em inglês com glosses em português foram criados por membros da comunidade brasileira e estão disponíveis no AnkiWeb com busca por "português" na categoria japonês.
         </p>
 
+        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
+          <h3 className="text-xl font-bold mb-2">Você está aprendendo japonês com anime? 🇯🇵</h3>
+          <p className="text-muted-foreground">Conta qual método você usa e em que nível está nos comentários! 👇</p>
+        </div>
+      </div>
+
+
       <EditorialTake category="otaku" title="Análise do Marcos: aprender japonês pelo anime é real — mas exige honestidade sobre o processo">
         <p>
           Comecei a estudar japonês em 2019 usando o método de imersão e cheguei ao nível N3 (intermediário-superior) em dois anos e meio de estudo consistente. O anime foi o motor que manteve a motivação — mas as horas de Anki e leitura de mangá em japonês foram o que de fato construiu a base. O método <strong>Refold</strong>, desenvolvido por Matt vs Japan (canal com mais de 500 mil inscritos no YouTube) e colaboradores, codifica essa abordagem em quatro estágios claros. A plataforma <strong>Migaku</strong> (migaku.com) e a extensão <strong>Yomitan</strong> (github.com/themoeway/yomitan) são as ferramentas mais recomendadas pela comunidade em 2026.
@@ -295,13 +302,6 @@ const AprenderJaponesAnime2026 = () => {
           O erro que vejo constantemente é a romantização: 'vou aprender japonês assistindo Naruto' sem o estudo estruturado por baixo. Não funciona assim. O que funciona é usar Naruto como combustível emocional para aguentar os meses difíceis de Anki e gramática. <strong>O anime é o porquê. O estudo sistemático é o como. Você precisa dos dois.</strong> Com as ferramentas de 2026 — Yomitan, Migaku, IAs para praticar output — o processo ficou significativamente mais eficiente do que era quando comecei. Hoje consigo me comunicar em japonês, ler mangá sem dicionário e entender filmes sem legenda. Tudo começou com um episódio de Fullmetal Alchemist.
         </p>
       </EditorialTake>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Você está aprendendo japonês com anime? 🇯🇵</h3>
-          <p className="text-muted-foreground">Conta qual método você usa e em que nível está nos comentários! 👇</p>
-        </div>
-      </div>
-
       <ArticleSources category="otaku"
         sources={[
           {

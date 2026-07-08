@@ -247,6 +247,8 @@ const GtaViMecanicasGameplay2026 = () => {
           apenas em outubro ou novembro de 2026, perto do embargo de review.
         </p>
 
+
+
         <EditorialTake category="geek">
           <p>
             Para mim, o salto técnico mais relevante mostrado nos trailers não é o gráfico em si — embora GTA VI seja
@@ -259,7 +261,6 @@ const GtaViMecanicasGameplay2026 = () => {
             de novembro.
           </p>
         </EditorialTake>
-
         <ArticleSources
           category="geek"
           sources={[

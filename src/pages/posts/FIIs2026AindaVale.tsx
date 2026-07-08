@@ -372,6 +372,8 @@ const FIIs2026AindaVale = () => {
 
       <BackNavigation category="invest" />
 
+
+
       <EditorialTake category="invest" title="Análise do Marcos: o melhor momento de entrada em FIIs raramente fica anunciado">
         <p>
           Historicamente, os maiores ganhos em FIIs vêm de quem entrou no pior momento do sentimento de mercado — quando todo mundo estava falando que "FII não presta com Selic a 13%". Estamos vendo exatamente esse cenário em 2026: cotas de logística e shoppings premium com P/VP entre 0,80 e 0,90, dividendos isentos competitivos e um ciclo de queda de juros pela frente.
@@ -380,7 +382,6 @@ const FIIs2026AindaVale = () => {
           Meu posicionamento pessoal para 2026: <strong>60% em FIIs de tijolo</strong> (logística e shoppings premium) aproveitando o desconto, <strong>30% em Papel</strong> (CRI/IPCA+) para sustentar o dividendo no curto prazo enquanto o tijolo se recupera, e <strong>10% em FOFs</strong> para diversificação de gestora com gestão profissional. O prazo ideal para sentir o efeito da queda de juros nas cotas: 18 a 36 meses. Quem não tem esse horizonte deve priorizar renda fixa.
         </p>
       </EditorialTake>
-
       <ArticleSources category="invest"
         sources={[
           {
