@@ -86,6 +86,14 @@ const GtaViPrecosBrasilDolar2026 = () => {
           </ul>
         </div>
 
+        <GtaStatGrid stats={[
+          { label: "Standard BR", value: "R$ 449,90", hint: "US$ 79,99 · PS/Xbox Store", icon: Wallet, accent: "pink" },
+          { label: "Ultimate BR", value: "R$ 549,90", hint: "US$ 99,99 · +R$ 100 sobre Standard", icon: Gift, accent: "violet" },
+          { label: "Parcelado", value: "12x R$ 37", hint: "Standard s/ juros na PS Store", icon: CreditCard, accent: "cyan" },
+          { label: "Preload", value: "12/nov", hint: "Lançamento 19/nov/2026", icon: Calendar, accent: "amber" },
+        ]} />
+
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <DollarSign className="h-7 w-7 text-pink-400" /> Tabela oficial: o que cada edição custa
         </h2>
