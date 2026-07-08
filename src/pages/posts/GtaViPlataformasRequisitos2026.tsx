@@ -206,6 +206,20 @@ const GtaViPlataformasRequisitos2026 = () => {
           </p>
         </div>
 
+        <GtaBarChart
+          title="Tamanho de instalação (GB) — histórico Rockstar"
+          subtitle="GTA VI deve ser o maior download de game já feito"
+          accent="violet"
+          bars={[
+            { label: "GTA V (2013, atualizado)", value: 95, display: "95 GB" },
+            { label: "Red Dead Redemption 2", value: 110, display: "110 GB" },
+            { label: "GTA VI — estimativa mínima", value: 150, display: "≈ 150 GB", highlight: true },
+            { label: "GTA VI — estimativa máxima", value: 200, display: "≈ 200 GB", highlight: true, sub: "PS5 base tem apenas 667 GB utilizáveis" },
+          ]}
+        />
+
+
+
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Cross-save e cross-progression entre plataformas</h2>
         <p>
