@@ -223,6 +223,22 @@ const GtaViMapaLeonida2026 = () => {
           variedade e densidade. E nessa métrica, os trailers entregam expectativa altíssima.
         </p>
 
+        <GtaBarChart
+          title="Escala dos mapas Rockstar (km² estimados de fãs)"
+          subtitle="Números oficiais nunca foram divulgados — todos os valores são estimativas de comunidade"
+          accent="violet"
+          bars={[
+            { label: "GTA III (2001) — Liberty City", value: 8, display: "≈ 8 km²" },
+            { label: "Vice City (2002)", value: 8, display: "≈ 8 km²" },
+            { label: "GTA IV (2008) — Liberty City", value: 12, display: "≈ 12 km²" },
+            { label: "San Andreas (2004)", value: 36, display: "≈ 36 km²" },
+            { label: "GTA V (2013) — San Andreas", value: 81, display: "≈ 75–81 km²" },
+            { label: "GTA VI — Leonida (estimativa)", value: 200, display: "≈ 100–200 km²", highlight: true, sub: "Vice City + Keys + pântanos + interior" },
+          ]}
+        />
+
+
+
         <h2 className="text-2xl font-bold mt-10 mb-4">Locais especulados mas não confirmados</h2>
         <p>
           A comunidade identificou dezenas de possíveis locais específicos a partir de análises quadro a quadro dos
