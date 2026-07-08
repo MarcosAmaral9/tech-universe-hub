@@ -264,6 +264,22 @@ const GtaViPrecosBrasilDolar2026 = () => {
           <strong> R$ 5.000 e R$ 5.500</strong>.
         </p>
 
+        <GtaBarChart
+          title="Quanto custa entrar em GTA VI no dia 1 (Brasil)"
+          subtitle="Pacote completo: console + SSD + assinatura online + jogo Standard"
+          accent="cyan"
+          bars={[
+            { label: "Jogo Standard (digital)", value: 449.9, display: "R$ 449,90" },
+            { label: "Xbox Game Pass Core (anual)", value: 199, display: "R$ 199,00" },
+            { label: "PS Plus Essential (anual)", value: 239.9, display: "R$ 239,90" },
+            { label: "SSD 1 TB compatível", value: 1200, display: "R$ 1.200 (médio)" },
+            { label: "Xbox Series S", value: 2799, display: "R$ 2.799", sub: "Menor entrada da geração" },
+            { label: "PS5 Slim digital", value: 3799, display: "R$ 3.799", highlight: true },
+          ]}
+        />
+
+
+
         <h2 className="text-2xl font-bold mt-10 mb-4">Estratégias para pagar menos (legalmente)</h2>
         <p>
           Há três caminhos legítimos para reduzir o custo. Primeiro, <strong>esperar a primeira grande promoção</strong>:
