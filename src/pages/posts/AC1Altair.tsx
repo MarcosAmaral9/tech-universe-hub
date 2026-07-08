@@ -149,23 +149,6 @@ const AC1Altair = () => {
           lore dos Precursores e do Animus é inesquecível.
         </p>
 
-        <EditorialTake category="geek" title="Análise do Marcos: AC1 é imperfeito, mas fundou algo único">
-          <p>
-            Joguei o <strong>Assassin's Creed original</strong> no lançamento em 2007 e fiquei
-            parado na primeira torre de sincronização por uns 5 minutos só olhando para Damasco
-            lá embaixo. Aquela vista — que era impossível em qualquer outro jogo da época —
-            capturou algo que vai além da tecnologia gráfica: a sensação de estar
-            <em> dentro</em> de um mundo histórico vivo.
-          </p>
-          <p>
-            A repetitividade é real e inegável. Mas quem consegue passar por ela — especialmente
-            jogando a história principal sem se perder nas atividades secundárias — encontra um
-            dos sistemas de assassinato mais satisfatórios da franquia. Matar Sibrand no porto
-            de Acre usando o barco como cobertura continua sendo mais inteligente do que 90% das
-            missões dos ACs modernos. A base é sólida; o conteúdo ao redor dela que peca.
-          </p>
-        </EditorialTake>
-
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-amber-400" />
           Contexto Histórico: As Cruzadas e a Terra Santa em 1191
@@ -378,6 +361,23 @@ const AC1Altair = () => {
         </p>
       </div>
 
+
+        <EditorialTake category="geek" title="Análise do Marcos: AC1 é imperfeito, mas fundou algo único">
+          <p>
+            Joguei o <strong>Assassin's Creed original</strong> no lançamento em 2007 e fiquei
+            parado na primeira torre de sincronização por uns 5 minutos só olhando para Damasco
+            lá embaixo. Aquela vista — que era impossível em qualquer outro jogo da época —
+            capturou algo que vai além da tecnologia gráfica: a sensação de estar
+            <em> dentro</em> de um mundo histórico vivo.
+          </p>
+          <p>
+            A repetitividade é real e inegável. Mas quem consegue passar por ela — especialmente
+            jogando a história principal sem se perder nas atividades secundárias — encontra um
+            dos sistemas de assassinato mais satisfatórios da franquia. Matar Sibrand no porto
+            de Acre usando o barco como cobertura continua sendo mais inteligente do que 90% das
+            missões dos ACs modernos. A base é sólida; o conteúdo ao redor dela que peca.
+          </p>
+        </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {
