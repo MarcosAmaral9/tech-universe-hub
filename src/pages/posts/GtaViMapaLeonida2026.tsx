@@ -149,7 +149,18 @@ const GtaViMapaLeonida2026 = () => {
           estado completo — Vice City não é tudo que existe em Leonida.
         </p>
 
+        <h2 className="text-2xl font-bold mt-10 mb-4">As regiões de Leonida em destaque</h2>
+        <GtaFeatureGrid features={[
+          { icon: Building2, title: "Vice City (metrópole)", desc: "Inspirada em Miami: arranha-céus, art deco em South Beach, praias urbanas, bairros latinos e vida noturna intensa.", accent: "pink" },
+          { icon: Sailboat, title: "Leonida Keys", desc: "Arquipélago ao sul, ligado por pontes longas. Marinas, mergulho, pesca e casas em palafitas — inspiração direta nos Florida Keys.", accent: "cyan" },
+          { icon: Waves, title: "Pântanos (Everglades fictícios)", desc: "Canais navegáveis, mangues densos, jacarés reativos e ambiente hostil no sudoeste do mapa.", accent: "emerald" },
+          { icon: Trees, title: "Mount Kalaga National Park", desc: "Reserva natural com floresta, trilhas, lagos e fauna típica do interior da Flórida.", accent: "emerald" },
+          { icon: Building2, title: "Port Gellhorn", desc: "Cidade portuária menor, com porto industrial e bairros operários — contraste direto ao glamour de Vice City.", accent: "amber" },
+          { icon: Home, title: "Ambrosia", desc: "Comunidade rural pequena — igreja, posto de gasolina e estética caipira do interior sul-americano.", accent: "violet" },
+        ]} />
+
         <h2 className="text-2xl font-bold mt-10 mb-4">Regiões confirmadas (resumo)</h2>
+
         <div className="not-prose my-6 overflow-x-auto rounded-xl border border-pink-500/20">
           <table className="w-full text-sm bg-card table-fixed">
             <thead>
