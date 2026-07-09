@@ -95,7 +95,7 @@ const GTAVI2026 = () => {
           </div>
           <div className="bg-card rounded-xl border border-geek/20 p-5">
             <h3 className="font-bold mb-2">💪 Jason</h3>
-            <p className="text-sm text-muted-foreground mb-2">Parceiro e coprotagonista. Mais impulsivo e voltado para confrontos diretos. Controlável em missões específicas e modo cooperativo online.</p>
+            <p className="text-sm text-muted-foreground mb-2">Parceiro e coprotagonista. Mais impulsivo e voltado para confrontos diretos. Controlável em missões específicas da campanha single-player.</p>
             <ul className="text-xs text-muted-foreground space-y-1">
               <li>• Habilidade especial: resistência a danos em combate</li>
               <li>• Background: família com histórico criminal nas Keys</li>
