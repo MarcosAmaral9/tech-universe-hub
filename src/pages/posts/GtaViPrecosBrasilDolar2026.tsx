@@ -24,7 +24,7 @@ const TITLE = "Preço de GTA VI no Brasil: Valores Oficiais em Dólar e Real, Ed
 const precoOficial = [
   { edicao: "Standard Edition (digital)", usd: "US$ 79,99", brl: "R$ 449,90", obs: "Disponível na PS Store, Xbox Store e Rockstar Store" },
   { edicao: "Standard Edition (mídia física com voucher)", usd: "US$ 79,99", brl: "R$ 449,90", obs: "Caixa sem disco — voucher para resgate digital. Amazon, Kabum e PS Direct" },
-  { edicao: "Ultimate Edition (digital)", usd: "US$ 99,99", brl: "R$ 549,90", obs: "Inclui bônus de história + frota de veículos + skins de arma" },
+  { edicao: "Ultimate Edition (digital)", usd: "US$ 99,99", brl: "R$ 549,90", obs: "Adiciona à Standard: Grotti Cheetah '95, frota de veículos premium, armas e roupas exclusivas, oficina Rideout Customs e 2 missões extras integradas à história" },
 ];
 
 // Histórico VERIFICADO de preços de lançamento da Take-Two/Rockstar e

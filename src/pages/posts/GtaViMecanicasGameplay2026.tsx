@@ -144,7 +144,7 @@ const GtaViMecanicasGameplay2026 = () => {
           { icon: MessageSquare, title: "IA de NPCs expandida", desc: "Multidões filmando com celulares, reações individuais, comportamento social diverso em clubes, praias e eventos.", accent: "violet" },
           { icon: Waves, title: "Mundo aquático ampliado", desc: "Lanchas, jet skis, mergulho, jacarés reativos em pântanos e rotas navegáveis longas em Leonida Keys.", accent: "cyan" },
           { icon: Smartphone, title: "Redes sociais internas", desc: "Personagens gravam e postam vídeos dentro do jogo. Sátira à cultura de influencer integrada ao mundo.", accent: "pink" },
-          { icon: Wifi, title: "GTA Online VI no dia 1", desc: "Modo online lançado simultâneo com a campanha em 19/11/2026 — sem janela de espera como em 2013.", accent: "emerald" },
+          { icon: Wifi, title: "Single-player no dia 1", desc: "Rockstar confirmou que GTA VI lança em 19/11/2026 como experiência exclusivamente single-player. Novo modo online chega em janela pós-lançamento ainda não anunciada.", accent: "emerald" },
           { icon: Cpu, title: "Densidade urbana inédita", desc: "Muito mais NPCs, veículos e detalhes ambientais simultâneos que Los Santos em GTA V.", accent: "violet" },
         ]} />
 
@@ -166,7 +166,7 @@ const GtaViMecanicasGameplay2026 = () => {
                 { mec: "IA de NPCs expandida", fonte: "Trailer 2", det: "Multidões filmando com celulares, reações individuais, comportamento social diverso em clubes, praias e eventos." },
                 { mec: "Mundo aquático ampliado", fonte: "Trailer 2", det: "Lanchas, jet skis, mergulho com snorkel, jacarés reativos em pântanos e rotas navegáveis longas." },
                 { mec: "Redes sociais fictícias internas", fonte: "Trailer 2", det: "Personagens gravam e postam vídeos dentro do jogo; sátira da cultura de influencer integrada ao mundo." },
-                { mec: "GTA Online VI no lançamento", fonte: "Take-Two (call de investidores)", det: "Modo online lançado simultaneamente com a campanha em 19/11/2026, sem janela de espera como em 2013." },
+                { mec: "Lançamento single-player-only", fonte: "Rockstar Newswire (jun/2026)", det: "GTA VI chega em 19/11/2026 exclusivamente como jogo single-player. Novo modo online chega em janela posterior, ainda sem data anunciada." },
               ].map((r, i) => (
                 <tr key={r.mec} className={`border-t border-border/60 ${i % 2 ? "bg-muted/20" : ""}`}>
                   <td className="py-3 px-4 font-semibold break-words">{r.mec}</td>
@@ -228,20 +228,21 @@ const GtaViMecanicasGameplay2026 = () => {
           — coerente com a coreografia mostrada nos trailers.
         </p>
 
-        <h2 className="text-2xl font-bold mt-10 mb-4">GTA Online VI: lançamento simultâneo</h2>
+        <h2 className="text-2xl font-bold mt-10 mb-4">Online: single-player-only no dia 1, novo modo depois</h2>
         <p>
-          A Take-Two confirmou que o GTA Online VI será lançado <strong>simultaneamente</strong> com o modo história em
-          19 de novembro de 2026. Essa é uma mudança importante em relação a GTA V, onde o GTA Online chegou semanas
-          depois e enfrentou problemas técnicos sérios de servidor no lançamento. A Rockstar parece ter aprendido a
-          lição: a infraestrutura de backend está sendo preparada com antecedência, e a contratação pública de
-          equipes de QA em Bangalore confirmada em abril de 2026 é parte desse preparo.
+          Rockstar e Take-Two confirmaram em junho de 2026, ao abrir a pré-venda, que <strong>GTA VI lança em 19 de
+          novembro como experiência exclusivamente single-player</strong>. Não há GTA Online no dia 1. Um novo modo
+          online é esperado em algum momento após o lançamento, no mesmo padrão que aconteceu com GTA V em 2013 (o
+          Online chegou semanas depois), mas <strong>a Rockstar não anunciou data</strong>. Quem pré-encomenda hoje
+          está pagando pela campanha da história — nada mais.
         </p>
         <p>
-          O que vai constituir o GTA Online VI no dia 1 ainda não foi totalmente revelado. A expectativa, baseada na
-          evolução de GTA Online ao longo de 12 anos, é que ele lance enxuto e cresça via DLCs gratuitos ao longo dos
-          anos seguintes. A monetização provavelmente seguirá o modelo de Shark Cards (compra de moeda virtual), com
-          a Rockstar prometendo que conteúdo competitivo de gameplay será sempre obtível via jogo, sem pay-to-win
-          direto. Esse modelo gerou bilhões para a Take-Two e deve continuar como pilar comercial.
+          Essa mudança de comunicação em relação a 2025 (quando analistas de Wall Street trabalhavam com hipótese de
+          lançamento simultâneo) parece refletir uma decisão da editora de proteger o lançamento da campanha de
+          problemas de servidor semelhantes aos que atormentaram GTA V em 2013. O modelo comercial do novo online
+          ainda não foi detalhado; Shark Cards e microtransações cosméticas seguem sendo a expectativa razoável dado
+          o histórico da franquia. Até lá, GTA VI é, na prática, um lançamento single-player puro — algo que a
+          Rockstar não fazia com essa clareza desde Red Dead Redemption 2 em outubro de 2018.
         </p>
 
         <h2 className="text-2xl font-bold mt-10 mb-4">O que NÃO foi confirmado</h2>

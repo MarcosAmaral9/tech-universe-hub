@@ -116,55 +116,56 @@ const GtaViPreVendaEdicoes2026 = () => {
         <AdLeaderboard className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <ShoppingCart className="h-7 w-7 text-pink-400" /> Edições prováveis (e o que historicamente vem em cada uma)
+          <ShoppingCart className="h-7 w-7 text-pink-400" /> As duas edições confirmadas (só isso — nada de Special ou Collector's)
         </h2>
         <p>
-          A Rockstar ainda não detalhou o lineup oficial de edições de GTA VI, mas o padrão de Red Dead Redemption 2 e
-          GTA V dá uma base sólida de expectativa. Em RDR2, a editora ofereceu quatro camadas: Standard Edition, Special
-          Edition, Ultimate Edition e Collector's Box. Cada degrau acima da Standard adicionava conteúdo cosmético no
-          modo single-player (mapa de tesouros, atalhos de progressão), bônus para o modo online (cavalo, arma, roupa,
-          dinheiro virtual) e, no caso da Collector's Box, itens físicos colecionáveis (relógio, mapa, baralho de
-          cartas, livro de propaganda).
+          A Rockstar simplificou o lineup de forma inédita para um lançamento desse porte: só existem{" "}
+          <strong>duas edições</strong>. Não há Special Edition, não há Collector's Box física, não há steelbook
+          exclusivo em varejista. Quem viu listagens dessas edições em marketplaces está diante de fraude ou de
+          conteúdo especulativo desatualizado.
         </p>
         <p>
-          A expectativa razoável para GTA VI é uma estrutura parecida, possivelmente simplificada para três camadas
-          digitais e uma física. A Standard Edition deve trazer apenas o jogo. Uma <strong>Premium ou Special Edition</strong>{" "}
-          deve incluir bônus exclusivos para o GTA Online VI (que, segundo a Take-Two, será lançado simultâneo com o
-          jogo single-player, evitando o desastre logístico de 2013). E uma <strong>Ultimate Edition</strong> deve
-          empilhar tudo isso com acesso antecipado a missões cosméticas, veículos ou skins, mais um bônus de dinheiro
-          virtual para começar o online já com alguma capitalização.
+          A <strong>Standard Edition</strong> (US$ 79,99 / R$ 449,90) traz o jogo completo — a campanha single-player
+          integral com Lucia e Jason, Vice City, os pântanos de Leonida, todos os sistemas de mundo aberto. Nenhum
+          conteúdo do jogo principal é cortado para vender depois.
         </p>
         <p>
-          Sobre a edição física de colecionador, há um detalhe importante: a Rockstar reduziu drasticamente a produção
-          de Collector's Boxes na geração atual. Existe possibilidade de essa edição não chegar ao Brasil oficialmente,
-          ou chegar apenas via importação direta da Rockstar Store, com frete e impostos significativos. Quem
-          historicamente coleciona Collector's Edition deve ficar atento ao anúncio inicial: essas edições esgotam em
-          horas e, na revenda, atingem 3 a 5 vezes o preço de tabela.
+          A <strong>Ultimate Edition</strong> (US$ 99,99 / R$ 549,90) adiciona, sobre a Standard, um pacote de
+          conteúdo cosmético e narrativo confirmado pela Rockstar: o supercarro <strong>Grotti Cheetah '95</strong>{" "}
+          (releitura moderna do clássico Vice City Testarossa) como exclusivo, uma frota de veículos premium
+          adicionais, armas e roupas exclusivas, acesso à oficina de modificação <strong>Rideout Customs</strong> e{" "}
+          <strong>duas missões extras integradas à história principal</strong>. Nada disso é competitivo — é conteúdo
+          de personalização e horas extras de história para quem quer aprofundar.
+        </p>
+        <p>
+          Uma nota importante para quem comprar mídia física: <strong>a caixa não tem disco</strong>. Amazon, Best Buy,
+          Walmart, Target, GameStop e a versão brasileira via Kabum entregam apenas uma caixa com voucher de resgate
+          digital para o console correspondente (PS5 ou Xbox Series). É a mesma decisão que Rockstar tomou em outros
+          lançamentos recentes: reduzir custo logístico e forçar preload digital.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <CheckCircle2 className="h-7 w-7 text-pink-400" /> Bônus de pré-venda: o que esperar (e o que ignorar)
+          <CheckCircle2 className="h-7 w-7 text-pink-400" /> Vintage Vice City Pack: o bônus confirmado de pré-venda
         </h2>
         <p>
-          Toda pré-venda da Rockstar nas últimas duas décadas incluiu pelo menos um bônus de pré-encomenda para o modo
-          online — geralmente um veículo exclusivo, uma roupa cosmética ou um pacote de moeda virtual. Em GTA V, quem
-          pré-comprou ganhou o "Atomic Blimp" como veículo cosmético; em RDR2, foram bônus para o Story Mode (mapa do
-          tesouro, cavalo, arma) mais um pacote de ouro para o Red Dead Online. A aposta segura é que GTA VI terá um
-          conjunto similar: algo cosmético para o modo história e um pacote inicial para o GTA Online VI.
+          Todo mundo que pré-encomenda GTA VI — <strong>em qualquer edição, em qualquer loja oficial</strong> — recebe
+          o <strong>Vintage Vice City Pack</strong>, um pacote temático inspirado na estética 1980s do Vice City
+          original. Ele traz um <strong>Vapid Stanier '55</strong> clássico com garagem própria, um conjunto de
+          <strong> roupas e penteados oitentistas exclusivos para Lucia e Jason</strong>, e um{" "}
+          <strong>padrão vintage para armas</strong>. Não há vantagem competitiva no pacote — é 100% cosmético,
+          coerente com a política histórica da Rockstar de não vender poder na pré-venda.
         </p>
         <p>
-          O que a Rockstar nunca fez, e quase certamente não vai fazer agora, é vender vantagem competitiva pesada como
-          bônus de pré-compra. Não vai ter arma com dano superior travada atrás de uma edição cara. Não vai ter
-          "missões de história exclusivas" que mudem a narrativa principal. A Rockstar entende o valor reputacional de
-          tratar a campanha como uma experiência única e completa para todos os compradores, independentemente da
-          edição — uma posição que muitos AAA modernos abandonaram, e que segue sendo um diferencial da editora.
+          Uma sutileza importante: o bônus é liberado assim que você pré-encomenda, mesmo que faça isso no dia 18 de
+          novembro. Não é preciso "chegar cedo" para garantir — a Rockstar deixou claro que o pacote é vinculado à
+          pré-venda como categoria, não à ordem de compra. A pressa só faz sentido por dois motivos práticos: garantir
+          preço em real antes de eventual reajuste cambial e habilitar o preload em 12 de novembro para jogar no
+          minuto zero em 19 de novembro.
         </p>
         <p>
-          Em paralelo, há uma camada inteira de <strong>bônus por loja</strong> a observar. PlayStation costuma incluir
-          tema dinâmico e avatar exclusivo; Xbox tradicionalmente oferece pacote de skins ou Game Pass de bônus por
-          tempo limitado; Rockstar Store tende a empilhar tudo isso e ainda incluir camiseta digital colecionável. Vale
-          a pena comparar essas matrizes antes de comprar — não pelo valor monetário (geralmente baixo), mas pela
-          coerência com onde você joga.
+          O que <strong>não vem</strong> na pré-venda é acesso antecipado, beta ou "early access". Qualquer site ou
+          canal oferecendo isso é golpe — a Rockstar nunca ofereceu beta público de um GTA e não vai começar agora.
+          Qualquer link prometendo "jogar antes" pode ser descartado sem análise.
         </p>
 
         <AdInArticle className="my-8" />
@@ -220,21 +221,22 @@ const GtaViPreVendaEdicoes2026 = () => {
           jogo na sua biblioteca em 19 de novembro.
         </p>
 
-        <h2 className="text-2xl font-bold mt-10 mb-4">Cronograma realista: o que esperar nas próximas semanas</h2>
+        <h2 className="text-2xl font-bold mt-10 mb-4">O que ainda falta até 19 de novembro</h2>
         <p>
-          Combinando o histórico da Rockstar com a sinalização da Take-Two sobre "marketing comercial no verão", a
-          janela mais provável para anúncio do trailer 3 e abertura simultânea da pré-venda é <strong>entre o fim de
-          junho e o fim de julho de 2026</strong>. O padrão da Rockstar é anunciar o trailer com 24 a 72 horas de
-          antecedência via redes sociais (sem data exata, apenas dia), liberar o vídeo às 9h ou 14h horário do leste
-          americano (10h ou 15h em Brasília), e em paralelo derrubar a página de pré-venda nas lojas oficiais.
+          Com a pré-venda já aberta e o preço confirmado, o cronograma público de GTA VI até o lançamento tem quatro
+          marcos principais. O primeiro é o <strong>Trailer 3</strong>, ainda sem data anunciada oficialmente pela
+          Rockstar — a partir de julho de 2026 vários veículos (Forbes, Beebom, GTA Intel, Comicbook) passaram a
+          rastrear pistas indiretas (atualizações no site oficial, calendário de resultados da Take-Two) apontando
+          janela entre julho e agosto. O padrão dos dois trailers anteriores é anúncio com 24 a 72 horas de
+          antecedência via X, vídeo liberado às 9h ou 14h horário do leste americano.
         </p>
         <p>
-          O Trailer 1, em dezembro de 2023, foi liberado um dia antes da data programada por causa do vazamento — a
-          conta oficial da Rockstar publicou o vídeo no X e no YouTube simultaneamente, e em 24 horas o vídeo bateu o
-          recorde mundial de visualizações de trailer de game (93 milhões). O Trailer 2, em maio de 2025, seguiu o
-          script: anúncio com 48 horas de antecedência, vídeo liberado às 11h EDT, segunda explosão de engajamento
-          mundial. Quem quiser estar entre os primeiros a pré-comprar deve seguir a conta oficial da Rockstar Games no
-          X, ativar notificações e estar pronto para entrar na loja minutos depois do trailer.
+          Depois do Trailer 3, o mais provável é uma sequência tradicional: <strong>trailer de gameplay</strong>
+          (histórico da Rockstar entre 6 e 10 semanas após o cinematográfico), semana com deep dives em blog oficial
+          detalhando combate, direção e mundo, e <strong>trailer de lançamento</strong> nos dias que antecedem 19 de
+          novembro. Em paralelo, o <strong>preload digital começa em 12 de novembro de 2026</strong> — uma semana antes
+          do lançamento, para quem comprou nas lojas digitais oficiais. Físico chega em 19 de novembro pelo canal
+          logístico habitual do varejo.
         </p>
 
 

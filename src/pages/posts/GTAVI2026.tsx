@@ -95,7 +95,7 @@ const GTAVI2026 = () => {
           </div>
           <div className="bg-card rounded-xl border border-geek/20 p-5">
             <h3 className="font-bold mb-2">💪 Jason</h3>
-            <p className="text-sm text-muted-foreground mb-2">Parceiro e coprotagonista. Mais impulsivo e voltado para confrontos diretos. Controlável em missões específicas e modo cooperativo online.</p>
+            <p className="text-sm text-muted-foreground mb-2">Parceiro e coprotagonista. Mais impulsivo e voltado para confrontos diretos. Controlável em missões específicas da campanha single-player.</p>
             <ul className="text-xs text-muted-foreground space-y-1">
               <li>• Habilidade especial: resistência a danos em combate</li>
               <li>• Background: família com histórico criminal nas Keys</li>
@@ -136,7 +136,7 @@ const GTAVI2026 = () => {
           <li><strong>Interação social expandida:</strong> NPCs reagem de forma complexa, com conversas e intimidação sem missões.</li>
           <li><strong>Economia dinâmica:</strong> Negócios funcionam de verdade — investir em propriedades e gerenciar operações criminosas.</li>
           <li><strong>Veículos e física:</strong> Motor de física completamente refeito com deformações realistas.</li>
-          <li><strong>GTA Online integrado:</strong> Modo online lançado junto com o jogo, suporte a 32 jogadores.</li>
+          <li><strong>Lançamento single-player-only:</strong> A Rockstar confirmou em junho/2026 que GTA VI chega em 19/11 como experiência exclusivamente single-player. Um novo modo online chegará em janela posterior, ainda sem data anunciada.</li>
         </ul>
 
         <AdRectangle className="my-8" />
@@ -155,9 +155,8 @@ const GTAVI2026 = () => {
             </tr></thead>
             <tbody>
               {[
-                ["Padrão (Digital)", "US$ 79,99", "R$ 449,90", "Jogo base"],
-                ["Deluxe Edition", "US$ 109,99", "R$ 599,90", "DLC de veículo + skin + dinheiro GTA Online"],
-                ["Collector's Edition", "US$ 149,99", "R$ 799,90", "Steelbook + mapa + arte + todos os DLCs"],
+                ["Standard Edition (Digital)", "US$ 79,99", "R$ 449,90", "Jogo base + Vintage Vice City Pack como bônus de pré-venda"],
+                ["Ultimate Edition (Digital)", "US$ 99,99", "R$ 549,90", "Tudo da Standard + veículos premium (incl. Grotti Cheetah '95), armas, roupas, oficina Rideout Customs e 2 missões extras"],
               ].map(([edicao, eua, br, extra]) => (
                 <tr key={edicao} className="border-t border-border">
                   <td className="py-3 px-4 font-medium break-words">{edicao}</td>
@@ -169,6 +168,12 @@ const GTAVI2026 = () => {
             </tbody>
           </table>
         </div>
+        <p className="text-sm text-muted-foreground">
+          A Rockstar confirmou apenas duas edições em 24/jun/2026 — <strong>não haverá Special Edition nem
+          Collector's Edition física</strong>. Pré-venda aberta em 25/jun/2026 em PS Store, Xbox Store, Rockstar
+          Store, Amazon, Best Buy, Walmart, Target e GameStop. Preload liberado em 12/nov/2026 para quem comprar
+          digital.
+        </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-geek" />

@@ -26,7 +26,11 @@ const timeline = [
   { data: "Mai/2025", evento: "Trailer 2", desc: "Segundo trailer libera mais material visual. Confirma protagonistas Lucia e Jason. Adiamento formal para 26 de maio de 2026 anunciado em paralelo." },
   { data: "Nov/2025", evento: "Segundo adiamento", desc: "Take-Two move data para 19 de novembro de 2026. Justifica como polimento final." },
   { data: "Mai/2026", evento: "Confirmação final", desc: "CEO Strauss Zelnick confirma na conferência de resultados: lançamento mantido em 19/11/2026, campanha comercial começa no verão." },
-  { data: "Jun-Jul/2026", evento: "Trailer 3 (esperado)", desc: "Janela estimada para terceiro trailer e abertura de pré-venda, com base na sinalização da Take-Two." },
+  { data: "24/Jun/2026", evento: "Preço oficial anunciado", desc: "Rockstar confirma Standard US$ 79,99 e Ultimate US$ 99,99 — só duas edições, nenhuma Special ou Collector's física." },
+  { data: "25/Jun/2026", evento: "Pré-venda aberta mundial", desc: "Meia-noite local em PS Store, Xbox Store, Rockstar Store, Amazon, Best Buy, Walmart, Target e GameStop. Vintage Vice City Pack como bônus para todos os pré-compradores." },
+  { data: "Jul-Ago/2026", evento: "Trailer 3 (esperado)", desc: "Ainda sem data anunciada. Forbes, GTA Intel e Beebom trabalham com janela entre segunda metade de julho e início de agosto, com base em pistas indiretas." },
+  { data: "12/Nov/2026", evento: "Preload liberado", desc: "Pré-carregamento digital começa uma semana antes do lançamento para PS Store, Xbox Store e Rockstar Store." },
+  { data: "19/Nov/2026", evento: "Lançamento mundial", desc: "GTA VI chega em PS5, PS5 Pro, Xbox Series X e Series S — exclusivamente como jogo single-player. Novo modo online chega em janela posterior, sem data." },
 ];
 
 const GtaViTrailersMarketing2026 = () => {
@@ -158,21 +162,31 @@ const GtaViTrailersMarketing2026 = () => {
 
         <AdInArticle className="my-8" />
 
-        <h2 className="text-2xl font-bold mt-10 mb-4">A campanha do verão de 2026: o que esperar</h2>
+        <h2 className="text-2xl font-bold mt-10 mb-4">A campanha do verão de 2026: pré-venda aberta, Trailer 3 ainda pendente</h2>
         <p>
           Em <strong>maio de 2026</strong>, na conferência de resultados do quarto trimestre fiscal da Take-Two, o CEO
-          Strauss Zelnick confirmou que a "campanha comercial de marketing de GTA VI começa no verão" — usando
-          terminologia padrão da indústria que aponta para junho, julho ou agosto. Essa é a janela mais provável para
-          o Trailer 3 oficial e para a abertura simultânea da pré-venda nas lojas oficiais.
+          Strauss Zelnick confirmou que a "campanha comercial de marketing de GTA VI começa no verão". Um mês depois,
+          em <strong>24 de junho</strong>, a Rockstar cumpriu a primeira parte da promessa: anunciou o preço oficial
+          (US$ 79,99 Standard e US$ 99,99 Ultimate) e abriu a <strong>pré-venda global em 25 de junho de 2026</strong>{" "}
+          em PS Store, Xbox Store, Rockstar Store, Amazon, Best Buy, Walmart, Target e GameStop. Todos os
+          pré-compradores ganham o Vintage Vice City Pack como bônus temático 1980s.
+        </p>
+        <p>
+          O que ainda não aconteceu, até <strong>o início de julho de 2026</strong>, é o <strong>Trailer 3</strong>.
+          A Rockstar não anunciou data. Veículos como Forbes, GTA Intel, Beebom e Comicbook.com rastreiam pistas
+          indiretas (novo update no site oficial, calendário da próxima call de resultados da Take-Two) e trabalham
+          com janela mais provável entre <strong>segunda metade de julho e início de agosto</strong>. O padrão dos
+          dois trailers anteriores é anúncio com 24 a 72 horas de antecedência via X, vídeo liberado às 9h ou 14h
+          horário do leste americano — tudo o que aparecer fora desse canal antes do anúncio oficial é fabricação
+          por IA ou clipbait de canais oportunistas.
         </p>
         <p>
           A partir do Trailer 3, a expectativa é que o ritmo de comunicação acelere significativamente. A Rockstar
-          tradicionalmente libera material de marketing em camadas: trailer principal, depois trailer focado em
-          personagens, depois trailer focado em mundo, depois trailer de gameplay, e finalmente trailer de
-          lançamento. Em RDR2, esse ciclo durou de junho a outubro de 2018; em GTA V, durou de maio a setembro de
-          2013. Aplicando aos quatro meses entre julho e novembro de 2026, é razoável esperar quatro a seis peças de
-          marketing significativas, incluindo screenshots oficiais, posts em blog detalhando aspectos específicos
-          (combate, online, mapa) e possíveis "deep dives" de gameplay.
+          tradicionalmente libera material de marketing em camadas: trailer principal, trailers focados em
+          personagens e mundo, trailer de gameplay e, por fim, trailer de lançamento. Em RDR2 esse ciclo durou de
+          junho a outubro de 2018; em GTA V, de maio a setembro de 2013. Aplicando aos meses entre agosto e
+          novembro de 2026, é razoável esperar de quatro a seis peças de marketing significativas, incluindo
+          screenshots oficiais e posts em blog detalhando combate, mapa e sistemas.
         </p>
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Linha do tempo completa</h2>
