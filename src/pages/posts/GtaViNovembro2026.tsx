@@ -250,12 +250,20 @@ const GtaViNovembro2026 = () => {
           A Rockstar revelou GTA VI através de apenas dois trailers em quase três anos — uma estratégia de escassez deliberada que contrasta com a abordagem de "marketing constante" da maioria dos AAAs modernos. Cada trailer foi cuidadosamente editado para revelar o mínimo necessário enquanto maximiza o impacto emocional e a especulação da comunidade. Essa abordagem gerou um nível de engajamento orgânico que nenhuma campanha paga conseguiria replicar — análises detalhadas de cada frame circularam por meses após cada trailer.
         </p>
       
-        <h2 className="text-2xl font-bold mt-10 mb-4">O Papel do GTA Online na Estratégia de Lançamento</h2>
+        <h2 className="text-2xl font-bold mt-10 mb-4">Sem GTA Online no Dia 1: Lançamento é Single-Player-Only</h2>
         <p>
-          Diferente de GTA V, onde o GTA Online foi lançado semanas após o jogo single-player com problemas técnicos significativos, a Rockstar confirmou que o modo online de GTA VI será lançado simultaneamente com a campanha principal em 19 de novembro. Essa decisão reflete o aprendizado da empresa com o lançamento conturbado de 2013, quando os servidores do GTA Online ficaram instáveis por semanas devido à demanda inesperada.
+          Ao abrir a pré-venda em 24 de junho de 2026, Rockstar e Take-Two confirmaram um detalhe que muitos analistas
+          e a própria imprensa vinham cobrindo como incerto: <strong>GTA VI chega em 19 de novembro exclusivamente
+          como jogo single-player</strong>. Não haverá GTA Online no dia do lançamento. Um novo modo online é esperado
+          em algum momento posterior — repetindo o padrão de GTA V, que teve o Online semanas depois em 2013 — mas a
+          Rockstar não anunciou data e não incluiu o online em nenhuma edição de pré-venda.
         </p>
         <p>
-          O modelo de monetização do GTA Online 2 ainda não foi detalhado oficialmente, mas analistas financeiros da Take-Two sinalizaram em calls de investidores que a expectativa é de um modelo similar ao atual — compra de moeda do jogo (Shark Cards ou equivalente) para acelerar progressão, sem elementos pay-to-win diretos no PvP competitivo. A receita do GTA Online original, estimada em mais de $1 bilhão anualmente nos últimos anos, é a justificativa financeira central para o investimento de bilhões em GTA VI.
+          O modelo de monetização do novo online ainda não foi detalhado oficialmente, mas analistas financeiros da
+          Take-Two sinalizaram em calls de investidores que a expectativa é de um modelo similar ao GTA Online atual —
+          compra de moeda do jogo (Shark Cards ou equivalente) para acelerar progressão, sem elementos pay-to-win
+          diretos no PvP competitivo. A receita anual bilionária do GTA Online original segue como justificativa
+          central para o investimento de bilhões em GTA VI.
         </p>
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Comparando as Datas de Novembro com Outros Lançamentos Históricos</h2>
