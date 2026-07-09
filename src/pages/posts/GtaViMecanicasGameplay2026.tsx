@@ -166,7 +166,7 @@ const GtaViMecanicasGameplay2026 = () => {
                 { mec: "IA de NPCs expandida", fonte: "Trailer 2", det: "Multidões filmando com celulares, reações individuais, comportamento social diverso em clubes, praias e eventos." },
                 { mec: "Mundo aquático ampliado", fonte: "Trailer 2", det: "Lanchas, jet skis, mergulho com snorkel, jacarés reativos em pântanos e rotas navegáveis longas." },
                 { mec: "Redes sociais fictícias internas", fonte: "Trailer 2", det: "Personagens gravam e postam vídeos dentro do jogo; sátira da cultura de influencer integrada ao mundo." },
-                { mec: "GTA Online VI no lançamento", fonte: "Take-Two (call de investidores)", det: "Modo online lançado simultaneamente com a campanha em 19/11/2026, sem janela de espera como em 2013." },
+                { mec: "Lançamento single-player-only", fonte: "Rockstar Newswire (jun/2026)", det: "GTA VI chega em 19/11/2026 exclusivamente como jogo single-player. Novo modo online chega em janela posterior, ainda sem data anunciada." },
               ].map((r, i) => (
                 <tr key={r.mec} className={`border-t border-border/60 ${i % 2 ? "bg-muted/20" : ""}`}>
                   <td className="py-3 px-4 font-semibold break-words">{r.mec}</td>
