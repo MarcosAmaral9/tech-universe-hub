@@ -155,9 +155,8 @@ const GTAVI2026 = () => {
             </tr></thead>
             <tbody>
               {[
-                ["Padrão (Digital)", "US$ 79,99", "R$ 449,90", "Jogo base"],
-                ["Deluxe Edition", "US$ 109,99", "R$ 599,90", "DLC de veículo + skin + dinheiro GTA Online"],
-                ["Collector's Edition", "US$ 149,99", "R$ 799,90", "Steelbook + mapa + arte + todos os DLCs"],
+                ["Standard Edition (Digital)", "US$ 79,99", "R$ 449,90", "Jogo base + Vintage Vice City Pack como bônus de pré-venda"],
+                ["Ultimate Edition (Digital)", "US$ 99,99", "R$ 549,90", "Tudo da Standard + veículos premium (incl. Grotti Cheetah '95), armas, roupas, oficina Rideout Customs e 2 missões extras"],
               ].map(([edicao, eua, br, extra]) => (
                 <tr key={edicao} className="border-t border-border">
                   <td className="py-3 px-4 font-medium break-words">{edicao}</td>
@@ -169,6 +168,12 @@ const GTAVI2026 = () => {
             </tbody>
           </table>
         </div>
+        <p className="text-sm text-muted-foreground">
+          A Rockstar confirmou apenas duas edições em 24/jun/2026 — <strong>não haverá Special Edition nem
+          Collector's Edition física</strong>. Pré-venda aberta em 25/jun/2026 em PS Store, Xbox Store, Rockstar
+          Store, Amazon, Best Buy, Walmart, Target e GameStop. Preload liberado em 12/nov/2026 para quem comprar
+          digital.
+        </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-geek" />
