@@ -221,21 +221,22 @@ const GtaViPreVendaEdicoes2026 = () => {
           jogo na sua biblioteca em 19 de novembro.
         </p>
 
-        <h2 className="text-2xl font-bold mt-10 mb-4">Cronograma realista: o que esperar nas próximas semanas</h2>
+        <h2 className="text-2xl font-bold mt-10 mb-4">O que ainda falta até 19 de novembro</h2>
         <p>
-          Combinando o histórico da Rockstar com a sinalização da Take-Two sobre "marketing comercial no verão", a
-          janela mais provável para anúncio do trailer 3 e abertura simultânea da pré-venda é <strong>entre o fim de
-          junho e o fim de julho de 2026</strong>. O padrão da Rockstar é anunciar o trailer com 24 a 72 horas de
-          antecedência via redes sociais (sem data exata, apenas dia), liberar o vídeo às 9h ou 14h horário do leste
-          americano (10h ou 15h em Brasília), e em paralelo derrubar a página de pré-venda nas lojas oficiais.
+          Com a pré-venda já aberta e o preço confirmado, o cronograma público de GTA VI até o lançamento tem quatro
+          marcos principais. O primeiro é o <strong>Trailer 3</strong>, ainda sem data anunciada oficialmente pela
+          Rockstar — a partir de julho de 2026 vários veículos (Forbes, Beebom, GTA Intel, Comicbook) passaram a
+          rastrear pistas indiretas (atualizações no site oficial, calendário de resultados da Take-Two) apontando
+          janela entre julho e agosto. O padrão dos dois trailers anteriores é anúncio com 24 a 72 horas de
+          antecedência via X, vídeo liberado às 9h ou 14h horário do leste americano.
         </p>
         <p>
-          O Trailer 1, em dezembro de 2023, foi liberado um dia antes da data programada por causa do vazamento — a
-          conta oficial da Rockstar publicou o vídeo no X e no YouTube simultaneamente, e em 24 horas o vídeo bateu o
-          recorde mundial de visualizações de trailer de game (93 milhões). O Trailer 2, em maio de 2025, seguiu o
-          script: anúncio com 48 horas de antecedência, vídeo liberado às 11h EDT, segunda explosão de engajamento
-          mundial. Quem quiser estar entre os primeiros a pré-comprar deve seguir a conta oficial da Rockstar Games no
-          X, ativar notificações e estar pronto para entrar na loja minutos depois do trailer.
+          Depois do Trailer 3, o mais provável é uma sequência tradicional: <strong>trailer de gameplay</strong>
+          (histórico da Rockstar entre 6 e 10 semanas após o cinematográfico), semana com deep dives em blog oficial
+          detalhando combate, direção e mundo, e <strong>trailer de lançamento</strong> nos dias que antecedem 19 de
+          novembro. Em paralelo, o <strong>preload digital começa em 12 de novembro de 2026</strong> — uma semana antes
+          do lançamento, para quem comprou nas lojas digitais oficiais. Físico chega em 19 de novembro pelo canal
+          logístico habitual do varejo.
         </p>
 
 
