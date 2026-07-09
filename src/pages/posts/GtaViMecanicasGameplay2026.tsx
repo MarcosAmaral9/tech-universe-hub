@@ -144,7 +144,7 @@ const GtaViMecanicasGameplay2026 = () => {
           { icon: MessageSquare, title: "IA de NPCs expandida", desc: "Multidões filmando com celulares, reações individuais, comportamento social diverso em clubes, praias e eventos.", accent: "violet" },
           { icon: Waves, title: "Mundo aquático ampliado", desc: "Lanchas, jet skis, mergulho, jacarés reativos em pântanos e rotas navegáveis longas em Leonida Keys.", accent: "cyan" },
           { icon: Smartphone, title: "Redes sociais internas", desc: "Personagens gravam e postam vídeos dentro do jogo. Sátira à cultura de influencer integrada ao mundo.", accent: "pink" },
-          { icon: Wifi, title: "GTA Online VI no dia 1", desc: "Modo online lançado simultâneo com a campanha em 19/11/2026 — sem janela de espera como em 2013.", accent: "emerald" },
+          { icon: Wifi, title: "Single-player no dia 1", desc: "Rockstar confirmou que GTA VI lança em 19/11/2026 como experiência exclusivamente single-player. Novo modo online chega em janela pós-lançamento ainda não anunciada.", accent: "emerald" },
           { icon: Cpu, title: "Densidade urbana inédita", desc: "Muito mais NPCs, veículos e detalhes ambientais simultâneos que Los Santos em GTA V.", accent: "violet" },
         ]} />
 
