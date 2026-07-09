@@ -136,7 +136,7 @@ const GTAVI2026 = () => {
           <li><strong>Interação social expandida:</strong> NPCs reagem de forma complexa, com conversas e intimidação sem missões.</li>
           <li><strong>Economia dinâmica:</strong> Negócios funcionam de verdade — investir em propriedades e gerenciar operações criminosas.</li>
           <li><strong>Veículos e física:</strong> Motor de física completamente refeito com deformações realistas.</li>
-          <li><strong>GTA Online integrado:</strong> Modo online lançado junto com o jogo, suporte a 32 jogadores.</li>
+          <li><strong>Lançamento single-player-only:</strong> A Rockstar confirmou em junho/2026 que GTA VI chega em 19/11 como experiência exclusivamente single-player. Um novo modo online chegará em janela posterior, ainda sem data anunciada.</li>
         </ul>
 
         <AdRectangle className="my-8" />
