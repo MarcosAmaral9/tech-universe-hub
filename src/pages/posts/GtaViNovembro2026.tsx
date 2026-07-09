@@ -178,7 +178,7 @@ const GtaViNovembro2026 = () => {
         </h2>
         <div className="not-prose my-6 space-y-3">
           {[
-            { momento: "Agora (pré-compra)", vantagem: "Bônus de pré-venda quando disponível. Garante acesso no dia de lançamento sem fila digital.", risco: "Possível novo adiamento (terceira vez?). Ainda não há data confirmada de pré-venda." },
+            { momento: "Pré-venda (aberta desde 25/jun/2026)", vantagem: "Standard US$ 79,99 / R$ 449,90 e Ultimate US$ 99,99 / R$ 549,90 nas lojas oficiais (PS Store, Xbox Store, Rockstar Store, Amazon, GameStop). Todos os pré-compradores recebem o Vintage Vice City Pack. Preload liberado em 12/nov garante jogar no minuto zero.", risco: "Você paga hoje sem ter visto análise independente. Digital não tem revenda; físico é apenas caixa com voucher — não há disco." },
             { momento: "Lançamento (19 nov)", vantagem: "Experiência completa sem spoilers. Servidor GTA Online no pico de jogadores online.", risco: "Possíveis bugs de lançamento. Servidores online instáveis nas primeiras semanas." },
             { momento: "Janeiro 2027", vantagem: "Primeiros patches aplicados, bugs corrigidos, possível desconto pós-natal.", risco: "Spoilers inevitáveis após 2 meses de jogo. Perde o momento cultural do lançamento." },
           ].map(({ momento, vantagem, risco }) => (
