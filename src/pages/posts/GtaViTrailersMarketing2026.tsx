@@ -26,7 +26,11 @@ const timeline = [
   { data: "Mai/2025", evento: "Trailer 2", desc: "Segundo trailer libera mais material visual. Confirma protagonistas Lucia e Jason. Adiamento formal para 26 de maio de 2026 anunciado em paralelo." },
   { data: "Nov/2025", evento: "Segundo adiamento", desc: "Take-Two move data para 19 de novembro de 2026. Justifica como polimento final." },
   { data: "Mai/2026", evento: "Confirmação final", desc: "CEO Strauss Zelnick confirma na conferência de resultados: lançamento mantido em 19/11/2026, campanha comercial começa no verão." },
-  { data: "Jun-Jul/2026", evento: "Trailer 3 (esperado)", desc: "Janela estimada para terceiro trailer e abertura de pré-venda, com base na sinalização da Take-Two." },
+  { data: "24/Jun/2026", evento: "Preço oficial anunciado", desc: "Rockstar confirma Standard US$ 79,99 e Ultimate US$ 99,99 — só duas edições, nenhuma Special ou Collector's física." },
+  { data: "25/Jun/2026", evento: "Pré-venda aberta mundial", desc: "Meia-noite local em PS Store, Xbox Store, Rockstar Store, Amazon, Best Buy, Walmart, Target e GameStop. Vintage Vice City Pack como bônus para todos os pré-compradores." },
+  { data: "Jul-Ago/2026", evento: "Trailer 3 (esperado)", desc: "Ainda sem data anunciada. Forbes, GTA Intel e Beebom trabalham com janela entre segunda metade de julho e início de agosto, com base em pistas indiretas." },
+  { data: "12/Nov/2026", evento: "Preload liberado", desc: "Pré-carregamento digital começa uma semana antes do lançamento para PS Store, Xbox Store e Rockstar Store." },
+  { data: "19/Nov/2026", evento: "Lançamento mundial", desc: "GTA VI chega em PS5, PS5 Pro, Xbox Series X e Series S — exclusivamente como jogo single-player. Novo modo online chega em janela posterior, sem data." },
 ];
 
 const GtaViTrailersMarketing2026 = () => {
