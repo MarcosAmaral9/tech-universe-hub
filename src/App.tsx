@@ -257,6 +257,9 @@ const Seedance20IA2026               = lazy(() => import("./pages/posts/Seedance
 const ReMonster2026                  = lazy(() => import("./pages/posts/ReMonster2026"));
 const IsekaiMokushirokuMynoghra2026  = lazy(() => import("./pages/posts/IsekaiMokushirokuMynoghra2026"));
 const SunoAIMusica2026               = lazy(() => import("./pages/posts/SunoAIMusica2026"));
+const LciLca2026Guia                 = lazy(() => import("./pages/posts/LciLca2026Guia"));
+const AcoesDividendos2026            = lazy(() => import("./pages/posts/AcoesDividendos2026"));
+const BDR2026Guia                    = lazy(() => import("./pages/posts/BDR2026Guia"));
 const BannerlordPortal               = lazy(() => import("./pages/posts/BannerlordPortal"));
 const BannerlordGuiaCompleto         = lazy(() => import("./pages/posts/BannerlordGuiaCompleto"));
 const BannerlordCulturasReinos       = lazy(() => import("./pages/posts/BannerlordCulturasReinos"));
@@ -532,6 +535,9 @@ const App = () => (
                 <Route path="/post/re-monster-anime-manga-guia-2026" element={<Suspense fallback={<div />}><ReMonster2026 /></Suspense>} />
                 <Route path="/post/isekai-mokushiroku-mynoghra-guia-2026" element={<Suspense fallback={<div />}><IsekaiMokushirokuMynoghra2026 /></Suspense>} />
                 <Route path="/post/suno-ai-gerador-musica-2026" element={<Suspense fallback={<div />}><SunoAIMusica2026 /></Suspense>} />
+                <Route path="/post/lci-lca-2026-guia-completo" element={<Suspense fallback={<div />}><LciLca2026Guia /></Suspense>} />
+                <Route path="/post/acoes-dividendos-2026-melhores-pagadoras-b3" element={<Suspense fallback={<div />}><AcoesDividendos2026 /></Suspense>} />
+                <Route path="/post/bdr-2026-como-investir-apple-amazon-google-b3" element={<Suspense fallback={<div />}><BDR2026Guia /></Suspense>} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
