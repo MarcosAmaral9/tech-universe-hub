@@ -182,12 +182,71 @@ import seedance20Img from "@/assets/seedance-2-0-geracao-video-ia-2026.webp";
 import reMonsterImg                    from "@/assets/re-monster-anime-manga-guia-2026.webp";
 import isekaiMynogrhraImg              from "@/assets/isekai-mokushiroku-mynoghra-guia-2026.webp";
 import sunoAIImg from "@/assets/suno-ai-gerador-musica-2026.webp";
+import lciLca2026Img from "@/assets/lci-lca-2026-guia.webp";
+import acoesDividendos2026Img from "@/assets/acoes-dividendos-2026.webp";
+import bdr2026Img from "@/assets/bdr-2026-investir-b3.webp";
 
 
 export const blogPosts: BlogPost[] = [
+// ── 10 Jul 2026 — Finanças (Renda Fixa / Carteira) ──────────────
+  {
+    id: "198",
+    slug: "lci-lca-2026-guia-completo",
+    title: "LCI e LCA em 2026: Guia Completo com Isenção de IR, Carência e Gross-Up",
+    excerpt: "LCI e LCA isentos de IR: carência atual de 6 meses, cálculo do gross-up vs CDB, quem garante (FGC) e quando essas letras de crédito realmente valem a pena em 2026.",
+    content: "",
+    category: "invest",
+    subtopic: "renda-fixa",
+    image: lciLca2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-10",
+    readTime: "13 min",
+    faq: [
+      { q: "LCI e LCA são isentas de IR?", a: "Sim, para pessoa física residente no Brasil. A isenção é garantida pela Lei 11.033/2004 e vale sobre os rendimentos recebidos — não sobre eventual ganho de capital na venda no mercado secundário." },
+      { q: "Qual a carência mínima de LCI e LCA em 2026?", a: "6 meses para emissões pós-fixadas (CDI) e prefixadas, conforme decisão do CMN de maio de 2025. Para emissões indexadas ao IPCA, a carência é de 36 meses (LCI) e 12 meses (LCA)." },
+      { q: "O que é gross-up de LCI?", a: "É o cálculo que converte a taxa isenta da LCI para a taxa bruta equivalente que um CDB precisaria pagar para render o mesmo líquido. Para 12 meses (IR 20%): taxa mínima LCI = taxa CDB × 0,80." },
+      { q: "LCI e LCA têm garantia do FGC?", a: "Sim. O FGC garante até R$ 250.000 por CPF por instituição financeira, com teto de R$ 1 milhão por período de 4 anos somando todas as instituições." },
+    ],
+  },
+  {
+    id: "199",
+    slug: "acoes-dividendos-2026-melhores-pagadoras-b3",
+    title: "Ações de Dividendos em 2026: As Melhores Pagadoras da B3",
+    excerpt: "ITUB4, PETR4, TAEE11, ALOS3, VALE3 e as maiores pagadoras da B3 em 2026. DY real, diferença entre dividendos isentos e JCP (17,5% IR), e como montar uma carteira de renda.",
+    content: "",
+    category: "invest",
+    subtopic: "carteira",
+    image: acoesDividendos2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-10",
+    readTime: "14 min",
+    faq: [
+      { q: "Dividendos de ações têm IR?", a: "Dividendos pagos por empresas brasileiras a pessoa física continuam isentos de IR, exceto para recebimentos acima de R$ 50 mil/mês do mesmo pagador (Lei 15.270/2025). JCP tem retenção de 17,5% na fonte desde 2026." },
+      { q: "O que é JCP?", a: "Juros sobre Capital Próprio é uma forma de remuneração ao acionista tratada como despesa dedutível pela empresa. Desde 2026, a alíquota do IRRF sobre JCP subiu de 15% para 17,5% (LC 224/2025)." },
+      { q: "Qual ação pagou mais dividendos no 1º semestre de 2026?", a: "Entre as do Ibovespa, a PetroRecôncavo (RECV3) liderou com DY de 12,06% no semestre, seguida pela Copel (CPLE3) com 8,67%, segundo levantamento da Elos Ayta/InfoMoney." },
+      { q: "Como calcular o dividend yield?", a: "DY = (Dividendos pagos nos últimos 12 meses ÷ Preço atual da ação) × 100. Um DY muito alto pode indicar queda no preço da ação ou pagamento extraordinário não recorrente — sempre analise o contexto." },
+    ],
+  },
+  {
+    id: "200",
+    slug: "bdr-2026-como-investir-apple-amazon-google-b3",
+    title: "BDRs em 2026: Como Investir em Apple, Amazon e Google Pela B3",
+    excerpt: "671 BDRs na B3: o que são, como funcionam, tributação sem isenção de R$ 20 mil, dividendos via carnê-leão e como declarar AAPL34, AMZO34 e NVDC34 no IRPF 2026.",
+    content: "",
+    category: "invest",
+    subtopic: "carteira",
+    image: bdr2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-10",
+    readTime: "13 min",
+    faq: [
+      { q: "BDR tem isenção de R$ 20 mil?", a: "Não. BDRs não têm a isenção de R$ 20 mil mensais aplicável a ações brasileiras. Todo ganho de capital na venda de BDRs é tributado a 15% (swing trade) ou 20% (day trade), independentemente do valor vendido." },
+      { q: "Qual o ticker do BDR da Apple?", a: "AAPL34. Cada AAPL34 representa 1/10 de uma ação ordinária da Apple negociada na Nasdaq. Outros exemplos: AMZO34 (Amazon), GOGL34 (Alphabet/Google), MSFT34 (Microsoft), NVDC34 (Nvidia)." },
+      { q: "Como os dividendos de BDRs são tributados?", a: "Como rendimentos recebidos do exterior, sujeitos à tabela progressiva do IRPF via carnê-leão. Diferentemente de dividendos de ações brasileiras, que são isentos para pessoa física." },
+      { q: "BDR é melhor que ETF internacional?", a: "Depende do objetivo. BDRs permitem exposição a empresas específicas. ETFs internacionais como IVVB11 oferecem diversificação automática com uma única operação — mais adequado para quem não quer selecionar empresas individualmente." },
+    ],
+  },
 
-
-  
 // ── 28 Mai 2026 — IA ──────────────────────────────────────────────
   {
   id: "197",
