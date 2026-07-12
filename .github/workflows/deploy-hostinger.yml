@@ -1,0 +1,73 @@
+name: Deploy to Hostinger
+
+# Faz build completo (com pré-render de posts + sitemap) e envia dist/
+# inteiro para public_html/ na Hostinger via FTP a cada push na main.
+# Garante que TODOS os arquivos vão juntos — nunca subconjunto.
+#
+# Secrets necessários no repositório (Settings → Secrets and variables → Actions):
+#   HOSTINGER_FTP_SERVER    ex.: ftp.viciocode.com  (ou IP do servidor)
+#   HOSTINGER_FTP_USERNAME  ex.: u123456789.viciocode
+#   HOSTINGER_FTP_PASSWORD  senha do FTP (crie em hPanel → Arquivos → Contas FTP)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {} # permite disparar manualmente na aba Actions
+
+concurrency:
+  group: hostinger-deploy
+  cancel-in-progress: false # não cancela deploys em andamento (evita upload parcial)
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (regenera sitemap + pré-renderiza posts + verifica dist/)
+        run: npm run build
+
+      - name: Show dist summary
+        run: |
+          echo "Arquivos na raiz de dist/:"
+          ls -la dist/ | head -30
+          echo ""
+          echo "Total de posts pré-renderizados:"
+          ls dist/post/ | wc -l
+          echo ""
+          echo "sitemap.xml:"
+          head -5 dist/sitemap.xml
+
+      - name: Deploy via FTP → public_html/
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.HOSTINGER_FTP_SERVER }}
+          username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
+          password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: /public_html/
+          protocol: ftps          # Hostinger suporta FTPS (TLS explícito)
+          security: loose         # aceita certificados compartilhados da Hostinger
+          dangerous-clean-slate: false  # não apaga arquivos que não estão em dist/
+          # Preserva uploads externos (imagens de usuários, api.php customizado etc.)
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/api.php
+            **/cache/**
+
+      - name: Ping Google sitemap
+        run: |
+          curl -sS "https://www.google.com/ping?sitemap=https://viciocode.com/sitemap.xml" || true
+          curl -sS "https://www.google.com/ping?sitemap=https://viciocode.com/sitemap-images.xml" || true
