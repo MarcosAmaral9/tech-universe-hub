@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import DynamicSEO from "@/components/DynamicSEO";
+import Breadcrumb from "@/components/Breadcrumb";
 import { Settings, Sun, Moon, Type, Palette, Bell, BellOff, RotateCcw, Smartphone, Globe, User, AtSign, Camera, BookOpen, MessageSquare, Clock, ExternalLink, Star, Trash2, WifiOff, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { getReadHistory, getCommentHistory } from "@/hooks/useReadingHistory";
