@@ -185,6 +185,10 @@ import sunoAIImg from "@/assets/suno-ai-gerador-musica-2026.webp";
 import lciLca2026Img from "@/assets/lci-lca-2026-guia.webp";
 import acoesDividendos2026Img from "@/assets/acoes-dividendos-2026.webp";
 import bdr2026Img from "@/assets/bdr-2026-investir-b3.webp";
+import blackMythWukongImg from "@/assets/black-myth-wukong-guia-2024.webp";
+import kingdomCome2Img from "@/assets/kingdom-come-deliverance-2-guia-2025.webp";
+import monsterHunterWildsImg from "@/assets/monster-hunter-wilds-guia-2025.webp";
+
 
 
 export const blogPosts: BlogPost[] = [
