@@ -251,7 +251,9 @@ export const blogPosts: BlogPost[] = [
     ],
   },
 
+// ── 10 Jul 2026 — Finanças (Renda Fixa / Carteira) ──────────────
   {
+
     id: "198",
     slug: "lci-lca-2026-guia-completo",
     title: "LCI e LCA em 2026: Guia Completo com Isenção de IR, Carência e Gross-Up",
