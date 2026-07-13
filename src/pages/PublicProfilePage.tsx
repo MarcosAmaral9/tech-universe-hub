@@ -73,9 +73,8 @@ const PublicProfilePage = () => {
     <>
       <DynamicSEO />
       <div className="min-h-[60vh] py-8 px-4">
-        <div className="container mb-4"><Breadcrumb /></div>
-        <div className="flex items-center justify-center">
-        <div className="w-full max-w-md text-center space-y-6">
+        <div className="max-w-md mx-auto mb-4"><Breadcrumb /></div>
+        <div className="w-full max-w-md mx-auto text-center space-y-6">
           <Avatar className="w-28 h-28 mx-auto ring-4 ring-primary/20">
             {profile.avatar_url ? (
               <AvatarImage src={profile.avatar_url} alt={displayName} />
