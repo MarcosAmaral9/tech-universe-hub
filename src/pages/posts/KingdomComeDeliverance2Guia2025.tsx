@@ -210,12 +210,12 @@ const KingdomComeDeliverance2Guia2025 = () => {
           Sistemas de Habilidade e Progressão
         </h2>
 
-        <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
+        <div className="not-prose my-6 overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+          <table className="w-full min-w-[560px] border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead>
               <tr className="bg-secondary">
-                <th className="text-left py-3 px-4 w-1/3 break-words">Habilidade</th>
-                <th className="text-left py-3 px-4 w-2/3 break-words">Como Evoluir / Por Que Importa</th>
+                <th className="text-left py-3 px-4 w-1/3 align-top">Habilidade</th>
+                <th className="text-left py-3 px-4 w-2/3 align-top">Como Evoluir / Por Que Importa</th>
               </tr>
             </thead>
             <tbody>

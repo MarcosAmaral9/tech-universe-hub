@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Lightbulb, Code, GraduationCap, Calendar, MapPin, Mail, ArrowLeft } from "lucide-react";
 import DynamicSEO from "@/components/DynamicSEO";
+import Breadcrumb from "@/components/Breadcrumb";
 
 interface LastArticle {
   slug: string;
@@ -76,6 +77,7 @@ const AboutPage = () => {
         <script type="application/ld+json">{JSON.stringify(personSchema)}</script>
       </Helmet>
       <div className="container py-12">
+        <Breadcrumb />
         {lastArticle && (
           <div className="max-w-3xl mx-auto mb-6">
             <Link

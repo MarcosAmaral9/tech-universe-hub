@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import DynamicSEO from "@/components/DynamicSEO";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const PrivacyPolicyPage = () => {
   return (
@@ -7,6 +8,7 @@ const PrivacyPolicyPage = () => {
       <DynamicSEO />
       <div className="container py-12">
       <div className="max-w-3xl mx-auto">
+        <Breadcrumb />
         <h1 className="font-display text-3xl md:text-4xl font-bold mb-4">
           Política de <span className="text-gradient">Privacidade</span>
         </h1>

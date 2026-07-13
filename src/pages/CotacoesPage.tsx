@@ -7,6 +7,7 @@ import CurrencyWidget from "@/components/CurrencyWidget";
 import CryptoWidget from "@/components/CryptoWidget";
 import PreciousMetalsWidget from "@/components/PreciousMetalsWidget";
 import DynamicSEO from "@/components/DynamicSEO";
+import Breadcrumb from "@/components/Breadcrumb";
 import heroCotacoes from "@/assets/cotacoes-tempo-real.webp";
 
 type Section = "all" | "b3" | "currency" | "metals" | "crypto";
@@ -36,6 +37,7 @@ const CotacoesPage = () => {
   return (
     <>
       <DynamicSEO />
+      <div className="container pt-6"><Breadcrumb /></div>
       {/* Hero Banner — full-width, outside container */}
       <div className="relative w-full overflow-hidden" style={{height:"min(56vw, 380px)", minHeight:"200px"}}>
         <img

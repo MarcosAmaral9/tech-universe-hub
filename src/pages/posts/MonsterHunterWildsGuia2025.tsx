@@ -261,12 +261,12 @@ const MonsterHunterWildsGuia2025 = () => {
           Dicas Essenciais para Quem Começa Agora em 2026
         </h2>
 
-        <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
+        <div className="not-prose my-6 overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+          <table className="w-full min-w-[560px] border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead>
               <tr className="bg-secondary">
-                <th className="text-left py-3 px-4 w-2/5 break-words">Dica</th>
-                <th className="text-left py-3 px-4 w-3/5 break-words">Por Que Importa</th>
+                <th className="text-left py-3 px-4 w-2/5 align-top">Dica</th>
+                <th className="text-left py-3 px-4 w-3/5 align-top">Por Que Importa</th>
               </tr>
             </thead>
             <tbody>

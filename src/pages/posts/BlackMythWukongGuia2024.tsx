@@ -234,13 +234,13 @@ const BlackMythWukongGuia2024 = () => {
           esculturas e relevos históricos de diferentes períodos da história chinesa.
         </p>
 
-        <div className="not-prose my-4 w-full overflow-x-auto">
-          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
+        <div className="not-prose my-4 w-full overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+          <table className="w-full min-w-[640px] border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead>
               <tr className="bg-secondary">
-                <th className="text-left py-3 px-4 w-1/4 break-words">Capítulo</th>
-                <th className="text-left py-3 px-4 w-1/4 break-words">Ambiente</th>
-                <th className="text-left py-3 px-4 w-1/2 break-words">Referência Real</th>
+                <th className="text-left py-3 px-4 w-1/4 align-top">Capítulo</th>
+                <th className="text-left py-3 px-4 w-1/4 align-top">Ambiente</th>
+                <th className="text-left py-3 px-4 w-1/2 align-top">Referência Real</th>
               </tr>
             </thead>
             <tbody>
@@ -309,12 +309,12 @@ const BlackMythWukongGuia2024 = () => {
           Dicas Essenciais para Sua Jornada
         </h2>
 
-        <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
+        <div className="not-prose my-6 overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+          <table className="w-full min-w-[560px] border-collapse bg-card rounded-xl overflow-hidden text-sm">
             <thead>
               <tr className="bg-secondary">
-                <th className="text-left py-3 px-4 w-2/5 break-words">Dica</th>
-                <th className="text-left py-3 px-4 w-3/5 break-words">Detalhe</th>
+                <th className="text-left py-3 px-4 w-2/5 align-top">Dica</th>
+                <th className="text-left py-3 px-4 w-3/5 align-top">Detalhe</th>
               </tr>
             </thead>
             <tbody>
