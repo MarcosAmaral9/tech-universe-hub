@@ -149,7 +149,31 @@ const Breadcrumb = () => {
     else if (pathname.startsWith("/otaku")) crumbs.push({ label: CAT_LABELS.otaku, category: "otaku" });
     else if (pathname.startsWith("/financas") || pathname.startsWith("/investimentos"))
       crumbs.push({ label: CAT_LABELS.invest, category: "invest" });
+    else {
+      // Páginas institucionais / utilitárias / de mercado.
+      const STATIC_PAGE_LABELS: Record<string, string> = {
+        "/cotacoes": "Cotações",
+        "/historico-cotacoes": "Histórico de Cotações",
+        "/arquivo": "Arquivo",
+        "/sobre": "Sobre",
+        "/contato": "Contato",
+        "/privacidade": "Política de Privacidade",
+        "/termos": "Termos de Uso",
+        "/politica-conteudo": "Política de Conteúdo",
+        "/instalar": "Instalar o App",
+        "/configuracoes": "Configurações",
+        "/leitura-offline": "Leitura Offline",
+        "/painel-social": "Painel Social",
+      };
+      const label = STATIC_PAGE_LABELS[pathname];
+      if (label) crumbs.push({ label });
+      else if (pathname.startsWith("/perfil/")) {
+        const handle = pathname.replace("/perfil/", "");
+        crumbs.push({ label: `Perfil de @${handle}` });
+      }
+    }
   }
+
 
   if (crumbs.length <= 1) return null;
 

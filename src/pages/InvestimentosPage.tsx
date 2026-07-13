@@ -7,6 +7,7 @@ import { getPostsByCategory, getPostBySlug } from "@/data/posts";
 import { ArrowLeft, Calculator, BarChart3, ChevronLeft, ChevronRight, History } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DynamicSEO from "@/components/DynamicSEO";
+import Breadcrumb from "@/components/Breadcrumb";
 import { AdInArticle } from "@/components/AdSense";
 import OfflineFilterButton from "@/components/OfflineFilterButton";
 import { useOfflinePosts } from "@/hooks/useOfflinePosts";
@@ -86,6 +87,7 @@ const InvestimentosPage = () => {
     <>
       <DynamicSEO />
       <div className="container py-8 md:py-10">
+      <Breadcrumb />
       {/* Header */}
       <div className="mb-8">
         <Link to="/">
