@@ -260,6 +260,9 @@ const SunoAIMusica2026               = lazy(() => import("./pages/posts/SunoAIMu
 const LciLca2026Guia                 = lazy(() => import("./pages/posts/LciLca2026Guia"));
 const AcoesDividendos2026            = lazy(() => import("./pages/posts/AcoesDividendos2026"));
 const BDR2026Guia                    = lazy(() => import("./pages/posts/BDR2026Guia"));
+const BlackMythWukongGuia2024        = lazy(() => import("./pages/posts/BlackMythWukongGuia2024"));
+const KingdomComeDeliverance2Guia2025 = lazy(() => import("./pages/posts/KingdomComeDeliverance2Guia2025"));
+const MonsterHunterWildsGuia2025     = lazy(() => import("./pages/posts/MonsterHunterWildsGuia2025"));
 const BannerlordPortal               = lazy(() => import("./pages/posts/BannerlordPortal"));
 const BannerlordGuiaCompleto         = lazy(() => import("./pages/posts/BannerlordGuiaCompleto"));
 const BannerlordCulturasReinos       = lazy(() => import("./pages/posts/BannerlordCulturasReinos"));
@@ -538,6 +541,9 @@ const App = () => (
                 <Route path="/post/lci-lca-2026-guia-completo" element={<Suspense fallback={<div />}><LciLca2026Guia /></Suspense>} />
                 <Route path="/post/acoes-dividendos-2026-melhores-pagadoras-b3" element={<Suspense fallback={<div />}><AcoesDividendos2026 /></Suspense>} />
                 <Route path="/post/bdr-2026-como-investir-apple-amazon-google-b3" element={<Suspense fallback={<div />}><BDR2026Guia /></Suspense>} />
+                <Route path="/post/black-myth-wukong-guia-completo-2024" element={<Suspense fallback={<div />}><BlackMythWukongGuia2024 /></Suspense>} />
+                <Route path="/post/kingdom-come-deliverance-2-guia-completo-2025" element={<Suspense fallback={<div />}><KingdomComeDeliverance2Guia2025 /></Suspense>} />
+                <Route path="/post/monster-hunter-wilds-guia-completo-2025" element={<Suspense fallback={<div />}><MonsterHunterWildsGuia2025 /></Suspense>} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>

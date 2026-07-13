@@ -185,11 +185,75 @@ import sunoAIImg from "@/assets/suno-ai-gerador-musica-2026.webp";
 import lciLca2026Img from "@/assets/lci-lca-2026-guia.webp";
 import acoesDividendos2026Img from "@/assets/acoes-dividendos-2026.webp";
 import bdr2026Img from "@/assets/bdr-2026-investir-b3.webp";
+import blackMythWukongImg from "@/assets/black-myth-wukong-guia-2024.webp";
+import kingdomCome2Img from "@/assets/kingdom-come-deliverance-2-guia-2025.webp";
+import monsterHunterWildsImg from "@/assets/monster-hunter-wilds-guia-2025.webp";
+
 
 
 export const blogPosts: BlogPost[] = [
+// ── 10 Jul 2026 — Geek (Games / Guias) ───────────────────────────
+  {
+    id: "201",
+    slug: "black-myth-wukong-guia-completo-2024",
+    title: "Black Myth: Wukong — Guia Completo: A Jornada ao Oeste, o Studio Game Science e Como Dominar o Rei Macaco",
+    excerpt: "Guia completo do Black Myth: Wukong: origem em A Jornada ao Oeste, história da Game Science, sistema de combate com 3 stances, os 6 capítulos e o recorde histórico de 2,4M jogadores simultâneos na Steam.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: blackMythWukongImg,
+    author: "VICIO<CODE>",
+    date: "2026-07-10",
+    readTime: "18 min",
+    faq: [
+      { q: "Black Myth: Wukong é um Soulslike?", a: "A Game Science classifica como 'action RPG de aventura com elementos de Soulslike'. Compartilha bosses com padrões e narrativa fragmentada, mas o ritmo é mais ágil, não tem multijogador nem distribuição livre de atributos." },
+      { q: "Quando foi lançado o Black Myth: Wukong?", a: "20 de agosto de 2024 para PC (Steam/Epic) e PlayStation 5. A versão de Xbox Series X|S ainda não foi confirmada em cronograma oficial." },
+      { q: "Quantos jogadores simultâneos o jogo teve no lançamento?", a: "Pico de 2,4 milhões de jogadores simultâneos na Steam no dia 20 de agosto de 2024 — segundo maior recorde da história da plataforma até então, atrás apenas de PUBG (3,2 milhões em 2018)." },
+      { q: "Quantos capítulos tem Black Myth: Wukong?", a: "Seis capítulos principais, cada um ambientado em regiões inspiradas em locais históricos reais da China, como o Monte Wudang, as grutas de Mogao e o Templo de Leshan." },
+    ],
+  },
+  {
+    id: "202",
+    slug: "kingdom-come-deliverance-2-guia-completo-2025",
+    title: "Kingdom Come: Deliverance 2 — Guia Completo: História, Combate, Habilidades e o Contexto Histórico da Boêmia em 1403",
+    excerpt: "Guia completo do KCD2 da Warhorse Studios: continuação de Henry na Boêmia de 1403, sistema de combate realista, habilidades por uso, mapa dobrado e o contexto histórico de Sigismundo, Jan Hus e Kutná Hora.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: kingdomCome2Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-10",
+    readTime: "18 min",
+    faq: [
+      { q: "Preciso ter jogado o primeiro Kingdom Come para entender o 2?", a: "Não é obrigatório — o jogo oferece um resumo inicial dos eventos de KCD1. Mas a experiência é significativamente mais rica para quem conhece o primeiro título, já que arcos de personagens e Henry como protagonista têm continuidade direta." },
+      { q: "Kingdom Come Deliverance 2 tem elementos de fantasia?", a: "Não. A Warhorse Studios mantém a proposta de RPG histórico realista sem dragões, magia ou criaturas sobrenaturais — só a Boêmia medieval do século XV com precisão histórica." },
+      { q: "Quando foi lançado o KCD2?", a: "4 de fevereiro de 2025 para PC, PlayStation 5 e Xbox Series X|S. Foi um dos maiores sucessos comerciais e críticos do início de 2025, ultrapassando 2 milhões de cópias em menos de duas semanas." },
+      { q: "Qual o tamanho do mapa em relação ao primeiro jogo?", a: "Aproximadamente o dobro do mapa de KCD1, dividido em duas regiões principais — os arredores de Kuttenberg (Kutná Hora) e o vale de Trosky — com cidades e vilas de densidade populacional muito maior." },
+    ],
+  },
+  {
+    id: "203",
+    slug: "monster-hunter-wilds-guia-completo-2025",
+    title: "Monster Hunter Wilds: Guia Completo — Armas, Mundo Seamless, Inclemência e Como Começar em 2026",
+    excerpt: "Guia completo do Monster Hunter Wilds da Capcom: 14 armas clássicas, mundo aberto seamless sem loadings, sistema de Inclemência climática, monte Seikret e como iniciar sua jornada em 2026.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: monsterHunterWildsImg,
+    author: "VICIO<CODE>",
+    date: "2026-07-10",
+    readTime: "17 min",
+    faq: [
+      { q: "Monster Hunter Wilds tem 14 armas como os anteriores?", a: "Sim. A Capcom manteve o arsenal clássico completo: Grande Espada, Espada Longa, Espada e Escudo, Duas Espadas, Martelo, Corno de Caça, Lança, Lança-Espingarda, Bastão Inseto, Machado Espada, Arma Carregada, Chicote-Espada, Arco e as Bowguns (Leve e Pesada)." },
+      { q: "Preciso ter jogado Monster Hunter World ou Rise antes?", a: "Não. Wilds é totalmente autônomo em narrativa e mecânicas. É inclusive apontado pela Capcom como o ponto de entrada mais amigável da franquia para novos jogadores em uma década." },
+      { q: "Quando foi lançado Monster Hunter Wilds?", a: "28 de fevereiro de 2025 para PC (Steam), PlayStation 5 e Xbox Series X|S — com crossplay entre todas as plataformas, algo inédito na história da série." },
+      { q: "O que é o sistema de Inclemência?", a: "Ciclo climático dinâmico que altera o mapa, os monstros disponíveis e o comportamento do ecossistema. Alterna entre Fartura, Inclemência (tempestades severas) e Bonança, criando missões e recompensas distintas." },
+    ],
+  },
+
 // ── 10 Jul 2026 — Finanças (Renda Fixa / Carteira) ──────────────
   {
+
     id: "198",
     slug: "lci-lca-2026-guia-completo",
     title: "LCI e LCA em 2026: Guia Completo com Isenção de IR, Carência e Gross-Up",
