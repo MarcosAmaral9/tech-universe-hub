@@ -1,11 +1,13 @@
 /**
- * BackNavigation — renderiza apenas o Breadcrumb.
- * Botão "← Voltar" removido: o breadcrumb já fornece navegação
- * hierárquica clara e o browser tem botão nativo de voltar.
- * Mantido como wrapper para não precisar editar 159 arquivos.
+ * BackNavigation — DEPRECADO como renderizador.
+ *
+ * O breadcrumb agora é renderizado UMA ÚNICA vez, globalmente, no topo
+ * do <main> em `Layout.tsx`, garantindo padrão consistente em todas as
+ * páginas (sempre no início, acima do título).
+ *
+ * Mantido como no-op para não precisar remover manualmente das 180+
+ * páginas/posts que ainda importam o componente. Não renderiza nada.
  */
-import Breadcrumb from "./Breadcrumb";
-
 interface BackNavigationProps {
   category?: "geek" | "ia" | "invest" | "otaku";
   portalPath?: string;
@@ -13,6 +15,6 @@ interface BackNavigationProps {
   fallbackPath?: string;
 }
 
-const BackNavigation = (_props: BackNavigationProps) => <Breadcrumb />;
+const BackNavigation = (_props: BackNavigationProps) => null;
 
 export default BackNavigation;
