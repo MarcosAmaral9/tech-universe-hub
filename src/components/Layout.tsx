@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import BackToTop from "./BackToTop";
@@ -10,9 +10,33 @@ import NewsletterSignup from "./NewsletterSignup";
 
 interface LayoutProps {
   children: ReactNode;
+  /**
+   * Quando true, o breadcrumb fica fixo no topo (sticky) durante o scroll no
+   * mobile — melhora a orientação em artigos longos. Padrão: lê da preferência
+   * salva em localStorage (`viciocode:sticky-breadcrumb-mobile` === "1").
+   * Em telas ≥ md o breadcrumb continua estático (não invade o conteúdo).
+   */
+  stickyMobileBreadcrumb?: boolean;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+export const STICKY_BREADCRUMB_KEY = "viciocode:sticky-breadcrumb-mobile";
+
+const Layout = ({ children, stickyMobileBreadcrumb }: LayoutProps) => {
+  const [sticky, setSticky] = useState(!!stickyMobileBreadcrumb);
+
+  useEffect(() => {
+    if (stickyMobileBreadcrumb !== undefined) return;
+    try {
+      setSticky(localStorage.getItem(STICKY_BREADCRUMB_KEY) === "1");
+    } catch {
+      /* ignore */
+    }
+  }, [stickyMobileBreadcrumb]);
+
+  const wrapperClass = sticky
+    ? "container pt-4 md:pt-6 sticky top-0 z-30 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70 md:static md:bg-transparent md:backdrop-blur-0"
+    : "container pt-4 md:pt-6";
+
   return (
     <div className="min-h-screen flex flex-col">
       <DynamicSEO />
@@ -21,8 +45,9 @@ const Layout = ({ children }: LayoutProps) => {
       <main className="flex-1">
         {/* Breadcrumb global: sempre no topo de toda página, acima do título.
             Padrão único do site — não repetir <Breadcrumb /> nas páginas.
-            O componente retorna null automaticamente na home / rotas sem trilha. */}
-        <div className="container pt-4 md:pt-6">
+            Renderizado APENAS aqui. O check `scripts/check-breadcrumb-placement.mjs`
+            (roda no prebuild) falha se algum outro arquivo importar ou renderizar. */}
+        <div className={wrapperClass}>
           <Breadcrumb />
         </div>
         {children}
