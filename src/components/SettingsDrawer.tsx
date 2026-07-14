@@ -104,6 +104,10 @@ const SettingsDrawer = () => {
     setSoundEnabled(true);
     localStorage.setItem(NOTIFICATION_SOUND_KEY, "true");
 
+    // Sticky breadcrumb → off
+    setStickyBreadcrumb(false);
+    localStorage.setItem(STICKY_BREADCRUMB_KEY, "0");
+
     toast({ title: "Configurações restauradas", description: "Todas as preferências voltaram ao padrão." });
   };
 
