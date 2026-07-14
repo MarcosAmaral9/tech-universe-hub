@@ -192,6 +192,18 @@ const SettingsDrawer = () => {
             </div>
           </div>
 
+          {/* Sticky Breadcrumb (mobile) */}
+          <div className="flex items-center justify-between py-3 border-b border-border md:hidden">
+            <div className="flex items-center gap-3">
+              <PinIcon className={`w-5 h-5 ${stickyBreadcrumb ? "text-primary" : "text-muted-foreground"}`} />
+              <div>
+                <p className="font-medium text-foreground text-sm">Breadcrumb fixo</p>
+                <p className="text-xs text-muted-foreground">Manter trilha visível ao rolar (mobile)</p>
+              </div>
+            </div>
+            <Switch checked={stickyBreadcrumb} onCheckedChange={toggleStickyBreadcrumb} aria-label="Ativar breadcrumb fixo no mobile" />
+          </div>
+
           {/* Sound */}
           <div className="flex items-center justify-between py-3 border-b border-border">
             <div className="flex items-center gap-3">
