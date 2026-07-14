@@ -4,7 +4,6 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { User, Calendar, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DynamicSEO from "@/components/DynamicSEO";
-import Breadcrumb from "@/components/Breadcrumb";
 
 const API_BASE = "/api.php";
 
@@ -73,7 +72,7 @@ const PublicProfilePage = () => {
     <>
       <DynamicSEO />
       <div className="min-h-[60vh] py-8 px-4">
-        <div className="max-w-md mx-auto mb-4"><Breadcrumb /></div>
+        
         <div className="w-full max-w-md mx-auto text-center space-y-6">
           <Avatar className="w-28 h-28 mx-auto ring-4 ring-primary/20">
             {profile.avatar_url ? (

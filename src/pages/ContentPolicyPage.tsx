@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft, Shield, AlertTriangle, Check, X, MessageSquare, Users, LogIn } from "lucide-react";
 import DynamicSEO from "@/components/DynamicSEO";
-import Breadcrumb from "@/components/Breadcrumb";
 
 const ContentPolicyPage = () => {
   return (
     <>
       <DynamicSEO />
       <div className="container py-8 max-w-4xl mx-auto">
-      <Breadcrumb />
 
 
       <header className="mb-8">

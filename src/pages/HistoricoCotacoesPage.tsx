@@ -6,7 +6,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DynamicSEO from "@/components/DynamicSEO";
-import Breadcrumb from "@/components/Breadcrumb";
 import { useMarketData } from "@/hooks/useMarketData";
 import heroHistorico from "@/assets/historico-cotacoes.webp";
 import {
@@ -387,7 +386,7 @@ const HistoricoCotacoesPage = () => {
   return (
     <>
       <DynamicSEO />
-      <div className="container pt-6"><Breadcrumb /></div>
+      
       {/* Hero Banner — full-width, outside container */}
       <div className="relative w-full overflow-hidden" style={{height:"min(56vw, 360px)", minHeight:"200px"}}>
         <img

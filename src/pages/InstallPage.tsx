@@ -3,7 +3,6 @@ import { Download, Smartphone, Monitor, Share, MoreVertical, PlusSquare, CheckCi
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import DynamicSEO from "@/components/DynamicSEO";
-import Breadcrumb from "@/components/Breadcrumb";
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
@@ -47,7 +46,6 @@ const InstallPage = () => {
       <DynamicSEO />
       <div className="min-h-[70vh] py-12 px-4">
       <div className="max-w-2xl mx-auto space-y-10">
-        <Breadcrumb />
         {/* Hero */}
         <div className="text-center space-y-4">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-primary/10 mb-2">
