@@ -20,6 +20,7 @@ import { toast } from "@/hooks/use-toast";
 const NOTIFICATION_SOUND_KEY = "pwa_update_sound_enabled";
 const FONT_SIZE_KEY = "viciocode_font_size";
 const ACCENT_COLOR_KEY = "viciocode_accent_color";
+const STICKY_BREADCRUMB_KEY = "viciocode:sticky-breadcrumb-mobile";
 
 type FontSize = "small" | "normal" | "large";
 type AccentColor = "cyan" | "purple" | "green" | "orange" | "pink" | "blue";
