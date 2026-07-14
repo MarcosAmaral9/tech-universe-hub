@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Settings, Sun, Moon, Type, Palette, Bell, BellOff, RotateCcw, WifiOff, ChevronRight } from "lucide-react";
+import { Settings, Sun, Moon, Type, Palette, Bell, BellOff, RotateCcw, WifiOff, ChevronRight, PinIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import {
@@ -20,6 +20,7 @@ import { toast } from "@/hooks/use-toast";
 const NOTIFICATION_SOUND_KEY = "pwa_update_sound_enabled";
 const FONT_SIZE_KEY = "viciocode_font_size";
 const ACCENT_COLOR_KEY = "viciocode_accent_color";
+const STICKY_BREADCRUMB_KEY = "viciocode:sticky-breadcrumb-mobile";
 
 type FontSize = "small" | "normal" | "large";
 type AccentColor = "cyan" | "purple" | "green" | "orange" | "pink" | "blue";
@@ -49,6 +50,19 @@ const SettingsDrawer = () => {
   const [accentColor, setAccentColor] = useState<AccentColor>(() => {
     return (localStorage.getItem(ACCENT_COLOR_KEY) as AccentColor) || "cyan";
   });
+  const [stickyBreadcrumb, setStickyBreadcrumb] = useState(() => {
+    return localStorage.getItem(STICKY_BREADCRUMB_KEY) === "1";
+  });
+
+  const toggleStickyBreadcrumb = () => {
+    const newValue = !stickyBreadcrumb;
+    setStickyBreadcrumb(newValue);
+    localStorage.setItem(STICKY_BREADCRUMB_KEY, newValue ? "1" : "0");
+    toast({
+      title: newValue ? "Breadcrumb fixo ativado" : "Breadcrumb fixo desativado",
+      description: "Recarregue a página para aplicar em todo o site.",
+    });
+  };
 
   const toggleSound = () => {
     const newValue = !soundEnabled;
@@ -89,6 +103,10 @@ const SettingsDrawer = () => {
     // Sound → on
     setSoundEnabled(true);
     localStorage.setItem(NOTIFICATION_SOUND_KEY, "true");
+
+    // Sticky breadcrumb → off
+    setStickyBreadcrumb(false);
+    localStorage.setItem(STICKY_BREADCRUMB_KEY, "0");
 
     toast({ title: "Configurações restauradas", description: "Todas as preferências voltaram ao padrão." });
   };
@@ -172,6 +190,18 @@ const SettingsDrawer = () => {
                 />
               ))}
             </div>
+          </div>
+
+          {/* Sticky Breadcrumb (mobile) */}
+          <div className="flex items-center justify-between py-3 border-b border-border md:hidden">
+            <div className="flex items-center gap-3">
+              <PinIcon className={`w-5 h-5 ${stickyBreadcrumb ? "text-primary" : "text-muted-foreground"}`} />
+              <div>
+                <p className="font-medium text-foreground text-sm">Breadcrumb fixo</p>
+                <p className="text-xs text-muted-foreground">Manter trilha visível ao rolar (mobile)</p>
+              </div>
+            </div>
+            <Switch checked={stickyBreadcrumb} onCheckedChange={toggleStickyBreadcrumb} aria-label="Ativar breadcrumb fixo no mobile" />
           </div>
 
           {/* Sound */}
