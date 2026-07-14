@@ -386,7 +386,7 @@ const HistoricoCotacoesPage = () => {
   return (
     <>
       <DynamicSEO />
-      <div className="container pt-6"><Breadcrumb /></div>
+      
       {/* Hero Banner — full-width, outside container */}
       <div className="relative w-full overflow-hidden" style={{height:"min(56vw, 360px)", minHeight:"200px"}}>
         <img
