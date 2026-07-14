@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import BackToTop from "./BackToTop";
 import ReadingProgressBar from "./ReadingProgressBar";
 import DynamicSEO from "./DynamicSEO";
+import Breadcrumb from "./Breadcrumb";
 import { AdAnchorMobile } from "./AdSense";
 import NewsletterSignup from "./NewsletterSignup";
 
@@ -17,7 +18,15 @@ const Layout = ({ children }: LayoutProps) => {
       <DynamicSEO />
       <ReadingProgressBar />
       <Header />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1">
+        {/* Breadcrumb global: sempre no topo de toda página, acima do título.
+            Padrão único do site — não repetir <Breadcrumb /> nas páginas.
+            O componente retorna null automaticamente na home / rotas sem trilha. */}
+        <div className="container pt-4 md:pt-6">
+          <Breadcrumb />
+        </div>
+        {children}
+      </main>
       <Footer />
       <BackToTop />
       <AdAnchorMobile />
