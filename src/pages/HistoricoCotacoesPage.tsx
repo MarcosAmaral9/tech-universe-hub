@@ -6,7 +6,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DynamicSEO from "@/components/DynamicSEO";
-import Breadcrumb from "@/components/Breadcrumb";
 import { useMarketData } from "@/hooks/useMarketData";
 import heroHistorico from "@/assets/historico-cotacoes.webp";
 import {

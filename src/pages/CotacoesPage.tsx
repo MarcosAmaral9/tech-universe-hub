@@ -7,7 +7,6 @@ import CurrencyWidget from "@/components/CurrencyWidget";
 import CryptoWidget from "@/components/CryptoWidget";
 import PreciousMetalsWidget from "@/components/PreciousMetalsWidget";
 import DynamicSEO from "@/components/DynamicSEO";
-import Breadcrumb from "@/components/Breadcrumb";
 import heroCotacoes from "@/assets/cotacoes-tempo-real.webp";
 
 type Section = "all" | "b3" | "currency" | "metals" | "crypto";
