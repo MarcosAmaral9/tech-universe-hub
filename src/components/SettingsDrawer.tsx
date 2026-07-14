@@ -50,6 +50,19 @@ const SettingsDrawer = () => {
   const [accentColor, setAccentColor] = useState<AccentColor>(() => {
     return (localStorage.getItem(ACCENT_COLOR_KEY) as AccentColor) || "cyan";
   });
+  const [stickyBreadcrumb, setStickyBreadcrumb] = useState(() => {
+    return localStorage.getItem(STICKY_BREADCRUMB_KEY) === "1";
+  });
+
+  const toggleStickyBreadcrumb = () => {
+    const newValue = !stickyBreadcrumb;
+    setStickyBreadcrumb(newValue);
+    localStorage.setItem(STICKY_BREADCRUMB_KEY, newValue ? "1" : "0");
+    toast({
+      title: newValue ? "Breadcrumb fixo ativado" : "Breadcrumb fixo desativado",
+      description: "Recarregue a página para aplicar em todo o site.",
+    });
+  };
 
   const toggleSound = () => {
     const newValue = !soundEnabled;
