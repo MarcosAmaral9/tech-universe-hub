@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Settings, Sun, Moon, Type, Palette, Bell, BellOff, RotateCcw, WifiOff, ChevronRight } from "lucide-react";
+import { Settings, Sun, Moon, Type, Palette, Bell, BellOff, RotateCcw, WifiOff, ChevronRight, PinIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import {
