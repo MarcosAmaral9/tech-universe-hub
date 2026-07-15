@@ -263,6 +263,7 @@ const BDR2026Guia                    = lazy(() => import("./pages/posts/BDR2026G
 const BlackMythWukongGuia2024        = lazy(() => import("./pages/posts/BlackMythWukongGuia2024"));
 const KingdomComeDeliverance2Guia2025 = lazy(() => import("./pages/posts/KingdomComeDeliverance2Guia2025"));
 const MonsterHunterWildsGuia2025     = lazy(() => import("./pages/posts/MonsterHunterWildsGuia2025"));
+const AstroBotGuiaGoty2024           = lazy(() => import("./pages/posts/AstroBotGuiaGoty2024"));
 const BannerlordPortal               = lazy(() => import("./pages/posts/BannerlordPortal"));
 const BannerlordGuiaCompleto         = lazy(() => import("./pages/posts/BannerlordGuiaCompleto"));
 const BannerlordCulturasReinos       = lazy(() => import("./pages/posts/BannerlordCulturasReinos"));
@@ -544,6 +545,7 @@ const App = () => (
                 <Route path="/post/black-myth-wukong-guia-completo-2024" element={<Suspense fallback={<div />}><BlackMythWukongGuia2024 /></Suspense>} />
                 <Route path="/post/kingdom-come-deliverance-2-guia-completo-2025" element={<Suspense fallback={<div />}><KingdomComeDeliverance2Guia2025 /></Suspense>} />
                 <Route path="/post/monster-hunter-wilds-guia-completo-2025" element={<Suspense fallback={<div />}><MonsterHunterWildsGuia2025 /></Suspense>} />
+                <Route path="/post/astro-bot-guia-goty-2024" element={<Suspense fallback={<div />}><AstroBotGuiaGoty2024 /></Suspense>} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
