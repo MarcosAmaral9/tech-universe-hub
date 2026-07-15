@@ -313,10 +313,11 @@ img {
 .not-prose table th,
 .not-prose table td {
   vertical-align: top;
-  word-break: normal;
-  overflow-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: anywhere;
   hyphens: auto;
   -webkit-hyphens: auto;
+  white-space: normal;
   padding: 0.5rem 0.625rem; /* mobile */
   border-bottom: 1px solid hsl(var(--border) / 0.5);
 }
