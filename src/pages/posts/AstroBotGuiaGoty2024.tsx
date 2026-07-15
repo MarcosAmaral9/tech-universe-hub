@@ -11,7 +11,6 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
-// ⚠️ Adicionar o arquivo astro-bot-guia-goty-2024.webp em src/assets/
 import heroImg from "@/assets/astro-bot-guia-goty-2024.webp";
 
 const SLUG = "astro-bot-guia-goty-2024";
@@ -354,13 +353,6 @@ const AstroBotGuiaGoty2024 = () => {
           um superior ao outro: são os dois melhores representantes do gênero de sua geração, em
           plataformas diferentes, com propostas que se complementam mais do que competem.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">
-            Você já jogou Astro Bot? Qual foi o cameo que mais te surpreendeu? 🤖
-          </h3>
-          <p className="text-muted-foreground">Conta nos comentários! 👇</p>
-        </div>
       </div>
 
       <EditorialTake
