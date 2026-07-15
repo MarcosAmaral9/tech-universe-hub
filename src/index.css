@@ -361,10 +361,10 @@ img {
   }
 }
 
-/* Garante min-width útil dentro de wrapper com overflow-x-auto:
-   tabela mantém legibilidade mínima e ativa scroll só quando necessário */
+/* Nunca forçar largura mínima > container: tabelas sempre cabem no wrapper
+   e quebram linha em vez de gerar scroll horizontal em telas pequenas. */
 .overflow-x-auto > table {
-  min-width: max-content;
+  min-width: 0;
 }
 
 /* Cantos arredondados: aplica via wrapper com bg-card/rounded-xl */
