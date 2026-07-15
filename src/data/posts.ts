@@ -188,10 +188,31 @@ import bdr2026Img from "@/assets/bdr-2026-investir-b3.webp";
 import blackMythWukongImg from "@/assets/black-myth-wukong-guia-2024.webp";
 import kingdomCome2Img from "@/assets/kingdom-come-deliverance-2-guia-2025.webp";
 import monsterHunterWildsImg from "@/assets/monster-hunter-wilds-guia-2025.webp";
+import astroBotGotyImg from "@/assets/astro-bot-guia-goty-2024.webp";
 
 
 
 export const blogPosts: BlogPost[] = [
+// ── 11 Jul 2026 — Geek (Games / GOTY 2024) ───────────────────────
+  {
+    id: "204",
+    slug: "astro-bot-guia-goty-2024",
+    title: "Astro Bot — O Jogo do Ano de 2024: Guia Completo, Cameos PlayStation e Por Que É o Melhor Plataforma em Décadas",
+    excerpt: "Guia completo do Astro Bot: história da Team Asobi, celebração dos 30 anos de PlayStation, mais de 150 cameos, uso do DualSense, dicas de 100% e por que venceu o GOTY 2024 sobre Wukong, Elden Ring e Balatro.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: astroBotGotyImg,
+    author: "VICIO<CODE>",
+    date: "2026-07-11",
+    readTime: "16 min",
+    faq: [
+      { q: "Astro Bot é exclusivo do PS5?", a: "Sim. Astro Bot é um exclusivo first-party desenvolvido pela Team Asobi para PlayStation 5, sem versão anunciada para PC, Xbox ou plataformas anteriores." },
+      { q: "Quando Astro Bot foi lançado?", a: "6 de setembro de 2024, exclusivamente para PS5. Chegou como celebração dos 30 anos da marca PlayStation, comemorados em dezembro de 2024." },
+      { q: "Por que Astro Bot ganhou o GOTY 2024?", a: "Recebeu nota 94 no Metacritic com consenso crítico praticamente unânime. O júri do The Game Awards (90% do peso do voto) valorizou o polimento, o uso inédito do DualSense e a densidade criativa dos níveis sobre os fenômenos comerciais concorrentes." },
+      { q: "Quanto tempo leva para zerar Astro Bot?", a: "Entre 8 e 12 horas para a campanha principal e 15 a 20 horas para 100%, incluindo os boss rematches, Speedrun Challenges e todos os Bots e cameos escondidos." },
+    ],
+  },
 // ── 10 Jul 2026 — Geek (Games / Guias) ───────────────────────────
   {
     id: "201",
