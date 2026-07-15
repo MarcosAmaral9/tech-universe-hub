@@ -284,11 +284,13 @@ img {
   scrollbar-width: thin;
 }
 
-/* Estilo base: tabela sempre 100% do container, com layout automático */
+/* Estilo base: tabela sempre 100% do container, layout fixo para permitir
+   quebra de linha automática em qualquer largura de tela (evita overflow). */
 .prose table,
 .not-prose table {
-  table-layout: auto;
+  table-layout: fixed;
   width: 100%;
+  max-width: 100%;
   border-collapse: separate;
   border-spacing: 0;
   font-size: 0.875rem; /* text-sm */
@@ -311,10 +313,11 @@ img {
 .not-prose table th,
 .not-prose table td {
   vertical-align: top;
-  word-break: normal;
-  overflow-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: anywhere;
   hyphens: auto;
   -webkit-hyphens: auto;
+  white-space: normal;
   padding: 0.5rem 0.625rem; /* mobile */
   border-bottom: 1px solid hsl(var(--border) / 0.5);
 }
@@ -358,10 +361,10 @@ img {
   }
 }
 
-/* Garante min-width útil dentro de wrapper com overflow-x-auto:
-   tabela mantém legibilidade mínima e ativa scroll só quando necessário */
+/* Nunca forçar largura mínima > container: tabelas sempre cabem no wrapper
+   e quebram linha em vez de gerar scroll horizontal em telas pequenas. */
 .overflow-x-auto > table {
-  min-width: max-content;
+  min-width: 0;
 }
 
 /* Cantos arredondados: aplica via wrapper com bg-card/rounded-xl */
