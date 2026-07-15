@@ -235,7 +235,7 @@ const BlackMythWukongGuia2024 = () => {
         </p>
 
         <div className="not-prose my-4 w-full overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
-          <table className="w-full min-w-[640px] border-collapse bg-card rounded-xl overflow-hidden text-sm">
+          <table className="w-full border-collapse table-fixed bg-card rounded-xl overflow-hidden text-sm">
             <thead>
               <tr className="bg-secondary">
                 <th className="text-left py-3 px-4 w-1/4 align-top">Capítulo</th>
@@ -310,7 +310,7 @@ const BlackMythWukongGuia2024 = () => {
         </h2>
 
         <div className="not-prose my-6 overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
-          <table className="w-full min-w-[560px] border-collapse bg-card rounded-xl overflow-hidden text-sm">
+          <table className="w-full border-collapse table-fixed bg-card rounded-xl overflow-hidden text-sm">
             <thead>
               <tr className="bg-secondary">
                 <th className="text-left py-3 px-4 w-2/5 align-top">Dica</th>

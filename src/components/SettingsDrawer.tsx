@@ -58,9 +58,10 @@ const SettingsDrawer = () => {
     const newValue = !stickyBreadcrumb;
     setStickyBreadcrumb(newValue);
     localStorage.setItem(STICKY_BREADCRUMB_KEY, newValue ? "1" : "0");
+    window.dispatchEvent(new CustomEvent("viciocode:sticky-breadcrumb-change", { detail: newValue }));
     toast({
       title: newValue ? "Breadcrumb fixo ativado" : "Breadcrumb fixo desativado",
-      description: "Recarregue a página para aplicar em todo o site.",
+      description: newValue ? "O breadcrumb agora acompanha o scroll no mobile." : "O breadcrumb volta ao comportamento padrão.",
     });
   };
 
@@ -107,6 +108,7 @@ const SettingsDrawer = () => {
     // Sticky breadcrumb → off
     setStickyBreadcrumb(false);
     localStorage.setItem(STICKY_BREADCRUMB_KEY, "0");
+    window.dispatchEvent(new CustomEvent("viciocode:sticky-breadcrumb-change", { detail: false }));
 
     toast({ title: "Configurações restauradas", description: "Todas as preferências voltaram ao padrão." });
   };

@@ -26,11 +26,28 @@ const Layout = ({ children, stickyMobileBreadcrumb }: LayoutProps) => {
 
   useEffect(() => {
     if (stickyMobileBreadcrumb !== undefined) return;
-    try {
-      setSticky(localStorage.getItem(STICKY_BREADCRUMB_KEY) === "1");
-    } catch {
-      /* ignore */
-    }
+    const read = () => {
+      try {
+        setSticky(localStorage.getItem(STICKY_BREADCRUMB_KEY) === "1");
+      } catch {
+        /* ignore */
+      }
+    };
+    read();
+    const onCustom = (e: Event) => {
+      const detail = (e as CustomEvent<boolean>).detail;
+      if (typeof detail === "boolean") setSticky(detail);
+      else read();
+    };
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === STICKY_BREADCRUMB_KEY) read();
+    };
+    window.addEventListener("viciocode:sticky-breadcrumb-change", onCustom);
+    window.addEventListener("storage", onStorage);
+    return () => {
+      window.removeEventListener("viciocode:sticky-breadcrumb-change", onCustom);
+      window.removeEventListener("storage", onStorage);
+    };
   }, [stickyMobileBreadcrumb]);
 
   const wrapperClass = sticky
