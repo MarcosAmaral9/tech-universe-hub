@@ -284,11 +284,13 @@ img {
   scrollbar-width: thin;
 }
 
-/* Estilo base: tabela sempre 100% do container, com layout automático */
+/* Estilo base: tabela sempre 100% do container, layout fixo para permitir
+   quebra de linha automática em qualquer largura de tela (evita overflow). */
 .prose table,
 .not-prose table {
-  table-layout: auto;
+  table-layout: fixed;
   width: 100%;
+  max-width: 100%;
   border-collapse: separate;
   border-spacing: 0;
   font-size: 0.875rem; /* text-sm */
