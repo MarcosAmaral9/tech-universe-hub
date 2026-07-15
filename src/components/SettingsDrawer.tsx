@@ -108,6 +108,7 @@ const SettingsDrawer = () => {
     // Sticky breadcrumb → off
     setStickyBreadcrumb(false);
     localStorage.setItem(STICKY_BREADCRUMB_KEY, "0");
+    window.dispatchEvent(new CustomEvent("viciocode:sticky-breadcrumb-change", { detail: false }));
 
     toast({ title: "Configurações restauradas", description: "Todas as preferências voltaram ao padrão." });
   };
