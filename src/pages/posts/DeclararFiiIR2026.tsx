@@ -222,6 +222,16 @@ const DeclararFiiIR2026 = () => {
           O tratamento correto é reduzir o custo médio das cotas pelo valor amortizado por cota. Se você tinha cotas com custo médio de R$ 100,00 e o fundo amortizou R$ 5,00 por cota, seu novo custo médio é R$ 95,00 por cota. Em Bens e Direitos, o saldo do FII cai pelo valor total amortizado recebido — e não pelo valor atualizado de mercado. O problema surge no ganho de capital: ao vender cotas depois de receber amortizações sem ter ajustado o custo médio, o investidor calcula um lucro menor do que deveria (porque o custo médio que usa está inflado), paga menos imposto agora, mas estará incorreto do ponto de vista da Receita Federal. O informe de rendimentos da administradora discrimina amortizações em campo separado dos proventos — se não discriminar claramente, solicite esclarecimento diretamente à administradora antes de declarar.
         </p>
 
+        <div className="not-prose my-6 rounded-xl border-l-4 border-l-red-500 border border-border/40 bg-red-500/5 p-5">
+          <p className="font-bold text-red-400 flex items-center gap-2 mb-2">
+            <AlertTriangle className="h-4 w-4" />
+            Erro comum na malha fina
+          </p>
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            Muitos investidores tratam a amortização como se fosse um dividendo isento e não ajustam o custo médio. Resultado: quando finalmente vendem cotas, calculam um lucro subestimado e pagam DARF menor do que devem. A Receita cruza com o informe da administradora e a divergência aparece na malha. <strong>Toda amortização recebida → reduz o custo médio na mesma proporção.</strong>
+          </p>
+        </div>
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <CheckCircle className="h-7 w-7 text-invest" />
           Compensação de Prejuízos: Como Usar Perdas para Pagar Menos Imposto
