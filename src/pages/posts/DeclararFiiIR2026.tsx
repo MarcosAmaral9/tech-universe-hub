@@ -180,9 +180,34 @@ const DeclararFiiIR2026 = () => {
         <p>
           O processo tem duas etapas que precisam acontecer em momentos diferentes. A <strong>primeira etapa</strong> é o recolhimento mensal: toda vez que você vende cotas de FII com lucro, deve calcular o ganho líquido do mês (total de vendas com lucro menos total de vendas com prejuízo no mesmo mês), multiplicar por 20% e pagar um DARF com <strong>código 6015</strong> até o <strong>último dia útil do mês seguinte</strong> ao da venda. O atraso gera multa de 0,33% ao dia (limitada a 20%) mais Selic acumulada — pequenos descuidos viram custo relevante ao longo do tempo. A <strong>segunda etapa</strong> é a declaração anual: na ficha <strong>"Renda Variável" → "Operações em FII ou Fiagro"</strong>, informe o resultado líquido de cada mês do ano — positivo (lucro) ou negativo (prejuízo). Informe também os DARFs já pagos mensalmente, para que o sistema confirme que o imposto foi recolhido no prazo correto.
         </p>
-        <p>
-          Um exemplo prático: em março de 2025 você vendeu 50 cotas do MXRF11 por R$ 12,00 cada (total R$ 600), e havia comprado por R$ 10,00 cada com custo médio (total R$ 500). O lucro bruto é R$ 100, menos a corretagem de R$ 5 = lucro líquido de R$ 95. O IR devido é 20% × R$ 95 = <strong>R$ 19,00</strong>, que deveria ser pago via DARF código 6015 até o último dia útil de abril. Na declaração anual, o campo "Resultado Positivo em Março" recebe o valor R$ 95, e o campo "IR Pago" de março recebe R$ 19.
-        </p>
+
+        <div className="not-prose my-6 rounded-xl border border-invest/40 bg-invest/5 p-5">
+          <p className="text-xs uppercase tracking-wider text-invest font-bold mb-3 flex items-center gap-2">
+            <BarChart3 className="h-4 w-4" />
+            Exemplo prático — venda com lucro em março de 2025
+          </p>
+          <div className="grid sm:grid-cols-2 gap-3 text-xs">
+            {[
+              ["Venda", "50 cotas MXRF11 × R$ 12,00", "R$ 600,00"],
+              ["Custo médio", "50 cotas × R$ 10,00", "R$ 500,00"],
+              ["Corretagem", "Taxa da operação", "R$ 5,00"],
+              ["Lucro líquido", "600 − 500 − 5", "R$ 95,00"],
+              ["IR devido", "20% × R$ 95", "R$ 19,00"],
+              ["DARF", "Código 6015 — vence 30/abr", "R$ 19,00"],
+            ].map(([label, calc, val]) => (
+              <div key={label} className="flex items-center justify-between p-3 rounded-lg bg-card/60 border border-border/40">
+                <div>
+                  <p className="font-bold">{label}</p>
+                  <p className="text-muted-foreground font-mono">{calc}</p>
+                </div>
+                <p className="font-bold text-invest">{val}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-muted-foreground mt-3">
+            Na declaração anual, o mês de março recebe R$ 95 no campo "Resultado Positivo" e R$ 19 em "IR Pago".
+          </p>
+        </div>
 
         <AdRectangle />
 
