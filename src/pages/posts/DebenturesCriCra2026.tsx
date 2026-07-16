@@ -142,6 +142,38 @@ const DebenturesCriCra2026 = () => {
         <p>
           Três tipos de risco são intrínsecos a qualquer investimento em crédito privado e precisam ser compreendidos antes de qualquer aporte em CRI, CRA ou debênture incentivada.
         </p>
+
+        <div className="not-prose grid md:grid-cols-3 gap-4 my-6">
+          {[
+            {
+              titulo: "Risco de crédito",
+              icone: <Shield className="h-5 w-5" />,
+              cor: "border-l-red-500 bg-red-500/5",
+              texto: "Emissor pode deixar de pagar. Sem FGC. Recuperação judicial é lenta, cara e incerta. Rating A ou superior é o mínimo para investidor conservador.",
+            },
+            {
+              titulo: "Risco de liquidez",
+              icone: <AlertTriangle className="h-5 w-5" />,
+              cor: "border-l-yellow-500 bg-yellow-500/5",
+              texto: "Sair antes do vencimento depende do mercado secundário. Deságio pode ser alto em estresse. Regra: só invista o que você não vai precisar até o vencimento.",
+            },
+            {
+              titulo: "Marcação a mercado",
+              icone: <BarChart3 className="h-5 w-5" />,
+              cor: "border-l-blue-500 bg-blue-500/5",
+              texto: "Títulos IPCA+ oscilam de preço com a taxa de juros. Se carregar até o vencimento, é irrelevante. Se acompanhar diariamente, prepare-se para volatilidade.",
+            },
+          ].map(({ titulo, icone, cor, texto }) => (
+            <div key={titulo} className={`p-4 rounded-xl border border-border/40 border-l-4 ${cor}`}>
+              <div className="flex items-center gap-2 mb-2 text-invest font-bold text-sm">
+                {icone}
+                {titulo}
+              </div>
+              <p className="text-xs text-muted-foreground leading-relaxed">{texto}</p>
+            </div>
+          ))}
+        </div>
+
         <p>
           O <strong>risco de crédito</strong> é o mais conhecido: a possibilidade de o emissor (a empresa no caso de debêntures, a securitizadora e os devedores do lastro no caso de CRI e CRA) deixar de pagar os juros ou o principal no vencimento. Diferentemente do Tesouro Nacional ou do FGC, não há um "resgatador de última instância" nesses títulos. Em caso de insolvência do emissor, o investidor entra em processo judicial ou extrajudicial de recuperação como credor, com prazo, custo e resultado incertos. Para avaliar o risco de crédito de forma objetiva, o instrumento principal é o <strong>rating das agências</strong> (Fitch, Moody's, S&P, Austin Rating): títulos com rating "A" ou superior têm probabilidade historicamente muito baixa de inadimplência, enquanto títulos sem rating ou com ratings baixos (abaixo de "BB") carregam risco substancialmente maior. Outro indicador indireto é o spread em relação ao Tesouro IPCA+: um CRI pagando IPCA+12% quando o Tesouro IPCA+ de prazo similar paga IPCA+7% está sendo precificado pelo mercado com um risco de crédito elevado — o spread gordíssimo não é generosidade, é compensação por risco real.
         </p>
