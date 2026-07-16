@@ -136,12 +136,12 @@ const DeclararFiiIR2026 = () => {
 
         <div className="not-prose my-6 space-y-3">
           {[
-            { num: `01`, acao: `Abra a ficha `Bens e Direitos"", detalhe: `No programa IRPF da Receita Federal, acesse `Fichas da Declaração" → "Bens e Direitos" → clique em "Novo"." },
-            { num: `02`, acao: `Selecione Grupo 07 — Fundos`, detalhe: `No campo `Grupo", selecione "07 – Fundos". No campo "Código", selecione "03 – Fundo de Investimento Imobiliário"." },
-            { num: `03`, acao: `Informe o CNPJ do fundo`, detalhe: `Cada FII tem CNPJ próprio — diferente do CNPJ da corretora. Encontre no informe de rendimentos enviado pela administradora, não pela corretora.` },
-            { num: `04`, acao: `Preencha a Discriminação`, detalhe: `Nome do FII, quantidade de cotas, nome da corretora custodiante e, se quiser, o ticker (MXRF11, HGCR11 etc.) para facilitar a identificação futura.` },
-            { num: `05`, acao: `Informe o custo de aquisição`, detalhe: `Campo `Situação em 31/12/2025": some o valor total pago em todas as compras de cotas daquele FII, incluindo corretagem. Nunca use o preço de fechamento da cota em 31/12." },
-            { num: `06`, acao: `Repita para cada FII`, detalhe: `Um lançamento por fundo. Se você tem 8 FIIs diferentes, são 8 lançamentos distintos em Bens e Direitos — um para cada CNPJ.` },
+            { num: "01", acao: 'Abra a ficha "Bens e Direitos"', detalhe: 'No programa IRPF da Receita Federal, acesse "Fichas da Declaração" → "Bens e Direitos" → clique em "Novo".' },
+            { num: "02", acao: "Selecione Grupo 07 — Fundos", detalhe: 'No campo "Grupo", selecione "07 – Fundos". No campo "Código", selecione "03 – Fundo de Investimento Imobiliário".' },
+            { num: "03", acao: "Informe o CNPJ do fundo", detalhe: "Cada FII tem CNPJ próprio — diferente do CNPJ da corretora. Encontre no informe de rendimentos enviado pela administradora, não pela corretora." },
+            { num: "04", acao: "Preencha a Discriminação", detalhe: "Nome do FII, quantidade de cotas, nome da corretora custodiante e, se quiser, o ticker (MXRF11, HGCR11 etc.) para facilitar a identificação futura." },
+            { num: "05", acao: "Informe o custo de aquisição", detalhe: 'Campo "Situação em 31/12/2025": some o valor total pago em todas as compras de cotas daquele FII, incluindo corretagem. Nunca use o preço de fechamento da cota em 31/12.' },
+            { num: "06", acao: "Repita para cada FII", detalhe: "Um lançamento por fundo. Se você tem 8 FIIs diferentes, são 8 lançamentos distintos em Bens e Direitos — um para cada CNPJ." },
           ].map(({ num, acao, detalhe }) => (
             <div key={num} className="flex gap-4 p-4 rounded-xl border border-border/50 bg-card/30">
               <span className="text-2xl font-bold text-invest/40 flex-shrink-0 w-10 font-mono">{num}</span>
