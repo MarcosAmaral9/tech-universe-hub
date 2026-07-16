@@ -200,6 +200,24 @@ const DebenturesCriCra2026 = () => {
           O <strong>CDI+ (pós-fixado com spread)</strong> é mais comum em CRIs e CRAs de prazo mais curto (até 3 a 5 anos). Um CRI a CDI+1,5% isento de IR entrega hoje algo em torno de 14,75% ao ano — e esse valor varia conforme o CDI sobe ou cai ao longo do tempo. Para quem acredita que a Selic permanecerá alta por mais tempo, ou para quem simplesmente não quer tomar o risco de marcação a mercado, o CDI+ é a escolha mais defensiva dentro do crédito privado isento. O <strong>prefixado</strong> é raro em CRIs e CRAs, mas aparece em algumas debêntures de prazo mais curto. Trava a taxa nominal desde o início — vantajoso se a expectativa é de queda de juros, mas arriscado se os juros subirem além do esperado.
         </p>
 
+        <div className="not-prose my-6 overflow-x-auto rounded-xl border border-invest/30">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="bg-invest/10">
+                <th className="text-left p-3 font-bold">Cenário macro</th>
+                <th className="text-left p-3 font-bold text-invest">Indexador ideal</th>
+                <th className="text-left p-3 font-bold">Por quê</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-xs">
+              <tr><td className="p-3 font-medium">Selic alta e estável</td><td className="p-3 text-invest">CDI+</td><td className="p-3 text-muted-foreground">Captura o CDI corrente + spread, sem risco de marcação.</td></tr>
+              <tr><td className="p-3 font-medium">Selic caindo</td><td className="p-3 text-invest">Prefixado / IPCA+ longo</td><td className="p-3 text-muted-foreground">Trava taxa nominal alta antes da queda.</td></tr>
+              <tr><td className="p-3 font-medium">Inflação persistente</td><td className="p-3 text-invest">IPCA+</td><td className="p-3 text-muted-foreground">Protege o poder de compra independentemente do IPCA realizado.</td></tr>
+              <tr><td className="p-3 font-medium">Cenário incerto</td><td className="p-3 text-invest">Mix CDI+ e IPCA+</td><td className="p-3 text-muted-foreground">Diversificação de indexadores reduz risco de errar cenário.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <FileText className="h-7 w-7 text-invest" />
           Como Declarar CRI, CRA e Debêntures Incentivadas no IRPF
