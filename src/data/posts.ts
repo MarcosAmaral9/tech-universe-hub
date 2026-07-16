@@ -189,8 +189,108 @@ import blackMythWukongImg from "@/assets/black-myth-wukong-guia-2024.webp";
 import kingdomCome2Img from "@/assets/kingdom-come-deliverance-2-guia-2025.webp";
 import monsterHunterWildsImg from "@/assets/monster-hunter-wilds-guia-2025.webp";
 import astroBotGotyImg from "@/assets/astro-bot-guia-goty-2024.webp";
+import debenturesCriCra2026Img from "@/assets/debentures-cri-cra-2026.webp";
+import declararFiiIR2026Img from "@/assets/declarar-fii-ir-2026.webp";
+import fundosMultimercado2026Img from "@/assets/fundos-multimercado-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 12 Jul 2026 — Finanças (Renda Fixa / Impostos / Multimercado) ─
+  {
+    id: "205",
+    slug: "debentures-cri-cra-2026-guia-completo",
+    title: "Debêntures, CRI e CRA em 2026: Guia Completo de Crédito Privado Isento de IR",
+    excerpt:
+      "Após a MP 1.303/2025 ser rejeitada, debêntures incentivadas, CRI e CRA mantêm isenção de IR em 2026. Entenda risco de crédito sem FGC, indexadores, como declarar no IRPF e quando valem mais que LCI/LCA.",
+    content: "",
+    category: "invest",
+    subtopic: "renda-fixa",
+    image: debenturesCriCra2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-12",
+    readTime: "14 min",
+    faq: [
+      {
+        q: "Debêntures incentivadas, CRI e CRA são isentos de IR em 2026?",
+        a: "Sim. A MP 1.303/2025 — que pretendia tributar esses papéis — foi rejeitada pelo Congresso e a isenção de IR para pessoa física foi mantida para debêntures incentivadas (Lei 12.431), CRI e CRA, inclusive nas novas emissões de 2026.",
+      },
+      {
+        q: "CRI, CRA e debêntures têm cobertura do FGC?",
+        a: "Não. Diferente de LCI, LCA e CDB, esses papéis são de crédito privado corporativo e não têm cobertura do Fundo Garantidor de Créditos. Em caso de calote do emissor, o investidor pode perder parte ou todo o valor investido.",
+      },
+      {
+        q: "Vale mais a pena CRI/CRA ou LCI/LCA em 2026?",
+        a: "Depende do spread e do prazo. Com Selic acima de 13%, um CRI pagando CDI+1,5% ou IPCA+7% pode superar uma LCI em mais de R$ 8.000 por R$ 100.000 investidos em três anos — mas o preço é o risco de crédito real. Investidores conservadores devem priorizar LCI/LCA (com FGC).",
+      },
+      {
+        q: "Como declarar debêntures, CRI e CRA no Imposto de Renda?",
+        a: "O saldo em 31/12 vai em Bens e Direitos (Grupo 04 – Aplicações e Investimentos). Os rendimentos isentos entram em 'Rendimentos Isentos e Não Tributáveis'. Ganhos com venda no mercado secundário podem ser tributados como ganho de capital.",
+      },
+    ],
+  },
+  {
+    id: "206",
+    slug: "como-declarar-fiis-imposto-de-renda-2026",
+    title: "Como Declarar FIIs no Imposto de Renda 2026: Guia Passo a Passo",
+    excerpt:
+      "Guia completo para declarar FIIs no IRPF 2026: Bens e Direitos (Grupo 07, Código 03), rendimentos isentos (Código 26), ganho de capital a 20% via DARF 6015, amortizações e compensação de prejuízo. Sem malha fina.",
+    content: "",
+    category: "invest",
+    subtopic: "impostos",
+    image: declararFiiIR2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-12",
+    readTime: "15 min",
+    faq: [
+      {
+        q: "Preciso declarar FIIs mesmo sem ter vendido nenhuma cota?",
+        a: "Sim. Todo investidor que possua cotas em 31/12 deve informar em 'Bens e Direitos' (Grupo 07 – Fundos, Código 03 – FII) pelo custo de aquisição, independentemente de ter vendido cotas no ano.",
+      },
+      {
+        q: "Os dividendos de FII são isentos de Imposto de Renda?",
+        a: "Sim, os rendimentos mensais distribuídos pelos FIIs são isentos de IR para pessoa física, desde que o fundo tenha mais de 50 cotistas e o investidor detenha menos de 10% das cotas. Eles vão em 'Rendimentos Isentos e Não Tributáveis', código 26.",
+      },
+      {
+        q: "Qual a alíquota do ganho de capital na venda de FII?",
+        a: "20% sobre o lucro em qualquer venda com resultado positivo, sem faixa de isenção. O DARF (código 6015) deve ser pago até o último dia útil do mês seguinte à venda. Prejuízos podem ser compensados com lucros futuros na venda de outros FIIs.",
+      },
+      {
+        q: "Como declarar amortização de cota de FII?",
+        a: "A amortização reduz o custo de aquisição das cotas — não é rendimento tributável. Subtraia o valor amortizado do custo total em 'Bens e Direitos'. Se o custo chegar a zero, o excedente vira ganho de capital tributável.",
+      },
+    ],
+  },
+  {
+    id: "207",
+    slug: "fundos-multimercado-2026-valem-a-pena",
+    title: "Fundos Multimercado em 2026: Vale a Pena Investir? Análise Honesta",
+    excerpt:
+      "IHFA perdeu para o CDI em 3 e 5 anos, taxas de 2%+20%, come-cotas semestral e como identificar os poucos fundos que realmente batem o benchmark. Quando vale — e quando não vale investir em multimercado.",
+    content: "",
+    category: "invest",
+    subtopic: "carteira",
+    image: fundosMultimercado2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-12",
+    readTime: "13 min",
+    faq: [
+      {
+        q: "Fundos multimercado bateram o CDI em 2026?",
+        a: "Na média, não. O IHFA (Índice de Hedge Funds da ANBIMA) perdeu para o CDI em janelas de 3 e 5 anos até 2026. Apenas cerca de 46 fundos multimercado brasileiros conseguiram entregar Sharpe positivo consistente acima do CDI no período.",
+      },
+      {
+        q: "O que é come-cotas e como afeta a rentabilidade?",
+        a: "Come-cotas é a antecipação semestral de IR (maio e novembro) sobre o rendimento acumulado em fundos abertos de longo prazo, à alíquota mínima de 15%. Reduz o efeito de juros compostos ao longo do tempo, diferente de ações e FIIs.",
+      },
+      {
+        q: "Vale a pena pagar 2% de taxa de administração + 20% de performance?",
+        a: "Só se o gestor entregar retorno líquido consistente acima do CDI+3% ao ano em janelas de 5 anos. Menos de 15% dos fundos brasileiros atingem esse patamar. Para os demais, o investidor paga mais e recebe menos do que teria em Tesouro Selic.",
+      },
+      {
+        q: "Como escolher um bom fundo multimercado em 2026?",
+        a: "Avalie o Sharpe ratio (mínimo 0,5 em 5 anos), a consistência do gestor no cargo (mais de 3 anos), a estratégia clara (macro, long/short, quantitativo), o patrimônio saudável e o histórico completo — não apenas os últimos 12 meses.",
+      },
+    ],
+  },
   // ── 11 Jul 2026 — Geek (Games / GOTY 2024) ───────────────────────
   {
     id: "204",
