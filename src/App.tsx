@@ -549,6 +549,9 @@ const App = () => (
                 <Route path="/post/kingdom-come-deliverance-2-guia-completo-2025" element={<Suspense fallback={<div />}><KingdomComeDeliverance2Guia2025 /></Suspense>} />
                 <Route path="/post/monster-hunter-wilds-guia-completo-2025" element={<Suspense fallback={<div />}><MonsterHunterWildsGuia2025 /></Suspense>} />
                 <Route path="/post/astro-bot-guia-goty-2024" element={<Suspense fallback={<div />}><AstroBotGuiaGoty2024 /></Suspense>} />
+                <Route path="/post/debentures-cri-cra-2026-guia-completo" element={<Suspense fallback={<div />}><DebenturesCriCra2026 /></Suspense>} />
+                <Route path="/post/como-declarar-fiis-imposto-de-renda-2026" element={<Suspense fallback={<div />}><DeclararFiiIR2026 /></Suspense>} />
+                <Route path="/post/fundos-multimercado-2026-valem-a-pena" element={<Suspense fallback={<div />}><FundosMultimercado2026 /></Suspense>} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
