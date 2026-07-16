@@ -192,6 +192,26 @@ const FundosMultimercado2026 = () => {
           Em ambientes de Selic elevada como o de 2026, o custo de oportunidade de um multimercado mediano é especialmente alto: um CDB de banco médio pagando 110% do CDI entrega aproximadamente 14,6% bruto ao ano, enquanto a maioria dos multimercados entregou menos do que isso líquido das taxas. Para quem não tem tempo ou interesse em analisar fundos com os cinco critérios listados acima, a alternativa mais simples e frequentemente mais eficiente é uma carteira diversificada de produtos de renda fixa diretos (CDB, LCI, Tesouro Direto) complementada por ETFs de renda variável para a parcela de risco — com custo total de gestão de 0,1% a 0,5% ao ano em vez de 2% a 4%.
         </p>
 
+        <div className="not-prose my-6 overflow-x-auto rounded-xl border border-invest/30">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="bg-invest/10">
+                <th className="text-left p-3 font-bold">Critério</th>
+                <th className="text-center p-3 font-bold text-red-400">Multimercado mediano</th>
+                <th className="text-center p-3 font-bold text-green-400">Renda fixa direta + ETF</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-xs">
+              <tr><td className="p-3 font-medium text-muted-foreground">Taxa total anual</td><td className="p-3 text-center">2% a 4%</td><td className="p-3 text-center">0,1% a 0,5%</td></tr>
+              <tr><td className="p-3 font-medium text-muted-foreground">Tributação</td><td className="p-3 text-center">Come-cotas semestral</td><td className="p-3 text-center">Só no resgate / venda</td></tr>
+              <tr><td className="p-3 font-medium text-muted-foreground">Bate CDI (5 anos)</td><td className="p-3 text-center">~29% dos fundos</td><td className="p-3 text-center">Sim, por padrão</td></tr>
+              <tr><td className="p-3 font-medium text-muted-foreground">Liquidez padrão</td><td className="p-3 text-center">D+30 a D+60</td><td className="p-3 text-center">D+0 a D+2</td></tr>
+              <tr><td className="p-3 font-medium text-muted-foreground">Transparência</td><td className="p-3 text-center">Carteira defasada 90 dias</td><td className="p-3 text-center">Total</td></tr>
+              <tr><td className="p-3 font-medium text-muted-foreground">Complexidade</td><td className="p-3 text-center">Alta</td><td className="p-3 text-center">Baixa</td></tr>
+            </tbody>
+          </table>
+        </div>
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Lightbulb className="h-7 w-7 text-invest" />
           Quando Multimercado FAZ Sentido em 2026

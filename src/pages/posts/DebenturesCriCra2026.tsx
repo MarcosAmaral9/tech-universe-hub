@@ -142,6 +142,38 @@ const DebenturesCriCra2026 = () => {
         <p>
           Três tipos de risco são intrínsecos a qualquer investimento em crédito privado e precisam ser compreendidos antes de qualquer aporte em CRI, CRA ou debênture incentivada.
         </p>
+
+        <div className="not-prose grid md:grid-cols-3 gap-4 my-6">
+          {[
+            {
+              titulo: "Risco de crédito",
+              icone: <Shield className="h-5 w-5" />,
+              cor: "border-l-red-500 bg-red-500/5",
+              texto: "Emissor pode deixar de pagar. Sem FGC. Recuperação judicial é lenta, cara e incerta. Rating A ou superior é o mínimo para investidor conservador.",
+            },
+            {
+              titulo: "Risco de liquidez",
+              icone: <AlertTriangle className="h-5 w-5" />,
+              cor: "border-l-yellow-500 bg-yellow-500/5",
+              texto: "Sair antes do vencimento depende do mercado secundário. Deságio pode ser alto em estresse. Regra: só invista o que você não vai precisar até o vencimento.",
+            },
+            {
+              titulo: "Marcação a mercado",
+              icone: <BarChart3 className="h-5 w-5" />,
+              cor: "border-l-blue-500 bg-blue-500/5",
+              texto: "Títulos IPCA+ oscilam de preço com a taxa de juros. Se carregar até o vencimento, é irrelevante. Se acompanhar diariamente, prepare-se para volatilidade.",
+            },
+          ].map(({ titulo, icone, cor, texto }) => (
+            <div key={titulo} className={`p-4 rounded-xl border border-border/40 border-l-4 ${cor}`}>
+              <div className="flex items-center gap-2 mb-2 text-invest font-bold text-sm">
+                {icone}
+                {titulo}
+              </div>
+              <p className="text-xs text-muted-foreground leading-relaxed">{texto}</p>
+            </div>
+          ))}
+        </div>
+
         <p>
           O <strong>risco de crédito</strong> é o mais conhecido: a possibilidade de o emissor (a empresa no caso de debêntures, a securitizadora e os devedores do lastro no caso de CRI e CRA) deixar de pagar os juros ou o principal no vencimento. Diferentemente do Tesouro Nacional ou do FGC, não há um "resgatador de última instância" nesses títulos. Em caso de insolvência do emissor, o investidor entra em processo judicial ou extrajudicial de recuperação como credor, com prazo, custo e resultado incertos. Para avaliar o risco de crédito de forma objetiva, o instrumento principal é o <strong>rating das agências</strong> (Fitch, Moody's, S&P, Austin Rating): títulos com rating "A" ou superior têm probabilidade historicamente muito baixa de inadimplência, enquanto títulos sem rating ou com ratings baixos (abaixo de "BB") carregam risco substancialmente maior. Outro indicador indireto é o spread em relação ao Tesouro IPCA+: um CRI pagando IPCA+12% quando o Tesouro IPCA+ de prazo similar paga IPCA+7% está sendo precificado pelo mercado com um risco de crédito elevado — o spread gordíssimo não é generosidade, é compensação por risco real.
         </p>
@@ -168,6 +200,24 @@ const DebenturesCriCra2026 = () => {
           O <strong>CDI+ (pós-fixado com spread)</strong> é mais comum em CRIs e CRAs de prazo mais curto (até 3 a 5 anos). Um CRI a CDI+1,5% isento de IR entrega hoje algo em torno de 14,75% ao ano — e esse valor varia conforme o CDI sobe ou cai ao longo do tempo. Para quem acredita que a Selic permanecerá alta por mais tempo, ou para quem simplesmente não quer tomar o risco de marcação a mercado, o CDI+ é a escolha mais defensiva dentro do crédito privado isento. O <strong>prefixado</strong> é raro em CRIs e CRAs, mas aparece em algumas debêntures de prazo mais curto. Trava a taxa nominal desde o início — vantajoso se a expectativa é de queda de juros, mas arriscado se os juros subirem além do esperado.
         </p>
 
+        <div className="not-prose my-6 overflow-x-auto rounded-xl border border-invest/30">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="bg-invest/10">
+                <th className="text-left p-3 font-bold">Cenário macro</th>
+                <th className="text-left p-3 font-bold text-invest">Indexador ideal</th>
+                <th className="text-left p-3 font-bold">Por quê</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border text-xs">
+              <tr><td className="p-3 font-medium">Selic alta e estável</td><td className="p-3 text-invest">CDI+</td><td className="p-3 text-muted-foreground">Captura o CDI corrente + spread, sem risco de marcação.</td></tr>
+              <tr><td className="p-3 font-medium">Selic caindo</td><td className="p-3 text-invest">Prefixado / IPCA+ longo</td><td className="p-3 text-muted-foreground">Trava taxa nominal alta antes da queda.</td></tr>
+              <tr><td className="p-3 font-medium">Inflação persistente</td><td className="p-3 text-invest">IPCA+</td><td className="p-3 text-muted-foreground">Protege o poder de compra independentemente do IPCA realizado.</td></tr>
+              <tr><td className="p-3 font-medium">Cenário incerto</td><td className="p-3 text-invest">Mix CDI+ e IPCA+</td><td className="p-3 text-muted-foreground">Diversificação de indexadores reduz risco de errar cenário.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <FileText className="h-7 w-7 text-invest" />
           Como Declarar CRI, CRA e Debêntures Incentivadas no IRPF
@@ -186,6 +236,26 @@ const DebenturesCriCra2026 = () => {
         <p>
           A regra de ouro do crédito privado é que ele só faz sentido como uma <strong>camada adicional de retorno</strong> sobre uma base já diversificada de renda fixa conservadora. Antes de comprar qualquer CRI, CRA ou debênture incentivada, o investidor deve ter: (1) reserva de emergência integralmente alocada em Tesouro Selic ou CDB com liquidez diária, (2) aportes regulares em renda fixa com garantia de FGC (CDB, LCI, LCA) para objetivos de médio prazo, e (3) clareza de que o valor que vai alocar em crédito privado não será necessário antes do vencimento do título.
         </p>
+
+        <div className="not-prose my-6 p-5 rounded-xl border border-invest/40 bg-gradient-to-br from-invest/10 to-background">
+          <h3 className="font-bold text-base mb-3 flex items-center gap-2 text-invest">
+            <Lightbulb className="h-5 w-5" />
+            Alocação sugerida em crédito privado isento
+          </h3>
+          <div className="grid sm:grid-cols-3 gap-3">
+            {[
+              { perfil: "Conservador", pct: "0% a 5%", desc: "Prioridade absoluta em Tesouro Selic, CDB e LCI/LCA com FGC." },
+              { perfil: "Moderado", pct: "10% a 25%", desc: "Papéis rating A+ ou superior, diversificados entre setores e prazos." },
+              { perfil: "Arrojado", pct: "25% a 40%", desc: "Aceita ratings BBB com prêmio de spread. Diversificação obrigatória." },
+            ].map(({ perfil, pct, desc }) => (
+              <div key={perfil} className="p-3 rounded-lg bg-card/60 border border-border/40">
+                <p className="text-xs uppercase tracking-wider text-muted-foreground">{perfil}</p>
+                <p className="text-2xl font-bold text-invest my-1">{pct}</p>
+                <p className="text-xs text-muted-foreground leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
         <p>
           Dentro dessas condições, a participação em crédito privado isento em uma carteira de perfil moderado pode variar de 10% a 25% do patrimônio total em renda fixa — nunca concentrada em um único emissor, sempre diversificada entre setores (energia, saneamento, agronegócio, logística) e entre prazos de vencimento. Plataformas de corretoras como XP, BTG, NuInvest e Inter oferecem CRIs, CRAs e debêntures incentivadas com valores de entrada a partir de R$ 1.000, permitindo ao investidor de varejo construir uma carteira de crédito privado diversificada sem precisar de volumes mínimos elevados que antes limitavam o acesso a esse mercado a investidores qualificados.
         </p>
