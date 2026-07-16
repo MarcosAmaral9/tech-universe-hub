@@ -236,6 +236,26 @@ const DebenturesCriCra2026 = () => {
         <p>
           A regra de ouro do crédito privado é que ele só faz sentido como uma <strong>camada adicional de retorno</strong> sobre uma base já diversificada de renda fixa conservadora. Antes de comprar qualquer CRI, CRA ou debênture incentivada, o investidor deve ter: (1) reserva de emergência integralmente alocada em Tesouro Selic ou CDB com liquidez diária, (2) aportes regulares em renda fixa com garantia de FGC (CDB, LCI, LCA) para objetivos de médio prazo, e (3) clareza de que o valor que vai alocar em crédito privado não será necessário antes do vencimento do título.
         </p>
+
+        <div className="not-prose my-6 p-5 rounded-xl border border-invest/40 bg-gradient-to-br from-invest/10 to-background">
+          <h3 className="font-bold text-base mb-3 flex items-center gap-2 text-invest">
+            <Lightbulb className="h-5 w-5" />
+            Alocação sugerida em crédito privado isento
+          </h3>
+          <div className="grid sm:grid-cols-3 gap-3">
+            {[
+              { perfil: "Conservador", pct: "0% a 5%", desc: "Prioridade absoluta em Tesouro Selic, CDB e LCI/LCA com FGC." },
+              { perfil: "Moderado", pct: "10% a 25%", desc: "Papéis rating A+ ou superior, diversificados entre setores e prazos." },
+              { perfil: "Arrojado", pct: "25% a 40%", desc: "Aceita ratings BBB com prêmio de spread. Diversificação obrigatória." },
+            ].map(({ perfil, pct, desc }) => (
+              <div key={perfil} className="p-3 rounded-lg bg-card/60 border border-border/40">
+                <p className="text-xs uppercase tracking-wider text-muted-foreground">{perfil}</p>
+                <p className="text-2xl font-bold text-invest my-1">{pct}</p>
+                <p className="text-xs text-muted-foreground leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
         <p>
           Dentro dessas condições, a participação em crédito privado isento em uma carteira de perfil moderado pode variar de 10% a 25% do patrimônio total em renda fixa — nunca concentrada em um único emissor, sempre diversificada entre setores (energia, saneamento, agronegócio, logística) e entre prazos de vencimento. Plataformas de corretoras como XP, BTG, NuInvest e Inter oferecem CRIs, CRAs e debêntures incentivadas com valores de entrada a partir de R$ 1.000, permitindo ao investidor de varejo construir uma carteira de crédito privado diversificada sem precisar de volumes mínimos elevados que antes limitavam o acesso a esse mercado a investidores qualificados.
         </p>
