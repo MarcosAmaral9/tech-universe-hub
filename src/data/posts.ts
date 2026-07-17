@@ -197,6 +197,39 @@ import fundosMultimercado2026Img from "@/assets/fundos-multimercado-2026.webp";
 import animeVerao2026Img from "@/assets/anime-verao-2026-guia-temporada.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 13 Jul 2026 — Otaku (Anime / Temporada Summer 2026) ──────────
+  {
+    id: "210",
+    slug: "anime-verao-2026-guia-temporada",
+    title: "Anime Verão 2026: Guia Completo da Temporada Julho–Setembro",
+    excerpt:
+      "Mais de 60 títulos confirmados na temporada de verão 2026: Mushoku Tensei III, Bleach TYBW Final, Youjo Senki II, Ghost in the Shell pelo Science SARU, Eureka Evrika do KyoAni, filme de Madoka e o calendário completo de estreias.",
+    content: "",
+    category: "otaku",
+    subtopic: "animes",
+    image: animeVerao2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-13",
+    readTime: "18 min",
+    faq: [
+      {
+        q: "Quando começa a temporada de anime de verão 2026?",
+        a: "A temporada de verão 2026 vai de julho a setembro, com as primeiras estreias já em 1º de julho e a maior concentração de lançamentos entre 3 e 8 de julho (Mushoku Tensei III, Hell Mode S2, Eureka Evrika, Ghost in the Shell e Youjo Senki II).",
+      },
+      {
+        q: "Onde assistir Mushoku Tensei III legalmente no Brasil?",
+        a: "A Crunchyroll detém os direitos de streaming da terceira temporada de Mushoku Tensei no Brasil, com legendas em português e episódios semanais a partir de 4 de julho de 2026.",
+      },
+      {
+        q: "Bleach: TYBW terminou no verão de 2026?",
+        a: "Sim. A parte IV (Kashin-tan), estreando em 25 de julho de 2026 pela Pierrot Films, é a fase final do Thousand-Year Blood War e conclui a adaptação do mangá de Tite Kubo iniciada em 2022.",
+      },
+      {
+        q: "O filme de Madoka Magica Walpurgisnacht Rising terá lançamento no Brasil?",
+        a: "O filme estreia primeiro nos cinemas japoneses em 27 de agosto de 2026 pelo estúdio SHAFT. A distribuição internacional (incluindo Brasil) ainda não foi confirmada, mas historicamente filmes da franquia chegam por meio de distribuidoras como Diamond Films alguns meses depois.",
+      },
+    ],
+  },
   // ── 12 Jul 2026 — Finanças (Renda Fixa / Impostos / Multimercado) ─
   {
     id: "205",
