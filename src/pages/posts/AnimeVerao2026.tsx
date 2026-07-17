@@ -18,7 +18,7 @@ import { Clock, User, Calendar, Star, Zap, BarChart3, Flame, BookOpen } from "lu
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import heroImg from "@/assets/animes-aguardados-2026.webp";
+import heroImg from "@/assets/anime-verao-2026-guia-temporada.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const AnimeVerao2026 = () => {
