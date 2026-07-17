@@ -190,6 +190,7 @@ import kingdomCome2Img from "@/assets/kingdom-come-deliverance-2-guia-2025.webp"
 import monsterHunterWildsImg from "@/assets/monster-hunter-wilds-guia-2025.webp";
 import astroBotGotyImg from "@/assets/astro-bot-guia-goty-2024.webp";
 import indianaJonesGreatCircleImg from "@/assets/indiana-jones-great-circle-guia-2024.webp";
+import ghostOfTsushimaImg from "@/assets/ghost-of-tsushima-guia-completo.webp";
 import debenturesCriCra2026Img from "@/assets/debentures-cri-cra-2026.webp";
 import declararFiiIR2026Img from "@/assets/declarar-fii-ir-2026.webp";
 import fundosMultimercado2026Img from "@/assets/fundos-multimercado-2026.webp";

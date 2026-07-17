@@ -411,14 +411,6 @@ const GhostOfTsushimaGuia = () => {
           </table>
         </div>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">
-            Você já jogou Ghost of Tsushima? ⛩️
-          </h3>
-          <p className="text-muted-foreground">
-            Qual postura foi sua favorita? Jogou no Modo Kurosawa? Conta nos comentários! 👇
-          </p>
-        </div>
       </div>
 
       <EditorialTake
