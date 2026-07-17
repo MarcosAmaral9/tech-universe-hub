@@ -264,6 +264,7 @@ const BlackMythWukongGuia2024        = lazy(() => import("./pages/posts/BlackMyt
 const KingdomComeDeliverance2Guia2025 = lazy(() => import("./pages/posts/KingdomComeDeliverance2Guia2025"));
 const MonsterHunterWildsGuia2025     = lazy(() => import("./pages/posts/MonsterHunterWildsGuia2025"));
 const AstroBotGuiaGoty2024           = lazy(() => import("./pages/posts/AstroBotGuiaGoty2024"));
+const IndianaJonesGreatCircleGuia2024 = lazy(() => import("./pages/posts/IndianaJonesGreatCircleGuia2024"));
 const DebenturesCriCra2026           = lazy(() => import("./pages/posts/DebenturesCriCra2026"));
 const DeclararFiiIR2026              = lazy(() => import("./pages/posts/DeclararFiiIR2026"));
 const FundosMultimercado2026         = lazy(() => import("./pages/posts/FundosMultimercado2026"));
@@ -549,6 +550,7 @@ const App = () => (
                 <Route path="/post/kingdom-come-deliverance-2-guia-completo-2025" element={<Suspense fallback={<div />}><KingdomComeDeliverance2Guia2025 /></Suspense>} />
                 <Route path="/post/monster-hunter-wilds-guia-completo-2025" element={<Suspense fallback={<div />}><MonsterHunterWildsGuia2025 /></Suspense>} />
                 <Route path="/post/astro-bot-guia-goty-2024" element={<Suspense fallback={<div />}><AstroBotGuiaGoty2024 /></Suspense>} />
+                <Route path="/post/indiana-jones-great-circle-guia-completo-2024" element={<Suspense fallback={<div />}><IndianaJonesGreatCircleGuia2024 /></Suspense>} />
                 <Route path="/post/debentures-cri-cra-2026-guia-completo" element={<Suspense fallback={<div />}><DebenturesCriCra2026 /></Suspense>} />
                 <Route path="/post/como-declarar-fiis-imposto-de-renda-2026" element={<Suspense fallback={<div />}><DeclararFiiIR2026 /></Suspense>} />
                 <Route path="/post/fundos-multimercado-2026-valem-a-pena" element={<Suspense fallback={<div />}><FundosMultimercado2026 /></Suspense>} />

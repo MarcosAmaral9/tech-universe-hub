@@ -384,14 +384,6 @@ const IndianaJonesGreatCircleGuia2024 = () => {
           Indiana Jones quanto os locais reais que recria.
         </p>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">
-            Já jogou Indiana Jones and the Great Circle? 🎩
-          </h3>
-          <p className="text-muted-foreground">
-            Qual foi o cenário favorito da sua jornada? Conta nos comentários! 👇
-          </p>
-        </div>
       </div>
 
       <EditorialTake

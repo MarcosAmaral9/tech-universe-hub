@@ -189,6 +189,7 @@ import blackMythWukongImg from "@/assets/black-myth-wukong-guia-2024.webp";
 import kingdomCome2Img from "@/assets/kingdom-come-deliverance-2-guia-2025.webp";
 import monsterHunterWildsImg from "@/assets/monster-hunter-wilds-guia-2025.webp";
 import astroBotGotyImg from "@/assets/astro-bot-guia-goty-2024.webp";
+import indianaJonesGreatCircleImg from "@/assets/indiana-jones-great-circle-guia-2024.webp";
 import debenturesCriCra2026Img from "@/assets/debentures-cri-cra-2026.webp";
 import declararFiiIR2026Img from "@/assets/declarar-fii-ir-2026.webp";
 import fundosMultimercado2026Img from "@/assets/fundos-multimercado-2026.webp";
@@ -321,6 +322,38 @@ export const blogPosts: BlogPost[] = [
       {
         q: "Quanto tempo leva para zerar Astro Bot?",
         a: "Entre 8 e 12 horas para a campanha principal e 15 a 20 horas para 100%, incluindo os boss rematches, Speedrun Challenges e todos os Bots e cameos escondidos.",
+      },
+    ],
+  },
+  {
+    id: "208",
+    slug: "indiana-jones-great-circle-guia-completo-2024",
+    title: "Indiana Jones and the Great Circle — Guia Completo: A História, a MachineGames, os Cenários Reais e Tudo Que Você Precisa Saber",
+    excerpt:
+      "Guia completo de Indiana Jones and the Great Circle: origem da franquia, a MachineGames por trás do projeto, o conceito real do Grande Círculo, cenários históricos reconstruídos (Vaticano, Gizé, Sukhothai), colaboração entre Harrison Ford e Troy Baker e dicas de gameplay.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: indianaJonesGreatCircleImg,
+    author: "VICIO<CODE>",
+    date: "2026-07-11",
+    readTime: "17 min",
+    faq: [
+      {
+        q: "Em que plataformas Indiana Jones and the Great Circle está disponível?",
+        a: "PC (Steam) e Xbox Series X|S no lançamento em 9 de dezembro de 2024, com versão PS5 chegando em 2025. Está disponível no Xbox Game Pass desde o dia um.",
+      },
+      {
+        q: "Quem desenvolveu Indiana Jones and the Great Circle?",
+        a: "A MachineGames, estúdio sueco fundado em 2009 e responsável pela franquia moderna de Wolfenstein (The New Order, The New Colossus), publicado pela Bethesda Softworks sob licença da Lucasfilm Games.",
+      },
+      {
+        q: "Harrison Ford participou do jogo?",
+        a: "Sim. Harrison Ford emprestou sua likeness para o modelo do rosto de Indy e gravou parte da voz, enquanto Troy Baker (Joel em The Last of Us) performou o personagem nos momentos de ação e dublagem principal, garantindo consistência de tom com Ford.",
+      },
+      {
+        q: "O que é o 'Grande Círculo' que dá nome ao jogo?",
+        a: "Um conceito geográfico real: um círculo desenhado sobre a superfície da Terra cujo centro coincide com o centro do planeta. O jogo usa a teoria (contestada cientificamente) de que sítios como Gizé, Stonehenge, Machu Picchu e Angkor Wat estariam alinhados sobre um mesmo grande círculo como MacGuffin narrativo.",
       },
     ],
   },
