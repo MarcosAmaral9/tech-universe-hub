@@ -190,6 +190,7 @@ import kingdomCome2Img from "@/assets/kingdom-come-deliverance-2-guia-2025.webp"
 import monsterHunterWildsImg from "@/assets/monster-hunter-wilds-guia-2025.webp";
 import astroBotGotyImg from "@/assets/astro-bot-guia-goty-2024.webp";
 import indianaJonesGreatCircleImg from "@/assets/indiana-jones-great-circle-guia-2024.webp";
+import ghostOfTsushimaImg from "@/assets/ghost-of-tsushima-guia-completo.webp";
 import debenturesCriCra2026Img from "@/assets/debentures-cri-cra-2026.webp";
 import declararFiiIR2026Img from "@/assets/declarar-fii-ir-2026.webp";
 import fundosMultimercado2026Img from "@/assets/fundos-multimercado-2026.webp";
@@ -354,6 +355,38 @@ export const blogPosts: BlogPost[] = [
       {
         q: "O que é o 'Grande Círculo' que dá nome ao jogo?",
         a: "Um conceito geográfico real: um círculo desenhado sobre a superfície da Terra cujo centro coincide com o centro do planeta. O jogo usa a teoria (contestada cientificamente) de que sítios como Gizé, Stonehenge, Machu Picchu e Angkor Wat estariam alinhados sobre um mesmo grande círculo como MacGuffin narrativo.",
+      },
+    ],
+  },
+  {
+    id: "209",
+    slug: "ghost-of-tsushima-guia-completo",
+    title: "Ghost of Tsushima — Guia Completo: A Invasão Mongol de 1274, a Sucker Punch, os Quatro Estilos de Combate e Tudo Sobre o Fantasma de Tsushima",
+    excerpt:
+      "Guia completo de Ghost of Tsushima: a invasão mongol de 1274 na ilha de Tsushima, a história da Sucker Punch, os quatro estilos de combate de Jin Sakai, o Modo Kurosawa, a Director's Cut com Ilha Iki e por que virou referência de open world samurai.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: ghostOfTsushimaImg,
+    author: "VICIO<CODE>",
+    date: "2026-07-11",
+    readTime: "19 min",
+    faq: [
+      {
+        q: "Em que plataformas Ghost of Tsushima está disponível?",
+        a: "PS4 (lançamento em 17 de julho de 2020), PS5 (versão Director's Cut) e PC (via Steam e Epic Games Store, a partir de maio de 2024), todos publicados pela Sony Interactive Entertainment.",
+      },
+      {
+        q: "A história de Ghost of Tsushima é real?",
+        a: "A ambientação é: a primeira invasão mongol do Japão ocorreu de fato em outubro de 1274, começando pela ilha de Tsushima, sob o comando do neto de Gêngis Khan, Kublai Khan. Jin Sakai e a maioria dos personagens principais são ficcionais, mas o pano de fundo histórico é preciso.",
+      },
+      {
+        q: "O que é o Modo Kurosawa?",
+        a: "Um modo visual opcional que aplica filtro preto e branco, granulação de filme, áudio abafado e faixa de aspecto cinematográfica em homenagem ao diretor Akira Kurosawa (Sete Samurais, Yojimbo). Pode ser ativado a qualquer momento nas opções.",
+      },
+      {
+        q: "Vale a pena comprar a Director's Cut?",
+        a: "Sim. Inclui a expansão Ilha Iki (10-15 horas de conteúdo com o arco pessoal do pai de Jin), melhorias gráficas no PS5 (60 fps, ray tracing parcial), suporte ao DualSense e o modo cooperativo Legends. É a versão definitiva.",
       },
     ],
   },
