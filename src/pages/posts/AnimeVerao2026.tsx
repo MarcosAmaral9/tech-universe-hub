@@ -350,10 +350,6 @@ const AnimeVerao2026 = () => {
           Uma alternativa que a comunidade brasileira adotou gradualmente nos últimos anos é o uso do AniList ou MyAnimeList para registrar intenções de assistir (Watch Plan) com prioridades — marcando explicitamente o que vai assistir agora, o que vai maratonar depois e o que descartou. Esse hábito simples reduz consideravelmente a sensação de obrigação que temporadas densas costumam criar e transforma o acompanhamento de anime num hobby sustentável em vez de uma corrida de manutenção.
         </p>
 
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">Qual anime do verão de 2026 você está mais ansioso? ☀️</h3>
-          <p className="text-muted-foreground">Mushoku Tensei III, Bleach final, Ghost in the Shell novo? Conta nos comentários! 👇</p>
-        </div>
       </div>
 
       <EditorialTake category="otaku" title="Análise do Marcos: verão 2026 é a temporada dos retornos históricos — e isso é tanto uma força quanto um risco">
