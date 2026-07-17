@@ -269,6 +269,7 @@ const GhostOfTsushimaGuia            = lazy(() => import("./pages/posts/GhostOfT
 const DebenturesCriCra2026           = lazy(() => import("./pages/posts/DebenturesCriCra2026"));
 const DeclararFiiIR2026              = lazy(() => import("./pages/posts/DeclararFiiIR2026"));
 const FundosMultimercado2026         = lazy(() => import("./pages/posts/FundosMultimercado2026"));
+const AnimeVerao2026                 = lazy(() => import("./pages/posts/AnimeVerao2026"));
 const BannerlordPortal               = lazy(() => import("./pages/posts/BannerlordPortal"));
 const BannerlordGuiaCompleto         = lazy(() => import("./pages/posts/BannerlordGuiaCompleto"));
 const BannerlordCulturasReinos       = lazy(() => import("./pages/posts/BannerlordCulturasReinos"));
