@@ -269,6 +269,7 @@ const GhostOfTsushimaGuia            = lazy(() => import("./pages/posts/GhostOfT
 const DebenturesCriCra2026           = lazy(() => import("./pages/posts/DebenturesCriCra2026"));
 const DeclararFiiIR2026              = lazy(() => import("./pages/posts/DeclararFiiIR2026"));
 const FundosMultimercado2026         = lazy(() => import("./pages/posts/FundosMultimercado2026"));
+const AnimeVerao2026                 = lazy(() => import("./pages/posts/AnimeVerao2026"));
 const BannerlordPortal               = lazy(() => import("./pages/posts/BannerlordPortal"));
 const BannerlordGuiaCompleto         = lazy(() => import("./pages/posts/BannerlordGuiaCompleto"));
 const BannerlordCulturasReinos       = lazy(() => import("./pages/posts/BannerlordCulturasReinos"));
@@ -556,6 +557,7 @@ const App = () => (
                 <Route path="/post/debentures-cri-cra-2026-guia-completo" element={<Suspense fallback={<div />}><DebenturesCriCra2026 /></Suspense>} />
                 <Route path="/post/como-declarar-fiis-imposto-de-renda-2026" element={<Suspense fallback={<div />}><DeclararFiiIR2026 /></Suspense>} />
                 <Route path="/post/fundos-multimercado-2026-valem-a-pena" element={<Suspense fallback={<div />}><FundosMultimercado2026 /></Suspense>} />
+                <Route path="/post/anime-verao-2026-guia-temporada" element={<Suspense fallback={<div />}><AnimeVerao2026 /></Suspense>} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
