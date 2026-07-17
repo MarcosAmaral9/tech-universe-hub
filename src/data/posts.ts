@@ -194,6 +194,7 @@ import ghostOfTsushimaImg from "@/assets/ghost-of-tsushima-guia-completo.webp";
 import debenturesCriCra2026Img from "@/assets/debentures-cri-cra-2026.webp";
 import declararFiiIR2026Img from "@/assets/declarar-fii-ir-2026.webp";
 import fundosMultimercado2026Img from "@/assets/fundos-multimercado-2026.webp";
+import animeVerao2026Img from "@/assets/anime-verao-2026-guia-temporada.webp";
 
 export const blogPosts: BlogPost[] = [
   // ── 12 Jul 2026 — Finanças (Renda Fixa / Impostos / Multimercado) ─
