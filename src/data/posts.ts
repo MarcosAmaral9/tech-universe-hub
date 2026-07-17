@@ -206,7 +206,7 @@ export const blogPosts: BlogPost[] = [
       "Mais de 60 títulos confirmados na temporada de verão 2026: Mushoku Tensei III, Bleach TYBW Final, Youjo Senki II, Ghost in the Shell pelo Science SARU, Eureka Evrika do KyoAni, filme de Madoka e o calendário completo de estreias.",
     content: "",
     category: "otaku",
-    subtopic: "animes",
+    subtopic: "anime",
     image: animeVerao2026Img,
     author: "VICIO<CODE>",
     date: "2026-07-13",
