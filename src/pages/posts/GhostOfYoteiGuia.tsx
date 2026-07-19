@@ -394,16 +394,6 @@ const GhostOfYoteiGuia = () => {
           mantiver em Yōtei, o Hokkaido de 1603 tem tudo para ser um palco ainda mais
           memorável do que Tsushima.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">
-            Você está animado com Ghost of Yōtei? 🌋
-          </h3>
-          <p className="text-muted-foreground">
-            O que mais te chama atenção — o cenário, a protagonista ou o período histórico?
-            Conta nos comentários! 👇
-          </p>
-        </div>
       </div>
 
       <EditorialTake
