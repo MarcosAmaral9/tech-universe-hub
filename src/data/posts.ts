@@ -195,8 +195,84 @@ import debenturesCriCra2026Img from "@/assets/debentures-cri-cra-2026.webp";
 import declararFiiIR2026Img from "@/assets/declarar-fii-ir-2026.webp";
 import fundosMultimercado2026Img from "@/assets/fundos-multimercado-2026.webp";
 import animeVerao2026Img from "@/assets/anime-verao-2026-guia-temporada.webp";
+import ghostOfYoteiImg from "@/assets/ghost-of-yotei-guia-completo.webp";
+import helldivers2Img from "@/assets/helldivers-2-guia-completo-2024.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 12 Jul 2026 — Geek (Helldivers 2 · Arrowhead · Co-op) ─────────
+  {
+    id: "212",
+    slug: "helldivers-2-guia-completo-2024",
+    title: "Helldivers 2 — Guia Completo: Sátira de Starship Troopers, Estratagemas e a Crise do PSN",
+    excerpt:
+      "Fenômeno de 2024 da Arrowhead: entenda a sátira de Starship Troopers, o sistema de guerra galáctica com Joel no controle, Estratagemas, dicas para novatos e como a comunidade venceu a Sony na crise do PSN.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: helldivers2Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-12",
+    readTime: "17 min",
+    faq: [
+      {
+        q: "Helldivers 2 é a mesma coisa que Starship Troopers?",
+        a: "Não. Helldivers 2 é um jogo cooperativo da Arrowhead inspirado na estética e na sátira anti-militarista do filme Starship Troopers (1997) de Paul Verhoeven, mas não é uma adaptação oficial da obra de Heinlein.",
+      },
+      {
+        q: "Quem é Joel em Helldivers 2?",
+        a: "Joel é o apelido dado pela comunidade ao funcionário da Arrowhead que controla em tempo real a Galactic War, decidindo contra-ataques, eventos e o rumo narrativo da guerra em resposta às ações coletivas dos jogadores.",
+      },
+      {
+        q: "Ainda preciso de conta PSN para jogar Helldivers 2 no PC?",
+        a: "Não. Após a crise de maio de 2024, a Sony recuou e cancelou a exigência de vincular conta PSN para jogadores de PC no Steam.",
+      },
+      {
+        q: "Helldivers 2 tem crossplay entre PS5 e PC?",
+        a: "Sim. Jogadores de PS5 e PC podem jogar juntos nas mesmas missões, com progressão vinculada à conta de cada plataforma.",
+      },
+      {
+        q: "Vale a pena começar Helldivers 2 em 2026?",
+        a: "Sim. O jogo continua ativo com atualizações regulares da Arrowhead, novas frentes na guerra galáctica e uma comunidade coesa. Para novos jogadores, subir de dificuldade gradualmente até 6-7 é o caminho recomendado.",
+      },
+    ],
+  },
+  // ── 11 Jul 2026 — Geek (Ghost of Yōtei · Sucker Punch · PS5) ─────
+  {
+    id: "211",
+    slug: "ghost-of-yotei-guia-completo",
+    title: "Ghost of Yōtei — Guia Completo: Atsu, o Hokkaido de 1603 e o Sucessor de Tsushima",
+    excerpt:
+      "Sucessor espiritual de Ghost of Tsushima anunciado pela Sucker Punch: nova protagonista Atsu, ambientação no Hokkaido de 1603, o Monte Yōtei, o povo Ainu e tudo que foi confirmado sobre o exclusivo de PS5.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: ghostOfYoteiImg,
+    author: "VICIO<CODE>",
+    date: "2026-07-11",
+    readTime: "18 min",
+    faq: [
+      {
+        q: "Ghost of Yōtei é uma sequência direta de Ghost of Tsushima?",
+        a: "Não. É um sucessor espiritual da mesma Sucker Punch, com nova protagonista (Atsu), novo cenário (Hokkaido) e nova época (1603), mantendo o combate com katana em terceira pessoa e a proposta de mundo aberto histórico.",
+      },
+      {
+        q: "Quando Ghost of Yōtei será lançado?",
+        a: "A Sony e a Sucker Punch confirmaram lançamento exclusivo de PS5, mas ainda não anunciaram data definitiva de lançamento. O jogo foi revelado no PlayStation State of Play de 24 de setembro de 2024.",
+      },
+      {
+        q: "Ghost of Yōtei terá versão para PS4 ou PC?",
+        a: "Não há versão de PS4 confirmada — o jogo foi anunciado como exclusivo de PS5. Historicamente, a Sony trouxe Ghost of Tsushima ao PC anos depois do lançamento no console, mas nada sobre PC foi confirmado para Yōtei até o momento.",
+      },
+      {
+        q: "Quem é Atsu, a protagonista de Ghost of Yōtei?",
+        a: "Atsu é uma nova guerreira criada pela Sucker Punch para o jogo, apresentada no trailer de anúncio em paisagens nevadas de Hokkaido em torno do Monte Yōtei. Detalhes sobre sua origem e motivações ainda não foram totalmente revelados.",
+      },
+      {
+        q: "Por que Ghost of Yōtei se passa em Hokkaido em 1603?",
+        a: "1603 marca o início do Shogunato Tokugawa e do período Edo. Hokkaido (então chamado de Ezo) era território do povo Ainu, fora do controle direto do Japão feudal — um cenário de fronteira cultural rico para narrativa e ambientação.",
+      },
+    ],
+  },
   // ── 13 Jul 2026 — Otaku (Anime / Temporada Summer 2026) ──────────
   {
     id: "210",
