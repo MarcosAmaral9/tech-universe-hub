@@ -11,12 +11,11 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
-// ⚠️ Adicionar o arquivo helldivers-2-guia-completo-2024.webp em src/assets/
 import heroImg from "@/assets/helldivers-2-guia-completo-2024.webp";
 
 const SLUG = "helldivers-2-guia-completo-2024";
 const TITLE =
-  "Helldivers 2 — Guia Completo: A Sátira de Starship Troopers, a Polêmica do PSN e Como Sobreviver à Democracia Gerenciada";
+  "Helldivers 2 — Guia Completo 2 Anos Depois: 20 Milhões de Cópias, Illuminate, Chegada ao Xbox e o Roadmap 2026";
 
 const Helldivers2Guia2024 = () => {
   useEffect(() => {
@@ -30,7 +29,7 @@ const Helldivers2Guia2024 = () => {
         <div className="flex items-center gap-2 mb-4">
           <CategoryBadge category="geek" size="lg" />
           <span className="px-3 py-1 bg-geek/20 text-geek rounded-full text-sm font-medium">
-            Helldivers 2 · Arrowhead · PS5 / PC · Co-op · Sátira Militar
+            Helldivers 2 · Arrowhead · PS5 / PC / Xbox · Co-op · Sátira Militar
           </span>
         </div>
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
@@ -43,22 +42,22 @@ const Helldivers2Guia2024 = () => {
           </span>
           <span className="flex items-center gap-2">
             <Calendar className="h-4 w-4" />
-            12 de Julho, 2026
+            19 de Julho, 2026
           </span>
           <span className="flex items-center gap-2">
             <Clock className="h-4 w-4" />
-            17 min de leitura
+            18 min de leitura
           </span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" publishedAt="12 de Julho, 2026" />
+        <AuthorBio category="geek" publishedAt="19 de Julho, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img
           fetchPriority="high"
           src={heroImg}
-          alt="Helldivers 2 guia completo Arrowhead Starship Troopers sátira guerra galáctica 2024"
+          alt="Helldivers 2 guia completo 20 milhões cópias Illuminate Xbox Arrowhead 2026"
           loading="eager"
           decoding="async"
           className="w-full h-full object-cover"
@@ -67,163 +66,192 @@ const Helldivers2Guia2024 = () => {
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          Lançado em <strong>8 de fevereiro de 2024</strong> para PS5 e PC,{" "}
-          <strong>Helldivers 2</strong> se tornou o maior fenômeno multiplayer cooperativo
-          do ano — e um dos lançamentos mais surpreendentes da história da Sony Interactive
-          Entertainment. Desenvolvido pela <strong>Arrowhead Game Studios</strong>, estúdio
-          sueco de tamanho médio com histórico de jogos de nicho, o jogo atingiu{" "}
-          <strong>458.709 jogadores simultâneos no Steam</strong> no pico do lançamento e
-          vendeu mais de <strong>12 milhões de cópias nas primeiras doze semanas</strong> —
-          números que ninguém, incluindo a própria Sony, havia previsto. Uma sátira explícita
-          ao militarismo e à propaganda patriótica inspirada no filme <em>Starship Troopers</em>{" "}
-          de Paul Verhoeven (1997), com um sistema de guerra galáctica controlado em tempo
-          real por um funcionário da Arrowhead apelidado de "Joel" pela comunidade, e
-          protagonista de uma das maiores polêmicas de relações entre publisher e jogadores
-          da história recente dos games. Este guia explica tudo: a inspiração cinematográfica,
-          o estúdio, como funciona a guerra galáctica e o que a crise do PSN de maio de 2024
-          ensinou à indústria.
+          Lançado em <strong>8 de fevereiro de 2024</strong> para PS5 e PC pela{" "}
+          <strong>Arrowhead Game Studios</strong> e Sony Interactive Entertainment, o Helldivers 2
+          chegou a julho de 2026 com números que redesenharam a categoria de jogos cooperativos:
+          segundo a Alinea Analytics (janeiro/2026), o jogo <strong>ultrapassou 20 milhões
+          de cópias vendidas</strong> em todas as plataformas — cerca de <strong>US$ 700 milhões
+          em receita</strong> — e tornou-se o co-op mais lucrativo da história da Steam. Também
+          já rodou <strong>1,6 milhão de cópias no Xbox Series X/S</strong> desde a chegada tardia
+          ao console rival em 2025, atingiu <strong>458.709 jogadores simultâneos</strong> no pico
+          do lançamento e sobreviveu à polêmica do PSN de maio/2024 que virou caso paradigmático
+          na relação publisher-comunidade. Este guia consolida tudo o que importa dois anos depois:
+          números reais, as três facções inimigas (incluindo os <strong>Illuminate</strong>
+          adicionados em dezembro de 2024), o novo <strong>roadmap 2026</strong> e o estado
+          atual do live service.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Star className="h-7 w-7 text-geek" />
+          Os Números Reais Dois Anos Depois
+        </h2>
+
+        <div className="not-prose my-6 grid md:grid-cols-2 gap-4">
+          {[
+            { label: "Cópias vendidas (todas plataformas)", value: "20 milhões+", sub: "Alinea Analytics · janeiro/2026" },
+            { label: "Receita estimada", value: "~US$ 700 mi", sub: "Co-op mais lucrativo da Steam" },
+            { label: "Vendas no Xbox Series X/S", value: "1,6 milhão", sub: "Desde o lançamento tardio em 2025" },
+            { label: "Pico all-time no Steam", value: "458.709 CCU", sub: "Fevereiro 2024" },
+            { label: "Jogadores médios (jul/2026)", value: "~27 mil", sub: "Pico recente: 43.782 (SteamCharts)" },
+            { label: "Facções inimigas ativas", value: "3", sub: "Terminids · Automatons · Illuminate" },
+          ].map((s) => (
+            <div key={s.label} className="rounded-xl border border-geek/30 bg-geek/5 p-4">
+              <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">{s.label}</div>
+              <div className="text-2xl font-bold text-geek">{s.value}</div>
+              <div className="text-xs text-muted-foreground mt-1">{s.sub}</div>
+            </div>
+          ))}
+        </div>
+
+        <p>
+          Os números são tão relevantes pelo que significam quanto pela escala bruta: 20 milhões
+          de cópias e US$ 700 milhões de receita colocam Helldivers 2 acima de vários AAA
+          tradicionais lançados no mesmo período e influenciaram diretamente decisões de outros
+          estúdios — o mais citado é o <em>ARC Raiders</em>, cujo estúdio publicamente abandonou
+          o modelo free-to-play para adotar o formato pago-uma-vez-e-jogue-para-sempre inspirado
+          por Helldivers. O gráfico de jogadores segue a curva típica de live service, com picos
+          em cada Warbond (temporada premium) e vales entre lançamentos, mas nunca voltou a
+          quedas próximas de zero como muitos jogos-serviço da era pós-2022.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <BookOpen className="h-7 w-7 text-geek" />
-          A Inspiração: Starship Troopers e a Sátira que Poucos Entenderam
+          A Sátira de Starship Troopers como Alicerce
         </h2>
         <p>
-          Para compreender Helldivers 2 em profundidade, é indispensável conhecer sua fonte
-          primária de inspiração: <em>Starship Troopers</em> (1997), filme de ficção científica
-          dirigido pelo cineasta holandês Paul Verhoeven. O filme é baseado no romance homônimo
-          de Robert A. Heinlein (1959), mas a adaptação de Verhoeven subverte radicalmente
-          o tom da obra original: enquanto Heinlein escreveu um romance que muitos intérpretes
-          leram como defesa do militarismo e da meritocracia militar, Verhoeven transformou
-          a história numa sátira ferozmente anti-fascista disfarçada de blockbuster de ação.
-          O cineasta, que cresceu na Holanda ocupada pela Alemanha Nazista durante a Segunda
-          Guerra Mundial e vivenciou de perto os mecanismos de propaganda de um regime
-          totalitário, construiu <em>Starship Troopers</em> como uma crítica visual ao
-          patriotismo vazio, à glorificação da guerra e à desumanização do inimigo — usando
-          a estética e a linguagem dos filmes de propaganda nazistas e soviéticos de forma
-          deliberada e irônica.
+          Helldivers 2 é sátira explícita ao militarismo, inspirada em <em>Starship Troopers</em>{" "}
+          (1997) de <strong>Paul Verhoeven</strong> — filme que, apesar de comercialmente modesto
+          na estreia (US$ 121 milhões contra US$ 105 milhões de orçamento), foi reavaliado como
+          crítica ferozmente anti-fascista ao militarismo e à propaganda totalitária, usando a
+          estética de filmes de propaganda nazistas e soviéticos de forma irônica. Verhoeven
+          cresceu na Holanda ocupada pela Alemanha Nazista, e essa vivência informou tanto{" "}
+          <em>Starship Troopers</em> quanto <em>RoboCop</em> (1987).
         </p>
         <p>
-          O filme foi um fracasso comercial relativo no lançamento — custou aproximadamente
-          US$ 105 milhões e arrecadou cerca de US$ 121 milhões mundialmente, resultado
-          modesto para um blockbuster de ciência científica da época — em parte porque grande
-          parte do público norte-americano assistiu ao filme sem perceber a sátira, interpretando-o
-          como exatamente o tipo de glorificação militar que ele pretendia criticar. Essa
-          ambiguidade intencional é uma das marcas de Verhoeven, que usou a mesma abordagem
-          em <em>RoboCop</em> (1987) — uma crítica ao capitalismo corporativo e à brutalidade
-          policial embalada como filme de ação de entretenimento. Com o tempo, <em>Starship
-          Troopers</em> ganhou reconhecimento crítico crescente como obra de sátira sofisticada,
-          e é hoje considerado um dos filmes de ficção científica mais relevantes dos anos 1990.
-        </p>
-        <p>
-          Helldivers 2 herda essa ambiguidade deliberada como escolha de design central.
-          Os jogadores controlam "Helldivers" — soldados de élite da "Super Terra" (Super
-          Earth), uma Terra futurística governada por uma "Democracia Gerenciada" (Managed
-          Democracy) que na prática funciona como um Estado autoritário militarista com
-          propaganda constante, cidadania restrita a quem serve na guerra e um sistema político
-          onde "votar" significa ratificar as decisões já tomadas pelos líderes. A propaganda
-          in-game — nos vídeos de recrutamento que abrem o jogo, nas transmissões de rádio
-          durante as missões, nos comunicados oficiais da "Super Terra" — imita com precisão
-          cirúrgica a linguagem e a estética da propaganda real de regimes autoritários do
-          século XX. O jogador que entende a referência joga com um sorriso sardônico; o
-          que não entende simplesmente se diverte atirando em insetos gigantes. Ambas as
-          experiências são válidas — e essa dupla leitura é exatamente o que Verhoeven
-          planejou para <em>Starship Troopers</em> 27 anos antes.
+          O jogo herda essa ambiguidade como escolha central de design: os jogadores encarnam
+          Helldivers da <strong>"Super Terra"</strong>, uma Terra futurística de "Democracia
+          Gerenciada" (Managed Democracy) que funciona como Estado autoritário militarista. Os
+          vídeos de recrutamento, transmissões de rádio e comunicados oficiais imitam com precisão
+          a linguagem de propaganda de regimes autoritários do século XX. Quem entende a referência
+          joga com ironia; quem não entende se diverte atirando em insetos gigantes — e ambas as
+          leituras são deliberadamente válidas.
         </p>
 
         <AdLeaderboard className="my-8" />
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Star className="h-7 w-7 text-geek" />
-          Arrowhead Game Studios: Do Nicho ao Fenômeno Global
-        </h2>
-        <p>
-          A Arrowhead Game Studios foi fundada em 2009 em Estocolmo, na Suécia, por Johan
-          Pilestedt e um grupo de colegas que se conheceram durante o desenvolvimento de
-          projetos estudantis e independentes. O estúdio lançou seu primeiro jogo, <em>Magicka</em>,
-          em janeiro de 2011 — um jogo cooperativo de ação e humor que combinava magia com
-          um sistema de combinação de elementos completamente caótico e deliberadamente
-          propenso a fogo amigo entre os jogadores. <em>Magicka</em> foi um sucesso indie
-          inesperado, vendendo mais de um milhão de cópias rapidamente e gerando múltiplas
-          expansões e uma sequência, estabelecendo a identidade criativa do estúdio: jogos
-          cooperativos com sistemas emergentes de caos controlado e humor auto-consciente.
-        </p>
-        <p>
-          O Helldivers original, lançado em 2015 para PS3, PS4 e PC, foi um jogo de tiro
-          cooperativo com perspectiva top-down (câmera de cima) onde quatro jogadores
-          combatiam ondas de inimigos em planetas diferentes, com o mesmo sistema de fogo
-          amigo — bombas e projéteis atingem aliados tanto quanto inimigos — que se tornaria
-          marca registrada da série. O jogo teve boa recepção crítica mas audiência limitada,
-          na faixa de nicho que a Arrowhead havia conquistado com <em>Magicka</em>. Helldivers 2
-          partiu do mesmo conceito mas mudou a perspectiva de câmera para terceira pessoa
-          (shoulder-cam), expandiu massivamente a escala dos cenários, aprofundou o sistema
-          de Estratagemas e adicionou o sistema de guerra galáctica em tempo real — mudanças
-          que transformaram um jogo de nicho numa experiência com apelo muito mais amplo.
-        </p>
-        <p>
-          No momento do lançamento de Helldivers 2, a Arrowhead tinha aproximadamente
-          100 funcionários — um estúdio de tamanho médio para os padrões da indústria,
-          mas pequeno para lidar com a escala do sucesso que o jogo gerou. Os servidores
-          entraram em colapso nos primeiros dias por incapacidade de suportar o volume
-          de jogadores simultâneos, e o CEO Johan Pilestedt tornou-se uma presença constante
-          nas redes sociais, comunicando diretamente com a comunidade sobre o status dos
-          servidores, as correções em andamento e os planos de expansão de capacidade —
-          uma transparência que contrastou fortemente com a postura corporativa distante
-          típica de publishers maiores e que contribuiu para a fidelidade da comunidade
-          ao longo dos meses seguintes.
-        </p>
-
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Map className="h-7 w-7 text-geek" />
-          A Guerra Galáctica: Joel, o GM Humano por Trás do Conflito
+          As Três Facções Inimigas: Terminids, Automatons e Illuminate
         </h2>
-        <p>
-          Um dos elementos mais criativos e discutidos de Helldivers 2 é seu sistema de
-          guerra galáctica — chamado de Galactic War — que funciona como um conflito
-          persistente e em tempo real afetado pelas ações coletivas de todos os jogadores
-          simultaneamente em todos os servidores do mundo. Cada missão completada por cada
-          jogador em qualquer planeta conta para a conquista ou defesa daquele território
-          no mapa galáctico geral; se a comunidade global foca esforços em libertar um
-          planeta específico, ele é conquistado; se negligencia um setor, os inimigos avançam.
-          O sistema cria uma camada de propósito coletivo que transforma cada sessão individual
-          numa contribuição para um esforço de guerra compartilhado com milhões de outras
-          pessoas simultaneamente.
-        </p>
-        <p>
-          Mas o elemento que realmente tornou o sistema lendário foi a revelação de que existe
-          um funcionário da Arrowhead — apelidado pela comunidade de <strong>"Joel"</strong>,
-          referência a um game master de RPG de mesa — cujo trabalho é literalmente controlar
-          os eventos da guerra galáctica em tempo real, tomando decisões narrativas sobre
-          quando os inimigos contra-atacam, quais planetas entram em crise, quando eventos
-          especiais são ativados e como a história da guerra evolui em resposta às ações
-          dos jogadores. Joel é, em essência, um Dungeon Master profissional para um jogo
-          ao vivo com dezenas de milhões de participantes — uma posição criativa sem
-          precedentes na indústria de games mainstream.
-        </p>
-        <p>
-          A comunidade desenvolveuu uma relação quase mítica com Joel: celebrando quando
-          ele lhes concedia vitórias épicas, expressando frustração criativa quando ele
-          ativava eventos punitivos, e desenvolvendo teorias e especulações sobre suas
-          intenções narrativas como se fosse um personagem do próprio lore do jogo. Essa
-          dinâmica — a interseção entre narrativa emergente gerada por jogadores e design
-          narrativo deliberado por um ser humano nos bastidores — é uma das experiências
-          de jogo mais originais que a indústria produziu em anos, e representa uma
-          direção interessante para o futuro dos jogos como serviço que vai além dos
-          sistemas de temporadas e battle passes convencionais.
-        </p>
+
+        <div className="not-prose my-6 space-y-3">
+          {[
+            {
+              nome: "🐛 Terminids",
+              status: "Disponível desde o lançamento (fev/2024)",
+              desc: "Facção original — insetos gigantes ao estilo Starship Troopers. Grande volume, dano corpo-a-corpo, tipos pesados como Chargers, Bile Titans e Impalers. Ponto fraco: baixa resistência a fogo (buff do lança-chamas foi um dos highlights de 2026).",
+            },
+            {
+              nome: "🤖 Automatons",
+              status: "Disponíveis desde o lançamento (fev/2024)",
+              desc: "Facção robótica com estética Terminator/soviética. Munição de longa distância, cobertura, unidades pesadas como Hulks, Tanks e o Factory Strider. Requer loadout anti-armor e uso disciplinado de cobertura.",
+            },
+            {
+              nome: "🛸 Illuminate",
+              status: "Adicionados em 12 de dezembro de 2024 (atualização Omens of Tyranny)",
+              desc: "Terceira facção, alienígenas psíquicos com escudos de energia, teleporte e naves de invasão urbana. Reintroduzidos oficialmente após 10 meses de teasers no lore. Atualização de março/2026 (Patch 6.1.0) adicionou novos tipos Illuminate e o Warbond Entrenched Division.",
+            },
+          ].map((f) => (
+            <div key={f.nome} className="rounded-xl border border-geek/20 bg-card p-4">
+              <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                <div className="font-bold text-geek">{f.nome}</div>
+                <div className="text-xs text-muted-foreground">{f.status}</div>
+              </div>
+              <div className="text-sm text-muted-foreground">{f.desc}</div>
+            </div>
+          ))}
+        </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Zap className="h-7 w-7 text-geek" />
-          O Sistema de Estratagemas: O Vocabulário de Helldivers
+          O Que Aconteceu Entre 2024 e 2026 — Timeline Real
+        </h2>
+
+        <div className="not-prose my-6 space-y-3">
+          {[
+            { data: "08/02/2024", evento: "Lançamento em PS5 e PC — 458.709 CCU no Steam, servidores colapsam por dias." },
+            { data: "05/2024", evento: "Crise do PSN: Sony tenta forçar vinculação obrigatória de conta PlayStation Network no PC. Comunidade reage em massa; Sony recua em menos de 48h." },
+            { data: "12/2024", evento: "Atualização Omens of Tyranny: retorno oficial da facção Illuminate após 10 meses de teasers no lore. Modo urbano jogável." },
+            { data: "2025", evento: "Diversos Warbonds (temporadas premium pagas em Super Credits) mantendo curva de engajamento. Correções pesadas de balanceamento após feedback do 'Escalation of Freedom'." },
+            { data: "26/08/2025", evento: "Lançamento oficial no Xbox Series X/S — primeira vez que a Sony publica um exclusivo em consoles Microsoft. 1,6M de cópias no Xbox nos primeiros 5 meses." },
+            { data: "29/01/2026", evento: "Alinea Analytics confirma 20 milhões de cópias vendidas e ~US$ 700M em receita acumulada." },
+            { data: "17/03/2026", evento: "Patch 6.1.0: novos inimigos Illuminate, buff pesado do lança-chamas, Warbond Entrenched Division e primeiro roadmap público oficial da Arrowhead." },
+          ].map((t) => (
+            <div key={t.data} className="flex gap-4 rounded-xl border border-geek/20 bg-card p-4">
+              <div className="text-xs font-mono text-geek shrink-0 w-24 pt-1">{t.data}</div>
+              <div className="text-sm text-muted-foreground">{t.evento}</div>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <AlertTriangle className="h-7 w-7 text-amber-400" />
+          A Crise do PSN de Maio/2024: O Caso Que Virou Estudo
         </h2>
         <p>
-          O sistema de Estratagemas (Stratagems) é a mecânica central que diferencia
-          Helldivers 2 de outros co-op shooters do mercado. Estratagemas são equipamentos,
-          suporte e armamento pesado que o jogador chama durante a missão através de uma
-          sequência de direcionais no controle — como uma combinação de cheat code —
-          lançando uma baliza que convoca o item do espaço orbital acima do planeta.
-          A execução bem-sucedida de uma sequência longa de direcionais sob fogo inimigo
-          é uma das mecânicas mais tensas e satisfatórias do jogo.
+          Em maio de 2024, três meses após o lançamento, Sony e Arrowhead anunciaram que jogadores
+          de PC precisariam vincular conta PSN à Steam para continuar jogando. O problema imediato
+          era geográfico: PSN não estava disponível em mais de 170 países, incluindo grande parte
+          da América Central, África, Ásia e Europa Oriental. Jogadores desses territórios seriam
+          efetivamente banidos de um jogo que compraram legalmente.
+        </p>
+        <p>
+          A reação foi coordenada e brutal: o Steam registrou uma das quedas mais rápidas de
+          avaliação de sua história — de "Muito Positivo" para "Negativamente Avassalador" em
+          horas — e campanhas de reembolso e mobilização coletiva se espalharam globalmente. Em{" "}
+          <strong>menos de 48 horas</strong>, a Sony recuou totalmente. O CEO da Arrowhead,
+          Johan Pilestedt, esteve ativo nas redes durante toda a crise, primeiro tentando mediar
+          e depois celebrando o recuo. O episódio virou <em>case study</em> repetido em conferências
+          da indústria como o exemplo mais bem-sucedido de pressão organizada de consumidores
+          revertendo decisão corporativa em anos.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <BookOpen className="h-7 w-7 text-geek" />
+          O Roadmap 2026 e a Guerra Galáctica Hoje
+        </h2>
+        <p>
+          Em <strong>março de 2026</strong>, com o Patch 6.1.0, a Arrowhead publicou pela primeira
+          vez um <strong>roadmap oficial</strong> — algo inédito na história do jogo, que sempre
+          operou por surpresas. O roadmap 2026 lista:
+        </p>
+        <ul>
+          <li>Novos tipos Illuminate espalhados ao longo do ano (o primeiro chegou junto com o 6.1.0);</li>
+          <li>Sistema de <em>Exostorms</em> — eventos climáticos planetários que alteram missões dinamicamente;</li>
+          <li>Novos Warbonds premium a cada 4–6 semanas, mantendo o formato pago-em-Super-Credits-farmáveis;</li>
+          <li>Expansão da Guerra Galáctica com novos setores e planetas jogáveis;</li>
+          <li>Retorno de eventos de "Major Order" mais longos, com recompensas persistentes.</li>
+        </ul>
+        <p>
+          A Guerra Galáctica em si — o sistema de conflito persistente controlado em tempo real
+          pelo funcionário da Arrowhead apelidado de <strong>"Joel"</strong>, tratado como Dungeon
+          Master vivo pela comunidade — segue como o motor narrativo do jogo. Cada missão de cada
+          jogador em qualquer plataforma conta para conquistar ou defender planetas no mapa
+          galáctico compartilhado. É uma das poucas experiências de "narrativa emergente ao vivo"
+          em escala massiva que a indústria já produziu.
+        </p>
+
+        <AdInArticle className="my-8" />
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Shield className="h-7 w-7 text-geek" />
+          Estratagemas: O Vocabulário que Define o Jogo
+        </h2>
+        <p>
+          O sistema de <strong>Estratagemas (Stratagems)</strong> segue sendo o coração mecânico
+          do jogo: equipamentos e ataques chamados via sequência de direcionais no controle —
+          como cheat codes — que descem do orbital para ajudar a esquadrão. Executar uma sequência
+          longa sob fogo inimigo é uma das mecânicas mais tensas do co-op moderno.
         </p>
 
         <div className="not-prose my-6 overflow-x-auto">
@@ -236,11 +264,12 @@ const Helldivers2Guia2024 = () => {
             </thead>
             <tbody>
               {[
-                ["🔫 Suporte de Armas", "Metralhadoras pesadas, lança-foguetes e canhões automáticos entregues em caixas de suporte. Requerem ser coletados no ponto de queda e têm munição limitada — posicionamento de queda é estratégico."],
-                ["💣 Ataques Orbitais", "Bombas de alta precisão, ataques de canhão orbital e salvas de foguetes chamados diretamente do navio acima. Alto dano em área mas cooldown longo — reservados para grupos densos ou objetivos estruturais."],
-                ["🦅 Suporte Aéreo", "Eagles (aeronaves) que realizam passadas de bombardeio, napalm e foguetes sobre coordenadas marcadas. Recarregam voltando ao navio após um número fixo de usos — gestão do reabastecimento é parte da estratégia."],
-                ["🛡️ Defesa e Suporte", "Escudos de barreira, sentinelas automáticas de metralhadora e torretas de morteiro que defendem posições. Essenciais em missões de defesa ou de ativação de objetivos onde o grupo precisa segurar uma área."],
-                ["🚗 Veículos e Equipamentos", "Exoesqueletos Mechs de combate pesado, veículos de ressuprimento e equipamentos de missão específicos. Os Mechs são os Estratagemas mais poderosos disponíveis mas têm disponibilidade limitada por missão."],
+                ["🔫 Suporte de Armas", "Metralhadoras pesadas, lança-foguetes e canhões automáticos. Requerem ser coletados no ponto de queda — posicionamento vira estratégia."],
+                ["💣 Ataques Orbitais", "Bombas de precisão, canhão orbital e salvas de foguetes. Alto dano em área, cooldown longo — para grupos densos ou estruturas."],
+                ["🦅 Suporte Aéreo (Eagle)", "Passadas de bombardeio, napalm e foguetes. Recarregam voltando ao navio após usos limitados — gestão importa."],
+                ["🛡️ Defesa e Suporte", "Escudos, sentinelas automáticas e torretas de morteiro. Essenciais em missões de defesa e ativação de objetivos."],
+                ["🚗 Veículos e Mechs", "Exoesqueletos EXO-45 e EXO-49 e veículos de ressuprimento. Disponibilidade limitada por missão."],
+                ["🔥 Novos em 2026", "Buffs do lança-chamas (Patch 6.1.0), novos Estratagemas anti-Illuminate e o Warbond Entrenched Division com foco em defesa entrincheirada."],
               ].map(([cat, desc], i) => (
                 <tr key={i} className="border-t border-border">
                   <td className="py-3.5 px-4 font-semibold text-sm break-words">{cat}</td>
@@ -251,95 +280,40 @@ const Helldivers2Guia2024 = () => {
           </table>
         </div>
 
-        <p>
-          A profundidade do sistema de Estratagemas também é onde a dimensão cooperativa
-          do jogo se manifesta mais claramente: diferentes jogadores em um grupo de quatro
-          podem especializar seus loadouts em funções complementares — um foca em suporte
-          anti-tanque, outro em defesa de área, outro em suporte de infantaria e outro
-          em mobilidade e resgate. Essa especialização não é obrigatória mas é frequentemente
-          a diferença entre missões de dificuldade alta completadas com elegância e as
-          mesmas missões terminando em caos de fogo amigo e mortes em cadeia.
-        </p>
-
-        <AdInArticle className="my-8" />
-
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <AlertTriangle className="h-7 w-7 text-amber-400" />
-          A Crise do PSN: A Maior Vitória dos Consumidores em Anos
-        </h2>
-        <p>
-          Em maio de 2024, aproximadamente três meses após o lançamento, a Sony Interactive
-          Entertainment e a Arrowhead anunciaram uma mudança na política de acesso ao jogo
-          no PC: a partir de uma data específica, jogadores de PC seriam obrigados a vincular
-          uma conta PlayStation Network (PSN) à sua conta Steam para continuar jogando
-          Helldivers 2. A mudança havia sido mencionada nos termos de serviço originais do
-          jogo mas não era aplicada — a exigência havia sido adiada no lançamento, após
-          problemas de servidores, e muitos jogadores a tinham ignorado ou desconhecido.
-        </p>
-        <p>
-          O problema imediato era geográfico: o serviço PSN da Sony não está disponível
-          em todos os países do mundo. Na época do anúncio, havia mais de 170 países onde
-          criar uma conta PSN era impossível — incluindo nações da América Latina, África,
-          Ásia e Europa Oriental. Jogadores nesses países que haviam comprado Helldivers 2
-          na Steam por preço integral estariam, na prática, sendo banidos do jogo que
-          legalmente compraram, por incapacidade de cumprir um requisito que não era
-          tecnicamente possível em seus territórios. O Brasil, especificamente, é um
-          dos países onde o PSN tem disponibilidade, mas grande parte da América Central,
-          partes da América do Sul e numerosos países africanos e asiáticos não tinham acesso.
-        </p>
-        <p>
-          A reação da comunidade foi imediata e coordenada. O jogo recebeu uma onda massiva
-          de avaliações negativas na Steam — o sistema de reviews caiu de "Muito Positivo"
-          para "Negativamente Avassalador" (Overwhelmingly Negative) em questão de horas,
-          um dos colapsos de avaliação mais rápidos já registrados na plataforma para um
-          jogo de tal escala. Ao mesmo tempo, players de países afetados iniciaram campanhas
-          de pedidos de reembolso e comunicados coletivos nas redes sociais. A pressão foi
-          global e organizada de forma que raramente se vê em resposta a decisões de publishers.
-        </p>
-        <p>
-          O desfecho foi histórico: em menos de 48 horas após o anúncio da mudança, a Sony
-          recuou completamente. A exigência de conta PSN para PC foi cancelada, e a empresa
-          emitiu um comunicado reconhecendo que a medida havia gerado "frustração e preocupação
-          legítimas" entre os jogadores. O CEO da Arrowhead, Johan Pilestedt, foi ativo nas
-          redes sociais ao longo de toda a crise — inicialmente tentando mediar, depois
-          celebrando publicamente a reversão da Sony como uma vitória para a comunidade.
-          O episódio é frequentemente citado como um dos exemplos mais claros e bem-sucedidos
-          de pressão organizada de consumidores revertendo uma decisão corporativa na indústria
-          de games, e estabeleceu um precedente importante: publishers que tentam aplicar
-          requisitos retroativos a jogos já vendidos enfrentam resistência organizada de uma
-          comunidade cada vez mais consciente de seus direitos.
-        </p>
-
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Shield className="h-7 w-7 text-geek" />
-          Dicas Essenciais Para Novos Helldivers
+          Dicas Essenciais Para Quem Está Voltando ou Começando em 2026
         </h2>
 
         <div className="not-prose my-6 space-y-3">
           {[
             {
-              titulo: "🔢 Memorize as sequências dos seus Estratagemas favoritos",
-              desc: "Tentar ler a sequência de botões durante um combate intenso é receita para falhar na hora errada. Memorize de cor os três ou quatro Estratagemas que usa mais — a execução reflexiva faz toda a diferença em situações de pressão.",
+              titulo: "🔢 Memorize sequências dos Estratagemas favoritos",
+              desc: "Sob pressão de combate, ler a sequência falha. Memorize 3 ou 4 de cor — a execução reflexiva salva missões nos níveis altos.",
             },
             {
-              titulo: "🎯 Mire nas partes fracas dos inimigos",
-              desc: "Os Terminids têm exoesqueleto que resiste a dano frontal — mire na barriga ou nas costas expostas. Os Automatons têm cabeças de vidro e juntas vulneráveis. Dano direcional reduz drasticamente o número de balas necessárias para eliminar cada tipo.",
+              titulo: "🎯 Mire nas partes fracas de cada facção",
+              desc: "Terminids: barriga e costas. Automatons: cabeça e articulações. Illuminate: gerador do escudo antes do corpo. Dano direcional muda tudo.",
             },
             {
-              titulo: "💀 O fogo amigo é real — sempre verifique a linha de tiro",
-              desc: "Estratagemas de área (bombas orbitais, Eagles) atingem aliados com a mesma letalidade que inimigos. Comunique antes de chamar suporte de área e verifique onde seus aliados estão. Mortes por fogo amigo não são punição — são mecânica intencional do design.",
+              titulo: "💀 Fogo amigo é intencional — comunique antes de chamar orbital",
+              desc: "Bombas orbitais e Eagles atingem aliados com a mesma letalidade. Sempre avise no chat de voz ou texto antes de largar Estratagema de área.",
             },
             {
-              titulo: "📦 Colete amostras de missões anteriores antes de extrair",
-              desc: "Amostras (Samples) são moeda de upgrade da nave e de melhorias de Estratagemas. Procure pelo mapa antes de chamar a extração — especialmente Samples Raras (cor roxa) e Super Samples (cor laranja, só em Dificuldade 7+).",
+              titulo: "📦 Colete Samples antes de extrair",
+              desc: "Samples raras (roxas) e Super Samples (laranjas, só em Dif. 7+) são a moeda de upgrade da nave. Explore antes de chamar extração — morrer nos segundos finais custa tudo.",
             },
             {
-              titulo: "🚀 Chame a extração cedo, não espere o último segundo",
-              desc: "O contador de extração leva 2 minutos após ser chamado. Chame a extração quando restar tempo suficiente — não quando o objetivo acabar. Os inimigos aumentam progressivamente até a nave chegar, e morrer nos últimos segundos faz perder as Samples coletadas.",
+              titulo: "🚀 Chame extração cedo, não no último minuto",
+              desc: "O contador leva 2 minutos após ser chamado. Chame com folga — os inimigos escalam agressivamente até a nave chegar.",
             },
             {
-              titulo: "⚙️ Suba para Dificuldade 6-7 gradualmente",
-              desc: "As Dificuldades mais altas não aumentam apenas o número de inimigos — mudam quais tipos de inimigos aparecem, incluindo variantes pesadas que exigem Estratagemas anti-tanque específicos. Subir cedo demais sem o equipamento certo é frustração garantida.",
+              titulo: "⚙️ Suba de Dificuldade gradualmente até 6-7",
+              desc: "Dificuldades altas não só adicionam mais inimigos — abrem tipos pesados exclusivos (Bile Titans, Factory Striders, Illuminate Overseers) que exigem loadout anti-armor específico.",
+            },
+            {
+              titulo: "🔥 No patch 6.1.0, o lança-chamas voltou a ser meta",
+              desc: "Depois de vários nerfs em 2024–2025, o Flamethrower recebeu buff significativo em março/2026 e virou uma das melhores armas contra hordas Terminid.",
             },
           ].map(({ titulo, desc }) => (
             <div
@@ -358,48 +332,37 @@ const Helldivers2Guia2024 = () => {
         </div>
 
         <h2 className="text-2xl font-bold mt-10 mb-4">
-          Por Que Helldivers 2 Foi o Fenômeno que Ninguém Previu
+          Por Que Helldivers 2 Continua Relevante Dois Anos Depois
         </h2>
         <p>
-          Retrospectivamente, o sucesso de Helldivers 2 parece óbvio — mas nenhum analista
-          ou executivo de publisher havia antecipado sua escala. A Sony não preparou
-          infraestrutura de servidores adequada para o volume de jogadores que chegou;
-          a Arrowhead não havia escalado sua equipe de suporte para lidar com dezenas de
-          milhões de jogadores; e a janela de lançamento — fevereiro, historicamente mês
-          tranquilo no calendário de games — foi escolhida exatamente por parecer segura
-          para um jogo de nicho. Nada disso se confirmou.
-        </p>
-        <p>
-          O fenômeno Helldivers 2 funcionou por uma combinação de fatores que raramente
-          se alinham: um gancho de sátira inteligente que criou identidade de comunidade
-          instantânea (todos são soldados da "Super Terra" lutando pela "Liberdade"), um
-          sistema emergente de guerra galáctica que fornecia propósito coletivo renovável
-          indefinidamente, um CEO ativo nas redes sociais que humanizou o estúdio durante
-          crises de servidor, e um modelo de progressão sem battle pass de nível pago que
-          reduziu a resistência de jogadores céticos com jogos live-service. O resultado foi
-          uma comunidade extraordinariamente coesa que manteve o engajamento por meses muito
-          além do típico pico-e-queda de lançamentos de jogos online, e que respondeu à
-          crise do PSN com a organização de uma comunidade que se sentia genuinamente
-          proprietária de algo que amava — não apenas cliente de um serviço.
+          A permanência do jogo — 27 mil jogadores médios no Steam em julho de 2026, dois anos e
+          meio após o lançamento, sem contar PS5 e Xbox — se explica por uma combinação de
+          escolhas que a indústria live service raramente acerta ao mesmo tempo: um gancho
+          identitário forte (todos são "soldados da Super Terra"), uma metanarrativa emergente
+          real com Joel controlando a Guerra Galáctica, monetização sem battle pass de nível
+          pago (Warbonds custam Super Credits farmáveis in-game), CEO ativo e comunicativo, e a
+          disciplina de expandir o jogo sem quebrar o núcleo original — a chegada dos Illuminate
+          em dezembro de 2024, o lançamento no Xbox em agosto de 2025 e o primeiro roadmap oficial
+          em março de 2026 foram todos executados sem os desastres de "Escalation of Freedom"
+          que abalaram o jogo no meio de 2024.
         </p>
       </div>
 
       <EditorialTake
         category="geek"
-        title="Análise do Marcos: o melhor jogo cooperativo desde Left 4 Dead 2"
+        title="Análise do Marcos: Helldivers 2 é o modelo de live service que a indústria devia estudar"
       >
         <p>
-          Eu não esperava que Helldivers 2 me prendesse tanto. Co-op shooters são um gênero
-          que eu consigo apreciar mas raramente me faço dependente — e Helldivers fez exatamente
-          isso. A sátira de <em>Starship Troopers</em> funciona porque é consistente em tudo:
-          nos menus, nos vídeos de propaganda, nas transmissões durante as missões, na linguagem
-          dos comunicados oficiais da "Super Terra". É humor que não cansa porque tem inteligência
-          por trás. O sistema de guerra galáctica com Joel no controle criou o tipo de narrativa
-          emergente que nenhum roteirista poderia escrever sozinho — porque depende das decisões
-          de milhões de pessoas em tempo real. E a crise do PSN, apesar de toda a raiva que
-          causou na época, acabou sendo uma das histórias mais interessantes da relação entre
-          comunidade de jogadores e publishers em anos: a Sony recuou, e o precedente importa.
-          Se você joga cooperativo e ainda não experimentou Helldivers 2, corrija isso.
+          Dois anos e meio depois, Helldivers 2 é o exemplo mais claro de que dá para operar um
+          jogo-serviço sem apelar para as práticas predatórias que dominaram a categoria entre
+          2019 e 2024. 20 milhões de cópias vendidas, US$ 700 milhões de receita, três facções
+          ativas, Xbox rodando desde 2025, roadmap público e comunidade ainda coesa em julho de
+          2026 — tudo isso com Warbonds pagáveis em moeda farmável, sem battle pass expiratório,
+          sem edições de fundador de US$ 100 e sem CEO desaparecendo em crises. A crise do PSN
+          de 2024, que naquele momento parecia fim de linha, virou a maior aula pública sobre
+          poder de comunidade organizada dos últimos anos. Se você joga cooperativo e ainda não
+          entrou, entre; se saiu no meio de 2024 frustrado com nerfs, o Patch 6.1.0 de março de
+          2026 é o melhor momento para voltar.
         </p>
       </EditorialTake>
 
@@ -413,6 +376,30 @@ const Helldivers2Guia2024 = () => {
             accessedAt: "Julho 2026",
           },
           {
+            title: "Helldivers 2 sells 20M copies — Alinea Analytics",
+            url: "https://alineaanalytics.substack.com/p/helldivers-2-sells-20m-copies",
+            publisher: "Alinea Analytics",
+            accessedAt: "Julho 2026",
+          },
+          {
+            title: "Helldivers 2 Xbox vs. PS5 Sales Data — 20M Copies",
+            url: "https://www.purexbox.com/news/2026/01/helldivers-2-xbox-vs-ps5-sales-data-shared-as-game-reportedly-hits-20-million-copies-sold",
+            publisher: "Pure Xbox",
+            accessedAt: "Julho 2026",
+          },
+          {
+            title: "Helldivers 2 Patch 6.1.0 — Illuminate, Exostorms and 2026 Roadmap",
+            url: "https://egw.news/gaming/news/33277/helldivers-2-march-2026-update-adds-new-illuminate-R-q_U7gQY",
+            publisher: "EGW News",
+            accessedAt: "Julho 2026",
+          },
+          {
+            title: "Helldivers 2 — SteamCharts (jogadores simultâneos)",
+            url: "https://steamcharts.com/app/553850",
+            publisher: "SteamCharts",
+            accessedAt: "Julho 2026",
+          },
+          {
             title: "Helldivers 2 no Steam",
             url: "https://store.steampowered.com/app/553850/HELLDIVERS_2/",
             publisher: "Valve / Steam",
@@ -423,18 +410,6 @@ const Helldivers2Guia2024 = () => {
             url: "https://www.britannica.com/topic/Starship-Troopers-film-1997",
             publisher: "Encyclopædia Britannica",
             accessedAt: "Julho 2026",
-          },
-          {
-            title: "Arrowhead Game Studios — Sobre o estúdio",
-            url: "https://www.arrowheadgamestudios.com/",
-            publisher: "Arrowhead Game Studios",
-            accessedAt: "Julho 2026",
-          },
-          {
-            title: "IGN — Helldivers 2 Review",
-            url: "https://www.ign.com/games/helldivers-2",
-            publisher: "IGN",
-            accessedAt: "Fevereiro 2024",
           },
         ]}
       />
