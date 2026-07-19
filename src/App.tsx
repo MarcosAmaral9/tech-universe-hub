@@ -560,6 +560,9 @@ const App = () => (
                 <Route path="/post/como-declarar-fiis-imposto-de-renda-2026" element={<Suspense fallback={<div />}><DeclararFiiIR2026 /></Suspense>} />
                 <Route path="/post/fundos-multimercado-2026-valem-a-pena" element={<Suspense fallback={<div />}><FundosMultimercado2026 /></Suspense>} />
                 <Route path="/post/anime-verao-2026-guia-temporada" element={<Suspense fallback={<div />}><AnimeVerao2026 /></Suspense>} />
+                <Route path="/post/ghost-of-yotei-guia-completo" element={<Suspense fallback={<div />}><GhostOfYoteiGuia /></Suspense>} />
+                <Route path="/post/helldivers-2-guia-completo-2024" element={<Suspense fallback={<div />}><Helldivers2Guia2024 /></Suspense>} />
+
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
