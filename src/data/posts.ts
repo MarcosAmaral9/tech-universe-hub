@@ -274,7 +274,40 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
-  // ── 13 Jul 2026 — Otaku (Anime / Temporada Summer 2026) ──────────
+  // ── 21 Jul 2026 — Otaku (Anime / Calendário Summer 2026) ─────────
+  {
+    id: "213",
+    slug: "anime-verao-2026-dias-semana",
+    title: "Anime Verão 2026: Qual Dia da Semana Cada Série Lança no Brasil",
+    excerpt:
+      "Grade completa da temporada de verão 2026 organizada por dia da semana em horário de Brasília (BRT): Mushoku Tensei III às sextas, Bleach TYBW Final aos sábados, Ghost in the Shell às terças, Youjo Senki II às quartas e mais de 30 séries com horários confirmados.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: animeVerao2026DiasSemanaImg,
+    author: "VICIO<CODE>",
+    date: "2026-07-21",
+    readTime: "14 min",
+    faq: [
+      {
+        q: "Qual dia da semana tem mais anime lançando no verão 2026?",
+        a: "Sexta-feira e sábado são os dias mais densos. Sextas têm Mushoku Tensei III, Nige Jouzu no Wakagimi S2 e Hell Mode S2. Sábados concentram Bleach TYBW Kashin-tan (a partir de 25/07), Gaikotsu Kishi-sama S2 e Tenmaku no Jaadugar do Science SARU.",
+      },
+      {
+        q: "Que horas Mushoku Tensei III sai no Brasil?",
+        a: "Mushoku Tensei III: Isekai Ittara Honki Dasu fica disponível na Crunchyroll às sextas-feiras a partir das 12h01 no horário de Brasília (BRT), com estreia em 4 de julho de 2026 e 14 episódios pelo Studio Bind.",
+      },
+      {
+        q: "Bleach TYBW Kashin-tan estreia quando no horário de Brasília?",
+        a: "A parte final do Thousand-Year Blood War (Kashin-tan) estreia no sábado, 25 de julho de 2026, às 11h30 BRT na Crunchyroll, com 13 episódios pelo Pierrot Films.",
+      },
+      {
+        q: "Como converter os horários BST usados pelo AnimeSchedule para o Brasil?",
+        a: "Basta subtrair 4 horas: BST (UTC+1) menos 4h resulta em BRT (UTC−3). Um episódio que sai às 15h30 BST fica disponível às 11h30 BRT na Crunchyroll no mesmo dia.",
+      },
+    ],
+  },
+
   {
     id: "210",
     slug: "anime-verao-2026-guia-temporada",
