@@ -67,6 +67,7 @@ const AnimeVerao2026DiasSemana = () => {
       { titulo: "Hell Mode: Yarikomizuki no Gamer S2", horario: "13h30", plataforma: "HIDIVE", desc: "Segunda temporada do isekai gamer de dificuldade máxima. Allen Rodol continua o grind implacável. 13 episódios." },
       { titulo: "Koko wa Ore ni Makasete Saki ni Ike to Itte kara 10-nen", horario: "11h00", plataforma: "Crunchyroll", desc: "Mago S-rank que ficou para trás na batalha retorna 10 anos depois como herói lendário — sem ninguém saber que é ele." },
       { titulo: "Kore Kaite Shine", horario: "12h30", plataforma: "Crunchyroll", desc: "Garota do Izu-Oshima ama mangá apaixonadamente e vai a Tóquio atrás de um mangaká lendário. Slice of life sobre criação artística." },
+      { titulo: "Tensei Shittara Slime Datta Ken 4ª Temporada", horario: "13h00", plataforma: "Crunchyroll", nota: "⭐⭐⭐⭐⭐", destaque: true, desc: "Rimuru retorna na quarta temporada do isekai fenômeno da 8bit. Continuação direta dos arcos pós-Torneio de Tempest." },
     ],
     "Sábado": [
       { titulo: "BLEACH: Sennen Kessen-hen — Kashin-tan", horario: "11h30", plataforma: "Crunchyroll", nota: "⭐⭐⭐⭐⭐", destaque: true, desc: "A parte final e definitiva do Bleach: TYBW pelo PIERROT FILMS. O confronto de Ichigo com Yhwach. 13 episódios. Estreia 25 de julho." },
