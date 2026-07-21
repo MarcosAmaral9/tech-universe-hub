@@ -270,6 +270,7 @@ const DebenturesCriCra2026           = lazy(() => import("./pages/posts/Debentur
 const DeclararFiiIR2026              = lazy(() => import("./pages/posts/DeclararFiiIR2026"));
 const FundosMultimercado2026         = lazy(() => import("./pages/posts/FundosMultimercado2026"));
 const AnimeVerao2026                 = lazy(() => import("./pages/posts/AnimeVerao2026"));
+const AnimeVerao2026DiasSemana       = lazy(() => import("./pages/posts/AnimeVerao2026DiasSemana"));
 const GhostOfYoteiGuia               = lazy(() => import("./pages/posts/GhostOfYoteiGuia"));
 const Helldivers2Guia2024            = lazy(() => import("./pages/posts/Helldivers2Guia2024"));
 const BannerlordPortal               = lazy(() => import("./pages/posts/BannerlordPortal"));
