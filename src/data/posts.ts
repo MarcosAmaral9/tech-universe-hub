@@ -308,6 +308,7 @@ export const blogPosts: BlogPost[] = [
     ],
   },
 
+  // ── 13 Jul 2026 — Otaku (Anime / Temporada Summer 2026) ──────────
   {
     id: "210",
     slug: "anime-verao-2026-guia-temporada",
