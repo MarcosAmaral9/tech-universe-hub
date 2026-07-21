@@ -12,6 +12,11 @@ const SITE_SOCIAL = [
 ];
 
 const PAGE_META: Record<string, { title: string; description: string; keywords: string }> = {
+  "/post/anime-verao-2026-dias-semana": {
+    title: "Anime Verão 2026: Qual Dia da Semana Cada Série Lança no Brasil | VICIO<CODE>",
+    description: "Guia completo com os dias e horários de lançamento de cada anime da temporada de verão 2026 no horário de Brasília (BRT): Mushoku Tensei III, Bleach TYBW, Ghost in the Shell, Youjo Senki II e mais.",
+    keywords: "anime verao 2026 dias semana, horario anime brasil 2026, quando sai anime julho 2026, mushoku tensei iii dia semana, bleach tybw horario brasil",
+  },
   // ═══════════════════════════════════════════════════════════
   // PÁGINAS DO SITE
   // ═══════════════════════════════════════════════════════════
