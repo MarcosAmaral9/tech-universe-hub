@@ -195,6 +195,7 @@ import debenturesCriCra2026Img from "@/assets/debentures-cri-cra-2026.webp";
 import declararFiiIR2026Img from "@/assets/declarar-fii-ir-2026.webp";
 import fundosMultimercado2026Img from "@/assets/fundos-multimercado-2026.webp";
 import animeVerao2026Img from "@/assets/anime-verao-2026-guia-temporada.webp";
+import animeVerao2026DiasSemanaImg from "@/assets/anime-verao-2026-dias-semana.webp";
 import ghostOfYoteiImg from "@/assets/ghost-of-yotei-guia-completo.webp";
 import helldivers2Img from "@/assets/helldivers-2-guia-completo-2024.webp";
 
