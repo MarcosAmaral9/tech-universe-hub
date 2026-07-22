@@ -538,9 +538,29 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     keywords: "Tesouro Direto 2026 guia, Tesouro Selic vs Prefixado vs IPCA+, como comprar Tesouro Direto 2026, tributação Tesouro Direto IR, taxa custódia B3 Tesouro, NTN-B IPCA+ 2026, marcação mercado Tesouro, melhor título Tesouro 2026",
   },
   "/post/tesouro-prefixado-vs-ipca-2026": {
-    title: "Tesouro Prefixado vs IPCA+: Qual Escolher em 2026 com Selic Caindo e Inflação Pressionada?",
-    description: "Análise completa da escolha entre Tesouro Prefixado e Tesouro IPCA+ em 2026, com Selic iniciando queda e inflação acima da meta. Simulações de retorno, cenários, checklist de decisão e FAQ.",
-    keywords: "Tesouro Prefixado vs IPCA+ 2026, qual título comprar Tesouro 2026, NTN-B IPCA+ ou prefixado, marcação a mercado prefixado risco, Tesouro IPCA+ proteção inflação, ciclo corte juros qual titulo, simulação prefixado IPCA+ retorno, checklist Tesouro Direto",
+    title: "Tesouro Prefixado vs IPCA+ em 2026: Qual Escolher? Simulações com Números Reais",
+    description: "Prefixado 13,5% vs IPCA+7,5% com IPCA a 5,48%: os dois rendem quase igual. Acima de 5,58% de inflação o IPCA+ vence. Análise com cenários reais, marcação a mercado, quando travar taxa e a estratégia híbrida que reduz risco nos dois cenários.",
+    keywords: "Tesouro Prefixado vs IPCA+ 2026, quando escolher prefixado IPCA+, simulação Tesouro Direto 2026, marcação a mercado Tesouro, NTN-B prefixado 2026, Tesouro IPCA+ 2026, prefixado Selic alta, inflação breakeven tesouro",
+  },
+  "/post/acoes-crescimento-vs-dividendos-2026": {
+    title: "Ações de Crescimento vs Dividendos em 2026: Qual Estratégia Escolher?",
+    description: "Growth vs dividendos em 2026: IGC acumulou +180% vs IDIV +110% (+150% com reinvestimento) em 10 anos. Com Selic a 14,25%, dividendos competem com CDI bruto de 14,25%. Análise completa com exemplos na B3, simulações e quando combinar as duas estratégias.",
+    keywords: "ações crescimento vs dividendos 2026, growth investing Brasil, value investing dividendos, IGC vs IDIV, growth stocks B3, dividendos vs renda fixa 2026, estratégia investimento ações, Magazine Luiza growth, WEGE3, RDOR3 crescimento B3",
+  },
+  "/post/cambio-dolar-protecao-carteira-2026": {
+    title: "Câmbio e Dólar como Proteção de Carteira em 2026: IVVB11, DOLB11 e Fundos Cambiais",
+    description: "Como usar o dólar e câmbio para proteger sua carteira em 2026: IVVB11 (S&P 500 em reais, taxa 0,24%), DOLB11 (ETF de dólar puro), fundos cambiais com e sem hedge, custo de carregamento em Selic alta e quanto alocar. Guia completo com exemplos numéricos.",
+    keywords: "dólar proteção carteira 2026, IVVB11 2026, DOLB11, hedge cambial, fundo cambial 2026, como investir em dólar Brasil, diversificação internacional, câmbio BRL USD, ETF dólar B3, proteção cambial carteira",
+  },
+  "/post/como-escolher-previdencia-privada-2026": {
+    title: "Como Escolher Previdência Privada em 2026: PGBL vs VGBL, Taxas e Portabilidade",
+    description: "Guia completo de previdência privada 2026: PGBL deduz até 12% da renda bruta no IR, VGBL IR só sobre rendimentos. Taxa de administração abaixo de 1%, sem taxa de carregamento, tabela regressiva (10% em 10 anos), FGS até R$ 120k por seguradora e portabilidade gratuita.",
+    keywords: "previdência privada 2026, PGBL vs VGBL 2026, como escolher previdência privada, taxa administração previdência, portabilidade PGBL VGBL, tabela regressiva previdência, FGS previdência, tábua atuarial, previdência privada vale a pena 2026",
+  },
+  "/post/consorcio-como-investimento-2026": {
+    title: "Consórcio em 2026: Vale a Pena? A Conta Real com Taxas, INCC e Quando Compensa",
+    description: "Consórcio imobiliário e de veículos em 2026: taxa de administração de 15% a 25%, correção pelo INCC, fundo de reserva, contemplação imprevisível e multa por desistência. A conta real versus financiamento e quando o consórcio realmente compensa. Regulado pelo Banco Central.",
+    keywords: "consórcio 2026 vale a pena, consórcio imobiliário 2026, taxa administração consórcio, INCC consórcio, carta de crédito consórcio, consórcio vs financiamento, lance consórcio, FGTS consórcio, consórcio como investimento, desistência consórcio multa",
   },
   
   // ═══════════════════════════════════════════════════════════

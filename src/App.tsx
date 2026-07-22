@@ -273,6 +273,10 @@ const AnimeVerao2026                 = lazy(() => import("./pages/posts/AnimeVer
 const AnimeVerao2026DiasSemana       = lazy(() => import("./pages/posts/AnimeVerao2026DiasSemana"));
 const GhostOfYoteiGuia               = lazy(() => import("./pages/posts/GhostOfYoteiGuia"));
 const Helldivers2Guia2024            = lazy(() => import("./pages/posts/Helldivers2Guia2024"));
+const AcoesCrescimentoVsDividendos2026 = lazy(() => import("./pages/posts/AcoesCrescimentoVsDividendos2026"));
+const CambioDolarProtecao2026        = lazy(() => import("./pages/posts/CambioDolarProtecao2026"));
+const ComoEscolherPrevidencia2026    = lazy(() => import("./pages/posts/ComoEscolherPrevidencia2026"));
+const ConsorcioInvestimento2026      = lazy(() => import("./pages/posts/ConsorcioInvestimento2026"));
 const BannerlordPortal               = lazy(() => import("./pages/posts/BannerlordPortal"));
 const BannerlordGuiaCompleto         = lazy(() => import("./pages/posts/BannerlordGuiaCompleto"));
 const BannerlordCulturasReinos       = lazy(() => import("./pages/posts/BannerlordCulturasReinos"));
@@ -564,6 +568,11 @@ const App = () => (
                 <Route path="/post/anime-verao-2026-dias-semana" element={<Suspense fallback={<div />}><AnimeVerao2026DiasSemana /></Suspense>} />
                 <Route path="/post/ghost-of-yotei-guia-completo" element={<Suspense fallback={<div />}><GhostOfYoteiGuia /></Suspense>} />
                 <Route path="/post/helldivers-2-guia-completo-2024" element={<Suspense fallback={<div />}><Helldivers2Guia2024 /></Suspense>} />
+                {/* ── 22 Jul 2026 — Invest Lote 4 ── */}
+                <Route path="/post/acoes-crescimento-vs-dividendos-2026" element={<Suspense fallback={<div />}><AcoesCrescimentoVsDividendos2026 /></Suspense>} />
+                <Route path="/post/cambio-dolar-protecao-carteira-2026" element={<Suspense fallback={<div />}><CambioDolarProtecao2026 /></Suspense>} />
+                <Route path="/post/como-escolher-previdencia-privada-2026" element={<Suspense fallback={<div />}><ComoEscolherPrevidencia2026 /></Suspense>} />
+                <Route path="/post/consorcio-como-investimento-2026" element={<Suspense fallback={<div />}><ConsorcioInvestimento2026 /></Suspense>} />
 
                 <Route path="*" element={<NotFound />} />
               </Routes>
