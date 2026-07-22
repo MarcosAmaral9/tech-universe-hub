@@ -1935,16 +1935,16 @@ export const blogPosts: BlogPost[] = [
   {
     id: "161",
     slug: "tesouro-prefixado-vs-ipca-2026",
-    title: "Tesouro Prefixado ou IPCA+? Qual Escolher com a Selic Caindo em 2026",
+    title: "Tesouro Prefixado vs IPCA+ em 2026: Qual Escolher? Simulações com Números Reais",
     excerpt:
-      "Com a Selic caindo de 15% para projeção de 12,25% até fim de 2026, a pergunta que todo investidor faz é: travo uma taxa prefixada agora ou fico protegido com IPCA+? Guia com simulações reais e recomendação por perfil.",
+      "Prefixado a 13,5% vs IPCA+7,5% com IPCA a 5,48%: os dois rendem quase igual em 3 anos. Acima de 5,58% de inflação, o IPCA+ vence; abaixo, o prefixado ganha. Análise com cenários reais, marcação a mercado, quando travar taxa e a estratégia híbrida que reduz risco nos dois cenários.",
     content: "",
     category: "invest",
     subtopic: "renda-fixa",
-    image: tesouro_prefixado_ipca_2026Img,
+    image: tesouroPrefixadoVsIpcaNovo2026Img,
     author: "VICIO<CODE>",
-    date: "2026-04-13",
-    readTime: "13 min",
+    date: "2026-07-22",
+    readTime: "14 min",
     faq: [
       {
         q: "Qual a diferença entre Tesouro Prefixado e Tesouro IPCA+?",
