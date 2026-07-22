@@ -1,3 +1,13 @@
+/*
+ * PAGE_META — adicionar em DynamicSEO.tsx dentro do objeto PAGE_META:
+ *
+ * "/post/tesouro-prefixado-vs-ipca-mais-2026": {
+ *   title: "Tesouro Prefixado vs IPCA+ em 2026: Qual Escolher? Simulações com Números Reais",
+ *   description: "Prefixado 13,5% vs IPCA+7,5% com IPCA a 5,48%: os dois rendem quase igual. Acima de 5,58% de inflação o IPCA+ vence. Análise com cenários reais, marcação a mercado, quando travar taxa e a estratégia híbrida que reduz risco nos dois cenários.",
+ *   keywords: "Tesouro Prefixado vs IPCA+ 2026, quando escolher prefixado IPCA+, simulação Tesouro Direto 2026, marcação a mercado Tesouro, NTN-B prefixado 2026, Tesouro IPCA+ 2026, prefixado Selic alta, inflação breakeven tesouro",
+ * },
+ */
+
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
@@ -5,18 +15,21 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
-import { Clock, User, Calendar, TrendingUp, BarChart3, Shield, Lightbulb, DollarSign, AlertTriangle, CheckCircle2 } from "lucide-react";
+import {
+  Clock, User, Calendar, TrendingUp, AlertTriangle,
+  BarChart3, Shield, Lightbulb, DollarSign, Target
+} from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import heroImg from "@/assets/tesouro-direto-guia-2026.webp";
+import heroImg from "@/assets/tesouro-prefixado-vs-ipca-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const TesouroPrefixadoVsIPCA2026 = () => {
   useEffect(() => {
     trackArticleRead(
       "tesouro-prefixado-vs-ipca-2026",
-      "Tesouro Prefixado ou IPCA+? Qual Escolher com a Selic Caindo em 2026",
+      "Tesouro Prefixado vs IPCA+ em 2026: Qual Escolher?",
       "invest"
     );
   }, []);
@@ -29,22 +42,18 @@ const TesouroPrefixadoVsIPCA2026 = () => {
         <div className="flex items-center gap-2 mb-4">
           <CategoryBadge category="invest" size="lg" />
           <span className="px-3 py-1 bg-invest/20 text-invest rounded-full text-sm font-medium">
-            Renda Fixa · Tesouro Direto · Selic
+            Tesouro Direto · Prefixado · IPCA+ · Renda Fixa
           </span>
         </div>
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-          Tesouro Prefixado ou IPCA+? Qual Escolher com a Selic Caindo em 2026
+          Tesouro Prefixado vs IPCA+ em 2026: Qual Escolher? Simulações com Números Reais
         </h1>
-        <p className="text-lg text-muted-foreground mb-4">
-          Com o <strong>Tesouro Prefixado e o IPCA+</strong> em destaque no ciclo de queda
-          da Selic, a escolha entre os dois títulos pode representar diferenças de milhares
-          de reais no longo prazo. Com a Selic saindo de 15% e projetada em 12,25% até
-          o fim de 2026, este guia resolve de uma vez por todas qual Tesouro Direto escolher
-          — com simulações reais e recomendações por perfil.
+        <p className="lead text-xl text-muted-foreground mb-4">
+          Com IPCA a 5,48%, um prefixado a 13,5% e um IPCA+7,5% <strong>rendem quase o mesmo</strong> em 3 anos. Acima de 5,58% de inflação, o IPCA+ ganha. Abaixo disso, o prefixado vence. A escolha não é sobre qual paga mais agora — é sobre <strong>qual cenário você está protegendo</strong>. Este guia explica o breakeven, a marcação a mercado que assusta na tela e a estratégia híbrida que reduz o risco dos dois lados.
         </p>
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
-          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />13 de Abril, 2026</span>
+          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />Julho de 2026</span>
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />13 min de leitura</span>
         </div>
         <ShareWhatsApp />
@@ -54,453 +63,219 @@ const TesouroPrefixadoVsIPCA2026 = () => {
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
         <img
           fetchpriority="high"
-          src={heroImg}
-          alt="Tesouro Direto Prefixado IPCA+ 2026 — qual escolher com Selic caindo"
           loading="eager"
           decoding="async"
+          src={heroImg}
+          alt="Tesouro Prefixado vs IPCA+ 2026 — qual escolher com simulações reais"
           className="w-full h-full object-cover"
         />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
-        <p className="lead text-xl text-muted-foreground">
-          Com a Selic iniciando seu ciclo de queda — saindo de 15% e projetada em 12,25%
-          até o fim de 2026 — a pergunta que todo investidor de renda fixa está fazendo é:
-          devo travar uma taxa <strong>prefixada</strong> agora ou continuar protegido com
-          <strong> IPCA+</strong>? A resposta não é óbvia e depende do seu cenário. Este
-          guia resolve de uma vez por todas essa dúvida com exemplos numéricos reais.
-        </p>
 
-        {/* Tabela dos 3 tipos */}
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <BarChart3 className="h-7 w-7 text-invest" />
-          Entendendo os Três Tipos de Tesouro Direto
-        </h2>
-        <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
-            <thead>
-              <tr className="bg-secondary">
-                <th className="text-left py-3 px-4">Título</th>
-                <th className="text-left py-3 px-4">Como Funciona</th>
-                <th className="text-left py-3 px-4">Taxa Atual (abr/26)</th>
-                <th className="text-left py-3 px-4">Ganha se...</th>
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                ["Tesouro Selic (LFT)",    "Rende a taxa Selic do dia, sem volatilidade",                         "~Selic (14,75% a.a.)",    "Selic subir ou ficar alta"],
-                ["Tesouro Prefixado",      "Taxa travada na compra — você sabe exatamente o que vai receber",     "~13,5% a.a. (2029)",      "Selic cair abaixo da taxa travada"],
-                ["Tesouro IPCA+ (NTN-B)",  "IPCA + taxa real. Protege contra inflação com retorno real garantido","IPCA + ~6,5% a.a. (2035)","Inflação subir ou se manter elevada"],
-              ].map(([titulo, como, taxa, ganha]) => (
-                <tr key={titulo as string} className="border-t border-border">
-                  <td className="py-3 px-4 font-bold text-invest">{titulo}</td>
-                  <td className="py-3 px-4 text-muted-foreground text-xs">{como}</td>
-                  <td className="py-3 px-4 font-bold">{taxa}</td>
-                  <td className="py-3 px-4 text-xs">{ganha}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        {/* Caso Prefixado */}
-        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <TrendingUp className="h-7 w-7 text-invest" />
-          O Caso do Prefixado em 2026: A Janela de Oportunidade
-        </h2>
-        <p>
-          O Tesouro Prefixado é o grande beneficiário de um ciclo de queda de juros. O
-          raciocínio é simples: <strong>se você trava 13,5% hoje e a Selic cair para
-          12%</strong>, você está ganhando 1,5 ponto percentual a mais do que o mercado
-          oferece — todo ano, até o vencimento. Além disso, o título se valoriza no
-          mercado secundário, podendo ser vendido antes do vencimento com lucro via
-          <strong> marcação a mercado</strong>.
-        </p>
-        <p>
-          O estrategista-chefe do BTG Pactual recomenda prefixados com vencimento de{" "}
-          <strong>2 a 4 anos</strong>, especificamente para não se expor demais ao risco
-          inflacionário da guerra no Oriente Médio, que pode pressionar preços no médio
-          prazo. A lógica é travar o juro alto sem se comprometer com prazos muito longos
-          caso o cenário macro mude.
-        </p>
-
-        <div className="not-prose my-6 bg-card rounded-xl border border-invest/20 p-6">
-          <h3 className="font-bold mb-4 text-sm">
-            📊 Simulação: R$ 10.000 investidos no Tesouro Prefixado 2029
-          </h3>
+        {/* Simulação de breakeven */}
+        <div className="not-prose my-8 p-6 bg-gradient-to-br from-invest/10 to-background rounded-xl border border-invest/30">
+          <h2 className="text-xl font-bold mb-2 flex items-center gap-2">
+            <Target className="h-5 w-5 text-invest" />
+            Simulação: Prefixado 13,5% vs IPCA+7,5% — R$ 200.000 em 3 anos
+          </h2>
+          <p className="text-xs text-muted-foreground mb-4">IPCA projetado em cada cenário. Após IR 15% (prazo acima de 720 dias). Fonte: Adriano Freire Finanças (mar/26).</p>
           <div className="space-y-3">
             {[
-              {
-                label: "🟢 Cenário base",
-                cenario: "Selic cai para 9,50% (mercado projeta para 2029)",
-                resultado: "R$ 16.850 bruto (IR 15% = R$ 15.322)",
-                cor: "text-green-400",
-              },
-              {
-                label: "🟡 Cenário conservador",
-                cenario: "Selic para em 12% e não cai mais",
-                resultado: "R$ 15.920 bruto (IR 15% = R$ 14.532)",
-                cor: "text-yellow-400",
-              },
-              {
-                label: "🔴 Cenário adverso",
-                cenario: "Selic sobe para 16% (inflação volta)",
-                resultado: "Título desvaloriza no mercado. Se segurar até venc., recebe os 13,5% acordados",
-                cor: "text-red-400",
-              },
-            ].map(({ label, cenario, resultado, cor }) => (
-              <div key={label} className="border-b border-border pb-3 last:border-0 last:pb-0">
-                <span className="text-xs font-bold">{label}</span>
-                <p className="text-sm text-muted-foreground mt-0.5">{cenario}</p>
-                <p className={`text-sm font-bold mt-0.5 ${cor}`}>{resultado}</p>
+              { cenario: "IPCA = 3,5% ao ano", pref: "R$ 230.680", ipca: "R$ 226.140", vence: "Prefixado", cor: "text-blue-400" },
+              { cenario: "IPCA = 5,0% ao ano", pref: "R$ 230.680", ipca: "R$ 229.820", vence: "Prefixado (margem mínima)", cor: "text-blue-400" },
+              { cenario: "IPCA = 5,48% ao ano (projeção atual)", pref: "R$ 230.680", ipca: "R$ 230.600", vence: "Praticamente empatado", cor: "text-yellow-400" },
+              { cenario: "IPCA = 7,0% ao ano", pref: "R$ 230.680", ipca: "R$ 233.900", vence: "IPCA+", cor: "text-green-400" },
+              { cenario: "IPCA = 9,0% ao ano (choque)", pref: "R$ 230.680", ipca: "R$ 238.200", vence: "IPCA+ (larga vantagem)", cor: "text-green-400" },
+            ].map(({ cenario, pref, ipca, vence, cor }) => (
+              <div key={cenario} className="grid grid-cols-4 gap-2 py-2 border-b border-border/30 text-xs">
+                <span className="text-muted-foreground col-span-1">{cenario}</span>
+                <span className="text-center">{pref}</span>
+                <span className="text-center text-invest">{ipca}</span>
+                <span className={`text-right font-bold ${cor}`}>{vence}</span>
               </div>
             ))}
+            <div className="grid grid-cols-4 gap-2 pt-1 text-xs font-bold text-muted-foreground">
+              <span></span><span className="text-center">Prefixado</span><span className="text-center text-invest">IPCA+7,5%</span><span></span>
+            </div>
           </div>
-          <p className="text-xs text-muted-foreground mt-3">
-            * Simulações aproximadas. IR regressivo: alíquota cai para 15% após 720 dias.
-          </p>
+          <p className="text-xs text-muted-foreground mt-3 font-medium">Ponto de equilíbrio (breakeven): IPCA de 5,58% ao ano. Acima disso, IPCA+ vence. Abaixo, prefixado vence.</p>
         </div>
 
-        <AdLeaderboard className="my-8" />
+        <AdLeaderboard />
 
-        {/* Caso IPCA+ */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Shield className="h-7 w-7 text-invest" />
-          O Caso do IPCA+: O Escudo Contra a Inflação
+          <DollarSign className="h-7 w-7 text-invest" />
+          Como Funciona Cada Um: Prefixado e IPCA+ Explicados do Zero
         </h2>
         <p>
-          O Tesouro IPCA+ garante retorno real — ou seja, você sempre ganha acima da
-          inflação. Com o IPCA projetado em 4,31% em 2026 e taxas reais de IPCA+6,5%,
-          isso significa <strong>retorno nominal de cerca de 10,8% ao ano</strong> no
-          cenário atual — ainda muito atrativo, especialmente quando comparado ao histórico
-          de longo prazo do mercado.
+          O <strong>Tesouro Prefixado</strong> (NTN-F ou LTN) paga uma taxa de juros nominal definida no momento da compra e que não muda até o vencimento. Em julho de 2026, as taxas oferecidas pelo Tesouro Nacional para o prefixado giram em torno de 13,5% a 14% ao ano para prazos de 1 a 3 anos. Isso significa que, independentemente do que aconteça com a inflação, com a Selic ou com a economia ao longo do período, o investidor receberá exatamente aquela taxa nominal anualizada se mantiver o título até o vencimento. A certeza é total do lado nominal — mas não do lado do poder de compra: se a inflação disparar para 10% ou 12% ao ano, os 13,5% do prefixado entregam um retorno real muito menor do que aparentam.
         </p>
         <p>
-          O IPCA+ se torna especialmente valioso no cenário de guerra no Oriente Médio,
-          que pode pressionar preços de combustíveis e fertilizantes, elevando a inflação
-          brasileira acima do previsto. Se o IPCA subir para 6%, seu retorno nominal com
-          IPCA+6,5% vai para 12,5% — protegendo automaticamente o poder de compra.
+          O <strong>Tesouro IPCA+</strong> (NTN-B) paga uma taxa real — fixada no momento da compra — mais a variação do IPCA ao longo do período. Em julho de 2026, os títulos IPCA+ disponíveis oferecem taxas reais de aproximadamente 7,0% a 7,5% ao ano para prazos de 5 a 10 anos. O retorno nominal total do IPCA+ dependerá de quanto o IPCA variar: com IPCA de 5,5%, o retorno nominal seria de aproximadamente 13,3% ao ano — muito próximo do prefixado a 13,5%. Mas com IPCA de 8%, o retorno nominal sobe para 16,1% ao ano, superando confortavelmente o prefixado. A certeza do IPCA+ é do lado real — você sabe quanto vai ganhar acima da inflação — mas não do lado nominal, que variará conforme o índice de preços.
         </p>
-
-        <div className="not-prose my-6 grid md:grid-cols-2 gap-5">
-          <div className="bg-card rounded-xl border border-green-500/20 p-5">
-            <h3 className="font-bold text-green-400 mb-3">✅ Escolha o IPCA+ se...</h3>
-            <ul className="text-sm text-muted-foreground space-y-2">
-              <li>• Você tem medo de inflação surpresa (guerra, câmbio)</li>
-              <li>• Quer preservar poder de compra no longo prazo</li>
-              <li>• Está poupando para aposentadoria (10+ anos)</li>
-              <li>• Prefere certeza de retorno real a especular com juros</li>
-              <li>• Horizonte maior que 5 anos</li>
-            </ul>
-          </div>
-          <div className="bg-card rounded-xl border border-amber-500/20 p-5">
-            <h3 className="font-bold text-amber-400 mb-3">✅ Escolha o Prefixado se...</h3>
-            <ul className="text-sm text-muted-foreground space-y-2">
-              <li>• Você acredita que a Selic vai cair de verdade</li>
-              <li>• Quer maximizar retorno em 2–4 anos</li>
-              <li>• Confia na política monetária do BC</li>
-              <li>• Tem tolerância a marcação a mercado (volatilidade)</li>
-              <li>• Pode segurar o título até o vencimento se necessário</li>
-            </ul>
-          </div>
-        </div>
+        <p>
+          Um novo produto relevante no ecossistema do Tesouro Direto em 2026 é o <strong>Tesouro Reserva</strong>, lançado no início do ano para funcionar como alternativa ao Tesouro Selic para reserva de emergência: rende 100% da Selic, aceita aplicações a partir de R$ 1 e permite resgates praticamente 24 horas por dia, sete dias por semana — com liquidez até mais flexível que o Tesouro Selic convencional. Para quem está decidindo entre títulos de médio e longo prazo, o Tesouro Reserva não é um concorrente direto do prefixado ou do IPCA+, mas ocupa com mais eficiência o papel de liquidez imediata que muitos investidores tentavam forçar nesses títulos.
+        </p>
 
         <AdInArticle />
 
-        <AdRectangle className="my-8" />
-
-        {/* Comparação direta */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <DollarSign className="h-7 w-7 text-invest" />
-          Comparação Direta: R$ 10.000 nos Três Títulos por 3 Anos
+          <AlertTriangle className="h-7 w-7 text-invest" />
+          Marcação a Mercado: O Que Assusta na Tela e o Que Realmente Importa
         </h2>
-        <div className="not-prose my-6 overflow-x-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden text-sm">
-            <thead>
-              <tr className="bg-secondary">
-                <th className="text-left py-3 px-4">Título</th>
-                <th className="text-left py-3 px-4">Taxa Bruta</th>
-                <th className="text-left py-3 px-4">Rendimento 3 anos</th>
-                <th className="text-left py-3 px-4">Líquido (IR 15%)</th>
-                <th className="text-left py-3 px-4">Proteção Inflação</th>
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                ["Tesouro Selic",   "14,75% a.a. → caindo", "~R$ 3.200", "~R$ 14.720", "Parcial (nominal)"],
-                ["Prefixado 2029",  "13,5% a.a. fixo",      "~R$ 4.350", "~R$ 13.697", "Nenhuma (risco real)"],
-                ["IPCA+ 2035",      "IPCA + 6,5%",          "~R$ 3.800 real","~R$ 13.230 real","Total (retorno real)"],
-              ].map(([titulo, taxa, rend, liq, prot]) => (
-                <tr key={titulo as string} className="border-t border-border">
-                  <td className="py-3 px-4 font-bold text-invest">{titulo}</td>
-                  <td className="py-3 px-4">{taxa}</td>
-                  <td className="py-3 px-4 font-bold">{rend}</td>
-                  <td className="py-3 px-4 text-green-400 font-bold">{liq}</td>
-                  <td className="py-3 px-4 text-xs">{prot}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <p className="text-xs text-muted-foreground mt-2">
-            * Simulações com IPCA 4,3% a.a. e Selic caindo de 14,75% para 12,25% em 2026
-            e continuando em 2027–2028. Meramente ilustrativas.
-          </p>
+        <p>
+          O principal motivo pelo qual investidores vendem Tesouro Prefixado e IPCA+ antes do vencimento com prejuízo é a marcação a mercado — e a confusão entre o preço atual do título e o valor que será recebido no vencimento. Entender essa diferença é essencial para não tomar decisões erradas baseadas em variações temporárias no extrato.
+        </p>
+        <p>
+          Quando as taxas de juros de mercado <strong>sobem</strong> após a compra, o preço dos títulos de prazo fixo <strong>cai</strong>. A lógica é a seguinte: se você comprou um título prefixado a 13% e o mercado passa a oferecer títulos similares a 15%, ninguém vai pagar o preço cheio pelo seu título a 13% — então o preço cai até o ponto em que o rendimento implícito se iguala à nova taxa de mercado. Esse movimento é a marcação a mercado negativa. Para quem mantém o título até o vencimento, ela é completamente irrelevante — você receberá os 13% anuais contratados, independentemente do que o mercado esteja cotando no meio do caminho.
+        </p>
+        <p>
+          A marcação se torna um risco real apenas para quem <strong>precisa vender antes do vencimento</strong>. Em 2025 e no início de 2026, o Tesouro IPCA+ de longo prazo sofreu quedas expressivas de preço por conta da piora das expectativas fiscais e da elevação dos prêmios de risco — alguns títulos chegaram a ser cotados com taxas reais acima de 8% ao ano, o que implica que títulos comprados a IPCA+6% apresentavam marcação negativa substancial. Quem tinha esses títulos e precisou vender realizou perdas. Quem manteve até o vencimento recebeu exatamente o combinado. O ensinamento é simples mas frequentemente esquecido: <strong>só compre Tesouro Prefixado ou IPCA+ de prazo longo se tiver certeza de que não precisará do dinheiro antes do vencimento</strong>.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <BarChart3 className="h-7 w-7 text-invest" />
+          Cenários Práticos: Quando Cada Título Ganha
+        </h2>
+
+        <div className="not-prose my-6 space-y-4">
+          {[
+            {
+              titulo: "Prefixado Vence Quando:",
+              itens: [
+                "A inflação cai abaixo do breakeven (5,58% no exemplo acima) — o prefixado entrega mais em termos nominais",
+                "A Selic cai mais rápido do que o mercado espera — o título que você travou a 13,5% fica acima do CDI futuro",
+                "O horizonte é de até 2 anos e você quer previsibilidade total do valor de resgate em reais",
+                "Você tem objetivo com data marcada (viagem, compra planejada) e quer eliminar risco de inflação surpresa no curto prazo",
+              ],
+              cor: "border-blue-500/30 bg-blue-500/5",
+            },
+            {
+              titulo: "IPCA+ Vence Quando:",
+              itens: [
+                "A inflação supera o breakeven — qualquer IPCA acima de 5,58% faz o IPCA+ superar o prefixado equivalente",
+                "O horizonte é longo (5, 10, 20 anos) e você quer preservar o poder de compra real do patrimônio",
+                "Há risco de choque inflacionário (commodities, câmbio, fiscal) que o prefixado não cobre",
+                "Você está planejando aposentadoria — garantir um retorno real de 7% ao ano por décadas é o que cria patrimônio sólido",
+              ],
+              cor: "border-green-500/30 bg-green-500/5",
+            },
+          ].map(({ titulo, itens, cor }) => (
+            <div key={titulo} className={`rounded-xl border p-5 ${cor}`}>
+              <p className="font-bold text-sm mb-3">{titulo}</p>
+              <ul className="space-y-1.5">
+                {itens.map(item => (
+                  <li key={item} className="text-xs text-muted-foreground flex items-start gap-2">
+                    <span className="mt-0.5 flex-shrink-0">→</span>{item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        {/* Estratégia combinada */}
+        <AdRectangle />
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Shield className="h-7 w-7 text-invest" />
+          A Estratégia Híbrida: Dividir Entre os Dois Para Reduzir o Risco
+        </h2>
+        <p>
+          Em momentos de incerteza genuína sobre a trajetória da inflação — como março de 2026, quando o IPCA de fevereiro surpreendeu para cima enquanto as projeções do Focus ainda apontavam desaceleração — a melhor estratégia pode ser simplesmente <strong>dividir a alocação entre prefixado e IPCA+</strong>, em vez de apostar em um único cenário.
+        </p>
+        <p>
+          Uma divisão simples de 50% em Tesouro Prefixado de prazo médio (2 a 3 anos) e 50% em Tesouro IPCA+ de prazo intermediário (5 a 8 anos) cria um portfólio que se sai bem em mais cenários do que cada um individualmente. Se a inflação cair rapidamente, o prefixado contribui com retorno nominal alto e equilibra o IPCA+ que terá retorno nominal mais baixo. Se a inflação disparar, o IPCA+ protege o poder de compra e equilibra o prefixado que ficará com retorno real mais modesto. Essa estratégia reduz a necessidade de acertar o cenário macroeconômico — algo que nem os melhores economistas do mercado conseguem fazer de forma consistente.
+        </p>
+        <p>
+          Outra dimensão importante da estratégia híbrida é o <strong>escalonamento de prazos</strong> (também chamado de "escada" ou "laddering"): em vez de concentrar tudo no mesmo vencimento, distribuir os aportes em títulos com vencimentos diferentes (2027, 2028, 2030, 2033) garante que parte do capital se torne disponível em momentos escalonados, reduzindo o risco de precisar vender com marcação negativa e permitindo reinvestir às taxas vigentes em cada vencimento — o que captura naturalmente os movimentos de mercado sem depender de um único timing.
+        </p>
+
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Lightbulb className="h-7 w-7 text-invest" />
-          A Estratégia que Ninguém Conta: Não Escolha Apenas Um
+          Tributação: Por Que o IR Não Muda a Comparação Entre os Dois
         </h2>
         <p>
-          Analistas da XP e do BTG recomendam{" "}
-          <strong>dividir a renda fixa entre os três tipos</strong> — não por indecisão,
-          mas por estratégia. O Tesouro Selic garante liquidez imediata. O Prefixado
-          captura o ciclo de queda de juros. O IPCA+ protege contra surpresas
-          inflacionárias.
+          Um ponto que frequentemente gera confusão é a tributação dos dois títulos. A boa notícia é que a tabela regressiva do IR se aplica de forma idêntica ao Tesouro Prefixado e ao Tesouro IPCA+: 22,5% até 180 dias, 20% de 181 a 360 dias, 17,5% de 361 a 720 dias e 15% acima de 720 dias. Como a alíquota é a mesma nos dois casos para o mesmo prazo, o Imposto de Renda não é um fator diferenciador na comparação direta entre prefixado e IPCA+.
         </p>
         <p>
-          A proporção ideal depende do seu perfil, mas uma divisão como{" "}
-          <strong>30% Selic / 40% Prefixado / 30% IPCA+</strong> captura o melhor dos
-          três mundos para um perfil moderado. Conservadores devem aumentar o Selic e
-          o IPCA+ às custas do Prefixado; arrojados com horizonte longo podem aumentar
-          o IPCA+ de prazo mais longo.
-        </p>
-        <p>
-          O principal erro que o investidor brasileiro comete ao ver a Selic cair é{" "}
-          <strong>migrar tudo para a bolsa</strong> ou{" "}
-          <strong>ficar 100% no Tesouro Selic por medo de volatilidade</strong>. A renda
-          fixa inteligente, com diversificação entre os tipos de título, ainda entrega
-          retornos muito superiores à poupança com risco controlado.
+          A diferença tributária relevante surge apenas quando a comparação inclui produtos isentos — LCI, LCA, CRI, CRA. Uma LCI pagando 92% do CDI isenta pode superar um Tesouro Prefixado de 13,5% para prazos de 12 meses, justamente porque a isenção compensa a taxa aparentemente menor. Mas dentro da família Tesouro Direto, a comparação entre prefixado e IPCA+ deve ser feita com base nas taxas brutas — o IR irá incidir de forma equivalente sobre o rendimento de qualquer um dos dois.
         </p>
 
-        {/* Riscos que não podem ser ignorados */}
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <AlertTriangle className="h-7 w-7 text-yellow-400" />
-          Riscos que Não Podem Ser Ignorados
+          <DollarSign className="h-7 w-7 text-invest" />
+          O Fator Fiscal na Comparação Com Produtos Isentos
         </h2>
-        <div className="not-prose space-y-3 my-6">
-          {[
-            {
-              titulo: "Risco de inflação acima do previsto",
-              desc: "Se o conflito no Oriente Médio elevar o petróleo e o IPCA superar 6–7%, o Prefixado perde poder de compra real. O IPCA+ protege automaticamente nesse cenário.",
-            },
-            {
-              titulo: "Risco de alta de juros (ciclo reverso)",
-              desc: "Se o Copom precisar voltar a subir juros (como em 2024), títulos prefixados longos perdem valor de mercado — importante somente para quem precisar vender antes do vencimento.",
-            },
-            {
-              titulo: "Risco de liquidez no curtíssimo prazo",
-              desc: "O Tesouro IPCA+ pode ter variação negativa de preço em janelas curtas. Para dinheiro que pode precisar em menos de 12 meses, o Tesouro Selic é mais adequado.",
-            },
-            {
-              titulo: "Risco de mudança tributária",
-              desc: "A tabela regressiva de IR é legislação ordinária — pode mudar. O Prefixado com vencimento longo está exposto a esse risco regulatório, especialmente em anos eleitorais.",
-            },
-          ].map(({ titulo, desc }) => (
-            <div key={titulo} className="flex gap-4 bg-yellow-500/5 border border-yellow-500/20 rounded-xl p-4">
-              <AlertTriangle className="h-5 w-5 text-yellow-500 shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-bold text-sm mb-1">{titulo}</h3>
-                <p className="text-sm text-muted-foreground">{desc}</p>
-              </div>
-            </div>
-          ))}
+        <p>
+          A análise de Prefixado vs IPCA+ dentro do Tesouro Direto fica incompleta sem uma menção ao impacto do IR em comparação com produtos isentos. A tabela regressiva aplica 22,5% sobre resgates em até 180 dias, caindo até 15% acima de 720 dias — o que significa que, para prazos de 12 meses (IR de 20%), um Tesouro Prefixado a 13,5% entrega cerca de 10,8% líquido ao investidor. Uma LCI pagando apenas 87% do CDI isenta já empata com esse resultado. Essa matemática tem duas implicações práticas: primeiro, para objetivos de prazo curto (até 12 meses), LCI e LCA com carência de 6 meses geralmente superam o Prefixado em termos líquidos, mesmo com taxa nominal aparentemente menor. Segundo, para prazos acima de dois anos — quando a alíquota do Tesouro cai para 15% — a diferença entre o Prefixado tributado e as letras de crédito isentas se estreita consideravelmente, e o IPCA+ de prazo longo começa a competir com mais equilíbrio, especialmente se a inflação ficar acima do breakeven projetado.
+        </p>
+        <p>
+          A grande vantagem competitiva do Tesouro Direto em relação às LCIs e LCAs não está necessariamente nas taxas nominais — está na segurança de crédito (garantia do Tesouro Nacional, sem limite de valor, sem risco bancário) e na liquidez estruturada: o Tesouro garante a recompra dos títulos a preço de mercado a qualquer momento, o que as LCIs e LCAs com carência de 6 meses não permitem sem potencial deságio no mercado secundário. Para o investidor que prioriza a combinação de segurança máxima, liquidez previsível e isonomia de tratamento tributário (sem depender de encontrar LCIs ou LCAs com taxas competitivas em cada janela de aporte), o Tesouro Prefixado e o IPCA+ seguem sendo referência difícil de superar no mercado doméstico de renda fixa.
+        </p>
+
+        <div className="not-prose mt-8 p-4 bg-secondary rounded-xl text-xs text-muted-foreground flex items-start gap-2">
+          <AlertTriangle className="h-4 w-4 text-yellow-500 flex-shrink-0 mt-0.5" />
+          <span><strong>Aviso Legal:</strong> Este artigo é educacional e não constitui recomendação de investimento. As simulações usam projeções e taxas de julho de 2026 que podem variar. Rentabilidade passada não garante resultados futuros. Consulte um assessor certificado pela CVM antes de tomar decisões.</span>
         </div>
-
-        <h2 className="text-2xl font-bold mt-10 mb-4">
-          Simulação Prática: Investidor de 35 Anos Planejando Aposentadoria
-        </h2>
-        <p>
-          Para tornar a decisão mais concreta, considere o caso de um investidor de 35 anos
-          que pretende se aposentar aos 60 e está decidindo como alocar R$ 50.000 de reserva
-          já formada, fora da reserva de emergência. Com 25 anos de horizonte até a
-          aposentadoria, esse investidor tem o tempo necessário para absorver a volatilidade
-          de curto prazo de títulos longos em troca de retorno superior no acumulado.
-        </p>
-        <p>
-          Uma alocação sensata para esse perfil seria destinar a maior parte — algo entre
-          50% e 60% do valor — para Tesouro IPCA+ com vencimento entre 2040 e 2050,
-          aproveitando o juro real elevado disponível em 2026 e travando esse retorno por
-          décadas. O restante poderia se dividir entre prefixados de prazo médio, para
-          captura tática do ciclo de queda de juros nos próximos 2 a 3 anos, e uma pequena
-          parcela em Tesouro Selic para flexibilidade caso surjam oportunidades de
-          realocação. Esse tipo de planejamento de longo prazo é precisamente onde a
-          escolha entre prefixado e IPCA+ tem maior impacto cumulativo: pequenas diferenças
-          de taxa real, compostas ao longo de 20-25 anos, geram diferenças de dezenas de
-          milhares de reais no patrimônio final.
-        </p>
-
-        <h2 className="text-2xl font-bold mt-10 mb-4">
-          O Papel da Taxa de Custódia B3 na Decisão
-        </h2>
-        <p>
-          Um detalhe frequentemente esquecido na comparação entre os títulos é a taxa de
-          custódia cobrada pela B3, atualmente em 0,20% ao ano sobre o saldo investido,
-          com isenção total para valores até R$ 10.000 em Tesouro Selic. Essa taxa incide
-          igualmente sobre prefixados e IPCA+, mas seu peso relativo no retorno líquido é
-          maior em títulos com taxa nominal mais baixa — fazendo pouca diferença em
-          prefixados que pagam 13-14% ao ano, mas merecendo atenção em simulações de
-          longuíssimo prazo onde cada fração percentual de custo é amplificada pelos
-          juros compostos ao longo de décadas.
-        </p>
-
-
-        <h2 className="text-2xl font-bold mt-10 mb-4">
-          Perguntas Frequentes Sobre Prefixado e IPCA+
-        </h2>
-        <div className="not-prose space-y-3 my-6">
-          {[
-            { q: "Posso vender o título antes do vencimento sem perder dinheiro?", a: "Depende inteiramente do cenário de juros no momento da venda. Se a Selic caiu desde a compra, prefixados e IPCA+ se valorizam e você pode vender com lucro antes do vencimento. Se a Selic subiu, o título pode valer menos do que você pagou — por isso só venda antes do prazo se realmente precisar do dinheiro ou se identificar uma janela de valorização clara." },
-            { q: "O que acontece se eu não puder esperar até o vencimento?", a: "Você pode vender a qualquer momento durante o horário de negociação do Tesouro Direto, mas o preço de venda reflete a marcação a mercado do dia — que pode ser maior ou menor que o valor investido. Por isso, títulos de longo prazo (IPCA+ 2045, por exemplo) são mais adequados para dinheiro que você tem certeza de não precisar no curto prazo." },
-            { q: "É melhor comprar um único título grande ou fracionar a compra?", a: "Fracionar a compra ao longo de vários meses (uma estratégia conhecida como DCA aplicada à renda fixa) reduz o risco de comprar tudo em um momento de taxa desfavorável. Para quem está migrando uma quantia grande de pós-fixado, dividir em 3 a 6 parcelas mensais é uma prática comum entre investidores experientes." },
-            { q: "Existe limite de quanto posso investir no Tesouro Direto?", a: "Não há limite máximo, mas o limite mínimo de compra é o preço de uma fração do título, que costuma variar entre R$ 30 e R$ 150 dependendo do título e da cotação do dia. Não existe limite de valor para pessoa física investir em títulos públicos via Tesouro Direto." },
-          ].map(({ q, a }) => (
-            <div key={q} className="bg-card border border-border rounded-xl p-4">
-              <h4 className="font-bold text-sm mb-1">{q}</h4>
-              <p className="text-sm text-muted-foreground">{a}</p>
-            </div>
-          ))}
-        </div>
-
-        <h2 className="text-2xl font-bold mt-10 mb-4">
-          Lição do Ciclo 2016-2018: O Que a História Ensina
-        </h2>
-        <p>
-          O último grande ciclo completo de corte de juros no Brasil — de 14,25% em 2016
-          para 6,5% em 2018 — oferece um estudo de caso valioso para quem está decidindo
-          entre prefixado e IPCA+ hoje. Investidores que travaram prefixados longos no
-          início desse ciclo, quando as taxas ainda refletiam o pico de juros, viram seus
-          títulos se valorizarem de forma expressiva à medida que a Selic caía — alguns
-          conseguindo retornos superiores a 25% em períodos de 18 a 24 meses via marcação
-          a mercado, muito acima do que a taxa contratada originalmente sugeria.
-        </p>
-        <p>
-          Por outro lado, quem tinha IPCA+ no mesmo período também foi bem recompensado,
-          ainda que por motivos diferentes: a inflação naqueles anos ficou consistentemente
-          dentro da meta, então o retorno real elevado contratado nos títulos IPCA+ de
-          então (alguns pagando IPCA+7% ou mais) gerou ganhos reais expressivos e
-          consistentes. A lição que fica não é que um título é estruturalmente melhor que
-          o outro, mas que <strong>ambos podem performar bem no mesmo ciclo</strong>,
-          através de mecanismos distintos — daí a robustez da estratégia de diversificar
-          entre os dois em vez de apostar tudo em apenas um.
-        </p>
-        <p>
-          Vale notar que ciclos de juros raramente se repetem de forma idêntica. O cenário
-          de 2026, com tensão geopolítica elevada e inflação ainda pressionada por choques
-          externos, tem características distintas do ciclo 2016-2018, que ocorreu num
-          contexto de recuperação pós-recessão doméstica sem grandes choques externos
-          relevantes. Usar o histórico como guia direcional é útil; tratá-lo como garantia
-          de repetição exata do padrão é um erro comum entre investidores menos experientes.
-        </p>
-
-        <h2 className="text-2xl font-bold mt-10 mb-4">
-          Checklist: O Que Verificar Antes de Comprar
-        </h2>
-        <p>
-          Antes de finalizar a compra de qualquer título do Tesouro Direto, vale revisar
-          rapidamente alguns pontos práticos que evitam arrependimentos: confirme o
-          vencimento exato do título e se ele se alinha ao seu objetivo financeiro,
-          verifique se há pagamento de cupons semestrais (vantajoso para quem busca renda
-          periódica) ou se o título é "zero cupom" (pagamento integral apenas no
-          vencimento, mais eficiente para acumulação pura), e confira a corretora
-          escolhida para garantir que não há taxas adicionais de custódia além da cobrada
-          pela própria B3.
-        </p>
-
-        <div className="not-prose space-y-2 my-6">
-          {[
-            "Qual é o prazo até quando posso deixar o dinheiro investido sem precisar dele?",
-            "Quanto da minha carteira já está em pós-fixado (Selic/CDI)?",
-            "Tenho reserva de emergência separada e intocável?",
-            "Acredito que a inflação vai ficar sob controle nos próximos anos?",
-            "Consigo aceitar variação de preço no extrato sem vender em pânico?",
-          ].map((item, i) => (
-            <div key={i} className="flex items-start gap-3 bg-[hsl(var(--invest-color))]/5 rounded-lg p-3">
-              <CheckCircle2 className="h-4 w-4 text-[hsl(var(--invest-color))] mt-0.5 shrink-0" />
-              <span className="text-sm text-muted-foreground">{item}</span>
-            </div>
-          ))}
-        </div>
-
-        <p className="text-xs text-muted-foreground mt-8 p-4 bg-secondary rounded-xl not-prose">
-          ⚠️ <strong>Aviso Legal:</strong> Este artigo é educacional e não constitui
-          recomendação de investimento. Consulte um assessor certificado. Rentabilidade
-          passada não garante resultados futuros.
-        </p>
       </div>
 
-
-
-      <EditorialTake
-        category="invest"
-        title="Análise do Marcos: diversifique os três tipos — o mercado raramente avisa antes de mudar"
-      >
+      <EditorialTake category="invest" title="Análise do Marcos: a escolha entre prefixado e IPCA+ é uma aposta em cenário — seja honesto sobre o que você sabe">
         <p>
-          Comparação baseada em dados do Tesouro Direto (abr/2026): Tesouro Prefixado 2029
-          rendendo ~13,5% a.a., Tesouro IPCA+ 2035 em IPCA+6,5% a.a. e Tesouro Selic
-          em ~14,75% a.a. (com queda esperada). O índice IRF-M 1+ (prefixados 1+ ano)
-          avançou 20,07% em 2025, e o IMA-B (IPCA+) acumulou 18,3% no mesmo período —
-          ambos muito acima do CDI de 13,25%.
+          Toda vez que alguém me pede para escolher entre prefixado e IPCA+, faço a mesma pergunta de volta: "Você tem uma convicção forte sobre onde o IPCA vai estar em 3 anos?" Na quase totalidade dos casos, a resposta é não — e é a resposta correta, porque nem os economistas do Banco Central, do FMI ou das maiores gestoras do mundo conseguem prever inflação com precisão para janelas de 3 anos.
         </p>
         <p className="mt-2">
-          Minha análise para 2026: a dicotomia Prefixado vs IPCA+ é um falso dilema —
-          os dois têm espaço numa carteira bem construída. Para perfil moderado, sugiro{" "}
-          <strong>40% Prefixado médio prazo (2–4 anos)</strong> para capturar o ciclo de
-          queda via marcação, <strong>40% IPCA+ longo (2035+)</strong> para retorno real
-          garantido contra inflação, e <strong>20% Tesouro Selic</strong> como reserva de
-          oportunidade e liquidez. Quem tem mais de 10 anos de horizonte pode inverter a
-          proporção em favor do IPCA+ longo. Quem tem menos de 3 anos deve priorizar o
-          Selic. O erro clássico é ficar 100% em uma única modalidade — o mercado sempre
-          surpreende.
+          Se você não sabe, a estratégia híbrida 50/50 entre prefixado de prazo curto e IPCA+ de prazo intermediário é simplesmente mais inteligente do que apostar tudo num único cenário. O IPCA+ de 7,5% ao ano por 10 anos é uma das melhores propostas de valor disponíveis no mercado financeiro brasileiro — mas só funciona se você realmente não vender antes do vencimento. <strong>Comprar IPCA+ longo e vender na primeira queda de preço é o erro mais caro da renda fixa brasileira.</strong>
         </p>
       </EditorialTake>
-      <ArticleSources category="invest"
+
+      <ArticleSources
+        category="invest"
         sources={[
           {
-            title: "Tesouro Direto — Tipos de Títulos e Rentabilidades Atuais",
-            url: "https://www.tesourodireto.com.br/titulos/precos-e-taxas.htm",
-            publisher: "Tesouro Nacional / Tesouro Direto",
-            accessedAt: "Maio 2026",
+            title: "Prefixado vs IPCA+ 2026: Qual Escolher com IPCA a 5,48%?",
+            url: "https://www.adrianofreire.com.br/blog/prefixado-vs-ipca-qual-escolher-2026",
+            publisher: "Adriano Freire Finanças",
+            accessedAt: "Julho 2026",
           },
           {
-            title: "ANBIMA — Índices de Renda Fixa: IRF-M, IMA-B e Rentabilidades",
-            url: "https://www.anbima.com.br/pt_br/informar/relatorios/mercado-de-capitais/indices/",
-            publisher: "ANBIMA",
-            accessedAt: "Maio 2026",
+            title: "Tesouro Direto em 2026: Como Escolher Entre Selic, IPCA+, Prefixado e Tesouro Reserva",
+            url: "https://arevista.com.br/renda-fixa/tesouro-direto-em-2026-como-escolher-entre-selic-ipca-prefixado-renda-e-tesouro-reserva/",
+            publisher: "A Revista (Toro Investimentos)",
+            accessedAt: "Julho 2026",
           },
           {
-            title: "Banco Central — Boletim Focus: Projeções para IPCA e Selic",
-            url: "https://www.bcb.gov.br/publicacoes/focus",
-            publisher: "Banco Central do Brasil",
-            accessedAt: "Maio 2026",
+            title: "Tesouro Selic, Prefixado ou IPCA+? O Que os Analistas Indicam em 2026",
+            url: "https://www.seudinheiro.com/2026/economia/tesouro-selic-prefixado-ou-ipca-veja-o-que-os-analistas-indicam-como-melhor-opcao-no-tesouro-direto-mlim/",
+            publisher: "Seu Dinheiro",
+            accessedAt: "Julho 2026",
           },
           {
-            title: "Tesouro Nacional — Marcação a Mercado: Entendendo a Volatilidade",
-            url: "https://www.tesourodireto.com.br/conteudo-educacional/marcacao-a-mercado.htm",
+            title: "Prefixado, Pós-Fixado ou IPCA+: O Que Rendeu Mais na Renda Fixa",
+            url: "https://borainvestir.b3.com.br/tipos-de-investimentos/renda-fixa/prefixado-pos-fixado-ou-ipca-o-que-rendeu-mais-na-renda-fixa-e-onde-vale-a-pena-investir-agora/",
+            publisher: "B3 — Bora Investir",
+            accessedAt: "Julho 2026",
+          },
+          {
+            title: "Tesouro Direto — Tipos de Títulos e Características",
+            url: "https://www.tesourodireto.com.br/titulos/tipos-de-tesouro.htm",
             publisher: "Tesouro Nacional",
-            accessedAt: "Maio 2026",
+            accessedAt: "Julho 2026",
           },
           {
-            title: "Receita Federal — Tributação de Aplicações em Títulos Públicos",
-            url: "https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/tributos/irpf/imposto-de-renda-sobre-aplicacoes-financeiras",
-            publisher: "Receita Federal do Brasil",
-            accessedAt: "Maio 2026",
-          },
-          {
-            title: "Relatório de Inflação — Copom: Cenário e Projeções Macroeconômicas",
-            url: "https://www.bcb.gov.br/publicacoes/ri",
-            publisher: "Banco Central do Brasil",
-            accessedAt: "Maio 2026",
+            title: "Títulos do Tesouro Direto: Compare as Vantagens de Cada Tipo",
+            url: "https://oespecialista.safra.com.br/tipos-de-tesouro-direto-vantagens-diferencas/",
+            publisher: "O Especialista — Banco Safra",
+            accessedAt: "Julho 2026",
           },
         ]}
       />
 
-      <RelatedPosts currentSlug="tesouro-prefixado-vs-ipca-2026" />
+      <RelatedPosts currentSlug="tesouro-prefixado-vs-ipca-mais-2026" />
       <CommentSection
-        postId="tesouro-prefixado-vs-ipca-2026"
-        postTitle="Tesouro Prefixado ou IPCA+? Qual Escolher com a Selic Caindo em 2026"
-       category="invest" />
+        postId="tesouro-prefixado-vs-ipca-mais-2026"
+        postTitle="Tesouro Prefixado vs IPCA+ em 2026: Qual Escolher?"
+        category="invest"
+      />
     </article>
   );
 };

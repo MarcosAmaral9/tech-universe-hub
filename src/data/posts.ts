@@ -193,6 +193,11 @@ import indianaJonesGreatCircleImg from "@/assets/indiana-jones-great-circle-guia
 import ghostOfTsushimaImg from "@/assets/ghost-of-tsushima-guia-completo.webp";
 import debenturesCriCra2026Img from "@/assets/debentures-cri-cra-2026.webp";
 import declararFiiIR2026Img from "@/assets/declarar-fii-ir-2026.webp";
+import acoesCrescimentoVsDividendos2026Img from "@/assets/acoes-crescimento-vs-dividendos-2026.webp";
+import cambioDolarProtecao2026Img from "@/assets/cambio-dolar-protecao-carteira-2026.webp";
+import previdenciaEscolher2026Img from "@/assets/previdencia-privada-escolher-2026.webp";
+import consorcioInvestimento2026Img from "@/assets/consorcio-investimento-2026.webp";
+import tesouroPrefixadoVsIpcaNovo2026Img from "@/assets/tesouro-prefixado-vs-ipca-2026.webp";
 import fundosMultimercado2026Img from "@/assets/fundos-multimercado-2026.webp";
 import animeVerao2026Img from "@/assets/anime-verao-2026-guia-temporada.webp";
 import animeVerao2026DiasSemanaImg from "@/assets/anime-verao-2026-dias-semana.webp";
@@ -308,7 +313,85 @@ export const blogPosts: BlogPost[] = [
     ],
   },
 
-  // ── 13 Jul 2026 — Otaku (Anime / Temporada Summer 2026) ──────────
+  // ── 22 Jul 2026 — Invest (Lote 4: Estratégias 2026) ──────────────
+  {
+    id: "214",
+    slug: "acoes-crescimento-vs-dividendos-2026",
+    title: "Ações de Crescimento vs Dividendos em 2026: Qual Estratégia Realmente Funciona?",
+    excerpt:
+      "IGC subiu 180% em 10 anos, IDIV 110% (~150% com dividendos reinvestidos). Com Selic a 14,25%, BBAS3 (9,2%) e TAEE11 (8,5%) perdem para o CDI bruto — mas ganham depois do IR. Guia completo growth vs dividendos na B3.",
+    content: "",
+    category: "invest",
+    subtopic: "carteira",
+    image: acoesCrescimentoVsDividendos2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-22",
+    readTime: "14 min",
+    faq: [
+      { q: "Growth ou dividendos rende mais no Brasil?", a: "Nos últimos 10 anos o IGC (crescimento) subiu ~180% e o IDIV (dividendos) ~110% de preço + ~40% de dividendos reinvestidos, chegando perto de 150% total. Growth venceu em preço, mas dividendos ganharam quando reinvestidos e o gap diminui muito no longo prazo." },
+      { q: "Com Selic a 14,25%, ainda vale ter ações de dividendos?", a: "Sim, mas com critério. Dividendos são isentos de IR (até R$ 50 mil/mês por pagador), enquanto CDI paga 15%–17,5% de IR. Um DY de 9% líquido equivale a ~10,5% brutos — competitivo mesmo com Selic alta, especialmente quando somado à valorização da ação." },
+      { q: "Qual a melhor estratégia para começar em 2026?", a: "Combinar 60% dividendos (renda estável, tese defensiva) + 40% growth (crescimento composto). Exemplos: ITUB4, TAEE11, BBSE3 no lado dividendos; WEGE3, RDOR3, MELI34 no lado growth. Rebalancear anualmente." },
+    ],
+  },
+  {
+    id: "215",
+    slug: "cambio-dolar-protecao-carteira-2026",
+    title: "Câmbio e Dólar como Proteção de Carteira em 2026: IVVB11, DOLB11 e Quanto Alocar",
+    excerpt:
+      "IVVB11 replica o S&P 500 em reais com taxa de 0,24% ao ano. DOLB11 é dólar puro na B3. Fundos cambiais com e sem hedge, custo de carregamento em Selic alta e quanto alocar em dólar como proteção patrimonial.",
+    content: "",
+    category: "invest",
+    subtopic: "etfs",
+    image: cambioDolarProtecao2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-22",
+    readTime: "13 min",
+    faq: [
+      { q: "Vale a pena investir em dólar em 2026?", a: "Sim, como proteção patrimonial (10%–30% da carteira), não como aposta. O dólar historicamente sobe em crises brasileiras — 2002, 2008, 2015, 2020 — protegendo quem tinha exposição cambial. Não é sobre prever o câmbio, é sobre não depender de uma única moeda." },
+      { q: "Qual a diferença entre IVVB11 e DOLB11?", a: "IVVB11 dá exposição ao S&P 500 (500 maiores empresas dos EUA) em reais, com taxa de 0,24%. DOLB11 replica apenas o dólar futuro sem exposição a ações. IVVB11 tende a render mais no longo prazo; DOLB11 é hedge cambial puro." },
+      { q: "Quanto alocar em dólar na carteira?", a: "Perfil conservador: 10%–15%. Moderado: 15%–25%. Arrojado: 25%–35%. Acima de 40% concentra risco cambial. Rebalancear quando desviar mais de 5 pp do alvo." },
+    ],
+  },
+  {
+    id: "216",
+    slug: "como-escolher-previdencia-privada-2026",
+    title: "Como Escolher Previdência Privada em 2026: PGBL vs VGBL, Taxas, IR e Portabilidade",
+    excerpt:
+      "PGBL deduz até 12% da renda bruta no IR (declaração completa). VGBL cobra IR só sobre rendimentos. Taxa de administração abaixo de 1%, sem carregamento, tabela regressiva 10% em 10 anos, FGS de R$ 120 mil e portabilidade sem IR.",
+    content: "",
+    category: "invest",
+    subtopic: "planejamento",
+    image: previdenciaEscolher2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-22",
+    readTime: "14 min",
+    faq: [
+      { q: "PGBL ou VGBL: qual escolher em 2026?", a: "PGBL se você faz declaração completa do IR e contribui para o INSS (deduz até 12% da renda bruta). VGBL para quem faz declaração simplificada, é isento ou já usa os 12% em outra previdência. A escolha errada pode custar dezenas de milhares de reais em décadas." },
+      { q: "Como funciona a tabela regressiva de IR na previdência?", a: "35% até 2 anos, 30% de 2 a 4, 25% de 4 a 6, 20% de 6 a 8, 15% de 8 a 10 e 10% acima de 10 anos. Para aposentadoria (horizonte longo), a regressiva quase sempre vence a progressiva. Ideal para quem vai deixar o dinheiro por mais de 10 anos." },
+      { q: "Vale trocar de previdência com taxa alta por portabilidade?", a: "Sim. A portabilidade entre PGBL–PGBL ou VGBL–VGBL não gera IR nem come o prazo da tabela regressiva. Toda taxa de administração acima de 1,5% ao ano em fundos de renda fixa/multimercado deve ser questionada — hoje há opções com 0,5%–1%." },
+    ],
+  },
+  {
+    id: "217",
+    slug: "consorcio-como-investimento-2026",
+    title: "Consórcio em 2026: A Conta Real — Taxa de 15% a 25%, INCC e Quando Compensa de Verdade",
+    excerpt:
+      "Taxa de administração de 15% a 25% sobre o bem, correção anual pelo INCC (sobe mais que o IPCA), fundo de reserva, contemplação imprevisível e multa por desistência. A conta real vs financiamento e quando o consórcio compensa.",
+    content: "",
+    category: "invest",
+    subtopic: "planejamento",
+    image: consorcioInvestimento2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-22",
+    readTime: "13 min",
+    faq: [
+      { q: "Consórcio é investimento?", a: "Não. Consórcio é um mecanismo de aquisição planejada de bem — não gera rentabilidade e o dinheiro perde poder de compra até a contemplação. Só compensa se você já ia comprar o bem de qualquer jeito e não tem pressa. Comparar sempre com financiamento e investimento paralelo." },
+      { q: "Consórcio ou financiamento imobiliário em 2026?", a: "Consórcio compensa se você não tem pressa (horizonte 5–15 anos) e consegue dar um lance com FGTS para antecipar contemplação. Financiamento é melhor para quem precisa do imóvel agora. Fazer a conta: taxa total do consórcio (15%–25% + INCC) vs juros do financiamento (10%–12% aa + TR)." },
+      { q: "Posso desistir de um consórcio no meio?", a: "Sim, mas com custo. Você recebe as parcelas pagas de volta corrigidas pelo INCC, mas geralmente só ao final do grupo (10–15 anos depois) e com multa de 10%–30%. Sair antes é quase sempre o pior negócio possível." },
+    ],
+  },
+
+
   {
     id: "210",
     slug: "anime-verao-2026-guia-temporada",
@@ -1852,16 +1935,16 @@ export const blogPosts: BlogPost[] = [
   {
     id: "161",
     slug: "tesouro-prefixado-vs-ipca-2026",
-    title: "Tesouro Prefixado ou IPCA+? Qual Escolher com a Selic Caindo em 2026",
+    title: "Tesouro Prefixado vs IPCA+ em 2026: Qual Escolher? Simulações com Números Reais",
     excerpt:
-      "Com a Selic caindo de 15% para projeção de 12,25% até fim de 2026, a pergunta que todo investidor faz é: travo uma taxa prefixada agora ou fico protegido com IPCA+? Guia com simulações reais e recomendação por perfil.",
+      "Prefixado a 13,5% vs IPCA+7,5% com IPCA a 5,48%: os dois rendem quase igual em 3 anos. Acima de 5,58% de inflação, o IPCA+ vence; abaixo, o prefixado ganha. Análise com cenários reais, marcação a mercado, quando travar taxa e a estratégia híbrida que reduz risco nos dois cenários.",
     content: "",
     category: "invest",
     subtopic: "renda-fixa",
-    image: tesouro_prefixado_ipca_2026Img,
+    image: tesouroPrefixadoVsIpcaNovo2026Img,
     author: "VICIO<CODE>",
-    date: "2026-04-13",
-    readTime: "13 min",
+    date: "2026-07-22",
+    readTime: "14 min",
     faq: [
       {
         q: "Qual a diferença entre Tesouro Prefixado e Tesouro IPCA+?",
