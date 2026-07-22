@@ -28,7 +28,7 @@ import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 const TesouroPrefixadoVsIPCA2026 = () => {
   useEffect(() => {
     trackArticleRead(
-      "tesouro-prefixado-vs-ipca-mais-2026",
+      "tesouro-prefixado-vs-ipca-2026",
       "Tesouro Prefixado vs IPCA+ em 2026: Qual Escolher?",
       "invest"
     );
