@@ -575,6 +575,10 @@ const App = () => (
                 <Route path="/post/cambio-dolar-protecao-carteira-2026" element={<Suspense fallback={<div />}><CambioDolarProtecao2026 /></Suspense>} />
                 <Route path="/post/como-escolher-previdencia-privada-2026" element={<Suspense fallback={<div />}><ComoEscolherPrevidencia2026 /></Suspense>} />
                 <Route path="/post/consorcio-como-investimento-2026" element={<Suspense fallback={<div />}><ConsorcioInvestimento2026 /></Suspense>} />
+                {/* ── 23 Jul 2026 — Geek Games Retro Guides ── */}
+                <Route path="/post/silent-hill-2-remake-guia-completo-2024" element={<Suspense fallback={<div />}><SilentHill2RemakeGuia2024 /></Suspense>} />
+                <Route path="/post/metaphor-refantazio-guia-completo-2024" element={<Suspense fallback={<div />}><MetaphorReFantazioGuia2024 /></Suspense>} />
+
 
                 <Route path="*" element={<NotFound />} />
               </Routes>
