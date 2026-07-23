@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
@@ -25,7 +24,6 @@ const MetaphorReFantazioGuia2024 = () => {
 
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <BackNavigation category="geek" />
       <header className="mb-8">
         <div className="flex items-center gap-2 mb-4">
           <CategoryBadge category="geek" size="lg" />
@@ -374,16 +372,7 @@ const MetaphorReFantazioGuia2024 = () => {
           a base de fãs de JRPGs existe em todas as plataformas, e não apenas no
           PlayStation e no PC onde a Atlus historicamente concentrou seus lançamentos.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">
-            Você já viajou por Euchronia? 👑
-          </h3>
-          <p className="text-muted-foreground">
-            Qual Arquétipo é o seu favorito até agora? Conta nos comentários! 👇
-          </p>
-        </div>
-      </div>
+</div>
 
       <EditorialTake
         category="geek"

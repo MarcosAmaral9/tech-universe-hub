@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
@@ -25,7 +24,6 @@ const SilentHill2RemakeGuia2024 = () => {
 
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <BackNavigation category="geek" />
       <header className="mb-8">
         <div className="flex items-center gap-2 mb-4">
           <CategoryBadge category="geek" size="lg" />
@@ -334,16 +332,7 @@ const SilentHill2RemakeGuia2024 = () => {
           O remake chegou num momento em que os fãs queriam desesperadamente ter razão
           para confiar na Konami novamente — e a Bloober Team entregou exatamente isso.
         </p>
-
-        <div className="mt-10 p-6 bg-secondary rounded-xl text-center not-prose">
-          <h3 className="text-xl font-bold mb-2">
-            Você jogou o Silent Hill 2 original ou o Remake? 🌫️
-          </h3>
-          <p className="text-muted-foreground">
-            Qual experiência foi mais impactante para você? Conta nos comentários! 👇
-          </p>
-        </div>
-      </div>
+</div>
 
       <EditorialTake
         category="geek"
