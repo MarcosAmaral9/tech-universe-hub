@@ -203,6 +203,8 @@ import animeVerao2026Img from "@/assets/anime-verao-2026-guia-temporada.webp";
 import animeVerao2026DiasSemanaImg from "@/assets/anime-verao-2026-dias-semana.webp";
 import ghostOfYoteiImg from "@/assets/ghost-of-yotei-guia-completo.webp";
 import helldivers2Img from "@/assets/helldivers-2-guia-completo-2024.webp";
+import silentHill2RemakeImg from "@/assets/silent-hill-2-remake-guia-2024.webp";
+import metaphorReFantazioImg from "@/assets/metaphor-refantazio-guia-2024.webp";
 
 export const blogPosts: BlogPost[] = [
   // ── 12 Jul 2026 — Geek (Helldivers 2 · Arrowhead · Co-op) ─────────
@@ -6238,6 +6240,62 @@ export const blogPosts: BlogPost[] = [
       {
         q: "SaaS tradicional vai desaparecer?",
         a: "Não. Softwares com dado proprietário, compliance forte e integrações críticas seguem relevantes — mas ferramentas genéricas de workflow perdem espaço para agentes.",
+      },
+    ],
+  },
+  {
+    id: "218",
+    slug: "silent-hill-2-remake-guia-completo-2024",
+    title: "Silent Hill 2 Remake — Guia Completo: A História de James Sunderland, Centralia, a Bloober Team e Por Que o Remake Superou as Expectativas",
+    excerpt:
+      "Guia completo do Silent Hill 2 Remake (Bloober Team, 2024): a cidade real de Centralia, o original de 2001, Pyramid Head, o que mudou no remake nota 87 e dicas para aproveitar ao máximo.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: silentHill2RemakeImg,
+    author: "VICIO<CODE>",
+    date: "2026-07-23",
+    readTime: "18 min",
+    faq: [
+      {
+        q: "Quando foi lançado o Silent Hill 2 Remake?",
+        a: "Em 8 de outubro de 2024 para PS5 e PC, desenvolvido pela Bloober Team e publicado pela Konami.",
+      },
+      {
+        q: "O remake substitui o original de 2001?",
+        a: "Não. É uma releitura moderna com câmera sobre o ombro e combate renovado, mas o original de 2001 continua sendo referência histórica do gênero.",
+      },
+      {
+        q: "Centralia realmente existe?",
+        a: "Sim. Centralia, na Pensilvânia, é uma cidade quase abandonada por causa de um incêndio subterrâneo de carvão iniciado em 1962, inspiração visual direta para a série Silent Hill.",
+      },
+    ],
+  },
+  {
+    id: "219",
+    slug: "metaphor-refantazio-guia-completo-2024",
+    title: "Metaphor: ReFantazio — Guia Completo: A Eleição Real, o Sistema de Arquétipos, a Atlus e Por Que É o Melhor JRPG em Anos",
+    excerpt:
+      "Guia completo de Metaphor: ReFantazio (Atlus / Studio Zero, 2024): a eleição de Euchronia, o sistema de Arquétipos, o time de Katsura Hashino e por que o JRPG alcançou nota 94 no Metacritic.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: metaphorReFantazioImg,
+    author: "VICIO<CODE>",
+    date: "2026-07-23",
+    readTime: "18 min",
+    faq: [
+      {
+        q: "Quem desenvolveu Metaphor: ReFantazio?",
+        a: "O Studio Zero, divisão interna da Atlus formada por Katsura Hashino (diretor de Persona 3, 4 e 5), com Shigenori Soejima no design e Shoji Meguro na trilha.",
+      },
+      {
+        q: "Metaphor é parecido com Persona?",
+        a: "Herda o gerenciamento de tempo, Social Links e o combate por turnos com exploração de fraquezas, mas evolui com Arquétipos trocáveis por todos os personagens e combate em tempo real no mapa.",
+      },
+      {
+        q: "Em quais plataformas Metaphor: ReFantazio está disponível?",
+        a: "Foi lançado em 11 de outubro de 2024 para PS4, PS5, Xbox Series X|S e PC (Steam), o primeiro grande JRPG da Atlus com day-one no Xbox.",
       },
     ],
   },

@@ -277,6 +277,8 @@ const AcoesCrescimentoVsDividendos2026 = lazy(() => import("./pages/posts/AcoesC
 const CambioDolarProtecao2026        = lazy(() => import("./pages/posts/CambioDolarProtecao2026"));
 const ComoEscolherPrevidencia2026    = lazy(() => import("./pages/posts/ComoEscolherPrevidencia2026"));
 const ConsorcioInvestimento2026      = lazy(() => import("./pages/posts/ConsorcioInvestimento2026"));
+const SilentHill2RemakeGuia2024      = lazy(() => import("./pages/posts/SilentHill2RemakeGuia2024"));
+const MetaphorReFantazioGuia2024     = lazy(() => import("./pages/posts/MetaphorReFantazioGuia2024"));
 const BannerlordPortal               = lazy(() => import("./pages/posts/BannerlordPortal"));
 const BannerlordGuiaCompleto         = lazy(() => import("./pages/posts/BannerlordGuiaCompleto"));
 const BannerlordCulturasReinos       = lazy(() => import("./pages/posts/BannerlordCulturasReinos"));
@@ -573,6 +575,10 @@ const App = () => (
                 <Route path="/post/cambio-dolar-protecao-carteira-2026" element={<Suspense fallback={<div />}><CambioDolarProtecao2026 /></Suspense>} />
                 <Route path="/post/como-escolher-previdencia-privada-2026" element={<Suspense fallback={<div />}><ComoEscolherPrevidencia2026 /></Suspense>} />
                 <Route path="/post/consorcio-como-investimento-2026" element={<Suspense fallback={<div />}><ConsorcioInvestimento2026 /></Suspense>} />
+                {/* ── 23 Jul 2026 — Geek Games Retro Guides ── */}
+                <Route path="/post/silent-hill-2-remake-guia-completo-2024" element={<Suspense fallback={<div />}><SilentHill2RemakeGuia2024 /></Suspense>} />
+                <Route path="/post/metaphor-refantazio-guia-completo-2024" element={<Suspense fallback={<div />}><MetaphorReFantazioGuia2024 /></Suspense>} />
+
 
                 <Route path="*" element={<NotFound />} />
               </Routes>
