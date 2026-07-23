@@ -566,6 +566,17 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
   // ═══════════════════════════════════════════════════════════
   // CATEGORIA: GEEK — 52 posts
   // ═══════════════════════════════════════════════════════════
+  "/post/silent-hill-2-remake-guia-completo-2024": {
+    title: "Silent Hill 2 Remake — Guia Completo: Bloober Team, Centralia e Pyramid Head",
+    description: "Guia completo do Silent Hill 2 Remake (2024): a cidade real de Centralia (PA) que inspirou a série, o original de 2001 da Team Silent, Pyramid Head, Akira Yamaoka, o que a Bloober Team mudou e dicas para aproveitar o remake com nota 87 no Metacritic.",
+    keywords: "Silent Hill 2 Remake guia, Silent Hill 2 Remake 2024, Bloober Team Silent Hill, Centralia Pensilvânia Silent Hill, James Sunderland, Pyramid Head, Akira Yamaoka Silent Hill, Konami Silent Hill 2, horror psicológico PS5, review Silent Hill 2 Remake, Silent Hill 2 finais, remake horror clássico",
+  },
+  "/post/metaphor-refantazio-guia-completo-2024": {
+    title: "Metaphor: ReFantazio — Guia Completo: Eleição, Arquétipos e Studio Zero (Atlus)",
+    description: "Guia completo de Metaphor: ReFantazio (Atlus / Studio Zero, 2024): a eleição de Euchronia, o sistema de Arquétipos, Katsura Hashino, Shoji Meguro, Shigenori Soejima, política do medo e por que o JRPG alcançou nota 94 no Metacritic em PS4/PS5/Xbox/PC.",
+    keywords: "Metaphor ReFantazio guia, Metaphor ReFantazio 2024, Studio Zero Atlus, Katsura Hashino, Sistema Arquétipos Metaphor, Shoji Meguro Metaphor, Shigenori Soejima, JRPG 2024, eleição Euchronia, Persona sucessor, Metaphor Metacritic 94, review Metaphor ReFantazio, JRPG Xbox PS5, tribos Elda",
+  },
+
   "/post/hell-mode-gamer-isekai-guia-completo": {
     title: "Hell Mode: O Gamer com Dificuldade Máxima no Isekai — Guia 2026",
     description: "Hell Mode anime Yokohama Animation Lab (jan 2026, HIDIVE/Prime Video): Allen reencarnado no modo mais difícil com 100x mais XP necessário. Hamuo/Earth Star, mangá Enji Tetta, arcos, personagens e sistema de invocação.",
