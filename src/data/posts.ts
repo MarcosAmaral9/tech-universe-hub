@@ -205,6 +205,9 @@ import ghostOfYoteiImg from "@/assets/ghost-of-yotei-guia-completo.webp";
 import helldivers2Img from "@/assets/helldivers-2-guia-completo-2024.webp";
 import silentHill2RemakeImg from "@/assets/silent-hill-2-remake-guia-2024.webp";
 import metaphorReFantazioImg from "@/assets/metaphor-refantazio-guia-2024.webp";
+import ff7RebirthImg from "@/assets/final-fantasy-vii-rebirth-guia-2024.webp";
+import dragonsDogma2Img from "@/assets/dragons-dogma-2-guia-2024.webp";
+import balatroImg from "@/assets/balatro-guia-completo-2024.webp";
 
 export const blogPosts: BlogPost[] = [
   // ── 12 Jul 2026 — Geek (Helldivers 2 · Arrowhead · Co-op) ─────────
