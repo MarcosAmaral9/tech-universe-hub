@@ -279,6 +279,9 @@ const ComoEscolherPrevidencia2026    = lazy(() => import("./pages/posts/ComoEsco
 const ConsorcioInvestimento2026      = lazy(() => import("./pages/posts/ConsorcioInvestimento2026"));
 const SilentHill2RemakeGuia2024      = lazy(() => import("./pages/posts/SilentHill2RemakeGuia2024"));
 const MetaphorReFantazioGuia2024     = lazy(() => import("./pages/posts/MetaphorReFantazioGuia2024"));
+const FinalFantasyVIIRebirthGuia2024 = lazy(() => import("./pages/posts/FinalFantasyVIIRebirthGuia2024"));
+const DragonsDogma2Guia2024          = lazy(() => import("./pages/posts/DragonsDogma2Guia2024"));
+const BalatroGuia2024                = lazy(() => import("./pages/posts/BalatroGuia2024"));
 const BannerlordPortal               = lazy(() => import("./pages/posts/BannerlordPortal"));
 const BannerlordGuiaCompleto         = lazy(() => import("./pages/posts/BannerlordGuiaCompleto"));
 const BannerlordCulturasReinos       = lazy(() => import("./pages/posts/BannerlordCulturasReinos"));
