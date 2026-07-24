@@ -590,6 +590,13 @@ const App = () => (
                 <Route path="/post/dragons-dogma-2-guia-completo-2024" element={<Suspense fallback={<div />}><DragonsDogma2Guia2024 /></Suspense>} />
                 <Route path="/post/balatro-guia-completo-2024" element={<Suspense fallback={<div />}><BalatroGuia2024 /></Suspense>} />
 
+                {/* ── 24 Jul 2026 — IA ── */}
+                <Route path="/post/vibe-coding-2026-criar-apps-sem-programar" element={<Suspense fallback={<div />}><VibeCoding2026 /></Suspense>} />
+                <Route path="/post/perplexity-ai-2026-buscador-ia-guia" element={<Suspense fallback={<div />}><PerplexityAI2026 /></Suspense>} />
+                <Route path="/post/grok-3-xai-modelo-elon-musk-2026" element={<Suspense fallback={<div />}><Grok3XAI2026 /></Suspense>} />
+
+
+
 
                 <Route path="*" element={<NotFound />} />
               </Routes>
