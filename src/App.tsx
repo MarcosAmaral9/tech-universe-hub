@@ -282,6 +282,9 @@ const MetaphorReFantazioGuia2024     = lazy(() => import("./pages/posts/Metaphor
 const FinalFantasyVIIRebirthGuia2024 = lazy(() => import("./pages/posts/FinalFantasyVIIRebirthGuia2024"));
 const DragonsDogma2Guia2024          = lazy(() => import("./pages/posts/DragonsDogma2Guia2024"));
 const BalatroGuia2024                = lazy(() => import("./pages/posts/BalatroGuia2024"));
+const VibeCoding2026                 = lazy(() => import("./pages/posts/VibeCoding2026"));
+const PerplexityAI2026               = lazy(() => import("./pages/posts/PerplexityAI2026"));
+const Grok3XAI2026                   = lazy(() => import("./pages/posts/Grok3XAI2026"));
 const BannerlordPortal               = lazy(() => import("./pages/posts/BannerlordPortal"));
 const BannerlordGuiaCompleto         = lazy(() => import("./pages/posts/BannerlordGuiaCompleto"));
 const BannerlordCulturasReinos       = lazy(() => import("./pages/posts/BannerlordCulturasReinos"));
