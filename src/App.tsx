@@ -582,6 +582,11 @@ const App = () => (
                 <Route path="/post/silent-hill-2-remake-guia-completo-2024" element={<Suspense fallback={<div />}><SilentHill2RemakeGuia2024 /></Suspense>} />
                 <Route path="/post/metaphor-refantazio-guia-completo-2024" element={<Suspense fallback={<div />}><MetaphorReFantazioGuia2024 /></Suspense>} />
 
+                {/* ── 24 Jul 2026 — Geek Games ── */}
+                <Route path="/post/final-fantasy-vii-rebirth-guia-completo-2024" element={<Suspense fallback={<div />}><FinalFantasyVIIRebirthGuia2024 /></Suspense>} />
+                <Route path="/post/dragons-dogma-2-guia-completo-2024" element={<Suspense fallback={<div />}><DragonsDogma2Guia2024 /></Suspense>} />
+                <Route path="/post/balatro-guia-completo-2024" element={<Suspense fallback={<div />}><BalatroGuia2024 /></Suspense>} />
+
 
                 <Route path="*" element={<NotFound />} />
               </Routes>
