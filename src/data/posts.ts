@@ -208,6 +208,9 @@ import metaphorReFantazioImg from "@/assets/metaphor-refantazio-guia-2024.webp";
 import ff7RebirthImg from "@/assets/final-fantasy-vii-rebirth-guia-2024.webp";
 import dragonsDogma2Img from "@/assets/dragons-dogma-2-guia-2024.webp";
 import balatroImg from "@/assets/balatro-guia-completo-2024.webp";
+import vibeCoding2026Img from "@/assets/vibe-coding-2026-criar-apps-sem-programar.webp";
+import perplexityAi2026Img from "@/assets/perplexity-ai-2026-buscador-ia-guia.webp";
+import grok3XAI2026Img from "@/assets/grok-3-xai-modelo-elon-musk-2026.webp";
 
 export const blogPosts: BlogPost[] = [
   // ── 12 Jul 2026 — Geek (Helldivers 2 · Arrowhead · Co-op) ─────────
@@ -6383,6 +6386,87 @@ export const blogPosts: BlogPost[] = [
       {
         q: "Em quais plataformas Balatro está disponível?",
         a: "Lançado em 20 de fevereiro de 2024 para PC (Steam), PS4, PS5, Xbox, Switch, iOS e Android — publicado pela Playstack.",
+      },
+    ],
+  },
+  {
+    id: "223",
+    slug: "vibe-coding-2026-criar-apps-sem-programar",
+    title: "Vibe Coding 2026: Como Criar Apps com IA Sem Saber Programar",
+    excerpt:
+      "Guia completo do vibe coding em 2026: como Cursor, Bolt.new, Replit Agent, v0.dev e Lovable permitem criar apps completos apenas descrevendo em linguagem natural — com tutoriais, riscos, comparativo e recomendações para o Brasil.",
+    content: "",
+    category: "ia",
+    image: vibeCoding2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-24",
+    readTime: "13 min",
+    faq: [
+      {
+        q: "Preciso saber programar para fazer vibe coding?",
+        a: "Não para protótipos simples, mas entender lógica básica ajuda a descrever o que quer e a debugar quando algo dá errado. Quem tem base técnica usa o vibe coding de forma muito mais eficiente.",
+      },
+      {
+        q: "Qual ferramenta de vibe coding é melhor para brasileiros em 2026?",
+        a: "Para iniciantes: Bolt.new (interface simples, deploy fácil). Para quem tem base técnica: Cursor (melhor qualidade de código). Para quem quer tudo na nuvem sem cartão internacional: Replit (plano gratuito mais generoso).",
+      },
+      {
+        q: "O código gerado é bom o suficiente para produção?",
+        a: "Para MVPs de baixo risco, sim, com ajustes. Para sistemas críticos com dados sensíveis ou alto volume, precisa de revisão de um desenvolvedor experiente, especialmente em segurança e escalabilidade.",
+      },
+    ],
+  },
+  {
+    id: "224",
+    slug: "perplexity-ai-2026-buscador-ia-guia",
+    title: "Perplexity AI 2026: O Guia Completo do Buscador com IA que Desafia o Google",
+    excerpt:
+      "Guia completo do Perplexity AI em 2026: 15 milhões de usuários diários, comparativo real com Google Search e ChatGPT, planos Free e Pro, recursos como Spaces, Pages e o navegador Comet — e onde ele ainda perde.",
+    content: "",
+    category: "ia",
+    image: perplexityAi2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-24",
+    readTime: "12 min",
+    faq: [
+      {
+        q: "Perplexity é melhor que o Google?",
+        a: "Para pesquisa profunda com citação de fontes, sim. Para buscas transacionais (comprar, mapa, clima) e resultados locais, o Google continua superior. São ferramentas complementares em 2026.",
+      },
+      {
+        q: "Vale a pena assinar o Perplexity Pro?",
+        a: "Vale para quem faz pesquisa profissional ou acadêmica com frequência. O plano Pro dá acesso a GPT-4, Claude e Gemini em um só lugar, além de buscas ilimitadas e recursos como Pages.",
+      },
+      {
+        q: "O Perplexity substitui o ChatGPT?",
+        a: "Não. Perplexity é otimizado para responder perguntas com fontes atualizadas da web, enquanto ChatGPT é melhor para geração criativa, código e tarefas conversacionais complexas.",
+      },
+    ],
+  },
+  {
+    id: "225",
+    slug: "grok-3-xai-modelo-elon-musk-2026",
+    title: "Grok 3 da xAI: O Modelo de IA da Elon Musk que Surpreendeu o Mercado em 2025",
+    excerpt:
+      "Análise completa do Grok 3 da xAI: benchmarks contra GPT-4o, Claude e Gemini, o cluster Colossus com 200 mil GPUs, planos e preços, controvérsias, viés e como usar via X Premium e API — o que funciona e o que ainda decepciona.",
+    content: "",
+    category: "ia",
+    image: grok3XAI2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-24",
+    readTime: "13 min",
+    faq: [
+      {
+        q: "O que é a xAI e quem é o dono?",
+        a: "xAI é a empresa de inteligência artificial fundada por Elon Musk em julho de 2023, com sede em San Francisco. É separada da Tesla e da SpaceX, embora compartilhe talento técnico e infraestrutura.",
+      },
+      {
+        q: "Grok 3 é melhor que o GPT-4o e o Claude?",
+        a: "Em fevereiro de 2025 assumiu liderança em benchmarks específicos de matemática (AIME) e ciência (GPQA), mas GPT-4o e Claude ainda são superiores em raciocínio geral, escrita longa e alinhamento.",
+      },
+      {
+        q: "Como usar o Grok 3 no Brasil?",
+        a: "Via assinatura X Premium+ (aprox. US$ 40/mês) ou pela API da xAI (grok.com). Aceita português com boa qualidade, mas a maioria dos benchmarks e recursos avançados são otimizados em inglês.",
       },
     ],
   },

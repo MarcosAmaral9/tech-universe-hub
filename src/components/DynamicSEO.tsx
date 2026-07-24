@@ -591,6 +591,22 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Guia completo de Balatro (LocalThunk / Playstack, 2024): o roguelike de pôquer indie que virou fenômeno mundial, o desenvolvedor anônimo canadense, os Jokers, os Decks, Blinds e estratégias para chegar ao Ante 8 e além no GOTY 2024.",
     keywords: "Balatro guia, Balatro LocalThunk, roguelike pôquer, Balatro Jokers, Balatro Ante 8, deck building Balatro, Balatro Playstack, indie roguelike 2024, Balatro GOTY 2024, Balatro Steam PS5 Switch, dicas Balatro, review Balatro, Balatro Boss Blind, Balatro Planet Cards",
   },
+  "/post/vibe-coding-2026-criar-apps-sem-programar": {
+    title: "Vibe Coding 2026: Como Criar Apps com IA Sem Saber Programar",
+    description: "Guia completo do vibe coding em 2026: Cursor, Bolt.new, Replit Agent, v0.dev e Lovable — como criar apps descrevendo em linguagem natural, tutoriais passo a passo, comparativo de preços, riscos, segurança e recomendações para brasileiros.",
+    keywords: "vibe coding, vibe coding 2026, criar app sem programar, Cursor IDE, Bolt.new, Replit Agent, v0.dev, Lovable.dev, Andrej Karpathy vibe coding, programar com IA, Claude 4 Sonnet código, IA para desenvolvedores, IA para iniciantes programação, Y Combinator IA, GitHub Copilot Workspace",
+  },
+  "/post/perplexity-ai-2026-buscador-ia-guia": {
+    title: "Perplexity AI 2026: Guia Completo do Buscador com IA que Desafia o Google",
+    description: "Guia completo do Perplexity AI em 2026: comparativo real com Google e ChatGPT, planos Free e Pro, recursos Spaces, Pages e navegador Comet, casos de uso profissional e acadêmico e as limitações que ainda existem.",
+    keywords: "Perplexity AI, Perplexity 2026, buscador com IA, Perplexity vs Google, Perplexity vs ChatGPT, Perplexity Pro preço, Perplexity Spaces, Perplexity Pages, navegador Comet Perplexity, answer engine, IA de pesquisa, buscador IA Brasil, Aravind Srinivas, GPT-4 Perplexity, Claude Perplexity",
+  },
+  "/post/grok-3-xai-modelo-elon-musk-2026": {
+    title: "Grok 3 da xAI: O Modelo de IA da Elon Musk — Guia e Análise 2026",
+    description: "Análise completa do Grok 3 da xAI: benchmarks contra GPT-4o, Claude e Gemini, o cluster Colossus com 200 mil GPUs em Memphis, planos e preços, controvérsias, viés político e como usar via X Premium+ e API grok.com.",
+    keywords: "Grok 3, xAI Grok, Elon Musk IA, Grok 3 benchmarks, Grok vs GPT-4o, Grok vs Claude, cluster Colossus xAI, xAI Memphis GPU, X Premium Grok, API grok.com, Grok 3 AIME, Grok 3 GPQA, IA Elon Musk, modelo xAI 2025, Grok português Brasil",
+  },
+
 
 
 
