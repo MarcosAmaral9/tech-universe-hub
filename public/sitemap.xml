@@ -2,7 +2,7 @@
 <!--
   Sitemap do VICIO<CODE> — viciocode.com
   Gerado automaticamente em: 2026-07-24
-  Total de URLs: 223 (26 páginas + 197 posts)
+  Total de URLs: 226 (26 páginas + 200 posts)
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -1339,6 +1339,24 @@
   </url>
   <url>
     <loc>https://viciocode.com/post/balatro-guia-completo-2024</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/vibe-coding-2026-criar-apps-sem-programar</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/perplexity-ai-2026-buscador-ia-guia</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/grok-3-xai-modelo-elon-musk-2026</loc>
     <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
