@@ -249,7 +249,7 @@ const BalatraGuia2024 = () => {
             },
             {
               titulo: "🃏 Priorize Jokers que escalam com o tempo",
-              desc: "Jokers que acumulam tokens ao longo da partida (como o Joker que adiciona multiplicador por cada mão de Flush jogada anteriormente) ficam exponencialmente mais fortes nos Antes finais. Jokers de efeito fixo são úteis cedo mas perdem relevância quando os requisitos de pontuação escalam."],
+              desc: "Jokers que acumulam tokens ao longo da partida (como o Joker que adiciona multiplicador por cada mão de Flush jogada anteriormente) ficam exponencialmente mais fortes nos Antes finais. Jokers de efeito fixo são úteis cedo mas perdem relevância quando os requisitos de pontuação escalam.",
             },
             {
               titulo: "⚠️ Leia a Boss Blind antes de entrar",
