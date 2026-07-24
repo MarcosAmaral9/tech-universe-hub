@@ -576,6 +576,23 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Guia completo de Metaphor: ReFantazio (Atlus / Studio Zero, 2024): a eleição de Euchronia, o sistema de Arquétipos, Katsura Hashino, Shoji Meguro, Shigenori Soejima, política do medo e por que o JRPG alcançou nota 94 no Metacritic em PS4/PS5/Xbox/PC.",
     keywords: "Metaphor ReFantazio guia, Metaphor ReFantazio 2024, Studio Zero Atlus, Katsura Hashino, Sistema Arquétipos Metaphor, Shoji Meguro Metaphor, Shigenori Soejima, JRPG 2024, eleição Euchronia, Persona sucessor, Metaphor Metacritic 94, review Metaphor ReFantazio, JRPG Xbox PS5, tribos Elda",
   },
+  "/post/final-fantasy-vii-rebirth-guia-completo-2024": {
+    title: "Final Fantasy VII Rebirth — Guia Completo: Trilogia Remake, Cloud e Mundo Aberto",
+    description: "Guia completo de Final Fantasy VII Rebirth (Square Enix, 2024): o original de 1997, a trilogia Remake, o mundo aberto além de Midgar, combate ATB híbrido, Cloud, Aerith, Sephiroth e por que o JRPG alcançou nota 92 no Metacritic em PS5 e PC.",
+    keywords: "Final Fantasy VII Rebirth guia, FF7 Rebirth 2024, Square Enix FF7, trilogia Remake FFVII, Cloud Strife, Aerith Gainsborough, Sephiroth, Tetsuya Nomura, Yoshinori Kitase, JRPG PS5 2024, FF7 Rebirth Metacritic 92, mundo aberto Final Fantasy, FF7 Remake continuação, review FFVII Rebirth",
+  },
+  "/post/dragons-dogma-2-guia-completo-2024": {
+    title: "Dragon's Dogma 2 — Guia Completo: Pawns, 10 Vocações e Hideaki Itsuno (Capcom)",
+    description: "Guia completo de Dragon's Dogma 2 (Capcom, 2024): a espera de doze anos por Hideaki Itsuno, o sistema de Pawns compartilhados online, as 10 Vocações, o mundo aberto de Vermund e Battahl, RE Engine e review em PS5, Xbox e PC.",
+    keywords: "Dragon's Dogma 2 guia, Dragon's Dogma 2 Capcom, Hideaki Itsuno Dragon's Dogma, sistema Pawns online, vocações Dragon's Dogma 2, Vermund Battahl, RE Engine Capcom, action RPG mundo aberto 2024, Arisen Dragon's Dogma, DD2 PS5 Xbox PC, review Dragon's Dogma 2, guia vocações",
+  },
+  "/post/balatro-guia-completo-2024": {
+    title: "Balatro — Guia Completo: Roguelike de Pôquer, LocalThunk e Ante 8",
+    description: "Guia completo de Balatro (LocalThunk / Playstack, 2024): o roguelike de pôquer indie que virou fenômeno mundial, o desenvolvedor anônimo canadense, os Jokers, os Decks, Blinds e estratégias para chegar ao Ante 8 e além no GOTY 2024.",
+    keywords: "Balatro guia, Balatro LocalThunk, roguelike pôquer, Balatro Jokers, Balatro Ante 8, deck building Balatro, Balatro Playstack, indie roguelike 2024, Balatro GOTY 2024, Balatro Steam PS5 Switch, dicas Balatro, review Balatro, Balatro Boss Blind, Balatro Planet Cards",
+  },
+
+
 
   "/post/hell-mode-gamer-isekai-guia-completo": {
     title: "Hell Mode: O Gamer com Dificuldade Máxima no Isekai — Guia 2026",
