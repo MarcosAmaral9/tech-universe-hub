@@ -279,6 +279,9 @@ const ComoEscolherPrevidencia2026    = lazy(() => import("./pages/posts/ComoEsco
 const ConsorcioInvestimento2026      = lazy(() => import("./pages/posts/ConsorcioInvestimento2026"));
 const SilentHill2RemakeGuia2024      = lazy(() => import("./pages/posts/SilentHill2RemakeGuia2024"));
 const MetaphorReFantazioGuia2024     = lazy(() => import("./pages/posts/MetaphorReFantazioGuia2024"));
+const FinalFantasyVIIRebirthGuia2024 = lazy(() => import("./pages/posts/FinalFantasyVIIRebirthGuia2024"));
+const DragonsDogma2Guia2024          = lazy(() => import("./pages/posts/DragonsDogma2Guia2024"));
+const BalatroGuia2024                = lazy(() => import("./pages/posts/BalatroGuia2024"));
 const BannerlordPortal               = lazy(() => import("./pages/posts/BannerlordPortal"));
 const BannerlordGuiaCompleto         = lazy(() => import("./pages/posts/BannerlordGuiaCompleto"));
 const BannerlordCulturasReinos       = lazy(() => import("./pages/posts/BannerlordCulturasReinos"));
@@ -578,6 +581,11 @@ const App = () => (
                 {/* ── 23 Jul 2026 — Geek Games Retro Guides ── */}
                 <Route path="/post/silent-hill-2-remake-guia-completo-2024" element={<Suspense fallback={<div />}><SilentHill2RemakeGuia2024 /></Suspense>} />
                 <Route path="/post/metaphor-refantazio-guia-completo-2024" element={<Suspense fallback={<div />}><MetaphorReFantazioGuia2024 /></Suspense>} />
+
+                {/* ── 24 Jul 2026 — Geek Games ── */}
+                <Route path="/post/final-fantasy-vii-rebirth-guia-completo-2024" element={<Suspense fallback={<div />}><FinalFantasyVIIRebirthGuia2024 /></Suspense>} />
+                <Route path="/post/dragons-dogma-2-guia-completo-2024" element={<Suspense fallback={<div />}><DragonsDogma2Guia2024 /></Suspense>} />
+                <Route path="/post/balatro-guia-completo-2024" element={<Suspense fallback={<div />}><BalatroGuia2024 /></Suspense>} />
 
 
                 <Route path="*" element={<NotFound />} />

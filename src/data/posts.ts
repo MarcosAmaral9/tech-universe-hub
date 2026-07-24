@@ -205,6 +205,9 @@ import ghostOfYoteiImg from "@/assets/ghost-of-yotei-guia-completo.webp";
 import helldivers2Img from "@/assets/helldivers-2-guia-completo-2024.webp";
 import silentHill2RemakeImg from "@/assets/silent-hill-2-remake-guia-2024.webp";
 import metaphorReFantazioImg from "@/assets/metaphor-refantazio-guia-2024.webp";
+import ff7RebirthImg from "@/assets/final-fantasy-vii-rebirth-guia-2024.webp";
+import dragonsDogma2Img from "@/assets/dragons-dogma-2-guia-2024.webp";
+import balatroImg from "@/assets/balatro-guia-completo-2024.webp";
 
 export const blogPosts: BlogPost[] = [
   // ── 12 Jul 2026 — Geek (Helldivers 2 · Arrowhead · Co-op) ─────────
@@ -6296,6 +6299,90 @@ export const blogPosts: BlogPost[] = [
       {
         q: "Em quais plataformas Metaphor: ReFantazio está disponível?",
         a: "Foi lançado em 11 de outubro de 2024 para PS4, PS5, Xbox Series X|S e PC (Steam), o primeiro grande JRPG da Atlus com day-one no Xbox.",
+      },
+    ],
+  },
+  {
+    id: "220",
+    slug: "final-fantasy-vii-rebirth-guia-completo-2024",
+    title: "Final Fantasy VII Rebirth — Guia Completo: O Original de 1997, a Trilogia Remake e Tudo Sobre a Segunda Parte da Saga de Cloud Strife",
+    excerpt:
+      "Guia completo de Final Fantasy VII Rebirth (Square Enix, 2024): o original de 1997, a trilogia Remake, o mundo aberto além de Midgar, o combate ATB híbrido e por que o JRPG alcançou nota 92 no Metacritic.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: ff7RebirthImg,
+    author: "VICIO<CODE>",
+    date: "2026-07-24",
+    readTime: "19 min",
+    faq: [
+      {
+        q: "Preciso ter jogado Final Fantasy VII Remake para entender Rebirth?",
+        a: "É altamente recomendado. Rebirth é a segunda parte da trilogia Remake e continua diretamente da fuga de Midgar, assumindo que o jogador conhece o elenco principal e as mudanças de enredo introduzidas em 2020.",
+      },
+      {
+        q: "Rebirth é fiel ao Final Fantasy VII original de 1997?",
+        a: "Cobre o arco entre a saída de Midgar e o final do primeiro disco do original, mas adiciona subtramas, muda cenas-chave e expande o mundo com regiões inteiras exploráveis em open world.",
+      },
+      {
+        q: "Em quais plataformas Final Fantasy VII Rebirth está disponível?",
+        a: "Foi lançado em 29 de fevereiro de 2024 como exclusivo temporário de PS5 e chegou ao PC (Steam/Epic) em janeiro de 2025.",
+      },
+    ],
+  },
+  {
+    id: "221",
+    slug: "dragons-dogma-2-guia-completo-2024",
+    title: "Dragon's Dogma 2 — Guia Completo: Os 12 Anos de Espera de Itsuno, o Sistema de Pawns, as 10 Vocações e Tudo Que Você Precisa Saber",
+    excerpt:
+      "Guia completo de Dragon's Dogma 2 (Capcom, 2024): a espera de doze anos por Hideaki Itsuno, o sistema de Pawns compartilhados online, as 10 Vocações e o mundo aberto de Vermund e Battahl.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: dragonsDogma2Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-24",
+    readTime: "17 min",
+    faq: [
+      {
+        q: "Preciso ter jogado o Dragon's Dogma original para aproveitar o 2?",
+        a: "Não. A história é autocontida, mas veteranos reconhecem referências à mitologia do Arisen, dos Pawns e do Dragão que atravessam ambos os jogos.",
+      },
+      {
+        q: "O que são Pawns em Dragon's Dogma 2?",
+        a: "Companheiros de IA que o jogador cria e compartilha assincronamente com outros jogadores online. Cada party leva o Pawn principal e dois Pawns emprestados de outros Arisen, sem multiplayer em tempo real.",
+      },
+      {
+        q: "Em quais plataformas Dragon's Dogma 2 está disponível?",
+        a: "Lançado em 22 de março de 2024 para PS5, Xbox Series X|S e PC (Steam), rodando na RE Engine da Capcom.",
+      },
+    ],
+  },
+  {
+    id: "222",
+    slug: "balatro-guia-completo-2024",
+    title: "Balatro — Guia Completo: O Roguelike de Pôquer Que Conquistou o Mundo, o Dev Anônimo e Como Chegar ao Ante 8",
+    excerpt:
+      "Guia completo de Balatro (LocalThunk, 2024): o roguelike de pôquer indie que virou fenômeno, o desenvolvedor anônimo, os Jokers, os Decks e estratégias para chegar ao Ante 8 e além.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: balatroImg,
+    author: "VICIO<CODE>",
+    date: "2026-07-24",
+    readTime: "15 min",
+    faq: [
+      {
+        q: "Balatro é um jogo de aposta ou pôquer real?",
+        a: "Não. Usa as mãos do pôquer (par, trinca, flush) como sistema de pontuação em um roguelike deck-building. Não há apostas reais nem jogadores adversários.",
+      },
+      {
+        q: "Quem desenvolveu Balatro?",
+        a: "LocalThunk, um desenvolvedor solo canadense anônimo que manteve a identidade privada mesmo após o sucesso mundial e indicação ao GOTY 2024.",
+      },
+      {
+        q: "Em quais plataformas Balatro está disponível?",
+        a: "Lançado em 20 de fevereiro de 2024 para PC (Steam), PS4, PS5, Xbox, Switch, iOS e Android — publicado pela Playstack.",
       },
     ],
   },
