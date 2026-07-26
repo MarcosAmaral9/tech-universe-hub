@@ -59,6 +59,7 @@ const Layout = ({ children, stickyMobileBreadcrumb }: LayoutProps) => {
     <div className="min-h-screen flex flex-col">
       <DynamicSEO />
       <ReadingProgressBar />
+      <ScrollbarTheme />
       <Header />
       <main className="flex-1">
         {/* Breadcrumb global: sempre no topo de toda página, acima do título.
