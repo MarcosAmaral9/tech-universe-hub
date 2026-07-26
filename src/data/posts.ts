@@ -211,6 +211,9 @@ import balatroImg from "@/assets/balatro-guia-completo-2024.webp";
 import vibeCoding2026Img from "@/assets/vibe-coding-2026-criar-apps-sem-programar.webp";
 import perplexityAi2026Img from "@/assets/perplexity-ai-2026-buscador-ia-guia.webp";
 import grok3XAI2026Img from "@/assets/grok-3-xai-modelo-elon-musk-2026.webp";
+import mushokuTenseiT32026Img from "@/assets/mushoku-tensei-3-temporada-2026.webp";
+import bleachTybwParte4Img from "@/assets/bleach-tybw-parte-4-the-calamity-2026.webp";
+import youjoSenkiT22026Img from "@/assets/youjo-senki-temporada-2-2026.webp";
 
 export const blogPosts: BlogPost[] = [
   // ── 12 Jul 2026 — Geek (Helldivers 2 · Arrowhead · Co-op) ─────────
@@ -6467,6 +6470,90 @@ export const blogPosts: BlogPost[] = [
       {
         q: "Como usar o Grok 3 no Brasil?",
         a: "Via assinatura X Premium+ (aprox. US$ 40/mês) ou pela API da xAI (grok.com). Aceita português com boa qualidade, mas a maioria dos benchmarks e recursos avançados são otimizados em inglês.",
+      },
+    ],
+  },
+  {
+    id: "226",
+    slug: "mushoku-tensei-3-temporada-2026",
+    title: "Mushoku Tensei 3 Temporada: Guia Completo — Arcos, Personagens, Episódios e Onde Assistir",
+    excerpt:
+      "Guia completo de Mushoku Tensei III (2026): data de estreia, arcos adaptados, personagens novos, número de episódios, o trabalho do Studio Bind, abertura e onde assistir com legendas e dublagem PT-BR.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: mushokuTenseiT32026Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-26",
+    readTime: "16 min",
+    faq: [
+      {
+        q: "Onde assistir Mushoku Tensei 3ª temporada no Brasil?",
+        a: "A Crunchyroll mantém os direitos de simulcast da franquia no Brasil, com legendas em português e dublagem PT-BR chegando algumas semanas após a estreia dos episódios legendados.",
+      },
+      {
+        q: "Preciso rever as temporadas anteriores antes da 3ª?",
+        a: "É recomendável revisar ao menos a segunda metade da 2ª temporada, já que a nova fase parte diretamente das consequências emocionais e narrativas daquele arco.",
+      },
+      {
+        q: "Qual estúdio produz Mushoku Tensei III?",
+        a: "O Studio Bind, criado especificamente para adaptar a obra, segue responsável pela produção, mantendo o alto padrão de direção de arte e animação das temporadas anteriores.",
+      },
+    ],
+  },
+  {
+    id: "227",
+    slug: "bleach-tybw-parte-4-the-calamity-2026",
+    title: "Bleach TYBW Parte 4 — The Calamity: Guia Completo da Fase Final (2026)",
+    excerpt:
+      "Guia completo de Bleach: Thousand-Year Blood War Parte 4 – The Calamity: data de estreia, episódios, onde assistir, abertura e encerramento e o que esperar do confronto final entre Ichigo e Yhwach.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: bleachTybwParte4Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-26",
+    readTime: "15 min",
+    faq: [
+      {
+        q: "Onde assistir Bleach TYBW Parte 4 no Brasil?",
+        a: "A Parte 4 segue no Disney+ no Brasil, com episódios semanais legendados e dublagem em português adicionada ao catálogo após a exibição original.",
+      },
+      {
+        q: "A Parte 4 encerra a saga Thousand-Year Blood War?",
+        a: "Sim, The Calamity é anunciada como a fase final da adaptação, cobrindo o desfecho do confronto entre a Soul Society e os Quincy liderados por Yhwach.",
+      },
+      {
+        q: "Preciso ler o mangá para entender a Parte 4?",
+        a: "Não. A adaptação cobre o arco completo e ainda expande cenas que o mangá tratou de forma resumida, então assistir às partes anteriores é suficiente.",
+      },
+    ],
+  },
+  {
+    id: "228",
+    slug: "youjo-senki-temporada-2-2026",
+    title: "Youjo Senki Temporada 2 (2026): Guia Completo — Tanya Volta à Guerra",
+    excerpt:
+      "Guia completo de Youjo Senki 2ª temporada: data de estreia, produção do Studio NUT, abertura, elenco, personagens novos, arco narrativo adaptado e onde assistir no Brasil.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: youjoSenkiT22026Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-26",
+    readTime: "14 min",
+    faq: [
+      {
+        q: "Quantos anos se passaram desde a 1ª temporada de Youjo Senki?",
+        a: "A primeira temporada foi ao ar em 2017, então a continuação chega quase uma década depois, contando ainda com o filme de 2019 como ponte entre as fases.",
+      },
+      {
+        q: "Preciso assistir ao filme antes da 2ª temporada?",
+        a: "Sim, é altamente recomendado. O longa apresenta personagens e conflitos que a nova temporada retoma diretamente.",
+      },
+      {
+        q: "Onde assistir Youjo Senki 2 no Brasil?",
+        a: "A franquia está disponível em serviços de streaming de anime com catálogo no Brasil; confira a página oficial da obra para o simulcast da temporada atual.",
       },
     ],
   },

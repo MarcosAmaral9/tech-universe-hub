@@ -606,6 +606,21 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Análise completa do Grok 3 da xAI: benchmarks contra GPT-4o, Claude e Gemini, o cluster Colossus com 200 mil GPUs em Memphis, planos e preços, controvérsias, viés político e como usar via X Premium+ e API grok.com.",
     keywords: "Grok 3, xAI Grok, Elon Musk IA, Grok 3 benchmarks, Grok vs GPT-4o, Grok vs Claude, cluster Colossus xAI, xAI Memphis GPU, X Premium Grok, API grok.com, Grok 3 AIME, Grok 3 GPQA, IA Elon Musk, modelo xAI 2025, Grok português Brasil",
   },
+  "/post/mushoku-tensei-3-temporada-2026": {
+    title: "Mushoku Tensei 3ª Temporada 2026: Guia Completo | VICIO<CODE>",
+    description: "Guia completo de Mushoku Tensei III (2026): data de estreia, arcos adaptados, personagens novos, episódios, Studio Bind, abertura e onde assistir com dublagem PT-BR.",
+    keywords: "mushoku tensei 3 temporada, mushoku tensei III 2026, jobless reincarnation season 3, rudeus greyrat arco migração, eris anime 2026, studio bind, mushoku tensei crunchyroll, mushoku tensei dublado, anime isekai 2026, mushoku tensei episódios, mushoku tensei onde assistir, anime verão 2026",
+  },
+  "/post/bleach-tybw-parte-4-the-calamity-2026": {
+    title: "Bleach TYBW Parte 4 — The Calamity: Guia 2026 | VICIO<CODE>",
+    description: "Guia completo de Bleach: Thousand-Year Blood War Parte 4 – The Calamity: estreia, episódios, Disney+, abertura, encerramento e o confronto final Ichigo vs. Yhwach.",
+    keywords: "bleach tybw parte 4, bleach the calamity 2026, thousand year blood war parte 4 episódios, ichigo vs yhwach, bleach disney plus brasil, bleach anime 2026, bleach dublado, studio pierrot bleach, bleach arco final, bleach onde assistir, anime shonen 2026, bleach tybw abertura",
+  },
+  "/post/youjo-senki-temporada-2-2026": {
+    title: "Youjo Senki Temporada 2 (2026): Guia Completo | VICIO<CODE>",
+    description: "Guia completo de Youjo Senki 2ª temporada (2026): data de estreia, Studio NUT, abertura, elenco, personagens novos, arco narrativo e onde assistir no Brasil.",
+    keywords: "youjo senki temporada 2, saga of tanya the evil season 2, youjo senki 2026, tanya degurechaff anime, studio nut youjo senki, youjo senki filme, youjo senki onde assistir, anime isekai militar, youjo senki dublado, anime verão 2026, youjo senki episódios, myth roid youjo senki",
+  },
 
 
 
