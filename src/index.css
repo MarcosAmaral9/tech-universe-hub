@@ -386,11 +386,36 @@ img {
   @apply outline-2 outline-offset-2 outline-primary;
 }
 
-/* Scrollbar styling */
-::-webkit-scrollbar        { @apply w-1.5 h-1.5; }
-::-webkit-scrollbar-track  { @apply bg-transparent; }
-::-webkit-scrollbar-thumb  { @apply bg-border rounded-full; }
-::-webkit-scrollbar-thumb:hover { @apply bg-muted-foreground/50; }
+/* ── Scrollbar: mais visível e colorida por categoria ────────────────────── */
+html {
+  scrollbar-width: auto;
+  scrollbar-color: hsl(var(--primary) / 0.75) hsl(var(--muted) / 0.6);
+}
+::-webkit-scrollbar        { @apply w-2.5 h-2.5; }
+::-webkit-scrollbar-track  { background-color: hsl(var(--muted) / 0.6); }
+::-webkit-scrollbar-thumb  {
+  background-color: hsl(var(--primary) / 0.75);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover { background-color: hsl(var(--primary)); }
+
+html[data-scroll-category="ia"]     { scrollbar-color: hsl(var(--ia-color) / 0.85) hsl(var(--muted) / 0.6); }
+html[data-scroll-category="invest"] { scrollbar-color: hsl(var(--invest-color) / 0.85) hsl(var(--muted) / 0.6); }
+html[data-scroll-category="geek"]   { scrollbar-color: hsl(var(--geek-color) / 0.85) hsl(var(--muted) / 0.6); }
+html[data-scroll-category="otaku"]  { scrollbar-color: hsl(var(--otaku-color) / 0.85) hsl(var(--muted) / 0.6); }
+
+html[data-scroll-category="ia"] ::-webkit-scrollbar-thumb     { background-color: hsl(var(--ia-color) / 0.85); }
+html[data-scroll-category="invest"] ::-webkit-scrollbar-thumb { background-color: hsl(var(--invest-color) / 0.85); }
+html[data-scroll-category="geek"] ::-webkit-scrollbar-thumb   { background-color: hsl(var(--geek-color) / 0.85); }
+html[data-scroll-category="otaku"] ::-webkit-scrollbar-thumb  { background-color: hsl(var(--otaku-color) / 0.85); }
+
+html[data-scroll-category="ia"] ::-webkit-scrollbar-thumb:hover     { background-color: hsl(var(--ia-color)); }
+html[data-scroll-category="invest"] ::-webkit-scrollbar-thumb:hover { background-color: hsl(var(--invest-color)); }
+html[data-scroll-category="geek"] ::-webkit-scrollbar-thumb:hover   { background-color: hsl(var(--geek-color)); }
+html[data-scroll-category="otaku"] ::-webkit-scrollbar-thumb:hover  { background-color: hsl(var(--otaku-color)); }
+
 
 /* ── Performance: defer rendering of off-screen post cards ────────────────── */
 /* content-visibility:auto skips layout/paint for cards below the fold        */
