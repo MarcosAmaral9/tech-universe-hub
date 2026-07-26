@@ -9,7 +9,6 @@
  */
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
-import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
@@ -18,7 +17,7 @@ import { Clock, User, Calendar, Star, Zap, Flame, BookOpen, BarChart3, Shield } 
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import heroImg from "@/assets/animes-aguardados-2026.webp";
+import heroImg from "@/assets/bleach-tybw-parte-4-the-calamity-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const BleachTYBWParte4 = () => {
@@ -32,7 +31,6 @@ const BleachTYBWParte4 = () => {
 
   return (
     <article className="container py-8 max-w-4xl mx-auto">
-      <BackNavigation category="otaku" />
       <header className="mb-8">
         <div className="flex items-center gap-2 mb-4">
           <CategoryBadge category="otaku" size="lg" />
@@ -45,7 +43,7 @@ const BleachTYBWParte4 = () => {
         </h1>
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
-          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />25 de Julho, 2026</span>
+          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />26 de Julho, 2026</span>
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />15 min de leitura</span>
         </div>
         <ShareWhatsApp />
