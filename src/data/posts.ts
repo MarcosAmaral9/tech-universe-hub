@@ -211,6 +211,9 @@ import balatroImg from "@/assets/balatro-guia-completo-2024.webp";
 import vibeCoding2026Img from "@/assets/vibe-coding-2026-criar-apps-sem-programar.webp";
 import perplexityAi2026Img from "@/assets/perplexity-ai-2026-buscador-ia-guia.webp";
 import grok3XAI2026Img from "@/assets/grok-3-xai-modelo-elon-musk-2026.webp";
+import mushokuTenseiT32026Img from "@/assets/mushoku-tensei-3-temporada-2026.webp";
+import bleachTybwParte4Img from "@/assets/bleach-tybw-parte-4-the-calamity-2026.webp";
+import youjoSenkiT22026Img from "@/assets/youjo-senki-temporada-2-2026.webp";
 
 export const blogPosts: BlogPost[] = [
   // ── 12 Jul 2026 — Geek (Helldivers 2 · Arrowhead · Co-op) ─────────
