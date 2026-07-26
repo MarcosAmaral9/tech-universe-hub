@@ -13,7 +13,13 @@ const routeCategory = (pathname: string): string | null => {
     return getPostBySlug(slug)?.category ?? null;
   }
   if (pathname.startsWith("/ia")) return "ia";
-  if (pathname.startsWith("/investimentos") || pathname.startsWith("/cotacoes")) return "invest";
+  if (
+    pathname.startsWith("/financas") ||
+    pathname.startsWith("/investimentos") ||
+    pathname.startsWith("/cotacoes") ||
+    pathname.startsWith("/historico-cotacoes")
+  )
+    return "invest";
   if (pathname.startsWith("/geek")) return "geek";
   if (pathname.startsWith("/otaku")) return "otaku";
   return null;
