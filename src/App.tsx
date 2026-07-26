@@ -285,6 +285,9 @@ const BalatroGuia2024                = lazy(() => import("./pages/posts/BalatroG
 const VibeCoding2026                 = lazy(() => import("./pages/posts/VibeCoding2026"));
 const PerplexityAI2026               = lazy(() => import("./pages/posts/PerplexityAI2026"));
 const Grok3XAI2026                   = lazy(() => import("./pages/posts/Grok3XAI2026"));
+const MushokuTenseiT32026            = lazy(() => import("./pages/posts/MushokuTenseiT32026"));
+const BleachTYBWParte4               = lazy(() => import("./pages/posts/BleachTYBWParte4"));
+const YoujoSenkiT22026               = lazy(() => import("./pages/posts/YoujoSenkiT22026"));
 const BannerlordPortal               = lazy(() => import("./pages/posts/BannerlordPortal"));
 const BannerlordGuiaCompleto         = lazy(() => import("./pages/posts/BannerlordGuiaCompleto"));
 const BannerlordCulturasReinos       = lazy(() => import("./pages/posts/BannerlordCulturasReinos"));
@@ -594,6 +597,9 @@ const App = () => (
                 <Route path="/post/vibe-coding-2026-criar-apps-sem-programar" element={<Suspense fallback={<div />}><VibeCoding2026 /></Suspense>} />
                 <Route path="/post/perplexity-ai-2026-buscador-ia-guia" element={<Suspense fallback={<div />}><PerplexityAI2026 /></Suspense>} />
                 <Route path="/post/grok-3-xai-modelo-elon-musk-2026" element={<Suspense fallback={<div />}><Grok3XAI2026 /></Suspense>} />
+                <Route path="/post/mushoku-tensei-3-temporada-2026" element={<Suspense fallback={<div />}><MushokuTenseiT32026 /></Suspense>} />
+                <Route path="/post/bleach-tybw-parte-4-the-calamity-2026" element={<Suspense fallback={<div />}><BleachTYBWParte4 /></Suspense>} />
+                <Route path="/post/youjo-senki-temporada-2-2026" element={<Suspense fallback={<div />}><YoujoSenkiT22026 /></Suspense>} />
 
 
 
