@@ -3,6 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import BackToTop from "./BackToTop";
 import ReadingProgressBar from "./ReadingProgressBar";
+import ScrollbarTheme from "./ScrollbarTheme";
 import DynamicSEO from "./DynamicSEO";
 import Breadcrumb from "./Breadcrumb";
 import { AdAnchorMobile } from "./AdSense";
