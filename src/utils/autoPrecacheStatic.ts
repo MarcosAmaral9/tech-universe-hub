@@ -1,13 +1,18 @@
 /**
- * autoPrecacheStatic — pré-cacheamento automático das páginas estáticas
+ * autoPrecacheStatic — pré-cacheamento MÍNIMO na primeira abertura do app
  *
- * Roda uma única vez por sessão do PWA standalone, em idle time.
- * Garante que home, hubs, cotações, /arquivo, etc. fiquem disponíveis offline
- * sem o usuário precisar clicar em nada. POSTS continuam sendo manuais.
+ * Ao instalar/abrir o PWA baixamos apenas o essencial:
+ *   - "/" (shell do app)
+ *   - "/leitura-offline" (biblioteca offline)
+ *   - "/configuracoes/offline" (onde o usuário escolhe o que baixar)
+ *
+ * NENHUM artigo e NENHUMA imagem de artigo é baixada automaticamente.
+ * Os hubs completos (com imagens) continuam disponíveis como download
+ * MANUAL em Configurações → Offline.
  */
-import { precacheStaticPages } from "./precachePosts";
+import { precacheEssentialPages } from "./precachePosts";
 
-const SESSION_KEY = "viciocode:auto-static-done";
+const DONE_KEY = "viciocode:essential-precache-done";
 
 export function autoPrecacheStaticPages(): void {
   if (typeof window === "undefined") return;
@@ -19,12 +24,17 @@ export function autoPrecacheStaticPages(): void {
     (window.navigator as { standalone?: boolean }).standalone === true;
 
   if (!isStandalone) return;
-  if (sessionStorage.getItem(SESSION_KEY) === "1") return;
+  if (!navigator.onLine) return;
+
+  // localStorage (não sessionStorage): roda uma única vez por instalação
+  try {
+    if (localStorage.getItem(DONE_KEY) === "1") return;
+  } catch { /* storage indisponível — segue */ }
 
   const run = async () => {
     try {
-      await precacheStaticPages();
-      sessionStorage.setItem(SESSION_KEY, "1");
+      await precacheEssentialPages();
+      try { localStorage.setItem(DONE_KEY, "1"); } catch { /* ignore */ }
     } catch {
       // Falha silenciosa — usuário pode tentar manualmente em /configuracoes/offline
     }

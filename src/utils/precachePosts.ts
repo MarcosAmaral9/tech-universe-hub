@@ -244,6 +244,27 @@ export async function precacheSlugs(slugs: string[], onProgress?: (p: PrecachePr
   return { total: items.length + unknown.length, done: items.length + unknown.length };
 }
 
+/**
+ * Páginas mínimas ("essenciais") baixadas automaticamente na 1ª abertura do app.
+ * NÃO inclui artigos nem imagens de artigos — apenas o esqueleto de navegação
+ * necessário para o app abrir offline e o usuário escolher o que baixar.
+ */
+export const ESSENTIAL_PAGES: { path: string; label: string }[] = [
+  { path: "/",                     label: "Página Inicial" },
+  { path: "/leitura-offline",      label: "Leitura Offline" },
+  { path: "/configuracoes/offline", label: "Configurações Offline" },
+];
+
+export async function precacheEssentialPages(onProgress?: (p: PrecacheProgress) => void): Promise<PrecacheProgress> {
+  const items = ESSENTIAL_PAGES.map((p) => ({
+    url: p.path, label: p.label,
+    type: "static" as const, category: "site",
+    assetUrls: [] as string[], // nunca imagens de artigos
+  }));
+  await runQueue(items, onProgress);
+  return { total: items.length, done: items.length };
+}
+
 export async function precacheStaticPages(categories?: string[], onProgress?: (p: PrecacheProgress) => void): Promise<PrecacheProgress> {
   const pages = categories?.length ? STATIC_PAGES.filter((p) => categories.includes(p.category)) : STATIC_PAGES;
   const items = pages.map((p) => ({

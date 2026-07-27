@@ -1,55 +1,37 @@
-## Diagnóstico
+## Objetivo
 
-Levantei o estado atual rodando greps e contagem de palavras em prosa (strip de JSX/expressões):
+1. Ao abrir o app **sem internet**, cair direto na página de artigos baixados (`/leitura-offline`).
+2. Ao **instalar o app**, baixar apenas o essencial (shell do app: JS/CSS/fontes/ícones + a própria tela de leitura offline) — **nenhum artigo**.
+3. Os artigos continuam sendo baixados só quando o usuário escolher.
 
-**1. Breadcrumb duplicado**
+## Situação atual (verificada no código)
 
-- Os 177 posts usam `<BackNavigation/>` que já renderiza só o `<Breadcrumb/>` colorido novo. ✅
-- Porém **18 posts** ainda têm um `<nav>` inline manual ANTES do `<BackNavigation/>` — ou seja, aparecem DOIS breadcrumbs (o antigo cinza + o novo colorido). Arquivos:
-  ```
-  BitcoinCripto2026, CarteiraIniciantes2026, Bitcoin2026ValeComprar,
-  FIIs2026AindaVale, IRPF2026, FIIs2026, TesouroDireto2026, ETFs2026,
-  EducacaoFinanceira3Baldes, EconomiaDomestica2026, RendaPassiva2026,
-  IAMercadoFinanceiro2026, SelicComecaCair2026, IAFinancasPessoais2026,
-  PlanejamentoFinanceiro2026, PrevidenciaPrivada2026, ReservaEmergencia2026,
-  SairDasDividas2026
-  ```
+- `src/utils/autoPrecacheStatic.ts` roda no `main.tsx` quando o app está em modo standalone e chama `precacheStaticPages()`, que baixa todas as páginas estáticas de `STATIC_PAGES` **incluindo `assetUrls: imagesByCategory.***` — e essas listas contêm a imagem hero de **todos os posts** de cada categoria (`precachePosts.ts`). Ou seja, hoje a instalação puxa centenas de imagens de artigos automaticamente.
+- `src/components/OfflineGuard.tsx` já redireciona para `/leitura-offline` quando `navigator.onLine === false`, mas roda em qualquer contexto (inclusive navegador web) e só na primeira montagem; se o app abrir e o React só montar depois do fallback do Service Worker, o usuário pode ver `offline.html` em vez da biblioteca.
+- `vite.config.ts` (VitePWA) usa `navigateFallback: index.html` e `precacheFallback: /offline.html` no cache de navegação; `start_url` é `/`.
 
-**2. Padrão "Análise do Marcos"**
+## Mudanças propostas
 
-- Não existe a string literal "Análise do Autor" em nenhum post. ✅
-- Existem **~17 posts** com título `<EditorialTake title="Análise: ..."/>` (sem "do Marcos"). Devem virar `"Análise do Marcos: ..."`. Lista inclui todos os Crimson Desert, vários Bannerlord, AC*, DragonAge, BaldursGate3, Saros, Pragmata, Vikings.
+### 1. Instalação enxuta (só o essencial)
 
-**3. Ordem do artigo**
+- Reescrever `autoPrecacheStatic.ts` para pré-cachear apenas um conjunto mínimo: `/` (shell), `/leitura-offline` e `/configuracoes/offline` — **sem `assetUrls**`, portanto sem imagens de artigos.
+- Ajustar `STATIC_PAGES` para separar `assetUrls` (imagens de posts da categoria) do download automático: manter o download completo de hubs disponível apenas como ação **manual** em Configurações → Offline.
+- Resultado: instalar o app baixa poucos KB/MB (bundle já precacheado pelo Workbox) e zero artigos.
 
-- Verifiquei programaticamente: `<h1>` → `<AuthorBio>` → `<EditorialTake>` está correto em 100% dos posts editoriais.
-- O `prebuild` (`check-article-footer-order.mjs`) já trava a ordem `EditorialTake → ArticleSources → RelatedPosts → CommentSection` + CTA "Participe da conversa" embutido no `CommentSection`. ✅
-- Os 7 Portals (hubs) são corretamente ignorados por essa validação.
+### 2. Abertura offline direto na biblioteca
 
-**4. Contagem de prosa (< 1400 palavras)**
+- Melhorar `OfflineGuard`: além do redirect no mount, escutar o evento `offline` e tratar o caso de navegação inicial; manter as rotas isentas atuais (`/entrar`, `/cadastro`, `/auth`, e a própria `/leitura-offline`).
+- Adicionar um redirect precoce (antes do React montar) em `index.html`/`main.tsx`: se `!navigator.onLine` e o caminho atual não for isento, trocar para `/leitura-offline` já na inicialização, evitando flash de tela vazia.
+- Garantir que o `offline.html` do Workbox só apareça em último caso: apontar o fallback de navegação para a rota da biblioteca offline quando o shell estiver em cache, e manter `offline.html` apenas quando nem o shell existir.
+- Faça: mudar `start_url` do manifest para `/?source=pwa` mantido em `/`, sem alterar `start_url` para uma rota offline — o redirect em runtime resolve, e mudar `start_url` exigiria reinstalação em apps já instalados.
 
-- **69 posts** ficam abaixo de 1400 palavras de prosa (medição automática strip-JSX, margem ~±5%). Vão de 658 (SuperMarioGalaxyMovie) a ~1395.
-- Não expandir os 69 posts à mão, só quero uma lista dos posts que não tem as 1400 palavras para eu verificar manualmente
+### 3. Tela de leitura offline
 
----
-
-## Plano de execução
-
-### Fase 1 — Limpeza estrutural (rápida, mecânica)
-
-1. **Remover breadcrumbs duplicados** nos 18 posts listados. Em cada arquivo:
-  - Apagar o bloco `{/* Breadcrumb */} <nav className="flex items-center gap-2 text-sm text-muted-foreground...">...</nav>`
-  - Manter apenas o `<BackNavigation category="..."/>` (= novo breadcrumb colorido).
-  - Limpar imports não usados (`ChevronRight` de `lucide-react`, `Link` se ficar órfão).
-2. **Padronizar "Análise do Marcos"** nos ~17 posts:
-  - Substituir `title="Análise: X"` por `title="Análise do Marcos: X"` no `<EditorialTake>`.
-  - Conferir que o default do componente já é "Análise do Marcos" para casos sem `title=`.
-3. **Rodar prebuild** (`check-article-footer-order.mjs` + `check-dynamicseo-duplicates.mjs` + `tsgo --noEmit`) para validar.
-
----
+- Em `OfflineReaderPage`, tratar o estado "app recém-instalado, nada baixado" com CTA claro para Configurações → Offline (já existe) e adicionar atalho para baixar por categoria.
+- Filtrar corretamente registros do tipo `static` (hoje já são ignorados pelo lookup em `blogPosts`).
 
 ## Detalhes técnicos
 
-- Script de medição de prosa será salvo em `scripts/check-post-prose.mjs` e adicionado ao `prebuild` para evitar regressões futuras (limite 1500 palavras, ignora Portals).
-
----
+- Arquivos tocados: `src/utils/autoPrecacheStatic.ts`, `src/utils/precachePosts.ts` (separação de assets), `src/components/OfflineGuard.tsx`, `src/main.tsx`, `src/pages/OfflineReaderPage.tsx`, `vite.config.ts` (apenas ajuste do fallback de navegação).
+- Nenhuma alteração de backend, dados ou de conteúdo dos artigos.
+- Observação: o comportamento offline só é testável no app publicado (Hostinger/PWA instalado), não no preview do editor.

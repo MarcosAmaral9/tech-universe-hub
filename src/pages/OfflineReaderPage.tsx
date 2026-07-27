@@ -153,17 +153,33 @@ const OfflineReaderPage = () => {
             <div>
               <h2 className="font-bold text-lg mb-2">Nenhum artigo baixado</h2>
               <p className="text-sm text-muted-foreground max-w-xs">
-                Quando você estiver online, acesse{" "}
-                <strong>Configurações → Offline</strong> para baixar artigos e ler sem internet.
+                O app instala apenas o essencial. Quando estiver online, escolha
+                em <strong>Configurações → Offline</strong> quais artigos quer
+                baixar para ler sem internet.
               </p>
             </div>
-            {isOnline && (
-              <Link to="/configuracoes/offline"
-                className="mt-2 px-5 py-2.5 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90">
-                Baixar artigos agora
-              </Link>
+            {isOnline ? (
+              <>
+                <Link to="/configuracoes/offline"
+                  className="mt-2 px-5 py-2.5 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90">
+                  Baixar artigos agora
+                </Link>
+                <div className="flex flex-wrap justify-center gap-2 mt-1">
+                  {Object.entries(CAT_LABELS).map(([key, label]) => (
+                    <Link key={key} to={`/configuracoes/offline?categoria=${key}`}
+                      className="text-xs px-3 py-1.5 rounded-full border border-border text-muted-foreground hover:border-primary/40 hover:text-primary transition-colors">
+                      {label}
+                    </Link>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <p className="text-xs text-muted-foreground">
+                Conecte-se à internet para baixar artigos.
+              </p>
             )}
           </div>
+
 
         ) : filtered.length === 0 ? (
           <div className="text-center py-12 text-muted-foreground">
