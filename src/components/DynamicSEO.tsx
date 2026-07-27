@@ -537,6 +537,16 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Guia completo do Tesouro Direto em 2026. Diferença entre Tesouro Selic, Prefixado e IPCA+, como comprar passo a passo, tributação com exemplos, taxa de custódia e quando cada título faz sentido.",
     keywords: "Tesouro Direto 2026 guia, Tesouro Selic vs Prefixado vs IPCA+, como comprar Tesouro Direto 2026, tributação Tesouro Direto IR, taxa custódia B3 Tesouro, NTN-B IPCA+ 2026, marcação mercado Tesouro, melhor título Tesouro 2026",
   },
+  "/post/nova-tabela-ir-2026-isencao-5-mil": {
+    title: "Nova Tabela do IR 2026: Isenção até R$ 5.000 e Desconto até R$ 7.350",
+    description: "Lei 15.270/2025 na prática: tabela mensal oficial, redutor de até R$ 312,89, fórmula do desconto entre R$ 5.000 e R$ 7.350 e exemplos de cálculo da Receita Federal passo a passo.",
+    keywords: "nova tabela IR 2026, isenção imposto de renda 5 mil, Lei 15.270/2025, tabela IRPF 2026 mensal, desconto IR 7.350, redutor imposto de renda 2026, IRRF 2026 cálculo, declaração IR 2027 ano-calendário 2026, desconto simplificado 607,20, tributação dividendos 2026",
+  },
+  "/post/boletim-focus-julho-2026-selic-ipca": {
+    title: "Boletim Focus Julho 2026: Selic 14%, IPCA 5,12% e Onde Investir",
+    description: "Focus de 27/07/2026: IPCA 2026 cai para 5,12%, Selic segue em 14% e dólar em R$ 5,20. Juro real de 8,4% ao ano, cenários de inflação e como escalonar renda fixa no segundo semestre.",
+    keywords: "boletim Focus julho 2026, projeções Selic 2026, IPCA 5,12% 2026, juro real Brasil 2026, Focus Banco Central 2026, dólar projeção R$ 5,20, PIB 2026 1,99%, onde investir Selic 14%, prefixado IPCA+ 2026, expectativas mercado Copom 2026",
+  },
   "/post/tesouro-prefixado-vs-ipca-2026": {
     title: "Tesouro Prefixado vs IPCA+ em 2026: Qual Escolher? Simulações com Números Reais",
     description: "Prefixado 13,5% vs IPCA+7,5% com IPCA a 5,48%: os dois rendem quase igual. Acima de 5,58% de inflação o IPCA+ vence. Análise com cenários reais, marcação a mercado, quando travar taxa e a estratégia híbrida que reduz risco nos dois cenários.",
