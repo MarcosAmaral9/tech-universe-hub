@@ -28,10 +28,12 @@ export const OfflineGuard = () => {
     }
   }, [navigate, location.pathname]);
 
-  // 2. Perdeu a conexão durante o uso → também leva para a biblioteca offline
+  // 2. Perdeu a conexão durante o uso → leva para a biblioteca offline,
+  //    exceto se o usuário estiver lendo um artigo (não interrompe a leitura).
   useEffect(() => {
     const onOffline = () => {
-      if (!isExempt(window.location.pathname)) {
+      const path = window.location.pathname;
+      if (!isExempt(path) && !path.startsWith("/post/")) {
         navigate(OFFLINE_PATH, { replace: true });
       }
     };
