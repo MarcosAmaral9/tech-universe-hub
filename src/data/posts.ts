@@ -214,8 +214,84 @@ import grok3XAI2026Img from "@/assets/grok-3-xai-modelo-elon-musk-2026.webp";
 import mushokuTenseiT32026Img from "@/assets/mushoku-tensei-3-temporada-2026.webp";
 import bleachTybwParte4Img from "@/assets/bleach-tybw-parte-4-the-calamity-2026.webp";
 import youjoSenkiT22026Img from "@/assets/youjo-senki-temporada-2-2026.webp";
+import novaTabelaIR2026Img from "@/assets/nova-tabela-ir-2026-isencao-5-mil.webp";
+import boletimFocusJulho2026Img from "@/assets/boletim-focus-julho-2026-selic-ipca.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 27 Jul 2026 — Finanças (IR 2026 · Lei 15.270/2025) ─────────────
+  {
+    id: "229",
+    slug: "nova-tabela-ir-2026-isencao-5-mil",
+    title: "Nova Tabela do IR 2026: Isenção até R$ 5.000, Desconto até R$ 7.350 e o Que Muda no Seu Bolso",
+    excerpt:
+      "A Lei 15.270/2025 zera o IRRF de quem ganha até R$ 5.000 e cria um redutor decrescente que só some em R$ 7.350. Veja a tabela oficial da Receita, os exemplos de cálculo passo a passo e o que fazer com o dinheiro que sobrou.",
+    content: "",
+    category: "invest",
+    subtopic: "impostos",
+    image: novaTabelaIR2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-27",
+    readTime: "13 min",
+    faq: [
+      {
+        q: "Quem ganha até R$ 5.000 está isento do Imposto de Renda em 2026?",
+        a: "Sim. A Lei 15.270/2025 criou uma tabela de redução que abate até R$ 312,89 do imposto mensal, de modo que quem tem rendimentos tributáveis de até R$ 5.000 fica com IRRF igual a zero. A faixa de isenção da tabela progressiva, porém, continua em R$ 2.428,80 — o efeito vem do redutor.",
+      },
+      {
+        q: "Como funciona o desconto para quem ganha entre R$ 5.000 e R$ 7.350?",
+        a: "A redução é calculada pela fórmula R$ 978,62 menos (0,133145 x rendimentos tributáveis mensais) e diminui de forma linear até zerar em R$ 7.350. Exemplo da Receita: com salário de R$ 6.000, a redução é de R$ 179,75 e o imposto final cai de R$ 562,63 para R$ 382,88.",
+      },
+      {
+        q: "Qual é a tabela mensal do IRPF em 2026?",
+        a: "Isento até R$ 2.428,80; 7,5% até R$ 2.826,65 (dedução R$ 182,16); 15% até R$ 3.751,05 (R$ 394,16); 22,5% até R$ 4.664,68 (R$ 675,49); e 27,5% acima disso (R$ 908,73). O desconto simplificado mensal é de R$ 607,20 e a dedução por dependente é de R$ 189,59.",
+      },
+      {
+        q: "E na declaração de 2027, referente a 2026?",
+        a: "A redução anual zera o imposto para rendimentos tributáveis de até R$ 60.000 (abatimento de até R$ 2.694,15) e decresce entre R$ 60.000,01 e R$ 88.200 pela fórmula R$ 8.429,73 menos (0,095575 x rendimentos). Acima de R$ 88.200 não há redução.",
+      },
+      {
+        q: "Quem fica isento ainda precisa declarar?",
+        a: "Sim, em muitos casos. A obrigatoriedade de entregar a declaração depende de bens, operações em bolsa, rendimentos isentos acima do limite e atividade rural — e não apenas do imposto retido. É possível ter IRRF zerado o ano inteiro e ainda assim ser obrigado a declarar.",
+      },
+    ],
+  },
+  // ── 27 Jul 2026 — Finanças (Boletim Focus · Macro) ─────────────────
+  {
+    id: "230",
+    slug: "boletim-focus-julho-2026-selic-ipca",
+    title: "Boletim Focus de Julho 2026: Selic em 14%, IPCA a 5,12% e o Que Isso Muda na Sua Carteira",
+    excerpt:
+      "O Focus de 27/07/2026 reduziu o IPCA de 2026 para 5,12%, manteve a Selic em 14% e o dólar em R$ 5,20. Com juro real de ~8,4% ao ano, veja como escalonar renda fixa, prefixados e IPCA+ no segundo semestre.",
+    content: "",
+    category: "invest",
+    subtopic: "economia",
+    image: boletimFocusJulho2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-07-27",
+    readTime: "12 min",
+    faq: [
+      {
+        q: "Quais são as projeções do Boletim Focus de julho de 2026?",
+        a: "Para 2026: IPCA de 5,12%, Selic de 14% ao fim do ano, PIB de 1,99% e dólar a R$ 5,20. Para 2027: IPCA de 4,22%, Selic de 12%, PIB de 1,60% e dólar a R$ 5,29. Para 2028: IPCA de 3,80%, Selic de 10,50%, PIB de 2,00% e dólar a R$ 5,30.",
+      },
+      {
+        q: "Qual é o juro real com Selic a 14% e IPCA a 5,12%?",
+        a: "O juro real ex-ante fica em torno de 8,4% ao ano, resultado de (1,14 dividido por 1,0512) menos 1. É um dos maiores retornos reais soberanos do mundo e explica a atratividade atual da renda fixa brasileira.",
+      },
+      {
+        q: "O que é o Boletim Focus e com que frequência ele sai?",
+        a: "É a pesquisa semanal do Banco Central que consolida as projeções de mais de cem instituições financeiras. É divulgado toda segunda-feira, com dados coletados até a sexta anterior, e o número acompanhado pelo mercado é a mediana das estimativas.",
+      },
+      {
+        q: "Vale a pena travar prefixado agora ou esperar?",
+        a: "Como o consenso projeta Selic de 12% em 2027 e 10,50% em 2028, as taxas atuais tendem a ser melhores do que as futuras. A estratégia de menor risco é escalonar aportes ao longo do semestre e entre vencimentos diferentes, em vez de tentar acertar o topo da curva.",
+      },
+      {
+        q: "O Focus acerta as previsões?",
+        a: "Não de forma consistente. O relatório é um retrato do consenso e passa por revisões semanais frequentes. O uso correto é como cenário-base para testar a robustez da carteira, e não como previsão a ser seguida ao pé da letra.",
+      },
+    ],
+  },
   // ── 12 Jul 2026 — Geek (Helldivers 2 · Arrowhead · Co-op) ─────────
   {
     id: "212",
