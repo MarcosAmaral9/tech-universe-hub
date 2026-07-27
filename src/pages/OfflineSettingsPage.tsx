@@ -124,7 +124,15 @@ const OfflineSettingsPage = () => {
   const [cachedStaticPaths, setCachedStaticPaths] = useState<Set<string>>(new Set());
 
   // Seleção de categorias para download
-  const [selectedCats, setSelectedCats] = useState<Set<string>>(new Set());
+  // Pré-seleciona pela query string (?categoria=ia) vinda da tela de leitura offline
+  const [selectedCats, setSelectedCats] = useState<Set<string>>(() => {
+    try {
+      const cat = new URLSearchParams(window.location.search).get("categoria");
+      return cat ? new Set([cat]) : new Set<string>();
+    } catch {
+      return new Set<string>();
+    }
+  });
 
   // ── Service Worker: verificação manual de novas versões ────────────────────
   const swRegistrationRef = useRef<ServiceWorkerRegistration | null>(null);
