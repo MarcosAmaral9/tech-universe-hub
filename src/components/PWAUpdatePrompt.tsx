@@ -12,7 +12,7 @@
 import { useRegisterSW } from "virtual:pwa-register/react";
 import { useState, useEffect, useRef } from "react";
 import { RefreshCw, X, Wifi, WifiOff, Download } from "lucide-react";
-import { precacheAllPosts, precacheStaticPages } from "@/utils/precachePosts";
+import { precacheAllPosts, precacheEssentialPages } from "@/utils/precachePosts";
 import { usePWAStandalone } from "@/hooks/usePWAStandalone";
 
 const PRECACHE_FLAG_KEY = "viciocode_pending_precache_after_update";
@@ -56,8 +56,9 @@ const PWAUpdatePrompt = () => {
     },
   });
 
-  // ── Auto-precache de páginas FIXAS (hubs, cotações, sobre, etc) ───────────
-  // Roda 1x por instalação do PWA. Posts são opt-in via /configuracoes/offline.
+  // ── Auto-precache MÍNIMO (shell + leitura offline + configurações) ────────
+  // Roda 1x por instalação do PWA. Hubs, imagens e posts são opt-in
+  // via /configuracoes/offline.
   useEffect(() => {
     if (!isStandalone) return;
     if (typeof navigator === "undefined" || !navigator.onLine) return;
@@ -71,7 +72,7 @@ const PWAUpdatePrompt = () => {
       navigator.serviceWorker?.ready
         .then(() => {
           if (cancelled) return;
-          void precacheStaticPages().then(() => {
+          void precacheEssentialPages().then(() => {
             try { localStorage.setItem(STATIC_PAGES_PRECACHED_KEY, STATIC_PAGES_PRECACHED_VERSION); } catch { /* ignore */ }
           });
         })
