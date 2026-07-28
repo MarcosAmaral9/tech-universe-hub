@@ -1,6 +1,7 @@
 import { ExternalLink, BookOpen } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import type { Category } from "@/types/blog";
+import ContentDisclaimer from "./ContentDisclaimer";
 
 export interface ArticleSource {
   title: string;
@@ -93,6 +94,7 @@ const ArticleSources = ({ sources, category, injectSchema = true }: ArticleSourc
           </li>
         ))}
       </ol>
+      <ContentDisclaimer category={category} className="mt-6" />
     </section>
   );
 };

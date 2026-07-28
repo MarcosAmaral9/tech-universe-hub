@@ -43,6 +43,7 @@ const STATIC_PAGES = [
   { path: "/privacidade",      changefreq: "yearly", priority: "0.3" },
   { path: "/termos",           changefreq: "yearly", priority: "0.3" },
   { path: "/politica-conteudo",changefreq: "yearly", priority: "0.3" },
+  { path: "/publicidade",      changefreq: "yearly", priority: "0.3" },
   { path: "/instalar",         changefreq: "yearly", priority: "0.3" },
 ];
 
@@ -67,7 +68,6 @@ const urls = [];
 for (const p of STATIC_PAGES) {
   urls.push(`  <url>
     <loc>${BASE_URL}${p.path}</loc>
-    <lastmod>${today}</lastmod>
     <changefreq>${p.changefreq}</changefreq>
     <priority>${p.priority}</priority>
   </url>`);
@@ -81,18 +81,30 @@ for (const post of posts) {
   </url>`);
 }
 
+// ── Hubs de tag (/tag/:subtopic) — apenas subtópicos com pelo menos 1 post ──
+const subtopicMatches = postsSource.match(/subtopic:\s*"([^"]+)"/g) ?? [];
+const tags = [...new Set(subtopicMatches.map((m) => m.match(/"([^"]+)"/)[1]))].sort();
+for (const tag of tags) {
+  urls.push(`  <url>
+    <loc>${BASE_URL}/tag/${tag}</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>`);
+}
+console.log(`Found ${tags.length} tags`);
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <!--
   Sitemap do VICIO<CODE> — viciocode.com
   Gerado automaticamente em: ${today}
-  Total de URLs: ${STATIC_PAGES.length + posts.length} (${STATIC_PAGES.length} páginas + ${posts.length} posts)
+  Total de URLs: ${urls.length} (${STATIC_PAGES.length} páginas + ${posts.length} posts + ${tags.length} tags)
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.join("\n")}
 </urlset>
 `;
 fs.writeFileSync(path.resolve(ROOT, "public/sitemap.xml"), sitemap, "utf8");
-console.log(`✅ sitemap.xml escrito (${STATIC_PAGES.length + posts.length} URLs)`);
+console.log(`✅ sitemap.xml escrito (${urls.length} URLs)`);
 
 // ── sitemap-images.xml ──────────────────────────────────────────────────────
 const imageUrls = posts.map((post) => {

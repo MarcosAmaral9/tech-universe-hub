@@ -119,6 +119,8 @@ for (const loc of sitemapUrls) {
     if (!declaredPostRoutes.has(slug)) {
       errors.push(`sitemap: /post/${slug} não tem <Route> em src/App.tsx`);
     }
+  } else if (pathname.startsWith("/tag/")) {
+    // rota dinâmica /tag/:slug — validada pelos subtópicos de posts.ts
   } else if (!staticRoutes.has(pathname)) {
     errors.push(`sitemap: rota '${pathname}' não existe em src/App.tsx`);
   }

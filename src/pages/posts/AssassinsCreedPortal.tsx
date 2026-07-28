@@ -19,6 +19,7 @@ import acUnityImg   from "@/assets/ac-unity.webp";
 import acRogueImg   from "@/assets/ac-rogue.webp";
 import acBlackFlagImg from "@/assets/ac-black-flag.webp";
 import ac3Img       from "@/assets/ac-3.webp";
+import AuthorBio from "@/components/AuthorBio";
 
 const games = [
   {
@@ -356,6 +357,7 @@ const AssassinsCreedPortal = () => (
       </div>
       <AdInArticle className="my-8" />
     </section>
+    <AuthorBio category="geek" variant="full" />
   </div>
 );
 

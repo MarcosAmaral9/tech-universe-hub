@@ -6,6 +6,8 @@ import CategoryBadge from "./CategoryBadge";
 import { useAuthContext } from "@/contexts/AuthContext";
 import { AdInArticle } from "./AdSense";
 import MostReadWidget from "./MostReadWidget";
+import ReadNext from "./ReadNext";
+import NewsletterSignup from "./NewsletterSignup";
 
 interface RelatedPostsProps {
   currentSlug: string;
@@ -50,16 +52,19 @@ const RelatedPosts = ({ currentSlug }: RelatedPostsProps) => {
     setRelatedPosts(getRelatedPosts(currentSlug, 3, { viewedSlugs: next }));
   }, [user?.id, currentSlug]);
 
-  if (relatedPosts.length === 0) return null;
 
   return (
     <section className="mt-12 pt-8 border-t border-border">
-      <AdInArticle className="mb-8" />
-      <h3 className="font-display text-2xl font-bold mb-6 flex items-center gap-2">
-        <ArrowRight className="h-6 w-6 text-primary" />
-        Artigos Relacionados
-      </h3>
+      <ReadNext currentSlug={currentSlug} />
+      <AdInArticle className="mb-8 mt-8" />
+      {relatedPosts.length > 0 && (
+        <h3 className="font-display text-2xl font-bold mb-6 flex items-center gap-2">
+          <ArrowRight className="h-6 w-6 text-primary" />
+          Artigos Relacionados
+        </h3>
+      )}
 
+      {relatedPosts.length > 0 && (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {relatedPosts.map((post) => {
           const isNew = user && !viewedSlugs.includes(post.slug);
@@ -97,8 +102,10 @@ const RelatedPosts = ({ currentSlug }: RelatedPostsProps) => {
           );
         })}
       </div>
+      )}
 
       <MostReadWidget className="mt-8" limit={5} />
+      <NewsletterSignup variant="inline" />
     </section>
   );
 };

@@ -43,6 +43,7 @@ const BLOCKED_PATHS = [
   "/privacidade",
   "/termos",
   "/politica-conteudo",
+  "/publicidade",
   "/entrar",
   "/cadastro",
   "/redefinir-senha",

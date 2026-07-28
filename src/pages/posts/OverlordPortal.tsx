@@ -5,6 +5,7 @@ import BackNavigation from "@/components/BackNavigation";
 import heroImg from "@/assets/overlord-portal-banner.webp";
 import overlordGuiaImg from "@/assets/overlord-guia-completo.webp";
 import overlordCharsImg from "@/assets/overlord-personagens.webp";
+import AuthorBio from "@/components/AuthorBio";
 
 const articles = [
   {
@@ -101,6 +102,7 @@ const OverlordPortal = () => (
       <AdInArticle className="my-8" />
       </div>
     </section>
+    <AuthorBio category="otaku" variant="full" />
   </div>
 );
 

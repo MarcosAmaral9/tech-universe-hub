@@ -1,10 +1,12 @@
 import { ReactNode, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import BackToTop from "./BackToTop";
 import ReadingProgressBar from "./ReadingProgressBar";
 import ScrollbarTheme from "./ScrollbarTheme";
 import DynamicSEO from "./DynamicSEO";
+import TableOfContents from "./TableOfContents";
 import Breadcrumb from "./Breadcrumb";
 import { AdAnchorMobile } from "./AdSense";
 import NewsletterSignup from "./NewsletterSignup";
@@ -24,6 +26,8 @@ export const STICKY_BREADCRUMB_KEY = "viciocode:sticky-breadcrumb-mobile";
 
 const Layout = ({ children, stickyMobileBreadcrumb }: LayoutProps) => {
   const [sticky, setSticky] = useState(!!stickyMobileBreadcrumb);
+  const { pathname } = useLocation();
+  const isPost = pathname.startsWith("/post/");
 
   useEffect(() => {
     if (stickyMobileBreadcrumb !== undefined) return;
@@ -62,6 +66,7 @@ const Layout = ({ children, stickyMobileBreadcrumb }: LayoutProps) => {
       <ScrollbarTheme />
       <Header />
       <main className="flex-1">
+        {isPost && <TableOfContents key={pathname} />}
         {/* Breadcrumb global: sempre no topo de toda página, acima do título.
             Padrão único do site — não repetir <Breadcrumb /> nas páginas.
             Renderizado APENAS aqui. O check `scripts/check-breadcrumb-placement.mjs`

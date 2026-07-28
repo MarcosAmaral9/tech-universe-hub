@@ -14,6 +14,7 @@ import bannerlordMelhoresTropasImg from "@/assets/bannerlord-melhores-tropas.web
 import bannerlordTerritoriosImg from "@/assets/bannerlord-territorios-faccoes.webp";
 import bannerlordWarSailsImg from "@/assets/bannerlord-war-sails-expansao.webp";
 import bannerlordModsImg from "@/assets/bannerlord-mods-essenciais.webp";
+import AuthorBio from "@/components/AuthorBio";
 
 
 const articles = [
@@ -333,6 +334,7 @@ const BannerlordPortal = () => (
         category="geek"
       />
     </section>
+    <AuthorBio category="geek" variant="full" />
   </div>
 );
 

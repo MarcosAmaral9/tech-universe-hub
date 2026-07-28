@@ -85,6 +85,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/publicidade" className="text-muted-foreground hover:text-primary transition-colors">
+                  Política de Publicidade
+                </Link>
+              </li>
+              <li>
                 <Link to="/instalar" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
                   <Download className="h-3 w-3" />
                   Instalar App

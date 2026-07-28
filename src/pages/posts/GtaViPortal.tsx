@@ -14,6 +14,7 @@ import trailersImg from "@/assets/gta-vi-trailers.webp";
 import mapaImg from "@/assets/gta-vi-mapa-leonida.webp";
 import guiaImg from "@/assets/gta-vi-2026.webp";
 import novembroImg from "@/assets/gta-vi-novembro-2026-vice-city-leonida.webp";
+import AuthorBio from "@/components/AuthorBio";
 
 const articles = [
   {
@@ -307,6 +308,7 @@ const GtaViPortal = () => (
         category="geek"
       />
     </section>
+    <AuthorBio category="geek" variant="full" />
   </div>
 );
 
