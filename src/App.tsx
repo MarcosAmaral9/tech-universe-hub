@@ -62,6 +62,8 @@ const ContentPolicyPage = lazy(() => import("./pages/ContentPolicyPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const InstallPage = lazy(() => import("./pages/InstallPage"));
 const ArchivePage = lazy(() => import("./pages/ArchivePage"));
+const AdvertisingPolicyPage = lazy(() => import("./pages/AdvertisingPolicyPage"));
+const TagPage = lazy(() => import("./pages/TagPage"));
 const SettingsPage = lazy(() => import("./pages/SettingsPage"));
 const OfflineSettingsPage = lazy(() => import("./pages/OfflineSettingsPage"));
 const CotacoesPage = lazy(() => import("./pages/CotacoesPage"));
@@ -343,6 +345,7 @@ const App = () => (
                 <Route path="/ia" element={<IAPage />} />
                 <Route path="/financas" element={<InvestimentosPage />} />
                 <Route path="/arquivo" element={<ArchivePage />} />
+                <Route path="/tag/:slug" element={<TagPage />} />
                 <Route path="/cotacoes" element={<CotacoesPage />} />
                 <Route path="/historico-cotacoes" element={<HistoricoCotacoesPage />} />
                 <Route path="/entrar" element={<AuthPage />} />
@@ -475,6 +478,7 @@ const App = () => (
                 <Route path="/privacidade" element={<PrivacyPolicyPage />} />
                 <Route path="/termos" element={<TermsPage />} />
                 <Route path="/politica-conteudo" element={<ContentPolicyPage />} />
+                <Route path="/publicidade" element={<AdvertisingPolicyPage />} />
                 <Route path="/instalar" element={<InstallPage />} />
                 <Route path="/configuracoes" element={<SettingsPage />} />
                 <Route path="/leitura-offline" element={<Suspense fallback={<div />}><OfflineReaderPage /></Suspense>} />
