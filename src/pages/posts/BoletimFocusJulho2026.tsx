@@ -235,6 +235,40 @@ const BoletimFocusJulho2026 = () => {
           segundo a FGV — sinal de que a atividade doméstica sente o custo do dinheiro caro. O terceiro é o comunicado do
           Copom, cujo tom costuma antecipar mudanças de rumo antes que apareçam nas medianas do Focus.
         </p>
+        <p>
+          Vale entender também como o Focus é construído, porque isso ajuda a calibrar o peso que cada número merece. O
+          relatório é uma compilação semanal feita pelo Banco Central com as projeções enviadas por mais de uma centena
+          de instituições — bancos, gestoras, consultorias e casas de análise. O que é publicado é a mediana dessas
+          respostas, ou seja, o valor central da amostra, e não uma previsão oficial da autoridade monetária. Por isso a
+          leitura correta não é "o Banco Central espera Selic a 14%", e sim "o consenso do mercado, hoje, trabalha com
+          Selic a 14%". A distinção parece sutil, mas muda tudo na hora de tomar decisão: o Focus mede expectativa, e
+          expectativa muda toda semana conforme novos dados chegam.
+        </p>
+        <p>
+          Outro ponto que costuma passar despercebido é a diferença entre o topo e a base da amostra. Quando as
+          projeções dos participantes estão muito dispersas — alguns vendo IPCA em 4,6% e outros em 5,8%, por exemplo —,
+          isso indica que o próprio mercado está dividido sobre o rumo da economia. Nesses momentos, apostar pesado em um
+          único cenário é especialmente arriscado. Já quando a dispersão é baixa, o consenso tende a ser mais confiável,
+          embora nunca infalível. O histórico mostra erros relevantes em anos de choque, como os de câmbio e de energia,
+          justamente porque nenhum modelo antecipa bem eventos fora da curva.
+        </p>
+        <p>
+          Do ponto de vista prático, o investidor pessoa física deve usar o Focus como pano de fundo, não como gatilho de
+          compra e venda. Ele serve para responder perguntas amplas: o juro está alto ou baixo em termos reais? A
+          inflação esperada está acima ou abaixo da meta? O câmbio projetado justifica manter parte do patrimônio
+          dolarizado? Essas respostas mudam a alocação estrutural da carteira uma ou duas vezes por ano — não a cada
+          segunda-feira. Quem tenta operar cada revisão de mediana acaba pagando corretagem, imposto e ansiedade sem
+          capturar retorno adicional.
+        </p>
+        <p>
+          Por fim, um lembrete sobre horizonte. As projeções para 2027 e 2028 têm valor informativo limitado porque
+          incorporam premissas fiscais e políticas que ainda nem se materializaram. Elas são úteis para dar noção de
+          direção — se o mercado enxerga convergência da inflação à meta no médio prazo, por exemplo —, mas não devem
+          ancorar decisões de curto prazo. O que realmente importa na carteira de hoje é o juro real disponível agora e a
+          adequação dos vencimentos aos seus objetivos de vida.
+        </p>
+
+
 
         <div className="not-prose mt-8 p-4 bg-secondary rounded-xl text-xs text-muted-foreground flex items-start gap-2">
           <AlertTriangle className="h-4 w-4 text-yellow-500 flex-shrink-0 mt-0.5" />

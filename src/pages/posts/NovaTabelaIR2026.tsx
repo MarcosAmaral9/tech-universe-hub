@@ -244,6 +244,38 @@ const NovaTabelaIR2026 = () => {
           automático de investimento no dia seguinte ao pagamento, com o valor exato que deixou de ser retido na fonte.
           Quem nunca viu o dinheiro na conta corrente não sente falta dele.
         </p>
+        <p>
+          Também vale revisar a declaração antes de comemorar. A mudança na tabela altera o valor retido mês a mês, mas
+          não elimina a obrigação de declarar quem se enquadra nos demais critérios — como posse de bens acima do limite,
+          ganhos de capital, operações em bolsa ou rendimentos isentos relevantes. Muita gente confunde "não pagar
+          imposto" com "não declarar", e essa confusão custa multa. O ideal é tratar a nova regra como alívio de fluxo de
+          caixa mensal, mantendo a mesma disciplina de organização de documentos ao longo do ano: informes de
+          rendimentos, comprovantes de despesas médicas, recibos de educação e extratos de investimentos guardados em
+          uma pasta única, física ou digital.
+        </p>
+        <p>
+          Outro cuidado importante é com quem tem mais de uma fonte de renda. Se você recebe salário de uma empresa e
+          presta serviços como autônomo, ou acumula aposentadoria com trabalho ativo, cada fonte aplica a tabela
+          isoladamente na retenção. O ajuste acontece só na declaração anual, e é comum descobrir imposto a pagar mesmo
+          tendo tido retenção em ambas. Nesses casos, o recomendável é simular a soma dos rendimentos ao longo do ano e,
+          se necessário, recolher o carnê-leão mensalmente para evitar um susto em abril do ano seguinte.
+        </p>
+        <p>
+          Para quem está na faixa do redutor decrescente, entre R$ 5.000 e R$ 7.350, existe uma consequência prática
+          pouco comentada: aumentos salariais nessa faixa têm efeito líquido menor do que o bruto sugere, porque parte do
+          ganho é absorvida pela redução do benefício. Isso não significa que o aumento seja ruim — o resultado final
+          continua positivo —, apenas que a conta mental precisa ser feita com o valor líquido real. Simular no
+          calculador da própria Receita antes de negociar salário ou aceitar uma proposta evita frustração.
+        </p>
+        <p>
+          Por último, quem tem margem para planejar deve olhar para os instrumentos que reduzem a base de cálculo de
+          forma legítima. Contribuições à previdência oficial, planos PGBL para quem declara no modelo completo, despesas
+          médicas comprovadas e dependentes devidamente informados continuam sendo as alavancas mais eficientes. Nenhuma
+          delas é atalho: todas exigem documentação e coerência com a realidade. Mas, somadas, costumam representar uma
+          economia anual maior do que a busca por qualquer produto financeiro milagroso.
+        </p>
+
+
 
         <div className="not-prose mt-8 p-4 bg-secondary rounded-xl text-xs text-muted-foreground flex items-start gap-2">
           <AlertTriangle className="h-4 w-4 text-yellow-500 flex-shrink-0 mt-0.5" />
