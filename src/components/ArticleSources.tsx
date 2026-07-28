@@ -94,6 +94,7 @@ const ArticleSources = ({ sources, category, injectSchema = true }: ArticleSourc
           </li>
         ))}
       </ol>
+      <ContentDisclaimer category={category} className="mt-6" />
     </section>
   );
 };
