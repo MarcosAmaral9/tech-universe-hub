@@ -70,6 +70,11 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Conheça o VICIO<CODE>, seu portal de IA, investimentos, cultura geek e otaku.",
     keywords: "sobre, VICIO CODE, equipe, missão, portal tecnologia, blog brasileiro, conteúdo digital, quem somos",
   },
+  "/publicidade": {
+    title: "Política de Publicidade",
+    description: "Como o VICIO<CODE> se sustenta: anúncios do Google AdSense, cookies, links de afiliados, conteúdo patrocinado e independência editorial.",
+    keywords: "política de publicidade, anúncios, google adsense, links de afiliados, conteúdo patrocinado, transparência, independência editorial, VICIO CODE",
+  },
   "/contato": {
     title: "Contato",
     description: "Entre em contato com a equipe do VICIO<CODE>.",
