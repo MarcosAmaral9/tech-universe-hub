@@ -43,6 +43,7 @@ const STATIC_PAGES = [
   { path: "/privacidade",      changefreq: "yearly", priority: "0.3" },
   { path: "/termos",           changefreq: "yearly", priority: "0.3" },
   { path: "/politica-conteudo",changefreq: "yearly", priority: "0.3" },
+  { path: "/publicidade",      changefreq: "yearly", priority: "0.3" },
   { path: "/instalar",         changefreq: "yearly", priority: "0.3" },
 ];
 
@@ -67,7 +68,6 @@ const urls = [];
 for (const p of STATIC_PAGES) {
   urls.push(`  <url>
     <loc>${BASE_URL}${p.path}</loc>
-    <lastmod>${today}</lastmod>
     <changefreq>${p.changefreq}</changefreq>
     <priority>${p.priority}</priority>
   </url>`);
