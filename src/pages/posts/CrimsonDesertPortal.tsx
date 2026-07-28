@@ -15,6 +15,7 @@ import crimsonEquipImg       from "@/assets/crimson-desert-equipamentos.webp";
 import crimsonPersonagensImg from "@/assets/crimson-desert-personagens.webp";
 import crimsonPatchesImg     from "@/assets/crimson-desert-patches.webp";
 import crimsonVendasImg      from "@/assets/crimson-desert-vendas-review.webp";
+import AuthorBio from "@/components/AuthorBio";
 
 const articles = [
   {
@@ -241,6 +242,7 @@ const CrimsonDesertPortal = () => (
         </table>
       </div>
     </section>
+    <AuthorBio category="geek" variant="full" />
   </div>
 );
 

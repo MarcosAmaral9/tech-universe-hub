@@ -5,6 +5,7 @@ import BackNavigation from "@/components/BackNavigation";
 import heroImg from "@/assets/tensura-portal-banner.webp";
 import tensuraT1Img from "@/assets/tensura-guia-completo.webp";
 import tensuraCharsImg from "@/assets/tensura-personagens.webp";
+import AuthorBio from "@/components/AuthorBio";
 
 const articles = [
   {
@@ -101,6 +102,7 @@ const TensuraPortal = () => (
       <AdInArticle className="my-8" />
       </div>
     </section>
+    <AuthorBio category="otaku" variant="full" />
   </div>
 );
 

@@ -8,6 +8,7 @@ import avatarPandoraImg from "@/assets/avatar-pandora.webp";
 import avatarWaterImg from "@/assets/avatar-water-swimming.webp";
 import avatarFireImg from "@/assets/avatar-fire.webp";
 import avatarGameImg from "@/assets/avatar-game-female.webp";
+import AuthorBio from "@/components/AuthorBio";
 
 const AvatarPortal = () => {
   const trilogyCards = [
@@ -105,6 +106,7 @@ const AvatarPortal = () => {
         </div>
       <AdInArticle className="my-8" />
       </section>
+      <AuthorBio category="geek" variant="full" />
     </div>
   );
 };
