@@ -44,6 +44,7 @@ const BLOCKED_PATHS = [
   "/termos",
   "/politica-conteudo",
   "/publicidade",
+  "/autor/",
   "/entrar",
   "/cadastro",
   "/redefinir-senha",

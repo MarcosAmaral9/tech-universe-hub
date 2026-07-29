@@ -63,6 +63,7 @@ const ContactPage = lazy(() => import("./pages/ContactPage"));
 const InstallPage = lazy(() => import("./pages/InstallPage"));
 const ArchivePage = lazy(() => import("./pages/ArchivePage"));
 const AdvertisingPolicyPage = lazy(() => import("./pages/AdvertisingPolicyPage"));
+const AuthorPage = lazy(() => import("./pages/AuthorPage"));
 const TagPage = lazy(() => import("./pages/TagPage"));
 const SettingsPage = lazy(() => import("./pages/SettingsPage"));
 const OfflineSettingsPage = lazy(() => import("./pages/OfflineSettingsPage"));
@@ -479,6 +480,7 @@ const App = () => (
                 <Route path="/termos" element={<TermsPage />} />
                 <Route path="/politica-conteudo" element={<ContentPolicyPage />} />
                 <Route path="/publicidade" element={<AdvertisingPolicyPage />} />
+                <Route path="/autor/marcos-amaral" element={<AuthorPage />} />
                 <Route path="/instalar" element={<InstallPage />} />
                 <Route path="/configuracoes" element={<SettingsPage />} />
                 <Route path="/leitura-offline" element={<Suspense fallback={<div />}><OfflineReaderPage /></Suspense>} />

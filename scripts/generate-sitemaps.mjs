@@ -44,6 +44,7 @@ const STATIC_PAGES = [
   { path: "/termos",           changefreq: "yearly", priority: "0.3" },
   { path: "/politica-conteudo",changefreq: "yearly", priority: "0.3" },
   { path: "/publicidade",      changefreq: "yearly", priority: "0.3" },
+  { path: "/autor/marcos-amaral", changefreq: "weekly", priority: "0.6" },
   { path: "/instalar",         changefreq: "yearly", priority: "0.3" },
 ];
 

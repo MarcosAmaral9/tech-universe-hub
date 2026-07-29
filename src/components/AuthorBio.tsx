@@ -85,7 +85,7 @@ const trackAuthorClick = (category: Category, slug?: string, title?: string) => 
     if (typeof w.gtag === "function") {
       w.gtag("event", "author_link_click", payload);
     }
-    // Persistência local — a /sobre lê para mostrar "Voltar para o artigo"
+    // Persistência local — a página do autor lê para mostrar "Voltar para o artigo"
     if (slug) {
       sessionStorage.setItem(
         "viciocode:lastArticle",
@@ -101,7 +101,7 @@ const buildAboutHref = (category: Category, slug?: string, title?: string) => {
   const params = new URLSearchParams({ from: "author-bio", category });
   if (slug) params.set("slug", slug);
   if (title) params.set("title", title);
-  return `/sobre?${params.toString()}`;
+  return `/autor/marcos-amaral?${params.toString()}`;
 };
 
 const AuthorBio = ({
