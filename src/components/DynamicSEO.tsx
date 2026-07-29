@@ -75,6 +75,26 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
     description: "Como o VICIO<CODE> se sustenta: anúncios do Google AdSense, cookies, links de afiliados, conteúdo patrocinado e independência editorial.",
     keywords: "política de publicidade, anúncios, google adsense, links de afiliados, conteúdo patrocinado, transparência, independência editorial, VICIO CODE",
   },
+  "/autor/marcos-amaral": {
+    title: "Marcos Amaral — autor e editor",
+    description: "Quem escreve no VICIO<CODE>: biografia, formação, áreas de expertise, princípios editoriais e todos os artigos assinados por Marcos Amaral.",
+    keywords: "marcos amaral, autor viciocode, editor, quem escreve, biografia, expertise, inteligência artificial, investimentos, games, anime",
+  },
+  "/arquivo": {
+    title: "Arquivo de Artigos",
+    description: "Todos os artigos do VICIO<CODE> organizados por data, categoria e subtópico: inteligência artificial, investimentos, games e cultura otaku.",
+    keywords: "arquivo, todos os artigos, blog completo, histórico de publicações, VICIO CODE, IA, investimentos, geek, otaku",
+  },
+  "/geek/bannerlord": {
+    title: "Mount & Blade II: Bannerlord — Guias e Análises",
+    description: "Central de conteúdo sobre Mount & Blade II: Bannerlord — mods essenciais, facções, economia, cercos, builds e guias completos em português.",
+    keywords: "bannerlord, mount and blade 2, mods bannerlord, facções bannerlord, guia bannerlord, cerco, economia, builds",
+  },
+  "/geek/gta-vi": {
+    title: "GTA VI — Tudo Sobre o Jogo",
+    description: "Central do GTA VI: data de lançamento, edições e preços, mapa de Leonida, mecânicas confirmadas, plataformas e todas as informações oficiais verificadas.",
+    keywords: "gta vi, gta 6, data de lançamento gta 6, mapa leonida, edições gta 6, preço gta 6, plataformas, rockstar games",
+  },
   "/contato": {
     title: "Contato",
     description: "Entre em contato com a equipe do VICIO<CODE>.",

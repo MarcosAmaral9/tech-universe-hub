@@ -1705,38 +1705,6 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
-  {
-    id: "167",
-    slug: "claude-cowork-saaspocalypse-2026",
-    title: "Claude Cowork e o SaaSpocalypse: Como os Agentes de IA Estão Substituindo Softwares Inteiros",
-    excerpt:
-      "Claude Cowork ameaça SaaS de R$ 500–R$ 5.000/mês. Comparativo detalhado com Microsoft Copilot Studio, o que ainda protege o SaaS especializado e estratégia de sobrevivência por perfil profissional.",
-    content: "",
-    category: "ia",
-    subtopic: "produtividade",
-    image: claudeCoworkImg,
-    author: "VICIO<CODE>",
-    date: "2026-04-20",
-    readTime: "15 min",
-    faq: [
-      {
-        q: "O que é o Claude Cowork?",
-        a: "Claude Cowork é a plataforma corporativa da Anthropic com agentes de IA especializados por setor (jurídico, financeiro, RH, marketing, engenharia). Opera com acesso a sistemas internos via MCP, memória persistente e capacidade de executar fluxos completos de trabalho. Plano Business: aprox. US$ 50/usuário/mês.",
-      },
-      {
-        q: "O que é o SaaSpocalypse?",
-        a: "Termo cunhado pela mídia especializada para descrever a queda nas ações de empresas de SaaS profissional após o lançamento do Claude Cowork. Agentes de IA com custo de R$ 250/mês passaram a competir com softwares especializados de R$ 800–R$ 8.000/mês em tarefas como revisão de contratos, análise financeira e triagem de RH.",
-      },
-      {
-        q: "O SaaS tradicional vai acabar?",
-        a: "Não completamente. Softwares com certificação regulatória (CFC, CVM), integração com ERPs legados, compliance fiscal (NF-e, SPED) e dados que não podem sair da empresa ainda têm vantagens que agentes genéricos não replicam com segurança. O SaaS que vai sofrer é o de tarefas cognitivas não-estruturadas.",
-      },
-      {
-        q: "Como usar o Claude Cowork para revisar contratos?",
-        a: "Envie o PDF do contrato e peça: 'Revise este contrato seguindo a lei brasileira. Identifique cláusulas abusivas, ausência de proteções padrão e pontos de risco. Gere um relatório com semáforo verde/amarelo/vermelho para cada cláusula e sugira reformulações.' O Cowork retorna análise completa em 2–3 minutos.",
-      },
-    ],
-  },
 
   // ── 20 Abr 2026 — Invest ─────────────────────────────────────────
   {
@@ -1929,38 +1897,6 @@ export const blogPosts: BlogPost[] = [
   },
 
   // ── 13 Abr 2026 — IA ──────────────────────────────────────────────
-  {
-    id: "158",
-    slug: "agentes-ia-autonomos-2026",
-    title: "Agentes de IA Autônomos: O que São, Como Funcionam e Por Que Vão Mudar Tudo em 2026",
-    excerpt:
-      "Deloitte projeta mercado de US$ 8,5 bilhões para agentes autônomos em 2026. Comparativo de plataformas (Claude Code, n8n, AutoGPT, Microsoft Copilot Studio), métricas de desempenho e riscos LGPD.",
-    content: "",
-    category: "ia",
-    subtopic: "agentes",
-    image: agentesIaImg,
-    author: "VICIO<CODE>",
-    date: "2026-04-13",
-    readTime: "14 min",
-    faq: [
-      {
-        q: "O que é um agente de IA autônomo?",
-        a: "Um agente de IA autônomo é um sistema que recebe um objetivo e, de forma independente, planeja etapas, usa ferramentas externas (web, APIs, arquivos, banco de dados) e entrega o resultado final sem intervenção humana em cada etapa. Diferente de chatbots, que apenas respondem, agentes tomam decisões e executam ações completas.",
-      },
-      {
-        q: "Quais são os melhores agentes de IA para usar em 2026?",
-        a: "Para programação: Claude Code e Cursor/Windsurf. Para automações sem código: n8n (gratuito) e Make. Para desenvolvimento customizado: CrewAI e AutoGPT. Para empresas no ecossistema Microsoft: Copilot Studio.",
-      },
-      {
-        q: "Preciso saber programar para usar um agente de IA?",
-        a: "Não. Ferramentas como n8n, Make e Zapier permitem criar agentes visuais sem código. Você conecta blocos graficamente: 'quando chegar e-mail X, extraia informações com IA, crie tarefa no Trello'. A barreira de entrada nunca foi tão baixa.",
-      },
-      {
-        q: "Quais os principais riscos dos agentes de IA?",
-        a: "Alucinação em cadeia (erros que se propagam entre etapas), acesso excessivo a sistemas (sempre use permissões mínimas), loops infinitos por má configuração e falta de auditoria das ações executadas. Comece sempre com supervisão humana nas ações críticas.",
-      },
-    ],
-  },
   {
     id: "159",
     slug: "ia-mercado-trabalho-brasil-2026",

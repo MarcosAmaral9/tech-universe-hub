@@ -1,54 +1,58 @@
-## Diagnóstico atual
+## O que já está correto (verificado agora)
 
-O site já está muito bem posicionado para aprovação: 210 artigos longos (1.400+ palavras), páginas legais completas (privacidade com 7 menções a cookies/AdSense, termos, política de conteúdo, sobre, contato), `ads.txt` correto, sitemap com 231 URLs, robots.txt bloqueando só rotas privadas, breadcrumbs, FAQ schema e EditorialTake em todos os posts.
+- `public/.htaccess` já força HTTP → HTTPS (301) e envia HSTS com `preload`, `nosniff`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`.
+- `public/robots.txt` libera tudo exceto rotas privadas e aponta para os dois sitemaps.
+- `scripts/generate-sitemaps.mjs` gera 283 URLs + 205 imagens; `scripts/validate-canonical-robots.mjs` confere consistência entre rotas, posts e sitemap.
+- `DynamicSEO` emite canonical self-referencial e `noindex` só nas rotas privadas.
+- O build gera um `.html` estático por post (`scripts/generate-post-html.mjs`), o que ajuda crawlers sem JavaScript.
 
-Pontos que ainda podem travar ou reduzir o desempenho:
+## Lacunas que impedem a garantia de 100%
 
-1. **Slots de anúncio são placeholders** — `SLOTS` em `AdSense.tsx` usa IDs fictícios (`1234567890`, etc.). Mesmo com `ADS_ENABLED = true`, nenhum bloco preenche.
-2. `**ADS_ENABLED = false**` — kill switch global desligado; correto durante a análise, mas precisa de um plano claro de ativação.
-3. **7 posts sem `<AuthorBio>**` (203 de 210) — E-E-A-T inconsistente.
-4. **Sem `app-ads.txt**` — não é bloqueante, mas o AdSense reclama se o PWA for tratado como app.
-5. **Sem página de "Política de Anúncios/Publicidade"** explícita nem aviso de conteúdo patrocinado.
-6. **Sem página de autor dedicada** (`/autor/marcos-amaral`) com bio, credenciais e links sociais — é o item de E-E-A-T que mais pesa em nichos YMYL (finanças).
-7. **Disclaimer financeiro** não confirmado em todos os posts de finanças — YMYL sem aviso "não é recomendação de investimento" é motivo comum de reprovação.
-8. **Descoberta/retenção**: falta hub de tags, "leia a seguir" no fim do artigo além dos relacionados, e newsletter só como modal.
+1. **Só os posts são pré-renderizados.** Home, `/ia`, `/financas`, `/geek`, `/otaku`, `/arquivo`, as 50 páginas `/tag/:slug`, `/autor/marcos-amaral`, `/cotacoes` e as páginas legais caem no `index.html` genérico — para um crawler sem JS, todas têm o mesmo título, descrição e canonical apontando para a home. É o maior risco de "página descoberta, mas não indexada".
+2. **Sem canonicalização de host.** Não há regra `www` → domínio principal (nem o inverso) nem normalização de barra final, o que gera URLs duplicadas.
+3. **Canonical/robots dos `.html` gerados não é validado** — o script remove metatags do `index.html`, mas não há checagem de que cada arquivo final tem canonical próprio e `robots: index, follow`.
+4. **Sitemap não é verificado contra respostas reais** — nenhuma checagem de que cada URL devolve 200 em HTTPS.
+5. **Search Console** não está confirmado como verificado nem com sitemap submetido; sem isso não há como comprovar indexação.
+6. **CSP permite `http:` em `img-src`**, o que abre porta para conteúdo misto (quebra o cadeado HTTPS em algumas páginas).
+7. **Segurança do backend não auditada nesta rodada** (RLS, políticas, dependências).
 
-## Etapa 1 — Requisitos de aprovação (bloqueantes)
+## Etapa 1 — Pré-renderizar todas as rotas indexáveis
 
-- Criar `/autor/marcos-amaral`: bio longa, áreas de expertise, formação/experiência, links sociais, lista de artigos do autor, JSON-LD `Person` + `sameAs`. Linkar a partir de todo `AuthorBio`.
-- Adicionar `<AuthorBio>` nos 7 posts faltantes (auditoria via script existente estendido).
-- Adicionar disclaimer financeiro padronizado (componente `FinanceDisclaimer`) no fim de todo post de categoria `invest`, e disclaimer de "conteúdo informativo/IA" nos posts de IA.
-- Criar página `/publicidade` (política de anúncios, afiliados e conteúdo patrocinado) e linkar no rodapé.
-- Criar `public/app-ads.txt` com a mesma linha do `ads.txt`.
-- Verificar que nenhuma página pública renderiza conteúdo vazio/placeholder (rodar auditorias já existentes + checagem de posts com prosa < 1.400 palavras via `check-post-prose.mjs`).
+- Generalizar `scripts/generate-post-html.mjs` para gerar HTML estático também para: home, 4 categorias, `/arquivo`, `/cotacoes`, `/historico-cotacoes`, `/autor/marcos-amaral`, `/publicidade`, páginas legais, portais e todas as tags de `/tag/:slug`, usando título/descrição vindos de `DynamicSEO`/`posts.ts`.
+- Cada arquivo recebe: `<title>` próprio, `meta description`, `link rel=canonical` self-referencial em `https://viciocode.com/...`, `og:url` igual ao canonical e `robots: index, follow`.
+- Rotas privadas (`/entrar`, `/perfil/*`, `/configuracoes`, `/painel-social`, `/leitura-offline`, `/redefinir-senha`, `/auth/*`) continuam fora do pré-render e mantêm `noindex`.
 
-## Etapa 2 — Configuração correta dos anúncios
+## Etapa 2 — HTTPS e canonicalização de URL
 
-- Substituir os 4 slots placeholder pelos IDs reais do painel AdSense (você fornece; deixo `SLOTS` com comentário e validação em dev que avisa se ainda for placeholder).
-- Manter `ADS_ENABLED = false` até a aprovação; depois trocar para `true` num único ponto.
-- Revisar densidade: garantir no máximo 1 anúncio a cada ~2 blocos de conteúdo, nenhum acima do dobrar da tela em mobile além do leaderboard, e o anchor mobile sem sobrepor navegação — evita "layout enganoso".
-- Confirmar bloqueio de anúncios em legais/auth/perfil (já implementado) e adicionar `/publicidade` e `/autor/` à lista bloqueada.
+- Adicionar ao `.htaccess`, antes do fallback SPA: redirecionamento 301 de `www.viciocode.com` → `viciocode.com` (mantendo HTTPS num único salto) e remoção de barra final duplicada.
+- Remover `http:` do `img-src` na CSP do `index.html` para eliminar conteúdo misto.
+- Varredura no código por qualquer URL absoluta `http://` (JSON-LD, feeds, links de fontes, manifest) e conversão para `https://`.
 
-## Etapa 3 — Atrair mais leitores
+## Etapa 3 — Validadores automáticos no build
 
-- **Hub de tags/subtópicos** (`/tag/:slug`) com listagem paginada e SEO próprio — multiplica páginas indexáveis com valor real e melhora links internos.
-- **"Leia a seguir"** contextual no fim do artigo (próximo/anterior da mesma série ou subtópico), além dos relacionados — aumenta páginas/sessão, o que eleva o RPM.
-- **Newsletter inline** no fim dos artigos (hoje só modal), com CTA por categoria.
-- **Índice de conteúdo (TOC)** flutuante em artigos longos no desktop — melhora tempo de permanência e gera sitelinks no Google.
-- **Página de arquivo por data e por categoria** já existente reforçada com links internos no rodapé.
-- **Otimizar Core Web Vitals**: auditar LCP das imagens hero (garantir `fetchpriority="high"` na hero e lazy em todo o resto) e reduzir CLS reservando altura dos slots (já parcialmente feito em `SIZE_CLASS`).
-- **Compartilhamento**: botões nativos (Web Share API) no topo e fim do artigo, além do WhatsApp já existente.
+- Estender `scripts/validate-canonical-robots.mjs` para, após o build, abrir cada `.html` de `dist/` e falhar se faltar canonical, se o canonical não for self-referencial/HTTPS, ou se houver `noindex` numa rota pública.
+- Novo script `scripts/verify-sitemap-urls.mjs`: lê `sitemap.xml`, confere que toda URL é HTTPS, sem query string, sem duplicata, e que existe rota/arquivo correspondente; opcionalmente faz HEAD contra o site publicado para confirmar 200.
+- Checagem cruzada: toda rota pública do `App.tsx` precisa estar no sitemap e vice-versa (já parcialmente feito) + toda página com imagem hero presente no `sitemap-images.xml`.
+
+## Etapa 4 — Google Search Console
+
+- Confirmar a verificação do domínio (o arquivo `google11368c308f3d772c.html` já existe) e, se o conector do Search Console estiver disponível, submeter `sitemap.xml` e `sitemap-images.xml` e rodar a Inspeção de URL numa amostra (home, 1 categoria, 1 tag, 1 post, página do autor) para confirmar status "URL está no Google".
+- Relatar quaisquer URLs com cobertura negada e corrigir a causa.
+
+## Etapa 5 — Auditoria de segurança
+
+- Rodar o scan de segurança do backend (RLS, políticas, tabelas expostas) e o scan de dependências (npm audit); corrigir achados críticos/altos.
+- Revisar policies das tabelas de comentários, favoritos e alertas: leitura pública apenas onde faz sentido, escrita sempre restrita ao usuário autenticado.
+- Revisar as edge functions (`verify-turnstile`, `buffer-publish`, `generate-social-content`, cotações) quanto a segredos, CORS e validação de entrada.
+- Reduzir a CSP onde possível (avaliar remoção de `unsafe-eval`) sem quebrar AdSense/Analytics.
+- Confirmar que nenhuma chave privada está no repositório (apenas chaves publicáveis).
 
 ## Detalhes técnicos
 
-- Novos arquivos: `src/pages/AuthorPage.tsx`, `src/pages/AdvertisingPolicyPage.tsx`, `src/pages/TagPage.tsx`, `src/components/FinanceDisclaimer.tsx`, `src/components/ReadNext.tsx`, `src/components/TableOfContents.tsx`, `public/app-ads.txt`.
-- Alterações: `src/App.tsx` (rotas), `src/components/Footer.tsx` (links legais), `src/components/AuthorBio.tsx` (link para página de autor), `src/components/AdSense.tsx` (slots + rotas bloqueadas), `src/components/DynamicSEO.tsx` (SEO das novas rotas), `scripts/generate-sitemaps.mjs` (incluir tags e autor), `scripts/audit-article-structure.mjs` (exigir AuthorBio e disclaimer).
-- Nenhuma mudança de backend necessária.
+- Arquivos alterados: `scripts/generate-post-html.mjs`, `scripts/validate-canonical-robots.mjs`, `public/.htaccess`, `index.html` (CSP), `package.json` (novo passo de verificação pós-build).
+- Novo arquivo: `scripts/verify-sitemap-urls.mjs`.
+- Sem alterações de banco de dados previstas; eventuais correções de RLS dependerão do resultado do scan.
 
-## O que preciso de você
+## Ressalva honesta
 
-Os 4 IDs de slot reais do painel AdSense (leaderboard, retângulo, in-article, âncora). Sem eles, implemento tudo e deixo os slots marcados para troca em um único lugar.
-
-&nbsp;
-
-Ainda não foi autorizado o google adsense no site, quando for eu trago os codigos aqui, até lá deixe os anuncios desativados.
+Nenhuma configuração garante indexação: o Google decide o que indexa. O que este plano garante é que **nada do lado do site impeça a indexação** — canonical correto por página, HTML servido com conteúdo real, sitemap válido, HTTPS único e Search Console monitorando. Se quiser previews sociais e HTML renderizado no servidor de forma nativa, o app pode migrar para o template mais recente com SSR ([o que a migração entrega](https://lovable.dev/blog/building-apps-using-tanstack-start)).
