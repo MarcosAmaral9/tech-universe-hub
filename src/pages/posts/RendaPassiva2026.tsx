@@ -579,7 +579,7 @@ const RendaPassiva2026 = () => {
             },
             {
               title: "Lei nº 15.270/2025 — Tributação Mínima de Altas Rendas e Dividendos",
-              url: "http://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15270.htm",
+              url: "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15270.htm",
               publisher: "Presidência da República / Planalto",
               accessedAt: "Junho 2026",
             },

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { blogPosts } from "@/data/posts";
 import { BlogPost } from "@/types/blog";
 import { useAuthContext } from "@/contexts/AuthContext";
+import { supabase } from "@/integrations/supabase/client";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import DynamicSEO from "@/components/DynamicSEO";
@@ -92,11 +93,15 @@ const SocialPanelPage = () => {
   /* ── Geração via Edge Function (Lovable AI credits) ── */
   const generateBothPlatforms = async (post: BlogPost): Promise<{ instagram: GeneratedContent; tiktok: GeneratedContent }> => {
     const url = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/generate-social-content`;
+    const { data: sessionData } = await supabase.auth.getSession();
+    const accessToken = sessionData.session?.access_token;
+    if (!accessToken) throw new Error("Faça login como administrador para gerar conteúdo.");
     const res = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+        apikey: import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
+        Authorization: `Bearer ${accessToken}`,
       },
       body: JSON.stringify({
         title: post.title,
