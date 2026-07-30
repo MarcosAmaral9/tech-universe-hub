@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { requireAdmin } from "../_shared/requireAdmin.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -9,6 +10,9 @@ serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
   try {
+    const admin = await requireAdmin(req);
+    if (admin instanceof Response) return admin;
+
     const BUFFER_ACCESS_TOKEN = Deno.env.get("BUFFER_ACCESS_TOKEN");
     if (!BUFFER_ACCESS_TOKEN) throw new Error("BUFFER_ACCESS_TOKEN is not configured");
 

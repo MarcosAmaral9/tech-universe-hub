@@ -7,7 +7,7 @@ verify_jwt = false
 verify_jwt = false
 
 [functions.generate-social-content]
-verify_jwt = false
+verify_jwt = true
 
 [functions.buffer-publish]
-verify_jwt = false
+verify_jwt = true
