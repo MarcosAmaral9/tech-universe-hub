@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { blogPosts } from "@/data/posts";
 import { BlogPost } from "@/types/blog";
 import { useAuthContext } from "@/contexts/AuthContext";
+import { supabase } from "@/integrations/supabase/client";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import DynamicSEO from "@/components/DynamicSEO";
