@@ -330,7 +330,7 @@ const TensuraGuiaCompleto = () => {
           },
           {
             title: "8bit Studio — Site oficial",
-            url: "http://www.8bit.co.jp/",
+            url: "https://www.8bit.co.jp/",
             publisher: "8bit Studio",
             accessedAt: "Maio 2026"
           },
