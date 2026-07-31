@@ -1318,8 +1318,9 @@ if ($method === 'GET' && $action === 'test_gemini') {
 if ($action === 'admin_check') {
     $claims = verifySessionToken(requestToken());
     $email = '';
-    if ($claims) {
-        $stmt = $pdo->prepare('SELECT email FROM users WHERE id = :id LIMIT 1');
+    $pdoAuth = getPdo();
+    if ($claims && $pdoAuth) {
+        $stmt = $pdoAuth->prepare('SELECT email FROM users WHERE id = :id LIMIT 1');
         $stmt->execute([':id' => $claims['sub']]);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         $email = $row ? strtolower($row['email']) : '';
@@ -1330,7 +1331,7 @@ if ($action === 'admin_check') {
 
 if ($method === 'POST' && $action === 'generate_social') {
 
-    requireAdmin($pdo); // somente o administrador gasta quota de IA
+    requireAdmin(getPdo()); // somente o administrador gasta quota de IA
 
 
     if (!$GEMINI_KEY) {
