@@ -35,6 +35,7 @@ const GoogleAuthCallback = () => {
         localStorage.setItem(SESSION_KEY, JSON.stringify({
           user: data.user,
           profile: data.profile,
+          token: data.token,
         }));
         setStatus("Login realizado! Redirecionando...");
         window.location.href = "/configuracoes";

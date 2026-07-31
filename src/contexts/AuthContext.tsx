@@ -6,6 +6,8 @@ interface AuthContextType {
   session: { user: LocalUser } | null;
   profile: Profile | null;
   loading: boolean;
+  token: string | null;
+  isAdmin: boolean;
   signOut: () => Promise<void>;
   updateProfile: (updates: Partial<Pick<Profile, "name" | "nickname" | "notifications_site" | "notifications_app">>) => Promise<any>;
   fetchProfile: (userId: string) => Promise<void>;
