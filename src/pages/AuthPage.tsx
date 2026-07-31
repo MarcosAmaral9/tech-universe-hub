@@ -129,7 +129,7 @@ const AuthPage = () => {
         if (!ok || data.error) {
           toast({ title: "Erro no login", description: data.error || "Email ou senha incorretos.", variant: "destructive" });
         } else {
-          localStorage.setItem(SESSION_KEY, JSON.stringify({ user: data.user, profile: data.profile }));
+          localStorage.setItem(SESSION_KEY, JSON.stringify({ user: data.user, profile: data.profile, token: data.token }));
           window.location.href = "/configuracoes";
         }
       } else {
@@ -142,7 +142,7 @@ const AuthPage = () => {
         if (!ok || data.error) {
           toast({ title: "Erro no cadastro", description: data.error || "Não foi possível criar a conta.", variant: "destructive" });
         } else {
-          localStorage.setItem(SESSION_KEY, JSON.stringify({ user: data.user, profile: data.profile }));
+          localStorage.setItem(SESSION_KEY, JSON.stringify({ user: data.user, profile: data.profile, token: data.token }));
           toast({ title: "Conta criada com sucesso! 🎉" });
           window.location.href = "/configuracoes";
         }

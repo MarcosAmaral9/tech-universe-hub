@@ -24,7 +24,7 @@ error_reporting(0);
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type');
+header('Access-Control-Allow-Headers: Content-Type, X-Auth-Token, X-Admin-Token');
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(204);
@@ -64,6 +64,91 @@ define('AVATAR_URL', '/avatars/');
 
 $method = $_SERVER['REQUEST_METHOD'];
 $action = $_GET['action'] ?? '';
+
+// ─── Sessão assinada (HMAC) + verificação de administrador ───────────────────
+// Tudo roda no MySQL/PHP da Hostinger — nenhuma dependência externa de auth.
+// Defina no /public_html/.env.php:
+//   $AUTH_SECRET = 'string-longa-aleatoria';
+//   $ADMIN_EMAIL = 'viciocode01@gmail.com';
+if (!isset($AUTH_SECRET) || !$AUTH_SECRET) {
+    $AUTH_SECRET = getenv('AUTH_SECRET') ?: 'viciocode_auth_fallback_secret_troque_no_env';
+}
+if (!isset($ADMIN_EMAIL) || !$ADMIN_EMAIL) {
+    $ADMIN_EMAIL = getenv('ADMIN_EMAIL') ?: 'viciocode01@gmail.com';
+}
+define('AUTH_SECRET', $AUTH_SECRET);
+define('ADMIN_EMAIL', strtolower(trim($ADMIN_EMAIL)));
+define('SESSION_TTL', 60 * 60 * 24 * 30); // 30 dias
+
+function b64u(string $s): string { return rtrim(strtr(base64_encode($s), '+/', '-_'), '='); }
+function b64u_dec(string $s): string { return base64_decode(strtr($s, '-_', '+/')); }
+
+/** Cria um token de sessão assinado (payload.assinatura). */
+function issueSessionToken(string $userId, string $email): string {
+    $payload = b64u(json_encode([
+        'sub' => $userId,
+        'email' => strtolower($email),
+        'exp' => time() + SESSION_TTL,
+    ]));
+    $sig = b64u(hash_hmac('sha256', $payload, AUTH_SECRET, true));
+    return $payload . '.' . $sig;
+}
+
+/** Valida o token e devolve os dados do usuário, ou null. */
+function verifySessionToken(?string $token): ?array {
+    if (!$token || substr_count($token, '.') !== 1) return null;
+    [$payload, $sig] = explode('.', $token, 2);
+    $expected = b64u(hash_hmac('sha256', $payload, AUTH_SECRET, true));
+    if (!hash_equals($expected, $sig)) return null;
+    $data = json_decode(b64u_dec($payload), true);
+    if (!is_array($data) || empty($data['sub']) || empty($data['exp'])) return null;
+    if ((int)$data['exp'] < time()) return null;
+    return $data;
+}
+
+/** Lê o token do header X-Auth-Token, Authorization ou do body/query. */
+function requestToken(): ?string {
+    $t = $_SERVER['HTTP_X_AUTH_TOKEN'] ?? '';
+    if (!$t) {
+        $auth = $_SERVER['HTTP_AUTHORIZATION'] ?? '';
+        if (stripos($auth, 'Bearer ') === 0) $t = substr($auth, 7);
+    }
+    if (!$t) $t = $_GET['token'] ?? '';
+    return $t ? trim($t) : null;
+}
+
+/**
+ * Garante que quem chamou é o administrador (confere o e-mail do token contra
+ * a tabela users no MySQL). Encerra a requisição em caso de falha.
+ */
+function requireAdmin(PDO $pdo = null): array {
+    $claims = verifySessionToken(requestToken());
+    if (!$claims) {
+        http_response_code(401);
+        echo json_encode(['error' => 'Autenticação obrigatória']);
+        exit;
+    }
+    $email = strtolower($claims['email'] ?? '');
+    // Confirma no banco que o usuário ainda existe e que o e-mail bate
+    if ($pdo instanceof PDO) {
+        $stmt = $pdo->prepare('SELECT email FROM users WHERE id = :id LIMIT 1');
+        $stmt->execute([':id' => $claims['sub']]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if (!$row) {
+            http_response_code(401);
+            echo json_encode(['error' => 'Sessão inválida']);
+            exit;
+        }
+        $email = strtolower($row['email']);
+    }
+    if ($email !== ADMIN_EMAIL) {
+        http_response_code(403);
+        echo json_encode(['error' => 'Acesso restrito ao administrador']);
+        exit;
+    }
+    return ['id' => $claims['sub'], 'email' => $email];
+}
+
 
 
 // ─── Helper: fetch HTTP com curl (preferido) ou file_get_contents ─────────────
@@ -1229,7 +1314,25 @@ if ($method === 'GET' && $action === 'test_gemini') {
     exit;
 }
 
+// ─── GET: verifica se a sessão atual é do administrador ──────────────────────
+if ($action === 'admin_check') {
+    $claims = verifySessionToken(requestToken());
+    $email = '';
+    $pdoAuth = getPdo();
+    if ($claims && $pdoAuth) {
+        $stmt = $pdoAuth->prepare('SELECT email FROM users WHERE id = :id LIMIT 1');
+        $stmt->execute([':id' => $claims['sub']]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $email = $row ? strtolower($row['email']) : '';
+    }
+    echo json_encode(['admin' => $email !== '' && $email === ADMIN_EMAIL, 'email' => $email]);
+    exit;
+}
+
 if ($method === 'POST' && $action === 'generate_social') {
+
+    requireAdmin(getPdo()); // somente o administrador gasta quota de IA
+
 
     if (!$GEMINI_KEY) {
         http_response_code(503);
@@ -1582,7 +1685,12 @@ if ($method === 'POST' && $action === 'register') {
         ->execute([':id' => $id, ':name' => $name, ':nickname' => $nickname]);
 
     $profile = ['id' => $id, 'name' => $name, 'nickname' => $nickname, 'avatar_url' => null, 'notifications_site' => false, 'notifications_app' => false, 'created_at' => date('Y-m-d H:i:s')];
-    echo json_encode(['user' => ['id' => $id, 'email' => $email], 'profile' => $profile]);
+    echo json_encode([
+        'user' => ['id' => $id, 'email' => $email],
+        'profile' => $profile,
+        'token' => issueSessionToken($id, $email),
+        'is_admin' => strtolower($email) === ADMIN_EMAIL,
+    ]);
     exit;
 }
 
@@ -1621,7 +1729,12 @@ if ($method === 'POST' && $action === 'login') {
     $profile['notifications_site'] = (bool)$profile['notifications_site'];
     $profile['notifications_app']  = (bool)$profile['notifications_app'];
 
-    echo json_encode(['user' => ['id' => $user['id'], 'email' => $user['email']], 'profile' => $profile]);
+    echo json_encode([
+        'user' => ['id' => $user['id'], 'email' => $user['email']],
+        'profile' => $profile,
+        'token' => issueSessionToken($user['id'], $user['email']),
+        'is_admin' => strtolower($user['email']) === ADMIN_EMAIL,
+    ]);
     exit;
 }
 
@@ -1811,8 +1924,10 @@ if ($method === 'POST' && $action === 'google_exchange') {
     $profile['notifications_app']  = (bool)($profile['notifications_app']  ?? false);
 
     echo json_encode([
-        'user'    => ['id' => $userId, 'email' => $email],
-        'profile' => $profile,
+        'user'     => ['id' => $userId, 'email' => $email],
+        'profile'  => $profile,
+        'token'    => issueSessionToken($userId, $email),
+        'is_admin' => strtolower($email) === ADMIN_EMAIL,
     ]);
     exit;
 }

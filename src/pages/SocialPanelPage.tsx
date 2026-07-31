@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { blogPosts } from "@/data/posts";
 import { BlogPost } from "@/types/blog";
 import { useAuthContext } from "@/contexts/AuthContext";
-import { supabase } from "@/integrations/supabase/client";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import DynamicSEO from "@/components/DynamicSEO";
@@ -22,6 +21,7 @@ import { saveToHistory } from "@/components/social/socialHistoryUtils";
 
 const COUNTER_KEY = "viciocode_social_gen_count";
 const ADMIN_EMAIL = "viciocode01@gmail.com";
+const API_BASE = "/api.php";
 
 // In sandbox/preview (lovable.app / lovable.dev), allow access without login
 const isSandbox = typeof window !== "undefined" && window.location.hostname.includes("lovable");
@@ -72,7 +72,7 @@ const emptyEdited = (): EditedContent => ({
 /* ─── SocialPanelPage ─────────────────────────────────────────────────────── */
 
 const SocialPanelPage = () => {
-  const { user, loading: authLoading } = useAuthContext();
+  const { user, loading: authLoading, token, isAdmin } = useAuthContext();
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -92,16 +92,12 @@ const SocialPanelPage = () => {
 
   /* ── Geração via Edge Function (Lovable AI credits) ── */
   const generateBothPlatforms = async (post: BlogPost): Promise<{ instagram: GeneratedContent; tiktok: GeneratedContent }> => {
-    const url = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/generate-social-content`;
-    const { data: sessionData } = await supabase.auth.getSession();
-    const accessToken = sessionData.session?.access_token;
-    if (!accessToken) throw new Error("Faça login como administrador para gerar conteúdo.");
-    const res = await fetch(url, {
+    if (!token) throw new Error("Faça login como administrador para gerar conteúdo.");
+    const res = await fetch(`${API_BASE}?action=generate_social`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        apikey: import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
-        Authorization: `Bearer ${accessToken}`,
+        "X-Auth-Token": token,
       },
       body: JSON.stringify({
         title: post.title,
@@ -198,11 +194,16 @@ const SocialPanelPage = () => {
           <Sparkles className="w-7 h-7 text-primary" />
           <h1 className="text-2xl font-bold font-orbitron">Painel Social Media</h1>
         </div>
+        <div className="flex items-center gap-2">
+        {isAdmin && (
+          <Badge variant="secondary" className="text-xs">Admin verificado</Badge>
+        )}
         <Badge variant="outline" className="flex items-center gap-1.5 px-3 py-1.5 text-sm">
           <Zap className="w-3.5 h-3.5 text-primary" />
           <span className="font-semibold">{todayCount}</span>
           <span className="text-muted-foreground">{todayCount === 1 ? "geração" : "gerações"} hoje</span>
         </Badge>
+        </div>
       </div>
 
       {isSandbox && (
