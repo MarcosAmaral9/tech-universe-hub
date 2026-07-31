@@ -1314,7 +1314,24 @@ if ($method === 'GET' && $action === 'test_gemini') {
     exit;
 }
 
+// ─── GET: verifica se a sessão atual é do administrador ──────────────────────
+if ($action === 'admin_check') {
+    $claims = verifySessionToken(requestToken());
+    $email = '';
+    if ($claims) {
+        $stmt = $pdo->prepare('SELECT email FROM users WHERE id = :id LIMIT 1');
+        $stmt->execute([':id' => $claims['sub']]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $email = $row ? strtolower($row['email']) : '';
+    }
+    echo json_encode(['admin' => $email !== '' && $email === ADMIN_EMAIL, 'email' => $email]);
+    exit;
+}
+
 if ($method === 'POST' && $action === 'generate_social') {
+
+    requireAdmin($pdo); // somente o administrador gasta quota de IA
+
 
     if (!$GEMINI_KEY) {
         http_response_code(503);
@@ -1667,7 +1684,12 @@ if ($method === 'POST' && $action === 'register') {
         ->execute([':id' => $id, ':name' => $name, ':nickname' => $nickname]);
 
     $profile = ['id' => $id, 'name' => $name, 'nickname' => $nickname, 'avatar_url' => null, 'notifications_site' => false, 'notifications_app' => false, 'created_at' => date('Y-m-d H:i:s')];
-    echo json_encode(['user' => ['id' => $id, 'email' => $email], 'profile' => $profile]);
+    echo json_encode([
+        'user' => ['id' => $id, 'email' => $email],
+        'profile' => $profile,
+        'token' => issueSessionToken($id, $email),
+        'is_admin' => strtolower($email) === ADMIN_EMAIL,
+    ]);
     exit;
 }
 
@@ -1706,7 +1728,12 @@ if ($method === 'POST' && $action === 'login') {
     $profile['notifications_site'] = (bool)$profile['notifications_site'];
     $profile['notifications_app']  = (bool)$profile['notifications_app'];
 
-    echo json_encode(['user' => ['id' => $user['id'], 'email' => $user['email']], 'profile' => $profile]);
+    echo json_encode([
+        'user' => ['id' => $user['id'], 'email' => $user['email']],
+        'profile' => $profile,
+        'token' => issueSessionToken($user['id'], $user['email']),
+        'is_admin' => strtolower($user['email']) === ADMIN_EMAIL,
+    ]);
     exit;
 }
 
@@ -1896,8 +1923,10 @@ if ($method === 'POST' && $action === 'google_exchange') {
     $profile['notifications_app']  = (bool)($profile['notifications_app']  ?? false);
 
     echo json_encode([
-        'user'    => ['id' => $userId, 'email' => $email],
-        'profile' => $profile,
+        'user'     => ['id' => $userId, 'email' => $email],
+        'profile'  => $profile,
+        'token'    => issueSessionToken($userId, $email),
+        'is_admin' => strtolower($email) === ADMIN_EMAIL,
     ]);
     exit;
 }
