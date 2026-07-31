@@ -194,11 +194,16 @@ const SocialPanelPage = () => {
           <Sparkles className="w-7 h-7 text-primary" />
           <h1 className="text-2xl font-bold font-orbitron">Painel Social Media</h1>
         </div>
+        <div className="flex items-center gap-2">
+        {isAdmin && (
+          <Badge variant="secondary" className="text-xs">Admin verificado</Badge>
+        )}
         <Badge variant="outline" className="flex items-center gap-1.5 px-3 py-1.5 text-sm">
           <Zap className="w-3.5 h-3.5 text-primary" />
           <span className="font-semibold">{todayCount}</span>
           <span className="text-muted-foreground">{todayCount === 1 ? "geração" : "gerações"} hoje</span>
         </Badge>
+        </div>
       </div>
 
       {isSandbox && (
