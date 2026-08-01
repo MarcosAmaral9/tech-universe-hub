@@ -1,14 +1,742 @@
 {
-  "generatedAt": "2026-07-06T20:21:44.095Z",
+  "generatedAt": "2026-08-01T23:19:40.235Z",
   "counts": {
-    "OK": 14,
-    "A": 59,
-    "B": 3,
-    "C": 12,
-    "D": 77
+    "OK": 16,
+    "A": 89,
+    "B": 2,
+    "C": 13,
+    "D": 85
   },
   "missingFiles": [],
   "reports": [
+    {
+      "slug": "elon-musk-primeiro-trilionario-ipo-spacex",
+      "file": "ElonMuskTrilionario2026.tsx",
+      "keyword": "elon musk primeiro",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 7,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1281,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "apenas ~1281 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "recuperacao-judicial-empresas-2026-como-afeta-clientes",
+      "file": "RecuperacaoJudicialEmpresas2026.tsx",
+      "keyword": "recuperacao judicial empresas",
+      "category": "invest",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 7,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1283,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "apenas ~1283 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "nova-tabela-ir-2026-isencao-5-mil",
+      "file": "NovaTabelaIR2026.tsx",
+      "keyword": "nova tabela ir",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1666,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "boletim-focus-julho-2026-selic-ipca",
+      "file": "BoletimFocusJulho2026.tsx",
+      "keyword": "boletim focus julho",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1554,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "helldivers-2-guia-completo-2024",
+      "file": "Helldivers2Guia2024.tsx",
+      "keyword": "helldivers 2",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 7,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1188,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente em excerpt",
+        "apenas ~1188 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ghost-of-yotei-guia-completo",
+      "file": "GhostOfYoteiGuia.tsx",
+      "keyword": "ghost of yotei",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 7,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1445,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "apenas ~1445 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "anime-verao-2026-dias-semana",
+      "file": "AnimeVerao2026DiasSemana.tsx",
+      "keyword": "anime verao dias",
+      "category": "otaku",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": false,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1374,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta title",
+        "keyword ausente em <h1>",
+        "keyword ausente em excerpt",
+        "apenas ~1374 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "acoes-crescimento-vs-dividendos-2026",
+      "file": "AcoesCrescimentoVsDividendos2026.tsx",
+      "keyword": "acoes crescimento dividendos",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1514,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "cambio-dolar-protecao-carteira-2026",
+      "file": "CambioDolarProtecao2026.tsx",
+      "keyword": "cambio dolar protecao",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1741,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "como-escolher-previdencia-privada-2026",
+      "file": "ComoEscolherPrevidencia2026.tsx",
+      "keyword": "escolher previdencia privada",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1829,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "consorcio-como-investimento-2026",
+      "file": "ConsorcioInvestimento2026.tsx",
+      "keyword": "consorcio investimento",
+      "category": "invest",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1541,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "anime-verao-2026-guia-temporada",
+      "file": "AnimeVerao2026.tsx",
+      "keyword": "anime verao temporada",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1345,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "apenas ~1345 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "debentures-cri-cra-2026-guia-completo",
+      "file": "DebenturesCriCra2026.tsx",
+      "keyword": "debentures cri cra",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2205,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual"
+      ]
+    },
+    {
+      "slug": "como-declarar-fiis-imposto-de-renda-2026",
+      "file": "DeclararFiiIR2026.tsx",
+      "keyword": "declarar fiis imposto",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1680,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "fundos-multimercado-2026-valem-a-pena",
+      "file": "FundosMultimercado2026.tsx",
+      "keyword": "fundos multimercado valem",
+      "category": "invest",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1829,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "astro-bot-guia-goty-2024",
+      "file": "AstroBotGuiaGoty2024.tsx",
+      "keyword": "astro bot goty",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2225,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução"
+      ]
+    },
+    {
+      "slug": "indiana-jones-great-circle-guia-completo-2024",
+      "file": "IndianaJonesGreatCircleGuia2024.tsx",
+      "keyword": "indiana jones great",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2317,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>"
+      ]
+    },
+    {
+      "slug": "ghost-of-tsushima-guia-completo",
+      "file": "GhostOfTsushimaGuia.tsx",
+      "keyword": "ghost of tsushima",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2328,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>"
+      ]
+    },
+    {
+      "slug": "black-myth-wukong-guia-completo-2024",
+      "file": "BlackMythWukongGuia2024.tsx",
+      "keyword": "black myth wukong",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2142,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>"
+      ]
+    },
+    {
+      "slug": "kingdom-come-deliverance-2-guia-completo-2025",
+      "file": "KingdomComeDeliverance2Guia2025.tsx",
+      "keyword": "kingdom come deliverance",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2115,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "monster-hunter-wilds-guia-completo-2025",
+      "file": "MonsterHunterWildsGuia2025.tsx",
+      "keyword": "monster hunter wilds",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2130,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>"
+      ]
+    },
+    {
+      "slug": "lci-lca-2026-guia-completo",
+      "file": "LciLca2026Guia.tsx",
+      "keyword": "lci lca",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2133,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual"
+      ]
+    },
+    {
+      "slug": "acoes-dividendos-2026-melhores-pagadoras-b3",
+      "file": "AcoesDividendos2026.tsx",
+      "keyword": "acoes dividendos pagadoras",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1588,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "bdr-2026-como-investir-apple-amazon-google-b3",
+      "file": "BDR2026Guia.tsx",
+      "keyword": "bdr investir apple",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1822,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "suno-ai-gerador-musica-2026",
+      "file": "SunoAIMusica2026.tsx",
+      "keyword": "suno ai gerador",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1442,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente em excerpt",
+        "apenas ~1442 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "dola-ai-app-assistente-2026",
+      "file": "DolaAI2026.tsx",
+      "keyword": "dola ai app",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 7,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1494,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente em excerpt",
+        "apenas ~1494 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "seedance-2-0-geracao-video-ia-2026",
+      "file": "Seedance20IA2026.tsx",
+      "keyword": "seedance geracao video",
+      "category": "ia",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1411,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~1411 palavras (mínimo 1500)"
+      ]
+    },
     {
       "slug": "re-monster-anime-manga-guia-2026",
       "file": "ReMonster2026.tsx",
@@ -130,16 +858,14 @@
         "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 4,
-        "hasArticleSources": false,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
         "hasEditorial": true,
         "wordCount": 1957,
         "has1500Words": true
       },
-      "bucket": "B",
-      "issues": [
-        "ArticleSources com 4 fonte(s) (mínimo 5)"
-      ]
+      "bucket": "OK",
+      "issues": []
     },
     {
       "slug": "kaiju-no-8-temporada-2-guia-arco-final-2026",
@@ -339,8 +1065,8 @@
         "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 4,
-        "hasArticleSources": false,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
         "hasEditorial": true,
         "wordCount": 1475,
         "has1500Words": false
@@ -348,7 +1074,6 @@
       "bucket": "D",
       "issues": [
         "keyword ausente em excerpt",
-        "ArticleSources com 4 fonte(s) (mínimo 5)",
         "apenas ~1475 palavras (mínimo 1500)"
       ]
     },
@@ -597,33 +1322,6 @@
       ]
     },
     {
-      "slug": "claude-cowork-saaspocalypse-2026",
-      "file": "ClaudeCoworkSaas2026.tsx",
-      "keyword": "claude cowork saaspocalypse",
-      "category": "ia",
-      "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": false,
-        "pageMetaExists": true,
-        "metaTitle": true,
-        "metaDescription": false,
-        "metaKeywords": true,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 6,
-        "hasArticleSources": true,
-        "hasEditorial": true,
-        "wordCount": 1285,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "keyword ausente em meta description",
-        "keyword ausente em excerpt",
-        "apenas ~1285 palavras (mínimo 1500)"
-      ]
-    },
-    {
       "slug": "copom-abril-2026-selic-investimentos",
       "file": "CopomAbril2026.tsx",
       "keyword": "copom abril selic",
@@ -719,7 +1417,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 2323,
+        "wordCount": 2337,
         "has1500Words": true
       },
       "bucket": "B",
@@ -780,32 +1478,6 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "apenas ~1484 palavras (mínimo 1500)"
-      ]
-    },
-    {
-      "slug": "agentes-ia-autonomos-2026",
-      "file": "AgentesIAAutonomos2026.tsx",
-      "keyword": "agentes ia autonomos",
-      "category": "ia",
-      "checks": {
-        "h1": true,
-        "intro": true,
-        "excerpt": false,
-        "pageMetaExists": true,
-        "metaTitle": true,
-        "metaDescription": true,
-        "metaKeywords": true,
-        "hasAuthorBio": true,
-        "articleSourcesCount": 8,
-        "hasArticleSources": true,
-        "hasEditorial": true,
-        "wordCount": 1443,
-        "has1500Words": false
-      },
-      "bucket": "D",
-      "issues": [
-        "keyword ausente em excerpt",
-        "apenas ~1443 palavras (mínimo 1500)"
       ]
     },
     {
@@ -874,17 +1546,18 @@
         "excerpt": false,
         "pageMetaExists": true,
         "metaTitle": true,
-        "metaDescription": true,
+        "metaDescription": false,
         "metaKeywords": true,
         "hasAuthorBio": true,
         "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1539,
+        "wordCount": 1678,
         "has1500Words": true
       },
       "bucket": "A",
       "issues": [
+        "keyword ausente em meta description",
         "keyword ausente na introdução",
         "keyword ausente em excerpt"
       ]
@@ -989,6 +1662,33 @@
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
         "apenas ~1423 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "claude-opus-vs-sonnet-2026",
+      "file": "ClaudeOpusVsSonnet2026.tsx",
+      "keyword": "claude opus sonnet",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1498,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente em excerpt",
+        "apenas ~1498 palavras (mínimo 1500)"
       ]
     },
     {
@@ -1110,7 +1810,7 @@
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 2225,
+        "wordCount": 2283,
         "has1500Words": true
       },
       "bucket": "OK",
@@ -1139,6 +1839,33 @@
       "bucket": "A",
       "issues": [
         "keyword ausente em meta description",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "guerra-ira-petroleo-petrobras-2026",
+      "file": "GuerraIraPetrobras2026.tsx",
+      "keyword": "guerra ira petroleo",
+      "category": "invest",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1770,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
         "keyword ausente em excerpt"
       ]
     },
@@ -3429,17 +4156,16 @@
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 3,
-        "hasArticleSources": false,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
         "hasEditorial": true,
         "wordCount": 1538,
         "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente na introdução",
-        "ArticleSources com 3 fonte(s) (mínimo 5)"
+        "keyword ausente na introdução"
       ]
     },
     {
@@ -3483,16 +4209,15 @@
         "metaDescription": false,
         "metaKeywords": false,
         "hasAuthorBio": true,
-        "articleSourcesCount": 4,
-        "hasArticleSources": false,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
         "hasEditorial": true,
         "wordCount": 1880,
         "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "sem PAGE_META manual",
-        "ArticleSources com 4 fonte(s) (mínimo 5)"
+        "sem PAGE_META manual"
       ]
     },
     {
@@ -3539,7 +4264,7 @@
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1978,
+        "wordCount": 1902,
         "has1500Words": true
       },
       "bucket": "A",
@@ -3620,7 +4345,7 @@
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1799,
+        "wordCount": 1815,
         "has1500Words": true
       },
       "bucket": "A",
@@ -3647,7 +4372,7 @@
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1599,
+        "wordCount": 1744,
         "has1500Words": true
       },
       "bucket": "A",
@@ -3675,7 +4400,7 @@
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1708,
+        "wordCount": 1714,
         "has1500Words": true
       },
       "bucket": "A",
@@ -4426,6 +5151,340 @@
       "issues": [
         "keyword ausente em meta title"
       ]
+    },
+    {
+      "slug": "agentes-ia-autonomos-2026",
+      "file": "AgentesIAAutonomos2026.tsx",
+      "keyword": "agentes ia autonomos",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 8,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1443,
+        "has1500Words": false
+      },
+      "bucket": "C",
+      "issues": [
+        "apenas ~1443 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "claude-cowork-saaspocalypse-2026",
+      "file": "ClaudeCoworkSaas2026.tsx",
+      "keyword": "claude cowork saaspocalypse",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1285,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta description",
+        "apenas ~1285 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "silent-hill-2-remake-guia-completo-2024",
+      "file": "SilentHill2RemakeGuia2024.tsx",
+      "keyword": "silent hill remake",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1884,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "keyword ausente em <h1>"
+      ]
+    },
+    {
+      "slug": "metaphor-refantazio-guia-completo-2024",
+      "file": "MetaphorReFantazioGuia2024.tsx",
+      "keyword": "metaphor refantazio",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2186,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "keyword ausente em <h1>"
+      ]
+    },
+    {
+      "slug": "final-fantasy-vii-rebirth-guia-completo-2024",
+      "file": "FinalFantasyVIIRebirthGuia2024.tsx",
+      "keyword": "final fantasy vii",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2215,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "keyword ausente em <h1>"
+      ]
+    },
+    {
+      "slug": "dragons-dogma-2-guia-completo-2024",
+      "file": "DragonsDogma2Guia2024.tsx",
+      "keyword": "dragons dogma",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1859,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "keyword ausente em meta title",
+        "keyword ausente em meta description",
+        "keyword ausente em meta keywords",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "balatro-guia-completo-2024",
+      "file": "BalatroGuia2024.tsx",
+      "keyword": "balatro",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 5,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1891,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "keyword ausente em <h1>"
+      ]
+    },
+    {
+      "slug": "vibe-coding-2026-criar-apps-sem-programar",
+      "file": "VibeCoding2026.tsx",
+      "keyword": "vibe coding criar",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1615,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "keyword ausente na introdução"
+      ]
+    },
+    {
+      "slug": "perplexity-ai-2026-buscador-ia-guia",
+      "file": "PerplexityAI2026.tsx",
+      "keyword": "perplexity ai buscador",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1162,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente em excerpt",
+        "apenas ~1162 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "grok-3-xai-modelo-elon-musk-2026",
+      "file": "Grok3XAI2026.tsx",
+      "keyword": "grok xai modelo",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1570,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "mushoku-tensei-3-temporada-2026",
+      "file": "MushokuTenseiT32026.tsx",
+      "keyword": "mushoku tensei temporada",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1999,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "bleach-tybw-parte-4-the-calamity-2026",
+      "file": "BleachTYBWParte4.tsx",
+      "keyword": "bleach tybw parte",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": false,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1711,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "keyword ausente em meta description",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "youjo-senki-temporada-2-2026",
+      "file": "YoujoSenkiT22026.tsx",
+      "keyword": "youjo senki temporada",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": true,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1931,
+        "has1500Words": true
+      },
+      "bucket": "OK",
+      "issues": []
     }
   ]
 }
