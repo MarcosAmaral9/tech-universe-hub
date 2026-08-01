@@ -222,6 +222,8 @@ const IbovespaRecordeSelic2026     = lazy(() => import("./pages/posts/IbovespaRe
 const TesouroPrefixadoVsIPCA2026   = lazy(() => import("./pages/posts/TesouroPrefixadoVsIPCA2026"));
 const NovaTabelaIR2026             = lazy(() => import("./pages/posts/NovaTabelaIR2026"));
 const BoletimFocusJulho2026        = lazy(() => import("./pages/posts/BoletimFocusJulho2026"));
+const ElonMuskTrilionario2026      = lazy(() => import("./pages/posts/ElonMuskTrilionario2026"));
+const RecuperacaoJudicialEmpresas2026 = lazy(() => import("./pages/posts/RecuperacaoJudicialEmpresas2026"));
 const PragmataCapcom2026           = lazy(() => import("./pages/posts/PragmataCapcom2026"));
 const SarosPS52026                 = lazy(() => import("./pages/posts/SarosPS52026"));
 const OnePieceElbaf2026            = lazy(() => import("./pages/posts/OnePieceElbaf2026"));
@@ -524,6 +526,8 @@ const App = () => (
                 <Route path="/post/tesouro-prefixado-vs-ipca-2026" element={<Suspense fallback={<div />}><TesouroPrefixadoVsIPCA2026 /></Suspense>} />
                 <Route path="/post/nova-tabela-ir-2026-isencao-5-mil" element={<Suspense fallback={<div />}><NovaTabelaIR2026 /></Suspense>} />
                 <Route path="/post/boletim-focus-julho-2026-selic-ipca" element={<Suspense fallback={<div />}><BoletimFocusJulho2026 /></Suspense>} />
+                <Route path="/post/elon-musk-primeiro-trilionario-ipo-spacex" element={<Suspense fallback={<div />}><ElonMuskTrilionario2026 /></Suspense>} />
+                <Route path="/post/recuperacao-judicial-empresas-2026-como-afeta-clientes" element={<Suspense fallback={<div />}><RecuperacaoJudicialEmpresas2026 /></Suspense>} />
                 <Route path="/post/pragmata-capcom-guia-completo-2026" element={<Suspense fallback={<div />}><PragmataCapcom2026 /></Suspense>} />
                 <Route path="/post/saros-housemarque-ps5-2026" element={<Suspense fallback={<div />}><SarosPS52026 /></Suspense>} />
                 <Route path="/post/one-piece-elbaf-formato-sazonal-2026" element={<Suspense fallback={<div />}><OnePieceElbaf2026 /></Suspense>} />
