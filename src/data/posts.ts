@@ -216,8 +216,88 @@ import bleachTybwParte4Img from "@/assets/bleach-tybw-parte-4-the-calamity-2026.
 import youjoSenkiT22026Img from "@/assets/youjo-senki-temporada-2-2026.webp";
 import novaTabelaIR2026Img from "@/assets/nova-tabela-ir-2026-isencao-5-mil.webp";
 import boletimFocusJulho2026Img from "@/assets/boletim-focus-julho-2026-selic-ipca.webp";
+import elonMuskTrilionarioImg from "@/assets/elon-musk-primeiro-trilionario-ipo-spacex-2026.webp";
+import recuperacaoJudicialImg from "@/assets/recuperacao-judicial-empresas-brasil-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 01 Ago 2026 — Finanças (IPO SpaceX · Elon Musk trilionário) ────
+  {
+    id: "231",
+    slug: "elon-musk-primeiro-trilionario-ipo-spacex",
+    title: "Elon Musk, o Primeiro Trilionário da História: o IPO da SpaceX e os Impactos na Bolsa",
+    excerpt:
+      "O IPO da SpaceX em 12/06/2026 levou as ações a US$ 150 na estreia e a fortuna de Elon Musk a US$ 1,1 trilhão. Entenda como uma abertura de capital cria riqueza em horas, o peso de cada empresa do império e o que o investidor brasileiro deve fazer com essa notícia.",
+    content: "",
+    category: "invest",
+    subtopic: "mercado",
+    image: elonMuskTrilionarioImg,
+    author: "VICIO<CODE>",
+    date: "2026-08-01",
+    readTime: "13 min",
+    faq: [
+      {
+        q: "Como Elon Musk se tornou o primeiro trilionário da história?",
+        a: "Com o IPO da SpaceX em 12 de junho de 2026. As ações estrearam a US$ 150, cerca de 11% acima do preço de oferta, avaliando a empresa em torno de US$ 2 trilhões. A marcação a mercado da participação de Musk elevou seu patrimônio de aproximadamente US$ 982 bilhões para cerca de US$ 1,1 trilhão no mesmo dia.",
+      },
+      {
+        q: "Elon Musk tem US$ 1,1 trilhão em dinheiro?",
+        a: "Não. A maior parte da fortuna está em participação societária, principalmente na SpaceX, que responde por cerca de 80% do patrimônio. Trata-se de valor de mercado das ações, não de caixa disponível — vender uma fatia grande pressionaria a própria cotação.",
+      },
+      {
+        q: "O brasileiro pode investir nas empresas de Elon Musk?",
+        a: "Sim, por meio de BDRs negociados na B3, de conta em corretora internacional, de ETFs que replicam índices americanos ou de fundos de investimento no exterior. Cada caminho tem custos, exposição cambial e regras de tributação e declaração próprias.",
+      },
+      {
+        q: "Quais os riscos de comprar ações logo após um IPO?",
+        a: "Volatilidade elevada pela pequena quantidade de ações em circulação, histórico público curto de resultados, vencimento do lock-up que aumenta a oferta de papéis e, muitas vezes, estruturas de voto que reduzem o poder do acionista minoritário.",
+      },
+      {
+        q: "O IPO da SpaceX afeta a bolsa brasileira?",
+        a: "De forma indireta. Estreias muito grandes drenam liquidez global para o papel novo, reprecificam empresas do mesmo setor e influenciam o apetite por risco. Para o investidor brasileiro, o efeito prático aparece principalmente via ETFs internacionais, BDRs e câmbio.",
+      },
+    ],
+  },
+  // ── 01 Ago 2026 — Finanças (Recuperação judicial · recorde Serasa) ─
+  {
+    id: "232",
+    slug: "recuperacao-judicial-empresas-2026-como-afeta-clientes",
+    title: "Recuperação Judicial em Alta: o Que É, Como Funciona e Como Afeta Clientes e Investidores",
+    excerpt:
+      "O Brasil teve 977 processos de recuperação judicial em 2025, envolvendo 2.466 empresas — recorde da série da Serasa Experian. Entenda a Lei 11.101/2005, o passo a passo do processo, a ordem de pagamento dos credores e o que fazer se a empresa que você contratou entrar em recuperação.",
+    content: "",
+    category: "invest",
+    subtopic: "economia",
+    image: recuperacaoJudicialImg,
+    author: "VICIO<CODE>",
+    date: "2026-08-01",
+    readTime: "14 min",
+    faq: [
+      {
+        q: "O que é recuperação judicial?",
+        a: "É um processo previsto na Lei 11.101/2005, reformada pela Lei 14.112/2020, que permite a uma empresa em crise renegociar suas dívidas sob supervisão do Judiciário para continuar funcionando, preservando empregos, contratos e a capacidade de pagar credores.",
+      },
+      {
+        q: "Recuperação judicial é a mesma coisa que falência?",
+        a: "Não. Na recuperação judicial a empresa continua operando e é administrada pelos próprios sócios, sob fiscalização. A falência é o encerramento da atividade com liquidação dos bens para pagar credores na ordem legal.",
+      },
+      {
+        q: "Quantas empresas entraram em recuperação judicial no Brasil?",
+        a: "Segundo a Serasa Experian, 2025 registrou 977 processos de recuperação judicial, alta de 5,5% sobre 2024, envolvendo 2.466 empresas — aumento de 12,9% e o maior número desde o início da série histórica, em 2012.",
+      },
+      {
+        q: "Como a recuperação judicial afeta o cliente da empresa?",
+        a: "A empresa continua obrigada a cumprir contratos e o Código de Defesa do Consumidor segue valendo. Compras feitas após o pedido não entram no plano de credores. Já valores devidos antes do pedido entram no processo, e o consumidor precisa verificar a lista de credores e habilitar seu crédito junto ao administrador judicial.",
+      },
+      {
+        q: "Quem recebe primeiro na recuperação judicial?",
+        a: "A ordem legal começa pelos créditos trabalhistas e de acidente de trabalho, seguidos dos créditos com garantia real, tributários, com privilégio especial e geral, quirografários, multas contratuais e, por último, créditos subordinados. O consumidor costuma ficar na classe quirografária.",
+      },
+      {
+        q: "O que fazer se a empresa que contratei pedir recuperação judicial?",
+        a: "Organize contratos, notas fiscais e protocolos; localize o edital e o administrador judicial; confira se seu crédito está na lista e habilite dentro do prazo; registre reclamação no canal da empresa, no consumidor.gov.br e no Procon; e evite novos pagamentos antecipados até o plano ser aprovado.",
+      },
+    ],
+  },
   // ── 27 Jul 2026 — Finanças (IR 2026 · Lei 15.270/2025) ─────────────
   {
     id: "229",
