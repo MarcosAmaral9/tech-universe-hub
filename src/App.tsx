@@ -222,6 +222,8 @@ const IbovespaRecordeSelic2026     = lazy(() => import("./pages/posts/IbovespaRe
 const TesouroPrefixadoVsIPCA2026   = lazy(() => import("./pages/posts/TesouroPrefixadoVsIPCA2026"));
 const NovaTabelaIR2026             = lazy(() => import("./pages/posts/NovaTabelaIR2026"));
 const BoletimFocusJulho2026        = lazy(() => import("./pages/posts/BoletimFocusJulho2026"));
+const ElonMuskTrilionario2026      = lazy(() => import("./pages/posts/ElonMuskTrilionario2026"));
+const RecuperacaoJudicialEmpresas2026 = lazy(() => import("./pages/posts/RecuperacaoJudicialEmpresas2026"));
 const PragmataCapcom2026           = lazy(() => import("./pages/posts/PragmataCapcom2026"));
 const SarosPS52026                 = lazy(() => import("./pages/posts/SarosPS52026"));
 const OnePieceElbaf2026            = lazy(() => import("./pages/posts/OnePieceElbaf2026"));
