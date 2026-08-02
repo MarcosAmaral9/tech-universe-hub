@@ -18,9 +18,16 @@ const ReadNext = ({ currentSlug }: ReadNextProps) => {
   const current = getPostBySlug(currentSlug);
   if (!current) return null;
 
-  const list = blogPosts
+  const sameCategory = blogPosts
     .filter((p) => p.category === current.category)
     .sort((a, b) => Number(a.id) - Number(b.id));
+
+  // Fallback: categorias com menos de 2 posts usam a lista global,
+  // assim todo artigo sempre tem um anterior e um próximo.
+  const list =
+    sameCategory.length >= 2
+      ? sameCategory
+      : [...blogPosts].sort((a, b) => Number(a.id) - Number(b.id));
 
   const idx = list.findIndex((p) => p.slug === currentSlug);
   if (idx === -1 || list.length < 2) return null;
@@ -28,6 +35,7 @@ const ReadNext = ({ currentSlug }: ReadNextProps) => {
   // Navegação circular garante sempre os dois cards preenchidos.
   const older = list[(idx - 1 + list.length) % list.length];
   const newer = list[(idx + 1) % list.length];
+
 
 
   const topic = current.subtopic ? subtopicLabel(current.subtopic) : null;

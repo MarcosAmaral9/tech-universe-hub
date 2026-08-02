@@ -1,4 +1,4 @@
-import { Megaphone, ShieldCheck, Handshake, Cookie, Mail } from "lucide-react";
+import { Megaphone, ShieldCheck, Cookie } from "lucide-react";
 import { Link } from "react-router-dom";
 import DynamicSEO from "@/components/DynamicSEO";
 
@@ -74,28 +74,6 @@ const AdvertisingPolicyPage = () => (
         </section>
 
         <section>
-          <div className="flex items-center gap-3 mb-2">
-            <Handshake className="h-6 w-6 text-primary" />
-            <h2 className="mt-0">Links de afiliados e conteúdo patrocinado</h2>
-          </div>
-          <p>
-            Eventualmente podemos usar links de afiliados (por exemplo, para lojas de jogos ou
-            corretoras). Quando isso acontecer:
-          </p>
-          <ul>
-            <li>O link é marcado com o atributo <code>rel="sponsored"</code>.</li>
-            <li>Existe um aviso visível no artigo informando a relação comercial.</li>
-            <li>O preço pago pelo leitor nunca aumenta por causa do link.</li>
-            <li>A recomendação nunca depende da existência de comissão.</li>
-          </ul>
-          <p>
-            Conteúdo pago é sempre rotulado como <strong>“Publieditorial”</strong> ou
-            <strong> “Patrocinado”</strong> no título e no início do texto, e segue as mesmas exigências
-            de precisão factual dos demais artigos.
-          </p>
-        </section>
-
-        <section>
           <h2>Conteúdo financeiro</h2>
           <p>
             Artigos da categoria Finanças têm caráter exclusivamente educativo. Não somos consultores de
@@ -104,17 +82,6 @@ const AdvertisingPolicyPage = () => (
           </p>
         </section>
 
-        <section>
-          <div className="flex items-center gap-3 mb-2">
-            <Mail className="h-6 w-6 text-primary" />
-            <h2 className="mt-0">Anunciar no VICIO&lt;CODE&gt;</h2>
-          </div>
-          <p>
-            Interessado em anunciar ou propor uma parceria? Fale com a gente pela{" "}
-            <Link to="/contato">página de contato</Link>. Propostas que exijam alteração de conteúdo
-            editorial já publicado são recusadas.
-          </p>
-        </section>
       </div>
     </div>
   </>
