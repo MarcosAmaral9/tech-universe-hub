@@ -10,30 +10,25 @@ interface ReadNextProps {
 
 /**
  * ReadNext — navegação contextual "leia a seguir".
- * Mostra o artigo anterior e o próximo dentro do MESMO subtópico (ou, na
- * falta dele, da mesma categoria), ordenados por data. Aumenta páginas por
- * sessão sem depender do algoritmo de relacionados.
+ * Percorre TODOS os artigos da MESMA categoria ordenados pelo `id` de
+ * posts.ts, de forma circular: todo artigo sempre tem um "anterior" e um
+ * "próximo" (mesmo o primeiro e o último da lista).
  */
 const ReadNext = ({ currentSlug }: ReadNextProps) => {
   const current = getPostBySlug(currentSlug);
   if (!current) return null;
 
-  const byDate = (a: { date: string }, b: { date: string }) =>
-    new Date(b.date + "T12:00:00").getTime() - new Date(a.date + "T12:00:00").getTime();
+  const list = blogPosts
+    .filter((p) => p.category === current.category)
+    .sort((a, b) => Number(a.id) - Number(b.id));
 
-  const sameTopic = blogPosts
-    .filter((p) =>
-      current.subtopic ? p.subtopic === current.subtopic : p.category === current.category
-    )
-    .sort(byDate);
-
-  const list = sameTopic.length > 1 ? sameTopic : blogPosts.filter((p) => p.category === current.category).sort(byDate);
   const idx = list.findIndex((p) => p.slug === currentSlug);
-  if (idx === -1) return null;
+  if (idx === -1 || list.length < 2) return null;
 
-  const newer = idx > 0 ? list[idx - 1] : undefined;
-  const older = idx < list.length - 1 ? list[idx + 1] : undefined;
-  if (!newer && !older) return null;
+  // Navegação circular garante sempre os dois cards preenchidos.
+  const older = list[(idx - 1 + list.length) % list.length];
+  const newer = list[(idx + 1) % list.length];
+
 
   const topic = current.subtopic ? subtopicLabel(current.subtopic) : null;
 
