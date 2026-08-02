@@ -6289,7 +6289,7 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    id: "174",
+    id: "233",
     slug: "agentes-ia-autonomos-2026",
     title: "Agentes de IA Autônomos em 2026: O que São, Como Funcionam e Por Que Vão Mudar Tudo",
     excerpt:
@@ -6317,7 +6317,7 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    id: "175",
+    id: "234",
     slug: "claude-cowork-saaspocalypse-2026",
     title: "Claude Cowork e o SaaSpocalypse: Como os Agentes de IA Estão Substituindo Softwares Inteiros",
     excerpt:
