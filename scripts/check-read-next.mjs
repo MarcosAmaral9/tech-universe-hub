@@ -31,7 +31,8 @@ if (posts.length < 2) errors.push("Menos de 2 posts no total: ReadNext não cons
 const seenId = new Map();
 const seenSlug = new Map();
 for (const p of posts) {
-  if (!/^\d+$/.test(p.id)) errors.push(`Post "${p.slug}" tem id não numérico ("${p.id}").`);
+  if (!/^\d+$/.test(p.id))
+    warnings.push(`Post "${p.slug}" tem id não numérico ("${p.id}") — ordenação usa a ordem do arquivo.`);
   if (seenId.has(p.id)) errors.push(`id duplicado "${p.id}": ${seenId.get(p.id)} e ${p.slug}.`);
   seenId.set(p.id, p.slug);
   if (seenSlug.has(p.slug)) errors.push(`slug duplicado "${p.slug}".`);
