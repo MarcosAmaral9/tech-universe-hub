@@ -1,4 +1,4 @@
-import { Megaphone, ShieldCheck, Handshake, Cookie, Mail } from "lucide-react";
+import { Megaphone, ShieldCheck, Cookie } from "lucide-react";
 import { Link } from "react-router-dom";
 import DynamicSEO from "@/components/DynamicSEO";
 

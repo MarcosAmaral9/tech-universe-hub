@@ -82,6 +82,24 @@ for (const post of posts) {
   </url>`);
 }
 
+// ── Hubs de categoria (derivados dos posts) ─────────────────────────────────
+const CATEGORY_PATHS = { ia: "/ia", invest: "/financas", geek: "/geek", otaku: "/otaku" };
+const categoryMatches = postsSource.match(/category:\s*"([^"]+)"/g) ?? [];
+const categories = [...new Set(categoryMatches.map((c) => c.match(/"([^"]+)"/)[1]))]
+  .filter((c) => CATEGORY_PATHS[c]);
+const existingPaths = new Set(STATIC_PAGES.map((p) => p.path));
+for (const cat of categories) {
+  const catPath = CATEGORY_PATHS[cat];
+  if (existingPaths.has(catPath)) continue;
+  existingPaths.add(catPath);
+  urls.push(`  <url>
+    <loc>${BASE_URL}${catPath}</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>`);
+}
+console.log(`Found ${categories.length} categories`);
+
 // ── Hubs de tag (/tag/:subtopic) — apenas subtópicos com pelo menos 1 post ──
 const subtopicMatches = postsSource.match(/subtopic:\s*"([^"]+)"/g) ?? [];
 const tags = [...new Set(subtopicMatches.map((m) => m.match(/"([^"]+)"/)[1]))].sort();
@@ -93,6 +111,7 @@ for (const tag of tags) {
   </url>`);
 }
 console.log(`Found ${tags.length} tags`);
+
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <!--
