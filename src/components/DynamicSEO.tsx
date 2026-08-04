@@ -1252,14 +1252,15 @@ const DynamicSEO = ({ forceNoindex = false, feedUrl }: DynamicSEOProps = {}) => 
   // e posts inexistentes (URLs órfãs /post/... que caem em 404 lógico).
   const isOrphanPost = isPost && !post;
   const isPrivate =
-    forceNoindex ||
     privatePaths.some((p) => pathname.startsWith(p)) ||
     pathname.startsWith("/perfil/") ||
     pathname.startsWith("/auth/") ||
     isOrphanPost;
   const robotsContent = isPrivate
-    ? "noindex, follow"
-    : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1";
+    ? "noindex, nofollow"
+    : forceNoindex
+      ? "noindex, follow"
+      : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1";
 
   // ── JSON-LD blocks ────────────────────────────────────────────────────────
   const categoryPages: Record<string, string> = {
