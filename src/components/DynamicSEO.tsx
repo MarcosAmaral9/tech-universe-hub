@@ -1183,7 +1183,14 @@ const buildPostKeywords = (post: { title: string; excerpt: string; category: str
   return unique.slice(0, 18).join(", ");
 };
 
-const DynamicSEO = () => {
+interface DynamicSEOProps {
+  /** Força noindex (ex.: /arquivo com busca/filtros aplicados). */
+  forceNoindex?: boolean;
+  /** URL absoluta de um feed RSS específico desta página. */
+  feedUrl?: string;
+}
+
+const DynamicSEO = ({ forceNoindex = false, feedUrl }: DynamicSEOProps = {}) => {
   const { pathname } = useLocation();
 
   let title = SITE_NAME;
