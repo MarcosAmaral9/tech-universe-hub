@@ -1285,23 +1285,32 @@ const DynamicSEO = ({ forceNoindex = false, feedUrl }: DynamicSEOProps = {}) => 
 
   if (post) {
     const wordCount = Math.max(0, Math.round(String(post.content ?? "").length / 5));
+    const publishedISO = `${post.date}T09:00:00-03:00`;
+    const modifiedISO = `${post.updatedAt ?? post.date}T09:00:00-03:00`;
     mainJsonLd = {
       "@context": "https://schema.org",
-      "@type": "Article",
-      headline: post.title,
+      "@type": "BlogPosting",
+      headline: post.title.slice(0, 110),
+      name: post.title,
       description: post.excerpt,
-      image,
+      image: { "@type": "ImageObject", url: image, width: 1200, height: 630 },
       url,
-      datePublished: post.date,
-      dateModified: post.updatedAt ?? post.date,
-      author: { ...organization },
+      datePublished: publishedISO,
+      dateModified: modifiedISO,
+      author: {
+        "@type": "Person",
+        name: "Marcos Amaral",
+        url: `${BASE_URL}/autor/marcos-amaral`,
+      },
       publisher: organization,
       mainEntityOfPage: { "@type": "WebPage", "@id": url },
       keywords,
       articleSection: CATEGORY_NAME[post.category] ?? "Blog",
       wordCount,
+      isAccessibleForFree: true,
       inLanguage: "pt-BR",
     };
+
     const categoryMap: Record<string, { path: string; name: string }> = {
       ia: { path: "/ia", name: "Inteligência Artificial" },
       invest: { path: "/financas", name: "Finanças" },
