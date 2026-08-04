@@ -8,7 +8,7 @@
  */
 import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { Search, X, Archive, ArrowDownWideNarrow } from "lucide-react";
+import { Search, X, Archive, ArrowDownWideNarrow, Rss, Tag as TagIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -32,6 +32,7 @@ import DynamicSEO from "@/components/DynamicSEO";
 import { AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import BackNavigation from "@/components/BackNavigation";
 import { blogPosts } from "@/data/posts";
+import { subtopicLabel } from "@/lib/subtopics";
 import type { BlogPost, Category } from "@/types/blog";
 
 const PER_PAGE = 12;
@@ -67,6 +68,7 @@ const ArchivePage = () => {
   const cat = (params.get("cat") as "all" | Category | null) ?? "all";
   const page = Math.max(1, Number(params.get("page") ?? "1"));
   const q = params.get("q") ?? "";
+  const tag = params.get("tag") ?? "";
   const deep = params.get("deep") === "1";
   const sortParam = (params.get("sort") as SortKey | null) ?? "recent";
   const sort: SortKey = ["recent", "oldest", "relevance"].includes(sortParam) ? sortParam : "recent";
@@ -88,6 +90,13 @@ const ArchivePage = () => {
   const setCat = (k: "all" | Category) => {
     const next = new URLSearchParams(params);
     if (k === "all") next.delete("cat"); else next.set("cat", k);
+    next.delete("page");
+    setParams(next, { replace: true });
+  };
+
+  const setTag = (t: string) => {
+    const next = new URLSearchParams(params);
+    if (!t || t === tag) next.delete("tag"); else next.set("tag", t);
     next.delete("page");
     setParams(next, { replace: true });
   };
@@ -128,6 +137,7 @@ const ArchivePage = () => {
   const filtered = useMemo(() => {
     let list = normalizedPosts;
     if (cat !== "all") list = list.filter((x) => x.post.category === cat);
+    if (tag) list = list.filter((x) => x.post.subtopic === tag);
 
     const nq = norm(q);
 
@@ -165,7 +175,7 @@ const ArchivePage = () => {
     }
 
     return withScore.map((x) => x.post) as BlogPost[];
-  }, [normalizedPosts, cat, q, deep, sort]);
+  }, [normalizedPosts, cat, tag, q, deep, sort]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
   const safePage = Math.min(page, totalPages);
@@ -178,6 +188,26 @@ const ArchivePage = () => {
     for (const p of blogPosts) c[p.category] = (c[p.category] ?? 0) + 1;
     return c;
   }, []);
+
+  // Tags (subtópicos) disponíveis na categoria selecionada
+  const tagOptions = useMemo(() => {
+    const map = new Map<string, number>();
+    for (const p of blogPosts) {
+      if (cat !== "all" && p.category !== cat) continue;
+      if (!p.subtopic) continue;
+      map.set(p.subtopic, (map.get(p.subtopic) ?? 0) + 1);
+    }
+    return [...map.entries()]
+      .map(([key, count]) => ({ key, label: subtopicLabel(key), count }))
+      .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+  }, [cat]);
+
+  // Feed RSS correspondente aos filtros atuais
+  const feedUrl = tag
+    ? `/feed/tag/${tag}.xml`
+    : cat === "all"
+      ? "/feed.xml"
+      : `/feed/${cat === "invest" ? "financas" : cat}.xml`;
 
   // Páginas a exibir (no máximo 7 itens, com elipses)
   const pageNumbers = useMemo(() => {
@@ -194,7 +224,10 @@ const ArchivePage = () => {
 
   return (
     <>
-      <DynamicSEO />
+      <DynamicSEO
+        forceNoindex={Boolean(q || tag || safePage > 1)}
+        feedUrl={`https://viciocode.com${feedUrl}`}
+      />
       <div className="min-h-[70vh] py-6 sm:py-10 px-3 sm:px-4 lg:px-6">
         <div className="max-w-7xl mx-auto">
           <BackNavigation category="ia" fallbackPath="/" />
@@ -212,6 +245,13 @@ const ArchivePage = () => {
               Filtre por categoria, busque por palavra-chave (incluindo no corpo do post)
               e ordene por relevância ou data.
             </p>
+            <a
+              href={feedUrl}
+              className="mt-3 inline-flex items-center gap-1.5 text-xs sm:text-sm text-primary hover:underline font-semibold"
+            >
+              <Rss className="h-4 w-4" />
+              Assinar feed RSS {tag ? `da tag ${subtopicLabel(tag)}` : cat === "all" ? "de todos os artigos" : "desta categoria"}
+            </a>
           </header>
 
           {/* Filtros + busca */}
@@ -243,6 +283,36 @@ const ArchivePage = () => {
                 );
               })}
             </div>
+
+            {/* Chips de tag (subtópico) */}
+            {tagOptions.length > 1 && (
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-1 text-xs text-muted-foreground shrink-0">
+                  <TagIcon className="h-3.5 w-3.5" /> Tags:
+                </span>
+                {tag && (
+                  <button
+                    onClick={() => setTag("")}
+                    className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full border border-border text-muted-foreground hover:border-primary/50"
+                  >
+                    Limpar <X className="h-3 w-3" />
+                  </button>
+                )}
+                {tagOptions.slice(0, 18).map((t) => (
+                  <button
+                    key={t.key}
+                    onClick={() => setTag(t.key)}
+                    className={`text-xs px-2.5 py-1 rounded-full border transition-colors ${
+                      tag === t.key
+                        ? "bg-primary text-primary-foreground border-primary"
+                        : "bg-card text-muted-foreground border-border hover:border-primary/50"
+                    }`}
+                  >
+                    {t.label} <span className="opacity-70">({t.count})</span>
+                  </button>
+                ))}
+              </div>
+            )}
 
             {/* Busca + ordenação */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-3">
@@ -328,7 +398,7 @@ const ArchivePage = () => {
           {pageItems.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {pageItems.map((p) => (
-                <PostCard key={p.id} post={p} />
+                <PostCard key={p.id} post={p} highlightQuery={q} />
               ))}
             </div>
           ) : (
@@ -340,6 +410,7 @@ const ArchivePage = () => {
                 onClick={() => {
                   setSearchInput("");
                   setCat("all");
+                  setTag("");
                   setDeep(false);
                   setSort("recent");
                 }}
