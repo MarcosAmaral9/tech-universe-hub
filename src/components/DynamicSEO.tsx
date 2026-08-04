@@ -1417,7 +1417,15 @@ const DynamicSEO = ({ forceNoindex = false, feedUrl }: DynamicSEOProps = {}) => 
       <meta name="twitter:image:alt" content={title} />
 
       <meta name="robots" content={robotsContent} />
-      <meta name="googlebot" content={isPrivate ? "noindex, nofollow" : "index, follow"} />
+      <meta name="googlebot" content={isPrivate || forceNoindex ? "noindex, follow" : "index, follow"} />
+
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        title={`${SITE_NAME} — feed RSS`}
+        href={feedUrl ?? autoFeedUrl}
+      />
+
 
       {mainJsonLd && (
         <script type="application/ld+json">{JSON.stringify(mainJsonLd)}</script>
