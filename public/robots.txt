@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+Allow: /feed.xml
+Allow: /feed/
+Disallow: /arquivo?
 Disallow: /configuracoes
 Disallow: /painel-social
 Disallow: /entrar
