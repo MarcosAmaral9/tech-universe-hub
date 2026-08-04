@@ -6,16 +6,20 @@ import CategoryBadge from "./CategoryBadge";
 import SkeletonImage from "./SkeletonImage";
 import { useOfflinePosts } from "@/hooks/useOfflinePosts";
 import { useTopPosts } from "@/hooks/useTopPosts";
+import { highlight } from "@/lib/highlight";
 
 interface PostCardProps {
   post: BlogPost;
+  /** Quando informado, destaca o termo pesquisado no título e no resumo. */
+  highlightQuery?: string;
 }
 
-const PostCard = forwardRef<HTMLElement, PostCardProps>(({ post }, ref) => {
+const PostCard = forwardRef<HTMLElement, PostCardProps>(({ post, highlightQuery }, ref) => {
   const { isCached } = useOfflinePosts();
   const offlineReady = isCached(post.slug);
   const { isTop } = useTopPosts("week", 5);
   const trending = isTop(post.slug);
+  const hl = (text: string) => (highlightQuery ? highlight(text, highlightQuery) : text);
 
   return (
     <article ref={ref} className="group bg-card rounded-xl overflow-hidden border border-border card-hover">
