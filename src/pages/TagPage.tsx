@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Navigate, useParams, Link } from "react-router-dom";
-import { Tag as TagIcon } from "lucide-react";
+import { Tag as TagIcon, Rss } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { blogPosts } from "@/data/posts";
 import { subtopicLabel } from "@/lib/subtopics";
@@ -77,6 +77,7 @@ const TagPage = () => {
         <meta property="og:url" content={canonical} />
         <meta property="og:type" content="website" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
+        <link rel="alternate" type="application/rss+xml" title={`${label} — feed RSS`} href={`${BASE_URL}/feed/tag/${slug}.xml`} />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 
@@ -90,6 +91,13 @@ const TagPage = () => {
             {posts.length} artigo{posts.length > 1 ? "s" : ""} publicado
             {posts.length > 1 ? "s" : ""} sobre {label} no VICIO&lt;CODE&gt;.
           </p>
+
+          <a
+            href={`/feed/tag/${slug}.xml`}
+            className="mt-3 inline-flex items-center gap-1.5 text-sm text-primary hover:underline font-semibold"
+          >
+            <Rss className="h-4 w-4" /> Assinar feed RSS desta tag
+          </a>
 
           <div className="flex flex-wrap items-center gap-2 mt-4">
             <span className="text-xs text-muted-foreground">Também em:</span>
