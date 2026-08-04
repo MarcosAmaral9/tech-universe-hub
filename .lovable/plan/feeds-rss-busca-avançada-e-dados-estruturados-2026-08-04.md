@@ -14,7 +14,8 @@ Cada item traz título, link absoluto HTTPS, `guid`, `pubDate`, descrição (exc
 
 ## 2. Busca com filtros e paginação
 
-Nova rota `/busca` (indexável apenas na forma base; resultados com query recebem `noindex`):
+Nova rota `/busca` (indexável apenas na forma base; resultados com query recebem `noindex`):  
+Já tenho a pagina arquivo, utilize e melhore ela ao inves de criar  tudo do zero, veeeerifiqye a 
 
 - Campo de texto com busca em título, resumo e tags
 - Filtros por categoria (IA, Finanças, Geek, Otaku) e por tag/subtópico
