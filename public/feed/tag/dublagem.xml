@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VICIO&lt;CODE&gt; — tag dublagem</title>
+    <link>https://viciocode.com</link>
+    <description>Novos artigos marcados com &quot;dublagem&quot; no VICIO&lt;CODE&gt;.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Thu, 05 Feb 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://viciocode.com/feed/tag/dublagem.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IA na Dublagem de Animes: Voice Cloning e o Futuro da Localização</title>
+      <link>https://viciocode.com/post/ia-transformando-dublagem-animes</link>
+      <guid isPermaLink="true">https://viciocode.com/post/ia-transformando-dublagem-animes</guid>
+      <pubDate>Thu, 05 Feb 2026 12:00:00 GMT</pubDate>
+      <description>ElevenLabs: 29 idiomas, a partir de 1 min de áudio. SAG-AFTRA: 4 meses de greve até acordos que exigem consentimento para clonar voz. Sated-SP e PL 2338. Dublagem clássica BR — o patrimônio que IA não substitui.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/ia-transformando-dublagem-animes.webp" type="image/webp" length="0" />
+    </item>
+  </channel>
+</rss>

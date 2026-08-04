@@ -1183,7 +1183,14 @@ const buildPostKeywords = (post: { title: string; excerpt: string; category: str
   return unique.slice(0, 18).join(", ");
 };
 
-const DynamicSEO = () => {
+interface DynamicSEOProps {
+  /** Força noindex (ex.: /arquivo com busca/filtros aplicados). */
+  forceNoindex?: boolean;
+  /** URL absoluta de um feed RSS específico desta página. */
+  feedUrl?: string;
+}
+
+const DynamicSEO = ({ forceNoindex = false, feedUrl }: DynamicSEOProps = {}) => {
   const { pathname } = useLocation();
 
   let title = SITE_NAME;
@@ -1251,7 +1258,9 @@ const DynamicSEO = () => {
     isOrphanPost;
   const robotsContent = isPrivate
     ? "noindex, nofollow"
-    : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1";
+    : forceNoindex
+      ? "noindex, follow"
+      : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1";
 
   // ── JSON-LD blocks ────────────────────────────────────────────────────────
   const categoryPages: Record<string, string> = {
@@ -1261,6 +1270,27 @@ const DynamicSEO = () => {
     "/otaku": "Otaku",
   };
   const isCategory = pathname in categoryPages;
+
+  // Feed RSS correspondente à página (categoria, tag ou geral)
+  const CATEGORY_FEED: Record<string, string> = {
+    ia: "/feed/ia.xml",
+    invest: "/feed/financas.xml",
+    geek: "/feed/geek.xml",
+    otaku: "/feed/otaku.xml",
+  };
+  const CATEGORY_PATH_FEED: Record<string, string> = {
+    "/ia": "/feed/ia.xml",
+    "/financas": "/feed/financas.xml",
+    "/geek": "/feed/geek.xml",
+    "/otaku": "/feed/otaku.xml",
+  };
+  const autoFeedUrl = `${BASE_URL}${
+    pathname.startsWith("/tag/")
+      ? `/feed/tag/${pathname.replace("/tag/", "")}.xml`
+      : post
+        ? CATEGORY_FEED[post.category] ?? "/feed.xml"
+        : CATEGORY_PATH_FEED[pathname] ?? "/feed.xml"
+  }`;
 
   const organization = {
     "@type": "Organization",
@@ -1276,23 +1306,32 @@ const DynamicSEO = () => {
 
   if (post) {
     const wordCount = Math.max(0, Math.round(String(post.content ?? "").length / 5));
+    const publishedISO = `${post.date}T09:00:00-03:00`;
+    const modifiedISO = `${post.updatedAt ?? post.date}T09:00:00-03:00`;
     mainJsonLd = {
       "@context": "https://schema.org",
-      "@type": "Article",
-      headline: post.title,
+      "@type": "BlogPosting",
+      headline: post.title.slice(0, 110),
+      name: post.title,
       description: post.excerpt,
-      image,
+      image: { "@type": "ImageObject", url: image, width: 1200, height: 630 },
       url,
-      datePublished: post.date,
-      dateModified: post.updatedAt ?? post.date,
-      author: { ...organization },
+      datePublished: publishedISO,
+      dateModified: modifiedISO,
+      author: {
+        "@type": "Person",
+        name: "Marcos Amaral",
+        url: `${BASE_URL}/autor/marcos-amaral`,
+      },
       publisher: organization,
       mainEntityOfPage: { "@type": "WebPage", "@id": url },
       keywords,
       articleSection: CATEGORY_NAME[post.category] ?? "Blog",
       wordCount,
+      isAccessibleForFree: true,
       inLanguage: "pt-BR",
     };
+
     const categoryMap: Record<string, { path: string; name: string }> = {
       ia: { path: "/ia", name: "Inteligência Artificial" },
       invest: { path: "/financas", name: "Finanças" },
@@ -1399,7 +1438,15 @@ const DynamicSEO = () => {
       <meta name="twitter:image:alt" content={title} />
 
       <meta name="robots" content={robotsContent} />
-      <meta name="googlebot" content={isPrivate ? "noindex, nofollow" : "index, follow"} />
+      <meta name="googlebot" content={isPrivate || forceNoindex ? "noindex, follow" : "index, follow"} />
+
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        title={`${SITE_NAME} — feed RSS`}
+        href={feedUrl ?? autoFeedUrl}
+      />
+
 
       {mainJsonLd && (
         <script type="application/ld+json">{JSON.stringify(mainJsonLd)}</script>

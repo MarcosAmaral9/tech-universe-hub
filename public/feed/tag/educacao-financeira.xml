@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VICIO&lt;CODE&gt; — tag educacao-financeira</title>
+    <link>https://viciocode.com</link>
+    <description>Novos artigos marcados com &quot;educacao-financeira&quot; no VICIO&lt;CODE&gt;.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Sat, 21 Feb 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://viciocode.com/feed/tag/educacao-financeira.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Método 3 Baldes: Finanças para Iniciantes</title>
+      <link>https://viciocode.com/post/educacao-financeira-metodo-3-baldes</link>
+      <guid isPermaLink="true">https://viciocode.com/post/educacao-financeira-metodo-3-baldes</guid>
+      <pubDate>Sat, 21 Feb 2026 12:00:00 GMT</pubDate>
+      <description>Se você chega no fim do mês sem dinheiro, este artigo é para você. O Método dos 3 Baldes é simples e funciona para qualquer salário.</description>
+      <category>Finanças &amp; Investimentos</category>
+      <enclosure url="https://viciocode.com/assets/educacao-financeira-metodo-3-baldes.webp" type="image/webp" length="0" />
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VICIO&lt;CODE&gt; — tag ferramentas</title>
+    <link>https://viciocode.com</link>
+    <description>Novos artigos marcados com &quot;ferramentas&quot; no VICIO&lt;CODE&gt;.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Thu, 28 May 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://viciocode.com/feed/tag/ferramentas.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Seedance 2.0: O Gerador de Vídeo com IA da ByteDance que Muda o Jogo em 2026</title>
+      <link>https://viciocode.com/post/seedance-2-0-geracao-video-ia-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/seedance-2-0-geracao-video-ia-2026</guid>
+      <pubDate>Thu, 28 May 2026 12:00:00 GMT</pubDate>
+      <description>Seedance 2.0 lidera o Artificial Analysis Video Arena em maio de 2026. Vídeo 2K com áudio nativo sincronizado, disponível via CapCut e Dreamina gratuitamente no Brasil. Comparativo verificado com Kling 3.0, Veo 3.1 e Runway Gen-4.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/seedance-2-0-geracao-video-ia-2026.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>Suno AI: O Guia Completo do Gerador de Músicas com IA em 2026</title>
+      <link>https://viciocode.com/post/suno-ai-gerador-musica-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/suno-ai-gerador-musica-2026</guid>
+      <pubDate>Thu, 28 May 2026 12:00:00 GMT</pubDate>
+      <description>100M usuários, 7M músicas por dia. Suno v5.5 com clonagem de voz e 44,1kHz. Warner fechou acordo; Sony ainda processa. Como distribuir em Spotify e Apple Music, e o que o Copyright Office decidiu sobre IA e direitos autorais.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/suno-ai-gerador-musica-2026.webp" type="image/webp" length="0" />
+    </item>
+  </channel>
+</rss>

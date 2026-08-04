@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VICIO&lt;CODE&gt; — tag trabalho</title>
+    <link>https://viciocode.com</link>
+    <description>Novos artigos marcados com &quot;trabalho&quot; no VICIO&lt;CODE&gt;.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Mon, 13 Apr 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://viciocode.com/feed/tag/trabalho.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IA no Mercado de Trabalho Brasileiro em 2026: Quais Profissões Ganham e Quais Estão em Risco</title>
+      <link>https://viciocode.com/post/ia-mercado-trabalho-brasil-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/ia-mercado-trabalho-brasil-2026</guid>
+      <pubDate>Mon, 13 Apr 2026 12:00:00 GMT</pubDate>
+      <description>IBRE/FGV: 30% dos trabalhadores BR expostos (30,9M pessoas). IPEA (abr/2026): IA reconfigura tarefas, não elimina ocupações. DIAP: 80%+ dos serviços expostos. Plano de 90 dias para reposicionamento.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/ia-mercado-trabalho-brasil-2026.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>IA no Brasil em 2026: Investimentos em Tecnologia Crescem 18,5% e Transformam o Mercado</title>
+      <link>https://viciocode.com/post/ia-brasil-adocao-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/ia-brasil-adocao-2026</guid>
+      <pubDate>Fri, 03 Apr 2026 12:00:00 GMT</pubDate>
+      <description>3º maior usuário de ChatGPT no mundo. Mas 67% das empresas só experimentam e 12% têm IA em produção. R$ 5,2 bilhões em 2024, R$ 18 bilhões projetados para 2027. Os 3 gargalos que freiam o avanço.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/ia-brasil-adocao-2026.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>IA no Trabalho em 2026: Sua Profissão Vai Acabar ou Evoluir?</title>
+      <link>https://viciocode.com/post/ia-no-trabalho-2026-profissoes</link>
+      <guid isPermaLink="true">https://viciocode.com/post/ia-no-trabalho-2026-profissoes</guid>
+      <pubDate>Fri, 13 Feb 2026 12:00:00 GMT</pubDate>
+      <description>WEF 2025: 170M empregos criados, 92M deslocados até 2030. Gupy: +306% em busca de profissionais com IA. OIT: só 5% em risco real de substituição total. O que PL 2338 muda para empresas que usam IA em RH.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/ia-no-trabalho-2026-profissoes.webp" type="image/webp" length="0" />
+    </item>
+  </channel>
+</rss>

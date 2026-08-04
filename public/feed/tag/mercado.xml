@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VICIO&lt;CODE&gt; — tag mercado</title>
+    <link>https://viciocode.com</link>
+    <description>Novos artigos marcados com &quot;mercado&quot; no VICIO&lt;CODE&gt;.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Sat, 01 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://viciocode.com/feed/tag/mercado.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Elon Musk, o Primeiro Trilionário da História: o IPO da SpaceX e os Impactos na Bolsa</title>
+      <link>https://viciocode.com/post/elon-musk-primeiro-trilionario-ipo-spacex</link>
+      <guid isPermaLink="true">https://viciocode.com/post/elon-musk-primeiro-trilionario-ipo-spacex</guid>
+      <pubDate>Sat, 01 Aug 2026 12:00:00 GMT</pubDate>
+      <description>O IPO da SpaceX em 12/06/2026 levou as ações a US$ 150 na estreia e a fortuna de Elon Musk a US$ 1,1 trilhão. Entenda como uma abertura de capital cria riqueza em horas, o peso de cada empresa do império e o que o investidor brasileiro deve fazer com essa notícia.</description>
+      <category>Finanças &amp; Investimentos</category>
+      <enclosure url="https://viciocode.com/assets/elon-musk-primeiro-trilionario-ipo-spacex.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>Brent Ultrapassa US$ 125: Bloqueio em Ormuz, Combustível Mais Caro e o Que Fazer com Petrobras (PETR4)</title>
+      <link>https://viciocode.com/post/petroleo-brent-125-bloqueio-ormuz-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/petroleo-brent-125-bloqueio-ormuz-2026</guid>
+      <pubDate>Mon, 04 May 2026 12:00:00 GMT</pubDate>
+      <description>Brent saltou +6,2% e ultrapassou US$ 125/barril após Trump indicar que manterá o bloqueio naval ao Estreito de Ormuz. Maior nível desde a crise de 2008. Veja o impacto na inflação brasileira, em PETR4, PRIO3, aéreas e na sua carteira.</description>
+      <category>Finanças &amp; Investimentos</category>
+      <enclosure url="https://viciocode.com/assets/petroleo-brent-125-bloqueio-ormuz-2026.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>PNAD Março 2026: Desemprego Sobe a 6,1%, Mas Mantém Mínima Histórica — O Que o Investidor Precisa Saber</title>
+      <link>https://viciocode.com/post/pnad-desemprego-61-marco-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/pnad-desemprego-61-marco-2026</guid>
+      <pubDate>Mon, 04 May 2026 12:00:00 GMT</pubDate>
+      <description>IBGE divulgou a PNAD do trimestre até março: desemprego em 6,1% (mínima histórica para o período), 6,6 milhões de desocupados, renda média recorde de R$ 3.722 e massa salarial em R$ 374,8 bilhões. Veja os impactos para Selic, bolsa e sua carteira.</description>
+      <category>Finanças &amp; Investimentos</category>
+      <enclosure url="https://viciocode.com/assets/pnad-desemprego-61-marco-2026.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>Google Investe US$ 40 Bilhões na Anthropic e o Modelo Mythos Chega: A Resposta ao Domínio da OpenAI</title>
+      <link>https://viciocode.com/post/anthropic-mythos-modelo-ia-google-investimento-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/anthropic-mythos-modelo-ia-google-investimento-2026</guid>
+      <pubDate>Thu, 30 Apr 2026 12:00:00 GMT</pubDate>
+      <description>Google investiu US$ 2 bilhões na Anthropic. Mythos é o modelo mais avançado da empresa — acesso restrito via Project Glasswing. O que essa aliança muda para desenvolvedores e empresas brasileiras.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/anthropic-mythos-modelo-ia-google-investimento-2026.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>OpenAI Capta US$ 40 Bilhões e Chega a US$ 300 Bi de Valuation: O Que Isso Significa para o Futuro da IA</title>
+      <link>https://viciocode.com/post/openai-bilhoes-financiamento-record-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/openai-bilhoes-financiamento-record-2026</guid>
+      <pubDate>Sat, 25 Apr 2026 12:00:00 GMT</pubDate>
+      <description>US$ 40B do SoftBank em 31/março/2025. Valuation US$ 300B. Receita projetada US$ 29,4B em 2026. Fluxo de caixa positivo só em 2029. O que muda para devs brasileiros e como isso afeta toda a indústria de IA.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/openai-bilhoes-financiamento-record-2026.webp" type="image/webp" length="0" />
+    </item>
+  </channel>
+</rss>

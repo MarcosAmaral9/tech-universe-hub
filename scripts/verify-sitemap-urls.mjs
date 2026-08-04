@@ -78,6 +78,36 @@ for (const { loc, file } of htmlFiles) {
   }
 }
 
+
+// ── Feeds RSS ───────────────────────────────────────────────────────────────
+const feedFiles = [];
+const feedRoot = path.resolve(ROOT, "dist");
+const collectFeeds = (dir) => {
+  if (!fs.existsSync(dir)) return;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const abs = path.join(dir, entry.name);
+    if (entry.isDirectory()) collectFeeds(abs);
+    else if (entry.name.endsWith(".xml")) feedFiles.push(abs);
+  }
+};
+collectFeeds(path.join(feedRoot, "feed"));
+if (fs.existsSync(path.join(feedRoot, "feed.xml"))) feedFiles.push(path.join(feedRoot, "feed.xml"));
+
+for (const file of feedFiles) {
+  const xml = fs.readFileSync(file, "utf8");
+  const rel = path.relative(ROOT, file);
+  if (!xml.startsWith('<?xml version="1.0" encoding="UTF-8"?>') || !/<rss[\s>]/.test(xml) || !xml.trimEnd().endsWith("</rss>")) {
+    errors.push(`Feed RSS inválido: ${rel}`);
+  }
+  if (/<(?:link|guid[^>]*)>http:\/\//.test(xml)) {
+    errors.push(`Feed com URL não-HTTPS: ${rel}`);
+  }
+  if (!/<item>/.test(xml)) {
+    errors.push(`Feed sem itens: ${rel}`);
+  }
+}
+console.log(`Feeds RSS verificados: ${feedFiles.length}`);
+
 console.log(`URLs no sitemap: ${locs.length}`);
 console.log(`HTMLs verificados: ${htmlFiles.length}`);
 

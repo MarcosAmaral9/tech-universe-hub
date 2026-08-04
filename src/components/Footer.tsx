@@ -101,6 +101,25 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
+            {/* Feeds RSS */}
+            <div className="mt-6">
+              <h4 className="font-display font-semibold mb-2 text-foreground text-sm">Feeds RSS</h4>
+              <ul className="space-y-1 text-sm">
+                <li>
+                  <a href="/feed.xml" className="text-muted-foreground hover:text-primary transition-colors">Todos os artigos</a>
+                </li>
+                <li>
+                  <a href="/feed/ia.xml" className="text-muted-foreground hover:text-ia transition-colors">IA</a>
+                  {" · "}
+                  <a href="/feed/financas.xml" className="text-muted-foreground hover:text-invest transition-colors">Finanças</a>
+                  {" · "}
+                  <a href="/feed/geek.xml" className="text-muted-foreground hover:text-geek transition-colors">Geek</a>
+                  {" · "}
+                  <a href="/feed/otaku.xml" className="text-muted-foreground hover:text-otaku transition-colors">Otaku</a>
+                </li>
+              </ul>
+            </div>
+
             {/* Social icons */}
             <div className="flex gap-4 mt-6">
               {/* Desktop: Clickable icons */}

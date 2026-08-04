@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VICIO&lt;CODE&gt; — tag saude</title>
+    <link>https://viciocode.com</link>
+    <description>Novos artigos marcados com &quot;saude&quot; no VICIO&lt;CODE&gt;.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Mon, 02 Mar 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://viciocode.com/feed/tag/saude.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IA para Saúde 2026: Diagnósticos e Futuro</title>
+      <link>https://viciocode.com/post/ia-saude-2026-diagnosticos-futuro</link>
+      <guid isPermaLink="true">https://viciocode.com/post/ia-saude-2026-diagnosticos-futuro</guid>
+      <pubDate>Mon, 02 Mar 2026 12:00:00 GMT</pubDate>
+      <description>ANVISA regulamentou software médico com IA (RDC 657/2022). CFM: decisão clínica continua sendo do médico. IDx-DR, Viz.ai, Apple Watch ECG aprovados no Brasil. O que o SUS está implementando em 2026.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/ia-saude-2026-diagnosticos-futuro.webp" type="image/webp" length="0" />
+    </item>
+  </channel>
+</rss>

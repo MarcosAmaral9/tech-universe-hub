@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VICIO&lt;CODE&gt; — tag cripto</title>
+    <link>https://viciocode.com</link>
+    <description>Novos artigos marcados com &quot;cripto&quot; no VICIO&lt;CODE&gt;.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Sun, 22 Mar 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://viciocode.com/feed/tag/cripto.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bitcoin em 2026: vale comprar agora ou esperar?</title>
+      <link>https://viciocode.com/post/bitcoin-2026-vale-comprar</link>
+      <guid isPermaLink="true">https://viciocode.com/post/bitcoin-2026-vale-comprar</guid>
+      <pubDate>Sun, 22 Mar 2026 12:00:00 GMT</pubDate>
+      <description>O Bitcoin corrigiu forte após o recorde de US$ 125 mil em 2025 e agora ronda os US$ 70-73 mil. Entenda o cenário e se faz sentido investir agora.</description>
+      <category>Finanças &amp; Investimentos</category>
+      <enclosure url="https://viciocode.com/assets/bitcoin-2026-vale-comprar.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>Bitcoin e Criptomoedas em 2026: Ainda Dá Para Lucrar?</title>
+      <link>https://viciocode.com/post/bitcoin-criptomoedas-2026-investir</link>
+      <guid isPermaLink="true">https://viciocode.com/post/bitcoin-criptomoedas-2026-investir</guid>
+      <pubDate>Wed, 18 Feb 2026 12:00:00 GMT</pubDate>
+      <description>O mercado cripto mudou muito. Entenda o cenário das criptomoedas em 2026, quais ainda têm potencial e como investir sem perder o que você tem.</description>
+      <category>Finanças &amp; Investimentos</category>
+      <enclosure url="https://viciocode.com/assets/bitcoin-criptomoedas-2026-investir.webp" type="image/webp" length="0" />
+    </item>
+  </channel>
+</rss>

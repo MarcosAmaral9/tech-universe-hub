@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VICIO&lt;CODE&gt; — tag produtividade</title>
+    <link>https://viciocode.com</link>
+    <description>Novos artigos marcados com &quot;produtividade&quot; no VICIO&lt;CODE&gt;.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Sat, 28 Mar 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://viciocode.com/feed/tag/produtividade.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Prompt Engineering em 2026: Guia Definitivo para Escrever Prompts que Funcionam</title>
+      <link>https://viciocode.com/post/prompt-engineering-guia-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/prompt-engineering-guia-2026</guid>
+      <pubDate>Sat, 28 Mar 2026 12:00:00 GMT</pubDate>
+      <description>10 templates prontos (escrita, código, análise, brainstorm, email). Como Chain-of-Thought ficou obsoleto com modelos o3 e DeepSeek R1. Meta-prompting e os erros mais comuns que destroem resultados.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/prompt-engineering-guia-2026.webp" type="image/webp" length="0" />
+    </item>
+  </channel>
+</rss>

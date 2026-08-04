@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VICIO&lt;CODE&gt; — tag overlord</title>
+    <link>https://viciocode.com</link>
+    <description>Novos artigos marcados com &quot;overlord&quot; no VICIO&lt;CODE&gt;.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Sat, 21 Mar 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://viciocode.com/feed/tag/overlord.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Overlord: Ainz Ooal Gown, Floor Guardians e os Personagens do Novo Mundo</title>
+      <link>https://viciocode.com/post/overlord-ainz-guardians-personagens</link>
+      <guid isPermaLink="true">https://viciocode.com/post/overlord-ainz-guardians-personagens</guid>
+      <pubDate>Sat, 21 Mar 2026 12:00:00 GMT</pubDate>
+      <description>Ainz Ooal Gown, Albedo, Demiurge, Shalltear Bloodfallen, Cocytus, Sebas Tian, Aura, Mare e Pandora&apos;s Actor — fichas completas dos Floor Guardians e dos personagens do Novo Mundo como Gazef Stronoff e Renner.</description>
+      <category>Otaku</category>
+      <enclosure url="https://viciocode.com/assets/overlord-ainz-guardians-personagens.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>Overlord: Guia Completo — 4 Temporadas, Filme Sacred Kingdom e T5</title>
+      <link>https://viciocode.com/post/overlord-guia-completo-temporadas-ainz</link>
+      <guid isPermaLink="true">https://viciocode.com/post/overlord-guia-completo-temporadas-ainz</guid>
+      <pubDate>Fri, 20 Mar 2026 12:00:00 GMT</pubDate>
+      <description>Overlord completo: T1 (2015), T2 (2018), T3 (2018), T4 (2022), filmes de compilação (2017) e The Sacred Kingdom (setembro/2024). OPs de OxT e MYTH&amp;ROID, vozes de Satoshi Hino, e tudo sobre a esperada T5.</description>
+      <category>Otaku</category>
+      <enclosure url="https://viciocode.com/assets/overlord-guia-completo-temporadas-ainz.webp" type="image/webp" length="0" />
+    </item>
+  </channel>
+</rss>

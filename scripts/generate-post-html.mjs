@@ -126,6 +126,7 @@ for (const post of posts) {
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="${e(post.title)}" />
+    <link rel="alternate" type="application/rss+xml" title="VICIO&lt;CODE&gt; — feed RSS" href="${BASE_URL}/feed.xml" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${e(post.title)}" />
     <meta name="twitter:description" content="${e(post.excerpt)}" />
@@ -138,10 +139,10 @@ for (const post of posts) {
       "headline": post.title,
       "description": post.excerpt,
       "url": url,
-      "datePublished": post.date + "T00:00:00Z",
-      "dateModified": post.date + "T00:00:00Z",
+      "datePublished": post.date + "T09:00:00-03:00",
+      "dateModified": post.date + "T09:00:00-03:00",
       "image": { "@type": "ImageObject", "url": ogImg, "width": 1200, "height": 630 },
-      "author": { "@type": "Organization", "name": "VICIO<CODE>", "url": "https://viciocode.com" },
+      "author": { "@type": "Person", "name": "Marcos Amaral", "url": "https://viciocode.com/autor/marcos-amaral" },
       "publisher": {
         "@type": "Organization",
         "name": "VICIO<CODE>",
@@ -149,6 +150,8 @@ for (const post of posts) {
         "logo": { "@type": "ImageObject", "url": "https://viciocode.com/icon-192x192.png" }
       },
       "mainEntityOfPage": { "@type": "WebPage", "@id": url },
+      "isAccessibleForFree": true,
+      "articleSection": categoryLabel,
       "inLanguage": "pt-BR"
     }, null, 0)}</script>
     <script type="application/ld+json">${JSON.stringify({

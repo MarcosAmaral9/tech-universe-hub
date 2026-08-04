@@ -6,16 +6,20 @@ import CategoryBadge from "./CategoryBadge";
 import SkeletonImage from "./SkeletonImage";
 import { useOfflinePosts } from "@/hooks/useOfflinePosts";
 import { useTopPosts } from "@/hooks/useTopPosts";
+import { highlight } from "@/lib/highlight";
 
 interface PostCardProps {
   post: BlogPost;
+  /** Quando informado, destaca o termo pesquisado no título e no resumo. */
+  highlightQuery?: string;
 }
 
-const PostCard = forwardRef<HTMLElement, PostCardProps>(({ post }, ref) => {
+const PostCard = forwardRef<HTMLElement, PostCardProps>(({ post, highlightQuery }, ref) => {
   const { isCached } = useOfflinePosts();
   const offlineReady = isCached(post.slug);
   const { isTop } = useTopPosts("week", 5);
   const trending = isTop(post.slug);
+  const hl = (text: string) => (highlightQuery ? highlight(text, highlightQuery) : text);
 
   return (
     <article ref={ref} className="group bg-card rounded-xl overflow-hidden border border-border card-hover">
@@ -58,12 +62,13 @@ const PostCard = forwardRef<HTMLElement, PostCardProps>(({ post }, ref) => {
         {/* Content */}
         <div className="p-3 sm:p-4 xl:p-3.5">
           <h3 className="font-display font-semibold text-base xl:text-[0.95rem] mb-2 line-clamp-2 group-hover:text-primary transition-colors leading-snug">
-            {post.title}
+            {hl(post.title)}
           </h3>
           
           <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-            {post.excerpt}
+            {hl(post.excerpt)}
           </p>
+
 
           <div className="flex items-center justify-between text-xs text-muted-foreground">
             <span>{new Date(post.date + "T12:00:00").toLocaleDateString("pt-BR")}</span>

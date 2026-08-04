@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VICIO&lt;CODE&gt; — tag tutorial</title>
+    <link>https://viciocode.com</link>
+    <description>Novos artigos marcados com &quot;tutorial&quot; no VICIO&lt;CODE&gt;.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Sat, 25 Apr 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://viciocode.com/feed/tag/tutorial.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gemini 2.5 Pro vs Claude Sonnet vs GPT-4o: Qual a Melhor IA de Abril de 2026?</title>
+      <link>https://viciocode.com/post/gemini-25-pro-vs-claude-ia-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/gemini-25-pro-vs-claude-ia-2026</guid>
+      <pubDate>Sat, 25 Apr 2026 12:00:00 GMT</pubDate>
+      <description>Claude Sonnet 4.6: 82,1% no SWE-bench. Gemini 2.5 Pro: 63,8% — mas com 1M de tokens e Google Workspace nativo. Tabela de preços API em reais e 10 cenários práticos para escolher certo.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/gemini-25-pro-vs-claude-ia-2026.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>IA Generativa para Iniciantes 2026: Do Zero ao Avançado</title>
+      <link>https://viciocode.com/post/ia-generativa-iniciantes-2026-guia</link>
+      <guid isPermaLink="true">https://viciocode.com/post/ia-generativa-iniciantes-2026-guia</guid>
+      <pubDate>Thu, 26 Feb 2026 12:00:00 GMT</pubDate>
+      <description>Custo de inferência caiu 280x entre 2022-2024 (Stanford AI Index). 78% dos profissionais trazem a ferramenta sozinhos para o trabalho (BYOAI). Guia do zero com plano de 30 dias, recursos gratuitos e erros a evitar.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/ia-generativa-iniciantes-2026-guia.webp" type="image/webp" length="0" />
+    </item>
+  </channel>
+</rss>
