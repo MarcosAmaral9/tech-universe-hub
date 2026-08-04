@@ -1271,6 +1271,27 @@ const DynamicSEO = ({ forceNoindex = false, feedUrl }: DynamicSEOProps = {}) => 
   };
   const isCategory = pathname in categoryPages;
 
+  // Feed RSS correspondente à página (categoria, tag ou geral)
+  const CATEGORY_FEED: Record<string, string> = {
+    ia: "/feed/ia.xml",
+    invest: "/feed/financas.xml",
+    geek: "/feed/geek.xml",
+    otaku: "/feed/otaku.xml",
+  };
+  const CATEGORY_PATH_FEED: Record<string, string> = {
+    "/ia": "/feed/ia.xml",
+    "/financas": "/feed/financas.xml",
+    "/geek": "/feed/geek.xml",
+    "/otaku": "/feed/otaku.xml",
+  };
+  const autoFeedUrl = `${BASE_URL}${
+    pathname.startsWith("/tag/")
+      ? `/feed/tag/${pathname.replace("/tag/", "")}.xml`
+      : post
+        ? CATEGORY_FEED[post.category] ?? "/feed.xml"
+        : CATEGORY_PATH_FEED[pathname] ?? "/feed.xml"
+  }`;
+
   const organization = {
     "@type": "Organization",
     name: "VICIO<CODE>",
