@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VICIO&lt;CODE&gt; — tag manhwa</title>
+    <link>https://viciocode.com</link>
+    <description>Novos artigos marcados com &quot;manhwa&quot; no VICIO&lt;CODE&gt;.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Fri, 30 Jan 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://viciocode.com/feed/tag/manhwa.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Saiba como diferenciar Manhuas e Manhwas</title>
+      <link>https://viciocode.com/post/como-diferenciar-manhuas-manhwas</link>
+      <guid isPermaLink="true">https://viciocode.com/post/como-diferenciar-manhuas-manhwas</guid>
+      <pubDate>Fri, 30 Jan 2026 12:00:00 GMT</pubDate>
+      <description>Aprenda a diferenciar Manhuas (chineses) de Manhwas (coreanos) de vez. Guia completo com características visuais, temas, sentido de leitura e exemplos populares de cada tipo.</description>
+      <category>Otaku</category>
+      <enclosure url="https://viciocode.com/assets/como-diferenciar-manhuas-manhwas.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>Os 10 melhores Manhwas de &apos;Sistema&apos; para ler em 2026</title>
+      <link>https://viciocode.com/post/10-melhores-manhwas-sistema-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/10-melhores-manhwas-sistema-2026</guid>
+      <pubDate>Tue, 27 Jan 2026 12:00:00 GMT</pubDate>
+      <description>Os 10 melhores manhwas com sistema de 2026 — aqueles que você não consegue parar de ler. Seleção com sinopse, número de capítulos e onde ler online gratuitamente.</description>
+      <category>Otaku</category>
+      <enclosure url="https://viciocode.com/assets/10-melhores-manhwas-sistema-2026.webp" type="image/webp" length="0" />
+    </item>
+  </channel>
+</rss>

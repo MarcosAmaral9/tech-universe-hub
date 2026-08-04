@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VICIO&lt;CODE&gt; — tag apps</title>
+    <link>https://viciocode.com</link>
+    <description>Novos artigos marcados com &quot;apps&quot; no VICIO&lt;CODE&gt;.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Thu, 28 May 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://viciocode.com/feed/tag/apps.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dola AI: O App de Assistente de IA que Virou Febre no Brasil em 2026</title>
+      <link>https://viciocode.com/post/dola-ai-app-assistente-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/dola-ai-app-assistente-2026</guid>
+      <pubDate>Thu, 28 May 2026 12:00:00 GMT</pubDate>
+      <description>App de IA que virou febre na Play Store brasileira em 2026. 8 recursos principais, comparativo com ChatGPT e Gemini, plano gratuito vs premium, quando vale e o alerta de privacidade que todo usuário deve conhecer.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/dola-ai-app-assistente-2026.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>Os 10 Melhores Apps de IA para Produtividade em 2026</title>
+      <link>https://viciocode.com/post/melhores-apps-ia-produtividade-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/melhores-apps-ia-produtividade-2026</guid>
+      <pubDate>Sat, 14 Feb 2026 12:00:00 GMT</pubDate>
+      <description>Testamos 80+ ferramentas. Os 10 apps de IA para produtividade que sobreviveram ao uso real, comparativo de custos em reais, 3 apps que não valem a assinatura e o stack completo por R$ 0/mês.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/melhores-apps-ia-produtividade-2026.webp" type="image/webp" length="0" />
+    </item>
+  </channel>
+</rss>

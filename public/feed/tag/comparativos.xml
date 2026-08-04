@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VICIO&lt;CODE&gt; — tag comparativos</title>
+    <link>https://viciocode.com</link>
+    <description>Novos artigos marcados com &quot;comparativos&quot; no VICIO&lt;CODE&gt;.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Sat, 11 Apr 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://viciocode.com/feed/tag/comparativos.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Claude 4 Opus vs Claude 4 Sonnet: Qual Modelo Usar em 2026?</title>
+      <link>https://viciocode.com/post/claude-opus-vs-sonnet-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/claude-opus-vs-sonnet-2026</guid>
+      <pubDate>Sat, 11 Apr 2026 12:00:00 GMT</pubDate>
+      <description>Gap histórico: Opus 4.6 (80,8%) vs Sonnet 4.6 (79,6%) no SWE-bench — 1,2pp de diferença. Mas GPQA Diamond: 91,3% vs 74,1%. Preços em reais, Terminal-Bench e quando cada modelo justifica o custo.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/claude-opus-vs-sonnet-2026.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>Gemini 2.5 Pro vs GPT-4o: Qual o Melhor Modelo de IA em 2026?</title>
+      <link>https://viciocode.com/post/gemini-2-5-pro-vs-gpt-4o-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/gemini-2-5-pro-vs-gpt-4o-2026</guid>
+      <pubDate>Fri, 03 Apr 2026 12:00:00 GMT</pubDate>
+      <description>Gemini 2.5 Pro: 86,7% no AIME, 84% no GPQA Diamond, 1M tokens, 8× mais barato no input. GPT-5.4: melhor em português e código. Comparativo verificado com 6 cenários práticos de decisão.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/gemini-2-5-pro-vs-gpt-4o-2026.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>IA Open Source 2026: Llama, Mistral e DeepSeek</title>
+      <link>https://viciocode.com/post/modelos-ia-open-source-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/modelos-ia-open-source-2026</guid>
+      <pubDate>Tue, 17 Mar 2026 12:00:00 GMT</pubDate>
+      <description>Llama 4 com 8GB de VRAM no Ollama, DeepSeek MIT irrestrito, Mistral via Apache 2.0. Tabela de licenças comerciais verificada, como rodar via Groq (400–800 tok/seg), quando fine-tuning vale e quanto custa.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/modelos-ia-open-source-2026.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>IA e Programação 2026: Copilot, Cursor e Mais</title>
+      <link>https://viciocode.com/post/ia-codigo-programadores-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/ia-codigo-programadores-2026</guid>
+      <pubDate>Tue, 17 Mar 2026 12:00:00 GMT</pubDate>
+      <description>Claude Code 80,8% no SWE-bench. Cursor 30% mais rápido que Copilot por tarefa. Qual ferramenta escolher por perfil, o que a IA ainda não faz bem em código e como integrar sem criar dívida técnica.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/ia-codigo-programadores-2026.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>ChatGPT vs Gemini vs Claude 2026: Qual Vale Mais?</title>
+      <link>https://viciocode.com/post/chatgpt-vs-gemini-vs-claude-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/chatgpt-vs-gemini-vs-claude-2026</guid>
+      <pubDate>Wed, 11 Feb 2026 12:00:00 GMT</pubDate>
+      <description>ChatGPT com o3, Gemini 2.5 Pro (1M tokens), Claude Sonnet 4.6. O que mudou em 2026 em cada plataforma, benchmarks reais, privacidade LGPD e qual IA assinar por perfil de usuário brasileiro.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/chatgpt-vs-gemini-vs-claude-2026.webp" type="image/webp" length="0" />
+    </item>
+  </channel>
+</rss>

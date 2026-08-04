@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VICIO&lt;CODE&gt; — tag economia</title>
+    <link>https://viciocode.com</link>
+    <description>Novos artigos marcados com &quot;economia&quot; no VICIO&lt;CODE&gt;.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Sat, 01 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://viciocode.com/feed/tag/economia.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recuperação Judicial em Alta: o Que É, Como Funciona e Como Afeta Clientes e Investidores</title>
+      <link>https://viciocode.com/post/recuperacao-judicial-empresas-2026-como-afeta-clientes</link>
+      <guid isPermaLink="true">https://viciocode.com/post/recuperacao-judicial-empresas-2026-como-afeta-clientes</guid>
+      <pubDate>Sat, 01 Aug 2026 12:00:00 GMT</pubDate>
+      <description>O Brasil teve 977 processos de recuperação judicial em 2025, envolvendo 2.466 empresas — recorde da série da Serasa Experian. Entenda a Lei 11.101/2005, o passo a passo do processo, a ordem de pagamento dos credores e o que fazer se a empresa que você contratou entrar em recuperação.</description>
+      <category>Finanças &amp; Investimentos</category>
+      <enclosure url="https://viciocode.com/assets/recuperacao-judicial-empresas-2026-como-afeta-clientes.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>Boletim Focus de Julho 2026: Selic em 14%, IPCA a 5,12% e o Que Isso Muda na Sua Carteira</title>
+      <link>https://viciocode.com/post/boletim-focus-julho-2026-selic-ipca</link>
+      <guid isPermaLink="true">https://viciocode.com/post/boletim-focus-julho-2026-selic-ipca</guid>
+      <pubDate>Mon, 27 Jul 2026 12:00:00 GMT</pubDate>
+      <description>O Focus de 27/07/2026 reduziu o IPCA de 2026 para 5,12%, manteve a Selic em 14% e o dólar em R$ 5,20. Com juro real de ~8,4% ao ano, veja como escalonar renda fixa, prefixados e IPCA+ no segundo semestre.</description>
+      <category>Finanças &amp; Investimentos</category>
+      <enclosure url="https://viciocode.com/assets/boletim-focus-julho-2026-selic-ipca.webp" type="image/webp" length="0" />
+    </item>
+  </channel>
+</rss>

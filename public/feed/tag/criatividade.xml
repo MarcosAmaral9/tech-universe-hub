@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VICIO&lt;CODE&gt; — tag criatividade</title>
+    <link>https://viciocode.com</link>
+    <description>Novos artigos marcados com &quot;criatividade&quot; no VICIO&lt;CODE&gt;.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Sat, 14 Mar 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://viciocode.com/feed/tag/criatividade.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IA e Criatividade 2026: Arte e Música por IA</title>
+      <link>https://viciocode.com/post/ia-criatividade-arte-musica-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/ia-criatividade-arte-musica-2026</guid>
+      <pubDate>Sat, 14 Mar 2026 12:00:00 GMT</pubDate>
+      <description>Sora foi encerrado em março de 2026. Runway Gen-4.5, Kling 3.0, Veo 3.1 e Seedance 2.0 lideram. Suno v5.5 com 100M usuários. Registro na Biblioteca Nacional, C2PA e Nightshade para proteger sua obra.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/ia-criatividade-arte-musica-2026.webp" type="image/webp" length="0" />
+    </item>
+  </channel>
+</rss>

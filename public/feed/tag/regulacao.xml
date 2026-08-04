@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VICIO&lt;CODE&gt; — tag regulacao</title>
+    <link>https://viciocode.com</link>
+    <description>Novos artigos marcados com &quot;regulacao&quot; no VICIO&lt;CODE&gt;.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Tue, 03 Mar 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://viciocode.com/feed/tag/regulacao.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Regulamentação de IA no Brasil e no Mundo em 2026: O Que Muda</title>
+      <link>https://viciocode.com/post/regulamentacao-ia-brasil-mundo-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/regulamentacao-ia-brasil-mundo-2026</guid>
+      <pubDate>Tue, 03 Mar 2026 12:00:00 GMT</pubDate>
+      <description>EU AI Act: proibições ativas desde fev/2025, multas até €35M. PL 2338 ainda na Câmara. EUA desregulandonde. As 4 categorias de risco completas com obrigações, checklist de compliance e o que o Art. 20 LGPD já exige.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/regulamentacao-ia-brasil-mundo-2026.webp" type="image/webp" length="0" />
+    </item>
+  </channel>
+</rss>

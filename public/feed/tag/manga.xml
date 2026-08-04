@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VICIO&lt;CODE&gt; — tag manga</title>
+    <link>https://viciocode.com</link>
+    <description>Novos artigos marcados com &quot;manga&quot; no VICIO&lt;CODE&gt;.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Sat, 11 Apr 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://viciocode.com/feed/tag/manga.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jujutsu Kaisen: Guia Completo do Mangá e Anime — Arcos, Personagens e Legado</title>
+      <link>https://viciocode.com/post/jujutsu-kaisen-guia-completo-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/jujutsu-kaisen-guia-completo-2026</guid>
+      <pubDate>Sat, 11 Apr 2026 12:00:00 GMT</pubDate>
+      <description>Todos os arcos do mangá, 8 personagens principais, temporadas do anime e por onde começar. O guia definitivo de JJK para iniciantes e veteranos.</description>
+      <category>Otaku</category>
+      <enclosure url="https://viciocode.com/assets/jujutsu-kaisen-guia-completo-2026.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>One Piece Final Saga: Onde Estamos e O Que Esperar do Final</title>
+      <link>https://viciocode.com/post/one-piece-final-saga-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/one-piece-final-saga-2026</guid>
+      <pubDate>Tue, 17 Mar 2026 12:00:00 GMT</pubDate>
+      <description>A Final Saga começou em 2022. Arco de Egghead, revelações sobre Imu e os Gorosei, e o que sabemos sobre o One Piece. Spoilers e previsões para o fim da série.</description>
+      <category>Otaku</category>
+      <enclosure url="https://viciocode.com/assets/one-piece-final-saga-2026.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>Os Melhores Mangás Para Ler em 2026: Guia por Gênero</title>
+      <link>https://viciocode.com/post/melhores-mangas-ler-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/melhores-mangas-ler-2026</guid>
+      <pubDate>Thu, 12 Mar 2026 12:00:00 GMT</pubDate>
+      <description>Seleção dos melhores mangás para ler em 2026 organizados por gênero — ação, romance, suspense, slice of life. Recomendações para iniciantes e veteranos do mundo otaku.</description>
+      <category>Otaku</category>
+      <enclosure url="https://viciocode.com/assets/melhores-mangas-ler-2026.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>Sabe a diferença entre Mangas, Manhuas e Manhwas?</title>
+      <link>https://viciocode.com/post/diferenca-mangas-manhuas-manhwas</link>
+      <guid isPermaLink="true">https://viciocode.com/post/diferenca-mangas-manhuas-manhwas</guid>
+      <pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+      <description>Aprenda de uma vez a diferença entre Mangás japoneses, Manhwas coreanos e Manhuas chineses: sentido de leitura, arte, temas e os títulos mais populares de cada origem para você começar a explorar.</description>
+      <category>Otaku</category>
+      <enclosure url="https://viciocode.com/assets/diferenca-mangas-manhuas-manhwas.webp" type="image/webp" length="0" />
+    </item>
+  </channel>
+</rss>
