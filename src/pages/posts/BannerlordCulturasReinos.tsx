@@ -343,29 +343,6 @@ const BannerlordCulturasReinos = () => {
           </div>
         </div>
 
-        {/* MAPA WAR SAILS — LIGHTBOX */}
-        <div className="not-prose my-10">
-          <div className="flex flex-col items-center text-center mb-5">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-300 text-xs font-bold uppercase tracking-wider mb-3">
-              <MapIcon className="h-4 w-4" /> Mapa Oficial · War Sails
-            </div>
-            <h3 className="font-display text-2xl md:text-3xl font-bold mb-2">A Costa dos Nords em Calradia</h3>
-            <p className="text-muted-foreground max-w-2xl text-sm">
-              Os Nords ocupam o litoral norte e as ilhas no mapa da expansão. Clique para ampliar — use os botões
-              de zoom ou arraste a imagem para inspecionar cada porto, fortaleza costeira e estandarte.
-            </p>
-          </div>
-
-          <LightboxImage
-            src={bannerlordWarSailsMap}
-            alt="Mapa oficial da expansão War Sails de Mount & Blade II: Bannerlord, destacando o litoral norte ocupado pelos Nords, seus portos-fortaleza, ilhas e estandartes culturais"
-            caption="Mapa oficial War Sails · Clique para ampliar, arraste para navegar e use +/- para o zoom"
-            className="shadow-2xl shadow-blue-500/10"
-            width={1991}
-            height={1821}
-            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
-          />
-        </div>
 
         <p>
           Diferente das outras culturas, os Nords não disputam grandes territórios continentais no mapa-mãe de
