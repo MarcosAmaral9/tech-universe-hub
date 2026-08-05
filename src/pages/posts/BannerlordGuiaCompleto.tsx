@@ -24,9 +24,11 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
+import LightboxImage from "@/components/LightboxImage";
 import SkeletonImage from "@/components/SkeletonImage";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import bannerlordGuiaImg from "@/assets/bannerlord-guia.webp";
+import bannerlordWarSailsMap from "@/assets/bannerlord-war-sails-expansao.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
 
 const BannerlordGuiaCompleto = () => {
@@ -418,6 +420,25 @@ const BannerlordGuiaCompleto = () => {
           extra de gestão para reinos com saída para o mar — atendendo a um pedido histórico da comunidade.
         </p>
 
+        <div className="not-prose my-10 p-6 md:p-8 rounded-2xl bg-gradient-to-br from-blue-950/40 via-slate-900/30 to-background border border-blue-500/30 shadow-xl">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/40 text-blue-300 text-[11px] font-bold uppercase tracking-wider">
+              <Ship className="h-3.5 w-3.5" /> Mapa Oficial · War Sails
+            </span>
+          </div>
+          <LightboxImage
+            src={bannerlordWarSailsMap}
+            alt="Mapa oficial da expansão War Sails de Mount & Blade II: Bannerlord, mostrando a costa de Calradia com cidades portuárias, ilhas e estandartes coloridos de cada cultura envolvida no combate naval"
+            caption="Clique para ampliar · Inspecione cidades portuárias, ilhas e estandartes"
+            width={1991}
+            height={1821}
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 900px"
+          />
+          <p className="text-xs text-muted-foreground mt-4 italic leading-relaxed">
+            Mapa oficial divulgado pela TaleWorlds — costa de Calradia com cidades portuárias, ilhas e estandartes das
+            culturas envolvidas no combate naval da expansão <strong className="text-blue-300">War Sails</strong>.
+          </p>
+
           <h2 className="text-2xl font-bold mt-10 mb-4">A Jornada de Acesso Antecipado Mais Longa da História dos Games</h2>
           <p>
             Mount & Blade II: Bannerlord passou impressionantes 4 anos em acesso antecipado na Steam, de março de 2020 até outubro de 2024, quando finalmente recebeu seu lançamento 1.0 completo. Esse período excepcionalmente longo de desenvolvimento público gerou tanto frustração quanto fidelidade intensa por parte da comunidade, que acompanhou de perto cada atualização incremental enquanto a TaleWorlds refinava sistemas complexos de simulação econômica, diplomacia entre clãs e combate tático em tempo real.
@@ -454,6 +475,7 @@ const BannerlordGuiaCompleto = () => {
         <p>
           Com paciência e disposição para aprender, qualquer jogador pode eventualmente dominar os sistemas complexos que tornam Bannerlord uma das experiências mais recompensadoras do gênero de estratégia medieval disponível atualmente.
         </p>
+    </div>
 
 
 
