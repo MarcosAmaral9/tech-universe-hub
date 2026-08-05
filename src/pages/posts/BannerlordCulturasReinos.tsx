@@ -24,7 +24,6 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
 import SkeletonImage from "@/components/SkeletonImage";
-import LightboxImage from "@/components/LightboxImage";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import culturasImg from "@/assets/bannerlord-culturas-reinos.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
