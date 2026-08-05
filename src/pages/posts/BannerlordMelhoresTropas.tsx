@@ -26,7 +26,6 @@ import SkeletonImage from "@/components/SkeletonImage";
 import LightboxImage from "@/components/LightboxImage";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import heroImg from "@/assets/bannerlord-melhores-tropas.webp";
-import warSailsMap from "@/assets/bannerlord-war-sails-expansao.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
 
 const tierColors: Record<string, { badge: string; row: string; accent: string }> = {
@@ -323,6 +322,8 @@ const BannerlordMelhoresTropas = () => {
           recomendado misturar <em>Vlandian Banner Knights</em> ou <em>Imperial Cataphracts</em> contratados como
           mercenários, mantendo a base Nord para infantaria e tropas navais.
         </p>
+
+        <AdInArticle className="my-8" />
 
         <h2>
           <Flag className="inline h-7 w-7 mr-2 -mt-1" />
