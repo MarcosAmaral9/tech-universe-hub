@@ -454,7 +454,6 @@ const BannerlordGuiaCompleto = () => {
         <p>
           Com paciência e disposição para aprender, qualquer jogador pode eventualmente dominar os sistemas complexos que tornam Bannerlord uma das experiências mais recompensadoras do gênero de estratégia medieval disponível atualmente.
         </p>
-    </div>
 
 
 
