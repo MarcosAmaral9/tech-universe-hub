@@ -1240,7 +1240,20 @@ const DynamicSEO = ({ forceNoindex = false, feedUrl }: DynamicSEOProps = {}) => 
     }
   }
 
-  const fullTitle = pathname === "/" ? `${SITE_NAME} - IA, Investimentos, Geek & Otaku` : `${title} | ${SITE_NAME}`;
+  // Limites de SERP: título ≤ 60 chars (incluindo o sufixo da marca) e
+  // descrição entre 50 e 160 chars.
+  const clamp = (text: string, max: number) => {
+    if (text.length <= max) return text;
+    const cut = text.slice(0, max - 1);
+    const lastSpace = cut.lastIndexOf(" ");
+    return (lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[\s,;:.\-—|]+$/, "") + "…";
+  };
+
+  const suffix = ` | ${SITE_NAME}`;
+  title = clamp(title, 60 - suffix.length);
+  description = clamp(description, 160);
+
+  const fullTitle = pathname === "/" ? `${SITE_NAME} - IA, Investimentos, Geek & Otaku` : `${title}${suffix}`;
 
   const isRegion = pathname.startsWith("/regiao/");
   const ogType = (isPost || isRegion) ? "article" : "website";
