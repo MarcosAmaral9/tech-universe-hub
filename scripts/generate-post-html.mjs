@@ -13,6 +13,16 @@ const BASE_URL = "https://viciocode.com";
 const SITE     = "VICIO<CODE>";
 
 const postsSource = fs.readFileSync(path.resolve(ROOT, "src/data/posts.ts"), "utf8");
+
+// Limites de SERP: título ≤ 60 chars (com sufixo de marca) e descrição ≤ 160.
+function clamp(text, max) {
+  if (!text) return text;
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max - 1);
+  const sp = cut.lastIndexOf(" ");
+  return (sp > max * 0.6 ? cut.slice(0, sp) : cut).replace(/[\s,;:.\-—|]+$/, "") + "…";
+}
+
 const postRegex   = /\{\s*id:\s*"[^"]+",\s*slug:\s*"([^"]+)",\s*title:\s*"([^"]+)",\s*excerpt:\s*"([^"]+)",[\s\S]*?date:\s*"([^"]+)"/g;
 
 const posts = [];
@@ -115,11 +125,11 @@ for (const post of posts) {
   const ogImg = img ? `${BASE_URL}/assets/${img}` : `${BASE_URL}/og-image.png`;
 
   const inject = `
-    <title>${e(post.title)} | VICIO&lt;CODE&gt;</title>
-    <meta name="description" content="${e(post.excerpt)}" />
+    <title>${e(clamp(post.title, 60 - " | VICIO<CODE>".length))} | VICIO&lt;CODE&gt;</title>
+    <meta name="description" content="${e(clamp(post.excerpt, 160))}" />
     <link rel="canonical" href="${url}" />
     <meta property="og:title" content="${e(post.title)}" />
-    <meta property="og:description" content="${e(post.excerpt)}" />
+    <meta property="og:description" content="${e(clamp(post.excerpt, 160))}" />
     <meta property="og:url" content="${url}" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="${ogImg}" />
@@ -226,8 +236,8 @@ for (const region of REGIONS) {
 
   const url       = `${BASE_URL}/regiao/${region.slug}`;
   const imgAbs    = region.image.startsWith("http") ? region.image : `${BASE_URL}${region.image}`;
-  const titleSafe = e(region.title);
-  const descSafe  = e(region.description);
+  const titleSafe = e(clamp(region.title, 60));
+  const descSafe  = e(clamp(region.description, 160));
 
   const html = stripped
     .replace("</head>", `  <title>${titleSafe}</title>
