@@ -24,11 +24,9 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import BackNavigation from "@/components/BackNavigation";
-import LightboxImage from "@/components/LightboxImage";
 import SkeletonImage from "@/components/SkeletonImage";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import bannerlordGuiaImg from "@/assets/bannerlord-guia.webp";
-import bannerlordWarSailsMap from "@/assets/bannerlord-war-sails-expansao.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
 
 const BannerlordGuiaCompleto = () => {

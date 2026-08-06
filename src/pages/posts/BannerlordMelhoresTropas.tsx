@@ -23,10 +23,8 @@ import RelatedPosts from "@/components/RelatedPosts";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import BackNavigation from "@/components/BackNavigation";
 import SkeletonImage from "@/components/SkeletonImage";
-import LightboxImage from "@/components/LightboxImage";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import heroImg from "@/assets/bannerlord-melhores-tropas.webp";
-import warSailsMap from "@/assets/bannerlord-war-sails-expansao.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
 
 const tierColors: Record<string, { badge: string; row: string; accent: string }> = {
