@@ -88,6 +88,16 @@ const metaFor = (p) => {
 let written = 0;
 const missing = [];
 
+
+// Limites de SERP: título ≤ 60 chars (com sufixo de marca) e descrição ≤ 160.
+function clamp(text, max) {
+  if (!text) return text;
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max - 1);
+  const sp = cut.lastIndexOf(" ");
+  return (sp > max * 0.6 ? cut.slice(0, sp) : cut).replace(/[\s,;:.\-—|]+$/, "") + "…";
+}
+
 for (const p of allPaths) {
   const meta = metaFor(p);
   if (!meta) {
@@ -95,15 +105,17 @@ for (const p of allPaths) {
     continue;
   }
   const url = `${BASE_URL}${p}`;
-  const title = e(meta.title);
-  const desc = e(meta.description);
+  const titleRaw = clamp(meta.title, 60 - " | VICIO<CODE>".length);
+  const descRaw = clamp(meta.description, 160);
+  const title = e(titleRaw);
+  const desc = e(descRaw);
   const isTag = p.startsWith("/tag/");
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": isTag ? "CollectionPage" : "WebPage",
-    name: meta.title,
-    description: meta.description,
+    name: titleRaw,
+    description: descRaw,
     url,
     inLanguage: "pt-BR",
     isPartOf: { "@type": "WebSite", name: "VICIO<CODE>", url: BASE_URL },

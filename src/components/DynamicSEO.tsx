@@ -27,12 +27,12 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
   },
   "/otaku": {
     title: "Otaku",
-    description: "Mangás, manhwas, manhuas, animes e tudo do universo otaku.",
+    description: "Mangás, manhwas, manhuas, animes e tudo do universo otaku: guias de temporada, análises e recomendações em português.",
     keywords: "otaku, mangás, animes, manhwas, manhuas, cultura japonesa, cosplay, anime 2026, melhores animes, mangás para ler, light novels, isekai, shonen, seinen",
   },
   "/ia": {
     title: "Inteligência Artificial",
-    description: "As últimas novidades e análises sobre Inteligência Artificial.",
+    description: "As últimas novidades e análises sobre Inteligência Artificial: ferramentas, modelos, agentes autônomos e uso prático no dia a dia.",
     keywords: "inteligência artificial, IA, ChatGPT, Gemini, Claude, machine learning, IA generativa, deepfake, agentes IA, automação, produtividade IA, regulamentação IA, IA saúde, IA educação",
   },
   "/financas": {
@@ -42,7 +42,7 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
   },
   "/geek": {
     title: "Geek",
-    description: "Games, séries, filmes e cultura geek.",
+    description: "Games, séries, filmes e cultura geek: análises, guias completos e novidades das maiores franquias do entretenimento.",
     keywords: "cultura geek, games, jogos, séries, filmes, Assassins Creed, Avatar, Vikings, simulador de guerra, reviews de jogos, franquias de games, universo geek, Hell Let Loose, cinema",
   },
   "/cotacoes": {
@@ -62,7 +62,7 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
   },
   "/redefinir-senha": {
     title: "Redefinir Senha",
-    description: "Defina uma nova senha para sua conta no VICIO<CODE>.",
+    description: "Defina uma nova senha para sua conta no VICIO<CODE> e volte a acompanhar seus artigos favoritos e alertas de cotações.",
     keywords: "redefinir senha, esqueci senha, recuperar conta, nova senha",
   },
   "/sobre": {
@@ -97,12 +97,12 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
   },
   "/contato": {
     title: "Contato",
-    description: "Entre em contato com a equipe do VICIO<CODE>.",
+    description: "Entre em contato com a equipe do VICIO<CODE>: sugestões de pauta, correções, parcerias e dúvidas sobre o conteúdo publicado.",
     keywords: "contato, fale conosco, email, suporte, VICIO CODE, mensagem, feedback",
   },
   "/privacidade": {
     title: "Política de Privacidade",
-    description: "Política de privacidade do VICIO<CODE>.",
+    description: "Política de privacidade do VICIO<CODE>: quais dados coletamos, como usamos cookies e anúncios e como exercer seus direitos (LGPD).",
     keywords: "política de privacidade, dados pessoais, LGPD, privacidade, cookies, proteção de dados",
   },
   "/termos": {
@@ -1240,7 +1240,20 @@ const DynamicSEO = ({ forceNoindex = false, feedUrl }: DynamicSEOProps = {}) => 
     }
   }
 
-  const fullTitle = pathname === "/" ? `${SITE_NAME} - IA, Investimentos, Geek & Otaku` : `${title} | ${SITE_NAME}`;
+  // Limites de SERP: título ≤ 60 chars (incluindo o sufixo da marca) e
+  // descrição entre 50 e 160 chars.
+  const clamp = (text: string, max: number) => {
+    if (text.length <= max) return text;
+    const cut = text.slice(0, max - 1);
+    const lastSpace = cut.lastIndexOf(" ");
+    return (lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[\s,;:.\-—|]+$/, "") + "…";
+  };
+
+  const suffix = ` | ${SITE_NAME}`;
+  title = clamp(title, 60 - suffix.length);
+  description = clamp(description, 160);
+
+  const fullTitle = pathname === "/" ? `${SITE_NAME} - IA, Investimentos, Geek & Otaku` : `${title}${suffix}`;
 
   const isRegion = pathname.startsWith("/regiao/");
   const ogType = (isPost || isRegion) ? "article" : "website";

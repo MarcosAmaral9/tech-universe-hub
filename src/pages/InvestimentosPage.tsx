@@ -223,6 +223,7 @@ const InvestimentosPage = () => {
             size="icon"
             disabled={page === 1}
             onClick={() => changePage((p) => p - 1)}
+            aria-label="Página anterior"
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
@@ -233,6 +234,8 @@ const InvestimentosPage = () => {
               variant={n === page ? "default" : "outline"}
               size="sm"
               onClick={() => changePage(n)}
+              aria-label={`Ir para a página ${n}`}
+              aria-current={n === page ? "page" : undefined}
               className={n === page ? "bg-invest hover:bg-invest/90 text-white" : ""}
             >
               {n}
@@ -244,6 +247,7 @@ const InvestimentosPage = () => {
             size="icon"
             disabled={page === totalPages}
             onClick={() => changePage((p) => p + 1)}
+            aria-label="Próxima página"
           >
             <ChevronRight className="h-4 w-4" />
           </Button>
