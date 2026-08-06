@@ -31,6 +31,8 @@ const Index = () => {
       {/* Offline banner — visível apenas no app instalado (PWA standalone) */}
       <OfflineHomeBanner />
 
+      <h1 className="sr-only">VICIO&lt;CODE&gt; — Portal de IA, Finanças, Geek e Otaku</h1>
+
       {/* Hero Carousel */}
       <FeaturedCarousel />
 
