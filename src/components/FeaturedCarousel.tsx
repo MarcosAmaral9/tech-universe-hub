@@ -173,6 +173,7 @@ const FeaturedCarousel = () => {
             variant="ghost"
             size="icon"
             onClick={goToPrevious}
+            aria-label="Ver destaque anterior"
             className="bg-card border border-border hover:bg-accent"
           >
             <ChevronLeft className="h-5 w-5" />
@@ -184,6 +185,8 @@ const FeaturedCarousel = () => {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
+                aria-label={`Ir para o destaque ${index + 1}`}
+                aria-current={index === currentIndex}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   index === currentIndex
                     ? `${categoryColor} w-6`
@@ -197,6 +200,7 @@ const FeaturedCarousel = () => {
             variant="ghost"
             size="icon"
             onClick={goToNext}
+            aria-label="Ver próximo destaque"
             className="bg-card border border-border hover:bg-accent"
           >
             <ChevronRight className="h-5 w-5" />

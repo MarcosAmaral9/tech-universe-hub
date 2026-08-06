@@ -62,10 +62,10 @@ const DiferencaMangasManhuas = () => {
         </p>
 
         <div className="not-prose my-8 p-6 bg-gradient-to-br from-otaku/10 to-background rounded-xl border border-otaku/30">
-          <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+          <h2 className="text-xl font-bold mb-4 mt-0 flex items-center gap-2">
             <Target className="h-6 w-6 text-otaku" />
             Resumo Rápido: Manga × Manhwa × Manhua
-          </h3>
+          </h2>
           <div className="grid md:grid-cols-3 gap-4 text-sm">
             <div className="p-3 bg-card rounded-lg">
               <strong className="text-otaku block mb-1">Manga 🇯🇵</strong>
