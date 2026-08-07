@@ -69,7 +69,15 @@ const stripped = indexHtml
   .replace(/<meta property="og:url"[^>]*>/g, "")
   .replace(/<meta property="og:type"[^>]*>/g, "")
   .replace(/<meta name="twitter:title"[^>]*>/g, "")
-  .replace(/<meta name="twitter:description"[^>]*>/g, "");
+  .replace(/<meta name="twitter:description"[^>]*>/g, "")
+  // Evita duplicidade de imagem social: o bloco injetado abaixo define og:image/twitter:image.
+  .replace(/<meta property="og:image"[^>]*>/g, "")
+  .replace(/<meta property="og:image:width"[^>]*>/g, "")
+  .replace(/<meta property="og:image:height"[^>]*>/g, "")
+  .replace(/<meta property="og:image:alt"[^>]*>/g, "")
+  .replace(/<meta name="twitter:card"[^>]*>/g, "")
+  .replace(/<meta name="twitter:image"[^>]*>/g, "")
+  .replace(/<meta name="twitter:image:alt"[^>]*>/g, "");
 
 const metaFor = (p) => {
   if (PAGE_META[p]) return PAGE_META[p];
@@ -137,10 +145,14 @@ for (const p of allPaths) {
     <meta property="og:url" content="${url}" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="${OG_DEFAULT}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="${title}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${title}" />
     <meta name="twitter:description" content="${desc}" />
     <meta name="twitter:image" content="${OG_DEFAULT}" />
+    <meta name="twitter:image:alt" content="${title}" />
     <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`;
 
   const html = stripped.replace("</head>", `${inject}\n  </head>`);

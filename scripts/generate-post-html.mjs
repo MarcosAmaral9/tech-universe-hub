@@ -39,6 +39,7 @@ const assetFiles = fs.readdirSync(path.join(DIST, "assets"));
 const stripped = indexHtml
   .replace(/<title>[\s\S]*?<\/title>/g, "")
   .replace(/<meta name="description"[^>]*>/g, "")
+  .replace(/<link rel="canonical"[^>]*>/g, "")
   .replace(/<meta property="og:title"[^>]*>/g, "")
   .replace(/<meta property="og:description"[^>]*>/g, "")
   .replace(/<meta property="og:url"[^>]*>/g, "")
@@ -47,6 +48,8 @@ const stripped = indexHtml
   .replace(/<meta name="twitter:title"[^>]*>/g, "")
   .replace(/<meta name="twitter:description"[^>]*>/g, "")
   .replace(/<meta name="twitter:image"[^>]*>/g, "")
+  .replace(/<meta name="twitter:image:alt"[^>]*>/g, "")
+  .replace(/<meta name="twitter:card"[^>]*>/g, "")
   .replace(/<meta property="og:image"[^>]*>/g, "")
   .replace(/<meta property="og:image:width"[^>]*>/g, "")
   .replace(/<meta property="og:image:height"[^>]*>/g, "");
@@ -141,6 +144,7 @@ for (const post of posts) {
     <meta name="twitter:title" content="${e(post.title)}" />
     <meta name="twitter:description" content="${e(post.excerpt)}" />
     <meta name="twitter:image" content="${ogImg}" />
+    <meta name="twitter:image:alt" content="${e(post.title)}" />
     <meta property="article:published_time" content="${post.date}T00:00:00Z" />
     <link rel="preload" as="image" href="${ogImg}" fetchpriority="high" />
     <script type="application/ld+json">${JSON.stringify({
@@ -235,7 +239,14 @@ for (const region of REGIONS) {
   fs.mkdirSync(dir, { recursive: true });
 
   const url       = `${BASE_URL}/regiao/${region.slug}`;
-  const imgAbs    = region.image.startsWith("http") ? region.image : `${BASE_URL}${region.image}`;
+  // Resolve o asset com hash gerado pelo Vite (o caminho literal não existe no dist).
+  const baseName  = region.image.replace(/^\/assets\//, "").replace(/\.(webp|jpg|png)$/, "");
+  const hashed    = assetFiles.find((f) => f.startsWith(baseName + "-") || f === baseName + ".webp");
+  const imgAbs    = region.image.startsWith("http")
+    ? region.image
+    : hashed
+      ? `${BASE_URL}/assets/${hashed}`
+      : `${BASE_URL}/og-image.png`;
   const titleSafe = e(clamp(region.title, 60));
   const descSafe  = e(clamp(region.description, 160));
 
@@ -254,6 +265,7 @@ for (const region of REGIONS) {
   <meta name="twitter:title" content="${titleSafe}">
   <meta name="twitter:description" content="${descSafe}">
   <meta name="twitter:image" content="${imgAbs}">
+  <meta name="twitter:image:alt" content="${titleSafe}">
   <link rel="canonical" href="${url}">
 </head>`);
 
