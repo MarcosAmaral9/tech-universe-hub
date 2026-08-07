@@ -107,7 +107,7 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
   },
   "/termos": {
     title: "Termos de Uso",
-    description: "Termos de uso do VICIO<CODE>.",
+    description: "Termos de uso do VICIO<CODE>: regras de acesso, direitos autorais, responsabilidades do leitor, uso de comentários e limites de conteúdo do portal.",
     keywords: "termos de uso, condições, regras, uso do site, termos e condições",
   },
   "/politica-conteudo": {
