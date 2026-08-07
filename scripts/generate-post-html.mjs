@@ -39,6 +39,7 @@ const assetFiles = fs.readdirSync(path.join(DIST, "assets"));
 const stripped = indexHtml
   .replace(/<title>[\s\S]*?<\/title>/g, "")
   .replace(/<meta name="description"[^>]*>/g, "")
+  .replace(/<link rel="canonical"[^>]*>/g, "")
   .replace(/<meta property="og:title"[^>]*>/g, "")
   .replace(/<meta property="og:description"[^>]*>/g, "")
   .replace(/<meta property="og:url"[^>]*>/g, "")
