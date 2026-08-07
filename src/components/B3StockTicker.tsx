@@ -22,7 +22,7 @@ const B3StockTicker = () => {
       <div className="bg-card border border-border rounded-2xl p-4 sm:p-6 mb-8">
         <div className="flex items-center gap-2 mb-4">
           <TrendingUp className="h-5 w-5 text-invest" />
-          <h3 className="font-bold">Bolsa de Valores B3</h3>
+          <h2 className="font-bold">Bolsa de Valores B3</h2>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-3">
           {Array.from({ length: 10 }).map((_, i) => (
@@ -38,7 +38,7 @@ const B3StockTicker = () => {
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <TrendingUp className="h-5 w-5 text-invest" />
-          <h3 className="font-bold">Bolsa de Valores B3 — Cotações</h3>
+          <h2 className="font-bold">Bolsa de Valores B3 — Cotações</h2>
         </div>
         <div className="flex items-center gap-3">
           {loading && <RefreshCw className="h-3.5 w-3.5 text-muted-foreground animate-spin" />}

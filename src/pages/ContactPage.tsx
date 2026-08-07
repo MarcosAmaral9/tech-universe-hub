@@ -34,7 +34,7 @@ const ContactPage = () => {
             <Phone className="h-5 w-5 text-primary" />
           </div>
           <div>
-            <h3 className="font-semibold text-foreground">Telefone</h3>
+            <h2 className="font-semibold text-foreground">Telefone</h2>
             <p className="text-muted-foreground">(31) 9 7153-3902</p>
           </div>
         </a>
@@ -48,7 +48,7 @@ const ContactPage = () => {
             <Mail className="h-5 w-5 text-primary" />
           </div>
           <div>
-            <h3 className="font-semibold text-foreground">E-mail</h3>
+            <h2 className="font-semibold text-foreground">E-mail</h2>
             <p className="text-muted-foreground">viciocode01@gmail.com</p>
           </div>
         </a>
@@ -64,7 +64,7 @@ const ContactPage = () => {
             <span className="text-green-500"><WhatsAppIcon /></span>
           </div>
           <div>
-            <h3 className="font-semibold text-foreground">WhatsApp</h3>
+            <h2 className="font-semibold text-foreground">WhatsApp</h2>
             <p className="text-muted-foreground">Enviar mensagem</p>
           </div>
         </a>
@@ -80,7 +80,7 @@ const ContactPage = () => {
             <Instagram className="h-5 w-5 text-pink-500" />
           </div>
           <div>
-            <h3 className="font-semibold text-foreground">Instagram</h3>
+            <h2 className="font-semibold text-foreground">Instagram</h2>
             <p className="text-muted-foreground">@viciocode</p>
           </div>
         </a>
@@ -96,7 +96,7 @@ const ContactPage = () => {
             <TikTokIcon />
           </div>
           <div>
-            <h3 className="font-semibold text-foreground">TikTok</h3>
+            <h2 className="font-semibold text-foreground">TikTok</h2>
             <p className="text-muted-foreground">@viciocode</p>
           </div>
         </a>
@@ -112,7 +112,7 @@ const ContactPage = () => {
             <MapPin className="h-5 w-5 text-primary" />
           </div>
           <div>
-            <h3 className="font-semibold text-foreground">Endereço</h3>
+            <h2 className="font-semibold text-foreground">Endereço</h2>
             <p className="text-muted-foreground">
               Rua Dom Geraldo Fernandes Bijos, 375<br />
               Santa Helena, Contagem - MG<br />

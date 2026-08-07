@@ -39,7 +39,7 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
       <div className="bg-card border border-border rounded-2xl p-4 sm:p-6 mb-8">
         <div className="flex items-center gap-2 mb-4">
           <Bitcoin className="h-5 w-5 text-invest" />
-          <h3 className="font-bold">Criptomoedas</h3>
+          <h2 className="font-bold">Criptomoedas</h2>
         </div>
         <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-4 gap-3">
           {Array.from({ length: compact ? 5 : 8 }).map((_, i) => (
@@ -55,7 +55,7 @@ const CryptoWidget = forwardRef<HTMLDivElement, CryptoWidgetProps>(({ compact = 
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <Bitcoin className="h-5 w-5 text-invest" />
-          <h3 className="font-bold">Criptomoedas — Cotações em BRL</h3>
+          <h2 className="font-bold">Criptomoedas — Cotações em BRL</h2>
         </div>
         {lastUpdated && (
           <span className="text-xs text-muted-foreground hidden sm:inline">
