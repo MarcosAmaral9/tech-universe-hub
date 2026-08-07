@@ -47,6 +47,8 @@ const stripped = indexHtml
   .replace(/<meta name="twitter:title"[^>]*>/g, "")
   .replace(/<meta name="twitter:description"[^>]*>/g, "")
   .replace(/<meta name="twitter:image"[^>]*>/g, "")
+  .replace(/<meta name="twitter:image:alt"[^>]*>/g, "")
+  .replace(/<meta name="twitter:card"[^>]*>/g, "")
   .replace(/<meta property="og:image"[^>]*>/g, "")
   .replace(/<meta property="og:image:width"[^>]*>/g, "")
   .replace(/<meta property="og:image:height"[^>]*>/g, "");
@@ -141,6 +143,7 @@ for (const post of posts) {
     <meta name="twitter:title" content="${e(post.title)}" />
     <meta name="twitter:description" content="${e(post.excerpt)}" />
     <meta name="twitter:image" content="${ogImg}" />
+    <meta name="twitter:image:alt" content="${e(post.title)}" />
     <meta property="article:published_time" content="${post.date}T00:00:00Z" />
     <link rel="preload" as="image" href="${ogImg}" fetchpriority="high" />
     <script type="application/ld+json">${JSON.stringify({
