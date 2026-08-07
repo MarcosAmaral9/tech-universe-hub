@@ -64,7 +64,7 @@ const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
       <div className="bg-card border border-border rounded-2xl p-4 sm:p-6 mb-8">
         <div className="flex items-center gap-2 mb-4">
           <Gem className="h-5 w-5 text-invest" />
-          <h3 className="font-bold">Metais Preciosos</h3>
+          <h2 className="font-bold">Metais Preciosos</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {[0, 1].map(i => <div key={i} className="bg-muted rounded-xl h-24" />)}
@@ -78,7 +78,7 @@ const PreciousMetalsWidget = forwardRef<HTMLDivElement>((_, ref) => {
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <Gem className="h-5 w-5 text-invest" />
-          <h3 className="font-bold">Metais Preciosos — Preço por Grama</h3>
+          <h2 className="font-bold">Metais Preciosos — Preço por Grama</h2>
         </div>
         {lastUpdated && (
           <span className="text-xs text-muted-foreground hidden sm:inline">

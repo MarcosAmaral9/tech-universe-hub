@@ -92,7 +92,7 @@ const CurrencyWidget = () => {
       <div className="bg-card border border-border rounded-2xl p-4 sm:p-6 mb-8">
         <div className="flex items-center gap-2 mb-4">
           <DollarSign className="h-5 w-5 text-invest" />
-          <h3 className="font-bold">Câmbio</h3>
+          <h2 className="font-bold">Câmbio</h2>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
           {[0, 1, 2, 3].map(i => <div key={i} className="bg-muted rounded-xl h-28" />)}
@@ -106,7 +106,7 @@ const CurrencyWidget = () => {
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <DollarSign className="h-5 w-5 text-invest" />
-          <h3 className="font-bold">Câmbio — Moedas em Real</h3>
+          <h2 className="font-bold">Câmbio — Moedas em Real</h2>
         </div>
         {lastUpdated && (
           <span className="text-xs text-muted-foreground hidden sm:inline">

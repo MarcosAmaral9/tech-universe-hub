@@ -99,7 +99,7 @@ export const NewsletterSignup = ({ variant = "inline", categories = [], showAfte
       {status === "success" ? (
         <div className="text-center py-4 space-y-3">
           <CheckCircle2 className="h-12 w-12 text-emerald-400 mx-auto" />
-          <h3 className="text-xl font-bold">Você está dentro! 🎉</h3>
+          <h2 className="text-xl font-bold">Você está dentro! 🎉</h2>
           <p className="text-muted-foreground text-sm">Melhores artigos toda semana direto no seu email.</p>
         </div>
       ) : (
@@ -109,7 +109,7 @@ export const NewsletterSignup = ({ variant = "inline", categories = [], showAfte
               <Mail className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <h3 className="font-bold text-base sm:text-lg flex items-center gap-1.5">
+              <h2 className="font-bold text-base sm:text-lg flex items-center gap-1.5">
                 Newsletter VicioCode <Sparkles className="h-4 w-4 text-yellow-400" />
               </h3>
               <p className="text-sm text-muted-foreground">Os melhores artigos da semana, sem spam.</p>

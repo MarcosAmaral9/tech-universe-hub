@@ -63,7 +63,7 @@ const PostCard = forwardRef<HTMLElement, PostCardProps>(({ post, highlightQuery 
         <div className="p-3 sm:p-4 xl:p-3.5">
           <h2 className="font-display font-semibold text-base xl:text-[0.95rem] mb-2 line-clamp-2 group-hover:text-primary transition-colors leading-snug">
             {hl(post.title)}
-          </h3>
+          </h2>
           
           <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
             {hl(post.excerpt)}

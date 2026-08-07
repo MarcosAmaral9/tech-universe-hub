@@ -30,7 +30,7 @@ const Footer = () => {
 
           {/* Categories */}
           <div>
-            <h4 className="font-display font-semibold mb-4 text-foreground">Categorias</h4>
+            <h2 className="font-display font-semibold mb-4 text-foreground">Categorias</h2>
             <ul className="space-y-2">
               <li>
                 <Link to="/ia" className="text-muted-foreground hover:text-ia transition-colors">
@@ -57,7 +57,7 @@ const Footer = () => {
 
           {/* Legal */}
           <div>
-            <h4 className="font-display font-semibold mb-4 text-foreground">Legal</h4>
+            <h2 className="font-display font-semibold mb-4 text-foreground">Legal</h2>
             <ul className="space-y-2">
               <li>
                 <Link to="/sobre" className="text-muted-foreground hover:text-primary transition-colors">
@@ -103,7 +103,7 @@ const Footer = () => {
             </ul>
             {/* Feeds RSS */}
             <div className="mt-6">
-              <h4 className="font-display font-semibold mb-2 text-foreground text-sm">Feeds RSS</h4>
+              <h2 className="font-display font-semibold mb-2 text-foreground text-sm">Feeds RSS</h2>
               <ul className="space-y-1 text-sm">
                 <li>
                   <a href="/feed.xml" className="text-muted-foreground hover:text-primary transition-colors">Todos os artigos</a>
