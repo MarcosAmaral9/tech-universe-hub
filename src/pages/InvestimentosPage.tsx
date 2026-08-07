@@ -117,7 +117,7 @@ const InvestimentosPage = () => {
                   <h2 className="font-display text-xl md:text-3xl font-bold text-white flex items-center gap-2">
                     <BarChart3 className="h-6 w-6 text-invest" />
                     Cotações em Tempo Real
-                  </h3>
+                  </h2>
                   <p className="text-white/60 text-sm mt-2">B3, Cripto, Câmbio e Metais</p>
                 </div>
               </div>
@@ -132,7 +132,7 @@ const InvestimentosPage = () => {
                   <h2 className="font-display text-xl md:text-3xl font-bold text-white flex items-center gap-2">
                     <History className="h-6 w-6 text-invest" />
                     Histórico de Cotações
-                  </h3>
+                  </h2>
                   <p className="text-white/60 text-sm mt-2">Gráficos e tendências de preço</p>
                 </div>
               </div>
@@ -159,7 +159,7 @@ const InvestimentosPage = () => {
                 <h2 className="font-display text-xl md:text-3xl font-bold text-white flex items-center gap-2">
                   <Calculator className="h-6 w-6 text-invest" />
                   {pinnedPost.title}
-                </h3>
+                </h2>
                 <p className="text-white/60 text-sm mt-2 max-w-md line-clamp-2">{pinnedPost.excerpt}</p>
               </div>
             </div>
