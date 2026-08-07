@@ -238,7 +238,14 @@ for (const region of REGIONS) {
   fs.mkdirSync(dir, { recursive: true });
 
   const url       = `${BASE_URL}/regiao/${region.slug}`;
-  const imgAbs    = region.image.startsWith("http") ? region.image : `${BASE_URL}${region.image}`;
+  // Resolve o asset com hash gerado pelo Vite (o caminho literal não existe no dist).
+  const baseName  = region.image.replace(/^\/assets\//, "").replace(/\.(webp|jpg|png)$/, "");
+  const hashed    = assetFiles.find((f) => f.startsWith(baseName + "-") || f === baseName + ".webp");
+  const imgAbs    = region.image.startsWith("http")
+    ? region.image
+    : hashed
+      ? `${BASE_URL}/assets/${hashed}`
+      : `${BASE_URL}/og-image.png`;
   const titleSafe = e(clamp(region.title, 60));
   const descSafe  = e(clamp(region.description, 160));
 
@@ -257,6 +264,7 @@ for (const region of REGIONS) {
   <meta name="twitter:title" content="${titleSafe}">
   <meta name="twitter:description" content="${descSafe}">
   <meta name="twitter:image" content="${imgAbs}">
+  <meta name="twitter:image:alt" content="${titleSafe}">
   <link rel="canonical" href="${url}">
 </head>`);
 
