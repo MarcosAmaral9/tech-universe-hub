@@ -111,7 +111,7 @@ export const NewsletterSignup = ({ variant = "inline", categories = [], showAfte
             <div>
               <h2 className="font-bold text-base sm:text-lg flex items-center gap-1.5">
                 Newsletter VicioCode <Sparkles className="h-4 w-4 text-yellow-400" />
-              </h3>
+              </h2>
               <p className="text-sm text-muted-foreground">Os melhores artigos da semana, sem spam.</p>
             </div>
           </div>
