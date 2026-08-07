@@ -45,13 +45,16 @@ const REQUIRED = [
   ["name", "twitter:image"],
 ];
 
+// Arquivos utilitários que não são páginas indexáveis do site.
+const SKIP = /^(google[0-9a-f]+\.html|yandex_[0-9a-f]+\.html|offline\.html)$/i;
+
 function walk(dir, out = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       if (entry.name === "assets") continue;
       walk(full, out);
-    } else if (entry.name.endsWith(".html")) {
+    } else if (entry.name.endsWith(".html") && !SKIP.test(entry.name)) {
       out.push(full);
     }
   }
@@ -66,7 +69,7 @@ const metaMatches = (html, attr, key) =>
   ];
 
 const contentOf = (tag) => {
-  const m = tag.match(/content=["']([\s\S]*?)["']/i);
+  const m = tag.match(/content="([^"]*)"/i) || tag.match(/content='([^']*)'/i);
   return m ? m[1] : "";
 };
 
