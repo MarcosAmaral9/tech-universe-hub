@@ -112,7 +112,7 @@ const PAGE_META: Record<string, { title: string; description: string; keywords: 
   },
   "/politica-conteudo": {
     title: "Política de Conteúdo",
-    description: "Política de conteúdo do VICIO<CODE>.",
+    description: "Política de conteúdo do VICIO<CODE>: como apuramos fontes, corrigimos erros, moderamos comentários e mantemos artigos de IA, finanças, games e anime confiáveis.",
     keywords: "política de conteúdo, diretrizes, regras de publicação, moderação, comunidade",
   },
   "/instalar": {
