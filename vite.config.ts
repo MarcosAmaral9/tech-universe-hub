@@ -312,11 +312,14 @@ export default defineConfig(({ mode }) => ({
             handler: "NetworkFirst",
             options: {
               cacheName: "pages-cache",
-              networkTimeoutSeconds: 4,
+              // 10s: evita servir HTML antigo (com hashes de JS já removidos do
+              // servidor após deploy) só porque a rede móvel está lenta → tela preta
+              networkTimeoutSeconds: 10,
               expiration: { maxEntries: 300, maxAgeSeconds: 365 * 24 * 60 * 60 },
               cacheableResponse: { statuses: [0, 200] },
               precacheFallback: { fallbackURL: "/offline.html" },
             },
+
           },
           {
             // Images (WebP/PNG/JPG) — cache-first, long TTL
