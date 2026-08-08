@@ -5,18 +5,49 @@ import { AppErrorBoundary } from "./components/AppErrorBoundary.tsx";
 import { initOfflineCommentSync } from "./utils/offlineCommentQueue.ts";
 import "./index.css";
 
-// ── Guard: chunk load failure (SW serving stale assets after deploy) ──────────
-// Se um import dinâmico falhar (chunk do build novo não encontrado no cache antigo),
-// limpa todos os caches do SW e recarrega a página automaticamente.
-window.addEventListener("vite:preloadError", () => {
-  if (typeof caches !== "undefined") {
-    caches.keys().then((keys) => Promise.all(keys.map((k) => caches.delete(k)))).finally(() => {
-      window.location.reload();
-    });
-  } else {
-    window.location.reload();
+// ── Guard: chunk load failure (SW servindo HTML/asset antigo após deploy) ────
+// Se um import dinâmico falhar (chunk do build novo não existe mais no servidor,
+// ou o HTML veio do cache antigo), limpa caches + desregistra o SW e recarrega
+// UMA única vez (flag em sessionStorage evita loop de reload).
+const RECOVERY_FLAG = "vc:sw-recovery";
+
+async function recoverFromStaleCache() {
+  try {
+    if (sessionStorage.getItem(RECOVERY_FLAG)) return; // já tentamos nesta sessão
+    sessionStorage.setItem(RECOVERY_FLAG, "1");
+  } catch { /* storage indisponível — segue com o reload */ }
+  try {
+    if (typeof caches !== "undefined") {
+      const keys = await caches.keys();
+      await Promise.all(keys.map((k) => caches.delete(k)));
+    }
+    if ("serviceWorker" in navigator) {
+      const regs = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(regs.map((r) => r.unregister()));
+    }
+  } catch { /* ignora falhas de limpeza */ }
+  window.location.reload();
+}
+
+window.addEventListener("vite:preloadError", () => { void recoverFromStaleCache(); });
+
+window.addEventListener("unhandledrejection", (event) => {
+  const msg = String((event.reason as Error)?.message ?? event.reason ?? "");
+  if (
+    msg.includes("Failed to fetch dynamically imported module") ||
+    msg.includes("Importing a module script failed") ||
+    msg.includes("ChunkLoadError") ||
+    msg.includes("Loading chunk")
+  ) {
+    void recoverFromStaleCache();
   }
 });
+
+// Limpa a flag quando o app monta com sucesso (permite nova recuperação futura)
+window.addEventListener("load", () => {
+  setTimeout(() => { try { sessionStorage.removeItem(RECOVERY_FLAG); } catch { /* noop */ } }, 5000);
+});
+
 
 // ── Inicia sistema de fila offline para comentários (background sync) ─────────
 initOfflineCommentSync();

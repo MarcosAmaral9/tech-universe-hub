@@ -312,11 +312,14 @@ export default defineConfig(({ mode }) => ({
             handler: "NetworkFirst",
             options: {
               cacheName: "pages-cache",
-              networkTimeoutSeconds: 4,
+              // 10s: evita servir HTML antigo (com hashes de JS já removidos do
+              // servidor após deploy) só porque a rede móvel está lenta → tela preta
+              networkTimeoutSeconds: 10,
               expiration: { maxEntries: 300, maxAgeSeconds: 365 * 24 * 60 * 60 },
               cacheableResponse: { statuses: [0, 200] },
               precacheFallback: { fallbackURL: "/offline.html" },
             },
+
           },
           {
             // Images (WebP/PNG/JPG) — cache-first, long TTL
@@ -341,10 +344,16 @@ export default defineConfig(({ mode }) => ({
             },
           },
           {
-            // PHP API — perfil do usuário, comentários, cotações em cache no servidor
-            // StaleWhileRevalidate: serve do cache imediatamente e revalida em background
-            // Permite que usuários logados vejam seu perfil + comentários offline
-            urlPattern: /\/api\.php/i,
+            // PHP API — apenas dados PÚBLICOS e de leitura entram em cache.
+            // Dados de usuário (favoritos, alertas, perfil, comentários) NUNCA
+            // são cacheados: SWR devolvia a lista antiga e dava a impressão de
+            // que favoritar não funcionava.
+            urlPattern: ({ url, request }) => {
+              if (!url.pathname.endsWith("/api.php")) return false;
+              if (request.method !== "GET") return false;
+              const action = url.searchParams.get("action") ?? "";
+              return ["rates", "crypto", "b3", "all", "history", "history_multi", "top_posts"].includes(action);
+            },
             handler: "StaleWhileRevalidate",
             options: {
               cacheName: "php-api-cache",
@@ -352,6 +361,12 @@ export default defineConfig(({ mode }) => ({
               cacheableResponse: { statuses: [0, 200] },
             },
           },
+          {
+            // Demais chamadas ao api.php (usuário/mutações) — sempre rede
+            urlPattern: /\/api\.php/i,
+            handler: "NetworkOnly",
+          },
+
           {
             // External APIs (cotações fallback) — stale-while-revalidate
             urlPattern: /^https:\/\/(api\.coingecko\.com|brapi\.dev|query1\.finance\.yahoo\.com)/i,
