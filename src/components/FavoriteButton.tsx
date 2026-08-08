@@ -8,21 +8,29 @@ interface FavoriteButtonProps {
   assetCategory: string;
   assetIcon: string;
   isFavorite: boolean;
-  onToggle: (asset: { key: string; label: string; category: string; icon: string }) => void;
+  onToggle: (asset: { key: string; label: string; category: string; icon: string }) => void | boolean | Promise<void | boolean>;
   className?: string;
 }
 
 const FavoriteButton = ({ assetKey, assetLabel, assetCategory, assetIcon, isFavorite, onToggle, className = "" }: FavoriteButtonProps) => {
   const { user } = useAuthContext();
 
-  const handleClick = (e: React.MouseEvent) => {
+  const handleClick = async (e: React.MouseEvent) => {
     e.stopPropagation();
     if (!user) {
       toast({ title: "Faça login", description: "Você precisa estar logado para favoritar ativos.", variant: "destructive" });
       return;
     }
-    onToggle({ key: assetKey, label: assetLabel, category: assetCategory, icon: assetIcon });
+    const ok = await onToggle({ key: assetKey, label: assetLabel, category: assetCategory, icon: assetIcon });
+    if (ok === false) {
+      toast({
+        title: "Não foi possível salvar",
+        description: "Falha ao comunicar com o servidor. Tente novamente em instantes.",
+        variant: "destructive",
+      });
+    }
   };
+
 
   return (
     <button
