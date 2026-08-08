@@ -20,7 +20,7 @@ Disallow: /redefinir-senha
 Disallow: /leitura-offline
 Disallow: /api.php
 Disallow: /cache/
-Disallow: /*?
+
 
 
 Sitemap: https://viciocode.com/sitemap.xml
