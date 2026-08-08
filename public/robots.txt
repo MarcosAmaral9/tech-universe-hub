@@ -2,6 +2,14 @@ User-agent: *
 Allow: /
 Allow: /feed.xml
 Allow: /feed/
+# Recursos necessários para renderizar as páginas (Googlebot precisa deles)
+Allow: /assets/
+Allow: /fonts/
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.webp$
+Allow: /*.png$
+Allow: /*.svg$
 Disallow: /arquivo?
 Disallow: /configuracoes
 Disallow: /painel-social
@@ -12,6 +20,8 @@ Disallow: /redefinir-senha
 Disallow: /leitura-offline
 Disallow: /api.php
 Disallow: /cache/
+Disallow: /*?
+
 
 Sitemap: https://viciocode.com/sitemap.xml
 Sitemap: https://viciocode.com/sitemap-images.xml
