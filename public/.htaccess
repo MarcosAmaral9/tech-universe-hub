@@ -41,6 +41,16 @@
   <FilesMatch "^(manifest\.webmanifest|manifest\.json)$">
     Header set Cache-Control "no-cache"
   </FilesMatch>
+  # HTML (index.html e páginas pré-renderizadas) sempre revalidado —
+  # evita HTML antigo apontando para /assets/*.js já removidos (tela preta)
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  # api.php nunca em cache de borda/navegador (dados de usuário)
+  <FilesMatch "^api\.php$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate"
+  </FilesMatch>
+
 </IfModule>
 
 # ── SPA: serve index.html para rotas React ────────────────────
