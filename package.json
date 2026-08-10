@@ -10,6 +10,8 @@
     "build": "vite build && node scripts/generate-post-html.mjs && node scripts/generate-page-html.mjs && node scripts/verify-build-output.mjs && node scripts/verify-sitemap-urls.mjs && node scripts/validate-social-cards.mjs",
     "build:dev": "vite build --mode development",
     "deploy:zip": "node scripts/zip-dist.mjs",
+    "seo:index-report": "node scripts/gsc-index-report.mjs",
+    "seo:check-redirects": "node scripts/validate-https-redirects.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
