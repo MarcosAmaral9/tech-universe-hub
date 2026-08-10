@@ -1,0 +1,42 @@
+{
+  "geradoEm": "2026-08-10T22:07:50.455Z",
+  "site": "sc-domain:viciocode.com",
+  "porStatus": {
+    "indexada": 3
+  },
+  "resultados": [
+    {
+      "url": "https://viciocode.com/",
+      "status": "indexada",
+      "motivo": "Submitted and indexed",
+      "coverageState": "Submitted and indexed",
+      "lastCrawlTime": "2026-08-04T19:43:35Z",
+      "googleCanonical": "https://viciocode.com/",
+      "userCanonical": "https://viciocode.com/",
+      "robotsTxtState": "ALLOWED",
+      "sitemaps": 1
+    },
+    {
+      "url": "https://viciocode.com/ia",
+      "status": "indexada",
+      "motivo": "Submitted and indexed",
+      "coverageState": "Submitted and indexed",
+      "lastCrawlTime": "2026-08-07T16:43:53Z",
+      "googleCanonical": "https://viciocode.com/ia",
+      "userCanonical": "https://viciocode.com/ia",
+      "robotsTxtState": "ALLOWED",
+      "sitemaps": 0
+    },
+    {
+      "url": "https://viciocode.com/financas",
+      "status": "indexada",
+      "motivo": "Submitted and indexed",
+      "coverageState": "Submitted and indexed",
+      "lastCrawlTime": "2026-08-05T01:40:39Z",
+      "googleCanonical": "https://viciocode.com/financas",
+      "userCanonical": "https://viciocode.com/financas",
+      "robotsTxtState": "ALLOWED",
+      "sitemaps": 0
+    }
+  ]
+}
