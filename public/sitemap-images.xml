@@ -2,6 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://viciocode.com/post/avanco-robotica-2026-robos-humanoides</loc>
+    <image:image>
+      <image:loc>https://viciocode.com/assets/avanco-robotica-2026-robos-humanoides.webp</image:loc>
+      <image:title>O Avanço da Robótica em 2026: Dos Braços Industriais aos Robôs Humanoides</image:title>
+      <image:caption>Artigo VicioCode: O Avanço da Robótica em 2026: Dos Braços Industriais aos Robôs Humanoides</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/robos-humanoides-china-2026-corrida-robotica</loc>
+    <image:image>
+      <image:loc>https://viciocode.com/assets/robos-humanoides-china-2026-corrida-robotica.webp</image:loc>
+      <image:title>A China e a Corrida dos Robôs: Por Que o País Virou a Fábrica dos Humanoides</image:title>
+      <image:caption>Artigo VicioCode: A China e a Corrida dos Robôs: Por Que o País Virou a Fábrica dos Humanoides</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://viciocode.com/post/elon-musk-primeiro-trilionario-ipo-spacex</loc>
     <image:image>
       <image:loc>https://viciocode.com/assets/elon-musk-primeiro-trilionario-ipo-spacex.webp</image:loc>

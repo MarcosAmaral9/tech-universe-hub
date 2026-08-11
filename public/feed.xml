@@ -5,8 +5,26 @@
     <link>https://viciocode.com</link>
     <description>IA, investimentos, cultura geek e otaku — novos artigos do VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sat, 01 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A China e a Corrida dos Robôs: Por Que o País Virou a Fábrica dos Humanoides</title>
+      <link>https://viciocode.com/post/robos-humanoides-china-2026-corrida-robotica</link>
+      <guid isPermaLink="true">https://viciocode.com/post/robos-humanoides-china-2026-corrida-robotica</guid>
+      <pubDate>Tue, 11 Aug 2026 12:00:00 GMT</pubDate>
+      <description>A China instala cerca de metade dos robôs industriais do mundo e transformou a criação de robôs humanoides em política de Estado. Entenda o papel do MIIT, as empresas líderes como Unitree e UBTech, a vantagem da cadeia de suprimentos e o impacto disso no Brasil.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/robos-humanoides-china-2026-corrida-robotica.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>O Avanço da Robótica em 2026: Dos Braços Industriais aos Robôs Humanoides</title>
+      <link>https://viciocode.com/post/avanco-robotica-2026-robos-humanoides</link>
+      <guid isPermaLink="true">https://viciocode.com/post/avanco-robotica-2026-robos-humanoides</guid>
+      <pubDate>Tue, 11 Aug 2026 12:00:00 GMT</pubDate>
+      <description>A robótica virou a fronteira mais visível da IA. Veja o que mudou no software que controla os robôs, quem é quem na corrida dos humanoides, onde a automação já dá retorno real e por que o Brasil ainda tem uma das menores densidades robóticas do mundo.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/avanco-robotica-2026-robos-humanoides.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>Recuperação Judicial em Alta: o Que É, Como Funciona e Como Afeta Clientes e Investidores</title>
       <link>https://viciocode.com/post/recuperacao-judicial-empresas-2026-como-afeta-clientes</link>
@@ -438,24 +456,6 @@
       <description>As 9 culturas de Mount &amp; Blade II: Bannerlord — Vlandia, Battania, Sturgia, Aserai, Khuzait, os 3 Impérios e os Nords (expansão War Sails). Tropas-estrela, pontos fortes e qual escolher.</description>
       <category>Geek &amp; Games</category>
       <enclosure url="https://viciocode.com/assets/bannerlord-culturas-reinos-calradia-2026.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Mount &amp; Blade II: Bannerlord — Guia Completo, História, Lançamento, Modos e Preços</title>
-      <link>https://viciocode.com/post/bannerlord-guia-completo-2026</link>
-      <guid isPermaLink="true">https://viciocode.com/post/bannerlord-guia-completo-2026</guid>
-      <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
-      <description>Guia completo de Mount &amp; Blade II: Bannerlord. Lançamento 1.0 em 25/10/2022, modos de jogo, preço Steam, requisitos de PC, tempo para zerar, suporte a mods e a expansão War Sails.</description>
-      <category>Geek &amp; Games</category>
-      <enclosure url="https://viciocode.com/assets/bannerlord-guia-completo-2026.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Isekai Mokushiroku Mynoghra: Guia Completo — A Civilização do Apocalipse que Vai Conquistar o Mundo</title>
-      <link>https://viciocode.com/post/isekai-mokushiroku-mynoghra-guia-2026</link>
-      <guid isPermaLink="true">https://viciocode.com/post/isekai-mokushiroku-mynoghra-guia-2026</guid>
-      <pubDate>Thu, 28 May 2026 12:00:00 GMT</pubDate>
-      <description>Mynoghra é o isekai onde o protagonista Takuto Ira renasce não como herói, mas como a nação mais sombria de um jogo de estratégia 4X. Com Atou (a Líder Corrupta) ao lado, ele precisa sobreviver num mundo real com mecânicas apocalípticas literais. Anime pela Wao World confirmado, mangá em andamento.</description>
-      <category>Otaku</category>
-      <enclosure url="https://viciocode.com/assets/isekai-mokushiroku-mynoghra-guia-2026.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>
