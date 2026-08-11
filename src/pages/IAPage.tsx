@@ -23,6 +23,7 @@ const SUBTOPIC_LABELS: Record<string, string> = {
   games: "Games",
   privacidade: "Privacidade",
   regulacao: "Regulação",
+  robotica: "Robótica",
   renda: "Renda",
   saude: "Saúde",
   seguranca: "Segurança",

@@ -218,8 +218,84 @@ import novaTabelaIR2026Img from "@/assets/nova-tabela-ir-2026-isencao-5-mil.webp
 import boletimFocusJulho2026Img from "@/assets/boletim-focus-julho-2026-selic-ipca.webp";
 import elonMuskTrilionarioImg from "@/assets/elon-musk-primeiro-trilionario-ipo-spacex-2026.webp";
 import recuperacaoJudicialImg from "@/assets/recuperacao-judicial-empresas-brasil-2026.webp";
+import avancoRoboticaImg from "@/assets/avanco-robotica-2026-humanoides.webp";
+import robosChinaImg from "@/assets/robos-humanoides-china-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 11 Ago 2026 — IA (Avanço da robótica · humanoides) ─────────────
+  {
+    id: "235",
+    slug: "avanco-robotica-2026-robos-humanoides",
+    title: "O Avanço da Robótica em 2026: Dos Braços Industriais aos Robôs Humanoides",
+    excerpt:
+      "A robótica virou a fronteira mais visível da IA. Veja o que mudou no software que controla os robôs, quem é quem na corrida dos humanoides, onde a automação já dá retorno real e por que o Brasil ainda tem uma das menores densidades robóticas do mundo.",
+    content: "",
+    category: "ia",
+    subtopic: "robotica",
+    image: avancoRoboticaImg,
+    author: "VICIO<CODE>",
+    date: "2026-08-11",
+    readTime: "13 min",
+    faq: [
+      {
+        q: "Já é possível comprar um robô humanoide?",
+        a: "Sim, com ressalvas. Modelos de pesquisa como o Unitree G1 partem de cerca de US$ 16 mil e chegam ao Brasil bem mais caros por importação e tributos. Servem para estudo, demonstração e desenvolvimento, não como assistentes domésticos prontos para uso.",
+      },
+      {
+        q: "Robôs humanoides já trabalham em fábricas de verdade?",
+        a: "Em projetos piloto, sim. Tesla, Figure, Agility e Boston Dynamics mantêm unidades em operação com parceiros industriais, em tarefas delimitadas e sob supervisão. O volume global está na ordem de milhares de unidades, muito abaixo da escala dos braços robóticos tradicionais.",
+      },
+      {
+        q: "Qual a diferença entre robótica tradicional e IA física?",
+        a: "A robótica tradicional executa trajetórias programadas e falha quando o ambiente muda. A IA física usa modelos treinados em visão, linguagem e movimento para decidir a ação em tempo real, lidando com objetos e situações não previstos no código.",
+      },
+      {
+        q: "Por que o Brasil tem poucos robôs industriais?",
+        a: "Principalmente por custo de capital: equipamentos importados, câmbio, carga tributária e crédito caro alongam o retorno do investimento. Soma-se a escassez de integradores qualificados, que encarece a implantação.",
+      },
+      {
+        q: "Robôs vão eliminar empregos no Brasil?",
+        a: "O efeito mais provável no curto prazo é a substituição de tarefas repetitivas dentro de funções, e não a extinção imediata de ocupações. Com densidade robótica baixa, a adoção brasileira tende a ser gradual e concentrada em setores de alto volume.",
+      },
+    ],
+  },
+  // ── 11 Ago 2026 — IA (China · fábrica dos humanoides) ──────────────
+  {
+    id: "236",
+    slug: "robos-humanoides-china-2026-corrida-robotica",
+    title: "A China e a Corrida dos Robôs: Por Que o País Virou a Fábrica dos Humanoides",
+    excerpt:
+      "A China instala cerca de metade dos robôs industriais do mundo e transformou a criação de robôs humanoides em política de Estado. Entenda o papel do MIIT, as empresas líderes como Unitree e UBTech, a vantagem da cadeia de suprimentos e o impacto disso no Brasil.",
+    content: "",
+    category: "ia",
+    subtopic: "robotica",
+    image: robosChinaImg,
+    author: "VICIO<CODE>",
+    date: "2026-08-11",
+    readTime: "14 min",
+    faq: [
+      {
+        q: "Por que os robôs chineses são tão mais baratos?",
+        a: "Pela combinação de cadeia de suprimentos local completa (motores, redutores, baterias, sensores), escala de produção, concorrência entre dezenas de fabricantes e apoio estatal em forma de subsídios, fundos setoriais e compras públicas.",
+      },
+      {
+        q: "Quais são as principais empresas chinesas de robôs humanoides?",
+        a: "As mais relevantes são Unitree, UBTech, AgiBot (Zhiyuan Robotics), Fourier Intelligence, Galbot e a divisão de robótica da Xpeng, cada uma focada em nichos como pesquisa, linha de montagem, reabilitação ou varejo.",
+      },
+      {
+        q: "A China já lidera a robótica mundial?",
+        a: "Em volume de instalação, produção e custo, sim. Em software de autonomia e chips de treinamento de ponta, ainda não: essas duas camadas seguem sendo a principal vantagem competitiva de empresas americanas.",
+      },
+      {
+        q: "É possível comprar um robô chinês no Brasil?",
+        a: "Sim, por importação direta ou por representantes. O valor final fica bem acima do anunciado por causa de frete, imposto de importação, ICMS e despacho aduaneiro, e é essencial confirmar suporte técnico e disponibilidade de peças antes da compra.",
+      },
+      {
+        q: "Os humanoides chineses já trabalham em fábricas?",
+        a: "Em projetos piloto, sim. A UBTech mantém unidades do Walker S em montadoras e fábricas de eletrônicos, e a Xpeng usa robôs próprios em suas linhas, sempre em tarefas delimitadas e supervisionadas.",
+      },
+    ],
+  },
   // ── 01 Ago 2026 — Finanças (IPO SpaceX · Elon Musk trilionário) ────
   {
     id: "231",

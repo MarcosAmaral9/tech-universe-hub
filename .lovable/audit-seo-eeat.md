@@ -1,32 +1,34 @@
 # Auditoria SEO + E-E-A-T
 
-Gerado em 01/08/2026, 23:19:44.
+Gerado em 11/08/2026, 22:22:06.
 
 ## Resumo executivo
 
-- **Total auditado:** 205 posts (0 sem .tsx mapeado)
-- **PAGE_META manual presente:** 175 / 205
-- **Keyword no `<h1>`:** 141 / 205
-- **Keyword na introdução:** 131 / 205
-- **Keyword no excerpt:** 80 / 205
-- **AuthorBio:** 205 / 205
-- **ArticleSources (≥5 fontes):** 189 / 205
-- **EditorialTake / Análise do Marcos:** 205 / 205
-- **Conteúdo ≥1500 palavras:** 114 / 205
+- **Total auditado:** 207 posts (0 sem .tsx mapeado)
+- **PAGE_META manual presente:** 175 / 207
+- **Keyword no `<h1>`:** 143 / 207
+- **Keyword na introdução:** 132 / 207
+- **Keyword no excerpt:** 81 / 207
+- **AuthorBio:** 207 / 207
+- **ArticleSources (≥5 fontes):** 191 / 207
+- **EditorialTake / Análise do Marcos:** 207 / 207
+- **Conteúdo ≥1500 palavras:** 114 / 207
 
 
 
 ## Plano de levas sugerido
 
-1. **Levas SEO (rápidas, ~10 posts/leva)** — Adicionar PAGE_META + garantir keyword em h1/intro/excerpt para os 30 posts sem meta manual.
+1. **Levas SEO (rápidas, ~10 posts/leva)** — Adicionar PAGE_META + garantir keyword em h1/intro/excerpt para os 32 posts sem meta manual.
 2. **Levas Fontes (3 posts/leva)** — Adicionar 5ª fonte oficial verificável para os 16 posts com <5 fontes.
 3. **Levas Análise (5 posts/leva)** — Adicionar bloco "Análise do Marcos" para os 0 posts sem editorial.
-4. **Levas Expansão (2 posts/leva)** — Reescrever os 91 posts <1500 palavras, começando pelos mais curtos.
+4. **Levas Expansão (2 posts/leva)** — Reescrever os 93 posts <1500 palavras, começando pelos mais curtos.
 
 ---
 
-## 1) Posts sem PAGE_META manual — 30
+## 1) Posts sem PAGE_META manual — 32
 
+- `avanco-robotica-2026-robos-humanoides` (1317w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1317 palavras (mínimo 1500)
+- `robos-humanoides-china-2026-corrida-robotica` (1406w, 6 fontes) — sem PAGE_META manual; apenas ~1406 palavras (mínimo 1500)
 - `elon-musk-primeiro-trilionario-ipo-spacex` (1281w, 7 fontes) — sem PAGE_META manual; keyword ausente em excerpt; apenas ~1281 palavras (mínimo 1500)
 - `recuperacao-judicial-empresas-2026-como-afeta-clientes` (1283w, 7 fontes) — sem PAGE_META manual; keyword ausente em <h1>; apenas ~1283 palavras (mínimo 1500)
 - `helldivers-2-guia-completo-2024` (1188w, 7 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente em excerpt; apenas ~1188 palavras (mínimo 1500)
@@ -44,10 +46,10 @@ Gerado em 01/08/2026, 23:19:44.
 - `lci-lca-2026-guia-completo` (2133w, 6 fontes) — sem PAGE_META manual
 - `acoes-dividendos-2026-melhores-pagadoras-b3` (1588w, 6 fontes) — sem PAGE_META manual; keyword ausente em excerpt
 - `bdr-2026-como-investir-apple-amazon-google-b3` (1822w, 6 fontes) — sem PAGE_META manual; keyword ausente em excerpt
-- `bannerlord-guia-completo-2026` (1436w, 6 fontes) — sem PAGE_META manual; apenas ~1436 palavras (mínimo 1500)
-- `bannerlord-culturas-reinos-calradia-2026` (1311w, 5 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1311 palavras (mínimo 1500)
+- `bannerlord-guia-completo-2026` (1405w, 6 fontes) — sem PAGE_META manual; apenas ~1405 palavras (mínimo 1500)
+- `bannerlord-culturas-reinos-calradia-2026` (1266w, 5 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1266 palavras (mínimo 1500)
 - `bannerlord-arvores-tropas-completo-2026` (1333w, 5 fontes) — sem PAGE_META manual; apenas ~1333 palavras (mínimo 1500)
-- `bannerlord-melhores-tropas-tier-list-2026` (1538w, 5 fontes) — sem PAGE_META manual; keyword ausente na introdução
+- `bannerlord-melhores-tropas-tier-list-2026` (1504w, 5 fontes) — sem PAGE_META manual; keyword ausente na introdução
 - `bannerlord-territorios-faccoes-calradia-2026` (1299w, 5 fontes) — sem PAGE_META manual; keyword ausente na introdução; apenas ~1299 palavras (mínimo 1500)
 - `bannerlord-war-sails-expansao-2026` (1880w, 5 fontes) — sem PAGE_META manual
 - `bannerlord-mods-essenciais-2026` (1438w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; apenas ~1438 palavras (mínimo 1500)
@@ -236,8 +238,9 @@ Gerado em 01/08/2026, 23:19:44.
 - `dragons-dogma-2-guia-completo-2024` (1859w, 5 fontes) — keyword ausente em meta title; keyword ausente em meta description; keyword ausente em meta keywords; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt
 - `balatro-guia-completo-2024` (1891w, 5 fontes) — keyword ausente em <h1>
 
-## 4) Posts com keyword ausente na introdução — 74
+## 4) Posts com keyword ausente na introdução — 75
 
+- `avanco-robotica-2026-robos-humanoides` (1317w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1317 palavras (mínimo 1500)
 - `nova-tabela-ir-2026-isencao-5-mil` (1666w, 6 fontes) — keyword ausente em meta description; keyword ausente na introdução; keyword ausente em excerpt
 - `boletim-focus-julho-2026-selic-ipca` (1554w, 6 fontes) — keyword ausente em meta description; keyword ausente na introdução; keyword ausente em excerpt
 - `acoes-crescimento-vs-dividendos-2026` (1514w, 6 fontes) — keyword ausente em meta description; keyword ausente na introdução; keyword ausente em excerpt
@@ -298,8 +301,8 @@ Gerado em 01/08/2026, 23:19:44.
 - `etfs-2026-guia-completo-investir` (1452w, 6 fontes) — keyword ausente na introdução; apenas ~1452 palavras (mínimo 1500)
 - `economia-domestica-2026-cortar-gastos` (1592w, 8 fontes) — keyword ausente em meta title; keyword ausente em meta description; keyword ausente em meta keywords; keyword ausente na introdução; keyword ausente em excerpt
 - `crimson-desert-builds-guia-2026` (1621w, 5 fontes) — keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt
-- `bannerlord-culturas-reinos-calradia-2026` (1311w, 5 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1311 palavras (mínimo 1500)
-- `bannerlord-melhores-tropas-tier-list-2026` (1538w, 5 fontes) — sem PAGE_META manual; keyword ausente na introdução
+- `bannerlord-culturas-reinos-calradia-2026` (1266w, 5 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1266 palavras (mínimo 1500)
+- `bannerlord-melhores-tropas-tier-list-2026` (1504w, 5 fontes) — sem PAGE_META manual; keyword ausente na introdução
 - `bannerlord-territorios-faccoes-calradia-2026` (1299w, 5 fontes) — sem PAGE_META manual; keyword ausente na introdução; apenas ~1299 palavras (mínimo 1500)
 - `bannerlord-mods-essenciais-2026` (1438w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; apenas ~1438 palavras (mínimo 1500)
 - `gta-vi-pre-venda-edicoes-2026` (1902w, 5 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução
@@ -313,8 +316,9 @@ Gerado em 01/08/2026, 23:19:44.
 - `dragons-dogma-2-guia-completo-2024` (1859w, 5 fontes) — keyword ausente em meta title; keyword ausente em meta description; keyword ausente em meta keywords; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt
 - `vibe-coding-2026-criar-apps-sem-programar` (1615w, 6 fontes) — keyword ausente na introdução
 
-## 5) Posts com keyword ausente no excerpt — 125
+## 5) Posts com keyword ausente no excerpt — 126
 
+- `avanco-robotica-2026-robos-humanoides` (1317w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1317 palavras (mínimo 1500)
 - `elon-musk-primeiro-trilionario-ipo-spacex` (1281w, 7 fontes) — sem PAGE_META manual; keyword ausente em excerpt; apenas ~1281 palavras (mínimo 1500)
 - `nova-tabela-ir-2026-isencao-5-mil` (1666w, 6 fontes) — keyword ausente em meta description; keyword ausente na introdução; keyword ausente em excerpt
 - `boletim-focus-julho-2026-selic-ipca` (1554w, 6 fontes) — keyword ausente em meta description; keyword ausente na introdução; keyword ausente em excerpt
@@ -414,7 +418,7 @@ Gerado em 01/08/2026, 23:19:44.
 - `crimson-desert-combate-blackspace-engine` (1684w, 6 fontes) — keyword ausente em excerpt
 - `economia-domestica-2026-cortar-gastos` (1592w, 8 fontes) — keyword ausente em meta title; keyword ausente em meta description; keyword ausente em meta keywords; keyword ausente na introdução; keyword ausente em excerpt
 - `crimson-desert-builds-guia-2026` (1621w, 5 fontes) — keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt
-- `bannerlord-culturas-reinos-calradia-2026` (1311w, 5 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1311 palavras (mínimo 1500)
+- `bannerlord-culturas-reinos-calradia-2026` (1266w, 5 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1266 palavras (mínimo 1500)
 - `gta-vi-plataformas-requisitos-2026` (1777w, 5 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente em excerpt
 - `gta-vi-mecanicas-gameplay-2026` (1815w, 5 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente em excerpt
 - `gta-vi-trailers-marketing-2026` (1744w, 5 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt
@@ -468,7 +472,7 @@ Gerado em 01/08/2026, 23:19:44.
 
 —
 
-## 9) Posts com menos de 1500 palavras (ordenados por menor) — 91
+## 9) Posts com menos de 1500 palavras (ordenados por menor) — 93
 
 - `crimson-desert-mapa-regioes-pywel` (939w, 6 fontes) — apenas ~939 palavras (mínimo 1500)
 - `ia-mercado-financeiro-2026-investimentos` (1112w, 6 fontes) — keyword ausente em meta description; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1112 palavras (mínimo 1500)
@@ -480,6 +484,7 @@ Gerado em 01/08/2026, 23:19:44.
 - `irpf-2026-guia-declarar-pagar-menos` (1197w, 0 fontes) — keyword ausente em meta description; keyword ausente em meta keywords; keyword ausente na introdução; keyword ausente em excerpt; ArticleSources com 0 fonte(s) (mínimo 5); apenas ~1197 palavras (mínimo 1500)
 - `fiis-2026-ainda-vale-investir` (1226w, 6 fontes) — keyword ausente na introdução; keyword ausente em excerpt; apenas ~1226 palavras (mínimo 1500)
 - `carteira-investimentos-iniciantes-2026` (1262w, 6 fontes) — keyword ausente em meta description; keyword ausente em excerpt; apenas ~1262 palavras (mínimo 1500)
+- `bannerlord-culturas-reinos-calradia-2026` (1266w, 5 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1266 palavras (mínimo 1500)
 - `bitcoin-criptomoedas-2026-investir` (1271w, 6 fontes) — keyword ausente em meta description; keyword ausente em <h1>; keyword ausente em excerpt; apenas ~1271 palavras (mínimo 1500)
 - `elon-musk-primeiro-trilionario-ipo-spacex` (1281w, 7 fontes) — sem PAGE_META manual; keyword ausente em excerpt; apenas ~1281 palavras (mínimo 1500)
 - `recuperacao-judicial-empresas-2026-como-afeta-clientes` (1283w, 7 fontes) — sem PAGE_META manual; keyword ausente em <h1>; apenas ~1283 palavras (mínimo 1500)
@@ -489,7 +494,7 @@ Gerado em 01/08/2026, 23:19:44.
 - `educacao-financeira-metodo-3-baldes` (1296w, 7 fontes) — keyword ausente em meta description; keyword ausente em excerpt; apenas ~1296 palavras (mínimo 1500)
 - `fiis-2026-melhores-fundos-imobiliarios` (1296w, 6 fontes) — keyword ausente em meta description; apenas ~1296 palavras (mínimo 1500)
 - `bannerlord-territorios-faccoes-calradia-2026` (1299w, 5 fontes) — sem PAGE_META manual; keyword ausente na introdução; apenas ~1299 palavras (mínimo 1500)
-- `bannerlord-culturas-reinos-calradia-2026` (1311w, 5 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1311 palavras (mínimo 1500)
+- `avanco-robotica-2026-robos-humanoides` (1317w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1317 palavras (mínimo 1500)
 - `negocio-online-ia-2026` (1327w, 6 fontes) — keyword ausente em meta description; keyword ausente em excerpt; apenas ~1327 palavras (mínimo 1500)
 - `bannerlord-arvores-tropas-completo-2026` (1333w, 5 fontes) — sem PAGE_META manual; apenas ~1333 palavras (mínimo 1500)
 - `crimson-desert-melhores-equipamentos-inicio` (1338w, 5 fontes) — apenas ~1338 palavras (mínimo 1500)
@@ -511,13 +516,14 @@ Gerado em 01/08/2026, 23:19:44.
 - `tesouro-direto-2026-guia-completo` (1398w, 0 fontes) — ArticleSources com 0 fonte(s) (mínimo 5); apenas ~1398 palavras (mínimo 1500)
 - `melhores-mangas-ler-2026` (1398w, 6 fontes) — keyword ausente em meta description; apenas ~1398 palavras (mínimo 1500)
 - `ia-para-financas-pessoais-2026` (1401w, 6 fontes) — keyword ausente em meta title; keyword ausente em meta description; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1401 palavras (mínimo 1500)
+- `bannerlord-guia-completo-2026` (1405w, 6 fontes) — sem PAGE_META manual; apenas ~1405 palavras (mínimo 1500)
+- `robos-humanoides-china-2026-corrida-robotica` (1406w, 6 fontes) — sem PAGE_META manual; apenas ~1406 palavras (mínimo 1500)
 - `lancamentos-games-abril-2026` (1407w, 5 fontes) — keyword ausente na introdução; keyword ausente em excerpt; apenas ~1407 palavras (mínimo 1500)
 - `seedance-2-0-geracao-video-ia-2026` (1411w, 6 fontes) — keyword ausente em meta title; keyword ausente em meta description; keyword ausente em meta keywords; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1411 palavras (mínimo 1500)
 - `ouro-maxima-historica-2026-como-investir` (1411w, 6 fontes) — apenas ~1411 palavras (mínimo 1500)
 - `mcp-model-context-protocol-2026` (1414w, 0 fontes) — keyword ausente em meta description; keyword ausente em <h1>; keyword ausente em excerpt; ArticleSources com 0 fonte(s) (mínimo 5); apenas ~1414 palavras (mínimo 1500)
 - `spring-season-animes-abril-2026` (1423w, 5 fontes) — keyword ausente em meta title; keyword ausente em meta description; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1423 palavras (mínimo 1500)
 - `ac-revelations-ezio-constantinopla` (1433w, 6 fontes) — keyword ausente em meta title; keyword ausente em meta description; keyword ausente em <h1>; keyword ausente em excerpt; apenas ~1433 palavras (mínimo 1500)
-- `bannerlord-guia-completo-2026` (1436w, 6 fontes) — sem PAGE_META manual; apenas ~1436 palavras (mínimo 1500)
 - `reserva-emergencia-2026-como-montar` (1437w, 6 fontes) — keyword ausente em meta title; keyword ausente em meta description; keyword ausente em meta keywords; keyword ausente na introdução; apenas ~1437 palavras (mínimo 1500)
 - `bannerlord-mods-essenciais-2026` (1438w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; apenas ~1438 palavras (mínimo 1500)
 - `suno-ai-gerador-musica-2026` (1442w, 6 fontes) — keyword ausente em meta description; keyword ausente em excerpt; apenas ~1442 palavras (mínimo 1500)
