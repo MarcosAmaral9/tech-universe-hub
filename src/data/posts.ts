@@ -224,7 +224,7 @@ import robosChinaImg from "@/assets/robos-humanoides-china-2026.webp";
 export const blogPosts: BlogPost[] = [
   // ── 11 Ago 2026 — IA (Avanço da robótica · humanoides) ─────────────
   {
-    id: "233",
+    id: "235",
     slug: "avanco-robotica-2026-robos-humanoides",
     title: "O Avanço da Robótica em 2026: Dos Braços Industriais aos Robôs Humanoides",
     excerpt:
@@ -261,7 +261,7 @@ export const blogPosts: BlogPost[] = [
   },
   // ── 11 Ago 2026 — IA (China · fábrica dos humanoides) ──────────────
   {
-    id: "234",
+    id: "236",
     slug: "robos-humanoides-china-2026-corrida-robotica",
     title: "A China e a Corrida dos Robôs: Por Que o País Virou a Fábrica dos Humanoides",
     excerpt:
