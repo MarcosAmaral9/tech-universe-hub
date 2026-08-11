@@ -23,6 +23,7 @@ export const SUBTOPIC_LABELS: Record<string, string> = {
   produtividade: "Produtividade",
   datacenter: "Data Centers",
   ciberseguranca: "Cibersegurança",
+  robotica: "Robótica",
 
   // Finanças
   calculadoras: "Calculadoras",
