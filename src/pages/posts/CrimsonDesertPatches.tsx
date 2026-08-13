@@ -382,42 +382,55 @@ const CrimsonDesertPatches = () => {
 
 
       <EditorialTake category="geek" title="Análise do Marcos: A Pearl Abyss Mostrou Como Fazer Suporte Pós-Lançamento">
-        <p>O ritmo de patches de Crimson Desert — mais de 10 atualizações no primeiro mês, culminando em modos de dificuldade, novos conteúdos e melhorias de controle — é um caso de estudo em como um estúdio deve responder a críticas legítimas. <strong>Nenhum dos problemas centrais apontados no lançamento (controles, dificuldade única, inventário caótico, falta de habilidades para Damiane e Oongka) ficou sem resposta</strong>. A velocidade de resposta foi notável: o pedido mais votado da comunidade (modos de dificuldade) foi atendido em 34 dias. Isso não apaga os problemas do lançamento, mas demonstra uma relação com o público que muitos publishers — incluindo gigantes do setor — deveriam observar. A trajetória de "Mixed" para "Very Positive" no Steam não aconteceu por sorte: foi construída patch a patch, update a update, com a Pearl Abyss ouvindo e executando. É o tipo de compromisso que transforma um IP de estreia em uma franquia sustentável.</p>
+        <p>Cinco meses depois do lançamento, o balanço é objetivo: <strong>17 patches, mais de 20 recursos novos, 120 montarias e pets e 70 itens/trajes adicionados — tudo sem cobrar nada</strong>. Nenhum dos problemas centrais apontados no lançamento (controles, dificuldade única, inventário caótico, falta de habilidades para Damiane e Oongka, mundo esvaziado após libertar as regiões) ficou sem resposta: os modos de dificuldade chegaram em 34 dias, o remapeamento de controles em cerca de três meses, o Rematch e o Re-blockade em maio, o cross-save em julho. A trajetória de "Mixed" para "Very Positive" — hoje cerca de 84% de aprovação em 166 mil análises na Steam — não aconteceu por sorte: foi construída patch a patch. O ponto que ainda me incomoda é a narrativa, e é justamente o item do roteiro de junho que continua pendente. Se a Pearl Abyss entregar essa revisão antes do DLC, transforma um lançamento morno em um dos melhores casos de recuperação da geração.</p>
       </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {
-            title: "Crimson Desert Patch Notes 1.04.00 — Pearl Abyss",
-            url: "https://www.crimsondesert.com/news/detail?boardNo=1001&articleNo=182",
-            publisher: "Pearl Abyss",
-            accessedAt: "Abril 2026",
+            title: "Update Highlights — balanço de 17 patches desde o lançamento",
+            url: "https://store.steampowered.com/news/app/3321460",
+            publisher: "Pearl Abyss / Steam",
+            accessedAt: "Agosto 2026",
           },
           {
-            title: "Crimson Desert Patch Notes 1.03.00 — Pearl Abyss",
-            url: "https://www.crimsondesert.com/news/detail?boardNo=1001&articleNo=175",
+            title: "Patch Notes Version 1.17.00",
+            url: "https://store.steampowered.com/news/app/3321460",
             publisher: "Pearl Abyss",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
           {
-            title: "Crimson Desert Patch Notes 1.01.00 — Pearl Abyss",
-            url: "https://www.crimsondesert.com/news/detail?boardNo=1001&articleNo=152",
+            title: "Patch Notes Version 1.16.00 — reformulação do comércio",
+            url: "https://store.steampowered.com/news/app/3321460",
             publisher: "Pearl Abyss",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
           {
-            title: "Crimson Desert — Steam Store (histórico de atualizações)",
-            url: "https://store.steampowered.com/app/1277400/Crimson_Desert/",
+            title: "Dev Update: June–September 2026 Preview (DLC confirmado)",
+            url: "https://store.steampowered.com/news/app/3321460",
+            publisher: "Pearl Abyss",
+            accessedAt: "Agosto 2026",
+          },
+          {
+            title: "Cross-Save Support (Patch 1.14.00)",
+            url: "https://store.steampowered.com/news/app/3321460",
+            publisher: "Pearl Abyss",
+            accessedAt: "Agosto 2026",
+          },
+          {
+            title: "Crimson Desert — página e avaliações na Steam",
+            url: "https://store.steampowered.com/app/3321460/Crimson_Desert/",
             publisher: "Valve / Pearl Abyss",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
           {
-            title: "Crimson Desert — Intel Arc GPU Statement",
-            url: "https://www.crimsondesert.com/news/detail?boardNo=1001&articleNo=140",
-            publisher: "Pearl Abyss",
-            accessedAt: "Abril 2026",
+            title: "Crimson Desert — verbete com dados de vendas, notas e plataformas",
+            url: "https://en.wikipedia.org/wiki/Crimson_Desert",
+            publisher: "Wikipedia",
+            accessedAt: "Agosto 2026",
           },
         ]}
       />
+
 
       <RelatedPosts currentSlug="crimson-desert-patches-atualizacoes-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
