@@ -291,17 +291,22 @@ const CrimsonDesertPatches = () => {
               <li>• Suporte básico para Intel Arc GPU (ainda instável)</li>
               <li>• Função Lock para proteger itens no inventário</li>
               <li>• Cloudcart como montaria permanente</li>
+              <li>• Boss Rematch e Re-blockade (1.05.00)</li>
+              <li>• Extraction: recuperar materiais do refinamento (1.06.00)</li>
+              <li>• Remapeamento livre de controles (1.09.00)</li>
+              <li>• Cross-save entre PC e consoles (1.14.00)</li>
+              <li>• Comércio reformulado com 133 novos postos (1.16.00)</li>
             </ul>
           </div>
           <div className="bg-card rounded-xl border border-amber-500/20 p-5">
             <h3 className="font-bold text-amber-400 mb-3">⚠️ Ainda Pendente / Prometido</h3>
             <ul className="text-sm text-muted-foreground space-y-2">
-              <li>• Brilho noturno excessivo (especialmente PS5 Pro com OLED + HDR)</li>
-              <li>• Personalização mais detalhada de controle (prometida em breve)</li>
-              <li>• Boss rematches (prometido em updates futuros)</li>
+              <li>• Melhorias narrativas: revisão de cenas-chave anunciada no Dev Update de junho, ainda em desenvolvimento</li>
+              <li>• DLC pago confirmado, sem detalhes nem data</li>
+              <li>• Versão para Nintendo Switch 2, prevista para o início de 2027</li>
               <li>• Suporte completo e otimizado para Intel Arc GPU</li>
-              <li>• Alguns crashes ocasionais reportados</li>
-              <li>• Iluminação interna — comunidade ainda reporta problemas</li>
+              <li>• Brilho noturno e iluminação interna — comunidade ainda reporta ajustes necessários</li>
+              <li>• Crashes ocasionais em configurações específicas (Mac e placas Radeon recentes seguem recebendo hotfixes)</li>
             </ul>
           </div>
         </div>
@@ -314,16 +319,17 @@ const CrimsonDesertPatches = () => {
           Sobre a <strong>Intel Arc</strong>: após a polêmica inicial de não suporte, a Pearl Abyss lançou um patch que permite rodar o jogo em GPUs Intel Arc em estado não-otimizado — com problemas gráficos e instabilidade. A empresa mudou o FAQ confirmando que está "trabalhando em compatibilidade e otimização" para Arc, sem data definida. A Intel declarou ter oferecido hardware e suporte à Pearl Abyss antes do lançamento.
         </p>
         <p>
-          Sobre os <strong>assets de IA generativa</strong>: a Pearl Abyss confirmou o uso, atualizou a página do Steam com a divulgação exigida pela Valve e o Patch 1.01.00 (28/03) já substituiu os assets 2D identificados, conforme anunciado nas notas oficiais.
+          Sobre os <strong>assets de IA generativa</strong>: a Pearl Abyss confirmou o uso, atualizou a página do Steam com a divulgação exigida pela Valve, prometeu uma auditoria completa dos assets do jogo e o Patch 1.01.00 (28/03) já substituiu os assets 2D identificados por arte feita por humanos, conforme anunciado nas notas oficiais.
         </p>
         <p>
-          Essa divulgação não foi um gesto espontâneo da desenvolvedora: desde 2024, a Valve exige que todo jogo publicado na Steam que utilize conteúdo gerado por inteligência artificial declare esse uso publicamente na própria página da loja, política implementada após preocupações levantadas pela comunidade de desenvolvedores e jogadores sobre transparência no uso dessas ferramentas. O sistema de avaliações da Steam, por sua vez, funciona através de categorias automáticas calculadas a partir da proporção de avaliações positivas e negativas dos últimos 30 dias e do histórico total acumulado desde o lançamento — rótulos como "Mixed" (Avaliação Mista), "Mostly Positive" (Majoritariamente Positiva) e "Very Positive" (Muito Positiva) não são opiniões editoriais da Valve, mas cálculos estatísticos públicos, o que torna a evolução de Crimson Desert nesse índice um indicador relativamente objetivo de como a percepção real dos jogadores mudou ao longo dos patches sucessivos lançados pela Pearl Abyss entre março e abril de 2026.
+          Essa divulgação não foi um gesto espontâneo da desenvolvedora: desde 2024, a Valve exige que todo jogo publicado na Steam que utilize conteúdo gerado por inteligência artificial declare esse uso publicamente na própria página da loja, política implementada após preocupações levantadas pela comunidade de desenvolvedores e jogadores sobre transparência no uso dessas ferramentas. O sistema de avaliações da Steam, por sua vez, funciona através de categorias automáticas calculadas a partir da proporção de avaliações positivas e negativas dos últimos 30 dias e do histórico total acumulado desde o lançamento — rótulos como "Mixed" (Avaliação Mista), "Mostly Positive" (Majoritariamente Positiva) e "Very Positive" (Muito Positiva) não são opiniões editoriais da Valve, mas cálculos estatísticos públicos. Em agosto de 2026, Crimson Desert acumula <strong>166 mil análises na Steam com cerca de 84% positivas</strong>, mantendo o selo Very Positive conquistado ao longo dos patches.
         </p>
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Planos Futuros</h2>
         <p>
-          A Pearl Abyss confirmou que <strong>não há DLC planejado</strong> para Crimson Desert. O foco da empresa é em updates de qualidade de vida baseados no feedback da comunidade, incluindo boss rematches e mais customização de controles. Com <strong>5 milhões de cópias vendidas</strong> e suporte ativo, o jogo continuará recebendo patches. O próximo grande projeto da Pearl Abyss é o <strong>DokeV</strong>, que usará a mesma BlackSpace Engine.
+          No <strong>Dev Update de 2 de junho de 2026</strong>, a Pearl Abyss mudou o discurso anterior de que não haveria conteúdo pago: o estúdio confirmou que <strong>trabalha em um DLC para Crimson Desert</strong>, sem revelar detalhes ou data. O mesmo comunicado detalhou o plano de junho a setembro — melhorias na coerência narrativa da jornada de Kliff, evolução do Re-blockade, cross-save (entregue em 16 de julho) e mais conteúdo de qualidade de vida. Com <strong>6 milhões de cópias vendidas</strong> (marca atingida em junho, menos de três meses após o lançamento) e uma <strong>versão para Nintendo Switch 2 prevista para o início de 2027</strong>, o suporte deve seguir ao longo do ano. O próximo grande projeto da Pearl Abyss é o <strong>DokeV</strong>, que usará a mesma BlackSpace Engine.
         </p>
+
       
       <h2 className="text-2xl font-bold mt-10 mb-4">A Importância do Cronograma Mensal de Patches</h2>
       <p>
