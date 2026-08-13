@@ -166,18 +166,22 @@ const CrimsonDesertVendasReview = () => {
           As ações da Pearl Abyss caíram <strong>28,96%</strong> na bolsa sul-coreana no dia 19 de março de 2026, após as notas ficarem abaixo das expectativas internas (mid-to-high 80s). No dia seguinte, houve queda adicional de <strong>9,78%</strong>. Porém, com o anúncio de 3 milhões de cópias em 25 de março, as ações recuperaram <strong>27,76%</strong>.
         </p>
         <p>
-          O custo de desenvolvimento foi estimado em <strong>200 bilhões de KRW</strong> (~$133 milhões USD) ao longo de aproximadamente 7 anos. Com 5 milhões de cópias vendidas a uma média de $60-70 USD, a receita bruta estimada supera $300 milhões USD — o que faz de Crimson Desert um sucesso financeiro expressivo, independentemente das notas abaixo do esperado internamente.
+          O custo de desenvolvimento foi estimado em <strong>200 bilhões de KRW</strong> (~$133 milhões USD) ao longo de aproximadamente 7 anos. Com 6 milhões de cópias vendidas a uma média de $60-70 USD, a receita bruta estimada supera $360 milhões USD. O reflexo apareceu no balanço: no primeiro trimestre de 2026 a Pearl Abyss reportou receita operacional de <strong>328,5 bilhões de wones</strong>, alta de 419,8% na comparação anual — o melhor resultado da história da companhia.
         </p>
         <p>
-          O contexto de mercado é importante: em 2026, as maiores franquias AAA — GTA VI ainda sem data, Zelda sem novo título confirmado — deixaram um vácuo no segmento de RPG de ação de alto orçamento. Crimson Desert chegou num momento de apetite elevado por novos mundos para explorar, o que explica parte de seu sucesso comercial mesmo com notas medianas.
+          O contexto de mercado é importante: em 2026, as maiores franquias AAA — GTA VI adiado para 19 de novembro, Zelda sem novo título confirmado — deixaram um vácuo no segmento de RPG de ação de alto orçamento. Crimson Desert chegou num momento de apetite elevado por novos mundos para explorar, o que explica parte de seu sucesso comercial mesmo com notas medianas.
+        </p>
+        <p>
+          A Pearl Abyss também já garantiu vida longa ao título: além do DLC pago confirmado em desenvolvimento no Dev Update de 2 de junho, uma versão para <strong>Nintendo Switch 2</strong> foi anunciada para 2027, ampliando o alcance comercial do jogo para uma quinta plataforma ao lado de PC, PS5, Xbox Series X|S e macOS.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Globe className="h-7 w-7 text-geek" />Crimson Desert Vale a Pena em Abril de 2026?
+          <Globe className="h-7 w-7 text-geek" />Crimson Desert Vale a Pena em Agosto de 2026?
         </h2>
         <p>
-          Com os patches pós-lançamento — especialmente o <strong>1.04.00</strong> de 22 de abril — as principais queixas técnicas e de acessibilidade foram endereçadas. Modos de dificuldade Easy/Normal/Hard, novos pets, presets de controle, arma exclusiva para Damiane, função Lock no inventário e novas habilidades para os 3 personagens tornam o jogo muito mais acessível do que no lançamento.
+          Depois de <strong>17 patches</strong> — do 1.04.00, que trouxe os modos de dificuldade, ao 1.17.00, de 7 de agosto —, as principais queixas técnicas e de acessibilidade foram endereçadas. Modos Easy/Normal/Hard, remapeamento completo de controles (1.09.00), revanches contra bosses, extração de materiais, cross-save entre plataformas (1.14.00) e a reformulação do sistema de comércio (1.16.00) tornam o jogo muito mais acessível e completo do que no lançamento.
         </p>
+
         <div className="not-prose my-6 grid md:grid-cols-2 gap-5">
           <div className="bg-card rounded-xl border border-emerald-500/20 p-5">
             <h3 className="font-bold text-emerald-400 mb-3 flex items-center gap-2"><ThumbsUp className="h-4 w-4" />Compre se você...</h3>
