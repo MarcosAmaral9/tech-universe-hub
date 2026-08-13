@@ -44,7 +44,7 @@ const CrimsonDesertGuiaCompleto = () => {
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          <strong>Crimson Desert</strong> foi lançado globalmente em <strong>19 de março de 2026</strong> para PC (Steam, Epic Games Store e site oficial da Pearl Abyss), macOS, PlayStation 5 e Xbox Series X|S. Após aproximadamente 7 anos de desenvolvimento, o jogo recebeu nota <strong>78 no Metacritic</strong> (PC) e <strong>80 no OpenCritic</strong> — mas vendeu <strong>5 milhões de cópias em menos de um mês</strong> e alcançou avaliação <strong>Very Positive (87%)</strong> no Steam com mais de 139 mil análises.
+          <strong>Crimson Desert</strong> foi lançado globalmente em <strong>19 de março de 2026</strong> para PC (Steam, Epic Games Store e site oficial da Pearl Abyss), macOS, PlayStation 5 e Xbox Series X|S. Após aproximadamente 7 anos de desenvolvimento, o jogo recebeu nota <strong>77 no Metacritic</strong> (PC), <strong>78 na versão PS5</strong> e <strong>74% de recomendação no OpenCritic</strong> — mas vendeu <strong>6 milhões de cópias em menos de três meses</strong> e alcançou avaliação <strong>Very Positive (~84%)</strong> no Steam com mais de 166 mil análises. Uma versão para <strong>Nintendo Switch 2</strong> foi confirmada para 2027.
         </p>
 
         <div className="not-prose my-8 p-6 bg-gradient-to-br from-red-500/10 to-background rounded-xl border border-red-500/30">
@@ -60,12 +60,12 @@ const CrimsonDesertGuiaCompleto = () => {
               ["Plataformas",    "PC (Steam, Epic, PA site), macOS, PS5, Xbox Series X|S"],
               ["Gênero",         "Action RPG / Mundo Aberto / Single-Player"],
               ["Engine",         "BlackSpace Engine (proprietária)"],
-              ["Metacritic PC",  "78 — Geralmente Favorável"],
-              ["OpenCritic",     "80 — Strong (81% recomendam)"],
+              ["Metacritic",     "77 (PC) / 78 (PS5) — Geralmente Favorável"],
+              ["OpenCritic",     "74% dos críticos recomendam"],
               ["Preço (USD)",    "$69.99 (Standard + Deluxe Pack) | $79.99 (só Deluxe)"],
               ["DRM",            "Denuvo (versão PC)"],
               ["Classificação",  "Mature 17+ (ESRB)"],
-              ["Vendas",         "5 milhões de cópias em menos de 1 mês (15/04/2026)"],
+              ["Vendas",         "6 milhões de cópias em menos de 3 meses (junho/2026)"],
             ].map(([k, v]) => (
               <div key={k}>
                 <div className="text-muted-foreground text-xs">{k}</div>
@@ -90,7 +90,7 @@ const CrimsonDesertGuiaCompleto = () => {
           MMORPG. Ao longo do desenvolvimento, a Pearl Abyss pivotou para um título totalmente independente,
           single-player e sem continuidade com o universo de Black Desert — um IP completamente separado.
           O custo de desenvolvimento foi estimado em aproximadamente 200 bilhões de KRW (~$133 milhões USD)
-          ao longo dos 7 anos. Não há microtransações de poder, pay-to-win ou planos de DLC confirmados.
+          ao longo dos 7 anos. Não há microtransações de poder nem pay-to-win. Um DLC pago foi confirmado em desenvolvimento no Dev Update de 2 de junho de 2026, ainda sem data.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -109,6 +109,7 @@ const CrimsonDesertGuiaCompleto = () => {
           <li><strong>24 de março de 2026:</strong> 3 milhões de cópias; ações Pearl Abyss sobem 27,76%</li>
           <li><strong>Início de abril de 2026:</strong> 4 milhões de cópias em aproximadamente 2 semanas</li>
           <li><strong>15 de abril de 2026:</strong> 5 milhões de cópias em 26 dias</li>
+          <li><strong>Junho de 2026:</strong> 6 milhões de cópias; receita operacional da Pearl Abyss sobe 419,8% no 1º trimestre</li>
           <li><strong>22 de abril de 2026:</strong> Patch 1.04.00 — maior update, adiciona modos de dificuldade Easy/Normal/Hard</li>
         </ul>
 
@@ -118,23 +119,23 @@ const CrimsonDesertGuiaCompleto = () => {
           <Star className="h-7 w-7 text-amber-400" />Recepção da Crítica e dos Jogadores
         </h2>
         <p>
-          Com Metacritic 78 (PC), o jogo foi recebido como "geralmente favorável" — abaixo das expectativas
+          Com Metacritic 77 (PC) e 78 (PS5), o jogo foi recebido como "geralmente favorável" — abaixo das expectativas
           dos investidores, que precificavam uma média mid-to-high 80s. A divisão é clara: elogios para
           exploração, bosses e escala; críticas para narrativa fraca, sistemas confusos e missões repetitivas.
         </p>
         <p>
           A recepção dos jogadores foi muito mais positiva. O Steam saiu de "Mixed" no lançamento para
-          <strong> "Very Positive" (87%)</strong> com mais de 139 mil análises em abril de 2026, impulsionado
-          pelos patches constantes da Pearl Abyss. Com 5 milhões de cópias em 26 dias, analistas da NH
+          <strong> "Very Positive" (~84%)</strong> com mais de 166 mil análises em agosto de 2026, impulsionado
+          pelos patches constantes da Pearl Abyss. Com 6 milhões de cópias em menos de três meses, analistas da NH
           Investment &amp; Securities estimaram receita potencial de 270 a 420 bilhões de won em 2026. O jogo
           permaneceu no top 10 de best-sellers na Steam, PlayStation Store e Xbox Store desde o lançamento.
         </p>
 
         <div className="not-prose my-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { val: "78", label: "Metacritic PC" },
-            { val: "80", label: "OpenCritic (Strong)" },
-            { val: "87%", label: "Steam — Very Positive" },
+            { val: "77/78", label: "Metacritic PC / PS5" },
+            { val: "74%", label: "OpenCritic — recomendam" },
+            { val: "84%", label: "Steam — Very Positive" },
             { val: "5M+", label: "Cópias vendidas em < 1 mês" },
           ].map(({ val, label }) => (
             <div key={label} className="bg-card border border-red-500/20 rounded-xl p-4 text-center">
@@ -210,7 +211,7 @@ const CrimsonDesertGuiaCompleto = () => {
           </table>
           <p className="text-xs text-muted-foreground mt-2">
             ⚠️ Preços em USD conforme listado na Steam. Valores em reais variam por cotação e promoções.
-            Não há DLC pago confirmado — a Pearl Abyss planeja apenas updates gratuitos.
+            Um DLC pago está em desenvolvimento (confirmado em junho de 2026), além dos updates gratuitos.
           </p>
         </div>
 
@@ -280,7 +281,7 @@ const CrimsonDesertGuiaCompleto = () => {
           <p className="text-sm text-muted-foreground">
             A Pearl Abyss divulgou performance para o ROG Xbox Ally: 40fps em 720p (FSR 3) no Ally padrão
             e 1080p 30fps no Ally X. Compatibilidade com Steam Deck (SteamOS) ainda não foi confirmada
-            oficialmente. Há rumores de interesse em uma versão para Nintendo Switch 2, mas sem confirmação.
+            oficialmente. Uma versão para Nintendo Switch 2 foi anunciada oficialmente para 2027.
           </p>
         </div>
 
@@ -288,9 +289,9 @@ const CrimsonDesertGuiaCompleto = () => {
         <p>
           Com os patches pós-lançamento acumulados — especialmente o Patch 1.04.00 (22 de abril) que adicionou
           modos de dificuldade Easy/Normal/Hard — as principais reclamações do lançamento foram endereçadas.
-          O jogo saiu "Mixed" no Steam e chegou a "Very Positive" (87%) em abril. Para fãs de RPG de ação e
+          O jogo saiu "Mixed" no Steam e se consolidou em "Very Positive" (~84%) depois de 17 patches. Para fãs de RPG de ação e
           mundo aberto, Crimson Desert oferece uma das experiências mais extensas disponíveis em 2026:
-          <strong> 430 missões, 76 bosses e 80–110 km² para explorar</strong>, com suporte ativo e sem DLC pago.
+          <strong> 430 missões, 76 bosses e 80–110 km² para explorar</strong>, com suporte ativo, DLC pago em desenvolvimento e versão de Switch 2 prevista para 2027.
         </p>
         <p>
           A recomendação da crítica convergiu bem: "Dedique tempo para explorar fora do caminho principal e
