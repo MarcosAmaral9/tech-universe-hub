@@ -331,13 +331,14 @@ const CrimsonDesertPatches = () => {
         </p>
 
       
-      <h2 className="text-2xl font-bold mt-10 mb-4">A Importância do Cronograma Mensal de Patches</h2>
+      <h2 className="text-2xl font-bold mt-10 mb-4">A Importância do Cronograma Contínuo de Patches</h2>
       <p>
-        A cadência mensal de atualizações da Pearl Abyss — Patch 1.00.03, 1.01.00, 1.02.00, 1.03.00 e 1.04.00 entre março e abril de 2026 — representa ritmo de suporte pós-lançamento raramente visto em RPGs de ação AAA. Comparado a outros lançamentos do gênero que frequentemente esperam meses entre atualizações significativas, a Pearl Abyss demonstrou capacidade de resposta ágil que diretamente influenciou a recuperação da reputação do jogo no Steam, saindo de "Mixed" no lançamento para "Very Positive" em poucas semanas.
+        A cadência de atualizações da Pearl Abyss — 17 patches numerados entre 19 de março e 7 de agosto de 2026, sem contar dezenas de hotfixes — representa ritmo de suporte pós-lançamento raramente visto em RPGs de ação AAA. Comparado a outros lançamentos do gênero que frequentemente esperam meses entre atualizações significativas, a Pearl Abyss demonstrou capacidade de resposta ágil que diretamente influenciou a recuperação da reputação do jogo no Steam, saindo de "Mixed" no lançamento para "Very Positive" em poucas semanas.
       </p>
       <p>
-        Esse padrão de atualização constante também reflete decisão estratégica da empresa de priorizar correção de problemas técnicos e de acessibilidade antes de qualquer expansão de conteúdo paga — uma abordagem que constrói confiança duradoura com a base de jogadores, mesmo que represente atraso na monetização adicional que jogos-serviço tradicionais buscariam implementar mais rapidamente após o lançamento inicial.
+        Esse padrão de atualização constante também reflete decisão estratégica da empresa de priorizar correção de problemas técnicos e de acessibilidade antes de qualquer expansão de conteúdo paga — o DLC só foi anunciado como projeto em andamento em junho, quase três meses depois do lançamento e depois de o jogo já ter recebido revanches de bosses, extração de materiais, remapeamento de controles e cross-save sem custo adicional.
       </p>
+
 
       <h2 className="text-2xl font-bold mt-10 mb-4">Comparando com o Padrão de Suporte de Outros AAAs Recentes</h2>
       <p>
