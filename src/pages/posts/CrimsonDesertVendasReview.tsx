@@ -255,8 +255,9 @@ const CrimsonDesertVendasReview = () => {
       </p>
     
       <p>
-        Por ora, os números falam por si: cinco milhões de cópias, avaliação Very Positive e uma comunidade de jogadores engajada são resultados que qualquer estúdio gostaria de replicar em seus próprios lançamentos futuros.
+        Por ora, os números falam por si: seis milhões de cópias, avaliação Very Positive e uma comunidade de jogadores engajada são resultados que qualquer estúdio gostaria de replicar em seus próprios lançamentos futuros.
       </p>
+
     </div>
 
 
