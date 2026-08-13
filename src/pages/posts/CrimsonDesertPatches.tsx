@@ -350,8 +350,9 @@ const CrimsonDesertPatches = () => {
     
       <h2 className="text-2xl font-bold mt-10 mb-4">O Que Esperar das Próximas Atualizações</h2>
       <p>
-        Com o ritmo estabelecido de patches mensais mantido consistentemente desde março, a comunidade espera continuidade desse cronograma ao longo do restante de 2026. Embora a Pearl Abyss não tenha confirmado roadmap específico de longo prazo, o padrão observado sugere que correções de bugs reportados e ajustes de balanceamento continuarão sendo prioridade, possivelmente complementados por conteúdo adicional gratuito conforme a comunidade identifica áreas que se beneficiariam de expansão ou refinamento adicional.
+        O Dev Update de 2 de junho estabeleceu um roteiro público para o período de junho a setembro de 2026, e boa parte dele já foi entregue: cross-save, decoração externa da casa, entrada de Oongka e Damiane no Abyss e a reformulação do comércio. O que resta do pacote anunciado são as melhorias de coerência narrativa das cenas-chave da jornada de Kliff e a nova fase do Re-blockade — além do DLC pago, que segue sem detalhes divulgados.
       </p>
+
     
       <p>
         Para jogadores que abandonaram o título no lançamento por frustração com problemas iniciais, este é o momento ideal de retornar — a experiência atual, refinada por meses de atualizações dedicadas, é significativamente diferente e melhor do que aquela disponível em março de 2026.
