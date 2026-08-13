@@ -27,12 +27,12 @@ const CrimsonDesertPatches = () => {
           <span className="px-3 py-1 bg-geek/20 text-geek rounded-full text-sm font-medium">Updates · Patches · Pearl Abyss</span>
         </div>
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-          Crimson Desert: Todas as Atualizações e Patches Pós-Lançamento (Março–Abril 2026)
+          Crimson Desert: Todas as Atualizações e Patches Pós-Lançamento (Março–Agosto 2026)
         </h1>
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
-          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />Atualizado em 24 de Abril, 2026</span>
-          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />12 min de leitura</span>
+          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />Atualizado em 13 de Agosto, 2026</span>
+          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />14 min de leitura</span>
         </div>
         <ShareWhatsApp />
         <AuthorBio category="geek" publishedAt="04 de Abril, 2026" />
@@ -44,8 +44,9 @@ const CrimsonDesertPatches = () => {
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          Desde seu lançamento em 19 de março de 2026, Crimson Desert recebeu múltiplas atualizações em ritmo acelerado. A Pearl Abyss demonstrou comprometimento com o feedback da comunidade — ao todo, <strong>mais de 10 patches e hotfixes</strong> foram lançados no primeiro mês, culminando no Patch 1.04.00 (22 de abril), o maior update até agora, que adicionou modos de dificuldade Easy/Normal/Hard e dezenas de melhorias.
+          Desde seu lançamento em 19 de março de 2026, Crimson Desert recebeu atualizações em ritmo acelerado. No balanço oficial publicado pela Pearl Abyss em <strong>12 de agosto de 2026</strong>, são <strong>17 patches principais</strong>, mais de 20 novos recursos e conteúdos, <strong>120 novas montarias e pets</strong> e <strong>70 novos trajes, equipamentos e itens</strong> — do baú de armazenamento e dos modos de dificuldade até o cross-save entre PC e consoles (1.14.00) e a revisão do sistema de comércio (1.16.00).
         </p>
+
 
         <AdLeaderboard className="my-8" />
 
