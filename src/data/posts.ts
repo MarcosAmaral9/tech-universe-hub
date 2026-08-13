@@ -5005,20 +5005,21 @@ export const blogPosts: BlogPost[] = [
   {
     id: "72",
     slug: "crimson-desert-review-2026",
-    title: "Crimson Desert Review: Vale a Pena? Metacritic 78 e Steam Very Positive",
+    title: "Crimson Desert Review: Vale a Pena em 2026? Metacritic 77/78 e Steam Very Positive",
     excerpt:
-      "Crimson Desert recebeu Metacritic 78 e OpenCritic 80 (93 críticos). No Steam, 85% de avaliações positivas em mais de 38 mil análises. Compilamos o que a crítica amou e o que criticou — e nossa veredicto.",
+      "Crimson Desert recebeu Metacritic 77 (PC) e 78 (PS5), com 74% de recomendação no OpenCritic. No Steam, cerca de 84% de avaliações positivas em mais de 166 mil análises. Compilamos o que a crítica amou, o que criticou e como os 17 patches mudaram o jogo.",
     content: "",
     category: "geek",
     subtopic: "crimson-desert",
     image: crimsonDesertReviewImg,
     author: "VICIO<CODE>",
     date: "2026-03-17",
+    updatedAt: "2026-08-13",
     readTime: "8 min",
     faq: [
       {
         q: "Qual a nota de Crimson Desert?",
-        a: "O jogo recebeu Metacritic 78 (baseado em 93 críticas) e OpenCritic 80. No Steam, tem status Very Positive com 85% de aprovação em mais de 38.870 análises de usuários.",
+        a: "O jogo recebeu Metacritic 77 na versão de PC e 78 na de PS5, com 74% dos críticos recomendando no OpenCritic. No Steam, tem status Very Positive, com cerca de 84% de aprovação em mais de 166 mil análises de usuários.",
       },
       {
         q: "Crimson Desert vale a pena comprar?",
