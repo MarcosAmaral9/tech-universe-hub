@@ -263,52 +263,59 @@ const CrimsonDesertVendasReview = () => {
 
 
       <EditorialTake category="geek" title="Análise do Marcos: Crimson Desert Prova que Metacritic Não é Tudo">
-        <p>O lançamento de Crimson Desert vai entrar nos livros de história dos games como estudo de caso da divergência entre crítica e público. Um Metacritic 78 que gera 5 milhões de cópias vendidas, 276 mil jogadores simultâneos e 87% de aprovação no Steam conta uma história que notas numéricas não conseguem capturar. <strong>O jogo não é perfeito — a narrativa é fraca e os sistemas inicialmente caóticos são reclamações legítimas</strong>. Mas Crimson Desert entregou algo que muitos AAAs perfeitos tecnicamente não conseguem: a sensação de explorar um mundo que parece vivo, de combater inimigos que exigem respeito, de descobrir algo inesperado ao virar cada curva de Pywel. A Pearl Abyss respondeu com patches rápidos e efetivos. O resultado, em abril de 2026, é um jogo substancialmente melhor do que saiu no lançamento — e o número de jogadores continuando a jogar sugere que Pywel tem muito mais a oferecer do que os primeiros reviews indicaram.</p>
+        <p>O lançamento de Crimson Desert vai entrar nos livros de história dos games como estudo de caso da divergência entre crítica e público. Um Metacritic 77/78 que gera 6 milhões de cópias vendidas, 276 mil jogadores simultâneos e 84% de aprovação em 166 mil análises no Steam conta uma história que notas numéricas não conseguem capturar. <strong>O jogo não é perfeito — a narrativa é fraca e os sistemas inicialmente caóticos são reclamações legítimas</strong>. Mas Crimson Desert entregou algo que muitos AAAs tecnicamente perfeitos não conseguem: a sensação de explorar um mundo que parece vivo, de combater inimigos que exigem respeito, de descobrir algo inesperado ao virar cada curva de Pywel. A Pearl Abyss respondeu com 17 patches em cinco meses. O resultado, em agosto de 2026, é um jogo substancialmente melhor do que o que saiu no lançamento — e o DLC confirmado mais a versão de Switch 2 em 2027 mostram que Pywel ainda tem muito a oferecer.</p>
       </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {
-            title: "Crimson Desert — Metacritic PC (78)",
+            title: "Crimson Desert — Metacritic (77 PC / 78 PS5)",
             url: "https://www.metacritic.com/game/crimson-desert/",
             publisher: "Metacritic",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
           {
-            title: "Crimson Desert — Steam Store (Very Positive, 87%)",
-            url: "https://store.steampowered.com/app/1277400/Crimson_Desert/",
+            title: "Crimson Desert — Steam Store (Very Positive, ~84% em 166 mil análises)",
+            url: "https://store.steampowered.com/app/3321460/Crimson_Desert/",
             publisher: "Valve / Pearl Abyss",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
           {
-            title: "Crimson Desert Atinge 5 Milhões de Cópias — Pearl Abyss",
-            url: "https://www.crimsondesert.com/news/detail?boardNo=1001&articleNo=179",
+            title: "Crimson Desert — verbete com vendas, notas, plataformas e Switch 2",
+            url: "https://en.wikipedia.org/wiki/Crimson_Desert",
+            publisher: "Wikipedia",
+            accessedAt: "Agosto 2026",
+          },
+          {
+            title: "Dev Update: June–September 2026 Preview (DLC em desenvolvimento)",
+            url: "https://store.steampowered.com/news/app/3321460",
             publisher: "Pearl Abyss",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
           {
-            title: "Crimson Desert Patch Notes 1.04.00",
-            url: "https://www.crimsondesert.com/news/detail?boardNo=1001&articleNo=182",
-            publisher: "Pearl Abyss",
-            accessedAt: "Abril 2026",
+            title: "Update Highlights — 17 patches e conteúdo gratuito adicionado",
+            url: "https://store.steampowered.com/news/app/3321460",
+            publisher: "Pearl Abyss / Steam",
+            accessedAt: "Agosto 2026",
           },
           {
-            title: "Crimson Desert — OpenCritic (80, Strong)",
+            title: "Crimson Desert — OpenCritic (74% dos críticos recomendam)",
             url: "https://opencritic.com/game/16847/crimson-desert",
             publisher: "OpenCritic",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
           {
             title: "Crimson Desert Review — Forbes (9.5/10)",
             url: "https://www.forbes.com/sites/games/2026/03/19/crimson-desert-review/",
             publisher: "Forbes",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
         ]}
       />
 
       <RelatedPosts currentSlug="crimson-desert-vendas-review-completo-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="crimson-desert-vendas-review-completo-2026" postTitle="Crimson Desert: 5 Milhões de Cópias, Metacritic 78 e Review Completo" category="geek" />
+      <CommentSection postId="crimson-desert-vendas-review-completo-2026" postTitle="Crimson Desert: 6 Milhões de Cópias, Metacritic 77/78 e Review Completo" category="geek" />
+
     </article>
   );
 };
