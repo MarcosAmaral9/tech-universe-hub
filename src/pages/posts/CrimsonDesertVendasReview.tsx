@@ -15,7 +15,7 @@ import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const CrimsonDesertVendasReview = () => {
   useEffect(() => {
-    trackArticleRead("crimson-desert-vendas-review-completo-2026", "Crimson Desert: 5 Milhões de Cópias, Metacritic 78 e Review Completo", "geek");
+    trackArticleRead("crimson-desert-vendas-review-completo-2026", "Crimson Desert: 6 Milhões de Cópias, Metacritic 77/78 e Review Completo", "geek");
   }, []);
 
   return (
