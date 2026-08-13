@@ -202,7 +202,7 @@ const CrimsonDesertCombate = () => {
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Conclusão</h2>
         <p>
-          O combate de Crimson Desert e a tecnologia da BlackSpace Engine continuam sendo os pilares técnicos mais sólidos do jogo. Com os patches de abril — especialmente o 1.03.00 (lock-on aprimorado, novas habilidades) e o 1.04.00 (modos de dificuldade, presets de controle) — a experiência de combate ficou significativamente mais acessível e polida. Para quem busca combate satisfatório e mundo visualmente impressionante, Crimson Desert entrega o prometido. Com 5 milhões de cópias vendidas e suporte ativo, o jogo está numa trajetória de melhoria contínua que justifica a entrada mesmo para quem estava esperando uma versão mais polida.
+          O combate de Crimson Desert e a tecnologia da BlackSpace Engine continuam sendo os pilares técnicos mais sólidos do jogo. Com os 17 patches lançados até agosto de 2026 — do 1.03.00 (lock-on aprimorado) e 1.04.00 (modos de dificuldade, presets de controle) ao 1.09.00 (remapeamento completo de controles) e às revanches contra bosses —, a experiência de combate ficou significativamente mais acessível e polida. Para quem busca combate satisfatório e mundo visualmente impressionante, Crimson Desert entrega o prometido. Com 6 milhões de cópias vendidas, DLC pago em desenvolvimento e versão de Switch 2 prevista para 2027, o jogo está numa trajetória de melhoria contínua que justifica a entrada mesmo para quem estava esperando uma versão mais polida.
         </p>
       
         <h2 className="text-2xl font-bold mt-10 mb-4">Análise Comparativa com Outros Sistemas de Combate do Gênero</h2>

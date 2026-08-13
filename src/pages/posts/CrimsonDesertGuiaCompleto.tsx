@@ -337,7 +337,7 @@ const CrimsonDesertGuiaCompleto = () => {
 
 
       <EditorialTake category="geek" title="Análise do Marcos: Crimson Desert é o RPG de Mundo Aberto Mais Ambicioso de 2026">
-        <p>Crimson Desert não é perfeito, mas é inegavelmente ambicioso de uma forma que poucos jogos AAA conseguem ser. A Pearl Abyss — uma empresa que nunca havia feito um single-player de grande escala — entregou um mundo de 80–110 km², 76 bosses, combate elogiado pela crítica e tecnologia gráfica de ponta. As falhas são reais: a narrativa não sustenta o peso das 60+ horas de campanha e os sistemas inicialmente confusos repeliram parte dos jogadores no lançamento. Mas a resposta da Pearl Abyss com patches agressivos — mais de 10 atualizações no primeiro mês, culminando nos modos de dificuldade do Patch 1.04.00 — demonstra comprometimento genuíno. <strong>O fato de o jogo ter saído "Mixed" no Steam e chegado a 87% Very Positive em semanas não é coincidência: é o resultado de escuta ativa e execução rápida.</strong> Crimson Desert é um primeiro capítulo promissor de um IP que, se a Pearl Abyss aprender com os acertos e erros, pode se tornar uma das franquias mais importantes da próxima geração de RPGs de ação.</p>
+        <p>Crimson Desert não é perfeito, mas é inegavelmente ambicioso de uma forma que poucos jogos AAA conseguem ser. A Pearl Abyss — uma empresa que nunca havia feito um single-player de grande escala — entregou um mundo de 80–110 km², 76 bosses, combate elogiado pela crítica e tecnologia gráfica de ponta. As falhas são reais: a narrativa não sustenta o peso das 60+ horas de campanha e os sistemas inicialmente confusos repeliram parte dos jogadores no lançamento. Mas a resposta da Pearl Abyss com patches agressivos — 17 atualizações numeradas entre março e agosto de 2026, dos modos de dificuldade do 1.04.00 ao cross-save do 1.14.00 — demonstra comprometimento genuíno. <strong>O fato de o jogo ter saído "Mixed" no Steam e se consolidado em Very Positive (~84% em 166 mil análises) não é coincidência: é o resultado de escuta ativa e execução rápida.</strong> Crimson Desert é um primeiro capítulo promissor de um IP que, se a Pearl Abyss aprender com os acertos e erros, pode se tornar uma das franquias mais importantes da próxima geração de RPGs de ação.</p>
       </EditorialTake>
       <ArticleSources category="geek"
         sources={[
@@ -354,7 +354,7 @@ const CrimsonDesertGuiaCompleto = () => {
             accessedAt: "Abril 2026",
           },
           {
-            title: "Crimson Desert — Steam Store (87% Very Positive)",
+            title: "Crimson Desert — Steam Store (~84% Very Positive, 166 mil análises)",
             url: "https://store.steampowered.com/app/1277400/Crimson_Desert/",
             publisher: "Valve / Pearl Abyss",
             accessedAt: "Abril 2026",

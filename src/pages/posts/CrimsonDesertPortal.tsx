@@ -40,7 +40,7 @@ const articles = [
     slug:     "crimson-desert-vendas-review-completo-2026",
     title:    "Vendas & Review",
     subtitle: "Sucesso Comercial e Recepção",
-    desc:     "+3M cópias em 4 dias, Metacritic 78 e o que isso significa para o futuro da franquia.",
+    desc:     "+6M cópias em menos de 3 meses, Metacritic 77/78 e o que isso significa para o futuro da franquia.",
     image:    crimsonVendasImg,
     btn:      "Ver Análise",
     badge:    null,
@@ -93,7 +93,7 @@ const articles = [
   {
     slug:     "crimson-desert-review-2026",
     title:    "Review 2026",
-    subtitle: "Metacritic 78 · 239k Players no Steam",
+    subtitle: "Metacritic 77/78 · pico de 276k players no Steam",
     desc:     "O que a crítica e os jogadores disseram após o lançamento — pontos fortes, fracos e se vale a pena.",
     image:    crimsonReviewImg,
     btn:      "Ver Review",
