@@ -112,6 +112,98 @@ const CrimsonDesertPatches = () => {
               cor: "border-violet-500/30 bg-violet-500/5",
               descricao: "Hotfix para todas as plataformas corrigindo bugs introduzidos pelo Patch 1.04.00, incluindo a reversão temporária da redução de ataque/defesa via grindstones e anvils que causou reclamações da comunidade."
             },
+            {
+              versao: "Patch 1.05.00 + 1.05.01",
+              data: "2–3 de maio de 2026",
+              tipo: "Grande Update",
+              cor: "border-amber-500/30 bg-amber-500/5",
+              descricao: "Chegada do Rematch (revanche contra bosses já derrotados) e do Re-blockade (rebloqueio de regiões já libertadas), respondendo à queixa de que o mundo ficava vazio após a libertação do continente. Também trouxe novas criaturas lendárias domesticáveis como pets e corrigiu o reset de confiança dos companheiros."
+            },
+            {
+              versao: "Patch 1.06.00 + 1.06.01",
+              data: "11–12 de maio de 2026",
+              tipo: "Grande Update",
+              cor: "border-amber-500/30 bg-amber-500/5",
+              descricao: "Adicionou a função Extraction, que recupera materiais gastos no refinamento de equipamentos — um dos pedidos mais repetidos da comunidade. Também trouxe Special Mounts (animais como ursos que viram montaria após ganharem confiança), opção Display Sheath, Night Tone Mode e o minigame Claw Machine."
+            },
+            {
+              versao: "Patch 1.07.00",
+              data: "15 de maio de 2026",
+              tipo: "Conteúdo",
+              cor: "border-blue-500/30 bg-blue-500/5",
+              descricao: "Ampliou a lista de bosses disponíveis para revanche e adicionou novas habilidades de combate desarmado para Damiane."
+            },
+            {
+              versao: "Patch 1.08.00",
+              data: "22 de maio de 2026",
+              tipo: "Conteúdo",
+              cor: "border-blue-500/30 bg-blue-500/5",
+              descricao: "Adicionou o lago (pond) para manter peixes capturados e o Baby Wyvern como novo pet. Nas notas, a Pearl Abyss confirmou que o remapeamento livre de controles estava em desenvolvimento."
+            },
+            {
+              versao: "Patch 1.09.00",
+              data: "Início de junho de 2026",
+              tipo: "Grande Update",
+              cor: "border-amber-500/30 bg-amber-500/5",
+              descricao: "Entregou o remapeamento completo de controles (Controller Remapping), novos pets de pequeno porte e melhorias no conteúdo de agricultura."
+            },
+            {
+              versao: "Patch 1.10.00 + 1.10.01",
+              data: "Junho de 2026",
+              tipo: "Conteúdo",
+              cor: "border-blue-500/30 bg-blue-500/5",
+              descricao: "Wyverns como montaria voadora, o pet Kuku Bird Chick e dois novos minigames: Pinball e Orb Roll."
+            },
+            {
+              versao: "Patch 1.11.00",
+              data: "12 de junho de 2026",
+              tipo: "Melhoria",
+              cor: "border-green-500/30 bg-green-500/5",
+              descricao: "Novos desafios que liberam o registro de mais pets, além de correções de bugs e estabilidade."
+            },
+            {
+              versao: "Patch 1.12.00 → 1.12.02",
+              data: "19–24 de junho de 2026",
+              tipo: "Grande Update",
+              cor: "border-amber-500/30 bg-amber-500/5",
+              descricao: "Expansão do sistema de moradia: decoração da área externa da casa, novos móveis e equipamentos, além de melhorias de qualidade de vida para Damiane e Oongka. Hotfixes corrigiram móveis desaparecendo ao ar livre e crashes ao trocar resolução."
+            },
+            {
+              versao: "Patch 1.13.00 + 1.13.01",
+              data: "4–8 de julho de 2026",
+              tipo: "Conteúdo",
+              cor: "border-blue-500/30 bg-blue-500/5",
+              descricao: "Oongka e Damiane passaram a poder entrar no Abyss, novos trajes e mais peças tingíveis, descanso com pets e correção do crash ao cavalgar ursos."
+            },
+            {
+              versao: "Patch 1.14.00 (Cross-Save)",
+              data: "16 de julho de 2026",
+              tipo: "Maior Update do semestre",
+              cor: "border-red-500/30 bg-red-500/5",
+              descricao: "Implementou o Cross-Save entre PC e consoles, prometido no Dev Update de 2 de junho: vinculando as contas, o save de Pywel acompanha o jogador entre plataformas."
+            },
+            {
+              versao: "Patch 1.15.00",
+              data: "24 de julho de 2026",
+              tipo: "Correções",
+              cor: "border-violet-500/30 bg-violet-500/5",
+              descricao: "Correções amplas: bosses transparentes durante a batalha, plantações que paravam de crescer, status de Lock que não era salvo em equipamentos e reposicionamento da Mace of Ambition para facilitar a obtenção."
+            },
+            {
+              versao: "Patch 1.16.00 → 1.16.04",
+              data: "1–5 de agosto de 2026",
+              tipo: "Grande Update",
+              cor: "border-amber-500/30 bg-amber-500/5",
+              descricao: "Reformulou o comércio: 133 novos postos de troca, 24 novas mercadorias de alto valor, preços que reagem ao excesso de vendas em um mesmo local, preços quadruplicados nos postos reais e carroças que não desaparecem mais após a entrega. Os hotfixes seguintes corrigiram tela preta ao carregar saves, falhas gráficas com Ray Regeneration em Radeon RX 9070 XT ou superior e crash no Mac com MetalFX Denoising Upscaler."
+            },
+            {
+              versao: "Patch 1.17.00",
+              data: "7 de agosto de 2026",
+              tipo: "Correções",
+              cor: "border-violet-500/30 bg-violet-500/5",
+              descricao: "Patch mais recente até o fechamento desta matéria: correções no desafio 'Desperate Rescue', em itens atribuídos ao slot rápido, em efeitos de capacetes especiais, em sons de passos sobrepostos e em ícones incorretos de baús no mapa, além de melhorias de localização em todos os idiomas."
+            },
+
           ].map((p) => (
             <div key={p.versao} className={`rounded-xl border p-5 ${p.cor}`}>
               <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
