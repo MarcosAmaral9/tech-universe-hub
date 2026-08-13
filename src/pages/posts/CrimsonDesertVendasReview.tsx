@@ -207,8 +207,9 @@ const CrimsonDesertVendasReview = () => {
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Conclusão</h2>
         <p>
-          Crimson Desert não foi o "próximo Zelda" que a hype prometia, mas é um RPG de ação ambicioso que melhorou consideravelmente desde o lançamento. Com <strong>5 milhões de cópias vendidas</strong>, suporte ativo com patches frequentes e avaliação "Very Positive" no Steam (87%), o jogo demonstrou que vendas e satisfação dos jogadores podem divergir completamente das notas da crítica especializada. A Pearl Abyss confirmou que não há DLC planejado — o foco é em updates de qualidade de vida, com cronograma de patches mensais mantido consistentemente desde março.
+          Crimson Desert não foi o "próximo Zelda" que a hype prometia, mas é um RPG de ação ambicioso que melhorou consideravelmente desde o lançamento. Com <strong>6 milhões de cópias vendidas</strong>, 17 patches em cinco meses e avaliação "Very Positive" no Steam (cerca de 84%), o jogo demonstrou que vendas e satisfação dos jogadores podem divergir completamente das notas da crítica especializada. A Pearl Abyss confirmou em junho que um <strong>DLC pago está em desenvolvimento</strong>, além da versão para Nintendo Switch 2 prevista para 2027.
         </p>
+
       
       <h2 className="text-2xl font-bold mt-10 mb-4">Análise Detalhada do Sistema de Combate</h2>
       <p>
