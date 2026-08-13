@@ -131,20 +131,21 @@ const CrimsonDesertVendasReview = () => {
           <MessageSquare className="h-7 w-7 text-geek" />O Que os Jogadores Disseram (Steam e Metacritic)
         </h2>
         <p>
-          A recepção dos jogadores foi muito mais positiva que a da crítica — e melhorou significativamente com os patches. No lançamento, o Steam mostrava rating "Mixed", que subiu para "Mostly Positive" já na primeira semana e chegou a <strong>"Very Positive" (87% de aprovação) com mais de 139 mil análises</strong> em abril. No Metacritic, usuários definiram o jogo como "um diamante bruto" — uma expressão que captura bem tanto o potencial quanto as imperfeições do lançamento.
+          A recepção dos jogadores foi muito mais positiva que a da crítica — e melhorou significativamente com os patches. No lançamento, o Steam mostrava rating "Mixed", que subiu para "Mostly Positive" já na primeira semana e se consolidou em <strong>"Very Positive", com cerca de 84% de aprovação em mais de 166 mil análises</strong> em agosto de 2026. No Metacritic, usuários definiram o jogo como "um diamante bruto" — uma expressão que captura bem tanto o potencial quanto as imperfeições do lançamento.
         </p>
         <p>
-          A divergência entre crítica (Metacritic 78) e jogadores (Steam 87%) é a maior história do lançamento: ambos estão certos, mas medem coisas diferentes. Críticos avaliaram Crimson Desert contra os benchmarks do gênero — Elden Ring, The Witcher 3, Breath of the Wild. Jogadores avaliaram quantas horas passaram felizes explorando Pywel. As duas métricas são válidas e não se contradizem — simplesmente respondem perguntas diferentes.
+          A divergência entre crítica (Metacritic 77/78) e jogadores (Steam 84%) é a maior história do lançamento: ambos estão certos, mas medem coisas diferentes. Críticos avaliaram Crimson Desert contra os benchmarks do gênero — Elden Ring, The Witcher 3, Breath of the Wild. Jogadores avaliaram quantas horas passaram felizes explorando Pywel. As duas métricas são válidas e não se contradizem — simplesmente respondem perguntas diferentes.
         </p>
         <div className="not-prose my-6 bg-card rounded-xl border border-geek/20 p-5">
-          <h3 className="font-bold text-geek mb-3">📊 Comparativo: Crítica vs Jogadores (abril 2026)</h3>
+          <h3 className="font-bold text-geek mb-3">📊 Comparativo: Crítica vs Jogadores (agosto 2026)</h3>
           <div className="space-y-3">
             {[
-              { label: "Metacritic (críticos)", valor: 78, max: 100 },
-              { label: "OpenCritic", valor: 80, max: 100 },
-              { label: "Steam (usuários) — Very Positive", valor: 87, max: 100 },
-              { label: "Metacritic User Score", valor: 82, max: 100 },
+              { label: "Metacritic (críticos, PC)", valor: 77, max: 100 },
+              { label: "Metacritic (críticos, PS5)", valor: 78, max: 100 },
+              { label: "OpenCritic — % que recomenda", valor: 74, max: 100 },
+              { label: "Steam (usuários) — Very Positive", valor: 84, max: 100 },
             ].map((item) => (
+
               <div key={item.label}>
                 <div className="flex justify-between text-sm mb-1">
                   <span className="text-muted-foreground">{item.label}</span>
