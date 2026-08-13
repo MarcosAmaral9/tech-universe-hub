@@ -2682,20 +2682,21 @@ export const blogPosts: BlogPost[] = [
   {
     id: "144",
     slug: "crimson-desert-patches-atualizacoes-2026",
-    title: "Crimson Desert: Todas as Atualizações e Patches Pós-Lançamento (Março–Abril 2026)",
+    title: "Crimson Desert: Todas as Atualizações e Patches Pós-Lançamento (Março–Agosto 2026)",
     excerpt:
-      "A Pearl Abyss lançou 5+ patches em 2 semanas: novos controles, 5 montarias, Refinement Coins, fast travel expandido e correção dos assets de IA generativa. Veja o histórico completo.",
+      "A Pearl Abyss lançou 17 patches em cinco meses: modos de dificuldade, remapeamento de controles, revanches de bosses, cross-save, reformulação do comércio e DLC confirmado. Histórico completo até 1.17.00.",
     content: "",
     category: "geek",
     subtopic: "crimson-desert",
     image: crimsonDesertPatchesImg,
     author: "VICIO<CODE>",
     date: "2026-04-04",
+    updatedAt: "2026-08-13",
     readTime: "8 min",
     faq: [
       {
-        q: "Quantos patches Crimson Desert recebeu no lançamento?",
-        a: "Em menos de 2 semanas, Crimson Desert recebeu: Patch 1.00.02 (Day One, 19/03), Patch 1.00.03 (23-25/03), Patch 1.01.00 (28/03) e hotfixes 1.01.01 a 1.01.03 (29-31/03). Um ritmo de atualização incomum para um jogo desse porte.",
+        q: "Quantos patches Crimson Desert já recebeu?",
+        a: "Foram 17 patches numerados entre 19 de março e 7 de agosto de 2026 (do 1.00.02 ao 1.17.00), além de dezenas de hotfixes — um ritmo de atualização incomum para um jogo desse porte.",
       },
       {
         q: "Quais foram as principais melhorias dos patches?",
@@ -2707,31 +2708,32 @@ export const blogPosts: BlogPost[] = [
       },
       {
         q: "Haverá DLC ou conteúdo pós-lançamento pago?",
-        a: "A Pearl Abyss confirmou conteúdo gratuito pós-lançamento e indicou expansões de história e possível DLC dependendo do desempenho de vendas. Com 3 milhões de cópias na primeira semana, o suporte contínuo é esperado.",
+        a: "Sim. No Dev Update de 2 de junho de 2026, a Pearl Abyss confirmou que um DLC pago está em desenvolvimento, sem data anunciada. Até lá, todo o conteúdo pós-lançamento (modos de dificuldade, revanches de bosses, cross-save, 120 montarias e pets, 70 itens e trajes) foi gratuito.",
       },
     ],
   },
   {
     id: "145",
     slug: "crimson-desert-vendas-review-completo-2026",
-    title: "Crimson Desert: 3 Milhões de Cópias, Metacritic 78 e Tudo que a Crítica Disse",
+    title: "Crimson Desert: 6 Milhões de Cópias, Metacritic 77/78 e Tudo que a Crítica Disse",
     excerpt:
-      "Crimson Desert vendeu 2 milhões em 24h e 3 milhões na primeira semana. Com Metacritic 78 e Steam Very Positive 85%, compilamos o que a crítica elogiou, o que criticou e se vale a pena comprar.",
+      "Crimson Desert vendeu 2 milhões em 24h e chegou a 6 milhões em menos de três meses. Com Metacritic 77/78 e Steam Very Positive (~84% em 166 mil análises), compilamos o que a crítica elogiou, o que criticou e se vale a pena comprar.",
     content: "",
     category: "geek",
     subtopic: "crimson-desert",
     image: crimsonDesertVendasReviewImg,
     author: "VICIO<CODE>",
     date: "2026-04-04",
+    updatedAt: "2026-08-13",
     readTime: "8 min",
     faq: [
       {
         q: "Qual a nota de Crimson Desert no Metacritic?",
-        a: "Crimson Desert tem Metacritic 78 (baseado em 93 críticas) e OpenCritic 80. No Steam, a avaliação é Very Positive com 85% de aprovação em mais de 38.870 análises de usuários — melhor que a recepção da crítica especializada.",
+        a: "Crimson Desert tem Metacritic 77 na versão de PC e 78 na de PS5, com 74% dos críticos recomendando no OpenCritic. No Steam, a avaliação é Very Positive, com cerca de 84% de aprovação em mais de 166 mil análises — melhor que a recepção da crítica especializada.",
       },
       {
         q: "Quantas cópias Crimson Desert vendeu?",
-        a: "O jogo vendeu 2 milhões de cópias nas primeiras 24 horas e atingiu 3 milhões na primeira semana — tornando-se um dos maiores lançamentos de 2026, apesar das notas mistas da crítica.",
+        a: "O jogo vendeu 2 milhões de cópias nas primeiras 24 horas, 3 milhões na primeira semana, 5 milhões em 26 dias e 6 milhões até junho de 2026 — um dos maiores lançamentos do ano, apesar das notas mistas da crítica.",
       },
       {
         q: "O que a crítica mais elogiou em Crimson Desert?",
@@ -4912,13 +4914,14 @@ export const blogPosts: BlogPost[] = [
     slug: "crimson-desert-guia-completo",
     title: "Crimson Desert: Guia Completo — Kliff, Pywel e Tudo do Lançamento",
     excerpt:
-      "Guia completo de Crimson Desert: história de Kliff e os Greymanes no continente de Pywel, 3 personagens jogáveis, mundo aberto sem fast travel obrigatório, 3 milhões de cópias vendidas na primeira semana.",
+      "Guia completo de Crimson Desert: história de Kliff e os Greymanes no continente de Pywel, 3 personagens jogáveis, mundo aberto sem fast travel obrigatório, 6 milhões de cópias vendidas e versão de Switch 2 confirmada para 2027.",
     content: "",
     category: "geek",
     subtopic: "crimson-desert",
     image: crimsonDesertGuiaImg,
     author: "VICIO<CODE>",
     date: "2026-03-16",
+    updatedAt: "2026-08-13",
     readTime: "8 min",
     faq: [
       {
@@ -4931,7 +4934,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         q: "Quando Crimson Desert foi lançado?",
-        a: "Crimson Desert foi lançado em 19 de março de 2026, simultaneamente para PC (Steam/Epic/Mac), PS5 e Xbox Series X|S. O lançamento ocorreu às 22h UTC (19h no horário de Brasília).",
+        a: "Crimson Desert foi lançado em 19 de março de 2026, simultaneamente para PC (Steam/Epic/Mac), PS5 e Xbox Series X|S. Uma versão para Nintendo Switch 2 foi anunciada para 2027.",
       },
     ],
   },
