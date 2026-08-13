@@ -27,12 +27,12 @@ const CrimsonDesertPatches = () => {
           <span className="px-3 py-1 bg-geek/20 text-geek rounded-full text-sm font-medium">Updates · Patches · Pearl Abyss</span>
         </div>
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-          Crimson Desert: Todas as Atualizações e Patches Pós-Lançamento (Março–Abril 2026)
+          Crimson Desert: Todas as Atualizações e Patches Pós-Lançamento (Março–Agosto 2026)
         </h1>
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
-          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />Atualizado em 24 de Abril, 2026</span>
-          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />12 min de leitura</span>
+          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />Atualizado em 13 de Agosto, 2026</span>
+          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />14 min de leitura</span>
         </div>
         <ShareWhatsApp />
         <AuthorBio category="geek" publishedAt="04 de Abril, 2026" />
@@ -44,8 +44,9 @@ const CrimsonDesertPatches = () => {
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          Desde seu lançamento em 19 de março de 2026, Crimson Desert recebeu múltiplas atualizações em ritmo acelerado. A Pearl Abyss demonstrou comprometimento com o feedback da comunidade — ao todo, <strong>mais de 10 patches e hotfixes</strong> foram lançados no primeiro mês, culminando no Patch 1.04.00 (22 de abril), o maior update até agora, que adicionou modos de dificuldade Easy/Normal/Hard e dezenas de melhorias.
+          Desde seu lançamento em 19 de março de 2026, Crimson Desert recebeu atualizações em ritmo acelerado. No balanço oficial publicado pela Pearl Abyss em <strong>12 de agosto de 2026</strong>, são <strong>17 patches principais</strong>, mais de 20 novos recursos e conteúdos, <strong>120 novas montarias e pets</strong> e <strong>70 novos trajes, equipamentos e itens</strong> — do baú de armazenamento e dos modos de dificuldade até o cross-save entre PC e consoles (1.14.00) e a revisão do sistema de comércio (1.16.00).
         </p>
+
 
         <AdLeaderboard className="my-8" />
 
@@ -111,6 +112,98 @@ const CrimsonDesertPatches = () => {
               cor: "border-violet-500/30 bg-violet-500/5",
               descricao: "Hotfix para todas as plataformas corrigindo bugs introduzidos pelo Patch 1.04.00, incluindo a reversão temporária da redução de ataque/defesa via grindstones e anvils que causou reclamações da comunidade."
             },
+            {
+              versao: "Patch 1.05.00 + 1.05.01",
+              data: "2–3 de maio de 2026",
+              tipo: "Grande Update",
+              cor: "border-amber-500/30 bg-amber-500/5",
+              descricao: "Chegada do Rematch (revanche contra bosses já derrotados) e do Re-blockade (rebloqueio de regiões já libertadas), respondendo à queixa de que o mundo ficava vazio após a libertação do continente. Também trouxe novas criaturas lendárias domesticáveis como pets e corrigiu o reset de confiança dos companheiros."
+            },
+            {
+              versao: "Patch 1.06.00 + 1.06.01",
+              data: "11–12 de maio de 2026",
+              tipo: "Grande Update",
+              cor: "border-amber-500/30 bg-amber-500/5",
+              descricao: "Adicionou a função Extraction, que recupera materiais gastos no refinamento de equipamentos — um dos pedidos mais repetidos da comunidade. Também trouxe Special Mounts (animais como ursos que viram montaria após ganharem confiança), opção Display Sheath, Night Tone Mode e o minigame Claw Machine."
+            },
+            {
+              versao: "Patch 1.07.00",
+              data: "15 de maio de 2026",
+              tipo: "Conteúdo",
+              cor: "border-blue-500/30 bg-blue-500/5",
+              descricao: "Ampliou a lista de bosses disponíveis para revanche e adicionou novas habilidades de combate desarmado para Damiane."
+            },
+            {
+              versao: "Patch 1.08.00",
+              data: "22 de maio de 2026",
+              tipo: "Conteúdo",
+              cor: "border-blue-500/30 bg-blue-500/5",
+              descricao: "Adicionou o lago (pond) para manter peixes capturados e o Baby Wyvern como novo pet. Nas notas, a Pearl Abyss confirmou que o remapeamento livre de controles estava em desenvolvimento."
+            },
+            {
+              versao: "Patch 1.09.00",
+              data: "Início de junho de 2026",
+              tipo: "Grande Update",
+              cor: "border-amber-500/30 bg-amber-500/5",
+              descricao: "Entregou o remapeamento completo de controles (Controller Remapping), novos pets de pequeno porte e melhorias no conteúdo de agricultura."
+            },
+            {
+              versao: "Patch 1.10.00 + 1.10.01",
+              data: "Junho de 2026",
+              tipo: "Conteúdo",
+              cor: "border-blue-500/30 bg-blue-500/5",
+              descricao: "Wyverns como montaria voadora, o pet Kuku Bird Chick e dois novos minigames: Pinball e Orb Roll."
+            },
+            {
+              versao: "Patch 1.11.00",
+              data: "12 de junho de 2026",
+              tipo: "Melhoria",
+              cor: "border-green-500/30 bg-green-500/5",
+              descricao: "Novos desafios que liberam o registro de mais pets, além de correções de bugs e estabilidade."
+            },
+            {
+              versao: "Patch 1.12.00 → 1.12.02",
+              data: "19–24 de junho de 2026",
+              tipo: "Grande Update",
+              cor: "border-amber-500/30 bg-amber-500/5",
+              descricao: "Expansão do sistema de moradia: decoração da área externa da casa, novos móveis e equipamentos, além de melhorias de qualidade de vida para Damiane e Oongka. Hotfixes corrigiram móveis desaparecendo ao ar livre e crashes ao trocar resolução."
+            },
+            {
+              versao: "Patch 1.13.00 + 1.13.01",
+              data: "4–8 de julho de 2026",
+              tipo: "Conteúdo",
+              cor: "border-blue-500/30 bg-blue-500/5",
+              descricao: "Oongka e Damiane passaram a poder entrar no Abyss, novos trajes e mais peças tingíveis, descanso com pets e correção do crash ao cavalgar ursos."
+            },
+            {
+              versao: "Patch 1.14.00 (Cross-Save)",
+              data: "16 de julho de 2026",
+              tipo: "Maior Update do semestre",
+              cor: "border-red-500/30 bg-red-500/5",
+              descricao: "Implementou o Cross-Save entre PC e consoles, prometido no Dev Update de 2 de junho: vinculando as contas, o save de Pywel acompanha o jogador entre plataformas."
+            },
+            {
+              versao: "Patch 1.15.00",
+              data: "24 de julho de 2026",
+              tipo: "Correções",
+              cor: "border-violet-500/30 bg-violet-500/5",
+              descricao: "Correções amplas: bosses transparentes durante a batalha, plantações que paravam de crescer, status de Lock que não era salvo em equipamentos e reposicionamento da Mace of Ambition para facilitar a obtenção."
+            },
+            {
+              versao: "Patch 1.16.00 → 1.16.04",
+              data: "1–5 de agosto de 2026",
+              tipo: "Grande Update",
+              cor: "border-amber-500/30 bg-amber-500/5",
+              descricao: "Reformulou o comércio: 133 novos postos de troca, 24 novas mercadorias de alto valor, preços que reagem ao excesso de vendas em um mesmo local, preços quadruplicados nos postos reais e carroças que não desaparecem mais após a entrega. Os hotfixes seguintes corrigiram tela preta ao carregar saves, falhas gráficas com Ray Regeneration em Radeon RX 9070 XT ou superior e crash no Mac com MetalFX Denoising Upscaler."
+            },
+            {
+              versao: "Patch 1.17.00",
+              data: "7 de agosto de 2026",
+              tipo: "Correções",
+              cor: "border-violet-500/30 bg-violet-500/5",
+              descricao: "Patch mais recente até o fechamento desta matéria: correções no desafio 'Desperate Rescue', em itens atribuídos ao slot rápido, em efeitos de capacetes especiais, em sons de passos sobrepostos e em ícones incorretos de baús no mapa, além de melhorias de localização em todos os idiomas."
+            },
+
           ].map((p) => (
             <div key={p.versao} className={`rounded-xl border p-5 ${p.cor}`}>
               <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
@@ -198,17 +291,22 @@ const CrimsonDesertPatches = () => {
               <li>• Suporte básico para Intel Arc GPU (ainda instável)</li>
               <li>• Função Lock para proteger itens no inventário</li>
               <li>• Cloudcart como montaria permanente</li>
+              <li>• Boss Rematch e Re-blockade (1.05.00)</li>
+              <li>• Extraction: recuperar materiais do refinamento (1.06.00)</li>
+              <li>• Remapeamento livre de controles (1.09.00)</li>
+              <li>• Cross-save entre PC e consoles (1.14.00)</li>
+              <li>• Comércio reformulado com 133 novos postos (1.16.00)</li>
             </ul>
           </div>
           <div className="bg-card rounded-xl border border-amber-500/20 p-5">
             <h3 className="font-bold text-amber-400 mb-3">⚠️ Ainda Pendente / Prometido</h3>
             <ul className="text-sm text-muted-foreground space-y-2">
-              <li>• Brilho noturno excessivo (especialmente PS5 Pro com OLED + HDR)</li>
-              <li>• Personalização mais detalhada de controle (prometida em breve)</li>
-              <li>• Boss rematches (prometido em updates futuros)</li>
+              <li>• Melhorias narrativas: revisão de cenas-chave anunciada no Dev Update de junho, ainda em desenvolvimento</li>
+              <li>• DLC pago confirmado, sem detalhes nem data</li>
+              <li>• Versão para Nintendo Switch 2, prevista para o início de 2027</li>
               <li>• Suporte completo e otimizado para Intel Arc GPU</li>
-              <li>• Alguns crashes ocasionais reportados</li>
-              <li>• Iluminação interna — comunidade ainda reporta problemas</li>
+              <li>• Brilho noturno e iluminação interna — comunidade ainda reporta ajustes necessários</li>
+              <li>• Crashes ocasionais em configurações específicas (Mac e placas Radeon recentes seguem recebendo hotfixes)</li>
             </ul>
           </div>
         </div>
@@ -221,24 +319,26 @@ const CrimsonDesertPatches = () => {
           Sobre a <strong>Intel Arc</strong>: após a polêmica inicial de não suporte, a Pearl Abyss lançou um patch que permite rodar o jogo em GPUs Intel Arc em estado não-otimizado — com problemas gráficos e instabilidade. A empresa mudou o FAQ confirmando que está "trabalhando em compatibilidade e otimização" para Arc, sem data definida. A Intel declarou ter oferecido hardware e suporte à Pearl Abyss antes do lançamento.
         </p>
         <p>
-          Sobre os <strong>assets de IA generativa</strong>: a Pearl Abyss confirmou o uso, atualizou a página do Steam com a divulgação exigida pela Valve e o Patch 1.01.00 (28/03) já substituiu os assets 2D identificados, conforme anunciado nas notas oficiais.
+          Sobre os <strong>assets de IA generativa</strong>: a Pearl Abyss confirmou o uso, atualizou a página do Steam com a divulgação exigida pela Valve, prometeu uma auditoria completa dos assets do jogo e o Patch 1.01.00 (28/03) já substituiu os assets 2D identificados por arte feita por humanos, conforme anunciado nas notas oficiais.
         </p>
         <p>
-          Essa divulgação não foi um gesto espontâneo da desenvolvedora: desde 2024, a Valve exige que todo jogo publicado na Steam que utilize conteúdo gerado por inteligência artificial declare esse uso publicamente na própria página da loja, política implementada após preocupações levantadas pela comunidade de desenvolvedores e jogadores sobre transparência no uso dessas ferramentas. O sistema de avaliações da Steam, por sua vez, funciona através de categorias automáticas calculadas a partir da proporção de avaliações positivas e negativas dos últimos 30 dias e do histórico total acumulado desde o lançamento — rótulos como "Mixed" (Avaliação Mista), "Mostly Positive" (Majoritariamente Positiva) e "Very Positive" (Muito Positiva) não são opiniões editoriais da Valve, mas cálculos estatísticos públicos, o que torna a evolução de Crimson Desert nesse índice um indicador relativamente objetivo de como a percepção real dos jogadores mudou ao longo dos patches sucessivos lançados pela Pearl Abyss entre março e abril de 2026.
+          Essa divulgação não foi um gesto espontâneo da desenvolvedora: desde 2024, a Valve exige que todo jogo publicado na Steam que utilize conteúdo gerado por inteligência artificial declare esse uso publicamente na própria página da loja, política implementada após preocupações levantadas pela comunidade de desenvolvedores e jogadores sobre transparência no uso dessas ferramentas. O sistema de avaliações da Steam, por sua vez, funciona através de categorias automáticas calculadas a partir da proporção de avaliações positivas e negativas dos últimos 30 dias e do histórico total acumulado desde o lançamento — rótulos como "Mixed" (Avaliação Mista), "Mostly Positive" (Majoritariamente Positiva) e "Very Positive" (Muito Positiva) não são opiniões editoriais da Valve, mas cálculos estatísticos públicos. Em agosto de 2026, Crimson Desert acumula <strong>166 mil análises na Steam com cerca de 84% positivas</strong>, mantendo o selo Very Positive conquistado ao longo dos patches.
         </p>
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Planos Futuros</h2>
         <p>
-          A Pearl Abyss confirmou que <strong>não há DLC planejado</strong> para Crimson Desert. O foco da empresa é em updates de qualidade de vida baseados no feedback da comunidade, incluindo boss rematches e mais customização de controles. Com <strong>5 milhões de cópias vendidas</strong> e suporte ativo, o jogo continuará recebendo patches. O próximo grande projeto da Pearl Abyss é o <strong>DokeV</strong>, que usará a mesma BlackSpace Engine.
+          No <strong>Dev Update de 2 de junho de 2026</strong>, a Pearl Abyss mudou o discurso anterior de que não haveria conteúdo pago: o estúdio confirmou que <strong>trabalha em um DLC para Crimson Desert</strong>, sem revelar detalhes ou data. O mesmo comunicado detalhou o plano de junho a setembro — melhorias na coerência narrativa da jornada de Kliff, evolução do Re-blockade, cross-save (entregue em 16 de julho) e mais conteúdo de qualidade de vida. Com <strong>6 milhões de cópias vendidas</strong> (marca atingida em junho, menos de três meses após o lançamento) e uma <strong>versão para Nintendo Switch 2 prevista para o início de 2027</strong>, o suporte deve seguir ao longo do ano. O próximo grande projeto da Pearl Abyss é o <strong>DokeV</strong>, que usará a mesma BlackSpace Engine.
         </p>
+
       
-      <h2 className="text-2xl font-bold mt-10 mb-4">A Importância do Cronograma Mensal de Patches</h2>
+      <h2 className="text-2xl font-bold mt-10 mb-4">A Importância do Cronograma Contínuo de Patches</h2>
       <p>
-        A cadência mensal de atualizações da Pearl Abyss — Patch 1.00.03, 1.01.00, 1.02.00, 1.03.00 e 1.04.00 entre março e abril de 2026 — representa ritmo de suporte pós-lançamento raramente visto em RPGs de ação AAA. Comparado a outros lançamentos do gênero que frequentemente esperam meses entre atualizações significativas, a Pearl Abyss demonstrou capacidade de resposta ágil que diretamente influenciou a recuperação da reputação do jogo no Steam, saindo de "Mixed" no lançamento para "Very Positive" em poucas semanas.
+        A cadência de atualizações da Pearl Abyss — 17 patches numerados entre 19 de março e 7 de agosto de 2026, sem contar dezenas de hotfixes — representa ritmo de suporte pós-lançamento raramente visto em RPGs de ação AAA. Comparado a outros lançamentos do gênero que frequentemente esperam meses entre atualizações significativas, a Pearl Abyss demonstrou capacidade de resposta ágil que diretamente influenciou a recuperação da reputação do jogo no Steam, saindo de "Mixed" no lançamento para "Very Positive" em poucas semanas.
       </p>
       <p>
-        Esse padrão de atualização constante também reflete decisão estratégica da empresa de priorizar correção de problemas técnicos e de acessibilidade antes de qualquer expansão de conteúdo paga — uma abordagem que constrói confiança duradoura com a base de jogadores, mesmo que represente atraso na monetização adicional que jogos-serviço tradicionais buscariam implementar mais rapidamente após o lançamento inicial.
+        Esse padrão de atualização constante também reflete decisão estratégica da empresa de priorizar correção de problemas técnicos e de acessibilidade antes de qualquer expansão de conteúdo paga — o DLC só foi anunciado como projeto em andamento em junho, quase três meses depois do lançamento e depois de o jogo já ter recebido revanches de bosses, extração de materiais, remapeamento de controles e cross-save sem custo adicional.
       </p>
+
 
       <h2 className="text-2xl font-bold mt-10 mb-4">Comparando com o Padrão de Suporte de Outros AAAs Recentes</h2>
       <p>
@@ -250,8 +350,9 @@ const CrimsonDesertPatches = () => {
     
       <h2 className="text-2xl font-bold mt-10 mb-4">O Que Esperar das Próximas Atualizações</h2>
       <p>
-        Com o ritmo estabelecido de patches mensais mantido consistentemente desde março, a comunidade espera continuidade desse cronograma ao longo do restante de 2026. Embora a Pearl Abyss não tenha confirmado roadmap específico de longo prazo, o padrão observado sugere que correções de bugs reportados e ajustes de balanceamento continuarão sendo prioridade, possivelmente complementados por conteúdo adicional gratuito conforme a comunidade identifica áreas que se beneficiariam de expansão ou refinamento adicional.
+        O Dev Update de 2 de junho estabeleceu um roteiro público para o período de junho a setembro de 2026, e boa parte dele já foi entregue: cross-save, decoração externa da casa, entrada de Oongka e Damiane no Abyss e a reformulação do comércio. O que resta do pacote anunciado são as melhorias de coerência narrativa das cenas-chave da jornada de Kliff e a nova fase do Re-blockade — além do DLC pago, que segue sem detalhes divulgados.
       </p>
+
     
       <p>
         Para jogadores que abandonaram o título no lançamento por frustração com problemas iniciais, este é o momento ideal de retornar — a experiência atual, refinada por meses de atualizações dedicadas, é significativamente diferente e melhor do que aquela disponível em março de 2026.
@@ -281,42 +382,55 @@ const CrimsonDesertPatches = () => {
 
 
       <EditorialTake category="geek" title="Análise do Marcos: A Pearl Abyss Mostrou Como Fazer Suporte Pós-Lançamento">
-        <p>O ritmo de patches de Crimson Desert — mais de 10 atualizações no primeiro mês, culminando em modos de dificuldade, novos conteúdos e melhorias de controle — é um caso de estudo em como um estúdio deve responder a críticas legítimas. <strong>Nenhum dos problemas centrais apontados no lançamento (controles, dificuldade única, inventário caótico, falta de habilidades para Damiane e Oongka) ficou sem resposta</strong>. A velocidade de resposta foi notável: o pedido mais votado da comunidade (modos de dificuldade) foi atendido em 34 dias. Isso não apaga os problemas do lançamento, mas demonstra uma relação com o público que muitos publishers — incluindo gigantes do setor — deveriam observar. A trajetória de "Mixed" para "Very Positive" no Steam não aconteceu por sorte: foi construída patch a patch, update a update, com a Pearl Abyss ouvindo e executando. É o tipo de compromisso que transforma um IP de estreia em uma franquia sustentável.</p>
+        <p>Cinco meses depois do lançamento, o balanço é objetivo: <strong>17 patches, mais de 20 recursos novos, 120 montarias e pets e 70 itens/trajes adicionados — tudo sem cobrar nada</strong>. Nenhum dos problemas centrais apontados no lançamento (controles, dificuldade única, inventário caótico, falta de habilidades para Damiane e Oongka, mundo esvaziado após libertar as regiões) ficou sem resposta: os modos de dificuldade chegaram em 34 dias, o remapeamento de controles em cerca de três meses, o Rematch e o Re-blockade em maio, o cross-save em julho. A trajetória de "Mixed" para "Very Positive" — hoje cerca de 84% de aprovação em 166 mil análises na Steam — não aconteceu por sorte: foi construída patch a patch. O ponto que ainda me incomoda é a narrativa, e é justamente o item do roteiro de junho que continua pendente. Se a Pearl Abyss entregar essa revisão antes do DLC, transforma um lançamento morno em um dos melhores casos de recuperação da geração.</p>
       </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {
-            title: "Crimson Desert Patch Notes 1.04.00 — Pearl Abyss",
-            url: "https://www.crimsondesert.com/news/detail?boardNo=1001&articleNo=182",
-            publisher: "Pearl Abyss",
-            accessedAt: "Abril 2026",
+            title: "Update Highlights — balanço de 17 patches desde o lançamento",
+            url: "https://store.steampowered.com/news/app/3321460",
+            publisher: "Pearl Abyss / Steam",
+            accessedAt: "Agosto 2026",
           },
           {
-            title: "Crimson Desert Patch Notes 1.03.00 — Pearl Abyss",
-            url: "https://www.crimsondesert.com/news/detail?boardNo=1001&articleNo=175",
+            title: "Patch Notes Version 1.17.00",
+            url: "https://store.steampowered.com/news/app/3321460",
             publisher: "Pearl Abyss",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
           {
-            title: "Crimson Desert Patch Notes 1.01.00 — Pearl Abyss",
-            url: "https://www.crimsondesert.com/news/detail?boardNo=1001&articleNo=152",
+            title: "Patch Notes Version 1.16.00 — reformulação do comércio",
+            url: "https://store.steampowered.com/news/app/3321460",
             publisher: "Pearl Abyss",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
           {
-            title: "Crimson Desert — Steam Store (histórico de atualizações)",
-            url: "https://store.steampowered.com/app/1277400/Crimson_Desert/",
+            title: "Dev Update: June–September 2026 Preview (DLC confirmado)",
+            url: "https://store.steampowered.com/news/app/3321460",
+            publisher: "Pearl Abyss",
+            accessedAt: "Agosto 2026",
+          },
+          {
+            title: "Cross-Save Support (Patch 1.14.00)",
+            url: "https://store.steampowered.com/news/app/3321460",
+            publisher: "Pearl Abyss",
+            accessedAt: "Agosto 2026",
+          },
+          {
+            title: "Crimson Desert — página e avaliações na Steam",
+            url: "https://store.steampowered.com/app/3321460/Crimson_Desert/",
             publisher: "Valve / Pearl Abyss",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
           {
-            title: "Crimson Desert — Intel Arc GPU Statement",
-            url: "https://www.crimsondesert.com/news/detail?boardNo=1001&articleNo=140",
-            publisher: "Pearl Abyss",
-            accessedAt: "Abril 2026",
+            title: "Crimson Desert — verbete com dados de vendas, notas e plataformas",
+            url: "https://en.wikipedia.org/wiki/Crimson_Desert",
+            publisher: "Wikipedia",
+            accessedAt: "Agosto 2026",
           },
         ]}
       />
+
 
       <RelatedPosts currentSlug="crimson-desert-patches-atualizacoes-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />

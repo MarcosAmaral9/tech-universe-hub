@@ -15,7 +15,7 @@ import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 
 const CrimsonDesertVendasReview = () => {
   useEffect(() => {
-    trackArticleRead("crimson-desert-vendas-review-completo-2026", "Crimson Desert: 5 Milhões de Cópias, Metacritic 78 e Review Completo", "geek");
+    trackArticleRead("crimson-desert-vendas-review-completo-2026", "Crimson Desert: 6 Milhões de Cópias, Metacritic 77/78 e Review Completo", "geek");
   }, []);
 
   return (
@@ -27,11 +27,11 @@ const CrimsonDesertVendasReview = () => {
           <span className="px-3 py-1 bg-geek/20 text-geek rounded-full text-sm font-medium">Review · Análise · Vendas</span>
         </div>
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-          Crimson Desert: 5 Milhões de Cópias, Metacritic 78 e Tudo que a Crítica Disse
+          Crimson Desert: 6 Milhões de Cópias, Metacritic 77/78 e Tudo que a Crítica Disse
         </h1>
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
-          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />Atualizado em 24 de Abril, 2026</span>
+          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />Atualizado em 13 de Agosto, 2026</span>
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />15 min de leitura</span>
         </div>
         <ShareWhatsApp />
@@ -44,7 +44,7 @@ const CrimsonDesertVendasReview = () => {
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          Crimson Desert foi lançado em 19 de março de 2026 e se tornou um dos maiores lançamentos do ano: <strong>2 milhões de cópias nas primeiras 24 horas</strong>, <strong>3 milhões no quinto dia</strong> e <strong>5 milhões em menos de um mês</strong> (anunciado em 15 de abril). As notas da crítica ficaram abaixo da hype — <strong>Metacritic 78</strong> e <strong>OpenCritic 80</strong> — mas os jogadores responderam de forma muito mais positiva. Este artigo reúne os dados de vendas, as análises críticas e a perspectiva dos jogadores para uma visão completa do fenômeno Crimson Desert.
+          Crimson Desert foi lançado em 19 de março de 2026 e se tornou um dos maiores lançamentos do ano: <strong>2 milhões de cópias nas primeiras 24 horas</strong>, <strong>3 milhões na primeira semana</strong>, 5 milhões em 26 dias e <strong>6 milhões em menos de três meses</strong> (marca confirmada em junho). As notas da crítica ficaram abaixo da hype — <strong>Metacritic 77 (PC) e 78 (PS5)</strong>, com <strong>74% de recomendação no OpenCritic</strong> — mas os jogadores responderam de forma muito mais positiva. Este artigo reúne os dados de vendas, as análises críticas e a perspectiva dos jogadores para uma visão completa do fenômeno Crimson Desert.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -52,10 +52,10 @@ const CrimsonDesertVendasReview = () => {
         </h2>
         <div className="not-prose my-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { valor: "78", desc: "Metacritic (PC)" },
-            { valor: "80", desc: "OpenCritic (81% recomendam)" },
-            { valor: "87%", desc: "Steam Very Positive (+139k análises)" },
-            { valor: "5M+", desc: "Cópias vendidas em menos de 1 mês" },
+            { valor: "77/78", desc: "Metacritic (PC / PS5)" },
+            { valor: "74%", desc: "OpenCritic — críticos que recomendam" },
+            { valor: "84%", desc: "Steam Very Positive (166 mil análises)" },
+            { valor: "6M+", desc: "Cópias vendidas em menos de 3 meses" },
           ].map((item) => (
             <div key={item.desc} className="bg-card rounded-xl border border-geek/20 p-4 text-center">
               <div className="text-3xl font-bold text-geek">{item.valor}</div>
@@ -65,8 +65,9 @@ const CrimsonDesertVendasReview = () => {
         </div>
 
         <div className="not-prose my-6 p-4 bg-geek/10 border border-geek/30 rounded-xl text-sm text-muted-foreground">
-          <strong className="text-foreground">📈 Linha do tempo de vendas:</strong> 2M em 24h → 3M em 5 dias (24/03) → 4M em ~2 semanas (início de abril) → 5M em 26 dias (15/04/2026). A Pearl Abyss confirmou que todos os números são sell-through (vendas reais, não apenas remessas). O jogo permaneceu no top 10 de best-sellers da Steam e das lojas PlayStation e Xbox desde o lançamento. No Steam, o pico de jogadores simultâneos atingiu <strong>276.261</strong> com o Patch 1.01.00 em 30 de março — 3º mais jogado naquele domingo.
+          <strong className="text-foreground">📈 Linha do tempo de vendas:</strong> 2M em 24h (20/03) → 3M na primeira semana (24/03) → 4M em ~2 semanas (início de abril) → 5M em 26 dias (15/04) → <strong>6M em junho de 2026</strong>, menos de três meses após o lançamento. A Pearl Abyss confirmou que todos os números são sell-through (vendas reais, não apenas remessas) e distribuiu bônus de 5 milhões de wones a cada funcionário ao cruzar a marca de 5 milhões. No 1º trimestre de 2026, a receita operacional da empresa subiu 419,8% na comparação anual, para 328,5 bilhões de wones. No Steam, o pico de jogadores simultâneos atingiu <strong>276.261</strong> com o Patch 1.01.00 em 30 de março.
         </div>
+
 
         <AdLeaderboard className="my-8" />
 
@@ -130,20 +131,21 @@ const CrimsonDesertVendasReview = () => {
           <MessageSquare className="h-7 w-7 text-geek" />O Que os Jogadores Disseram (Steam e Metacritic)
         </h2>
         <p>
-          A recepção dos jogadores foi muito mais positiva que a da crítica — e melhorou significativamente com os patches. No lançamento, o Steam mostrava rating "Mixed", que subiu para "Mostly Positive" já na primeira semana e chegou a <strong>"Very Positive" (87% de aprovação) com mais de 139 mil análises</strong> em abril. No Metacritic, usuários definiram o jogo como "um diamante bruto" — uma expressão que captura bem tanto o potencial quanto as imperfeições do lançamento.
+          A recepção dos jogadores foi muito mais positiva que a da crítica — e melhorou significativamente com os patches. No lançamento, o Steam mostrava rating "Mixed", que subiu para "Mostly Positive" já na primeira semana e se consolidou em <strong>"Very Positive", com cerca de 84% de aprovação em mais de 166 mil análises</strong> em agosto de 2026. No Metacritic, usuários definiram o jogo como "um diamante bruto" — uma expressão que captura bem tanto o potencial quanto as imperfeições do lançamento.
         </p>
         <p>
-          A divergência entre crítica (Metacritic 78) e jogadores (Steam 87%) é a maior história do lançamento: ambos estão certos, mas medem coisas diferentes. Críticos avaliaram Crimson Desert contra os benchmarks do gênero — Elden Ring, The Witcher 3, Breath of the Wild. Jogadores avaliaram quantas horas passaram felizes explorando Pywel. As duas métricas são válidas e não se contradizem — simplesmente respondem perguntas diferentes.
+          A divergência entre crítica (Metacritic 77/78) e jogadores (Steam 84%) é a maior história do lançamento: ambos estão certos, mas medem coisas diferentes. Críticos avaliaram Crimson Desert contra os benchmarks do gênero — Elden Ring, The Witcher 3, Breath of the Wild. Jogadores avaliaram quantas horas passaram felizes explorando Pywel. As duas métricas são válidas e não se contradizem — simplesmente respondem perguntas diferentes.
         </p>
         <div className="not-prose my-6 bg-card rounded-xl border border-geek/20 p-5">
-          <h3 className="font-bold text-geek mb-3">📊 Comparativo: Crítica vs Jogadores (abril 2026)</h3>
+          <h3 className="font-bold text-geek mb-3">📊 Comparativo: Crítica vs Jogadores (agosto 2026)</h3>
           <div className="space-y-3">
             {[
-              { label: "Metacritic (críticos)", valor: 78, max: 100 },
-              { label: "OpenCritic", valor: 80, max: 100 },
-              { label: "Steam (usuários) — Very Positive", valor: 87, max: 100 },
-              { label: "Metacritic User Score", valor: 82, max: 100 },
+              { label: "Metacritic (críticos, PC)", valor: 77, max: 100 },
+              { label: "Metacritic (críticos, PS5)", valor: 78, max: 100 },
+              { label: "OpenCritic — % que recomenda", valor: 74, max: 100 },
+              { label: "Steam (usuários) — Very Positive", valor: 84, max: 100 },
             ].map((item) => (
+
               <div key={item.label}>
                 <div className="flex justify-between text-sm mb-1">
                   <span className="text-muted-foreground">{item.label}</span>
@@ -164,18 +166,22 @@ const CrimsonDesertVendasReview = () => {
           As ações da Pearl Abyss caíram <strong>28,96%</strong> na bolsa sul-coreana no dia 19 de março de 2026, após as notas ficarem abaixo das expectativas internas (mid-to-high 80s). No dia seguinte, houve queda adicional de <strong>9,78%</strong>. Porém, com o anúncio de 3 milhões de cópias em 25 de março, as ações recuperaram <strong>27,76%</strong>.
         </p>
         <p>
-          O custo de desenvolvimento foi estimado em <strong>200 bilhões de KRW</strong> (~$133 milhões USD) ao longo de aproximadamente 7 anos. Com 5 milhões de cópias vendidas a uma média de $60-70 USD, a receita bruta estimada supera $300 milhões USD — o que faz de Crimson Desert um sucesso financeiro expressivo, independentemente das notas abaixo do esperado internamente.
+          O custo de desenvolvimento foi estimado em <strong>200 bilhões de KRW</strong> (~$133 milhões USD) ao longo de aproximadamente 7 anos. Com 6 milhões de cópias vendidas a uma média de $60-70 USD, a receita bruta estimada supera $360 milhões USD. O reflexo apareceu no balanço: no primeiro trimestre de 2026 a Pearl Abyss reportou receita operacional de <strong>328,5 bilhões de wones</strong>, alta de 419,8% na comparação anual — o melhor resultado da história da companhia.
         </p>
         <p>
-          O contexto de mercado é importante: em 2026, as maiores franquias AAA — GTA VI ainda sem data, Zelda sem novo título confirmado — deixaram um vácuo no segmento de RPG de ação de alto orçamento. Crimson Desert chegou num momento de apetite elevado por novos mundos para explorar, o que explica parte de seu sucesso comercial mesmo com notas medianas.
+          O contexto de mercado é importante: em 2026, as maiores franquias AAA — GTA VI adiado para 19 de novembro, Zelda sem novo título confirmado — deixaram um vácuo no segmento de RPG de ação de alto orçamento. Crimson Desert chegou num momento de apetite elevado por novos mundos para explorar, o que explica parte de seu sucesso comercial mesmo com notas medianas.
+        </p>
+        <p>
+          A Pearl Abyss também já garantiu vida longa ao título: além do DLC pago confirmado em desenvolvimento no Dev Update de 2 de junho, uma versão para <strong>Nintendo Switch 2</strong> foi anunciada para 2027, ampliando o alcance comercial do jogo para uma quinta plataforma ao lado de PC, PS5, Xbox Series X|S e macOS.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Globe className="h-7 w-7 text-geek" />Crimson Desert Vale a Pena em Abril de 2026?
+          <Globe className="h-7 w-7 text-geek" />Crimson Desert Vale a Pena em Agosto de 2026?
         </h2>
         <p>
-          Com os patches pós-lançamento — especialmente o <strong>1.04.00</strong> de 22 de abril — as principais queixas técnicas e de acessibilidade foram endereçadas. Modos de dificuldade Easy/Normal/Hard, novos pets, presets de controle, arma exclusiva para Damiane, função Lock no inventário e novas habilidades para os 3 personagens tornam o jogo muito mais acessível do que no lançamento.
+          Depois de <strong>17 patches</strong> — do 1.04.00, que trouxe os modos de dificuldade, ao 1.17.00, de 7 de agosto —, as principais queixas técnicas e de acessibilidade foram endereçadas. Modos Easy/Normal/Hard, remapeamento completo de controles (1.09.00), revanches contra bosses, extração de materiais, cross-save entre plataformas (1.14.00) e a reformulação do sistema de comércio (1.16.00) tornam o jogo muito mais acessível e completo do que no lançamento.
         </p>
+
         <div className="not-prose my-6 grid md:grid-cols-2 gap-5">
           <div className="bg-card rounded-xl border border-emerald-500/20 p-5">
             <h3 className="font-bold text-emerald-400 mb-3 flex items-center gap-2"><ThumbsUp className="h-4 w-4" />Compre se você...</h3>
@@ -201,8 +207,9 @@ const CrimsonDesertVendasReview = () => {
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Conclusão</h2>
         <p>
-          Crimson Desert não foi o "próximo Zelda" que a hype prometia, mas é um RPG de ação ambicioso que melhorou consideravelmente desde o lançamento. Com <strong>5 milhões de cópias vendidas</strong>, suporte ativo com patches frequentes e avaliação "Very Positive" no Steam (87%), o jogo demonstrou que vendas e satisfação dos jogadores podem divergir completamente das notas da crítica especializada. A Pearl Abyss confirmou que não há DLC planejado — o foco é em updates de qualidade de vida, com cronograma de patches mensais mantido consistentemente desde março.
+          Crimson Desert não foi o "próximo Zelda" que a hype prometia, mas é um RPG de ação ambicioso que melhorou consideravelmente desde o lançamento. Com <strong>6 milhões de cópias vendidas</strong>, 17 patches em cinco meses e avaliação "Very Positive" no Steam (cerca de 84%), o jogo demonstrou que vendas e satisfação dos jogadores podem divergir completamente das notas da crítica especializada. A Pearl Abyss confirmou em junho que um <strong>DLC pago está em desenvolvimento</strong>, além da versão para Nintendo Switch 2 prevista para 2027.
         </p>
+
       
       <h2 className="text-2xl font-bold mt-10 mb-4">Análise Detalhada do Sistema de Combate</h2>
       <p>
@@ -222,8 +229,9 @@ const CrimsonDesertVendasReview = () => {
 
       <h2 className="text-2xl font-bold mt-10 mb-4">Perspectivas Para o Futuro do Título</h2>
       <p>
-        Com a confirmação de que não haverá DLC pago — apenas atualizações gratuitas de qualidade de vida — a Pearl Abyss sinaliza estratégia de longo prazo focada em maximizar satisfação da base atual de jogadores em vez de monetização adicional imediata. Essa abordagem, embora limite receita potencial a curto prazo, tem se mostrado eficaz para construir lealdade de comunidade e boca a boca positivo que pode beneficiar vendas continuadas e futuras entradas na franquia, caso a Pearl Abyss decida expandir o universo de Pywel em projetos subsequentes.
+        Durante os primeiros meses, a Pearl Abyss priorizou atualizações gratuitas de qualidade de vida em vez de monetização adicional — e só no Dev Update de 2 de junho confirmou que um <strong>DLC pago está em desenvolvimento</strong>, ainda sem data ou detalhes de conteúdo. A estratégia de entregar primeiro correções, modos de dificuldade, revanches de bosses e cross-save construiu lealdade de comunidade e boca a boca positivo antes de qualquer cobrança extra. Com a versão para Nintendo Switch 2 marcada para 2027, o universo de Pywel deve seguir recebendo suporte por pelo menos mais um ano.
       </p>
+
     
       <h2 className="text-2xl font-bold mt-10 mb-4">Comparando Crimson Desert com Outros Lançamentos de Mundo Aberto Recentes</h2>
       <p>
@@ -247,59 +255,67 @@ const CrimsonDesertVendasReview = () => {
       </p>
     
       <p>
-        Por ora, os números falam por si: cinco milhões de cópias, avaliação Very Positive e uma comunidade de jogadores engajada são resultados que qualquer estúdio gostaria de replicar em seus próprios lançamentos futuros.
+        Por ora, os números falam por si: seis milhões de cópias, avaliação Very Positive e uma comunidade de jogadores engajada são resultados que qualquer estúdio gostaria de replicar em seus próprios lançamentos futuros.
       </p>
+
     </div>
 
 
 
       <EditorialTake category="geek" title="Análise do Marcos: Crimson Desert Prova que Metacritic Não é Tudo">
-        <p>O lançamento de Crimson Desert vai entrar nos livros de história dos games como estudo de caso da divergência entre crítica e público. Um Metacritic 78 que gera 5 milhões de cópias vendidas, 276 mil jogadores simultâneos e 87% de aprovação no Steam conta uma história que notas numéricas não conseguem capturar. <strong>O jogo não é perfeito — a narrativa é fraca e os sistemas inicialmente caóticos são reclamações legítimas</strong>. Mas Crimson Desert entregou algo que muitos AAAs perfeitos tecnicamente não conseguem: a sensação de explorar um mundo que parece vivo, de combater inimigos que exigem respeito, de descobrir algo inesperado ao virar cada curva de Pywel. A Pearl Abyss respondeu com patches rápidos e efetivos. O resultado, em abril de 2026, é um jogo substancialmente melhor do que saiu no lançamento — e o número de jogadores continuando a jogar sugere que Pywel tem muito mais a oferecer do que os primeiros reviews indicaram.</p>
+        <p>O lançamento de Crimson Desert vai entrar nos livros de história dos games como estudo de caso da divergência entre crítica e público. Um Metacritic 77/78 que gera 6 milhões de cópias vendidas, 276 mil jogadores simultâneos e 84% de aprovação em 166 mil análises no Steam conta uma história que notas numéricas não conseguem capturar. <strong>O jogo não é perfeito — a narrativa é fraca e os sistemas inicialmente caóticos são reclamações legítimas</strong>. Mas Crimson Desert entregou algo que muitos AAAs tecnicamente perfeitos não conseguem: a sensação de explorar um mundo que parece vivo, de combater inimigos que exigem respeito, de descobrir algo inesperado ao virar cada curva de Pywel. A Pearl Abyss respondeu com 17 patches em cinco meses. O resultado, em agosto de 2026, é um jogo substancialmente melhor do que o que saiu no lançamento — e o DLC confirmado mais a versão de Switch 2 em 2027 mostram que Pywel ainda tem muito a oferecer.</p>
       </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {
-            title: "Crimson Desert — Metacritic PC (78)",
+            title: "Crimson Desert — Metacritic (77 PC / 78 PS5)",
             url: "https://www.metacritic.com/game/crimson-desert/",
             publisher: "Metacritic",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
           {
-            title: "Crimson Desert — Steam Store (Very Positive, 87%)",
-            url: "https://store.steampowered.com/app/1277400/Crimson_Desert/",
+            title: "Crimson Desert — Steam Store (Very Positive, ~84% em 166 mil análises)",
+            url: "https://store.steampowered.com/app/3321460/Crimson_Desert/",
             publisher: "Valve / Pearl Abyss",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
           {
-            title: "Crimson Desert Atinge 5 Milhões de Cópias — Pearl Abyss",
-            url: "https://www.crimsondesert.com/news/detail?boardNo=1001&articleNo=179",
+            title: "Crimson Desert — verbete com vendas, notas, plataformas e Switch 2",
+            url: "https://en.wikipedia.org/wiki/Crimson_Desert",
+            publisher: "Wikipedia",
+            accessedAt: "Agosto 2026",
+          },
+          {
+            title: "Dev Update: June–September 2026 Preview (DLC em desenvolvimento)",
+            url: "https://store.steampowered.com/news/app/3321460",
             publisher: "Pearl Abyss",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
           {
-            title: "Crimson Desert Patch Notes 1.04.00",
-            url: "https://www.crimsondesert.com/news/detail?boardNo=1001&articleNo=182",
-            publisher: "Pearl Abyss",
-            accessedAt: "Abril 2026",
+            title: "Update Highlights — 17 patches e conteúdo gratuito adicionado",
+            url: "https://store.steampowered.com/news/app/3321460",
+            publisher: "Pearl Abyss / Steam",
+            accessedAt: "Agosto 2026",
           },
           {
-            title: "Crimson Desert — OpenCritic (80, Strong)",
+            title: "Crimson Desert — OpenCritic (74% dos críticos recomendam)",
             url: "https://opencritic.com/game/16847/crimson-desert",
             publisher: "OpenCritic",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
           {
             title: "Crimson Desert Review — Forbes (9.5/10)",
             url: "https://www.forbes.com/sites/games/2026/03/19/crimson-desert-review/",
             publisher: "Forbes",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
         ]}
       />
 
       <RelatedPosts currentSlug="crimson-desert-vendas-review-completo-2026" />
       <NewsletterSignup variant="modal" categories={["geek"]} showAfterMs={60000} />
-      <CommentSection postId="crimson-desert-vendas-review-completo-2026" postTitle="Crimson Desert: 5 Milhões de Cópias, Metacritic 78 e Review Completo" category="geek" />
+      <CommentSection postId="crimson-desert-vendas-review-completo-2026" postTitle="Crimson Desert: 6 Milhões de Cópias, Metacritic 77/78 e Review Completo" category="geek" />
+
     </article>
   );
 };

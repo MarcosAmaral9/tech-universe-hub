@@ -57,7 +57,7 @@ const CrimsonDesertReview = () => {
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          Crimson Desert foi lançado em <strong>19 de março de 2026</strong> e o embargo de reviews foi levantado no mesmo dia. O resultado: um jogo amplamente elogiado por ambição, escala e combate — mas dividido pela fraqueza da narrativa, inventário confuso e excesso de sistemas. <strong>Metacritic PC: 78</strong>. <strong>OpenCritic: 80</strong> ("Strong", 81% dos críticos recomendam).
+          Crimson Desert foi lançado em <strong>19 de março de 2026</strong> e o embargo de reviews foi levantado no mesmo dia. O resultado: um jogo amplamente elogiado por ambição, escala e combate — mas dividido pela fraqueza da narrativa, inventário confuso e excesso de sistemas. <strong>Metacritic: 77 (PC) e 78 (PS5)</strong>. <strong>OpenCritic: 74% dos críticos recomendam</strong>. Cinco meses e 17 patches depois, o jogo está em outro patamar.
         </p>
 
         <div className="not-prose my-8">
@@ -74,7 +74,7 @@ const CrimsonDesertReview = () => {
             ))}
           </div>
           <p className="text-xs text-muted-foreground mt-3">
-            * IGN publicou nota provisória de 6/10 após 110 horas com o jogo ainda inacabado. Metacritic PC: 78. OpenCritic: 80, 81% de recomendação. No Steam, o jogo atingiu pico de <strong>248.530 jogadores simultâneos</strong> no lançamento e bateu novo recorde de <strong>276.261 simultâneos</strong> com o Patch 1.01.00 (30/03/2026), chegando ao 3º mais jogado do Steam naquele domingo. O jogo vendeu <strong>5 milhões de cópias em menos de um mês</strong> (PC, PS5 e Xbox), com avaliação <strong>Very Positive (87%)</strong> e mais de 139 mil análises na Steam até abril de 2026.
+            * IGN publicou nota provisória de 6/10 após 110 horas com o jogo ainda inacabado. Metacritic: 77 (PC) e 78 (PS5). OpenCritic: 74% de recomendação. No Steam, o jogo atingiu pico de <strong>248.530 jogadores simultâneos</strong> no lançamento e bateu novo recorde de <strong>276.261 simultâneos</strong> com o Patch 1.01.00 (30/03/2026), chegando ao 3º mais jogado do Steam naquele domingo. O jogo vendeu <strong>6 milhões de cópias em menos de três meses</strong> (PC, macOS, PS5 e Xbox), com avaliação <strong>Very Positive (~84%)</strong> e mais de 166 mil análises na Steam até agosto de 2026.
           </p>
         </div>
 
@@ -139,7 +139,7 @@ const CrimsonDesertReview = () => {
           <BarChart3 className="h-7 w-7 text-geek" />A Divergência Crítica vs Público
         </h2>
         <p>
-          Talvez o dado mais revelador do lançamento de Crimson Desert seja a diferença entre a recepção da crítica especializada (Metacritic 78) e a dos jogadores no Steam (87% Very Positive com 139 mil análises). Essa divergência de quase 10 pontos é significativa — e conta uma história diferente da manchete "nota abaixo do esperado."
+          Talvez o dado mais revelador do lançamento de Crimson Desert seja a diferença entre a recepção da crítica especializada (Metacritic 77/78) e a dos jogadores no Steam (~84% Very Positive com 166 mil análises). Essa divergência é significativa — e conta uma história diferente da manchete "nota abaixo do esperado."
         </p>
         <p>
           Os críticos profissionais avaliaram Crimson Desert com o contexto de dezenas de outros jogos em mente, especialmente os benchmarks do gênero — Elden Ring, The Witcher 3, Breath of the Wild. Nesses comparativos, a narrativa fraca e os sistemas excessivos pesam. Os jogadores, por outro lado, avaliaram a experiência como produto isolado: "Passei 150 horas explorando Pywel e não me arrependo" é um sentimento recorrente nas análises positivas do Steam.
@@ -152,10 +152,10 @@ const CrimsonDesertReview = () => {
           <h3 className="font-bold text-geek mb-3 flex items-center gap-2"><TrendingUp className="h-5 w-5" />Comparativo: Crítica vs Jogadores (abril 2026)</h3>
           <div className="space-y-3">
             {[
-              { label: "Metacritic (críticos)", valor: 78, max: 100 },
-              { label: "OpenCritic", valor: 80, max: 100 },
-              { label: "Steam (usuários) — Very Positive", valor: 87, max: 100 },
-              { label: "Metacritic User Score", valor: 82, max: 100 },
+              { label: "Metacritic (críticos, PC)", valor: 77, max: 100 },
+              { label: "Metacritic (críticos, PS5)", valor: 78, max: 100 },
+              { label: "OpenCritic — % que recomenda", valor: 74, max: 100 },
+              { label: "Steam (usuários) — Very Positive", valor: 84, max: 100 },
             ].map((item) => (
               <div key={item.label}>
                 <div className="flex justify-between text-sm mb-1">
@@ -180,15 +180,15 @@ const CrimsonDesertReview = () => {
           O retorno em 2023–2024, com novos trailers mostrando um jogo fundamentalmente diferente do conceito original (que parecia mais próximo de um survival/MMORPG), revelou que a empresa havia reorientado completamente a visão do projeto. O produto final é um RPG de ação single-player — algo que a Pearl Abyss nunca havia feito antes em escala AAA. Essa inexperiência com o gênero explica tanto os acertos técnicos (tecnologia visual, combate) quanto as falhas (narrativa, design de missões).
         </p>
         <p>
-          A Pearl Abyss confirmou que não há DLC planejado — o foco pós-lançamento será inteiramente em updates gratuitos de qualidade de vida. Com o ritmo de patches mensais (1.00.03, 1.01.00, 1.02.00, 1.03.00, 1.04.00 entre março e abril de 2026), a empresa demonstrou compromisso com melhorias contínuas, o que tem sido refletido positivamente nas avaliações da comunidade.
+          No Dev Update de 2 de junho de 2026, a Pearl Abyss confirmou que um <strong>DLC pago está em desenvolvimento</strong>, sem data anunciada, e que uma versão para <strong>Nintendo Switch 2</strong> chega em 2027. Antes disso, foram 17 patches numerados entre março e agosto — todos gratuitos —, o que se refletiu positivamente nas avaliações da comunidade.
         </p>
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Vale a Pena Comprar? (Atualizado — Abril 2026)</h2>
         <p>
-          Com os patches lançados desde março — especialmente o <strong>1.04.00 de 22 de abril</strong>, que adicionou modos de dificuldade Easy/Normal/Hard — muitas das principais críticas do lançamento foram endereçadas. O jogo que chegou "Mixed" no Steam agora é "Very Positive" (87% com 139 mil análises). A situação melhorou substancialmente para jogadores que se frustraram com controles e dificuldade no lançamento.
+          Com os 17 patches lançados desde março — do <strong>1.04.00 de 22 de abril</strong>, que adicionou modos de dificuldade Easy/Normal/Hard, ao <strong>1.17.00 de 7 de agosto</strong>, passando pelo remapeamento de controles (1.09.00), pelo cross-save (1.14.00) e pela reformulação do comércio (1.16.00) — as principais críticas do lançamento foram endereçadas. O jogo que chegou "Mixed" no Steam agora é "Very Positive" (~84% com 166 mil análises). A situação melhorou substancialmente para jogadores que se frustraram com controles e dificuldade no lançamento.
         </p>
         <p>
-          A recomendação mais equilibrada da crítica veio da GamesRadar+: "Dedique tempo para sair do caminho principal e descubra quais de suas muitas facetas te atraem, e você encontrará um jogo muito melhor como sandbox do que como história." Com R$ 349,90 no lançamento (Standard) ou $69,99 USD na Steam global, é um jogo que justifica o preço para fãs de mundo aberto e combate. A Pearl Abyss confirmou que <strong>não há DLC planejado</strong> — o suporte continuará via updates gratuitos.
+          A recomendação mais equilibrada da crítica veio da GamesRadar+: "Dedique tempo para sair do caminho principal e descubra quais de suas muitas facetas te atraem, e você encontrará um jogo muito melhor como sandbox do que como história." Com R$ 349,90 no lançamento (Standard) ou $69,99 USD na Steam global, é um jogo que justifica o preço para fãs de mundo aberto e combate. A Pearl Abyss confirmou em junho que um <strong>DLC pago está em desenvolvimento</strong>, além da versão de Switch 2 prevista para 2027.
         </p>
       
       <h2 className="text-2xl font-bold mt-10 mb-4">A Importância dos Primeiros 30 Dias Pós-Lançamento</h2>
@@ -231,45 +231,45 @@ const CrimsonDesertReview = () => {
 
 
       <EditorialTake category="geek" title="Análise do Marcos: Crimson Desert — O Primeiro AAA da Pearl Abyss é uma Vitória Imperfeita">
-        <p>Criticar Crimson Desert comparando ao Elden Ring ou ao Witcher 3 é uma armadilha. A Pearl Abyss nunca fez um jogo assim antes — e que o resultado seja um RPG de ação com 5 milhões de cópias vendidas, 276 mil jogadores simultâneos no Steam e 87% de aprovação da comunidade fala muito sobre o que foi entregue. A narrativa fraca e os sistemas excessivos são falhas reais, mas <strong>são falhas de um jogo ambicioso demais, não de um jogo descuidado</strong>. O mundo de Pywel tem mais vida, detalhe técnico e conteúdo surpresa do que a maioria dos concorrentes — e isso conta. A divergência entre a nota da crítica (78) e a dos jogadores (87) não é a crítica errada: é uma medição diferente. Uma avalia Crimson Desert contra o estado da arte do gênero. A outra avalia quantas horas você vai passar feliz explorando. As duas têm razão.</p>
+        <p>Criticar Crimson Desert comparando ao Elden Ring ou ao Witcher 3 é uma armadilha. A Pearl Abyss nunca fez um jogo assim antes — e que o resultado seja um RPG de ação com 6 milhões de cópias vendidas, 276 mil jogadores simultâneos no Steam e cerca de 84% de aprovação da comunidade fala muito sobre o que foi entregue. A narrativa fraca e os sistemas excessivos são falhas reais, mas <strong>são falhas de um jogo ambicioso demais, não de um jogo descuidado</strong>. O mundo de Pywel tem mais vida, detalhe técnico e conteúdo surpresa do que a maioria dos concorrentes — e isso conta. A divergência entre a nota da crítica (77/78) e a dos jogadores (~84) não é a crítica errada: é uma medição diferente. Uma avalia Crimson Desert contra o estado da arte do gênero. A outra avalia quantas horas você vai passar feliz explorando. As duas têm razão.</p>
       </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {
-            title: "Crimson Desert — Metacritic PC",
+            title: "Crimson Desert — Metacritic (77 PC / 78 PS5)",
             url: "https://www.metacritic.com/game/crimson-desert/",
             publisher: "Metacritic",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
           {
             title: "Crimson Desert Review — PC Gamer (8/10)",
             url: "https://www.pcgamer.com/reviews/crimson-desert-review/",
             publisher: "PC Gamer",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
           {
             title: "Crimson Desert Review — GameSpot (7/10)",
             url: "https://www.gamespot.com/reviews/crimson-desert-review/1900-6418330/",
             publisher: "GameSpot",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
           {
-            title: "Crimson Desert — OpenCritic (80, Strong)",
+            title: "Crimson Desert — OpenCritic (74% recomendam)",
             url: "https://opencritic.com/game/16847/crimson-desert",
             publisher: "OpenCritic",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
           {
-            title: "Crimson Desert — Steam Store (87% Very Positive)",
+            title: "Crimson Desert — Steam Store (~84% Very Positive, 166 mil análises)",
             url: "https://store.steampowered.com/app/1277400/Crimson_Desert/",
             publisher: "Valve / Pearl Abyss",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
           {
             title: "Crimson Desert Patch Notes 1.04.00 — Pearl Abyss",
             url: "https://www.crimsondesert.com/news/detail?boardNo=1001&articleNo=182",
             publisher: "Pearl Abyss",
-            accessedAt: "Abril 2026",
+            accessedAt: "Agosto 2026",
           },
         ]}
       />
