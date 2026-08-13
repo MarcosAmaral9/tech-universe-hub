@@ -27,11 +27,11 @@ const CrimsonDesertVendasReview = () => {
           <span className="px-3 py-1 bg-geek/20 text-geek rounded-full text-sm font-medium">Review · Análise · Vendas</span>
         </div>
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-          Crimson Desert: 5 Milhões de Cópias, Metacritic 78 e Tudo que a Crítica Disse
+          Crimson Desert: 6 Milhões de Cópias, Metacritic 77/78 e Tudo que a Crítica Disse
         </h1>
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
-          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />Atualizado em 24 de Abril, 2026</span>
+          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />Atualizado em 13 de Agosto, 2026</span>
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />15 min de leitura</span>
         </div>
         <ShareWhatsApp />
@@ -44,7 +44,7 @@ const CrimsonDesertVendasReview = () => {
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          Crimson Desert foi lançado em 19 de março de 2026 e se tornou um dos maiores lançamentos do ano: <strong>2 milhões de cópias nas primeiras 24 horas</strong>, <strong>3 milhões no quinto dia</strong> e <strong>5 milhões em menos de um mês</strong> (anunciado em 15 de abril). As notas da crítica ficaram abaixo da hype — <strong>Metacritic 78</strong> e <strong>OpenCritic 80</strong> — mas os jogadores responderam de forma muito mais positiva. Este artigo reúne os dados de vendas, as análises críticas e a perspectiva dos jogadores para uma visão completa do fenômeno Crimson Desert.
+          Crimson Desert foi lançado em 19 de março de 2026 e se tornou um dos maiores lançamentos do ano: <strong>2 milhões de cópias nas primeiras 24 horas</strong>, <strong>3 milhões na primeira semana</strong>, 5 milhões em 26 dias e <strong>6 milhões em menos de três meses</strong> (marca confirmada em junho). As notas da crítica ficaram abaixo da hype — <strong>Metacritic 77 (PC) e 78 (PS5)</strong>, com <strong>74% de recomendação no OpenCritic</strong> — mas os jogadores responderam de forma muito mais positiva. Este artigo reúne os dados de vendas, as análises críticas e a perspectiva dos jogadores para uma visão completa do fenômeno Crimson Desert.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -52,10 +52,10 @@ const CrimsonDesertVendasReview = () => {
         </h2>
         <div className="not-prose my-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { valor: "78", desc: "Metacritic (PC)" },
-            { valor: "80", desc: "OpenCritic (81% recomendam)" },
-            { valor: "87%", desc: "Steam Very Positive (+139k análises)" },
-            { valor: "5M+", desc: "Cópias vendidas em menos de 1 mês" },
+            { valor: "77/78", desc: "Metacritic (PC / PS5)" },
+            { valor: "74%", desc: "OpenCritic — críticos que recomendam" },
+            { valor: "84%", desc: "Steam Very Positive (166 mil análises)" },
+            { valor: "6M+", desc: "Cópias vendidas em menos de 3 meses" },
           ].map((item) => (
             <div key={item.desc} className="bg-card rounded-xl border border-geek/20 p-4 text-center">
               <div className="text-3xl font-bold text-geek">{item.valor}</div>
@@ -65,8 +65,9 @@ const CrimsonDesertVendasReview = () => {
         </div>
 
         <div className="not-prose my-6 p-4 bg-geek/10 border border-geek/30 rounded-xl text-sm text-muted-foreground">
-          <strong className="text-foreground">📈 Linha do tempo de vendas:</strong> 2M em 24h → 3M em 5 dias (24/03) → 4M em ~2 semanas (início de abril) → 5M em 26 dias (15/04/2026). A Pearl Abyss confirmou que todos os números são sell-through (vendas reais, não apenas remessas). O jogo permaneceu no top 10 de best-sellers da Steam e das lojas PlayStation e Xbox desde o lançamento. No Steam, o pico de jogadores simultâneos atingiu <strong>276.261</strong> com o Patch 1.01.00 em 30 de março — 3º mais jogado naquele domingo.
+          <strong className="text-foreground">📈 Linha do tempo de vendas:</strong> 2M em 24h (20/03) → 3M na primeira semana (24/03) → 4M em ~2 semanas (início de abril) → 5M em 26 dias (15/04) → <strong>6M em junho de 2026</strong>, menos de três meses após o lançamento. A Pearl Abyss confirmou que todos os números são sell-through (vendas reais, não apenas remessas) e distribuiu bônus de 5 milhões de wones a cada funcionário ao cruzar a marca de 5 milhões. No 1º trimestre de 2026, a receita operacional da empresa subiu 419,8% na comparação anual, para 328,5 bilhões de wones. No Steam, o pico de jogadores simultâneos atingiu <strong>276.261</strong> com o Patch 1.01.00 em 30 de março.
         </div>
+
 
         <AdLeaderboard className="my-8" />
 
