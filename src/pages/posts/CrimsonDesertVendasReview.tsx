@@ -229,8 +229,9 @@ const CrimsonDesertVendasReview = () => {
 
       <h2 className="text-2xl font-bold mt-10 mb-4">Perspectivas Para o Futuro do Título</h2>
       <p>
-        Com a confirmação de que não haverá DLC pago — apenas atualizações gratuitas de qualidade de vida — a Pearl Abyss sinaliza estratégia de longo prazo focada em maximizar satisfação da base atual de jogadores em vez de monetização adicional imediata. Essa abordagem, embora limite receita potencial a curto prazo, tem se mostrado eficaz para construir lealdade de comunidade e boca a boca positivo que pode beneficiar vendas continuadas e futuras entradas na franquia, caso a Pearl Abyss decida expandir o universo de Pywel em projetos subsequentes.
+        Durante os primeiros meses, a Pearl Abyss priorizou atualizações gratuitas de qualidade de vida em vez de monetização adicional — e só no Dev Update de 2 de junho confirmou que um <strong>DLC pago está em desenvolvimento</strong>, ainda sem data ou detalhes de conteúdo. A estratégia de entregar primeiro correções, modos de dificuldade, revanches de bosses e cross-save construiu lealdade de comunidade e boca a boca positivo antes de qualquer cobrança extra. Com a versão para Nintendo Switch 2 marcada para 2027, o universo de Pywel deve seguir recebendo suporte por pelo menos mais um ano.
       </p>
+
     
       <h2 className="text-2xl font-bold mt-10 mb-4">Comparando Crimson Desert com Outros Lançamentos de Mundo Aberto Recentes</h2>
       <p>
