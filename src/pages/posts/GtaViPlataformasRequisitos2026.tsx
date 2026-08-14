@@ -246,12 +246,72 @@ const GtaViPlataformasRequisitos2026 = () => {
           e instalou vários jogos provavelmente vai precisar desinstalar coisas ou comprar um SSD adicional.
         </p>
         <p>
-          O dia 1 de download vai ser desafiador globalmente. A Rockstar tradicionalmente libera o pré-download
-          (preload) 48 horas antes do lançamento — o que significa que, se a pré-venda estiver feita, o download pode
-          começar em <strong>17 de novembro de 2026</strong>, garantindo que o jogador esteja pronto para começar à
-          meia-noite local de 19 de novembro. Quem tem conexão lenta (até 50 Mbps) deve começar imediatamente quando o
-          preload abrir; em 100 Mbps, leva entre 4 e 6 horas; em fibra de 500+ Mbps, menos de 1 hora.
+          O pré-download das lojas digitais está confirmado para <strong>12 de novembro de 2026</strong>, uma semana
+          antes do lançamento — prazo folgado até para quem tem internet modesta. Em uma conexão de 50 Mbps, um arquivo
+          de ~180 GB leva cerca de 8 a 9 horas; em 100 Mbps, entre 4 e 5 horas; em fibra de 500 Mbps ou mais, menos de
+          uma hora. Vale programar o download para a madrugada, quando a rede doméstica e os servidores das lojas estão
+          menos congestionados, e deixar o console em modo de repouso com downloads em segundo plano ativados.
         </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">PS5, PS5 Pro, Series X e Series S: o que esperar de cada um</h2>
+        <p>
+          Todos os consoles da geração atual rodam a mesma versão do jogo, mas com metas técnicas diferentes. A Rockstar
+          não publicou modos gráficos oficiais; o quadro abaixo projeta o comportamento esperado com base no padrão dos
+          grandes lançamentos de 2025 e 2026 nessas máquinas.
+        </p>
+        <div className="not-prose my-6 overflow-x-auto rounded-xl border border-pink-500/20">
+          <table className="w-full text-sm bg-card table-fixed">
+            <thead>
+              <tr className="bg-pink-500/10 text-pink-200">
+                <th className="w-1/5 text-left py-3 px-4 font-bold">Console</th>
+                <th className="w-2/5 text-left py-3 px-4 font-bold">Expectativa técnica</th>
+                <th className="w-2/5 text-left py-3 px-4 font-bold">Para quem é</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { p: "PS5 (base)", t: "Modo qualidade em 4K reconstruído a 30 fps e modo desempenho perto de 60 fps em resolução dinâmica", q: "A maioria dos jogadores; equilíbrio entre imagem e fluidez" },
+                { p: "PS5 Pro", t: "Ganho de estabilidade no modo desempenho e upscaling próprio da Sony, com efeitos de iluminação mais completos", q: "Quem prioriza 60 fps constantes em TV 4K" },
+                { p: "Xbox Series X", t: "Perfil equivalente ao PS5, com vantagem em tempos de carregamento e memória disponível", q: "Ecossistema Xbox com TV 4K" },
+                { p: "Xbox Series S", t: "Alvo de 1080p/1440p reconstruído, texturas e distância de desenho reduzidas, provável trava em 30 fps", q: "Entrada mais barata na geração e monitores/TVs 1080p" },
+              ].map((r, i) => (
+                <tr key={r.p} className={`border-t border-border/60 ${i % 2 ? "bg-muted/20" : ""}`}>
+                  <td className="py-3 px-4 font-semibold break-words">{r.p}</td>
+                  <td className="py-3 px-4 text-xs text-muted-foreground break-words">{r.t}</td>
+                  <td className="py-3 px-4 text-xs break-words">{r.q}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="px-4 py-3 text-xs text-muted-foreground border-t border-border/60">
+            Projeções baseadas no comportamento típico de jogos AAA nesses consoles. A Rockstar não divulgou modos
+            gráficos oficiais de GTA VI.
+          </p>
+        </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Como preparar o console antes de novembro</h2>
+        <div className="not-prose my-6 grid md:grid-cols-2 gap-5">
+          <div className="bg-card rounded-xl border border-emerald-500/20 p-5">
+            <h3 className="font-bold text-emerald-400 mb-3">Armazenamento</h3>
+            <ul className="text-sm text-muted-foreground space-y-2">
+              <li>• Deixe pelo menos 200 GB livres para o jogo e o patch do dia 1.</li>
+              <li>• No PS5, a expansão precisa ser um SSD NVMe PCIe 4.0 com dissipador.</li>
+              <li>• No Xbox Series, só o cartão de expansão oficial roda jogos da geração atual direto do acessório.</li>
+              <li>• HDs externos USB servem para guardar jogos antigos e liberar o SSD interno.</li>
+            </ul>
+          </div>
+          <div className="bg-card rounded-xl border border-amber-500/20 p-5">
+            <h3 className="font-bold text-amber-400 mb-3">Imagem e rede</h3>
+            <ul className="text-sm text-muted-foreground space-y-2">
+              <li>• Ative HDR e, na TV, o modo jogo com VRR quando disponível.</li>
+              <li>• Use cabo HDMI 2.1 se pretende jogar em 4K com taxa alta.</li>
+              <li>• Prefira cabo de rede ao Wi-Fi durante o preload.</li>
+              <li>• Ative downloads em modo de repouso para baixar de madrugada.</li>
+            </ul>
+          </div>
+        </div>
+
+
 
 
 
