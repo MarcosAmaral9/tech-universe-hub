@@ -350,7 +350,7 @@ const GtaViNovembro2026 = () => {
                 { k: "Pré-venda aberta em", v: "25 de junho de 2026" },
                 { k: "Protagonistas", v: "Lucia Caminos e Jason Duval" },
                 { k: "Cenário", v: "Estado fictício de Leonida (inspirado na Flórida) — Vice City, Leonida Keys, pântanos, interior" },
-                { k: "GTA Online VI", v: "Confirmado para lançamento simultâneo com a campanha" },
+                { k: "GTA Online", v: "Não confirmado para o dia 1 — lançamento foca na campanha single-player" },
               ].map((r, i) => (
                 <tr key={r.k} className={`border-t border-border/60 ${i % 2 ? "bg-muted/20" : ""}`}>
                   <td className="py-3 px-4 font-semibold break-words">{r.k}</td>
