@@ -360,6 +360,62 @@ const GtaViNovembro2026 = () => {
             </tbody>
           </table>
         </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Cronograma detalhado da semana de lançamento</h2>
+        <p>
+          Entre o preload e a virada de 19 de novembro existe uma sequência previsível de eventos, baseada no padrão da
+          própria Rockstar em Red Dead Redemption 2 e nos avisos já publicados nas lojas digitais. Guarde estas datas:
+        </p>
+        <div className="not-prose my-6 overflow-x-auto rounded-xl border border-geek/20">
+          <table className="w-full text-sm bg-card table-fixed">
+            <thead>
+              <tr className="bg-geek/10 text-geek">
+                <th className="w-1/4 text-left py-3 px-4 font-bold">Data</th>
+                <th className="w-3/4 text-left py-3 px-4 font-bold">O que acontece</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { k: "12 de novembro", v: "Início do pré-download nas lojas digitais (PS Store e Xbox) para quem já comprou. O arquivo baixa, mas fica bloqueado até o unlock." },
+                { k: "13 a 18 de novembro", v: "Janela habitual do trailer de lançamento e do embargo de análises da imprensa especializada." },
+                { k: "18 de novembro (noite)", v: "Servidores de autenticação começam a liberar o desbloqueio conforme o fuso de cada região." },
+                { k: "19 de novembro", v: "Lançamento global em PS5 (incluindo PS5 Pro) e Xbox Series X|S; mídia física chega às lojas no mesmo dia." },
+              ].map((r, i) => (
+                <tr key={r.k} className={`border-t border-border/60 ${i % 2 ? "bg-muted/20" : ""}`}>
+                  <td className="py-3 px-4 font-semibold break-words">{r.k}</td>
+                  <td className="py-3 px-4 text-muted-foreground break-words">{r.v}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="px-4 py-3 text-xs text-muted-foreground border-t border-border/60">
+            As datas de preload e lançamento são oficiais; a janela de trailer e de reviews segue o padrão histórico da
+            Rockstar e ainda não foi anunciada.
+          </p>
+        </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Checklist para chegar pronto ao dia 19</h2>
+        <div className="not-prose my-6 grid md:grid-cols-2 gap-5">
+          <div className="bg-card rounded-xl border border-emerald-500/20 p-5">
+            <h3 className="font-bold text-emerald-400 mb-3">Antes do preload</h3>
+            <ul className="text-sm text-muted-foreground space-y-2">
+              <li>• Libere espaço no SSD do console — jogos recentes da Rockstar passam de 100 GB.</li>
+              <li>• Confirme que a compra está na mesma conta que você usa no console.</li>
+              <li>• Ative as atualizações automáticas para não perder o patch do dia 1.</li>
+              <li>• Se comprou mídia física, confirme a data de entrega com a loja.</li>
+            </ul>
+          </div>
+          <div className="bg-card rounded-xl border border-amber-500/20 p-5">
+            <h3 className="font-bold text-amber-400 mb-3">Na semana do lançamento</h3>
+            <ul className="text-sm text-muted-foreground space-y-2">
+              <li>• Evite redes sociais e vídeos com miniaturas: vazamentos de história circulam antes do unlock.</li>
+              <li>• Baixe o patch do dia 1 assim que ele aparecer — costuma sair com o preload já concluído.</li>
+              <li>• Desconfie de chaves baratas em marketplaces: revenda irregular é comum nessa janela.</li>
+              <li>• Só confie em data e horário anunciados pelos canais oficiais da Rockstar.</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
 
 
