@@ -325,6 +325,98 @@ const CrimsonDesertPatches = () => {
           Essa divulgação não foi um gesto espontâneo da desenvolvedora: desde 2024, a Valve exige que todo jogo publicado na Steam que utilize conteúdo gerado por inteligência artificial declare esse uso publicamente na própria página da loja, política implementada após preocupações levantadas pela comunidade de desenvolvedores e jogadores sobre transparência no uso dessas ferramentas. O sistema de avaliações da Steam, por sua vez, funciona através de categorias automáticas calculadas a partir da proporção de avaliações positivas e negativas dos últimos 30 dias e do histórico total acumulado desde o lançamento — rótulos como "Mixed" (Avaliação Mista), "Mostly Positive" (Majoritariamente Positiva) e "Very Positive" (Muito Positiva) não são opiniões editoriais da Valve, mas cálculos estatísticos públicos. Em agosto de 2026, Crimson Desert acumula <strong>166 mil análises na Steam com cerca de 84% positivas</strong>, mantendo o selo Very Positive conquistado ao longo dos patches.
         </p>
 
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Zap className="h-7 w-7 text-geek" />
+          Destaque: Cross-Save entre PC e Consoles (Patch 1.14.00)
+        </h2>
+        <p>
+          Entregue em <strong>16 de julho de 2026</strong>, o cross-save foi a mudança estrutural mais pedida depois dos modos de dificuldade. Ele permite continuar o mesmo save entre PC (Steam, Epic e cliente da Pearl Abyss), PlayStation 5 e Xbox Series X|S, desde que todas as versões estejam vinculadas à mesma conta Pearl Abyss. Na prática, quem jogava no console à noite e queria aproveitar o desempenho do PC no fim de semana deixou de precisar recomeçar a jornada de Kliff.
+        </p>
+        <div className="not-prose my-6 grid md:grid-cols-2 gap-5">
+          <div className="bg-card rounded-xl border border-emerald-500/20 p-5">
+            <h3 className="font-bold text-emerald-400 mb-3">Como ativar</h3>
+            <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
+              <li>Abra o menu principal e acesse <strong>Conta &gt; Vincular Pearl Abyss</strong>.</li>
+              <li>Faça login com a mesma conta em todas as plataformas usadas.</li>
+              <li>No slot de save, escolha <strong>Enviar para a nuvem</strong> antes de fechar o jogo.</li>
+              <li>Na outra plataforma, selecione <strong>Baixar save da nuvem</strong> na tela de carregamento.</li>
+            </ol>
+          </div>
+          <div className="bg-card rounded-xl border border-amber-500/20 p-5">
+            <h3 className="font-bold text-amber-400 mb-3">Limitações conhecidas</h3>
+            <ul className="text-sm text-muted-foreground space-y-2">
+              <li>• A sincronização é manual: o jogo não sobrescreve saves automaticamente para evitar perda de progresso.</li>
+              <li>• Itens de edições especiais e bônus de pré-venda ficam presos à loja onde foram comprados.</li>
+              <li>• Configurações de controle e vídeo não viajam junto — são locais de cada plataforma.</li>
+              <li>• Conquistas/troféus continuam separados por ecossistema.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Zap className="h-7 w-7 text-geek" />
+          Destaque: Comércio Reformulado (Patch 1.16.00)
+        </h2>
+        <p>
+          A reformulação do comércio, lançada em <strong>30 de julho de 2026</strong> e refinada pelos hotfixes 1.16.01 a 1.16.04, transformou um sistema secundário em uma fonte real de renda. São <strong>133 novos postos de troca</strong> espalhados por Pywel, com preços que variam por região, por estação e pela reputação de Kliff junto a cada facção.
+        </p>
+        <div className="not-prose my-6 overflow-x-auto">
+          <table className="w-full table-fixed border-collapse bg-card rounded-xl overflow-hidden text-sm">
+            <thead><tr className="bg-secondary">
+              <th className="text-left py-3 px-4 break-words">Antes do 1.16.00</th>
+              <th className="text-left py-3 px-4 break-words">Depois do 1.16.00</th>
+            </tr></thead>
+            <tbody>
+              {[
+                ["Preços fixos por item em quase todo o mapa", "Preços dinâmicos por região, com oferta e demanda visíveis no menu"],
+                ["Poucos compradores relevantes fora das cidades", "133 postos de troca, incluindo rotas em áreas antes vazias"],
+                ["Carga limitada e sem incentivo a caravanas", "Carroças e montarias de carga com bônus de volume por rota"],
+                ["Reputação sem efeito prático no comércio", "Reputação de facção altera margem de lucro e itens disponíveis"],
+              ].map(([a, b]) => (
+                <tr key={a} className="border-t border-border">
+                  <td className="py-3 px-4 text-muted-foreground break-words">{a}</td>
+                  <td className="py-3 px-4 text-geek break-words">{b}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <CheckCircle className="h-7 w-7 text-emerald-400" />
+          O Que Mudou para Cada Tipo de Jogador
+        </h2>
+        <div className="not-prose my-6 grid md:grid-cols-3 gap-4">
+          {[
+            {
+              perfil: "Quem nunca jogou",
+              cor: "border-green-500/30 bg-green-500/5",
+              desc: "Comece direto no modo Easy ou Normal, com baú de armazenamento, função Lock de itens, mais pontos de fast travel e tempos de carregamento bem menores. A versão de agosto é bem mais amigável que a de março.",
+            },
+            {
+              perfil: "Quem parou depois do lançamento",
+              cor: "border-blue-500/30 bg-blue-500/5",
+              desc: "Vale revisitar: Boss Rematch e Re-blockade permitem refazer chefes, Extraction devolve materiais de refinamento e o comércio reformulado dá um novo motivo para explorar Pywel com o save antigo.",
+            },
+            {
+              perfil: "Quem já zerou",
+              cor: "border-violet-500/30 bg-violet-500/5",
+              desc: "O conteúdo pós-jogo cresceu com 120 montarias e pets, 70 trajes e itens, dificuldade Hard e as rotas de comércio de alto risco. O DLC pago confirmado no Dev Update de junho é o próximo marco.",
+            },
+          ].map(({ perfil, cor, desc }) => (
+            <div key={perfil} className={`rounded-xl border p-5 ${cor}`}>
+              <h3 className="font-bold text-geek text-base mb-2">{perfil}</h3>
+              <p className="text-sm text-muted-foreground mb-0">{desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Como Garantir que Você Está na Versão Mais Recente</h2>
+        <p>
+          Todos os patches citados aqui são obrigatórios e aplicados automaticamente, mas configurações de atualização em segundo plano podem deixar o jogo desatualizado por dias. No <strong>Steam</strong>, clique com o botão direito no jogo, acesse <strong>Propriedades &gt; Atualizações</strong> e mantenha "Sempre manter este jogo atualizado"; em caso de erro de versão, use <strong>Arquivos Locais &gt; Verificar integridade</strong>. No <strong>PS5</strong>, o caminho é <strong>Opções &gt; Gerenciar conteúdo do jogo &gt; Atualizações automáticas</strong>. No <strong>Xbox Series X|S</strong>, ative <strong>Manter meus jogos e apps atualizados</strong> nas configurações do console. A versão instalada aparece no canto inferior da tela de título — se o número for menor que <strong>1.17.00</strong>, o jogo ainda não recebeu as correções mais recentes.
+        </p>
+
+
         <h2 className="text-2xl font-bold mt-10 mb-4">Planos Futuros</h2>
         <p>
           No <strong>Dev Update de 2 de junho de 2026</strong>, a Pearl Abyss mudou o discurso anterior de que não haveria conteúdo pago: o estúdio confirmou que <strong>trabalha em um DLC para Crimson Desert</strong>, sem revelar detalhes ou data. O mesmo comunicado detalhou o plano de junho a setembro — melhorias na coerência narrativa da jornada de Kliff, evolução do Re-blockade, cross-save (entregue em 16 de julho) e mais conteúdo de qualidade de vida. Com <strong>6 milhões de cópias vendidas</strong> (marca atingida em junho, menos de três meses após o lançamento) e uma <strong>versão para Nintendo Switch 2 prevista para o início de 2027</strong>, o suporte deve seguir ao longo do ano. O próximo grande projeto da Pearl Abyss é o <strong>DokeV</strong>, que usará a mesma BlackSpace Engine.
