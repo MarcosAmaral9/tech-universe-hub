@@ -239,6 +239,46 @@ const GtaViPreVendaEdicoes2026 = () => {
           logístico habitual do varejo.
         </p>
 
+        <h2 className="text-2xl font-bold mt-10 mb-4">Standard ou Ultimate: o que muda na prática</h2>
+        <p>
+          A diferença entre as duas edições é de <strong>R$ 100 no Brasil</strong> (R$ 449,90 contra R$ 549,90) e de
+          <strong> US$ 20 nos Estados Unidos</strong>. A campanha é exatamente a mesma: nenhuma missão, personagem ou
+          região de Leonida fica atrás do pagamento extra. O que a Ultimate entrega é conteúdo cosmético e bônus de
+          progressão, o tipo de item que a Rockstar historicamente também vende avulso depois do lançamento.
+        </p>
+        <div className="not-prose my-6 grid md:grid-cols-2 gap-5">
+          <div className="bg-card rounded-xl border border-geek/20 p-5">
+            <h3 className="font-bold text-geek mb-3">Vale a Standard se você…</h3>
+            <ul className="text-sm text-muted-foreground space-y-2">
+              <li>• Joga principalmente a campanha e não liga para cosméticos.</li>
+              <li>• Prefere esperar avaliações antes de investir mais.</li>
+              <li>• Quer o menor desembolso possível na virada do lançamento.</li>
+            </ul>
+          </div>
+          <div className="bg-card rounded-xl border border-pink-500/20 p-5">
+            <h3 className="font-bold text-pink-300 mb-3">Vale a Ultimate se você…</h3>
+            <ul className="text-sm text-muted-foreground space-y-2">
+              <li>• Pretende jogar centenas de horas e aproveitar todo bônus disponível.</li>
+              <li>• Costuma comprar pacotes cosméticos avulsos depois — nesse caso o combo sai mais barato.</li>
+              <li>• Quer resolver a compra de uma vez e não pensar mais no assunto.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Formas de pagamento e IOF para o comprador brasileiro</h2>
+        <p>
+          Comprar pela <strong>PS Store ou Xbox em reais</strong> é a rota mais simples: o preço já sai convertido, sem
+          IOF de câmbio, e o parcelamento depende da bandeira do cartão cadastrado. Comprar em dólar (Rockstar Store ou
+          conta estrangeira) adiciona <strong>IOF sobre compras internacionais</strong> e o spread do cartão, o que
+          costuma anular qualquer vantagem aparente de preço. Vale conferir também as carteiras digitais: saldo
+          pré-pago comprado em promoção é a forma mais comum de reduzir o valor final sem recorrer a chave de terceiros.
+        </p>
+        <p>
+          Se o orçamento aperta, lembre-se de que a pré-venda digital pode ser cancelada com reembolso integral até o
+          lançamento nas lojas oficiais — ou seja, garantir o pedido agora e reavaliar em novembro é uma estratégia de
+          baixo risco, desde que você acompanhe o prazo de cada plataforma.
+        </p>
+
 
 
         <EditorialTake category="geek">
