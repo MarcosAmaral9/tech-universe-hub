@@ -1,6 +1,6 @@
 # Auditoria SEO + E-E-A-T
 
-Gerado em 18/08/2026, 21:53:17.
+Gerado em 18/08/2026, 21:53:23.
 
 ## Resumo executivo
 
