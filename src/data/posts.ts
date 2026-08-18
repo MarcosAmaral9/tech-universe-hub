@@ -220,8 +220,122 @@ import elonMuskTrilionarioImg from "@/assets/elon-musk-primeiro-trilionario-ipo-
 import recuperacaoJudicialImg from "@/assets/recuperacao-judicial-empresas-brasil-2026.webp";
 import avancoRoboticaImg from "@/assets/avanco-robotica-2026-humanoides.webp";
 import robosChinaImg from "@/assets/robos-humanoides-china-2026.webp";
+import zooxAmazonImg from "@/assets/zoox-robotaxi-amazon-2026.webp";
+import ponyAiComboiosImg from "@/assets/pony-ai-comboios-caminhoes-2026.webp";
+import minidramasIaImg from "@/assets/minidramas-ia-redes-sociais-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 16 Ago 2026 — IA (Zoox · carros sem motorista da Amazon) ───────
+  {
+    id: "237",
+    slug: "zoox-carros-sem-motorista-amazon-2026",
+    title: "Os Carros Sem Motorista da Amazon: Como a Zoox Saiu do Teste e Começou a Cobrar pela Corrida",
+    excerpt:
+      "A Zoox, subsidiária da Amazon, criou um robotáxi sem volante e sem pedais e passou a cobrar por corridas em Las Vegas em agosto de 2026. Entenda a isenção da NHTSA que destravou a operação, onde os veículos circulam, como a tecnologia funciona e por que isso ainda não chega ao Brasil.",
+    content: "",
+    category: "ia",
+    subtopic: "robotica",
+    image: zooxAmazonImg,
+    author: "VICIO<CODE>",
+    date: "2026-08-16",
+    readTime: "12 min",
+    faq: [
+      {
+        q: "A Amazon é dona da Zoox?",
+        a: "Sim. A Amazon comprou a Zoox em 2020 e a empresa opera como subsidiária, com marca, frota e equipe próprias.",
+      },
+      {
+        q: "O carro da Zoox realmente não tem volante?",
+        a: "Não tem volante nem pedais. É um veículo bidirecional com quatro assentos voltados para o centro, e por isso precisou de uma isenção da NHTSA, concedida em julho de 2026, para poder ser usado comercialmente.",
+      },
+      {
+        q: "Já é possível pagar por uma corrida da Zoox?",
+        a: "Sim, em Las Vegas, desde 10 de agosto de 2026. Em São Francisco o serviço segue no formato de programa de primeiros passageiros, e Austin e Miami foram anunciadas para 2026.",
+      },
+      {
+        q: "Quantos veículos a Zoox pode colocar na rua?",
+        a: "Pela isenção concedida em julho de 2026, até 5.000 unidades ao longo de dois anos. É um teto regulatório, não uma previsão de produção da empresa.",
+      },
+      {
+        q: "Os robotáxis da Zoox vão chegar ao Brasil?",
+        a: "Não há anúncio nesse sentido. Faltam regulamentação para veículos sem controles manuais, mapeamento de alta precisão e viabilidade de custo diante do preço das corridas no mercado brasileiro.",
+      },
+    ],
+  },
+  // ── 16 Ago 2026 — IA (Pony.ai · comboios de caminhões autônomos) ───
+  {
+    id: "238",
+    slug: "pony-ai-comboios-caminhoes-autonomos-2026",
+    title: "Comboios de Caminhões Autônomos: Como a Pony.ai Colocou o Modelo 1+N nas Estradas da China",
+    excerpt:
+      "A Pony.ai foi a primeira empresa autorizada a testar comboios de caminhões autônomos em rodovias interprovinciais chinesas, no formato 1+N. Veja os números reais de frota e receita, a parceria com a SANY, as metas até 2030 e o que muda para o frete brasileiro.",
+    content: "",
+    category: "ia",
+    subtopic: "robotica",
+    image: ponyAiComboiosImg,
+    author: "VICIO<CODE>",
+    date: "2026-08-16",
+    readTime: "13 min",
+    faq: [
+      {
+        q: "O que significa o comboio 1+N da Pony.ai?",
+        a: "É uma formação em que apenas o caminhão líder leva um operador de segurança a bordo, enquanto os veículos seguidores operam de forma autônoma, coordenados com o líder.",
+      },
+      {
+        q: "Esses caminhões já rodam sem ninguém dentro?",
+        a: "Nos testes autorizados no formato 1+N, os caminhões seguidores operam sem operador a bordo. O líder mantém um profissional de segurança e a operação acontece em corredores rodoviários específicos aprovados.",
+      },
+      {
+        q: "Quantos caminhões a Pony.ai tem em operação?",
+        a: "Cerca de 200 unidades em novembro de 2025, com mais de 1 bilhão de tonelada-quilômetro de carga acumulada. A meta divulgada é chegar a 500 a 1.000 caminhões pesados de 4ª geração em dois a três anos.",
+      },
+      {
+        q: "Quem fabrica os caminhões autônomos da Pony.ai?",
+        a: "A Pony.ai desenvolve o sistema de condução e trabalha com montadoras. O caminhão pesado de 4ª geração é co-desenvolvido com a SANY Heavy Truck, e o caminhão leve L4 lançado em abril de 2026 foi feito com a CATL.",
+      },
+      {
+        q: "Comboios autônomos podem operar no Brasil?",
+        a: "Não em rodovia pública com caminhão sem condutor, porque falta regulamentação específica. A automação viável hoje no país acontece em áreas privadas, como mineração, agronegócio e pátios logísticos.",
+      },
+    ],
+  },
+  // ── 16 Ago 2026 — IA (Minidramas gerados por IA nas redes) ─────────
+  {
+    id: "239",
+    slug: "minidramas-ia-redes-sociais-2026",
+    title: "O Tsunami de Minidramas Feitos por IA: Como os Vídeos Verticais Tomaram Conta das Redes",
+    excerpt:
+      "Episódios de um minuto, ganchos a cada quinze segundos e nenhum ator no set. Veja os números reais da indústria de minidramas gerados por IA, como funciona a monetização por moedas e anúncios, o que as plataformas estão fazendo e como identificar um episódio feito por inteligência artificial.",
+    content: "",
+    category: "ia",
+    subtopic: "criatividade",
+    image: minidramasIaImg,
+    author: "VICIO<CODE>",
+    date: "2026-08-16",
+    readTime: "12 min",
+    faq: [
+      {
+        q: "O que é um minidrama (microdrama)?",
+        a: "É uma série vertical com episódios de um a dois minutos, feita para celular, com ganchos constantes e cobrança por episódio, anúncio ou assinatura. O formato surgiu na China e se espalhou por apps como ReelShort e DramaBox.",
+      },
+      {
+        q: "Minidramas feitos por IA dão dinheiro?",
+        a: "O setor movimenta bilhões — o ReelShort registrou cerca de US$ 1,2 bilhão em gasto de consumidores em 2025 —, mas levantamento do 36Kr aponta que cerca de 90% dos títulos gerados por IA operam no prejuízo, porque o custo decisivo migrou da produção para a compra de audiência.",
+      },
+      {
+        q: "Como saber se um vídeo foi gerado por inteligência artificial?",
+        a: "Observe mãos e orelhas deformadas entre cortes, objetos de fundo inconsistentes, textura entre filme e videogame, vozes sem respiração e ausência de créditos de elenco. A etiqueta de conteúdo sintético da plataforma, quando existe, é a confirmação mais rápida.",
+      },
+      {
+        q: "As plataformas estão combatendo esse conteúdo?",
+        a: "Parcialmente. O YouTube tratou publicamente do combate ao chamado AI slop na carta anual de janeiro de 2026, o TikTok oferece desde novembro de 2025 um controle para reduzir conteúdo de IA no feed e a Meta exige rotulagem. Nenhuma dessas medidas proíbe o formato.",
+      },
+      {
+        q: "Usar IA para criar minidramas é legal?",
+        a: "Gerar ficção com IA não é proibido, mas há limites: uso de imagem ou voz de pessoa real sem autorização, reprodução de obra protegida e publicidade não identificada geram responsabilidade. A discussão sobre direitos autorais no treinamento dos modelos segue aberta.",
+      },
+    ],
+  },
   // ── 11 Ago 2026 — IA (Avanço da robótica · humanoides) ─────────────
   {
     id: "235",

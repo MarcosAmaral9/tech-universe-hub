@@ -1,14 +1,95 @@
 {
-  "generatedAt": "2026-08-11T22:22:06.117Z",
+  "generatedAt": "2026-08-18T21:53:23.428Z",
   "counts": {
     "OK": 16,
-    "A": 89,
+    "A": 90,
     "B": 2,
     "C": 13,
-    "D": 87
+    "D": 89
   },
   "missingFiles": [],
   "reports": [
+    {
+      "slug": "zoox-carros-sem-motorista-amazon-2026",
+      "file": "ZooxCarrosSemMotoristaAmazon2026.tsx",
+      "keyword": "zoox carros motorista",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 7,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1381,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "apenas ~1381 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "pony-ai-comboios-caminhoes-autonomos-2026",
+      "file": "PonyAiComboiosCaminhoes2026.tsx",
+      "keyword": "pony ai comboios",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1282,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "apenas ~1282 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "minidramas-ia-redes-sociais-2026",
+      "file": "MinidramasIARedesSociais2026.tsx",
+      "keyword": "minidramas ia redes",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1402,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~1402 palavras (mínimo 1500)"
+      ]
+    },
     {
       "slug": "avanco-robotica-2026-robos-humanoides",
       "file": "AvancoRobotica2026.tsx",
@@ -1471,7 +1552,7 @@
         "articleSourcesCount": 0,
         "hasArticleSources": false,
         "hasEditorial": true,
-        "wordCount": 2337,
+        "wordCount": 2550,
         "has1500Words": true
       },
       "bucket": "B",
@@ -2069,16 +2150,15 @@
         "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 5,
+        "articleSourcesCount": 7,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1462,
-        "has1500Words": false
+        "wordCount": 2050,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
-        "keyword ausente em excerpt",
-        "apenas ~1462 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -2095,10 +2175,10 @@
         "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 6,
+        "articleSourcesCount": 7,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 2000,
+        "wordCount": 2144,
         "has1500Words": true
       },
       "bucket": "A",
@@ -4006,7 +4086,7 @@
         "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1909,
+        "wordCount": 1979,
         "has1500Words": true
       },
       "bucket": "OK",
@@ -4029,7 +4109,7 @@
         "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1684,
+        "wordCount": 1704,
         "has1500Words": true
       },
       "bucket": "A",
@@ -4083,7 +4163,7 @@
         "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 2007,
+        "wordCount": 2052,
         "has1500Words": true
       },
       "bucket": "OK",
@@ -4318,7 +4398,7 @@
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1902,
+        "wordCount": 2199,
         "has1500Words": true
       },
       "bucket": "A",
@@ -4372,7 +4452,7 @@
         "articleSourcesCount": 5,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1777,
+        "wordCount": 1999,
         "has1500Words": true
       },
       "bucket": "A",
