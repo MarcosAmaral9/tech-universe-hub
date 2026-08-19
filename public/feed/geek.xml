@@ -5,8 +5,17 @@
     <link>https://viciocode.com</link>
     <description>Novos artigos de Geek &amp; Games no VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Fri, 24 Jul 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed/geek.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Proibições do Discord no Brasil: O Que Foi Suspenso, O Que Continua Funcionando e o Risco de Bloqueio</title>
+      <link>https://viciocode.com/post/discord-brasil-suspensao-lives-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/discord-brasil-suspensao-lives-2026</guid>
+      <pubDate>Tue, 18 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Desde 17 de agosto de 2026, vídeo, live e compartilhamento de tela do Discord estão desligados no Brasil por determinação da ANPD. Veja a cronologia confirmada, a base legal no ECA Digital, o que ainda funciona e por que um bloqueio total depende da Justiça.</description>
+      <category>Geek &amp; Games</category>
+      <enclosure url="https://viciocode.com/assets/discord-brasil-suspensao-lives-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>Balatro — Guia Completo: O Roguelike de Pôquer Que Conquistou o Mundo, o Dev Anônimo e Como Chegar ao Ante 8</title>
       <link>https://viciocode.com/post/balatro-guia-completo-2024</link>
@@ -447,15 +456,6 @@
       <description>Pywel tem ~90 km², o dobro do mapa de Skyrim. Guia completo das 5 regiões: Hernand, Pailune, Demeniss, Delesyia e Crimson Desert — biomas, bosses, fast travel e lore.</description>
       <category>Geek &amp; Games</category>
       <enclosure url="https://viciocode.com/assets/crimson-desert-mapa-regioes-pywel.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Dragon Age Veilguard Review 2026: Vale a Pena?</title>
-      <link>https://viciocode.com/post/dragon-age-veilguard-review-2026</link>
-      <guid isPermaLink="true">https://viciocode.com/post/dragon-age-veilguard-review-2026</guid>
-      <pubDate>Tue, 17 Mar 2026 12:00:00 GMT</pubDate>
-      <description>Lançado em outubro 2024 após quase uma década de desenvolvimento, Veilguard dividiu os fãs. Metacritic 83 — análise honesta do que funcionou e o que desapontou.</description>
-      <category>Geek &amp; Games</category>
-      <enclosure url="https://viciocode.com/assets/dragon-age-veilguard-review-2026.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>
