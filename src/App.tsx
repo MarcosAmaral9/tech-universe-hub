@@ -229,6 +229,7 @@ const RobosChina2026 = lazy(() => import("./pages/posts/RobosChina2026"));
 const ZooxCarrosSemMotoristaAmazon2026 = lazy(() => import("./pages/posts/ZooxCarrosSemMotoristaAmazon2026"));
 const PonyAiComboiosCaminhoes2026 = lazy(() => import("./pages/posts/PonyAiComboiosCaminhoes2026"));
 const MinidramasIARedesSociais2026 = lazy(() => import("./pages/posts/MinidramasIARedesSociais2026"));
+const DiscordBrasilSuspensao2026 = lazy(() => import("./pages/posts/DiscordBrasilSuspensao2026"));
 const PragmataCapcom2026           = lazy(() => import("./pages/posts/PragmataCapcom2026"));
 const SarosPS52026                 = lazy(() => import("./pages/posts/SarosPS52026"));
 const OnePieceElbaf2026            = lazy(() => import("./pages/posts/OnePieceElbaf2026"));
@@ -538,6 +539,7 @@ const App = () => (
                 <Route path="/post/zoox-carros-sem-motorista-amazon-2026" element={<Suspense fallback={<div />}><ZooxCarrosSemMotoristaAmazon2026 /></Suspense>} />
                 <Route path="/post/pony-ai-comboios-caminhoes-autonomos-2026" element={<Suspense fallback={<div />}><PonyAiComboiosCaminhoes2026 /></Suspense>} />
                 <Route path="/post/minidramas-ia-redes-sociais-2026" element={<Suspense fallback={<div />}><MinidramasIARedesSociais2026 /></Suspense>} />
+                <Route path="/post/discord-brasil-suspensao-lives-2026" element={<Suspense fallback={<div />}><DiscordBrasilSuspensao2026 /></Suspense>} />
                 <Route path="/post/pragmata-capcom-guia-completo-2026" element={<Suspense fallback={<div />}><PragmataCapcom2026 /></Suspense>} />
                 <Route path="/post/saros-housemarque-ps5-2026" element={<Suspense fallback={<div />}><SarosPS52026 /></Suspense>} />
                 <Route path="/post/one-piece-elbaf-formato-sazonal-2026" element={<Suspense fallback={<div />}><OnePieceElbaf2026 /></Suspense>} />

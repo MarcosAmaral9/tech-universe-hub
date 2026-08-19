@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Sitemap do VICIO<CODE> — viciocode.com
-  Gerado automaticamente em: 2026-08-18
-  Total de URLs: 289 (28 páginas + 210 posts + 51 tags)
+  Gerado automaticamente em: 2026-08-19
+  Total de URLs: 290 (28 páginas + 211 posts + 51 tags)
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -144,6 +144,12 @@
     <loc>https://viciocode.com/instalar</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/discord-brasil-suspensao-lives-2026</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://viciocode.com/post/zoox-carros-sem-motorista-amazon-2026</loc>

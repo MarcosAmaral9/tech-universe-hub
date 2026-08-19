@@ -5,8 +5,17 @@
     <link>https://viciocode.com</link>
     <description>IA, investimentos, cultura geek e otaku — novos artigos do VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 16 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Proibições do Discord no Brasil: O Que Foi Suspenso, O Que Continua Funcionando e o Risco de Bloqueio</title>
+      <link>https://viciocode.com/post/discord-brasil-suspensao-lives-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/discord-brasil-suspensao-lives-2026</guid>
+      <pubDate>Tue, 18 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Desde 17 de agosto de 2026, vídeo, live e compartilhamento de tela do Discord estão desligados no Brasil por determinação da ANPD. Veja a cronologia confirmada, a base legal no ECA Digital, o que ainda funciona e por que um bloqueio total depende da Justiça.</description>
+      <category>Geek &amp; Games</category>
+      <enclosure url="https://viciocode.com/assets/discord-brasil-suspensao-lives-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>O Tsunami de Minidramas Feitos por IA: Como os Vídeos Verticais Tomaram Conta das Redes</title>
       <link>https://viciocode.com/post/minidramas-ia-redes-sociais-2026</link>
@@ -447,15 +456,6 @@
       <description>Tudo sobre a expansão War Sails de Mount &amp; Blade II: Bannerlord — combate naval, drakkars, fogo grego, estaleiros e a chegada dos Nords como 9ª cultura jogável de Calradia.</description>
       <category>Geek &amp; Games</category>
       <enclosure url="https://viciocode.com/assets/bannerlord-war-sails-expansao-2026.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Bannerlord: Territórios das Facções — Cidades e Castelos das 9 Culturas</title>
-      <link>https://viciocode.com/post/bannerlord-territorios-faccoes-calradia-2026</link>
-      <guid isPermaLink="true">https://viciocode.com/post/bannerlord-territorios-faccoes-calradia-2026</guid>
-      <pubDate>Tue, 16 Jun 2026 12:00:00 GMT</pubDate>
-      <description>Mapa narrado dos territórios de Calradia em Mount &amp; Blade II: Bannerlord. Cidades, castelos e contagem de vilas das 9 facções — Vlandia, Battania, Sturgia, Aserai, Khuzait, os 3 Impérios e os Nords da expansão War Sails.</description>
-      <category>Geek &amp; Games</category>
-      <enclosure url="https://viciocode.com/assets/bannerlord-territorios-faccoes-calradia-2026.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>

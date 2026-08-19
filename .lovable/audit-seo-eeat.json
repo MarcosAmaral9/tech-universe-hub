@@ -1,14 +1,43 @@
 {
-  "generatedAt": "2026-08-18T21:53:23.428Z",
+  "generatedAt": "2026-08-19T23:35:11.494Z",
   "counts": {
     "OK": 16,
     "A": 90,
     "B": 2,
     "C": 13,
-    "D": 89
+    "D": 90
   },
   "missingFiles": [],
   "reports": [
+    {
+      "slug": "discord-brasil-suspensao-lives-2026",
+      "file": "DiscordBrasilSuspensao2026.tsx",
+      "keyword": "discord brasil suspensao",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 8,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1271,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~1271 palavras (mínimo 1500)"
+      ]
+    },
     {
       "slug": "zoox-carros-sem-motorista-amazon-2026",
       "file": "ZooxCarrosSemMotoristaAmazon2026.tsx",
