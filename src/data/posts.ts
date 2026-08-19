@@ -223,8 +223,46 @@ import robosChinaImg from "@/assets/robos-humanoides-china-2026.webp";
 import zooxAmazonImg from "@/assets/zoox-robotaxi-amazon-2026.webp";
 import ponyAiComboiosImg from "@/assets/pony-ai-comboios-caminhoes-2026.webp";
 import minidramasIaImg from "@/assets/minidramas-ia-redes-sociais-2026.webp";
+import discordBrasilImg from "@/assets/discord-brasil-suspensao-lives-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 18 Ago 2026 — Geek (Discord · suspensão de vídeo no Brasil) ────
+  {
+    id: "240",
+    slug: "discord-brasil-suspensao-lives-2026",
+    title: "Proibições do Discord no Brasil: O Que Foi Suspenso, O Que Continua Funcionando e o Risco de Bloqueio",
+    excerpt:
+      "Desde 17 de agosto de 2026, vídeo, live e compartilhamento de tela do Discord estão desligados no Brasil por determinação da ANPD. Veja a cronologia confirmada, a base legal no ECA Digital, o que ainda funciona e por que um bloqueio total depende da Justiça.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: discordBrasilImg,
+    author: "VICIO<CODE>",
+    date: "2026-08-18",
+    readTime: "11 min",
+    faq: [
+      {
+        q: "O Discord foi banido no Brasil?",
+        a: "Não. O aplicativo continua disponível. O que foi suspenso, por medida preventiva da ANPD de 12 de agosto de 2026, são os recursos de vídeo: transmissões ao vivo, chamadas de vídeo e compartilhamento de tela, desligados pela empresa em 17 de agosto.",
+      },
+      {
+        q: "Quais recursos do Discord ainda funcionam no Brasil?",
+        a: "Mensagens diretas, servidores, canais de texto, canais e chamadas de voz e envio de arquivos seguem disponíveis normalmente, conforme comunicado da própria empresa.",
+      },
+      {
+        q: "Por que a ANPD suspendeu as lives do Discord?",
+        a: "Por falhas na proteção de crianças e adolescentes, apuradas após o suicídio de uma adolescente de 13 anos durante uma transmissão ao vivo em julho de 2026. A agência apontou ausência de medidas razoáveis contra riscos previstos no artigo 6º do ECA Digital.",
+      },
+      {
+        q: "O Discord pode ser bloqueado totalmente no país?",
+        a: "Apenas por decisão judicial. A AGU anunciou em agosto de 2026 que pediria a retirada da plataforma do ar por ação civil pública. A ANPD pode aplicar medidas corretivas e multa de até R$ 50 milhões por infração, mas não determina o bloqueio do aplicativo.",
+      },
+      {
+        q: "Quando o vídeo do Discord volta a funcionar?",
+        a: "Não há data definida. A suspensão vale até que a empresa comprove à ANPD a adoção de medidas efetivas de proteção a crianças e adolescentes. O Discord afirmou estar em diálogo com a agência.",
+      },
+    ],
+  },
   // ── 16 Ago 2026 — IA (Zoox · carros sem motorista da Amazon) ───────
   {
     id: "237",
