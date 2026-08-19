@@ -52,6 +52,16 @@ const Footer = () => {
                   Mundo Otaku
                 </Link>
               </li>
+              <li>
+                <Link to="/arquivo" className="text-muted-foreground hover:text-primary transition-colors">
+                  Todos os artigos
+                </Link>
+              </li>
+              <li>
+                <Link to="/cotacoes" className="text-muted-foreground hover:text-primary transition-colors">
+                  Cotações
+                </Link>
+              </li>
             </ul>
           </div>
 
