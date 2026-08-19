@@ -1,32 +1,33 @@
 # Auditoria SEO + E-E-A-T
 
-Gerado em 18/08/2026, 21:53:23.
+Gerado em 19/08/2026, 23:35:11.
 
 ## Resumo executivo
 
-- **Total auditado:** 210 posts (0 sem .tsx mapeado)
-- **PAGE_META manual presente:** 175 / 210
-- **Keyword no `<h1>`:** 146 / 210
-- **Keyword na introdução:** 134 / 210
-- **Keyword no excerpt:** 82 / 210
-- **AuthorBio:** 210 / 210
-- **ArticleSources (≥5 fontes):** 194 / 210
-- **EditorialTake / Análise do Marcos:** 210 / 210
-- **Conteúdo ≥1500 palavras:** 115 / 210
+- **Total auditado:** 211 posts (0 sem .tsx mapeado)
+- **PAGE_META manual presente:** 175 / 211
+- **Keyword no `<h1>`:** 146 / 211
+- **Keyword na introdução:** 134 / 211
+- **Keyword no excerpt:** 82 / 211
+- **AuthorBio:** 211 / 211
+- **ArticleSources (≥5 fontes):** 195 / 211
+- **EditorialTake / Análise do Marcos:** 211 / 211
+- **Conteúdo ≥1500 palavras:** 115 / 211
 
 
 
 ## Plano de levas sugerido
 
-1. **Levas SEO (rápidas, ~10 posts/leva)** — Adicionar PAGE_META + garantir keyword em h1/intro/excerpt para os 35 posts sem meta manual.
+1. **Levas SEO (rápidas, ~10 posts/leva)** — Adicionar PAGE_META + garantir keyword em h1/intro/excerpt para os 36 posts sem meta manual.
 2. **Levas Fontes (3 posts/leva)** — Adicionar 5ª fonte oficial verificável para os 16 posts com <5 fontes.
 3. **Levas Análise (5 posts/leva)** — Adicionar bloco "Análise do Marcos" para os 0 posts sem editorial.
-4. **Levas Expansão (2 posts/leva)** — Reescrever os 95 posts <1500 palavras, começando pelos mais curtos.
+4. **Levas Expansão (2 posts/leva)** — Reescrever os 96 posts <1500 palavras, começando pelos mais curtos.
 
 ---
 
-## 1) Posts sem PAGE_META manual — 35
+## 1) Posts sem PAGE_META manual — 36
 
+- `discord-brasil-suspensao-lives-2026` (1271w, 8 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1271 palavras (mínimo 1500)
 - `zoox-carros-sem-motorista-amazon-2026` (1381w, 7 fontes) — sem PAGE_META manual; keyword ausente em excerpt; apenas ~1381 palavras (mínimo 1500)
 - `pony-ai-comboios-caminhoes-autonomos-2026` (1282w, 6 fontes) — sem PAGE_META manual; apenas ~1282 palavras (mínimo 1500)
 - `minidramas-ia-redes-sociais-2026` (1402w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1402 palavras (mínimo 1500)
@@ -174,8 +175,9 @@ Gerado em 18/08/2026, 21:53:23.
 - `mushoku-tensei-3-temporada-2026` (1999w, 6 fontes) — keyword ausente em meta description; keyword ausente em excerpt
 - `bleach-tybw-parte-4-the-calamity-2026` (1711w, 6 fontes) — keyword ausente em meta description; keyword ausente em excerpt
 
-## 3) Posts com keyword ausente no `<h1>` — 64
+## 3) Posts com keyword ausente no `<h1>` — 65
 
+- `discord-brasil-suspensao-lives-2026` (1271w, 8 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1271 palavras (mínimo 1500)
 - `recuperacao-judicial-empresas-2026-como-afeta-clientes` (1283w, 7 fontes) — sem PAGE_META manual; keyword ausente em <h1>; apenas ~1283 palavras (mínimo 1500)
 - `helldivers-2-guia-completo-2024` (1188w, 7 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente em excerpt; apenas ~1188 palavras (mínimo 1500)
 - `ghost-of-yotei-guia-completo` (1445w, 7 fontes) — sem PAGE_META manual; keyword ausente em <h1>; apenas ~1445 palavras (mínimo 1500)
@@ -241,8 +243,9 @@ Gerado em 18/08/2026, 21:53:23.
 - `dragons-dogma-2-guia-completo-2024` (1859w, 5 fontes) — keyword ausente em meta title; keyword ausente em meta description; keyword ausente em meta keywords; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt
 - `balatro-guia-completo-2024` (1891w, 5 fontes) — keyword ausente em <h1>
 
-## 4) Posts com keyword ausente na introdução — 76
+## 4) Posts com keyword ausente na introdução — 77
 
+- `discord-brasil-suspensao-lives-2026` (1271w, 8 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1271 palavras (mínimo 1500)
 - `minidramas-ia-redes-sociais-2026` (1402w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1402 palavras (mínimo 1500)
 - `avanco-robotica-2026-robos-humanoides` (1317w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1317 palavras (mínimo 1500)
 - `nova-tabela-ir-2026-isencao-5-mil` (1666w, 6 fontes) — keyword ausente em meta description; keyword ausente na introdução; keyword ausente em excerpt
@@ -320,8 +323,9 @@ Gerado em 18/08/2026, 21:53:23.
 - `dragons-dogma-2-guia-completo-2024` (1859w, 5 fontes) — keyword ausente em meta title; keyword ausente em meta description; keyword ausente em meta keywords; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt
 - `vibe-coding-2026-criar-apps-sem-programar` (1615w, 6 fontes) — keyword ausente na introdução
 
-## 5) Posts com keyword ausente no excerpt — 128
+## 5) Posts com keyword ausente no excerpt — 129
 
+- `discord-brasil-suspensao-lives-2026` (1271w, 8 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1271 palavras (mínimo 1500)
 - `zoox-carros-sem-motorista-amazon-2026` (1381w, 7 fontes) — sem PAGE_META manual; keyword ausente em excerpt; apenas ~1381 palavras (mínimo 1500)
 - `minidramas-ia-redes-sociais-2026` (1402w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1402 palavras (mínimo 1500)
 - `avanco-robotica-2026-robos-humanoides` (1317w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1317 palavras (mínimo 1500)
@@ -478,7 +482,7 @@ Gerado em 18/08/2026, 21:53:23.
 
 —
 
-## 9) Posts com menos de 1500 palavras (ordenados por menor) — 95
+## 9) Posts com menos de 1500 palavras (ordenados por menor) — 96
 
 - `crimson-desert-mapa-regioes-pywel` (939w, 6 fontes) — apenas ~939 palavras (mínimo 1500)
 - `ia-mercado-financeiro-2026-investimentos` (1112w, 6 fontes) — keyword ausente em meta description; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1112 palavras (mínimo 1500)
@@ -491,6 +495,7 @@ Gerado em 18/08/2026, 21:53:23.
 - `fiis-2026-ainda-vale-investir` (1226w, 6 fontes) — keyword ausente na introdução; keyword ausente em excerpt; apenas ~1226 palavras (mínimo 1500)
 - `carteira-investimentos-iniciantes-2026` (1262w, 6 fontes) — keyword ausente em meta description; keyword ausente em excerpt; apenas ~1262 palavras (mínimo 1500)
 - `bannerlord-culturas-reinos-calradia-2026` (1266w, 5 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1266 palavras (mínimo 1500)
+- `discord-brasil-suspensao-lives-2026` (1271w, 8 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1271 palavras (mínimo 1500)
 - `bitcoin-criptomoedas-2026-investir` (1271w, 6 fontes) — keyword ausente em meta description; keyword ausente em <h1>; keyword ausente em excerpt; apenas ~1271 palavras (mínimo 1500)
 - `elon-musk-primeiro-trilionario-ipo-spacex` (1281w, 7 fontes) — sem PAGE_META manual; keyword ausente em excerpt; apenas ~1281 palavras (mínimo 1500)
 - `pony-ai-comboios-caminhoes-autonomos-2026` (1282w, 6 fontes) — sem PAGE_META manual; apenas ~1282 palavras (mínimo 1500)
