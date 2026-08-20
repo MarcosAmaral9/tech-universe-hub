@@ -106,8 +106,18 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/autor/marcos-amaral" className="text-muted-foreground hover:text-primary transition-colors">
+                  Autor: Marcos Amaral
+                </Link>
+              </li>
+              <li>
                 <Link to="/configuracoes" className="text-muted-foreground hover:text-primary transition-colors">
                   Configurações
+                </Link>
+              </li>
+              <li>
+                <Link to="/leitura-offline" className="text-muted-foreground hover:text-primary transition-colors">
+                  Leitura offline
                 </Link>
               </li>
             </ul>
@@ -116,16 +126,19 @@ const Footer = () => {
               <h2 className="font-display font-semibold mb-2 text-foreground text-sm">Feeds RSS</h2>
               <ul className="space-y-1 text-sm">
                 <li>
-                  <a href="/feed.xml" className="text-muted-foreground hover:text-primary transition-colors">Todos os artigos</a>
+                  <a href="/feed.xml" type="application/rss+xml" target="_blank" rel="noopener noreferrer alternate" className="text-muted-foreground hover:text-primary transition-colors">Todos os artigos</a>
                 </li>
                 <li>
-                  <a href="/feed/ia.xml" className="text-muted-foreground hover:text-ia transition-colors">IA</a>
+                  <a href="/feed/ia.xml" type="application/rss+xml" target="_blank" rel="noopener noreferrer alternate" className="text-muted-foreground hover:text-ia transition-colors">IA</a>
                   {" · "}
-                  <a href="/feed/financas.xml" className="text-muted-foreground hover:text-invest transition-colors">Finanças</a>
+                  <a href="/feed/financas.xml" type="application/rss+xml" target="_blank" rel="noopener noreferrer alternate" className="text-muted-foreground hover:text-invest transition-colors">Finanças</a>
                   {" · "}
-                  <a href="/feed/geek.xml" className="text-muted-foreground hover:text-geek transition-colors">Geek</a>
+                  <a href="/feed/geek.xml" type="application/rss+xml" target="_blank" rel="noopener noreferrer alternate" className="text-muted-foreground hover:text-geek transition-colors">Geek</a>
                   {" · "}
-                  <a href="/feed/otaku.xml" className="text-muted-foreground hover:text-otaku transition-colors">Otaku</a>
+                  <a href="/feed/otaku.xml" type="application/rss+xml" target="_blank" rel="noopener noreferrer alternate" className="text-muted-foreground hover:text-otaku transition-colors">Otaku</a>
+                </li>
+                <li>
+                  <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">Sitemap</a>
                 </li>
               </ul>
             </div>
