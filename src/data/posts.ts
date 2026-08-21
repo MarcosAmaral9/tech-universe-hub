@@ -224,8 +224,160 @@ import zooxAmazonImg from "@/assets/zoox-robotaxi-amazon-2026.webp";
 import ponyAiComboiosImg from "@/assets/pony-ai-comboios-caminhoes-2026.webp";
 import minidramasIaImg from "@/assets/minidramas-ia-redes-sociais-2026.webp";
 import discordBrasilImg from "@/assets/discord-brasil-suspensao-lives-2026.webp";
+import gemini37FlashImg from "@/assets/gemini-3-7-flash-busca-google-2026.webp";
+import selic14Img from "@/assets/selic-14-agosto-2026-onde-investir.webp";
+import gamescom2026Img from "@/assets/gamescom-2026-o-que-esperar.webp";
+import animesOutono2026Img from "@/assets/animes-outono-2026-estreias.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 20 Ago 2026 — IA (Gemini 3.7 Flash na Busca) ───────────────────
+  {
+    id: "241",
+    slug: "gemini-3-7-flash-busca-google-2026",
+    title: "Gemini 3.7 Flash na Busca do Google: O Que Muda e Como Ele Se Compara aos Rivais de Agosto de 2026",
+    excerpt:
+      "O Gemini 3.7 Flash chegou ao Modo IA da Pesquisa Google seis dias após o lançamento. Veja o que muda na prática e como ele se compara a Grok 4.6, GLM-5.3 e DeepSeek V4 Pro.",
+    content: "",
+    category: "ia",
+    subtopic: "ferramentas",
+    image: gemini37FlashImg,
+    author: "VICIO<CODE>",
+    date: "2026-08-20",
+    readTime: "9 min",
+    faq: [
+      {
+        q: "O que é o Gemini 3.7 Flash?",
+        a: "É o modelo de IA lançado pelo Google em 13 de agosto de 2026, voltado a programação e agentes, com foco em custo baixo e velocidade. Em 19 de agosto ele começou a ser distribuído no Modo IA da Pesquisa Google.",
+      },
+      {
+        q: "O Gemini 3.7 Flash é pago?",
+        a: "O uso dentro da Pesquisa Google não exige assinatura. O acesso via API é cobrado por milhão de tokens processados.",
+      },
+      {
+        q: "Quais são os concorrentes diretos em agosto de 2026?",
+        a: "Grok 4.6 (xAI), GLM-5.3 (Zhipu) e DeepSeek V4 Pro, todos lançados ou atualizados entre 12 e 19 de agosto de 2026.",
+      },
+      {
+        q: "O que muda no Modo IA da Busca?",
+        a: "O Modo IA passa a responder com um modelo mais rápido e econômico, o que tende a afetar velocidade de resposta e desempenho em perguntas com várias etapas. A distribuição é gradual.",
+      },
+      {
+        q: "Modelos abertos já competem com os fechados?",
+        a: "Em índices agregados, sim. O GLM-5.3 marcou 60 pontos no Intelligence Index da Artificial Analysis, em 8º lugar entre 182 modelos avaliados, com preço de API bem inferior ao de modelos proprietários de topo.",
+      },
+    ],
+  },
+  // ── 20 Ago 2026 — Finanças (Selic a 14%) ───────────────────────────
+  {
+    id: "242",
+    slug: "selic-14-agosto-2026-onde-investir",
+    title: "Selic a 14% em Agosto de 2026: O Que Muda na Renda Fixa e Onde Investir Agora",
+    excerpt:
+      "O Copom cortou a taxa básica pela quarta vez seguida e a Selic foi a 14% ao ano em 5 de agosto de 2026. Veja o efeito prático no CDI, na poupança e em títulos prefixados e IPCA+.",
+    content: "",
+    category: "invest",
+    subtopic: "renda-fixa",
+    image: selic14Img,
+    author: "VICIO<CODE>",
+    date: "2026-08-20",
+    readTime: "10 min",
+    faq: [
+      {
+        q: "Qual é a Selic atual?",
+        a: "14% ao ano, definida na reunião do Copom de 5 de agosto de 2026, em decisão unânime que reduziu a taxa em 0,25 ponto percentual.",
+      },
+      {
+        q: "Quantos cortes de juros já houve neste ciclo?",
+        a: "Quatro reduções consecutivas de 0,25 ponto percentual, levando a taxa de 14,25% para 14% ao ano.",
+      },
+      {
+        q: "A poupança melhora com a Selic a 14%?",
+        a: "Não. A regra de 70% da Selic mais TR só vale quando a taxa básica está em 8,5% ao ano ou menos. Acima disso, a poupança rende 0,5% ao mês mais TR.",
+      },
+      {
+        q: "Vale a pena travar taxa em prefixados agora?",
+        a: "Em ciclo de queda de juros, travar taxa tende a proteger o rendimento futuro, mas exige carregar o título até o vencimento para evitar oscilação de marcação a mercado. A decisão depende do prazo do seu objetivo.",
+      },
+      {
+        q: "A Selic vai continuar caindo em 2026?",
+        a: "O comunicado do Copom de agosto deixou os próximos passos em aberto, citando incertezas sobre El Niño, política fiscal e petróleo. Não há garantia de novo corte na reunião seguinte.",
+      },
+    ],
+  },
+  // ── 20 Ago 2026 — Geek (Gamescom 2026) ─────────────────────────────
+  {
+    id: "243",
+    slug: "gamescom-2026-o-que-esperar",
+    title: "Gamescom 2026: Datas, Xbox com o Maior Estande e Tudo o Que Já Está Confirmado",
+    excerpt:
+      "A Gamescom 2026 acontece de 26 a 30 de agosto em Colônia, na Alemanha. Veja a agenda, o que Xbox, NC e estúdios independentes já confirmaram e quais informações ainda são apenas rumor.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: gamescom2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-08-20",
+    readTime: "8 min",
+    faq: [
+      {
+        q: "Quando é a Gamescom 2026?",
+        a: "De 26 a 30 de agosto de 2026, em Colônia, na Alemanha, com o Opening Night Live abrindo o evento.",
+      },
+      {
+        q: "O que o Xbox vai levar para a Gamescom 2026?",
+        a: "A Microsoft anunciou o maior estande da feira, com 25 jogos testáveis e novidades das franquias Fable, Gears, Forza e Call of Duty.",
+      },
+      {
+        q: "Quais jogos a NC apresenta na feira?",
+        a: "AION 2, CINDER CITY e Project Bonfire, com destaque durante o Opening Night Live.",
+      },
+      {
+        q: "Dá para assistir à Gamescom de casa?",
+        a: "Sim. O Opening Night Live e os showcases das publishers são transmitidos online gratuitamente.",
+      },
+      {
+        q: "Haverá remake de Resident Evil Code: Veronica na Gamescom 2026?",
+        a: "Não há confirmação oficial. Há relatos de que a Capcom deixaria o remake fora da feira, mas a empresa não se pronunciou.",
+      },
+    ],
+  },
+  // ── 20 Ago 2026 — Otaku (temporada de outono) ──────────────────────
+  {
+    id: "244",
+    slug: "animes-outono-2026-estreias",
+    title: "Animes de Outono 2026: Estreias Já Confirmadas para Outubro e o Que Esperar da Temporada",
+    excerpt:
+      "Overgeared estreia em 2 de outubro e Firefly Wedding em 9 de outubro. Reunimos as estreias da temporada de outono 2026 com confirmação oficial de trailer ou estúdio, sem spoilers.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: animesOutono2026Img,
+    author: "VICIO<CODE>",
+    date: "2026-08-20",
+    readTime: "8 min",
+    faq: [
+      {
+        q: "Quando começa a temporada de animes de outono 2026?",
+        a: "Em outubro de 2026. A primeira estreia com data confirmada é Overgeared, em 2 de outubro.",
+      },
+      {
+        q: "Quando estreia Firefly Wedding?",
+        a: "Em 9 de outubro de 2026, conforme confirmado pelo segundo teaser trailer da produção da David Production.",
+      },
+      {
+        q: "Quem faz a abertura de Dark Machine the Animation?",
+        a: "A banda BUCK-TICK, com o tema \"Sonzai Riyū Kai\", revelado no trailer divulgado em 19 de agosto de 2026.",
+      },
+      {
+        q: "The Vermilion Mask terá quantas partes?",
+        a: "A primeira temporada foi anunciada dividida em dois cours, ou seja, duas partes de exibição.",
+      },
+      {
+        q: "Essa lista de estreias pode mudar?",
+        a: "Sim. Adiamentos são comuns e novos títulos ainda podem ser anunciados para a mesma janela de outubro a dezembro de 2026.",
+      },
+    ],
+  },
   // ── 18 Ago 2026 — Geek (Discord · suspensão de vídeo no Brasil) ────
   {
     id: "240",

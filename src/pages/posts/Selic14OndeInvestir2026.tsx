@@ -7,7 +7,6 @@ import ArticleSources from "@/components/ArticleSources";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import ContentDisclaimer from "@/components/ContentDisclaimer";
 import { Clock, User, Calendar, TrendingDown, PiggyBank, Landmark, ListChecks, HelpCircle } from "lucide-react";
 import heroImg from "@/assets/selic-14-agosto-2026-onde-investir.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
@@ -72,7 +71,6 @@ const Selic14OndeInvestir2026 = () => {
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
-        <ContentDisclaimer category="invest" />
 
         <div className="not-prose my-8 p-6 bg-gradient-to-br from-invest/10 to-background rounded-xl border border-invest/30">
           <h2 className="text-xl font-bold mb-2 flex items-center gap-2">
