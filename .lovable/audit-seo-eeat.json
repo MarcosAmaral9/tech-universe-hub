@@ -1,14 +1,126 @@
 {
-  "generatedAt": "2026-08-19T23:35:11.494Z",
+  "generatedAt": "2026-08-21T00:09:47.641Z",
   "counts": {
     "OK": 16,
     "A": 90,
     "B": 2,
     "C": 13,
-    "D": 90
+    "D": 94
   },
   "missingFiles": [],
   "reports": [
+    {
+      "slug": "gemini-3-7-flash-busca-google-2026",
+      "file": "Gemini37FlashBusca2026.tsx",
+      "keyword": "gemini flash busca",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 516,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "apenas ~516 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "selic-14-agosto-2026-onde-investir",
+      "file": "Selic14OndeInvestir2026.tsx",
+      "keyword": "selic agosto onde",
+      "category": "invest",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 537,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~537 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "gamescom-2026-o-que-esperar",
+      "file": "Gamescom2026OQueEsperar.tsx",
+      "keyword": "gamescom esperar",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 388,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~388 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "animes-outono-2026-estreias",
+      "file": "AnimesOutono2026Estreias.tsx",
+      "keyword": "animes outono estreias",
+      "category": "otaku",
+      "checks": {
+        "h1": true,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 337,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~337 palavras (mínimo 1500)"
+      ]
+    },
     {
       "slug": "discord-brasil-suspensao-lives-2026",
       "file": "DiscordBrasilSuspensao2026.tsx",
