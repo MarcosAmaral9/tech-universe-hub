@@ -7,7 +7,7 @@ import ArticleSources from "@/components/ArticleSources";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import { Clock, User, Calendar, Gamepad2, Tv, MapPin, ListChecks, HelpCircle } from "lucide-react";
+import { Clock, User, Calendar, Gamepad2, Tv, MapPin, ListChecks, HelpCircle, Landmark, MonitorPlay, Building2 } from "lucide-react";
 import heroImg from "@/assets/gamescom-2026-o-que-esperar.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
 
@@ -52,7 +52,7 @@ const Gamescom2026OQueEsperar = () => {
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
           <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />20 de Agosto, 2026</span>
-          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />8 min de leitura</span>
+          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />10 min de leitura</span>
         </div>
         <ShareWhatsApp />
         <AuthorBio category="geek" />
@@ -124,6 +124,56 @@ const Gamescom2026OQueEsperar = () => {
           </table>
         </div>
 
+        <p>
+          A estrutura do evento se divide em duas experiências distintas. O Opening Night Live é o espetáculo
+          televisionado: um palco, trailers mundiais inéditos e anúncios cronometrados, transmitido ao vivo para o mundo
+          inteiro. Os dias seguintes são a feira em si, espalhada pelos pavilhões do complexo Koelnmesse, em Colônia,
+          onde o público testa jogos meses antes do lançamento e os estúdios medem a reação real dos jogadores longe
+          das redes sociais.
+        </p>
+
+        <h2 id="importancia" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Landmark className="h-7 w-7 text-geek" />
+          Por Que a Gamescom Virou a Feira Mais Importante do Ano
+        </h2>
+        <p>
+          Com o fim da E3, o calendário de anúncios de games se reorganizou: os showcases digitais de junho viraram o
+          palco das primeiras revelações, e a Gamescom assumiu o posto de maior evento presencial da indústria. As
+          edições recentes da feira alemã superaram a marca de 300 mil visitantes, número que nenhum outro evento do
+          setor alcança hoje em público físico.
+        </p>
+        <p>
+          A posição no calendário também ajuda: realizada no fim de agosto, a feira cai na janela perfeita para dar o
+          empurrão final nos grandes lançamentos do último trimestre — a temporada mais lucrativa do ano para o varejo
+          de games. É por isso que publishers que guardam cartuchos para as festas de fim de ano escolhem Colônia para
+          mostrar gameplay pela primeira vez, e não apenas trailers.
+        </p>
+
+        <h2 id="xbox" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Building2 className="h-7 w-7 text-geek" />
+          Xbox: O Maior Estande da Feira
+        </h2>
+        <p>
+          A presença da Microsoft em 2026 é o destaque estrutural do evento. A empresa anunciou o maior estande da feira,
+          com 25 jogos disponíveis para teste e uma programação detalhada que inclui novidades das franquias Fable,
+          Gears, Forza e Call of Duty. É uma aposta dupla: além do espaço físico para o público, a programação indica
+          conteúdo para as transmissões, o que amplia o alcance muito além dos visitantes em Colônia.
+        </p>
+        <p>
+          A estratégia faz sentido no contexto atual da marca. Com o catálogo de estúdios próprios entregando títulos em
+          ritmo anual, o Xbox passou a tratar feiras presenciais como extensão do serviço: cada demo jogada no estande é
+          uma porta de entrada para o Game Pass, e cada trailer exibido reforça o argumento de que as maiores franquias
+          chegam à assinatura no dia do lançamento. Para quem acompanha do Brasil, o recado prático é que as transmissões
+          da empresa durante a semana da feira tendem a concentrar os anúncios de maior peso do evento.
+        </p>
+        <p>
+          Fable e Gears carregam expectativas diferentes: o primeiro é a aposta de RPG de mundo aberto do catálogo,
+          cercado de curiosidade desde a revelação; o segundo é a franquia de ação que define a identidade da marca
+          desde a geração Xbox 360. Forza segue como vitrine técnica, e Call of Duty como o título de maior alcance
+          comercial do line-up — o tipo de jogo cuja demonstração multiplayer costuma dominar as filas de qualquer
+          feira.
+        </p>
+
         <AdInArticle />
 
         <h2 id="confirmados" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -145,6 +195,37 @@ const Gamescom2026OQueEsperar = () => {
           programação com novidades das franquias Fable, Gears, Forza e Call of Duty. Já a NC aposta em AION 2 como
           carro-chefe do seu retorno ao mercado ocidental de MMO.
         </p>
+        <p>
+          A NC, ex-NCSoft, merece atenção separada. A publisher sul-coreana leva três projetos de perfis bem diferentes:
+          AION 2, continuação do MMO que fez história no gênero; CINDER CITY, nova aposta da companhia; e Project
+          Bonfire, ainda em estágio inicial de divulgação. O destaque reservado no Opening Night Live indica que a
+          empresa trata a feira como peça central do relançamento da sua imagem no Ocidente — um mercado em que MMOs
+          coreanos historicamente oscilam entre fenômenos de nicho e sucessos globais.
+        </p>
+        <p>
+          Entre os menores, dois nomes simbolizam o papel da Gamescom como vitrine independente. Era One, da Team
+          Complex, terá o multiplayer liberado para teste no evento e finalmente revelará a data da versão 1.0 — o tipo
+          de anúncio que transforma um projeto de nicho em lançamento acompanhado por milhares. E NAME OF THE WILL, do
+          Zeitgeist Studio, leva uma demo de terror e mistério à feira antes da estreia prevista para o início de 2027,
+          exclusiva para PC via Steam: palco ideal para um jogo que depende de boca a boca.
+        </p>
+
+        <h2 id="como-assistir" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <MonitorPlay className="h-7 w-7 text-geek" />
+          Como Assistir do Brasil
+        </h2>
+        <p>
+          Nenhuma novidade da Gamescom exige ingresso: o Opening Night Live e os principais showcases das publishers são
+          transmitidos gratuitamente pela internet, nos canais oficiais do evento e das empresas. Como a feira acontece
+          na Alemanha, fuso horário cinco horas à frente de Brasília no mês de agosto, as transmissões do fim do dia
+          europeu costumam cair no começo da tarde brasileira — horário confortável para acompanhar ao vivo.
+        </p>
+        <p>
+          Uma rotina simples para não perder nada: reserve o dia 26 para o Opening Night Live, acompanhe nas redes das
+          publishers os dias 27 e 28, quando saem os vídeos de gameplay gravados direto dos estandes, e deixe o fim de
+          semana para os resumões da imprensa especializada, que condensam dezenas de anúncios em listas fáceis de
+          filtrar. E lembre-se de acompanhar a cobertura completa aqui no VICIO&lt;CODE&gt; ao longo da semana.
+        </p>
 
         <h2 id="rumores" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Tv className="h-7 w-7 text-geek" />
@@ -164,6 +245,12 @@ const Gamescom2026OQueEsperar = () => {
           A regra de ouro para acompanhar Gamescom: enquanto o trailer não roda no palco, tudo é possibilidade. Vazamento
           de line-up costuma acertar em parte e errar exatamente no item mais empolgante.
         </p>
+        <p>
+          Vale lembrar também que a ausência de uma empresa nas listas vazadas não significa ausência da feira:
+          publishers frequentemente reservam anúncios para o próprio palco, e os maiores estúdios do mundo têm histórico
+          de guardar pelo menos uma surpresa por evento. O oposto também é verdade — jogo listado em rumor e não exibido
+          não foi necessariamente "cortado"; muitas vezes nunca esteve no programa.
+        </p>
 
         <h2 id="faq" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <HelpCircle className="h-7 w-7 text-geek" />
@@ -180,6 +267,20 @@ const Gamescom2026OQueEsperar = () => {
           <strong>Vai ter novidade de GTA VI?</strong> Nada foi confirmado. A Rockstar historicamente não usa a Gamescom
           para revelações grandes.
         </p>
+        <p>
+          <strong>O que é o Opening Night Live?</strong> É o evento de abertura da Gamescom: um showcase transmitido ao
+          vivo com trailers mundiais inéditos e anúncios de várias publishers, realizado na véspera do fluxo principal
+          da feira.
+        </p>
+        <p>
+          <strong>Quais jogos do Xbox estarão testáveis?</strong> A Microsoft anunciou 25 jogos jogáveis no estande, com
+          novidades confirmadas de Fable, Gears, Forza e Call of Duty. A lista completa de títulos testáveis é
+          divulgada pela empresa na programação oficial.
+        </p>
+        <p>
+          <strong>NAME OF THE WILL sai para consoles?</strong> O lançamento confirmado até agora é exclusivo para PC,
+          via Steam, com previsão para o início de 2027.
+        </p>
       </div>
 
       <EditorialTake category="geek">
@@ -192,6 +293,12 @@ const Gamescom2026OQueEsperar = () => {
           O que eu realmente vou observar são os estúdios médios. Era One, NAME OF THE WILL e Project Bonfire são o tipo
           de jogo que ganha ou perde o ano inteiro dependendo de vinte minutos de palco. É ali, e não nos trailers de
           franquia bilionária, que a Gamescom ainda cumpre a função original de feira.
+        </p>
+        <p>
+          E uma aposta pessoal: fique de olho na NC. O mercado ocidental de MMO vive um vazio de lançamentos grandes há
+          anos, e quem resolver essa equação primeiro leva uma audiência inteira órfã. Se AION 2 entregar uma
+          demonstração forte em Colônia, agosto de 2026 pode ser lembrado como o ponto de virada do gênero — não pelo
+          maior estande, mas pela aposta mais arriscada da feira.
         </p>
       </EditorialTake>
 

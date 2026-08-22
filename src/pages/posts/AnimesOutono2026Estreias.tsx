@@ -7,7 +7,7 @@ import ArticleSources from "@/components/ArticleSources";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import { Clock, User, Calendar, Tv, Sparkles, CalendarDays, ListChecks, HelpCircle } from "lucide-react";
+import { Clock, User, Calendar, Tv, Sparkles, CalendarDays, ListChecks, HelpCircle, BookOpen, Globe } from "lucide-react";
 import heroImg from "@/assets/animes-outono-2026-estreias.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
 
@@ -47,7 +47,7 @@ const AnimesOutono2026Estreias = () => {
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
           <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />20 de Agosto, 2026</span>
-          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />8 min de leitura</span>
+          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />10 min de leitura</span>
         </div>
         <ShareWhatsApp />
         <AuthorBio category="otaku" />
@@ -89,6 +89,29 @@ const AnimesOutono2026Estreias = () => {
         </div>
 
         <AdLeaderboard />
+
+        <h2 id="como-funciona" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <BookOpen className="h-7 w-7 text-otaku" />
+          Como Funciona uma Temporada de Animes
+        </h2>
+        <p>
+          Antes da lista, vale um alinhamento rápido para quem acompanha a indústria há menos tempo. O calendário de
+          animes de TV no Japão se divide em quatro temporadas anuais, batizadas segundo a estação em que começam:
+          inverno (janeiro), primavera (abril), verão (julho) e outono (outubro). Cada série estreia dentro da janela da
+          sua temporada e exibe um episódio por semana, normalmente em blocos de 12 ou 13 capítulos — o chamado "cour".
+        </p>
+        <p>
+          Quando uma obra tem fôlego para mais episódios, ela pode ser dividida em cours separados por uma pausa de
+          alguns meses. É o caso de The Vermilion Mask, cuja primeira temporada terá duas partes. A divisão não é
+          cancelamento nem problema de produção: é o formato padrão para histórias que precisam de mais de um bloco sem
+          comprometer a agenda dos estúdios.
+        </p>
+        <p>
+          Por fim, existe a diferença entre estreia japonesa e chegada ao Brasil. As plataformas de simulcast exibem os
+          episódios legendados horas ou dias após a transmissão original, mas os contratos são fechados título a título
+          — e muitas vezes anunciados só na véspera da estreia. Por isso a lista abaixo confirma datas japonesas, e a
+          disponibilidade nacional de cada anime deve ser tratada como um anúncio separado.
+        </p>
 
         <h2 id="estreias" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <CalendarDays className="h-7 w-7 text-otaku" />
@@ -134,10 +157,57 @@ const AnimesOutono2026Estreias = () => {
         </div>
 
         <p>
+          <strong>Overgeared</strong> é o nome mais aguardado da temporada — e o primeiro com data cravada: 2 de
+          outubro. A adaptação do webtoon sul-coreano de progressão dentro de um jogo de realidade virtual chega pela
+          REDICE STUDIO em parceria com a JC.STAFF, e carrega uma expectativa inevitável: repetir o fenômeno de Solo
+          Leveling, que provou que adaptações de webtoon coreano dominam a conversa global quando recebem produção à
+          altura. O material de origem é um dos mais longos e populares do seu formato, o que dá à série potencial de
+          várias temporadas caso a primeira emplaque.
+        </p>
+        <p>
+          <strong>Firefly Wedding</strong> estreia uma semana depois, em 9 de outubro, com data confirmada no segundo
+          teaser trailer. O drama histórico ambientado na era Meiji sai pelas mãos da David Production, estúdio que
+          construiu reputação em adaptações visualmente ousadas. Em uma temporada dominada por fantasia e progressão, um
+          drama de época é o tipo de contraste que costuma render os títulos mais comentados entre a crítica — ainda que
+          raramente seja o mais assistido na estreia.
+        </p>
+        <p>
+          <strong>Dark Machine the Animation</strong> é a aposta autoral da lista. Produzido pela Production +h., teve o
+          trailer divulgado em 19 de agosto com a confirmação da abertura "Sonzai Riyū Kai", interpretada pelo
+          BUCK-TICK — banda veterana cuja presença sozinha já sinaliza a ambição do projeto. É a produção com menos
+          material de origem conhecido no Brasil e, justamente por isso, a que pode surpreender sem o peso da comparação
+          com uma obra consagrada.
+        </p>
+        <p>
+          <strong>The World's Strongest Witch</strong>, anunciado pela Square Enix, adapta a novel sobre um mundo em que
+          apenas o protagonista enxerga o guia de estratégia online — premissa que flerta com o humor de quem conhece o
+          gênero de fantasia por dentro. Já <strong>The Vermilion Mask</strong>, revelado na Anime Expo 2026, adapta o
+          mangá de Dr. Poro e Nabana Naba com uma primeira temporada dividida em dois cours, formato que indica
+          planejamento de médio prazo desde o anúncio.
+        </p>
+        <p>
           Duas leituras saltam da lista. A primeira é a força continuada das adaptações de webtoon e light novel de
           progressão — Overgeared e The World's Strongest Witch nascem do mesmo apetite que fez Solo Leveling estourar. A
           segunda é a variedade de estúdio: David Production e Production +h. entregam identidades visuais muito
           diferentes, o que costuma render uma temporada menos uniforme e mais interessante.
+        </p>
+
+        <h2 id="acompanhar-brasil" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Globe className="h-7 w-7 text-otaku" />
+          Como Acompanhar a Temporada do Brasil
+        </h2>
+        <p>
+          A experiência de quem assiste do Brasil depende de duas confirmações separadas: a data japonesa, que é a que
+          os trailers anunciam, e a aquisição do título por uma plataforma de simulcast com legenda em português. Nas
+          últimas temporadas, a concentração de licenças nas grandes plataformas globais tornou previsível o destino da
+          maioria dos lançamentos — mas títulos menores ainda migram entre serviços, e a confirmação de cada elenco de
+          outubro deve sair ao longo de setembro.
+        </p>
+        <p>
+          Uma rotina que funciona bem: monte sua lista de interesse agora, acompanhe os anúncios de simulcast na
+          quinzena que antecede outubro e só então defina onde cada título será assistido. Isso evita a frustração
+          clássica de esperar legenda oficial de um anime que ficou sem distribuidor nacional — situação que, embora
+          menos comum do que no passado, ainda acontece a cada temporada.
         </p>
 
         <h2 id="como-acompanhar" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -149,6 +219,8 @@ const AnimesOutono2026Estreias = () => {
           <li>Séries divididas em cours, como The Vermilion Mask, têm intervalo entre as partes — não confunda pausa com cancelamento.</li>
           <li>Trailers oficiais são a fonte mais confiável de data; listas de fãs mudam com frequência.</li>
           <li>Guarde espaço na lista: outubro concentra o maior volume de estreias do ano na maioria das temporadas.</li>
+          <li>Se um título chamar atenção pelo trailer, vale conferir o material de origem — webtoon, novel ou mangá — para calibrar expectativa de ritmo, sem ler spoilers de arcos futuros.</li>
+          <li>Estreias se concentram na primeira quinzena do mês; programe-se para testar os primeiros episódios em bloco e decidir o que fica na sua grade semanal.</li>
         </ul>
 
         <h2 id="faq" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -167,6 +239,20 @@ const AnimesOutono2026Estreias = () => {
           <strong>A lista pode mudar?</strong> Sim. Adiamentos são comuns, e novos títulos ainda podem ser anunciados
           para a mesma janela.
         </p>
+        <p>
+          <strong>O que é um "cour"?</strong> É o bloco de exibição padrão da TV japonesa, com cerca de 12 a 13
+          episódios — um por semana, durante um trimestre. Temporadas divididas em dois cours têm uma pausa entre as
+          partes.
+        </p>
+        <p>
+          <strong>Overgeared é parecido com Solo Leveling?</strong> As obras dividem o DNA de progressão — protagonista
+          que evolui dentro de um sistema de jogo — e Overgeared vem sendo apontado como a opção natural para quem
+          acompanhou Solo Leveling. São histórias diferentes em tom e estrutura, mas o apelo de público é o mesmo.
+        </p>
+        <p>
+          <strong>Onde vejo as datas oficiais?</strong> Nos trailers e comunicados oficiais dos estúdios e produtoras.
+          Agregadores de temporada organizam o calendário, mas a palavra final sobre data é sempre do anúncio oficial.
+        </p>
       </div>
 
       <EditorialTake category="otaku">
@@ -179,6 +265,12 @@ const AnimesOutono2026Estreias = () => {
           O título que eu manteria no radar por motivo diferente é Dark Machine. Ter o BUCK-TICK na abertura e um estúdio
           com identidade autoral costuma indicar um projeto que não foi montado por planilha. É esse tipo de aposta que
           define se uma temporada é lembrada ou só consumida.
+        </p>
+        <p>
+          Minha régua para outubro é simples: Overgeared precisa provar que a fórmula coreana sobrevive a uma segunda
+          adaptação gigante sem virar cópia de Solo Leveling, e a temporada como um todo precisa mostrar se ainda há
+          espaço para o drama histórico de Firefly Wedding numa grade cada vez mais dominada por fantasia de progressão.
+          O equilíbrio entre esses dois polos vai dizer muito sobre para onde a indústria está indo em 2027.
         </p>
       </EditorialTake>
 
