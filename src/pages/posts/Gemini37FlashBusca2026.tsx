@@ -7,7 +7,7 @@ import ArticleSources from "@/components/ArticleSources";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import { Clock, User, Calendar, Sparkles, Search, Cpu, ListChecks, HelpCircle } from "lucide-react";
+import { Clock, User, Calendar, Sparkles, Search, Cpu, ListChecks, HelpCircle, Gauge, Globe, FileText } from "lucide-react";
 import heroImg from "@/assets/gemini-3-7-flash-busca-google-2026.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
 
@@ -53,7 +53,7 @@ const Gemini37FlashBusca2026 = () => {
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
           <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />20 de Agosto, 2026</span>
-          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />9 min de leitura</span>
+          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />11 min de leitura</span>
         </div>
         <ShareWhatsApp />
         <AuthorBio category="ia" />
@@ -96,6 +96,30 @@ const Gemini37FlashBusca2026 = () => {
 
         <AdLeaderboard />
 
+        <h2 id="o-que-e-modo-ia" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Globe className="h-7 w-7 text-ia" />
+          O Que é o Modo IA da Pesquisa
+        </h2>
+        <p>
+          Antes de entender a troca de modelo, vale separar as três experiências que hoje convivem dentro do Google. A
+          primeira é a busca tradicional, com a lista de links de sempre. A segunda são as respostas geradas no topo de
+          algumas páginas de resultado, que resumem o assunto e citam fontes. A terceira é o Modo IA: uma aba separada,
+          pensada para conversas com várias etapas, em que o usuário faz perguntas de acompanhamento e o sistema mantém
+          o contexto da conversa inteira.
+        </p>
+        <p>
+          É nessa terceira camada que o Gemini 3.7 Flash passou a operar. A escolha não é trivial: o Modo IA é o
+          produto em que o Google concentra as perguntas mais difíceis — planejamento de viagem, comparação de produtos,
+          explicações técnicas com vários passos. Colocar ali um modelo da linha Flash, historicamente associada a
+          velocidade e baixo custo, é um sinal de que a empresa passou a confiar na qualidade dos seus modelos
+          econômicos para tarefas que antes exigiam as versões maiores e mais caras.
+        </p>
+        <p>
+          Para o usuário final, nenhuma configuração é necessária. Não há seletor de modelo, botão de atualização ou
+          aviso de versão: a troca acontece no servidor, de forma gradual, e a única forma de perceber é a própria
+          qualidade e o ritmo das respostas ao longo dos dias.
+        </p>
+
         <h2 id="o-que-mudou" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Search className="h-7 w-7 text-ia" />
           O Que Muda na Pesquisa Google
@@ -110,6 +134,12 @@ const Gemini37FlashBusca2026 = () => {
           prática, o usuário comum não escolhe modelo: ele digita a pergunta e recebe a resposta do que estiver ativo
           naquele momento. Por isso a implantação gradual importa — durante alguns dias, duas pessoas podem receber
           respostas de qualidade diferente para a mesma pergunta.
+        </p>
+        <p>
+          Há ainda um efeito indireto que quase ninguém comenta: quando o Google troca o modelo da busca, ele redefine o
+          padrão de qualidade que bilhões de pessoas consideram "normal" para uma IA. Quem nunca abriu um aplicativo
+          dedicado de chatbot passa a julgar toda a categoria pelo que vê na pesquisa. É um poder de definição de
+          expectativa que nenhum concorrente possui, porque nenhum concorrente tem a mesma distribuição.
         </p>
 
         <div className="not-prose my-8 overflow-x-auto">
@@ -132,6 +162,32 @@ const Gemini37FlashBusca2026 = () => {
         </div>
 
         <AdInArticle />
+
+        <h2 id="benchmarks" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Gauge className="h-7 w-7 text-ia" />
+          Benchmarks: O Que os Números Dizem — e o Que Não Dizem
+        </h2>
+        <p>
+          Todo lançamento de modelo em 2026 vem acompanhado de uma tabela de pontuações, e agosto não foi exceção. O
+          Grok 4.6 chegou com 61 pontos no Artificial Analysis Intelligence Index, o GLM-5.3 com 60, figurando entre os
+          dez primeiros de um ranking com 182 modelos avaliados. São números úteis para uma primeira triagem, mas é
+          preciso entender o que eles medem de fato: um índice agregado mistura matemática, código, raciocínio e
+          conhecimento geral em uma nota única, e a composição dessa média pode esconder diferenças enormes em recortes
+          específicos.
+        </p>
+        <p>
+          Três cuidados práticos antes de comparar qualquer tabela de lançamento. Primeiro: verifique quem produziu o
+          teste — benchmark publicado pelo próprio fabricante tende a escolher os recortes em que ele vence. Segundo:
+          procure a data do teste, porque modelos são atualizados por baixo dos panos e uma comparação de meses atrás
+          pode estar desatualizada. Terceiro: desconfie de diferenças de um ou dois pontos, que estão dentro da margem
+          de variação entre execuções e raramente se traduzem em diferença perceptível no uso diário.
+        </p>
+        <p>
+          O que os benchmarks definitivamente não capturam é a experiência completa: velocidade de resposta, capacidade
+          de seguir instruções longas, qualidade das citações e integração com ferramentas externas. Um modelo pode
+          pontuar mal em um índice agregado e ainda assim ser a melhor escolha para um fluxo de trabalho específico — e
+          é por isso que a recomendação séria continua sendo testar com as suas próprias tarefas.
+        </p>
 
         <h2 id="comparativo" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Cpu className="h-7 w-7 text-ia" />
@@ -158,16 +214,49 @@ const Gemini37FlashBusca2026 = () => {
           proprietários em índices agregados, e o diferencial competitivo migrou do "quanto ele sabe" para "quanto custa
           por milhão de tokens" e "quanto tempo ele aguenta executando uma tarefa sozinho".
         </p>
+        <p>
+          A precificação de agosto ilustra bem essa migração. O Grok 4.6 foi lançado a US$ 2 por milhão de tokens de
+          entrada; a API do GLM-5.3 estreou a US$ 1,4 de entrada e US$ 4,4 de saída. Para quem opera agentes que
+          processam milhões de tokens por dia, a diferença de preço entre modelos de pontuação parecida paga
+          infraestrutura inteira no fim do mês. Qualidade semelhante a preço menor é um argumento que nenhum marketing
+          supera.
+        </p>
+        <p>
+          O outro eixo de disputa é a duração de tarefa: o Grok 4.6 foi apresentado explicitamente como modelo para
+          agentes de longa duração — sistemas que executam sequências de dezenas de ações sem intervenção humana. Esse é
+          o novo front da competição, porque é onde o dinheiro corporativo está: não em responder perguntas, mas em
+          executar trabalho.
+        </p>
+
+        <h2 id="impacto-web" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <FileText className="h-7 w-7 text-ia" />
+          O Impacto Para Quem Produz Conteúdo na Web
+        </h2>
+        <p>
+          Cada melhoria no Modo IA da busca tem um lado que afeta diretamente sites, blogs e veículos de imprensa:
+          quanto melhor a resposta sintetizada, menor a necessidade de clicar em um link. Esse movimento não é novo —
+          as respostas geradas no topo dos resultados já tinham iniciado esse processo —, mas a chegada de um modelo
+          mais capaz à aba conversacional acelera a tendência, porque o Modo IA é justamente o formato em que o usuário
+          resolve a dúvida inteira sem sair da página.
+        </p>
+        <p>
+          A conclusão prática para criadores não é "o Google acabou com os cliques", e sim uma mudança de critério:
+          conteúdo genérico, que apenas repete o que já está em dezenas de páginas, é exatamente o que um modelo de
+          linguagem sintetiza melhor. O que continua gerando visita é o que o modelo não consegue produzir sozinho —
+          dado próprio, teste com produto, tabela original, experiência documentada e opinião editorial com nome e
+          responsabilidade. É o mesmo critério que os sistemas de qualidade de busca já usam para classificar páginas, e
+          a IA só tornou a régua mais visível.
+        </p>
 
         <h2 id="o-que-fazer" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Sparkles className="h-7 w-7 text-ia" />
           O Que Fazer Com Essa Informação
         </h2>
         <ul>
-          <li><strong>Usuário comum:</strong> nada a configurar. A troca de modelo no Modo IA é automática e gradual.</li>
-          <li><strong>Quem programa:</strong> vale reavaliar o modelo padrão da sua ferramenta — a diferença de preço entre as opções de agosto é grande e a de qualidade, pequena.</li>
+          <li><strong>Usuário comum:</strong> nada a configurar. A troca de modelo no Modo IA é automática e gradual. Se quiser comparar, repita nos próximos dias uma pergunta complexa que você já tenha feito antes e observe a diferença de estrutura da resposta.</li>
+          <li><strong>Quem programa:</strong> vale reavaliar o modelo padrão da sua ferramenta — a diferença de preço entre as opções de agosto é grande e a de qualidade, pequena. Rode a mesma bateria de tarefas reais em dois ou três modelos antes de decidir.</li>
           <li><strong>Quem publica conteúdo:</strong> respostas sintetizadas reduzem cliques. Conteúdo que sobrevive é o que traz dado próprio, tabela e experiência real.</li>
-          <li><strong>Empresas:</strong> teste com as suas próprias tarefas antes de migrar; índice público não reproduz o seu caso de uso.</li>
+          <li><strong>Empresas:</strong> teste com as suas próprias tarefas antes de migrar; índice público não reproduz o seu caso de uso. E negocie contrato olhando o preço por token, não a pontuação de marketing.</li>
         </ul>
 
         <h2 id="faq" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -186,6 +275,20 @@ const Gemini37FlashBusca2026 = () => {
           <strong>Já está disponível no Brasil?</strong> A distribuição foi anunciada como gradual, então a
           disponibilidade varia por conta e por região.
         </p>
+        <p>
+          <strong>Como sei se a minha busca já está usando o modelo novo?</strong> Não há indicador visível de versão no
+          Modo IA. A única pista prática é a mudança no padrão das respostas ao longo da janela de implantação.
+        </p>
+        <p>
+          <strong>O Grok 4.6 é melhor que o Gemini 3.7 Flash?</strong> Depende do recorte. O Grok 4.6 foi otimizado para
+          agentes de longa duração; o Gemini 3.7 Flash, para programação e custo. Índices agregados mostram os modelos
+          de agosto em faixas próximas, e a melhor escolha varia conforme a tarefa.
+        </p>
+        <p>
+          <strong>Modelos chineses como GLM-5.3 e DeepSeek V4 Pro podem ser usados no Brasil?</strong> Sim, via API,
+          seguindo os termos de cada provedor. Empresas devem avaliar também requisitos de compliance e residência de
+          dados antes de adotar qualquer modelo estrangeiro em produção.
+        </p>
       </div>
 
       <EditorialTake category="ia">
@@ -198,6 +301,12 @@ const Gemini37FlashBusca2026 = () => {
           E há um segundo recado, menos comentado: com GLM-5.3 e DeepSeek V4 Pro entregando pontuação de elite a preço de
           varejo, a vantagem competitiva dos modelos fechados encolheu para distribuição. O Google não está vencendo por
           ter o melhor modelo; está vencendo por já estar dentro da barra de pesquisa de bilhões de pessoas.
+        </p>
+        <p>
+          Minha sugestão para quem acompanha o setor é simples: pare de olhar o lançamento do dia e passe a olhar o
+          preço por token e a autonomia dos agentes. Esses dois números contam melhor a história de 2026 do que qualquer
+          pontuação de benchmark — e são eles que vão decidir quais dessas empresas ainda existem, com o mesmo modelo de
+          negócio, daqui a dois anos.
         </p>
       </EditorialTake>
 
