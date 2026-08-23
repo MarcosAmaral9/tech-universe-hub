@@ -243,7 +243,8 @@ export const blogPosts: BlogPost[] = [
     image: gemini37FlashImg,
     author: "VICIO<CODE>",
     date: "2026-08-20",
-    readTime: "9 min",
+    updatedAt: "2026-08-22",
+    readTime: "11 min",
     faq: [
       {
         q: "O que é o Gemini 3.7 Flash?",
@@ -280,7 +281,8 @@ export const blogPosts: BlogPost[] = [
     image: selic14Img,
     author: "VICIO<CODE>",
     date: "2026-08-20",
-    readTime: "10 min",
+    updatedAt: "2026-08-22",
+    readTime: "12 min",
     faq: [
       {
         q: "Qual é a Selic atual?",
@@ -317,7 +319,8 @@ export const blogPosts: BlogPost[] = [
     image: gamescom2026Img,
     author: "VICIO<CODE>",
     date: "2026-08-20",
-    readTime: "8 min",
+    updatedAt: "2026-08-22",
+    readTime: "10 min",
     faq: [
       {
         q: "Quando é a Gamescom 2026?",
@@ -354,7 +357,8 @@ export const blogPosts: BlogPost[] = [
     image: animesOutono2026Img,
     author: "VICIO<CODE>",
     date: "2026-08-20",
-    readTime: "8 min",
+    updatedAt: "2026-08-22",
+    readTime: "10 min",
     faq: [
       {
         q: "Quando começa a temporada de animes de outono 2026?",
