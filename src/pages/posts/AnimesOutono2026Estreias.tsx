@@ -192,6 +192,40 @@ const AnimesOutono2026Estreias = () => {
           diferentes, o que costuma render uma temporada menos uniforme e mais interessante.
         </p>
 
+        <h2 id="por-que-outubro" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <CalendarDays className="h-7 w-7 text-otaku" />
+          Por Que Outubro é a Temporada Mais Cheia do Ano
+        </h2>
+        <p>
+          Não é impressão: a temporada de outono concentra, ano após ano, um dos maiores volumes de estreias do
+          calendário japonês. A explicação é comercial. Outubro abre o último trimestre do ano, período em que as
+          produtoras disputam a atenção do público na reta final das vendas anuais, e em que os comitês de produção
+          querem os títulos mais fortes no ar quando as compras de fim de ano — mangás, bonecos, Blu-rays — atingem o
+          pico.
+        </p>
+        <p>
+          Para o espectador, o efeito colateral é a saturação: em uma única semana de outubro podem estrear mais
+          episódios inéditos do que em um mês inteiro de janeiro. A estratégia que funciona é tratar as duas primeiras
+          semanas como degustação — assista ao episódio de estreia de tudo o que parecer interessante e monte a grade
+          definitiva só depois, em vez de tentar acompanhar tudo desde o primeiro dia.
+        </p>
+
+        <h2 id="o-que-pode-entrar" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <ListChecks className="h-7 w-7 text-otaku" />
+          O Que Ainda Pode Entrar na Lista
+        </h2>
+        <p>
+          Esta lista é intencionalmente conservadora: só entra o que tem data ou mês confirmados por trailer ou
+          comunicado oficial. Fora dela circulam dezenas de títulos em listas de fãs e agregadores, incluindo
+          continuações aguardadas e adaptações que ainda não deram sinal de data. Eventos do fim de setembro
+          historicamente concentram uma nova leva de anúncios, e adiamentos de última hora também fazem parte do jogo.
+        </p>
+        <p>
+          Por isso, trate este guia como um documento vivo: assim que novos anúncios oficiais saírem, a matéria será
+          atualizada — e a data da última atualização fica visível no topo da página. Se um título que você espera não
+          está aqui, a explicação mais provável é a ausência de confirmação oficial até o fechamento desta edição.
+        </p>
+
         <h2 id="acompanhar-brasil" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Globe className="h-7 w-7 text-otaku" />
           Como Acompanhar a Temporada do Brasil

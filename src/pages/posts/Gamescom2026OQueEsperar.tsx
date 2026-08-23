@@ -148,6 +148,13 @@ const Gamescom2026OQueEsperar = () => {
           de games. É por isso que publishers que guardam cartuchos para as festas de fim de ano escolhem Colônia para
           mostrar gameplay pela primeira vez, e não apenas trailers.
         </p>
+        <p>
+          O crescimento da marca nas últimas edições saiu da Alemanha e ganhou versões regionais, incluindo a gamescom
+          latam, realizada em São Paulo. O efeito prático para o público brasileiro é duplo: a feira principal segue em
+          Colônia concentrando os anúncios mundiais, enquanto a edição latino-americana aproxima parte dessa
+          experiência — demos, estandes e encontros de comunidade — de quem não pode viajar à Europa. Ainda assim, é na
+          edição alemã de agosto que os grandes calendários de lançamento globais são definidos.
+        </p>
 
         <h2 id="xbox" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Building2 className="h-7 w-7 text-geek" />
