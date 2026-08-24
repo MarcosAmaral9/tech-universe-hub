@@ -1,6 +1,6 @@
 # Auditoria SEO + E-E-A-T
 
-Gerado em 21/08/2026, 00:09:47.
+Gerado em 24/08/2026, 22:01:50.
 
 ## Resumo executivo
 
@@ -12,7 +12,7 @@ Gerado em 21/08/2026, 00:09:47.
 - **AuthorBio:** 215 / 215
 - **ArticleSources (≥5 fontes):** 199 / 215
 - **EditorialTake / Análise do Marcos:** 215 / 215
-- **Conteúdo ≥1500 palavras:** 115 / 215
+- **Conteúdo ≥1500 palavras:** 118 / 215
 
 
 
@@ -21,16 +21,16 @@ Gerado em 21/08/2026, 00:09:47.
 1. **Levas SEO (rápidas, ~10 posts/leva)** — Adicionar PAGE_META + garantir keyword em h1/intro/excerpt para os 40 posts sem meta manual.
 2. **Levas Fontes (3 posts/leva)** — Adicionar 5ª fonte oficial verificável para os 16 posts com <5 fontes.
 3. **Levas Análise (5 posts/leva)** — Adicionar bloco "Análise do Marcos" para os 0 posts sem editorial.
-4. **Levas Expansão (2 posts/leva)** — Reescrever os 100 posts <1500 palavras, começando pelos mais curtos.
+4. **Levas Expansão (2 posts/leva)** — Reescrever os 97 posts <1500 palavras, começando pelos mais curtos.
 
 ---
 
 ## 1) Posts sem PAGE_META manual — 40
 
-- `gemini-3-7-flash-busca-google-2026` (516w, 6 fontes) — sem PAGE_META manual; keyword ausente em excerpt; apenas ~516 palavras (mínimo 1500)
-- `selic-14-agosto-2026-onde-investir` (537w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~537 palavras (mínimo 1500)
-- `gamescom-2026-o-que-esperar` (388w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~388 palavras (mínimo 1500)
-- `animes-outono-2026-estreias` (337w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~337 palavras (mínimo 1500)
+- `gemini-3-7-flash-busca-google-2026` (1627w, 6 fontes) — sem PAGE_META manual; keyword ausente em excerpt
+- `selic-14-agosto-2026-onde-investir` (1540w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt
+- `gamescom-2026-o-que-esperar` (1471w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1471 palavras (mínimo 1500)
+- `animes-outono-2026-estreias` (1544w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt
 - `discord-brasil-suspensao-lives-2026` (1271w, 8 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1271 palavras (mínimo 1500)
 - `zoox-carros-sem-motorista-amazon-2026` (1381w, 7 fontes) — sem PAGE_META manual; keyword ausente em excerpt; apenas ~1381 palavras (mínimo 1500)
 - `pony-ai-comboios-caminhoes-autonomos-2026` (1282w, 6 fontes) — sem PAGE_META manual; apenas ~1282 palavras (mínimo 1500)
@@ -181,7 +181,7 @@ Gerado em 21/08/2026, 00:09:47.
 
 ## 3) Posts com keyword ausente no `<h1>` — 66
 
-- `gamescom-2026-o-que-esperar` (388w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~388 palavras (mínimo 1500)
+- `gamescom-2026-o-que-esperar` (1471w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1471 palavras (mínimo 1500)
 - `discord-brasil-suspensao-lives-2026` (1271w, 8 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1271 palavras (mínimo 1500)
 - `recuperacao-judicial-empresas-2026-como-afeta-clientes` (1283w, 7 fontes) — sem PAGE_META manual; keyword ausente em <h1>; apenas ~1283 palavras (mínimo 1500)
 - `helldivers-2-guia-completo-2024` (1188w, 7 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente em excerpt; apenas ~1188 palavras (mínimo 1500)
@@ -250,9 +250,9 @@ Gerado em 21/08/2026, 00:09:47.
 
 ## 4) Posts com keyword ausente na introdução — 80
 
-- `selic-14-agosto-2026-onde-investir` (537w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~537 palavras (mínimo 1500)
-- `gamescom-2026-o-que-esperar` (388w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~388 palavras (mínimo 1500)
-- `animes-outono-2026-estreias` (337w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~337 palavras (mínimo 1500)
+- `selic-14-agosto-2026-onde-investir` (1540w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt
+- `gamescom-2026-o-que-esperar` (1471w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1471 palavras (mínimo 1500)
+- `animes-outono-2026-estreias` (1544w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt
 - `discord-brasil-suspensao-lives-2026` (1271w, 8 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1271 palavras (mínimo 1500)
 - `minidramas-ia-redes-sociais-2026` (1402w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1402 palavras (mínimo 1500)
 - `avanco-robotica-2026-robos-humanoides` (1317w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1317 palavras (mínimo 1500)
@@ -333,10 +333,10 @@ Gerado em 21/08/2026, 00:09:47.
 
 ## 5) Posts com keyword ausente no excerpt — 133
 
-- `gemini-3-7-flash-busca-google-2026` (516w, 6 fontes) — sem PAGE_META manual; keyword ausente em excerpt; apenas ~516 palavras (mínimo 1500)
-- `selic-14-agosto-2026-onde-investir` (537w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~537 palavras (mínimo 1500)
-- `gamescom-2026-o-que-esperar` (388w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~388 palavras (mínimo 1500)
-- `animes-outono-2026-estreias` (337w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~337 palavras (mínimo 1500)
+- `gemini-3-7-flash-busca-google-2026` (1627w, 6 fontes) — sem PAGE_META manual; keyword ausente em excerpt
+- `selic-14-agosto-2026-onde-investir` (1540w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt
+- `gamescom-2026-o-que-esperar` (1471w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1471 palavras (mínimo 1500)
+- `animes-outono-2026-estreias` (1544w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt
 - `discord-brasil-suspensao-lives-2026` (1271w, 8 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1271 palavras (mínimo 1500)
 - `zoox-carros-sem-motorista-amazon-2026` (1381w, 7 fontes) — sem PAGE_META manual; keyword ausente em excerpt; apenas ~1381 palavras (mínimo 1500)
 - `minidramas-ia-redes-sociais-2026` (1402w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1402 palavras (mínimo 1500)
@@ -494,12 +494,8 @@ Gerado em 21/08/2026, 00:09:47.
 
 —
 
-## 9) Posts com menos de 1500 palavras (ordenados por menor) — 100
+## 9) Posts com menos de 1500 palavras (ordenados por menor) — 97
 
-- `animes-outono-2026-estreias` (337w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~337 palavras (mínimo 1500)
-- `gamescom-2026-o-que-esperar` (388w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~388 palavras (mínimo 1500)
-- `gemini-3-7-flash-busca-google-2026` (516w, 6 fontes) — sem PAGE_META manual; keyword ausente em excerpt; apenas ~516 palavras (mínimo 1500)
-- `selic-14-agosto-2026-onde-investir` (537w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt; apenas ~537 palavras (mínimo 1500)
 - `crimson-desert-mapa-regioes-pywel` (939w, 6 fontes) — apenas ~939 palavras (mínimo 1500)
 - `ia-mercado-financeiro-2026-investimentos` (1112w, 6 fontes) — keyword ausente em meta description; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1112 palavras (mínimo 1500)
 - `planejamento-financeiro-2026-metas` (1132w, 6 fontes) — keyword ausente em meta description; keyword ausente em excerpt; apenas ~1132 palavras (mínimo 1500)
@@ -575,6 +571,7 @@ Gerado em 21/08/2026, 00:09:47.
 - `crimson-desert-guia-iniciantes-dicas` (1463w, 5 fontes) — apenas ~1463 palavras (mínimo 1500)
 - `ia-brasil-adocao-2026` (1464w, 6 fontes) — keyword ausente em meta title; keyword ausente em meta description; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1464 palavras (mínimo 1500)
 - `re-monster-anime-manga-guia-2026` (1467w, 6 fontes) — apenas ~1467 palavras (mínimo 1500)
+- `gamescom-2026-o-que-esperar` (1471w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1471 palavras (mínimo 1500)
 - `ibovespa-recorde-selic-caindo-2026` (1473w, 0 fontes) — keyword ausente em meta description; ArticleSources com 0 fonte(s) (mínimo 5); apenas ~1473 palavras (mínimo 1500)
 - `demon-slayer-hashira-guia-2026` (1474w, 0 fontes) — keyword ausente em excerpt; ArticleSources com 0 fonte(s) (mínimo 5); apenas ~1474 palavras (mínimo 1500)
 - `dragon-ball-super-beerus-anime-confirmado-2026` (1475w, 5 fontes) — keyword ausente em excerpt; apenas ~1475 palavras (mínimo 1500)
