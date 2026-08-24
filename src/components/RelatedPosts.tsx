@@ -7,7 +7,6 @@ import { useAuthContext } from "@/contexts/AuthContext";
 import { AdInArticle } from "./AdSense";
 import MostReadWidget from "./MostReadWidget";
 import ReadNext from "./ReadNext";
-import NewsletterSignup from "./NewsletterSignup";
 
 interface RelatedPostsProps {
   currentSlug: string;
@@ -105,7 +104,6 @@ const RelatedPosts = ({ currentSlug }: RelatedPostsProps) => {
       )}
 
       <MostReadWidget className="mt-8" limit={5} />
-      <NewsletterSignup variant="inline" />
     </section>
   );
 };
