@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-21T00:09:47.641Z",
+  "generatedAt": "2026-08-24T22:01:50.334Z",
   "counts": {
     "OK": 16,
-    "A": 90,
+    "A": 93,
     "B": 2,
     "C": 13,
-    "D": 94
+    "D": 91
   },
   "missingFiles": [],
   "reports": [
@@ -26,14 +26,13 @@
         "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 516,
-        "has1500Words": false
+        "wordCount": 1627,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
         "sem PAGE_META manual",
-        "keyword ausente em excerpt",
-        "apenas ~516 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -53,15 +52,14 @@
         "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 537,
-        "has1500Words": false
+        "wordCount": 1540,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
         "sem PAGE_META manual",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "apenas ~537 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
@@ -81,7 +79,7 @@
         "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 388,
+        "wordCount": 1471,
         "has1500Words": false
       },
       "bucket": "D",
@@ -90,7 +88,7 @@
         "keyword ausente em <h1>",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "apenas ~388 palavras (mínimo 1500)"
+        "apenas ~1471 palavras (mínimo 1500)"
       ]
     },
     {
@@ -110,15 +108,14 @@
         "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 337,
-        "has1500Words": false
+        "wordCount": 1544,
+        "has1500Words": true
       },
-      "bucket": "D",
+      "bucket": "A",
       "issues": [
         "sem PAGE_META manual",
         "keyword ausente na introdução",
-        "keyword ausente em excerpt",
-        "apenas ~337 palavras (mínimo 1500)"
+        "keyword ausente em excerpt"
       ]
     },
     {
