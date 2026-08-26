@@ -5,8 +5,26 @@
     <link>https://viciocode.com</link>
     <description>IA, investimentos, cultura geek e otaku — novos artigos do VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Thu, 20 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Glossário de IA: O Que São Machine Learning, Deep Learning, LLMs e as Profissões Criadas pela Inteligência Artificial</title>
+      <link>https://viciocode.com/post/glossario-ia-termos-e-profissoes-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/glossario-ia-termos-e-profissoes-2026</guid>
+      <pubDate>Tue, 25 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Vinte termos de inteligência artificial explicados em português claro — de token e embedding a RAG e agentes — e dez profissões que estão nascendo com o avanço da IA.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/glossario-ia-termos-e-profissoes-2026.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>História da Inteligência Artificial: Do Teste de Turing aos Principais Modelos de Hoje</title>
+      <link>https://viciocode.com/post/historia-inteligencia-artificial-principais-modelos</link>
+      <guid isPermaLink="true">https://viciocode.com/post/historia-inteligencia-artificial-principais-modelos</guid>
+      <pubDate>Tue, 25 Aug 2026 12:00:00 GMT</pubDate>
+      <description>De 1943 à corrida dos modelos de fronteira de 2026: Dartmouth, os dois invernos da IA, AlexNet, o Transformer e a linha do tempo completa dos modelos que definiram o campo.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/historia-inteligencia-artificial-principais-modelos.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>Animes de Outono 2026: Estreias Já Confirmadas para Outubro e o Que Esperar da Temporada</title>
       <link>https://viciocode.com/post/animes-outono-2026-estreias</link>
@@ -438,24 +456,6 @@
       <description>Do vazamento de 2022 ao anúncio oficial, Trailer 1 (recorde mundial no YouTube), Trailer 2 de 2025 e a campanha de marketing do verão 2026 da Rockstar Games e Take-Two.</description>
       <category>Geek &amp; Games</category>
       <enclosure url="https://viciocode.com/assets/gta-vi-trailers-marketing-2026.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>GTA VI: Mecânicas e Gameplay Confirmados nos Trailers Oficiais</title>
-      <link>https://viciocode.com/post/gta-vi-mecanicas-gameplay-2026</link>
-      <guid isPermaLink="true">https://viciocode.com/post/gta-vi-mecanicas-gameplay-2026</guid>
-      <pubDate>Wed, 24 Jun 2026 12:00:00 GMT</pubDate>
-      <description>Dupla protagonista Jason e Lucia, NPCs reativos, física de veículos, sistema climático e tudo o que os dois trailers oficiais da Rockstar realmente confirmaram sobre o gameplay de GTA VI.</description>
-      <category>Geek &amp; Games</category>
-      <enclosure url="https://viciocode.com/assets/gta-vi-mecanicas-gameplay-2026.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>GTA VI: Plataformas, PS5, Xbox Series e o Mistério da Versão de PC</title>
-      <link>https://viciocode.com/post/gta-vi-plataformas-requisitos-2026</link>
-      <guid isPermaLink="true">https://viciocode.com/post/gta-vi-plataformas-requisitos-2026</guid>
-      <pubDate>Wed, 24 Jun 2026 12:00:00 GMT</pubDate>
-      <description>Por que GTA VI sai só para PS5 e Xbox Series X|S no lançamento, ausência confirmada de PS4 e Xbox One e o histórico da Rockstar que indica versão PC entre 2027 e 2028.</description>
-      <category>Geek &amp; Games</category>
-      <enclosure url="https://viciocode.com/assets/gta-vi-plataformas-requisitos-2026.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>

@@ -1,5 +1,8 @@
 import { BlogPost, Category } from "@/types/blog";
 
+import historiaIaImg from "@/assets/historia-inteligencia-artificial-modelos.webp";
+import glossarioIaImg from "@/assets/glossario-ia-termos-profissoes-2026.webp";
+
 import gptTrabalhadorImg from "@/assets/gpt-5-trabalhador-digital-autonomo-2026.webp";
 import berkshireAbelImg from "@/assets/berkshire-hathaway-greg-abel-2026-sem-buffett.webp";
 import eldenNightreign2026Img from "@/assets/elden-ring-nightreign-guia-completo-2026.webp";
@@ -380,6 +383,49 @@ export const blogPosts: BlogPost[] = [
         q: "Essa lista de estreias pode mudar?",
         a: "Sim. Adiamentos são comuns e novos títulos ainda podem ser anunciados para a mesma janela de outubro a dezembro de 2026.",
       },
+    ],
+  },
+  // ── 25 Ago 2026 — IA (história e glossário) ────
+  {
+    id: "245",
+    slug: "historia-inteligencia-artificial-principais-modelos",
+    title: "História da Inteligência Artificial: Do Teste de Turing aos Principais Modelos de Hoje",
+    excerpt:
+      "De 1943 à corrida dos modelos de fronteira de 2026: Dartmouth, os dois invernos da IA, AlexNet, o Transformer e a linha do tempo completa dos modelos que definiram o campo.",
+    content: "",
+    category: "ia",
+    subtopic: "educacao",
+    image: historiaIaImg,
+    author: "VICIO<CODE>",
+    date: "2026-08-25",
+    readTime: "13 min",
+    faq: [
+      { q: "Quem criou a inteligência artificial?", a: "Não há um criador único. O termo foi cunhado em 1956, na Conferência de Dartmouth, proposta por John McCarthy, Marvin Minsky, Nathaniel Rochester e Claude Shannon, sobre bases teóricas de Alan Turing, McCulloch e Pitts." },
+      { q: "O que foi o inverno da IA?", a: "Dois períodos de forte retração de investimento e interesse, entre 1974 e 1980 e entre 1987 e 1993, causados pela distância entre as promessas e os resultados reais dos sistemas." },
+      { q: "Por que 2012 é um marco na história da IA?", a: "Porque a rede neural AlexNet venceu o desafio ImageNet com ampla margem sobre os métodos anteriores, provando a superioridade prática do aprendizado profundo treinado em GPUs." },
+      { q: "O que o ChatGPT mudou?", a: "Principalmente o acesso. Lançado em 30 de novembro de 2022, ele transformou uma tecnologia já existente em uma interface de conversa gratuita e simples, popularizando a IA generativa." },
+      { q: "Qual é o modelo de IA mais avançado hoje?", a: "Não existe resposta estável: a liderança muda a cada poucas semanas e depende da tarefa avaliada, como código, raciocínio, custo por token ou multimodalidade." },
+    ],
+  },
+  {
+    id: "246",
+    slug: "glossario-ia-termos-e-profissoes-2026",
+    title: "Glossário de IA: O Que São Machine Learning, Deep Learning, LLMs e as Profissões Criadas pela Inteligência Artificial",
+    excerpt:
+      "Vinte termos de inteligência artificial explicados em português claro — de token e embedding a RAG e agentes — e dez profissões que estão nascendo com o avanço da IA.",
+    content: "",
+    category: "ia",
+    subtopic: "trabalho",
+    image: glossarioIaImg,
+    author: "VICIO<CODE>",
+    date: "2026-08-25",
+    readTime: "13 min",
+    faq: [
+      { q: "Qual a diferença entre inteligência artificial, machine learning e deep learning?", a: "São caixas encaixadas: a IA é o campo inteiro, o aprendizado de máquina é a parte em que o sistema aprende com exemplos e o aprendizado profundo é a parte que usa redes neurais com muitas camadas." },
+      { q: "O que é um LLM?", a: "Um modelo de linguagem grande: uma rede neural profunda treinada em enormes volumes de texto para prever o próximo trecho de uma sequência. É o que existe por trás dos assistentes de conversa." },
+      { q: "Por que a IA inventa informações?", a: "Porque ela otimiza a plausibilidade estatística do texto, e não a verdade. Sem fonte externa conectada, o modelo preenche lacunas com o que soa provável — daí o uso de RAG e revisão humana." },
+      { q: "Engenheiro de prompt ainda é uma profissão?", a: "Menos como cargo isolado e mais como competência incorporada a outras funções. O que permaneceu valioso é a avaliação sistemática das respostas do modelo." },
+      { q: "Preciso saber programar para trabalhar com IA?", a: "Não necessariamente. Funções de avaliação, curadoria de dados, governança, auditoria e produto dependem mais de domínio de área e método, embora exijam entender os conceitos técnicos básicos." },
     ],
   },
   // ── 18 Ago 2026 — Geek (Discord · suspensão de vídeo no Brasil) ────

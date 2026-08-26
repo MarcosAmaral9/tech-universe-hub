@@ -320,6 +320,8 @@ const Gemini37FlashBusca2026         = lazy(() => import("./pages/posts/Gemini37
 const Selic14OndeInvestir2026        = lazy(() => import("./pages/posts/Selic14OndeInvestir2026"));
 const Gamescom2026OQueEsperar        = lazy(() => import("./pages/posts/Gamescom2026OQueEsperar"));
 const AnimesOutono2026Estreias       = lazy(() => import("./pages/posts/AnimesOutono2026Estreias"));
+const HistoriaInteligenciaArtificial2026 = lazy(() => import("./pages/posts/HistoriaInteligenciaArtificial2026"));
+const GlossarioIATermosProfissoes2026 = lazy(() => import("./pages/posts/GlossarioIATermosProfissoes2026"));
  
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -547,6 +549,8 @@ const App = () => (
                 <Route path="/post/gemini-3-7-flash-busca-google-2026" element={<Suspense fallback={<div />}><Gemini37FlashBusca2026 /></Suspense>} />
                 <Route path="/post/selic-14-agosto-2026-onde-investir" element={<Suspense fallback={<div />}><Selic14OndeInvestir2026 /></Suspense>} />
                 <Route path="/post/gamescom-2026-o-que-esperar" element={<Suspense fallback={<div />}><Gamescom2026OQueEsperar /></Suspense>} />
+                <Route path="/post/historia-inteligencia-artificial-principais-modelos" element={<Suspense fallback={<div />}><HistoriaInteligenciaArtificial2026 /></Suspense>} />
+                <Route path="/post/glossario-ia-termos-e-profissoes-2026" element={<Suspense fallback={<div />}><GlossarioIATermosProfissoes2026 /></Suspense>} />
                 <Route path="/post/animes-outono-2026-estreias" element={<Suspense fallback={<div />}><AnimesOutono2026Estreias /></Suspense>} />
                 <Route path="/post/pragmata-capcom-guia-completo-2026" element={<Suspense fallback={<div />}><PragmataCapcom2026 /></Suspense>} />
                 <Route path="/post/saros-housemarque-ps5-2026" element={<Suspense fallback={<div />}><SarosPS52026 /></Suspense>} />
