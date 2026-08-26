@@ -5,8 +5,26 @@
     <link>https://viciocode.com</link>
     <description>Novos artigos de Inteligência Artificial no VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Thu, 20 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed/ia.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Glossário de IA: O Que São Machine Learning, Deep Learning, LLMs e as Profissões Criadas pela Inteligência Artificial</title>
+      <link>https://viciocode.com/post/glossario-ia-termos-e-profissoes-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/glossario-ia-termos-e-profissoes-2026</guid>
+      <pubDate>Tue, 25 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Vinte termos de inteligência artificial explicados em português claro — de token e embedding a RAG e agentes — e dez profissões que estão nascendo com o avanço da IA.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/glossario-ia-termos-e-profissoes-2026.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>História da Inteligência Artificial: Do Teste de Turing aos Principais Modelos de Hoje</title>
+      <link>https://viciocode.com/post/historia-inteligencia-artificial-principais-modelos</link>
+      <guid isPermaLink="true">https://viciocode.com/post/historia-inteligencia-artificial-principais-modelos</guid>
+      <pubDate>Tue, 25 Aug 2026 12:00:00 GMT</pubDate>
+      <description>De 1943 à corrida dos modelos de fronteira de 2026: Dartmouth, os dois invernos da IA, AlexNet, o Transformer e a linha do tempo completa dos modelos que definiram o campo.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/historia-inteligencia-artificial-principais-modelos.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>Gemini 3.7 Flash na Busca do Google: O Que Muda e Como Ele Se Compara aos Rivais de Agosto de 2026</title>
       <link>https://viciocode.com/post/gemini-3-7-flash-busca-google-2026</link>
