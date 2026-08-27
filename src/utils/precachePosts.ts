@@ -198,6 +198,7 @@ async function runQueue(
   const total = items.length;
   let done = 0;
   const queue = [...items];
+  const failures: string[] = [];
 
   const workers = Array.from({ length: CONCURRENCY }, async () => {
     while (queue.length) {
@@ -209,7 +210,7 @@ async function runQueue(
       try {
         const sizeBytes = await downloadPage(item.url, item.assetUrls ?? []);
 
-        // Registra no IndexedDB — fonte de verdade persistente
+        // Registra no IndexedDB — só após confirmar que está no Cache API
         const record: DownloadedPage = {
           key: item.url,
           label: item.label,
@@ -221,7 +222,8 @@ async function runQueue(
         };
         await registerDownloaded(record);
       } catch {
-        // Falha silenciosa — usuário pode estar offline ou rede instável
+        // Não registra downloads que falharam — evita "Salvo offline" mentiroso
+        failures.push(item.label);
       }
 
       done++;
@@ -232,6 +234,14 @@ async function runQueue(
 
   await Promise.all(workers);
   notify();
+
+  if (failures.length) {
+    throw new Error(
+      failures.length === total
+        ? "Não foi possível baixar o conteúdo. Verifique sua conexão."
+        : `${failures.length} de ${total} itens não puderam ser baixados.`
+    );
+  }
 }
 
 // ── API pública ────────────────────────────────────────────────────────────────
