@@ -1,18 +1,19 @@
 /**
- * autoPrecacheStatic — pré-cacheamento MÍNIMO na primeira abertura do app
+ * autoPrecacheStatic — pré-cacheamento MÍNIMO na abertura do app
  *
- * Ao instalar/abrir o PWA baixamos apenas o essencial:
+ * Ao instalar/abrir o PWA garantimos que o essencial está no cache:
  *   - "/" (shell do app)
  *   - "/leitura-offline" (biblioteca offline)
  *   - "/configuracoes/offline" (onde o usuário escolhe o que baixar)
  *
  * NENHUM artigo e NENHUMA imagem de artigo é baixada automaticamente.
- * Os hubs completos (com imagens) continuam disponíveis como download
- * MANUAL em Configurações → Offline.
+ *
+ * A verificação roda a cada abertura com internet: se alguma dessas páginas
+ * sumiu do cache (limpeza do navegador, falha anterior, cache expirado),
+ * ela é baixada de novo. Sem isso o app pode abrir offline sem ter a tela
+ * de leitura offline disponível.
  */
-import { precacheEssentialPages } from "./precachePosts";
-
-const DONE_KEY = "viciocode:essential-precache-done";
+import { precacheEssentialPages, ESSENTIAL_PAGES, isPageCached } from "./precachePosts";
 
 export function autoPrecacheStaticPages(): void {
   if (typeof window === "undefined") return;
@@ -26,15 +27,14 @@ export function autoPrecacheStaticPages(): void {
   if (!isStandalone) return;
   if (!navigator.onLine) return;
 
-  // localStorage (não sessionStorage): roda uma única vez por instalação
-  try {
-    if (localStorage.getItem(DONE_KEY) === "1") return;
-  } catch { /* storage indisponível — segue */ }
-
   const run = async () => {
     try {
+      // Verifica se tudo que é essencial já está realmente no Cache API
+      const results = await Promise.all(
+        ESSENTIAL_PAGES.map((p) => isPageCached(p.path))
+      );
+      if (results.every(Boolean)) return;
       await precacheEssentialPages();
-      try { localStorage.setItem(DONE_KEY, "1"); } catch { /* ignore */ }
     } catch {
       // Falha silenciosa — usuário pode tentar manualmente em /configuracoes/offline
     }
@@ -48,4 +48,7 @@ export function autoPrecacheStaticPages(): void {
   } else {
     setTimeout(() => { void run(); }, 4000);
   }
+
+  // Se o app voltar a ficar online, revalida o shell essencial
+  window.addEventListener("online", () => { void run(); });
 }
