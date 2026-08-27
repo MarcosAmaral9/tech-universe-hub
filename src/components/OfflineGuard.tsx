@@ -5,6 +5,8 @@
  */
 import { useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { toast } from "sonner";
+import { isPageCached } from "@/utils/precachePosts";
 
 const OFFLINE_PATH = "/leitura-offline";
 
@@ -18,14 +20,27 @@ export const OfflineGuard = () => {
   const location  = useLocation();
   const checked   = useRef(false);
 
-  // 1. Abertura do app sem internet → vai direto para a biblioteca offline
+  // 1. Abertura do app sem internet → vai direto para a biblioteca offline.
+  //    Exceção: artigo que o usuário baixou continua abrindo normalmente.
   useEffect(() => {
     if (checked.current) return;
     checked.current = true;
 
-    if (!navigator.onLine && !isExempt(location.pathname)) {
-      navigate(OFFLINE_PATH, { replace: true });
+    if (navigator.onLine) return;
+
+    const path = location.pathname;
+    if (isExempt(path)) return;
+
+    if (path.startsWith("/post/")) {
+      void isPageCached(path).then((cached) => {
+        if (cached) return;
+        toast.info("Este artigo não foi baixado para leitura offline.");
+        navigate(OFFLINE_PATH, { replace: true });
+      });
+      return;
     }
+
+    navigate(OFFLINE_PATH, { replace: true });
   }, [navigate, location.pathname]);
 
   // 2. Perdeu a conexão durante o uso → leva para a biblioteca offline,

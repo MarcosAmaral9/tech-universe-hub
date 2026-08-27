@@ -105,9 +105,37 @@ function toAbsolute(url: string): string {
   catch { return url; }
 }
 
+/** Variações de chave sob as quais uma página pode ser requisitada offline */
+function pageKeyVariants(url: string): string[] {
+  const abs = toAbsolute(url);
+  const variants = new Set<string>([url, abs]);
+  if (!url.endsWith("/")) variants.add(`${url}/`);
+  if (!abs.endsWith("/")) variants.add(`${abs}/`);
+  return [...variants];
+}
+
+/**
+ * Verifica se uma página realmente está disponível no Cache API
+ * (registro no IndexedDB sozinho não garante leitura offline).
+ */
+export async function isPageCached(url: string): Promise<boolean> {
+  if (typeof caches === "undefined") return false;
+  try {
+    const cache = await caches.open(PAGE_CACHE);
+    for (const key of pageKeyVariants(url)) {
+      const hit = await cache.match(key, { ignoreSearch: true });
+      if (hit) return true;
+    }
+    return false;
+  } catch {
+    return false;
+  }
+}
+
 /**
  * Baixa uma URL garantindo que entre no Cache API E no IndexedDB.
  * Retorna o tamanho em bytes da resposta cacheada.
+ * Lança erro se o download não puder ser confirmado no cache.
  */
 async function downloadAndCache(
   cacheName: string,
@@ -115,41 +143,45 @@ async function downloadAndCache(
 ): Promise<number> {
   const absUrl = toAbsolute(url);
 
-  // 1. Faz o fetch — o SW intercede e armazena em pages-cache via NetworkFirst
-  //    Usamos "reload" para forçar re-download da rede (não servir do cache SW)
-  //    porque queremos garantir que a versão mais recente foi salva
+  // 1. Faz o fetch — "reload" força a busca na rede (não servir do cache do SW)
   const response = await fetch(absUrl, {
     credentials: "same-origin",
-    cache: "reload", // força download da rede
+    cache: "reload",
   });
 
-  if (!response.ok && response.status !== 0) {
+  if (!response.ok) {
     throw new Error(`HTTP ${response.status} ao baixar ${url}`);
   }
 
-  // 2. Armazena manualmente no cache correto com a chave canônica
-  //    Isso garante que a entrada existe independente do SW ter interceptado
-  try {
-    const cache = await caches.open(cacheName);
-    // Guarda tanto a URL absoluta quanto o path relativo para compatibilidade
-    const responseToStore = response.clone();
-    await cache.put(absUrl, responseToStore);
-    // Mede tamanho
-    const sizeResponse = await cache.match(absUrl);
-    if (sizeResponse) {
-      const blob = await sizeResponse.clone().blob();
-      return blob.size;
-    }
-  } catch { /* Cache API pode estar indisponível em alguns contextos */ }
+  if (typeof caches === "undefined") {
+    throw new Error("Cache API indisponível neste navegador");
+  }
 
-  return 0;
+  // 2. Armazena manualmente sob todas as variações de chave possíveis,
+  //    para bater com a requisição de navegação feita pelo navegador offline.
+  const cache = await caches.open(cacheName);
+  const keys = cacheName === PAGE_CACHE ? pageKeyVariants(url) : [absUrl];
+  for (const key of keys) {
+    await cache.put(key, response.clone());
+  }
+
+  // 3. Confirma que a entrada existe e não está vazia
+  const stored = await cache.match(absUrl);
+  if (!stored) {
+    throw new Error(`Não foi possível gravar ${url} no cache offline`);
+  }
+  const blob = await stored.clone().blob();
+  if (blob.size === 0) {
+    throw new Error(`Conteúdo vazio ao baixar ${url}`);
+  }
+  return blob.size;
 }
 
 async function downloadPage(url: string, assetUrls: string[] = []): Promise<number> {
   let totalBytes = 0;
-  // Baixa o HTML
+  // Baixa o HTML — falha aqui invalida o download inteiro
   totalBytes += await downloadAndCache(PAGE_CACHE, url);
-  // Baixa assets (imagens hero)
+  // Baixa assets (imagens hero) — não críticos
   await Promise.all(
     assetUrls.map(async (asset) => {
       try { totalBytes += await downloadAndCache(IMAGE_CACHE, asset); }
@@ -166,6 +198,7 @@ async function runQueue(
   const total = items.length;
   let done = 0;
   const queue = [...items];
+  const failures: string[] = [];
 
   const workers = Array.from({ length: CONCURRENCY }, async () => {
     while (queue.length) {
@@ -177,7 +210,7 @@ async function runQueue(
       try {
         const sizeBytes = await downloadPage(item.url, item.assetUrls ?? []);
 
-        // Registra no IndexedDB — fonte de verdade persistente
+        // Registra no IndexedDB — só após confirmar que está no Cache API
         const record: DownloadedPage = {
           key: item.url,
           label: item.label,
@@ -189,7 +222,8 @@ async function runQueue(
         };
         await registerDownloaded(record);
       } catch {
-        // Falha silenciosa — usuário pode estar offline ou rede instável
+        // Não registra downloads que falharam — evita "Salvo offline" mentiroso
+        failures.push(item.label);
       }
 
       done++;
@@ -200,6 +234,14 @@ async function runQueue(
 
   await Promise.all(workers);
   notify();
+
+  if (failures.length) {
+    throw new Error(
+      failures.length === total
+        ? "Não foi possível baixar o conteúdo. Verifique sua conexão."
+        : `${failures.length} de ${total} itens não puderam ser baixados.`
+    );
+  }
 }
 
 // ── API pública ────────────────────────────────────────────────────────────────
