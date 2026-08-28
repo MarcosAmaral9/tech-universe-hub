@@ -290,7 +290,7 @@ export default defineConfig(({ mode }) => ({
         importScripts: ["/push-handler.js"],
         // Precache shell assets — JS/CSS/fonts/SVG bundles (hashed → safe to cache long-term)
         // Inclui offline.html para servir como fallback quando rota não cacheada é acessada offline
-        globPatterns: ["**/*.{js,css,woff2,woff,svg,ico}", "offline.html"],
+        globPatterns: ["**/*.{js,css,woff2,woff,svg,ico}", "index.html", "offline.html"],
         // Increase precache file size limit to 5 MB (default is 2 MB) — our bundle has multiple chunks
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         cleanupOutdatedCaches: true,
