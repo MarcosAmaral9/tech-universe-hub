@@ -319,7 +319,7 @@ export default defineConfig(({ mode }) => ({
               cacheableResponse: { statuses: [0, 200] },
               // Shell do SPA: garante que o React sempre inicializa offline e
               // consegue redirecionar para /leitura-offline
-              precacheFallback: { fallbackURL: "/index.html" },
+              precacheFallback: { fallbackURL: "index.html" },
             },
 
           },
