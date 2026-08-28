@@ -317,7 +317,9 @@ export default defineConfig(({ mode }) => ({
               networkTimeoutSeconds: 10,
               expiration: { maxEntries: 300, maxAgeSeconds: 365 * 24 * 60 * 60 },
               cacheableResponse: { statuses: [0, 200] },
-              precacheFallback: { fallbackURL: "/offline.html" },
+              // Shell do SPA: garante que o React sempre inicializa offline e
+              // consegue redirecionar para /leitura-offline
+              precacheFallback: { fallbackURL: "/index.html" },
             },
 
           },
