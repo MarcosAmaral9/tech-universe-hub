@@ -9,7 +9,6 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import ReadNext from "@/components/ReadNext";
-import ContentDisclaimer from "@/components/ContentDisclaimer";
 import { Clock, User, Calendar, Map, ListChecks, HelpCircle, Landmark, Globe2, Skull, Flag } from "lucide-react";
 import heroImg from "@/assets/hell-let-loose-vietnam-mapas.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
@@ -178,7 +177,6 @@ const HellLetLooseVietnamMapas2026 = () => {
           artística dela.
         </p>
 
-        <ContentDisclaimer type="general" />
 
         <h2 id="mapas" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Map className="h-7 w-7 text-geek" />
