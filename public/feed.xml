@@ -5,8 +5,26 @@
     <link>https://viciocode.com</link>
     <description>IA, investimentos, cultura geek e otaku — novos artigos do VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Tue, 25 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hell Let Loose: Vietnam — Guia de Armas, Classes, Sistema de Peso e Dicas de Gameplay</title>
+      <link>https://viciocode.com/post/hell-let-loose-vietnam-armas-classes-gameplay</link>
+      <guid isPermaLink="true">https://viciocode.com/post/hell-let-loose-vietnam-armas-classes-gameplay</guid>
+      <pubDate>Fri, 28 Aug 2026 12:00:00 GMT</pubDate>
+      <description>A origem histórica de cada arma dos EUA e do NVA, as 17 funções jogáveis, como funciona o novo loadout por slots de peso e as dicas que fazem diferença nas primeiras partidas.</description>
+      <category>Geek &amp; Games</category>
+      <enclosure url="https://viciocode.com/assets/hell-let-loose-vietnam-armas-classes-gameplay.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>Hell Let Loose: Vietnam — Todos os Mapas e o Contexto Histórico Real por Trás de Cada Um</title>
+      <link>https://viciocode.com/post/hell-let-loose-vietnam-mapas-contexto-historico</link>
+      <guid isPermaLink="true">https://viciocode.com/post/hell-let-loose-vietnam-mapas-contexto-historico</guid>
+      <pubDate>Fri, 28 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Cada mapa de Hell Let Loose: Vietnam ligado à batalha real que o inspirou, mais o contexto da Guerra Fria, os países que financiaram os dois lados e os números de baixas do conflito.</description>
+      <category>Geek &amp; Games</category>
+      <enclosure url="https://viciocode.com/assets/hell-let-loose-vietnam-mapas-contexto-historico.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>Glossário de IA: O Que São Machine Learning, Deep Learning, LLMs e as Profissões Criadas pela Inteligência Artificial</title>
       <link>https://viciocode.com/post/glossario-ia-termos-e-profissoes-2026</link>
@@ -438,24 +456,6 @@
       <description>Guia completo do Black Myth: Wukong: origem em A Jornada ao Oeste, história da Game Science, sistema de combate com 3 stances, os 6 capítulos e o recorde histórico de 2,4M jogadores simultâneos na Steam.</description>
       <category>Geek &amp; Games</category>
       <enclosure url="https://viciocode.com/assets/black-myth-wukong-guia-completo-2024.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>GTA VI: Mapa de Leonida — Vice City, Keys e Everglades Reimaginados</title>
-      <link>https://viciocode.com/post/gta-vi-mapa-leonida-vice-city-2026</link>
-      <guid isPermaLink="true">https://viciocode.com/post/gta-vi-mapa-leonida-vice-city-2026</guid>
-      <pubDate>Wed, 24 Jun 2026 12:00:00 GMT</pubDate>
-      <description>Geografia confirmada nos trailers oficiais — Vice City, interior do estado fictício de Leonida, pântanos, ilhas e a comparação realista com San Andreas de GTA V.</description>
-      <category>Geek &amp; Games</category>
-      <enclosure url="https://viciocode.com/assets/gta-vi-mapa-leonida-vice-city-2026.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>GTA VI: Linha do Tempo Completa dos Trailers e do Marketing</title>
-      <link>https://viciocode.com/post/gta-vi-trailers-marketing-2026</link>
-      <guid isPermaLink="true">https://viciocode.com/post/gta-vi-trailers-marketing-2026</guid>
-      <pubDate>Wed, 24 Jun 2026 12:00:00 GMT</pubDate>
-      <description>Do vazamento de 2022 ao anúncio oficial, Trailer 1 (recorde mundial no YouTube), Trailer 2 de 2025 e a campanha de marketing do verão 2026 da Rockstar Games e Take-Two.</description>
-      <category>Geek &amp; Games</category>
-      <enclosure url="https://viciocode.com/assets/gta-vi-trailers-marketing-2026.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>
