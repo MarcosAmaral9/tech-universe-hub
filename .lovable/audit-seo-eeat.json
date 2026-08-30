@@ -1,14 +1,66 @@
 {
-  "generatedAt": "2026-08-24T22:01:50.334Z",
+  "generatedAt": "2026-08-30T00:55:24.424Z",
   "counts": {
     "OK": 16,
-    "A": 93,
+    "A": 95,
     "B": 2,
     "C": 13,
-    "D": 91
+    "D": 93
   },
   "missingFiles": [],
   "reports": [
+    {
+      "slug": "hell-let-loose-vietnam-mapas-contexto-historico",
+      "file": "HellLetLooseVietnamMapas2026.tsx",
+      "keyword": "hell let loose",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 7,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1745,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual"
+      ]
+    },
+    {
+      "slug": "hell-let-loose-vietnam-armas-classes-gameplay",
+      "file": "HellLetLooseVietnamArmas2026.tsx",
+      "keyword": "hell let loose",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 7,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1489,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "apenas ~1489 palavras (mínimo 1500)"
+      ]
+    },
     {
       "slug": "gemini-3-7-flash-busca-google-2026",
       "file": "Gemini37FlashBusca2026.tsx",
@@ -116,6 +168,61 @@
         "sem PAGE_META manual",
         "keyword ausente na introdução",
         "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "historia-inteligencia-artificial-principais-modelos",
+      "file": "HistoriaInteligenciaArtificial2026.tsx",
+      "keyword": "historia inteligencia artificial",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 7,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1805,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "glossario-ia-termos-e-profissoes-2026",
+      "file": "GlossarioIATermosProfissoes2026.tsx",
+      "keyword": "glossario ia termos",
+      "category": "ia",
+      "checks": {
+        "h1": false,
+        "intro": false,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1346,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente na introdução",
+        "keyword ausente em excerpt",
+        "apenas ~1346 palavras (mínimo 1500)"
       ]
     },
     {
