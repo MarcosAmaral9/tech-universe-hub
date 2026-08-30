@@ -231,8 +231,53 @@ import gemini37FlashImg from "@/assets/gemini-3-7-flash-busca-google-2026.webp";
 import selic14Img from "@/assets/selic-14-agosto-2026-onde-investir.webp";
 import gamescom2026Img from "@/assets/gamescom-2026-o-que-esperar.webp";
 import animesOutono2026Img from "@/assets/animes-outono-2026-estreias.webp";
+import hllVietnamMapasImg from "@/assets/hell-let-loose-vietnam-mapas.webp";
+import hllVietnamArmasImg from "@/assets/hell-let-loose-vietnam-armas.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 28 Ago 2026 — Geek (Hell Let Loose: Vietnam) ───────────────────
+  {
+    id: "247",
+    slug: "hell-let-loose-vietnam-mapas-contexto-historico",
+    title: "Hell Let Loose: Vietnam — Todos os Mapas e o Contexto Histórico Real por Trás de Cada Um",
+    excerpt:
+      "Cada mapa de Hell Let Loose: Vietnam ligado à batalha real que o inspirou, mais o contexto da Guerra Fria, os países que financiaram os dois lados e os números de baixas do conflito.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: hllVietnamMapasImg,
+    author: "VICIO<CODE>",
+    date: "2026-08-28",
+    readTime: "14 min",
+    faq: [
+      { q: "Quantos mapas tem Hell Let Loose: Vietnam?", a: "O jogo estreou em 13 de agosto de 2026 com seis mapas de larga escala inspirados em locais e operações reais da Guerra do Vietnã, todos com rede fluvial navegável." },
+      { q: "Os mapas são cópias fiéis dos locais reais?", a: "Não. São recriações inspiradas: mantêm o tipo de terreno e os marcos característicos, mas comprimem distâncias e ajustam rotas para caber em partidas de 50 contra 50." },
+      { q: "Quais países financiaram a Guerra do Vietnã?", a: "O Vietnã do Sul foi sustentado pelos Estados Unidos, com tropas de Coreia do Sul, Austrália, Nova Zelândia, Tailândia e Filipinas. O Vietnã do Norte foi apoiado pela União Soviética e pela China, com ajuda do bloco socialista europeu." },
+      { q: "Quantas pessoas morreram na Guerra do Vietnã?", a: "Cerca de 58,2 mil militares americanos, entre 220 mil e 250 mil soldados sul-vietnamitas e aproximadamente 1,1 milhão de combatentes do Norte e do Vietcong, segundo dados de Hanói de 1995. As mortes civis são estimadas entre 1 e 3 milhões." },
+      { q: "Qual batalha inspirou o mapa de Hue?", a: "A Batalha de Huế, travada entre janeiro e março de 1968 durante a Ofensiva do Tet, o combate urbano mais longo e destrutivo da guerra." },
+    ],
+  },
+  {
+    id: "248",
+    slug: "hell-let-loose-vietnam-armas-classes-gameplay",
+    title: "Hell Let Loose: Vietnam — Guia de Armas, Classes, Sistema de Peso e Dicas de Gameplay",
+    excerpt:
+      "A origem histórica de cada arma dos EUA e do NVA, as 17 funções jogáveis, como funciona o novo loadout por slots de peso e as dicas que fazem diferença nas primeiras partidas.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: hllVietnamArmasImg,
+    author: "VICIO<CODE>",
+    date: "2026-08-28",
+    readTime: "15 min",
+    faq: [
+      { q: "Quantas armas tem Hell Let Loose: Vietnam?", a: "São 22 armas no lançamento, divididas entre as forças dos EUA e o Exército do Vietnã do Norte, com arsenais distintos para cada lado e novas adições previstas no roadmap." },
+      { q: "Qual a melhor classe para começar?", a: "Fuzileiro. O loadout é simples, você carrega munição para o esquadrão e pode focar em aprender mapa, comunicação e posicionamento sem responsabilidade de comando." },
+      { q: "Como funciona o sistema de peso?", a: "O equipamento é montado dentro de um orçamento de slots de carga. Itens volumosos consomem mais espaço e o conjunto pesado reduz resistência e velocidade de deslocamento. A capacidade aumenta com a progressão de nível." },
+      { q: "As facções são equilibradas?", a: "Elas são assimétricas por design: os EUA têm helicópteros e poder de fogo, enquanto o NVA tem rede de túneis e armamento voltado ao curto alcance. O equilíbrio vem do confronto entre estilos." },
+      { q: "Dá para jogar sem microfone?", a: "Dá, mas o rendimento cai. O jogo é construído em torno da coordenação de esquadrão; sem voz, use marcações no mapa e evite funções de liderança, blindados e helicóptero." },
+    ],
+  },
   // ── 20 Ago 2026 — IA (Gemini 3.7 Flash na Busca) ───────────────────
   {
     id: "241",
