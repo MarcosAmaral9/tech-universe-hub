@@ -619,6 +619,8 @@ const App = () => (
                 <Route path="/post/anime-verao-2026-dias-semana" element={<Suspense fallback={<div />}><AnimeVerao2026DiasSemana /></Suspense>} />
                 <Route path="/post/ghost-of-yotei-guia-completo" element={<Suspense fallback={<div />}><GhostOfYoteiGuia /></Suspense>} />
                 <Route path="/post/helldivers-2-guia-completo-2024" element={<Suspense fallback={<div />}><Helldivers2Guia2024 /></Suspense>} />
+                <Route path="/post/hell-let-loose-vietnam-mapas-contexto-historico" element={<Suspense fallback={<div />}><HellLetLooseVietnamMapas2026 /></Suspense>} />
+                <Route path="/post/hell-let-loose-vietnam-armas-classes-gameplay" element={<Suspense fallback={<div />}><HellLetLooseVietnamArmas2026 /></Suspense>} />
                 {/* ── 22 Jul 2026 — Invest Lote 4 ── */}
                 <Route path="/post/acoes-crescimento-vs-dividendos-2026" element={<Suspense fallback={<div />}><AcoesCrescimentoVsDividendos2026 /></Suspense>} />
                 <Route path="/post/cambio-dolar-protecao-carteira-2026" element={<Suspense fallback={<div />}><CambioDolarProtecao2026 /></Suspense>} />
