@@ -322,6 +322,33 @@ const HellLetLooseVietnamArmas2026 = () => {
           verdade permanente.
         </p>
 
+        <h3 className="text-xl font-bold mt-8 mb-3">E a AK-47? A arma símbolo do Vietnã no jogo</h3>
+        <p>
+          É a pergunta mais frequente de quem instala o jogo: onde está a AK-47? A resposta exige precisão histórica.
+          A AK-47 soviética original, projetada por Mikhail Kalashnikov e adotada em 1949, praticamente não chegou ao
+          Vietnã em sua forma soviética de primeira geração. O que armou o Exército do Vietnã do Norte e o Vietcong
+          em massa foi o <strong>Type 56</strong>, a variante fabricada na China a partir de 1956 sob licença — mesma
+          munição 7,62×39 mm, mesmo sistema de recuo por gases e ferrolho rotativo, mesma silhueta, com a diferença
+          mais visível na baioneta dobrável tipo espeto presa sob o cano e no receptor estampado das séries
+          posteriores.
+        </p>
+        <p>
+          Ou seja: a AK-47 <em>está</em> no jogo — só que com o nome correto da versão que realmente esteve na guerra.
+          Chamar o Type 56 de "AK-47 do Vietnã" é justo; tratá-lo como arma diferente, não. Nas listas de armas
+          divulgadas até agora não aparece uma AK-47 soviética separada, e essa escolha é coerente com o rigor
+          histórico que a série cultiva desde o primeiro Hell Let Loose.
+        </p>
+        <p>
+          Em campo, o Type 56 define o ritmo da facção norte-vietnamita. O cartucho intermediário entrega mais dano
+          por acerto que o 5,56 mm do M16A1, ao custo de recuo mais vertical e carregador curvo de 30 tiros que exige
+          disciplina de rajada. Em mato fechado, túnel e aldeia — a distância em que o Norte quer lutar — ele é
+          simplesmente a melhor ferramenta do jogo. Acima de 150 metros, a vantagem inverte e passa para o fuzil
+          americano. Todo o duelo de facções nasce dessa diferença de calibre e de doutrina, não de números de dano
+          arbitrários.
+        </p>
+
+
+
         <h2 id="classes" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Users className="h-7 w-7 text-geek" />
           Classes e Tipos de Unidade
