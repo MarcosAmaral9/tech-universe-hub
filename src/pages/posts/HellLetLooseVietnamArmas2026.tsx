@@ -8,7 +8,7 @@ import ArticleSources from "@/components/ArticleSources";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import { Clock, User, Calendar, Crosshair, ListChecks, HelpCircle, Backpack, Users, Lightbulb, Swords } from "lucide-react";
+import { Clock, User, Calendar, Crosshair, ListChecks, HelpCircle, Backpack, Users, Lightbulb, Swords, Truck } from "lucide-react";
 import heroImg from "@/assets/hell-let-loose-vietnam-armas.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
 
@@ -174,6 +174,17 @@ const DICAS = [
     texto:
       "Um 'inimigo na casa à esquerda' vale mais que qualquer estatística de mira. Comunicação simples e em português já resolve; o jogo separa canais de esquadrão e de comando exatamente para isso.",
   },
+];
+
+const VEICULOS = [
+  { faccao: "EUA", categoria: "Helicóptero", papel: "Transporte rápido de esquadrão, entrega de suprimentos e apoio de fogo com metralhadoras de porta. Tripulação de piloto e oficial de logística.", status: "Categoria confirmada oficialmente e exclusiva dos EUA; modelo nominal (UH-1 Huey) citado apenas por fontes de terceiros." },
+  { faccao: "EUA", categoria: "Tanque / blindado", papel: "Apoio direto à infantaria, escolta de comboio e quebra de posição fortificada. Funções separadas de comandante e tripulante.", status: "Unidade Armour confirmada oficialmente; modelo (M48 Patton) apontado por wikis, sem confirmação da Team17." },
+  { faccao: "EUA", categoria: "Barco de patrulha fluvial", papel: "Manobra por rio, desembarque na retaguarda e plataforma de fogo móvel contra margem descoberta.", status: "Patrulhas fluviais armadas confirmadas oficialmente para os dois lados; a sigla PBR vem de fontes secundárias." },
+  { faccao: "EUA", categoria: "Caminhão de transporte", papel: "Rotação de tropa e reabastecimento entre a base e as guarnições avançadas.", status: "Relatado por sites especializados; alvo fácil e previsível em estrada." },
+  { faccao: "NVA", categoria: "Tanque / blindado", papel: "Mesmo papel de apoio de infantaria, com emprego mais defensivo e dependente de emboscada e terreno.", status: "Fontes de terceiros divergem entre T-54 e T-55; sem confirmação oficial de modelo." },
+  { faccao: "NVA", categoria: "Embarcações fluviais", papel: "Infiltração, transporte discreto de esquadrão e uso da vegetação de margem como cobertura.", status: "Existência confirmada pela descrição oficial de patrulhas fluviais para ambos os lados; modelos não nomeados." },
+  { faccao: "NVA", categoria: "Caminhão de transporte", papel: "Logística e deslocamento de tropa por trilhas, equivalente funcional do caminhão americano.", status: "Relatado por sites especializados." },
+  { faccao: "NVA", categoria: "Aeronave", papel: "Não há unidade de helicóptero jogável para o Norte — a resposta ao domínio aéreo americano é antiaérea e ocultação.", status: "Confirmado: helicópteros são exclusivos dos EUA." },
 ];
 
 const HellLetLooseVietnamArmas2026 = () => {
