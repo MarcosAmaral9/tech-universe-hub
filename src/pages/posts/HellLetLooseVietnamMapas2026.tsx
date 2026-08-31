@@ -8,7 +8,6 @@ import ArticleSources from "@/components/ArticleSources";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import ReadNext from "@/components/ReadNext";
 import { Clock, User, Calendar, Map, ListChecks, HelpCircle, Landmark, Globe2, Skull, Flag } from "lucide-react";
 import heroImg from "@/assets/hell-let-loose-vietnam-mapas.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
@@ -80,6 +79,103 @@ const FINANCIADORES = [
   { pais: "China", papel: "Enviou dezenas de milhares de militares de apoio (engenharia, antiaérea e logística) ao Vietnã do Norte, além de armamento leve, munição e alimentos." },
   { pais: "Coreia do Sul, Austrália, Nova Zelândia, Tailândia e Filipinas", papel: "Integraram a coalizão 'Free World Military Forces' ao lado do Sul, com tropas de combate ou de apoio." },
   { pais: "Bloco socialista europeu", papel: "Tchecoslováquia, Polônia, Hungria e Alemanha Oriental contribuíram com equipamento, treinamento e ajuda médica ao Norte." },
+];
+
+const TEATROS = [
+  {
+    regiao: "Zona Desmilitarizada e I Corps (norte do Sul)",
+    provincias: "Quảng Trị, Thừa Thiên-Huế, Quảng Nam, Quảng Ngãi",
+    caracteristica:
+      "Faixa mais próxima do paralelo 17, onde o Exército do Vietnã do Norte podia atuar com unidades regulares, artilharia pesada e reforço vindo direto do outro lado da linha. Era o teatro dos fuzileiros americanos.",
+    episodios: "Khe Sanh (1968), Batalha de Huế (1968), Operação Starlite em Vạn Tường (1965), Vale do A Sầu e Colina 937 (1969).",
+  },
+  {
+    regiao: "Planalto Central",
+    provincias: "Kontum, Gia Lai, Đắk Lắk",
+    caracteristica:
+      "Região montanhosa e de selva fechada, colada às fronteiras do Laos e do Camboja. Ponto de entrada da Trilha Ho Chi Minh e território de bases isoladas americanas cercadas por mato.",
+    episodios: "Ia Drang (1965), Đắk Tô e Colina 875 (1967), ofensivas de 1972 sobre Kontum.",
+  },
+  {
+    regiao: "Costa central e planície litorânea",
+    provincias: "Bình Định, Phú Yên, Khánh Hòa",
+    caracteristica:
+      "Arrozais, aldeias densas e uma estreita planície entre montanha e mar cortada pela Rota 1. Guerra de controle populacional, com operações de busca e destruição alternando com pacificação.",
+    episodios: "Operações Masher/White Wing (1966), campanhas no vale de Bồng Sơn.",
+  },
+  {
+    regiao: "Arredores de Saigon e 'Iron Triangle'",
+    provincias: "Bình Dương, Tây Ninh, Hậu Nghĩa",
+    caracteristica:
+      "Cinturão de plantações de seringueira e florestas a noroeste da capital, sustentado por uma rede subterrânea de túneis com hospitais, depósitos e alojamentos — o complexo de Củ Chi é o exemplo mais conhecido.",
+    episodios: "Operação Cedar Falls (1967), Operação Junction City (1967), ataques do Tet a Saigon (1968).",
+  },
+  {
+    regiao: "Delta do Mekong",
+    provincias: "Long An, Kiên Giang, Cà Mau e vizinhas",
+    caracteristica:
+      "Terreno plano, alagado e cortado por milhares de canais. A guerra ali foi essencialmente fluvial: barcos de patrulha, comboios em canal e emboscadas em margens de vegetação fechada.",
+    episodios: "Mobile Riverine Force (1967–1969), combates do Tet em Mỹ Tho e Bến Tre, Operação Game Warden.",
+  },
+];
+
+const BATALHAS = [
+  {
+    nome: "Ia Drang",
+    data: "Novembro de 1965",
+    forcas: "1ª Divisão de Cavalaria (Aeromóvel) dos EUA x 3 regimentos do NVA",
+    resultado:
+      "Primeiro grande choque entre tropas regulares dos dois lados. Validou o assalto aeromóvel por helicóptero e, do lado de Hanói, ensinou a 'agarrar pelo cinturão' — colar-se ao inimigo para anular o apoio aéreo e a artilharia.",
+  },
+  {
+    nome: "Operação Starlite (Vạn Tường)",
+    data: "18 a 24 de agosto de 1965",
+    forcas: "Fuzileiros dos EUA x 1º Regimento do Vietcong",
+    resultado:
+      "Primeira grande operação puramente americana da guerra, combinando desembarque anfíbio, helicópteros e blindados contra posições entrincheiradas na península.",
+  },
+  {
+    nome: "Đắk Tô e Colina 875",
+    data: "Novembro de 1967",
+    forcas: "173ª Brigada Aerotransportada e ARVN x 1ª Divisão do NVA",
+    resultado:
+      "Semanas de assalto a cristas fortificadas no Planalto Central, com bunkers escalonados encosta acima. Parte das 'batalhas de fronteira' que precederam o Tet.",
+  },
+  {
+    nome: "Cerco de Khe Sanh",
+    data: "21 de janeiro a 9 de abril de 1968",
+    forcas: "26º Regimento de Fuzileiros dos EUA x duas divisões do NVA",
+    resultado:
+      "77 dias de cerco a uma base de combate isolada, sustentada por ponte aérea e bombardeio maciço. Concentrou a atenção do comando americano nas semanas que antecederam a Ofensiva do Tet.",
+  },
+  {
+    nome: "Ofensiva do Tet",
+    data: "30 de janeiro a setembro de 1968",
+    forcas: "NVA e Vietcong x EUA e ARVN",
+    resultado:
+      "Ataques simultâneos a mais de cem localidades. Revés militar para o Norte e desgaste político decisivo nos EUA — o caso clássico de derrota tática com efeito estratégico inverso.",
+  },
+  {
+    nome: "Batalha de Huế",
+    data: "31 de janeiro a 2 de março de 1968",
+    forcas: "Fuzileiros dos EUA e ARVN x NVA e Vietcong",
+    resultado:
+      "Combate urbano casa a casa pela Cidadela, o mais longo da guerra. Boa parte do patrimônio da antiga capital imperial foi destruída e a cidade registrou execuções em massa de civis pelo lado norte-vietnamita.",
+  },
+  {
+    nome: "Colina 937 ('Hamburger Hill')",
+    data: "10 a 20 de maio de 1969",
+    forcas: "101ª Divisão Aerotransportada x 29º Regimento do NVA",
+    resultado:
+      "Dez dias de assalto frontal a uma elevação no Vale do A Sầu, abandonada logo depois. Virou símbolo doméstico do questionamento sobre o custo humano das operações.",
+  },
+  {
+    nome: "Ofensiva da Páscoa",
+    data: "Março a outubro de 1972",
+    forcas: "NVA com blindados x ARVN com apoio aéreo dos EUA",
+    resultado:
+      "Primeira ofensiva convencional em larga escala do Norte, com colunas de tanques cruzando a DMZ. Testou a 'vietnamização' e antecipou o desfecho de 1975.",
+  },
 ];
 
 const HellLetLooseVietnamMapas2026 = () => {
@@ -487,8 +583,6 @@ const HellLetLooseVietnamMapas2026 = () => {
           },
         ]}
       />
-
-      <ReadNext currentSlug={SLUG} />
       <RelatedPosts currentSlug={SLUG} />
       <CommentSection postId={SLUG} postTitle={TITLE} category="geek" />
     </article>

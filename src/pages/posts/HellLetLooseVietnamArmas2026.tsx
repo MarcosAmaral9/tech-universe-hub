@@ -8,8 +8,7 @@ import ArticleSources from "@/components/ArticleSources";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import ReadNext from "@/components/ReadNext";
-import { Clock, User, Calendar, Crosshair, ListChecks, HelpCircle, Backpack, Users, Lightbulb, Swords } from "lucide-react";
+import { Clock, User, Calendar, Crosshair, ListChecks, HelpCircle, Backpack, Users, Lightbulb, Swords, Truck } from "lucide-react";
 import heroImg from "@/assets/hell-let-loose-vietnam-armas.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
 
@@ -177,6 +176,17 @@ const DICAS = [
   },
 ];
 
+const VEICULOS = [
+  { faccao: "EUA", categoria: "Helicóptero", papel: "Transporte rápido de esquadrão, entrega de suprimentos e apoio de fogo com metralhadoras de porta. Tripulação de piloto e oficial de logística.", status: "Categoria confirmada oficialmente e exclusiva dos EUA; modelo nominal (UH-1 Huey) citado apenas por fontes de terceiros." },
+  { faccao: "EUA", categoria: "Tanque / blindado", papel: "Apoio direto à infantaria, escolta de comboio e quebra de posição fortificada. Funções separadas de comandante e tripulante.", status: "Unidade Armour confirmada oficialmente; modelo (M48 Patton) apontado por wikis, sem confirmação da Team17." },
+  { faccao: "EUA", categoria: "Barco de patrulha fluvial", papel: "Manobra por rio, desembarque na retaguarda e plataforma de fogo móvel contra margem descoberta.", status: "Patrulhas fluviais armadas confirmadas oficialmente para os dois lados; a sigla PBR vem de fontes secundárias." },
+  { faccao: "EUA", categoria: "Caminhão de transporte", papel: "Rotação de tropa e reabastecimento entre a base e as guarnições avançadas.", status: "Relatado por sites especializados; alvo fácil e previsível em estrada." },
+  { faccao: "NVA", categoria: "Tanque / blindado", papel: "Mesmo papel de apoio de infantaria, com emprego mais defensivo e dependente de emboscada e terreno.", status: "Fontes de terceiros divergem entre T-54 e T-55; sem confirmação oficial de modelo." },
+  { faccao: "NVA", categoria: "Embarcações fluviais", papel: "Infiltração, transporte discreto de esquadrão e uso da vegetação de margem como cobertura.", status: "Existência confirmada pela descrição oficial de patrulhas fluviais para ambos os lados; modelos não nomeados." },
+  { faccao: "NVA", categoria: "Caminhão de transporte", papel: "Logística e deslocamento de tropa por trilhas, equivalente funcional do caminhão americano.", status: "Relatado por sites especializados." },
+  { faccao: "NVA", categoria: "Aeronave", papel: "Não há unidade de helicóptero jogável para o Norte — a resposta ao domínio aéreo americano é antiaérea e ocultação.", status: "Confirmado: helicópteros são exclusivos dos EUA." },
+];
+
 const HellLetLooseVietnamArmas2026 = () => {
   useEffect(() => {
     trackArticleRead(SLUG, TITLE, "geek");
@@ -323,6 +333,33 @@ const HellLetLooseVietnamArmas2026 = () => {
           verdade permanente.
         </p>
 
+        <h3 className="text-xl font-bold mt-8 mb-3">E a AK-47? A arma símbolo do Vietnã no jogo</h3>
+        <p>
+          É a pergunta mais frequente de quem instala o jogo: onde está a AK-47? A resposta exige precisão histórica.
+          A AK-47 soviética original, projetada por Mikhail Kalashnikov e adotada em 1949, praticamente não chegou ao
+          Vietnã em sua forma soviética de primeira geração. O que armou o Exército do Vietnã do Norte e o Vietcong
+          em massa foi o <strong>Type 56</strong>, a variante fabricada na China a partir de 1956 sob licença — mesma
+          munição 7,62×39 mm, mesmo sistema de recuo por gases e ferrolho rotativo, mesma silhueta, com a diferença
+          mais visível na baioneta dobrável tipo espeto presa sob o cano e no receptor estampado das séries
+          posteriores.
+        </p>
+        <p>
+          Ou seja: a AK-47 <em>está</em> no jogo — só que com o nome correto da versão que realmente esteve na guerra.
+          Chamar o Type 56 de "AK-47 do Vietnã" é justo; tratá-lo como arma diferente, não. Nas listas de armas
+          divulgadas até agora não aparece uma AK-47 soviética separada, e essa escolha é coerente com o rigor
+          histórico que a série cultiva desde o primeiro Hell Let Loose.
+        </p>
+        <p>
+          Em campo, o Type 56 define o ritmo da facção norte-vietnamita. O cartucho intermediário entrega mais dano
+          por acerto que o 5,56 mm do M16A1, ao custo de recuo mais vertical e carregador curvo de 30 tiros que exige
+          disciplina de rajada. Em mato fechado, túnel e aldeia — a distância em que o Norte quer lutar — ele é
+          simplesmente a melhor ferramenta do jogo. Acima de 150 metros, a vantagem inverte e passa para o fuzil
+          americano. Todo o duelo de facções nasce dessa diferença de calibre e de doutrina, não de números de dano
+          arbitrários.
+        </p>
+
+
+
         <h2 id="classes" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Users className="h-7 w-7 text-geek" />
           Classes e Tipos de Unidade
@@ -364,6 +401,92 @@ const HellLetLooseVietnamArmas2026 = () => {
           Já as unidades de helicóptero e blindados pedem outro tipo de compromisso. São funções em que o erro
           individual custa caro para o time inteiro — perder um transporte cheio significa devolver dez jogadores ao
           ponto de partida. Só entre nelas com microfone ligado e disposição para combinar rotas antes de decolar.
+        </p>
+
+        <h2 id="veiculos" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Truck className="h-7 w-7 text-geek" />
+          Veículos: Tanques, Helicópteros e Barcos por Facção
+        </h2>
+        <p>
+          Aqui está a diferença mais visível em relação ao Hell Let Loose clássico. A descrição oficial do jogo é
+          explícita em dois pontos: os <strong>helicópteros são exclusivos das forças dos EUA</strong>, usados para
+          apoio de fogo e entrega de suprimentos, e as <strong>patrulhas fluviais fortemente armadas estão
+          disponíveis para os dois lados</strong>, porque toda a malha de rios entra no jogo como via de manobra. As
+          funções de tripulação também são oficiais: <em>Tank Commander</em> e <em>Crewman</em> na unidade de
+          blindados, <em>Pilot</em> e <em>Logistics Officer</em> na unidade de helicóptero.
+        </p>
+        <p>
+          Uma ressalva honesta antes da tabela: o material oficial confirma as <strong>categorias</strong> de veículo e
+          a estrutura de tripulação, mas não divulga os <strong>modelos nominais</strong>. Os nomes que circulam —
+          M48 Patton do lado americano, T-54 ou T-55 do lado norte-vietnamita, UH-1 Huey e PBR — vêm de wikis e sites
+          especializados, e há inclusive divergência entre eles sobre o tanque do NVA. Tratamos esses nomes como
+          prováveis, nunca como confirmados.
+        </p>
+
+        <div className="not-prose my-8 overflow-x-auto">
+          <table className="w-full text-sm border border-border rounded-xl overflow-hidden">
+            <thead className="bg-muted/50">
+              <tr>
+                <th className="text-left p-3">Facção</th>
+                <th className="text-left p-3">Categoria</th>
+                <th className="text-left p-3">Papel em campo</th>
+                <th className="text-left p-3">Status do modelo</th>
+              </tr>
+            </thead>
+            <tbody>
+              {VEICULOS.map((v) => (
+                <tr key={`${v.faccao}-${v.categoria}`} className="border-t border-border/50">
+                  <td className="p-3 font-bold text-geek whitespace-nowrap align-top">{v.faccao}</td>
+                  <td className="p-3 align-top whitespace-nowrap">{v.categoria}</td>
+                  <td className="p-3 text-muted-foreground align-top">{v.papel}</td>
+                  <td className="p-3 text-muted-foreground align-top">{v.status}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h3 className="text-xl font-bold mt-8 mb-3">Helicópteros — a assinatura americana</h3>
+        <p>
+          O helicóptero é o que torna a facção dos EUA reconhecível. Historicamente, a guerra do Vietnã é a guerra em
+          que o assalto aeromóvel virou doutrina: em Ia Drang, em 1965, uma divisão inteira foi construída em torno da
+          ideia de colocar infantaria direto em clareiras cercadas de selva. No jogo, a lógica é a mesma —
+          deslocamento rápido de esquadrão, reabastecimento de posições distantes e apoio de fogo a partir das portas
+          laterais. É também o veículo mais punitivo do jogo: uma aproximação errada sobre posição antiaérea devolve
+          meia dúzia de jogadores ao ponto de partida de uma só vez. Voe baixo, use relevo e nunca pouse no lugar
+          óbvio.
+        </p>
+        <p>
+          Do lado do NVA não há resposta aérea equivalente, e isso é intencional. A contrapartida histórica é a
+          negação: artilharia antiaérea, metralhadoras pesadas e a simples disciplina de esconder o movimento. Quem
+          joga pelo Norte precisa tratar o céu como ameaça constante, e não como espaço vazio.
+        </p>
+
+        <h3 className="text-xl font-bold mt-8 mb-3">Blindados — dois papéis diferentes</h3>
+        <p>
+          Nenhum dos dois lados usa blindado como no Hell Let Loose original. Não existe frente contínua nem duelo de
+          tanques em campo aberto: aqui o veículo blindado é apoio de infantaria, escolta de comboio e ferramenta para
+          quebrar posição fortificada. O terreno é o inimigo principal — arrozal alagado, trilha estreita e ponte
+          única transformam qualquer tanque em alvo previsível para um foguete disparado a curta distância.
+        </p>
+        <p>
+          Historicamente, isso também confere. Os blindados americanos no Vietnã trabalharam quase sempre em apoio
+          direto à infantaria e em segurança de rota. Já o Norte só empregou tanques em escala relevante bem tarde,
+          sobretudo na Ofensiva da Páscoa de 1972, quando colunas mecanizadas cruzaram a Zona Desmilitarizada.
+        </p>
+
+        <h3 className="text-xl font-bold mt-8 mb-3">Barcos — o novo eixo de manobra</h3>
+        <p>
+          A rede fluvial é a grande novidade estrutural, e ela pertence aos dois lados. Um barco de patrulha armado
+          contorna a defesa montada para segurar a estrada, entrega um esquadrão inteiro na retaguarda inimiga e serve
+          de plataforma de fogo móvel contra margem descoberta. Em compensação, no rio não existe cobertura: quem é
+          avistado em travessia normalmente não termina a travessia.
+        </p>
+        <p>
+          O paralelo histórico é direto. No Delta do Mekong, a guerra foi majoritariamente fluvial, com forças
+          ribeirinhas americanas patrulhando milhares de quilômetros de canal enquanto o Vietcong movia suprimento em
+          embarcações pequenas, de madeira, indistinguíveis das de pescadores. As duas lógicas — patrulha pesada e
+          infiltração discreta — aparecem nos dois lados do jogo.
         </p>
 
         <h2 id="peso" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -563,8 +686,6 @@ const HellLetLooseVietnamArmas2026 = () => {
           },
         ]}
       />
-
-      <ReadNext currentSlug={SLUG} />
       <RelatedPosts currentSlug={SLUG} />
       <CommentSection postId={SLUG} postTitle={TITLE} category="geek" />
     </article>
