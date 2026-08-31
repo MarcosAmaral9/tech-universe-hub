@@ -8,7 +8,6 @@ import ArticleSources from "@/components/ArticleSources";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import ReadNext from "@/components/ReadNext";
 import { Clock, User, Calendar, Map, ListChecks, HelpCircle, Landmark, Globe2, Skull, Flag } from "lucide-react";
 import heroImg from "@/assets/hell-let-loose-vietnam-mapas.webp";
 import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
@@ -487,8 +486,6 @@ const HellLetLooseVietnamMapas2026 = () => {
           },
         ]}
       />
-
-      <ReadNext currentSlug={SLUG} />
       <RelatedPosts currentSlug={SLUG} />
       <CommentSection postId={SLUG} postTitle={TITLE} category="geek" />
     </article>
