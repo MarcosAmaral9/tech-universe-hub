@@ -204,7 +204,7 @@ const HellLetLooseVietnamMapas2026 = () => {
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
           <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />28 de Agosto, 2026</span>
-          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />14 min de leitura</span>
+          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />17 min de leitura</span>
         </div>
         <ShareWhatsApp />
         <AuthorBio category="geek" />
@@ -309,6 +309,86 @@ const HellLetLooseVietnamMapas2026 = () => {
           deslocamento em aposta: quem enxerga primeiro decide o combate. Nas áreas costeiras e de rio, controlar a
           travessia vale mais do que controlar o ponto — sem passagem, o time inteiro fica preso.
         </p>
+
+        <h2 id="geografia" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Globe2 className="h-7 w-7 text-geek" />
+          A Geografia da Guerra: Onde Cada Coisa Aconteceu
+        </h2>
+        <p>
+          Para entender por que os mapas do jogo são tão diferentes entre si, é preciso entender que a Guerra do
+          Vietnã foi, na prática, cinco guerras distintas travadas ao mesmo tempo em cinco tipos de terreno. O país é
+          longo e estreito: mais de 1.600 quilômetros do paralelo 17 até a ponta do Delta, com uma cordilheira
+          cobrindo o oeste, uma planície costeira estreita a leste e um imenso labirinto de água ao sul. Cada uma
+          dessas faixas produziu um tipo próprio de combate — e cada mapa do jogo pertence a uma delas.
+        </p>
+
+        <div className="not-prose my-8 space-y-5">
+          {TEATROS.map((t) => (
+            <div key={t.regiao} className="rounded-xl border border-geek/30 bg-geek/5 p-5">
+              <h3 className="font-display text-lg font-bold text-geek mb-1">{t.regiao}</h3>
+              <p className="text-xs uppercase tracking-wider text-muted-foreground mb-3">{t.provincias}</p>
+              <p className="text-sm mb-2">{t.caracteristica}</p>
+              <p className="text-sm text-muted-foreground"><strong>Episódios principais:</strong> {t.episodios}</p>
+            </div>
+          ))}
+        </div>
+
+        <p>
+          Três fatores atravessavam todos esses teatros. O primeiro é a monção: metade do ano com chuva pesada,
+          estradas intransitáveis e apoio aéreo limitado por teto baixo de nuvem — o que empurrava as grandes
+          ofensivas para janelas específicas do calendário. O segundo é a fronteira: Laos e Camboja eram formalmente
+          neutros, e a Trilha Ho Chi Minh atravessava os dois, criando um santuário logístico que a linha de frente
+          não conseguia alcançar. O terceiro é a população: diferentemente de uma guerra de frentes, o controle
+          disputado era o das aldeias, de dia e de noite, o que fez do mapa político algo tão decisivo quanto o mapa
+          topográfico.
+        </p>
+        <p>
+          É por isso que a régua de vitória do jogo faz sentido histórico. Não se trata de empurrar uma linha até
+          Hanói: trata-se de manter setores, sustentar pontos de renascimento e negar rota de reforço ao adversário.
+          A guerra real foi disputada exatamente nessa moeda.
+        </p>
+
+        <h2 id="batalhas" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Skull className="h-7 w-7 text-geek" />
+          As Batalhas que Definiram o Conflito
+        </h2>
+        <p>
+          Algumas dessas batalhas dão nome direto a mapas do jogo; outras não aparecem, mas explicam o cenário em que
+          os mapas existem. Todas as datas e forças abaixo seguem o registro histórico consolidado.
+        </p>
+
+        <div className="not-prose my-8 overflow-x-auto">
+          <table className="w-full text-sm border border-border rounded-xl overflow-hidden">
+            <thead className="bg-muted/50">
+              <tr>
+                <th className="text-left p-3">Batalha ou operação</th>
+                <th className="text-left p-3">Período</th>
+                <th className="text-left p-3">Forças envolvidas</th>
+                <th className="text-left p-3">Resultado e importância</th>
+              </tr>
+            </thead>
+            <tbody>
+              {BATALHAS.map((b) => (
+                <tr key={b.nome} className="border-t border-border/50">
+                  <td className="p-3 font-bold text-geek align-top">{b.nome}</td>
+                  <td className="p-3 align-top whitespace-nowrap">{b.data}</td>
+                  <td className="p-3 text-muted-foreground align-top">{b.forcas}</td>
+                  <td className="p-3 text-muted-foreground align-top">{b.resultado}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          Repare em um fio que liga quase todas elas: a decisão do combate raramente veio da tomada definitiva de
+          território. Khe Sanh foi sustentada e depois desativada; a Colina 937 foi conquistada e abandonada em
+          seguida; Huế foi retomada, mas em ruínas. O objetivo militar americano era atrito — infligir perdas
+          insustentáveis. O objetivo de Hanói era duração — tornar o custo político impagável para o outro lado. Duas
+          teorias de vitória que nunca se encontraram no mesmo campo.
+        </p>
+
+
 
         <AdInArticle />
 
