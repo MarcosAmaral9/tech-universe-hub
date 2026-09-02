@@ -234,6 +234,7 @@ import animesOutono2026Img from "@/assets/animes-outono-2026-estreias.webp";
 import hllVietnamMapasImg from "@/assets/hell-let-loose-vietnam-mapas.webp";
 import hllVietnamArmasImg from "@/assets/hell-let-loose-vietnam-armas.webp";
 import criarAgentesIaGuiaImg from "@/assets/criar-agentes-ia-guia-2026.webp";
+import iaBrasilPoliticasImg from "@/assets/ia-brasil-politicas-empresas-2026.webp";
 
 export const blogPosts: BlogPost[] = [
   // ── 28 Ago 2026 — Geek (Hell Let Loose: Vietnam) ───────────────────
