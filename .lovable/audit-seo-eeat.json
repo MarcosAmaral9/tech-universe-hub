@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-30T00:55:24.424Z",
+  "generatedAt": "2026-09-02T00:23:27.512Z",
   "counts": {
     "OK": 16,
-    "A": 95,
+    "A": 96,
     "B": 2,
     "C": 13,
     "D": 93
@@ -26,7 +26,7 @@
         "articleSourcesCount": 7,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1745,
+        "wordCount": 2131,
         "has1500Words": true
       },
       "bucket": "A",
@@ -51,14 +51,41 @@
         "articleSourcesCount": 7,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1489,
+        "wordCount": 2357,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "como-criar-agentes-ia-guia-completo-2026",
+      "file": "CriarAgentesIaGuia2026.tsx",
+      "keyword": "criar agentes ia",
+      "category": "ia",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1288,
         "has1500Words": false
       },
       "bucket": "D",
       "issues": [
         "sem PAGE_META manual",
+        "keyword ausente em <h1>",
         "keyword ausente em excerpt",
-        "apenas ~1489 palavras (mínimo 1500)"
+        "apenas ~1288 palavras (mínimo 1500)"
       ]
     },
     {
