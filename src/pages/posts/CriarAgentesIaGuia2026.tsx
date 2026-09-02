@@ -221,12 +221,12 @@ const CriarAgentesIaGuia2026 = () => {
         </p>
       </EditorialTake>
       <ArticleSources category="ia" sources={[
-        { name: "Anthropic — Building Effective Agents", url: "https://www.anthropic.com/research/building-effective-agents" },
-        { name: "OpenAI — A Practical Guide to Building Agents", url: "https://openai.com/business/guides/" },
-        { name: "Model Context Protocol — especificação oficial", url: "https://modelcontextprotocol.io" },
-        { name: "n8n — plataforma open source de automação com IA", url: "https://n8n.io" },
-        { name: "LangChain — documentação LangGraph (orquestração multiagente)", url: "https://langchain-ai.github.io/langgraph/" },
-        { name: "Deloitte — previsões para o mercado de agentes de IA", url: "https://www.deloitte.com" },
+        { title: "Building Effective Agents", publisher: "Anthropic", url: "https://www.anthropic.com/research/building-effective-agents", accessedAt: "Setembro 2026" },
+        { title: "A Practical Guide to Building Agents", publisher: "OpenAI", url: "https://openai.com/business/guides/", accessedAt: "Setembro 2026" },
+        { title: "Especificação oficial do protocolo", publisher: "Model Context Protocol", url: "https://modelcontextprotocol.io", accessedAt: "Setembro 2026" },
+        { title: "Plataforma open source de automação com IA", publisher: "n8n", url: "https://n8n.io", accessedAt: "Setembro 2026" },
+        { title: "Documentação LangGraph — orquestração multiagente", publisher: "LangChain", url: "https://langchain-ai.github.io/langgraph/", accessedAt: "Setembro 2026" },
+        { title: "Previsões para o mercado de agentes de IA", publisher: "Deloitte", url: "https://www.deloitte.com", accessedAt: "Setembro 2026" },
       ]} />
       <RelatedPosts currentSlug={SLUG} />
       <CommentSection postId={SLUG} postTitle={TITLE} category="ia" />
