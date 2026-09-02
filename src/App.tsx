@@ -288,6 +288,7 @@ const GhostOfYoteiGuia               = lazy(() => import("./pages/posts/GhostOfY
 const Helldivers2Guia2024            = lazy(() => import("./pages/posts/Helldivers2Guia2024"));
 const HellLetLooseVietnamMapas2026   = lazy(() => import("./pages/posts/HellLetLooseVietnamMapas2026"));
 const HellLetLooseVietnamArmas2026   = lazy(() => import("./pages/posts/HellLetLooseVietnamArmas2026"));
+const CriarAgentesIaGuia2026         = lazy(() => import("./pages/posts/CriarAgentesIaGuia2026"));
 const AcoesCrescimentoVsDividendos2026 = lazy(() => import("./pages/posts/AcoesCrescimentoVsDividendos2026"));
 const CambioDolarProtecao2026        = lazy(() => import("./pages/posts/CambioDolarProtecao2026"));
 const ComoEscolherPrevidencia2026    = lazy(() => import("./pages/posts/ComoEscolherPrevidencia2026"));
