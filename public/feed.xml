@@ -5,8 +5,17 @@
     <link>https://viciocode.com</link>
     <description>IA, investimentos, cultura geek e otaku — novos artigos do VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Tue, 01 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IA no Brasil em 2026: Políticas Públicas, Leis de Privacidade e o Cenário de Empresas e Startups</title>
+      <link>https://viciocode.com/post/ia-brasil-politicas-empresas-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/ia-brasil-politicas-empresas-2026</guid>
+      <pubDate>Wed, 02 Sep 2026 12:00:00 GMT</pubDate>
+      <description>PBIA e seus R$ 23 bilhões, PL 2338 na Câmara, as regras da LGPD/ANPD para treinar IA com dados de clientes e o mapa das startups brasileiras que estão prosperando em 2026.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/ia-brasil-politicas-empresas-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>Como Criar Agentes de IA em 2026: Guia Completo do Zero (Grátis e Pago)</title>
       <link>https://viciocode.com/post/como-criar-agentes-ia-guia-completo-2026</link>
@@ -447,15 +456,6 @@
       <description>Guia completo do Monster Hunter Wilds da Capcom: 14 armas clássicas, mundo aberto seamless sem loadings, sistema de Inclemência climática, monte Seikret e como iniciar sua jornada em 2026.</description>
       <category>Geek &amp; Games</category>
       <enclosure url="https://viciocode.com/assets/monster-hunter-wilds-guia-completo-2025.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Kingdom Come: Deliverance 2 — Guia Completo: História, Combate, Habilidades e o Contexto Histórico da Boêmia em 1403</title>
-      <link>https://viciocode.com/post/kingdom-come-deliverance-2-guia-completo-2025</link>
-      <guid isPermaLink="true">https://viciocode.com/post/kingdom-come-deliverance-2-guia-completo-2025</guid>
-      <pubDate>Fri, 10 Jul 2026 12:00:00 GMT</pubDate>
-      <description>Guia completo do KCD2 da Warhorse Studios: continuação de Henry na Boêmia de 1403, sistema de combate realista, habilidades por uso, mapa dobrado e o contexto histórico de Sigismundo, Jan Hus e Kutná Hora.</description>
-      <category>Geek &amp; Games</category>
-      <enclosure url="https://viciocode.com/assets/kingdom-come-deliverance-2-guia-completo-2025.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>

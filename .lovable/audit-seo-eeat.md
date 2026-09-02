@@ -1,35 +1,36 @@
 # Auditoria SEO + E-E-A-T
 
-Gerado em 02/09/2026, 00:23:27.
+Gerado em 02/09/2026, 22:01:21.
 
 ## Resumo executivo
 
-- **Total auditado:** 220 posts (0 sem .tsx mapeado)
-- **PAGE_META manual presente:** 175 / 220
-- **Keyword no `<h1>`:** 152 / 220
-- **Keyword na introdução:** 139 / 220
-- **Keyword no excerpt:** 83 / 220
-- **AuthorBio:** 220 / 220
-- **ArticleSources (≥5 fontes):** 204 / 220
-- **EditorialTake / Análise do Marcos:** 220 / 220
-- **Conteúdo ≥1500 palavras:** 121 / 220
+- **Total auditado:** 221 posts (0 sem .tsx mapeado)
+- **PAGE_META manual presente:** 175 / 221
+- **Keyword no `<h1>`:** 153 / 221
+- **Keyword na introdução:** 140 / 221
+- **Keyword no excerpt:** 83 / 221
+- **AuthorBio:** 221 / 221
+- **ArticleSources (≥5 fontes):** 205 / 221
+- **EditorialTake / Análise do Marcos:** 221 / 221
+- **Conteúdo ≥1500 palavras:** 122 / 221
 
 
 
 ## Plano de levas sugerido
 
-1. **Levas SEO (rápidas, ~10 posts/leva)** — Adicionar PAGE_META + garantir keyword em h1/intro/excerpt para os 45 posts sem meta manual.
+1. **Levas SEO (rápidas, ~10 posts/leva)** — Adicionar PAGE_META + garantir keyword em h1/intro/excerpt para os 46 posts sem meta manual.
 2. **Levas Fontes (3 posts/leva)** — Adicionar 5ª fonte oficial verificável para os 16 posts com <5 fontes.
 3. **Levas Análise (5 posts/leva)** — Adicionar bloco "Análise do Marcos" para os 0 posts sem editorial.
 4. **Levas Expansão (2 posts/leva)** — Reescrever os 99 posts <1500 palavras, começando pelos mais curtos.
 
 ---
 
-## 1) Posts sem PAGE_META manual — 45
+## 1) Posts sem PAGE_META manual — 46
 
 - `hell-let-loose-vietnam-mapas-contexto-historico` (2131w, 7 fontes) — sem PAGE_META manual
 - `hell-let-loose-vietnam-armas-classes-gameplay` (2357w, 7 fontes) — sem PAGE_META manual; keyword ausente em excerpt
 - `como-criar-agentes-ia-guia-completo-2026` (1288w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente em excerpt; apenas ~1288 palavras (mínimo 1500)
+- `ia-brasil-politicas-empresas-2026` (1733w, 6 fontes) — sem PAGE_META manual; keyword ausente em excerpt
 - `gemini-3-7-flash-busca-google-2026` (1627w, 6 fontes) — sem PAGE_META manual; keyword ausente em excerpt
 - `selic-14-agosto-2026-onde-investir` (1540w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt
 - `gamescom-2026-o-que-esperar` (1471w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1471 palavras (mínimo 1500)
@@ -339,10 +340,11 @@ Gerado em 02/09/2026, 00:23:27.
 - `dragons-dogma-2-guia-completo-2024` (1859w, 5 fontes) — keyword ausente em meta title; keyword ausente em meta description; keyword ausente em meta keywords; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt
 - `vibe-coding-2026-criar-apps-sem-programar` (1615w, 6 fontes) — keyword ausente na introdução
 
-## 5) Posts com keyword ausente no excerpt — 137
+## 5) Posts com keyword ausente no excerpt — 138
 
 - `hell-let-loose-vietnam-armas-classes-gameplay` (2357w, 7 fontes) — sem PAGE_META manual; keyword ausente em excerpt
 - `como-criar-agentes-ia-guia-completo-2026` (1288w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente em excerpt; apenas ~1288 palavras (mínimo 1500)
+- `ia-brasil-politicas-empresas-2026` (1733w, 6 fontes) — sem PAGE_META manual; keyword ausente em excerpt
 - `gemini-3-7-flash-busca-google-2026` (1627w, 6 fontes) — sem PAGE_META manual; keyword ausente em excerpt
 - `selic-14-agosto-2026-onde-investir` (1540w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt
 - `gamescom-2026-o-que-esperar` (1471w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1471 palavras (mínimo 1500)

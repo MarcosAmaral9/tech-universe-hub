@@ -234,6 +234,7 @@ import animesOutono2026Img from "@/assets/animes-outono-2026-estreias.webp";
 import hllVietnamMapasImg from "@/assets/hell-let-loose-vietnam-mapas.webp";
 import hllVietnamArmasImg from "@/assets/hell-let-loose-vietnam-armas.webp";
 import criarAgentesIaGuiaImg from "@/assets/criar-agentes-ia-guia-2026.webp";
+import iaBrasilPoliticasImg from "@/assets/ia-brasil-politicas-empresas-2026.webp";
 
 export const blogPosts: BlogPost[] = [
   // ── 28 Ago 2026 — Geek (Hell Let Loose: Vietnam) ───────────────────
@@ -303,6 +304,29 @@ export const blogPosts: BlogPost[] = [
       { q: "Qual a diferença entre agente de IA e automação comum?", a: "Automação comum segue regras fixas: se X, faça Y. Um agente decide o caminho sozinho: recebe um objetivo, planeja as etapas, escolhe as ferramentas e corrige a rota quando algo falha." },
       { q: "Quanto custa manter um agente em produção?", a: "Depende do volume. Agentes via API cobram por tokens consumidos — tarefas leves custam centavos. Fluxos simples cabem nos planos de ~US$ 20/mês; operações empresariais passam facilmente de centenas de dólares mensais." },
       { q: "Agentes de IA são seguros para dados da minha empresa?", a: "Com cuidados, sim: use permissões mínimas, exija aprovação humana em ações irreversíveis, anonimize dados pessoais (LGPD) e monitore logs. Ferramentas corporativas oferecem camadas extras de auditoria e compliance." },
+    ],
+  },
+  // ── 02 Set 2026 — IA (Políticas públicas, privacidade e ecossistema) ───────────────────
+  {
+    id: "250",
+    slug: "ia-brasil-politicas-empresas-2026",
+    title: "IA no Brasil em 2026: Políticas Públicas, Leis de Privacidade e o Cenário de Empresas e Startups",
+    excerpt:
+      "PBIA e seus R$ 23 bilhões, PL 2338 na Câmara, as regras da LGPD/ANPD para treinar IA com dados de clientes e o mapa das startups brasileiras que estão prosperando em 2026.",
+    content: "",
+    category: "ia",
+    subtopic: "regulacao",
+    image: iaBrasilPoliticasImg,
+    author: "VICIO<CODE>",
+    date: "2026-09-02",
+    readTime: "14 min",
+    faq: [
+      { q: "O que é o Plano Brasileiro de Inteligência Artificial (PBIA)?", a: "É o plano federal 2024–2028 coordenado pelo MCTI, com orçamento previsto de R$ 23 bilhões, organizado em cinco eixos: infraestrutura e supercomputação, difusão de IA nas empresas, formação de pessoas, IA no serviço público e regulação." },
+      { q: "O Marco Legal da IA já está valendo no Brasil?", a: "Não. O PL 2338/2023 foi aprovado no Senado em dezembro de 2024 e segue em tramitação na Câmara em 2026. Mas a LGPD já se aplica integralmente a sistemas de IA que tratam dados pessoais, incluindo o direito de revisão de decisões automatizadas (Art. 20)." },
+      { q: "Empresas podem usar dados de clientes para treinar IA?", a: "Sim, desde que haja base legal na LGPD, transparência, mecanismo de oposição do titular e, para dados sensíveis ou de crianças, consentimento específico. Transferir dados para APIs estrangeiras exige garantias contratuais de transferência internacional." },
+      { q: "Existem incentivos públicos para startups de IA no Brasil?", a: "Sim: a linha 'IA Transforma' do BNDES (R$ 1 bilhão), chamadas da Finep e do FNDCT, programas estaduais como os da Fapesp em São Paulo e incubadoras ligadas a parques tecnológicos." },
+      { q: "Quais setores concentram as startups de IA brasileiras?", a: "Legaltechs, healthtechs, agritechs, fintechs, HRtechs e soluções corporativas de IA generativa são as verticais mais fortes, com diferenciação baseada em dados proprietários de nicho." },
+      { q: "O Brasil consegue treinar seus próprios grandes modelos de IA?", a: "Ainda não em escala de fronteira, por falta de infraestrutura computacional de ponta. O PBIA investe em supercomputação (como a ampliação do Santos Dumont) e em modelos nacionais de menor porte em português." },
     ],
   },
   // ── 20 Ago 2026 — IA (Gemini 3.7 Flash na Busca) ───────────────────
