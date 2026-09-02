@@ -2,7 +2,7 @@
 <!--
   Sitemap do VICIO<CODE> — viciocode.com
   Gerado automaticamente em: 2026-09-02
-  Total de URLs: 299 (28 páginas + 220 posts + 51 tags)
+  Total de URLs: 300 (28 páginas + 221 posts + 51 tags)
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -160,6 +160,12 @@
   <url>
     <loc>https://viciocode.com/post/como-criar-agentes-ia-guia-completo-2026</loc>
     <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/ia-brasil-politicas-empresas-2026</loc>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
