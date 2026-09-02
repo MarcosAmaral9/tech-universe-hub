@@ -283,6 +283,28 @@ export const blogPosts: BlogPost[] = [
       { q: "Dá para jogar sem microfone?", a: "Dá, mas o rendimento cai. O jogo é construído em torno da coordenação de esquadrão; sem voz, use marcações no mapa e evite funções de liderança, blindados e helicóptero." },
     ],
   },
+  // ── 01 Set 2026 — IA (Guia de criação de agentes) ───────────────────
+  {
+    id: "249",
+    slug: "como-criar-agentes-ia-guia-completo-2026",
+    title: "Como Criar Agentes de IA em 2026: Guia Completo do Zero (Grátis e Pago)",
+    excerpt:
+      "O que são agentes de IA, exemplos reais de uso, os 3 níveis de criação (sem código, low-code e código), passo a passo gratuito em 15 minutos, custos pagos e as novidades de 2026: MCP, multiagentes e agentes de computador.",
+    content: "",
+    category: "ia",
+    subtopic: "agentes",
+    image: criarAgentesIaGuiaImg,
+    author: "VICIO<CODE>",
+    date: "2026-09-01",
+    readTime: "15 min",
+    faq: [
+      { q: "Preciso saber programar para criar um agente de IA?", a: "Não. Ferramentas como GPTs personalizados, Gems do Gemini, Zapier e n8n permitem criar agentes úteis sem escrever uma linha de código. Programação só é necessária para agentes customizados de nível profissional." },
+      { q: "Dá para criar um agente de IA totalmente de graça?", a: "Sim. Gems do Gemini e n8n self-hosted com modelos locais via Ollama (Llama, Qwen, DeepSeek) têm custo zero, limitados apenas pelo seu hardware e pelos limites de uso das plataformas." },
+      { q: "Qual a diferença entre agente de IA e automação comum?", a: "Automação comum segue regras fixas: se X, faça Y. Um agente decide o caminho sozinho: recebe um objetivo, planeja as etapas, escolhe as ferramentas e corrige a rota quando algo falha." },
+      { q: "Quanto custa manter um agente em produção?", a: "Depende do volume. Agentes via API cobram por tokens consumidos — tarefas leves custam centavos. Fluxos simples cabem nos planos de ~US$ 20/mês; operações empresariais passam facilmente de centenas de dólares mensais." },
+      { q: "Agentes de IA são seguros para dados da minha empresa?", a: "Com cuidados, sim: use permissões mínimas, exija aprovação humana em ações irreversíveis, anonimize dados pessoais (LGPD) e monitore logs. Ferramentas corporativas oferecem camadas extras de auditoria e compliance." },
+    ],
+  },
   // ── 20 Ago 2026 — IA (Gemini 3.7 Flash na Busca) ───────────────────
   {
     id: "241",
