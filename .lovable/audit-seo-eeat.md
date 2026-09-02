@@ -1,34 +1,35 @@
 # Auditoria SEO + E-E-A-T
 
-Gerado em 30/08/2026, 00:55:24.
+Gerado em 02/09/2026, 00:23:27.
 
 ## Resumo executivo
 
-- **Total auditado:** 219 posts (0 sem .tsx mapeado)
-- **PAGE_META manual presente:** 175 / 219
-- **Keyword no `<h1>`:** 152 / 219
-- **Keyword na introdução:** 138 / 219
-- **Keyword no excerpt:** 83 / 219
-- **AuthorBio:** 219 / 219
-- **ArticleSources (≥5 fontes):** 203 / 219
-- **EditorialTake / Análise do Marcos:** 219 / 219
-- **Conteúdo ≥1500 palavras:** 120 / 219
+- **Total auditado:** 220 posts (0 sem .tsx mapeado)
+- **PAGE_META manual presente:** 175 / 220
+- **Keyword no `<h1>`:** 152 / 220
+- **Keyword na introdução:** 139 / 220
+- **Keyword no excerpt:** 83 / 220
+- **AuthorBio:** 220 / 220
+- **ArticleSources (≥5 fontes):** 204 / 220
+- **EditorialTake / Análise do Marcos:** 220 / 220
+- **Conteúdo ≥1500 palavras:** 121 / 220
 
 
 
 ## Plano de levas sugerido
 
-1. **Levas SEO (rápidas, ~10 posts/leva)** — Adicionar PAGE_META + garantir keyword em h1/intro/excerpt para os 44 posts sem meta manual.
+1. **Levas SEO (rápidas, ~10 posts/leva)** — Adicionar PAGE_META + garantir keyword em h1/intro/excerpt para os 45 posts sem meta manual.
 2. **Levas Fontes (3 posts/leva)** — Adicionar 5ª fonte oficial verificável para os 16 posts com <5 fontes.
 3. **Levas Análise (5 posts/leva)** — Adicionar bloco "Análise do Marcos" para os 0 posts sem editorial.
 4. **Levas Expansão (2 posts/leva)** — Reescrever os 99 posts <1500 palavras, começando pelos mais curtos.
 
 ---
 
-## 1) Posts sem PAGE_META manual — 44
+## 1) Posts sem PAGE_META manual — 45
 
-- `hell-let-loose-vietnam-mapas-contexto-historico` (1745w, 7 fontes) — sem PAGE_META manual
-- `hell-let-loose-vietnam-armas-classes-gameplay` (1489w, 7 fontes) — sem PAGE_META manual; keyword ausente em excerpt; apenas ~1489 palavras (mínimo 1500)
+- `hell-let-loose-vietnam-mapas-contexto-historico` (2131w, 7 fontes) — sem PAGE_META manual
+- `hell-let-loose-vietnam-armas-classes-gameplay` (2357w, 7 fontes) — sem PAGE_META manual; keyword ausente em excerpt
+- `como-criar-agentes-ia-guia-completo-2026` (1288w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente em excerpt; apenas ~1288 palavras (mínimo 1500)
 - `gemini-3-7-flash-busca-google-2026` (1627w, 6 fontes) — sem PAGE_META manual; keyword ausente em excerpt
 - `selic-14-agosto-2026-onde-investir` (1540w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt
 - `gamescom-2026-o-que-esperar` (1471w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1471 palavras (mínimo 1500)
@@ -183,8 +184,9 @@ Gerado em 30/08/2026, 00:55:24.
 - `mushoku-tensei-3-temporada-2026` (1999w, 6 fontes) — keyword ausente em meta description; keyword ausente em excerpt
 - `bleach-tybw-parte-4-the-calamity-2026` (1711w, 6 fontes) — keyword ausente em meta description; keyword ausente em excerpt
 
-## 3) Posts com keyword ausente no `<h1>` — 67
+## 3) Posts com keyword ausente no `<h1>` — 68
 
+- `como-criar-agentes-ia-guia-completo-2026` (1288w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente em excerpt; apenas ~1288 palavras (mínimo 1500)
 - `gamescom-2026-o-que-esperar` (1471w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1471 palavras (mínimo 1500)
 - `glossario-ia-termos-e-profissoes-2026` (1346w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1346 palavras (mínimo 1500)
 - `discord-brasil-suspensao-lives-2026` (1271w, 8 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1271 palavras (mínimo 1500)
@@ -337,9 +339,10 @@ Gerado em 30/08/2026, 00:55:24.
 - `dragons-dogma-2-guia-completo-2024` (1859w, 5 fontes) — keyword ausente em meta title; keyword ausente em meta description; keyword ausente em meta keywords; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt
 - `vibe-coding-2026-criar-apps-sem-programar` (1615w, 6 fontes) — keyword ausente na introdução
 
-## 5) Posts com keyword ausente no excerpt — 136
+## 5) Posts com keyword ausente no excerpt — 137
 
-- `hell-let-loose-vietnam-armas-classes-gameplay` (1489w, 7 fontes) — sem PAGE_META manual; keyword ausente em excerpt; apenas ~1489 palavras (mínimo 1500)
+- `hell-let-loose-vietnam-armas-classes-gameplay` (2357w, 7 fontes) — sem PAGE_META manual; keyword ausente em excerpt
+- `como-criar-agentes-ia-guia-completo-2026` (1288w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente em excerpt; apenas ~1288 palavras (mínimo 1500)
 - `gemini-3-7-flash-busca-google-2026` (1627w, 6 fontes) — sem PAGE_META manual; keyword ausente em excerpt
 - `selic-14-agosto-2026-onde-investir` (1540w, 6 fontes) — sem PAGE_META manual; keyword ausente na introdução; keyword ausente em excerpt
 - `gamescom-2026-o-que-esperar` (1471w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1471 palavras (mínimo 1500)
@@ -523,6 +526,7 @@ Gerado em 30/08/2026, 00:55:24.
 - `recuperacao-judicial-empresas-2026-como-afeta-clientes` (1283w, 7 fontes) — sem PAGE_META manual; keyword ausente em <h1>; apenas ~1283 palavras (mínimo 1500)
 - `claude-cowork-saaspocalypse-2026` (1285w, 6 fontes) — keyword ausente em meta description; apenas ~1285 palavras (mínimo 1500)
 - `guia-cosplay-2026-iniciantes` (1286w, 6 fontes) — keyword ausente em meta title; keyword ausente em meta description; keyword ausente em meta keywords; keyword ausente em <h1>; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1286 palavras (mínimo 1500)
+- `como-criar-agentes-ia-guia-completo-2026` (1288w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente em excerpt; apenas ~1288 palavras (mínimo 1500)
 - `nintendo-switch-2-guia-completo-2026` (1290w, 0 fontes) — ArticleSources com 0 fonte(s) (mínimo 5); apenas ~1290 palavras (mínimo 1500)
 - `educacao-financeira-metodo-3-baldes` (1296w, 7 fontes) — keyword ausente em meta description; keyword ausente em excerpt; apenas ~1296 palavras (mínimo 1500)
 - `fiis-2026-melhores-fundos-imobiliarios` (1296w, 6 fontes) — keyword ausente em meta description; apenas ~1296 palavras (mínimo 1500)
@@ -595,7 +599,6 @@ Gerado em 30/08/2026, 00:55:24.
 - `deepfakes-ia-2026-como-identificar` (1485w, 6 fontes) — keyword ausente na introdução; apenas ~1485 palavras (mínimo 1500)
 - `isekai-2026-genero-domina` (1486w, 5 fontes) — keyword ausente na introdução; keyword ausente em excerpt; apenas ~1486 palavras (mínimo 1500)
 - `saude-mental-cultura-otaku-2026` (1488w, 6 fontes) — keyword ausente em meta description; apenas ~1488 palavras (mínimo 1500)
-- `hell-let-loose-vietnam-armas-classes-gameplay` (1489w, 7 fontes) — sem PAGE_META manual; keyword ausente em excerpt; apenas ~1489 palavras (mínimo 1500)
 - `prompt-engineering-guia-2026` (1490w, 6 fontes) — keyword ausente em meta description; keyword ausente na introdução; keyword ausente em excerpt; apenas ~1490 palavras (mínimo 1500)
 - `hell-mode-gamer-isekai-guia-completo` (1493w, 6 fontes) — apenas ~1493 palavras (mínimo 1500)
 - `dola-ai-app-assistente-2026` (1494w, 7 fontes) — keyword ausente em meta description; keyword ausente em excerpt; apenas ~1494 palavras (mínimo 1500)

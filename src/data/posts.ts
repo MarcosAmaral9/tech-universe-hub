@@ -233,6 +233,7 @@ import gamescom2026Img from "@/assets/gamescom-2026-o-que-esperar.webp";
 import animesOutono2026Img from "@/assets/animes-outono-2026-estreias.webp";
 import hllVietnamMapasImg from "@/assets/hell-let-loose-vietnam-mapas.webp";
 import hllVietnamArmasImg from "@/assets/hell-let-loose-vietnam-armas.webp";
+import criarAgentesIaGuiaImg from "@/assets/criar-agentes-ia-guia-2026.webp";
 
 export const blogPosts: BlogPost[] = [
   // ── 28 Ago 2026 — Geek (Hell Let Loose: Vietnam) ───────────────────
@@ -280,6 +281,28 @@ export const blogPosts: BlogPost[] = [
       { q: "A AK-47 está em Hell Let Loose: Vietnam?", a: "Sim, na forma historicamente correta: o fuzil padrão do NVA é o Type 56, a variante chinesa da AK-47 produzida a partir de 1956, com o mesmo cartucho 7,62×39 mm e baioneta dobrável. Não há uma AK-47 soviética separada nas listas de armas." },
       { q: "Quais veículos existem no jogo e para cada facção?", a: "A descrição oficial confirma helicópteros exclusivos das forças dos EUA, blindados com tripulação (comandante e tripulante) e patrulhas fluviais armadas para os dois lados, além de caminhões de transporte. Os modelos nominais, como M48 Patton, T-54/T-55, UH-1 Huey e PBR, aparecem apenas em fontes de terceiros." },
       { q: "Dá para jogar sem microfone?", a: "Dá, mas o rendimento cai. O jogo é construído em torno da coordenação de esquadrão; sem voz, use marcações no mapa e evite funções de liderança, blindados e helicóptero." },
+    ],
+  },
+  // ── 01 Set 2026 — IA (Guia de criação de agentes) ───────────────────
+  {
+    id: "249",
+    slug: "como-criar-agentes-ia-guia-completo-2026",
+    title: "Como Criar Agentes de IA em 2026: Guia Completo do Zero (Grátis e Pago)",
+    excerpt:
+      "O que são agentes de IA, exemplos reais de uso, os 3 níveis de criação (sem código, low-code e código), passo a passo gratuito em 15 minutos, custos pagos e as novidades de 2026: MCP, multiagentes e agentes de computador.",
+    content: "",
+    category: "ia",
+    subtopic: "agentes",
+    image: criarAgentesIaGuiaImg,
+    author: "VICIO<CODE>",
+    date: "2026-09-01",
+    readTime: "15 min",
+    faq: [
+      { q: "Preciso saber programar para criar um agente de IA?", a: "Não. Ferramentas como GPTs personalizados, Gems do Gemini, Zapier e n8n permitem criar agentes úteis sem escrever uma linha de código. Programação só é necessária para agentes customizados de nível profissional." },
+      { q: "Dá para criar um agente de IA totalmente de graça?", a: "Sim. Gems do Gemini e n8n self-hosted com modelos locais via Ollama (Llama, Qwen, DeepSeek) têm custo zero, limitados apenas pelo seu hardware e pelos limites de uso das plataformas." },
+      { q: "Qual a diferença entre agente de IA e automação comum?", a: "Automação comum segue regras fixas: se X, faça Y. Um agente decide o caminho sozinho: recebe um objetivo, planeja as etapas, escolhe as ferramentas e corrige a rota quando algo falha." },
+      { q: "Quanto custa manter um agente em produção?", a: "Depende do volume. Agentes via API cobram por tokens consumidos — tarefas leves custam centavos. Fluxos simples cabem nos planos de ~US$ 20/mês; operações empresariais passam facilmente de centenas de dólares mensais." },
+      { q: "Agentes de IA são seguros para dados da minha empresa?", a: "Com cuidados, sim: use permissões mínimas, exija aprovação humana em ações irreversíveis, anonimize dados pessoais (LGPD) e monitore logs. Ferramentas corporativas oferecem camadas extras de auditoria e compliance." },
     ],
   },
   // ── 20 Ago 2026 — IA (Gemini 3.7 Flash na Busca) ───────────────────

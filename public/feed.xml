@@ -5,8 +5,17 @@
     <link>https://viciocode.com</link>
     <description>IA, investimentos, cultura geek e otaku — novos artigos do VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Fri, 28 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Como Criar Agentes de IA em 2026: Guia Completo do Zero (Grátis e Pago)</title>
+      <link>https://viciocode.com/post/como-criar-agentes-ia-guia-completo-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/como-criar-agentes-ia-guia-completo-2026</guid>
+      <pubDate>Tue, 01 Sep 2026 12:00:00 GMT</pubDate>
+      <description>O que são agentes de IA, exemplos reais de uso, os 3 níveis de criação (sem código, low-code e código), passo a passo gratuito em 15 minutos, custos pagos e as novidades de 2026: MCP, multiagentes e agentes de computador.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/como-criar-agentes-ia-guia-completo-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>Hell Let Loose: Vietnam — Guia de Armas, Classes, Sistema de Peso e Dicas de Gameplay</title>
       <link>https://viciocode.com/post/hell-let-loose-vietnam-armas-classes-gameplay</link>
@@ -447,15 +456,6 @@
       <description>Guia completo do KCD2 da Warhorse Studios: continuação de Henry na Boêmia de 1403, sistema de combate realista, habilidades por uso, mapa dobrado e o contexto histórico de Sigismundo, Jan Hus e Kutná Hora.</description>
       <category>Geek &amp; Games</category>
       <enclosure url="https://viciocode.com/assets/kingdom-come-deliverance-2-guia-completo-2025.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Black Myth: Wukong — Guia Completo: A Jornada ao Oeste, o Studio Game Science e Como Dominar o Rei Macaco</title>
-      <link>https://viciocode.com/post/black-myth-wukong-guia-completo-2024</link>
-      <guid isPermaLink="true">https://viciocode.com/post/black-myth-wukong-guia-completo-2024</guid>
-      <pubDate>Fri, 10 Jul 2026 12:00:00 GMT</pubDate>
-      <description>Guia completo do Black Myth: Wukong: origem em A Jornada ao Oeste, história da Game Science, sistema de combate com 3 stances, os 6 capítulos e o recorde histórico de 2,4M jogadores simultâneos na Steam.</description>
-      <category>Geek &amp; Games</category>
-      <enclosure url="https://viciocode.com/assets/black-myth-wukong-guia-completo-2024.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>

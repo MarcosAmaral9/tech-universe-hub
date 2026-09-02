@@ -288,6 +288,7 @@ const GhostOfYoteiGuia               = lazy(() => import("./pages/posts/GhostOfY
 const Helldivers2Guia2024            = lazy(() => import("./pages/posts/Helldivers2Guia2024"));
 const HellLetLooseVietnamMapas2026   = lazy(() => import("./pages/posts/HellLetLooseVietnamMapas2026"));
 const HellLetLooseVietnamArmas2026   = lazy(() => import("./pages/posts/HellLetLooseVietnamArmas2026"));
+const CriarAgentesIaGuia2026         = lazy(() => import("./pages/posts/CriarAgentesIaGuia2026"));
 const AcoesCrescimentoVsDividendos2026 = lazy(() => import("./pages/posts/AcoesCrescimentoVsDividendos2026"));
 const CambioDolarProtecao2026        = lazy(() => import("./pages/posts/CambioDolarProtecao2026"));
 const ComoEscolherPrevidencia2026    = lazy(() => import("./pages/posts/ComoEscolherPrevidencia2026"));
@@ -621,6 +622,7 @@ const App = () => (
                 <Route path="/post/helldivers-2-guia-completo-2024" element={<Suspense fallback={<div />}><Helldivers2Guia2024 /></Suspense>} />
                 <Route path="/post/hell-let-loose-vietnam-mapas-contexto-historico" element={<Suspense fallback={<div />}><HellLetLooseVietnamMapas2026 /></Suspense>} />
                 <Route path="/post/hell-let-loose-vietnam-armas-classes-gameplay" element={<Suspense fallback={<div />}><HellLetLooseVietnamArmas2026 /></Suspense>} />
+                <Route path="/post/como-criar-agentes-ia-guia-completo-2026" element={<Suspense fallback={<div />}><CriarAgentesIaGuia2026 /></Suspense>} />
                 {/* ── 22 Jul 2026 — Invest Lote 4 ── */}
                 <Route path="/post/acoes-crescimento-vs-dividendos-2026" element={<Suspense fallback={<div />}><AcoesCrescimentoVsDividendos2026 /></Suspense>} />
                 <Route path="/post/cambio-dolar-protecao-carteira-2026" element={<Suspense fallback={<div />}><CambioDolarProtecao2026 /></Suspense>} />
