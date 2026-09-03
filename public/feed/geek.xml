@@ -5,8 +5,26 @@
     <link>https://viciocode.com</link>
     <description>Novos artigos de Geek &amp; Games no VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Fri, 28 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed/geek.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IA nos Jogos: Do NPC que Conversa ao DLSS — Como a Inteligência Artificial Mudou os Games</title>
+      <link>https://viciocode.com/post/ia-jogos-industria-games-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/ia-jogos-industria-games-2026</guid>
+      <pubDate>Thu, 03 Sep 2026 12:00:00 GMT</pubDate>
+      <description>O uso que mais mudou sua experiência é o menos glamouroso: upscaling neural. Veja os casos reais — NVIDIA ACE em PUBG e inZOI, Ghostwriter da Ubisoft, a rotulagem obrigatória da Steam e a greve dos dubladores de games.</description>
+      <category>Geek &amp; Games</category>
+      <enclosure url="https://viciocode.com/assets/ia-jogos-industria-games-2026.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>IA em Filmes e Séries: Como Hollywood Já Usa Inteligência Artificial em Produções Reais</title>
+      <link>https://viciocode.com/post/ia-filmes-series-producoes-reais-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/ia-filmes-series-producoes-reais-2026</guid>
+      <pubDate>Thu, 03 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Do Respeecher em &apos;O Brutalista&apos; ao rejuvenescimento em tempo real de &apos;Here&apos;, passando pela cena confirmada de IA generativa em &apos;O Eternauta&apos; (Netflix): os casos reais, os acordos sindicais e a linha entre ajuda e substituição.</description>
+      <category>Geek &amp; Games</category>
+      <enclosure url="https://viciocode.com/assets/ia-filmes-series-producoes-reais-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>Hell Let Loose: Vietnam — Guia de Armas, Classes, Sistema de Peso e Dicas de Gameplay</title>
       <link>https://viciocode.com/post/hell-let-loose-vietnam-armas-classes-gameplay</link>
@@ -438,24 +456,6 @@
       <description>Guia completo dos 76 bosses de Crimson Desert: Myurdin, Kailok, Reed Devil, White Horn, Staglord, Hexe Marie, Kearush, Antumbra, Priscus e Caliburn. Estratégias, fraquezas, mecânicas e recompensas. Atualizado patch 23/03/2026.</description>
       <category>Geek &amp; Games</category>
       <enclosure url="https://viciocode.com/assets/crimson-desert-bosses-guia-chefes.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Assassin&apos;s Creed Revelations: Ezio em Constantinopla e o Legado de Altaïr</title>
-      <link>https://viciocode.com/post/ac-revelations-ezio-constantinopla</link>
-      <guid isPermaLink="true">https://viciocode.com/post/ac-revelations-ezio-constantinopla</guid>
-      <pubDate>Sat, 21 Mar 2026 12:00:00 GMT</pubDate>
-      <description>O encerramento da trilogia Ezio: Constantinopla otomana de 1511, os selos de Altaïr, Sofia Sartor, o gancho-lâmina e o adeus emocionante dos dois Assassinos mais icônicos.</description>
-      <category>Geek &amp; Games</category>
-      <enclosure url="https://viciocode.com/assets/ac-revelations-ezio-constantinopla.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Assassin&apos;s Creed Brotherhood: Ezio Reconstrói a Irmandade em Roma</title>
-      <link>https://viciocode.com/post/ac-brotherhood-ezio-roma-borgia</link>
-      <guid isPermaLink="true">https://viciocode.com/post/ac-brotherhood-ezio-roma-borgia</guid>
-      <pubDate>Sat, 21 Mar 2026 12:00:00 GMT</pubDate>
-      <description>Ezio com 40 anos enfrenta Cesare Borgia em Roma — review completa do sistema de recrutamento de Assassinos, as máquinas de Leonardo, o multijogador online e o final chocante.</description>
-      <category>Geek &amp; Games</category>
-      <enclosure url="https://viciocode.com/assets/ac-brotherhood-ezio-roma-borgia.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>

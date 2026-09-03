@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Sitemap do VICIO<CODE> — viciocode.com
-  Gerado automaticamente em: 2026-09-02
-  Total de URLs: 300 (28 páginas + 221 posts + 51 tags)
+  Gerado automaticamente em: 2026-09-03
+  Total de URLs: 303 (28 páginas + 223 posts + 52 tags)
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -166,6 +166,18 @@
   <url>
     <loc>https://viciocode.com/post/ia-brasil-politicas-empresas-2026</loc>
     <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/ia-filmes-series-producoes-reais-2026</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/ia-jogos-industria-games-2026</loc>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1703,6 +1715,11 @@
   </url>
   <url>
     <loc>https://viciocode.com/tag/semicondutores</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/tag/streaming</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

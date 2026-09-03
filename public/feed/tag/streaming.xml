@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VICIO&lt;CODE&gt; — tag streaming</title>
+    <link>https://viciocode.com</link>
+    <description>Novos artigos marcados com &quot;streaming&quot; no VICIO&lt;CODE&gt;.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Thu, 03 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://viciocode.com/feed/tag/streaming.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IA em Filmes e Séries: Como Hollywood Já Usa Inteligência Artificial em Produções Reais</title>
+      <link>https://viciocode.com/post/ia-filmes-series-producoes-reais-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/ia-filmes-series-producoes-reais-2026</guid>
+      <pubDate>Thu, 03 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Do Respeecher em &apos;O Brutalista&apos; ao rejuvenescimento em tempo real de &apos;Here&apos;, passando pela cena confirmada de IA generativa em &apos;O Eternauta&apos; (Netflix): os casos reais, os acordos sindicais e a linha entre ajuda e substituição.</description>
+      <category>Geek &amp; Games</category>
+      <enclosure url="https://viciocode.com/assets/ia-filmes-series-producoes-reais-2026.webp" type="image/webp" length="0" />
+    </item>
+  </channel>
+</rss>
