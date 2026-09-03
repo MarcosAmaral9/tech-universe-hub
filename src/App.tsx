@@ -627,6 +627,8 @@ const App = () => (
                 <Route path="/post/hell-let-loose-vietnam-armas-classes-gameplay" element={<Suspense fallback={<div />}><HellLetLooseVietnamArmas2026 /></Suspense>} />
                 <Route path="/post/como-criar-agentes-ia-guia-completo-2026" element={<Suspense fallback={<div />}><CriarAgentesIaGuia2026 /></Suspense>} />
                 <Route path="/post/ia-brasil-politicas-empresas-2026" element={<Suspense fallback={<div />}><IABrasilPoliticasEmpresas2026 /></Suspense>} />
+                <Route path="/post/ia-filmes-series-producoes-reais-2026" element={<Suspense fallback={<div />}><IAFilmesSeries2026 /></Suspense>} />
+                <Route path="/post/ia-jogos-industria-games-2026" element={<Suspense fallback={<div />}><IAJogosIndustria2026 /></Suspense>} />
                 {/* ── 22 Jul 2026 — Invest Lote 4 ── */}
                 <Route path="/post/acoes-crescimento-vs-dividendos-2026" element={<Suspense fallback={<div />}><AcoesCrescimentoVsDividendos2026 /></Suspense>} />
                 <Route path="/post/cambio-dolar-protecao-carteira-2026" element={<Suspense fallback={<div />}><CambioDolarProtecao2026 /></Suspense>} />
