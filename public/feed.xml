@@ -5,8 +5,26 @@
     <link>https://viciocode.com</link>
     <description>IA, investimentos, cultura geek e otaku — novos artigos do VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 02 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IA nos Jogos: Do NPC que Conversa ao DLSS — Como a Inteligência Artificial Mudou os Games</title>
+      <link>https://viciocode.com/post/ia-jogos-industria-games-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/ia-jogos-industria-games-2026</guid>
+      <pubDate>Thu, 03 Sep 2026 12:00:00 GMT</pubDate>
+      <description>O uso que mais mudou sua experiência é o menos glamouroso: upscaling neural. Veja os casos reais — NVIDIA ACE em PUBG e inZOI, Ghostwriter da Ubisoft, a rotulagem obrigatória da Steam e a greve dos dubladores de games.</description>
+      <category>Geek &amp; Games</category>
+      <enclosure url="https://viciocode.com/assets/ia-jogos-industria-games-2026.webp" type="image/webp" length="0" />
+    </item>
+    <item>
+      <title>IA em Filmes e Séries: Como Hollywood Já Usa Inteligência Artificial em Produções Reais</title>
+      <link>https://viciocode.com/post/ia-filmes-series-producoes-reais-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/ia-filmes-series-producoes-reais-2026</guid>
+      <pubDate>Thu, 03 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Do Respeecher em &apos;O Brutalista&apos; ao rejuvenescimento em tempo real de &apos;Here&apos;, passando pela cena confirmada de IA generativa em &apos;O Eternauta&apos; (Netflix): os casos reais, os acordos sindicais e a linha entre ajuda e substituição.</description>
+      <category>Geek &amp; Games</category>
+      <enclosure url="https://viciocode.com/assets/ia-filmes-series-producoes-reais-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>IA no Brasil em 2026: Políticas Públicas, Leis de Privacidade e o Cenário de Empresas e Startups</title>
       <link>https://viciocode.com/post/ia-brasil-politicas-empresas-2026</link>
@@ -438,24 +456,6 @@
       <description>ITUB4, PETR4, TAEE11, ALOS3, VALE3 e as maiores pagadoras da B3 em 2026. DY real, diferença entre dividendos isentos e JCP (17,5% IR), e como montar uma carteira de renda.</description>
       <category>Finanças &amp; Investimentos</category>
       <enclosure url="https://viciocode.com/assets/acoes-dividendos-2026-melhores-pagadoras-b3.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>LCI e LCA em 2026: Guia Completo com Isenção de IR, Carência e Gross-Up</title>
-      <link>https://viciocode.com/post/lci-lca-2026-guia-completo</link>
-      <guid isPermaLink="true">https://viciocode.com/post/lci-lca-2026-guia-completo</guid>
-      <pubDate>Fri, 10 Jul 2026 12:00:00 GMT</pubDate>
-      <description>LCI e LCA isentos de IR: carência atual de 6 meses, cálculo do gross-up vs CDB, quem garante (FGC) e quando essas letras de crédito realmente valem a pena em 2026.</description>
-      <category>Finanças &amp; Investimentos</category>
-      <enclosure url="https://viciocode.com/assets/lci-lca-2026-guia-completo.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Monster Hunter Wilds: Guia Completo — Armas, Mundo Seamless, Inclemência e Como Começar em 2026</title>
-      <link>https://viciocode.com/post/monster-hunter-wilds-guia-completo-2025</link>
-      <guid isPermaLink="true">https://viciocode.com/post/monster-hunter-wilds-guia-completo-2025</guid>
-      <pubDate>Fri, 10 Jul 2026 12:00:00 GMT</pubDate>
-      <description>Guia completo do Monster Hunter Wilds da Capcom: 14 armas clássicas, mundo aberto seamless sem loadings, sistema de Inclemência climática, monte Seikret e como iniciar sua jornada em 2026.</description>
-      <category>Geek &amp; Games</category>
-      <enclosure url="https://viciocode.com/assets/monster-hunter-wilds-guia-completo-2025.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>

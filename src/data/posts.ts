@@ -235,6 +235,8 @@ import hllVietnamMapasImg from "@/assets/hell-let-loose-vietnam-mapas.webp";
 import hllVietnamArmasImg from "@/assets/hell-let-loose-vietnam-armas.webp";
 import criarAgentesIaGuiaImg from "@/assets/criar-agentes-ia-guia-2026.webp";
 import iaBrasilPoliticasImg from "@/assets/ia-brasil-politicas-empresas-2026.webp";
+import iaFilmesSeriesImg from "@/assets/ia-filmes-series-2026.webp";
+import iaJogosIndustriaImg from "@/assets/ia-jogos-industria-2026.webp";
 
 export const blogPosts: BlogPost[] = [
   // ── 28 Ago 2026 — Geek (Hell Let Loose: Vietnam) ───────────────────
@@ -327,6 +329,48 @@ export const blogPosts: BlogPost[] = [
       { q: "Existem incentivos públicos para startups de IA no Brasil?", a: "Sim: a linha 'IA Transforma' do BNDES (R$ 1 bilhão), chamadas da Finep e do FNDCT, programas estaduais como os da Fapesp em São Paulo e incubadoras ligadas a parques tecnológicos." },
       { q: "Quais setores concentram as startups de IA brasileiras?", a: "Legaltechs, healthtechs, agritechs, fintechs, HRtechs e soluções corporativas de IA generativa são as verticais mais fortes, com diferenciação baseada em dados proprietários de nicho." },
       { q: "O Brasil consegue treinar seus próprios grandes modelos de IA?", a: "Ainda não em escala de fronteira, por falta de infraestrutura computacional de ponta. O PBIA investe em supercomputação (como a ampliação do Santos Dumont) e em modelos nacionais de menor porte em português." },
+    ],
+  },
+  // ── 03 Set 2026 — Geek (IA em filmes e séries) ───────────────────
+  {
+    id: "251",
+    slug: "ia-filmes-series-producoes-reais-2026",
+    title: "IA em Filmes e Séries: Como Hollywood Já Usa Inteligência Artificial em Produções Reais",
+    excerpt:
+      "Do Respeecher em 'O Brutalista' ao rejuvenescimento em tempo real de 'Here', passando pela cena confirmada de IA generativa em 'O Eternauta' (Netflix): os casos reais, os acordos sindicais e a linha entre ajuda e substituição.",
+    content: "",
+    category: "geek",
+    subtopic: "streaming",
+    image: iaFilmesSeriesImg,
+    author: "VICIO<CODE>",
+    date: "2026-09-03",
+    readTime: "11 min",
+    faq: [
+      { q: "Algum filme já foi feito inteiramente por IA?", a: "Não. Existem curtas experimentais gerados por IA e cenas pontuais em produções comerciais, mas nenhum longa-metragem lançado comercialmente foi gerado por IA do início ao fim." },
+      { q: "O Brutalista perdeu elegibilidade ao Oscar por usar IA?", a: "Não. O filme competiu normalmente e venceu o Oscar de Melhor Ator para Adrien Brody. A polêmica fez a Academia discutir regras de transparência sobre uso de IA nas inscrições." },
+      { q: "Atores podem proibir o uso digital de sua imagem?", a: "Pelos acordos da SAG-AFTRA de 2023, estúdios precisam de consentimento informado e devem compensar o uso de réplicas digitais. Leis da Califórnia de 2024 restringem réplicas sem autorização." },
+      { q: "A IA vai acabar com empregos de dublagem e VFX?", a: "A tendência visível é transformação: equipes passam a operar ferramentas de IA, e mercados como a dublagem pressionam por consentimento para clonagem de voz." },
+    ],
+  },
+  // ── 03 Set 2026 — Geek (IA nos jogos) ───────────────────
+  {
+    id: "252",
+    slug: "ia-jogos-industria-games-2026",
+    title: "IA nos Jogos: Do NPC que Conversa ao DLSS — Como a Inteligência Artificial Mudou os Games",
+    excerpt:
+      "O uso que mais mudou sua experiência é o menos glamouroso: upscaling neural. Veja os casos reais — NVIDIA ACE em PUBG e inZOI, Ghostwriter da Ubisoft, a rotulagem obrigatória da Steam e a greve dos dubladores de games.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: iaJogosIndustriaImg,
+    author: "VICIO<CODE>",
+    date: "2026-09-03",
+    readTime: "11 min",
+    faq: [
+      { q: "Já existe jogo grande com NPCs que conversam livremente?", a: "Existem implementações de escopo limitado, como o companheiro de IA de PUBG e o do inZOI (NVIDIA ACE). Nenhum AAA lançou campanha principal com diálogo totalmente improvisado." },
+      { q: "DLSS é 'trapaça'?", a: "Não. É reconstrução de imagem por rede neural. A crítica legítima é sobre comparações de desempenho que misturam quadros renderizados e gerados sem medir latência." },
+      { q: "Como sei se um jogo na Steam usou IA generativa?", a: "A página do jogo tem uma seção obrigatória de divulgação de IA desde 2024, informando uso na produção ou durante a execução." },
+      { q: "A IA vai baratear o desenvolvimento de jogos?", a: "O efeito medido até agora é produtividade em tarefas específicas (QA, variação de arte, falas ambientais), não redução de preço final dos jogos." },
     ],
   },
   // ── 20 Ago 2026 — IA (Gemini 3.7 Flash na Busca) ───────────────────

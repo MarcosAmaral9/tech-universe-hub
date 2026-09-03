@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-02T22:01:21.045Z",
+  "generatedAt": "2026-09-03T23:49:26.122Z",
   "counts": {
     "OK": 16,
     "A": 97,
     "B": 2,
     "C": 13,
-    "D": 93
+    "D": 95
   },
   "missingFiles": [],
   "reports": [
@@ -112,6 +112,61 @@
       "issues": [
         "sem PAGE_META manual",
         "keyword ausente em excerpt"
+      ]
+    },
+    {
+      "slug": "ia-filmes-series-producoes-reais-2026",
+      "file": "IAFilmesSeries2026.tsx",
+      "keyword": "ia filmes series",
+      "category": "geek",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1328,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em excerpt",
+        "apenas ~1328 palavras (mínimo 1500)"
+      ]
+    },
+    {
+      "slug": "ia-jogos-industria-games-2026",
+      "file": "IAJogosIndustria2026.tsx",
+      "keyword": "ia jogos industria",
+      "category": "geek",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": false,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 1054,
+        "has1500Words": false
+      },
+      "bucket": "D",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>",
+        "keyword ausente em excerpt",
+        "apenas ~1054 palavras (mínimo 1500)"
       ]
     },
     {
