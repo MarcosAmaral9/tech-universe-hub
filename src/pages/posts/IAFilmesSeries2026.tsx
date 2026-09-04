@@ -92,7 +92,7 @@ const IAFilmesSeries2026 = () => {
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
           <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />3 de Setembro, 2026</span>
-          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />11 min de leitura</span>
+          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />16 min de leitura</span>
         </div>
         <ShareWhatsApp />
         <AuthorBio category="geek" />
