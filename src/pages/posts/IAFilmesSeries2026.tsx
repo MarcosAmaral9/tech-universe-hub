@@ -57,6 +57,15 @@ const ETAPAS = [
   { etapa: "Distribuição", exemplos: "Miniaturas e trailers personalizados, dublagem sintética com sincronia labial, recomendação e marketing segmentado." },
 ];
 
+const FERRAMENTAS = [
+  { nome: "Respeecher", oque: "Conversão de voz: pega a fala de um locutor e a transforma na voz-alvo, preservando a interpretação original.", onde: "O Brutalista (pronúncia do húngaro); recriação da voz de Darth Vader em Obi-Wan Kenobi, com autorização de James Earl Jones." },
+  { nome: "Metaphysic Live", oque: "Troca de rosto e rejuvenescimento em tempo real, sem capacete de captura, exibindo o resultado no monitor do set.", onde: "Here (2024), com Tom Hanks e Robin Wright." },
+  { nome: "ILM Flux / de-aging", oque: "Rejuvenescimento por aprendizado de máquina treinado no acervo do próprio ator, com supervisão artística quadro a quadro.", onde: "O Irlandês (2019) e Indiana Jones e a Relíquia do Destino (2023)." },
+  { nome: "Flawless TrueSync", oque: "Reanima os lábios do ator para casar com o diálogo de outro idioma ou com falas regravadas.", onde: "Usada para versões alternativas de diálogo e localização; virou referência em 'dublagem visual'." },
+  { nome: "Sonantic", oque: "Síntese de voz a partir de gravações de arquivo do próprio ator, com controle de emoção.", onde: "Top Gun: Maverick (2022), reconstruindo a voz de Val Kilmer. Empresa adquirida pelo Spotify." },
+  { nome: "Runway / Sora / Veo", oque: "Geração de vídeo a partir de texto ou imagem — o grupo mais polêmico, por causa dos dados de treinamento.", onde: "Parceria Lionsgate–Runway (2024) para um modelo treinado no catálogo licenciado do estúdio." },
+];
+
 const IAFilmesSeries2026 = () => {
   useEffect(() => {
     trackArticleRead(SLUG, TITLE, "geek");
