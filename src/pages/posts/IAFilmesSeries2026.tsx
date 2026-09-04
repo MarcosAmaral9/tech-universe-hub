@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import {
   Clock, User, Calendar, Clapperboard, Sparkles, Scale, ListChecks, HelpCircle, Film, Tv,
+  History as HistoryIcon, Wrench, Mic,
 } from "lucide-react";
 import heroImg from "@/assets/ia-filmes-series-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
@@ -56,6 +57,15 @@ const ETAPAS = [
   { etapa: "Distribuição", exemplos: "Miniaturas e trailers personalizados, dublagem sintética com sincronia labial, recomendação e marketing segmentado." },
 ];
 
+const FERRAMENTAS = [
+  { nome: "Respeecher", oque: "Conversão de voz: pega a fala de um locutor e a transforma na voz-alvo, preservando a interpretação original.", onde: "O Brutalista (pronúncia do húngaro); recriação da voz de Darth Vader em Obi-Wan Kenobi, com autorização de James Earl Jones." },
+  { nome: "Metaphysic Live", oque: "Troca de rosto e rejuvenescimento em tempo real, sem capacete de captura, exibindo o resultado no monitor do set.", onde: "Here (2024), com Tom Hanks e Robin Wright." },
+  { nome: "ILM Flux / de-aging", oque: "Rejuvenescimento por aprendizado de máquina treinado no acervo do próprio ator, com supervisão artística quadro a quadro.", onde: "O Irlandês (2019) e Indiana Jones e a Relíquia do Destino (2023)." },
+  { nome: "Flawless TrueSync", oque: "Reanima os lábios do ator para casar com o diálogo de outro idioma ou com falas regravadas.", onde: "Usada para versões alternativas de diálogo e localização; virou referência em 'dublagem visual'." },
+  { nome: "Sonantic", oque: "Síntese de voz a partir de gravações de arquivo do próprio ator, com controle de emoção.", onde: "Top Gun: Maverick (2022), reconstruindo a voz de Val Kilmer. Empresa adquirida pelo Spotify." },
+  { nome: "Runway / Sora / Veo", oque: "Geração de vídeo a partir de texto ou imagem — o grupo mais polêmico, por causa dos dados de treinamento.", onde: "Parceria Lionsgate–Runway (2024) para um modelo treinado no catálogo licenciado do estúdio." },
+];
+
 const IAFilmesSeries2026 = () => {
   useEffect(() => {
     trackArticleRead(SLUG, TITLE, "geek");
@@ -82,7 +92,7 @@ const IAFilmesSeries2026 = () => {
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
           <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />3 de Setembro, 2026</span>
-          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />11 min de leitura</span>
+          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />16 min de leitura</span>
         </div>
         <ShareWhatsApp />
         <AuthorBio category="geek" />
@@ -250,7 +260,102 @@ const IAFilmesSeries2026 = () => {
           revelado sem transparência vira crise de imagem, o que empurra os estúdios a informar cada vez mais.
         </p>
 
+        <h2 className="flex items-center gap-2">
+          <HistoryIcon className="h-6 w-6 text-geek" />
+          A história longa: do rosto digital ao clone de voz
+        </h2>
+        <p>
+          A ideia de recriar um ator com computador não nasceu com a IA generativa. Em "Rogue One" (2016), a ILM
+          reconstruiu o Grand Moff Tarkin (Peter Cushing, morto em 1994) e uma jovem princesa Leia com CGI
+          tradicional sobre atuações de dublês — trabalho artesanal, quadro a quadro, sem aprendizado de máquina.
+          Em "O Irlandês" (2019), a ILM desenvolveu o sistema Flux, com três câmeras capturando cada cena para
+          rejuvenescer De Niro, Pacino e Pesci sem marcadores no rosto. Foi um dos projetos de VFX mais caros da
+          Netflix até então, e serviu de argumento posterior: se um estúdio pode gastar dezenas de milhões nisso,
+          o que acontece quando o mesmo efeito custa uma fração?
+        </p>
+        <p>
+          A resposta veio pelos deepfakes amadores. Poucos meses depois de "O Irlandês", vídeos no YouTube feitos
+          por entusiastas com ferramentas gratuitas produziram rejuvenescimentos que muita gente considerou
+          comparáveis. A indústria absorveu o recado e passou a contratar quem dominava a técnica — o caso mais
+          conhecido é o do canal Shamook, que refez a cena do jovem Luke Skywalker de "O Livro de Boba Fett" e
+          acabou contratado pela própria ILM em 2021. Foi o momento em que o deepfake deixou de ser gozação de
+          internet e virou item de pipeline.
+        </p>
+        <p>
+          Na frente do áudio, dois casos delimitam o certo e o errado. Em "Roadrunner" (2021), o documentário sobre
+          Anthony Bourdain, o diretor Morgan Neville usou voz sintética para fazer o chef "ler" três frases que ele
+          havia escrito, mas nunca dito em voz alta — sem avisar o espectador. A revelação virou escândalo ético e
+          é citada até hoje como exemplo do que não fazer. No ano seguinte, em "Top Gun: Maverick" (2022), a
+          empresa Sonantic (depois adquirida pelo Spotify) reconstruiu a voz de Val Kilmer, que havia perdido a
+          fala após um câncer de garganta, a partir de gravações antigas e com participação direta do ator e da
+          família. Mesma tecnologia, recepções opostas: a diferença foi consentimento e transparência.
+        </p>
+
+        <h2 className="flex items-center gap-2">
+          <Wrench className="h-6 w-6 text-geek" />
+          As ferramentas por trás dos casos
+        </h2>
+        <p>
+          Quando uma reportagem diz "usaram IA", quase sempre há um nome comercial específico por trás, com escopo
+          bem definido. Conhecer esses nomes ajuda a separar marketing de técnica:
+        </p>
+
+        <div className="not-prose overflow-x-auto my-6">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="border-b border-geek/30 text-left">
+                <th className="py-2 pr-3 text-geek">Ferramenta</th>
+                <th className="py-2 pr-3 text-geek">O que faz</th>
+                <th className="py-2 text-geek">Onde apareceu</th>
+              </tr>
+            </thead>
+            <tbody>
+              {FERRAMENTAS.map((f) => (
+                <tr key={f.nome} className="border-b border-border/50 align-top">
+                  <td className="py-2 pr-3 font-semibold whitespace-nowrap">{f.nome}</td>
+                  <td className="py-2 pr-3">{f.oque}</td>
+                  <td className="py-2 text-muted-foreground">{f.onde}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2 className="flex items-center gap-2">
+          <Mic className="h-6 w-6 text-geek" />
+          O ângulo brasileiro: dublagem, um mercado sob pressão
+        </h2>
+        <p>
+          O Brasil tem uma das maiores e mais respeitadas indústrias de dublagem do mundo, e é justamente por isso
+          que a clonagem de voz virou pauta política aqui. Em 2023, dubladores e artistas lançaram o movimento
+          <strong> Dublagem Viva</strong>, com abaixo-assinado e campanha pública pedindo regras contra o uso de
+          vozes sintéticas sem autorização e sem remuneração. A discussão desaguou no debate legislativo sobre
+          regulação de IA no país, onde a proteção da voz e da imagem de profissionais aparece ao lado de direitos
+          autorais e transparência.
+        </p>
+        <p>
+          O argumento técnico dos dubladores é forte: a dublagem brasileira não traduz apenas palavras, ela adapta
+          piada, sotaque e ritmo — trabalho de interpretação, não de conversão de texto em fala. O argumento
+          econômico dos estúdios também é real: legendar e dublar catálogos inteiros para dezenas de idiomas é
+          caro, e a dublagem sintética promete alcançar mercados que hoje ficam sem versão localizada. O ponto de
+          equilíbrio que aparece nos acordos internacionais é sempre o mesmo trio: consentimento explícito,
+          remuneração por uso e prazo de validade da autorização.
+        </p>
+
+        <h2 className="flex items-center gap-2">
+          <Sparkles className="h-6 w-6 text-geek" />
+          Como identificar IA numa produção (sem cair em caça às bruxas)
+        </h2>
+        <ul>
+          <li><strong>Leia os créditos até o fim.</strong> Empresas como Respeecher, Metaphysic e Flawless costumam aparecer creditadas quando o uso foi contratado formalmente.</li>
+          <li><strong>Desconfie de "prova" por captura de tela.</strong> Mãos estranhas e texto borrado também acontecem em arte humana apressada e em compressão de streaming.</li>
+          <li><strong>Separe de-aging de geração.</strong> Rejuvenescimento supervisionado por artistas com material de arquivo do próprio ator é juridicamente diferente de vídeo criado do zero por um modelo.</li>
+          <li><strong>Procure a declaração oficial.</strong> Desde a polêmica de "O Brutalista", diretores e estúdios têm respondido publicamente quando questionados — a ausência de resposta também é informação.</li>
+          <li><strong>Pergunte quem foi pago.</strong> É o critério que os próprios sindicatos usam: consentimento informado e compensação valem mais do que o nome da ferramenta.</li>
+        </ul>
+
         <h2>O que esperar daqui para frente</h2>
+
         <p>
           A tendência mais provável não é o "filme feito 100% por IA" — que continua tecnicamente distante para
           longas-metragens com coerência narrativa —, e sim a IA invisível: mais produções de médio orçamento
