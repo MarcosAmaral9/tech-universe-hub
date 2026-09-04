@@ -344,7 +344,7 @@ export const blogPosts: BlogPost[] = [
     image: iaFilmesSeriesImg,
     author: "VICIO<CODE>",
     date: "2026-09-03",
-    readTime: "11 min",
+    readTime: "16 min",
     faq: [
       { q: "Algum filme já foi feito inteiramente por IA?", a: "Não. Existem curtas experimentais gerados por IA e cenas pontuais em produções comerciais, mas nenhum longa-metragem lançado comercialmente foi gerado por IA do início ao fim." },
       { q: "O Brutalista perdeu elegibilidade ao Oscar por usar IA?", a: "Não. O filme competiu normalmente e venceu o Oscar de Melhor Ator para Adrien Brody. A polêmica fez a Academia discutir regras de transparência sobre uso de IA nas inscrições." },
@@ -365,7 +365,7 @@ export const blogPosts: BlogPost[] = [
     image: iaJogosIndustriaImg,
     author: "VICIO<CODE>",
     date: "2026-09-03",
-    readTime: "11 min",
+    readTime: "16 min",
     faq: [
       { q: "Já existe jogo grande com NPCs que conversam livremente?", a: "Existem implementações de escopo limitado, como o companheiro de IA de PUBG e o do inZOI (NVIDIA ACE). Nenhum AAA lançou campanha principal com diálogo totalmente improvisado." },
       { q: "DLSS é 'trapaça'?", a: "Não. É reconstrução de imagem por rede neural. A crítica legítima é sobre comparações de desempenho que misturam quadros renderizados e gerados sem medir latência." },
