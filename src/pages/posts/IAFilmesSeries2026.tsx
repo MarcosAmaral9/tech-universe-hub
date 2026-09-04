@@ -9,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import {
   Clock, User, Calendar, Clapperboard, Sparkles, Scale, ListChecks, HelpCircle, Film, Tv,
+  History as HistoryIcon, Wrench, Mic,
 } from "lucide-react";
 import heroImg from "@/assets/ia-filmes-series-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
