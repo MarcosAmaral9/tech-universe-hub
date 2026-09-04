@@ -57,6 +57,15 @@ const ANTES_DEPOIS = [
   { tema: "Dublagem", antes: "Estúdio, elenco e regravação para cada linha", agora: "Voz sintética licenciada, com acordos de consentimento em negociação" },
 ];
 
+const AGENTES = [
+  { marco: "Deep Blue vs. Kasparov", ano: "1997", porque: "Primeira derrota de um campeão mundial de xadrez para uma máquina. Era busca bruta e avaliação escrita por humanos — nada de aprendizado." },
+  { marco: "AlphaGo vs. Lee Sedol", ano: "2016", porque: "4 a 1 no Go, jogo considerado intratável para computadores. Redes neurais treinadas em partidas humanas + busca de Monte Carlo." },
+  { marco: "AlphaGo Zero", ano: "2017", porque: "Superou a versão anterior aprendendo apenas contra si mesmo, sem nenhuma partida humana no treinamento." },
+  { marco: "OpenAI Five (Dota 2)", ano: "2019", porque: "Venceu a OG, campeã do The International, em partidas com restrições. Mostrou coordenação de equipe em tempo real." },
+  { marco: "AlphaStar (StarCraft II)", ano: "2019", porque: "Atingiu nível Grandmaster no ladder europeu com limites de ações por minuto e campo de visão, aproximando as condições humanas." },
+  { marco: "GT Sophy (Gran Turismo)", ano: "2022", porque: "Publicado na Nature: venceu pilotos de elite respeitando etiqueta de pista e depois virou adversário opcional no Gran Turismo 7." },
+];
+
 const IAJogosIndustria2026 = () => {
   useEffect(() => {
     trackArticleRead(SLUG, TITLE, "geek");
