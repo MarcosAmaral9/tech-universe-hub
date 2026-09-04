@@ -244,7 +244,108 @@ const IAJogosIndustria2026 = () => {
           difusa em dado verificável. Foi a primeira vez que o jogador ganhou um filtro real de transparência.
         </p>
 
+        <h2 className="flex items-center gap-2">
+          <Trophy className="h-6 w-6 text-geek" />
+          Quando a IA vira o jogador: a linhagem dos agentes
+        </h2>
+        <p>
+          Há uma segunda história paralela, tão importante quanto a da produção: a da IA que <em>joga</em>. Ela
+          começa fora dos videogames, em 1997, quando o Deep Blue da IBM venceu Garry Kasparov no xadrez usando
+          busca em árvore e avaliação escrita por humanos. Duas décadas depois, o método mudou de natureza: em
+          março de 2016, o AlphaGo, da DeepMind, venceu Lee Sedol por 4 a 1 no Go — um jogo com mais posições
+          possíveis do que átomos no universo observável — combinando redes neurais com busca de Monte Carlo. Em
+          2017, o AlphaGo Zero aprendeu sozinho, jogando contra si mesmo, sem nenhuma partida humana no treino.
+        </p>
+        <p>
+          A migração para os videogames veio logo depois. O OpenAI Five derrotou a OG, campeã mundial de Dota 2,
+          em abril de 2019, numa versão com restrições de heróis e itens. No mesmo ano, o AlphaStar atingiu nível
+          Grandmaster em StarCraft II no ladder europeu do Battle.net, jogando com limitações de ações por minuto
+          e campo de visão para se aproximar das condições humanas. Em 2022, a Sony publicou na revista Nature o
+          GT Sophy, agente que venceu os melhores pilotos de Gran Turismo Sport respeitando a etiqueta de pista —
+          um detalhe crucial, porque a parte difícil não era ser rápido, era não ser um motorista sujo. Uma versão
+          do Sophy foi disponibilizada aos jogadores de Gran Turismo 7 como adversário opcional.
+        </p>
+
+        <div className="not-prose overflow-x-auto my-6">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="border-b border-geek/30 text-left">
+                <th className="py-2 pr-3 text-geek">Marco</th>
+                <th className="py-2 pr-3 text-geek">Ano</th>
+                <th className="py-2 text-geek">Por que importa</th>
+              </tr>
+            </thead>
+            <tbody>
+              {AGENTES.map((a) => (
+                <tr key={a.marco} className="border-b border-border/50 align-top">
+                  <td className="py-2 pr-3 font-semibold whitespace-nowrap">{a.marco}</td>
+                  <td className="py-2 pr-3 whitespace-nowrap text-muted-foreground">{a.ano}</td>
+                  <td className="py-2">{a.porque}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          O que essa linhagem ensina é contraintuitivo: agentes sobre-humanos existem há anos e quase nunca vão
+          para dentro dos jogos comerciais como inimigos. O motivo é de design, não técnico. Um adversário que
+          nunca erra frustra; um que erra de forma previsível diverte. Quando o GT Sophy chegou ao Gran Turismo 7,
+          ele veio calibrado em níveis de habilidade — ou seja, o trabalho difícil foi <em>piorar</em> a IA de
+          maneira convincente.
+        </p>
+
+        <h2 className="flex items-center gap-2">
+          <Layers className="h-6 w-6 text-geek" />
+          Procedural não é generativo: a confusão que mais atrapalha o debate
+        </h2>
+        <p>
+          Boa parte das discussões de fórum tropeça aqui. <strong>Geração procedural</strong> é conteúdo criado por
+          algoritmos determinísticos a partir de uma semente: as masmorras de Rogue (1980), as cavernas de
+          Minecraft, os 18 quintilhões de planetas de No Man's Sky (2016), os níveis de Hades ou os baralhos de
+          Balatro. Nada disso envolve rede neural ou dados de treino — é matemática com regras escritas por
+          designers, previsível o suficiente para ser depurada.
+        </p>
+        <p>
+          <strong>IA generativa</strong> é outra coisa: um modelo estatístico treinado em grandes volumes de dados
+          que produz texto, imagem, áudio ou vídeo novos. A diferença prática é jurídica e criativa. Um mapa
+          procedural não levanta questão de direito autoral nem de consentimento; uma textura gerada por difusão
+          levanta as duas. Confundir os dois termos faz jogadores acusarem estúdios injustamente — e faz estúdios
+          se esconderem atrás da palavra "procedural" quando o caso é outro.
+        </p>
+        <p>
+          Uma terceira categoria começou a aparecer em 2025 e ainda não tem nome estabelecido: os <em>modelos de
+          mundo</em>. A Microsoft Research apresentou o Muse (WHAM), treinado com partidas de Bleeding Edge, da
+          Ninja Theory, capaz de gerar sequências jogáveis de vídeo e ações; a Google DeepMind mostrou o Genie 2,
+          que cria ambientes interativos a partir de uma única imagem, e o SIMA, agente treinado para seguir
+          instruções em linguagem natural dentro de vários jogos comerciais. São pesquisas, não produtos — mas
+          apontam para ferramentas de prototipagem, não para substituir engines.
+        </p>
+
+        <h2 className="flex items-center gap-2">
+          <Gamepad2 className="h-6 w-6 text-geek" />
+          O que as próprias empresas dizem (e o que os números mostram)
+        </h2>
+        <p>
+          Strauss Zelnick, CEO da Take-Two (Rockstar, 2K), repete em entrevistas que a IA vai ampliar o número de
+          criadores e a qualidade, mas não reduzir custos nem substituir talento — e que os grandes êxitos
+          continuam vindo de decisões humanas. A Square Enix declarou publicamente, em sua mensagem de início de
+          2024, intenção de ser agressiva no uso de IA em desenvolvimento e conteúdo. A Electronic Arts tratou a
+          IA como "o próprio núcleo do negócio" em comunicações a investidores em 2024. Já a Nintendo adotou o
+          discurso oposto: em assembleia de acionistas de 2024, Shuntaro Furukawa afirmou que a empresa pretende
+          seguir entregando valor único e que questões de propriedade intelectual pesam contra o uso de IA
+          generativa nos seus jogos.
+        </p>
+        <p>
+          Do lado mensurável, a rotulagem da Steam produziu o primeiro conjunto de dados público sobre o tema: as
+          declarações de IA generativa passaram de uma fração marginal do catálogo em 2023 para uma parcela
+          expressiva dos lançamentos anuais a partir de 2024, com crescimento concentrado em títulos independentes
+          e de baixo orçamento. A leitura honesta é que a IA generativa está mudando primeiro a base da pirâmide —
+          jogos pequenos, com equipes de uma a cinco pessoas — e só depois, e de forma pontual, os AAA.
+        </p>
+
         <h2>Como jogar de olho nisso (guia prático)</h2>
+
         <ul>
           <li><strong>Quer saber se um jogo usou IA?</strong> Role a página da Steam até a seção de divulgação de IA generativa, abaixo da descrição.</li>
           <li><strong>Notou textura estranha ou fala genérica?</strong> Compare com a declaração da loja antes de acusar — muita arte "esquisita" é só terceirização apressada.</li>
