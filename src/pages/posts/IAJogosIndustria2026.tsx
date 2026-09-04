@@ -8,7 +8,7 @@ import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import {
-  Clock, User, Calendar, Gamepad2, Cpu, Bot, ListChecks, HelpCircle, Scale, Wand2,
+  Clock, User, Calendar, Gamepad2, Cpu, Bot, ListChecks, HelpCircle, Scale, Wand2, Trophy, Layers,
 } from "lucide-react";
 import heroImg from "@/assets/ia-jogos-industria-2026.webp";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
