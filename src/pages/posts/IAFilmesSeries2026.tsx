@@ -252,7 +252,7 @@ const IAFilmesSeries2026 = () => {
         </p>
 
         <h2 className="flex items-center gap-2">
-          <History className="h-6 w-6 text-geek" />
+          <HistoryIcon className="h-6 w-6 text-geek" />
           A história longa: do rosto digital ao clone de voz
         </h2>
         <p>
