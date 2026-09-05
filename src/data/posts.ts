@@ -237,6 +237,7 @@ import criarAgentesIaGuiaImg from "@/assets/criar-agentes-ia-guia-2026.webp";
 import iaBrasilPoliticasImg from "@/assets/ia-brasil-politicas-empresas-2026.webp";
 import iaFilmesSeriesImg from "@/assets/ia-filmes-series-2026.webp";
 import iaJogosIndustriaImg from "@/assets/ia-jogos-industria-2026.webp";
+import fatedVillainImg from "@/assets/i-am-the-fated-villain-gu-changge.webp";
 
 export const blogPosts: BlogPost[] = [
   // ── 28 Ago 2026 — Geek (Hell Let Loose: Vietnam) ───────────────────
@@ -371,6 +372,28 @@ export const blogPosts: BlogPost[] = [
       { q: "DLSS é 'trapaça'?", a: "Não. É reconstrução de imagem por rede neural. A crítica legítima é sobre comparações de desempenho que misturam quadros renderizados e gerados sem medir latência." },
       { q: "Como sei se um jogo na Steam usou IA generativa?", a: "A página do jogo tem uma seção obrigatória de divulgação de IA desde 2024, informando uso na produção ou durante a execução." },
       { q: "A IA vai baratear o desenvolvimento de jogos?", a: "O efeito medido até agora é produtividade em tarefas específicas (QA, variação de arte, falas ambientais), não redução de preço final dos jogos." },
+    ],
+  },
+  // ── 05 Set 2026 — Otaku (I Am the Fated Villain) ───────────────────
+  {
+    id: "253",
+    slug: "i-am-the-fated-villain-gu-changge-guia-2026",
+    title: "I Am the Fated Villain: Tudo Sobre Gu Changge, o Vilão Predestinado do Manhua",
+    excerpt:
+      "Guia completo do manhua de cultivo em que o protagonista reencarna como o vilão destinado: a história de Gu Changge, o sistema de roubo de sorte, os gêneros, a origem chinesa e onde ler em português.",
+    content: "",
+    category: "otaku",
+    subtopic: "manhua",
+    image: fatedVillainImg,
+    author: "VICIO<CODE>",
+    date: "2026-09-05",
+    readTime: "12 min",
+    faq: [
+      { q: "Quantos capítulos tem I Am the Fated Villain?", a: "O manhua segue em publicação contínua e já ultrapassa a casa das centenas de capítulos, com novos capítulos semanais. Verifique seu leitor de preferência para a contagem atualizada." },
+      { q: "Gu Changge é realmente o vilão?", a: "Sim. Ele ocupa o papel do 'vilão destinado' do roteiro original daquele mundo e abraça a função, usando um sistema para drenar a sorte dos heróis abençoados pelo destino." },
+      { q: "O manhua é baseado em uma novel?", a: "Sim. A obra adapta uma web novel chinesa homônima publicada por capítulos em plataformas digitais; a novel está bem à frente do manhua." },
+      { q: "Existe versão oficial em português?", a: "Não. Até o momento não há licenciamento oficial no Brasil; a leitura em PT-BR acontece por traduções da comunidade, em apps como o Mangaflix e sites de scanlations." },
+      { q: "Qual é o gênero de I Am the Fated Villain?", a: "Xianxia com cultivo, transmigração/reencarnação, sistema e vilão protagonista — uma mistura típica das web novels chinesas modernas." },
     ],
   },
   // ── 20 Ago 2026 — IA (Gemini 3.7 Flash na Busca) ───────────────────
