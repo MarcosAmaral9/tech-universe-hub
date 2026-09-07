@@ -238,6 +238,7 @@ import iaBrasilPoliticasImg from "@/assets/ia-brasil-politicas-empresas-2026.web
 import iaFilmesSeriesImg from "@/assets/ia-filmes-series-2026.webp";
 import iaJogosIndustriaImg from "@/assets/ia-jogos-industria-2026.webp";
 import fatedVillainImg from "@/assets/i-am-the-fated-villain-gu-changge.webp";
+import cityLordImg from "@/assets/starting-today-city-lord-liu-feng.webp";
 
 export const blogPosts: BlogPost[] = [
   // ── 28 Ago 2026 — Geek (Hell Let Loose: Vietnam) ───────────────────
@@ -372,6 +373,28 @@ export const blogPosts: BlogPost[] = [
       { q: "DLSS é 'trapaça'?", a: "Não. É reconstrução de imagem por rede neural. A crítica legítima é sobre comparações de desempenho que misturam quadros renderizados e gerados sem medir latência." },
       { q: "Como sei se um jogo na Steam usou IA generativa?", a: "A página do jogo tem uma seção obrigatória de divulgação de IA desde 2024, informando uso na produção ou durante a execução." },
       { q: "A IA vai baratear o desenvolvimento de jogos?", a: "O efeito medido até agora é produtividade em tarefas específicas (QA, variação de arte, falas ambientais), não redução de preço final dos jogos." },
+    ],
+  },
+  // ── 07 Set 2026 — Otaku (Starting From Today I'll Work as a City Lord) ──
+  {
+    id: "254",
+    slug: "starting-from-today-city-lord-liu-feng-guia-2026",
+    title: "Starting From Today I'll Work as a City Lord: Guia Completo do Manhua de Liu Feng",
+    excerpt:
+      "Guia completo do manhua Começando Hoje, Vou Trabalhar Como o Lorde da Cidade: a história de Liu Feng, a viagem entre mundos, as raças beastmen, os gêneros, o lançamento, os capítulos e onde ler em português.",
+    content: "",
+    category: "otaku",
+    subtopic: "manhua",
+    image: cityLordImg,
+    author: "VICIO<CODE>",
+    date: "2026-09-07",
+    readTime: "13 min",
+    faq: [
+      { q: "Quem é Liu Feng?", a: "É o protagonista: um gamer caseiro da Terra que ganha a habilidade de atravessar para outro mundo e voltar, além de um espaço pessoal de armazenamento. Ele enriquece vendendo produtos terrestres e compra uma cidade, virando seu lorde." },
+      { q: "Quantos capítulos tem o manhua Starting From Today I'll Work as a City Lord?", a: "A obra segue em publicação; catálogos internacionais registram de 488+ a 550+ capítulos. A web novel original tem cerca de 3.000 capítulos nos índices chineses." },
+      { q: "Quando o manhua começou e quem publica?", a: "As bases divergem entre 2018 (aniSearch aponta 27 de janeiro de 2018) e 2019 (Anime-Planet e agregadores). A distribuição é feita por Tencent Comics (ac.qq.com), WeComics e Bilibili Comics." },
+      { q: "Quais raças aparecem no manhua?", a: "Humanos em reinos feudais e vários beastmen — com destaque para as raças felina, raposa e coelho, citadas na própria sinopse — num mundo de armas brancas regido pela lei do mais forte." },
+      { q: "Existe versão oficial em português ou anime?", a: "Não há licenciamento oficial em português nem anime confirmado. A leitura em PT-BR acontece por traduções da comunidade, em apps como o Mangaflix e sites de scanlation." },
     ],
   },
   // ── 05 Set 2026 — Otaku (I Am the Fated Villain) ───────────────────
