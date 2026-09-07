@@ -238,6 +238,7 @@ import iaBrasilPoliticasImg from "@/assets/ia-brasil-politicas-empresas-2026.web
 import iaFilmesSeriesImg from "@/assets/ia-filmes-series-2026.webp";
 import iaJogosIndustriaImg from "@/assets/ia-jogos-industria-2026.webp";
 import fatedVillainImg from "@/assets/i-am-the-fated-villain-gu-changge.webp";
+import cityLordImg from "@/assets/starting-today-city-lord-liu-feng.webp";
 
 export const blogPosts: BlogPost[] = [
   // ── 28 Ago 2026 — Geek (Hell Let Loose: Vietnam) ───────────────────
