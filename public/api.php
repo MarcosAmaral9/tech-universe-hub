@@ -559,6 +559,192 @@ function saveHistorySnapshots(PDO $pdo, string $assetType, array $assets): void 
     }
 }
 
+// ═══════════════════════════════════════════════════════════════════════════
+// MOTOR DE PREENCHIMENTO AUTOMÁTICO DO HISTÓRICO (self-healing backfill)
+// Substitui a necessidade de abrir manualmente ?action=history_bootstrap.
+// Roda em fatias: no cron_refresh (orçamento maior) e, como rede de segurança,
+// após responder requisições de histórico incompletas (orçamento curto).
+// ═══════════════════════════════════════════════════════════════════════════
+
+const VC_BACKFILL_CRYPTO = [
+    'BTC' => 'bitcoin', 'ETH' => 'ethereum', 'SOL' => 'solana', 'BNB' => 'binancecoin',
+    'ADA' => 'cardano', 'XRP' => 'ripple', 'LINK' => 'chainlink', 'DOT' => 'polkadot',
+];
+const VC_BACKFILL_CURRENCIES = ['usd' => 'USD', 'eur' => 'EUR', 'ars' => 'ARS', 'pyg' => 'PYG'];
+const VC_BACKFILL_B3 = ['PETR4','VALE3','ITUB4','BBDC4','ABEV3','WEGE3','BBAS3','RENT3','MGLU3','SUZB3'];
+
+// Trava simples baseada em arquivo: evita execuções simultâneas e respeita
+// um intervalo mínimo entre tentativas do mesmo alvo.
+function backfillTryLock(string $key, int $minIntervalSec): bool {
+    $path = cacheDir() . '/vc_bf_' . preg_replace('/[^A-Za-z0-9_.-]/', '', $key) . '.lock';
+    if (file_exists($path) && (time() - (int)@filemtime($path)) < $minIntervalSec) return false;
+    $fh = @fopen($path, 'c');
+    if (!$fh) return false;
+    if (!flock($fh, LOCK_EX | LOCK_NB)) { fclose($fh); return false; }
+    @touch($path);
+    flock($fh, LOCK_UN);
+    fclose($fh);
+    return true;
+}
+
+function backfillCountPoints(PDO $db, string $type, string $code, int $days): int {
+    $stmt = $db->prepare('SELECT COUNT(*) FROM price_history WHERE asset_type = :t AND asset_code = :c AND price_date >= DATE_SUB(CURDATE(), INTERVAL :d DAY)');
+    $stmt->execute([':t' => $type, ':c' => $code, ':d' => $days]);
+    return (int)$stmt->fetchColumn();
+}
+
+// Uma moeda cripto = 1 requisição CoinGecko = até 365 dias de uma vez
+function backfillCrypto(PDO $db, string $sym, string $coinId, int $days = 365): array {
+    $cgDays = min(max($days, 30), 365);
+    $interval = $cgDays <= 90 ? '&interval=daily' : '';
+    $raw = httpGet("https://api.coingecko.com/api/v3/coins/{$coinId}/market_chart?vs_currency=brl&days={$cgDays}{$interval}", 15);
+    if (!$raw) return ['error' => 'fetch_failed'];
+    $data = json_decode($raw, true);
+    if (empty($data['prices'])) return ['error' => 'no_prices'];
+
+    $byDate = [];
+    foreach ($data['prices'] as $p) {
+        if (!is_array($p) || count($p) < 2) continue;
+        $d = date('Y-m-d', (int)($p[0] / 1000));
+        $byDate[$d] = round((float)$p[1], $p[1] >= 1 ? 2 : 6);
+    }
+    ksort($byDate);
+    $ins = $db->prepare('INSERT INTO price_history (asset_type, asset_code, price, price_date) VALUES ("crypto", :code, :price, :date) ON DUPLICATE KEY UPDATE price = VALUES(price)');
+    foreach ($byDate as $d => $p) $ins->execute([':code' => $sym, ':price' => $p, ':date' => $d]);
+    return ['saved' => count($byDate)];
+}
+
+// Um dia de câmbio + metais = 1 requisição fawazahmed (CDN, sem limite)
+function backfillCurrencyDay(PDO $db, string $dateStr): int {
+    $raw = httpGet("https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@{$dateStr}/v1/currencies/brl.min.json", 8);
+    if (!$raw) return 0;
+    $brl = json_decode($raw, true)['brl'] ?? [];
+    if (empty($brl)) return 0;
+
+    $ins = $db->prepare('INSERT INTO price_history (asset_type, asset_code, price, price_date) VALUES (:type, :code, :price, :date) ON DUPLICATE KEY UPDATE price = VALUES(price)');
+    $saved = 0;
+    foreach (VC_BACKFILL_CURRENCIES as $cur => $sym) {
+        $rate = $brl[$cur] ?? null;
+        if ($rate && $rate > 0) { $ins->execute([':type' => 'currency', ':code' => $sym, ':price' => round(1 / $rate, 6), ':date' => $dateStr]); $saved++; }
+    }
+    $TROY = 31.1035;
+    if (!empty($brl['xau'])) { $ins->execute([':type' => 'metal', ':code' => 'XAU', ':price' => round(1 / $brl['xau'] / $TROY * 0.75, 4), ':date' => $dateStr]); $saved++; }
+    if (!empty($brl['xag'])) { $ins->execute([':type' => 'metal', ':code' => 'XAG', ':price' => round(1 / $brl['xag'] / $TROY * 0.925, 4), ':date' => $dateStr]); $saved++; }
+    return $saved;
+}
+
+// Uma ação B3 = 1 requisição Alpha Vantage (opcional) ou Yahoo Finance (gratuito)
+function backfillB3(PDO $db, string $sym, int $days, string $avKey = ''): array {
+    $ins = $db->prepare('INSERT INTO price_history (asset_type, asset_code, price, price_date) VALUES ("b3", :code, :price, :date) ON DUPLICATE KEY UPDATE price = VALUES(price)');
+
+    if ($avKey !== '') {
+        $size = $days >= 100 ? 'full' : 'compact';
+        $raw = httpGet("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={$sym}.SAO&outputsize={$size}&apikey={$avKey}", 20);
+        $data = $raw ? json_decode($raw, true) : null;
+        if (!empty($data['Time Series (Daily)'])) {
+            $saved = 0;
+            foreach ($data['Time Series (Daily)'] as $date => $ohlcv) {
+                $close = (float)($ohlcv['4. close'] ?? 0);
+                if ($close > 0) { $ins->execute([':code' => $sym, ':price' => round($close, 2), ':date' => $date]); $saved++; }
+            }
+            return ['saved' => $saved, 'source' => 'alpha-vantage'];
+        }
+    }
+
+    // Fallback gratuito: Yahoo Finance chart (histórico diário retroativo)
+    $range = $days > 180 ? '1y' : ($days > 60 ? '6mo' : '3mo');
+    $raw = httpGet("https://query1.finance.yahoo.com/v8/finance/chart/{$sym}.SA?interval=1d&range={$range}", 12, ['User-Agent: Mozilla/5.0 (compatible; VicioCode/1.0)']);
+    if (!$raw) return ['error' => 'fetch_failed'];
+    $data = json_decode($raw, true);
+    $res = $data['chart']['result'][0] ?? null;
+    $stamps = $res['timestamp'] ?? null;
+    $closes = $res['indicators']['quote'][0]['close'] ?? null;
+    if (!is_array($stamps) || !is_array($closes)) return ['error' => 'no_data'];
+
+    $saved = 0;
+    foreach ($stamps as $i => $ts) {
+        $close = $closes[$i] ?? null;
+        if ($close === null || $close <= 0) continue;
+        $ins->execute([':code' => $sym, ':price' => round((float)$close, 2), ':date' => date('Y-m-d', (int)$ts)]);
+        $saved++;
+    }
+    return ['saved' => $saved, 'source' => 'yahoo'];
+}
+
+/**
+ * Executa um passo de preenchimento dentro de um orçamento de tempo.
+ * Prioriza o ativo pedido (se informado) e depois o que estiver mais defasado.
+ */
+function runBackfillStep(PDO $db, float $maxSeconds = 15.0, ?string $onlyType = null, ?string $onlyCode = null): array {
+    $t0 = microtime(true);
+    $left = fn() => $maxSeconds - (microtime(true) - $t0);
+    $done = [];
+    $scope = $onlyType && $onlyCode ? strtolower($onlyType . '_' . $onlyCode) : 'global';
+    if (!backfillTryLock('step_' . $scope, $onlyType ? 600 : 60)) return ['skipped' => 'locked'];
+
+    $avKey = '';
+    if (file_exists(__DIR__ . '/.env.php')) { include_once __DIR__ . '/.env.php'; if (isset($ALPHA_VANTAGE_KEY)) $avKey = (string)$ALPHA_VANTAGE_KEY; }
+
+    $wants = fn(string $t) => $onlyType === null || $onlyType === $t;
+
+    // 1) Cripto — cada moeda traz 1 ano numa requisição
+    if ($wants('crypto') && $left() > 6) {
+        foreach (VC_BACKFILL_CRYPTO as $sym => $coinId) {
+            if ($onlyCode && strtoupper($onlyCode) !== $sym) continue;
+            if (backfillCountPoints($db, 'crypto', $sym, 365) >= 300) continue;
+            if ($left() < 6) break;
+            if (!backfillTryLock('crypto_' . $sym, 900)) continue;
+            $done['crypto'][$sym] = backfillCrypto($db, $sym, $coinId, 365);
+            usleep(1500000); // respeita o limite do CoinGecko
+        }
+    }
+
+    // 2) Câmbio + metais — um dia por requisição, começando pelos mais recentes
+    if (($wants('currency') || $wants('metal')) && $left() > 3) {
+        $expected = count(VC_BACKFILL_CURRENCIES) + 2; // moedas + XAU + XAG
+        $filled = 0;
+        for ($i = 0; $i < 365; $i++) {
+            if ($left() < 2) break;
+            $dateStr = date('Y-m-d', strtotime("-{$i} days"));
+            $stmt = $db->prepare('SELECT COUNT(*) FROM price_history WHERE asset_type IN ("currency","metal") AND price_date = :d');
+            $stmt->execute([':d' => $dateStr]);
+            if ((int)$stmt->fetchColumn() >= $expected) continue;
+            if (backfillCurrencyDay($db, $dateStr) > 0) $filled++;
+            usleep(120000);
+        }
+        if ($filled > 0) $done['currency_days'] = $filled;
+    }
+
+    // 3) B3 — uma ação por passo (Yahoo gratuito ou Alpha Vantage se houver chave)
+    if ($wants('b3') && $left() > 4) {
+        foreach (VC_BACKFILL_B3 as $sym) {
+            if ($onlyCode && strtoupper($onlyCode) !== $sym) continue;
+            if (backfillCountPoints($db, 'b3', $sym, 365) >= 180) continue;
+            if ($left() < 4) break;
+            if (!backfillTryLock('b3_' . $sym, 900)) continue;
+            $done['b3'][$sym] = backfillB3($db, $sym, 365, $avKey);
+            usleep(800000);
+        }
+    }
+
+    $done['elapsed_ms'] = round((microtime(true) - $t0) * 1000);
+    return $done;
+}
+
+// Envia a resposta ao usuário e continua o trabalho pesado em segundo plano
+function backfillAfterResponse(callable $work): void {
+    @ignore_user_abort(true);
+    if (function_exists('fastcgi_finish_request')) {
+        @fastcgi_finish_request();
+    } else {
+        // Sem FPM: encerra os buffers para liberar o navegador
+        while (ob_get_level() > 0) @ob_end_flush();
+        @flush();
+    }
+    @set_time_limit(60);
+    try { $work(); } catch (Throwable $e) { /* silencioso */ }
+}
+
 // ─── GET: histórico de preços armazenados ──────────────────────────────────
 if ($method === 'GET' && $action === 'history') {
     $type = $_GET['type'] ?? '';
