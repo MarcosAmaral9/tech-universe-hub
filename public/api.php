@@ -777,15 +777,30 @@ if ($method === 'GET' && $action === 'history') {
     $stmt->execute([':type' => $type, ':code' => strtoupper($code), ':days' => $days]);
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    // Rede de segurança: se o ativo estiver com histórico incompleto para o
+    // período pedido, dispara um passo curto de preenchimento DEPOIS de responder.
+    $expected = $type === 'b3' ? (int)($days * 0.5) : (int)($days * 0.8);
+    $needsBackfill = count($rows) < max(3, $expected);
+
     echo json_encode([
         'type' => $type,
         'code' => strtoupper($code),
         'days' => $days,
         'points' => array_map(fn($r) => ['date' => $r['price_date'], 'price' => (float)$r['price']], $rows),
         'count' => count($rows),
+        'backfilling' => $needsBackfill,
     ]);
+
+    if ($needsBackfill) {
+        $t = $type; $c = strtoupper($code); $d = $days;
+        backfillAfterResponse(function () use ($t, $c, $d) {
+            $bdb = getPdo();
+            if ($bdb) runBackfillStep($bdb, 20.0, $t, $c);
+        });
+    }
     exit;
 }
+
 
 // ─── GET: endpoint unificado — b3 + crypto + rates em 1 requisição ──────────
 // Serve do cache já existente de cada widget (sem novas chamadas a APIs externas)
