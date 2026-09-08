@@ -223,7 +223,7 @@ const HistoricoCotacoesPage = () => {
     }
     await Promise.allSettled(
       Array.from(b3Map.entries()).map(async ([ticker, info]) => {
-        const dbHistory = await fetchHistoryFromDB("b3", ticker, days);
+        const dbHistory = await fetchHistoryFromDB("b3", ticker, days, bfFlags);
         if (dbHistory) hasDB = true;
         result.push({
           id: `b3-${ticker}`, name: info.name, symbol: ticker,
@@ -254,7 +254,7 @@ const HistoricoCotacoesPage = () => {
     await Promise.allSettled(
       Array.from(cryptoPrices.entries()).map(async ([coinId, info]) => {
         const sym = CRYPTO_SYMBOL_MAP[coinId] ?? coinId.toUpperCase().slice(0, 4);
-        const dbHistory = await fetchHistoryFromDB("crypto", sym, days);
+        const dbHistory = await fetchHistoryFromDB("crypto", sym, days, bfFlags);
         if (dbHistory) hasDB = true;
         result.push({
           id: `crypto-${coinId}`, name: info.name, symbol: sym,
@@ -282,7 +282,7 @@ const HistoricoCotacoesPage = () => {
         const change24h    = r ? parseFloat(r.pctChange || "0") : (fb?.change24h ?? 0);
         if (currentPrice <= 0) return;
         // Somente BD — o cron salva histórico de câmbio via fawazahmed a cada 5 min
-        const dbHistory = await fetchHistoryFromDB("currency", symbol, days);
+        const dbHistory = await fetchHistoryFromDB("currency", symbol, days, bfFlags);
         if (dbHistory) hasDB = true;
         result.push({
           id, name, symbol, icon,
@@ -310,7 +310,7 @@ const HistoricoCotacoesPage = () => {
         const change24h    = r ? parseFloat(r.pctChange || "0") : (fb?.change24h ?? 0);
         if (currentPrice <= 0) return;
         // Somente BD — o cron salva histórico de metais via fawazahmed a cada 5 min
-        const dbHistory = await fetchHistoryFromDB("metal", symbol, days);
+        const dbHistory = await fetchHistoryFromDB("metal", symbol, days, bfFlags);
         if (dbHistory) hasDB = true;
         result.push({
           id, name, symbol, icon,
