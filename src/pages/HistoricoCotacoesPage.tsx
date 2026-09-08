@@ -333,6 +333,7 @@ const HistoricoCotacoesPage = () => {
 
     setIsFallback(result.length === 0);
     setDbHistoryAvailable(hasDB);
+    setBackfilling(bfFlags.backfilling);
     setAssets(final);
     setSelected(prev => {
       const stillExists = final.find(a => a.id === prev);
@@ -349,6 +350,14 @@ const HistoricoCotacoesPage = () => {
     loadData(period);
     return () => abortRef.current?.abort();
   }, [period, loadData]);
+
+  // Enquanto o servidor completa o histórico em segundo plano, reconsulta sozinho
+  useEffect(() => {
+    if (!backfilling || retriesRef.current >= 3) return;
+    const t = setTimeout(() => { retriesRef.current += 1; loadData(period); }, 25000);
+    return () => clearTimeout(t);
+  }, [backfilling, period, loadData]);
+
 
   const filtered      = assets.filter(a => a.category === category);
   const selectedAsset = assets.find(a => a.id === selected);
