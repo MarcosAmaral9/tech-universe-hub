@@ -563,18 +563,22 @@ const HistoricoCotacoesPage = () => {
                       <Info className="h-10 w-10 text-muted-foreground/40" />
                       <div>
                         <p className="text-muted-foreground font-medium text-sm">
-                          {selectedAsset.category === "b3"
-                            ? "Histórico B3 ainda sendo acumulado"
-                            : "Execute o bootstrap para popular o histórico"}
+                          Montando o histórico deste ativo…
                         </p>
                         <p className="text-xs text-muted-foreground/70 mt-1 max-w-sm">
-                          {selectedAsset.category === "b3"
-                            ? "O histórico da B3 é acumulado diariamente pelo cron job. Não há API gratuita confiável para histórico retroativo de ações brasileiras. Este período estará disponível após acumulação suficiente."
-                            : "Execute uma vez: viciocode.com/api.php?action=history_bootstrap&secret=VC_CRON_2026 — popula 365 dias de cripto, câmbio e metais no banco de dados."}
+                          O servidor está buscando e guardando as cotações antigas em segundo plano.
+                          O gráfico aparece sozinho assim que houver dados suficientes — normalmente em alguns minutos.
                         </p>
+                        <button
+                          onClick={() => { retriesRef.current = 0; loadData(period); }}
+                          className="mt-3 text-xs font-medium px-3 py-1.5 rounded-full bg-muted hover:bg-muted/80 transition-colors"
+                        >
+                          Tentar de novo
+                        </button>
                       </div>
                     </div>
                   ) : (
+
                   <ResponsiveContainer key={`main-${selectedAsset.id}-${period}`} width="100%" height={280}>
                     <AreaChart data={selectedAsset.data} margin={{ top: 4, right: 4, left: 0, bottom: 0 }}>
                       <defs>
