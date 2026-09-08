@@ -202,6 +202,8 @@ const HistoricoCotacoesPage = () => {
     const days = PERIOD_DAYS[p];
     const result: AssetHistory[] = [];
     let hasDB = false;
+    const bfFlags = { backfilling: false };
+
 
     // ── Preços atuais vêm do useMarketData (sem fetch extra) ─────────────
     const b3Results  = marketData?.b3     ?? [];
