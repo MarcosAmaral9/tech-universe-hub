@@ -1046,16 +1046,25 @@ if ($method === 'GET' && $action === 'history_multi') {
         ];
     }
 
+    $expectedRows = (int)($days * 0.7) * 14; // ~14 ativos acompanhados
+    $needsBackfill = count($rows) < $expectedRows;
+
     echo json_encode([
         'days'     => $days,
         'b3'       => $grouped['b3']       ?? [],
         'crypto'   => $grouped['crypto']   ?? [],
         'currency' => $grouped['currency'] ?? [],
         'metal'    => $grouped['metal']    ?? [],
+        'backfilling' => $needsBackfill,
         '_meta'    => ['updatedAt' => date('c'), 'total_rows' => count($rows)],
     ]);
+
+    if ($needsBackfill) {
+        backfillAfterResponse(function () { $bdb = getPdo(); if ($bdb) runBackfillStep($bdb, 20.0); });
+    }
     exit;
 }
+
 
 // ─── GET: cron_refresh — ÚNICO ponto de entrada para APIs externas ─────────────
 // Configure no Hostinger hPanel → Cron Jobs → */30 * * * *  (a cada 30 MINUTOS)
