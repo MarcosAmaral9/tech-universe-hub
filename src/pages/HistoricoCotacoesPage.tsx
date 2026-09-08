@@ -189,7 +189,10 @@ const HistoricoCotacoesPage = () => {
   const [isFallback, setIsFallback]       = useState(false);
   const [lastUpdated, setLastUpdated]     = useState("");
   const [dbHistoryAvailable, setDbHistoryAvailable] = useState(false);
+  const [backfilling, setBackfilling] = useState(false);
+  const retriesRef = useRef(0);
   const abortRef = useRef<AbortController | null>(null);
+
 
   // Preços atuais vêm do hook centralizado — zero requisições extras
   const { data: marketData, isFallback: marketFallback } = useMarketData();
