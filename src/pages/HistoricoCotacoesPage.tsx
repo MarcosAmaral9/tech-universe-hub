@@ -161,13 +161,21 @@ async function safeFetchJson(url: string): Promise<any> {
   } catch { return null; }
 }
 
-async function fetchHistoryFromDB(type: string, code: string, days: number): Promise<ChartPoint[] | null> {
+async function fetchHistoryFromDB(
+  type: string,
+  code: string,
+  days: number,
+  flags?: { backfilling: boolean },
+): Promise<ChartPoint[] | null> {
   const json = await safeFetchJson(`/api.php?action=history&type=${type}&code=${code}&days=${days}`);
+  // O servidor avisa quando está completando o histórico em segundo plano
+  if (flags && json?.backfilling) flags.backfilling = true;
   if (!json?.points || json.points.length < 3) return null;
   return json.points.map((p: { date: string; price: number }) => ({
     date: p.date, value: p.price, label: fmtDate(p.date),
   }));
 }
+
 
 
 
