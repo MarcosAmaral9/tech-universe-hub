@@ -161,13 +161,21 @@ async function safeFetchJson(url: string): Promise<any> {
   } catch { return null; }
 }
 
-async function fetchHistoryFromDB(type: string, code: string, days: number): Promise<ChartPoint[] | null> {
+async function fetchHistoryFromDB(
+  type: string,
+  code: string,
+  days: number,
+  flags?: { backfilling: boolean },
+): Promise<ChartPoint[] | null> {
   const json = await safeFetchJson(`/api.php?action=history&type=${type}&code=${code}&days=${days}`);
+  // O servidor avisa quando está completando o histórico em segundo plano
+  if (flags && json?.backfilling) flags.backfilling = true;
   if (!json?.points || json.points.length < 3) return null;
   return json.points.map((p: { date: string; price: number }) => ({
     date: p.date, value: p.price, label: fmtDate(p.date),
   }));
 }
+
 
 
 
@@ -181,7 +189,10 @@ const HistoricoCotacoesPage = () => {
   const [isFallback, setIsFallback]       = useState(false);
   const [lastUpdated, setLastUpdated]     = useState("");
   const [dbHistoryAvailable, setDbHistoryAvailable] = useState(false);
+  const [backfilling, setBackfilling] = useState(false);
+  const retriesRef = useRef(0);
   const abortRef = useRef<AbortController | null>(null);
+
 
   // Preços atuais vêm do hook centralizado — zero requisições extras
   const { data: marketData, isFallback: marketFallback } = useMarketData();
@@ -194,6 +205,8 @@ const HistoricoCotacoesPage = () => {
     const days = PERIOD_DAYS[p];
     const result: AssetHistory[] = [];
     let hasDB = false;
+    const bfFlags = { backfilling: false };
+
 
     // ── Preços atuais vêm do useMarketData (sem fetch extra) ─────────────
     const b3Results  = marketData?.b3     ?? [];
@@ -215,7 +228,7 @@ const HistoricoCotacoesPage = () => {
     }
     await Promise.allSettled(
       Array.from(b3Map.entries()).map(async ([ticker, info]) => {
-        const dbHistory = await fetchHistoryFromDB("b3", ticker, days);
+        const dbHistory = await fetchHistoryFromDB("b3", ticker, days, bfFlags);
         if (dbHistory) hasDB = true;
         result.push({
           id: `b3-${ticker}`, name: info.name, symbol: ticker,
@@ -246,7 +259,7 @@ const HistoricoCotacoesPage = () => {
     await Promise.allSettled(
       Array.from(cryptoPrices.entries()).map(async ([coinId, info]) => {
         const sym = CRYPTO_SYMBOL_MAP[coinId] ?? coinId.toUpperCase().slice(0, 4);
-        const dbHistory = await fetchHistoryFromDB("crypto", sym, days);
+        const dbHistory = await fetchHistoryFromDB("crypto", sym, days, bfFlags);
         if (dbHistory) hasDB = true;
         result.push({
           id: `crypto-${coinId}`, name: info.name, symbol: sym,
@@ -274,7 +287,7 @@ const HistoricoCotacoesPage = () => {
         const change24h    = r ? parseFloat(r.pctChange || "0") : (fb?.change24h ?? 0);
         if (currentPrice <= 0) return;
         // Somente BD — o cron salva histórico de câmbio via fawazahmed a cada 5 min
-        const dbHistory = await fetchHistoryFromDB("currency", symbol, days);
+        const dbHistory = await fetchHistoryFromDB("currency", symbol, days, bfFlags);
         if (dbHistory) hasDB = true;
         result.push({
           id, name, symbol, icon,
@@ -302,7 +315,7 @@ const HistoricoCotacoesPage = () => {
         const change24h    = r ? parseFloat(r.pctChange || "0") : (fb?.change24h ?? 0);
         if (currentPrice <= 0) return;
         // Somente BD — o cron salva histórico de metais via fawazahmed a cada 5 min
-        const dbHistory = await fetchHistoryFromDB("metal", symbol, days);
+        const dbHistory = await fetchHistoryFromDB("metal", symbol, days, bfFlags);
         if (dbHistory) hasDB = true;
         result.push({
           id, name, symbol, icon,
@@ -323,6 +336,7 @@ const HistoricoCotacoesPage = () => {
 
     setIsFallback(result.length === 0);
     setDbHistoryAvailable(hasDB);
+    setBackfilling(bfFlags.backfilling);
     setAssets(final);
     setSelected(prev => {
       const stillExists = final.find(a => a.id === prev);
@@ -339,6 +353,14 @@ const HistoricoCotacoesPage = () => {
     loadData(period);
     return () => abortRef.current?.abort();
   }, [period, loadData]);
+
+  // Enquanto o servidor completa o histórico em segundo plano, reconsulta sozinho
+  useEffect(() => {
+    if (!backfilling || retriesRef.current >= 3) return;
+    const t = setTimeout(() => { retriesRef.current += 1; loadData(period); }, 25000);
+    return () => clearTimeout(t);
+  }, [backfilling, period, loadData]);
+
 
   const filtered      = assets.filter(a => a.category === category);
   const selectedAsset = assets.find(a => a.id === selected);
@@ -541,18 +563,22 @@ const HistoricoCotacoesPage = () => {
                       <Info className="h-10 w-10 text-muted-foreground/40" />
                       <div>
                         <p className="text-muted-foreground font-medium text-sm">
-                          {selectedAsset.category === "b3"
-                            ? "Histórico B3 ainda sendo acumulado"
-                            : "Execute o bootstrap para popular o histórico"}
+                          Montando o histórico deste ativo…
                         </p>
                         <p className="text-xs text-muted-foreground/70 mt-1 max-w-sm">
-                          {selectedAsset.category === "b3"
-                            ? "O histórico da B3 é acumulado diariamente pelo cron job. Não há API gratuita confiável para histórico retroativo de ações brasileiras. Este período estará disponível após acumulação suficiente."
-                            : "Execute uma vez: viciocode.com/api.php?action=history_bootstrap&secret=VC_CRON_2026 — popula 365 dias de cripto, câmbio e metais no banco de dados."}
+                          O servidor está buscando e guardando as cotações antigas em segundo plano.
+                          O gráfico aparece sozinho assim que houver dados suficientes — normalmente em alguns minutos.
                         </p>
+                        <button
+                          onClick={() => { retriesRef.current = 0; loadData(period); }}
+                          className="mt-3 text-xs font-medium px-3 py-1.5 rounded-full bg-muted hover:bg-muted/80 transition-colors"
+                        >
+                          Tentar de novo
+                        </button>
                       </div>
                     </div>
                   ) : (
+
                   <ResponsiveContainer key={`main-${selectedAsset.id}-${period}`} width="100%" height={280}>
                     <AreaChart data={selectedAsset.data} margin={{ top: 4, right: 4, left: 0, bottom: 0 }}>
                       <defs>
