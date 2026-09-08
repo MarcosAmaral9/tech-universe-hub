@@ -1270,8 +1270,15 @@ if ($method === 'GET' && $action === 'cron_refresh') {
         'market_open' => $isMarketOpen,
         'results'     => $results,
     ], JSON_PRETTY_PRINT);
+
+    // Após responder, completa uma fatia do histórico faltante (self-healing).
+    // Em poucas execuções o banco fica com 1 ano de dados, sem ação manual.
+    if ($db) {
+        backfillAfterResponse(function () use ($db) { runBackfillStep($db, 40.0); });
+    }
     exit;
 }
+
 
 // ─── GET: todos os ativos com histórico disponível ──────────────────────────
 // ─── GET: bootstrap histórico — popula BD com até 365 dias de histórico real ──────
