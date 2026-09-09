@@ -294,6 +294,7 @@ const IAFilmesSeries2026  = lazy(() => import("./pages/posts/IAFilmesSeries2026"
 const IAJogosIndustria2026  = lazy(() => import("./pages/posts/IAJogosIndustria2026"));
 const IAmTheFatedVillainGuia2026  = lazy(() => import("./pages/posts/IAmTheFatedVillainGuia2026"));
 const CityLordLiuFengGuia2026  = lazy(() => import("./pages/posts/CityLordLiuFengGuia2026"));
+const CotacoesCriptoHistoria2026 = lazy(() => import("./pages/posts/CotacoesCriptoHistoria2026"));
 const AcoesCrescimentoVsDividendos2026 = lazy(() => import("./pages/posts/AcoesCrescimentoVsDividendos2026"));
 const CambioDolarProtecao2026        = lazy(() => import("./pages/posts/CambioDolarProtecao2026"));
 const ComoEscolherPrevidencia2026    = lazy(() => import("./pages/posts/ComoEscolherPrevidencia2026"));

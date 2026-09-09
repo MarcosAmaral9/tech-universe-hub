@@ -1,5 +1,6 @@
 import { BlogPost, Category } from "@/types/blog";
 
+import cotacoesCriptoImg from "@/assets/cotacoes-criptomoedas-historia-fundadores.webp";
 import historiaIaImg from "@/assets/historia-inteligencia-artificial-modelos.webp";
 import glossarioIaImg from "@/assets/glossario-ia-termos-profissoes-2026.webp";
 
@@ -373,6 +374,28 @@ export const blogPosts: BlogPost[] = [
       { q: "DLSS é 'trapaça'?", a: "Não. É reconstrução de imagem por rede neural. A crítica legítima é sobre comparações de desempenho que misturam quadros renderizados e gerados sem medir latência." },
       { q: "Como sei se um jogo na Steam usou IA generativa?", a: "A página do jogo tem uma seção obrigatória de divulgação de IA desde 2024, informando uso na produção ou durante a execução." },
       { q: "A IA vai baratear o desenvolvimento de jogos?", a: "O efeito medido até agora é produtividade em tarefas específicas (QA, variação de arte, falas ambientais), não redução de preço final dos jogos." },
+    ],
+  },
+  // ── 09 Set 2026 — Finanças (História das cotações de criptomoedas) ──
+  {
+    id: "255",
+    slug: "cotacoes-criptomoedas-como-funcionam-historia-2026",
+    title: "Cotações de Criptomoedas: O Que São, Como Funcionam e a História das 5 Maiores",
+    excerpt:
+      "Entenda como nasce o preço de uma criptomoeda, por que ele nunca para de atualizar e conheça a história, os fundadores e as datas de criação de Bitcoin, Ethereum, XRP, Solana e Cardano.",
+    content: "",
+    category: "invest",
+    subtopic: "cripto",
+    image: cotacoesCriptoImg,
+    author: "VICIO<CODE>",
+    date: "2026-09-09",
+    readTime: "15 min",
+    faq: [
+      { q: "Quem define o preço de uma criptomoeda?", a: "Ninguém — e todos. O preço é formado livremente pelas negociações entre compradores e vendedores em dezenas de exchanges ao redor do mundo. Não existe cotação oficial nem órgão que defina o valor." },
+      { q: "Por que o preço varia entre corretoras?", a: "Cada exchange tem seu próprio livro de ofertas. Diferenças de liquidez e demanda local criam pequenas variações, que operadores de arbitragem tratam de diminuir comprando onde está barato e vendendo onde está caro." },
+      { q: "Quem criou o Bitcoin e quando?", a: "Satoshi Nakamoto, pseudônimo de identidade nunca confirmada, publicou o whitepaper em 31 de outubro de 2008 e colocou a rede no ar em 3 de janeiro de 2009." },
+      { q: "Qual foi a primeira criptomoeda depois do Bitcoin?", a: "Entre as pioneiras estão Namecoin e Litecoin (2011). Do grupo das cinco maiores de hoje, a mais antiga depois do BTC é o XRP, cujo ledger foi lançado em junho de 2012." },
+      { q: "A cotação de cripto para de atualizar em algum horário?", a: "Não. O mercado cripto funciona 24 horas por dia, 7 dias por semana, incluindo feriados — uma das maiores diferenças em relação à bolsa de valores." },
     ],
   },
   // ── 07 Set 2026 — Otaku (Starting From Today I'll Work as a City Lord) ──
