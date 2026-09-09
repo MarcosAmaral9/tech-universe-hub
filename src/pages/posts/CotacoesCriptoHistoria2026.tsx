@@ -235,6 +235,19 @@ const CotacoesCriptoHistoria2026 = () => {
         </p>
 
         <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">
+          <span className="flex items-center gap-2"><Globe className="h-6 w-6" /> Como o preço viaja da exchange até a sua tela</span>
+        </h2>
+        <p className="text-muted-foreground leading-relaxed">
+          Quando você abre um painel de cotações, por trás existe uma cadeia técnica interessante. As exchanges disponibilizam APIs públicas que transmitem cada negócio fechado em tempo real (tecnologia chamada WebSocket, que mantém um canal aberto de dados). Os agregadores de mercado coletam esses fluxos de dezenas de corretoras, descartam fontes suspeitas ou com volume artificial e calculam a média ponderada que vira o "preço oficial" exibido em sites e aplicativos.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          Para o preço em reais, há um passo extra: pega-se a cotação global em dólar (geralmente o par contra stablecoins como USDT, que espelham o dólar) e multiplica-se pela taxa de câmbio USD/BRL do momento. É por isso que, em dias de forte oscilação do câmbio, o Bitcoin pode parecer "mais caro" no Brasil mesmo sem ter se movido no mercado internacional — e por que exchanges brasileiras às vezes mostram um leve prêmio ou desconto em relação à conversão pura, dependendo da demanda local.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          Outro conceito importante é o de <strong>market cap</strong> (capitalização de mercado): o preço da moeda multiplicado pela quantidade em circulação. É ele — e não o preço unitário — que mede o tamanho real de uma criptomoeda. Uma moeda que custa R$ 2 pode ter market cap maior que uma que custa R$ 500, simplesmente porque existem muito mais unidades dela. Por isso comparar projetos pelo "preço da moeda" é um erro clássico de iniciante: o Bitcoin vale centenas de milhares de reais por unidade justamente porque sua oferta é minúscula (máximo de 21 milhões), enquanto o XRP tem 100 bilhões de unidades criadas.
+        </p>
+
+        <h2 className="text-2xl font-bold border-l-4 border-[hsl(var(--invest-color))] pl-4">
           <span className="flex items-center gap-2"><BookOpen className="h-6 w-6" /> Como acompanhar as cotações com inteligência</span>
         </h2>
         <p className="text-muted-foreground leading-relaxed">
