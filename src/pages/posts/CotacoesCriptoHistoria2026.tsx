@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-// NOTA-EDITORIAL: seção extra "Como o preço chega até você" adicionada para superar 1.400 palavras de prosa
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
