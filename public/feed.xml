@@ -5,8 +5,17 @@
     <link>https://viciocode.com</link>
     <description>IA, investimentos, cultura geek e otaku — novos artigos do VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Mon, 07 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cotações de Criptomoedas: O Que São, Como Funcionam e a História das 5 Maiores</title>
+      <link>https://viciocode.com/post/cotacoes-criptomoedas-como-funcionam-historia-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/cotacoes-criptomoedas-como-funcionam-historia-2026</guid>
+      <pubDate>Wed, 09 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Entenda como nasce o preço de uma criptomoeda, por que ele nunca para de atualizar e conheça a história, os fundadores e as datas de criação de Bitcoin, Ethereum, XRP, Solana e Cardano.</description>
+      <category>Finanças &amp; Investimentos</category>
+      <enclosure url="https://viciocode.com/assets/cotacoes-criptomoedas-como-funcionam-historia-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>Starting From Today I&apos;ll Work as a City Lord: Guia Completo do Manhua de Liu Feng</title>
       <link>https://viciocode.com/post/starting-from-today-city-lord-liu-feng-guia-2026</link>
@@ -447,15 +456,6 @@
       <description>Guia completo do Astro Bot: história da Team Asobi, celebração dos 30 anos de PlayStation, mais de 150 cameos, uso do DualSense, dicas de 100% e por que venceu o GOTY 2024 sobre Wukong, Elden Ring e Balatro.</description>
       <category>Geek &amp; Games</category>
       <enclosure url="https://viciocode.com/assets/astro-bot-guia-goty-2024.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Ghost of Yōtei — Guia Completo: Atsu, o Hokkaido de 1603 e o Sucessor de Tsushima</title>
-      <link>https://viciocode.com/post/ghost-of-yotei-guia-completo</link>
-      <guid isPermaLink="true">https://viciocode.com/post/ghost-of-yotei-guia-completo</guid>
-      <pubDate>Sat, 11 Jul 2026 12:00:00 GMT</pubDate>
-      <description>Sucessor espiritual de Ghost of Tsushima anunciado pela Sucker Punch: nova protagonista Atsu, ambientação no Hokkaido de 1603, o Monte Yōtei, o povo Ainu e tudo que foi confirmado sobre o exclusivo de PS5.</description>
-      <category>Geek &amp; Games</category>
-      <enclosure url="https://viciocode.com/assets/ghost-of-yotei-guia-completo.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>
