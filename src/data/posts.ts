@@ -1,5 +1,6 @@
 import { BlogPost, Category } from "@/types/blog";
 
+import fallEmperorLarcyImg from "@/assets/i-will-fall-with-the-emperor-larcy.webp";
 import cotacoesCriptoImg from "@/assets/cotacoes-criptomoedas-historia-fundadores.webp";
 import historiaIaImg from "@/assets/historia-inteligencia-artificial-modelos.webp";
 import glossarioIaImg from "@/assets/glossario-ia-termos-profissoes-2026.webp";
@@ -374,6 +375,28 @@ export const blogPosts: BlogPost[] = [
       { q: "DLSS é 'trapaça'?", a: "Não. É reconstrução de imagem por rede neural. A crítica legítima é sobre comparações de desempenho que misturam quadros renderizados e gerados sem medir latência." },
       { q: "Como sei se um jogo na Steam usou IA generativa?", a: "A página do jogo tem uma seção obrigatória de divulgação de IA desde 2024, informando uso na produção ou durante a execução." },
       { q: "A IA vai baratear o desenvolvimento de jogos?", a: "O efeito medido até agora é produtividade em tarefas específicas (QA, variação de arte, falas ambientais), não redução de preço final dos jogos." },
+    ],
+  },
+  // ── 10 Set 2026 — Otaku (Manhwa I Will Fall With the Emperor) ──
+  {
+    id: "256",
+    slug: "i-will-fall-with-the-emperor-larcy-guia-2026",
+    title: "I Will Fall With the Emperor: Guia Completo do Manhwa de Larcy",
+    excerpt:
+      "Tudo sobre o manhwa I Will Fall With the Emperor: a história de Larcy, a volta dez anos no passado, o Reino de Berry contra o Império Chariot, o romance com o imperador, a vingança, os gêneros, o estúdio SORAJIMA, a data de estreia, os capítulos e onde ler em português.",
+    content: "",
+    category: "otaku",
+    subtopic: "manhwa",
+    image: fallEmperorLarcyImg,
+    author: "VICIO<CODE>",
+    date: "2026-09-10",
+    readTime: "14 min",
+    faq: [
+      { q: "Quem é Larcy em I Will Fall With the Emperor?", a: "É a protagonista: primeira princesa do Reino de Berry, apelidada de 'Princesa dos Morcegos'. Capturada pelo Império Chariot após tentar resgatar a irmã Nicola, passa dez anos em cativeiro, é traída pela família e executada — voltando dez anos ao passado para se vingar." },
+      { q: "Quando o manhwa foi lançado?", a: "A estreia aconteceu em 11 de outubro de 2022, na KakaoPage e na Kakao Webtoon. No Japão a série sai pela Piccoma e pela Gaugau Monster, com volumes pela editora Futabasha." },
+      { q: "Quantos capítulos tem I Will Fall With the Emperor?", a: "A obra segue em publicação semanal. A versão japonesa na Piccoma já passa de 180 episódios, enquanto as traduções catalogadas na MangaDex chegam à casa dos 105 capítulos." },
+      { q: "Qual estúdio produz o manhwa?", a: "O webtoon é criado por Tenichi (天壱) e produzido pelo estúdio japonês SORAJIMA, com a STRAIGHT EDGE creditada nas fichas oficiais. Não há adaptação em anime confirmada." },
+      { q: "Onde ler I Will Fall With the Emperor em português?", a: "Não há edição oficial em PT-BR. A leitura acontece por traduções da comunidade, em apps como o Mangaflix e em sites de scanlation, geralmente sob o título 'Afundarei Com o Imperador'." },
     ],
   },
   // ── 09 Set 2026 — Finanças (História das cotações de criptomoedas) ──
