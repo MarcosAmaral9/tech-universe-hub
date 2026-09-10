@@ -1,17 +1,21 @@
 #!/usr/bin/env node
 /**
  * Audita o tamanho da prosa dos posts editoriais.
- * Imprime relatório de posts abaixo de MIN_WORDS (padrão 1400).
+ * Imprime relatório de posts com menos de MIN_WORDS palavras (padrão 1500).
  * Não falha o build — é informativo (use `--strict` para falhar).
  *
  * Heurística: remove JSX tags e expressões `{...}` rasas, sobrando o
  * texto literal dentro dos elementos. Margem de ~±5%.
+ *
+ * Observação: o padrão do site passou de 1400 para 1500 palavras.
+ * Posts antigos abaixo de 1500 são mantidos como estão; o limiar
+ * vale apenas para artigos novos criados a partir de 10 Set 2026.
  */
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 const DIR = "src/pages/posts";
-const MIN = 1400;
+const MIN = 1500;
 const strict = process.argv.includes("--strict");
 
 const files = readdirSync(DIR).filter(f => f.endsWith(".tsx") && !/Portal\.tsx$/.test(f));
