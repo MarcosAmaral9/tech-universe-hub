@@ -294,6 +294,7 @@ const IAFilmesSeries2026  = lazy(() => import("./pages/posts/IAFilmesSeries2026"
 const IAJogosIndustria2026  = lazy(() => import("./pages/posts/IAJogosIndustria2026"));
 const IAmTheFatedVillainGuia2026  = lazy(() => import("./pages/posts/IAmTheFatedVillainGuia2026"));
 const CityLordLiuFengGuia2026  = lazy(() => import("./pages/posts/CityLordLiuFengGuia2026"));
+const FallWithEmperorLarcyGuia2026 = lazy(() => import("./pages/posts/FallWithEmperorLarcyGuia2026"));
 const CotacoesCriptoHistoria2026 = lazy(() => import("./pages/posts/CotacoesCriptoHistoria2026"));
 const AcoesCrescimentoVsDividendos2026 = lazy(() => import("./pages/posts/AcoesCrescimentoVsDividendos2026"));
 const CambioDolarProtecao2026        = lazy(() => import("./pages/posts/CambioDolarProtecao2026"));
@@ -634,6 +635,7 @@ const App = () => (
                 <Route path="/post/ia-jogos-industria-games-2026" element={<Suspense fallback={<div />}><IAJogosIndustria2026 /></Suspense>} />
                 <Route path="/post/i-am-the-fated-villain-gu-changge-guia-2026" element={<Suspense fallback={<div />}><IAmTheFatedVillainGuia2026 /></Suspense>} />
                 <Route path="/post/starting-from-today-city-lord-liu-feng-guia-2026" element={<Suspense fallback={<div />}><CityLordLiuFengGuia2026 /></Suspense>} />
+                <Route path="/post/i-will-fall-with-the-emperor-larcy-guia-2026" element={<Suspense fallback={<div />}><FallWithEmperorLarcyGuia2026 /></Suspense>} />
                 <Route path="/post/cotacoes-criptomoedas-como-funcionam-historia-2026" element={<Suspense fallback={<div />}><CotacoesCriptoHistoria2026 /></Suspense>} />
 
                 {/* ── 22 Jul 2026 — Invest Lote 4 ── */}
