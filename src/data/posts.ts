@@ -6378,30 +6378,35 @@ export const blogPosts: BlogPost[] = [
     slug: "crimson-desert-bosses-guia-chefes",
     title: "Crimson Desert: Guia de Bosses — Onde Encontrar, Como Derrotar e Recompensas",
     excerpt:
-      "Guia completo dos 76 bosses de Crimson Desert: Myurdin, Kailok, Reed Devil, White Horn, Staglord, Hexe Marie, Kearush, Antumbra, Priscus e Caliburn. Estratégias, fraquezas, mecânicas e recompensas. Atualizado patch 23/03/2026.",
+      "Guia completo dos bosses de Crimson Desert: Myurdin, Kailok, Reed Devil, Hexe Marie, Kearush, Beloth, Praevus e Caliburn. Estratégias, fraquezas e recompensas, com modos de dificuldade (1.04.00), Rematch (1.05.00) e os novos chefes da DLC Charting the Unknown (15/10/2026).",
     content: "",
     category: "geek",
     subtopic: "crimson-desert",
     image: crimsonBossesImg,
     author: "VICIO<CODE>",
     date: "2026-03-29",
+    updatedAt: "2026-09-10",
     readTime: "22 min",
     faq: [
       {
         q: "Quantos bosses tem Crimson Desert?",
-        a: "Crimson Desert tem 76 bosses no lançamento, incluindo Field Bosses, World Bosses e o boss final Caliburn. Cada região de Pywel tem seus próprios chefes com mecânicas únicas.",
+        a: "Não existe contagem oficial da Pearl Abyss. Os guias mais consultados divergem entre 75, 76 e até 98 encontros, dependendo de contarem variantes, world bosses e chefes secretos como Goyen e Master Du. A referência mais usada pela comunidade é de cerca de 76 encontros únicos.",
       },
       {
         q: "Qual é o boss mais difícil de Crimson Desert?",
-        a: "Caliburn é considerado o boss mais difícil do jogo. Entre os World Bosses, Hexe Marie e Kearush Slayer são os mais desafiadores para grupos.",
+        a: "A comunidade aponta o Myurdin Avatar de Umbra como o mais difícil, seguido por Goyen e Lucian Bastier. Caliburn corrompido, chefe final do Capítulo 12, tem três fases com clones sombrios e teletransporte.",
       },
       {
-        q: "Os bosses de Crimson Desert respawnam?",
-        a: "Sim. Field Bosses respawnam a cada 4-12 horas. World Bosses têm timers de 12-24 horas e anúncio global. O boss final Caliburn é de instância e pode ser repetido.",
+        q: "Dá para enfrentar de novo um boss já derrotado?",
+        a: "Sim. O Patch 1.05.00, de 2 de maio de 2026, adicionou o Rematch (revanche contra bosses já vencidos) e o Re-blockade das regiões libertadas. O Patch 1.07.00, de 15 de maio, ampliou a lista de chefes disponíveis para revanche.",
       },
       {
-        q: "Vale a pena farmar bosses em Crimson Desert?",
-        a: "Sim. Bosses são a principal fonte de equipamentos raros, materiais de refinamento e Silver. World Bosses oferecem drops exclusivos não encontrados em outras fontes.",
+        q: "Crimson Desert tem modo fácil para os bosses?",
+        a: "Tem. O Patch 1.04.00, de 27 de abril de 2026, adicionou os modos Easy, Normal e Hard em Configurações > Jogar. No Easy os bosses têm menos HP e agressividade, contra-atacam menos e as janelas de parry e esquiva ficam maiores. Dá para trocar de modo a qualquer momento.",
+      },
+      {
+        q: "A DLC Charting the Unknown traz novos bosses?",
+        a: "Sim. Anunciada no State of Play de 3 de setembro de 2026 e prevista para 15 de outubro de 2026, a expansão traz nova região, combate naval, exploração subaquática e chefes inéditos de grande porte, incluindo dragões e criaturas mecânicas. O preço ainda não foi confirmado oficialmente pela Pearl Abyss.",
       },
     ],
   },

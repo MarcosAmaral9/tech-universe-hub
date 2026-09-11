@@ -33,7 +33,7 @@ const CrimsonDesertBosses = () => {
         </h1>
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
-          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />29 de Março, 2026</span>
+          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />29 de Março, 2026 · atualizado em 10 de Setembro, 2026</span>
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />35 min de leitura</span>
         </div>
         <ShareWhatsApp />
@@ -47,20 +47,26 @@ const CrimsonDesertBosses = () => {
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          Crimson Desert conta com <strong>75 bosses registrados na aba Conhecimento</strong> do jogo — além de 2 bosses secretos (Goyen e Master Du) que não aparecem no diário. No total, guias especializados listam ao redor de <strong>76 encontros únicos</strong>, sendo 26 deles parte da campanha principal e o restante opcional, ligado a missões de facção ou exploração livre. Este guia foi atualizado com as informações do <strong>patch de 23 de março de 2026</strong> e cobre todos os bosses da história em ordem cronológica, mais os opcionais mais importantes.
+          Crimson Desert, lançado em <strong>19 de março de 2026</strong>, tem dezenas de chefes espalhados por Pywel — mas atenção a um detalhe importante: <strong>a Pearl Abyss nunca divulgou uma contagem oficial</strong>. Os guias mais consultados divergem entre <strong>75, 76 e até 98 encontros</strong>, dependendo de contarem variantes, world bosses e chefes secretos (Goyen e Master Du não aparecem na aba Conhecimento). Neste guia usamos a referência de ~76 encontros únicos, tratando o número como estimativa da comunidade, não como dado oficial. Todas as estratégias abaixo estão revisadas para o estado do jogo em <strong>setembro de 2026</strong>, após os patches que mudaram bosses, dificuldade e revanches.
         </p>
 
         <div className="not-prose my-6 p-5 bg-red-500/10 border border-red-500/30 rounded-xl">
-          <h3 className="font-bold mb-2 flex items-center gap-2"><Skull className="h-5 w-5 text-red-400" /> Patch 23/03/2026 — Mudanças nos Bosses</h3>
+          <h3 className="font-bold mb-2 flex items-center gap-2"><Skull className="h-5 w-5 text-red-400" /> O que mudou nos bosses desde o lançamento</h3>
           <ul className="text-sm text-muted-foreground space-y-1 mb-0">
-            <li>• Reduzidos HP e dano de ataque de bosses e inimigos específicos</li>
-            <li>• Reduzido consumo de stamina ao bloquear ataques</li>
-            <li>• Dificuldade de emboscadas no caminho para o Reed Devil diminuída</li>
-            <li>• Padrões de ataque de Kearush the Slayer ajustados</li>
-            <li>• Aumentada acumulação do medidor de stun ao aparar com sucesso</li>
-            <li>• Fraquezas de bosses agora exibidas mesmo sem o conhecimento específico</li>
-            <li>• Corrigido bug do Blinding Flash não sendo aplicado corretamente</li>
+            <li>• <strong>Patch de 23/03/2026:</strong> HP e dano de bosses específicos reduzidos, menos consumo de stamina ao bloquear, emboscadas até o Reed Devil facilitadas, padrões de Kearush the Slayer ajustados, mais acúmulo de stun ao aparar e fraquezas exibidas sem exigir o conhecimento específico.</li>
+            <li>• <strong>Patch 1.01.00:</strong> lock-on mais confiável durante as lutas de chefe.</li>
+            <li>• <strong>Patch 1.04.00 (27/04/2026):</strong> modos <strong>Easy / Normal / Hard</strong> em Configurações &gt; Jogar. No Easy, os bosses têm menos HP e agressividade, contra-ataques menos frequentes e janelas de parry e esquiva maiores.</li>
+            <li>• <strong>Patch 1.05.00 (02/05/2026):</strong> chegada do <strong>Rematch</strong> — revanche contra bosses já derrotados — e do Re-blockade das regiões libertadas.</li>
+            <li>• <strong>Patch 1.07.00 (15/05/2026):</strong> lista de bosses disponíveis para revanche ampliada.</li>
+            <li>• <strong>Patches 1.08.00 a 1.17.00:</strong> correções de bosses travados, transparentes ou presos no ar, remapeamento de controles (1.09.00) e cross-save entre PC e consoles (1.14.00).</li>
           </ul>
+        </div>
+
+        <div className="not-prose my-6 p-5 bg-amber-500/10 border border-amber-500/30 rounded-xl">
+          <h3 className="font-bold mb-2 flex items-center gap-2"><Star className="h-5 w-5 text-amber-400" /> Novos bosses a caminho: DLC "Charting the Unknown"</h3>
+          <p className="text-sm text-muted-foreground mb-0">
+            Anunciada no State of Play de <strong>3 de setembro de 2026</strong>, a expansão <strong>Charting the Unknown</strong> chega em <strong>15 de outubro de 2026</strong> com nova região, combate naval, exploração subaquática, construção de propriedade e chefes inéditos de grande porte — incluindo dragões e criaturas mecânicas. Ressalva honesta: <strong>ainda há divergência entre veículos de imprensa sobre a expansão ser paga (cerca de US$ 24,99) ou gratuita para quem tem o jogo base</strong>. Enquanto a Pearl Abyss não confirmar oficialmente, trate o preço como não definido. Este guia será atualizado com os novos chefes assim que a DLC sair.
+          </p>
         </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -561,6 +567,20 @@ const CrimsonDesertBosses = () => {
         </div>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Swords className="h-7 w-7 text-red-400" />
+          Rematch: como refazer qualquer boss depois de zerar
+        </h2>
+        <p>
+          Até maio de 2026, derrotar um chefe era definitivo: o mundo ia esvaziando conforme você libertava as regiões e não havia como treinar de novo contra as lutas mais interessantes. O <strong>Patch 1.05.00</strong> resolveu isso com o <strong>Rematch</strong>, e o <strong>Patch 1.07.00</strong> ampliou a lista de chefes elegíveis. Na prática, isso muda a forma de usar este guia: você não precisa mais "acertar de primeira" nem guardar consumíveis para uma única tentativa perfeita.
+        </p>
+        <ul className="text-sm space-y-2">
+          <li><strong>Treine antes dos muros de dificuldade:</strong> refazer Kearush ou o Reed Devil no Normal é a melhor preparação para a sequência final (Caliburn → Avatar de Umbra → Umbra).</li>
+          <li><strong>Refarme recompensas:</strong> revanches permitem repetir materiais raros de bosses que antes eram irrepetíveis por save.</li>
+          <li><strong>Use o Re-blockade a favor:</strong> rebloquear uma região devolve inimigos de elite ao mapa, útil para acumular carne, ingredientes de Palmar Pills e itens de refinamento.</li>
+          <li><strong>Dificuldade é reversível:</strong> Easy, Normal e Hard trocam a qualquer momento em Configurações &gt; Jogar. Muitos jogadores mantêm Normal na campanha e sobem para Hard só nas revanches.</li>
+        </ul>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Sword className="h-7 w-7 text-red-400" />
           Ranking dos Bosses Mais Difíceis (Comunidade)
         </h2>
@@ -608,16 +628,18 @@ const CrimsonDesertBosses = () => {
 
 
 
-      <EditorialTake category="geek" title="Análise do Marcos: 76 bosses, 3 que realmente importam">
+      <EditorialTake category="geek" title="Análise do Marcos: a contagem não importa, os três filtros importam">
         <p>
           Depois de zerar Crimson Desert duas vezes, minha leitura é que o <strong>guia de bosses</strong>
-          do jogo é generoso na quantidade, mas honesto na curva. Os 76 chefes parecem
-          intimidadores no papel, mas 3 deles definem se você vai gostar do jogo: <strong>Kearush</strong>
-          (filtro de paciência), <strong>Reed Devil</strong> (filtro de leitura de padrão) e <strong>Caliburn</strong>
-          (filtro de execução). Se você passa desses três sem se irritar, vai amar o resto. Minha
-          recomendação prática para o jogador brasileiro: ative o Easy Mode no Patch 1.04.00 sem
-          culpa para os bosses opcionais e mantenha o Normal para a campanha — você preserva a
-          tensão dos chefes principais sem perder semanas grindando equipamento.
+          do jogo é generoso na quantidade, mas honesto na curva. E vale dizer o que quase nenhum guia diz:
+          o número de chefes é chute coletivo — as fontes oscilam entre 75, 76 e 98 e a Pearl Abyss nunca
+          publicou a conta fechada. O que sobrevive a essa discussão são 3 lutas que definem se você vai
+          gostar do jogo: <strong>Kearush</strong> (filtro de paciência), <strong>Reed Devil</strong>
+          (filtro de leitura de padrão) e <strong>Caliburn</strong> (filtro de execução).
+          Minha recomendação prática para o jogador brasileiro em setembro de 2026: ative o Easy Mode do
+          Patch 1.04.00 sem culpa nos bosses opcionais, mantenha o Normal na campanha e use o Rematch
+          como sala de treino antes da reta final. E segure a ansiedade com a DLC de outubro: até a
+          Pearl Abyss confirmar preço, quem afirma que ela é grátis está adivinhando.
         </p>
       </EditorialTake>
       <ArticleSources category="geek"
@@ -647,10 +669,40 @@ const CrimsonDesertBosses = () => {
             accessedAt: "Maio 2026",
           },
           {
-            title: "Crimson Desert tips and bosses — PC Gamer",
-            url: "https://www.pcgamer.com/games/rpg/crimson-desert/",
+            title: "Crimson Desert Beloth boss guide — PC Gamer",
+            url: "https://www.pcgamer.com/games/action/crimson-desert-beloth-boss-guide/",
             publisher: "PC Gamer",
-            accessedAt: "Maio 2026",
+            accessedAt: "Setembro 2026",
+          },
+          {
+            title: "Patch Notes 1.04.00 — modos de dificuldade",
+            url: "https://crimsondesert.pearlabyss.com/en-US/News/Notice/Detail?_boardNo=84",
+            publisher: "Pearl Abyss",
+            accessedAt: "Setembro 2026",
+          },
+          {
+            title: "Patch Notes 1.05.00 — Rematch e Re-blockade",
+            url: "https://crimsondesert.pearlabyss.com/News/Notice/Detail?_boardNo=88",
+            publisher: "Pearl Abyss",
+            accessedAt: "Setembro 2026",
+          },
+          {
+            title: "Patch Notes 1.07.00 — mais bosses para revanche",
+            url: "https://crimsondesert.pearlabyss.com/en-US/News/Notice/Detail?_boardNo=92",
+            publisher: "Pearl Abyss",
+            accessedAt: "Setembro 2026",
+          },
+          {
+            title: "How to Defeat Corrupted Caliburn — IGN Wiki",
+            url: "https://www.ign.com/wikis/crimson-desert/How_to_Defeat_Corrupted_Caliburn",
+            publisher: "IGN",
+            accessedAt: "Setembro 2026",
+          },
+          {
+            title: "Crimson Desert: DLC Charting the Unknown chega em 15 de outubro",
+            url: "https://gamingbolt.com/crimson-desert-charting-the-unknown-dlc-announced-launches-on-october-15th",
+            publisher: "GamingBolt",
+            accessedAt: "Setembro 2026",
           },
         ]}
       />
