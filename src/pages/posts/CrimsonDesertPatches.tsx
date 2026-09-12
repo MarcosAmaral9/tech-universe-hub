@@ -27,12 +27,12 @@ const CrimsonDesertPatches = () => {
           <span className="px-3 py-1 bg-geek/20 text-geek rounded-full text-sm font-medium">Updates · Patches · Pearl Abyss</span>
         </div>
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-          Crimson Desert: Todas as Atualizações e Patches Pós-Lançamento (Março–Agosto 2026)
+          Crimson Desert: Todas as Atualizações e Patches Pós-Lançamento (até Setembro de 2026)
         </h1>
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
-          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />Atualizado em 13 de Agosto, 2026</span>
-          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />14 min de leitura</span>
+          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />Atualizado em 12 de Setembro, 2026</span>
+          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />17 min de leitura</span>
         </div>
         <ShareWhatsApp />
         <AuthorBio category="geek" publishedAt="04 de Abril, 2026" />
@@ -44,7 +44,7 @@ const CrimsonDesertPatches = () => {
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
-          Desde seu lançamento em 19 de março de 2026, Crimson Desert recebeu atualizações em ritmo acelerado. No balanço oficial publicado pela Pearl Abyss em <strong>12 de agosto de 2026</strong>, são <strong>17 patches principais</strong>, mais de 20 novos recursos e conteúdos, <strong>120 novas montarias e pets</strong> e <strong>70 novos trajes, equipamentos e itens</strong> — do baú de armazenamento e dos modos de dificuldade até o cross-save entre PC e consoles (1.14.00) e a revisão do sistema de comércio (1.16.00).
+          Desde seu lançamento em 19 de março de 2026, Crimson Desert recebeu atualizações em ritmo acelerado. Depois do balanço oficial de agosto — que contabilizou <strong>17 patches principais</strong>, mais de 20 recursos e conteúdos, 120 montarias e pets e 70 trajes, equipamentos e itens — a Pearl Abyss lançou o <strong>Crimson Desert Enhanced</strong> (2.00.00), com narrativa ampliada, dublagem em português brasileiro, oito habilidades de Kliff e o novo recurso Abyss Link. Até <strong>12 de setembro de 2026</strong>, a versão mais recente confirmada é a <strong>2.02.00</strong>, que também levou o cross-save ao Mac.
         </p>
 
 
@@ -201,7 +201,42 @@ const CrimsonDesertPatches = () => {
               data: "7 de agosto de 2026",
               tipo: "Correções",
               cor: "border-violet-500/30 bg-violet-500/5",
-              descricao: "Patch mais recente até o fechamento desta matéria: correções no desafio 'Desperate Rescue', em itens atribuídos ao slot rápido, em efeitos de capacetes especiais, em sons de passos sobrepostos e em ícones incorretos de baús no mapa, além de melhorias de localização em todos os idiomas."
+              descricao: "Corrigiu o desafio 'Desperate Rescue', itens atribuídos ao slot rápido, efeitos de capacetes especiais, sons de passos sobrepostos e ícones incorretos de baús no mapa, além de melhorar a localização em todos os idiomas."
+            },
+            {
+              versao: "Patch 1.18.00 → 1.18.02",
+              data: "15–16 de agosto de 2026",
+              tipo: "Qualidade de vida + hotfixes",
+              cor: "border-green-500/30 bg-green-500/5",
+              descricao: "Criou a categoria de conhecimento 'Quests', com oito subcategorias e concessão retroativa para missões já concluídas; trocou prata por fundos do acampamento nas pesquisas; permitiu equipar acessórios de cavalo no estábulo; adicionou câmera de lock-on manual, semiautomática e automática; melhorou a leitura das áreas exploradas no mapa; e corrigiu falhas de iluminação, câmera em baixa taxa de quadros, geração de quadros FSR/XeSS e retorno indevido à tela inicial. Os hotfixes 1.18.01 e 1.18.02 trataram recursos do acampamento exibidos como zero, perda de prata em um save específico, animação de movimento e travamento após usar lojas."
+            },
+            {
+              versao: "Patch 2.00.00 — Crimson Desert Enhanced",
+              data: "25 de agosto de 2026",
+              tipo: "Atualização estrutural",
+              cor: "border-red-500/30 bg-red-500/5",
+              descricao: "Revisou o fluxo da história principal e acrescentou cenas, diálogos, itens, fragmentos de memória e contexto para chefes. Adicionou dublagem em português brasileiro, alemão, francês, espanhol e japonês, além de interface e legendas em árabe. O novo Abyss Link compartilha recursos equivalentes entre os personagens, permite redefinir a progressão individualmente e reembolsa os recursos usados; oito habilidades novas chegaram para Kliff. Também foram incluídos controles próprios para montarias voadoras, Double Jump em uma missão e fases/padrões separados para Golden Star."
+            },
+            {
+              versao: "Patches 2.00.01 e 2.00.02",
+              data: "28 de agosto de 2026",
+              tipo: "Hotfixes",
+              cor: "border-violet-500/30 bg-violet-500/5",
+              descricao: "Ajustaram parcialmente a sincronia labial das novas cenas e corrigiram queda de desempenho, inicialização em determinados Macs via Steam, texto árabe, controles sem resposta no guindaste da Karin Quarry e desmontagem forçada ao colidir com mercadores ambulantes."
+            },
+            {
+              versao: "Patch 2.01.00",
+              data: "4 de setembro de 2026",
+              tipo: "Melhorias e estabilidade",
+              cor: "border-green-500/30 bg-green-500/5",
+              descricao: "Adicionou missões de despacho para investimento em barras de ouro, elevou em dez vezes os fundos obtidos ao doar prata ao acampamento, permitiu inclinar a câmera no modo foto e indicou no menu quais habilidades são liberadas por conhecimentos específicos. Corrigiu missões, montarias, combate aéreo, aliados que não atacavam, ruído visual na chuva, atraso em NPCs e iluminação excessivamente escura em Macs M5."
+            },
+            {
+              versao: "Patch 2.02.00",
+              data: "11 de setembro de 2026",
+              tipo: "Cross-save no Mac",
+              cor: "border-amber-500/30 bg-amber-500/5",
+              descricao: "Adicionou cross-save à versão Mac e corrigiu bloqueios de progresso em Thornbriar Fortress e na missão 'The Words of Alustin', desaparecimento de itens no depósito de mercadorias, moradia não liberada com inventário cheio, texto da interface tremendo e crash ao iniciar um novo jogo com DLSS Frame Generation. No lançamento da nota, o patch já estava disponível no Steam para Mac; a Mac App Store ainda aguardava liberação."
             },
 
           ].map((p) => (
@@ -288,7 +323,7 @@ const CrimsonDesertPatches = () => {
               <li>• Armazenamento privado no camp + Kuku Cooler</li>
               <li>• Lock-on em bosses mais confiável</li>
               <li>• Assets 2D de IA generativa substituídos</li>
-              <li>• Suporte básico para Intel Arc GPU (ainda instável)</li>
+              <li>• Suporte oficial a Intel Arc, XeSS 3.0 e Frame Generation adicionado em abril</li>
               <li>• Função Lock para proteger itens no inventário</li>
               <li>• Cloudcart como montaria permanente</li>
               <li>• Boss Rematch e Re-blockade (1.05.00)</li>
@@ -296,13 +331,16 @@ const CrimsonDesertPatches = () => {
               <li>• Remapeamento livre de controles (1.09.00)</li>
               <li>• Cross-save entre PC e consoles (1.14.00)</li>
               <li>• Comércio reformulado com 133 novos postos (1.16.00)</li>
+              <li>• Crimson Desert Enhanced entregou a revisão narrativa, novas cenas e contexto adicional para chefes (2.00.00)</li>
+              <li>• Dublagem oficial em português brasileiro e quatro outros idiomas (2.00.00)</li>
+              <li>• Abyss Link, oito habilidades de Kliff e redefinição individual da progressão (2.00.00)</li>
+              <li>• Cross-save também disponível no Mac via Steam (2.02.00)</li>
             </ul>
           </div>
           <div className="bg-card rounded-xl border border-amber-500/20 p-5">
-            <h3 className="font-bold text-amber-400 mb-3">⚠️ Ainda Pendente / Prometido</h3>
+            <h3 className="font-bold text-amber-400 mb-3">⚠️ Ainda Pendente / Anunciado</h3>
             <ul className="text-sm text-muted-foreground space-y-2">
-              <li>• Melhorias narrativas: revisão de cenas-chave anunciada no Dev Update de junho, ainda em desenvolvimento</li>
-              <li>• DLC pago confirmado, sem detalhes nem data</li>
+              <li>• DLC Charting the Unknown anunciado para 15 de outubro de 2026; ainda não lançado na data desta atualização</li>
               <li>• Versão para Nintendo Switch 2, prevista para o início de 2027</li>
               <li>• Suporte completo e otimizado para Intel Arc GPU</li>
               <li>• Brilho noturno e iluminação interna — comunidade ainda reporta ajustes necessários</li>
@@ -316,10 +354,10 @@ const CrimsonDesertPatches = () => {
           Situação: Intel Arc e Assets de IA
         </h2>
         <p>
-          Sobre a <strong>Intel Arc</strong>: após a polêmica inicial de não suporte, a Pearl Abyss lançou um patch que permite rodar o jogo em GPUs Intel Arc em estado não-otimizado — com problemas gráficos e instabilidade. A empresa mudou o FAQ confirmando que está "trabalhando em compatibilidade e otimização" para Arc, sem data definida. A Intel declarou ter oferecido hardware e suporte à Pearl Abyss antes do lançamento.
+          Sobre a <strong>Intel Arc</strong>: o lançamento apresentou incompatibilidade e telas pretas em parte dessas GPUs. Em abril, a Pearl Abyss adicionou suporte oficial a Intel Arc, XeSS 3.0 e Frame Generation; atualizações posteriores continuaram corrigindo falhas específicas do XeSS. Isso não significa desempenho idêntico em toda placa e configuração, mas a situação atual já não deve ser descrita como ausência total de suporte.
         </p>
         <p>
-          Sobre os <strong>assets de IA generativa</strong>: a Pearl Abyss confirmou o uso, atualizou a página do Steam com a divulgação exigida pela Valve, prometeu uma auditoria completa dos assets do jogo e o Patch 1.01.00 (28/03) já substituiu os assets 2D identificados por arte feita por humanos, conforme anunciado nas notas oficiais.
+          Sobre os <strong>assets de IA generativa</strong>: a Pearl Abyss reconheceu a inclusão de imagens geradas por IA, pediu desculpas e prometeu substituí-las, além de realizar uma auditoria abrangente. Há relatos de substituições posteriores, mas não localizamos um comunicado oficial que declare a auditoria integralmente concluída. Por isso, este guia não trata a controvérsia como encerrada além do que foi confirmado publicamente.
         </p>
         <p>
           Essa divulgação não foi um gesto espontâneo da desenvolvedora: desde 2024, a Valve exige que todo jogo publicado na Steam que utilize conteúdo gerado por inteligência artificial declare esse uso publicamente na própria página da loja, política implementada após preocupações levantadas pela comunidade de desenvolvedores e jogadores sobre transparência no uso dessas ferramentas. O sistema de avaliações da Steam, por sua vez, funciona através de categorias automáticas calculadas a partir da proporção de avaliações positivas e negativas dos últimos 30 dias e do histórico total acumulado desde o lançamento — rótulos como "Mixed" (Avaliação Mista), "Mostly Positive" (Majoritariamente Positiva) e "Very Positive" (Muito Positiva) não são opiniões editoriais da Valve, mas cálculos estatísticos públicos. Em agosto de 2026, Crimson Desert acumula <strong>166 mil análises na Steam com cerca de 84% positivas</strong>, mantendo o selo Very Positive conquistado ao longo dos patches.
@@ -327,10 +365,10 @@ const CrimsonDesertPatches = () => {
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
           <Zap className="h-7 w-7 text-geek" />
-          Destaque: Cross-Save entre PC e Consoles (Patch 1.14.00)
+          Destaque: Cross-Save entre PC, Consoles e Mac
         </h2>
         <p>
-          Entregue em <strong>16 de julho de 2026</strong>, o cross-save foi a mudança estrutural mais pedida depois dos modos de dificuldade. Ele permite continuar o mesmo save entre PC (Steam, Epic e cliente da Pearl Abyss), PlayStation 5 e Xbox Series X|S, desde que todas as versões estejam vinculadas à mesma conta Pearl Abyss. Na prática, quem jogava no console à noite e queria aproveitar o desempenho do PC no fim de semana deixou de precisar recomeçar a jornada de Kliff.
+          Entregue para PC e consoles em <strong>16 de julho de 2026</strong>, o cross-save foi ampliado para o <strong>Mac no Patch 2.02.00, de 11 de setembro</strong>. Ele permite continuar o mesmo save entre PC, PlayStation 5, Xbox Series X|S e Mac, desde que as versões estejam vinculadas à mesma conta Pearl Abyss. A nota oficial informou disponibilidade imediata no Steam para Mac; a edição da Mac App Store ainda estava em processo de liberação quando o comunicado foi publicado.
         </p>
         <div className="not-prose my-6 grid md:grid-cols-2 gap-5">
           <div className="bg-card rounded-xl border border-emerald-500/20 p-5">
@@ -391,7 +429,7 @@ const CrimsonDesertPatches = () => {
             {
               perfil: "Quem nunca jogou",
               cor: "border-green-500/30 bg-green-500/5",
-              desc: "Comece direto no modo Easy ou Normal, com baú de armazenamento, função Lock de itens, mais pontos de fast travel e tempos de carregamento bem menores. A versão de agosto é bem mais amigável que a de março.",
+              desc: "Comece direto no modo Easy ou Normal, com baú de armazenamento, função Lock de itens, mais pontos de fast travel e tempos de carregamento menores. A edição Enhanced também melhora a narrativa e oferece dublagem em português brasileiro.",
             },
             {
               perfil: "Quem parou depois do lançamento",
@@ -401,7 +439,7 @@ const CrimsonDesertPatches = () => {
             {
               perfil: "Quem já zerou",
               cor: "border-violet-500/30 bg-violet-500/5",
-              desc: "O conteúdo pós-jogo cresceu com 120 montarias e pets, 70 trajes e itens, dificuldade Hard e as rotas de comércio de alto risco. O DLC pago confirmado no Dev Update de junho é o próximo marco.",
+              desc: "O conteúdo pós-jogo cresceu com 120 montarias e pets, 70 trajes e itens, dificuldade Hard e rotas de comércio. O próximo marco anunciado é o DLC Charting the Unknown, previsto para 15 de outubro.",
             },
           ].map(({ perfil, cor, desc }) => (
             <div key={perfil} className={`rounded-xl border p-5 ${cor}`}>
@@ -413,19 +451,19 @@ const CrimsonDesertPatches = () => {
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Como Garantir que Você Está na Versão Mais Recente</h2>
         <p>
-          Todos os patches citados aqui são obrigatórios e aplicados automaticamente, mas configurações de atualização em segundo plano podem deixar o jogo desatualizado por dias. No <strong>Steam</strong>, clique com o botão direito no jogo, acesse <strong>Propriedades &gt; Atualizações</strong> e mantenha "Sempre manter este jogo atualizado"; em caso de erro de versão, use <strong>Arquivos Locais &gt; Verificar integridade</strong>. No <strong>PS5</strong>, o caminho é <strong>Opções &gt; Gerenciar conteúdo do jogo &gt; Atualizações automáticas</strong>. No <strong>Xbox Series X|S</strong>, ative <strong>Manter meus jogos e apps atualizados</strong> nas configurações do console. A versão instalada aparece no canto inferior da tela de título — se o número for menor que <strong>1.17.00</strong>, o jogo ainda não recebeu as correções mais recentes.
+          Todos os patches citados aqui são obrigatórios e aplicados automaticamente, mas configurações de atualização em segundo plano podem deixar o jogo desatualizado por dias. No <strong>Steam</strong>, clique com o botão direito no jogo, acesse <strong>Propriedades &gt; Atualizações</strong> e mantenha "Sempre manter este jogo atualizado"; em caso de erro, use <strong>Arquivos instalados &gt; Verificar integridade</strong>. No <strong>PS5</strong>, selecione o jogo, pressione Opções e escolha <strong>Verificar atualização</strong>. No <strong>Xbox Series X|S</strong>, consulte <strong>Meus jogos e aplicativos &gt; Gerenciar &gt; Atualizações</strong>. A versão instalada aparece na tela de título: em 12 de setembro, a referência mais recente é <strong>2.02.00</strong>.
         </p>
 
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Planos Futuros</h2>
         <p>
-          No <strong>Dev Update de 2 de junho de 2026</strong>, a Pearl Abyss mudou o discurso anterior de que não haveria conteúdo pago: o estúdio confirmou que <strong>trabalha em um DLC para Crimson Desert</strong>, sem revelar detalhes ou data. O mesmo comunicado detalhou o plano de junho a setembro — melhorias na coerência narrativa da jornada de Kliff, evolução do Re-blockade, cross-save (entregue em 16 de julho) e mais conteúdo de qualidade de vida. Com <strong>6 milhões de cópias vendidas</strong> (marca atingida em junho, menos de três meses após o lançamento) e uma <strong>versão para Nintendo Switch 2 prevista para o início de 2027</strong>, o suporte deve seguir ao longo do ano. O próximo grande projeto da Pearl Abyss é o <strong>DokeV</strong>, que usará a mesma BlackSpace Engine.
+          O próximo conteúdo confirmado é <strong>Charting the Unknown</strong>, DLC com lançamento marcado para <strong>15 de outubro de 2026</strong> em PC e consoles. As reservas começaram em 3 de setembro; a Pearl Abyss informou que a edição da Mac App Store não receberá o conteúdo no lançamento e que alguns mercados ficaram de fora após revisão de classificação etária e exigências locais. O anúncio transformou em data concreta o DLC citado no roteiro de junho. A versão para Nintendo Switch 2 continua prevista para o início de 2027.
         </p>
 
       
       <h2 className="text-2xl font-bold mt-10 mb-4">A Importância do Cronograma Contínuo de Patches</h2>
       <p>
-        A cadência de atualizações da Pearl Abyss — 17 patches numerados entre 19 de março e 7 de agosto de 2026, sem contar dezenas de hotfixes — representa ritmo de suporte pós-lançamento raramente visto em RPGs de ação AAA. Comparado a outros lançamentos do gênero que frequentemente esperam meses entre atualizações significativas, a Pearl Abyss demonstrou capacidade de resposta ágil que diretamente influenciou a recuperação da reputação do jogo no Steam, saindo de "Mixed" no lançamento para "Very Positive" em poucas semanas.
+        A cadência de atualizações da Pearl Abyss — da versão 1.00.02, em março, à 2.02.00, em setembro, além dos hotfixes intermediários — representa um ritmo intenso de suporte pós-lançamento. Em vez de apenas corrigir falhas isoladas, o estúdio acrescentou sistemas, recursos de acessibilidade, conteúdo e uma revisão narrativa ampla na edição Enhanced.
       </p>
       <p>
         Esse padrão de atualização constante também reflete decisão estratégica da empresa de priorizar correção de problemas técnicos e de acessibilidade antes de qualquer expansão de conteúdo paga — o DLC só foi anunciado como projeto em andamento em junho, quase três meses depois do lançamento e depois de o jogo já ter recebido revanches de bosses, extração de materiais, remapeamento de controles e cross-save sem custo adicional.
@@ -442,7 +480,7 @@ const CrimsonDesertPatches = () => {
     
       <h2 className="text-2xl font-bold mt-10 mb-4">O Que Esperar das Próximas Atualizações</h2>
       <p>
-        O Dev Update de 2 de junho estabeleceu um roteiro público para o período de junho a setembro de 2026, e boa parte dele já foi entregue: cross-save, decoração externa da casa, entrada de Oongka e Damiane no Abyss e a reformulação do comércio. O que resta do pacote anunciado são as melhorias de coerência narrativa das cenas-chave da jornada de Kliff e a nova fase do Re-blockade — além do DLC pago, que segue sem detalhes divulgados.
+        O roteiro de junho foi amplamente entregue: cross-save, decoração externa da casa, entrada de Oongka e Damiane no Abyss, reformulação do comércio e melhorias narrativas. Após o Enhanced, o foco anunciado passa ao DLC <strong>Charting the Unknown</strong>, em 15 de outubro. Como ele ainda não foi lançado na data desta revisão, recursos, desempenho e conteúdo final devem ser avaliados somente após as notas e a versão pública ficarem disponíveis.
       </p>
 
     
@@ -474,45 +512,45 @@ const CrimsonDesertPatches = () => {
 
 
       <EditorialTake category="geek" title="Análise do Marcos: A Pearl Abyss Mostrou Como Fazer Suporte Pós-Lançamento">
-        <p>Cinco meses depois do lançamento, o balanço é objetivo: <strong>17 patches, mais de 20 recursos novos, 120 montarias e pets e 70 itens/trajes adicionados — tudo sem cobrar nada</strong>. Nenhum dos problemas centrais apontados no lançamento (controles, dificuldade única, inventário caótico, falta de habilidades para Damiane e Oongka, mundo esvaziado após libertar as regiões) ficou sem resposta: os modos de dificuldade chegaram em 34 dias, o remapeamento de controles em cerca de três meses, o Rematch e o Re-blockade em maio, o cross-save em julho. A trajetória de "Mixed" para "Very Positive" — hoje cerca de 84% de aprovação em 166 mil análises na Steam — não aconteceu por sorte: foi construída patch a patch. O ponto que ainda me incomoda é a narrativa, e é justamente o item do roteiro de junho que continua pendente. Se a Pearl Abyss entregar essa revisão antes do DLC, transforma um lançamento morno em um dos melhores casos de recuperação da geração.</p>
+        <p>Quase seis meses depois do lançamento, a mudança mais importante não é apenas a quantidade de patches, mas a disposição de rever sistemas centrais. Dificuldade, controles, inventário, progressão, revanches, comércio e cross-save receberam respostas concretas; com o Enhanced, a Pearl Abyss também enfrentou a crítica mais difícil, a narrativa, em vez de deixá-la para uma sequência. A dublagem em português brasileiro e o Abyss Link tornam esta a melhor porta de entrada até agora. O cuidado necessário é separar atualização gratuita de expansão paga: Charting the Unknown só poderá ser julgado depois de 15 de outubro, não por promessas ou reservas.</p>
       </EditorialTake>
       <ArticleSources category="geek"
         sources={[
           {
-            title: "Update Highlights — balanço de 17 patches desde o lançamento",
-            url: "https://store.steampowered.com/news/app/3321460",
-            publisher: "Pearl Abyss / Steam",
-            accessedAt: "Agosto 2026",
-          },
-          {
-            title: "Patch Notes Version 1.17.00",
-            url: "https://store.steampowered.com/news/app/3321460",
+            title: "Patch Notes Version 2.02.00 — cross-save no Mac",
+            url: "https://crimsondesert.pearlabyss.com/en-US/News/Notice/Detail?_boardNo=130",
             publisher: "Pearl Abyss",
-            accessedAt: "Agosto 2026",
+            accessedAt: "Setembro 2026",
           },
           {
-            title: "Patch Notes Version 1.16.00 — reformulação do comércio",
-            url: "https://store.steampowered.com/news/app/3321460",
+            title: "Patch Notes Version 2.01.00",
+            url: "https://crimsondesert.pearlabyss.com/EN-US/News/Notice/Detail?_boardNo=128",
             publisher: "Pearl Abyss",
-            accessedAt: "Agosto 2026",
+            accessedAt: "Setembro 2026",
           },
           {
-            title: "Dev Update: June–September 2026 Preview (DLC confirmado)",
-            url: "https://store.steampowered.com/news/app/3321460",
+            title: "Patch Notes Version 2.00.00 — Crimson Desert Enhanced",
+            url: "https://crimsondesert.pearlabyss.com/en-US/News/Notice/Detail?_boardNo=123",
             publisher: "Pearl Abyss",
-            accessedAt: "Agosto 2026",
+            accessedAt: "Setembro 2026",
           },
           {
-            title: "Cross-Save Support (Patch 1.14.00)",
-            url: "https://store.steampowered.com/news/app/3321460",
+            title: "Patch Notes Version 2.00.02 — hotfix geral",
+            url: "https://crimsondesert.pearlabyss.com/en-US/News/Notice/Detail?_boardNo=127",
             publisher: "Pearl Abyss",
-            accessedAt: "Agosto 2026",
+            accessedAt: "Setembro 2026",
           },
           {
-            title: "Crimson Desert — página e avaliações na Steam",
-            url: "https://store.steampowered.com/app/3321460/Crimson_Desert/",
-            publisher: "Valve / Pearl Abyss",
-            accessedAt: "Agosto 2026",
+            title: "Patch Notes Version 1.18.00",
+            url: "https://crimsondesert.pearlabyss.com/EN-US/News/Notice/Detail?_boardNo=117",
+            publisher: "Pearl Abyss",
+            accessedAt: "Setembro 2026",
+          },
+          {
+            title: "Charting the Unknown — pré-venda e data anunciada",
+            url: "https://crimsondesert.pearlabyss.com/EN-US/News/Notice/Detail?_boardNo=129",
+            publisher: "Pearl Abyss",
+            accessedAt: "Setembro 2026",
           },
           {
             title: "Crimson Desert — verbete com dados de vendas, notas e plataformas",

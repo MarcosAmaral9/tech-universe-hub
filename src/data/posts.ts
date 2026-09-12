@@ -3268,33 +3268,33 @@ export const blogPosts: BlogPost[] = [
   {
     id: "144",
     slug: "crimson-desert-patches-atualizacoes-2026",
-    title: "Crimson Desert: Todas as Atualizações e Patches Pós-Lançamento (Março–Agosto 2026)",
+    title: "Crimson Desert: Todas as Atualizações e Patches até Setembro de 2026",
     excerpt:
-      "A Pearl Abyss lançou 17 patches em cinco meses: modos de dificuldade, remapeamento de controles, revanches de bosses, cross-save, reformulação do comércio e DLC confirmado. Histórico completo até 1.17.00.",
+      "Histórico dos patches de Crimson Desert até a versão 2.02.00: Enhanced, narrativa revisada, dublagem PT-BR, Abyss Link, novas habilidades, cross-save no Mac e DLC anunciado.",
     content: "",
     category: "geek",
     subtopic: "crimson-desert",
     image: crimsonDesertPatchesImg,
     author: "VICIO<CODE>",
     date: "2026-04-04",
-    updatedAt: "2026-08-13",
-    readTime: "8 min",
+    updatedAt: "2026-09-12",
+    readTime: "17 min",
     faq: [
       {
         q: "Quantos patches Crimson Desert já recebeu?",
-        a: "Foram 17 patches numerados entre 19 de março e 7 de agosto de 2026 (do 1.00.02 ao 1.17.00), além de dezenas de hotfixes — um ritmo de atualização incomum para um jogo desse porte.",
+        a: "A numeração avançou do patch 1.00.02, no lançamento, até o 2.02.00 em 11 de setembro de 2026, com vários hotfixes intermediários. O Enhanced marcou a passagem para a série 2.00.",
       },
       {
         q: "Quais foram as principais melhorias dos patches?",
-        a: "Os patches corrigiram os controles de sprint e voo (Crow Wings), adicionaram 5 novas montarias (White Bear, Silver Fang, Snowwhite Deer, Rock Tusk Warthog, Icicle Edge Alpine Ibex), introduziram Refinement Coins, expandiram os pontos de fast travel e reduziram os tempos de carregamento.",
+        a: "Além de controles, armazenamento e desempenho, os patches adicionaram dificuldades, revanches, comércio reformulado e cross-save. O Enhanced revisou a narrativa, trouxe dublagem PT-BR, Abyss Link e oito novas habilidades de Kliff.",
       },
       {
         q: "A controvérsia dos assets de IA foi resolvida?",
-        a: "Sim. A Pearl Abyss confirmou o uso de assets gerados por IA em 22 de março, adicionou a divulgação no Steam e o Patch 1.01.00 (28/03) substituiu os assets 2D questionáveis por arte alinhada com a direção artística do jogo.",
+        a: "A Pearl Abyss reconheceu as imagens geradas por IA, pediu desculpas e prometeu substituição e auditoria abrangente. Como não há confirmação pública inequívoca de conclusão integral da auditoria, o tema não deve ser tratado como totalmente encerrado.",
       },
       {
         q: "Haverá DLC ou conteúdo pós-lançamento pago?",
-        a: "Sim. No Dev Update de 2 de junho de 2026, a Pearl Abyss confirmou que um DLC pago está em desenvolvimento, sem data anunciada. Até lá, todo o conteúdo pós-lançamento (modos de dificuldade, revanches de bosses, cross-save, 120 montarias e pets, 70 itens e trajes) foi gratuito.",
+        a: "Sim. Charting the Unknown foi anunciado para 15 de outubro de 2026 em PC e consoles. Em 12 de setembro, ainda era uma pré-venda, e a Pearl Abyss informou que a versão da Mac App Store não estaria disponível no lançamento.",
       },
     ],
   },
