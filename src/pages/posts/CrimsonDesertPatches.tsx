@@ -323,7 +323,7 @@ const CrimsonDesertPatches = () => {
               <li>• Armazenamento privado no camp + Kuku Cooler</li>
               <li>• Lock-on em bosses mais confiável</li>
               <li>• Assets 2D de IA generativa substituídos</li>
-              <li>• Suporte básico para Intel Arc GPU (ainda instável)</li>
+              <li>• Suporte oficial a Intel Arc, XeSS 3.0 e Frame Generation adicionado em abril</li>
               <li>• Função Lock para proteger itens no inventário</li>
               <li>• Cloudcart como montaria permanente</li>
               <li>• Boss Rematch e Re-blockade (1.05.00)</li>
@@ -354,10 +354,10 @@ const CrimsonDesertPatches = () => {
           Situação: Intel Arc e Assets de IA
         </h2>
         <p>
-          Sobre a <strong>Intel Arc</strong>: após a polêmica inicial de não suporte, a Pearl Abyss lançou um patch que permite rodar o jogo em GPUs Intel Arc em estado não-otimizado — com problemas gráficos e instabilidade. A empresa mudou o FAQ confirmando que está "trabalhando em compatibilidade e otimização" para Arc, sem data definida. A Intel declarou ter oferecido hardware e suporte à Pearl Abyss antes do lançamento.
+          Sobre a <strong>Intel Arc</strong>: o lançamento apresentou incompatibilidade e telas pretas em parte dessas GPUs. Em abril, a Pearl Abyss adicionou suporte oficial a Intel Arc, XeSS 3.0 e Frame Generation; atualizações posteriores continuaram corrigindo falhas específicas do XeSS. Isso não significa desempenho idêntico em toda placa e configuração, mas a situação atual já não deve ser descrita como ausência total de suporte.
         </p>
         <p>
-          Sobre os <strong>assets de IA generativa</strong>: a Pearl Abyss confirmou o uso, atualizou a página do Steam com a divulgação exigida pela Valve, prometeu uma auditoria completa dos assets do jogo e o Patch 1.01.00 (28/03) já substituiu os assets 2D identificados por arte feita por humanos, conforme anunciado nas notas oficiais.
+          Sobre os <strong>assets de IA generativa</strong>: a Pearl Abyss reconheceu a inclusão de imagens geradas por IA, pediu desculpas e prometeu substituí-las, além de realizar uma auditoria abrangente. Há relatos de substituições posteriores, mas não localizamos um comunicado oficial que declare a auditoria integralmente concluída. Por isso, este guia não trata a controvérsia como encerrada além do que foi confirmado publicamente.
         </p>
         <p>
           Essa divulgação não foi um gesto espontâneo da desenvolvedora: desde 2024, a Valve exige que todo jogo publicado na Steam que utilize conteúdo gerado por inteligência artificial declare esse uso publicamente na própria página da loja, política implementada após preocupações levantadas pela comunidade de desenvolvedores e jogadores sobre transparência no uso dessas ferramentas. O sistema de avaliações da Steam, por sua vez, funciona através de categorias automáticas calculadas a partir da proporção de avaliações positivas e negativas dos últimos 30 dias e do histórico total acumulado desde o lançamento — rótulos como "Mixed" (Avaliação Mista), "Mostly Positive" (Majoritariamente Positiva) e "Very Positive" (Muito Positiva) não são opiniões editoriais da Valve, mas cálculos estatísticos públicos. Em agosto de 2026, Crimson Desert acumula <strong>166 mil análises na Steam com cerca de 84% positivas</strong>, mantendo o selo Very Positive conquistado ao longo dos patches.
@@ -517,40 +517,40 @@ const CrimsonDesertPatches = () => {
       <ArticleSources category="geek"
         sources={[
           {
-            title: "Update Highlights — balanço de 17 patches desde o lançamento",
-            url: "https://store.steampowered.com/news/app/3321460",
-            publisher: "Pearl Abyss / Steam",
-            accessedAt: "Agosto 2026",
-          },
-          {
-            title: "Patch Notes Version 1.17.00",
-            url: "https://store.steampowered.com/news/app/3321460",
+            title: "Patch Notes Version 2.02.00 — cross-save no Mac",
+            url: "https://crimsondesert.pearlabyss.com/en-US/News/Notice/Detail?_boardNo=130",
             publisher: "Pearl Abyss",
-            accessedAt: "Agosto 2026",
+            accessedAt: "Setembro 2026",
           },
           {
-            title: "Patch Notes Version 1.16.00 — reformulação do comércio",
-            url: "https://store.steampowered.com/news/app/3321460",
+            title: "Patch Notes Version 2.01.00",
+            url: "https://crimsondesert.pearlabyss.com/EN-US/News/Notice/Detail?_boardNo=128",
             publisher: "Pearl Abyss",
-            accessedAt: "Agosto 2026",
+            accessedAt: "Setembro 2026",
           },
           {
-            title: "Dev Update: June–September 2026 Preview (DLC confirmado)",
-            url: "https://store.steampowered.com/news/app/3321460",
+            title: "Patch Notes Version 2.00.00 — Crimson Desert Enhanced",
+            url: "https://crimsondesert.pearlabyss.com/en-US/News/Notice/Detail?_boardNo=123",
             publisher: "Pearl Abyss",
-            accessedAt: "Agosto 2026",
+            accessedAt: "Setembro 2026",
           },
           {
-            title: "Cross-Save Support (Patch 1.14.00)",
-            url: "https://store.steampowered.com/news/app/3321460",
+            title: "Patch Notes Version 2.00.02 — hotfix geral",
+            url: "https://crimsondesert.pearlabyss.com/en-US/News/Notice/Detail?_boardNo=127",
             publisher: "Pearl Abyss",
-            accessedAt: "Agosto 2026",
+            accessedAt: "Setembro 2026",
           },
           {
-            title: "Crimson Desert — página e avaliações na Steam",
-            url: "https://store.steampowered.com/app/3321460/Crimson_Desert/",
-            publisher: "Valve / Pearl Abyss",
-            accessedAt: "Agosto 2026",
+            title: "Patch Notes Version 1.18.00",
+            url: "https://crimsondesert.pearlabyss.com/EN-US/News/Notice/Detail?_boardNo=117",
+            publisher: "Pearl Abyss",
+            accessedAt: "Setembro 2026",
+          },
+          {
+            title: "Charting the Unknown — pré-venda e data anunciada",
+            url: "https://crimsondesert.pearlabyss.com/EN-US/News/Notice/Detail?_boardNo=129",
+            publisher: "Pearl Abyss",
+            accessedAt: "Setembro 2026",
           },
           {
             title: "Crimson Desert — verbete com dados de vendas, notas e plataformas",
