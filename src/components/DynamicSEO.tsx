@@ -12,6 +12,11 @@ const SITE_SOCIAL = [
 ];
 
 const PAGE_META: Record<string, { title: string; description: string; keywords: string }> = {
+  "/post/melhores-ias-criar-imagens-videos-2026": {
+    title: "Melhores IAs para Imagens e Vídeos em 2026",
+    description: "Compare as melhores IAs para criar imagens e vídeos em 2026, com opções grátis, preços, qualidade, limites e direitos comerciais.",
+    keywords: "melhores IAs para criar imagens e vídeos, IA para criar imagens, IA para criar vídeos, gerador de imagem IA grátis, gerador de vídeo IA grátis, Midjourney, ChatGPT Images, Gemini, Adobe Firefly, Ideogram, Leonardo AI, Google Veo, Runway, Kling AI, Seedance, inteligência artificial 2026",
+  },
   "/post/anime-verao-2026-dias-semana": {
     title: "Anime Verão 2026: Qual Dia da Semana Cada Série Lança no Brasil | VICIO<CODE>",
     description: "Guia completo com os dias e horários de lançamento de cada anime da temporada de verão 2026 no horário de Brasília (BRT): Mushoku Tensei III, Bleach TYBW, Ghost in the Shell, Youjo Senki II e mais.",
