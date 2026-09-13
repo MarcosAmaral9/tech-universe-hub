@@ -1,5 +1,6 @@
 import { BlogPost, Category } from "@/types/blog";
 
+import melhoresIasImagensVideosImg from "@/assets/melhores-ias-imagens-videos-2026.webp";
 import fallEmperorLarcyImg from "@/assets/i-will-fall-with-the-emperor-larcy.webp";
 import cotacoesCriptoImg from "@/assets/cotacoes-criptomoedas-historia-fundadores.webp";
 import historiaIaImg from "@/assets/historia-inteligencia-artificial-modelos.webp";
@@ -243,6 +244,28 @@ import fatedVillainImg from "@/assets/i-am-the-fated-villain-gu-changge.webp";
 import cityLordImg from "@/assets/starting-today-city-lord-liu-feng.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 13 Set 2026 — IA (Geradores de imagem e vídeo) ───────────────────
+  {
+    id: "257",
+    slug: "melhores-ias-criar-imagens-videos-2026",
+    title: "Melhores IAs para Criar Imagens e Vídeos em 2026: Grátis e Pagas",
+    excerpt:
+      "Comparativo atualizado das melhores IAs para criar imagens e vídeos: ChatGPT, Gemini, Midjourney, Firefly, Ideogram, Leonardo, Veo, Runway, Kling e mais, com opções grátis, preços e direitos comerciais.",
+    content: "",
+    category: "ia",
+    subtopic: "criatividade",
+    image: melhoresIasImagensVideosImg,
+    author: "VICIO<CODE>",
+    date: "2026-09-13",
+    readTime: "18 min",
+    faq: [
+      { q: "Qual é a melhor IA gratuita para criar imagens?", a: "ChatGPT e Gemini são as opções mais fáceis para começar e editar por conversa. Leonardo.Ai oferece uma cota diária clara e mais controles criativos." },
+      { q: "Qual é a melhor IA gratuita para criar vídeos?", a: "Kling AI e Pika oferecem cotas gratuitas úteis para testes; Dreamina e produtos Google também podem liberar gerações conforme região e conta." },
+      { q: "Midjourney ainda vale a pena em 2026?", a: "Sim, especialmente para direção de arte, composição e imagens estilizadas. Porém, não há plano gratuito permanente e ferramentas conversacionais são mais práticas para edições pontuais." },
+      { q: "Posso vender imagens e vídeos criados por IA?", a: "Muitos planos pagos permitem uso comercial, mas é necessário verificar os termos da ferramenta e os direitos sobre rostos, marcas, personagens e arquivos usados como referência." },
+      { q: "O Sora ainda está disponível?", a: "O produto Sora para consumidores foi encerrado em abril de 2026. A API Sora 2 tinha desligamento anunciado para 24 de setembro de 2026, portanto não é indicada para novos projetos." },
+    ],
+  },
   // ── 28 Ago 2026 — Geek (Hell Let Loose: Vietnam) ───────────────────
   {
     id: "247",

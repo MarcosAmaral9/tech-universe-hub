@@ -296,6 +296,7 @@ const IAmTheFatedVillainGuia2026  = lazy(() => import("./pages/posts/IAmTheFated
 const CityLordLiuFengGuia2026  = lazy(() => import("./pages/posts/CityLordLiuFengGuia2026"));
 const FallWithEmperorLarcyGuia2026 = lazy(() => import("./pages/posts/FallWithEmperorLarcyGuia2026"));
 const CotacoesCriptoHistoria2026 = lazy(() => import("./pages/posts/CotacoesCriptoHistoria2026"));
+const MelhoresIAsImagensVideos2026 = lazy(() => import("./pages/posts/MelhoresIAsImagensVideos2026"));
 const AcoesCrescimentoVsDividendos2026 = lazy(() => import("./pages/posts/AcoesCrescimentoVsDividendos2026"));
 const CambioDolarProtecao2026        = lazy(() => import("./pages/posts/CambioDolarProtecao2026"));
 const ComoEscolherPrevidencia2026    = lazy(() => import("./pages/posts/ComoEscolherPrevidencia2026"));
@@ -637,6 +638,7 @@ const App = () => (
                 <Route path="/post/starting-from-today-city-lord-liu-feng-guia-2026" element={<Suspense fallback={<div />}><CityLordLiuFengGuia2026 /></Suspense>} />
                 <Route path="/post/i-will-fall-with-the-emperor-larcy-guia-2026" element={<Suspense fallback={<div />}><FallWithEmperorLarcyGuia2026 /></Suspense>} />
                 <Route path="/post/cotacoes-criptomoedas-como-funcionam-historia-2026" element={<Suspense fallback={<div />}><CotacoesCriptoHistoria2026 /></Suspense>} />
+                <Route path="/post/melhores-ias-criar-imagens-videos-2026" element={<Suspense fallback={<div />}><MelhoresIAsImagensVideos2026 /></Suspense>} />
 
                 {/* ── 22 Jul 2026 — Invest Lote 4 ── */}
                 <Route path="/post/acoes-crescimento-vs-dividendos-2026" element={<Suspense fallback={<div />}><AcoesCrescimentoVsDividendos2026 /></Suspense>} />
