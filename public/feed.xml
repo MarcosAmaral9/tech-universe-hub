@@ -5,8 +5,17 @@
     <link>https://viciocode.com</link>
     <description>IA, investimentos, cultura geek e otaku — novos artigos do VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Thu, 10 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Melhores IAs para Criar Imagens e Vídeos em 2026: Grátis e Pagas</title>
+      <link>https://viciocode.com/post/melhores-ias-criar-imagens-videos-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/melhores-ias-criar-imagens-videos-2026</guid>
+      <pubDate>Sun, 13 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Comparativo atualizado das melhores IAs para criar imagens e vídeos: ChatGPT, Gemini, Midjourney, Firefly, Ideogram, Leonardo, Veo, Runway, Kling e mais, com opções grátis, preços e direitos comerciais.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/melhores-ias-criar-imagens-videos-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>I Will Fall With the Emperor: Guia Completo do Manhwa de Larcy</title>
       <link>https://viciocode.com/post/i-will-fall-with-the-emperor-larcy-guia-2026</link>
@@ -447,15 +456,6 @@
       <description>Guia completo de Ghost of Tsushima: a invasão mongol de 1274 na ilha de Tsushima, a história da Sucker Punch, os quatro estilos de combate de Jin Sakai, o Modo Kurosawa, a Director&apos;s Cut com Ilha Iki e por que virou referência de open world samurai.</description>
       <category>Geek &amp; Games</category>
       <enclosure url="https://viciocode.com/assets/ghost-of-tsushima-guia-completo.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Indiana Jones and the Great Circle — Guia Completo: A História, a MachineGames, os Cenários Reais e Tudo Que Você Precisa Saber</title>
-      <link>https://viciocode.com/post/indiana-jones-great-circle-guia-completo-2024</link>
-      <guid isPermaLink="true">https://viciocode.com/post/indiana-jones-great-circle-guia-completo-2024</guid>
-      <pubDate>Sat, 11 Jul 2026 12:00:00 GMT</pubDate>
-      <description>Guia completo de Indiana Jones and the Great Circle: origem da franquia, a MachineGames por trás do projeto, o conceito real do Grande Círculo, cenários históricos reconstruídos (Vaticano, Gizé, Sukhothai), colaboração entre Harrison Ford e Troy Baker e dicas de gameplay.</description>
-      <category>Geek &amp; Games</category>
-      <enclosure url="https://viciocode.com/assets/indiana-jones-great-circle-guia-completo-2024.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>
