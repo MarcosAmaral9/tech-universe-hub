@@ -1,14 +1,39 @@
 {
-  "generatedAt": "2026-09-09T21:20:29.766Z",
+  "generatedAt": "2026-09-14T22:37:22.213Z",
   "counts": {
-    "OK": 16,
-    "A": 101,
+    "OK": 17,
+    "A": 102,
     "B": 2,
     "C": 13,
     "D": 94
   },
   "missingFiles": [],
   "reports": [
+    {
+      "slug": "melhores-ias-criar-imagens-videos-2026",
+      "file": "MelhoresIAsImagensVideos2026.tsx",
+      "keyword": "ias criar imagens",
+      "category": "ia",
+      "checks": {
+        "h1": true,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": true,
+        "metaTitle": false,
+        "metaDescription": true,
+        "metaKeywords": true,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 10,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2949,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "keyword ausente em meta title"
+      ]
+    },
     {
       "slug": "hell-let-loose-vietnam-mapas-contexto-historico",
       "file": "HellLetLooseVietnamMapas2026.tsx",
@@ -168,6 +193,32 @@
       ]
     },
     {
+      "slug": "i-will-fall-with-the-emperor-larcy-guia-2026",
+      "file": "FallWithEmperorLarcyGuia2026.tsx",
+      "keyword": "i will fall",
+      "category": "otaku",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 7,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2414,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>"
+      ]
+    },
+    {
       "slug": "cotacoes-criptomoedas-como-funcionam-historia-2026",
       "file": "CotacoesCriptoHistoria2026.tsx",
       "keyword": "cotacoes criptomoedas funcionam",
@@ -184,7 +235,7 @@
         "articleSourcesCount": 6,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 1121,
+        "wordCount": 1390,
         "has1500Words": false
       },
       "bucket": "D",
@@ -192,7 +243,7 @@
         "sem PAGE_META manual",
         "keyword ausente na introdução",
         "keyword ausente em excerpt",
-        "apenas ~1121 palavras (mínimo 1500)"
+        "apenas ~1390 palavras (mínimo 1500)"
       ]
     },
     {
@@ -2577,7 +2628,7 @@
       "checks": {
         "h1": true,
         "intro": true,
-        "excerpt": false,
+        "excerpt": true,
         "pageMetaExists": true,
         "metaTitle": true,
         "metaDescription": true,
@@ -2586,13 +2637,11 @@
         "articleSourcesCount": 7,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 2050,
+        "wordCount": 1967,
         "has1500Words": true
       },
-      "bucket": "A",
-      "issues": [
-        "keyword ausente em excerpt"
-      ]
+      "bucket": "OK",
+      "issues": []
     },
     {
       "slug": "crimson-desert-vendas-review-completo-2026",
@@ -5231,10 +5280,10 @@
         "metaDescription": true,
         "metaKeywords": true,
         "hasAuthorBio": true,
-        "articleSourcesCount": 5,
+        "articleSourcesCount": 10,
         "hasArticleSources": true,
         "hasEditorial": true,
-        "wordCount": 4255,
+        "wordCount": 4681,
         "has1500Words": true
       },
       "bucket": "OK",
