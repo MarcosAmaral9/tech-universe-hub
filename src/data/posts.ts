@@ -2,6 +2,7 @@ import { BlogPost, Category } from "@/types/blog";
 
 import melhoresIasImagensVideosImg from "@/assets/melhores-ias-imagens-videos-2026.webp";
 import fallEmperorLarcyImg from "@/assets/i-will-fall-with-the-emperor-larcy.webp";
+import fallEmperorLarcyFogoImg from "@/assets/i-will-fall-with-the-emperor-larcy-fogo.webp";
 import cotacoesCriptoImg from "@/assets/cotacoes-criptomoedas-historia-fundadores.webp";
 import historiaIaImg from "@/assets/historia-inteligencia-artificial-modelos.webp";
 import glossarioIaImg from "@/assets/glossario-ia-termos-profissoes-2026.webp";
@@ -411,6 +412,17 @@ export const blogPosts: BlogPost[] = [
     category: "otaku",
     subtopic: "manhwa",
     image: fallEmperorLarcyImg,
+    imageAlt: "Princesa de cabelos negros em vestido imperial vermelho e preto em um salão do trono gótico iluminado pela lua",
+    gallery: [
+      {
+        src: fallEmperorLarcyImg,
+        alt: "Princesa de cabelos negros em vestido imperial vermelho e preto em um salão do trono gótico iluminado pela lua",
+      },
+      {
+        src: fallEmperorLarcyFogoImg,
+        alt: "Princesa loira de frente usando poder de fogo na mão direita em um salão imperial gótico",
+      },
+    ],
     author: "VICIO<CODE>",
     date: "2026-09-10",
     readTime: "14 min",

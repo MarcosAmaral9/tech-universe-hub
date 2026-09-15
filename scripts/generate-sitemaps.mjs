@@ -11,6 +11,16 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT     = path.resolve(__dirname, "..");
 const BASE_URL = "https://viciocode.com";
 
+const EXTRA_POST_IMAGES = {
+  "i-will-fall-with-the-emperor-larcy-guia-2026": [
+    {
+      url: `${BASE_URL}/assets/i-will-fall-with-the-emperor-larcy-fogo.webp`,
+      title: "Larcy loira usando poder de fogo",
+      caption: "Larcy de frente usando poder de fogo na mão direita em um salão imperial gótico",
+    },
+  ],
+};
+
 const today = new Date().toISOString().slice(0, 10);
 
 // ── Páginas estáticas com prioridade/changefreq diferenciadas ───────────────
@@ -131,13 +141,19 @@ const imageUrls = posts.map((post) => {
   const truncTitle   = post.title.slice(0, 80);
   const truncCaption = `Artigo VicioCode: ${post.title}`.slice(0, 100);
   const imgUrl = `${BASE_URL}/assets/${post.slug}.webp`;
+  const extraImages = (EXTRA_POST_IMAGES[post.slug] ?? []).map((image) => `
+    <image:image>
+      <image:loc>${image.url}</image:loc>
+      <image:title>${xmlEscape(image.title)}</image:title>
+      <image:caption>${xmlEscape(image.caption)}</image:caption>
+    </image:image>`).join("");
   return `  <url>
     <loc>${BASE_URL}/post/${post.slug}</loc>
     <image:image>
       <image:loc>${imgUrl}</image:loc>
       <image:title>${xmlEscape(truncTitle)}</image:title>
       <image:caption>${xmlEscape(truncCaption)}</image:caption>
-    </image:image>
+    </image:image>${extraImages}
   </url>`;
 }).join("\n");
 

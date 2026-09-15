@@ -4,6 +4,7 @@ import { Clock, Download, Flame } from "lucide-react";
 import { BlogPost } from "@/types/blog";
 import CategoryBadge from "./CategoryBadge";
 import SkeletonImage from "./SkeletonImage";
+import PostMediaCarousel from "./PostMediaCarousel";
 import { useOfflinePosts } from "@/hooks/useOfflinePosts";
 import { useTopPosts } from "@/hooks/useTopPosts";
 import { highlight } from "@/lib/highlight";
@@ -26,13 +27,10 @@ const PostCard = forwardRef<HTMLElement, PostCardProps>(({ post, highlightQuery 
       <Link to={`/post/${post.slug}`} className="block">
         {/* Image */}
         <div className="relative aspect-video overflow-hidden">
-          <SkeletonImage
-            src={post.image}
-            alt={post.title}
-            width={1920}
-            height={1080}
+          <PostMediaCarousel
+            images={post.gallery ?? [{ src: post.image, alt: post.imageAlt ?? post.title }]}
             wrapperClassName="w-full h-full"
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            className="object-cover group-hover:scale-105"
           />
           <div className="absolute top-3 left-3">
             <CategoryBadge category={post.category} size="sm" />
