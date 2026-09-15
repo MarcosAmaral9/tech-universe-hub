@@ -155,6 +155,63 @@
 }
 
 @layer components {
+  /* Comparativo editorial de ferramentas de IA */
+  .ia-tools-article > h2 {
+    @apply mt-14 mb-7 rounded-lg border border-ia/30 bg-ia/10 px-5 py-4 text-foreground;
+    box-shadow: inset 4px 0 0 hsl(var(--ia-color));
+  }
+
+  .ia-tools-article .ia-tool-panel {
+    @apply relative my-10 rounded-lg border border-border bg-card px-5 py-6 shadow-sm;
+    background-image: linear-gradient(135deg, hsl(var(--ia-color) / 0.1), hsl(var(--card)) 48%);
+  }
+
+  .ia-tools-article .ia-tool-panel::before {
+    content: "";
+    @apply absolute inset-y-0 left-0 w-1 rounded-l-lg bg-ia;
+  }
+
+  .ia-tools-article .ia-tool-panel h3 {
+    @apply mt-0 mb-5 text-ia;
+  }
+
+  .ia-tools-article .ia-tool-panel p {
+    @apply my-0 text-foreground/90;
+  }
+
+  .ia-tools-article .ia-tool-panel p + p {
+    @apply mt-5 border-t border-ia/20 pt-5;
+  }
+
+  .ia-tools-article > ol {
+    @apply rounded-lg border border-ia/25 bg-ia/5 px-6 py-5;
+  }
+
+  .ia-tools-article > ol li::marker {
+    color: hsl(var(--ia-color));
+    font-weight: 700;
+  }
+
+  .ia-tools-article .ia-faq-grid {
+    @apply grid gap-4 md:grid-cols-2;
+  }
+
+  .ia-tools-article .ia-faq-grid > div {
+    @apply rounded-lg border border-border bg-muted/50 p-5;
+  }
+
+  .ia-tools-article .ia-faq-grid > div:last-child {
+    @apply md:col-span-2;
+  }
+
+  .ia-tools-article .ia-faq-grid h3 {
+    @apply mt-0 mb-3 text-base text-ia;
+  }
+
+  .ia-tools-article .ia-faq-grid p {
+    @apply m-0 text-sm leading-relaxed text-muted-foreground;
+  }
+
   .category-ia {
     @apply bg-[hsl(var(--ia-color))] text-white;
   }

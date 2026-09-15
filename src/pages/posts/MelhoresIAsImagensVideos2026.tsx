@@ -68,7 +68,7 @@ const MelhoresIAsImagensVideos2026 = () => {
         <img fetchPriority="high" loading="eager" decoding="async" src={heroImg} width={1536} height={864} alt="Estúdio criativo com telas exibindo imagem e vídeo produzidos por inteligência artificial" className="w-full h-full object-cover" />
       </div>
 
-      <div className="prose prose-lg dark:prose-invert max-w-none">
+      <div className="prose prose-lg dark:prose-invert max-w-none ia-tools-article">
         <p>
           Escolher um gerador de imagem ou vídeo ficou mais difícil porque quase todos prometem o mesmo: escrever uma frase e receber uma peça pronta. Na prática, os resultados variam muito. Uma ferramenta pode criar uma fotografia impressionante e falhar ao escrever três palavras em uma embalagem; outra preserva o rosto de um personagem em várias cenas, mas oferece pouco controle de câmera. Em vídeo, ainda entram na conta duração, áudio sincronizado, resolução, fila de processamento e quantidade de créditos consumida por tentativa.
         </p>
@@ -97,6 +97,7 @@ const MelhoresIAsImagensVideos2026 = () => {
           </table>
         </div>
 
+        <section className="ia-tool-panel">
         <h3>1. ChatGPT Images: a opção mais simples para a maioria</h3>
         <p>
           O maior diferencial do gerador de imagens do ChatGPT não é um estilo específico, e sim a conversa. Você pode pedir uma cena, apontar o que ficou errado e continuar: “mantenha a composição, troque o produto por uma garrafa verde e corrija o título”. Essa sequência é mais natural do que reescrever o prompt inteiro. O sistema também é forte em seguir instruções, editar arquivos enviados e combinar conhecimento do contexto com a criação visual.
@@ -104,7 +105,9 @@ const MelhoresIAsImagensVideos2026 = () => {
         <p>
           Existe geração limitada no plano gratuito do ChatGPT, mas a OpenAI não promete uma quantidade fixa universal: o limite depende da capacidade e pode mudar. Quem já paga uma assinatura ganha mais velocidade e volume. É a recomendação mais segura para estudantes, pequenos negócios e usuários que querem criar posts, conceitos e ilustrações sem aprender uma interface especializada. Para lotes grandes ou automação, a família GPT Image também é oferecida por API, cobrada conforme modelo, tamanho e qualidade.
         </p>
+        </section>
 
+        <section className="ia-tool-panel">
         <h3>2. Gemini e Nano Banana: edição contextual muito competente</h3>
         <p>
           A geração de imagem do Gemini se destaca quando a tarefa mistura criação e edição. É possível enviar uma foto, preservar elementos importantes e solicitar mudanças em linguagem comum. A integração com o ecossistema Google também reduz a barreira para quem já usa Gemini ou Google AI Studio. O acesso gratuito existe, sujeito a limites dinâmicos; os níveis pagos Google AI ampliam as cotas e liberam recursos mais avançados.
@@ -112,17 +115,21 @@ const MelhoresIAsImagensVideos2026 = () => {
         <p>
           É uma excelente escolha para variações de produto, cenários, peças educativas e experiências em que manter o contexto entre pedidos importa mais do que perseguir uma assinatura visual muito marcada. Como em todo editor generativo, detalhes pequenos, marcas e pessoas reais exigem conferência. Uma imagem convincente ainda pode inventar rótulos, reflexos ou objetos no fundo.
         </p>
+        </section>
 
+        <section className="ia-tool-panel">
         <h3>3. Midjourney: a referência em direção de arte</h3>
         <p>
           Midjourney continua sendo a escolha de muitos ilustradores, diretores de arte e criadores que valorizam composição, iluminação e impacto visual. Seus resultados costumam parecer “acabados” cedo, especialmente em fantasia, editorial, moda conceitual e fotografia estilizada. A plataforma oferece diferentes níveis de assinatura e gerações ilimitadas no modo Relax a partir de determinados planos.
         </p>
+        </section>
         <p>
           O ponto negativo é objetivo: não há plano gratuito permanente. O Basic começa em US$ 10 mensais na tabela consultada, enquanto os níveis superiores acrescentam mais tempo rápido, privacidade e capacidade. Também é importante entender que uma imagem bonita não significa obediência perfeita. Para diagramas, texto extenso ou alteração cirúrgica de uma fotografia, ferramentas conversacionais podem ser mais práticas.
         </p>
 
         <AdInArticle />
 
+        <section className="ia-tool-panel">
         <h3>4. Adobe Firefly: a escolha mais defensável para empresas</h3>
         <p>
           O Firefly integra geração e edição a Photoshop, Illustrator, Express e ao aplicativo web da Adobe. A empresa afirma treinar seus modelos próprios com Adobe Stock licenciado e conteúdo de domínio público, além de usar Content Credentials para registrar a procedência. Isso não elimina todo risco jurídico, mas cria uma proposta mais adequada para agências e departamentos de marketing que precisam documentar origem, licença e processo.
@@ -130,7 +137,9 @@ const MelhoresIAsImagensVideos2026 = () => {
         <p>
           Há acesso gratuito com créditos generativos limitados e planos pagos que reúnem imagem, vídeo e áudio. O consumo varia de acordo com o recurso: vídeo normalmente custa muito mais créditos do que uma imagem. O Firefly nem sempre vence em estética pura, mas compensa pela integração com ferramentas profissionais e pela política comercial mais clara. A própria Adobe descreve o produto como comercialmente seguro; isso deve ser entendido como posição da empresa e lido junto aos termos aplicáveis ao plano.
         </p>
+        </section>
 
+        <section className="ia-tool-panel">
         <h3>5. Ideogram: o melhor quando a imagem precisa escrever</h3>
         <p>
           Cartazes, capas, thumbnails e embalagens dependem de tipografia legível. É nesse problema que o Ideogram construiu sua reputação. A ferramenta costuma respeitar palavras, hierarquia visual e composição de pôster melhor do que geradores generalistas. Também oferece consistência de personagem e geração privada nos planos adequados.
@@ -138,7 +147,9 @@ const MelhoresIAsImagensVideos2026 = () => {
         <p>
           Existe uso gratuito limitado. Na consulta de setembro de 2026, o plano Plus aparecia por US$ 20 mensais, ou US$ 15 por mês no pagamento anual. Mesmo com uma ferramenta especializada, todo texto deve ser revisado: acentos, números e nomes próprios ainda podem sair errados. Para uma campanha, o melhor fluxo é gerar a base visual e finalizar a tipografia em um editor, mantendo o texto como elemento editável.
         </p>
+        </section>
 
+        <section className="ia-tool-panel">
         <h3>6. Leonardo.Ai: muitos controles e uma boa porta de entrada gratuita</h3>
         <p>
           Leonardo.Ai combina modelos, presets, referências, canvas de edição e ferramentas de movimento. Por isso, funciona bem para concept art, personagens, itens de jogos e variações de identidade visual. O plano gratuito oferece 150 tokens rápidos por dia e mantém as criações públicas; o Essential custava US$ 12 mensais na consulta. A aquisição da empresa pela Canva aproximou ainda mais a ferramenta de fluxos de design.
@@ -146,11 +157,14 @@ const MelhoresIAsImagensVideos2026 = () => {
         <p>
           É uma opção especialmente útil para aprender como estilos, sementes, força de referência e proporções alteram o resultado. A quantidade de controles, porém, pode confundir quem só quer uma imagem rápida. Antes de usar comercialmente, confira a licença do plano e do modelo selecionado, pois privacidade, propriedade e acesso a recursos não são idênticos em todos os níveis.
         </p>
+        </section>
 
+        <section className="ia-tool-panel">
         <h3>7. Stable Diffusion e Stable Image: liberdade para quem aceita configurar</h3>
         <p>
           A família da Stability AI é a opção para quem deseja rodar modelos localmente, montar fluxos no ComfyUI, treinar adaptações ou integrar uma API. O custo local pode ser zero por geração, mas não é realmente “gratuito”: há gasto com placa de vídeo, energia, armazenamento, instalação e tempo de manutenção. Na plataforma oficial, novas contas recebiam 25 créditos de API, e créditos adicionais custavam US$ 0,01 cada; o consumo depende da operação.
         </p>
+        </section>
         <p>
           É a escolha mais flexível deste guia, mas também a menos amigável. Licenças variam entre modelos e versões, então “código aberto” ou “pesos abertos” não significa automaticamente uso comercial irrestrito. Empresas devem registrar exatamente qual modelo, extensão e licença foram usados em cada projeto.
         </p>
@@ -165,6 +179,7 @@ const MelhoresIAsImagensVideos2026 = () => {
           </table>
         </div>
 
+        <section className="ia-tool-panel">
         <h3>1. Google Veo 3.1: melhor equilíbrio entre imagem, movimento e áudio</h3>
         <p>
           O Veo é a indicação principal para cenas realistas com som gerado junto do vídeo. A família 3.1 trabalha com texto ou imagem, produz diálogos, efeitos e ambiente sincronizados e oferece formatos horizontal e vertical. O Google distribui o modelo por produtos como Gemini e Flow, além da API para desenvolvedores. Em 2026, também apresentou o Veo 3.1 Lite como alternativa mais econômica para alto volume.
@@ -172,7 +187,9 @@ const MelhoresIAsImagensVideos2026 = () => {
         <p>
           A qualidade não elimina o processo de tentativa. Continuidade entre planos, mãos manipulando objetos e falas longas ainda podem exigir várias gerações. O acesso e a cota dependem do país, produto e assinatura Google AI. Há experiências gratuitas ou incluídas em produtos Google, mas o uso frequente dos modelos mais capazes é pago. Para publicidade, calcule o custo por cena aprovada, não por primeira geração: descartes fazem parte do orçamento.
         </p>
+        </section>
 
+        <section className="ia-tool-panel">
         <h3>2. Runway: o conjunto mais maduro para produção</h3>
         <p>
           Runway vai além de escrever um prompt. Reúne geração, imagem para vídeo, edição, transformação de filmagem existente e recursos de produção em uma única interface. Isso faz diferença para quem já tem material gravado e precisa modificar cenário, movimento ou estilo, em vez de criar tudo do zero. O plano Standard custa US$ 15 no mensal ou o equivalente a US$ 12 por mês no anual e inclui 625 créditos; segundo a tabela oficial, isso corresponde a cerca de 52 segundos no Gen-4.5 ou 104 segundos no Gen-4 Turbo.
@@ -180,7 +197,9 @@ const MelhoresIAsImagensVideos2026 = () => {
         <p>
           Créditos são o principal cuidado. Um vídeo final de trinta segundos pode consumir muitos minutos de geração bruta durante testes. Runway é mais indicado para profissionais que usam storyboard, imagens de referência e edição para reduzir desperdício. Para uma pessoa que quer apenas experimentar, o teste gratuito termina rápido; para um estúdio, previsibilidade, API e ferramentas de edição justificam o custo.
         </p>
+        </section>
 
+        <section className="ia-tool-panel">
         <h3>3. Kling AI: movimento forte com entrada gratuita</h3>
         <p>
           Desenvolvido pela Kuaishou, o Kling ganhou espaço pela qualidade de movimento, controles de câmera e imagem para vídeo. As versões recentes incluem recursos de múltiplos planos, áudio e saída de alta resolução. A plataforma anuncia créditos gratuitos diários, o que permite testar antes de pagar. Valores de assinatura mudam por região e promoção, e a página pública nem sempre expõe uma tabela estável fora da conta; por isso, não registramos um preço que poderia estar incorreto no dia da leitura.
@@ -188,7 +207,9 @@ const MelhoresIAsImagensVideos2026 = () => {
         <p>
           Kling é uma escolha forte para cenas de ação, moda e transformação de fotografias em clipes. Ainda assim, o usuário deve revisar regras de uso comercial, marca d’água e privacidade do plano. Fotos de pessoas reais exigem consentimento. Um movimento convincente não concede direito de usar o rosto, a voz, a obra ou a marca representada.
         </p>
+        </section>
 
+        <section className="ia-tool-panel">
         <h3>4. Seedance no Dreamina e CapCut: caminho curto até as redes sociais</h3>
         <p>
           O Seedance, da ByteDance, é distribuído em ferramentas ligadas ao Dreamina e ao CapCut. Sua vantagem é aproximar geração e edição: o criador pode produzir um clipe, cortar, legendar, inserir música e adaptar para formato vertical sem trocar de ambiente. As versões atuais enfatizam referências multimodais, controle de movimento e áudio sincronizado.
@@ -196,7 +217,9 @@ const MelhoresIAsImagensVideos2026 = () => {
         <p>
           A oferta gratuita e os créditos variam conforme região, campanha e aplicativo. Portanto, “gratuito” significa que existe uma cota de entrada, não que uma produção longa será feita sem custo. Para Reels, Shorts e TikTok, a integração torna o Seedance uma das opções mais práticas. Para cinema, publicidade regulada ou equipes que precisam de auditoria rigorosa, Runway e Firefly oferecem fluxos mais claros.
         </p>
+        </section>
 
+        <section className="ia-tool-panel">
         <h3>5. Adobe Firefly Video: integração e procedência</h3>
         <p>
           O Firefly Video atende quem já finaliza peças em Premiere, Photoshop ou no ecossistema Adobe. Além do modelo próprio, a plataforma reúne modelos parceiros em uma interface, permitindo comparar resultados sem reconstruir todo o fluxo. A Adobe promove seu modelo como “IP-friendly” e comercialmente seguro, porque declara usar material licenciado e de domínio público no treinamento.
@@ -204,11 +227,14 @@ const MelhoresIAsImagensVideos2026 = () => {
         <p>
           A camada gratuita serve para conhecer a ferramenta, mas vídeo consome créditos premium rapidamente. O preço efetivo depende do plano e do modelo selecionado. Seu maior valor não é necessariamente vencer cada comparação de realismo; é ligar geração, edição, credenciais de conteúdo e ativos de marca. Para uma empresa que precisa explicar de onde veio uma peça, isso pode valer mais do que alguns pontos de qualidade visual.
         </p>
+        </section>
 
+        <section className="ia-tool-panel">
         <h3>6. Luma Dream Machine e Pika: duas opções para experimentar</h3>
         <p>
           Luma Dream Machine é uma central com modelos próprios e de terceiros, boa para ideação visual, referências e colaboração. O Plus custava US$ 30 por mês, ou US$ 25 no anual, com 10 mil créditos e uso comercial incluído. É um salto relevante sobre uma experiência casual, então vale testar a camada disponível antes de assinar. Seu sistema de créditos ajuda a estimar projetos, mas o custo real continua dependendo de quantas tentativas serão descartadas.
         </p>
+        </section>
         <p>
           Pika ocupa um espaço mais lúdico: efeitos, trocas, adições e transformações curtas feitas para compartilhamento. O plano Basic oferecia 80 créditos mensais na consulta, mas cada recurso consome uma quantidade diferente. É menos adequado para uma campanha longa com personagens consistentes, porém muito eficiente quando a ideia é criar um efeito visual rápido sem aprender uma ferramenta de pós-produção completa.
         </p>
@@ -253,16 +279,13 @@ const MelhoresIAsImagensVideos2026 = () => {
         </p>
 
         <h2 className="flex items-center gap-3"><HelpCircle className="h-7 w-7 text-ia" />Perguntas frequentes</h2>
-        <h3>Qual é a melhor IA gratuita para criar imagens?</h3>
-        <p>ChatGPT e Gemini são as opções mais fáceis para começar e editar por conversa. Leonardo.Ai oferece uma cota diária clara e mais controles. O melhor depende de a prioridade ser simplicidade, edição ou direção de arte.</p>
-        <h3>Qual é a melhor IA gratuita para criar vídeos?</h3>
-        <p>Kling AI e Pika oferecem cotas gratuitas úteis para testes; Dreamina e produtos Google também podem liberar gerações conforme região e conta. Vídeo custa muito processamento, então os limites gratuitos mudam com frequência.</p>
-        <h3>Midjourney ainda vale a pena?</h3>
-        <p>Sim, para quem busca estética, composição e direção de arte e aceita pagar desde o início. Não é a melhor opção para texto longo na imagem nem para quem precisa apenas de edições rápidas em fotos existentes.</p>
-        <h3>Posso vender imagens e vídeos criados por IA?</h3>
-        <p>Em muitos planos pagos, sim, mas é necessário verificar os termos da ferramenta, os direitos das referências usadas e as regras do local onde o conteúdo será vendido. A assinatura não autoriza usar rostos, marcas ou personagens de terceiros.</p>
-        <h3>Sora ainda está disponível?</h3>
-        <p>O produto Sora para consumidores foi encerrado em abril de 2026. A API Sora 2 tinha desligamento anunciado para 24 de setembro de 2026; portanto, não é uma base recomendável para novos projetos.</p>
+        <div className="not-prose ia-faq-grid">
+          <div><h3>Qual é a melhor IA gratuita para criar imagens?</h3><p>ChatGPT e Gemini são as opções mais fáceis para começar e editar por conversa. Leonardo.Ai oferece uma cota diária clara e mais controles. O melhor depende de a prioridade ser simplicidade, edição ou direção de arte.</p></div>
+          <div><h3>Qual é a melhor IA gratuita para criar vídeos?</h3><p>Kling AI e Pika oferecem cotas gratuitas úteis para testes; Dreamina e produtos Google também podem liberar gerações conforme região e conta. Vídeo custa muito processamento, então os limites gratuitos mudam com frequência.</p></div>
+          <div><h3>Midjourney ainda vale a pena?</h3><p>Sim, para quem busca estética, composição e direção de arte e aceita pagar desde o início. Não é a melhor opção para texto longo na imagem nem para quem precisa apenas de edições rápidas em fotos existentes.</p></div>
+          <div><h3>Posso vender imagens e vídeos criados por IA?</h3><p>Em muitos planos pagos, sim, mas é necessário verificar os termos da ferramenta, os direitos das referências usadas e as regras do local onde o conteúdo será vendido. A assinatura não autoriza usar rostos, marcas ou personagens de terceiros.</p></div>
+          <div><h3>Sora ainda está disponível?</h3><p>O produto Sora para consumidores foi encerrado em abril de 2026. A API Sora 2 tinha desligamento anunciado para 24 de setembro de 2026; portanto, não é uma base recomendável para novos projetos.</p></div>
+        </div>
       </div>
 
       <EditorialTake category="ia" title="Análise do Marcos: a melhor IA é a que cabe no fluxo, não no ranking">
