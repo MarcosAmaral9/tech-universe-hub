@@ -16,6 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useOfflinePosts } from "@/hooks/useOfflinePosts";
 import { blogPosts } from "@/data/posts";
+import PostMediaCarousel from "./PostMediaCarousel";
 
 const useOnline = () => {
   const [online, setOnline] = useState(
@@ -90,11 +91,10 @@ const OfflinePostsBadge = () => {
                     onClick={() => setOpen(false)}
                     className="flex items-center gap-3 px-3 py-2.5 hover:bg-secondary transition-colors"
                   >
-                    <img
-                      src={post.image}
-                      alt=""
-                      loading="lazy"
-                      className="w-12 h-12 rounded object-cover shrink-0"
+                    <PostMediaCarousel
+                      images={post.gallery ?? [{ src: post.image, alt: post.imageAlt ?? post.title }]}
+                      wrapperClassName="w-12 h-12 rounded shrink-0"
+                      className="object-cover"
                     />
                     <div className="flex-1 min-w-0">
                       <div className="text-xs font-medium line-clamp-2 leading-snug">

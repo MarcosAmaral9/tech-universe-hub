@@ -8,12 +8,14 @@ import ArticleSources from "@/components/ArticleSources";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
+import PostMediaCarousel from "@/components/PostMediaCarousel";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import {
   Clock, User, Calendar, BookOpen, ListChecks, HelpCircle,
   Sparkles, Layers, Globe, Castle, Heart, Swords, Hourglass, Trophy,
 } from "lucide-react";
 import larcyImg from "@/assets/i-will-fall-with-the-emperor-larcy.webp";
+import larcyFogoImg from "@/assets/i-will-fall-with-the-emperor-larcy-fogo.webp";
 
 const SLUG = "i-will-fall-with-the-emperor-larcy-guia-2026";
 const TITLE = "I Will Fall With the Emperor: Guia Completo do Manhwa de Larcy";
@@ -111,15 +113,22 @@ const FallWithEmperorLarcyGuia2026 = () => {
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img
-          fetchPriority="high"
-          loading="eager"
-          decoding="async"
-          src={larcyImg}
-          width={1280}
-          height={720}
-          alt="Princesa de cabelos negros em vestido imperial vermelho e preto dentro de um salão do trono gótico iluminado pela lua, referência ao manhwa I Will Fall With the Emperor"
-          className="w-full h-full object-cover"
+        <PostMediaCarousel
+          priority
+          pausable
+          showIndicators
+          wrapperClassName="absolute inset-0 w-full h-full"
+          className="object-cover"
+          images={[
+            {
+              src: larcyImg,
+              alt: "Princesa de cabelos negros em vestido imperial vermelho e preto dentro de um salão do trono gótico iluminado pela lua",
+            },
+            {
+              src: larcyFogoImg,
+              alt: "Princesa loira de frente usando poder de fogo na mão direita dentro de um salão imperial gótico",
+            },
+          ]}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
       </div>

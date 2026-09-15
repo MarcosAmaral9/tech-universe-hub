@@ -7,6 +7,7 @@ import { useAuthContext } from "@/contexts/AuthContext";
 import { AdInArticle } from "./AdSense";
 import MostReadWidget from "./MostReadWidget";
 import ReadNext from "./ReadNext";
+import PostMediaCarousel from "./PostMediaCarousel";
 
 interface RelatedPostsProps {
   currentSlug: string;
@@ -74,12 +75,10 @@ const RelatedPosts = ({ currentSlug }: RelatedPostsProps) => {
               className="group block p-4 bg-card rounded-xl border border-border hover:border-primary/50 transition-all duration-300"
             >
               <div className="relative h-32 mb-3 rounded-lg overflow-hidden">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                <PostMediaCarousel
+                  images={post.gallery ?? [{ src: post.image, alt: post.imageAlt ?? post.title }]}
+                  wrapperClassName="w-full h-full"
+                  className="object-cover group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
                 {isNew && (

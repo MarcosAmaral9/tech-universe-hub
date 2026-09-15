@@ -12,6 +12,8 @@ export interface BlogPost {
   secondaryCategory?: Category;
   subtopic?: Subtopic;
   image: string;
+  imageAlt?: string;
+  gallery?: Array<{ src: string; alt: string }>;
   author: string;
   date: string;
   updatedAt?: string; // data da última atualização significativa
