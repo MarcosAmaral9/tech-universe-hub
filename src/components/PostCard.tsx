@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Clock, Download, Flame } from "lucide-react";
 import { BlogPost } from "@/types/blog";
 import CategoryBadge from "./CategoryBadge";
-import SkeletonImage from "./SkeletonImage";
 import PostMediaCarousel from "./PostMediaCarousel";
 import { useOfflinePosts } from "@/hooks/useOfflinePosts";
 import { useTopPosts } from "@/hooks/useTopPosts";

@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Tag as TagIcon } from "lucide-react";
 import { blogPosts, getPostBySlug } from "@/data/posts";
 import { subtopicLabel } from "@/lib/subtopics";
-import SkeletonImage from "./SkeletonImage";
 import PostMediaCarousel from "./PostMediaCarousel";
 
 interface ReadNextProps {

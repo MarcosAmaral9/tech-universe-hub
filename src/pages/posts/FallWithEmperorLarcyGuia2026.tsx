@@ -130,7 +130,7 @@ const FallWithEmperorLarcyGuia2026 = () => {
             },
           ]}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
       </div>
 
       <div className="prose prose-invert max-w-none">

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Clock } from "lucide-react";
 import { getLatestPostsByCategory } from "@/data/posts";
 import CategoryBadge from "./CategoryBadge";
-import SkeletonImage from "./SkeletonImage";
 import PostMediaCarousel from "./PostMediaCarousel";
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";

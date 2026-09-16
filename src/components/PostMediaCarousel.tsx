@@ -48,6 +48,10 @@ const PostMediaCarousel = ({
   }, []);
 
   useEffect(() => {
+    if (reduceMotion) setActiveIndex(0);
+  }, [reduceMotion]);
+
+  useEffect(() => {
     if (validImages.length < 2 || paused || !pageVisible || reduceMotion) return;
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % validImages.length);
