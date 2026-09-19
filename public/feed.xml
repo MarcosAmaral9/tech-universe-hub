@@ -5,8 +5,17 @@
     <link>https://viciocode.com</link>
     <description>IA, investimentos, cultura geek e otaku — novos artigos do VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 13 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>n8n: Guia Completo e Atendente de WhatsApp para Agência de Viagens</title>
+      <link>https://viciocode.com/post/n8n-guia-atendente-whatsapp-agencia-viagens-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/n8n-guia-atendente-whatsapp-agencia-viagens-2026</guid>
+      <pubDate>Wed, 16 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Entenda como o n8n funciona, quanto custa e como criar seu primeiro projeto: um atendente seguro de WhatsApp para agência de viagens, com IA, LGPD e transferência humana.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/n8n-guia-atendente-whatsapp-agencia-viagens-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>Melhores IAs para Criar Imagens e Vídeos em 2026: Grátis e Pagas</title>
       <link>https://viciocode.com/post/melhores-ias-criar-imagens-videos-2026</link>
@@ -447,15 +456,6 @@
       <description>Fenômeno de 2024 da Arrowhead: entenda a sátira de Starship Troopers, o sistema de guerra galáctica com Joel no controle, Estratagemas, dicas para novatos e como a comunidade venceu a Sony na crise do PSN.</description>
       <category>Geek &amp; Games</category>
       <enclosure url="https://viciocode.com/assets/helldivers-2-guia-completo-2024.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Ghost of Tsushima — Guia Completo: A Invasão Mongol de 1274, a Sucker Punch, os Quatro Estilos de Combate e Tudo Sobre o Fantasma de Tsushima</title>
-      <link>https://viciocode.com/post/ghost-of-tsushima-guia-completo</link>
-      <guid isPermaLink="true">https://viciocode.com/post/ghost-of-tsushima-guia-completo</guid>
-      <pubDate>Sat, 11 Jul 2026 12:00:00 GMT</pubDate>
-      <description>Guia completo de Ghost of Tsushima: a invasão mongol de 1274 na ilha de Tsushima, a história da Sucker Punch, os quatro estilos de combate de Jin Sakai, o Modo Kurosawa, a Director&apos;s Cut com Ilha Iki e por que virou referência de open world samurai.</description>
-      <category>Geek &amp; Games</category>
-      <enclosure url="https://viciocode.com/assets/ghost-of-tsushima-guia-completo.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>

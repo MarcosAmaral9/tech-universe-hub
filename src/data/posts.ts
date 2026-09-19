@@ -1,6 +1,7 @@
 import { BlogPost, Category } from "@/types/blog";
 
 import melhoresIasImagensVideosImg from "@/assets/melhores-ias-imagens-videos-2026.webp";
+import n8nWhatsAppAgenciaImg from "@/assets/n8n-guia-atendente-whatsapp-agencia-viagens-2026.webp";
 import fallEmperorLarcyImg from "@/assets/i-will-fall-with-the-emperor-larcy.webp";
 import fallEmperorLarcyFogoImg from "@/assets/i-will-fall-with-the-emperor-larcy-fogo.webp";
 import cotacoesCriptoImg from "@/assets/cotacoes-criptomoedas-historia-fundadores.webp";
@@ -245,6 +246,29 @@ import fatedVillainImg from "@/assets/i-am-the-fated-villain-gu-changge.webp";
 import cityLordImg from "@/assets/starting-today-city-lord-liu-feng.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 16 Set 2026 — IA (n8n e atendimento pelo WhatsApp) ──────────────
+  {
+    id: "258",
+    slug: "n8n-guia-atendente-whatsapp-agencia-viagens-2026",
+    title: "n8n: Guia Completo e Atendente de WhatsApp para Agência de Viagens",
+    excerpt:
+      "Entenda como o n8n funciona, quanto custa e como criar seu primeiro projeto: um atendente seguro de WhatsApp para agência de viagens, com IA, LGPD e transferência humana.",
+    content: "",
+    category: "ia",
+    subtopic: "agentes",
+    image: n8nWhatsAppAgenciaImg,
+    author: "VICIO<CODE>",
+    date: "2026-09-16",
+    readTime: "21 min",
+    faq: [
+      { q: "O n8n é gratuito?", a: "A Community Edition pode ser usada sem licença paga em servidor próprio, mas infraestrutura e manutenção têm custo. O n8n Cloud é pago e reduz o trabalho operacional." },
+      { q: "Preciso saber programar para usar o n8n?", a: "Não para fluxos básicos. Conhecer APIs, JSON, autenticação e lógica ajuda quando a automação cresce ou precisa de integrações personalizadas." },
+      { q: "Posso usar meu WhatsApp pessoal no n8n?", a: "O projeto usa a WhatsApp Business Platform oficial. Comece com o número de teste da Meta e prepare um número empresarial para produção; evite métodos não oficiais." },
+      { q: "A IA pode fechar a viagem sozinha?", a: "Neste projeto, não. Ela coleta contexto e responde com uma base aprovada. Reserva, preço final, pagamento, documentos e exceções são transferidos para uma pessoa." },
+      { q: "Quanto custa um atendente de WhatsApp com n8n?", a: "O custo soma o plano ou servidor do n8n, uso do modelo de IA, mensagens template da Meta, banco, monitoramento e manutenção. O total depende do volume." },
+      { q: "O n8n é open source?", a: "O n8n usa o termo fair-code e a Sustainable Use License. O código é acessível e o uso interno é permitido, mas há restrições para oferecer a plataforma como serviço concorrente." },
+    ],
+  },
   // ── 13 Set 2026 — IA (Geradores de imagem e vídeo) ───────────────────
   {
     id: "257",
