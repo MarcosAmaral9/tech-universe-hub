@@ -1,7 +1,7 @@
 import { BlogPost, Category } from "@/types/blog";
 
 import melhoresIasImagensVideosImg from "@/assets/melhores-ias-imagens-videos-2026.webp";
-import n8nWhatsAppAgenciaImg from "@/assets/n8n-atendente-whatsapp-agencia-viagens-2026.webp";
+import n8nWhatsAppAgenciaImg from "@/assets/n8n-guia-atendente-whatsapp-agencia-viagens-2026.webp";
 import fallEmperorLarcyImg from "@/assets/i-will-fall-with-the-emperor-larcy.webp";
 import fallEmperorLarcyFogoImg from "@/assets/i-will-fall-with-the-emperor-larcy-fogo.webp";
 import cotacoesCriptoImg from "@/assets/cotacoes-criptomoedas-historia-fundadores.webp";

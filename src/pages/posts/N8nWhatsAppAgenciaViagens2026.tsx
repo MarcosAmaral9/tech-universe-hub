@@ -10,7 +10,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import { AdInArticle, AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import { Bot, Calendar, CheckCircle2, Clock, Cloud, Coins, Database, HelpCircle, MessageCircle, Server, ShieldAlert, User, Workflow } from "lucide-react";
-import heroImg from "@/assets/n8n-atendente-whatsapp-agencia-viagens-2026.webp";
+import heroImg from "@/assets/n8n-guia-atendente-whatsapp-agencia-viagens-2026.webp";
 
 const SLUG = "n8n-guia-atendente-whatsapp-agencia-viagens-2026";
 const TITLE = "n8n: Guia Completo e Atendente de WhatsApp para Agência de Viagens";
