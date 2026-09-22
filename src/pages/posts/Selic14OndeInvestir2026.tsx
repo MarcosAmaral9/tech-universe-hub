@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
+import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
@@ -7,23 +8,25 @@ import ArticleSources from "@/components/ArticleSources";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
-import { Clock, User, Calendar, TrendingDown, PiggyBank, Landmark, ListChecks, HelpCircle, Calculator, ShieldCheck, AlertTriangle } from "lucide-react";
-import heroImg from "@/assets/selic-14-agosto-2026-onde-investir.webp";
-import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
+import { AdLeaderboard, AdInArticle, AdRectangle } from "@/components/AdSense";
+import { AlertTriangle, BarChart3, Calendar, Calculator, Clock, HelpCircle, Landmark, PiggyBank, ShieldCheck, TrendingDown, User } from "lucide-react";
+import heroImg from "@/assets/selic-1375-setembro-2026-onde-investir.webp";
 
 const SLUG = "selic-14-agosto-2026-onde-investir";
-const TITLE = "Selic a 14% em Agosto de 2026: O Que Muda na Renda Fixa e Onde Investir Agora";
+const TITLE = "Selic a 13,75%: Quanto Rendem Tesouro, CDB, LCI e Poupança em 2026";
 
-const CORTES = [
-  { reuniao: "Reunião de agosto (05/08/2026)", taxa: "14,00% a.a.", nota: "Corte de 0,25 p.p., decisão unânime" },
-  { reuniao: "Patamar anterior", taxa: "14,25% a.a.", nota: "Quarta redução consecutiva do ciclo" },
+const SIMULACAO = [
+  { produto: "Tesouro Selic", mil: "R$ 1.113,44", cinco: "R$ 5.567,20", dez: "R$ 11.134,40", premissa: "valor líquido estimado após IR de 17,5%" },
+  { produto: "CDB a 110% do CDI", mil: "R$ 1.123,87", cinco: "R$ 5.619,35", dez: "R$ 11.238,70", premissa: "valor líquido estimado após IR de 17,5%" },
+  { produto: "LCI a 85% do CDI", mil: "R$ 1.116,03", cinco: "R$ 5.580,15", dez: "R$ 11.160,30", premissa: "isenta de IR para pessoa física no cenário citado" },
+  { produto: "Poupança", mil: "R$ 1.061,68*", cinco: "R$ 5.308,40*", dez: "R$ 10.616,80*", premissa: "0,5% ao mês; *sem projetar a TR futura" },
 ];
 
-const CENARIOS = [
-  { titulo: "Reserva de emergência", onde: "Tesouro Selic e CDBs de liquidez diária de bancos sólidos", porque: "Acompanham a taxa básica e você resgata no mesmo dia. Queda da Selic reduz o rendimento, mas não muda a função da reserva." },
-  { titulo: "Objetivo de 2 a 5 anos", onde: "Títulos indexados à inflação (IPCA+) e CDBs prefixados de prazo médio", porque: "Em ciclo de queda de juros, travar taxa hoje protege o rendimento futuro caso a Selic continue caindo." },
-  { titulo: "Renda mensal", onde: "Títulos com pagamento de juros semestrais e fundos imobiliários", porque: "Juro em queda tende a favorecer ativos de renda variável ligados a imóveis, mas com volatilidade." },
-  { titulo: "Longo prazo (10+ anos)", onde: "Mistura de IPCA+ longo e ações/ETFs", porque: "Juro alto ainda paga bem em renda fixa longa; ações ganham fôlego conforme o custo do dinheiro cai." },
+const ESCOLHAS = [
+  { titulo: "Reserva de emergência", produto: "Tesouro Selic ou CDB com liquidez diária", detalhe: "Priorize acesso rápido, baixa oscilação e instituição sólida. A função da reserva importa mais do que buscar o último ponto de rentabilidade." },
+  { titulo: "Objetivo em até dois anos", produto: "Pós-fixados com vencimento compatível", detalhe: "CDB, LCI ou LCA podem funcionar, desde que a carência e o vencimento coincidam com a data em que o dinheiro será usado." },
+  { titulo: "Objetivo de médio prazo", produto: "Prefixados e IPCA+ com cautela", detalhe: "Travam condições por mais tempo, mas os preços oscilam antes do vencimento. Não use dinheiro que talvez precise resgatar antes." },
+  { titulo: "Patrimônio de longo prazo", produto: "Carteira diversificada", detalhe: "Renda fixa pode conviver com ações, ETFs e outros ativos. A queda da Selic não é ordem automática para abandonar segurança." },
 ];
 
 const Selic14OndeInvestir2026 = () => {
@@ -33,348 +36,116 @@ const Selic14OndeInvestir2026 = () => {
 
   return (
     <article className="container py-8 max-w-4xl mx-auto">
+      <BackNavigation category="invest" />
       <header className="mb-8">
-        <div className="flex items-center gap-2 mb-4">
+        <div className="flex flex-wrap items-center gap-2 mb-4">
           <CategoryBadge category="invest" size="lg" />
-          <span className="px-3 py-1 bg-invest/20 text-invest rounded-full text-sm font-medium">
-            Copom · Renda Fixa · Juros
-          </span>
+          <span className="px-3 py-1 bg-invest/20 text-invest rounded-full text-sm font-medium">Selic · Renda fixa · Copom</span>
         </div>
-        <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-          Selic a 14% em Agosto de 2026: O Que Muda na Renda Fixa e Onde Investir Agora
-        </h1>
+        <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">Selic a 13,75%: Quanto Rendem Tesouro Direto, CDB, LCI e Poupança em 2026?</h1>
         <p className="lead text-xl text-muted-foreground mb-4">
-          O Copom cortou a taxa básica pela quarta vez seguida e a <strong>Selic a 14%</strong> passou a valer desde 5 de
-          agosto de 2026. Ainda é um dos juros reais mais altos do mundo — e é exatamente por isso que a forma de montar
-          a carteira muda quando o ciclo de queda continua.
+          O Copom reduziu a taxa básica de 14% para <strong>13,75% ao ano</strong> em 16 de setembro de 2026. Veja como o quinto corte consecutivo afeta a renda fixa, quanto R$ 1 mil, R$ 5 mil e R$ 10 mil podem render e como escolher sem confundir projeção com garantia.
         </p>
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
-          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />20 de Agosto, 2026</span>
-          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />12 min de leitura</span>
+          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />21 de Setembro, 2026</span>
+          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />16 min de leitura</span>
         </div>
         <ShareWhatsApp />
         <AuthorBio category="invest" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
-        <img
-          fetchPriority="high"
-          loading="eager"
-          decoding="async"
-          width={1280}
-          height={720}
-          src={heroImg}
-          alt="Cédulas e moedas de real ao lado de um gráfico de barras em tons de verde e dourado"
-          className="w-full h-full object-cover"
-        />
+        <img fetchPriority="high" loading="eager" decoding="async" width={1536} height={864} src={heroImg} alt="Mesa de análise financeira com reais, gráfico de juros em queda e edifício do Congresso ao fundo" className="w-full h-full object-cover" />
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
-
         <div className="not-prose my-8 p-6 bg-gradient-to-br from-invest/10 to-background rounded-xl border border-invest/30">
-          <h2 className="text-xl font-bold mb-2 flex items-center gap-2">
-            <ListChecks className="h-5 w-5 text-invest" />
-            O que está valendo
-          </h2>
-          <div className="space-y-2">
+          <h2 className="text-xl font-bold mb-4 flex items-center gap-2"><BarChart3 className="h-5 w-5 text-invest" />O cenário em 21 de setembro de 2026</h2>
+          <div className="grid gap-3 sm:grid-cols-2">
             {[
-              { k: "Selic atual", v: "14,00% ao ano" },
-              { k: "Decisão", v: "05/08/2026, unânime" },
-              { k: "Tamanho do corte", v: "0,25 ponto percentual" },
-              { k: "Cortes consecutivos", v: "4" },
-              { k: "Sinalização do comunicado", v: "próximos passos em aberto" },
-            ].map(({ k, v }) => (
-              <div key={k} className="grid grid-cols-2 gap-2 py-2 border-b border-border/30 text-xs md:text-sm">
-                <span className="text-muted-foreground break-words">{k}</span>
-                <span className="text-right text-invest font-bold break-words">{v}</span>
-              </div>
-            ))}
+              ["Selic vigente", "13,75% ao ano"], ["Decisão do Copom", "corte unânime de 0,25 p.p."],
+              ["Sequência", "5 cortes consecutivos"], ["Focus para fim de 2026", "13,50% ao ano"],
+              ["Focus para o IPCA 2026", "4,92%"], ["Focus para o dólar 2026", "R$ 5,20"],
+            ].map(([rotulo, valor]) => <div key={rotulo} className="border-b border-border/40 pb-2"><p className="text-xs text-muted-foreground">{rotulo}</p><p className="font-bold text-invest">{valor}</p></div>)}
           </div>
+          <p className="text-xs text-muted-foreground mt-4">As medianas do Focus são expectativas coletadas pelo Banco Central, não promessas nem metas garantidas.</p>
         </div>
 
         <AdLeaderboard />
 
-        <h2 id="decisao" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Landmark className="h-7 w-7 text-invest" />
-          O Que o Copom Decidiu
-        </h2>
-        <p>
-          Em 5 de agosto de 2026, o Comitê de Política Monetária do Banco Central reduziu a taxa básica de 14,25% para
-          14% ao ano, em decisão unânime. Foi a quarta redução consecutiva de 0,25 ponto percentual do ciclo, tomada
-          depois de dados mostrarem crescimento moderado e uma desaceleração da inflação mais forte do que o esperado.
-        </p>
-        <p>
-          O comunicado não se comprometeu com o próximo passo. O colegiado citou incertezas ligadas aos efeitos do El
-          Niño sobre a produção agrícola, à política fiscal e a choques no preço do petróleo. Em bom português: o Banco
-          Central sinalizou que continua cortando com cautela, e não em ritmo acelerado.
-        </p>
+        <h2 className="flex items-center gap-3"><Landmark className="h-7 w-7 text-invest" />O que o Copom decidiu e por que isso importa</h2>
+        <p>Na reunião encerrada em 16 de setembro, o Comitê de Política Monetária reduziu a Selic de 14% para 13,75% ao ano. Foi a quinta redução seguida de 0,25 ponto percentual. A decisão confirmou um ciclo de flexibilização gradual: o Banco Central reconheceu sinais de moderação da atividade e desaceleração da inflação, mas manteve linguagem cautelosa diante de expectativas ainda acima da meta e de riscos fiscais e externos.</p>
+        <p>A Selic é a referência para o custo do dinheiro no país. Ela influencia o CDI, os juros cobrados por bancos, o preço dos títulos públicos, as decisões das empresas e o valor presente de ativos como ações e fundos imobiliários. Isso não significa que um corte de 0,25 ponto seja imediatamente reproduzido no cartão ou no financiamento. Inadimplência, margem bancária, prazo e garantias também formam a taxa cobrada do consumidor.</p>
+        <p>Para quem investe, o efeito mais rápido aparece nos produtos pós-fixados. CDBs expressos como percentual do CDI, Tesouro Selic e fundos DI passam a acumular retorno em ritmo ligeiramente menor. Ainda assim, 13,75% representa um patamar nominal elevado. A conclusão responsável não é “a renda fixa acabou”, mas que a comparação precisa considerar retorno líquido, inflação, prazo e risco.</p>
+        <p>O Focus divulgado em 21 de setembro trouxe mediana de 13,50% para a Selic no fim de 2026, IPCA de 4,92%, PIB de 1,88% e dólar de R$ 5,20. A pequena distância entre a taxa vigente e a projeção sugere expectativa de cortes adicionais modestos. Contudo, o Focus muda semanalmente conforme os dados; montar uma carteira como se essa trajetória fosse certeza seria trocar planejamento por aposta macroeconômica.</p>
 
-        <div className="not-prose my-8 overflow-x-auto">
-          <table className="w-full text-sm border border-border rounded-xl overflow-hidden">
-            <thead className="bg-muted/50">
-              <tr>
-                <th className="text-left p-3">Referência</th>
-                <th className="text-left p-3">Taxa</th>
-                <th className="text-left p-3">Observação</th>
-              </tr>
-            </thead>
-            <tbody>
-              {CORTES.map((c) => (
-                <tr key={c.reuniao} className="border-t border-border/50">
-                  <td className="p-3 font-bold align-top">{c.reuniao}</td>
-                  <td className="p-3 text-invest font-bold whitespace-nowrap">{c.taxa}</td>
-                  <td className="p-3 text-muted-foreground">{c.nota}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        <h2 id="por-que-cortou" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <TrendingDown className="h-7 w-7 text-invest" />
-          Por Que o Banco Central Cortou
-        </h2>
-        <p>
-          A decisão de agosto não aconteceu no vazio. O Copom opera com um mandato claro: manter a inflação próxima da
-          meta. Quando os indicadores mostram os preços desacelerando mais rápido do que o previsto e a atividade
-          econômica crescendo em ritmo moderado, o custo de manter juros altos demais passa a pesar contra o próprio
-          mandato — juro excessivo freia investimento, encarece a dívida pública e pode derrubar a inflação abaixo do
-          piso da meta lá na frente, porque a política monetária demora meses para fazer efeito completo.
-        </p>
-        <p>
-          Ao mesmo tempo, o comunicado deixou claro o trio de riscos que segue no radar. O El Niño afeta safras e pode
-          pressionar o preço dos alimentos, justamente o item que mais pesa no bolso das famílias de menor renda. A
-          política fiscal define se o governo ajuda ou atrapalha o controle da inflação: gasto público em expansão
-          funciona como estímulo que o juro alto precisa neutralizar. E o petróleo é a variável externa clássica — um
-          choque de preço internacional atravessa câmbio e combustível e chega à inflação em semanas.
-        </p>
-        <p>
-          O resultado é um Banco Central que corta porque os dados permitem, mas em passos pequenos porque os riscos
-          impedem convicção maior. Quatro cortes de 0,25 ponto somam 1 ponto percentual de alívio — relevante, mas ainda
-          distante de uma taxa que mude a vida de quem toma crédito.
-        </p>
-
-        <h2 id="renda-fixa" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <Calculator className="h-7 w-7 text-invest" />
-          O Efeito Prático na Renda Fixa
-        </h2>
-        <p>
-          Todo produto atrelado ao CDI — Tesouro Selic, CDB de liquidez diária, boa parte dos fundos DI — rende um pouco
-          menos a cada corte, porque o CDI acompanha de perto a taxa básica. Com Selic a 14% ao ano, um CDB que paga 100%
-          do CDI entrega algo próximo de 1,10% ao mês bruto, antes de imposto de renda.
-        </p>
-        <p>
-          A poupança segue com a regra de 70% da Selic mais TR somente quando a taxa está em 8,5% ao ano ou menos. Como
-          14% está muito acima disso, a poupança continua no rendimento fixo de 0,5% ao mês mais TR — ou seja, continua
-          perdendo com folga para o Tesouro Selic.
-        </p>
-        <p>
-          Já os títulos prefixados e os IPCA+ funcionam ao contrário: quando o mercado passa a acreditar em mais cortes,
-          as taxas oferecidas caem. Quem travou taxa antes ganha marcação a mercado; quem espera demais compra mais caro.
-        </p>
-        <p>
-          Para dar dimensão ao efeito do ciclo: com a Selic em 15% no início dos cortes, o mesmo CDB de 100% do CDI
-          rendia cerca de 1,17% ao mês bruto. Quatro cortes depois, são quase 7 pontos-base a menos por mês. Parece
-          pouco em um mês isolado, mas em um ano, sobre um patrimônio de R$ 100 mil, a diferença já paga uma conta
-          relevante — e é por isso que ciclos de queda premiam quem se antecipa e punem quem reage só depois de o
-          rendimento cair.
-        </p>
-
-        <h2 id="simulacao" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <PiggyBank className="h-7 w-7 text-invest" />
-          Quanto Rende na Prática: Simulação com R$ 10 Mil
-        </h2>
-        <p>
-          A tabela abaixo é uma aproximação didática para comparar a ordem de grandeza do rendimento em três aplicações
-          comuns, com a Selic a 14% ao ano. Os valores são brutos, sem considerar taxas, TR ou imposto de renda, e
-          servem apenas para comparação — não são promessa de rentabilidade.
-        </p>
-
-        <div className="not-prose my-8 overflow-x-auto">
-          <table className="w-full text-sm border border-border rounded-xl overflow-hidden">
-            <thead className="bg-muted/50">
-              <tr>
-                <th className="text-left p-3">Aplicação</th>
-                <th className="text-left p-3">Rendimento aproximado ao mês</th>
-                <th className="text-left p-3">R$ 10 mil em 12 meses (bruto)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-t border-border/50">
-                <td className="p-3 font-bold align-top">CDB 100% do CDI</td>
-                <td className="p-3 text-invest font-bold">≈ 1,09% (R$ 109)</td>
-                <td className="p-3 text-muted-foreground">≈ R$ 11.390</td>
-              </tr>
-              <tr className="border-t border-border/50">
-                <td className="p-3 font-bold align-top">Tesouro Selic</td>
-                <td className="p-3 text-invest font-bold">≈ 1,08% (R$ 108)</td>
-                <td className="p-3 text-muted-foreground">≈ R$ 11.370 (antes da taxa de custódia, quando aplicável)</td>
-              </tr>
-              <tr className="border-t border-border/50">
-                <td className="p-3 font-bold align-top">Poupança</td>
-                <td className="p-3 text-invest font-bold">≈ 0,50% (R$ 50)</td>
-                <td className="p-3 text-muted-foreground">≈ R$ 10.617</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p>
-          A diferença entre deixar R$ 10 mil na poupança e num CDB de liquidez diária, nesse cenário, passa de R$ 700
-          brutos em um ano — e cresce proporcionalmente com o valor aplicado. Como ambos têm proteção do FGC dentro dos
-          limites e liquidez equivalente na prática, a permanência na poupança é hoje uma decisão que custa caro por
-          puro hábito.
-        </p>
+        <h2 className="flex items-center gap-3"><TrendingDown className="h-7 w-7 text-invest" />Como cada investimento reage à Selic de 13,75%</h2>
+        <p><strong>Tesouro Selic.</strong> É um título público pós-fixado cuja remuneração acompanha a taxa básica. Costuma ser usado para reserva por combinar liquidez diária e risco de crédito soberano. Pode apresentar pequenas oscilações no resgate antecipado, além de incidência de IR e eventual taxa de custódia segundo as regras vigentes. O valor mostrado na tela antes do vencimento não deve ser tratado como uma linha perfeitamente reta.</p>
+        <p><strong>CDB.</strong> É um título emitido por banco. A oferta pode pagar 100%, 105% ou 110% do CDI, por exemplo. Percentual maior não torna automaticamente o produto melhor: é preciso observar liquidez, vencimento, qualidade da instituição e cobertura do FGC. Um CDB de 110% do CDI sem liquidez por três anos não substitui um CDB diário usado como reserva.</p>
+        <p><strong>LCI e LCA.</strong> São letras de crédito imobiliário e do agronegócio. Para a pessoa física, a isenção de IR aumenta a competitividade do retorno líquido, mas muitas ofertas têm carência. A comparação correta transforma o percentual do CDI em rendimento líquido equivalente e verifica se o dinheiro pode ficar indisponível pelo prazo exigido.</p>
+        <p><strong>Poupança.</strong> Como a Selic está acima de 8,5%, a regra permanece em 0,5% ao mês mais Taxa Referencial. Ela é isenta de IR e simples, porém frequentemente rende menos que alternativas pós-fixadas. Também existe o “aniversário”: sacar antes da data mensal pode fazer o depósito não receber a remuneração daquele ciclo.</p>
+        <p><strong>Prefixados e Tesouro IPCA+.</strong> A taxa contratada vale para quem carrega o título até o vencimento e respeita as condições. Antes disso, o preço varia com os juros de mercado. Se as taxas caem, títulos antigos mais generosos tendem a se valorizar; se sobem, tendem a perder preço. Essa marcação a mercado pode gerar ganho ou perda no resgate antecipado.</p>
 
         <AdInArticle />
 
-        <h2 id="imposto-fgc" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <ShieldCheck className="h-7 w-7 text-invest" />
-          Imposto de Renda, IOF e FGC: Os Detalhes Que Mudam o Resultado
-        </h2>
-        <p>
-          O rendimento bruto não é o que cai na sua conta. Em renda fixa, o imposto de renda segue tabela regressiva
-          sobre o lucro: 22,5% para resgates até 180 dias, 20% de 181 a 360 dias, 17,5% de 361 a 720 dias e 15% acima de
-          720 dias. Resgates em menos de 30 dias ainda sofrem IOF regressivo, que pode zerar o rendimento nos primeiros
-          dias. Na prática, isso cria uma regra simples: dinheiro que você pode precisar em breve fica na reserva de
-          liquidez diária; dinheiro de objetivo distante deve ficar parado o máximo possível para pagar a menor
-          alíquota.
-        </p>
-        <p>
-          A proteção do Fundo Garantidor de Créditos cobre até R$ 250 mil por CPF e por instituição, com teto global de
-          R$ 1 milhão renovável a cada quatro anos. Vale para poupança, CDBs e outras aplicações de bancos — mas não
-          cobre fundos de investimento nem títulos do Tesouro, que têm garantia própria do governo federal. Distribuir
-          valores acima do limite entre bancos diferentes é a forma correta de manter a cobertura integral.
-        </p>
-
-        <h2 id="onde-investir" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <PiggyBank className="h-7 w-7 text-invest" />
-          Onde Investir com a Selic a 14%
-        </h2>
-
-        <div className="not-prose my-8 grid gap-4 md:grid-cols-2">
-          {CENARIOS.map((c) => (
-            <div key={c.titulo} className="p-5 rounded-xl border border-invest/30 bg-invest/5">
-              <h3 className="font-bold mb-1 text-invest">{c.titulo}</h3>
-              <p className="text-sm font-medium mb-2">{c.onde}</p>
-              <p className="text-xs text-muted-foreground">{c.porque}</p>
-            </div>
-          ))}
+        <h2 className="flex items-center gap-3"><Calculator className="h-7 w-7 text-invest" />Quanto rendem R$ 1 mil, R$ 5 mil e R$ 10 mil</h2>
+        <p>A tabela usa uma simulação divulgada após o corte, com horizonte de um ano. Para Tesouro Selic e CDB, ela considera IR de 17,5%; para a LCI, isenção de IR. Os valores de R$ 5 mil e R$ 10 mil são escalas matemáticas da estimativa de R$ 1 mil. Na poupança, usamos apenas 0,5% ao mês e não projetamos a TR, que varia. Taxas disponíveis, CDI efetivo, dias úteis, custos e momento do aporte alteram o resultado real.</p>
+        <div className="not-prose my-8 overflow-x-auto rounded-xl border border-border">
+          <table className="w-full min-w-[760px] text-sm">
+            <thead className="bg-muted/50"><tr><th className="p-3 text-left">Produto</th><th className="p-3 text-left">R$ 1 mil após 1 ano</th><th className="p-3 text-left">R$ 5 mil</th><th className="p-3 text-left">R$ 10 mil</th><th className="p-3 text-left">Premissa</th></tr></thead>
+            <tbody>{SIMULACAO.map((item) => <tr key={item.produto} className="border-t border-border/50"><td className="p-3 font-bold">{item.produto}</td><td className="p-3 text-invest font-bold">{item.mil}</td><td className="p-3">{item.cinco}</td><td className="p-3">{item.dez}</td><td className="p-3 text-muted-foreground">{item.premissa}</td></tr>)}</tbody>
+          </table>
         </div>
+        <p>A liderança do CDB nessa fotografia depende de ele realmente pagar 110% do CDI e de permanecer aplicado pelo período considerado. A LCI a 85% do CDI supera o Tesouro na simulação graças à isenção. Isso ilustra por que comparar apenas “percentual do CDI” é insuficiente: imposto, prazo e liquidez mudam a classificação.</p>
+        <p>Também é importante separar saldo final de lucro. R$ 11.238,70 não representa ganho de R$ 1.238,70 necessariamente em qualquer CDB; é o resultado específico das premissas apresentadas. A instituição pode oferecer percentual diferente, e o CDI diário não é exatamente igual à Selic-meta. Use a tabela para compreender ordem de grandeza, nunca como oferta ou promessa.</p>
 
-        <p>
-          Três lembretes que valem mais do que qualquer indicação de produto: mantenha a reserva de emergência intocada
-          em liquidez diária; respeite o limite de R$ 250 mil por CPF e por instituição para produtos cobertos pelo FGC;
-          e leve o imposto de renda regressivo em conta — resgatar antes de 720 dias custa alíquota maior.
-        </p>
+        <h2 className="flex items-center gap-3"><ShieldCheck className="h-7 w-7 text-invest" />IR, IOF, FGC e inflação: o retorno que realmente importa</h2>
+        <p>Em Tesouro e CDB, o IR sobre o lucro segue a tabela regressiva: 22,5% até 180 dias; 20% de 181 a 360; 17,5% de 361 a 720; e 15% acima de 720 dias. Resgates antes de 30 dias também podem sofrer IOF regressivo. Trocar de produto repetidamente reinicia o prazo tributário e pode destruir uma vantagem pequena de taxa.</p>
+        <p>O FGC cobre produtos elegíveis, como CDB, LCI, LCA e poupança, até R$ 250 mil por CPF ou CNPJ por instituição ou conglomerado, incluindo principal e juros, com teto global de R$ 1 milhão a cada período de quatro anos. Tesouro Direto e fundos não são cobertos pelo FGC. No Tesouro, o devedor é a União; em fundos, os ativos pertencem à carteira do fundo e há riscos próprios.</p>
+        <p>Retorno real é o ganho depois da inflação. Se uma aplicação entrega 11% líquidos e a inflação no período é 5%, o ganho real aproximado não é simplesmente seis pontos quando calculado com precisão: divide-se 1,11 por 1,05 e subtrai-se um. O resultado seria perto de 5,7%. Essa conta ajuda a comparar poder de compra, especialmente em objetivos longos.</p>
 
-        <h2 id="erros-comuns" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <AlertTriangle className="h-7 w-7 text-invest" />
-          Erros Comuns em Ciclo de Queda de Juros
-        </h2>
+        <AdRectangle />
+
+        <h2 className="flex items-center gap-3"><PiggyBank className="h-7 w-7 text-invest" />Onde investir agora, conforme o objetivo</h2>
+        <div className="not-prose my-8 grid gap-4 md:grid-cols-2">
+          {ESCOLHAS.map((item) => <div key={item.titulo} className="p-5 rounded-xl border border-invest/30 bg-invest/5"><h3 className="font-bold text-invest">{item.titulo}</h3><p className="font-medium mt-2">{item.produto}</p><p className="text-sm text-muted-foreground mt-2">{item.detalhe}</p></div>)}
+        </div>
+        <p>Para a reserva, liquidez e estabilidade vêm antes da maior taxa. Para uma viagem em 18 meses, o vencimento precisa chegar antes da compra. Para aposentadoria, títulos IPCA+ podem proteger poder de compra, desde que o prazo seja compatível e a oscilação seja compreendida. O mesmo produto pode ser adequado em um objetivo e inadequado em outro.</p>
+        <p>Uma estratégia simples é dividir por datas. Dinheiro de uso imediato fica pós-fixado e líquido. Metas com data definida recebem títulos que vencem perto dessa data. Patrimônio de longo prazo pode combinar indexadores e classes de ativos. Essa estrutura reduz a tentação de prever cada reunião do Copom e transforma a carteira em ferramenta de planejamento.</p>
+
+        <h2 className="flex items-center gap-3"><AlertTriangle className="h-7 w-7 text-invest" />Cinco erros comuns durante a queda dos juros</h2>
         <ul>
-          <li><strong>Deixar tudo no CDI por inércia:</strong> o rendimento cai degrau por degrau a cada reunião, e a perda acumulada só aparece no extrato meses depois.</li>
-          <li><strong>Correr para prefixados sem entender marcação a mercado:</strong> se os juros subirem de novo, o título prefixado oscila para baixo no curto prazo. Ele só é garantido se carregado até o vencimento.</li>
-          <li><strong>Ignorar o vencimento ao comprar IPCA+:</strong> título indexado à inflação também oscila. Combine o vencimento do título com a data em que você realmente precisa do dinheiro.</li>
-          <li><strong>Concentrar mais de R$ 250 mil em um único banco:</strong> acima do limite do FGC, o excedente fica sem proteção em caso de quebra da instituição.</li>
-          <li><strong>Esquecer o IOF:</strong> resgatar aplicação com menos de 30 dias pode anular o rendimento inteiro do período.</li>
+          <li><strong>Sair de toda renda fixa:</strong> um corte pequeno não elimina o retorno real nem a função defensiva da classe.</li>
+          <li><strong>Travar prazo sem olhar a liquidez:</strong> uma taxa atraente pode virar problema quando surge uma emergência.</li>
+          <li><strong>Comprar IPCA+ para vender cedo:</strong> a marcação a mercado pode produzir perda mesmo em um título conservador no vencimento.</li>
+          <li><strong>Ignorar risco do emissor:</strong> taxa muito acima do mercado costuma remunerar risco ou falta de liquidez.</li>
+          <li><strong>Comparar bruto com líquido:</strong> isenção, IR, IOF e custos podem inverter o resultado entre produtos.</li>
         </ul>
+        <p>Outro erro é perseguir a taxa da semana e abandonar o plano. Trocar um CDB bom por outro poucos décimos acima pode antecipar IR, criar carência e aumentar concentração. Antes de movimentar, calcule o ganho líquido adicional em reais e confronte com os riscos e o trabalho envolvidos.</p>
 
-        <h2 id="faq" className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
-          <HelpCircle className="h-7 w-7 text-invest" />
-          Perguntas Frequentes
-        </h2>
-        <p>
-          <strong>A Selic vai continuar caindo?</strong> O comunicado de agosto deixou os próximos passos em aberto. Não
-          existe garantia de novo corte na reunião seguinte.
-        </p>
-        <p>
-          <strong>Vale sair da renda fixa?</strong> Com juro real ainda alto, não há motivo estrutural para abandonar
-          renda fixa. O ajuste típico em ciclo de queda é alongar prazos, não zerar posições.
-        </p>
-        <p>
-          <strong>Poupança melhorou?</strong> Não. Com Selic acima de 8,5%, a regra da poupança fica travada em 0,5% ao
-          mês mais TR.
-        </p>
-        <p>
-          <strong>Quando a poupança volta a render mais?</strong> Somente se a Selic cair a 8,5% ao ano ou menos, quando
-          passa a valer a regra de 70% da Selic mais TR. No ritmo atual de cortes, isso não está no horizonte de curto
-          prazo.
-        </p>
-        <p>
-          <strong>O que acontece com quem já tem título prefixado?</strong> Se as taxas de mercado caírem junto com a
-          Selic, o título se valoriza por marcação a mercado. Se carregado até o vencimento, recebe exatamente a taxa
-          contratada, independentemente do caminho dos juros.
-        </p>
-        <p>
-          <strong>O corte da Selic baixa o financiamento e o cartão?</strong> Em geral, sim, mas com defasagem e de forma
-          parcial: o crédito inclui custo de inadimplência e margem bancária, que não caem automaticamente com a taxa
-          básica.
-        </p>
+        <h2 className="flex items-center gap-3"><HelpCircle className="h-7 w-7 text-invest" />Perguntas frequentes</h2>
+        <p><strong>Qual é a Selic atual?</strong> A Selic-meta está em 13,75% ao ano desde a decisão do Copom de 16 de setembro de 2026.</p>
+        <p><strong>A Selic vai cair novamente?</strong> O Focus de 21 de setembro indicava mediana de 13,50% no fim de 2026, mas projeções mudam e não garantem a próxima decisão.</p>
+        <p><strong>Qual rende mais: Tesouro Selic ou CDB?</strong> Depende do percentual do CDI, prazo, imposto, custos, liquidez e risco do banco. Na simulação, o CDB a 110% do CDI ficou à frente.</p>
+        <p><strong>LCI a 85% do CDI é melhor que CDB a 100%?</strong> Pode ser no líquido pela isenção, mas carência e disponibilidade precisam ser comparadas.</p>
+        <p><strong>Vale comprar prefixado agora?</strong> Pode fazer sentido para uma meta com vencimento compatível. Não é adequado quando há chance de resgate antecipado sem tolerância a oscilações.</p>
+        <p><strong>A poupança está protegida pelo FGC?</strong> Sim, dentro dos limites do fundo, mas isso não significa que seja a opção de maior retorno.</p>
+        <div className="not-prose mt-8 p-4 bg-secondary rounded-xl text-sm text-muted-foreground flex items-start gap-3"><AlertTriangle className="h-5 w-5 text-invest shrink-0 mt-0.5" /><span><strong>Aviso:</strong> conteúdo educativo, não recomendação individual. Taxas e regras podem mudar; confirme condições no emissor e avalie seu perfil, prazo e objetivo.</span></div>
       </div>
 
-      <EditorialTake category="invest">
-        <p>
-          Quatro cortes seguidos de 0,25 ponto é um ciclo de tartaruga — e isso é proposital. O Banco Central está
-          cortando o mínimo possível para não perder o controle das expectativas enquanto o fiscal e o câmbio seguem sem
-          resolução. Quem esperava juros de um dígito em 2026 vai precisar de paciência.
-        </p>
-        <p>
-          Minha leitura prática: esse é o momento clássico em que o investidor brasileiro erra por inércia. Ele deixa
-          tudo no CDI enquanto a taxa desce degrau por degrau e só percebe quando o rendimento já encolheu. Alongar parte
-          da carteira em IPCA+ agora, sem mexer na reserva, é a decisão mais chata e mais eficiente do semestre.
-        </p>
-        <p>
-          E um aviso que repito a cada ciclo: queda de juros é quando proliferam promessas de "renda fixa turbinada" com
-          retorno muito acima do CDI. Com a taxa básica a 14%, qualquer produto prometendo o dobro disso sem risco não é
-          oportunidade — é sinal amarelo. O juro alto brasileiro ainda paga as contas de quem tem paciência e método;
-          não paga a de quem terceiriza a decisão para promessa de terceiros.
-        </p>
+      <EditorialTake category="invest" title="Análise do Marcos: a Selic caiu, mas a disciplina continua rendendo mais">
+        <p>O investidor costuma tratar cada reunião do Copom como largada para trocar toda a carteira. Não é. A passagem de 14% para 13,75% reduz um pouco o retorno dos pós-fixados, mas não muda a função da reserva nem transforma risco em obrigação. A melhor resposta é revisar prazos, não correr atrás do ativo que mais subiu.</p>
+        <p className="mt-2">Minha leitura prática é manter a reserva líquida, calcular o retorno depois dos impostos e alongar apenas o dinheiro que já tem data distante. Quem tenta acertar cada corte pode perder mais com giro, carência e marcação a mercado do que ganhar com uma taxa ligeiramente maior.</p>
       </EditorialTake>
-
-      <ArticleSources
-        category="invest"
-        sources={[
-          {
-            title: "Selic: Copom reduz taxa básica de juros para 14% ao ano",
-            url: "https://g1.globo.com/economia/noticia/2026/08/05/selic-copom-reduz-taxa-basica-de-juros-para-14percent-ao-ano.ghtml",
-            publisher: "g1",
-            accessedAt: "Agosto 2026",
-          },
-          {
-            title: "Em nova redução, Copom baixa taxa Selic para 14% ao ano",
-            url: "https://agenciabrasil.ebc.com.br/economia/noticia/2026-08/em-nova-reducao-copom-baixa-taxa-selic-para-14-ao-ano",
-            publisher: "Agência Brasil",
-            accessedAt: "Agosto 2026",
-          },
-          {
-            title: "Banco Central corta Selic pela 4ª vez seguida, para 14%, e deixa próximos passos em aberto",
-            url: "https://oglobo.globo.com/economia/financas/noticia/2026/08/05/banco-central-corta-selic-pela-4a-vez-seguida-de-1425percent-para-14percent-ao-ano.ghtml",
-            publisher: "O Globo",
-            accessedAt: "Agosto 2026",
-          },
-          {
-            title: "Copom reduz taxa de juros em 0,25 ponto pela 4ª vez seguida e Selic cai a 14% ao ano",
-            url: "https://www.estadao.com.br/economia/copom-agosto-2026-selic-juros/",
-            publisher: "Estadão",
-            accessedAt: "Agosto 2026",
-          },
-          {
-            title: "Copom: Banco Central reduz Selic para 14% ao ano após inflação desacelerar",
-            url: "https://www.bloomberglinea.com.br/brasil/copom-banco-central-reduz-selic-para-14-ao-ano-apos-inflacao-desacelerar/",
-            publisher: "Bloomberg Línea",
-            accessedAt: "Agosto 2026",
-          },
-          {
-            title: "BC cita El Niño, fiscal e petróleo em decisão sobre juros; leia comunicado",
-            url: "https://www.cnnbrasil.com.br/economia/macroeconomia/bc-cita-el-nino-fiscal-e-petroleo-em-decisao-sobre-juros-leia-comunicado/",
-            publisher: "CNN Brasil",
-            accessedAt: "Agosto 2026",
-          },
-        ]}
-      />
-
+      <ArticleSources category="invest" sources={[
+        { title: "Comunicados do Copom", url: "https://www.bcb.gov.br/controleinflacao/comunicadoscopom", publisher: "Banco Central do Brasil", accessedAt: "Setembro 2026" },
+        { title: "Relatório Focus de 18 de setembro de 2026", url: "https://www.bcb.gov.br/content/focus/focus/R20260918.pdf", publisher: "Banco Central do Brasil", accessedAt: "Setembro 2026" },
+        { title: "Taxas de juros básicas — Histórico", url: "https://www.bcb.gov.br/controleinflacao/historicotaxasjuros", publisher: "Banco Central do Brasil", accessedAt: "Setembro 2026" },
+        { title: "Selic: Copom reduz taxa de juros para 13,75% ao ano", url: "https://g1.globo.com/economia/noticia/2026/09/16/copom-reduz-a-taxa-basica-de-juros-da-economia-a-selic-de-14percent-para-1375percent-ao-ano.ghtml", publisher: "g1", accessedAt: "Setembro 2026" },
+        { title: "Quanto rendem R$ 1.000 na poupança, CDB, LCI e Tesouro", url: "https://economia.uol.com.br/mais/ultimas-noticias/2026/09/18/quanto-rendem-r-1000-na-poupanca-cdb-lci-e-tesouro-com-a-selic-a-1375.htm", publisher: "UOL Economia", accessedAt: "Setembro 2026" },
+        { title: "Sobre a garantia do FGC", url: "https://www.fgc.org.br/sobre-garantia-fgc", publisher: "Fundo Garantidor de Créditos", accessedAt: "Setembro 2026" },
+      ]} />
       <RelatedPosts currentSlug={SLUG} />
       <CommentSection postId={SLUG} postTitle={TITLE} category="invest" />
     </article>
