@@ -5,8 +5,17 @@
     <link>https://viciocode.com</link>
     <description>Novos artigos de Finanças &amp; Investimentos no VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 09 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed/financas.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Investimentos no Exterior em 2026: Imposto de Renda e Como Declarar</title>
+      <link>https://viciocode.com/post/investimentos-exterior-imposto-renda-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/investimentos-exterior-imposto-renda-2026</guid>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Entenda a tributação anual de 15%, dividendos, variação cambial, imposto pago fora, fim da isenção de R$ 35 mil e como declarar investimentos no exterior.</description>
+      <category>Finanças &amp; Investimentos</category>
+      <enclosure url="https://viciocode.com/assets/investimentos-exterior-imposto-renda-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>Cotações de Criptomoedas: O Que São, Como Funcionam e a História das 5 Maiores</title>
       <link>https://viciocode.com/post/cotacoes-criptomoedas-como-funcionam-historia-2026</link>
@@ -17,11 +26,11 @@
       <enclosure url="https://viciocode.com/assets/cotacoes-criptomoedas-como-funcionam-historia-2026.webp" type="image/webp" length="0" />
     </item>
     <item>
-      <title>Selic a 14% em Agosto de 2026: O Que Muda na Renda Fixa e Onde Investir Agora</title>
+      <title>Selic a 13,75%: Quanto Rendem Tesouro, CDB, LCI e Poupança em 2026</title>
       <link>https://viciocode.com/post/selic-14-agosto-2026-onde-investir</link>
       <guid isPermaLink="true">https://viciocode.com/post/selic-14-agosto-2026-onde-investir</guid>
       <pubDate>Thu, 20 Aug 2026 12:00:00 GMT</pubDate>
-      <description>O Copom cortou a taxa básica pela quarta vez seguida e a Selic foi a 14% ao ano em 5 de agosto de 2026. Veja o efeito prático no CDI, na poupança e em títulos prefixados e IPCA+.</description>
+      <description>O Copom reduziu a Selic para 13,75% em setembro. Compare Tesouro Selic, CDB, LCI e poupança com simulações líquidas e escolhas por prazo e objetivo.</description>
       <category>Finanças &amp; Investimentos</category>
       <enclosure url="https://viciocode.com/assets/selic-14-agosto-2026-onde-investir.webp" type="image/webp" length="0" />
     </item>
@@ -447,15 +456,6 @@
       <description>Tudo que você precisa saber para declarar o Imposto de Renda 2026 corretamente, evitar a malha fina e usar deduções legais para pagar menos IR.</description>
       <category>Finanças &amp; Investimentos</category>
       <enclosure url="https://viciocode.com/assets/irpf-2026-guia-declarar-pagar-menos.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Bitcoin e Criptomoedas em 2026: Ainda Dá Para Lucrar?</title>
-      <link>https://viciocode.com/post/bitcoin-criptomoedas-2026-investir</link>
-      <guid isPermaLink="true">https://viciocode.com/post/bitcoin-criptomoedas-2026-investir</guid>
-      <pubDate>Wed, 18 Feb 2026 12:00:00 GMT</pubDate>
-      <description>O mercado cripto mudou muito. Entenda o cenário das criptomoedas em 2026, quais ainda têm potencial e como investir sem perder o que você tem.</description>
-      <category>Finanças &amp; Investimentos</category>
-      <enclosure url="https://viciocode.com/assets/bitcoin-criptomoedas-2026-investir.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>
