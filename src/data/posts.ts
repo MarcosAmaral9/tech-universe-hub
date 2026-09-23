@@ -2,6 +2,7 @@ import { BlogPost, Category } from "@/types/blog";
 
 import melhoresIasImagensVideosImg from "@/assets/melhores-ias-imagens-videos-2026.webp";
 import n8nWhatsAppAgenciaImg from "@/assets/n8n-guia-atendente-whatsapp-agencia-viagens-2026.webp";
+import investimentosExteriorIrImg from "@/assets/investimentos-exterior-imposto-renda-2026.webp";
 import fallEmperorLarcyImg from "@/assets/i-will-fall-with-the-emperor-larcy.webp";
 import fallEmperorLarcyFogoImg from "@/assets/i-will-fall-with-the-emperor-larcy-fogo.webp";
 import cotacoesCriptoImg from "@/assets/cotacoes-criptomoedas-historia-fundadores.webp";
@@ -246,6 +247,29 @@ import fatedVillainImg from "@/assets/i-am-the-fated-villain-gu-changge.webp";
 import cityLordImg from "@/assets/starting-today-city-lord-liu-feng.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 21 Set 2026 — Finanças (Investimentos no exterior e IR) ──────────
+  {
+    id: "259",
+    slug: "investimentos-exterior-imposto-renda-2026",
+    title: "Investimentos no Exterior em 2026: Imposto de Renda e Como Declarar",
+    excerpt:
+      "Entenda a tributação anual de 15%, dividendos, variação cambial, imposto pago fora, fim da isenção de R$ 35 mil e como declarar investimentos no exterior.",
+    content: "",
+    category: "invest",
+    subtopic: "impostos",
+    image: investimentosExteriorIrImg,
+    author: "VICIO<CODE>",
+    date: "2026-09-21",
+    readTime: "18 min",
+    faq: [
+      { q: "Investimento no exterior paga 15% de imposto?", a: "Em regra, rendimentos de aplicações financeiras no exterior abrangidos pela Lei nº 14.754/2023 são apurados anualmente e tributados a 15%." },
+      { q: "A isenção de R$ 35 mil ainda vale para ações no exterior?", a: "A Receita confirmou em 2026 que a antiga isenção de alienações de pequeno valor não se aplica aos rendimentos de aplicações financeiras no exterior sob a sistemática vigente desde 2024." },
+      { q: "Dividendos estrangeiros precisam ser declarados?", a: "Sim. Devem ser informados pelo valor bruto, com registro do imposto retido no país de origem quando houver." },
+      { q: "Posso compensar imposto pago no exterior?", a: "Pode haver compensação quando os requisitos de reciprocidade ou acordo são atendidos, limitada ao imposto brasileiro correspondente e com documentação comprobatória." },
+      { q: "Valorização sem venda gera imposto?", a: "A simples alta de preço normalmente não realiza o rendimento. Venda, resgate, liquidação, juros e dividendos são eventos relevantes para a apuração." },
+      { q: "Preciso declarar o ativo mesmo sem vender?", a: "A posição pode precisar constar em Bens e Direitos pelo custo de aquisição, e os critérios anuais de obrigatoriedade precisam ser conferidos." },
+    ],
+  },
   // ── 16 Set 2026 — IA (n8n e atendimento pelo WhatsApp) ──────────────
   {
     id: "258",
@@ -562,32 +586,32 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
-  // ── 20 Ago 2026 — Finanças (Selic a 14%) ───────────────────────────
+  // ── 20 Ago 2026 — Finanças (atualizado para Selic a 13,75%) ────────
   {
     id: "242",
     slug: "selic-14-agosto-2026-onde-investir",
-    title: "Selic a 14% em Agosto de 2026: O Que Muda na Renda Fixa e Onde Investir Agora",
+    title: "Selic a 13,75%: Quanto Rendem Tesouro, CDB, LCI e Poupança em 2026",
     excerpt:
-      "O Copom cortou a taxa básica pela quarta vez seguida e a Selic foi a 14% ao ano em 5 de agosto de 2026. Veja o efeito prático no CDI, na poupança e em títulos prefixados e IPCA+.",
+      "O Copom reduziu a Selic para 13,75% em setembro. Compare Tesouro Selic, CDB, LCI e poupança com simulações líquidas e escolhas por prazo e objetivo.",
     content: "",
     category: "invest",
     subtopic: "renda-fixa",
     image: selic14Img,
     author: "VICIO<CODE>",
     date: "2026-08-20",
-    updatedAt: "2026-08-22",
-    readTime: "12 min",
+    updatedAt: "2026-09-21",
+    readTime: "16 min",
     faq: [
       {
         q: "Qual é a Selic atual?",
-        a: "14% ao ano, definida na reunião do Copom de 5 de agosto de 2026, em decisão unânime que reduziu a taxa em 0,25 ponto percentual.",
+        a: "13,75% ao ano, definida na reunião do Copom de 16 de setembro de 2026 após um corte unânime de 0,25 ponto percentual.",
       },
       {
         q: "Quantos cortes de juros já houve neste ciclo?",
-        a: "Quatro reduções consecutivas de 0,25 ponto percentual, levando a taxa de 14,25% para 14% ao ano.",
+        a: "Cinco reduções consecutivas de 0,25 ponto percentual, levando a taxa para 13,75% ao ano.",
       },
       {
-        q: "A poupança melhora com a Selic a 14%?",
+        q: "A poupança melhora com a Selic a 13,75%?",
         a: "Não. A regra de 70% da Selic mais TR só vale quando a taxa básica está em 8,5% ao ano ou menos. Acima disso, a poupança rende 0,5% ao mês mais TR.",
       },
       {
@@ -596,7 +620,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         q: "A Selic vai continuar caindo em 2026?",
-        a: "O comunicado do Copom de agosto deixou os próximos passos em aberto, citando incertezas sobre El Niño, política fiscal e petróleo. Não há garantia de novo corte na reunião seguinte.",
+        a: "O Focus de 21 de setembro apontava mediana de 13,50% no fim de 2026, mas projeções mudam e não garantem a próxima decisão do Copom.",
       },
     ],
   },
