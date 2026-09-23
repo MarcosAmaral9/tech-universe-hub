@@ -10,7 +10,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import { AdLeaderboard, AdInArticle, AdRectangle } from "@/components/AdSense";
 import { AlertTriangle, BarChart3, Calendar, Calculator, Clock, HelpCircle, Landmark, PiggyBank, ShieldCheck, TrendingDown, User } from "lucide-react";
-import heroImg from "@/assets/selic-1375-setembro-2026-onde-investir.webp";
+import heroImg from "@/assets/selic-14-agosto-2026-onde-investir.webp";
 
 const SLUG = "selic-14-agosto-2026-onde-investir";
 const TITLE = "Selic a 13,75%: Quanto Rendem Tesouro, CDB, LCI e Poupança em 2026";

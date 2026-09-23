@@ -19,6 +19,8 @@ const CATEGORY_FALLBACK: Record<Category, string> = {
  * Para o que não está aqui, derivamos do título (primeira sequência significativa).
  */
 const KEYWORD_OVERRIDES: Record<string, string> = {
+  "selic-14-agosto-2026-onde-investir": "Selic a 13,75%",
+  "investimentos-exterior-imposto-renda-2026": "investimentos no exterior",
   "gpt-5-ia-trabalhador-digital-autonomo-2026": "GPT-5.4",
   "berkshire-hathaway-greg-abel-2026-sem-buffett": "Berkshire Hathaway",
   "elden-ring-nightreign-guia-completo-2026": "Elden Ring Nightreign",

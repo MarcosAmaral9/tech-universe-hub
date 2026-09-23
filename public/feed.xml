@@ -5,8 +5,17 @@
     <link>https://viciocode.com</link>
     <description>IA, investimentos, cultura geek e otaku — novos artigos do VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 16 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Investimentos no Exterior em 2026: Imposto de Renda e Como Declarar</title>
+      <link>https://viciocode.com/post/investimentos-exterior-imposto-renda-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/investimentos-exterior-imposto-renda-2026</guid>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Entenda a tributação anual de 15%, dividendos, variação cambial, imposto pago fora, fim da isenção de R$ 35 mil e como declarar investimentos no exterior.</description>
+      <category>Finanças &amp; Investimentos</category>
+      <enclosure url="https://viciocode.com/assets/investimentos-exterior-imposto-renda-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>n8n: Guia Completo e Atendente de WhatsApp para Agência de Viagens</title>
       <link>https://viciocode.com/post/n8n-guia-atendente-whatsapp-agencia-viagens-2026</link>
@@ -152,11 +161,11 @@
       <enclosure url="https://viciocode.com/assets/gamescom-2026-o-que-esperar.webp" type="image/webp" length="0" />
     </item>
     <item>
-      <title>Selic a 14% em Agosto de 2026: O Que Muda na Renda Fixa e Onde Investir Agora</title>
+      <title>Selic a 13,75%: Quanto Rendem Tesouro, CDB, LCI e Poupança em 2026</title>
       <link>https://viciocode.com/post/selic-14-agosto-2026-onde-investir</link>
       <guid isPermaLink="true">https://viciocode.com/post/selic-14-agosto-2026-onde-investir</guid>
       <pubDate>Thu, 20 Aug 2026 12:00:00 GMT</pubDate>
-      <description>O Copom cortou a taxa básica pela quarta vez seguida e a Selic foi a 14% ao ano em 5 de agosto de 2026. Veja o efeito prático no CDI, na poupança e em títulos prefixados e IPCA+.</description>
+      <description>O Copom reduziu a Selic para 13,75% em setembro. Compare Tesouro Selic, CDB, LCI e poupança com simulações líquidas e escolhas por prazo e objetivo.</description>
       <category>Finanças &amp; Investimentos</category>
       <enclosure url="https://viciocode.com/assets/selic-14-agosto-2026-onde-investir.webp" type="image/webp" length="0" />
     </item>
@@ -447,15 +456,6 @@
       <description>Após a MP 1.303/2025 ser rejeitada, debêntures incentivadas, CRI e CRA mantêm isenção de IR em 2026. Entenda risco de crédito sem FGC, indexadores, como declarar no IRPF e quando valem mais que LCI/LCA.</description>
       <category>Finanças &amp; Investimentos</category>
       <enclosure url="https://viciocode.com/assets/debentures-cri-cra-2026-guia-completo.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Helldivers 2 — Guia Completo: Sátira de Starship Troopers, Estratagemas e a Crise do PSN</title>
-      <link>https://viciocode.com/post/helldivers-2-guia-completo-2024</link>
-      <guid isPermaLink="true">https://viciocode.com/post/helldivers-2-guia-completo-2024</guid>
-      <pubDate>Sun, 12 Jul 2026 12:00:00 GMT</pubDate>
-      <description>Fenômeno de 2024 da Arrowhead: entenda a sátira de Starship Troopers, o sistema de guerra galáctica com Joel no controle, Estratagemas, dicas para novatos e como a comunidade venceu a Sony na crise do PSN.</description>
-      <category>Geek &amp; Games</category>
-      <enclosure url="https://viciocode.com/assets/helldivers-2-guia-completo-2024.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>
