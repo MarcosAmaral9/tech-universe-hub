@@ -5,6 +5,19 @@ import { AppErrorBoundary } from "./components/AppErrorBoundary.tsx";
 import { initOfflineCommentSync } from "./utils/offlineCommentQueue.ts";
 import "./index.css";
 
+// A prévia de desenvolvimento nunca deve ser controlada pelo Service Worker
+// de uma compilação anterior. Isso garante que novos artigos, rotas e ajustes
+// apareçam imediatamente pelo HMR, sem exigir limpeza manual do navegador.
+if (import.meta.env.DEV && "serviceWorker" in navigator) {
+  void navigator.serviceWorker.getRegistrations().then(async (registrations) => {
+    await Promise.all(registrations.map((registration) => registration.unregister()));
+    if (typeof caches !== "undefined") {
+      const cacheNames = await caches.keys();
+      await Promise.all(cacheNames.map((cacheName) => caches.delete(cacheName)));
+    }
+  }).catch(() => { /* a prévia continua normalmente se a limpeza falhar */ });
+}
+
 // ── Guard: chunk load failure (SW servindo HTML/asset antigo após deploy) ────
 // Se um import dinâmico falhar (chunk do build novo não existe mais no servidor,
 // ou o HTML veio do cache antigo), limpa caches + desregistra o SW e recarrega
@@ -58,7 +71,11 @@ import("./utils/autoPrecacheStatic").then(({ autoPrecacheStaticPages }) => {
 }).catch(() => { /* ignore */ });
 
 // ── Monta o app React ─────────────────────────────────────────────────────────
-const container = document.getElementById("root")!;
+const container = document.getElementById("root");
+
+if (!container) {
+  throw new Error("Elemento principal do aplicativo não encontrado.");
+}
 
 createRoot(container, {
   // onRecoverableError: chamado quando React recupera automaticamente de um erro
