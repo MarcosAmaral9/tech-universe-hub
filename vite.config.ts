@@ -285,6 +285,11 @@ export default defineConfig(({ mode }) => ({
       registerType: "prompt",
       // Inject the virtual module so we can use useRegisterSW in the app
       injectRegister: "auto",
+      // Nunca registrar um Service Worker na prévia: o Vite/HMR deve sempre
+      // mostrar a versão mais recente após cada alteração feita no projeto.
+      devOptions: {
+        enabled: false,
+      },
       workbox: {
         // Importa handlers customizados de Web Push (push + notificationclick)
         importScripts: ["/push-handler.js"],
