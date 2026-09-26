@@ -1,1 +1,0 @@
-DROP POLICY IF EXISTS "Authenticated can read comments realtime" ON realtime.messages;

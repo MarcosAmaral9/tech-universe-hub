@@ -1,1 +1,0 @@
-DROP POLICY IF EXISTS "Anyone can update subscription" ON public.newsletter_subscribers;
