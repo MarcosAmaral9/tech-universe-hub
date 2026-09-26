@@ -123,6 +123,7 @@ export async function flushQueue(): Promise<{ success: number; failed: number }>
       try {
         const res = await fetch(`${API_BASE}?action=comments`, {
           method: "POST",
+          credentials: "same-origin",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             post_id: item.post_id,

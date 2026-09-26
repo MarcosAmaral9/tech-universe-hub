@@ -16,7 +16,7 @@ const signupSchema = z.object({
   name: z.string().trim().min(2, "Nome deve ter pelo menos 2 caracteres").max(100),
   nickname: z.string().trim().min(2, "Apelido deve ter pelo menos 2 caracteres").max(30),
   email: z.string().trim().email("Email inválido"),
-  password: z.string().min(6, "Senha deve ter pelo menos 6 caracteres"),
+  password: z.string().min(10, "Senha deve ter pelo menos 10 caracteres"),
 });
 
 const loginSchema = z.object({
@@ -36,7 +36,7 @@ const GoogleIcon = () => (
 // Faz fetch e garante que a resposta é JSON — nunca explode silenciosamente
 async function apiFetch(url: string, options?: RequestInit): Promise<{ ok: boolean; data: any }> {
   try {
-    const res = await fetch(url, options);
+    const res = await fetch(url, { ...options, credentials: "same-origin" });
     const text = await res.text();
     let data: any = {};
     try {
@@ -129,7 +129,7 @@ const AuthPage = () => {
         if (!ok || data.error) {
           toast({ title: "Erro no login", description: data.error || "Email ou senha incorretos.", variant: "destructive" });
         } else {
-          localStorage.setItem(SESSION_KEY, JSON.stringify({ user: data.user, profile: data.profile, token: data.token }));
+          localStorage.setItem(SESSION_KEY, JSON.stringify({ user: data.user, profile: data.profile }));
           window.location.href = "/configuracoes";
         }
       } else {
@@ -142,7 +142,7 @@ const AuthPage = () => {
         if (!ok || data.error) {
           toast({ title: "Erro no cadastro", description: data.error || "Não foi possível criar a conta.", variant: "destructive" });
         } else {
-          localStorage.setItem(SESSION_KEY, JSON.stringify({ user: data.user, profile: data.profile, token: data.token }));
+          localStorage.setItem(SESSION_KEY, JSON.stringify({ user: data.user, profile: data.profile }));
           toast({ title: "Conta criada com sucesso! 🎉" });
           window.location.href = "/configuracoes";
         }

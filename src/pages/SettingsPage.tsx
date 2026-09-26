@@ -127,10 +127,9 @@ const SettingsPage = () => {
     try {
       const formData = new FormData();
       formData.append("avatar", file);
-      formData.append("user_id", user.id);
-
       const res = await fetch(`/api.php?action=upload_avatar`, {
         method: "POST",
+        credentials: "same-origin",
         body: formData,
       });
       const data = await res.json();

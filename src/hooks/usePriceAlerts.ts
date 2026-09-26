@@ -72,7 +72,7 @@ export function usePriceAlerts(storageKey: string, userId?: string | null) {
     if (!userId) { setSynced(true); return; }
     const fetchAlerts = async () => {
       try {
-        const res = await fetch(`/api.php?action=price_alerts&user_id=${encodeURIComponent(userId)}`);
+        const res = await fetch(`/api.php?action=price_alerts`, { credentials: "same-origin" });
         if (res.ok) {
           const data = await res.json();
           if (Array.isArray(data)) {
@@ -99,9 +99,9 @@ export function usePriceAlerts(storageKey: string, userId?: string | null) {
       try {
         const res = await fetch(`/api.php?action=price_alerts`, {
           method: "POST",
+          credentials: "same-origin",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            user_id: userId,
             asset_key: alert.assetKey,
             asset_label: alert.assetLabel,
             direction: alert.direction,
@@ -133,8 +133,9 @@ export function usePriceAlerts(storageKey: string, userId?: string | null) {
       try {
         await fetch(`/api.php?action=price_alerts`, {
           method: "DELETE",
+          credentials: "same-origin",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ id, user_id: userId }),
+          body: JSON.stringify({ id }),
         });
       } catch { /* */ }
     }
@@ -153,8 +154,9 @@ export function usePriceAlerts(storageKey: string, userId?: string | null) {
       try {
         await fetch(`/api.php?action=price_alerts`, {
           method: "PUT",
+          credentials: "same-origin",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ id, user_id: userId, enabled: newEnabled }),
+          body: JSON.stringify({ id, enabled: newEnabled }),
         });
       } catch { /* */ }
     }

@@ -111,10 +111,8 @@ const CommentSection = ({
   const fetchComments = async () => {
     setIsLoading(true);
     try {
-      const url = user
-        ? `${API_BASE}?action=comments&post_id=${encodeURIComponent(postId)}&user_id=${encodeURIComponent(user.id)}`
-        : `${API_BASE}?action=comments&post_id=${encodeURIComponent(postId)}`;
-      const res = await fetch(url);
+      const url = `${API_BASE}?action=comments&post_id=${encodeURIComponent(postId)}`;
+      const res = await fetch(url, { credentials: "same-origin" });
       if (res.ok) {
         const data = await res.json();
         setComments(data as Comment[]);
@@ -193,6 +191,7 @@ const CommentSection = ({
     try {
       const res = await fetch(`${API_BASE}?action=comments`, {
         method: "POST",
+        credentials: "same-origin",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
@@ -286,7 +285,7 @@ const CommentSection = ({
   const handleDelete = async (commentId: string, commentUserId: string) => {
     if (!user || user.id !== commentUserId) return;
     try {
-      await fetch(`${API_BASE}?action=comments&id=${commentId}&user_id=${user.id}`, { method: "DELETE" });
+      await fetch(`${API_BASE}?action=comments&id=${commentId}`, { method: "DELETE", credentials: "same-origin" });
       await fetchComments();
     } catch {
       /* ignore */
@@ -307,13 +306,14 @@ const CommentSection = ({
     try {
       if (liked) {
         const res = await fetch(
-          `${API_BASE}?action=comment-like&comment_id=${encodeURIComponent(c.id)}&user_id=${encodeURIComponent(user.id)}`,
-          { method: "DELETE" },
+          `${API_BASE}?action=comment-like&comment_id=${encodeURIComponent(c.id)}`,
+          { method: "DELETE", credentials: "same-origin" },
         );
         if (!res.ok) throw new Error();
       } else {
         const res = await fetch(`${API_BASE}?action=comment-like`, {
           method: "POST",
+          credentials: "same-origin",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ comment_id: c.id, user_id: user.id }),
         });

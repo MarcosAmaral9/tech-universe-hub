@@ -69,7 +69,7 @@ const NewsletterPreferences = ({ email }: Props) => {
     if (!email) return;
     setLoading(true);
     try {
-      const res  = await fetch(`${API}?action=newsletter_get&email=${encodeURIComponent(email)}`);
+      const res  = await fetch(`${API}?action=newsletter_get`, { credentials: "same-origin" });
       const ct   = res.headers.get("content-type") || "";
       if (!ct.includes("application/json")) throw new Error("offline");
       const data = await res.json();
@@ -98,8 +98,9 @@ const NewsletterPreferences = ({ email }: Props) => {
     try {
       const res = await fetch(`${API}?action=newsletter_update`, {
         method: "POST",
+        credentials: "same-origin",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.toLowerCase().trim(), ...payload }),
+        body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error("err");
       // Otimista: refletir no estado imediatamente

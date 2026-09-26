@@ -21,6 +21,7 @@ const GoogleAuthCallback = () => {
     // Troca o code pelo token via api.php (server-side, seguro)
     fetch(`${API_BASE}?action=google_exchange`, {
       method: "POST",
+      credentials: "same-origin",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ code, redirect_uri: REDIRECT_URI }),
     })
@@ -35,7 +36,6 @@ const GoogleAuthCallback = () => {
         localStorage.setItem(SESSION_KEY, JSON.stringify({
           user: data.user,
           profile: data.profile,
-          token: data.token,
         }));
         setStatus("Login realizado! Redirecionando...");
         window.location.href = "/configuracoes";
