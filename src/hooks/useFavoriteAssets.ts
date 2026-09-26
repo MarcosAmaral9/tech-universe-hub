@@ -20,8 +20,8 @@ export function useFavoriteAssets(userId: string | null) {
     try {
       // no-store: impede que o Service Worker devolva a lista antiga (stale-while-revalidate)
       const res = await fetch(
-        `/api.php?action=favorite_assets&user_id=${encodeURIComponent(userId)}&_=${Date.now()}`,
-        { cache: "no-store", headers: { "Cache-Control": "no-cache" } },
+        `/api.php?action=favorite_assets&_=${Date.now()}`,
+        { cache: "no-store", credentials: "same-origin", headers: { "Cache-Control": "no-cache" } },
       );
       if (res.ok) {
         const data = await res.json();
@@ -48,19 +48,20 @@ export function useFavoriteAssets(userId: string | null) {
       if (existing) {
         const res = await fetch(`/api.php?action=favorite_assets`, {
           method: "DELETE",
+          credentials: "same-origin",
           cache: "no-store",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ user_id: userId, asset_key: asset.key }),
+          body: JSON.stringify({ asset_key: asset.key }),
         });
         if (!res.ok) throw new Error("delete failed");
         setFavorites(prev => prev.filter(f => f.asset_key !== asset.key));
       } else {
         const res = await fetch(`/api.php?action=favorite_assets`, {
           method: "POST",
+          credentials: "same-origin",
           cache: "no-store",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            user_id: userId,
             asset_key: asset.key,
             asset_label: asset.label,
             asset_category: asset.category,

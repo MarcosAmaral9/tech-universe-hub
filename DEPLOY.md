@@ -80,3 +80,24 @@ Preserva `.htaccess`, `sitemap.xml`, `robots.txt` e todos os
    `https://viciocode.com/sitemap.xml`.
 3. Em **Páginas**, clique **Validar correção** nos grupos "Duplicada
    sem canônica selecionada pelo usuário" e "Descoberta — não indexada".
+
+## Configuração privada obrigatória da API
+
+Crie ou atualize `/public_html/.env.php` diretamente na Hostinger. Esse arquivo
+é bloqueado pelo `.htaccess` e não deve entrar no Git nem no ZIP:
+
+```php
+<?php
+$DB_HOST = 'localhost';
+$DB_NAME = 'NOME_DO_BANCO';
+$DB_USER = 'USUARIO_DO_BANCO';
+$DB_PASS = 'SENHA_NOVA_DO_BANCO';
+$AUTH_SECRET = 'SEGREDO_ALEATORIO_COM_PELO_MENOS_64_CARACTERES';
+$CRON_SECRET = 'OUTRO_SEGREDO_ALEATORIO_COM_PELO_MENOS_64_CARACTERES';
+$ADMIN_EMAIL = 'EMAIL_DO_ADMINISTRADOR';
+```
+
+Como a senha antiga do banco apareceu no histórico do repositório, redefina-a
+na Hostinger antes do próximo deploy e use somente a nova senha nesse arquivo.
+O cron deve enviar `POST /api.php?action=cron_refresh` com o cabeçalho
+`X-Cron-Secret`; não coloque mais segredos na URL.

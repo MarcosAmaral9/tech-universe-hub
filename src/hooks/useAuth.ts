@@ -17,7 +17,7 @@ export interface LocalUser {
   email: string;
 }
 
-function loadSession(): { user: LocalUser; profile: Profile; token?: string } | null {
+function loadSession(): { user: LocalUser; profile: Profile } | null {
   try {
     const raw = localStorage.getItem(SESSION_KEY);
     if (!raw) return null;
@@ -27,17 +27,16 @@ function loadSession(): { user: LocalUser; profile: Profile; token?: string } | 
   }
 }
 
-function saveSession(user: LocalUser, profile: Profile, token?: string) {
-  const current = loadSession();
+function saveSession(user: LocalUser, profile: Profile) {
   localStorage.setItem(
     SESSION_KEY,
-    JSON.stringify({ user, profile, token: token ?? current?.token })
+    JSON.stringify({ user, profile })
   );
 }
 
 /** Token de sessão assinado emitido pelo api.php (MySQL da Hostinger). */
 export function getAuthToken(): string | null {
-  return loadSession()?.token ?? null;
+  return null;
 }
 
 function clearSession() {
@@ -56,25 +55,25 @@ export const useAuth = () => {
     if (session) {
       setUser(session.user);
       setProfile(session.profile);
-      setToken(session.token ?? null);
+      setToken(null);
     }
     setLoading(false);
   }, []);
 
   // Verificação de administrador feita no servidor (api.php + MySQL).
   useEffect(() => {
-    if (!token) { setIsAdmin(false); return; }
+    if (!user) { setIsAdmin(false); return; }
     let cancelled = false;
-    fetch(`${API_BASE}?action=admin_check`, { headers: { "X-Auth-Token": token } })
+    fetch(`${API_BASE}?action=admin_check`, { credentials: "same-origin" })
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => { if (!cancelled) setIsAdmin(!!d?.admin); })
       .catch(() => { if (!cancelled) setIsAdmin(false); });
     return () => { cancelled = true; };
-  }, [token]);
+  }, [user]);
 
   const fetchProfile = useCallback(async (userId: string) => {
     try {
-      const res = await fetch(`${API_BASE}?action=profile&user_id=${encodeURIComponent(userId)}`);
+      const res = await fetch(`${API_BASE}?action=profile&user_id=${encodeURIComponent(userId)}`, { credentials: "same-origin" });
       if (res.ok) {
         const data = await res.json();
         if (data && data.id) {
@@ -105,11 +104,13 @@ export const useAuth = () => {
     try {
       const res = await fetch(`${API_BASE}?action=profile`, {
         method: "PUT",
+        credentials: "same-origin",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ user_id: user.id, ...updates }),
+        body: JSON.stringify(updates),
       });
       if (res.ok) {
-        const updated = { ...profile!, ...updates };
+        if (!profile) return new Error("Perfil indisponível");
+        const updated = { ...profile, ...updates };
         setProfile(updated);
         saveSession(user, updated);
       }
