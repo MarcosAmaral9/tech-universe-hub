@@ -22,21 +22,21 @@ ini_set('display_errors', '0');
 error_reporting(0);
 
 header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
+// API same-origin: não permita que sites de terceiros leiam ou alterem dados.
+$requestOrigin = $_SERVER['HTTP_ORIGIN'] ?? '';
+$allowedOrigins = ['https://viciocode.com', 'https://www.viciocode.com'];
+if ($requestOrigin !== '' && in_array($requestOrigin, $allowedOrigins, true)) {
+    header('Access-Control-Allow-Origin: ' . $requestOrigin);
+    header('Vary: Origin');
+}
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, X-Auth-Token, X-Admin-Token');
+header('Access-Control-Allow-Credentials: true');
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(204);
     exit;
 }
-
-// ========== CREDENCIAIS DO BANCO ==========
-$DB_HOST = 'localhost';
-$DB_NAME = 'u980153444_Viciocode';
-$DB_USER = 'u980153444_viciocode';
-$DB_PASS = 'b^0xFECWjX';
-// ==========================================
 
 // ========== CHAVES DE API (Painel Social + Google OAuth + B3) ==========
 // Crie/edite o arquivo /public_html/.env.php na Hostinger com o conteúdo:
@@ -51,9 +51,15 @@ $GOOGLE_SECRET    = '';
 $BRAPI_TOKEN      = '';
 $_env_file = __DIR__ . '/.env.php';
 if (file_exists($_env_file)) {
-    include $_env_file; // define $GEMINI_KEY, $GOOGLE_CLIENT_ID, $GOOGLE_SECRET, $BRAPI_TOKEN
+    include $_env_file;
 }
 // ======================================================================
+
+// Credenciais obrigatoriamente externas ao código versionado.
+$DB_HOST = $DB_HOST ?? getenv('DB_HOST') ?: '';
+$DB_NAME = $DB_NAME ?? getenv('DB_NAME') ?: '';
+$DB_USER = $DB_USER ?? getenv('DB_USER') ?: '';
+$DB_PASS = $DB_PASS ?? getenv('DB_PASS') ?: '';
 
 // URL base do site (usada no redirect_uri do OAuth)
 define('SITE_URL', 'https://viciocode.com');
@@ -71,7 +77,7 @@ $action = $_GET['action'] ?? '';
 //   $AUTH_SECRET = 'string-longa-aleatoria';
 //   $ADMIN_EMAIL = 'viciocode01@gmail.com';
 if (!isset($AUTH_SECRET) || !$AUTH_SECRET) {
-    $AUTH_SECRET = getenv('AUTH_SECRET') ?: 'viciocode_auth_fallback_secret_troque_no_env';
+    $AUTH_SECRET = getenv('AUTH_SECRET') ?: '';
 }
 if (!isset($ADMIN_EMAIL) || !$ADMIN_EMAIL) {
     $ADMIN_EMAIL = getenv('ADMIN_EMAIL') ?: 'viciocode01@gmail.com';
@@ -85,6 +91,7 @@ function b64u_dec(string $s): string { return base64_decode(strtr($s, '-_', '+/'
 
 /** Cria um token de sessão assinado (payload.assinatura). */
 function issueSessionToken(string $userId, string $email): string {
+    if (AUTH_SECRET === '') throw new RuntimeException('Autenticação não configurada');
     $payload = b64u(json_encode([
         'sub' => $userId,
         'email' => strtolower($email),
@@ -96,7 +103,7 @@ function issueSessionToken(string $userId, string $email): string {
 
 /** Valida o token e devolve os dados do usuário, ou null. */
 function verifySessionToken(?string $token): ?array {
-    if (!$token || substr_count($token, '.') !== 1) return null;
+    if (AUTH_SECRET === '' || !$token || substr_count($token, '.') !== 1) return null;
     [$payload, $sig] = explode('.', $token, 2);
     $expected = b64u(hash_hmac('sha256', $payload, AUTH_SECRET, true));
     if (!hash_equals($expected, $sig)) return null;
@@ -106,15 +113,44 @@ function verifySessionToken(?string $token): ?array {
     return $data;
 }
 
-/** Lê o token do header X-Auth-Token, Authorization ou do body/query. */
+/** Lê a sessão do cookie HttpOnly ou, durante a migração, de um header legado. */
 function requestToken(): ?string {
-    $t = $_SERVER['HTTP_X_AUTH_TOKEN'] ?? '';
+    $t = $_COOKIE['vc_session'] ?? ($_SERVER['HTTP_X_AUTH_TOKEN'] ?? '');
     if (!$t) {
         $auth = $_SERVER['HTTP_AUTHORIZATION'] ?? '';
         if (stripos($auth, 'Bearer ') === 0) $t = substr($auth, 7);
     }
-    if (!$t) $t = $_GET['token'] ?? '';
     return $t ? trim($t) : null;
+}
+
+function setSessionCookie(string $token): void {
+    setcookie('vc_session', $token, [
+        'expires' => time() + SESSION_TTL,
+        'path' => '/',
+        'secure' => true,
+        'httponly' => true,
+        'samesite' => 'Strict',
+    ]);
+}
+
+function requireUser(): array {
+    $claims = verifySessionToken(requestToken());
+    if (!$claims) {
+        http_response_code(401);
+        echo json_encode(['error' => 'Autenticação obrigatória']);
+        exit;
+    }
+    return $claims;
+}
+
+function requireCronSecret(): void {
+    $expected = $GLOBALS['CRON_SECRET'] ?? getenv('CRON_SECRET') ?: '';
+    $received = $_SERVER['HTTP_X_CRON_SECRET'] ?? '';
+    if ($expected === '' || $received === '' || !hash_equals($expected, $received)) {
+        http_response_code(403);
+        echo json_encode(['error' => 'Acesso negado']);
+        exit;
+    }
 }
 
 /**
@@ -254,6 +290,7 @@ $_pdoInstance = null;
 function getPdo(): ?PDO {
     global $_pdoInstance, $DB_HOST, $DB_NAME, $DB_USER, $DB_PASS;
     if ($_pdoInstance) return $_pdoInstance;
+    if ($DB_HOST === '' || $DB_NAME === '' || $DB_USER === '' || $DB_PASS === '') return null;
     try {
         $_pdoInstance = new PDO(
             "mysql:host=$DB_HOST;dbname=$DB_NAME;charset=utf8mb4",
@@ -268,6 +305,7 @@ function getPdo(): ?PDO {
 
 // ─── GET: diagnóstico — não precisa de banco ──────────────────────────────────
 if ($method === 'GET' && $action === 'ping') {
+    requireAdmin(getPdo());
     $cacheDir = __DIR__ . '/cache';
     @mkdir($cacheDir, 0755, true);
 
@@ -310,7 +348,7 @@ if ($method === 'GET' && $action === 'ping') {
         $testPdo->query('SELECT 1');
         $dbStatus = 'conectado ✓';
     } catch (PDOException $e) {
-        $dbStatus = 'ERRO: ' . $e->getMessage();
+        $dbStatus = 'indisponível';
     }
 
     // Testa tabelas existentes
@@ -390,14 +428,7 @@ if ($method === 'GET' && $action === 'ping') {
 
 // ─── POST: limpa cache de widgets (admin only) ───────────────────────────────
 if ($method === 'POST' && $action === 'clear_widget_cache') {
-    // Simple admin check via token in header
-    $adminToken = getenv('ADMIN_TOKEN') ?: 'viciocode_clear_2026';
-    $sentToken  = $_SERVER['HTTP_X_ADMIN_TOKEN'] ?? ($_POST['token'] ?? '');
-    if ($sentToken !== $adminToken) {
-        http_response_code(403);
-        echo json_encode(['error' => 'Unauthorized']);
-        exit;
-    }
+    requireAdmin(getPdo());
     $widget = $_POST['widget'] ?? null; // null = clear all
     $cleared = [];
     if ($db = getPdo()) {
@@ -420,6 +451,7 @@ if ($method === 'POST' && $action === 'clear_widget_cache') {
 
 // ─── GET: testa conectividade de cada widget em tempo real ───────────────────
 if ($method === 'GET' && $action === 'test_widgets') {
+    requireAdmin(getPdo());
     $results = [];
 
     // Test new rates sources
@@ -1078,12 +1110,8 @@ if ($method === 'GET' && $action === 'history_multi') {
 // Este endpoint é o ÚNICO que chama APIs externas. Usuários NUNCA chamam APIs.
 // Fluxo: cron → api.php?action=cron_refresh → brapi/CoinGecko/fawazahmed → MySQL
 // Usuário → api.php?action=all → MySQL (só leitura, zero APIs externas)
-if ($method === 'GET' && $action === 'cron_refresh') {
-    $CRON_SECRET = 'VC_CRON_2026';
-    if (file_exists(__DIR__ . '/.env.php')) { include __DIR__ . '/.env.php'; }
-    if (($_GET['secret'] ?? '') !== $CRON_SECRET) {
-        http_response_code(403); echo json_encode(['error' => 'Acesso negado']); exit;
-    }
+if ($method === 'POST' && $action === 'cron_refresh') {
+    requireCronSecret();
 
     $t0 = microtime(true);
     $db = getPdo();
@@ -1307,12 +1335,8 @@ if ($method === 'GET' && $action === 'cron_refresh') {
 // Duração estimada: 7-10 min (Alpha Vantage: 13s entre tickers; CoinGecko: 2.5s)
 // Idempotente: pula dados já existentes — pode re-executar com segurança
 // Parâmetro ?days=N para limitar (padrão: 365)
-if ($method === 'GET' && $action === 'history_bootstrap') {
-    $CRON_SECRET = 'VC_CRON_2026';
-    if (file_exists(__DIR__ . '/.env.php')) { include __DIR__ . '/.env.php'; }
-    if (($_GET['secret'] ?? '') !== $CRON_SECRET) {
-        http_response_code(403); echo json_encode(['error' => 'Acesso negado']); exit;
-    }
+if ($method === 'POST' && $action === 'history_bootstrap') {
+    requireCronSecret();
 
     $db = getPdo();
     if (!$db) { http_response_code(503); echo json_encode(['error' => 'Banco indisponível']); exit; }
@@ -1492,6 +1516,7 @@ if ($method === 'GET' && $action === 'history_assets') {
 
 // ─── GET: testa conexão com Gemini ───────────────────────────────────────────
 if ($method === 'GET' && $action === 'test_gemini') {
+    requireAdmin(getPdo());
     if (!$GEMINI_KEY) {
         echo json_encode(['error' => 'GEMINI_KEY não configurada']);
         exit;
@@ -1697,6 +1722,9 @@ if ($method === 'POST' && $action === 'generate_social') {
 
 // Para os demais endpoints, conecta ao banco (lazy)
 try {
+    if ($DB_HOST === '' || $DB_NAME === '' || $DB_USER === '' || $DB_PASS === '') {
+        throw new RuntimeException('Configuração de banco ausente');
+    }
     $pdo = new PDO(
         "mysql:host=$DB_HOST;dbname=$DB_NAME;charset=utf8mb4",
         $DB_USER,
@@ -1705,7 +1733,7 @@ try {
     );
 } catch (PDOException $e) {
     http_response_code(500);
-    echo json_encode(['error' => 'Falha na conexão com o banco de dados. Verifique DB_NAME, DB_USER e DB_PASS no api.php.']);
+    echo json_encode(['error' => 'Serviço temporariamente indisponível.']);
     exit;
 }
 
@@ -1739,7 +1767,8 @@ if ($method === 'GET' && $action === 'comments') {
     $postId = $_GET['post_id'] ?? '';
     if (!$postId) { http_response_code(400); echo json_encode(['error' => 'post_id obrigatório']); exit; }
     $limit  = isset($_GET['limit']) ? intval($_GET['limit']) : 200;
-    $userId = $_GET['user_id'] ?? '';
+    $viewer = verifySessionToken(requestToken());
+    $userId = $viewer['sub'] ?? '';
 
     if ($userId !== '') {
         $stmt = $pdo->prepare(
@@ -1775,10 +1804,13 @@ if ($method === 'GET' && $action === 'comments') {
 
 // ─── POST: criar comentário (suporta parent_id para respostas) ───────────────
 if ($method === 'POST' && $action === 'comments') {
+    $claims = requireUser();
     $body = json_decode(file_get_contents('php://input'), true);
     $postId     = $body['post_id']     ?? '';
-    $userId     = $body['user_id']     ?? '';
-    $authorName = $body['author_name'] ?? '';
+    $userId     = (string)$claims['sub'];
+    $profileName = $pdo->prepare('SELECT COALESCE(NULLIF(nickname, ""), NULLIF(name, ""), "Usuário") FROM profiles WHERE id = :id');
+    $profileName->execute([':id' => $userId]);
+    $authorName = (string)($profileName->fetchColumn() ?: 'Usuário');
     $content    = $body['content']     ?? '';
     $parentId   = $body['parent_id']   ?? null;
 
@@ -1822,8 +1854,9 @@ if ($method === 'POST' && $action === 'comments') {
 
 // ─── DELETE: excluir comentário ──────────────────────────────────────────────
 if ($method === 'DELETE' && $action === 'comments') {
+    $claims = requireUser();
     $id     = $_GET['id']      ?? '';
-    $userId = $_GET['user_id'] ?? '';
+    $userId = (string)$claims['sub'];
     if (!$id || !$userId) { http_response_code(400); echo json_encode(['error' => 'id e user_id obrigatórios']); exit; }
     // Apaga likes associados primeiro (sem FK formal)
     $pdo->prepare('DELETE FROM comment_likes WHERE comment_id = :id')->execute([':id' => $id]);
@@ -1838,9 +1871,10 @@ if ($method === 'DELETE' && $action === 'comments') {
 
 // ─── POST: curtir comentário (idempotente via PK) ────────────────────────────
 if ($method === 'POST' && $action === 'comment-like') {
+    $claims = requireUser();
     $body = json_decode(file_get_contents('php://input'), true);
     $commentId = $body['comment_id'] ?? '';
-    $userId    = $body['user_id']    ?? '';
+    $userId    = (string)$claims['sub'];
     if (!$commentId || !$userId) { http_response_code(400); echo json_encode(['error' => 'comment_id e user_id obrigatórios']); exit; }
     try {
         $stmt = $pdo->prepare('INSERT IGNORE INTO comment_likes (comment_id, user_id) VALUES (:c, :u)');
@@ -1856,8 +1890,9 @@ if ($method === 'POST' && $action === 'comment-like') {
 
 // ─── DELETE: descurtir comentário ────────────────────────────────────────────
 if ($method === 'DELETE' && $action === 'comment-like') {
+    $claims = requireUser();
     $commentId = $_GET['comment_id'] ?? '';
-    $userId    = $_GET['user_id']    ?? '';
+    $userId    = (string)$claims['sub'];
     if (!$commentId || !$userId) { http_response_code(400); echo json_encode(['error' => 'comment_id e user_id obrigatórios']); exit; }
     $pdo->prepare('DELETE FROM comment_likes WHERE comment_id = :c AND user_id = :u')
         ->execute([':c' => $commentId, ':u' => $userId]);
@@ -1881,8 +1916,11 @@ if ($method === 'POST' && $action === 'register') {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         http_response_code(400); echo json_encode(['error' => 'Email inválido']); exit;
     }
-    if (strlen($password) < 6) {
-        http_response_code(400); echo json_encode(['error' => 'Senha deve ter pelo menos 6 caracteres']); exit;
+    if (strlen($password) < 10) {
+        http_response_code(400); echo json_encode(['error' => 'Senha deve ter pelo menos 10 caracteres']); exit;
+    }
+    if (strtolower($email) === ADMIN_EMAIL) {
+        http_response_code(403); echo json_encode(['error' => 'Este endereço não pode ser cadastrado por este formulário']); exit;
     }
 
     // Checar email duplicado
@@ -1902,10 +1940,11 @@ if ($method === 'POST' && $action === 'register') {
         ->execute([':id' => $id, ':name' => $name, ':nickname' => $nickname]);
 
     $profile = ['id' => $id, 'name' => $name, 'nickname' => $nickname, 'avatar_url' => null, 'notifications_site' => false, 'notifications_app' => false, 'created_at' => date('Y-m-d H:i:s')];
+    $sessionToken = issueSessionToken($id, $email);
+    setSessionCookie($sessionToken);
     echo json_encode([
         'user' => ['id' => $id, 'email' => $email],
         'profile' => $profile,
-        'token' => issueSessionToken($id, $email),
         'is_admin' => strtolower($email) === ADMIN_EMAIL,
     ]);
     exit;
@@ -1946,10 +1985,11 @@ if ($method === 'POST' && $action === 'login') {
     $profile['notifications_site'] = (bool)$profile['notifications_site'];
     $profile['notifications_app']  = (bool)$profile['notifications_app'];
 
+    $sessionToken = issueSessionToken($user['id'], $user['email']);
+    setSessionCookie($sessionToken);
     echo json_encode([
         'user' => ['id' => $user['id'], 'email' => $user['email']],
         'profile' => $profile,
-        'token' => issueSessionToken($user['id'], $user['email']),
         'is_admin' => strtolower($user['email']) === ADMIN_EMAIL,
     ]);
     exit;
@@ -1977,8 +2017,9 @@ if ($method === 'GET' && $action === 'profile') {
 
 // ─── PUT: atualizar perfil ────────────────────────────────────────────────────
 if ($method === 'PUT' && $action === 'profile') {
+    $claims = requireUser();
     $body   = json_decode(file_get_contents('php://input'), true);
-    $userId = $body['user_id'] ?? '';
+    $userId = (string)$claims['sub'];
     if (!$userId) { http_response_code(400); echo json_encode(['error' => 'user_id obrigatório']); exit; }
 
     $allowed = ['name', 'nickname', 'notifications_site', 'notifications_app'];
@@ -2001,7 +2042,8 @@ if ($method === 'PUT' && $action === 'profile') {
 
 // ─── POST: upload de avatar ───────────────────────────────────────────────────
 if ($method === 'POST' && $action === 'upload_avatar') {
-    $userId = $_POST['user_id'] ?? '';
+    $claims = requireUser();
+    $userId = (string)$claims['sub'];
     if (!$userId) { http_response_code(400); echo json_encode(['error' => 'user_id obrigatório']); exit; }
 
     if (!isset($_FILES['avatar']) || $_FILES['avatar']['error'] !== UPLOAD_ERR_OK) {
@@ -2057,6 +2099,9 @@ if ($method === 'POST' && $action === 'google_exchange') {
         echo json_encode(['error' => 'code obrigatório']);
         exit;
     }
+    if ($redirect_uri !== SITE_URL . '/auth/google') {
+        http_response_code(400); echo json_encode(['error' => 'redirect_uri inválido']); exit;
+    }
 
     // 1. Trocar code por access_token
     $tokenPostData = http_build_query([
@@ -2104,7 +2149,7 @@ if ($method === 'POST' && $action === 'google_exchange') {
     }
 
     $googleUser = $userInfoRaw ? json_decode($userInfoRaw, true) : null;
-    if (!$googleUser || empty($googleUser['email'])) {
+    if (!$googleUser || empty($googleUser['email']) || empty($googleUser['email_verified'])) {
         http_response_code(502);
         echo json_encode(['error' => 'Não foi possível obter dados do Google.']);
         exit;
@@ -2140,10 +2185,11 @@ if ($method === 'POST' && $action === 'google_exchange') {
     $profile['notifications_site'] = (bool)($profile['notifications_site'] ?? false);
     $profile['notifications_app']  = (bool)($profile['notifications_app']  ?? false);
 
+    $sessionToken = issueSessionToken($userId, $email);
+    setSessionCookie($sessionToken);
     echo json_encode([
         'user'     => ['id' => $userId, 'email' => $email],
         'profile'  => $profile,
-        'token'    => issueSessionToken($userId, $email),
         'is_admin' => strtolower($email) === ADMIN_EMAIL,
     ]);
     exit;
@@ -2172,8 +2218,10 @@ if ($method === 'GET' && $action === 'google_auth_url') {
 
 // ─── Favorite Assets CRUD ────────────────────────────────────────────────────
 if ($action === 'favorite_assets') {
+    $claims = requireUser();
+    $authenticatedUserId = (string)$claims['sub'];
     if ($method === 'GET') {
-        $userId = $_GET['user_id'] ?? '';
+        $userId = $authenticatedUserId;
         if (!$userId) { http_response_code(400); echo json_encode(['error' => 'user_id obrigatório']); exit; }
         $stmt = $pdo->prepare('SELECT * FROM user_favorite_assets WHERE user_id = :uid ORDER BY created_at DESC');
         $stmt->execute([':uid' => $userId]);
@@ -2182,7 +2230,7 @@ if ($action === 'favorite_assets') {
     }
     if ($method === 'POST') {
         $body = json_decode(file_get_contents('php://input'), true);
-        $uid   = $body['user_id'] ?? '';
+        $uid   = $authenticatedUserId;
         $key   = $body['asset_key'] ?? '';
         $label = $body['asset_label'] ?? '';
         $cat   = $body['asset_category'] ?? '';
@@ -2196,7 +2244,7 @@ if ($action === 'favorite_assets') {
     }
     if ($method === 'DELETE') {
         $body = json_decode(file_get_contents('php://input'), true);
-        $uid = $body['user_id'] ?? '';
+        $uid = $authenticatedUserId;
         $key = $body['asset_key'] ?? '';
         if (!$uid || !$key) { http_response_code(400); echo json_encode(['error' => 'user_id e asset_key obrigatórios']); exit; }
         $stmt = $pdo->prepare('DELETE FROM user_favorite_assets WHERE user_id = :uid AND asset_key = :key');
@@ -2208,8 +2256,10 @@ if ($action === 'favorite_assets') {
 
 // ─── User Price Alerts CRUD ──────────────────────────────────────────────────
 if ($action === 'price_alerts') {
+    $claims = requireUser();
+    $authenticatedUserId = (string)$claims['sub'];
     if ($method === 'GET') {
-        $userId = $_GET['user_id'] ?? '';
+        $userId = $authenticatedUserId;
         if (!$userId) { http_response_code(400); echo json_encode(['error' => 'user_id obrigatório']); exit; }
         $stmt = $pdo->prepare('SELECT * FROM user_price_alerts WHERE user_id = :uid ORDER BY created_at DESC');
         $stmt->execute([':uid' => $userId]);
@@ -2218,7 +2268,7 @@ if ($action === 'price_alerts') {
     }
     if ($method === 'POST') {
         $body = json_decode(file_get_contents('php://input'), true);
-        $uid   = $body['user_id'] ?? '';
+        $uid   = $authenticatedUserId;
         $key   = $body['asset_key'] ?? '';
         $label = $body['asset_label'] ?? '';
         $dir   = $body['direction'] ?? '';
@@ -2235,7 +2285,7 @@ if ($action === 'price_alerts') {
     if ($method === 'PUT') {
         $body = json_decode(file_get_contents('php://input'), true);
         $id  = $body['id'] ?? '';
-        $uid = $body['user_id'] ?? '';
+        $uid = $authenticatedUserId;
         $enabled = isset($body['enabled']) ? ($body['enabled'] ? 1 : 0) : null;
         if (!$id || !$uid) { http_response_code(400); echo json_encode(['error' => 'id e user_id obrigatórios']); exit; }
         if ($enabled !== null) {
@@ -2248,7 +2298,7 @@ if ($action === 'price_alerts') {
     if ($method === 'DELETE') {
         $body = json_decode(file_get_contents('php://input'), true);
         $id  = $body['id'] ?? '';
-        $uid = $body['user_id'] ?? '';
+        $uid = $authenticatedUserId;
         if (!$id || !$uid) { http_response_code(400); echo json_encode(['error' => 'id e user_id obrigatórios']); exit; }
         $stmt = $pdo->prepare('DELETE FROM user_price_alerts WHERE id = :id AND user_id = :uid');
         $stmt->execute([':id' => $id, ':uid' => $uid]);
@@ -2276,7 +2326,8 @@ if ($method === 'POST' && $action === 'newsletter_subscribe') {
 
 // ─── Newsletter: buscar inscrito + histórico ──────────────────────────────────
 if ($method === 'GET' && $action === 'newsletter_get') {
-    $email = strtolower(trim($_GET['email'] ?? ''));
+    $claims = requireUser();
+    $email = strtolower(trim((string)($claims['email'] ?? '')));
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo json_encode(['subscriber' => null, 'history' => []]); exit;
     }
@@ -2301,8 +2352,9 @@ if ($method === 'GET' && $action === 'newsletter_get') {
 
 // ─── Newsletter: pausar / reativar / atualizar categorias ────────────────────
 if ($method === 'POST' && $action === 'newsletter_update') {
+    $claims = requireUser();
     $body      = json_decode(file_get_contents('php://input'), true) ?? [];
-    $email     = strtolower(trim($body['email'] ?? ''));
+    $email     = strtolower(trim((string)($claims['email'] ?? '')));
     $is_active = isset($body['is_active']) ? (int)$body['is_active'] : null;
     $cats      = isset($body['categories'])
                    ? implode(',', array_filter(array_map('trim', (array)$body['categories'])))
@@ -2326,12 +2378,8 @@ if ($method === 'POST' && $action === 'newsletter_update') {
 // Cron sugerido Hostinger: 0 9 * * 1  →  toda segunda-feira às 9h
 // Chamada: POST api.php?action=newsletter_send  body: {secret, subject, body, categories[]}
 if ($method === 'POST' && $action === 'newsletter_send') {
+    requireAdmin($pdo);
     $body     = json_decode(file_get_contents('php://input'), true) ?? [];
-    $secret   = $body['secret'] ?? '';
-    $expected = defined('VC_CRON_2026') ? VC_CRON_2026 : 'vc-cron-2026-secret';
-    if ($secret !== $expected) {
-        http_response_code(403); echo json_encode(['error' => 'Não autorizado']); exit;
-    }
     $subject   = trim($body['subject'] ?? 'Newsletter VicioCode — Novidades da Semana');
     $html_body = trim($body['body']    ?? '');
     $send_cats = array_filter(array_map('trim', (array)($body['categories'] ?? [])));
