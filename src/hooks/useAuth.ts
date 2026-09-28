@@ -21,7 +21,12 @@ function loadSession(): { user: LocalUser; profile: Profile } | null {
   try {
     const raw = localStorage.getItem(SESSION_KEY);
     if (!raw) return null;
-    return JSON.parse(raw);
+    const parsed = JSON.parse(raw);
+    if (parsed?.token) {
+      localStorage.removeItem(SESSION_KEY);
+      return null;
+    }
+    return parsed;
   } catch {
     return null;
   }
@@ -57,7 +62,21 @@ export const useAuth = () => {
       setProfile(session.profile);
       setToken(null);
     }
-    setLoading(false);
+    fetch(`${API_BASE}?action=session`, { credentials: "same-origin", cache: "no-store" })
+      .then((res) => res.ok ? res.json() : null)
+      .then((data) => {
+        if (data?.user && data?.profile) {
+          setUser(data.user);
+          setProfile(data.profile);
+          saveSession(data.user, data.profile);
+        } else {
+          clearSession();
+          setUser(null);
+          setProfile(null);
+        }
+      })
+      .catch(() => { /* mantém cache visual em caso de uso offline */ })
+      .finally(() => setLoading(false));
   }, []);
 
   // Verificação de administrador feita no servidor (api.php + MySQL).
@@ -90,6 +109,9 @@ export const useAuth = () => {
   }, []);
 
   const signOut = async () => {
+    try {
+      await fetch(`${API_BASE}?action=logout`, { method: "POST", credentials: "same-origin" });
+    } catch { /* limpa o estado local mesmo offline */ }
     clearSession();
     setUser(null);
     setProfile(null);

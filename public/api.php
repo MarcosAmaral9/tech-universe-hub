@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 //   $GEMINI_KEY       = 'AIza...';  // aistudio.google.com — gratuito, sem cartão
 //   $GOOGLE_CLIENT_ID = 'XXXXXXX.apps.googleusercontent.com';
 //   $GOOGLE_SECRET    = 'GOCSPX-...';
-//   $BRAPI_TOKEN      = 'p5M5UoDvZfs7dHccMxNxz6'; // brapi.dev dashboard
+//   $BRAPI_TOKEN      = 'token-fornecido-pela-brapi';
 $GEMINI_KEY       = '';
 $GOOGLE_CLIENT_ID = '';
 $GOOGLE_SECRET    = '';
@@ -149,6 +149,36 @@ function requireCronSecret(): void {
     if ($expected === '' || $received === '' || !hash_equals($expected, $received)) {
         http_response_code(403);
         echo json_encode(['error' => 'Acesso negado']);
+        exit;
+    }
+}
+
+function enforceRateLimit(string $scope, int $maxAttempts, int $windowSeconds): void {
+    $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+    $key = hash('sha256', $scope . '|' . $ip);
+    $path = cacheDir() . '/rate_' . $key . '.json';
+    $now = time();
+    $fh = @fopen($path, 'c+');
+    if (!$fh || !flock($fh, LOCK_EX)) {
+        if ($fh) fclose($fh);
+        return;
+    }
+    $raw = stream_get_contents($fh);
+    $state = $raw ? json_decode($raw, true) : null;
+    if (!is_array($state) || ($state['started'] ?? 0) + $windowSeconds <= $now) {
+        $state = ['started' => $now, 'count' => 0];
+    }
+    $state['count']++;
+    ftruncate($fh, 0);
+    rewind($fh);
+    fwrite($fh, json_encode($state));
+    fflush($fh);
+    flock($fh, LOCK_UN);
+    fclose($fh);
+    if ($state['count'] > $maxAttempts) {
+        header('Retry-After: ' . max(1, ($state['started'] + $windowSeconds) - $now));
+        http_response_code(429);
+        echo json_encode(['error' => 'Muitas tentativas. Aguarde alguns minutos e tente novamente.']);
         exit;
     }
 }
@@ -1100,7 +1130,7 @@ if ($method === 'GET' && $action === 'history_multi') {
 
 // ─── GET: cron_refresh — ÚNICO ponto de entrada para APIs externas ─────────────
 // Configure no Hostinger hPanel → Cron Jobs → */30 * * * *  (a cada 30 MINUTOS)
-// URL: https://viciocode.com/api.php?action=cron_refresh&secret=VC_CRON_2026
+// Envie POST para /api.php?action=cron_refresh com X-Cron-Secret.
 //
 // CÁLCULO DE REQUISIÇÕES MENSAIS (30 dias, ciclo 30 min):
 //   CoinGecko (crypto): 1 req/30min × 24h × 30d = 1.440 req/mês = 14% de 10.000 ✅
@@ -1320,7 +1350,7 @@ if ($method === 'POST' && $action === 'cron_refresh') {
 // ─── GET: todos os ativos com histórico disponível ──────────────────────────
 // ─── GET: bootstrap histórico — popula BD com até 365 dias de histórico real ──────
 // Execute UMA VEZ via navegador após configurar o cron:
-// https://viciocode.com/api.php?action=history_bootstrap&secret=VC_CRON_2026
+// Envie POST para /api.php?action=history_bootstrap com X-Cron-Secret.
 //
 // O que faz (e quais APIs usa):
 //   Cripto (8 moedas):        CoinGecko free   → 365 dias | 8 req total  | gratuito
@@ -1731,9 +1761,33 @@ try {
         $DB_PASS,
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
     );
-} catch (PDOException $e) {
+} catch (Throwable $e) {
     http_response_code(500);
     echo json_encode(['error' => 'Serviço temporariamente indisponível.']);
+    exit;
+}
+
+if ($method === 'GET' && $action === 'session') {
+    $claims = requireUser();
+    $stmt = $pdo->prepare('SELECT u.id, u.email, p.name, p.nickname, p.avatar_url, p.notifications_site, p.notifications_app FROM users u LEFT JOIN profiles p ON p.id = u.id WHERE u.id = :id LIMIT 1');
+    $stmt->execute([':id' => $claims['sub']]);
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    if (!$row) { http_response_code(401); echo json_encode(['error' => 'Sessão inválida']); exit; }
+    echo json_encode([
+        'user' => ['id' => $row['id'], 'email' => $row['email']],
+        'profile' => [
+            'id' => $row['id'], 'name' => $row['name'] ?? '', 'nickname' => $row['nickname'] ?? '',
+            'avatar_url' => $row['avatar_url'] ?? null,
+            'notifications_site' => (bool)($row['notifications_site'] ?? false),
+            'notifications_app' => (bool)($row['notifications_app'] ?? false),
+        ],
+    ]);
+    exit;
+}
+
+if ($method === 'POST' && $action === 'logout') {
+    setcookie('vc_session', '', ['expires' => time() - 3600, 'path' => '/', 'secure' => true, 'httponly' => true, 'samesite' => 'Strict']);
+    echo json_encode(['success' => true]);
     exit;
 }
 
@@ -1858,14 +1912,20 @@ if ($method === 'DELETE' && $action === 'comments') {
     $id     = $_GET['id']      ?? '';
     $userId = (string)$claims['sub'];
     if (!$id || !$userId) { http_response_code(400); echo json_encode(['error' => 'id e user_id obrigatórios']); exit; }
-    // Apaga likes associados primeiro (sem FK formal)
-    $pdo->prepare('DELETE FROM comment_likes WHERE comment_id = :id')->execute([':id' => $id]);
-    // Apaga respostas filhas
-    $pdo->prepare('DELETE FROM comments WHERE parent_id = :id')->execute([':id' => $id]);
-    // Apaga o próprio comentário
-    $stmt = $pdo->prepare('DELETE FROM comments WHERE id = :id AND user_id = :user_id');
-    $stmt->execute([':id' => $id, ':user_id' => $userId]);
-    echo json_encode(['success' => $stmt->rowCount() > 0]);
+    $owner = $pdo->prepare('SELECT id FROM comments WHERE id = :id AND user_id = :user_id');
+    $owner->execute([':id' => $id, ':user_id' => $userId]);
+    if (!$owner->fetchColumn()) { http_response_code(403); echo json_encode(['error' => 'Sem permissão']); exit; }
+    $pdo->beginTransaction();
+    try {
+        $pdo->prepare('DELETE FROM comment_likes WHERE comment_id = :id OR comment_id IN (SELECT id FROM comments WHERE parent_id = :id)')->execute([':id' => $id]);
+        $pdo->prepare('DELETE FROM comments WHERE parent_id = :id')->execute([':id' => $id]);
+        $pdo->prepare('DELETE FROM comments WHERE id = :id AND user_id = :user_id')->execute([':id' => $id, ':user_id' => $userId]);
+        $pdo->commit();
+        echo json_encode(['success' => true]);
+    } catch (Throwable $e) {
+        $pdo->rollBack();
+        http_response_code(500); echo json_encode(['error' => 'Falha ao excluir comentário']);
+    }
     exit;
 }
 
@@ -1909,6 +1969,7 @@ if ($method === 'POST' && $action === 'register') {
     $nickname = trim($body['nickname'] ?? '');
     $email    = trim($body['email']    ?? '');
     $password = $body['password']      ?? '';
+    enforceRateLimit('register', 5, 3600);
 
     if (!$name || !$nickname || !$email || !$password) {
         http_response_code(400); echo json_encode(['error' => 'Todos os campos são obrigatórios']); exit;
@@ -1955,6 +2016,7 @@ if ($method === 'POST' && $action === 'login') {
     $body     = json_decode(file_get_contents('php://input'), true);
     $email    = trim($body['email']    ?? '');
     $password = $body['password']      ?? '';
+    enforceRateLimit('login|' . strtolower($email), 10, 900);
 
     if (!$email || !$password) {
         http_response_code(400); echo json_encode(['error' => 'Email e senha obrigatórios']); exit;
@@ -1969,7 +2031,7 @@ if ($method === 'POST' && $action === 'login') {
     }
     // Conta criada via Google (sem senha) — orientar a usar o Google
     if (empty($user['password_hash'])) {
-        http_response_code(401); echo json_encode(['error' => 'Esta conta foi criada com o Google. Use o botão "Continuar com Google" para entrar.']); exit;
+        http_response_code(401); echo json_encode(['error' => 'Email ou senha incorretos']); exit;
     }
     if (!password_verify($password, $user['password_hash'])) {
         http_response_code(401); echo json_encode(['error' => 'Email ou senha incorretos']); exit;
@@ -2236,7 +2298,7 @@ if ($action === 'favorite_assets') {
         $cat   = $body['asset_category'] ?? '';
         $icon  = $body['asset_icon'] ?? '';
         if (!$uid || !$key || !$label || !$cat) { http_response_code(400); echo json_encode(['error' => 'Dados obrigatórios faltando']); exit; }
-        $id = sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x', mt_rand(0,0xffff),mt_rand(0,0xffff),mt_rand(0,0xffff),mt_rand(0,0x0fff)|0x4000,mt_rand(0,0x3fff)|0x8000,mt_rand(0,0xffff),mt_rand(0,0xffff),mt_rand(0,0xffff));
+        $id = bin2hex(random_bytes(16));
         $stmt = $pdo->prepare('INSERT IGNORE INTO user_favorite_assets (id, user_id, asset_key, asset_label, asset_category, asset_icon) VALUES (:id, :uid, :key, :label, :cat, :icon)');
         $stmt->execute([':id' => $id, ':uid' => $uid, ':key' => $key, ':label' => $label, ':cat' => $cat, ':icon' => $icon]);
         echo json_encode(['id' => $id, 'user_id' => $uid, 'asset_key' => $key, 'asset_label' => $label, 'asset_category' => $cat, 'asset_icon' => $icon, 'created_at' => date('c')]);
@@ -2276,7 +2338,7 @@ if ($action === 'price_alerts') {
         if (!$uid || !$key || !$label || !in_array($dir, ['above','below']) || $thresh <= 0) {
             http_response_code(400); echo json_encode(['error' => 'Dados inválidos']); exit;
         }
-        $id = sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x', mt_rand(0,0xffff),mt_rand(0,0xffff),mt_rand(0,0xffff),mt_rand(0,0x0fff)|0x4000,mt_rand(0,0x3fff)|0x8000,mt_rand(0,0xffff),mt_rand(0,0xffff),mt_rand(0,0xffff));
+        $id = bin2hex(random_bytes(16));
         $stmt = $pdo->prepare('INSERT INTO user_price_alerts (id, user_id, asset_key, asset_label, direction, threshold) VALUES (:id, :uid, :key, :label, :dir, :thresh)');
         $stmt->execute([':id' => $id, ':uid' => $uid, ':key' => $key, ':label' => $label, ':dir' => $dir, ':thresh' => $thresh]);
         echo json_encode(['id' => $id, 'user_id' => $uid, 'asset_key' => $key, 'asset_label' => $label, 'direction' => $dir, 'threshold' => (float)$thresh, 'enabled' => true]);

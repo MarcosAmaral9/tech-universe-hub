@@ -72,7 +72,7 @@ const emptyEdited = (): EditedContent => ({
 /* ─── SocialPanelPage ─────────────────────────────────────────────────────── */
 
 const SocialPanelPage = () => {
-  const { user, loading: authLoading, token, isAdmin } = useAuthContext();
+  const { user, loading: authLoading, isAdmin } = useAuthContext();
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -92,12 +92,12 @@ const SocialPanelPage = () => {
 
   /* ── Geração via Edge Function (Lovable AI credits) ── */
   const generateBothPlatforms = async (post: BlogPost): Promise<{ instagram: GeneratedContent; tiktok: GeneratedContent }> => {
-    if (!token) throw new Error("Faça login como administrador para gerar conteúdo.");
+    if (!isAdmin) throw new Error("Faça login como administrador para gerar conteúdo.");
     const res = await fetch(`${API_BASE}?action=generate_social`, {
       method: "POST",
+      credentials: "same-origin",
       headers: {
         "Content-Type": "application/json",
-        "X-Auth-Token": token,
       },
       body: JSON.stringify({
         title: post.title,

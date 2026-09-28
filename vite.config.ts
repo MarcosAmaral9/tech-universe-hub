@@ -162,7 +162,14 @@ function htaccessPlugin(): Plugin {
   Header set X-Frame-Options "SAMEORIGIN"
   Header set Cross-Origin-Opener-Policy "same-origin-allow-popups"
   Header set Cross-Origin-Resource-Policy "cross-origin"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
 </IfModule>
+
+<FilesMatch "^\.env\.php$|composer\.(json|lock)$|package(-lock)?\.json$|bun\.lockb?$">
+  Require all denied
+</FilesMatch>
 
 # Processar arquivos PHP antes de qualquer reescrita
 <FilesMatch "^(api|google-auth)\\.php$">
