@@ -2371,6 +2371,7 @@ if ($action === 'price_alerts') {
 
 // ─── Newsletter: inscrever ────────────────────────────────────────────────────
 if ($method === 'POST' && $action === 'newsletter_subscribe') {
+    enforceRateLimit('newsletter_subscribe', 5, 3600);
     $body  = json_decode(file_get_contents('php://input'), true) ?? [];
     $email = strtolower(trim($body['email'] ?? ''));
     $cats  = implode(',', array_filter(array_map('trim', (array)($body['categories'] ?? []))));
