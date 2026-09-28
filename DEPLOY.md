@@ -99,5 +99,9 @@ $ADMIN_EMAIL = 'EMAIL_DO_ADMINISTRADOR';
 
 Como a senha antiga do banco apareceu no histórico do repositório, redefina-a
 na Hostinger antes do próximo deploy e use somente a nova senha nesse arquivo.
-O cron deve enviar `POST /api.php?action=cron_refresh` com o cabeçalho
-`X-Cron-Secret`; não coloque mais segredos na URL.
+O cron deve executar o comando abaixo, substituindo o valor pelo mesmo segredo
+salvo no arquivo privado. Não coloque mais segredos na URL:
+
+```bash
+curl -fsS -X POST -H 'X-Cron-Secret: SEU_SEGREDO' 'https://viciocode.com/api.php?action=cron_refresh'
+```

@@ -71,23 +71,9 @@ const AuthPage = () => {
     if (!loading && user) navigate("/configuracoes", { replace: true });
   }, [user, loading, navigate]);
 
-  // Handle Google OAuth callback
+  // Exibe somente erros do retorno OAuth; sessões nunca são aceitas pela URL.
   useEffect(() => {
-    const googleSession = searchParams.get("google_session");
     const googleError   = searchParams.get("google_error");
-
-    if (googleSession) {
-      try {
-        const parsed = JSON.parse(atob(googleSession));
-        if (parsed.user && parsed.profile) {
-          localStorage.setItem(SESSION_KEY, JSON.stringify(parsed));
-          toast({ title: "Bem-vindo! 🎉", description: `Olá, ${parsed.profile.nickname || parsed.profile.name}!` });
-          window.location.href = "/configuracoes";
-        }
-      } catch {
-        toast({ title: "Erro ao processar login com Google.", variant: "destructive" });
-      }
-    }
 
     if (googleError) {
       const msgs: Record<string, string> = {
@@ -96,7 +82,7 @@ const AuthPage = () => {
         userinfo_failed: "Não foi possível obter dados do Google.",
         db_error:        "Erro ao salvar conta. Verifique as credenciais do banco de dados no api.php.",
         not_configured:  "Login com Google não configurado. Adicione GOOGLE_CLIENT_ID e GOOGLE_SECRET no .env.php.",
-        exchange_failed: searchParams.get("msg") ? decodeURIComponent(searchParams.get("msg")!) : "Falha na autenticação com Google.",
+        exchange_failed: searchParams.get("msg") ? decodeURIComponent(searchParams.get("msg") ?? "") : "Falha na autenticação com Google.",
       };
       toast({ title: msgs[googleError] || "Erro no login com Google.", variant: "destructive" });
     }
