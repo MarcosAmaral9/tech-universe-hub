@@ -392,17 +392,6 @@ export default defineConfig(({ mode }) => ({
               cacheableResponse: { statuses: [0, 200] },
             },
           },
-          {
-            // Supabase REST/Storage (caso usado em features futuras de usuário)
-            urlPattern: /^https:\/\/.*\.supabase\.co\//i,
-            handler: "NetworkFirst",
-            options: {
-              cacheName: "supabase-cache",
-              networkTimeoutSeconds: 4,
-              expiration: { maxEntries: 50, maxAgeSeconds: 12 * 60 * 60 },
-              cacheableResponse: { statuses: [0, 200] },
-            },
-          },
         ],
       },
       manifest: {
