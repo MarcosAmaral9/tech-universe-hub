@@ -1818,7 +1818,7 @@ try {
 if ($method === 'GET' && $action === 'comments') {
     $postId = $_GET['post_id'] ?? '';
     if (!$postId) { http_response_code(400); echo json_encode(['error' => 'post_id obrigatório']); exit; }
-    $limit  = isset($_GET['limit']) ? intval($_GET['limit']) : 200;
+    $limit  = max(1, min(200, isset($_GET['limit']) ? intval($_GET['limit']) : 200));
     $viewer = verifySessionToken(requestToken());
     $userId = $viewer['sub'] ?? '';
 
@@ -2066,16 +2066,11 @@ if ($method === 'GET' && $action === 'profile') {
     $userId = $_GET['user_id'] ?? '';
     if (!$userId) { http_response_code(400); echo json_encode(['error' => 'user_id obrigatório']); exit; }
 
-    $stmt = $pdo->prepare('SELECT p.*, u.email, u.created_at as user_created_at FROM profiles p JOIN users u ON p.id = u.id WHERE p.id = :id');
+    $stmt = $pdo->prepare('SELECT p.id, p.name, p.nickname, p.avatar_url, u.created_at FROM profiles p JOIN users u ON p.id = u.id WHERE p.id = :id');
     $stmt->execute([':id' => $userId]);
     $profile = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if (!$profile) { http_response_code(404); echo json_encode(['error' => 'Perfil não encontrado']); exit; }
-
-    $profile['notifications_site'] = (bool)$profile['notifications_site'];
-    $profile['notifications_app']  = (bool)$profile['notifications_app'];
-    $profile['created_at'] = $profile['user_created_at'] ?? $profile['created_at'];
-    unset($profile['user_created_at'], $profile['email']);
 
     echo json_encode($profile);
     exit;
