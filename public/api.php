@@ -30,7 +30,7 @@ if ($requestOrigin !== '' && in_array($requestOrigin, $allowedOrigins, true)) {
     header('Vary: Origin');
 }
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type, X-Auth-Token, X-Admin-Token');
+header('Access-Control-Allow-Headers: Content-Type, X-Cron-Secret');
 header('Access-Control-Allow-Credentials: true');
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -80,7 +80,7 @@ if (!isset($AUTH_SECRET) || !$AUTH_SECRET) {
     $AUTH_SECRET = getenv('AUTH_SECRET') ?: '';
 }
 if (!isset($ADMIN_EMAIL) || !$ADMIN_EMAIL) {
-    $ADMIN_EMAIL = getenv('ADMIN_EMAIL') ?: 'viciocode01@gmail.com';
+    $ADMIN_EMAIL = getenv('ADMIN_EMAIL') ?: '';
 }
 define('AUTH_SECRET', $AUTH_SECRET);
 define('ADMIN_EMAIL', strtolower(trim($ADMIN_EMAIL)));
@@ -113,13 +113,9 @@ function verifySessionToken(?string $token): ?array {
     return $data;
 }
 
-/** Lê a sessão do cookie HttpOnly ou, durante a migração, de um header legado. */
+/** Lê exclusivamente a sessão do cookie HttpOnly. */
 function requestToken(): ?string {
-    $t = $_COOKIE['vc_session'] ?? ($_SERVER['HTTP_X_AUTH_TOKEN'] ?? '');
-    if (!$t) {
-        $auth = $_SERVER['HTTP_AUTHORIZATION'] ?? '';
-        if (stripos($auth, 'Bearer ') === 0) $t = substr($auth, 7);
-    }
+    $t = $_COOKIE['vc_session'] ?? '';
     return $t ? trim($t) : null;
 }
 
@@ -187,7 +183,7 @@ function enforceRateLimit(string $scope, int $maxAttempts, int $windowSeconds): 
  * Garante que quem chamou é o administrador (confere o e-mail do token contra
  * a tabela users no MySQL). Encerra a requisição em caso de falha.
  */
-function requireAdmin(PDO $pdo = null): array {
+function requireAdmin(?PDO $pdo = null): array {
     $claims = verifySessionToken(requestToken());
     if (!$claims) {
         http_response_code(401);
@@ -195,18 +191,20 @@ function requireAdmin(PDO $pdo = null): array {
         exit;
     }
     $email = strtolower($claims['email'] ?? '');
-    // Confirma no banco que o usuário ainda existe e que o e-mail bate
-    if ($pdo instanceof PDO) {
-        $stmt = $pdo->prepare('SELECT email FROM users WHERE id = :id LIMIT 1');
-        $stmt->execute([':id' => $claims['sub']]);
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        if (!$row) {
-            http_response_code(401);
-            echo json_encode(['error' => 'Sessão inválida']);
-            exit;
-        }
-        $email = strtolower($row['email']);
+    if (!$pdo instanceof PDO) {
+        http_response_code(503);
+        echo json_encode(['error' => 'Banco de dados indisponível']);
+        exit;
     }
+    $stmt = $pdo->prepare('SELECT email FROM users WHERE id = :id LIMIT 1');
+    $stmt->execute([':id' => $claims['sub']]);
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    if (!$row) {
+        http_response_code(401);
+        echo json_encode(['error' => 'Sessão inválida']);
+        exit;
+    }
+    $email = strtolower($row['email']);
     if ($email !== ADMIN_EMAIL) {
         http_response_code(403);
         echo json_encode(['error' => 'Acesso restrito ao administrador']);
@@ -1980,7 +1978,7 @@ if ($method === 'POST' && $action === 'register') {
     if (strlen($password) < 10) {
         http_response_code(400); echo json_encode(['error' => 'Senha deve ter pelo menos 10 caracteres']); exit;
     }
-    if (strtolower($email) === ADMIN_EMAIL) {
+    if (ADMIN_EMAIL !== '' && strtolower($email) === ADMIN_EMAIL) {
         http_response_code(403); echo json_encode(['error' => 'Este endereço não pode ser cadastrado por este formulário']); exit;
     }
 
@@ -1994,11 +1992,17 @@ if ($method === 'POST' && $action === 'register') {
     $id           = bin2hex(random_bytes(16));
     $passwordHash = password_hash($password, PASSWORD_BCRYPT);
 
-    $pdo->prepare('INSERT INTO users (id, email, password_hash) VALUES (:id, :email, :hash)')
-        ->execute([':id' => $id, ':email' => $email, ':hash' => $passwordHash]);
-
-    $pdo->prepare('INSERT INTO profiles (id, name, nickname) VALUES (:id, :name, :nickname)')
-        ->execute([':id' => $id, ':name' => $name, ':nickname' => $nickname]);
+    $pdo->beginTransaction();
+    try {
+        $pdo->prepare('INSERT INTO users (id, email, password_hash) VALUES (:id, :email, :hash)')
+            ->execute([':id' => $id, ':email' => $email, ':hash' => $passwordHash]);
+        $pdo->prepare('INSERT INTO profiles (id, name, nickname) VALUES (:id, :name, :nickname)')
+            ->execute([':id' => $id, ':name' => $name, ':nickname' => $nickname]);
+        $pdo->commit();
+    } catch (Throwable $e) {
+        if ($pdo->inTransaction()) $pdo->rollBack();
+        throw $e;
+    }
 
     $profile = ['id' => $id, 'name' => $name, 'nickname' => $nickname, 'avatar_url' => null, 'notifications_site' => false, 'notifications_app' => false, 'created_at' => date('Y-m-d H:i:s')];
     $sessionToken = issueSessionToken($id, $email);
@@ -2154,6 +2158,7 @@ if ($method === 'POST' && $action === 'google_exchange') {
 
     $body         = json_decode(file_get_contents('php://input'), true);
     $code         = trim($body['code'] ?? '');
+    $state        = trim($body['state'] ?? '');
     $redirect_uri = trim($body['redirect_uri'] ?? SITE_URL . '/auth/google');
 
     if (!$code) {
@@ -2163,6 +2168,11 @@ if ($method === 'POST' && $action === 'google_exchange') {
     }
     if ($redirect_uri !== SITE_URL . '/auth/google') {
         http_response_code(400); echo json_encode(['error' => 'redirect_uri inválido']); exit;
+    }
+    $expectedState = $_COOKIE['vc_oauth_state'] ?? '';
+    setcookie('vc_oauth_state', '', ['expires' => time() - 3600, 'path' => '/auth/google', 'secure' => true, 'httponly' => true, 'samesite' => 'Lax']);
+    if ($state === '' || $expectedState === '' || !hash_equals($expectedState, $state)) {
+        http_response_code(403); echo json_encode(['error' => 'Tentativa de login inválida ou expirada']); exit;
     }
 
     // 1. Trocar code por access_token
@@ -2265,6 +2275,14 @@ if ($method === 'GET' && $action === 'google_auth_url') {
         exit;
     }
     $redirect_uri = SITE_URL . '/auth/google';
+    $state = bin2hex(random_bytes(32));
+    setcookie('vc_oauth_state', $state, [
+        'expires' => time() + 600,
+        'path' => '/auth/google',
+        'secure' => true,
+        'httponly' => true,
+        'samesite' => 'Lax',
+    ]);
     $params = http_build_query([
         'client_id'     => $GOOGLE_CLIENT_ID,
         'redirect_uri'  => $redirect_uri,
@@ -2272,6 +2290,7 @@ if ($method === 'GET' && $action === 'google_auth_url') {
         'scope'         => 'openid email profile',
         'access_type'   => 'online',
         'prompt'        => 'select_account',
+        'state'         => $state,
     ]);
     echo json_encode(['url' => 'https://accounts.google.com/o/oauth2/v2/auth?' . $params]);
     exit;
@@ -2378,10 +2397,9 @@ if ($method === 'POST' && $action === 'newsletter_subscribe') {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         http_response_code(400); echo json_encode(['error' => 'Email inválido']); exit;
     }
+    // Uma inscrição pública nunca altera categorias nem reativa uma inscrição existente.
     $stmt = $pdo->prepare(
-        "INSERT INTO newsletter_subscribers (email, categories, is_active)
-         VALUES (?, ?, 1)
-         ON DUPLICATE KEY UPDATE categories=VALUES(categories), is_active=1, updated_at=NOW()"
+        "INSERT IGNORE INTO newsletter_subscribers (email, categories, is_active) VALUES (?, ?, 1)"
     );
     $stmt->execute([$email, $cats]);
     echo json_encode(['success' => true]); exit;
