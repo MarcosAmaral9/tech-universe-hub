@@ -11,9 +11,10 @@ const GoogleAuthCallback = () => {
 
   useEffect(() => {
     const code  = searchParams.get("code");
+    const state = searchParams.get("state");
     const error = searchParams.get("error");
 
-    if (error || !code) {
+    if (error || !code || !state) {
       window.location.href = "/entrar?google_error=cancelled";
       return;
     }
@@ -23,7 +24,7 @@ const GoogleAuthCallback = () => {
       method: "POST",
       credentials: "same-origin",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ code, redirect_uri: REDIRECT_URI }),
+      body: JSON.stringify({ code, state, redirect_uri: REDIRECT_URI }),
     })
       .then(async (res) => {
         const data = await res.json();
