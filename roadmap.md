@@ -6,4 +6,5 @@
 - [x] Publicar o guia de investimentos no exterior e Imposto de Renda em 2026.
 - [x] Exibir o segundo artigo de finanças na prévia e impedir cache antigo durante edições.
 - [x] Remover credenciais públicas e proteger sessões, contas, comentários, preferências e tarefas automáticas.
+- [x] Publicar o guia de The Greatest Estate Developer com edição brasileira e dados verificados.
 - [ ] Redefinir a senha do MySQL e configurar os novos segredos privados na Hostinger (ação do proprietário).
