@@ -1,14 +1,40 @@
 {
-  "generatedAt": "2026-09-23T00:07:55.301Z",
+  "generatedAt": "2026-10-02T00:03:13.031Z",
   "counts": {
     "OK": 17,
-    "A": 104,
+    "A": 105,
     "B": 2,
     "C": 13,
     "D": 94
   },
   "missingFiles": [],
   "reports": [
+    {
+      "slug": "the-greatest-estate-developer-o-melhor-engenheiro-do-mundo-guia-2026",
+      "file": "TheGreatestEstateDeveloperGuia2026.tsx",
+      "keyword": "greatest estate developer",
+      "category": "otaku",
+      "checks": {
+        "h1": false,
+        "intro": true,
+        "excerpt": true,
+        "pageMetaExists": false,
+        "metaTitle": false,
+        "metaDescription": false,
+        "metaKeywords": false,
+        "hasAuthorBio": true,
+        "articleSourcesCount": 6,
+        "hasArticleSources": true,
+        "hasEditorial": true,
+        "wordCount": 2237,
+        "has1500Words": true
+      },
+      "bucket": "A",
+      "issues": [
+        "sem PAGE_META manual",
+        "keyword ausente em <h1>"
+      ]
+    },
     {
       "slug": "investimentos-exterior-imposto-renda-2026",
       "file": "InvestimentosExteriorIR2026.tsx",
