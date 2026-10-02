@@ -299,6 +299,7 @@ const CotacoesCriptoHistoria2026 = lazy(() => import("./pages/posts/CotacoesCrip
 const MelhoresIAsImagensVideos2026 = lazy(() => import("./pages/posts/MelhoresIAsImagensVideos2026"));
 const N8nWhatsAppAgenciaViagens2026 = lazy(() => import("./pages/posts/N8nWhatsAppAgenciaViagens2026"));
 const InvestimentosExteriorIR2026 = lazy(() => import("./pages/posts/InvestimentosExteriorIR2026"));
+const TheGreatestEstateDeveloperGuia2026 = lazy(() => import("./pages/posts/TheGreatestEstateDeveloperGuia2026"));
 const AcoesCrescimentoVsDividendos2026 = lazy(() => import("./pages/posts/AcoesCrescimentoVsDividendos2026"));
 const CambioDolarProtecao2026        = lazy(() => import("./pages/posts/CambioDolarProtecao2026"));
 const ComoEscolherPrevidencia2026    = lazy(() => import("./pages/posts/ComoEscolherPrevidencia2026"));
@@ -643,6 +644,7 @@ const App = () => (
                 <Route path="/post/melhores-ias-criar-imagens-videos-2026" element={<Suspense fallback={<div />}><MelhoresIAsImagensVideos2026 /></Suspense>} />
                 <Route path="/post/n8n-guia-atendente-whatsapp-agencia-viagens-2026" element={<Suspense fallback={<div />}><N8nWhatsAppAgenciaViagens2026 /></Suspense>} />
                 <Route path="/post/investimentos-exterior-imposto-renda-2026" element={<Suspense fallback={<div />}><InvestimentosExteriorIR2026 /></Suspense>} />
+                <Route path="/post/the-greatest-estate-developer-o-melhor-engenheiro-do-mundo-guia-2026" element={<Suspense fallback={<div />}><TheGreatestEstateDeveloperGuia2026 /></Suspense>} />
 
                 {/* ── 22 Jul 2026 — Invest Lote 4 ── */}
                 <Route path="/post/acoes-crescimento-vs-dividendos-2026" element={<Suspense fallback={<div />}><AcoesCrescimentoVsDividendos2026 /></Suspense>} />

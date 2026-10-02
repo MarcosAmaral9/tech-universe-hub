@@ -245,8 +245,33 @@ import iaFilmesSeriesImg from "@/assets/ia-filmes-series-2026.webp";
 import iaJogosIndustriaImg from "@/assets/ia-jogos-industria-2026.webp";
 import fatedVillainImg from "@/assets/i-am-the-fated-villain-gu-changge.webp";
 import cityLordImg from "@/assets/starting-today-city-lord-liu-feng.webp";
+import greatestEstateDeveloperImg from "@/assets/the-greatest-estate-developer-o-melhor-engenheiro-do-mundo-guia-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 30 Set 2026 — Otaku (The Greatest Estate Developer) ──────────────
+  {
+    id: "260",
+    slug: "the-greatest-estate-developer-o-melhor-engenheiro-do-mundo-guia-2026",
+    title: "The Greatest Estate Developer: Guia de O Melhor Engenheiro do Mundo",
+    excerpt:
+      "Guia completo de The Greatest Estate Developer: a história de Kim Suho como Lloyd Frontera, engenharia, Javier, Reino de Magentano, romance, capítulos e onde ler oficialmente em português.",
+    content: "",
+    category: "otaku",
+    subtopic: "manhwa",
+    image: greatestEstateDeveloperImg,
+    imageAlt: "Lloyd com plantas e Javier diante de pontes, aquedutos e uma cidade medieval em construção",
+    author: "VICIO<CODE>",
+    date: "2026-09-30",
+    readTime: "18 min",
+    faq: [
+      { q: "Quem é o protagonista de The Greatest Estate Developer?", a: "Kim Suho é um estudante de engenharia civil que desperta no corpo de Lloyd Frontera, nobre secundário de um romance de fantasia, e usa conhecimento técnico para salvar a família da ruína." },
+      { q: "Quantos capítulos tem O Melhor Engenheiro do Mundo?", a: "O índice oficial da Naver apresenta 228 episódios concluídos. Alguns catálogos internacionais contam 222 capítulos por agruparem prólogos, encerramentos ou extras de forma diferente." },
+      { q: "The Greatest Estate Developer já terminou?", a: "Sim. A web novel original terminou em 2020, e a série principal do webtoon aparece como concluída na Naver e no WEBTOON." },
+      { q: "Lloyd tem romance?", a: "Sim, existe um desenvolvimento romântico gradual envolvendo Alicia Termina Magentano, mas romance não é o foco principal da obra." },
+      { q: "Quem criou The Greatest Estate Developer?", a: "A web novel original é de BK_Moon. O webtoon credita Lee Hyun-min pela adaptação e Kim Hyun-soo pela arte." },
+      { q: "Onde ler oficialmente em português?", a: "A NewPOP publica a edição física, colorida e licenciada com o título O Melhor Engenheiro do Mundo. As versões oficiais coreana e inglesa estão na Naver Webtoon e no WEBTOON." },
+    ],
+  },
   // ── 21 Set 2026 — Finanças (Investimentos no exterior e IR) ──────────
   {
     id: "259",
