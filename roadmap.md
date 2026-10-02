@@ -8,4 +8,5 @@
 - [x] Remover credenciais públicas e proteger sessões, contas, comentários, preferências e tarefas automáticas.
 - [x] Publicar o guia de The Greatest Estate Developer com edição brasileira e dados verificados.
 - [x] Ajustar o hero do artigo para Lloyd de cabelo marrom e Javier de cabelo azul conforme a referência.
+- [x] Ampliar o guia com raças, trabalhadores, invocações e a comédia das caretas de Lloyd.
 - [ ] Redefinir a senha do MySQL e configurar os novos segredos privados na Hostinger (ação do proprietário).
