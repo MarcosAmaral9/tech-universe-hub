@@ -1,32 +1,33 @@
 # Auditoria SEO + E-E-A-T
 
-Gerado em 23/09/2026, 00:07:55.
+Gerado em 02/10/2026, 00:03:13.
 
 ## Resumo executivo
 
-- **Total auditado:** 230 posts (0 sem .tsx mapeado)
-- **PAGE_META manual presente:** 176 / 230
-- **Keyword no `<h1>`:** 156 / 230
-- **Keyword na introdução:** 147 / 230
-- **Keyword no excerpt:** 88 / 230
-- **AuthorBio:** 230 / 230
-- **ArticleSources (≥5 fontes):** 214 / 230
-- **EditorialTake / Análise do Marcos:** 230 / 230
-- **Conteúdo ≥1500 palavras:** 130 / 230
+- **Total auditado:** 231 posts (0 sem .tsx mapeado)
+- **PAGE_META manual presente:** 176 / 231
+- **Keyword no `<h1>`:** 156 / 231
+- **Keyword na introdução:** 148 / 231
+- **Keyword no excerpt:** 89 / 231
+- **AuthorBio:** 231 / 231
+- **ArticleSources (≥5 fontes):** 215 / 231
+- **EditorialTake / Análise do Marcos:** 231 / 231
+- **Conteúdo ≥1500 palavras:** 131 / 231
 
 
 
 ## Plano de levas sugerido
 
-1. **Levas SEO (rápidas, ~10 posts/leva)** — Adicionar PAGE_META + garantir keyword em h1/intro/excerpt para os 54 posts sem meta manual.
+1. **Levas SEO (rápidas, ~10 posts/leva)** — Adicionar PAGE_META + garantir keyword em h1/intro/excerpt para os 55 posts sem meta manual.
 2. **Levas Fontes (3 posts/leva)** — Adicionar 5ª fonte oficial verificável para os 16 posts com <5 fontes.
 3. **Levas Análise (5 posts/leva)** — Adicionar bloco "Análise do Marcos" para os 0 posts sem editorial.
 4. **Levas Expansão (2 posts/leva)** — Reescrever os 100 posts <1500 palavras, começando pelos mais curtos.
 
 ---
 
-## 1) Posts sem PAGE_META manual — 54
+## 1) Posts sem PAGE_META manual — 55
 
+- `the-greatest-estate-developer-o-melhor-engenheiro-do-mundo-guia-2026` (2237w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>
 - `investimentos-exterior-imposto-renda-2026` (1560w, 7 fontes) — sem PAGE_META manual; keyword ausente na introdução
 - `n8n-guia-atendente-whatsapp-agencia-viagens-2026` (2077w, 11 fontes) — sem PAGE_META manual; keyword ausente em <h1>
 - `hell-let-loose-vietnam-mapas-contexto-historico` (2131w, 7 fontes) — sem PAGE_META manual
@@ -194,8 +195,9 @@ Gerado em 23/09/2026, 00:07:55.
 - `mushoku-tensei-3-temporada-2026` (1999w, 6 fontes) — keyword ausente em meta description; keyword ausente em excerpt
 - `bleach-tybw-parte-4-the-calamity-2026` (1711w, 6 fontes) — keyword ausente em meta description; keyword ausente em excerpt
 
-## 3) Posts com keyword ausente no `<h1>` — 74
+## 3) Posts com keyword ausente no `<h1>` — 75
 
+- `the-greatest-estate-developer-o-melhor-engenheiro-do-mundo-guia-2026` (2237w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>
 - `n8n-guia-atendente-whatsapp-agencia-viagens-2026` (2077w, 11 fontes) — sem PAGE_META manual; keyword ausente em <h1>
 - `como-criar-agentes-ia-guia-completo-2026` (1288w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente em excerpt; apenas ~1288 palavras (mínimo 1500)
 - `ia-jogos-industria-games-2026` (1842w, 6 fontes) — sem PAGE_META manual; keyword ausente em <h1>; keyword ausente em excerpt
