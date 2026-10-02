@@ -11,7 +11,8 @@ import RelatedPosts from "@/components/RelatedPosts";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import {
   BookOpen, Building2, Calendar, Castle, Clock, Compass, Crown,
-  DraftingCompass, HardHat, HelpCircle, ListChecks, Shield, User,
+  DraftingCompass, HardHat, HelpCircle, ListChecks, PawPrint, Shield,
+  SmilePlus, User, Users,
 } from "lucide-react";
 import estateDeveloperImg from "@/assets/the-greatest-estate-developer-o-melhor-engenheiro-do-mundo-guia-2026.webp";
 
@@ -166,6 +167,69 @@ const TheGreatestEstateDeveloperGuia2026 = () => {
           Outros territórios e povos ampliam o mapa ao longo da aventura, incluindo regiões com condições naturais e culturas distintas. Para preservar as descobertas, este guia não enumera alianças tardias nem resultados de grandes crises. O importante é saber que o mundo não serve apenas de fundo genérico. Distância, relevo, clima e acesso a recursos influenciam os problemas que Lloyd precisa resolver.
         </p>
 
+        <h2 className="flex items-center gap-2 font-display text-2xl font-bold mt-10 mb-4"><Users className="h-6 w-6 text-otaku" />Raças, povos e quem trabalha com Lloyd</h2>
+        <p>
+          O crescimento do domínio Frontera não depende apenas de Lloyd e Javier. A obra constrói uma equipe cada vez mais variada ao redor dos projetos, começando pelos <strong>moradores e trabalhadores humanos do território</strong>. Camponeses, carregadores, escavadores, pedreiros, carpinteiros e outros trabalhadores braçais executam as obras, enquanto criados da casa, cavaleiros e administradores mantêm o funcionamento da propriedade. Lloyd atua como projetista e chefe de obra: mede, demonstra técnicas, divide tarefas e transforma grupos desacostumados a seus métodos em equipes coordenadas.
+        </p>
+        <p>
+          Alguns desses trabalhadores chegam desconfiados por causa da reputação do antigo Lloyd. O novo senhor precisa provar que conhece o trabalho e que os benefícios prometidos serão entregues. Pagamento, comida, descanso e segurança fazem parte de sua estratégia para manter a produtividade. Isso não torna a relação idealizada — Lloyd continua negociando de maneira agressiva e buscando lucro —, mas mostra que infraestrutura exige pessoas treinadas, não somente uma ideia brilhante ou uma criatura forte cavando o chão.
+        </p>
+        <p>
+          Conforme o mundo se abre, aparecem <strong>elfos e outros povos humanoides ou fantásticos</strong>, além de criaturas inteligentes com culturas e capacidades próprias. Eles não existem apenas como decoração de uma fantasia medieval: diferenças de força, longevidade, adaptação ao ambiente e relação com a magia podem mudar o modo de planejar uma construção ou enfrentar uma crise. Sem antecipar alianças e acontecimentos tardios, é seguro dizer que Lloyd aprende a enxergar essas diferenças como recursos de cooperação, em vez de tentar obrigar todos a trabalhar exatamente como humanos.
+        </p>
+        <p>
+          A equipe central combina competências. Javier protege o grupo e resolve ameaças que um canteiro de obras não consegue deter; artesãos transformam projetos em peças utilizáveis; soldados garantem segurança; trabalhadores locais oferecem experiência prática do terreno; e aliados de outros povos ampliam o que pode ser feito com magia ou habilidades físicas. Essa mistura reforça uma das melhores ideias da série: Lloyd é importante não porque realiza tudo sozinho, mas porque identifica talentos e os organiza em torno de uma solução.
+        </p>
+
+        <div className="not-prose my-8 grid gap-4 md:grid-cols-2">
+          <section className="p-5 rounded-xl border border-otaku/25 bg-gradient-to-br from-otaku/10 to-card/60">
+            <h3 className="font-display font-bold text-otaku mb-3">No canteiro de obras</h3>
+            <ul className="space-y-2 text-sm md:text-base text-foreground/90 list-disc list-inside">
+              <li>Trabalhadores locais fazem escavação, transporte e montagem.</li>
+              <li>Artesãos adaptam ferramentas e materiais aos projetos.</li>
+              <li>Administradores e criados sustentam a rotina do domínio.</li>
+              <li>Cavaleiros e soldados protegem equipes e rotas.</li>
+            </ul>
+          </section>
+          <section className="p-5 rounded-xl border border-otaku/25 bg-gradient-to-br from-otaku/10 to-card/60">
+            <h3 className="font-display font-bold text-otaku mb-3">Na fantasia</h3>
+            <ul className="space-y-2 text-sm md:text-base text-foreground/90 list-disc list-inside">
+              <li>Humanos formam a base social e profissional de Frontera.</li>
+              <li>Elfos e outros povos ampliam o mapa e suas culturas.</li>
+              <li>Criaturas mágicas oferecem força e habilidades especiais.</li>
+              <li>Lloyd combina engenharia, magia e cooperação entre grupos.</li>
+            </ul>
+          </section>
+        </div>
+
+        <h2 className="flex items-center gap-2 font-display text-2xl font-bold mt-10 mb-4"><PawPrint className="h-6 w-6 text-otaku" />Pets e invocações: máquinas de obra vivas</h2>
+        <p>
+          A criatura mais reconhecível de Lloyd é <strong>Ppodong</strong>, um hamster mágico normalmente pequeno e adorável que pode assumir proporções gigantescas. A própria sinopse oficial internacional destaca a ajuda de “um hamster gigante”, ao lado de Javier e da magia daquele mundo. Quando cresce, Ppodong funciona como uma máquina pesada viva: sua força e sua capacidade de cavar ajudam em terraplenagem, túneis e movimentação de grandes volumes de solo. Fora do trabalho, a aparência redonda e o comportamento afetuoso fazem dele um mascote genuíno do grupo.
+        </p>
+        <p>
+          Lloyd obtém criaturas por meio de seu sistema de recompensas e invocações. Elas não são acessórios esquecidos após uma cena. Cada companheiro apresenta características próprias, limites e uma utilidade que o engenheiro tenta encaixar em seus planos. O protagonista pensa nelas como parceiros queridos, mas também — para desespero de quem observa — como equipamentos de construção extremamente eficientes. Esse contraste entre carinho e cálculo rende várias piadas.
+        </p>
+        <p>
+          O grupo de invocações cresce ao longo da aventura. Entre os nomes associados a Lloyd estão <strong>Bangul</strong>, ligada a trabalhos pesados de perfuração e abertura de túneis, e <strong>Ggoming</strong>, uma pequena ave capaz de aumentar de tamanho e colaborar em projetos de grande escala. Outras criaturas passam a integrar essa família fantástica mais adiante. Para evitar spoilers e não transformar a lista em catálogo de revelações, o essencial é que cada uma amplia a “caixa de ferramentas” de Lloyd sem substituir seu planejamento.
+        </p>
+        <p>
+          As invocações também humanizam o protagonista. Embora ele faça contas sobre produtividade e economia de mão de obra, preocupa-se com sua alimentação e segurança e cria vínculos reais com elas. Visualmente, a diferença entre bichinhos pequenos e fofos e suas formas gigantes em pleno canteiro resume bem o tom do webtoon: uma ideia absurda é tratada com lógica suficiente para se tornar parte convincente da engenharia daquele universo.
+        </p>
+
+        <h2 className="flex items-center gap-2 font-display text-2xl font-bold mt-10 mb-4"><SmilePlus className="h-6 w-6 text-otaku" />As caretas de Lloyd e a comédia visual</h2>
+        <p>
+          As expressões de Lloyd são uma das assinaturas visuais de <em>The Greatest Estate Developer</em>. Quando ele sente cheiro de lucro, prepara uma negociação ou acredita ter encontrado uma saída, o rosto abandona as proporções elegantes usadas em cenas comuns. Olhos, dentes, sobrancelhas e sombras são exagerados até ele parecer um vilão de terror, um golpista ou uma criatura muito mais ameaçadora do que os monstros ao redor. A graça está no fato de que o leitor conhece o raciocínio prático por trás daquela aparência terrível.
+        </p>
+        <p>
+          Kim Hyun-soo usa essas deformações como pontuação cômica. Uma sequência pode começar com arte detalhada e enquadramento heroico, cortar para uma careta grotesca e terminar na reação silenciosa de Javier. O contraste quebra a solenidade de discursos, batalhas e negociações sem precisar de uma explicação longa. As caretas também dão ritmo às conversas técnicas: depois de cálculos, materiais e prazos, uma expressão impossível entrega a piada imediatamente.
+        </p>
+        <p>
+          Javier é indispensável nesse mecanismo. Seu rosto bonito e quase sempre controlado funciona como o oposto perfeito da elasticidade facial do patrão. Às vezes, basta o cavaleiro olhar para Lloyd com reprovação ou responder de forma seca para completar a cena. Outros personagens frequentemente interpretam o sorriso comercial do protagonista como ameaça, enquanto Lloyd acredita estar sendo convincente. Essa diferença entre intenção e percepção alimenta boa parte do humor.
+        </p>
+        <p>
+          As caretas não significam apenas que Lloyd é “feio”. Elas revelam sua ganância teatral, seu desespero para evitar a pobreza e a energia quase assustadora com que persegue uma solução. Por isso se tornaram memes entre leitores e continuam funcionando mesmo depois de repetidas: o artista muda ângulo, intensidade e contexto, fazendo de cada expressão uma nova variação da personalidade do protagonista.
+        </p>
+
         <AdInArticle className="my-8" />
 
         <h2 className="flex items-center gap-2 font-display text-2xl font-bold mt-10 mb-4"><Crown className="h-6 w-6 text-otaku" />Existe romance para Lloyd?</h2>
@@ -275,6 +339,8 @@ const TheGreatestEstateDeveloperGuia2026 = () => {
           { title: "The Greatest Estate Developer — edição internacional oficial", url: "https://www.webtoons.com/en/fantasy/the-greatest-estate-developer/list?title_no=3596", publisher: "WEBTOON", accessedAt: "Setembro 2026" },
           { title: "The Greatest Estate Developer — ficha bibliográfica e datas", url: "https://en.wikipedia.org/wiki/The_Greatest_Estate_Developer", publisher: "Wikipedia", accessedAt: "Setembro 2026" },
           { title: "The Greatest Estate Developer — publicação e contagem catalogada", url: "https://myanimelist.net/manga/147272/The_Greatest_Estate_Developer", publisher: "MyAnimeList", accessedAt: "Setembro 2026" },
+          { title: "Ppodong — perfil do hamster gigante e assistente de construção", url: "https://myanimelist.net/character/228000/Ppodong", publisher: "MyAnimeList", accessedAt: "Outubro 2026" },
+          { title: "The Greatest Estate Developer — resenhas sobre comédia e expressões", url: "https://myanimelist.net/manga/147272/The_Greatest_Estate_Developer/reviews", publisher: "MyAnimeList", accessedAt: "Outubro 2026" },
           { title: "O Melhor Engenheiro do Mundo: Volume 01 — ISBN e edição brasileira", url: "https://www.martinsfontespaulista.com.br/o-melhor-engenheiro-do-mundo--the-greatest-estate-developer---volume-01-1211552/p", publisher: "Martins Fontes Paulista", accessedAt: "Setembro 2026" },
           { title: "The Greatest Estate Developer chega oficialmente ao Brasil pela NewPOP", url: "https://www.jwave.com.br/2026/07/o-webtoon-que-trocou-espadas-por-engenharia-finalmente-chega-ao-brasil/", publisher: "JWave", accessedAt: "Setembro 2026" },
         ]}
