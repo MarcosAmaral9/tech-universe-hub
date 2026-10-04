@@ -51,7 +51,7 @@ interface AssetHistory {
   category: CategoryKey; icon: string;
   currentPrice: number; change24h: number;
   data: ChartPoint[]; unit: string;
-  dataSource: "real" | "db" | "simulated";
+  dataSource: "db";
 }
 
 // ── Formatação ─────────────────────────────────────────────────────────────
@@ -69,7 +69,6 @@ const pctArrow = (v: number) =>
   v >= 0 ? <TrendingUp className="h-3.5 w-3.5" /> : <TrendingDown className="h-3.5 w-3.5" />;
 
 // ── Constantes ─────────────────────────────────────────────────────────────
-const TROY = 31.1035;
 const PERIOD_DAYS: Record<Period, number> = { "5d": 5, "7d": 7, "30d": 30, "90d": 90, "1y": 365 };
 const CAT_STROKE: Record<CategoryKey, string> = {
   b3: "#60a5fa", crypto: "#fb923c", currency: "#34d399", metal: "#facc15",
@@ -80,19 +79,6 @@ const CAT_BORDER: Record<CategoryKey, string> = {
   currency: "border-emerald-500/30 bg-emerald-500/5",
   metal: "border-yellow-500/30 bg-yellow-500/5",
 };
-const B3_ICONS: Record<string, string> = {
-  PETR4:"🛢️", VALE3:"⛏️", ITUB4:"🏦", BBDC4:"🏦", ABEV3:"🍺",
-  WEGE3:"⚙️", BBAS3:"🏦", RENT3:"🚗", MGLU3:"🛒", SUZB3:"🌲",
-};
-const CRYPTO_ICONS: Record<string, string> = {
-  bitcoin:"₿", ethereum:"⟠", solana:"◎", binancecoin:"🟡",
-  cardano:"🔵", ripple:"💧", chainlink:"🔗", polkadot:"⬤",
-};
-const CRYPTO_SYMBOL_MAP: Record<string, string> = {
-  bitcoin:"BTC", ethereum:"ETH", solana:"SOL", binancecoin:"BNB",
-  cardano:"ADA", ripple:"XRP", chainlink:"LINK", polkadot:"DOT",
-};
-
 // ── Fallback estático ──────────────────────────────────────────────────────
 const FALLBACK_ASSETS: Omit<AssetHistory, "data" | "dataSource">[] = [
   { id:"b3-PETR4", name:"Petrobras PN",       symbol:"PETR4", category:"b3",       icon:"🛢️", currentPrice:37.50,   change24h: 1.2,  unit:"R$/ação" },
@@ -247,15 +233,8 @@ const HistoricoCotacoesPage = () => {
        / selectedAsset.data[0].value) * 100
     : 0;
 
-  const dataSourceLabel = (ds: string) => {
-    if (ds === "db")   return "✓ Histórico do banco de dados VicioCode";
-    if (ds === "real") return "✓ Dados históricos reais (API externa)";
-    return "~ Estimativa baseada no preço atual";
-  };
-  const dataSourceStyle = (ds: string) =>
-    ds === "db" || ds === "real"
-      ? "bg-emerald-500/15 text-emerald-400"
-      : "bg-amber-500/15 text-amber-400";
+  const dataSourceLabel = () => "✓ Histórico real salvo no VicioCode";
+  const dataSourceStyle = () => "bg-emerald-500/15 text-emerald-400";
 
   // Ordem igual à /cotacoes: B3 → Câmbio → Metais → Cripto
   const categories: { key: CategoryKey; label: string; icon: React.ReactNode }[] = [
@@ -327,16 +306,10 @@ const HistoricoCotacoesPage = () => {
             <span>Usando dados de referência — servidor indisponível. Os dados serão atualizados automaticamente.</span>
           </div>
         )}
-        {dbHistoryAvailable && !loading && (
+        {snapshot && !loading && (
           <div className="flex items-start gap-3 mb-4 p-3 rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-sm text-emerald-300">
             <Info className="h-4 w-4 shrink-0 mt-0.5" />
             <span>Histórico carregado do banco de dados — dados acumulados automaticamente a cada atualização das cotações.</span>
-          </div>
-        )}
-        {category === "b3" && !loading && (
-          <div className="flex items-start gap-3 mb-4 p-3 rounded-lg border border-blue-500/30 bg-blue-500/10 text-sm text-blue-300">
-            <Info className="h-4 w-4 shrink-0 mt-0.5" />
-            <span><strong>Em desenvolvimento:</strong> O histórico dos valores da B3 está sendo construído gradualmente. Os dados são acumulados automaticamente a cada atualização do servidor — quanto mais tempo passar, mais completo ficará o histórico.</span>
           </div>
         )}
 
@@ -418,23 +391,16 @@ const HistoricoCotacoesPage = () => {
                     </div>
                   </div>
 
-                  {selectedAsset.data.length < 3 ? (
+                  {selectedAsset.data.length < 2 ? (
                     <div className="flex flex-col items-center justify-center h-64 gap-3 text-center px-4">
                       <Info className="h-10 w-10 text-muted-foreground/40" />
                       <div>
                         <p className="text-muted-foreground font-medium text-sm">
-                          Montando o histórico deste ativo…
+                          Histórico indisponível nesta cópia
                         </p>
                         <p className="text-xs text-muted-foreground/70 mt-1 max-w-sm">
-                          O servidor está buscando e guardando as cotações antigas em segundo plano.
-                          O gráfico aparece sozinho assim que houver dados suficientes — normalmente em alguns minutos.
+                          A última série completa permanece salva e será exibida assim que o servidor voltar a responder.
                         </p>
-                        <button
-                          onClick={() => { retriesRef.current = 0; loadData(period); }}
-                          className="mt-3 text-xs font-medium px-3 py-1.5 rounded-full bg-muted hover:bg-muted/80 transition-colors"
-                        >
-                          Tentar de novo
-                        </button>
                       </div>
                     </div>
                   ) : (
@@ -529,11 +495,7 @@ const HistoricoCotacoesPage = () => {
                       <div>
                         <div className="flex items-center gap-1.5">
                           <span className="font-bold text-sm">{asset.symbol}</span>
-                          {asset.dataSource !== "simulated" && (
-                            <span className={`text-[9px] font-bold ${asset.dataSource === "db" ? "text-blue-400" : "text-emerald-400"}`}>
-                              {asset.dataSource === "db" ? "BD" : "REAL"}
-                            </span>
-                          )}
+                          <span className="text-[9px] font-bold text-emerald-400">REAL</span>
                         </div>
                         <div className="text-xs text-muted-foreground truncate max-w-[110px]">{asset.name}</div>
                       </div>
@@ -567,19 +529,19 @@ const HistoricoCotacoesPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
             <div>
               <strong className="text-foreground">📊 B3 — 10 ações</strong>
-              <p className="text-xs text-muted-foreground mt-0.5">PETR4, VALE3, ITUB4, BBDC4, ABEV3, WEGE3, BBAS3, RENT3, MGLU3, SUZB3. Histórico via BD (acumulado) ou estimativa.</p>
+              <p className="text-xs text-muted-foreground mt-0.5">PETR4, VALE3, ITUB4, BBDC4, ABEV3, WEGE3, BBAS3, RENT3, MGLU3, SUZB3. Série real salva previamente.</p>
             </div>
             <div>
               <strong className="text-foreground">₿ Cripto — 8 moedas</strong>
-              <p className="text-xs text-muted-foreground mt-0.5">BTC, ETH, SOL, BNB, ADA, XRP, LINK, DOT. Histórico via BD → CoinGecko (até 90D, grátis) → estimativa. Busca sequencial para evitar rate limit.</p>
+              <p className="text-xs text-muted-foreground mt-0.5">BTC, ETH, SOL, BNB, ADA, XRP, LINK, DOT. Série real atualizada pelo servidor.</p>
             </div>
             <div>
               <strong className="text-foreground">💱 Câmbio — 4 moedas</strong>
-              <p className="text-xs text-muted-foreground mt-0.5">USD, EUR, ARS, PYG. Histórico via BD → AwesomeAPI (gratuito) → estimativa.</p>
+              <p className="text-xs text-muted-foreground mt-0.5">USD, EUR, ARS, PYG. Série real atualizada pelo servidor.</p>
             </div>
             <div>
               <strong className="text-foreground">🥇 Metais — 2 ativos</strong>
-              <p className="text-xs text-muted-foreground mt-0.5">Ouro e prata por grama em BRL. Histórico via BD → estimativa com volatilidade real de metais.</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Ouro e prata por grama em BRL. Série real atualizada pelo servidor.</p>
             </div>
           </div>
           <p className="text-[10px] text-muted-foreground mt-3 pt-3 border-t border-border">
