@@ -18,6 +18,11 @@ describe("histórico público pré-calculado", () => {
     );
     expect(publicHistory).not.toContain("runBackfillStep(");
     expect(publicHistory).toContain("'backfilling' => false");
+    const publicMarketCache = api.slice(
+      api.indexOf("if ($method === 'GET' && $action === 'all')"),
+      api.indexOf("// ─── GET: histórico múltiplo"),
+    );
+    expect(publicMarketCache).not.toContain("httpGet(");
   });
 
   it("só publica o snapshot quando todos os 24 ativos estão completos", () => {

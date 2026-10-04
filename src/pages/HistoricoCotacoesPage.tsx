@@ -377,8 +377,8 @@ const HistoricoCotacoesPage = () => {
                           </span>
                         </div>
                         <div className="text-sm text-muted-foreground">{selectedAsset.name}</div>
-                        <span className={`inline-flex items-center gap-1 mt-1 text-[10px] px-2 py-0.5 rounded-full font-medium ${dataSourceStyle(selectedAsset.dataSource)}`}>
-                          {dataSourceLabel(selectedAsset.dataSource)}
+                        <span className={`inline-flex items-center gap-1 mt-1 text-[10px] px-2 py-0.5 rounded-full font-medium ${dataSourceStyle()}`}>
+                          {dataSourceLabel()}
                         </span>
                       </div>
                     </div>
