@@ -331,6 +331,40 @@ function getPdo(): ?PDO {
     }
 }
 
+// Garante que o cron encontre toda a estrutura necessária mesmo após um banco vazio.
+function ensureMarketHistorySchema(PDO $db): void {
+    $db->exec("CREATE TABLE IF NOT EXISTS widget_cache (
+        widget VARCHAR(20) PRIMARY KEY,
+        data LONGTEXT NOT NULL,
+        fetched_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        fetch_date DATE NOT NULL,
+        req_count INT DEFAULT 0
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
+    $db->exec("CREATE TABLE IF NOT EXISTS price_history (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        asset_type VARCHAR(10) NOT NULL,
+        asset_code VARCHAR(20) NOT NULL,
+        price DECIMAL(20,6) NOT NULL,
+        price_date DATE NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        UNIQUE KEY unique_asset_date (asset_type, asset_code, price_date),
+        INDEX idx_type_code (asset_type, asset_code),
+        INDEX idx_date (price_date)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
+    $db->exec("CREATE TABLE IF NOT EXISTS history_backfill_state (
+        asset_type VARCHAR(10) NOT NULL,
+        asset_code VARCHAR(20) NOT NULL,
+        points INT NOT NULL DEFAULT 0,
+        first_date DATE NULL,
+        last_date DATE NULL,
+        is_complete TINYINT(1) NOT NULL DEFAULT 0,
+        last_attempt_at DATETIME NULL,
+        last_error VARCHAR(255) NULL,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        PRIMARY KEY (asset_type, asset_code)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
+}
+
 // ─── GET: diagnóstico — não precisa de banco ──────────────────────────────────
 if ($method === 'GET' && $action === 'ping') {
     requireAdmin(getPdo());
@@ -469,7 +503,7 @@ if ($method === 'POST' && $action === 'clear_widget_cache') {
         }
     }
     // Also clear file caches
-    foreach (['viciocode_b3_v2.json', 'viciocode_rates_v2.json', 'viciocode_crypto.json'] as $f) {
+    foreach (['viciocode_b3_v2.json', 'viciocode_rates_v2.json', 'viciocode_crypto.json', 'viciocode_history_snapshot.json'] as $f) {
         $fp = cacheDir() . '/' . $f;
         if (file_exists($fp)) { @unlink($fp); $cleared[] = "$f deleted"; }
     }
@@ -632,6 +666,135 @@ const VC_BACKFILL_CRYPTO = [
 ];
 const VC_BACKFILL_CURRENCIES = ['usd' => 'USD', 'eur' => 'EUR', 'ars' => 'ARS', 'pyg' => 'PYG'];
 const VC_BACKFILL_B3 = ['PETR4','VALE3','ITUB4','BBDC4','ABEV3','WEGE3','BBAS3','RENT3','MGLU3','SUZB3'];
+
+function historyExpectedAssets(): array {
+    return [
+        'b3' => VC_BACKFILL_B3,
+        'crypto' => array_keys(VC_BACKFILL_CRYPTO),
+        'currency' => array_values(VC_BACKFILL_CURRENCIES),
+        'metal' => ['XAU', 'XAG'],
+    ];
+}
+
+function refreshHistoryState(PDO $db, array $errors = []): array {
+    $stats = [];
+    $stmt = $db->query(
+        'SELECT asset_type, asset_code, COUNT(*) points, MIN(price_date) first_date, MAX(price_date) last_date
+         FROM price_history WHERE price_date >= DATE_SUB(CURDATE(), INTERVAL 365 DAY)
+         GROUP BY asset_type, asset_code'
+    );
+    foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
+        $stats[$row['asset_type']][$row['asset_code']] = $row;
+    }
+    $upsert = $db->prepare(
+        'INSERT INTO history_backfill_state
+         (asset_type, asset_code, points, first_date, last_date, is_complete, last_attempt_at, last_error)
+         VALUES (:type, :code, :points, :first_date, :last_date, :complete, NOW(), :error)
+         ON DUPLICATE KEY UPDATE points=VALUES(points), first_date=VALUES(first_date),
+         last_date=VALUES(last_date), is_complete=VALUES(is_complete),
+         last_attempt_at=NOW(), last_error=VALUES(last_error)'
+    );
+    $state = [];
+    foreach (historyExpectedAssets() as $type => $codes) {
+        foreach ($codes as $code) {
+            $row = $stats[$type][$code] ?? [];
+            $points = (int)($row['points'] ?? 0);
+            $minimum = $type === 'b3' ? 180 : 300;
+            $complete = $points >= $minimum;
+            $error = $errors[$type][$code]['error'] ?? null;
+            $upsert->execute([
+                ':type' => $type, ':code' => $code, ':points' => $points,
+                ':first_date' => $row['first_date'] ?? null,
+                ':last_date' => $row['last_date'] ?? null,
+                ':complete' => $complete ? 1 : 0, ':error' => $error,
+            ]);
+            $state[$type][$code] = [
+                'points' => $points,
+                'first_date' => $row['first_date'] ?? null,
+                'last_date' => $row['last_date'] ?? null,
+                'complete' => $complete,
+            ];
+        }
+    }
+    return $state;
+}
+
+function buildHistorySnapshot(PDO $db): ?array {
+    $state = refreshHistoryState($db);
+    foreach ($state as $assets) {
+        foreach ($assets as $asset) {
+            if (!$asset['complete']) return null;
+        }
+    }
+    $rows = $db->query(
+        'SELECT asset_type, asset_code, price_date, price FROM price_history
+         WHERE price_date >= DATE_SUB(CURDATE(), INTERVAL 365 DAY)
+         ORDER BY asset_type, asset_code, price_date ASC'
+    )->fetchAll(PDO::FETCH_ASSOC);
+    $series = ['b3' => [], 'crypto' => [], 'currency' => [], 'metal' => []];
+    foreach ($rows as $row) {
+        if (!isset($series[$row['asset_type']])) continue;
+        $series[$row['asset_type']][$row['asset_code']][] = [
+            'date' => $row['price_date'], 'price' => (float)$row['price'],
+        ];
+    }
+    return [
+        'version' => 1,
+        'generatedAt' => date('c'),
+        'periods' => [7, 30, 90, 365],
+        'assets' => $series,
+        'state' => $state,
+    ];
+}
+
+function publishHistorySnapshot(PDO $db): array {
+    $snapshot = buildHistorySnapshot($db);
+    if (!$snapshot) return ['published' => false, 'reason' => 'incomplete'];
+    $json = json_encode($snapshot, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    if (!$json) return ['published' => false, 'reason' => 'encode_failed'];
+    $path = cacheDir() . '/viciocode_history_snapshot.json';
+    $tmp = $path . '.' . bin2hex(random_bytes(4)) . '.tmp';
+    if (@file_put_contents($tmp, $json, LOCK_EX) === false || !@rename($tmp, $path)) {
+        @unlink($tmp);
+        return ['published' => false, 'reason' => 'write_failed'];
+    }
+    dbCacheSave($db, 'history_snapshot', $snapshot);
+    return ['published' => true, 'bytes' => strlen($json), 'generatedAt' => $snapshot['generatedAt']];
+}
+
+function serveHistorySnapshot(): void {
+    $path = cacheDir() . '/viciocode_history_snapshot.json';
+    $json = file_exists($path) ? @file_get_contents($path) : false;
+    if (!$json) {
+        $db = getPdo();
+        if ($db) {
+            try {
+                ensureMarketHistorySchema($db);
+                $stmt = $db->prepare('SELECT data FROM widget_cache WHERE widget = :widget LIMIT 1');
+                $stmt->execute([':widget' => 'history_snapshot']);
+                $json = $stmt->fetchColumn();
+                if (!$json) {
+                    $snapshot = buildHistorySnapshot($db);
+                    $json = $snapshot ? json_encode($snapshot, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) : false;
+                }
+            } catch (Throwable $e) { $json = false; }
+        }
+    }
+    if (!$json) {
+        http_response_code(503);
+        echo json_encode(['error' => 'Histórico completo ainda indisponível']);
+        exit;
+    }
+    $etag = '"' . hash('sha256', $json) . '"';
+    header('Cache-Control: public, max-age=300, stale-while-revalidate=86400');
+    header('ETag: ' . $etag);
+    if (trim($_SERVER['HTTP_IF_NONE_MATCH'] ?? '') === $etag) {
+        http_response_code(304);
+        exit;
+    }
+    echo $json;
+    exit;
+}
 
 // Trava simples baseada em arquivo: evita execuções simultâneas e respeita
 // um intervalo mínimo entre tentativas do mesmo alvo.
@@ -837,28 +1000,20 @@ if ($method === 'GET' && $action === 'history') {
     $stmt->execute([':type' => $type, ':code' => strtoupper($code), ':days' => $days]);
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // Rede de segurança: se o ativo estiver com histórico incompleto para o
-    // período pedido, dispara um passo curto de preenchimento DEPOIS de responder.
-    $expected = $type === 'b3' ? (int)($days * 0.5) : (int)($days * 0.8);
-    $needsBackfill = count($rows) < max(3, $expected);
-
     echo json_encode([
         'type' => $type,
         'code' => strtoupper($code),
         'days' => $days,
         'points' => array_map(fn($r) => ['date' => $r['price_date'], 'price' => (float)$r['price']], $rows),
         'count' => count($rows),
-        'backfilling' => $needsBackfill,
+        'backfilling' => false,
     ]);
-
-    if ($needsBackfill) {
-        $t = $type; $c = strtoupper($code); $d = $days;
-        backfillAfterResponse(function () use ($t, $c, $d) {
-            $bdb = getPdo();
-            if ($bdb) runBackfillStep($bdb, 20.0, $t, $c);
-        });
-    }
     exit;
+}
+
+// Uma única leitura pública, preparada antecipadamente pelo cron.
+if ($method === 'GET' && $action === 'history_snapshot') {
+    serveHistorySnapshot();
 }
 
 
@@ -949,119 +1104,7 @@ if ($method === 'GET' && $action === 'all') {
     $cryptoOk = !empty($cryptoData['coins']);
     $ratesOk  = isset($ratesData['USDBRL']);
 
-    // ── AUTO-BOOTSTRAP: se o BD estiver vazio, busca APIs diretamente uma vez ──
-    // Isso resolve o caso onde o cron ainda não foi configurado ou o BD foi resetado.
-    // Após esta chamada, o cron assumirá as atualizações regulares.
-    if (!$b3Ok || !$cryptoOk || !$ratesOk) {
-        // Busca o que estiver faltando diretamente das APIs externas
-        $autoBootstrapped = false;
-
-        // Rates (fawazahmed — sem limite, sempre tenta)
-        if (!$ratesOk) {
-            $rawFw = httpGet('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/brl.min.json', 8);
-            if ($rawFw) {
-                $dataFw = json_decode($rawFw, true);
-                $brl = $dataFw['brl'] ?? [];
-                $toRate = function($key) use ($brl): ?array {
-                    $rate = $brl[$key] ?? null;
-                    if (!$rate || $rate <= 0) return null;
-                    $bid = round(1 / $rate, 6);
-                    return ['bid' => (string)$bid, 'pctChange' => '0.00', 'high' => (string)$bid, 'low' => (string)$bid];
-                };
-                $r = [];
-                if ($v = $toRate('usd')) $r['USDBRL'] = $v;
-                if ($v = $toRate('eur')) $r['EURBRL'] = $v;
-                if ($v = $toRate('ars')) $r['ARSBRL'] = $v;
-                if ($v = $toRate('pyg')) $r['PYGBRL'] = $v;
-                if ($v = $toRate('xau')) $r['XAUBRL'] = $v;
-                if ($v = $toRate('xag')) $r['XAGBRL'] = $v;
-                if (!empty($r['USDBRL'])) {
-                    $r['_meta'] = ['source' => 'fawazahmed-auto', 'from_cache' => false, 'updatedAt' => date('c'), 'expiresAt' => date('c', time() + 30 * 60)];
-                    $ratesData = $r;
-                    $ratesOk = true;
-                    if ($db) {
-                        dbCacheSave($db, 'rates', $r);
-                        // Salva snapshot histórico com pureza aplicada
-                        $TROY = 31.1035;
-                        $histC = []; $histM = [];
-                        foreach (['USDBRL'=>'USD','EURBRL'=>'EUR','ARSBRL'=>'ARS','PYGBRL'=>'PYG'] as $k=>$c)
-                            if (isset($r[$k]['bid'])) $histC[$c] = (float)$r[$k]['bid'];
-                        if (isset($r['XAUBRL']['bid'])) $histM['XAU'] = round((float)$r['XAUBRL']['bid'] / $TROY * 0.75, 4);
-                        if (isset($r['XAGBRL']['bid'])) $histM['XAG'] = round((float)$r['XAGBRL']['bid'] / $TROY * 0.925, 4);
-                        if (!empty($histC)) saveHistorySnapshots($db, 'currency', $histC);
-                        if (!empty($histM)) saveHistorySnapshots($db, 'metal', $histM);
-                        @file_put_contents(cacheDir() . '/viciocode_rates_v2.json', json_encode($r));
-                    }
-                    $autoBootstrapped = true;
-                }
-            }
-        }
-
-        // Crypto (CoinGecko — apenas se rates OK para não sobrecarregar no mesmo request)
-        if (!$cryptoOk) {
-            $rawCg = httpGet('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&ids=bitcoin,ethereum,solana,binancecoin,cardano,ripple,chainlink,polkadot&order=market_cap_desc&sparkline=false', 10);
-            if (!$rawCg) $rawCg = httpGet('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,binancecoin,cardano,ripple,chainlink,polkadot&vs_currencies=brl&include_24hr_change=true', 8);
-            $cgData = $rawCg ? json_decode($rawCg, true) : null;
-            if (!empty($cgData) && is_array($cgData) && count($cgData) > 0) {
-                $cr = ['coins' => $cgData, '_meta' => ['source' => 'coingecko-auto', 'from_cache' => false, 'updatedAt' => date('c'), 'expiresAt' => date('c', time() + 30 * 60)]];
-                $cryptoData = $cr;
-                $cryptoOk = true;
-                if ($db) {
-                    dbCacheSave($db, 'crypto', $cr);
-                    $histCrypto = [];
-                    foreach ($cgData as $coin) { if (isset($coin['id'], $coin['current_price']) && $coin['current_price'] > 0) $histCrypto[strtoupper($coin['symbol'] ?? $coin['id'])] = (float)$coin['current_price']; }
-                    if (!empty($histCrypto)) saveHistorySnapshots($db, 'crypto', $histCrypto);
-                    @file_put_contents(cacheDir() . '/viciocode_crypto.json', json_encode($cr));
-                }
-                $autoBootstrapped = true;
-            }
-        }
-
-        // B3 (brapi.dev — apenas se BD realmente vazio)
-        if (!$b3Ok) {
-            $tickers = !empty($BRAPI_TOKEN) ? 'PETR4,VALE3,ITUB4,BBDC4,ABEV3,WEGE3,BBAS3,RENT3,MGLU3,SUZB3' : 'PETR4,VALE3,ITUB4,BBDC4,ABEV3,WEGE3,BBAS3,MGLU3';
-            $brapiUrl = "https://brapi.dev/api/quote/{$tickers}?fundamental=false";
-            $brapiHeaders = !empty($BRAPI_TOKEN) ? ["Authorization: Bearer {$BRAPI_TOKEN}", 'Accept: application/json'] : ['Accept: application/json'];
-            $brapiRaw = null;
-            if (function_exists('curl_init')) {
-                $ch = curl_init($brapiUrl);
-                curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER=>true, CURLOPT_TIMEOUT=>10, CURLOPT_FOLLOWLOCATION=>true, CURLOPT_SSL_VERIFYPEER=>true, CURLOPT_USERAGENT=>'VicioCode/1.0', CURLOPT_HTTPHEADER=>$brapiHeaders]);
-                $brapiRaw = curl_exec($ch); curl_close($ch);
-            }
-            if (!$brapiRaw && ini_get('allow_url_fopen')) {
-                $ctx = stream_context_create(['http' => ['timeout'=>10, 'ignore_errors'=>true, 'header'=>implode("
-", $brapiHeaders)."
-"]]);
-                $brapiRaw = @file_get_contents($brapiUrl, false, $ctx);
-            }
-            $brapiData = $brapiRaw ? json_decode($brapiRaw, true) : null;
-            if (!empty($brapiData['results'])) {
-                $br = ['results' => $brapiData['results'], '_meta' => ['source' => 'brapi-auto', 'from_cache' => false, 'updatedAt' => date('c'), 'expiresAt' => date('c', time() + 30 * 60)]];
-                $b3Data = $br;
-                $b3Ok = true;
-                if ($db) {
-                    dbCacheSave($db, 'b3', $br);
-                    $histB3 = [];
-                    foreach ($brapiData['results'] as $s) if (isset($s['symbol'], $s['regularMarketPrice']) && $s['regularMarketPrice'] > 0) $histB3[$s['symbol']] = (float)$s['regularMarketPrice'];
-                    if (!empty($histB3)) saveHistorySnapshots($db, 'b3', $histB3);
-                    @file_put_contents(cacheDir() . '/viciocode_b3_v2.json', json_encode($br));
-                }
-                $autoBootstrapped = true;
-            }
-        }
-
-        // Recalcula expiresAt com os dados recém obtidos
-        if ($autoBootstrapped) {
-            $expiresTs = PHP_INT_MAX;
-            foreach ([$b3Data, $cryptoData, $ratesData] as $src) {
-                if (!empty($src['_meta']['expiresAt'])) {
-                    $ts = strtotime($src['_meta']['expiresAt']);
-                    if ($ts !== false && $ts < $expiresTs) $expiresTs = $ts;
-                }
-            }
-            if ($expiresTs === PHP_INT_MAX) $expiresTs = time() + 30 * 60;
-        }
-    }
+    // Leituras públicas nunca consultam provedores. O cron protegido preenche o cache.
 
     echo json_encode([
         'b3'     => $b3Data     ?? ['results' => [], '_meta' => ['error' => 'indisponível']],
@@ -1106,22 +1149,16 @@ if ($method === 'GET' && $action === 'history_multi') {
         ];
     }
 
-    $expectedRows = (int)($days * 0.7) * 14; // ~14 ativos acompanhados
-    $needsBackfill = count($rows) < $expectedRows;
-
     echo json_encode([
         'days'     => $days,
         'b3'       => $grouped['b3']       ?? [],
         'crypto'   => $grouped['crypto']   ?? [],
         'currency' => $grouped['currency'] ?? [],
         'metal'    => $grouped['metal']    ?? [],
-        'backfilling' => $needsBackfill,
+        'backfilling' => false,
         '_meta'    => ['updatedAt' => date('c'), 'total_rows' => count($rows)],
     ]);
 
-    if ($needsBackfill) {
-        backfillAfterResponse(function () { $bdb = getPdo(); if ($bdb) runBackfillStep($bdb, 20.0); });
-    }
     exit;
 }
 
@@ -1143,6 +1180,18 @@ if ($method === 'POST' && $action === 'cron_refresh') {
 
     $t0 = microtime(true);
     $db = getPdo();
+    if (!$db) {
+        http_response_code(503);
+        echo json_encode(['error' => 'Banco indisponível; atualização cancelada para preservar o último snapshot']);
+        exit;
+    }
+    try {
+        ensureMarketHistorySchema($db);
+    } catch (Throwable $e) {
+        http_response_code(503);
+        echo json_encode(['error' => 'Não foi possível preparar o histórico no banco']);
+        exit;
+    }
     $results = [];
 
     // ── 1. RATES (câmbio + metais via fawazahmed) ──────────────────────────
@@ -1336,11 +1385,12 @@ if ($method === 'POST' && $action === 'cron_refresh') {
         'results'     => $results,
     ], JSON_PRETTY_PRINT);
 
-    // Após responder, completa uma fatia do histórico faltante (self-healing).
-    // Em poucas execuções o banco fica com 1 ano de dados, sem ação manual.
-    if ($db) {
-        backfillAfterResponse(function () use ($db) { runBackfillStep($db, 40.0); });
-    }
+    // Após responder, completa uma fatia e publica atomicamente apenas uma cópia completa.
+    backfillAfterResponse(function () use ($db) {
+        $backfill = runBackfillStep($db, 40.0);
+        refreshHistoryState($db, $backfill);
+        publishHistorySnapshot($db);
+    });
     exit;
 }
 
@@ -1539,6 +1589,28 @@ if ($method === 'GET' && $action === 'history_assets') {
     );
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode(['assets' => $rows]);
+    exit;
+}
+
+if ($method === 'GET' && $action === 'history_status') {
+    $db = getPdo();
+    requireAdmin($db);
+    try {
+        ensureMarketHistorySchema($db);
+        $state = refreshHistoryState($db);
+        $snapshotPath = cacheDir() . '/viciocode_history_snapshot.json';
+        echo json_encode([
+            'database' => 'connected',
+            'assets' => $state,
+            'snapshot' => [
+                'available' => file_exists($snapshotPath),
+                'updatedAt' => file_exists($snapshotPath) ? date('c', (int)filemtime($snapshotPath)) : null,
+            ],
+        ]);
+    } catch (Throwable $e) {
+        http_response_code(503);
+        echo json_encode(['error' => 'Não foi possível verificar o histórico']);
+    }
     exit;
 }
 
@@ -2593,6 +2665,31 @@ CREATE TABLE IF NOT EXISTS widget_cache (
     fetched_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     fetch_date  DATE NOT NULL,             -- data da última busca real
     req_count   INT DEFAULT 0             -- total de requisições feitas hoje
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS price_history (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    asset_type VARCHAR(10) NOT NULL,
+    asset_code VARCHAR(20) NOT NULL,
+    price DECIMAL(20,6) NOT NULL,
+    price_date DATE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE KEY unique_asset_date (asset_type, asset_code, price_date),
+    INDEX idx_type_code (asset_type, asset_code),
+    INDEX idx_date (price_date)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS history_backfill_state (
+    asset_type VARCHAR(10) NOT NULL,
+    asset_code VARCHAR(20) NOT NULL,
+    points INT NOT NULL DEFAULT 0,
+    first_date DATE NULL,
+    last_date DATE NULL,
+    is_complete TINYINT(1) NOT NULL DEFAULT 0,
+    last_attempt_at DATETIME NULL,
+    last_error VARCHAR(255) NULL,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (asset_type, asset_code)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS comments (

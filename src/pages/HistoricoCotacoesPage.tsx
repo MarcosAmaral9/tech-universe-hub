@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowLeft, TrendingUp, TrendingDown, DollarSign,
@@ -6,7 +6,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DynamicSEO from "@/components/DynamicSEO";
-import { useMarketData } from "@/hooks/useMarketData";
 import heroHistorico from "@/assets/historico-cotacoes.webp";
 import {
   Area, AreaChart, CartesianGrid, Line, LineChart,
@@ -41,12 +40,18 @@ const CATEGORY_PERIODS: Record<CategoryKey, { key: Period; label: string }[]> = 
 };
 
 interface ChartPoint  { date: string; value: number; label: string }
+interface SnapshotPoint { date: string; price: number }
+type SnapshotSeries = Record<CategoryKey, Record<string, SnapshotPoint[]>>;
+interface HistorySnapshot {
+  generatedAt: string;
+  assets: SnapshotSeries;
+}
 interface AssetHistory {
   id: string; name: string; symbol: string;
   category: CategoryKey; icon: string;
   currentPrice: number; change24h: number;
   data: ChartPoint[]; unit: string;
-  dataSource: "real" | "db" | "simulated";
+  dataSource: "db";
 }
 
 // ── Formatação ─────────────────────────────────────────────────────────────
@@ -64,7 +69,6 @@ const pctArrow = (v: number) =>
   v >= 0 ? <TrendingUp className="h-3.5 w-3.5" /> : <TrendingDown className="h-3.5 w-3.5" />;
 
 // ── Constantes ─────────────────────────────────────────────────────────────
-const TROY = 31.1035;
 const PERIOD_DAYS: Record<Period, number> = { "5d": 5, "7d": 7, "30d": 30, "90d": 90, "1y": 365 };
 const CAT_STROKE: Record<CategoryKey, string> = {
   b3: "#60a5fa", crypto: "#fb923c", currency: "#34d399", metal: "#facc15",
@@ -75,38 +79,6 @@ const CAT_BORDER: Record<CategoryKey, string> = {
   currency: "border-emerald-500/30 bg-emerald-500/5",
   metal: "border-yellow-500/30 bg-yellow-500/5",
 };
-const B3_ICONS: Record<string, string> = {
-  PETR4:"🛢️", VALE3:"⛏️", ITUB4:"🏦", BBDC4:"🏦", ABEV3:"🍺",
-  WEGE3:"⚙️", BBAS3:"🏦", RENT3:"🚗", MGLU3:"🛒", SUZB3:"🌲",
-};
-const CRYPTO_ICONS: Record<string, string> = {
-  bitcoin:"₿", ethereum:"⟠", solana:"◎", binancecoin:"🟡",
-  cardano:"🔵", ripple:"💧", chainlink:"🔗", polkadot:"⬤",
-};
-const CRYPTO_SYMBOL_MAP: Record<string, string> = {
-  bitcoin:"BTC", ethereum:"ETH", solana:"SOL", binancecoin:"BNB",
-  cardano:"ADA", ripple:"XRP", chainlink:"LINK", polkadot:"DOT",
-};
-
-// ── Simulação determinística (fallback) ────────────────────────────────────
-const buildSimulated = (currentPrice: number, volatility: number, days: number): ChartPoint[] => {
-  const pts: number[] = [currentPrice];
-  for (let i = 1; i <= days; i++) {
-    const prev  = pts[pts.length - 1];
-    const rnd   = (Math.sin(i * 127.1 + currentPrice) + 1) / 2;
-    const delta = (rnd - 0.5) * 2 * volatility;
-    pts.push(Math.max(prev * (1 + delta), 0.0001));
-  }
-  pts[pts.length - 1] = currentPrice;
-  const now = new Date();
-  return pts.map((v, i) => {
-    const d = new Date(now);
-    d.setDate(d.getDate() - (days - i));
-    const iso = d.toISOString().slice(0, 10);
-    return { date: iso, value: parseFloat(v.toFixed(v >= 1 ? 2 : 6)), label: fmtDate(iso) };
-  });
-};
-
 // ── Fallback estático ──────────────────────────────────────────────────────
 const FALLBACK_ASSETS: Omit<AssetHistory, "data" | "dataSource">[] = [
   { id:"b3-PETR4", name:"Petrobras PN",       symbol:"PETR4", category:"b3",       icon:"🛢️", currentPrice:37.50,   change24h: 1.2,  unit:"R$/ação" },
@@ -148,31 +120,29 @@ const CustomTooltip = ({
   );
 };
 
-// ── Helpers de fetch ──────────────────────────────────────────────────────
-const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
+const SNAPSHOT_CACHE_KEY = "vc_history_snapshot_v1";
 
-async function safeFetchJson(url: string): Promise<any> {
+function isHistorySnapshot(value: unknown): value is HistorySnapshot {
+  if (!value || typeof value !== "object") return false;
+  const candidate = value as Partial<HistorySnapshot>;
+  return typeof candidate.generatedAt === "string" && Boolean(candidate.assets?.b3)
+    && Boolean(candidate.assets?.crypto) && Boolean(candidate.assets?.currency)
+    && Boolean(candidate.assets?.metal);
+}
+
+function readCachedSnapshot(): HistorySnapshot | null {
   try {
-    const res = await fetch(url, { cache: "no-store", signal: AbortSignal.timeout(8000) });
-    if (!res.ok) return null;
-    const text = await res.text();
-    if (text.trimStart().startsWith("<")) return null;
-    return JSON.parse(text);
+    const raw = localStorage.getItem(SNAPSHOT_CACHE_KEY);
+    const parsed: unknown = raw ? JSON.parse(raw) : null;
+    return isHistorySnapshot(parsed) ? parsed : null;
   } catch { return null; }
 }
 
-async function fetchHistoryFromDB(
-  type: string,
-  code: string,
-  days: number,
-  flags?: { backfilling: boolean },
-): Promise<ChartPoint[] | null> {
-  const json = await safeFetchJson(`/api.php?action=history&type=${type}&code=${code}&days=${days}`);
-  // O servidor avisa quando está completando o histórico em segundo plano
-  if (flags && json?.backfilling) flags.backfilling = true;
-  if (!json?.points || json.points.length < 3) return null;
-  return json.points.map((p: { date: string; price: number }) => ({
-    date: p.date, value: p.price, label: fmtDate(p.date),
+function toChartPoints(points: SnapshotPoint[], days: number): ChartPoint[] {
+  return points.slice(-days).map(point => ({
+    date: point.date,
+    value: point.price,
+    label: fmtDate(point.date),
   }));
 }
 
@@ -188,178 +158,54 @@ const HistoricoCotacoesPage = () => {
   const [loading, setLoading]             = useState(true);
   const [isFallback, setIsFallback]       = useState(false);
   const [lastUpdated, setLastUpdated]     = useState("");
-  const [dbHistoryAvailable, setDbHistoryAvailable] = useState(false);
-  const [backfilling, setBackfilling] = useState(false);
-  const retriesRef = useRef(0);
-  const abortRef = useRef<AbortController | null>(null);
-
-
-  // Preços atuais vêm do hook centralizado — zero requisições extras
-  const { data: marketData, isFallback: marketFallback } = useMarketData();
-
-  const loadData = useCallback(async (p: Period) => {
-    abortRef.current?.abort();
-    abortRef.current = new AbortController();
-    setLoading(true);
-
-    const days = PERIOD_DAYS[p];
-    const result: AssetHistory[] = [];
-    let hasDB = false;
-    const bfFlags = { backfilling: false };
-
-
-    // ── Preços atuais vêm do useMarketData (sem fetch extra) ─────────────
-    const b3Results  = marketData?.b3     ?? [];
-    const cryptoList = marketData?.crypto ?? [];
-    const ratesData  = (marketData?.rates ?? {}) as Record<string, { bid: string; pctChange: string } | undefined>;
-
-    // ── 1. B3 ────────────────────────────────────────────────────────────
-    const B3_TICKERS = ["PETR4","VALE3","ITUB4","BBDC4","ABEV3","WEGE3","BBAS3","RENT3","MGLU3","SUZB3"];
-    const b3Map = new Map<string, { name: string; price: number; change: number }>();
-    b3Results.forEach(s => {
-      if (s.regularMarketPrice > 0)
-        b3Map.set(s.symbol, { name: s.shortName || s.symbol, price: s.regularMarketPrice, change: s.regularMarketChangePercent ?? 0 });
-    });
-    for (const t of B3_TICKERS) {
-      if (!b3Map.has(t)) {
-        const fb = FALLBACK_ASSETS.find(a => a.symbol === t);
-        if (fb) b3Map.set(t, { name: fb.name, price: fb.currentPrice, change: fb.change24h });
-      }
-    }
-    await Promise.allSettled(
-      Array.from(b3Map.entries()).map(async ([ticker, info]) => {
-        const dbHistory = await fetchHistoryFromDB("b3", ticker, days, bfFlags);
-        if (dbHistory) hasDB = true;
-        result.push({
-          id: `b3-${ticker}`, name: info.name, symbol: ticker,
-          category: "b3", icon: B3_ICONS[ticker] ?? "📊",
-          currentPrice: info.price, change24h: info.change,
-          unit: "R$/ação",
-          dataSource: dbHistory ? "db" : "simulated",
-          data: dbHistory ?? buildSimulated(info.price, 0.012, days),
-        });
-      })
-    );
-
-    // ── 2. Cripto — sequencial com delay (evita rate limit CoinGecko) ────
-    const cryptoIds = ["bitcoin","ethereum","solana","binancecoin","cardano","ripple","chainlink","polkadot"];
-    const cryptoPrices = new Map<string, { name: string; price: number; change: number }>();
-    cryptoList.forEach(c => {
-      if (c.current_price > 0)
-        cryptoPrices.set(c.id, { name: c.name, price: c.current_price, change: c.price_change_percentage_24h ?? 0 });
-    });
-    for (const cid of cryptoIds) {
-      if (!cryptoPrices.has(cid)) {
-        const fb = FALLBACK_ASSETS.find(a => a.id === `crypto-${cid}`);
-        if (fb) cryptoPrices.set(cid, { name: fb.name, price: fb.currentPrice, change: fb.change24h });
-      }
-    }
-
-    // Cripto: somente BD local (acumulado pelo cron + bootstrap)
-    await Promise.allSettled(
-      Array.from(cryptoPrices.entries()).map(async ([coinId, info]) => {
-        const sym = CRYPTO_SYMBOL_MAP[coinId] ?? coinId.toUpperCase().slice(0, 4);
-        const dbHistory = await fetchHistoryFromDB("crypto", sym, days, bfFlags);
-        if (dbHistory) hasDB = true;
-        result.push({
-          id: `crypto-${coinId}`, name: info.name, symbol: sym,
-          category: "crypto", icon: CRYPTO_ICONS[coinId] ?? "🪙",
-          currentPrice: info.price, change24h: info.change,
-          unit: "R$/un.",
-          dataSource: dbHistory ? "db" : "simulated",
-          data: dbHistory ?? [],
-        });
-      })
-    );
-
-    // ── 3. Câmbio ─────────────────────────────────────────────────────────
-    const currencyDefs = [
-      { key:"USDBRL", pair:"USD-BRL", id:"cur-USD", name:"Dólar Americano",   symbol:"USD", icon:"🇺🇸" },
-      { key:"EURBRL", pair:"EUR-BRL", id:"cur-EUR", name:"Euro",              symbol:"EUR", icon:"🇪🇺" },
-      { key:"ARSBRL", pair:"ARS-BRL", id:"cur-ARS", name:"Peso Argentino",    symbol:"ARS", icon:"🇦🇷" },
-      { key:"PYGBRL", pair:"PYG-BRL", id:"cur-PYG", name:"Guarani Paraguaio", symbol:"PYG", icon:"🇵🇾" },
-    ];
-    await Promise.allSettled(
-      currencyDefs.map(async ({ key, id, name, symbol, icon }) => {
-        const r = ratesData?.[key];
-        const fb = FALLBACK_ASSETS.find(a => a.id === id);
-        const currentPrice = r ? parseFloat(r.bid) : (fb?.currentPrice ?? 0);
-        const change24h    = r ? parseFloat(r.pctChange || "0") : (fb?.change24h ?? 0);
-        if (currentPrice <= 0) return;
-        // Somente BD — o cron salva histórico de câmbio via fawazahmed a cada 5 min
-        const dbHistory = await fetchHistoryFromDB("currency", symbol, days, bfFlags);
-        if (dbHistory) hasDB = true;
-        result.push({
-          id, name, symbol, icon,
-          category: "currency",
-          currentPrice, change24h,
-          unit: `R$/${symbol}`,
-          dataSource: dbHistory ? "db" : "simulated",
-          data: dbHistory ?? [], // sem histórico = array vazio
-        });
-      })
-    );
-
-    // ── 4. Metais ─────────────────────────────────────────────────────────
-    const metalDefs = [
-      { key:"XAUBRL", id:"metal-XAU", name:"Ouro (grama)",  symbol:"XAU", icon:"🥇" },
-      { key:"XAGBRL", id:"metal-XAG", name:"Prata (grama)", symbol:"XAG", icon:"🥈" },
-    ];
-    await Promise.allSettled(
-      metalDefs.map(async ({ key, id, name, symbol, icon }) => {
-        const r = ratesData?.[key];
-        const fb = FALLBACK_ASSETS.find(a => a.id === id);
-        // Aplica pureza: ouro 18k (×0.75) e prata 925 (×0.925) — igual ao PreciousMetalsWidget
-        const purity = symbol === "XAU" ? 0.75 : 0.925;
-        const currentPrice = r ? (parseFloat(r.bid) / TROY) * purity : (fb?.currentPrice ?? 0);
-        const change24h    = r ? parseFloat(r.pctChange || "0") : (fb?.change24h ?? 0);
-        if (currentPrice <= 0) return;
-        // Somente BD — o cron salva histórico de metais via fawazahmed a cada 5 min
-        const dbHistory = await fetchHistoryFromDB("metal", symbol, days, bfFlags);
-        if (dbHistory) hasDB = true;
-        result.push({
-          id, name, symbol, icon,
-          category: "metal",
-          currentPrice, change24h,
-          unit: "R$/g",
-          dataSource: dbHistory ? "db" : "simulated",
-          data: dbHistory ?? [], // sem histórico = array vazio
-        });
-      })
-    );
-
-    // ── Aplica resultado ──────────────────────────────────────────────────
-    const final = result.length > 0 ? result : FALLBACK_ASSETS.map(a => ({
-      ...a, dataSource: "simulated" as const,
-      data: buildSimulated(a.currentPrice, a.category === "crypto" ? 0.04 : a.category === "b3" ? 0.012 : a.category === "metal" ? 0.008 : 0.004, days),
-    }));
-
-    setIsFallback(result.length === 0);
-    setDbHistoryAvailable(hasDB);
-    setBackfilling(bfFlags.backfilling);
-    setAssets(final);
-    setSelected(prev => {
-      const stillExists = final.find(a => a.id === prev);
-      if (stillExists) return prev;
-      const first = final.find(a => a.category === category);
-      return first?.id ?? final[0]?.id ?? null;
-    });
-    setLastUpdated(new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }));
-    setLoading(false);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [category]);
+  const [snapshot, setSnapshot] = useState<HistorySnapshot | null>(() => readCachedSnapshot());
 
   useEffect(() => {
-    loadData(period);
-    return () => abortRef.current?.abort();
-  }, [period, loadData]);
+    const controller = new AbortController();
+    fetch("/api.php?action=history_snapshot", { signal: controller.signal, cache: "default" })
+      .then(response => response.ok ? response.json() : Promise.reject(new Error("snapshot unavailable")))
+      .then((value: unknown) => {
+        if (!isHistorySnapshot(value)) throw new Error("invalid snapshot");
+        setSnapshot(value);
+        localStorage.setItem(SNAPSHOT_CACHE_KEY, JSON.stringify(value));
+        setIsFallback(false);
+      })
+      .catch(() => setIsFallback(!readCachedSnapshot()))
+      .finally(() => setLoading(false));
+    return () => controller.abort();
+  }, []);
 
-  // Enquanto o servidor completa o histórico em segundo plano, reconsulta sozinho
   useEffect(() => {
-    if (!backfilling || retriesRef.current >= 3) return;
-    const t = setTimeout(() => { retriesRef.current += 1; loadData(period); }, 25000);
-    return () => clearTimeout(t);
-  }, [backfilling, period, loadData]);
+    if (!snapshot) return;
+    const updated = new Date(snapshot.generatedAt);
+    setLastUpdated(updated.toLocaleDateString("pt-BR") + " " + updated.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }));
+  }, [snapshot]);
+
+  const preparedAssets = useMemo<AssetHistory[]>(() => {
+    if (!snapshot) return [];
+    const days = PERIOD_DAYS[period];
+    return FALLBACK_ASSETS.flatMap(meta => {
+      const points = snapshot.assets[meta.category]?.[meta.symbol] ?? [];
+      if (points.length < 2) return [];
+      const currentPrice = points[points.length - 1].price;
+      const previousPrice = points[points.length - 2].price;
+      return [{
+        ...meta,
+        currentPrice,
+        change24h: previousPrice > 0 ? ((currentPrice - previousPrice) / previousPrice) * 100 : 0,
+        dataSource: "db" as const,
+        data: toChartPoints(points, days),
+      }];
+    });
+  }, [snapshot, period]);
+
+  useEffect(() => {
+    setAssets(preparedAssets);
+    setSelected(previous => {
+      if (preparedAssets.some(asset => asset.id === previous)) return previous;
+      return preparedAssets.find(asset => asset.category === category)?.id ?? preparedAssets[0]?.id ?? null;
+    });
+  }, [preparedAssets, category]);
 
 
   const filtered      = assets.filter(a => a.category === category);
@@ -387,15 +233,8 @@ const HistoricoCotacoesPage = () => {
        / selectedAsset.data[0].value) * 100
     : 0;
 
-  const dataSourceLabel = (ds: string) => {
-    if (ds === "db")   return "✓ Histórico do banco de dados VicioCode";
-    if (ds === "real") return "✓ Dados históricos reais (API externa)";
-    return "~ Estimativa baseada no preço atual";
-  };
-  const dataSourceStyle = (ds: string) =>
-    ds === "db" || ds === "real"
-      ? "bg-emerald-500/15 text-emerald-400"
-      : "bg-amber-500/15 text-amber-400";
+  const dataSourceLabel = () => "✓ Histórico real salvo no VicioCode";
+  const dataSourceStyle = () => "bg-emerald-500/15 text-emerald-400";
 
   // Ordem igual à /cotacoes: B3 → Câmbio → Metais → Cripto
   const categories: { key: CategoryKey; label: string; icon: React.ReactNode }[] = [
@@ -467,16 +306,10 @@ const HistoricoCotacoesPage = () => {
             <span>Usando dados de referência — servidor indisponível. Os dados serão atualizados automaticamente.</span>
           </div>
         )}
-        {dbHistoryAvailable && !loading && (
+        {snapshot && !loading && (
           <div className="flex items-start gap-3 mb-4 p-3 rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-sm text-emerald-300">
             <Info className="h-4 w-4 shrink-0 mt-0.5" />
             <span>Histórico carregado do banco de dados — dados acumulados automaticamente a cada atualização das cotações.</span>
-          </div>
-        )}
-        {category === "b3" && !loading && (
-          <div className="flex items-start gap-3 mb-4 p-3 rounded-lg border border-blue-500/30 bg-blue-500/10 text-sm text-blue-300">
-            <Info className="h-4 w-4 shrink-0 mt-0.5" />
-            <span><strong>Em desenvolvimento:</strong> O histórico dos valores da B3 está sendo construído gradualmente. Os dados são acumulados automaticamente a cada atualização do servidor — quanto mais tempo passar, mais completo ficará o histórico.</span>
           </div>
         )}
 
@@ -544,8 +377,8 @@ const HistoricoCotacoesPage = () => {
                           </span>
                         </div>
                         <div className="text-sm text-muted-foreground">{selectedAsset.name}</div>
-                        <span className={`inline-flex items-center gap-1 mt-1 text-[10px] px-2 py-0.5 rounded-full font-medium ${dataSourceStyle(selectedAsset.dataSource)}`}>
-                          {dataSourceLabel(selectedAsset.dataSource)}
+                        <span className={`inline-flex items-center gap-1 mt-1 text-[10px] px-2 py-0.5 rounded-full font-medium ${dataSourceStyle()}`}>
+                          {dataSourceLabel()}
                         </span>
                       </div>
                     </div>
@@ -558,23 +391,16 @@ const HistoricoCotacoesPage = () => {
                     </div>
                   </div>
 
-                  {selectedAsset.data.length < 3 ? (
+                  {selectedAsset.data.length < 2 ? (
                     <div className="flex flex-col items-center justify-center h-64 gap-3 text-center px-4">
                       <Info className="h-10 w-10 text-muted-foreground/40" />
                       <div>
                         <p className="text-muted-foreground font-medium text-sm">
-                          Montando o histórico deste ativo…
+                          Histórico indisponível nesta cópia
                         </p>
                         <p className="text-xs text-muted-foreground/70 mt-1 max-w-sm">
-                          O servidor está buscando e guardando as cotações antigas em segundo plano.
-                          O gráfico aparece sozinho assim que houver dados suficientes — normalmente em alguns minutos.
+                          A última série completa permanece salva e será exibida assim que o servidor voltar a responder.
                         </p>
-                        <button
-                          onClick={() => { retriesRef.current = 0; loadData(period); }}
-                          className="mt-3 text-xs font-medium px-3 py-1.5 rounded-full bg-muted hover:bg-muted/80 transition-colors"
-                        >
-                          Tentar de novo
-                        </button>
                       </div>
                     </div>
                   ) : (
@@ -669,11 +495,7 @@ const HistoricoCotacoesPage = () => {
                       <div>
                         <div className="flex items-center gap-1.5">
                           <span className="font-bold text-sm">{asset.symbol}</span>
-                          {asset.dataSource !== "simulated" && (
-                            <span className={`text-[9px] font-bold ${asset.dataSource === "db" ? "text-blue-400" : "text-emerald-400"}`}>
-                              {asset.dataSource === "db" ? "BD" : "REAL"}
-                            </span>
-                          )}
+                          <span className="text-[9px] font-bold text-emerald-400">REAL</span>
                         </div>
                         <div className="text-xs text-muted-foreground truncate max-w-[110px]">{asset.name}</div>
                       </div>
@@ -707,19 +529,19 @@ const HistoricoCotacoesPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
             <div>
               <strong className="text-foreground">📊 B3 — 10 ações</strong>
-              <p className="text-xs text-muted-foreground mt-0.5">PETR4, VALE3, ITUB4, BBDC4, ABEV3, WEGE3, BBAS3, RENT3, MGLU3, SUZB3. Histórico via BD (acumulado) ou estimativa.</p>
+              <p className="text-xs text-muted-foreground mt-0.5">PETR4, VALE3, ITUB4, BBDC4, ABEV3, WEGE3, BBAS3, RENT3, MGLU3, SUZB3. Série real salva previamente.</p>
             </div>
             <div>
               <strong className="text-foreground">₿ Cripto — 8 moedas</strong>
-              <p className="text-xs text-muted-foreground mt-0.5">BTC, ETH, SOL, BNB, ADA, XRP, LINK, DOT. Histórico via BD → CoinGecko (até 90D, grátis) → estimativa. Busca sequencial para evitar rate limit.</p>
+              <p className="text-xs text-muted-foreground mt-0.5">BTC, ETH, SOL, BNB, ADA, XRP, LINK, DOT. Série real atualizada pelo servidor.</p>
             </div>
             <div>
               <strong className="text-foreground">💱 Câmbio — 4 moedas</strong>
-              <p className="text-xs text-muted-foreground mt-0.5">USD, EUR, ARS, PYG. Histórico via BD → AwesomeAPI (gratuito) → estimativa.</p>
+              <p className="text-xs text-muted-foreground mt-0.5">USD, EUR, ARS, PYG. Série real atualizada pelo servidor.</p>
             </div>
             <div>
               <strong className="text-foreground">🥇 Metais — 2 ativos</strong>
-              <p className="text-xs text-muted-foreground mt-0.5">Ouro e prata por grama em BRL. Histórico via BD → estimativa com volatilidade real de metais.</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Ouro e prata por grama em BRL. Série real atualizada pelo servidor.</p>
             </div>
           </div>
           <p className="text-[10px] text-muted-foreground mt-3 pt-3 border-t border-border">
