@@ -246,8 +246,33 @@ import iaJogosIndustriaImg from "@/assets/ia-jogos-industria-2026.webp";
 import fatedVillainImg from "@/assets/i-am-the-fated-villain-gu-changge.webp";
 import cityLordImg from "@/assets/starting-today-city-lord-liu-feng.webp";
 import greatestEstateDeveloperImg from "@/assets/the-greatest-estate-developer-o-melhor-engenheiro-do-mundo-guia-2026.webp";
+import medievalDynastyImg from "@/assets/medieval-dynasty-guia-completo-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 06 Out 2026 — Geek (Medieval Dynasty) ─────────────────────────────
+  {
+    id: "261",
+    slug: "medieval-dynasty-guia-completo-2026",
+    title: "Medieval Dynasty em 2026: Guia Completo para Criar uma Dinastia",
+    excerpt:
+      "Guia completo de Medieval Dynasty: sobrevivência, construção de vila, moradores, agricultura, família, herdeiro, The Valley, The Oxbow e cooperativo.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: medievalDynastyImg,
+    imageAlt: "Colono observa uma vila medieval com campos, moradores, animais e casas em construção",
+    author: "VICIO<CODE>",
+    date: "2026-10-06",
+    readTime: "20 min",
+    faq: [
+      { q: "Medieval Dynasty tem cooperativo?", a: "Sim. The Oxbow pode ser jogado sozinho ou em cooperativo para até quatro participantes no total. The Valley permanece uma campanha solo." },
+      { q: "É possível jogar como mulher?", a: "Sim em The Oxbow, que oferece criador de personagem masculino e feminino. A campanha original de The Valley acompanha Racimir." },
+      { q: "Medieval Dynasty tem português?", a: "A página do Steam lista interface e legendas em português do Brasil. A disponibilidade de idiomas deve ser conferida na loja da plataforma usada." },
+      { q: "Medieval Dynasty é historicamente exato?", a: "O jogo adota uma ambientação medieval europeia plausível, mas região, personagens e cronologia são fictícios e adaptados ao gameplay." },
+      { q: "Medieval Dynasty existe para Nintendo Switch?", a: "Não há versão oficial para Nintendo Switch confirmada pela desenvolvedora, publicadora ou lojas consultadas até 6 de outubro de 2026." },
+      { q: "Qual mapa escolher: The Valley ou The Oxbow?", a: "The Valley é ideal para a campanha solo de Racimir. The Oxbow oferece personagem personalizável e pode ser jogado sozinho ou em cooperativo." },
+    ],
+  },
   // ── 30 Set 2026 — Otaku (The Greatest Estate Developer) ──────────────
   {
     id: "260",
