@@ -10,4 +10,5 @@
 - [x] Ajustar o hero do artigo para Lloyd de cabelo marrom e Javier de cabelo azul conforme a referência.
 - [x] Ampliar o guia com raças, trabalhadores, invocações e a comédia das caretas de Lloyd.
 - [x] Preparar histórico imediato com uma única leitura, snapshot completo e atualização exclusiva pelo cron.
+- [x] Publicar o guia completo de Medieval Dynasty com dados verificados e visual próprio.
 - [ ] Redefinir a senha do MySQL e configurar os novos segredos privados na Hostinger (ação do proprietário).
