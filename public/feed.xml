@@ -5,8 +5,17 @@
     <link>https://viciocode.com</link>
     <description>IA, investimentos, cultura geek e otaku — novos artigos do VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 30 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Medieval Dynasty em 2026: Guia Completo para Criar uma Dinastia</title>
+      <link>https://viciocode.com/post/medieval-dynasty-guia-completo-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/medieval-dynasty-guia-completo-2026</guid>
+      <pubDate>Tue, 06 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Guia completo de Medieval Dynasty: sobrevivência, construção de vila, moradores, agricultura, família, herdeiro, The Valley, The Oxbow e cooperativo.</description>
+      <category>Geek &amp; Games</category>
+      <enclosure url="https://viciocode.com/assets/medieval-dynasty-guia-completo-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>The Greatest Estate Developer: Guia de O Melhor Engenheiro do Mundo</title>
       <link>https://viciocode.com/post/the-greatest-estate-developer-o-melhor-engenheiro-do-mundo-guia-2026</link>
@@ -447,15 +456,6 @@
       <description>IHFA perdeu para o CDI em 3 e 5 anos, taxas de 2%+20%, come-cotas semestral e como identificar os poucos fundos que realmente batem o benchmark. Quando vale — e quando não vale investir em multimercado.</description>
       <category>Finanças &amp; Investimentos</category>
       <enclosure url="https://viciocode.com/assets/fundos-multimercado-2026-valem-a-pena.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Como Declarar FIIs no Imposto de Renda 2026: Guia Passo a Passo</title>
-      <link>https://viciocode.com/post/como-declarar-fiis-imposto-de-renda-2026</link>
-      <guid isPermaLink="true">https://viciocode.com/post/como-declarar-fiis-imposto-de-renda-2026</guid>
-      <pubDate>Sun, 12 Jul 2026 12:00:00 GMT</pubDate>
-      <description>Guia completo para declarar FIIs no IRPF 2026: Bens e Direitos (Grupo 07, Código 03), rendimentos isentos (Código 26), ganho de capital a 20% via DARF 6015, amortizações e compensação de prejuízo. Sem malha fina.</description>
-      <category>Finanças &amp; Investimentos</category>
-      <enclosure url="https://viciocode.com/assets/como-declarar-fiis-imposto-de-renda-2026.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>

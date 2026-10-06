@@ -5,8 +5,17 @@
     <link>https://viciocode.com</link>
     <description>Novos artigos de Geek &amp; Games no VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Thu, 03 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed/geek.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Medieval Dynasty em 2026: Guia Completo para Criar uma Dinastia</title>
+      <link>https://viciocode.com/post/medieval-dynasty-guia-completo-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/medieval-dynasty-guia-completo-2026</guid>
+      <pubDate>Tue, 06 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Guia completo de Medieval Dynasty: sobrevivência, construção de vila, moradores, agricultura, família, herdeiro, The Valley, The Oxbow e cooperativo.</description>
+      <category>Geek &amp; Games</category>
+      <enclosure url="https://viciocode.com/assets/medieval-dynasty-guia-completo-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>IA nos Jogos: Do NPC que Conversa ao DLSS — Como a Inteligência Artificial Mudou os Games</title>
       <link>https://viciocode.com/post/ia-jogos-industria-games-2026</link>
@@ -447,15 +456,6 @@
       <description>20 dicas essenciais para iniciantes em Crimson Desert: progressão sem XP, fast travel, combate avançado, inventário, culinária, companheiros e sistemas ocultos que o jogo não explica.</description>
       <category>Geek &amp; Games</category>
       <enclosure url="https://viciocode.com/assets/crimson-desert-guia-iniciantes-dicas.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Crimson Desert: Guia de Bosses — Onde Encontrar, Como Derrotar e Recompensas</title>
-      <link>https://viciocode.com/post/crimson-desert-bosses-guia-chefes</link>
-      <guid isPermaLink="true">https://viciocode.com/post/crimson-desert-bosses-guia-chefes</guid>
-      <pubDate>Sun, 29 Mar 2026 12:00:00 GMT</pubDate>
-      <description>Guia completo dos bosses de Crimson Desert: Myurdin, Kailok, Reed Devil, Hexe Marie, Kearush, Beloth, Praevus e Caliburn. Estratégias, fraquezas e recompensas, com modos de dificuldade (1.04.00), Rematch (1.05.00) e os novos chefes da DLC Charting the Unknown (15/10/2026).</description>
-      <category>Geek &amp; Games</category>
-      <enclosure url="https://viciocode.com/assets/crimson-desert-bosses-guia-chefes.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>
