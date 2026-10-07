@@ -200,7 +200,7 @@ const HistoricoCotacoesPage = () => {
   useEffect(() => {
     setAssets(preparedAssets);
     setSelected(previous => {
-      if (preparedAssets.some(asset => asset.id === previous)) return previous;
+      if (preparedAssets.some(asset => asset.id === previous && asset.category === category)) return previous;
       return preparedAssets.find(asset => asset.category === category)?.id ?? preparedAssets[0]?.id ?? null;
     });
   }, [preparedAssets, category]);
