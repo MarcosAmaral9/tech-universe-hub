@@ -7,10 +7,10 @@ import { Flame, Eye } from "lucide-react";
 import { useTopPosts } from "@/hooks/useTopPosts";
 
 const CAT_COLORS: Record<string, string> = {
-  ia:     "text-blue-400",
-  geek:   "text-purple-400",
-  otaku:  "text-pink-400",
-  invest: "text-emerald-400",
+   ia:     "text-ia",
+   geek:   "text-geek",
+   otaku:  "text-otaku",
+   invest: "text-invest",
 };
 
 interface Props {
@@ -20,19 +20,20 @@ interface Props {
 }
 
 const MostReadWidget = ({ limit = 5, className = "", variant = "card" }: Props) => {
-  const { posts, loading } = useTopPosts("week", limit);
+  const { posts, loading, error } = useTopPosts("week", limit);
 
-  if (loading) return null;
-  if (!posts.length) return null;
+  if (loading && !posts.length) return null;
+  if (!posts.length && !error) return null;
 
   return (
     <aside className={`rounded-2xl border border-border bg-card p-4 sm:p-5 ${className}`}>
       <header className="flex items-center gap-2 mb-3">
-        <div className="p-1.5 rounded-lg bg-orange-500/15">
-          <Flame className="w-4 h-4 text-orange-400" />
+        <div className="p-1.5 rounded-lg bg-primary/15">
+          <Flame className="w-4 h-4 text-primary" />
         </div>
         <h2 className="font-display text-base font-bold">Mais Lidos da Semana</h2>
       </header>
+      {error && <p role="status" className="mb-3 text-xs text-muted-foreground">{posts.length ? "Atualização indisponível; exibindo o último ranking salvo, que pode estar desatualizado." : "O ranking está temporariamente indisponível."}</p>}
       <ol className="space-y-2.5">
         {posts.map((p, i) => (
           <li key={p.slug}>

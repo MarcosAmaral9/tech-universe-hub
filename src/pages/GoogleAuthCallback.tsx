@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 const API_BASE = "/api.php";
@@ -8,8 +8,11 @@ const REDIRECT_URI = "https://viciocode.com/auth/google";
 const GoogleAuthCallback = () => {
   const [searchParams] = useSearchParams();
   const [status, setStatus] = useState("Autenticando com Google...");
+  const started = useRef(false);
 
   useEffect(() => {
+    if (started.current) return;
+    started.current = true;
     const code  = searchParams.get("code");
     const state = searchParams.get("state");
     const error = searchParams.get("error");
@@ -21,6 +24,7 @@ const GoogleAuthCallback = () => {
 
     // Troca o code pelo token via api.php (server-side, seguro)
     fetch(`${API_BASE}?action=google_exchange`, {
+      signal: AbortSignal.timeout(30_000),
       method: "POST",
       credentials: "same-origin",
       headers: { "Content-Type": "application/json" },
@@ -29,21 +33,22 @@ const GoogleAuthCallback = () => {
       .then(async (res) => {
         const data = await res.json();
         if (!res.ok || data.error) {
-          throw new Error(data.error || "Falha na autenticação");
+          throw new Error(data.code || (res.status === 503 ? "unavailable" : "exchange_failed"));
         }
         return data;
       })
       .then((data) => {
-        localStorage.setItem(SESSION_KEY, JSON.stringify({
+        try { localStorage.setItem(SESSION_KEY, JSON.stringify({
           user: data.user,
           profile: data.profile,
-        }));
+        })); } catch { /* a sessão permanece no cookie HttpOnly */ }
         setStatus("Login realizado! Redirecionando...");
         window.location.href = "/configuracoes";
       })
       .catch((err) => {
-        const msg = encodeURIComponent(err.message || "Erro desconhecido");
-        window.location.href = `/entrar?google_error=exchange_failed&msg=${msg}`;
+        const allowed = ["unavailable", "not_configured", "invalid_state", "token_failed", "userinfo_failed"];
+        const reason = allowed.includes(err.message) ? err.message : "exchange_failed";
+        window.location.href = `/entrar?google_error=${reason}`;
       });
   }, []);
 

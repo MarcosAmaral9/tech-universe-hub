@@ -13,13 +13,32 @@ header('Cache-Control: no-store, no-cache, must-revalidate');
  * SETUP:
  * 1. Hostinger hPanel → Databases → MySQL Databases
  * 2. Crie o banco, usuário e atribua permissões
- * 3. Atualize as credenciais abaixo
+ * 3. Configure as credenciais exclusivamente no .env.php privado
  * 4. Execute o SQL ao final deste arquivo no phpMyAdmin
  */
 
 // Suprime erros PHP para não quebrar o JSON output
 ini_set('display_errors', '0');
-error_reporting(0);
+error_reporting(E_ALL);
+ini_set('log_errors', '1');
+
+function logServiceFailure(string $category, ?Throwable $error = null): string {
+    $id = bin2hex(random_bytes(8));
+    // Nunca registrar mensagens, SQL, URLs, credenciais ou respostas dos provedores.
+    $driverCode = $error instanceof PDOException ? (int)($error->errorInfo[1] ?? 0) : 0;
+    error_log(json_encode(['event' => 'vc_service_failure', 'id' => $id,
+        'category' => $category, 'driver_code' => $driverCode]));
+    return $id;
+}
+function serviceUnavailable(string $category, ?Throwable $error = null): void {
+    $id = logServiceFailure($category, $error);
+    http_response_code(503);
+    header('Retry-After: 60');
+    echo json_encode(['error' => 'Serviço temporariamente indisponível. Tente novamente mais tarde.',
+        'code' => 'unavailable', 'reference' => $id]);
+    exit;
+}
+set_exception_handler(function (Throwable $error): void { serviceUnavailable('unhandled', $error); });
 
 header('Content-Type: application/json');
 // API same-origin: não permita que sites de terceiros leiam ou alterem dados.
@@ -318,7 +337,7 @@ $_pdoInstance = null;
 function getPdo(): ?PDO {
     global $_pdoInstance, $DB_HOST, $DB_NAME, $DB_USER, $DB_PASS;
     if ($_pdoInstance) return $_pdoInstance;
-    if ($DB_HOST === '' || $DB_NAME === '' || $DB_USER === '' || $DB_PASS === '') return null;
+    if ($DB_HOST === '' || $DB_NAME === '' || $DB_USER === '' || $DB_PASS === '') { logServiceFailure('database_configuration'); return null; }
     try {
         $_pdoInstance = new PDO(
             "mysql:host=$DB_HOST;dbname=$DB_NAME;charset=utf8mb4",
@@ -327,6 +346,7 @@ function getPdo(): ?PDO {
         );
         return $_pdoInstance;
     } catch (Exception $e) {
+        logServiceFailure('database_connection', $e);
         return null; // DB indisponível — usa cache de arquivo
     }
 }
@@ -656,8 +676,7 @@ function saveHistorySnapshots(PDO $pdo, string $assetType, array $assets): void 
 // ═══════════════════════════════════════════════════════════════════════════
 // MOTOR DE PREENCHIMENTO AUTOMÁTICO DO HISTÓRICO (self-healing backfill)
 // Substitui a necessidade de abrir manualmente ?action=history_bootstrap.
-// Roda em fatias: no cron_refresh (orçamento maior) e, como rede de segurança,
-// após responder requisições de histórico incompletas (orçamento curto).
+// Roda em fatias exclusivamente no cron_refresh protegido; visitas somente leem snapshots.
 // ═══════════════════════════════════════════════════════════════════════════
 
 const VC_BACKFILL_CRYPTO = [
@@ -692,7 +711,8 @@ function refreshHistoryState(PDO $db, array $errors = []): array {
          VALUES (:type, :code, :points, :first_date, :last_date, :complete, NOW(), :error)
          ON DUPLICATE KEY UPDATE points=VALUES(points), first_date=VALUES(first_date),
          last_date=VALUES(last_date), is_complete=VALUES(is_complete),
-         last_attempt_at=NOW(), last_error=VALUES(last_error)'
+         last_attempt_at=IF(VALUES(last_error) IS NULL, last_attempt_at, NOW()),
+          last_error=IF(VALUES(is_complete)=1, NULL, COALESCE(VALUES(last_error), last_error))'
     );
     $state = [];
     foreach (historyExpectedAssets() as $type => $codes) {
@@ -701,7 +721,7 @@ function refreshHistoryState(PDO $db, array $errors = []): array {
             $points = (int)($row['points'] ?? 0);
             $minimum = $type === 'b3' ? 180 : 300;
             $complete = $points >= $minimum;
-            $error = $errors[$type][$code]['error'] ?? null;
+            $error = $errors[$type][$code]['error'] ?? (in_array($type, ['currency', 'metal'], true) ? ($errors['currency_error'] ?? null) : null);
             $upsert->execute([
                 ':type' => $type, ':code' => $code, ':points' => $points,
                 ':first_date' => $row['first_date'] ?? null,
@@ -752,6 +772,7 @@ function publishHistorySnapshot(PDO $db): array {
     if (!$snapshot) return ['published' => false, 'reason' => 'incomplete'];
     $json = json_encode($snapshot, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     if (!$json) return ['published' => false, 'reason' => 'encode_failed'];
+    if (!validHistorySnapshot($json)) return ['published' => false, 'reason' => 'invalid_series'];
     $path = cacheDir() . '/viciocode_history_snapshot.json';
     $tmp = $path . '.' . bin2hex(random_bytes(4)) . '.tmp';
     if (@file_put_contents($tmp, $json, LOCK_EX) === false || !@rename($tmp, $path)) {
@@ -762,27 +783,45 @@ function publishHistorySnapshot(PDO $db): array {
     return ['published' => true, 'bytes' => strlen($json), 'generatedAt' => $snapshot['generatedAt']];
 }
 
+function validHistorySnapshot($json): bool {
+    $snapshot = is_string($json) ? json_decode($json, true) : null;
+    if (!is_array($snapshot) || empty($snapshot['generatedAt']) || strtotime($snapshot['generatedAt']) === false) return false;
+    foreach (historyExpectedAssets() as $type => $codes) {
+        foreach ($codes as $code) {
+            $points = $snapshot['assets'][$type][$code] ?? null;
+            if (!is_array($points) || count($points) < ($type === 'b3' ? 180 : 300)) return false;
+            $previous = '';
+            foreach ($points as $point) {
+                $date = $point['date'] ?? '';
+                if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $date) || $date <= $previous
+                    || !is_numeric($point['price'] ?? null) || !is_finite((float)$point['price']) || $point['price'] <= 0) return false;
+                $previous = $date;
+            }
+        }
+    }
+    return true;
+}
+
 function serveHistorySnapshot(): void {
     $path = cacheDir() . '/viciocode_history_snapshot.json';
     $json = file_exists($path) ? @file_get_contents($path) : false;
-    if (!$json) {
+    if (!validHistorySnapshot($json)) {
+        $json = false;
         $db = getPdo();
         if ($db) {
             try {
-                ensureMarketHistorySchema($db);
+                // Somente leitura: nenhum CREATE, preenchimento ou publicação por visitantes.
                 $stmt = $db->prepare('SELECT data FROM widget_cache WHERE widget = :widget LIMIT 1');
                 $stmt->execute([':widget' => 'history_snapshot']);
-                $json = $stmt->fetchColumn();
-                if (!$json) {
-                    $snapshot = buildHistorySnapshot($db);
-                    $json = $snapshot ? json_encode($snapshot, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) : false;
-                }
-            } catch (Throwable $e) { $json = false; }
+                $stored = $stmt->fetchColumn();
+                if (validHistorySnapshot($stored)) $json = $stored;
+            } catch (Throwable $e) { logServiceFailure('snapshot_read', $e); }
         }
     }
     if (!$json) {
         http_response_code(503);
-        echo json_encode(['error' => 'Histórico completo ainda indisponível']);
+        header('Retry-After: 60');
+        echo json_encode(['error' => 'Histórico completo ainda indisponível', 'code' => 'snapshot_unavailable']);
         exit;
     }
     $etag = '"' . hash('sha256', $json) . '"';
@@ -896,60 +935,68 @@ function backfillB3(PDO $db, string $sym, int $days, string $avKey = ''): array 
 
 /**
  * Executa um passo de preenchimento dentro de um orçamento de tempo.
- * Prioriza o ativo pedido (se informado) e depois o que estiver mais defasado.
+ * Alterna categorias e ativos entre ciclos para impedir bloqueio por um provedor.
  */
-function runBackfillStep(PDO $db, float $maxSeconds = 15.0, ?string $onlyType = null, ?string $onlyCode = null): array {
+function nextBackfillGroup(int $cursor): string {
+    return ['b3', 'crypto', 'currency'][$cursor % 3];
+}
+
+function runBackfillStep(PDO $db, float $maxSeconds = 40.0, ?string $onlyType = null, ?string $onlyCode = null): array {
     $t0 = microtime(true);
     $left = fn() => $maxSeconds - (microtime(true) - $t0);
-    $done = [];
-    $scope = $onlyType && $onlyCode ? strtolower($onlyType . '_' . $onlyCode) : 'global';
-    if (!backfillTryLock('step_' . $scope, $onlyType ? 600 : 60)) return ['skipped' => 'locked'];
-
-    $avKey = '';
-    if (file_exists(__DIR__ . '/.env.php')) { include_once __DIR__ . '/.env.php'; if (isset($ALPHA_VANTAGE_KEY)) $avKey = (string)$ALPHA_VANTAGE_KEY; }
-
-    $wants = fn(string $t) => $onlyType === null || $onlyType === $t;
-
-    // 1) Cripto — cada moeda traz 1 ano numa requisição
-    if ($wants('crypto') && $left() > 6) {
-        foreach (VC_BACKFILL_CRYPTO as $sym => $coinId) {
-            if ($onlyCode && strtoupper($onlyCode) !== $sym) continue;
-            if (backfillCountPoints($db, 'crypto', $sym, 365) >= 300) continue;
-            if ($left() < 6) break;
-            if (!backfillTryLock('crypto_' . $sym, 900)) continue;
-            $done['crypto'][$sym] = backfillCrypto($db, $sym, $coinId, 365);
-            usleep(1500000); // respeita o limite do CoinGecko
-        }
+    $lock = @fopen(cacheDir() . '/vc_backfill_execution.lock', 'c');
+    if (!$lock || !flock($lock, LOCK_EX | LOCK_NB)) {
+        if ($lock) fclose($lock);
+        return ['skipped' => 'locked'];
     }
-
-    // 2) Câmbio + metais — um dia por requisição, começando pelos mais recentes
-    if (($wants('currency') || $wants('metal')) && $left() > 3) {
-        $expected = count(VC_BACKFILL_CURRENCIES) + 2; // moedas + XAU + XAG
-        $filled = 0;
-        for ($i = 0; $i < 365; $i++) {
-            if ($left() < 2) break;
-            $dateStr = date('Y-m-d', strtotime("-{$i} days"));
-            $stmt = $db->prepare('SELECT COUNT(*) FROM price_history WHERE asset_type IN ("currency","metal") AND price_date = :d');
-            $stmt->execute([':d' => $dateStr]);
-            if ((int)$stmt->fetchColumn() >= $expected) continue;
-            if (backfillCurrencyDay($db, $dateStr) > 0) $filled++;
-            usleep(120000);
+    $cursorPath = cacheDir() . '/vc_backfill_cursor.json';
+    $cursor = json_decode((string)@file_get_contents($cursorPath), true);
+    if (!is_array($cursor)) $cursor = ['group' => 0, 'b3' => 0, 'crypto' => 0, 'day' => 0];
+    $group = $onlyType === 'metal' ? 'currency' : ($onlyType ?? nextBackfillGroup((int)($cursor['group'] ?? 0)));
+    if ($onlyType === null) $cursor['group'] = ((int)($cursor['group'] ?? 0) + 1) % 3;
+    $done = ['group' => $group];
+    try {
+        if ($group === 'b3' || $group === 'crypto') {
+            $codes = $group === 'b3' ? VC_BACKFILL_B3 : array_keys(VC_BACKFILL_CRYPTO);
+            $count = count($codes);
+            for ($n = 0; $n < $count; $n++) {
+                // Orçamento suficiente para o pior timeout de uma chamada (B3: 20+12s).
+                if ($left() < ($group === 'b3' ? 33 : 17)) break;
+                $index = (int)($cursor[$group] ?? 0) % $count;
+                $sym = $codes[$index];
+                $cursor[$group] = ($index + 1) % $count;
+                if ($onlyCode && strtoupper($onlyCode) !== $sym) continue;
+                if (backfillCountPoints($db, $group, $sym, 365) >= ($group === 'b3' ? 180 : 300)) continue;
+                if (!backfillTryLock($group . '_' . $sym, 900)) continue;
+                try {
+                    $done[$group][$sym] = $group === 'b3'
+                        ? backfillB3($db, $sym, 365, (string)($GLOBALS['ALPHA_VANTAGE_KEY'] ?? ''))
+                        : backfillCrypto($db, $sym, VC_BACKFILL_CRYPTO[$sym], 365);
+                } catch (Throwable $e) {
+                    logServiceFailure('backfill_' . $group, $e);
+                    $done[$group][$sym] = ['error' => 'storage_or_provider_failure'];
+                }
+                usleep($group === 'crypto' ? 1500000 : 800000);
+            }
+        } elseif ($group === 'currency') {
+            for ($n = 0; $n < 365 && $left() >= 9; $n++) {
+                $index = (int)($cursor['day'] ?? 0) % 365;
+                $cursor['day'] = ($index + 1) % 365;
+                $dateStr = date('Y-m-d', strtotime("-{$index} days"));
+                $stmt = $db->prepare('SELECT COUNT(*) FROM price_history WHERE asset_type IN ("currency","metal") AND price_date = :d');
+                $stmt->execute([':d' => $dateStr]);
+                if ((int)$stmt->fetchColumn() >= 6) continue;
+                $saved = backfillCurrencyDay($db, $dateStr);
+                $done['currency_days'] = ($done['currency_days'] ?? 0) + ($saved === 6 ? 1 : 0);
+                if ($saved < 6) $done['currency_error'] = 'incomplete_provider_day';
+                usleep(120000);
+            }
         }
-        if ($filled > 0) $done['currency_days'] = $filled;
+    } finally {
+        @file_put_contents($cursorPath, json_encode($cursor), LOCK_EX);
+        flock($lock, LOCK_UN);
+        fclose($lock);
     }
-
-    // 3) B3 — uma ação por passo (Yahoo gratuito ou Alpha Vantage se houver chave)
-    if ($wants('b3') && $left() > 4) {
-        foreach (VC_BACKFILL_B3 as $sym) {
-            if ($onlyCode && strtoupper($onlyCode) !== $sym) continue;
-            if (backfillCountPoints($db, 'b3', $sym, 365) >= 180) continue;
-            if ($left() < 4) break;
-            if (!backfillTryLock('b3_' . $sym, 900)) continue;
-            $done['b3'][$sym] = backfillB3($db, $sym, 365, $avKey);
-            usleep(800000);
-        }
-    }
-
     $done['elapsed_ms'] = round((microtime(true) - $t0) * 1000);
     return $done;
 }
@@ -965,7 +1012,7 @@ function backfillAfterResponse(callable $work): void {
         @flush();
     }
     @set_time_limit(60);
-    try { $work(); } catch (Throwable $e) { /* silencioso */ }
+    try { $work(); } catch (Throwable $e) { logServiceFailure('cron_backfill', $e); }
 }
 
 // ─── GET: histórico de preços armazenados ──────────────────────────────────
@@ -1177,6 +1224,12 @@ if ($method === 'GET' && $action === 'history_multi') {
 // Usuário → api.php?action=all → MySQL (só leitura, zero APIs externas)
 if ($method === 'POST' && $action === 'cron_refresh') {
     requireCronSecret();
+    $cronLock = @fopen(cacheDir() . '/vc_cron_execution.lock', 'c');
+    if (!$cronLock || !flock($cronLock, LOCK_EX | LOCK_NB)) {
+        http_response_code(409); echo json_encode(['error' => 'Atualização já em andamento']); exit;
+    }
+    register_shutdown_function(function () use ($cronLock): void { flock($cronLock, LOCK_UN); fclose($cronLock); });
+    @set_time_limit(120);
 
     $t0 = microtime(true);
     $db = getPdo();
@@ -1599,9 +1652,13 @@ if ($method === 'GET' && $action === 'history_status') {
         ensureMarketHistorySchema($db);
         $state = refreshHistoryState($db);
         $snapshotPath = cacheDir() . '/viciocode_history_snapshot.json';
+        $attempts = $db->query('SELECT asset_type, asset_code, last_attempt_at, last_error FROM history_backfill_state')->fetchAll(PDO::FETCH_ASSOC);
+        $cursor = json_decode((string)@file_get_contents(cacheDir() . '/vc_backfill_cursor.json'), true);
         echo json_encode([
             'database' => 'connected',
             'assets' => $state,
+            'attempts' => $attempts,
+            'next_group' => nextBackfillGroup((int)($cursor['group'] ?? 0)),
             'snapshot' => [
                 'available' => file_exists($snapshotPath),
                 'updatedAt' => file_exists($snapshotPath) ? date('c', (int)filemtime($snapshotPath)) : null,
@@ -1820,22 +1877,37 @@ if ($method === 'POST' && $action === 'generate_social') {
 
 
 
-// Para os demais endpoints, conecta ao banco (lazy)
-try {
-    if ($DB_HOST === '' || $DB_NAME === '' || $DB_USER === '' || $DB_PASS === '') {
-        throw new RuntimeException('Configuração de banco ausente');
-    }
-    $pdo = new PDO(
-        "mysql:host=$DB_HOST;dbname=$DB_NAME;charset=utf8mb4",
-        $DB_USER,
-        $DB_PASS,
-        [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
-    );
-} catch (Throwable $e) {
-    http_response_code(500);
-    echo json_encode(['error' => 'Serviço temporariamente indisponível.']);
+// Diagnóstico público mínimo: nenhuma configuração ou tabela é exposta.
+if ($method === 'GET' && $action === 'health') {
+    $connected = getPdo() !== null;
+    http_response_code($connected ? 200 : 503);
+    echo json_encode(['status' => $connected ? 'ok' : 'unavailable', 'version' => '2026-10-07.1']);
     exit;
 }
+
+if (in_array($action, ['google_auth_url', 'google_exchange'], true)
+    && (!$GOOGLE_CLIENT_ID || !$GOOGLE_SECRET || AUTH_SECRET === '' || !function_exists('curl_init'))) {
+    http_response_code(503);
+    logServiceFailure('google_configuration');
+    echo json_encode(['error' => 'O login com Google ainda não está disponível neste site.', 'code' => 'not_configured']);
+    exit;
+}
+
+// Reutiliza a conexão, com prazo limitado e erro público sem valores privados.
+$pdo = getPdo();
+if (!$pdo) serviceUnavailable('database_unavailable');
+
+function ensurePostViewsSchema(PDO $db): void {
+    try { $db->query('SELECT 1 FROM post_views LIMIT 1'); return; }
+    catch (PDOException $e) { if ((int)($e->errorInfo[1] ?? 0) !== 1146) throw $e; }
+    $db->exec("CREATE TABLE IF NOT EXISTS post_views (
+        id BIGINT AUTO_INCREMENT PRIMARY KEY, slug VARCHAR(191) NOT NULL,
+        title VARCHAR(255) DEFAULT '', category VARCHAR(40) DEFAULT '',
+        ip_hash CHAR(64) DEFAULT '', viewed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        INDEX idx_slug_time (slug, viewed_at), INDEX idx_time (viewed_at)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
+}
+if (in_array($action, ['track_view', 'top_posts'], true)) ensurePostViewsSchema($pdo);
 
 if ($method === 'GET' && $action === 'session') {
     $claims = requireUser();
@@ -2115,7 +2187,7 @@ if ($method === 'POST' && $action === 'login') {
 
     $profileStmt = $pdo->prepare('SELECT * FROM profiles WHERE id = :id');
     $profileStmt->execute([':id' => $user['id']]);
-    $profile = $profileStmt->fetch(PDO::FETCH_ASSOC);
+    $profile = $profileStmt->fetch(PDO::FETCH_ASSOC) ?: [];
 
     if (!$profile) {
         $profile = ['id' => $user['id'], 'name' => '', 'nickname' => '', 'avatar_url' => null, 'notifications_site' => false, 'notifications_app' => false];
@@ -2237,9 +2309,9 @@ if ($method === 'POST' && $action === 'google_exchange') {
         http_response_code(400); echo json_encode(['error' => 'redirect_uri inválido']); exit;
     }
     $expectedState = $_COOKIE['vc_oauth_state'] ?? '';
-    setcookie('vc_oauth_state', '', ['expires' => time() - 3600, 'path' => '/auth/google', 'secure' => true, 'httponly' => true, 'samesite' => 'Lax']);
+    setcookie('vc_oauth_state', '', ['expires' => time() - 3600, 'path' => '/', 'secure' => true, 'httponly' => true, 'samesite' => 'Lax']);
     if ($state === '' || $expectedState === '' || !hash_equals($expectedState, $state)) {
-        http_response_code(403); echo json_encode(['error' => 'Tentativa de login inválida ou expirada']); exit;
+        http_response_code(403); echo json_encode(['error' => 'Tentativa de login inválida ou expirada', 'code' => 'invalid_state']); exit;
     }
 
     // 1. Trocar code por access_token
@@ -2269,7 +2341,7 @@ if ($method === 'POST' && $action === 'google_exchange') {
     $tokenData = $tokenRaw ? json_decode($tokenRaw, true) : null;
     if (!$tokenData || empty($tokenData['access_token'])) {
         http_response_code(502);
-        echo json_encode(['error' => 'Falha ao obter token do Google. Tente novamente.']);
+        echo json_encode(['error' => 'Falha ao obter token do Google. Tente novamente.', 'code' => 'token_failed']);
         exit;
     }
 
@@ -2290,7 +2362,7 @@ if ($method === 'POST' && $action === 'google_exchange') {
     $googleUser = $userInfoRaw ? json_decode($userInfoRaw, true) : null;
     if (!$googleUser || empty($googleUser['email']) || empty($googleUser['email_verified'])) {
         http_response_code(502);
-        echo json_encode(['error' => 'Não foi possível obter dados do Google.']);
+        echo json_encode(['error' => 'Não foi possível obter dados do Google.', 'code' => 'userinfo_failed']);
         exit;
     }
 
@@ -2320,7 +2392,7 @@ if ($method === 'POST' && $action === 'google_exchange') {
 
     $profileStmt = $pdo->prepare('SELECT * FROM profiles WHERE id = :id');
     $profileStmt->execute([':id' => $userId]);
-    $profile = $profileStmt->fetch(PDO::FETCH_ASSOC);
+    $profile = $profileStmt->fetch(PDO::FETCH_ASSOC) ?: [];
     $profile['notifications_site'] = (bool)($profile['notifications_site'] ?? false);
     $profile['notifications_app']  = (bool)($profile['notifications_app']  ?? false);
 
@@ -2345,7 +2417,7 @@ if ($method === 'GET' && $action === 'google_auth_url') {
     $state = bin2hex(random_bytes(32));
     setcookie('vc_oauth_state', $state, [
         'expires' => time() + 600,
-        'path' => '/auth/google',
+        'path' => '/',
         'secure' => true,
         'httponly' => true,
         'samesite' => 'Lax',

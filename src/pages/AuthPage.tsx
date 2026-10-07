@@ -80,9 +80,11 @@ const AuthPage = () => {
         cancelled:       "Login com Google cancelado.",
         token_failed:    "Falha ao obter token do Google.",
         userinfo_failed: "Não foi possível obter dados do Google.",
-        db_error:        "Erro ao salvar conta. Verifique as credenciais do banco de dados no api.php.",
-        not_configured:  "Login com Google não configurado. Adicione GOOGLE_CLIENT_ID e GOOGLE_SECRET no .env.php.",
-        exchange_failed: searchParams.get("msg") ? decodeURIComponent(searchParams.get("msg") ?? "") : "Falha na autenticação com Google.",
+        db_error:        "Não foi possível acessar sua conta agora. Tente novamente mais tarde.",
+        unavailable:     "O login está temporariamente indisponível. Tente novamente mais tarde.",
+        not_configured:  "O login com Google ainda não está disponível neste site.",
+        invalid_state:   "A tentativa de login expirou. Inicie novamente pelo botão Google.",
+        exchange_failed: "Não foi possível concluir o login com Google. Tente novamente.",
       };
       toast({ title: msgs[googleError] || "Erro no login com Google.", variant: "destructive" });
     }

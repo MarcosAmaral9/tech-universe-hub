@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DynamicSEO from "@/components/DynamicSEO";
+import { isHistorySnapshot, type HistorySnapshot } from "@/lib/historySnapshot";
 import heroHistorico from "@/assets/historico-cotacoes.webp";
 import {
   Area, AreaChart, CartesianGrid, Line, LineChart,
@@ -42,10 +43,6 @@ const CATEGORY_PERIODS: Record<CategoryKey, { key: Period; label: string }[]> = 
 interface ChartPoint  { date: string; value: number; label: string }
 interface SnapshotPoint { date: string; price: number }
 type SnapshotSeries = Record<CategoryKey, Record<string, SnapshotPoint[]>>;
-interface HistorySnapshot {
-  generatedAt: string;
-  assets: SnapshotSeries;
-}
 interface AssetHistory {
   id: string; name: string; symbol: string;
   category: CategoryKey; icon: string;
@@ -122,14 +119,6 @@ const CustomTooltip = ({
 
 const SNAPSHOT_CACHE_KEY = "vc_history_snapshot_v1";
 
-function isHistorySnapshot(value: unknown): value is HistorySnapshot {
-  if (!value || typeof value !== "object") return false;
-  const candidate = value as Partial<HistorySnapshot>;
-  return typeof candidate.generatedAt === "string" && Boolean(candidate.assets?.b3)
-    && Boolean(candidate.assets?.crypto) && Boolean(candidate.assets?.currency)
-    && Boolean(candidate.assets?.metal);
-}
-
 function readCachedSnapshot(): HistorySnapshot | null {
   try {
     const raw = localStorage.getItem(SNAPSHOT_CACHE_KEY);
@@ -155,24 +144,33 @@ const HistoricoCotacoesPage = () => {
   const [category, setCategory]           = useState<CategoryKey>("b3");
   const [assets, setAssets]               = useState<AssetHistory[]>([]);
   const [selected, setSelected]           = useState<string | null>(null);
-  const [loading, setLoading]             = useState(true);
+  const [loading, setLoading]             = useState(() => !readCachedSnapshot());
   const [isFallback, setIsFallback]       = useState(false);
   const [lastUpdated, setLastUpdated]     = useState("");
   const [snapshot, setSnapshot] = useState<HistorySnapshot | null>(() => readCachedSnapshot());
+  const [stale, setStale] = useState(false);
 
   useEffect(() => {
     const controller = new AbortController();
+    let active = true;
+    const timeout = window.setTimeout(() => controller.abort(), 10_000);
     fetch("/api.php?action=history_snapshot", { signal: controller.signal, cache: "default" })
       .then(response => response.ok ? response.json() : Promise.reject(new Error("snapshot unavailable")))
       .then((value: unknown) => {
         if (!isHistorySnapshot(value)) throw new Error("invalid snapshot");
+        if (!active) return;
         setSnapshot(value);
-        localStorage.setItem(SNAPSHOT_CACHE_KEY, JSON.stringify(value));
+        try { localStorage.setItem(SNAPSHOT_CACHE_KEY, JSON.stringify(value)); } catch { /* storage opcional */ }
         setIsFallback(false);
+        setStale(false);
       })
-      .catch(() => setIsFallback(!readCachedSnapshot()))
-      .finally(() => setLoading(false));
-    return () => controller.abort();
+      .catch(() => {
+        if (!active) return;
+        setIsFallback(!readCachedSnapshot());
+        setStale(true);
+      })
+      .finally(() => { window.clearTimeout(timeout); if (active) setLoading(false); });
+    return () => { active = false; window.clearTimeout(timeout); controller.abort(); };
   }, []);
 
   useEffect(() => {
@@ -202,7 +200,7 @@ const HistoricoCotacoesPage = () => {
   useEffect(() => {
     setAssets(preparedAssets);
     setSelected(previous => {
-      if (preparedAssets.some(asset => asset.id === previous)) return previous;
+      if (preparedAssets.some(asset => asset.id === previous && asset.category === category)) return previous;
       return preparedAssets.find(asset => asset.category === category)?.id ?? preparedAssets[0]?.id ?? null;
     });
   }, [preparedAssets, category]);
@@ -303,13 +301,13 @@ const HistoricoCotacoesPage = () => {
         {isFallback && !loading && (
           <div className="flex items-start gap-3 mb-4 p-3 rounded-lg border border-amber-500/30 bg-amber-500/10 text-sm text-amber-300">
             <AlertTriangle className="h-4 w-4 shrink-0 mt-0.5" />
-            <span>Usando dados de referência — servidor indisponível. Os dados serão atualizados automaticamente.</span>
+            <span>Histórico indisponível no momento. Ainda não há uma cópia completa disponível; nenhum preço de exemplo será exibido.</span>
           </div>
         )}
         {snapshot && !loading && (
           <div className="flex items-start gap-3 mb-4 p-3 rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-sm text-emerald-300">
             <Info className="h-4 w-4 shrink-0 mt-0.5" />
-            <span>Histórico carregado do banco de dados — dados acumulados automaticamente a cada atualização das cotações.</span>
+            <span>{stale ? "Não foi possível atualizar agora. Exibindo a última cópia completa salva, com a data indicada acima." : "Histórico real preparado automaticamente; data da cópia indicada acima."}</span>
           </div>
         )}
 
