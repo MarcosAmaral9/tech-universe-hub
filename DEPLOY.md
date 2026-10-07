@@ -67,6 +67,24 @@ Preserva `.htaccess`, `sitemap.xml`, `robots.txt` e todos os
 - `cache/` (snapshots do cron de cotações — populados em produção).
 - Uploads de usuários (avatares etc.) fora de `dist/`.
 
+## Correção conjunta da API e das páginas — 7 de outubro de 2026
+
+O deploy automático continua preservando `api.php`. **Um deploy só das páginas não resolve os erros do banco.**
+
+1. Na Hostinger, baixe uma cópia do `api.php` atual para um local privado fora de `public_html`. Não deixe arquivos `.bak` públicos.
+2. Verifique `/public_html/.env.php` (permissão 600 ou 640): nomes do banco e usuário exatamente como no hPanel, senha atual e usuário associado ao banco. Não envie credenciais pelo chat.
+3. Confira `$GOOGLE_CLIENT_ID`, `$GOOGLE_SECRET` e `$AUTH_SECRET` no arquivo privado. No Google Cloud Console, o retorno autorizado deve ser exatamente `https://viciocode.com/auth/google`.
+4. Envie **somente** `public/api.php` deste projeto para `/public_html/api.php`, substituindo o antigo; em seguida publique as páginas da mesma revisão pelo fluxo acima. Não substitua `.env.php`, `cache/` ou `avatars/`.
+5. Abra `https://viciocode.com/api.php?action=health`. Deve retornar `status: ok` e `version: 2026-10-07.1`. Se retornar 503, consulte o log privado de erros PHP no hPanel: `database_configuration` indica campos ausentes; `database_connection` indica falha de conexão. Códigos do driver 1045/1044 indicam autenticação/permissões; 1049 indica banco desconhecido; 2002 indica serviço/host inacessível. Não publique esses logs.
+6. O usuário MySQL precisa ler/gravar as tabelas e criar tabelas ausentes. `post_views` é criada somente quando inexistente; registros antigos são preservados. As tabelas de usuários/perfis devem estar instaladas conforme SQL documentado em `api.php`.
+7. Confirme o cron protegido a cada 30 minutos. **Seu HTTP 200 confirma o início, não a conclusão do preenchimento.** Autenticado como administrador, consulte `/api.php?action=history_status`: confira os 24 ativos, pontos, erros da última tentativa, categoria seguinte e data de publicação. Limites ou recusas dos provedores podem impedir a primeira cópia completa; não serão substituídos por preços fictícios.
+8. Após o cron publicar uma cópia completa, `/api.php?action=history_snapshot` deve retornar 200; navegue por categorias/períodos. Em falha posterior, a última cópia completa permanece disponível. Sem cópia, a página encerra a espera em até 10 segundos e informa indisponibilidade.
+9. Abra um artigo, confira `/api.php?action=top_posts&period=week&limit=5` e o bloco Mais Lidos. Resultado `posts: []` significa semana sem leituras; erro 503 não é tratado como ausência de leituras. Teste Google com uma conta real e confirme acesso a Configurações.
+
+**Reversão:** restaure o `api.php` privado anterior e as páginas da revisão anterior juntos; nunca reverta `.env.php` para senhas antigas, nunca apague preços ou leituras. A atualização não executa DROP/TRUNCATE.
+
+Não há acesso ao hPanel/FTP neste ambiente: conexão real, agendamento e login completo continuam dependentes dessa publicação.
+
 ## Após o deploy — validação de indexação
 
 1. Aguarde 1–2 minutos e teste 3 posts aleatórios:

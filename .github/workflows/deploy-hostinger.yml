@@ -48,6 +48,10 @@ jobs:
           echo "sitemap.xml:"
           head -5 dist/sitemap.xml
 
+      - name: Aviso sobre publicação controlada da API
+        run: |
+          echo '::notice::api.php é preservado neste deploy. Se alterado, publique public/api.php pela entrega controlada em DEPLOY.md, com backup privado e verificação de /api.php?action=health.'
+
       - name: Deploy via FTP → public_html/
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
