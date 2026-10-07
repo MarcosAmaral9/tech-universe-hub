@@ -85,6 +85,16 @@ O deploy automático continua preservando `api.php`. **Um deploy só das página
 
 Não há acesso ao hPanel/FTP neste ambiente: conexão real, agendamento e login completo continuam dependentes dessa publicação.
 
+### Testes antes da entrega
+
+```bash
+bunx vitest run src/test/historySnapshot.test.ts src/test/serviceRecovery.test.tsx
+php -l public/api.php
+php scripts/test-api-recovery.php
+```
+
+Os testes locais verificam integridade dos 24 ativos, preservação de leituras e cópias, alternância do cron, caminho seguro do cookie e troca única do código Google. Os testes da prévia simulam falhas e cópias para verificar a interface; não comprovam dados reais ou autenticação na Hostinger.
+
 ## Após o deploy — validação de indexação
 
 1. Aguarde 1–2 minutos e teste 3 posts aleatórios:

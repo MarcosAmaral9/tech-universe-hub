@@ -12,5 +12,5 @@
 - [x] Preparar histórico imediato com uma única leitura, snapshot completo e atualização exclusiva pelo cron.
 - [x] Publicar o guia completo de Medieval Dynasty com dados verificados e visual próprio.
 - [ ] Redefinir a senha do MySQL e configurar os novos segredos privados na Hostinger (ação do proprietário).
-- [ ] Corrigir Google, espera do histórico e preservação dos mais lidos; testar regressões.
+- [x] Corrigir Google, espera do histórico e preservação dos mais lidos; validar com testes e falhas simuladas na prévia.
 - [ ] Publicar as correções e confirmar MySQL, cron dos 24 ativos e login real (bloqueado: acesso à Hostinger).
