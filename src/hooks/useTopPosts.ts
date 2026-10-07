@@ -20,7 +20,7 @@ function savedRanking(key: string) {
     if (value && Number.isFinite(value.ts) && Array.isArray(value.data)
       && value.data.every((p: TopPost) => typeof p.slug === "string" && typeof p.title === "string"
         && typeof p.category === "string" && Number.isFinite(p.views) && p.views >= 0)) return value;
-  } catch { /* stockage optionnel */ }
+  } catch { /* armazenamento opcional */ }
   return undefined;
 }
 

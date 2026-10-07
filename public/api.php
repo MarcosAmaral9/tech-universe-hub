@@ -772,6 +772,7 @@ function publishHistorySnapshot(PDO $db): array {
     if (!$snapshot) return ['published' => false, 'reason' => 'incomplete'];
     $json = json_encode($snapshot, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     if (!$json) return ['published' => false, 'reason' => 'encode_failed'];
+    if (!validHistorySnapshot($json)) return ['published' => false, 'reason' => 'invalid_series'];
     $path = cacheDir() . '/viciocode_history_snapshot.json';
     $tmp = $path . '.' . bin2hex(random_bytes(4)) . '.tmp';
     if (@file_put_contents($tmp, $json, LOCK_EX) === false || !@rename($tmp, $path)) {
@@ -934,7 +935,7 @@ function backfillB3(PDO $db, string $sym, int $days, string $avKey = ''): array 
 
 /**
  * Executa um passo de preenchimento dentro de um orçamento de tempo.
- * Prioriza o ativo pedido (se informado) e depois o que estiver mais defasado.
+ * Alterna categorias e ativos entre ciclos para impedir bloqueio por um provedor.
  */
 function nextBackfillGroup(int $cursor): string {
     return ['b3', 'crypto', 'currency'][$cursor % 3];
