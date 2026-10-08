@@ -8,3 +8,4 @@
 - Public snapshot reads must never create schemas or assemble snapshots; validate all expected series and preserve the last complete publication because incomplete or fabricated prices must not reach visitors.
 - Release PHP API changes through a controlled Hostinger upload with private rollback backups alongside matching frontend revisions because the automated FTP deployment deliberately preserves `api.php`.
 - Keep weekly ranking failures distinct from empty results and retain validated rankings with a stale notice because service outages must not erase real reading counts.
+- Start Google OAuth before database initialization; keep account lookup and session issuance database-backed because authorization URL generation must not depend on unrelated MySQL availability.

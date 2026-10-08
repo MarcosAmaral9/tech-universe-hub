@@ -75,7 +75,7 @@ O deploy automático continua preservando `api.php`. **Um deploy só das página
 2. Verifique `/public_html/.env.php` (permissão 600 ou 640): nomes do banco e usuário exatamente como no hPanel, senha atual e usuário associado ao banco. Não envie credenciais pelo chat.
 3. Confira `$GOOGLE_CLIENT_ID`, `$GOOGLE_SECRET` e `$AUTH_SECRET` no arquivo privado. No Google Cloud Console, o retorno autorizado deve ser exatamente `https://viciocode.com/auth/google`.
 4. Envie **somente** `public/api.php` deste projeto para `/public_html/api.php`, substituindo o antigo; em seguida publique as páginas da mesma revisão pelo fluxo acima. Não substitua `.env.php`, `cache/` ou `avatars/`.
-5. Abra `https://viciocode.com/api.php?action=health`. Deve retornar `status: ok` e `version: 2026-10-07.1`. Se retornar 503, consulte o log privado de erros PHP no hPanel: `database_configuration` indica campos ausentes; `database_connection` indica falha de conexão. Códigos do driver 1045/1044 indicam autenticação/permissões; 1049 indica banco desconhecido; 2002 indica serviço/host inacessível. Não publique esses logs.
+5. Abra `https://viciocode.com/api.php?action=health`. Deve retornar `status: ok` e `version: 2026-10-08.1`. Se retornar 503, consulte o log privado de erros PHP no hPanel: `database_configuration` indica campos ausentes; `database_connection` indica falha de conexão. Códigos do driver 1045/1044 indicam autenticação/permissões; 1049 indica banco desconhecido; 2002 indica serviço/host inacessível. Não publique esses logs.
 6. O usuário MySQL precisa ler/gravar as tabelas e criar tabelas ausentes. `post_views` é criada somente quando inexistente; registros antigos são preservados. As tabelas de usuários/perfis devem estar instaladas conforme SQL documentado em `api.php`.
 7. Confirme o cron protegido a cada 30 minutos. **Seu HTTP 200 confirma o início, não a conclusão do preenchimento.** Autenticado como administrador, consulte `/api.php?action=history_status`: confira os 24 ativos, pontos, erros da última tentativa, categoria seguinte e data de publicação. Limites ou recusas dos provedores podem impedir a primeira cópia completa; não serão substituídos por preços fictícios.
 8. Após o cron publicar uma cópia completa, `/api.php?action=history_snapshot` deve retornar 200; navegue por categorias/períodos. Em falha posterior, a última cópia completa permanece disponível. Sem cópia, a página encerra a espera em até 10 segundos e informa indisponibilidade.
@@ -84,6 +84,10 @@ O deploy automático continua preservando `api.php`. **Um deploy só das página
 **Reversão:** restaure o `api.php` privado anterior e as páginas da revisão anterior juntos; nunca reverta `.env.php` para senhas antigas, nunca apague preços ou leituras. A atualização não executa DROP/TRUNCATE.
 
 Não há acesso ao hPanel/FTP neste ambiente: conexão real, agendamento e login completo continuam dependentes dessa publicação.
+
+### Login Google — revisão de 8 de outubro de 2026
+
+A geração de `google_auth_url` agora ocorre antes da conexão MySQL: clicar no botão não deve falhar por indisponibilidade do banco. O retorno `google_exchange` ainda exige banco operacional; a correção não contorna autenticação nem cria sessões sem conta validada. As credenciais Google são lidas do `.env.php` privado ou das variáveis de ambiente do servidor. Publique `api.php` manualmente e confirme uma entrada real com acesso a Configurações; um teste somente da URL de autorização não confirma o login completo.
 
 ### Testes antes da entrega
 

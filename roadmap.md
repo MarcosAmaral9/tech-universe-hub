@@ -14,3 +14,4 @@
 - [ ] Redefinir a senha do MySQL e configurar os novos segredos privados na Hostinger (ação do proprietário).
 - [x] Corrigir Google, espera do histórico e preservação dos mais lidos; validar com testes e falhas simuladas na prévia.
 - [ ] Publicar as correções e confirmar MySQL, cron dos 24 ativos e login real (bloqueado: acesso à Hostinger).
+- [ ] Corrigir o início do Google para não depender do MySQL e validar o retorno seguro; confirmação em produção depende de upload na Hostinger.

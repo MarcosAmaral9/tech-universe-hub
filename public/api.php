@@ -72,6 +72,8 @@ $_env_file = __DIR__ . '/.env.php';
 if (file_exists($_env_file)) {
     include $_env_file;
 }
+$GOOGLE_CLIENT_ID = trim($GOOGLE_CLIENT_ID ?: (getenv('GOOGLE_CLIENT_ID') ?: ''));
+$GOOGLE_SECRET = trim($GOOGLE_SECRET ?: (getenv('GOOGLE_SECRET') ?: ''));
 // ======================================================================
 
 // Credenciais obrigatoriamente externas ao código versionado.
@@ -1881,7 +1883,7 @@ if ($method === 'POST' && $action === 'generate_social') {
 if ($method === 'GET' && $action === 'health') {
     $connected = getPdo() !== null;
     http_response_code($connected ? 200 : 503);
-    echo json_encode(['status' => $connected ? 'ok' : 'unavailable', 'version' => '2026-10-07.1']);
+    echo json_encode(['status' => $connected ? 'ok' : 'unavailable', 'version' => '2026-10-08.1']);
     exit;
 }
 
@@ -1890,6 +1892,31 @@ if (in_array($action, ['google_auth_url', 'google_exchange'], true)
     http_response_code(503);
     logServiceFailure('google_configuration');
     echo json_encode(['error' => 'O login com Google ainda não está disponível neste site.', 'code' => 'not_configured']);
+    exit;
+}
+
+// Iniciar OAuth não consulta o MySQL nem executa manutenção de comentários.
+// A conexão só é necessária no retorno para localizar a conta e emitir a sessão.
+if ($method === 'GET' && $action === 'google_auth_url') {
+    $redirect_uri = SITE_URL . '/auth/google';
+    $state = bin2hex(random_bytes(32));
+    setcookie('vc_oauth_state', $state, [
+        'expires' => time() + 600,
+        'path' => '/',
+        'secure' => true,
+        'httponly' => true,
+        'samesite' => 'Lax',
+    ]);
+    $params = http_build_query([
+        'client_id' => $GOOGLE_CLIENT_ID,
+        'redirect_uri' => $redirect_uri,
+        'response_type' => 'code',
+        'scope' => 'openid email profile',
+        'access_type' => 'online',
+        'prompt' => 'select_account',
+        'state' => $state,
+    ]);
+    echo json_encode(['url' => 'https://accounts.google.com/o/oauth2/v2/auth?' . $params]);
     exit;
 }
 
@@ -2405,36 +2432,6 @@ if ($method === 'POST' && $action === 'google_exchange') {
     ]);
     exit;
 }
-
-// ─── GET: retorna URL de autorização do Google ────────────────────────────────
-if ($method === 'GET' && $action === 'google_auth_url') {
-    if (!$GOOGLE_CLIENT_ID) {
-        http_response_code(503);
-        echo json_encode(['error' => 'Google OAuth não configurado. Adicione GOOGLE_CLIENT_ID e GOOGLE_SECRET no .env.php.']);
-        exit;
-    }
-    $redirect_uri = SITE_URL . '/auth/google';
-    $state = bin2hex(random_bytes(32));
-    setcookie('vc_oauth_state', $state, [
-        'expires' => time() + 600,
-        'path' => '/',
-        'secure' => true,
-        'httponly' => true,
-        'samesite' => 'Lax',
-    ]);
-    $params = http_build_query([
-        'client_id'     => $GOOGLE_CLIENT_ID,
-        'redirect_uri'  => $redirect_uri,
-        'response_type' => 'code',
-        'scope'         => 'openid email profile',
-        'access_type'   => 'online',
-        'prompt'        => 'select_account',
-        'state'         => $state,
-    ]);
-    echo json_encode(['url' => 'https://accounts.google.com/o/oauth2/v2/auth?' . $params]);
-    exit;
-}
-
 
 // ─── Favorite Assets CRUD ────────────────────────────────────────────────────
 if ($action === 'favorite_assets') {
