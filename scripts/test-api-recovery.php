@@ -51,4 +51,27 @@ foreach ($cookies[0] as $cookie) {
     check(str_contains($cookie, "'path' => '/'") && str_contains($cookie, "'httponly' => true") && str_contains($cookie, "'secure' => true") && str_contains($cookie, "'samesite' => 'Lax'"), 'Cookie OAuth chega ao api.php sem perder proteção');
 }
 check(str_contains($source, 'hash_equals($expectedState, $state)'), 'Validação obrigatória do state preservada');
+
+// Exercita a API inteira em outro processo, sem banco e com configuração fictícia.
+// Se o início OAuth voltar a depender do PDO, a resposta deixa de conter a URL.
+$fixture = sys_get_temp_dir() . '/vc-google-test-' . bin2hex(random_bytes(8));
+mkdir($fixture, 0700);
+try {
+    file_put_contents($fixture . '/api.php', $source);
+    file_put_contents($fixture . '/.env.php', '<?php $GOOGLE_CLIENT_ID="test.apps.googleusercontent.com"; $GOOGLE_SECRET="test-only"; $AUTH_SECRET="test-only-not-a-production-key"; $DB_HOST=""; $DB_NAME=""; $DB_USER=""; $DB_PASS="";');
+    $runner = '$_SERVER["REQUEST_METHOD"]="GET"; $_GET["action"]="google_auth_url"; require ' . var_export($fixture . '/api.php', true) . ';';
+    $output = [];
+    $status = 0;
+    exec(escapeshellarg(PHP_BINARY) . ' -r ' . escapeshellarg($runner), $output, $status);
+    $result = json_decode(implode("\n", $output), true);
+    check($status === 0 && isset($result['url']), 'Inicia Google normalmente sem conexão MySQL');
+    $url = parse_url($result['url']);
+    parse_str($url['query'] ?? '', $params);
+    check(($url['scheme'] ?? '') === 'https' && ($url['host'] ?? '') === 'accounts.google.com', 'Autorização usa apenas o Google oficial via HTTPS');
+    check(($params['redirect_uri'] ?? '') === 'https://viciocode.com/auth/google', 'Retorno Google usa o endereço público registrado');
+    check(strlen($params['state'] ?? '') === 64 && ($params['scope'] ?? '') === 'openid email profile', 'Início OAuth mantém state aleatório e escopos esperados');
+} finally {
+    foreach (['api.php', '.env.php'] as $file) unlink($fixture . '/' . $file);
+    rmdir($fixture);
+}
 echo "Testes PHP concluídos.\n";
