@@ -247,8 +247,34 @@ import fatedVillainImg from "@/assets/i-am-the-fated-villain-gu-changge.webp";
 import cityLordImg from "@/assets/starting-today-city-lord-liu-feng.webp";
 import greatestEstateDeveloperImg from "@/assets/the-greatest-estate-developer-o-melhor-engenheiro-do-mundo-guia-2026.webp";
 import medievalDynastyImg from "@/assets/medieval-dynasty-guia-completo-2026.webp";
+import ubtechU1Img from "@/assets/ubtech-uworld-u1-robo-companhia-preco-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 08 Out 2026 — IA (Robótica de companhia) ────────────────────────
+  {
+    id: "262",
+    slug: "ubtech-uworld-u1-robo-companhia-preco-2026",
+    title: "UWORLD U1 da UBTECH: Preço, Características e os Dilemas dos Robôs de Companhia",
+    excerpt:
+      "Conheça o UWORLD U1 da UBTECH: preços Lite, Pro e Ultra, dimensões, disponibilidade na China, inteligência artificial emocional, privacidade e o debate sobre romances entre humanos e robôs.",
+    content: "",
+    category: "ia",
+    subtopic: "robotica",
+    image: ubtechU1Img,
+    imageAlt: "Ilustração editorial de uma pessoa conversando com um robô fictício; não representa o UWORLD U1",
+    author: "VICIO<CODE>",
+    date: "2026-10-08",
+    readTime: "14 min",
+    faq: [
+      { q: "Quem lançou o UWORLD U1?", a: "A UBTECH apresentou a linha U1 da marca UWORLD em 30 de junho de 2026, em Shenzhen, na China. Não é um produto da Unitree." },
+      { q: "Quanto custa o robô U1?", a: "No lançamento chinês, o Lite foi anunciado a 119.800 yuans, o Pro a 169.800 e o Ultra entre 880.000 e 990.000 yuans, conforme a configuração. Não há preço oficial brasileiro confirmado nesta apuração." },
+      { q: "Quais são as dimensões do U1?", a: "O TechNode descreve alturas de 1,60 a 1,85 metro entre as configurações apresentadas no evento. Não localizamos peso, largura e profundidade consolidados por versão; o Lite é um semi-torso." },
+      { q: "O U1 já está disponível?", a: "O lançamento previa envios em 16 de setembro de 2026. Uma publicação especializada relatou primeiras entregas na China em setembro, mas não há um balanço independente de unidades entregues nem distribuição brasileira confirmada nesta apuração." },
+      { q: "O U1 cozinha ou faz limpeza?", a: "A cobertura da AFP informa que o modelo básico não cozinha nem faz tarefas domésticas. A proposta central da linha é companhia e interação, não substituir um trabalhador doméstico." },
+      { q: "O U1 sente amor ou substitui psicoterapia?", a: "Não há evidência de sentimentos próprios nem eficácia clínica comprovada para o U1 nas fontes consultadas. Respostas afetivas são produzidas pelo sistema; companhia não substitui acompanhamento profissional." },
+      { q: "As conversas ficam na nuvem?", a: "A UBTECH declara prioridade ao processamento local e dependência mínima de nuvem. O TechNode relata criptografia e armazenamento local por padrão, sem envio obrigatório. Isso é uma declaração da empresa, não uma auditoria independente." },
+    ],
+  },
   // ── 06 Out 2026 — Geek (Medieval Dynasty) ─────────────────────────────
   {
     id: "261",
