@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { Calendar, Clock, Coins, Map, Shield, Swords, User, Users, Wheat, Skull, Hammer, Lightbulb } from "lucide-react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
+import ShareWhatsApp from "@/components/ShareWhatsApp";
+import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -74,6 +76,8 @@ const ManorLordsGuia2026 = () => {
           <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />12 de Outubro, 2026</span>
           <span className="flex items-center gap-2"><Clock className="h-4 w-4" />16 min de leitura</span>
         </div>
+        <ShareWhatsApp />
+        <AuthorBio category="geek" publishedAt="12 de Outubro, 2026" />
       </header>
 
       <figure className="mb-8">
