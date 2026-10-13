@@ -153,7 +153,7 @@ for (const p of allPaths) {
     <meta name="twitter:description" content="${desc}" />
     <meta name="twitter:image" content="${OG_DEFAULT}" />
     <meta name="twitter:image:alt" content="${title}" />
-    <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`;
+    <script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, "\\u003c").replace(/>/g, "\\u003e")}</script>`;
 
   const html = stripped.replace("</head>", `${inject}\n  </head>`);
   const outFile = path.join(DIST, `${p.replace(/^\//, "")}.html`);
