@@ -247,9 +247,34 @@ import fatedVillainImg from "@/assets/i-am-the-fated-villain-gu-changge.webp";
 import cityLordImg from "@/assets/starting-today-city-lord-liu-feng.webp";
 import greatestEstateDeveloperImg from "@/assets/the-greatest-estate-developer-o-melhor-engenheiro-do-mundo-guia-2026.webp";
 import medievalDynastyImg from "@/assets/medieval-dynasty-guia-completo-2026.webp";
+import manorLordsImg from "@/assets/manor-lords-guia-completo-2026.webp";
 import ubtechU1Img from "@/assets/ubtech-uworld-u1-robo-companhia-preco-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 12 Out 2026 — Geek (Manor Lords) ─────────────────────────────
+  {
+    id: "263",
+    slug: "manor-lords-guia-completo-2026",
+    title: "Manor Lords em 2026: Guia Completo — Lançamento, Preço, Mapas e Dicas",
+    excerpt:
+      "Guia completo de Manor Lords: Acesso Antecipado, preço em reais no Steam, cenário na Francônia, modos, mapas, famílias, morte permanente e dicas.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: manorLordsImg,
+    imageAlt: "Vila medieval da Francônia com casas de enxaimel, igreja, campos, bois e milícia na estrada",
+    author: "VICIO<CODE>",
+    date: "2026-10-12",
+    readTime: "16 min",
+    faq: [
+      { q: "Quando Manor Lords foi lançado?", a: "O jogo entrou em Acesso Antecipado no PC em 26 de abril de 2024. Até 12 de outubro de 2026 não havia data oficial para a versão 1.0." },
+      { q: "Quanto custa Manor Lords no Brasil?", a: "O preço cheio no Steam brasileiro era R$ 79,99 na consulta de 12/10/2026. Promoções mudam o valor temporariamente." },
+      { q: "Manor Lords tem português?", a: "Sim. A página do Steam lista interface e legendas em português do Brasil; o áudio completo é em inglês." },
+      { q: "Os moradores morrem permanentemente?", a: "Sim. Moradores podem morrer em batalhas e por doenças, e não voltam. Novas famílias chegam por imigração." },
+      { q: "Quantos mapas o jogo tem?", a: "Até outubro de 2026: Germanic Valley, High Peaks, Winding River, Twin Lakes e Wide Valley." },
+      { q: "Manor Lords tem multiplayer?", a: "Não. O jogo é exclusivamente para um jogador até a data deste guia." },
+    ],
+  },
   // ── 08 Out 2026 — IA (Robótica de companhia) ────────────────────────
   {
     id: "262",

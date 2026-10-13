@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import { Calendar, Clock, Coins, Map, Shield, Swords, User, Users, Wheat, Skull, Hammer, Lightbulb } from "lucide-react";
 import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
-import ShareWhatsApp from "@/components/ShareWhatsApp";
-import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -11,6 +9,7 @@ import CommentSection from "@/components/CommentSection";
 import RelatedPosts from "@/components/RelatedPosts";
 import { AdInArticle, AdLeaderboard, AdRectangle } from "@/components/AdSense";
 import heroImg from "@/assets/manor-lords-guia-completo-2026.webp";
+import batalhaImg from "@/assets/manor-lords-batalha-milicia.webp";
 
 const SLUG = "manor-lords-guia-completo-2026";
 const TITLE = "Manor Lords em 2026: Guia Completo — Lançamento, Preço, Mapas e Dicas";
@@ -116,7 +115,7 @@ const ManorLordsGuia2026 = () => {
 
         <h2>Preço em reais</h2>
         <p>
-          Na consulta feita ao Steam brasileiro em 12 de outubro de 2026, <em>Manor Lords</em> custava <strong>R$ 79,99</strong> no preço cheio. No mesmo dia ele estava em promoção de 35%, por R$ 51,99. Descontos assim são temporários, então vale adicionar o jogo à lista de desejos e aguardar as grandes promoções sazonais. O preço em dólar no Steam americano é de US$ 39,99. O jogo também fez parte do catálogo de PC do Game Pass no lançamento; a disponibilidade em assinaturas muda com o tempo e deve ser conferida no próprio serviço.
+          Na consulta feita ao Steam brasileiro em 12 de outubro de 2026, <em>Manor Lords</em> custava <strong>R$ 79,99</strong> no preço cheio. No mesmo dia ele estava em promoção de 35%, por R$ 51,99. Descontos assim são temporários, então vale adicionar o jogo à lista de desejos e aguardar as grandes promoções sazonais. O preço em dólar no Steam americano é de US$ 39,99.
         </p>
 
         <h2 className="flex items-center gap-3"><Shield className="h-7 w-7 text-geek" />História e cenário</h2>
@@ -165,6 +164,11 @@ const ManorLordsGuia2026 = () => {
         </p>
 
         <AdRectangle className="my-8" />
+
+        <figure className="not-prose my-8">
+          <img src={batalhaImg} alt="Milícia de camponeses com lanças e escudos enfrenta soldados com armadura em uma colina perto da vila" width={1536} height={864} loading="lazy" className="w-full rounded-xl object-cover" />
+          <figcaption className="mt-2 text-xs text-muted-foreground">Ilustração editorial: camponeses convocados para a milícia arriscam a vida — e a produção da vila.</figcaption>
+        </figure>
 
         <h2 className="flex items-center gap-3"><Skull className="h-7 w-7 text-geek" />Morte permanente dos personagens</h2>
         <p>
@@ -241,11 +245,6 @@ const ManorLordsGuia2026 = () => {
 
       <RelatedPosts currentSlug={SLUG} />
       <CommentSection postId={SLUG} postTitle={TITLE} category="geek" />
-
-      <div className="mt-8 flex flex-col gap-6">
-        <ShareWhatsApp title={TITLE} />
-        <AuthorBio />
-      </div>
     </article>
   );
 };

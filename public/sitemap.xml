@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Sitemap do VICIO<CODE> — viciocode.com
-  Gerado automaticamente em: 2026-10-11
-  Total de URLs: 314 (28 páginas + 233 posts + 53 tags)
+  Gerado automaticamente em: 2026-10-13
+  Total de URLs: 315 (28 páginas + 234 posts + 53 tags)
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -144,6 +144,12 @@
     <loc>https://viciocode.com/instalar</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/manor-lords-guia-completo-2026</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://viciocode.com/post/ubtech-uworld-u1-robo-companhia-preco-2026</loc>

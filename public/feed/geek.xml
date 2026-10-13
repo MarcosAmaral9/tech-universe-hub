@@ -5,8 +5,17 @@
     <link>https://viciocode.com</link>
     <description>Novos artigos de Geek &amp; Games no VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Tue, 06 Oct 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed/geek.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Manor Lords em 2026: Guia Completo — Lançamento, Preço, Mapas e Dicas</title>
+      <link>https://viciocode.com/post/manor-lords-guia-completo-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/manor-lords-guia-completo-2026</guid>
+      <pubDate>Mon, 12 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Guia completo de Manor Lords: Acesso Antecipado, preço em reais no Steam, cenário na Francônia, modos, mapas, famílias, morte permanente e dicas.</description>
+      <category>Geek &amp; Games</category>
+      <enclosure url="https://viciocode.com/assets/manor-lords-guia-completo-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>Medieval Dynasty em 2026: Guia Completo para Criar uma Dinastia</title>
       <link>https://viciocode.com/post/medieval-dynasty-guia-completo-2026</link>
@@ -447,15 +456,6 @@
       <description>Os melhores equipamentos do início ao meio de Crimson Desert: Sword of the Lord, Tauria&apos;s Curved Sword, Flamespitter, Knuckledrill, armaduras do Fallen Kingdom e sistema de refinamento completo.</description>
       <category>Geek &amp; Games</category>
       <enclosure url="https://viciocode.com/assets/crimson-desert-melhores-equipamentos-inicio.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Crimson Desert: Guia de Dicas para Iniciantes — Tudo que Você Precisa Saber</title>
-      <link>https://viciocode.com/post/crimson-desert-guia-iniciantes-dicas</link>
-      <guid isPermaLink="true">https://viciocode.com/post/crimson-desert-guia-iniciantes-dicas</guid>
-      <pubDate>Sun, 29 Mar 2026 12:00:00 GMT</pubDate>
-      <description>20 dicas essenciais para iniciantes em Crimson Desert: progressão sem XP, fast travel, combate avançado, inventário, culinária, companheiros e sistemas ocultos que o jogo não explica.</description>
-      <category>Geek &amp; Games</category>
-      <enclosure url="https://viciocode.com/assets/crimson-desert-guia-iniciantes-dicas.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>
