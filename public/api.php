@@ -968,7 +968,7 @@ function runBackfillStep(PDO $db, float $maxSeconds = 40.0, ?string $onlyType = 
                 $sym = $codes[$index];
                 $cursor[$group] = ($index + 1) % $count;
                 if ($onlyCode && strtoupper($onlyCode) !== $sym) continue;
-                if (backfillCountPoints($db, $group, $sym, 365) >= ($group === 'b3' ? 90 : 300)) continue;
+                if (backfillCountPoints($db, $group, $sym, 365) >= ($group === 'b3' ? 180 : 300)) continue;
                 if (!backfillTryLock($group . '_' . $sym, 900)) continue;
                 try {
                     $done[$group][$sym] = $group === 'b3'
