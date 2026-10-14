@@ -721,7 +721,7 @@ function refreshHistoryState(PDO $db, array $errors = []): array {
         foreach ($codes as $code) {
             $row = $stats[$type][$code] ?? [];
             $points = (int)($row['points'] ?? 0);
-            $minimum = $type === 'b3' ? 180 : 300;
+            $minimum = $type === 'b3' ? 90 : 300;
             $complete = $points >= $minimum;
             $error = $errors[$type][$code]['error'] ?? (in_array($type, ['currency', 'metal'], true) ? ($errors['currency_error'] ?? null) : null);
             $upsert->execute([
@@ -791,7 +791,7 @@ function validHistorySnapshot($json): bool {
     foreach (historyExpectedAssets() as $type => $codes) {
         foreach ($codes as $code) {
             $points = $snapshot['assets'][$type][$code] ?? null;
-            if (!is_array($points) || count($points) < ($type === 'b3' ? 180 : 300)) return false;
+            if (!is_array($points) || count($points) < ($type === 'b3' ? 90 : 300)) return false;
             $previous = '';
             foreach ($points as $point) {
                 $date = $point['date'] ?? '';
