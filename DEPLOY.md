@@ -137,3 +137,9 @@ salvo no arquivo privado. Não coloque mais segredos na URL:
 ```bash
 curl -fsS -X POST -H 'X-Cron-Secret: SEU_SEGREDO' 'https://viciocode.com/api.php?action=cron_refresh'
 ```
+
+## Histórico de 1 ano (automático)
+- Com `$BRAPI_TOKEN` no `.env.php`, o cron busca 1 ano por ação na brapi (CoinGecko para cripto, CDN diária para câmbio/metais) e grava no MySQL. Visitantes só leem o snapshot.
+- hPanel → Avançado → Cron Jobs → a cada 15 min:
+  `curl -s -X POST -H "X-Cron-Secret: SEU_CRON_SECRET" https://viciocode.com/api.php?action=cron_refresh`
+- Progresso por ativo (protegido): `GET /api.php?action=history_status` com o mesmo header.
