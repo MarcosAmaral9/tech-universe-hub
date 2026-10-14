@@ -1256,6 +1256,23 @@ if ($method === 'GET' && $action === 'history_multi') {
 // Este endpoint é o ÚNICO que chama APIs externas. Usuários NUNCA chamam APIs.
 // Fluxo: cron → api.php?action=cron_refresh → brapi/CoinGecko/fawazahmed → MySQL
 // Usuário → api.php?action=all → MySQL (só leitura, zero APIs externas)
+// Progresso do histórico por ativo (protegido; não expõe tokens nem chama provedores).
+if ($method === 'GET' && $action === 'history_status') {
+    requireCronSecret();
+    $db = getPdo();
+    if (!$db) { http_response_code(503); echo json_encode(['error' => 'Banco indisponível']); exit; }
+    $state = refreshHistoryState($db);
+    $out = [];
+    foreach ($state as $type => $assets) {
+        foreach ($assets as $code => $a) {
+            $target = $type === 'b3' ? VC_TARGET_B3_POINTS : VC_TARGET_DAILY_POINTS;
+            $out[$type][$code] = $a + ['target' => $target, 'full_year' => $a['points'] >= $target];
+        }
+    }
+    echo json_encode(['assets' => $out, 'brapi_token' => !empty($BRAPI_TOKEN) ? 'configurado' : 'ausente']);
+    exit;
+}
+
 if ($method === 'POST' && $action === 'cron_refresh') {
     requireCronSecret();
     $cronLock = @fopen(cacheDir() . '/vc_cron_execution.lock', 'c');

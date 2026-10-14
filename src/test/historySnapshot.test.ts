@@ -33,3 +33,19 @@ describe("histórico público pré-calculado", () => {
     expect(api).toContain("if (!$asset['complete']) return null;");
   });
 });
+describe("histórico de 1 ano via token do servidor", () => {
+  it("usa a brapi com 1 ano e token do servidor como fonte principal da B3", () => {
+    const b3 = api.slice(api.indexOf("function backfillB3("), api.indexOf("// Fallback gratuito"));
+    expect(b3).toContain("range=1y&interval=1d");
+    expect(b3).toContain("$GLOBALS['BRAPI_TOKEN']");
+    expect(b3.indexOf("brapi.dev")).toBeLessThan(b3.indexOf("alphavantage"));
+  });
+  it("busca até ~240 pregões na B3 e 360 dias nos demais", () => {
+    expect(api).toContain("const VC_TARGET_B3_POINTS = 240;");
+    expect(api).toContain("const VC_TARGET_DAILY_POINTS = 360;");
+  });
+  it("status do progresso exige o segredo do cron", () => {
+    const s = api.slice(api.indexOf("$action === 'history_status'"));
+    expect(s.slice(0, 200)).toContain("requireCronSecret();");
+  });
+});
