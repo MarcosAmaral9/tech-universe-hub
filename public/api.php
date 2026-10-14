@@ -897,9 +897,36 @@ function backfillCurrencyDay(PDO $db, string $dateStr): int {
     return $saved;
 }
 
-// Uma ação B3 = 1 requisição Alpha Vantage (opcional) ou Yahoo Finance (gratuito)
+// Converte a resposta histórica da brapi em [data => fechamento], ignorando pontos inválidos.
+function parseBrapiHistory($data): array {
+    $points = $data['results'][0]['historicalDataPrice'] ?? null;
+    if (!is_array($points)) return [];
+    $byDate = [];
+    foreach ($points as $p) {
+        $close = isset($p['close']) && is_numeric($p['close']) ? (float)$p['close'] : 0.0;
+        $ts = isset($p['date']) && is_numeric($p['date']) ? (int)$p['date'] : 0;
+        if ($close <= 0 || $ts <= 0) continue;
+        $byDate[gmdate('Y-m-d', $ts)] = round($close, 2);
+    }
+    ksort($byDate);
+    return $byDate;
+}
+
+// Uma ação B3 = 1 requisição brapi (token do .env.php, 1 ano), Alpha Vantage ou Yahoo como reserva
 function backfillB3(PDO $db, string $sym, int $days, string $avKey = ''): array {
     $ins = $db->prepare('INSERT INTO price_history (asset_type, asset_code, price, price_date) VALUES ("b3", :code, :price, :date) ON DUPLICATE KEY UPDATE price = VALUES(price)');
+
+    $brapiToken = (string)($GLOBALS['BRAPI_TOKEN'] ?? '');
+    if ($brapiToken !== '') {
+        $raw = httpGet("https://brapi.dev/api/quote/{$sym}?range=1y&interval=1d", 20,
+            ["Authorization: Bearer {$brapiToken}", 'Accept: application/json']);
+        $byDate = $raw ? parseBrapiHistory(json_decode($raw, true)) : [];
+        if (count($byDate) >= 20) {
+            foreach ($byDate as $d => $p) $ins->execute([':code' => $sym, ':price' => $p, ':date' => $d]);
+            return ['saved' => count($byDate), 'source' => 'brapi'];
+        }
+    }
+
 
     if ($avKey !== '') {
         $size = $days >= 100 ? 'full' : 'compact';
@@ -968,8 +995,11 @@ function runBackfillStep(PDO $db, float $maxSeconds = 40.0, ?string $onlyType = 
                 $sym = $codes[$index];
                 $cursor[$group] = ($index + 1) % $count;
                 if ($onlyCode && strtoupper($onlyCode) !== $sym) continue;
-                if (backfillCountPoints($db, $group, $sym, 365) >= ($group === 'b3' ? 180 : 300)) continue;
-                if (!backfillTryLock($group . '_' . $sym, 900)) continue;
+                // Meta de 1 ano: ~240 pregões na B3, 360 dias corridos em cripto.
+                if (backfillCountPoints($db, $group, $sym, 365) >= ($group === 'b3' ? VC_TARGET_B3_POINTS : VC_TARGET_DAILY_POINTS)) continue;
+                // Ativo já publicável só tenta completar o ano a cada 6 h, poupando o token.
+                $publishable = backfillCountPoints($db, $group, $sym, 365) >= ($group === 'b3' ? 90 : 300);
+                if (!backfillTryLock($group . '_' . $sym, $publishable ? 21600 : 900)) continue;
                 try {
                     $done[$group][$sym] = $group === 'b3'
                         ? backfillB3($db, $sym, 365, (string)($GLOBALS['ALPHA_VANTAGE_KEY'] ?? ''))
