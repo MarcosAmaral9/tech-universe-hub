@@ -687,6 +687,8 @@ const VC_BACKFILL_CRYPTO = [
 ];
 const VC_BACKFILL_CURRENCIES = ['usd' => 'USD', 'eur' => 'EUR', 'ars' => 'ARS', 'pyg' => 'PYG'];
 const VC_BACKFILL_B3 = ['PETR4','VALE3','ITUB4','BBDC4','ABEV3','WEGE3','BBAS3','RENT3','MGLU3','SUZB3'];
+const VC_TARGET_B3_POINTS = 240;
+const VC_TARGET_DAILY_POINTS = 360;
 
 function historyExpectedAssets(): array {
     return [
