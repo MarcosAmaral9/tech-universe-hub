@@ -249,8 +249,33 @@ import greatestEstateDeveloperImg from "@/assets/the-greatest-estate-developer-o
 import medievalDynastyImg from "@/assets/medieval-dynasty-guia-completo-2026.webp";
 import manorLordsImg from "@/assets/manor-lords-guia-completo-2026.webp";
 import ubtechU1Img from "@/assets/ubtech-uworld-u1-robo-companhia-preco-2026.webp";
+import mandateOrderImg from "@/assets/mandate-order-guia-completo-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 15 Out 2026 — Geek (Mandate Order) ───────────────────────────
+  {
+    id: "264",
+    slug: "mandate-order-guia-completo-2026",
+    title: "Mandate Order em 2026: Guia Completo — Lançamento, Preço, Cercos e Dicas",
+    excerpt:
+      "Guia completo de Mandate Order: Acesso Antecipado, preço em reais no Steam, Reinos Combatentes, mapas, equipes de trabalho, conselheiros, guerras de cerco e dicas.",
+    content: "",
+    category: "geek",
+    subtopic: "games",
+    image: mandateOrderImg,
+    imageAlt: "Cidade murada da China antiga ao pôr do sol, com torres de vigia, campos, rio e trabalhadores",
+    author: "VICIO<CODE>",
+    date: "2026-10-15",
+    readTime: "15 min",
+    faq: [
+      { q: "Quando Mandate Order foi lançado?", a: "Em Acesso Antecipado em 12 de agosto de 2026 (02h UTC; 11 de agosto no Brasil), no Steam e na Epic Games Store. A versão 1.0 ainda não tem data." },
+      { q: "Quanto custa Mandate Order no Brasil?", a: "O preço cheio no Steam brasileiro é R$ 59,99. Em outubro de 2026 houve promoção de 20%, por R$ 47,99." },
+      { q: "Mandate Order tem multiplayer?", a: "Não. É um jogo exclusivamente para um jogador." },
+      { q: "Mandate Order é parecido com Manor Lords?", a: "Sim, a construção sem grade e as batalhas táticas lembram Manor Lords, mas o jogo se diferencia pelo cenário chinês, conselheiros, rituais e foco em cercos." },
+      { q: "Os personagens morrem permanentemente?", a: "Soldados saem das equipes de trabalho e há pragas e baixas em combate. A Digital Sky não publicou uma regra detalhada sobre morte permanente." },
+      { q: "Quais são os requisitos mínimos?", a: "Windows 10, Core i7-9700 ou Ryzen 5 3600, 16 GB de RAM, GTX 1660 de 6 GB, DirectX 12 e 20 GB de espaço; SSD recomendado." },
+    ],
+  },
   // ── 12 Out 2026 — Geek (Manor Lords) ─────────────────────────────
   {
     id: "263",

@@ -5,8 +5,17 @@
     <link>https://viciocode.com</link>
     <description>IA, investimentos, cultura geek e otaku — novos artigos do VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Mon, 12 Oct 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mandate Order em 2026: Guia Completo — Lançamento, Preço, Cercos e Dicas</title>
+      <link>https://viciocode.com/post/mandate-order-guia-completo-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/mandate-order-guia-completo-2026</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Guia completo de Mandate Order: Acesso Antecipado, preço em reais no Steam, Reinos Combatentes, mapas, equipes de trabalho, conselheiros, guerras de cerco e dicas.</description>
+      <category>Geek &amp; Games</category>
+      <enclosure url="https://viciocode.com/assets/mandate-order-guia-completo-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>Manor Lords em 2026: Guia Completo — Lançamento, Preço, Mapas e Dicas</title>
       <link>https://viciocode.com/post/manor-lords-guia-completo-2026</link>
@@ -447,15 +456,6 @@
       <description>IGC subiu 180% em 10 anos, IDIV 110% (~150% com dividendos reinvestidos). Com Selic a 14,25%, BBAS3 (9,2%) e TAEE11 (8,5%) perdem para o CDI bruto — mas ganham depois do IR. Guia completo growth vs dividendos na B3.</description>
       <category>Finanças &amp; Investimentos</category>
       <enclosure url="https://viciocode.com/assets/acoes-crescimento-vs-dividendos-2026.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Anime Verão 2026: Qual Dia da Semana Cada Série Lança no Brasil</title>
-      <link>https://viciocode.com/post/anime-verao-2026-dias-semana</link>
-      <guid isPermaLink="true">https://viciocode.com/post/anime-verao-2026-dias-semana</guid>
-      <pubDate>Tue, 21 Jul 2026 12:00:00 GMT</pubDate>
-      <description>Grade completa da temporada de verão 2026 organizada por dia da semana em horário de Brasília (BRT): Mushoku Tensei III às sextas, Bleach TYBW Final aos sábados, Ghost in the Shell às terças, Youjo Senki II às quartas e mais de 30 séries com horários confirmados.</description>
-      <category>Otaku</category>
-      <enclosure url="https://viciocode.com/assets/anime-verao-2026-dias-semana.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>
