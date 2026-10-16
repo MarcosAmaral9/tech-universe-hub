@@ -249,9 +249,33 @@ import greatestEstateDeveloperImg from "@/assets/the-greatest-estate-developer-o
 import medievalDynastyImg from "@/assets/medieval-dynasty-guia-completo-2026.webp";
 import manorLordsImg from "@/assets/manor-lords-guia-completo-2026.webp";
 import ubtechU1Img from "@/assets/ubtech-uworld-u1-robo-companhia-preco-2026.webp";
+import hamefuraImg from "@/assets/minha-proxima-vida-como-vila-hamefura-guia-2026.webp";
 import mandateOrderImg from "@/assets/mandate-order-guia-completo-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 16 Out 2026 — Otaku (Hamefura) ───────────────────────────────
+  {
+    id: "265",
+    slug: "minha-proxima-vida-como-vila-hamefura-guia-2026",
+    title: "Minha Próxima Vida como Vilã: Guia Completo de Hamefura — Personagens, Anime e Por Que Todos Amam Katarina",
+    excerpt: "Guia de Hamefura: origem da light novel, personagens principais, por que todos se apaixonam por Katarina Claes, anime, filme e onde assistir no Brasil.",
+    content: "",
+    category: "otaku",
+    subtopic: "manga",
+    image: hamefuraImg,
+    imageAlt: "Ilustração de jovem nobre de cabelo castanho cuidando de uma horta, cercada de amigos",
+    author: "VICIO<CODE>",
+    date: "2026-10-16",
+    readTime: "13 min",
+    faq: [
+      { q: "O que significa Hamefura?", a: "É a abreviação japonesa de hametsu flag, a flag de ruína que levaria Katarina ao exílio ou à morte." },
+      { q: "Quem é a autora?", a: "Satoru Yamaguchi escreveu a história; Nami Hidaka faz as ilustrações e o mangá, pela Ichijinsha." },
+      { q: "Quantas temporadas tem o anime?", a: "Duas temporadas (2020 e 2021), com OVAs, e um filme lançado no Japão em 8 de dezembro de 2023." },
+      { q: "Onde assistir dublado?", a: "Na Crunchyroll, com dublagem e legendas em português do Brasil." },
+      { q: "Katarina fica com alguém?", a: "A obra mantém o romance em aberto; não revelamos desfechos para evitar spoilers." },
+      { q: "Hamefura é isekai?", a: "Sim, um isekai de reencarnação no mundo de um otome game." },
+    ],
+  },
   // ── 15 Out 2026 — Geek (Mandate Order) ───────────────────────────
   {
     id: "264",
