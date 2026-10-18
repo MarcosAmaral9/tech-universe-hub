@@ -251,8 +251,32 @@ import manorLordsImg from "@/assets/manor-lords-guia-completo-2026.webp";
 import ubtechU1Img from "@/assets/ubtech-uworld-u1-robo-companhia-preco-2026.webp";
 import hamefuraImg from "@/assets/minha-proxima-vida-como-vila-hamefura-guia-2026.webp";
 import mandateOrderImg from "@/assets/mandate-order-guia-completo-2026.webp";
+import financiarAlugarImg from "@/assets/financiar-imovel-ou-alugar-e-investir-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 18 Out 2026 — Finanças (Financiar ou alugar) ─────────────────
+  {
+    id: "266",
+    slug: "financiar-imovel-ou-alugar-e-investir-2026",
+    title: "Financiar Imóvel ou Alugar e Investir a Diferença? Contas Reais para 2026",
+    excerpt: "Simulação de imóvel de R$ 400 mil em SAC e Price contra aluguel investindo a diferença em 10, 20 e 30 anos, com custos ocultos, FGTS e quando cada caminho vale a pena.",
+    content: "",
+    category: "invest",
+    subtopic: "planejamento",
+    image: financiarAlugarImg,
+    imageAlt: "Maquete de casa, chave, calculadora, notas de real e gráfico em alta sobre uma mesa",
+    author: "VICIO<CODE>",
+    date: "2026-10-18",
+    readTime: "15 min",
+    faq: [
+      { q: "Pagar aluguel é jogar dinheiro fora?", a: "Não necessariamente. Os juros do financiamento também são custo; compare aluguel com juros, seguros, impostos e manutenção." },
+      { q: "SAC ou Price: qual é melhor?", a: "Na mesma taxa, o SAC paga menos juros no total, mas começa com parcela maior; a Price tem parcela fixa e custa mais." },
+      { q: "Posso usar o FGTS?", a: "Sim, na entrada, para amortizar ou abater parcelas, se você e o imóvel cumprirem as regras do SFH e do FGTS." },
+      { q: "O que é CET?", a: "Custo Efetivo Total: soma juros, seguros e tarifas. É o número para comparar propostas de bancos." },
+      { q: "Vale amortizar antecipadamente?", a: "Em geral sim, quando a taxa do financiamento supera o retorno líquido seguro; reduzir o prazo economiza mais juros." },
+      { q: "Os números da simulação valem para mim?", a: "Não. São exemplos educativos com premissas declaradas; mudando taxa, aluguel ou disciplina, o resultado muda." },
+    ],
+  },
   // ── 16 Out 2026 — Otaku (Hamefura) ───────────────────────────────
   {
     id: "265",
