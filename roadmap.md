@@ -18,3 +18,4 @@
 - [ ] Publicar as correções e confirmar MySQL, cron dos 24 ativos e login real (bloqueado: acesso à Hostinger).
 - [x] Corrigir o início do Google para não depender do MySQL; testes PHP e troca única do código aprovados, confirmação real permanece bloqueada pela publicação na Hostinger.
 - [x] Artigo Manor Lords (capa + imagem interna)
+- [ ] Refazer capa de Hamefura com personagens fiéis à imagem de referência
