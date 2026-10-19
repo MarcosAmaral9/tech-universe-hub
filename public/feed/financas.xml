@@ -5,8 +5,17 @@
     <link>https://viciocode.com</link>
     <description>Novos artigos de Finanças &amp; Investimentos no VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Mon, 21 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed/financas.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Financiar Imóvel ou Alugar e Investir a Diferença? Contas Reais para 2026</title>
+      <link>https://viciocode.com/post/financiar-imovel-ou-alugar-e-investir-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/financiar-imovel-ou-alugar-e-investir-2026</guid>
+      <pubDate>Sun, 18 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Simulação de imóvel de R$ 400 mil em SAC e Price contra aluguel investindo a diferença em 10, 20 e 30 anos, com custos ocultos, FGTS e quando cada caminho vale a pena.</description>
+      <category>Finanças &amp; Investimentos</category>
+      <enclosure url="https://viciocode.com/assets/financiar-imovel-ou-alugar-e-investir-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>Investimentos no Exterior em 2026: Imposto de Renda e Como Declarar</title>
       <link>https://viciocode.com/post/investimentos-exterior-imposto-renda-2026</link>
@@ -447,15 +456,6 @@
       <description>40% dos trades na B3 são executados por algoritmos. Comparativo Warren vs Magnetis vs Vérios com taxas reais. Como usar ChatGPT para analisar balanços e o que a CVM proíbe em recomendações automatizadas.</description>
       <category>Finanças &amp; Investimentos</category>
       <enclosure url="https://viciocode.com/assets/ia-mercado-financeiro-2026-investimentos.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>IRPF 2026: Guia Completo Para Declarar e Pagar Menos Imposto</title>
-      <link>https://viciocode.com/post/irpf-2026-guia-declarar-pagar-menos</link>
-      <guid isPermaLink="true">https://viciocode.com/post/irpf-2026-guia-declarar-pagar-menos</guid>
-      <pubDate>Thu, 19 Feb 2026 12:00:00 GMT</pubDate>
-      <description>Tudo que você precisa saber para declarar o Imposto de Renda 2026 corretamente, evitar a malha fina e usar deduções legais para pagar menos IR.</description>
-      <category>Finanças &amp; Investimentos</category>
-      <enclosure url="https://viciocode.com/assets/irpf-2026-guia-declarar-pagar-menos.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>
