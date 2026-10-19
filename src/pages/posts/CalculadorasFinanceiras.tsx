@@ -102,7 +102,7 @@ const CalculadorasFinanceiras = () => {
         result.push({
           id: `crypto-${c.id}`, name: c.name, symbol: c.symbol.toUpperCase(),
           price: c.current_price, category: "crypto",
-          icon: CRYPTO_ICONS[c.id] ?? "🪙", unit: "un.",
+          icon: CRYPTO_ICONS[c.id] ?? "🪙", unit: "unidade",
         });
       }
     });
@@ -116,7 +116,7 @@ const CalculadorasFinanceiras = () => {
     currencies.forEach(({ key, id, name, symbol, icon }) => {
       const r = data.rates[key as keyof typeof data.rates] as { bid: string } | undefined;
       const price = r ? parseFloat(r.bid) : 0;
-      if (price > 0) result.push({ id, name, symbol, price, category:"currency", icon, unit:"un." });
+      if (price > 0) result.push({ id, name, symbol, price, category:"currency", icon, unit:"unidade" });
     });
 
     const metals = [
