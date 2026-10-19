@@ -27,14 +27,19 @@ const fmtBRL = (v: number) => {
   return v.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 };
 
-const fmtQty = (qty: number, unit: string) => {
+export const QTY_PLURALS: Record<string, string> = {
+  "ação": "ações",
+  "unidade": "unidades",
+};
+
+export const fmtQty = (qty: number, unit: string) => {
   if (unit === "g") return qty >= 1 ? `${fmtBRL(qty)} g` : `${qty.toFixed(4)} g`;
-  if (unit === "ação") {
+  if (QTY_PLURALS[unit]) {
     // Frações e milhares em pt-BR: vírgula para decimais, ponto a cada mil (ex.: 1.234,56 ações)
-    const label = qty > 1 ? "ações" : "ação";
+    const label = qty > 1 ? QTY_PLURALS[unit] : unit;
     const formatted = qty.toLocaleString("pt-BR", {
       minimumFractionDigits: 2,
-      maximumFractionDigits: qty < 1 ? 6 : 2,
+      maximumFractionDigits: qty < 1 ? 8 : 2,
     });
     return `${formatted} ${label}`;
   }
