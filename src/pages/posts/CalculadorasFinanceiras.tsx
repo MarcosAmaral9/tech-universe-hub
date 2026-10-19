@@ -39,7 +39,7 @@ export const fmtQty = (qty: number, unit: string) => {
     const label = qty > 1 ? QTY_PLURALS[unit] : unit;
     const formatted = qty.toLocaleString("pt-BR", {
       minimumFractionDigits: 2,
-      maximumFractionDigits: qty < 1 ? 8 : 2,
+      maximumFractionDigits: qty < 0.01 ? 8 : 2,
     });
     return `${formatted} ${label}`;
   }
