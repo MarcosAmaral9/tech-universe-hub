@@ -29,6 +29,15 @@ const fmtBRL = (v: number) => {
 
 const fmtQty = (qty: number, unit: string) => {
   if (unit === "g") return qty >= 1 ? `${fmtBRL(qty)} g` : `${qty.toFixed(4)} g`;
+  if (unit === "ação") {
+    // Frações e milhares em pt-BR: vírgula para decimais, ponto a cada mil (ex.: 1.234,56 ações)
+    const label = qty > 1 ? "ações" : "ação";
+    const formatted = qty.toLocaleString("pt-BR", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: qty < 1 ? 6 : 2,
+    });
+    return `${formatted} ${label}`;
+  }
   if (qty < 0.001)  return `${qty.toFixed(8)} ${unit}`;
   if (qty < 1)      return `${qty.toFixed(6)} ${unit}`;
   if (qty >= 1000)  return `${qty.toLocaleString("pt-BR", { maximumFractionDigits: 0 })} ${unit}`;
