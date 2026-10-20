@@ -13,12 +13,12 @@ Guia completo em PT-BR na categoria Otaku, com mais de 1.500 palavras de prosa, 
 - **Ficha técnica, FAQ em cards (6 a 8 perguntas) e análise do Marcos.**
 
 ## Padrão do site
-- Capa WebP única: ilustração editorial original, com legenda avisando que não é arte oficial.
+- Capa WebP única feita a partir da imagem enviada pelo Marcos (mesmos personagens, visual e composição), com legenda avisando que não é arte oficial.
 - Autor e botão de WhatsApp no cabeçalho; rodapé na ordem Análise do Marcos, Fontes (5 ou mais), Relacionados e Comentários; anúncios fora de listas.
 - Cadastrado no registro de posts e nas rotas; sitemap, sitemap de imagens e feeds regenerados.
 
 ## Etapas técnicas
 1. Pesquisar e conferir os fatos (datas, estúdio, episódios, licenças no Brasil).
-2. Gerar a capa em `src/assets/tensei-kizoku-kantei-skill-guia-2026.webp`.
+2. Gerar a capa editando a imagem enviada, salva em `src/assets/tensei-kizoku-kantei-skill-guia-2026.webp`.
 3. Criar `src/pages/posts/TenseiKizokuKanteiSkill2026.tsx`, registrar em `src/data/posts.ts` (ID 267, otaku, subtópico anime) e rota lazy em `src/App.tsx`.
 4. Rodar as auditorias (estrutura, prosa de 1.500 palavras ou mais, SEO) e conferir na prévia com Playwright.
