@@ -252,8 +252,32 @@ import ubtechU1Img from "@/assets/ubtech-uworld-u1-robo-companhia-preco-2026.web
 import hamefuraImg from "@/assets/minha-proxima-vida-como-vila-hamefura-guia-2026.webp";
 import mandateOrderImg from "@/assets/mandate-order-guia-completo-2026.webp";
 import financiarAlugarImg from "@/assets/financiar-imovel-ou-alugar-e-investir-2026.webp";
+import kanteiSkillImg from "@/assets/tensei-kizoku-kantei-skill-guia-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 19 Out 2026 — Otaku (Tensei Kizoku Kantei Skill) ─────────────
+  {
+    id: "267",
+    slug: "tensei-kizoku-kantei-skill-guia-2026",
+    title: "Como um Aristocrata Reencarnado, Usarei Minha Habilidade de Avaliação para Ascender no Mundo: Guia Completo do Anime",
+    excerpt: "Guia de Tensei Kizoku, Kantei Skill de Nariagaru: origem da obra, Ars Louvent e seus vassalos, as três temporadas do anime, temas e onde assistir no Brasil.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: kanteiSkillImg,
+    imageAlt: "Ilustração de jovem nobre de cabelo preto cercado por aliados diante de um território medieval ao pôr do sol",
+    author: "VICIO<CODE>",
+    date: "2026-10-19",
+    readTime: "13 min",
+    faq: [
+      { q: "Quantas temporadas o anime tem?", a: "Três: duas em 2024, com 12 episódios cada, e a terceira estreou em 27 de setembro de 2026." },
+      { q: "Qual estúdio faz o anime?", a: "Studio MOTHER nas duas primeiras temporadas e GeyeG Pictures na terceira, com direção de Takao Katō." },
+      { q: "Onde assistir no Brasil?", a: "Na Crunchyroll, que distribui a série fora do leste asiático." },
+      { q: "Qual é o poder do protagonista?", a: "Ars tem a habilidade de Avaliação, que revela talento, aptidões e ambição das pessoas." },
+      { q: "A obra tem edição oficial em português?", a: "Não encontramos edição brasileira oficial; as edições em inglês são da Kodansha USA." },
+      { q: "Quem é o autor?", a: "Miraijin A, com ilustrações de jimmy na light novel e arte de Natsumi Inoue no mangá." },
+    ],
+  },
   // ── 18 Out 2026 — Finanças (Financiar ou alugar) ─────────────────
   {
     id: "266",
