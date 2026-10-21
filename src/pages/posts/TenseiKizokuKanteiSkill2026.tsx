@@ -80,11 +80,11 @@ const TenseiKizokuKanteiSkill2026 = () => {
       <figure className="mb-8">
         <div className="relative rounded-2xl overflow-hidden aspect-video">
           <img fetchPriority="high" loading="eager" decoding="async" src={heroImg} width={1376} height={768}
-            alt="Ilustração de um jovem nobre de cabelo preto cercado por seus aliados, com uma maga de cabelo azul, uma jovem loira e um cavalo diante de um território medieval ao pôr do sol"
+            alt="Ilustração de um jovem nobre de cabelo escuro caminhando com seus aliados por uma estrada de terra, acompanhados de um cavalo, com um cavaleiro de armadura, uma nobre de cabelo rosado, uma maga de chapéu verde, uma jovem ruiva e um rapaz encapuzado, diante de uma cidade medieval murada"
             className="w-full h-full object-cover" />
         </div>
         <figcaption className="text-xs text-muted-foreground mt-2">
-          Ilustração editorial criada para este artigo, inspirada no visual da 2ª temporada. Não é arte oficial do anime.
+          Ilustração editorial criada para este artigo, inspirada nos personagens da série. Não é arte oficial do anime.
         </figcaption>
       </figure>
 
