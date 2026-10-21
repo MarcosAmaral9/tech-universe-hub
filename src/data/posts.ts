@@ -253,8 +253,32 @@ import hamefuraImg from "@/assets/minha-proxima-vida-como-vila-hamefura-guia-202
 import mandateOrderImg from "@/assets/mandate-order-guia-completo-2026.webp";
 import financiarAlugarImg from "@/assets/financiar-imovel-ou-alugar-e-investir-2026.webp";
 import kanteiSkillImg from "@/assets/tensei-kizoku-kantei-skill-guia-2026.webp";
+import soloLevelingAnimeImg from "@/assets/solo-leveling-anime-guia-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 21 Out 2026 — Otaku (Solo Leveling anime) ────────────────────
+  {
+    id: "268",
+    slug: "solo-leveling-anime-guia-personagens-temporadas-2026",
+    title: "Solo Leveling: Guia do Anime em 2026 — Personagens, Temporadas, Temas e o Que Vem Por Aí",
+    excerpt: "Guia do anime Solo Leveling: Sung Jinwoo e elenco, as duas temporadas, o filme ReAwakening, temas, música, onde assistir no Brasil e a 3ª temporada confirmada.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: soloLevelingAnimeImg,
+    imageAlt: "Ilustração de jovem de cabelo preto caminhando entre ruínas com três soldados das sombras gigantes atrás dele",
+    author: "VICIO<CODE>",
+    date: "2026-10-21",
+    readTime: "14 min",
+    faq: [
+      { q: "Quantas temporadas Solo Leveling tem?", a: "Duas exibidas (2024 e 2025); a terceira foi confirmada em junho de 2026." },
+      { q: "Já tem data para a 3ª temporada?", a: "Não. A D&C Media projetou o lançamento entre 2027 e 2028, sem data oficial." },
+      { q: "O que é Solo Leveling: Beyond the System?", a: "Filme anunciado em julho de 2026 que continua a história após a segunda temporada." },
+      { q: "Onde assistir no Brasil?", a: "Na Crunchyroll, com legendas e dublagem em português." },
+      { q: "Qual estúdio faz o anime?", a: "A-1 Pictures, com direção de Shunsuke Nakashige e trilha de Hiroyuki Sawano." },
+      { q: "Preciso ler o manhwa antes?", a: "Não. O anime começa do zero e é uma boa porta de entrada." },
+    ],
+  },
   // ── 19 Out 2026 — Otaku (Tensei Kizoku Kantei Skill) ─────────────
   {
     id: "267",

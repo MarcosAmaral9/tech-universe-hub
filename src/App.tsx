@@ -304,6 +304,7 @@ const ManorLordsGuia2026 = lazy(() => import("./pages/posts/ManorLordsGuia2026")
 const MinhaProximaVidaComoVila2026 = lazy(() => import("./pages/posts/MinhaProximaVidaComoVila2026"));
 const FinanciarOuAlugar2026 = lazy(() => import("./pages/posts/FinanciarOuAlugar2026"));
 const TenseiKizokuKanteiSkill2026 = lazy(() => import("./pages/posts/TenseiKizokuKanteiSkill2026"));
+const SoloLevelingAnimeGuia2026 = lazy(() => import("./pages/posts/SoloLevelingAnimeGuia2026"));
 const MandateOrderGuia2026 = lazy(() => import("./pages/posts/MandateOrderGuia2026"));
 const MedievalDynastyGuia2026 = lazy(() => import("./pages/posts/MedievalDynastyGuia2026"));
 const UbtechU1RoboCompanhia2026 = lazy(() => import("./pages/posts/UbtechU1RoboCompanhia2026"));
@@ -655,6 +656,7 @@ const App = () => (
                 <Route path="/post/manor-lords-guia-completo-2026" element={<Suspense fallback={<div />}><ManorLordsGuia2026 /></Suspense>} />
                 <Route path="/post/minha-proxima-vida-como-vila-hamefura-guia-2026" element={<Suspense fallback={<div />}><MinhaProximaVidaComoVila2026 /></Suspense>} />
                 <Route path="/post/financiar-imovel-ou-alugar-e-investir-2026" element={<Suspense fallback={<div />}><FinanciarOuAlugar2026 /></Suspense>} />
+                <Route path="/post/solo-leveling-anime-guia-personagens-temporadas-2026" element={<Suspense fallback={<div />}><SoloLevelingAnimeGuia2026 /></Suspense>} />
                 <Route path="/post/tensei-kizoku-kantei-skill-guia-2026" element={<Suspense fallback={<div />}><TenseiKizokuKanteiSkill2026 /></Suspense>} />
                 <Route path="/post/mandate-order-guia-completo-2026" element={<Suspense fallback={<div />}><MandateOrderGuia2026 /></Suspense>} />
                 <Route path="/post/medieval-dynasty-guia-completo-2026" element={<Suspense fallback={<div />}><MedievalDynastyGuia2026 /></Suspense>} />
