@@ -5,8 +5,17 @@
     <link>https://viciocode.com</link>
     <description>Novos artigos de Finanças &amp; Investimentos no VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 18 Oct 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed/financas.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DREX e Tokenização de Ativos no Brasil: O Que Muda para o Seu Dinheiro</title>
+      <link>https://viciocode.com/post/drex-tokenizacao-ativos-brasil-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/drex-tokenizacao-ativos-brasil-2026</guid>
+      <pubDate>Thu, 22 Oct 2026 12:00:00 GMT</pubDate>
+      <description>O que é o Drex, por que não é Bitcoin nem substitui o Pix, o que aconteceu com os pilotos do Banco Central e como a tokenização pode baratear títulos, crédito e recebíveis.</description>
+      <category>Finanças &amp; Investimentos</category>
+      <enclosure url="https://viciocode.com/assets/drex-tokenizacao-ativos-brasil-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>Financiar Imóvel ou Alugar e Investir a Diferença? Contas Reais para 2026</title>
       <link>https://viciocode.com/post/financiar-imovel-ou-alugar-e-investir-2026</link>
@@ -447,15 +456,6 @@
       <description>Se você chega no fim do mês sem dinheiro, este artigo é para você. O Método dos 3 Baldes é simples e funciona para qualquer salário.</description>
       <category>Finanças &amp; Investimentos</category>
       <enclosure url="https://viciocode.com/assets/educacao-financeira-metodo-3-baldes.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>IA no Mercado Financeiro 2026: Guia Prático</title>
-      <link>https://viciocode.com/post/ia-mercado-financeiro-2026-investimentos</link>
-      <guid isPermaLink="true">https://viciocode.com/post/ia-mercado-financeiro-2026-investimentos</guid>
-      <pubDate>Fri, 20 Feb 2026 12:00:00 GMT</pubDate>
-      <description>40% dos trades na B3 são executados por algoritmos. Comparativo Warren vs Magnetis vs Vérios com taxas reais. Como usar ChatGPT para analisar balanços e o que a CVM proíbe em recomendações automatizadas.</description>
-      <category>Finanças &amp; Investimentos</category>
-      <enclosure url="https://viciocode.com/assets/ia-mercado-financeiro-2026-investimentos.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>
