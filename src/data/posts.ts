@@ -252,6 +252,7 @@ import ubtechU1Img from "@/assets/ubtech-uworld-u1-robo-companhia-preco-2026.web
 import hamefuraImg from "@/assets/minha-proxima-vida-como-vila-hamefura-guia-2026.webp";
 import mandateOrderImg from "@/assets/mandate-order-guia-completo-2026.webp";
 import financiarAlugarImg from "@/assets/financiar-imovel-ou-alugar-e-investir-2026.webp";
+import drexTokenizacaoImg from "@/assets/drex-tokenizacao-ativos-brasil-2026.webp";
 import kanteiSkillImg from "@/assets/tensei-kizoku-kantei-skill-guia-2026.webp";
 import soloLevelingAnimeImg from "@/assets/solo-leveling-anime-guia-2026.webp";
 
@@ -300,6 +301,30 @@ export const blogPosts: BlogPost[] = [
       { q: "Qual é o poder do protagonista?", a: "Ars tem a habilidade de Avaliação, que revela talento, aptidões e ambição das pessoas." },
       { q: "A obra tem edição oficial em português?", a: "Não encontramos edição brasileira oficial; as edições em inglês são da Kodansha USA." },
       { q: "Quem é o autor?", a: "Miraijin A, com ilustrações de jimmy na light novel e arte de Natsumi Inoue no mangá." },
+    ],
+  },
+  // ── 22 Out 2026 — Finanças (Drex) ───────────────────────────────
+  {
+    id: "268",
+    slug: "drex-tokenizacao-ativos-brasil-2026",
+    title: "DREX e Tokenização de Ativos no Brasil: O Que Muda para o Seu Dinheiro",
+    excerpt: "O que é o Drex, por que não é Bitcoin nem substitui o Pix, o que aconteceu com os pilotos do Banco Central e como a tokenização pode baratear títulos, crédito e recebíveis.",
+    content: "",
+    category: "invest",
+    subtopic: "economia",
+    image: drexTokenizacaoImg,
+    imageAlt: "Moeda digital de real conectada a tokens de imóvel, carro, título público e recebível",
+    author: "VICIO<CODE>",
+    date: "2026-10-22",
+    readTime: "14 min",
+    faq: [
+      { q: "O Drex é uma criptomoeda?", a: "Não. Seria uma representação digital do real sob regulação do Banco Central, com valor igual ao real, sem especulação." },
+      { q: "O Drex vai substituir o Pix?", a: "Não. O Pix é meio de pagamento e segue em operação; o Drex era uma plataforma para ativos e contratos digitais." },
+      { q: "Já posso usar o Drex?", a: "Não. Em outubro de 2026 não há produto Drex para pessoas físicas; ofertas de comprar Drex são golpe." },
+      { q: "O Drex acabou?", a: "A plataforma blockchain dos pilotos foi desligada em novembro de 2025; o BC mantém uma nova fase focada em garantias." },
+      { q: "O que é tokenização de ativos?", a: "Representar um ativo como registro digital que pode ser fracionado, transferido e liquidado com regras automáticas." },
+      { q: "Tokens de investimento são seguros?", a: "Depende do emissor e da regulação; confira o registro na CVM e os riscos de crédito e liquidez." },
+      { q: "O que é reconciliação de gravames?", a: "Conferir em um só lugar se um bem já está dado em garantia, o que pode baratear o crédito com garantia." },
     ],
   },
   // ── 18 Out 2026 — Finanças (Financiar ou alugar) ─────────────────
