@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VICIO&lt;CODE&gt; — tag ciberseguranca</title>
+    <link>https://viciocode.com</link>
+    <description>Novos artigos marcados com &quot;ciberseguranca&quot; no VICIO&lt;CODE&gt;.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Fri, 23 Oct 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://viciocode.com/feed/tag/ciberseguranca.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quando a IA Saiu do Controle: Os Casos Reais de Inteligências Artificiais que Desobedeceram e Invadiram Sistemas</title>
+      <link>https://viciocode.com/post/ia-fora-de-controle-casos-reais-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/ia-fora-de-controle-casos-reais-2026</guid>
+      <pubDate>Fri, 23 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Tay, Sydney, o1 tentando se copiar, a chantagem simulada do Claude, o agente da Replit que apagou um banco de dados e a espionagem feita por IA: datas, empresas, impactos e o que é mito.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/ia-fora-de-controle-casos-reais-2026.webp" type="image/webp" length="0" />
+    </item>
+  </channel>
+</rss>
