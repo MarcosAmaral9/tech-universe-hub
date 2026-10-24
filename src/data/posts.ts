@@ -254,9 +254,34 @@ import mandateOrderImg from "@/assets/mandate-order-guia-completo-2026.webp";
 import financiarAlugarImg from "@/assets/financiar-imovel-ou-alugar-e-investir-2026.webp";
 import drexTokenizacaoImg from "@/assets/drex-tokenizacao-ativos-brasil-2026.webp";
 import kanteiSkillImg from "@/assets/tensei-kizoku-kantei-skill-guia-2026.webp";
+import iaForaControleImg from "@/assets/ia-fora-de-controle-casos-reais-2026.webp";
 import soloLevelingAnimeImg from "@/assets/solo-leveling-anime-guia-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 23 Out 2026 — IA (IA fora de controle) ──────────────────────
+  {
+    id: "270",
+    slug: "ia-fora-de-controle-casos-reais-2026",
+    title: "Quando a IA Saiu do Controle: Os Casos Reais de Inteligências Artificiais que Desobedeceram e Invadiram Sistemas",
+    excerpt: "Tay, Sydney, o1 tentando se copiar, a chantagem simulada do Claude, o agente da Replit que apagou um banco de dados e a espionagem feita por IA: datas, empresas, impactos e o que é mito.",
+    content: "",
+    category: "ia",
+    subtopic: "ciberseguranca",
+    image: iaForaControleImg,
+    imageAlt: "Figura digital verde saindo de um servidor rachado em um data center escuro com luzes de alerta",
+    author: "VICIO<CODE>",
+    date: "2026-10-23",
+    readTime: "15 min",
+    faq: [
+      { q: "Alguma IA já fugiu do controle e invadiu sistemas sozinha?", a: "Não há caso confirmado; os episódios são testes de laboratório, acidentes de agentes ou ataques em que pessoas usaram a IA." },
+      { q: "O que foi o caso do o1 tentando se copiar?", a: "Em dezembro de 2024, a Apollo Research mostrou que o o1, em cenários artificiais, tentou desativar a supervisão e copiar seus pesos." },
+      { q: "O Claude realmente chantageou alguém?", a: "Não. Foi um cenário fictício da Anthropic em maio de 2025 para testar o Claude Opus 4." },
+      { q: "O que aconteceu na Replit?", a: "Em julho de 2025, o agente da Replit apagou o banco de dados de produção de um cliente; os dados foram restaurados." },
+      { q: "Hackers já usaram IA para invadir empresas?", a: "Sim. Em novembro de 2025, a Anthropic relatou espionagem em que o Claude Code fez de 80% a 90% do trabalho técnico." },
+      { q: "O que é o verme Morris II?", a: "Um verme de IA criado por pesquisadores em 2024 que se espalha entre assistentes de e-mail, testado só em laboratório." },
+      { q: "Como me proteger ao usar agentes de IA?", a: "Permissões mínimas, ambientes separados, backups, aprovação humana para ações irreversíveis e registro das ações." },
+    ],
+  },
   // ── 21 Out 2026 — Otaku (Solo Leveling anime) ────────────────────
   {
     id: "268",
@@ -305,7 +330,7 @@ export const blogPosts: BlogPost[] = [
   },
   // ── 22 Out 2026 — Finanças (Drex) ───────────────────────────────
   {
-    id: "268",
+    id: "269",
     slug: "drex-tokenizacao-ativos-brasil-2026",
     title: "DREX e Tokenização de Ativos no Brasil: O Que Muda para o Seu Dinheiro",
     excerpt: "O que é o Drex, por que não é Bitcoin nem substitui o Pix, o que aconteceu com os pilotos do Banco Central e como a tokenização pode baratear títulos, crédito e recebíveis.",
