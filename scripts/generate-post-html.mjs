@@ -125,7 +125,14 @@ for (const post of posts) {
       }
     }
   }
-  const ogImg = img ? `${BASE_URL}/assets/${img}` : `${BASE_URL}/og-image.png`;
+  // Prefere o JPEG leve gerado por generate-og-images.mjs (WhatsApp e outros
+  // crawlers de prévia não executam JS e ignoram WebP pesado).
+  const ogLight = path.join(DIST, "assets", "og", `${post.slug}.jpg`);
+  const ogImg = fs.existsSync(ogLight)
+    ? `${BASE_URL}/assets/og/${post.slug}.jpg`
+    : img
+      ? `${BASE_URL}/assets/${img}`
+      : `${BASE_URL}/og-image.png`;
 
   const inject = `
     <title>${e(clamp(post.title, 60 - " | VICIO<CODE>".length))} | VICIO&lt;CODE&gt;</title>
