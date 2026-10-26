@@ -68,12 +68,17 @@ $GEMINI_KEY       = '';
 $GOOGLE_CLIENT_ID = '';
 $GOOGLE_SECRET    = '';
 $BRAPI_TOKEN      = '';
+$COINGECKO_API_KEY = '';
+$COINGECKO_PRO_API_KEY = '';
 $_env_file = __DIR__ . '/.env.php';
 if (file_exists($_env_file)) {
     include $_env_file;
 }
 $GOOGLE_CLIENT_ID = trim($GOOGLE_CLIENT_ID ?: (getenv('GOOGLE_CLIENT_ID') ?: ''));
 $GOOGLE_SECRET = trim($GOOGLE_SECRET ?: (getenv('GOOGLE_SECRET') ?: ''));
+$BRAPI_TOKEN = trim($BRAPI_TOKEN ?: (getenv('BRAPI_TOKEN') ?: ''));
+$COINGECKO_API_KEY = trim($COINGECKO_API_KEY ?: (getenv('COINGECKO_API_KEY') ?: ''));
+$COINGECKO_PRO_API_KEY = trim($COINGECKO_PRO_API_KEY ?: (getenv('COINGECKO_PRO_API_KEY') ?: ''));
 // ======================================================================
 
 // Credenciais obrigatoriamente externas ao código versionado.
@@ -253,9 +258,7 @@ function httpGet(string $url, int $timeout = 10, array $extraHeaders = []): ?str
         $result = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
-        if ($result !== false && $httpCode >= 200 && $httpCode < 300) {
-            return $result;
-        }
+        return $result !== false && $httpCode >= 200 && $httpCode < 300 ? $result : null;
     }
     // Fallback para file_get_contents
     if (ini_get('allow_url_fopen')) {
@@ -267,7 +270,8 @@ function httpGet(string $url, int $timeout = 10, array $extraHeaders = []): ?str
             'header'        => $headerStr,
         ]]);
         $result = @file_get_contents($url, false, $ctx);
-        return $result !== false ? $result : null;
+        $status = $http_response_header[0] ?? '';
+        return $result !== false && preg_match('/\s2\d\d\s/', $status) ? $result : null;
     }
     return null;
 }
@@ -859,25 +863,57 @@ function backfillCountPoints(PDO $db, string $type, string $code, int $days): in
     return (int)$stmt->fetchColumn();
 }
 
-// Uma moeda cripto = 1 requisição CoinGecko = até 365 dias de uma vez
-function backfillCrypto(PDO $db, string $sym, string $coinId, int $days = 365): array {
-    $cgDays = min(max($days, 30), 365);
-    $interval = $cgDays <= 90 ? '&interval=daily' : '';
-    $raw = httpGet("https://api.coingecko.com/api/v3/coins/{$coinId}/market_chart?vs_currency=brl&days={$cgDays}{$interval}", 15);
-    if (!$raw) return ['error' => 'fetch_failed'];
-    $data = json_decode($raw, true);
-    if (empty($data['prices'])) return ['error' => 'no_prices'];
+// A cobertura é verificada por datas, não apenas pelo total de registros antigos.
+function historyCoverageNeedsRepair(string $type, array $dates, string $today): bool {
+    $end = new DateTimeImmutable($today);
+    $start = $end->modify('-365 days')->format('Y-m-d');
+    $dates = array_values(array_unique(array_filter($dates, fn($d) => $d >= $start && $d < $today)));
+    sort($dates);
+    if ($type === 'b3') {
+        // Pregões não incluem fins de semana/feriados; não inventar fechamento nesses dias.
+        return count($dates) < VC_TARGET_B3_POINTS || empty($dates)
+            || end($dates) < $end->modify('-4 days')->format('Y-m-d');
+    }
+    $known = array_fill_keys($dates, true);
+    for ($i = 1; $i <= 365; $i++) {
+        if (!isset($known[$end->modify("-{$i} days")->format('Y-m-d')])) return true;
+    }
+    return false;
+}
 
+function historyDates(PDO $db, string $type, string $code): array {
+    $stmt = $db->prepare('SELECT price_date FROM price_history WHERE asset_type=:t AND asset_code=:c AND price_date >= DATE_SUB(CURDATE(), INTERVAL 365 DAY) ORDER BY price_date');
+    $stmt->execute([':t' => $type, ':c' => $code]);
+    return $stmt->fetchAll(PDO::FETCH_COLUMN);
+}
+
+function coingeckoConfig(): array {
+    $pro = (string)($GLOBALS['COINGECKO_PRO_API_KEY'] ?? '');
+    $demo = (string)($GLOBALS['COINGECKO_API_KEY'] ?? '');
+    return $pro !== '' ? ['https://pro-api.coingecko.com/api/v3', ["x-cg-pro-api-key: {$pro}"]]
+        : ['https://api.coingecko.com/api/v3', $demo !== '' ? ["x-cg-demo-api-key: {$demo}"] : []];
+}
+
+// Uma moeda = uma resposta com o ano disponível no plano do provedor.
+function backfillCrypto(PDO $db, string $sym, string $coinId, int $days = 365): array {
+    [$base, $headers] = coingeckoConfig();
+    $cgDays = min(max($days, 30), 365);
+    $raw = httpGet("{$base}/coins/{$coinId}/market_chart?vs_currency=brl&days={$cgDays}", 15, $headers);
+    $data = $raw ? json_decode($raw, true) : null;
+    if (empty($data['prices'])) return ['error' => 'crypto_history_unavailable_check_plan_or_quota'];
     $byDate = [];
-    foreach ($data['prices'] as $p) {
-        if (!is_array($p) || count($p) < 2) continue;
-        $d = date('Y-m-d', (int)($p[0] / 1000));
-        $byDate[$d] = round((float)$p[1], $p[1] >= 1 ? 2 : 6);
+    foreach ($data['prices'] as $point) {
+        if (!is_array($point) || !is_numeric($point[0] ?? null) || !is_numeric($point[1] ?? null)) continue;
+        $price = (float)$point[1];
+        if (!is_finite($price) || $price <= 0) continue;
+        $date = gmdate('Y-m-d', (int)($point[0] / 1000));
+        if ($date < gmdate('Y-m-d', strtotime('-365 days')) || $date > gmdate('Y-m-d')) continue;
+        $byDate[$date] = round($price, 6);
     }
     ksort($byDate);
     $ins = $db->prepare('INSERT INTO price_history (asset_type, asset_code, price, price_date) VALUES ("crypto", :code, :price, :date) ON DUPLICATE KEY UPDATE price = VALUES(price)');
     foreach ($byDate as $d => $p) $ins->execute([':code' => $sym, ':price' => $p, ':date' => $d]);
-    return ['saved' => count($byDate)];
+    return ['saved' => count($byDate), 'source' => 'coingecko'];
 }
 
 // Um dia de câmbio + metais = 1 requisição fawazahmed (CDN, sem limite)
@@ -992,16 +1028,16 @@ function runBackfillStep(PDO $db, float $maxSeconds = 40.0, ?string $onlyType = 
             $count = count($codes);
             for ($n = 0; $n < $count; $n++) {
                 // Orçamento suficiente para o pior timeout de uma chamada (B3: 20+12s).
-                if ($left() < ($group === 'b3' ? 33 : 17)) break;
+                if ($left() < ($group === 'b3' ? 53 : 17)) break;
                 $index = (int)($cursor[$group] ?? 0) % $count;
                 $sym = $codes[$index];
                 $cursor[$group] = ($index + 1) % $count;
                 if ($onlyCode && strtoupper($onlyCode) !== $sym) continue;
                 // Meta de 1 ano: ~240 pregões na B3, 360 dias corridos em cripto.
-                if (backfillCountPoints($db, $group, $sym, 365) >= ($group === 'b3' ? VC_TARGET_B3_POINTS : VC_TARGET_DAILY_POINTS)) continue;
+                if (!historyCoverageNeedsRepair($group, historyDates($db, $group, $sym), date('Y-m-d'))) continue;
                 // Ativo já publicável só tenta completar o ano a cada 6 h, poupando o token.
                 $publishable = backfillCountPoints($db, $group, $sym, 365) >= ($group === 'b3' ? 90 : 300);
-                if (!backfillTryLock($group . '_' . $sym, $publishable ? 21600 : 900)) continue;
+                if (!backfillTryLock($group . '_' . $sym, 900)) continue;
                 try {
                     $done[$group][$sym] = $group === 'b3'
                         ? backfillB3($db, $sym, 365, (string)($GLOBALS['ALPHA_VANTAGE_KEY'] ?? ''))
@@ -1017,7 +1053,7 @@ function runBackfillStep(PDO $db, float $maxSeconds = 40.0, ?string $onlyType = 
                 $index = (int)($cursor['day'] ?? 0) % 365;
                 $cursor['day'] = ($index + 1) % 365;
                 $dateStr = date('Y-m-d', strtotime("-{$index} days"));
-                $stmt = $db->prepare('SELECT COUNT(*) FROM price_history WHERE asset_type IN ("currency","metal") AND price_date = :d');
+                $stmt = $db->prepare('SELECT COUNT(*) FROM price_history WHERE ((asset_type="currency" AND asset_code IN ("USD","EUR","ARS","PYG")) OR (asset_type="metal" AND asset_code IN ("XAU","XAG"))) AND price_date = :d');
                 $stmt->execute([':d' => $dateStr]);
                 if ((int)$stmt->fetchColumn() >= 6) continue;
                 $saved = backfillCurrencyDay($db, $dateStr);
@@ -1035,18 +1071,23 @@ function runBackfillStep(PDO $db, float $maxSeconds = 40.0, ?string $onlyType = 
     return $done;
 }
 
-// Envia a resposta ao usuário e continua o trabalho pesado em segundo plano
-function backfillAfterResponse(callable $work): void {
-    @ignore_user_abort(true);
-    if (function_exists('fastcgi_finish_request')) {
-        @fastcgi_finish_request();
-    } else {
-        // Sem FPM: encerra os buffers para liberar o navegador
-        while (ob_get_level() > 0) @ob_end_flush();
-        @flush();
+// Recuperação na própria tarefa protegida, antes de responder (sem trabalho pós-resposta).
+function runHistoryRecovery(PDO $db, float $maxSeconds = 240.0): array {
+    $started = microtime(true);
+    $results = [];
+    // Publica primeiro os dados já disponíveis, mesmo se provedores falharem depois.
+    $publication = publishHistorySnapshot($db);
+    for ($i = 0; $i < 3; $i++) {
+        $remaining = $maxSeconds - (microtime(true) - $started);
+        if ($remaining < 17) break;
+        $step = runBackfillStep($db, $remaining);
+        $results[] = $step;
+        refreshHistoryState($db, $step);
+        $next = publishHistorySnapshot($db);
+        if (!empty($next['published'])) $publication = $next;
     }
-    @set_time_limit(60);
-    try { $work(); } catch (Throwable $e) { logServiceFailure('cron_backfill', $e); }
+    return ['steps' => $results, 'snapshot' => $publication,
+        'elapsed_ms' => round((microtime(true) - $started) * 1000)];
 }
 
 // ─── GET: histórico de preços armazenados ──────────────────────────────────
@@ -1273,14 +1314,14 @@ if ($method === 'GET' && $action === 'history_status') {
     exit;
 }
 
-if ($method === 'POST' && $action === 'cron_refresh') {
+if ($method === 'POST' && in_array($action, ['cron_refresh', 'history_bootstrap'], true)) {
     requireCronSecret();
     $cronLock = @fopen(cacheDir() . '/vc_cron_execution.lock', 'c');
     if (!$cronLock || !flock($cronLock, LOCK_EX | LOCK_NB)) {
         http_response_code(409); echo json_encode(['error' => 'Atualização já em andamento']); exit;
     }
     register_shutdown_function(function () use ($cronLock): void { flock($cronLock, LOCK_UN); fclose($cronLock); });
-    @set_time_limit(120);
+    @set_time_limit(300);
 
     $t0 = microtime(true);
     $db = getPdo();
@@ -1296,7 +1337,13 @@ if ($method === 'POST' && $action === 'cron_refresh') {
         echo json_encode(['error' => 'Não foi possível preparar o histórico no banco']);
         exit;
     }
-    $results = [];
+    $history = runHistoryRecovery($db, 240.0);
+    // Em carga inicial, a prioridade é recuperar o ano; o próximo ciclo retoma cotações.
+    if ($action === 'history_bootstrap' || microtime(true) - $t0 > 30) {
+        echo json_encode(['action' => $action, 'history' => $history, 'timestamp' => date('c')]);
+        exit;
+    }
+    $results = ['history' => $history];
 
     // ── 1. RATES (câmbio + metais via fawazahmed) ──────────────────────────
     $ratesResult = [];
@@ -1489,196 +1536,12 @@ if ($method === 'POST' && $action === 'cron_refresh') {
         'results'     => $results,
     ], JSON_PRETTY_PRINT);
 
-    // Após responder, completa uma fatia e publica atomicamente apenas uma cópia completa.
-    backfillAfterResponse(function () use ($db) {
-        $backfill = runBackfillStep($db, 40.0);
-        refreshHistoryState($db, $backfill);
-        publishHistorySnapshot($db);
-    });
+    // Atualiza o snapshot com os valores recém-persistidos antes de concluir o cron.
+    publishHistorySnapshot($db);
     exit;
 }
 
-
-// ─── GET: todos os ativos com histórico disponível ──────────────────────────
-// ─── GET: bootstrap histórico — popula BD com até 365 dias de histórico real ──────
-// Execute UMA VEZ via navegador após configurar o cron:
-// Envie POST para /api.php?action=history_bootstrap com X-Cron-Secret.
-//
-// O que faz (e quais APIs usa):
-//   Cripto (8 moedas):        CoinGecko free   → 365 dias | 8 req total  | gratuito
-//   Câmbio (USD,EUR,ARS,PYG): fawazahmed CDN   → 365 dias | ~730 req     | sem limite
-//   Metais (XAU 18k, XAG 925):fawazahmed CDN   → 365 dias | incluso acima| sem limite
-//   B3 (10 ações):            Alpha Vantage    → até 20 anos | 10 req    | gratuito*
-//     * Requer chave gratuita: https://www.alphavantage.co/support/#api-key
-//       Adicione no Hostinger .env.php: $ALPHA_VANTAGE_KEY = 'SUA_CHAVE_AQUI';
-//       Sem a chave: B3 só acumula pelo cron (2×/hora, sem retroativo)
-//
-// Total de APIs com limite: 18 req (CoinGecko 8 + Alpha Vantage 10)
-// Duração estimada: 7-10 min (Alpha Vantage: 13s entre tickers; CoinGecko: 2.5s)
-// Idempotente: pula dados já existentes — pode re-executar com segurança
-// Parâmetro ?days=N para limitar (padrão: 365)
-if ($method === 'POST' && $action === 'history_bootstrap') {
-    requireCronSecret();
-
-    $db = getPdo();
-    if (!$db) { http_response_code(503); echo json_encode(['error' => 'Banco indisponível']); exit; }
-
-    $t0 = microtime(true);
-    $results = [];
-    $days = (int)($_GET['days'] ?? 365); // padrão 365 para máximo histórico gratuito
-
-    // ── Cripto: 8 moedas × 90 dias via CoinGecko (server-side) ──────────
-    $cryptoCoins = [
-        'bitcoin'=>'BTC','ethereum'=>'ETH','solana'=>'SOL','binancecoin'=>'BNB',
-        'cardano'=>'ADA','ripple'=>'XRP','chainlink'=>'LINK','polkadot'=>'DOT',
-    ];
-    $cryptoResults = [];
-    foreach ($cryptoCoins as $coinId => $sym) {
-        // Verifica se já tem dados suficientes no BD
-        $stmt = $db->prepare('SELECT COUNT(*) FROM price_history WHERE asset_type="crypto" AND asset_code=:code AND price_date >= DATE_SUB(CURDATE(), INTERVAL :days DAY)');
-        $stmt->execute([':code' => $sym, ':days' => $days]);
-        $existing = (int)$stmt->fetchColumn();
-        if ($existing >= 80) {
-            $cryptoResults[$coinId] = ['skipped' => true, 'existing' => $existing];
-            continue;
-        }
-
-        // CoinGecko free: até 365 dias com granularidade diária
-    // 1-90 dias = hourly | >90 dias = daily (automático, sem parâmetro interval)
-    $cgDays = min($days, 365);
-    $cgInterval = $cgDays <= 90 ? '&interval=daily' : '';
-    $cgUrl = "https://api.coingecko.com/api/v3/coins/{$coinId}/market_chart?vs_currency=brl&days={$cgDays}{$cgInterval}";
-        $raw = httpGet($cgUrl, 15);
-        if (!$raw) { $cryptoResults[$coinId] = ['error' => 'CoinGecko failed']; usleep(2000000); continue; }
-
-        $cgData = json_decode($raw, true);
-        if (empty($cgData['prices'])) { $cryptoResults[$coinId] = ['error' => 'no prices']; usleep(2000000); continue; }
-
-        $byDate = [];
-        foreach ($cgData['prices'] as [$ts, $price]) {
-            $d = date('Y-m-d', (int)($ts / 1000));
-            $byDate[$d] = round((float)$price, $price >= 1 ? 2 : 6);
-        }
-        ksort($byDate);
-
-        $ins = $db->prepare('INSERT INTO price_history (asset_type, asset_code, price, price_date) VALUES ("crypto", :code, :price, :date) ON DUPLICATE KEY UPDATE price = VALUES(price)');
-        foreach ($byDate as $d => $p) $ins->execute([':code' => $sym, ':price' => $p, ':date' => $d]);
-        $cryptoResults[$coinId] = ['saved' => count($byDate)];
-        usleep(2500000); // 2.5s entre moedas (CoinGecko: ~24 req/min)
-    }
-    $results['crypto'] = $cryptoResults;
-
-    // ── Câmbio: 90 dias via fawazahmed histórico (diário) ────────────────
-    $pairMap = ['usd'=>'USD','eur'=>'EUR','ars'=>'ARS','pyg'=>'PYG'];
-    $currencyData = []; // date → {cur: bid}
-    $today = new DateTime();
-    for ($i = 0; $i < $days; $i++) {
-        $d = clone $today;
-        $d->modify("-{$i} days");
-        $dateStr = $d->format('Y-m-d');
-
-        // Verifica se já tem dados para esta data
-        $stmt = $db->prepare('SELECT COUNT(*) FROM price_history WHERE asset_type="currency" AND price_date=:d');
-        $stmt->execute([':d' => $dateStr]);
-        if ((int)$stmt->fetchColumn() >= count($pairMap)) continue; // já tem todos
-
-        $rawFw = httpGet("https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@{$dateStr}/v1/currencies/brl.min.json", 8);
-        if (!$rawFw) continue;
-        $brlData = json_decode($rawFw, true)['brl'] ?? [];
-        if (empty($brlData)) continue;
-
-        $ins = $db->prepare('INSERT INTO price_history (asset_type, asset_code, price, price_date) VALUES (:type, :code, :price, :date) ON DUPLICATE KEY UPDATE price = VALUES(price)');
-        foreach ($pairMap as $cur => $sym) {
-            $rate = $brlData[$cur] ?? null;
-            if ($rate && $rate > 0) $ins->execute([':type' => 'currency', ':code' => $sym, ':price' => round(1/$rate, 6), ':date' => $dateStr]);
-        }
-        // Metais
-        $TROY = 31.1035;
-        // Salva com pureza: ouro 18k (×0.75) e prata 925 (×0.925)
-        if (!empty($brlData['xau'])) $ins->execute([':type' => 'metal', ':code' => 'XAU', ':price' => round(1/$brlData['xau']/$TROY * 0.75, 4), ':date' => $dateStr]);
-        if (!empty($brlData['xag'])) $ins->execute([':type' => 'metal', ':code' => 'XAG', ':price' => round(1/$brlData['xag']/$TROY * 0.925, 4), ':date' => $dateStr]);
-
-        usleep(200000); // 200ms entre datas
-    }
-
-    // ── B3: bootstrap via Alpha Vantage (free: 25 req/dia, 500 req/mês) ────────────
-    // Ticker B3 no Alpha Vantage: {TICKER}.SAO (ex: PETR4.SAO, VALE3.SAO)
-    // outputsize=full → até 20 anos de dados diários em 1 request por ticker
-    // 10 tickers × 1 req = 10 req totais (bem dentro do limite gratuito)
-    //
-    // Como obter chave gratuita: https://www.alphavantage.co/support/#api-key
-    // Após obter, adicione no .env.php do Hostinger: $ALPHA_VANTAGE_KEY = 'SUA_CHAVE';
-    //
-    // Sem a chave: B3 é acumulado pelo cron (1 ponto por execução, 2×/hora)
-    // → 7D disponível após 7 dias | 30D após 30 dias | 90D após 90 dias | 1A após 365 dias
-
-    $AV_KEY = '';
-    if (file_exists(__DIR__ . '/.env.php')) {
-        // .env.php já foi incluído no topo — $ALPHA_VANTAGE_KEY pode estar definida
-        $AV_KEY = isset($ALPHA_VANTAGE_KEY) ? $ALPHA_VANTAGE_KEY : '';
-    }
-
-    $b3Tickers = [
-        'PETR4'=>'PETR4.SAO','VALE3'=>'VALE3.SAO','ITUB4'=>'ITUB4.SAO',
-        'BBDC4'=>'BBDC4.SAO','ABEV3'=>'ABEV3.SAO','WEGE3'=>'WEGE3.SAO',
-        'BBAS3'=>'BBAS3.SAO','RENT3'=>'RENT3.SAO','MGLU3'=>'MGLU3.SAO','SUZB3'=>'SUZB3.SAO',
-    ];
-
-    if (empty($AV_KEY)) {
-        $results['b3'] = [
-            'info'    => 'Alpha Vantage key não configurada. Adicione $ALPHA_VANTAGE_KEY no .env.php (alphavantage.co — gratuito). Sem isso, B3 é acumulado 2x/hora pelo cron.',
-            'skipped' => true,
-        ];
-    } else {
-        $b3Results = [];
-        $avOutputSize = $days >= 100 ? 'full' : 'compact'; // full = 20 anos, compact = 100 dias
-        foreach ($b3Tickers as $sym => $avSym) {
-            // Pula se já tem dados suficientes (~55% de dias úteis no período)
-            $stmtChk = $db->prepare('SELECT COUNT(*) FROM price_history WHERE asset_type="b3" AND asset_code=:c AND price_date >= DATE_SUB(CURDATE(), INTERVAL :d DAY)');
-            $stmtChk->execute([':c' => $sym, ':d' => $days]);
-            if ((int)$stmtChk->fetchColumn() >= (int)($days * 0.55)) {
-                $b3Results[$sym] = ['skipped' => true]; continue;
-            }
-
-            $avUrl = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={$avSym}&outputsize={$avOutputSize}&apikey={$AV_KEY}";
-            $avRaw = httpGet($avUrl, 20);
-            if (!$avRaw) { $b3Results[$sym] = ['error' => 'timeout']; usleep(15000000); continue; }
-
-            $avData = json_decode($avRaw, true);
-            if (!empty($avData['Note']))        { $b3Results[$sym] = ['error' => 'rate_limit']; break; }   // rate limit
-            if (!empty($avData['Information'])) { $b3Results[$sym] = ['error' => 'api_limit']; break; }    // monthly limit
-            if (empty($avData['Time Series (Daily)'])) { $b3Results[$sym] = ['error' => 'no_data', 'raw' => substr($avRaw,0,80)]; usleep(13000000); continue; }
-
-            $ins = $db->prepare('INSERT INTO price_history (asset_type, asset_code, price, price_date) VALUES ("b3",:code,:price,:date) ON DUPLICATE KEY UPDATE price=VALUES(price)');
-            $saved = 0;
-            foreach ($avData['Time Series (Daily)'] as $date => $ohlcv) {
-                $close = (float)($ohlcv['4. close'] ?? 0);
-                if ($close > 0) { $ins->execute([':code'=>$sym, ':price'=>round($close,2), ':date'=>$date]); $saved++; }
-            }
-            $b3Results[$sym] = ['saved' => $saved, 'source' => 'alpha-vantage'];
-            usleep(13000000); // 13s entre tickers (Alpha Vantage free: 5 req/min)
-        }
-        $results['b3'] = $b3Results;
-    }
-
-        // Conta o que foi salvo
-    foreach (['currency'=>['USD','EUR','ARS','PYG'], 'metal'=>['XAU','XAG']] as $type => $codes) {
-        foreach ($codes as $code) {
-            $stmt = $db->prepare('SELECT COUNT(*) FROM price_history WHERE asset_type=:t AND asset_code=:c AND price_date >= DATE_SUB(CURDATE(), INTERVAL :d DAY)');
-            $stmt->execute([':t' => $type, ':c' => $code, ':d' => $days]);
-            $results[$type][$code] = ['points' => (int)$stmt->fetchColumn()];
-        }
-    }
-
-    echo json_encode([
-        'action'     => 'history_bootstrap',
-        'days'       => $days,
-        'elapsed_ms' => round((microtime(true) - $t0) * 1000),
-        'results'    => $results,
-    ], JSON_PRETTY_PRINT);
-    exit;
-}
-
+// O endpoint legado protegido usa o mesmo motor do cron; não há preenchimento público.
 if ($method === 'GET' && $action === 'history_assets') {
     $db = getPdo();
     if (!$db) {
@@ -1693,32 +1556,6 @@ if ($method === 'GET' && $action === 'history_assets') {
     );
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode(['assets' => $rows]);
-    exit;
-}
-
-if ($method === 'GET' && $action === 'history_status') {
-    $db = getPdo();
-    requireAdmin($db);
-    try {
-        ensureMarketHistorySchema($db);
-        $state = refreshHistoryState($db);
-        $snapshotPath = cacheDir() . '/viciocode_history_snapshot.json';
-        $attempts = $db->query('SELECT asset_type, asset_code, last_attempt_at, last_error FROM history_backfill_state')->fetchAll(PDO::FETCH_ASSOC);
-        $cursor = json_decode((string)@file_get_contents(cacheDir() . '/vc_backfill_cursor.json'), true);
-        echo json_encode([
-            'database' => 'connected',
-            'assets' => $state,
-            'attempts' => $attempts,
-            'next_group' => nextBackfillGroup((int)($cursor['group'] ?? 0)),
-            'snapshot' => [
-                'available' => file_exists($snapshotPath),
-                'updatedAt' => file_exists($snapshotPath) ? date('c', (int)filemtime($snapshotPath)) : null,
-            ],
-        ]);
-    } catch (Throwable $e) {
-        http_response_code(503);
-        echo json_encode(['error' => 'Não foi possível verificar o histórico']);
-    }
     exit;
 }
 
@@ -1932,7 +1769,7 @@ if ($method === 'POST' && $action === 'generate_social') {
 if ($method === 'GET' && $action === 'health') {
     $connected = getPdo() !== null;
     http_response_code($connected ? 200 : 503);
-    echo json_encode(['status' => $connected ? 'ok' : 'unavailable', 'version' => '2026-10-08.1']);
+    echo json_encode(['status' => $connected ? 'ok' : 'unavailable', 'version' => '2026-10-26.1']);
     exit;
 }
 
