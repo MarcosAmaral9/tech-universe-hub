@@ -1,6 +1,7 @@
 # Roadmap
 
-- [ ] Corrigir recuperação automática de lacunas dos 24 ativos e testar publicação; ativação real depende de upload e cron na Hostinger.
+- [x] Corrigir recuperação automática de lacunas dos 24 ativos e testar cobertura e preservação da publicação.
+- [ ] Ativar e validar recuperação real: bloqueado por falta de acesso ao upload, tokens privados e agendamento na Hostinger.
 
 - [x] Criar artigo sobre UWORLD U1 com preços verificados, debate psicológico e ilustração editorial escolhida após licença oficial não confirmada.
 
