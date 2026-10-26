@@ -48,4 +48,10 @@ describe("histórico de 1 ano via token do servidor", () => {
     const s = api.slice(api.indexOf("$action === 'history_status'"));
     expect(s.slice(0, 200)).toContain("requireCronSecret();");
   });
+  it("recupera no cron antes de responder e compartilha o tempo entre as três fontes", () => {
+    const cron = api.slice(api.indexOf("if ($method === 'POST' && in_array($action"), api.indexOf("if ($method === 'GET' && $action === 'history_assets')"));
+    expect(cron.indexOf("runHistoryRecovery($db, 240.0)")).toBeLessThan(cron.indexOf("echo json_encode" , cron.indexOf("ensureMarketHistorySchema($db)" ) + 200));
+    expect(api).toContain("runBackfillStep($db, $remaining / (3 - $i))");
+    expect(api).not.toContain("backfillAfterResponse(");
+  });
 });

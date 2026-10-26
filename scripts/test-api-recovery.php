@@ -14,7 +14,18 @@ function check(bool $condition, string $label): void {
     if (!$condition) throw new RuntimeException($label);
     echo "OK: $label\n";
 }
-foreach (['nextBackfillGroup', 'validHistorySnapshot', 'buildHistorySnapshot', 'publishHistorySnapshot', 'ensurePostViewsSchema'] as $name) loadApiFunction($name, $source);
+define('VC_TARGET_B3_POINTS', 240);
+foreach (['historyCoverageNeedsRepair', 'nextBackfillGroup', 'validHistorySnapshot', 'buildHistorySnapshot', 'publishHistorySnapshot', 'ensurePostViewsSchema'] as $name) loadApiFunction($name, $source);
+$today = '2026-10-26';
+$dates = [];
+for ($day = 1; $day <= 365; $day++) $dates[] = date('Y-m-d', strtotime("$today -$day days"));
+check(!historyCoverageNeedsRepair('crypto', $dates, $today), 'Ano completo com 365 datas não faz consultas adicionais');
+$missing = $dates;
+array_splice($missing, 150, 1);
+check(historyCoverageNeedsRepair('crypto', $missing, $today), 'Detecta lacuna interna mesmo acima do antigo mínimo de 360 pontos');
+$stale = array_map(fn($d) => date('Y-m-d', strtotime("$d -23 days")), $dates);
+check(historyCoverageNeedsRepair('crypto', $stale, $today), 'Recupera ano com muitos registros mas parado desde 3 de outubro');
+check(historyCoverageNeedsRepair('b3', array_slice($stale, 0, 240), $today), '240 registros antigos não impedem recuperação da B3');
 function historyExpectedAssets(): array {
     return ['b3' => ['PETR4','VALE3','ITUB4','BBDC4','ABEV3','WEGE3','BBAS3','RENT3','MGLU3','SUZB3'],
         'crypto' => ['BTC','ETH','SOL','BNB','ADA','XRP','LINK','DOT'], 'currency' => ['USD','EUR','ARS','PYG'], 'metal' => ['XAU','XAG']];

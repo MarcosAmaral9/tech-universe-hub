@@ -1035,8 +1035,7 @@ function runBackfillStep(PDO $db, float $maxSeconds = 40.0, ?string $onlyType = 
                 if ($onlyCode && strtoupper($onlyCode) !== $sym) continue;
                 // Meta de 1 ano: ~240 pregões na B3, 360 dias corridos em cripto.
                 if (!historyCoverageNeedsRepair($group, historyDates($db, $group, $sym), date('Y-m-d'))) continue;
-                // Ativo já publicável só tenta completar o ano a cada 6 h, poupando o token.
-                $publishable = backfillCountPoints($db, $group, $sym, 365) >= ($group === 'b3' ? 90 : 300);
+                // Tenta novamente no próximo ciclo sem repetir chamadas na mesma execução.
                 if (!backfillTryLock($group . '_' . $sym, 900)) continue;
                 try {
                     $done[$group][$sym] = $group === 'b3'
@@ -1052,7 +1051,8 @@ function runBackfillStep(PDO $db, float $maxSeconds = 40.0, ?string $onlyType = 
             for ($n = 0; $n < 365 && $left() >= 9; $n++) {
                 $index = (int)($cursor['day'] ?? 0) % 365;
                 $cursor['day'] = ($index + 1) % 365;
-                $dateStr = date('Y-m-d', strtotime("-{$index} days"));
+                $daysAgo = $index + 1;
+                $dateStr = date('Y-m-d', strtotime("-{$daysAgo} days"));
                 $stmt = $db->prepare('SELECT COUNT(*) FROM price_history WHERE ((asset_type="currency" AND asset_code IN ("USD","EUR","ARS","PYG")) OR (asset_type="metal" AND asset_code IN ("XAU","XAG"))) AND price_date = :d');
                 $stmt->execute([':d' => $dateStr]);
                 if ((int)$stmt->fetchColumn() >= 6) continue;
@@ -1080,7 +1080,7 @@ function runHistoryRecovery(PDO $db, float $maxSeconds = 240.0): array {
     for ($i = 0; $i < 3; $i++) {
         $remaining = $maxSeconds - (microtime(true) - $started);
         if ($remaining < 17) break;
-        $step = runBackfillStep($db, $remaining);
+        $step = runBackfillStep($db, $remaining / (3 - $i));
         $results[] = $step;
         refreshHistoryState($db, $step);
         $next = publishHistorySnapshot($db);
@@ -1307,7 +1307,8 @@ if ($method === 'GET' && $action === 'history_status') {
     foreach ($state as $type => $assets) {
         foreach ($assets as $code => $a) {
             $target = $type === 'b3' ? VC_TARGET_B3_POINTS : VC_TARGET_DAILY_POINTS;
-            $out[$type][$code] = $a + ['target' => $target, 'full_year' => $a['points'] >= $target];
+            $out[$type][$code] = $a + ['target' => $target,
+                'full_year' => !historyCoverageNeedsRepair($type, historyDates($db, $type, $code), date('Y-m-d'))];
         }
     }
     echo json_encode(['assets' => $out, 'brapi_token' => !empty($BRAPI_TOKEN) ? 'configurado' : 'ausente']);
