@@ -48,4 +48,12 @@ describe("histórico de 1 ano via token do servidor", () => {
     const s = api.slice(api.indexOf("$action === 'history_status'"));
     expect(s.slice(0, 200)).toContain("requireCronSecret();");
   });
+  it("recupera no cron antes de responder e compartilha o tempo entre as três fontes", () => {
+    const cron = api.slice(api.indexOf("if ($method === 'POST' && in_array($action"), api.indexOf("if ($method === 'GET' && $action === 'history_assets')"));
+    const recovery = cron.indexOf("$history = runHistoryRecovery($db, 240.0)");
+    expect(recovery).toBeGreaterThan(0);
+    expect(cron.slice(recovery)).toMatch(/runHistoryRecovery\(\$db, 240\.0\)[\s\S]*echo json_encode\(\['action' => \$action, 'history' => \$history/);
+    expect(api).toContain("runBackfillStep($db, $remaining / (3 - $i))");
+    expect(api).not.toContain("backfillAfterResponse(");
+  });
 });
