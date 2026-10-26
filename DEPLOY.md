@@ -143,3 +143,11 @@ curl -fsS -X POST -H 'X-Cron-Secret: SEU_SEGREDO' 'https://viciocode.com/api.php
 - hPanel → Avançado → Cron Jobs → a cada 15 min:
   `curl -s -X POST -H "X-Cron-Secret: SEU_CRON_SECRET" https://viciocode.com/api.php?action=cron_refresh`
 - Progresso por ativo (protegido): `GET /api.php?action=history_status` com o mesmo header.
+
+### Recuperação de lacunas — 26 de outubro de 2026
+
+- Envie `public/api.php` atualizado para `/public_html/api.php`, preservando `.env.php` e `cache/`. A versão em `health` deve ser `2026-10-26.1`.
+- O cron existente recupera datas faltantes antes de responder, usando até 240 segundos por execução. brapi e CoinGecko retornam o ano disponível por ativo; câmbio e metais precisam de uma consulta por data faltante, compartilhada pelos seis ativos. Não existe garantia de completar tudo em uma única execução: o tempo da Hostinger e as cotas dos provedores são respeitados, com retomada automática no próximo ciclo.
+- Tokens ficam somente no arquivo privado: `$BRAPI_TOKEN`, `$ALPHA_VANTAGE_KEY` (reserva opcional), `$COINGECKO_API_KEY` (Demo) ou `$COINGECKO_PRO_API_KEY` (Pro). O acesso a 365 dias depende do plano contratado; token não desbloqueia recursos fora do plano.
+- Os dados já publicáveis são publicados antes das consultas. A cópia anterior não é apagada se uma fonte falhar. O endpoint legado `history_bootstrap` agora usa o mesmo motor protegido, sem implementação separada.
+- Confirme a tarefa automática no hPanel a cada 15 minutos com o POST e `X-Cron-Secret` documentados acima. Os visitantes não executam comandos e não usam tokens. Consulte `history_status` protegido para cobertura e `history_snapshot` público para confirmar HTTP 200; a prévia estática não executa PHP.

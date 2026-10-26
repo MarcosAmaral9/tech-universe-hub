@@ -4,6 +4,7 @@
 - Keep authentication in Secure, HttpOnly, SameSite cookies and derive user identity server-side because client-provided identities are forgeable.
 - Keep credentials only in Hostinger `/public_html/.env.php`, never in tracked source or browser storage, because the repository and frontend are public.
 - Serve public market history only from an atomically published complete snapshot; only the protected Hostinger cron may call market providers.
+- Run history recovery inside the protected cron before responding, inspect missing dates rather than only counts, and share the budget across provider groups so interrupted background work and stale rows cannot silently stop recovery.
 - Register each new editorial post in `posts.ts` and `App.tsx`, then derive SEO, sitemaps and feeds from that single post record to prevent metadata drift.
 - Public snapshot reads must never create schemas or assemble snapshots; validate all expected series and preserve the last complete publication because incomplete or fabricated prices must not reach visitors.
 - Release PHP API changes through a controlled Hostinger upload with private rollback backups alongside matching frontend revisions because the automated FTP deployment deliberately preserves `api.php`.
