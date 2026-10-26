@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Corrigir recuperação automática de lacunas dos 24 ativos e testar publicação; ativação real depende de upload e cron na Hostinger.
+
 - [x] Criar artigo sobre UWORLD U1 com preços verificados, debate psicológico e ilustração editorial escolhida após licença oficial não confirmada.
 
 - [x] Corrigir a segunda arte de Larcy para que o fogo esteja na mão direita anatômica da personagem.
