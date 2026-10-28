@@ -257,8 +257,32 @@ import kanteiSkillImg from "@/assets/tensei-kizoku-kantei-skill-guia-2026.webp";
 import iaForaControleImg from "@/assets/ia-fora-de-controle-casos-reais-2026.webp";
 import nanoBananaImg from "@/assets/nano-banana-google-guia-2026.webp";
 import soloLevelingAnimeImg from "@/assets/solo-leveling-anime-guia-2026.webp";
+import kenDeshitaImg from "@/assets/tensei-shitara-ken-deshita-guia-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 28 Out 2026 — Otaku (Reincarnated as a Sword) ──────────────────────
+  {
+    id: "272",
+    slug: "tensei-shitara-ken-deshita-reincarnated-as-a-sword-guia-2026",
+    title: "Tensei Shitara Ken Deshita (Reincarnated as a Sword): Guia das Duas Temporadas, Fran, Mestre e o Isekai da Espada",
+    excerpt: "O isekai em que o protagonista renasce como espada: Mestre e Fran, gêneros, a 1ª temporada de 2022, a 2ª temporada de outubro de 2026, estúdio C2C e onde assistir.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: kenDeshitaImg,
+    imageAlt: "Ilustração de garota de orelhas de gato e cabelo preto empunhando uma grande espada brilhante diante de uma cidade medieval",
+    author: "VICIO<CODE>",
+    date: "2026-10-28",
+    readTime: "13 min",
+    faq: [
+      { q: "Quantas temporadas Reincarnated as a Sword tem?", a: "Duas: a primeira de outubro a dezembro de 2022, com 12 episódios, e a segunda, que estreou em outubro de 2026 e está em exibição." },
+      { q: "Quando estreou a 2ª temporada?", a: "No ABEMA em 30 de setembro de 2026 e na TV japonesa a partir de 7 de outubro de 2026." },
+      { q: "Qual estúdio faz o anime?", a: "O estúdio C2C, com direção de Shinji Ishihira nas duas temporadas." },
+      { q: "Quem são os protagonistas?", a: "Mestre, um homem reencarnado como espada mágica, e Fran, garota da tribo dos Gatos Pretos que se torna sua portadora." },
+      { q: "Por que o anime é diferente de outros isekais?", a: "O protagonista não tem corpo: renasce como arma, depende de uma portadora e evolui absorvendo pedras mágicas de monstros." },
+      { q: "Onde assistir no Brasil?", a: "A primeira temporada está na Crunchyroll; confira no catálogo a disponibilidade da segunda." },
+    ],
+  },
   // ── 27 Out 2026 — IA (Nano Banana) ──────────────────────
   {
     id: "271",
