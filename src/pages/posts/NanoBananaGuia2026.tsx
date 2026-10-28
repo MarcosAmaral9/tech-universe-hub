@@ -62,8 +62,8 @@ const NanoBananaGuia2026 = () => {
           <span className="flex items-center gap-1"><Calendar className="h-4 w-4" />27 de outubro de 2026</span>
           <span className="flex items-center gap-1"><Clock className="h-4 w-4" />14 min de leitura</span>
         </div>
-        <AuthorBio />
-        <ShareWhatsApp title={TITLE} />
+        <AuthorBio category="ia" />
+        <ShareWhatsApp />
       </header>
 
       <figure className="mb-8">
