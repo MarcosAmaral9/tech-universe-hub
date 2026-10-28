@@ -255,9 +255,34 @@ import financiarAlugarImg from "@/assets/financiar-imovel-ou-alugar-e-investir-2
 import drexTokenizacaoImg from "@/assets/drex-tokenizacao-ativos-brasil-2026.webp";
 import kanteiSkillImg from "@/assets/tensei-kizoku-kantei-skill-guia-2026.webp";
 import iaForaControleImg from "@/assets/ia-fora-de-controle-casos-reais-2026.webp";
+import nanoBananaImg from "@/assets/nano-banana-google-guia-2026.webp";
 import soloLevelingAnimeImg from "@/assets/solo-leveling-anime-guia-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 27 Out 2026 — IA (Nano Banana) ──────────────────────
+  {
+    id: "271",
+    slug: "nano-banana-google-guia-completo-2026",
+    title: "Nano Banana: A História Completa da IA de Imagens do Google — Versões, Criadores, Planos e Quem Usa",
+    excerpt: "Do codinome inventado de madrugada ao Nano Banana 2.1: evolução, Google DeepMind e Alphabet, preços em reais, custo da API, valor da marca e quem usa, como a Adobe.",
+    content: "",
+    category: "ia",
+    subtopic: "ferramentas",
+    image: nanoBananaImg,
+    imageAlt: "Banana estilizada feita de luz flutuando sobre uma mesa de designer cercada por fotos editadas",
+    author: "VICIO<CODE>",
+    date: "2026-10-27",
+    readTime: "14 min",
+    faq: [
+      { q: "O que é o Nano Banana?", a: "É o nome popular dos modelos de imagem do Gemini, criados pelo Google DeepMind; o primeiro, de agosto de 2025, é o Gemini 2.5 Flash Image." },
+      { q: "Quem criou o nome Nano Banana?", a: "A gerente de produto do Google Naina Raisinghani, como codinome para testes anônimos no LMArena." },
+      { q: "Quem é o dono do Nano Banana?", a: "O Google, que pertence à Alphabet; o desenvolvimento é do Google DeepMind." },
+      { q: "O Nano Banana é gratuito?", a: "Sim, no app Gemini com limite diário; os planos Plus (R$ 24,99), Pro (R$ 96,99) e Ultra (a partir de R$ 779,90) aumentam os limites." },
+      { q: "Quanto custa pela API?", a: "O primeiro modelo custava US$ 0,039 por imagem; o Pro cerca de US$ 0,134 em 1K/2K e US$ 0,24 em 4K." },
+      { q: "Quais ferramentas usam o Nano Banana?", a: "Produtos do Google e a Adobe, no Firefly, Adobe Express e Photoshop; empresas também usam via API do Gemini e Vertex AI." },
+      { q: "Como saber se uma imagem foi feita pelo Nano Banana?", a: "As imagens recebem a marca d'água invisível SynthID, que pode ser verificada no app Gemini." },
+    ],
+  },
   // ── 23 Out 2026 — IA (IA fora de controle) ──────────────────────
   {
     id: "270",
