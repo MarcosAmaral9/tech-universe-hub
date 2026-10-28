@@ -5,8 +5,17 @@
     <link>https://viciocode.com</link>
     <description>Novos artigos de Inteligência Artificial no VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Fri, 23 Oct 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed/ia.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nano Banana: A História Completa da IA de Imagens do Google — Versões, Criadores, Planos e Quem Usa</title>
+      <link>https://viciocode.com/post/nano-banana-google-guia-completo-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/nano-banana-google-guia-completo-2026</guid>
+      <pubDate>Tue, 27 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Do codinome inventado de madrugada ao Nano Banana 2.1: evolução, Google DeepMind e Alphabet, preços em reais, custo da API, valor da marca e quem usa, como a Adobe.</description>
+      <category>Inteligência Artificial</category>
+      <enclosure url="https://viciocode.com/assets/nano-banana-google-guia-completo-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>Quando a IA Saiu do Controle: Os Casos Reais de Inteligências Artificiais que Desobedeceram e Invadiram Sistemas</title>
       <link>https://viciocode.com/post/ia-fora-de-controle-casos-reais-2026</link>
@@ -447,15 +456,6 @@
       <description>ElevenLabs: 29 idiomas, a partir de 1 min de áudio. SAG-AFTRA: 4 meses de greve até acordos que exigem consentimento para clonar voz. Sated-SP e PL 2338. Dublagem clássica BR — o patrimônio que IA não substitui.</description>
       <category>Inteligência Artificial</category>
       <enclosure url="https://viciocode.com/assets/ia-transformando-dublagem-animes.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>IA Remaster: Como a Tech Salva Jogos Clássicos</title>
-      <link>https://viciocode.com/post/ia-remasterizacao-jogos-classicos</link>
-      <guid isPermaLink="true">https://viciocode.com/post/ia-remasterizacao-jogos-classicos</guid>
-      <pubDate>Sun, 01 Feb 2026 12:00:00 GMT</pubDate>
-      <description>DLSS 4.5 preferido à resolução nativa em 7.000 testes cegos (ComputerBase, fev/2026). Como IA melhora gráficos sem refazer assets, o debate sobre fidelidade original e os 8 casos mais impactantes de remasterização.</description>
-      <category>Inteligência Artificial</category>
-      <enclosure url="https://viciocode.com/assets/ia-remasterizacao-jogos-classicos.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>
