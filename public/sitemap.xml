@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Sitemap do VICIO<CODE> — viciocode.com
-  Gerado automaticamente em: 2026-10-29
-  Total de URLs: 325 (28 páginas + 243 posts + 54 tags)
+  Gerado automaticamente em: 2026-10-30
+  Total de URLs: 326 (28 páginas + 244 posts + 54 tags)
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -144,6 +144,12 @@
     <loc>https://viciocode.com/instalar</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/how-not-to-summon-a-demon-lord-isekai-maou-guia-2026</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://viciocode.com/post/tensei-shitara-ken-deshita-reincarnated-as-a-sword-guia-2026</loc>

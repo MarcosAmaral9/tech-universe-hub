@@ -258,8 +258,31 @@ import iaForaControleImg from "@/assets/ia-fora-de-controle-casos-reais-2026.web
 import nanoBananaImg from "@/assets/nano-banana-google-guia-2026.webp";
 import soloLevelingAnimeImg from "@/assets/solo-leveling-anime-guia-2026.webp";
 import kenDeshitaImg from "@/assets/tensei-shitara-ken-deshita-guia-2026.webp";
+import demonLordImg from "@/assets/how-not-to-summon-demon-lord-guia-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 29 Out 2026 — Otaku (How Not to Summon a Demon Lord) ──────────────────────
+  {
+    id: "273",
+    slug: "how-not-to-summon-a-demon-lord-isekai-maou-guia-2026",
+    title: "How Not to Summon a Demon Lord (Isekai Maou): Guia das Temporadas, Diablo, Shera, Rem e o Rei Demônio Bobalhão",
+    excerpt: "O isekai do Rei Demônio tímido: Diablo, Shera e Rem, a magia de servidão que deu errado, as temporadas de 2018 e 2021 (Ω), gêneros e onde assistir.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: demonLordImg,
+    imageAlt: "Ilustração de rei demônio de cabelo branco conjurando magia ao lado de uma elfa loira e uma garota de orelhas de gato sobre uma cidade medieval",
+    author: "VICIO<CODE>",
+    date: "2026-10-29",
+    readTime: "12 min",
+    faq: [
+      { q: "Quantas temporadas How Not to Summon a Demon Lord tem?", a: "Duas: a primeira em 2018, com 12 episódios, e a segunda, Ω, em 2021, com 10 episódios." },
+      { q: "Vai ter 3ª temporada?", a: "Até a data deste artigo, não há anúncio oficial de uma terceira temporada." },
+      { q: "Quais estúdios fizeram o anime?", a: "Ajiado na 1ª temporada; Tezuka Productions e Okuruto Noboru na 2ª." },
+      { q: "Quem são os protagonistas?", a: "Diablo e as duas garotas que o invocaram: a elfa Shera L. Greenwood e a Pantherian Rem Galleu." },
+      { q: "Por que Diablo age como vilão?", a: "Takuma é muito tímido e imita o Rei Demônio do jogo para conseguir falar com as pessoas." },
+    ],
+  },
   // ── 28 Out 2026 — Otaku (Reincarnated as a Sword) ──────────────────────
   {
     id: "272",
