@@ -241,6 +241,26 @@ const HowNotToSummonDemonLord2026 = () => {
           anime corta e muda detalhes, vale começar pelo volume 1 para ter a história completa.
         </p>
 
+        <h2 className="flex items-center gap-2"><Sparkles className="h-6 w-6 text-otaku" />Para quem é este anime</h2>
+        <p>
+          How Not to Summon a Demon Lord funciona melhor para quem já conhece os clichês do isekai e gosta de ver alguém
+          brincar com eles. Se você curtiu Overlord, outra história em que um jogador fica preso no corpo do seu avatar
+          poderoso e precisa manter a pose de soberano, vai reconhecer a ideia. A diferença é o tom: Overlord leva o
+          protagonista para um caminho sombrio e sério, enquanto aqui a pose de vilão é quase sempre motivo de piada.
+        </p>
+        <p>
+          Também é uma boa escolha para quem quer episódios leves e rápidos. A primeira temporada tem só 12 episódios e
+          pode ser vista em um fim de semana. A trama tem conflitos políticos e alguns momentos tensos, mas o clima geral é
+          de aventura descontraída, com piadas recorrentes que funcionam do começo ao fim.
+        </p>
+        <p>
+          Por outro lado, quem procura uma fantasia profunda, com construção de mundo detalhada e personagens femininas
+          longe do fanservice, pode se frustrar. O roteiro usa bastante as cenas ecchi, e boa parte das personagens é
+          apresentada primeiro pela aparência. Sabendo disso de antemão, fica mais fácil decidir se a série combina com
+          você. Para muitos fãs, o carisma de Diablo e o coração do trio compensam esses exageros com sobra, e é por
+          isso que o anime segue lembrado anos depois da estreia.
+        </p>
+
         <h2 className="flex items-center gap-2"><BookOpen className="h-6 w-6 text-otaku" />Ficha técnica</h2>
       </div>
 
