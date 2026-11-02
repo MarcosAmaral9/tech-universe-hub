@@ -259,8 +259,33 @@ import nanoBananaImg from "@/assets/nano-banana-google-guia-2026.webp";
 import soloLevelingAnimeImg from "@/assets/solo-leveling-anime-guia-2026.webp";
 import kenDeshitaImg from "@/assets/tensei-shitara-ken-deshita-guia-2026.webp";
 import demonLordImg from "@/assets/how-not-to-summon-demon-lord-guia-2026.webp";
+import variasIasImg from "@/assets/plataformas-varias-ias-assinatura-unica-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 01 Nov 2026 — IA (Plataformas com várias IAs) ──────────────────────
+  {
+    id: "274",
+    slug: "plataformas-varias-ias-assinatura-unica-precos-cotas-2026",
+    title: "Várias IAs por um Preço Só: Como Funcionam Poe, Perplexity, Abacus, Monica e OpenRouter — Donos, Preços e Cotas",
+    excerpt: "Os tipos de plataformas que juntam ChatGPT, Claude, Gemini e outras IAs numa assinatura: donos, preços, pontos, créditos e tokens, a compra do OpenRouter pela Stripe e como escolher.",
+    content: "",
+    category: "ia",
+    subtopic: "ferramentas",
+    image: variasIasImg,
+    imageAlt: "Núcleo central verde de luz ligado a seis núcleos de IA coloridos, com moedas de créditos e um cartão sobre a mesa",
+    author: "VICIO<CODE>",
+    date: "2026-11-01",
+    readTime: "13 min",
+    faq: [
+      { q: "O que são plataformas com várias IAs em um só lugar?", a: "Serviços que reúnem modelos de várias empresas numa única assinatura ou conta de créditos, como Poe, Perplexity, ChatLLM, Monica e OpenRouter." },
+      { q: "Vale mais a pena que assinar cada IA separada?", a: "Para alternar e testar modelos, geralmente sim; para uso intenso de um único modelo, a assinatura oficial costuma dar limites maiores." },
+      { q: "O que são pontos, créditos e tokens?", a: "Tokens são pedaços de texto cobrados pelos fornecedores; pontos e créditos são a moeda interna das plataformas, descontada conforme o modelo e o tamanho da conversa." },
+      { q: "Por que alguns modelos gastam mais créditos?", a: "Porque custam mais ao fornecedor; raciocínio, vídeo e conversas longas consomem muito mais tokens." },
+      { q: "Quem é o dono do Poe e do OpenRouter?", a: "O Poe é da Quora, de Adam D'Angelo; o OpenRouter foi fundado por Alex Atallah e teve a compra pela Stripe anunciada em agosto de 2026." },
+      { q: "Essas plataformas cobram em reais?", a: "A maioria cobra em dólar, com IOF e variação cambial no cartão." },
+      { q: "É seguro colocar dados pessoais nelas?", a: "Os textos passam pela plataforma e pelo fornecedor do modelo; leia as políticas e evite dados sensíveis, como pede a LGPD." },
+    ],
+  },
   // ── 29 Out 2026 — Otaku (How Not to Summon a Demon Lord) ──────────────────────
   {
     id: "273",
