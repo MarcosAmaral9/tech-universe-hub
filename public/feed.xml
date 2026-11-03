@@ -5,8 +5,17 @@
     <link>https://viciocode.com</link>
     <description>IA, investimentos, cultura geek e otaku — novos artigos do VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 01 Nov 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mecânicas de GTA VI: Tudo Confirmado Sobre Combate, Direção, NPCs e Mundo Aberto</title>
+      <link>https://viciocode.com/post/gta-vi-mecanicas-gameplay-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/gta-vi-mecanicas-gameplay-2026</guid>
+      <pubDate>Tue, 03 Nov 2026 12:00:00 GMT</pubDate>
+      <description>Atualizado em novembro de 2026: trailer de lançamento, prévia da Edge, polícia com cães K9, mapa 2x maior que GTA V, 600 mil animações, pré-carregamento em 10/11 e até 212 GB.</description>
+      <category>Geek &amp; Games</category>
+      <enclosure url="https://viciocode.com/assets/gta-vi-mecanicas-gameplay-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>Várias IAs por um Preço Só: Como Funcionam Poe, Perplexity, Abacus, Monica e OpenRouter — Donos, Preços e Cotas</title>
       <link>https://viciocode.com/post/plataformas-varias-ias-assinatura-unica-precos-cotas-2026</link>
@@ -447,15 +456,6 @@
       <description>Guia completo do Perplexity AI em 2026: 15 milhões de usuários diários, comparativo real com Google Search e ChatGPT, planos Free e Pro, recursos como Spaces, Pages e o navegador Comet — e onde ele ainda perde.</description>
       <category>Inteligência Artificial</category>
       <enclosure url="https://viciocode.com/assets/perplexity-ai-2026-buscador-ia-guia.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Vibe Coding 2026: Como Criar Apps com IA Sem Saber Programar</title>
-      <link>https://viciocode.com/post/vibe-coding-2026-criar-apps-sem-programar</link>
-      <guid isPermaLink="true">https://viciocode.com/post/vibe-coding-2026-criar-apps-sem-programar</guid>
-      <pubDate>Fri, 24 Jul 2026 12:00:00 GMT</pubDate>
-      <description>Guia completo do vibe coding em 2026: como Cursor, Bolt.new, Replit Agent, v0.dev e Lovable permitem criar apps completos apenas descrevendo em linguagem natural — com tutoriais, riscos, comparativo e recomendações para o Brasil.</description>
-      <category>Inteligência Artificial</category>
-      <enclosure url="https://viciocode.com/assets/vibe-coding-2026-criar-apps-sem-programar.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>

@@ -15,7 +15,7 @@ import { AdLeaderboard, AdInArticle } from "@/components/AdSense";
 import { GtaFeatureGrid, GtaBarChart, GtaCallout } from "@/components/gta/GtaVisuals";
 
 const SLUG = "gta-vi-mecanicas-gameplay-2026";
-const TITLE = "Mecânicas de GTA VI: Tudo Confirmado nos Trailers Sobre Combate, Direção, NPCs e Mundo Aberto";
+const TITLE = "Mecânicas de GTA VI: Tudo Confirmado Sobre Combate, Direção, NPCs e Mundo Aberto";
 
 const GtaViMecanicasGameplay2026 = () => {
   useEffect(() => { trackArticleRead(SLUG, TITLE, "geek"); }, []);
@@ -33,11 +33,11 @@ const GtaViMecanicasGameplay2026 = () => {
         <h1 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">{TITLE}</h1>
         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
           <span className="flex items-center gap-2"><User className="h-4 w-4" />VICIO&lt;CODE&gt;</span>
-          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />25 de Junho, 2026</span>
-          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />14 min de leitura</span>
+          <span className="flex items-center gap-2"><Calendar className="h-4 w-4" />Atualizado em 3 de Novembro, 2026</span>
+          <span className="flex items-center gap-2"><Clock className="h-4 w-4" />18 min de leitura</span>
         </div>
         <ShareWhatsApp />
-        <AuthorBio category="geek" publishedAt="25 de Junho, 2026" />
+        <AuthorBio category="geek" publishedAt="3 de Novembro, 2026" />
       </header>
 
       <div className="relative rounded-2xl overflow-hidden mb-8 aspect-video">
@@ -51,6 +51,107 @@ const GtaViMecanicasGameplay2026 = () => {
           combinados. Este guia separa o que é confirmação técnica do que é especulação da comunidade, com base em
           análise quadro a quadro dos trailers oficiais e nas declarações públicas da Rockstar e da Take-Two. Tudo
           que está aqui foi visto na tela ou dito por um representante oficial — nada de "leaks" não verificados.
+        </p>
+
+        <GtaCallout variant="success" title="Atualização de 3 de novembro de 2026">
+          <p>
+            Este guia foi revisado com o <strong>trailer de lançamento</strong> (outubro de 2026), a prévia presencial da
+            revista britânica <strong>Edge</strong> e os comunicados oficiais da Rockstar sobre o pré-carregamento. Tudo o
+            que vem da prévia está marcado como <em>"demonstrado na prévia"</em>: foi mostrado à imprensa, mas ainda não
+            foi testado por jogadores.
+          </p>
+        </GtaCallout>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">O que já é oficial a 16 dias do lançamento</h2>
+        <div className="not-prose my-6 grid gap-3 sm:grid-cols-2">
+          {[
+            { k: "Lançamento", v: "19 de novembro de 2026, no mundo todo" },
+            { k: "Plataformas", v: "PlayStation 5 e Xbox Series X|S (sem versão de PC anunciada)" },
+            { k: "Pré-carregamento", v: "A partir de 10 de novembro (antes previsto para 12/11)" },
+            { k: "Espaço livre", v: "Até 212 GB, dependendo do console" },
+            { k: "Protagonistas", v: "Jason Duval e Lucia Caminos" },
+            { k: "Online", v: "Campanha single-player no dia 1; novo online sem data" },
+          ].map((i) => (
+            <div key={i.k} className="rounded-xl border border-pink-500/20 bg-pink-500/5 p-4">
+              <p className="text-xs uppercase tracking-wider text-pink-300 font-mono">{i.k}</p>
+              <p className="mt-1 font-semibold">{i.v}</p>
+            </div>
+          ))}
+        </div>
+        <p>
+          A mudança no pré-carregamento foi anunciada pela própria Rockstar no X em 3 de novembro. No PS5, o download
+          antecipado libera à meia-noite do horário local do dia 10; no Xbox, à meia-noite de Greenwich (21h do dia 9
+          em Brasília). Com até 212 GB, vale conferir o SSD antes: quem tem um PS5 com 825 GB e outros jogos grandes
+          instalados provavelmente vai precisar liberar espaço ou instalar um SSD NVMe adicional.
+        </p>
+
+        <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
+          <Zap className="h-7 w-7 text-pink-400" /> O que a prévia da Edge mostrou
+        </h2>
+        <p>
+          No fim de outubro, a Edge publicou a primeira matéria de capa com jogabilidade demonstrada ao vivo nos
+          escritórios da Rockstar. Os números mais citados vêm dali e foram repercutidos por veículos como ComicBook e
+          Dexerto. Em resumo, segundo a demonstração:
+        </p>
+        <ul>
+          <li><strong>Mapa:</strong> Leonida tem cerca de <strong>duas vezes o tamanho</strong> do mapa de GTA V e inclui Vice City e várias regiões ao redor.</li>
+          <li><strong>Interiores:</strong> "uma ordem de grandeza a mais" de lugares em que dá para entrar do que em qualquer jogo anterior do estúdio.</li>
+          <li><strong>Animações:</strong> por volta de <strong>600 mil animações</strong> dedicadas à variedade de comportamento dos moradores.</li>
+          <li><strong>Personalidade dos NPCs:</strong> cada pessoa do mundo recebe traços de personalidade que definem como reage a você.</li>
+          <li><strong>Bairros com cara própria:</strong> cada região tem uma população com perfil demográfico diferente.</li>
+          <li><strong>Reação dos protagonistas:</strong> Jason e Lucia comentam e reagem ao ambiente — por exemplo, demonstrando nojo ao entrar numa casa suja.</li>
+        </ul>
+        <p>
+          Esses itens são importantes porque mexem no que a série sempre teve de mais forte: a sensação de que a cidade
+          continua funcionando mesmo quando você não está olhando. Ainda assim, é preciso cautela. Uma demonstração
+          conduzida pelo próprio estúdio mostra o melhor cenário possível; a experiência real, com milhões de pessoas
+          jogando em consoles diferentes (incluindo o Xbox Series S, mais fraco), só poderá ser avaliada depois de 19 de
+          novembro.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Polícia mais esperta: cães K9 e faixas de pregos</h2>
+        <p>
+          Em entrevista à Edge, Rob Nelson, da Rockstar, confirmou que a polícia de Leonida ganhou ferramentas novas.
+          A principal são as <strong>unidades K9</strong>: cães policiais que perseguem o jogador a pé. Na demonstração,
+          os cães conseguiram derrubar e imobilizar Jason depois de uma fuga curta. Isso muda a lógica clássica de GTA,
+          em que bastava correr para um beco ou pular uma cerca para despistar os policiais.
+        </p>
+        <p>
+          As <strong>faixas de pregos</strong> também voltam e, segundo a prévia, são usadas de forma mais estratégica
+          nas perseguições de carro. Elas existem em quase todos os GTAs (a exceção é San Andreas), mas costumavam ser
+          fáceis de desviar. A combinação de cães, bloqueios e patrulhas menos previsíveis indica que fugir da polícia
+          vai exigir mais planejamento — um encaixe natural para um jogo construído em torno de assaltos.
+        </p>
+        <GtaCallout variant="tip" title="Dica para os primeiros dias">
+          <p>
+            Se os cães realmente imobilizam o personagem, fugir a pé em área aberta deve ser arriscado. Ter um veículo
+            por perto e sair da área de busca antes de abandonar o carro tende a ser a estratégia mais segura — mas
+            confirme na prática, porque os detalhes do sistema de procurado ainda não foram publicados.
+          </p>
+        </GtaCallout>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">O trailer de lançamento: carros, fauna e Vice City</h2>
+        <p>
+          Publicado em outubro (o Xbox Wire o destacou em 23/10), o trailer de lançamento ultrapassou dezenas de milhões
+          de visualizações em poucos dias. Ele quase não avança na história — o que é bom para quem quer chegar sem
+          spoilers — mas mostra bastante do mundo. Como sempre na série, os carros não usam marcas reais, mas são
+          claramente inspirados em modelos conhecidos: aparecem lowriders pintados à mão, esportivos japoneses no estilo
+          dos anos 1990, picapes, motos, barcos e helicópteros. Iguanas, aves e jacarés reforçam a fauna típica da
+          Flórida que inspirou Leonida.
+        </p>
+        <p>
+          Para quem gosta de dirigir, o recado é a variedade: há veículos para estradas de pântano, avenidas litorâneas e
+          rodovias, e a Rockstar falou na prévia em vias mais realistas, com trânsito mais coerente. A empresa ainda não
+          detalhou se a direção ficou mais próxima de simulação ou se manteve o estilo mais solto de GTA V.
+        </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Interações bobas também voltaram</h2>
+        <p>
+          GTA sempre misturou drama criminal com humor ácido, e GTA VI segue a regra. Uma das interações confirmadas em
+          agosto — e mostrada pela primeira vez em um episódio de <em>South Park</em> exibido em 28 de outubro — permite
+          que Jason recolha fezes de cachorro na praia e as arremesse em pessoas. A cena também chamou atenção pela
+          quantidade de gente na areia, talvez a melhor demonstração pública da densidade de multidões do jogo até agora.
+          Claro: provocar moradores tem consequência, e é aí que entram os cães da polícia.
         </p>
 
         <h2 className="flex items-center gap-3 text-2xl font-bold mt-10 mb-6">
@@ -255,11 +356,39 @@ const GtaViMecanicasGameplay2026 = () => {
           não oficiais de 2022 ou em "padrões da franquia", não em comunicação oficial.
         </p>
         <p>
-          A Rockstar tradicionalmente mantém segredo sobre detalhes específicos até muito perto do lançamento, e o
-          Trailer 3 esperado para o verão de 2026 deve ser a primeira oportunidade de ver mecânicas adicionais sendo
-          mostradas. Análises de gameplay mais profundas, com hands-on de imprensa especializada, devem aparecer
-          apenas em outubro ou novembro de 2026, perto do embargo de review.
+          A Rockstar tradicionalmente mantém segredo sobre detalhes específicos até muito perto do lançamento. Mesmo
+          depois do trailer de lançamento e da prévia da Edge, sistemas como progressão de habilidades, economia e
+          personalização de veículos continuam sem explicação oficial completa. As análises completas da imprensa
+          devem sair perto de 19 de novembro.
         </p>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">GTA V x GTA VI: o que muda na prática</h2>
+        <div className="not-prose my-6 overflow-x-auto rounded-xl border border-pink-500/20">
+          <table className="w-full text-sm bg-card">
+            <thead>
+              <tr className="bg-pink-500/10 text-pink-200">
+                <th className="text-left py-3 px-4">Aspecto</th>
+                <th className="text-left py-3 px-4">GTA V (2013)</th>
+                <th className="text-left py-3 px-4">GTA VI (2026)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-t border-border/60"><td className="py-3 px-4 font-semibold">Protagonistas</td><td className="py-3 px-4">Três, em arcos separados</td><td className="py-3 px-4">Dupla que age junta</td></tr>
+              <tr className="border-t border-border/60 bg-muted/20"><td className="py-3 px-4 font-semibold">Mapa</td><td className="py-3 px-4">Los Santos e Blaine County</td><td className="py-3 px-4">Leonida, cerca de 2x maior (prévia)</td></tr>
+              <tr className="border-t border-border/60"><td className="py-3 px-4 font-semibold">Interiores</td><td className="py-3 px-4">Poucos acessíveis</td><td className="py-3 px-4">Muito mais lugares para entrar (prévia)</td></tr>
+              <tr className="border-t border-border/60 bg-muted/20"><td className="py-3 px-4 font-semibold">Polícia</td><td className="py-3 px-4">Viaturas, helicópteros, bloqueios</td><td className="py-3 px-4">Soma cães K9 e faixas de pregos mais usadas</td></tr>
+              <tr className="border-t border-border/60"><td className="py-3 px-4 font-semibold">Online</td><td className="py-3 px-4">GTA Online semanas depois</td><td className="py-3 px-4">Novo online sem data</td></tr>
+              <tr className="border-t border-border/60 bg-muted/20"><td className="py-3 px-4 font-semibold">Instalação</td><td className="py-3 px-4">Cerca de 100 GB (versão atual)</td><td className="py-3 px-4">Até 212 GB</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 className="text-2xl font-bold mt-10 mb-4">Confirmado x rumor</h2>
+        <ul>
+          <li><strong>Confirmado:</strong> data, plataformas, dupla Jason e Lucia, pré-carregamento em 10/11, até 212 GB, cães K9 e campanha sem online no dia 1.</li>
+          <li><strong>Demonstrado na prévia:</strong> mapa cerca de 2x maior, 600 mil animações, personalidade dos NPCs e muito mais interiores.</li>
+          <li><strong>Ainda é rumor:</strong> versão de PC em 2027, quantidade de missões, preço do online e imóveis para comprar na campanha.</li>
+        </ul>
 
 
 
@@ -283,6 +412,11 @@ const GtaViMecanicasGameplay2026 = () => {
             { title: "IGN — GTA VI gameplay analysis", url: "https://www.ign.com/games/grand-theft-auto-vi", publisher: "IGN", accessedAt: "Junho 2026" },
             { title: "Polygon — What GTA VI trailers reveal", url: "https://www.polygon.com/", publisher: "Polygon", accessedAt: "Junho 2026" },
             { title: "GameSpot — GTA VI mechanics breakdown", url: "https://www.gamespot.com/games/grand-theft-auto-vi/", publisher: "GameSpot", accessedAt: "Junho 2026" },
+            { title: "GTA 6 Pre-Load Plans Get an Unexpected Change Ahead of Launch", url: "https://www.comingsoon.net/games/news/2217136-gta-6-pre-load-date-change", publisher: "ComingSoon", accessedAt: "Novembro 2026" },
+            { title: "Watch the Official Grand Theft Auto VI Launch Trailer", url: "https://news.xbox.com/en-us/2026/10/23/watch-the-official-grand-theft-auto-vi-launch-trailer-explore-leonida-before-the-game-arrives-november-19/", publisher: "Xbox Wire", accessedAt: "Novembro 2026" },
+            { title: "GTA 6's Biggest Gameplay Features Revealed in New Preview", url: "https://comicbook.com/gaming/news/gta-6s-biggest-gameplay-features-revealed-in-new-preview/", publisher: "ComicBook.com", accessedAt: "Novembro 2026" },
+            { title: "GTA 6's police upgrades confirmed alongside new gameplay footage in South Park", url: "https://www.dexerto.com/gta/gta-6s-police-upgrades-confirmed-alongside-new-gameplay-footage-in-south-park-3422612/", publisher: "Dexerto", accessedAt: "Novembro 2026" },
+            { title: "GTA 6: Everything we know so far", url: "https://www.gamesradar.com/gta-6-guide/", publisher: "GamesRadar+", accessedAt: "Novembro 2026" },
           ]}
         />
 

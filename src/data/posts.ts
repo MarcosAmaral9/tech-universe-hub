@@ -6460,16 +6460,16 @@ export const blogPosts: BlogPost[] = [
   {
     id: "gta-vi-4",
     slug: "gta-vi-mecanicas-gameplay-2026",
-    title: "GTA VI: Mecânicas e Gameplay Confirmados nos Trailers Oficiais",
+    title: "Mecânicas de GTA VI: Tudo Confirmado Sobre Combate, Direção, NPCs e Mundo Aberto",
     excerpt:
-      "Dupla protagonista Jason e Lucia, NPCs reativos, física de veículos, sistema climático e tudo o que os dois trailers oficiais da Rockstar realmente confirmaram sobre o gameplay de GTA VI.",
+      "Atualizado em novembro de 2026: trailer de lançamento, prévia da Edge, polícia com cães K9, mapa 2x maior que GTA V, 600 mil animações, pré-carregamento em 10/11 e até 212 GB.",
     content: "",
     category: "geek",
     subtopic: "gta-vi",
     image: gtaViMecanicasImg,
     author: "VICIO<CODE>",
-    date: "2026-06-24",
-    readTime: "13 min",
+    date: "2026-11-03",
+    readTime: "18 min",
     faq: [
       {
         q: "GTA VI tem dois protagonistas?",
@@ -6485,7 +6485,19 @@ export const blogPosts: BlogPost[] = [
       },
       {
         q: "GTA VI terá GTA Online no lançamento?",
-        a: "A Rockstar não confirmou. Pelo padrão da casa, é provável que o modo multiplayer venha algumas semanas ou meses após o lançamento da campanha.",
+        a: "Não. A Rockstar confirmou o lançamento como campanha single-player; o novo modo online chega depois, ainda sem data.",
+      },
+      {
+        q: "Quando começa o pré-carregamento de GTA VI?",
+        a: "Em 10 de novembro de 2026, no PS5 e no Xbox Series X|S. O jogo exige até 212 GB livres e lança em 19 de novembro.",
+      },
+      {
+        q: "A polícia de GTA VI ficou mais difícil?",
+        a: "Segundo a prévia da revista Edge, sim: há unidades K9 com cães que imobilizam o jogador e uso mais estratégico de faixas de pregos.",
+      },
+      {
+        q: "O mapa de GTA VI é maior que o de GTA V?",
+        a: "Na prévia da Edge, Leonida foi descrita como cerca de duas vezes maior que o mapa de GTA V, com muito mais interiores acessíveis.",
       },
     ],
   },
