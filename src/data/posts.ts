@@ -259,6 +259,7 @@ import nanoBananaImg from "@/assets/nano-banana-google-guia-2026.webp";
 import soloLevelingAnimeImg from "@/assets/solo-leveling-anime-guia-2026.webp";
 import kenDeshitaImg from "@/assets/tensei-shitara-ken-deshita-guia-2026.webp";
 import demonLordImg from "@/assets/how-not-to-summon-demon-lord-guia-2026.webp";
+import releaseThatWitchImg from "@/assets/release-that-witch-guia-2026.webp";
 import variasIasImg from "@/assets/plataformas-varias-ias-assinatura-unica-2026.webp";
 
 export const blogPosts: BlogPost[] = [
@@ -284,6 +285,28 @@ export const blogPosts: BlogPost[] = [
       { q: "Quem é o dono do Poe e do OpenRouter?", a: "O Poe é da Quora, de Adam D'Angelo; o OpenRouter foi fundado por Alex Atallah e teve a compra pela Stripe anunciada em agosto de 2026." },
       { q: "Essas plataformas cobram em reais?", a: "A maioria cobra em dólar, com IOF e variação cambial no cartão." },
       { q: "É seguro colocar dados pessoais nelas?", a: "Os textos passam pela plataforma e pelo fornecedor do modelo; leia as políticas e evite dados sensíveis, como pede a LGPD." },
+    ],
+  },
+  // ── 04 Nov 2026 — Otaku (Release That Witch) ──────────────────────
+  {
+    id: "275",
+    slug: "release-that-witch-manhua-anime-guia-2026",
+    title: "Release That Witch: Guia do Manhua e do Anime, Capítulos, Roland, Anna e a Ciência Contra a Magia",
+    excerpt: "Manhua ou manhwa? Quantos capítulos tem a novel e o manhua, o que o anime de 2026 adaptou, Roland e Anna, gêneros e o que dá para aprender com a história.",
+    content: "",
+    category: "otaku",
+    subtopic: "anime",
+    image: releaseThatWitchImg,
+    imageAlt: "Ilustração de um príncipe de cabelo prateado numa oficina medieval com máquina a vapor, ao lado de uma bruxa de cabelo castanho segurando uma chama verde",
+    author: "VICIO<CODE>",
+    date: "2026-11-04",
+    readTime: "13 min",
+    faq: [
+      { q: "Release That Witch é manhua ou manhwa?", a: "É um manhua (quadrinho chinês), baseado na web novel chinesa de Er Mu." },
+      { q: "Quantos capítulos tem Release That Witch?", a: "A web novel tem 1.498 capítulos e o manhua foi concluído com 695 capítulos." },
+      { q: "Quantos episódios tem o anime?", a: "8 episódios, exibidos de 2 de março a 20 de abril de 2026." },
+      { q: "Quem são os protagonistas?", a: "Roland Wimbledon (o engenheiro Cheng Yan) e a bruxa Anna." },
+      { q: "Onde assistir?", a: "Na Crunchyroll, exceto Japão, China e Coreia." },
     ],
   },
   // ── 29 Out 2026 — Otaku (How Not to Summon a Demon Lord) ──────────────────────

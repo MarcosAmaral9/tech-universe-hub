@@ -5,8 +5,17 @@
     <link>https://viciocode.com</link>
     <description>IA, investimentos, cultura geek e otaku — novos artigos do VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Tue, 03 Nov 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Release That Witch: Guia do Manhua e do Anime, Capítulos, Roland, Anna e a Ciência Contra a Magia</title>
+      <link>https://viciocode.com/post/release-that-witch-manhua-anime-guia-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/release-that-witch-manhua-anime-guia-2026</guid>
+      <pubDate>Wed, 04 Nov 2026 12:00:00 GMT</pubDate>
+      <description>Manhua ou manhwa? Quantos capítulos tem a novel e o manhua, o que o anime de 2026 adaptou, Roland e Anna, gêneros e o que dá para aprender com a história.</description>
+      <category>Otaku</category>
+      <enclosure url="https://viciocode.com/assets/release-that-witch-manhua-anime-guia-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>Mecânicas de GTA VI: Tudo Confirmado Sobre Combate, Direção, NPCs e Mundo Aberto</title>
       <link>https://viciocode.com/post/gta-vi-mecanicas-gameplay-2026</link>
@@ -447,15 +456,6 @@
       <description>Análise completa do Grok 3 da xAI: benchmarks contra GPT-4o, Claude e Gemini, o cluster Colossus com 200 mil GPUs, planos e preços, controvérsias, viés e como usar via X Premium e API — o que funciona e o que ainda decepciona.</description>
       <category>Inteligência Artificial</category>
       <enclosure url="https://viciocode.com/assets/grok-3-xai-modelo-elon-musk-2026.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Perplexity AI 2026: O Guia Completo do Buscador com IA que Desafia o Google</title>
-      <link>https://viciocode.com/post/perplexity-ai-2026-buscador-ia-guia</link>
-      <guid isPermaLink="true">https://viciocode.com/post/perplexity-ai-2026-buscador-ia-guia</guid>
-      <pubDate>Fri, 24 Jul 2026 12:00:00 GMT</pubDate>
-      <description>Guia completo do Perplexity AI em 2026: 15 milhões de usuários diários, comparativo real com Google Search e ChatGPT, planos Free e Pro, recursos como Spaces, Pages e o navegador Comet — e onde ele ainda perde.</description>
-      <category>Inteligência Artificial</category>
-      <enclosure url="https://viciocode.com/assets/perplexity-ai-2026-buscador-ia-guia.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>
