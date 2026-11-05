@@ -305,6 +305,7 @@ const MinhaProximaVidaComoVila2026 = lazy(() => import("./pages/posts/MinhaProxi
 const TenseiShitaraKenDeshita2026 = lazy(() => import("./pages/posts/TenseiShitaraKenDeshita2026"));
 const HowNotToSummonDemonLord2026 = lazy(() => import("./pages/posts/HowNotToSummonDemonLord2026"));
 const ReleaseThatWitch2026 = lazy(() => import("./pages/posts/ReleaseThatWitch2026"));
+const PeakyBlindersGuia2026 = lazy(() => import("./pages/posts/PeakyBlindersGuia2026"));
 const PlataformasVariasIAs2026 = lazy(() => import("./pages/posts/PlataformasVariasIAs2026"));
 const NanoBananaGuia2026 = lazy(() => import("./pages/posts/NanoBananaGuia2026"));
 const IAForaDeControleCasosReais2026 = lazy(() => import("./pages/posts/IAForaDeControleCasosReais2026"));
@@ -663,6 +664,7 @@ const App = () => (
                 <Route path="/post/manor-lords-guia-completo-2026" element={<Suspense fallback={<div />}><ManorLordsGuia2026 /></Suspense>} />
                 <Route path="/post/minha-proxima-vida-como-vila-hamefura-guia-2026" element={<Suspense fallback={<div />}><MinhaProximaVidaComoVila2026 /></Suspense>} />
                 <Route path="/post/tensei-shitara-ken-deshita-reincarnated-as-a-sword-guia-2026" element={<Suspense fallback={<div />}><TenseiShitaraKenDeshita2026 /></Suspense>} />
+                <Route path="/post/peaky-blinders-guia-temporadas-filme-historia-real-2026" element={<Suspense fallback={<div />}><PeakyBlindersGuia2026 /></Suspense>} />
                 <Route path="/post/release-that-witch-manhua-anime-guia-2026" element={<Suspense fallback={<div />}><ReleaseThatWitch2026 /></Suspense>} />
                 <Route path="/post/how-not-to-summon-a-demon-lord-isekai-maou-guia-2026" element={<Suspense fallback={<div />}><HowNotToSummonDemonLord2026 /></Suspense>} />
                 <Route path="/post/plataformas-varias-ias-assinatura-unica-precos-cotas-2026" element={<Suspense fallback={<div />}><PlataformasVariasIAs2026 /></Suspense>} />

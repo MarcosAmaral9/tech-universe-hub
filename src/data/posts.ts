@@ -260,6 +260,7 @@ import soloLevelingAnimeImg from "@/assets/solo-leveling-anime-guia-2026.webp";
 import kenDeshitaImg from "@/assets/tensei-shitara-ken-deshita-guia-2026.webp";
 import demonLordImg from "@/assets/how-not-to-summon-demon-lord-guia-2026.webp";
 import releaseThatWitchImg from "@/assets/release-that-witch-guia-2026.webp";
+import peakyBlindersImg from "@/assets/peaky-blinders-guia-temporadas-filme-2026.webp";
 import variasIasImg from "@/assets/plataformas-varias-ias-assinatura-unica-2026.webp";
 
 export const blogPosts: BlogPost[] = [
@@ -285,6 +286,28 @@ export const blogPosts: BlogPost[] = [
       { q: "Quem é o dono do Poe e do OpenRouter?", a: "O Poe é da Quora, de Adam D'Angelo; o OpenRouter foi fundado por Alex Atallah e teve a compra pela Stripe anunciada em agosto de 2026." },
       { q: "Essas plataformas cobram em reais?", a: "A maioria cobra em dólar, com IOF e variação cambial no cartão." },
       { q: "É seguro colocar dados pessoais nelas?", a: "Os textos passam pela plataforma e pelo fornecedor do modelo; leia as políticas e evite dados sensíveis, como pede a LGPD." },
+    ],
+  },
+  // ── 05 Nov 2026 — Geek (Peaky Blinders) ──────────────────────
+  {
+    id: "276",
+    slug: "peaky-blinders-guia-temporadas-filme-historia-real-2026",
+    title: "Peaky Blinders: Sangue, Apostas e Navalhas — Guia das 6 Temporadas, do Filme e da História Real",
+    excerpt: "Temporadas, datas e episódios, o que acontece em cada fase, o filme The Immortal Man, série x história real, o fenômeno Cillian Murphy e onde assistir.",
+    content: "",
+    category: "geek",
+    subtopic: "streaming",
+    image: peakyBlindersImg,
+    imageAlt: "Ilustração de uma rua industrial inglesa dos anos 1920 com canal e chaminés, e uma mesa de pub com boné, relógio de bolso, cartas e bilhete de aposta",
+    author: "VICIO<CODE>",
+    date: "2026-11-05",
+    readTime: "14 min",
+    faq: [
+      { q: "Quantas temporadas e episódios tem Peaky Blinders?", a: "6 temporadas com 6 episódios cada, total de 36 episódios (2013 a 2022)." },
+      { q: "Onde assistir Peaky Blinders no Brasil?", a: "A série completa e o filme The Immortal Man estão na Netflix." },
+      { q: "Quando estreou o filme The Immortal Man?", a: "Em cinemas selecionados em 6 de março de 2026 e na Netflix em 20 de março de 2026." },
+      { q: "Os Peaky Blinders existiram de verdade?", a: "Sim, foi uma gangue de Birmingham ativa até cerca de 1910, mas a família Shelby é fictícia." },
+      { q: "Eles escondiam navalhas no boné?", a: "Provavelmente não; historiadores consideram isso um mito." },
     ],
   },
   // ── 04 Nov 2026 — Otaku (Release That Witch) ──────────────────────

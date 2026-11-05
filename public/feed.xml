@@ -5,8 +5,17 @@
     <link>https://viciocode.com</link>
     <description>IA, investimentos, cultura geek e otaku — novos artigos do VICIO&lt;CODE&gt;.</description>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 04 Nov 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://viciocode.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Peaky Blinders: Sangue, Apostas e Navalhas — Guia das 6 Temporadas, do Filme e da História Real</title>
+      <link>https://viciocode.com/post/peaky-blinders-guia-temporadas-filme-historia-real-2026</link>
+      <guid isPermaLink="true">https://viciocode.com/post/peaky-blinders-guia-temporadas-filme-historia-real-2026</guid>
+      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
+      <description>Temporadas, datas e episódios, o que acontece em cada fase, o filme The Immortal Man, série x história real, o fenômeno Cillian Murphy e onde assistir.</description>
+      <category>Geek &amp; Games</category>
+      <enclosure url="https://viciocode.com/assets/peaky-blinders-guia-temporadas-filme-historia-real-2026.webp" type="image/webp" length="0" />
+    </item>
     <item>
       <title>Release That Witch: Guia do Manhua e do Anime, Capítulos, Roland, Anna e a Ciência Contra a Magia</title>
       <link>https://viciocode.com/post/release-that-witch-manhua-anime-guia-2026</link>
@@ -447,15 +456,6 @@
       <description>Guia completo de Mushoku Tensei III (2026): data de estreia, arcos adaptados, personagens novos, número de episódios, o trabalho do Studio Bind, abertura e onde assistir com legendas e dublagem PT-BR.</description>
       <category>Otaku</category>
       <enclosure url="https://viciocode.com/assets/mushoku-tensei-3-temporada-2026.webp" type="image/webp" length="0" />
-    </item>
-    <item>
-      <title>Grok 3 da xAI: O Modelo de IA da Elon Musk que Surpreendeu o Mercado em 2025</title>
-      <link>https://viciocode.com/post/grok-3-xai-modelo-elon-musk-2026</link>
-      <guid isPermaLink="true">https://viciocode.com/post/grok-3-xai-modelo-elon-musk-2026</guid>
-      <pubDate>Fri, 24 Jul 2026 12:00:00 GMT</pubDate>
-      <description>Análise completa do Grok 3 da xAI: benchmarks contra GPT-4o, Claude e Gemini, o cluster Colossus com 200 mil GPUs, planos e preços, controvérsias, viés e como usar via X Premium e API — o que funciona e o que ainda decepciona.</description>
-      <category>Inteligência Artificial</category>
-      <enclosure url="https://viciocode.com/assets/grok-3-xai-modelo-elon-musk-2026.webp" type="image/webp" length="0" />
     </item>
   </channel>
 </rss>

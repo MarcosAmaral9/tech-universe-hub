@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Sitemap do VICIO<CODE> — viciocode.com
-  Gerado automaticamente em: 2026-11-04
-  Total de URLs: 328 (28 páginas + 246 posts + 54 tags)
+  Gerado automaticamente em: 2026-11-05
+  Total de URLs: 329 (28 páginas + 247 posts + 54 tags)
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -148,6 +148,12 @@
   <url>
     <loc>https://viciocode.com/post/plataformas-varias-ias-assinatura-unica-precos-cotas-2026</loc>
     <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://viciocode.com/post/peaky-blinders-guia-temporadas-filme-historia-real-2026</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
