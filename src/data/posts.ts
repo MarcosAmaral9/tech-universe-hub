@@ -260,10 +260,33 @@ import soloLevelingAnimeImg from "@/assets/solo-leveling-anime-guia-2026.webp";
 import kenDeshitaImg from "@/assets/tensei-shitara-ken-deshita-guia-2026.webp";
 import demonLordImg from "@/assets/how-not-to-summon-demon-lord-guia-2026.webp";
 import releaseThatWitchImg from "@/assets/release-that-witch-guia-2026.webp";
+import lastKingdomImg from "@/assets/the-last-kingdom-guia-temporadas-filme-2026.webp";
 import peakyBlindersImg from "@/assets/peaky-blinders-guia-temporadas-filme-2026.webp";
 import variasIasImg from "@/assets/plataformas-varias-ias-assinatura-unica-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 06 Nov 2026 — Geek (The Last Kingdom) ──────────────────────
+  {
+    id: "277",
+    slug: "the-last-kingdom-guia-temporadas-filme-historia-real-2026",
+    title: "The Last Kingdom: Guia Completo das 5 Temporadas, do Filme Seven Kings Must Die e da História Real",
+    excerpt: "Temporadas, datas e episódios, o que acontece em cada fase, o filme Seven Kings Must Die, série x história real de Alfredo, o Grande, e onde assistir na Netflix.",
+    content: "",
+    category: "geek",
+    subtopic: "streaming",
+    image: lastKingdomImg,
+    imageAlt: "Ilustração de um guerreiro saxão com duas espadas saindo do portão de uma fortaleza de madeira em chamas",
+    author: "VICIO<CODE>",
+    date: "2026-11-06",
+    readTime: "14 min",
+    faq: [
+      { q: "Quantas temporadas e episódios tem The Last Kingdom?", a: "5 temporadas e 46 episódios (8, 8, 10, 10 e 10), de 2015 a 2022." },
+      { q: "Onde assistir The Last Kingdom no Brasil?", a: "A série completa e o filme Seven Kings Must Die estão na Netflix." },
+      { q: "Quando estreou o filme Seven Kings Must Die?", a: "Em 14 de abril de 2023, na Netflix." },
+      { q: "Uhtred de Bebbanburg existiu?", a: "O Uhtred da série é fictício; existiu um Uhtred de Bamburgh no século 11." },
+      { q: "A série é baseada em livros?", a: "Sim, nas Crônicas Saxônicas de Bernard Cornwell." },
+    ],
+  },
   // ── 01 Nov 2026 — IA (Plataformas com várias IAs) ──────────────────────
   {
     id: "274",
