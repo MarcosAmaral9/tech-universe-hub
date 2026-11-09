@@ -260,11 +260,34 @@ import soloLevelingAnimeImg from "@/assets/solo-leveling-anime-guia-2026.webp";
 import kenDeshitaImg from "@/assets/tensei-shitara-ken-deshita-guia-2026.webp";
 import demonLordImg from "@/assets/how-not-to-summon-demon-lord-guia-2026.webp";
 import releaseThatWitchImg from "@/assets/release-that-witch-guia-2026.webp";
+import todoMundoChrisImg from "@/assets/todo-mundo-odeia-o-chris-guia-2026.webp";
 import lastKingdomImg from "@/assets/the-last-kingdom-guia-temporadas-filme-2026.webp";
 import peakyBlindersImg from "@/assets/peaky-blinders-guia-temporadas-filme-2026.webp";
 import variasIasImg from "@/assets/plataformas-varias-ias-assinatura-unica-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 09 Nov 2026 — Geek (Todo Mundo Odeia o Chris) ──────────────────────
+  {
+    id: "278",
+    slug: "todo-mundo-odeia-o-chris-guia-temporadas-onde-assistir-2026",
+    title: "Todo Mundo Odeia o Chris: Guia das 4 Temporadas, Episódios, Onde Assistir e o Fenômeno no Brasil",
+    excerpt: "As 4 temporadas e 88 episódios, datas de estreia, o que acontece em cada fase, a vida real de Chris Rock, o fenômeno na Record e onde assistir na Netflix.",
+    content: "",
+    category: "geek",
+    subtopic: "streaming",
+    image: todoMundoChrisImg,
+    imageAlt: "Ilustração de uma família sorridente abraçada numa sala de apartamento dos anos 1980 no Brooklyn",
+    author: "VICIO<CODE>",
+    date: "2026-11-09",
+    readTime: "13 min",
+    faq: [
+      { q: "Quantas temporadas e episódios tem Todo Mundo Odeia o Chris?", a: "4 temporadas de 22 episódios, total de 88, de 2005 a 2009." },
+      { q: "Onde assistir Todo Mundo Odeia o Chris no Brasil?", a: "Na Netflix desde 29 de abril de 2026, além de Prime Video, Globoplay e Paramount+." },
+      { q: "A série é baseada na vida real de Chris Rock?", a: "É livremente inspirada na adolescência dele no Brooklyn." },
+      { q: "Quando a série passou na Record?", a: "A partir de outubro de 2006, por quase 11 anos seguidos." },
+      { q: "Todo Mundo Odeia o Chris tem continuação?", a: "Sim, a animação Everybody Still Hates Chris, de 2024." },
+    ],
+  },
   // ── 06 Nov 2026 — Geek (The Last Kingdom) ──────────────────────
   {
     id: "277",
