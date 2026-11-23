@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
+import GtaViLaunchUpdate from "@/components/gta/GtaViLaunchUpdate";
 import { Clock, User, Calendar, DollarSign, TrendingUp, BarChart3, CheckCircle2, AlertTriangle, Wallet, CreditCard, Gift, Percent } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -66,6 +67,7 @@ const GtaViPrecosBrasilDolar2026 = () => {
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
+        <GtaViLaunchUpdate />
         <p className="lead text-xl text-muted-foreground">
           O preço de <strong>Grand Theft Auto VI</strong> deixou de ser especulação. Em 24 de junho de 2026 a Rockstar
           Games confirmou os valores oficiais e, à meia-noite do dia 25 de junho, as três principais lojas digitais —
@@ -89,8 +91,8 @@ const GtaViPrecosBrasilDolar2026 = () => {
         <GtaStatGrid stats={[
           { label: "Standard BR", value: "R$ 449,90", hint: "US$ 79,99 · PS/Xbox Store", icon: Wallet, accent: "pink" },
           { label: "Ultimate BR", value: "R$ 549,90", hint: "US$ 99,99 · +R$ 100 sobre Standard", icon: Gift, accent: "violet" },
-          { label: "Parcelado", value: "12x R$ 37", hint: "Standard s/ juros na PS Store", icon: CreditCard, accent: "cyan" },
-          { label: "Preload", value: "12/nov", hint: "Lançamento 19/nov/2026", icon: Calendar, accent: "amber" },
+          { label: "Parcelado", value: "4x R$ 112,47", hint: "Standard na PS Store", icon: CreditCard, accent: "cyan" },
+          { label: "Preload", value: "10/nov", hint: "Lançamento 19/nov/2026", icon: Calendar, accent: "amber" },
         ]} />
 
 
@@ -237,10 +239,11 @@ const GtaViPrecosBrasilDolar2026 = () => {
 
         <h2 className="text-2xl font-bold mt-10 mb-4">Vale a pena pagar parcelado?</h2>
         <p>
-          A PlayStation Store brasileira aceita parcelamento em cartão de crédito, geralmente em até 12x sem juros para
-          compras acima de R$ 100, conforme o cartão e a operadora. Para a Standard a R$ 449,90, isso significa
-          parcelas de aproximadamente <strong>R$ 37,49 por mês</strong> ao longo de um ano. A Ultimate a R$ 549,90,
-          parcelada em 12x, fica em aproximadamente <strong>R$ 45,82 por mês</strong>. Para a maioria dos jogadores, é
+          A PlayStation Store brasileira aceita parcelamento em cartão de crédito, e, no lançamento de GTA VI, o jogo podia
+          ser dividido em até 4x, segundo levantamento do InfoMoney. Para a Standard a R$ 449,90, isso significa
+          parcelas de aproximadamente <strong>R$ 112,47</strong>. A Ultimate a R$ 549,90, em 4x, fica em
+          aproximadamente <strong>R$ 137,47</strong>. Varejistas como Amazon e Magazine Luiza podem oferecer outras
+          condições, e o Pix à vista costuma dar o menor preço. Para a maioria dos jogadores, é
           uma forma sensata de absorver o custo sem comprometer o orçamento de novembro — mês tradicionalmente
           pressionado por Black Friday e despesas de fim de ano.
         </p>
@@ -315,7 +318,7 @@ const GtaViPrecosBrasilDolar2026 = () => {
           <p>
             Os R$ 449,90 da Standard são exatamente o que eu esperaria para um lançamento desse calibre em 2026 — não
             é barato, mas a paridade com a conversão técnica do câmbio mostra que a Take-Two não aplicou markup abusivo
-            no Brasil. Para a maioria dos jogadores, a Standard parcelada em 12x é a melhor escolha: o custo mensal
+            no Brasil. Para a maioria dos jogadores, a Standard parcelada é a melhor escolha: o custo mensal
             equivale ao de uma assinatura média de streaming, e o jogo deve render anos de uso entre campanha,
             exploração e GTA Online VI. A Ultimate só faz sentido para quem realmente vai mergulhar no online — caso
             contrário, R$ 100 são melhores investidos em um SSD adicional ou em outro jogo. E para quem ainda não tem

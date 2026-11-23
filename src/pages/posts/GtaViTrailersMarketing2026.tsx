@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
+import GtaViLaunchUpdate from "@/components/gta/GtaViLaunchUpdate";
 import { Clock, User, Calendar, Film, TrendingUp, History } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -61,6 +62,7 @@ const GtaViTrailersMarketing2026 = () => {
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
+        <GtaViLaunchUpdate />
         <p className="lead text-xl text-muted-foreground">
           O marketing de <strong>Grand Theft Auto VI</strong> é estudo de caso para escolas de comunicação. Em pouco
           mais de três anos, com apenas dois trailers oficiais lançados, a Rockstar Games construiu um nível de

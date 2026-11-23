@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
+import GtaViLaunchUpdate from "@/components/gta/GtaViLaunchUpdate";
 import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3, MapPin, Eye, DollarSign, Users, Trophy } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -50,6 +51,7 @@ const GtaViNovembro2026 = () => {
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
+        <GtaViLaunchUpdate />
         <p className="lead text-xl text-muted-foreground">
           A Take-Two Interactive confirmou oficialmente: <strong>Grand Theft Auto VI chega em 19 de novembro de 2026</strong> para PS5 e Xbox Series X|S. A campanha de marketing começa no verão — o terceiro trailer deve chegar em junho ou julho. Após dois adiamentos (de outono de 2025 para maio de 2026, depois para novembro), a data é definitiva. Com 250 milhões de visualizações no Trailer 1 e um mundo aberto ambientado em Leonida (versão fictícia da Flórida moderna), GTA VI promete ser o maior lançamento da história dos games. Este guia reúne tudo confirmado e o que esperar.
         </p>

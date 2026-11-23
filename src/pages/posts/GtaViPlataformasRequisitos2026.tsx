@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
+import GtaViLaunchUpdate from "@/components/gta/GtaViLaunchUpdate";
 import { Clock, User, Calendar, Gamepad2, Monitor, HardDrive, Wifi, Cpu, MemoryStick, Zap } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -45,6 +46,7 @@ const GtaViPlataformasRequisitos2026 = () => {
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
+        <GtaViLaunchUpdate />
         <p className="lead text-xl text-muted-foreground">
           A pergunta sobre <strong>plataformas de GTA VI</strong> é, ao mesmo tempo, simples e complicada. Simples
           porque a Rockstar foi inequívoca desde o primeiro trailer: o jogo sai para PS5 e Xbox Series X|S em 19 de

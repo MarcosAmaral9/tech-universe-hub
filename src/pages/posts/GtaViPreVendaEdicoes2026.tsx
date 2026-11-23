@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
+import GtaViLaunchUpdate from "@/components/gta/GtaViLaunchUpdate";
 import { Clock, User, Calendar, ShoppingCart, AlertTriangle, CheckCircle2, Store, Gamepad2, Globe, Package } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -47,6 +48,7 @@ const GtaViPreVendaEdicoes2026 = () => {
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
+        <GtaViLaunchUpdate />
         <p className="lead text-xl text-muted-foreground">
           A pré-venda de <strong>Grand Theft Auto VI</strong> é provavelmente o maior evento comercial pré-lançamento da
           história da indústria de games. Mas a essa altura, com o lançamento marcado para <strong>19 de novembro de 2026</strong>,
@@ -91,7 +93,7 @@ const GtaViPreVendaEdicoes2026 = () => {
         </p>
 
         <GtaFeatureGrid features={[
-          { icon: Gamepad2, title: "PlayStation Store BR", desc: "Preço R$ 449,90 · parcelamento em até 12x no cartão · reembolso pré-lançamento avaliado caso a caso.", accent: "cyan" },
+          { icon: Gamepad2, title: "PlayStation Store BR", desc: "Preço R$ 449,90 · parcelamento em até 4x no cartão · reembolso pré-lançamento avaliado caso a caso.", accent: "cyan" },
           { icon: Gamepad2, title: "Xbox Store BR", desc: "Preço R$ 449,90 · parcelamento em cartão · reembolso integral até 10 dias antes do lançamento (mais flexível do mercado).", accent: "emerald" },
           { icon: Globe, title: "Rockstar Store", desc: "Bônus exclusivos possíveis. Cobrança em USD via cartão internacional com IOF 3,5%. Sem reembolso após resgate.", accent: "pink" },
           { icon: Package, title: "Varejo físico (Amazon, Kabum)", desc: "Caixa sem disco com voucher digital para PS5 ou Xbox. Mesmo preço da loja, com prazo de entrega.", accent: "amber" },
@@ -174,15 +176,13 @@ const GtaViPreVendaEdicoes2026 = () => {
         <p>
           Para o jogador brasileiro, a pré-venda de GTA VI vai cair em um momento sensível do orçamento: novembro e
           dezembro são meses de Black Friday, Natal e despesas elevadas. Quem leva a sério a estratégia de compra deve
-          começar a separar dinheiro agora. Considerando que a faixa esperada do jogo é entre R$ 299 e R$ 499 dependendo
-          da edição (com possibilidade real de a Standard chegar acima de R$ 349 dado o reajuste de jogos AAA pelos
-          publishers nos últimos dois anos), uma reserva de R$ 500 é o piso para entrar na Standard digital sem
-          comprometer outras compras de fim de ano.
+          começar a separar dinheiro agora. Com os preços oficiais de R$ 449,90 (Standard) e R$ 549,90 (Ultimate), uma reserva de R$ 500 é o
+          piso para entrar na Standard digital sem comprometer outras compras de fim de ano.
         </p>
         <p>
-          Para quem mira a Ultimate Edition, a faixa pode bater R$ 599 ou R$ 699. E quem ainda não comprou um PS5 ou
+          Para quem mira a Ultimate Edition (vendida só em formato digital), o valor é R$ 549,90. E quem ainda não comprou um PS5 ou
           Xbox Series, precisa contabilizar também esse investimento: console + SSD adicional (recomendado por causa do
-          provável tamanho de instalação acima de 150 GB) + assinatura online (PlayStation Plus Essential ou Xbox Game
+          espaço livre de até 212 GB pedido no pré-carregamento) + assinatura online (PlayStation Plus Essential ou Xbox Game
           Pass Core) totaliza facilmente entre R$ 3.500 e R$ 5.000 dependendo da configuração. Quem está nessa situação
           tem ainda alguns meses para procurar promoções de hardware antes da escassez típica de novembro.
         </p>

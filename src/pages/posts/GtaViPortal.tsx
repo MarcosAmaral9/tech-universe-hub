@@ -15,6 +15,7 @@ import mapaImg from "@/assets/gta-vi-mapa-leonida.webp";
 import guiaImg from "@/assets/gta-vi-2026.webp";
 import novembroImg from "@/assets/gta-vi-novembro-2026-vice-city-leonida.webp";
 import AuthorBio from "@/components/AuthorBio";
+import GtaViLaunchUpdate from "@/components/gta/GtaViLaunchUpdate";
 
 const articles = [
   {
@@ -129,7 +130,7 @@ const GtaViPortal = () => (
         <div className="flex flex-wrap gap-2 md:gap-3 mt-6">
           <span className="inline-flex items-center gap-1.5 text-xs bg-pink-500/20 text-pink-200 border border-pink-500/40 px-3 py-1.5 rounded-full font-medium">
             <span className="w-1.5 h-1.5 rounded-full bg-pink-300" />
-            Lançamento 19 nov 2026
+            Lançado em 19 nov 2026
           </span>
           <span className="text-xs bg-black/40 backdrop-blur-sm text-white/90 border border-white/10 px-3 py-1.5 rounded-full">
             PS5 · Xbox Series X|S
@@ -162,10 +163,10 @@ const GtaViPortal = () => (
         <h2 className="font-display text-2xl md:text-3xl font-bold">Sobre o Especial</h2>
       </div>
       <p className="text-lg text-muted-foreground leading-relaxed">
-        <strong className="text-foreground">Grand Theft Auto VI</strong> é o próximo capítulo da franquia da
+        <strong className="text-foreground">Grand Theft Auto VI</strong> foi lançado em 19 de novembro de 2026 pela
         Rockstar Games, publicado pela Take-Two Interactive. Após o vazamento histórico de setembro de 2022 e o anúncio
-        oficial em dezembro de 2023, o jogo virou o maior fenômeno cultural antes do lançamento na história do
-        entretenimento. Este painel reúne tudo que vamos publicar sobre GTA VI — apenas dados confirmados por fontes
+        oficial em dezembro de 2023, o jogo estreou com nota 99 no Metacritic e US$ 3,79 bilhões em vendas no
+        primeiro dia, segundo a Take-Two. Este painel reúne tudo que vamos publicar sobre GTA VI — apenas dados confirmados por fontes
         oficiais (Rockstar Newswire, Take-Two IR, PlayStation Blog, Xbox Wire) e veículos especializados (IGN,
         Eurogamer, GameSpot, Polygon, The Verge).
       </p>
@@ -173,6 +174,7 @@ const GtaViPortal = () => (
         Cada artigo segue o padrão editorial do site: prosa extensa, tabelas comparativas, análise crítica e fontes
         verificáveis. Nada de rumor não confirmado, nada de "leaks" não verificados, nada inventado.
       </p>
+      <GtaViLaunchUpdate />
     </section>
 
     {/* ARTICLES GRID */}

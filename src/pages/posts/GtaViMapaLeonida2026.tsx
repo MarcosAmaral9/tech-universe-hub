@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
+import GtaViLaunchUpdate from "@/components/gta/GtaViLaunchUpdate";
 import { Clock, User, Calendar, MapPin, Trees, Waves, Building2, Home, Sailboat } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -54,6 +55,7 @@ const GtaViMapaLeonida2026 = () => {
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
+        <GtaViLaunchUpdate />
         <p className="lead text-xl text-muted-foreground">
           O <strong>estado fictício de Leonida</strong> é o cenário de GTA VI — uma versão modernizada e satírica da
           Flórida que abrange a metrópole de Vice City, arquipélagos litorâneos, pântanos e interior rural. Este guia

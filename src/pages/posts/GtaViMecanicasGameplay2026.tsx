@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
+import GtaViLaunchUpdate from "@/components/gta/GtaViLaunchUpdate";
 import { Clock, User, Calendar, Zap, Users, Cloud, Car, MessageSquare, Waves, Smartphone, Wifi, Cpu } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -45,6 +46,7 @@ const GtaViMecanicasGameplay2026 = () => {
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
+        <GtaViLaunchUpdate />
         <p className="lead text-xl text-muted-foreground">
           Em dois trailers oficiais — dezembro de 2023 e maio de 2025 — a Rockstar Games entregou mais informação sobre
           as mecânicas de <strong>GTA VI</strong> do que parecia possível em pouco mais de cinco minutos de vídeo

@@ -3095,6 +3095,7 @@ export const blogPosts: BlogPost[] = [
     image: gtaViNovembro2026Img,
     author: "VICIO<CODE>",
     date: "2026-04-20",
+    updatedAt: "2026-11-23",
     readTime: "17 min",
     faq: [
       {
@@ -3580,6 +3581,7 @@ export const blogPosts: BlogPost[] = [
     image: gtaViImg,
     author: "VICIO<CODE>",
     date: "2026-04-11",
+    updatedAt: "2026-11-23",
     readTime: "15 min",
     faq: [
       {
@@ -6462,6 +6464,7 @@ export const blogPosts: BlogPost[] = [
     image: gtaViPreVendaImg,
     author: "VICIO<CODE>",
     date: "2026-06-24",
+    updatedAt: "2026-11-23",
     readTime: "13 min",
     faq: [
       {
@@ -6495,6 +6498,7 @@ export const blogPosts: BlogPost[] = [
     image: gtaViPrecosImg,
     author: "VICIO<CODE>",
     date: "2026-06-24",
+    updatedAt: "2026-11-23",
     readTime: "12 min",
     faq: [
       {
@@ -6528,6 +6532,7 @@ export const blogPosts: BlogPost[] = [
     image: gtaViPlataformasImg,
     author: "VICIO<CODE>",
     date: "2026-06-24",
+    updatedAt: "2026-11-23",
     readTime: "12 min",
     faq: [
       {
@@ -6561,6 +6566,7 @@ export const blogPosts: BlogPost[] = [
     image: gtaViMecanicasImg,
     author: "VICIO<CODE>",
     date: "2026-11-03",
+    updatedAt: "2026-11-23",
     readTime: "18 min",
     faq: [
       {
@@ -6569,7 +6575,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         q: "Dá para trocar entre Jason e Lucia como em GTA V?",
-        a: "A Rockstar ainda não confirmou se a troca será livre como em GTA V ou se acontecerá em momentos roteirizados. Os trailers mostram os dois juntos na maior parte das cenas.",
+        a: "Sim. O vídeo An Extended Look e o jogo lançado mostram a troca durante a ação, inclusive em perseguições. Algumas missões são jogadas com só um dos dois.",
       },
       {
         q: "Quais mecânicas novas foram mostradas?",
@@ -6577,7 +6583,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         q: "GTA VI terá GTA Online no lançamento?",
-        a: "Não. A Rockstar confirmou o lançamento como campanha single-player; o novo modo online chega depois, ainda sem data.",
+        a: "Não. GTA VI foi lançado em 19/11/2026 com a campanha single-player; até 23/11/2026 a Rockstar não confirmou data para o novo GTA Online.",
       },
       {
         q: "Quando começa o pré-carregamento de GTA VI?",
@@ -6606,6 +6612,7 @@ export const blogPosts: BlogPost[] = [
     image: gtaViTrailersImg,
     author: "VICIO<CODE>",
     date: "2026-06-24",
+    updatedAt: "2026-11-23",
     readTime: "12 min",
     faq: [
       {
@@ -6639,6 +6646,7 @@ export const blogPosts: BlogPost[] = [
     image: gtaViMapaImg,
     author: "VICIO<CODE>",
     date: "2026-06-24",
+    updatedAt: "2026-11-23",
     readTime: "13 min",
     faq: [
       {

@@ -5,6 +5,7 @@ import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
+import GtaViLaunchUpdate from "@/components/gta/GtaViLaunchUpdate";
 import { Clock, User, Calendar, Gamepad2, Star, Zap, Shield, BarChart3, MapPin, DollarSign, Trophy, Eye, Users } from "lucide-react";
 import CategoryBadge from "@/components/CategoryBadge";
 import CommentSection from "@/components/CommentSection";
@@ -44,6 +45,7 @@ const GTAVI2026 = () => {
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">
+        <GtaViLaunchUpdate />
         <p className="lead text-xl text-muted-foreground">
           GTA VI é o jogo mais esperado da história dos videogames. Com lançamento confirmado para <strong>26 de setembro de 2026</strong> no PS5 e Xbox Series X|S, e PC em 2027, este guia reúne absolutamente tudo que a Rockstar revelou: Vice City, os protagonistas Lucia e Jason, gameplay e preços no Brasil.
         </p>
