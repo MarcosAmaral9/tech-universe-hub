@@ -4,6 +4,7 @@ import BackNavigation from "@/components/BackNavigation";
 import { AdLeaderboard, AdRectangle, AdInArticle } from "@/components/AdSense";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import { SoloLevelingConfirmedBox, SoloLevelingGamesSection } from "@/components/solo/SoloLevelingUpdate2026";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
 import { Clock, User, Calendar, BookOpen, Star, Tv, Film, Globe, Swords } from "lucide-react";
@@ -43,6 +44,7 @@ const SoloLeveling = () => {
         <img fetchpriority="high" src={heroImg} alt="Solo Leveling — Sung Jinwoo o Monarca das Sombras" loading="eager" decoding="async" className="w-full h-full object-cover" />
       </div>
 
+      <SoloLevelingConfirmedBox />
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <p className="lead text-xl text-muted-foreground">
           <strong>Solo Leveling</strong> (나 혼자만 레벨업, <em>Na Honjaman Level Up</em>) é o manhwa sul-coreano mais impactante da história do anime. Adaptado pelo estúdio <strong>A-1 Pictures</strong> e premiado como <strong>Anime do Ano no Crunchyroll Anime Awards 2025</strong> com mais de 50 milhões de votos, a série transformou Sung Jinwoo em um fenômeno cultural global. Duas temporadas, um filme compilação e um universo em expansão definem a franquia mais esperada da última década.
@@ -200,8 +202,10 @@ const SoloLeveling = () => {
           Ambas as temporadas estão disponíveis integralmente na <strong>Crunchyroll</strong> com legendas e dublagem. A T1 tem 12 episódios (jan–mar 2024) e a T2 tem 13 episódios (jan–mar 2025). O filme <strong>ReAwakening</strong> também está disponível na plataforma.
         </p>
         <p>
-          Quanto ao futuro: como de março de 2026, <strong>nenhuma Temporada 3 foi oficialmente confirmada</strong>, mas o criador Chugong sinalizou um possível filme. O spin-off em manhwa <strong>Solo Leveling: Ragnarok</strong>, focado no filho de Jinwoo chamado <strong>Sung Su-ho</strong>, está em andamento desde julho de 2024 — e um jogo mobile RPG, <strong>Solo Leveling: Arise</strong>, foi lançado em maio de 2024 pela Netmarble.
+          Quanto ao futuro (atualizado em novembro de 2026): em junho, a D&amp;C Media citou a <strong>3ª temporada</strong> em produção, com janela de 2027–2028 e sem data oficial. Em julho, Aniplex e Crunchyroll anunciaram o filme <strong>Solo Leveling: Beyond the System</strong>, que continua a 2ª temporada. O spin-off <strong>Solo Leveling: Ragnarok</strong>, com o filho de Jinwoo, <strong>Sung Su-ho</strong>, segue em publicação desde julho de 2024.
         </p>
+
+        <SoloLevelingGamesSection />
 
         <div className="not-prose mt-10 p-6 bg-secondary rounded-xl text-center">
           <h3 className="text-xl font-bold mb-2">Arise! Qual foi sua cena favorita? ⚔️</h3>
@@ -252,6 +256,9 @@ const SoloLeveling = () => {
             publisher: "Aniplex",
             accessedAt: "Maio 2026",
           },
+          { title: "Solo Leveling: Beyond the System Anime Movie Announced", url: "https://www.crunchyroll.com/news/announcements/2026/7/3/solo-leveling-beyond-the-system-anime-movie-announced-by-aniplex-and-crunchyroll", publisher: "Crunchyroll News", accessedAt: "Novembro 2026" },
+          { title: "Solo Leveling: Arise Overdrive — PS5", url: "https://www.playstation.com/en-us/games/solo-leveling-arise-overdrive/", publisher: "PlayStation", accessedAt: "Novembro 2026" },
+          { title: "Solo Leveling: ARISE OVERDRIVE — Xbox", url: "https://www.xbox.com/en-US/games/store/solo-leveling-arise-overdrive/9mvhcq7cjx01", publisher: "Xbox", accessedAt: "Novembro 2026" },
           {
             title: "Crunchyroll — Solo Leveling",
             url: "https://www.crunchyroll.com/series/GG5H5XQ7Y/solo-leveling",

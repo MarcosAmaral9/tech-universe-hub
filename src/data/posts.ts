@@ -484,6 +484,7 @@ export const blogPosts: BlogPost[] = [
     imageAlt: "Ilustração de jovem de cabelo preto caminhando entre ruínas com três soldados das sombras gigantes atrás dele",
     author: "VICIO<CODE>",
     date: "2026-10-21",
+    updatedAt: "2026-11-25",
     readTime: "14 min",
     faq: [
       { q: "Quantas temporadas Solo Leveling tem?", a: "Duas exibidas (2024 e 2025); a terceira foi confirmada em junho de 2026." },
@@ -7279,6 +7280,7 @@ export const blogPosts: BlogPost[] = [
     image: soloLevelingImg,
     author: "VICIO<CODE>",
     date: "2026-03-29",
+    updatedAt: "2026-11-25",
     readTime: "18 min",
     faq: [
       {

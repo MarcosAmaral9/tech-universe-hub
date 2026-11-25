@@ -3,6 +3,7 @@ import { trackArticleRead } from "@/hooks/useReadingHistory";
 import BackNavigation from "@/components/BackNavigation";
 import ShareWhatsApp from "@/components/ShareWhatsApp";
 import AuthorBio from "@/components/AuthorBio";
+import { SoloLevelingConfirmedBox, SoloLevelingGamesSection } from "@/components/solo/SoloLevelingUpdate2026";
 import EditorialTake from "@/components/EditorialTake";
 import ArticleSources from "@/components/ArticleSources";
 import CategoryBadge from "@/components/CategoryBadge";
@@ -22,7 +23,7 @@ const FICHA = [
   { label: "Estúdio do anime", value: "A-1 Pictures" },
   { label: "Direção", value: "Shunsuke Nakashige" },
   { label: "Música", value: "Hiroyuki Sawano" },
-  { label: "Temporadas", value: "T1 (2024, 12 ep.) e T2 Arise from the Shadow (2025, 13 ep.); T3 confirmada" },
+  { label: "Temporadas", value: "T1 (2024, 12 ep.) e T2 Arise from the Shadow (2025, 13 ep.); T3 em produção, sem data" },
   { label: "Filmes", value: "ReAwakening (2024, compilação) e Beyond the System (anunciado em julho de 2026)" },
   { label: "Gêneros", value: "Ação, fantasia sombria, dungeons, progressão de nível" },
   { label: "Onde assistir", value: "Crunchyroll, com legendas e dublagem em português" },
@@ -47,7 +48,8 @@ const TEMPORADAS = [
 ];
 
 const FAQ = [
-  { q: "Quantas temporadas Solo Leveling tem?", a: "Duas exibidas: a primeira em 2024 (12 episódios) e Arise from the Shadow em 2025 (13 episódios). A terceira foi confirmada em junho de 2026." },
+  { q: "Quantas temporadas Solo Leveling tem?", a: "Duas exibidas: a primeira em 2024 (12 episódios) e Arise from the Shadow em 2025 (13 episódios). A terceira foi citada como em produção pela D&C Media em junho de 2026." },
+  { q: "Existe jogo de Solo Leveling para console?", a: "Sim. Solo Leveling: Arise Overdrive chegou ao PS5 e Xbox Series X|S em 3 de novembro de 2026, por US$ 39,99, sem gacha e com co-op para até 4 jogadores." },
   { q: "Já tem data para a 3ª temporada?", a: "Não. A D&C Media confirmou que está em produção e projetou o lançamento entre 2027 e 2028, sem data oficial." },
   { q: "O que é Solo Leveling: Beyond the System?", a: "Um filme anunciado por Aniplex e Crunchyroll em julho de 2026, que continua a história depois da segunda temporada. Ainda não tem data." },
   { q: "Onde assistir no Brasil?", a: "Na Crunchyroll, com legendas e dublagem em português." },
@@ -90,6 +92,7 @@ const SoloLevelingAnimeGuia2026 = () => {
         </figcaption>
       </figure>
 
+      <SoloLevelingConfirmedBox />
       <div className="prose prose-invert max-w-none">
         <p className="lead text-lg md:text-xl text-muted-foreground">
           Poucos animes recentes chegaram com tanta expectativa e entregaram tanto quanto <strong>Solo Leveling</strong>.
@@ -249,8 +252,7 @@ const SoloLevelingAnimeGuia2026 = () => {
         <p>
           A franquia vai muito além das duas temporadas. O manhwa original está completo e é o caminho natural para quem
           quer saber o que vem depois. Existe também a continuação <strong>Solo Leveling: Ragnarok</strong>, focada na
-          próxima geração, e o jogo <strong>Solo Leveling: Arise</strong>, da Netmarble, lançado em 2024 para celulares e
-          PC. A Netflix ainda anunciou uma série em live-action produzida na Coreia do Sul. Se você quer um panorama mais
+          próxima geração, e dois jogos da Netmarble, que explicamos logo abaixo. A Netflix ainda anunciou uma série em live-action produzida na Coreia do Sul. Se você quer um panorama mais
           antigo da obra, também temos um guia completo de Solo Leveling publicado em março aqui no site.
         </p>
         <p>
@@ -258,6 +260,8 @@ const SoloLevelingAnimeGuia2026 = () => {
           opcional, já que é uma compilação com episódios que depois foram exibidos na série. Assim você fica pronto
           para quando a terceira temporada e o filme Beyond the System chegarem.
         </p>
+
+        <SoloLevelingGamesSection />
 
         <h2 className="flex items-center gap-2"><BookOpen className="h-6 w-6 text-otaku" />Ficha técnica</h2>
       </div>
@@ -314,6 +318,8 @@ const SoloLevelingAnimeGuia2026 = () => {
           { title: "Solo Leveling: Beyond the System Anime Movie Announced", url: "https://www.crunchyroll.com/news/announcements/2026/7/3/solo-leveling-beyond-the-system-anime-movie-announced-by-aniplex-and-crunchyroll", publisher: "Crunchyroll News", accessedAt: "Outubro 2026" },
           { title: "Solo Leveling Series Gets Beyond the System Anime Film", url: "https://www.animenewsnetwork.com/news/2026-07-03/solo-leveling-series-gets-solo-leveling-beyond-the-system-anime-film/.239268", publisher: "Anime News Network", accessedAt: "Outubro 2026" },
           { title: "Solo Leveling season 3 is actively being worked on", url: "https://www.gamesradar.com/entertainment/anime-shows/solo-leveling-season-3-is-actively-being-worked-on-crunchyroll-president-says-and-its-creators-will-hopefully-announce-something-soon/", publisher: "GamesRadar+", accessedAt: "Outubro 2026" },
+          { title: "Solo Leveling: Arise Overdrive — PS5", url: "https://www.playstation.com/en-us/games/solo-leveling-arise-overdrive/", publisher: "PlayStation", accessedAt: "Novembro 2026" },
+          { title: "Solo Leveling: ARISE OVERDRIVE — Xbox", url: "https://www.xbox.com/en-US/games/store/solo-leveling-arise-overdrive/9mvhcq7cjx01", publisher: "Xbox", accessedAt: "Novembro 2026" },
           { title: "Solo Leveling — Crunchyroll", url: "https://www.crunchyroll.com/series/GDKHZEJ0K/solo-leveling", publisher: "Crunchyroll", accessedAt: "Outubro 2026" },
           { title: "Solo Leveling (TV series) — Wikipedia", url: "https://en.wikipedia.org/wiki/Solo_Leveling_(TV_series)", publisher: "Wikipedia", accessedAt: "Outubro 2026" },
         ]}
