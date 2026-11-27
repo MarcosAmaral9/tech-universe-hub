@@ -312,6 +312,7 @@ const PlataformasVariasIAs2026 = lazy(() => import("./pages/posts/PlataformasVar
 const NanoBananaGuia2026 = lazy(() => import("./pages/posts/NanoBananaGuia2026"));
 const IAForaDeControleCasosReais2026 = lazy(() => import("./pages/posts/IAForaDeControleCasosReais2026"));
 const DrexTokenizacao2026 = lazy(() => import("./pages/posts/DrexTokenizacao2026"));
+const CarrosCombustaoEletricosChineses2026 = lazy(() => import("./pages/posts/CarrosCombustaoEletricosChineses2026"));
 const FinanciarOuAlugar2026 = lazy(() => import("./pages/posts/FinanciarOuAlugar2026"));
 const TenseiKizokuKanteiSkill2026 = lazy(() => import("./pages/posts/TenseiKizokuKanteiSkill2026"));
 const SoloLevelingAnimeGuia2026 = lazy(() => import("./pages/posts/SoloLevelingAnimeGuia2026"));
@@ -675,6 +676,7 @@ const App = () => (
                 <Route path="/post/nano-banana-google-guia-completo-2026" element={<Suspense fallback={<div />}><NanoBananaGuia2026 /></Suspense>} />
                 <Route path="/post/ia-fora-de-controle-casos-reais-2026" element={<Suspense fallback={<div />}><IAForaDeControleCasosReais2026 /></Suspense>} />
                 <Route path="/post/drex-tokenizacao-ativos-brasil-2026" element={<Suspense fallback={<div />}><DrexTokenizacao2026 /></Suspense>} />
+                <Route path="/post/carros-combustao-queda-precos-eletricos-chineses-2026" element={<Suspense fallback={<div />}><CarrosCombustaoEletricosChineses2026 /></Suspense>} />
                 <Route path="/post/financiar-imovel-ou-alugar-e-investir-2026" element={<Suspense fallback={<div />}><FinanciarOuAlugar2026 /></Suspense>} />
                 <Route path="/post/solo-leveling-anime-guia-personagens-temporadas-2026" element={<Suspense fallback={<div />}><SoloLevelingAnimeGuia2026 /></Suspense>} />
                 <Route path="/post/tensei-kizoku-kantei-skill-guia-2026" element={<Suspense fallback={<div />}><TenseiKizokuKanteiSkill2026 /></Suspense>} />

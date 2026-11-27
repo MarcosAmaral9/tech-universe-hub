@@ -263,9 +263,33 @@ import releaseThatWitchImg from "@/assets/release-that-witch-guia-2026.webp";
 import todoMundoChrisImg from "@/assets/todo-mundo-odeia-o-chris-guia-2026.webp";
 import lastKingdomImg from "@/assets/the-last-kingdom-guia-temporadas-filme-2026.webp";
 import peakyBlindersImg from "@/assets/peaky-blinders-guia-temporadas-filme-2026.webp";
+import carrosCombustaoImg from "@/assets/carros-combustao-queda-precos-eletricos-chineses-2026.webp";
 import variasIasImg from "@/assets/plataformas-varias-ias-assinatura-unica-2026.webp";
 
 export const blogPosts: BlogPost[] = [
+  // ── 27 Nov 2026 — Finanças (Carros a combustão x elétricos chineses) ──
+  {
+    id: "279",
+    slug: "carros-combustao-queda-precos-eletricos-chineses-2026",
+    title: "Carros a Combustão Estão Perdendo Valor? O Efeito dos Elétricos Chineses e Como Comprar ou Vender em 2026",
+    excerpt: "Usados a combustão caíram até 8,5% na Fipe em 12 meses, enquanto elétricos chineses populares seguraram preço. Veja os números, o imposto de 35% e a melhor estratégia para vender ou comprar.",
+    content: "",
+    category: "invest",
+    subtopic: "planejamento",
+    image: carrosCombustaoImg,
+    imageAlt: "Pátio de seminovos com carros a combustão com preços reduzidos no para-brisa e, ao fundo, carros elétricos em pontos de recarga",
+    author: "VICIO<CODE>",
+    date: "2026-11-27",
+    readTime: "14 min",
+    faq: [
+      { q: "Os carros a combustão estão desvalorizando mais rápido em 2026?", a: "Sim. Os usados caíram cerca de 5% na Fipe em 12 meses até outubro de 2026, e os combustão mais vendidos perderam em média 8,5%." },
+      { q: "Os elétricos chineses desvalorizam menos?", a: "Os populares recentes, como o BYD Dolphin Mini, perderam menos de 2% em 12 meses; os da primeira leva perderam muito mais." },
+      { q: "Por que o imposto de importação influencia o preço do usado?", a: "Desde 1º de julho de 2026 os eletrificados importados pagam 35%; carro zero mais caro segura o valor do usado." },
+      { q: "É hora de vender meu carro a combustão?", a: "Se a troca já está nos planos, adiar costuma significar vender por menos; se o carro está quitado e atende bem, mantê-lo também é válido." },
+      { q: "Vale comprar um usado a combustão agora?", a: "Para quem roda pouco e paga à vista, sim; quem roda muito deve comparar o custo por quilômetro com o de um elétrico." },
+      { q: "Financiar um carro com a Selic alta compensa?", a: "Os juros encarecem muito; aumente a entrada, compare o CET e prefira prazos curtos." },
+    ],
+  },
   // ── 09 Nov 2026 — Geek (Todo Mundo Odeia o Chris) ──────────────────────
   {
     id: "278",

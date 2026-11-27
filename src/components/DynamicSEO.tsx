@@ -12,6 +12,11 @@ const SITE_SOCIAL = [
 ];
 
 const PAGE_META: Record<string, { title: string; description: string; keywords: string }> = {
+  "/post/carros-combustao-queda-precos-eletricos-chineses-2026": {
+    title: "Carros a Combustão Perdem Valor: Efeito dos Elétricos Chineses",
+    description: "Usados a combustão caíram até 8,5% na Fipe em 12 meses e elétricos chineses seguraram preço. Veja números, imposto de 35% e quando vender ou comprar.",
+    keywords: "desvalorização carros a combustão, tabela fipe 2026, carros elétricos chineses, BYD Dolphin Mini fipe, imposto importação elétricos 35%, vender carro usado, comprar carro usado 2026, carro elétrico vale a pena, híbrido desvaloriza, financiamento de veículos Selic, ABVE vendas eletrificados",
+  },
   "/post/melhores-ias-criar-imagens-videos-2026": {
     title: "Melhores IAs para Imagens e Vídeos em 2026",
     description: "Compare as melhores IAs para criar imagens e vídeos em 2026, com opções grátis, preços, qualidade, limites e direitos comerciais.",
